@@ -7560,8 +7560,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	end
 
 	--Disabling Vertical Grip Mods
-	self.wpn_fps_lmg_rpk.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"		
-	
+	for i, part_id in pairs(self.wpn_fps_lmg_rpk.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_lmg_rpk.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+			end
+		end
+	end
+
 	--RPK Part Additions
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_aimpoint")
@@ -10281,7 +10290,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		value = 1,
 		recoil = 6
 	}
-	self.parts.wpn_fps_lmg_mg42_b_mg34.custom_stats = {rof_mult = 0.667}
+	self.parts.wpn_fps_lmg_mg42_b_mg34.custom_stats = { 
+		rof_mult = 0.667
+	}
 	--self.parts.wpn_fps_lmg_mg42_b_mg34.has_description = true
 	--self.parts.wpn_fps_lmg_mg42_b_mg34.desc_id = "bm_wp_mg42_b_mg34_desc_sc"
 	
@@ -10298,14 +10309,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 2, 
+		regen_ammo_time = 3, 
 		regen_rate = 9, 
 		overheat_pen = 4, 
 		regen_rate_overheat = 4.5, 
 		rof_mult = 0.52083,
 		armor_piercing_override = 0.2,
-		falloff_start_mult = 1.25,
-		falloff_end_mult = 1.25
+		falloff_start_mult = 0.8,
+		falloff_end_mult = 0.8,
+		ads_speed_mult = 0.9
 	}
 	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_lmg_mg42_dummy_mag")
 	table.insert(self.parts.wpn_fps_lmg_mg42_b_vg38.forbids, "wpn_fps_upg_ns_ass_filter")
@@ -10433,13 +10445,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	self.parts.wpn_fps_pis_c96_nozzle.custom_stats = { 
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 1.5, 
+		regen_ammo_time = 2, 
 		regen_rate = 3,
 		overheat_pen = 2, 
 		regen_rate_overheat = 2,
 		rof_mult = 0.35,
-		falloff_start_mult = 1.25,
-		falloff_end_mult = 1.25,
 		armor_piercing_override = 0.8
 
 	}
@@ -10540,7 +10550,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
 		starwars = true,
-		regen_ammo_time = 1, 
+		regen_ammo_time = 1.4, 
 		regen_rate = 6, 
 		overheat_pen = 2,
 		regen_rate_overheat = 3,
@@ -13453,8 +13463,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_bipods", "resmod_bipods", function
 	}
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.desc_id = "bm_sc_bipod_desc"
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.supported = true
-	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 5, concealment = -2}
-	self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats = { ads_speed_mult = 1.05 }
+	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {
+		value = 5, 
+		concealment = -3,
+		recoil = 2
+	}
+	self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats = { ads_speed_mult = 1.075 }
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.forbids = {} --g3 various attachments workaround
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.perks = {"bipod"}
 

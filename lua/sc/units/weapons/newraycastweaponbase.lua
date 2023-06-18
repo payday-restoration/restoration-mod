@@ -259,14 +259,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
 		moving_spread = moving_spread * moving_spread_mult
-		if not current_state:full_steelsight() then
-			local hipfire_moving_spread_mult = 1
-			for _, category in ipairs(self:weapon_tweak_data().categories) do
-				local hms_mult = tweak_data[category] and tweak_data[category].hipfire_moving_spread_mult or 1
-				hipfire_moving_spread_mult = hipfire_moving_spread_mult * hms_mult
-			end
-			moving_spread = moving_spread * hipfire_moving_spread_mult
-		elseif current_state:full_steelsight() then
+		if current_state:full_steelsight() and not self:weapon_tweak_data().always_hipfire then
 			local ads_moving_spread_mult = 1
 			if self._ads_moving_mult then
 				ads_moving_spread_mult = ads_moving_spread_mult * self._ads_moving_mult
@@ -276,6 +269,13 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 				ads_moving_spread_mult = ads_moving_spread_mult * adsms_mult
 			end
 			moving_spread = moving_spread * ads_moving_spread_mult
+		else
+			local hipfire_moving_spread_mult = 1
+			for _, category in ipairs(self:weapon_tweak_data().categories) do
+				local hms_mult = tweak_data[category] and tweak_data[category].hipfire_moving_spread_mult or 1
+				hipfire_moving_spread_mult = hipfire_moving_spread_mult * hms_mult
+			end
+			moving_spread = moving_spread * hipfire_moving_spread_mult
 		end
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
@@ -637,7 +637,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._descope_on_fire = self:weapon_tweak_data().descope_on_fire
 			self._rms = self:weapon_tweak_data().rms
 			self._sms = self:weapon_tweak_data().sms
-			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
+			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and ((self:weapon_tweak_data().fire_mode_data.fire_rate * 5) * (self:weapon_tweak_data().smt_mult or 1))
 		end
 
 		for part_id, stats in pairs(custom_stats) do
@@ -916,7 +916,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					else
 						self._sms = self._sms + (1 * (stats.sms - 1))
 					end
-					self._smt = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate * 4
+					self._smt = self:weapon_tweak_data().fire_mode_data and ((self:weapon_tweak_data().fire_mode_data.fire_rate * 5) * (self:weapon_tweak_data().smt_mult or 1))
 				end
 				if stats.rms then
 					if not self._rms then

@@ -3477,6 +3477,28 @@ function WeaponTweakData:_init_stats()
 				min_h_recoil = 0.4
 			},
 
+			the_wolf_brigade = {
+				standing = {
+					0.625 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+					0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+					-0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
+					0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
+				},
+				crouching = {
+					0.625 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+					0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+					-0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
+					0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
+				},
+				steelsight = {
+					0.625 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+					-0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
+					0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
+				},
+				min_h_recoil = 0.4
+			},
+
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 			moderate_kick = {
 				standing = {
@@ -3538,27 +3560,6 @@ function WeaponTweakData:_init_stats()
 					0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					-0.2 * self.stat_info.stance_recoil_mults.steelsight,
 					0.6 * self.stat_info.stance_recoil_mults.steelsight
-				},
-				min_h_recoil = 0.2
-			},
-			the_wolf_brigade = {
-				standing = {
-					0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-					0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-					-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.standing,
-					0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.standing
-				},
-				crouching = {
-					0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-					0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-					-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching,
-					0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.crouching
-				},
-				steelsight = {
-					0.7 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-					0.55 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-					-0.2 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
-					0.6 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
 				},
 				min_h_recoil = 0.2
 			},
@@ -3691,7 +3692,7 @@ local sms_preset = {
 }
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
-	assert(self.osipr, "Resmod's custom assets aren't loading. Your copy of Resmod my be corrupt or Beardlib may not be installed correctly.") --force a crash on boot if custom assets aren't loading. Better to have an early tell vs crashing on failed enemy unit spawns mid-game, right?
+	assert(self.osipr, "Resmod's custom assets aren't loading. Your copy of Resmod may be corrupt or Beardlib may not be installed correctly.") --force a crash on boot if custom assets aren't loading. Better to have an early tell vs crashing on failed enemy unit spawns mid-game, right?
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
@@ -6432,6 +6433,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					0.1
 				}
 				self.hailstorm.stats_modifiers = nil
+				--self.hailstorm.sounds.no_fix = true
 				self.hailstorm.reload_speed_multiplier = 0.85
 				self.hailstorm.panic_suppression_chance = 0.05
 				self.hailstorm.timers.reload_exit_empty = 0.08
@@ -7131,7 +7133,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.stats_modifiers = nil
 				self.erma.sounds.spin_start = "wp_mac10_lever_pull"
 				self.erma.spin_up_shoot = true
-				self.erma.spin_up_t = 0.08
+				self.erma.spin_up_t = 0.07
 				self.erma.spin_down_t = 0.0000000001
 				self.erma.panic_suppression_chance = 0.05
 				self.erma.timers.reload_exit_empty = 0.6
@@ -7209,7 +7211,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_uzi.panic_suppression_chance = 0.05
 				self.x_uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 				self.x_uzi.spin_up_shoot = true
-				self.x_uzi.spin_up_t = 0.08
+				self.x_uzi.spin_up_t = 0.07
 				self.x_uzi.spin_down_t = 0.0000000001
 				self.x_uzi.reload_speed_multiplier = 0.75
 				self.x_uzi.timers.reload_empty = 3
@@ -7355,7 +7357,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.stats_modifiers = nil
 				self.sterling.sounds.spin_start = "wp_mac10_lever_pull"
 				self.sterling.spin_up_shoot = true
-				self.sterling.spin_up_t = 0.08
+				self.sterling.spin_up_t = 0.07
 				self.sterling.spin_down_t = 0.0000000001
 				self.sterling.panic_suppression_chance = 0.05
 				self.sterling.reload_speed_multiplier = 1.2
@@ -7434,7 +7436,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1928.stats_modifiers = nil
 				self.m1928.sounds.spin_start = "wp_m1928_lever_release"
 				self.m1928.spin_up_shoot = true
-				self.m1928.spin_up_t = 0.05
+				self.m1928.spin_up_t = 0.06
 				self.m1928.spin_down_t = 0.00000001
 				self.m1928.timers.reload_not_empty = 3.3
 				self.m1928.timers.reload_exit_not_empty = 1.2
@@ -7478,7 +7480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.panic_suppression_chance = 0.05
 				self.uzi.sounds.spin_start = "wp_uzi_clip_lever_pull"
 				self.uzi.spin_up_shoot = true
-				self.uzi.spin_up_t = 0.08
+				self.uzi.spin_up_t = 0.07
 				self.uzi.spin_down_t = 0.0000000001
 				self.uzi.reload_speed_multiplier = 1.1
 				self.uzi.timers.reload_not_empty = 1.95
@@ -7544,6 +7546,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"smg"
 			}
 			self.tecci.kick = self.stat_info.kick_tables.even_recoil
+			self.tecci.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.tecci.CLIP_AMMO_MAX = 100
 			self.tecci.AMMO_MAX = 360
 			self.tecci.fire_mode_data.fire_rate = 0.0705882
@@ -7562,7 +7565,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
-				concealment = 23,
+				concealment = 21,
 				suppression = 8,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -7576,7 +7579,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				0.6
 			}
 			self.tecci.stats_modifiers = nil
-			self.tecci.reload_speed_multiplier = 1.02
+			self.tecci.reload_speed_multiplier = 1
 			self.tecci.timers.reload_exit_empty = 0.9
 			self.tecci.timers.reload_exit_not_empty = 1.0
 
@@ -7664,7 +7667,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.reload_speed_multiplier = 0.87
 			self.kacchainsaw.sounds.spin_start = "wp_kac_reload_lever_push"
 			self.kacchainsaw.spin_up_shoot = true
-			self.kacchainsaw.spin_up_t = 0.08
+			self.kacchainsaw.spin_up_t = 0.07
 			self.kacchainsaw.spin_down_t = 0.00000001
 			self.kacchainsaw.timers.equip = 2
 			self.kacchainsaw.timers.reload_not_empty = 4.92
@@ -7754,7 +7757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 71,
 				spread_moving = 5,
 				zoom = 1,
-				concealment = 20,
+				concealment = 17,
 				suppression = 7,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -7839,21 +7842,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
-				self.m60.fire_mode_data.fire_rate = 0.10909090909
+				self.m60.fire_mode_data.fire_rate = 0.1034482
 				self.m60.kick = self.stat_info.kick_tables.even_recoil
 				self.m60.always_use_standing = true
-				self.m60.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.m60.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
 				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
 					start_dist = 800,
 					end_dist = 6000,
-					min_mult = 0.4
+					min_mult = 0.33333
 				}
 				self.m60.stats = {
 					damage = 60,
-					spread = 64,
+					spread = 61,
 					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
@@ -7887,20 +7890,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"mmg"
 				}
 				self.par.CLIP_AMMO_MAX = 50
-				self.par.fire_mode_data.fire_rate = 0.096
+				self.par.fire_mode_data.fire_rate = 0.092307
 				self.par.AMMO_MAX = 120
 				self.par.kick = {}
 				self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
 				self.par.always_use_standing = true
 				self.par.panic_suppression_chance = 0.05
-				self.par.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.par.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
 				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
 					start_dist = 500,
-					end_dist = 4800,
-					min_mult = 0.4
+					end_dist = 5400,
+					min_mult = 0.33333
 				}
 				self.par.stats = {
 					damage = 60,
@@ -7946,16 +7949,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.600
+				self.mg42.ads_speed = 0.580
 				self.mg42.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 4500,
+					start_dist = 2200,
+					end_dist = 6000,
 					min_mult = 0.53333
 				}
 				self.mg42.stats = {
 					damage = 45,
-					spread = 60,
-					recoil = 63,
+					spread = 59,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 17,
@@ -7997,9 +8000,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.supported = true
 				self.hk21.ads_speed = 0.620
 				self.hk21.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 6000,
-					min_mult = 0.53333
+					start_dist = 2000,
+					end_dist = 5100,
+					min_mult = 0.44444
 				}
 				self.hk21.stats = {
 					damage = 45,
@@ -8046,7 +8049,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.damage_falloff = {
 					start_dist = 800,
 					end_dist = 4800,
-					min_mult = 0.53333
+					min_mult = 0.44444
 				}
 				self.hk51b.stats = {
 					damage = 45,
@@ -10340,7 +10343,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.reload_speed_multiplier = 1.175
 				self.aa12.sounds.spin_start = "wp_mac10_lever_pull"
 				self.aa12.spin_up_shoot = true
-				self.aa12.spin_up_t = 0.1
+				self.aa12.spin_up_t = 0.06
 				self.aa12.spin_down_t = 0.00000001
 				self.aa12.timers.reload_exit_empty = 1.1
 				self.aa12.timers.reload_exit_not_empty = 0.9
@@ -14232,7 +14235,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.damage_falloff = {
 			start_dist = 800,
 			end_dist = 4500,
-			min_mult = 0.5
+			min_mult = 0.4
 		}
 		self.lewis.stats = {
 			damage = 60,
@@ -15707,7 +15710,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.stats_modifiers = nil
 		self.tommy.sounds.spin_start = "wp_m1928_lever_release"
 		self.tommy.spin_up_shoot = true
-		self.tommy.spin_up_t = 0.08
+		self.tommy.spin_up_t = 0.07
 		self.tommy.spin_down_t = 0.00000001
 		self.tommy.timers.reload_exit_empty = 0.9
 		self.tommy.timers.reload_exit_not_empty = 0.8
@@ -16534,7 +16537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.stoner63a.panic_suppression_chance = 0.05
 			self.stoner63a.sounds.spin_start = "wp_m60_reload_lever_release"
 			self.stoner63a.spin_up_shoot = true
-			self.stoner63a.spin_up_t = 0.08
+			self.stoner63a.spin_up_t = 0.07
 			self.stoner63a.spin_down_t = 0.00000001
 			self.stoner63a.reload_speed_multiplier = 0.98
 			self.stoner63a.sms = sms_preset.lmg_48
@@ -17187,13 +17190,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mg34.supported = true
 		self.mg34.ads_speed = 0.580
 		self.mg34.damage_falloff = {
-			start_dist = 2500,
-			end_dist = 5000,
+			start_dist = 2000,
+			end_dist = 5800,
 			min_mult = 0.53333
 		}
 		self.mg34.stats = {
 			damage = 45,
-			spread = 65,
+			spread = 61,
 			recoil = 67,
 			spread_moving = 5,
 			zoom = 1,
@@ -17209,6 +17212,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mg34.panic_suppression_chance = 0.05
 		self.mg34.sms = sms_preset.lmg_90
 		self.mg34.weapon_movement_penalty = 0.75
+		self.mg34.sounds.spin_start = "wp_mg42_lever_release"
+		self.mg34.spin_up_shoot = true
+		self.mg34.spin_up_t = 0.07
+		self.mg34.spin_down_t = 0.00000001
 		self.mg34.reload_speed_multiplier = 1
 		self.mg34.timers.reload_exit_empty = 1.65
 		self.mg34.timers.reload_exit_not_empty = 1.65
@@ -17489,6 +17496,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if category == "lmg" or category == "minigun" then
 					if weap.weapon_movement_penalty then
 						weap.rms = (1 + weap.weapon_movement_penalty) / 2
+						weap.smt_mult = 2
+						weap.smt_range = { 0.5, 1.1 }
 					end
 					weap.zoom_recoil_reduction = 0.01
 				end
@@ -17670,13 +17679,13 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	local pickup_multiplier = weapon.AMMO_MAX
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.1,
-		pistol = 1.2, --Compensate for low range.
+		pistol = 1.25, --Compensate for low range.
 		smg = 1.1,
 			pdw = 0.8,
 			typh = 0.8,
-			lmg = 0.575,
-				mmg = 0.8,
-				minigun = 0.45,
+			lmg = 0.55,
+				mmg = 0.9,
+			minigun = 0.45,
 		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
 		--assault_rifle = 1, 
 			--snp = 1, 

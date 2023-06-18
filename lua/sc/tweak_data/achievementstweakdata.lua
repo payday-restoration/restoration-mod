@@ -703,7 +703,7 @@ function AchievementsTweakData:init(tweak_data)
 		difficulty = overkill_and_above
 	}
 	
-	--Meele Kill Stuff
+	--Melee Kill Stuff
 	self.enemy_melee_hit_achievements.cloak_n_dagger = {
 		enemies = {
 			"spooc",
@@ -713,24 +713,6 @@ function AchievementsTweakData:init(tweak_data)
 		},
 		melee_type = "knife",
 		award = "gage2_2",
-		result = "death"
-	}
-	
-	self.enemy_melee_hit_achievements.are_you_kidding_me = {
-		enemies = {
-			"tank",
-			"tank_medic",
-			"tank_mini",
-			"tank_titan",
-			"tank_titan_assault",
-			"spring", --why not?
-			"headless_hatman",
-			"tank_hw",
-			"tank_hw_black",
-			"tank_biker"
-		},
-		melee_type = "knife",
-		award = "gage2_10",
 		result = "death"
 	}
 	

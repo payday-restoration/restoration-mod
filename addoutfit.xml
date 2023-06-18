@@ -579,6 +579,10 @@
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_sydney"/>	
 		<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_green_joy"/>
 		
+		<!--<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_neon_df"/>-->
+		<!--<texture path="units/pd2_mod_suits/characters/shared_textures/res_acc_suit_sunny_neonred_il"/>-->
+		<!--<material_config path="units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_neonred"/>-->
+		
 		
 		
 		<!--Prison suit stuff-->

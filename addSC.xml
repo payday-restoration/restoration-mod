@@ -1236,6 +1236,7 @@
 	<!--Sniper Trails-->
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
+	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
 	
 	<!--Weapon Mod Trails-->
 	<!--M249/240 casings-->

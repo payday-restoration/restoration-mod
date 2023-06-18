@@ -841,12 +841,13 @@ local crew_wep_preset = {
 		
 		self.asval_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.asval_snp_npc.has_suppressor = "suppressed_a"
+		self.asval_snp_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
 				
 		--Railgun
 		self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 		self.railgun_npc.CLIP_AMMO_MAX = 4
 		self.railgun_npc.DAMAGE = 18
-		self.railgun_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")		
+		self.railgun_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")		
 		--self.railgun_npc.sounds.prefix = "barrett_npc"
 	end
 	
@@ -1521,7 +1522,7 @@ local crew_wep_preset = {
 		self.type_7_npc.sounds.prefix = "saint_victor_npc"		
 		--Needs a new muzzleflash + Trail effect pls
 		--self.type_7_npc.muzzleflash =  Idstring("effects/payday2/particles/character/taser_hittarget")
-		self.type_7_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
+		self.type_7_npc.trail_effect = Idstring("effects/particles/weapons/akan_titan_trail_sc")
 	end	
 	
 	function WeaponTweakData:_init_data_m249_npc()

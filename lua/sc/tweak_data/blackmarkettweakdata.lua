@@ -1087,6 +1087,16 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue",
 	}
 	
+	--self.player_styles.suit_sunny.material_variations.neonred = {
+		--name_id = "bm_suit_var_suit_sunny_neonred",
+	--	unlocked = true,
+	--	custom = true,
+	--	texture_bundle_folder = "mods",
+	--	desc_id = "bm_suit_var_suit_sunny_neonred_desc",
+	--	material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+	--	third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_neonred",
+	--}
+	
 	self.player_styles.suit_sunny.characters.chains.material_variations = {
 	skull = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_chains",

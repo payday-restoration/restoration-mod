@@ -224,10 +224,10 @@ end
 function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil)
 	local player_state = managers.player:current_state()
 	if player_state == "bipod" then
-		up = up * 0.4
-		down = down * 0.4
-		left = left * 0.4
-		right = right * 0.4
+		up = up * 0.5
+		down = down * 0.5
+		left = left * 0.25
+		right = right * 0.25
 	end
 
 	local v = math.lerp(up, down, math.random())

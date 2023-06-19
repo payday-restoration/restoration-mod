@@ -106,6 +106,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 	--Classic Helmet
 	self.masks.classic_helmet = {}
 	self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.masks.classic_helmet = {
 			unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
@@ -117,10 +118,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			texture_bundle_folder = "mods"
 		}
 	end
+	end
 
 	--All Seeing Anchor		
 	self.masks.all_seeing = {}
-	self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"			
+	self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.masks.all_seeing = {
 			unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
@@ -132,10 +135,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			texture_bundle_folder = "mods"
 		}		
 	end
+	end
 
 	--devmask.model		
 	self.masks.cube = {}
-	self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"	
+	self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 		self.masks.cube = {
 			unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
@@ -146,6 +151,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			global_value = "rest_omnia",
 			texture_bundle_folder = "mods"
 		}		
+	end
 	end
 end)
 
@@ -263,10 +269,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	self.player_styles.poggers.characters.ecp_male = {
 		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_fat/ess_acc_esport_male_fat"
 	}
-	
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.player_styles.poggers.global_value = "rest_omnia"
 		self.player_styles.poggers.unlocked = true
+	end
 	end
 	
 	-- Flecktarn Jumpsuit 

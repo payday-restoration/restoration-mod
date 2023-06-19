@@ -281,6 +281,7 @@ function DLCTweakData:init(...)
 		}
 	}
 	
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.omnia = {
 			content = {},
@@ -300,6 +301,8 @@ function DLCTweakData:init(...)
 			}				
 		}	
 	end
+	end
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 		self.omnia_2 = {
 			content = {},
@@ -313,6 +316,7 @@ function DLCTweakData:init(...)
 				amount = 1
 			}			
 		}	
-	end			
+	end
+    end	
 		
 end

@@ -103,7 +103,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		bulldozer_3 = "units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"
 		vault_guardian = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		spooc = "units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"
-		medic = "units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"
+		medic = "units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"
 		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 end
@@ -112,13 +112,13 @@ end
 return {
 	--PONR/Restores unused cloaker vault spawn
 	[100546] = {
-	ponr = 240,
+	ponr = 300,
 	on_executed = {
 		{ id = 100909, delay = 0 },
 		{ id = 102226, delay = 0 },
 		{ id = 102689, delay = 3 }
-	}
-},
+		}
+	},
 	--Disables the AI Remover to prevent vault spawn from despawning after few seconds
 	[102690] = {
 		values = {
@@ -175,6 +175,31 @@ return {
 	[101616] = {
 		values = {
             enemy = taser_2
+		}
+	},
+	[101628] = {
+		values = {
+            enemy = swat_heavy_1
+		}
+	},
+	[101636] = {
+		values = {
+            enemy = vault_guardian
+		}
+	},
+	[101646] = {
+		values = {
+            enemy = vet_cop
+		}
+	},
+	[101657] = {
+		values = {
+            enemy = shield
+		}
+	},
+	[101661] = {
+		values = {
+            enemy = spooc
 		}
 	},
 	--"Cloaker" spawns

@@ -1258,7 +1258,7 @@ local muzzle_device = {
 				can_shoot_through_wall = true,
 				falloff_start_mult = 1.25,
 				falloff_end_mult = 2.0,
-				ads_speed_mult = 1
+				ads_speed_mult = 1.10
 			}
 		}
 
@@ -1287,7 +1287,7 @@ local muzzle_device = {
 				can_shoot_through_wall = true,
 				falloff_start_mult = 1.25,
 				falloff_end_mult = 2.0,
-				ads_speed_mult = 1
+				ads_speed_mult = 1.10
 			}
 		}
 	
@@ -1318,7 +1318,7 @@ local muzzle_device = {
 				can_shoot_through_wall = true,
 				falloff_start_mult = 1.25,
 				falloff_end_mult = 2.0,
-				ads_speed_mult = 1
+				ads_speed_mult = 1.10
 			}
 		}
 
@@ -9385,7 +9385,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		can_shoot_through_wall = true,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 2.0,
-		ads_speed_mult = 1.0
+		ads_speed_mult = 1.10
 	}
 	
 	--000 Buck

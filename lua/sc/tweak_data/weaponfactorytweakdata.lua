@@ -1250,6 +1250,7 @@ local muzzle_device = {
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 				rays = 1,
+				hip_mult = 2,
 				armor_piercing_add = 0.8,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
@@ -1278,6 +1279,7 @@ local muzzle_device = {
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 				rays = 1,
+				hip_mult = 2,
 				armor_piercing_add = 0.8,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
@@ -1307,6 +1309,7 @@ local muzzle_device = {
 			custom_stats = {				
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
+				hip_mult = 2,
 				armor_piercing_add = 1,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
@@ -6274,6 +6277,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				damage = 90
 			},
 			custom_stats = {
+				ads_speed_mult = 1.125,
+				hip_mult = 4,
+				ammo_pickup_max_mul = 0.7,
+				ammo_pickup_min_mul = 0.7,
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
@@ -9369,6 +9376,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_slug.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
 		rays = 1,
+		hip_mult = 2,
 		armor_piercing_add = 1,
 		ammo_pickup_max_mul = 0.8,
 		ammo_pickup_min_mul = 0.8,
@@ -14174,6 +14182,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 				damage = 90
 			},
 			custom_stats = {
+				ads_speed_mult = 1.125,
+				hip_mult = 4,
+				ammo_pickup_max_mul = 0.7,
+				ammo_pickup_min_mul = 0.7,
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
@@ -22793,6 +22805,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
 					rays = 1,
+					hip_mult = 2,
 					armor_piercing_add = 1,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
@@ -24905,6 +24918,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							damage = 90
 						},
 						custom_stats = {
+							ads_speed_mult = 1.125,
+							hip_mult = 4,
+							ammo_pickup_max_mul = 0.7,
+							ammo_pickup_min_mul = 0.7,
 							ignore_statistic = true,
 							block_b_storm = true,
 							rays = 1,

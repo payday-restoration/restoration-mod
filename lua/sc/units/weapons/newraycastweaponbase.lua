@@ -1388,6 +1388,22 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	multiplier = multiplier * self:reload_speed_stat()
 	multiplier = managers.modifiers:modify_value("WeaponBase:GetReloadSpeedMultiplier", multiplier)
 
+	--MERCENARY DECK
+	if managers.player:has_category_upgrade("player","kmerc_reload_speed_per_max_armor") then
+		local player = managers.player:local_player()
+		if alive(player) then
+			local dmg_ext = player:character_damage() 
+			if dmg_ext then
+				local rate_bonus = managers.player:upgrade_value("player","kmerc_reload_speed_per_max_armor",0)
+				local rate_armor = tweak_data.upgrades.values.player.kmerc_generic_bonus_per_max_armor_rate
+				local max_armor = dmg_ext:_max_armor()
+				local bonus = math.floor(max_armor / rate_armor) * rate_bonus
+				log(tostring( bonus ))
+				multiplier = multiplier + bonus
+			end
+		end
+	end
+
 	return multiplier
 end
 

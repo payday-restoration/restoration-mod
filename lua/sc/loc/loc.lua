@@ -4057,7 +4057,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
+				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -4065,7 +4065,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Pigeon Shooter",
-				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#60%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.",
+				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#20%## while aiming down sights.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -4675,7 +4675,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
 				["menu_deck_kmerc_1_desc_sc"] = "Take greatly reduced damage from heavy hits to your health so that no single attack can kill you.\n\nYou gain ##5%## more health.",
-				["menu_deck_kmerc_3_desc_sc"] = "You gain ##10%## more armor.\n\nYour armor recovery rate is increased by ##10%##.",	
+				["menu_deck_kmerc_3_desc_sc"] = "You gain ##1%## reload speed and ##2%## weapon swap speed for every ##4## points armor you have.\n\nYou gain ##5%## more armor.",	
 				["menu_deck_kmerc_5_desc_sc"] = "When your health would become ##0##, it becomes ##1## instead and you gain ##2## seconds of invulnerability.\nYou cannot sprint while under the effects of this invulnerability.\nThis effect cannot occur again until you are restored to full health.\n\nYou gain an additional ##5%## more health.",
 				["menu_deck_kmerc_7_desc_sc"] = "After having armor for at least ##2## seconds, heal health equal to ##1%## of your max armor every ##5## seconds so long as you have armor.",
 				["menu_deck_kmerc_9_desc_sc"] = "Whenever you take damage to your health that leaves you at ##30%## health or less, regain ##50%## of that damage as armor.\nThis cannot occur more than once every ##1## second or from the same hit that triggers Walk It Off's (Card 5) invulnerability.",

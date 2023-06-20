@@ -3218,6 +3218,20 @@ function PlayerStandard:_get_swap_speed_multiplier()
 
 	multiplier = managers.modifiers:modify_value("PlayerStandard:GetSwapSpeedMultiplier", multiplier)
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "mrwi_swap_speed_multiplier", 1)
+
+	--MERCENARY DECK
+	if managers.player:has_category_upgrade("player","kmerc_swap_speed_per_max_armor") then
+		local dmg_ext = self._unit:character_damage() 
+		if dmg_ext then
+			local rate_bonus = managers.player:upgrade_value("player","kmerc_swap_speed_per_max_armor",0)
+			local rate_armor = tweak_data.upgrades.values.player.kmerc_generic_bonus_per_max_armor_rate
+			local max_armor = dmg_ext:_max_armor()
+			local bonus = math.floor(max_armor / rate_armor) * rate_bonus
+
+			multiplier = multiplier + bonus
+		end
+	end
+
 	return multiplier
 end
 

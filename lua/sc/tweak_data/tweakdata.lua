@@ -52,17 +52,18 @@ tweak_data.grenade_launcher = {
 	}
 
 tweak_data.shotgun = {
-	ads_move_speed_mult = 0.6,
+	ads_move_speed_mult = 0.45,
+	ads_moving_spread_mult = 3.33333
 }
 	tweak_data.shotgun_pistol = {
-		ads_move_speed_mult = 1.3333,
+		ads_move_speed_mult = 1.777778,
 		swap_bonus = 1.75
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
 	}
 		tweak_data.flamethrower_lmg = {
-			ads_move_speed_mult = 0.58333,
+			ads_move_speed_mult = 0.77778,
 		}
 
 tweak_data.smg = {
@@ -93,13 +94,13 @@ tweak_data.smg = {
 
 tweak_data.snp = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.5,
+	ads_move_speed_mult = 0.45,
 	hipfire_moving_spread_mult = 2
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2,
 		hipfire_moving_spread_mult = 1.5,
-		ads_move_speed_mult = 0.8 --lowered to 0.4
+		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.15,
@@ -112,18 +113,18 @@ tweak_data.snp = {
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.5,
+	ads_move_speed_mult = 0.45,
 	hipfire_spread_mult = 1.15
 }
 	tweak_data.crb = {
 		hipfire_spread_mult = 0.86956,
 		swap_bonus = 1.1,
-		ads_move_speed_mult = 1.2 --raised to 0.6
+		ads_move_speed_mult = 1.11111 --raised to 0.5
 	}
 	tweak_data.dmr = {
 		hipfire_spread_mult = 1.391304,
 		hipfire_moving_spread_mult = 1.5,
-		ads_move_speed_mult = 0.7 --lowered to 0.4
+		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 
 tweak_data.akimbo = {
@@ -1366,14 +1367,12 @@ if BeardLib then
 				desc_id = "menu_deck_kmerc_3_desc_sc",
 				cost = 0,
 				upgrades = {
-					--"player_kmerc_crit_chance_per_max_armor",
-					"player_perk_armor_regen_timer_multiplier_1",
-					"player_tier_armor_multiplier_1",
-					"player_tier_armor_multiplier_2"
+					"player_kmerc_reload_speed_bonus_per_max_armor",
+					"player_kmerc_swap_speed_bonus_per_max_armor",
+					"player_tier_armor_multiplier_1"
 				},
-				--texture_bundle_folder = "kmerc",
-				--icon_xy = {1,0}
-				icon_xy = {6, 0}
+				texture_bundle_folder = "kmerc",
+				icon_xy = {1,0}
 			},
 			deck4,
 			{

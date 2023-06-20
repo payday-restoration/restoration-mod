@@ -736,7 +736,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Shotgun CQB
 				--Basic
-					self.values.shotgun.enter_steelsight_speed_multiplier = {1.15}
+					self.values.shotgun.enter_steelsight_speed_multiplier = {1.075}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 				
@@ -748,7 +748,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away / Pigeon Shooter
 				--Basic
-					self.values.player.steelsight_move_speed_multiplier = {1.6} --Movement speed while ADSing.
+					self.values.player.steelsight_move_speed_multiplier = {1.5} --Movement speed while ADSing.
 				--Ace
 					self.values.shotgun.steelsight_accuracy_inc = {0.7}
 					self.values.shotgun.steelsight_range_inc = {1.3}
@@ -4376,6 +4376,10 @@ end)
 Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 
 	--MERCENARY DECK
+		self.values.player.kmerc_generic_bonus_per_max_armor_rate = 0.8
+		self.values.player.kmerc_swap_speed_per_max_armor = { 0.01 }
+		self.values.player.kmerc_reload_speed_per_max_armor = { 0.01 }
+
 		self.values.player.kmerc_crit_chance_per_max_armor = {
 			{
 				crit_chance = 0.01,

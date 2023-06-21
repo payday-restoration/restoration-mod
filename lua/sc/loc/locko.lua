@@ -3930,7 +3930,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
@@ -3938,7 +3938,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
-			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준하는 동안 이동 속도가 ##60%##만큼 빨라집니다.\n\n#{risk}#참고: 속도는 현재 위치의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 정조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##30%##만큼 증가합니다.",
+			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준하는 동안 이동 속도가 ##50%##만큼 빨라집니다.\n\n#{risk}#참고: 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##20%##만큼 증가합니다.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
@@ -4562,7 +4562,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
 				["menu_deck_kmerc_1_desc_sc"] = "어떤 공격도 당신을 죽일 수 없도록 강한 타격으로 인한 체력 피해를 크게 줄입니다.\n\n체력을 ##5%##만큼 얻습니다.",
-				["menu_deck_kmerc_3_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.\n\n모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.",	
+				["menu_deck_kmerc_3_desc_sc"] = "보유하고 있는 방탄력 ##4##포인트 당 재장전 속도 #1%##, 무기 교체 속도 ##2%##를 얻습니다.\n\n모든 방탄복의 방탄력이 ##5%## 증가합니다.",	
 				["menu_deck_kmerc_5_desc_sc"] = "체력이 ##0##에 도달되었을 때 대신 ##1##이 되고 ##2##초 동안 무적 상태가 됩니다.\n무적 효과를 받는 동안에는 전력 질주할 수 없습니다.\n이 효과는 체력을 완전히 회복할 때까지는 다시 발생하지 않습니다.\n\n추가로 체력을 ##5%##만큼 더 얻습니다.",
 				["menu_deck_kmerc_7_desc_sc"] = "최소 ##2초##동안 방탄복을 회복된 후, 방탄력이 있는 있는 동안 ##5초마다## 체력을 최대 방탄력의 ##1%##만큼씩 회복합니다.",
 				["menu_deck_kmerc_9_desc_sc"] = "체력을 ##30%## 이하가 될 만큼 피해를 입을 때마다 해당 피해의 ##50%##를 방탄력으로 회복합니다.\n이 효과는 매 초마다 한 번만 발생하거나 Walk It Off(카드 5)의 무적 상태를 동시에 발생할 수 없습니다.",

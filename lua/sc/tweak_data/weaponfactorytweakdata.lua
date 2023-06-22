@@ -29533,6 +29533,111 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_lmg_sasha_body then --Silent Enforcer's TF2 Minigun
+
+		self.parts.wpn_fps_lmg_natascha_sounds = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			a_obj = "a_body",
+			type = "ammo",
+			name_id = "bm_wp_natascha_sounds",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			internal_part = true,
+			no_cull = true,
+			stats = {
+				value = 5
+			},
+			custom_stats = {
+				sounds = {
+					spin_start = "swatturret_spin_start",
+					spin_end = "swatturret_spin_stop"
+				}
+			}
+		}
+		self.parts.wpn_fps_lmg_natascha_body.supported = true
+		self.parts.wpn_fps_lmg_natascha_body.keep_damage = true
+		self.parts.wpn_fps_lmg_natascha_body.stats = {
+			value = 0,
+			damage = -6,
+			concealment = -2
+		}
+		self.parts.wpn_fps_lmg_natascha_body.custom_stats = {
+			natascha = 975,
+			spin_up_mult = 1.3,
+			ads_speed_mult = 1.3
+		}
+		table.insert( self.parts.wpn_fps_lmg_natascha_body.adds, "wpn_fps_lmg_natascha_sounds" )
+
+		self.parts.wpn_fps_lmg_lmg_tomislav_sounds = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			a_obj = "a_body",
+			type = "ammo",
+			name_id = "bm_wp_natascha_sounds",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			internal_part = true,
+			no_cull = true,
+			stats = {
+				value = 5
+			},
+			custom_stats = {
+				sounds = {
+					spin_start = " ",
+					spin_end = " "
+				}
+			}
+		}
+		self.parts.wpn_fps_lmg_tomislav_body.supported = true
+		self.parts.wpn_fps_lmg_tomislav_body.stats = {
+			value = 0,
+			spread = 5,
+			concealment = 1
+		}
+		self.parts.wpn_fps_lmg_tomislav_body.custom_stats = {
+			spin_up_mult = 0.8,
+			ads_speed_mult = 0.8,
+			rof_mult = 0.777
+		}
+		table.insert( self.parts.wpn_fps_lmg_tomislav_body.adds, "wpn_fps_lmg_lmg_tomislav_sounds" )
+
+		self.parts.wpn_fps_lmg_gatling_gun_body.supported = true
+		self.parts.wpn_fps_lmg_gatling_gun_body.keep_damage = true
+		self.parts.wpn_fps_lmg_gatling_gun_body.stats = {
+			value = 0,
+			damage = 6,
+			concealment = -3,
+			total_ammo_mod = -41
+		}
+		self.parts.wpn_fps_lmg_gatling_gun_body.custom_stats = {
+			spin_up_mult = 1.5,
+			ads_speed_mult = 1.5,
+			movement_speed_add = -0.12,
+			sms = 0.88
+		}
+
+		self.parts.wpn_fps_lmg_canton_body.pcs = nil --Can't get this to utilize any alternate bullet base, disabled for now
+		self.parts.wpn_fps_lmg_canton_body.supported = true
+		self.parts.wpn_fps_lmg_canton_body.stats = {
+			value = 0,
+			concealment = -3,
+			total_ammo_mod = -41
+		}
+		table.insert( self.parts.wpn_fps_lmg_canton_body.adds, "wpn_fps_lmg_natascha_sounds" )
+		self.parts.wpn_fps_lmg_canton_ammo.supported = true
+		self.parts.wpn_fps_lmg_canton_ammo.cull = nil
+		self.parts.wpn_fps_lmg_canton_ammo.no_cull = true
+		self.parts.wpn_fps_lmg_canton_ammo.custom_stats = {
+			bullet_class = "FlameBulletBase",
+			ignore_statistic = true,
+			armor_piercing_add = 0.01,
+			trail_effect = "_dmc/effects/nato_trail",
+			fire_dot_data = {
+				dot_damage = 3,
+				dot_trigger_chance = 80,
+				dot_length = 2.1,
+				dot_tick_period = 0.5
+			}
+		}
+	end
+
 	if self.parts.wpn_fps_ass_skspug_rec then --Pawcio's SKS Pug
 
 		self.parts.wpn_fps_ass_skspug_mag.supported = true

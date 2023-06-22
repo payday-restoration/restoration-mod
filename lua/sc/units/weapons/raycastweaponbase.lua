@@ -391,6 +391,8 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 end
 --]]
 
+
+
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
 	local hit_unit = col_ray.unit
 	user_unit = alive(user_unit) and user_unit or nil
@@ -464,7 +466,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 				local was_alive = not hit_dmg_ext:dead()
 				local armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
 				local knock_down = weap_base.is_knock_down and weap_base:is_knock_down()
-				local stagger = weap_base.is_stagger and weap_base:is_stagger()
+				local stagger = (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) or weap_base.is_stagger and weap_base:is_stagger()
 				local variant = weap_base.variant and weap_base:variant()
 
 				result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)

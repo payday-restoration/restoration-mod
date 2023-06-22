@@ -91,6 +91,9 @@ tweak_data.smg = {
 		moving_spread_mult = 8.3333,
 		hipfire_spread_mult = 3.8889
 	}
+		tweak_data.sasha = {
+			hipfire_spread_mult = 0.65
+		}
 
 tweak_data.snp = {
 	swap_bonus = 1,

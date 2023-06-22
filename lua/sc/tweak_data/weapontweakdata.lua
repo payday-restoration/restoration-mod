@@ -17189,7 +17189,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mg34.AMMO_MAX = 160
 		self.mg34.kick = self.stat_info.kick_tables.vertical_kick
 		self.mg34.always_use_standing = true
-		self.mg34.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.mg34.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 		self.mg34.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 		self.mg34.supported = true
 		self.mg34.ads_speed = 0.580
@@ -17214,8 +17214,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.mg34.stats_modifiers = nil
 		self.mg34.panic_suppression_chance = 0.05
+		self.mg34.weapon_movement_penalty = sms_preset.lmg_90
 		self.mg34.sms = sms_preset.lmg_90
-		self.mg34.weapon_movement_penalty = 0.75
 		self.mg34.sounds.spin_start = "wp_mg42_lever_release"
 		self.mg34.spin_up_shoot = true
 		self.mg34.spin_up_t = 0.07
@@ -17223,6 +17223,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mg34.reload_speed_multiplier = 1
 		self.mg34.timers.reload_exit_empty = 1.65
 		self.mg34.timers.reload_exit_not_empty = 1.65
+	end	
+
+	if self.sasha then -- Silent Enforcer's TF2 Minigun
+		self.sasha.recategorize = { "miniguns" }
+		self.sasha.categories = {
+			"minigun",
+			"smg",
+			"sasha"
+		}
+		self.sasha.damage_type = "machine_gun"
+		self.sasha.CLIP_AMMO_MAX = 200
+		self.sasha.BURST_FIRE = false
+		self.sasha.fire_mode_data.fire_rate = 0.105
+		self.sasha.AMMO_MAX = 500
+		self.sasha.kick = self.stat_info.kick_tables.vertical_kick
+		self.sasha.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.sasha.supported = true
+		self.sasha.sprintout_anim_time = 0.8 
+		self.sasha.ads_speed = 0.400
+		self.sasha.damage_falloff = {
+			ignore_rays = true,
+			start_dist = 190.5,
+			end_dist = 1950,
+			min_mult = 0.5
+		}
+		self.sasha.stats = {
+			damage = 24,
+			spread = 16,
+			recoil = 81,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 15,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.sasha.stats_modifiers = nil
+		self.sasha.fire_mode_data.fire_rate = 0.105
+		self.sasha.panic_suppression_chance = 0.05
+		self.sasha.object_damage_mult = 0.8
+		self.sasha.ads_spool = true
+		self.sasha.spin_up_t = 0.87
+		self.sasha.spin_down_t = 1
+		self.sasha.spin_up_shoot = nil
+		self.sasha.spin_up_anims = true
+		self.sasha.always_hipfire = true
+		self.sasha.weapon_movement_penalty = sms_preset.mini_40
+		self.sasha.sms = sms_preset.mini_40
+		self.sasha.reload_speed_multiplier = 2
+		self.sasha.sounds.spin_start = "turret_spin_start"
+		self.sasha.sounds.spin_end = "turret_spin_stop"
 	end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
@@ -17452,7 +17506,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			--Roughly normalizes swap speeds before additional modifiers are in play
 			if not weap.swap_speed_multiplier then
-				weap.desired_swap_time = 1.4
+				weap.desired_swap_time = 1.3
 				self:get_swap_speed_multiplier(weap)
 			end
 

@@ -1610,7 +1610,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--TF2 Minigun
 			["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
 			["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
-			["bm_wp_wpn_fps_lmg_tomislav_body_desc"] = "",
+			["bm_wp_wpn_fps_lmg_tomislav_body_desc"] = "#{skill_color}#Speeds up spin-up time by 20%.##",
 			["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Staggers enemies up to 9.75 meters away.##\n#{risk}#(Stagger range cannot be modified)##\n#{important_1}#Slows spin-up time by 30%.##",
 			["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Slows spin-up time by 50%.##",
 			["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",

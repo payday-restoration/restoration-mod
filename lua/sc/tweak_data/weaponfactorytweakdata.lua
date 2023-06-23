@@ -1626,6 +1626,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--TAC Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip = {
 		pcs = {},
+		has_description = true,
+		desc_id = "",
 		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_tac",
@@ -1644,6 +1646,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--Stubby Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby = {
 		pcs = {},
+		has_description = true,
+		desc_id = "",
 		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_stubby",
@@ -1662,6 +1666,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--AFG
 	self.parts.wpn_fps_upg_vg_ass_smg_afg = {
 		pcs = {},
+		has_description = true,
+		desc_id = "",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_afg",
 		a_obj = "a_vg",
@@ -6144,14 +6150,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
 		
 	--Chimano 88 Part Additions
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_g_ergo")
-	table.insert(self.wpn_fps_pis_g17_npc.uses_parts, "wpn_fps_pis_g18c_g_ergo")
-
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_g17_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
-
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_g17_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 
+	self.wpn_fps_pis_g17_npc.override = deep_clone(self.wpn_fps_pis_g17.override)
 	self.wpn_fps_pis_g17_npc.uses_parts = deep_clone(self.wpn_fps_pis_g17.uses_parts)
 		
 end)
@@ -13102,9 +13104,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	}
 
 	--Disabling Vertical Grip mods (they don't fit)
-	self.wpn_fps_smg_polymer.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
-	self.wpn_fps_smg_polymer.uses_parts[26] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
-	self.wpn_fps_smg_polymer.uses_parts[27] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"
+	for i, part_id in pairs(self.wpn_fps_smg_polymer.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_afg",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip",
+			"wpn_fps_upg_vg_ass_smg_stubby"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_polymer.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
 
 	table.insert(self.wpn_fps_smg_polymer.uses_parts, "wpn_fps_smg_mac10_s_no")	
 
@@ -15305,9 +15316,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_lemming", "resmod_lemming", functi
 	self.wpn_fps_pis_lemming.override.wpn_fps_pis_g18c_co_1 = {parent = "barrel", a_obj = "a_ns"}
 	
 	table.insert(self.wpn_fps_pis_lemming.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_lemming_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
 	table.insert(self.wpn_fps_pis_lemming.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_lemming_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 
 	self.wpn_fps_pis_lemming_npc.uses_parts = deep_clone(self.wpn_fps_pis_lemming.uses_parts)		
 	
@@ -31952,6 +31961,51 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 				table.insert(self.parts[part_id].forbids, "wpn_fps_upg_a_rip")
 			end
+		end
+	end
+
+	local felony = {
+		"wpn_fps_pis_maxim9",
+		"wpn_fps_pis_lemming",
+		"wpn_fps_pis_g18c",
+		"wpn_fps_pis_g17",
+		"wpn_fps_pis_pl14",
+		"wpn_fps_pis_holt",
+		"wpn_fps_pis_packrat",
+		"wpn_fps_pis_hs2000",
+		"wpn_fps_pis_p226",
+		"wpn_fps_pis_g22c",
+		"wpn_fps_pis_1911",
+		"wpn_fps_pis_m1911"
+	}
+
+	for u, factory_id in ipairs(felony) do
+		table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+		table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+
+		self[factory_id].override = self[factory_id].override or {}
+		self[factory_id].override.wpn_fps_upg_vg_ass_smg_verticalgrip = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
+		self[factory_id].override.wpn_fps_upg_vg_ass_smg_stubby = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
+
+		self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+		self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+
+		for part_id, i in pairs(self[factory_id].override) do
+			attachment_list = {
+				"wpn_fps_upg_vg_ass_smg_verticalgrip",
+				"wpn_fps_upg_vg_ass_smg_stubby"
+			}
+
+			for _, override_id in ipairs(attachment_list) do
+				if part_id == override_id then	
+					for k, uses_part_id in pairs(self[factory_id].uses_parts) do
+						if self.parts[uses_part_id] and self.parts[uses_part_id].type and self.parts[uses_part_id].type == "gadget" then
+							table.insert(self[factory_id].override[override_id].forbids, uses_part_id)
+						end 
+					end
+				end
+			end
+
 		end
 	end
 

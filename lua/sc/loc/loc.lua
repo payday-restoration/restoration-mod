@@ -1186,6 +1186,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
 
+		["fucktheatf"] = "That's a felon.",
+
 		["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
 
 		["bm_wp_upg_flash_hider"] = "#{skill_color}#Hides muzzle flash## and #{risk}#reduces the chance of enemies evading your aim.##",

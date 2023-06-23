@@ -31996,7 +31996,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		"wpn_fps_pis_2006m",
 		"wpn_fps_pis_korth",
-		"wpn_fps_pis_deagle"
+		"wpn_fps_pis_deagle",
+
+		"wpn_fps_pis_rsh12",
+
+		"wpn_fps_smg_baka",
+		"wpn_fps_smg_pm9",
+		"wpn_fps_smg_scorpion"
 	}
 
 	for u, factory_id in ipairs(felony) do

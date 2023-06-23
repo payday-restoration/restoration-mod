@@ -19541,6 +19541,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_korth", "resmod_korth", function(s
 			recoil = 2
 	}
 	self.parts.wpn_fps_pis_korth_b_railed.stance_mod = {}
+	self.parts.wpn_fps_pis_korth_b_railed.forbids = {
+		"wpn_fps_upg_vg_ass_smg_stubby",
+		"wpn_fps_upg_vg_ass_smg_verticalgrip"
+	}
 	self.parts.wpn_fps_pis_korth_b_railed.override = {
 		wpn_fps_upg_fl_pis_m3x = {
 			a_obj = "a_fl_2"
@@ -31967,45 +31971,67 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	local felony = {
 		"wpn_fps_pis_maxim9",
 		"wpn_fps_pis_lemming",
+
 		"wpn_fps_pis_g18c",
+		"wpn_fps_pis_stech",
+
+		"wpn_fps_pis_ppk",
+		"wpn_fps_pis_g26",
+		"wpn_fps_pis_legacy",
+		"wpn_fps_pis_beretta",
 		"wpn_fps_pis_g17",
 		"wpn_fps_pis_pl14",
 		"wpn_fps_pis_holt",
 		"wpn_fps_pis_packrat",
+
 		"wpn_fps_pis_hs2000",
+		"wpn_fps_pis_sparrow",
 		"wpn_fps_pis_p226",
 		"wpn_fps_pis_g22c",
+
+		"wpn_fps_pis_usp",
 		"wpn_fps_pis_1911",
-		"wpn_fps_pis_m1911"
+		"wpn_fps_pis_m1911",
+		"wpn_fps_pis_shrew",
+
+		"wpn_fps_pis_2006m",
+		"wpn_fps_pis_korth",
+		"wpn_fps_pis_deagle"
 	}
 
 	for u, factory_id in ipairs(felony) do
-		table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
-		table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
-
-		self[factory_id].override = self[factory_id].override or {}
-		self[factory_id].override.wpn_fps_upg_vg_ass_smg_verticalgrip = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
-		self[factory_id].override.wpn_fps_upg_vg_ass_smg_stubby = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
-
-		self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-		self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-
-		for part_id, i in pairs(self[factory_id].override) do
-			attachment_list = {
-				"wpn_fps_upg_vg_ass_smg_verticalgrip",
-				"wpn_fps_upg_vg_ass_smg_stubby"
-			}
-
-			for _, override_id in ipairs(attachment_list) do
-				if part_id == override_id then	
-					for k, uses_part_id in pairs(self[factory_id].uses_parts) do
-						if self.parts[uses_part_id] and self.parts[uses_part_id].type and self.parts[uses_part_id].type == "gadget" then
-							table.insert(self[factory_id].override[override_id].forbids, uses_part_id)
-						end 
+		if self[factory_id] then
+			table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+			table.insert(self[factory_id].uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	
+			self[factory_id].override = self[factory_id].override or {}
+			self[factory_id].override.wpn_fps_upg_vg_ass_smg_verticalgrip = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
+			self[factory_id].override.wpn_fps_upg_vg_ass_smg_stubby = {a_obj = "a_fl", forbids = {}, desc_id = "fucktheatf"}
+	
+			if self[factory_id].adds and self[factory_id].adds.wpn_fps_upg_fl_pis_laser then
+				self[factory_id].adds.wpn_fps_upg_vg_ass_smg_verticalgrip = deep_clone(self[factory_id].adds.wpn_fps_upg_fl_pis_laser)
+				self[factory_id].adds.wpn_fps_upg_vg_ass_smg_stubby = deep_clone(self[factory_id].adds.wpn_fps_upg_fl_pis_laser)
+			end
+	
+			self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+			self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+	
+			for part_id, i in pairs(self[factory_id].override) do
+				attachment_list = {
+					"wpn_fps_upg_vg_ass_smg_verticalgrip",
+					"wpn_fps_upg_vg_ass_smg_stubby"
+				}
+	
+				for _, override_id in ipairs(attachment_list) do
+					if part_id == override_id then	
+						for k, uses_part_id in pairs(self[factory_id].uses_parts) do
+							if self.parts[uses_part_id] and self.parts[uses_part_id].type and self.parts[uses_part_id].type == "gadget" then
+								table.insert(self[factory_id].override[override_id].forbids, uses_part_id)
+							end 
+						end
 					end
 				end
 			end
-
 		end
 	end
 

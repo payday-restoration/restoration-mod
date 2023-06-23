@@ -12389,6 +12389,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		reload = -6,
 		concealment = -5
 	}
+
+	for i, part_id in pairs(self.wpn_fps_sho_aa12.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_singlefire",
+			"wpn_fps_upg_i_autofire"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_sho_aa12.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
 	
 	--Override tables
 	self.wpn_fps_sho_aa12.override = {
@@ -12400,6 +12412,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		wpn_fps_upg_a_piercing = a_piercing_semi_override,
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
+	
 end)
 
 --Peacemaker

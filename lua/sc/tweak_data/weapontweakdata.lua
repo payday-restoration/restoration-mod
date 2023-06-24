@@ -4478,6 +4478,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.beer.desc_id = "bm_beer_sc_desc"				
 				self.beer.use_data.selection_index = 2
 				self.beer.BURST_FIRE = 3
+				self.beer.BURST_DELAY = 0.04
 				self.beer.BURST_FIRE_DEFAULT = true
 				self.beer.BURST_FIRE_RATE_MULTIPLIER = 1.7647058823
 				self.beer.ADAPTIVE_BURST_SIZE = false		
@@ -5540,12 +5541,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.c96.stats_modifiers = nil
-				self.c96.timers.reload_not_empty = 3.7
+				self.c96.timers.reload_empty = 3.9
 				self.c96.timers.reload_exit_empty = 0.6
 				self.c96.timers.reload_not_empty = 2.7
 				self.c96.timers.reload_exit_not_empty = 1.9
 				self.c96.panic_suppression_chance = 0.05
-				self.c96.reload_speed_multiplier = 1.5
+				self.c96.reload_speed_multiplier = 1.6
 
 			--Cavity 9mm
 				self.sub2000.has_description = true

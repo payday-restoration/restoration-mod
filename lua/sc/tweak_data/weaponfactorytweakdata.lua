@@ -10482,7 +10482,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 		regen_ammo_time = 2, 
 		regen_rate = 3,
 		overheat_pen = 2, 
-		regen_rate_overheat = 2,
+		regen_rate_overheat = 1.5,
 		rof_mult = 0.35,
 		armor_piercing_override = 0.8
 

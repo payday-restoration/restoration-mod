@@ -299,6 +299,7 @@ local ignored_groups = {
 	"Phalanx_sniper",
 	"Cap_Spring",
 	"Tank_Ben",
+	"OMNIA_Taser",
 	"Taser_Titan",
 	"Cap_Summers",
 	"medic_summers",
@@ -309,7 +310,9 @@ local ignored_groups = {
 	"Titan_Spooc",
 	"HVH_Boss",
 	"HVH_Boss_Headless",
-	"HVH_Boss_Spooc"
+	"HVH_Boss_Headless_White",
+	"HVH_Boss_Spooc",
+	"HVH_Boss_Spooc_Normal"
 }
 
 function MutatorEnemyReplacer:modify_unit_categories(group_ai_tweak, difficulty_index)

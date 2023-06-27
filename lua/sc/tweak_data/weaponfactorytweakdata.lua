@@ -41,7 +41,6 @@ local sight_hamr_rds_offset = {
 local barrels = {
 	--Short Barrel
 	--barrels.short_b1_stats
-	--barrels.short_b1_stats
 		short_b1_stats = {
 			value = 2,
 			spread = -1,
@@ -52,7 +51,6 @@ local barrels = {
 		},
 	--Shorter Barrel
 	--barrels.short_b2_stats
-	--barrels.short_b2_stats
 		short_b2_stats = {
 			value = 2,
 			spread = -2,
@@ -62,7 +60,6 @@ local barrels = {
 			ads_speed_mult = 0.95
 		},
 	--Shortest Barrel
-	--barrels.short_b3_stats
 	--barrels.short_b3_stats
 		short_b3_stats = {
 			value = 2,
@@ -75,7 +72,6 @@ local barrels = {
 
 	--Long Barrel
 	--barrels.long_b1_stats
-	--barrels.long_b1_stats
 		long_b1_stats = {
 			value = 2,
 			spread = 1,
@@ -85,7 +81,6 @@ local barrels = {
 			ads_speed_mult = 1.025
 		},
 	--Longer Barrel
-	--barrels.long_b2_stats
 	--barrels.long_b2_stats
 		long_b2_stats = {
 			value = 4,
@@ -28393,6 +28388,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_ass_m16_npc.override = deep_clone(self.wpn_fps_ass_m16.override)
 		self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
+
+		--416c Barrels
+		self.parts.wpn_fps_upg_416_b_264.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_416_b_264.custom_stats = deep_clone(barrels.long_b1_stats)
+
+		self.parts.wpn_fps_upg_416_b_279.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_upg_416_b_279.custom_stats = deep_clone(barrels.long_b2_stats)
+
+		self.parts.wpn_fps_upg_416_b_368.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_upg_416_b_368.custom_stats = deep_clone(barrels.long_b3_stats)
+
+		self.parts.wpn_fps_upg_416_b_419.stats = {
+			value = 8,
+			spread = 4,
+			concealment = -4
+		}
+		self.parts.wpn_fps_upg_416_b_419.custom_stats = {
+			falloff_start_mult = 1.3,
+			falloff_end_mult = 1.3,
+			ads_speed_mult = 1.1
+		}
+
+		self.parts.wpn_fps_upg_416_b_505.stats = {
+			value = 10,
+			spread = 5,
+			concealment = -5
+		}
+		self.parts.wpn_fps_upg_416_b_505.custom_stats = {
+			falloff_start_mult = 1.375,
+			falloff_end_mult = 1.375,
+			ads_speed_mult = 1.125
+		}
+		
 	end
 
 	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets/Tacticals

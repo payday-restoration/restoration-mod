@@ -28420,9 +28420,66 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			falloff_end_mult = 1.375,
 			ads_speed_mult = 1.125
 		}
-		
+
 	end
 
+	if self.parts.wpn_fps_upg_m4_s_ds150 then --FrenchyAU Stocks
+		self.parts.wpn_fps_upg_m4_s_ds150.supported = true
+		self.parts.wpn_fps_upg_m4_s_ds150.stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_ds150.custom_stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_bus.supported = true
+		self.parts.wpn_fps_upg_m4_s_bus.stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_bus.custom_stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_hkslim.supported = true
+		self.parts.wpn_fps_upg_m4_s_hkslim.stats = deep_clone(stocks.adj_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_hkslim.custom_stats = deep_clone(stocks.adj_rec_stats)
+
+		self.parts.wpn_fps_upg_m4_s_hke1.supported = true
+		self.parts.wpn_fps_upg_m4_s_hke1.stats = deep_clone(stocks.adj_hvy_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_hke1.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_gen2.supported = true
+		self.parts.wpn_fps_upg_m4_s_gen2.stats = deep_clone(stocks.adj_hvy_rec_stats)
+		self.parts.wpn_fps_upg_m4_s_gen2.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+
+		self.parts.wpn_fps_upg_m4_s_moe.supported = true
+		self.parts.wpn_fps_upg_m4_s_moe.stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_moe.custom_stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_viper.supported = true
+		self.parts.wpn_fps_upg_m4_s_viper.stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_viper.custom_stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_cmmg.supported = true
+		self.parts.wpn_fps_upg_m4_s_cmmg.stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_cmmg.custom_stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_ddun.supported = true
+		self.parts.wpn_fps_upg_m4_s_ddun.stats = deep_clone(stocks.adj_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_ddun.custom_stats = deep_clone(stocks.adj_acc_stats)
+
+		self.parts.wpn_fps_upg_m4_s_core.supported = true
+		self.parts.wpn_fps_upg_m4_s_core.stats = deep_clone(stocks.adj_hvy_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_core.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+
+		self.parts.wpn_fps_upg_m4_s_a2.supported = true
+		self.parts.wpn_fps_upg_m4_s_a2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_a2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_prs2.supported = true
+		self.parts.wpn_fps_upg_m4_s_prs2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_prs2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_prs3.supported = true
+		self.parts.wpn_fps_upg_m4_s_prs3.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+		self.parts.wpn_fps_upg_m4_s_prs3.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+
+		self.parts.wpn_fps_upg_m4_s_troy.supported = true
+		self.parts.wpn_fps_upg_m4_s_troy.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+		self.parts.wpn_fps_upg_m4_s_troy.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
+
+		self.parts.wpn_fps_upg_m4_s_hera.supported = true
+		self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_adar.supported = true
+		self.parts.wpn_fps_upg_m4_s_adar.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_adar.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+	end
+	
 	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets/Tacticals
 		local gadgets = {
 			'wpn_fps_upg_fl_peq2',

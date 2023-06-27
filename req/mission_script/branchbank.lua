@@ -19,6 +19,10 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 300	
 	end
+	
+	if tweak_data:difficulty_to_index(difficulty) == 8 then
+		bulldozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
+	end
 end
 
 return {

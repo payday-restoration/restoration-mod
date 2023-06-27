@@ -1543,7 +1543,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 
-+		--Custom MGs
+		--Custom MGs
 		--TF2 Minigun
 		["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
 		["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",

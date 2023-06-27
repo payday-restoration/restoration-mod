@@ -17264,7 +17264,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sasha.stats_modifiers = nil
-		self.sasha.fire_mode_data.fire_rate = 0.105
 		self.sasha.panic_suppression_chance = 0.05
 		self.sasha.object_damage_mult = 0.8
 		self.sasha.ads_spool = true
@@ -17278,6 +17277,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sasha.reload_speed_multiplier = 2
 		self.sasha.sounds.spin_start = "turret_spin_start"
 		self.sasha.sounds.spin_end = "turret_spin_stop"
+	end
+
+	if self.abzats then
+		self.abzats.recategorize = { "break_shot" }
+		self.abzats.categories = {
+			"shotgun"
+		}
+		self.abzats.damage_type = "shotgun_heavy"
+		self.abzats.CLIP_AMMO_MAX = 10
+		self.abzats.BURST_FIRE = false
+		self.abzats.fire_mode_data.fire_rate = 0.2571428
+		self.abzats.AMMO_MAX = 40
+		self.abzats.kick = self.stat_info.kick_tables.vertical_kick
+		self.abzats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.abzats.rays = 9
+		self.abzats.supported = true
+		self.abzats.ads_speed = 0.500
+		self.abzats.damage_falloff = {
+			start_dist = 300,
+			end_dist = 2100,
+			min_mult = 0.25
+		}
+		self.abzats.stats = {
+			damage = 90,
+			spread = 11,
+			recoil = 51,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 17,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.abzats.stats_modifiers = nil
+		self.abzats.panic_suppression_chance = 0.05
+		self.abzats.object_damage_mult = 0.75
+		self.abzats.sounds.spin_start = "wp_m249_lever_release"
+		self.abzats.spin_up_t = 0.12
+		self.abzats.spin_down_t = 0.00000001
+		self.abzats.spin_up_shoot = true
+		self.abzats.always_hipfire = true
+		self.abzats.reload_speed_multiplier = 0.85
+		self.abzats.timers.reload_exit_empty = 1.2
+		self.abzats.timers.reload_exit_not_empty = 1.2
+		self.abzats.always_play_anims = true
+		self.abzats.weapon_movement_penalty = nil
+		self.abzats.sms = nil
 	end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

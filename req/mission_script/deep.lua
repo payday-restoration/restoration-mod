@@ -14,7 +14,7 @@ return {
 		{ id = 103338, delay = 0 },
 		{ id = 103992, delay = 0 },
 		{ id = 104949, delay = 0 },
-		{ id = 101623, delay = 299,8 },
+		{ id = 101623, delay = 299.8 },
 		{ id = 100618, delay = 0 }
 		}
 	}

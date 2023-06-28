@@ -1664,7 +1664,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 		8
 	}
 	self.deep_boss.detection = presets.detection.normal
-	self.deep_boss.HEALTH_INIT = 1000
+	self.deep_boss.HEALTH_INIT = 750
 	self.deep_boss.headshot_dmg_mul = 6.65
 	self.deep_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.deep_boss.damage.explosion_damage_mul = 0.5

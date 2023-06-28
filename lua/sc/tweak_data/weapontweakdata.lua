@@ -5805,7 +5805,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.animations.has_steelsight_stance = true
 				self.x_deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.x_deagle.supported = true
-				self.x_deagle.ads_speed = 0.280
+				self.x_deagle.ads_speed = 0.260
 				self.x_deagle.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 4200,
@@ -5845,7 +5845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.rsh12.sounds.fire2 = "b682_fire"
 				--end
 				self.rsh12.supported = true
-				self.rsh12.ads_speed = 0.280
+				self.rsh12.ads_speed = 0.220
 				self.rsh12.damage_falloff = {
 					start_dist = 2700,
 					end_dist = 5200,
@@ -6286,7 +6286,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.deagle.no_auto_anims = true
 				self.deagle.supported = true
-				self.deagle.ads_speed = 0.280
+				self.deagle.ads_speed = 0.260
 				self.deagle.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 4200,
@@ -10630,6 +10630,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.animations.reload_name_id = "x_judge"
 				self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
 				self.x_judge.animations.second_gun_versions.reload = "reload"
+				self.x_judge.sounds.fire = "judge_fire"
+				self.x_judge.sounds.fire_single = "judge_fire"
 				self.x_judge.timers.reload_empty = 3.1
 				self.x_judge.timers.reload_not_empty = 3.1
 				self.x_judge.timers.reload_exit_empty = 1.3
@@ -12689,7 +12691,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.CLIP_AMMO_MAX = 5
 		self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
 		self.shatters_fury.supported = true
-		self.shatters_fury.ads_speed = 0.280
+		self.shatters_fury.ads_speed = 0.220
 		self.shatters_fury.damage_falloff = {
 			start_dist = 3500,
 			end_dist = 6000,
@@ -16293,6 +16295,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.timers.reload_empty = 3.05
 		self.m4_usasoc.timers.reload_exit_not_empty = 1.15
 		self.m4_usasoc.timers.reload_not_empty = 2.4
+	end
+
+	if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
+		self.swhiskey.recategorize = { "heavy_pis", "handcannon" }
+		self.swhiskey.damage_type = "heavy_pistol"
+		self.swhiskey.fire_mode_data.fire_rate = 0.4195804
+		self.swhiskey.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.swhiskey.AMMO_MAX = 20
+		self.swhiskey.CLIP_AMMO_MAX = 5
+		self.swhiskey.kick = self.stat_info.kick_tables.vertical_kick
+		self.swhiskey.supported = true
+		self.swhiskey.ads_speed = 0.160
+		self.swhiskey.damage_falloff = {
+			start_dist = 3500,
+			end_dist = 4200,
+			min_mult = 0.26666
+		}
+		self.swhiskey.stats = {
+			damage = 90,
+			spread = 81,
+			recoil = 25,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 23,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.swhiskey.stats_modifiers = nil
+		self.swhiskey.panic_suppression_chance = 0.05
+		self.swhiskey.can_shoot_through_enemy = true
+		self.swhiskey.can_shoot_through_shield = true
+		self.swhiskey.can_shoot_through_wall = true
+		self.swhiskey.sounds.stop_fire = "judge_x_fire"
+		self.swhiskey.reload_speed_multiplier = 0.9
+		self.swhiskey.armor_piercing_chance = 1
+		self.swhiskey.object_damage_mult = 2
+		self.swhiskey.timers.reload_exit_empty = 0.55
+		self.swhiskey.timers.reload_empty = 2.93
+		self.swhiskey.timers.reload_exit_not_empty = 0.55
+		self.swhiskey.timers.reload_not_empty = 2.93
 	end
 
 	--RJC9000 and PlayBONK's MW2022 AKs

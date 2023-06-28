@@ -28424,6 +28424,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_upg_m4_s_ds150 then --FrenchyAU Stocks
+		--Rec. Stocks
 		self.parts.wpn_fps_upg_m4_s_ds150.supported = true
 		self.parts.wpn_fps_upg_m4_s_ds150.stats = deep_clone(stocks.adj_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_ds150.custom_stats = deep_clone(stocks.adj_rec_stats)
@@ -28434,6 +28435,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_s_hkslim.stats = deep_clone(stocks.adj_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_hkslim.custom_stats = deep_clone(stocks.adj_rec_stats)
 
+		--Heavy Rec. Stocks
 		self.parts.wpn_fps_upg_m4_s_hke1.supported = true
 		self.parts.wpn_fps_upg_m4_s_hke1.stats = deep_clone(stocks.adj_hvy_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_hke1.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
@@ -28441,6 +28443,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_s_gen2.stats = deep_clone(stocks.adj_hvy_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_gen2.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
 
+		--Acc. Stocks
 		self.parts.wpn_fps_upg_m4_s_moe.supported = true
 		self.parts.wpn_fps_upg_m4_s_moe.stats = deep_clone(stocks.adj_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_moe.custom_stats = deep_clone(stocks.adj_acc_stats)
@@ -28454,10 +28457,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_s_ddun.stats = deep_clone(stocks.adj_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_ddun.custom_stats = deep_clone(stocks.adj_acc_stats)
 
+		--Heavy Acc. Stocks
 		self.parts.wpn_fps_upg_m4_s_core.supported = true
 		self.parts.wpn_fps_upg_m4_s_core.stats = deep_clone(stocks.adj_hvy_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_core.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 
+		--Fixed Stocks
 		self.parts.wpn_fps_upg_m4_s_a2.supported = true
 		self.parts.wpn_fps_upg_m4_s_a2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_a2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
@@ -28468,18 +28473,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_s_prs3.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 		self.parts.wpn_fps_upg_m4_s_prs3.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 
+		--Retractable Stocks
 		self.parts.wpn_fps_upg_m4_s_troy.supported = true
 		self.parts.wpn_fps_upg_m4_s_troy.stats = deep_clone(stocks.adj_to_nocheeks_stats)
 		self.parts.wpn_fps_upg_m4_s_troy.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 
+		--Thumbhole Stocks
 		self.parts.wpn_fps_upg_m4_s_hera.supported = true
 		self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
 		self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
 		self.parts.wpn_fps_upg_m4_s_adar.supported = true
 		self.parts.wpn_fps_upg_m4_s_adar.stats = deep_clone(stocks.adj_to_to_thumb_stats)
 		self.parts.wpn_fps_upg_m4_s_adar.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+
 	end
-	
+
 	if self.parts.wpn_fps_upg_fl_mawl then --FrenchyAU Gadgets/Tacticals
 		local gadgets = {
 			'wpn_fps_upg_fl_peq2',
@@ -31689,6 +31697,85 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
+	if self.parts.wpn_fps_pis_swhiskey_trigger_heavy then --RJC9000 and PlayBONK's MW2022 SW500
+		--Triggers
+		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.supported = true
+		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.stats = { spread = 1 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.custom_stats = { ads_speed_mult = 0.925 , rof_mult = 0.9 }
+		
+		self.parts.wpn_fps_pis_swhiskey_trigger_hair.supported = true
+		self.parts.wpn_fps_pis_swhiskey_trigger_hair.stats = { recoil = -6, spread = -3 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_hair.custom_stats = { rof_mult = 1.15 }
+		
+		self.parts.wpn_fps_pis_swhiskey_trigger_light.supported = true
+		self.parts.wpn_fps_pis_swhiskey_trigger_light.stats = { recoil = -2, spread = 1 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_light.custom_stats = { rof_mult = 1.05 }
+
+		--Barrels
+		self.parts.wpn_fps_pis_swhiskey_barrel_heavy_long.supported = true
+		self.parts.wpn_fps_pis_swhiskey_barrel_heavy_long.stats = { recoil = 4, concealment = -2}
+		self.parts.wpn_fps_pis_swhiskey_barrel_heavy_long.custom_stats = { ads_speed_mult = 1.15 }
+
+		self.parts.wpn_fps_pis_swhiskey_barrel_light.supported = true
+		self.parts.wpn_fps_pis_swhiskey_barrel_light.stats = { recoil = -2, concealment = 2, spread = -1}
+		self.parts.wpn_fps_pis_swhiskey_barrel_light.custom_stats = { ads_speed_mult = 0.95 }
+
+		self.parts.wpn_fps_pis_swhiskey_barrel_long.supported = true
+		self.parts.wpn_fps_pis_swhiskey_barrel_long.stats = { recoil = -2, concealment = -3, spread = 5}
+		self.parts.wpn_fps_pis_swhiskey_barrel_long.custom_stats = { 
+			ads_speed_mult = 1.45,
+			falloff_start_mult = 1.3,
+			falloff_end_mult = 1.3,
+			hip_mult = 2
+		}
+
+		self.parts.wpn_fps_pis_swhiskey_barrel_mini.supported = true
+		self.parts.wpn_fps_pis_swhiskey_barrel_mini.stats = { recoil = -4, concealment = 3, spread = -2}
+		self.parts.wpn_fps_pis_swhiskey_barrel_mini.custom_stats = { 
+			ads_speed_mult = 0.875,
+			falloff_start_mult = 0.85,
+			falloff_end_mult = 0.85
+		}
+
+		self.parts.wpn_fps_pis_swhiskey_barrel_short.supported = true
+		self.parts.wpn_fps_pis_swhiskey_barrel_short.stats = { concealment = 1, spread = -1}
+		self.parts.wpn_fps_pis_swhiskey_barrel_short.custom_stats = { 
+			ads_speed_mult = 0.925,
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 0.9
+		}
+
+		--Optic
+		self.parts.wpn_fps_pis_swhiskey_scope.supported = true
+		self.parts.wpn_fps_pis_swhiskey_scope.desc_id = "bm_wp_upg_o_4"
+		self.parts.wpn_fps_pis_swhiskey_scope.stats = { zoom = 30 }
+		self.parts.wpn_fps_pis_swhiskey_scope.custom_stats = { 
+			ads_speed_mult = 1.625
+		}
+
+		--Lasers
+		self.parts.wpn_fps_pis_swhiskey_laser01.supported = true
+		self.parts.wpn_fps_pis_swhiskey_laser01.stats = { concealment = -1 }
+		self.parts.wpn_fps_pis_swhiskey_laser01.custom_stats = { 
+			ads_speed_mult = 0.95
+		}
+
+		self.parts.wpn_fps_pis_swhiskey_laser03.supported = true
+		self.parts.wpn_fps_pis_swhiskey_laser03.stats = { concealment = -1, recoil = 2 }
+
+		--Grips
+		self.parts.wpn_fps_pis_swhiskey_grip_ass.supported = true
+		self.parts.wpn_fps_pis_swhiskey_grip_ass.stats = { concealment = 1, recoil = -2 }
+		self.parts.wpn_fps_pis_swhiskey_grip_ass.custom_stats = { ads_speed_mult = 0.975 }
+
+		self.parts.wpn_fps_pis_swhiskey_grip_tac.supported = true
+		self.parts.wpn_fps_pis_swhiskey_grip_tac.stats = { spread = 1, concealment = -1 }
+		self.parts.wpn_fps_pis_swhiskey_grip_tac.custom_stats = {}
+
+		self.parts.wpn_fps_pis_swhiskey_grip_steady.supported = true
+		self.parts.wpn_fps_pis_swhiskey_grip_steady.stats = { spread = -1, recoil = 2 }
+		self.parts.wpn_fps_pis_swhiskey_grip_steady.custom_stats = {}
+	end
 
 	if self.parts.wpn_fps_lmg_stoner63a_receiver then --RJC9000 and PlayBONK's Stoner 63A
 	end

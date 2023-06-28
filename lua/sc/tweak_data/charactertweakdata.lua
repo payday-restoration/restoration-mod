@@ -1655,6 +1655,71 @@ function CharacterTweakData:_init_triad_boss(presets)
 	table.insert(self._enemy_list, "triad_boss_no_armor")
 end
 
+function CharacterTweakData:_init_deep_boss(presets)
+	self.deep_boss = deep_clone(presets.base)
+	self.deep_boss.experience = {}
+	self.deep_boss.weapon = deep_clone(presets.weapon.good)
+	self.deep_boss.weapon.is_rifle.melee_retry_delay = {
+		7,
+		8
+	}
+	self.deep_boss.detection = presets.detection.normal
+	self.deep_boss.HEALTH_INIT = 2000
+	self.deep_boss.headshot_dmg_mul = 1
+	self.deep_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.deep_boss.damage.explosion_damage_mul = 0.5
+	self.deep_boss.can_be_tased = false
+	self.deep_boss.suppression = nil
+	self.deep_boss.move_speed = presets.move_speed.slow
+	self.deep_boss.allowed_stances = {
+		cbt = true
+	}
+	self.deep_boss.allowed_poses = {
+		stand = true
+	}
+	self.deep_boss.crouch_move = false
+	self.deep_boss.no_equip_anim = true
+	self.deep_boss.no_run_start = true
+	self.deep_boss.no_run_stop = true
+	self.deep_boss.no_retreat = true
+	self.deep_boss.no_arrest = true
+	self.deep_boss.surrender = nil
+	self.deep_boss.ecm_vulnerability = 0
+	self.deep_boss.ecm_hurts = {
+		ears = {
+			max_duration = 0,
+			min_duration = 0
+		}
+	}
+	self.deep_boss.weapon_voice = "3"
+	self.deep_boss.experience.cable_tie = "tie_swat"
+	self.deep_boss.access = "gangster"
+	self.deep_boss.speech_prefix_p1 = "bb"
+	self.deep_boss.speech_prefix_p2 = "n"
+	self.deep_boss.speech_prefix_count = 1
+	self.deep_boss.spawn_sound_event = "Play_gab_deep_11"
+	self.deep_boss.die_sound_event = "Play_gab_deep_15"
+	self.deep_boss.rescue_hostages = false
+	self.deep_boss.priority_shout = "g29"
+	self.deep_boss.bot_priority_shout = "g29"
+	self.deep_boss.melee_weapon = "fists_electric"
+	self.deep_boss.melee_weapon_dmg_multiplier = 2.5
+	self.deep_boss.steal_loot = nil
+	self.deep_boss.calls_in = nil
+	self.deep_boss.chatter = presets.enemy_chatter.no_chatter
+	self.deep_boss.use_radio = nil
+	self.deep_boss.use_animation_on_fire_damage = false
+	self.deep_boss.flammable = false
+	self.deep_boss.immune_to_knock_down = true
+	self.deep_boss.immune_to_concussion = true
+	self.deep_boss.can_reload_while_moving_tmp = true
+	self.deep_boss.ignore_headshot = true
+	self.deep_boss.no_headshot_add_mul = true
+	self.deep_boss.player_health_scaling_mul = 1.1
+
+	table.insert(self._enemy_list, "deep_boss")
+end
+
 function CharacterTweakData:_init_snowman_boss(presets)
 	self.snowman_boss = deep_clone(self.tank)
 	self.snowman_boss.experience = {}

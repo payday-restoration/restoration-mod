@@ -35,6 +35,7 @@ local mvec3_dis_sq = mvector3.distance_sq
 local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
 
+--[[
 Hooks:PostHook(ContourExt, "init", "res_init", function(self)
 	if self._contour_list and not next(self._contour_list) then
 		self._contour_list = nil -- why define this as an empty table when every function checks it's not nil to figure out if there's a contour active...
@@ -441,3 +442,5 @@ function ContourExt:update_materials()
 		self:_upd_opacity(opacity, true) -- opacity also updates colour
 	end
 end
+
+--]]

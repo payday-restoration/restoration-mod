@@ -9210,7 +9210,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 			local weapon_id = peepee(factory_id)
 			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
 
-				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") or table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") then
+				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") or 
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
 					self[ factory_id ].override = self[ factory_id ].override or {}
 					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 						stats = {value = 1, concealment = 1, spread = -1},
@@ -28423,7 +28425,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-	if self.parts.wpn_fps_upg_m4_s_ds150 then --FrenchyAU Stocks
+	if self.parts.wpn_fps_upg_m4_s_ds150 then --FrenchyAU Tacticool Stocks
 		--Rec. Stocks
 		self.parts.wpn_fps_upg_m4_s_ds150.supported = true
 		self.parts.wpn_fps_upg_m4_s_ds150.stats = deep_clone(stocks.adj_rec_stats)
@@ -28434,6 +28436,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m4_s_hkslim.supported = true
 		self.parts.wpn_fps_upg_m4_s_hkslim.stats = deep_clone(stocks.adj_rec_stats)
 		self.parts.wpn_fps_upg_m4_s_hkslim.custom_stats = deep_clone(stocks.adj_rec_stats)
+
 
 		--Heavy Rec. Stocks
 		self.parts.wpn_fps_upg_m4_s_hke1.supported = true
@@ -32118,28 +32121,174 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_crane") then
 				attachment_list = {
 					"wpn_fps_snp_victor_s_mod0",
 
-					"wpn_fps_upg_ar47_s_mod0_pad"
+					--Custom Stocks
+					"wpn_fps_upg_ar47_s_mod0_pad",
+					"wpn_fps_upg_m4_s_ds150",
+					"wpn_fps_upg_m4_s_bus",
+					"wpn_fps_upg_m4_s_hkslim"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
-						table.insert(self[factory_id].uses_parts, part_id)
-						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+					if self.parts[part_id] then
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_crane then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_crane)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") and not table.contains(self.	parts[used_part_id].forbids, part_id)  then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
 					end
-					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_crane then
-						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_crane)
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_ubr") then
+				attachment_list = {
+
+					--Custom Stocks
+					"wpn_fps_upg_m4_s_hke1",
+					"wpn_fps_upg_m4_s_gen2"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self.parts[part_id] then
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_ubr then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_ubr)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_ubr") and not table.contains(self.	parts[used_part_id].forbids, part_id)  then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+			end
+
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_pts") then
+				attachment_list = {
+					"wpn_fps_sho_sko12_stock",
+
+					--Custom Stocks
+					"wpn_fps_upg_m4_s_moe",
+					"wpn_fps_upg_m4_s_viper",
+					"wpn_fps_upg_m4_s_cmmg",
+					"wpn_fps_upg_m4_s_ddun"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self.parts[part_id] then
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_pts then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_pts") and not table.contains(self.parts	[used_part_id].forbids, part_id)  then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+			end
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_snp_tti_s_vltor") then
+				attachment_list = {
+
+					--Custom Stocks
+					"wpn_fps_upg_m4_s_core"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self.parts[part_id] then
+						if not table.contains(self[factory_id].uses_parts, part_id) then
+							table.insert(self[factory_id].uses_parts, part_id)
+							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+						end
+						if self[factory_id].override and self[factory_id].override.wpn_fps_snp_tti_s_vltor then
+							self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_snp_tti_s_vltor)
+							self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+						end
+						for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+							if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_snp_tti_s_vltor") and not table.contains(self.parts	[used_part_id].forbids, part_id)  then
+								table.insert(self.parts[used_part_id].forbids, part_id)
+							end
+						end
+					end
+				end
+			end
+
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_hera") then
+				attachment_list = {
+
+					--Custom Stocks
+					--"wpn_fps_upg_m4_s_hera",
+					"wpn_fps_upg_m4_s_adar"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_hera then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_hera)
 						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
-						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_hera") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
 							table.insert(self.parts[used_part_id].forbids, part_id)
 						end
 					end
 				end
 			end
+
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_ass_contraband_s_tecci") then
+				attachment_list = {
+
+					--Custom Stocks
+					"wpn_fps_upg_m4_s_troy"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self[factory_id].override and self[factory_id].override.wpn_fps_ass_contraband_s_tecci then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_ass_contraband_s_tecci)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_ass_contraband_s_tecci") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
+				end
+			end
+			
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_ass_m16_s_fixed") then
+				attachment_list = {
+
+					--Custom Stocks
+					"wpn_fps_upg_m4_s_a2",
+					"wpn_fps_upg_m4_s_prs2",
+					"wpn_fps_upg_m4_s_prs3"
+				}
+				for _, part_id in ipairs(attachment_list) do
+					if self[factory_id].override and self[factory_id].override.wpn_fps_ass_m16_s_fixed then
+						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_ass_m16_s_fixed)
+						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
+					end
+					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_ass_m16_s_fixed") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
+							table.insert(self.parts[used_part_id].forbids, part_id)
+						end
+					end
+				end
+			end
+
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_m4_uupg_s_fold") then
 				attachment_list = {
 					"wpn_fps_m4_uupg_s_zulu"
@@ -32150,32 +32299,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
 					end
 					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
-						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_crane") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
+						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_m4_uupg_s_fold") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
 							table.insert(self.parts[used_part_id].forbids, part_id)
 						end
 					end
 				end
 			end
-			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_pts") then
-				attachment_list = {
-					"wpn_fps_sho_sko12_stock"
-				}
-				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
-						table.insert(self[factory_id].uses_parts, part_id)
-						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-					end
-					if self[factory_id].override and self[factory_id].override.wpn_fps_upg_m4_s_pts then
-						self[factory_id].override[part_id] = deep_clone(self[factory_id].override.wpn_fps_upg_m4_s_pts)
-						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
-					end
-					for k, used_part_id in ipairs(self[factory_id].uses_parts) do
-						if self.parts[used_part_id] and self.parts[used_part_id].forbids and table.contains(self.parts[used_part_id].forbids, "wpn_fps_upg_m4_s_pts") and not table.contains(self.parts[used_part_id].forbids, part_id)  then
-							table.insert(self.parts[used_part_id].forbids, part_id)
-						end
-					end
-				end
-			end
+
 			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_m_pmag") then
 				attachment_list = {
 					"wpn_fps_m4_uupg_m_strike"

@@ -538,6 +538,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.trai.ghost_bonus = 0.25
 	--Blaine's Heists goes here--
 	self.corp.ghost_bonus = 0.20
+	self.deep.ghost_bonus = 0.20
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

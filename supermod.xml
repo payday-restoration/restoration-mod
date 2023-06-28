@@ -62,6 +62,14 @@
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2.unit"/>
 				<file :name="ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk.unit"/>
 			</group>
+			<group :name="pd2_dlc_deep/characters/">
+				<file :name="ene_deep_security_1/ene_deep_security_1.material_config"/>
+				<file :name="ene_deep_security_1/ene_deep_security_1_contour.material_config"/>
+				<file :name="ene_deep_security_2/ene_deep_security_2.material_config"/>
+				<file :name="ene_deep_security_2/ene_deep_security_2_contour.material_config"/>
+				<file :name="ene_deep_security_3/ene_deep_security_3.material_config"/>
+				<file :name="ene_deep_security_3/ene_deep_security_3_contour.material_config"/>
+			</group>
 			<group :name="payday2/weapons/wpn_npc_beretta92/">
 				<file :name="wpn_npc_beretta92.object"/>
 			</group>

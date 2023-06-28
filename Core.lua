@@ -386,7 +386,7 @@ function restoration:Init()
 		"dinner",
 		"trai",
 		"corp",
-		"deep",
+		--"deep",
 		--Custom Heists--
 		"tonmapjam22l"
 	}	

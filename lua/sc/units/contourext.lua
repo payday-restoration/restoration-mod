@@ -30,6 +30,9 @@ local idstr_material = Idstring("material")
 local idstr_contour_color = Idstring("contour_color")
 local idstr_contour_opacity = Idstring("contour_opacity")
 
+local tmp_vec = Vector3()
+local mvec3_dis_sq = mvector3.distance_sq
+local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
 
 Hooks:PostHook(ContourExt, "init", "res_init", function(self)
@@ -42,92 +45,96 @@ function ContourExt:contour_list()
 	return self._contour_list or {}
 end
 
-function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
-	if Global.debug_contour_enabled then
-		return
-	end
-
+function ContourExt:add(type, sync, multiplier, override_color, is_element)
+	self._contour_list = self._contour_list or {}
 	local data = self._types[type]
 	local fadeout = data.fadeout
 
-	if data.fadeout_silent and managers.groupai:state():whisper_mode() and self._unit:base():char_tweak().silent_priority_shout then
+	if data.fadeout_silent and managers.groupai:state():whisper_mode() then
 		fadeout = data.fadeout_silent
 	end
 
-	if multiplier and multiplier > 1 then
+	if fadeout and multiplier then
 		fadeout = fadeout * multiplier
 	end
 
-	self._contour_list = self._contour_list or {}
-	self._is_child_contour = add_as_child and true or false
+	sync = sync and not self._is_child_contour or false
 
 	if sync then
+		local sync_unit = self._unit
 		local u_id = self._unit:id()
 
 		if u_id == -1 then
-			u_id = managers.enemy:get_corpse_unit_data_from_key(self._unit:key()).u_id
+			sync_unit, u_id = nil
+			local corpse_data = managers.enemy:get_corpse_unit_data_from_key(self._unit:key())
+
+			if corpse_data then
+				u_id = corpse_data.u_id
+			end
 		end
 
-		managers.network:session():send_to_peers_synched("sync_contour_state", self._unit, u_id, table.index_of(ContourExt.indexed_types, type), true, multiplier or 1)
+		if u_id then
+			managers.network:session():send_to_peers_synched("sync_contour_add", sync_unit, u_id, table.index_of(ContourExt.indexed_types, type), multiplier or 1)
+		else
+			sync = nil
+
+			Application:error("[ContourExt:add] Unit isn't network-synced and isn't a registered corpse, can't sync. ", self._unit)
+		end
 	end
 
-	local should_trigger_marked_event = data.trigger_marked_event
-	local damage_bonus = data.damage_bonus
-	local damage_bonus_dis = data.damage_bonus_distance
-
 	for _, setup in ipairs(self._contour_list) do
-		if not damage_bonus then
-			damage_bonus = self._types[setup.type].damage_bonus
-		end
-
-		if not damage_bonus_dis then
-			damage_bonus_dis = self._types[setup.type].damage_bonus_distance
-		end
-
 		if setup.type == type then
 			if fadeout then
 				setup.fadeout_t = TimerManager:game():time() + fadeout
-				setup.fadeout_start_t = TimerManager:game():time() + fadeout * 0.8
-			elseif not self._types[setup.type].unique then
-				setup.ref_c = (setup.ref_c or 0) + 1
+			elseif not setup.data.unique then
+				setup.ref_c = setup.ref_c + 1
 			end
-			
-			setup.color = override_color or setup.color
 
-			if damage_bonus then
-				self._unit:character_damage():on_marked_state(damage_bonus, damage_bonus_dis)
+			if is_element then
+				setup.ref_c_element = (setup.ref_c_element or 0) + 1
+			end
+
+			local old_color = setup.color or data.color
+			setup.color = override_color or nil
+
+			if old_color ~= override_color then
+				self:_upd_color()
 			end
 
 			return setup
 		end
-
-		if self._types[setup.type].trigger_marked_event then
-			should_trigger_marked_event = false
-		end
-	end
-
-	if damage_bonus then
-		self._unit:character_damage():on_marked_state(damage_bonus, damage_bonus_dis)
 	end
 
 	local setup = {
 		ref_c = 1,
 		type = type,
-		fadeout_t = fadeout and TimerManager:game():time() + fadeout or nil,
-		fadeout_start_t = fadeout and TimerManager:game():time() + fadeout * 0.8 or nil,
+		ref_c_element = is_element and 1 or nil,
 		sync = sync,
-		color = override_color
+		fadeout_t = fadeout and TimerManager:game():time() + fadeout or nil,
+		color = override_color or nil,
+		data = data
 	}
-	local old_preset_type = self._contour_list[1] and self._contour_list[1].type
-	local i = 1
 
-	while self._contour_list[i] and self._types[self._contour_list[i].type].priority <= data.priority do
+	if data.ray_check then
+		setup.upd_skip_count = ContourExt.raycast_update_skip_count
+		local mov_ext = self._unit:movement()
+
+		if mov_ext and mov_ext.m_com then
+			setup.ray_pos = mov_ext:m_com()
+		end
+	end
+
+	local i = 1
+	local contour_list = self._contour_list
+	local old_preset_type = contour_list[1] and contour_list[1].type
+
+	while contour_list[i] and contour_list[i].data.priority <= data.priority do
 		i = i + 1
 	end
 
-	table.insert(self._contour_list, i, setup)
+	table.insert(contour_list, i, setup)
 
-	if old_preset_type ~= setup.type then
+	if not old_preset_type or i == 1 and old_preset_type ~= setup.type then
 		self:_apply_top_preset()
 	end
 
@@ -135,11 +142,15 @@ function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 		self:_chk_update_state()
 	end
 
-	self:apply_to_linked("add", type, sync, multiplier)
-
-	if should_trigger_marked_event and self._unit:unit_data().mission_element then
-		self._unit:unit_data().mission_element:event("marked", self._unit)
+	if data.damage_bonus or data.damage_bonus_distance then
+		self:_chk_damage_bonuses()
 	end
+
+	if data.trigger_marked_event then
+		self:_chk_mission_marked_events(setup)
+	end
+
+	self:apply_to_linked("add", type, false, multiplier, override_color)
 
 	return setup
 end
@@ -150,11 +161,17 @@ function ContourExt:material_applied(material_was_swapped)
 	end
 
 	local setup = self._contour_list[1]
-	local data = self._types[setup.type]
+	local data = setup.data
 
 	if material_was_swapped then
 		managers.occlusion:remove_occlusion(self._unit)
-		self._unit:base():set_allow_invisible(false)
+
+		local base_ext = self._unit:base()
+
+		if base_ext and base_ext.set_allow_invisible then
+			base_ext:set_allow_invisible(false)
+		end
+
 		self:update_materials()
 	else
 		self._materials = nil
@@ -162,35 +179,27 @@ function ContourExt:material_applied(material_was_swapped)
 		self:_upd_color()
 
 		if not data.ray_check then
-			self:_upd_opacity(1)
+			local opacity = self._last_opacity or 1
+			self._last_opacity = nil
+
+			self:_upd_opacity(opacity)
 		end
 	end
 end
 
-function ContourExt:_remove(index, sync)
+function ContourExt:_remove(index, sync, is_element)
 	local setup = self._contour_list and self._contour_list[index]
 
 	if not setup then
 		return
 	end
 
-	local contour_type = setup.type
-	local data = self._types[setup.type]
-	local should_disable_damage_bonus = data.damage_bonus
-	local keep_damage_bonus_dis = nil
+	if is_element and setup.ref_c_element then
+		setup.ref_c_element = setup.ref_c_element - 1
 
-	if should_disable_damage_bonus then
-		for _, setup in ipairs(self._contour_list) do
-			if should_disable_damage_bonus and self._types[setup.type].damage_bonus then
-				should_disable_damage_bonus = nil
-			end
-
-			keep_damage_bonus_dis = keep_damage_bonus_dis or self._types[setup.type].damage_bonus_distance
+		if setup.ref_c_element <= 0 then
+			setup.ref_c_element = nil
 		end
-
-		local dmg_bonus_state = keep_damage_bonus_dis and true or should_disable_damage_bonus and false or true
-
-		self._unit:character_damage():on_marked_state(dmg_bonus_state, keep_damage_bonus_dis)
 	end
 
 	if setup.ref_c and setup.ref_c > 1 then
@@ -202,11 +211,26 @@ function ContourExt:_remove(index, sync)
 	if #self._contour_list == 1 then
 		managers.occlusion:add_occlusion(self._unit)
 
-		if data.material_swap_required then
-			self._unit:base():set_material_state(true)
-			self._unit:base():set_allow_invisible(true)
-		else
-			self:_upd_opacity(0)
+		local was_swap = nil
+
+		if setup.data.material_swap_required then
+			local base_ext = self._unit:base()
+
+			if base_ext and base_ext.set_material_state then
+				was_swap = true
+
+				base_ext:set_material_state(true)
+
+				if base_ext.set_allow_invisible then
+					base_ext:set_allow_invisible(true)
+				end
+			end
+		end
+
+		if not was_swap then
+			for _, material in ipairs(self._materials) do
+				material:set_variable(idstr_contour_opacity, 0)
+			end
 		end
 	end
 
@@ -221,29 +245,35 @@ function ContourExt:_remove(index, sync)
 	end
 
 	if sync then
+		local sync_unit = self._unit
 		local u_id = self._unit:id()
 
 		if u_id == -1 then
-			u_id = managers.enemy:get_corpse_unit_data_from_key(self._unit:key()).u_id
-		end
+			sync_unit, u_id = nil
+			local corpse_data = managers.enemy:get_corpse_unit_data_from_key(self._unit:key())
 
-		managers.network:session():send_to_peers_synched("sync_contour_state", self._unit, u_id, table.index_of(ContourExt.indexed_types, contour_type), false, 1)
-	end
-
-	if data.trigger_marked_event then
-		local should_trigger_unmarked_event = true
-
-		for _, setup in ipairs(self._contour_list or {}) do
-			if self._types[setup.type].trigger_marked_event then
-				should_trigger_unmarked_event = false
-
-				break
+			if corpse_data then
+				u_id = corpse_data.u_id
 			end
 		end
 
-		if should_trigger_unmarked_event and self._unit:unit_data().mission_element then
-			self._unit:unit_data().mission_element:event("unmarked", self._unit)
+		if u_id then
+			managers.network:session():send_to_peers_synched("sync_contour_remove", sync_unit, u_id, table.index_of(ContourExt.indexed_types, setup.type))
+		else
+			Application:error("[ContourExt:_remove] Unit isn't network-synced and isn't a registered corpse, can't sync. ", self._unit)
 		end
+	end
+
+	if self._update_enabled then
+		self:_chk_update_state()
+	end
+
+	if setup.data.damage_bonus or setup.data.damage_bonus_distance then
+		self:_chk_damage_bonuses()
+	end
+
+	if setup.data.trigger_marked_event then
+		self:_chk_mission_marked_events()
 	end
 end
 
@@ -251,45 +281,82 @@ function ContourExt:update(unit, t, dt)
 	self._materials = nil -- lod changes seem to break the material cache, so i'm just refreshing it every frame
 
 	local index = 1
-	while self._contour_list and index <= #self._contour_list do
-		local setup = self._contour_list[index]
-		if setup.fadeout_t and setup.fadeout_t < t then
-			self:_remove(index)
-			self:_chk_update_state()
-		else
-			local data = self._types[setup.type]
-			local is_current = index == 1
-			local opacity = nil
-			if data.ray_check and unit:movement() and is_current then
-				local turn_on = nil
-				local cam_pos = managers.viewport:get_current_camera_position()
-				if cam_pos then
-					turn_on = mvector3.distance_sq(cam_pos, unit:movement():m_com()) > 16000000 or unit:raycast("ray", unit:movement():m_com(), cam_pos, "slot_mask", self._slotmask_world_geometry, "report")
-				end
+	local setup, cam_pos, is_current = nil
+	local ray_check_slotmask = self._slotmask_world_geometry
 
-				local target_opacity = turn_on and 1 or 0
-				if self._last_opacity ~= target_opacity then
-					opacity = math.step(self._last_opacity or 0, target_opacity, dt / data.persistence)
+	while self._contour_list and index <= #self._contour_list do
+		setup = self._contour_list[index]
+		is_current = index == 1
+
+		if setup.fadeout_t and setup.fadeout_t < t then
+			self:remove(setup.type, false, false)
+		else
+			local turn_off = nil
+
+			if is_current and setup.data.ray_check then
+				if setup.upd_skip_count > 0 then
+					setup.upd_skip_count = setup.upd_skip_count - 1
+
+					if self._last_opacity == 0 then
+						turn_off = true
+					else
+						turn_off = false
+					end
+				else
+					setup.upd_skip_count = ContourExt.raycast_update_skip_count
+					local turn_on = false
+					cam_pos = cam_pos or managers.viewport:get_current_camera_position()
+
+					if cam_pos then
+						local ray_pos = setup.ray_pos
+
+						if not ray_pos then
+							ray_pos = tmp_vec
+
+							unit:m_position(ray_pos)
+						end
+
+						turn_on = mvec3_dis_sq(cam_pos, ray_pos) > 16000000 or unit:raycast("ray", cam_pos, ray_pos, "slot_mask", ray_check_slotmask, "report")
+					end
+
+					if setup.data.persistence then
+						if turn_on then
+							setup.last_turned_on_t = t
+						else
+							local last_t = setup.last_turned_on_t
+
+							if not last_t or setup.data.persistence < t - last_t then
+								turn_off = true
+								setup.last_turned_on_t = nil
+							end
+						end
+					else
+						turn_off = not turn_on
+					end
 				end
 			end
 
 			if setup.flash_t then
+				local flash = setup.flash_on
+
 				if setup.flash_t < t then
-					setup.flash_t = t + setup.flash_frequency
-					setup.flash_on = not setup.flash_on
+					setup.flash_t = setup.flash_t + setup.flash_frequency
+					flash = not flash
+					setup.flash_on = flash
 				end
 
-				if is_current then
-					opacity = (setup.flash_t - t) / setup.flash_frequency
-					opacity = setup.flash_on and opacity or 1 - opacity
-				end
+				turn_off = turn_off or not flash
 			elseif setup.fadeout_start_t and is_current then
 				opacity = (t - setup.fadeout_start_t) / (setup.fadeout_t - setup.fadeout_start_t)
 				opacity = 1 - math.max(opacity, 0)
 			end
 
-			if opacity then
-				self:_upd_opacity(opacity)
+			if is_current then
+				if turn_off then
+					self:_upd_opacity(0)
+				else
+					self:_upd_opacity(self.mod_lerp_opacity and setup.fadeout_t and math_lerp(1, 0, t / setup.fadeout_t) or 1)
+				end
 			end
 
 			index = index + 1
@@ -297,60 +364,76 @@ function ContourExt:update(unit, t, dt)
 	end
 end
 
-function ContourExt:_upd_opacity(opacity, is_retry)
+function ContourExt:_upd_opacity(opacity, is_retry, no_child_upd)
 	if opacity == self._last_opacity then
 		return
 	end
 
+	self._last_opacity = opacity
 	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
 
 	for _, material in ipairs(self._materials) do
-		if alive(material) then
-			material:set_variable(idstr_contour_opacity, opacity)
-		elseif not is_retry then
-			self._last_opacity = opacity
-			return self:update_materials()
+		if not alive(material) then
+			self:update_materials()
+
+			if not is_retry then
+				self:_upd_opacity(opacity, true, true)
+			end
+
+			break
 		end
+
+		material:set_variable(idstr_contour_opacity, opacity)
 	end
 
 	self._last_opacity = opacity
 	self:_upd_color(opacity, is_retry) -- pass is_retry so it doesn't waste time invalidating the cache if it didn't fix itself here
 
-	self:apply_to_linked("_upd_opacity", opacity)
+	if not no_child_upd then
+		self:apply_to_linked("_upd_opacity", opacity)
+	end
 end
 
-function ContourExt:_upd_color(opacity, is_retry)
-	if not self._contour_list then
+function ContourExt:_upd_color(is_retry, no_child_upd)
+	local setup = self._contour_list and self._contour_list[1]
+
+	if not setup then
 		return
 	end
 
-	local contour_color = self._contour_list[1].color or self._types[self._contour_list[1].type].color
-	if not contour_color then
+	local color = setup.color or setup.data.color
+
+	if not color then
 		return
 	end
-
-	opacity = opacity or 1
-	local color = tmp_vec1
-
-	mvector3.set(color, contour_color)
-	mvector3.multiply(color, opacity)
 
 	self._materials = self._materials or self._unit:get_objects_by_type(idstr_material)
 
 	for _, material in ipairs(self._materials) do
-		if alive(material) then
-			material:set_variable(idstr_contour_color, color)
-		elseif not is_retry then
-			return self:update_materials()
+		if not alive(material) then
+			self:update_materials()
+
+			if not is_retry then
+				self:_upd_color(true, true)
+			end
+
+			break
 		end
+
+		material:set_variable(idstr_contour_color, color)
 	end
 
-	self:apply_to_linked("_upd_color", opacity)
+
+	if not no_child_upd then
+		self:apply_to_linked("_upd_color")
+	end
 end
 
 function ContourExt:update_materials()
 	if self._contour_list then
 		self._materials = nil
+
+		self:_upd_color()
 
 		local opacity = self._last_opacity or 1
 		self._last_opacity = nil

@@ -6332,12 +6332,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.BURST_FIRE_RECOIL_MULTIPLIER = 1.15
 				self.peacemaker.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.15
 				self.peacemaker.BURST_FIRE_SPREAD_MULTIPLIER = 1.5
-				self.peacemaker.BURST_FIRE_RANGE_MULTIPLIER = 0.66
+				self.peacemaker.BURST_FIRE_RANGE_MULTIPLIER = 0.4
 				self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.peacemaker.supported = true
 				self.peacemaker.ads_speed = 0.180
 				self.peacemaker.damage_falloff = {
-					start_dist = 1400,
+					start_dist = 2500,
 					end_dist = 4500,
 					min_mult = 0.26666
 				}
@@ -16306,9 +16306,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.CLIP_AMMO_MAX = 5
 		self.swhiskey.kick = self.stat_info.kick_tables.vertical_kick
 		self.swhiskey.supported = true
-		self.swhiskey.ads_speed = 0.160
+		self.swhiskey.ads_speed = 0.180
 		self.swhiskey.damage_falloff = {
-			start_dist = 3500,
+			start_dist = 2200,
 			end_dist = 4200,
 			min_mult = 0.26666
 		}

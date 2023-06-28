@@ -31701,14 +31701,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		--Triggers
 		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.supported = true
 		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.stats = { spread = 1 }
-		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.custom_stats = { ads_speed_mult = 0.925 , rof_mult = 0.9 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.custom_stats = { ads_speed_mult = 0.925 , rof_mult = 0.85 }
 		
 		self.parts.wpn_fps_pis_swhiskey_trigger_hair.supported = true
 		self.parts.wpn_fps_pis_swhiskey_trigger_hair.stats = { recoil = -6, spread = -3 }
-		self.parts.wpn_fps_pis_swhiskey_trigger_hair.custom_stats = { rof_mult = 1.15 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_hair.custom_stats = { rof_mult = 1.15, ads_speed_mult = 1.1 }
 		
 		self.parts.wpn_fps_pis_swhiskey_trigger_light.supported = true
-		self.parts.wpn_fps_pis_swhiskey_trigger_light.stats = { recoil = -2, spread = 1 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_light.stats = { recoil = -4, spread = 1 }
 		self.parts.wpn_fps_pis_swhiskey_trigger_light.custom_stats = { rof_mult = 1.05 }
 
 		--Barrels

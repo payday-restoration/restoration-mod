@@ -52,7 +52,7 @@
 				<file :name="ene_fbi_boss_1.unit"/>
 				<file :name="ene_fbi_boss_1_husk.unit"/>
 			</group>
-			<group :name="units/pd2_dlc_flat/characters/">
+			<group :name="pd2_dlc_flat/characters/">
 				<file :name="npc_chavez/npc_chavez.object"/>
 				<file :name="npc_jamaican/npc_jamaican.object"/>
 			</group>

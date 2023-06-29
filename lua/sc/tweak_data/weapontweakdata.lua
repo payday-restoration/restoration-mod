@@ -4432,10 +4432,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Wasp-DS (FMG-9)
 				self.fmg9.has_description = true
-				self.fmg9.desc_id = "bm_fmg9_sc_desc"				
+				self.fmg9.desc_id = "bm_fmg9_sc_desc"
 				self.fmg9.categories = {"pistol"}
 				self.fmg9.fire_mode_data.fire_rate = 0.05454545454
-				self.fmg9.auto.fire_rate = 0.05454545454
 				self.fmg9.CLIP_AMMO_MAX = 33
 				self.fmg9.AMMO_MAX = 150
 				self.fmg9.use_data.selection_index = 2
@@ -14009,6 +14008,92 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.timers.reload_exit_empty = 0.7
 	end
 
+	if self.fmgnine then --Pawcio's FMG-9		
+		self.fmgnine.categories = {"pistol"}
+		self.fmgnine.recategorize = {"light_pis"}
+		self.fmgnine.damage_type = "light_pistol"
+		self.fmgnine.tactical_reload = 1
+		self.fmgnine.fire_mode_data.fire_rate = 0.05
+		self.fmgnine.CAN_TOGGLE_FIREMODE = true
+		self.fmgnine.CLIP_AMMO_MAX = 33
+		self.fmgnine.AMMO_MAX = 75
+		self.fmgnine.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.fmgnine.panic_suppression_chance = 0.05
+		self.fmgnine.supported = true
+		self.fmgnine.ads_speed = 0.180
+		self.fmgnine.damage_falloff = {
+			start_dist = 1200,
+			end_dist = 3200,
+			min_mult = 0.3333
+		}
+		self.fmgnine.stats = {
+			damage = 24,
+			spread = 55,
+			recoil = 81,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 28,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.fmgnine.stats_modifiers = nil
+		self.fmgnine.panic_suppression_chance = 0.05
+		self.fmgnine.swap_speed_multiplier = 0.52
+		self.fmgnine.timers.equip = 1.5
+		self.fmgnine.timers.reload_not_empty = 2.07
+		self.fmgnine.timers.reload_exit_not_empty = 0.8
+		self.fmgnine.timers.reload_empty = 3.32
+		self.fmgnine.timers.reload_exit_empty = 1.1
+	end
+
+	if self.fmgnine and self.x_fmgnine then --Pawcio's Akimbo FMG-9		
+		self.x_fmgnine.categories = {"pistol"}
+		self.x_fmgnine.recategorize = {"light_pis"}
+		self.x_fmgnine.damage_type = "light_pistol"
+		self.x_fmgnine.tactical_reload = 2
+		self.x_fmgnine.fire_mode_data.fire_rate = 0.06
+		self.x_fmgnine.CAN_TOGGLE_FIREMODE = true
+		self.x_fmgnine.CLIP_AMMO_MAX = 66
+		self.x_fmgnine.AMMO_MAX = 150
+		self.x_fmgnine.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.x_fmgnine.panic_suppression_chance = 0.05
+		self.x_fmgnine.supported = true
+		self.x_fmgnine.ads_speed = 0.180
+		self.x_fmgnine.damage_falloff = {
+			start_dist = 1200,
+			end_dist = 3200,
+			min_mult = 0.3333
+		}
+		self.x_fmgnine.stats = {
+			damage = 24,
+			spread = 45,
+			recoil = 71,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 28,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.x_fmgnine.stats_modifiers = nil
+		self.x_fmgnine.panic_suppression_chance = 0.05
+		self.x_fmgnine.swap_speed_multiplier = 0.52
+		self.x_fmgnine.timers.equip = 1.8
+		self.x_fmgnine.timers.reload_not_empty = 2.5
+		self.x_fmgnine.timers.reload_exit_not_empty = 0.8
+		self.x_fmgnine.timers.reload_empty = 3.4
+		self.x_fmgnine.timers.reload_exit_empty = 0.5
+		self.x_fmgnine.sounds.fire = "fmgnine_fire"
+		self.x_fmgnine.sounds.fire_single = "fmgnine_fire"
+	end
+
 	if self.p99 then --Pawcio's P99
 		self.p99.recategorize = {"light_pis"}
 		self.p99.damage_type = "pistol"
@@ -14218,7 +14303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ppsh.sounds.fire_single2 = "ppsh41_fire"
 	end
 
-	if self.lewis then --Pawcio's PPSH
+	if self.lewis then --Pawcio's Lewis Gun
 		self.lewis.categories = {
 			"lmg",
 			"smg",

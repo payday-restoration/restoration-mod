@@ -31,13 +31,6 @@ return {
             enemy = vault_guard
 		}
 	},
-	--Have 2 dozers spawn after kiiling Bo The Manager like in PDTH
-	[101953] = {
-		on_executed = {
-			{ id = 105119, delay = 1 },
-			{ id = 105119, delay = 2 }
-		}
-	},
 	--Pro Job Spawns
 	[105119] = {
 		values = {
@@ -75,6 +68,26 @@ return {
 		}
 	},
 	[100618] = {
+		values = {
+            enemy = woman_spooc
+		}
+	},
+	[102897] = {
+		values = {
+            enemy = woman_spooc
+		}
+	},
+	[102899] = {
+		values = {
+            enemy = woman_spooc
+		}
+	},
+	[102903] = {
+		values = {
+            enemy = woman_spooc
+		}
+	},
+	[102904] = {
 		values = {
             enemy = woman_spooc
 		}

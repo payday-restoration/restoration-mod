@@ -341,6 +341,7 @@ local start_shooting_original = NewRaycastWeaponBase.start_shooting
 local stop_shooting_original = NewRaycastWeaponBase.stop_shooting
 local _fire_sound_original = NewRaycastWeaponBase._fire_sound
 local trigger_held_original = NewRaycastWeaponBase.trigger_held
+local trigger_pressed_original = NewRaycastWeaponBase.trigger_pressed
 local recoil_multiplier_original = NewRaycastWeaponBase.recoil_multiplier
 
 NewRaycastWeaponBase._SPIN_UP_T = 0.5
@@ -369,7 +370,7 @@ function NewRaycastWeaponBase:stop_shooting(...)
 end
 
 function NewRaycastWeaponBase:_fire_sound(...)
-	if (self._name_id ~= "m134" and self._name_id ~= "shuno" or self:weapon_tweak_data().spin_up_t) or self._vulcan_firing then
+	if (self._name_id ~= "m134" and self._name_id ~= "shuno" and not self:weapon_tweak_data().spin_up_t) or self._vulcan_firing then
 		if self._fire_mode == ids_volley and self:weapon_tweak_data().sounds.fire_volley then
 			self:play_tweak_data_sound("fire_volley", "fire")
 			return
@@ -405,6 +406,7 @@ function NewRaycastWeaponBase:trigger_held(...)
 	return trigger_held_original(self, ...)
 end
 
+
 function NewRaycastWeaponBase:recoil_multiplier(...)
 	local mult = recoil_multiplier_original(self, ...)
 
@@ -421,7 +423,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		end
 	end
 	
-	if self._fire_mode == ids_auto and (self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t) and not self._vulcan_firing then
+	if (self._fire_mode == ids_auto or self:weapon_tweak_data().spin_up_semi) and (self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t) and not self._vulcan_firing then
 		return 0
 	end
 
@@ -468,7 +470,7 @@ function NewRaycastWeaponBase:_start_spin()
 		if self._spin_down_start_t and spin_down_t > 0 then
 			self._spin_up_start_t = self._spin_up_start_t - (1 - math.clamp(t - self._spin_down_start_t, 0 , spin_down_t) / spin_down_t) * spin_up_t
 		end
-		if self:weapon_tweak_data().sounds.spin_start and self._fire_mode == ids_auto then
+		if self:weapon_tweak_data().sounds.spin_start and (self._fire_mode == ids_auto or self:weapon_tweak_data().spin_up_semi) then
 			self:play_tweak_data_sound("spin_start")
 		end
 		self._next_spin_animation_t = t

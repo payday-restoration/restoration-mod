@@ -739,13 +739,25 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					local fired = nil
 
 					if fire_mode == "single" then
-						if (self._queue_fire or input.btn_primary_attack_press) and start_shooting then
-							fired = weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-						elseif fire_on_release then
-							if input.btn_primary_attack_release then
-								fired = weap_base:trigger_released(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-							elseif input.btn_primary_attack_state then
-								weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						if weap_base:weapon_tweak_data().spin_up_semi then
+							if not self._spin_up_shoot then
+								local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
+								local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
+								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
+									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2)
+								end
+							end
+							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+						else
+							if (self._queue_fire or input.btn_primary_attack_press) and start_shooting then
+								fired = weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							elseif fire_on_release then
+								if input.btn_primary_attack_release then
+									fired = weap_base:trigger_released(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+								elseif input.btn_primary_attack_state then
+									weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+								end
 							end
 						end
 					elseif fire_mode == "auto" then
@@ -782,7 +794,6 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 					if fired then
 						self._queue_fire = nil
-						self._spin_up_shoot = nil
 						self._already_fired = true
 
 						if weap_base._descope_on_fire then
@@ -793,8 +804,6 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]
 						local shake_multiplier = weap_tweak_data.shake[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
-						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
-						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						local vars = {
 							-1,
 							1
@@ -809,8 +818,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
-						if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
-							weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2)
+						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
+						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
+						if not self._spin_up_shoot and not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight") then
+							weap_base:tweak_data_anim_play("fire")
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
@@ -852,6 +863,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								managers.achievment:award(achievement_data.award)
 
 								self._shooting_t = nil
+								self._spin_up_shoot = nil
 							end
 						end
 
@@ -890,8 +902,14 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							self:_check_stop_shooting()
 							new_action = false
 						end
+						if fire_mode == "single" and self._spin_up_shoot then
+							self._spin_up_shoot = nil
+							self._already_fired = true
+						end
 					elseif fire_mode == "single" then
-						new_action = false
+						if not self._spin_up_shoot then
+							new_action = false
+						end
 					elseif fire_mode == "burst" then
 						if weap_base:shooting_count() == 0 then
 							new_action = false

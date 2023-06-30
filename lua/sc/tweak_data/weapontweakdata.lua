@@ -4450,7 +4450,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}	
 				self.fmg9.ads_speed = 0.180
 				self.fmg9.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 1800,
 					end_dist = 4100,
 					min_mult = 0.3
 				}
@@ -4494,7 +4494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.beer.supported = true
 				self.beer.ads_speed = 0.140
 				self.beer.damage_falloff = {
-					start_dist = 2600,
+					start_dist = 2400,
 					end_dist = 4500,
 					min_mult = 0.3
 				}
@@ -16419,6 +16419,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.sounds.stop_fire = "judge_x_fire"
 		self.swhiskey.reload_speed_multiplier = 0.9
 		self.swhiskey.armor_piercing_chance = 1
+		self.swhiskey.spin_up_semi = true
+		self.swhiskey.spin_up_shoot = true
+		self.swhiskey.spin_up_t = 0.08
+		self.swhiskey.spin_down_t = 0.00000001
 		self.swhiskey.object_damage_mult = 2
 		self.swhiskey.timers.reload_exit_empty = 0.55
 		self.swhiskey.timers.reload_empty = 2.93

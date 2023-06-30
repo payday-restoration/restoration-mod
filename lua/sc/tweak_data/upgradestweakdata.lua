@@ -1704,14 +1704,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.on_killshot_cooldown_reduction_melee = 1.5
 
 	--Anarchist stuff--
-	self.values.player.armor_grinding = { --increments of 0.2/0.25
+	self.values.player.armor_grinding = { --increments of 0.3/0.2
 		{
-			{3.2, 4.0},
-			{3.4, 4.25},
-			{3.6, 4.5},
-			{3.8, 4.75},
-			{4.2, 5.25},
-			{4.4, 5.5},
+			{2.4, 4.4},
+			{2.7, 4.6},
+			{3.0, 4.8},
+			{3.3, 5.0},
+			{3.9, 5.4},
+			{4.2, 5.6},
 			{4.8, 6.0}
 		}
 	}
@@ -1724,14 +1724,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.50
 	}
 
-	self.values.player.damage_to_armor = { --increments of 0.7
+	self.values.player.damage_to_armor = { --increments of 0.8
 		{
+			{1.6, 5},
 			{2.4, 5},
-			{3.1, 5},
-			{3.8, 5},
-			{4.5, 5},
-			{5.9, 5},
-			{6.6, 5},
+			{3.2, 5},
+			{4.0, 5},
+			{5.6, 5},
+			{6.4, 5},
 			{8.0, 5}
 		}
 	}

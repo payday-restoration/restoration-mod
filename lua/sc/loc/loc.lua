@@ -416,6 +416,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_ranc"] = "6:24 PM, Texas - Midland Ranch",
 		["restoration_level_data_trai"] = "7:40 PM, Fort Worth - Dalton Yard",
 		["restoration_level_data_corp"] = "8:35 PM, Dallas - SERA R&D Facility",
+		["restoration_level_data_deep"] = "9:00 PM, Gulf of Mexico - SERA's Oil Rig Tanker",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",

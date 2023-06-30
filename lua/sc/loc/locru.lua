@@ -413,6 +413,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_ranc"] = "18:24, Техас - Ранчо Мидленд",
 		["restoration_level_data_trai"] = "19:40, Форт-Уэрт - Дэлтон Ярд",
 		["restoration_level_data_corp"] = "8:35 PM, Даллас - Исследовательский центр корпорации SERA",
+		["restoration_level_data_deep"] = "9:00 PM, Gulf of Mexico - SERA's Oil Rig Tanker",
 		["restoration_level_data_wetwork"] = "ЧАС НЕВiДОМИЙ, ЛОКАЦiЯ ЗАСЕКРЕЧЕНА",
 		["restoration_level_data_junk"] = "ЧАС НЕВiДОМИЙ, ЛОКАЦiЯ ЗАСЕКРЕЧЕНА",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",

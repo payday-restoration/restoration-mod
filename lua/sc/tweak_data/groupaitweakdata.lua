@@ -18658,6 +18658,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	self.enemy_spawn_groups.SKM_Cap_Summers_W9 = deep_clone(self.enemy_spawn_groups.Cap_Summers)
 end
 
+function GroupAITweakData:_init_enemy_spawn_groups_level(tweak_data, difficulty_index)
+end
+
 function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 	local f = math.max(0, difficulty_index - 2) / 6

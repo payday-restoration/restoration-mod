@@ -178,12 +178,16 @@ function MissionEndState:at_enter(old_state, params)
 	end
 
 	local level_data = Global.level_data.level_id and tweak_data.levels[Global.level_data.level_id]
+	local failure_music = not self._success and level_data and level_data.failure_music
+	
+	if type(failure_music) == "table" then
+		local failure_variant = managers.groupai:state():failure_variant() or 0
+		failure_music = failure_music[failure_variant] or nil
+	end
 
-	if not self._success and level_data and level_data.failure_music then
-		managers.music:stop_listen_all()
-		managers.menu:post_event(level_data.failure_music)
+	if failure_music then
+		managers.menu:post_event(failure_music)
 	else
-		managers.music:stop_listen_all()
 		managers.music:post_event(self._success and managers.music:jukebox_menu_track("heistresult") or managers.music:jukebox_menu_track("heistlost"))
 	end
 

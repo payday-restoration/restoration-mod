@@ -254,14 +254,9 @@ function SentryGunDamage:sync_health(health_percent)
 	self._unit:event_listener():call("on_damage_received", self:health_ratio())
 end
 
-function SentryGunDamage:on_marked_state(state, bonus_distance_damage)
-	if state then
-		self._marked_dmg_mul = self._marked_dmg_mul or tweak_data.upgrades.values.player.marked_enemy_damage_mul
-		self._marked_dmg_dist_mul = bonus_distance_damage
-	else
-		self._marked_dmg_mul = nil
-		self._marked_dmg_dist_mul = nil
-	end
+function SentryGunDamage:on_marked_state(bonus_damage, bonus_distance_damage)
+	self._marked_dmg_mul = bonus_damage and (self._marked_dmg_mul or tweak_data.upgrades.values.player.marked_enemy_damage_mul) or nil
+	self._marked_dmg_dist_mul = bonus_distance_damage or nil
 end
 
 function SentryGunDamage:damage_bullet(attack_data)

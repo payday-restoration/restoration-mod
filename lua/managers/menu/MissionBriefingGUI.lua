@@ -379,6 +379,20 @@ if restoration.Options:GetValue("HUD/UI/Loadouts") then
 
 		self._lobby_code_text:panel():set_layer(2)	
 		
+		if managers.crime_spree:is_active() then
+			self._lobby_code_text:panel():set_position(600, self._lobby_code_text:panel():y())
+		end		
+		
+		local local_peer = managers.network:session():local_peer()
+
+		for peer_id, peer in pairs(managers.network:session():peers()) do
+			if peer ~= local_peer then
+				local outfit = managers.blackmarket:unpack_outfit_from_string(peer:profile("outfit_string"))
+
+				self:set_slot_outfit(peer_id, peer:character(), outfit)
+			end
+		end		
+		
 		self._enabled = true
 		--self:flash_ready()
 	end

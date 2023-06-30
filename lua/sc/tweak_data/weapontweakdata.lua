@@ -469,6 +469,14 @@ local crew_wep_preset = {
 		self.npc_melee.fists.player_blood_effect = true
 		self.npc_melee.fists.armor_piercing = true
 		
+		--Electric Fists
+		self.npc_melee.fists_electric = deep_clone(self.npc_melee.fists)
+		self.npc_melee.fists_electric.tase_data = {
+			tase_strength = "light",
+			electrocution_time_mul = 0.5
+		}
+		self.npc_melee.fists_electric.additional_impact_sound = "buzzer_detector_hit_body"
+		
 		--Dozer Fists
 		self.npc_melee.fists_dozer = {}
 		self.npc_melee.fists_dozer.unit_name = nil

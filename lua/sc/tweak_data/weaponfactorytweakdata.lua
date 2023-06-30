@@ -888,6 +888,28 @@ local muzzle_device = {
 		}
 }
 
+local grips = {
+
+	quickdraw_1 = {
+		value = 3,
+		concealment = 1,
+		recoil = -2,
+		ads_speed_mult = 0.975
+	},
+		quickdraw_acc = {
+			value = 3,
+			concealment = 1,
+			spread = -1,
+			ads_speed_mult = 0.975
+		},
+	quickdraw_2 = {
+		value = 5,
+		concealment = 2,
+		recoil = -4,
+		ads_speed_mult = 0.95
+	}
+
+}
 --SHOTGUN AMMO PRESETS
 --Overrides for shotgun ammo types that vary per damage tier.
 	--Indented to make for easy code folding in most editors.
@@ -3784,14 +3806,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_g18c_g_ergo.supported = true
-	self.parts.wpn_fps_pis_g18c_g_ergo.stats = {
-		value = 4,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_g18c_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_g18c_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_g18c_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	self.parts.wpn_fps_pis_g18c_b_standard.animations.fire_steelsight = "recoil"
 
@@ -5487,14 +5503,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		40
 	}
 	self.parts.wpn_fps_pis_deagle_g_ergo.supported = true
-	self.parts.wpn_fps_pis_deagle_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
-	self.parts.wpn_fps_pis_deagle_g_ergo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
+	self.parts.wpn_fps_pis_deagle_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_deagle_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 
 	self.parts.wpn_fps_pis_deagle_m_extended.pcs = {
 		10,
@@ -5761,14 +5771,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		40
 	}
 	self.parts.wpn_fps_pis_1911_g_ergo.supported = true
-	self.parts.wpn_fps_pis_1911_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
-	self.parts.wpn_fps_pis_1911_g_ergo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
+	self.parts.wpn_fps_pis_1911_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_1911_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 
 	--12rnd Mag.
 	self.parts.wpn_fps_pis_1911_m_extended.pcs = {
@@ -6183,14 +6187,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_beretta_g_ergo.supported = true
-	self.parts.wpn_fps_pis_beretta_g_ergo.stats = {
-		value = 4,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_beretta_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_beretta_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_beretta_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 
 	--Extended Mag.
 	self.parts.wpn_fps_pis_beretta_m_extended.pcs = {
@@ -6603,14 +6601,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_m45_g_ergo.supported = true
-	self.parts.wpn_fps_smg_m45_g_ergo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_smg_m45_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_smg_m45_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_smg_m45_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Bling Grip
 	self.parts.wpn_fps_smg_m45_g_bling.pcs = {
@@ -7134,14 +7126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 		40
 	}
 	self.parts.wpn_fps_lmg_hk21_g_ergo.supported = true
-	self.parts.wpn_fps_lmg_hk21_g_ergo.stats = {
-		value = 2,
-		concealment = 1,
-		recoil = -2
-	}
-	self.parts.wpn_fps_lmg_hk21_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_lmg_hk21_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_lmg_hk21_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 
 	--Adds Rails
 	self.wpn_fps_lmg_hk21.adds = { 
@@ -7822,14 +7808,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	--Tactical Grip
 	self.parts.wpn_fps_ass_fal_g_01.pcs = {}
 	self.parts.wpn_fps_ass_fal_g_01.supported = true
-	self.parts.wpn_fps_ass_fal_g_01.stats = {
-		value = 2,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_ass_fal_g_01.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_ass_fal_g_01.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_ass_fal_g_01.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Vintage Mag (Formerly Extended Magazine)
 	self.parts.wpn_fps_ass_fal_m_01.pcs = {}
@@ -8201,14 +8181,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	--Retro Grip
 	self.parts.wpn_fps_ass_g3_g_retro.pcs = {}
 	self.parts.wpn_fps_ass_g3_g_retro.supported = true
-	self.parts.wpn_fps_ass_g3_g_retro.stats = {
-		value = 2,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_ass_g3_g_retro.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_ass_g3_g_retro.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_ass_g3_g_retro.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Precision Grip
 	self.parts.wpn_fps_ass_g3_g_sniper.pcs = {}
@@ -8521,14 +8495,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	--Ergo Grip
 	self.parts.wpn_fps_smg_scorpion_g_ergo.pcs = {}
 	self.parts.wpn_fps_smg_scorpion_g_ergo.supported = true
-	self.parts.wpn_fps_smg_scorpion_g_ergo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_smg_scorpion_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_smg_scorpion_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_smg_scorpion_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Extended Mag (Fucking channelling the "extended" mag of the MP40 in CoD:WaW, lmao)
 	self.parts.wpn_fps_smg_scorpion_m_extended.pcs = {}
@@ -10895,14 +10863,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(s
 		40
 	}
 	self.parts.wpn_fps_smg_thompson_grip_discrete.supported = true
-	self.parts.wpn_fps_smg_thompson_grip_discrete.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_smg_thompson_grip_discrete.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_smg_thompson_grip_discrete.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_smg_thompson_grip_discrete.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Discrete Stock
 	self.parts.wpn_fps_smg_thompson_stock_discrete.pcs = {
@@ -12995,14 +12957,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		40
 	}
 	self.parts.wpn_fps_snp_wa2000_g_stealth.supported = true
-	self.parts.wpn_fps_snp_wa2000_g_stealth.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_snp_wa2000_g_stealth.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_snp_wa2000_g_stealth.stats = deep_clone(grips.quickdraw_acc)
+	self.parts.wpn_fps_snp_wa2000_g_stealth.custom_stats = deep_clone(grips.quickdraw_acc)
 	
 	--Walnut Grip
 	self.parts.wpn_fps_snp_wa2000_g_walnut.pcs = {
@@ -15361,14 +15317,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 		40
 	}
 	self.parts.wpn_fps_pis_chinchilla_g_black.supported = true
-	self.parts.wpn_fps_pis_chinchilla_g_black.stats = {
-		value = 3, 
-		recoil = -2, 
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_chinchilla_g_black.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_chinchilla_g_black.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_chinchilla_g_black.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Cruz Grip
 	self.parts.wpn_fps_pis_chinchilla_g_death.pcs = {
@@ -15793,14 +15743,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shrew", "resmod_shrew", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_shrew_g_ergo.supported = true
-	self.parts.wpn_fps_pis_shrew_g_ergo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_shrew_g_ergo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_shrew_g_ergo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_shrew_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Extended Magazine
 	self.parts.wpn_fps_pis_shrew_m_extended.pcs = {
@@ -16814,14 +16758,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_beer", "resmod_beer", function(sel
 		40
 	}
 	self.parts.wpn_fps_pis_beer_g_robo.supported = true
-	self.parts.wpn_fps_pis_beer_g_robo.custom_stats = {
-		ads_speed_mult = 0.975
-	}
-	self.parts.wpn_fps_pis_beer_g_robo.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
+	self.parts.wpn_fps_pis_beer_g_robo.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_beer_g_robo.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Cartel Grip
 	self.parts.wpn_fps_pis_beer_g_lux.pcs = {
@@ -17068,14 +17006,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 		40
 	}
 	self.parts.wpn_fps_pis_stech_g_tactical.supported = true
-	self.parts.wpn_fps_pis_stech_g_tactical.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_pis_stech_g_tactical.custom_stats = {
-		ads_speed_mult = 0.975
-	}	
+	self.parts.wpn_fps_pis_stech_g_tactical.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_stech_g_tactical.custom_stats = deep_clone(grips.quickdraw_1)
 	
 	--Extended Mag
 	self.parts.wpn_fps_pis_stech_m_extended.pcs = {
@@ -19364,14 +19296,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 	self.parts.wpn_fps_hailstorm_g_bubble.custom_stats = nil
 
 	self.parts.wpn_fps_hailstorm_g_noise.supported = true
-	self.parts.wpn_fps_hailstorm_g_noise.stats = { 
-		value = 1,
-		concealment = 1,
-		recoil = -2
-	}
-	self.parts.wpn_fps_hailstorm_g_noise.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_hailstorm_g_noise.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_hailstorm_g_noise.custom_stats = deep_clone(grips.quickdraw_1)
 
 	--Exclusive Set
 	self.parts.wpn_fps_hailstorm_conversion.supported = true
@@ -19597,13 +19523,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_korth", "resmod_korth", function(s
 	}
 	--Overmould Grip
 	self.parts.wpn_fps_pis_korth_g_houge.supported = true
-	self.parts.wpn_fps_pis_korth_g_houge.stats = {
-		concealment = 1,
-		recoil = -2
-	}
-	self.parts.wpn_fps_pis_korth_g_houge.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_pis_korth_g_houge.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_pis_korth_g_houge.custom_stats = deep_clone(grips.quickdraw_1)
 
 	--8-shot
 	self.parts.wpn_fps_pis_korth_m_8_dummy = deep_clone(self.parts.wpn_fps_pis_korth_m_8)
@@ -20308,14 +20229,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 	
 	--Ergonomic
 	self.parts.wpn_fps_upg_ak_g_gradus.supported = true
-	self.parts.wpn_fps_upg_ak_g_gradus.stats = {
-		value = 3,
-		recoil = -2,
-		concealment = 1
-	}
-	self.parts.wpn_fps_upg_ak_g_gradus.custom_stats = {
-		ads_speed_mult = 0.975
-	}		
+	self.parts.wpn_fps_upg_ak_g_gradus.stats = deep_clone(grips.quickdraw_1)
+	self.parts.wpn_fps_upg_ak_g_gradus.custom_stats = deep_clone(grips.quickdraw_1)
 	self.parts.wpn_fps_upg_ak_g_gradus.forbids = {
 		"wpn_upg_ak_g_standard",
 		"wpn_fps_ass_asval_g_standard"
@@ -20826,14 +20741,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		recoil = 2
 	}
 	self.parts.wpn_fps_snp_awp_g_grainy.supported = true
-	self.parts.wpn_fps_snp_awp_g_grainy.stats = {
-		value = 1,
-		spread = -1,
-		concealment = 1
-	}
-	self.parts.wpn_fps_snp_awp_g_grainy.custom_stats = {
-		ads_speed_mult = 0.975
-	}
+	self.parts.wpn_fps_snp_awp_g_grainy.stats = deep_clone(grips.quickdraw_acc)
+	self.parts.wpn_fps_snp_awp_g_grainy.custom_stats = deep_clone(grips.quickdraw_acc)
 	self.parts.wpn_fps_snp_awp_g_perforated.supported = true
 	self.parts.wpn_fps_snp_awp_g_perforated.stats = {
 		value = 1,
@@ -23195,12 +23104,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self.parts.wpn_fps_pis_beretta_sl_tan.stats = { value = 3 }
 						--Desert Grip
 						self.parts.wpn_fps_pis_beretta_g_tan.supported = true
-						self.parts.wpn_fps_pis_beretta_g_tan.stats = {
-							value = 4,
-							recoil = -2,
-							concealment = 1
-						}
-						self.parts.wpn_fps_pis_beretta_g_tan.custom_stats = { ads_speed_mult = 0.975 } 		
+						self.parts.wpn_fps_pis_beretta_g_tan.stats = deep_clone(grips.quickdraw_1)
+						self.parts.wpn_fps_pis_beretta_g_tan.custom_stats = deep_clone(grips.quickdraw_1)	
 		
 					--White Streak (PL14)
 						--Reaper Custom Frame
@@ -24009,14 +23914,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					--Sport Grip
 					self.parts.wpn_fps_bow_ecp_s_bare.adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
 					self.parts.wpn_fps_ass_m4_g_fancy.supported = true
-					self.parts.wpn_fps_ass_m4_g_fancy.stats = {
-						value = 1,
-						recoil = -2,
-						concealment = 1
-					}
-					self.parts.wpn_fps_ass_m4_g_fancy.custom_stats = {
-						ads_speed_mult = 0.975
-					}
+					self.parts.wpn_fps_ass_m4_g_fancy.stats = deep_clone(grips.quickdraw_1)
+					self.parts.wpn_fps_ass_m4_g_fancy.custom_stats = deep_clone(grips.quickdraw_1)
 					--Aftermarket Marksman Foregrip
 					self.parts.wpn_fps_ass_m16_fg_smooth.supported = true
 					self.parts.wpn_fps_ass_m16_fg_smooth.adds = { "wpn_fps_ass_m4_os_frontsight" }
@@ -26262,14 +26161,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = -1
 		}				
 		self.parts.wpn_fps_pis_hpb_g_black.supported = true				
-		self.parts.wpn_fps_pis_hpb_g_black.stats = { 
-			value = 2,
-			recoil = -2,
-			concealment = 1
-		}
-		self.parts.wpn_fps_pis_hpb_g_black.custom_stats = {
-			ads_speed_mult = 0.975
-		}				
+		self.parts.wpn_fps_pis_hpb_g_black.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_pis_hpb_g_black.custom_stats = deep_clone(grips.quickdraw_1)			
 		self.parts.wpn_fps_pis_hpb_a_c45.pcs = nil
 	end					
 
@@ -26367,14 +26260,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_amt_b_long.custom_stats = deep_clone(barrels.long_b3_stats)
 
 			self.parts.wpn_fps_pis_amt_g_smooth.supported = true	
-			self.parts.wpn_fps_pis_amt_g_smooth.stats = {
-				value = 5,
-				recoil = -2,
-				concealment = 1
-			}		
-			self.parts.wpn_fps_pis_amt_g_smooth.custom_stats = {
-				ads_speed_mult = 0.975
-			}		
+			self.parts.wpn_fps_pis_amt_g_smooth.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_amt_g_smooth.custom_stats = deep_clone(grips.quickdraw_1)
 
 			self.parts.wpn_fps_pis_amt_g_rosewood.supported = true		
 			self.parts.wpn_fps_pis_amt_g_rosewood.stats = {
@@ -26789,14 +26676,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -1
 		}
 		self.parts.wpn_fps_upg_xr2_grip_02.supported = true
-		self.parts.wpn_fps_upg_xr2_grip_02.stats = {
-			value  = 1,
-			recoil = -2,
-			concealment = 1
-		}
-		self.parts.wpn_fps_upg_xr2_grip_02.custom_stats = {
-			ads_speed_mult = 0.975
-		}
+		self.parts.wpn_fps_upg_xr2_grip_02.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_upg_xr2_grip_02.custom_stats = deep_clone(grips.quickdraw_1)
 
 		self.parts.wpn_fps_upg_xr2_mag_ext_01.supported = true
 		self.parts.wpn_fps_upg_xr2_mag_ext_01.has_description = nil
@@ -27389,14 +27270,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 
 		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.supported = true
-		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.stats = {
-			value = 5,
-			recoil = -2,
-			concealment = 1
-		}
-		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.custom_stats = {
-			ads_speed_mult = 0.975
-		}
+		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_upg_g3hk79_triggergroup_navy.custom_stats = deep_clone(grips.quickdraw_1)
 
 		self.parts.wpn_fps_upg_g3hk79_barrel_long.supported = true
 		self.parts.wpn_fps_upg_g3hk79_barrel_long.stats = deep_clone(barrels.long_b1_stats)
@@ -27509,13 +27384,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -1
 		}
 		self.parts.wpn_fps_upg_g36k_grip_rubber3.supported = true
-		self.parts.wpn_fps_upg_g36k_grip_rubber3.stats = {
-			recoil = -2,
-			concealment = 1
-		}
-		self.parts.wpn_fps_upg_g36k_grip_rubber3.custom_stats = {
-			ads_speed_mult = 0.975
-		}
+		self.parts.wpn_fps_upg_g36k_grip_rubber3.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_upg_g36k_grip_rubber3.custom_stats = deep_clone(grips.quickdraw_1)
 
 		self.parts.wpn_fps_upg_g36k_export_sight.supported = true
 		self.parts.wpn_fps_upg_g36k_export_sight.desc_id = "bm_wp_upg_o_3_5"
@@ -28552,14 +28422,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		--Stippled
 		self.parts.wpn_fps_pis_papa320_griptape03.supported = true
-		self.parts.wpn_fps_pis_papa320_griptape03.stats = {
-			value = 4,
-			concealment = 1,
-			recoil = -2
-		}
-		self.parts.wpn_fps_pis_papa320_griptape03.custom_stats = {
-			ads_speed_mult = 0.975
-		}
+		self.parts.wpn_fps_pis_papa320_griptape03.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_pis_papa320_griptape03.custom_stats = deep_clone(grips.quickdraw_1)
 
 		--Slick Steel
 		self.parts.wpn_fps_pis_papa320_frame_v2.supported = true
@@ -28567,9 +28431,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 4,
 			concealment = 1,
 			recoil = -2
-		}
-		self.parts.wpn_fps_pis_papa320_griptape03.custom_stats = {
-			ads_speed_mult = 0.975
 		}
 
 		--Lightweight

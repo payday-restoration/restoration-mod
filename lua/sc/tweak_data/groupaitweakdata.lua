@@ -713,8 +713,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			russia = {
 				Idstring("units/pd2_mod_reapers/characters/ene_cop_4/ene_cop_4")
 			},
-			zombie = 
-{				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
 			},				
 			murkywater = {	
 				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")

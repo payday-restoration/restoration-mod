@@ -8347,37 +8347,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
 	self.unit_categories.Phalanx_sniper.is_captain = true
 
-	--Titan Bravo Snipers that spawn with Winters on the 9th wave in HO
-	self.unit_categories.Bravo_Sniper = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
-			},
-			russia = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
-			},					
-			murkywater = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky")
-			},
-			federales = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex")
-			},				
-			nypd = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
-			},
-			lapd = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
-			},
-			fbi = {
-				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
-			}		
-		},
-		access = access_type_all,
-		is_captain = true
-	}	
+	
 	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {
@@ -8784,38 +8754,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			fbi = {
 				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-			}			
-		},
-		access = access_type_all,
-		special_type = "tank",
-		is_captain = true
-	}
-	--Headless White Titandozers that spawn with boss on Death Sentence
-	self.unit_categories.HVH_Boss_Headless_White = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},
-			russia = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},
-			zombie = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},					
-			murkywater = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},
-			federales = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},				
-			nypd = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},	
-			lapd = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-			},
-			fbi = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
 			}			
 		},
 		access = access_type_all,
@@ -15571,7 +15509,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}					
 			}
 		}	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {5, 5},
 			spawn = {
@@ -15592,8 +15530,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}				
 			}
-		}				
-	else
+		}
+	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {7, 7},
 			spawn = {
@@ -15618,6 +15556,36 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}				
+			}
+		}
+	else
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = {10, 10},
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
@@ -15793,7 +15761,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -15804,7 +15772,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "HVH_Boss_Headless_White",
+					unit = "HVH_Boss_Headless",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -15814,8 +15782,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				}					
@@ -18548,7 +18516,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 
 	--Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = {7, 7},
+			amount = {10, 10},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -18561,16 +18529,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 6,
+					amount_max = 6,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
 				{
-					unit = "Bravo_Sniper",
+					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 3,
+					amount_max = 3,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
@@ -18606,7 +18574,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -18617,7 +18585,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "HVH_Boss_Headless_White",
+					unit = "HVH_Boss_Headless",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -18627,8 +18595,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},					

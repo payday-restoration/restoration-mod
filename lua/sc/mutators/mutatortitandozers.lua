@@ -114,7 +114,7 @@ function MutatorTitandozers:setup()
 		}	
 	else
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -125,7 +125,7 @@ function MutatorTitandozers:setup()
 					rank = 1
 				},
 				{
-					unit = "HVH_Boss_Headless_White",
+					unit = "HVH_Boss_Headless",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -135,8 +135,8 @@ function MutatorTitandozers:setup()
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = tweak_data.group_ai._tactics.HVH_boss,
 					rank = 2
 				}					

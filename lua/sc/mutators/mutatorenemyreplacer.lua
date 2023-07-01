@@ -310,7 +310,6 @@ local ignored_groups = {
 	"Titan_Spooc",
 	"HVH_Boss",
 	"HVH_Boss_Headless",
-	"HVH_Boss_Headless_White",
 	"HVH_Boss_Spooc",
 	"HVH_Boss_Spooc_Normal"
 }

@@ -5149,12 +5149,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.desc_id = "bm_breech_sc_desc"				
 				self.breech.AMMO_MAX = 75
 				self.breech.CLIP_AMMO_MAX = 8
-				self.breech.fire_mode_data.fire_rate = 0.0821917
+				self.breech.fire_mode_data.fire_rate = 0.0882352
 				self.breech.kick = self.stat_info.kick_tables.even_recoil
 				self.breech.supported = true
 				self.breech.ads_speed = 0.120
 				self.breech.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1800,
 					end_dist = 4500,
 					min_mult = 0.25
 				}
@@ -5854,8 +5854,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rsh12.supported = true
 				self.rsh12.ads_speed = 0.220
 				self.rsh12.damage_falloff = {
-					start_dist = 2700,
-					end_dist = 5200,
+					start_dist = 1200,
+					end_dist = 4800,
 					min_mult = 0.26666
 				}
 				self.rsh12.stats = {
@@ -8013,7 +8013,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 71,
+					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 16,
@@ -9056,10 +9056,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Valkyria (AS Val)
 				self.asval.desc_id = "bm_asval_sc_desc"
 				self.asval.has_description = true
-				self.asval.sounds.fire = "akm_fire"
-				self.asval.sounds.fire_single = "akm_fire_single"
-				self.asval.sounds.fire_auto = "akm_fire"
-				self.asval.sounds.stop_fire = "akm_stop"
 				self.asval.sounds.dryfire = "primary_dryfire"
 				self.asval.AMMO_MAX = 80
 				self.asval.CLIP_AMMO_MAX = 20
@@ -9306,7 +9302,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.supported = true
 				self.shak12.ads_speed = 0.380
 				self.shak12.damage_falloff = {
-					start_dist = 1200,
+					start_dist = 1300,
 					end_dist = 5200,
 					min_mult = 0.3
 				}
@@ -12700,8 +12696,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.supported = true
 		self.shatters_fury.ads_speed = 0.220
 		self.shatters_fury.damage_falloff = {
-			start_dist = 3500,
-			end_dist = 6000,
+			start_dist = 3000,
+			end_dist = 5500,
 			min_mult = 0.26666
 		}
 		self.shatters_fury.stats = {

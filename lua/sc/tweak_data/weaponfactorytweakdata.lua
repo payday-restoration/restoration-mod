@@ -12670,6 +12670,27 @@ end)
 --ASVAL
 Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(self)
 
+	self.parts.wpn_fps_ass_asval_sound_switch = {
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_asval_ck_switch",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		no_cull = true,
+		internal_part = true,
+		stats = {
+			value = 5
+		},
+		custom_stats = {
+			sounds = {
+				fire = "akm_fire",
+				fire_single = "akm_fire_single",
+				fire_auto = "akm_fire",
+				stop_fire = "akm_stop"
+			}
+		}
+	}
+
 	--Prototype Barrel
 	self.parts.wpn_fps_ass_asval_b_proto.pcs = {}
 	self.parts.wpn_fps_ass_asval_b_proto.supported = true
@@ -12680,6 +12701,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	}
 	self.parts.wpn_fps_ass_asval_b_proto.sound_switch = nil
 	self.parts.wpn_fps_ass_asval_b_proto.perks = nil
+	self.parts.wpn_fps_ass_asval_b_proto.adds = { "wpn_fps_ass_asval_sound_switch" }
 	
 	--Standard Barrel
 	self.parts.wpn_fps_ass_asval_b_standard.supported = true
@@ -12702,9 +12724,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 		"wpn_fps_ass_shak12_ns_muzzle",
 		"wpn_fps_ass_shak12_ns_suppressor"
 	}
-	self.parts.wpn_fps_ass_asval_b_standard.sound_switch = {
-		suppressed = "suppressed_b"
-	}
+
 	--Solid Stock
 	self.parts.wpn_fps_ass_asval_s_solid.pcs = {}
 	self.parts.wpn_fps_ass_asval_s_solid.supported = true
@@ -15391,6 +15411,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 		type = "ammo",
 		name_id = "bm_wp_breech_ck_switch",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		no_cull = true,
 		internal_part = true,
 		stats = {
 			value = 5
@@ -15436,6 +15457,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 		parent = "barrel",
 		adds = { "wpn_fps_pis_breech_sound_switch" }
 	}
+	self.wpn_fps_pis_breech.override.wpn_fps_upg_ns_pis_jungle = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
 	--]]
 	self.wpn_fps_pis_breech.override.wpn_fps_upg_pis_ns_flash = {
 		a_obj = "a_ns",
@@ -15454,17 +15480,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 		parent = "barrel"
 	}
 
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium")
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_gem")
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_slim")
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large")
-	--table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_gem")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_slim")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_jungle")
 	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_pis_ns_flash")
 	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_breech.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
 
 	self.wpn_fps_pis_breech_npc.uses_parts = deep_clone(self.wpn_fps_pis_breech.uses_parts)	
+	self.wpn_fps_pis_breech_npc.override = deep_clone(self.wpn_fps_pis_breech.override)	
 	
 end)
 
@@ -18456,6 +18485,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	}
 	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_medium")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_medium_gem")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_medium_slim")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_large")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_upg_ns_pis_jungle")
 	
 	--Short Barrel
 	self.parts.wpn_fps_pis_rsh12_b_short.pcs = {
@@ -18491,14 +18528,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	}	
 	
 	--Overrides for Glock comps
-	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_comp_2 = {
-		parent = "barrel", 
-		a_obj = "a_ns"
-	}
-	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_1 = {
-		parent = "barrel", 
-		a_obj = "a_ns"
-	}	
+	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_comp_2 = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_1 = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_ass_filter = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_small = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_gem = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_medium_slim = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_large_kac = { parent = "barrel",  a_obj = "a_ns" }
+	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_ns_pis_jungle = { parent = "barrel",  a_obj = "a_ns" }
+
 	self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 		desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
 		custom_stats = {
@@ -18515,10 +18555,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			recoil = -6,
 			extra_ammo = 10
 		}
-	}	
-	
+	}
+
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_1")	
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_medium")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_medium_gem")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_medium_slim")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_large")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_ns_pis_jungle")
 
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_i_iw_hailstorm")		
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")		
@@ -22940,7 +22988,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 0.925
 				}
 
-				self.parts.wpn_fps_upg_lewis_mag_ext.supported = true --not active
+				self.parts.wpn_fps_upg_lewis_mag_ext.supported = true
 				self.parts.wpn_fps_upg_lewis_mag_ext.stats = {
 					value = 0,
 					extra_ammo = 50,

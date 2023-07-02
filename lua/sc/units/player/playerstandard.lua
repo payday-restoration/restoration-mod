@@ -670,6 +670,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								weap_base:start_shooting()
 								self._camera_unit:base():start_shooting()
 
+								self._anim_played = nil
 								self._shooting = true
 								self._shooting_t = t
 								start_shooting = true
@@ -740,7 +741,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 					if fire_mode == "single" then
 						if weap_base:weapon_tweak_data().spin_up_semi then
-							if not self._spin_up_shoot then
+							if not self._spin_up_shoot and not self._anim_played then
+								self._anim_played = true
 								local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 								local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
@@ -820,8 +822,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-						if not self._spin_up_shoot and not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight") then
-							weap_base:tweak_data_anim_play("fire")
+						if not weap_base:weapon_tweak_data().spin_up_semi then
+							if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight") then
+								weap_base:tweak_data_anim_play("fire")
+							end
 						end
 
 						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then

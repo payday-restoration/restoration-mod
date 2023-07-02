@@ -15348,7 +15348,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.fire_mode_data.fire_rate = 1.5
 		self.musket.lock_slide = true
 		self.musket.sounds.magazine_empty = "shotgun_dryfire"
-		self.musket.sounds.stop_fire = "saiga_stop"
+		self.musket.sounds.stop_fire = "judge_x_fire"
 		self.musket.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.musket.supported = true
 		self.musket.ads_speed = 0.280
@@ -15375,6 +15375,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.can_shoot_through_titan_shield = true
 		self.musket.stats_modifiers = nil
 		self.musket.panic_suppression_chance = 0.05
+		self.musket.spin_up_semi = true
+		self.musket.spin_up_shoot = true
+		self.musket.spin_up_t = 0.16
+		self.musket.spin_down_t = 0.00000001
+		self.musket.sounds.spin_start = "wp_baka_lever_pull"
 		self.musket.reload_speed_multiplier = 1.2
 		self.musket.timers.reload_exit_not_empty = 0.9
 		self.musket.timers.reload_exit_empty = 0.9
@@ -16401,7 +16406,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.supported = true
 		self.swhiskey.ads_speed = 0.180
 		self.swhiskey.damage_falloff = {
-			start_dist = 2200,
+			start_dist = 1000,
 			end_dist = 4200,
 			min_mult = 0.26666
 		}

@@ -15761,7 +15761,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
-			amount = {7, 7},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -15782,8 +15782,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				}					
@@ -18574,7 +18574,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
-			amount = {7, 7},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -18595,8 +18595,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},					
@@ -19568,7 +19568,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	--Add the relevant captain to the assault groups, if able to.
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
-		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.2, 0.5}
+		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.5, 1}
 	end		
 	
 	if difficulty_index <= 7 then

@@ -244,6 +244,19 @@ function HUDManager:_create_level_suspicion_hud(hud)
 	
 end
 
+--Just in case
+function HUDManager:check_anticipation_voice(t)
+	if not self._anticipation_dialogs or self._anticipation_dialogs and not self._anticipation_dialogs[1] then
+		return
+	end
+
+	if self._anticipation_dialogs and t < self._anticipation_dialogs[1].time then
+		local data = table.remove(self._anticipation_dialogs, 1)
+
+		self:sync_assault_dialog(data.dialog)
+		managers.network:session():send_to_peers_synched("sync_assault_dialog", data.dialog)
+	end
+end
 
 function HUDManager:set_dodge_value(value)
 	--Sends current dodge meter level and players dodge stat to the dodge panel in HUDtemp.lua

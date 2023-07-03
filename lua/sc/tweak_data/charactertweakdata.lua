@@ -1713,7 +1713,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.immune_to_knock_down = true
 	self.deep_boss.immune_to_concussion = true
 	self.deep_boss.can_reload_while_moving_tmp = true
-	self.deep_boss.ignore_headshot = true
+	self.deep_boss.ignore_headshot = false
 	self.deep_boss.no_headshot_add_mul = true
 	self.deep_boss.player_health_scaling_mul = 1.1
 

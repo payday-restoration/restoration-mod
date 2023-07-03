@@ -108,7 +108,6 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 end
 
-
 return {
 	--PONR/Restores unused cloaker vault spawn
 	[100546] = {
@@ -184,7 +183,7 @@ return {
 	},
 	[101636] = {
 		values = {
-            enemy = vault_guardian
+            enemy = swat_3
 		}
 	},
 	[101646] = {

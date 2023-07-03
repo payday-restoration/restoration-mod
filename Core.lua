@@ -364,7 +364,6 @@ function restoration:Init()
 	restoration.fuck_hunt = {
 		"kenaz", --ggc
 		"pines", --white xmas
-		"spa", --brooklyn 10-10
 		"jolly", --aftershock
 		"born", --biker heist D1
 		"ukrainian_job", --uk joj

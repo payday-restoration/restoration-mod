@@ -178,12 +178,16 @@ function MissionEndState:at_enter(old_state, params)
 	end
 
 	local level_data = Global.level_data.level_id and tweak_data.levels[Global.level_data.level_id]
+	local failure_music = not self._success and level_data and level_data.failure_music
+	
+	if type(failure_music) == "table" then
+		local failure_variant = managers.groupai:state():failure_variant() or 0
+		failure_music = failure_music[failure_variant] or nil
+	end
 
-	if not self._success and level_data and level_data.failure_music then
-		managers.music:stop_listen_all()
-		managers.menu:post_event(level_data.failure_music)
+	if failure_music then
+		managers.menu:post_event(failure_music)
 	else
-		managers.music:stop_listen_all()
 		managers.music:post_event(self._success and managers.music:jukebox_menu_track("heistresult") or managers.music:jukebox_menu_track("heistlost"))
 	end
 
@@ -249,6 +253,14 @@ function MissionEndState:at_enter(old_state, params)
 	end
 
 	Telemetry:on_end_heist(self._type, total_exp_gained, self._moneythrower_spending_kills)
+
+	-- I'm not sure this is how MSIM should be fixed, but be my guest to properly fix it - it just works.
+	if msim then
+		msim:load()
+		msim:pick_available_props(3)
+		msim.settings.pp = math.min(msim.settings.pp + msim.settings.pprr, 100)
+		msim:save()
+	end
 end
 
 local on_statistics_result_ori = MissionEndState.on_statistics_result

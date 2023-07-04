@@ -5,6 +5,7 @@ local mvec3_dis_sq = mvector3.distance_sq
 local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
+local job = Global.level_data and Global.level_data.level_id
 
 -- Megaphone events must be appended to this table in order for them to be synced to clients
 GroupAIStateBase.MEGAPHONE_EVENTS = {
@@ -248,7 +249,9 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 	managers.hud:show_point_of_no_return_timer(self._point_of_no_return_tweak_id)
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
 	--log("setting diff to 1!!")
-	self:set_difficulty(nil, 1)
+	if not table.contains(restoration.alternate_ponr_behavior, job) then 
+		self:set_difficulty(nil, 1)
+	end
 end
 
 local old_update_point_of_no_return = GroupAIStateBase._update_point_of_no_return
@@ -353,8 +356,6 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		--Application:error("Could not detonate smoke grenade as it was not queued!", id)
 		return
 	end
-
-	local job = Global.level_data and Global.level_data.level_id
 
 	if job == "haunted" then
 		self._smoke_grenades = nil --delete queue

@@ -301,6 +301,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
+	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 	if alive(attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 	end
@@ -355,9 +356,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		armor_reduction_multiplier = 1
 	end
 	local health_subtracted = self:_calc_armor_damage(attack_data)
-	
+
 	--Apply health damage.
-	if (attack_data.armor_piercing or variant == "explosion") and not self._unpierceable then
+	if ((attack_data.armor_piercing or variant == "explosion") and not self._unpierceable) or self_damage then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
@@ -577,7 +578,6 @@ function PlayerDamage:damage_bullet(attack_data)
 
 		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
 		local range = nil
-		local has_knockback_resistance = pm:has_category_upgrade("player", "knockback_resistance")
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then
@@ -586,7 +586,7 @@ function PlayerDamage:damage_bullet(attack_data)
 				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress.range
 				if distance < range and not on_ladder and not hit_in_air then
 					local attack_vec = attack_dir:with_z(0.1):normalized() * 600
-					mvector3.multiply(attack_vec, 0.6 * knockback_resistance)
+					mvector3.multiply(attack_vec, 0.5 * knockback_resistance)
 					self._unit:movement():current_state():push(attack_vec, true, 0.2, true)
 					if in_air then
 						self._unit:movement():current_state()._hit_in_air = true
@@ -598,14 +598,7 @@ function PlayerDamage:damage_bullet(attack_data)
 				}
 				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
 				self._unit:movement():current_state()._spread_stun_t = 0.5
-				--[[
-				local hor_var = {
-					1,
-					-1
-				}
-				local hor_var_lr = hor_var[math.random(#hor_var)] 
-				self._unit:camera()._camera_unit:base():recoil_kick(0.75, 0.5, hor_var_lr * 0.75, hor_var_lr * 1.25, true )
-				--]]
+				managers.hud:activate_effect_screen(0.5, {0.6, 0.3, 0.1})
 			end
 
 			--Shotgunner
@@ -618,28 +611,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					}
 					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
 					self._unit:movement():current_state()._d_scope_t = 0.5
-					--[[
-					local hor_var = {
-						1,
-						-1
-					}
-					local hor_var_lr = hor_var[math.random(#hor_var)] 
-					self._unit:camera()._camera_unit:base():recoil_kick(0.5, 0.25, hor_var_lr * 0.5 , hor_var_lr * 0.75, true )
-					--]]
-					--[[
-					range = tweak_data.character[attacker_unit:base()._tweak_table].dt_sgunner.range_close or 0
-					if distance < range then
-						if not on_ladder and not hit_in_air then
-							local attack_vec = attack_dir:with_z(0.1):normalized() * 600
-							mvector3.multiply(attack_vec, 1 * knockback_resistance)
-							self._unit:movement():current_state():push(attack_vec, true, 0.2, has_knockback_resistance)
-							if in_air then
-								self._unit:movement():current_state()._hit_in_air = true
-							end
-						end
-					end
-					--]]
-
+					managers.hud:activate_effect_screen(0.7, {0.35, 0.25, 0.1})
 				end
 			end
 

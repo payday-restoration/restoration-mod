@@ -502,7 +502,7 @@ function CopDamage:damage_fire(attack_data)
 		managers.statistics:killed_by_anyone(data)
 
 		local weap_base = weap_unit and weap_unit:base()
-		local close_range = weap_base and ((weap_base.is_category and weap_base:is_category("saw")) or (distance <= 600))
+		local close_range = weap_base and ((weap_base.is_category and weap_base:is_category("saw")) or (distance <= (weap_base.near_falloff_distance or 100)))
 		if weap_base and not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and alive(attack_data.weapon_unit) and not weap_base.thrower_unit and close_range and weap_base.is_category and weap_base:is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
@@ -930,7 +930,8 @@ function CopDamage:damage_bullet(attack_data)
 
 	if not self._damage_reduction_multiplier and head then
 		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
-		if weapon_hs_mult and not ignore then
+		local is_captain = self._char_tweak.ends_assault_on_death
+		if weapon_hs_mult and not is_captain then
 			damage = damage * weapon_hs_mult
 		end
 		if self._char_tweak.headshot_dmg_mul then
@@ -1173,7 +1174,7 @@ function CopDamage:damage_bullet(attack_data)
 			self:_check_damage_achievements(attack_data, head)
 
 
-			local close_range = weap_base and ((weap_base.is_category and weap_base:is_category("saw")) or (distance <= 600))
+			local close_range = weap_base and ((weap_base.is_category and weap_base:is_category("saw")) or (distance <= (weap_base.near_falloff_distance or 100)))
 			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not weap_base.thrower_unit and close_range and weap_base:is_category("shotgun", "saw") then
 				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end

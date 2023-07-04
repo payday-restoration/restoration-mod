@@ -445,13 +445,20 @@ function BlackMarketGui:choose_weapon_mods_callback(data)
 	local new_node_data = {}
 	local cosmetic_instances = managers.blackmarket:get_cosmetics_instances_by_weapon_id(data.name)
 	local all_cosmetics = managers.blackmarket:get_cosmetics_by_weapon_id(data.name)
+	local bmm = managers.blackmarket
+	local is_tam_f = bmm.is_weapon_skin_tam
+	local all_skins_td = tweak_data.blackmarket.weapon_skins
+	local is_steam = SystemInfo:distribution() == Idstring("STEAM")
+	local cosmetic_td = nil	
 
 	local weapon_id = data.name
 	local weapon_tweak = tweak_data.weapon
 	local has_type_override = weapon_tweak[ weapon_id ] and weapon_tweak[ weapon_id ].override_mod_type_name
 	
 	for id, data in pairs(all_cosmetics) do
-		if managers.blackmarket:is_weapon_skin_tam(id) then
+		cosmetic_td = all_skins_td[id]
+
+		if not is_steam and not cosmetic_td.is_a_color_skin and not cosmetic_td.is_a_unlockable or is_tam_f(bmm, id) then
 			all_cosmetics[id] = nil
 		end
 	end
@@ -4793,20 +4800,23 @@ function BlackMarketGui:update_info_text()
 
 		updated_texts[2].resource_color = {}
 
-		local has_info_id = tweak_data.blackmarket.melee_weapons[slot_data.name].info_id
-		local swing_arc = tweak_data.blackmarket.melee_weapons[slot_data.name].sphere_cast_radius_add
+		local melee_tweak_data = tweak_data.blackmarket.melee_weapons[slot_data.name]
+		local has_info_id = melee_tweak_data.info_id
+		local swing_arc_h = melee_tweak_data.sphere_cast_radius_add_h
+		local swing_arc_charged_h = melee_tweak_data.sphere_cast_radius_add_charged_h
+		local swing_arc = melee_tweak_data.sphere_cast_radius_add_charged_h or melee_tweak_data.sphere_cast_radius_add_h or melee_tweak_data.sphere_cast_radius_add
 
 		if has_info_id or swing_arc then
 			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
 			if swing_arc then
 				if swing_arc >= 32 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_4")
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_4") or (swing_arc_h and "bm_melee_swing_arc_h_4") or "bm_melee_swing_arc_4")
 				elseif swing_arc >= 24 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_3")
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_3") or (swing_arc_h and "bm_melee_swing_arc_h_3") or "bm_melee_swing_arc_3")
 				elseif swing_arc >= 16 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_2")
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_2") or (swing_arc_h and "bm_melee_swing_arc_h_2") or "bm_melee_swing_arc_2")
 				elseif swing_arc >= 8 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text("bm_melee_swing_arc_1")
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_1") or (swing_arc_h and "bm_melee_swing_arc_h_1") or "bm_melee_swing_arc_1")
 				end
 			end
 

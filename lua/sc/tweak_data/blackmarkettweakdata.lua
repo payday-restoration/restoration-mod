@@ -106,6 +106,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 	--Classic Helmet
 	self.masks.classic_helmet = {}
 	self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.masks.classic_helmet = {
 			unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
@@ -117,10 +118,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			texture_bundle_folder = "mods"
 		}
 	end
+	end
 
 	--All Seeing Anchor		
 	self.masks.all_seeing = {}
-	self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"			
+	self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.masks.all_seeing = {
 			unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye",
@@ -132,10 +135,12 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			texture_bundle_folder = "mods"
 		}		
 	end
+	end
 
 	--devmask.model		
 	self.masks.cube = {}
-	self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"	
+	self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 		self.masks.cube = {
 			unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
@@ -146,6 +151,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 			global_value = "rest_omnia",
 			texture_bundle_folder = "mods"
 		}		
+	end
 	end
 end)
 
@@ -263,10 +269,11 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 	self.player_styles.poggers.characters.ecp_male = {
 		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_fat/ess_acc_esport_male_fat"
 	}
-	
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.player_styles.poggers.global_value = "rest_omnia"
 		self.player_styles.poggers.unlocked = true
+	end
 	end
 	
 	-- Flecktarn Jumpsuit 
@@ -1087,6 +1094,16 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_soprano_blue",
 	}
 	
+	--self.player_styles.suit_sunny.material_variations.neonred = {
+		--name_id = "bm_suit_var_suit_sunny_neonred",
+	--	unlocked = true,
+	--	custom = true,
+	--	texture_bundle_folder = "mods",
+	--	desc_id = "bm_suit_var_suit_sunny_neonred_desc",
+	--	material = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
+	--	third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_neonred",
+	--}
+	
 	self.player_styles.suit_sunny.characters.chains.material_variations = {
 	skull = {
 	    third_material = "units/pd2_mod_suits/characters/shared_materials/res_acc_suit_sunny_skull_chains",
@@ -1779,14 +1796,31 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	table.insert(self._projectiles_index, "launcher_poison_osipr")
 
 	--Throwables--
+	--Shuriken
 	self.projectiles.wpn_prj_four.max_amount = 9
+	self.projectiles.wpn_prj_four.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_ace.max_amount = 9
+	self.projectiles.wpn_prj_four.expire_t = 0.6
+	--Throwing Cards
+	self.projectiles.wpn_prj_ace.throw_allowed_expire_t = 0.05
 	self.projectiles.wpn_prj_ace.repeat_expire_t = 0.5
+	self.projectiles.wpn_prj_ace.expire_t = 0.6
+	self.projectiles.wpn_prj_ace.max_amount = 9
+	--Throwing Knife
+	self.projectiles.wpn_prj_target.throw_allowed_expire_t = 0.12
+	self.projectiles.wpn_prj_target.repeat_expire_t = 0.625
+	self.projectiles.wpn_prj_target.expire_t = 0.65
 	self.projectiles.wpn_prj_target.max_amount = 9
-	self.projectiles.wpn_prj_target.repeat_expire_t = 0.5
-	self.projectiles.wpn_prj_jav.max_amount = 6
+	--Throwing Axe
+	self.projectiles.wpn_prj_hur.throw_allowed_expire_t = 0.35
+	self.projectiles.wpn_prj_hur.repeat_expire_t = 0.5
+	self.projectiles.wpn_prj_hur.expire_t = 0.6
 	self.projectiles.wpn_prj_hur.max_amount = 6
+	--Javelin
+	self.projectiles.wpn_prj_jav.throw_allowed_expire_t = 0.75
+	self.projectiles.wpn_prj_jav.repeat_expire_t = 0.8
+	self.projectiles.wpn_prj_jav.expire_t = 0.9
+	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 40
 	self.projectiles.damage_control.base_cooldown = 30
@@ -3522,7 +3556,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].repeat_expire_t = 0.8
 			self.melee_weapons[melee_id].melee_damage_delay = 0.45
 			self.melee_weapons[melee_id].anim_speed_mult = 0.9
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 16
+			self.melee_weapons[melee_id].sphere_cast_radius_add_h = 16
 			self.melee_weapons[melee_id].melee_charge_shaker = ""
 		end
 		
@@ -3546,7 +3580,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
 			self.melee_weapons[melee_id].melee_damage_delay = 0.6
 			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 32
+			self.melee_weapons[melee_id].sphere_cast_radius_add_h = 32
 		end
 		self.melee_weapons.meter.anim_attack_charged_vars = nil
 		
@@ -4309,13 +4343,19 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.tenderizer.stats.concealment = 26
 
 		--I'M GOIN'TA LIQUIFY YA!--
-		self.melee_weapons.model24.stats.min_damage = 4.5
+		self.melee_weapons.model24.info_id = "bm_melee_erica_info"
+		self.melee_weapons.model24.special_weapon = "caber"
+		self.melee_weapons.model24.explosion_chance = 0.05
+		self.melee_weapons.model24.explosion_curve_pow = 0.5
+		self.melee_weapons.model24.explosion_damage = 60
+		self.melee_weapons.model24.explosion_range = 500
 		self.melee_weapons.model24.stats.max_damage = 9.001
+		self.melee_weapons.model24.stats.min_damage = 4.5
 		self.melee_weapons.model24.stats.min_damage_effect = 9.0
 		self.melee_weapons.model24.stats.max_damage_effect = 18.0
-		self.melee_weapons.model24.stats.charge_time = 1.5
+		self.melee_weapons.model24.stats.charge_time = 1.8
 		self.melee_weapons.model24.stats.range = 170
-		self.melee_weapons.model24.stats.concealment = 26
+		self.melee_weapons.model24.stats.concealment = 25
 
 		--Who's up for rockin the mic?--	
 		self.melee_weapons.microphone.special_weapon = "talk"
@@ -5050,6 +5090,11 @@ end
 
 Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak_data)	
 
+	for melee_id, i in pairs (self.melee_weapons) do
+		if self.melee_weapons[melee_id] and self.melee_weapons[melee_id].custom and self.melee_weapons[melee_id].based_on then
+			self.melee_weapons[melee_id].stats = deep_clone(self.melee_weapons[self.melee_weapons[melee_id].based_on].stats)
+		end
+	end
 
 	if self.melee_weapons.halloween_sword then
 		self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
@@ -5124,7 +5169,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
 			self.melee_weapons[melee_id].melee_damage_delay = 0.6
 			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 32
+			self.melee_weapons[melee_id].sphere_cast_radius_add_h = 32
 		end
 	end
 
@@ -5186,7 +5231,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].repeat_expire_t = 0.5
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
 			self.melee_weapons[melee_id].anim_speed_mult = 0.625
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 24
+			self.melee_weapons[melee_id].sphere_cast_radius_add = nil
+			self.melee_weapons[melee_id].sphere_cast_radius_add_charged_h = 24
 			self.melee_weapons[melee_id].make_effect = true
 			self.melee_weapons[melee_id].make_decal = nil
 		end
@@ -5372,7 +5418,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.revenant_heirloom then --Revenant Heirloom Scythe
-		self.melee_weapons.revenant_heirloom.info_id = nil
+		self.melee_weapons.revenant_heirloom.info_id = "bm_melee_revenant_heirloom_info"
 		self.melee_weapons.revenant_heirloom.stats.min_damage = 6
 		self.melee_weapons.revenant_heirloom.stats.max_damage = 18.001
 		self.melee_weapons.revenant_heirloom.stats.min_damage_effect = 2.4
@@ -5380,6 +5426,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.revenant_heirloom.stats.charge_time = 2
 		self.melee_weapons.revenant_heirloom.stats.range = 200
 		self.melee_weapons.revenant_heirloom.stats.concealment = 23
+		self.melee_weapons.revenant_heirloom.stats.charge_bonus_start = 0.25
+		self.melee_weapons.revenant_heirloom.stats.charge_bonus_range = 0
 		self.melee_weapons.revenant_heirloom.headshot_damage_multiplier = nil
 	end
 
@@ -5394,6 +5442,20 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.melee_g36.sounds.hit_body = "g36_fire_single"
 		self.melee_weapons.melee_g36.sounds.hit_gen = "g36_fire_single"
 		self.melee_weapons.melee_g36.sounds.hit_air = "primary_dryfire"
+	end
+
+	if self.melee_weapons.zd_poke then --Poke
+		self.melee_weapons.zd_poke.anim_attack_vars = {"var1"}
+		self.melee_weapons.zd_poke.expire_t = 33.4
+		self.melee_weapons.zd_poke.repeat_expire_t = 29.5
+		self.melee_weapons.zd_poke.melee_damage_delay = 28.3
+		self.melee_weapons.zd_poke.stats.min_damage = 10000
+		self.melee_weapons.zd_poke.stats.max_damage = 30000
+		self.melee_weapons.zd_poke.stats.min_damage_effect = 10000
+		self.melee_weapons.zd_poke.stats.max_damage_effect = 30000
+		self.melee_weapons.zd_poke.stats.charge_time = 3
+		self.melee_weapons.zd_poke.stats.range = 200
+		self.melee_weapons.zd_poke.stats.concealment = 30
 	end
 
 

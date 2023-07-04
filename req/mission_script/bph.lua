@@ -77,5 +77,11 @@ return {
 		values = {
             enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
 		}
+	},
+	-- Allow bot navigation earlier
+	[102736] = {
+		on_executed = {
+			{ id = 103049, delay = 1 }
+		}
 	}
 }

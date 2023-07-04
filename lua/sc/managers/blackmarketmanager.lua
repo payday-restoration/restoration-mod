@@ -123,67 +123,77 @@ function BlackMarketManager:damage_multiplier(name, categories, silencer, detect
 end
 
 function BlackMarketManager:_calculate_weapon_concealment(weapon)
-	local factory_id = weapon.factory_id
-	local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
-	local blueprint = weapon.blueprint
-	local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
-	local modifiers_stats = weapon_id and tweak_data.weapon[weapon_id].stats_modifiers
-	local bonus = 0
+	if weapon then
+		local factory_id = weapon.factory_id
+		local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
+		local blueprint = weapon.blueprint
+		local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
+		local modifiers_stats = weapon_id and tweak_data.weapon[weapon_id].stats_modifiers
+		local bonus = 0
+	
+		if not base_stats or not base_stats.concealment then
+			return 0
+		end
+	
+		local bonus_stats = {}
 
-	if not base_stats or not base_stats.concealment then
+		if weapon.cosmetics and weapon.cosmetics.id and weapon.cosmetics.bonus and not managers.job:is_current_job_competitive() and not managers.weapon_factory:has_perk("bonus", factory_id, blueprint) then
+			bonus_stats = tweak_data:get_raw_value("economy", "bonuses", tweak_data.blackmarket.weapon_skins[weapon.cosmetics.id].bonus, "stats") or {}
+		end
+
+		local parts_stats = managers.weapon_factory:get_stats(factory_id, blueprint)
+
+		return math.min((base_stats.concealment + bonus + (parts_stats.concealment or 0) + (bonus_stats.concealment or 0)) * (modifiers_stats and modifiers_stats.concealment or 1), tweak_data.concealment_cap)
+	else
+		log("Somehow called this function without an argument to define a weapon")
 		return 0
 	end
-
-	local bonus_stats = {}
-
-	if weapon.cosmetics and weapon.cosmetics.id and weapon.cosmetics.bonus and not managers.job:is_current_job_competitive() and not managers.weapon_factory:has_perk("bonus", factory_id, blueprint) then
-		bonus_stats = tweak_data:get_raw_value("economy", "bonuses", tweak_data.blackmarket.weapon_skins[weapon.cosmetics.id].bonus, "stats") or {}
-	end
-
-	local parts_stats = managers.weapon_factory:get_stats(factory_id, blueprint)
-
-	return math.min((base_stats.concealment + bonus + (parts_stats.concealment or 0) + (bonus_stats.concealment or 0)) * (modifiers_stats and modifiers_stats.concealment or 1), tweak_data.concealment_cap)
 end
 
 function BlackMarketManager:get_silencer_concealment_modifiers(weapon)
-	local factory_id = weapon.factory_id
-	local blueprint = weapon.blueprint
-	local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
-	local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
-	local bonus = 0
+	if weapon then
+		local factory_id = weapon.factory_id
+		local blueprint = weapon.blueprint
+		local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
+		local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
+		local bonus = 0
+	
+		if not base_stats or not base_stats.concealment then
+			return 0
+		end
 
-	if not base_stats or not base_stats.concealment then
+
+		local silencer = managers.weapon_factory:has_perk("silencer", weapon.factory_id, blueprint)
+		local current_concealment = self:calculate_weapon_concealment(weapon)
+		
+		--[[
+		if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_increase") then
+			bonus = managers.player:upgrade_value("player", "silencer_concealment_increase", 0)
+		end
+		--]]
+		
+		if managers.player:has_category_upgrade("player", "weapon_concealment_increase") then
+			bonus = managers.player:upgrade_value("player", "weapon_concealment_increase", 0)
+		end
+	
+	
+		if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_penalty_decrease") then
+			local stats = managers.weapon_factory:get_perk_stats("silencer", factory_id, blueprint)
+	
+			if stats and stats.concealment then
+				bonus = bonus + math.min(managers.player:upgrade_value("player", "silencer_concealment_penalty_decrease", 0), math.abs(stats.concealment))
+			end
+		end
+	
+		if current_concealment + bonus > tweak_data.concealment_cap then
+			return tweak_data.concealment_cap - current_concealment
+		end
+	
+		return bonus
+	else
+		log("Somehow called this function without an argument to define a weapon")
 		return 0
 	end
-
-
-	local silencer = managers.weapon_factory:has_perk("silencer", weapon.factory_id, blueprint)
-	local current_concealment = self:calculate_weapon_concealment(weapon)
-	
-	--[[
-	if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_increase") then
-		bonus = managers.player:upgrade_value("player", "silencer_concealment_increase", 0)
-	end
-	--]]
-	
-	if managers.player:has_category_upgrade("player", "weapon_concealment_increase") then
-		bonus = managers.player:upgrade_value("player", "weapon_concealment_increase", 0)
-	end
-
-
-	if silencer and managers.player:has_category_upgrade("player", "silencer_concealment_penalty_decrease") then
-		local stats = managers.weapon_factory:get_perk_stats("silencer", factory_id, blueprint)
-
-		if stats and stats.concealment then
-			bonus = bonus + math.min(managers.player:upgrade_value("player", "silencer_concealment_penalty_decrease", 0), math.abs(stats.concealment))
-		end
-	end
-
-	if current_concealment + bonus > tweak_data.concealment_cap then
-		return tweak_data.concealment_cap - current_concealment
-	end
-
-	return bonus
 end
 
 Hooks:RegisterHook("BlackMarketManagerModifyGetInventoryCategory")

@@ -53,11 +53,7 @@
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/counterfeit" force="true"/>
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
-	<texture			path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>	
-
-	<!-- hotline day 2 -->
-	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
-	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	<texture			path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
 	
 	<!--New logo-->
 	<texture			path="guis/textures/game_small_logo" force="true"/>
@@ -93,8 +89,12 @@
 	<model				path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture			path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
-		
-	<!--Tiny Heist Edits that Change like a few things-->	
+	
+	<!--Tiny Heist Edits that Change like a few things-->
+	<!-- hotline day 2 -->
+	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	
 	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
 	
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
@@ -155,6 +155,7 @@
 	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
+	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
@@ -172,7 +173,6 @@
 	<continent			path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
 	
 	<continent			path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>
-	<!--<nav_data			path="levels/narratives/classics/dah/nav_manager_data" force="true" unload="true"/>-->
 	
 	<cover_data			path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
@@ -251,12 +251,6 @@
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	
-	<!-- Hoxton Breakout FBI Boss Vetcop -->
-	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />
-	<object				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
-	<unit				path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
-	
-	<!--Load Jerome The Shotty Man in case if some heist has them missing in the package-->
 	<add from_db="true" 	path="units/payday2/characters/ene_security_3/ene_security_3" type="unit">
 		<unit load="true"	path="units/payday2/characters/ene_security_3/ene_security_3"/>
 		<object 			path="units/payday2/characters/ene_security_3/ene_security_3"/>
@@ -408,11 +402,7 @@
 	<!--Corrected NPC Weapon Sounds-->	
 	<unit				path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" load="true" />		
 	<unit				path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
-	<unit				path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
-
-	<!--Panic Room Bullet Impact Fixes-->		
-	<object				path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
-	<object				path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
+	<unit				path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>
 	
 	<!--Cops for the Bomb: Forest heist-->
 	<unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
@@ -1198,16 +1188,17 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
 	
 	<!--Omnia Buff Effect-->
-	<object				path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<model				path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="false"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	
-	<effect				path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="false"/>
-	<effect				path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="false"/>
-	<effect				path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
-	<effect				path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" load = "true"/>
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	
@@ -1246,6 +1237,7 @@
 	<!--Sniper Trails-->
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
+	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
 	
 	<!--Weapon Mod Trails-->
 	<!--M249/240 casings-->
@@ -1384,6 +1376,8 @@
 	
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
+	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/wpn_fps_pis_x_judge" load="false"/>
+	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" load="false"/>
 	
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>

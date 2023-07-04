@@ -317,6 +317,26 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		630000
 	}
 	
+	--Crude Awakening
+	self.jobs.deep.payout = {			
+		72500,
+		200000,
+		500000,
+		850000,
+		1000000,
+		1000000,
+		1000000
+	}
+	self.jobs.deep.contract_cost = {			
+		54000,
+		108000,
+		270000,
+		540000,
+		700000,
+		700000,
+		700000
+	}
+	
 end)
 
 --[[

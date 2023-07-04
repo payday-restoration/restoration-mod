@@ -195,6 +195,12 @@ function restoration:Init()
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.always_bravos = false
+	
+	--Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
+	restoration.alternate_ponr_behavior = {
+		"sand", --The Ukrainian Prisoner
+		"trai" --Lost in Transit	
+	}	
 		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {
@@ -237,6 +243,7 @@ function restoration:Init()
 		"ascension_III", --Ascension (project eclipse 3)
 		"RogueCompany", --Rogue Company
 		"battlearena", --Five-G
+		"constantine_train_lvl",
 		"constantine_penthouse_lvl", --Penthouse Crashers (Constantine Scores)
 		"constantine_resort_lvl", --Scarlett Resort (Constantine Scores)
 		"constantine_murkyairport_lvl", --Murky Airport (Constantine Scores)
@@ -357,7 +364,6 @@ function restoration:Init()
 	restoration.fuck_hunt = {
 		"kenaz", --ggc
 		"pines", --white xmas
-		"spa", --brooklyn 10-10
 		"jolly", --aftershock
 		"born", --biker heist D1
 		"ukrainian_job", --uk joj
@@ -379,6 +385,7 @@ function restoration:Init()
 		"dinner",
 		"trai",
 		"corp",
+		--"deep",
 		--Custom Heists--
 		"tonmapjam22l"
 	}	
@@ -399,6 +406,14 @@ function restoration:Init()
 		"hunter_departure",
 		"hunter_fall",
 		"ruswl"
+	}
+	--GenSec (custom heists)
+	restoration.gensec = {
+		"constantine_penthouse_lvl"
+	}
+	--Cartel (custom heists)
+	restoration.cartel = {
+		"constantine_train_lvl"
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
@@ -720,7 +735,7 @@ function restoration:mission_script_patches()
 	if self._mission_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
 		if level_id then
-			self._mission_script_patches = self:require("mission_script/" .. level_id:gsub("_night$", ""):gsub("_day$", "")) or false
+			self._mission_script_patches = self:require("mission_script/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
 		end
 	end
 	return self._mission_script_patches

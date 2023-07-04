@@ -52,6 +52,10 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_tank_biker(presets)
 	self:_init_zombie(presets)
 	self:_process_weapon_usage_table()
+	
+	--Dozer Armor Multiplier, lower means more EHP
+	self.tank_armor_damage_mul = 1
+	self.tank_glass_damage_mul = 1
 end
 
 function CharacterTweakData:_init_region_america()
@@ -448,6 +452,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.priority_shout_max_dis = 3000
 	self.fbi_vet.silent_priority_shout = nil
+	self.fbi_vet.is_special = true
 	self.fbi_vet.custom_shout = true		
 	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.can_slide_on_suppress = true
@@ -774,6 +779,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.tags = {"law", "custom", "special"}
 	self.hrt_titan.priority_shout = "g29"
 	self.hrt_titan.bot_priority_shout = "g29"
+	self.hrt_titan.is_special = true
 	self.hrt_titan.priority_shout_max_dis = 3000
 	self.hrt_titan.silent_priority_shout = nil
 	self.hrt_titan.custom_shout = true	
@@ -1139,11 +1145,12 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.priority_shout = "g29"
 	self.city_swat_titan.bot_priority_shout = "g29"
 	self.city_swat_titan.priority_shout_max_dis = 3000
+	self.city_swat_titan.is_special = true
 	self.city_swat_titan.silent_priority_shout = nil
 	self.city_swat_titan.custom_shout = true		
 	self.city_swat_titan.can_slide_on_suppress = true
 	self.city_swat_titan.dt_suppress = {
-		range = 1500
+		range = 1400
 	}
 	self.city_swat_titan.speech_prefix_p1 = "null"
 	self.city_swat_titan.speech_prefix_p2 = nil
@@ -1182,8 +1189,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan_assault.marshal_logic = nil
 	self.city_swat_titan_assault.dt_suppress = nil
 	self.city_swat_titan_assault.dt_sgunner = {
-		range = 1000,
-		range_close = 400
+		range = 600
 	}
 	table.insert(self._enemy_list, "city_swat_titan_assault")
 		
@@ -1368,6 +1374,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield.spawn_sound_event = "shield_identification"
 	self.marshal_shield.steal_loot = nil
 	self.marshal_shield.no_mutator_weapon_override = true
+	self.marshal_shield.is_special = true
 	table.insert(self._enemy_list, "marshal_shield")
 
 	self.marshal_shield_break = deep_clone(self.marshal_shield)
@@ -1574,7 +1581,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
 	self.triad_boss.detection = presets.detection.normal
 	self.triad_boss.HEALTH_INIT = 750
-	self.triad_boss.headshot_dmg_mul = 6.65
+	self.triad_boss.headshot_dmg_mul = 5.5
 	self.triad_boss.damage_resistance = presets.damage_resistance.none
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.triad_boss.damage.explosion_damage_mul = 1.25
@@ -1650,6 +1657,71 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss_no_armor.radio_prefix = "fri_"
 
 	table.insert(self._enemy_list, "triad_boss_no_armor")
+end
+
+function CharacterTweakData:_init_deep_boss(presets)
+	self.deep_boss = deep_clone(presets.base)
+	self.deep_boss.experience = {}
+	self.deep_boss.weapon = deep_clone(presets.weapon.good)
+	self.deep_boss.weapon.is_rifle.melee_retry_delay = {
+		7,
+		8
+	}
+	self.deep_boss.detection = presets.detection.normal
+	self.deep_boss.HEALTH_INIT = 750
+	self.deep_boss.headshot_dmg_mul = 5.5
+	self.deep_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
+	self.deep_boss.damage.explosion_damage_mul = 0.5
+	self.deep_boss.can_be_tased = false
+	self.deep_boss.suppression = nil
+	self.deep_boss.move_speed = presets.move_speed.slow
+	self.deep_boss.allowed_stances = {
+		cbt = true
+	}
+	self.deep_boss.allowed_poses = {
+		stand = true
+	}
+	self.deep_boss.crouch_move = false
+	self.deep_boss.no_equip_anim = true
+	self.deep_boss.no_run_start = true
+	self.deep_boss.no_run_stop = true
+	self.deep_boss.no_retreat = true
+	self.deep_boss.no_arrest = true
+	self.deep_boss.surrender = nil
+	self.deep_boss.ecm_vulnerability = 0
+	self.deep_boss.ecm_hurts = {
+		ears = {
+			max_duration = 0,
+			min_duration = 0
+		}
+	}
+	self.deep_boss.weapon_voice = "3"
+	self.deep_boss.experience.cable_tie = "tie_swat"
+	self.deep_boss.access = "gangster"
+	self.deep_boss.speech_prefix_p1 = "bb"
+	self.deep_boss.speech_prefix_p2 = "n"
+	self.deep_boss.speech_prefix_count = 1
+	self.deep_boss.spawn_sound_event = "Play_gab_deep_11"
+	self.deep_boss.die_sound_event = "Play_gab_deep_15"
+	self.deep_boss.rescue_hostages = false
+	self.deep_boss.priority_shout = "g29"
+	self.deep_boss.bot_priority_shout = "g29"
+	self.deep_boss.melee_weapon = "fists_electric"
+	self.deep_boss.melee_weapon_dmg_multiplier = 1
+	self.deep_boss.steal_loot = nil
+	self.deep_boss.calls_in = nil
+	self.deep_boss.chatter = presets.enemy_chatter.no_chatter
+	self.deep_boss.use_radio = nil
+	self.deep_boss.use_animation_on_fire_damage = false
+	self.deep_boss.flammable = false
+	self.deep_boss.immune_to_knock_down = true
+	self.deep_boss.immune_to_concussion = true
+	self.deep_boss.can_reload_while_moving_tmp = true
+	self.deep_boss.ignore_headshot = false
+	self.deep_boss.no_headshot_add_mul = true
+	--self.deep_boss.player_health_scaling_mul = 1.1
+
+	table.insert(self._enemy_list, "deep_boss")
 end
 
 function CharacterTweakData:_init_snowman_boss(presets)
@@ -1746,7 +1818,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 750
-	self.mobster_boss.headshot_dmg_mul = 6.65
+	self.mobster_boss.headshot_dmg_mul = 5.5
 	self.mobster_boss.damage_resistance = presets.damage_resistance.none
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
@@ -1801,7 +1873,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 750
-	self.biker_boss.headshot_dmg_mul = 6.65
+	self.biker_boss.headshot_dmg_mul = 5.5
 	self.biker_boss.damage_resistance = presets.damage_resistance.none
 	self.biker_boss.damage.explosion_damage_mul = 1.25
 	self.biker_boss.damage.rocket_damage_mul = 1.25
@@ -1899,7 +1971,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.chavez_boss.HEALTH_INIT = 750
-	self.chavez_boss.headshot_dmg_mul = 6.65
+	self.chavez_boss.headshot_dmg_mul = 5.5
 	self.chavez_boss.damage_resistance = presets.damage_resistance.none
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
 	self.chavez_boss.damage.rocket_damage_mul = 1.25
@@ -2023,7 +2095,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 750
-	self.drug_lord_boss.headshot_dmg_mul = 6.65
+	self.drug_lord_boss.headshot_dmg_mul = 5.5
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.none
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 	self.drug_lord_boss.damage.rocket_damage_mul = 1.25
@@ -2221,7 +2293,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 	self.tank_titan.HEALTH_INIT = 750
-	self.tank_titan.headshot_dmg_mul = 6.65
+	self.tank_titan.headshot_dmg_mul = 5.5
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout_max_dis = 3000
@@ -2235,9 +2307,9 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.speech_prefix_p2 = nil
 	self.tank_titan.speech_prefix_count = nil
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-	self.tank_titan.yellow_blood = false
+		self.tank_titan.yellow_blood = false
 	else
-	self.tank_titan.yellow_blood = true
+		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
@@ -2263,7 +2335,7 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_hw_black.custom_voicework = "tdozer"
 	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
-	self.tank_hw_black.headshot_dmg_mul = 6.65
+	self.tank_hw_black.headshot_dmg_mul = 5.5
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
@@ -3286,6 +3358,11 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.speech_prefix_count = 2
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
+	if job == "haunted" then
+	self.civilian.no_civ_penalty = true --they're not real anyway
+	else
+	self.civilian.no_civ_penalty = false
+	end
 	self.civilian.challenges = {type = "civilians"}
 	if job == "nmh" or job == "nmh_res" then
 		self.civilian.calls_in = false
@@ -3314,6 +3391,11 @@ end
 function CharacterTweakData:_init_civilian_mariachi(presets)
 	self.civilian_mariachi = deep_clone(self.civilian)
 end	
+
+function CharacterTweakData:_init_civilian_no_penalty(presets)
+	self.civilian_no_penalty = deep_clone(self.civilian)
+	self.civilian_no_penalty.no_civ_penalty = true
+end
 
 function CharacterTweakData:_init_bank_manager(presets)
 	self.bank_manager = {
@@ -17585,6 +17667,10 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.deathwish, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.8
+	self.tank_glass_damage_mul = 0.8
+	
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
 	self.taser.shock_damage = 6.0
@@ -17653,6 +17739,10 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
 	self.hrt.can_shoot_while_dodging = true		
+	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.5
+	self.tank_glass_damage_mul = 0.5
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17670,8 +17760,14 @@ function CharacterTweakData:_set_overkill_290()
 	--Titan SWAT stun resistance
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan.use_animation_on_fire_damage = false
+	self.city_swat_titan.dt_suppress = {
+		range = 1600
+	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 800
+	}
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
@@ -17716,6 +17812,10 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
 	self.hrt.can_shoot_while_dodging = true		
+	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.5
+	self.tank_glass_damage_mul = 0.5	
 				
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0
@@ -17810,8 +17910,14 @@ function CharacterTweakData:_set_sm_wish()
 	--Titan SWAT stun resistance
 	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan.use_animation_on_fire_damage = false
+	self.city_swat_titan.dt_suppress = {
+		range = 1800
+	}
 	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
+	self.city_swat_titan_assault.dt_sgunner = {
+		range = 1000
+	}
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	

@@ -3,12 +3,12 @@
 		<diffuse_texture file="units/black_df" />
         <variable value="sun" type="scalar" name="intensity"/>
 	</material>
-	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<bump_normal_texture 	file="units/black_df"/>
+    <material unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_flare" version="2">
+        <diffuse_texture file="units/black_df" />
+        <variable value="sun" type="scalar" name="intensity"/>
+    </material>
+    <material unique="true" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_mask" version="2">
+        <bump_normal_texture 	file="units/black_df"/>
 		<diffuse_texture 		file="units/black_df"/>
-	</material>
-	<material name="mtr_jack_of_spades" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<bump_normal_texture 	file="units/black_df"/>
-		<diffuse_texture 		file="units/black_df"/>
-	</material>
+    </material>
 </materials>

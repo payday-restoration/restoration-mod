@@ -268,21 +268,20 @@ function DLCTweakData:init(...)
 			type_items = "weapon_mods",
 			item_entry = "wpn_fps_upg_bonus_sc_none",
 			amount = 1
-		}				
-	}
-
-	self.dmc = {}
-	self.dmc.free = true
-	self.dmc.content = {}
-	self.dmc.content.loot_global_value = "sc"
-	self.dmc.content.loot_drops = {
+		},
 		{
 			type_items = "weapon_mods",
 			item_entry = "wpn_fps_upg_o_shortdot_dmc",
 			amount = 1
-		}				
-	}	
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_smg_mac10_s_no",
+			amount = 1
+		}
+	}
 	
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
 		self.omnia = {
 			content = {},
@@ -302,6 +301,8 @@ function DLCTweakData:init(...)
 			}				
 		}	
 	end
+	end
+	if SystemInfo:distribution() == Idstring("STEAM") then
 	if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
 		self.omnia_2 = {
 			content = {},
@@ -315,6 +316,7 @@ function DLCTweakData:init(...)
 				amount = 1
 			}			
 		}	
-	end			
+	end
+    end	
 		
 end

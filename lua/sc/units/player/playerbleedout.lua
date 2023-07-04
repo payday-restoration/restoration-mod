@@ -45,7 +45,7 @@ function PlayerBleedOut:enter(state_data, enter_data)
 	self:_interupt_action_melee(managers.player:player_timer():time())
 	self:_interupt_action_ladder(managers.player:player_timer():time())
 	managers.groupai:state():report_criminal_downed(self._unit)
-	managers.network:session():send_to_peers_synched("sync_contour_state", self._unit, -1, table.index_of(ContourExt.indexed_types, "teammate_downed"), true, 1)
+	managers.network:session():send_to_peers_synched("sync_contour_add", self._unit, -1, table.index_of(ContourExt.indexed_types, "teammate_downed"), 1)
 end
 
 --Allow converts and tied civs to revive you
@@ -153,8 +153,10 @@ function PlayerBleedOut:_get_unit_intimidation_action(intimidate_enemies, intimi
 		
 		if SC._converts then
 			for u_key, u_data in pairs(SC._converts) do
-				if not u_data:movement():cool() and not u_data:anim_data().long_dis_interact_disabled then
-					self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
+				if alive(u_data) and u_data.movement and u_data:movement() and u_data:movement().cool then
+					if not u_data:movement():cool() and not u_data:movement().long_dis_interact_disabled then
+						self:_add_unit_to_char_table(char_table, u_data, unit_type_enemy, highlight_range, false, false, 100, my_head_pos, cam_fwd)
+					end
 				end
 			end
 		end

@@ -52,6 +52,10 @@ function CharacterTweakData:init(tweak_data, presets)
 	self:_init_tank_biker(presets)
 	self:_init_zombie(presets)
 	self:_process_weapon_usage_table()
+	
+	--Dozer Armor Multiplier, lower means more EHP
+	self.tank_armor_damage_mul = 1
+	self.tank_glass_damage_mul = 1
 end
 
 function CharacterTweakData:_init_region_america()
@@ -1577,7 +1581,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
 	self.triad_boss.detection = presets.detection.normal
 	self.triad_boss.HEALTH_INIT = 750
-	self.triad_boss.headshot_dmg_mul = 6.65
+	self.triad_boss.headshot_dmg_mul = 5.5
 	self.triad_boss.damage_resistance = presets.damage_resistance.none
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.triad_boss.damage.explosion_damage_mul = 1.25
@@ -1665,7 +1669,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	}
 	self.deep_boss.detection = presets.detection.normal
 	self.deep_boss.HEALTH_INIT = 750
-	self.deep_boss.headshot_dmg_mul = 6.65
+	self.deep_boss.headshot_dmg_mul = 5.5
 	self.deep_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.deep_boss.damage.explosion_damage_mul = 0.5
 	self.deep_boss.can_be_tased = false
@@ -1703,7 +1707,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.priority_shout = "g29"
 	self.deep_boss.bot_priority_shout = "g29"
 	self.deep_boss.melee_weapon = "fists_electric"
-	self.deep_boss.melee_weapon_dmg_multiplier = 2.5
+	self.deep_boss.melee_weapon_dmg_multiplier = 1
 	self.deep_boss.steal_loot = nil
 	self.deep_boss.calls_in = nil
 	self.deep_boss.chatter = presets.enemy_chatter.no_chatter
@@ -1715,7 +1719,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.can_reload_while_moving_tmp = true
 	self.deep_boss.ignore_headshot = false
 	self.deep_boss.no_headshot_add_mul = true
-	self.deep_boss.player_health_scaling_mul = 1.1
+	--self.deep_boss.player_health_scaling_mul = 1.1
 
 	table.insert(self._enemy_list, "deep_boss")
 end
@@ -1814,7 +1818,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
 	self.mobster_boss.HEALTH_INIT = 750
-	self.mobster_boss.headshot_dmg_mul = 6.65
+	self.mobster_boss.headshot_dmg_mul = 5.5
 	self.mobster_boss.damage_resistance = presets.damage_resistance.none
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
@@ -1869,7 +1873,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
 	self.biker_boss.HEALTH_INIT = 750
-	self.biker_boss.headshot_dmg_mul = 6.65
+	self.biker_boss.headshot_dmg_mul = 5.5
 	self.biker_boss.damage_resistance = presets.damage_resistance.none
 	self.biker_boss.damage.explosion_damage_mul = 1.25
 	self.biker_boss.damage.rocket_damage_mul = 1.25
@@ -1967,7 +1971,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.chavez_boss.HEALTH_INIT = 750
-	self.chavez_boss.headshot_dmg_mul = 6.65
+	self.chavez_boss.headshot_dmg_mul = 5.5
 	self.chavez_boss.damage_resistance = presets.damage_resistance.none
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
 	self.chavez_boss.damage.rocket_damage_mul = 1.25
@@ -2091,7 +2095,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
 	self.drug_lord_boss.HEALTH_INIT = 750
-	self.drug_lord_boss.headshot_dmg_mul = 6.65
+	self.drug_lord_boss.headshot_dmg_mul = 5.5
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.none
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
 	self.drug_lord_boss.damage.rocket_damage_mul = 1.25
@@ -2289,7 +2293,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
 	self.tank_titan.HEALTH_INIT = 750
-	self.tank_titan.headshot_dmg_mul = 6.65
+	self.tank_titan.headshot_dmg_mul = 5.5
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout_max_dis = 3000
@@ -2303,9 +2307,9 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.speech_prefix_p2 = nil
 	self.tank_titan.speech_prefix_count = nil
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-	self.tank_titan.yellow_blood = false
+		self.tank_titan.yellow_blood = false
 	else
-	self.tank_titan.yellow_blood = true
+		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.die_sound_event = "mga_death_scream"
@@ -2331,7 +2335,7 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_hw_black.custom_voicework = "tdozer"
 	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
-	self.tank_hw_black.headshot_dmg_mul = 6.65
+	self.tank_hw_black.headshot_dmg_mul = 5.5
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
@@ -17663,6 +17667,10 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.deathwish, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.8
+	self.tank_glass_damage_mul = 0.8
+	
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
 	self.taser.shock_damage = 6.0
@@ -17731,6 +17739,10 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
 	self.hrt.can_shoot_while_dodging = true		
+	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.5
+	self.tank_glass_damage_mul = 0.5
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17800,6 +17812,10 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
 	self.hrt.can_shoot_while_dodging = true		
+	
+	--Tankier Dozer Armor
+	self.tank_armor_damage_mul = 0.5
+	self.tank_glass_damage_mul = 0.5	
 				
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0

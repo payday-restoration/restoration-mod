@@ -5090,6 +5090,11 @@ end
 
 Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak_data)	
 
+	for melee_id, i in pairs (self.melee_weapons) do
+		if self.melee_weapons[melee_id] and self.melee_weapons[melee_id].custom and self.melee_weapons[melee_id].based_on then
+			self.melee_weapons[melee_id].stats = deep_clone(self.melee_weapons[self.melee_weapons[melee_id].based_on].stats)
+		end
+	end
 
 	if self.melee_weapons.halloween_sword then
 		self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
@@ -5437,6 +5442,20 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.melee_g36.sounds.hit_body = "g36_fire_single"
 		self.melee_weapons.melee_g36.sounds.hit_gen = "g36_fire_single"
 		self.melee_weapons.melee_g36.sounds.hit_air = "primary_dryfire"
+	end
+
+	if self.melee_weapons.zd_poke then --Poke
+		self.melee_weapons.zd_poke.anim_attack_vars = {"var1"}
+		self.melee_weapons.zd_poke.expire_t = 33.4
+		self.melee_weapons.zd_poke.repeat_expire_t = 29.5
+		self.melee_weapons.zd_poke.melee_damage_delay = 28.3
+		self.melee_weapons.zd_poke.stats.min_damage = 10000
+		self.melee_weapons.zd_poke.stats.max_damage = 30000
+		self.melee_weapons.zd_poke.stats.min_damage_effect = 10000
+		self.melee_weapons.zd_poke.stats.max_damage_effect = 30000
+		self.melee_weapons.zd_poke.stats.charge_time = 3
+		self.melee_weapons.zd_poke.stats.range = 200
+		self.melee_weapons.zd_poke.stats.concealment = 30
 	end
 
 

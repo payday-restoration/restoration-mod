@@ -3215,7 +3215,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.stance_recoil_mults_wolf_brigade = {
 		standing = 0.7,
 		crouching = 0.7,
-		steelsight = 1
+		steelsight = 1.2
 	}
 
 	--Not in use AFAIK, keeping just in-case of anything still looking for info from here
@@ -3358,66 +3358,66 @@ function WeaponTweakData:_init_stats()
 		--Bullet hoses will be around here.
 			horizontal_recoil = {
 				standing = {
-					0.5 * self.stat_info.stance_recoil_mults.standing,
-					0.45 * self.stat_info.stance_recoil_mults.standing,
-					-0.525 * self.stat_info.stance_recoil_mults.standing,
-					0.525 * self.stat_info.stance_recoil_mults.standing
+					0.525 * self.stat_info.stance_recoil_mults.standing,
+					0.475 * self.stat_info.stance_recoil_mults.standing,
+					-0.5 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.5 * self.stat_info.stance_recoil_mults.crouching,
-					0.45 * self.stat_info.stance_recoil_mults.crouching,
-					-0.525 * self.stat_info.stance_recoil_mults.crouching,
-					0.525 * self.stat_info.stance_recoil_mults.crouching
+					0.525 * self.stat_info.stance_recoil_mults.crouching,
+					0.475 * self.stat_info.stance_recoil_mults.crouching,
+					-0.5 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.5 * self.stat_info.stance_recoil_mults.steelsight,
-					0.45 * self.stat_info.stance_recoil_mults.steelsight,
-					-0.525 * self.stat_info.stance_recoil_mults.steelsight,
-					0.525 * self.stat_info.stance_recoil_mults.steelsight
+					0.525 * self.stat_info.stance_recoil_mults.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.65
+				min_h_recoil = 0.675
 			},
 			horizontal_left_recoil = {
 				standing = {
-					0.5 * self.stat_info.stance_recoil_mults.standing,
-					0.45 * self.stat_info.stance_recoil_mults.standing,
-					-0.625 * self.stat_info.stance_recoil_mults.standing,
-					0.425 * self.stat_info.stance_recoil_mults.standing
+					0.525 * self.stat_info.stance_recoil_mults.standing,
+					0.475 * self.stat_info.stance_recoil_mults.standing,
+					-0.6 * self.stat_info.stance_recoil_mults.standing,
+					0.4 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.5 * self.stat_info.stance_recoil_mults.crouching,
-					0.45 * self.stat_info.stance_recoil_mults.crouching,
-					-0.625 * self.stat_info.stance_recoil_mults.crouching,
-					0.425 * self.stat_info.stance_recoil_mults.crouching
+					0.525 * self.stat_info.stance_recoil_mults.crouching,
+					0.475 * self.stat_info.stance_recoil_mults.crouching,
+					-0.6 * self.stat_info.stance_recoil_mults.crouching,
+					0.4 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.5 * self.stat_info.stance_recoil_mults.steelsight,
-					0.45 * self.stat_info.stance_recoil_mults.steelsight,
-					-0.625 * self.stat_info.stance_recoil_mults.steelsight,
-					0.425 * self.stat_info.stance_recoil_mults.steelsight
+					0.525 * self.stat_info.stance_recoil_mults.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
+					0.4 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.65
+				min_h_recoil = 0.675
 			},
 			horizontal_right_recoil = {
 				standing = {
-					0.5 * self.stat_info.stance_recoil_mults.standing,
-					0.45 * self.stat_info.stance_recoil_mults.standing,
-					-0.425 * self.stat_info.stance_recoil_mults.standing,
-					0.625 * self.stat_info.stance_recoil_mults.standing
+					0.525 * self.stat_info.stance_recoil_mults.standing,
+					0.475 * self.stat_info.stance_recoil_mults.standing,
+					-0.4 * self.stat_info.stance_recoil_mults.standing,
+					0.6 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.5 * self.stat_info.stance_recoil_mults.crouching,
-					0.45 * self.stat_info.stance_recoil_mults.crouching,
-					-0.425 * self.stat_info.stance_recoil_mults.crouching,
-					0.625 * self.stat_info.stance_recoil_mults.crouching
+					0.525 * self.stat_info.stance_recoil_mults.crouching,
+					0.475 * self.stat_info.stance_recoil_mults.crouching,
+					-0.4 * self.stat_info.stance_recoil_mults.crouching,
+					0.6 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.5 * self.stat_info.stance_recoil_mults.steelsight,
-					0.45 * self.stat_info.stance_recoil_mults.steelsight,
-					-0.425 * self.stat_info.stance_recoil_mults.steelsight,
-					0.625 * self.stat_info.stance_recoil_mults.steelsight
+					0.525 * self.stat_info.stance_recoil_mults.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.4 * self.stat_info.stance_recoil_mults.steelsight,
+					0.6 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.65
+				min_h_recoil = 0.675
 			},
 
 		--Your average SMG and Pistol will be around here.
@@ -3689,8 +3689,8 @@ end
 local sms_preset = {
 	lmg_40 = 0.92,
 	lmg_48 = 0.88,
-	lmg_60 = 0.8,
-	lmg_90 = 0.76,
+	lmg_60 = 0.78,
+	lmg_90 = 0.73,
 	lmg_120 = 0.7,
 	mini_40 = 0.8,
 	mini_60 = 0.75,
@@ -3887,7 +3887,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "dmr_ar" }
-		self[ wep_id ].damage_type = "sniper"
+		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
 	recat = { "ching", "g3", "new_m14", "shak12", "hcar" }
@@ -6649,7 +6649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coal.CLIP_AMMO_MAX = 64
 				self.coal.fire_mode_data.fire_rate = 0.08571
 				self.coal.panic_suppression_chance = 0.05
-				self.coal.kick = self.stat_info.kick_tables.horizontal_right_recoil
+				self.coal.kick = self.stat_info.kick_tables.right_recoil
 				self.coal.supported = true
 				self.coal.ads_speed = 0.240
 				self.coal.damage_falloff = {
@@ -7601,7 +7601,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
 			self.m249.fire_mode_data.fire_rate = 0.075
-			self.m249.kick = self.stat_info.kick_tables.even_recoil
+			self.m249.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.m249.always_use_standing = true
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
@@ -7614,7 +7614,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.stats = {
 				damage = 24,
 				spread = 58,
-				recoil = 75,
+				recoil = 78,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 17,
@@ -7807,7 +7807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
 			self.m134.damage_falloff = {
 				start_dist = 1500,
-				end_dist = 7000,
+				end_dist = 6000,
 				min_mult = 0.6
 			}
 			self.m134.stats = {
@@ -7851,15 +7851,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
 				self.m60.fire_mode_data.fire_rate = 0.1034482
-				self.m60.kick = self.stat_info.kick_tables.even_recoil
+				self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.m60.always_use_standing = true
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
 				self.m60.ads_speed = 0.640
 				self.m60.damage_falloff = {
-					start_dist = 800,
-					end_dist = 5800,
+					start_dist = 700,
+					end_dist = 6000,
 					min_mult = 0.33333
 				}
 				self.m60.stats = {
@@ -7900,7 +7900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.fire_mode_data.fire_rate = 0.092307
 				self.par.AMMO_MAX = 120
 				self.par.kick = {}
-				self.par.kick = self.stat_info.kick_tables.horizontal_right_recoil
+				self.par.kick = self.stat_info.kick_tables.horizontal_left_recoil
 				self.par.always_use_standing = true
 				self.par.panic_suppression_chance = 0.05
 				self.par.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -7908,8 +7908,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.supported = true
 				self.par.ads_speed = 0.620
 				self.par.damage_falloff = {
-					start_dist = 500,
-					end_dist = 5400,
+					start_dist = 300,
+					end_dist = 5800,
 					min_mult = 0.33333
 				}
 				self.par.stats = {
@@ -8006,7 +8006,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.supported = true
 				self.hk21.ads_speed = 0.620
 				self.hk21.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 1600,
 					end_dist = 5100,
 					min_mult = 0.44444
 				}
@@ -8016,7 +8016,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
-					concealment = 16,
+					concealment = 15,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -8025,7 +8025,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.hk21.stats_modifiers = nil
-				self.hk21.reload_speed_multiplier = 0.9
+				self.hk21.reload_speed_multiplier = 0.88
 				self.hk21.bipod_req_scope = true
 				self.hk21.animations.ignore_nonemptyreload = true
 				self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
@@ -8041,7 +8041,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hk51b.desc_id = "bm_hk51b_sc_desc"
 				self.hk51b.has_description = true
-				self.hk51b.CLIP_AMMO_MAX = 50
+				self.hk51b.CLIP_AMMO_MAX = 40
 				self.hk51b.AMMO_MAX = 160
 				self.hk51b.fire_mode_data.fire_rate = 0.063157
 				self.hk51b.CAN_TOGGLE_FIREMODE = true
@@ -8051,7 +8051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk51b.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk51b.supported = true
-				self.hk51b.ads_speed = 0.480
+				self.hk51b.ads_speed = 0.460
 				self.hk51b.damage_falloff = {
 					start_dist = 800,
 					end_dist = 4800,
@@ -8059,7 +8059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hk51b.stats = {
 					damage = 45,
-					spread = 55,
+					spread = 57,
 					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
@@ -9302,7 +9302,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.supported = true
 				self.shak12.ads_speed = 0.380
 				self.shak12.damage_falloff = {
-					start_dist = 1300,
+					start_dist = 1200,
 					end_dist = 5200,
 					min_mult = 0.3
 				}
@@ -9618,8 +9618,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.supported = true
 				self.winchester1874.ads_speed = 0.320
 				self.winchester1874.damage_falloff = {
-					start_dist = 1300,
-					end_dist = 5200,
+					start_dist = 1200,
+					end_dist = 4500,
 					min_mult = 0.3333
 				}
 				self.winchester1874.stats = {
@@ -9650,7 +9650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.NR_CLIPS_MAX = 5
 				self.msr.AMMO_MAX = 40
 				self.msr.fire_mode_data.fire_rate = 1.09090909
-				self.msr.fire_rate_multiplier = 1.09090909
+				self.msr.fire_rate_multiplier = 1
 				self.msr.kick = self.stat_info.kick_tables.vertical_kick
 				self.msr.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 				self.msr.supported = true
@@ -9727,7 +9727,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r700.CLIP_AMMO_MAX = 5
 				self.r700.AMMO_MAX = 40
 				self.r700.fire_mode_data.fire_rate = 1
-				self.r700.fire_rate_multiplier = 1.16666666
+				self.r700.fire_rate_multiplier = 1.11666666
 				self.r700.kick = self.stat_info.kick_tables.vertical_kick
 				self.r700.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.r700.supported = true
@@ -9808,7 +9808,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.victor.AMMO_MAX = 30
 				self.victor.FIRE_MODE = "single"
 				self.victor.fire_mode_data = {}
-				self.victor.fire_mode_data.fire_rate = 0.16666666
+				self.victor.fire_mode_data.fire_rate = 0.1764705
 				self.victor.sms = sms_preset.semi_snp_light
 				self.victor.kick = self.stat_info.kick_tables.vertical_kick
 				self.victor.can_shoot_through_enemy = true
@@ -15744,7 +15744,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.recategorize = {"heavy_pis"}
 		self.coltds.damage_type = "heavy_pistol"
 		self.coltds.autograph_multiplier = 2
-		self.coltds.object_damage_mult = 1.25
+		self.coltds.object_damage_mult = 1.2
 		self.coltds.has_description = true
 		self.coltds.desc_id = "bm_lemon_dmc_desc"
 		self.coltds.fire_mode_data = {}
@@ -17718,23 +17718,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				elseif weap.damage_type == "sniper" then
 					weap.object_damage_mult = 2
 					if (weap.categories[2] and weap.categories[2] == "semi_snp") or (weap.categories[1] == "assault_rifle") then
-						weap.object_damage_mult = 1.25
+						weap.object_damage_mult = 1.2
 					end
 				elseif weap.damage_type == "pdw" then
 					weap.object_damage_mult = 1.5
 				elseif weap.damage_type == "heavy_pistol" then
-					weap.object_damage_mult = 1.25
+					weap.object_damage_mult = 1.2
 				elseif weap.damage_type == "shotgun" then
-					weap.object_damage_mult = 0.75
+					weap.object_damage_mult = 0.5
 				elseif weap.damage_type == "flamethrower" then
-					weap.object_damage_mult = 0.25
+					weap.object_damage_mult = 0.2
 				else
 					--weap.object_damage_mult = 1
 				end
 				if weap.damage_type_single_ray == "sniper" then
 					weap.object_damage_mult_single_ray = 2
 					if weap.recategorize[1] == "light_shot" then
-						weap.object_damage_mult_single_ray = 1.25
+						weap.object_damage_mult_single_ray = 1.2
 					end
 				elseif weap.damage_type_single_ray == "anti_materiel" then
 					weap.object_damage_mult_single_ray = 4

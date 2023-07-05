@@ -1194,6 +1194,7 @@ local grips = {
 				damage = 15
 			},
 			custom_stats = {
+				falloff_start_mult = per_pellet and 0.8 or 1,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.66667,
 				armor_piercing_add = 0.20,
@@ -1212,6 +1213,7 @@ local grips = {
 				damage = per_pellet and 30 or 15
 			},
 			custom_stats = {
+				falloff_start_mult = per_pellet and 0.8 or 1,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.75,
 				ammo_pickup_max_mul = 0.8,
@@ -1229,7 +1231,7 @@ local grips = {
 				damage = 30
 			},
 			custom_stats = {
-				--alt_dmg_mult = 0.88889,
+				falloff_start_mult = per_pellet and 0.8 or 1,
 				falloff_end_mult = 0.8,
 				damage_min_mult = 0.6666667,
 				ammo_pickup_max_mul = 0.8,
@@ -9358,6 +9360,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = per_pellet and 60 or 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
+		falloff_start_mult = per_pellet and 0.8 or 1,
 		falloff_end_mult = 0.8,
 		damage_min_mult = 0.75,
 		ammo_pickup_max_mul = 0.8,

@@ -17691,6 +17691,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") and weap.rays and weap.categories[1] ~= "flamethrower" then
 				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
+				local is_primary = weap.use_data and weap.use_data.selection_index == 2
+				if weap.stats and weap.stats.damage then
+					if weap.stats.damage == 30 then --Omni
+						weap.stats.damage = 45
+					elseif weap.stats.damage == 45 then --Auto
+						weap.stats.damage = 60
+					elseif weap.stats.damage == 60 then --Pump
+						weap.stats.damage = 90
+					elseif weap.stats.damage == 90 then --Break Action
+						weap.stats.damage = 120
+					end
+					weap.AMMO_MAX = math.ceil((is_primary and 3600 or 1800) / weap.stats.damage)
+				end
 			end
 
 			if weap.supported and weap.recategorize[1] == "unsupported" then

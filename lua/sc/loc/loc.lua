@@ -197,7 +197,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
 		["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
 		["RestorationModPerPelletShotgunsTitleID"] = "Per-Pellet Shotgun Damage (WIP)",
-		["RestorationModPerPelletShotgunsDescID"] = "Shotgun damage is calculated per pellet as opposed to the standard \"1 pellet = full damage, headshots prioritized\". Requires restart. May lead to performance issues.",
+		["RestorationModPerPelletShotgunsDescID"] = "Shotgun damage is calculated per pellet as opposed to the standard \"1 pellet = full damage, headshots prioritized\". Non-slug shotgun damage is increased to compesate for lower consistency. Requires restart.",
 
 
 		["default"] = "Default",
@@ -4378,7 +4378,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		if butt <= frame then
 			LocalizationManager:add_localized_strings({	
 				["menu_st_spec_23"] = "Helminth",
-				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless 	strength and vigor?\n\n\n#{important_1}#It can only be me.##",
+				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 				["menu_difficulty_sm_wish"] = "The Steel Path",
 				["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 			})

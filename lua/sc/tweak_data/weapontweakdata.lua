@@ -3232,7 +3232,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 6.25, 0.3, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 6.5, 0.3, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -17689,7 +17689,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") and weap.rays and weap.categories[1] ~= "flamethrower" then
+			if restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") and weap.rays and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
 				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 				local is_primary = weap.use_data and weap.use_data.selection_index == 2
 				if weap.stats and weap.stats.damage then

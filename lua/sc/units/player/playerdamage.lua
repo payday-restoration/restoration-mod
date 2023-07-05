@@ -491,7 +491,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
 		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
@@ -501,6 +501,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
 		end
 	end
+
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -517,9 +518,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				if grace_bonus then
-					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
-				end
+				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -561,7 +560,6 @@ function PlayerDamage:damage_bullet(attack_data)
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
-
 		local driving = self._unit:movement():current_state().driving
 		local in_air = self._unit:movement():current_state():in_air()
 		local hit_in_air = self._unit:movement():current_state()._hit_in_air
@@ -616,9 +614,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 
 		end
-
 	end	
-	--]]
 	
 	return 
 end

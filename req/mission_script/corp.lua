@@ -25,6 +25,16 @@ return {
 		[100115] = {
 			reinforce = {
 				{
+					name = "meetingroom1",
+					force = 2,
+					position = Vector3(3700, 2200, 500)
+				},
+				{
+					name = "meetingroom2",
+					force = 2,
+					position = Vector3(5300, 200, 900)
+				},
+				{
 					name = "admin",
 					force = 2,
 					position = Vector3(-5600, 1200, -200)

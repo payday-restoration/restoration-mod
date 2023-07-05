@@ -21,5 +21,11 @@ return {
 		--Pro Job PONR 
 		[102872] = {
 			ponr = ponr_value
+	},
+	-- Delay SWAT response
+	[100327] = {
+		on_executed = {
+			{ id = 100768, delay = 30 }
+		}
 	}
 }

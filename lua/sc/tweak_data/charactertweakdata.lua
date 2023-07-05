@@ -1706,6 +1706,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.rescue_hostages = false
 	self.deep_boss.priority_shout = "g29"
 	self.deep_boss.bot_priority_shout = "g29"
+	self.deep_boss.custom_shout = true
 	self.deep_boss.melee_weapon = "fists_electric"
 	self.deep_boss.melee_weapon_dmg_multiplier = 1
 	self.deep_boss.steal_loot = nil

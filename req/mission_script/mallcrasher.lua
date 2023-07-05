@@ -22,6 +22,12 @@ return {
 	[300204] = {
 		ponr = ponr_value
 	},
+	-- Delay SWAT response
+	[300203] = {
+		on_executed = {
+			{ id = 300164, delay = 45 }
+		}
+	},
 	-- access fix (doesn't work for some reason)
 	[302019] = {
 		values = {

@@ -196,6 +196,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
 		["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
 		["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
+		["RestorationModPerPelletShotgunsTitleID"] = "Per-Pellet Shotgun Damage (WIP)",
+		["RestorationModPerPelletShotgunsDescID"] = "Shotgun damage is calculated per pellet as opposed to the standard \"1 pellet = full damage, headshots prioritized\". Requires restart. May lead to performance issues.",
 
 
 		["default"] = "Default",

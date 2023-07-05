@@ -3215,7 +3215,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.stance_recoil_mults_wolf_brigade = {
 		standing = 0.7,
 		crouching = 0.7,
-		steelsight = 1.2
+		steelsight = 1.1
 	}
 
 	--Not in use AFAIK, keeping just in-case of anything still looking for info from here
@@ -17687,6 +17687,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if weap.fire_mode_data.auto then
 					weap.fire_mode_data.auto = nil
 				end
+			end
+
+			if restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") and weap.rays and weap.categories[1] ~= "flamethrower" then
+				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 			end
 
 			if weap.supported and weap.recategorize[1] == "unsupported" then

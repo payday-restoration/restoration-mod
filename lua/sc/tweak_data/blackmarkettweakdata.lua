@@ -3684,7 +3684,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].expire_t = 1.1
 			self.melee_weapons[melee_id].repeat_expire_t = 0.8
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
-			self.melee_weapons[melee_id].anim_speed_mult = 1.2307
+			self.melee_weapons[melee_id].anim_speed_mult = 1.14285
 		end	
 		self.melee_weapons.bowie.anim_attack_vars = {"var1","var2"} --Removes the awkward blunt side strike attack variants
 		

@@ -83,7 +83,8 @@ tweak_data.smg = {
 		hipfire_spread_mult = 3.8889
 	}
 		tweak_data.wolf_brigade = {
-			hipfire_spread_mult = 0.55
+			moving_spread_mult = 0.2,
+			hipfire_spread_mult = 0.5
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,
@@ -92,7 +93,7 @@ tweak_data.smg = {
 		hipfire_spread_mult = 3.8889
 	}
 		tweak_data.sasha = {
-			hipfire_spread_mult = 0.65
+			hipfire_spread_mult = 0.6
 		}
 
 tweak_data.snp = {

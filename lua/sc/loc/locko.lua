@@ -195,6 +195,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModMoveCancelBipodDescID"] = "움직일때 양각대를 분리하는걸 활성화하거나 비활성화합니다.",
 		["RestorationModSeparateBowADSTitleID"] = "별도 방식의 활 조준",
 		["RestorationModSeparateBowADSDescID"] = "활로 화살을 당길 때 강제 조준을 비활성화합니다. 활성화된 동안 재장전 키를 눌려 당긴 화살을 놓습니다.",
+		["RestorationModPerPelletShotgunsTitleID"] = "펠릿당 산탄총 대미지 (제작중)",
+		["RestorationModPerPelletShotgunsDescID"] = "산탄총 대미지가 표준 \"1발 = 풀 대미지, 헤드샷 우선\"를 대신 펠릿당으로 계산됩니다. 낮은 일관성을 보완하기 위해 슬러그탄이 아닌 산탄총 피해량이 증가합니다. 적용할려면 재시작이 필요합니다.",		
 		
 		["default"] = "기본",
 		["random"] = "랜덤",

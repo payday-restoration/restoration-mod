@@ -10149,7 +10149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contender.CLIP_AMMO_MAX = 1
 				self.contender.AMMO_MAX = 15
 				self.contender.FIRE_MODE = "single"
-				self.contender.fire_mode_data.fire_rate = 0.5
+				self.contender.fire_mode_data.fire_rate = 0.6
 				self.contender.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.contender.CAN_TOGGLE_FIREMODE = false
 				self.contender.kick = self.stat_info.kick_tables.vertical_kick
@@ -16902,9 +16902,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.abzats then
 		self.abzats.recategorize = { "break_shot" }
-		self.abzats.categories = {
-			"shotgun"
-		}
+		self.abzats.categories = { "shotgun" }
 		self.abzats.damage_type = "shotgun_heavy"
 		self.abzats.CLIP_AMMO_MAX = 10
 		self.abzats.BURST_FIRE = false
@@ -16948,6 +16946,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.abzats.always_play_anims = true
 		self.abzats.weapon_movement_penalty = nil
 		self.abzats.sms = nil
+	end	
+
+	if self.ashot then
+		self.ashot.recategorize = { "break_shot" }
+		self.ashot.categories = { "shotgun" }
+		self.ashot.damage_type = "shotgun_heavy"
+		self.ashot.damage_type_single_ray = "anti_materiel"
+		self.ashot.CLIP_AMMO_MAX = 1
+		self.ashot.BURST_FIRE = false
+		self.ashot.fire_mode_data.fire_rate = 0.6
+		self.ashot.AMMO_MAX = 20
+		self.ashot.kick = self.stat_info.kick_tables.vertical_kick
+		self.ashot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.ashot.rays = 9
+		self.ashot.supported = true
+		self.ashot.ads_speed = 0.240
+		self.ashot.damage_falloff = {
+			start_dist = 400,
+			end_dist = 2200,
+			min_mult = 0.25
+		}
+		self.ashot.stats = {
+			damage = 90,
+			spread = 36,
+			recoil = 31,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 29,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.ashot.stats_modifiers = nil
+		self.ashot.reload_speed_multiplier = 1.25
+		self.ashot.panic_suppression_chance = 0.05
+		self.ashot.timers = deep_clone(self.new_raging_bull.timers)
 	end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

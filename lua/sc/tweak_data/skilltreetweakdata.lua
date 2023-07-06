@@ -10,6 +10,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local sc_sttd = SkillTreeTweakData.init
+local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 function SkillTreeTweakData:init(tweak_data)
 	sc_sttd(self, tweak_data)
 
@@ -481,7 +482,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Shotgun Impact--
 			self.skills.underdog = {
 				["name_id"] = "menu_shotgun_impact_beta_sc",
-				["desc_id"] = "menu_shotgun_impact_beta_desc_sc",
+				["desc_id"] = per_pellet and "menu_shotgun_impact_per_pellet_desc_sc" or "menu_shotgun_impact_beta_desc_sc",
 				["icon_xy"] = {5, 0},
 				[1] = {
 					upgrades = {
@@ -491,7 +492,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"shotgun_extra_rays"
+						"shotgun_extra_rays",
+						"shotgun_damage_min_bonus"
 					},
 					cost = self.costs.pro
 				}

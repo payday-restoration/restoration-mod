@@ -851,10 +851,12 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
 	local ignore_rays = (weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.ignore_rays) or weapon_tweak.ignore_rays or false
-	
+	local is_slug = nil
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 		damage_min_mult = 0.05
+	else
+		is_slug = true
 	end
 	
 	for i = 1, #weapon_tweak.categories do
@@ -864,6 +866,10 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 			damage_skill = 0
 			damage_mods = 0
 			damage_base = 0
+			break
+		end
+		if not is_slug then
+			multiplier = multiplier * managers.player:upgrade_value(category, "damage_min_bonus", 1)
 		end
 	end
 

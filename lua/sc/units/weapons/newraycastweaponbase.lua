@@ -1500,6 +1500,8 @@ end
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot_only)
 	local is_rapidfire = self._burst_fire_range_multiplier and self:in_burst_mode()
 	local is_fullauto = self._auto_fire_range_multiplier and not self:is_single_shot()
+	local main_category = self.AKIMBO and self:categories()[2] or self:categories()[1]
+	local damage_min_bonus = 1
 	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
 	if not self:in_burst_mode() and not is_rapidfire and ((self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or 
 		(managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head)) then
@@ -1524,10 +1526,13 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	
 	if current_state then
 		--Get ADS multiplier.
-		if current_state:in_steelsight() then
-			for _, category in ipairs(self:categories()) do
+		for v, category in ipairs(self:categories()) do
+			if current_state:in_steelsight() then
 				falloff_start = falloff_start * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
 				falloff_end = falloff_end * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+			end
+			if ((self.AKIMBO and v == 2) or v == 1) and category == main_category then
+				damage_min_bonus = damage_min_bonus * managers.player:upgrade_value(category, "damage_min_bonus", 1)
 			end
 		end
 		if current_state:_is_using_bipod() then
@@ -1577,11 +1582,11 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	if self._rays and self._rays > 1 then
 		if damage_falloff and damage_falloff.ignore_rays then
 		else
-			minimum_damage = 0.05
+			minimum_damage = 0.05 * damage_min_bonus
 		end
 	end
 
-	minimum_damage = (minimum_damage * (self._damage_min_mult or 1)) / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
+	minimum_damage = ( minimum_damage * (self._damage_min_mult or 1)) / managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 	
 	--[[
 	log("DAMAGE: " .. tostring( damage * 10 ))

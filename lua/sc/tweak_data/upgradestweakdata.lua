@@ -10,6 +10,8 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local job = Global.level_data and Global.level_data.level_id
+local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+
 function UpgradesTweakData:_init_value_tables()
 	self.values = {
 		player = {},
@@ -732,7 +734,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.shotgun.recoil_index_addend = {2}
 				--Ace
-					self.values.shotgun.extra_rays = {3}
+					self.values.shotgun.extra_rays = {per_pellet and 0 or 3}
+					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
 
 			--Shotgun CQB
 				--Basic
@@ -3165,6 +3168,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "extra_rays",
+			category = "shotgun"
+		}
+	}	
+	self.definitions.shotgun_damage_min_bonus = {
+		name_id = "menu_shotgun_damage_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "damage_min_bonus",
 			category = "shotgun"
 		}
 	}	

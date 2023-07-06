@@ -31813,6 +31813,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
+	if self.parts.wpn_fps_sho_ashot_body_gripped then
+		self.parts.wpn_fps_sho_ashot_body_gripped.pcs = nil
+		self.parts.wpn_fps_sho_ashot_g_stocked.pcs = nil
+	end
+
 --Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then

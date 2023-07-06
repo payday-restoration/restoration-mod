@@ -17497,8 +17497,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.55,
 				mmg = 0.9,
 			minigun = 0.45,
-		shotgun = per_pellet and 1.6 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
-			shotgun_heavy = per_pellet and 1.12 or 1,
+		shotgun = per_pellet and 1.55 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+			shotgun_heavy = per_pellet and 1.1 or 1,
 			shotgun_super = per_pellet and 2.5 or 1,
 		--assault_rifle = 1, 
 			--snp = 1, 

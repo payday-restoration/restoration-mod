@@ -12483,7 +12483,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_winchester1874", "resmod_wincheste
 		40
 	}
 	self.parts.wpn_fps_upg_winchester_o_classic.has_description = true
-	self.parts.wpn_fps_upg_winchester_o_classic.desc_id = "bm_wp_upg_o_huge"
+	self.parts.wpn_fps_upg_winchester_o_classic.desc_id = "bm_wp_upg_o_5"
 	self.parts.wpn_fps_upg_winchester_o_classic.supported = true
 	self.parts.wpn_fps_upg_winchester_o_classic.stats = {
 		value = 0,

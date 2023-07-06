@@ -14054,6 +14054,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.super then --Pawcio's DOOM Super Shotgun
+		table.insert(self.super.categories, "shotgun_super")
 		self.super.recategorize = { "break_shot" }	
 		self.super.damage_type = "shotgun_heavy"
 		self.super.damage_type_single_ray = "anti_materiel"
@@ -14062,7 +14063,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.super.rays = 16
 		self.super.kick = self.stat_info.kick_tables.vertical_kick
 		self.super.CLIP_AMMO_MAX = 1
-		self.super.AMMO_MAX = 30
+		self.super.AMMO_MAX = 20
 		self.super.CAN_TOGGLE_FIREMODE = false							
 		self.super.BURST_FIRE = false
 		self.super.fire_mode_data.fire_rate = 0.5
@@ -14074,9 +14075,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			min_mult = 0.25
 		}
 		self.super.stats = {
-			damage = 120,
+			damage = 180,
 			spread = 36,
-			recoil = 21,
+			recoil = 11,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 23,
@@ -16683,7 +16684,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.f500 then --Silent Enforcer's Fort-500
 		self.f500.recategorize = { "heavy_shot" }
-		self.f500.damage_type = "shotgun"
+		self.f500.damage_type = "shotgun_heavy"
 		self.f500.damage_type_single_ray = "sniper"
 		self.f500.tactical_reload = 1
 		self.f500.fire_mode_data.fire_rate = 0.5
@@ -17177,23 +17178,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.AMMO_MAX = 0
 			end
 
-			if per_pellet and weap.rays and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
+			if per_pellet and weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.categories[1] ~= "flamethrower" then
 				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-				local is_primary = weap.use_data and weap.use_data.selection_index == 2
-				if weap.damage_falloff and weap.damage_falloff.start_dist then
-					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.25 ) * 100
+				weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
+				if weap.damage_type	== "shotgun_heavy" and not table.contains(weap.categories, "shotgun_heavy") then	
+					table.insert(weap.categories, "shotgun_heavy")
 				end
-				if weap.stats and weap.stats.damage then
-					if weap.stats.damage == 30 then --Omni
-						weap.stats.damage = 45
-					elseif weap.stats.damage == 45 then --Auto
-						weap.stats.damage = 60
-					elseif weap.stats.damage == 60 then --Pump
-						weap.stats.damage = 90
-					elseif weap.stats.damage == 90 then --Break Action
-						weap.stats.damage = 120
+				if weap.categories[1] ~= "grenade_launcher" then
+					local is_primary = weap.use_data and weap.use_data.selection_index == 2
+					if weap.stats and weap.stats.damage then
+						if weap.stats.damage == 30 then --Omni
+							weap.stats.damage = 60
+							weap.damage_falloff.min_mult = 0.25
+						elseif weap.stats.damage == 45 then --Auto
+							weap.stats.damage = 90
+							weap.damage_falloff.min_mult = 0.2
+						elseif weap.stats.damage == 60 then --Pump
+							weap.stats.damage = 120
+							weap.damage_falloff.min_mult = 0.2
+						elseif weap.stats.damage == 90 then --Break Action
+							weap.stats.damage = 180
+							weap.damage_falloff.min_mult = 0.1666667
+						elseif weap.stats.damage == 120 then
+							weap.stats.damage = 240
+							weap.damage_falloff.min_mult = 0.1875
+						elseif weap.stats.damage == 180 then
+							weap.stats.damage = 360
+							weap.damage_falloff.min_mult = 0.33333
+						end
+						weap.AMMO_MAX = math.ceil((is_primary and 3600 or 1800) / weap.stats.damage)
 					end
-					weap.AMMO_MAX = math.ceil((is_primary and 3600 or 1800) / weap.stats.damage)
 				end
 			end
 
@@ -17446,7 +17460,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.55,
 				mmg = 0.9,
 			minigun = 0.45,
-		shotgun = per_pellet and 1.2 or 0.7, --Compensate for ease of aim+multikills and/or versatility.
+		shotgun = per_pellet and 1.6 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+			shotgun_heavy = per_pellet and 1.12 or 1,
+			shotgun_super = per_pellet and 2.5 or 1,
 		--assault_rifle = 1, 
 			--snp = 1, 
 				semi_snp = 0.8,

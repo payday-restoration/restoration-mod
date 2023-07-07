@@ -15226,7 +15226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.desc_id = "bm_lemon_dmc_desc"
 		self.coltds.fire_mode_data = {}
 		self.coltds.fire_mode_data.fire_rate = 0.139534
-		self.coltds.AMMO_MAX = 30
+		self.coltds.AMMO_MAX = 20
 		self.coltds.kick = self.stat_info.kick_tables.moderate_kick
 		self.coltds.supported = true
 		self.coltds.ads_speed = 0.200

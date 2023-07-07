@@ -9618,18 +9618,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_arbiter = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -42,
+				damage = per_pellet and 0 or -42,
 				spread = -20,
 				reload = 1,
-				total_ammo_mod = 462
+				total_ammo_mod = per_pellet and 0 or 462
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 12,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = 6,
-				ammo_pickup_min_mul = 6,
+				ammo_pickup_max_mul = per_pellet and 5 or 6,
+				ammo_pickup_min_mul = per_pellet and 5 or 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9638,18 +9638,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_china = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -48,
+				damage = per_pellet and 0 or -48,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = 402
+				total_ammo_mod = per_pellet and 0 or 402
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = 6,
-				ammo_pickup_min_mul = 6,
+				ammo_pickup_max_mul = per_pellet and 5 or 6,
+				ammo_pickup_min_mul = per_pellet and 5 or 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9658,18 +9658,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_m32 = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -48,
+				damage = per_pellet and 0 or -48,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = 402
+				total_ammo_mod = per_pellet and 0 or 402
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = 6,
-				ammo_pickup_min_mul = 6,
+				ammo_pickup_max_mul = per_pellet and 5 or 6,
+				ammo_pickup_min_mul = per_pellet and 5 or 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9678,17 +9678,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_m79 = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -36,
+				damage = per_pellet and 0 or -36,
 				spread = -30,
-				total_ammo_mod = 202
+				total_ammo_mod = per_pellet and 0 or 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = 6,
-				ammo_pickup_min_mul = 6,
+				ammo_pickup_max_mul = per_pellet and 5 or 6,
+				ammo_pickup_min_mul = per_pellet and 5 or 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9697,9 +9697,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_ms3gl = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -18,
+				damage = per_pellet and 0 or -18,
 				spread = -30,
-				total_ammo_mod = 202
+				total_ammo_mod = per_pellet and 0 or 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -9716,17 +9716,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_slap = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = -36,
+				damage = per_pellet and 0 or -36,
 				spread = -30,
-				total_ammo_mod = 202
+				total_ammo_mod = per_pellet and 0 or 202
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 20,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = 6,
-				ammo_pickup_min_mul = 6,
+				ammo_pickup_max_mul = per_pellet and 5 or 6,
+				ammo_pickup_min_mul = per_pellet and 5 or 6,
 				sounds = {
 					fire_single = "hornet_fire"
 				}

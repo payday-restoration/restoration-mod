@@ -10688,8 +10688,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.supernova.fire_mode_data.fire_rate = 0.62
 				self.supernova.fire_rate_multiplier = 1.0333333
 				self.supernova.alt_fire_data = {
-					fire_rate = 0.3099999,
-					range_mul = 0.4,
+					fire_rate = 0.3874998,
+					range_mul = 0.45,
 					spread_mul = 3,
 					damage_mul = 1,
 					shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",
@@ -11830,7 +11830,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arbiter.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 5500,
-					min_mult = 0.03
+					min_mult = 0.05
 				}
 				self.arbiter.stats = {
 					damage = 60,
@@ -11912,7 +11912,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.china.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 4500,
-					min_mult = 0.033333
+					min_mult = 0.05
 				}
 				self.china.stats = {
 					damage = 72,
@@ -17218,8 +17218,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if per_pellet and weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.categories[1] ~= "flamethrower" then
 				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 				weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
-				if weap.damage_type	== "shotgun_heavy" and not table.contains(weap.categories, "shotgun_heavy") then	
-					table.insert(weap.categories, "shotgun_heavy")
+				if weap.recategorize and weap.damage_type == "shotgun_heavy" then	
+					if weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
+						table.insert(weap.categories, "shotgun_heavy")
+					elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
+						table.insert(weap.categories, "shotgun_break")
+					end
 				end
 				if weap.categories[1] ~= "grenade_launcher" then
 					local is_primary = weap.use_data and weap.use_data.selection_index == 2
@@ -17284,7 +17288,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				elseif weap.damage_type == "heavy_pistol" then
 					weap.object_damage_mult = 1.2
 				elseif weap.damage_type == "shotgun" then
-					weap.object_damage_mult = 0.5
+					weap.object_damage_mult = 0.75
 				elseif weap.damage_type == "flamethrower" then
 					weap.object_damage_mult = 0.2
 				else
@@ -17497,9 +17501,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.55,
 				mmg = 0.9,
 			minigun = 0.45,
-		shotgun = per_pellet and 1.55 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
-			shotgun_heavy = per_pellet and 1.1 or 1,
-			shotgun_super = per_pellet and 2.5 or 1,
+		shotgun = per_pellet and 1.5 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+			shotgun_heavy = per_pellet and 1.02 or 1,
+			shotgun_break = per_pellet and 1.3 or 1,
+			shotgun_super = per_pellet and 2.4 or 1,
 		--assault_rifle = 1, 
 			--snp = 1, 
 				semi_snp = 0.8,

@@ -21,6 +21,9 @@ table.insert(WeaponDescription._stats_shown, {
 	name = "ads_speed"
 })
 
+
+local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+
 --Add support for .reload_speed_multiplier
 function WeaponDescription._get_base_stats(name)
 	local base_stats = {}
@@ -777,7 +780,7 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	end
 
 	if gl_buck then
-		damage_min_mult = damage_min_mult / 2
+		damage_min_mult = damage_min_mult / per_pellet and 1 or 2
 	end
 
 	if not gl_buck then

@@ -4722,7 +4722,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"pdw"
 				}
 				self.lemming.CLIP_AMMO_MAX = 20
-				self.lemming.AMMO_MAX = 75
+				self.lemming.AMMO_MAX = 60
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
 				self.lemming.single.fire_rate = 0.08571428571
 				self.lemming.kick = self.stat_info.kick_tables.even_recoil

@@ -17495,7 +17495,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		akimbo = 1.1,
 		pistol = 1.25, --Compensate for low range.
 		smg = 1.1,
-			pdw = 0.8,
+			pdw = 1,
 			typh = 0.8,
 			lmg = 0.55,
 				mmg = 0.9,

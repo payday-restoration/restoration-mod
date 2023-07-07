@@ -4722,7 +4722,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"pdw"
 				}
 				self.lemming.CLIP_AMMO_MAX = 20
-				self.lemming.AMMO_MAX = 90
+				self.lemming.AMMO_MAX = 75
 				self.lemming.fire_mode_data.fire_rate = 0.08571428571
 				self.lemming.single.fire_rate = 0.08571428571
 				self.lemming.kick = self.stat_info.kick_tables.even_recoil
@@ -4732,7 +4732,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.can_shoot_through_shield = false
 				self.lemming.can_shoot_through_wall = false
 				self.lemming.armor_piercing_chance = 0.8
-				self.lemming.hs_mult = 1.33333
+				self.lemming.hs_mult = 1.666666
 				self.lemming.supported = true
 				self.lemming.ads_speed = 0.140
 				self.lemming.damage_falloff = {
@@ -6522,7 +6522,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.timers.reload_exit_not_empty = 0.55
 
 			--Akimbo Heather
-				self.sr2.categories = {
+				self.x_sr2.categories = {
 					"akimbo",
 					"smg",
 					"pdw"
@@ -6531,16 +6531,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sr2.desc_id = "bm_sr2_sc_desc"
 				self.x_sr2.fire_mode_data.fire_rate = 0.063157894
 				self.x_sr2.CLIP_AMMO_MAX = 60
+				self.x_sr2.AMMO_MAX = 120
 				self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
 				self.x_sr2.sounds.fire = "sr2_fire_single"
 				self.x_sr2.sounds.fire_single = "sr2_fire_single"
 				self.x_sr2.sounds.fire_auto = "sr2_fire"
 				self.x_sr2.sounds.stop_fire = "sr2_stop"
-				self.x_sr2.AMMO_MAX = 150
 				self.x_sr2.supported = true
 				self.x_sr2.ads_speed = 0.220
 				self.x_sr2.damage_falloff = {
-					start_dist = 800,
+					start_dist = 600,
 					end_dist = 3500,
 					min_mult = 0.3
 				}
@@ -6759,7 +6759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mp7.has_description = true
 				self.mp7.desc_id = "bm_mp7_sc_desc"	
-				self.mp7.AMMO_MAX = 90
+				self.mp7.AMMO_MAX = 60
 				self.mp7.fire_mode_data.fire_rate = 0.06315789473
 				self.mp7.CAN_TOGGLE_FIREMODE = true
 				self.mp7.auto = {}
@@ -6767,7 +6767,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.can_shoot_through_enemy = false
 				self.mp7.can_shoot_through_shield = false
 				self.mp7.can_shoot_through_wall = false
-				self.mp7.hs_mult = 1.33333
+				self.mp7.hs_mult = 1.666666
 				self.mp7.armor_piercing_chance = 0.8
 				self.mp7.kick = self.stat_info.kick_tables.even_recoil
 				self.mp7.supported = true
@@ -6805,14 +6805,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.p90.has_description = true
 				self.p90.desc_id = "bm_p90_sc_desc"	
-				self.p90.AMMO_MAX = 90
+				self.p90.AMMO_MAX = 60
 				self.p90.fire_mode_data.fire_rate = 0.070588235
 				self.p90.armor_piercing_chance = 0.8
 				self.p90.can_shoot_through_enemy = false
 				self.p90.can_shoot_through_shield = false
 				self.p90.can_shoot_through_wall = false
 				self.p90.panic_suppression_chance = 0.05
-				self.p90.hs_mult = 1.33333
+				self.p90.hs_mult = 1.666666
 				self.p90.kick = self.stat_info.kick_tables.even_recoil
 				self.p90.supported = true
 				self.p90.ads_speed = 0.220
@@ -6994,14 +6994,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sr2.desc_id = "bm_sr2_sc_desc"
 				self.sr2.fire_mode_data.fire_rate = 0.063157894
 				self.sr2.CLIP_AMMO_MAX = 30
-				self.sr2.AMMO_MAX = 75
+				self.sr2.AMMO_MAX = 60
 				self.sr2.kick = {}
 				self.sr2.kick = self.stat_info.kick_tables.even_recoil
 				self.sr2.supported = true
 				self.sr2.ads_speed = 0.220
 				self.sr2.damage_falloff = {
-					start_dist = 800,
-					end_dist = 4000,
+					start_dist = 600,
+					end_dist = 3500,
 					min_mult = 0.3
 				}
 				self.sr2.stats = {
@@ -11708,6 +11708,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m32.stats_modifiers = {damage = 10}
 				self.m32.panic_suppression_chance = 0.05
 				self.m32.timers.shotgun_reload_first_shell_offset = 1
+				self.m32.sounds.stop_fire = "wp_mgl_rotate_mag"
 				self.m32.reload_speed_multiplier = 1.5
 	
 			--Commando 101
@@ -11910,9 +11911,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.china.supported = true
 				self.china.ads_speed = 0.500
 				self.china.damage_falloff = {
-					start_dist = 1000,
+					start_dist = 900,
 					end_dist = 4500,
-					min_mult = 0.05
+					min_mult = 0.033333
 				}
 				self.china.stats = {
 					damage = 72,
@@ -12951,7 +12952,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bdgr.damage_type = "assault_rifle"
 			self.bdgr.use_data.selection_index = 1				
 			self.bdgr.fire_mode_data.fire_rate = 0.075
-			self.bdgr.hs_mult = 1.25
 			self.bdgr.tactical_reload = 1
 			self.bdgr.AMMO_MAX = 60
 			self.bdgr.supported = true
@@ -15746,7 +15746,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.alpha57_prim.AMMO_MAX = 180
 		self.alpha57_prim.supported = true
 		self.alpha57_prim.ads_speed = 0.260
-		self.alpha57_prim.hs_mult = 1.33333
+		self.alpha57_prim.hs_mult = 1.666666
 		self.alpha57_prim.armor_piercing_chance = 0.8
 		self.alpha57_prim.can_shoot_through_enemy = false
 		self.alpha57_prim.can_shoot_through_shield = false
@@ -15995,7 +15995,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcbravo.desc_id = "bm_w_mcbravo_desc"	
 		self.mcbravo.damage_type = "assault_rifle"	
 		self.mcbravo.fire_mode_data.fire_rate = 0.075
-		self.mcbravo.hs_mult = 1.25
 		self.mcbravo.tactical_reload = 1
 		self.mcbravo.AMMO_MAX = 120
 		self.mcbravo.supported = true
@@ -16950,7 +16949,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.ashot then
 		self.ashot.recategorize = { "break_shot" }
-		self.ashot.categories = { "shotgun" }
+		self.ashot.categories = { "shotgun", "shotgun_pistol" }
 		self.ashot.damage_type = "shotgun_heavy"
 		self.ashot.damage_type_single_ray = "anti_materiel"
 		self.ashot.CLIP_AMMO_MAX = 1

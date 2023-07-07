@@ -9735,7 +9735,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	local grenade_underbarrels = {
 		wpn_fps_ass_groza = {
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
+			--muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
 				spread = -30
 			},
@@ -9748,7 +9748,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			}
 		},
 		wpn_fps_ass_contraband = {
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
+			--muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
 				spread = -30
 			},
@@ -32715,7 +32715,7 @@ local exclude = {
 	"wpn_fps_ass_osipr_m_gl_incendiary",
 	"wpn_fps_ass_osipr_m_gl_electric",
 	"wpn_fps_ass_osipr_m_gl_poison",
-	--"wpn_fps_upg_a_underbarrel_hornet",
+	"wpn_fps_upg_a_underbarrel_hornet",
 	"wpn_fps_upg_a_grenade_launcher_hornet",
 }
 

@@ -9626,7 +9626,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 12,
+				rays = 10,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = per_pellet and 5 or 6,
 				ammo_pickup_min_mul = per_pellet and 5 or 6,
@@ -9646,7 +9646,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 20,
+				rays = 18,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = per_pellet and 5 or 6,
 				ammo_pickup_min_mul = per_pellet and 5 or 6,
@@ -9666,7 +9666,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 20,
+				rays = 18,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = per_pellet and 5 or 6,
 				ammo_pickup_min_mul = per_pellet and 5 or 6,
@@ -9685,7 +9685,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 20,
+				rays = 18,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = per_pellet and 5 or 6,
 				ammo_pickup_min_mul = per_pellet and 5 or 6,
@@ -9704,7 +9704,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 20,
+				rays = 18,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = 3,
 				ammo_pickup_min_mul = 3,
@@ -9723,7 +9723,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
-				rays = 20,
+				rays = 18,
 				rof_mult = 1.2,
 				ammo_pickup_max_mul = per_pellet and 5 or 6,
 				ammo_pickup_min_mul = per_pellet and 5 or 6,
@@ -9741,7 +9741,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
-				rays = 20,
+				rays = 18,
 				sounds = {
 					fire_single = "hornet_fire"
 				}
@@ -9754,7 +9754,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
-				rays = 20,
+				rays = 18,
 				sounds = {
 					fire_single = "hornet_fire"
 				}

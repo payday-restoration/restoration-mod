@@ -827,8 +827,8 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 		damage_mods = (damage_mods + damage_base) * damage_min_mult 
 		damage_min_mult = 0.05
 	else
-		damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 		damage_mods = (damage_mods + damage_base) * damage_min_mult 
+		damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	end
 	
 	damage_base = damage_base * damage_min_mult 

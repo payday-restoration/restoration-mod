@@ -31,10 +31,8 @@ return {
 	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
 	[101320] = {
 		values = {
-			enemy = bulldozer	
-		},
-		on_executed = {
-			{ id = 101521, delay = 3 }
+			enemy = bulldozer,
+			participate_to_group_ai = true
 		}
 	},
 	-- Remove spawn groups closest to broken bridge part

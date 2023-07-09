@@ -1,6 +1,6 @@
 <table directory="assets">
 	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
-	<!--Akan LPF for some secret mutator-->
+	<!--Akan LPF for da Donuts-->
 	<object				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
@@ -14,6 +14,21 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_il" force="false" load="true"/>
+	
+	<!--WOOF WOOF for da Donuts-->
+	<unit				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>		
+	<object				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_lightsout" force="false"/>	
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"/> 	
+	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df"/>
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_il" />
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_df" />
 	
 	<!--NYPD cop for da Donuts-->
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>

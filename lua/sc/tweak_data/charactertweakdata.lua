@@ -702,8 +702,12 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 		self.omnia_lpf.custom_voicework = "awoolpf"
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
-	end			
-	self.omnia_lpf.yellow_blood = true
+	end
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+		self.omnia_lpf.yellow_blood = false
+	else
+		self.omnia_lpf.yellow_blood = true
+	end
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}

@@ -396,12 +396,12 @@ local weapons_map = {
 
 	--Security Guards
 	["trai"] = {
-		[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5", "m4"},
-		[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5", "m4"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5", "m4"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5", "m4"},
 		[Idstring("units/payday2/characters/ene_city_guard_1/ene_city_guard_1"):key()] = {"deagle_guard", "ump", "g36"},
 		[Idstring("units/payday2/characters/ene_city_guard_2/ene_city_guard_2"):key()] = {"deagle_guard", "ump", "g36"},
-		[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5", "m4", "g36"},
-		[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"):key()] = {"m1911_npc", "mp5", "m4", "g36"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"):key()] = {"m1911_npc", "mp5", "g36"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"):key()] = {"m1911_npc", "mp5", "g36"},
 	},
 	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5"},
@@ -494,12 +494,19 @@ local weapons_map = {
 local default_weapon_name_orig = CopBase.default_weapon_name
 function CopBase:default_weapon_name(...)
 	local job = Global.level_data and Global.level_data.level_id or ""
+	local faction = tweak_data.levels:get_ai_group_type()
 	local weapon_override = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()]
 	
 	--For Jungle Inferno Mutator
 	if not self._weapon_set and restoration and restoration.disco_inferno and not self._char_tweak.no_mutator_weapon_override then
 		self._default_weapon_id = "flamethrower"
 		self._weapon_set = true		
+	end
+	
+	--Have White Titandozers use Grenade Launchers like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
+	if self._tweak_table == "tank_hw" and faction == "russia" or faction == "federales" then
+		self._default_weapon_id = "m32_large"
+		self._weapon_set = true
 	end
 	
 	if not self._weapon_set and weapon_override then

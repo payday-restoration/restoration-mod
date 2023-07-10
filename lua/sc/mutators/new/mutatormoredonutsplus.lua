@@ -1,6 +1,6 @@
 local faction = tweak_data.levels:get_ai_group_type()
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 MutatorMoreDonutsPlus = MutatorMoreDonutsPlus or class(BaseMutator)
 MutatorMoreDonutsPlus._type = "MutatorMoreDonutsPlus"
 MutatorMoreDonutsPlus.name_id = "MutatorMoreDonutsPlus"

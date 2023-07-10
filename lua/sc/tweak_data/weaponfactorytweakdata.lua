@@ -914,7 +914,7 @@ local grips = {
 --Overrides for shotgun ammo types that vary per damage tier.
 	--Indented to make for easy code folding in most editors.
 	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
-	
+
 	local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns")
 
 	local shot_ammo = {
@@ -13701,48 +13701,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)		
 	
+	--[[
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_specter")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_specter")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_aimpoint")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_docter")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_docter")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_eotech")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_t1micro")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_cmore")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_cmore")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_aimpoint_2")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_cs")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_cs")		
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_rx30")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_rx30")	
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_rx01")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_rx01")		
-	
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_reflex")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_reflex")		
-	
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_eotech_xps")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_uh")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_uh")		
-
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_fc1")			
-	
+	--]]
+
 	self.wpn_fps_shot_m37_npc.uses_parts = deep_clone(self.wpn_fps_shot_m37.uses_parts)
 
 end)

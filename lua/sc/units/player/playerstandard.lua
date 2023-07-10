@@ -2018,32 +2018,15 @@ end
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_burst_fire(t)
 	self:_update_slide_locks()
-		
-	local weapon = self._equipped_unit and self._equipped_unit:base()
-	local secondary = self._unit and self._unit:inventory():unit_by_selection(1):base()
-	local primary = self._unit and self._unit:inventory():unit_by_selection(2):base()
-	if weapon:weapon_tweak_data().ads_spool then
-		weapon:update_spin()
-	end
-	if primary then
-		if primary._starwars then
-			self:_primary_regen_ammo(t, dt)
-		end
-	end
-	if secondary then
-		if secondary._starwars then
-			self:_secondary_regen_ammo(t, dt)
-		end
-	end
 	self:_shooting_move_speed_timer(t, dt)
 	self:_last_shot_t(t, dt)
 	self:_update_d_scope_t(t, dt)
 	self:_update_spread_stun_t(t, dt)
 
-	if self._hit_in_air and not self._state_data.in_air then
-		self._hit_in_air = nil
+	local weapon = self._equipped_unit and self._equipped_unit:base()
+	if weapon:weapon_tweak_data().ads_spool then
+		weapon:update_spin()
 	end
-
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
 	-- I know a boolean check would work to stop this going off every frame, but then the akimbo Type 54 fire modes stop updating correctly
 	--[[
@@ -2051,6 +2034,19 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		managers.hud:set_teammate_weapon_firemode_burst(weapon:selection_index())
 	end
 	--]]
+
+	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(2):base()
+	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(1):base()
+	if primary and primary._starwars then
+		self:_primary_regen_ammo(t, dt)
+	end
+	if secondary and secondary._starwars then
+		self:_secondary_regen_ammo(t, dt)
+	end
+
+	if self._hit_in_air and not self._state_data.in_air then
+		self._hit_in_air = nil
+	end
 
 	--Applying (and removing) the conditon for being fully ADS'd
 	if self:full_steelsight() and not self._state_data.in_full_steelsight then

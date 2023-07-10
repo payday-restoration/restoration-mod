@@ -914,7 +914,7 @@ local grips = {
 --Overrides for shotgun ammo types that vary per damage tier.
 	--Indented to make for easy code folding in most editors.
 	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
-	-- "main" preset is for break actions, only the "stats" and "custom_stats" aspects are defined as the tables are set separately via deep_clone
+	
 	local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns")
 
 	local shot_ammo = {

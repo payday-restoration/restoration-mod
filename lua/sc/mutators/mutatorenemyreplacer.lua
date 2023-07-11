@@ -181,10 +181,6 @@ MutatorEnemyReplacer.icon_coords = {
 	6,
 	1
 }
-
-if not PackageManager:loaded("packages/miscassetsmutators") then
-		PackageManager:load("packages/miscassetsmutators")
-	end
 	
 function MutatorEnemyReplacer:register_values(mutator_manager)
 	self:register_value("override_enemy", self:default_override_enemy(), "oe")
@@ -196,6 +192,10 @@ function MutatorEnemyReplacer:setup()
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	self:modify_unit_categories(tweak_data.group_ai, difficulty_index)
+	
+	if not PackageManager:loaded("packages/miscassetsmutators") then
+		PackageManager:load("packages/miscassetsmutators")
+	end
 end
 
 function MutatorEnemyReplacer:name(lobby_data)

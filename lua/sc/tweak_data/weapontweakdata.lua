@@ -3185,7 +3185,7 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = 3.5
+	self.stat_info.shotgun_spread_increase = per_pellet and 2 or 3.5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
@@ -9653,7 +9653,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.kick = self.stat_info.kick_tables.vertical_kick
 				self.msr.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 				self.msr.supported = true
-				self.msr.ads_speed = 0.420
+				self.msr.ads_speed = 0.400
 				self.msr.damage_falloff = {
 					start_dist = 4200,
 					end_dist = 8500,
@@ -9864,7 +9864,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
 				self.wa2000.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.wa2000.supported = true
-				self.wa2000.ads_speed = 0.440
+				self.wa2000.ads_speed = 0.420
 				self.wa2000.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 7000,
@@ -9906,7 +9906,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.siltstone.kick = self.stat_info.kick_tables.right_kick
 				self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.siltstone.supported = true
-				self.siltstone.ads_speed = 0.480
+				self.siltstone.ads_speed = 0.460
 				self.siltstone.damage_falloff = {
 					start_dist = 2600,
 					end_dist = 6800,

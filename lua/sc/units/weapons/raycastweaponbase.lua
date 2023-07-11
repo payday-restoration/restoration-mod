@@ -1096,7 +1096,7 @@ function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	--Multi-pellet spread increase.
 	if self._rays and self._rays > 1 then
-		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
 	end
 
 	if not current_state then

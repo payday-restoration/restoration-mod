@@ -563,6 +563,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
 	self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
 		
+	self._can_shoot_through_enemy_unlim = self:weapon_tweak_data().can_shoot_through_enemy_unlim or false --No limit enemy piercing
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
 
@@ -962,6 +963,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 		if stats.can_shoot_through_titan_shield ~= nil then
 			self._can_shoot_through_titan_shield = stats.can_shoot_through_titan_shield
+		end
+		if stats.can_shoot_through_enemy_unlim ~= nil then
+			self._can_shoot_through_enemy_unlim = stats.can_shoot_through_enemy_unlim
 		end
 		if stats.armor_piercing_override then
 			self._armor_piercing_chance = stats.armor_piercing_override
@@ -1807,6 +1811,11 @@ function NewRaycastWeaponBase:can_shoot_through_titan_shield()
 	local fire_mode_data = self._fire_mode_data[self._fire_mode:key()]
 
 	return fire_mode_data and fire_mode_data.can_shoot_through_titan_shield or self._can_shoot_through_titan_shield
+end
+function NewRaycastWeaponBase:can_shoot_through_enemy_unlim()
+	local fire_mode_data = self._fire_mode_data[self._fire_mode:key()]
+
+	return fire_mode_data and fire_mode_data.can_shoot_through_enemy_unlim or self._can_shoot_through_enemy_unlim
 end
 
 function NewRaycastWeaponBase:can_shoot_through_enemy()

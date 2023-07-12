@@ -13333,6 +13333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hmcar.fire_mode_data.volley.can_shoot_through_wall = true
 		self.hmcar.fire_mode_data.volley.can_shoot_through_shield = true
 		self.hmcar.fire_mode_data.volley.can_shoot_through_enemy = true
+		self.hmcar.fire_mode_data.volley.can_shoot_through_enemy_unlim = true
 		self.hmcar.fire_mode_data.volley.can_shoot_through_titan_shield = true
 		self.hmcar.fire_mode_data.volley.armor_piercing_chance = 1
 		self.hmcar.fire_mode_data.volley.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
@@ -17253,6 +17254,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if weap.supported and weap.recategorize[1] == "unsupported" then
 				weap.recategorize[1] = "wpn_special"
+			end
+
+			if weap.supported and weap.recategorize[1] == "light_snp" or weap.recategorize[1] == "heavy_snp" or weap.recategorize[1] == "antim_snp" then
+				weap.can_shoot_through_enemy_unlim = true
 			end
 			
 			if weap.bipod_camera_spin_limit then

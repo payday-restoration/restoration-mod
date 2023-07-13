@@ -189,7 +189,7 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 4,
-			image = "enemy_tpsook",
+			image = "enemy_tspook",
 			consoles = true,
 			category = "new_units_res"
 		},	
@@ -777,7 +777,7 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 11,
-			image = "enemy_tpsook",
+			image = "enemy_tspook",
 			consoles = true,
 			category = "fluff_res"
 		},	

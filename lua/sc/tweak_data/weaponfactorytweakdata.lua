@@ -22486,7 +22486,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	}
 
-	for k, used_part_id in ipairs(self.wpn_fps_upg_judge.uses_parts) do
+	for k, used_part_id in ipairs(self.wpn_fps_pis_judge.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
 			if self.parts[used_part_id].type == "barrel" then
 				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {

@@ -4167,6 +4167,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 	}
 
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_cola_legend")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_pts")
@@ -4620,6 +4621,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 		custom_stats = { big_scope = true }
 	}
 
+	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_upg_vlad_rodina_legend")
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_snp_victor_s_mod0")
@@ -5456,8 +5458,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 	
 	--Kobus 90 Part Additions
 	--Tan Body
+	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_salad_legend")
 	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
-	table.insert(self.wpn_fps_smg_p90_npc.uses_parts, "wpn_fps_smg_p90_body_p90_tan")	
 	
 	self.wpn_fps_smg_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_p90.uses_parts)
 
@@ -5489,13 +5491,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 	self.parts.wpn_fps_ass_m14_body_jae.custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 		
 	--M308 Additional Parts	
+	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_m14_legend")
 	--Vertical Grips
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
-	table.insert(self.wpn_fps_ass_m14_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
-	table.insert(self.wpn_fps_ass_m14_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")	
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")
-	table.insert(self.wpn_fps_ass_m14_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")		
 	
 	--ROF Mods (Unused)
 	--[[
@@ -5689,6 +5689,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.wpn_fps_pis_deagle_npc.override = deep_clone(self.wpn_fps_pis_deagle.override)
 
 	--Deagle Additional Parts	
+	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_midas_touch_legend")
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_i_autofire")
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
@@ -6176,6 +6177,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		end
 	end	
 		
+	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_upg_the_big_kahuna")	
 	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_shot_r870_s_folding_ext")	
 	
 	self.wpn_fps_shot_r870_npc.uses_parts = deep_clone(self.wpn_fps_shot_r870.uses_parts)
@@ -6284,6 +6286,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		end
 	end	
 	
+	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_upg_serbu_legend")
 	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
 	
 	self.wpn_fps_shot_serbu_npc.uses_parts = deep_clone(self.wpn_fps_shot_serbu.uses_parts)
@@ -6637,6 +6640,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 	
+	table.insert(self.wpn_fps_pis_judge.uses_parts, "wpn_fps_upg_judge_legend")
+	self.wpn_fps_pis_judge_npc.uses_parts = deep_clone(self.wpn_fps_pis_judge.uses_parts)	
+
 end)	
 
 --Swedish K
@@ -8196,6 +8202,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
+
+	table.insert(self.wpn_fps_sho_ksg.uses_parts, "wpn_fps_upg_ksg_legend")
+	self.wpn_fps_sho_ksg_npc.uses_parts = deep_clone(self.wpn_fps_sho_ksg.uses_parts)
+
 end)	
 
 --GL40
@@ -10164,6 +10174,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_1911", "resmod_x_1911", function
 		}
 	}
 
+	table.insert(self.wpn_fps_x_1911.uses_parts, "wpn_fps_upg_santa_slayers_legend")
+
 	self.wpn_fps_x_1911_npc.override = deep_clone(self.wpn_fps_x_1911.override)	
 	self.wpn_fps_x_1911_npc.uses_parts = deep_clone(self.wpn_fps_x_1911.uses_parts)	
 end)
@@ -11705,14 +11717,15 @@ end)
 
 --HRL-7
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
-	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {movement_speed = 0.85}
+
+	table.insert(self.wpn_fps_rpg7.uses_parts, "wpn_fps_upg_green_grin_legend")
+	self.wpn_fps_rpg7_npc.uses_parts = deep_clone(self.wpn_fps_rpg7.uses_parts)	
+
 end)
 
 --Commando 101
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ray", "resmod_ray", function(self)
-	--Default Body
-	self.parts.wpn_fps_gre_ray_body.custom_stats = {movement_speed = 0.85}
+
 	
 end)
 
@@ -12259,20 +12272,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flamethrower_mk2", "resmod_flameth
 	}
 	
 	--Part Additions
-	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_peqbox")
-	table.insert(self.wpn_fps_fla_mk2_npc.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_peqbox")		
-	
-	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_surefire")
-	table.insert(self.wpn_fps_fla_mk2_npc.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_surefire")		
-
+	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_dragon_lord_legend")
+	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_peqbox")	
+	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_surefire")		
 	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_peq15")
-	table.insert(self.wpn_fps_fla_mk2_npc.uses_parts, "wpn_fps_upg_fl_ass_peq15")	
-
 	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_laser")
-	table.insert(self.wpn_fps_fla_mk2_npc.uses_parts, "wpn_fps_upg_fl_ass_laser")	
-
-	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_utg")
-	table.insert(self.wpn_fps_fla_mk2_npc.uses_parts, "wpn_fps_upg_fl_ass_utg")		
+	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_fl_ass_utg")	
 	
 	self.wpn_fps_fla_mk2_npc.uses_parts = deep_clone(self.wpn_fps_fla_mk2.uses_parts)		
 
@@ -13370,6 +13375,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 		ammo_pickup_max_mul = 0.7,
 		ammo_pickup_min_mul = 0.7
 	}
+	table.insert(self.wpn_fps_bow_frankish.uses_parts, "avelyn" )
 
 end)	
 
@@ -13451,6 +13457,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	self.wpn_fps_lmg_par_npc.stock_adapter = "wpn_fps_smg_cobray_s_m4adapter"
 
 	--M240 Part Additions	
+	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_par_legend")
+
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_specter")	
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_aimpoint")
 	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_o_docter")
@@ -13509,8 +13517,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_bipods", "resmod_bipods", function
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats = { ads_speed_mult = 1.075 }
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.forbids = {} --g3 various attachments workaround
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.perks = {"bipod"}
-
-	--self.parts.wpn_fps_lmg_hk21_fg_short.forbids = {}
 	
 end)
 
@@ -13666,6 +13672,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 			translation = Vector3(0, -6, -3.9)
 		}
 	}
+
+	table.insert(self.wpn_fps_snp_model70.uses_parts, "wpn_fps_upg_baaah_legend")
+	self.wpn_fps_snp_model70_npc.uses_parts = deep_clone(self.wpn_fps_snp_model70.uses_parts)
 
 end)
 
@@ -14011,6 +14020,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(s
 	}
 
 	--New parts
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_tecci_legend")
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_smg_olympic_s_short")
 	--table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_ammo_half_that")
@@ -14175,6 +14185,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(sel
 	
 	--Override Table
 	self.wpn_fps_sho_boot.override = {}	
+
+	table.insert(self.wpn_fps_sho_boot.uses_parts, "wpn_fps_upg_boot_legend")
+	table.insert(self.wpn_fps_sho_boot.uses_parts, "wpn_fps_upg_boot_legend_optic")
+	self.wpn_fps_sho_boot_npc.uses_parts = deep_clone(self.wpn_fps_sho_boot.uses_parts)
 
 end)
 
@@ -21608,8 +21622,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		forbids = { "wpn_fps_bow_frankish_m_explosive", "wpn_fps_bow_frankish_m_poison" }
 	}
 
-	table.insert(self.wpn_fps_bow_frankish.uses_parts, "avelyn" ) 
-
 	--Vlad's Rodina--
 	self.parts.wpn_fps_upg_vlad_rodina_legend = {
 		type = "legendary",
@@ -21774,7 +21786,41 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_upg_vlad_rodina_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_74.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					adds = {},
+					override = {},
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					adds = {},
+					override = {},
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",	
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+				}
+			end
+		end
+	end
 
 	--Midas Touch--
 	self.parts.wpn_fps_upg_midas_touch_legend = {
@@ -21803,7 +21849,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_midas_touch_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_midas_touch_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
+					third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
+				}
+			end
+		end
+	end
 
 	--Dragon Lord--
 	self.parts.wpn_fps_upg_dragon_lord_legend = {
@@ -21826,7 +21882,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_fla_mk2.uses_parts, "wpn_fps_upg_dragon_lord_legend")
 
 	--Green Grin--
 	self.parts.wpn_fps_upg_green_grin_legend = {
@@ -21846,10 +21901,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		override = {
 			wpn_fps_rpg7_m_rocket = {
 				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_fps_rpg7_m_grinclown",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_third_rpg7_m_grinclown"		}
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_third_rpg7_m_grinclown"
+			}
 		}
 	}
-	table.insert(self.wpn_fps_rpg7.uses_parts, "wpn_fps_upg_green_grin_legend")
 
 	--The Gimp--
 	self.parts.wpn_fps_upg_the_gimp_legend = {
@@ -21908,23 +21963,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		override = {
 			wpn_fps_smg_p90_b_short = {
 				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"		
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
 			},
 			wpn_fps_smg_p90_b_long = {
 				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"		
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
 			},
 			wpn_fps_smg_p90_b_civilian = {
 				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"		
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
 			},
 			wpn_fps_smg_p90_b_ninja = {
 				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"		
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
 			},
 		}
 	}
-	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_salad_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_smg_p90.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_salad_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+					third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+				}
+			end
+		end
+	end
 
 	--Big Kahuna--
 	self.parts.wpn_fps_upg_the_big_kahuna = {
@@ -22060,7 +22125,32 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_upg_the_big_kahuna")
+
+	for k, used_part_id in ipairs(self.wpn_fps_shot_r870.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_fps_shot_r870_b_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_third_shot_r870_b_legendary",	
+				}
+			elseif self.parts[used_part_id].type == "magazine" or self.parts[used_part_id].type == "grip" or self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+				}
+			end
+		end
+	end
 
 	--Dallas Sallad--
 	self.parts.wpn_fps_upg_santa_slayers_legend = {
@@ -22116,7 +22206,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_x_1911.uses_parts, "wpn_fps_upg_santa_slayers_legend")
 
 	--Pastrami--
 	self.parts.wpn_fps_upg_baaah_legend = {
@@ -22144,7 +22233,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_snp_model70.uses_parts, "wpn_fps_upg_baaah_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_snp_model70.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_b_legend",
+					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_b_legend"	
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_s_legend",
+					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_s_legend"	
+				}
+			end
+		end
+	end
 
 	--Wolf's M240 thing--
 	self.parts.wpn_fps_upg_par_legend = {
@@ -22180,7 +22284,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_lmg_par.uses_parts, "wpn_fps_upg_par_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_lmg_par.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
+					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
+					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
+				}
+			elseif self.parts[used_part_id].type == "extra" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			end
+		end
+	end
 
 	--Cola--
 	self.parts.wpn_fps_upg_cola_legend = {
@@ -22308,7 +22432,32 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_cola_legend")
+	
+	for k, used_part_id in ipairs(self.wpn_fps_ass_m16.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+				}
+			end
+		end
+	end
 
 	--I forgot about the bayonetta gun--
 	self.parts.wpn_fps_upg_judge_legend = {
@@ -22336,7 +22485,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_pis_judge.uses_parts, "wpn_fps_upg_judge_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_upg_judge.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_fps_pis_judge_b_legend",
+					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_third_pis_judge_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_fps_pis_judge_g_legend",
+					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_third_pis_judge_g_legend",
+				}
+			end
+		end
+	end
 
 	--IN THE BOOT WITH YA!--
 	self.parts.wpn_fps_upg_boot_legend = {
@@ -22380,7 +22544,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_sho_boot.uses_parts, "wpn_fps_upg_boot_legend")
+
+	for k, used_part_id in ipairs(self.wpn_fps_upg_boot.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_fg_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_fg_legendary",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
+				}
+			end
+		end
+	end
 
 	--Wait, there's more?--
 	self.parts.wpn_fps_upg_boot_legend_optic = {
@@ -22403,7 +22587,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_sho_boot.uses_parts, "wpn_fps_upg_boot_legend_optic")
 
 	--Just like the real KSG, no one likes this skin--
 	self.parts.wpn_fps_upg_ksg_legend = {
@@ -22437,7 +22620,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 	}
-	table.insert(self.wpn_fps_sho_ksg.uses_parts, "wpn_fps_upg_ksg_legend")
 
 	--The Not Patriot--
 	self.parts.wpn_fps_upg_tecci_legend = {
@@ -22497,7 +22679,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_tecci_legend")
 
 	--Plush Phoenix--
 	self.parts.wpn_fps_upg_m14_legend = {
@@ -22545,7 +22726,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			},
 		}
 	}
-	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_m14_legend")
 
 	--Demon--
 	self.parts.wpn_fps_upg_serbu_legend = {
@@ -22636,7 +22816,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}			
 		}
 	}
-	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_upg_serbu_legend")
 
 
 --Legendary shit above--

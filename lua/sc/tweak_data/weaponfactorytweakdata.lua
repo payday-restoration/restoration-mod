@@ -21622,1204 +21622,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		forbids = { "wpn_fps_bow_frankish_m_explosive", "wpn_fps_bow_frankish_m_poison" }
 	}
 
-	--Vlad's Rodina--
-	self.parts.wpn_fps_upg_vlad_rodina_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_ak",
-		desc_id = "bm_wskn_ak74_rodina_desc_sc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
-		has_description = true,
-		override = {
-			wpn_fps_upg_ns_ass_smg_firepig = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_stubby = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_tank = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_large = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_medium = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_small = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_jprifles = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_linear = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_surefire = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_pbs1 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_battle = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ak_ns_ak105 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ak_b_ak105 = {
-				override = nil,
-				adds = nil,
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
-			},
-			wpn_fps_upg_ak_b_draco = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
-			},
-			wpn_fps_ass_74_b_standard = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
-			},
-			wpn_fps_upg_ass_ak_b_zastava = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
-			},
-			wpn_upg_ak_fg_standard = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_upg_ak_fg_combo2 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_upg_ak_fg_combo3 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_upg_ak_fg_combo1 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_upg_ak_fg_combo4 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_fps_upg_ak_fg_tapco = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_fps_upg_fg_midwest = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_fps_upg_ak_fg_krebs = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_fps_upg_ak_fg_trax = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
-			},
-			wpn_upg_ak_g_standard = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-			},
-			wpn_fps_upg_ak_g_rk3 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-			},
-			wpn_fps_upg_ak_g_hgrip = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-			},
-			wpn_fps_upg_ak_g_pgrip = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-			},
-			wpn_fps_upg_ak_g_wgrip = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-			},
-			wpn_upg_ak_s_skfoldable_vanilla = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-			wpn_fps_upg_m4_s_standard = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-			wpn_fps_upg_m4_s_pts = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-			wpn_upg_ak_s_folding = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-			wpn_fps_upg_m4_s_crane = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-			wpn_fps_upg_m4_s_mk46 = {
-				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-			},
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_ass_74.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
-					adds = {},
-					override = {},
-					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
-					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
-				}
-			elseif self.parts[used_part_id].type == "barrel_ext" then
-				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				}
-			elseif self.parts[used_part_id].type == "foregrip" then
-				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
-					adds = {},
-					override = {},
-					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
-					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",	
-				}
-			elseif self.parts[used_part_id].type == "grip" then
-				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
-					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
-					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
-				}
-			end
-		end
-	end
-
-	--Midas Touch--
-	self.parts.wpn_fps_upg_midas_touch_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_deagle",
-		desc_id = "bm_wskn_deagle_bling_desc_sc",
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		supported = true,
-		stats = {value = 0},
-		internal_part = true,
-		has_description = true,
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_upg_o_marksmansight_front = {a_obj = "a_ol"},
-			wpn_fps_pis_deagle_b_standard = {
-				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
-				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
-			},
-			wpn_fps_pis_deagle_b_long = {
-				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
-				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
-			}
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_midas_touch_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
-					third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
-				}
-			end
-		end
-	end
-
-	--Dragon Lord--
-	self.parts.wpn_fps_upg_dragon_lord_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_flamethrower",
-		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_fla_mk2_body = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_pts/wpn_fps_fla_mk2_body_fierybeast"
-			}
-		}
-	}
-
-	--Green Grin--
-	self.parts.wpn_fps_upg_green_grin_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_flamethrower",
-		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_rpg7_m_rocket = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_fps_rpg7_m_grinclown",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_third_rpg7_m_grinclown"
-			}
-		}
-	}
-
-	--The Gimp--
-	self.parts.wpn_fps_upg_the_gimp_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_lmg_m134_body_upper = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_body_upper_spikey",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_body_upper_spikey",
-			},
-			wpn_fps_lmg_m134_body_upper_light = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_body_upper_spikey",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_body_upper_spikey",
-			},
-			wpn_fps_lmg_m134_barrel = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
-			},
-			wpn_fps_lmg_m134_barrel_short = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
-			},
-			wpn_fps_lmg_m134_barrel_extreme = {
-				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
-				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
-			}
-		}
-	}
-
-	--Dallas Sallad--
-	self.parts.wpn_fps_upg_salad_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_flamethrower",
-		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_smg_p90_b_short = {
-				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
-			},
-			wpn_fps_smg_p90_b_long = {
-				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
-			},
-			wpn_fps_smg_p90_b_civilian = {
-				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
-			},
-			wpn_fps_smg_p90_b_ninja = {
-				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
-			},
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_smg_p90.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_salad_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
-					third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
-				}
-			end
-		end
-	end
-
-	--Big Kahuna--
-	self.parts.wpn_fps_upg_the_big_kahuna = {
-		type = "bonus",
-		name_id = "bm_menu_sc_legendary_r870",
-		desc_id = "bm_wskn_r870_waves_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_shot_r870_s_solid_vanilla = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_folding = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_m4 = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_upg_m4_s_standard = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_upg_m4_s_pts = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_nostock_big = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_nostock_big = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_nostock_single = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_nostock = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_solid_big = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_solid_single = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_s_solid = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_upg_m4_s_mk46 = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_upg_m4_s_ubr = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-			},
-			wpn_fps_shot_r870_fg_big = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
-			},
-			wpn_fps_shot_r870_fg_railed = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
-			},
-			wpn_fps_shot_r870_fg_wood = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
-			},
-			wpn_fps_shot_r870_fg_wood = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
-			},
-			wpn_fps_upg_ns_shot_thick = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_shot_shark = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_shot_ns_king = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_sho_salvo_large = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_standard = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_ergo = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_sniper = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_hgrip = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_mgrip = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_shot_r870_m_extended = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_shot_r870_b_long = {
-				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_fps_shot_r870_b_legendary",
-				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_third_shot_r870_b_legendary",
-			},
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_shot_r870.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_fps_shot_r870_b_legendary",
-					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_third_shot_r870_b_legendary",	
-				}
-			elseif self.parts[used_part_id].type == "magazine" or self.parts[used_part_id].type == "grip" or self.parts[used_part_id].type == "barrel_ext" then
-				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				}
-			elseif self.parts[used_part_id].type == "foregrip" then
-				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
-					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
-					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
-				}
-			end
-		end
-	end
-
-	--Dallas Sallad--
-	self.parts.wpn_fps_upg_santa_slayers_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_flamethrower",
-		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_pis_1911_g_standard = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
-			},
-			wpn_fps_pis_1911_g_bling = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
-			},
-			wpn_fps_pis_1911_g_ergo = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
-			},
-			wpn_fps_pis_1911_g_engraved = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
-			},
-			wpn_fps_upg_fl_pis_laser = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
-			},
-			wpn_fps_upg_fl_pis_tlr1 = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
-			},
-			wpn_fps_upg_fl_pis_crimson = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
-			},
-			wpn_fps_upg_fl_pis_x400v = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
-			},
-			wpn_fps_upg_fl_pis_m3x = {
-				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
-				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
-			},
-		}
-	}
-
-	--Pastrami--
-	self.parts.wpn_fps_upg_baaah_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_flamethrower",
-		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_snp_model70_b_standard = {
-				unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_b_legend",
-				third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_b_legend"		
-			},
-			wpn_fps_snp_model70_s_standard = {
-				unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_s_legend",
-				third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_s_legend"		
-			}
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_snp_model70.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_b_legend",
-					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_b_legend"	
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_s_legend",
-					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_s_legend"	
-				}
-			end
-		end
-	end
-
-	--Wolf's M240 thing--
-	self.parts.wpn_fps_upg_par_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_lmg_par_b_short = {
-				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
-				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
-			},
-			wpn_fps_lmg_par_b_standard = {
-				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
-				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
-			},
-			wpn_fps_lmg_par_s_plastic = {
-				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
-				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
-			},
-			wpn_fps_lmg_par_s_standard = {
-				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
-				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
-			}
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_lmg_par.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
-					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
-					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
-				}
-			elseif self.parts[used_part_id].type == "extra" then
-				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				}
-			end
-		end
-	end
-
-	--Cola--
-	self.parts.wpn_fps_upg_cola_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_deagle",
-		desc_id = "bm_wskn_deagle_bling_desc_sc",
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		supported = true,
-		stats = {value = 0},
-		internal_part = true,
-		has_description = true,
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_upg_ns_ass_smg_firepig = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_stubby = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_tank = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_large = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_medium = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_small = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_jprifles = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_linear = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_surefire = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_pbs1 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_battle = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ak_ns_ak105 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_m4_uupg_b_medium_vanilla = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
-			},
-			wpn_fps_m4_uupg_b_long = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
-			},
-			wpn_fps_upg_ass_m4_b_beowulf = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
-			},
-			wpn_fps_m16_fg_standard = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
-			},
-			wpn_fps_m16_fg_railed = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
-			},
-			wpn_fps_m16_fg_vietnam = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
-			},
-			wpn_fps_upg_ass_m16_fg_stag = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
-			},
-			wpn_fps_m16_s_solid_vanilla = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_upg_m4_s_crane = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_upg_m4_s_mk46 = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_upg_m4_s_ubr = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_m4_uupg_s_fold = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_upg_m4_s_standard = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_upg_m4_s_pts = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-			wpn_fps_smg_olympic_s_short = {
-				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-			},
-		}
-	}
-	
-	for k, used_part_id in ipairs(self.wpn_fps_ass_m16.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
-					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
-				}
-			elseif self.parts[used_part_id].type == "barrel_ext" then
-				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				}
-			elseif self.parts[used_part_id].type == "foregrip" then
-				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
-					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
-					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
-				}
-			end
-		end
-	end
-
-	--I forgot about the bayonetta gun--
-	self.parts.wpn_fps_upg_judge_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_pis_judge_b_standard = {
-				unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_fps_pis_judge_b_legend",
-				third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_third_pis_judge_b_legend",
-			},
-			wpn_fps_pis_judge_g_standard = {
-				unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_fps_pis_judge_g_legend",
-				third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_third_pis_judge_g_legend",
-			}
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_pis_judge.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_fps_pis_judge_b_legend",
-					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_third_pis_judge_b_legend",
-				}
-			elseif self.parts[used_part_id].type == "grip" then
-				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_fps_pis_judge_g_legend",
-					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_third_pis_judge_g_legend",
-				}
-			end
-		end
-	end
-
-	--IN THE BOOT WITH YA!--
-	self.parts.wpn_fps_upg_boot_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_sho_boot_b_standard = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
-			},
-			wpn_fps_sho_boot_b_short = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
-			},
-			wpn_fps_sho_boot_b_long = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
-			},
-			wpn_fps_sho_boot_fg_standard = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_fg_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_fg_legendary",
-			},
-			wpn_fps_sho_boot_s_short = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
-			},
-			wpn_fps_sho_boot_s_long = {
-				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
-				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
-			},
-		}
-	}
-
-	for k, used_part_id in ipairs(self.wpn_fps_sho_boot.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
-				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
-					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
-				}
-			elseif self.parts[used_part_id].type == "foregrip" then
-				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_fg_legendary",
-					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_fg_legendary",
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
-					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
-					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
-				}
-			end
-		end
-	end
-
-	--Wait, there's more?--
-	self.parts.wpn_fps_upg_boot_legend_optic = {
-		type = "sight",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_o",
-		unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_o_legendary",
-		third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_o_legendary",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		stance_mod = {
-			wpn_fps_sho_boot = {
-				translation = Vector3(0, -5, -1.5)
-			}
-		}
-	}
-
-	--Just like the real KSG, no one likes this skin--
-	self.parts.wpn_fps_upg_ksg_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_sho_ksg_b_standard = {
-				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
-				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
-			},
-			wpn_fps_sho_ksg_b_long = {
-				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
-				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
-			},
-			wpn_fps_sho_ksg_b_short = {
-				forbids = {"wpn_fps_sho_ksg_fg_short"},
-				adds = {"wpn_fps_sho_ksg_fg_standard"},
-				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
-				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
-			}
-		}
-	}
-
-	--The Not Patriot--
-	self.parts.wpn_fps_upg_tecci_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_ass_tecci_b_standard = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_b_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_b_legend",
-			},
-			wpn_fps_ass_tecci_b_long = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_b_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_b_legend",
-			},
-			wpn_fps_ass_tecci_fg_standard = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_fg_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_fg_legend",
-			},
-			wpn_fps_ass_tecci_s_standard = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_upg_m4_s_standard = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_upg_m4_s_crane = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_upg_m4_s_mk46 = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_upg_m4_s_ubr = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_m4_uupg_s_fold = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-			wpn_fps_upg_m4_s_pts = {
-				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
-				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
-			},
-		}
-	}
-
-	--Plush Phoenix--
-	self.parts.wpn_fps_upg_m14_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_ass_m14_b_standard = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_b_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_b_legendary",
-			},
-			wpn_fps_ass_m14_body_dmr = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
-			},
-			wpn_fps_ass_m14_body_ebr = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
-			},
-			wpn_fps_ass_m14_body_jae = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
-			},
-			wpn_fps_ass_m14_body_ruger = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",			
-			},
-			wpn_fps_ass_m14_body_upper = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_upper_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_upper_legendary",
-			},
-			wpn_fps_ass_m14_body_lower = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_lower_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_lower_legendary",
-			},
-		}
-	}
-
-	--Demon--
-	self.parts.wpn_fps_upg_serbu_legend = {
-		type = "legendary",
-		name_id = "bm_menu_sc_legendary_m134",
-		desc_id = "bm_wskn_m134_bulletstorm_desc",
-		is_a_unlockable = true,
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
-		supported = true,
-		stats = {value = 0},
-		internal_part = false,
-		texture_bundle_folder = "boost_in_lootdrop",
-		has_description = true,
-		override = {
-			wpn_fps_shot_r870_b_short = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_b_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_b_legendary",
-			},
-			wpn_fps_shot_r870_fg_small = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_fg_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_fg_legendary",
-			},
-			wpn_fps_upg_m4_g_standard = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},			
-			wpn_fps_shot_shorty_m_extended_short = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_ergo = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_sniper = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_hgrip = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_m4_g_mgrip = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_snp_tti_g_grippy = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},				
-			wpn_fps_upg_g_m4_surgeon = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},			
-			wpn_fps_shot_r870_s_nostock_vanilla = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-			},
-			wpn_fps_shot_r870_s_folding = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-			},
-			wpn_fps_shot_shorty_s_nostock_short = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-				forbids = {}
-			},
-			wpn_fps_shot_r870_s_solid = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-			},
-			wpn_fps_shot_r870_s_solid_single = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-			},
-			wpn_fps_shot_shorty_s_solid_short = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-				forbids = {}
-			},
-			wpn_fps_shot_r870_s_folding_ext = {
-				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
-				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
-				forbids = {}
-			}			
-		}
-	}
-
-
---Legendary shit above--
-
 --Custom weapon shit here--
 	
 	--[[ PAWCIO'S MODS ]]
@@ -32664,6 +31466,1277 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+			end
+		end
+	end
+
+--GEN 1 LEGENDARY STUFF--
+	--Vlad's Rodina--
+	self.parts.wpn_fps_upg_vlad_rodina_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_ak",
+		desc_id = "bm_wskn_ak74_rodina_desc_sc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+		has_description = true,
+		override = {
+			wpn_fps_upg_ns_ass_smg_firepig = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_stubby = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_tank = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_large = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_medium = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_small = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_jprifles = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_linear = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_surefire = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_pbs1 = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_battle = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ak_ns_ak105 = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ak_b_ak105 = {
+				override = nil,
+				adds = nil,
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+			},
+			wpn_fps_upg_ak_b_draco = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+			},
+			wpn_fps_ass_74_b_standard = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+			},
+			wpn_fps_upg_ass_ak_b_zastava = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+			},
+			wpn_upg_ak_fg_standard = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_upg_ak_fg_combo2 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_upg_ak_fg_combo3 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_upg_ak_fg_combo1 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_upg_ak_fg_combo4 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_fps_upg_ak_fg_tapco = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_fps_upg_fg_midwest = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_fps_upg_ak_fg_krebs = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_fps_upg_ak_fg_trax = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",
+			},
+			wpn_upg_ak_g_standard = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+			},
+			wpn_fps_upg_ak_g_rk3 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+			},
+			wpn_fps_upg_ak_g_hgrip = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+			},
+			wpn_fps_upg_ak_g_pgrip = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+			},
+			wpn_fps_upg_ak_g_wgrip = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+			},
+			wpn_upg_ak_s_skfoldable_vanilla = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+			wpn_fps_upg_m4_s_standard = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+			wpn_fps_upg_m4_s_pts = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+			wpn_upg_ak_s_folding = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+			wpn_fps_upg_m4_s_crane = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+			wpn_fps_upg_m4_s_mk46 = {
+				unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+				third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_74.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					adds = {},
+					override = {},
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_fps_ass_74_b_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_ass_74_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					adds = {},
+					override = {},
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_fg_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_fg_legend",	
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_g_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_g_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_vlad_rodina_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_upg_ak_s_legend",
+					third_unit = "units/payday2_cash/safes/sputnik/weapons/wpn_fps_ass_74_rodina_pts/wpn_third_upg_ak_s_legend",
+				}
+			end
+		end
+	end
+
+	--Midas Touch--
+	self.parts.wpn_fps_upg_midas_touch_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_deagle",
+		desc_id = "bm_wskn_deagle_bling_desc_sc",
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {value = 0},
+		internal_part = true,
+		has_description = true,
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_upg_o_marksmansight_front = {a_obj = "a_ol"},
+			wpn_fps_pis_deagle_b_standard = {
+				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
+				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
+			},
+			wpn_fps_pis_deagle_b_long = {
+				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
+				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
+			}
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_midas_touch_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
+					third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
+				}
+			end
+		end
+	end
+
+	--Dragon Lord--
+	self.parts.wpn_fps_upg_dragon_lord_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_flamethrower",
+		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_fla_mk2_body = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_pts/wpn_fps_fla_mk2_body_fierybeast"
+			}
+		}
+	}
+
+	--Green Grin--
+	self.parts.wpn_fps_upg_green_grin_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_flamethrower",
+		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_rpg7_m_rocket = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_fps_rpg7_m_grinclown",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_rpg7_m_grinclown/wpn_third_rpg7_m_grinclown"
+			}
+		}
+	}
+
+	--The Gimp--
+	self.parts.wpn_fps_upg_the_gimp_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_lmg_m134_body_upper = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_body_upper_spikey",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_body_upper_spikey",
+			},
+			wpn_fps_lmg_m134_body_upper_light = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_body_upper_spikey",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_body_upper_spikey",
+			},
+			wpn_fps_lmg_m134_barrel = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
+			},
+			wpn_fps_lmg_m134_barrel_short = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
+			},
+			wpn_fps_lmg_m134_barrel_extreme = {
+				unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_fps_lmg_m134_barrel_legendary",
+				third_unit = "units/payday2_cash/safes/cop/weapons/wpn_fps_lmg_m134_legend_pts/wpn_third_lmg_m134_barrel_legendary",
+			}
+		}
+	}
+
+	--Dallas Sallad--
+	self.parts.wpn_fps_upg_salad_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_flamethrower",
+		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_smg_p90_b_short = {
+				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+			},
+			wpn_fps_smg_p90_b_long = {
+				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+			},
+			wpn_fps_smg_p90_b_civilian = {
+				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+			},
+			wpn_fps_smg_p90_b_ninja = {
+				unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+				third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_smg_p90.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_salad_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/dallas/weapons/wpn_fps_smg_p90_b_legendary/wpn_fps_smg_p90_b_legend",
+					third_unit = "units/payday2_cash/safes/dallas/weapons/wpn_third_smg_p90_b_legendary/wpn_third_smg_p90_b_legend"
+				}
+			end
+		end
+	end
+
+	--Big Kahuna--
+	self.parts.wpn_fps_upg_the_big_kahuna = {
+		type = "bonus",
+		name_id = "bm_menu_sc_legendary_r870",
+		desc_id = "bm_wskn_r870_waves_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_shot_r870_s_solid_vanilla = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_folding = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_m4 = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_upg_m4_s_standard = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_upg_m4_s_pts = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_nostock_big = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_nostock_big = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_nostock_single = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_nostock = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_solid_big = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_solid_single = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_s_solid = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_upg_m4_s_mk46 = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_upg_m4_s_ubr = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+			},
+			wpn_fps_shot_r870_fg_big = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+			},
+			wpn_fps_shot_r870_fg_railed = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+			},
+			wpn_fps_shot_r870_fg_wood = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+			},
+			wpn_fps_shot_r870_fg_wood = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+			},
+			wpn_fps_upg_ns_shot_thick = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_shot_shark = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_shot_ns_king = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_sho_salvo_large = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_standard = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_ergo = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_sniper = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_hgrip = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_mgrip = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_shot_r870_m_extended = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_shot_r870_b_long = {
+				unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_fps_shot_r870_b_legendary",
+				third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_third_shot_r870_b_legendary",
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_shot_r870.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_fps_shot_r870_b_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_b_legend/wpn_third_shot_r870_b_legendary",	
+				}
+			elseif self.parts[used_part_id].type == "magazine" or self.parts[used_part_id].type == "grip" or self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_fg_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_fg_legendary",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_the_big_kahuna.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_fps_shot_r870_s_legendary",
+					third_unit = "units/payday2_cash/safes/surf/weapons/wpn_fps_shot_r870_fg_legend/wpn_third_shot_r870_s_legendary",
+				}
+			end
+		end
+	end
+
+	--Dallas Sallad--
+	self.parts.wpn_fps_upg_santa_slayers_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_flamethrower",
+		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_pis_1911_g_standard = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
+			},
+			wpn_fps_pis_1911_g_bling = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
+			},
+			wpn_fps_pis_1911_g_ergo = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
+			},
+			wpn_fps_pis_1911_g_engraved = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_fps_pis_1911_g_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_g_legendary/wpn_third_pis_1911_g_legendary"		
+			},
+			wpn_fps_upg_fl_pis_laser = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
+			},
+			wpn_fps_upg_fl_pis_tlr1 = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
+			},
+			wpn_fps_upg_fl_pis_crimson = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
+			},
+			wpn_fps_upg_fl_pis_x400v = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
+			},
+			wpn_fps_upg_fl_pis_m3x = {
+				unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_fps_pis_1911_fl_legendary",
+				third_unit = "units/payday2_cash/safes/flake/weapons/wpn_fps_pis_1911_fl_legendary/wpn_third_pis_1911_fl_legendary"		
+			},
+		}
+	}
+
+	--Pastrami--
+	self.parts.wpn_fps_upg_baaah_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_flamethrower",
+		desc_id = "bm_wskn_flamethrower_mk2_fire_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_snp_model70_b_standard = {
+				unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_b_legend",
+				third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_b_legend"		
+			},
+			wpn_fps_snp_model70_s_standard = {
+				unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_s_legend",
+				third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_s_legend"		
+			}
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_snp_model70.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_b_legend",
+					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_b_legend"	
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_baaah_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_fps_snp_model70_s_legend",
+					third_unit = "units/payday2_cash/safes/bah/weapons/wpn_fps_snp_model70_legendary_pts/wpn_third_snp_model70_s_legend"	
+				}
+			end
+		end
+	end
+
+	--Wolf's M240 thing--
+	self.parts.wpn_fps_upg_par_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_lmg_par_b_short = {
+				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
+				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
+			},
+			wpn_fps_lmg_par_b_standard = {
+				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
+				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
+			},
+			wpn_fps_lmg_par_s_plastic = {
+				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
+				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
+			},
+			wpn_fps_lmg_par_s_standard = {
+				unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
+				third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
+			}
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_lmg_par.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_fps_lmg_svinet_b_standard",
+					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_b_legendary/wpn_third_lmg_svinet_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_fps_lmg_svinet_s_legend",
+					third_unit = "units/payday2_cash/safes/pack/weapons/wpn_fps_lmg_ksp58_s_legendary/wpn_third_lmg_svinet_s_legend",
+				}
+			elseif self.parts[used_part_id].type == "extra" then
+				self.parts.wpn_fps_upg_par_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			end
+		end
+	end
+
+	--Cola--
+	self.parts.wpn_fps_upg_cola_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_deagle",
+		desc_id = "bm_wskn_deagle_bling_desc_sc",
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {value = 0},
+		internal_part = true,
+		has_description = true,
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_upg_ns_ass_smg_firepig = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_stubby = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_tank = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_large = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_medium = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_smg_small = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_jprifles = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_linear = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_surefire = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ns_ass_pbs1 = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ass_ns_battle = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_ak_ns_ak105 = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_m4_uupg_b_medium_vanilla = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
+			},
+			wpn_fps_m4_uupg_b_long = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
+			},
+			wpn_fps_upg_ass_m4_b_beowulf = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
+			},
+			wpn_fps_m16_fg_standard = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+			},
+			wpn_fps_m16_fg_railed = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+			},
+			wpn_fps_m16_fg_vietnam = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+			},
+			wpn_fps_upg_ass_m16_fg_stag = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+			},
+			wpn_fps_m16_s_solid_vanilla = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_upg_m4_s_crane = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_upg_m4_s_mk46 = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_upg_m4_s_ubr = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_m4_uupg_s_fold = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_upg_m4_s_standard = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_upg_m4_s_pts = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+			wpn_fps_smg_olympic_s_short = {
+				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+			},
+		}
+	}
+	
+	for k, used_part_id in ipairs(self.wpn_fps_ass_m16.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
+					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+				}
+			end
+		end
+	end
+
+	--I forgot about the bayonetta gun--
+	self.parts.wpn_fps_upg_judge_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_pis_judge_b_standard = {
+				unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_fps_pis_judge_b_legend",
+				third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_third_pis_judge_b_legend",
+			},
+			wpn_fps_pis_judge_g_standard = {
+				unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_fps_pis_judge_g_legend",
+				third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_third_pis_judge_g_legend",
+			}
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_pis_judge.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_fps_pis_judge_b_legend",
+					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_b_legend/wpn_third_pis_judge_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_judge_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_fps_pis_judge_g_legend",
+					third_unit = "units/payday2_cash/safes/burn/weapons/wpn_fps_pis_judge_g_legend/wpn_third_pis_judge_g_legend",
+				}
+			end
+		end
+	end
+
+	--IN THE BOOT WITH YA!--
+	self.parts.wpn_fps_upg_boot_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_sho_boot_b_standard = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
+			},
+			wpn_fps_sho_boot_b_short = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
+			},
+			wpn_fps_sho_boot_b_long = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
+			},
+			wpn_fps_sho_boot_fg_standard = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_fg_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_fg_legendary",
+			},
+			wpn_fps_sho_boot_s_short = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
+			},
+			wpn_fps_sho_boot_s_long = {
+				unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
+				third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_sho_boot.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_b_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_b_legendary",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_fg_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_fg_legendary",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_boot_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_s_legendary",
+					third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_s_legendary",
+				}
+			end
+		end
+	end
+
+	--Wait, there's more?--
+	self.parts.wpn_fps_upg_boot_legend_optic = {
+		type = "sight",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_o",
+		unit = "units/payday2_cash/safes/buck/weapons/wpn_fps_sho_boot_legendary/wpn_fps_sho_boot_o_legendary",
+		third_unit = "units/payday2_cash/safes/buck/weapons/wpn_third_sho_boot_legendary/wpn_third_sho_boot_o_legendary",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		stance_mod = {
+			wpn_fps_sho_boot = {
+				translation = Vector3(0, -5, -1.5)
+			}
+		}
+	}
+
+	--Just like the real KSG, no one likes this skin--
+	self.parts.wpn_fps_upg_ksg_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_sho_ksg_b_standard = {
+				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
+				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
+			},
+			wpn_fps_sho_ksg_b_long = {
+				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
+				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
+			},
+			wpn_fps_sho_ksg_b_short = {
+				forbids = {"wpn_fps_sho_ksg_fg_short"},
+				adds = {"wpn_fps_sho_ksg_fg_standard"},
+				unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
+				third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
+			}
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_sho_ksg.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_ksg_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/same/weapons/wpn_fps_sho_ksg_b_legendary/wpn_fps_sho_ksg_b_legendary",
+					third_unit = "units/payday2_cash/safes/same/weapons/wpn_third_sho_ksg_b_legendary/wpn_third_sho_ksg_b_legendary",
+				}
+			end
+		end
+	end
+
+	--The Not Patriot--
+	self.parts.wpn_fps_upg_tecci_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_ass_tecci_b_standard = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_b_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_b_legend",
+			},
+			wpn_fps_ass_tecci_b_long = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_b_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_b_legend",
+			},
+			wpn_fps_ass_tecci_fg_standard = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_fg_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_fg_legend",
+			},
+			wpn_fps_ass_tecci_s_standard = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_upg_m4_s_standard = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_upg_m4_s_crane = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_upg_m4_s_mk46 = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_upg_m4_s_ubr = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_m4_uupg_s_fold = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+			wpn_fps_upg_m4_s_pts = {
+				unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+				third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_tecci.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_tecci_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_b_legend",
+					third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_b_legend",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_tecci_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_fg_legend",
+					third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_fg_legend",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_tecci_legend.override[used_part_id] = {	
+					unit = "units/payday2_cash/safes/grunt/weapons/wpn_fps_ass_tecci_legendary/wpn_fps_ass_tecci_s_legend",
+					third_unit = "units/payday2_cash/safes/grunt/weapons/wpn_third_ass_tecci_legendary/wpn_third_ass_tecci_s_legend",
+				}
+			end
+		end
+	end
+
+	--Plush Phoenix--
+	self.parts.wpn_fps_upg_m14_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_ass_m14_b_standard = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_b_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_b_legendary",
+			},
+			wpn_fps_ass_m14_body_dmr = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
+			},
+			wpn_fps_ass_m14_body_ebr = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
+			},
+			wpn_fps_ass_m14_body_jae = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
+			},
+			wpn_fps_ass_m14_body_ruger = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",			
+			},
+			wpn_fps_ass_m14_body_upper = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_upper_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_upper_legendary",
+			},
+			wpn_fps_ass_m14_body_lower = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_lower_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_lower_legendary",
+			},
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_m14.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_m14_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_b_legendary",
+					third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_b_legendary",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_m14_legend.override[used_part_id] = {	
+					unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+					third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",		
+				}
+			end
+		end
+	end
+
+	--Demon--
+	self.parts.wpn_fps_upg_serbu_legend = {
+		type = "legendary",
+		name_id = "bm_menu_sc_legendary_m134",
+		desc_id = "bm_wskn_m134_bulletstorm_desc",
+		is_a_unlockable = true,
+		a_obj = "a_body",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
+		supported = true,
+		stats = {value = 0},
+		internal_part = false,
+		texture_bundle_folder = "boost_in_lootdrop",
+		has_description = true,
+		override = {
+			wpn_fps_shot_r870_b_short = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_b_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_b_legendary",
+			},
+			wpn_fps_shot_r870_fg_small = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_fg_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_fg_legendary",
+			},
+			wpn_fps_upg_m4_g_standard = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},			
+			wpn_fps_shot_shorty_m_extended_short = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_ergo = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_sniper = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_hgrip = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_upg_m4_g_mgrip = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},
+			wpn_fps_snp_tti_g_grippy = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},				
+			wpn_fps_upg_g_m4_surgeon = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			},			
+			wpn_fps_shot_r870_s_nostock_vanilla = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+			},
+			wpn_fps_shot_r870_s_folding = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+			},
+			wpn_fps_shot_shorty_s_nostock_short = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+				forbids = {}
+			},
+			wpn_fps_shot_r870_s_solid = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+			},
+			wpn_fps_shot_r870_s_solid_single = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+			},
+			wpn_fps_shot_shorty_s_solid_short = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+				forbids = {}
+			},
+			wpn_fps_shot_r870_s_folding_ext = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+				forbids = {}
+			}			
+		}
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_shot_serbu.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_upg_serbu_legend.override[used_part_id] = {
+					unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_b_legendary",
+					third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_b_legendary",
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_upg_serbu_legend.override[used_part_id] = {	
+					unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_fg_legendary",
+					third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_fg_legendary",
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_serbu_legend.override[used_part_id] = {	
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_upg_serbu_legend.override[used_part_id] = {	
+					unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+					third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+					forbids = {}		
+				}
 			end
 		end
 	end

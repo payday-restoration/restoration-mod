@@ -4679,6 +4679,7 @@ function BlackMarketGui:update_info_text()
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local ene_hs_mult = weapon_tweak and weapon_tweak.ene_hs_mult
 				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
 				local sms = weapon_tweak and weapon_tweak.sms or 1
@@ -4726,6 +4727,16 @@ function BlackMarketGui:update_info_text()
 					updated_texts[4].below_stats = true
 				end			
 
+				if ene_hs_mult then
+					local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info_2") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_ene_hs_mult_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info_2") .. "##"
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end 
+
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
@@ -4743,6 +4754,7 @@ function BlackMarketGui:update_info_text()
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.skill_color)
 				end
+
 				
 				if sms < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - sms) * 100))

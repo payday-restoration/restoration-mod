@@ -1983,6 +1983,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
+		["bm_menu_weapon_ene_hs_mult_info"] = "Deals only ",
+		["bm_menu_weapon_ene_hs_mult_info_2"] = " of an enemy's headshot multiplier.",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",

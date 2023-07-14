@@ -3376,7 +3376,7 @@ function WeaponTweakData:_init_stats()
 					-0.5 * self.stat_info.stance_recoil_mults.steelsight,
 					0.5 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.675
+				min_h_recoil = 0.4
 			},
 			horizontal_left_recoil = {
 				standing = {
@@ -3397,7 +3397,7 @@ function WeaponTweakData:_init_stats()
 					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
 					0.4 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.675
+				min_h_recoil = 0.4
 			},
 			horizontal_right_recoil = {
 				standing = {
@@ -3418,7 +3418,7 @@ function WeaponTweakData:_init_stats()
 					-0.4 * self.stat_info.stance_recoil_mults.steelsight,
 					0.6 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.675
+				min_h_recoil = 0.4
 			},
 
 		--Your average SMG and Pistol will be around here.
@@ -3441,7 +3441,7 @@ function WeaponTweakData:_init_stats()
 					-0.45 * self.stat_info.stance_recoil_mults.steelsight,
 					0.45 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.3
 			},
 			left_recoil = {
 				standing = {
@@ -3462,7 +3462,7 @@ function WeaponTweakData:_init_stats()
 					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
 					0.3 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.3
 			},
 			right_recoil = {
 				standing = {
@@ -3483,7 +3483,7 @@ function WeaponTweakData:_init_stats()
 					-0.3 * self.stat_info.stance_recoil_mults.steelsight,
 					0.6 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.3
 			},
 
 			the_wolf_brigade = {
@@ -3505,7 +3505,7 @@ function WeaponTweakData:_init_stats()
 					-0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
 					0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
 				},
-				min_h_recoil = 0.65
+				min_h_recoil = 0.4
 			},
 
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
@@ -3688,13 +3688,13 @@ function WeaponTweakData:_init_stats()
 end
 
 local sms_preset = {
-	lmg_40 = 0.92,
-	lmg_48 = 0.88,
-	lmg_60 = 0.78,
-	lmg_90 = 0.73,
-	lmg_120 = 0.7,
-	mini_40 = 0.8,
-	mini_60 = 0.75,
+	lmg_40 = 0.94,
+	lmg_48 = 0.9,
+	lmg_60 = 0.82,
+	lmg_90 = 0.80,
+	lmg_120 = 0.78,
+	mini_40 = 0.85,
+	mini_60 = 0.78,
 	semi_snp_light = 0.8,
 	semi_snp_heavy = 0.7,
 	semi_snp_amr = 0.6
@@ -3924,7 +3924,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = sms_preset.lmg_60
 	end
 	
-	recat = { "mg42", "hk21", "hk51b", "ranc_heavy_machine_gun" }
+	recat = { "mg42", "hk21", "hk51b" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "mmg")
 		self[ wep_id ].recategorize = { "heavy_mg" }
@@ -3941,7 +3941,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].sms = sms_preset.lmg_120
 		self[ wep_id ].weapon_movement_penalty = sms_preset.lmg_120
 	end
-	self.ranc_heavy_machine_gun.damage_type = "anti_materiel"
+
+	recat = { "ranc_heavy_machine_gun" }
+	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "hmg")
+		self[ wep_id ].recategorize = { "heavy_mg" }
+		self[ wep_id ].damage_type = "anti_materiel"
+	end
 	
 	recat = { "shuno" }
 	for i, wep_id in ipairs(recat) do
@@ -7515,7 +7521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
-			self.shuno.ads_speed = 0.600
+			self.shuno.ads_speed = 0.500
 			self.shuno.damage_falloff = {
 				start_dist = 1800,
 				end_dist = 4500,
@@ -7560,7 +7566,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.CAN_TOGGLE_FIREMODE = true
 			self.tecci.panic_suppression_chance = 0.05
 			self.tecci.supported = true
-			self.tecci.ads_speed = 0.400
+			self.tecci.ads_speed = 0.360
 			self.tecci.damage_falloff = {
 				start_dist = 1600,
 				end_dist = 5800,
@@ -7604,7 +7610,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.always_use_standing = true
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
-			self.m249.ads_speed = 0.500
+			self.m249.ads_speed = 0.420
 			self.m249.damage_falloff = {
 				start_dist = 2200,
 				end_dist = 7700,
@@ -7649,7 +7655,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.fire_mode_data.fire_rate = 0.0923076
 			self.kacchainsaw.kick = self.stat_info.kick_tables.even_recoil
 			self.kacchainsaw.supported = true
-			self.kacchainsaw.ads_speed = 0.460
+			self.kacchainsaw.ads_speed = 0.400
 			self.kacchainsaw.damage_falloff = {
 				start_dist = 2600,
 				end_dist = 7000,
@@ -7706,7 +7712,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				dot_tick_period = 0.5
 			}
 			self.kacchainsaw_flamethrower.supported = true
-			self.kacchainsaw_flamethrower.ads_speed = 0.460
+			self.kacchainsaw_flamethrower.ads_speed = 0.400
 			self.kacchainsaw_flamethrower.damage_falloff = {
 				start_dist = 300,
 				end_dist = 1100,
@@ -7752,7 +7758,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.rpk.always_use_standing = true
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.520
+			self.rpk.ads_speed = 0.400
 			self.rpk.damage_falloff = {
 				start_dist = 2700,
 				end_dist = 5800,
@@ -7802,7 +7808,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 			self.m134.supported = true
-			self.m134.ads_speed = 0.660
+			self.m134.ads_speed = 0.600
 			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
 			self.m134.damage_falloff = {
 				start_dist = 1500,
@@ -7855,16 +7861,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
-				self.m60.ads_speed = 0.640
+				self.m60.ads_speed = 0.560
 				self.m60.damage_falloff = {
-					start_dist = 700,
+					start_dist = 1400,
 					end_dist = 6000,
 					min_mult = 0.33333
 				}
 				self.m60.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 59,
+					recoil = 69,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 14,
@@ -7905,16 +7911,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
-				self.par.ads_speed = 0.620
+				self.par.ads_speed = 0.540
 				self.par.damage_falloff = {
-					start_dist = 300,
+					start_dist = 1000,
 					end_dist = 5800,
 					min_mult = 0.33333
 				}
 				self.par.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 55,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 16,
@@ -7954,7 +7960,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.580
+				self.mg42.ads_speed = 0.500
 				self.mg42.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 6000,
@@ -7963,7 +7969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.stats = {
 					damage = 45,
 					spread = 59,
-					recoil = 55,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 17,
@@ -8003,7 +8009,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
-				self.hk21.ads_speed = 0.620
+				self.hk21.ads_speed = 0.520
 				self.hk21.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 5100,
@@ -8012,7 +8018,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 67,
+					recoil = 71,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 15,
@@ -8050,7 +8056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk51b.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk51b.supported = true
-				self.hk51b.ads_speed = 0.460
+				self.hk51b.ads_speed = 0.440
 				self.hk51b.damage_falloff = {
 					start_dist = 800,
 					end_dist = 4800,
@@ -13803,16 +13809,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.always_use_standing = true
 		self.lewis.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.lewis.supported = true
-		self.lewis.ads_speed = 0.580
+		self.lewis.ads_speed = 0.500
 		self.lewis.damage_falloff = {
-			start_dist = 800,
+			start_dist = 1700,
 			end_dist = 4500,
 			min_mult = 0.4
 		}
 		self.lewis.stats = {
 			damage = 60,
 			spread = 61,
-			recoil = 59,
+			recoil = 63,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 18,
@@ -17308,18 +17314,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 			
-			for i, category in pairs(weap.categories) do
-				if category == "shotgun" then
-					weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+			if table.contains(weap.categories, "shotgun") then
+				weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+			end
+
+			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then
+				if weap.weapon_movement_penalty then
+					weap.rms = (1 + weap.weapon_movement_penalty) / 2
+					weap.smt_mult = 2
+					weap.smt_range = { 0.55, 1 }
 				end
-				if category == "lmg" or category == "minigun" then
-					if weap.weapon_movement_penalty then
-						weap.rms = (1 + weap.weapon_movement_penalty) / 2
-						weap.smt_mult = 2
-						weap.smt_range = { 0.55, 1 }
-					end
-					weap.zoom_recoil_reduction = 0.01
-				end
+				weap.ene_hs_mult = 0.65
+				weap.zoom_recoil_reduction = 0.02
 			end
 
 			if weap.recategorize and not weap.recoil_values then
@@ -17502,9 +17508,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 			pdw = 0.675,
 			typh = 0.8,
-			lmg = 0.55,
-				mmg = 0.9,
-			minigun = 0.45,
+			lmg = 0.625,
+				--mmg = 0.95,
+			minigun = 0.55,
 		shotgun = per_pellet and 1.5 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			shotgun_heavy = per_pellet and 1.02 or 1,
 			shotgun_break = per_pellet and 1.3 or 1,

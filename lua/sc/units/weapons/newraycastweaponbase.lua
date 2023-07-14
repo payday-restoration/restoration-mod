@@ -615,6 +615,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	end	
 	
 	self._hs_mult = self._hs_mult or self:weapon_tweak_data().hs_mult
+	self._ene_hs_mult = self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult
 
 	self._shots_fired = 0
 

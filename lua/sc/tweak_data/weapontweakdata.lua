@@ -3688,13 +3688,13 @@ function WeaponTweakData:_init_stats()
 end
 
 local sms_preset = {
-	lmg_40 = 0.94,
-	lmg_48 = 0.9,
-	lmg_60 = 0.82,
-	lmg_90 = 0.80,
-	lmg_120 = 0.78,
-	mini_40 = 0.85,
-	mini_60 = 0.78,
+	lmg_40 = 0.92,
+	lmg_48 = 0.88,
+	lmg_60 = 0.78,
+	lmg_90 = 0.73,
+	lmg_120 = 0.7,
+	mini_40 = 0.8,
+	mini_60 = 0.75,
 	semi_snp_light = 0.8,
 	semi_snp_heavy = 0.7,
 	semi_snp_amr = 0.6
@@ -7501,55 +7501,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.timers.reload_exit_empty = 0.7
 				self.uzi.timers.reload_exit_not_empty = 1.3
 
-	--[[     LIGHT MGs      ]]
 
-		--Microgun (I hate how this is probably one of the more "functional" handheld minigun configurations)
-			self.shuno.categories = {
-				"minigun",
-				"smg"
-			}
-			self.shuno.has_description = true
-			self.shuno.desc_id = "bm_shuno_sc_desc"
-			self.shuno.CLIP_AMMO_MAX = 300
-			self.shuno.NR_CLIPS_MAX = 1
-			self.shuno.AMMO_MAX = 600
-			self.shuno.FIRE_MODE = "auto"
-			self.shuno.fire_mode_data = {}
-			self.shuno.fire_mode_data.fire_rate = 0.03
-			self.shuno.CAN_TOGGLE_FIREMODE = false
-			self.shuno.kick = self.stat_info.kick_tables.moderate_kick
-			self.shuno.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
-			self.shuno.panic_suppression_chance = 0.05
-			self.shuno.supported = true
-			self.shuno.ads_speed = 0.500
-			self.shuno.damage_falloff = {
-				start_dist = 1800,
-				end_dist = 4500,
-				min_mult = 0.5
-			}
-			self.shuno.stats = {
-				damage = 20,
-				spread = 11,
-				recoil = 87,
-				spread_moving = 25,
-				zoom = 1,
-				concealment = 16,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 9,
-				reload = 20
-			}		
-			self.shuno.stats_modifiers = nil
-			self.shuno.ads_spool = true
-			self.shuno.spin_up_anims = true
-			self.shuno.timers.equip = 2.35
-			self.shuno.timers.reload_exit_empty = 5
-			self.shuno.timers.reload_exit_not_empty = 5
-			self.shuno.sounds.no_fix = true
-			self.shuno.sounds.spin_start = "turret_spin_start"
-			self.shuno.sounds.spin_end = "turret_spin_stop"
+
+	--[[     LIGHT MGs      ]]
 
 		--Boot (HK416c)
 			self.tecci.has_description = true
@@ -7561,19 +7515,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.kick = self.stat_info.kick_tables.even_recoil
 			self.tecci.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.tecci.CLIP_AMMO_MAX = 100
-			self.tecci.AMMO_MAX = 360
+			self.tecci.AMMO_MAX = 300
 			self.tecci.fire_mode_data.fire_rate = 0.0857142
 			self.tecci.CAN_TOGGLE_FIREMODE = true
 			self.tecci.panic_suppression_chance = 0.05
 			self.tecci.supported = true
-			self.tecci.ads_speed = 0.360
+			self.tecci.ads_speed = 0.380
 			self.tecci.damage_falloff = {
 				start_dist = 1600,
 				end_dist = 5800,
-				min_mult = 0.5
+				min_mult = 0.55556
 			}
 			self.tecci.stats = {
-				damage = 20,
+				damage = 18,
 				spread = 71,
 				recoil = 77,
 				spread_moving = 5,
@@ -7604,20 +7558,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.desc_id = "bm_m249_sc_desc"
 			self.m249.has_description = true
 			self.m249.CLIP_AMMO_MAX = 200
-			self.m249.AMMO_MAX = 300
+			self.m249.AMMO_MAX = 270
 			self.m249.fire_mode_data.fire_rate = 0.075
 			self.m249.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.m249.always_use_standing = true
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
-			self.m249.ads_speed = 0.420
+			self.m249.ads_speed = 0.460
 			self.m249.damage_falloff = {
 				start_dist = 2200,
 				end_dist = 7700,
-				min_mult = 0.4166
+				min_mult = 0.5
 			}
 			self.m249.stats = {
-				damage = 24,
+				damage = 20,
 				spread = 58,
 				recoil = 78,
 				spread_moving = 5,
@@ -7651,18 +7605,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw.desc_id = "bm_kacchainsaw_sc_desc"
 			self.kacchainsaw.has_description = true
 			self.kacchainsaw.CLIP_AMMO_MAX = 200
-			self.kacchainsaw.AMMO_MAX = 300
+			self.kacchainsaw.AMMO_MAX = 270
 			self.kacchainsaw.fire_mode_data.fire_rate = 0.0923076
 			self.kacchainsaw.kick = self.stat_info.kick_tables.even_recoil
 			self.kacchainsaw.supported = true
-			self.kacchainsaw.ads_speed = 0.400
+			self.kacchainsaw.ads_speed = 0.420
 			self.kacchainsaw.damage_falloff = {
 				start_dist = 2600,
 				end_dist = 7000,
-				min_mult = 0.4166
+				min_mult = 0.5
 			}
 			self.kacchainsaw.stats = {
-				damage = 24,
+				damage = 20,
 				spread = 43,
 				recoil = 78,
 				spread_moving = 5,
@@ -7712,7 +7666,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				dot_tick_period = 0.5
 			}
 			self.kacchainsaw_flamethrower.supported = true
-			self.kacchainsaw_flamethrower.ads_speed = 0.400
+			self.kacchainsaw_flamethrower.ads_speed = 0.420
 			self.kacchainsaw_flamethrower.damage_falloff = {
 				start_dist = 300,
 				end_dist = 1100,
@@ -7751,21 +7705,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				"smg"
 			}
 			self.rpk.CLIP_AMMO_MAX = 75
-			self.rpk.AMMO_MAX = 240
+			self.rpk.AMMO_MAX = 225
 			self.rpk.fire_mode_data.fire_rate = 0.1
 			self.rpk.CAN_TOGGLE_FIREMODE = true
 			self.rpk.BURST_FIRE = false
 			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.rpk.always_use_standing = true
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.400
+			self.rpk.ads_speed = 0.460
 			self.rpk.damage_falloff = {
 				start_dist = 2700,
 				end_dist = 5800,
-				min_mult = 0.6
+				min_mult = 0.5
 			}
 			self.rpk.stats = {
-				damage = 30,
+				damage = 24,
 				spread = 68,
 				recoil = 71,
 				spread_moving = 5,
@@ -7785,62 +7739,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.timers.reload_exit_not_empty = 0.85
 			self.rpk.reload_speed_multiplier = 0.9
 		
-		--Minigun
-			self.m134.categories = {
-				"minigun",
-				"smg"
-			}
-			self.m134.has_description = true
-			self.m134.desc_id = "bm_m134_sc_desc"	
-			self.m134.CLIP_AMMO_MAX = 400
-			self.m134.NR_CLIPS_MAX = 1
-			self.m134.AMMO_MAX = 400
-			self.m134.FIRE_MODE = "auto"
-			self.m134.fire_mode_data = {}
-			self.m134.fire_mode_data.fire_rate = 0.03
-			--self.m134.fire_rate_init_count = 20
-			--self.m134.fire_rate_init_mult = 2
-			--self.m134.fire_rate_init_ramp_up = true
-			self.m134.CAN_TOGGLE_FIREMODE = false
-			self.m134.reload_speed_multiplier = 0.85
-			self.m134.kick = self.stat_info.kick_tables.moderate_kick
-			self.m134.panic_suppression_chance = 0.05
-			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
-			self.m134.supported = true
-			self.m134.ads_speed = 0.600
-			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
-			self.m134.damage_falloff = {
-				start_dist = 1500,
-				end_dist = 6000,
-				min_mult = 0.6
-			}
-			self.m134.stats = {
-				damage = 30,
-				spread = 10,
-				recoil = 77,
-				spread_moving = 5,
-				zoom = 1,
-				concealment = 14,
-				suppression = 7,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 9,	
-				reload = 20
-			}
-			self.m134.stats_modifiers = {}
-			self.m134.jab_range = 50
-			self.m134.ads_spool = true
-			self.m134.spin_up_anims = true
-			self.m134.timers.reload_empty = 7
-			self.m134.timers.reload_not_empty = 7
-			self.m134.timers.reload_exit_empty = 2
-			self.m134.timers.reload_exit_not_empty = 2
-			self.m134.sounds.no_fix = true
-			self.m134.sounds.spin_start = "swatturret_spin_start"
-			self.m134.sounds.spin_end = "swatturret_spin_stop"
-
 	--[[     HEAVY MGs     ]]
 
 		--PRIMARIES
@@ -7861,14 +7759,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.m60.supported = true
-				self.m60.ads_speed = 0.560
+				self.m60.ads_speed = 0.600
 				self.m60.damage_falloff = {
 					start_dist = 1400,
 					end_dist = 6000,
-					min_mult = 0.33333
+					min_mult = 0.44444
 				}
 				self.m60.stats = {
-					damage = 60,
+					damage = 45,
 					spread = 61,
 					recoil = 69,
 					spread_moving = 5,
@@ -7911,14 +7809,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.par.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.par.supported = true
-				self.par.ads_speed = 0.540
+				self.par.ads_speed = 0.580
 				self.par.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 5800,
-					min_mult = 0.33333
+					min_mult = 0.44444
 				}
 				self.par.stats = {
-					damage = 60,
+					damage = 45,
 					spread = 61,
 					recoil = 65,
 					spread_moving = 5,
@@ -7953,21 +7851,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.sounds.fire = "mg42_fire"
 				self.mg42.sounds.fire_single = "mg42_fire"
 				self.mg42.CLIP_AMMO_MAX = 50
-				self.mg42.AMMO_MAX = 160
+				self.mg42.AMMO_MAX = 180
 				self.mg42.has_description = true
 				self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
 				self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
 				self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.mg42.supported = true
-				self.mg42.ads_speed = 0.500
+				self.mg42.ads_speed = 0.540
 				self.mg42.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 6000,
-					min_mult = 0.53333
+					min_mult = 0.6
 				}
 				self.mg42.stats = {
-					damage = 45,
+					damage = 30,
 					spread = 59,
 					recoil = 65,
 					spread_moving = 5,
@@ -7999,7 +7897,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.desc_id = "bm_hk21_sc_desc"
 				self.hk21.has_description = true
 				self.hk21.CLIP_AMMO_MAX = 100
-				self.hk21.AMMO_MAX = 160
+				self.hk21.AMMO_MAX = 180
 				self.hk21.fire_mode_data.fire_rate = 0.075
 				self.hk21.CAN_TOGGLE_FIREMODE = true
 				self.hk21.fake_semi_anims = true
@@ -8009,14 +7907,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk21.supported = true
-				self.hk21.ads_speed = 0.520
+				self.hk21.ads_speed = 0.580
 				self.hk21.damage_falloff = {
 					start_dist = 1600,
 					end_dist = 5100,
-					min_mult = 0.44444
+					min_mult = 0.5
 				}
 				self.hk21.stats = {
-					damage = 45,
+					damage = 30,
 					spread = 61,
 					recoil = 71,
 					spread_moving = 7,
@@ -8047,7 +7945,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.desc_id = "bm_hk51b_sc_desc"
 				self.hk51b.has_description = true
 				self.hk51b.CLIP_AMMO_MAX = 40
-				self.hk51b.AMMO_MAX = 160
+				self.hk51b.AMMO_MAX = 180
 				self.hk51b.fire_mode_data.fire_rate = 0.063157
 				self.hk51b.CAN_TOGGLE_FIREMODE = true
 				self.hk51b.BURST_FIRE = 3
@@ -8056,14 +7954,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.hk51b.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 				self.hk51b.supported = true
-				self.hk51b.ads_speed = 0.440
+				self.hk51b.ads_speed = 0.460
 				self.hk51b.damage_falloff = {
 					start_dist = 800,
 					end_dist = 4800,
-					min_mult = 0.44444
+					min_mult = 0.5
 				}
 				self.hk51b.stats = {
-					damage = 45,
+					damage = 30,
 					spread = 57,
 					recoil = 67,
 					spread_moving = 7,
@@ -8122,6 +8020,112 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ranc_heavy_machine_gun.can_shoot_through_shield = true
 				self.ranc_heavy_machine_gun.can_shoot_through_wall = true
 				self.ranc_heavy_machine_gun.can_shoot_through_titan_shield = true
+
+	--[[     MINIGUNS      ]]
+
+		--Microgun (I hate how this is probably one of the more "functional" handheld minigun configurations)
+			self.shuno.categories = {
+				"minigun",
+				"smg"
+			}
+			self.shuno.has_description = true
+			self.shuno.desc_id = "bm_shuno_sc_desc"
+			self.shuno.CLIP_AMMO_MAX = 300
+			self.shuno.NR_CLIPS_MAX = 1
+			self.shuno.AMMO_MAX = 600
+			self.shuno.FIRE_MODE = "auto"
+			self.shuno.fire_mode_data = {}
+			self.shuno.fire_mode_data.fire_rate = 0.03
+			self.shuno.CAN_TOGGLE_FIREMODE = false
+			self.shuno.kick = self.stat_info.kick_tables.moderate_kick
+			self.shuno.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+			self.shuno.panic_suppression_chance = 0.05
+			self.shuno.supported = true
+			self.shuno.ads_speed = 0.500
+			self.shuno.damage_falloff = {
+				start_dist = 1800,
+				end_dist = 4500,
+				min_mult = 0.5
+			}
+			self.shuno.stats = {
+				damage = 20,
+				spread = 11,
+				recoil = 87,
+				spread_moving = 25,
+				zoom = 1,
+				concealment = 16,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,
+				reload = 20
+			}		
+			self.shuno.stats_modifiers = nil
+			self.shuno.ads_spool = true
+			self.shuno.spin_up_anims = true
+			self.shuno.timers.equip = 2.35
+			self.shuno.timers.reload_exit_empty = 5
+			self.shuno.timers.reload_exit_not_empty = 5
+			self.shuno.sounds.no_fix = true
+			self.shuno.sounds.spin_start = "turret_spin_start"
+			self.shuno.sounds.spin_end = "turret_spin_stop"
+		
+		--Minigun
+			self.m134.categories = {
+				"minigun",
+				"smg"
+			}
+			self.m134.has_description = true
+			self.m134.desc_id = "bm_m134_sc_desc"	
+			self.m134.CLIP_AMMO_MAX = 400
+			self.m134.NR_CLIPS_MAX = 1
+			self.m134.AMMO_MAX = 400
+			self.m134.FIRE_MODE = "auto"
+			self.m134.fire_mode_data = {}
+			self.m134.fire_mode_data.fire_rate = 0.03
+			--self.m134.fire_rate_init_count = 20
+			--self.m134.fire_rate_init_mult = 2
+			--self.m134.fire_rate_init_ramp_up = true
+			self.m134.CAN_TOGGLE_FIREMODE = false
+			self.m134.reload_speed_multiplier = 0.85
+			self.m134.kick = self.stat_info.kick_tables.moderate_kick
+			self.m134.panic_suppression_chance = 0.05
+			self.m134.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+			self.m134.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+			self.m134.supported = true
+			self.m134.ads_speed = 0.600
+			self.m134.sprintout_anim_time = 0.8 --for w/e reason the M134's exit sprint animation is twice as long as other guns, this is just here to make the animation smoothly match up with the desired speed (ads_speed)
+			self.m134.damage_falloff = {
+				start_dist = 1500,
+				end_dist = 6000,
+				min_mult = 0.5
+			}
+			self.m134.stats = {
+				damage = 30,
+				spread = 10,
+				recoil = 77,
+				spread_moving = 5,
+				zoom = 1,
+				concealment = 14,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,	
+				reload = 20
+			}
+			self.m134.stats_modifiers = {}
+			self.m134.jab_range = 50
+			self.m134.ads_spool = true
+			self.m134.spin_up_anims = true
+			self.m134.timers.reload_empty = 7
+			self.m134.timers.reload_not_empty = 7
+			self.m134.timers.reload_exit_empty = 2
+			self.m134.timers.reload_exit_not_empty = 2
+			self.m134.sounds.no_fix = true
+			self.m134.sounds.spin_start = "swatturret_spin_start"
+			self.m134.sounds.spin_end = "swatturret_spin_stop"
 
 
 
@@ -13813,10 +13817,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.damage_falloff = {
 			start_dist = 1700,
 			end_dist = 4500,
-			min_mult = 0.4
+			min_mult = 0.53333
 		}
 		self.lewis.stats = {
-			damage = 60,
+			damage = 45,
 			spread = 61,
 			recoil = 63,
 			spread_moving = 5,
@@ -16139,7 +16143,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.stoner63a.BURST_FIRE = false
 			self.stoner63a.CAN_TOGGLE_FIREMODE = false
 			self.stoner63a.fire_mode_data.fire_rate = 0.08
-			self.stoner63a.AMMO_MAX = 300
+			self.stoner63a.AMMO_MAX = 270
 			self.stoner63a.kick = self.stat_info.kick_tables.even_recoil
 			self.stoner63a.always_use_standing = true
 			self.stoner63a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -16148,10 +16152,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.stoner63a.damage_falloff = {
 				start_dist = 2100,
 				end_dist = 6800,
-				min_mult = 0.4166
+				min_mult = 0.5
 			}
 			self.stoner63a.stats = {
-				damage = 24,
+				damage = 20,
 				spread = 61,
 				recoil = 73,
 				spread_moving = 5,
@@ -17324,8 +17328,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_mult = 2
 					weap.smt_range = { 0.55, 1 }
 				end
-				weap.ene_hs_mult = 0.6
-				weap.zoom_recoil_reduction = 0.02
+				--weap.ene_hs_mult = 0.6
+				weap.zoom_recoil_reduction = 0.01
+				weap.always_hipfire = true
 			end
 
 			if weap.recategorize and not weap.recoil_values then
@@ -17511,7 +17516,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.625,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.5 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+		shotgun = per_pellet and 1.55 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			shotgun_heavy = per_pellet and 1.02 or 1,
 			shotgun_break = per_pellet and 1.3 or 1,
 			shotgun_super = per_pellet and 2.4 or 1,

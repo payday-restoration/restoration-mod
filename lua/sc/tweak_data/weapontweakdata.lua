@@ -17324,7 +17324,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_mult = 2
 					weap.smt_range = { 0.55, 1 }
 				end
-				weap.ene_hs_mult = 0.65
+				weap.ene_hs_mult = 0.6
 				weap.zoom_recoil_reduction = 0.02
 			end
 
@@ -17509,7 +17509,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			pdw = 0.675,
 			typh = 0.8,
 			lmg = 0.625,
-				--mmg = 0.95,
+				mmg = 0.95,
 			minigun = 0.55,
 		shotgun = per_pellet and 1.5 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			shotgun_heavy = per_pellet and 1.02 or 1,

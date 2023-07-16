@@ -46,6 +46,11 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or managers.skirmish:is_skirmish() and self._tweak_table == "autumn" then
 		GroupAIStateBesiege:set_assault_endless(true)
 		managers.hud:set_buff_enabled("vip", true)
+		
+		if managers.skirmish:is_skirmish() then
+			managers.skirmish:set_captain_active()
+		end
+		
 	end
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {

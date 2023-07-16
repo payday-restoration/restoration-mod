@@ -789,25 +789,9 @@ function CopActionWalk:update(t)
 		local variant = self._haste
 		-- Tried tying this to the velocity of the animations themselves, but it just led to some issues like dozers just barely not running fast enough to play the run animation and doing a fast walk instead
 		if variant == "run" then
-			if anim_data.sprint and walk_anim_velocities.sprint then
-				if real_velocity > 480 and anim_data.pose == "stand" then
-					variant = "sprint"
-				elseif real_velocity > 250 then
-					variant = "run"
-				elseif not self._no_walk then
-					variant = "walk"
-				end
-			elseif anim_data.run then
-				if real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
-					variant = "sprint"
-				elseif real_velocity > 250 then
-					variant = "run"
-				elseif not self._no_walk then
-					variant = "walk"
-				end
-			elseif real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
+			if real_velocity > (anim_data.sprint and 480 or 530) and walk_anim_velocities.sprint and anim_data.pose == "stand" then
 				variant = "sprint"
-			elseif real_velocity > 300 then
+			elseif real_velocity > ((anim_data.run or anim_data.sprint) and 250 or 300) then
 				variant = "run"
 			elseif not self._no_walk then
 				variant = "walk"

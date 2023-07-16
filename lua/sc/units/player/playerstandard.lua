@@ -636,10 +636,12 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 				end
 
 				if weap_base:out_of_ammo() then
+					self._spin_up_shoot = nil
 					if input.btn_primary_attack_press then
 						weap_base:dryfire()
 					end
 				elseif weap_base.clip_empty and weap_base:clip_empty() then
+					self._spin_up_shoot = nil
 					if self:_is_using_bipod() then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()

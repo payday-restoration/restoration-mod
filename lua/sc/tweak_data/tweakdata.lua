@@ -220,7 +220,7 @@ end
 --Arbiter--
 tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
-tweak_data.projectiles.launcher_frag_arbiter.range = 250
+tweak_data.projectiles.launcher_frag_arbiter.range = 300
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 0.75
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_frag_arbiter.effect_name = "effects/payday2/particles/explosions/shapecharger_explosion"
@@ -237,7 +237,7 @@ tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 }
 tweak_data.projectiles.launcher_electric_arbiter.damage = 30
 tweak_data.projectiles.launcher_electric_arbiter.player_damage = 15
-tweak_data.projectiles.launcher_electric_arbiter.range = 250
+tweak_data.projectiles.launcher_electric_arbiter.range = 300
 tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 0.75
 tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_poison_arbiter.damage = 0
@@ -261,7 +261,7 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	launch_speed = 2500,
 	curve_pow = 0.75,
 	player_damage = 30,
-	range = 250,
+	range = 300,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",
@@ -294,7 +294,7 @@ tweak_data.projectiles.launcher_electric_osipr = {
 	launch_speed = 2500,
 	curve_pow = 0.75,
 	player_damage = 15,
-	range = 250,
+	range = 300,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
 	sound_event = "gl_explode",

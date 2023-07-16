@@ -4679,10 +4679,11 @@ function BlackMarketGui:update_info_text()
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
-				local ene_hs_mult = weapon_tweak and weapon_tweak.ene_hs_mult
+				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
 				local sms = weapon_tweak and weapon_tweak.sms or 1
+				local exp_ammo = nil
 				local stat_sms = nil
 				local stat_move = nil
 				local stat_attachment_desc = nil
@@ -4698,6 +4699,12 @@ function BlackMarketGui:update_info_text()
 						end
 						if stats.alt_desc then
 							stat_attachment_desc = stats.alt_desc
+						end
+						if stats.ene_hs_mult_add then
+							ene_hs_mult = ene_hs_mult + stats.ene_hs_mult_add
+						end
+						if stats.bullet_class == "InstantExplosiveBulletBase" then
+							exp_ammo = true
 						end
 					end
 				end
@@ -4725,17 +4732,30 @@ function BlackMarketGui:update_info_text()
 						end
 					end
 					updated_texts[4].below_stats = true
-				end			
+				end
 
-				if ene_hs_mult then
-					local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
+				if exp_ammo then
+					local description = managers.localization:text("bm_menu_weapon_exp_no_hs_info")
+					for color_id in string.gmatch(description, "#%{(.-)%}#") do
+						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+					end
+					description = description:gsub("#%{(.-)%}#", "##")
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 					else
-						updated_texts[4].text = updated_texts[4].text .. "##" ..managers.localization:text("bm_menu_weapon_ene_hs_mult_info") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_info_2") .. "##"
+						updated_texts[4].text = updated_texts[4].text .. description
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				end 
+				elseif ene_hs_mult ~= 1 then
+					local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. "##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
+					end
+					table.insert(updated_texts[4].resource_color, (ene_hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
+				end
+				
 
 				if movement_penalty < 1 then
 					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
@@ -4821,13 +4841,13 @@ function BlackMarketGui:update_info_text()
 		if has_info_id or swing_arc then
 			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
 			if swing_arc then
-				if swing_arc >= 32 then
+				if swing_arc >= 16 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_4") or (swing_arc_h and "bm_melee_swing_arc_h_4") or "bm_melee_swing_arc_4")
-				elseif swing_arc >= 24 then
+				elseif swing_arc >= 12 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_3") or (swing_arc_h and "bm_melee_swing_arc_h_3") or "bm_melee_swing_arc_3")
-				elseif swing_arc >= 16 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_2") or (swing_arc_h and "bm_melee_swing_arc_h_2") or "bm_melee_swing_arc_2")
 				elseif swing_arc >= 8 then
+					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_2") or (swing_arc_h and "bm_melee_swing_arc_h_2") or "bm_melee_swing_arc_2")
+				elseif swing_arc >= 4 then
 					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_1") or (swing_arc_h and "bm_melee_swing_arc_h_1") or "bm_melee_swing_arc_1")
 				end
 			end

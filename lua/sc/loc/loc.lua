@@ -1164,7 +1164,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
 		["bm_wp_upg_a_slug_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, enemies, shields and thin walls.##",
 		["bm_wp_upg_a_slug_spam_desc"] = "Fires a lead slug that #{skill_color}#deals 80% of its damage through body armor and pierces enemies and thin walls.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#2## meters.\nRounds have #{skill_color}#no falloff## but #{important_1}#cannot headshot.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds have #{skill_color}#no falloff## but #{important_1}#cannot headshot.##",
 		["bm_wp_upg_a_custom_desc"] = "Fires #{important_1}#6## larger, heavier pellets that deal #{skill_color}#increased## damage.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#15%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#90## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##", --NOT IN USE
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#40%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#120## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.\n\nDeals fire damage instead of bullet damage.##",
@@ -1183,6 +1183,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes. #{skill_color}#Headshot damage is increased by 15%.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes. #{skill_color}#Headshot damage is increased by 15%.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes. #{skill_color}#Headshot damage is increased by 15%.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes. #{skill_color}#Headshot damage is increased by 15%.##",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
@@ -1274,7 +1278,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that creates an #{risk}#explosion## at point of impact. The explosion deals #{skill_color}#720## damage and has a radius of #{skill_color}#5## meters.",
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#360## damage, has a radius of #{skill_color}#5## meters, and has a chance to #{ghost_color}#tase enemies.##",
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#180## damage, has a radius of #{skill_color}#5## meters, and has a chance to #{ghost_color}#tase enemies.##",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage, has a radius of #{skill_color}#2.5## meters, and has a chance to #{ghost_color}#tase enemies.##",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage, has a radius of #{skill_color}#3## meters, and has a chance to #{ghost_color}#tase enemies.##",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
 		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a #{stats_positive}#cloud of poisonous gas## at point of impact.\nThe gas has a radius of #{skill_color}#6## meters, lingers for #{skill_color}#10## seconds, deals #{skill_color}#240## damage over #{skill_color}#8## seconds, and #{stats_positive}#induces vomiting## in most enemies #{important_1}#1## time when caught in it.",
 		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a #{stats_positive}#cloud of poisonous gas## at point of impact.\nThe gas has a radius of #{skill_color}#6## meters, lingers for #{skill_color}#8## seconds, deals #{skill_color}#180## damage over #{skill_color}#6## seconds, and #{stats_positive}#induces vomiting## in most enemies #{important_1}#1## time when caught in it.",
@@ -1983,8 +1987,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_ene_hs_mult_info"] = "Deals only ",
-		["bm_menu_weapon_ene_hs_mult_info_2"] = " of an enemy's headshot multiplier.",
+		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
+		["bm_menu_weapon_ene_hs_mult_add"] = "Enemy headshot multipliers are increased to ",
+		["bm_menu_weapon_ene_hs_mult_end"] = " of their normal value.",
+		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive ammo;## #{important_1}#cannot headshot.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",
@@ -2012,19 +2018,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
-		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact.##",
+		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{important_1}#cannot headshot.##",
 		["bm_w_bow_exp_desc"] = "Fire arrows that #{risk}#explode## on impact in a #{skill_color}#2## meter radius.\n\n#{important_1}#Arrow velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_bow_light_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 		["bm_w_bow_heavy_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_xbow_sc_desc"] = "Bolts can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_xbow_exp_sc_desc"] = "#{risk}#Bolts explode on impact.##",
+		["bm_xbow_exp_sc_desc"] = "#{risk}#Bolts explode on impact;## #{important_1}#cannot headshot.##",
 		["bm_w_xbow_exp_desc"] = "Fire bolts that #{risk}#explode## on impact in a #{skill_color}#2## meter radius.\n\n#{important_1}#Bolt velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_xbow_light_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 		["bm_w_xbow_heavy_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 
 		["bm_airbow_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_airbow_exp_sc_desc"] = "#{risk}#Arrows explode on impact.##",
+		["bm_airbow_exp_sc_desc"] = "#{risk}#Arrows explode on impact;## #{important_1}#cannot headshot.##",
 		["bm_w_airbow_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",

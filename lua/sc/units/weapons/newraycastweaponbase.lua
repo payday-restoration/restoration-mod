@@ -197,9 +197,10 @@ NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 --Multipliers for overall spread.
 function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
+	local multi_ray = self._rays and self._rays > 1
 
 	--Multi-pellet spread increase.
-	if self._rays and self._rays > 1 then
+	if multi_ray then
 		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
 	end
 
@@ -212,6 +213,9 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	end
 
 	if current_state:full_steelsight() then
+		if multi_ray then
+			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase_ads or 1
+		end
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
 			mul = mul * tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1
 		end
@@ -614,8 +618,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
 	
-	self._hs_mult = self._hs_mult or self:weapon_tweak_data().hs_mult
-	self._ene_hs_mult = self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult
+	self._hs_mult = self._hs_mult or self:weapon_tweak_data().hs_mult or 1
+	self._ene_hs_mult = self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult or 1
 
 	self._shots_fired = 0
 
@@ -851,6 +855,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.alt_dmg_mult then
 				self._alt_dmg_mult = self._alt_dmg_mult * stats.alt_dmg_mult
+			end
+
+			if stats.ene_hs_mult_add then
+				self._ene_hs_mult = self._ene_hs_mult + stats.ene_hs_mult_add
 			end
 
 			if stats.natascha then		

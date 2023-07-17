@@ -17538,8 +17538,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.625,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.4 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			shotgun_auto = per_pellet and 0.91 or 1,
+			--"shotgun" would go here if it wasn't acting as the base multiplier for the rest of them
 			shotgun_heavy = per_pellet and 0.95 or 1,
 			shotgun_break = per_pellet and 1.08 or 1,
 			shotgun_super = per_pellet and 1.16 or 1,
@@ -17567,7 +17568,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.34
+	pickup_multiplier = pickup_multiplier * 1.33
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

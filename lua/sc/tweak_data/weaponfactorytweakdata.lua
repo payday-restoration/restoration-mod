@@ -1139,7 +1139,7 @@ local grips = {
 				},
 				custom_stats = {
 					rof_mult = 0.9,
-					falloff_start_mult = 0.8,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
 					damage_min_mult = 0,
 					ignore_statistic = true,
@@ -1166,7 +1166,7 @@ local grips = {
 				},
 				custom_stats = {
 					rof_mult = 0.9,
-					falloff_start_mult = 0.8,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
 					damage_min_mult = 0,
 					ignore_statistic = true,
@@ -1192,7 +1192,7 @@ local grips = {
 					damage = per_pellet and -40 or -15
 				},
 				custom_stats = {
-					falloff_start_mult = 0.8,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
 					damage_min_mult = 0,
 					ignore_statistic = true,
@@ -1220,7 +1220,7 @@ local grips = {
 				},
 				custom_stats = {
 					alt_rof_mult = 0.9,
-					falloff_start_mult = 0.8,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
 					damage_min_mult = 0,
 					ignore_statistic = true,
@@ -1245,7 +1245,7 @@ local grips = {
 					damage = per_pellet and -100 or -30
 				},
 				custom_stats = {
-					falloff_start_mult = 0.8,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
 					damage_min_mult = 0,
 					ignore_statistic = true,

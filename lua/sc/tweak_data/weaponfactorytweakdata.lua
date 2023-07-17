@@ -919,10 +919,10 @@ local grips = {
 	local shot_ammo = {
 		--Flechettes
 			a_piercing_auto_override = {
-				desc_id = "bm_wp_upg_a_piercing_auto_desc_sc",
+				desc_id = per_pellet and "bm_wp_upg_a_piercing_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -15 or -6,
+					damage = per_pellet and -30 or -6,
 					spread = per_pellet and 15 or 5
 				},
 				custom_stats = {
@@ -948,7 +948,7 @@ local grips = {
 			},
 		
 			a_piercing_semi_override = {
-				desc_id = "bm_wp_upg_a_piercing_semi_desc_sc",
+				desc_id = per_pellet and "bm_wp_upg_a_piercing_semi_desc_per_pellet" or "bm_wp_upg_a_piercing_semi_desc_sc",
 				stats = {
 					value = 9,
 					damage = per_pellet and -40 or -15,
@@ -977,7 +977,7 @@ local grips = {
 			},
 		
 			a_piercing_pump_override = {
-				desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
+				desc_id = per_pellet and "bm_wp_upg_a_piercing_pump_desc_per_pellet" or  "bm_wp_upg_a_piercing_pump_desc_sc",
 				stats = {
 					value = 9,
 					damage = per_pellet and -60 or -30,
@@ -1006,6 +1006,7 @@ local grips = {
 			},
 	
 			a_piercing_heavy_override = {
+				desc_id = per_pellet and "bm_wp_upg_a_piercing_heavy_desc_per_pellet" or  "bm_wp_upg_a_piercing_heavy_desc_sc",
 				stats = {
 					value = 9,
 					damage = per_pellet and -100 or -30,
@@ -1038,7 +1039,7 @@ local grips = {
 				desc_id = "bm_wp_upg_a_rip_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -15 or -6
+					damage = per_pellet and -30 or -6
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
@@ -1134,7 +1135,7 @@ local grips = {
 				desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -15 or -6
+					damage = per_pellet and -30 or -6
 				},
 				custom_stats = {
 					rof_mult = 0.9,
@@ -1274,7 +1275,7 @@ local grips = {
 				},
 				custom_stats = {
 					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = per_pellet and 0.75 or 0.8,
 					damage_min_mult = per_pellet and 1 or 0.66667,
 					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
@@ -1292,7 +1293,7 @@ local grips = {
 				},
 				custom_stats = {
 					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = per_pellet and 0.75 or 0.8,
 					damage_min_mult = per_pellet and 1 or 0.75,
 					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
@@ -1310,7 +1311,7 @@ local grips = {
 				},
 				custom_stats = {
 					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = per_pellet and 0.75 or 0.8,
 					damage_min_mult = per_pellet and 1 or 0.6666667,
 					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
@@ -1327,7 +1328,7 @@ local grips = {
 				},
 				custom_stats = {
 					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = per_pellet and 0.75 or 0.8,
 					damage_min_mult = per_pellet and 1 or 0.75,
 					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
@@ -9509,7 +9510,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	
 	--Flechettes
 	self.parts.wpn_fps_upg_a_piercing.name_id = "bm_wp_upg_a_piercing"
-	self.parts.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_heavy_desc_sc"
+	self.parts.wpn_fps_upg_a_piercing.desc_id = shot_ammo.a_piercing_heavy_override.desc_id
 	self.parts.wpn_fps_upg_a_piercing.pcs = {}
 	self.parts.wpn_fps_upg_a_piercing.supported = true
 	self.parts.wpn_fps_upg_a_piercing.stats = deep_clone(shot_ammo.a_piercing_heavy_override.stats)

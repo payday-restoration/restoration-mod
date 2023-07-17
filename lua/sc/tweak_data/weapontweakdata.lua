@@ -16598,7 +16598,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.omni then --Tangerine's .410 AR
-		self.omni.recategorize = { "light_shot" }	
+		self.omni.categories = { 
+			"shotgun",
+			"shotgun_auto"
+		 }
+		self.omni.recategorize = { "light_shot" }
 		self.omni.damage_type = "shotgun"
 		self.omni.damage_type_single_ray = "sniper"
 		self.omni.rays = 9
@@ -17291,8 +17295,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.75 ) * 100
-					weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 0.85 ) * 100
+					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.8 ) * 100
+					weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 0.9 ) * 100
 					if weap.recategorize and weap.damage_type == "shotgun_heavy" then	
 						if weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
@@ -17305,7 +17309,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						if weap.stats and weap.stats.damage then
 							if weap.stats.damage == 30 then --Omni
 								weap.stats.damage = 90 --60
-								weap.damage_falloff.min_mult = 0.33333 --0.25
+								weap.damage_falloff.min_mult = 0.16667 --0.25
 								weap.object_damage_mult = 0.5
 								if weap.FIRE_MODE == "single" then					
 									weap.fire_mode_data.fire_rate = 60 / (math.ceil(((60 / weap.fire_mode_data.fire_rate) / 10) * 0.9) * 10)
@@ -17535,6 +17539,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 				mmg = 0.95,
 			minigun = 0.55,
 		shotgun = per_pellet and 1.4 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+			shotgun_auto = per_pellet and 0.91 or 1,
 			shotgun_heavy = per_pellet and 0.95 or 1,
 			shotgun_break = per_pellet and 1.08 or 1,
 			shotgun_super = per_pellet and 1.16 or 1,

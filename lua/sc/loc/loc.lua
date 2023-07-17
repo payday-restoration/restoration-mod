@@ -1183,6 +1183,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",

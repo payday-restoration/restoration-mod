@@ -17,5 +17,31 @@ return {
 		{ id = 101623, delay = 299.8 },
 		{ id = 100618, delay = 0 }
 		}
+	},
+	-- Increase spawn group intervals in pipe arena
+	[105278] = {
+		values = {
+			interval = 12
+		}
+	},
+	[102086] = {
+		values = {
+			interval = 12
+		}
+	},
+	[103986] = {
+		values = {
+			interval = 12
+		}
+	},
+	[101777] = {
+		values = {
+			interval = 12
+		}
+	},
+	[101778] = {
+		values = {
+			interval = 12
+		}
 	}
 }

@@ -763,7 +763,7 @@ function SkillTreeTweakData:init(tweak_data)
 					}
 				}
 
-				--Portable Saw--
+				--Specialist Equipment formally Portable Saw--
 				self.skills.portable_saw = {
 					["name_id"] = "menu_portable_saw_beta_sc",
 					["desc_id"] = "menu_portable_saw_beta_desc_sc",
@@ -804,7 +804,7 @@ function SkillTreeTweakData:init(tweak_data)
 					}
 				}
 
-				--Carbon Blade--
+				--Rip and Tear formally Carbon Blade--
 				self.skills.carbon_blade = {
 					["name_id"] = "menu_carbon_blade_beta_sc",
 					["desc_id"] = "menu_carbon_blade_beta_desc_sc",
@@ -889,7 +889,7 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Eco Sentry--
+			--Engineering aka Eco Sentry--
 			self.skills.eco_sentry = {
 				["name_id"] = "menu_eco_sentry_beta_sc",
 				["desc_id"] = "menu_eco_sentry_beta_desc_sc",
@@ -1331,7 +1331,7 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--ECM Overdrive--
+			--Spotter--
 			self.skills.ecm_2x = {
 				["name_id"] = "menu_ecm_2x_beta_sc",
 				["desc_id"] = "menu_ecm_2x_beta_desc_sc",

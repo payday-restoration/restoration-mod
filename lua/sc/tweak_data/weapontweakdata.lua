@@ -14978,6 +14978,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.panic_suppression_chance = 0.05
 	end
 
+	if self.amr2 then --Pawcio's AMR-2
+		self.amr2.categories = {
+			"snp",
+			"amr"
+		}
+		self.amr2.recategorize = { "antim_snp" }
+		self.amr2.hs_mult = 2
+		self.amr2.damage_type = "anti_materiel"
+		self.amr2.always_play_anims = true
+		self.amr2.upgrade_blocks = nil
+		self.amr2.has_description = true
+		self.amr2.desc_id = "bm_m200_sc_desc"
+		self.amr2.AMMO_MAX = 10
+		self.amr2.CLIP_AMMO_MAX = 5
+		self.amr2.tactical_reload = 1
+		self.amr2.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.amr2.supported = true
+		self.amr2.ads_speed = 0.640
+		self.amr2.damage_falloff = {
+			start_dist = 3000,
+			end_dist = 10000,
+			min_mult = 0.5
+		}
+		self.amr2.stats = {
+			damage = 180,
+			spread = 98,
+			recoil = 11,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 15,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.amr2.fire_mode_data.fire_rate = 1.090909
+		self.amr2.fire_rate_multiplier = 0.90909091
+		self.amr2.timers = deep_clone(self.msr.timers)
+		self.amr2.reload_speed_multiplier = 0.85
+		self.amr2.armor_piercing_chance = 1
+		self.amr2.can_shoot_through_titan_shield = true
+		self.amr2.stats_modifiers = nil
+		self.amr2.panic_suppression_chance = 0.05
+	end
+
 	if self.hx25 then --Pawcio's KF2 HX-25
 		self.hx25.categories = {
 			"grenade_launcher",

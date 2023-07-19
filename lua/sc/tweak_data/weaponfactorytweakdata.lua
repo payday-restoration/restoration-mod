@@ -25467,6 +25467,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		table.insert(self.wpn_fps_snp_m200_npc.uses_parts, "wpn_fps_upg_i_iw_widowmaker")	
 	end
 
+	--Pawcio's AMR-2
+	if self.parts.wpn_fps_upg_amr2_barrel_short then
+		self.parts.wpn_fps_upg_amr2_barrel_short.supported = true
+		self.parts.wpn_fps_upg_amr2_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_upg_amr2_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+		self.parts.wpn_fps_upg_amr2_bipod.supported = true
+		self.parts.wpn_fps_upg_amr2_bipod.stats = { value = 0 }
+		self.parts.wpn_fps_upg_amr2_bipod.custom_stats = nil
+		
+		self.parts.wpn_fps_snp_amr2_mag.supported = true
+		self.parts.wpn_fps_snp_amr2_mag.stats = { value = 0 }
+		self.parts.wpn_fps_snp_amr2_mag.custom_stats = nil
+	end
+
 	--Pawcio's M107
 	if self.parts.wpn_fps_upg_m107cq_ammo_416 then
 		self.parts.wpn_fps_upg_m107cq_ammo_416.pcs = nil

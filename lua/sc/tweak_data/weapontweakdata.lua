@@ -17405,18 +17405,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if weap.recategorize and not weap.recoil_values then
 				--YandereDev moment (this isn't run every frame though)
 				if weap.recategorize[1] == "light_pis" then
+					weap.sads_mult = 0.8
 					weap.recoil_values = {
 						{ 80, 60 },
 						9,
 						0.7
 					}
 				elseif weap.recategorize[1] == "heavy_pis" then
+					weap.sads_mult = 0.7
 					weap.recoil_values = {
 						{ 80, 60 },
 						6,
 						0.6
 					}
 					if weap.recategorize[2] and weap.recategorize[2] == "handcannon" then
+						weap.sads_mult = 0.6
 						weap.recoil_values = {
 							{ 80, 60 },
 							3,
@@ -17424,84 +17427,98 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 					end
 				elseif weap.recategorize[1] == "light_shot" then
+						weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						5,
 						0.4
 					}
 				elseif weap.recategorize[1] == "heavy_shot" then
+					weap.sads_mult = 0.3
 					weap.recoil_values = {
 						{ 80, 60 },
 						4,
 						0.3
 					}
 				elseif weap.recategorize[1] == "break_shot" then
+					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,
 						0.2
 					}
 				elseif weap.recategorize[1] == "light_smg" then
+					weap.sads_mult = 0.5
 					weap.recoil_values = {
 						{ 80, 60 },
 						8,
 						0.6
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
+					weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						7,
 						0.5
 					}
 				elseif weap.recategorize[1] == "light_ar" then
+					weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						7.5,
 						0.6
 					}
 				elseif weap.recategorize[1] == "heavy_ar" then
+					weap.sads_mult = 0.3
 					weap.recoil_values = {
 						{ 80, 60 },
 						6.5,
 						0.4
 					}
 				elseif weap.recategorize[1] == "dmr_ar" then
+					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						5.5,
 						0.2
 					}
 				elseif weap.recategorize[1] == "light_mg" then
+					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						6,
 						0.3
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
+					weap.sads_mult = 0.1
 					weap.recoil_values = {
 						{ 80, 60 },
 						5.5,
 						0.2
 					}
 				elseif weap.recategorize[1] == "miniguns" then
+					weap.sads_mult = 0.1
 					weap.recoil_values = {
 						{ 80, 60 },
 						5,
 						0.1
 					}
 				elseif weap.recategorize[1] == "light_snp" then
+					weap.sads_mult = 0.3
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,
 						0.1
 					}
 				elseif weap.recategorize[1] == "heavy_snp" then
+					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,
 						0.1
 					}
 				elseif weap.recategorize[1] == "antim_snp" then
+					weap.sads_mult = 0.1
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,

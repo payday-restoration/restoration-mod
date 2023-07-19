@@ -13500,6 +13500,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.always_play_anims = true
 	end
 
+	if self.m712 then --Pawcio's M712
+		self.m712.categories = {"pistol"}
+		self.m712.recategorize = {"heavy_pis"}
+		self.m712.damage_type = "heavy_pistol"
+		self.m712.lock_slide = true
+		self.m712.lock_slide_alt = true
+		self.m712.tactical_reload = 1
+		self.m712.fire_mode_data.fire_rate = 0.06
+		self.m712.CAN_TOGGLE_FIREMODE = true
+		self.m712.CLIP_AMMO_MAX = 20
+		self.m712.AMMO_MAX = 40
+		self.m712.kick = self.stat_info.kick_tables.even_recoil
+		self.m712.panic_suppression_chance = 0.05
+		self.m712.supported = true
+		self.m712.ads_speed = 0.180
+		self.m712.damage_falloff = {
+			start_dist = 2000,
+			end_dist = 5000,
+			min_mult = 0.2222
+		}
+		self.m712.stats = {
+			damage = 45,
+			spread = 67,
+			recoil = 71,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.m712.stats_modifiers = nil
+		self.m712.panic_suppression_chance = 0.05
+		self.m712.timers.reload_exit_empty = 0.7
+		self.m712.timers.reload_exit_not_empty = 0.65
+	end
+
 	if self.fmgnine then --Pawcio's FMG-9
 		self.fmgnine.categories = {"pistol"}
 		self.fmgnine.recategorize = {"light_pis"}

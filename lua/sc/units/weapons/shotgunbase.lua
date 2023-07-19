@@ -407,13 +407,15 @@ function ShotgunBase:run_and_shoot_allowed()
 	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
 end
 
-function ShotgunBase:fire_rate_multiplier()
+function ShotgunBase:fire_rate_multiplier( ignore_anims )
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end
-	--Took hipfire RoF bonus from OVK, and true to their name, it looks to be a bit overkill on the sanity checks, but w/e
+	if self._rof_mult and ignore_anims then
+		return multiplier / self._rof_mult
+	end
 	local user_unit = self._setup and self._setup.user_unit --I'd like to know an instance where you can even shoot at all without there being a user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	if current_state and not current_state:in_steelsight() then

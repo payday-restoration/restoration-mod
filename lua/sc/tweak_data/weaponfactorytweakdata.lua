@@ -1138,6 +1138,7 @@ local grips = {
 					damage = per_pellet and -30 or -6
 				},
 				custom_stats = {
+					ignore_rof_mult_anims = true,
 					rof_mult = 0.9,
 					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
@@ -1165,6 +1166,7 @@ local grips = {
 					damage = per_pellet and -40 or -15
 				},
 				custom_stats = {
+					ignore_rof_mult_anims = true,
 					rof_mult = 0.9,
 					falloff_start_mult = 1.1,
 					falloff_end_mult = 0.8,
@@ -2839,6 +2841,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		spread = 10
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
+		ignore_rof_mult_anims = true,
 		rof_mult = 0.85,
 		falloff_start_mult = 1.15,
 		falloff_end_mult = 1.15
@@ -11899,6 +11902,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		alert_size = -1
 	}
 	self.parts.wpn_fps_saw_body_silent.custom_stats = {
+		ignore_rof_mult_anims = true,
 		rof_mult = 0.85
 	}
 	self.parts.wpn_fps_saw_body_silent.perks = {"silencer"}	
@@ -11913,6 +11917,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		concealment = -1
 	}
 	self.parts.wpn_fps_saw_body_speed.custom_stats = {
+		ignore_rof_mult_anims = true,
 		rof_mult = 1.15
 	}
 	self.parts.wpn_fps_saw_body_speed.has_description = true
@@ -18200,6 +18205,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
 		armor_piercing_override = 1,
 		can_shoot_through_shield = true,
+		ignore_rof_mult_anims = true,
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.20,
 		hip_mult = 1.666666,
@@ -24925,6 +24931,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 1.59459,
 					can_shoot_through_enemy = false,
 					armor_piercing_override = 0,
+					ignore_rof_mult_anims = true,
 					rof_mult = 1.0416666,
 					ads_speed_mult = 0.888888
 				}
@@ -25476,7 +25483,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_amr2_bipod.supported = true
 		self.parts.wpn_fps_upg_amr2_bipod.stats = { value = 0 }
 		self.parts.wpn_fps_upg_amr2_bipod.custom_stats = nil
-		
+
 		self.parts.wpn_fps_snp_amr2_mag.supported = true
 		self.parts.wpn_fps_snp_amr2_mag.stats = { value = 0 }
 		self.parts.wpn_fps_snp_amr2_mag.custom_stats = nil
@@ -27465,6 +27472,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -4
 		}
 		self.parts.wpn_fps_pis_papa320_trigger_hair.custom_stats = {
+			ignore_rof_mult_anims = true,
 			rof_mult = 1.285285285285285
 		}
 		--Heavy
@@ -27476,6 +27484,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 2
 		}
 		self.parts.wpn_fps_pis_papa320_trigger_custom_02.custom_stats = {
+			ignore_rof_mult_anims = true,
 			rof_mult = 0.774774774774774
 		}
 		--Match
@@ -28256,6 +28265,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 1
 		}
 		self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.custom_stats = {
+			ignore_rof_mult_anims = true,
 			rof_mult = 0.933006,
 			damage_min_mult = 2.4
 		}
@@ -28267,6 +28277,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 10
 		}
 		self.parts.wpn_fps_ass_nova4_receiver_upper_rare.custom_stats = {
+			ignore_rof_mult_anims = true,
 			rof_mult = 1.166666,
 			ads_rof_mult = 0.806722,
 			hip_mult = 0.8
@@ -30579,7 +30590,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		--Triggers
 		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.supported = true
 		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.stats = { spread = 1 }
-		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.custom_stats = { ads_speed_mult = 0.925 , rof_mult = 0.85 }
+		self.parts.wpn_fps_pis_swhiskey_trigger_heavy.custom_stats = { ignore_rof_mult_anims = true, ads_speed_mult = 0.925 , rof_mult = 0.85 }
 		
 		self.parts.wpn_fps_pis_swhiskey_trigger_hair.supported = true
 		self.parts.wpn_fps_pis_swhiskey_trigger_hair.stats = { recoil = -6, spread = -3 }
@@ -30787,7 +30798,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-
 	if self.parts.wpn_fps_sho_abzats_body_standard then
 		self.parts.wpn_fps_sho_abzats_muzzle_break.supported = true
 		self.parts.wpn_fps_sho_abzats_muzzle_break.desc_id = ""
@@ -30823,6 +30833,95 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_sho_ashot_body_gripped then
 		self.parts.wpn_fps_sho_ashot_body_gripped.pcs = nil
 		self.parts.wpn_fps_sho_ashot_g_stocked.pcs = nil
+	end
+
+	if self.parts.wpn_fps_upg_m712_stock_trench then
+
+		self.parts.wpn_fps_upg_m712_stock_trench.supported = true
+		self.parts.wpn_fps_upg_m712_stock_trench.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_upg_m712_stock_trench.custom_stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_upg_m712_stock.supported = true
+		self.parts.wpn_fps_upg_m712_stock.stats = deep_clone(stocks.add_fixed_stats)
+		self.parts.wpn_fps_upg_m712_stock.custom_stats = deep_clone(stocks.add_fixed_stats)
+
+		self.parts.wpn_fps_upg_m712_sight_ring.supported = true
+		self.parts.wpn_fps_upg_m712_sight_ring.stats = { value = 0 }
+		self.parts.wpn_fps_upg_m712_sight_ring.custom_stats = nil
+
+		self.parts.wpn_fps_upg_m712_sight_patrol.supported = true
+		self.parts.wpn_fps_upg_m712_sight_patrol.desc_id = "bm_wp_upg_o_4"
+		self.parts.wpn_fps_upg_m712_sight_patrol.stats = {
+			value = 0,
+			zoom = 30
+		}
+		
+		self.parts.wpn_fps_upg_m712_scope.supported = true
+		self.parts.wpn_fps_upg_m712_scope.desc_id = "bm_wp_upg_o_2"
+		self.parts.wpn_fps_upg_m712_scope.stats = {
+			value = 0,
+			zoom = 10
+		}
+
+		self.parts.wpn_fps_pis_m712_mag.supported = true
+		self.parts.wpn_fps_pis_m712_mag.stats = {
+			value = 0
+		}
+
+		self.parts.wpn_fps_upg_m712_mag_30.supported = true
+		self.parts.wpn_fps_upg_m712_mag_30.desc_id = ""
+		self.parts.wpn_fps_upg_m712_mag_30.has_description = nil
+		self.parts.wpn_fps_upg_m712_mag_30.stats = {
+			value = 4,
+			extra_ammo = 10,
+			concealment = -1,
+			reload = -2
+		}
+		self.parts.wpn_fps_upg_m712_mag_30.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+
+		self.parts.wpn_fps_upg_m712_mag_40.supported = true
+		self.parts.wpn_fps_upg_m712_mag_40.desc_id = ""
+		self.parts.wpn_fps_upg_m712_mag_40.has_description = nil
+		self.parts.wpn_fps_upg_m712_mag_40.stats = {
+			value = 4,
+			extra_ammo = 20,
+			concealment = -3,
+			reload = -4
+		}
+		self.parts.wpn_fps_upg_m712_mag_40.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
+		self.parts.wpn_fps_upg_m712_forend.supported = true
+		self.parts.wpn_fps_upg_m712_forend.stats = {
+			value = 2,
+			concealment = -1,
+			recoil = 2
+		}
+
+		self.parts.wpn_fps_upg_m712_barrel_short.supported = true
+		self.parts.wpn_fps_upg_m712_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_upg_m712_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+		self.parts.wpn_fps_upg_m712_barrel_long.supported = true
+		self.parts.wpn_fps_upg_m712_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_upg_m712_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
+
+		self.parts.wpn_fps_upg_m712_barrel_trench.supported = true
+		self.parts.wpn_fps_upg_m712_barrel_trench.stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_upg_m712_barrel_trench.custom_stats = deep_clone(barrels.long_b3_stats)
+
+		self.parts.wpn_fps_upg_m712_trench_mech.supported = true
+		self.parts.wpn_fps_upg_m712_trench_mech.stats = {
+			value = 5,
+			spread = 5
+		}
+		self.parts.wpn_fps_upg_m712_trench_mech.custom_stats = {
+			ignore_rof_mult_anims = true,
+			rof_mult = 0.6
+		}
+
 	end
 
 --Make more attachments universally available, cartridge mismatching be damned

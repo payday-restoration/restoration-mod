@@ -853,6 +853,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._spin_up_mult = self._spin_up_mult * stats.spin_up_mult
 			end
 
+			if stats.ignore_rof_mult_anims then
+				self._ignore_rof_mult_anims = stats.ignore_rof_mult_anims
+			end
+
 			if stats.alt_dmg_mult then
 				self._alt_dmg_mult = self._alt_dmg_mult * stats.alt_dmg_mult
 			end
@@ -1216,12 +1220,15 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 end
 					
 --[[	fire rate multipler in-game stuff	]]--
-function NewRaycastWeaponBase:fire_rate_multiplier()
+function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	local multiplier = self._fire_rate_multiplier or 1
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
+	if self._rof_mult and ignore_anims then
+		return multiplier / self._rof_mult
+	end
 	local user_unit = self._setup and self._setup.user_unit --I'd like to know an instance where you can even shoot at all without there being a user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	if current_state then 

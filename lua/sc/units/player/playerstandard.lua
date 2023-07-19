@@ -716,6 +716,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					local suppression_mul = managers.blackmarket:threat_multiplier()
 					local dmg_mul = 1
 					local weapon_tweak_data = weap_base:weapon_tweak_data()
+					local ignore_rof_mult_anims = weap_base and weap_base._ignore_rof_mult_anims
 					local primary_category = weapon_tweak_data.categories[1]
 
 					if not weapon_tweak_data.ignore_damage_multipliers then
@@ -747,8 +748,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								self._anim_played = true
 								local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 								local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
-									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2)
+								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
+									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 								end
 							end
 							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
@@ -825,8 +826,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						if not weap_base:weapon_tweak_data().spin_up_semi then
-							if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2) then
-								weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier(), fire_anim_offset, fire_anim_offset2)
+							if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
+								weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 							end
 						end
 

@@ -95,6 +95,11 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 			table.list_append(result.rays, raycast_res.rays or {})
 		end
 
+		managers.statistics:shot_fired({
+			hit = result and result.hit_enemy,
+			weapon_unit = self._unit
+		})
+		
 		return result
 	elseif self:weapon_tweak_data().alt_shotgunraycast then
 			local rays = self._rays or 1
@@ -116,7 +121,12 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	
 				table.list_append(result.rays, raycast_res.rays or {})
 			end
-	
+
+			managers.statistics:shot_fired({
+				hit = result and result.hit_enemy,
+				weapon_unit = self._unit
+			})
+
 			return result
 
 	elseif self:weapon_tweak_data().use_newraycast_fire then

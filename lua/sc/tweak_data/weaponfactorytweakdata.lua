@@ -923,11 +923,11 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -30 or -6,
-					spread = per_pellet and 15 or 5
+					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.25 or nil,
+					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = 5,
@@ -952,11 +952,11 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -40 or -15,
-					spread = per_pellet and 15 or 5
+					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.25 or nil,
+					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 4.5 or 6.666666,
@@ -981,11 +981,11 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -60 or -30,
-					spread = per_pellet and 15 or 5
+					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.25 or nil,
+					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 4 or 5.333333,
@@ -1010,11 +1010,11 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -100 or -30,
-					spread = per_pellet and 15 or 5
+					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.25 or nil,
+					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 3 or 5,
@@ -1417,7 +1417,7 @@ local grips = {
 					rays = 1,
 					hip_mult = 3,
 					armor_piercing_add = 1,
-					ene_hs_mult_add = per_pellet and 0.25 or nil,
+					ene_hs_mult_add = per_pellet and 0.3 or nil,
 					ammo_pickup_max_mul = per_pellet and 0.75 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.75 or 0.8,
 					can_shoot_through_enemy_unlim = true,
@@ -1447,7 +1447,7 @@ local grips = {
 					rays = 1,
 					hip_mult = 3,
 					armor_piercing_add = 1,
-					ene_hs_mult_add = per_pellet and 0.25 or nil,
+					ene_hs_mult_add = per_pellet and 0.3 or nil,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					can_shoot_through_enemy_unlim = true,
@@ -6505,9 +6505,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 	--Bronco .44 Part Additions
 	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	
-	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_1")
-	
-	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_ns_pis_meatgrinder")
+	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
 	
 	self.wpn_fps_pis_rage_npc.uses_parts = deep_clone(self.wpn_fps_pis_rage.uses_parts)	
 

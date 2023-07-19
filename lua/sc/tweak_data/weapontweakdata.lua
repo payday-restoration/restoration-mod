@@ -17336,7 +17336,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							end
 							weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
 						end
-						weap.ene_hs_mult = 0.25
+						weap.ene_hs_mult = 0.2
 					end
 				end
 			end

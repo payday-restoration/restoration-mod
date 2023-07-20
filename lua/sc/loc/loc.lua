@@ -1162,7 +1162,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to #{risk}#spread horizontally## instead of clustering.",
 		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
-		["bm_wp_upg_a_slug_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, enemies, shields and thin walls.##",
+		["bm_wp_upg_a_slug_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, multiple enemies, shields and thin walls.##",
 		["bm_wp_upg_a_slug_spam_desc"] = "Fires a lead slug that #{skill_color}#deals 80% of its damage through body armor and pierces enemies and thin walls.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds have #{skill_color}#no falloff## but #{important_1}#cannot headshot.##",
 		["bm_wp_upg_a_custom_desc"] = "Fires #{important_1}#6## larger, heavier pellets that deal #{skill_color}#increased## damage.",
@@ -1298,7 +1298,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
 		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1466,17 +1466,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_model3_sc_desc"] = "Bring out your inner rootin' tootin' qualities and challenge the cops to a dual at high noon with these twin revolvers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 		--Raging bull
 		["bm_w_raging_bull"] = "Bronco .44",	
-		["bm_rage_sc_desc"] = "Very powerful short range cannon. It puts down mooks fast so long as you're lining up shots.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		["bm_rage_sc_desc"] = "Very powerful short range cannon. It puts down mooks fast so long as you're lining up shots.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
 		["bm_w_x_rage"] = "Akimbo Bronco .44s",
-		["bm_x_rage_sc_desc"] = "Not at all good or practical, you can't help but want to flex on the police force by pulling these out during a bank robbery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		["bm_x_rage_sc_desc"] = "Not at all good or practical, you can't help but want to flex on the police force by pulling these out during a bank robbery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
 		--Castigo
 		["bm_w_chinchilla"] = "Castigo .44",
-		["bm_chinchilla_sc_desc"] = "Powerful, accurate, and stylish. Handy for breaking through the more durable foes in DC.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		["bm_chinchilla_sc_desc"] = "Powerful, accurate, and stylish. Handy for breaking through the more durable foes in DC.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
 		["bm_w_x_chinchilla"] = "Akimbo Castigo .44s",
-		["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+		["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
 		--RUS-12
 		["bm_w_rsh12"] = "RUS-12",
-		["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--S&W .500
 		["bm_w_shatters_fury"] = "Phoenix .500",
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
@@ -1487,7 +1487,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 		--CUSTOM PISTOLS
 			--Browning Hi-Power
 			["bm_w_hpb"] = "Hi-Power",
@@ -1828,7 +1828,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",		
 		--Galant--
 		["bm_w_ching"] = "M1 Galant",
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 		--M308
 		["bm_w_m14"] = "M308",
 		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
@@ -1843,7 +1843,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 		--HCAR
 		["bm_w_hcar"] = "Akron HC",
-		["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+		["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 		
 		--Custom DMRs
 			--MCX Spear
@@ -1874,73 +1874,73 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--MSR
 		["bm_w_msr"] = "Rattlesnake",	
-		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
 		--R700
 		["bm_w_r700"] = "Reinfeld Model 700",	
-		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
 		--QBU88
 		["bm_w_qbu88"] = "Káng Arms X1",
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--Winchester 1874
 		["bm_w_winchester1874"] = "Repeater 1874",	
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
+		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
 		--TTI(TTY)
 		["bm_w_tti"] = "Tecci Tactical .308",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--Icky Vicky
 		["bm_w_victor"] = "SA North Star",
-		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
 		--Scunt
 		["bm_w_scout"] = "Pronghorn",
-		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
 		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 		--AWP
 		["bm_w_awp"] = "Amaroq 900",
-		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
 		["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
 		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
-		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		--WA2000
 		["bm_w_wa2000"] = "Lebensauger .300",
-		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--Rangerhitter
 		["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
+		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
 		--Contender G2
 		["bm_w_contender"] = "Aran G2",
 		["bm_contender_sc_desc"] = "",	
 		--Model 70
 		["bm_w_model70"] = "Platypus 70",
-		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
+		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
 		--SVD
 		["bm_w_siltstone"] = "Grom",
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--Mosin--
 		["bm_w_mosin"] = "Nagant",
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, enemies, shields and thin walls.##",
+		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
 		["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
 		--Desert Fox
 		["bm_w_desertfox"] = "Desertfox",
-		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		--R93
 		["bm_w_r93"] = "R93",
-		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",			
+		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
 		--Thanatos--
 		["bm_w_m95"] = "Thanatos .50 BMG",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		--Custom Snipers
 			--Guerilla
 			["bm_w_sgs"] = "Guerilla 553R",	
 			--M107
 			["bm_w_m107cq"] = "Mors .50 BMG",
-			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 			["bm_w_m200"] = "TF-141",
-			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 			--S7
-			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
-			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields and thin walls.##",	
+			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields and thin walls.##",	
 			["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
 			["oracle_scope"] = "Oracle TechLink Scope",
 			["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
@@ -1956,7 +1956,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--L115
 			["bm_w_l115"] = "AIM 90M",
 			--Highly Modified CAR-4
-			["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
+			["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
 			["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 			["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
 
@@ -2008,14 +2008,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["missing_cap"] = "#{risk}#Custom Attachment Points## is #{important_1}#not installed.##\n\nAttachment will take on the slot's default appearance.",
 		["bm_slamfire_generic_desc"] = "Can be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
 		["bm_rapidfire_generic_desc"] = "Can be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",
-		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Can pierce body armor.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 20% of its damage through body armor.##",
 		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce enemies, their body armor, shields, titan-shields and thin walls.##",
-		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
 		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{important_1}#cannot headshot.##",
@@ -2274,6 +2274,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_subject"] = "The Subject",
 			["bm_suit_var_suit_prison_subject_desc"] = "Jimmy got these off the test subjects before escaping from the AKAN's lab. Just in case those fatigues were the secret behind their outstanding abilities. Let's find out.",
 			
+		--Weapon Colors
+		["bm_wskn_resmod_blackgold"] = "Black Gold",
+
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "BUY WEAPON ($price)",

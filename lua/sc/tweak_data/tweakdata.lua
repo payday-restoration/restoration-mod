@@ -137,6 +137,11 @@ tweak_data.akimbo = {
 	hipfire_spread_mult = 1.5
 }
 
+tweak_data.cs_spread = {
+	hipfire_spread_mult = 0.1,
+	hipfire_moving_spread_mult = 50
+}
+
 --Max concealment for guns.
 tweak_data.concealment_cap = 32
 

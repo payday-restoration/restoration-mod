@@ -2543,8 +2543,9 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
 		local sads_mult = self._equipped_unit:base():weapon_tweak_data().sads_mult or 0.3
 		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+		local no_ads = self._equipped_unit:base():weapon_tweak_data().no_ads
 
-		if burst_hipfire or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * sads_mult)) then
+		if burst_hipfire or no_ads or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * sads_mult)) then
 			self._steelsight_wanted = true
 			return
 		end

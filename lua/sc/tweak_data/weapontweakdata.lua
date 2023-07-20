@@ -15481,6 +15481,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.troglodyte.timers.reload_exit_not_empty = 0.75
 	end
 
+	if self.cssdeagle then --PlayBONK and Mira's CS Deagle
+		table.insert(self.cssdeagle.categories, "cs_spread")
+		self.cssdeagle.recategorize = {"heavy_pis"}
+		self.cssdeagle.damage_type = "heavy_pistol"
+		self.cssdeagle.desc_id = "bm_ap_armor_80_weapon_sc_desc"
+		self.cssdeagle.has_description = true
+		self.cssdeagle.object_damage_mult = 1.2
+		self.cssdeagle.AMMO_MAX = 30
+		self.cssdeagle.fire_mode_data.fire_rate = 0.2247191
+		self.cssdeagle.kick = self.stat_info.kick_tables.moderate_kick
+		self.cssdeagle.supported = true
+		self.cssdeagle.ads_speed = 0.200
+		self.cssdeagle.damage_falloff = {
+			start_dist = 1000,
+			end_dist = 7800,
+			min_mult = 0.222222
+		}
+		self.cssdeagle.stats = {
+			damage = 90,
+			spread = 51,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 26,
+			suppression = 9,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.cssdeagle.stats_modifiers = nil
+		self.cssdeagle.no_ads = true
+		self.cssdeagle.lock_slide = true
+		self.cssdeagle.armor_piercing_chance = 0.8
+		self.cssdeagle.swap_speed_multiplier = 0.4
+		self.cssdeagle.can_shoot_through_enemy = true
+		self.cssdeagle.can_shoot_through_wall = true
+		self.cssdeagle.reload_speed_multiplier = 0.909091
+		self.cssdeagle.animations.ignore_nonemptyreload = true
+		self.cssdeagle.panic_suppression_chance = 0.05
+	end
+
 	--Predator Pack
 		if self.owlfbullpup then
 			self.owlfbullpup.categories = { 

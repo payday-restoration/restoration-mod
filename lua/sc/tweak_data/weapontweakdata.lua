@@ -5755,6 +5755,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_rage.stats_modifiers = nil
 				self.x_rage.armor_piercing_chance = 0.5
 				self.x_rage.can_shoot_through_enemy = true
+				self.x_rage.can_shoot_through_enemy_unlim = true
 				self.x_rage.panic_suppression_chance = 0.05
 				self.x_rage.reload_speed_multiplier = 0.9
 				self.x_rage.weapon_hold = "jowi_pistol"
@@ -5798,6 +5799,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.stats_modifiers = nil
 				self.x_chinchilla.armor_piercing_chance = 0.5
 				self.x_chinchilla.can_shoot_through_enemy = true
+				self.x_chinchilla.can_shoot_through_enemy_unlim = true
 				self.x_chinchilla.timers.reload_empty = 3.5
 				self.x_chinchilla.timers.reload_not_empty = 3.5
 				self.x_chinchilla.timers.reload_exit_empty = 0.5
@@ -5885,6 +5887,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rsh12.timers.reload_exit_not_empty = 0.6
 				self.rsh12.panic_suppression_chance = 0.05
 				self.rsh12.can_shoot_through_enemy = true
+				self.rsh12.can_shoot_through_enemy_unlim = true
 				self.rsh12.can_shoot_through_shield = true
 				self.rsh12.can_shoot_through_wall = true
 				self.rsh12.object_damage_mult = 2
@@ -6245,6 +6248,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_raging_bull.stats_modifiers = nil
 				self.new_raging_bull.armor_piercing_chance = 0.5
 				self.new_raging_bull.can_shoot_through_enemy = true
+				self.new_raging_bull.can_shoot_through_enemy_unlim = true
 				self.new_raging_bull.reload_speed_multiplier = 0.9
 				self.new_raging_bull.timers.reload_not_empty = 2.1
 				self.new_raging_bull.timers.reload_empty = 2.1
@@ -6282,6 +6286,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.chinchilla.stats_modifiers = nil
 				self.chinchilla.armor_piercing_chance = 0.5
 				self.chinchilla.can_shoot_through_enemy = true
+				self.chinchilla.can_shoot_through_enemy_unlim = true
 				self.chinchilla.reload_speed_multiplier = 1.12
 				self.chinchilla.timers.reload_exit_empty = 0.5
 				self.chinchilla.timers.reload_exit_not_empty = 0.5
@@ -6372,6 +6377,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.object_damage_mult = 2
 				self.peacemaker.armor_piercing_chance = 1
 				self.peacemaker.can_shoot_through_enemy = true
+				self.peacemaker.can_shoot_through_enemy_unlim = true
 				self.peacemaker.can_shoot_through_wall = true
 				self.peacemaker.can_shoot_through_shield = true
 				self.peacemaker.reload_speed_multiplier = 1.35
@@ -9389,7 +9395,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Gewehr 3 (G3A3)
 				self.g3.AMMO_MAX = 60
 				self.g3.CLIP_AMMO_MAX = 20
-				self.g3.fire_mode_data.fire_rate = 0.109090909
+				self.g3.fire_mode_data.fire_rate = 0.1
 				self.g3.CAN_TOGGLE_FIREMODE = true
 				self.g3.FIRE_MODE = "single"
 				self.g3.kick = self.stat_info.kick_tables.right_kick
@@ -9405,7 +9411,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 59,
+					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -9461,6 +9467,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ching.stats_modifiers = nil	
 				self.ching.can_shoot_through_enemy = true
+				self.ching.can_shoot_through_enemy_unlim = true
 				self.ching.can_shoot_through_wall = true
 				self.ching.panic_suppression_chance = 0.05
 				self.ching.timers.reload_exit_empty = 0.85
@@ -12205,6 +12212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.has_description = true
 		self.shatters_fury.desc_id = "bm_wp_shatters_fury_desc"
 		self.shatters_fury.can_shoot_through_enemy = true
+		self.shatters_fury.can_shoot_through_enemy_unlim = true
 		self.shatters_fury.can_shoot_through_shield = true
 		self.shatters_fury.can_shoot_through_wall = true
 		self.shatters_fury.armor_piercing_chance = 1
@@ -13148,6 +13156,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.derringer.has_description = true
 		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
 		self.derringer.can_shoot_through_enemy = true
+		self.derringer.can_shoot_through_enemy_unlim = true
 		self.derringer.can_shoot_through_shield = true
 		self.derringer.can_shoot_through_wall = true
 		self.derringer.armor_piercing_chance = 1
@@ -13745,6 +13754,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fp45.panic_suppression_chance = 0.05
 		self.fp45.armor_piercing_chance = 1
 		self.fp45.can_shoot_through_enemy = true
+		self.fp45.can_shoot_through_enemy_unlim = true
 		self.fp45.can_shoot_through_wall = true
 		self.fp45.can_shoot_through_shield = true
 		self.fp45.reload_speed_multiplier = 1.1
@@ -15518,6 +15528,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cssdeagle.armor_piercing_chance = 0.8
 		self.cssdeagle.swap_speed_multiplier = 0.4
 		self.cssdeagle.can_shoot_through_enemy = true
+		self.cssdeagle.can_shoot_through_enemy_unlim = true
 		self.cssdeagle.can_shoot_through_wall = true
 		self.cssdeagle.reload_speed_multiplier = 0.909091
 		self.cssdeagle.animations.ignore_nonemptyreload = true
@@ -16045,6 +16056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.stats_modifiers = nil
 		self.swhiskey.panic_suppression_chance = 0.05
 		self.swhiskey.can_shoot_through_enemy = true
+		self.swhiskey.can_shoot_through_enemy_unlim = true
 		self.swhiskey.can_shoot_through_shield = true
 		self.swhiskey.can_shoot_through_wall = true
 		self.swhiskey.sounds.stop_fire = "judge_x_fire"
@@ -16830,6 +16842,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.timers.reload_exit_not_empty = 0.8
 	end
 
+	if self.makarov then --Silent Enforcer's Makarov
+		self.makarov.recategorize = {"light_pis"}
+		self.makarov.damage_type = "pistol"
+		self.makarov.lock_slide = true
+		self.makarov.fire_mode_data.fire_rate = 0.0882352
+		self.makarov.tactical_reload = 1
+		self.makarov.CLIP_AMMO_MAX = 8
+		self.makarov.AMMO_MAX = 75
+		self.makarov.kick = self.stat_info.kick_tables.even_recoil
+		self.makarov.supported = true
+		self.makarov.ads_speed = 0.120
+		self.makarov.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 3500,
+			min_mult = 0.2083
+		}
+		self.makarov.stats = {
+			damage = 24,
+			spread = 56,
+			recoil = 91,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 32,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.makarov.stats_modifiers = nil
+		self.makarov.panic_suppression_chance = 0.05
+	end
+
 	if self.f500 then --Silent Enforcer's Fort-500
 		self.f500.recategorize = { "heavy_shot" }
 		self.f500.damage_type = "shotgun_heavy"
@@ -16943,7 +16989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 	end	
 	
-	if self.mg34 then -- Silent Enforcer's MG34
+	if self.mg34 then --Silent Enforcer's MG34
 		self.mg34.recategorize = { "heavy_mg" }
 		self.mg34.categories = {
 			"lmg",
@@ -17685,7 +17731,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.625,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+		shotgun = per_pellet and 1.3 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			shotgun_auto = per_pellet and 0.91 or 1,
 			--"shotgun" would go here if it wasn't acting as the base multiplier for the rest of them
 			shotgun_heavy = per_pellet and 0.95 or 1,

@@ -12,7 +12,63 @@
 			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
 		/>
 	</WeaponSkin>
+	<WeaponSkin id="resmod_imissfauna" is_a_color_skin="true" global_value="sc">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_in31/weapon_colors/pattern/pattern_in31_06_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_ownthiscity" is_a_color_skin="true" global_value="sc">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_in32/weapon_colors/pattern/pattern_in32_07_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_insubstantial" is_a_color_skin="true" global_value="sc">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_in33/weapon_colors/pattern/pattern_in33_04_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_kindoffeel" is_a_color_skin="true" global_value="sc">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/payday2_cash/safes/cola/pattern/cola_pattern_005_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackgold"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_imissfauna"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_ownthiscity"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_insubstantial"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_kindoffeel"/>
 	</AddFiles>
 </table>

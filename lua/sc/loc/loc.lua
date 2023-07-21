@@ -2276,6 +2276,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 		--Weapon Colors
 		["bm_wskn_resmod_blackgold"] = "Black Gold",
+		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
+		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
+		["bm_wskn_resmod_kindoffeel"] = "Abstract Gold",
+		["bm_wskn_resmod_insubstantial"] = "Phased Gold",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

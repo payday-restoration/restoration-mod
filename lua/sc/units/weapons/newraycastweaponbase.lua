@@ -1018,6 +1018,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			else
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
 			end
+		elseif self._trail_effect_pls then
+			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
 		elseif self._terminator then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t")
 			ignore_tracer = true
@@ -1030,8 +1032,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._trail_effect_table.effect = Idstring("_dmc/effects/warsaw_trail")
 		elseif self._large_tracers then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/large_trail")
-		elseif self._trail_effect_pls then
-			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
 		end 
 		
 		pewpewpewpew = os.date("%m%d")

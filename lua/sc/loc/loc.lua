@@ -2276,10 +2276,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			
 		--Weapon Colors
 		["bm_wskn_resmod_blackgold"] = "Black Gold",
+		["bm_wskn_resmod_cleangold"] = "Clean Gold",
 		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
 		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
 		["bm_wskn_resmod_kindoffeel"] = "Abstract Gold",
 		["bm_wskn_resmod_insubstantial"] = "Phased Gold",
+		["bm_wskn_resmod_palmtop"] = "Tiger Gold",
+		["bm_wskn_resmod_lildonnie"] = "Pearl Gold",
+		["bm_wskn_resmod_quacko"] = "Blue Gold",
+		["bm_wskn_resmod_snake"] = "Liquid Gold",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

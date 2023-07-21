@@ -2568,7 +2568,48 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 		"wpn_fps_upg_m4_g_mgrip",
 		"wpn_fps_upg_ass_m4_lower_reciever_core",
 		"wpn_fps_upg_ass_m4_upper_reciever_core",
+		"wpn_fps_amcar_bolt_standard",
 		"wpn_fps_upg_cola_legend"
+	}
+	self.weapon_skins.m16_cola.types = {
+		foregrip = {
+			sticker = Idstring("units/payday2_cash/safes/cola/sticker/sticker_markings_19_df"),
+			pattern = Idstring("units/payday2_cash/safes/cola/pattern/cola_pattern_004_df"),
+			pattern_tweak = Vector3(0.438899, 1.5859, 1),
+			pattern_pos = Vector3(-0.006, -0.991229, 0),
+			uv_scale = Vector3(20, 3.64958, 0),
+			uv_offset_rot = Vector3(-0.203673, 0.979251, 0),
+			pattern_gradient = Idstring("units/payday2_cash/safes/cola/pattern_gradient/gradient_cola_002_df")
+		},
+		stock = {
+			sticker = Idstring("units/payday2_cash/safes/cola/sticker/sticker_markings_1_df"),
+			pattern = Idstring("units/payday2_cash/safes/cola/pattern/cola_pattern_017_df"),
+			base_gradient = Idstring("units/payday2_cash/safes/bah/base_gradient/base_bah_002_df"),
+			uv_offset_rot = Vector3(0.244694, 0.941092, 0),
+			pattern_pos = Vector3(1.08311, 0.916694, 0),
+			uv_scale = Vector3(8.5104, 4.69642, 1),
+			pattern_tweak = Vector3(0.854187, 1.5709, 1),
+			pattern_gradient = Idstring("units/payday2_cash/safes/cola/pattern_gradient/gradient_cola_007_df")
+		},
+		barrel = {
+			sticker = Idstring("units/payday2_cash/safes/cola/sticker/sticker_markings_15_df"),
+			uv_scale = Vector3(6.69876, 9.36854, 0),
+			uv_offset_rot = Vector3(0.325011, 0.915013, 0)
+		},
+		grip = {
+			base_gradient = Idstring("units/payday2_cash/safes/cola/base_gradient/base_cola_008_df"),
+			uv_offset_rot = Vector3(0.079979, 0.935553, 4.70975),
+			pattern_pos = Vector3(1.2062, 0.866315, 0),
+			uv_scale = Vector3(14.2314, 14.4697, 1),
+			sticker = Idstring("units/payday2_cash/safes/cola/sticker/sticker_markings_14_df"),
+			pattern_tweak = Vector3(1, 2.82166, 1)
+		},
+		upper_reciever = {
+			base_gradient = Idstring("units/payday2_cash/safes/cola/base_gradient/base_cola_017_df")
+		},
+		lower_reciever = {
+			base_gradient = Idstring("units/payday2_cash/safes/cola/base_gradient/base_cola_017_df")
+		}
 	}
 	self.weapon_skins.boot_buck.default_blueprint = {
 		"wpn_fps_sho_boot_b_standard",

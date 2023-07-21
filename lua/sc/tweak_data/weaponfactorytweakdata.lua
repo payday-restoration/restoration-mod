@@ -32230,6 +32230,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2",
 		supported = true,
 		stats = {value = 0},
+		custom_stats = {
+			trail_effect = "_dmc/effects/sterwers_trail",
+		},
+		no_cull = true,
 		internal_part = false,
 		texture_bundle_folder = "boost_in_lootdrop",
 		has_description = true,
@@ -32284,6 +32288,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {value = 0},
+		custom_stats = {
+			trail_effect = "_dmc/effects/plasma_b_trail",
+		},
+		no_cull = true,
 		internal_part = true,
 		has_description = true,
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
@@ -32408,7 +32416,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
 					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",
 				}
-			elseif self.parts[used_part_id].type == "barrel_ext" then
+			elseif self.parts[used_part_id].type == "barrel_ext" or self.parts[used_part_id].type == "vertical_grip" then
 				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
 					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -32417,11 +32425,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
 					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_fg_legend",
 					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_fg_legend",
+					adds = {}
 				}
 			elseif self.parts[used_part_id].type == "stock" then
 				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
 					unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_s_legend",
 					third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_s_legend",
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_upg_cola_legend.override[used_part_id] = {
+					unit = "units/pd2_dlc_dec5/weapons/wpn_fps_upg_m4_g_mgrip/wpn_fps_upg_m4_g_mgrip",
+					third_unit = "units/pd2_dlc_dec5/weapons/wpn_third_upg_m4_g_mgrip/wpn_third_upg_m4_g_mgrip",
 				}
 			end
 		end

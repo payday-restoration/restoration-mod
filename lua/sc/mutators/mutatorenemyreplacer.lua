@@ -300,6 +300,7 @@ local ignored_groups = {
 	"Cap_Spring",
 	"Tank_Ben",
 	"OMNIA_Taser",
+	"OMNIA_Tank",
 	"Taser_Titan",
 	"Cap_Summers",
 	"medic_summers",

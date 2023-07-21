@@ -8631,6 +8631,38 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "tank",
 			is_captain = true
 		}
+	--OMNIA Saiga Dozers that spawn with Spring (Ignores spawncaps)
+		self.unit_categories.OMNIA_Tank = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				zombie = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},					
+				russia = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				murkywater = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				federales = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},						
+				nypd = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},	
+				lapd = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				fbi = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				}
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}	
 	--OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
 	self.unit_categories.OMNIA_Taser = {
 		unit_types = {
@@ -15621,7 +15653,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "Tank_Ben",
+					unit = "OMNIA_Tank",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -15643,7 +15675,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "Tank_Ben",
+					unit = "OMNIA_Tank",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,

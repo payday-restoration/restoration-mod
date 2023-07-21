@@ -257,7 +257,7 @@ function restoration:Init()
 		"mus", --The Diamond
 		"run", --Heat Street
 		"ranc", --Midland Ranch
-		"run_res", --Whurr's Heat Street Edit
+		"sah", --Shacklethorne
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
@@ -282,6 +282,7 @@ function restoration:Init()
 		"crojob3_night", --Ditto
 		--Custom Heists below--
 		"junk", --Doghouse
+		"run_res", --Whurr's Heat Street Edit
 		"knk_jwl", --Knockover: Jewerly Store
 		"RogueCompany", --Rogue Company
 		"Gambling_room", --Underground Bargains
@@ -314,7 +315,6 @@ function restoration:Init()
 		"bph", --Hell's Island
 		"born", --Biker 1		
 		"fex", --Buluc's Mansion
-		"sah", --Shacklethorne
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",

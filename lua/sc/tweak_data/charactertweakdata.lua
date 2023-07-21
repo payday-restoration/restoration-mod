@@ -1226,7 +1226,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_elite_guard = deep_clone(self.weekend_lmg)	
 	self.weekend_elite_guard.tags = {"law", "city_swat"}
 	self.weekend_elite_guard.dt_suppress = nil
-	self.weekend_elite_guard.custom_shout = false
 	self.weekend_elite_guard.silent_priority_shout = "f37"
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.yellow_blood = false

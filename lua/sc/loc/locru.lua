@@ -2285,6 +2285,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборотории АКАНа. Вдруг секрет их сверхъестественных способностей таистя в этой робе?",
 			
 			
+		--Weapon Colors
+		["bm_wskn_resmod_blackgold"] = "Черное золото",
+		["bm_wskn_resmod_cleangold"] = "Чистое золото",
+		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
+		["bm_wskn_resmod_ownthiscity"] = "Царское золото",
+		["bm_wskn_resmod_kindoffeel"] = "Абстрактное золото",
+		["bm_wskn_resmod_insubstantial"] = "Треснутое золото",
+		["bm_wskn_resmod_palmtop"] = "Тигриное золото",
+		["bm_wskn_resmod_lildonnie"] = "Жемчужное золото",
+		["bm_wskn_resmod_quacko"] = "Потемневшее золото",
+		["bm_wskn_resmod_snake"] = "Расплавленное золото",
+		
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "КУПИТЬ ОРУЖИЕ ($price)",
@@ -4655,7 +4667,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		 LocalizationManager:add_localized_strings({	
 			["menu_st_spec_23"] = "Полурак-полухуй",
 			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
-			["menu_difficulty_sm_wish"] = ":^)", -- хз че придумать. Может ЗИ?
+			["menu_difficulty_sm_wish"] = "Залупа Иваныча", -- хз че придумать. Может ЗИ?
 			["menu_risk_sm_wish"] = "Чувак. Ты думал что-то здесь будет? О, нет. От тебя ваниллой воняет, даже отсюда чувствую. Выходи, выходи с хаиста и иди нахуй. Друг крутой, а ты лоханулся."
 		 })
 	 end

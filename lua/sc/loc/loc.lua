@@ -2299,6 +2299,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_2019"] = "Warfare Gold",
 		["bm_wskn_resmod_llenn"] = "Pink Devil",
 		["bm_wskn_resmod_llenn_desc"] = "This isn't exactly what I had in mind, but pink is pink.",
+		
+		["menu_weapon_color_index_11"] = "Metal + Sights",
+		["menu_weapon_color_index_12"] = "Metal + Magazine",
+		["menu_weapon_color_index_13"] = "Metal + Sights + Magazine",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

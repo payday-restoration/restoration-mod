@@ -3286,7 +3286,7 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 			}
 		}
 	}
---Demon--
+	--Demon--
 	self.weapon_skins.serbu_lones.default_blueprint = {
 		"wpn_fps_shot_r870_body_standard",
 		"wpn_fps_shot_r870_b_short",
@@ -3550,6 +3550,50 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 	
 end
 
+--Adds a couple of alternative paint schemes
+function WeaponColorTemplates.setup_weapon_color_templates(tweak_data)
+	local weapon_color_templates = {
+		color_variation = WeaponColorTemplates._setup_color_variation_template(tweak_data),
+		color_skin = WeaponColorTemplates._setup_color_skin_template(tweak_data)
+	}
+
+	-- Metal+
+		-- Sights
+		table.insert(weapon_color_templates.color_variation, 
+			{
+				--base_sights = "base_variation",
+				gradient_default = "gradient_default",
+				pattern_default = "pattern_default",
+				base_default = "base_metal",
+				base_gadget = "base_variation",
+				base_magazine = "base_variation"
+			}
+		)
+		-- Magazine
+		table.insert(weapon_color_templates.color_variation, 
+			{
+				base_sights = "base_variation",
+				gradient_default = "gradient_default",
+				pattern_default = "pattern_default",
+				base_default = "base_metal",
+				base_gadget = "base_variation",
+				--base_magazine = "base_variation"
+			}
+		)
+		-- Sights + Magazine
+		table.insert(weapon_color_templates.color_variation, 
+			{
+				--base_sights = "base_variation",
+				gradient_default = "gradient_default",
+				pattern_default = "pattern_default",
+				base_default = "base_metal",
+				base_gadget = "base_variation",
+				--base_magazine = "base_variation"
+			}
+		)
+
+	return weapon_color_templates
+end
 
 local melee_weapons_old = BlackMarketTweakData._init_melee_weapons
 function BlackMarketTweakData:_init_melee_weapons(tweak_data)

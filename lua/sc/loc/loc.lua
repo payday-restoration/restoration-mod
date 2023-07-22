@@ -2292,6 +2292,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_splinter"] = "Splinter Gold",
 		["bm_wskn_resmod_urban"] = "Urban Gold",
 		["bm_wskn_resmod_dioxide"] = "Carbon Gold",
+		["bm_wskn_resmod_topography"] = "Topography Gold",
+		["bm_wskn_resmod_2019"] = "Warfare Gold",
+		["bm_wskn_resmod_llenn"] = "Pink Devil",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

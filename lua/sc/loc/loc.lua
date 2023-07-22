@@ -2291,7 +2291,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_digital"] = "Digital Gold",
 		["bm_wskn_resmod_splinter"] = "Splinter Gold",
 		["bm_wskn_resmod_urban"] = "Urban Gold",
-		["bm_wskn_resmod_kryptek"] = "Immortal Gold",
 		["bm_wskn_resmod_dioxide"] = "Carbon Gold",
 
 		--Menu Buttons--

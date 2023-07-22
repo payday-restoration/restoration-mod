@@ -3360,7 +3360,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	}
-	self.parts.wpn_fps_m4_upper_reciever_edge.override.wpn_fps_amcar_uupg_body_upperreciever = {
+	self.parts.wpn_fps_m4_upper_reciever_edge.override.wpn_fps_amcar_uupg_body_upperreciever_extra = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 		a_obj = "a_o"
@@ -3997,6 +3997,17 @@ end)
 --AMCAR
 Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(self)
 
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever_extra = deep_clone(self.parts.wpn_fps_amcar_uupg_body_upperreciever)
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever_extra.type = "sight_extra"
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever_extra.adds = nil
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever_extra.forbids = nil
+
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever.adds = {
+		"wpn_fps_ass_m16_os_frontsight",
+		"wpn_fps_amcar_uupg_body_upperreciever_extra"
+	}
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_amcar_uupg_body_upperreciever.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	self.parts.wpn_fps_amcar_uupg_body_upperreciever.stance_mod = {
 		wpn_fps_ass_amcar = { translation = Vector3(0, -5, 0) }
 	}
@@ -4098,11 +4109,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		concealment = 2
 	}
 
+	self.parts.wpn_fps_ass_m16_o_handle_sight_extra = deep_clone(self.parts.wpn_fps_ass_m16_o_handle_sight)
+	self.parts.wpn_fps_ass_m16_o_handle_sight_extra.type = "sight_extra"
+	self.parts.wpn_fps_ass_m16_o_handle_sight_extra.adds = nil
+	self.parts.wpn_fps_ass_m16_o_handle_sight_extra.forbids = nil
+
 	self.parts.wpn_fps_ass_m16_o_handle_sight.stance_mod = {
 		wpn_fps_ass_m16 = { translation = Vector3(0, -4, 0) },
 		wpn_fps_ass_amcar = { translation = Vector3(0, -4, 0) },
 		wpn_fps_smg_olympic = { translation = Vector3(0, -4, 0) }
 	}
+	self.parts.wpn_fps_ass_m16_o_handle_sight.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_ass_m16_o_handle_sight.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_ass_m16_o_handle_sight.adds = { "wpn_fps_ass_m16_o_handle_sight_extra" }
 
 	--Overriding these
 	self.wpn_fps_ass_m16.adds = {}
@@ -11589,7 +11608,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	}
-	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.override.wpn_fps_amcar_uupg_body_upperreciever = {
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.override.wpn_fps_amcar_uupg_body_upperreciever_extra = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 		a_obj = "a_o"
@@ -11607,7 +11626,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	}
-	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.override.wpn_fps_amcar_uupg_body_upperreciever = {
+	self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.override.wpn_fps_amcar_uupg_body_upperreciever_extra = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 		a_obj = "a_o"
@@ -19687,6 +19706,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 	}
 	self.parts.wpn_fps_m4_uupg_upper_radian.override.wpn_fps_amcar_uupg_body_upperreciever = {
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		a_obj = "a_o"
+	}
+	self.parts.wpn_fps_m4_uupg_upper_radian.override.wpn_fps_amcar_uupg_body_upperreciever_extra = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_ass_m16_o_handle_sight",
 		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_ass_m16_o_handle_sight",
 		a_obj = "a_o"

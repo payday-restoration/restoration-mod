@@ -2278,11 +2278,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_blackgold"] = "Black Gold",
 		["bm_wskn_resmod_cleangold"] = "Clean Gold",
 		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
+		["bm_wskn_resmod_imissfauna_desc"] = "Mother Nature would never betray you... right?",
 		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
+		["bm_wskn_resmod_ownthiscity_desc"] = "It's our time now! Let's get this shit started!",
 		["bm_wskn_resmod_kindoffeel"] = "Abstract Dark Gold",
-		["bm_wskn_resmod_kindoffeel2"] = "Abstract Bright Gold",
+		["bm_wskn_resmod_kindoffeel2"] = "Abstract Light Gold",
 		["bm_wskn_resmod_insubstantial"] = "Phased Gold",
 		["bm_wskn_resmod_palmtop"] = "Tiger Gold",
+		["bm_wskn_resmod_palmtop_desc"] = "The thing you wish for the most, is something you'll never get.",
 		["bm_wskn_resmod_lildonnie"] = "Pearl Gold",
 		["bm_wskn_resmod_quacko"] = "Blue Gold",
 		["bm_wskn_resmod_snake"] = "Liquid Gold",
@@ -2295,6 +2298,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_topography"] = "Topography Gold",
 		["bm_wskn_resmod_2019"] = "Warfare Gold",
 		["bm_wskn_resmod_llenn"] = "Pink Devil",
+		["bm_wskn_resmod_llenn_desc"] = "This isn't exactly what I had in mind, but pink is pink.",
 
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "SELL WEAPON ($price)",

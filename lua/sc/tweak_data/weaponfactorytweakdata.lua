@@ -4298,14 +4298,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		wpn_fps_smg_olympic_fg_olympic = {
 			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar",
 			third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_fg_amcar",
-			adds = {"fake_a_os"},
-			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+			adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m4_ns_frontsight = {
+					parent = "exclusive_set",
+					a_obj = "a_ns"
+				}
+			}
 		},
 		wpn_fps_smg_olympic_fg_railed = {
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
 			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail",
-			adds = {"fake_a_os"},
-			forbids = {"wpn_fps_ass_m16_os_frontsight"}
+			adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m4_ns_frontsight = {
+					parent = "exclusive_set",
+					a_obj = "a_ns"
+				}
+			}
 		},
 		wpn_fps_upg_smg_olympic_fg_lr300 = {
 			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
@@ -23284,8 +23296,57 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						value = 4,
 						concealment = 1,
 						recoil = -2
-				}
-		
+					}
+
+					self.wpn_fps_snp_sgs.stock_adapter = "wpn_fps_ass_s552_s_m4"
+					self.wpn_fps_snp_sgs_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
+
+					self.wpn_fps_snp_sgs.override = self.wpn_fps_snp_sgs.override or {}
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_m4_s_standard = {
+						stats = deep_clone(stocks.folder_to_adj_acc1_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_acc1_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_m4_s_pts = {
+						stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_sho_sko12_stock = {
+						stats = deep_clone(stocks.folder_to_adj_acc2_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_m4_s_crane = {
+						stats = deep_clone(stocks.folder_to_adj_rec_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_m4_s_mk46 = {
+						stats = deep_clone(stocks.folder_to_adj_rec_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_snp_victor_s_mod0 = {
+						stats = deep_clone(stocks.folder_to_adj_rec_stats),
+						custom_stats = deep_clone(stocks.folder_to_adj_rec_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_upg_m4_s_ubr = {
+						stats = deep_clone(stocks.folder_to_hvy_rec2_stats),
+						custom_stats = deep_clone(stocks.folder_to_hvy_rec2_stats)
+					}
+					self.wpn_fps_snp_sgs.override.wpn_fps_snp_tti_s_vltor = {
+						stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
+						custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
+					}
+
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_upg_m4_s_standard")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_upg_m4_s_pts")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_sho_sko12_stock")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_upg_m4_s_crane")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_upg_m4_s_mk46")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_snp_victor_s_mod0")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_upg_m4_s_ubr")
+					table.insert(self.wpn_fps_snp_sgs.uses_parts, "wpn_fps_snp_tti_s_vltor")
+			
+					self.wpn_fps_snp_sgs_npc.override = deep_clone(self.wpn_fps_snp_sgs.override)
+					self.wpn_fps_snp_sgs_npc.uses_parts = deep_clone(self.wpn_fps_snp_sgs.uses_parts)
+
 				--Draco Pistol
 					--Discreet Foregrip
 					self.parts.wpn_fps_pis_smolak_fg_polymer.supported = true

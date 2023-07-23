@@ -168,7 +168,7 @@
 			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
 		/>
 	</WeaponSkin>
-	<WeaponSkin id="resmod_quacko" is_a_color_skin="true" global_value="sc" pattern_scale="1" sort_number="15" rarity="epic">
+	<WeaponSkin id="resmod_quacko" is_a_color_skin="true" global_value="sc" sort_number="15" rarity="epic">
 		<color_skin_data
 			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
 			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"

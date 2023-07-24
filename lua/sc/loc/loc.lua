@@ -1849,6 +1849,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--MCX Spear
 			["bm_w_mcx_spear"] = "Signature M7",
 			["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+			["bm_w_ngsierra"] = "Amicus 277",
+			["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 			--["bm_w_xeno"] = "MA14 Surge Rifle",	
 			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",

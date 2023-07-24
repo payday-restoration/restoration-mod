@@ -911,8 +911,8 @@ function RaycastWeaponBase:_fire_sound(...)
 		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2") then
 			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2")
 		end
-		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3") then
-			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3")
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single3 and "fire_auto3" or "fire_single3", "fire3") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single3 and "fire_auto3" or "fire_single3", "fire3")
 		end
 	end
 end

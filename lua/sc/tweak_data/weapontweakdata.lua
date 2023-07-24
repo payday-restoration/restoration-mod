@@ -14373,6 +14373,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.xeno then --Pawcio's Pulse Rifle
+		self.xeno.categories = {
+			"assault_rifle",
+			"dmr"
+		}
 		self.xeno.recategorize = {"dmr_ar"}
 		self.xeno.damage_type = "assault_rifle"
 		self.xeno.desc_id = "bm_xeno_sc_desc"
@@ -14418,7 +14422,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.sks then
 		self.sks.categories = { 
-			"assault_rifle"
+			"assault_rifle",
+			"dmr"
 		}
 		self.sks.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.sks.lock_slide = true
@@ -14462,7 +14467,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.skspug then
 		self.skspug.categories = { 
-			"assault_rifle"
+			"assault_rifle",
+			"dmr"
 		}
 		self.skspug.recategorize = {"dmr_ar"}
 		self.skspug.damage_type = "sniper"
@@ -16233,6 +16239,62 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.timers.reload_exit_not_empty = 1.12
 	end
 
+	if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
+		self.ngsierra.categories = { 
+			"assault_rifle",
+			"dmr" 
+		}
+		self.ngsierra.recategorize = { "dmr_ar" }
+		self.ngsierra.desc_id = "bm_ngsierra_sc_desc"
+		self.ngsierra.has_description = true
+		self.ngsierra.damage_type = "sniper"
+		self.ngsierra.CLIP_AMMO_MAX = 20
+		self.ngsierra.AMMO_MAX = 60
+		self.ngsierra.FIRE_MODE = "auto"
+		self.ngsierra.CAN_TOGGLE_FIREMODE = true
+		self.ngsierra.sounds.stop_fire = "g36_stop"
+		self.ngsierra.kick = {}
+		self.ngsierra.kick = self.stat_info.kick_tables.vertical_kick
+		self.ngsierra.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.ngsierra.supported = true
+		self.ngsierra.ads_speed = 0.400
+		self.ngsierra.damage_falloff = {
+			start_dist = 2400,
+			end_dist = 6000,
+			min_mult = 0.53333
+		}	
+		self.ngsierra.stats = {
+			damage = 45,
+			spread = 85,
+			recoil = 61,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.ngsierra.stats_modifiers = nil
+		self.ngsierra.panic_suppression_chance = 0.05
+		self.ngsierra.sounds.spin_start = "wp_m249_lever_release"
+		self.ngsierra.spin_up_shoot = true
+		self.ngsierra.spin_up_t = 0.1
+		self.ngsierra.spin_down_t = 0.0000000001
+		self.ngsierra.can_shoot_through_enemy = true
+		self.ngsierra.can_shoot_through_wall = false
+		self.ngsierra.can_shoot_through_shield = false
+		self.ngsierra.is_bullpup = true
+		self.ngsierra.hs_mult = 1.33333
+		self.ngsierra.armor_piercing_chance = 0.8
+		self.ngsierra.timers.reload_empty = 3.25
+		self.ngsierra.timers.reload_exit_empty = 1.1
+		self.ngsierra.timers.reload_not_empty = 2.35
+		self.ngsierra.timers.reload_exit_not_empty = 1.1
+	end
+
 	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 		self.vk78_commando.categories = { "assault_rifle" }
 		self.vk78_commando.recategorize = { "dmr_ar" }
@@ -17518,6 +17580,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			if table.contains(weap.categories, "shotgun") then
 				weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+			end
+
+			if table.contains(weap.categories, "dmr") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then
+				weap.sounds.fire_single3 = "judge_x_fire"
 			end
 
 			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then

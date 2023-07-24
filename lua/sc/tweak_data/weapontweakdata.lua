@@ -3889,6 +3889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
+		table.insert(self[ wep_id ].categories, "dmr")
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
@@ -16296,6 +16297,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
+		self.vk78_commando.categories = { 
+			"assault_rifle",
+			"dmr"
+		}
 		self.vk78_commando.categories = { "assault_rifle" }
 		self.vk78_commando.recategorize = { "dmr_ar" }
 		self.vk78_commando.damage_type = "sniper"
@@ -16478,6 +16483,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end	
 
 	if self.xr2 then --KillerKrayola + Pawcio + splish's BO3 XR-2
+		self.xr2.categories = { 
+			"assault_rifle",
+			"dmr"
+		}
 		self.xr2.recategorize = { "dmr_ar" }
 		self.xr2.damage_type = "assault_rifle"
 		self.xr2.desc_id = "bm_xr2_sc_desc"
@@ -16719,6 +16728,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.fg42 then --Killerwolf's FG42
+		self.fg42.categories = { 
+			"assault_rifle",
+			"dmr"
+		}
 		self.fg42.recategorize = { "dmr_ar" }
 		self.fg42.categories = { "assault_rifle"}
 		self.fg42.CLIP_AMMO_MAX = 20

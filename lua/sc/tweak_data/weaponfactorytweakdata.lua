@@ -2377,6 +2377,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.0, 0.7, -0.03),
 				rotation = Rotation(-0.02, 0, 0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m1894 = {
+				translation = Vector3(0, 9, -0.1)
+			}
 
 		--CUSTOM WEAPS THAT NEED REALIGNMENT
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
@@ -25069,12 +25072,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 				self.parts.wpn_fps_ass_contraband_body_mpx_sound_dummy.supported = true
 				self.parts.wpn_fps_ass_contraband_body_mpx_sound_dummy.no_cull = true
+				self.parts.wpn_fps_ass_contraband_body_mpx_sound_dummy.custom_stats.sounds.fire_single3 = " "
 				self.parts.wpn_fps_ass_ak_sound_mamba.supported = true
 				self.parts.wpn_fps_ass_ak_sound_mamba.no_cull = true
 				self.parts.wpn_fps_lmg_hcar_sound_ww2.supported = true
 				self.parts.wpn_fps_lmg_hcar_sound_ww2.no_cull = true
 				self.parts.wpn_fps_ass_contraband_body_sayhello_sound_dummy.supported = true
 				self.parts.wpn_fps_ass_contraband_body_sayhello_sound_dummy.no_cull = true
+				self.parts.wpn_fps_ass_contraband_body_sayhello_sound_dummy.custom_stats.sounds.fire_single3 = " "
 	
 			end
 
@@ -30983,6 +30988,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rof_mult = 0.6
 		}
 
+	end
+
+	if self.parts.wpn_fps_ass_ngsierra_irons_angled then
+		self.parts.wpn_fps_ass_ngsierra_irons_angled.stance_mod.wpn_fps_snp_tti = { --funni thing to make this play nice with >:3's Mare's Leg
+			translation = Vector3(-1.8, 4, -11.3),
+			rotation = Rotation(-0.02, 0.04, -45)
+		}
 	end
 
 --Make more attachments universally available, cartridge mismatching be damned

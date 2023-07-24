@@ -2726,7 +2726,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_iuhTTIPlus = {
 		translation = Vector3(0.022, -22, -0.78)
 	}
-	self.parts.wpn_fps_upg_o_shortdot_dmc.stance_mod.wpn_fps_snp_m1894 = {
+	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m1894 = {
 		translation = Vector3(0, -12.5, -0.85)
 	}
 

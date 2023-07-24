@@ -2378,7 +2378,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				rotation = Rotation(-0.02, 0, 0)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m1894 = {
-				translation = Vector3(0, 9, -0.1)
+				translation = Vector3(0, 10, -0.1)
 			}
 
 		--CUSTOM WEAPS THAT NEED REALIGNMENT
@@ -2726,6 +2726,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_iuhTTIPlus = {
 		translation = Vector3(0.022, -22, -0.78)
 	}
+	self.parts.wpn_fps_upg_o_shortdot_dmc.stance_mod.wpn_fps_snp_m1894 = {
+		translation = Vector3(0, -12.5, -0.85)
+	}
+
 
 	--Vanilla Shortdot
 	self.parts.wpn_fps_upg_o_shortdot_vanilla = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
@@ -2801,6 +2805,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_iuhTTIPlus = {
 		translation = Vector3(0.028, -26.4, -0.885)
+	}		
+	self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_m1894 = {
+		translation = Vector3(0.0022, -17, -0.955)
 	}
 
 end)
@@ -14630,6 +14637,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	}
 	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_iuhTTIPlus = {
 		translation = Vector3(0.02, -23, -0.885)
+	}
+	self.parts.wpn_fps_upg_o_box.stance_mod.wpn_fps_snp_m1894 = {
+		translation = Vector3(0, -13.4, -0.955)
 	}
 
 

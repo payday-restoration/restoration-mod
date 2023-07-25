@@ -3788,11 +3788,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for wep_id, i in pairs(self) do
 		if self[ wep_id ].stats then
 			self[ wep_id ].recategorize = { "unsupported" }
-			self[ wep_id ].ads_speed = 0.200
+			self[ wep_id ].ads_speed = 0.69
 			self[ wep_id ].damage_falloff = {
-				start_dist = 900,
-				end_dist = 6000,
-				min_mult = 0.1,
+				start_dist = 600,
+				end_dist = 900,
+				min_mult = 0.069,
 			}
 		end
 	end

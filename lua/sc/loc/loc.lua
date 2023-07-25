@@ -153,7 +153,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_res_names"] = "Resmod Names (Default)",
 		["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
 		["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
-		["resmod_no_renames"] = "Vanilla Names (or use your own rename mod) //NOT IMPLEMENTED, SAME AS DEFAULT IF CHOSEN//",
+		["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
 
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
@@ -1124,10 +1124,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["nightmare_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 		["nightmare_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 				
-		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--
-		["bm_wp_r870_s_folding_ext"] = "Extended Muldon Stock",
+		["bm_wp_r870_s_folding_ext"] = "Unfolded Muldon Stock",
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
@@ -1195,15 +1194,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["fucktheatf"] = "That's a felon.",
 
-		["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
 
 		["bm_wp_upg_flash_hider"] = "#{skill_color}#Hides muzzle flash## and #{risk}#reduces the chance of enemies evading your aim.##",
 		["bm_wp_upg_suppressor"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
 		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
 
-		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
-		["bm_wp_upg_mil_sc"] = "Milspec Mag",
-		["bm_wp_upg_tac_sc"] = "Tactical Mag",
 
 		["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
 		["bm_wp_upg_drum_desc"] = "",
@@ -1212,8 +1207,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_wp_upg_vintage_desc"] = "",
 
-		--RPK--
-		["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
 
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "#{skill_color}#Cuts through body armor.##",
@@ -1297,9 +1290,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_desc"] = "Adds a 10% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 20%.",
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
-		--Phoenix .500--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
 		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
@@ -1316,678 +1306,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
-
-		--Gecko Pistol
-		["bm_w_maxim9"] = "Gecko M2",
-		["bm_tranq_maxim_sc_desc"] = "The world's first #{skill_color}#integrally suppressed## pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
-		["bm_w_x_maxim9"] = "Akimbo Gecko M2s",
-		["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first #{skill_color}#integrally suppressed## pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
-		--Igor (APS)
-		["bm_w_stech"] = "Igor Automatik",
-		["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
-		["bm_w_x_stech"] = "Akimbo Igor Automatiks",
-		["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
-		--Chimano Compact
-		["bm_wp_pis_g26"] = "Chimano 26 Compact",
-		["bm_jowi_sc_desc"] = "A Chimano that's configured to take concealment to the extreme at the cost of almost everything else.\n\nRumors say that Wick used this when seeking vengeance against the Russian mob.",
-		["bm_w_jowi"] = "Akimbo Chimano 26 Compacts",
-		["bm_x_jowi_sc_desc"] = "When they're this small, why not carry two? An akimbo pairing that incorrectly gets attributed to as Wick's personal choice.",
-		--Glock 18c
-		["bm_w_glock_18c"] = "Chimano 18C",
-		["bm_g18c_sc_desc"] = "Fully automatic Austrian spraygun. Difficult to control, but at close range is absolutely devastating.",
-		["bm_w_x_g18c"] = "Akimbo Chimano 18Cs",
-		["bm_x_g18c_sc_desc"] = "If one was a bullet hose, carrying two may as well be a storm. Mind the recoil!",
-		--CZ 75
-		["bm_w_czech"] = "Czech 92",
-		["bm_czech_sc_desc"] = "One of the Wonder Nines, a machine pistol with fine ergonomics and handling. Used by counter terrorist forces all over the world.",
-		["bm_w_x_czech"] = "Akimbo Czech 92s",
-		["bm_x_czech_sc_desc"] = "Another example of how not to use a machine pistol. How can you even comfortably reload the things?",
-		--PPK (Gruber)
-		["bm_w_ppk"] = "Gruber Kurz",
-		["bm_ppk_sc_desc"] = "A compact alternative to larger, more dangerous firearms. A classic weapon with classic application.",
-		["bm_w_x_ppk"] = "Akimbo Gruber Kurzes",		
-		["bm_x_ppk_sc_desc"] = "For when you need to be less 007 and more Kingsman.",		
-		--M13
-		["bm_w_legacy"] = "M13",
-		["bm_legacy_sc_desc"] = "West German design that was ultimately rejected in favor of the Bernetti, but will still hold its own in a fire fight.",
-		["bm_w_x_legacy"] = "Akimbo M13s",
-		["bm_x_legacy_sc_desc"] = "Two pistols forgotten by history that will leave a legacy of lead in a room of your choosing.",		
-		--Glock 17
-		["bm_w_glock_17"] = "Chimano 88",
-		["bm_g17_sc_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
-		["bm_w_x_g17"] = "Akimbo Chimano 88s",
-		["bm_x_g17_sc_desc"] = "Making up for puny 9mm by sheer amount of firepower and still taking advantage of low recoil.\n\nHoxton's choice when we busted him out.",
-		--Bernetti 9
-		["bm_w_b92fs"] = "Bernetti 92",
-		["bm_b92fs_sc_desc"] = "A popular firearm due to an impressive magazine capacity and decent damage. Especially handy for confrontations with numerous antagonists.",
-		["bm_w_x_b92fs"] = "Akimbo Bernetti 92s",
-		["bm_x_b92fs_sc_desc"] = "Two pistols are better than one. Another way to turn any engagement into a 9mm party.",
-		--White Streak
-		["bm_w_pl14"] = "White Streak",
-		["bm_pl14_sc_desc"] = "Modern Russian handgun using post-soviet tech from the west. Popular among the Reapers for its reliability and futuristic look.",
-		["bm_w_x_pl14"] = "Akimbo White Streaks",
-		["bm_x_pl14_sc_desc"] = "Modern Russian handgun using post-soviet tech from the west. Popular among the Reapers for its reliability and futuristic look.",
-		--Holt 9mm
-		["bm_w_holt"] = "HOLT 9mm",
-		["bm_holt_sc_desc"] = "A working prototype of a sidearm that's been stuck in development hell, features an innovative design to help reduce recoil.",
-		["bm_w_x_holt"] = "Akimbo HOLT 9mms",
-		["bm_x_holt_sc_desc"] = "Not one, but two working prototypes of the pistol equivalent to lost media.",		
-		--FMG-9
-		["bm_w_fmg9"] = "Wasp DS-9",
-		["bm_fmg9_sc_desc"] = "A prototype weapon platform that functions as a baby carrier for your STRYK 18c, features futuristic folding technology!",
-		--93R
-		["bm_w_beer"] = "Bernetti 93R",
-		["bm_beer_sc_desc"] = "A borderline fictional piece of burst-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.\n\nHas a #{skill_color}#1200 RPM## fire rate when on burst-fire.",
-		["bm_beer_auto_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
-		--Contractor Pistols 
-		["bm_w_packrat"] = "Contractor M30",
-		["bm_packrat_sc_desc"] = "Wick's choice for its reliability and overall ease of use, said to have been used when he paid The Red Circle a visit.",
-		["bm_w_x_packrat"] = "Akimbo Contractor M30s",
-		["bm_x_packrat_sc_desc"] = "The go-to for when you want to clear Russian owned nightclubs with a message of blood and vengeance.",
-		--Breech (Luger) 
-		["bm_w_breech"] = "Parabellum-08",
-		["bm_breech_sc_desc"] = "The pistol that almost took over the world. Twice. This German artifact is sleek, accurate and unfortunately obsolete.",
-		--Chimano Custom
-		["bm_w_g22c"] = "Chimano Custom",
-		["bm_g22c_sc_desc"] = "This weapon is a combination of high capacity and high power. Among the best overall combat pistols.",
-		["bm_w_x_g22c"] = "Akimbo Chimano Customs",
-		["bm_x_g22c_sc_desc"] = "If one vote was a free gun, voting fraud seems appealing when you can get two of these portable body stoppers.",
-		--Signature .40
-		["bm_w_p226"] = "Signature .40",
-		["bm_p226_sc_desc"] = "Whether it be Armored Transport interception or Bank Robberies, this classic cop-stopper will never fail to disappoint.",
-		--LEO
-		["bm_w_hs2000"] = "LEO-40",
-		["bm_hs2000_sc_desc"] = "Interpol agents, crooked Croatian cops, and international criminals alike will find this compact blaster effective.",
-		--5/7 pistol
-		["bm_w_lemming"] = "Acuto 5/7",
-		["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-		--Baby Deagle--
-		["bm_w_sparrow"] = "Sparrow 941",
-		["bm_sparrow_sc_desc"] = "SEE YOU SPACE COWBOY...",
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
-		--socom deez nuts--
-		["bm_w_socom"] = "Anubis .45",
-		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
-		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing #{skill_color}#$BTN_GADGET##",
-		["bm_w_x_socom"] = "Akimbo Anubis .45s",
-		--Crosskill
-		["bm_w_colt_1911"] = "Crosskill Operator II",
-		["bm_1911_sc_desc"] = "When 9mm isn't enough, reach for this custom 1911A1 chambered in the powerful .45ACP. Top shelf brutality.",
-		["bm_w_x_1911"] = "Mustang & Sally",
-		["bm_x_1911_sc_desc"] = "While it doesn't have demonic powers, the carnage will certainly leave people screaming in terror.",	
-		--Crosskill Chunky
-		["bm_w_m1911"] = "Crosskill A1",
-		["bm_m1911_sc_desc"] = "A reproduction of the classic Crosskill .45. Despite the name, not at all chunkier than the custom one.",
-		--Crosskill Guard
-		["bm_w_shrew"] = "Crosskill Guard",
-		["bm_shrew_sc_desc"] = "Smaller and more compact than its classic A1 cousin. Trades magazine capacity and barrel length for even more concealability.",
-		["bm_w_x_shrew"] = "Barry & Paul",
-		["bm_x_shrew_sc_desc"] = "The way of the Canaanites, two .45 problem solvers in a seriously small package sure to leave invaders running.",
-		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
-		--USP 
-		["bm_w_usp"] = "Interceptor-45",
-		["bm_usp_sc_desc"] = "S&G's above average performer excels in damage, capacity and range.",
-		["bm_w_x_usp"] = "Akimbo Interceptor-45s",
-		["bm_x_usp_sc_desc"] = "A pair of S&G's pistols for when you really need to send a message.",
-		--Model 54 
-		["bm_w_type54"] = "CC-33",
-		["bm_type54_sc_desc"] = "A Soviet designed pistol chambered in the hard hitting 7.62×25mm round; features a unique underbarreled shotgun mount for an extra way to get rid of bad guys.",
-		["bm_w_x_type54"] = "Akimbo CC-33s",
-		["bm_x_type54_sc_desc"] = "A one-two punch that can turn into a one-two-three-four punch.",		
-		--Broomstick--
-		["bm_w_c96"] = "Broomstick",
-		["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
-		["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
-		["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
-		--Sub2000
-		["bm_w_sub2000"] = "Cavity .40",
-		["bm_sub2000_sc_desc"] = "Pistol carbine of questionable manufacturing quality. Tiny pistol bullets hit a lot harder when coming out of a longer barrel and its folding capability makes for decent concealment.",	
-		--Deagle
-		["bm_w_deagle"] = "Deagle",
-		["bm_deagle_sc_desc"] = "What more needs to be said about this semi automatic magic wand? Just wave it at the bad guys and shout \"Headicus Explodicus!\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		["bm_w_x_deagle"] = "Akimbo Deagles",
-		["bm_x_deagle_sc_desc"] = "Twin wrist wreckers that take a real nut to actually carry into battle.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		--Kahn .357
-		["bm_w_korth"] = "Kahn .357",
-		["bm_w_x_korth"] = "Akimbo Kahn .357s",
-		--Matever 2006m
-		["bm_w_mateba"] = "Matever 9mm", --:^)
-		["bm_2006m_sc_desc"] = "A rare design of an already rare production run. A fancy way to send .38 down range.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		["bm_wp_2006m_b_short"] = "Tachikoma Barrel",	
-		["bm_wp_2006m_b_medium"] = "Togusa Barrel",	
-		["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
-		["bm_w_x_2006m"] = "Akimbo Matevers",
-		["bm_x_2006m_sc_desc"] = "The logistics of handling two of these is outweighed by the sheer badass factor.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		--Frenchman Model 87
-		["bm_w_model3"] = "Frenchman 87",	
-		["bm_model3_sc_desc"] = "A classic answer to the lifelong question \"What am I going to to about all these jerks all up in my face?\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		["bm_w_x_model3"] = "Akimbo Frenchman 87s",	
-		["bm_x_model3_sc_desc"] = "Bring out your inner rootin' tootin' qualities and challenge the cops to a dual at high noon with these twin revolvers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		--Raging bull
-		["bm_w_raging_bull"] = "Bronco .44",	
-		["bm_rage_sc_desc"] = "Very powerful short range cannon. It puts down mooks fast so long as you're lining up shots.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
-		["bm_w_x_rage"] = "Akimbo Bronco .44s",
-		["bm_x_rage_sc_desc"] = "Not at all good or practical, you can't help but want to flex on the police force by pulling these out during a bank robbery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
-		--Castigo
-		["bm_w_chinchilla"] = "Castigo .44",
-		["bm_chinchilla_sc_desc"] = "Powerful, accurate, and stylish. Handy for breaking through the more durable foes in DC.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
-		["bm_w_x_chinchilla"] = "Akimbo Castigo .44s",
-		["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",	
-		--RUS-12
-		["bm_w_rsh12"] = "RUS-12",
-		["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--S&W .500
-		["bm_w_shatters_fury"] = "Phoenix .500",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
-		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
-		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
-		--SAA/Peacemaker
-		["bm_w_peacemaker"] = "Peacemaker .45LC",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
-		--CUSTOM PISTOLS
-			--Browning Hi-Power
-			["bm_w_hpb"] = "Hi-Power",
-			--Browning Hi-Power (Mira)
-			--["bm_w_hpb"] = "Hi-Power",
-			--Walther P99
-			["bm_w_p99"] = "Gruber 99",
-			--Derringer
-			["bm_w_derringer"] = "Derringer",
-			--Automag .44
-			["bm_w_amt"] = "Automag .44",
-			--Colt Detective
-			["bm_w_coltds"] = "Crosskill Investigator",
-			["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
-			--M6D
-			["kfa_scope"] = "KFA-2 Smart-Link Scope",
-			["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
-			--SIG P320
-			["bm_w_papa320"] = "M19",
-			["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
-
-		--Kobus 90--
-		["bm_w_p90"] = "Project-90",
-		["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-		["bm_wp_p90_body_p90_tan"] = "Tan Stock",
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
-		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
-		--Spec Ops
-		["bm_w_mp7"] = "SpecOps-7",
-		["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-		--Tec-9
-		["bm_w_tec9"] = "T3K Urban",
-		["bm_w_x_tec9"] = "Akimbo T3K Urbans",
-		--Heather
-		["bm_w_sr2"] = "Heather-2M",
-		["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
-		["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
-		--CMP
-		["bm_w_mp9"] = "CMP-9",
-		--Miyaka
-		["bm_w_pm9"] = "Miyaka 9 Special",
-		--Micro Uzi
-		["bm_w_baka"] = "Micro Uzi",
-		["bm_w_x_baka"] = "Akimbo Micro Uzis",
-		--Cobra/Skorpion
-		["bm_w_scorpion"] = "Cobra",
-		["bm_w_x_scorpion"] = "Akimbo Cobras",
-		["bm_wp_scorpion_m_extended"] = "Dual Magazines",
-		--Tatonka
-		["bm_w_coal"] = "Tatonka",
-		--AK Gen
-		["bm_w_vityaz"] = "AK Gen 21 Tactical",
-		--Signature SMG
-		["bm_w_shepheard"] = "Signature-10", 
-		--Compact-5/MP5
-		["bm_w_mp5"] = "Compact-5",	
-		["bm_w_x_mp5"] = "Akimbo Compact-5s",	
-		["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
-		--Swedish K
-		["bm_w_m45"] = "Swedish K",
-		--Pachett/Sterling
-		["bm_w_sterling"] = "Patchette L2A1",
-		["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-		["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.4s##\nRecharge rate: #{skill_color}#6/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
-		--Uzi
-		["bm_w_uzi"] = "Uzi",
-		["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",
-		--Chicago Typewriter
-		["bm_w_m1928"] = "Chicago Typewriter",
-		["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",	
-		--Mark 10
-		["bm_w_mac10"] = "Mark 10",
-		["bm_w_x_mac10"] = "Akimbo Mark 10s",
-		--MP40
-		["bm_w_erma"] = "MP 40",
-		["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
-		--Jackal
-		["bm_w_schakal"] = "Jackal",
-		--Kross Vertex
-		["bm_w_polymer"] = "Kross Vertex",
-		--CUSTOM SMGs
-			--AR57
-			["bm_w_alpha57_prim"] = "FSS Hurricane",
-			["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-			--LWRC
-			["bm_w_smg45"] = "FT Striker .45",
-			["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
-			--Typhoon
-			["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
-			["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now #{important_1}#I've got a lot to say##\"\n\nUtilizing #{risk}#superposed loading## technology, this 10-barrelled machine gun trades damage for spitting lead out at blisteringly high speeds.\n\nAlt-fire fires a #{skill_color}#volley## of #{skill_color}#10## rounds down range.",
-
-
-		--Bootleg/HK416c
-		["bm_w_tecci"] = "Bootlegger",
-		["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
-		--KSP/M249
-		["bm_w_m249"] = "KSP-90",
-		["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
-		--ChainSAW
-		["bm_w_kacchainsaw"] = "Campbell 74",
-		["bm_kacchainsaw_sc_desc"] = "Roaming frothing madness in a machine gun.\n\n#{skill_color}#Has improved hipfire spread.##",
-		["bm_wp_upg_i_kacchainsaw_adverse"] = "Adverse Gas System",
-		--RPK
-		["bm_w_rpk"] = "RPK",
-		["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
-		--Brenner 21/HK21
-		["bm_w_hk21"] = "Brenner-21",
-		["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
-		--M60
-		["bm_w_m60"] = "M60",
-		["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.\n\n#{skill_color}#Has improved hipfire spread.##",	
-		--Ksp 58
-		["bm_w_par"] = "KSP-58B",	
-		["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",	
-		--Buzzsaw/Mg42
-		["bm_w_mg42"] = "Buzzsaw-42",	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved hipfire spread and recoil.##",
-		["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
-		["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#3s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
-		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
-		--Versteckt-51/HK51B
-		["bm_w_hk51b"] = "Versteckt-51B",
-		["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",
-		--M134
-		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
-		--Microgun
-		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
-
-		--Custom MGs
-			--TF2 Minigun
-			["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
-			["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
-			["bm_wp_wpn_fps_lmg_tomislav_body_desc"] = "#{skill_color}#Speeds up spin-up time by 20%.##",
-			["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Staggers enemies up to 9.75 meters away.##\n#{risk}#(Stagger range cannot be modified)##\n#{important_1}#Slows spin-up time by 30%.##",
-			["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Slows spin-up time by 50%.##",
-			["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",
-
-		--Grimm
-		["bm_w_basset"] = "Grimm 12G",	
-		--Saiga
-		["bm_w_saiga"] = "IZHMA 12G",
-		["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
-		--AA12
-		["bm_w_aa12"] = "Steakout 12G",
-		["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
-		--Spas12
-		["bm_w_spas12"] = "Predator 12G",
-		["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
-		--Benelli
-		["bm_w_benelli"] = "M1014",
-		["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
-		--Argos III
-		["bm_w_ultima"] = "Argos III",
-		["bm_ultima_sc_desc"] = "Nothing says modern like plastic and aluminum, it even comes with a USB slot to charge your phone.\n\nReloads #{skill_color}#2## shells at a time.",	
-		--Street Sweeper
-		["bm_w_striker"] = "Street Sweeper",	
-		--Goliath
-		["bm_w_rota"] = "Goliath 12G",	
-		--VD-12
-		["bm_w_sko12"] = "VD-12",	
-		["bm_w_x_sko12"] = "Akimbo VD-12s",	
-		--GSPS
-		["bm_w_m37"] = "GSPS 12G",
-		--Supernova
-		["bm_w_supernova"] = "Deimos",
-		["bm_supernova_sc_desc"] = "A shotgun franken-smithed to be capable of switching between pump-action and semi-auto.",
-		--Loco
-		["bm_w_serbu"] = "Locomotive 12G",
-		["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
-		--Reinfeld 88
-		["bm_w_m1897"] = "Repeater 1897",
-		["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nCan be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
-		--Mosconi 12g
-		["bm_w_m590"] = "Mosconi Tactical 12G",
-		["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
-		--R870
-		["bm_w_r870"] = "Reinfeld 880",
-		["bm_menu_sc_r870_desc"] = "Long arm of the law and freedom. Now freedom has a shotgun and shells with your name on it.",		
-		--KSG
-		["bm_w_ksg"] = "Raven 12G",
-		["bm_menu_sc_ksg_desc"] = "Everything is plastic in the future! Bullpup shotgun with questionable craftsmanship, an LWI specialty.",		
-		--Breaker 10g
-		["bm_w_boot"] = "Breaker 10G",		
-		["bm_menu_sc_boot_desc"] = "An antique shotgun sporting a powerful 10g shotgun shell and an even more potent badass factor. Come with me if you want to live.",	
-		--Claire Angélique Florette du Bertrand
-		["bm_w_coach"] = "Claire S/S 12G",	
-		--Mosconi
-		["bm_w_huntsman"] = "Mosconi S/S 12G",	
-		["bm_menu_sc_huntsman_desc"] = "Double the barrels, double the fun. While limited when it comes to magazine size, #{skill_color}#two triggers## allows you to unleash a ragnarok of buckshot on any unfortunate SOB in the same room as you.",		
-		--Judge
-		["bm_w_judge"] = "The Judge",
-		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
-		["bm_x_judge_sc_desc"] = "Judge and Jury, and with two of these portable room-clearers, you're the executioner.",
-		--Joceline
-		["bm_w_b682"] = "Joceline O/U 12G",		
-		["bm_b682_sc_desc"] = "A competition over-under typically reserved for sporting events, only instead of clay pigeons you'll be using it for popping helmets.",			
-		--Custom Shotguns
-			--Doomstick
-			["bm_w_quadbarrel"] = "Doomstick",
-			["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\n#{skill_color}#Increases pellet count to 10.##",
-			["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\n#{important_1}#Lowers pellet count to 6.##",
-			["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of #{skill_color}#piercing body armor, enemies, shields, titan shields, and walls.##",
-			--MP153
-			["bm_w_mp153"] = "Argos I",
-			--Widowmaker TX
-			["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
-			["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
-			["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
-
-			
-		--S552
-		["bm_w_s552"] = "Commando 552",				
-		["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS. Uses special Swiss-made 5.6mm rounds that offer better range.",				
-		--M733/AMCAR
-		["bm_w_amcar"] = "AM-CAR",
-		["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
-		--G36
-		["bm_w_g36"] = "JP36",		
-		["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",		
-		--VHS/Lion's Roar
-		["bm_w_vhs"] = "Lion's Roar",		
-		["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",		
-		--Olympic/Para
-		["bm_w_olympic"] = "Para-23",
-		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
-		--TAR-21/Para
-		["bm_w_komodo"] = "Tempest-95",
-		["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",
-		--Famas
-		["bm_w_famas"] = "Clarion 5.56",
-		["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
-		--OICW--
-		["bm_w_osipr"] = "SABR",
-		["bm_w_osipr_gl"] = "SABR Grenade Launcher",
-		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nPress #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
-		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nHold #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
-		--M4/CAR-4
-		["bm_w_m4"] = "CAR-4",
-		["bm_m4_sc_desc"] = "Reliable, compact, and deadly. Sporting a more controllable rate of fire over the AM-CAR, the CAR-4 makes for a popular 5.56mm rifle among modern militaries.",
-		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
-		["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. #{risk}#Overrides the appearance of your handguard.##",
-		["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
-		--AK5
-		["bm_w_ak5"] = "Ak 5",
-		["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
-		["fnc_burst_desc"] = "Adds a 3-round burst firemode.",
-		--Union 5.56
-		["bm_w_corgi"] = "Union 5.56",	
-		["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",	
-		["bm_wp_corgi_b_short"] = "MSG Barrel",
-		--UAR
-		["bm_w_aug"] = "UAR A2",	
-		["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",	
-		["bm_wp_upg_b_hbar"] = "Heavy Barrel",	
-		--AK17
-		["bm_w_ak12"] = "AK-17",	
-		["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent #{skill_color}#2 round burst## and has quite the identity crisis.",	
-		--AK 5.45
-		["bm_w_ak74"] = "AK 5.45",
-		["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 sister, this rifle is by no means any less deadly.",
-		--CR 805
-		["bm_w_hajk"] = "CR 805B",
-		["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",
-		--AMR-16
-		["bm_w_m16"] = "AMR-16",
-		["bm_m16_sc_desc"] = "This classic rifle serves as the predecessor to the AM-CAR. What it lacks in concealability and rate of fire it makes up for in range and power.",
-		--Queen's Wrath
-		["bm_w_l85a2"] = "Queen's Wrath",
-		["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\nStill an ergonomic nightmare though.",
-		--AK 7.62
-		["bm_w_akm"] = "AK 7.62",
-		["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
-		["bm_w_akm_gold"] = "Golden AK 7.62",
-		["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
-		--Queen's Wrath
-		["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\n\nStill an ergonomic nightmare though.",
-		--KETCHUPKNOB--
-		--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
-		["bm_w_groza"] = "OB-14st Byk-1", --Hopefully less silly than its Ketchup name
-		--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
-		--Although, a Russian word for "region/zone/area" followed up with a Polish word...
-		--Eh, whatever
-		["bm_groza_sc_desc_pc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		["bm_groza_sc_desc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		--CHIKUBI
-		["bm_w_tkb"] = "Rodion 3B",
-		["bm_wp_tkb_m_bakelite"] = "Siberian 15x3 Magazine",
-		--Krinkov
-		["bm_w_akmsu"] = "Krinkov",
-		["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
-		--Akimbo Krinkov
-		["bm_w_x_akmsu"] = "Akimbo Krinkovs",
-		["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
-		--CUSTOM ARs
-			--AN-94/92
-			["bm_w_tilt"] = "KVK-99",
-			["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
-			--HK G36
-			["bm_w_g36k"] = "SG36K",
-			--SCAR-L
-			["bm_w_scarl"] = "Eagle Light",
-			--Valmet Rk.62
-			["bm_w_rk62"] = "Velmer",
-			--NV4
-			["bm_nova4_sc_desc"] = "Full-auto ballistic rifle. A moderate fire rate yields increased stability for best-in-class accuracy. Ideal for mid-to-long range engagements",
-			["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "Grants the following perks:\n#{heat_warm_color}#Precision:##\n#{skill_color}#No damage fall off## with #{important_1}#reduced## fire rate.\n#{item_stage_2}#Focus:##\n#{skill_color}#Increased## accuracy.",
-			["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "Grants the following perks:\n#{heat_warm_color}#Celerity:##\n#{skill_color}#Increases## hipfire fire rate but #{important_1}#reduces## ADS fire rate.\n#{item_stage_2}#Steady:##\n#{skill_color}#Reduced## hipfire spread.",
-			--VMP Honey Badger
-			--["bm_w_bdgr_desc"] = "",
-			--MW22 Honey Badger
-			["bm_w_mcbravo"] = "Chimera",
-			["bm_w_mcbravo_desc"] = "With an #{skill_color}#integrated suppressor## and slow, high-energy subsonic #{risk}#.300 BLK## rounds, the Chimera is adept at close-quarters combat.",
-			--AR-18
-			["bm_w_ar18"] = "CAR-18",
-
-	
-		--Little Friend
-		["bm_w_contraband"] = "Bigger Friend 7.62",
-		["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-			--VMP
-			["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-			["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-			["bm_mesa_vmp_sc_desc_pc"] = "Interesting product from a stolen OMNIA shipment.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-			["bm_mesa_vmp_sc_desc"] = "Interesting product from a stolen OMNIA shipment.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-		--FAL
-		["bm_w_fal"] = "Falcon 58",	
-		["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		--ASS VAL
-		["bm_w_asval"] = "Valkyria",
-		["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
-		--Galil
-		["bm_w_galil"] = "Defender 7.62",
-		["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
-		--SCAR
-		["bm_w_scar"] = "Eagle Heavy",			
-		["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
-		["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",		
-		--Galant--
-		["bm_w_ching"] = "M1 Galant",
-		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
-		--M308
-		["bm_w_m14"] = "M308",
-		["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
-		--G3
-		["bm_w_g3"] = "Gewehr-3",
-		["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
-		--KS12
-		["bm_w_shak12"] = "KS-12 Urban",
-		["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
-		["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
-		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
-		["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
-		--HCAR
-		["bm_w_hcar"] = "Akron HC",
-		["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 		
-		--Custom DMRs
-			--MCX Spear
-			["bm_w_mcx_spear"] = "Signature M7",
-			["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
-			["bm_w_ngsierra"] = "Amicus 277",
-			["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
-			--["bm_w_xeno"] = "MA14 Surge Rifle",	
-			["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
-			["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
-			--VSS
-			["bm_w_vss"] = "Viktoriya",
-			["bm_vss_sc_desc"] = "A variant of the Valkyria configured for better range and accuracy.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
-			--G3 HK79
-			["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
-			["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
-			--BO3 XR2
-			["bm_w_xr2"] = "XR-2",
-			["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
-			["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
-			["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
-			["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
-			["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
-			--SIERRA .458
-			["bm_w_sierra458"] = "Sierra .458",
-			["bm_w_sierra458_sc_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
-			["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
-			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
-			["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
-
-		--MSR
-		["bm_w_msr"] = "Rattlesnake",	
-		["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
-		--R700
-		["bm_w_r700"] = "Reinfeld Model 700",	
-		["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
-		--QBU88
-		["bm_w_qbu88"] = "Káng Arms X1",
-		["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--Winchester 1874
-		["bm_w_winchester1874"] = "Repeater 1874",	
-		["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
-		--TTI(TTY)
-		["bm_w_tti"] = "Tecci Tactical .308",
-		["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--Icky Vicky
-		["bm_w_victor"] = "SA North Star",
-		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
-		--Scunt
-		["bm_w_scout"] = "Pronghorn",
-		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
-		["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
-		--AWP
-		["bm_w_awp"] = "Amaroq 900",
-		["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
-		["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
-		["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
-		["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-		--WA2000
-		["bm_w_wa2000"] = "Lebensauger .300",
-		["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--Rangerhitter
-		["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-		["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
-		--Contender G2
-		["bm_w_contender"] = "Aran G2",
-		["bm_contender_sc_desc"] = "",	
-		--Model 70
-		["bm_w_model70"] = "Platypus 70",
-		["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
-		--SVD
-		["bm_w_siltstone"] = "Grom",
-		["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--Mosin--
-		["bm_w_mosin"] = "Nagant",
-		["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
-		["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
-		["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
-		--Desert Fox
-		["bm_w_desertfox"] = "Desertfox",
-		["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
-		--R93
-		["bm_w_r93"] = "R93",
-		["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
-		--Thanatos--
-		["bm_w_m95"] = "Thanatos .50 BMG",
-		["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-		--Custom Snipers
-			--Guerilla
-			["bm_w_sgs"] = "Guerilla 542",	
-			--M107
-			["bm_w_m107cq"] = "Mors .50 BMG",
-			["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-			["bm_w_m200"] = "TF-141",
-			["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-			--S7
-			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields and thin walls.##",	
-			["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
-			["oracle_scope"] = "Oracle TechLink Scope",
-			["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
-			--Marlin 1894
-			["bm_w_m1894"] = "Mare's Leg",
-			--SPX Centerfire
-			["bm_w_moss464spx"] = "Mosconi SPX",
-			--Winchester 1894
-			["bm_w_winchester1894"] = "Repeater 1894",
-			--SVD
-			["bm_w_svd"] = "SV7",
-			["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
-			--L115
-			["bm_w_l115"] = "AIM 90M",
-			--Highly Modified CAR-4
-			["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
-			["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
-			["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
-
-		--Light Crossbow		
-		["bm_wp_avelyn"] = "Avelyn Kit",
-		["bm_wp_avelyn_desc"] = "A #{skill_color}#repeating crossbow## kit.\nAllows for firing a volley of #{skill_color}#3## bolts with a single trigger pull.",
-
-		--GL40		
-		["bm_w_gre_m79"] = "GL-40",
-		["bm_w_gre_m79_sc_desc"] = "A thump and a boom.\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
-		--3GL
-		["bm_w_ms3gl"] = "Basilisk 3GL",
-		["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
-		--PIGLET/M32
-		["bm_w_m32"] = "Piglet",
-		["bm_m32_sc_desc"] = "Become a \"#{risk}#War Machine##\", show your enemies that no amount of love will protect them and those near them from this 6-shot rotary grenade launcher.",
-		--China Puff
-		["bm_w_china"] = "China Puff",
-		["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
-		--Compact 40mm
-		["bm_w_slap"] = "Compact 40mm",
-		--Arbiter
-		["bm_w_arbiter"] = "Arbiter",
-		--RPG
-		["bm_w_rpg7"] = "HRL-7",
-		--COMMANDO 101/M202 FLASH
-		["bm_w_ray"] = "Commando 101 FLASH",
-		["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
-
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "Enemy headshot multipliers are increased to ",
@@ -2451,6 +1770,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_armor_max_health_store_1"] = "Max health stored: #{skill_color}#$health_stored##",
 		["bm_menu_armor_max_health_store_2"] = "Max health stored: #{skill_color}#$health_stored## \nArmor regen bonus on kill: #{skill_color}#$regen_bonus%##",
 	})
+
+	
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
@@ -2530,35 +1851,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 
-		-- Renamed default weapons and mods + descriptions-- --move all these to their respective weapons--
-
-		["bm_wp_pis_usp_b_match"] = "Freeman Slide",
-		["bm_wp_1911_m_big"] = "Casket Magazine",
-		["bm_wp_usp_m_big"] = "Casket Magazine",
-		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
-		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
-		["bm_wp_p90_b_ninja"] = "Ninja Barrel",
-		["bm_wp_par_b_short"] = "Comped Barrel",
-
 		["menu_es_rep_upgrade"] = "",	--???--
 
-		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
-		["bm_wp_hs2000_sl_long"] = "Elite Slide",
-		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
 		["bm_w_r0991"] = "AR-15 Varmint Pistol",
-		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
-		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
-		["bm_wp_g3_b_sniper"] = "Macro Barrel",
-		["bm_wp_g3_b_short"] = "Micro Barrel",
-		["bm_wp_g3_m_psg"] = "Präzision Magazine",
-
-		--VMP HK416c Fixed Stock
-		["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
-
-		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
-
-
-
+		
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
 		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Stability penalty",
 		["bm_menu_bonus_concealment_p1_mod"] = "Small Concealment Modifier",
@@ -2583,8 +1879,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "Money Boost",
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+5% Money reward for you and your crew.",
 
-		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
-		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO FULL-AUTO.",
+		["bm_wp_upg_i_singlefire_desc"] = "Locks your weapon to #{risk}#semi-auto##.",
+		["bm_wp_upg_i_autofire_desc"] = "Locks your weapon to #{risk}#full-auto##.",
 
 		--Throwables--
 		["bm_dynamite_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#4m## \nFuse: #{skill_color}#3s## \n- Reduced bounce and roll compared to other thrown explosives\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
@@ -2628,787 +1924,1640 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_damage_control"] = "Hip Flask",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
+		--WEAPON & ATTACHMENT DESCRIPTIONS 
+			--Contains anything that should always be set regardless of the weapon names option chosen like descriptions or Resmod added weapons and attachments
+			--[[ RESMOD WEAPONS + ATTACHMENTS ]]
+				--socom deez nuts--
+				["bm_w_socom"] = "Anubis .45",
+				["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
+				["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
+				["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing #{skill_color}#$BTN_GADGET##",
+				["bm_w_x_socom"] = "Akimbo Anubis .45s",
+				--S&W .500
+				["bm_w_shatters_fury"] = "Phoenix .500",
+				["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
+				["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
+				["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
+				["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
+				["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
+				["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
+				--CUSTOM PISTOLS
+					--M6D
+					["kfa_scope"] = "KFA-2 Smart-Link Scope",
+					["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
 
-		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
-		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
-		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
-		["bm_wp_wpn_fps_upg_scar_m203_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
-
-		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot"] = "40MM Buckshot Rounds",
-		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
-		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
-		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
+				--OICW--
+				["bm_w_osipr"] = "SABR",
+				["bm_w_osipr_gl"] = "SABR Grenade Launcher",
+				["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nPress #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
+				["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nHold #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
+				--AR-15 MAGS
+				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
+				["bm_wp_upg_mil_sc"] = "Milspec Mag",
+				["bm_wp_upg_tac_sc"] = "Tactical Mag",
+			--[[ PISTOLS ]]
+				--Gecko Pistol
+				["bm_tranq_maxim_sc_desc"] = "The world's first #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
+				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
+				--Igor (APS)
+				["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
+				["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
+				--Chimano Compact
+				["bm_jowi_sc_desc"] = "A Chimano that's configured to take concealment to the extreme at the cost of almost everything else.\n\nRumors say that Wick used this when seeking vengeance against the Russian mob.",
+				["bm_x_jowi_sc_desc"] = "When they're this small, why not carry two? An akimbo pairing that incorrectly gets attributed to as Wick's personal choice.",
+				--Glock 18c
+				["bm_g18c_sc_desc"] = "Fully automatic Austrian spraygun. Difficult to control, but at close range is absolutely devastating.",
+				["bm_x_g18c_sc_desc"] = "If one was a bullet hose, carrying two may as well be a storm. Mind the recoil!",
+				--CZ 75
+				["bm_czech_sc_desc"] = "One of the Wonder Nines, a machine pistol with fine ergonomics and handling. Used by counter terrorist forces all over the world.",
+				["bm_x_czech_sc_desc"] = "Another example of how not to use a machine pistol. How can you even comfortably reload the things?",
+				--PPK (Gruber)
+				["bm_ppk_sc_desc"] = "A compact alternative to larger, more dangerous firearms. A classic weapon with classic application.",
+				["bm_x_ppk_sc_desc"] = "For when you need to be less 007 and more Kingsman.",
+				--M13
+				["bm_legacy_sc_desc"] = "West German design that was ultimately rejected in favor of the Bernetti, but will still hold its own in a fire fight.",
+				["bm_x_legacy_sc_desc"] = "Two pistols forgotten by history that will leave a legacy of lead in a room of your choosing.",
+				--Glock 17
+				["bm_g17_sc_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
+				["bm_x_g17_sc_desc"] = "Making up for puny 9mm by sheer amount of firepower and still taking advantage of low recoil.\n\nHoxton's choice when we busted him out.",
+				--Bernetti 9
+				["bm_b92fs_sc_desc"] = "A popular firearm due to an impressive magazine capacity and decent damage. Especially handy for confrontations with numerous antagonists.",
+				["bm_x_b92fs_sc_desc"] = "Two pistols are better than one. Another way to turn any engagement into a 9mm party.",
+				--White Streak
+				["bm_pl14_sc_desc"] = "Modern Russian handgun using post-soviet tech from the west. Popular among the Reapers for its reliability and futuristic look.",
+				["bm_x_pl14_sc_desc"] = "Modern Russian handgun using post-soviet tech from the west. Popular among the Reapers for its reliability and futuristic look.",
+				--Holt 9mm
+				["bm_holt_sc_desc"] = "A working prototype of a sidearm that's been stuck in development hell, features an innovative design to help reduce recoil.",
+				["bm_x_holt_sc_desc"] = "Not one, but two working prototypes of the pistol equivalent to lost media.",
+				--FMG-9
+				["bm_fmg9_sc_desc"] = "A prototype weapon platform that functions as a baby carrier for your STRYK 18c, features futuristic folding technology!",
+				--93R
+				["bm_beer_sc_desc"] = "A borderline fictional piece of burst-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.\n\nHas a #{skill_color}#1200 RPM## fire rate when on burst-fire.",
+				["bm_beer_auto_desc"] = "A borderline fictional piece of select-fire hardware that'll have creeps scrambling to figure out whose move it is. Dead or alive, you're coming with me.",
+				--Contractor Pistols 
+				["bm_packrat_sc_desc"] = "Wick's choice for its reliability and overall ease of use, said to have been used when he paid The Red Circle a visit.",
+				["bm_x_packrat_sc_desc"] = "The go-to for when you want to clear Russian owned nightclubs with a message of blood and vengeance.",
+				--Breech (Luger) 
+				["bm_breech_sc_desc"] = "The pistol that almost took over the world. Twice. This German artifact is sleek, accurate and unfortunately obsolete.",
+				--Chimano Custom
+				["bm_g22c_sc_desc"] = "This weapon is a combination of high capacity and high power. Among the best overall combat pistols.",
+				["bm_x_g22c_sc_desc"] = "If one vote was a free gun, voting fraud seems appealing when you can get two of these portable body stoppers.",
+				--Signature .40
+				["bm_p226_sc_desc"] = "Whether it be Armored Transport interception or Bank Robberies, this classic cop-stopper will never fail to disappoint.",
+				--LEO
+				["bm_hs2000_sc_desc"] = "Interpol agents, crooked Croatian cops, and international criminals alike will find this compact blaster effective.",
+				["bm_wp_hs2000_sl_long"] = "Elite Slide",
+				--5/7 pistol
+				["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				--Baby Deagle--
+				["bm_sparrow_sc_desc"] = "SEE YOU SPACE COWBOY...",
+				["bm_w_sparrow_sc_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
+				--socom deez nuts--
+				["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45 ACP handgun with a stylish design.",
+				["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
+				["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing #{skill_color}#$BTN_GADGET##",
+				--Crosskill
+				["bm_1911_sc_desc"] = "When 9mm isn't enough, reach for this custom 1911A1 chambered in the powerful .45ACP. Top shelf brutality.",
+				["bm_x_1911_sc_desc"] = "While it doesn't have demonic powers, the carnage will certainly leave people screaming in terror.",
+				--Crosskill Chunky
+				["bm_m1911_sc_desc"] = "A reproduction of the classic Crosskill .45. Despite the name, not at all chunkier than the custom one.",
+				--Crosskill Guard
+				["bm_shrew_sc_desc"] = "Smaller and more compact than its classic A1 cousin. Trades magazine capacity and barrel length for even more concealability.",
+				["bm_x_shrew_sc_desc"] = "The way of the Canaanites, two .45 problem solvers in a seriously small package sure to leave invaders running.",
+				["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.",
+				--USP 
+				["bm_usp_sc_desc"] = "S&G's above average performer excels in damage, capacity and range.",
+				["bm_x_usp_sc_desc"] = "A pair of S&G pistols for when you really need to send a message.",
+				--Model 54 
+				["bm_type54_sc_desc"] = "A Soviet designed pistol chambered in the hard hitting 7.62×25mm round; features a unique underbarreled shotgun mount for an extra way to get rid of bad guys.",
+				["bm_x_type54_sc_desc"] = "A one-two punch that can turn into a one-two-three-four punch.",
+				--Broomstick--
+				["bm_c96_sc_desc"] = "\"...and then the #{important_1}#wolf## ate up Little Red Riding Hood.\"\n\nA revolutionary German pistol, this one in particular has been modified to fire in full-auto.\n\nThis weapon reloads in clips of 10 bullets at a time.",
+				["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
+				["bm_wp_c96_nozzle_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#2s##\nRecharge rate: #{skill_color}#3/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+				--Sub2000
+				["bm_sub2000_sc_desc"] = "Pistol carbine of questionable manufacturing quality. Tiny pistol bullets hit a lot harder when coming out of a longer barrel and its folding capability makes for decent concealment.",
+				--Deagle
+				["bm_deagle_sc_desc"] = "What more needs to be said about this semi automatic magic wand? Just wave it at the bad guys and shout \"Headicus Explodicus!\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				["bm_x_deagle_sc_desc"] = "Twin wrist wreckers that take a real nut to actually carry into battle.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+				--Kahn .357
+				--Matever 2006m
+				["bm_2006m_sc_desc"] = "A rare design of an already rare production run. A fancy way to send .38 down range.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				["bm_x_2006m_sc_desc"] = "The logistics of handling two of these is outweighed by the sheer badass factor.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				--Frenchman Model 87
+				["bm_model3_sc_desc"] = "A classic answer to the lifelong question \"What am I going to to about all these jerks all up in my face?\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				["bm_x_model3_sc_desc"] = "Bring out your inner rootin' tootin' qualities and challenge the cops to a dual at high noon with these twin revolvers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+				--Raging bull
+				["bm_rage_sc_desc"] = "Very powerful short range cannon. It puts down mooks fast so long as you're lining up shots.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_x_rage_sc_desc"] = "Not at all good or practical, you can't help but want to flex on the police force by pulling these out during a bank robbery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				--Castigo
+				["bm_chinchilla_sc_desc"] = "Powerful, accurate, and stylish. Handy for breaking through the more durable foes in DC.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_x_chinchilla_sc_desc"] = "A sicario needs to ensure his mark is down, two of these will guarantee it.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				--RUS-12
+				["bm_rsh12_sc_desc"] = "The absolute final word in one handed caliber pissing matches.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--SAA/Peacemaker
+				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
+				--CUSTOM PISTOLS
+					--Colt Detective
+					["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+			
+			--[[ SMGs ]]
+				--Kobus 90
+				["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				["bm_wp_p90_body_p90_tan"] = "Tan Stock",
+				["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
+				--Spec Ops
+				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				--Heather
+				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
+				--Compact-5/MP5
+				["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
+				--Pachett/Sterling
+				["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+				["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.4s##\nRecharge rate: #{skill_color}#6/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
+				--Uzi
+				["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",
+				--Chicago Typewriter
+				["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",
+				--MP40
+				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
+				--CUSTOM SMGs
+					--AR57
+					["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+					--LWRC
+					["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
+					--Typhoon
+					["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now #{important_1}#I've got a lot to say##\"\n\nUtilizing #{risk}#superposed loading## technology, this 10-barrelled machine gun trades damage for spitting lead out at blisteringly high speeds.\n\nAlt-fire fires a #{skill_color}#volley## of #{skill_color}#10## rounds down range.",
+			
+			--[[ MGs ]]
+				--Bootleg/HK416c
+				["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
+				--KSP/M249
+				["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
+				--ChainSAW
+				["bm_kacchainsaw_sc_desc"] = "Roaming frothing madness in a machine gun.\n\n#{skill_color}#Has improved hipfire spread.##",
+				["bm_wp_upg_i_kacchainsaw_adverse"] = "Adverse Gas System",
+				--RPK
+				["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
+				["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
+				--Brenner 21/HK21
+				["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
+				--M60
+				["bm_m60_sc_desc"] = "Nicknamed 'The Pig' for being hungry for ammo and incredibly cumbersome. Expect anyone down range to be a closed casket.\n\n#{skill_color}#Has improved hipfire spread.##",
+				--Ksp 58
+				["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",
+				--Buzzsaw/Mg42
+				["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved hipfire spread and recoil.##",
+				["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
+				["bm_wp_mg42_b_vg38_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#3s##\nRecharge rate: #{skill_color}#9/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#4s##",
+				--M134
+				["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
+				--Microgun
+				["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
+				--Custom MGs
+					--TF2 Minigun
+					["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
+					["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
+					["bm_wp_wpn_fps_lmg_tomislav_body_desc"] = "#{skill_color}#Speeds up spin-up time by 20%.##",
+					["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Staggers enemies up to 9.75 meters away.##\n#{risk}#(Stagger range cannot be modified)##\n#{important_1}#Slows spin-up time by 30%.##",
+					["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Slows spin-up time by 50%.##",
+					["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",
+			--[[ SHOTGUNS ]]
+				--Saiga
+				["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
+				--AA12
+				["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
+				--Spas12
+				["bm_spas12_sc_desc"] = "A heavier and more complicated alternative to other semi-auto shotguns, features an almost alien alternative firing mode.",
+				--Benelli
+				["bm_benelli_sc_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
+				--Argos III
+				["bm_ultima_sc_desc"] = "Nothing says modern like plastic and aluminum, it even comes with a USB slot to charge your phone.\n\nReloads #{skill_color}#2## shells at a time.",
+				--Supernova
+				["bm_supernova_sc_desc"] = "A shotgun franken-smithed to be capable of switching between pump-action and semi-auto.",
+				--Loco
+				["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
+				--Reinfeld 88
+				["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nCan be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
+				--Mosconi 12g
+				["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
+				--R870
+				["bm_menu_sc_r870_desc"] = "Long arm of the law and freedom. Now freedom has a shotgun and shells with your name on it.",
+				--KSG
+				["bm_menu_sc_ksg_desc"] = "Everything is plastic in the future! Bullpup shotgun with questionable craftsmanship, an LWI specialty.",
+				--Breaker 10g
+				["bm_menu_sc_boot_desc"] = "An antique shotgun sporting a powerful 10g shotgun shell and an even more potent badass factor. Come with me if you want to live.",	
+				--Mosconi
+				["bm_menu_sc_huntsman_desc"] = "Double the barrels, double the fun. While limited when it comes to magazine size, #{skill_color}#two triggers## allows you to unleash a ragnarok of buckshot on any unfortunate SOB in the same room as you.",
+				--Judge
+				["bm_x_judge_sc_desc"] = "Judge and Jury, and with two of these portable room-clearers, you're the executioner.",
+				--Joceline
+				["bm_b682_sc_desc"] = "A competition over-under typically reserved for sporting events, only instead of clay pigeons you'll be using it for popping helmets.",
+				--Custom Shotguns
+					--Reinbeck M1
+					["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
+					--Doomstic
+					["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Type of pellets effective at close range.\n#{skill_color}#Increases pellet count to 10.##",
+					["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\n#{important_1}#Lowers pellet count to 6.##",
+					["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of #{skill_color}#piercing body armor, enemies, shields, titan shields, and walls.##",
+					--Widowmaker TX
+					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
+					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
+					["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
+			--[[ ARs ]]
+				--S552		
+				["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS. Uses special Swiss-made 5.6mm rounds that offer better range.",
+				--M733/AMCAR
+				["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
+				--G36
+				["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
+				--VHS/Lion's Roar
+				["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",
+				--Olympic/Para
+				["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
+				--TAR-21/Para
+				["bm_menu_sc_komodo_desc"] = "A lot of damage in a seriously compact package. Great for CQB or ranged encounters.",
+				--Famas
+				["bm_menu_sc_famas_desc"] = "This weapon trades magazine capacity for rate of fire and accuracy. A very effective tool for shooting apples off of people's heads.",
+				--M4/CAR-4
+				["bm_m4_sc_desc"] = "Reliable, compact, and deadly. Sporting a more controllable rate of fire over the AM-CAR, the CAR-4 makes for a popular 5.56mm rifle among modern militaries.",
+				["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
+				["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. #{risk}#Overrides the appearance of your handguard.##",
+				["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+				--AK5
+				["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
+				["fnc_burst_desc"] = "Adds a 3-round burst firemode.",
+				--Union 5.56
+				["bm_corgi_sc_desc"] = "Despite the reputation, this bullpup is not at all sea-worthy.",
+				--UAR
+				["bm_aug_sc_desc"] = "Classic bullpup rifle. Great all arounder for extra dead bad guys.",
+				--AK17
+				["bm_flint_sc_desc"] = "The modern interpretation of the classic AK. Features a potent #{skill_color}#2 round burst## and has quite the identity crisis.",
+				--AK 5.45
+				["bm_ak74_sc_desc"] = "Despite firing a smaller round than its 7.62 sister, this rifle is by no means any less deadly.",
+				--CR 805
+				["bm_menu_sc_hajk_desc"] = "A younger, modern, cousin to the classic bullet-hose Cobra. This one features various firing modes and even multiple round conversions... not that you'll be getting those.",
+				--AMR-16
+				["bm_m16_sc_desc"] = "This classic rifle serves as the predecessor to the AM-CAR. What it lacks in concealability and rate of fire it makes up for in range and power.",
+				--Queen's Wrath
+				["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\nStill an ergonomic nightmare though.",
+				--AK 7.62
+				["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
+				["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
+				--Queen's Wrath
+				["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\n\nStill an ergonomic nightmare though.",
+				--KETCHUPKNOB--
+				--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
+				["bm_groza_sc_desc_pc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+				["bm_groza_sc_desc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+				--Krinkov
+				["bm_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+				--Akimbo Krinkov
+				["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+				--CUSTOM ARs
+					--AN-94/92
+					["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
+					--NV4
+					["bm_nova4_sc_desc"] = "Full-auto ballistic rifle. A moderate fire rate yields increased stability for best-in-class accuracy. Ideal for mid-to-long range engagements",
+					["bm_wp_wpn_fps_ass_nova4_flatline_desc"] = "Grants the following perks:\n#{heat_warm_color}#Precision:##\n#{skill_color}#No damage fall off## with #{important_1}#reduced## fire rate.\n#{item_stage_2}#Focus:##\n#{skill_color}#Increased## accuracy.",
+					["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "Grants the following perks:\n#{heat_warm_color}#Celerity:##\n#{skill_color}#Increases## hipfire fire rate but #{important_1}#reduces## ADS fire rate.\n#{item_stage_2}#Steady:##\n#{skill_color}#Reduced## hipfire spread.",
+					--MW22 Honey Badger
+					["bm_w_mcbravo_desc"] = "With an #{skill_color}#integrated suppressor## and slow, high-energy subsonic #{risk}#.300 BLK## rounds, the Chimera is adept at close-quarters combat.",
+			--[[ DMRs ]]
+				--Little Friend
+				["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+				["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+					--VMP
+					["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+					["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" AMR-16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+					["bm_mesa_vmp_sc_desc_pc"] = "Interesting product from a stolen OMNIA shipment.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+					["bm_mesa_vmp_sc_desc"] = "Interesting product from a stolen OMNIA shipment.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+				--FAL
+				["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+				--ASS VAL
+				["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				--Galil
+				["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				--SCAR		
+				["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
+				["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",		
+				--Galant
+				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
+				--M308
+				["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
+				--G3
+				["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
+				["bm_wp_g3_m_psg"] = "Präzision Magazine",
+				--KS12
+				["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",	
+				["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+				["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
+				["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
+				--HCAR
+				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce multiple enemies and thin walls.##",
+				--Custom DMRs
+					--MCX Spear
+					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+					--["bm_w_xeno"] = "MA14 Surge Rifle",	
+					["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+					["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+					--VSS
+					["bm_vss_sc_desc"] = "A variant of the Valkyria configured for better range and accuracy.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+					--G3 HK79
+					["bm_g3hk79_sc_desc_pc"] = "A variant of the Gewehr-3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+					--BO3 XR2
+					["bm_xr2_sc_desc"] = "The XR-2 is a versatile rifle designed for the most dynamic of combat scenarios and features a unique #{risk}#3-round auto-burst## that provides an #{skill_color}#increased fire rate while on burst-fire mode.##\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+					["bm_wp_xr2_handle_01_sc"] = "Full-Auto Bolt",
+					["bm_xr2_handle_01_sc_desc"] = "Trade the auto-burst for #{skill_color}#full-auto## at the cost of #{important_1}#no burst fire rate increase.##",
+					["bm_wp_xr2_handle_02_sc"] = "Rapid-Fire Bolt",
+					["bm_xr2_handle_02_sc_desc"] = "Increases burst fire rate to #{skill_color}#950 RPM## at the cost of #{important_1}#lowered recoil mitigation during the burst.\n\nBurst delay and semi-auto fire rate are unaffected.##",
+					--SIERRA .458
+					["bm_w_sierra458_sc_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+					["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
+					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
+			--[[ SNIPERS ]]
+				--MSR
+				["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				--R700
+				["bm_r700_sc_desc"] = "The predecessor to the Rattlesnake. Good accuracy and handling, even has better range than its younger brother. The downside? Crappy 5 round magazines.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				--QBU88
+				["bm_qbu88_sc_desc"] = "Bullpup sniper platform with an Eastern Bloc inspiration. Like many, good for forcing your will on others.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--Winchester 1874
+				["bm_winchester1874_sc_desc"] = "The Gun That Won the West. Holy relic of firearms, but no means less deadly with its supply of potent .44-40 ammunition.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
+				--TTI(TTY)
+				["bm_tti_sc_desc"] = "One of Wick's personal firearms. It's said there's footage of him practicing 3-gun with this rifle somewhere online.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--Icky Vicky
+				--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				--Scunt
+				--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
+				--AWP
+				["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
+				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
+				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+				--WA2000
+				["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--Rangerhitter
+				["bm_sbl_sc_desc"] = "A 20th century lever action that offers a bigger slug of lead compared to the 19th century. Expect extra kick and extra dead pigs with .45-70 on your side.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##",	
+				--Contender G2
+				["bm_contender_sc_desc"] = "",	
+				--Model 70
+				["bm_model70_sc_desc"] = "The Rifleman's Rifle. An early bolt action design made by the same designers of the Repeater 1874.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
+				--SVD
+				["bm_siltstone_sc_desc"] = "High powered semi-auto sniper rifle belonging to the AK family. Like most eastern bloc weaponry, its reputation is well earned.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--Mosin--
+				["bm_mosin_sc_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time and #{skill_color}#can pierce body armor, multiple enemies, shields and thin walls.##",
+				["bm_wp_upg_a_tranq_mosin"] = "Tranquilizer Rounds",
+				["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, #{item_stage_2}#The End.##\n\nFire #{stats_positive}#tranquilizer## rounds that #{skill_color}#deal 30 damage/sec over 6 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce through enemies.##",
+				["bm_mosin_tranq_desc"] = "When food is a luxury but you're still in need of a gun comes this cheap, classic bolt-action rifle.\n\nThis weapon reloads in clips of 5 bullets at a time,\n\n#{stats_positive}#deals damage over time with tranquilizer rounds## and #{skill_color}#can pierce body armor, shields and thin walls.##",
+				--Desert Fox
+				["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				--R93
+				["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
+				--Thanatos--
+				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+				--Custom Snipers
+					--M107
+					["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					--M200
+					["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					--S7
+					["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields and thin walls.##",	
+					["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
+					["oracle_scope"] = "Oracle TechLink Scope",
+					["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
+					--SVD
+					["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
+					--Highly Modified CAR-4
+					["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
+					["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
+					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",		
+			--[[ LAUNCHERS & BOWS ]]
+				--Light Crossbow		
+				["bm_wp_avelyn"] = "Avelyn Kit",
+				["bm_wp_avelyn_desc"] = "A #{skill_color}#repeating crossbow## kit.\nAllows for firing a volley of #{skill_color}#3## bolts with a single trigger pull.",
+				--GL40		
+				["bm_w_gre_m79_sc_desc"] = "A thump and a boom.\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
+				--3GL
+				["bm_ms3gl_sc_desc"] = "Fires custom 40mm rounds superposed in a single chamber. Uses electric primers to fire, allowing for rapid follow-ups in a compact package.\n\nAlt-fire #{skill_color}#fires a burst of 3 grenades.##",
+				--PIGLET/M32
+				["bm_m32_sc_desc"] = "Become a \"#{risk}#War Machine##\", show your enemies that no amount of love will protect them and those near them from this 6-shot rotary grenade launcher.",
+				--China Puff
+				["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
+				--COMMANDO 101/M202 FLASH
+				["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
+				
+				
 	})
 
 
+	local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
+	--[[ 
+		WepNames Options
+		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
+		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
+		3 = real names (i.e. SA 1911 Operator, HK 416c)
+		4 = Vanilla names/use your own names
+	]]
+	if weapon_names then
+		if weapon_names ~= 4 then
+			LocalizationManager:add_localized_strings({	
+				--[[ PISTOLS ]]
+					--Gecko Pistol
+					["bm_w_maxim9"] = "Gecko M2",
+					["bm_w_x_maxim9"] = "Akimbo Gecko M2s",
+					--Igor (APS)
+					["bm_w_stech"] = "Igor Automatik",
+					["bm_w_x_stech"] = "Akimbo Igor Automatiks",
+					--Chimano Compact
+					["bm_wp_pis_g26"] = "Chimano 26 Compact",
+					["bm_w_jowi"] = "Akimbo Chimano 26 Compacts",
+					--Glock 18c
+					["bm_w_glock_18c"] = "Chimano 18C",
+					["bm_w_x_g18c"] = "Akimbo Chimano 18Cs",
+					--CZ 75
+					["bm_w_czech"] = "Czech 92",
+					["bm_w_x_czech"] = "Akimbo Czech 92s",
+					--PPK (Gruber)
+					["bm_w_ppk"] = "Gruber Kurz",
+					["bm_w_x_ppk"] = "Akimbo Gruber Kurzes",
+					--M13
+					["bm_w_legacy"] = "M13",
+					["bm_w_x_legacy"] = "Akimbo M13s",	
+					--Glock 17
+					["bm_w_glock_17"] = "Chimano 88",
+					["bm_w_x_g17"] = "Akimbo Chimano 88s",
+					--Bernetti 9
+					["bm_w_b92fs"] = "Bernetti 92",
+					["bm_w_x_b92fs"] = "Akimbo Bernetti 92s",
+					--White Streak
+					["bm_w_pl14"] = "White Streak",
+					["bm_w_x_pl14"] = "Akimbo White Streaks",
+					--Holt 9mm
+					["bm_w_holt"] = "HOLT 9mm",
+					["bm_w_x_holt"] = "Akimbo HOLT 9mms",
+					--FMG-9
+					["bm_w_fmg9"] = "Wasp DS-9",
+					--93R
+					["bm_w_beer"] = "Bernetti 93R",
+					--Contractor Pistols 
+					["bm_w_packrat"] = "Contractor M30",
+					["bm_w_x_packrat"] = "Akimbo Contractor M30s",
+					--Breech (Luger) 
+					["bm_w_breech"] = "Parabellum-08",
+					--Chimano Custom
+					["bm_w_g22c"] = "Chimano Custom",
+					["bm_w_x_g22c"] = "Akimbo Chimano Customs",
+					--Signature .40
+					["bm_w_p226"] = "Signature .40",
+					--LEO
+					["bm_w_hs2000"] = "LEO-40",
+					["bm_wp_hs2000_sl_long"] = "Elite Slide",
+					--5/7 pistol
+					["bm_w_lemming"] = "Acuto 5/7",
+					--Baby Deagle--
+					["bm_w_sparrow"] = "Sparrow 941",
+					--Crosskill
+					["bm_w_colt_1911"] = "Crosskill Operator II",
+					["bm_w_x_1911"] = "Mustang & Sally",
+					["bm_wp_1911_m_big"] = "Casket Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Crosskill A1",
+					--Crosskill Guard
+					["bm_w_shrew"] = "Crosskill Guard",
+					["bm_w_x_shrew"] = "Barry & Paul",
+					--USP 
+					["bm_w_usp"] = "Interceptor-45",
+					["bm_w_x_usp"] = "Akimbo Interceptor-45s",
+					["bm_wp_usp_m_big"] = "Casket Magazine",
+					["bm_wp_pis_usp_b_match"] = "Freeman Slide",
+					--Model 54 
+					["bm_w_type54"] = "CC-33",
+					["bm_w_x_type54"] = "Akimbo CC-33s",
+					--Broomstick--
+					["bm_w_c96"] = "Broomstick",
+					["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
+					--Sub2000
+					["bm_w_sub2000"] = "Cavity .40",
+					--Deagle
+					["bm_w_deagle"] = "Deagle",
+					["bm_w_x_deagle"] = "Akimbo Deagles",
+					--Kahn .357
+					["bm_w_korth"] = "Kahn .357",
+					["bm_w_x_korth"] = "Akimbo Kahn .357s",
+					--Matever 2006m
+					["bm_w_mateba"] = "Matever 9mm", --:^)
+					["bm_wp_2006m_b_short"] = "Tachikoma Barrel",	
+					["bm_wp_2006m_b_medium"] = "Togusa Barrel",	
+					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
+					["bm_w_x_2006m"] = "Akimbo Matevers",
+					--Frenchman Model 87
+					["bm_w_model3"] = "Frenchman 87",	
+					["bm_w_x_model3"] = "Akimbo Frenchman 87s",	
+					--Raging bull
+					["bm_w_raging_bull"] = "Bronco .44",	
+					["bm_w_x_rage"] = "Akimbo Bronco .44s",
+					--Castigo
+					["bm_w_chinchilla"] = "Castigo .44",
+					["bm_w_x_chinchilla"] = "Akimbo Castigo .44s",
+					--RUS-12
+					["bm_w_rsh12"] = "RUS-12",
+					--SAA/Peacemaker
+					["bm_w_peacemaker"] = "Peacemaker .45LC",
+					--CUSTOM PISTOLS
+						--Browning Hi-Power
+						["bm_w_hpb"] = "Hi-Power",
+						--Browning Hi-Power (Mira)
+						--["bm_w_hpb"] = "Hi-Power",
+						--Walther P99
+						["bm_w_p99"] = "Gruber 99",
+						--Derringer
+						["bm_w_derringer"] = "Derringer",
+						--Automag .44
+						["bm_w_amt"] = "Automag .44",
+						--Colt Detective
+						["bm_w_coltds"] = "Crosskill Investigator",
+						--SIG P320
+						["bm_w_papa320"] = "M19",
+						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
+				--[[ SMGs ]]
+					--Kobus 90--
+					["bm_w_p90"] = "Project-90",
+					["bm_wp_p90_b_ninja"] = "Ninja Barrel",
+					["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
+					--Spec Ops
+					["bm_w_mp7"] = "SpecOps-7",
+					--Tec-9
+					["bm_w_tec9"] = "T3K Urban",
+					["bm_w_x_tec9"] = "Akimbo T3K Urbans",
+					--Heather
+					["bm_w_sr2"] = "Heather-2M",
+					["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
+					--CMP
+					["bm_w_mp9"] = "CMP-9",
+					--Miyaka
+					["bm_w_pm9"] = "Miyaka 9 Special",
+					--Micro Uzi
+					["bm_w_baka"] = "Micro Uzi",
+					["bm_w_x_baka"] = "Akimbo Micro Uzis",
+					--Cobra/Skorpion
+					["bm_w_scorpion"] = "Cobra",
+					["bm_w_x_scorpion"] = "Akimbo Cobras",
+					["bm_wp_scorpion_m_extended"] = "Dual Magazines",
+					--Tatonka
+					["bm_w_coal"] = "Tatonka",
+					--AK Gen
+					["bm_w_vityaz"] = "AK Gen 21 Tactical",
+					--Signature SMG
+					["bm_w_shepheard"] = "Signature-10",
+					--Compact-5/MP5
+					["bm_w_mp5"] = "Compact-5",	
+					["bm_w_x_mp5"] = "Akimbo Compact-5s",
+					["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
+					--Swedish K
+					["bm_w_m45"] = "Swedish K",
+					--Pachett/Sterling
+					["bm_w_sterling"] = "Patchette L2A1",
+					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+					--Uzi
+					["bm_w_uzi"] = "Uzi",
+					--Chicago Typewriter
+					["bm_w_m1928"] = "Chicago Typewriter",
+					--Mark 10
+					["bm_w_mac10"] = "Mark 10",
+					["bm_w_x_mac10"] = "Akimbo Mark 10s",
+					--MP40
+					["bm_w_erma"] = "MP 40",
+					--Jackal
+					["bm_w_schakal"] = "Jackal",
+					--Kross Vertex
+					["bm_w_polymer"] = "Kross Vertex",
+					--CUSTOM SMGs
+						--AR57
+						["bm_w_alpha57_prim"] = "FSS Hurricane",
+						--LWRC
+						["bm_w_smg45"] = "FT Striker .45",
+						--Typhoon
+						["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
+				--[[ MGs ]]
+					--Bootleg/HK416c
+					["bm_w_tecci"] = "Bootlegger",
+					["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
+					--KSP/M249
+					["bm_w_m249"] = "KSP-90",
+					--ChainSAW
+					["bm_w_kacchainsaw"] = "Campbell 74",
+					--RPK
+					["bm_w_rpk"] = "RPK",
+					--Brenner 21/HK21
+					["bm_w_hk21"] = "Brenner-21",
+					--M60
+					["bm_w_m60"] = "M60",
+					--Ksp 58
+					["bm_w_par"] = "KSP-58B",
+					["bm_wp_par_b_short"] = "Comped Barrel",
+					--Buzzsaw/Mg42
+					["bm_w_mg42"] = "Buzzsaw-42",
+					--Versteckt-51/HK51B
+					["bm_w_hk51b"] = "Versteckt-51B",
+					--Microgun
+					["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
+
+				--[[ SHOTGUNS ]]
+					--Grimm
+					["bm_w_basset"] = "Grimm 12G",	
+					--Saiga
+					["bm_w_saiga"] = "IZHMA 12G",
+					--AA12
+					["bm_w_aa12"] = "Steakout 12G",
+					--Spas12
+					["bm_w_spas12"] = "Predator 12G",
+					--Benelli
+					["bm_w_benelli"] = "M1014",
+					--Argos III
+					["bm_w_ultima"] = "Argos III",
+					--Street Sweeper
+					["bm_w_striker"] = "Street Sweeper",
+					--Goliath
+					["bm_w_rota"] = "Goliath 12G",
+					--VD-12
+					["bm_w_sko12"] = "VD-12",
+					["bm_w_x_sko12"] = "Akimbo VD-12s",
+					--GSPS
+					["bm_w_m37"] = "GSPS 12G",
+					--Supernova
+					["bm_w_supernova"] = "Deimos",
+					--Loco
+					["bm_w_serbu"] = "Locomotive 12G",
+					--Reinfeld 88
+					["bm_w_m1897"] = "Repeater 1897",
+					--Mosconi 12g
+					["bm_w_m590"] = "Mosconi Tactical 12G",
+					--R870
+					["bm_w_r870"] = "Reinfeld 880",
+					--KSG
+					["bm_w_ksg"] = "Raven 12G",
+					--Breaker 10g
+					["bm_w_boot"] = "Breaker 10G",
+					--Claire Angélique Florette du Bertrand
+					["bm_w_coach"] = "Claire S/S 12G",
+					--Mosconi
+					["bm_w_huntsman"] = "Mosconi S/S 12G",
+					--Judge
+					["bm_w_judge"] = "The Judge",
+					["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
+					--Joceline
+					["bm_w_b682"] = "Joceline O/U 12G",	
+					--Custom Shotguns
+						--Doomstick
+						["bm_w_quadbarrel"] = "Doomstick",
+						--Widowmaker TX
+						["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
+						["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
+				--[[ ARs ]]
+					--S552
+					["bm_w_s552"] = "Commando 552",
+					--M733/AMCAR
+					["bm_w_amcar"] = "AM-CAR",
+					--G36
+					["bm_w_g36"] = "JP36",
+					--VHS/Lion's Roar
+					["bm_w_vhs"] = "Lion's Roar",
+					["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
+					["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
+					--Olympic/Para
+					["bm_w_olympic"] = "Para-23",
+					--TAR-21/Para
+					["bm_w_komodo"] = "Tempest-95",
+					--Famas
+					["bm_w_famas"] = "Clarion 5.56",
+					--M4/CAR-4
+					["bm_w_m4"] = "CAR-4",
+					["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
+					["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+					--AK5
+					["bm_w_ak5"] = "Ak 5",
+					--Union 5.56
+					["bm_w_corgi"] = "Union 5.56",
+					["bm_wp_corgi_b_short"] = "MSG Barrel",
+					--UAR
+					["bm_w_aug"] = "UAR A2",
+					["bm_wp_upg_b_hbar"] = "Heavy Barrel",	
+					--AK17
+					["bm_w_ak12"] = "AK-17",
+					--AK 5.45
+					["bm_w_ak74"] = "AK 5.45",
+					--CR 805
+					["bm_w_hajk"] = "CR 805B",
+					--AMR-16
+					["bm_w_m16"] = "AMR-16",
+					--Queen's Wrath
+					["bm_w_l85a2"] = "Queen's Wrath",
+					--AK 7.62
+					["bm_w_akm"] = "AK 7.62",
+					["bm_w_akm_gold"] = "Golden AK 7.62",
+					["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
+					--KETCHUPKNOB--
+					--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
+					["bm_w_groza"] = "OB-14st Byk-1", --Hopefully less silly than its Ketchup name
+					--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
+					--Although, a Russian word for "region/zone/area" followed up with a Polish word...
+					--Eh, whatever
+					--CHIKUBI
+					["bm_w_tkb"] = "Rodion 3B",
+					["bm_wp_tkb_m_bakelite"] = "Siberian 15x3 Magazine",
+					--Krinkov
+					["bm_w_akmsu"] = "Krinkov",
+					--Akimbo Krinkov
+					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
+					--CUSTOM ARs
+						--AN-94/92
+						["bm_w_tilt"] = "KVK-99",
+						--HK G36
+						["bm_w_g36k"] = "SG36K",
+						--SCAR-L
+						["bm_w_scarl"] = "Eagle Light",
+						--Valmet Rk.62
+						["bm_w_rk62"] = "Velmer",
+						--MW22 Honey Badger
+						["bm_w_mcbravo"] = "Chimera",
+						--AR-18
+						["bm_w_ar18"] = "CAR-18",
+				--[[ DMRs ]]
+					--Little Friend
+					["bm_w_contraband"] = "Bigger Friend 7.62",
+					--FAL
+					["bm_w_fal"] = "Falcon 58",		
+					--ASS VAL
+					["bm_w_asval"] = "Valkyria",
+					--Galil
+					["bm_w_galil"] = "Defender 7.62",
+					--SCAR
+					["bm_w_scar"] = "Eagle Heavy",			
+					--Galant--
+					["bm_w_ching"] = "M1 Galant",
+					--M308
+					["bm_w_m14"] = "M308",
+					--G3
+					["bm_w_g3"] = "Gewehr-3",
+					["bm_wp_g3_b_sniper"] = "Macro Barrel",
+					["bm_wp_g3_b_short"] = "Micro Barrel",
+					--KS12
+					["bm_w_shak12"] = "KS-12 Urban",
+					--HCAR
+					["bm_w_hcar"] = "Akron HC",
+					
+					--Custom DMRs
+						--MCX Spear
+						["bm_w_mcx_spear"] = "Signature M7",
+						["bm_w_ngsierra"] = "Amicus 277",
+						--VSS
+						["bm_w_vss"] = "Viktoriya",
+						--G3 HK79
+						["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
+						--BO3 XR2
+						["bm_w_xr2"] = "XR-2",
+						--SIERRA .458
+						["bm_w_sierra458"] = "Sierra .458",
+				--[[ SNIPERS ]]
+					--MSR
+					["bm_w_msr"] = "Rattlesnake",	
+					--R700
+					["bm_w_r700"] = "Reinfeld Model 700",	
+					--QBU88
+					["bm_w_qbu88"] = "Káng Arms X1",
+					--Winchester 1874
+					["bm_w_winchester1874"] = "Repeater 1874",	
+					--TTI(TTY)
+					["bm_w_tti"] = "Tecci Tactical .308",
+					--Icky Vicky
+					["bm_w_victor"] = "SA North Star",
+					--Scunt
+					["bm_w_scout"] = "Pronghorn",
+					--AWP
+					["bm_w_awp"] = "Amaroq 900",
+					--WA2000
+					["bm_w_wa2000"] = "Lebensauger .300",
+					--Rangerhitter
+					["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
+					--Contender G2
+					["bm_w_contender"] = "Aran G2",
+					--Model 70
+					["bm_w_model70"] = "Platypus 70",
+					--SVD
+					["bm_w_siltstone"] = "Grom",
+					--Mosin--
+					["bm_w_mosin"] = "Nagant",
+					--Desert Fox
+					["bm_w_desertfox"] = "Desertfox",
+					--R93
+					["bm_w_r93"] = "R93",
+					--Thanatos--
+					["bm_w_m95"] = "Thanatos .50 BMG",
+					--Custom Snipers
+						--Guerilla
+						["bm_w_sgs"] = "Guerilla 542",	
+						--M107
+						["bm_w_m107cq"] = "Mors .50 BMG",
+						--M200
+						["bm_w_m200"] = "TF-141",
+						--Marlin 1894
+						["bm_w_m1894"] = "Mare's Leg",
+						--SPX Centerfire
+						["bm_w_moss464spx"] = "Mosconi SPX",
+						--Winchester 1894
+						["bm_w_winchester1894"] = "Repeater 1894",
+						--SVD
+						["bm_w_svd"] = "SV7",
+						["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
+						--L115
+						["bm_w_l115"] = "AIM 90M",
+				--[[ LAUNCHERS & BOWS ]]
+					--GL40		
+					["bm_w_gre_m79"] = "GL-40",
+					--3GL
+					["bm_w_ms3gl"] = "Basilisk 3GL",
+					--PIGLET/M32
+					["bm_w_m32"] = "Piglet",
+					--China Puff
+					["bm_w_china"] = "China Puff",
+					--Compact 40mm
+					["bm_w_slap"] = "Compact 40mm",
+					--Arbiter
+					["bm_w_arbiter"] = "Arbiter",
+					--RPG
+					["bm_w_rpg7"] = "HRL-7",
+					--COMMANDO 101/M202 FLASH
+					["bm_w_ray"] = "Commando 101 FLASH",
+				--[[ UNIVERSAL ATTACHMENTS ]]
+					["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
+			})
+		end
+
+		if weapon_names == 2 then
+			LocalizationManager:add_localized_strings({	
+
+				["bm_w_pl14"] = "WS-14",
+				["bm_w_g22c"] = "Chimano 22C",
+				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
+				["bm_w_x_1911"] = "Akimbo Operator IIs",
+				["bm_w_schakal"] = "AMP 45",
+				["bm_w_tecci"] = "SG 416C",
+				["bm_w_x_judge"] = "Akimbo Judges",
+				["bm_w_vhs"] = "HVH-2",
+				["bm_w_contraband"] = "SG 417D"
+	
+			})
+		elseif weapon_names == 3 then
+			LocalizationManager:add_localized_strings({	
+
+				--[[PISTOLS]]
+					--5/7
+					["bm_w_lemming"] = "FN Five-seveN",
+					--Gecko Pistol
+					["bm_w_maxim9"] = "SilencerCo Maxim 9",
+					["bm_w_x_maxim9"] = "Akimbo Maxim 9s",
+
+					--Stryk 18
+					["bm_w_glock_18c"] = "Glock 18C",
+					["bm_w_x_g18c"] = "Akimbo Glock 18Cs",
+					["bm_wp_g18c_co_comp_2"] = "SJC Compensator 9mm",
+					--CZ
+					["bm_w_czech"] = "CZ AccuShadow 2",
+					["bm_w_x_czech"] = "Akimbo AccuShadow 2s",
+
+					--APS
+					["bm_w_stech"] = "Stechkin APS",
+					["bm_w_x_stech"] = "Akimbo Stechkins",
+					--Gruber
+					["bm_w_ppk"] = "Walther PPK/S",
+					["bm_wp_pis_ppk_g_laser"] = "Crimson Trace Laser Grip",
+					["bm_wp_pis_ppk_b_long"] = "PPKS Slide",
+					--Chimano 88
+					["bm_w_glock_17"] = "Glock 17",
+					["bm_w_x_g17"] = "Akimbo Glock 17s",
+					--Glock 26
+					["bm_wp_pis_g26"] = "Glock 26",
+					["bm_w_jowi"] = "Akimbo Glock 26s",
+					["bm_wp_g26_body_salient"] = "Stipled Tan Frame",
+					["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
+					["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
+					["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
+					--Luger
+					["bm_w_breech"] = "Luger P08",
+					--Bernetti 9
+					["bm_w_b92fs"] = "Beretta 92FS",
+					["bm_w_x_b92fs"] = "Akimbo 92FSs",
+					["bm_wp_beretta_co_co1"] = "SGS Compensator", --Original name was a reference to the movie "The Professional"
+					["bm_wp_beretta_co_co2"] = "Competition Compensator", --Seems to actually be based off of the Shorty USA Beretta 92 Spring Gun, unsurprising considering some of the guns models 	were based off of airsoft counterparts
+					["bm_wp_beretta_sl_brigadier"] = "Brigadier Elite Slide",
+					["bm_wp_beretta_g_ergo"] = "Wood Ergo Grips",
+					["bm_wp_beretta_m_extended"] = "30rnd 92FS Magazine",
+					--PL14
+					["bm_w_pl14"] = "Kalashnikov Concern PL-14 \"Lebedev\"",
+					["bm_wp_pl14_m_extended"] = "17rnd PL-14 Magazine",
+					["bm_wp_pl14_b_comp"] = "PL-14 Compensator",
+					--Wick
+					["bm_w_packrat"] = "H&K P30L",
+					["bm_w_x_packrat"] = "Akimbo P30Ls",
+					--Hudson
+					["bm_w_holt"] = "Hudson H9",
+					["bm_w_x_holt"] = "Akimbo H9s",
+					--93R
+					["bm_w_beer"] = "Beretta 93R",
+
+					--LEO-40
+					["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
+					["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
+					["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
+					["bm_wp_hs2000_sl_long"] = "Custom Slide",
+					--Signature 40
+					["bm_w_p226"] = "SIG P226R",
+					["bm_w_x_p226"] = "Akimbo P226Rs",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
+					["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
+					["bm_wp_p226_b_long"] = "Brushed Long Slide",
+					["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
+					--Chimano Custom
+					["bm_w_g22c"] = "Glock 22C",
+					["bm_w_x_g22c"] = "Akimbo Glock 22Cs",
+					["bm_wp_g22c_b_long"] = "Glock 35 Compensated Slide",
+					--Bang...
+					["bm_w_sparrow"] = "IWI Jericho 941 RPL",
+					["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
+					["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
+					["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
+					
+					--SUB2000
+					["bm_w_sub2000"] = "Kel-Tec SUB-2000",
+					["bm_wp_sub2000_fg_gen2"] = "Gen2 Handguard",
+					["bm_wp_sub2000_fg_railed"] = "Red Lion R6 Handguard",
+					["bm_wp_sub2000_fg_suppressed"] = "Quad Rail Handguard w/Suppressor",
+					--C96
+					["bm_w_c96"] = "Mauser C96",
+					["bm_wp_c96_b_long"] = "Carbine Barrel",
+					["bm_wp_c96_nozzle"] = "DL-44 Muzzle",
+					["bm_wp_c96_sight"] = "Schmidt & Bender 1-8x24 PM Short Dot",
+					["bm_wp_c96_m_extended"] = "20rnd C96 Magazine",
+					--Crosskill
+					["bm_w_colt_1911"] = "Springfield Armory 1911 Operator",
+					["bm_w_x_1911"] = "Akimbo 1911 Operators",
+					["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
+					["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
+					["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
+					["bm_wp_1911_g_bling"] = "Wood Grips",
+					["bm_wp_1911_g_engraved"] = "Engraved 1911 Grips",
+					["bm_wp_1911_b_long"] = "Compensated Long Slide",
+					["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
+					["bm_wp_1911_m_extended"] = "12rnd SA 1911 Magazine",
+					--Crosskill Chunky
+					["bm_w_m1911"] = "Colt 1911A1", --Not entirely but its the closest thing
+					["bm_w_x_m1911"] = "Akimbo 1911A1s",
+					--Crosskill Guard
+					["bm_w_shrew"] = "Colt Defender",
+					["bm_w_x_shrew"] = "Akimbo Defenders",
+					--Interceptor
+					["bm_w_usp"] = "H&K USP Tactical",
+					["bm_w_x_usp"] = "Akimbo USP Tacticals",
+					["bm_wp_usp_co_comp_2"] = "SJC Compensator .45",
+					["bm_wp_pis_usp_b_expert"] = "USP Expert Slide",
+					["bm_wp_pis_usp_b_match"] = "USP Match Slide",
+					["bm_wp_pis_usp_m_extended"] = "20rnd USP Magazine",
+					--Anubis
+					["bm_w_socom"] = "H&K Mk.23",
+					["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
+					["bm_w_x_socom"] = "Akimbo Mk.23s",
+					--TT-33	
+					["bm_w_type54"] = "Tokarev TT-33",
+					["bm_w_x_type54"] = "Akimbo TT-33s",
+					
+					--Kahn .357
+					["bm_w_korth"] = "Korth NXA",
+					["bm_w_x_korth"] = "Akimbo Korth NXAs",
+					--Mateba
+					["bm_w_mateba"] = "Mateba 2006M",
+					--Bronco
+					["bm_w_raging_bull"] = "Taurus Raging Bull",
+					["bm_w_x_rage"] = "Akimbo Raging Bulls",
+					["bm_wp_pis_rage_extra"] = "Raging Bull Scope Mount",
+					["bm_wp_rage_b_comp1"] = "S&W V-Compensator",
+					["bm_wp_rage_b_short"] = "Snub Nose Barrel",
+					["bm_wp_rage_b_comp2"] = "S&W Muzzle Compensator",
+					["bm_wp_rage_b_long"] = "Long Barrel",
+					--Deagle
+					["bm_w_deagle"] = "MRI Desert Eagle Mark XIX", --"IS THAT A M16?"
+					["bm_w_x_deagle"] = "Akimbo Desert Eagles",
+					["bm_wp_deagle_co_short"] = "Desert Eagle Muzzle Brake", --Original name was a reference to the 1990s film "La Femme Nikita" only for the gun's appearance in it, otherwise this is based on the real "DE50MB" Deagle muzzle brake
+					["bm_wp_deagle_co_long"] = "Custom Barrel Weight", --Attachment is a reference to the Boondock Saints
+					["bm_wp_deagle_g_ergo"] = "Pachmayr Grip", --Doesn't exist but it's the same model from the 1911 but enlarged so w/e
+					["bm_wp_deagle_g_bling"] = "Pearl Grips",
+					["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
+					["bm_wp_deagle_b_long"] = "10\" Long Barrel",
+					--SAA
+					["bm_w_peacemaker"] = "Colt Single Action Army",
+					["bm_wp_peacemaker_barrel_long"] = "12\" Barrel",
+					["bm_wp_peacemaker_barrel_short"] = "5.5\" Barrel",
+					["bm_wp_peacemaker_handle_bling"] = "Engraved SAA Grips",
+					["bm_wp_peacemaker_rifle_stock"] = "Skeletal Stock",
+					--Shatter's Fury
+					["bm_w_shatters_fury"] = "S&W Model 500",
+
+					--MODS
+					["bm_w_papa320"] = "SIG P320",
+					["bm_w_coltds"] = "Colt Detective",
+					["bm_w_amt"] = ".44 Auto Mag",
+					["bm_w_p99"] = "Walther P99",
+					["bm_w_hpb"] = "Browning Hi-Power",
+
+				--[[SMGs]]
+					--P90
+					["bm_w_p90"] = "FN P90 TR",
+					["bm_wp_p90_b_long"] = "PS90 Barrel",
+					["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
+					--MP7
+					["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
+
+					--CMP
+					["bm_w_mp9"] = "B&T TP9SF",
+					["bm_w_x_mp9"] = "Akimbo TP9SFs",
+					["bm_wp_mp9_m_extended"] = "30rnd TP9 Magazine",
+					["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
+					["bm_wp_mp9_b_suppressed"] = "B&T MP9 QD Suppressor",
+					--Micro Uzi
+					["bm_w_baka"] = "IWI Micro Uzi",
+					["bm_w_x_baka"] = "Akimbo Micro Uzis",
+					--T3K
+					["bm_w_tec9"] = "Intratec TEC-9",
+					["bm_wp_tec9_b_standard"] = "AB-10 Barrel",
+					["bm_wp_tec9_ns_ext"] = "Pseudo Barrel Extension",
+					["bm_wp_tec9_s_unfolded"] = "Interdynamic MP-9 Wire Stock",
+					["bm_wp_tec9_m_extended"] = "50rnd TEC-9 Magazine",
+					--Jacket's Piece
+					["bm_w_cobray"] = "Cobray M11/9",
+					["bm_wp_cobray_ns_barrelext"] = "MAC Barrel Extension",
+					--SR-2M
+					["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
+					["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+					--Miyaka 9
+					["bm_w_pm9"] = "Minebea PM-9",
+					--FMG9
+					["bm_w_fmg9"] = "Magpul FDC-9",
+
+					--Cobra
+					["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
+					["bm_w_x_scorpion"] = "Akimbo Skorpions",
+					["bm_wp_scorpion_m_extended"] = "Skorpion Dual Magazines",
+					["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
+					--MP5
+					["bm_w_mp5"] = "H&K MP5A2",
+					["bm_w_x_mp5"] = "Akimbo MP5A2s",
+					["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
+					["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
+					["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
+					["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
+					["bm_wp_mp5_s_ring"] = "No Stock",
+					["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
+					["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
+					--MPX
+					["bm_w_shepheard"] = "SIG MPX", 
+					--Vityaz
+					["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
+					--Bizon
+					["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
+
+					--Uzi
+					["bm_w_uzi"] = "IMI Uzi",
+					["bm_w_x_uzi"] = "Akimbo Uzi",
+					["bm_wp_uzi_s_solid"] = "Wooden Stock",
+					["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
+					["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
+					--Pachette
+					["bm_w_sterling"] = "Sterling L2A1",
+					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
+					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+					["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
+					["bm_wp_sterling_m_long"] = "34rnd L2A1 Magazine",
+					--
+					["bm_w_mac10"] = "Ingram M10",
+					["bm_w_x_mac10"] = "Akimbo M10s",
+					["bm_wp_mac10_m_extended"] = "30rnd M10 Magazine",
+					["bm_wp_mac10_body_ris"] = "MAC Rail System", --I'm getting nothing but airsoft results so generic name
+					["bm_wp_mac10_s_skel"] = "Low Mount Skeleton Stock",
+					--Thompson
+					["bm_w_m1928"] = "Auto-Ordnance M1928",
+					["bm_wp_m1928_b_short"] = "Short Barrel",
+					["bm_wp_m1928_fg_discrete"] = "Polymer Foregrip",
+					["bm_wp_m1928_g_discrete"] = "Polymer Pistol Grip",
+					["bm_wp_m1928_s_discrete"] = "Polymer Stock",
+					--MP 40
+					["bm_w_erma"] = "Erma MP 40",
+					--UMP
+					["bm_w_schakal"] = "H&K UMP-45",
+					["bm_wp_schakal_b_civil"] = "USC Barrel",
+					["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
+					["bm_wp_schakal_m_short"] = "15rnd UMP Magazine",
+					["bm_wp_schakal_m_long"] = "45rnd UMP Magazine",
+					--M45
+					["bm_w_m45"] = "Carl Gustaf Kpist M/45",
+					["bm_wp_smg_m45_m_extended"] = "50rnd M/45 Magazine",
+					--Vector
+					["bm_w_polymer"] = "KRISS Vector SMG",
+					["bm_wp_polymer_barrel_precision"] = "CRB Barrel w/Shroud",
+					["bm_wp_polymer_ns_silencer"] = "Defiance HPS 4GSK Suppressor",
+	
+				--[[MGs]]
+					--416C
+					["bm_w_tecci"] = "H&K HK416-C",
+					["bm_wp_tecci_b_long"] = "Long Barrel",
+					["bm_wp_tecci_ns_special"] = "JPE Recoil Eliminator Muzzle Brake",
+					--Shuno what it is
+					["bm_w_shuno"] = "Empty Shell XM556 Microgun",
+
+					--SAW
+					["bm_w_m249"] = "FN M249 Para",
+					["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
+					["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
+
+					--RPK
+					["bm_w_rpk"] = "Kalashnikov Concern RPK",
+					["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
+					["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
+
+					--HK21
+					["bm_w_hk21"] = "H&K HK21E",
+					["bm_wp_hk21_fg_short"] = "Short HK21 Handguard",
+					["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
+					--MG42
+					["bm_w_mg42"] = "Mauser Maschinengewehr 42",
+					["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
+					["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
+					--Versteckt-51/HK51B
+					["bm_w_hk51b"] = "Vollmer HK51-B",
+
+					--M240
+					["bm_w_par"] = "FN M240B",
+					["bm_wp_par_s_plastic"] = "M240B Stock",
+
+					--M134
+					["bm_w_m134"] = "General Electric M134",
+					["bm_wp_m134_barrel_extreme"] = "Anti-Air Barrel",
+					["bm_wp_m134_barrel_short"] = "Compact Barrel",
+
+				--[[SHOTGUNS]]
+					--Saiga
+					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
+					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
+					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+					--AA12
+					["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
+					["bm_wp_aa12_barrel_long"] = "Standard AA-12 Barrel",
+					["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
+					--Six12
+					["bm_w_rota"] = "Crye Precision SIX12",
+					--M1014
+					["bm_w_benelli"] = "Benelli M4 Super 90",
+					["bm_wp_ben_b_long"] = "Long M4 Barrel",
+					["bm_wp_ben_b_short"] = "NFA M4 Barrel",
+					["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
+					["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
+					--SPAS-12
+					["bm_w_spas12"] = "Franchi SPAS-12",
+					["bm_wp_spas12_b_long"] = "8rnd Tube",
+					--Striker
+					["bm_w_striker"] = "Sentinel Arms Striker",
+					--VD-12
+					["bm_w_sko12"] = "Standard Manufacturing SKO-12",
+					--Argos III
+					["bm_w_ultima"] = "Baikal MP-155 Ultima",
+
+					--870
+					["bm_w_r870"] = "Remington Model 870",
+					["bm_wp_r870_m_extended"] = "2rnd Tube Extension",
+					["bm_wp_r870_fg_wood"] = "Wooden Pump",
+					["bm_wp_r870_s_nostock"] = "No Stock",
+					["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
+					["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
+					--Loco
+					["bm_w_serbu"] = "Short Remington Model 870",
+					["bm_wp_shorty_m_extended_short"] = "1rnd Tube Extension",
+					["bm_wp_r870_s_solid"] = "Fixed Stock",
+					["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
+					["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
+					--KSG
+					["bm_w_ksg"] = "Kel-Tec KSG",
+					["bm_wp_ksg_b_long"] = "Long Barrel w/2x 8-Shot Tubes",
+					["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
+					--Judge
+					["bm_w_judge"] = "Taurus 4510PLYFS",
+					--M37
+					["bm_w_m37"] = "Ithaca Model 37",
+					--NO SHOTGUNS IN THE TRENCHES
+					["bm_w_m1897"] = "Winchester Model 1897",
+					--M590
+					["bm_w_m590"] = "Mossberg 590",
+
+					--Mosconi
+					["bm_w_huntsman"] = "Mosconi Coach Gun",
+					["bm_wp_huntsman_b_short"] = "Sawn-Off Barrel",
+					["bm_wp_huntsman_s_short"] = "Sawn-Off Stock",
+					--725
+					["bm_w_b682"] = "Beretta 682",
+					["bm_wp_b682_b_short"] = "Sawn-Off Barrel",
+					["bm_wp_b682_s_short"] = "Sawn-Off Stock",
+					["bm_wp_b682_s_ammopouch"] = "Ammo Pouch",
+					--1887
+					["bm_w_boot"] = "Winchester Model 1887",
+					["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
+
+				--[[ARs]]
+					--FAMAS
+					["bm_w_famas"] = "Nexter FAMAS F1",
+					["bm_wp_famas_b_sniper"] = "G2 Sniper Barrel",
+					["bm_wp_famas_b_short"] = "G2 Commando Barrel",
+					["bm_wp_famas_g_retro"] = "G1 Pistol Grip",
+					--VHS
+					["bm_w_vhs"] = "HS Produkt VHS-2",
+					["bm_wp_vhs_b_short"] = "Short Barrel",
+					["bm_wp_vhs_b_sniper"] = "Sniper Barrel",
+					["bm_wp_vhs_b_silenced"] = "Suppressed Barrel",
+					--JP36
+					["bm_w_g36"] = "H&K G36K",
+					["bm_wp_g36_fg_c"] = "G36c Handguard",
+					["bm_wp_g36_fg_ksk"] = "Knights Armament Co. RAS Handguard",
+					["bm_wp_g36_s_kv"] = "G36KV Stock",
+					["bm_wp_g36_s_sl8"] = "SL8 Stock",
+					--S552
+					["bm_w_s552"] = "SIG SG 552-2",
+					["bm_wp_ass_s552_fg_standard_green"] = "OD Green Handguard",
+					["bm_wp_ass_s552_g_standard_green"] = "OD Green Pistol Grip",
+					["bm_wp_ass_s552_s_standard_green"] = "OD Green Stock",
+					["bm_wp_ass_s552_fg_railed"] = "SIG Railed Handguard",
+					["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
+					--AMCAR
+					["bm_w_amcar"] = "Colt M733 Commando",
+					--BABBY AR
+					["bm_w_olympic"] = "Olympic Arms K23B",
+
+					--AUG
+					["bm_w_aug"] = "Steyr AUG A2",
+					["bm_wp_aug_fg_a3"] = "A3 Rail",
+					["bm_wp_aug_body_f90"] = "Thales F90 Kit",
+					--Boatgun
+					["bm_w_corgi"] = "FN F2000 Tactical TR",
+					--AK12
+					["bm_w_flint"] = "Kalashnikov Concern AK-12",
+					--Ak5
+					 ["bm_w_ak5"] = "Bofors Ak 5",
+					 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
+					 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
+					 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
+					 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+					--CAR-4
+					["bm_w_m4"] = "Colt M4A1",
+					--AK74
+					["bm_w_ak74"] = "Kalashnikov Concern AKS-74",
+					--805
+					["bm_w_hajk"] = "CZ 805 BREN",
+					["bm_wp_hajk_b_short"] = "A2 Barrel",
+
+					--M16
+					["bm_w_m16"] = "Colt M16A4",
+					["bm_wp_m16_fg_railed"] = "Daniel Defense Lite Rail",
+					["bm_wp_m16_fg_vietnam"] = "M16A1 Handguard",
+					--["bm_wp_m16_s_solid"] = "M16 Stock",
+					--L85
+					["bm_w_l85a2"] = "BAE L85A2",
+					["bm_wp_l85a2_b_long"] = "Long Barrel",
+					["bm_wp_l85a2_b_short"] = "Short Barrel",
+					["bm_wp_l85a2_g_worn"] = "Taped Pistol Grip",
+					["bm_wp_l85a2_fg_short"] = "Daniel Defense L85 Quad Rail",
+					--Krink
+					["bm_w_akmsu"] = "AKMSU",
+					["bm_w_x_akmsu"] = "Akimbo AKMSUs",
+					["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
+					--AKM
+					["bm_w_akm"] = "Kalashnikov Concern AKMS",
+					["bm_w_akm_gold"] = "Gold Plated AKMS",
+					--Nipples
+					["bm_w_tkb"] = "Tula Arms TKB-059",
+					--Groza
+					["bm_w_groza"] = "TsKIB SOO Groza-1",
+
+				--[[DMRs]]
+					--417
+					["bm_w_contraband"] = "H&K HK417 w/ M203",
+					--SCAR
+					["bm_w_scar"] = "FN Mk.17",
+					["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
+					["bm_wp_scar_s_sniper"] = "Mk.20 Stock",
+					--FAL
+					["bm_w_fal"] = "FN FAL",
+					["bm_wp_fal_body_standard"] = "DSA SA58 Handguard",
+					["bm_wp_fal_fg_wood"] = "Wooden FAL Handguard",
+					["bm_wp_fal_fg_04"] = "DSA Freefloat Handguard",
+					["bm_wp_fal_fg_03"] = "IWI Romat Handguard",
+					["bm_wp_fal_g_01"] = "Tapco FAL Pistol Grip",
+					["bm_wp_fal_m_01"] = "20rnd FAL Magazine",
+					["bm_wp_fal_s_01"] = "Sidefolding FAL Stock",
+					["bm_wp_fal_s_03"] = "Magpul FAL PRS Stock",
+					--Galil
+					["bm_w_galil"] = "IWI Galil ARM",
+					["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
+					["bm_wp_galil_fg_sar"] = "IMI Galil SAR Handguard",
+					["bm_wp_galil_fg_mar"] = "IWI Galil MAR Handguard",
+					["bm_wp_galil_fg_fab"] = "FAB Defense VFR GA Handguard",
+					["bm_wp_galil_g_sniper"] = "IMI Galatz Pistol Grip",
+					["bm_wp_galil_s_sniper"] = "IMI Galatz Wooden Stock",
+					["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
+					["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
+					["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
+					--AS VAL
+					["bm_w_asval"] = "Tula Arms AS \"Val\"",
+					["bm_wp_asval_b_proto"] = "Prototype Barrel",
+					["bm_wp_asval_s_solid"] = "VSS Stock",
+
+					--Raifu
+					["bm_w_g3"] = "H&K G3A3",
+					["bm_wp_g3_b_short"] = "Short Barrel",
+					["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
+					["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
+					["bm_wp_g3_fg_railed"] = "FAB Defense G3-RS Handguard",
+					["bm_wp_g3_fg_retro"] = "Wooden Slimline Handguard",
+					["bm_wp_g3_fg_retro_plastic"] = "Slimline Handguard",
+					["bm_wp_g3_g_retro"] = "G3 Ergo Grip",
+					["bm_wp_g3_g_sniper"] = "PSG-1 Wooden Pistol Grip",
+					["bm_wp_g3_s_sniper"] = "PSG-1 Stock",
+					--M308
+					["bm_w_m14"] = "Springfield Armory M14 DMR",
+					["bm_wp_m14_body_ebr"] = "Sage EBR Chassis",
+					["bm_wp_m14_body_jae"] = "JAE 100 G3 Stock",
+					["bm_wp_upg_o_m14_scopemount"] = "Sun Optics USA M14/M1A Scope Mount",
+					--Shak12
+					["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
+					--HCAR
+					["bm_w_hcar"] = "Ohio Ordnance HCAR",
+
+				--[[SNIPERS]]
+					--Titty
+					["bm_w_tti"] = "Taran Tactical TR-1 AR-10",
+					--QBU88
+					["bm_w_qbu88"] = "Norinco QBU-88",
+					--Icky Vicky
+					["bm_w_victor"] = "SAINT Victor AR-10",
+
+					--R700
+					["bm_w_r700"] = "Remington Model 700P",
+					--Repeater
+					["bm_w_winchester1874"] = "Winchester Model 1873",
+					["bm_wp_winchester_b_long"] = "Long Barrel",
+					["bm_wp_winchester_b_suppressed"] = "Suppressor",
+					--MSR
+					["bm_w_msr"] = "Remington MSR",
+					["bm_wp_snp_msr_ns_suppressor"] = "AAC TiTAN-QD Suppressor",
+					["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
+					--Scunt
+					["bm_w_scout"] = "Steyr Scout",
+
+					--Drako
+					["bm_w_siltstone"] = "Kalashnikov Concern SVD",
+					--WA2000
+					["bm_w_wa2000"] = "Walther WA2000",
+					["bm_wp_wa2000_g_walnut"] = "Walnut Furniture",
+					["bm_wp_wa2000_g_stealth"] = "Black Furniture",
+					["bm_wp_wa2000_g_light"] = "Lightweight Furniture",
+
+					--SBL
+					["bm_w_sbl"] = "Marlin Model 1895SBL",
+					--
+					["bm_w_contender"] = "Thompson Center G2 Contender",
+					--Moist Nugget
+					["bm_w_mosin"] = "Mosin Nagant M91/30",
+					["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
+					["bm_wp_mosin_body_conceal"] = "Black Polymer Stock",
+					--Model 70
+					["bm_w_model70"] = "Winchester Model 70",
+					--R93
+					["bm_w_r93"] = "Blaser R93 Tactical 2",
+					["bm_wp_r93_b_suppressed"] = "SilencerCo Harvester 338 Suppressor",
+					["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
+					--SRS
+					["bm_w_desertfox"] = "DTA Stealth Recon Scout",
+
+					--M95
+					["bm_w_m95"] = "Barrett M95",
+					 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
+
+				--[[SPECIALS]]
+					--Wat is flash haow do u do it? haow 2 flash cartoonz? ADOEB FLASH... adoeb falsh... CS... 6.... a dobe.... a dobe
+					["bm_w_ray"] = "M202 FLASH",
+					["bm_w_rpg7"] = "Bazalt RPG-7",
+
+					["bm_w_arblast"] = "Arbalest",
+					["bm_w_frankish"] = "Frankish Bow",
+					["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
+					["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
+					["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
+
+				--Attachments
+
+					--Gadgets
+						["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR1",
+						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
+						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
+						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
+						["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
+						["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X",
+
+					--Muzzle Devices
+						["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
+
+						["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
+						["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
+						["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
+						["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
+						["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
+						["bm_wp_upg_ns_pis_jungle"] = "Big Boss Suppressor",
+						["bm_wp_upg_ns_ass_filter"] = "Oil Filter",
+	
+						["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
+						["bm_wp_upg_ns_sho_salvo_large"] = "SilencerCo Salvo 12 Suppressor",
+
+						["bm_wp_upg_ns_ass_smg_stubby"] = "VFC Stinger Flash Hider",
+						["bm_wp_upg_ns_ass_smg_tank"] = "Tank Compensator",
+						["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
+						["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
+						["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
+						["bm_wp_upg_ass_ns_surefire"] = "SureFire MBK Muzzle Brake",
+
+						["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
+						["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
+						["bm_wp_upg_ns_ass_smg_large"] = "Large Suppressor", --Generic name just to remove any nickname-y names
+
+					--Glock Parts
+						["bm_wp_g18c_m_mag_33rnd"] = "Extended Glock Magazine",
+						["bm_wp_g18c_g_ergo"] = "Hogue Handall Grip Sleeve",
+						["bm_wp_pis_g_laser"] = "Crimson Trace Laser Grip",
+						["bm_wp_pis_g_beavertail"] = "Beavertail Grip Extension",
+
+					--AK parts
+						["bm_wp_upg_ak_fg_krebs"] = "Krebs UFM Keymod System Handguard",
+						["bm_wp_upg_ak_fg_trax"] = "Strike Industries TRAX Handguard",
+						["bm_wp_upg_ak_g_rk3"] = "ZenitCo PK-3 Pistol Grip",
+						["bm_wp_upg_ak_fg_zenit"] = "ZenitCo Handguard",
+						["bm_wp_upg_o_ak_scopemount"] = "K-VAR KV-04S Optic Mount",
+						["bm_wp_upg_ak_m_uspalm"] = "30rnd US PALM AK30 Magazine",
+						["bm_wp_upg_ns_ass_pbs1"] = "PBS-1 Suppressor",
+						["bm_wp_upg_ass_ak_b_zastava"] = "Zastava M76 Barrel",
+						["bm_wp_upg_ak_b_draco"] = "Draco Pistol Barrel",
+						["bm_wp_upg_ak_b_ak105"] = "AK-105 Barrel",
+						["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
+						["bm_wp_upg_ak_m_quad"] = "60rnd KC Magazine",
+						["bm_wp_ak_m_drum"] = "75rnd AK Drum",
+						["bm_wp_ak_fg_combo2"] = "Ultimak AK Optic Mount",
+						["bm_wp_ak_fg_combo3"] = "Ultimak AK Modular Rail Forend System",
+						["bm_wp_upg_ak_fg_tapco"] = "Tapco Intrafuse Handguard",
+						["bm_wp_upg_fg_midwest"] = "Midwest Industries Quad Rail",
+						["bm_wp_upg_ak_g_hgrip"] = "Hogue OverMolded AK Pistol Grip",
+						["bm_wp_upg_ak_g_pgrip"] = "US PALM Enhanced Pistol Grip",
+						["bm_wp_ak_s_folding"] = "Underfolding AK Stock",
+						["bm_wp_ak_s_skfoldable"] = "Sidefolding AK Stock",
+						["bm_wp_ak_s_psl"] = "PSL Thumbhole Stock",
+
+					--Sights
+						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
+						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
+	
+						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
+						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
+						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
+						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
+	
+						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
+						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
+						["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
+	
+						["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
+						["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
+	
+						["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
+						["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
+	
+						--"Schmidt & Bender 1-8x24 PM Short Dot"
+						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
+						["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
+	
+						["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
+						["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",
+						["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
+	
+						["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
+	
+						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
+
+					--Vertical Grips
+						["bm_wp_upg_vg_ass_smg_verticalgrip"] = "Knights Armament Co. VFG",
+						["bm_wp_upg_vg_ass_smg_stubby"] = "Tango Down QD Stubby VFG",
+						["bm_wp_upg_vg_ass_smg_afg"] = "Magpul AFG 2",
+
+					--STANAG compatible mags
+						["bm_wp_m4_m_straight"] = "20rnd STANAG Magazine",
+						["bm_wp_m4_uupg_m_std"] = "30rnd STANAG Magazine",
+						["bm_wp_m4_m_pmag"] = "30rnd Magpul PMAG GEN1 Magazine",
+						["bm_wp_l85a2_m_emag"] = "30rnd Magpul EMAG Magazine",
+						["bm_wp_upg_m4_m_quad"] = "60rnd SureFire Magazine",
+						["bm_wp_m4_m_drum"] = "100rnd Beta-C Dual Drum",
+						["bm_wp_upg_m4_m_l5"] = "30rnd Lancer Systems L5 AW Magazine",
+
+					--AR15 parts
+						["bm_wp_m4_upper_reciever_edge"] = "VLTOR Upper Receiver",
+						["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
+						["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
+						["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
+						["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel", 
+						["bm_wp_upg_fg_jp"] = "JPE Modular Handguard",
+						["bm_wp_m4_uupg_fg_lr300"] = "LR300 Handguard",
+						["bm_wp_upg_fg_smr"] = "Geissele Super Modular Rail",
+						["bm_wp_upg_smg_olympic_fg_lr300"] = "Short LR300 Handguard",
+						["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
+						["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",
+						["bm_wp_upg_ass_m4_fg_lvoa"] = "War Sport LVOA Handguard",
+						["bm_wp_upg_ass_m4_b_beowulf"] = "Heavy Barrel",
+						["bm_wp_m4_s_standard"] = "Bushmaster LE Stock",
+						["bm_wp_m4_s_pts"] = "Magpul PTS Stock",
+						["bm_wp_m4_uupg_s_fold"] = "LR300 Folding Stock",
+						["bm_wp_upg_m4_s_crane"] = "NSWC Crane Stock",
+						["bm_wp_upg_m4_s_mk46"] = "NSWC Crane Stock w/Cheek Pad",
+						["bm_wp_upg_m4_s_ubr"] = "Magpul UBR Stock",
+						["bm_wp_m4_g_ergo"] = "Command Arms UPG16 Pistol Grip",
+						["bm_wp_m4_g_sniper"] = "PSG Style Pistol Grip",
+						["bm_wp_upg_m4_g_hgrip"] = "Houge Rubber Ergo Grip",
+						["bm_wp_upg_m4_g_mgrip"] = "Magpul MOE-K Pistol Grip",
+
+					["bm_wp_upg_lmg_lionbipod"] = "Bipod",
+
+				--[[MELEE]]
+					["bm_melee_kabar"] = "USMC KA-BAR",
+					["bm_melee_kampfmesser"] = "KM 2000",
+					["bm_melee_gerber"] = "Gerber DMF Folder",
+					["bm_melee_tomahawk"] = "Gerber Downrange Tomahawk",
+					["bm_melee_becker"] = "KA-BAR Becker Tac Tool",
+					["bm_melee_baton"] = "ASP Friction Loc Baton",
+					["bm_melee_shovel"] = "K.L.A.S.",
+					["bm_melee_baseballbat"] = "\"Lucille\"",
+					["bm_melee_bayonet"] = "AKM Type II Bayonet",
+					["bm_melee_bullseye"] = "Smith & Wesson Bullseye Hatchet",	
+					["bm_melee_x46"] = "Robson Knives X46 Utility Survival Knife",
+					["bm_melee_dingdong"] = "Gerber Ding Dong Breaching Tool",
+					["bm_melee_cleaver"] = "Cleaver",
+					["bm_melee_kabar_tanto"] = "KA-BAR Tanto",
+					["bm_melee_chef"] = "Chef Knife",
+					["bm_melee_fairbair"] = "Fairbairn-Sykes Fighting Knife",
+					["bm_melee_model24"] = "Model 24 Stielhandgranate",
+					["bm_melee_hammer"] = "Jacket's Hammer",
+					["bm_melee_meat_cleaver"] = "Dragan's Cleaver",
+					["bm_melee_poker"] = "Firewood Poker",
+					["bm_melee_tenderizer"] = "Meat Tenderizer",
+					["bm_melee_fork"] = "BBQ Fork",
+					["bm_melee_mining_pick"] = "Pickaxe",
+					["bm_melee_bowie"] = "Bowie Knife",
+					["bm_melee_branding_iron"] = "Branding Iron",
+					["bm_melee_oldbaton"] = "Nightstick",
+					["bm_melee_detector"] = "Garrett Handheld Metal Detector",
+					["bm_melee_taser"] = "ZAP Stun Baton",
+					["bm_melee_cqc"] = "Kunai",
+					["bm_melee_twins"] = "Sais",
+					["bm_melee_tiger"] = "Tekko-Kagi",
+					["bm_melee_pugio"] = "Extrema Ratio Pugio SE",
+					["bm_melee_gator"] = "Gerber Gator Machete Pro",
+					["bm_melee_scoutknife"] = "Morakniv Classic Scout 39",
+					["bm_melee_shawn"] = "Antique Sheep Shears",
+					["bm_melee_stick"] = "Shepherd's Crook",
+					["bm_melee_nin"] = "Paslode IM90i Nailgun",
+					["bm_melee_ballistic"] = "Ballistic Knives",
+					["bm_melee_wing"] = "Benchmade Model 42 Balisong",
+					["bm_melee_cs"] = "Homelite Super 2 Chainsaw",
+					["bm_melee_brick"] = "Motorola DynaTAC 8000X",
+					["bm_melee_sword"] = "Pencil",
+					["bm_melee_oxide"] = "UVSR Taiga-1",
+					["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
+					["bm_melee_twins"] = "Shureido Sai",
+
+				--[[THROWABLES]]
+					["bm_grenade_frag"] = "M67 Fragmentation Grenade",
+					["bm_grenade_frag_com"] = "M67 Fragmentation Grenade - OVERKILL Model",
+					["bm_wpn_prj_hur"] = "Kit Rae Aircobra Throwing Axe",
+					["bm_wpn_prj_target"] = "Blazing Arrow Ninja Throwing Knife",
+			})
+		end
+	end	
+
 	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
-		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
-		--[[ 
-			WepNames Options
-			1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
-			2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
-			3 = real names (i.e. SA 1911 Operator, HK 416c)
-		]]
-		if weapon_names then
-			if weapon_names == 2 then
-				LocalizationManager:add_localized_strings({	
-
-					["bm_w_pl14"] = "WS-14",
-					["bm_w_g22c"] = "Chimano 22C",
-					["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
-					["bm_w_x_1911"] = "Akimbo Operator IIs",
-					["bm_w_schakal"] = "AMP 45",
-					["bm_w_tecci"] = "SG 416C",
-					["bm_w_x_judge"] = "Akimbo Judges",
-					["bm_w_vhs"] = "HVH-2",
-					["bm_w_contraband"] = "SG 417D"
-	
-				})
-			elseif weapon_names == 3 then
-				LocalizationManager:add_localized_strings({	
-
-					--[[PISTOLS]]
-						--5/7
-						["bm_w_lemming"] = "FN Five-seveN",
-						--Gecko Pistol
-						["bm_w_maxim9"] = "SilencerCo Maxim 9",
-						["bm_w_x_maxim9"] = "Akimbo Maxim 9s",
-
-						--Stryk 18
-						["bm_w_glock_18c"] = "Glock 18C",
-						["bm_w_x_g18c"] = "Akimbo Glock 18Cs",
-						["bm_wp_g18c_co_comp_2"] = "SJC Compensator 9mm",
-						--CZ
-						["bm_w_czech"] = "CZ AccuShadow 2",
-						["bm_w_x_czech"] = "Akimbo AccuShadow 2s",
-
-						--APS
-						["bm_w_stech"] = "Stechkin APS",
-						["bm_w_x_stech"] = "Akimbo Stechkins",
-						--Gruber
-						["bm_w_ppk"] = "Walther PPK/S",
-						["bm_wp_pis_ppk_g_laser"] = "Crimson Trace Laser Grip",
-						["bm_wp_pis_ppk_b_long"] = "PPKS Slide",
-						--Chimano 88
-						["bm_w_glock_17"] = "Glock 17",
-						["bm_w_x_g17"] = "Akimbo Glock 17s",
-						--Glock 26
-						["bm_wp_pis_g26"] = "Glock 26",
-						["bm_w_jowi"] = "Akimbo Glock 26s",
-						["bm_wp_g26_body_salient"] = "Stipled Tan Frame",
-						["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
-						["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
-						["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
-						--Luger
-						["bm_w_breech"] = "Luger P08",
-						--Bernetti 9
-						["bm_w_b92fs"] = "Beretta 92FS",
-						["bm_w_x_b92fs"] = "Akimbo 92FSs",
-						["bm_wp_beretta_co_co1"] = "SGS Compensator", --Original name was a reference to the movie "The Professional"
-						["bm_wp_beretta_co_co2"] = "Competition Compensator", --Seems to actually be based off of the Shorty USA Beretta 92 Spring Gun, unsurprising considering some of the guns models 	were based off of airsoft counterparts
-						["bm_wp_beretta_sl_brigadier"] = "Brigadier Elite Slide",
-						["bm_wp_beretta_g_ergo"] = "Wood Ergo Grips",
-						["bm_wp_beretta_m_extended"] = "30rnd 92FS Magazine",
-						--PL14
-						["bm_w_pl14"] = "Kalashnikov Concern PL-14 \"Lebedev\"",
-						["bm_wp_pl14_m_extended"] = "17rnd PL-14 Magazine",
-						["bm_wp_pl14_b_comp"] = "PL-14 Compensator",
-						--Wick
-						["bm_w_packrat"] = "H&K P30L",
-						["bm_w_x_packrat"] = "Akimbo P30Ls",
-						--Hudson
-						["bm_w_holt"] = "Hudson H9",
-						["bm_w_x_holt"] = "Akimbo H9s",
-						--93R
-						["bm_w_beer"] = "Beretta 93R",
-
-						--LEO-40
-						["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
-						["bm_wp_hs2000_m_extended"] = "22rnd XD(M)-40 Magazine",
-						["bm_wp_hs2000_sl_custom"] = "Compensated Slide",
-						["bm_wp_hs2000_sl_long"] = "Custom Slide",
-						--Signature 40
-						["bm_w_p226"] = "SIG P226R",
-						["bm_w_x_p226"] = "Akimbo P226Rs",
-						["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
-						["bm_wp_p226_m_extended"] = "22rnd P226 Magazine",
-						["bm_wp_p226_b_equinox"] = "Equinox Duo-Tone Slide",
-						["bm_wp_p226_b_long"] = "Brushed Long Slide",
-						["bm_wp_p226_co_comp_2"] = "SJC Compensator .40",
-						--Chimano Custom
-						["bm_w_g22c"] = "Glock 22C",
-						["bm_w_x_g22c"] = "Akimbo Glock 22Cs",
-						["bm_wp_g22c_b_long"] = "Glock 35 Compensated Slide",
-						--Bang...
-						["bm_w_sparrow"] = "IWI Jericho 941 RPL",
-						["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
-						["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
-						["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
-						
-						--SUB2000
-						["bm_w_sub2000"] = "Kel-Tec SUB-2000",
-						["bm_wp_sub2000_fg_gen2"] = "Gen2 Handguard",
-						["bm_wp_sub2000_fg_railed"] = "Red Lion R6 Handguard",
-						["bm_wp_sub2000_fg_suppressed"] = "Quad Rail Handguard w/Suppressor",
-						--C96
-						["bm_w_c96"] = "Mauser C96",
-						["bm_wp_c96_b_long"] = "Carbine Barrel",
-						["bm_wp_c96_nozzle"] = "DL-44 Muzzle",
-						["bm_wp_c96_sight"] = "Schmidt & Bender 1-8x24 PM Short Dot",
-						["bm_wp_c96_m_extended"] = "20rnd C96 Magazine",
-						--Crosskill
-						["bm_w_colt_1911"] = "Springfield Armory 1911 Operator",
-						["bm_w_x_1911"] = "Akimbo 1911 Operators",
-						["bm_wp_1911_co_2"] = "TCII Compensator", --Not 100% but seems to be based off of it
-						["bm_wp_1911_co_1"] = "Clark Heavy Pinmaster", --Not 100% but seems to be based off of it
-						["bm_wp_1911_g_ergo"] = "Pachmayr 1911 Grip",
-						["bm_wp_1911_g_bling"] = "Wood Grips",
-						["bm_wp_1911_g_engraved"] = "Engraved 1911 Grips",
-						["bm_wp_1911_b_long"] = "Compensated Long Slide",
-						["bm_wp_1911_b_vented"] = "Compensated Two-Tone Slide",
-						["bm_wp_1911_m_extended"] = "12rnd SA 1911 Magazine",
-						--Crosskill Chunky
-						["bm_w_m1911"] = "Colt 1911A1", --Not entirely but its the closest thing
-						["bm_w_x_m1911"] = "Akimbo 1911A1s",
-						--Crosskill Guard
-						["bm_w_shrew"] = "Colt Defender",
-						["bm_w_x_shrew"] = "Akimbo Defenders",
-						--Interceptor
-						["bm_w_usp"] = "H&K USP Tactical",
-						["bm_w_x_usp"] = "Akimbo USP Tacticals",
-						["bm_wp_usp_co_comp_2"] = "SJC Compensator .45",
-						["bm_wp_pis_usp_b_expert"] = "USP Expert Slide",
-						["bm_wp_pis_usp_b_match"] = "USP Match Slide",
-						["bm_wp_pis_usp_m_extended"] = "20rnd USP Magazine",
-						--Anubis
-						["bm_w_socom"] = "H&K Mk.23",
-						["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
-						["bm_w_x_socom"] = "Akimbo Mk.23s",
-						--TT-33	
-						["bm_w_type54"] = "Tokarev TT-33",
-						["bm_w_x_type54"] = "Akimbo TT-33s",
-						
-						--Kahn .357
-						["bm_w_korth"] = "Korth NXA",
-						["bm_w_x_korth"] = "Akimbo Korth NXAs",
-						--Mateba
-						["bm_w_mateba"] = "Mateba 2006M",
-						--Bronco
-						["bm_w_raging_bull"] = "Taurus Raging Bull",
-						["bm_w_x_rage"] = "Akimbo Raging Bulls",
-						["bm_wp_pis_rage_extra"] = "Raging Bull Scope Mount",
-						["bm_wp_rage_b_comp1"] = "S&W V-Compensator",
-						["bm_wp_rage_b_short"] = "Snub Nose Barrel",
-						["bm_wp_rage_b_comp2"] = "S&W Muzzle Compensator",
-						["bm_wp_rage_b_long"] = "Long Barrel",
-						--Deagle
-						["bm_w_deagle"] = "MRI Desert Eagle Mark XIX", --"IS THAT A M16?"
-						["bm_w_x_deagle"] = "Akimbo Desert Eagles",
-						["bm_wp_deagle_co_short"] = "Desert Eagle Muzzle Brake", --Original name was a reference to the 1990s film "La Femme Nikita" only for the gun's appearance in it, otherwise this is based on the real "DE50MB" Deagle muzzle brake
-						["bm_wp_deagle_co_long"] = "Custom Barrel Weight", --Attachment is a reference to the Boondock Saints
-						["bm_wp_deagle_g_ergo"] = "Pachmayr Grip", --Doesn't exist but it's the same model from the 1911 but enlarged so w/e
-						["bm_wp_deagle_g_bling"] = "Pearl Grips",
-						["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
-						["bm_wp_deagle_b_long"] = "10\" Long Barrel",
-						--SAA
-						["bm_w_peacemaker"] = "Colt Single Action Army",
-						["bm_wp_peacemaker_barrel_long"] = "12\" Barrel",
-						["bm_wp_peacemaker_barrel_short"] = "5.5\" Barrel",
-						["bm_wp_peacemaker_handle_bling"] = "Engraved SAA Grips",
-						["bm_wp_peacemaker_rifle_stock"] = "Skeletal Stock",
-						--Shatter's Fury
-						["bm_w_shatters_fury"] = "S&W Model 500",
-
-						--MODS
-						["bm_w_papa320"] = "SIG P320",
-						["bm_w_coltds"] = "Colt Detective",
-						["bm_w_amt"] = ".44 Auto Mag",
-						["bm_w_p99"] = "Walther P99",
-						["bm_w_hpb"] = "Browning Hi-Power",
-
-					--[[SMGs]]
-						--P90
-						["bm_w_p90"] = "FN P90 TR",
-						["bm_wp_p90_b_long"] = "PS90 Barrel",
-						["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
-						--MP7
-						["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
-
-						--CMP
-						["bm_w_mp9"] = "B&T TP9SF",
-						["bm_w_x_mp9"] = "Akimbo TP9SFs",
-						["bm_wp_mp9_m_extended"] = "30rnd TP9 Magazine",
-						["bm_wp_mp9_s_skel"] = "Steyr TMP Fixed Stock",
-						["bm_wp_mp9_b_suppressed"] = "B&T MP9 QD Suppressor",
-						--Micro Uzi
-						["bm_w_baka"] = "IWI Micro Uzi",
-						["bm_w_x_baka"] = "Akimbo Micro Uzis",
-						--T3K
-						["bm_w_tec9"] = "Intratec TEC-9",
-						["bm_wp_tec9_b_standard"] = "AB-10 Barrel",
-						["bm_wp_tec9_ns_ext"] = "Pseudo Barrel Extension",
-						["bm_wp_tec9_s_unfolded"] = "Interdynamic MP-9 Wire Stock",
-						["bm_wp_tec9_m_extended"] = "50rnd TEC-9 Magazine",
-						--Jacket's Piece
-						["bm_w_cobray"] = "Cobray M11/9",
-						["bm_wp_cobray_ns_barrelext"] = "MAC Barrel Extension",
-						--SR-2M
-						["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
-						["bm_w_x_sr2"] = "Akimbo SR-2Ms",
-						--Miyaka 9
-						["bm_w_pm9"] = "Minebea PM-9",
-						--FMG9
-						["bm_w_fmg9"] = "Magpul FDC-9",
-
-						--Cobra
-						["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
-						["bm_w_x_scorpion"] = "Akimbo Skorpions",
-						["bm_wp_scorpion_m_extended"] = "Skorpion Dual Magazines",
-						["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
-						--MP5
-						["bm_w_mp5"] = "H&K MP5A2",
-						["bm_w_x_mp5"] = "Akimbo MP5A2s",
-						["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
-						["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
-						["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
-						["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
-						["bm_wp_mp5_s_ring"] = "No Stock",
-						["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
-						["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
-						--MPX
-						["bm_w_shepheard"] = "SIG MPX", 
-						--Vityaz
-						["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
-						--Bizon
-						["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
-
-						--Uzi
-						["bm_w_uzi"] = "IMI Uzi",
-						["bm_w_x_uzi"] = "Akimbo Uzi",
-						["bm_wp_uzi_s_solid"] = "Wooden Stock",
-						["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
-						["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
-						--Pachette
-						["bm_w_sterling"] = "Sterling L2A1",
-						["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
-						["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-						["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
-						["bm_wp_sterling_m_long"] = "34rnd L2A1 Magazine",
-						--
-						["bm_w_mac10"] = "Ingram M10",
-						["bm_w_x_mac10"] = "Akimbo M10s",
-						["bm_wp_mac10_m_extended"] = "30rnd M10 Magazine",
-						["bm_wp_mac10_body_ris"] = "MAC Rail System", --I'm getting nothing but airsoft results so generic name
-						["bm_wp_mac10_s_skel"] = "Low Mount Skeleton Stock",
-						--Thompson
-						["bm_w_m1928"] = "Auto-Ordnance M1928",
-						["bm_wp_m1928_b_short"] = "Short Barrel",
-						["bm_wp_m1928_fg_discrete"] = "Polymer Foregrip",
-						["bm_wp_m1928_g_discrete"] = "Polymer Pistol Grip",
-						["bm_wp_m1928_s_discrete"] = "Polymer Stock",
-						--MP 40
-						["bm_w_erma"] = "Erma MP 40",
-						--UMP
-						["bm_w_schakal"] = "H&K UMP-45",
-						["bm_wp_schakal_b_civil"] = "USC Barrel",
-						["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
-						["bm_wp_schakal_m_short"] = "15rnd UMP Magazine",
-						["bm_wp_schakal_m_long"] = "45rnd UMP Magazine",
-						--M45
-						["bm_w_m45"] = "Carl Gustaf Kpist M/45",
-						["bm_wp_smg_m45_m_extended"] = "50rnd M/45 Magazine",
-						--Vector
-						["bm_w_polymer"] = "KRISS Vector SMG",
-						["bm_wp_polymer_barrel_precision"] = "CRB Barrel w/Shroud",
-						["bm_wp_polymer_ns_silencer"] = "Defiance HPS 4GSK Suppressor",
-	
-					--[[MGs]]
-						--416C
-						["bm_w_tecci"] = "H&K HK416-C",
-						["bm_wp_tecci_b_long"] = "Long Barrel",
-						["bm_wp_tecci_ns_special"] = "JPE Recoil Eliminator Muzzle Brake",
-						--Shuno what it is
-						["bm_w_shuno"] = "Empty Shell XM556 Microgun",
-
-						--SAW
-						["bm_w_m249"] = "FN M249 Para",
-						["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
-						["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
-
-						--RPK
-						["bm_w_rpk"] = "Kalashnikov Concern RPK",
-						["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
-						["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
-
-						--HK21
-						["bm_w_hk21"] = "H&K HK21E",
-						["bm_wp_hk21_fg_short"] = "Short HK21 Handguard",
-						["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
-						--MG42
-						["bm_w_mg42"] = "Mauser Maschinengewehr 42",
-						["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
-						["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
-						--Versteckt-51/HK51B
-						["bm_w_hk51b"] = "Vollmer HK51-B",
-
-						--M240
-						["bm_w_par"] = "FN M240B",
-						["bm_wp_par_s_plastic"] = "M240B Stock",
-
-						--M134
-						["bm_w_m134"] = "General Electric M134",
-						["bm_wp_m134_barrel_extreme"] = "Anti-Air Barrel",
-						["bm_wp_m134_barrel_short"] = "Compact Barrel",
-
-					--[[SHOTGUNS]]
-						--Saiga
-						["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
-						["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
-						["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
-						--AA12
-						["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
-						["bm_wp_aa12_barrel_long"] = "Standard AA12 Barrel",
-						["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
-						--Six12
-						["bm_w_rota"] = "Crye Precision Six12",
-						--M1014
-						["bm_w_benelli"] = "Benelli M4 Super 90",
-						["bm_wp_ben_b_long"] = "Long M4 Barrel",
-						["bm_wp_ben_b_short"] = "NFA M4 Barrel",
-						["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
-						["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
-						--SPAS-12
-						["bm_w_spas12"] = "Franchi SPAS-12",
-						["bm_wp_spas12_b_long"] = "8rnd Tube",
-						--Striker
-						["bm_w_striker"] = "Sentinel Arms Striker",
-						--VD-12
-						["bm_w_sko12"] = "Standard Manufacturing SKO-12",
-						--Argos III
-						["bm_w_ultima"] = "Baikal MP-155 Ultima",
-
-						--870
-						["bm_w_r870"] = "Remington Model 870",
-						["bm_wp_r870_m_extended"] = "2rnd Tube Extension",
-						["bm_wp_r870_fg_wood"] = "Wooden Pump",
-						["bm_wp_r870_s_nostock"] = "No Stock",
-						["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
-						["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
-						--Loco
-						["bm_w_serbu"] = "Short Remington Model 870",
-						["bm_wp_shorty_m_extended_short"] = "1rnd Tube Extension",
-						["bm_wp_r870_s_solid"] = "Fixed Stock",
-						["bm_wp_serbu_s_solid_short"] = "Fixed Stock w/Rail",
-						["bm_wp_serbu_s_nostock_short"] = "No Stock w/Rail",
-						--KSG
-						["bm_w_ksg"] = "Kel-Tec KSG",
-						["bm_wp_ksg_b_long"] = "Long Barrel w/2x 8-Shot Tubes",
-						["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
-						--Judge
-						["bm_w_judge"] = "Taurus 4510PLYFS",
-						--M37
-						["bm_w_m37"] = "Ithaca Model 37",
-						--NO SHOTGUNS IN THE TRENCHES
-						["bm_w_m1897"] = "Winchester Model 1897",
-						--M590
-						["bm_w_m590"] = "Mossberg 590",
-
-						--Mosconi
-						["bm_w_huntsman"] = "Mosconi Coach Gun",
-						["bm_wp_huntsman_b_short"] = "Sawn-Off Barrel",
-						["bm_wp_huntsman_s_short"] = "Sawn-Off Stock",
-						--725
-						["bm_w_b682"] = "Beretta 682",
-						["bm_wp_b682_b_short"] = "Sawn-Off Barrel",
-						["bm_wp_b682_s_short"] = "Sawn-Off Stock",
-						["bm_wp_b682_s_ammopouch"] = "Ammo Pouch",
-						--1887
-						["bm_w_boot"] = "Winchester Model 1887",
-						["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
-
-					--[[ARs]]
-						--FAMAS
-						["bm_w_famas"] = "Nexter FAMAS F1",
-						["bm_wp_famas_b_sniper"] = "G2 Sniper Barrel",
-						["bm_wp_famas_b_short"] = "G2 Commando Barrel",
-						["bm_wp_famas_g_retro"] = "G1 Pistol Grip",
-						--VHS
-						["bm_w_vhs"] = "HS Produkt VHS-2",
-						["bm_wp_vhs_b_short"] = "Short Barrel",
-						["bm_wp_vhs_b_sniper"] = "Sniper Barrel",
-						["bm_wp_vhs_b_silenced"] = "Suppressed Barrel",
-						--JP36
-						["bm_w_g36"] = "H&K G36K",
-						["bm_wp_g36_fg_c"] = "G36c Handguard",
-						["bm_wp_g36_fg_ksk"] = "Knights Armament Co. RAS Handguard",
-						["bm_wp_g36_s_kv"] = "G36KV Stock",
-						["bm_wp_g36_s_sl8"] = "SL8 Stock",
-						--S552
-						["bm_w_s552"] = "SIG SG 552-2",
-						["bm_wp_ass_s552_fg_standard_green"] = "OD Green Handguard",
-						["bm_wp_ass_s552_g_standard_green"] = "OD Green Pistol Grip",
-						["bm_wp_ass_s552_s_standard_green"] = "OD Green Stock",
-						["bm_wp_ass_s552_fg_railed"] = "SIG Railed Handguard",
-						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
-						--AMCAR
-						["bm_w_amcar"] = "Colt M733 Commando",
-						--BABBY AR
-						["bm_w_olympic"] = "Olympic Arms K23B",
-
-						--AUG
-						["bm_w_aug"] = "Steyr AUG A2",
-						["bm_wp_aug_fg_a3"] = "A3 Rail",
-						["bm_wp_aug_body_f90"] = "Thales F90 Kit",
-						--Boatgun
-						["bm_w_corgi"] = "FN F2000 Tactical TR",
-						--AK12
-						["bm_w_flint"] = "Kalashnikov Concern AK-12",
-						--Ak5
-						 ["bm_w_ak5"] = "Bofors Ak 5",
-						 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
-						 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
-						 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
-						 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
-						--CAR-4
-						["bm_w_m4"] = "Colt M4A1",
-						--AK74
-						["bm_w_ak74"] = "Kalashnikov Concern AKS-74",
-						--805
-						["bm_w_hajk"] = "CZ 805 BREN",
-						["bm_wp_hajk_b_short"] = "A2 Barrel",
-
-						--M16
-						["bm_w_m16"] = "Colt M16A4",
-						["bm_wp_m16_fg_railed"] = "Daniel Defense Lite Rail",
-						["bm_wp_m16_fg_vietnam"] = "M16A1 Handguard",
-						--["bm_wp_m16_s_solid"] = "M16 Stock",
-						--L85
-						["bm_w_l85a2"] = "BAE L85A2",
-						["bm_wp_l85a2_b_long"] = "Long Barrel",
-						["bm_wp_l85a2_b_short"] = "Short Barrel",
-						["bm_wp_l85a2_g_worn"] = "Taped Pistol Grip",
-						["bm_wp_l85a2_fg_short"] = "Daniel Defense L85 Quad Rail",
-						--Krink
-						["bm_w_akmsu"] = "AKMSU",
-						["bm_w_x_akmsu"] = "Akimbo AKMSUs",
-						["bm_wp_akmsu_fg_rail"] = "Samson K-Rail",
-						--AKM
-						["bm_w_akm"] = "Kalashnikov Concern AKMS",
-						["bm_w_akm_gold"] = "Gold Plated AKMS",
-						--Nipples
-						["bm_w_tkb"] = "Tula Arms TKB-059",
-						--Groza
-						["bm_w_groza"] = "TsKIB SOO Groza-1",
-
-					--[[DMRs]]
-						--417
-						["bm_w_contraband"] = "H&K HK417 w/ M203",
-						--SCAR
-						["bm_w_scar"] = "FN Mk.17",
-						["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
-						["bm_wp_scar_s_sniper"] = "Mk.20 Stock",
-						--FAL
-						["bm_w_fal"] = "FN FAL",
-						["bm_wp_fal_body_standard"] = "DSA SA58 Handguard",
-						["bm_wp_fal_fg_wood"] = "Wooden FAL Handguard",
-						["bm_wp_fal_fg_04"] = "DSA Freefloat Handguard",
-						["bm_wp_fal_fg_03"] = "IWI Romat Handguard",
-						["bm_wp_fal_g_01"] = "Tapco FAL Pistol Grip",
-						["bm_wp_fal_m_01"] = "20rnd FAL Magazine",
-						["bm_wp_fal_s_01"] = "Sidefolding FAL Stock",
-						["bm_wp_fal_s_03"] = "Magpul FAL PRS Stock",
-						--Galil
-						["bm_w_galil"] = "IWI Galil ARM",
-						["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
-						["bm_wp_galil_fg_sar"] = "IMI Galil SAR Handguard",
-						["bm_wp_galil_fg_mar"] = "IWI Galil MAR Handguard",
-						["bm_wp_galil_fg_fab"] = "FAB Defense VFR GA Handguard",
-						["bm_wp_galil_g_sniper"] = "IMI Galatz Pistol Grip",
-						["bm_wp_galil_s_sniper"] = "IMI Galatz Wooden Stock",
-						["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
-						["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
-						["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
-						--AS VAL
-						["bm_w_asval"] = "Tula Arms AS \"Val\"",
-						["bm_wp_asval_b_proto"] = "Prototype Barrel",
-						["bm_wp_asval_s_solid"] = "VSS Stock",
-
-						--Raifu
-						["bm_w_g3"] = "H&K G3A3",
-						["bm_wp_g3_b_short"] = "Short Barrel",
-						["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
-						["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
-						["bm_wp_g3_fg_railed"] = "FAB Defense G3-RS Handguard",
-						["bm_wp_g3_fg_retro"] = "Wooden Slimline Handguard",
-						["bm_wp_g3_fg_retro_plastic"] = "Slimline Handguard",
-						["bm_wp_g3_g_retro"] = "G3 Ergo Grip",
-						["bm_wp_g3_g_sniper"] = "PSG-1 Wooden Pistol Grip",
-						["bm_wp_g3_s_sniper"] = "PSG-1 Stock",
-						--M308
-						["bm_w_m14"] = "Springfield Armory M14 DMR",
-						["bm_wp_m14_body_ebr"] = "Sage EBR Chassis",
-						["bm_wp_m14_body_jae"] = "JAE 100 G3 Stock",
-						["bm_wp_upg_o_m14_scopemount"] = "Sun Optics USA M14/M1A Scope Mount",
-						--Shak12
-						["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
-						--HCAR
-						["bm_w_hcar"] = "Ohio Ordnance HCAR",
-
-					--[[SNIPERS]]
-						--Titty
-						["bm_w_tti"] = "Taran Tactical TR-1 AR-10",
-						--QBU88
-						["bm_w_qbu88"] = "Norinco QBU-88",
-						--Icky Vicky
-						["bm_w_victor"] = "SAINT Victor AR-10",
-
-						--R700
-						["bm_w_r700"] = "Remington Model 700P",
-						--Repeater
-						["bm_w_winchester1874"] = "Winchester Model 1873",
-						["bm_wp_winchester_b_long"] = "Long Barrel",
-						["bm_wp_winchester_b_suppressed"] = "Suppressor",
-						--MSR
-						["bm_w_msr"] = "Remington MSR",
-						["bm_wp_snp_msr_ns_suppressor"] = "AAC TiTAN-QD Suppressor",
-						["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
-						--Scunt
-						["bm_w_scout"] = "Steyr Scout",
-
-						--Drako
-						["bm_w_siltstone"] = "Kalashnikov Concern SVD",
-						--WA2000
-						["bm_w_wa2000"] = "Walther WA2000",
-						["bm_wp_wa2000_g_walnut"] = "Walnut Furniture",
-						["bm_wp_wa2000_g_stealth"] = "Black Furniture",
-						["bm_wp_wa2000_g_light"] = "Lightweight Furniture",
-
-						--SBL
-						["bm_w_sbl"] = "Marlin Model 1895SBL",
-						--
-						["bm_w_contender"] = "Thompson Center G2 Contender",
-						--Moist Nugget
-						["bm_w_mosin"] = "Mosin Nagant M91/30",
-						["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
-						["bm_wp_mosin_body_conceal"] = "Black Polymer Stock",
-						--Model 70
-						["bm_w_model70"] = "Winchester Model 70",
-						--R93
-						["bm_w_r93"] = "Blaser R93 Tactical 2",
-						["bm_wp_r93_b_suppressed"] = "SilencerCo Harvester 338 Suppressor",
-						["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
-						--SRS
-						["bm_w_desertfox"] = "DTA Stealth Recon Scout",
-
-						--M95
-						["bm_w_m95"] = "Barrett M95",
-						 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
-
-					--[[SPECIALS]]
-						--Wat is flash haow do u do it? haow 2 flash cartoonz? ADOEB FLASH... adoeb falsh... CS... 6.... a dobe.... a dobe
-						["bm_w_ray"] = "M202 FLASH",
-						["bm_w_rpg7"] = "Bazalt RPG-7",
-
-						["bm_w_arblast"] = "Arbalest",
-						["bm_w_frankish"] = "Frankish Bow",
-						["bm_w_hunter"] = "Avalanche CB1-50 Pistol Grip Crossbow",
-						["bm_w_elastic"] = "Hoyt Carbon Spyder ZT 30 Bow",
-						["bm_wp_elastic_body_tactic"] = "Hoyt Ignite Riser",
-
-					--Attachments
-
-						--Gadgets
-							["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR1",
-							["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
-							["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
-							["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
-							["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
-							["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X",
-
-						--Muzzle Devices
-							["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
-
-							["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
-							["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
-							["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
-							["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
-							["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
-							["bm_wp_upg_ns_pis_jungle"] = "Big Boss Suppressor",
-							["bm_wp_upg_ns_ass_filter"] = "Oil Filter",
-	
-							["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
-							["bm_wp_upg_ns_sho_salvo_large"] = "SilencerCo Salvo 12 Suppressor",
-
-							["bm_wp_upg_ns_ass_smg_stubby"] = "VFC Stinger Flash Hider",
-							["bm_wp_upg_ns_ass_smg_tank"] = "Tank Compensator",
-							["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
-							["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
-							["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
-							["bm_wp_upg_ass_ns_surefire"] = "SureFire MBK Muzzle Brake",
-
-							["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
-							["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
-							["bm_wp_upg_ns_ass_smg_large"] = "Large Suppressor", --Generic name just to remove any nickname-y names
-
-						--Glock Parts
-							["bm_wp_g18c_m_mag_33rnd"] = "Extended Glock Magazine",
-							["bm_wp_g18c_g_ergo"] = "Hogue Handall Grip Sleeve",
-							["bm_wp_pis_g_laser"] = "Crimson Trace Laser Grip",
-							["bm_wp_pis_g_beavertail"] = "Beavertail Grip Extension",
-
-						--AK parts
-							["bm_wp_upg_ak_fg_krebs"] = "Krebs UFM Keymod System Handguard",
-							["bm_wp_upg_ak_fg_trax"] = "Strike Industries TRAX Handguard",
-							["bm_wp_upg_ak_g_rk3"] = "ZenitCo PK-3 Pistol Grip",
-							["bm_wp_upg_ak_fg_zenit"] = "ZenitCo Handguard",
-							["bm_wp_upg_o_ak_scopemount"] = "K-VAR KV-04S Optic Mount",
-							["bm_wp_upg_ak_m_uspalm"] = "30rnd US PALM AK30 Magazine",
-							["bm_wp_upg_ns_ass_pbs1"] = "PBS-1 Suppressor",
-							["bm_wp_upg_ass_ak_b_zastava"] = "Zastava M76 Barrel",
-							["bm_wp_upg_ak_b_draco"] = "Draco Pistol Barrel",
-							["bm_wp_upg_ak_b_ak105"] = "AK-105 Barrel",
-							["bm_wp_upg_ak_ns_jmac"] = "JMac Customs MTC-1",
-							["bm_wp_upg_ak_m_quad"] = "60rnd KC Magazine",
-							["bm_wp_ak_m_drum"] = "75rnd AK Drum",
-							["bm_wp_ak_fg_combo2"] = "Ultimak AK Optic Mount",
-							["bm_wp_ak_fg_combo3"] = "Ultimak AK Modular Rail Forend System",
-							["bm_wp_upg_ak_fg_tapco"] = "Tapco Intrafuse Handguard",
-							["bm_wp_upg_fg_midwest"] = "Midwest Industries Quad Rail",
-							["bm_wp_upg_ak_g_hgrip"] = "Hogue OverMolded AK Pistol Grip",
-							["bm_wp_upg_ak_g_pgrip"] = "US PALM Enhanced Pistol Grip",
-							["bm_wp_ak_s_folding"] = "Underfolding AK Stock",
-							["bm_wp_ak_s_skfoldable"] = "Sidefolding AK Stock",
-							["bm_wp_ak_s_psl"] = "PSL Thumbhole Stock",
-
-						--Sights
-							["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
-							["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
-	
-							["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
-							["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
-							["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
-							["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
-	
-							["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
-							["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
-							["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
-	
-							["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
-							["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
-	
-							["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
-							["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
-	
-							--"Schmidt & Bender 1-8x24 PM Short Dot"
-							["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
-							["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
-	
-							["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
-							["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",
-							["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
-	
-							["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
-	
-							["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
-
-						--Vertical Grips
-							["bm_wp_upg_vg_ass_smg_verticalgrip"] = "Knights Armament Co. VFG",
-							["bm_wp_upg_vg_ass_smg_stubby"] = "Tango Down QD Stubby VFG",
-							["bm_wp_upg_vg_ass_smg_afg"] = "Magpul AFG 2",
-
-						--STANAG compatible mags
-							["bm_wp_m4_m_straight"] = "20rnd STANAG Magazine",
-							["bm_wp_m4_uupg_m_std"] = "30rnd STANAG Magazine",
-							["bm_wp_m4_m_pmag"] = "30rnd Magpul PMAG GEN1 Magazine",
-							["bm_wp_l85a2_m_emag"] = "30rnd Magpul EMAG Magazine",
-							["bm_wp_upg_m4_m_quad"] = "60rnd SureFire Magazine",
-							["bm_wp_m4_m_drum"] = "100rnd Beta-C Dual Drum",
-							["bm_wp_upg_m4_m_l5"] = "30rnd Lancer Systems L5 AW Magazine",
-
-						--AR15 parts
-							["bm_wp_m4_upper_reciever_edge"] = "VLTOR Upper Receiver",
-							["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
-							["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
-							["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
-							["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel", 
-							["bm_wp_upg_fg_jp"] = "JPE Modular Handguard",
-							["bm_wp_m4_uupg_fg_lr300"] = "LR300 Handguard",
-							["bm_wp_upg_fg_smr"] = "Geissele Super Modular Rail",
-							["bm_wp_upg_smg_olympic_fg_lr300"] = "Short LR300 Handguard",
-							["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
-							["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",
-							["bm_wp_upg_ass_m4_fg_lvoa"] = "War Sport LVOA Handguard",
-							["bm_wp_upg_ass_m4_b_beowulf"] = "Heavy Barrel",
-							["bm_wp_m4_s_standard"] = "Bushmaster LE Stock",
-							["bm_wp_m4_s_pts"] = "Magpul PTS Stock",
-							["bm_wp_m4_uupg_s_fold"] = "LR300 Folding Stock",
-							["bm_wp_upg_m4_s_crane"] = "NSWC Crane Stock",
-							["bm_wp_upg_m4_s_mk46"] = "NSWC Crane Stock w/Cheek Pad",
-							["bm_wp_upg_m4_s_ubr"] = "Magpul UBR Stock",
-							["bm_wp_m4_g_ergo"] = "Command Arms UPG16 Pistol Grip",
-							["bm_wp_m4_g_sniper"] = "PSG Style Pistol Grip",
-							["bm_wp_upg_m4_g_hgrip"] = "Houge Rubber Ergo Grip",
-							["bm_wp_upg_m4_g_mgrip"] = "Magpul MOE-K Pistol Grip",
-
-						["bm_wp_upg_lmg_lionbipod"] = "Bipod",
-
-					--[[MELEE]]
-						["bm_melee_kabar"] = "USMC KA-BAR",
-						["bm_melee_kampfmesser"] = "KM 2000",
-						["bm_melee_gerber"] = "Gerber DMF Folder",
-						["bm_melee_tomahawk"] = "Gerber Downrange Tomahawk",
-						["bm_melee_becker"] = "KA-BAR Becker Tac Tool",
-						["bm_melee_baton"] = "ASP Friction Loc Baton",
-						["bm_melee_shovel"] = "K.L.A.S.",
-						["bm_melee_baseballbat"] = "\"Lucille\"",
-						["bm_melee_bayonet"] = "AKM Type II Bayonet",
-						["bm_melee_bullseye"] = "Smith & Wesson Bullseye Hatchet",	
-						["bm_melee_x46"] = "Robson Knives X46 Utility Survival Knife",
-						["bm_melee_dingdong"] = "Gerber Ding Dong Breaching Tool",
-						["bm_melee_cleaver"] = "Cleaver",
-						["bm_melee_kabar_tanto"] = "KA-BAR Tanto",
-						["bm_melee_chef"] = "Chef Knife",
-						["bm_melee_fairbair"] = "Fairbairn-Sykes Fighting Knife",
-						["bm_melee_model24"] = "Model 24 Stielhandgranate",
-						["bm_melee_hammer"] = "Jacket's Hammer",
-						["bm_melee_meat_cleaver"] = "Dragan's Cleaver",
-						["bm_melee_poker"] = "Firewood Poker",
-						["bm_melee_tenderizer"] = "Meat Tenderizer",
-						["bm_melee_fork"] = "BBQ Fork",
-						["bm_melee_mining_pick"] = "Pickaxe",
-						["bm_melee_bowie"] = "Bowie Knife",
-						["bm_melee_branding_iron"] = "Branding Iron",
-						["bm_melee_oldbaton"] = "Nightstick",
-						["bm_melee_detector"] = "Garrett Handheld Metal Detector",
-						["bm_melee_taser"] = "ZAP Stun Baton",
-						["bm_melee_cqc"] = "Kunai",
-						["bm_melee_twins"] = "Sais",
-						["bm_melee_tiger"] = "Tekko-Kagi",
-						["bm_melee_pugio"] = "Extrema Ratio Pugio SE",
-						["bm_melee_gator"] = "Gerber Gator Machete Pro",
-						["bm_melee_scoutknife"] = "Morakniv Classic Scout 39",
-						["bm_melee_shawn"] = "Antique Sheep Shears",
-						["bm_melee_stick"] = "Shepherd's Crook",
-						["bm_melee_nin"] = "Paslode IM90i Nailgun",
-						["bm_melee_ballistic"] = "Ballistic Knives",
-						["bm_melee_wing"] = "Benchmade Model 42 Balisong",
-						["bm_melee_cs"] = "Homelite Super 2 Chainsaw",
-						["bm_melee_brick"] = "Motorola DynaTAC 8000X",
-						["bm_melee_sword"] = "Pencil",
-						["bm_melee_oxide"] = "UVSR Taiga-1",
-						["bm_melee_selfie"] = "PolarPro PowerPole GoPro Extension",
-						["bm_melee_twins"] = "Shureido Sai",
-
-					--[[THROWABLES]]
-						["bm_grenade_frag"] = "M67 Fragmentation Grenade",
-						["bm_grenade_frag_com"] = "M67 Fragmentation Grenade - OVERKILL Model",
-						["bm_wpn_prj_hur"] = "Kit Rae Aircobra Throwing Axe",
-						["bm_wpn_prj_target"] = "Blazing Arrow Ninja Throwing Knife",
-
-				})
-			end
-		end	
-
 		local twirl = math.rand(1)
 		local shalashaska = 0.06
 		if twirl <= shalashaska then

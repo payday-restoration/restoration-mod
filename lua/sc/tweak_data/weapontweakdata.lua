@@ -4094,11 +4094,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.override_mod_type_name = {
 		["foregrip"] = "forebarrelgrip"
 	}
-	--[[
 	self.g3.override_mod_type_name = {
 		["stock"] = "jiisuri_stock", --:^)
 	}
-	--]]
 	self.galil.override_mod_type_name = {
 		["barrel"] = "forebarrelgrip"
 	}

@@ -752,7 +752,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 								end
 							end
-							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+							fired = not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 						else
 							if (self._queue_fire or input.btn_primary_attack_press) and start_shooting then
@@ -825,7 +825,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-						if not weap_base:weapon_tweak_data().spin_up_semi then
+						local spin_up_semi = fire_mode == "single" and weap_base:weapon_tweak_data().spin_up_semi
+						if not spin_up_semi then
 							if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
 								weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 							end

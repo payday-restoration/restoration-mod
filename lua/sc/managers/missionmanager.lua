@@ -41,7 +41,9 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 				end
 			end
 			
-			-- Check if this element is supposed to trigger a point of no return
+		-- Check if this element is supposed to trigger a point of no return
+		local is_pro_job = Global.game_settings and Global.game_settings.one_down
+		if is_pro_job then
 			if data.ponr then
 				local function set_ponr()
 					local ponr_timer_balance_mul = data.ponr_player_mul and managers.groupai:state():_get_balancing_multiplier(data.ponr_player_mul) or 1
@@ -51,6 +53,16 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_ponr_" .. element_id, set_ponr)
 				Hooks:PostHook(element, "client_on_executed", "sh_client_on_executed_ponr_" .. element_id, set_ponr)
 			end
+			
+			if data.ponr_end then
+					Hooks:PostHook(element, "on_executed", "eclipse_on_executed_ponr_end_" .. element_id, function()
+						managers.groupai:state():remove_point_of_no_return_timer(0)
+					end)
+					Hooks:PostHook(element, "client_on_executed", "eclipse_client_on_executed_ponr_end_" .. element_id, function()
+						managers.groupai:state():remove_point_of_no_return_timer(0)
+					end)
+				end
+			end	
 
 			if data.flashlight ~= nil then
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, function ()

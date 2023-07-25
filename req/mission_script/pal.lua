@@ -1,46 +1,37 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value_1 = 330
-		ponr_value_2 = 690
+		ponr_value = 240
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value_1 = 300
-		ponr_value_2 = 660
+		ponr_value = 210
 	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value_1 = 270
-		ponr_value_2 = 630
+		ponr_value = 180
 	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
-		ponr_value_1 = 240
-		ponr_value_2 = 600
+		ponr_value = 180
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value_1 = 210
-		ponr_value_2 = 570
+		ponr_value = 150
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value_1 = 180
-		ponr_value_2 = 540
+		ponr_value = 120
 	end
-	
-if tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+
+if Global.game_settings and Global.game_settings.one_down then	
+	if tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
 		titan_shield_pj = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end	
 end
 
 return {
-	--Pro Job PONR 
+	--Pro Job PONR
 	[102644] = {
-		ponr = ponr_value_1
+		ponr = ponr_value
 	},
 	[102654] = {
-		ponr = ponr_value_1
+		ponr = ponr_value
 	},
-	[101899] = {
-		ponr = ponr_value_2
-	},
-	[101907] = {
-		ponr = ponr_value_2
-	},
+    [102551] = {
+        ponr_end = true
+    },
 	--Replace shields that cover the manhole with titan counterparts on Mayhem-DS PJ
 	[100670] = {
 		values = {

@@ -1,7 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value_1 = 1050
 		ponr_value_2 = 690
@@ -21,7 +20,6 @@ if Global.game_settings and Global.game_settings.one_down then
 		ponr_value_1 = 900
 		ponr_value_2 = 540
 	end
-end
 
 return {
 	--Pro Job PONR 

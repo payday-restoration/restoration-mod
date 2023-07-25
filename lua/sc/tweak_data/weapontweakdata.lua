@@ -17485,14 +17485,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.AMMO_MAX = 0
 			end
 
-			if weap.supported and weap.recategorize[1] == "unsupported" then
-				weap.recategorize[1] = "wpn_special"
+			if weap.supported then 
+				if weap.recategorize[1] == "unsupported" then
+					weap.recategorize[1] = "wpn_special"
+				elseif weap.recategorize[1] == "light_snp" or weap.recategorize[1] == "heavy_snp" or weap.recategorize[1] == "antim_snp" then
+					weap.can_shoot_through_enemy_unlim = true
+				end
 			end
 
-			if weap.supported and weap.recategorize[1] == "light_snp" or weap.recategorize[1] == "heavy_snp" or weap.recategorize[1] == "antim_snp" then
-				weap.can_shoot_through_enemy_unlim = true
-			end
-			
 			if weap.bipod_camera_spin_limit then
 				weap.bipod_camera_spin_limit = 65
 				weap.bipod_camera_pitch_limit = 20

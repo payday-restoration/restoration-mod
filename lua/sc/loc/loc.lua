@@ -1124,39 +1124,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["nightmare_9_desc"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 		["nightmare_9_obj"] = "Having started from wave 1, beat wave 9 of Holdout on the Old Safehouse heist.",
 				
-
-		--Reinfield--
-		["bm_wp_r870_s_folding_ext"] = "Unfolded Muldon Stock",
-
-		--Bernetti--
-		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
-		["bm_wp_upg_i_93r_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1100 RPM 3-round burst## setting, at the cost of #{important_1}#extra kick.##",
-
-		--10-0
-		["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
-		["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
-
-		--AMR16--
-		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
-		["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950 RPM.##",
-		
-		--Bernetti Auto--
-		["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
-		["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",
-
-		--2006M Hailstorm
-		["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
-		["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions.##",
-		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## but #{important_1}#damage though armor is reduced by 50% and can no longer pierce shields.##",
-
-		--M200 WIDOWMAKER
-		["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
-		["bm_wp_upg_i_iw_widowmaker_desc"] = "A prototype weapon kit manufactured by Kendall Ballistics.\n\nModifies this weapon to chamber special #{skill_color}#double-stacked munitions.##",
-
-		--M32 MK32 Kit
-		["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
-		["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",		
-		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to #{risk}#spread horizontally## instead of clustering.",
 		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
@@ -1187,33 +1154,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
 		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Enemy headshot multipliers are increased to 150% of their normal value.##",
 
-		--Generic Mods--
-		["bm_wp_upg_vg_afg"] = "AFG",
-		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
-		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
-
-		["fucktheatf"] = "That's a felon.",
-
-
-		["bm_wp_upg_flash_hider"] = "#{skill_color}#Hides muzzle flash## and #{risk}#reduces the chance of enemies evading your aim.##",
-		["bm_wp_upg_suppressor"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
-		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
-
-
-		["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
-		["bm_wp_upg_drum_desc"] = "",
-		["bm_wp_upg_drum2_desc"] = "",
-		["bm_wp_upg_quad_desc"] = "",
-		["bm_wp_upg_quad2_desc"] = "",
-		["bm_wp_upg_vintage_desc"] = "",
-
-
-		--Saw--
-		["bm_ap_saw_sc_desc"] = "#{skill_color}#Cuts through body armor.##",
-		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to #{skill_color}#cut through body armor.##",
-		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
-		["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
-
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_1_health"] = "Reflex sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
@@ -1242,14 +1182,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##",
 		["bm_wp_upg_o_8"] = "Long-range scope.\n#{risk}#8x magnification.##",
 		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#8x magnification.##",
-
-		["bm_wp_upg_o_iwelo"] = "Emitted Light Optic with a floating illuminated reticle\n#{risk}#1.1x magnification.##",
-		["bm_wp_upg_o_iwrds"] = "Precision red dot sight.\n#{risk}#1.5x magnification.##",
-
-		["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW Scope",
-
-		["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
-		["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
 
 		["bm_wp_upg_fl_flashlight"] = "Toggle the flashlight on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		["bm_wp_upg_fl_laser"] = "Toggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
@@ -1305,7 +1237,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
-		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
+		["bm_wp_upg_bonus_sc_none_desc"] = "DISABLES BOOSTS FROM WEAPON SKINS.",
 		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
@@ -1942,20 +1874,65 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
 				["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
 				["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
-				--CUSTOM PISTOLS
-					--M6D
-					["kfa_scope"] = "KFA-2 Smart-Link Scope",
-					["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
-
 				--OICW--
 				["bm_w_osipr"] = "SABR",
 				["bm_w_osipr_gl"] = "SABR Grenade Launcher",
 				["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nPress #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
 				["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with a #{skill_color}#20mm grenade launcher.##\nHold #{skill_color}#$BTN_BIPOD## to switch to the Grenade Launcher.",
+	
+				--Reinfield
+				["bm_wp_r870_s_folding_ext"] = "Unfolded Muldon Stock",
+				--Bernetti--
+				["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
+				["bm_wp_upg_i_93r_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1100 RPM 3-round burst## setting, at the cost of #{important_1}#extra kick.##",
+				--10-0
+				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
+				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
+				--AMR16--
+				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
+				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950 RPM.##",
+				--Bernetti Auto--
+				["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
+				["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",
+				--2006M Hailstorm
+				["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
+				["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions.##",
+				["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## but #{important_1}#damage though armor is reduced by 50% and can no longer pierce shields.##",
+				--M32 MK32 Kit
+				["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
+				["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",
 				--AR-15 MAGS
 				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 				["bm_wp_upg_mil_sc"] = "Milspec Mag",
 				["bm_wp_upg_tac_sc"] = "Tactical Mag",
+				--Generic Mods
+				["bm_wp_upg_vg_afg"] = "AFG",
+				["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
+				["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
+				["fucktheatf"] = "That's a felon.",
+				["bm_wp_upg_flash_hider"] = "#{skill_color}#Hides muzzle flash## and #{risk}#reduces the chance of enemies evading your aim.##",
+				["bm_wp_upg_suppressor"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
+				["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
+				["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
+				["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
+				["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
+				["bm_wp_upg_drum_desc"] = "",
+				["bm_wp_upg_drum2_desc"] = "",
+				["bm_wp_upg_quad_desc"] = "",
+				["bm_wp_upg_quad2_desc"] = "",
+				["bm_wp_upg_vintage_desc"] = "",
+
+				--CUSTOM WEAPON ATTACHMENTS
+					--M6D
+					["kfa_scope"] = "KFA-2 Smart-Link Scope",
+					["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
+					--M200 WIDOWMAKER
+					["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
+					["bm_wp_upg_i_iw_widowmaker_desc"] = "A prototype weapon kit manufactured by Kendall Ballistics.\n\nModifies this weapon to chamber special #{skill_color}#double-stacked munitions.##",
+					--NV4
+					["bm_wp_upg_o_iwelo"] = "Emitted Light Optic with a floating illuminated reticle\n#{risk}#1.1x magnification.##",
+					["bm_wp_upg_o_iwrds"] = "Precision red dot sight.\n#{risk}#1.5x magnification.##",
+			
 			--[[ PISTOLS ]]
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "The world's first #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
@@ -2123,6 +2100,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Staggers enemies up to 9.75 meters away.##\n#{risk}#(Stagger range cannot be modified)##\n#{important_1}#Slows spin-up time by 30%.##",
 					["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Slows spin-up time by 50%.##",
 					["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",
+			
 			--[[ SHOTGUNS ]]
 				--Saiga
 				["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
@@ -2165,6 +2143,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Adds a ##{skill_color}#2 round burst-fire## toggle.",
+			
 			--[[ ARs ]]
 				--S552		
 				["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS. Uses special Swiss-made 5.6mm rounds that offer better range.",
@@ -2224,6 +2203,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_ass_nova4_chaos_desc"] = "Grants the following perks:\n#{heat_warm_color}#Celerity:##\n#{skill_color}#Increases## hipfire fire rate but #{important_1}#reduces## ADS fire rate.\n#{item_stage_2}#Steady:##\n#{skill_color}#Reduced## hipfire spread.",
 					--MW22 Honey Badger
 					["bm_w_mcbravo_desc"] = "With an #{skill_color}#integrated suppressor## and slow, high-energy subsonic #{risk}#.300 BLK## rounds, the Chimera is adept at close-quarters combat.",
+			
 			--[[ DMRs ]]
 				--Little Friend
 				["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" AMR-16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
@@ -2278,6 +2258,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
 					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
+			
 			--[[ SNIPERS ]]
 				--MSR
 				["bm_msr_sc_desc"] = "The choice sniper rifle for the US military. Good accuracy, handling, and even concealability makes this a good all purpose sniper rifle.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
@@ -2337,7 +2318,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_hmcar_sc_desc"] = "Before being phased out by law-enforcement, you managed to swipe a case full of these conversion kits.\n\nShoots #{stat_maxed}#titan-sniper rounds## capable of #{skill_color}#piercing multiple enemies, their body armor, shields and thin walls;## Alt-fire shoots a #{event_color}#full power sniper round## for #{skill_color}#twice the ammo and power## that also adds the abilty to #{skill_color}#pierce titan-shields.##",
 					["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",		
-			--[[ LAUNCHERS & BOWS ]]
+			
+			--[[ SPECIALS ]]
+				--Saw
+				["bm_ap_saw_sc_desc"] = "#{skill_color}#Cuts through body armor.##",
+				["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to #{skill_color}#cut through body armor.##",
+				["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
+				["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
 				--Light Crossbow		
 				["bm_wp_avelyn"] = "Avelyn Kit",
 				["bm_wp_avelyn_desc"] = "A #{skill_color}#repeating crossbow## kit.\nAllows for firing a volley of #{skill_color}#3## bolts with a single trigger pull.",
@@ -2795,7 +2782,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--COMMANDO 101/M202 FLASH
 					["bm_w_ray"] = "Commando 101 FLASH",
 				--[[ UNIVERSAL ATTACHMENTS ]]
+					--MUZZLE DEVICES
 					["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
+					--SIGHTS
+					["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW Scope",
 			})
 		end
 

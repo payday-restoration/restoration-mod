@@ -16343,58 +16343,90 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vk78_commando.timers.reload_not_empty = 1.75
 	end
 
-	if self.stoner63a then --RJC9000 and PlayBONK's Stoner 63A (WIP)
-		--LMG
-			self.stoner63a.recategorize = { "light_mg" }
-			self.stoner63a.categories = {
-				"lmg",
-				"smg"
-			}
-			self.stoner63a.damage_type = "machine_gun"
-			self.stoner63a.CLIP_AMMO_MAX = 100
-			self.stoner63a.BURST_FIRE = false
-			self.stoner63a.CAN_TOGGLE_FIREMODE = false
-			self.stoner63a.fire_mode_data.fire_rate = 0.08
-			self.stoner63a.AMMO_MAX = 300
-			self.stoner63a.kick = self.stat_info.kick_tables.even_recoil
-			self.stoner63a.always_use_standing = true
-			self.stoner63a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
-			self.stoner63a.supported = true
-			self.stoner63a.ads_speed = 0.480
-			self.stoner63a.damage_falloff = {
-				start_dist = 2100,
-				end_dist = 6800,
-				min_mult = 0.4166
-			}
-			self.stoner63a.stats = {
-				damage = 24,
-				spread = 61,
-				recoil = 73,
-				spread_moving = 5,
-				zoom = 1,
-				concealment = 19,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 9,
-				reload = 20
-			}
-			self.stoner63a.stats_modifiers = nil
-			self.stoner63a.panic_suppression_chance = 0.05
-			self.stoner63a.sounds.spin_start = "wp_m60_reload_lever_release"
-			self.stoner63a.spin_up_shoot = true
-			self.stoner63a.spin_up_t = 0.07
-			self.stoner63a.spin_down_t = 0.00000001
-			self.stoner63a.reload_speed_multiplier = 0.98
-			self.stoner63a.sms = sms_preset.lmg_48
-			self.stoner63a.weapon_movement_penalty = sms_preset.lmg_48
-			self.stoner63a.timers.equip = 1.2
-			self.stoner63a.timers.reload_exit_empty = 0.42
-			self.stoner63a.timers.reload_empty = 6.95
-			self.stoner63a.timers.reload_exit_not_empty = 0.42
-			self.stoner63a.timers.reload_not_empty = 6.95
-		--AR
+	if self.stoner63a then --RJC9000 and PlayBONK's Stoner 63A LMG (WIP)
+		self.stoner63a.recategorize = { "light_mg" }
+		self.stoner63a.categories = {
+			"lmg",
+			"smg"
+		}
+		self.stoner63a.damage_type = "machine_gun"
+		self.stoner63a.CLIP_AMMO_MAX = 100
+		self.stoner63a.BURST_FIRE = false
+		self.stoner63a.CAN_TOGGLE_FIREMODE = false
+		self.stoner63a.fire_mode_data.fire_rate = 0.08
+		self.stoner63a.AMMO_MAX = 300
+		self.stoner63a.kick = self.stat_info.kick_tables.even_recoil
+		self.stoner63a.always_use_standing = true
+		self.stoner63a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+		self.stoner63a.supported = true
+		self.stoner63a.ads_speed = 0.480
+		self.stoner63a.damage_falloff = {
+			start_dist = 2100,
+			end_dist = 6800,
+			min_mult = 0.4166
+		}
+		self.stoner63a.stats = {
+			damage = 24,
+			spread = 61,
+			recoil = 73,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 19,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.stoner63a.stats_modifiers = nil
+		self.stoner63a.panic_suppression_chance = 0.05
+		self.stoner63a.sounds.spin_start = "wp_m60_reload_lever_release"
+		self.stoner63a.spin_up_shoot = true
+		self.stoner63a.spin_up_t = 0.07
+		self.stoner63a.spin_down_t = 0.00000001
+		self.stoner63a.reload_speed_multiplier = 0.98
+		self.stoner63a.sms = sms_preset.lmg_48
+		self.stoner63a.weapon_movement_penalty = sms_preset.lmg_48
+		self.stoner63a.timers.equip = 1.2
+		self.stoner63a.timers.reload_exit_empty = 0.42
+		self.stoner63a.timers.reload_empty = 6.95
+		self.stoner63a.timers.reload_exit_not_empty = 0.42
+		self.stoner63a.timers.reload_not_empty = 6.95
+	end
+
+	if self.stoner63a_rifle then --RJC9000 and PlayBONK's Stoner 63A AR (WIP)
+		self.stoner63a_rifle.recategorize = { "light_ar" }
+		self.stoner63a_rifle.damage_type = "assault_rifle"
+		self.stoner63a_rifle.CLIP_AMMO_MAX = 30
+		self.stoner63a_rifle.BURST_FIRE = false
+		self.stoner63a_rifle.CAN_TOGGLE_FIREMODE = false
+		self.stoner63a_rifle.fire_mode_data.fire_rate = 0.06666666
+		self.stoner63a_rifle.AMMO_MAX = 150
+		self.stoner63a_rifle.kick = self.stat_info.kick_tables.even_recoil
+		self.stoner63a_rifle.supported = true
+		self.stoner63a_rifle.ads_speed = 0.320
+		self.stoner63a_rifle.damage_falloff = {
+			start_dist = 2000,
+			end_dist = 6500,
+			min_mult = 0.4166
+		}
+		self.stoner63a_rifle.stats = {
+			damage = 24,
+			spread = 71,
+			recoil = 79,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 21,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.stoner63a_rifle.stats_modifiers = nil
+		self.stoner63a_rifle.panic_suppression_chance = 0.05
 	end
 
 	if self.srs99_s7 then --RJC9000's Halo Infinite SRS99-S7 AMR

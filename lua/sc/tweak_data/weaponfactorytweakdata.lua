@@ -2319,6 +2319,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.016, -9.5, -2.787),
 				rotation = Rotation(0, 0, -0.79),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_stoner63a_rifle = {
+				translation = Vector3(0.015, 8, -3.52)
+			}
 	
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
 				translation = Vector3(-0.016, -9.5, -2.787),
@@ -2359,6 +2362,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_lewis = {
 				translation = Vector3(0.02, 11.3, -0.19)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_stoner63a = {
+				translation = Vector3(-0.012, 0.8, -0.052)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
@@ -30743,6 +30749,42 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_lmg_stoner63a_receiver then --RJC9000 and PlayBONK's Stoner 63A
+		self.parts.wpn_fps_lmg_stoner63a_barrel.pcs = nil
+		self.parts.wpn_fps_lmg_stoner63a_barrel.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_stoner63a_barrel.custom_stats = nil
+
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_01.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_01.stats = { value = 4, recoil = 2, spread = -1 }
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_01.custom_stats = nil
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_01.custom_stats = deep_clone(barrels.short_b1_stats)
+
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_02.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_02.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_lmg_stoner63a_mixbarrel_02.custom_stats = deep_clone(barrels.short_b1_stats)
+
+		self.parts.wpn_fps_lmg_stoner63a_barrel_01.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_barrel_01.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_lmg_stoner63a_barrel_01.custom_stats = deep_clone(barrels.short_b2_stats)
+
+		self.parts.wpn_fps_lmg_stoner63a_barrel_02.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_barrel_02.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_lmg_stoner63a_barrel_02.custom_stats = deep_clone(barrels.short_b3_stats)
+
+		self.parts.wpn_fps_lmg_stoner63a_heavy_01.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_heavy_01.stats = { value = 4, recoil = 4, concealment = -2 }
+		self.parts.wpn_fps_lmg_stoner63a_heavy_01.custom_stats = nil
+
+		self.parts.wpn_fps_lmg_stoner63a_heavy_02.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_heavy_02.stats = deep_clone(barrels.long_b1_stats)
+		self.parts.wpn_fps_lmg_stoner63a_heavy_02.stats.recoil = 2
+		self.parts.wpn_fps_lmg_stoner63a_heavy_02.stats.concealment = -2
+		self.parts.wpn_fps_lmg_stoner63a_heavy_02.custom_stats = deep_clone(barrels.long_b1_stats)
+
+		self.parts.wpn_fps_lmg_stoner63a_bipod.supported = true
+		self.parts.wpn_fps_lmg_stoner63a_bipod.stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats)
+		self.parts.wpn_fps_lmg_stoner63a_bipod.stats.value = 0
+		self.parts.wpn_fps_lmg_stoner63a_bipod.custom_stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats)
+		self.parts.wpn_fps_lmg_stoner63a_bipod.perks = {"bipod"}
 	end
 
 	if self.parts.wpn_fps_upg_o_ak_taikrail then --FrenchyAU's Functional Taktika AK Dust Cover
@@ -33828,6 +33870,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
 end )
 Hooks:PostHook( WeaponFactoryTweakData, "init", "fort500Init", function(self)
 end )
+
+Hooks:PostHook(WeaponFactoryTweakData, "init", "stoner63a_lmg_mod_init", function(self)
+end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then

@@ -5385,7 +5385,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
-	if self.melee_weapons.megumins_staff then
+	if self.melee_weapons.megumins_staff then --Hoppip's Megumin Staff
 		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
 		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99
 		self.melee_weapons.megumins_staff.stats.charge_bonus_range = 2800
@@ -5398,7 +5398,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.sphere_cast_radius_add = nil
 	end
 
-	if self.melee_weapons.tridagger then
+	if self.melee_weapons.tridagger then --NotSoIrish's Jagdkommando Tri-Dagger
 		self.melee_weapons.tridagger.stats = deep_clone(self.melee_weapons.gerber.stats)
 		self.melee_weapons.tridagger.stats.charge_time = 1.2
 		self.melee_weapons.tridagger.stats.concealment = 26
@@ -5428,7 +5428,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.toyknife.stats.max_damage_effect = 0.6
 	end
 
-	if self.melee_weapons.therkatana then --Cyberpunk 2077 Thermal Katana
+	if self.melee_weapons.therkatana then --Hybrids' Cyberpunk 2077 Thermal Katana
 		self.melee_weapons.therkatana.info_id = "bm_melee_2077tkata_info"	
 		self.melee_weapons.therkatana.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.therkatana.stats.min_damage = 6
@@ -5449,7 +5449,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		}	
 	end
 
-	if self.melee_weapons.hfblade then --HF Blade (Katana 1.8x speed, 1/2 damage)
+	if self.melee_weapons.hfblade then --Rikerus's HF Blade (Katana 1.8x speed, 1/2 damage)
 		self.melee_weapons.hfblade.info_id = "bm_melee_raiden_info"	
 		self.melee_weapons.hfblade.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.hfblade.stats.min_damage = self.melee_weapons.hfblade.stats.min_damage / 2
@@ -5457,7 +5457,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.hfblade.anim_speed_mult = self.melee_weapons.hfblade.anim_speed_mult * 1.85
 	end
 
-	if self.melee_weapons.murasama then --HF Murasama (Katana 1.8x speed, 1/2 damage)
+	if self.melee_weapons.murasama then --Rikerus's HF Murasama (Katana 1.8x speed, 1/2 damage)
 		self.melee_weapons.murasama.info_id = "bm_melee_thejobissnotyours_info"	
 		self.melee_weapons.murasama.stats = deep_clone(self.melee_weapons.sandsteel.stats)
 		self.melee_weapons.murasama.stats.min_damage = self.melee_weapons.murasama.stats.min_damage / 2
@@ -5465,7 +5465,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.murasama.anim_speed_mult = self.melee_weapons.murasama.anim_speed_mult * 1.85
 	end
 
-	if self.melee_weapons.invincible then --Pincer Blades (Lucille Bat)
+	if self.melee_weapons.invincible then --Rikerus's Pincer Blades (Lucille Bat)
 		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"
 		self.melee_weapons.invincible.stats = deep_clone(self.melee_weapons.barbedwire.stats)
 		self.melee_weapons.invincible.dot_data = {
@@ -5479,7 +5479,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
-	if self.melee_weapons.dragon_slayer then --Dragon Slayer (Halloween Dozer Sword)
+	if self.melee_weapons.dragon_slayer then --Silent Enforcer's Dragon Slayer (Halloween Dozer Sword)
 		self.melee_weapons.dragon_slayer.info_id = "bm_melee_goat_info"
 		self.melee_weapons.dragon_slayer.special_weapon = "panic"
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
@@ -5488,7 +5488,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.dragon_slayer.sounds.hit_gen = "cash_loot_drop_reveal"
 	end
 
-	if self.melee_weapons.Binary_Blade then --Binary Blade (Greatsword)
+	if self.melee_weapons.Binary_Blade then --Kalidor's Binary Blade (Greatsword)
 		self.melee_weapons.Binary_Blade.stats = deep_clone(self.melee_weapons.great.stats)
 		self.melee_weapons.Binary_Blade.info_id = "bm_melee_jebus_info"
 	end
@@ -5551,7 +5551,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.predator_wristblades.anim_speed_mult = 0.6
 	end
 
-	if self.melee_weapons.revenant_heirloom then --Revenant Heirloom Scythe
+	if self.melee_weapons.revenant_heirloom then --PlayBONK, Masavik and Ommfe's Revenant Heirloom Scythe
 		self.melee_weapons.revenant_heirloom.info_id = "bm_melee_revenant_heirloom_info"
 		self.melee_weapons.revenant_heirloom.stats.min_damage = 6
 		self.melee_weapons.revenant_heirloom.stats.max_damage = 18.001
@@ -5565,7 +5565,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.revenant_heirloom.headshot_damage_multiplier = nil
 	end
 
-	if self.melee_weapons.melee_g36 then --G36 (Nailgun but with the G36's max damage profile + range)
+	if self.melee_weapons.melee_g36 then --Zdann's G36 (Nailgun but with the G36's max damage profile + range)
 		self.melee_weapons.melee_g36.info_id = "bm_melee_thebestweapon_info"	
 		self.melee_weapons.melee_g36.hit_pre_calculation = true
 		self.melee_weapons.melee_g36.stats = deep_clone(self.melee_weapons.nin.stats)
@@ -5578,7 +5578,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.melee_g36.sounds.hit_air = "primary_dryfire"
 	end
 
-	if self.melee_weapons.zd_poke then --Poke
+	if self.melee_weapons.zd_poke then --Zdann's Poke of Death
 		self.melee_weapons.zd_poke.anim_attack_vars = {"var1"}
 		self.melee_weapons.zd_poke.expire_t = 33.4
 		self.melee_weapons.zd_poke.repeat_expire_t = 29.5

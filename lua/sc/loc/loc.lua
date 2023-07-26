@@ -1379,6 +1379,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
 		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with end of the weapon.\n\nAttacking with at least a #{skill_color}#25%## charge performs a sweeping slash.",
+		["bm_melee_megumins_staff_info"] = "Cast a powerful explosion when fully charged!\nCan be cast as far as #{skill_color}#30## meters on any surface or being; #{risk}#it cannot be cast into the air.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",
 		["bm_menu_weapon_bayonet_damage"] = "\nADDITIONAL DAMAGE: ##+",

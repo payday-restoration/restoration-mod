@@ -734,7 +734,8 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "charge_time" then
 			local base = stats_data.charge_time
-			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
+			local ignore_charge_speed = tweak_data.blackmarket.melee_weapons[name].ignore_charge_speed
+			local skill = ignore_charge_speed and 0 or managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
 				min_value = base,

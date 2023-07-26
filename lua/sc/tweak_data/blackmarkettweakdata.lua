@@ -5339,22 +5339,6 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
-	--melee_blunt
-	melee_anim = {
-	}
-	for i, melee_id in ipairs(melee_anim) do
-		if self.melee_weapons[melee_id] then
-			self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
-			self.melee_weapons[melee_id].expire_t = 1.05
-			self.melee_weapons[melee_id].repeat_expire_t = 0.8
-			self.melee_weapons[melee_id].melee_damage_delay = 0.1
-			self.melee_weapons[melee_id].anim_speed_mult = 1
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 4
-		end
-	end
-
 	--melee_knife
 	melee_anim = {
 		'toyknife'
@@ -5370,6 +5354,71 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons[melee_id].anim_speed_mult = 1.2307
 		end
 	end	
+	--melee_stab
+	melee_anim = {
+		"tridagger"
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+		self.melee_weapons[melee_id].anim_global_param = "melee_stab"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].expire_t = 0.825
+		self.melee_weapons[melee_id].repeat_expire_t = 0.5
+		self.melee_weapons[melee_id].melee_damage_delay = 0.1
+		self.melee_weapons[melee_id].anim_speed_mult = 1.2
+		end
+	end
+	--melee_baseballbat
+	melee_anim = {
+		"megumins_staff"
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+		self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"} --No more stabbing with blunt objects
+		self.melee_weapons[melee_id].expire_t = 1.025
+		self.melee_weapons[melee_id].repeat_expire_t = 0.9
+		self.melee_weapons[melee_id].melee_damage_delay = 0.275
+		self.melee_weapons[melee_id].anim_speed_mult = 0.9473
+		self.melee_weapons[melee_id].sphere_cast_radius_add = 12
+		end
+	end
+
+	if self.melee_weapons.megumins_staff then
+		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
+		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99
+		self.melee_weapons.megumins_staff.stats.charge_bonus_range = 2800
+		self.melee_weapons.megumins_staff.stats.concealment = 21
+		self.melee_weapons.megumins_staff.stats.charge_time = 30
+		self.melee_weapons.megumins_staff.ignore_charge_speed = true
+		self.melee_weapons.megumins_staff.special_weapon = "megumin"
+		self.melee_weapons.megumins_staff.explosion_range = 2000
+		self.melee_weapons.megumins_staff.explosion_damage = 5000
+		self.melee_weapons.megumins_staff.sphere_cast_radius_add = nil
+	end
+
+	if self.melee_weapons.tridagger then
+		self.melee_weapons.tridagger.stats = deep_clone(self.melee_weapons.gerber.stats)
+		self.melee_weapons.tridagger.stats.charge_time = 1.2
+		self.melee_weapons.tridagger.stats.concealment = 26
+		self.melee_weapons.tridagger.stats.range = 160
+		self.melee_weapons.tridagger.dot_data = {
+			type = "bleed",
+			custom_data = {
+				dot_damage = 2,
+				dot_length = 3.1,
+				hurt_animation_chance = 0.0
+			}
+		}
+		self.melee_weapons.tridagger.info_id = "bm_melee_bleed_info"
+		self.melee_weapons.tridagger.sounds.equip = "knife_equip"
+		self.melee_weapons.tridagger.sounds.hit_air = "knife_hit_air"
+		self.melee_weapons.tridagger.sounds.hit_gen = "knife_hit_gen"
+		self.melee_weapons.tridagger.sounds.hit_body = "knife_hit_body"
+		self.melee_weapons.tridagger.sounds.charge = "knife_charge"
+		self.melee_weapons.tridagger.anim_speed_mult = 1
+	end
 
 	if self.melee_weapons.toyknife then
 		self.melee_weapons.toyknife.anim_attack_vars = {"var1","var2"} --Removes the awkward blunt side strike attack variants

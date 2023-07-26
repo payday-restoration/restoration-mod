@@ -2140,11 +2140,12 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	if not weapon then
 		return
 	end
+	local weapon_sms = weapon._sms
 	local smt_range = weapon and weapon:weapon_tweak_data().smt_range or { 0.3, 0.8 }
-	if self._shooting and weapon._sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
+	if self._shooting and weapon_sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
 		self._shooting_move_speed_t = math.clamp(weapon._smt, smt_range[1], smt_range[2])
-		--self._shooting_move_speed_wait = weapon._smt * 0.15
-		self._shooting_move_speed_mult = weapon._sms
+		self._shooting_move_speed_wait = self._shooting_move_speed_t * 0.25
+		self._shooting_move_speed_mult = weapon_sms
 	end
 	if self._shooting_move_speed_wait then
 		self._shooting_move_speed_wait = self._shooting_move_speed_wait - dt
@@ -2153,7 +2154,7 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 		end
 	elseif self._shooting_move_speed_t then
 		self._shooting_move_speed_t = self._shooting_move_speed_t - dt
-		--self._shooting_move_speed_mult = self._shooting_move_speed_mult --too stupid to figure out the math to make 'self._shooting_move_speed_mult' transition to 1 as 'self._shooting_move_speed_t' counts down, pls help 
+		self._shooting_move_speed_mult = math.lerp(1 , weapon_sms, self._shooting_move_speed_t) 
 		if self._shooting_move_speed_t < 0 then
 			self._shooting_move_speed_t = nil
 			self._shooting_move_speed_mult = nil

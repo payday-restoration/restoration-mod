@@ -1719,7 +1719,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			if not self._state_data._playing_charge then
 				self._state_data._playing_charge = XAudio.Source:new(sound_buffer)
 			end
-			managers.environment_controller:set_downed_value(math.lerp(0, 75, lerp_value))
+			managers.environment_controller:set_downed_value(math.lerp(0, 40, lerp_value))
 			managers.player:apply_slow_debuff(1, math.lerp(0.2, 0.8, lerp_value), nil, true)
 			managers.hud:activate_effect_screen(1, {math.lerp(0, 0.8, lerp_value), math.lerp(0, 0.08, lerp_value), 0})
 		end

@@ -29,7 +29,7 @@ local norecoil_blacklist = { --From Zdann
 	["model3"] = true
 }
 
-local sound_buffer = XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")
+local sound_buffer = BeardLib.Utils:FindMod("Megumin's Staff") and XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")
 
 local original_init = PlayerStandard.init
 function PlayerStandard:init(unit)
@@ -2146,6 +2146,7 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 		self._shooting_move_speed_t = math.clamp(weapon._smt, smt_range[1], smt_range[2])
 		self._shooting_move_speed_wait = self._shooting_move_speed_t * 0.25
 		self._shooting_move_speed_mult = weapon_sms
+		self._shooting_move_speed_mult_max = weapon_sms
 	end
 	if self._shooting_move_speed_wait then
 		self._shooting_move_speed_wait = self._shooting_move_speed_wait - dt
@@ -2154,10 +2155,11 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 		end
 	elseif self._shooting_move_speed_t then
 		self._shooting_move_speed_t = self._shooting_move_speed_t - dt
-		self._shooting_move_speed_mult = math.lerp(1 , weapon_sms, self._shooting_move_speed_t) 
+		self._shooting_move_speed_mult = math.lerp(1 , self._shooting_move_speed_mult_max, self._shooting_move_speed_t) 
 		if self._shooting_move_speed_t < 0 then
 			self._shooting_move_speed_t = nil
 			self._shooting_move_speed_mult = nil
+			self._shooting_move_speed_mult_max = nil
 		end
 	end
 end

@@ -1974,12 +1974,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_slot_lever_info"] = "Ты кто такой, чтобы это делать?\n\nИмеет шанс 5% нанести десятикратные урон и нокдаун.",
 		["bm_melee_specialist_info"] = "Теперь в два раза больше лезвий.\n\nНаносит двойной урон после первого удара.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "Специальное оружие для вытаскивания кишок в течение десяти минут.\n\nНаносит на 50% меньше урона в голову, но эффективен для ударов по телу и конечностям.",
-		
+		["bm_melee_erica_info"] = "Адекватные люди кидают это.\n\nПолностью заряженные удары по врагам имеют #{skill_color}#5%## шанс взорваться, нанося #{risk}#720## урона в #{skill_color}#5## метровом радиусе.",
+
 		--Melee Weapons
 		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
 		
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
+		["bm_melee_revenant_heirloom_info"] = "Вы производите быстрый удар нижней частью оружия, если предварительно не заряжали оружие.\n\nВы производите размашистый удар, если зарядили оружие хотя бы на #{skill_color}#25%##.",
+		-- это пиздец
+		["bm_melee_megumins_staff_info"] = "Кастует мощный взрыв, когда полностью заряжен!\nКаст заклинания производится на любую поверхность или существо на расстояние не более #{skill_color}#30## метров; #{risk}#нельзя кастовать в воздухе.##\n\n#{important_1}#Скорость зарядки не зависит от навыков.\nВо время зарядки у Вас затуманивается экран, тратится стамина и постепенно уменьшается скорость передвижения.\nВы мгновенно падаете после каста взрыва; навыки и перки, позволяющие спасти или отложить падение - не работают.##",
 
 		["bm_menu_weapon_bayonet_header"] = "ХАР-КИ ОТ ОСНОВНОГО:",
 		["bm_menu_weapon_bayonet_damage"] = "\nДОП. УРОН: ##+",
@@ -3009,6 +3013,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_x_holt"] = "Akimbo H9s",
 						--93R
 						["bm_w_beer"] = "Beretta 93R",
+						--M13
+						["bm_w_legacy"] = "P7M13",
 
 						--LEO-40
 						["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
@@ -3029,6 +3035,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_g22c_b_long"] = "Glock 35 Compensated Slide",
 						--Bang...
 						["bm_w_sparrow"] = "IWI Jericho 941 RPL",
+						["bm_w_x_sparrow"] = "Akimbo 941s",
 						["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
 						["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
 						["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
@@ -3081,6 +3088,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_x_korth"] = "Akimbo Korth NXAs",
 						--Mateba
 						["bm_w_mateba"] = "Mateba 2006M",
+						["bm_w_x_2006m"] = "Akimbo 2006Ms",
+						--Frenchman Model 87
+						["bm_w_model3"] = "S&W Model 3",	
+						["bm_w_x_model3"] = "Akimbo Model 3s",	
+						--Shatter's Fury
+						["bm_w_chinchilla"] = "S&W Model 29",
+						["bm_w_x_chinchilla"] = "Akimbo Model 29s",
 						--Bronco
 						["bm_w_raging_bull"] = "Taurus Raging Bull",
 						["bm_w_x_rage"] = "Akimbo Raging Bulls",
@@ -3104,6 +3118,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_peacemaker_barrel_short"] = "5.5\" Barrel",
 						["bm_wp_peacemaker_handle_bling"] = "Engraved SAA Grips",
 						["bm_wp_peacemaker_rifle_stock"] = "Skeletal Stock",
+						--RUS-12
+						["bm_w_rsh12"] = "KPB RSh-12",
 						--Shatter's Fury
 						["bm_w_shatters_fury"] = "S&W Model 500",
 
@@ -3222,6 +3238,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_m249"] = "FN M249 Para",
 						["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
 						["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
+						
+						--ChainSAW
+						["bm_w_kacchainsaw"] = "KAC ChainSAW",
 
 						--RPK
 						["bm_w_rpk"] = "Kalashnikov Concern RPK",
@@ -3249,6 +3268,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_m134_barrel_short"] = "Compact Barrel",
 
 					--[[SHOTGUNS]]
+						
+						--Saiga
+						["bm_w_basset"] = "Spike X1S Saiga",
 						--Saiga
 						["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 						["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
@@ -3294,12 +3316,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ksg_b_short"] = "Patrol Barrel w/2x 6-Shot Tubes",
 						--Judge
 						["bm_w_judge"] = "Taurus 4510PLYFS",
+						["bm_w_x_judge"] = "Akimbo Judges",
 						--M37
 						["bm_w_m37"] = "Ithaca Model 37",
 						--NO SHOTGUNS IN THE TRENCHES
 						["bm_w_m1897"] = "Winchester Model 1897",
 						--M590
 						["bm_w_m590"] = "Mossberg 590",
+						--Supernova
+						["bm_w_supernova"] = "Benelli Supernova",
 
 						--Mosconi
 						["bm_w_huntsman"] = "Mosconi Coach Gun",
@@ -3313,6 +3338,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--1887
 						["bm_w_boot"] = "Winchester Model 1887",
 						["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
+						--Claire 12G
+						["bm_w_coach"] = "Remington Model 1889",
 
 					--[[ARs]]
 						--FAMAS
@@ -3362,6 +3389,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--805
 						["bm_w_hajk"] = "CZ 805 BREN",
 						["bm_wp_hajk_b_short"] = "A2 Barrel",
+						--TAR-21
+						["bm_w_komodo"] = "IWI X95",
 
 						--M16
 						["bm_w_m16"] = "Colt M16A4",
@@ -3460,6 +3489,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_msr_body_msr"] = "MSR Aluminum Stock & Receiver",
 						--Scunt
 						["bm_w_scout"] = "Steyr Scout",
+						--AWP
+						["bm_w_awp"] = "Accuracy International AW-F",
+						["bm_wp_awp_stock_lightweight"] = "AT308 Stock",
 
 						--Drako
 						["bm_w_siltstone"] = "Kalashnikov Concern SVD",
@@ -3471,7 +3503,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						--SBL
 						["bm_w_sbl"] = "Marlin Model 1895SBL",
-						--
+						--G2
 						["bm_w_contender"] = "Thompson Center G2 Contender",
 						--Moist Nugget
 						["bm_w_mosin"] = "Mosin Nagant M91/30",
@@ -3491,8 +3523,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						 ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 
 					--[[SPECIALS]]
+						--GL40	
+						["bm_w_gre_m79"] = "Springfield Armory M79",
+					--3GL
+					["bm_w_ms3gl"] = "Metal Storm 3GL",
+					--PIGLET/M32
+					["bm_w_m32"] = "Milkor MGL",
+					--China Puff
+					["bm_w_china"] = "NAWS China Lake",
+					--Compact 40mm
+					["bm_w_slap"] = "H&K M320",
+					--Arbiter
+					["bm_w_arbiter"] = "ATK XM25",
 						--Wat is flash haow do u do it? haow 2 flash cartoonz? ADOEB FLASH... adoeb falsh... CS... 6.... a dobe.... a dobe
-						["bm_w_ray"] = "M202 FLASH",
+						["bm_w_ray"] = "Northrop M202 FLASH",
+						--RPG
 						["bm_w_rpg7"] = "Bazalt RPG-7",
 
 						["bm_w_arblast"] = "Arbalest",

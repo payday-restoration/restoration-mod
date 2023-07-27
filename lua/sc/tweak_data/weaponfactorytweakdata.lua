@@ -4113,7 +4113,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		recoil = -4,
 		concealment = 2
 	}
+	self.parts.wpn_fps_m16_fg_vietnam.override = {
+		wpn_fps_ass_m16_o_handle_sight = {
+			a_obj = "a_body",
+			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_body_upperreciever",
+			third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_body_upperreciever"
+		},
+		wpn_fps_m4_upper_reciever_round = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		}
+	}
 
+
+	self.parts.wpn_fps_ass_m16_o_handle_sight.visibility = {
+		{
+			objects = {
+				g_draghandle = false
+			}
+		}
+	}
 	self.parts.wpn_fps_ass_m16_o_handle_sight.stance_mod = {
 		wpn_fps_ass_m16 = { translation = Vector3(0, -4, 0) },
 		wpn_fps_ass_amcar = { translation = Vector3(0, -4, 0) },
@@ -8176,7 +8195,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	
 	--Vintage Mag (Formerly Extended Magazine)
 	self.parts.wpn_fps_ass_fal_m_01.pcs = {}
-	self.parts.wpn_fps_ass_fal_m_01.name_id = "bm_wp_upg_vintage_sc"
+	self.parts.wpn_fps_ass_fal_m_01.name_id = "bm_wp_upg_vintage_fal_sc"
 	self.parts.wpn_fps_ass_fal_m_01.alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_straight"
 	self.parts.wpn_fps_ass_fal_m_01.unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal_pts/wpn_fps_ass_fal_m_standard"
 	self.parts.wpn_fps_ass_fal_m_01.third_unit = "units/pd2_dlc_big/weapons/wpn_third_ass_fal_pts/wpn_third_ass_fal_m_standard"
@@ -31984,6 +32003,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+			end
+		end
+	end
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_m16.uses_parts) do
+		if used_part_id ~= "wpn_fps_ass_m16_o_handle_sight" and used_part_id ~= "wpn_fps_m4_upper_reciever_round" and self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "upper_reciever" or self.parts[used_part_id].type == "sight" then
+				self.wpn_fps_ass_m16.override[used_part_id] = self.wpn_fps_ass_m16.override[used_part_id] or {}
+				self.wpn_fps_ass_m16.override[used_part_id].override = self.parts[used_part_id].override and deep_clone(self.parts[used_part_id].override) or {}
+				self.wpn_fps_ass_m16.override[used_part_id].override.wpn_fps_m16_fg_vietnam = {
+					override = {}
+				}
 			end
 		end
 	end

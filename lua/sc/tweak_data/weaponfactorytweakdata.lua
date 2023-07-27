@@ -4355,11 +4355,36 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	
 
 	--Para Default Blueprint, making it use the 30 rounder by default
-	self.wpn_fps_smg_olympic.default_blueprint[3] = "wpn_fps_m4_uupg_m_std_vanilla"	
-	
+	for i, part_id in pairs(self.wpn_fps_smg_olympic.default_blueprint) do
+		attachment_list = {
+			"wpn_fps_upg_m4_m_straight_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_olympic.default_blueprint[i] = "wpn_fps_m4_uupg_m_std_vanilla"
+			end
+		end
+	end	
+
 	--Para Part Table
-	self.wpn_fps_smg_olympic.uses_parts[13] = "wpn_fps_upg_m4_m_straight"
-	self.wpn_fps_smg_olympic.uses_parts[16] = "wpn_fps_m4_uupg_m_std_vanilla"
+	for i, part_id in pairs(self.wpn_fps_smg_olympic.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_m4_m_straight_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_olympic.uses_parts[i] = "wpn_fps_upg_m4_m_straight"
+			end
+		end
+		attachment_list = {
+			"wpn_fps_m4_uupg_m_std"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_olympic.uses_parts[i] = "wpn_fps_m4_uupg_m_std_vanilla"
+			end
+		end
+	end
 	
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_ass_m16_s_fixed")			
@@ -4369,6 +4394,153 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 
 	self.wpn_fps_smg_olympic_primary = nil
 	self.wpn_fps_smg_olympic_primary_npc = nil
+end)
+
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_olympic", "resmod_x_olympic", function(self)
+
+
+	self.wpn_fps_smg_x_olympic.override = {
+		wpn_fps_m4_uupg_b_short_vanilla = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_short"
+		},
+		wpn_fps_m4_uupg_b_medium = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_para_b_medium"
+		}
+	}
+
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_upg_m4_m_straight = {
+		stats = {
+			value = 2,
+			concealment = 1,
+			reload = 5,
+			extra_ammo = -20
+		}
+	}
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_upg_m4_m_pmag = {
+		stats = {
+			value = 1,
+			extra_ammo = -10,
+			reload = 1
+		}
+	}
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_m4_uupg_m_strike = {
+		stats = {
+			value = 2,
+			concealment = -1,
+			extra_ammo = 6,
+		}
+	}
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_m4_uupg_m_extend_akimbo = {
+		stats = {
+			extra_ammo = 20,
+			concealment = -1,
+			reload = -1
+		}
+	}
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_ass_m4_m_slick = nil
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_upg_m4_m_quad = { 
+		stats = {
+			value = 3,
+			concealment = -4,
+			reload = -5,
+			extra_ammo = 60
+		}
+	}
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_ass_m4_m_star = {
+		stats = {
+			value = 2,
+			concealment = 1,
+			reload = 5,
+			extra_ammo = -20
+		}
+	}
+
+	self.wpn_fps_smg_x_olympic.override.wpn_fps_m4_uupg_b_medium.override = {
+		wpn_fps_smg_olympic_fg_olympic = {
+			unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_fg_amcar",
+			third_unit = "units/payday2/weapons/wpn_third_ass_amcar_pts/wpn_third_amcar_uupg_fg_amcar",
+			adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m4_ns_frontsight = {
+					parent = "exclusive_set",
+					a_obj = "a_ns"
+				}
+			}
+		},
+		wpn_fps_smg_olympic_fg_railed = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail",
+			adds = {"wpn_fps_m4_uupg_fg_rail_m4a1"},
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m4_ns_frontsight = {
+					parent = "exclusive_set",
+					a_obj = "a_ns"
+				}
+			}
+		},
+		wpn_fps_upg_smg_olympic_fg_lr300 = {
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_lr300",
+			forbids = {"wpn_fps_ass_m16_os_frontsight"},
+			override = {
+				wpn_fps_ass_m16_o_handle_sight = {
+					unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup",
+					third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_o_flipup",
+					stance_mod = {
+						wpn_fps_smg_olympic = {
+							translation = Vector3(0,-4,0.44)
+						}
+					}
+				}
+			}
+		}
+	}
+
+		--Para Default Blueprint, making it use the 30 rounder by default
+	for i, part_id in pairs(self.wpn_fps_smg_x_olympic.default_blueprint) do
+		attachment_list = {
+			"wpn_fps_upg_m4_m_straight_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_olympic.default_blueprint[i] = "wpn_fps_m4_uupg_m_std_vanilla"
+			end
+		end
+	end	
+
+	--Para Part Table
+	for i, part_id in pairs(self.wpn_fps_smg_x_olympic.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_m4_m_straight_vanilla"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_olympic.uses_parts[i] = "wpn_fps_upg_m4_m_straight"
+			end
+		end
+		attachment_list = {
+			"wpn_fps_m4_uupg_m_std"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_olympic.uses_parts[i] = "wpn_fps_m4_uupg_m_std_vanilla"
+			end
+		end
+		attachment_list = {
+			"wpn_fps_upg_m4_m_drum"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_olympic.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+
+	self.wpn_fps_smg_x_olympic_npc.override = deep_clone(self.wpn_fps_smg_x_olympic.override)
+	self.wpn_fps_smg_x_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_olympic.uses_parts)
+
 end)
 
 --Shared AK Parts
@@ -5500,6 +5672,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
 	
 	self.wpn_fps_smg_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_p90.uses_parts)
+
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_p90", "resmod_x_p90", function(self)
+
+	--Disabling Vertical Grip Mods
+	for i, part_id in pairs(self.wpn_fps_smg_x_p90.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip",
+			"wpn_fps_upg_vg_ass_smg_stubby",
+			"wpn_fps_upg_vg_ass_smg_afg"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_x_p90.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+			end
+		end
+	end	
+
+	--Kobus 90 Part Additions
+	table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
+	
+	self.wpn_fps_smg_x_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_p90.uses_parts)
 
 end)
 
@@ -13931,7 +14125,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 	--Mag Adjustments
 	self.wpn_fps_smg_x_akmsu.override = {
 		wpn_fps_upg_ak_m_quad = {
-			supported = true,
 			stats = {
 				value = 3,
 				spread = -1,
@@ -13941,11 +14134,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 			}
 		},
 		wpn_fps_upg_ak_m_uspalm = {
-			supported = true,
 			stats = {
 				value = 1,
 				recoil = -1,
 				concealment = 1
+			}
+		},
+		wpn_upg_ak_m_slick = {
+			stats = {
+				extra_ammo = 20,
+				concealment = -1,
+				reload = -1
+			}
+		},
+		wpn_upg_ak_m_tiny = {
+			stats = {
+				value = 2,
+				concealment = 1,
+				reload = 5,
+				extra_ammo = -20
 			}
 		}
 	}

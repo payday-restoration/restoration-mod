@@ -64,8 +64,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"hajk",
 					"spoon",
 					"x_mac10",
-					"x_packrat",
-					"x_scorpion"
+					"x_packrat"
 				}
 			},	
 		l10 = {
@@ -124,18 +123,20 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				upgrades = {
 					"baseballbat",
 					"scorpion",
+					"x_scorpion",
 					"oldbaton",
 					"hockey",
 					"meter",
 					"hauteur",
 					"shock",
-					"fear"
+					"fear",
 				}
 			},
 		l19 = {
 				name_id = "weapons",
 				upgrades = {
 					"olympic",
+					"x_olympic",
 					"mp9",
 					"baka",
 					"x_baka",
@@ -244,6 +245,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				name_id = "weapons",
 				upgrades = {
 					"p90",
+					"x_p90",
 					"deagle",
 					"winchester1874"
 				}

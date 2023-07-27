@@ -2478,6 +2478,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[ SMGs ]]
 					--Kobus 90--
 					["bm_w_p90"] = "Project-90",
+					["bm_w_x_p90"] = "Akimbo Project-90s",
 					["bm_wp_p90_b_ninja"] = "Ninja Barrel",
 					["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
 					--Spec Ops
@@ -2622,6 +2623,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
 					--Olympic/Para
 					["bm_w_olympic"] = "Para-23",
+					["bm_w_x_olympic"] = "Akimbo Para-23s",
 					--TAR-21
 					["bm_w_komodo"] = "Tempest-95",
 					--Famas
@@ -2983,6 +2985,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[SMGs]]
 					--P90
 					["bm_w_p90"] = "FN P90 TR",
+					["bm_w_x_p90"] = "Akimbo P90s",
 					["bm_wp_p90_b_long"] = "PS90 Barrel",
 					["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
 					--MP7
@@ -3218,6 +3221,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_amcar"] = "Colt M733 Commando",
 					--BABBY AR
 					["bm_w_olympic"] = "Olympic Arms K23B",
+					["bm_w_x_olympic"] = "Akimbo K23Bs",
 
 					--AUG
 					["bm_w_aug"] = "Steyr AUG A2",

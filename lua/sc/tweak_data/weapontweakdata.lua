@@ -3741,7 +3741,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.sounds.magazine_empty = nil
 	self.contender.sounds.magazine_empty = nil
 
-	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor','hcar','kacchainsaw'}
+	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','x_olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor','hcar','kacchainsaw'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_rifle_slide_lock"
@@ -3798,7 +3798,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 		
 	local faction = {
-		'p90','mp7','lemming','olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60','corgi','contraband','awp','kacchainsaw'
+		'p90','x_p90','mp7','lemming','olympic','x_olympic','m16','amcar','new_m4','ak5','s552','g36','aug','famas','l85a2','vhs','tecci','hajk','komodo','new_m14','scar','fal','galil','g3','msr','tti','scout','m134','shuno','par','hk21','hk51b','m249','par','m60','corgi','contraband','awp','kacchainsaw'
 	}	
 	for i, wep_id in ipairs(faction) do
 		self[ wep_id ].nato = true
@@ -3849,7 +3849,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 	
-	recat = { "tec9", "x_tec9", "shepheard", "x_shepheard", "vityaz", "x_vityaz", "coal", "x_coal", "pm9", "x_pm9", "baka", "x_baka", "new_mp5", "x_mp5", "sr2", "x_sr2", "mp7", "x_mp7", "mp9", "x_mp9", "scorpion", "x_scorpion", "p90", "cobray", "x_cobray","hailstorm" }
+	recat = { "tec9", "x_tec9", "shepheard", "x_shepheard", "vityaz", "x_vityaz", "coal", "x_coal", "pm9", "x_pm9", "baka", "x_baka", "new_mp5", "x_mp5", "sr2", "x_sr2", "mp7", "x_mp7", "mp9", "x_mp9", "scorpion", "x_scorpion", "p90", "x_p90", "cobray", "x_cobray","hailstorm" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_smg" }
 		self[ wep_id ].damage_type = "machine_gun"
@@ -3862,7 +3862,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "machine_gun"
 	end
 	
-	recat = { "amcar", "s552", "g36", "olympic" }
+	recat = { "amcar", "s552", "g36", "olympic", "x_olympic" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "crb")
 		self[ wep_id ].recategorize = { "light_ar" }
@@ -3985,7 +3985,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "anti_materiel"
 	end
 	
-	recat = { "mp7", "p90", "lemming" }
+	recat = { "mp7", "p90", "x_p90", "lemming" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].damage_type = "pdw"
 	end
@@ -4117,6 +4117,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		["lower_reciever"] = "whole_receiver"
 	}
 	self.p90.override_mod_type_name = {
+		["lower_reciever"] = "stock"
+	}
+	self.x_p90.override_mod_type_name = {
 		["lower_reciever"] = "stock"
 	}
 	self.m1928.override_mod_type_name = {
@@ -6390,6 +6393,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--PRIMARIES
 
+			--Akimbo Kobus 90
+				self.x_p90.categories = {
+					"akimbo",
+					"smg",
+					"pdw"
+				}
+				self.x_p90.has_description = true
+				self.x_p90.desc_id = "bm_p90_sc_desc"	
+				self.x_p90.AMMO_MAX = 150
+				self.x_p90.fire_mode_data.fire_rate = 0.070588235
+				self.x_p90.armor_piercing_chance = 0.8
+				self.x_p90.can_shoot_through_enemy = false
+				self.x_p90.can_shoot_through_shield = false
+				self.x_p90.can_shoot_through_wall = false
+				self.x_p90.panic_suppression_chance = 0.05
+				self.x_p90.hs_mult = 1.666666
+				self.x_p90.kick = self.stat_info.kick_tables.even_recoil
+				self.x_p90.supported = true
+				self.x_p90.ads_speed = 0.220
+				self.x_p90.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5000,
+					min_mult = 0.555555
+				}
+				self.x_p90.stats = {
+					damage = 18,
+					spread = 66,
+					recoil = 77,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 26,
+					suppression = 12,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.x_p90.stats_modifiers = nil
+				self.x_p90.panic_suppression_chance = 0.05
+				self.x_p90.reload_speed_multiplier = 0.6
+				self.x_p90.timers.reload_not_empty = 2.45
+				self.x_p90.timers.reload_exit_not_empty = 1.1
+				self.x_p90.timers.reload_empty = 3
+				self.x_p90.timers.reload_exit_empty = 0.9
+
 			--Hailstorm Mk5
 				self.hailstorm.categories = { 
 					"smg",
@@ -8299,6 +8348,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.timers.reload_exit_empty = 0.75
 				self.vhs.timers.reload_exit_not_empty = 1
 
+			--Akimbo Para
+				self.x_olympic.desc_id = "bm_menu_sc_olympic_desc"
+				self.x_olympic.has_description = true		
+				self.x_olympic.categories = {
+					"akimbo",
+					"assault_rifle"
+				}
+				self.x_olympic.CLIP_AMMO_MAX = 60
+				self.x_olympic.AMMO_MAX = 180
+				self.x_olympic.fire_mode_data.fire_rate = 0.075
+				self.x_olympic.panic_suppression_chance = 0.05
+				self.x_olympic.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+				self.x_olympic.kick = self.stat_info.kick_tables.even_recoil
+				self.x_olympic.supported = true
+				self.x_olympic.ads_speed = 0.220
+				self.x_olympic.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5800,
+					min_mult = 0.5
+				}
+				self.x_olympic.stats = {
+					damage = 20,
+					spread = 63,
+					recoil = 73,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 28,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.x_olympic.stats_modifiers = nil
+				self.x_olympic.timers.reload_exit_empty = 0.8
+				self.x_olympic.timers.reload_exit_not_empty = 0.85
+				self.x_olympic.reload_speed_multiplier = 0.75
+				self.x_olympic.timers.reload_not_empty = 2.1
+				self.x_olympic.timers.reload_exit_not_empty = 1.5
+				self.x_olympic.timers.reload_empty = 3
+				self.x_olympic.timers.reload_exit_empty = 0.9
+
 			--CAR 4
 				self.new_m4.desc_id = "bm_m4_sc_desc"
 				self.new_m4.has_description = true
@@ -8800,7 +8892,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.x_akmsu.stats_modifiers = nil
-				self.x_akmsu.reload_speed_multiplier = 0.75
+				self.x_akmsu.reload_speed_multiplier = 0.7
 				self.x_akmsu.timers.reload_not_empty = 2.1
 				self.x_akmsu.timers.reload_exit_not_empty = 1.5
 				self.x_akmsu.timers.reload_empty = 3
@@ -12066,10 +12158,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--DISABLED--
 			self.x_erma.use_data.selection_index = 5			
 	
-		--Akimbo Para
-		--DISABLED--
-			self.x_olympic.use_data.selection_index = 5
-	
 		--Akimbo CR805
 		--DISABLED--
 			self.x_hajk.use_data.selection_index = 5
@@ -12097,10 +12185,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Akimbo Spec Ops (Akimbo MP7)
 		--DISABLED--	
 			self.x_mp7.use_data.selection_index = 5
-	
-		--Akimbo Kobus 90
-		--DISABLED--	
-			self.x_p90.use_data.selection_index = 5
 	
 		--Akimbo Grimms
 		--DISABLED--

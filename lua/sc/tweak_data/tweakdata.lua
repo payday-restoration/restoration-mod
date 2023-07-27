@@ -132,9 +132,11 @@ tweak_data.assault_rifle = {
 	}
 
 tweak_data.akimbo = {
-	swap_bonus = 0.85,
-	ads_move_speed_mult = 0.8,
-	hipfire_spread_mult = 1.5
+	swap_bonus = 0.75,
+	ads_move_speed_mult = 0.75,
+	ads_moving_spread_mult = 3,
+	hipfire_spread_mult = 2,
+	moving_spread_mult = 3
 }
 
 tweak_data.cs_spread = {

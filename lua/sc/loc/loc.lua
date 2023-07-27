@@ -2082,6 +2082,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--RPK
 				["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
 				["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
+				["bm_wp_ak_m_drum"] = "Drum Magazine",
 				--Brenner 21/HK21
 				["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
 				--M60
@@ -2108,6 +2109,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--[[ SHOTGUNS ]]
 				--Saiga
 				["bm_saiga_sc_desc"] = "This fully automatic shotgun is perfect for those days you just don't feel like aiming.",
+				["bm_wp_saiga_m_20rnd"] = "Drum Magazine",
 				--AA12
 				["bm_aa12_sc_desc"] = "Box magazine fed full-auto only shotgun. Great for making lasting impressions.",
 				--Spas12
@@ -2168,6 +2170,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
 				["bm_wp_upg_fg_m4a1_desc"] = "This Exclusive Set swaps out the aftermarket flip-up sights for a more traditional set up. #{risk}#Overrides the appearance of your handguard.##",
 				["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+				["bm_wp_m4_m_drum"] = "Drum Magazine",
 				--AK5
 				["bm_ak5_sc_desc"] = "A good all-purpose rifle famous for bank robberies and confusing the uninformed regarding its bullet dimensions.",
 				["fnc_burst_desc"] = "Adds a 3-round burst firemode.",
@@ -2243,7 +2246,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Custom DMRs
 					--MCX Spear
 					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
-					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 80% of its damage through body armor, can pierce enemies and headshots deal 33% more damage to non-captain enemies.##",
 					--["bm_w_xeno"] = "MA14 Surge Rifle",	
 					["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 					["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
@@ -3100,6 +3103,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_rpk"] = "Kalashnikov Concern RPK",
 					["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
 					["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
+					["bm_wp_rpk_m_ban_sc"] = "45rnd Molot Magazine",
 
 					--HK21
 					["bm_w_hk21"] = "H&K HK21E",
@@ -3409,33 +3413,47 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
 						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
 						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
-						["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
 						["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X",
+
+						["bm_wp_upg_fl_ass_smg_sho_surefire"] = "SureFire Scout Light",
+						["bm_wp_upg_fl_ass_laser"] = "Offset Laser Mount & Sight",
+						["bm_wp_upg_fl_ass_smg_sho_peqbox"] = "Insight Technology AN/PEQ-5",
+						["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
+						["bm_wp_upg_fl_ass_peq15"] = "Insight Technology AN/PEQ-15",
 
 					--Muzzle Devices
 						["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
 
+						["bm_wp_upg_pis_ns_flash"] = "CCF Titanium Flash Suppressor",
 						["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
 						["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
 						["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
 						["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
 						["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
-						["bm_wp_upg_ns_pis_jungle"] = "Big Boss Suppressor",
+						["bm_wp_upg_ns_pis_jungle"] = "FX-HND Suppressor",
 						["bm_wp_upg_ns_ass_filter"] = "Oil Filter",
+
+						["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
+						["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
+						["bm_wp_upg_ns_ass_smg_large"] = "GOV MOD 1 Suppressor", --Couldn't find an IRL equivalent, name is just what it says on the tin, literally
+						["bm_wp_upg_ak_ns_tgp"] = "TGP-A Suppressor",
+						["bm_wp_victor_ns_omega"] = "SilencerCo Omega 36M Suppressor",
 	
+						["bm_wp_upg_ns_shot_shark"] = "Tromix Shark Breaching Brake",
+						["bm_wp_upg_shot_ns_king"] = "King Armory KA-1212 Breaching Brake",
 						["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
 						["bm_wp_upg_ns_sho_salvo_large"] = "SilencerCo Salvo 12 Suppressor",
 
-						["bm_wp_upg_ns_ass_smg_stubby"] = "VFC Stinger Flash Hider",
-						["bm_wp_upg_ns_ass_smg_tank"] = "Tank Compensator",
+						["bm_wp_upg_ns_ass_smg_stubby"] = "BM4 Flash Hider", --airsoft part AFAIK, lol (VFC Baby M4)
+						["bm_wp_upg_ns_ass_smg_tank"] = "BM Compensator", --airsoft part AFAIK, lol (G&P Baby Monster) also the little "sight" post on it is actually for an AR15 gas tube, lmao
 						["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
 						["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
 						["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
 						["bm_wp_upg_ass_ns_surefire"] = "SureFire MBK Muzzle Brake",
+						["bm_wp_ns_battle"] = "Battlecomp 2.0 Compensator",
+						["bm_wp_ak_upg_ns_zenitco"] = "ZenitCo DTK-1 Compensator",
+						["bm_wp_upg_ns_ass_smg_v6"] = "Kel-Tec V6 Compensator",
 
-						["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
-						["bm_wp_upg_ns_ass_smg_medium"] = "Small Arms Industries M80 Suppressor",
-						["bm_wp_upg_ns_ass_smg_large"] = "Large Suppressor", --Generic name just to remove any nickname-y names
 
 					--Glock Parts
 						["bm_wp_g18c_m_mag_33rnd"] = "Extended Glock Magazine",
@@ -3466,6 +3484,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ak_s_folding"] = "Underfolding AK Stock",
 						["bm_wp_ak_s_skfoldable"] = "Sidefolding AK Stock",
 						["bm_wp_ak_s_psl"] = "PSL Thumbhole Stock",
+						["bm_wp_ak_upper_zenitco"] = "ZenitCo B-33 Dust Cover",
+						["bm_wp_ak_upg_fg_zenitco"] = "ZenitCo Sport-1 Kit",
+						["bm_wp_ak_upg_dh_zenitco"] = "ZenitCo RP-5 Charging Handle",
+						["wpn_fps_upg_ak_g_edg"] = "Evolution Defense Textured Grip",
+						["wpn_fps_upg_ak_g_rk9"] = "ZenitCo RK-9 Grip",
 
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
@@ -3485,6 +3508,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 						["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
 						["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
+
+						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope",
+						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
 	
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
 						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",

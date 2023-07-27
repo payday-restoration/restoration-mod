@@ -3526,7 +3526,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_upg_m4_m_drum = {
 		pcs = {},
 		type = "magazine",
-		name_id = "bm_wp_aa12_mag_drum",
+		name_id = "bm_wp_m4_m_drum",
 		a_obj = "a_m",
 		bullet_objects = {prefix = "g_bullet_", amount = 100},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum",
@@ -4673,7 +4673,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		pcs = {},
 		fps_animation_weight = "drum_mag",
 		type = "magazine",
-		name_id = "bm_wp_aa12_mag_drum",
+		name_id = "bm_wp_ak_m_drum",
 		a_obj = "a_m",
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum",
@@ -5218,7 +5218,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		pcs = {},
 		fps_animation_weight = "drum_mag",
 		type = "magazine",
-		name_id = "bm_wp_aa12_mag_drum",
+		name_id = "bm_wp_saiga_m_20rnd",
 		a_obj = "a_m",
 		dlc = "sc",
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
@@ -9032,17 +9032,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_scorpion_additions", func
 		end
 	end	
 	self.wpn_fps_smg_scorpion_npc.override = deep_clone(self.wpn_fps_smg_scorpion.override)
+	self.wpn_fps_smg_scorpion_npc.adds = deep_clone(self.wpn_fps_smg_scorpion.adds)
+
 	for i, part_id in pairs(self.wpn_fps_smg_x_scorpion.uses_parts) do
 		if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "gadget" and not self.parts[part_id].depends_on then
-			if not self.wpn_fps_smg_x_scorpion.adds then
-				self.wpn_fps_smg_x_scorpion.adds = {}
-			end
-			if not self.wpn_fps_smg_x_scorpion.adds[part_id] then
-				self.wpn_fps_smg_x_scorpion.adds[part_id] = {}
-			end
+			self.wpn_fps_smg_x_scorpion.adds = self.wpn_fps_smg_x_scorpion.adds or {}
+			self.wpn_fps_smg_x_scorpion.adds[part_id] = self.wpn_fps_smg_x_scorpion.adds[part_id] or {}
 			table.insert(self.wpn_fps_smg_x_scorpion.adds[part_id], "wpn_fps_smg_scorpion_body_standard_rail")
 		end
 	end	
+	self.wpn_fps_smg_x_scorpion_npc.adds = deep_clone(self.wpn_fps_smg_x_scorpion.adds)
 end)
 
 --Blaster 9mm, now the T3K Urban
@@ -30002,6 +30001,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.stats = {value = 1}
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.custom_stats = nil
 
+		self.parts.wpn_fps_ass_ar47_b_ck.custom_stats = nil
+
 		self.parts.wpn_fps_ass_ar47_ns_hera_supp.supported = true
 		self.parts.wpn_fps_ass_ar47_ns_hera_supp.stats = {
 			value = 8,
@@ -30077,6 +30078,72 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -2
 		}
 		self.parts.wpn_fps_ass_ar47_vg_ergo.custom_stats = nil
+		self.parts.wpn_fps_ass_ar47_body_ck.forbids = { "wpn_fps_upg_ass_ar47_b_sd" }
+		self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_upg_m4_s_adapter = {
+			unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck_adapter"
+		}
+		self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_ass_ar47_ns_standard = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		}
+
+		for k, used_part_id in ipairs(self.wpn_fps_ass_ar47.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_b_ck",
+					adds = {}
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					adds = {},
+					override = {}
+				}
+			elseif self.parts[used_part_id].type == "vertical_grip" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_vg_ck",
+					adds = {},
+					override = {}
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_g_ck"
+				}
+			elseif self.parts[used_part_id].type == "upper_reciever" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_upper_ck",
+					adds = {},
+					override = {}
+				}
+			elseif self.parts[used_part_id].type == "bolt" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_bolt_ck"
+				}
+			elseif self.parts[used_part_id].type == "drag_handle" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_draghandle_ck",
+					third_unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_third_m4_uupg_draghandle_core/wpn_third_m4_uupg_draghandle_core"
+				}
+			elseif self.parts[used_part_id].type == "lower_reciever" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_lower_ck"
+				}
+			elseif self.parts[used_part_id].type == "stock" then
+				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck",
+					adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
+				}
+			end
+		end
+
+		self.parts.wpn_fps_ass_ar47_body_ck_switch.supported = true
+		self.parts.wpn_fps_ass_ar47_body_ck_switch.no_cull = true
+
+	end
+
+
 	end
 
 	if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^)

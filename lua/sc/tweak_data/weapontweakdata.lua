@@ -8385,9 +8385,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_olympic.stats_modifiers = nil
 				self.x_olympic.timers.reload_exit_empty = 0.8
 				self.x_olympic.timers.reload_exit_not_empty = 0.85
+				self.x_olympic.animations.reload_name_id = "x_polymer"
 				self.x_olympic.reload_speed_multiplier = 0.75
-				self.x_olympic.timers.reload_not_empty = 2.1
-				self.x_olympic.timers.reload_exit_not_empty = 1.5
+				self.x_olympic.timers.reload_not_empty = 2.3
+				self.x_olympic.timers.reload_exit_not_empty = 1.3
 				self.x_olympic.timers.reload_empty = 3
 				self.x_olympic.timers.reload_exit_empty = 0.9
 
@@ -16342,14 +16343,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.supported = true
 		self.ngsierra.ads_speed = 0.400
 		self.ngsierra.damage_falloff = {
-			start_dist = 2400,
-			end_dist = 6000,
+			start_dist = 2200,
+			end_dist = 5800,
 			min_mult = 0.53333
 		}	
 		self.ngsierra.stats = {
 			damage = 45,
 			spread = 85,
-			recoil = 61,
+			recoil = 68,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -16366,7 +16367,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.spin_up_shoot = true
 		self.ngsierra.spin_up_t = 0.1
 		self.ngsierra.spin_down_t = 0.0000000001
-		self.ngsierra.can_shoot_through_enemy = true
+		self.ngsierra.can_shoot_through_enemy = false
 		self.ngsierra.can_shoot_through_wall = false
 		self.ngsierra.can_shoot_through_shield = false
 		self.ngsierra.is_bullpup = true
@@ -16892,6 +16893,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.ar47 then --Tangerine's AR-47
 		self.ar47.recategorize = { "heavy_ar" }	
 		self.ar47.damage_type = "assault_rifle"
+		self.ar47.lock_slide = true
+		self.ar47.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.ar47.AMMO_MAX = 120
 		self.ar47.tactical_reload = 1		
 		self.ar47.CLIP_AMMO_MAX = 30

@@ -16,7 +16,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	end
 
 if Global.game_settings and Global.game_settings.one_down then	
-	if tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	if tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
 		titan_shield_pj = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end	
 end
@@ -32,22 +32,7 @@ return {
     [102551] = {
         ponr_end = true
     },
-	--Replace shields that cover the manhole with titan counterparts on Mayhem-DS PJ
-	[100670] = {
-		values = {
-            enemy = titan_shield_pj
-		}
-	},
-	[100670] = {
-		values = {
-            enemy = titan_shield_pj
-		}
-	},
-	[100670] = {
-		values = {
-            enemy = titan_shield_pj
-		}
-	},
+	--Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
 	[100036] = {
 		values = {
             enemy = titan_shield_pj
@@ -64,6 +49,11 @@ return {
 		}
 	},
 	[101848] = {
+		values = {
+            enemy = titan_shield_pj
+		}
+	},
+	[101908] = {
 		values = {
             enemy = titan_shield_pj
 		}

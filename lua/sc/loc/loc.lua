@@ -1906,6 +1906,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
 				["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",
 				--AR-15 MAGS
+				["bm_wp_upg_vintage_fal_sc"] = "Vintage Mag",
 				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 				["bm_wp_upg_mil_sc"] = "Milspec Mag",
 				["bm_wp_upg_tac_sc"] = "Tactical Mag",
@@ -2994,7 +2995,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
 					--MP7
 					["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
-
+					["bm_wp_mp7_b_suppressed"] = "B&T Rotex-II Suppressor",
+					["bm_wp_mp7_s_long"] = "Extended Stock",
+					["bm_wp_mp7_m_extended"] = "MP7 40rnd Magazine",
 					--CMP
 					["bm_w_mp9"] = "B&T TP9SF",
 					["bm_w_x_mp9"] = "Akimbo TP9SFs",
@@ -3235,7 +3238,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Boatgun
 					["bm_w_corgi"] = "FN F2000 Tactical TR",
 					--AK12
-					["bm_w_flint"] = "Kalashnikov Concern AK-12",
+					["bm_w_ak12"] = "Kalashnikov Concern AK-12",
 					--Ak5
 					 ["bm_w_ak5"] = "Bofors Ak 5",
 					 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
@@ -3251,6 +3254,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_hajk_b_short"] = "A2 Barrel",
 					--TAR-21
 					["bm_w_komodo"] = "IWI X95",
+					--OICW
+					["bm_w_osipr"] = "XM29 OICW",
 
 					--M16
 					["bm_w_m16"] = "Colt M16A4",
@@ -3292,6 +3297,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_fal_m_01"] = "20rnd FAL Magazine",
 					["bm_wp_fal_s_01"] = "Sidefolding FAL Stock",
 					["bm_wp_fal_s_03"] = "Magpul FAL PRS Stock",
+					["bm_wp_upg_vintage_fal_sc"] = "20rnd Magazine",
 					--Galil
 					["bm_w_galil"] = "IWI Galil ARM",
 					["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
@@ -3423,14 +3429,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Muzzle Devices
 						["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
-
+						["bm_wp_upg_ns_typhoon"] = "Omega Defense Muzzle Brake", --Internal name implies it's the Beretta TYPHOON but it resembles Omega Defense's more.
 						["bm_wp_upg_pis_ns_flash"] = "CCF Titanium Flash Suppressor",
+
 						["bm_wp_upg_ns_pis_small"] = "Thompson Machine Poseidon Suppressor",
 						["bm_wp_upg_ns_pis_medium"] = "GemTech SFN Suppressor", --Close enough... it's sectioned similarly enough for me to just name it this
 						["bm_wp_upg_ns_pis_large"] = "SilencerCo Osprey Suppressor",
 						["bm_wp_upg_ns_medium_gem"] = "GemTech Blackside Suppressor",
 						["bm_wp_upg_ns_large_kac"] = "KAC MK.23 Suppressor",
 						["bm_wp_upg_ns_pis_jungle"] = "FX-HND Suppressor",
+						["bm_wp_upg_ns_pis_putnik"] = "RS Putnik Suppressor",
 						["bm_wp_upg_ns_ass_filter"] = "Oil Filter",
 
 						["bm_wp_upg_ns_ass_smg_small"] = "GemTech HALO Suppressor", --not 100% but I can't find any other suppressor that is similar to this one's two-piece construction and the ability to wrap around an A2 style muzzle brake
@@ -3438,14 +3446,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_ns_ass_smg_large"] = "GOV MOD 1 Suppressor", --Couldn't find an IRL equivalent, name is just what it says on the tin, literally
 						["bm_wp_upg_ak_ns_tgp"] = "TGP-A Suppressor",
 						["bm_wp_victor_ns_omega"] = "SilencerCo Omega 36M Suppressor",
+						["bm_wp_kacchainsaw_suppressor"] = "KAC QDSS NT4 Suppressor",
 	
 						["bm_wp_upg_ns_shot_shark"] = "Tromix Shark Breaching Brake",
 						["bm_wp_upg_shot_ns_king"] = "King Armory KA-1212 Breaching Brake",
 						["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",
 						["bm_wp_upg_ns_sho_salvo_large"] = "SilencerCo Salvo 12 Suppressor",
 
-						["bm_wp_upg_ns_ass_smg_stubby"] = "BM4 Flash Hider", --airsoft part AFAIK, lol (VFC Baby M4)
-						["bm_wp_upg_ns_ass_smg_tank"] = "BM Compensator", --airsoft part AFAIK, lol (G&P Baby Monster) also the little "sight" post on it is actually for an AR15 gas tube, lmao
+						["bm_wp_upg_ns_ass_smg_stubby"] = "VFC BM4 Flash Hider", --airsoft part AFAIK, lol (VFC Baby M4)
+						["bm_wp_upg_ns_ass_smg_tank"] = "G&P BM Compensator", --airsoft part AFAIK, lol (G&P Baby Monster) also the little "sight" post on it is actually for an AR15 gas tube, lmao
 						["bm_wp_upg_ns_ass_smg_firepig"] = "Noveske KX3 Compensator",
 						["bm_wp_upg_ass_ns_jprifles"] = "JPE Bennie Cooley Muzzle Brake",
 						["bm_wp_upg_ass_ns_linear"] = "KIES Blast Master Linear Compensator",
@@ -3453,6 +3462,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ns_battle"] = "Battlecomp 2.0 Compensator",
 						["bm_wp_ak_upg_ns_zenitco"] = "ZenitCo DTK-1 Compensator",
 						["bm_wp_upg_ns_ass_smg_v6"] = "Kel-Tec V6 Compensator",
+						["bm_wp_kacchainsaw_muzzle"] = "KAC QDC MAMS Muzzle Brake",
+						["bm_wp_hk51b_ns_jcomp"] = "JCOMP Gen2 Compensator",
+						["bm_wp_awp_ns_muzzle"] = "Accuracy International Muzzle Brake",
 
 
 					--Glock Parts
@@ -3495,6 +3507,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
 	
 						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
+						["bm_wp_upg_o_reflex"] = "Reflex Sight",
 						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
 						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
 						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
@@ -3502,12 +3515,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
 						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
 						["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
+						["bm_wp_upg_o_tf90"] = "Tech Force TF90 Red Dot Sight",
 	
+						["bm_wp_upg_o_fc1"] = "DI Optical FC1 Prismatic Red Dot Sight",
 						["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
 						["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
+						["bm_wp_upg_o_uh"] = "AMG UH-1 Holographic Sight",
 	
 						["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
 						["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
+						["bm_wp_upg_o_poe"] = "BelOMO PO4x24P Scope",
+						["bm_wp_upg_o_bmg"] = "Trijicon 6x48 Scope",
+
+						["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",
 
 						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
@@ -3521,29 +3541,37 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
 	
 						["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
+						["bm_wpn_fps_upg_o_sig"] = "SIG Juliet3 Magnifier",
 	
 						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
 
 					--Vertical Grips
-						["bm_wp_upg_vg_ass_smg_verticalgrip"] = "Knights Armament Co. VFG",
-						["bm_wp_upg_vg_ass_smg_stubby"] = "Tango Down QD Stubby VFG",
-						["bm_wp_upg_vg_ass_smg_afg"] = "Magpul AFG 2",
+						["bm_wp_upg_vg_tac"] = "Knights Armament Co. VFG",
+						["bm_wp_upg_vg_stubby"] = "Tango Down QD Stubby VFG",
+						["bm_wp_upg_vg_afg"] = "Magpul AFG 2",
 
 					--STANAG compatible mags
-						["bm_wp_m4_m_straight"] = "20rnd STANAG Magazine",
-						["bm_wp_m4_uupg_m_std"] = "30rnd STANAG Magazine",
+						["bm_wp_upg_vintage_sc"] = "20rnd STANAG Magazine",
 						["bm_wp_m4_m_pmag"] = "30rnd Magpul PMAG GEN1 Magazine",
 						["bm_wp_l85a2_m_emag"] = "30rnd Magpul EMAG Magazine",
 						["bm_wp_upg_m4_m_quad"] = "60rnd SureFire Magazine",
 						["bm_wp_m4_m_drum"] = "100rnd Beta-C Dual Drum",
 						["bm_wp_upg_m4_m_l5"] = "30rnd Lancer Systems L5 AW Magazine",
+						["bm_wp_m4_uupg_m_strike"] = "33rnd Strike Industries Magazine",
+						["bm_wp_m4_m_quick"] = "Magpul Magazine Assist",
 
 					--AR15 parts
+						["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel",
+						["bm_wp_upg_ass_m4_b_beowulf"] = "Heavy Barrel",
+
 						["bm_wp_m4_upper_reciever_edge"] = "VLTOR Upper Receiver",
 						["bm_wp_upg_ass_m4_upper_reciever_ballos"] = "2A-Arm BALIOS Upper Receiver",
 						["bm_wp_upg_ass_m4_upper_reciever_core"] = "CORE15 Upper Receiver",
 						["bm_wp_upg_ass_m4_lower_reciever_core"] = "CORE15 Lower Receiver",
-						["bm_wp_m4_uupg_b_sd"] = "Suppressed Barrel", 
+						["bm_wp_m4_upper_radian"] = "Radian Model 1 Upper Receiver",
+						["bm_wp_m4_lower_radian"] = "Radian A-DAC 15 Lower Receiver",
+
+						["bm_wp_m4_uupg_fg_radian"] = "Radian Model 1 Handguard",
 						["bm_wp_upg_fg_jp"] = "JPE Modular Handguard",
 						["bm_wp_m4_uupg_fg_lr300"] = "LR300 Handguard",
 						["bm_wp_upg_fg_smr"] = "Geissele Super Modular Rail",
@@ -3551,17 +3579,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_ass_m16_fg_stag"] = "Stag Arms Model 8T Handguard",
 						["bm_wp_upg_ass_m4_fg_moe"] = "Magpul MOE SL Handguard",
 						["bm_wp_upg_ass_m4_fg_lvoa"] = "War Sport LVOA Handguard",
-						["bm_wp_upg_ass_m4_b_beowulf"] = "Heavy Barrel",
+
 						["bm_wp_m4_s_standard"] = "Bushmaster LE Stock",
 						["bm_wp_m4_s_pts"] = "Magpul PTS Stock",
 						["bm_wp_m4_uupg_s_fold"] = "LR300 Folding Stock",
 						["bm_wp_upg_m4_s_crane"] = "NSWC Crane Stock",
 						["bm_wp_upg_m4_s_mk46"] = "NSWC Crane Stock w/Cheek Pad",
 						["bm_wp_upg_m4_s_ubr"] = "Magpul UBR Stock",
+						["bm_wp_tti_s_vltor"] = "VLTOR E-MOD Stock",
+						["bm_wp_victor_s_mod0"] = "BCM MOD 0 Stock",
+						["bm_wp_sko12_stock"] = "Standard Mfg AR Stock",
+						["bm_wp_m4_uupg_s_zulu"] = "ODIN Works Zulu 2.0 Stock",
+						["bm_wp_olympic_s_short"] = "Rock River Arms Pistol Buffer Tube",
+
 						["bm_wp_m4_g_ergo"] = "Command Arms UPG16 Pistol Grip",
 						["bm_wp_m4_g_sniper"] = "PSG Style Pistol Grip",
 						["bm_wp_upg_m4_g_hgrip"] = "Houge Rubber Ergo Grip",
 						["bm_wp_upg_m4_g_mgrip"] = "Magpul MOE-K Pistol Grip",
+						["bm_wp_tti_g_grippy"] = "Houge OverMolded Grip",
+						["bm_wp_victor_g_mod3"] = "BCM MOD 3 Grip",
+						["bm_wp_sko12_grip"] = "Standard Mfg AR Grip",
+						["bm_wp_upg_g_m4_surgeon"] = "Tactical Dynamics Skeletonized Pistol Grip",
+						["bm_wp_m4_g_billet"] = "JL Billet AR Grip",
 
 					["bm_wp_upg_lmg_lionbipod"] = "Bipod",
 

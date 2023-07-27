@@ -3646,27 +3646,27 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2"]
 		},
 		[100078] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100080] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100089] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100082] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100088] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100094] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100403] = {

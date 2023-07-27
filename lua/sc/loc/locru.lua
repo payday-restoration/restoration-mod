@@ -2578,6 +2578,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["kfa_scope"] = "Прицел KFA-2 Smart-Link",
 		["bm_w_papa320"] = "M19",
 		["bm_w_p90"] = "Project-90",
+		["bm_w_x_p90"] = "Парные Project-90",
 		["bm_w_mp7"] = "SpecOps-7",
 		["bm_w_tec9"] = "T3K Urban",
 		["bm_w_x_tec9"] = "Парные T3K Urban",
@@ -2647,6 +2648,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_g36"] = "JP36",		
 		["bm_w_vhs"] = "Lion's Roar",		
 		["bm_w_olympic"] = "Para-23",
+		["bm_w_x_olympic"] = "Парные Para-23",
 		["bm_w_komodo"] = "Tempest-95",
 		["bm_w_famas"] = "Clarion 5.56",
 		["bm_w_osipr"] = "SABR",
@@ -2805,6 +2807,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--SIG P320
 			["bm_w_papa320"] = "M19",
 		["bm_w_p90"] = "Проджект-90",
+		["bm_w_x_p90"] = "Парные Проджект-90",
 		["bm_w_mp7"] = "СпекОпс-7",
 		["bm_w_tec9"] = "ТЕК",
 		["bm_w_x_tec9"] = "Парные ТЕК",
@@ -2878,6 +2881,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_g36"] = "ДЖП 36",
 		["bm_w_vhs"] = "Львиный оскал",
 		["bm_w_olympic"] = "Пара 23",
+		["bm_w_x_olympic"] = "Парные Пара 23",
 		["bm_w_komodo"] = "Темпест 95",
 		["bm_w_famas"] = "Клэрион 5.56",
 		["bm_w_m4"] = "КАР-4",
@@ -3133,6 +3137,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--[[SMGs]]
 						--P90
 						["bm_w_p90"] = "FN P90 TR",
+						["bm_w_x_p90"] = "Akimbo P90s",
 						["bm_wp_p90_b_long"] = "PS90 Barrel",
 						["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
 						--MP7
@@ -3367,6 +3372,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ass_s552_body_standard_black"] = "Black Receiver",
 						--AMCAR
 						["bm_w_amcar"] = "Colt M733 Commando",
+						--BABBY AR
+						["bm_w_olympic"] = "Olympic Arms K23B",
+						["bm_w_x_olympic"] = "Akimbo K23Bs",
 
 						--AUG
 						["bm_w_aug"] = "Steyr AUG A2",

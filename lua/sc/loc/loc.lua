@@ -2361,7 +2361,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		4 = Vanilla names/use your own names
 	]]
 	if weapon_names then
-		if weapon_names ~= 4 then --Resmod names
+		if weapon_names <= 2 then --Resmod names
 			LocalizationManager:add_localized_strings({	
 				--[[ PISTOLS ]]
 					--Gecko Pistol

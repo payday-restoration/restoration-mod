@@ -3048,7 +3048,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_coal"] = "Kalashnikov Concern PP-19 Bizon-2",
 
 					--Uzi
-					["bm_w_uzi"] = "IMI Uzi",
+					["bm_w_uzi"] = "IWI Uzi",
 					["bm_w_x_uzi"] = "Akimbo Uzi",
 					["bm_wp_uzi_s_solid"] = "Wooden Stock",
 					["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
@@ -3132,10 +3132,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[SHOTGUNS]]
 					--Saiga
 					["bm_w_basset"] = "Spike X1S Saiga",
-					--Saiga
+					["bm_w_basset_m_extended"] = "10rnd AGP Arms Saiga Magazine",
 					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
 					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+					["bm_wp_saiga_fg_holy"] = "Fuglystick Rail System",
 					--AA12
 					["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
 					["bm_wp_aa12_barrel_long"] = "Standard AA-12 Barrel",
@@ -3162,7 +3163,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_r870"] = "Remington Model 870",
 					["bm_wp_r870_m_extended"] = "2rnd Tube Extension",
 					["bm_wp_r870_fg_wood"] = "Wooden Pump",
-					["bm_wp_r870_s_nostock"] = "No Stock",
+					["bm_wp_r870_s_folding"] = "No Stock",
+					["bm_wp_r870_s_folding_ext"] = "Remington Wingmaster Folding Stock",
+					["bm_wp_r870_s_folding"] = "Remington Wingmaster Folded Stock",
 					["bm_wp_r870_s_nostock_big"] = "No Stock w/Full Length Rail",
 					["bm_wp_r870_s_solid_big"] = "Fixed Stock w/Full Length Rail",
 					--Loco
@@ -3184,8 +3187,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m1897"] = "Winchester Model 1897",
 					--M590
 					["bm_w_m590"] = "Mossberg 590",
+					["bm_wp_m590_body_rail"] = "Black Aces Tactical Quad Rail",
 					--Supernova
 					["bm_w_supernova"] = "Benelli Supernova",
+					["bm_wp_supernova_g_adapter"] = "Benelli AR-15 Stock Adapter",
+					["bm_wp_supernova_g_raven"] = "ATI Raven Grip",
+					["bm_wp_supernova_g_stakeout"] = "Dickinson XX3 Grip",
+					["bm_wp_supernova_s_collapsed"] = "Collapsed Stock",
+					["bm_wp_supernova_s_Raven"] = "ATI Raven Stock",
 
 					--Mosconi
 					["bm_w_huntsman"] = "Mosconi Coach Gun",
@@ -3302,13 +3311,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Galil
 					["bm_w_galil"] = "IWI Galil ARM",
 					["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
-					["bm_wp_galil_fg_sar"] = "IMI Galil SAR Handguard",
+					["bm_wp_galil_fg_sar"] = "IWI Galil SAR Handguard",
 					["bm_wp_galil_fg_mar"] = "IWI Galil MAR Handguard",
 					["bm_wp_galil_fg_fab"] = "FAB Defense VFR GA Handguard",
-					["bm_wp_galil_g_sniper"] = "IMI Galatz Pistol Grip",
-					["bm_wp_galil_s_sniper"] = "IMI Galatz Wooden Stock",
-					["bm_wp_galil_s_skeletal"] = "IMI Galil MAR Stock",
-					["bm_wp_galil_s_light"] = "IMI Galatz Skeleton Stock",
+					["bm_wp_galil_g_sniper"] = "IWI Galatz Pistol Grip",
+					["bm_wp_galil_s_sniper"] = "IWI Galatz Wooden Stock",
+					["bm_wp_galil_s_skeletal"] = "IWI Galil MAR Stock",
+					["bm_wp_galil_s_light"] = "IWI Galatz Skeleton Stock",
 					["bm_wp_galil_s_fab"] = "FAB Defense MG-CP Cheek Pad",
 					--AS VAL
 					["bm_w_asval"] = "Tula Arms AS \"Val\"",
@@ -3372,6 +3381,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_sbl"] = "Marlin Model 1895SBL",
 					--G2
 					["bm_w_contender"] = "Thompson Center G2 Contender",
+					["bm_wp_contender_grip_m4"] = "Choate M4 Adapter Grip",
 					--Moist Nugget
 					["bm_w_mosin"] = "Mosin Nagant M91/30",
 					["bm_wp_mosin_b_sniper"] = "Nagant Suppressor",
@@ -3427,6 +3437,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_fl_ass_smg_sho_peqbox"] = "Insight Technology AN/PEQ-5",
 						["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
 						["bm_wp_upg_fl_ass_peq15"] = "Insight Technology AN/PEQ-15",
+						["bm_wp_upg_fl_dbal_laser"] = "Steiner DBAL-PL Laser Sight",
 
 					--Muzzle Devices
 						["bm_wp_upg_ns_meatgrinder"] = "Standoff Muzzle Device",
@@ -3449,6 +3460,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_victor_ns_omega"] = "SilencerCo Omega 36M Suppressor",
 						["bm_wp_kacchainsaw_suppressor"] = "KAC QDSS NT4 Suppressor",
 	
+						["bm_wp_ultima_ns_comp"] = "Hi-Tech Howitzer70 Muzzle Brake",
 						["bm_wp_upg_ns_shot_shark"] = "Tromix Shark Breaching Brake",
 						["bm_wp_upg_shot_ns_king"] = "King Armory KA-1212 Breaching Brake",
 						["bm_wp_upg_ns_shot_thick"] = "Shotgun Suppressor",

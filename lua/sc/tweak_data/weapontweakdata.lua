@@ -18291,5 +18291,13 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			position = Vector3( 0, -4, 6 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
+
+		self:SetupAttachmentPoint( "saiga", {
+			name = "a_ns_fix",
+			base_a_obj = "a_ns",
+			position = Vector3( 0, 0, -0.19 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
 	end
 end)	

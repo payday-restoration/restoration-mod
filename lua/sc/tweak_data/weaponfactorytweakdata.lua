@@ -34181,9 +34181,7 @@ end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then
-		if not self.wpn_fps_lmg_hk21.override then
-			self.wpn_fps_lmg_hk21.override = {}
-		end
+		self.wpn_fps_lmg_hk21.override = self.wpn_fps_lmg_hk21.override or {}
 		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = { a_obj = "a_s_fix" } 
 		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_wood = { a_obj = "a_s_fix" } 
 
@@ -34227,20 +34225,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 		}
 		self.parts.wpn_fps_ass_groza_m_standard.a_obj = "a_m_fix"
 		self.parts.wpn_fps_ass_groza_m_speed.a_obj = "a_m_fix"
-		if not self.wpn_fps_ass_groza.override then
-			self.wpn_fps_ass_groza.override = {}
-		end
+
+		self.wpn_fps_ass_groza.override = self.wpn_fps_ass_groza.override or {}
 		self.wpn_fps_ass_groza.override.wpn_upg_ak_m_drum = { a_obj = "a_m_fix" } 
 		self.wpn_fps_ass_groza.override.wpn_fps_upg_ak_m_quad = { a_obj = "a_m_fix" } 
 		self.wpn_fps_ass_groza.override.wpn_fps_upg_ak_m_uspalm = { a_obj = "a_m_fix" } 
 
-		if not self.wpn_fps_ass_asval.override then
-			self.wpn_fps_ass_asval.override = {}
-		end
+		self.wpn_fps_ass_asval.override = self.wpn_fps_ass_asval.override or {}
 		self.wpn_fps_ass_asval.override.wpn_fps_ass_groza_m_speed = {
 			unit = "units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/wpn_fps_ass_groza_m_speed",
 			a_obj = "a_m_fix"
 		}
+
+		for k, used_part_id in ipairs(self.wpn_fps_shot_saiga.uses_parts) do
+			if used_part_id ~= "2" and self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "barrel_ext" then
+					self.parts.wpn_fps_shot_saiga_b_standard.override = self.parts.wpn_fps_shot_saiga_b_standard.override or {}
+					self.parts.wpn_fps_shot_saiga_b_standard.override[used_part_id] = {
+						a_obj = "a_ns_fix"
+					}
+				end
+			end
+		end
 	else
 		if not self.wpn_fps_lmg_hk21.override then
 			self.wpn_fps_lmg_hk21.override = {}

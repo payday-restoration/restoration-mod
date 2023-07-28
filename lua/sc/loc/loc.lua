@@ -3024,6 +3024,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_pm9"] = "Minebea PM-9",
 					--FMG9
 					["bm_w_fmg9"] = "Magpul FDC-9",
+					["bm_wp_fmg9_grip_tape"] = "Grip Tape",
+					["bm_wp_fmg9_stock_pad"] = "Rubbber Butt-Pad",
 
 					--Cobra
 					["bm_w_scorpion"] = "CZ vz. 61 Skorpion",
@@ -3038,6 +3040,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
 					["bm_wp_mp5_s_adjust"] = "H&K Retractable Stock",
 					["bm_wp_mp5_s_ring"] = "No Stock",
+					["bm_wp_mp5_s_folding"] = "Choate Folding Stock",
 					["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
 					["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
 					--MPX
@@ -3098,10 +3101,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SAW
 					["bm_w_m249"] = "FN M249 Para",
 					["bm_wp_m249_fg_mk46"] = "Mk 46 Handguard",
-					["bm_wp_m249_s_solid"] = "Fixed M249 Stock",
+					["bm_wp_m249_s_solid"] = "M249 Fixed Stock",
 
 					--ChainSAW
 					["bm_w_kacchainsaw"] = "KAC ChainSAW",
+					["bm_wp_kacchainsaw_barrel_short"] = "Short Barrel",
+					["bm_wp_kacchainsaw_barrel_long"] = "Long Barrel",
+					["bm_wp_kacchainsaw_sling"] = "Sling",
+					["bm_wp_kacchainsaw_mag_b"] = "100rnd Soft Ammo Pouch",
+					["bm_wp_kacchainsaw_flamethrower"] = "Underbarrel Flamethrower",
 
 					--RPK
 					["bm_w_rpk"] = "Kalashnikov Concern RPK",
@@ -3119,10 +3127,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 					--Versteckt-51/HK51B
 					["bm_w_hk51b"] = "Vollmer HK51-B",
+					["bm_wp_hk51b_fg_railed"] = "Tri-Rail Handguard",
+					["bm_wp_hk51b_b_fluted"] = "Fluted Long Barrel",
 
 					--M240
 					["bm_w_par"] = "FN M240B",
 					["bm_wp_par_s_plastic"] = "M240B Stock",
+					--M60
+					["bm_w_m60"] = "Saco M60",
+					["bm_wp_m60_fg_tactical"] = "MK43 RIS Handguard",
+					["bm_wp_m60_fg_tropical"] = "Leaf Wrappings",
+					["bm_wp_m60_fg_keymod"] = "Keymod Handguard",
 
 					--M134
 					["bm_w_m134"] = "General Electric M134",
@@ -3426,17 +3441,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Attachments
 
 					--Gadgets
-						["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR1",
+						["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR-1 Flashlight",
 						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
-						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC",
-						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201",
-						["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X",
+						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC Laser Light",
+						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201 Laser Sight",
+						["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X Flashlight",
+						["bm_wp_upg_fl_pis_perst"] = "ZenitCo Perst-4M Laser Sight",
 
-						["bm_wp_upg_fl_ass_smg_sho_surefire"] = "SureFire Scout Light",
-						["bm_wp_upg_fl_ass_laser"] = "Offset Laser Mount & Sight",
-						["bm_wp_upg_fl_ass_smg_sho_peqbox"] = "Insight Technology AN/PEQ-5",
-						["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED Laser Combo",
-						["bm_wp_upg_fl_ass_peq15"] = "Insight Technology AN/PEQ-15",
+						["bm_wp_upg_fl_ass_smg_sho_surefire"] = "SureFire Scout Flashlight",
+						["bm_wp_upg_fl_ass_laser"] = "Offset Mount Laser Sight",
+						["bm_wp_upg_fl_ass_smg_sho_peqbox"] = "Insight Technology AN/PEQ-5 Laser Sight",
+						["bm_wp_upg_fl_ass_utg"] = "UTG P38 Laser Light",
+						["bm_wp_upg_fl_ass_peq15"] = "Insight Technology AN/PEQ-15 Laser Light",
 						["bm_wp_upg_fl_dbal_laser"] = "Steiner DBAL-PL Laser Sight",
 
 					--Muzzle Devices
@@ -3514,6 +3530,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ak_upg_dh_zenitco"] = "ZenitCo RP-5 Charging Handle",
 						["wpn_fps_upg_ak_g_edg"] = "Evolution Defense Textured Grip",
 						["wpn_fps_upg_ak_g_rk9"] = "ZenitCo RK-9 Grip",
+						["bm_wp_ak_upg_s_zenitco"] = "ZenitCo PT-1 Telescopic Stock",
 
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",

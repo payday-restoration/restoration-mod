@@ -3002,7 +3002,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_m4_m_quad.stats = {
 		value = 3,
 		concealment = -4,
-		reload = -5,
+		reload = -6,
 		extra_ammo = 30
 	}
 	
@@ -3045,7 +3045,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		value = 3,
 		concealment = -4,
 		extra_ammo = 30,
-		reload = -5
+		reload = -6
 	}
 	self.parts.wpn_fps_upg_ak_m_quad.custom_stats = {
 		ads_speed_mult = 1.1
@@ -3536,7 +3536,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		stats = {
 			value = 9,
 			extra_ammo = 70,
-			reload = -8,
+			reload = -9,
 			concealment = -7
 		},
 		custom_stats = {
@@ -4461,7 +4461,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_olympic", "resmod_x_olympic", fu
 		stats = {
 			value = 3,
 			concealment = -4,
-			reload = -5,
+			reload = -6,
 			extra_ammo = 60
 		}
 	}
@@ -4703,7 +4703,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 			value = 5,
 			concealment = -6,
 			extra_ammo = 45,
-			reload = -7
+			reload = -8
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125
@@ -5246,7 +5246,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		stats = {
 			value = 1, 
 			extra_ammo = 15,
-			reload = -6, 
+			reload = -7, 
 			concealment = -5
 		},
 		custom_stats = {
@@ -6014,7 +6014,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 			value = 9,
 			extra_ammo = 40,
 			concealment = -5,
-			reload = -6
+			reload = -7
 		},
 		custom_stats = {
 			ads_speed_mult = 1.125

@@ -30020,8 +30020,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.stats = {value = 1}
 			self.parts.wpn_fps_ass_ar47_sd_suppressor.custom_stats = nil
 
-		self.parts.wpn_fps_ass_ar47_b_ck.custom_stats = nil
-
 		self.parts.wpn_fps_ass_ar47_ns_hera_supp.supported = true
 		self.parts.wpn_fps_ass_ar47_ns_hera_supp.stats = {
 			value = 8,
@@ -30097,69 +30095,73 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = -2
 		}
 		self.parts.wpn_fps_ass_ar47_vg_ergo.custom_stats = nil
-		self.parts.wpn_fps_ass_ar47_body_ck.forbids = { "wpn_fps_upg_ass_ar47_b_sd" }
-		self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_upg_m4_s_adapter = {
-			unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck_adapter"
-		}
-		self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_ass_ar47_ns_standard = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		}
 
-		for k, used_part_id in ipairs(self.wpn_fps_ass_ar47.uses_parts) do
-		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "barrel" then
+		if self.parts.wpn_fps_ass_ar47_b_ck then --Update
+			self.parts.wpn_fps_ass_ar47_b_ck.custom_stats = nil
+	
+			self.parts.wpn_fps_ass_ar47_body_ck.forbids = { "wpn_fps_upg_ass_ar47_b_sd" }
+			self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_upg_m4_s_adapter = {
+				unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck_adapter"
+			}
+			self.parts.wpn_fps_ass_ar47_body_ck.override.wpn_fps_ass_ar47_ns_standard = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+	
+			for k, used_part_id in ipairs(self.wpn_fps_ass_ar47.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "barrel" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_b_ck",
+						adds = {}
+					}
+				elseif self.parts[used_part_id].type == "foregrip" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						adds = {},
+						override = {}
+					}
+				elseif self.parts[used_part_id].type == "vertical_grip" then
 				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_b_ck",
-					adds = {}
-				}
-			elseif self.parts[used_part_id].type == "foregrip" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					adds = {},
-					override = {}
-				}
-			elseif self.parts[used_part_id].type == "vertical_grip" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_vg_ck",
-					adds = {},
-					override = {}
-				}
-			elseif self.parts[used_part_id].type == "grip" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_g_ck"
-				}
-			elseif self.parts[used_part_id].type == "upper_reciever" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_upper_ck",
-					adds = {},
-					override = {}
-				}
-			elseif self.parts[used_part_id].type == "bolt" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_bolt_ck"
-				}
-			elseif self.parts[used_part_id].type == "drag_handle" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_draghandle_ck",
-					third_unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_third_m4_uupg_draghandle_core/wpn_third_m4_uupg_draghandle_core"
-				}
-			elseif self.parts[used_part_id].type == "lower_reciever" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_lower_ck"
-				}
-			elseif self.parts[used_part_id].type == "stock" then
-				self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
-					unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck",
-					adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
-				}
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_vg_ck",
+						adds = {},
+						override = {}
+					}
+				elseif self.parts[used_part_id].type == "grip" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_g_ck"
+					}
+				elseif self.parts[used_part_id].type == "upper_reciever" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_upper_ck",
+						adds = {},
+						override = {}
+					}
+				elseif self.parts[used_part_id].type == "bolt" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_bolt_ck"
+					}
+				elseif self.parts[used_part_id].type == "drag_handle" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_draghandle_ck",
+						third_unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_third_m4_uupg_draghandle_core/wpn_third_m4_uupg_draghandle_core"
+					}
+				elseif self.parts[used_part_id].type == "lower_reciever" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_lower_ck"
+					}
+				elseif self.parts[used_part_id].type == "stock" then
+					self.parts.wpn_fps_ass_ar47_body_ck.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_ar47_set2/wpn_fps_ass_ar47_s_ck",
+						adds = { "wpn_fps_upg_m4_g_standard_vanilla" }
+					}
+				end
 			end
+	
+			self.parts.wpn_fps_ass_ar47_body_ck_switch.supported = true
+			self.parts.wpn_fps_ass_ar47_body_ck_switch.no_cull = true
 		end
-
-		self.parts.wpn_fps_ass_ar47_body_ck_switch.supported = true
-		self.parts.wpn_fps_ass_ar47_body_ck_switch.no_cull = true
-
 	end
 
 

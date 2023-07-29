@@ -2845,10 +2845,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Glock 26
 					["bm_wp_pis_g26"] = "Glock 26",
 					["bm_w_jowi"] = "Akimbo Glock 26s",
-					["bm_wp_g26_body_salient"] = "Stipled Tan Frame",
-					["bm_wp_g26_b_custom"] = "Brushed Metal Slide",
-					["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
-					["bm_wp_g26_m_custom"] = "G26 Stipled Tan Magazine",
+					["bm_wp_g26_body_salient"] = "Stipled Frame",
+					["bm_wp_g26_b_custom"] = "Brushed Slide",
+					["bm_wp_g26_m_custom"] = "G26 Stipled Magazine",
 					--Luger
 					["bm_w_breech"] = "Luger P08",
 					--Bernetti 9
@@ -2859,6 +2858,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_beretta_sl_brigadier"] = "Brigadier Elite Slide",
 					["bm_wp_beretta_g_ergo"] = "Wood Ergo Grips",
 					["bm_wp_beretta_m_extended"] = "30rnd 92FS Magazine",
+					["bm_wp_beretta_g_engraved"] = "Engraved 92FS Grips",
 					--PL14
 					["bm_w_pl14"] = "Kalashnikov Concern PL-14 \"Lebedev\"",
 					["bm_wp_pl14_m_extended"] = "17rnd PL-14 Magazine",
@@ -2872,7 +2872,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--93R
 					["bm_w_beer"] = "Beretta 93R",
 					--M13
-					["bm_w_legacy"] = "P7M13",
+					["bm_w_legacy"] = "H&K P7M13",
 
 					--LEO-40
 					["bm_w_hs2000"] = "Springfield Armory XD(M)-40",
@@ -3107,15 +3107,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_kacchainsaw"] = "KAC ChainSAW",
 					["bm_wp_kacchainsaw_barrel_short"] = "Short Barrel",
 					["bm_wp_kacchainsaw_barrel_long"] = "Long Barrel",
-					["bm_wp_kacchainsaw_sling"] = "Sling",
 					["bm_wp_kacchainsaw_mag_b"] = "100rnd Soft Ammo Pouch",
 					["bm_wp_kacchainsaw_flamethrower"] = "Underbarrel Flamethrower",
+					["bm_wp_kacchainsaw_sling"] = "ChainSAW Sling",
 
 					--RPK
 					["bm_w_rpk"] = "Kalashnikov Concern RPK",
 					["bm_wp_rpk_fg_standard"] = "Polymer AK Handguard",
 					["bm_wp_rpk_s_standard"] = "Polymer RPK Stock",
-					["bm_wp_rpk_m_ban_sc"] = "45rnd Molot Magazine",
+					["bm_wp_rpk_m_ban_sc"] = "45rnd Molot AK Magazine",
 
 					--HK21
 					["bm_w_hk21"] = "H&K HK21E",
@@ -3359,6 +3359,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
 					--HCAR
 					["bm_w_hcar"] = "Ohio Ordnance HCAR",
+					--GARAND
+					["bm_w_ching"] = "Springfield Armory M1 Garand",
+					["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",
 
 				--[[SNIPERS]]
 					--Titty

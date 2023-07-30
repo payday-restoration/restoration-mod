@@ -2853,6 +2853,9 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.no_asu = true
 	self.spring.no_omnia_heal = true
 	self.spring.min_obj_interrupt_dis = 300
+	self.spring.dt_suppress = {
+		range = 2000
+	}
 	self.spring.captain_type = restoration.captain_types.spring
 	table.insert(self._enemy_list, "spring")
 	
@@ -17775,6 +17778,9 @@ function CharacterTweakData:_set_overkill_290()
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
+	self.spring.dt_suppress = {
+		range = 2600
+	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 175
@@ -17931,6 +17937,10 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 	self.autumn.damage.bullet_damage_mul = 0.4	
+	
+	self.spring.dt_suppress = {
+		range = 3000
+	}
 end
 
 function CharacterTweakData:is_special_unit(enemy_tweak)

@@ -1,12 +1,42 @@
 <table directory="assets">
-	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
+	<!--RAPHAEL CHRIST IS EVILBOBARINO-->		
+	
+	<!--No Titans-->
+	<!--OMNIA Grenadier-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>	
+	
+	<!--OMNIA Shield-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
+	
+	<!--Omnia Riotshield-->
+	<unit_mat_seq		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>	
+	
+	<!--OMNIA Textures-->
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_body_df"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
 	
 	<!--Clone Army Mutator-->
 	<!--Russian AK101+GP for Grenadier-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>
 	
 	<!--Vityaz -->	
-	<unit_mat		path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" load="false" force="false"/>
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" load="false" force="false"/>
 	
 	<!--Grenadiers-->
 	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>

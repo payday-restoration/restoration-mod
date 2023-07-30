@@ -224,7 +224,7 @@ function MutatorEnemyReplacer:setup_options_gui(node)
 		filter = true,
 		update_callback = callback(self, self, "_update_selected_enemy")
 	} 
-	local data_node = {  --could probably add the grenadier option too
+	local data_node = {
 		{
 			value = "tank",
 			text_id = "mutator_specials_override_tank",
@@ -587,7 +587,7 @@ end
 
 function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 	if not self._groups.shield then
-		if difficulty_index < 4 then
+		if difficulty_index <= 4 then
 			self._groups.shield = {
 				special_type = "shield",
 				unit_types = {
@@ -627,7 +627,7 @@ function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 				access = access_type_all
 			}
 		--Introduce Titan Shields from now on	
-		elseif difficulty_index <= 5 then
+		elseif difficulty_index == 5 then
 			self._groups.shield = {
 				special_type = "shield",
 				unit_types = {
@@ -703,7 +703,7 @@ function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 				},
 				access = access_type_all
 		  }	
-		elseif difficulty_index <= 6 then
+		elseif difficulty_index == 6 then
 			self._groups.shield = {
 				special_type = "shield",
 				unit_types = {
@@ -779,7 +779,7 @@ function MutatorEnemyReplacer:_get_unit_group_shield(difficulty_index)
 				},
 				access = access_type_all
 		  }		
-		elseif difficulty_index <= 7 then
+		elseif difficulty_index == 7 then
 			self._groups.shield = {
 				special_type = "shield",
 				unit_types = {
@@ -1235,7 +1235,7 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 				access = access_type_all
 		  }	
 		 --Introducing LPF/Flamermen with the most gayest jacket ever (if you get the refrence) 
-		elseif difficulty_index <= 6 then
+		elseif difficulty_index == 6 then
 			self._groups.medic = {
 				special_type = "medic",
 				unit_types = {
@@ -1306,7 +1306,7 @@ function MutatorEnemyReplacer:_get_unit_group_medic(difficulty_index)
 				},
 				access = access_type_all
 		  }			
-		elseif difficulty_index <= 7 then
+		elseif difficulty_index == 7 then
 			self._groups.medic = {
 				special_type = "medic",
 				unit_types = {
@@ -1486,7 +1486,7 @@ function MutatorEnemyReplacer:_get_unit_group_boom(difficulty_index)
 				},
 				access = access_type_all
 		  }	
-		elseif difficulty_index <= 6 then
+		elseif difficulty_index == 6 then
 			self._groups.boom = { 
 				special_type = "boom",
 				unit_types = {
@@ -1517,7 +1517,7 @@ function MutatorEnemyReplacer:_get_unit_group_boom(difficulty_index)
 				},
 				access = access_type_all
 		  }			
-		elseif difficulty_index <= 7 then
+		elseif difficulty_index == 7 then
 			self._groups.boom = {
 				special_type = "boom",
 				unit_types = {
@@ -1592,137 +1592,356 @@ function MutatorEnemyReplacer:_get_unit_group_sniper(difficulty_index)
 				unit_types = {
 					america = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 					},
 					russia = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1")
 					},
 					zombie = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_1/ene_sniper_1")
 					},
 					murkywater = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper")
 					},
 					federales = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
 					},
 					nypd = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1")
 					},
 					lapd = { 
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1")
 					},
 					fbi = {
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 					}
 				},
 				access = access_type_all
 		  }	
-		elseif difficulty_index <= 4 then  
+		elseif difficulty_index == 4 then  
 			self._groups.sniper = {
 				special_type = "sniper",
 				unit_types = {
 					america = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 					},
 					russia = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1")
 					},
 					zombie = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_1/ene_sniper_1")
 					},
 					murkywater = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper")
 					},
 					federales = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
 					},
 					nypd = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1")
 					},
 					lapd = { 
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1")
 					},
 					fbi = {
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")						
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 					}
 				},
 				access = access_type_all
 		  }	
-		else
-		self._groups.sniper = {
-			special_type = "sniper",
-			unit_types = {
+		  elseif difficulty_index == 5 then  
+			self._groups.sniper = {
+				special_type = "sniper",
+				unit_types = {
 					america = {
 						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
 					},
 					russia = {
 						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_1/ene_sniper_1"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2")
 					},
 					zombie = {
 						Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_1/ene_sniper_1"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_2/ene_sniper_2")
 					},
 					murkywater = {
 						Idstring("units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper")
 					},
 					federales = {
 						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
 					},
 					nypd = {
 						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
 					},
 					lapd = { 
 						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
 					},
 					fbi = {
 						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
 						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
-						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
+					}
+				},
+				access = access_type_all
+		  }
+		  elseif difficulty_index == 6 then  
+			self._groups.sniper = {
+				special_type = "sniper",
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
+					},
+					russia = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_2/ene_sniper_2")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper")
+					},
+					federales = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
+					},
+					lapd = { 
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
+					}
+				},
+				access = access_type_all
+		  }
+		  elseif difficulty_index == 7 then  
+			self._groups.sniper = {
+				special_type = "sniper",
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
+					},
+					russia = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2")
+					},
+					federales = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3")
+					},
+					lapd = { 
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
+					}
+				},
+				access = access_type_all
+		  }
+		else
+		self._groups.sniper = {
+				special_type = "sniper",
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					russia = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					zombie = {
+						Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					murkywater = {
+						Idstring("units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2")
+					},
+					federales = {
+						Idstring("units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					nypd = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					lapd = { 
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+						Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"),
+						Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"),
+						Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
 					}
 				},
 				access = access_type_all

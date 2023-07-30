@@ -1541,7 +1541,7 @@ local crew_wep_preset = {
 		self.m249_npc.sounds.prefix = "m249_npc"
 		self.m249_npc.use_data.selection_index = 2
 		self.m249_npc.DAMAGE = 2.4
-		self.m249_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.m249_npc.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 		self.m249_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.m249_npc.CLIP_AMMO_MAX = 200
 		self.m249_npc.NR_CLIPS_MAX = 2
@@ -1578,8 +1578,8 @@ local crew_wep_preset = {
 		self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
 		self.hk23_sc_npc.use_data.selection_index = 2
 		self.hk23_sc_npc.DAMAGE = 2
-		self.hk23_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
-		self.hk23_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+		self.hk23_sc_npc.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+		self.hk23_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
 		self.hk23_sc_npc.CLIP_AMMO_MAX = 50
 		self.hk23_sc_npc.NR_CLIPS_MAX = 5
 		self.hk23_sc_npc.auto.fire_rate = 0.085714285
@@ -1677,9 +1677,9 @@ local crew_wep_preset = {
 		self.mini_npc.sounds.prefix = "minigun_npc"
 		self.mini_npc.use_data.selection_index = 2
 		self.mini_npc.DAMAGE = 3
-		self.mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
-		self.mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-		self.mini_npc.CLIP_AMMO_MAX = 300
+		self.mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+		self.mini_npc.CLIP_AMMO_MAX = 400
 		self.mini_npc.NR_CLIPS_MAX = 2
 		self.mini_npc.auto.fire_rate = 0.06
 		self.mini_npc.hold = "rifle"
@@ -1696,9 +1696,9 @@ local crew_wep_preset = {
 		self.x_mini_npc.sounds.prefix = "minigun_npc"
 		self.x_mini_npc.use_data.selection_index = 1
 		self.x_mini_npc.DAMAGE = 3
-		self.x_mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
-		self.x_mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-		self.x_mini_npc.CLIP_AMMO_MAX = 600
+		self.x_mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.x_mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+		self.x_mini_npc.CLIP_AMMO_MAX = 800
 		self.x_mini_npc.NR_CLIPS_MAX = 2
 		self.x_mini_npc.auto.fire_rate = 0.06
 		self.x_mini_npc.hold = "akimbo_pistol"
@@ -4158,7 +4158,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			weap.autohit.far_angle = 0.2
 			weap.autohit.far_dis = 5000
 			weap.autohit.MIN_RATIO = 0.2
-			weap.autohit.near_angle = 2				
+			weap.autohit.near_angle = 2
 		end
 		--burst fire
 		if weap.CAN_TOGGLE_FIREMODE then
@@ -4210,14 +4210,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.x_maxim9.stats_modifiers = nil
-				self.x_maxim9.panic_suppression_chance = 0.05	
+				self.x_maxim9.panic_suppression_chance = 0.05
 				self.x_maxim9.timers.reload_exit_empty = 0.55
-				self.x_maxim9.timers.reload_exit_not_empty = 0.65	
+				self.x_maxim9.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Stryk18c
 				--Keeping
 				self.x_g18c.has_description = true
-				self.x_g18c.desc_id = "bm_x_g18c_sc_desc"						
+				self.x_g18c.desc_id = "bm_x_g18c_sc_desc"
 				self.x_g18c.fire_mode_data.fire_rate = 0.05454545454
 				self.x_g18c.single.fire_rate = 0.05454545454
 				self.x_g18c.CLIP_AMMO_MAX = 34
@@ -4251,7 +4251,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo CZ 75
 				self.x_czech.has_description = true
-				self.x_czech.desc_id = "bm_x_czech_sc_desc"						
+				self.x_czech.desc_id = "bm_x_czech_sc_desc"
 				self.x_czech.CLIP_AMMO_MAX = 36
 				self.x_czech.AMMO_MAX = 180
 				self.x_czech.fire_mode_data.fire_rate = 0.06
@@ -4280,11 +4280,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.stats_modifiers = nil
 				self.x_czech.panic_suppression_chance = 0.05
 				self.x_czech.timers.reload_exit_empty = 0.55
-				self.x_czech.timers.reload_exit_not_empty = 0.65	
+				self.x_czech.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Chimano Compact
 				self.jowi.has_description = true
-				self.jowi.desc_id = "bm_x_jowi_sc_desc"					
+				self.jowi.desc_id = "bm_x_jowi_sc_desc"
 				self.jowi.kick = self.stat_info.kick_tables.even_recoil
 				self.jowi.CLIP_AMMO_MAX = 20
 				self.jowi.AMMO_MAX = 180
@@ -4313,11 +4313,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jowi.stats_modifiers = nil
 				self.jowi.panic_suppression_chance = 0.05
 				self.jowi.timers.reload_exit_empty = 0.55
-				self.jowi.timers.reload_exit_not_empty = 0.65	
+				self.jowi.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Igor (APS)
 				self.x_stech.has_description = true
-				self.x_stech.desc_id = "bm_x_stech_sc_desc"				
+				self.x_stech.desc_id = "bm_x_stech_sc_desc"
 				self.x_stech.fire_mode_data.fire_rate = 0.08
 				self.x_stech.AMMO_MAX = 150
 				self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
@@ -4346,11 +4346,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_stech.stats_modifiers = nil
 				self.x_stech.panic_suppression_chance = 0.05
 				self.x_stech.timers.reload_exit_empty = 0.55
-				self.x_stech.timers.reload_exit_not_empty = 0.65	
+				self.x_stech.timers.reload_exit_not_empty = 0.65
 
 			--Akimbo Chimano .88
 				self.x_g17.has_description = true
-				self.x_g17.desc_id = "bm_x_g17_sc_desc"					
+				self.x_g17.desc_id = "bm_x_g17_sc_desc"
 				self.x_g17.kick = self.stat_info.kick_tables.even_recoil
 				self.x_g17.CLIP_AMMO_MAX = 34
 				self.x_g17.AMMO_MAX = 150
@@ -4384,7 +4384,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Akimbo Bernetti 9
 				self.x_b92fs.has_description = true
-				self.x_b92fs.desc_id = "bm_x_b92fs_sc_desc"						
+				self.x_b92fs.desc_id = "bm_x_b92fs_sc_desc"
 				self.x_b92fs.kick = self.stat_info.kick_tables.even_recoil
 				self.x_b92fs.CLIP_AMMO_MAX = 30
 				self.x_b92fs.AMMO_MAX = 150
@@ -9196,6 +9196,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.can_shoot_through_enemy = true
 				self.asval.panic_suppression_chance = 0.05
 				self.asval.timers.reload_exit_empty = 0.65
+				self.asval.timers.reload_not_empty = 2.5
 				self.asval.timers.reload_exit_not_empty = 0.85
 				self.asval.reload_speed_multiplier = 1.08
 
@@ -11184,7 +11185,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Mosconi 12G
 				self.huntsman.desc_id = "bm_menu_sc_huntsman_desc"
-				self.huntsman.has_description = true		
+				self.huntsman.has_description = true
 				self.huntsman.rays = 9
 				self.huntsman.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.huntsman.AMMO_MAX = 40
@@ -11192,8 +11193,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.huntsman.sounds.fire_auto = "huntsman_fire"
 				self.huntsman.BURST_FIRE = 2
 				self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 5
-				self.huntsman.ADAPTIVE_BURST_SIZE = false	
-				self.huntsman.CAN_TOGGLE_FIREMODE = false			
+				self.huntsman.ADAPTIVE_BURST_SIZE = false
+				self.huntsman.CAN_TOGGLE_FIREMODE = false
 				self.huntsman.DELAYED_BURST_RECOIL = false
 				self.huntsman.fire_mode_data = {}
 				self.huntsman.fire_mode_data.fire_rate = 0.171428
@@ -11235,12 +11236,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coach.kick = self.stat_info.kick_tables.vertical_kick
 				self.coach.AMMO_MAX = 20
 				self.coach.sounds.fire_single = "coach_fire"
-				self.coach.sounds.fire_auto = "coach_fire"		
+				self.coach.sounds.fire_auto = "coach_fire"
 				self.coach.BURST_FIRE = 2
-				self.coach.CAN_TOGGLE_FIREMODE = false							
+				self.coach.CAN_TOGGLE_FIREMODE = false
 				self.coach.BURST_FIRE_RATE_MULTIPLIER = 5
 				self.coach.DELAYED_BURST_RECOIL = false
-				self.coach.ADAPTIVE_BURST_SIZE = false		
+				self.coach.ADAPTIVE_BURST_SIZE = false
 				self.coach.fire_mode_data = {}
 				self.coach.fire_mode_data.fire_rate = 0.171428
 				self.coach.supported = true
@@ -11445,7 +11446,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.sounds.no_fix = true		
 					self.money.shake.bypass_global_shake = true
 				end
-	
+
 
 
 	--[[     (CROSS)BOWS     ]]
@@ -11612,7 +11613,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.long.damage_type = "anti_materiel"
 				self.long.has_description = true
 				self.long.desc_id = "bm_bow_sc_desc"
-				self.long.kick = self.stat_info.kick_tables.none	
+				self.long.kick = self.stat_info.kick_tables.none
 				self.long.charge_data.max_t = 0.4
 				self.long.not_allowed_in_bleedout = false
 				self.long.AMMO_MAX = 20
@@ -11657,7 +11658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					unequip = 0.85,
 					equip = 0.85
 				}		
-				self.elastic.kick = self.stat_info.kick_tables.none			
+				self.elastic.kick = self.stat_info.kick_tables.none
 				self.elastic.charge_data.max_t = 0.5
 				self.elastic.not_allowed_in_bleedout = false
 				self.elastic.AMMO_MAX = 20

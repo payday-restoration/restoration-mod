@@ -249,7 +249,6 @@ function MutatorNoTitans:setup(data)
 			}			
 		},
 		access = access_type_all,
-		special_type = "boom",
 		is_captain = true
 	}
 	

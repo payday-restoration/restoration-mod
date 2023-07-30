@@ -697,6 +697,9 @@ function CopActionShoot:update(t)
 				if frag_roll then
 					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type, target_dis) then
 						self._ext_movement:play_redirect("throw_grenade")
+					if is_tank_mini then	
+						self._unit:sound():say("g90", true, nil, true)
+					else
 						self._unit:sound():say("use_gas", true, nil, true)
 						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 
@@ -704,6 +707,7 @@ function CopActionShoot:update(t)
 					end
 				end
 			end
+		end
 
 			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t and 2000 >= target_dis and 500 <= target_dis then
 				self._ext_brain._throw_molotov_t = t + 10

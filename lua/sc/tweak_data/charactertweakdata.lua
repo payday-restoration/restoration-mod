@@ -7118,7 +7118,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mini.focus_dis = 200
 	presets.weapon.normal.mini.spread = 20
 	presets.weapon.normal.mini.miss_dis = 40
-	presets.weapon.normal.mini.RELOAD_SPEED = 0.25
+	presets.weapon.normal.mini.RELOAD_SPEED = 0.35
 	presets.weapon.normal.mini.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.mini.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.mini.melee_retry_delay = {2, 2}
@@ -9333,7 +9333,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.mini.focus_dis = 200
 	presets.weapon.good.mini.spread = 20
 	presets.weapon.good.mini.miss_dis = 40
-	presets.weapon.good.mini.RELOAD_SPEED = 0.25
+	presets.weapon.good.mini.RELOAD_SPEED = 0.35
 	presets.weapon.good.mini.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.mini.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.mini.melee_retry_delay = {2, 2}
@@ -11502,7 +11502,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mini.focus_dis = 300
 	presets.weapon.expert.mini.spread = 20
 	presets.weapon.expert.mini.miss_dis = 40
-	presets.weapon.expert.mini.RELOAD_SPEED = 0.25
+	presets.weapon.expert.mini.RELOAD_SPEED = 0.35
 	presets.weapon.expert.mini.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.mini.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.mini.melee_retry_delay = {2, 2}

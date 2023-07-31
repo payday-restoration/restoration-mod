@@ -3369,7 +3369,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--QBU88
 					["bm_w_qbu88"] = "Norinco QBU-88",
 					--Icky Vicky
-					["bm_w_victor"] = "SAINT Victor AR-10",
+					["bm_w_victor"] = "SAINT Victor AR-15",
 
 					--R700
 					["bm_w_r700"] = "Remington Model 700P",

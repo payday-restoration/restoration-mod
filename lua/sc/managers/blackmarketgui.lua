@@ -6774,6 +6774,14 @@ function BlackMarketGui.populate_buy_mask(self, data)
 		elseif managers.dlc:is_content_infamy_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
 			new_data.lock_texture = "guis/textures/pd2/lock_infamy"
 			new_data.infamy_lock = true
+		else
+			local event_job_challenge = managers.event_jobs:get_challenge_from_reward(data.category, new_data.name)
+
+			if event_job_challenge and not event_job_challenge.completed then
+				new_data.unlocked = -math.abs(new_data.unlocked)
+				new_data.lock_texture = "guis/textures/pd2/lock_achievement"
+				new_data.dlc_locked = event_job_challenge.locked_id or "menu_event_job_lock_info"
+			end
 		end
 
 		if tweak_data.blackmarket.masks[new_data.name].infamy_lock then
@@ -6870,6 +6878,7 @@ function BlackMarketGui.populate_buy_mask(self, data)
 		end
 
 	end
+
 end
 
 local populate_choose_mask_mod1 = BlackMarketGui.populate_choose_mask_mod
@@ -7105,6 +7114,28 @@ function ModShop:IsInfamyLocked( data )
 
 end
 
+function ModShop:IsContent( data )
+	for k, v in pairs( tweak_data.dlc ) do
+		if managers.dlc:is_content_achievement_locked(data.category, data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, data.name) then
+			return true
+		elseif managers.dlc:is_content_skirmish_locked(data.category, data.name) and (not data.unlocked or data.unlocked == 0) then
+			return true
+		elseif managers.dlc:is_content_crimespree_locked(data.category, data.name) and (not data.unlocked or data.unlocked == 0) then
+			return true
+		elseif managers.dlc:is_content_infamy_locked(data.category, data.name) and (not data.unlocked or data.unlocked == 0) then
+			return true
+		else
+			local event_job_challenge = managers.event_jobs:get_challenge_from_reward(data.category, data.name)
+
+			if event_job_challenge and not event_job_challenge.completed then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
 function ModShop:IsItemMaskMod( item )
 	return ModShop.MaskMods[item.category] or false
 end
@@ -7205,9 +7236,7 @@ function ModShop:VerifyItemPurchase( data, weapon_part )
 		return false
 	end
 
-	if managers.dlc:is_content_achievement_locked(data.category, purchase_data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, purchase_data.name) then
-		return false
-	elseif managers.dlc:is_content_skirmish_locked(data.category, purchase_data.name) and (not data.unlocked or data.unlocked == 0) then
+	if self:IsContent( purchase_data ) then
 		return false
 	end
 

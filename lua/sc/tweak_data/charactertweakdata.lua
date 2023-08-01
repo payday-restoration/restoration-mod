@@ -2711,7 +2711,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.immune_to_knock_down = true
 	self.phalanx_minion.immune_to_concussion = true
 	self.phalanx_minion.damage.immune_to_knockback = false
-	self.phalanx_minion.spawn_sound_event = "shield_identification"
+	self.phalanx_minion.spawn_sound_event_2 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
 	self.phalanx_minion.rotation_speed = 0.75
@@ -2721,7 +2721,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.speech_prefix_p2 = nil
 	self.phalanx_minion.speech_prefix_count = 1	
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.phalanx_minion.custom_voicework = "tshield_ru"
+		self.phalanx_minion.custom_voicework = "tswat_ru"
 	else
 		self.phalanx_minion.custom_voicework = "tshield"
 	end
@@ -2733,6 +2733,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
+	self.phalanx_minion_assault.spawn_sound_event_3 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion_assault.no_retreat = false
 	table.insert(self._enemy_list, "phalanx_minion_assault")
 end

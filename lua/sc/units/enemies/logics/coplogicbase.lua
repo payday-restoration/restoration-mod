@@ -322,9 +322,12 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 				elseif data.unit:base().has_tag and data.unit:base():has_tag("shield") then
 					if not data.attack_sound_t or data.t - data.attack_sound_t > 40 then
 						data.attack_sound_t = data.t
-
+					if tweak_table == "phalanx_minion" or tweak_table == "phalanx_minion_assault" then
+						data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+					else	
 						data.unit:sound():play("shield_identification", nil, true)
 					end
+				end	
 				else
 					data.unit:sound():say("c01", true)
 				end

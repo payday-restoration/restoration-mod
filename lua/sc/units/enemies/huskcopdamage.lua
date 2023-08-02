@@ -43,3 +43,8 @@ end
 function HuskCopDamage:heal_unit(...)
 	return CopDamage.heal_unit(self, ...)
 end
+
+
+function CopDamage:can_attach_projectiles()
+	return not self._char_tweak.cannot_attach_projectiles
+end

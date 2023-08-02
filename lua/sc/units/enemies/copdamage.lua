@@ -3791,3 +3791,6 @@ function CopDamage:_apply_damage_reduction(damage)
 	return damage
 end
 
+function CopDamage:can_attach_projectiles()
+	return not self._char_tweak.cannot_attach_projectiles
+end

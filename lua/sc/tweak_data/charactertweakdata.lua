@@ -2477,6 +2477,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 	self.spooc_titan.is_special = true
 	self.spooc_titan.no_asu = true
+	self.spooc_titan.cannot_attach_projectiles = true	
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.spooc_titan.custom_voicework = nil
 	else
@@ -3006,6 +3007,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.static_dodge_preset = true
 	self.autumn.is_special = true
 	self.autumn.no_asu = true
+	self.autumn.cannot_attach_projectiles = true	
 	self.autumn.dodge_with_grenade = {
 		smoke = {duration = {
 			12,

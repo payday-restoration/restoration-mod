@@ -10,7 +10,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local job = Global.level_data and Global.level_data.level_id
-local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 function UpgradesTweakData:_init_value_tables()
 	self.values = {

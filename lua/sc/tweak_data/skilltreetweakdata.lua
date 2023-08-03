@@ -10,7 +10,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local sc_sttd = SkillTreeTweakData.init
-local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 function SkillTreeTweakData:init(tweak_data)
 	sc_sttd(self, tweak_data)
 

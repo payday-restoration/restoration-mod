@@ -22,7 +22,7 @@ table.insert(WeaponDescription._stats_shown, {
 })
 
 
-local per_pellet = restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
+local per_pellet = true--restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 --Add support for .reload_speed_multiplier
 function WeaponDescription._get_base_stats(name)

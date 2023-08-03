@@ -526,8 +526,6 @@
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
-					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="PerPelletShotguns"/>
 				</option_group>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>

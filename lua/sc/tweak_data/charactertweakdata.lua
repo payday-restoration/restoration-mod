@@ -18634,6 +18634,20 @@ function CharacterTweakData:character_map()
 				"ene_titan_taser"
 			}
 		}
+		
+		char_map.fbi = {
+			path = "units/pd2_mod_fbi/characters/",
+			list = {
+				"ene_city_shield",
+				"ene_sniper_3",
+				"ene_city_swat_1",
+				"ene_city_swat_2",
+				"ene_city_swat_3",
+				"ene_bulldozer_3",
+				"ene_city_heavy_g36",
+				"ene_city_heavy_r870"
+			}
+		}
 
 	return char_map
 end

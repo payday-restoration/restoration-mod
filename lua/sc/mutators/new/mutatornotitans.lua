@@ -586,7 +586,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1")
 				},
 				fbi = {
-					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1")
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1")
 				}					
 			},
 			access = access_type_all
@@ -694,8 +694,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")					
 				},
 				fbi = {
-					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3")		
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3")		
 				}					
 			},
 			access = access_type_all
@@ -798,7 +798,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")								
 				},
 				fbi = {
-					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield")							
+					Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield")							
 				}				
 			},
 			access = access_type_all,

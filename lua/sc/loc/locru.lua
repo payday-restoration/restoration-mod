@@ -2579,7 +2579,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_amt"] = "Automag .44",
 		["bm_w_coltds"] = "Crosskill Investigator",
 		["kfa_scope"] = "Прицел KFA-2 Smart-Link",
-		["bm_w_papa320"] = "M19",
+		["bm_w_papa320"] = "Signature M19",
 		["bm_w_p90"] = "Project-90",
 		["bm_w_x_p90"] = "Парные Project-90",
 		["bm_w_mp7"] = "SpecOps-7",
@@ -2797,6 +2797,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_rsh12"] = "РШУ-12",
 		["bm_w_peacemaker"] = "Миротворец .45",
 --CUSTOM HANDGUNS
+			--Px4
+			["bm_w_px4"] = "Бернетти Нх4 Канан",
 			--Browning Hi-Power
 			["bm_w_hpb"] = "Хай-Пауэр",
 			--Walther P99
@@ -2808,7 +2810,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--Colt Detective
 			["bm_w_coltds"] = "Кросскилл Детектив",
 			--SIG P320
-			["bm_w_papa320"] = "M19",
+			["bm_w_papa320"] = "Сигнатур 19",
 		["bm_w_p90"] = "Проджект-90",
 		["bm_w_x_p90"] = "Парные Проджект-90",
 		["bm_w_mp7"] = "СпекОпс-7",
@@ -4392,8 +4394,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_mememanonly_longdesc"] = "НЕУБЕЖАТЬНЕСПАСТИСЬПОМОГИТЕ\n\n ВНИМАНИЕ: Может вызвать вылет игры на некоторых картах.",
 
 		["MutatorMoreDonutsPlus"] = "Больше пончиков+",
-		["MutatorMoreDonutsPlus_desc"] = "Все обычные враги будут заменены на копа с револьверов Bronco, все особые враги будут заменены на LPF.",
-		["MutatorMoreDonutsPlus_longdesc"] = "Все обычные враги будут заменены на копа с револьверов Bronco, все особые враги будут заменены на LPF.\n\nВНИМАНИЕ: Не стоит играть с этим отвратительным мутатором.",
+		["MutatorMoreDonutsPlus_desc"] = "Все обычные враги будут заменены на копов с револьвером Bronco, все особые враги будут заменены на LPF.",
+		["MutatorMoreDonutsPlus_longdesc"] = "Все обычные враги будут заменены на копов с револьвером Bronco, все особые враги будут заменены на LPF.\n\nВНИМАНИЕ: Не стоит играть с этим отвратительным мутатором.",
 
 		["MutatorJungleInferno"] = "Пламенные джунгли",
 		["MutatorJungleInferno_desc"] = "Все враги заменены Капитаном Саммерсом.",
@@ -4403,9 +4405,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_minidozers_desc"] = "Теперь появляются Бульдозеры с полуавтоматическими дробовиками.",
 		["mutator_minidozers_longdesc"] = "Каждый раз, когда появляется Черный Бульдозер, есть 50% шанс того, что его заметит Бульдозер с M1014.\n\nЕсли включен мутатор 'Дозеры-медики', Бульдозеры с M1014 будут заменять Черных Бульдозеров с шансом 33.3%.",
 
-		["mutator_fatroll"] = "Fat Roll",
-		["mutator_fatroll_desc"] = "Задержка на получение урона отключена.",
-		["mutator_fatroll_longdesc"] = "Задержка на получение урона для игроков и ботов становится 0.",
+		["mutator_fatroll"] = "Лютый троллинг",
+		["mutator_fatroll_desc"] = "Грейс период (в с)",
+		["mutator_fatroll_longdesc"] = "Задержка на получение урона для игроков и ботов теперь зависит от этого значения. Минимум - 0 с, максимум - 0.25 с.",
 
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

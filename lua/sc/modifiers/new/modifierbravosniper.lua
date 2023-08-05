@@ -23,6 +23,7 @@ local m = tweak_data.levels.ai_groups.murkywater
 local b = tweak_data.levels.ai_groups.federales
 local z = tweak_data.levels.ai_groups.zombie
 local ny = tweak_data.levels.ai_groups.nypd
+local sf = tweak_data.levels.ai_groups.sfpd
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 function ModifierBravoSniper:modify_value(id, value)

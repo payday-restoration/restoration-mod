@@ -170,6 +170,20 @@ function CharacterTweakData:_init_region_fbi()
 	self._speech_prefix_p2 = "d"
 end
 
+function CharacterTweakData:_init_region_sfpd()
+	self._default_chatter = "dispatch_generic_message"
+	self._unit_prefixes = {
+		cop = "l",
+		swat = "l",
+		heavy_swat = "l",
+		taser = "tsr",
+		cloaker = "clk",
+		bulldozer = "bdz",
+		medic = "mdc"
+	}
+	self._speech_prefix_p2 = "d"
+end
+
 function CharacterTweakData:get_ai_group_type()    
 	return self.tweak_data.levels:get_ai_group_type()
 end
@@ -17943,7 +17957,7 @@ function CharacterTweakData:_set_sm_wish()
 	
 	self.spring.dt_suppress = {
 		range = 3000
-	}
+	}	
 end
 
 function CharacterTweakData:is_special_unit(enemy_tweak)
@@ -18134,6 +18148,32 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.chas.list, "ene_cop_2")
 		table.insert(char_map.chas.list, "ene_cop_3")
 		table.insert(char_map.chas.list, "ene_cop_4")
+		--CS Tier
+		table.insert(char_map.chas.list, "ene_swat_1")
+		table.insert(char_map.chas.list, "ene_swat_2")
+		table.insert(char_map.chas.list, "ene_swat_3")
+		table.insert(char_map.chas.list, "ene_swat_heavy_1")
+		table.insert(char_map.chas.list, "ene_swat_heavy_r870")
+		table.insert(char_map.chas.list, "ene_shield_2")
+		table.insert(char_map.chas.list, "ene_sniper_1")
+		--FBI Tier
+		table.insert(char_map.chas.list, "ene_fbi_swat_1")
+		table.insert(char_map.chas.list, "ene_fbi_swat_2")
+		table.insert(char_map.chas.list, "ene_fbi_swat_3")
+		table.insert(char_map.chas.list, "ene_fbi_heavy_1")
+		table.insert(char_map.chas.list, "ene_fbi_heavy_r870")
+		table.insert(char_map.chas.list, "ene_shield_1")
+		table.insert(char_map.chas.list, "ene_sniper_2")
+		--City Tier
+		table.insert(char_map.chas.list, "ene_city_swat_1")
+		table.insert(char_map.chas.list, "ene_city_swat_2")
+		table.insert(char_map.chas.list, "ene_city_swat_3")
+		table.insert(char_map.chas.list, "ene_city_heavy_g36")
+		table.insert(char_map.chas.list, "ene_city_heavy_r870")
+		table.insert(char_map.chas.list, "ene_city_shield")
+		table.insert(char_map.chas.list, "ene_sniper_3")
+		table.insert(char_map.chas.list, "ene_bulldozer_3")
+		
 	--pent
 		table.insert(char_map.pent.list, "ene_male_kungfumaster_1")
 		table.insert(char_map.pent.list, "ene_male_kungfumaster_2")
@@ -18632,20 +18672,6 @@ function CharacterTweakData:character_map()
 				"ene_spook_cloak_1",										
 				"ene_titan_sniper",
 				"ene_titan_taser"
-			}
-		}
-		
-		char_map.fbi = {
-			path = "units/pd2_mod_fbi/characters/",
-			list = {
-				"ene_city_shield",
-				"ene_sniper_3",
-				"ene_city_swat_1",
-				"ene_city_swat_2",
-				"ene_city_swat_3",
-				"ene_bulldozer_3",
-				"ene_city_heavy_g36",
-				"ene_city_heavy_r870"
 			}
 		}
 

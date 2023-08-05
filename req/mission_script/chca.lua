@@ -1,10 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-if tweak_data:difficulty_to_index(difficulty) == 7 then
-		sfpd_sniper = "units/pd2_mod_fbi/characters/ene_sniper_3/ene_sniper_3"
-	end
-
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value_1 = 1050
 		ponr_value_2 = 690
@@ -32,27 +28,6 @@ return {
 	},
 	[102615] = {
 		ponr = ponr_value_2
-	},
-	--SFPD Specials
-	[100369] = {
-		values = {
-            enemy = sfpd_sniper
-		}
-	},
-	[100370] = {
-		values = {
-            enemy = sfpd_sniper
-		}
-	},
-	[100371] = {
-		values = {
-            enemy = sfpd_sniper
-		}
-	},
-	[100372] = {
-		values = {
-            enemy = sfpd_sniper
-		}
 	},
 	[101469] = {
 		groups = {

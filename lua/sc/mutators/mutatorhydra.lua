@@ -63,6 +63,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1"] = {beat_cops_c45, beat_cops_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"] = {beat_cops_c45, beat_cops_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = {beat_cops_c45, beat_cops_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_swat_1/ene_swat_1"] = {beat_cops_c45, beat_cops_mp5}
 	MutatorHydra.raw_enemy_list[blue_swat_rifle] = {beat_cops_c45, beat_cops_mp5}
 
 	--Blue Shotgun SWAT become Beat Cops with Broncos + R870s 
@@ -74,6 +75,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"] = {beat_cops_rage, beat_cops_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"] = {beat_cops_rage, beat_cops_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = {beat_cops_rage, beat_cops_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_swat_2/ene_swat_2"] = {beat_cops_rage, beat_cops_r870}
 	MutatorHydra.raw_enemy_list[blue_swat_shotgun] = {beat_cops_rage, beat_cops_r870}
 
 	--Heavy Rifle SWAT become light SWAT
@@ -85,6 +87,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = {blue_swat_rifle}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"] = {blue_swat_rifle}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = {blue_swat_rifle}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = {blue_swat_rifle}
 	MutatorHydra.raw_enemy_list[yellow_heavy_rifle] = {blue_swat_rifle}
 
 	--Heavy Shotgun SWAT become light SWAT with shotguns
@@ -96,6 +99,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = {blue_swat_shotgun}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"] = {blue_swat_shotgun}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = {blue_swat_shotgun}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = {blue_swat_shotgun}
 	MutatorHydra.raw_enemy_list[yellow_heavy_r870] = {blue_swat_rifle}
 
 	--Blue Shield becomes Yellow Heavies
@@ -107,6 +111,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2"] = {yellow_heavy_rifle, yellow_heavy_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_shield_2/ene_shield_2"] = {yellow_heavy_rifle, yellow_heavy_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = {yellow_heavy_rifle, yellow_heavy_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_shield_2/ene_shield_2"] = {yellow_heavy_rifle, yellow_heavy_r870}
 	MutatorHydra.raw_enemy_list[blue_shield] = {yellow_heavy_rifle, yellow_heavy_r870}
 
 --[[ FBI TIER]] --
@@ -119,6 +124,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list[fbi_swat_rifle] = {hrt_c45, hrt_m4, hrt_mp5}
 
 	--FBI Shotgun SWAT become HRTs
@@ -130,6 +136,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list[fbi_swat_r870] = {hrt_c45, hrt_m4, hrt_mp5}
 	
 	--FBI UMP SWAT become HRTs
@@ -140,7 +147,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}	
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 
 	--FBI Heavy Rifle SWAT become light SWAT
 	MutatorHydra.raw_enemy_list["units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"] = {fbi_swat_rifle}
@@ -151,6 +158,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = {fbi_swat_rifle}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = {fbi_swat_rifle}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = {fbi_swat_rifle}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = {fbi_swat_rifle}
 	MutatorHydra.raw_enemy_list[fbi_heavy_swat_rifle] = {fbi_swat_rifle}
 
 	--FBI Heavy Shotgun SWAT become light SWAT with shotguns
@@ -162,6 +170,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = {fbi_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = {fbi_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = {fbi_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = {fbi_swat_r870}
 	MutatorHydra.raw_enemy_list[fbi_heavy_swat_r870] = {fbi_swat_r870}
 
 	--FBI Shields becomes FBI Heavies
@@ -172,7 +181,8 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_shield_1/ene_shield_1"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_shield_1/ene_shield_1"] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list[fbi_shield] = {fbi_heavy_swat_rifle, fbi_heavy_swat_r870}
 
 --[[ City Tier ]]--
@@ -185,7 +195,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_swat_1/ene_city_swat_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"] = {hrt_c45, hrt_m4, hrt_mp5}
@@ -203,7 +213,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_swat_2/ene_city_swat_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"] = {hrt_c45, hrt_m4, hrt_mp5}
@@ -222,7 +232,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_swat_3/ene_city_swat_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"] = {hrt_c45, hrt_m4, hrt_mp5}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"] = {hrt_c45, hrt_m4, hrt_mp5}
@@ -238,7 +248,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = {city_swat_rifle, city_swat_ump}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = {city_swat_rifle, city_swat_ump}	
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = {city_swat_rifle, city_swat_ump}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = {city_swat_rifle, city_swat_ump}	
@@ -256,7 +266,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = {city_swat_ben, city_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = {city_swat_ben, city_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"] = {city_swat_ben, city_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = {city_swat_ben, city_swat_r870}
@@ -274,7 +284,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_city_shield/ene_city_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = {city_heavy_swat_rifle, city_heavy_swat_r870}
@@ -371,7 +381,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
-	MutatorHydra.raw_enemy_list["units/pd2_mod_fbi/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_dlc_chas/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}

@@ -7252,7 +7252,130 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.CS_cop_R870.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"
 		--Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"
+		
+		--SFPD Elites
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_swat_M4.unit_types.lapd = {
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")	
+			}
+		else
+			self.unit_categories.GS_swat_M4.unit_types.lapd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_swat_R870.unit_types.lapd = {
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"),	
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"),							
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")	
+			}
+		else
+			self.unit_categories.GS_swat_R870.unit_types.lapd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
+			}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_heavy_G36.unit_types.lapd = {Idstring("units/pd2_mod_fbi/characters/ene_city_heavy_g36/ene_city_heavy_g36")}
+		else
+			self.unit_categories.GS_heavy_G36.unit_types.lapd = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_heavy_R870.unit_types.lapd = {Idstring("units/pd2_mod_fbi/characters/ene_city_heavy_r870/ene_city_heavy_r870")}
+		else
+			self.unit_categories.GS_heavy_R870.unit_types.lapd = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_heavy_G36_w.unit_types.lapd = {Idstring("units/pd2_mod_fbi/characters/ene_city_heavy_g36/ene_city_heavy_g36")}
+		else
+			self.unit_categories.GS_heavy_G36_w.unit_types.lapd = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.GS_shield.unit_types.lapd = {
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_mod_fbi/characters/ene_city_shield/ene_city_shield"),
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+			}
+		else
+			self.unit_categories.GS_shield.unit_types.lapd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),	
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),	
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),		
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
+					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+			}
+		end
+		
+		if difficulty_index <= 7 then
+			self.unit_categories.SKULL_tank.unit_types.lapd = {Idstring("units/pd2_mod_fbi/characters/ene_bulldozer_3/ene_bulldozer_3")}
+		else
+			self.unit_categories.SKULL_tank.unit_types.lapd = {Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc")}
+		end
 	end
+	
 	if table.contains(restoration.fsb, job) then
 		self.unit_categories.CS_cop_C45_R870.unit_types.russia = {
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"),

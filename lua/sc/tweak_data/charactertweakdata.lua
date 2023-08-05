@@ -2847,9 +2847,8 @@ function CharacterTweakData:_init_spring(presets)
 		entrance = true
 	}
 	self.spring.announce_incomming = "incomming_captain"
-	self.spring.spawn_sound_event = "cpa_a02_01"
-	self.spring.die_sound_event = "mga_death_scream"
-	self.spring.die_sound_event_2 = "bdz_x02a_any_3p"
+	self.spring.spawn_sound_event_2 = "cpa_a02_01"
+	self.spring.die_sound_event_2 = "mga_death_scream"
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
 	self.spring.no_asu = true
@@ -2866,6 +2865,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.headless_hatman.speech_prefix_p1 = "cpa"
 	self.headless_hatman.speech_prefix_p2 = nil
 	self.headless_hatman.speech_prefix_count = nil
+	self.headless_hatman.spawn_sound_event_2 = nil
 	self.headless_hatman.custom_voicework = "hatman"
 	self.headless_hatman.slowing_bullets = {
 		duration = 1,

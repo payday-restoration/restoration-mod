@@ -2466,6 +2466,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SAA/Peacemaker
 					["bm_w_peacemaker"] = "Peacemaker .45LC",
 					--CUSTOM PISTOLS
+						--Px4
+						["bm_w_px4"] = "Bernetti Hx4 Kanan",
 						--Browning Hi-Power
 						["bm_w_hpb"] = "Hi-Power",
 						--Browning Hi-Power (Mira)
@@ -2479,7 +2481,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
-						["bm_w_papa320"] = "M19",
+						["bm_w_papa320"] = "Signature M19",
 						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
@@ -2950,7 +2952,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Frenchman Model 87
 					["bm_w_model3"] = "S&W Model 3",	
 					["bm_w_x_model3"] = "Akimbo Model 3s",	
-					--Shatter's Fury
+					--Castigo
 					["bm_w_chinchilla"] = "S&W Model 29",
 					["bm_w_x_chinchilla"] = "Akimbo Model 29s",
 					--Bronco

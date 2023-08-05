@@ -55,6 +55,9 @@ tweak_data.shotgun = {
 	ads_move_speed_mult = 0.45,
 	ads_moving_spread_mult = 3.33333
 }
+	tweak_data.shotgun_break = {
+		hipfire_spread_mult = 3
+	}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.777778,
 		swap_bonus = 1.75

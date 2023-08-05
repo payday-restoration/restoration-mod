@@ -926,6 +926,7 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
+					hip_mult = 0.5,
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
@@ -955,6 +956,7 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
+					hip_mult = 0.5,
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
@@ -984,6 +986,7 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
+					hip_mult = 0.5,
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,
@@ -1013,6 +1016,7 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
+					hip_mult = 0.5,
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 1.8 or nil,
 					falloff_start_mult = 1,

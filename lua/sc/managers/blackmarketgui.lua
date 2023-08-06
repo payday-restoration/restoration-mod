@@ -4774,7 +4774,7 @@ function BlackMarketGui:update_info_text()
 					end
 					if hs_mult_desc and hs_mult ~= 1 then
 						local penalty_as_string = string.format("%d%%", math.round((hs_mult - 1) * 100))
-						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description or slug_desc or slug_spam_desc then
+						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description or ap_desc then
 							updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_hs_mult_1") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_hs_mult_2") .. "##"
 						else
 							updated_texts[4].text = updated_texts[4].text .. "##" ..  managers.localization:text("bm_menu_weapon_hs_mult_1") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_hs_mult_2") .. "##"
@@ -4783,7 +4783,7 @@ function BlackMarketGui:update_info_text()
 					end
 					if ene_hs_mult ~= 1 then
 						local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
-						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description or slug_desc or slug_spam_desc or hs_mult_desc then
+						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description or ap_desc or hs_mult_desc then
 							updated_texts[4].text = updated_texts[4].text .. "\n##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("	bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
 						else
 							updated_texts[4].text = updated_texts[4].text .. "##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("	bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"

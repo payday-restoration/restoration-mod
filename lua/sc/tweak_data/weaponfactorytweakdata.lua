@@ -924,7 +924,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -30 or -6,
-					spread = per_pellet and 20 or 5
+					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.75,
@@ -957,7 +957,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -40 or -15,
-					spread = per_pellet and 20 or 5
+					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.75,
@@ -990,7 +990,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -60 or -30,
-					spread = per_pellet and 20 or 5
+					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.75,
@@ -1023,7 +1023,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -100 or -30,
-					spread = per_pellet and 20 or 5
+					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.75,

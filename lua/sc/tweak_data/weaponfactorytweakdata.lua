@@ -916,6 +916,7 @@ local grips = {
 	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
 
 	local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns")
+
 	local shot_ammo = {
 		--Flechettes
 			a_piercing_auto_override = {
@@ -927,6 +928,7 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 0.75,
+					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.8 or nil,
 					hs_mult = 1.5,
@@ -959,6 +961,7 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 0.75,
+					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.8 or nil,
 					hs_mult = 1.5,
@@ -991,6 +994,7 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 0.75,
+					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.8 or nil,
 					hs_mult = 1.5,
@@ -1023,6 +1027,7 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 0.75,
+					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.8 or nil,
 					hs_mult = 1.5,
@@ -1340,7 +1345,7 @@ local grips = {
 				stats = {
 					value = 9,
 					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and 0 or -52,
+					total_ammo_mod = per_pellet and -38 or -52,
 					damage = per_pellet and 60 or 30
 				},
 				custom_stats = {
@@ -1379,6 +1384,7 @@ local grips = {
 					ammo_pickup_min_mul = per_pellet and 0.75 or 0.8,
 					can_shoot_through_enemy = true,
 					can_shoot_through_wall = true,
+					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 2.0,
 					ads_speed_mult = 1.10
@@ -1409,6 +1415,7 @@ local grips = {
 					ammo_pickup_min_mul = per_pellet and 0.75 or 0.8,
 					can_shoot_through_enemy = true,
 					can_shoot_through_wall = true,
+					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 2.0,
 					ads_speed_mult = 1.10
@@ -1442,6 +1449,7 @@ local grips = {
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
+					ap_desc = "bm_ap_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 2.0,
 					ads_speed_mult = 1.10
@@ -1472,6 +1480,8 @@ local grips = {
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
+					can_shoot_through_titan_shield = true,
+					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 2.0,
 					ads_speed_mult = 1.10

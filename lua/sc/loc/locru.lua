@@ -2579,6 +2579,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_amt"] = "Automag .44",
 		["bm_w_coltds"] = "Crosskill Investigator",
 		["kfa_scope"] = "Прицел KFA-2 Smart-Link",
+		["bm_w_px4"] = "Bernetti Hx4 Kanan",
 		["bm_w_papa320"] = "Signature M19",
 		["bm_w_p90"] = "Project-90",
 		["bm_w_x_p90"] = "Парные Project-90",

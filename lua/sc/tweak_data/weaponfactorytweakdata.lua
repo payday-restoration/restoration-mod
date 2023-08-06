@@ -926,9 +926,11 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.75,
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.8 or nil,
+					ene_hs_mult_add = per_pellet and 0.8 or nil,
+					hs_mult = 1.5,
+					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = 5,
@@ -956,9 +958,11 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.75,
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.8 or nil,
+					ene_hs_mult_add = per_pellet and 0.8 or nil,
+					hs_mult = 1.5,
+					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 4.5 or 6.666666,
@@ -986,14 +990,16 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.75,
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.8 or nil,
+					ene_hs_mult_add = per_pellet and 0.8 or nil,
+					hs_mult = 1.5,
+					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 4 or 5.333333,
 					armor_piercing_add = 1,
-					rays = 12
+					rays = 12,
 					--[[
 					bullet_class = "BleedBulletBase",
 					dot_data = { 
@@ -1016,9 +1022,11 @@ local grips = {
 					spread = per_pellet and 20 or 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.75,
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 1.8 or nil,
+					ene_hs_mult_add = per_pellet and 0.8 or nil,
+					hs_mult = 1.5,
+					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.25,
 					damage_min_mult = per_pellet and 3 or 5,
@@ -1275,16 +1283,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					total_ammo_mod = per_pellet and 0 or -68,
+					total_ammo_mod = per_pellet and -68 or -68,
 					spread = per_pellet and -10 or -5,
 					damage = per_pellet and 0 or 15
 				},
 				custom_stats = {
-					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.75 or 0.8,
-					damage_min_mult = per_pellet and 1 or 0.66667,
-					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
+					hip_mult = 2,
+					falloff_start_mult = 1,
+					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					damage_min_mult = per_pellet and 0.66667 or 0.66667,
+					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
 					rays = 6
 				}
 			},
@@ -1294,15 +1303,16 @@ local grips = {
 				stats = {
 					value = 9,
 					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and 0 or -52,
-					damage = per_pellet and 0 or 15
+					total_ammo_mod = per_pellet and -68 or -52,
+					damage = per_pellet and 60 or 15
 				},
 				custom_stats = {
-					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.75 or 0.8,
-					damage_min_mult = per_pellet and 1 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
+					hip_mult = 2,
+					falloff_start_mult = 1,
+					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					damage_min_mult = per_pellet and 0.66667 or 0.75,
+					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
 					rays = 6
 				}
 			},
@@ -1312,15 +1322,16 @@ local grips = {
 				stats = {
 					value = 9,
 					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and 0 or -68,
-					damage = per_pellet and 0 or 30
+					total_ammo_mod = per_pellet and -52 or -68,
+					damage = per_pellet and 60 or 30
 				},
 				custom_stats = {
-					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.75 or 0.8,
-					damage_min_mult = per_pellet and 1 or 0.6666667,
-					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
+					hip_mult = 2,
+					falloff_start_mult = 1,
+					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					damage_min_mult = per_pellet and 0.75 or 0.6666667,
+					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
 					rays = 6
 				}	
 			},
@@ -1330,14 +1341,15 @@ local grips = {
 					value = 9,
 					spread = per_pellet and -10 or -5,
 					total_ammo_mod = per_pellet and 0 or -52,
-					damage = per_pellet and 0 or 30
+					damage = per_pellet and 60 or 30
 				},
 				custom_stats = {
-					falloff_start_mult = per_pellet and 1.1 or 1,
-					falloff_end_mult = per_pellet and 0.75 or 0.8,
-					damage_min_mult = per_pellet and 1 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 1 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 1 or 0.8,
+					hip_mult = 2,
+					falloff_start_mult = 1,
+					falloff_end_mult = per_pellet and 0.7 or 0.8,
+					damage_min_mult = per_pellet and 0.83333 or 0.75,
+					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
 					rays = 6
 				}	
 			},
@@ -6408,7 +6420,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override),
 		wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override),	
 		wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override),			
-		wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override,
+		wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override),
 		wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override),
 		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override),
 		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -6504,7 +6516,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override),
 		wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override),	
 		wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override),			
-		wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override,
+		wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override),
 		wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override),
 		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override),
 		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)			
@@ -6888,7 +6900,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -8451,7 +8463,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)			
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -13961,7 +13973,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)	
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)		
@@ -16368,7 +16380,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)	
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)			
@@ -17962,7 +17974,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)	
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)		
@@ -18173,7 +18185,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override),
 		wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override),	
 		wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override),			
-		wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override,
+		wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override),
 		wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override),
 		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override),
 		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -21440,7 +21452,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", fu
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
-	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -22185,7 +22197,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
-				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 				self.wpn_fps_shot_wmtx.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
@@ -23457,7 +23469,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
-					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_explosive = shot_ammo.a_explosive_pump_override
+					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 					self.wpn_fps_shot_beck.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)

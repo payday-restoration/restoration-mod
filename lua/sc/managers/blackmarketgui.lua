@@ -4680,6 +4680,8 @@ function BlackMarketGui:update_info_text()
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+				local hs_mult = (weapon_tweak and weapon_tweak.hs_mult) or 1
+				local hs_mult_desc = nil
 				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
@@ -4703,6 +4705,12 @@ function BlackMarketGui:update_info_text()
 						end
 						if stats.ene_hs_mult_add then
 							ene_hs_mult = ene_hs_mult + stats.ene_hs_mult_add
+						end
+						if stats.hs_mult then
+							hs_mult = hs_mult * stats.hs_mult
+						end
+						if stats.hs_mult_desc then
+							hs_mult_desc = true
 						end
 						if stats.bullet_class == "InstantExplosiveBulletBase" then
 							exp_ammo = true
@@ -4747,14 +4755,25 @@ function BlackMarketGui:update_info_text()
 						updated_texts[4].text = updated_texts[4].text .. description
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				elseif ene_hs_mult ~= 1 then
-					local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
-					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
-					else
-						updated_texts[4].text = updated_texts[4].text .. "##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
+				else
+					if hs_mult_desc and hs_mult ~= 1 then
+						local penalty_as_string = string.format("%d%%", math.round((hs_mult - 1) * 100))
+						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+							updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_hs_mult_1") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_hs_mult_2") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "##" ..  managers.localization:text("bm_menu_weapon_hs_mult_1") .. penalty_as_string .. managers.localization:text("bm_menu_weapon_hs_mult_2") .. "##"
+						end
+						table.insert(updated_texts[4].resource_color, (hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
 					end
-					table.insert(updated_texts[4].resource_color, (ene_hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
+					if ene_hs_mult ~= 1 then
+						local penalty_as_string = string.format("%d%%", math.round((ene_hs_mult) * 100))
+						if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description or hs_mult_desc then
+							updated_texts[4].text = updated_texts[4].text .. "\n##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("	bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
+						else
+							updated_texts[4].text = updated_texts[4].text .. "##" .. (ene_hs_mult < 1 and managers.localization:text("bm_menu_weapon_ene_hs_mult_sub") or managers.localization:text("	bm_menu_weapon_ene_hs_mult_add")) .. penalty_as_string .. managers.localization:text("bm_menu_weapon_ene_hs_mult_end") .. "##"
+						end
+						table.insert(updated_texts[4].resource_color, (ene_hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
+					end
 				end
 				
 

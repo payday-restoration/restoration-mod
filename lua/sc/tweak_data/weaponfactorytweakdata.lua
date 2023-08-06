@@ -9751,7 +9751,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	--Slugs
 	self.parts.wpn_fps_upg_a_slug.pcs = {}
 	self.parts.wpn_fps_upg_a_slug.name_id = "bm_wp_upg_a_slug_sc"
-	self.parts.wpn_fps_upg_a_slug.desc_id = "bm_wp_upg_a_slug_desc"
+	self.parts.wpn_fps_upg_a_slug.desc_id = "bm_wp_upg_a_slug_titan_desc"
 	self.parts.wpn_fps_upg_a_slug.supported = true
 	self.parts.wpn_fps_upg_a_slug.stats = deep_clone(shot_ammo.a_slug_heavy_override.stats)
 	self.parts.wpn_fps_upg_a_slug.custom_stats = deep_clone(shot_ammo.a_slug_heavy_override.custom_stats)

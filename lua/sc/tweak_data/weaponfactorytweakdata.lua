@@ -934,7 +934,7 @@ local grips = {
 					hs_mult = 1.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
-					falloff_end_mult = 1.25,
+					falloff_end_mult = 1.15,
 					damage_min_mult = 5,
 					armor_piercing_add = 1,		
 					rays = 12
@@ -967,7 +967,7 @@ local grips = {
 					hs_mult = 1.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
-					falloff_end_mult = 1.25,
+					falloff_end_mult = 1.15,
 					damage_min_mult = per_pellet and 4.5 or 6.666666,
 					armor_piercing_add = 1,
 					rays = 12
@@ -1000,7 +1000,7 @@ local grips = {
 					hs_mult = 1.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
-					falloff_end_mult = 1.25,
+					falloff_end_mult = 1.15,
 					damage_min_mult = per_pellet and 4 or 5.333333,
 					armor_piercing_add = 1,
 					rays = 12,
@@ -1033,7 +1033,7 @@ local grips = {
 					hs_mult = 1.5,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
-					falloff_end_mult = 1.25,
+					falloff_end_mult = 1.15,
 					damage_min_mult = per_pellet and 3 or 5,
 					armor_piercing_add = 1,
 					rays = 12,		
@@ -1386,7 +1386,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 2.0,
+					falloff_end_mult = 1.8,
 					ads_speed_mult = 1.10
 				}
 			},
@@ -1417,7 +1417,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 2.0,
+					falloff_end_mult = 1.8,
 					ads_speed_mult = 1.10
 				}
 			},
@@ -1451,7 +1451,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 2.0,
+					falloff_end_mult = 1.8,
 					ads_speed_mult = 1.10
 				}
 			},
@@ -1473,7 +1473,7 @@ local grips = {
 					rays = 1,
 					hip_mult = 3,
 					armor_piercing_add = 1,
-					ene_hs_mult_add = per_pellet and 0.3 or nil,
+					ene_hs_mult_add = per_pellet and 0.6 or nil,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					can_shoot_through_enemy_unlim = true,
@@ -1483,7 +1483,7 @@ local grips = {
 					can_shoot_through_titan_shield = true,
 					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 2.0,
+					falloff_end_mult = 1.8,
 					ads_speed_mult = 1.10
 				}
 			},

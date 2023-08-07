@@ -1,4 +1,9 @@
+local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
+	local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
+	local bobcat = restoration and restoration.Options:GetValue("OTHER/ForceEggs/CrabBattle")
+	local shitpost = restoration and restoration.Options:GetValue("OTHER/ForceEggs/BigMan")
+	local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
 
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
@@ -137,8 +142,20 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
-		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Mode",
-		["RestorationModGCGPYPMMSACDescID"] = "Disables blaster tracers, ammo regen and localization easter eggs. Requires restart.",
+		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Weapons",
+		["RestorationModGCGPYPMMSACDescID"] = "Disables Star Wars blaster mechanics. Requires restart.",
+		["RestorationModGCGPYPMMSACTextTitleID"] = "Super Cereal Text",
+		["RestorationModGCGPYPMMSACTextDescID"] = "Disables text based easter eggs from being rolled. Requires restart.",
+		["RestorationModForceEggsOptionsButtonTitleID"] = "Force Easter Egg Text",
+		["RestorationModForceEggsOptionsButtonDescID"] = "Force enable individual easter egg texts; ignores the effects of \"Super Cereal Text\" if its enabled.\nToggling anything in here requires a restart.",
+			["RestorationModUpotteTitleID"] = "Enrole in Seishou Academy",
+			["RestorationModUpotteDescID"] = "Work with the Modern Literature teacher or something",
+			["RestorationModCrabBattleTitleID"] = "Now There's A Pretty Meme",
+			["RestorationModCrabBattleDescID"] = "Exquisite!",
+			["RestorationModEmberMyBelovedTitleID"] = "Go EXTREME Digital",
+			["RestorationModEmberMyBelovedDescID"] = "Clem Grakata!",
+			["RestorationModBigManTitleID"] = ":^)",
+			["RestorationModBigManDescID"] = "Enables other easter egg text",
 		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
 		["RestorationModSevenHoldDescID"] = "Enable/disable whether or not the interact key acts as a toggle.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "Deployable Cancels Interact",
@@ -2354,8 +2371,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				
 	})
 
-
-	local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 	--[[ 
 		WepNames Options
 		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
@@ -3698,10 +3713,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		end
 	end	
 
-	if not easterless then
 		local twirl = math.rand(1)
 		local shalashaska = 0.06
-		if twirl <= shalashaska then
+		if bobcat or not easterless and twirl <= shalashaska then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_peacemaker"] = "Revolver Ocelot",
 				["bm_w_peacemaker_desc"] = "Revolver Ocelot",
@@ -3724,7 +3738,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		local cute = math.rand(1)
 		local funny = 0.02
-		if cute <= funny then
+		if eggplant or not easterless and cute <= funny then
 			LocalizationManager:add_localized_strings({	
 			--It's an "Upotte!!" reference
 			--SEISHOU ACADEMY
@@ -3801,7 +3815,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 		local big = math.rand(1)
 		local pistol = 0.02
-		if big <= pistol then
+		if shitpost or not easterless and big <= pistol then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_deagle"] = "Big Pistol",
 				["bm_w_m16"] = "is that a clarion",
@@ -3810,7 +3824,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 			})
 		end
-	end
 	
 end)
 
@@ -4731,10 +4744,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 	})
 
-	if not easterless then
 		local butt = math.rand(1)
 		local frame = 0.01
-		if butt <= frame then
+		if registeredloser or not easterless and butt <= frame then
 			LocalizationManager:add_localized_strings({	
 				["menu_st_spec_23"] = "Helminth",
 				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
@@ -4742,7 +4754,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_risk_sm_wish"] = "The Steel Path. For those who have mastered THE CONCLAVE and wish to seek a challenge."
 			})
 		end
-	end
 
 end)
 

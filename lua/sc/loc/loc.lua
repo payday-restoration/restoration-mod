@@ -1261,6 +1261,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "DISABLES BOOSTS FROM WEAPON SKINS.",
 		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
+		["bm_menu_weapon_multishot_1"] = "Damage is divided between ",
+		["bm_menu_weapon_multishot_2"] = " projectiles.",
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "Enemy headshot multipliers are increased to ",
 		["bm_menu_weapon_ene_hs_mult_end"] = " of their normal value.",

@@ -12054,6 +12054,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.rpg7.kick = self.stat_info.kick_tables.vertical_kick
 				self.rpg7.has_description = true
+				self.rpg7.rays = 1
 				self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
 				self.rpg7.fire_mode_data.fire_rate = 3
 				self.rpg7.AMMO_MAX = 3
@@ -15390,6 +15391,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		if self.riviter then
 			self.riviter.fire_mode_data.fire_rate = 1.5
+			self.riviter.rays = 1
 			self.riviter.CLIP_AMMO_MAX = 3
 			self.riviter.AMMO_MAX = 8
 			self.riviter.kick = self.stat_info.kick_tables.vertical_kick
@@ -17930,7 +17932,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			minigun = 0.55,
 		shotgun = per_pellet and 1.2 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			flamethrower = per_pellet and 0.7 / 1.2 or 1, --flamethrowers do not get the pickup bonus if using per_pellet
-			shotgun_auto = per_pellet and 0.93 or 1,
+			shotgun_auto = per_pellet and 0.92 or 1,
 			--"shotgun" would go here if it wasn't acting as the base multiplier for the rest of them
 			shotgun_heavy = per_pellet and 0.96 or 1,
 			shotgun_break = per_pellet and 1.06 or 1,

@@ -1134,8 +1134,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Дробь #{risk}#летит горизонтально##, а не распыляется.",
 		["bm_wp_ns_ultima_desc_sc"] = "Увеличивает разброс дроби на 75%.",
 		["bm_wp_upg_a_slug_sc"] = "Бронебойная пуля",
-		["bm_wp_upg_a_slug_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты и тонкие стены.##",
-		["bm_wp_upg_a_slug_spam_desc"] = "Свинцовая пуля, которая #{skill_color}#наносит 80% урона через броню и пробивает врагов и тонкие стены.##",
+		["bm_wp_upg_a_slug_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты и тонкие стены.##\n#{risk}#Вы наносите лишь 50% урона в голову.##",
+		["bm_wp_upg_a_slug_spam_desc"] = "Свинцовая пуля, которая #{skill_color}#наносит 80% урона через броню, пробивает врагов и тонкие стены.##",
+		["bm_wp_upg_a_slug_titan_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты, титан щиты и тонкие стены.##\n#{risk}#Вы наносите лишь 80% урона в голову.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля радиусом #{skill_color}#1.5## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{important_1}#не наносит дополнительный урон в голову.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#6## больших дробинок #{skill_color}#имеют увеличенный урон",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
@@ -1151,10 +1152,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
-		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 150%.##",
-		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 150%.##",
-		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 150%.##",
-		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 150%.##",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "Рукоятка 'AFG'",
@@ -1861,6 +1862,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Урон в голову уменьшен на ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "Урон в голову увеличен на ",
 		["bm_menu_weapon_ene_hs_mult_end"] = ".",
+		["bm_menu_weapon_hs_mult_1"] = "Урон в голову увеличен на ",
+		["bm_menu_weapon_hs_mult_2"] = " для всех противников, кроме капитанов.",
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Используются взрывные боеприпасы;## #{important_1}#Нельзя наносить урон в голову.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Скорость передвижения уменьшена на ",
 		["bm_menu_weapon_movement_bonus_info"] = "Скорость передвижения увеличена на ",
@@ -2579,7 +2582,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_amt"] = "Automag .44",
 		["bm_w_coltds"] = "Crosskill Investigator",
 		["kfa_scope"] = "Прицел KFA-2 Smart-Link",
-		["bm_w_px4"] = "Bernetti Hx4 Kanan",
+		["bm_w_px4"] = "Bernetti Hx4 Canaan",
 		["bm_w_papa320"] = "Signature M19",
 		["bm_w_p90"] = "Project-90",
 		["bm_w_x_p90"] = "Парные Project-90",
@@ -4373,6 +4376,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutators_achievement_disabled"] = "",
 		["menu_mutators_category_holiday"] = "ПРАЗДНИКИ",
 		["menu_mutators_category_old_event"] = "ИВЕНТЫ",
+		["menu_mutators_category_crime_spree"] = "СЕРИЯ ОГРАБЛЕНИЙ",
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Гренадеры",
@@ -4398,9 +4402,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["MutatorMoreDonutsPlus_desc"] = "Все обычные враги будут заменены на копов с револьвером Bronco, все особые враги будут заменены на LPF.",
 		["MutatorMoreDonutsPlus_longdesc"] = "Все обычные враги будут заменены на копов с револьвером Bronco, все особые враги будут заменены на LPF.\n\nВНИМАНИЕ: Не стоит играть с этим отвратительным мутатором.",
 
-		["MutatorJungleInferno"] = "Пламенные джунгли",
-		["MutatorJungleInferno_desc"] = "Все враги заменены Капитаном Саммерсом.",
-		["MutatorJungleInferno_longdesc"] = "Все незаскриптованные враги будут заменены клонами Капитана Саммерса.",
+		["MutatorJungleInferno"] = "Диско Инферно",
+		["MutatorJungleInferno_desc"] = "Все враги теперь бегают с огнеметами.",
+		["MutatorJungleInferno_longdesc"] = "Оружие всех противников заменяется на огнемет. Не работает для щитов и снайперов.",
 
 		["mutator_minidozers"] = "Бульдозеры с полуавтоматическими дробовиками",
 		["mutator_minidozers_desc"] = "Теперь появляются Бульдозеры с полуавтоматическими дробовиками.",
@@ -4458,6 +4462,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Faction: ",
 
+		--Crime Spree mutators
+		["mutator_cloakercuff"] = "Фокусник",
+		["mutator_cloakercuff_desc"] = "Удары клокера в ближнем бою теперь заковывают Вас в наручники.",
+		["mutator_cloakercuff_longdesc"] = "",
+		
+		["mutator_cloakerflashbang"] = "Ослепительный ниндзя",
+		["mutator_cloakerflashbang_desc"] = "Клокеры могут выкинуть светошумовую гранату во время уворота.",
+		["mutator_cloakerflashbang_longdesc"] = "Клокеры с шансом 50% могут выкинуть светошумовую гранату во время уворота.",
+		
+		["mutator_fartsmella"] = "Поставки с \"пестицидами\"",
+		["mutator_fartsmella_desc"] = "Дымовые гранаты заменены на гранаты со слезоточивым газом.",
+		["mutator_fartsmella_longdesc"] = "Не работает на дымовые гранаты от мутатора \"Hurt Me More\".",
+		
+		["mutator_kaboom"] = "Камикадзе",
+		["mutator_kaboom_desc"] = "Гренадеры взрываются после смерти.",
+		["mutator_kaboom_longdesc"] = "",
+		
+		["mutator_fastresponse"] = "Оперативное реагирование",
+		["mutator_fastresponse_desc"] = "Все полицейские штурмы теперь происходят с максимальной интенсивностью.",
+		["mutator_fastresponse_longdesc"] = "",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",

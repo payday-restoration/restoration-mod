@@ -417,6 +417,7 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		local rotation = Rotation(math.random() * 360, 0, 0)
 		local smoke_grenade_id = Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick")
 		smoke_grenade_id = managers.modifiers:modify_value("GroupAIStateBase:SpawningSmoke", smoke_grenade_id)
+		smoke_grenade_id = managers.mutators:modify_value("GroupAIStateBase:SpawningSmoke", smoke_grenade_id)
 		local smoke_grenade = World:spawn_unit(smoke_grenade_id, det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
 		--log("spawning smoke!! was it tear gas?")
@@ -424,6 +425,7 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 
 		local voice_line = "g40x_any"
 		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
+		voice_line = managers.mutators:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
 		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
@@ -1442,6 +1444,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 		elseif not self._loud_diff_set and script_value > 0  then
 			local starting_diff = 0.1
 			starting_diff = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
+			starting_diff = managers.mutators:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
 			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)

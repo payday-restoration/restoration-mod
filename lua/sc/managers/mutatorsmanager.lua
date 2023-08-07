@@ -34,7 +34,15 @@ function MutatorsManager:init()
 		MutatorNoTitans:new(self),
 		MutatorSpawnMult:new(self),
 		MutatorBravosOnly:new(self),
-		MutatorBirthday:new(self)	
+		MutatorKaboom:new(self),		
+		MutatorFartSmella:new(self),
+		MutatorCloakerFlashbang:new(self),
+		MutatorCloakerCuff:new(self),
+		MutatorFastResponse:new(self),
+		--MutatorQuickScope360:new(self),
+		--MutatorCrazyTaser:new(self),
+		--MutatorMasterDodger:new(self),
+		MutatorBirthday:new(self)
 	}
 	self._active_mutators = {}
 	local activate = Global.mutators and Global.mutators.active_on_load
@@ -87,6 +95,7 @@ function MutatorsManager:categories()
 		"all",
 		"enemies",
 		"gameplay",
+		"crime_spree",
 		"holiday",
 		"old_event"
 	}

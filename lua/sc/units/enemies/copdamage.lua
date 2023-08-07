@@ -1999,6 +1999,7 @@ function CopDamage:die(attack_data)
 	if self._unit:base()._tweak_table == "boom" then
 		local boom_boom = false
 		boom_boom = managers.modifiers:modify_value("CopDamage:CanBoomBoom", boom_boom)
+		boom_boom = managers.mutators:modify_value("CopDamage:CanBoomBoom", boom_boom)
 		if boom_boom then
 			MutatorExplodingEnemies._detonate(MutatorExplodingEnemies, self, attack_data, true, 60, 500)
 		end

@@ -9867,7 +9867,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"),
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 					},
-					fbi = {
+					sfpd = {
 						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
 						Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
 						Idstring("units/pd2_dlc_chas/characters/ene_bulldozer_3/ene_bulldozer_3"),

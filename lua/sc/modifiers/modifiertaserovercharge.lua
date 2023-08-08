@@ -6,8 +6,8 @@ ModifierTaserOvercharge.default_value = "speed"
 
 --Disable Tase delays on Tasers
 function ModifierTaserOvercharge:init(data)
-	ModifierTaserOvercharge.super.init(data)
-	
+	ModifierTaserOvercharge.super.init(self, data)
+	--log("Hello from Taser")
 	tweak_data.character.taser.weapon.is_rifle.aim_delay_tase = {0, 0}
 	tweak_data.character.presets.weapon.normal.is_rifle.aim_delay_tase = {0, 0}
 	tweak_data.character.presets.weapon.good.is_rifle.aim_delay_tase = {0, 0}

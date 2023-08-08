@@ -3,6 +3,8 @@ ModifierHeavySniper.heavy_units = {}
 --Full auto on Titan/Bravo Snipers
 function ModifierHeavySniper:init(data)
 
+	ModifierHeavySniper.super.init(self, data)
+	--log("Hello from T Bravo")
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	

@@ -1514,7 +1514,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#2 сек.##\nСкорость зарядки: #{skill_color}#9/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#4 сек.##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
-		["bm_hk51b_sc_desc"] = "Подпольная модификация Бреннера, которая уменьшает его до размеров Компакт-5.\n\nТеряет точность при стрельбе от бедра.",	
+		["bm_hk51b_sc_desc"] = "Подпольная модификация Бреннера, которая уменьшает его до размеров Компакт-5.",	
 		--M134
 		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Microgun

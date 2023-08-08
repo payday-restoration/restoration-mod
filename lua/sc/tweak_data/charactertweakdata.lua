@@ -2861,7 +2861,7 @@ function CharacterTweakData:_init_spring(presets)
 		entrance = true
 	}
 	self.spring.announce_incomming = "incomming_captain"
-	self.spring.spawn_sound_event_2 = "cpa_a02_01"
+	self.spring.spawn_sound_event_2 = "cloaker_spawn"
 	self.spring.die_sound_event_2 = "mga_death_scream"
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true

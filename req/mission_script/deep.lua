@@ -18,6 +18,11 @@ return {
 		{ id = 100618, delay = 0 }
 		}
 	},
+	[104949] = {
+		on_executed = {
+		{ id = 104945, delay = 180 }
+		}
+	},
 	-- Increase spawn group intervals in pipe arena
 	[105278] = {
 		values = {

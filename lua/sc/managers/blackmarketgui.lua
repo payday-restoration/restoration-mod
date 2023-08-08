@@ -4671,6 +4671,10 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
 				updated_texts[4].resource_color = {tweak_data.lootdrop.global_values[slot_data.global_value].color}
 				updated_texts[4].below_stats = true
+				if updated_texts[4].text == "## ##" then
+					updated_texts[4].text = ""
+					updated_texts[4].resource_color = {}
+				end
 			end
 			
 			local selection_index = tweak_data:get_raw_value("weapon", self._slot_data.name, "use_data", "selection_index") or 1
@@ -4678,21 +4682,21 @@ function BlackMarketGui:update_info_text()
 			if category == slot_data.category then
 
 				-- Ugly as fuck but this is the only way I can think of to fix the movement penalty text being excluded from description scaling is to just make it a part of descriptions and making a giant fuck off 'resource_color' table
+				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
+				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 				local hs_mult = (weapon_tweak and weapon_tweak.hs_mult) or 1
 				local hs_mult_desc = nil
 				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local ap_desc = nil
-				local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
-				local custom_stats = crafted and  managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
 				local sms = weapon_tweak and weapon_tweak.sms or 1
 				local exp_ammo = nil
 				local stat_sms = nil
 				local stat_move = nil
 				local stat_attachment_desc = nil
 				local rays = weapon_tweak.rays or 1
-				local description
+				local description = nil
 				if custom_stats then
 					for part_id, stats in pairs(custom_stats) do
 						if stats.sms then
@@ -4726,11 +4730,6 @@ function BlackMarketGui:update_info_text()
 						end
 					end
 				end
-				
-				if updated_texts[4].text == "## ##" then
-					updated_texts[4].text = updated_texts[4].text:gsub("## ##", "")
-					updated_texts[4].resource_color = {}
-				end
 
 				if weapon_tweak and weapon_tweak.has_description then
 					local has_pc_desc = managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc")
@@ -4758,12 +4757,19 @@ function BlackMarketGui:update_info_text()
 				end
 
 				if weapon_tweak.alt_shotgunraycast and rays > 1 then
-					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description then
-						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_multishot_1") .. tostring(rays) .. managers.localization:text("bm_menu_weapon_multishot_2") .. "##"
-					else
-						updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_multishot_1") .. tostring(rays) .. managers.localization:text("bm_menu_weapon_multishot_2") .. "##"
+					local base_stats, mods_stats, skill_stats = WeaponDescription._get_stats(slot_data.name, slot_data.category, slot_data.slot, slot_data.default_blueprint)
+					local base_damage = base_stats and base_stats.damage and base_stats.damage.value
+					local mod_damage = (mods_stats and mods_stats.damage and mods_stats.damage.value) or 0
+					local skill_damage = (skill_stats and skill_stats.damage and skill_stats.damage.value) or 0
+					description = "#{risk}#" .. managers.localization:text("bm_menu_weapon_multishot_1") .. "## #{skirmish_color}#" .. tostring(rays) .. "## #{risk}#" .. managers.localization:text("bm_menu_weapon_multishot_2") .. "## #{skirmish_color}#" .. tostring( format_round_3((base_damage + mod_damage + skill_damage) / rays) ) .. "## #{risk}#" .. managers.localization:text("bm_menu_weapon_multishot_3") .. "##"
+					for color_id in string.gmatch(description, "#%{(.-)%}#") do
+						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 					end
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
+					description = description:gsub("#%{(.-)%}#", "##")
+					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description then
+						description = "\n" .. description
+					end
+					updated_texts[4].text = updated_texts[4].text .. description
 				else 
 					rays = nil
 				end

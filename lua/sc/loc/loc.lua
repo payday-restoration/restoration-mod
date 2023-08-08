@@ -1261,8 +1261,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "DISABLES BOOSTS FROM WEAPON SKINS.",
 		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_multishot_1"] = "Damage is divided between ",
-		["bm_menu_weapon_multishot_2"] = " projectiles.",
+		["bm_menu_weapon_multishot_1"] = "Damage is divided between",
+		["bm_menu_weapon_multishot_2"] = "projectiles, each dealing",
+		["bm_menu_weapon_multishot_3"] = "damage.",
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "Enemy headshot multipliers are increased to ",
 		["bm_menu_weapon_ene_hs_mult_end"] = " of their normal value.",
@@ -2147,7 +2148,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Loco
 				["bm_serbu_sc_desc"] = "Aftermarket version of the Reinfeld 880 that has been cut down in size; for those who want concealability and a desire to destroy their wrists.",
 				--Reinfeld 88
-				["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.\n\nCan be #{skill_color}#slamfired for an increased fire rate## at the cost of #{important_1}#more recoil, spread and the inabilty to aim down your sights.##",
+				["bm_menu_sc_m1897_desc"] = "This iconic historical piece has seen everything from muddy trenches to thick pacific island jungles, and has a nasty reputation of being quite an effective firestarter.",
 				--Mosconi 12g
 				["bm_menu_sc_m590_desc"] = "An improved version of an old classic. A fine choice for LEOs, soldiers, private citizens, and bank robbers alike.",
 				--R870

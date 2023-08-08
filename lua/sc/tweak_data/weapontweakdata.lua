@@ -15174,6 +15174,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.hx25.AMMO_MAX = 10
 		self.hx25.rays = 7
+		self.hx25.keep_rays = true
 		self.hx25.supported = true
 		self.hx25.ads_speed = 0.240
 		self.hx25.damage_falloff = {
@@ -17664,6 +17665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if per_pellet then
 				if table.contains(weap.categories, "grenade_launcher") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
+					weap.rays = not weap.keep_rays and 1 or weap.rays
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.8 ) * 100

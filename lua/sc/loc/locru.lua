@@ -1,3 +1,5 @@
+local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
+
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
@@ -136,7 +138,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModADSTransitionStyleTitleID"] = "Стиль прицеливания",
 		["RestorationModADSTransitionStyleDescID"] = "Выбор \"анимации\" прицеливания.",
 		["RestorationModGCGPYPMMSACTitleID"] = "Сурьезный режим",
-		["RestorationModGCGPYPMMSACDescID"] = "Отключает плазменные трассеры и регенерацию патронов от некоторых модулей. Также выключает пасхалки. Требует перезапуска ограбления.",
+		["RestorationModGCGPYPMMSACDescID"] = "Отключает плазменные трассеры и регенерацию патронов от некоторых модулей. Требует перезапуска ограбления.",
+		["RestorationModGCGPYPMMSACTextTitleID"] = "Сурьезный текст",
+		["RestorationModGCGPYPMMSACTextDescID"] = "Выключает все текстовые пасхалки. Требует перезапуска ограбления.",
+		["RestorationModForceEggsOptionsButtonTitleID"] = "",
+		["RestorationModForceEggsOptionsButtonDescID"] = "",
+		["RestorationModUpotteTitleID"] = "",
+		["RestorationModUpotteDescID"] = "",
+		["RestorationModCrabBattleTitleID"] = "",
+		["RestorationModCrabBattleDescID"] = "",
+		["RestorationModEmberMyBelovedTitleID"] = "",
+		["RestorationModEmberMyBelovedDescID"] = "",
+		["RestorationModBigManTitleID"] = "",
+		["RestorationModBigManDescID"] = "",
 		["RestorationModStaticAimTitleID"] = "Покачивание в прицеле",
 		["RestorationModStaticAimDescID"] = "Включает визуальное покачивание во время прицеливания. Требуется перезапуск. ПРИ ОТКЛЮЧЕНИИ, НЕКОТОРУЮ ОПТИКУ БУДЕТ НЕВОЗМОЖНО ИСПОЛЬЗОВАТЬ.",
 		["RestorationModViewmodelMovementTitleID"] = "Движение вьювмоделей",
@@ -1532,7 +1546,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Loco
 		["bm_serbu_sc_desc"] = "Уменьшенная подпольная версия Рейнфилда 880 для любителей скрытности и сломанных запястий.",
 		--Reinfeld 88
-		["bm_menu_sc_m1897_desc"] = "Этот исторический артефакт повидал как грязные траншеи, так и жаркие джунгли. Известен тем, что им легко развязать пожар.\n\nАльтернативный огонь выпускает боезапас #{skill_color}#с повышенной скоростью##, за счет #{important_1}#отдачи, точности и невозможности прицеливания.##.",
+		["bm_menu_sc_m1897_desc"] = "Этот исторический артефакт повидал как грязные траншеи, так и жаркие джунгли. Известен тем, что им легко развязать пожар.",
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "Улучшенная версия классического ружья. Подходит для полиции, армии, гражданских и грабителей.",
 		--R870
@@ -1862,6 +1876,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Урон в голову уменьшен на ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "Урон в голову увеличен на ",
 		["bm_menu_weapon_ene_hs_mult_end"] = ".",
+		["bm_menu_weapon_multishot_1"] = "Урон поделен на",
+		["bm_menu_weapon_multishot_2"] = "дробинок, каждая из которых наносит",
+		["bm_menu_weapon_multishot_3"] = "урона.",
 		["bm_menu_weapon_hs_mult_1"] = "Урон в голову увеличен на ",
 		["bm_menu_weapon_hs_mult_2"] = " для всех противников, кроме капитанов.",
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Используются взрывные боеприпасы;## #{important_1}#Нельзя наносить урон в голову.##",
@@ -3847,7 +3864,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			})
 		end
 	end	
-  if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+  if not easterless then
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
 	if twirl <= shalashaska then
@@ -3871,7 +3888,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	end
 
 	 local cute = math.rand(1)
-	 local funny = 0.02
+	 local funny = 10.02
 	 if cute <= funny then
 		 LocalizationManager:add_localized_strings({			
 			-- Иди своей дорогой, сталкер
@@ -4938,7 +4955,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 	})
 
-	if not restoration.Options:GetValue("OTHER/GCGPYPMMSAC") then
+	if not easterless then
 	 local butt = math.rand(1)
 	 local frame = 0.01
 	 if butt <= frame then

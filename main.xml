@@ -374,9 +374,9 @@
 		<hook file="sc/mutators/new/mutatorcloakerflashbang.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorcloakercuff.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfastresponse.lua" source_file="lib/mutators/basemutator"/>
-		<!--<hook file="sc/mutators/new/mutatorquickscope360.lua" source_file="lib/mutators/basemutator"/>-->
-		<!--<hook file="sc/mutators/new/mutatorcrazytaser.lua" source_file="lib/mutators/basemutator"/>-->
-		<!--<hook file="sc/mutators/new/mutatormasterdodger.lua" source_file="lib/mutators/basemutator"/>-->
+		<hook file="sc/mutators/new/mutatorquickscope360.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorcrazytaser.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatormasterdodger.lua" source_file="lib/mutators/basemutator"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>

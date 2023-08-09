@@ -11,13 +11,10 @@ MutatorMasterDodger.disables_achievements = false
 MutatorMasterDodger.categories = {"crime_spree"}
 
 MutatorMasterDodger.icon_coords = {
-	5,
-	3
+	6,
+	4
 }
---FBI Vet is not dodging like hell so idk
-function MutatorMasterDodger:modify_value(id, value)
-	if id == "CopDamage:CheckingDodge" then
-		return 100
-	end
-	return value
+
+function MutatorMasterDodger:setup(data)
+	tweak_data.character.fbi_vet.damage.bullet_dodge_chance = 100
 end

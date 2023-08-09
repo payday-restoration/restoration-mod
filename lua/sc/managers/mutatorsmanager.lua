@@ -40,8 +40,8 @@ function MutatorsManager:init()
 		MutatorCloakerCuff:new(self),
 		MutatorFastResponse:new(self),
 		--MutatorQuickScope360:new(self),
-		--MutatorCrazyTaser:new(self),
-		--MutatorMasterDodger:new(self),
+		MutatorCrazyTaser:new(self),
+		MutatorMasterDodger:new(self),
 		MutatorBirthday:new(self)
 	}
 	self._active_mutators = {}

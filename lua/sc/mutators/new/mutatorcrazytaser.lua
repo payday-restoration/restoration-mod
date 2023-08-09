@@ -14,15 +14,13 @@ MutatorCrazyTaser.icon_coords = {
 	6,
 	4
 }
---Don't work. CS version either
+
 function MutatorCrazyTaser:setup(data)
-	--MutatorCrazyTaser.super.init(self, data)
-	local new_tase_delay = {3, 3}
-	tweak_data.character.taser.weapon.is_rifle.aim_delay_tase = new_tase_delay
-	tweak_data.character.presets.weapon.normal.is_rifle.aim_delay_tase = new_tase_delay
-	tweak_data.character.presets.weapon.good.is_rifle.aim_delay_tase = new_tase_delay
-	tweak_data.character.presets.weapon.expert.is_rifle.aim_delay_tase = new_tase_delay
-	tweak_data.character.presets.weapon.deathwish.is_rifle.aim_delay_tase = new_tase_delay
+	tweak_data.character.taser.weapon.is_rifle_single_fire.aim_delay_tase = {0, 0}
+	tweak_data.character.presets.weapon.normal.is_rifle_single_fire.aim_delay_tase = {0, 0}
+	tweak_data.character.presets.weapon.good.is_rifle_single_fire.aim_delay_tase = {0, 0}
+	tweak_data.character.presets.weapon.expert.is_rifle_single_fire.aim_delay_tase = {0, 0}
+	tweak_data.character.presets.weapon.deathwish.is_rifle_single_fire.aim_delay_tase = {0, 0}
 end
 
 

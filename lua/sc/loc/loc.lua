@@ -4275,23 +4275,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Crime Spree mutators
 		["mutator_cloakercuff"] = "Сonjurer",
 		["mutator_cloakercuff_desc"] = "Cloaker melee strikes will now cuff players.",
-		["mutator_cloakercuff_longdesc"] = "",
+		["mutator_cloakercuff_longdesc"] = "Melee strikes from cloakers will force players into a cuffed state.",
 		
 		["mutator_cloakerflashbang"] = "Dazzling Ninja",
 		["mutator_cloakerflashbang_desc"] = "Cloakers have a chance to drop a flashbang when they dodge.",
 		["mutator_cloakerflashbang_longdesc"] = "Cloakers will now have a 50% chance to drop a flashbang when they dodge.",
 		
-		["mutator_fartsmella"] = "\"Pesticides\" Supplies",
+		["mutator_fartsmella"] = "\"Pesticide\" Supplies",
 		["mutator_fartsmella_desc"] = "Smoke Grenades are now replaced with Tear Gas.",
-		["mutator_fartsmella_longdesc"] = "Not replace smoke grenade from \"Hurt Me More\" mutator.",
+		["mutator_fartsmella_longdesc"] = "Smokes grenades deployed by enemies will instead be replaced by tear gas.\n\nNote: Does not replace smoke grenades from the \"Hurt Me More\" mutator.",
 		
 		["mutator_kaboom"] = "Kamikaze",
 		["mutator_kaboom_desc"] = "Grenadiers now explode on death.",
-		["mutator_kaboom_longdesc"] = "",
+		["mutator_kaboom_longdesc"] = "Grenadiers now explode on death.",
 		
 		["mutator_fastresponse"] = "Fast Response",
 		["mutator_fastresponse_desc"] = "All police assaults now start at maximum intensity.",
-		["mutator_fastresponse_longdesc"] = "",
+		["mutator_fastresponse_longdesc"] = "All police assaults now start at maximum intensity.",
+		
+		["mutator_crazytaser"] = "Taser Overcharge",
+		["mutator_crazytaser_desc"] = "Taser units no longer have an aim delay when attempting to stun players.",
+		["mutator_crazytaser_longdesc"] = "Taser units no longer have an aim delay when attempting to stun players.\n\nNote: Normal cooldowns between attempts still apply.",
+
+		["mutator_masterdodger"] = "Dodge This!",
+		["mutator_masterdodger_desc"] = "Veteran Cops now dodge all bullets.",
+		["mutator_masterdodger_longdesc"] = "Veteran Cops now dodge all bullets.",
+		
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",

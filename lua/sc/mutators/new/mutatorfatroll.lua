@@ -19,7 +19,7 @@ MutatorFatRoll.icon_coords = {
 
 
 function MutatorFatRoll:register_values(mutator_manager)
-	self:register_value("fatroll", 0.25, "hm")
+	self:register_value("fatroll", 0.25, "ft")
 end
 
 function MutatorFatRoll:setup(data)

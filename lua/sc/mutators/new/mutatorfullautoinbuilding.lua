@@ -1,7 +1,22 @@
-ModifierHeavySniper.heavy_units = {}
+--Bro there's no full-auto in the building
+MutatorFullAutoInBuilding = MutatorFullAutoInBuilding or class(BaseMutator)
+MutatorFullAutoInBuilding._type = "MutatorFullAutoInBuilding"
+MutatorFullAutoInBuilding.name_id = "mutator_fullautoinbuilding"
+MutatorFullAutoInBuilding.desc_id = "mutator_fullautoinbuilding_desc"
+MutatorFullAutoInBuilding.reductions = {
+	money = 0,
+	exp = 0
+}
+MutatorFullAutoInBuilding.disables_achievements = false
+MutatorFullAutoInBuilding.categories = {"crime_spree"}
 
---Full auto on Titan/Bravo Snipers
-function ModifierHeavySniper:init(data)
+MutatorFullAutoInBuilding.icon_coords = {
+	6,
+	4
+}
+
+--This is full-auto (Bravo snipers)
+function MutatorFullAutoInBuilding:setup(data)
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
@@ -492,8 +507,4 @@ function ModifierHeavySniper:init(data)
 		}
 	end
 	
-end
-
---Wiped
-function ModifierHeavySniper:modify_value(id, value)
 end

@@ -14,10 +14,10 @@ MutatorQuickScope360.icon_coords = {
 	6,
 	4
 }
---Why same mechanism cause crashes
+
 function MutatorQuickScope360:modify_value(id, value)
 	if id == "CopActionShoot:ModifierSniperAim" then
-		return {value[1] / self:value(), value[2] / self:value()}
+		return {value[1] / 2, value[2] / 2}
 	end
 
 	return value

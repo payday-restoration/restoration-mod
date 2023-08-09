@@ -811,9 +811,6 @@ function CopDamage:damage_bullet(attack_data)
 	local weap_base = attack_data.weapon_unit:base()
 	if self._char_tweak.damage.bullet_dodge_chance then
 		local dodge_chance = self._char_tweak.damage.bullet_dodge_chance
-		if self._unit:base()._tweak_table == "fbi_vet" then
-			dodge_chance = managers.modifiers and managers.modifiers:modify_value("CopDamage:CheckingDodge", dodge_chance)
-		end
 		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
 			dodge_chance = 0
 		end

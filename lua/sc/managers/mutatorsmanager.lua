@@ -39,7 +39,8 @@ function MutatorsManager:init()
 		MutatorCloakerFlashbang:new(self),
 		MutatorCloakerCuff:new(self),
 		MutatorFastResponse:new(self),
-		--MutatorQuickScope360:new(self),
+		MutatorFullAutoInBuilding:new(self),
+		MutatorQuickScope360:new(self),
 		MutatorCrazyTaser:new(self),
 		MutatorMasterDodger:new(self),
 		MutatorBirthday:new(self)

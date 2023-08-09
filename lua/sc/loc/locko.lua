@@ -3790,23 +3790,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Crime Spree mutators
 		["mutator_cloakercuff"] = "Сonjurer",
 		["mutator_cloakercuff_desc"] = "Cloaker melee strikes will now cuff players.",
-		["mutator_cloakercuff_longdesc"] = "",
+		["mutator_cloakercuff_longdesc"] = "Melee strikes from cloakers will force players into a cuffed state.",
 		
 		["mutator_cloakerflashbang"] = "Dazzling Ninja",
 		["mutator_cloakerflashbang_desc"] = "Cloakers have a chance to drop a flashbang when they dodge.",
 		["mutator_cloakerflashbang_longdesc"] = "Cloakers will now have a 50% chance to drop a flashbang when they dodge.",
 		
-		["mutator_fartsmella"] = "\"Pesticides\" Supplies",
+		["mutator_fartsmella"] = "\"Pesticide\" Supplies",
 		["mutator_fartsmella_desc"] = "Smoke Grenades are now replaced with Tear Gas.",
-		["mutator_fartsmella_longdesc"] = "Not replace smoke grenade from \"Hurt Me More\" mutator.",
+		["mutator_fartsmella_longdesc"] = "Smokes grenades deployed by enemies will instead be replaced by tear gas.\n\nNote: Does not replace smoke grenades from the \"Hurt Me More\" mutator.",
 		
 		["mutator_kaboom"] = "Kamikaze",
 		["mutator_kaboom_desc"] = "Grenadiers now explode on death.",
-		["mutator_kaboom_longdesc"] = "",
+		["mutator_kaboom_longdesc"] = "Grenadiers now explode on death.",
 		
 		["mutator_fastresponse"] = "Fast Response",
 		["mutator_fastresponse_desc"] = "All police assaults now start at maximum intensity.",
-		["mutator_fastresponse_longdesc"] = "",
+		["mutator_fastresponse_longdesc"] = "All police assaults now start at maximum intensity.",
+		
+		["mutator_crazytaser"] = "Taser Overcharge",
+		["mutator_crazytaser_desc"] = "Taser units no longer have an aim delay when attempting to stun players.",
+		["mutator_crazytaser_longdesc"] = "Taser units no longer have an aim delay when attempting to stun players.\n\nNote: Normal cooldowns between attempts still apply.",
+
+		["mutator_masterdodger"] = "Dodge This!",
+		["mutator_masterdodger_desc"] = "Veteran Cops now dodge all bullets.",
+		["mutator_masterdodger_longdesc"] = "Veteran Cops now dodge all bullets.",
+		
+		["mutator_fullautoinbuilding"] = "Rabid Shooters",
+		["mutator_fullautoinbuilding_desc"] = "Titan Snipers and their equivalents will now fire their rifles on full auto at close range.",
+		["mutator_fullautoinbuilding_longdesc"] = "Titan Snipers, Bravo Sharpshooters will now fire their rifles on full auto at close range (within 5 meters).",
+		
+		["mutator_quickscope360"] = "Eagle Eye",
+		["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
+		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
 		["menu_cs_next_modifier_forced"] = "",

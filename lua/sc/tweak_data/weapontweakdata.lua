@@ -10494,7 +10494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ultima.timers.shotgun_reload.not_empty = {
 					reload_enter = 0.4666666666666667,
 					reload_first_shell_offset = 0.27,
-					reload_shell = 1.08,
+					reload_shell = 1.01,
 					reload_exit = 1,
 					reload_num = 2
 				}

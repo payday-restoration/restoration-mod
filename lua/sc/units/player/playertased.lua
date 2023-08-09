@@ -15,18 +15,18 @@ function PlayerTased:enter(state_data, enter_data)
 		end
 	end
 
-	if state_data.non_lethal_electrocution or last_criminal then
+	if state_data.non_lethal_electrocution then
 		state_data.non_lethal_electrocution = nil
-		local tased_time = tweak_data.player.damage.TASED_TIME
-		local recover_time = Application:time() + tweak_data.player.damage.STUN_TIME * managers.player:upgrade_value("player", "electrocution_resistance_multiplier", 1)
+		local recover_time = Application:time() + tweak_data.player.damage.TASED_TIME * managers.player:upgrade_value("player", "electrocution_resistance_multiplier", 1) * (state_data.electrocution_duration_multiplier or 1)
+		state_data.electrocution_duration_multiplier = nil
 		self._recover_delayed_clbk = "PlayerTased_recover_delayed_clbk"
 		
-		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), last_criminal and TimerManager:game():time() + tased_time or recover_time)
+		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), recover_time)
 	else
 		self._fatal_delayed_clbk = "PlayerTased_fatal_delayed_clbk"
 		local tased_time = tweak_data.player.damage.TASED_TIME
 		--Taser Overcharge changed to allow for taser aim delays to be changed.
-		managers.enemy:add_delayed_clbk(self._fatal_delayed_clbk, callback(self, self, "clbk_exit_to_fatal"), TimerManager:game():time() + tased_time)
+		managers.enemy:add_delayed_clbk(self._fatal_delayed_clbk, callback(self, self, last_criminal and "clbk_exit_to_std" or "clbk_exit_to_fatal"), TimerManager:game():time() + tased_time)
 	end
 
 	self._next_shock = 0.5
@@ -180,4 +180,19 @@ function PlayerTased:update(t, dt)
 	self._num_shocks = self._num_shocks or 0 --potential fix for the rare occurance of self._num_shocks being nil while in the tase state maybe
 
 	PlayerTased.super.update(self, t, dt)
+end
+
+function PlayerTased:clbk_exit_to_std()
+	self._recover_delayed_clbk = nil
+	if self._fatal_delayed_clbk then
+		self._fatal_delayed_clbk = nil
+	end
+
+	Application:debug("PlayerTased:clbk_exit_to_std(), game_state_machine:last_queued_state_name()", game_state_machine:last_queued_state_name())
+
+	local current_state_name = managers.player:current_state()
+
+	if current_state_name == "tased" and managers.network:session() then
+		managers.player:set_player_state("standard")
+	end
 end

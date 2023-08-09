@@ -1301,6 +1301,9 @@
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc"/>
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc"/>
 	
+	<!--Electric 40mm-->
+	<texture			path="guis/textures/pd2/blackmarket/inv_mod_ammo_electric"/>
+
 	<!--Incendiary Grenade-->
 	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>
 	

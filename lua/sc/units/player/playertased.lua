@@ -4,12 +4,24 @@ function PlayerTased:enter(state_data, enter_data)
 	self._ids_tased = Idstring("tased")
 	self._ids_counter_tase = Idstring("tazer_counter")
 	self:_start_action_tased(managers.player:player_timer():time(), state_data.non_lethal_electrocution)
-	if state_data.non_lethal_electrocution then
+
+	local all_criminals = managers.groupai:state():all_char_criminals()
+	local last_criminal = nil
+	for u_key, u_data in pairs(all_criminals) do
+		if not u_data.status and self._unit:key() ~= u_key then
+			break
+		else
+			last_criminal = true
+		end
+	end
+
+	if state_data.non_lethal_electrocution or last_criminal then
 		state_data.non_lethal_electrocution = nil
+		local tased_time = tweak_data.player.damage.TASED_TIME
 		local recover_time = Application:time() + tweak_data.player.damage.STUN_TIME * managers.player:upgrade_value("player", "electrocution_resistance_multiplier", 1)
 		self._recover_delayed_clbk = "PlayerTased_recover_delayed_clbk"
 		
-		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), recover_time)
+		managers.enemy:add_delayed_clbk(self._recover_delayed_clbk, callback(self, self, "clbk_exit_to_std"), last_criminal and TimerManager:game():time() + tased_time or recover_time)
 	else
 		self._fatal_delayed_clbk = "PlayerTased_fatal_delayed_clbk"
 		local tased_time = tweak_data.player.damage.TASED_TIME

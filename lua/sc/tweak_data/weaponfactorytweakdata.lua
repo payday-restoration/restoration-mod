@@ -20949,67 +20949,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tkb", "resmod_chikubi", function(s
 		wpn_fps_ass_tkb_bolt_rp4 = {
 			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_ck_dummy",
 			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_bolt_ck"
-		},
-		wpn_upg_tkb_g_standard = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_hgrip = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_pgrip = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_wgrip = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_rk3 = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_edg = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_gradus = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_upg_ak_g_rk9 = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-
-		--VMP
-		wpn_upg_ak_g_titanium = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-
-		--AR/AK Mod Pack
-		wpn_fps_upg_ak_g_galil = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
-		},
-		wpn_fps_ass_ak_g_vityaz = {
-			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
-			unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
-			a_obj = "a_body"
 		}
 	}
+	for k, used_part_id in ipairs(self.wpn_fps_ass_tkb.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_ass_tkb_conversion.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_third_ass_tkb_grip_ck",
+					unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_ass_tkb_pts/wpn_fps_ass_tkb_grip_ck",
+					a_obj = "a_body"
+				}
+			end
+		end
+	end
 
 	for i, part_id in pairs(self.wpn_fps_ass_tkb.uses_parts) do
 		attachment_list = { --me no like clipping; do not test me on this
@@ -30372,26 +30324,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 1,
 			concealment = -1
 		}
-		
-		if self.parts.wpn_fps_upg_m4_s_hera_paint then
-			self.parts.wpn_fps_upg_m4_s_hera_paint.supported = true
-			self.parts.wpn_fps_upg_m4_s_hera_paint.stats = deep_clone(stocks.adj_to_to_thumb_stats)
-			self.parts.wpn_fps_upg_m4_s_hera_paint.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
-			self.parts.wpn_fps_upg_m4_s_hera_paint.forbids = {} --Cleans table
-			for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
-				if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
-					table.insert(self.parts.wpn_fps_upg_m4_s_hera_paint.forbids, part_id)
-				end
-			end
-		else
-			self.parts.wpn_fps_upg_m4_s_hera.supported = true
-			self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
-			self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
-			self.parts.wpn_fps_upg_m4_s_hera.forbids = {} --Cleans table
-			for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
-				if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
-					table.insert(self.parts.wpn_fps_upg_m4_s_hera.forbids, part_id)
-				end
+
+		self.parts.wpn_fps_upg_m4_s_hera_paint.supported = true
+		self.parts.wpn_fps_upg_m4_s_hera_paint.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_hera_paint.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+		self.parts.wpn_fps_upg_m4_s_hera_paint.forbids = {} --Cleans table
+		for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
+			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
+				table.insert(self.parts.wpn_fps_upg_m4_s_hera_paint.forbids, part_id)
 			end
 		end
 		
@@ -30549,7 +30489,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						"wpn_fps_upg_m4_s_hcar"
 					}
 					for _, part_id in ipairs(attachment_list) do
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -30571,7 +30511,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						"wpn_fps_upg_m4_s_contender_normal"
 					}
 					for _, part_id in ipairs(attachment_list) do
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -30593,7 +30533,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						"wpn_fps_ass_hera_s_russian"
 					}
 					for _, part_id in ipairs(attachment_list) do
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -30683,6 +30623,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ak_b_galil_bipod.stats.concealment = -5
 		self.parts.wpn_fps_upg_ak_b_galil_bipod.custom_stats = deep_clone(barrels.long_b3_stats)
 		self.parts.wpn_fps_upg_ak_b_galil_bipod.custom_stats.ads_speed_mult = 1.025
+
+		self.parts.wpn_fps_upg_ak_g_galil.supported = true
+		self.parts.wpn_fps_upg_ak_g_galil.stats = deep_clone(self.parts.wpn_fps_upg_m4_g_sniper.stats)
+		self.parts.wpn_fps_upg_ak_g_galil.custom_stats = nil
+
+		self.parts.wpn_fps_ass_ak_g_m249.supported = true
+		self.parts.wpn_fps_ass_ak_g_m249.stats = deep_clone(self.parts.wpn_fps_upg_ak_g_wgrip.stats)
+		self.parts.wpn_fps_ass_ak_g_m249.custom_stats = nil
+
+		self.parts.wpn_fps_ass_ak_g_vityaz.supported = true
+		self.parts.wpn_fps_ass_ak_g_vityaz.stats = deep_clone(self.parts.wpn_fps_upg_ak_g_pgrip.stats)
+		self.parts.wpn_fps_ass_ak_g_vityaz.custom_stats = deep_clone(self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats)
+
+		self.parts.wpn_fps_upg_m16_fg_edge.pcs = nil --Locks up the game, dunno why
+		self.parts.wpn_fps_upg_m16_fg_edge.override = {}
+		self.parts.wpn_fps_upg_m16_fg_edge.adds = {}
+		self.parts.wpn_fps_upg_m16_fg_edge.forbids = {}
+
 	end
 
 
@@ -31419,7 +31377,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_o_northtac"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31456,7 +31414,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_snp_victor_g_mod3"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31475,7 +31433,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_snp_awp_ns_muzzle"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31502,7 +31460,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_ak_ns_tgp"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31520,7 +31478,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_ns_ass_filter"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31552,7 +31510,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_sho_ultima_ns_comp"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31570,7 +31528,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_ns_ass_smg_v6"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31598,7 +31556,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if self.parts[part_id] then
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -31623,7 +31581,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if self.parts[part_id] then
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -31652,7 +31610,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if self.parts[part_id] then
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -31676,7 +31634,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if self.parts[part_id] then
-						if not table.contains(self[factory_id].uses_parts, part_id) then
+						if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 							table.insert(self[factory_id].uses_parts, part_id)
 							self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						end
@@ -31775,7 +31733,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_m4_uupg_m_strike"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 					end
@@ -31798,7 +31756,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_ak_s_galil_sniper"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						self[factory_id].override = self[factory_id].override or {}
@@ -31851,10 +31809,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_galil_s_wood",
 					"wpn_fps_ass_galil_s_light",
 					"wpn_fps_ass_galil_s_fab",
-					"wpn_fps_ass_galil_s_sniper"
+					"wpn_fps_ass_galil_s_sniper",
+
+					"wpn_upg_ak_s_folded"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {
@@ -31913,7 +31873,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_galil_s_sniper"
 				}
 				for _, part_id in ipairs(attachment_list) do
-					if not table.contains(self[factory_id].uses_parts, part_id) then
+					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
 						table.insert(self[factory_id].uses_parts, part_id)
 						self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 						self[factory_id].override.wpn_fps_ass_galil_s_skeletal = {

@@ -30710,6 +30710,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2
 		}
 
+		self.parts.wpn_upg_ak_s_folded.supported = true
+		self.parts.wpn_upg_ak_s_folded.stats = deep_clone(stocks.fold_folder_stats)
+		self.parts.wpn_upg_ak_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+		self.parts.wpn_fps_upg_ak_s_asval.supported = true
+		self.parts.wpn_fps_upg_ak_s_asval.stats = {}
+		self.parts.wpn_fps_upg_ak_s_asval.custom_stats = {}
+
+		self.parts.wpn_fps_upg_ak_m_bakeband.supported = true
+		self.parts.wpn_fps_upg_ak_m_bakeband.desc_id = ""
+		self.parts.wpn_fps_upg_ak_m_bakeband.has_description = false
+		self.parts.wpn_fps_upg_ak_m_bakeband.stats = { recoil = 2, concealment = -1}
+		self.parts.wpn_fps_upg_ak_m_bakeband.custom_stats = nil
 	end
 
 
@@ -31822,7 +31835,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_galil_s_fab",
 					"wpn_fps_ass_galil_s_sniper",
 
-					"wpn_fps_upg_ak_s_galil_sniper"
+					"wpn_fps_upg_ak_s_galil_sniper",
+					"wpn_fps_upg_ak_s_asval",
+					"wpn_upg_ak_s_folded",
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
@@ -31863,6 +31878,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self[factory_id].override.wpn_fps_upg_ak_s_galil_sniper = {
 							stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 							custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_fps_upg_ak_s_asval = {
+							stats = deep_clone(stocks.nocheeks_to_folder_stats),
+							custom_stats = deep_clone(stocks.nocheeks_to_folder_stats),
+							adds = { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_upg_ak_s_folded = {
+							stats = deep_clone(stocks.fold_nocheeks_stats),
+							custom_stats = deep_clone(stocks.fold_nocheeks_stats),
 							adds = { "wpn_upg_ak_g_standard" }
 						}
 						self[factory_id .. "_npc"].override = deep_clone(self[factory_id].override)
@@ -31924,6 +31949,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self[factory_id].override.wpn_fps_ass_galil_s_sniper = {
 							stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
 							custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+
+						self[factory_id].override.wpn_fps_upg_ak_s_asval = {
+							stats = {},
+							custom_stats = {},
+							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
+								or (factory_id == "wpn_fps_smg_coal" and {})
+								or { "wpn_upg_ak_g_standard" }
+						}
+						self[factory_id].override.wpn_upg_ak_s_folded = {
+							stats = deep_clone(stocks.fold_folder_stats),
+							custom_stats = deep_clone(stocks.fold_folder_stats),
 							adds = (factory_id == "wpn_fps_ass_asval" and { "wpn_fps_ass_asval_g_standard" })
 								or (factory_id == "wpn_fps_smg_coal" and {})
 								or { "wpn_upg_ak_g_standard" }

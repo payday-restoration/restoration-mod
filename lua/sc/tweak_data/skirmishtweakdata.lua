@@ -1,5 +1,23 @@
 Month = os.date("%m")
-Day = os.date("%d")	
+Day = os.date("%d")
+--Different ransom per wave
+--function SkirmishTweakData:_init_ransom_amounts()
+--	self.ransom_amounts = {
+--		250000,
+--		350000,
+--		400000,
+--		500000,
+--		1000000,
+--		1500000,
+--		2500000,
+--		3500000,
+--		10000000
+--	}
+
+--	for i, ransom in ipairs(self.ransom_amounts) do
+--		self.ransom_amounts[i] = ransom + (self.ransom_amounts[i - 1] or 0)
+--	end
+--end
 --This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 local map_scale_factor = 1

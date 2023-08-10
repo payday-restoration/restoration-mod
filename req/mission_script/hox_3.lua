@@ -28,6 +28,10 @@ return {
 	[100788] = {
 		difficulty = 1
 	},
+	--Disable garage escape
+	[100206] = {
+		enabled = false
+	},
 	--FBI Team Responders
 	[102346] = {
 		values = {

@@ -30372,13 +30372,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			spread = 1,
 			concealment = -1
 		}
-		self.parts.wpn_fps_upg_m4_s_hera.supported = true
-		self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
-		self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
-		self.parts.wpn_fps_upg_m4_s_hera.forbids = {} --Cleans table
-		for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
-			if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
-				table.insert(self.parts.wpn_fps_upg_m4_s_hera.forbids, part_id)
+		
+		if self.parts.wpn_fps_upg_m4_s_hera_paint then
+			self.parts.wpn_fps_upg_m4_s_hera_paint.supported = true
+			self.parts.wpn_fps_upg_m4_s_hera_paint.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+			self.parts.wpn_fps_upg_m4_s_hera_paint.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+			self.parts.wpn_fps_upg_m4_s_hera_paint.forbids = {} --Cleans table
+			for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
+					table.insert(self.parts.wpn_fps_upg_m4_s_hera_paint.forbids, part_id)
+				end
+			end
+		else
+			self.parts.wpn_fps_upg_m4_s_hera.supported = true
+			self.parts.wpn_fps_upg_m4_s_hera.stats = deep_clone(stocks.adj_to_to_thumb_stats)
+			self.parts.wpn_fps_upg_m4_s_hera.custom_stats = deep_clone(stocks.adj_to_to_thumb_stats)
+			self.parts.wpn_fps_upg_m4_s_hera.forbids = {} --Cleans table
+			for i, part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "grip" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, part_id) then
+					table.insert(self.parts.wpn_fps_upg_m4_s_hera.forbids, part_id)
+				end
 			end
 		end
 		

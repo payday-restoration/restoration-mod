@@ -735,6 +735,8 @@ function PlayerDamage:damage_melee(attack_data)
 	--Unit specific player state changing shenanigans.
 	local pm = managers.player
 	local player_unit = managers.player:player_unit()
+	local last_criminal = self:is_last_criminal()
+
 	if alive(attacker_unit) then
 		if attacker_char_tweak and attacker_char_tweak.tase_on_melee then
 			attacker_unit:sound():say("post_tasing_taunt")
@@ -747,7 +749,7 @@ function PlayerDamage:damage_melee(attack_data)
 				self._unit:movement():on_non_lethal_electrocution()
 				pm:set_player_state("tased")
 			end		
-		elseif attacker_char_tweak and attacker_char_tweak.cuff_on_melee then
+		elseif attacker_char_tweak and attacker_char_tweak.cuff_on_melee and not last_criminal then
 			if attacker_unit:base()._tweak_table == "autumn" then
 				attacker_unit:sound():say("i03", true, nil, true)
 			end
@@ -815,6 +817,16 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 	
 	return
+end
+
+function PlayerDamage:is_last_criminal()
+	local all_criminals = managers.groupai:state():all_char_criminals()
+	for u_key, u_data in pairs(all_criminals) do
+		if not u_data.status and self._unit:key() ~= u_key then
+			return nil
+		end
+	end
+	return true
 end
 
 function PlayerDamage:damage_explosion(attack_data)

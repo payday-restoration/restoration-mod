@@ -18272,7 +18272,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	}
 	self.parts.wpn_fps_smg_vityaz_s_short.supported = true
 	self.parts.wpn_fps_smg_vityaz_s_short.stats = deep_clone(stocks.remove_folder_stats)		
-	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = deep_clone(stocks.remove_folder_stats)		
+	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = deep_clone(stocks.remove_folder_stats)	
+
+	self.wpn_fps_smg_vityaz.override = self.wpn_fps_smg_vityaz.override or {}
 	
 end)
 
@@ -30646,6 +30648,67 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_m16_fg_edge.override = {}
 		self.parts.wpn_fps_upg_m16_fg_edge.adds = {}
 		self.parts.wpn_fps_upg_m16_fg_edge.forbids = {}
+
+		self.parts.wpn_fps_smg_vityaz_fg_wood.supported = true
+		self.parts.wpn_fps_smg_vityaz_fg_wood.stats = deep_clone(self.parts.wpn_fps_upg_ak_g_wgrip.stats)
+		self.parts.wpn_fps_smg_vityaz_fg_wood.custom_stats = nil
+
+		self.parts.wpn_fps_smg_vityaz_s_wood.supported = true
+		self.parts.wpn_fps_smg_vityaz_s_wood.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+		self.parts.wpn_fps_smg_vityaz_s_wood.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+
+		self.parts.wpn_fps_smg_vityaz_s_flint.supported = true
+		self.parts.wpn_fps_smg_vityaz_s_flint.stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+		self.parts.wpn_fps_smg_vityaz_s_flint.custom_stats = deep_clone(stocks.folder_to_adj_acc2_stats)
+
+		self.parts.wpn_fps_upg_ak_body_magwell.supported = true
+		self.parts.wpn_fps_upg_ak_body_magwell.stats = {
+			value = 5, 
+			concealment = -1,
+			reload = 2
+		}
+
+		self.parts.wpn_fps_shot_saiga_body_magwell.supported = true
+		self.parts.wpn_fps_shot_saiga_body_magwell.stats = {
+			value = 5, 
+			concealment = -1,
+			reload = 2
+		}
+
+		self.parts.wpn_fps_shot_saiga_fg_mar.supported = true
+		self.parts.wpn_fps_shot_saiga_fg_mar.stats = {
+			value = 4, 
+			concealment = 2,
+			reload = -2,
+			spread = -1
+		}
+		self.parts.wpn_fps_shot_saiga_fg_sar.supported = true
+		self.parts.wpn_fps_shot_saiga_fg_sar.stats = {
+			value = 4, 
+			concealment = 1,
+			spread = -1 
+		}
+
+		self.parts.wpn_upg_ak_fg_saiga_ultimak.supported = true
+		self.parts.wpn_upg_ak_fg_saiga_ultimak.stats = {
+			value = 4, 
+			concealment = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_upg_ak_fg_saiga.supported = true
+		self.parts.wpn_upg_ak_fg_saiga.stats = {
+			value = 4, 
+			concealment = 1,
+			recoil = -2
+		}
+
+		self.parts.wpn_fps_ass_flint_dh_galil.supported = true
+		self.parts.wpn_fps_ass_flint_dh_galil.stats = {
+			value = 4, 
+			concealment = -1,
+			recoil = 2
+		}
 
 	end
 

@@ -853,6 +853,13 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					max_hostages = {4, "none"}
 				}
 			},
+			--All assaults starts at diff 1
+			{
+				id = "max_assault_diff",
+				class = "Modifier10SecondsResponseTime",
+				icon = "crime_spree_assault_extender",
+				data = {}
+			},
 			--Cloaker melee cuffs players
 			{
 				id = "cloaker_arrest",

@@ -1519,17 +1519,16 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 10,
-					recoil = -25,
-					spread = 2,
+					recoil = -30,
 					total_ammo_mod = per_pellet and -102 or -102,
-					concealment = -5,
+					concealment = -6,
 					damage = per_pellet and 0 or 30
 				},
 				custom_stats = {
-					ads_speed_mult = 1.125,
+					ads_speed_mult = 1.15,
 					hip_mult = 4,
-					ammo_pickup_max_mul = per_pellet and 0.3 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.3 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1541,17 +1540,16 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 10,
-					recoil = -25,
-					spread = 2,
+					recoil = -30,
 					total_ammo_mod = per_pellet and -102 or -102,
-					concealment = -5,
+					concealment = -6,
 					damage = per_pellet and 0 or 45
 				},
 				custom_stats = {
-					ads_speed_mult = 1.125,
+					ads_speed_mult = 1.15,
 					hip_mult = 4,
-					ammo_pickup_max_mul = per_pellet and 0.3 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.3 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1565,16 +1563,15 @@ local grips = {
 				stats = {
 					value = 10,
 					total_ammo_mod = per_pellet and -102 or -102,
-					recoil = -25,
-					spread = 2,
-					concealment = -5,
+					recoil = -30,
+					concealment = -6,
 					damage = per_pellet and 0 or 60
 				},
 				custom_stats = {
-					ads_speed_mult = 1.125,
+					ads_speed_mult = 1.15,
 					hip_mult = 4,
-					ammo_pickup_max_mul = per_pellet and 0.3 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.3 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1587,16 +1584,15 @@ local grips = {
 					value = 10,
 					total_ammo_mod = per_pellet and -102 or -102,
 					damage = per_pellet and 0 or 90,
-					recoil = -25,
-					spread = 2,
-					concealment = -5,
+					recoil = -30,
+					concealment = -6,
 					moving_spread = 3
 				},
 				custom_stats = {
-					ads_speed_mult = 1.125,
+					ads_speed_mult = 1.15,
 					hip_mult = 4,
-					ammo_pickup_max_mul = per_pellet and 0.3 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.3 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
 					rays = 1,
 					block_b_storm = true,	
@@ -28009,6 +28005,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			material = {
 				"gfx_reddot1",
 				"screen"
+			}
+		}
+		
+		self.parts.wpn_fps_snp_srs99_s7_scope_steelsight.visibility = {
+			{
+				objects = {
+					g_box = false,
+					g_reddot = false,
+					g_reticle = false,
+				}
 			}
 		}
 		self.parts.wpn_fps_snp_srs99_s7_scope_steelsight.perks = {"scope", "scope_aim"}

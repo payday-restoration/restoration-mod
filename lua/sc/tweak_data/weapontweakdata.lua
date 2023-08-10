@@ -17934,10 +17934,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			minigun = 0.55,
 		shotgun = per_pellet and 1.2 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			flamethrower = per_pellet and 0.7 / 1.2 or 1, --flamethrowers do not get the pickup bonus if using per_pellet
-			shotgun_auto = per_pellet and 0.92 or 1,
-			--"shotgun" would go here if it wasn't acting as the base multiplier for the rest of them
-			shotgun_heavy = per_pellet and 0.96 or 1,
-			shotgun_break = per_pellet and 1.06 or 1,
+			shotgun_auto = per_pellet and 0.92 or 1, --Auto
+			shotgun_heavy = per_pellet and 0.94 or 1, --Light
+			shotgun_break = per_pellet and 1.06 or 1, --Heavy
 			shotgun_super = per_pellet and 1.10 or 1,
 		--assault_rifle = 1, 
 			--snp = 1, 

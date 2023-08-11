@@ -30669,14 +30669,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ak_body_magwell.stats = {
 			value = 5, 
 			concealment = -1,
-			reload = 2
+			reload = 1
 		}
 
 		self.parts.wpn_fps_shot_saiga_body_magwell.supported = true
 		self.parts.wpn_fps_shot_saiga_body_magwell.stats = {
 			value = 5, 
 			concealment = -1,
-			reload = 2
+			reload = 1
 		}
 
 		self.parts.wpn_fps_shot_saiga_fg_mar.supported = true

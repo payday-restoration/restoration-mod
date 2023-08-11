@@ -30683,7 +30683,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_saiga_fg_mar.stats = {
 			value = 4, 
 			concealment = 2,
-			reload = -2,
+			recoil = -2,
 			spread = -1
 		}
 		self.parts.wpn_fps_shot_saiga_fg_sar.supported = true

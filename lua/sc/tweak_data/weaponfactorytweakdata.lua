@@ -30644,10 +30644,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_ak_g_vityaz.stats = deep_clone(self.parts.wpn_fps_upg_ak_g_pgrip.stats)
 		self.parts.wpn_fps_ass_ak_g_vityaz.custom_stats = deep_clone(self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats)
 
-		self.parts.wpn_fps_upg_m16_fg_edge.pcs = nil --Locks up the game, dunno why
-		self.parts.wpn_fps_upg_m16_fg_edge.override = {}
-		self.parts.wpn_fps_upg_m16_fg_edge.adds = {}
-		self.parts.wpn_fps_upg_m16_fg_edge.forbids = {}
+		self.parts.wpn_fps_upg_m16_fg_edge.supported = true
+		self.parts.wpn_fps_upg_m16_fg_edge.stats = {
+			value = 8,
+			spread = 1,
+			recoil = 2,
+			concealment = -2
+		}
+		table.insert(self.parts.wpn_fps_upg_m16_fg_edge.adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 
 		self.parts.wpn_fps_smg_vityaz_fg_wood.supported = true
 		self.parts.wpn_fps_smg_vityaz_fg_wood.stats = deep_clone(self.parts.wpn_fps_upg_ak_g_wgrip.stats)
@@ -32864,54 +32868,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		texture_bundle_folder = "boost_in_lootdrop",
 		has_description = true,
 		override = {
-			wpn_fps_upg_ns_ass_smg_firepig = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_stubby = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_tank = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_large = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_medium = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_smg_small = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_jprifles = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_linear = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_surefire = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ns_ass_pbs1 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ass_ns_battle = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
-			wpn_fps_upg_ak_ns_ak105 = {
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			},
 			wpn_fps_m4_uupg_b_medium_vanilla = {
 				unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_fps_ass_m16_b_legend",
 				third_unit = "units/payday2_cash/safes/cola/weapons/wpn_fps_ass_m16_legendary/wpn_third_ass_m16_b_legend",

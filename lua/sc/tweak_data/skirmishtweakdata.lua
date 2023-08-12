@@ -3,15 +3,15 @@ Day = os.date("%d")
 --Different ransom per wave
 function SkirmishTweakData:_init_ransom_amounts()
 	self.ransom_amounts = {
-		250000,
-		350000,
-		400000,
-		500000,
 		1000000,
-		1500000,
+		1250000,
+		1750000,
+		2000000,
 		2500000,
+		3000000,
+		3000000,
 		3500000,
-		15000000
+		10000000
 	}
 
 	for i, ransom in ipairs(self.ransom_amounts) do
@@ -74,43 +74,44 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		40,
-		40,
-		44,
-		48,
-		52,
-		56,
 		60,
-		64,
-		68,
-		72,
 		80,
-		120
+		90,
+		100,
+		100,
+		100,
+		125,
+		150,
+		150,
+		150,
+		150,
+		200
 	}
 
+	--"Disabled". Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
-		0.55,
-		0.7,
-		0.85,
 		1.0,
-		1.15,
-		1.3,
-		1.45,
-		1.6,
-		1.75,
-		1.9,
-		2.05,
-		2.2,
-		2.35,
-		2.35,
-		2.5,
-		2.65,
-		2.8,
-		2.95,
-		3.1,
-		3.25,
-		3.4,
-		3.55
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0,
+		1.0
 	}
 end
 
@@ -841,30 +842,43 @@ end
 
 function SkirmishTweakData:_init_wave_modifiers()
 	self.wave_modifiers = {}
+	--200 on OVK, 300 on Mayhem, 350 on DW, 400 on DS
 	local health_damage_multipliers = {
-		{
+		{--OVK 1 wave
 			damage = 0.75,
-			health = 0.5
+			health = 0.572
 		},
-		{
+		{--OVK+ 2 wave
 			damage = 0.8,
-			health = 0.6
+			health = 0.715
 		},
-		{
+		{-- Mayhem 3 wave
 			damage = 0.85,
-			health = 0.7
+			health = 0.8572
 		},
-		{
-			damage = 0.9,
-			health = 0.8
-		},
-		{
-			damage = 0.95,
-			health = 0.9
-		},
-		{
+		{--DW 4 wave
 			damage = 1.0,
 			health = 1.0
+		},
+		{--DS 5 wave
+			damage = 1.15,
+			health = 1.1429
+		},
+		{--DS 6 wave
+			damage = 1.15,
+			health = 1.1429
+		},
+		{--DS 7 wave
+			damage = 1.2,
+			health = 1.1429
+		},
+		{--DS 8 wave
+			damage = 1.2,
+			health = 1.1429
+		},
+		{--DS 9 wave
+			damage = 1.2,
+			health = 1.1429
 		}
 	}
 	self.wave_modifiers[1] = {
@@ -874,18 +888,14 @@ function SkirmishTweakData:_init_wave_modifiers()
 		}
 	}
 	self.wave_modifiers[2] = {{class = "ModifierNoHurtAnims"}}
+	self.wave_modifiers[3] = {{class = "ModifierCloakerKick"}}
 	self.wave_modifiers[4] = {
 		{
 			class = "ModifierHealSpeed",
 			data = {speed = 50}
 		}
-	}
-	self.wave_modifiers[6] = {
-		{
-			class = "ModifierSniperAim",
-			data = {speed = 2}
-		}
-	}
+	}	
+	self.wave_modifiers[5] = {{class = "Modifier10SecondsResponseTime"}}
 	self.wave_modifiers[7] = {{class = "ModifierBravoSniper"}}
 	self.wave_modifiers[8] = {
 		{

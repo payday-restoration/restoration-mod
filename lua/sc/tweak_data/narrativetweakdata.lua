@@ -337,16 +337,6 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000
 	}
 	
-	--Holdout exp tweaks
-	self.jobs.skm_mus.jc = 20
-	self.jobs.skm_red2.jc = 20
-	self.jobs.skm_watchdogs_stage2.jc = 20
-	self.jobs.skm_bex.jc = 20
-	self.jobs.skm_cas.jc = 20
-	self.jobs.skm_big2.jc = 20
-	self.jobs.skm_mallcrasher.jc = 20
-	self.jobs.skm_arena.jc = 20
-	
 end)
 
 --[[

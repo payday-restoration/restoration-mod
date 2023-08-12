@@ -85,33 +85,33 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 		150,
 		150,
 		150,
-		200
+		150
 	}
 
 	--"Disabled". Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
+		0.55,
+		0.7,
+		0.85,
 		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0,
-		1.0
+		1.15,
+		1.3,
+		1.45,
+		1.6,
+		1.75,
+		1.9,
+		2.05,
+		2.2,
+		2.35,
+		2.35,
+		2.5,
+		2.65,
+		2.8,
+		2.95,
+		3.1,
+		3.25,
+		3.4,
+		3.55
 	}
 end
 
@@ -895,7 +895,13 @@ function SkirmishTweakData:_init_wave_modifiers()
 			data = {speed = 50}
 		}
 	}	
-	self.wave_modifiers[5] = {{class = "Modifier10SecondsResponseTime"}}
+	}
+	self.wave_modifiers[6] = {
+		{
+			class = "ModifierSniperAim",
+			data = {speed = 2}
+		}
+	}
 	self.wave_modifiers[7] = {{class = "ModifierBravoSniper"}}
 	self.wave_modifiers[8] = {
 		{

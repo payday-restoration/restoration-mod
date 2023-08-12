@@ -88,7 +88,7 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 		150
 	}
 
-	--"Disabled". Need to made scalable multiplier depends of the map size
+	-- Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
 		0.55,
 		0.7,
@@ -842,7 +842,6 @@ end
 
 function SkirmishTweakData:_init_wave_modifiers()
 	self.wave_modifiers = {}
-	--200 on OVK, 300 on Mayhem, 350 on DW, 400 on DS
 	local health_damage_multipliers = {
 		{--OVK 1 wave
 			damage = 0.75,
@@ -894,7 +893,6 @@ function SkirmishTweakData:_init_wave_modifiers()
 			class = "ModifierHealSpeed",
 			data = {speed = 50}
 		}
-	}	
 	}
 	self.wave_modifiers[6] = {
 		{

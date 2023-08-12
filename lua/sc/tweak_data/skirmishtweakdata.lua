@@ -861,23 +861,23 @@ function SkirmishTweakData:_init_wave_modifiers()
 			health = 1.0
 		},
 		{--DS 5 wave
-			damage = 1.15,
+			damage = 1.0,
 			health = 1.1429
 		},
 		{--DS 6 wave
-			damage = 1.15,
+			damage = 1.0,
 			health = 1.1429
 		},
 		{--DS 7 wave
-			damage = 1.2,
+			damage = 1.0,
 			health = 1.1429
 		},
 		{--DS 8 wave
-			damage = 1.2,
+			damage = 1.0,
 			health = 1.1429
 		},
 		{--DS 9 wave
-			damage = 1.2,
+			damage = 1.0,
 			health = 1.1429
 		}
 	}

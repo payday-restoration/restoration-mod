@@ -74,24 +74,24 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		80,
-		100,
-		100,
-		125,
-		125,
-		125,
-		125,
-		150,
-		150,
-		150,
-		150,
-		150
+		60,
+		60,
+		66,
+		72,
+		78,
+		84,
+		90,
+		96,
+		102,
+		108,
+		120,
+		180
 	}
 
 	-- Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
-		0.35,
-		0.65,
+		0.55,
+		0.7,
 		0.85,
 		1.0,
 		1.15,

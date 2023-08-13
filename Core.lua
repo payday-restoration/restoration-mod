@@ -280,6 +280,13 @@ function restoration:Init()
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
 		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
 		"crojob3_night", --Ditto
+		--Skirmish heists below
+		"skm_big2",
+		"skm_mallcrasher",
+		"skm_cas",
+		"skm_bex",
+		"skm_friend",
+		"skm_street",
 		--Custom Heists below--
 		"junk", --Doghouse
 		"run_res", --Whurr's Heat Street Edit
@@ -318,6 +325,9 @@ function restoration:Init()
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
+		"skm_mus",
+		"skm_arena",
+		"skmc_ovengrill",
 		"skm_watchdogs_stage2",
 		--Custom Heists below--
 		"thechase",

@@ -1,42 +1,5 @@
 Month = os.date("%m")
 Day = os.date("%d")
-function SkirmishTweakData:_determine_map_scale()
---idk why game can't define job id so default map_scale will be like this
-local map_scale_factor = 0.75
-	for _,vl in pairs(restoration.very_large_levels) do
-	log("Job ID is "..tostring(job))
-		if job == vl then
-			map_scale_factor = 1.3
-		end
-	end		
-	for _,l in pairs(restoration.large_levels) do
-		log("Job ID is "..tostring(job))
-		if job == l then
-			map_scale_factor = 1.15
-		end
-	end	
-	for _,t in pairs(restoration.tiny_levels) do
-		log("Job ID is "..tostring(job))
-		if job == t then
-			map_scale_factor = 0.85
-		end
-	end
-	for _,vt in pairs(restoration.very_tiny_levels) do
-		log("Job ID is "..tostring(job))
-		if job == vt then
-			map_scale_factor = 0.7
-		end
-	end
-	for _,et in pairs(restoration.extremely_tiny_levels) do
-		log("Job ID is "..tostring(job))
-		if job == et then
-			map_scale_factor = 0.55
-		end
-	end
-	
-	log("Map scale factor(function value) is "..tostring(map_scale_factor))
-	return map_scale_factor
-end
 --Different ransom per wave
 function SkirmishTweakData:_init_ransom_amounts()
 	self.ransom_amounts = {
@@ -57,8 +20,33 @@ function SkirmishTweakData:_init_ransom_amounts()
 end
 --This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
-local map_scale_factor = self:_determine_map_scale()
-	
+local map_scale_factor = 1
+	for _,vl in pairs(restoration.very_large_levels) do
+		if job == vl then
+			map_scale_factor = 1.3
+		end
+	end		
+	for _,l in pairs(restoration.large_levels) do
+		if job == l then
+			map_scale_factor = 1.15
+		end
+	end	
+	for _,t in pairs(restoration.tiny_levels) do
+		if job == t then
+			map_scale_factor = 0.85
+		end
+	end
+	for _,vt in pairs(restoration.very_tiny_levels) do
+		if job == vt then
+			map_scale_factor = 0.7
+		end
+	end
+	for _,et in pairs(restoration.extremely_tiny_levels) do
+		if job == et then
+			map_scale_factor = 0.55
+		end
+	end
+
 	--Reduced spawns if playing in Solo offline
 	if Global and Global.game_settings and Global.game_settings.single_player then
 		map_scale_factor = map_scale_factor * 0.75
@@ -82,17 +70,16 @@ local map_scale_factor = self:_determine_map_scale()
 end
 
 function SkirmishTweakData:_init_group_ai_data(tweak_data)
-	local map_scale_factor = self:_determine_map_scale()
 	local skirmish_data = deep_clone(tweak_data.group_ai.besiege)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		60,
 		80,
-		90,
 		100,
 		100,
-		100,
+		125,
+		125,
+		125,
 		125,
 		150,
 		150,
@@ -103,28 +90,28 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 
 	-- Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
-		0.35 * map_scale_factor,
-		0.65 * map_scale_factor,
-		0.85 * map_scale_factor,
-		1.0 * map_scale_factor,
-		1.15 * map_scale_factor,
-		1.3 * map_scale_factor,
-		1.45 * map_scale_factor,
-		1.6 * map_scale_factor,
-		1.75 * map_scale_factor,
-		1.9 * map_scale_factor,
-		2.05 * map_scale_factor,
-		2.2 * map_scale_factor,
-		2.35 * map_scale_factor,
-		2.35 * map_scale_factor,
-		2.5 * map_scale_factor,
-		2.65 * map_scale_factor,
-		2.8 * map_scale_factor,
-		2.95 * map_scale_factor,
-		3.1 * map_scale_factor,
-		3.25 * map_scale_factor,
-		3.4 * map_scale_factor,
-		3.55 * map_scale_factor
+		0.35,
+		0.65,
+		0.85,
+		1.0,
+		1.15,
+		1.3,
+		1.45,
+		1.6,
+		1.75,
+		1.9,
+		2.05,
+		2.2,
+		2.35,
+		2.35,
+		2.5,
+		2.65,
+		2.8,
+		2.95,
+		3.1,
+		3.25,
+		3.4,
+		3.55
 	}
 end
 
@@ -300,7 +287,32 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	}
 
 	--So now Skirmish maps can be properly scaled
-	local map_scale_factor = self:_determine_map_scale()
+	local map_scale_factor = 1
+	for _,vl in pairs(restoration.very_large_levels) do
+		if job == vl then
+			map_scale_factor = 1.3
+		end
+	end		
+	for _,l in pairs(restoration.large_levels) do
+		if job == l then
+			map_scale_factor = 1.15
+		end
+	end	
+	for _,t in pairs(restoration.tiny_levels) do
+		if job == t then
+			map_scale_factor = 0.85
+		end
+	end
+	for _,vt in pairs(restoration.very_tiny_levels) do
+		if job == vt then
+			map_scale_factor = 0.7
+		end
+	end
+	for _,et in pairs(restoration.extremely_tiny_levels) do
+		if job == et then
+			map_scale_factor = 0.55
+		end
+	end
 	
 	--Reduced spawns if playing in Solo offline
 	if Global and Global.game_settings and Global.game_settings.single_player then

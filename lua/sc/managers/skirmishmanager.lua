@@ -20,7 +20,42 @@ end
 
 --Refresh kill count required to end new assault.
 Hooks:PostHook(SkirmishManager, "on_start_assault", "ResUpdateKillCounter", function(self)
-	self._required_kills = managers.groupai:state():_get_balancing_multiplier(tweak_data.skirmish.required_kills_balance_mul) * managers.groupai:state():_get_difficulty_dependent_value(tweak_data.skirmish.required_kills)
+	local map_scale_factor = 1
+	
+	local skirmish_job_id = Global.level_data.level_id
+
+	for _,vl in pairs(restoration.very_large_levels) do
+		if skirmish_job_id == vl then
+			map_scale_factor = 1.3
+		end
+	end		
+	for _,l in pairs(restoration.large_levels) do
+		if skirmish_job_id == l then
+			map_scale_factor = 1.15
+		end
+	end	
+	for _,t in pairs(restoration.tiny_levels) do
+		if skirmish_job_id == t then
+			map_scale_factor = 0.85
+		end
+	end
+	for _,vt in pairs(restoration.very_tiny_levels) do
+		if skirmish_job_id == vt then
+			map_scale_factor = 0.75
+		end
+	end
+	for _,et in pairs(restoration.extremely_tiny_levels) do
+		
+		if skirmish_job_id == et then
+			map_scale_factor = 0.55
+		end
+	end
+	--Reduced spawns and kill requirment if playing in Solo offline
+	if Global and Global.game_settings and Global.game_settings.single_player then
+		map_scale_factor = map_scale_factor * 0.75
+	end	
+	
+	self._required_kills = managers.groupai:state():_get_balancing_multiplier(tweak_data.skirmish.required_kills_balance_mul) * map_scale_factor * managers.groupai:state():_get_difficulty_dependent_value(tweak_data.skirmish.required_kills)
 end)
 
 Hooks:PostHook(SkirmishManager, "on_end_assault", "ResSkmEndAssault", function(self)

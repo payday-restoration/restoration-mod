@@ -27027,16 +27027,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_snp_siltstone_npc.uses_parts = deep_clone(self.wpn_fps_snp_siltstone.uses_parts)
 	end
 
-	if self.parts.wpn_fps_upg_sks_mag_fixed10 then --Pawcio's SKS
-		self.parts.wpn_fps_upg_sks_mag_fixed10.supported = true
-		self.parts.wpn_fps_upg_sks_mag_fixed10.has_description = nil
-		self.parts.wpn_fps_upg_sks_mag_fixed10.desc_id = "bm_wp_upg_m_sksclip"
-		self.parts.wpn_fps_upg_sks_mag_fixed10.stats = { concealment = 1 }
-		self.parts.wpn_fps_upg_sks_mag_fixed10.custom_stats = { sks_clip = true }
+	if self.parts.wpn_fps_upg_sks_mag_detach10 then --Pawcio's SKS
+		self.parts.wpn_fps_ass_sks_mag.supported = true
+		self.parts.wpn_fps_ass_sks_mag.has_description = nil
+		self.parts.wpn_fps_ass_sks_mag.desc_id = "bm_wp_upg_m_sksclip"
+		self.parts.wpn_fps_ass_sks_mag.stats = { value = 0 }
+		self.parts.wpn_fps_ass_sks_mag.custom_stats = { sks_clip = true }
+
+		self.parts.wpn_fps_upg_sks_mag_detach10.supported = true
+		self.parts.wpn_fps_upg_sks_mag_detach10.has_description = nil
+		self.parts.wpn_fps_upg_sks_mag_detach10.stats = { reload = -2, concealment = -1 }
+		self.parts.wpn_fps_upg_sks_mag_detach10.custom_stats = { ads_speed_mult = 1.025 }
 
 		self.parts.wpn_fps_upg_sks_mag_detach20.supported = true
-		self.parts.wpn_fps_upg_sks_mag_detach20.stats = { extra_ammo = 10, reload = -2, concealment = -1 }
-		self.parts.wpn_fps_upg_sks_mag_detach20.custom_stats = { ads_speed_mult = 1.025 }
+		self.parts.wpn_fps_upg_sks_mag_detach20.has_description = nil
+		self.parts.wpn_fps_upg_sks_mag_detach20.stats = { extra_ammo = 10, reload = -3, concealment = -2 }
+		self.parts.wpn_fps_upg_sks_mag_detach20.custom_stats = { ads_speed_mult = 1.05 }
 
 		self.parts.wpn_fps_upg_sks_barrel_med.supported = true
 		self.parts.wpn_fps_upg_sks_barrel_med.stats = deep_clone(barrels.short_b1_stats)
@@ -27064,6 +27070,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_sks_bayonet.custom_stats = {
 			ads_speed_mult = 1.125
 		}
+
+		self.parts.wpn_fps_upg_sks_sightrail_long.supported = true
+		self.parts.wpn_fps_upg_sks_sightrail_long.stats = { value = 0 }
+		self.parts.wpn_fps_upg_sks_sightrail_long.stance_mod.wpn_fps_ass_sks = {
+			translation = Vector3(0, -4.75, -0.6973)
+		}
+
 	end
 
 	if self.parts.wpn_fps_upg_m_dura then --FrenchyAU Tacticool Magnation

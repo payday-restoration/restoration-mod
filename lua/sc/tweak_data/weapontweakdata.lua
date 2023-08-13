@@ -14536,7 +14536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 79,
 			spread_moving = 6,
 			zoom = 1,
-			concealment = 24,
+			concealment = 25,
 			suppression = 8,
 			alert_size = 1,
 			extra_ammo = 101,
@@ -14545,7 +14545,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sks.stats_modifiers = nil
-		self.sks.can_shoot_through_enemy = true
+		self.sks.ignore_reload_objects_not_empty = true
 		self.sks.panic_suppression_chance = 0.05
 		self.sks.timers.reload_exit_not_empty = 0.6
 		self.sks.timers.reload_exit_empty = 0.6

@@ -20,7 +20,7 @@ end
 
 --Refresh kill count required to end new assault.
 Hooks:PostHook(SkirmishManager, "on_start_assault", "ResUpdateKillCounter", function(self)
-	local map_scale_factor = 0.75
+	local map_scale_factor = 1
 	
 	local skirmish_job_id = Global.level_data.level_id
 
@@ -36,12 +36,12 @@ Hooks:PostHook(SkirmishManager, "on_start_assault", "ResUpdateKillCounter", func
 	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if skirmish_job_id == t then
-			map_scale_factor = 0.8
+			map_scale_factor = 0.85
 		end
 	end
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if skirmish_job_id == vt then
-			map_scale_factor = 0.7
+			map_scale_factor = 0.75
 		end
 	end
 	for _,et in pairs(restoration.extremely_tiny_levels) do

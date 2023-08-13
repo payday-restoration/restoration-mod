@@ -32,10 +32,16 @@ return {
 	[101169] = {
 		difficulty = 1
 	},
-	 -- Disable Sosa retreat spot SO selection
-	[101612] = {
+	-- Disable Sosa retreat on low health during boss fight
+	[101596] = {
 		values = {
 			enabled = false
+		}
+	},
+	-- Fallback to make Sosa retreat when house is accessible
+	[102653] = {
+		on_executed = {
+			{ id = 102692, delay = 0 }
 		}
 	},
 	 --forcing boat escape

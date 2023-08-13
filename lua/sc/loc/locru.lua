@@ -3703,6 +3703,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ak_upper_zenitco"] = "ZenitCo B-33 Dust Cover",
 						["bm_wp_ak_upg_fg_zenitco"] = "ZenitCo Sport-1 Kit",
 						["bm_wp_ak_upg_dh_zenitco"] = "ZenitCo RP-5 Charging Handle",
+						["wpn_fps_upg_ak_g_gradus"] = "FAB Defense Gradus Ergo Grip",
 						["wpn_fps_upg_ak_g_edg"] = "Evolution Defense Textured Grip",
 						["wpn_fps_upg_ak_g_rk9"] = "ZenitCo RK-9 Grip",
 						["bm_wp_ak_upg_s_zenitco"] = "ZenitCo PT-1 Telescopic Stock",

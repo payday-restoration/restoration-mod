@@ -2925,6 +2925,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					
 					--SUB2000
 					["bm_w_sub2000"] = "Kel-Tec SUB-2000",
+					["bm_sub2000_sc_desc"] = "One of the guns that has ever been made. Tiny pistol bullets hit a lot harder when coming out of a longer barrel and its folding capability makes for decent concealment.",
 					["bm_wp_sub2000_fg_gen2"] = "Gen2 Handguard",
 					["bm_wp_sub2000_fg_railed"] = "Red Lion R6 Handguard",
 					["bm_wp_sub2000_fg_suppressed"] = "Quad Rail Handguard w/Suppressor",
@@ -3017,10 +3018,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--P90
 					["bm_w_p90"] = "FN P90 TR",
 					["bm_w_x_p90"] = "Akimbo P90s",
+					["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the MP7. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
 					["bm_wp_p90_b_long"] = "PS90 Barrel",
 					["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
 					--MP7
 					["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
+					["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the P90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
 					["bm_wp_mp7_b_suppressed"] = "B&T Rotex-II Suppressor",
 					["bm_wp_mp7_s_long"] = "Extended Stock",
 					["bm_wp_mp7_m_extended"] = "MP7 40rnd Magazine",
@@ -3045,6 +3048,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SR-2M
 					["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
 					["bm_w_x_sr2"] = "Akimbo SR-2Ms",
+					["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the SR-2M is the Russian answer to the P90 and MP7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
 					--Miyaka 9
 					["bm_w_pm9"] = "Minebea PM-9",
 					--FMG9
@@ -3060,6 +3064,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--MP5
 					["bm_w_mp5"] = "H&K MP5A2",
 					["bm_w_x_mp5"] = "Akimbo MP5A2s",
+					["bm_mp5_sc_desc"] = "The little sister to the G3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 					["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
 					["bm_wp_mp5_fg_mp5a5"] = "MP5 Railed Handguard",
 					["bm_wp_mp5_fg_mp5sd"] = "MP5SD Kit",
@@ -3144,6 +3149,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--HK21
 					["bm_w_hk21"] = "H&K HK21E",
+					["bm_hk21_sc_desc"] = "The big-little sister to the G3. Comes with an increased fire rate for even greater suppressive abilties.",
 					["bm_wp_hk21_fg_short"] = "Short HK21 Handguard",
 					["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
 					--MG42
@@ -3152,11 +3158,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 					--Versteckt-51/HK51B
 					["bm_w_hk51b"] = "Vollmer HK51-B",
+					["bm_hk51b_sc_desc"] = "Aftermarket conversion of the HK21, shrinking this MG down to MP5 sizes and increasing its rate of fire even further.",
 					["bm_wp_hk51b_fg_railed"] = "Tri-Rail Handguard",
 					["bm_wp_hk51b_b_fluted"] = "Fluted Long Barrel",
 
 					--M240
 					["bm_w_par"] = "FN M240B",
+					["bm_par_sc_desc"] = "A heavier sibling machinegun to the M249 typically mounted on vehicles. Trades mobility for an even bigger bullet.",
+				
 					["bm_wp_par_s_plastic"] = "M240B Stock",
 					--M60
 					["bm_w_m60"] = "Saco M60",
@@ -3333,6 +3342,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[DMRs]]
 					--417
 					["bm_w_contraband"] = "H&K HK417 w/ M203",
+					["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+					["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+						--VMP
+						["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" M16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+						["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" M16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+				
 					--SCAR
 					["bm_w_scar"] = "FN Mk.17",
 					["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
@@ -3366,6 +3381,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Raifu
 					["bm_w_g3"] = "H&K G3A3",
+					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
 					["bm_wp_g3_b_short"] = "Short Barrel",
 					["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
 					["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
@@ -3387,6 +3403,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--GARAND
 					["bm_w_ching"] = "Springfield Armory M1 Garand",
 					["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",
+					--Custom DMRs
+						--G3 HK79
+						["bm_g3hk79_sc_desc_pc"] = "A variant of the G3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 
 				--[[SNIPERS]]
 					--Titty
@@ -3441,6 +3460,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M95
 					["bm_w_m95"] = "Barrett M95",
 					["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
+					--Custom Snipers
+						--M107
+						["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 				--[[SPECIALS]]
 					--GL40		

@@ -74,10 +74,7 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				sfpd = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				}
+				}				
 			},
 			access = access_type_all,
 			special_type = "medic"
@@ -108,10 +105,7 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				},
-				sfpd = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
-				}
+				}				
 			},
 			access = access_type_all,
 			special_type = "medic"
@@ -142,10 +136,7 @@ function MutatorMediDozer:modify_unit_categories(group_ai_tweak, difficulty_inde
 				},
 				fbi = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
-				},
-				sfpd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
-				}
+				}			
 			},
 			access = access_type_all,
 			special_type = "medic"

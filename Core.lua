@@ -399,8 +399,12 @@ function restoration:Init()
 		--Custom Heists--
 		"tonmapjam22l"
 	}	
-	--San Francisco (currently unused)
+	--San Francisco
 	restoration.needle = {
+		"chas",
+		"sand",
+		"chca",
+		"pent"
 	}
 	--FSB (custom heists)
 	restoration.fsb = {

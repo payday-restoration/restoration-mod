@@ -11,7 +11,6 @@ LevelsTweakData.LevelType.Federales = "federales"
 LevelsTweakData.LevelType.NYPD = "nypd"
 LevelsTweakData.LevelType.LAPD = "lapd"
 LevelsTweakData.LevelType.FBI = "fbi"
-LevelsTweakData.LevelType.SFPD = "sfpd"
 --///LEVELS\\\--
 Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
@@ -23,7 +22,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	local federales = LevelsTweakData.LevelType.Federales		
 	local lapd = LevelsTweakData.LevelType.LAPD
 	local fbi = LevelsTweakData.LevelType.FBI
-	local sfpd = LevelsTweakData.LevelType.SFPD
 	self.ai_groups = {}
 	self.ai_groups.default = america
 	self.ai_groups.america = america
@@ -34,7 +32,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	self.ai_groups.fbi = fbi
-	self.ai_groups.sfpd = sfpd
 	
 	--Christmas Dozer/Cloaker jingle bells
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
@@ -263,24 +260,24 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.rvd2.ai_group_type = lapd
 	self.rvd2.player_style = "suit_sunny"
-		
-	self.ranc.ai_group_type = lapd
-	self.ranc.player_style = "fighterpilot"
 	
-	--///SFPD LEVELS\\\--
-	self.chas.ai_group_type = sfpd
+	
+	self.chas.ai_group_type = lapd
 	self.chas.player_style = "suit_sunny"
 	
-	self.sand.ai_group_type = sfpd
+	self.sand.ai_group_type = lapd
 	self.sand.player_style = "highinttech"
 
-	self.chca.ai_group_type = sfpd
+	self.chca.ai_group_type = lapd
 	self.chca.player_style = "continental"
 
-	self.pent.ai_group_type = sfpd
+	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
+		
+	self.ranc.ai_group_type = lapd
+	self.ranc.player_style = "fighterpilot"
 	
 	--//GENSEC STUFF\\--
 	self.arm_cro.package = {"packages/narr_arm_cro", "packages/gensecmisc"}

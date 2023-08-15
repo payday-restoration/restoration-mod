@@ -3401,7 +3401,6 @@ end
 	local nypd = tweak_data.levels.ai_groups.nypd
 	local fbi = tweak_data.levels.ai_groups.fbi
 	local breins = tweak_data.levels.ai_groups.zombie
-	local dirtyharry = tweak_data.levels.ai_groups.sfpd
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat_ko.json")
@@ -3434,10 +3433,6 @@ end
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins_ko.json")		
-		end)
-	elseif ai_type == dirtyharry then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/sfpd_ko.json")		
 		end)
 	end
  end

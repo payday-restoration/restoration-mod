@@ -3,7 +3,6 @@ local m = tweak_data.levels.ai_groups.murkywater
 local b = tweak_data.levels.ai_groups.federales
 local z = tweak_data.levels.ai_groups.zombie
 local ny = tweak_data.levels.ai_groups.nypd
-local sf = tweak_data.levels.ai_groups.sfpd
 local ai_type = tweak_data.levels:get_ai_group_type()
 local job = Global.level_data and Global.level_data.level_id
 
@@ -271,60 +270,6 @@ elseif ai_type == ny then
 		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
 		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
 		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
-	}
-elseif ai_type == sf then
-	replacement_table = {
-		--Bulldozers
-		["units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = "units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer",
-		
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer",
-		
-		--Beat Cops
-		["units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
-		["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
-		["units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
-		["units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
-		
-		--FBI Rifle
-		["units/pd2_dlc_chas/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_chas/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		
-		--FBI Shotgun
-		["units/pd2_dlc_chas/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_chas/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		
-		--FBI UMP
-		["units/pd2_dlc_chas/characters/ene_nypd_swat_3/ene_swat_3"] = "units/pd2_dlc_chas/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-		
-		--FBI Heavy Rifle
-		["units/pd2_dlc_chas/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_dlc_chas/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		
-		--FBI Heavy Shotgun
-		["units/pd2_dlc_chas/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_dlc_chas/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
-		
-		--FBI Shield
-		["units/pd2_dlc_chas/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_chas/characters/ene_shield_1/ene_shield_1",
-		
-		--Bravo Rifle
-		["units/pd2_dlc_chas/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_dlc_chas/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		
-		["units/pd2_dlc_chas/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_dlc_chas/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",		
-		
-		--Bravo Shotgun
-		["units/pd2_dlc_chas/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
-		["units/pd2_dlc_chas/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
-		
-		--Bravo LMG
-		["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg",			
-		
-		--Bravo DMR
-		["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
 	}	
 else
 	replacement_table = {
@@ -345,10 +290,16 @@ else
 		["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
 		
+		["units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
+		["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
+		["units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
+		["units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
+		
 		["units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"] = "units/payday2/characters/ene_fbi_1/ene_fbi_1",
 		["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2",
 		["units/pd2_dlc_ranc/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3",
+		
 		
 		--FBI Rifle
 		["units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",

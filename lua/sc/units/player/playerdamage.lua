@@ -1980,6 +1980,13 @@ function PlayerDamage:set_armor(armor)
 	end
 
 	self._armor = Application:digest_value(armor, true)
+	
+	if WFHud then
+		managers.hud:set_player_armor({
+			current = self:get_real_armor(),
+			total = self:_max_armor()
+		})
+	end
 end
 
 --[[

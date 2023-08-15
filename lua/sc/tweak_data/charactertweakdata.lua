@@ -170,20 +170,6 @@ function CharacterTweakData:_init_region_fbi()
 	self._speech_prefix_p2 = "d"
 end
 
-function CharacterTweakData:_init_region_sfpd()
-	self._default_chatter = "dispatch_generic_message"
-	self._unit_prefixes = {
-		cop = "l",
-		swat = "l",
-		heavy_swat = "l",
-		taser = "tsr",
-		cloaker = "clk",
-		bulldozer = "bdz",
-		medic = "mdc"
-	}
-	self._speech_prefix_p2 = "d"
-end
-
 function CharacterTweakData:get_ai_group_type()    
 	return self.tweak_data.levels:get_ai_group_type()
 end

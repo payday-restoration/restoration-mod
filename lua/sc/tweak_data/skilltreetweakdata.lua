@@ -455,7 +455,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.single_shot_ammo_return = {
 				["name_id"] = "menu_body_expertise_beta_sc",
 				["desc_id"] = "menu_body_expertise_beta_desc_sc",
-				["icon_xy"] = {10, 3},
+				["icon_xy"] = {7, 0},
 				[1] = {
 					upgrades = {
 						"player_ap_bullets_1",

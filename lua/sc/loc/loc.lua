@@ -108,7 +108,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
 		["RestorationModInfo_sociopathTitleID"] = "Tension and Co. (Sociopath)",
 		["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of these specific skills.",
-		["RestorationModInfo_body_expertiseTitleID"] = "Body Expertise",
+		["RestorationModInfo_body_expertiseTitleID"] = "Spray n' Pray",
 		["RestorationModInfo_body_expertiseDescID"] = "Enables or disables tracking of this specific skill.",
 		["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire",
 		["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking of this specific skill.",
@@ -4469,7 +4469,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#20%## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#40%## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#12.5%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#25%## when using a bipod.",
 
 				--Body Expertise
-				["menu_body_expertise_beta_sc"] = "Body Expertise",
+				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
 				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#1.5## seconds will grant them an additional #{skill_color}#16.67%## more damage; stacks up to #{skill_color}#3## times.",
 
 

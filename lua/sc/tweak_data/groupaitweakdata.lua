@@ -12476,6 +12476,37 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		is_captain = true
 	}
 	
+	self.unit_categories.piggydozer = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			nypd = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			}
+		},
+		access = access_type_all,
+		is_captain = true
+	}
+	
 end
 	
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -16202,6 +16233,47 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"GS_Booms"
 		})
 	}
+	
+	self.enemy_spawn_groups.piggydozer = {
+		amount = {
+			1,
+			1
+		},
+		spawn = {
+			{
+				freq = 1,
+				amount_min = 1,
+				rank = 1,
+				unit = "piggydozer",
+				tactics = self._tactics.SKULL_tank
+			}
+		},
+		spawn_point_chk_ref = table.list_to_set({
+			"FBI_Booms",
+			"FBI_defend_a",
+			"FBI_defend_b",
+			"FBI_defend_c",
+			"FBI_defend_d",
+			"FBI_stealth_a",
+			"FBI_stealth_a_boom",
+			"FBI_stealth_b",
+			"FBI_stealth_c",
+			"FBI_swats",
+			"FBI_heavys",
+			"FBI_heavys_boom",
+			"FBI_shields",
+			"FBI_shields_boom",
+			"GS_defend_b",
+			"GS_defend_c",
+			"GS_defend_d",
+			"GS_swats",
+			"GS_Heavys",
+			"GS_heavys_boom",
+			"GS_shields",
+			"GS_shields_boom",
+			"GS_Booms"
+		})
+	}
 
 	--Skirmish Spawngroups Below
 	
@@ -19592,6 +19664,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	self.besiege.assault.groups.piggydozer = {
+		0,
+		0,
+		0
+	}
 	--catch all the scripted spawns so they can actually participate in assaults instead of fucking away from the action
     self.besiege.assault.groups.custom_assault = {
 		0,
@@ -19771,6 +19848,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	self.besiege.reenforce.groups.piggydozer = {
+		0,
+		0,
+		0
+	}
 	self.besiege.recon.interval = {
 		5,
 		5,
@@ -19930,6 +20012,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	--ditto but for recon units
 	self.besiege.recon.groups.snowman_boss = {
+		0,
+		0,
+		0
+	}
+	self.besiege.recon.groups.piggydozer = {
 		0,
 		0,
 		0

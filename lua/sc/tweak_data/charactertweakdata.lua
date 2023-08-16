@@ -1763,6 +1763,42 @@ function CharacterTweakData:_init_snowman_boss(presets)
 	table.insert(self._enemy_list, "snowman_boss")
 end
 
+function CharacterTweakData:_init_piggydozer(presets)
+	self.piggydozer = deep_clone(self.tank)
+	self.piggydozer.experience = {}
+	self.piggydozer.tags = {
+		"tank",
+		"eventboss",
+		"special"
+	}
+	self.piggydozer.headshot_dmg_mul = 18.75
+	self.piggydozer.HEALTH_INIT = 400
+	self.piggydozer.speech_prefix_p1 = "fuckingpig"
+	self.piggydozer.speech_prefix_p2 = nil
+	self.piggydozer.speech_prefix_count = nil
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+		self.piggydozer.custom_voicework = "tdozer_ru"
+	else
+		self.piggydozer.custom_voicework = "tdozer"
+	end
+	self.piggydozer.throwable = "molotov"
+	self.piggydozer.aoe_damage_data = {
+		verification_delay = 0.3,
+		activation_range = 300,
+		activation_delay = 1,
+		env_tweak_name = "triad_boss_aoe_fire",
+		play_voiceline = true,
+		check_player = true,
+		check_npc_slotmask = {
+			"criminals",
+			-2,
+			-3
+		}
+	}
+
+	table.insert(self._enemy_list, "piggydozer")
+end
+
 function CharacterTweakData:_init_captain(presets)
 	self.captain = deep_clone(self.gangster)
 	self.captain.calls_in = true

@@ -545,6 +545,30 @@ function MutatorTweakData:init_piggybank(tweak_data)
 			trai = {
 				position = Vector3(-3042.98, 5799.85, 120.418),
 				rotation = Rotation(-90.0341, 0, -0)
+			},
+			corp = {
+				position = Vector3(2298.47, 1361.31, -5.17966),
+				rotation = Rotation(91.2705, 0, 0)
+			},
+			deep = {
+				position = Vector3(-2131.21, -1559.31, 4896.84),
+				rotation = Rotation(180, 0, 0)
+			},
+			glace = {
+				position = Vector3(-829.22, -24881.7, 5752.35),
+				rotation = Rotation(38.3421, 0, 0)
+			},
+			shoutout_raid = {
+				position = Vector3(4120.23, -3142.08, 969.813),
+				rotation = Rotation(44.7551, 0, 0)
+			},
+			arm_par = {
+				position = Vector3(44.9385, 4481.05, -180.187),
+				rotation = Rotation(179.656, 0, -0)
+			},
+			arm_for = {
+				position = Vector3(-1603.44, -3166.04, -1132.96),
+				rotation = Rotation(-1.05467, 0, 0)
 			}
 		},
 		event_jobs_from_level = {}

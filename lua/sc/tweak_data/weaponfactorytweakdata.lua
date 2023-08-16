@@ -9965,8 +9965,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				gl_buck = true,
 				rays = 10,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 5 or 6,
-				ammo_pickup_min_mul = per_pellet and 5 or 6,
+				ammo_pickup_max_mul = per_pellet and 3 or 6,
+				ammo_pickup_min_mul = per_pellet and 3 or 6,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -9985,8 +9985,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 5 or 6,
-				ammo_pickup_min_mul = per_pellet and 5 or 6,
+				ammo_pickup_max_mul = per_pellet and 3 or 6,
+				ammo_pickup_min_mul = per_pellet and 3 or 6,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10005,8 +10005,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 5 or 6,
-				ammo_pickup_min_mul = per_pellet and 5 or 6,
+				ammo_pickup_max_mul = per_pellet and 3 or 6,
+				ammo_pickup_min_mul = per_pellet and 3 or 6,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10024,8 +10024,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 5 or 6,
-				ammo_pickup_min_mul = per_pellet and 5 or 6,
+				ammo_pickup_max_mul = per_pellet and 3 or 6,
+				ammo_pickup_min_mul = per_pellet and 3 or 6,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10062,8 +10062,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 5 or 6,
-				ammo_pickup_min_mul = per_pellet and 5 or 6,
+				ammo_pickup_max_mul = per_pellet and 3 or 6,
+				ammo_pickup_min_mul = per_pellet and 3 or 6,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}

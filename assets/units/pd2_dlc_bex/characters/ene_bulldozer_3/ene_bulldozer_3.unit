@@ -21,7 +21,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
-			<var name="_tweak_table" value="tank" />
+			<var name="_tweak_table" value="tank_skull" />
 			<var name="_default_weapon_id" value="hk21_dozer" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>

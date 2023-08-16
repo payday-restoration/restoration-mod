@@ -2273,6 +2273,13 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.min_obj_interrupt_dis = 600
 	table.insert(self._enemy_list, "tank")
 	
+	self.tank_black = deep_clone(self.tank)
+	table.insert(self._enemy_list, "tank_black")
+	
+	self.tank_skull = deep_clone(self.tank)
+	self.tank_skull.dt_suppress = nil
+	table.insert(self._enemy_list, "tank_skull")
+	
 	--Medic Dozer
 	self.tank_medic = deep_clone(self.tank)
 	if self:get_ai_group_type() == "russia" then
@@ -2382,7 +2389,8 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.custom_voicework = "tank_biker"
 	self.tank_biker.use_radio = nil
 	self.tank_biker.no_omnia_heal = true
-	self.tank_biker.no_asu = true	
+	self.tank_biker.no_asu = true
+	table.insert(self._enemy_list, "tank_biker")	
 end
 
 function CharacterTweakData:_init_spooc(presets)	
@@ -17782,7 +17790,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
 	self.spring.dt_suppress = {
-		range = 2600
+		range = 2500
 	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
@@ -17940,6 +17948,10 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 	self.autumn.damage.bullet_damage_mul = 0.4	
+	
+	self.tank_skull.dt_suppress = {
+		range = 1800
+	}
 	
 	self.spring.dt_suppress = {
 		range = 3000

@@ -2206,7 +2206,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"bodybags_bag_quantity"
 				},
 				cost = 1000,
-				icon_xy = {7, 1},
+				icon_xy = {0, 2},
 				name_id = "menu_deck3_5",
 				desc_id = "menu_deck3_5_desc_sc"
 			},
@@ -2227,7 +2227,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
-				icon_xy = {0, 2},
+				icon_xy = {6, 1},
 				name_id = "menu_deck3_9",
 				desc_id = "menu_deck3_9_desc_sc"
 			}
@@ -2244,7 +2244,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"weapon_passive_swap_speed_multiplier_1"
 				},
 				cost = 200,
-				icon_xy = {4, 2},
+				icon_xy = {1, 2},
 				name_id = "menu_deck4_1",
 				desc_id = "menu_deck4_1_desc_sc"
 			},
@@ -2254,7 +2254,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {1, 2},
+				icon_xy = {2, 2},
 				name_id = "menu_deck4_3",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
@@ -2265,7 +2265,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_tape_loop_duration_2"
 				},
 				cost = 1000,
-				icon_xy = {2, 2},
+				texture_bundle_folder = "max",
+				icon_xy = {2, 0},
 				name_id = "menu_deck4_5",
 				desc_id = "menu_deck4_5_desc_sc"
 			},
@@ -2437,7 +2438,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_crouch_dodge_chance_burglar_1"
 				},
 				cost = 200,
-				icon_xy = {1, 2},
+				icon_xy = {4, 2},
 				name_id = "menu_deck7_1",
 				desc_id = "menu_deck7_1_desc_sc"
 			},
@@ -2447,7 +2448,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {0, 4},
+				icon_xy = {1, 2},
 				name_id = "menu_deck7_3",
 				desc_id = "menu_deck7_3_desc_sc"
 			},
@@ -2458,7 +2459,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_crouch_dodge_chance_burglar_2"
 				},
 				cost = 1000,
-				icon_xy = {4, 2},
+				texture_bundle_folder = "mrwi",
+				icon_xy = {1, 1},
 				name_id = "menu_deck7_5",
 				desc_id = "menu_deck7_5_desc_sc"
 			},
@@ -2468,7 +2470,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
-				icon_xy = {1, 4},
+				icon_xy = {2, 2},
 				name_id = "menu_deck7_7",
 				desc_id = "menu_deck7_7_desc_sc"
 			},
@@ -3169,7 +3171,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
-				icon_xy = {2, 2},
+				texture_bundle_folder = "max",
+				icon_xy = {3, 0},
 				name_id = "menu_deck18_5",
 				desc_id = "menu_deck18_5_desc_sc"
 			},
@@ -3231,7 +3234,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_damage_control_cooldown_drain_1"
 				},
 				icon_xy = {
-					3,
+					1,
 					0
 				}
 			},
@@ -3321,7 +3324,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_tape_loop_duration_2"
 				},
 				icon_xy = {
-					2,
+					1,
 					0
 				}
 			},

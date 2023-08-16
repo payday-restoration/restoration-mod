@@ -81,7 +81,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_no_CS_cops"] = {
 		--All Blue units
@@ -134,7 +135,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc"] = {
 		--All Blue units
@@ -190,7 +192,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_with_phalanx"] = { -- ??
 		--All Blue units
@@ -246,7 +249,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_no_CS_cops"] = {
 		--All Blue units
@@ -299,7 +303,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_no_FBI_spoocs"] = {
 		--All Blue units
@@ -351,7 +356,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_no_FBI_spoocs"] = {
 		--All Blue units
@@ -406,7 +412,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_alex_2"] = {
 		"FBI_stealth_a",

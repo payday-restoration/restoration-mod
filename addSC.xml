@@ -761,6 +761,20 @@
 		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
 		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
 	</add>	
+	
+	<!--Piggy Dozer-->
+	<object				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<cooked_physics		path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<model				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<unit				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true" load="true"/>
+	<material_config	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<material_config	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy_contour" force="true"/>
+	<unit				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy_husk" force="true" load="true"/>
+	
+	<add from_db="true" path="effects/payday2/particles/explosions/molotov_grenade_pent_boss" type="effect">
+		<effect load="true" path="effects/payday2/particles/explosions/molotov_grenade_pent_boss"/>
+	</add>
 
 	<!--Spring-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>

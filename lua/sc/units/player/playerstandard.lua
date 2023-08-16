@@ -1576,6 +1576,10 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
+			if character_unit:base():char_tweak().priority_shout then
+				dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
+			end
+
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 				self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {
@@ -3028,22 +3032,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				end
 			end
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
-			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
+			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 			
-			local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
-			if tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data and charge_fire_check and character_unit:character_damage().damage_fire then
-				local action_data = {
-					variant = "fire",
-					damage = 0,
-					attacker_unit = self._unit,
-					col_ray = col_ray,
-					fire_dot_data = tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data
-				}
-
-				character_unit:character_damage():damage_fire(action_data)
-			end		
-
 			return defense_data
 		else
 			self:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)
@@ -3060,6 +3051,68 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	return col_ray
 end
 
+function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
+	if not defense_data or defense_data.type == "death" then
+		return
+	end
+	local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+	local char_damage = character_unit:character_damage()
+	local charge_lerp_value = defense_data.charge_lerp_value
+
+	if melee_tweak.random_special_effects then
+		local selector = WeightedSelector:new()
+
+		for _, effect in pairs(melee_tweak.random_special_effects) do
+			selector:add(effect, effect.weight)
+		end
+
+		melee_tweak = selector:select()
+	end
+
+	if melee_tweak.dot_data and char_damage.damage_dot then
+		local data = managers.dot:create_dot_data(melee_tweak.dot_data.type, melee_tweak.dot_data.custom_data)
+		local damage_class = CoreSerialize.string_to_classtable(data.damage_class)
+
+		damage_class:start_dot_damage(col_ray, nil, data, melee_entry)
+	end
+
+	if melee_tweak.tase_data and char_damage.damage_tase then
+		local action_data = {
+			variant = melee_tweak.tase_data.tase_strength,
+			damage = 0,
+			attacker_unit = self._unit,
+			col_ray = col_ray
+		}
+
+		char_damage:damage_tase(action_data)
+	end
+
+	local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
+	if melee_tweak.fire_dot_data and charge_fire_check and char_damage.damage_fire then
+		local action_data = {
+			variant = "fire",
+			damage = 0,
+			attacker_unit = self._unit,
+			col_ray = col_ray,
+			fire_dot_data = melee_tweak.fire_dot_data
+		}
+
+		char_damage:damage_fire(action_data)
+	end
+
+	if melee_tweak.instant_kill and char_damage.damage_mission then
+		local action_data = {
+			variant = "melee",
+			attacker_unit = self._unit,
+			col_ray = col_ray,
+			name_id = melee_entry,
+			damage = char_damage._HEALTH_INIT,
+			damage_effect = 1
+		}
+
+		char_damage:damage_melee(action_data)
+	end
+end
 
 function PlayerStandard:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)
 	if hit_unit:damage() and col_ray.body:extension() and col_ray.body:extension().damage then

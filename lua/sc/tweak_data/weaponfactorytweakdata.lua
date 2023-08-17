@@ -5971,6 +5971,65 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_m_extended.custom_stats = {
 		ads_speed_mult = 1.05
 	}
+
+	self.parts.wpn_fps_pis_deagle_ck.supported = true
+	self.parts.wpn_fps_pis_deagle_ck.stats = { value = 1 }
+	self.parts.wpn_fps_pis_deagle_ck.custom_stats = nil
+	self.parts.wpn_fps_pis_deagle_ck.forbids = nil
+	self.parts.wpn_fps_pis_deagle_ck.override = {
+		wpn_fps_pis_deagle_extra = {
+			override = {
+				wpn_fps_pis_deagle_body_standard = {
+					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_body_ck",
+					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_body_ck",
+					adds = {}
+				},
+				wpn_fps_pis_rage_o_adapter = {
+					a_obj = "a_quite"
+				}
+			}
+		},
+		wpn_fps_pis_deagle_body_standard = {
+			third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_body_ck",
+			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_body_ck"
+		},
+		wpn_fps_pis_deagle_b_standard = {
+			third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_b_ck",
+			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_b_ck"
+		},
+		wpn_fps_pis_deagle_g_standard = {
+			third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_g_ck",
+			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_g_ck"
+		},
+		wpn_fps_pis_deagle_m_standard = {
+			third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_m_ck",
+			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_m_ck"
+		},
+		wpn_fps_pis_deagle_o_standard_rear = {
+			third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_o_ck_rear",
+			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_o_ck_rear"
+		},
+		wpn_fps_pis_deagle_o_standard_front = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},
+		wpn_upg_o_marksmansight_front = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},
+		wpn_fps_pis_deagle_o_standard_front_long = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},
+		wpn_fps_pis_deagle_co_long = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},
+		wpn_fps_pis_deagle_co_short = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		}
+	}
 	
 	self.wpn_fps_pis_deagle.override = self.wpn_fps_pis_deagle.override or {}
 	self.wpn_fps_pis_deagle.override.wpn_fps_upg_i_autofire = {
@@ -5979,11 +6038,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 			recoil = -8
 		},
 		custom_stats = {
-			rof_mult = 2.20588235,
-			falloff_start_mult = 0.2,
-			falloff_end_mult = 0.7
+			rof_mult = 1.470588,
+			falloff_start_mult = 0.25,
+			falloff_end_mult = 0.75
 		}			
 	}
+
+	--Dunno what this does but it makes the game explode
+	self.wpn_fps_pis_deagle.merge_overrides = nil
+	self.wpn_fps_pis_deagle_npc.merge_overrides = nil
 
 	self.wpn_fps_pis_deagle_npc.override = deep_clone(self.wpn_fps_pis_deagle.override)
 
@@ -6594,6 +6657,11 @@ end)
 
 --Chimano 88
 Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
+
+	self.parts.wpn_fps_pis_g17_ck.supported = true
+	self.parts.wpn_fps_pis_g17_ck.stats = { value = 1 }
+	self.parts.wpn_fps_pis_g17_ck.custom_stats = nil
+	self.parts.wpn_fps_pis_g17_ck.forbids = nil
 		
 	--Chimano 88 Part Additions
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_g_ergo")
@@ -32077,6 +32145,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 			}
+		end
+	end
+
+	--Glock Exclusive set
+	for k, used_part_id in ipairs(self.wpn_fps_pis_g17.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "slide" then
+				self.parts.wpn_fps_pis_g17_ck.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_g17_ck_pts/wpn_third_pis_g17_b_ck",
+					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_g17_ck_pts/wpn_fps_pis_g17_b_ck"
+				}
+			end
+		end
+	end
+
+	--Deagle Exclusive set
+	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "slide" then
+				self.parts.wpn_fps_pis_deagle_ck.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_b_ck",
+					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_b_ck"
+				}
+			elseif self.parts[used_part_id].type == "grip" then
+				self.parts.wpn_fps_pis_deagle_ck.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_g_ck",
+					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_g_ck"
+				}
+			end
 		end
 	end
 

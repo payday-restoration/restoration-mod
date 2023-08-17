@@ -188,7 +188,7 @@ end
 
 function RaycastWeaponBase:_collect_hits(from, to)
 	local setup_data = {
-		stop_on_impact = self._bullet_class and self._bullet_class.stop_on_impact,
+		stop_on_impact = self:bullet_class().stop_on_impact,
 		can_shoot_through_wall = self:can_shoot_through_wall(),
 		can_shoot_through_shield = self:can_shoot_through_shield(),
 		can_shoot_through_titan_shield = self:can_shoot_through_titan_shield(),
@@ -685,6 +685,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
+	local extra_collisions = self.extra_collisions and self:extra_collisions()
 	local is_civ_f = CopDamage.is_civilian
 	local damage = self:_get_current_damage(dmg_mul)
 
@@ -714,7 +715,15 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		--]]
 
 		if dmg > 0 then
-			local hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, dmg)
+			local hit_result = self:bullet_class():on_collision(hit, self._unit, user_unit, dmg)
+
+			if extra_collisions then
+				for idx, extra_col_data in ipairs(extra_collisions) do
+					if alive(hit.unit) then
+						extra_col_data.bullet_class:on_collision(hit, self._unit, user_unit, dmg * (extra_col_data.dmg_mul or 1))
+					end
+				end
+			end
 
 			if hit_result then
 				hit.damage_result = hit_result
@@ -927,6 +936,10 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		end
 	end
 
+	if self._autoaim and self._active_modify_mutator then
+		self._active_modify_mutator:check_modify_weapon(self)
+	end
+
 	local is_player = self._setup.user_unit == managers.player:player_unit()
 	local consume_ammo = not managers.player:has_active_temporary_property("bullet_storm") and (not managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") or not managers.player:has_category_upgrade("player", "berserker_no_ammo_cost")) or not is_player
 	local ammo_usage = self:ammo_usage() or 1
@@ -968,6 +981,16 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 					end
 				end
 			end
+		end
+
+		local mutator = nil
+
+		if managers.mutators:is_mutator_active(MutatorPiggyRevenge) then
+			mutator = managers.mutators:get_mutator(MutatorPiggyRevenge)
+		end
+
+		if mutator and mutator.get_free_ammo_chance and mutator:get_free_ammo_chance() then
+			ammo_usage = 0
 		end
 
 		local ammo_in_clip = base:get_ammo_remaining_in_clip()

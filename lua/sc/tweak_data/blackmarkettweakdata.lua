@@ -3711,7 +3711,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_baseballbat
 		melee_anim = {
-			'stick','spoon','spoon_gold','hockey','piggy_hammer',
+			'stick','spoon','spoon_gold','hockey',
 			'freedom'
 		}
 		for i, melee_id in ipairs(melee_anim) do
@@ -3730,7 +3730,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_beardy
 		melee_anim = {
-			'beardy','baseballbat','barbedwire','dingdong','alien_maul'
+			'beardy','baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
@@ -4556,24 +4556,22 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.range = 210
 		self.melee_weapons.spoon_gold.stats.concealment = 22
 		--B-Oink
+		self.melee_weapons.piggy_hammer.anim_speed_mult = 1.13679
 		self.melee_weapons.piggy_hammer.info_id = "bm_melee_piggy_hammer_info"
 		self.melee_weapons.piggy_hammer.stats.min_damage = 4.5
 		self.melee_weapons.piggy_hammer.stats.max_damage = 12.001
 		self.melee_weapons.piggy_hammer.stats.min_damage_effect = 6.0
 		self.melee_weapons.piggy_hammer.stats.max_damage_effect = 24.0
-		self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 1.5
+		self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 2
 		self.melee_weapons.piggy_hammer.stats.charge_time = 2.5
 		self.melee_weapons.piggy_hammer.stats.range = 200
 		self.melee_weapons.piggy_hammer.stats.concealment = 21
 		self.melee_weapons.piggy_hammer.random_special_effects = {
 			{
-				weight = 20,
-				tase_data = {
-					tase_strength = "light"
-				}
+				weight = 75,
 			},
 			{
-				weight = 10,
+				weight = 12,
 				dot_data = {
 					type = "bleed",
 					custom_data = {
@@ -4581,6 +4579,12 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 						dot_length = 3.1,
 						dot_tick_period = 0.5
 					}
+				}
+			},
+			{
+				weight = 7,
+				tase_data = {
+					tase_strength = "light"
 				}
 			},
 			{

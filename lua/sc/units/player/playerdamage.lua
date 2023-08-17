@@ -340,6 +340,8 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Leech stuff
 	self:copr_update_attack_data(attack_data)	
 
+	self:mutator_update_attack_data(attack_data)
+
 	--Kingpin stuff.
 	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
 	if not self._ally_attack then
@@ -964,6 +966,7 @@ function PlayerDamage:damage_killzone(attack_data)
 			armor_reduction_multiplier = 1
 		end
 
+		self:mutator_update_attack_data(attack_data)
 		self:_check_chico_heal(attack_data)
 
 		local health_subtracted = self:_calc_armor_damage(attack_data)
@@ -1302,13 +1305,14 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		"melee",
 		"delayed_tick"
 	}, attack_data.variant)
-
+	local ignore_reduce_revive = self:check_ignore_reduce_revive()
+	
 	if self:get_real_health() == 0 and trigger_skills then
-		self:_chk_cheat_death()
+		self:_chk_cheat_death(ignore_reduce_revive)
 	end
 	
 	self:_damage_screen()
-	self:_check_bleed_out(trigger_skills)
+	self:_check_bleed_out(trigger_skills, nil, ignore_reduce_revive)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
 		total = self:_max_health(),

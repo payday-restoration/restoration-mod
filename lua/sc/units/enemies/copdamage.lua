@@ -895,6 +895,10 @@ function CopDamage:damage_bullet(attack_data)
 	if is_player then
 		if  self._char_tweak.priority_shout then
 			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+			
+			if attack_data.weapon_unit:base().weapon_tweak_data then
+				damage = damage * (attack_data.weapon_unit:base():weapon_tweak_data().special_damage_multiplier or 1)
+			end			
 		end
 	
 		if head then
@@ -1817,6 +1821,7 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 	local body = self._unit:body(i_body)
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
 	local hit_pos = mvector3.copy(body:position())
+	attack_data.name_id = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():get_melee_weapon_id()
 	attack_data.pos = hit_pos
 
 	if attacker_unit then

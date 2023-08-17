@@ -24,6 +24,7 @@ function MutatorsManager:init()
 		MutatorTitandozers:new(self),
 		MutatorPiggyBank:new(self),
 		MutatorCG22:new(self),
+		MutatorPiggyRevenge:new(self),
 		--Custom mutators below
 		MutatorMinidozers:new(self),
 		MutatorMedicdozers:new(self),

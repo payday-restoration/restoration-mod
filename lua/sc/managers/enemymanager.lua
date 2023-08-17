@@ -379,4 +379,16 @@ Hooks:PostHook(EnemyManager, "on_enemy_died", "ResOnEnemyDied", function(self, d
 		cg22_mutator:on_snowman_killed(dead_unit, damage_info)
 	end
 	
+	if managers.mutators:is_mutator_active(MutatorPiggyRevenge) then
+		local piggyrevenge_mutator = managers.mutators:get_mutator(MutatorPiggyRevenge)
+
+		if Network:is_server() and piggyrevenge_mutator:can_spawn_bag() then
+			piggyrevenge_mutator:on_enemy_killed(dead_unit, damage_info)
+		end
+
+		if dead_unit:base():has_tag("eventboss") then
+			piggyrevenge_mutator:on_boss_killed(dead_unit, damage_info)
+		end
+	end
+	
 end)

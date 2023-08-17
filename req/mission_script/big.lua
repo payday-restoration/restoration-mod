@@ -26,6 +26,9 @@ return {
 	[105790] = {
 		ponr = ponr_value
 	},
+	[105845] = {
+		ponr = ponr_value
+	},
 	--Titan Snipers replace FBI Heavy SWATs on Pro Jobs
 	[100940] = {
 		values = {
@@ -62,9 +65,8 @@ return {
             enemy = australian_sniper
 		}
 	},
-	-- Reinforce groups in front of the vault/Pro Job PONR 
+	-- Reinforce groups in front of the vault
 	[105844] = {
-		ponr = ponr_value,
 		reinforce = {
 			{
 				name = "meetingroom",

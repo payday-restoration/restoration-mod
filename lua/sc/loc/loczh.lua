@@ -4174,52 +4174,50 @@ elseif ai_type == m then
     end)
 end
 
-local ModPath_Chin = ModPath
-
 if _G.HopLib then
-    local ai_type = tweak_data.levels:get_ai_group_type()
-    local murkywetew = tweak_data.levels.ai_groups.murkywater -- LevelsTweakData.LevelType.Murkywater
-    local lapd = tweak_data.levels.ai_groups.lapd
-    local mex = tweak_data.levels.ai_groups.federales
-    local akan = tweak_data.levels.ai_groups.russia
-    local nypd = tweak_data.levels.ai_groups.nypd
-    local fbi = tweak_data.levels.ai_groups.fbi
-    local breins = tweak_data.levels.ai_groups.zombie
+	local ai_type = tweak_data.levels:get_ai_group_type()
+	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+	local lapd = tweak_data.levels.ai_groups.lapd
+	local mex = tweak_data.levels.ai_groups.federales
+	local akan = tweak_data.levels.ai_groups.russia
+	local nypd = tweak_data.levels.ai_groups.nypd
+	local fbi = tweak_data.levels.ai_groups.fbi
+	local breins = tweak_data.levels.ai_groups.zombie
 
-    Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat", function(loc)
-        loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/hoplibkillfeedcompat.json")
-    end)
+	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+	end)
 
-    if ai_type == murkywetew then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_murkywetew", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/murkywetew.json")
-        end)
-    elseif ai_type == lapd then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_LAPD", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/lapd.json")
-        end)
-    elseif ai_type == mex then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_mex", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/mex.json")
-        end)
-    elseif ai_type == akan then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_akan", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/akan.json")
-        end)
-    elseif ai_type == nypd then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_nypd", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/nypd.json")
-        end)
-    elseif ai_type == fbi then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_fbi", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/fbi.json")
-        end)
-    elseif ai_type == breins then
-        Hooks:Add("LocalizationManagerPostInit", "LtyR_HoplibKillFeedCompat_breins", function(loc)
-            loc:load_localization_file(ModPath_Chin .. "resloc/loc/json_dev/breins.json")
-        end)
-    end
-end
+	if ai_type == murkywetew then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+		end)
+	elseif ai_type == lapd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		end)	
+	elseif ai_type == mex then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
+		end)
+	elseif ai_type == akan then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+		end)
+	elseif ai_type == nypd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+		end)
+	elseif ai_type == fbi then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+		end)
+	elseif ai_type == breins then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
+		end)
+	end
+ end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
     LocalizationManager:add_localized_strings({

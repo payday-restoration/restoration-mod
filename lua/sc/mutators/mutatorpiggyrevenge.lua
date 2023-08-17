@@ -1,3 +1,4 @@
+--To do: Figure out how the hell attack_data is returning nil
 function MutatorPiggyRevenge:on_enemy_killed(dead_unit, attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local weapon_unit = attack_data.weapon_unit

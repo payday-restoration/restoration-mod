@@ -3711,7 +3711,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_baseballbat
 		melee_anim = {
-			'stick','spoon','spoon_gold','hockey',
+			'stick','spoon','spoon_gold','hockey','piggy_hammer',
 			'freedom'
 		}
 		for i, melee_id in ipairs(melee_anim) do
@@ -4555,6 +4555,51 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.charge_time = 2.5
 		self.melee_weapons.spoon_gold.stats.range = 210
 		self.melee_weapons.spoon_gold.stats.concealment = 22
+		--B-Oink
+		self.melee_weapons.piggy_hammer.info_id = "bm_melee_piggy_hammer_info"
+		self.melee_weapons.piggy_hammer.stats.min_damage = 4.5
+		self.melee_weapons.piggy_hammer.stats.max_damage = 12.001
+		self.melee_weapons.piggy_hammer.stats.min_damage_effect = 6.0
+		self.melee_weapons.piggy_hammer.stats.max_damage_effect = 24.0
+		self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 1.5
+		self.melee_weapons.piggy_hammer.stats.charge_time = 2.5
+		self.melee_weapons.piggy_hammer.stats.range = 200
+		self.melee_weapons.piggy_hammer.stats.concealment = 21
+		self.melee_weapons.piggy_hammer.random_special_effects = {
+			{
+				weight = 20,
+				tase_data = {
+					tase_strength = "light"
+				}
+			},
+			{
+				weight = 10,
+				dot_data = {
+					type = "bleed",
+					custom_data = {
+						dot_damage = 2.0,
+						dot_length = 3.1,
+						dot_tick_period = 0.5
+					}
+				}
+			},
+			{
+				weight = 5,
+				dot_data = {
+					type = "poison",
+					custom_data = {
+						hurt_animation_chance = 01,
+						dot_damage = 1.5,
+						dot_length = 4.1,
+						dot_tick_period = 0.5
+					}
+				}
+			},
+			{
+				weight = 1,
+				instant_kill = true
+			}
+		}
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.stats.min_damage = 6
 		self.melee_weapons.dingdong.stats.max_damage = 12.001

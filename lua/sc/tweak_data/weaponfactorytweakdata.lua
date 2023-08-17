@@ -21516,6 +21516,13 @@ end)
 --Flintlock
 Hooks:PostHook(WeaponFactoryTweakData, "_init_bessy", "resmod_bessy", function(self)
 
+	self.parts.wpn_fps_spec_bessy_barrel.stance_mod = {
+		wpn_fps_spec_bessy = {
+			translation = Vector3(0, 2.5, -2),
+			rotation = Rotation(0,0.7,0)
+		}
+	}
+
 	self.parts.wpn_fps_spec_bessy_bayonette.supported = true
 	self.parts.wpn_fps_spec_bessy_bayonette.stats = {
 		value = 5,

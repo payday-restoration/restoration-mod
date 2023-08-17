@@ -10251,7 +10251,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bessy.desc_id = "bm_bessy_sc_desc"
 				self.bessy.CLIP_AMMO_MAX = 1
 				self.bessy.AMMO_MAX = 20
-				self.bessy.fire_mode_data.fire_rate = 4
+				self.bessy.fire_mode_data.fire_rate = 6
 				self.bessy.fire_rate_multiplier = 2
 				self.bessy.lock_slide = true
 				self.bessy.kick = self.stat_info.kick_tables.moderate_right_kick

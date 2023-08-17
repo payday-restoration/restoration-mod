@@ -1744,6 +1744,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_desertfox_sc_desc"] = "Компактная снайперская платформа, использовавшаяся Уиком при рейде на убежище русской мафии.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
 		--R93
 		["bm_r93_sc_desc"] = "Немецкая винтовка с большой пулей, которая остановит больших людей. Популярная винтовка среди полиции и контр-террористических подразделений мира.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
+		--Flinklock 
+		["bm_bessy_sc_desc"] = "Хорошо организованная милиция необходима для безопасности свободного государства, и право людей хранить и носить оружие не должно нарушаться.\n\n#{skill_color}#Наносит на 100% больше урона специальным и элитным врагам.\nМожет пробивать нескольких врагов, их броню, щиты, титан-щиты и тонкие стены.##",
 		--Thanatos--
 		["bm_m95_sc_desc"] = "Крупнокалиберная винтовка, обычно используется против небольшой техники. Использовать ее против органических целей, вероятно, военное преступление.\n\n#{skill_color}#Попадания в голову наносят на 100% больше урона.\nМожет пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
 		--Custom Snipers
@@ -2730,6 +2732,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_desertfox"] = "Desertfox",
 		["bm_w_r93"] = "R93",
 		["bm_w_awp"] = "Amaroq 900",
+		["bm_w_bessy"] = "Flintlock Freddy",
 		["bm_w_m95"] = "Thanatos .50 BMG",
 		["bm_w_sgs"] = "Guerilla 542",	
 		["bm_w_m107cq"] = "Mors .50 BMG",
@@ -2966,6 +2969,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_mosin"] = "Нагант",
 		["bm_w_desertfox"] = "Дезерт Фокс",
 		["bm_w_r93"] = "Р93",
+		["bm_w_bessy"] = "Флинтлок Фредди",
 		["bm_w_m95"] = "Танатос .50",
 --Custom Snipers
 			--Guerilla
@@ -3584,6 +3588,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
 					--SRS
 					["bm_w_desertfox"] = "DTA Stealth Recon Scout",
+					--Flintlock
+					["bm_w_bessy"] = "Land Pattern Musket",
 
 					--M95
 					["bm_w_m95"] = "Barrett M95",

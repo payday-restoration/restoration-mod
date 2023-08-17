@@ -2333,6 +2333,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_desertfox_sc_desc"] = "A compact bullpup sniper platform, used by Wick during his assault on a Russian mob safehouse.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				--R93
 				["bm_r93_sc_desc"] = "German sniper rifle with a big bullet meant to stop big men. Sniper of choice among police and counter-terrorist paramilitary forces across the globe.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",			
+				--Flintlock--
+				["bm_bessy_sc_desc"] = "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.\n\n#{skill_color}#Deals 100% more damage to special and elite enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Thanatos--
 				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Custom Snipers
@@ -3456,6 +3458,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
 					--SRS
 					["bm_w_desertfox"] = "DTA Stealth Recon Scout",
+					--Flintlock
+					["bm_w_bessy"] = "Land Pattern Musket",
 
 					--M95
 					["bm_w_m95"] = "Barrett M95",

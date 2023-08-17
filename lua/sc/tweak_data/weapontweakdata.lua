@@ -3739,6 +3739,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sterling.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
+	self.coach.sounds.magazine_empty = nil
 	self.contender.sounds.magazine_empty = nil
 
 	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','x_olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor','hcar','kacchainsaw'}
@@ -3972,7 +3973,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "sniper"
 	end
 	
-	recat = { "siltstone", "r93", "desertfox", "sbl", "mosin", "model70", "wa2000", "contender"}
+	recat = { "siltstone", "r93", "desertfox", "sbl", "mosin", "model70", "wa2000", "contender", "bessy"}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_snp" }
 		self[ wep_id ].damage_type = "sniper"
@@ -4003,7 +4004,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = {
 		"peacemaker","model3",
 		"r870","ksg","boot","m37","m1897","m590","supernova","huntsman","b682","coach",
-		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout","awp",
+		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout","awp","bessy",
 		"flamethrower_mk2","system","kacchainsaw_flamethrower",
 		"kacchainsaw","m134","shuno",
 		"china"
@@ -10242,6 +10243,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.desertfox.reload_speed_multiplier = 0.95
 				self.desertfox.timers.reload_exit_empty = 0.7
 				self.desertfox.timers.reload_exit_not_empty = 0.75
+
+			--Flintlock
+			if self.bessy then --in the event (shut up) its not a permanent addition
+				self.bessy.upgrade_blocks = nil
+				self.bessy.has_description = true
+				self.bessy.desc_id = "bm_bessy_sc_desc"
+				self.bessy.CLIP_AMMO_MAX = 1
+				self.bessy.AMMO_MAX = 20
+				self.bessy.fire_mode_data.fire_rate = 4
+				self.bessy.fire_rate_multiplier = 2
+				self.bessy.lock_slide = true
+				self.bessy.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.bessy.supported = true
+				self.bessy.ads_speed = 0.240
+				self.bessy.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 7000,
+					min_mult = 0.16666
+				}
+				self.bessy.stats = {
+					damage = 180,
+					spread = 66,
+					recoil = 75,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 19,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.bessy.armor_piercing_chance = 1
+				self.bessy.can_shoot_through_titan_shield = true
+				self.bessy.stats_modifiers = nil
+				self.bessy.panic_suppression_chance = 0.05
+				self.bessy.spin_up_semi = true
+				self.bessy.spin_up_shoot = true
+				self.bessy.spin_up_t = 0.1
+				self.bessy.spin_down_t = 0.00000001
+				self.bessy.sounds.spin_start = "wp_baka_lever_pull"
+				self.bessy.timers.reload_exit_not_empty = 0.15
+				self.bessy.timers.reload_exit_empty = 0.15
+				self.bessy.special_damage_multiplier = 2
+				self.bessy.reload_speed_multiplier = 1.05
+			end
 
 		--SECONDARIES
 

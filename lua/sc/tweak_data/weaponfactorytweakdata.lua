@@ -21443,8 +21443,27 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", fu
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 	self.wpn_fps_sho_supernova.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 
+end)
+
+--Flintlock
+Hooks:PostHook(WeaponFactoryTweakData, "_init_bessy", "resmod_bessy", function(self)
+
+	self.parts.wpn_fps_spec_bessy_bayonette.supported = true
+	self.parts.wpn_fps_spec_bessy_bayonette.stats = {
+		value = 5,
+		concealment = -5,
+		max_damage = 6,
+		min_damage = 6,
+		max_damage_effect = 1,
+		min_damage_effect = 1,
+		bayonet_range = 80
+	}
+	self.parts.wpn_fps_spec_bessy_bayonette.custom_stats = {
+		ads_speed_mult = 1.125
+	}
 
 end)
+
 
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)

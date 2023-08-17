@@ -88,6 +88,7 @@ end
 
 function MutatorTweakData:init_piggybank(tweak_data)
 	self.piggybank = {
+		buff_font_size = 18,
 		drop_count = 5,
 		normal_kill_points = 1,
 		special_kill_points = 2,

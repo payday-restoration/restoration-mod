@@ -697,6 +697,25 @@ function AchievementsTweakData:init(tweak_data)
 		difficulty = veryhard_and_above
 	}
 	
+	self.enemy_kill_achievements.cg22_post_objective_5 = {
+		stat = "cg22_post_objective_5",
+		enemies = {
+			"tank",
+			"tank_black",
+			"tank_skull",
+			"tank_medic",
+			"tank_mini",
+			"tank_titan",
+			"tank_titan_assault",
+			"spring", --why not?
+			"headless_hatman",
+			"tank_hw",
+			"tank_hw_black",
+			"tank_biker"
+		},
+		difficulty = overkill_and_above
+	}
+	
 	self.enemy_kill_achievements.pda10_dozer_post_objective = {
 		enemies = {
 			"tank",

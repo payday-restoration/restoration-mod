@@ -539,6 +539,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.counter_strike_melee = {true}
 	self.player_damage_health_ratio_threshold = 1
 	self.player_damage_health_ratio_threshold_2 = 1 --Unused?
+	self.values.carry.interact_speed_multiplier = {
+		0.75,
+		0.25
+	}	
 
 	--Allegedly used somewhere???
 	self.values.akimbo.recoil_multiplier = {

@@ -247,77 +247,6 @@ function CopActionWalk:_init()
 	return true
 end
 
-function CopActionWalk:append_path(path, nav_seg)
-	if self._end_of_path and not self._next_is_nav_link or self._action_desc.path_simplified or self:stopping() then
-		return false
-	end
-
-	-- Don't create a new table for no reason, iterate over the existing one
-	local s_path = self._simplified_path
-	for i = 1, #path do
-		local nav_point = path[i]
-		if nav_point.x then
-			path[i] = mvec3_cpy(nav_point) -- copy the vectors here instead, so _calculate_simplified_path won't do a bunch of redundant copies past the first iteration
-		elseif alive(nav_point) then
-			path[i] = {element = nav_point:script_data().element, c_class = nav_point}
-		else
-			return false
-		end
-	end
-
-	for i = 1, #path do
-		table_insert(s_path, path[i])
-	end
-
-	if s_path[1].x then
-		s_path[1] = mvec3_cpy(self._common_data.pos)
-	else -- in the middle of a navlink animation
-		s_path[1] = s_path[1].c_class:end_position()
-	end
-
-	self._calculate_simplified_path(nil, s_path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
-
-	-- problematic if it only has 2 entries, so append the first navpoint of the added path
-	if #s_path == 2 then
-		table_insert(s_path, 2, path[1])
-	end
-
-	-- always recalculating because the end navpoint of the curved path may get changed by _calculate_shortened_path unless it's not clear to the next navpoint
-	if self._curve_path and not managers.navigation:raycast({pos_from = s_path[1], pos_to = self._nav_point_pos(s_path[2])}) then
-		if not self._start_run_turn and self._ext_base:lod_stage() == 1 and mvec3_dis_sq_no_z(s_path[1], self._nav_point_pos(s_path[2])) > 490000 then
-			-- calculate enter_dir based off our current curve path's direction
-			mvec3_set(tmp_vec1, self._curve_path[self._curve_path_index + 1])
-			mvec3_sub(tmp_vec1, self._curve_path[self._curve_path_index])
-			mvec3_set_z(tmp_vec1, 0)
-			mvec3_norm(tmp_vec1)
-
-			self._curve_path = self:_calculate_curved_path(s_path, 1, 1, tmp_vec1)
-		else
-			self._curve_path = {
-				s_path[1],
-				self._nav_point_pos(s_path[2])
-			}
-		end
-
-		self._curve_path_index = 1
-	end
-
-	-- shortcut succeeded and the next navpoint is now a navlink
-	if not s_path[2].x then
-		self._next_is_nav_link = s_path[2]
-	end
-
-	self._end_of_curved_path = nil
-	self._chk_stop_dis = nil
-	self._nav_seg = nav_seg
-	self._unit:brain():add_pos_rsrv("move_dest", {
-		radius = 30,
-		position = mvec3_cpy(s_path[#s_path]) -- last entry should never be a navlink
-	})
-
-	return true
-end
-
 local switch_table = {["stand"] = "crouch", ["crouch"] = "stand"}
 function CopActionWalk:_sanitize()
 	local anim_data = self._ext_anim
@@ -1059,42 +988,35 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 		table_insert(path, 1, good_pos)
 	end
 
+	-- if it's only 2 entries, we can't do anything
+	if #path <= 2 then
+		return
+	end
+	
 	-- Iterate over the path instead of creating a new one
-	local path_size = #path
-	if path_size > 2 then -- if it's only 2 entries, there's nothing we can or should do with the path
-		local offset = 0
-		local prev_nav_point = path[1]
-		for i = 2, path_size - 1 do
-			local nav_point = path[i]
-			local next_nav_point = CopActionWalk._nav_point_pos(path[i + 1])
-			-- If the current isn't a navlink, attempt to shortcut
-			-- Seems like it was actually supposed to add the z difference between previous - middle and middle - next
-			if nav_point.x and math_abs(nav_point.z - prev_nav_point.z + nav_point.z - next_nav_point.z) < 60 and not managers.navigation:raycast({pos_from = prev_nav_point, pos_to = next_nav_point}) then
-				path[i] = nil -- can't guarantee it will actually get overwritten by another entry, so have to nil it
-				offset = offset + 1
-			else
-				-- didn't get removed from the table, if the navpoint is a navlink then use the end position to shortcut, if we're obstructed to the next navpoint after the navlink it'll get inserted, otherwise we shortcut again from our actual position after the navlink
-				prev_nav_point = nav_point.x and nav_point or nav_point.c_class:end_position()
+	local i = 2
+	local prev_nav_point = path[1]
+	while i < #path - 1 do
+		local nav_point = path[i]
+		local next_nav_point = CopActionWalk._nav_point_pos(path[i + 1])
+		-- If the current isn't a navlink, attempt to shortcut
+		if nav_point.x and math_abs((nav_point.z - prev_nav_point.z) + (nav_point.z - next_nav_point.z)) < 60 and not managers.navigation:raycast({pos_from = prev_nav_point, pos_to = next_nav_point}) then
+			table_remove(path, i) -- We can skip this navpoint
+		else
+			-- current navpoint didn't get removed, if the navpoint is a navlink then use it's end position to shortcut
+			prev_nav_point = nav_point.x and nav_point or nav_point.c_class:end_position()
+			i = i + 1
+		end
+	end
 
-				if offset > 0 then
-					path[i], path[i - offset] = nil, nav_point -- don't need to copy, that's already done in _init
-				end
-			end
+	if #path > 2 then
+		if apply_padding then
+			CopActionWalk._apply_padding_to_simplified_path(path)
+			CopActionWalk._calculate_shortened_path(path)
 		end
 
-		if offset > 0 then -- bugger off
-			path[path_size], path[path_size - offset] = nil, path[path_size] -- shift the final entry to it's proper place
-		end
-
-		if path_size - offset > 2 then
-			if apply_padding then
-				CopActionWalk._apply_padding_to_simplified_path(path)
-				CopActionWalk._calculate_shortened_path(path)
-			end
-
-			if nr_iterations > 1 then
-				CopActionWalk._calculate_simplified_path(nil, path, nr_iterations - 1, z_test, apply_padding)
-			end
+		if nr_iterations > 1 then
+			CopActionWalk._calculate_simplified_path(nil, path, nr_iterations - 1, z_test, apply_padding)
 		end
 	end
 end
@@ -1849,15 +1771,6 @@ function CopActionWalk:on_nav_link_unregistered(element_id)
 		end
 	end
 end
-
-Hooks:PostHook(CopActionWalk, "_advance_simplified_path", "res_advance_simplified_path", function(self)
-	if self._nav_seg and (#self._simplified_path == 2 or managers.navigation:get_nav_seg_from_pos(self._nav_point_pos(self._simplified_path[1]), false) == self._nav_seg) then
-		self._nav_seg = nil
-		self._intermediate_action_complete = true
-		self._unit:brain():action_complete_clbk(self)
-		self._intermediate_action_complete = false
-	end
-end)
 
 function CopActionWalk:_husk_needs_speedup()
 	if self._ext_movement._queued_actions and next_g(self._ext_movement._queued_actions) then

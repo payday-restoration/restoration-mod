@@ -4252,6 +4252,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.aziz.stats.concealment = 28
 
 		--woo free tasers--
+		self.melee_weapons.zeus.tase_data = nil
 		self.melee_weapons.zeus.special_weapon = "taser"
 		self.melee_weapons.zeus.info_id = "bm_melee_taser_info"
 		self.melee_weapons.zeus.stats.min_damage = 1.2
@@ -4262,6 +4263,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.zeus.stats.range = 155
 		self.melee_weapons.zeus.stats.concealment = 28
 			--RIP Buzzer meta--
+			self.melee_weapons.taser.tase_data = nil
 			self.melee_weapons.taser.special_weapon = "taser"	
 			self.melee_weapons.taser.stats.min_damage = 1.2
 			self.melee_weapons.taser.stats.max_damage = 2.401

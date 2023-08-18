@@ -1166,10 +1166,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "12 флешеттов, которые #{skill_color}#пробивают броню##.",
-		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
-		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
-		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
-		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 50%.##",
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 100%.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 100%.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 100%.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "12 флешеттов, которые #{skill_color}#пробивают броню##. #{skill_color}#Урон в голову увеличен на 100%.##",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "Рукоятка 'AFG'",
@@ -4667,6 +4667,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Гладкоствольное искусство",
 				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага.",
+
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Ружьевой импульс",				

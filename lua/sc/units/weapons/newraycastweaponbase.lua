@@ -1847,5 +1847,16 @@ function NewRaycastWeaponBase:can_shoot_through_enemy()
 		end
 	end
 	--]]
+	if self._ammo_data and self._ammo_data.bullet_class ~= "InstantExplosiveBulletBase" then
+		for _, category in ipairs(self:categories()) do
+			if managers.player:has_category_upgrade(category, "can_shoot_through_enemy") then
+				if self._rays > 1 then
+					can_shoot_through_enemy = true
+					break --you can already do it, stop the checks
+				end
+			end
+		end
+	end
+
 	return can_shoot_through_enemy or self._can_shoot_through_enemy
 end

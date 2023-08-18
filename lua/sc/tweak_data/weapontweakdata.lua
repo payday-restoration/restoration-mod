@@ -3186,7 +3186,7 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = per_pellet and 2 or 3.5
+	self.stat_info.shotgun_spread_increase = per_pellet and 1.85 or 3.5
 	self.stat_info.shotgun_spread_increase_ads = per_pellet and 4 or 1
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
@@ -3697,9 +3697,9 @@ local sms_preset = {
 	lmg_120 = 0.78,
 	mini_40 = 0.85,
 	mini_60 = 0.78,
-	semi_snp_light = 0.8,
-	semi_snp_heavy = 0.7,
-	semi_snp_amr = 0.6
+	semi_snp_light = 0.7,
+	semi_snp_heavy = 0.6,
+	semi_snp_amr = 0.5
 }
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
@@ -9527,7 +9527,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.reload_speed_multiplier = 1.45
 				
 			--Galant (M1 Garand)
-				self.ching.categories = {"assault_rifle" }
+				self.hcar.categories = { 
+					"assault_rifle",
+					"dmr"
+				}
 				self.ching.FIRE_MODE = "single"
 				self.ching.fire_mode_data.fire_rate = 0.12
 				self.ching.CAN_TOGGLE_FIREMODE = false
@@ -9569,7 +9572,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.timers.reload_exit_not_empty = 1
 
 			--Ohio Ord. HCAR
-				self.hcar.categories = {"assault_rifle" }
+				self.hcar.categories = { 
+					"assault_rifle",
+					"dmr"
+				}
 				self.hcar.has_description = true
 				self.hcar.desc_id = "bm_hcar_sc_desc"	
 				self.hcar.CLIP_AMMO_MAX = 20
@@ -17716,8 +17722,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.rays = not weap.keep_rays and 1 or weap.rays
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.8 ) * 100
-					weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 0.9 ) * 100
+					weap.ads_speed = weap.ads_speed - 0.08
+					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.9 ) * 100
+					--weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 0.9 ) * 100
 					if weap.recategorize and weap.damage_type == "shotgun_heavy" then	
 						if weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
@@ -17976,17 +17983,18 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		pistol = 1.25, --Compensate for low range.
 		smg = 1.1,
 			pdw = 0.675,
-			typh = 0.8,
+			typh = 0.82,
 			lmg = 0.625,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.2 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
-			flamethrower = per_pellet and 0.7 / 1.2 or 1, --flamethrowers do not get the pickup bonus if using per_pellet
+		shotgun = per_pellet and 1.3 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
+			flamethrower = per_pellet and 0.7 / 1.3 or 1, --flamethrowers do not get the pickup bonus of per_pellet
 			shotgun_auto = per_pellet and 0.92 or 1, --Auto
 			shotgun_heavy = per_pellet and 0.94 or 1, --Light
 			shotgun_break = per_pellet and 1.06 or 1, --Heavy
 			shotgun_super = per_pellet and 1.10 or 1,
 		--assault_rifle = 1, 
+			dmr = 0.97,
 			--snp = 1, 
 				semi_snp = 0.8,
 				amr = 0.95,
@@ -17995,7 +18003,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		crossbow = 0.6,
 		tranq = 0.7,
 		--Custom weapon pickup
-		raygun = 1.3, --Non recoverable projectiles + never really dealing full damage meant the raygun had a super negative ammo economy
+		raygun = 1.3,
 	}
 
 	--Get weapon category specific pickup multipliers.

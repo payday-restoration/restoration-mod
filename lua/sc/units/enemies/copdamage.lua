@@ -1699,27 +1699,6 @@ function CopDamage:damage_melee(attack_data)
 	return result
 end
 
-function CopDamage:_sync_dismember(attacker_unit)
-	local dismember_victim = false
-
-	if not attacker_unit then
-		return dismember_victim
-	end
-
-	local attacker_name = managers.criminals:character_name_by_unit(attacker_unit)
-	local peer_id = managers.network:session():peer_by_unit(attacker_unit):id()
-	local peer = managers.network:session():peer(peer_id)
-	local attacker_weapon = peer:melee_id()
-
-	if attacker_name == "dragon" and attacker_weapon == "sandsteel" then
-		Application:trace("CopDamage:_dismember_body_part : not yakuza with katana")
-
-		dismember_victim = true
-	end
-
-	return dismember_victim
-end
-
 function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, variant, death)
 	local attack_data = {
 		variant = "melee",
@@ -1743,11 +1722,13 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 	attack_data.attack_dir = attack_dir
 
 	if death then
+		--[[
 		if self:_sync_dismember(attacker_unit) and variant == 6 then
 			attack_data.body_name = body:name()
 
 			self:_dismember_body_part(attack_data)
 		end
+		]]
 
 		if head then
 			if table_contains(grenadier_smash, self._unit:name()) then

@@ -845,6 +845,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.shotgun.extra_rays = {per_pellet and 0 or 3}
 					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
+					self.values.shotgun.can_shoot_through_enemy = {true}
 					
 					self.skill_descs.underdog = {
 					skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]) -- +Stability
@@ -3640,6 +3641,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "damage_min_bonus",
+			category = "shotgun"
+		}
+	}	
+	self.definitions.shotgun_can_shoot_through_enemy = {
+		name_id = "menu_shotgun_can_shoot_through_enemy",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "can_shoot_through_enemy",
 			category = "shotgun"
 		}
 	}	

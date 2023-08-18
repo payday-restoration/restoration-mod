@@ -52,21 +52,21 @@ tweak_data.grenade_launcher = {
 	}
 
 tweak_data.shotgun = {
-	ads_move_speed_mult = 0.45,
-	ads_moving_spread_mult = 3.33333
+	ads_move_speed_mult = 0.5,
+	ads_moving_spread_mult = 2
 }
 	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 3
+		hipfire_spread_mult = 2.5
 	}
 	tweak_data.shotgun_pistol = {
-		ads_move_speed_mult = 1.777778,
+		ads_move_speed_mult = 1.6,
 		swap_bonus = 1.75
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
 	}
 		tweak_data.flamethrower_lmg = {
-			ads_move_speed_mult = 0.77778,
+			ads_move_speed_mult = 0.7,
 		}
 
 tweak_data.smg = {
@@ -102,10 +102,11 @@ tweak_data.smg = {
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	hipfire_moving_spread_mult = 2
+	hipfire_spread_mult = 1.5,
+	hipfire_moving_spread_mult = 1.5
 }
 	tweak_data.semi_snp = {
-		hipfire_spread_mult = 2,
+		hipfire_spread_mult = 2.5,
 		hipfire_moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
@@ -114,7 +115,7 @@ tweak_data.snp = {
 			hipfire_moving_spread_mult = 0.33334,
 		}
 	tweak_data.amr = {
-		hipfire_spread_mult = 2.5,
+		hipfire_spread_mult = 2,
 		ads_move_speed_mult = 0.6
 	}
 
@@ -129,8 +130,8 @@ tweak_data.assault_rifle = {
 		ads_move_speed_mult = 1.11111 --raised to 0.5
 	}
 	tweak_data.dmr = {
-		hipfire_spread_mult = 1.391304,
-		hipfire_moving_spread_mult = 1.5,
+		hipfire_spread_mult = 1.7391304,
+		hipfire_moving_spread_mult = 1.75,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 

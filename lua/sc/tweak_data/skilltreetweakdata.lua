@@ -502,7 +502,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Shotgun CQB--
 			self.skills.shotgun_cqb = {
 				["name_id"] = "menu_shotgun_cqb_beta_sc",
-				["desc_id"] = "menu_shotgun_cqb_beta_desc_sc",
+				["desc_id"] = per_pellet and  "menu_shotgun_cqb_per_pellet_desc_sc" or "menu_shotgun_cqb_beta_desc_sc",
 				["icon_xy"] = {5, 1},
 				[1] = {
 					upgrades = {
@@ -512,7 +512,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"shotgun_reload_speed_multiplier_1"
+						"shotgun_reload_speed_multiplier_1",
+						"shotgun_can_shoot_through_enemy"
 					},
 					cost = self.costs.hightierpro
 				}

@@ -194,6 +194,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 		can_shoot_through_titan_shield = self:can_shoot_through_titan_shield(),
 		can_shoot_through_enemy = self:can_shoot_through_enemy(),
 		can_shoot_through_enemy_unlim = self:can_shoot_through_enemy_unlim(),
+		armor_piercing_chance = self:armor_piercing_chance(),
 		has_hit_enemy = nil,
 		has_hit_wall = nil,
 		bullet_slotmask = self._bullet_slotmask,
@@ -205,6 +206,23 @@ function RaycastWeaponBase:_collect_hits(from, to)
 
 	return RaycastWeaponBase.collect_hits(from, to, setup_data)
 end
+
+local armour = {
+	-- Tans
+	[Idstring("body_plate"):key()] = true,
+	-- Dozer
+	[Idstring("body_helmet"):key()] = true,
+	[Idstring("body_helmet_plate"):key()] = true,
+	[Idstring("body_helmet_glass"):key()] = true,
+	[Idstring("body_armor_chest"):key()] = true,
+	[Idstring("body_armor_stomache"):key()] = true,
+	[Idstring("body_armor_back"):key()] = true,
+	[Idstring("body_armor_throat"):key()] = true,
+	[Idstring("body_armor_neck"):key()] = true,
+	-- Sosa
+	[Idstring("body_vest"):key()] = true,
+	[Idstring("body_ammo"):key()] = true,
+}
 
 --Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase.collect_hits(from, to, setup_data)
@@ -233,6 +251,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
 	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
 	local can_shoot_through_enemy_unlim = setup_data.can_shoot_through_enemy_unlim
+	local armor_piercing_chance = setup_data.armor_piercing_chance 
 	local wall_mask = setup_data.wall_mask
 	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")
@@ -255,7 +274,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 			local weak_body = hit.body:has_ray_type(ai_vision_ids)
 			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
 
-			if setup_data.has_hit_enemy or not can_shoot_through_enemy and hit_enemy then
+			if (setup_data.has_hit_enemy or not can_shoot_through_enemy and hit_enemy) or (armour[hit.body:name():key()] and armor_piercing_chance <= 0 ) then
 				break
 			elseif setup_data.has_hit_wall or (not can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body) then
 				break
@@ -273,7 +292,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	end
 
 	return unique_hits, hit_enemy
-end		
+end	
 
 local raycast_current_damage_orig = RaycastWeaponBase._get_current_damage
 function RaycastWeaponBase:_get_current_damage(dmg_mul)

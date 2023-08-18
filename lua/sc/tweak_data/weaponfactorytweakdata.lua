@@ -927,7 +927,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.75,
+					hip_mult = 0.6,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.6 or nil,
@@ -962,7 +962,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.75,
+					hip_mult = 0.6,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.6 or nil,
@@ -997,7 +997,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.75,
+					hip_mult = 0.6,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.6 or nil,
@@ -1032,7 +1032,7 @@ local grips = {
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.75,
+					hip_mult = 0.6,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.6 or nil,
@@ -1319,7 +1319,7 @@ local grips = {
 					damage = per_pellet and 0 or 15
 				},
 				custom_stats = {
-					hip_mult = 2,
+					hip_mult = 1.5,
 					falloff_start_mult = 1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.66667 or 0.66667,
@@ -1338,7 +1338,7 @@ local grips = {
 					damage = per_pellet and 60 or 15
 				},
 				custom_stats = {
-					hip_mult = 2,
+					hip_mult = 1.5,
 					falloff_start_mult = 1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.66667 or 0.75,
@@ -1357,7 +1357,7 @@ local grips = {
 					damage = per_pellet and 60 or 30
 				},
 				custom_stats = {
-					hip_mult = 2,
+					hip_mult = 1.5,
 					falloff_start_mult = 1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.75 or 0.6666667,
@@ -1375,7 +1375,7 @@ local grips = {
 					damage = per_pellet and 60 or 30
 				},
 				custom_stats = {
-					hip_mult = 2,
+					hip_mult = 1.5,
 					falloff_start_mult = 1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.83333 or 0.75,
@@ -1404,7 +1404,7 @@ local grips = {
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 					rays = 1,
-					hip_mult = 3,
+					hip_mult = 2,
 					armor_piercing_add = 0.8,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
@@ -1435,7 +1435,7 @@ local grips = {
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					rays = 1,
-					hip_mult = 3,
+					hip_mult = 2,
 					armor_piercing_add = 0.8,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
@@ -1466,7 +1466,7 @@ local grips = {
 				custom_stats = {				
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 					rays = 1,
-					hip_mult = 3,
+					hip_mult = 2,
 					armor_piercing_add = 1,
 					ene_hs_mult_add = per_pellet and 0.2 or nil,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
@@ -1497,7 +1497,7 @@ local grips = {
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
 					rays = 1,
-					hip_mult = 3,
+					hip_mult = 2,
 					armor_piercing_add = 1,
 					ene_hs_mult_add = per_pellet and 0.4 or nil,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
@@ -1526,7 +1526,7 @@ local grips = {
 				},
 				custom_stats = {
 					ads_speed_mult = 1.15,
-					hip_mult = 4,
+					hip_mult = 3,
 					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
 					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
@@ -1547,7 +1547,7 @@ local grips = {
 				},
 				custom_stats = {
 					ads_speed_mult = 1.15,
-					hip_mult = 4,
+					hip_mult = 3,
 					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
 					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
@@ -1569,7 +1569,7 @@ local grips = {
 				},
 				custom_stats = {
 					ads_speed_mult = 1.15,
-					hip_mult = 4,
+					hip_mult = 3,
 					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
 					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
@@ -1590,7 +1590,7 @@ local grips = {
 				},
 				custom_stats = {
 					ads_speed_mult = 1.15,
-					hip_mult = 4,
+					hip_mult = 3,
 					ammo_pickup_max_mul = per_pellet and 0.2 or 0.7,
 					ammo_pickup_min_mul = per_pellet and 0.2 or 0.7,
 					ignore_statistic = true,
@@ -18583,7 +18583,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.20,
 		hip_mult = 1.666666,
-		sms = 0.8,
+		sms = 0.7,
 		alt_desc = "bm_shak12_sc_oden_desc"
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
@@ -30394,7 +30394,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 1.05,
 			rof_mult = 0.9,
 			hip_mult = 1.666666,
-			sms = 0.8
+			sms = 0.7
 		}
 
 		self.parts.wpn_fps_snp_sierra458_ap_switch.supported = true

@@ -1576,7 +1576,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
-			if character_unit:base():char_tweak().priority_shout then
+			if character_unit:base().char_tweak and character_unit:base():char_tweak().priority_shout then
 				dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
 			end
 

@@ -1018,7 +1018,9 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		"FBI_defend_b",
 		"GS_defend_b",
-		"CS_heavys"
+		"CS_heavys",
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_pines_2"] = {
 		"CS_tazers",
@@ -1033,7 +1035,9 @@ local standard_spawngroups = {
 		"BLACK_tanks",
 		"SKULL_tanks",
 		"TIT_tanks",
-		"CS_shields"
+		"CS_shields",
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_red2"] = {
 		"CS_defend_c",

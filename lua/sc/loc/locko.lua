@@ -2970,7 +2970,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW 조준경",					
 			})
 		end
-		
 		if weapon_names == 2 then
 			LocalizationManager:add_localized_strings({
 
@@ -3637,11 +3636,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Gadgets
 							["bm_wp_upg_fl_pis_tlr1"] = "스트림라이트 TLR-1 손전등",
 							["bm_wp_upg_fl_pis_laser"] = "에임 스포츠 LH002 레이저 사이트", 
-							["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC 레이저 라이트",
+							["bm_wp_upg_fl_x400v"] = "슈어파이어 X400V-IRC 레이저 라이트",
 							["bm_wp_upg_fl_crimson"] = "크림슨 트레이스 CMR-201 레이저 사이트",
 							["bm_wp_upg_fl_pis_m3x"] = "인사이트 테크놀로지 M3X 손전등",
 							
-							["bm_wp_upg_fl_ass_smg_sho_surefire"] = "SureFire 정찰용 손전등",
+							["bm_wp_upg_fl_ass_smg_sho_surefire"] = "슈어파이어 정찰용 손전등",
 							["bm_wp_upg_fl_ass_laser"] = "오프셋 마운트 레이저 사이트",
 							["bm_wp_upg_fl_ass_smg_sho_peqbox"] = "인사이트 테크놀로지 AN/PEQ-5 레이저 사이트",
 							["bm_wp_upg_fl_ass_utg"] = "UTG P38 LED 레이저 라이트",
@@ -4009,7 +4008,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		end
 	end
 	
-end
+end)
 
 local r = tweak_data.levels.ai_groups.russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

@@ -2000,6 +2000,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_specialist_info"] = "Теперь в два раза больше лезвий.\n\nНаносит двойной урон после первого удара.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "Специальное оружие для вытаскивания кишок в течение десяти минут.\n\nНаносит на 50% меньше урона в голову, но эффективен для ударов по телу и конечностям.",
 		["bm_melee_erica_info"] = "Адекватные люди кидают это.\n\nПолностью заряженные удары по врагам имеют #{skill_color}#5%## шанс взорваться, нанося #{risk}#720## урона в #{skill_color}#5## метровом радиусе.",
+		["bm_melee_piggy_hammer_info"] = "Наносит на #{skill_color}#100%## больше урона особым и элитным врагам.\n\nИмеет шанс наложить один из #{risk}#эффектов## при успешном попадании:\n\n-#{skill_color}#12%## шанс вызвать #{important_1}#кровотечение##\n-#{skill_color}#7%## шанс ударить противника #{ghost_color}#током##\n-#{skill_color}#5%## шанс вызвать #{stats_positive}#отравление##\n-#{skill_color}#1%## шанс #{risk}#убить противника мгновенно##",
 
 		--Melee Weapons
 		["bm_melee_twins"] = "Sai", --Plural form is still "sai"

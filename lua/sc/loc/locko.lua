@@ -4452,7 +4452,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_fartsmella"] = "\"살충제\" 보급",
 		["mutator_fartsmella_desc"] = "연막탄은 이제 최루 가스로 대체됩니다.",
-		["mutator_fartsmella_longdesc"] = "적이 배치하는 연막탄 대신 최루탄으로 대체됩니다.\n\n참고: \"좀 더 때려줘\" 뮤테이터의 연막탄을 대체하지 않습니다.",
+		["mutator_fartsmella_longdesc"] = "적이 배치하는 연막탄 대신 최루탄으로 대체됩니다.\n\n참고: \"날 더 때려줘\" 뮤테이터의 연막탄을 대체하지 않습니다.",
 		
 		["mutator_kaboom"] = "카미카제",
 		["mutator_kaboom_desc"] = "척탄병은 이제 사망 시 폭발합니다.",
@@ -4643,6 +4643,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
 			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##은 펠릿을 #{skill_color}#3##발 더 발사합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
+			["menu_shotgun_impact_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\n{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\nACE: #{owned}#$pro##\n#{skill_color}#산탄총##의 최소 데미지가 #{skill_color}#25%## 증가합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",

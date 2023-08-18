@@ -2837,11 +2837,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_akm_gold"] = "Golden AK 7.62",
 					["bm_wp_upg_ass_ak_b_zastava"] = "긴 총열",
 					--KETCHUPKNOB--
-					--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
-					["bm_w_groza"] = "OB-14st Byk-1", --Hopefully less silly than its Ketchup name
-					--"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
-					--Although, a Russian word for "region/zone/area" followed up with a Polish word...
-					--Eh, whatever
+					["bm_w_groza"] = "OB-14st Byk-1",
 					--CHIKUBI
 					["bm_w_tkb"] = "Rodion 3B",
 					["bm_wp_tkb_m_bakelite"] = "시베리아 15x3 탄창",
@@ -2986,7 +2982,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_x_judge"] = "아킴보 Judges",
 				["bm_w_vhs"] = "HVH-2",
-				["bm_w_contraband"] = "SG 417D"				
+				["bm_w_contraband"] = "SG 417D",				
 	
 			})
 			elseif weapon_names == 3 then
@@ -3915,7 +3911,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		local blue = math.rand(1)
 		local archive = 0.01
-		if bobcat or not easterless and blue <= archive then
+		if eggplant or not easterless and blue <= archive then
 			LocalizationManager:add_localized_strings({
 			-- Abydos
 				-- Countermeasures Council
@@ -4013,7 +4009,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		end
 	end
 	
-end)
+end
 
 local r = tweak_data.levels.ai_groups.russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"

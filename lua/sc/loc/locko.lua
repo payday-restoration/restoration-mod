@@ -2621,7 +2621,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_deagle"] = "아킴보 Deagle",
 					--Kahn .357
 					["bm_w_korth"] = "Kahn .357",
-					["bm_w_x_korth"] = "아킴보 Kahn .357s,
+					["bm_w_x_korth"] = "아킴보 Kahn .357",
 					--Matever 2006m
 					["bm_w_mateba"] = "Matever 9mm", --:^)
 					["bm_wp_2006m_b_short"] = "타치코마 총열",	
@@ -3758,7 +3758,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 							["bm_wp_upg_o_poe"] = "벨로모 PO4x24P 조준경",
 							["bm_wp_upg_o_bmg"] = "트리지콘 6x48 조준경",
 
-							["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",							
+							["bm_wp_upg_o_spot"] = "거리 측정기가 있는 엔씨스타 ADO 3x42 스코프",							
 							
 							["bm_wp_upg_o_atibal"] = "아티발 MROC 3x32 조준기",
 							["bm_wpn_fps_upg_o_hamr"] = "레오폴드 Mk. 4 HAMR 4x24 조준기",
@@ -3829,7 +3829,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 							["bm_wp_victor_g_mod3"] = "BCM MOD 3 손잡이",
 							["bm_wp_sko12_grip"] = "스탠다드 Mfg AR 손잡이",
 							["bm_wp_upg_g_m4_surgeon"] = "택티컬 다이나믹스 스켈레톤 권총 손잡이",
-							["bm_wp_m4_g_billet"] = "JL 빌릿 AR 손잡이"							
+							["bm_wp_m4_g_billet"] = "JL 빌릿 AR 손잡이",							
 
 						["bm_wp_upg_lmg_lionbipod"] = "양각대",
 
@@ -3908,7 +3908,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_menu_ro_grip"] = "리볼버 오셀롯",
 
 				["bm_m134_sc_desc"] = "잠긴 메타포...",
-				["bm_wp_upg_suppressor_boss"] = "\"게 싸움이다!!!\"\n\n총소리를 #{skill_color}#조용하게## 만들고 #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##"
+				["bm_wp_upg_suppressor_boss"] = "\"게 싸움이다!!!\"\n\n총소리를 #{skill_color}#조용하게## 만들고 #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
 				
 			})
 		end

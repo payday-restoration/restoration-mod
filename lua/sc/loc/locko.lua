@@ -2970,6 +2970,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW 조준경",					
 			})
 		end
+		
 		if weapon_names == 2 then
 			LocalizationManager:add_localized_strings({
 
@@ -2984,8 +2985,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_contraband"] = "SG 417D",				
 	
 			})
-			elseif weapon_names == 3 then
-				LocalizationManager:add_localized_strings({	
+		elseif weapon_names == 3 then
+			LocalizationManager:add_localized_strings({	
 
 					--[[PISTOLS]]
 						--5/7
@@ -4006,7 +4007,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_mosin_sc_desc"] = "\"어, 어째서 이런 일이...\"\n\n#{skill_color}#미유##가 SRT 특수학원에서 지급받은 제식 소총.\n강력한 한 발을 위해 정밀하게 가공되어 명중률이 매우 높다.",			
 			})
 		end
-	end
 	
 end)
 
@@ -4963,7 +4963,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 					["menu_risk_sm_wish"] = "인세인. 너의 한계를 보여줘라."
 			})
 		end
-	end
 	
 end)
 

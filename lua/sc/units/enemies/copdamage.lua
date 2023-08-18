@@ -1710,6 +1710,17 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 	local damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
 	local result = nil
 
+	local attack_dir = nil
+
+	if attacker_unit then --attack_dir needs to be defined before "if death"
+		attack_dir = self._unit:position() - attacker_unit:position()
+
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = -self._unit:rotation():y()
+	end
+	attack_data.attack_dir = attack_dir
+
 	if death then
 		if self:_sync_dismember(attacker_unit) and variant == 6 then
 			attack_data.body_name = body:name()
@@ -1762,17 +1773,6 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 	attack_data.damage_effect = self._health
 	attack_data.is_synced = true
 	attack_data.name_id = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():get_melee_weapon_id()
-	local attack_dir = nil
-
-	if attacker_unit then
-		attack_dir = self._unit:position() - attacker_unit:position()
-
-		mvector3.normalize(attack_dir)
-	else
-		attack_dir = -self._unit:rotation():y()
-	end
-
-	attack_data.attack_dir = attack_dir
 
 	if variant == 3 then
 		self._unit:unit_data().has_alarm_pager = false

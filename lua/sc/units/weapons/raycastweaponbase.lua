@@ -251,7 +251,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
 	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
 	local can_shoot_through_enemy_unlim = setup_data.can_shoot_through_enemy_unlim
-	local armor_piercing_chance = setup_data.armor_piercing_chance 
+	local armor_piercing_chance = setup_data.armor_piercing_chance or 0
 	local wall_mask = setup_data.wall_mask
 	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")

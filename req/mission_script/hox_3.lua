@@ -30,7 +30,9 @@ return {
 	},
 	--Disable garage escape
 	[100206] = {
-		enabled = false
+		values = {
+			enabled = false
+		}
 	},
 	--FBI Team Responders
 	[102346] = {

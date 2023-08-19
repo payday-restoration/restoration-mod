@@ -1059,6 +1059,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 end
 
 function NewRaycastWeaponBase:armor_piercing_chance()
+	local final_ap = 0
 	local skill_ap = self._skill_global_ap or 0
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "ap_bullets") then
@@ -1069,9 +1070,11 @@ function NewRaycastWeaponBase:armor_piercing_chance()
 		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
 		local volley_ap = volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
-		return math.min(volley_ap + skill_ap, 1)
+		final_ap = math.min(volley_ap + skill_ap, 1)
+		return final_ap or 0
 	else
-		return math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
+		final_ap = math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
+		return final_ap or 0
 	end
 end
 

@@ -2016,7 +2016,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 #{skill_color}#두 배##의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
 		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 #{skill_color}#50%## 감소합니다.",
 		["bm_melee_erica_info"] = "정신이 멀쩡한 사람이라면 이걸 던질 것입니다.\n\n완전히 충전하여 살아 있는 적에게 적중 할 시 #{skill_color}#5%## 확률로 폭발하여 충격 지점으로 부터 #{skill_color}#5m## 내에 있는 적들에게 #{risk}#720## 피해를 가합니다.",
-		["bm_melee_piggy_hammer_info"] = "특수 및 엘리트 적에게 #{skill_color}#100%## 더 많은 피해를 가합니다.\n\n적중 시 적에게 다음 #{risk}#무작위 효과## 중 하나를 부여할 확률이 있습니다:\n\n-#{skill_color}#12%## 확률로 #{important_1}#출혈## 부여\n-#{skill_color}#7%## 확류로 #{ghost_color}#감전## 부여\n-#{skill_color}#5%## 확률로 #{stats_positive}#독## 부여\n-#{skill_color}#1%## 확률로 #{risk}#즉사## 부여.", --Piggu
+		["bm_melee_piggy_hammer_info"] = "특수 및 엘리트 적에게 #{skill_color}#100%## 더 많은 피해를 가합니다.\n\n적중 시 일정 확률로 적에게 다음 #{risk}#무작위 효과## 중 하나를 부여합니다:\n\n-#{skill_color}#12%## 확률로 #{important_1}#출혈## 부여\n-#{skill_color}#7%## 확률로 #{ghost_color}#감전## 부여\n-#{skill_color}#5%## 확률로 #{stats_positive}#독## 부여\n-#{skill_color}#1%## 확률로 #{risk}#즉사## 부여.", --Piggu
 
 		--Melee Weapons
 		["bm_melee_twins"] = "쌍차", --Plural form is still "sai"

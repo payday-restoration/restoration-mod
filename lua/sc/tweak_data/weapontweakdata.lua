@@ -127,7 +127,6 @@ local crew_wep_preset = {
 	}
 }
 
-
 --NPC STUFF
 	function WeaponTweakData:_init_data_sentry_gun_npc()
 		self.sentry_gun.categories = {}
@@ -2871,6 +2870,55 @@ local crew_wep_preset = {
 			self.mosin_secondary_crew = deep_clone(self.mosin_crew)
 			self.mosin_secondary_crew.use_data.selection_index = 1
 		end
+		
+		--Flintlock (Crew)
+		function WeaponTweakData:_init_data_bessy_crew()
+			self.bessy_crew.categories = clone(self.bessy.categories)
+			self.bessy_crew.sounds.prefix = "musket_npc"
+			self.bessy_crew.use_data.selection_index = 2
+			self.bessy_crew.DAMAGE = 15
+			self.bessy_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+			self.bessy_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
+			self.bessy_crew.CLIP_AMMO_MAX = 5
+			self.bessy_crew.NR_CLIPS_MAX = 8
+			self.bessy_crew.auto.fire_rate = 1
+			self.bessy_crew.hold = "rifle"
+			self.bessy_crew.alert_size = 5000
+			self.bessy_crew.suppression = 1
+			self.bessy_crew.FIRE_MODE = "single"
+			self.bessy_secondary_crew = deep_clone(self.bessy_crew)
+			self.bessy_secondary_crew.use_data.selection_index = 1
+		end	
+
+		--Cash Blaster (Crew)
+		function WeaponTweakData:_init_data_money_crew()
+			self.money_crew.categories = clone(self.money.categories)
+			self.money_crew.sounds.prefix = "moneythrower_npc"
+			self.money_crew.sounds.fire = "moneythrower_npc_fire"
+			self.money_crew.sounds.stop_fire = "moneythrower_npc_fire_stop"
+			self.money_crew.use_data.selection_index = 2
+			self.money_crew.DAMAGE = 1
+			self.money_crew.flame_effect = "effects/payday2/particles/explosions/moneythrower"
+			self.money_crew.single_flame_effect_duration = 1
+			self.money_crew.flame_max_range = 1300
+			self.money_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+			self.money_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+			self.money_crew.shell_ejection = "effects/payday2/particles/weapons/shells/empty"
+			self.money_crew.CLIP_AMMO_MAX = 300
+			self.money_crew.NR_CLIPS_MAX = 4
+			self.money_crew.pull_magazine_during_reload = "large_metal"
+			self.money_crew.hold = {
+				"bullpup",
+				"rifle"
+			}
+			self.money_crew.reload = "rifle"
+			self.money_crew.auto.fire_rate = 0.05
+			self.money_crew.fire_variant = "money"
+			self.money_crew.hud_icon = "rifle"
+			self.money_crew.alert_size = 2500
+			self.money_crew.suppression = 0.45
+			self.money_crew.FIRE_MODE = "auto"
+		end		
 	
 		function WeaponTweakData:_init_data_winchester1874_crew()
 			self.winchester1874_crew.categories = clone(self.winchester1874.categories)
@@ -3704,6 +3752,9 @@ local sms_preset = {
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	assert(self.osipr, "Resmod's custom assets aren't loading. Your copy of Resmod may be corrupt or Beardlib may not be installed correctly.") --force a crash on boot if custom assets aren't loading. Better to have an early tell vs crashing on failed enemy unit spawns mid-game, right?
+
+	self:_init_data_bessy_crew()
+	self:_init_data_money_crew()
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
@@ -10296,7 +10347,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bessy.special_damage_multiplier = 2
 				self.bessy.reload_speed_multiplier = 1.05
 			end
-
 		--SECONDARIES
 
 			--G2 Contender
@@ -11499,6 +11549,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.timers.reload_exit_not_empty = 1.5
 					self.money.sounds.no_fix = true		
 					self.money.shake.bypass_global_shake = true
+					self.money.unlock_func = nil
 				end
 
 

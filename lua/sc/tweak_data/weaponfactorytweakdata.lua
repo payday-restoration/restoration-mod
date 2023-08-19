@@ -1604,6 +1604,12 @@ local grips = {
 
 local attachment_list = {}
 
+--Init function
+Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_wf_init", function(self)
+	self:_init_bessy()
+	self:_init_money()
+end)
+
 --Vanilla Silencers
 Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", function(self)
 
@@ -16577,6 +16583,89 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shuno", "resmod_shuno", function(s
 
 end)
 
+--Cash Blaster
+function WeaponFactoryTweakData:_init_money()
+	self.parts.wpn_fps_fla_money_b_standard = {
+		a_obj = "a_b",
+		type = "barrel",
+		name_id = "bm_wp_money_body_standard",
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_b_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_fla_money_body_standard = {
+		a_obj = "a_body",
+		type = "lower_reciever",
+		name_id = "bm_wp_money_body_standard",
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_body_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_fla_money_body_upper = {
+		a_obj = "a_body",
+		type = "upper_reciever",
+		name_id = "bm_wp_money_body_standard",
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_body_upper",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_fla_money_dh_standard = {
+		a_obj = "a_dh",
+		type = "drag_handle",
+		name_id = "bm_wp_money_body_standard",
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_dh_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_fla_money_m_standard = {
+		a_obj = "a_m",
+		type = "magazine",
+		name_id = "bm_wp_money_body_standard",
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_m_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_fla_money_b_standard.third_unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_b_standard"
+	self.parts.wpn_fps_fla_money_body_standard.third_unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_body_standard"
+	self.parts.wpn_fps_fla_money_body_upper.third_unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_body_upper"
+	self.parts.wpn_fps_fla_money_dh_standard.third_unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_dh_standard"
+	self.parts.wpn_fps_fla_money_m_standard.third_unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_m_standard"
+	self.wpn_fps_fla_money = {
+		unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money/wpn_fps_fla_money",
+		animations = {
+			reload_not_empty = "reload",
+			reload = "reload"
+		},
+		default_blueprint = {
+			"wpn_fps_fla_money_b_standard",
+			"wpn_fps_fla_money_body_standard",
+			"wpn_fps_fla_money_body_upper",
+			"wpn_fps_fla_money_dh_standard",
+			"wpn_fps_fla_money_m_standard"
+		},
+		uses_parts = {
+			"wpn_fps_fla_money_b_standard",
+			"wpn_fps_fla_money_body_standard",
+			"wpn_fps_fla_money_body_upper",
+			"wpn_fps_fla_money_dh_standard",
+			"wpn_fps_fla_money_m_standard",
+			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+			"wpn_fps_upg_fl_ass_smg_sho_surefire",
+			"wpn_fps_upg_fl_ass_peq15",
+			"wpn_fps_upg_fl_ass_laser",
+			"wpn_fps_upg_fl_dbal_laser",
+			"wpn_fps_upg_fl_ass_utg"
+		}
+	}
+	self.wpn_fps_fla_money_npc = deep_clone(self.wpn_fps_fla_money)
+	self.wpn_fps_fla_money_npc.unit = "units/pd2_dlc_pda8/weapons/wpn_fps_fla_money/wpn_fps_fla_money_npc"
+end
+
 --MA-17 Flamethrower
 Hooks:PostHook(WeaponFactoryTweakData, "_init_system", "resmod_system", function(self)
 
@@ -21514,31 +21603,135 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", fu
 end)
 
 --Flintlock
-Hooks:PostHook(WeaponFactoryTweakData, "_init_bessy", "resmod_bessy", function(self)
-
-	self.parts.wpn_fps_spec_bessy_barrel.stance_mod = {
-		wpn_fps_spec_bessy = {
-			translation = Vector3(0, 2.5, -2),
-			rotation = Rotation(0,0.7,0)
+function WeaponFactoryTweakData:_init_bessy()
+	self.parts.wpn_fps_spec_bessy_barrel = {
+		texture_bundle_folder = "pda10",
+		a_obj = "a_alignment",
+		type = "barrel",
+		name_id = "bm_wp_bessy_barrel",
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_fps_spec_bessy_barrel",
+		stats = {
+			value = 1
+		},
+		stance_mod = {
+			wpn_fps_spec_bessy = {
+				translation = Vector3(0, 2.5, -2),
+				rotation = Rotation(0,0.7,0)
+			}
+		}		
+	}
+	self.parts.wpn_fps_spec_bessy_reciever = {
+		texture_bundle_folder = "pda10",
+		a_alignment = "a_b",
+		type = "reciever",
+		name_id = "bm_wp_bessy_reciever",
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_fps_spec_bessy_reciever",
+		stats = {
+			value = 1
+		},
+		animations = {
+			reload_not_empty = "reload",
+			reload = "reload",
+			fire_steelsight = "recoil",
+			fire = "recoil"
 		}
 	}
-
-	self.parts.wpn_fps_spec_bessy_bayonette.supported = true
-	self.parts.wpn_fps_spec_bessy_bayonette.stats = {
-		value = 5,
-		concealment = -5,
-		max_damage = 6,
-		min_damage = 6,
-		max_damage_effect = 1,
-		min_damage_effect = 1,
-		bayonet_range = 80
+	self.parts.wpn_fps_spec_bessy_stock = {
+		texture_bundle_folder = "pda10",
+		a_obj = "a_alignment",
+		type = "stock",
+		name_id = "bm_wp_bessy_reciever",
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_fps_spec_bessy_stock",
+		stats = {
+			value = 1
+		},
+		animations = {
+			reload_not_empty = "reload",
+			reload = "reload",
+			fire_steelsight = "recoil",
+			fire = "recoil"
+		}
 	}
-	self.parts.wpn_fps_spec_bessy_bayonette.custom_stats = {
-		ads_speed_mult = 1.125
+	self.parts.wpn_fps_spec_bessy_rod = {
+		texture_bundle_folder = "pda10",
+		a_obj = "a_alignment",
+		type = "extra",
+		name_id = "bm_wp_bessy_reciever",
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_fps_spec_bessy_rod",
+		stats = {
+			value = 1
+		},
+		animations = {
+			reload_not_empty = "reload",
+			reload = "reload",
+			fire_steelsight = "recoil",
+			fire = "recoil"
+		}
 	}
-
-end)
-
+	self.parts.wpn_fps_spec_bessy_bayonette = {
+		is_a_unlockable = true,
+		texture_bundle_folder = "pda10",
+		type = "bayonet",
+		a_obj = "a_ns",
+		parent = "barrel",
+		dlc = "pda10",
+		name_id = "bm_wp_bessy_bayonette",
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_fps_spec_bessy_bayonette",
+		pcs = {},
+		stats = {
+			value = 5,
+			concealment = -5,
+			max_damage = 6,
+			min_damage = 6,
+			max_damage_effect = 1,
+			min_damage_effect = 1,
+			bayonet_range = 80
+		},
+		supported = true,
+		custom_stats = {
+			ads_speed_mult = 1.125
+		}
+	}
+	self.parts.wpn_fps_spec_bessy_barrel.third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_barrel"
+	self.parts.wpn_fps_spec_bessy_reciever.third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_reciever"
+	self.parts.wpn_fps_spec_bessy_stock.third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_stock"
+	self.parts.wpn_fps_spec_bessy_rod.third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_rod"
+	self.parts.wpn_fps_spec_bessy_bayonette.third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_bayonette"
+	self.wpn_fps_spec_bessy = {
+		unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy/wpn_fps_spec_bessy",
+		animation_effects = {
+			fire = {
+				effect = Idstring("effects/payday2/particles/weapons/bessy_smoke"),
+				parent = Idstring("a_efx_exhaust")
+			},
+			fire_steelsight = {
+				effect = Idstring("effects/payday2/particles/weapons/bessy_smoke"),
+				parent = Idstring("a_efx_exhaust")
+			}
+		},
+		optional_types = {
+			"gadget",
+			"sight",
+			"bayonet"
+		},
+		adds = {},
+		default_blueprint = {
+			"wpn_fps_spec_bessy_barrel",
+			"wpn_fps_spec_bessy_reciever",
+			"wpn_fps_spec_bessy_stock",
+			"wpn_fps_spec_bessy_rod"
+		},
+		uses_parts = {
+			"wpn_fps_spec_bessy_barrel",
+			"wpn_fps_spec_bessy_reciever",
+			"wpn_fps_spec_bessy_stock",
+			"wpn_fps_spec_bessy_rod",
+			"wpn_fps_spec_bessy_bayonette"
+		}
+	}
+	self.wpn_fps_spec_bessy_npc = deep_clone(self.wpn_fps_spec_bessy)
+	self.wpn_fps_spec_bessy_npc.unit = "units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy/wpn_fps_spec_bessy_npc"
+end
 
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)

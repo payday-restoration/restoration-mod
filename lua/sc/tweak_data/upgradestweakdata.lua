@@ -273,6 +273,16 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"coal"
 				}
 			},
+		l47 = {
+				name_id = "weapons",
+				upgrades = {
+					"freedom",
+					"whiskey",
+					"arbiter",
+					"ms3gl",
+					"system"
+				}
+			},			
 		l48 = {
 				name_id = "weapons",
 				upgrades = {
@@ -332,7 +342,30 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			self.level_tree[i] = currLevel
 		end
 	end 	
+	
+	self:_bessy_definitions()
+	self:_money_weapon_definitions()
 end)
+
+--Money thrower definitions
+function UpgradesTweakData:_money_weapon_definitions()
+	self.definitions.money = {
+		dlc = "pda8_wpn_money",
+		factory_id = "wpn_fps_fla_money",
+		weapon_id = "money",
+		category = "weapon"
+	}
+end
+
+--Musket Definitions
+function UpgradesTweakData:_bessy_definitions()
+	self.definitions.bessy = {
+		dlc = "pda10",
+		factory_id = "wpn_fps_spec_bessy",
+		weapon_id = "bessy",
+		category = "weapon"
+	}
+end
 
 --Temp Disabled
 --[[

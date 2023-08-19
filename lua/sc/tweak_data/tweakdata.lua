@@ -53,10 +53,10 @@ tweak_data.grenade_launcher = {
 
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
-	ads_moving_spread_mult = 2
+	ads_moving_spread_mult = 1.5
 }
 	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 2.5
+		hipfire_spread_mult = 2
 	}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -108,6 +108,7 @@ tweak_data.snp = {
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
 		hipfire_moving_spread_mult = 1.5,
+		ads_moving_spread_mult = 1.1,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 		tweak_data.s7 = {
@@ -132,6 +133,7 @@ tweak_data.assault_rifle = {
 	tweak_data.dmr = {
 		hipfire_spread_mult = 1.7391304,
 		hipfire_moving_spread_mult = 1.75,
+		ads_moving_spread_mult = 1.1,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 

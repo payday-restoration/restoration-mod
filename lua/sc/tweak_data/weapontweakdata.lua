@@ -3187,7 +3187,7 @@ function WeaponTweakData:_init_stats()
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
 	self.stat_info.shotgun_spread_increase = per_pellet and 1.8 or 3.5
-	self.stat_info.shotgun_spread_increase_ads = per_pellet and 3.8 or 1
+	self.stat_info.shotgun_spread_increase_ads = per_pellet and 3 or 1
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
@@ -3771,13 +3771,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		'asval','scar','contraband','fal','galil'
 	}
 	for i, wep_id in ipairs(ap_50) do
-		self[wep_id].armor_piercing_chance = 0.8
+		self[wep_id].armor_piercing_chance = 0.5
 		self[wep_id].has_description = true
 		self[wep_id].desc_id = "bm_ap_armor_50_weapon_sc_desc"
 	end
 
 	local ap_80 = {
-		'g3','new_m14','ching','shak12'
+		'g3','new_m14','ching','shak12','hcar'
 	}
 	for i, wep_id in ipairs(ap_80) do
 		self[wep_id].armor_piercing_chance = 0.8
@@ -9182,7 +9182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.stats = {
 					damage = 45,
 					spread = 80,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -9215,14 +9215,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.supported = true
 				self.scar.ads_speed = 0.380
 				self.scar.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2000,
 					end_dist = 5200,
 					min_mult = 0.53333
 				}
 				self.scar.stats = {
 					damage = 45,
 					spread = 86,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 21,
@@ -9256,14 +9256,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.supported = true
 				self.galil.ads_speed = 0.400
 				self.galil.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2200,
 					end_dist = 5400,
 					min_mult = 0.53333
 				}
 				self.galil.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -9298,14 +9298,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.supported = true
 				self.fal.ads_speed = 0.400
 				self.fal.damage_falloff = {
-					start_dist = 2700,
-					end_dist = 5800,
+					start_dist = 2500,
+					end_dist = 5600,
 					min_mult = 0.53333
 				}
 				self.fal.stats = {
 					damage = 45,
 					spread = 83,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -9335,14 +9335,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.supported = true
 				self.contraband.ads_speed = 0.420
 				self.contraband.damage_falloff = {
-					start_dist = 1900,
+					start_dist = 1800,
 					end_dist = 5000,
 					min_mult = 0.53333
 				}	
 				self.contraband.stats = {
 					damage = 45,
 					spread = 84,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 18,
@@ -9379,7 +9379,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband_m203.stats = {
 					damage = 36,
 					spread = 64,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 18,
@@ -9411,14 +9411,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.supported = true
 				self.shak12.ads_speed = 0.380
 				self.shak12.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 5200,
+					start_dist = 1100,
+					end_dist = 5000,
 					min_mult = 0.3
 				}
 				self.shak12.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -9452,13 +9452,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.ads_speed = 0.400
 				self.new_m14.damage_falloff = {
 					start_dist = 2200,
-					end_dist = 6600,
+					end_dist = 6300,
 					min_mult = 0.4
 				}
 				self.new_m14.stats = {
 					damage = 60,
 					spread = 90,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 19,
@@ -9498,14 +9498,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.supported = true
 				self.g3.ads_speed = 0.400
 				self.g3.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 7200,
+					start_dist = 2500,
+					end_dist = 7000,
 					min_mult = 0.4
 				}
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 55,
+					recoil = 53,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -9544,14 +9544,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.supported = true
 				self.ching.ads_speed = 0.320
 				self.ching.damage_falloff = {
-					start_dist = 3500,
+					start_dist = 3000,
 					end_dist = 8500,
 					min_mult = 0.5
 				}
 				self.ching.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 67,
+					recoil = 63,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -9585,14 +9585,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.supported = true
 				self.hcar.ads_speed = 0.420
 				self.hcar.damage_falloff = {
-					start_dist = 3600,
-					end_dist = 8500,
+					start_dist = 3200,
+					end_dist = 8000,
 					min_mult = 0.5
 				}
 				self.hcar.stats = {
 					damage = 60,
 					spread = 78,
-					recoil = 69,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 19,
@@ -14537,7 +14537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.stats = {
 			damage = 45,
 			spread = 71,
-			recoil = 73,
+			recoil = 71,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,
@@ -14580,7 +14580,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.supported = true
 		self.sks.ads_speed = 0.320
 		self.sks.damage_falloff = {
-			start_dist = 2500,
+			start_dist = 2000,
 			end_dist = 5200,
 			min_mult = 0.4
 		}
@@ -14599,6 +14599,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sks.stats_modifiers = nil
+		self.sks.armor_piercing_chance = 0.5
+		self.sks.can_shoot_through_enemy = true
 		self.sks.ignore_reload_objects_not_empty = true
 		self.sks.panic_suppression_chance = 0.05
 		self.sks.timers.reload_exit_not_empty = 0.6
@@ -14622,7 +14624,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.skspug.supported = true
 		self.skspug.ads_speed = 0.300
 		self.skspug.damage_falloff = {
-			start_dist = 2300,
+			start_dist = 1800,
 			end_dist = 5000,
 			min_mult = 0.4
 		}
@@ -14688,6 +14690,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vss.stats_modifiers = nil
 		self.vss.can_shoot_through_enemy = true
 		self.vss.can_shoot_through_wall = true
+		self.vss.armor_piercing_chance = 0.8
 		self.vss.panic_suppression_chance = 0.05
 		self.vss.sounds.fire = "val_fire"
 		self.vss.sounds.fire_single = "val_fire_single"
@@ -14722,8 +14725,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g3hk79.supported = true
 		self.g3hk79.ads_speed = 0.460
 		self.g3hk79.damage_falloff = {
-			start_dist = 2300,
-			end_dist = 7000,
+			start_dist = 2000,
+			end_dist = 6500,
 			min_mult = 0.4
 		}
 		self.g3hk79.stats = {
@@ -14742,6 +14745,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.g3hk79.stats_modifiers = nil
 		self.g3hk79.panic_suppression_chance = 0.05
+		self.g3hk79.armor_piercing_chance = 0.8
 		self.g3hk79.can_shoot_through_enemy = true
 		self.g3hk79.can_shoot_through_wall = true
 		self.g3hk79.timers.reload_exit_empty = 0.9
@@ -15724,6 +15728,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.owlfbullpup.stats_modifiers = nil
+			self.owlfbullpup.armor_piercing_chance = 0.5
 			self.owlfbullpup.panic_suppression_chance = 0.05
 			self.owlfbullpup.timers.reload_exit_empty = 0.55
 			self.owlfbullpup.timers.reload_exit_not_empty = 0.7
@@ -15747,14 +15752,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.supported = true
 			self.plasmaproto.ads_speed = 0.440
 			self.plasmaproto.damage_falloff = {
-				start_dist = 3700,
+				start_dist = 3600,
 				end_dist = 9000,
 				min_mult = 0.5
 			}	
 			self.plasmaproto.stats = {
 				damage = 60,
 				spread = 81,
-				recoil = 87,
+				recoil = 81,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 20,
@@ -16350,14 +16355,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.supported = true
 		self.mcx_spear.ads_speed = 0.420
 		self.mcx_spear.damage_falloff = {
-			start_dist = 2600,
+			start_dist = 2200,
 			end_dist = 6500,
 			min_mult = 0.53333
 		}	
 		self.mcx_spear.stats = {
 			damage = 45,
 			spread = 83,
-			recoil = 61,
+			recoil = 59,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 21,
@@ -16401,14 +16406,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.supported = true
 		self.ngsierra.ads_speed = 0.400
 		self.ngsierra.damage_falloff = {
-			start_dist = 2200,
+			start_dist = 2000,
 			end_dist = 5800,
 			min_mult = 0.53333
 		}	
 		self.ngsierra.stats = {
 			damage = 45,
 			spread = 85,
-			recoil = 68,
+			recoil = 65,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -16456,14 +16461,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vk78_commando.supported = true
 		self.vk78_commando.ads_speed = 0.320
 		self.vk78_commando.damage_falloff = {
-			start_dist = 3000,
+			start_dist = 2700,
 			end_dist = 7800,
 			min_mult = 0.4
 		}	
 		self.vk78_commando.stats = {
 			damage = 60,
 			spread = 81,
-			recoil = 81,
+			recoil = 75,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -16680,7 +16685,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.supported = true
 		self.xr2.ads_speed = 0.380
 		self.xr2.damage_falloff = {
-			start_dist = 3400,
+			start_dist = 3000,
 			end_dist = 6800,
 			min_mult = 0.53333
 		}
@@ -16915,14 +16920,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.supported = true
 		self.fg42.ads_speed = 0.420
 		self.fg42.damage_falloff = {
-			start_dist = 2200,
+			start_dist = 2000,
 			end_dist = 6800,
 			min_mult = 0.4
 		}
 		self.fg42.stats = {
 			damage = 60,
 			spread = 73,
-			recoil = 65,
+			recoil = 61,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,
@@ -17067,7 +17072,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.stats = {
 			damage = 60,
 			spread = 87,
-			recoil = 59,
+			recoil = 55,
 			zoom = 1,
 			concealment = 21,
 			suppression = 7,
@@ -17722,9 +17727,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.rays = not weap.keep_rays and 1 or weap.rays
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.ads_speed = weap.ads_speed - 0.08
-					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.05 ) * 100
-					--weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.1 ) * 100
+					weap.ads_speed = weap.ads_speed - 0.1
+					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
+					weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.1 ) * 100
 					if weap.recategorize and weap.damage_type == "shotgun_heavy" then	
 						if weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
@@ -17758,7 +17763,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							end
 							weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
 						end
-						weap.ene_hs_mult = 0.4
+						weap.ene_hs_mult = 0.5
 					end
 				end
 			end
@@ -17987,7 +17992,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			shotgun_break = per_pellet and 1.06 or 1, --Heavy
 			shotgun_super = per_pellet and 1.10 or 1,
 		--assault_rifle = 1, 
-			dmr = 0.97,
+			dmr = 0.9,
 			--snp = 1, 
 				semi_snp = 0.8,
 				amr = 0.95,

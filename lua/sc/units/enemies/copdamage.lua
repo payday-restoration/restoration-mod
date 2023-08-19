@@ -1660,8 +1660,7 @@ function CopDamage:damage_melee(attack_data)
 					end
 				end
 			end
-			
-			self:_check_melee_achievements(attack_data)
+
 
 		elseif managers.groupai:state():is_unit_team_AI(attack_data.attacker_unit) then
 			local special_comment = self:_check_special_death_conditions("melee", attack_data.col_ray.body, attack_data.attacker_unit, attack_data.name_id)
@@ -1670,6 +1669,9 @@ function CopDamage:damage_melee(attack_data)
 		end
 	end
 
+	if is_player then
+		self:_check_melee_achievements(attack_data)
+	end
 
 	local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:movement():m_pos().z, 0, 300)
 	local variant = nil

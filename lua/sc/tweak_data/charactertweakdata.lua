@@ -2309,27 +2309,29 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.min_obj_interrupt_dis = 600
 	table.insert(self._enemy_list, "tank")
 	
+	
+	--Blackdozers, Move faster than Greendozers
 	self.tank_black = deep_clone(self.tank)
+	self.tank_black.move_speed = presets.move_speed.normal
 	table.insert(self._enemy_list, "tank_black")
 	
+	
+	--Skulldozers, More tanky but moves as slow as Titandozers
 	self.tank_skull = deep_clone(self.tank)
 	self.tank_skull.dt_suppress = nil
+	self.tank_skull.HEALTH_INIT = 625
+	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
 	--Medic Dozer
 	self.tank_medic = deep_clone(self.tank)
-	if self:get_ai_group_type() == "russia" then
-		self.tank_medic.spawn_sound_event = "rbdz_entrance_elite"
-	elseif self:get_ai_group_type() == "federales" then
-		self.tank_medic.spawn_sound_event = "mbdz_entrance_elite"
-	else	
-		self.tank_medic.spawn_sound_event = "bdz_entrance_elite"
-	end
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.is_special = true
 	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
+	self.tank_medic.move_speed = presets.move_speed.normal
+	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
@@ -2383,6 +2385,7 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
 	self.tank_hw_black.headshot_dmg_mul = 5.5
+	self.tank_hw_black.move_speed = presets.move_speed.normal
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
@@ -2402,15 +2405,9 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.HEALTH_INIT = 625
 	self.tank_mini.headshot_dmg_mul = 15.625
-	if self:get_ai_group_type() == "russia" then
-		self.tank_mini.spawn_sound_event = "rbdz_entrance_elite"
-	elseif self:get_ai_group_type() == "federales" then
-		self.tank_mini.spawn_sound_event = "mbdz_entrance_elite"
-	else	
-		self.tank_mini.spawn_sound_event = "bdz_entrance_elite"
-	end
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	self.tank_mini.can_throw_frag = true
+	self.tank_mini.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_mini")	
 end
 
@@ -2806,6 +2803,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.ecm_vulnerability = nil	
 	self.phalanx_vip.die_sound_event = "mga_death_scream"
 	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
+	self.phalanx_vip.spawn_sound_event_2 = nil
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
@@ -17985,8 +17983,9 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self.autumn.damage.bullet_damage_mul = 0.4	
 	
+	--Skulldozers can now push back players
 	self.tank_skull.dt_suppress = {
-		range = 1800
+		range = 2200
 	}
 	
 	self.spring.dt_suppress = {

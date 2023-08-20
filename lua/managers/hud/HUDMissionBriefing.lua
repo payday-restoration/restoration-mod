@@ -748,14 +748,24 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		events = "guis/textures/restoration/mission_briefing/event",
 		shatter = "guis/textures/restoration/mission_briefing/shatter",
 		akashic = "guis/textures/pd2/mission_briefing/hector/contact",
-		jiufeng = "guis/textures/restoration/mission_briefing/jiufeng"
+		jiufeng = "guis/textures/restoration/mission_briefing/jiufeng",
+		mcshay = "guis/textures/restoration/mission_briefing/mcshay",
+		--Support for "Campaign Contract Sorting" mod (aka thanks OVK that you made random contractors and give them only 1 heist)
+		silkroad = "guis/textures/restoration/mission_briefing/locke",
+		cityofgold = "guis/textures/restoration/mission_briefing/jiufeng",
+		texasheat = "guis/textures/restoration/mission_briefing/mcshay",
+		--Holdout is exists, I guess
+		skirmish = "guis/textures/restoration/mission_briefing/locke"
     }
 	local image = "guis/textures/restoration/mission_briefing/classic"
 	if set_image[contact] then
             image = set_image[contact]
     end
     local set_pattern = {
-        classic = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
+        hector = "guis/textures/pd2/mission_briefing/hector/bd_pattern",
+		vlad = "guis/textures/pd2/mission_briefing/vlad/bd_pattern",
+		the_elephant = "guis/textures/pd2/mission_briefing/the_elephant/bd_pattern",
+		classic = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
         events = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
         hoxton = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
         jimmy = "guis/dlcs/berry/textures/pd2/mission_briefing/bd_pattern",
@@ -765,11 +775,15 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		the_continental = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
 		shatter = "guis/textures/restoration/mission_briefing/shatter_pattern",
 		akashic = "guis/textures/pd2/mission_briefing/hector/bd_pattern",
-		jiufeng = "guis/dlcs/chas/textures/pd2/mission_briefing/bd_pattern"	--Maybe someday they'll make this unique.
+		jiufeng = "guis/dlcs/chas/textures/pd2/mission_briefing/bd_pattern",	--Maybe someday they'll make this unique.
+		mcshay = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
+		skirmish = "guis/textures/restoration/mission_briefing/shatter_pattern"
     }
 	local pattern = "guis/textures/pd2/mission_briefing/".. contact .."/bd_pattern"
 	if set_pattern[contact] then
             pattern = set_pattern[contact]
+	else
+            pattern = "guis/textures/pd2/mission_briefing/bain/bd_pattern" -- Solve issue with missing pattern for custom heists
     end
 	if interupt then
 		image = "guis/textures/pd2/mission_briefing/interupt/contact"

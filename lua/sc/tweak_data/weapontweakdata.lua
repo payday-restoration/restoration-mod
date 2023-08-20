@@ -3234,8 +3234,8 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = per_pellet and 1.8 or 3.5
-	self.stat_info.shotgun_spread_increase_ads = per_pellet and 3 or 1
+	self.stat_info.shotgun_spread_increase = per_pellet and 1.75 or 3.5
+	self.stat_info.shotgun_spread_increase_ads = per_pellet and 2 or 1
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
@@ -17781,13 +17781,20 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
 					weap.ads_speed = weap.ads_speed - 0.1
-					weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
-					weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.1 ) * 100
-					if weap.recategorize and weap.damage_type == "shotgun_heavy" then	
-						if weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
+					if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
+						if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
+							table.insert(weap.categories, "shotgun_light")
+							weap.ene_hs_mult = 0.5
+						elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
+							weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
+							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.2 ) * 100
+							weap.ene_hs_mult = 0.65
 						elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
 							table.insert(weap.categories, "shotgun_break")
+							weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
+							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.2 ) * 100
+							weap.ene_hs_mult = 0.8
 						end
 					end
 					if weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
@@ -17816,7 +17823,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							end
 							weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
 						end
-						weap.ene_hs_mult = 0.5
 					end
 				end
 			end
@@ -18040,7 +18046,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			minigun = 0.55,
 		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
 			flamethrower = per_pellet and 0.7 / 1.33 or 1, --flamethrowers do not get the pickup bonus of per_pellet
-			shotgun_auto = per_pellet and 0.92 or 1, --Auto
+			shotgun_auto = per_pellet and 1.33 / (1.33 * 0.92) or 1, --Omni
+			shotgun_light = per_pellet and 0.92 or 1, --Auto
 			shotgun_heavy = per_pellet and 0.94 or 1, --Light
 			shotgun_break = per_pellet and 1.06 or 1, --Heavy
 			shotgun_super = per_pellet and 1.10 or 1,

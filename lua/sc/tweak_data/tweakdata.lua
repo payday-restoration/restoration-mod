@@ -55,8 +55,15 @@ tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
 	ads_moving_spread_mult = 1.5
 }
+	tweak_data.shotgun_light = {
+		hipfire_spread_mult = 1.2,
+		moving_spread_mult = 1.8
+	}
+	tweak_data.shotgun_heavy = {
+		hipfire_spread_mult = 0.8
+	}
 	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 2
+		hipfire_spread_mult = 1.2
 	}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -132,8 +139,7 @@ tweak_data.assault_rifle = {
 	}
 	tweak_data.dmr = {
 		hipfire_spread_mult = 1.7391304,
-		hipfire_moving_spread_mult = 1.75,
-		ads_moving_spread_mult = 1.1,
+		moving_spread_mult = 1.5,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
 	}
 

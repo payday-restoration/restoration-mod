@@ -3822,18 +3822,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		'asval','scar','contraband','fal','galil'
 	}
 	for i, wep_id in ipairs(ap_50) do
-		self[wep_id].armor_piercing_chance = 0.5
+		self[wep_id].armor_piercing_chance = 0.2
 		self[wep_id].has_description = true
-		self[wep_id].desc_id = "bm_ap_armor_50_weapon_sc_desc"
+		self[wep_id].desc_id = "bm_ap_armor_20_weapon_sc_desc"
 	end
 
 	local ap_80 = {
 		'g3','new_m14','ching','shak12','hcar'
 	}
 	for i, wep_id in ipairs(ap_80) do
-		self[wep_id].armor_piercing_chance = 0.8
+		self[wep_id].armor_piercing_chance = 0.5
 		self[wep_id].has_description = true
-		self[wep_id].desc_id = "bm_ap_armor_80_weapon_sc_desc"
+		self[wep_id].desc_id = "bm_ap_armor_50_weapon_sc_desc"
 	end
 
 	--Just fucking put this shit on everything
@@ -9245,7 +9245,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.asval.stats_modifiers = nil
-				self.asval.can_shoot_through_enemy = true
+				self.asval.can_shoot_through_enemy = false
 				self.asval.panic_suppression_chance = 0.05
 				self.asval.timers.reload_exit_empty = 0.65
 				self.asval.timers.reload_not_empty = 2.5
@@ -9286,7 +9286,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.scar.stats_modifiers = nil
 				self.scar.panic_suppression_chance = 0.05
-				self.scar.can_shoot_through_enemy = true
+				self.scar.can_shoot_through_enemy = false
 				self.scar.timers.reload_exit_empty = 0.7
 				self.scar.timers.reload_not_empty = 1.75
 				self.scar.timers.reload_exit_not_empty = 1.3
@@ -9327,7 +9327,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.galil.stats_modifiers = nil
 				self.galil.panic_suppression_chance = 0.05
-				self.galil.can_shoot_through_enemy = true
+				self.galil.can_shoot_through_enemy = false
 				self.galil.timers.reload_empty = 3.9
 				self.galil.timers.reload_exit_empty = 0.325
 				self.galil.timers.reload_not_empty = 2.7
@@ -9369,7 +9369,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fal.stats_modifiers = nil
 				self.fal.panic_suppression_chance = 0.05
-				self.fal.can_shoot_through_enemy = true
+				self.fal.can_shoot_through_enemy = false
 				self.fal.timers.reload_exit_empty = 0.75
 				self.fal.timers.reload_exit_not_empty = 0.75
 
@@ -9406,7 +9406,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.contraband.stats_modifiers = nil
 				self.contraband.panic_suppression_chance = 0.05
-				self.contraband.can_shoot_through_enemy = true
+				self.contraband.can_shoot_through_enemy = false
 				self.contraband.timers.reload_exit_empty = 0.725
 				self.contraband.timers.reload_exit_not_empty = 0.8
 				self.contraband_m203.upgrade_blocks = {
@@ -9483,7 +9483,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.stats_modifiers = nil
 				self.shak12.reload_speed_multiplier = 0.85
 				self.shak12.can_shoot_through_enemy = true
-				self.shak12.can_shoot_through_wall = true
+				self.shak12.can_shoot_through_wall = false
 				self.shak12.panic_suppression_chance = 0.05	
 				self.shak12.timers.reload_empty = 2.75
 				self.shak12.timers.reload_exit_empty = 0.65
@@ -9522,7 +9522,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.new_m14.stats_modifiers = nil
 				self.new_m14.can_shoot_through_enemy = true
-				self.new_m14.can_shoot_through_wall = true
+				self.new_m14.can_shoot_through_wall = false
 				self.new_m14.timers.reload_not_empty = 2.60
 				self.new_m14.timers.reload_exit_not_empty = 1.1
 				self.new_m14.timers.reload_empty = 3.15
@@ -9570,7 +9570,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats_modifiers = nil
 				self.g3.panic_suppression_chance = 0.05
 				self.g3.can_shoot_through_enemy = true
-				self.g3.can_shoot_through_wall = true
+				self.g3.can_shoot_through_wall = false
 				self.g3.timers.reload_not_empty = 2.5
 				self.g3.timers.reload_empty = 3.8
 				self.g3.timers.reload_exit_empty = 0.9
@@ -9616,7 +9616,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.stats_modifiers = nil	
 				self.ching.can_shoot_through_enemy = true
 				self.ching.can_shoot_through_enemy_unlim = true
-				self.ching.can_shoot_through_wall = true
+				self.ching.can_shoot_through_wall = false
 				self.ching.panic_suppression_chance = 0.05
 				self.ching.timers.reload_exit_empty = 0.85
 				self.ching.timers.reload_not_empty = 2.2
@@ -9656,8 +9656,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hcar.stats_modifiers = nil
 				self.hcar.panic_suppression_chance = 0.05
-				self.hcar.armor_piercing_chance = 0.8
-				self.hcar.can_shoot_through_wall = true
+				self.hcar.can_shoot_through_wall = false
 				self.hcar.can_shoot_through_enemy = true
 				self.hcar.timers.reload_exit_empty = 0.8
 				self.hcar.timers.reload_exit_not_empty = 0.7
@@ -14600,8 +14599,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xeno.stats_modifiers = nil
-		self.xeno.armor_piercing_chance = 0.5
-		self.xeno.can_shoot_through_enemy = true
+		self.xeno.armor_piercing_chance = 0.2
+		self.xeno.can_shoot_through_enemy = false
 		self.xeno.panic_suppression_chance = 0.05
 		self.xeno.timers.reload_exit_not_empty = 1.2
 		self.xeno.timers.reload_exit_empty = 1.2
@@ -14650,8 +14649,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sks.stats_modifiers = nil
-		self.sks.armor_piercing_chance = 0.5
-		self.sks.can_shoot_through_enemy = true
+		self.sks.armor_piercing_chance = 0.2
+		self.sks.can_shoot_through_enemy = false
 		self.sks.ignore_reload_objects_not_empty = true
 		self.sks.panic_suppression_chance = 0.05
 		self.sks.timers.reload_exit_not_empty = 0.6
@@ -14694,7 +14693,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.skspug.stats_modifiers = nil
-		self.skspug.can_shoot_through_enemy = true
+		self.skspug.armor_piercing_chance = 0.2
+		self.skspug.can_shoot_through_enemy = false
 		self.skspug.panic_suppression_chance = 0.05
 		self.skspug.timers = deep_clone(self.basset.timers)
 	end
@@ -14740,8 +14740,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.vss.stats_modifiers = nil
 		self.vss.can_shoot_through_enemy = true
-		self.vss.can_shoot_through_wall = true
-		self.vss.armor_piercing_chance = 0.8
+		self.vss.can_shoot_through_wall = false
+		self.vss.armor_piercing_chance = 0.5
 		self.vss.panic_suppression_chance = 0.05
 		self.vss.sounds.fire = "val_fire"
 		self.vss.sounds.fire_single = "val_fire_single"
@@ -14796,9 +14796,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.g3hk79.stats_modifiers = nil
 		self.g3hk79.panic_suppression_chance = 0.05
-		self.g3hk79.armor_piercing_chance = 0.8
+		self.g3hk79.armor_piercing_chance = 0.5
 		self.g3hk79.can_shoot_through_enemy = true
-		self.g3hk79.can_shoot_through_wall = true
+		self.g3hk79.can_shoot_through_wall = false
 		self.g3hk79.timers.reload_exit_empty = 0.9
 		self.g3hk79.timers.reload_exit_not_empty = 1
 		self.g3hk79.reload_speed_multiplier = 1
@@ -15779,7 +15779,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.owlfbullpup.stats_modifiers = nil
-			self.owlfbullpup.armor_piercing_chance = 0.5
+			self.owlfbullpup.armor_piercing_chance = 0.2
 			self.owlfbullpup.panic_suppression_chance = 0.05
 			self.owlfbullpup.timers.reload_exit_empty = 0.55
 			self.owlfbullpup.timers.reload_exit_not_empty = 0.7
@@ -15823,7 +15823,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.plasmaproto.stats_modifiers = nil
 			self.plasmaproto.panic_suppression_chance = 0.05
-			self.plasmaproto.armor_piercing_chance = 0.8
+			self.plasmaproto.armor_piercing_chance = 0.5
+			self.plasmaproto.can_shoot_through_enemy = true
 			self.plasmaproto.timers.reload_exit_empty = 0.9
 			self.plasmaproto.timers.reload_exit_not_empty = 0.65
 		end
@@ -16430,7 +16431,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.can_shoot_through_wall = false
 		self.mcx_spear.can_shoot_through_shield = false
 		self.mcx_spear.hs_mult = 1.33333
-		self.mcx_spear.armor_piercing_chance = 0.8
+		self.mcx_spear.armor_piercing_chance = 0.5
 		self.mcx_spear.timers.reload_empty = 3.1
 		self.mcx_spear.timers.reload_exit_empty = 0.9
 		self.mcx_spear.timers.reload_not_empty = 2.2
@@ -16486,7 +16487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.can_shoot_through_shield = false
 		self.ngsierra.is_bullpup = true
 		self.ngsierra.hs_mult = 1.33333
-		self.ngsierra.armor_piercing_chance = 0.8
+		self.ngsierra.armor_piercing_chance = 0.5
 		self.ngsierra.timers.reload_empty = 3.25
 		self.ngsierra.timers.reload_exit_empty = 1.1
 		self.ngsierra.timers.reload_not_empty = 2.35
@@ -16535,7 +16536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vk78_commando.can_shoot_through_enemy = true
 		self.vk78_commando.can_shoot_through_wall = false
 		self.vk78_commando.can_shoot_through_shield = false
-		self.vk78_commando.armor_piercing_chance = 0.8
+		self.vk78_commando.armor_piercing_chance = 0.5
 		self.vk78_commando.timers.reload_exit_empty = 0.9
 		self.vk78_commando.timers.reload_empty = 2.7
 		self.vk78_commando.timers.reload_exit_not_empty = 0.9
@@ -16755,8 +16756,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xr2.stats_modifiers = nil
-		self.xr2.armor_piercing_chance = 0.5
-		self.xr2.can_shoot_through_enemy = true
+		self.xr2.armor_piercing_chance = 0.2
+		self.xr2.can_shoot_through_enemy = false
 		self.xr2.panic_suppression_chance = 0.05
 		self.xr2.timers.reload_exit_empty = 0.6
 		self.xr2.timers.reload_not_empty = 0.8
@@ -16992,8 +16993,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.stats_modifiers = nil
 		self.fg42.panic_suppression_chance = 0.05
 		self.fg42.can_shoot_through_enemy = true
-		self.fg42.can_shoot_through_wall = true
-		self.fg42.armor_piercing_chance = 0.8
+		self.fg42.can_shoot_through_wall = false
+		self.fg42.armor_piercing_chance = 0.5
 		self.fg42.timers.reload_not_empty = 2.4
 		self.fg42.timers.reload_exit_not_empty = 0.6
 		self.fg42.timers.reload_empty = 3.5
@@ -17112,7 +17113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
 		self.sierra458.can_shoot_through_enemy = true
 		self.sierra458.can_shoot_through_shield = false
-		self.sierra458.can_shoot_through_wall = true
+		self.sierra458.can_shoot_through_wall = false
 		self.sierra458.supported = true
 		self.sierra458.ads_speed = 0.360
 		self.sierra458.damage_falloff = {
@@ -17133,7 +17134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.sierra458.armor_piercing_chance = 0.8
+		self.sierra458.armor_piercing_chance = 0.5
 		self.sierra458.stats_modifiers = nil
 		self.sierra458.panic_suppression_chance = 0.05
 		self.sierra458.sounds.fire = "sierra458_fire"
@@ -18037,7 +18038,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 				mmg = 0.95,
 			minigun = 0.55,
 		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
-			flamethrower = per_pellet and 0.7 / 1.3 or 1, --flamethrowers do not get the pickup bonus of per_pellet
+			flamethrower = per_pellet and 0.7 / 1.33 or 1, --flamethrowers do not get the pickup bonus of per_pellet
 			shotgun_auto = per_pellet and 0.92 or 1, --Auto
 			shotgun_heavy = per_pellet and 0.94 or 1, --Light
 			shotgun_break = per_pellet and 1.06 or 1, --Heavy
@@ -18046,7 +18047,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			dmr = 0.9,
 			--snp = 1, 
 				semi_snp = 0.8,
-				amr = 0.95,
+				amr = 0.96,
 		saw = 1.25, --Compensate for jankiness.
 		bow = 0.6, --Compensate for picking arrows back up.
 		crossbow = 0.6,

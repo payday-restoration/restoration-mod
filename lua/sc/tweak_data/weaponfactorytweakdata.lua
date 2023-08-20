@@ -10832,7 +10832,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 		overheat_pen = 2, 
 		regen_rate_overheat = 1.5,
 		rof_mult = 0.35,
-		armor_piercing_override = 0.8
+		armor_piercing_override = 0.5
 
 	}
 	self.parts.wpn_fps_pis_c96_nozzle.forbids = {"wpn_fps_pis_c96_m_extended"}
@@ -10939,7 +10939,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		rof_mult = 0.7272727,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25,
-		armor_piercing_override = 0.5
+		armor_piercing_override = 0.2
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.sub_type = nil
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = nil --{"silencer"}
@@ -18667,6 +18667,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = {
 		armor_piercing_override = 1,
+		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
 		ignore_rof_mult_anims = true,
 		rof_mult = 0.666666,
@@ -30594,6 +30595,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_sierra458_ap_switch.no_cull = true
 		self.parts.wpn_fps_snp_sierra458_ap_switch.custom_stats = {
 			armor_piercing_override = 1,
+			can_shoot_through_wall = true,
 			can_shoot_through_shield = true
 		}
 

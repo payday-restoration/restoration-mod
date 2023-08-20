@@ -2259,7 +2259,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",
 
 				--Galant
-				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 50% of its damage through body armor and can pierce enemies.##",
 				--M308
 				["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 				--G3
@@ -2271,7 +2271,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 				["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 				--HCAR
-				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				--Custom DMRs
 					--MCX Spear
 					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",

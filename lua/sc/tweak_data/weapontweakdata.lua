@@ -3822,7 +3822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		'asval','scar','contraband','fal','galil'
 	}
 	for i, wep_id in ipairs(ap_50) do
-		self[wep_id].armor_piercing_chance = 0.2
+		self[wep_id].armor_piercing_chance = 0.25
 		self[wep_id].has_description = true
 		self[wep_id].desc_id = "bm_ap_armor_20_weapon_sc_desc"
 	end
@@ -4790,7 +4790,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.can_shoot_through_enemy = false
 				self.lemming.can_shoot_through_shield = false
 				self.lemming.can_shoot_through_wall = false
-				self.lemming.armor_piercing_chance = 0.8
+				self.lemming.armor_piercing_chance = 0.75
 				self.lemming.hs_mult = 1.666666
 				self.lemming.supported = true
 				self.lemming.ads_speed = 0.140
@@ -6455,7 +6455,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_p90.desc_id = "bm_p90_sc_desc"	
 				self.x_p90.AMMO_MAX = 150
 				self.x_p90.fire_mode_data.fire_rate = 0.070588235
-				self.x_p90.armor_piercing_chance = 0.8
+				self.x_p90.armor_piercing_chance = 0.75
 				self.x_p90.can_shoot_through_enemy = false
 				self.x_p90.can_shoot_through_shield = false
 				self.x_p90.can_shoot_through_wall = false
@@ -6670,7 +6670,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.x_sr2.stats_modifiers = nil
-				self.x_sr2.armor_piercing_chance = 0.8
+				self.x_sr2.armor_piercing_chance = 0.75
 				self.x_sr2.can_shoot_through_enemy = false
 				self.x_sr2.can_shoot_through_shield = false
 				self.x_sr2.can_shoot_through_wall = false
@@ -6879,7 +6879,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.can_shoot_through_shield = false
 				self.mp7.can_shoot_through_wall = false
 				self.mp7.hs_mult = 1.666666
-				self.mp7.armor_piercing_chance = 0.8
+				self.mp7.armor_piercing_chance = 0.75
 				self.mp7.kick = self.stat_info.kick_tables.even_recoil
 				self.mp7.supported = true
 				self.mp7.ads_speed = 0.200
@@ -6918,7 +6918,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.desc_id = "bm_p90_sc_desc"	
 				self.p90.AMMO_MAX = 75
 				self.p90.fire_mode_data.fire_rate = 0.070588235
-				self.p90.armor_piercing_chance = 0.8
+				self.p90.armor_piercing_chance = 0.75
 				self.p90.can_shoot_through_enemy = false
 				self.p90.can_shoot_through_shield = false
 				self.p90.can_shoot_through_wall = false
@@ -7129,7 +7129,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 1,
 					reload = 20
 				}
-				self.sr2.armor_piercing_chance = 0.8
+				self.sr2.armor_piercing_chance = 0.75
 				self.sr2.can_shoot_through_enemy = false
 				self.sr2.can_shoot_through_shield = false
 				self.sr2.can_shoot_through_wall = false
@@ -9658,6 +9658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.panic_suppression_chance = 0.05
 				self.hcar.can_shoot_through_wall = false
 				self.hcar.can_shoot_through_enemy = true
+				self.hcar.can_shoot_through_enemy_unlim = true
 				self.hcar.timers.reload_exit_empty = 0.8
 				self.hcar.timers.reload_exit_not_empty = 0.7
 
@@ -14599,7 +14600,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xeno.stats_modifiers = nil
-		self.xeno.armor_piercing_chance = 0.2
+		self.xeno.armor_piercing_chance = 0.25
 		self.xeno.can_shoot_through_enemy = false
 		self.xeno.panic_suppression_chance = 0.05
 		self.xeno.timers.reload_exit_not_empty = 1.2
@@ -14649,7 +14650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sks.stats_modifiers = nil
-		self.sks.armor_piercing_chance = 0.2
+		self.sks.armor_piercing_chance = 0.25
 		self.sks.can_shoot_through_enemy = false
 		self.sks.ignore_reload_objects_not_empty = true
 		self.sks.panic_suppression_chance = 0.05
@@ -14693,7 +14694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.skspug.stats_modifiers = nil
-		self.skspug.armor_piercing_chance = 0.2
+		self.skspug.armor_piercing_chance = 0.25
 		self.skspug.can_shoot_through_enemy = false
 		self.skspug.panic_suppression_chance = 0.05
 		self.skspug.timers = deep_clone(self.basset.timers)
@@ -15728,7 +15729,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cssdeagle.stats_modifiers = nil
 		self.cssdeagle.no_ads = true
 		self.cssdeagle.lock_slide = true
-		self.cssdeagle.armor_piercing_chance = 0.8
+		self.cssdeagle.armor_piercing_chance = 0.75
 		self.cssdeagle.swap_speed_multiplier = 0.4
 		self.cssdeagle.can_shoot_through_enemy = true
 		self.cssdeagle.can_shoot_through_enemy_unlim = true
@@ -15779,7 +15780,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.owlfbullpup.stats_modifiers = nil
-			self.owlfbullpup.armor_piercing_chance = 0.2
+			self.owlfbullpup.armor_piercing_chance = 0.25
 			self.owlfbullpup.panic_suppression_chance = 0.05
 			self.owlfbullpup.timers.reload_exit_empty = 0.55
 			self.owlfbullpup.timers.reload_exit_not_empty = 0.7
@@ -16108,7 +16109,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.alpha57_prim.supported = true
 		self.alpha57_prim.ads_speed = 0.260
 		self.alpha57_prim.hs_mult = 1.666666
-		self.alpha57_prim.armor_piercing_chance = 0.8
+		self.alpha57_prim.armor_piercing_chance = 0.75
 		self.alpha57_prim.can_shoot_through_enemy = false
 		self.alpha57_prim.can_shoot_through_shield = false
 		self.alpha57_prim.can_shoot_through_wall = false
@@ -16756,7 +16757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.xr2.stats_modifiers = nil
-		self.xr2.armor_piercing_chance = 0.2
+		self.xr2.armor_piercing_chance = 0.25
 		self.xr2.can_shoot_through_enemy = false
 		self.xr2.panic_suppression_chance = 0.05
 		self.xr2.timers.reload_exit_empty = 0.6

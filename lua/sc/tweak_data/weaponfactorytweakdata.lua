@@ -1405,7 +1405,7 @@ local grips = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 					rays = 1,
 					hip_mult = 2,
-					armor_piercing_add = 0.8,
+					armor_piercing_add = 0.75,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					can_shoot_through_enemy = true,
@@ -1436,7 +1436,7 @@ local grips = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 					rays = 1,
 					hip_mult = 2,
-					armor_piercing_add = 0.8,
+					armor_piercing_add = 0.75,
 					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
 					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					can_shoot_through_enemy = true,
@@ -10696,7 +10696,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		overheat_pen = 4, 
 		regen_rate_overheat = 4.5, 
 		rof_mult = 0.52083,
-		armor_piercing_override = 0.2,
+		armor_piercing_override = 0.25,
 		falloff_start_mult = 0.8,
 		falloff_end_mult = 0.8,
 		ads_speed_mult = 0.9
@@ -10939,7 +10939,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		rof_mult = 0.7272727,
 		falloff_start_mult = 1.25,
 		falloff_end_mult = 1.25,
-		armor_piercing_override = 0.2
+		armor_piercing_override = 0.25
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.sub_type = nil
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = nil --{"silencer"}

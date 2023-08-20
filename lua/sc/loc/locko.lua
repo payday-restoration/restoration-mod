@@ -1718,22 +1718,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_ar18"] = "CAR-18 소총",		
 
 		--Galant--
-		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 #{skill_color}#탄창이 비었을때 빠르게 재장전합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",				
+		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 #{skill_color}#탄창이 비었을때 빠르게 재장전합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",				
 		--M308
-		["bm_m14_sc_desc"] = "빠르게 발사하고 정확하며 반동만 신경 쓰시면 됩니다, 특히 완전 사격으로 했을때 말이죠.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",	
+		["bm_m14_sc_desc"] = "빠르게 발사하고 정확하며 반동만 신경 쓰시면 됩니다, 특히 완전 사격으로 했을때 말이죠.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",	
 		--FAL
-		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 갑옷을 입은 비겁한 놈들을 제압 할 때 당신이 의지할 수 있는 소총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
+		["bm_fal_sc_desc"] = "자유 진영의 오른팔. 단단한 갑옷을 입은 비겁한 놈들을 제압 할 때 당신이 의지할 수 있는 소총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가합니다.##",
 		--SCAR
-		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}##방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
+		["bm_scar_sc_desc"] = "미래형 전투 소총. 핸들링과 탄도 피해량의 균형이 잘 잡혀 미국 해병대와 특수부대 사이에서 인기를 얻고 있습니다.\n\n#{skill_color}##방탄복을 관통해 피해의 20%를 가합니다.##",
 		["bm_scarl_sc_desc"] = "미래형 보병 소총... 아니면 아닐지도요. 민간 시장에서는 인기가 있었지만 군사는 또 다른 5.56 소총이 거의 필요하지 않았습니다.",		
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
-		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",
+		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
 		
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",	
-		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있고## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
-		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가하고## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+		["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가하고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 		--VMP
 		["bm_m203_vmp_sc_desc_pc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 		["bm_m203_vmp_sc_desc"] = "스카페이스의 개인용 AMR-16 \"리틀 프렌드\"의 복제품입니다.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
@@ -1742,24 +1742,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--ASS VAL
 		--["bm_w_asval"] = "Valkyria",		
-		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#완전 통합## 소음기가 장착되었고 #{skill_color}#방탄복을 관통해 피해의 50%를 가합니다.##",
+		["bm_asval_sc_desc"] = "이 작은 소총의 총알은 원거리 총싸움에 도움이 될 수 있지만 다른 사람들도 이 소총을 사용할 것입니다.\n\n#{skill_color}#완전 통합## 소음기가 장착되었고 #{skill_color}#방탄복을 관통해 피해의 20%를 가합니다.##",
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 소총",
-		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가합니다.##",
+		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가합니다.##",
 		--KS12
-		["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가합니다.##",
+		["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
 		["bm_shak12_sc_oden_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
 		--ShAK-12
 		["bm_wp_shak12_body_vks"] = "\"비샤\" 개머리판",		
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",
 		--HCAR
 		["bm_w_hcar"] = "Akron HC 소총",
-		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",		
+		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",		
 		
 		--Custom DMRs
 		--MCX Spear
 		["bm_w_mcx_spear"] = "Signature M5 소총",
-		["bm_mcx_spear_sc_desc"] = "#{skill_color}#방탄복을 관통해 대미지의 80%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",
+		["bm_mcx_spear_sc_desc"] = "#{skill_color}#방탄복을 관통해 대미지의 50%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",
 		["bm_w_ngsierra"] = "Amicus 277 소총",
 		["bm_ngsierra_sc_desc"] = "이 소총은 6.8x51mm TCVM 플라스틱 카트리지를 제어하기 위해 고유한 반동 완화 시스템을 사용합니다.\n\n#{skill_color}#방탄복을 관통해 대미지의 80%를 입히고 적 여러 명을 관통할 수 있으며 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",		
 		--["bm_w_xeno"] = "MA14 Surge 소총",	
@@ -1767,23 +1767,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_xeno_sc_desc"] = "\"Armat\"에서 이 이상한 우주 시대적 기술로 제작된 소총. #{skill_color}#통합 유탄 발사기가 장착되어 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 		--VSS
 		["bm_w_vss"] = "Viktoriya 소총",
-		["bm_vss_sc_desc"] = "더 개선된 사거리와 명중률로 구성된 Valkyria 소총의 개량형입니다.\n\n#{skill_color}##완전 통합## 소음기와 함께 제공되고 #{skill_color}#방탄복을 관통해 피해의 80%를 가하고, 적 여러 명을 관통할 수 있습니다.##",		
+		["bm_vss_sc_desc"] = "더 개선된 사거리와 명중률로 구성된 Valkyria 소총의 개량형입니다.\n\n#{skill_color}##완전 통합## 소음기와 함께 제공되고 #{skill_color}#방탄복을 관통해 피해의 50%를 가하고, 여러 적을 관통할 수 있습니다.##",		
 		--G3 HK79
 		["bm_w_g3hk79"] = "Gewehr-A3 GL79 소총",
-		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고 적과 얇은 벽을 관통할 수 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
+		["bm_g3hk79_sc_desc_pc"] = "Gewehr-3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 여러 적을 관통할 수 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",	
 		--BO3 XR2
 		["bm_w_xr2"] = "XR-2 소총",
-		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가합니다.##",
+		["bm_xr2_sc_desc"] = "XR-2 소총은 가장 역동적인 전투 시나리오를 위해 설계된 다목적 소총이며 #{skill_color}#점사 발사 모드에서 발사 속도를 증가시키는## 독특한 #{risk}#3점사 자동 발사##가 특징입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가합니다.##",
 		["bm_wp_xr2_handle_01_sc"] = "완전 자동 사격 노리쇠",
 		["bm_xr2_handle_01_sc_desc"] = "#{skill_color}#자동 점사를 완전 자동 사격##으로 바꾸는 대신 #{important_1}#점사 발사 속도 증가가 없어집니다.##",
 		["bm_wp_xr2_handle_02_sc"] = "속사 사격 노리쇠",
 		["bm_xr2_handle_02_sc_desc"] = "#{important_1}#점사 중 반동 완화를 대가로## 점사 발사 속도를 #{skill_color}#950##으로 증가시킵니다.\n\n점사 지연과 반자동 발사 속도에는 영향을 받지 않습니다.",
 			--SIERRA .458
 			["bm_w_sierra458"] = "Sierra .458",
-			["bm_w_sierra458_sc_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.##",
+			["bm_w_sierra458_sc_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고, 여러 적을 관통할 수 있습니다.##",
 			["bm_w_sierra458_beo_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",
 			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = ".458 SOCOM 탄을 #{stats_positive}#독이 발라진 .450 부쉬마스터##탄으로 바꾸어 #{stats_positive}#4초 동안 초당 30의 피해를 입히고 적을 스턴시킬 수 있습니다.##\n\n#{important_1}#이 개조품을 사용하면 여러 적을 관통할 수 없습니다.##",
-			["bm_w_sierra458_ivy_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.## 그리고 #{stats_positive}#시간이 지남에 따라 피해를 입히는 독 탄을 발사합니다.##",		
+			["bm_w_sierra458_ivy_desc"] = "갱단의 무기 제작자인 체인스는 Tecci 전술 소총에 대한 대안으로 강력하면서도 높은 발사 속도를 가진 총기를 개발했습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 입히고, 적과 얇은 벽을 관통할 수 있습니다.## 그리고 #{stats_positive}#시간이 지남에 따라 피해를 입히는 독 탄을 발사합니다.##",		
 		
 
 
@@ -3485,8 +3485,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--[[DMRs]]
 						--417
 						["bm_w_contraband"] = "M203 유탄발사기를 단 H&K HK417",
-						["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 \"리틀 프렌드\" M16-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있고## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
-						["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 \"리틀 프렌드\" M16-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있고## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
+						["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 \"리틀 프렌드\" M16-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가하고 어러 적을 관통할 수 있으며## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
+						["bm_m203_weapon_sc_desc"] = "스카페이스의 개인용 \"리틀 프렌드\" M16-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 20%를 가하고 어러 적을 관통할 수 있으며## #{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
 						--VMP
 						["bm_m203_vmp_sc_desc_pc"] = "스카페이스의 개인 \"리틀 프렌드\" M16의 복제품.\n\n#{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
 						["bm_m203_vmp_sc_desc"] = "스카페이스의 개인 \"리틀 프렌드\" M16의 복제품.\n\n#{skill_color}#$BTN_BIPOD## 키를 길게 누르면 장착된 유탄 발사기로 전환됩니다.",
@@ -3524,7 +3524,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						--Raifu
 						["bm_w_g3"] = "H&K G3A3",
-						["bm_g3_sc_desc"] = "MP5 및 HK21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 80%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",
+						["bm_g3_sc_desc"] = "MP5 및 HK21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",
 						["bm_wp_g3_b_short"] = "단축 총열",
 						["bm_wp_g3_b_sniper"] = "PSG-1 총열",
 						["bm_wp_g3_fg_psg"] = "PSG-1 총열덮개",
@@ -3548,7 +3548,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_ching_fg_railed"] = "아메가 미니 스카웃 마운트",
 					--Custom DMRs
 						--G3 HK79
-						["bm_g3hk79_sc_desc_pc"] = "G3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형이고 #{skill_color}#방탄복을 관통해 피해의 80%를 입히고 적과 얇은 벽을 관통할 수 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",						
+						["bm_g3hk79_sc_desc_pc"] = "G3의 파생형 중 #{skill_color}#언더베럴 유탄 발사기##가 장착된 파생형이고 #{skill_color}#방탄복을 관통해 피해의 50%를 입히고 적과 얇은 벽을 관통할 수 있습니다.##\n\n#{skill_color}#$BTN_BIPOD## 키를 눌러 유탄 발사기로 전환합니다.",						
 
 					--[[SNIPERS]]
 						--Titty

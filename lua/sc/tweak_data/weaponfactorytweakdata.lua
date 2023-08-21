@@ -2085,7 +2085,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_contender = {
 			translation = Vector3(0, -2, -3.35)
 		}
-	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_spec_bessy = {
+			translation = Vector3(0.05, -19, -3.795),
+			rotation = Rotation(0, 0, 0.01)
+		}
+
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m95 = {
 			translation = Vector3(0, 9.4, -3.82)
 		}
@@ -14039,6 +14043,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 			translation = Vector3(-0.07, 2, 2),
 			rotation = Rotation(0, 1.2, 0)
 		},
+		wpn_fps_spec_bessy = {
+			translation = Vector3(0.05, -2, -3.35),
+			rotation = Rotation(0, 0, 0.01)
+		}
 
 		wpn_fps_snp_musket = {
 			translation = Vector3(0, -6, -3.9)
@@ -21616,8 +21624,7 @@ function WeaponFactoryTweakData:_init_bessy()
 		},
 		stance_mod = {
 			wpn_fps_spec_bessy = {
-				translation = Vector3(0, 2.5, -2),
-				rotation = Rotation(0,0.7,0)
+				translation = Vector3(0, 2.5, -0.5)
 			}
 		}		
 	}
@@ -34669,6 +34676,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 					}
 				end
 			end
+		end
+
+		if self.wpn_fps_spec_bessy then
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_snp_model70_iron_sight")	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_specter")	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_aimpoint")	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_docter")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_eotech")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_t1micro")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_rx30")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_rx01")	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_reflex")	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_eotech_xps")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_cmore")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_acog")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_cs")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_spot")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_bmg")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_uh")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_fc1")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_tf90")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_poe")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_health")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_hamr")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_o_atibal")
+	
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_peqbox")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_smg_sho_surefire")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_utg")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_peq15")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_laser")
+			table.insert(self.wpn_fps_spec_bessy.uses_parts, "wpn_fps_upg_fl_ass_laser")
+
+			self.wpn_fps_spec_bessy.adds = self.wpn_fps_spec_bessy.adds or {}
+			for k, used_part_id in ipairs(self.wpn_fps_spec_bessy.uses_parts) do
+				if used_part_id ~= "2" and self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "sight" then
+						self.wpn_fps_spec_bessy.adds[used_part_id] = {"wpn_fps_smg_sterling_o_adapter"}
+					end
+				end
+			end
+			self.wpn_fps_spec_bessy.adds.wpn_fps_snp_model70_iron_sight = {
+				"wpn_fps_smg_sterling_o_adapter",
+				"wpn_fps_gre_arbiter_o_standard"
+			}
+
+			self.wpn_fps_spec_bessy.override = self.wpn_fps_spec_bessy.override or {}
+			self.wpn_fps_spec_bessy.override.wpn_fps_addon_ris = {
+				unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fl_adapter",
+				third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_fl_adapter"
+			}
+
+
+			self.wpn_fps_spec_bessy_npc.adds = deep_clone(self.wpn_fps_spec_bessy.adds)
+			self.wpn_fps_spec_bessy_npc.override = deep_clone(self.wpn_fps_spec_bessy.override)
+			self.wpn_fps_spec_bessy_npc.uses_parts = deep_clone(self.wpn_fps_spec_bessy.uses_parts)
 		end
 	else
 		if not self.wpn_fps_lmg_hk21.override then

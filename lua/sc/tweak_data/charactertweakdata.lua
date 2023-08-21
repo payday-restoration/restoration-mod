@@ -2320,6 +2320,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull = deep_clone(self.tank)
 	self.tank_skull.dt_suppress = nil
 	self.tank_skull.HEALTH_INIT = 625
+	self.tank_skull.marshal_logic = true
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
@@ -17826,6 +17827,11 @@ function CharacterTweakData:_set_overkill_290()
 	self.spring.dt_suppress = {
 		range = 2500
 	}
+	
+	--Skulldozers can now push back players
+	self.tank_skull.dt_suppress = {
+		range = 1200
+	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 175
@@ -17981,9 +17987,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
-	self.autumn.damage.bullet_damage_mul = 0.4	
+	self.autumn.damage.bullet_damage_mul = 0.4
 	
-	--Skulldozers can now push back players
 	self.tank_skull.dt_suppress = {
 		range = 2200
 	}

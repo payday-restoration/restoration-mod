@@ -4498,7 +4498,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Pigeon Shooter",
-				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.\n\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy and deals #{skill_color}#25%## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#shotgun(s)## may already have, to a maximum of #{skill_color}#100%.##",
+				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy and deals #{skill_color}#25%## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#shotgun(s)## may already have, to a maximum of #{skill_color}#100%.##\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -4669,7 +4669,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Evasion",
-				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#5%## movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nRun and reload - you can reload your weapons while sprinting.\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
+				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#5%## movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nYou move #{skill_color}#50%## faster while aiming down sights.\n\nYou can reload your weapons while sprinting.\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",

@@ -1391,7 +1391,6 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_steelsight_move_speed_multiplier",
 						"player_run_and_reload"
 					},
 					cost = self.costs.pro
@@ -1429,6 +1428,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 4},
 				[1] = {
 					upgrades = {
+						"player_steelsight_move_speed_multiplier",
                    		"player_detection_risk_add_movement_speed_1"
 					},
 					cost = self.costs.hightier

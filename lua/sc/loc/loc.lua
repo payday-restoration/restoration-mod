@@ -4669,7 +4669,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Evasion",
-				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#5%## movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nYou move #{skill_color}#50%## faster while aiming down sights.\n\nYou can reload your weapons while sprinting.\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
+				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#5%## movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nYou can reload your weapons while sprinting.\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",
@@ -4677,7 +4677,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#3## points of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#3## points of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",

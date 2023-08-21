@@ -512,9 +512,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"shotgun_reload_speed_multiplier_1",
-						"shotgun_can_shoot_through_enemy",
-						"shotgun_ap_bullets_1"
+						"shotgun_reload_speed_multiplier_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -546,7 +544,9 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {8, 5},
 				[1] = {
 					upgrades = {
-						"player_steelsight_move_speed_multiplier"
+						"player_steelsight_move_speed_multiplier",
+						"shotgun_can_shoot_through_enemy",
+						"shotgun_ap_bullets_1"
 					},
 					cost = self.costs.hightier
 				},

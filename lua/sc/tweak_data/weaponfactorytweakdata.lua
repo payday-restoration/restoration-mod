@@ -14046,8 +14046,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		wpn_fps_spec_bessy = {
 			translation = Vector3(0.05, -2, -3.35),
 			rotation = Rotation(0, 0, 0.01)
-		}
-
+		},
 		wpn_fps_snp_musket = {
 			translation = Vector3(0, -6, -3.9)
 		}

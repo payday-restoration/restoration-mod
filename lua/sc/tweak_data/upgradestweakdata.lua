@@ -878,7 +878,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.shotgun.extra_rays = {per_pellet and 0 or 3}
 					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
-					self.values.shotgun.can_shoot_through_enemy = {true}
 					
 					self.skill_descs.underdog = {
 					skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]) -- +Stability
@@ -889,7 +888,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.enter_steelsight_speed_multiplier = {1.075}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
-					
+					self.values.shotgun.ap_bullets = {0.25}
+					self.values.shotgun.can_shoot_through_enemy = {true}
 					self.skill_descs.shotgun_cqb = {
 					skill_value_b1 = tostring(self.values.shotgun.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed buff
 					skill_value_p1 = tostring(self.values.shotgun.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
@@ -4824,6 +4824,15 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 2,
 			upgrade = "steelsight_range_inc",
 			category = "assault_rifle"
+		}
+	}
+	self.definitions.shotgun_ap_bullets_1 = {
+		name_id = "menu_pistol_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "shotgun"
 		}
 	}
 	self.definitions.pistol_ap_bullets_1 = {

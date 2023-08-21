@@ -513,7 +513,8 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"shotgun_reload_speed_multiplier_1",
-						"shotgun_can_shoot_through_enemy"
+						"shotgun_can_shoot_through_enemy",
+						"shotgun_ap_bullets_1"
 					},
 					cost = self.costs.hightierpro
 				}

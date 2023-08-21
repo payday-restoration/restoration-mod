@@ -4489,7 +4489,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
 				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
-				["menu_shotgun_cqb_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.\n\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.\n\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy and deals #{skill_color}#25%## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#shotgun(s)## may already have, to a maximum of #{skill_color}#100%.##",
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",

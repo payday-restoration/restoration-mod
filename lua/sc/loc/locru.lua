@@ -1148,9 +1148,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "Дробь #{risk}#летит горизонтально##, а не распыляется.",
 		["bm_wp_ns_ultima_desc_sc"] = "Увеличивает разброс дроби на 75%.",
 		["bm_wp_upg_a_slug_sc"] = "Бронебойная пуля",
-		["bm_wp_upg_a_slug_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты и тонкие стены.##\n#{risk}#Вы наносите лишь 50% урона в голову.##",
+		["bm_wp_upg_a_slug_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты и тонкие стены.##",
 		["bm_wp_upg_a_slug_spam_desc"] = "Свинцовая пуля, которая #{skill_color}#наносит 75% урона через броню, пробивает врагов и тонкие стены.##",
-		["bm_wp_upg_a_slug_titan_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты, титан щиты и тонкие стены.##\n#{risk}#Вы наносите лишь 80% урона в голову.##",
+		["bm_wp_upg_a_slug_titan_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты, титан щиты и тонкие стены.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля радиусом #{skill_color}#1.5## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{important_1}#не наносит дополнительный урон в голову.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#6## больших дробинок #{skill_color}#имеют увеличенный урон",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
@@ -4667,7 +4667,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Гладкоствольное искусство",
 				["menu_shotgun_cqb_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
-				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.\n\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы прицеливаетесь из #{skill_color}#дробовиков и огнеметов## на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики и огнеметы## перезаряжаются на #{skill_color}#$skill_value_p1## быстрее.",
 
 
 				--Shotgun Impact
@@ -4677,7 +4677,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Охотник на голубей",
-				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы передвигаетесь на #{skill_color}#$skill_value_b1## быстрее при прицеливании.\n\n#{risk}#Скорость не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТочность и дальнобойность #{skill_color}#дробовиков и огнеметов## увеличена на #{skill_color}#$skill_value_p1## при прицеливании.",
+				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага и наносит #{skill_color}#$skill_value_b1## урона через броню.\n\n#{risk}#Скорость не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТочность и дальнобойность #{skill_color}#дробовиков и огнеметов## увеличена на #{skill_color}#$skill_value_p1## при прицеливании.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Беги и стреляй",
@@ -4856,7 +4856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Подвижная мишень",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка скрытности ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко скрытности ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка скрытности ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко скрытности ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",

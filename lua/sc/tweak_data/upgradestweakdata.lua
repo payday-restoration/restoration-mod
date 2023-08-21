@@ -842,7 +842,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_p2 = tostring((1 - self.values.player.bipod_damage_reduction[1]) % 1 * 100).."%" -- DR when MG is mounted
 					}
 	
-			--Body Expertise
+			--Body Expertise aka Spray N' Pray
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
 				self.automatic_kills_to_damage_reset_t = 1.5 --delay to reset time (seconds)
@@ -888,8 +888,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.enter_steelsight_speed_multiplier = {1.075}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
-					self.values.shotgun.ap_bullets = {0.25}
-					self.values.shotgun.can_shoot_through_enemy = {true}
+					
 					self.skill_descs.shotgun_cqb = {
 					skill_value_b1 = tostring(self.values.shotgun.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed buff
 					skill_value_p1 = tostring(self.values.shotgun.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
@@ -910,13 +909,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away / Pigeon Shooter
 				--Basic
-					self.values.player.steelsight_move_speed_multiplier = {1.5} --Movement speed while ADSing.
+					self.values.shotgun.ap_bullets = {0.25}
+					self.values.shotgun.can_shoot_through_enemy = {true}
 				--Ace
 					self.values.shotgun.steelsight_accuracy_inc = {0.7}
 					self.values.shotgun.steelsight_range_inc = {1.3}
 					
 					self.skill_descs.far_away = {
-					skill_value_b1 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
+					skill_value_b1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%", -- AP for shotguns
 					skill_value_p1 = tostring(self.values.shotgun.steelsight_range_inc[1] % 1 * 100).."%" -- Accuracy + range increase
 					}
 
@@ -1443,6 +1443,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Moving Target
+				--Basic
+				self.values.player.steelsight_move_speed_multiplier = {1.5} --Movement speed while ADSing.
+				
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
 						0.015,
@@ -1468,6 +1471,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				skill_value_b2 = tostring(self.values.player.detection_risk_add_movement_speed[1][2]), -- movement speed per concealment
 				skill_value_b3 = tostring(self.values.player.detection_risk_add_movement_speed[1][4]), -- concealment tresholder for movement speed
 				skill_value_b4 = tostring(self.values.player.detection_risk_add_movement_speed[1][5] * 100).."%", -- max possible movement speed
+				skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
 				skill_value_p1 = tostring(self.values.player.detection_risk_add_movement_speed[2][1] * 100).."%", 
 				skill_value_p2 = tostring(self.values.player.detection_risk_add_movement_speed[2][2]),
 				skill_value_p3 = tostring(self.values.player.detection_risk_add_movement_speed[2][4]), 

@@ -13400,6 +13400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.spike.stats_modifiers = nil
+			self.spike.rays = nil
 			self.spike.reload_speed_multiplier = 0.8
 			self.spike.timers.reload_empty = self.basset.timers.reload_empty
 			self.spike.timers.reload_not_empty = self.basset.timers.reload_not_empty
@@ -14926,6 +14927,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.skspug.fire_mode_data = {}
 		self.skspug.fire_mode_data.fire_rate = 0.12
 		self.skspug.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.skspug.rays = nil
 		self.skspug.supported = true
 		self.skspug.ads_speed = 0.300
 		self.skspug.damage_falloff = {

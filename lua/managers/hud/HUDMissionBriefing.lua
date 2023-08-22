@@ -757,7 +757,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		--Holdout is exists, I guess
 		skirmish = "guis/textures/restoration/mission_briefing/locke"
     }
-	local image = "guis/textures/restoration/mission_briefing/classic"
+	local image = "guis/textures/restoration/mission_briefing/unknown"
 	if set_image[contact] then
             image = set_image[contact]
     end

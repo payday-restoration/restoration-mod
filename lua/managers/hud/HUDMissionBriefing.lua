@@ -750,12 +750,13 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		akashic = "guis/textures/pd2/mission_briefing/hector/contact",
 		jiufeng = "guis/textures/restoration/mission_briefing/jiufeng",
 		mcshay = "guis/textures/restoration/mission_briefing/mcshay",
+		blaine = "guis/textures/restoration/mission_briefing/blaine",
 		--Support for "Campaign Contract Sorting" mod (aka thanks OVK that you made random contractors and give them only 1 heist)
 		silkroad = "guis/textures/restoration/mission_briefing/locke",
 		cityofgold = "guis/textures/restoration/mission_briefing/jiufeng",
 		texasheat = "guis/textures/restoration/mission_briefing/mcshay",
 		--Holdout is exists, I guess
-		skirmish = "guis/textures/restoration/mission_briefing/locke"
+		skirmish = "guis/textures/restoration/mission_briefing/event"
     }
 	local image = "guis/textures/restoration/mission_briefing/unknown"
 	if set_image[contact] then

@@ -36,6 +36,47 @@ return {
 	[100329] = {
 		ponr = ponr_value
 	},
+	--Force FBI Agents
+	[100515] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100521] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100551] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100563] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100567] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100569] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100571] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100573] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
 	--GenSec Scripted Spawns
 	--Drivers
 	[100279] = {

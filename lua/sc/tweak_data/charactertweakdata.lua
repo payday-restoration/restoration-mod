@@ -2310,9 +2310,10 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank")
 	
 	
-	--Blackdozers, Move faster than Greendozers
+	--Blackdozers, Move faster than Greendozers but have a bit less EHP
 	self.tank_black = deep_clone(self.tank)
 	self.tank_black.move_speed = presets.move_speed.normal
+	self.tank_black.HEALTH_INIT = 425
 	table.insert(self._enemy_list, "tank_black")
 	
 	
@@ -2324,7 +2325,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
-	--Medic Dozer
+	--Medic Dozer, ditto from Blackdozers
 	self.tank_medic = deep_clone(self.tank)
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
@@ -2377,7 +2378,7 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_titan_assault")
 
 	--Halloween Bulldozer (Black)
-	self.tank_hw_black = deep_clone(self.tank)
+	self.tank_hw_black = deep_clone(self.tank_black)
 	self.tank_hw_black.weapon = deep_clone(presets.weapon.normal)
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.tank_hw_black.custom_voicework = "tdozer_ru"
@@ -2386,7 +2387,6 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	--Dozerish head health, lowered to account for no visor so they're about the same head health
 	self.tank_hw_black.headshot_dmg_mul = 5.5
-	self.tank_hw_black.move_speed = presets.move_speed.normal
 	self.tank_hw_black.ignore_headshot = false
 	self.tank_hw_black.melee_anims = nil
 	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"

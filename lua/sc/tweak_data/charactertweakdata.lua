@@ -17990,7 +17990,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.autumn.damage.bullet_damage_mul = 0.4
 	
 	self.tank_skull.dt_suppress = {
-		range = 2200
+		range = 1500
 	}
 	
 	self.spring.dt_suppress = {

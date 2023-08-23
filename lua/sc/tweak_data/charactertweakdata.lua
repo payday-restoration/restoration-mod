@@ -17830,7 +17830,7 @@ function CharacterTweakData:_set_overkill_290()
 	
 	--Skulldozers can now push back players
 	self.tank_skull.dt_suppress = {
-		range = 1200
+		range = 1000
 	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45

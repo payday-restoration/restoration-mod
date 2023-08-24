@@ -1,0 +1,4 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy/wpn_fps_spec_bessy" orientation_object="rp_wpn_fps_spec_bessy" />
+	<lights />
+</dynamic_object>

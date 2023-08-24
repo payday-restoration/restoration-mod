@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggy_hammer" />
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_piggy"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

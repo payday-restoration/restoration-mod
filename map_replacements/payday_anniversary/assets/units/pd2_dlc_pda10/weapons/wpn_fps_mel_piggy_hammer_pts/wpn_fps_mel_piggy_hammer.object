@@ -1,0 +1,36 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggy_hammer" orientation_object="rp_wpn_fps_mel_piggy_hammer" />
+	<animations>
+		<animation_group name="Idle">
+			<object name="Hips" enabled="true" />
+			<object name="RightUpFrontLeg" enabled="true" />
+			<object name="RightUpFrontLegLower" enabled="true" />
+			<object name="RightFrontFoot" enabled="true" />
+			<object name="RightUpRearLeg" enabled="true" />
+			<object name="RightUpRearLegLower" enabled="true" />
+			<object name="RightRearFoot" enabled="true" />
+			<object name="LeftUpRearLeg" enabled="true" />
+			<object name="LeftUpRearLegLower" enabled="true" />
+			<object name="LeftRearFoot" enabled="true" />
+			<object name="LeftUpFrontLeg" enabled="true" />
+			<object name="LeftUpFrontLegLower" enabled="true" />
+			<object name="LeftFrontFoot" enabled="true" />
+			<object name="Nose1" enabled="true" />
+			<object name="Nose2" enabled="true" />
+			<object name="RightEar" enabled="true" />
+			<object name="RightEarTip" enabled="true" />
+			<object name="LeftEar" enabled="true" />
+			<object name="LeftEarTip" enabled="true" />
+			<object name="RightEye" enabled="true" />
+			<object name="LeftEye" enabled="true" />
+			<object name="CenterBelly" enabled="true" />
+			<object name="RightBelly" enabled="true" />
+			<object name="LeftBelly" enabled="true" />
+		</animation_group>
+	</animations>
+	<graphics>
+		<object name="g_piggy" enabled="true" />
+		<object name="g_stick" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

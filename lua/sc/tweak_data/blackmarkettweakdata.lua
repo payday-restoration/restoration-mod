@@ -3733,14 +3733,16 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			'beardy','baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer'
 		}
 		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
-			self.melee_weapons[melee_id].expire_t = 1.45
-			self.melee_weapons[melee_id].repeat_expire_t = 1.2
-			self.melee_weapons[melee_id].melee_damage_delay = 0.65
-			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 16
+			if self.melee_weapons[melee_id] then
+				self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
+				self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+				self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
+				self.melee_weapons[melee_id].expire_t = 1.45
+				self.melee_weapons[melee_id].repeat_expire_t = 1.2
+				self.melee_weapons[melee_id].melee_damage_delay = 0.65
+				self.melee_weapons[melee_id].anim_speed_mult = 1.2631
+				self.melee_weapons[melee_id].sphere_cast_radius_add = 16
+			end
 		end
 
 		--melee_cutters
@@ -4558,54 +4560,56 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.range = 210
 		self.melee_weapons.spoon_gold.stats.concealment = 22
 		--B-Oink
-		self.melee_weapons.piggy_hammer.anim_speed_mult = 1.13679
-		self.melee_weapons.piggy_hammer.info_id = "bm_melee_piggy_hammer_info"
-		self.melee_weapons.piggy_hammer.stats.min_damage = 4.5
-		self.melee_weapons.piggy_hammer.stats.max_damage = 12.001
-		self.melee_weapons.piggy_hammer.stats.min_damage_effect = 6.0
-		self.melee_weapons.piggy_hammer.stats.max_damage_effect = 24.0
-		self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 2
-		self.melee_weapons.piggy_hammer.stats.charge_time = 2.5
-		self.melee_weapons.piggy_hammer.stats.range = 200
-		self.melee_weapons.piggy_hammer.stats.concealment = 21
-		self.melee_weapons.piggy_hammer.random_special_effects = {
-			{
-				weight = 75,
-			},
-			{
-				weight = 12,
-				dot_data = {
-					type = "bleed",
-					custom_data = {
-						dot_damage = 2.0,
-						dot_length = 3.1,
-						dot_tick_period = 0.5
+		if self.melee_weapons.piggy_hammer then
+			self.melee_weapons.piggy_hammer.anim_speed_mult = 1.13679
+			self.melee_weapons.piggy_hammer.info_id = "bm_melee_piggy_hammer_info"
+			self.melee_weapons.piggy_hammer.stats.min_damage = 4.5
+			self.melee_weapons.piggy_hammer.stats.max_damage = 12.001
+			self.melee_weapons.piggy_hammer.stats.min_damage_effect = 6.0
+			self.melee_weapons.piggy_hammer.stats.max_damage_effect = 24.0
+			self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 2
+			self.melee_weapons.piggy_hammer.stats.charge_time = 2.5
+			self.melee_weapons.piggy_hammer.stats.range = 200
+			self.melee_weapons.piggy_hammer.stats.concealment = 21
+			self.melee_weapons.piggy_hammer.random_special_effects = {
+				{
+					weight = 75,
+				},
+				{
+					weight = 12,
+					dot_data = {
+						type = "bleed",
+						custom_data = {
+							dot_damage = 2.0,
+							dot_length = 3.1,
+							dot_tick_period = 0.5
+						}
 					}
-				}
-			},
-			{
-				weight = 7,
-				tase_data = {
-					tase_strength = "light"
-				}
-			},
-			{
-				weight = 5,
-				dot_data = {
-					type = "poison",
-					custom_data = {
-						hurt_animation_chance = 01,
-						dot_damage = 1.5,
-						dot_length = 4.1,
-						dot_tick_period = 0.5
+				},
+				{
+					weight = 7,
+					tase_data = {
+						tase_strength = "light"
 					}
+				},
+				{
+					weight = 5,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							hurt_animation_chance = 01,
+							dot_damage = 1.5,
+							dot_length = 4.1,
+							dot_tick_period = 0.5
+						}
+					}
+				},
+				{
+					weight = 1,
+					instant_kill = true
 				}
-			},
-			{
-				weight = 1,
-				instant_kill = true
 			}
-		}
+		end
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.stats.min_damage = 6
 		self.melee_weapons.dingdong.stats.max_damage = 12.001

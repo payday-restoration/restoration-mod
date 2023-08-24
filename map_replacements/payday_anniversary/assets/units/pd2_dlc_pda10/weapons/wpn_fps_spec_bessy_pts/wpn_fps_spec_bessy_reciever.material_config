@@ -1,0 +1,13 @@
+<materials version="3" group="weapon_bessy">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_CONTROL_VALUE:NORMALMAP" name="mtr_bessy_reciever" version="2">
+        <diffuse_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/bessy_reciever_df"/>
+        <bump_normal_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/bessy_reciever_nm"/>
+        <variable type="scalar" name="glossiness_control" value="0.1"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOSS_CONTROL_VALUE:NORMALMAP" name="mtr_bessy_reciever_cubemap" version="2">
+        <diffuse_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/bessy_reciever_df"/>
+        <bump_normal_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/bessy_reciever_nm"/>
+        <variable type="scalar" name="glossiness_control" value="0.1"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+    </material>
+</materials>

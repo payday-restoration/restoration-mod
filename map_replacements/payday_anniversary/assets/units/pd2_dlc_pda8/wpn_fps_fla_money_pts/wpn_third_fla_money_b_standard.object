@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_third_fla_money_b_standard" orientation_object="rp_wpn_third_fla_money_b_standard" />
+	<graphics>
+		<object name="g_barrel" enabled="true" />
+	</graphics>
+</dynamic_object>

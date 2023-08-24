@@ -3752,8 +3752,19 @@ local sms_preset = {
 }
 
 --[[     WEAPON BACKUPS     ]]
-	--Leaving commented out until needed
-	--[[
+	--IMAGINE ANNUALLY ADDING THEN REMOVING CONTENT FROM THE GAME
+	local PICKUP = {
+		AR_LOW_CAPACITY = 7,
+		SHOTGUN_HIGH_CAPACITY = 4,
+		OTHER = 1,
+		LMG_CAPACITY = 9,
+		AR_MED_CAPACITY = 3,
+		SNIPER_HIGH_DAMAGE = 6,
+		AR_HIGH_CAPACITY = 2,
+		SNIPER_LOW_DAMAGE = 5,
+		AR_DMR_CAPACITY = 8
+	}
+	local FALLOFF_TEMPLATE = WeaponFalloffTemplate.setup_weapon_falloff_templates()
 	function WeaponTweakData:_init_bessy(weapon_data)
 		self.bessy = {
 			categories = {
@@ -3788,7 +3799,7 @@ local sms_preset = {
 		self.bessy.muzzleflash = "effects/payday2/particles/weapons/bessy_muzzle"
 		self.bessy.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 		self.bessy.use_data = {
-			selection_index = SELECTION.PRIMARY,
+			selection_index = 2,
 			align_place = "left_hand"
 		}
 		self.bessy.DAMAGE = 1
@@ -3908,7 +3919,7 @@ local sms_preset = {
 		self.money.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
 		self.money.flame_effect = "effects/payday2/particles/explosions/moneythrower"
 		self.money.use_data = {
-			selection_index = SELECTION.SECONDARY,
+			selection_index = 2,
 			align_place = "right_hand"
 		}
 		self.money.DAMAGE = 1
@@ -3995,11 +4006,10 @@ local sms_preset = {
 			concealment = 21
 		}
 	end
-	--]]
 
 Hooks:PostHook( WeaponTweakData, "_init_new_weapons", "SC_new_weapons", function(self, weapon_data)
-	--self:_init_bessy(weapon_data)
-	--self:_init_money(weapon_data)
+	self:_init_bessy(weapon_data)
+	self:_init_money(weapon_data)
 end)
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
@@ -18567,6 +18577,20 @@ function WeaponTweakData:_create_table_structure()
 	self.b682_crew = {
 		usage = "mossberg",
 		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
+	
+	self.bessy_crew = {
+		usage = "is_sniper",
+		anim_usage = "is_rifle",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
+	self.money_crew = {
+		usage = "is_rifle",
 		sounds = {},
 		use_data = {},
 		auto = {}

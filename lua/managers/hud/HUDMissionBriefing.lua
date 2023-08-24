@@ -749,8 +749,8 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		shatter = "guis/textures/restoration/mission_briefing/shatter",
 		akashic = "guis/textures/pd2/mission_briefing/hector/contact",
 		jiufeng = "guis/textures/restoration/mission_briefing/jiufeng",
-		shayu = "guis/textures/restoration/mission_briefing/shayu",
-		mcshay = "guis/textures/restoration/mission_briefing/event", -- Maybe in one day she get own portrait
+		shayu = "guis/textures/restoration/mission_briefing/event", -- Maybe someday she get own portrait
+		mcshay = "guis/textures/restoration/mission_briefing/mcshay", 
 		blaine = "guis/textures/restoration/mission_briefing/blaine",
 		--Support for "Campaign Contract Sorting" mod (aka thanks OVK that you made random contractors and give them only 1 heist)
 		silkroad = "guis/textures/restoration/mission_briefing/locke",

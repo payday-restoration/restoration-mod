@@ -1837,12 +1837,7 @@
 	<object				path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<model				path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<material_config	path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<cooked_physics		path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-
-	
-	<!--fixed male suit heister faces and necks-->
- 	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
-	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
+	<cooked_physics		path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/> 
 
 	<!--yellow blood-->
 	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_collection_a" />		

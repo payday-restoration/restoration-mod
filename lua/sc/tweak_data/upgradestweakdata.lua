@@ -367,15 +367,18 @@ function UpgradesTweakData:_bessy_definitions()
 	}
 end
 
---Temp Disabled
---[[
 Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
-	self.definitions.halloween_sword = {
-		dlc = "rest",
+	--[[
+		self.definitions.halloween_sword = {
+			dlc = "rest",
+			category = "melee_weapon"
+		}
+	]]--
+	self.definitions.piggy_hammer = {
+		dlc = "pda10",
 		category = "melee_weapon"
 	}
 end)
-]]--
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)

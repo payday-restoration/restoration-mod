@@ -1576,7 +1576,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
-			if character_unit:base().char_tweak and character_unit:base():char_tweak().priority_shout then
+			if character_unit:base() and character_unit:base().char_tweak and character_unit:base():char_tweak().priority_shout then
 				dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
 			end
 
@@ -2929,6 +2929,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local dmg_multiplier = self._melee_repeat_damage_bonus or 1
 
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
+
+			if character_unit:base() and character_unit:base().char_tweak and character_unit:base():char_tweak().priority_shout then
+				dmg_multiplier = dmg_multiplier * (tweak_data.blackmarket.melee_weapons[melee_entry].stats.special_damage_multiplier or 1)
+			end
 
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}

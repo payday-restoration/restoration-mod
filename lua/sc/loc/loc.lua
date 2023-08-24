@@ -4272,8 +4272,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cg22_post_objective_8_desc"] = "Kill 20 Dozers on Overkill difficulty or above.",
 		["menu_cg22_post_objective_9_desc"] = "Secure 75 loot bags (followed by a successful escape) on any difficulty.",
 
+		["mutator_piggybank"] = "Feed The Pig",
 		["mutator_piggybank_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig.",
 		["mutator_piggybank_longdesc"] = "PAYDAY 2 9th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy on certain heists, and the bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+
+		["mutator_piggyrevenge"] = "Piggy's Revenge",
+		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
+		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+
+		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
+		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
+		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
+		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
+		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
+		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
 		
 		["mutator_bravos_only"] = "Hardline",
 		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",

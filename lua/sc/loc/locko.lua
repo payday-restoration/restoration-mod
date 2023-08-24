@@ -4419,6 +4419,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_piggybank"] = "돼지 먹이주기",
 		["mutator_piggybank_desc"] = "적들이 죽을 때 황금 돼지에게 먹이기 위한 꿀꿀이 가방을 떨굽니다.",
 		["mutator_piggybank_longdesc"] = "페이데이 2 9주년 이벤트:\n\n적 처치 시 일정 확률로 꿀꿀이 가방을 떨굽니다. 꿀꿀이 가방는 특정 습격에서 황금 돼지를 키우는 데 사용할 수 있는 임시 가방이며, 돼지가 클수록 하이스트가 끝날 때 더 많은 보너스 경험치와 돈 보상이 증가합니다.",	
+
+		["mutator_piggyrevenge"] = "Piggy's Revenge",
+		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
+		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+
+		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
+		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
+		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
+		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
+		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
+		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
 		
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",

@@ -4552,6 +4552,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_piggybank_desc"] = "警察爆金币啦！用小猪钞票喂饱金猪存钱罐吧！",
         ["mutator_piggybank_longdesc"] = "收获日2-九周年活动事件：\n\n特定劫案内，被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并丢给巨大的金色小猪存钱罐，将存钱罐喂得越来越胖，然后打碎它。打碎小猪存钱罐时，小猪存钱罐越大，你在劫案结束时获得的经验和钱也越多。",
 
+		["mutator_piggyrevenge"] = "Piggy's Revenge",
+		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
+		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+
+		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
+		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
+		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
+		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
+		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
+		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
+
         ["mutator_bravos_only"] = "死亡地带",
         ["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
         ["mutator_bravos_only_longdesc"] = "所有非地图脚本生成的敌人都被替换成专家模式有去无回里的同类别单位。FBI SWAT将替代蓝皮SWAT，并且FBI SWAT会被替换成Bravo临界反应部队。",

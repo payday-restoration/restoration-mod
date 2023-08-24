@@ -250,6 +250,18 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"winchester1874"
 				}
 			},
+		l38 = {
+				name_id = "weapons",
+				upgrades = {
+					"m134",
+					"rpg7",
+					"arblast",
+					"scoutknife",
+					"komodo",
+					"hk51b",
+					"bessy"
+				}
+			},			
 		l39 = {
 				name_id = "weapons",
 				upgrades = {
@@ -280,7 +292,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"whiskey",
 					"arbiter",
 					"ms3gl",
-					"system"
+					"system",
+					"money"
 				}
 			},			
 		l48 = {
@@ -289,7 +302,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"dingdong",
 					"tenderizer",
 					"hailstorm",
-					"hcar"
+					"hcar",
+					"piggy_hammer"
 				}
 			},
 		l50 = {

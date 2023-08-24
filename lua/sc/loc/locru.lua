@@ -4460,6 +4460,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_piggybank"] = "Покорми свинью",
 		["mutator_piggybank_desc"] = "Убийство врагов дает свинобаксы, которыми можно покормить золотую свинью.",
 		["mutator_piggybank_longdesc"] = "Девятилетие PAYDAY:\n\nУбитые враги роняют свинобаксы. Свинобаксы - временные сумки, которыми можно кормить Золотую Свинку. Чем больше Свинка растет, тем больше бонусного денег и опыта вы получите в конце ограбления.",		
+
+		["mutator_piggyrevenge"] = "Piggy's Revenge",
+		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
+		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+
+		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
+		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
+		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
+		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
+		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
+		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
 		
 		["mutator_bravos_only"] = "Профессиональный день",
 		["mutator_bravos_only_desc"] = "Все враги заменены на свои PONR-варианты.",

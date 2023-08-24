@@ -21676,7 +21676,6 @@ function WeaponFactoryTweakData:_init_bessy()
 		}
 	}
 	self.parts.wpn_fps_spec_bessy_bayonette = {
-		is_a_unlockable = true,
 		texture_bundle_folder = "pda10",
 		type = "bayonet",
 		a_obj = "a_ns",

@@ -1781,7 +1781,6 @@ function CharacterTweakData:_init_piggydozer(presets)
 	else
 		self.piggydozer.custom_voicework = "tdozer"
 	end
-	self.piggydozer.throwable = "molotov"
 	self.piggydozer.aoe_damage_data = {
 		verification_delay = 0.3,
 		activation_range = 300,

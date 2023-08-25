@@ -140,7 +140,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorTitleID"] = "대체된 마지막 다운 컬러 그레이딩",
 		["RestorationModAltLastDownColorDescID"] = "마지막 다운 컬러 그레이딩을 color_sin_classic으로 전환합니다.",
 		["RestorationModNoBleedoutTiltTitleID"] = "최후의 저항 카메라 기울기 비활성화",
-		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",	
+		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",
+		["RestorationModGOTTAGETAGRIPTitleID"] = "모든 포어그립 숨기기",
+		["RestorationModGOTTAGETAGRIPDescID"] = "\"vertical_grip\" 유형의 모든 개조품이 메뉴에 표시되지 않도록 숨깁니다. 이미 무기에 부착된 포어그립은 영향을 받지 않습니다. 재시작이 필요합니다.",		
 		["RestorationModGCGPYPMMSACTitleID"] = "슈퍼 시리얼 모드",
 		["RestorationModGCGPYPMMSACDescID"] = "블래스터 예광탄, 탄약 재생 및 번역된 이스터 에그를 비활성화합니다. 하이스트 도중에 토글된 경우 하이스트를 다시 시작해야 합니다.",
 		["RestorationModGCGPYPMMSACTextTitleID"] = "슈퍼 시리얼 텍스트",
@@ -1866,7 +1868,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Light Crossbow		
 		["bm_wp_avelyn"] = "애블린 키트",
-		["bm_wp_avelyn_desc"] = "#{skill_color}#연발 쇠뇌## 킷.\n방아쇠를 당기면 #{skill_color}#3##개의 화살을 한 번에 일제 사격할 수 있습니다.",		
+		["bm_wp_avelyn_desc"] = "#{skill_color}#연발 쇠뇌## 킷.\n방아쇠를 당기면 #{skill_color}#3##개의 화살을 한 번에 일제 사격할 수 있습니다.",
+		["bm_wp_avelyn_override_desc"] = "매우 희귀한 속사 가능한 쇠뇌입니다.\n정교한 메커니즘을 통해 #{skill_color}#3##개의 화살을 연속으로 발사합니다.\n\n#{skill_color}#방탄복을 관통할 수 있습니다.##",
 		
 
 		--GL40		
@@ -4417,19 +4420,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cg22_post_objective_9_desc"] = "아무 난이도에서 전리품 가방 75개 확보하기. (탈출에 성공해야 인정)",
 
 		["mutator_piggybank"] = "돼지 먹이주기",
-		["mutator_piggybank_desc"] = "적들이 죽을 때 황금 돼지에게 먹이기 위한 꿀꿀이 가방을 떨굽니다.",
-		["mutator_piggybank_longdesc"] = "페이데이 2 9주년 이벤트:\n\n적 처치 시 일정 확률로 꿀꿀이 가방을 떨굽니다. 꿀꿀이 가방는 특정 습격에서 황금 돼지를 키우는 데 사용할 수 있는 임시 가방이며, 돼지가 클수록 하이스트가 끝날 때 더 많은 보너스 경험치와 돈 보상이 증가합니다.",	
+		["mutator_piggybank_desc"] = "적들이 죽을 때 꿀꿀이 가방을 떨어뜨리고 황금 돼지에게 먹입니다.",
+		["mutator_piggybank_longdesc"] = "페이데이 2 9주년 이벤트:\n\n적 처치 시 일정 확률로 꿀꿀이 가방을 떨굽니다. 꿀꿀이 가방은 특정 습격에서 황금 돼지를 키우는 데 사용할 수 있는 임시 가방이며, 돼지가 클수록 하이스트가 끝날 때 더 많은 보너스 경험치와 돈 보상이 증가합니다.",	
 
-		["mutator_piggyrevenge"] = "Piggy's Revenge",
-		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
-		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+		["mutator_piggyrevenge"] = "돼지의 복수",
+		["mutator_piggyrevenge_desc"] = "적들을 죽여서 꿀꿀이 가방 떨어뜨리고 황금 돼지에게 먹이를 줘 버프를 얻습니다.",
+		["mutator_piggyrevenge_longdesc"] = "페이데이 2 10주년 이벤트:\n\n적 처치 시 일정 확률로 꿀꿀이 가방을 떨굽니다. 꿀꿀이 가방은 특정 습격에서 황금 돼지를 키우거나 버프를 얻을 수 있는 임시 가방이며, 먹이를 줄 때마다 일정 확률로 화염방사기를 든 맷돼지 도저가 스폰합니다. 돼지가 클수록 하이스트가 끝날 때 더 많은 보너스 경험치와 돈 보상이 증가합니다.",		
 
-		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
-		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
-		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
-		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
-		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
-		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
+		["menu_pda10_post_objective_3_desc"] = "아무 난이도에서 하이스트 25번 성공하기.",
+		["menu_pda10_post_objective_5_desc"] = "저격소총으로 50명 처치하기.",
+		["menu_pda10_post_objective_2_desc"] = "전리품 가방 50개 확보하기.",
+		["menu_pda10_post_objective_6_desc"] = "근접 무기로 50명 처치하기.",
+		["menu_pda10_post_objective_1_desc"] = "불도저 50명 처치하기.",
+		["menu_pda10_post_objective_4_desc"] = "게이지 패키지 50개 모으기.",
 		
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",

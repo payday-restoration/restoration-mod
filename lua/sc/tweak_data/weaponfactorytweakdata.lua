@@ -22184,6 +22184,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			reload = -6
 		}, 
 		custom_stats = { 
+			alt_desc = "bm_wp_avelyn_override_desc", 
 			avelyn = true, 
 			rof_mult = 7.5,
 			rms = 0.6,

@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.5, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 7, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -8511,8 +8511,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.supported = true
 				self.amcar.ads_speed = 0.260
 				self.amcar.damage_falloff = {
-					start_dist = 2100,
-					end_dist = 6000,
+					start_dist = 2000,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.amcar.stats = {
@@ -8554,8 +8554,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.supported = true
 				self.s552.ads_speed = 0.240
 				self.s552.damage_falloff = {
-					start_dist = 3300,
-					end_dist = 8000,
+					start_dist = 3100,
+					end_dist = 7800,
 					min_mult = 0.6
 				}
 				self.s552.stats = {
@@ -8600,8 +8600,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.supported = true
 				self.g36.ads_speed = 0.240
 				self.g36.damage_falloff = {
-					start_dist = 2800,
-					end_dist = 6300,
+					start_dist = 2600,
+					end_dist = 6000,
 					min_mult = 0.5
 				}
 				self.g36.stats = {
@@ -8637,8 +8637,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.supported = true
 				self.vhs.ads_speed = 0.240
 				self.vhs.damage_falloff = {
-					start_dist = 3000,
-					end_dist = 7000,
+					start_dist = 2800,
+					end_dist = 6500,
 					min_mult = 0.5
 				}
 				self.vhs.stats = {
@@ -8678,8 +8678,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_olympic.supported = true
 				self.x_olympic.ads_speed = 0.220
 				self.x_olympic.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 5800,
+					start_dist = 1800,
+					end_dist = 5200,
 					min_mult = 0.5
 				}
 				self.x_olympic.stats = {
@@ -8716,7 +8716,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.supported = true
 				self.new_m4.ads_speed = 0.280
 				self.new_m4.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2100,
 					end_dist = 6200,
 					min_mult = 0.4166
 				}
@@ -8800,8 +8800,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.supported = true
 				self.corgi.ads_speed = 0.240
 				self.corgi.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 6500,
+					start_dist = 1600,
+					end_dist = 6000,
 					min_mult = 0.4166
 				}
 				self.corgi.stats = {
@@ -8836,7 +8836,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.supported = true
 				self.aug.ads_speed = 0.240
 				self.aug.damage_falloff = {
-					start_dist = 2600,
+					start_dist = 2500,
 					end_dist = 6600,
 					min_mult = 0.4166
 				}
@@ -8950,8 +8950,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.olympic.supported = true
 				self.olympic.ads_speed = 0.220
 				self.olympic.damage_falloff = {
-					start_dist = 2000,
-					end_dist = 5800,
+					start_dist = 1800,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.olympic.stats = {
@@ -8986,7 +8986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.supported = true
 				self.famas.ads_speed = 0.240
 				self.famas.damage_falloff = {
-					start_dist = 2800,
+					start_dist = 2700,
 					end_dist = 6500,
 					min_mult = 0.5
 				}
@@ -9028,7 +9028,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.supported = true
 				self.komodo.ads_speed = 0.240
 				self.komodo.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2000,
 					end_dist = 6000,
 					min_mult = 0.4166
 				}
@@ -9108,7 +9108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m16.supported = true
 				self.m16.ads_speed = 0.340
 				self.m16.damage_falloff = {
-					start_dist = 2200,
+					start_dist = 2100,
 					end_dist = 6500,
 					min_mult = 0.3334
 				}
@@ -9223,7 +9223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.supported = true
 				self.akm.ads_speed = 0.340
 				self.akm.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2400,
 					end_dist = 5000,
 					min_mult = 0.6
 				}
@@ -9262,7 +9262,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm_gold.supported = true
 				self.akm_gold.ads_speed = 0.380
 				self.akm_gold.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2400,
 					end_dist = 5000,
 					min_mult = 0.6
 				}
@@ -9401,7 +9401,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb.supported = true
 				self.tkb.ads_speed = 0.400
 				self.tkb.damage_falloff = {
-					start_dist = 1700,
+					start_dist = 1500,
 					end_dist = 4800,
 					min_mult = 0.6
 				}

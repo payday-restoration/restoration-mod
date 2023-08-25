@@ -4690,7 +4690,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Охотник на голубей",
-				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага и наносит #{skill_color}#$skill_value_b1## урона через броню.\n\n#{risk}#Скорость не может превышать вашу максимальную.##\n\nПИКОВЫЙ: #{owned}#$pro##\nТочность и дальнобойность #{skill_color}#дробовиков и огнеметов## увеличена на #{skill_color}#$skill_value_p1## при прицеливании.",
+				["menu_far_away_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь каждая дробинка может пройти насквозь через #{skill_color}#1## врага и наносит #{skill_color}#$skill_value_b1## урона через броню.\n\nПИКОВЫЙ: #{owned}#$pro##\nТочность и дальнобойность #{skill_color}#дробовиков и огнеметов## увеличена на #{skill_color}#$skill_value_p1## при прицеливании.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Беги и стреляй",
@@ -4869,7 +4869,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Подвижная мишень",
-				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка скрытности ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко скрытности ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
+				["menu_dire_need_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы двигаетесь на #{skill_color}#$skill_value_b1## быстрее за каждые #{skill_color}#$skill_value_b2## очка скрытности ниже #{skill_color}#$skill_value_b3##, до максимальных #{skill_color}#$skill_value_b4## скорости.\n\nВы передвигаетесь на #{skill_color}#$skill_value_b5## быстрее при прицеливании.\n#{risk}#Скорость передвижения в прицеливании не может превышать вашу максимальную.##\n\n\nПИКОВЫЙ: #{owned}#$pro##\nВы двигаетесь на #{skill_color}#$skill_value_p1## быстрее за каждое #{skill_color}#$skill_value_p2## очко скрытности ниже #{skill_color}#$skill_value_p3##, до максимальных #{skill_color}#$skill_value_p4## скорости.\n\nВаш уворот заполняется на #{skill_color}#$skill_value_p5## за каждую секунду бега и на #{skill_color}#$skill_value_p6## за каждую секунду на зиплайне.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Заземленный",

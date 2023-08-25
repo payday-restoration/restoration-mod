@@ -134,7 +134,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеру при падении",
-		["RestorationModNoBleedoutTiltDescID"] = "Отклчает наклон камеры, который происходит после падения.",
+		["RestorationModNoBleedoutTiltDescID"] = "Отключает наклон камеры, который происходит после падения.",
+		["RestorationModGOTTAGETAGRIPTitleID"] = "Спрятать все рукоятки",
+		["RestorationModGOTTAGETAGRIPDescID"] = "Позволяет спрятать все вертикальные рукоятки в меню установки модификаций; для оружий с уже установленной рукоятью это не касается. Требуется перезапуск.",
 		["RestorationModADSTransitionStyleTitleID"] = "Стиль прицеливания",
 		["RestorationModADSTransitionStyleDescID"] = "Выбор \"анимации\" прицеливания.",
 		["RestorationModGCGPYPMMSACTitleID"] = "Сурьезный режим",
@@ -1779,7 +1781,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Light Crossbow		
 		["bm_wp_avelyn"] = "Набор Авелин",
 		["bm_wp_avelyn_desc"] = "Превращает арбалет в #{skill_color}#репитер##.\nПозволяет запускать очередь из #{skill_color}#3## болтов одним нажатием.",
-		
+		["bm_wp_avelyn_override_desc"] = "Очень редкий экземпляр скорострельного арбалета.\nПоследовательно стреляет #{skill_color}#3-мя## болтами.\n\n#{skill_color}#Может пробивать броню.##",
 		--GL40		
 		["bm_w_gre_m79_sc_desc"] = "Стук - бум.\n\nНажмите #{skill_color}#$BTN_GADGET## чтобы поднять прицел.\n\nПрицел #{risk}#выверен на 30 метров.##",
 		--3GL

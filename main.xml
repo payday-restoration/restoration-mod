@@ -536,6 +536,7 @@
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>

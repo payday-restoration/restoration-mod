@@ -33982,6 +33982,8 @@ local exclude = {
 	"wpn_fps_upg_a_grenade_launcher_hornet",
 }
 
+local no_vfgs = restoration and restoration.Options:GetValue("OTHER/GOTTAGETAGRIP")
+
 for _, part in pairs(self.parts) do
 	if part then
 		if not part.supported and part.stats then
@@ -34021,6 +34023,9 @@ for _, part in pairs(self.parts) do
 					part.stats.damage = nil
 				end
 			end
+			if no_vfgs and part.type == "vertical_grip" then
+				part.pcs = nil
+			end 
 		end
 	end
 end

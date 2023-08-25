@@ -142,6 +142,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
+		["RestorationModGOTTAGETAGRIPTitleID"] = "Hide ALL Foregrips",
+		["RestorationModGOTTAGETAGRIPDescID"] = "Hides *all* attachments of the \"vertical_grip\" type from appearing in menus; ones already attached to weapons are unaffected. Requires restart.",
 		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Weapons",
 		["RestorationModGCGPYPMMSACDescID"] = "Disables Star Wars blaster mechanics. Requires restart.",
 		["RestorationModGCGPYPMMSACTextTitleID"] = "Super Cereal Text",

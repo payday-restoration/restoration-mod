@@ -127,6 +127,7 @@ function restoration:Init()
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
 		jambank = restoration.captain_types.spring, --Botched Bank
+		arena_club30 = restoration.captain_types.spring, -- Arena Orange 
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -182,7 +183,7 @@ function restoration:Init()
 	restoration.disable_natural_captain = {	
 		"skm_nightmare_lvl",
 		--Custom Heists--
-		"constantine_gunrunnerclubhouse_lvl",
+		"constantine_gunrunnerclubhouse_lvl", 
 		"constantine_policestation_lvl"
 	}
 		
@@ -247,7 +248,8 @@ function restoration:Init()
 		"constantine_penthouse_lvl", --Penthouse Crashers (Constantine Scores)
 		"constantine_resort_lvl", --Scarlett Resort (Constantine Scores)
 		"constantine_murkyairport_lvl", --Murky Airport (Constantine Scores)
-		"Security_Avenue" --GenSec HQ Day 1
+		"Security_Avenue", --GenSec HQ Day 1
+        "arena_club30" -- Arena Orange 
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -310,7 +312,11 @@ function restoration:Init()
 		"constantine_gold_lvl", --Golden Shakedown (Constantine Scores)
 		"jambank", --Botched Bank
 		"tonmapjam22l", --Hard Cash
-		"cshr" --Old Safehouse Raid
+		"cshr", --Old Safehouse Raid
+		"SJamBank", -- Branch Bank Initiative
+		"constantine_dwtd_lvl", -- Dance with The Devil (Constantine Scores)
+		"constantine_yacht_lvl" --  Showdown  (Constantine Scores) 
+
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
@@ -338,7 +344,13 @@ function restoration:Init()
 		"amsdeal1", --Armsdeal Alleyway
 		"constantine_smackdown_lvl", --Smackdown
 		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
-		"nmh_res" --Resmod edit of no mercy.
+		"nmh_res", --Resmod edit of no mercy.
+		"physics_citystreets", -- BOWORKS Day 1
+		"physics_core",-- BOWRORKS Day 3
+		"cold_gold",-- Cold Gold 
+		"constantine_dwtd_lvl", -- Constantine Scores
+		"constantine_yacht_lvl" --  Constantine Scores
+		
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
@@ -415,15 +427,29 @@ function restoration:Init()
 		"hunter_party",
 		"hunter_departure",
 		"hunter_fall",
-		"ruswl"
+		"ruswl",
+		"branchbank_russia"
 	}
 	--GenSec (custom heists)
 	restoration.gensec = {
-		"constantine_penthouse_lvl"
+		"constantine_penthouse_lvl", -- Constantine Scores (Penthouse Crasher)
+		"constantine_resort_lvl"	 -- COnstantine Scores (Scarlet Resort)
+
 	}
 	--Cartel (custom heists)
 	restoration.cartel = {
-		"constantine_train_lvl"
+		"constantine_train_lvl",    -- Constantine Scores (Cartel Transport Train)
+		"constantine_cart_dwn_lvl",	-- Constantine Scores (Cartel Transport Downtown)
+		"constantine_cart_con_lvl",	-- Constantine Scores ((Cartel Transport Construction Site)
+		"constantine_dwtd_lvl",		-- Constantine Scores (Dance With The Devil)
+		"constantine_suburbia_lvl", -- Constantine Scores (Early Birds)
+		"constantine_fiesta_lvl",    -- COnstantine Scores (Fiesta)
+		"constantine_yacht_lvl"	,	-- COnstantine Scores (Showdown)
+		"constantine_jungle_lvl"    -- Constantine Scores (Welcome To The Jungle)
+
+
+
+		
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

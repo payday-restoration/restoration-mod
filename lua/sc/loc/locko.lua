@@ -4662,7 +4662,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
-			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n여러 발사체를 발사하는 #{skill_color}#산탄총##을 사용할 때, 발사된 각 발사체는 적 #{skill_color}#1##명을 관통할 수 있으며 방탄복을 관통하여 #{skill_color}#25%##의 피해를 가합니다.\n\n#{skill_color}#산탄총##이 방탄복 관통을 가지고 있을 경우 스킬의 효과가 최대 #{skill_color}#100%##까지 증가합니다.\n\n#{risk}#NOTE: Speed is capped to your current stance's max speed.##\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##30%##만큼 증가합니다.",
+			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n여러 발사체를 발사하는 #{skill_color}#산탄총##을 사용할 때, 발사된 각 발사체는 적 #{skill_color}#1##명을 관통할 수 있으며 방탄복을 관통하여 #{skill_color}#25%##의 피해를 가합니다.\n\n#{skill_color}#산탄총##이 방탄복 관통을 가지고 있을 경우 스킬의 효과가 최대 #{skill_color}#100%##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##30%##만큼 증가합니다.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
@@ -4847,7 +4847,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n#{risk}#참고: 이동 속도는 현재 자세의 최대 이동 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",

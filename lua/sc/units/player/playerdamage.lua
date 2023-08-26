@@ -2038,3 +2038,38 @@ function PlayerDamage:play_whizby(position)
 		managers.rumble:play("bullet_whizby")
 	end
 end
+
+function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
+	local dmg_percent = health_subtracted / self._HEALTH_INIT
+	local attacker = attack_data.attacker_unit
+
+	if not alive(attacker) or not attacker:movement() or attacker:id() == -1 then
+		attacker = nil
+	end
+
+	local hit_offset_height = 150
+
+	if attack_data.col_ray and attack_data.origin then
+		local closest_point = mvec1
+
+		math.point_on_line(attack_data.origin, attack_data.col_ray.position, self._unit:movement():m_head_pos(), closest_point)
+
+		hit_offset_height = math.clamp(closest_point.z - self._unit:movement():m_pos().z, 0, 300)
+	end
+
+	self._unit:network():send("criminal_hurt", attacker or self._unit, math.clamp(math.ceil(dmg_percent * 100), 1, 100), hit_offset_height)
+
+	if Network:is_server() then
+		attacker = attack_data.attacker_unit
+
+		if attacker and not attack_data.attacker_unit.movement() then
+			attacker = nil
+		end
+
+		managers.groupai:state():criminal_hurt_drama(self._unit, attacker, dmg_percent)
+	end
+
+	if Network:is_client() then
+		self._unit:network():send_to_host("damage_bullet", attacker, 1, 1, 1, 0, false)
+	end
+end

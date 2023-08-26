@@ -15386,7 +15386,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.spin_up_t = 0.16
 		self.musket.spin_down_t = 0.00000001
 		self.musket.sounds.spin_start = "wp_baka_lever_pull"
-		self.musket.reload_speed_multiplier = 1.2
+		self.musket.reload_speed_multiplier = 1
 		self.musket.timers.reload_exit_not_empty = 0.9
 		self.musket.timers.reload_exit_empty = 0.9
 	end

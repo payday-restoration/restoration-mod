@@ -2065,8 +2065,10 @@ function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
 		if attacker and not attacker:movement() then
 			attacker = nil
 		end
-
-		managers.groupai:state():criminal_hurt_drama(self._unit, attacker, dmg_percent)
+		
+		if attacker and alive(attacker) then
+			managers.groupai:state():criminal_hurt_drama(self._unit, attacker, dmg_percent)
+		end
 	end
 
 	if Network:is_client() then

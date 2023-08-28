@@ -5926,9 +5926,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_shotgun_pump.spread = 15
 	presets.weapon.normal.is_shotgun_pump.miss_dis = 20
 	presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.normal.is_shotgun_pump.melee_speed = enemy_melee_speed.normal
-	presets.weapon.normal.is_shotgun_pump.melee_dmg = enemy_melee_damage_base
-	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {2, 2}
+	presets.weapon.normal.is_shotgun_pump.melee_speed = nil
+	presets.weapon.normal.is_shotgun_pump.melee_dmg = nil
+	presets.weapon.normal.is_shotgun_pump.melee_retry_delay = nil
+	presets.weapon.normal.is_shotgun_pump.no_melee = true
 	presets.weapon.normal.is_shotgun_pump.range = {
 		close = 500,
 		optimal = 1000,
@@ -8133,9 +8134,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_pump.spread = 15
 	presets.weapon.good.is_shotgun_pump.miss_dis = 20
 	presets.weapon.good.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.good.is_shotgun_pump.melee_speed = enemy_melee_speed.good
-	presets.weapon.good.is_shotgun_pump.melee_dmg = enemy_melee_damage_good
-	presets.weapon.good.is_shotgun_pump.melee_retry_delay = {2, 2}
+	presets.weapon.good.is_shotgun_pump.melee_speed = nil
+	presets.weapon.good.is_shotgun_pump.melee_dmg = nil
+	presets.weapon.good.is_shotgun_pump.melee_retry_delay = nil
+	presets.weapon.good.is_shotgun_pump.no_melee = true
 	presets.weapon.good.is_shotgun_pump.range = {
 		close = 500,
 		optimal = 1000,
@@ -8329,9 +8331,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_mag.spread = 15
 	presets.weapon.good.is_shotgun_mag.miss_dis = 20
 	presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.25
-	presets.weapon.good.is_shotgun_mag.melee_speed = enemy_melee_speed.good
-	presets.weapon.good.is_shotgun_mag.melee_dmg = enemy_melee_damage_good
-	presets.weapon.good.is_shotgun_mag.melee_retry_delay = {2, 2}
+	presets.weapon.good.is_shotgun_mag.melee_speed = nil
+	presets.weapon.good.is_shotgun_mag.melee_dmg = nil
+	presets.weapon.good.is_shotgun_mag.melee_retry_delay = nil
+	presets.weapon.good.is_shotgun_mag.no_melee = true
 	presets.weapon.good.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.good.is_shotgun_mag.range = {
 		close = 500,
@@ -10306,9 +10309,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_pump.spread = 15
 	presets.weapon.expert.is_shotgun_pump.miss_dis = 10
 	presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
-	presets.weapon.expert.is_shotgun_pump.melee_speed = enemy_melee_speed.expert
-	presets.weapon.expert.is_shotgun_pump.melee_dmg = enemy_melee_damage_expert
-	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.expert.is_shotgun_pump.melee_speed = nil
+	presets.weapon.expert.is_shotgun_pump.melee_dmg = nil
+	presets.weapon.expert.is_shotgun_pump.melee_retry_delay = nil
+	presets.weapon.expert.is_shotgun_pump.no_melee = true
 	presets.weapon.expert.is_shotgun_pump.range = {
 		close = 500,
 		optimal = 1000,
@@ -10502,9 +10506,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_mag.spread = 15
 	presets.weapon.expert.is_shotgun_mag.miss_dis = 10
 	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
-	presets.weapon.expert.is_shotgun_mag.melee_speed = enemy_melee_speed.expert
-	presets.weapon.expert.is_shotgun_mag.melee_dmg = enemy_melee_damage_expert
-	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+	presets.weapon.expert.is_shotgun_mag.melee_speed = nil
+	presets.weapon.expert.is_shotgun_mag.melee_dmg = nil
+	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = nil
+	presets.weapon.expert.is_shotgun_mag.no_melee = true
 	presets.weapon.expert.is_shotgun_mag.range = {
 		close = 500,
 		optimal = 1000,
@@ -11852,7 +11857,6 @@ function CharacterTweakData:_presets(tweak_data)
 	}				
 	
 	presets.weapon.deathwish = deep_clone(presets.weapon.expert)
-	presets.weapon.deathwish.is_shotgun_pump.melee_dmg = enemy_melee_damage_deathwish
 	presets.weapon.deathwish.is_shotgun_pump.FALLOFF = {
 		{
 			r = 100,
@@ -12097,7 +12101,6 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
-	presets.weapon.deathwish.is_shotgun_mag.melee_dmg = enemy_melee_damage_deathwish
 	presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,

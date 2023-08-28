@@ -1840,8 +1840,8 @@ end
 
 function NewRaycastWeaponBase:armor_piercing_chance()
 	local ap_value = self._armor_piercing_chance
-	local is_single = self:fire_mode() == "single" and not self:in_burst_mode()
-	ap_value = ap_value + (is_single and self._single_fire_ap_add) or 0
+	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
+	ap_value = ap_value + ((is_single and self._single_fire_ap_add) or 0)
 	return ap_value or 0
 end
 

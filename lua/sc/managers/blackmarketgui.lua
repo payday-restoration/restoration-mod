@@ -4535,22 +4535,27 @@ function BlackMarketGui:update_info_text()
 						lock_burst = true
 						lock_firemode = true
 						firemode_modded = true
+						break
 					elseif stats.lock_auto then
 						lock_auto = true
 						lock_firemode = true
 						firemode_modded = true
+						break
 					elseif stats.lock_semi then
 						lock_semi = true
 						lock_firemode = true
 						firemode_modded = true
+						break
 					elseif stats.burst_to_auto then
 						burst_to_auto = true
 						swap_firemode = true
 						firemode_modded = true
+						break
 					elseif stats.auto_to_burst then
 						auto_to_burst = true
 						swap_firemode = true
 						firemode_modded = true
+						break
 					elseif stats.add_burst then
 						add_burst = true
 						add_firemode = true

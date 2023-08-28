@@ -8554,7 +8554,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.supported = true
 				self.s552.ads_speed = 0.240
 				self.s552.damage_falloff = {
-					start_dist = 3100,
+					start_dist = 2800,
 					end_dist = 7800,
 					min_mult = 0.6
 				}
@@ -8600,7 +8600,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.supported = true
 				self.g36.ads_speed = 0.240
 				self.g36.damage_falloff = {
-					start_dist = 2600,
+					start_dist = 2400,
 					end_dist = 6000,
 					min_mult = 0.5
 				}
@@ -8637,7 +8637,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.supported = true
 				self.vhs.ads_speed = 0.240
 				self.vhs.damage_falloff = {
-					start_dist = 2800,
+					start_dist = 2500,
 					end_dist = 6500,
 					min_mult = 0.5
 				}
@@ -8716,7 +8716,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.supported = true
 				self.new_m4.ads_speed = 0.280
 				self.new_m4.damage_falloff = {
-					start_dist = 2100,
+					start_dist = 2000,
 					end_dist = 6200,
 					min_mult = 0.4166
 				}
@@ -8764,7 +8764,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.supported = true
 				self.ak5.ads_speed = 0.240
 				self.ak5.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 2800,
 					end_dist = 7000,
 					min_mult = 0.4166
 				}
@@ -8800,7 +8800,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.supported = true
 				self.corgi.ads_speed = 0.240
 				self.corgi.damage_falloff = {
-					start_dist = 1600,
+					start_dist = 1400,
 					end_dist = 6000,
 					min_mult = 0.4166
 				}
@@ -8836,7 +8836,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.supported = true
 				self.aug.ads_speed = 0.240
 				self.aug.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2300,
 					end_dist = 6600,
 					min_mult = 0.4166
 				}
@@ -8875,7 +8875,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.supported = true
 				self.flint.ads_speed = 0.280
 				self.flint.damage_falloff = {
-					start_dist = 3000,
+					start_dist = 2800,
 					end_dist = 5200,
 					min_mult = 0.5
 				}
@@ -8909,7 +8909,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.supported = true
 				self.ak74.ads_speed = 0.260
 				self.ak74.damage_falloff = {
-					start_dist = 3500,
+					start_dist = 3200,
 					end_dist = 5800,
 					min_mult = 0.5
 				}
@@ -8986,7 +8986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.supported = true
 				self.famas.ads_speed = 0.240
 				self.famas.damage_falloff = {
-					start_dist = 2700,
+					start_dist = 2200,
 					end_dist = 6500,
 					min_mult = 0.5
 				}
@@ -9028,7 +9028,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.supported = true
 				self.komodo.ads_speed = 0.240
 				self.komodo.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 1700,
 					end_dist = 6000,
 					min_mult = 0.4166
 				}
@@ -9068,7 +9068,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.supported = true
 				self.hajk.ads_speed = 0.280
 				self.hajk.damage_falloff = {
-					start_dist = 2500,
+					start_dist = 2300,
 					end_dist = 6800,
 					min_mult = 0.4166
 				}
@@ -9148,7 +9148,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l85a2.supported = true
 				self.l85a2.ads_speed = 0.400
 				self.l85a2.damage_falloff = {
-					start_dist = 2800,
+					start_dist = 2600,
 					end_dist = 7800,
 					min_mult = 0.3334
 				}	
@@ -18094,6 +18094,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			if table.contains(weap.categories, "shotgun") then
 				weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+			end
+
+			if table.contains(weap.categories, "dmr") then
+				weap.SINGLE_FIRE_RANGE_MULTIPLIER = 1.15
 			end
 
 			if table.contains(weap.categories, "dmr") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then

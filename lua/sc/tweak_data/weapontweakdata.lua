@@ -17364,7 +17364,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.recategorize = { "dmr_ar" }
 		self.sierra458.damage_type = "sniper"
 		self.sierra458.upgrade_blocks = nil
-		self.sierra458.desc_id = "bm_ap_armor_80_weapon_sc_desc"
+		self.sierra458.desc_id = "bm_ap_armor_50_weapon_sc_desc"
 		self.sierra458.has_description = true
 		self.sierra458.lock_slide = true
 		self.sierra458.lock_slide_offset = 0.1
@@ -18098,6 +18098,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if table.contains(weap.categories, "dmr") then
 				weap.SINGLE_FIRE_RANGE_MULTIPLIER = 1.15
+				weap.SINGLE_FIRE_AP_ADD = 0.25
 			end
 
 			if table.contains(weap.categories, "dmr") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then

@@ -609,6 +609,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0
+
+		self._single_fire_ap_add = self:weapon_tweak_data().SINGLE_FIRE_AP_ADD or 0
 	
 		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
 		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
@@ -1833,6 +1835,14 @@ function NewRaycastWeaponBase:can_shoot_through_enemy_unlim()
 	local fire_mode_data = self._fire_mode_data[self._fire_mode:key()]
 
 	return fire_mode_data and fire_mode_data.can_shoot_through_enemy_unlim or self._can_shoot_through_enemy_unlim
+end
+
+
+function NewRaycastWeaponBase:armor_piercing_chance()
+	local ap_value = self._armor_piercing_chance
+	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
+	ap_value = ap_value + (is_single and self._single_fire_ap_add) or 0
+	return ap_value or 0
 end
 
 function NewRaycastWeaponBase:can_shoot_through_enemy()

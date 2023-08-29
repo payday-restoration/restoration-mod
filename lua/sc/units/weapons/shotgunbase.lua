@@ -226,6 +226,8 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	end
 
 	local spread_x, spread_y = self:_get_spread(user_unit)
+	local right = direction:cross(Vector3(0, 0, 1)):normalized()
+	local up = direction:cross(right):normalized()
 	spread_y = spread_y or spread_x
 	spread_mul = spread_mul or 1
 

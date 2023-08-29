@@ -76,7 +76,10 @@ local mvec_temp = Vector3()
 local mvec_to = Vector3()
 local mvec_direction = Vector3()
 local mvec_spread_direction = Vector3()
-
+local mvec_right = Vector3()
+local mvec_up = Vector3()
+local mvec_ax = Vector3()
+local mvec_ay = Vector3()
 
 function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data, ammo_usage)
 	if self:gadget_overrides_weapon_functions() then

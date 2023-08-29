@@ -325,14 +325,19 @@ end
 
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local nr_players = 0
+	--If stealth - count only amount of players
+	if self:whisper_mode() then
+		nr_players = managers.network:session():amount_of_alive_players() 
+	else
+	--If loud - count players + bots
 	for u_key, u_data in pairs(self:all_criminals()) do
 		if not u_data.status then
 			nr_players = nr_players + 1
 		end
 	end
-	nr_players = math.clamp(nr_players, 1, 22)
+		nr_players = math.clamp(nr_players, 1, 22)	
+	end
 	--log("SC: Balance set for player count of = " .. tostring(nr_players))
-	
 	return balance_multipliers[nr_players]
 end
 

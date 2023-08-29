@@ -2,6 +2,16 @@ local ids_single = Idstring("single")
 local ids_auto = Idstring("auto")
 local ids_burst = Idstring("burst")
 local ids_volley = Idstring("volley")
+local mvec3_add = mvector3.add
+local mvec3_cpy = mvector3.copy
+local mvec3_cross = mvector3.cross
+local mvec3_mul = mvector3.multiply
+local mvec3_norm = mvector3.normalize
+local mvec3_set = mvector3.set
+local math_cos = math.cos
+local math_rad = math.rad
+local math_random = math.random
+local math_sin = math.sin
 
 local old_update_stats_values = ShotgunBase._update_stats_values
 

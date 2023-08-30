@@ -133,6 +133,8 @@ function GroupAIStateBase:_init_misc_data()
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
+	
+	self._summers_dr = 0.25
 end
 
 local sc_group_base = GroupAIStateBase.on_simulation_started
@@ -203,6 +205,19 @@ function GroupAIStateBase:on_simulation_started()
 		self._suspicion_threshold = 0.9
 	end
 	
+	self._summers_dr = 0.25
+end
+
+function GroupAIStateBase:_get_summers_dr()	
+	return self._summers_dr
+end
+
+function GroupAIStateBase:_reduce_summers_dr(amount)
+	self._summers_dr = self._summers_dr + amount
+end
+
+function GroupAIStateBase:_reset_summers_dr()	
+	self._summers_dr = tweak_data.character.summers.base_summers_dr
 end
 
 function GroupAIStateBase:chk_guard_detection_mul()
@@ -227,10 +242,14 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 		return
 	end
 	
-	--No PONRs during stealth
-	--if managers.groupai:state():whisper_mode() then
-		--return
-	--end
+	--No PONRs during stealth, unless the map really needs it
+	--[[
+	if not table.contains(restoration.stealth_ponr_behavior, job) then
+		if managers.groupai:state():whisper_mode() then
+			return
+		end
+	end
+	]]--
 
 	self._forbid_drop_in = true
 	self._ponr_is_on = true
@@ -662,7 +681,7 @@ Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion_from_host", f
 				end
 			end
 		end
-		]]
+		]]--
 	end
 end)
 

@@ -202,6 +202,19 @@ function restoration:Init()
 		"sand", --The Ukrainian Prisoner
 		"trai" --Lost in Transit	
 	}	
+	
+	--[[
+	restoration.stealth_ponr_behavior = {
+		"cage", --Carshop
+		"tag", --Breaking Feds
+		"xmn_tag", --Breaking Feds Xmas
+		"kosugi", --Shadow Raid
+		"dark", --Murky Station
+		"fish", --Yacht
+		"sand", --The Ukrainian Prisoner
+		"ranc" --Midland Ranch
+	}		
+	]]--
 		
 	--Increased spawns, should only be reserved for larger maps.
 	restoration.very_large_levels = {

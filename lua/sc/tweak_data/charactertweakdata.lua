@@ -624,7 +624,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.HEALTH_INIT = 120
 	self.medic_summers.headshot_dmg_mul = 1.5
 	self.medic_summers.damage_resistance = presets.damage_resistance.none
-	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
+	self.medic_summers.tags = {"custom", "special"}
 	self.medic_summers.ignore_medic_revive_animation = false
 	self.medic_summers.surrender = nil
 	self.medic_summers.flammable = false
@@ -658,6 +658,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.follower = true
 	self.medic_summers.no_omnia_heal = true
 	self.medic_summers.min_obj_interrupt_dis = 300
+	self.medic_summers.reduce_summers_dr_on_death = true
 	table.insert(self._enemy_list, "medic_summers")
 end
 
@@ -2930,7 +2931,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.HEALTH_INIT = 144
 	self.summers.flammable = false
 	self.summers.use_animation_on_fire_damage = false
-	self.summers.damage.bullet_damage_mul = 0.75
+	self.summers.base_summers_dr = 0.25
 	self.summers.damage.explosion_damage_mul = 0.25
 	self.summers.damage.rocket_damage_mul = 0.25
 	self.summers.damage.fire_damage_mul = 0.25
@@ -3140,7 +3141,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.HEALTH_INIT = 120
 	self.taser_summers.headshot_dmg_mul = 1.5
 	self.taser_summers.damage_resistance = presets.damage_resistance.none
-	self.taser_summers.tags = {"female_enemy","taser", "medic_summers", "custom", "special"}
+	self.taser_summers.tags = {"female_enemy","taser", "custom", "special"}
 	self.taser_summers.ignore_medic_revive_animation = false
 	self.taser_summers.flammable = false
 	self.taser_summers.use_animation_on_fire_damage = false
@@ -3179,6 +3180,7 @@ function CharacterTweakData:_init_taser(presets)
 	}
 	self.taser_summers.no_omnia_heal = true
 	self.taser_summers.min_obj_interrupt_dis = 300
+	self.taser_summers.reduce_summers_dr_on_death = true
 	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
@@ -3316,7 +3318,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.damage_resistance = presets.damage_resistance.none
-	self.boom_summers.tags = {"female_enemy", "custom", "medic_summers", "special"}
+	self.boom_summers.tags = {"female_enemy", "custom", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
@@ -3335,6 +3337,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.no_omnia_heal = true
 	self.boom_summers.marshal_logic = nil
 	self.boom_summers.min_obj_interrupt_dis = 300
+	self.boom_summers.reduce_summers_dr_on_death = true
 	table.insert(self._enemy_list, "boom_summers")		
 	
 	self.boom_titan = deep_clone(self.boom)
@@ -17847,7 +17850,8 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	--Harder heads base
+	--Harder heads base, not sure if needed anymore tbh
+	--[[
 	self.swat.headshot_dmg_mul = 2
 	self.heavy_swat.headshot_dmg_mul = 2.2
 	self.fbi_swat.headshot_dmg_mul = 2.2
@@ -17857,6 +17861,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat_titan.headshot_dmg_mul = 2.5
 	self.city_swat_titan_assault.headshot_dmg_mul = 2.5
 	self.weekend_lmg.headshot_dmg_mul = 3.125
+	]]--
 
 	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)

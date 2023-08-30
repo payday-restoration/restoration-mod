@@ -52,6 +52,11 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		end
 		
 	end
+	
+	--Just in case Summers decides to spawn again, his DR is back
+	if self._unit:base()._tweak_table == "summers" then
+		managers.groupai:state():_reset_summers_dr()	
+	end		
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"

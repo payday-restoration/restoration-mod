@@ -1025,6 +1025,11 @@ function CopDamage:damage_bullet(attack_data)
 	if attack_data.attacker_unit:base().sentry_gun and not self:is_friendly_fire(attack_data.attacker_unit) then
 		managers.groupai:state():_voice_sentry() --FUCKING SCI-FI ROBOT GUNS
 	end
+	
+	local summers_dr = managers.groupai:state():_get_summers_dr()
+	if self._unit:base()._tweak_table == "summers" then
+		damage = damage * summers_dr
+	end
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
 	local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
@@ -1524,6 +1529,11 @@ function CopDamage:damage_melee(attack_data)
 		end
 	end
 
+	local summers_dr = managers.groupai:state():_get_summers_dr()
+	if self._unit:base()._tweak_table == "summers" then
+		damage = damage * summers_dr
+	end
+
 	attack_data.raw_damage = damage
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
@@ -1860,81 +1870,10 @@ function CopDamage:die(attack_data)
 			MutatorExplodingEnemies._detonate(MutatorExplodingEnemies, self, attack_data, true, 60, 500)
 		end
 	end
-
-end
-
-function CopDamage:heal_unit(unit, override_cooldown)
-	if self._unit:anim_data() and self._unit:anim_data().act then
-		return false
-	end
-
-	local t = Application:time()
-	local my_tweak_table = self._unit:base()._tweak_table
-
-	if not override_cooldown then
-		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-			local cooldown = tweak_data.medic.cooldown
-			cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
-
-			if t < self._heal_cooldown_t + cooldown then
-				return false
-			end
-		end
-	end
-
-	local target_tweak_table = unit:base()._tweak_table
-
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-		if table.contains(tweak_data.medic.disabled_units, target_tweak_table) then
-			return false
-		end
-	else
-		if not table.contains(tweak_data.medic.whitelisted_units, target_tweak_table) then
-			return false
-		end
-	end
-
-	local team = unit:movement().team and unit:movement():team()
-
-	if team and team.id ~= "law1" then
-		if not team.friends or not team.friends.law1 then
-			return false
-		end
-	end
-
-	if unit:brain() then
-		if unit:brain().converted then
-			if unit:brain():converted() then
-				return false
-			end
-		elseif unit:brain()._logic_data and unit:brain()._logic_data.is_converted then
-			return false
-		end
-	end
-
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-		self._heal_cooldown_t = t
-	end
-
-	if not self._unit:character_damage():dead() then
-		if self._unit:contour() then
-			self._unit:contour():add("medic_show")
-			self._unit:contour():flash("medic_show", 0.2)
-		end
-
-		local action_data = {
-			body_part = 1,
-			type = "heal",
-			client_interrupt = Network:is_client()
-		}
-
-		self._unit:movement():action_request(action_data)
-	end
-
-	managers.network:session():send_to_peers_synched("sync_medic_heal", self._unit)
-	MedicActionHeal:check_achievements()
-
-	return true
+	
+	if self._char_tweak.reduce_summers_dr_on_death then
+		managers.groupai:state():_reduce_summers_dr(0.15)
+	end	
 end
 
 function CopDamage:stun_hit(attack_data)

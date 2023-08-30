@@ -15,9 +15,35 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 540	
 	end
 
+local ponr_timer_player_mul = {
+		1,
+		0.85,
+		0.7,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65
+}
+
 return {
 	--Pro Job PONR 
-	[101829] = {
+	[101485] = {
+		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	-- restores some unused sniper spawns with their SOs

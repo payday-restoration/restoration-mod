@@ -81,7 +81,7 @@ function restoration:Init()
 		pal = restoration.captain_types.summer, --counterfeit
 		mia_1 = restoration.captain_types.summer, --Hotline Day 1
 		crojob2 = restoration.captain_types.summer, --bomb dockyard
-		firestarter_3 = restoration.captain_types.summer, --firestarter day 3
+		firestarter_1 = restoration.captain_types.summer, --firestarter day 1
 		jolly = restoration.captain_types.summer, --aftershock
 		rvd1 = restoration.captain_types.summer, --highland mortuary 
 		watchdogs_2_day = restoration.captain_types.summer, --Watchdogs Day 2 Daytime
@@ -101,7 +101,7 @@ function restoration:Init()
 
 		--Spring
 		xmn_hox2 = restoration.captain_types.spring, --Hoxout Day 2, christmas
-		firestarter_1 = restoration.captain_types.spring, --firestarter day 1
+		firestarter_3 = restoration.captain_types.spring, --firestarter day 3
 		arm_for = restoration.captain_types.spring, --train heist
 		arm_for_restoration = restoration.captain_types.spring,	--train heist restoration edit
 		big = restoration.captain_types.spring, --big bank

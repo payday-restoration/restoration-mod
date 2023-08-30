@@ -35,7 +35,7 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--PONR when someone pickup a bomb part
+	--Pro Job PONR when someone pickup a bomb part
 	-- Van escape
 	[105877] = {
 		ponr_player_mul = ponr_timer_player_mul,

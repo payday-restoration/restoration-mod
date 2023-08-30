@@ -16,8 +16,8 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	end
 
 return {
-	--Pro Job PONR 
-	[101726] = {
+	--Pro Job PONR
+	[100216] = {
 		ponr = ponr_value
 	},
 	-- Enter main hall

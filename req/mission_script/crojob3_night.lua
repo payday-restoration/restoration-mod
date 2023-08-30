@@ -1,49 +1,35 @@
+--Just in case
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 1320
+		ponr_value = 750
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 1320 	
+		ponr_value = 720	
 	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 1290	
+		ponr_value = 690
 	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
-		ponr_value = 1260	
+		ponr_value = 660	
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 1230
+		ponr_value = 630
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 1200	
+		ponr_value = 600		
 	end
 
-local ponr_timer_player_mul = {
-		1,
-		0.9,
-		0.8,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}
-
 return {
-	--Pro Job PONR 
-	[101090] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
+	--Pro Job PONR
+	[103031] = {
+			ponr = ponr_value
+	},
+	--change beat cops
+	[100634] = {
+		values = {
+            enemy = "units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest"
+		}
+	},
+	[100635] = {
+		values = {
+            enemy = "units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest"
+		}
 	}
 }

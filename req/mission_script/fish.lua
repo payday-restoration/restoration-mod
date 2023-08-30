@@ -35,7 +35,7 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--PONR when someone hack laptop in first time
+	--Pro Job PONR when someone hack laptop in first time
 	[100036] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value

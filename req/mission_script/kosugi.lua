@@ -35,7 +35,7 @@ local ponr_timer_player_mul = {
 }
 	
 return {
-	--PONR when helicopter sequence is started
+	--Pro Job PONR when helicopter sequence is started
 	[100303] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value

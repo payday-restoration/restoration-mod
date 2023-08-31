@@ -2062,7 +2062,7 @@ function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
 	if Network:is_server() then
 		attacker = attack_data.attacker_unit
 
-		if attacker and not attacker:movement() then
+		if attacker and (not alive(attacker) or attacker.movement and not attacker:movement()) then
 			attacker = nil
 		end
 		

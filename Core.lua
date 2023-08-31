@@ -93,7 +93,7 @@ function restoration:Init()
 		glb = restoration.captain_types.summer, --Golden Lotus Bank 
 		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club
 		constantine_harbor_lvl = restoration.captain_types.summer, --Harboring a Grudge
-		firestarter_3_res = restoration.captain_types.summer, --firestarter day 3 res edit version
+		firestarter_1_res = restoration.captain_types.summer, --firestarter day 1 res edit version
 		bag_sim_2 = restoration.captain_types.summer, --Bag Simulator 2
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
 		Security_Avenue = restoration.captain_types.summer, --Gensec HQ Raid day 1
@@ -111,7 +111,7 @@ function restoration:Init()
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
 		chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
-		firestarter_1_res = restoration.captain_types.spring, --firestarter day 1 res edit version
+		firestarter_3_res = restoration.captain_types.spring, --firestarter day 3 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
 		nft_heist = restoration.captain_types.spring, --EN EF TEE HEIST
 		anlh = restoration.captain_types.spring, --An End To Liang

@@ -3692,6 +3692,7 @@ function PlayerStandard:_start_action_unequip_weapon(t, data)
 
 	--self:_interupt_action_running(t)
 	self:_interupt_action_charging_weapon(t)
+	self._spin_up_shoot = nil
 
 	local result = self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
 

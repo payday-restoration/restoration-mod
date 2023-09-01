@@ -10570,8 +10570,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bessy.desc_id = "bm_bessy_sc_desc"
 				self.bessy.CLIP_AMMO_MAX = 1
 				self.bessy.AMMO_MAX = 20
-				self.bessy.fire_mode_data.fire_rate = 6
-				self.bessy.fire_rate_multiplier = 2
+				self.bessy.fire_mode_data.fire_rate = 3.6
+				self.bessy.fire_rate_multiplier = 1.5
 				self.bessy.lock_slide = true
 				self.bessy.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.bessy.supported = true
@@ -10611,6 +10611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bessy.special_damage_multiplier = 2
 				self.bessy.reload_speed_multiplier = 1.05
 			end
+
 		--SECONDARIES
 
 			--G2 Contender
@@ -15342,6 +15343,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.categories = {
 			"snp"
 		}
+		self.musket.use_data.selection_index = 1
 		self.musket.recategorize = { "heavy_snp" }
 		self.musket.damage_type = "sniper"
 		self.musket.always_play_anims = true
@@ -15350,8 +15352,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.has_description = true
 		self.musket.desc_id = "bm_heavy_ap_no_mult_weapon_sc_desc"
 		self.musket.CLIP_AMMO_MAX = 1
-		self.musket.AMMO_MAX = 20
-		self.musket.fire_mode_data.fire_rate = 1.5
+		self.musket.AMMO_MAX = 10
+		self.musket.fire_mode_data.fire_rate = 2
 		self.musket.lock_slide = true
 		self.musket.sounds.magazine_empty = "shotgun_dryfire"
 		self.musket.sounds.stop_fire = "judge_x_fire"

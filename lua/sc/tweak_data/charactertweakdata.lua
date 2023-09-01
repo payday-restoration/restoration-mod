@@ -711,7 +711,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	end
 	self.omnia_lpf.priority_shout = "f47"
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
-	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
+	self.omnia_lpf.tags = {"law", "lpf", "special", "customvo"}
 	self.omnia_lpf.do_omnia = true
 	self.omnia_lpf.no_omnia_heal = true
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"

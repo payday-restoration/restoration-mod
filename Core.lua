@@ -329,7 +329,8 @@ function restoration:Init()
 		"cshr", --Old Safehouse Raid
 		"SJamBank", -- Branch Bank Initiative
 		"constantine_dwtd_lvl", -- Dance with The Devil (Constantine Scores)
-		"constantine_yacht_lvl" --  Showdown  (Constantine Scores) 
+		"constantine_yacht_lvl", --  Showdown  (Constantine Scores) 
+		"constantine_policestation_lvl" -- Precint Raid (Constantine Scores)
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.

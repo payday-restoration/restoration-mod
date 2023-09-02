@@ -589,7 +589,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	
 	if self._current_state == "bipod" then
 		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)	
-	elseif current_state._state_data.ducking then
+	elseif current_state and current_state._state_data.ducking then
 		multiplier = multiplier * self:upgrade_value("player", "crouching_damage_reduction", 1)
 	end
 

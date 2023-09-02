@@ -1,4 +1,41 @@
 
+function WeaponFactoryTweakData:_add_bullet_belt_to_part(parent_id, parent_a_obj, belt_data)
+	local parent_tweak = self.parts[parent_id]
+	parent_tweak.adds = parent_tweak.adds or {}
+	parent_tweak.bullet_belt = {}
+	local belt_part_prefix = parent_id .. "_belt_"
+	local belt_part, belt_part_id = nil
+	local belt_index = 1
+	local belt_parent_type = parent_tweak.type
+	local belt_parent_obj = parent_a_obj
+
+	for _, part_data in ipairs(belt_data) do
+		if part_data and part_data.amount then
+			for i = 1, part_data.amount do
+				belt_part = {
+					a_obj = belt_parent_obj,
+					parent = belt_parent_type,
+					stats = {
+						value = 1
+					},
+					type = "belt_" .. tostring(belt_index),
+					unit = part_data.unit,
+					third_unit = part_data.third_unit,
+					bullet_objects = part_data.bullet_objects,
+					animations = part_data.animations
+				}
+				belt_part_id = belt_part_prefix .. tostring(belt_index)
+				self.parts[belt_part_id] = belt_part
+				parent_tweak.adds[#parent_tweak.adds + 1] = belt_part_id
+				parent_tweak.bullet_belt[#parent_tweak.bullet_belt + 1] = belt_part_id
+				belt_parent_type = belt_part.type
+				belt_parent_obj = part_data.a_obj
+				belt_index = belt_index + 1
+			end
+		end
+	end
+end
+
 --ATTACHMENT PRESETS
 local sight_1_5x_offset = {
 	sights = {

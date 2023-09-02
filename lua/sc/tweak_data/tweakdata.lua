@@ -1297,7 +1297,7 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon_resmod(part_type, fa
 	for _, part_id in ipairs(factory_data.uses_parts) do
 		part_data = twf.parts[part_id]
 
-		if part_data.type == part_type then
+		if part_data.type and part_data.type == part_type then
 			table.insert(parts, part_id)
 		end
 	end

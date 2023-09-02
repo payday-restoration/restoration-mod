@@ -1,4 +1,22 @@
 
+function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_id, amount)
+	local factory_data = self[factory_id]
+	local parts = {}
+	local part_data = nil
+
+	for _, part_id in ipairs(factory_data.uses_parts) do
+		part_data = self.parts[part_id]
+
+		if part_data.type and part_data.type == part_type then
+			table.insert(parts, part_id)
+		end
+	end
+
+	for _, part_id in ipairs(parts) do
+		self:_clone_part_for_weapon(part_id, factory_id, amount)
+	end
+end
+
 --ATTACHMENT PRESETS
 local sight_1_5x_offset = {
 	sights = {

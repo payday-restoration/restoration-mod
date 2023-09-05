@@ -5332,6 +5332,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["rpd_menu_dialog_title"] = "Вы уверены?",
 		["rpd_menu_dialog_text"] = "Если вы обнулите перк '$perk_deck_name', вы получите $points_to_refund очков.",
 		
+		--Strings for Lobby Player Info
+		["menu_st_spec_24"] = "Перерожденный",
+		["menu_st_spec_25"] = "Прирожденный",
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
 	["menu_deck_kmerc_title"] = "Наемник",

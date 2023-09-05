@@ -5118,6 +5118,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["rpd_menu_dialog_text"] = "If you reset the $perk_deck_name perk deck, you will get back $points_to_refund perk points.",
 
 
+		--Strings for Lobby Player Info
+		["menu_st_spec_24"] = "Tabula Rasa",
+		["menu_st_spec_25"] = "Innatae",
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
 				["menu_deck_kmerc_1_desc_sc"] = "Take greatly reduced damage from heavy hits to your health so that no single attack can kill you.\n\nYou gain ##5%## more health.",

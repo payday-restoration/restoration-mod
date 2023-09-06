@@ -18,6 +18,16 @@ tweak_data.ammo.ricochet.autohit = {
 	near_angle = 60
 }
 
+tweak_data.scene_pose_items.husk_bessy = {
+	"primary"
+}
+
+tweak_data.scene_poses.weapon.bessy = {
+	"husk_bessy",
+	required_pose = true
+}
+
+
 --Swap Speed Multipliers
 --TODO: Move to stat_info
 tweak_data.pistol = {

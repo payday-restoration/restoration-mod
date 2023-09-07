@@ -1279,7 +1279,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	end
 
 	if self:can_toggle_firemode() and self:fire_mode() == "single" and not self:in_burst_mode() then
-		multiplier = multiplier * 0.85
+		multiplier = multiplier * 0.8
 	end
 
 	return multiplier

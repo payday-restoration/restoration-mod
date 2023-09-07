@@ -3,6 +3,25 @@ local mvec2 = Vector3()
 local mrot1 = Rotation()
 
 function ProjectileBase:update(unit, t, dt)
+
+	--Something to cull
+	if self._timer and self._no_timer and not self._collided then
+		self._timer = self._timer - dt
+
+		if self._timer <= 0 then
+			self._timer = nil
+			self._no_timer = nil
+
+			managers.game_play_central:remove_projectile_trail(self._unit)
+			self._unit:set_slot(0)
+
+			return
+		end
+	elseif not self._timer then
+		self._timer = 10
+		self._no_timer = true
+	end
+
 	if not self._simulated and not self._collided then
 		self._unit:m_position(mvec1)
 		mvector3.set(mvec2, self._velocity * dt)

@@ -10015,7 +10015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.tti.stats_modifiers = nil
-				self.tti.reload_speed_multiplier = 0.9
+				self.tti.reload_speed_multiplier = 0.87
 				self.tti.timers.unequip = 0.7
 				self.tti.timers.equip = 0.7
 				self.tti.timers.reload_exit_empty = 0.725
@@ -18099,7 +18099,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			
 			if table.contains(weap.categories, "dmr") then
-				weap.SINGLE_FIRE_RANGE_MULTIPLIER = 1.15
 				weap.SINGLE_FIRE_AP_ADD = 0.25
 			end
 

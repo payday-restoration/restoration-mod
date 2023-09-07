@@ -2935,9 +2935,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
 		lock_semi = true,
 		ignore_rof_mult_anims = true,
-		rof_mult = 0.85,
-		falloff_start_mult = 1.15,
-		falloff_end_mult = 1.15
+		rof_mult = 0.75,
+		falloff_start_mult = 1.25,
+		falloff_end_mult = 1.25
 	}
 	self.parts.wpn_fps_upg_i_singlefire.perks = {
 		"fire_mode_single"

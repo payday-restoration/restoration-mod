@@ -9938,7 +9938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.upgrade_blocks = nil
 				self.qbu88.CLIP_AMMO_MAX = 10
 				self.qbu88.AMMO_MAX = 60
-				self.qbu88.fire_mode_data.fire_rate = 0.2307692
+				self.qbu88.fire_mode_data.fire_rate = 0.225
 				self.qbu88.fire_rate_multiplier = 1.5 --So the recoil anim while ADS progresses faster
 				self.qbu88.sms = sms_preset.semi_snp_light
 				self.qbu88.CAN_TOGGLE_FIREMODE = false
@@ -9986,7 +9986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.AMMO_MAX = 60
 				self.tti.FIRE_MODE = "single"
 				self.tti.fire_mode_data = {}
-				self.tti.fire_mode_data.fire_rate = 0.1714285
+				self.tti.fire_mode_data.fire_rate = 0.16216216
 				self.tti.sms = sms_preset.semi_snp_light
 				self.tti.kick = self.stat_info.kick_tables.vertical_kick
 				self.tti.can_shoot_through_enemy = true
@@ -10288,7 +10288,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wa2000.desc_id = "bm_wa2000_sc_desc"
 				self.wa2000.CLIP_AMMO_MAX = 6
 				self.wa2000.AMMO_MAX = 40
-				self.wa2000.fire_mode_data.fire_rate = 0.3
+				self.wa2000.fire_mode_data.fire_rate = 0.25
 				self.wa2000.sms = sms_preset.semi_snp_heavy
 				self.wa2000.CAN_TOGGLE_FIREMODE = false
 				self.wa2000.kick = self.stat_info.kick_tables.vertical_kick
@@ -10331,7 +10331,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.siltstone.desc_id = "bm_siltstone_sc_desc"
 				self.siltstone.CLIP_AMMO_MAX = 10
 				self.siltstone.AMMO_MAX = 40
-				self.siltstone.fire_mode_data.fire_rate = 0.4
+				self.siltstone.fire_mode_data.fire_rate = 0.3157894
 				self.siltstone.sms = sms_preset.semi_snp_heavy
 				self.siltstone.kick = self.stat_info.kick_tables.right_kick
 				self.siltstone.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -13474,7 +13474,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.tactical_reload = 1
 			self.sgs.AMMO_MAX = 60
 			self.sgs.FIRE_MODE = "single"
-			self.sgs.fire_mode_data.fire_rate = 0.173913
+			self.sgs.fire_mode_data.fire_rate = 0.17142857
 			self.sgs.sms = sms_preset.semi_snp_light
 			self.sgs.kick = self.stat_info.kick_tables.vertical_kick
 			self.sgs.can_shoot_through_enemy = true
@@ -15305,7 +15305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.svd.tactical_reload = 1
 		self.svd.CLIP_AMMO_MAX = 10
 		self.svd.AMMO_MAX = 40
-		self.svd.fire_mode_data.fire_rate = 0.4
+		self.svd.fire_mode_data.fire_rate = 0.3157894
 		self.svd.sms = sms_preset.semi_snp_heavy
 		self.svd.kick = self.stat_info.kick_tables.right_kick
 		self.svd.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -15407,7 +15407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.desc_id = "bm_m107cq_sc_desc"
 		self.m107cq.tactical_reload = 1
 		self.m107cq.AMMO_MAX = 15
-		self.m107cq.fire_mode_data.fire_rate = 0.6
+		self.m107cq.fire_mode_data.fire_rate = 0.5454545
 		self.m107cq.sms = sms_preset.semi_snp_amr
 		self.m107cq.kick = deep_clone(self.stat_info.kick_tables.right_kick)
 		self.m107cq.kick.crouching = self.m107cq.kick.standing

@@ -1205,7 +1205,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--NV4
 		["bm_wp_upg_o_iwelo"] = "플로팅 조명 조준점이 있는 발광 광학 조준기\n#{risk}#1.1x 배율.##",
-		["bm_wp_upg_o_iwrds"] = "정밀 레드 닷 조준기.\n#{risk}#1.5x 배율.##",		
+		["bm_wp_upg_o_iwrds"] = "정밀 레드 닷 조준기.\n#{risk}#1.5x 배율.##",
+
+		--Raygun
+		["bm_wp_raygun_o_waw"] = "OG 기계식 조준기 조정기",
+		["bm_wp_raygun_o_waw_desc"] = "콜 오브 듀티: 블랙 옵스 I 이전의 계식 조준기 조정기로 변경합니다.",				
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 #{risk}#수평##으로 퍼지게 합니다.",

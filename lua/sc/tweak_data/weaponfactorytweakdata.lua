@@ -13528,6 +13528,11 @@ end)
 --Pistol Crossbow
 Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function(self)
 	
+
+	self.parts.wpn_fps_bow_hunter_body_standard.stance_mod = {
+		wpn_fps_bow_hunter = { translation = Vector3( 0, 20, 0 ) }
+	}
+
 	--Carbon Limb
 	self.parts.wpn_fps_bow_hunter_b_carbon.pcs = {
 		10,
@@ -26676,6 +26681,38 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_tingledingle_m_extended.custom_stats = {
 			ads_speed_mult = 1.125
 		}
+	end
+
+	if self.parts.wpn_fps_spe_raygun_body then --Zdann's Raygun
+		self.parts.wpn_fps_spe_raygun_body.stance_mod = {
+			wpn_fps_spe_raygun = { translation = Vector3( 0, 0, -0.15 ) }
+		}
+
+		self.parts.wpn_fps_spe_raygun_o_waw = {
+			pcs = {}, 
+			type = "sight", 
+			name_id = "bm_wp_model70_iron_sight", 
+			has_description = true, 
+			a_obj = "a_body",
+			stance_mod = {
+				wpn_fps_spe_raygun = { 
+					translation = Vector3( 0, -5, 3 ), 
+					rotation = Rotation( 0, -3.1, 0 )
+				}
+			},
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy", 
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy", 
+			dlc = "sc",
+			supported = true,
+			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc", 
+			stats = {
+				value = 0
+			},
+			internal_part = true
+		}
+
+		table.insert(self.wpn_fps_spe_raygun.uses_parts, "wpn_fps_spe_raygun_o_waw")	
+		table.insert(self.wpn_fps_spe_raygun_npc.uses_parts, "wpn_fps_spe_raygun_o_waw")
 	end
 
 	if self.parts.wpn_fps_snp_l115_stock then --Pawcio's L115

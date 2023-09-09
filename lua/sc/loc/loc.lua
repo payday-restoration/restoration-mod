@@ -1964,6 +1964,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--NV4
 					["bm_wp_upg_o_iwelo"] = "Emitted Light Optic with a floating illuminated reticle\n#{risk}#1.1x magnification.##",
 					["bm_wp_upg_o_iwrds"] = "Precision red dot sight.\n#{risk}#1.5x magnification.##",
+
+					--Raygun
+					["bm_wp_raygun_o_waw"] = "OG Iron Sight Alignment",
+					["bm_wp_raygun_o_waw_desc"] = "Changes the iron sight alignment to how it was before Call of Duty: Black Ops II",
 			
 			--[[ PISTOLS ]]
 				--Gecko Pistol

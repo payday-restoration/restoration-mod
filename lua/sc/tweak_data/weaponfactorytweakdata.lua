@@ -26691,7 +26691,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_spe_raygun_o_waw = {
 			pcs = {}, 
 			type = "sight", 
-			name_id = "bm_wp_model70_iron_sight", 
+			name_id = "bm_wp_raygun_o_waw", 
+			desc_id = "bm_wp_raygun_o_waw_desc", 
 			has_description = true, 
 			a_obj = "a_body",
 			stance_mod = {

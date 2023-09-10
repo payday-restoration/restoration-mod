@@ -4627,7 +4627,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Kickstarter
 				["menu_fire_trap_beta_sc"] = "Kick Starter",
-				["menu_fire_trap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain the ability to restart a drill with a melee strike.\n\nYou get #{skill_color}#1## chance for each time it jams with a #{skill_color}#75%## success rate.\n\nACE: #{owned}#$pro##\n#{skill_color}#You no longer put away your weapon while performing interactions.##\n\nYou are able to look around freely, crouch, aim, and use your weapons without stopping the interaction, as long as you continue to hold down the interact key and remain in range for the interaction.",
+				["menu_fire_trap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain the ability to restart a drill or saw with a melee strike.\n\nYou get #{skill_color}#1## chance for each time it jams with a #{skill_color}#75%## success rate.\n\nACE: #{owned}#$pro##\n#{skill_color}#You no longer put away your weapon while performing interactions.##\n\nYou are able to look around freely, crouch, aim, and use your weapons without stopping the interaction, as long as you continue to hold down the interact key and remain in range for the interaction.",
 
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--

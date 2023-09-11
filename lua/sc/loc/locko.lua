@@ -4782,7 +4782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",
-			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴을 때려 고칠 수 있습니다.\n\n#{skill_color}#75%##의 성공률로 드릴이 고장날 때마다 기회를 #{skill_color}#1##번 얻습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#상호작용을 하는 동안 더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
+			["menu_fire_trap_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접무기로 드릴 혹은 설치형 톱을 때려 고칠 수 있습니다.\n\n고장날 때마다 #{skill_color}#75%##의 성공률을 가진 기회를 #{skill_color}#1##회 얻습니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#상호작용을 하는 동안 더 이상 무기를 넣지 않습니다.##\n\n상호작용 키를 계속 누르고 상호작용 범위 내에 있는 동안 상호작용을 중단하지 않고도 자유롭게 주위를 둘러보거나 앉거나 무기를 사용 및 조준을 할 수 있습니다.",
 
 			--[[  COMBAT ENGINEER SUBTREE   ]]--
 			--Rifleman

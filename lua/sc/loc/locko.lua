@@ -2758,28 +2758,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Spas12
 					["bm_w_spas12"] = "Predator 12G",
 					--Benelli
-					["bm_w_benelli"] = "M1014",
+					["bm_w_benelli"] = "M1014 12G",
 					--Argos III
-					["bm_w_ultima"] = "Argos III",
+					["bm_w_ultima"] = "Argos III 12G",
 					--Street Sweeper
-					["bm_w_striker"] = "Street Sweeper",
+					["bm_w_striker"] = "Street Sweeper12G",
 					--Goliath
 					["bm_w_rota"] = "Goliath 12G",
 					--VD-12
-					["bm_w_sko12"] = "VD-12",
+					["bm_w_sko12"] = "VD-12G",
 					["bm_w_x_sko12"] = "아킴보 VD-12",
 					--GSPS
 					["bm_w_m37"] = "GSPS 12G",
 					--Supernova
-					["bm_w_supernova"] = "Deimos",
+					["bm_w_supernova"] = "Deimos 12G",
 					--Loco
 					["bm_w_serbu"] = "Locomotive 12G",
 					--Reinfeld 88
-					["bm_w_m1897"] = "Repeater 1897",
+					["bm_w_m1897"] = "Repeater 1897 12G",
 					--Mosconi 12g
 					["bm_w_m590"] = "Mosconi Tactical 12G",
 					--R870
-					["bm_w_r870"] = "Reinfeld 880",
+					["bm_w_r870"] = "Reinfeld 880 12G",
 					--KSG
 					["bm_w_ksg"] = "Raven 12G",
 					--Breaker 10g
@@ -2789,7 +2789,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Mosconi
 					["bm_w_huntsman"] = "Mosconi S/S 12G",
 					--Judge
-					["bm_w_judge"] = "The Judge",
+					["bm_w_judge"] = "The Judge .410",
 					["bm_w_x_judge"] = "저지 & 쥬리", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
 					--Joceline
 					["bm_w_b682"] = "Joceline O/U 12G",	
@@ -2917,7 +2917,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Scunt
 					["bm_w_scout"] = "Pronghorn",
 					--AWP
-					["bm_w_awp"] = "Amaroq 900",
+					["bm_w_awp"] = "AIM 900F",
 					--WA2000
 					["bm_w_wa2000"] = "Lebensauger .300",
 					--Rangerhitter
@@ -2985,7 +2985,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "아킴보 Chimano 22C",
 				["bm_w_x_1911"] = "아킴보 Operator II",
-				["bm_w_schakal"] = "AMP 45",
+				["bm_w_schakal"] = "SG AMP 45",
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_x_judge"] = "아킴보 Judges",
 				["bm_w_vhs"] = "HVH-2",
@@ -4762,7 +4762,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BREACHER SUBTREE   ]]--
 			--Silent Drilling--
 			["menu_hardware_expert_beta_sc"] = "조용한 드릴링",
-			["menu_hardware_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 #{skill_color}#드릴은 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴을 봐야 합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱의 수리속도가 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_hardware_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이제 #{skill_color}#드릴과 톱이 조용해집니다##, 시민과 경비원은 경고를 받으려면 드릴과 톱을 봐야 합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱의 수리속도가 #{skill_color}#50%##만큼 증가합니다.",
 			
 			--Demoman
 			["menu_trip_mine_expert_beta_sc"] = "데모맨",
@@ -4778,7 +4778,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Expert Hardware
 			["menu_kick_starter_beta_sc"] = "하드웨어 전문가",
-			["menu_kick_starter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 #{skill_color}#10%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 #{skill_color}#20%##만큼 증가합니다.\n\n드릴을 멈출려고 하는 적들을 #{skill_color}#50%## 확률로 감전시켜 방해 공작을 막습니다.",
+			["menu_kick_starter_beta_desc_sc"] = "베이직: #{owned}#$basic##\n드릴과 톱이 고장났을 때 스스로 고쳐질 확률이 #{skill_color}#10%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n드릴과 톱이 고장났을때 스스로 고쳐질 확률이 추가로 #{skill_color}#20%##만큼 증가합니다.\n\n드릴 혹은 톱을 멈출려고 하는 적들을 #{skill_color}#50%## 확률로 감전시켜 방해 행위를 막습니다.",
 
 			--Kickstarter
 			["menu_fire_trap_beta_sc"] = "킥스타터",

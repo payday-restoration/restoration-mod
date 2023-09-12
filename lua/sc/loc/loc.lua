@@ -4317,7 +4317,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["faction_selector_choice"] = "Faction: ",
 
 		--Crime Spree mutators
-		["mutator_cloakercuff"] = "Сonjurer",
+		["mutator_cloakercuff"] = "Conjurer",
 		["mutator_cloakercuff_desc"] = "Cloaker melee strikes will now cuff players.",
 		["mutator_cloakercuff_longdesc"] = "Melee strikes from cloakers will force players into a cuffed state.",
 		

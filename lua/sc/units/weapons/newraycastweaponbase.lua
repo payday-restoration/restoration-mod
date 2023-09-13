@@ -212,12 +212,22 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		return mul
 	end
 
-	if current_state:full_steelsight() then
+	local is_moving = current_state._moving or current_state:in_air()
+	local full_steelsight = current_state:full_steelsight()
+
+	if full_steelsight then
 		if multi_ray then
 			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase_ads or 1
 		end
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
 			mul = mul * tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1
+		end
+
+		if not is_moving then
+			for _, category in ipairs(self:categories()) do
+				local stationary_spread = tweak_data[category] and tweak_data[category].ads_stationary_spread_mult or 1
+				mul = mul * stationary_spread
+			end
 		end
 
 		for _, category in ipairs(self:categories()) do

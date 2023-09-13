@@ -704,6 +704,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
+	local shield_damage_reduction_applied = false
 	local extra_collisions = self.extra_collisions and self:extra_collisions()
 	local is_civ_f = CopDamage.is_civilian
 	local damage = self:_get_current_damage(dmg_mul)
@@ -744,6 +745,22 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 				end
 			end
 
+			hit_through_wall = hit_through_wall or hit.unit:in_slot(self.wall_mask)
+			hit_through_shield = hit_through_shield or hit.unit:in_slot(self.shield_mask) and alive(hit.unit:parent())
+
+			if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
+				hit_through_wall = true
+				shield_damage_reduction_applied = false
+			elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
+				hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+				shield_damage_reduction_applied = false
+			end
+			
+			if hit_through_shield and not shield_damage_reduction_applied then
+				damage = damage * (self._shield_pierce_damage_mult or 0.5)
+				shield_damage_reduction_applied = true
+			end
+
 			if hit_result then
 				hit.damage_result = hit_result
 				hit_anyone = true
@@ -771,25 +788,6 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 							managers.achievment:award(tweak_data.achievement.easy_as_breathing.award)
 						end
 					end
-
-					hit_through_wall = hit_through_wall or hit.unit:in_slot(self.wall_mask)
-					hit_through_shield = hit_through_shield or hit.unit:in_slot(self.shield_mask) and alive(hit.unit:parent())
-
-					if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
-						hit_through_wall = true
-						shield_damage_reduction_applied = false
-					elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
-						hit_through_shield = hit_through_shield or alive(hit.unit:parent())
-						shield_damage_reduction_applied = false
-					end
-
-					--Damage reduction when shooting through shields.
-					--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
-					if hit_through_shield and not shield_damage_reduction_applied then
-						damage = damage * (self._shield_pierce_damage_mult or 0.5)
-						shield_damage_reduction_applied = true
-					end
-
 					self:_check_kill_achievements(cop_kill_count, unit_type, is_civilian, hit_through_wall, hit_through_shield)
 				end
 			end

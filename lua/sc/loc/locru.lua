@@ -2512,7 +2512,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_poison_gas_grenade_desc"] = "Урон: #{stats_positive}#300 за 10 сек## \nРадиус: #{skill_color}#8 м## \nДлительность: #{skill_color}#12 сек## \nДетонация: #{skill_color}#1 сек после падения на землю## \nВраги могут отравиться каждым облаком только один раз\nЩиты, Гренадеры, Бульдозеры и Капитаны не прерываются.\n\nЭто экспериментальное био-оружие выпускает облако ядовитого газа, которое влияет только на особые гены - у банды полный иммунитет. Жертвы почувствуют сильный кашель, головокружение и рвоту. Опасно для всех, кроме самых бронированных врагов.\n\nОружие военного преступника.",
 		["bm_grenade_sticky_grenade"] = "Граната 'Семтекс'",
 		["bm_grenade_sticky_grenade_desc"] = "Урон: #{skill_color}#800## \nРадиус: #{skill_color}#4 м## \nДетонация: #{skill_color}#2.5 сек## \n\nВзрывчатое вещество, которое прилипает к любым поверхностям, включая людей!",
-		["bm_grenade_xmas_snowball_desc"] = "Урон: #{skill_color}#240## \nРадиус: #{skill_color}#1 м## \nВремя восстановления: #{skill_color}#25 сек## \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
+		["bm_grenade_xmas_snowball_desc"] = "Урон: #{skill_color}#180## \nРадиус: #{skill_color}#1 м## \nВремя восстановления: #{skill_color}#25 сек## \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
 		
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "Снаряды 40MM Buckshot",
@@ -2530,10 +2530,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 		--[[ 
 		WepNames Options
-		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
-		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
-		3 = real names (i.e. SA 1911 Operator, HK 416c)
-		4 = Vanilla names/use your own names		
+		1 = Имена оружий на кириллице
+		2 = Имена оружий на латинице
+		3 = Имено оружий и атачментов от DMC
+		4 = Ванильные
 	]]
 		
 		
@@ -2548,8 +2548,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_jowi"] = "Парные Chimano 26 Compact",
 		["bm_w_glock_18c"] = "Chimano 18C",
 		["bm_w_x_g18c"] = "Парные Chimano 18C",
-		["bm_w_czech"] = "Czech 92",
-		["bm_w_x_czech"] = "Парные Czech 92",
+		["bm_w_czech"] = "CR 92",
+		["bm_w_x_czech"] = "Парные CR 92",
 		["bm_w_ppk"] = "Gruber Kurz",
 		["bm_w_x_ppk"] = "Парные Gruber Kurz",		
 		["bm_w_legacy"] = "M13",
@@ -2560,12 +2560,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_b92fs"] = "Парные Bernetti 92",
 		["bm_w_pl14"] = "White Streak",
 		["bm_w_x_pl14"] = "Парные White Streak",
-		["bm_w_holt"] = "HOLT 9mm",
-		["bm_w_x_holt"] = "Парные HOLT 9mm",
+		["bm_w_holt"] = "HOLT 9",
+		["bm_w_x_holt"] = "Парные HOLT 9",
 		["bm_w_fmg9"] = "Wasp DS-9",
 		["bm_w_beer"] = "Bernetti 93R",
-		["bm_w_packrat"] = "Contractor M30",
-		["bm_w_x_packrat"] = "Парные Contractor M30",
+		["bm_w_packrat"] = "Contractor M30L",
+		["bm_w_x_packrat"] = "Парные Contractor M30L",
 		["bm_w_breech"] = "Parabellum-08",
 		["bm_w_g22c"] = "Chimano Custom",
 		["bm_w_x_g22c"] = "Парные Chimano Custom",
@@ -2573,6 +2573,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_hs2000"] = "LEO-40",
 		["bm_w_lemming"] = "Acuto 5/7",
 		["bm_w_sparrow"] = "Sparrow 941",
+		["bm_w_x_sparrow"] = "Spike & Vicious",
 		["bm_w_socom"] = "Anubis .45",
 		["bm_w_x_socom"] = "Парные Anubis .45",
 		["bm_w_colt_1911"] = "Crosskill Operator II",
@@ -2765,14 +2766,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		elseif weapon_names == 1 then -- Кириллица
 			LocalizationManager:add_localized_strings({	
 
-				["bm_w_shatters_fury"] = "Феникс .500",
-["bm_w_osipr"] = "САБР",
-["bm_w_osipr_gl"] = "САБР - подствольник", 
-["bm_w_maxim9"] = "Геко М2",
-["bm_w_x_maxim9"] = "Парные Геко М2",
-["bm_w_stech"] = "Стычкин Автоматический",
-["bm_w_x_stech"] = "Парные Стычкины",
-["bm_wp_pis_g26"] = "Чимано 26 Компакт",
+		["bm_w_shatters_fury"] = "Феникс .500",
+		["bm_w_osipr"] = "САБР",
+		["bm_w_osipr_gl"] = "САБР - подствольник", 
+		["bm_w_maxim9"] = "Геко М2",
+		["bm_w_x_maxim9"] = "Парные Геко М2",
+		["bm_w_stech"] = "Стычкин Автоматический",
+		["bm_w_x_stech"] = "Парные Стычкины",
+		["bm_wp_pis_g26"] = "Чимано 26 Компакт",
 		["bm_w_jowi"] = "Парные Чимано 26 Компакт",
 		["bm_w_glock_18c"] = "Чимано 18C",
 		["bm_w_x_g18c"] = "Парные Чимано 18C",
@@ -2787,11 +2788,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_b92fs"] = "Парные Бернетти 92",
 		["bm_w_pl14"] = "Гусев",
 		["bm_w_x_pl14"] = "Парные Гусевы",
-		["bm_w_holt"] = "ХОЛТ 9мм",
-		["bm_w_x_holt"] = "Парные ХОЛТ 9мм",
+		["bm_w_holt"] = "ХОЛТ",
+		["bm_w_x_holt"] = "Парные ХОЛТ",
 		["bm_w_fmg9"] = "Васп ДиЭс-9",
 		["bm_w_beer"] = "Бернетти 93",
-		["bm_w_packrat"] = "Контрактор M30",
+		["bm_w_packrat"] = "Контрактор M30Л",
 		["bm_w_x_packrat"] = "Парные Контракторы",
 		["bm_w_breech"] = "Парабеллум-08",
 		["bm_w_g22c"] = "Чимано Кастом",
@@ -2800,6 +2801,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_hs2000"] = "ЛЕО-40",
 		["bm_w_lemming"] = "Акьюто 5/7",
 		["bm_w_sparrow"] = "Спэрроу 941",
+		["bm_w_x_sparrow"] = "Биба и Боба",
 		["bm_w_socom"] = "Анубис .45",
 		["bm_w_x_socom"] = "Парные Анубис .45",
 		["bm_w_colt_1911"] = "Кросскилл Оператор II",

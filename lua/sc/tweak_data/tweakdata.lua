@@ -529,7 +529,7 @@ tweak_data.projectiles.wpn_prj_hur.adjust_z = 0
 
 --Balled Snow--
 if tweak_data.projectiles.xmas_snowball then
-	tweak_data.projectiles.xmas_snowball.damage = 24
+	tweak_data.projectiles.xmas_snowball.damage = 18
 	tweak_data.projectiles.xmas_snowball.player_dmg_mul = 0
 	tweak_data.projectiles.xmas_snowball.camera_shake_max_mul = 0
 	tweak_data.projectiles.xmas_snowball.feedback_range = -100

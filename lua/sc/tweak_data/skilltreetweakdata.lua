@@ -47,6 +47,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"x_sr2",
 		"x_mp5",
 		"x_akmsu",
+		"xmas_snowball",
 		"akimbo_recoil_index_addend_1",
 		"akimbo_spread_index_addend_1",
 		"ecm_jammer_can_activate_feedback",

@@ -1852,7 +1852,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Community Frag 2
 		["bm_grenade_dada_com_desc"] = "Damage: #{risk}#800## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s## \n\nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
 		--Snowball
-		["bm_grenade_xmas_snowball_desc"] = "Damage: #{skill_color}#240## \nRadius: #{skill_color}#1m## \nRegen rate: #{skill_color}#1 snowball every 25s## \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
+		["bm_grenade_xmas_snowball_desc"] = "Damage: #{skill_color}#180## \nRadius: #{skill_color}#1m## \nRegen rate: #{skill_color}#1 snowball every 25s## \n\nDunk them in water, toss them in the freezer and you got yourself a deadly throwing weapon. Simple.",
 		--Zapper
 		["bm_grenade_electric_desc"] = "Damage: #{skill_color}#400## \nRadius: #{skill_color}#5m## \nFuse: #{skill_color}#3s## \n- #{skill_color}#Electrocutes most enemies## \n\nShrapnel is all well and good but some things need to be fried, and this little beauty is a rather practical beast for dishing out some damage with high voltage.",
 		--Sticky
@@ -2396,6 +2396,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if weapon_names then
 		if weapon_names <= 2 then --Resmod names
 			LocalizationManager:add_localized_strings({	
+
+				--In-Universe Manufacturer deets
+
+					--Crosskill/Corvus (Payday/OTWD) = Colt
+					--DSC [Defense System Crosskill] (PD2) = Saco Defense
+					--SA (PD2) = Springfield Armory 
+						--same acronym lol
+					--Bernetti = Beretta
+					--Chimano/Stryk = Glock 
+					--SG = HK (Heckler Und Koch)
+					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
+						--Signature = European Branches, FIK = American Branch?
+					--Acuto/VF (PD2/OTWD + PD3) = FNH/FN USA
+						--VF = European Branch, Acuto = American Branch?
+					--Lakner (PD2) = Walther
+					--Kang Arms (PD2) = Norinco
+					--Northwest (PD3) = China South Industries Group
+					--Public Defender (PD2) = Taurus (lmao)
+					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
+						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
+					--ITI = IMI/IWI
+					--CR/TKA (PD2/OTWD) = CZ
+					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
+					--Ferino (OTWD) = Franchi
+					--Stefan (PD2) = Steyr
+					--Wasp = Magpul
+						--idunno
+					--Repeater/Eaton (PD2/OTWD) = Winchester
+						--Combine the names into "Repeaton" maybe?
+					--Rangehitter (PD2) = Marlin
+						--"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
+
+
 				--[[ PISTOLS ]]
 					--Gecko Pistol
 					["bm_w_maxim9"] = "Gecko M2",
@@ -2410,8 +2443,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_glock_18c"] = "Chimano 18C",
 					["bm_w_x_g18c"] = "Akimbo Chimano 18Cs",
 					--CZ 75
-					["bm_w_czech"] = "Czech 92",
-					["bm_w_x_czech"] = "Akimbo Czech 92s",
+					["bm_w_czech"] = "CR 92",
+					["bm_w_x_czech"] = "Akimbo CR 92s",
 					--PPK (Gruber)
 					["bm_w_ppk"] = "Gruber Kurz",
 					["bm_w_x_ppk"] = "Akimbo Gruber Kurzes",
@@ -2428,15 +2461,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_pl14"] = "White Streak",
 					["bm_w_x_pl14"] = "Akimbo White Streaks",
 					--Holt 9mm
-					["bm_w_holt"] = "HOLT 9mm",
-					["bm_w_x_holt"] = "Akimbo HOLT 9mms",
+					["bm_w_holt"] = "Holt 9",
+					["bm_w_x_holt"] = "Akimbo Holt 9s",
 					--FMG-9
 					["bm_w_fmg9"] = "Wasp DS-9",
 					--93R
 					["bm_w_beer"] = "Bernetti 93R",
 					--Contractor Pistols 
-					["bm_w_packrat"] = "Contractor M30",
-					["bm_w_x_packrat"] = "Akimbo Contractor M30s",
+					["bm_w_packrat"] = "Contractor M30L",
+					["bm_w_x_packrat"] = "Akimbo Contractor M30Ls",
 					--Breech (Luger) 
 					["bm_w_breech"] = "Parabellum-08",
 					--Chimano Custom
@@ -2451,6 +2484,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_lemming"] = "Acuto 5/7",
 					--Baby Deagle--
 					["bm_w_sparrow"] = "Sparrow 941",
+					["bm_w_x_sparrow"] = "Spike & Vicious",
 					--Crosskill
 					["bm_w_colt_1911"] = "Crosskill Operator II",
 					["bm_w_x_1911"] = "Mustang & Sally",
@@ -2486,8 +2520,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
 					["bm_w_x_2006m"] = "Akimbo Matevers",
 					--Frenchman Model 87
-					["bm_w_model3"] = "Frenchman 87",	
-					["bm_w_x_model3"] = "Akimbo Frenchman 87s",	
+					["bm_w_model3"] = "JM Model 87",	
+					["bm_w_x_model3"] = "Akimbo Model 87s",	
 					--Raging bull
 					["bm_w_raging_bull"] = "Bronco .44",	
 					["bm_w_x_rage"] = "Akimbo Bronco .44s",
@@ -2514,7 +2548,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
-						["bm_w_papa320"] = "Signature M19",
+						["bm_w_papa320"] = "FIK M19",
 						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
@@ -2542,11 +2576,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_scorpion"] = "Akimbo Cobras",
 					["bm_wp_scorpion_m_extended"] = "Dual Magazines",
 					--Tatonka
-					["bm_w_coal"] = "Tatonka",
+					["bm_w_coal"] = "AK-19 Tatonka",
 					--AK Gen
-					["bm_w_vityaz"] = "AK Gen 21 Tactical",
+					["bm_w_vityaz"] = "AK-19-01 Tasunka",
 					--Signature SMG
-					["bm_w_shepheard"] = "Signature-10",
+					["bm_w_shepheard"] = "Signature PC9",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",	
 					["bm_w_x_mp5"] = "Akimbo Compact-5s",
@@ -2666,7 +2700,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_olympic"] = "Para-23",
 					["bm_w_x_olympic"] = "Akimbo Para-23s",
 					--TAR-21
-					["bm_w_komodo"] = "Tempest-95",
+					["bm_w_komodo"] = "Tempest-95", --it's modeled after the X95, not the 21
 					--Famas
 					["bm_w_famas"] = "Clarion 5.56",
 					--M4/CAR-4
@@ -2765,7 +2799,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--QBU88
 					["bm_w_qbu88"] = "Káng Arms X1",
 					--Winchester 1874
-					["bm_w_winchester1874"] = "Repeater 1874",	
+					["bm_w_winchester1874"] = "Repeater 1874", --"Repeater" is the stand-in/fake name for the IRL manufacturer "Winchester"; I know "Eaton" exists from OTWD
 					--TTI(TTY)
 					["bm_w_tti"] = "Tecci Tactical .308",
 					--Icky Vicky
@@ -2773,9 +2807,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Scunt
 					["bm_w_scout"] = "Pronghorn",
 					--AWP
-					["bm_w_awp"] = "AIM 900F", --Dunno why Overkill didn't use the naming method used for OTWD; the model itself even uses OTWD's method by directly referencing "AIM"
+					["bm_w_awp"] = "AIM 900F", --Dunno why Overkill didn't use the naming method used for OTWD; the model itself even uses OTWD's method by directly referencing "AIM" on the receiver
 					--WA2000
-					["bm_w_wa2000"] = "Lebensauger .300",
+					["bm_w_wa2000"] = "Lebensauger",
 					--Rangerhitter
 					["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 					--Contender G2
@@ -2791,14 +2825,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--R93
 					["bm_w_r93"] = "R93",
 					--Thanatos--
-					["bm_w_m95"] = "Thanatos .50 BMG",
+					["bm_w_m95"] = "Thanatos 95",
 					--Custom Snipers
 						--Guerilla
 						["bm_w_sgs"] = "Guerilla 542",	
 						--M107
-						["bm_w_m107cq"] = "Mors .50 BMG",
+						["bm_w_m107cq"] = "Northwest AM-2",
+						--M107
+						["bm_w_m107cq"] = "Thanatos 107",
 						--M200
-						["bm_w_m200"] = "TF-141",
+						["bm_w_m200"] = "TF 141",
 						--Marlin 1894
 						["bm_w_m1894"] = "Mare's Leg",
 						--SPX Centerfire
@@ -2842,9 +2878,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
+				["bm_w_x_sparrow"] = "Akimbo Sparrows",
 				["bm_w_schakal"] = "SG AMP 45",
 				["bm_w_tecci"] = "SG 416C",
-				["bm_w_l85a2"] = "SG L85",
+				["bm_w_l85a2"] = "ROS L85", --[R]oyal [O]rdanance + BAE [S]ystems
 				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_vhs"] = "HVH-2",
 				["bm_w_contraband"] = "SG 417D"

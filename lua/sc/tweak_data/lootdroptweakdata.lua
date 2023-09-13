@@ -53,4 +53,6 @@ function LootDropTweakData:init(tweak_data)
 	
 	self.global_values.rest_omnia_fake = deep_clone(self.global_values.rest_omnia)
 	self.global_values.rest_omnia_fake.dlc = true
+
+    self.global_values.xmas_snowball.unlock_id = nil
 end

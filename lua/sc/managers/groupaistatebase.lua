@@ -850,10 +850,12 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 		record.unit:brain():on_cop_neutralized(u_key)
 	end
 
-	local unit_type = unit:base()._tweak_table
+	local tags = unit:base().get_tags and unit:base():get_tags() or {}
 
-	if self._special_unit_types[unit_type] then
-		self:unregister_special_unit(u_key, unit_type)
+	for special_tag, is_set in pairs(self._special_unit_types) do
+		if is_set and tags[special_tag] then
+			self:unregister_special_unit(u_key, special_tag)
+		end
 	end
 
 	local dead = unit:character_damage():dead()

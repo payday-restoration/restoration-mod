@@ -1837,7 +1837,7 @@ function PlayerStandard:_interupt_action_melee(t)
 end
 function PlayerStandard:_start_action_jump(t, action_start_data)
 	--Don't interrupt melee sprinting.
-	if self._running and not self.RUN_AND_RELOAD and not self._equipped_unit:base():run_and_shoot_allowed() and not self._is_meleeing then
+	if self._running and self:_is_reloading() and not self.RUN_AND_RELOAD and not self._equipped_unit:base():run_and_shoot_allowed() and not self._is_meleeing then
 		self:_interupt_action_reload(t)
 		self._ext_camera:play_redirect(self:get_animation("stop_running"), self._equipped_unit:base():exit_run_speed_multiplier())
 	end

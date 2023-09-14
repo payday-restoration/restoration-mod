@@ -16509,7 +16509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.supported = true
 		self.swhiskey.ads_speed = 0.180
 		self.swhiskey.damage_falloff = {
-			start_dist = 1000,
+			start_dist = 900,
 			end_dist = 4200,
 			min_mult = 0.26666
 		}

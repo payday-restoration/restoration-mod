@@ -1903,7 +1903,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sms_info_cont"] = "또한 사격하는 동안 패널티가 2배로 증가합니다.",
 		["bm_menu_sms_info_cont_2"] = "현재 부착물로 인해 사격하는 동안 페널티가 2배로 증가합니다.",
 		["bm_menu_sms_info_2"] = " 만큼 사격하는 동안 감소합니다.",
-		["bm_menu_stat_sms_info_2"] = " 만큼 사격하는 동안 현재 개조물로 인해서 감소합니다.",		
+		["bm_menu_stat_sms_info_2"] = " 만큼 사격하는 동안 현재 개조물로 인해서 감소합니다.",
+		["bm_menu_weapon_slot_search_empty"] = "\n##\"$search\"## ##에 대한 결과를 찾지 못했습니다.##",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               사용하지 마시오              //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               사용하지 마시오               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "해당 무기는 주무기 슬롯으로 옮겨졌습니다.\n하이스트에서 보조무기로 사용 시 충돌이 발생할 것입니다.",
@@ -2492,7 +2493,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Community Frag 2
 		["bm_grenade_dada_com_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n\n인형의 외형이 내부의 구조물들을 감싸고 있고 고향의 힘을 과시합니다.",
 		--Snowball
-		["bm_grenade_xmas_snowball_desc"] = "대미지: #{skill_color}#240## \n범위: #{skill_color}#1m## \n충전 속도: #{skill_color}#25초마다 눈덩이 1개## \n\n물에 적시고, 냉장고에서 얼리면 죽여주는 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
+		["bm_grenade_xmas_snowball_desc"] = "대미지: #{skill_color}#180## \n범위: #{skill_color}#1m## \n충전 속도: #{skill_color}#25초마다 눈덩이 1개## \n\n물에 적시고, 냉장고에서 얼리면 죽여주는 투척 무기를 얻을 수 있습니다. 참 쉽죠?",
 		--Zapper
 		["bm_grenade_electric_desc"] = "대미지: #{skill_color}#400## \n범위: #{skill_color}#5m## \n기폭: #{skill_color}#3초## \n- #{skill_color}#대부분의 적들을 감전시킵니다.## \n\n파편 수류탄도 나름 괜찮지만, 뭔가를 지져야 한다면, 이 어여쁜 작은 친구야말로 실용적으로 고압 피해를 가할 수 있는 짐승 같은 녀석입니다.",
 		--Sticky
@@ -2560,8 +2561,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_glock_18c"] = "Chimano 18C",
 					["bm_w_x_g18c"] = "아킴보 Chimano 18C",
 					--CZ 75
-					["bm_w_czech"] = "Czech 92",
-					["bm_w_x_czech"] = "아킴보 Czech 92",
+					["bm_w_czech"] = "CR 92",
+					["bm_w_x_czech"] = "아킴보 CR 92",
 					--PPK (Gruber)
 					["bm_w_ppk"] = "Gruber Kurz",
 					["bm_w_x_ppk"] = "아킴보 Gruber Kurze",
@@ -2578,15 +2579,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_pl14"] = "White Streak",
 					["bm_w_x_pl14"] = "아킴보 White Streak",
 					--Holt 9mm
-					["bm_w_holt"] = "HOLT 9mm",
-					["bm_w_x_holt"] = "아킴보 HOLT 9mm",
+					["bm_w_holt"] = "Holt 9mm",
+					["bm_w_x_holt"] = "아킴보 Holt 9mm",
 					--FMG-9
 					["bm_w_fmg9"] = "Wasp DS-9",
 					--93R
 					["bm_w_beer"] = "Bernetti 93R",
 					--Contractor Pistols 
-					["bm_w_packrat"] = "Contractor M30",
-					["bm_w_x_packrat"] = "아킴보 Contractor M30",
+					["bm_w_packrat"] = "Contractor M30L",
+					["bm_w_x_packrat"] = "아킴보 Contractor M30L",
 					--Breech (Luger) 
 					["bm_w_breech"] = "Parabellum-08",
 					--Chimano Custom
@@ -2601,6 +2602,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_lemming"] = "Acuto 5/7",
 					--Baby Deagle--
 					["bm_w_sparrow"] = "Sparrow 941",
+					["bm_w_x_sparrow"] = "스파이크 & 비서스",
 					--Crosskill
 					["bm_w_colt_1911"] = "Crosskill Operator II",
 					["bm_w_x_1911"] = "머스탱 & 샐리",
@@ -2636,8 +2638,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_2006m_b_long"] = "쿠사나기 총열",
 					["bm_w_x_2006m"] = "아킴보 Matevers",
 					--Frenchman Model 87
-					["bm_w_model3"] = "Frenchman 87",	
-					["bm_w_x_model3"] = "아킴보 Frenchman 87",	
+					["bm_w_model3"] = "JM Model 87",	
+					["bm_w_x_model3"] = "아킴보 Model 87",	
 					--Raging bull
 					["bm_w_raging_bull"] = "Bronco .44",	
 					["bm_w_x_rage"] = "아킴보 Bronco .44",
@@ -2662,7 +2664,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
-						["bm_w_papa320"] = "Signature M19",
+						["bm_w_papa320"] = "FIK M19",
 						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
@@ -2690,11 +2692,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_scorpion"] = "아킴보 Cobra",
 					["bm_wp_scorpion_m_extended"] = "이중 탄창",
 					--Tatonka
-					["bm_w_coal"] = "Tatonka",
+					["bm_w_coal"] = "AK-19 Tatonka",
 					--AK Gen
-					["bm_w_vityaz"] = "AK Gen 21 Tactical",
+					["bm_w_vityaz"] = "AK-19-01 Tasunka",
 					--Signature SMG
-					["bm_w_shepheard"] = "Signature-10",
+					["bm_w_shepheard"] = "Signature PC9",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",	
 					["bm_w_x_mp5"] = "아킴보 Compact-5s",
@@ -2919,7 +2921,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--AWP
 					["bm_w_awp"] = "AIM 900F",
 					--WA2000
-					["bm_w_wa2000"] = "Lebensauger .300",
+					["bm_w_wa2000"] = "Lebensauger",
 					--Rangerhitter
 					["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
 					--Contender G2
@@ -2935,14 +2937,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--R93
 					["bm_w_r93"] = "R93",
 					--Thanatos--
-					["bm_w_m95"] = "Thanatos .50 BMG",
+					["bm_w_m95"] = "Thanatos 95",
 					--Custom Snipers
 						--Guerilla
 						["bm_w_sgs"] = "Guerilla 542",	
 						--M107
-						["bm_w_m107cq"] = "Mors .50 BMG",
+						["bm_w_m107cq"] = "Northwest AM-2",
+						--M107
+						["bm_w_m107cq"] = "Thanatos 107",
 						--M200
-						["bm_w_m200"] = "TF-141",
+						["bm_w_m200"] = "TF 141",
 						--Marlin 1894
 						["bm_w_m1894"] = "Mare's Leg",
 						--SPX Centerfire
@@ -2985,8 +2989,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "아킴보 Chimano 22C",
 				["bm_w_x_1911"] = "아킴보 Operator II",
+				["bm_w_x_sparrow"] = "아킴보 Sparrow",
 				["bm_w_schakal"] = "SG AMP 45",
 				["bm_w_tecci"] = "SG 416C",
+				["bm_w_l85a2"] = "ROS L85",
 				["bm_w_x_judge"] = "아킴보 Judges",
 				["bm_w_vhs"] = "HVH-2",
 				["bm_w_contraband"] = "SG 417D",				

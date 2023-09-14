@@ -4924,16 +4924,16 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end
 			else
-				if self._slot_data.name == "empty" then
-					updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
-						search =  self._saved_search
-					})
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
-				else
-					updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_1") .. ((category == "secondaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_secondary")) or (category == "primaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_primary")) or managers.localization:to_upper_text("bm_menu_weapon_slot_warning_disabled")) .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_2")
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				end
+				updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_1") .. ((category == "secondaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_secondary")) or (category == "primaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_primary")) or managers.localization:to_upper_text("bm_menu_weapon_slot_warning_disabled")) .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_2")
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			end
+
+			if self._slot_data.name == "empty" then
+				updated_texts[4].text = managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
+					search =  self._saved_search
+				})
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
 			end
 
 			updated_texts[4].below_stats = true
@@ -5282,6 +5282,15 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].resource_color = desc_colors
 			end
 		end
+
+		if self._slot_data.name == "empty" then
+			updated_texts[4].text = managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
+				search =  self._saved_search
+			})
+			updated_texts[4].resource_color = {}
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
+		end
 	elseif identifier == self.identifiers.suit_variation then
 		local player_style = self._data.prev_node_data.name
 		local player_style_tweak = tweak_data.blackmarket.player_styles[player_style]
@@ -5347,6 +5356,14 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].resource_color = desc_colors
 			end
 		end
+		if self._slot_data.name == "empty" then
+			updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
+				search =  self._saved_search
+			})
+			updated_texts[4].resource_color = {}
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
+		end
 	elseif identifier == self.identifiers.mask then
 		local price = slot_data.price
 		price = price or (type(slot_data.unlocked) == "number" or managers.money:get_mask_slot_sell_value(slot_data.slot)) and managers.money:get_mask_sell_value(slot_data.name, slot_data.global_value)
@@ -5389,7 +5406,7 @@ function BlackMarketGui:update_info_text()
 				updated_texts[3].text = managers.localization:to_upper_text(slot_data.dlc_locked)
 			elseif slot_data.infamy_lock then
 				updated_texts[3].text = managers.localization:to_upper_text("menu_infamy_lock_info")
-			elseif mask_id and achievement_tracker[mask_id] and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+			elseif mask_id and achievement_tracker[mask_id] and (not slot_data.unlocked or type(slot_data.unlocked) == "number" and slot_data.unlocked <= 0) then
 				local achievement_data = achievement_tracker[mask_id]
 				local max_progress = achievement_data.max_progress
 				local text_id = achievement_data.text_id
@@ -5410,7 +5427,7 @@ function BlackMarketGui:update_info_text()
 					updated_texts[3].text = "##" .. managers.localization:text(achievement_data.text_id) .. "##"
 					updated_texts[3].resource_color = tweak_data.screen_colors.button_stage_2
 				end
-			elseif achievement_lock_id and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+			elseif achievement_lock_id and (not slot_data.unlocked or type(slot_data.unlocked) == "number" and slot_data.unlocked <= 0) then
 				local dlc_tweak = tweak_data.dlc[achievement_lock_id]
 				local achievement = dlc_tweak and dlc_tweak.achievement_id
 				local achievement_visual = tweak_data.achievement.visual[achievement]
@@ -5422,7 +5439,7 @@ function BlackMarketGui:update_info_text()
 						updated_texts[3].text = updated_texts[3].text .. " (" .. tostring(achievement_visual.progress.get()) .. "/" .. tostring(achievement_visual.progress.max) .. ")"
 					end
 				end
-			elseif achievement_milestone_lock_id and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+			elseif achievement_milestone_lock_id and (not slot_data.unlocked or type(slot_data.unlocked) == "number" and slot_data.unlocked <= 0) then
 				for _, data in ipairs(tweak_data.achievement.milestones) do
 					if data.id == achievement_milestone_lock_id then
 						updated_texts[3].text = managers.localization:to_upper_text("bm_menu_milestone_reward_unlock", {
@@ -5432,13 +5449,13 @@ function BlackMarketGui:update_info_text()
 						break
 					end
 				end
-			elseif managers.dlc:is_content_skirmish_locked("masks", mask_id) and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+			elseif managers.dlc:is_content_skirmish_locked("masks", mask_id) and (not slot_data.unlocked or type(slot_data.unlocked) == "number" and slot_data.unlocked <= 0) then
 				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_skirmish_content_reward")
-			elseif managers.dlc:is_content_crimespree_locked("masks", mask_id) and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+			elseif managers.dlc:is_content_crimespree_locked("masks", mask_id) and (not slot_data.unlocked or type(slot_data.unlocked) == "number" and slot_data.unlocked <= 0) then
 				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_crimespree_content_reward")
 			end
 
-			if mask_id then
+			if mask_id and mask_id ~= "empty" then
 				local desc_id = tweak_data.blackmarket.masks[mask_id].desc_id
 				updated_texts[4].text = desc_id and managers.localization:text(desc_id) or Application:production_build() and "Add ##desc_id## to ##" .. mask_id .. "## in tweak_data.blackmarket.masks" or ""
 
@@ -5477,6 +5494,15 @@ function BlackMarketGui:update_info_text()
 			end
 
 			updated_texts[4].text = managers.localization:text("bm_menu_empty_mask_slot_buy_info")
+		end
+		
+		if self._slot_data.name == "empty" then
+			updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
+				search =  self._saved_search
+			})
+			updated_texts[4].resource_color = {}
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+			table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
 		end
 	elseif identifier == self.identifiers.weapon_mod then
 		local price = slot_data.price or managers.money:get_weapon_modify_price(prev_data.name, slot_data.name, slot_data.global_value)
@@ -6433,7 +6459,6 @@ function BlackMarketGui:update_info_text()
 	end
 end
 
-
 function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 	local blackmarket_items = managers.blackmarket:get_weapon_category(data.category) or {}
 	local new_node_data = {}
@@ -6867,32 +6892,43 @@ function BlackMarketGui.populate_buy_mask(self, data)
 
 	local new_data = {}
 	local guis_catalog = "guis/"
-	local max_masks = #data.on_create_data
+	local mask_list = data.on_create_data
+	mask_list = self:get_filtered_search_list(mask_list, tweak_data.blackmarket.masks, "mask_id")
+	local num_prev_data = #data
 
-	for i = 1, max_masks do
+	for i = 1, num_prev_data do
 		data[i] = nil
 	end
 
-	for i = 1, #data.on_create_data do
+	local max_masks = #mask_list
+
+	for i = 1, max_masks do
+		local guis_mask_id = mask_list[i].mask_id
+
+		if tweak_data.blackmarket.masks[guis_mask_id].guis_id then
+			guis_mask_id = tweak_data.blackmarket.masks[guis_mask_id].guis_id
+		end
 
 		guis_catalog = "guis/"
+		local bundle_folder = tweak_data.blackmarket.masks[guis_mask_id] and tweak_data.blackmarket.masks[guis_mask_id].texture_bundle_folder
 
-		local bundle_folder = tweak_data.blackmarket.masks[data.on_create_data[i].mask_id] and tweak_data.blackmarket.masks[data.on_create_data[i].mask_id].texture_bundle_folder
 		if bundle_folder then
 			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
 		end
 
-		new_data = {}
-		new_data.name = data.on_create_data[i].mask_id
+		new_data = {
+			name = mask_list[i].mask_id
+		}
 		new_data.name_localized = managers.localization:text(tweak_data.blackmarket.masks[new_data.name].name_id)
 		new_data.category = data.category
 		new_data.slot = data.prev_node_data and data.prev_node_data.slot
-		new_data.global_value = data.on_create_data[i].global_value
+		new_data.global_value = mask_list[i].global_value
+		new_data.global_value_category = data.name
 		new_data.unlocked = managers.blackmarket:get_item_amount(new_data.global_value, "masks", new_data.name, true) or 0
 		new_data.equipped = false
 		new_data.num_backs = data.prev_node_data.num_backs + 1
-		new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/masks/" .. new_data.name
-		new_data.stream = false
+		new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/masks/" .. guis_mask_id
+		new_data.stream = true
 
 		if not new_data.global_value then
 			Application:debug("BlackMarketGui:populate_buy_mask( data ) Missing global value on mask", new_data.name)
@@ -6925,26 +6961,27 @@ function BlackMarketGui.populate_buy_mask(self, data)
 			end
 		end
 
-		if tweak_data.blackmarket.masks[new_data.name].infamy_lock then
+		new_data.lock_color = self:get_lock_color(new_data)
 
+		if tweak_data.blackmarket.masks[new_data.name].infamy_lock then
 			local infamy_lock = tweak_data.blackmarket.masks[new_data.name].infamy_lock
 			local is_unlocked = managers.infamy:owned(infamy_lock)
+
 			if not is_unlocked then
-				if type(new_data.unlocked) == "number" then
-					new_data.unlocked = -math.abs(new_data.unlocked)
-				end
+				new_data.unlocked = -math.abs(new_data.unlocked)
 				new_data.lock_texture = "guis/textures/pd2/lock_infamy"
 				new_data.infamy_lock = infamy_lock
 			end
-
 		end
 
 		new_data.active = true
+
 		if new_data.unlocked and new_data.unlocked > 0 then
 			if new_data.active then
 				table.insert(new_data, "bm_buy")
 				table.insert(new_data, "bm_preview")
 			end
+
 			if managers.money:get_mask_sell_value(new_data.name, new_data.global_value) > 0 then
 				table.insert(new_data, "bm_sell")
 			end
@@ -6958,66 +6995,47 @@ function BlackMarketGui.populate_buy_mask(self, data)
 			if new_data.active then
 				table.insert(new_data, "bm_preview")
 			end
+
 			new_data.mid_text = ""
 			new_data.lock_texture = new_data.lock_texture or true
 		end
-
-		if new_data.unlocked and new_data.unlocked > 0 then
-
-			table.insert(new_data, "bm_buy")
-			table.insert(new_data, "bm_preview")
-			if 0 < managers.money:get_mask_sell_value(new_data.name, new_data.global_value) then
-				table.insert(new_data, "bm_sell")
-			end
-
-		else
-			table.insert(new_data, "bm_preview")
-			new_data.mid_text = ""
-			new_data.lock_texture = new_data.lock_texture or true
-
-		end
-
-		Hooks:Call("BlackMarketGUIOnPopulateBuyMasksActionList", self, new_data)
 
 		if managers.blackmarket:got_new_drop(new_data.global_value or "normal", "masks", new_data.name) then
-
 			new_data.mini_icons = new_data.mini_icons or {}
+
 			table.insert(new_data.mini_icons, {
-				name = "new_drop",
 				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
-				right = 0,
+				name = "new_drop",
+				h = 16,
+				w = 16,
 				top = 0,
 				layer = 1,
-				w = 16,
-				h = 16,
-				stream = false
+				stream = false,
+				right = 0
 			})
+
 			new_data.new_drop_data = {
 				new_data.global_value or "normal",
 				"masks",
 				new_data.name
 			}
-
 		end
 
 		data[i] = new_data
-
 	end
 
-	local max_page = data.override_slots[1] * data.override_slots[2]
-	for i = 1, math.max(math.ceil(max_masks / data.override_slots[1]) * data.override_slots[1], max_page) do
+	local max_items = self:calc_max_items(max_masks, data.override_slots)
 
-		if not data[i] then
-			new_data = {}
-			new_data.name = "empty"
-			new_data.name_localized = ""
-			new_data.category = data.category
-			new_data.slot = i
-			new_data.unlocked = true
-			new_data.equipped = false
-			data[i] = new_data
-		end
-
+	for i = max_masks + 1, max_items do
+		new_data = {
+			name = "empty",
+			name_localized = "",
+			category = data.category,
+			slot = i,
+			unlocked = true,
+			equipped = false
+		}
+		data[i] = new_data
 	end
 
 end

@@ -4816,7 +4816,7 @@ function BlackMarketGui:update_info_text()
 					updated_texts[4].below_stats = true
 				end
 
-				if weapon_tweak.alt_shotgunraycast and rays > 1 then
+				if weapon_tweak and weapon_tweak.alt_shotgunraycast and rays > 1 then
 					local base_stats, mods_stats, skill_stats = WeaponDescription._get_stats(slot_data.name, slot_data.category, slot_data.slot, slot_data.default_blueprint)
 					local base_damage = base_stats and base_stats.damage and base_stats.damage.value
 					local mod_damage = (mods_stats and mods_stats.damage and mods_stats.damage.value) or 0

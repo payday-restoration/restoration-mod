@@ -2416,6 +2416,22 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			end
 		end
 
+		if (self._data.search_box_callback_name or self._data.search_box_disconnect_callback_name) and managers.menu:is_pc_controller() then
+			self._searchbox = SearchBoxGuiObject:new(self._panel, self._ws, self._saved_search)
+
+			self._searchbox.panel:set_right(self._box_panel:right())
+			self._searchbox.panel:set_top(self._box_panel:bottom() + 5)
+			self._searchbox:register_list({})
+
+			if self._data.search_box_callback_name then
+				self._searchbox:register_callback(callback(self, self, self._data.search_box_callback_name))
+			end
+
+			if self._data.search_box_disconnect_callback_name then
+				self._searchbox:register_disconnect_callback(callback(self, self, self._data.search_box_disconnect_callback_name))
+			end
+		end
+
 		local scale = 0.55
 		local detection_ring_left_bg = self._detection_panel:bitmap({
 			blend_mode = "add",
@@ -4734,12 +4750,12 @@ function BlackMarketGui:update_info_text()
 				local hs_mult_desc = nil
 				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local ap_desc = nil
-				local sms = weapon_tweak and weapon_tweak.sms or 1
+				local sms = (weapon_tweak and weapon_tweak.sms) or 1
 				local exp_ammo = nil
 				local stat_sms = nil
 				local stat_move = nil
 				local stat_attachment_desc = nil
-				local rays = weapon_tweak.rays or 1
+				local rays = (weapon_tweak and weapon_tweak.rays) or 1
 				local description = nil
 				if custom_stats then
 					for part_id, stats in pairs(custom_stats) do
@@ -4908,8 +4924,16 @@ function BlackMarketGui:update_info_text()
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end
 			else
-				updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_1") .. ((category == "secondaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_secondary")) or (category == "primaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_primary")) or managers.localization:to_upper_text("bm_menu_weapon_slot_warning_disabled")) .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_2")
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				if self._slot_data.name == "empty" then
+					updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_search_empty", {
+						search =  self._saved_search
+					})
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.risk)
+				else
+					updated_texts[4].text = updated_texts[4].text .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_1") .. ((category == "secondaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_secondary")) or (category == "primaries" and managers.localization:to_upper_text("bm_menu_weapon_slot_warning_primary")) or managers.localization:to_upper_text("bm_menu_weapon_slot_warning_disabled")) .. managers.localization:to_upper_text("bm_menu_weapon_slot_warning_2")
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end
 			end
 
 			updated_texts[4].below_stats = true
@@ -6117,6 +6141,10 @@ function BlackMarketGui:update_info_text()
 				}
 				local lock_text_id = slot_data.lock_text_id or "bm_menu_wcc_not_owned"
 				updated_texts[5].text = (slot_data.default_blueprint and "" or "\n") .. managers.localization:text(lock_text_id, macros)
+			elseif type(slot_data.unlocked) == "number" then
+				updated_texts[2].text = updated_texts[2].text .. managers.localization:to_upper_text("bm_menu_item_amount", {
+					amount = tostring(math.abs(slot_data.unlocked))
+				})
 			end
 
 			if cosmetic_rarity then
@@ -6571,6 +6599,7 @@ function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 		weapon_category = managers.localization:text("bm_menu_" .. data.category)
 	}
 	new_node_data.blur_fade = self._data.blur_fade
+	new_node_data.search_box_disconnect_callback_name = "on_search_item"
 
 	managers.menu:open_node(self._inception_node_name, {
 		new_node_data

@@ -1279,6 +1279,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sms_info_cont_2"] = "penalty is doubled while shooting due to current attachments.",
 		["bm_menu_sms_info_2"] = " while shooting.",
 		["bm_menu_stat_sms_info_2"] = " while shooting due to current attachments.",
+		["bm_menu_weapon_slot_search_empty"] = "\n##NO RESULTS FOUND FOR## ##\"$search\"##",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               DO  NOT  USE               //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",

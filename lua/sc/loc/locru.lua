@@ -1897,6 +1897,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sms_info_cont_2"] = "штраф удваивается во время стрельбы из-за установленных модулей.",
 		["bm_menu_sms_info_2"] = " при стрельбе.",
 		["bm_menu_stat_sms_info_2"] = " во время стрельбы из-за установленных модулей.",
+		["bm_menu_weapon_slot_search_empty"] = "\n##НИЧЕГО НЕ НАЙДЕНО ПО ЗАПРОСУ## ##\"$search\"##",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               НЕ ИСПОЛЬЗОВАТЬ               //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               НЕ ИСПОЛЬЗОВАТЬ               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "ОРУЖИЕ БЫЛО ПЕРЕМЕЩЕНО В ОСНОВНОЙ СЛОТ\nПРИ ИСПОЛЬЗОВАНИИ ВО ВТОРОСТЕПЕННОМ СЛОТЕ ПРОИЗОЙДЕТ ВЫЛЕТ",

@@ -5260,7 +5260,7 @@ function BlackMarketGui:update_info_text()
 			updated_texts[3].text = slot_data.dlc_locked and managers.localization:to_upper_text(slot_data.dlc_locked) or managers.localization:to_upper_text("bm_menu_dlc_locked")
 		end
 
-		local desc_id = player_style_tweak.desc_id
+		local desc_id = player_style_tweak and player_style_tweak.desc_id
 		local desc_colors = {}
 		updated_texts[4].text = desc_id and managers.localization:text(desc_id) or ""
 
@@ -5322,7 +5322,7 @@ function BlackMarketGui:update_info_text()
 			updated_texts[3].text = slot_data.dlc_locked and managers.localization:to_upper_text(slot_data.dlc_locked) or managers.localization:to_upper_text("bm_menu_dlc_locked")
 		end
 
-		local desc_id = glove_tweak.desc_id
+		local desc_id = glove_tweak and glove_tweak.desc_id
 		local desc_colors = {}
 		updated_texts[4].text = desc_id and managers.localization:text(desc_id) or ""
 

@@ -3043,7 +3043,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				end
 			end
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
-			defense_data.charge_lerp_value = action_data.charge_lerp_value
+			if defense_data then 
+				defense_data.charge_lerp_value = action_data.charge_lerp_value
+			end
 			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 			

@@ -3099,7 +3099,7 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 		char_damage:damage_tase(action_data)
 	end
 
-	local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
+	local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
 	if melee_tweak.fire_dot_data and charge_fire_check and char_damage.damage_fire then
 		local action_data = {
 			variant = "fire",

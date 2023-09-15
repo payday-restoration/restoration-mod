@@ -380,28 +380,7 @@
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>	
 	
 	<!--Titan HRT SR2-->	
-	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="true" force="false"/>			
-		
-		
-	
-	<!--Titan HRT MP9-->	
-	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
+	<unit				path="units/pd2_mod_reapers/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="true" force="false"/>	
 	<!-- titans end -->
-	<!--bravo HK21-->
-	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"  load="true"/>
-	<!--bravo lmg-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex_husk"  load="true"/>	
-	
-	
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_elite_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm"/>
 	
 </table>

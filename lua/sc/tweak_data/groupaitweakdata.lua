@@ -7253,6 +7253,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		--Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"
 	end
+	
 	if table.contains(restoration.fsb, job) then
 		self.unit_categories.CS_cop_C45_R870.unit_types.russia = {
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"),
@@ -8631,6 +8632,38 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "tank",
 			is_captain = true
 		}
+	--OMNIA Saiga Dozers that spawn with Spring (Ignores spawncaps)
+		self.unit_categories.OMNIA_Tank = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				zombie = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},					
+				russia = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				murkywater = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				federales = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},						
+				nypd = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},	
+				lapd = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				},
+				fbi = {
+					Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
+				}
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}	
 	--OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
 	self.unit_categories.OMNIA_Taser = {
 		unit_types = {
@@ -8963,20 +8996,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					lapd = {
 						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
 						Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
 						Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"),
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 					},
 					fbi = {
 						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
 						Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
 						Idstring("units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"),
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 					}
@@ -12443,6 +12476,37 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		is_captain = true
 	}
 	
+	self.unit_categories.piggydozer = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			nypd = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy")
+			}
+		},
+		access = access_type_all,
+		is_captain = true
+	}
+	
 end
 	
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -15621,7 +15685,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "Tank_Ben",
+					unit = "OMNIA_Tank",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -15643,7 +15707,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "Tank_Ben",
+					unit = "OMNIA_Tank",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
@@ -16141,6 +16205,47 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1,
 				unit = "snowman_boss",
 				tactics = self._tactics.SKULL_tank --:)))))))))))))
+			}
+		},
+		spawn_point_chk_ref = table.list_to_set({
+			"FBI_Booms",
+			"FBI_defend_a",
+			"FBI_defend_b",
+			"FBI_defend_c",
+			"FBI_defend_d",
+			"FBI_stealth_a",
+			"FBI_stealth_a_boom",
+			"FBI_stealth_b",
+			"FBI_stealth_c",
+			"FBI_swats",
+			"FBI_heavys",
+			"FBI_heavys_boom",
+			"FBI_shields",
+			"FBI_shields_boom",
+			"GS_defend_b",
+			"GS_defend_c",
+			"GS_defend_d",
+			"GS_swats",
+			"GS_Heavys",
+			"GS_heavys_boom",
+			"GS_shields",
+			"GS_shields_boom",
+			"GS_Booms"
+		})
+	}
+	
+	self.enemy_spawn_groups.piggydozer = {
+		amount = {
+			1,
+			1
+		},
+		spawn = {
+			{
+				freq = 1,
+				amount_min = 1,
+				rank = 1,
+				unit = "piggydozer",
+				tactics = self._tactics.SKULL_tank
 			}
 		},
 		spawn_point_chk_ref = table.list_to_set({
@@ -18967,9 +19072,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
-			11,
-			13,
-			15
+			10,
+			12,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -18991,9 +19096,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
-			12,
-			14,
-			16
+			11,
+			13,
+			15
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -19015,9 +19120,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			13,
-			15,
-			17
+			12,
+			14,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19039,9 +19144,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			14,
-			16,
-			18
+			13,
+			15,
+			17
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19062,6 +19167,30 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			summers = 1
 		}
 	elseif difficulty_index == 6 then
+		self.besiege.assault.force = {
+			14,
+			16,
+			18
+		}
+		self.besiege.assault.force_pool = {
+			100,
+			125,
+			150
+		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			shield = math.max(math.round(5 * map_scale_factor), 1),
+			medic = math.max(math.round(3 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
+	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
 			15,
 			17,
@@ -19085,35 +19214,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			autumn = 1,
 			summers = 1
 		}
-	elseif difficulty_index == 7 then
+	else
 		self.besiege.assault.force = {
 			16,
 			18,
 			20
-		}
-		self.besiege.assault.force_pool = {
-			100,
-			125,
-			150
-		}
-		self.special_unit_spawn_limits = {
-			tank = math.max(math.round(3 * map_scale_factor), 1),
-			taser = math.max(math.round(4 * map_scale_factor), 1),
-			boom = math.max(math.round(2 * map_scale_factor), 1),
-			spooc = math.max(math.round(4 * map_scale_factor), 1),
-			shield = math.max(math.round(5 * map_scale_factor), 1),
-			medic = math.max(math.round(3 * map_scale_factor), 1),
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}
-	else
-		self.besiege.assault.force = {
-			18,
-			20,
-			22
 		}
 		self.besiege.assault.force_pool = {
 			150,
@@ -19559,6 +19664,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	self.besiege.assault.groups.piggydozer = {
+		0,
+		0,
+		0
+	}
 	--catch all the scripted spawns so they can actually participate in assaults instead of fucking away from the action
     self.besiege.assault.groups.custom_assault = {
 		0,
@@ -19738,6 +19848,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	self.besiege.reenforce.groups.piggydozer = {
+		0,
+		0,
+		0
+	}
 	self.besiege.recon.interval = {
 		5,
 		5,
@@ -19897,6 +20012,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	--ditto but for recon units
 	self.besiege.recon.groups.snowman_boss = {
+		0,
+		0,
+		0
+	}
+	self.besiege.recon.groups.piggydozer = {
 		0,
 		0,
 		0

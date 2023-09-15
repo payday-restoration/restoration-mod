@@ -31,7 +31,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/boilingpoint" id="skmc_mad" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_boilingpoint" max_mission_xp="135900" min_mission_xp="8000" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/boilingpoint" id="skmc_mad" jc="10" load_screen="guis/dlcs/pic/textures/loading/job_boilingpoint" max_mission_xp="129800" min_mission_xp="10000" region="street">
 		<chain>
 			<table level_id="skmc_mad" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -63,9 +63,9 @@
 			<value_node value="1"/>
 			<value_node value="1"/>
 			<value_node value="1"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
 		</experience_mul>
 		<payout>
 			<value_node value="0"/>

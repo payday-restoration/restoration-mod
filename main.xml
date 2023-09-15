@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.1.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -230,7 +230,6 @@
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
-		<hook file="sc/managers/hud/hudmutator.lua" source_file="lib/managers/hudmanagerpd2"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
 		<hook file="sc/managers/mission/elementareatrigger.lua" source_file="lib/managers/mission/elementareatrigger"/>
@@ -316,6 +315,7 @@
 		<hook file="sc/units/enemies/zombie/zombielogicattack.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/zombie/zombieactionshoot.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="sc/managers/menu/items/contractbrokerheistitem.lua" source_file="lib/managers/menu/items/contractbrokerheistitem"/>
+		<hook file="sc/managers/perpetualeventmanager.lua" source_file="lib/managers/perpetualeventmanager"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -359,6 +359,7 @@
 		<hook file="sc/mutators/mutatorbirthday.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/mutatorpiggybank.lua" source_file="lib/mutators/mutatorpiggybank"/>
 		<hook file="sc/mutators/mutatorcg22.lua" source_file="lib/mutators/mutatorcg22"/>
+		<hook file="sc/mutators/mutatorpiggyrevenge.lua" source_file="lib/mutators/mutatorpiggyrevenge"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>
@@ -369,6 +370,15 @@
 		<hook file="sc/mutators/new/mutatoronlybravos.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorjungleinferno.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatormoredonutsplus.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorkaboom.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorfartsmella.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorcloakerflashbang.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorcloakercuff.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorfastresponse.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorquickscope360.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorcrazytaser.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatormasterdodger.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorfullautoinbuilding.lua" source_file="lib/mutators/basemutator"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
@@ -527,11 +537,21 @@
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
+				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>
+				<option type="bool" default_value="false" name="GCGPYPMMSACText"/>
+				<option_group name="ForceEggs">
+					<option type="bool" default_value="false" name="Upotte"/>
+					<option type="bool" default_value="false" name="CrabBattle"/>
+					<option type="bool" default_value="false" name="EmberMyBeloved"/>
+					<option type="bool" default_value="false" name="BigMan"/>
+				</option_group>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
+				<option type="bool" default_value="false" name="CloakerTurn"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="SevenHold"/>
@@ -541,8 +561,6 @@
 				<option type="bool" default_value="false" name="BotsNoDrop"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Holiday"/>
-				<option type="bool" default_value="false" name="CloakerTurn"/>
-				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="1" name="WpnCat" values_tbl="restoration.weapon_categories"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>

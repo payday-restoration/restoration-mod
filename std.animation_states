@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <tweaks>
+	<!-- Re-add money death state redirect -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+		</search>
+		<target mode="attach">
+			<to name="death_money" redirect="std/death/money"/>
+		</target>
+	</tweak>
 	<!-- Restore old dozer punch animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
@@ -11,7 +21,6 @@
 			<attr name="weight" value="rifle * (1 - tank)"/>
 		</target>
 	</tweak>
-
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>

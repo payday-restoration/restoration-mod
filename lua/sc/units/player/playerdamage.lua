@@ -340,6 +340,8 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Leech stuff
 	self:copr_update_attack_data(attack_data)	
 
+	self:mutator_update_attack_data(attack_data)
+
 	--Kingpin stuff.
 	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
 	if not self._ally_attack then
@@ -491,7 +493,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = math.min(self._dmg_interval * armor_dodge_mult, 0.300)
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
 		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
@@ -501,6 +503,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			grace_bonus = math.min(self._dmg_interval * yakuza_grace_ratio, 0.9)
 		end
 	end
+
 	if attack_data.damage > 0 then
 		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
@@ -517,9 +520,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			if attack_data.damage > 0 then
 				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 				self:_send_damage_drama(attack_data, 0)
-				if grace_bonus then
-					self._next_allowed_dmg_t = Application:digest_value(t + grace_bonus, true)
-				end
+				self._next_allowed_dmg_t = Application:digest_value(t + math.max(grace_bonus, self._dmg_interval), true)
 			end
 			self:_call_listeners(damage_info)
 			self:play_whizby(attack_data.col_ray.position)
@@ -561,7 +562,6 @@ function PlayerDamage:damage_bullet(attack_data)
     managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] then
-
 		local driving = self._unit:movement():current_state().driving
 		local in_air = self._unit:movement():current_state():in_air()
 		local hit_in_air = self._unit:movement():current_state()._hit_in_air
@@ -616,9 +616,7 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 
 		end
-
 	end	
-	--]]
 	
 	return 
 end
@@ -739,6 +737,8 @@ function PlayerDamage:damage_melee(attack_data)
 	--Unit specific player state changing shenanigans.
 	local pm = managers.player
 	local player_unit = managers.player:player_unit()
+	local last_criminal = self:is_last_criminal()
+
 	if alive(attacker_unit) then
 		if attacker_char_tweak and attacker_char_tweak.tase_on_melee then
 			attacker_unit:sound():say("post_tasing_taunt")
@@ -751,7 +751,7 @@ function PlayerDamage:damage_melee(attack_data)
 				self._unit:movement():on_non_lethal_electrocution()
 				pm:set_player_state("tased")
 			end		
-		elseif attacker_char_tweak and attacker_char_tweak.cuff_on_melee then
+		elseif attacker_char_tweak and attacker_char_tweak.cuff_on_melee and not last_criminal then
 			if attacker_unit:base()._tweak_table == "autumn" then
 				attacker_unit:sound():say("i03", true, nil, true)
 			end
@@ -819,6 +819,16 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 	
 	return
+end
+
+function PlayerDamage:is_last_criminal()
+	local all_criminals = managers.groupai:state():all_char_criminals()
+	for u_key, u_data in pairs(all_criminals) do
+		if not u_data.status and self._unit:key() ~= u_key then
+			return nil
+		end
+	end
+	return true
 end
 
 function PlayerDamage:damage_explosion(attack_data)
@@ -956,6 +966,7 @@ function PlayerDamage:damage_killzone(attack_data)
 			armor_reduction_multiplier = 1
 		end
 
+		self:mutator_update_attack_data(attack_data)
 		self:_check_chico_heal(attack_data)
 
 		local health_subtracted = self:_calc_armor_damage(attack_data)
@@ -1294,13 +1305,14 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 		"melee",
 		"delayed_tick"
 	}, attack_data.variant)
-
+	local ignore_reduce_revive = self:check_ignore_reduce_revive()
+	
 	if self:get_real_health() == 0 and trigger_skills then
-		self:_chk_cheat_death()
+		self:_chk_cheat_death(ignore_reduce_revive)
 	end
 	
 	self:_damage_screen()
-	self:_check_bleed_out(trigger_skills)
+	self:_check_bleed_out(trigger_skills, nil, ignore_reduce_revive)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
 		total = self:_max_health(),
@@ -1972,6 +1984,13 @@ function PlayerDamage:set_armor(armor)
 	end
 
 	self._armor = Application:digest_value(armor, true)
+	
+	if WFHud then
+		managers.hud:set_player_armor({
+			current = self:get_real_armor(),
+			total = self:_max_armor()
+		})
+	end
 end
 
 --[[
@@ -2017,5 +2036,42 @@ function PlayerDamage:play_whizby(position)
 
 	if not _G.IS_VR then
 		managers.rumble:play("bullet_whizby")
+	end
+end
+
+function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
+	local dmg_percent = health_subtracted / self._HEALTH_INIT
+	local attacker = attack_data.attacker_unit
+
+	if not alive(attacker) or not attacker:movement() or attacker:id() == -1 then
+		attacker = nil
+	end
+
+	local hit_offset_height = 150
+
+	if attack_data.col_ray and attack_data.origin then
+		local closest_point = mvec1
+
+		math.point_on_line(attack_data.origin, attack_data.col_ray.position, self._unit:movement():m_head_pos(), closest_point)
+
+		hit_offset_height = math.clamp(closest_point.z - self._unit:movement():m_pos().z, 0, 300)
+	end
+
+	self._unit:network():send("criminal_hurt", attacker or self._unit, math.clamp(math.ceil(dmg_percent * 100), 1, 100), hit_offset_height)
+
+	if Network:is_server() then
+		attacker = attack_data.attacker_unit
+
+		if attacker and (not alive(attacker) or attacker.movement and not attacker:movement()) then
+			attacker = nil
+		end
+		
+		if attacker and alive(attacker) then
+			managers.groupai:state():criminal_hurt_drama(self._unit, attacker, dmg_percent)
+		end
+	end
+
+	if Network:is_client() then
+		self._unit:network():send_to_host("damage_bullet", attacker, 1, 1, 1, 0, false)
 	end
 end

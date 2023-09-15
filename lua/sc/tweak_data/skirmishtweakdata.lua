@@ -1,5 +1,23 @@
 Month = os.date("%m")
-Day = os.date("%d")	
+Day = os.date("%d")
+--Different ransom per wave
+function SkirmishTweakData:_init_ransom_amounts()
+	self.ransom_amounts = {
+		1000000,
+		1250000,
+		1750000,
+		2000000,
+		2500000,
+		3000000,
+		3000000,
+		3500000,
+		10000000
+	}
+
+	for i, ransom in ipairs(self.ransom_amounts) do
+		self.ransom_amounts[i] = ransom + (self.ransom_amounts[i - 1] or 0)
+	end
+end
 --This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 local map_scale_factor = 1
@@ -28,7 +46,7 @@ local map_scale_factor = 1
 			map_scale_factor = 0.55
 		end
 	end
-	
+
 	--Reduced spawns if playing in Solo offline
 	if Global and Global.game_settings and Global.game_settings.single_player then
 		map_scale_factor = map_scale_factor * 0.75
@@ -56,20 +74,21 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		40,
-		40,
-		44,
-		48,
-		52,
-		56,
 		60,
-		64,
-		68,
+		60,
+		66,
 		72,
-		80,
-		120
+		78,
+		84,
+		90,
+		96,
+		102,
+		108,
+		120,
+		180
 	}
 
+	-- Need to made scalable multiplier depends of the map size
 	self.required_kills_balance_mul = {
 		0.55,
 		0.7,
@@ -824,27 +843,39 @@ end
 function SkirmishTweakData:_init_wave_modifiers()
 	self.wave_modifiers = {}
 	local health_damage_multipliers = {
-		{
+		{--OVK 1 wave
 			damage = 0.75,
-			health = 0.5
+			health = 0.572
 		},
-		{
+		{--OVK+ 2 wave
 			damage = 0.8,
-			health = 0.6
+			health = 0.715
 		},
-		{
+		{-- Mayhem 3 wave
 			damage = 0.85,
-			health = 0.7
+			health = 0.8572
 		},
-		{
-			damage = 0.9,
-			health = 0.8
+		{--DW 4 wave
+			damage = 1.0,
+			health = 1.0
 		},
-		{
-			damage = 0.95,
-			health = 0.9
+		{--DS 5 wave
+			damage = 1.0,
+			health = 1.0
 		},
-		{
+		{--DS 6 wave
+			damage = 1.0,
+			health = 1.0
+		},
+		{--DS 7 wave
+			damage = 1.0,
+			health = 1.0
+		},
+		{--DS 8 wave
+			damage = 1.0,
+			health = 1.0
+		},
+		{--DS 9 wave
 			damage = 1.0,
 			health = 1.0
 		}
@@ -856,6 +887,7 @@ function SkirmishTweakData:_init_wave_modifiers()
 		}
 	}
 	self.wave_modifiers[2] = {{class = "ModifierNoHurtAnims"}}
+	self.wave_modifiers[3] = {{class = "ModifierCloakerKick"}}
 	self.wave_modifiers[4] = {
 		{
 			class = "ModifierHealSpeed",

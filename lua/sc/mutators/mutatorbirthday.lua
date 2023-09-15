@@ -1,3 +1,5 @@
+--8/19 For some reason, updating the HUD to show the timers for the buffs won't properly work, could be us could be the changes Overkill made to hudmutator. Temporarily setting them up to be hint popups as a workaround, not perfect but I suppose better than nothing -SC
+
 MutatorBirthday = MutatorBirthday or class(BaseMutator)
 MutatorBirthday._type = "MutatorBirthday"
 MutatorBirthday.name_id = "mutator_birthday"
@@ -73,7 +75,16 @@ function MutatorBirthday.activate_ammo_refresh_buff()
 					local td = tweak_data.mutators.birthday.buffs.ammo_refresh
 					weapon.unit:base():replenish()
 					managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
-					managers.hud:add_buff("ammo_refresh", "hud_buff_birthday_ammo_refresh", td.color, 2)
+					--[[
+					managers.hud:add_buff({
+						time_left = 2,
+						buff_id = "ammo_refresh",
+						name_id = "hud_buff_birthday_ammo_refresh",
+						color = td.color,
+						icon_texture = nil
+					})		
+					]]--
+					managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_ammo_refresh") } )
 				end
 			end
 		end
@@ -87,7 +98,16 @@ function MutatorBirthday.activate_health_refresh_buff()
 		if unit_damage then
 			local td = tweak_data.mutators.birthday.buffs.health_refresh
 			unit_damage:restore_health(tweak_data.mutators.birthday.buffs.health_refresh.amount, true)
-			managers.hud:add_buff("recover_health", "hud_buff_birthday_recover_health", td.color, 2)
+			--[[
+			managers.hud:add_buff({
+				time_left = 2,
+				buff_id = "recover_health",
+				name_id = "hud_buff_birthday_recover_health",
+				color = td.color,
+				icon_texture = nil
+			})		
+			]]--
+			managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_recover_health") } )
 		end
 	end
 end
@@ -99,7 +119,16 @@ function MutatorBirthday.activate_shield_refresh_buff()
 		if unit_damage then
 			local td = tweak_data.mutators.birthday.buffs.shield_refresh
 			unit_damage:regenerate_armor()
-			managers.hud:add_buff("regenerate_armor", "hud_buff_birthday_regenerate_armor", td.color, 2)
+			--[[
+			managers.hud:add_buff({
+				time_left = 2,
+				buff_id = "regenerate_armor",
+				name_id = "hud_buff_birthday_regenerate_armor",
+				color = td.color,
+				icon_texture = nil
+			})				
+			]]--
+			managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_regenerate_armor") } )
 		end
 	end
 end
@@ -112,7 +141,17 @@ function MutatorBirthday.activate_god_mode_buff()
 			local td = tweak_data.mutators.birthday.buffs.god_mode
 			managers.player:activate_temporary_property("birthday_god", td.duration, 1)
 			unit_damage:set_god_mode(true)
-			managers.hud:add_buff("god_mode", "hud_buff_birthday_god_mode", td.color, td.duration, true)
+			--[[
+			managers.hud:add_buff({
+				time_left = 15,
+				show_time_left = true,
+				buff_id = "god_mode",
+				name_id = "hud_buff_birthday_god_mode",
+				color = td.color,
+				icon_texture = nil
+			})	
+			]]--
+			managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_god_mode") } )
 		end
 	end
 end
@@ -121,7 +160,17 @@ function MutatorBirthday.activate_double_damage_buff()
 	if managers.mutators:is_mutator_active(MutatorBirthday) and alive(managers.player:player_unit()) then
 		local td = tweak_data.mutators.birthday.buffs.double_damage
 		managers.player:activate_temporary_property("birthday_multiplier", td.duration, 2)
-		managers.hud:add_buff("double_damage", "hud_buff_birthday_2x_damage", td.color, td.duration, true)
+		--[[
+		managers.hud:add_buff({
+			time_left = 20,
+			show_time_left = true,
+			buff_id = "double_damage",
+			name_id = "hud_buff_birthday_2x_damage",
+			color = td.color,
+			icon_texture = nil
+		})			
+		]]--
+		managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_2x_damage") } )
 	end
 end
 
@@ -129,6 +178,16 @@ function MutatorBirthday.activate_inf_ammo_buff()
 	if managers.mutators:is_mutator_active(MutatorBirthday) and alive(managers.player:player_unit()) then
 		local td = tweak_data.mutators.birthday.buffs.inf_ammo
 		managers.player:activate_temporary_property("bullet_storm", td.duration, 1)
-		managers.hud:add_buff("inf_ammo", "hud_buff_birthday_inf_ammo", td.color, td.duration, true)
+		--[[
+		managers.hud:add_buff({
+			time_left = 15,
+			show_time_left = true,
+			buff_id = "inf_ammo",
+			name_id = "hud_buff_birthday_inf_ammo",
+			color = td.color,
+			icon_texture = nil
+		})		
+		]]--
+		managers.hud:show_hint( { text = managers.localization:text("hud_buff_birthday_inf_ammo") } )
 	end
 end

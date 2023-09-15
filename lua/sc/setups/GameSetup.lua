@@ -67,7 +67,6 @@ function GameSetup:load_packages()
     local la = tweak_data.levels.ai_groups.lapd
     local ny = tweak_data.levels.ai_groups.nypd
 	local feds = tweak_data.levels.ai_groups.fbi
-	local oom = tweak_data.levels.ai_groups.omnia
     local ai_type = tweak_data.levels:get_ai_group_type()
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -118,10 +117,6 @@ function GameSetup:load_packages()
 
         load_difficulty_package(diff_package)
 		PackageManager:load("packages/sm_wish")	
-	 elseif ai_type == oom then
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_omnia" or "normal")
-
-        load_difficulty_package(diff_package)	
 	else
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 

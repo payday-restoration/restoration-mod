@@ -1,0 +1,12 @@
+<materials version="3">
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1:SKINNED_3WEIGHTS" name="mtr_piggybank" version="2">
+        <diffuse_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggybank_gold_df"/>
+        <bump_normal_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggybank_gold_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" name="mtr_piggybank_stick" version="2">
+        <diffuse_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggy_stick_df"/>
+        <bump_normal_texture file="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_fps_mel_piggy_stick_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_gold" type="cubemap"/>
+    </material>
+</materials>

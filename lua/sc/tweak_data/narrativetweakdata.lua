@@ -337,6 +337,36 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000
 	}
 	
+	--Dentist Crime.net videos tweaks
+	self.jobs.mia.crimenet_videos = {
+	        "cn_hlm1",
+			"cn_hlm2",
+			"cn_hlm3"
+	}
+	self.jobs.hox.crimenet_videos = {
+	        "cn_hox1",
+			"cn_hox2",
+			"cn_hox3",
+			"cn_hox4"
+	}
+	self.jobs.hox_3.crimenet_videos = {
+		    "cn_hox1",
+			"cn_hox2",
+			"cn_hox3",
+			"cn_hox4"
+	}
+	self.jobs.mus.crimenet_videos = {
+	        "cn_big1",
+			"cn_big2",
+			"cn_big3"
+	}
+	self.jobs.kenaz.crimenet_videos = {
+	        "cn_big1",
+			"cn_big2",
+			"cn_big3"
+	}
+	--Ukrainian Prisoner now use Jiu Feng video instead of Vlad
+	self.jobs.sand.crimenet_videos = {"codex/jiufeng1"}
 end)
 
 --[[

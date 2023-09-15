@@ -9,6 +9,9 @@ MutatorBravosOnly.reductions = {
 }
 MutatorBravosOnly.disables_achievements = false
 MutatorBravosOnly.categories = {"enemies"}
+MutatorBravosOnly.incompatibility_tags = {
+	"replaces_units"
+}	
 MutatorBravosOnly.icon_coords = {
 	5,
 	3

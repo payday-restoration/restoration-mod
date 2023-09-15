@@ -17,7 +17,6 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value = 780
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
@@ -31,7 +30,6 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 600		
 	end
-end
 
 return {
 	--Pro Job PONR 

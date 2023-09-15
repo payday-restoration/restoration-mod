@@ -1,25 +1,31 @@
-local mvec3_add = mvector3.add
-local mvec3_cpy = mvector3.copy
-local mvec3_dir = mvector3.direction
-local mvec3_lerp = mvector3.lerp
-local mvec3_mul = mvector3.multiply
-local mvec3_not_equal = mvector3.not_equal
-local mvec3_set = mvector3.set
-local mvec3_set_z = mvector3.set_z
-local math_abs = math.abs
-local tmp_vec = Vector3()
+local mrot_set_axis_angle = mrotation.set_axis_angle
+local mvec_add = mvector3.add
+local mvec_copy = mvector3.copy
+local mvec_dir = mvector3.direction
+local mvec_dis_sq = mvector3.distance_sq
+local mvec_lerp = mvector3.lerp
+local mvec_mul = mvector3.multiply
+local mvec_rot_with = mvector3.rotate_with
+local mvec_set = mvector3.set
+local mvec_set_l = mvector3.set_length
+local mvec_set_z = mvector3.set_z
+local mvec_step = mvector3.step
+local mvec_sub = mvector3.subtract
+local tmp_rot = Rotation()
+local tmp_vec1 = Vector3()
+local tmp_vec2 = Vector3()
 
 
 -- Boss should basically always be in shooting action
 function BossLogicAttack._upd_aim(data, my_data, ...)
-	if BossLogicAttack._chk_use_throwable(data) then
-		return
-	end
-
 	local focus_enemy = data.attention_obj
 	local visible = focus_enemy and (focus_enemy.verified or focus_enemy.nearly_visible)
 	local aim, shoot, expected_pos
 	if focus_enemy then
+		if BossLogicAttack._chk_use_throwable(data, my_data, focus_enemy) then
+			return
+		end
+
 		local time_since_verification = focus_enemy.verified_t and data.t - focus_enemy.verified_t or math.huge
 		local time_since_damaged = focus_enemy.dmg_t and data.t - focus_enemy.dmg_t or math.huge
 		aim = focus_enemy.verified_dis < my_data.weapon_range.far
@@ -41,14 +47,14 @@ function BossLogicAttack._upd_aim(data, my_data, ...)
 		end
 
 		if not my_data.shooting and not my_data.spooc_attack and not data.unit:anim_data().reload and not data.unit:movement():chk_action_forbidden("action") then
-			my_data.shooting = data.unit:brain():action_request({
+			my_data.shooting = data.brain:action_request({
 				body_part = 3,
 				type = "shoot"
 			})
 		end
 	else
 		if my_data.shooting then
-			local success = data.unit:brain():action_request({
+			local success = data.brain:action_request({
 				body_part = 3,
 				type = "idle"
 			})
@@ -70,7 +76,7 @@ end
 -- Adjust throwable code to allow for non throwable projectiles
 -- Also make the throwing use an actual action so it properly interrupts shooting
 -- We're adjusting the throwing vector to always throw at player's feet and add z compensation depending on projectile speed
-function BossLogicAttack._chk_use_throwable(data)
+function BossLogicAttack._chk_use_throwable(data, my_data, focus)
 	local throwable = data.char_tweak.throwable
 	local throwable_tweak = tweak_data.projectiles[throwable]
 	if not throwable_tweak then
@@ -78,11 +84,10 @@ function BossLogicAttack._chk_use_throwable(data)
 	end
 
 	if data.used_throwable_t and data.t < data.used_throwable_t then
-		return
+		return data.used_throwable_shoot_t and data.t < data.used_throwable_shoot_t
 	end
 
-	local focus = data.attention_obj
-	if not focus.criminal_record or focus.is_deployable or (not focus.verified) == data.char_tweak.throwable_target_verified then
+	if (not focus.verified) == data.char_tweak.throwable_target_verified then
 		return
 	end
 
@@ -108,48 +113,109 @@ function BossLogicAttack._chk_use_throwable(data)
 	local throw_from
 	if is_throwable then
 		throw_from = mov_ext:m_rot():y()
-		mvec3_mul(throw_from, 40)
-		mvec3_add(throw_from, mov_ext:m_head_pos())
+		mvec_mul(throw_from, 40)
+		mvec_add(throw_from, mov_ext:m_head_pos())
 		local offset = mov_ext:m_rot():x()
-		mvec3_mul(offset, -20)
-		mvec3_add(throw_from, offset)
+		mvec_mul(offset, -20)
+		mvec_add(throw_from, offset)
 	else
-		throw_from = data.unit:inventory():equipped_unit():position()
+		local weapon_unit = data.unit:inventory():equipped_unit()
+		local fire_object = weapon_unit:base():fire_object() or weapon_unit:orientation_object()
+		throw_from = fire_object:position()
 	end
 
 	local throw_to = focus.verified and focus.m_pos or focus.last_verified_pos
-	local slotmask = managers.slot:get_mask("world_geometry")
-	mvec3_set(tmp_vec, throw_to)
-	mvec3_set_z(tmp_vec, tmp_vec.z - 200)
-	local ray = data.unit:raycast("ray", throw_to, tmp_vec, "slot_mask", slotmask)
+	local slotmask = managers.slot:get_mask("bullet_blank_impact_targets")
+	mvec_set(tmp_vec1, throw_to)
+	mvec_set_z(tmp_vec1, tmp_vec1.z - 200)
+	local ray = data.unit:raycast("ray", throw_to, tmp_vec1, "slot_mask", slotmask)
 	if not ray then
 		return
 	end
 	throw_to = ray.hit_position
 
 	local compensation = throwable_tweak.adjust_z ~= 0 and (((throw_dis - 400) / 10) ^ 2) / ((throwable_tweak.launch_speed or 250) / 10) or 0
-	mvec3_set_z(throw_to, throw_to.z + compensation)
-	mvec3_lerp(tmp_vec, throw_from, throw_to, 0.5)
-	if data.unit:raycast("ray", throw_from, tmp_vec, "sphere_cast_radius", 15, "slot_mask", slotmask, "report") then
+	mvec_set_z(throw_to, throw_to.z + compensation)
+	mvec_step(tmp_vec1, throw_from, throw_to, 400)
+	if data.unit:raycast("ray", throw_from, tmp_vec1, "sphere_cast_radius", 15, "slot_mask", slotmask, "report") then
 		return
 	end
 
 	data.used_throwable_t = data.t + (data.char_tweak.throwable_cooldown or 15)
 
-	local action_data = {
-		body_part = 3,
-		type = "act",
-		variant = is_throwable and "throw_grenade" or "recoil_single"
-	}
-	if not data.unit:brain():action_request(action_data) then
+	local redirect = is_throwable and "throw_grenade" or "recoil_single"
+	if not mov_ext:play_redirect(redirect) then
 		return
 	end
 
-	local throw_dir = tmp_vec
-	mvec3_dir(throw_dir, throw_from, throw_to)
+	managers.network:session():send_to_peers_synched("play_distance_interact_redirect", data.unit, redirect)
+
+	CopLogicAttack.aim_allow_fire(false, false, data, my_data)
+
+	data.used_throwable_shoot_t = data.t + 1
+
+	local throw_dir = tmp_vec1
+	mvec_dir(throw_dir, throw_from, throw_to)
 	ProjectileBase.throw_projectile_npc(throwable, throw_from, throw_dir, data.unit)
 
 	return true
+end
+
+
+-- New chase position function, try to walk around the target instead of random positions
+function BossLogicAttack._find_chase_position(data, pos, min_dis, max_dis)
+	local dir, test_pos = tmp_vec1, tmp_vec2
+	local min_dis_sq = min_dis ^ 2
+	local dis_diff_sq = 300 ^ 2
+	local current_rot = math.rand(-90, 90)
+	local fallback_dis_sq = 0
+	local fallback_pos
+	local steps = 6
+	local rotate_step = 180 / steps
+
+	mvec_dir(dir, pos, data.m_pos)
+	mvec_mul(dir, max_dis)
+
+	local ray_params = {
+		allow_entry = true,
+		trace = true,
+		pos_from = pos,
+		pos_to = test_pos
+	}
+
+	repeat
+		mrot_set_axis_angle(tmp_rot, math.UP, current_rot)
+
+		mvec_set(test_pos, dir)
+		mvec_rot_with(test_pos, tmp_rot)
+		mvec_add(test_pos, pos)
+
+		if not managers.navigation:raycast(ray_params) or mvec_dis_sq(ray_params.trace[1], pos) > min_dis_sq then
+			mvec_sub(test_pos, pos)
+			mvec_set_l(test_pos, min_dis)
+			mvec_add(test_pos, pos)
+
+			local chase_pos = ray_params.trace[1]
+			mvec_lerp(chase_pos, test_pos, chase_pos, math.random())
+
+			local dis_sq = mvec_dis_sq(data.m_pos, chase_pos)
+			if dis_sq > dis_diff_sq then
+				return chase_pos
+			elseif dis_sq > fallback_dis_sq then
+				fallback_dis_sq = dis_sq
+				fallback_pos = chase_pos
+			end
+		end
+
+		current_rot = current_rot + rotate_step
+		if current_rot > 90 then
+			current_rot = current_rot - 180
+		end
+
+		steps = steps - 1
+	until steps <= 0
+
+	return fallback_pos
 end
 
 
@@ -160,7 +226,6 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 	local enemy_visible = focus_enemy.verified
 	local action_taken = data.logic.action_taken(data, my_data)
 	local weapon_range = my_data.weapon_range
-	local chase
 
 	if not action_taken then
 		if my_data.chase_path_failed_t and t - my_data.chase_path_failed_t <= 1 then
@@ -168,38 +233,29 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 		end
 
 		if my_data.chase_path then
-			local enemy_dis = enemy_visible and focus_enemy.dis or focus_enemy.verified_dis
-			local run_dist = enemy_visible and weapon_range.optimal or weapon_range.close
-			local speed = enemy_dis < run_dist and "walk" or "run"
-
-			BossLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, speed)
+			BossLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, enemy_visible and focus_enemy.dis < weapon_range.optimal and "walk" or "run")
 		elseif not my_data.chase_path_search_id and focus_enemy.nav_tracker then
-			local height_diff = math_abs(data.m_pos.z - focus_enemy.m_pos.z)
-			if height_diff < 300 then
-				chase = true
-			else
-				local engage = my_data.attitude == "engage"
-				if enemy_visible then
-					chase = focus_enemy.dis > weapon_range.optimal or engage and focus_enemy.dis > weapon_range.close
-				else
-					chase = focus_enemy.verified_dis > weapon_range.optimal or engage and focus_enemy.verified_dis > weapon_range.close or not focus_enemy.verified_t or t - focus_enemy.verified_t > 2
-				end
+			local height_diff = math.abs(data.m_pos.z - focus_enemy.m_pos.z)
+			local chase = height_diff < 300 or focus_enemy.dis > weapon_range.optimal or my_data.attitude == "engage" and focus_enemy.dis > weapon_range.close
+			if not chase and not enemy_visible then
+				chase = not focus_enemy.verified_t or t - focus_enemy.verified_t > 2
 			end
 
 			if not chase then
 				return
 			end
 
-			my_data.chase_pos = nil
-			local chase_pos = focus_enemy.nav_tracker:field_position()
-			local new_chase_pos = CopLogicTravel._get_pos_on_wall(chase_pos, weapon_range.close, nil, nil)
-			if mvec3_not_equal(chase_pos, new_chase_pos) then
-				my_data.chase_pos = new_chase_pos
+			local enemy_pos = focus_enemy.nav_tracker:field_position()
+			local chase_pos = BossLogicAttack._find_chase_position(data, enemy_pos, weapon_range.close * 0.5, (weapon_range.close + weapon_range.optimal) * 0.5)
+			if not chase_pos then
+				chase_pos = CopLogicTravel._get_pos_on_wall(enemy_pos, weapon_range.close, nil, nil)
+			end
+
+			if chase_pos and mvec_dis_sq(focus_enemy.m_pos, chase_pos) > 100 ^ 2 then
+				my_data.chase_pos = chase_pos
 
 				local my_pos = data.unit:movement():nav_tracker():field_position()
-				local unobstructed_line = nil
-
-				if math_abs(my_pos.z - my_data.chase_pos.z) < 40 then
+				if math.abs(my_pos.z - my_data.chase_pos.z) < 50 then
 					local ray_params = {
 						allow_entry = false,
 						pos_from = my_pos,
@@ -207,114 +263,81 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 					}
 
 					if not managers.navigation:raycast(ray_params) then
-						unobstructed_line = true
+						my_data.chase_path = {
+							my_pos,
+							my_data.chase_pos
+						}
+						return
 					end
 				end
 
-				if unobstructed_line then
-					my_data.chase_path = {
-						mvec3_cpy(my_pos),
-						my_data.chase_pos
-					}
-					local enemy_dis = enemy_visible and focus_enemy.dis or focus_enemy.verified_dis
-					local run_dist = enemy_visible and weapon_range.optimal or weapon_range.close
-					local speed = enemy_dis < run_dist and "walk" or "run"
+				my_data.chase_path_search_id = tostring(data.unit:key()) .. "chase"
+				my_data.pathing_to_chase_pos = true
 
-					BossLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, speed)
-				else
-					my_data.chase_path_search_id = tostring(data.unit:key()) .. "chase"
-					my_data.pathing_to_chase_pos = true
-
-					data.brain:add_pos_rsrv("path", {
-						radius = 60,
-						position = mvec3_cpy(my_data.chase_pos)
-					})
-					data.brain:search_for_path(my_data.chase_path_search_id, my_data.chase_pos)
-				end
+				data.brain:add_pos_rsrv("path", {
+					radius = 50,
+					position = my_data.chase_pos
+				})
+				data.brain:search_for_path(my_data.chase_path_search_id, my_data.chase_pos)
 			else
+				my_data.chase_pos = nil
 				my_data.chase_path_failed_t = t
 			end
 		end
-	elseif my_data.walking_to_chase_pos and not my_data.use_flank_pos_when_chasing then
+	elseif my_data.walking_to_chase_pos then
 		local current_haste = my_data.advancing and my_data.advancing:haste()
 		if not current_haste then
 			return
 		end
 
 		local change_speed
-		local enemy_dis = enemy_visible and focus_enemy.dis or focus_enemy.verified_dis
-		local run_dist = enemy_visible and weapon_range.optimal or weapon_range.close
 		if current_haste == "run" then
-			change_speed = enemy_dis < run_dist * 0.5 and "walk"
+			change_speed = enemy_visible and focus_enemy.dis < weapon_range.close
 		else
-			change_speed = enemy_dis > run_dist and "run"
+			change_speed = not enemy_visible or focus_enemy.dis > weapon_range.optimal
 		end
 
-		if not change_speed then
-			return
-		end
-
-		local my_pos = data.unit:movement():nav_tracker():field_position()
-		local moving_to_pos = my_data.walking_to_chase_pos:get_walk_to_pos()
-		local unobstructed_line = nil
-
-		if math_abs(my_pos.z - moving_to_pos.z) < 40 then
-			local ray_params = {
-				allow_entry = false,
-				pos_from = my_pos,
-				pos_to = moving_to_pos
-			}
-
-			if not managers.navigation:raycast(ray_params) then
-				unobstructed_line = true
-			end
-		end
-
-		if unobstructed_line then
-			moving_to_pos = mvec3_cpy(moving_to_pos)
-
+		if change_speed then
 			BossLogicAttack._cancel_chase_attempt(data, my_data)
-
-			my_data.chase_path = {
-				mvec3_cpy(my_pos),
-				moving_to_pos
-			}
-
-			BossLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, change_speed)
 		end
 	end
 end
+
 
 -- Check new position for being different than the current one
 function BossLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
+	local from_pos = data.m_pos
 	local reservation = {
 		radius = 30,
-		position = data.m_pos,
+		position = from_pos,
 		filter = data.pos_rsrv_id
 	}
+	if managers.navigation:is_pos_free(reservation) then
+		return
+	end
 
-	if not managers.navigation:is_pos_free(reservation) then
-		local to_pos = CopLogicTravel._get_pos_on_wall(data.m_pos, 500, nil, nil, data.pos_rsrv_id)
+	local to_pos = CopLogicTravel._get_pos_on_wall(from_pos, 500)
+	if mvec_dis_sq(from_pos, to_pos) < 100 ^ 2 then
+		return
+	end
 
-		if to_pos and mvec3_not_equal(data.m_pos, to_pos) then
-			my_data.advancing = data.brain:action_request({
-				variant = "run",
-				body_part = 2,
-				type = "walk",
-				nav_path = {
-					mvec3_cpy(data.m_pos),
-					to_pos
-				}
-			})
+	my_data.advancing = data.brain:action_request({
+		variant = "run",
+		body_part = 2,
+		type = "walk",
+		nav_path = {
+			mvec_copy(from_pos),
+			to_pos
+		}
+	})
 
-			if my_data.advancing then
-				my_data.moving_out_of_the_way = my_data.advancing
-				BossLogicAttack._cancel_chase_attempt(data, my_data)
-				return true
-			end
-		end
+	if my_data.advancing then
+		my_data.moving_out_of_the_way = my_data.advancing
+		BossLogicAttack._cancel_chase_attempt(data, my_data)
+		return true
 	end
 end
+
 
 -- Update logic every frame
 function BossLogicAttack.update(data)

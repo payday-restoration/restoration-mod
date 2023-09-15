@@ -25,6 +25,12 @@ end
 	end
 	
 return {
+	-- Disable forced manager flee objective
+	[100665] = {
+		values = {
+			enabled = false
+		}
+	},
 	--security guard instead of beat cop
 	[104001] = {
 		values = {

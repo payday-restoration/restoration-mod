@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda10/weapons/wpn_fps_spec_bessy_pts/wpn_third_spec_bessy_barrel" orientation_object="rp_wpn_third_spec_bessy_barrel" />
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

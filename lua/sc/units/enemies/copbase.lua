@@ -46,7 +46,17 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or managers.skirmish:is_skirmish() and self._tweak_table == "autumn" then
 		GroupAIStateBesiege:set_assault_endless(true)
 		managers.hud:set_buff_enabled("vip", true)
+		
+		if managers.skirmish:is_skirmish() then
+			managers.skirmish:set_captain_active()
+		end
+		
 	end
+	
+	--Just in case Summers decides to spawn again, his DR is back
+	if self._unit:base()._tweak_table == "summers" then
+		managers.groupai:state():_reset_summers_dr()	
+	end		
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
@@ -396,12 +406,12 @@ local weapons_map = {
 
 	--Security Guards
 	["trai"] = {
-		[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5", "m4"},
-		[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5", "m4"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5", "m4"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5", "m4"},
 		[Idstring("units/payday2/characters/ene_city_guard_1/ene_city_guard_1"):key()] = {"deagle_guard", "ump", "g36"},
 		[Idstring("units/payday2/characters/ene_city_guard_2/ene_city_guard_2"):key()] = {"deagle_guard", "ump", "g36"},
-		[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5", "m4", "g36"},
-		[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"):key()] = {"m1911_npc", "mp5", "m4", "g36"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"):key()] = {"m1911_npc", "mp5", "g36"},
+		[Idstring("units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"):key()] = {"m1911_npc", "mp5", "g36"},
 	},
 	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5"},
@@ -476,10 +486,9 @@ local weapons_map = {
 	[Idstring("units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"):key()] = {"ump", "r870", "m416_npc"},
 	[Idstring("units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"):key()] = {"ump", "r870", "m416_npc"},
 	
-	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"):key()] = {"m1911_npc", "mp5", "m4"},
-	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"):key()] = {"m1911_npc", "mp5", "m4"},
-	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3"):key()] = {"m1911_npc", "r870", "m4"},
-	
+	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"):key()] = {"m1911_npc", "deagle_guard", "mp5", "m4"},
+	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"):key()] = {"m1911_npc", "deagle_guard", "mp5", "m4"},
+	[Idstring("units/pd2_dlc_deep/characters/ene_deep_security_3/ene_deep_security_3"):key()] = "r870",
 	--Vanilla Murkies with varierty weapons
 	[Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"):key()] = {"ump", "m4", "r870", "scar_murky"},
 	[Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"):key()] = {"ump", "m4", "r870", "scar_murky"},
@@ -489,17 +498,94 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
 	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
 	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
+	
+	--Weapons for Constantine Scores enemies, Tangerine wuz here
+
+	--Diego's goons
+	[Idstring("units/pd2_mod_ttr/characters/ene_friendly_backup_diego_crew/ene_friendly_backup_diego_crew"):key()] = {"m1911_npc", "mac11", "r870", "ak47", "raging_bull"},
+	
+	--Valerio Cartel
+
+	--Scripted enemies
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_bathrobe_1/ene_cartel_bathrobe_1"):key()] = {"m1911_npc", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_bathrobe_2/ene_cartel_bathrobe_2"):key()] = {"m1911_npc", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_bathrobe_3/ene_cartel_bathrobe_3"):key()] = {"m1911_npc", "raging_bull"},
+
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_security_1/ene_cartel_security_1"):key()] = {"c45", "mp5", "m4", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_security_2/ene_cartel_security_2"):key()] = {"c45", "mp5", "m4", "raging_bull"},
+
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_rebel_1/ene_cartel_rebel_1"):key()] = {"c45", "m1911_npc", "mac11", "r870", "mossberg", "ak47", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_rebel_2/ene_cartel_rebel_2"):key()] = {"c45", "m1911_npc", "mac11", "r870", "mossberg", "ak47", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_rebel_3/ene_cartel_rebel_3"):key()] = {"c45", "m1911_npc", "mac11", "r870", "mossberg", "ak47", "raging_bull"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_rebel_4/ene_cartel_rebel_4"):key()] = {"c45", "m1911_npc", "mac11", "r870", "mossberg", "ak47", "raging_bull"},
+
+	--SWAT tier
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier/ene_cartel_soldier"):key()] = "ak47",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_2/ene_cartel_soldier_2"):key()] = "ak47",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3"):key()] = "mp5",	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4"):key()] = "raging_bull",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_1/ene_cartel_soldier_shotgun_1"):key()] = "mossberg",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_2/ene_cartel_soldier_shotgun_2"):key()] = "r870",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_3/ene_cartel_soldier_shotgun_3"):key()] = "mossberg",		
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_shotgun_4/ene_cartel_soldier_shotgun_4"):key()] = "r870",
+	normal = {
+		[Idstring("units/pd2_mod_ttr/characters/ene_cartel_shield/ene_cartel_shield"):key()] = {"m1911_npc"},
+	},	
+	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy/ene_cartel_soldier_heavy"):key()] = "mp5",		
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_shotgun/ene_cartel_soldier_heavy_shotgun"):key()] = "r870",
+	
+	--FBI tier
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_1/ene_cartel_soldier_fbi_1"):key()] = "mp5",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_2/ene_cartel_soldier_fbi_2"):key()] = "mp5",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_3/ene_cartel_soldier_fbi_3"):key()] = "ak47",	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_4/ene_cartel_soldier_fbi_4"):key()] = "raging_bull",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_1/ene_cartel_soldier_fbi_shotgun_1"):key()] = "r870",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_2/ene_cartel_soldier_fbi_shotgun_2"):key()] = "mossberg",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_3/ene_cartel_soldier_fbi_shotgun_3"):key()] = "r870",		
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_fbi_shotgun_4/ene_cartel_soldier_fbi_shotgun_4"):key()] = "mossberg",
+	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi/ene_cartel_soldier_heavy_fbi"):key()] = "mp5",	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_heavy_fbi_shotgun/ene_cartel_soldier_heavy_fbi_shotgun"):key()] = "r870",
+	very_hard = {
+		[Idstring("units/pd2_mod_ttr/characters/ene_cartel_shield/ene_cartel_shield"):key()] = {"m1911_npc", "deagle"},
+	},	
+	
+	--GenSec Tier
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_1/ene_cartel_soldier_city_1"):key()] = "hk33",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_2/ene_cartel_soldier_city_2"):key()] = "hk33",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_3/ene_cartel_soldier_city_3"):key()] = "ump",	
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_4/ene_cartel_soldier_city_4"):key()] = "deagle_guard",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_1/ene_cartel_soldier_city_shotgun_1"):key()] = "benelli",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_2/ene_cartel_soldier_city_shotgun_2"):key()] = "benelli",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_3/ene_cartel_soldier_city_shotgun_3"):key()] = "m500",
+	[Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_city_shotgun_4/ene_cartel_soldier_city_shotgun_4"):key()] = "m500",	
+	
+	--Speaking of GenSec...
+	[Idstring("units/pd2_mod_ttr/characters/ene_swat_gensec_1/ene_swat_gensec_1"):key()] = {"mp5", "amcar"},	
+	[Idstring("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1"):key()] = {"m4", "ump"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_city_swat_1/ene_city_swat_1"):key()] = {"g36", "ump"},
+	[Idstring("units/pd2_mod_ttr/characters/ene_city_swat_2/ene_city_swat_2"):key()] = "benelli",
+	[Idstring("units/pd2_mod_ttr/characters/ene_marshal_gensec/ene_marshal_gensec"):key()] = "heavy_zeal_sniper",
+	
 }
 
 local default_weapon_name_orig = CopBase.default_weapon_name
 function CopBase:default_weapon_name(...)
 	local job = Global.level_data and Global.level_data.level_id or ""
+	local faction = tweak_data.levels:get_ai_group_type()
 	local weapon_override = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()]
 	
 	--For Jungle Inferno Mutator
 	if not self._weapon_set and restoration and restoration.disco_inferno and not self._char_tweak.no_mutator_weapon_override then
 		self._default_weapon_id = "flamethrower"
 		self._weapon_set = true		
+	end
+	
+	--Have White Titandozers use Grenade Launchers like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
+	if self._tweak_table == "tank_hw" and faction == "russia" or self._tweak_table == "tank_hw" and faction == "federales" then
+		self._default_weapon_id = "m32_large"
+		self._weapon_set = true
 	end
 	
 	if not self._weapon_set and weapon_override then

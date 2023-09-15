@@ -1,0 +1,8 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_body_standard" orientation_object="rp_wpn_fps_fla_system_body_standard" />
+	<graphics>
+		<object name="g_grip" enabled="true" />
+		<object name="g_body" enabled="true" />
+		<object name="g_system" enabled="true" />
+	</graphics>
+</dynamic_object>

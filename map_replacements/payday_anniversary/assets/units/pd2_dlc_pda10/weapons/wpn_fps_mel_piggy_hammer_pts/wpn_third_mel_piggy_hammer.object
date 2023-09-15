@@ -1,0 +1,8 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda10/weapons/wpn_fps_mel_piggy_hammer_pts/wpn_third_mel_piggy_hammer" orientation_object="rp_wpn_third_mel_piggy_hammer" />
+	<graphics>
+		<object name="g_piggy" enabled="true" />
+		<object name="g_stick" enabled="true" />
+	</graphics>
+	<lights />
+</dynamic_object>

@@ -32,7 +32,7 @@
 		<extension class="ContourExt" name="contour"/>
 		<extension class="CopSound" name="sound"/>
 	</extensions>
-	<network remote_unit="units/pd2_dlc_ranc/characters/ene_male_ranc_ranger_02/ene_male_ranc_ranger_02_husk" sync="spawn"/>
+	<network remote_unit="units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2_husk" sync="spawn"/>
 	<sounds>
 		<default_soundsource source="Hips"/>
 	</sounds>

@@ -81,7 +81,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_no_CS_cops"] = {
 		--All Blue units
@@ -134,7 +135,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc"] = {
 		--All Blue units
@@ -190,7 +192,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_with_phalanx"] = { -- ??
 		--All Blue units
@@ -246,7 +249,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_no_CS_cops"] = {
 		--All Blue units
@@ -299,7 +303,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_with_single_spooc_no_FBI_spoocs"] = {
 		--All Blue units
@@ -351,7 +356,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["standard_no_FBI_spoocs"] = {
 		--All Blue units
@@ -406,7 +412,8 @@ local standard_spawngroups = {
 		--Recurring spawns
 		"titan_snipers",
 		--Event units
-		"snowman_boss"
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_alex_2"] = {
 		"FBI_stealth_a",
@@ -1011,7 +1018,9 @@ local standard_spawngroups = {
 		"FBI_spoocs",
 		"FBI_defend_b",
 		"GS_defend_b",
-		"CS_heavys"
+		"CS_heavys",
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_pines_2"] = {
 		"CS_tazers",
@@ -1026,7 +1035,9 @@ local standard_spawngroups = {
 		"BLACK_tanks",
 		"SKULL_tanks",
 		"TIT_tanks",
-		"CS_shields"
+		"CS_shields",
+		"snowman_boss",
+		"piggydozer"
 	},
 	["proprietary_red2"] = {
 		"CS_defend_c",
@@ -3646,27 +3657,27 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2"]
 		},
 		[100078] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100080] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100089] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100082] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100088] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100094] = {
-			interval = 0,
+			interval = 30,
 			preferred_spawn_groups = standard_spawngroups["proprietary_pbr2_2"]
 		},
 		[100403] = {

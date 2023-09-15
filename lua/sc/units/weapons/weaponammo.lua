@@ -39,7 +39,7 @@ function WeaponAmmo:calculate_ammo_max_per_clip()
 	if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "clip_ammo_increase") then
 		ammo = ammo * managers.player:upgrade_value(tweak_data.weapon[self._name_id].category, "clip_ammo_increase", 1)
 	end
-	ammo = math.floor(ammo)
+	ammo = math.round(ammo)
 	return ammo
 end
 

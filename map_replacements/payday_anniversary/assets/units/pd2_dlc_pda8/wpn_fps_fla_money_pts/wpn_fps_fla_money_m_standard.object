@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_m_standard" orientation_object="rp_wpn_fps_fla_money_m_standard" />
+	<graphics>
+		<object name="g_mag" enabled="true" />
+		<object name="g_glass" enabled="true" />
+	</graphics>
+</dynamic_object>

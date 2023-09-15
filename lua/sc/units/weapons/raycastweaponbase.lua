@@ -182,13 +182,20 @@ function RaycastWeaponBase:can_shoot_through_titan_shield()
 	return self._can_shoot_through_titan_shield
 end
 
+function RaycastWeaponBase:can_shoot_through_enemy_unlim()
+	return self._can_shoot_through_enemy_unlim
+end
+
 function RaycastWeaponBase:_collect_hits(from, to)
 	local setup_data = {
-		stop_on_impact = self._bullet_class and self._bullet_class.stop_on_impact,
+		stop_on_impact = self:bullet_class().stop_on_impact,
 		can_shoot_through_wall = self:can_shoot_through_wall(),
 		can_shoot_through_shield = self:can_shoot_through_shield(),
 		can_shoot_through_titan_shield = self:can_shoot_through_titan_shield(),
 		can_shoot_through_enemy = self:can_shoot_through_enemy(),
+		can_shoot_through_enemy_unlim = self:can_shoot_through_enemy_unlim(),
+		armor_piercing_chance = self:armor_piercing_chance(),
+		has_hit_enemy = nil,
 		has_hit_wall = nil,
 		bullet_slotmask = self._bullet_slotmask,
 		enemy_mask = self.enemy_mask,
@@ -199,6 +206,23 @@ function RaycastWeaponBase:_collect_hits(from, to)
 
 	return RaycastWeaponBase.collect_hits(from, to, setup_data)
 end
+
+local armour = {
+	-- Tans
+	[Idstring("body_plate"):key()] = true,
+	-- Dozer
+	[Idstring("body_helmet"):key()] = true,
+	[Idstring("body_helmet_plate"):key()] = true,
+	[Idstring("body_helmet_glass"):key()] = true,
+	[Idstring("body_armor_chest"):key()] = true,
+	[Idstring("body_armor_stomache"):key()] = true,
+	[Idstring("body_armor_back"):key()] = true,
+	[Idstring("body_armor_throat"):key()] = true,
+	[Idstring("body_armor_neck"):key()] = true,
+	-- Sosa
+	[Idstring("body_vest"):key()] = true,
+	[Idstring("body_ammo"):key()] = true,
+}
 
 --Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase.collect_hits(from, to, setup_data)
@@ -226,10 +250,13 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	local can_shoot_through_shield = setup_data.can_shoot_through_shield
 	local can_shoot_through_titan_shield = setup_data.can_shoot_through_titan_shield
 	local can_shoot_through_enemy = setup_data.can_shoot_through_enemy
+	local can_shoot_through_enemy_unlim = setup_data.can_shoot_through_enemy_unlim
+	local armor_piercing_chance = setup_data.armor_piercing_chance or 0
 	local wall_mask = setup_data.wall_mask
 	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
+
 
 	--Just set this immediately.
 	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)
@@ -247,7 +274,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 			local weak_body = hit.body:has_ray_type(ai_vision_ids)
 			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
 
-			if not can_shoot_through_enemy and hit_enemy then
+			if (setup_data.has_hit_enemy or not can_shoot_through_enemy and hit_enemy) or (armour[hit.body:name():key()] and armor_piercing_chance <= 0 ) then
 				break
 			elseif setup_data.has_hit_wall or (not can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body) then
 				break
@@ -259,7 +286,8 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 				break						
 			end
 			
-			setup_data.has_hit_wall = setup_data.has_hit_wall or hit.unit:in_slot(wall_mask)				
+			setup_data.has_hit_wall = setup_data.has_hit_wall or hit.unit:in_slot(wall_mask)
+			setup_data.has_hit_enemy = not can_shoot_through_enemy_unlim and (setup_data.has_hit_enemy or hit_enemy)
 		end
 	end
 
@@ -676,6 +704,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
+	local shield_damage_reduction_applied = false
+	local extra_collisions = self.extra_collisions and self:extra_collisions()
 	local is_civ_f = CopDamage.is_civilian
 	local damage = self:_get_current_damage(dmg_mul)
 
@@ -705,7 +735,31 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		--]]
 
 		if dmg > 0 then
-			local hit_result = self._bullet_class:on_collision(hit, self._unit, user_unit, dmg)
+			local hit_result = self:bullet_class():on_collision(hit, self._unit, user_unit, dmg)
+
+			if extra_collisions then
+				for idx, extra_col_data in ipairs(extra_collisions) do
+					if alive(hit.unit) then
+						extra_col_data.bullet_class:on_collision(hit, self._unit, user_unit, dmg * (extra_col_data.dmg_mul or 1))
+					end
+				end
+			end
+
+			hit_through_wall = hit_through_wall or hit.unit:in_slot(self.wall_mask)
+			hit_through_shield = hit_through_shield or hit.unit:in_slot(self.shield_mask) and alive(hit.unit:parent())
+
+			if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
+				hit_through_wall = true
+				shield_damage_reduction_applied = false
+			elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
+				hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+				shield_damage_reduction_applied = false
+			end
+			
+			if hit_through_shield and not shield_damage_reduction_applied then
+				damage = damage * (self._shield_pierce_damage_mult or 0.5)
+				shield_damage_reduction_applied = true
+			end
 
 			if hit_result then
 				hit.damage_result = hit_result
@@ -713,7 +767,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 				hit_count = hit_count + 1
 
 				if hit_result.type == "death" then
-					local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
+					local unit_base = hit.unit:base()
+					local unit_type = unit_base and unit_base._tweak_table
 					local is_civilian = unit_type and is_civ_f(unit_type)
 
 					if not is_civilian then
@@ -734,26 +789,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 							managers.achievment:award(tweak_data.achievement.easy_as_breathing.award)
 						end
 					end
-
-					hit_through_wall = hit_through_wall or hit.unit:in_slot(self.wall_mask)
-					hit_through_shield = hit_through_shield or hit.unit:in_slot(self.shield_mask) and alive(hit.unit:parent())
-
-					if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
-						hit_through_wall = true
-						shield_damage_reduction_applied = false
-					elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
-						hit_through_shield = hit_through_shield or alive(hit.unit:parent())
-						shield_damage_reduction_applied = false
-					end
-
-					--Damage reduction when shooting through shields.
-					--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
-					if hit_through_shield and not shield_damage_reduction_applied then
-						damage = damage * (self._shield_pierce_damage_mult or 0.5)
-						shield_damage_reduction_applied = true
-					end
-
-					self:_check_kill_achievements(cop_kill_count, unit_type, is_civilian, hit_through_wall, hit_through_shield)
+					self:_check_kill_achievements(cop_kill_count, unit_base, unit_type, is_civilian, hit_through_wall, hit_through_shield)
 				end
 			end
 		end
@@ -902,8 +938,8 @@ function RaycastWeaponBase:_fire_sound(...)
 		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2") then
 			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto2" or "fire_single2", "fire2")
 		end
-		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3") then
-			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single2 and "fire_auto3" or "fire_single3", "fire3")
+		if self:_get_sound_event(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single3 and "fire_auto3" or "fire_single3", "fire3") then
+			self:play_tweak_data_sound(self:fire_mode() == "auto" and not self:weapon_tweak_data().sounds.fire_single3 and "fire_auto3" or "fire_single3", "fire3")
 		end
 	end
 end
@@ -916,6 +952,10 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		if managers.player:has_category_upgrade("temporary", "no_ammo_cost") then
 			managers.player:activate_temporary_upgrade("temporary", "no_ammo_cost")
 		end
+	end
+
+	if self._autoaim and self._active_modify_mutator then
+		self._active_modify_mutator:check_modify_weapon(self)
 	end
 
 	local is_player = self._setup.user_unit == managers.player:player_unit()
@@ -959,6 +999,16 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 					end
 				end
 			end
+		end
+
+		local mutator = nil
+
+		if managers.mutators:is_mutator_active(MutatorPiggyRevenge) then
+			mutator = managers.mutators:get_mutator(MutatorPiggyRevenge)
+		end
+
+		if mutator and mutator.get_free_ammo_chance and mutator:get_free_ammo_chance() then
+			ammo_usage = 0
 		end
 
 		local ammo_in_clip = base:get_ammo_remaining_in_clip()
@@ -1096,7 +1146,7 @@ function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	--Multi-pellet spread increase.
 	if self._rays and self._rays > 1 then
-		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase or 1
 	end
 
 	if not current_state then

@@ -489,6 +489,15 @@ function PlayerManager:critical_hit_chance(detection_risk)
 	multiplier = multiplier + self._crit_mul - 1
 	local detection_risk_add_crit_chance = managers.player:upgrade_value("player", "detection_risk_add_crit_chance")
 	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_crit_chance, self._detection_risk)
+	local mutator = nil
+
+	if managers.mutators:is_mutator_active(MutatorPiggyRevenge) then
+		mutator = managers.mutators:get_mutator(MutatorPiggyRevenge)
+	end
+
+	if mutator and mutator.additional_critical_chance then
+		multiplier = multiplier + mutator:additional_critical_chance()
+	end	
 
 	--OFFYERROCKER'S MERC PERK DECK
 	--[ [
@@ -580,7 +589,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	
 	if self._current_state == "bipod" then
 		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)	
-	elseif current_state._state_data.ducking then
+	elseif current_state and current_state._state_data.ducking then
 		multiplier = multiplier * self:upgrade_value("player", "crouching_damage_reduction", 1)
 	end
 
@@ -716,6 +725,8 @@ function PlayerManager:check_skills()
 	end
 	
 	if managers.mutators:is_mutator_active(MutatorPiggyBank) then
+		self._message_system:register(Message.OnLethalHeadShot, "play_pda9_headshot", callback(self, self, "_play_pda9_headshot_event"))
+	elseif managers.mutators:is_mutator_active(MutatorPiggyRevenge) then
 		self._message_system:register(Message.OnLethalHeadShot, "play_pda9_headshot", callback(self, self, "_play_pda9_headshot_event"))
 	else
 		self._message_system:unregister(Message.OnLethalHeadShot, "play_pda9_headshot")

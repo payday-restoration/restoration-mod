@@ -7,7 +7,6 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		bulldozer = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 	end	
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value = 540
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
@@ -21,7 +20,6 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 360		
 	end
-end
 
 return {
 	--Pro Job PONR 
@@ -31,10 +29,8 @@ return {
 	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
 	[101320] = {
 		values = {
-			enemy = bulldozer	
-		},
-		on_executed = {
-			{ id = 101521, delay = 3 }
+			enemy = bulldozer,
+			participate_to_group_ai = true
 		}
 	},
 	-- Remove spawn groups closest to broken bridge part

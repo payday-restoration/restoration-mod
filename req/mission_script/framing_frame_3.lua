@@ -1,7 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value = 450
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
@@ -15,12 +14,41 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 300		
 	end
-end
+
+local ponr_timer_player_mul = {
+		1,
+		0.85,
+		0.7,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65
+}
 
 return {
 	--Pro Job PONR 
 	[100930] = {
 		ponr = ponr_value
+	},
+	--PONR for stealth
+	[104156] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value * 2
 	},
 	-- Fix power cut SO delay and add some random delay
 	[104685] = {

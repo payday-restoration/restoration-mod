@@ -1,6 +1,186 @@
 <table directory="assets">
-	<!--RAPHAEL CHRIST IS EVILBOBARINO-->	
-	<!--Akan LPF for some secret mutator-->
+	<!--RAPHAEL CHRIST IS EVILBOBARINO-->		
+	
+	<!--No Titans-->
+	<!--OMNIA Grenadier-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>	
+	
+	<!--OMNIA Shield-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
+	
+	<!--Omnia Riotshield-->
+	<unit_mat_seq		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>	
+	
+	<!--OMNIA Textures-->
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_body_df"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
+	
+	<!--Clone Army Mutator-->
+	<!--Russian AK101+GP for Grenadier-->	
+	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>
+	
+	<!--Vityaz -->	
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_akmsu_sc/wpn_npc_akmsu_sc" load="false" force="false"/>
+	
+	<!--Grenadiers-->
+	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<sequence_manager	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	
+	<object				path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	
+	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	
+	<object				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	
+	<object				path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1_husk" load="true"/>
+	
+	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/grenadier_atlas_df" force="false"/>	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/material_body_df" force="false"/>		
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" force="false"/>
+	
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_murky_grenadier_df" force="false"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/pbf_nm" force="true" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/pbf_df" force="true" />
+	<texture 			path="units/pd2_mod_reapers/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_tit_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_nm" force="false"/>
+	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/grenadier_body_df" force="false"/>
+	
+	<texture			path="units/payday2/characters/shared_textures/glass_op" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
+	
+	<!--Medics-->
+	<unit				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" load="true"/>
+    <unit				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
+	<object				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />
+	<material_config	path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
+	<material_config	path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_contour" />					
+	<cooked_physics		path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
+	
+	<object				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<model				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5_husk"  load="true"/>	
+	
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4" force="false" />
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4_contour" force="false" />
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/murky_heavy_df" force="false" />
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_medic_m4/maska_df" force="false" />
+
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" load="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" force="false"/>
+	
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk" load="true"/>		
+	<model				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<object				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>	
+	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_contour"/>	
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>
+	
+	<unit				path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<model				path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
+	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob_contour" force="false" />
+
+	<unit_mat			path="units/pd2_mod_reapers/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" load="true"/>
+	
+	<object				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_husk" load="true"/>
+	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />	
+	
+	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_head_df" force="false" />
+	<texture			path="units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_body_df" force="false" />
+	
+	<!--Akan LPF for da Donuts-->
 	<object				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
 	<model				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
@@ -15,6 +195,21 @@
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_il" force="false" load="true"/>
 	
+	<!--WOOF WOOF for da Donuts-->
+	<unit				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>		
+	<object				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_lightsout" force="false"/>	
+	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"/> 	
+	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df"/>
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_il" />
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/lycan_df" />
+	
 	<!--NYPD cop for da Donuts-->
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>
@@ -28,7 +223,7 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
 
-	<!--Omnia LPF for da Donuts too-->
+	<!--Omnia LPF for da Donuts-->
 	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>

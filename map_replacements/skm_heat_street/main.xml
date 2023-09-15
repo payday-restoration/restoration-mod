@@ -25,7 +25,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_run_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/textures/street_icon" id="skm_run" jc="60" max_mission_xp="135900" min_mission_xp="8000" name_id="heist_skm_run" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_run_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/textures/street_icon" id="skm_run" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_run" region="street">
 		<chain>
 			<table level_id="skm_street" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -54,9 +54,9 @@
 			<value_node value="1"/>
 			<value_node value="1"/>
 			<value_node value="1"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
 		</experience_mul>
 		<payout>
 			<value_node value="0"/>

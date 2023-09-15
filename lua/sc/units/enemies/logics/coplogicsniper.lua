@@ -1,84 +1,78 @@
-function CopLogicSniper.enter(data, new_logic_name, enter_params)
-	CopLogicBase.enter(data, new_logic_name, enter_params)
+-- Make snipers always aim if they have a target
+function CopLogicSniper._upd_aim(data, my_data)
+	local focus_enemy = data.attention_obj
+	local expected_pos = focus_enemy and (focus_enemy.last_verified_pos or focus_enemy.verified_pos)
+	local aim = expected_pos and focus_enemy.reaction >= AIAttentionObject.REACT_AIM
+	local shoot = focus_enemy and focus_enemy.verified and focus_enemy.reaction >= AIAttentionObject.REACT_SHOOT
+	local anim_data = data.unit:anim_data()
 
-	local objective = data.objective
+	if not my_data.advancing and not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") then
+		local can_crouch = anim_data.stand and (not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch)
+		local can_stand = anim_data.crouch and (not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand)
 
-	data.unit:brain():cancel_all_pathing_searches()
+		if anim_data.reload or data.is_suppressed then
+			if can_crouch then
+				CopLogicAttack._chk_request_action_crouch(data)
+			end
+		elseif focus_enemy then
+			if focus_enemy.verified then
+				if my_data.attitude == "engage" or my_data.wanted_pose == "stand" then
+					if can_stand and not CopLogicSniper._chk_stand_visibility(data.m_pos, focus_enemy.m_head_pos, data.visibility_slotmask) then
+						CopLogicAttack._chk_request_action_stand(data)
+					end
+				elseif can_crouch and not CopLogicSniper._chk_crouch_visibility(data.m_pos, focus_enemy.m_head_pos, data.visibility_slotmask) then
+					CopLogicAttack._chk_request_action_crouch(data)
+				end
+			elseif can_stand and not CopLogicSniper._chk_stand_visibility(data.m_pos, focus_enemy.m_head_pos, data.visibility_slotmask) then
+				CopLogicAttack._chk_request_action_stand(data)
+			elseif can_crouch and not CopLogicSniper._chk_crouch_visibility(data.m_pos, focus_enemy.m_head_pos, data.visibility_slotmask) then
+				CopLogicAttack._chk_request_action_crouch(data)
+			end
+		elseif my_data.wanted_pose == "stand" then
+			if can_stand then
+				CopLogicAttack._chk_request_action_stand(data)
+			end
+		elseif my_data.wanted_pose == "crouch" then
+			if can_crouch then
+				CopLogicAttack._chk_request_action_crouch(data)
+			end
+		end
+	end
 
-	local old_internal_data = data.internal_data
-	local my_data = {
-		unit = data.unit,
-		detection = data.char_tweak.detection.recon
-	}
-
-	if old_internal_data then
-		my_data.turning = old_internal_data.turning
-
-		if old_internal_data.firing then
-			data.unit:movement():set_allow_fire(false)
+	if aim or shoot then
+		if focus_enemy.verified then
+			if my_data.attention_unit ~= focus_enemy.u_key then
+				CopLogicBase._set_attention(data, focus_enemy)
+				my_data.attention_unit = focus_enemy.u_key
+			end
+		elseif my_data.attention_unit ~= expected_pos then
+			CopLogicBase._set_attention_on_pos(data, expected_pos)
+			my_data.attention_unit = expected_pos
 		end
 
-		if old_internal_data.shooting then
-			data.unit:brain():action_request({
+		if not my_data.shooting and not data.unit:movement():chk_action_forbidden("action") then
+			my_data.shooting = data.brain:action_request({
+				body_part = 3,
+				type = "shoot"
+			})
+		end
+	else
+		if my_data.shooting then
+			data.brain:action_request({
 				body_part = 3,
 				type = "idle"
 			})
 		end
 
-		if old_internal_data.nearest_cover then
-			my_data.nearest_cover = old_internal_data.nearest_cover
-
-			managers.navigation:reserve_cover(my_data.nearest_cover[1], data.pos_rsrv_id)
-		end
-
-		if old_internal_data.best_cover then
-			my_data.best_cover = old_internal_data.best_cover
-
-			managers.navigation:reserve_cover(my_data.best_cover[1], data.pos_rsrv_id)
+		if my_data.attention_unit then
+			CopLogicBase._reset_attention(data)
+			my_data.attention_unit = nil
 		end
 	end
 
-	data.internal_data = my_data
-	local key_str = tostring(data.unit:key())
-	my_data.detection_task_key = "CopLogicSniper._upd_enemy_detection" .. key_str
-
-	CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicSniper._upd_enemy_detection, data)
-
-	if objective then
-		my_data.wanted_stance = objective.stance
-		my_data.wanted_pose = objective.pose
-		my_data.attitude = objective.attitude or "avoid"
-	end
-
-	data.unit:movement():set_cool(false)
-
-	if my_data ~= data.internal_data then
-		return
-	end
-
-	data.unit:brain():set_attention_settings({
-		cbt = true
-	})
-
-	my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
+	CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 end
 
-function CopLogicSniper.exit(data, new_logic_name, enter_params)
-	CopLogicBase.exit(data, new_logic_name, enter_params)
-
-	local my_data = data.internal_data
-
-	data.unit:brain():cancel_all_pathing_searches()
-	CopLogicBase.cancel_queued_tasks(my_data)
-
-	if my_data.nearest_cover then
-		managers.navigation:release_cover(my_data.nearest_cover[1])
-	end
-
-	if my_data.best_cover then
-		managers.navigation:release_cover(my_data.best_cover[1])
-	end
-end
 
 -- Return to objective position
 Hooks:PostHook(CopLogicSniper, "action_complete_clbk", "sh_action_complete_clbk", function (data, action)

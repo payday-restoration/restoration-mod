@@ -2,7 +2,6 @@
 	<AddFiles directory="assets">
 		<texture path="guis/mercy/icon_nmh"/>
 	</AddFiles>
-	<AssetUpdates id="-1" provider="modworkshop" use_local_dir="true" version="1"/>
 	<instance id="nmh_fuge2">
 		<packages>
 			<value_node value="levels/instances/unique/nmh/nmh_fuge/world"/>

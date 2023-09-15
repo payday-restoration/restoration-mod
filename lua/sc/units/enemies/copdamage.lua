@@ -71,7 +71,7 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                             
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 
 	ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -109,7 +109,7 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                     
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),   
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),
 	
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 	ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),   
@@ -797,9 +797,6 @@ function CopDamage:damage_bullet(attack_data)
 	local weap_base = attack_data.weapon_unit:base()
 	if self._char_tweak.damage.bullet_dodge_chance then
 		local dodge_chance = self._char_tweak.damage.bullet_dodge_chance
-		if self._unit:base()._tweak_table == "fbi_vet" then
-			dodge_chance = managers.modifiers and managers.modifiers:modify_value("CopDamage:CheckingDodge", dodge_chance)
-		end
 		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
 			dodge_chance = 0
 		end
@@ -898,6 +895,10 @@ function CopDamage:damage_bullet(attack_data)
 	if is_player then
 		if  self._char_tweak.priority_shout then
 			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
+			
+			if attack_data.weapon_unit:base().weapon_tweak_data then
+				damage = damage * (attack_data.weapon_unit:base():weapon_tweak_data().special_damage_multiplier or 1)
+			end			
 		end
 	
 		if head then
@@ -929,13 +930,11 @@ function CopDamage:damage_bullet(attack_data)
 	end	
 
 	if not self._damage_reduction_multiplier and head then
-		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult
-		local is_captain = self._char_tweak.ends_assault_on_death
-		if weapon_hs_mult and not is_captain then
-			damage = damage * weapon_hs_mult
-		end
+		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult or 1
+		local weapon_ene_hs_mult = attack_data.weapon_unit:base()._ene_hs_mult or 1
+		local is_captain = weapon_hs_mult > 1 and self._char_tweak.ends_assault_on_death
 		if self._char_tweak.headshot_dmg_mul then
-			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
+			damage = math.max( damage, damage * ((((self._char_tweak.headshot_dmg_mul - 1) * weapon_ene_hs_mult) + 1) * headshot_multiplier) * ((not is_captain and weapon_hs_mult) or 1) )
 		else
 			damage = self._health * 10
 		end
@@ -1025,6 +1024,11 @@ function CopDamage:damage_bullet(attack_data)
 
 	if attack_data.attacker_unit:base().sentry_gun and not self:is_friendly_fire(attack_data.attacker_unit) then
 		managers.groupai:state():_voice_sentry() --FUCKING SCI-FI ROBOT GUNS
+	end
+	
+	local summers_dr = managers.groupai:state():_get_summers_dr()
+	if self._unit:base()._tweak_table == "summers" then
+		damage = damage * summers_dr
 	end
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
@@ -1412,20 +1416,13 @@ function CopDamage:damage_melee(attack_data)
 	end
 
 	local result = nil
-	local is_civilian, is_gangster, is_cop = nil
-
-	if CopDamage.is_civilian(self._unit:base()._tweak_table) then
-		is_civilian = true
-	elseif CopDamage.is_gangster(self._unit:base()._tweak_table) then
-		is_gangster = true
-	else
-		is_cop = true
-	end
-
+	local is_civlian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+	local is_gangster = CopDamage.is_gangster(self._unit:base()._tweak_table)
+	local is_cop = not is_civlian and not is_gangster
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
-	local damage_effect = attack_data.damage_effect
+	local damage_effect = attack_data.damage_effect or attack_data.damage
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
 
@@ -1532,6 +1529,11 @@ function CopDamage:damage_melee(attack_data)
 		end
 	end
 
+	local summers_dr = managers.groupai:state():_get_summers_dr()
+	if self._unit:base()._tweak_table == "summers" then
+		damage = damage * summers_dr
+	end
+
 	attack_data.raw_damage = damage
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
@@ -1539,7 +1541,6 @@ function CopDamage:damage_melee(attack_data)
 	local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
 	local damage_effect_percent = math.ceil(damage_effect / self._HEALTH_INIT_PRECENT)
 	damage = damage_percent * self._HEALTH_INIT_PRECENT
-	damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
 	damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
 	damage_effect, damage_effect_percent = self:_apply_min_health_limit(damage_effect, damage_effect_percent)
 
@@ -1549,17 +1550,16 @@ function CopDamage:damage_melee(attack_data)
 	end
 
 	if self._health <= damage then
-		damage_effect_percent = 1
-		attack_data.damage = self._health
-		attack_data.damage_effect = self._health
-
 		if self:check_medic_heal() then
 			result = {
 				type = "healed",
 				variant = "melee"
 			}
-			self._player_damage_ratio = 0
 		else
+			damage_effect_percent = 1
+			attack_data.damage = self._health
+			attack_data.damage_effect = self._health
+
 			if head then
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
@@ -1574,7 +1574,7 @@ function CopDamage:damage_melee(attack_data)
 
 			result = {
 				type = "death",
-				variant = "melee"
+				variant = attack_data.variant
 			}
 
 			if is_player and (attack_data.backstab or head) then
@@ -1587,46 +1587,18 @@ function CopDamage:damage_melee(attack_data)
 	else
 		attack_data.damage = damage
 		attack_data.damage_effect = damage_effect
-
-		local result_type = nil
-
-		if attack_data.shield_knock and self._char_tweak.damage.shield_knocked and not self:is_immune_to_shield_knockback() then
-			result_type = "shield_knock"
-		elseif attack_data.variant == "counter_tased" then
-			result_type = "counter_tased"
-		elseif attack_data.variant == "taser_tased" then
-			if self._char_tweak.can_be_tased == nil or self._char_tweak.can_be_tased then
-				result_type = "taser_tased"
-
-				if attack_data.charge_lerp_value then
-					local charge_power = math.lerp(0, 1, attack_data.charge_lerp_value)
-
-					damage_effect_percent = charge_power
-					self._tased_time = math.lerp(1, 5, charge_power)
-					self._tased_down_time = self._tased_time * 2
-				else
-					damage_effect_percent = 0.4
-					self._tased_time = 2
-					self._tased_down_time = self._tased_time * 2
-				end
-			end
-		elseif attack_data.variant == "counter_spooc" and not self._unit:base():has_tag("tank") and not self._unit:base():has_tag("boss") then
-			result_type = "expl_hurt"
-		end
-
-		if not result_type then
-			result_type = self:get_damage_type(damage_effect_percent, "melee")
-		end
-
+		damage_effect = math.clamp(damage_effect, self._HEALTH_INIT_PRECENT, self._HEALTH_INIT)
+		damage_effect_percent = math.ceil(damage_effect / self._HEALTH_INIT_PRECENT)
+		damage_effect_percent = math.clamp(damage_effect_percent, 1, self._HEALTH_GRANULARITY)
+		local result_type = attack_data.shield_knock and self._char_tweak.damage.shield_knocked and "shield_knock" or attack_data.variant == "counter_tased" and "counter_tased" or attack_data.variant == "taser_tased" and "taser_tased" or attack_data.variant == "counter_spooc" and "expl_hurt" or self:get_damage_type(damage_effect_percent, "melee") or "fire_hurt"
 		result = {
 			type = result_type,
-			variant = "melee"
+			variant = attack_data.variant
 		}
 
 		self:_apply_damage_to_health(damage)
 	end
 
-	attack_data.variant = "melee"
 	attack_data.result = result
 	attack_data.pos = attack_data.col_ray.position
 
@@ -1646,7 +1618,7 @@ function CopDamage:damage_melee(attack_data)
 			head_shot = head,
 			weapon_unit = attack_data.weapon_unit,
 			name_id = attack_data.name_id,
-			variant = "melee"
+			variant = attack_data.variant
 		}
 
 		managers.statistics:killed_by_anyone(data)
@@ -1658,24 +1630,24 @@ function CopDamage:damage_melee(attack_data)
 			self:_show_death_hint(self._unit:base()._tweak_table)
 			managers.statistics:killed(data)
 
+			if not is_civlian and managers.groupai:state():whisper_mode() and managers.blackmarket:equipped_mask().mask_id == tweak_data.achievement.cant_hear_you_scream.mask then
+				managers.achievment:award_progress(tweak_data.achievement.cant_hear_you_scream.stat)
+			end
+
+			mvector3.set(mvec_1, self._unit:position())
+			mvector3.subtract(mvec_1, attack_data.attacker_unit:position())
+			mvector3.normalize(mvec_1)
+			mvector3.set(mvec_2, self._unit:rotation():y())
+
+			local from_behind = mvector3.dot(mvec_1, mvec_2) >= 0
+
+			if is_cop and Global.game_settings.level_id == "nightclub" and attack_data.name_id and attack_data.name_id == "fists" then
+				managers.achievment:award_progress(tweak_data.achievement.final_rule.stat)
+			end
+
 			if is_civilian then
 				managers.money:civilian_killed()
 			else
-				if managers.groupai:state():whisper_mode() and managers.blackmarket:equipped_mask().mask_id == tweak_data.achievement.cant_hear_you_scream.mask then
-					managers.achievment:award_progress(tweak_data.achievement.cant_hear_you_scream.stat)
-				end
-
-				if is_cop and Global.game_settings.level_id == "nightclub" and attack_data.name_id and attack_data.name_id == "fists" then
-					managers.achievment:award_progress(tweak_data.achievement.final_rule.stat)
-				end
-
-				mvector3.set(mvec_1, self._unit:position())
-				mvector3.subtract(mvec_1, attack_data.attacker_unit:position())
-				mvector3.normalize(mvec_1)
-				mvector3.set(mvec_2, self._unit:rotation():y())
-
-				from_behind = mvector3.dot(mvec_1, mvec_2) >= 0
-
 				local job = Global.level_data and Global.level_data.level_id
 
 				if job == "short1_stage1" or job == "short1_stage2" then
@@ -1698,6 +1670,8 @@ function CopDamage:damage_melee(attack_data)
 					end
 				end
 			end
+
+
 		elseif managers.groupai:state():is_unit_team_AI(attack_data.attacker_unit) then
 			local special_comment = self:_check_special_death_conditions("melee", attack_data.col_ray.body, attack_data.attacker_unit, attack_data.name_id)
 
@@ -1705,144 +1679,69 @@ function CopDamage:damage_melee(attack_data)
 		end
 	end
 
-	if attack_data.attacker_unit == managers.player:player_unit() and alive(attack_data.attacker_unit) and tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
-		local achievements = tweak_data.achievement.enemy_melee_hit_achievements or {}
-		local melee_type = tweak_data.blackmarket.melee_weapons[attack_data.name_id].type
-		local enemy_base = self._unit:base()
-		local enemy_movement = self._unit:movement()
-		local enemy_type = enemy_base._tweak_table
-		local unit_weapon = enemy_base._default_weapon_id
-		local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
-		local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass, action_pass, is_dropin_pass, style_pass = nil
-
-		for achievement, achievement_data in pairs(achievements) do
-			melee_pass = not achievement_data.melee_id or achievement_data.melee_id == attack_data.name_id
-			melee_weapons_pass = not achievement_data.melee_weapons or table.contains(achievement_data.melee_weapons, attack_data.name_id)
-			type_pass = not achievement_data.melee_type or melee_type == achievement_data.melee_type
-			result_pass = not achievement_data.result or attack_data.result.type == achievement_data.result
-			enemy_pass = not achievement_data.enemy or enemy_type == achievement_data.enemy
-			enemy_weapon_pass = not achievement_data.enemy_weapon or unit_weapon == achievement_data.enemy_weapon
-			behind_pass = not achievement_data.from_behind or from_behind
-			diff_pass = not achievement_data.difficulty or table.contains(achievement_data.difficulty, Global.game_settings.difficulty)
-			health_pass = not achievement_data.health or health_ratio <= achievement_data.health
-			level_pass = not achievement_data.level_id or (managers.job:current_level_id() or "") == achievement_data.level_id
-			job_pass = not achievement_data.job or managers.job:current_real_job_id() == achievement_data.job
-			jobs_pass = not achievement_data.jobs or table.contains(achievement_data.jobs, managers.job:current_real_job_id())
-			enemy_count_pass = not achievement_data.enemy_kills or achievement_data.enemy_kills.count <= managers.statistics:session_enemy_killed_by_type(achievement_data.enemy_kills.enemy, "melee")
-			tags_all_pass = not achievement_data.enemy_tags_all or enemy_base:has_all_tags(achievement_data.enemy_tags_all)
-			tags_any_pass = not achievement_data.enemy_tags_any or enemy_base:has_any_tag(achievement_data.enemy_tags_any)
-			cop_pass = not achievement_data.is_cop or is_cop
-			gangster_pass = not achievement_data.is_gangster or is_gangster
-			civilian_pass = not achievement_data.is_not_civilian or not is_civilian
-			stealth_pass = not achievement_data.is_stealth or managers.groupai:state():whisper_mode()
-			on_fire_pass = not achievement_data.is_on_fire or managers.fire:is_set_on_fire(self._unit)
-			is_dropin_pass = achievement_data.is_dropin == nil or achievement_data.is_dropin == managers.statistics:is_dropin()
-			style_pass = not achievement_data.player_style or achievement_data.player_style.style == managers.blackmarket:equipped_player_style() and (not achievement_data.player_style.variation or achievement_data.player_style.variation == managers.blackmarket:equipped_suit_variation())
-
-			if achievement_data.enemies then
-				enemy_pass = false
-
-				for _, enemy in pairs(achievement_data.enemies) do
-					if enemy == enemy_type then
-						enemy_pass = true
-
-						break
-					end
-				end
-			end
-
-			mutators_pass = managers.mutators:check_achievements(achievement_data)
-			critical_pass = not achievement_data.critical
-
-			if achievement_data.critical then
-				critical_pass = attack_data.critical_hit
-			end
-
-			action_pass = true
-
-			if achievement_data.action then
-				local action = enemy_movement:get_action(achievement_data.action.body_part)
-				local action_type = action and action:type()
-				action_pass = action_type == achievement_data.action.type
-			end
-
-			all_pass = melee_pass and melee_weapons_pass and type_pass and enemy_pass and enemy_weapon_pass and behind_pass and diff_pass and health_pass and level_pass and job_pass and jobs_pass and cop_pass and gangster_pass and civilian_pass and stealth_pass and on_fire_pass and enemy_count_pass and tags_all_pass and tags_any_pass and result_pass and mutators_pass and critical_pass and action_pass and is_dropin_pass and style_pass
-
-			if all_pass then
-				if achievement_data.stat then
-					managers.achievment:award_progress(achievement_data.stat)
-				elseif achievement_data.award then
-					managers.achievment:award(achievement_data.award)
-				elseif achievement_data.challenge_stat then
-					managers.challenge:award_progress(achievement_data.challenge_stat)
-				elseif achievement_data.trophy_stat then
-					managers.custom_safehouse:award(achievement_data.trophy_stat)
-				elseif achievement_data.challenge_award then
-					managers.challenge:award(achievement_data.challenge_award)
-				end
-			end
-		end
+	if is_player then
+		self:_check_melee_achievements(attack_data)
 	end
 
-	local attacker = attack_data.attacker_unit
+	local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:movement():m_pos().z, 0, 300)
+	local variant = nil
 
-	if not attacker or not alive(attacker) or attacker:id() == -1 then
-		attack_data.attacker_unit = self._unit
-	end
-
-	local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:position().z, 0, 300)
-	local i_result = 0
-
-	if snatch_pager then
-		i_result = 3
+	if result.type == "shield_knock" then
+		variant = 1
+	elseif result.type == "counter_tased" then
+		variant = 2
+	elseif result.type == "expl_hurt" then
+		variant = 4
+	elseif snatch_pager then
+		variant = 3
 	elseif result.type == "taser_tased" then
-		i_result = 2
+		variant = 5
+	elseif dismember_victim then
+		variant = 6
 	elseif result.type == "healed" then
-		i_result = 1
+		variant = 7
+	else
+		variant = 0
 	end
 
 	local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
 
-	self:_send_melee_attack_result(attack_data, damage_percent, damage_effect_percent, hit_offset_height, i_result, body_index)
+	self:_send_melee_attack_result(attack_data, damage_percent, damage_effect_percent, hit_offset_height, variant, body_index)
 	self:_on_damage_received(attack_data)
 
 	return result
 end
 
-function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, i_result, death)
-	if self._dead then
-		return
-	end
-
+function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, variant, death)
 	local attack_data = {
 		variant = "melee",
 		attacker_unit = attacker_unit
 	}
-	local result, attack_dir = nil
 	local body = self._unit:body(i_body)
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
-	local hit_pos = mvector3.copy(body:position())
-	attack_data.pos = hit_pos
+	local damage = damage_percent * self._HEALTH_INIT_PRECENT
+	local damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
+	local result = nil
 
-	if attacker_unit then
-		local from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
+	local attack_dir = nil
 
-		attack_dir = hit_pos - from_pos
+	if attacker_unit then --attack_dir needs to be defined before "if death"
+		attack_dir = self._unit:position() - attacker_unit:position()
+
 		mvector3.normalize(attack_dir)
 	else
 		attack_dir = -self._unit:rotation():y()
 	end
-
 	attack_data.attack_dir = attack_dir
 
-	local damage = damage_percent * self._HEALTH_INIT_PRECENT
-	local damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
-	attack_data.damage = damage
-	attack_data.damage_effect = damage_effect
-
 	if death then
-		attack_data.damage = self._health
-		attack_data.damage_effect = self._health
+		--[[
+		if self:_sync_dismember(attacker_unit) and variant == 6 then
+			attack_data.body_name = body:name()
+
+			self:_dismember_body_part(attack_data)
+		end
+		]]
 
 		if head then
 			if table_contains(grenadier_smash, self._unit:name()) then
@@ -1856,24 +1755,6 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 			end
 		end
 
-		local melee_name_id = nil
-		local valid_attacker = attacker_unit and attacker_unit:base()
-
-		if valid_attacker then
-			if attacker_unit:base().is_husk_player then
-				local peer_id = managers.network:session():peer_by_unit(attacker_unit):id()
-				local peer = managers.network:session():peer(peer_id)
-
-				melee_name_id = peer:melee_id()
-			else
-				melee_name_id = attacker_unit:base().melee_weapon and attacker_unit:base():melee_weapon()
-			end
-
-			if melee_name_id then
-				self:_check_special_death_conditions("melee", body, attacker_unit, melee_name_id)
-			end
-		end
-
 		result = {
 			variant = "melee",
 			type = "death"
@@ -1883,47 +1764,44 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 		self:chk_killshot(attacker_unit, "melee", false, nil)
 
 		local data = {
+			variant = "melee",
+			head_shot = false,
 			name = self._unit:base()._tweak_table,
-			stats_name = self._unit:base()._stats_name,
-			name_id = melee_name_id,
-			variant = "melee"
+			stats_name = self._unit:base()._stats_name
 		}
 
 		managers.statistics:killed_by_anyone(data)
 	else
-		local result_type = "dmg_rcv"
-
-		if i_result == 1 then
-			result_type = "healed"
-
-			attack_data.damage = self._health
-			attack_data.damage_effect = self._health
-		else
-			self:_apply_damage_to_health(damage)
-
-			if i_result == 2 then
-				self._tased_time = math.lerp(1, 5, damage_effect_percent)
-				self._tased_down_time = self._tased_time * 2
-			end
-		end
-
+		local result_type = variant == 1 and "shield_knock" or variant == 2 and "counter_tased" or variant == 5 and "taser_tased" or variant == 4 and "expl_hurt" or self:get_damage_type(damage_effect_percent, "bullet") or "fire_hurt"
 		result = {
 			variant = "melee",
 			type = result_type
 		}
+
+		self:_apply_damage_to_health(damage)
+
+		attack_data.variant = result_type
 	end
 
 	attack_data.result = result
+	attack_data.damage = damage
+	attack_data.damage_effect = self._health
 	attack_data.is_synced = true
+	attack_data.name_id = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():get_melee_weapon_id()
 
-	if i_result == 3 then
+	if variant == 3 then
 		self._unit:unit_data().has_alarm_pager = false
 	end
 
-	if not self._no_blood and damage > 0 then
-		managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+	attack_data.pos = self._unit:position()
+
+	mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+
+	if not self._no_blood then
+		managers.game_play_central:sync_play_impact_flesh(self._unit:movement():m_pos() + Vector3(0, 0, hit_offset_height), attack_dir)
 	end
 
+	self:_send_sync_melee_attack_result(attack_data, hit_offset_height)
 	self:_on_damage_received(attack_data)
 end
 
@@ -1987,85 +1865,15 @@ function CopDamage:die(attack_data)
 	if self._unit:base()._tweak_table == "boom" then
 		local boom_boom = false
 		boom_boom = managers.modifiers:modify_value("CopDamage:CanBoomBoom", boom_boom)
+		boom_boom = managers.mutators:modify_value("CopDamage:CanBoomBoom", boom_boom)
 		if boom_boom then
 			MutatorExplodingEnemies._detonate(MutatorExplodingEnemies, self, attack_data, true, 60, 500)
 		end
 	end
-
-end
-
-function CopDamage:heal_unit(unit, override_cooldown)
-	if self._unit:anim_data() and self._unit:anim_data().act then
-		return false
-	end
-
-	local t = Application:time()
-	local my_tweak_table = self._unit:base()._tweak_table
-
-	if not override_cooldown then
-		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-			local cooldown = tweak_data.medic.cooldown
-			cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
-
-			if t < self._heal_cooldown_t + cooldown then
-				return false
-			end
-		end
-	end
-
-	local target_tweak_table = unit:base()._tweak_table
-
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-		if table.contains(tweak_data.medic.disabled_units, target_tweak_table) then
-			return false
-		end
-	else
-		if not table.contains(tweak_data.medic.whitelisted_units, target_tweak_table) then
-			return false
-		end
-	end
-
-	local team = unit:movement().team and unit:movement():team()
-
-	if team and team.id ~= "law1" then
-		if not team.friends or not team.friends.law1 then
-			return false
-		end
-	end
-
-	if unit:brain() then
-		if unit:brain().converted then
-			if unit:brain():converted() then
-				return false
-			end
-		elseif unit:brain()._logic_data and unit:brain()._logic_data.is_converted then
-			return false
-		end
-	end
-
-	if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
-		self._heal_cooldown_t = t
-	end
-
-	if not self._unit:character_damage():dead() then
-		if self._unit:contour() then
-			self._unit:contour():add("medic_show")
-			self._unit:contour():flash("medic_show", 0.2)
-		end
-
-		local action_data = {
-			body_part = 1,
-			type = "heal",
-			client_interrupt = Network:is_client()
-		}
-
-		self._unit:movement():action_request(action_data)
-	end
-
-	managers.network:session():send_to_peers_synched("sync_medic_heal", self._unit)
-	MedicActionHeal:check_achievements()
-
-	return true
+	
+	if self._char_tweak.reduce_summers_dr_on_death then
+		managers.groupai:state():_reduce_summers_dr(0.15)
+	end	
 end
 
 function CopDamage:stun_hit(attack_data)
@@ -3501,80 +3309,6 @@ function CopDamage:build_suppression(amount, panic_chance)
 	end
 end
 
-function CopDamage:_check_special_death_conditions(variant, body, attacker_unit, weapon_unit)
-	if not attacker_unit or not alive(attacker_unit) or not attacker_unit:base() then
-		return
-	end
-
-	local special_deaths = self._char_tweak.special_deaths --special deaths set in charactertweakdata
-
-	if not special_deaths or not special_deaths[variant] then
-		return
-	end
-
-	local body_data = special_deaths[variant][body:name():key()]
-
-	if not body_data then
-		return
-	end
-
-	if not managers.groupai:state():all_criminals()[attacker_unit:key()] then --is not a heister
-		return
-	end
-
-	local attacker_name = managers.criminals:character_name_by_unit(attacker_unit)
-
-	if not body_data.character_name or body_data.character_name ~= attacker_name then
-		return
-	end
-
-	if variant == "melee" then
-		if body_data.melee_weapon_id and weapon_unit then
-			if body_data.melee_weapon_id == weapon_unit then
-				if self._unit:damage():has_sequence(body_data.sequence) then
-					if body_data.sound_effect then
-						self._unit:sound():play(body_data.sound_effect, nil, nil)
-					end
-
-					self._unit:damage():run_sequence_simple(body_data.sequence)
-
-					if body_data.special_comment then
-						if attacker_unit == managers.player:player_unit() or Network:is_server() and managers.groupai:state():is_unit_team_AI(attacker_unit) then
-							return body_data.special_comment
-						end
-					end
-				end
-			end
-		end
-	elseif variant == "bullet" then
-		if body_data.weapon_id and alive(weapon_unit) then
-			local factory_id = weapon_unit:base()._factory_id --factory id, aka its unit id
-
-			if not factory_id then
-				return
-			end
-
-			if weapon_unit:base():is_npc() then --uses newnpcraycastweaponbase (so, bots and player husks)
-				factory_id = utf8.sub(factory_id, 1, -5) --removes the _npc part (or third_unit, forgot which one but it's what it does) from the name to see if it coincides below
-			end
-
-			local weapon_id = managers.weapon_factory:get_weapon_id_by_factory_id(factory_id) --actual weapon id used in many files
-
-			if body_data.weapon_id == weapon_id then
-				if self._unit:damage():has_sequence(body_data.sequence) then
-					self._unit:damage():run_sequence_simple(body_data.sequence)
-				end
-
-				if body_data.special_comment then
-					if attacker_unit == managers.player:player_unit() or Network:is_server() and managers.groupai:state():is_unit_team_AI(attacker_unit) then
-						return body_data.special_comment
-					end
-				end
-			end
-		end
-	end
-end
-
 function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 	local victim_base = killed_unit:base()
 
@@ -3793,3 +3527,6 @@ function CopDamage:_apply_damage_reduction(damage)
 	return damage
 end
 
+function CopDamage:can_attach_projectiles()
+	return not self._char_tweak.cannot_attach_projectiles
+end

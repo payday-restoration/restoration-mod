@@ -1,7 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value = 750
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
@@ -15,11 +14,10 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 600		
 	end
-end
 
 return {
-	--Pro Job PONR 
-	[101726] = {
+	--Pro Job PONR
+	[100216] = {
 		ponr = ponr_value
 	},
 	-- Enter main hall
@@ -34,10 +32,16 @@ return {
 	[101169] = {
 		difficulty = 1
 	},
-	 -- Disable Sosa retreat spot SO selection
-	[101612] = {
+	-- Disable Sosa retreat on low health during boss fight
+	[101596] = {
 		values = {
 			enabled = false
+		}
+	},
+	-- Fallback to make Sosa retreat when house is accessible
+	[102653] = {
+		on_executed = {
+			{ id = 102692, delay = 0 }
 		}
 	},
 	 --forcing boat escape

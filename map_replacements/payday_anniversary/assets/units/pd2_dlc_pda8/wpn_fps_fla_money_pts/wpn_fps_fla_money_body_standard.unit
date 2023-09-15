@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1">
+	<object file="units/pd2_dlc_pda8/weapons/wpn_fps_fla_money_pts/wpn_fps_fla_money_body_standard" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

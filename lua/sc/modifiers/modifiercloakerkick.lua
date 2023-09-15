@@ -8,7 +8,7 @@ function ModifierCloakerKick:init(data)
             12
         }},
         check = function (t, nr_grenades_used)
-            local delay_till_next_use = 30
+            local delay_till_next_use = 1
             local chance = 0.5
 
             if math.random() < chance then

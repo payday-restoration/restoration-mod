@@ -1,4 +1,25 @@
-Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)	
+Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
+	if self._unit:base()._tweak_table == "summers" then
+		managers.groupai:state():_reset_summers_dr()	
+	end			
+
+	local faction = tweak_data.levels:get_ai_group_type()
+    local lights = self._unit:get_objects_by_type(Idstring("light"))
+	if faction == "russia" then
+	if self._tweak_table == "spooc" or self._tweak_table == "spooc_titan" then
+		for k, v in pairs(lights) do
+			v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+			end
+		end
+	end
+	if faction == "federales" then
+		if self._tweak_table == "spooc_titan" then
+			for k, v in pairs(lights) do
+				v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+			end
+		end
+	end
+
 	self._allow_invisible = true
 
 	--Cloakers lights are always on

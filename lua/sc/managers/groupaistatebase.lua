@@ -133,6 +133,8 @@ function GroupAIStateBase:_init_misc_data()
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
+	
+	self._summers_dr = 0.25
 end
 
 local sc_group_base = GroupAIStateBase.on_simulation_started
@@ -203,6 +205,19 @@ function GroupAIStateBase:on_simulation_started()
 		self._suspicion_threshold = 0.9
 	end
 	
+	self._summers_dr = 0.25
+end
+
+function GroupAIStateBase:_get_summers_dr()	
+	return self._summers_dr
+end
+
+function GroupAIStateBase:_reduce_summers_dr(amount)
+	self._summers_dr = self._summers_dr + amount
+end
+
+function GroupAIStateBase:_reset_summers_dr()	
+	self._summers_dr = tweak_data.character.summers.base_summers_dr
 end
 
 function GroupAIStateBase:chk_guard_detection_mul()
@@ -227,10 +242,14 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 		return
 	end
 	
-	--No PONRs during stealth
-	--if managers.groupai:state():whisper_mode() then
-		--return
-	--end
+	--No PONRs during stealth, unless the map really needs it
+	--[[
+	if not table.contains(restoration.stealth_ponr_behavior, job) then
+		if managers.groupai:state():whisper_mode() then
+			return
+		end
+	end
+	]]--
 
 	self._forbid_drop_in = true
 	self._ponr_is_on = true
@@ -325,14 +344,19 @@ end
 
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local nr_players = 0
+	--If stealth - count only amount of players
+	if self:whisper_mode() then
+		nr_players = managers.network:session():amount_of_alive_players() 
+	else
+	--If loud - count players + bots
 	for u_key, u_data in pairs(self:all_criminals()) do
 		if not u_data.status then
 			nr_players = nr_players + 1
 		end
 	end
-	nr_players = math.clamp(nr_players, 1, 22)
+		nr_players = math.clamp(nr_players, 1, 22)	
+	end
 	--log("SC: Balance set for player count of = " .. tostring(nr_players))
-	
 	return balance_multipliers[nr_players]
 end
 
@@ -417,6 +441,7 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		local rotation = Rotation(math.random() * 360, 0, 0)
 		local smoke_grenade_id = Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick")
 		smoke_grenade_id = managers.modifiers:modify_value("GroupAIStateBase:SpawningSmoke", smoke_grenade_id)
+		smoke_grenade_id = managers.mutators:modify_value("GroupAIStateBase:SpawningSmoke", smoke_grenade_id)
 		local smoke_grenade = World:spawn_unit(smoke_grenade_id, det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
 		--log("spawning smoke!! was it tear gas?")
@@ -424,6 +449,7 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 
 		local voice_line = "g40x_any"
 		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
+		voice_line = managers.mutators:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
 		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
@@ -655,7 +681,7 @@ Hooks:Add("NetworkReceivedData", "restoration_sync_level_suspicion_from_host", f
 				end
 			end
 		end
-		]]
+		]]--
 	end
 end)
 
@@ -824,10 +850,12 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 		record.unit:brain():on_cop_neutralized(u_key)
 	end
 
-	local unit_type = unit:base()._tweak_table
+	local tags = unit:base().get_tags and unit:base():get_tags() or {}
 
-	if self._special_unit_types[unit_type] then
-		self:unregister_special_unit(u_key, unit_type)
+	for special_tag, is_set in pairs(self._special_unit_types) do
+		if is_set and tags[special_tag] then
+			self:unregister_special_unit(u_key, special_tag)
+		end
 	end
 
 	local dead = unit:character_damage():dead()
@@ -1442,6 +1470,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 		elseif not self._loud_diff_set and script_value > 0  then
 			local starting_diff = 0.1
 			starting_diff = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
+			starting_diff = managers.mutators:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
 			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)

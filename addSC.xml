@@ -172,7 +172,7 @@
 	
 	<continent			path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
 	
-	<continent			path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>
+	<!--<continent			path="levels/narratives/classics/dah/world/world" force="true" unload="true"/-->
 	
 	<cover_data			path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
@@ -761,6 +761,20 @@
 		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
 		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
 	</add>	
+	
+	<!--Piggy Dozer-->
+	<object				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<cooked_physics		path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<model				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<unit				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true" load="true"/>
+	<material_config	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
+	<material_config	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy_contour" force="true"/>
+	<unit				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy_husk" force="true" load="true"/>
+	
+	<add from_db="true" path="effects/payday2/particles/explosions/molotov_grenade_pent_boss" type="effect">
+		<effect load="true" path="effects/payday2/particles/explosions/molotov_grenade_pent_boss"/>
+	</add>
 
 	<!--Spring-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
@@ -807,6 +821,26 @@
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 		
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+	
+	<!--Spring's Saiga Boi-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2_husk" load="true"/>		
+	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />		
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />		
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df" force="true"/>	
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/bulldozer_saiga_helmet_df" force="true"/>
+
+	<!--OMNIA SAIGA DOZER BITS-->	
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
 	
 	<!--Autumn-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
@@ -1281,6 +1315,9 @@
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc"/>
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc"/>
 	
+	<!--Electric 40mm-->
+	<texture			path="guis/textures/pd2/blackmarket/inv_mod_ammo_electric"/>
+
 	<!--Incendiary Grenade-->
 	<effect				path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>
 	
@@ -1712,7 +1749,11 @@
 	<!--Perk Decks-->
     <texture			path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
     <texture			path="guis/dlcs/chico/textures/pd2/specialization/icons_atlas" force="true"/>
-    <texture			path="guis/dlcs/wild/textures/pd2/specialization/icons_atlas" force="true"/>	
+    <texture			path="guis/dlcs/wild/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/max/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/myh/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/ecp/textures/pd2/specialization/icons_atlas" force="true"/>
+	<texture			path="guis/dlcs/mrwi/textures/pd2/specialization/icons_atlas" force="true"/>
 	<!--grenade throwable case-->
 	<texture			path="guis/textures/pd2/equipment" force="true"/>
 	<texture			path="guis/textures/pd2/blackmarket/icons/deployables/armor_kit" force="true"/>
@@ -1796,12 +1837,7 @@
 	<object				path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<model				path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 	<material_config	path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-	<cooked_physics		path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
-
-	
-	<!--fixed male suit heister faces and necks-->
- 	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
-	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
+	<cooked_physics		path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/> 
 
 	<!--yellow blood-->
 	<effect				path="effects/payday2/particles/impacts/blood/yellow/blood_collection_a" />		
@@ -2009,6 +2045,18 @@
 	<animation			path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
+	
+	<!--Money Thrower Death Animations-->
+	<animation			path="anims/shared/rifle/generic/death_money_var1" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var2" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var3" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var4" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var5" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var6" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var7" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var8" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var9" load="true"/>
+	<animation			path="anims/shared/rifle/generic/death_money_var10" load="true"/>
 	
 	<!--LOD Vet Cop-->		
 	<object				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>

@@ -1,0 +1,9 @@
+<dynamic_object>
+	<diesel orientation_object="rp_wpn_fps_fla_system" />
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_mag_reload" enabled="true" />
+			<object name="anim_reload_dh" enabled="true" />
+		</animation_group>
+	</animations>
+</dynamic_object>

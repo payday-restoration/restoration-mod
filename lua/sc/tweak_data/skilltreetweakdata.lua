@@ -10,6 +10,7 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 ]]--
 
 local sc_sttd = SkillTreeTweakData.init
+local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 function SkillTreeTweakData:init(tweak_data)
 	sc_sttd(self, tweak_data)
 
@@ -46,6 +47,7 @@ function SkillTreeTweakData:init(tweak_data)
 		"x_sr2",
 		"x_mp5",
 		"x_akmsu",
+		"xmas_snowball",
 		"akimbo_recoil_index_addend_1",
 		"akimbo_spread_index_addend_1",
 		"ecm_jammer_can_activate_feedback",
@@ -454,7 +456,7 @@ function SkillTreeTweakData:init(tweak_data)
 			self.skills.single_shot_ammo_return = {
 				["name_id"] = "menu_body_expertise_beta_sc",
 				["desc_id"] = "menu_body_expertise_beta_desc_sc",
-				["icon_xy"] = {10, 3},
+				["icon_xy"] = {7, 0},
 				[1] = {
 					upgrades = {
 						"player_ap_bullets_1",
@@ -481,7 +483,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Shotgun Impact--
 			self.skills.underdog = {
 				["name_id"] = "menu_shotgun_impact_beta_sc",
-				["desc_id"] = "menu_shotgun_impact_beta_desc_sc",
+				["desc_id"] = per_pellet and "menu_shotgun_impact_per_pellet_desc_sc" or "menu_shotgun_impact_beta_desc_sc",
 				["icon_xy"] = {5, 0},
 				[1] = {
 					upgrades = {
@@ -491,7 +493,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"shotgun_extra_rays"
+						"shotgun_extra_rays",
+						"shotgun_damage_min_bonus"
 					},
 					cost = self.costs.pro
 				}
@@ -500,7 +503,7 @@ function SkillTreeTweakData:init(tweak_data)
 			--Shotgun CQB--
 			self.skills.shotgun_cqb = {
 				["name_id"] = "menu_shotgun_cqb_beta_sc",
-				["desc_id"] = "menu_shotgun_cqb_beta_desc_sc",
+				["desc_id"] = per_pellet and  "menu_shotgun_cqb_per_pellet_desc_sc" or "menu_shotgun_cqb_beta_desc_sc",
 				["icon_xy"] = {5, 1},
 				[1] = {
 					upgrades = {
@@ -542,7 +545,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {8, 5},
 				[1] = {
 					upgrades = {
-						"player_steelsight_move_speed_multiplier"
+						"shotgun_can_shoot_through_enemy",
+						"shotgun_ap_bullets_1"
 					},
 					cost = self.costs.hightier
 				},
@@ -761,7 +765,7 @@ function SkillTreeTweakData:init(tweak_data)
 					}
 				}
 
-				--Portable Saw--
+				--Specialist Equipment formally Portable Saw--
 				self.skills.portable_saw = {
 					["name_id"] = "menu_portable_saw_beta_sc",
 					["desc_id"] = "menu_portable_saw_beta_desc_sc",
@@ -802,7 +806,7 @@ function SkillTreeTweakData:init(tweak_data)
 					}
 				}
 
-				--Carbon Blade--
+				--Rip and Tear formally Carbon Blade--
 				self.skills.carbon_blade = {
 					["name_id"] = "menu_carbon_blade_beta_sc",
 					["desc_id"] = "menu_carbon_blade_beta_desc_sc",
@@ -887,7 +891,7 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--Eco Sentry--
+			--Engineering aka Eco Sentry--
 			self.skills.eco_sentry = {
 				["name_id"] = "menu_eco_sentry_beta_sc",
 				["desc_id"] = "menu_eco_sentry_beta_desc_sc",
@@ -1329,7 +1333,7 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			}
 
-			--ECM Overdrive--
+			--Spotter--
 			self.skills.ecm_2x = {
 				["name_id"] = "menu_ecm_2x_beta_sc",
 				["desc_id"] = "menu_ecm_2x_beta_desc_sc",
@@ -1425,6 +1429,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 4},
 				[1] = {
 					upgrades = {
+						"player_steelsight_move_speed_multiplier",
                    		"player_detection_risk_add_movement_speed_1"
 					},
 					cost = self.costs.hightier
@@ -2204,7 +2209,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"bodybags_bag_quantity"
 				},
 				cost = 1000,
-				icon_xy = {7, 1},
+				icon_xy = {0, 2},
 				name_id = "menu_deck3_5",
 				desc_id = "menu_deck3_5_desc_sc"
 			},
@@ -2225,7 +2230,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_loot_drop_multiplier_1"
 				},
 				cost = 4000,
-				icon_xy = {0, 2},
+				icon_xy = {6, 1},
 				name_id = "menu_deck3_9",
 				desc_id = "menu_deck3_9_desc_sc"
 			}
@@ -2242,7 +2247,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"weapon_passive_swap_speed_multiplier_1"
 				},
 				cost = 200,
-				icon_xy = {4, 2},
+				icon_xy = {1, 2},
 				name_id = "menu_deck4_1",
 				desc_id = "menu_deck4_1_desc_sc"
 			},
@@ -2252,7 +2257,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {1, 2},
+				icon_xy = {2, 2},
 				name_id = "menu_deck4_3",
 				desc_id = "menu_deck4_3_desc_sc"
 			},
@@ -2263,7 +2268,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_tape_loop_duration_2"
 				},
 				cost = 1000,
-				icon_xy = {2, 2},
+				texture_bundle_folder = "max",
+				icon_xy = {2, 0},
 				name_id = "menu_deck4_5",
 				desc_id = "menu_deck4_5_desc_sc"
 			},
@@ -2435,7 +2441,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_crouch_dodge_chance_burglar_1"
 				},
 				cost = 200,
-				icon_xy = {1, 2},
+				icon_xy = {4, 2},
 				name_id = "menu_deck7_1",
 				desc_id = "menu_deck7_1_desc_sc"
 			},
@@ -2445,7 +2451,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_2"
 				},
 				cost = 400,
-				icon_xy = {0, 4},
+				icon_xy = {1, 2},
 				name_id = "menu_deck7_3",
 				desc_id = "menu_deck7_3_desc_sc"
 			},
@@ -2456,7 +2462,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_crouch_dodge_chance_burglar_2"
 				},
 				cost = 1000,
-				icon_xy = {4, 2},
+				texture_bundle_folder = "mrwi",
+				icon_xy = {1, 1},
 				name_id = "menu_deck7_5",
 				desc_id = "menu_deck7_5_desc_sc"
 			},
@@ -2466,7 +2473,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
-				icon_xy = {1, 4},
+				icon_xy = {2, 2},
 				name_id = "menu_deck7_7",
 				desc_id = "menu_deck7_7_desc_sc"
 			},
@@ -3167,7 +3174,8 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,
-				icon_xy = {2, 2},
+				texture_bundle_folder = "max",
+				icon_xy = {3, 0},
 				name_id = "menu_deck18_5",
 				desc_id = "menu_deck18_5_desc_sc"
 			},
@@ -3229,7 +3237,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_damage_control_cooldown_drain_1"
 				},
 				icon_xy = {
-					3,
+					1,
 					0
 				}
 			},
@@ -3319,7 +3327,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_tape_loop_duration_2"
 				},
 				icon_xy = {
-					2,
+					1,
 					0
 				}
 			},

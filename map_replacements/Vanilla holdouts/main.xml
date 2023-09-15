@@ -1,0 +1,354 @@
+<table name="skm_vanilla_tweaks">
+<!--The Diamond-->
+<narrative briefing_event="dentist_hd1_cbf_01" briefing_id="heist_skm_mus_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_mus" id="skm_mus" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_mus" region="street">
+		<chain>
+			<table level_id="skm_mus" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--FWB-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_red2_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_red2" id="skm_red2" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_red2" region="street">
+		<chain>
+			<table level_id="skm_red2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--Watchdogs D2-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_watchdogs_stage2_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_watchdogs" id="skm_watchdogs_stage2" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_watchdogs_stage2" region="street">
+		<chain>
+			<table level_id="skm_watchdogs_stage2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--San Martin-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_bex_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_bex" id="skm_bex" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_bex" region="street">
+		<chain>
+			<table level_id="skm_bex" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--Golden Grin Casino-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_cas_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_cas" id="skm_cas" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_cas" region="street">
+		<chain>
+			<table level_id="skm_cas" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--Big Bank-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_big2_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_big2" id="skm_big2" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_big2" region="street">
+		<chain>
+			<table level_id="skm_big2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--Mallcrasher-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_mallcrasher_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_mallcrasher" id="skm_mallcrasher" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_mallcrasher" region="street">
+		<chain>
+			<table level_id="skm_mallcrasher" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+<!--Alesso-->
+<narrative briefing_event="pln_fwb_cbf_01" briefing_id="heist_skm_arena_crimenet" contact="skirmish" debrief_event="pln_fwb_34" icon="guis/dlcs/shl/textures/pd2/crimenet/skm_arena" id="skm_arena" jc="10" max_mission_xp="129800" min_mission_xp="10000" name_id="heist_skm_arena" region="street">
+		<chain>
+			<table level_id="skm_arena" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+</table>

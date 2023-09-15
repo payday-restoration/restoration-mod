@@ -59,7 +59,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/safehouse_old" id="skm_nightmare" is_halloween_level="true" jc="10" load_screen="" max_mission_xp="135900" min_mission_xp="8000" region="street">
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" icon="guis/dlcs/bro/textures/pd2/crimenet/safehouse_old" id="skm_nightmare" is_halloween_level="true" jc="10" load_screen="" max_mission_xp="129800" min_mission_xp="10000" region="street">
 		<chain>
 			<table level_id="skm_nightmare_lvl" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -92,9 +92,9 @@
 			<value_node value="1"/>
 			<value_node value="1"/>
 			<value_node value="1"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
-			<value_node value="3"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
 		</experience_mul>
 		<payout>
 			<value_node value="0"/>

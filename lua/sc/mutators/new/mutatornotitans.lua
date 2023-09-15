@@ -18,7 +18,11 @@ function MutatorNoTitans:setup(data)
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local access_type_walk_only = {walk = true}
-	local access_type_all = {walk = true, acrobatic = true}		
+	local access_type_all = {walk = true, acrobatic = true}	
+
+	if not PackageManager:loaded("packages/miscassetsmutators") then
+		PackageManager:load("packages/miscassetsmutators")
+	end
 	
 	--Titan Cloaker--
 	if difficulty_index <= 7 then
@@ -180,6 +184,71 @@ function MutatorNoTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "taser",
+		is_captain = true
+	}
+	
+	--OMNIA Shields replace their titan counterparts in Winters' squad
+	tweak_data.group_ai.unit_categories.Phalanx_minion_new = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},
+			russia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},
+			federales = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield")
+			}			
+		},
+		access = access_type_all,
+		special_type = "shield",
+		is_captain = true
+	}
+	
+	--OMNIA Grenadiers replace Titan Snipers in Winters' squad (why not?)
+	tweak_data.group_ai.unit_categories.Phalanx_sniper = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			russia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			federales = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			}			
+		},
+		access = access_type_all,
 		is_captain = true
 	}
 	

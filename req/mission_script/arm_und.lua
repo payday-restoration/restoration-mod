@@ -17,7 +17,6 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
 
-if Global.game_settings and Global.game_settings.one_down then
 	if tweak_data:difficulty_to_index(difficulty) <= 2 then
 		ponr_value = 780
 	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
@@ -31,12 +30,52 @@ if Global.game_settings and Global.game_settings.one_down then
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 600	
 	end
-end
 
 return {
 	--Pro Job PONR
 	[100329] = {
 		ponr = ponr_value
+	},
+	--Force FBI Agents
+	[100515] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100521] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100551] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100563] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100567] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100569] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100571] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
+	},
+	[100573] = {
+		values = {
+            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+		}
 	},
 	--GenSec Scripted Spawns
 	--Drivers

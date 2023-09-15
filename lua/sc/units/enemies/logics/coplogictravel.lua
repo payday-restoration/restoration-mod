@@ -23,19 +23,14 @@ Hooks:PostHook(CopLogicTravel, "enter", "sh_enter", CopLogicTravel.upd_advance)
 
 function CopLogicTravel.on_pathing_results(data)
 	local my_data = data.internal_data
-	if my_data.coarse_path and my_data.advancing then
-		CopLogicTravel._upd_pathing(data, my_data)
 
-		if my_data.advance_path and my_data.advancing:append_path(my_data.advance_path, my_data.coarse_path[my_data.coarse_path_index + 1][1]) then
-			my_data.advance_path = nil
+	CopLogicTravel._upd_pathing(data, my_data)
 
-			if my_data.coarse_path_index >= #my_data.coarse_path - 2 and data.objective.rot then
-				my_data.advancing._end_rot = data.objective.rot
-			end
-		end
-	else
-		CopLogicTravel.upd_advance(data)
+	if data.internal_data ~= my_data then
+		return
 	end
+
+	CopLogicTravel.upd_advance(data)
 end
 
 
@@ -227,8 +222,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 	local action_type = action:type()
 	if action_type == "walk" then
 		local update = false
-		local intermediate_complete = action._intermediate_action_complete
-		local expired = action:expired() or intermediate_complete
+		local expired = action:expired()
 		if not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
 			update = true -- don't want to update travel logic for a walk action from a previous logic
 
@@ -237,9 +231,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 			end
 		end
 
-		if not intermediate_complete then
-			my_data.advancing = nil
-		end
+		my_data.advancing = nil
 
 		if my_data.moving_to_cover then
 			if expired then
@@ -300,8 +292,6 @@ function CopLogicTravel.action_complete_clbk(data, action)
 		if update then 
 			if my_data.coarse_path_index >= #my_data.coarse_path then
 				CopLogicTravel._on_destination_reached(data) -- we're at the destination, no need to wait for cover_wait_t or other things
-			elseif intermediate_complete then
-				CopLogicTravel._check_start_path_ahead(data)
 			elseif data.logic.on_pathing_results then
 				data.logic.on_pathing_results(data) -- update the logic, can't just call upd_advance as other logics re-use action_complete_clbk
 			end

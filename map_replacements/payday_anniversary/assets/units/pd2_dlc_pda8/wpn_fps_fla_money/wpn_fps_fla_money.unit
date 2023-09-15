@@ -1,0 +1,20 @@
+<unit type="wpn" slot="1" >
+	<object file="units/pd2_dlc_pda8/weapons/wpn_fps_fla_money/wpn_fps_fla_money" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_moneythrower"/>
+		<depends_on effect="effects/payday2/particles/explosions/moneythrower" />
+		<depends_on effect="effects/payday2/particles/explosions/sparkle_enemies" />
+		<depends_on effect="effects/payday2/particles/explosions/sparkle_enemies_11sec" />
+		<depends_on effect="effects/payday2/particles/explosions/flamethrower_pilot" />
+		<depends_on effect="effects/payday2/particles/explosions/flamethrower_nosel" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewFlamethrowerBase" >
+			<var name="name_id" value="money" />
+		</extension>
+		<extension name="flamethrower_effect_extension" class="FlamethrowerEffectExtension" >
+			<var name="name_id" value="money" />
+		</extension>
+	</extensions>
+</unit>

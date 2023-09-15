@@ -38,8 +38,16 @@ function HuskCopDamage:die(attack_data)
 			MutatorExplodingEnemies._detonate(MutatorExplodingEnemies, self, attack_data, true, 20, 500)
 		end
 	end
+	
+	if self._char_tweak.reduce_summers_dr_on_death then
+		managers.groupai:state():_reduce_summers_dr(0.15)
+	end		
 end
 
 function HuskCopDamage:heal_unit(...)
 	return CopDamage.heal_unit(self, ...)
+end
+
+function CopDamage:can_attach_projectiles()
+	return not self._char_tweak.cannot_attach_projectiles
 end

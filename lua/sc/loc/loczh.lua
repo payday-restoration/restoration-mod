@@ -4898,7 +4898,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Bulletproof--
         ["menu_iron_man_sc"] = "刀枪不入",
-        ["menu_iron_man_desc_sc"] = "掌握: #{risk}#$basic##\n你的护甲现在#{skill_color}#不能被穿透##\n#{important_1}#提示：对自我伤害无效##\n\n防爆弹衣和复合战术背心的护甲量增加#{skill_color}#20##点\n\n专精: #{risk}#$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的#{skill_color}#15%##\n\n你的护甲恢复速度加快#{skill_color}#15%##",
+        ["menu_iron_man_desc_sc"] = "掌握: #{risk}#$basic##\n你的护甲现在#{skill_color}#不能被穿透##\n#{important_1}#提示：对自我伤害无效##\n\n专精: #{risk}#$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的#{skill_color}#15%##\n\n你的护甲恢复速度加快#{skill_color}#15%##",
 
         -- }
 

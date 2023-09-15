@@ -19072,9 +19072,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
-			11,
-			13,
-			15
+			10,
+			12,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -19096,9 +19096,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
-			12,
-			14,
-			16
+			11,
+			13,
+			15
 		}
 		self.besiege.assault.force_pool = {
 			50,
@@ -19120,9 +19120,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			13,
-			15,
-			17
+			12,
+			14,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19144,9 +19144,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			14,
-			16,
-			18
+			13,
+			15,
+			17
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -19167,6 +19167,30 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			summers = 1
 		}
 	elseif difficulty_index == 6 then
+		self.besiege.assault.force = {
+			14,
+			16,
+			18
+		}
+		self.besiege.assault.force_pool = {
+			100,
+			125,
+			150
+		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			shield = math.max(math.round(5 * map_scale_factor), 1),
+			medic = math.max(math.round(3 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
+	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
 			15,
 			17,
@@ -19190,35 +19214,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			autumn = 1,
 			summers = 1
 		}
-	elseif difficulty_index == 7 then
+	else
 		self.besiege.assault.force = {
 			16,
 			18,
 			20
-		}
-		self.besiege.assault.force_pool = {
-			100,
-			125,
-			150
-		}
-		self.special_unit_spawn_limits = {
-			tank = math.max(math.round(3 * map_scale_factor), 1),
-			taser = math.max(math.round(4 * map_scale_factor), 1),
-			boom = math.max(math.round(2 * map_scale_factor), 1),
-			spooc = math.max(math.round(4 * map_scale_factor), 1),
-			shield = math.max(math.round(5 * map_scale_factor), 1),
-			medic = math.max(math.round(3 * map_scale_factor), 1),
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}
-	else
-		self.besiege.assault.force = {
-			18,
-			20,
-			22
 		}
 		self.besiege.assault.force_pool = {
 			150,

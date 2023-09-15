@@ -4785,7 +4785,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Пуленепробиваемый",
-				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВашу броню теперь нельзя прошить.\n\nУвеличивает броню Противоосколочного жилета и Комбинированного тактического жилета на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня полностью заполнена, любой полученный урон уменьшится на число, равное #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее.",
+				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВашу броню теперь нельзя прошить.\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня полностью заполнена, любой полученный урон уменьшится на число, равное #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее.",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

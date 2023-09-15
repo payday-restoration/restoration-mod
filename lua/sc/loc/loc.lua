@@ -4644,7 +4644,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYour armor cannot be pierced.\n\n#{risk}#NOTE: Does not apply to self-damage.##\n\nIncreases the armor of the Flak Jacket and Combined Tactical Vest by #{skill_color}#20.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#15%## of your maximum armor.\n\nYour armor recovers #{skill_color}#15%## faster.",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYour armor cannot be pierced.\n\n#{risk}#NOTE: Does not apply to self-damage.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#15%## of your maximum armor.\n\nYour armor recovers #{skill_color}#15%## faster.",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

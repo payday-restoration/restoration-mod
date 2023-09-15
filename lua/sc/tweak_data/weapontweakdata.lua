@@ -16498,6 +16498,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.timers.reload_not_empty = 2.4
 	end
 
+	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand
+		self.malorian_3516.recategorize = { "heavy_pis", "handcannon" }
+		self.malorian_3516.desc_id = "whydoyoucome"
+		self.malorian_3516.has_description = true
+		self.malorian_3516.damage_type = "heavy_pistol"
+		self.malorian_3516.fire_mode_data.fire_rate = 0.451127819548
+		self.malorian_3516.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+		self.malorian_3516.AMMO_MAX = 20
+		self.malorian_3516.CLIP_AMMO_MAX = 10
+		self.malorian_3516.kick = self.stat_info.kick_tables.vertical_kick
+		self.malorian_3516.supported = true
+		self.malorian_3516.ads_speed = 0.200
+		self.malorian_3516.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 4000,
+			min_mult = 0.26666
+		}
+		self.malorian_3516.stats = {
+			damage = 90,
+			spread = 81,
+			recoil = 37,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 22,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.malorian_3516.stats_modifiers = nil
+		self.malorian_3516.fire_melee_damage = 3
+		self.malorian_3516.fire_melee_range = 400
+		self.malorian_3516.fire_melee_radius = 50
+		self.malorian_3516.panic_suppression_chance = 0.05
+		self.malorian_3516.can_shoot_through_enemy = true
+		self.malorian_3516.can_shoot_through_enemy_unlim = true
+		self.malorian_3516.armor_piercing_chance = 0.5
+		self.malorian_3516.object_damage_mult = 1.2
+		self.malorian_3516.timers.reload_exit_empty = 0.9
+		self.malorian_3516.timers.reload_not_empty = 1.4
+		self.malorian_3516.timers.reload_exit_not_empty = 1
+		self.malorian_3516.lock_slide = nil
+		self.malorian_3516.sounds.magazine_empty = nil
+		self.malorian_3516.sounds.stop_fire = "judge_x_fire"
+		self.malorian_3516.swap_speed_multiplier = 0.6
+	end
+
 	if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
 		self.swhiskey.recategorize = { "heavy_pis", "handcannon" }
 		self.swhiskey.damage_type = "heavy_pistol"

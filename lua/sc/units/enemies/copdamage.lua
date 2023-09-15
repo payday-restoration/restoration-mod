@@ -1422,7 +1422,7 @@ function CopDamage:damage_melee(attack_data)
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
-	local damage_effect = attack_data.damage_effect
+	local damage_effect = attack_data.damage_effect or attack_data.damage
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
 

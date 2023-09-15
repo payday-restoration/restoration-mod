@@ -2402,25 +2402,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Crosskill/Corvus (Payday/OTWD) = Colt
 					--DSC [Defense System Crosskill] (PD2) = Saco Defense
-					--SA (PD2) = Springfield Armory 
+					--Simmons Armory (PD2) = Springfield Armory 
 						--same acronym lol
 					--Bernetti = Beretta
 					--Chimano/Stryk = Glock 
 					--SG = HK (Heckler Und Koch)
 					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
 						--Signature = European Branches, FIK = American Branch?
-					--Acuto/VF (PD2/OTWD + PD3) = FNH/FN USA
-						--VF = European Branch, Acuto = American Branch?
+					--VF (OTWD + PD3) = FNH
 					--Lakner (PD2) = Walther
 					--Kang Arms (PD2) = Norinco
 					--Northwest (PD3) = China South Industries Group
 					--Public Defender (PD2) = Taurus (lmao)
 					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
 						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
-					--ITI = IMI/IWI
+					--ITI (OTWD) = IMI/IWI
 					--CR/TKA (PD2/OTWD) = CZ
 					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
 					--Ferino (OTWD) = Franchi
+					--Moretti (PD2) = Benelli(?)
 					--Stefan (PD2) = Steyr
 					--Wasp = Magpul
 						--idunno
@@ -2432,8 +2432,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 				--[[ PISTOLS ]]
 					--Gecko Pistol
-					["bm_w_maxim9"] = "Gecko M2",
-					["bm_w_x_maxim9"] = "Akimbo Gecko M2s",
+					["bm_w_maxim9"] = "Magnus 9",
+					["bm_w_x_maxim9"] = "Akimbo Magnus 9s",
 					--Igor (APS)
 					["bm_w_stech"] = "Igor Automatik",
 					["bm_w_x_stech"] = "Akimbo Igor Automatiks",
@@ -2521,7 +2521,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
 					["bm_w_x_2006m"] = "Akimbo Matevers",
 					--Frenchman Model 87
-					["bm_w_model3"] = "JM Model 87",	
+					["bm_w_model3"] = "J&M Model 87",	
 					["bm_w_x_model3"] = "Akimbo Model 87s",	
 					--Raging bull
 					["bm_w_raging_bull"] = "Bronco .44",	
@@ -2541,15 +2541,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Browning Hi-Power (Mira)
 						--["bm_w_hpb"] = "Hi-Power",
 						--Walther P99
-						["bm_w_p99"] = "Gruber 99",
+						["bm_w_p99"] = "Lakner G99",
 						--Derringer
 						["bm_w_derringer"] = "Derringer",
 						--Automag .44
 						["bm_w_amt"] = "Automag .44",
+						--Malorian 3516
+						["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
-						["bm_w_papa320"] = "FIK M19",
+						["bm_w_papa320"] = "M19",
 						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
@@ -2581,7 +2583,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--AK Gen
 					["bm_w_vityaz"] = "AK-19-01 Tasunka",
 					--Signature SMG
-					["bm_w_shepheard"] = "Signature PC9",
+					["bm_w_shepheard"] = "FIK PC9",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",	
 					["bm_w_x_mp5"] = "Akimbo Compact-5s",
@@ -2747,7 +2749,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--AN-94/92
 						["bm_w_tilt"] = "KVK-99",
 						--HK G36
-						["bm_w_g36k"] = "SG36K",
+						["bm_w_g36k"] = "JP36K",
 						--SCAR-L
 						["bm_w_scarl"] = "Eagle Light",
 						--Valmet Rk.62
@@ -2760,13 +2762,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
 					--FAL
-					["bm_w_fal"] = "Falcon 58",		
+					["bm_w_fal"] = "Falcon 58",
 					--ASS VAL
 					["bm_w_asval"] = "Valkyria",
 					--Galil
-					["bm_w_galil"] = "Defender 7.62",
+					["bm_w_galil"] = "Gecko 7.62",
 					--SCAR
-					["bm_w_scar"] = "Eagle Heavy",			
+					["bm_w_scar"] = "Eagle Heavy",
 					--Galant--
 					["bm_w_ching"] = "M1 Galant",
 					--M308
@@ -2782,7 +2784,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					
 					--Custom DMRs
 						--MCX Spear
-						["bm_w_mcx_spear"] = "Signature M7",
+						["bm_w_mcx_spear"] = "FIK M7",
 						["bm_w_ngsierra"] = "Amicus 277",
 						--VSS
 						["bm_w_vss"] = "Viktoriya",
@@ -2880,7 +2882,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
 				["bm_w_x_sparrow"] = "Akimbo Sparrows",
-				["bm_w_schakal"] = "SG AMP 45",
+				["bm_w_scar"] = "VF-7S",
+				["bm_w_scarl"] = "VF-6M",
+				["bm_w_schakal"] = "AMP 45",
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_l85a2"] = "ROS L85", --[R]oyal [O]rdanance + BAE [S]ystems
 				["bm_w_x_judge"] = "Akimbo Judges",

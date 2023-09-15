@@ -1913,6 +1913,9 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local bayonet_id = managers.blackmarket:equipped_bayonet(primary_id)
 	local bayonet_melee = false
 	local can_melee_miss = tweak_data.blackmarket.melee_weapons[melee_entry].can_melee_miss
+	local equipped_weapon = self:get_equipped_weapon()
+	local weapon_id = equipped_weapon and equipped_weapon:get_name_id()
+	local weapon_tweak = weapon_id and tweak_data.weapon[weapon_id]
 
 	if bayonet_id and self._equipped_unit:base():selection_index() == 2 then
 		bayonet_melee = true
@@ -1978,6 +1981,10 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		end
 		self._state_data.melee_expire_t = t + melee_expire_t
 		self._state_data.melee_repeat_expire_t = t + math.min(melee_repeat_expire_t, melee_expire_t)
+
+		if weapon_tweak and weapon_tweak.has_cp_fire_melee and melee_entry == "weapon" then
+			self._unit:sound():play("flamethrower_stop", nil, false)
+		end
 
 	else
 		local anim_attack_vars = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_vars

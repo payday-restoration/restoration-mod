@@ -2549,8 +2549,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({	
 				--[[ PISTOLS ]]
 					--Gecko Pistol
-					["bm_w_maxim9"] = "Gecko M2",
-					["bm_w_x_maxim9"] = "아킴보 Gecko M2",
+					["bm_w_maxim9"] = "Magnus M2",
+					["bm_w_x_maxim9"] = "아킴보 Magnus M2",
 					--Igor (APS)
 					["bm_w_stech"] = "Igor Automatik",
 					["bm_w_x_stech"] = "아킴보 Igor Automatik",
@@ -2638,7 +2638,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_2006m_b_long"] = "쿠사나기 총열",
 					["bm_w_x_2006m"] = "아킴보 Matevers",
 					--Frenchman Model 87
-					["bm_w_model3"] = "JM Model 87",	
+					["bm_w_model3"] = "J&M Model 87",	
 					["bm_w_x_model3"] = "아킴보 Model 87",	
 					--Raging bull
 					["bm_w_raging_bull"] = "Bronco .44",	
@@ -2656,15 +2656,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Browning Hi-Power (Mira)
 						--["bm_w_hpb"] = "Hi-Power",
 						--Walther P99
-						["bm_w_p99"] = "Gruber 99",
+						["bm_w_p99"] = "Lakner G99",
 						--Derringer
 						["bm_w_derringer"] = "Derringer",
 						--Automag .44
-						["bm_w_amt"] = "Automag .44",
+						["bm_w_amt"] = "Automag .44",						
+						--Malorian 3516
+						["whydoyoucome"] = "로커보이 조니 실버핸드를 위한 특별히 제작된 유일한 총기입니다.\n\n#{skill_color}#다수의 적과 방탄복을 관통할 수 있습니다.\n탄은 지향 사격하는 동안 표면을 튕겨내고 조준하는 동안에는 벽을 관통합니다.\n개머리판으로 공격할 시 단거리를 가진 불길을 발사합니다.##",
+		
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
-						["bm_w_papa320"] = "FIK M19",
+						["bm_w_papa320"] = "M19",
 						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
@@ -2858,7 +2861,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--AN-94/92
 						["bm_w_tilt"] = "KVK-99",
 						--HK G36
-						["bm_w_g36k"] = "SG36K",
+						["bm_w_g36k"] = "JP36K",
 						--SCAR-L
 						["bm_w_scarl"] = "Eagle Light",
 						--Valmet Rk.62
@@ -2875,7 +2878,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--ASS VAL
 					["bm_w_asval"] = "Valkyria",
 					--Galil
-					["bm_w_galil"] = "Defender 7.62",
+					["bm_w_galil"] = "Gecko 7.62",
 					--SCAR
 					["bm_w_scar"] = "Eagle Heavy",			
 					--Galant--
@@ -2893,7 +2896,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Custom DMRs
 						--MCX Spear
-						["bm_w_mcx_spear"] = "Signature M7",
+						["bm_w_mcx_spear"] = "FIK M7",
 						["bm_w_ngsierra"] = "Amicus 277",
 						--VSS
 						["bm_w_vss"] = "Viktoriya",
@@ -2990,7 +2993,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_g22c"] = "아킴보 Chimano 22C",
 				["bm_w_x_1911"] = "아킴보 Operator II",
 				["bm_w_x_sparrow"] = "아킴보 Sparrow",
-				["bm_w_schakal"] = "SG AMP 45",
+				["bm_w_scar"] = "VF-7S",
+				["bm_w_scarl"] = "VF-6M",
+				["bm_w_schakal"] = "AMP 45",		
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_l85a2"] = "ROS L85",
 				["bm_w_x_judge"] = "아킴보 Judges",

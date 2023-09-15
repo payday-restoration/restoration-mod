@@ -956,9 +956,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 4},
 				[1] = {
 					upgrades = {
-						"player_unpierceable_armor",
-						"player_level_5_armor_addend",
-						"player_level_6_armor_addend"
+						"player_unpierceable_armor"
 					},
 					cost = self.costs.hightier
 				},

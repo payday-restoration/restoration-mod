@@ -1417,6 +1417,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
+			--Malorian 3516
+			--Киберсрань
+			["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",			
 			--Colt Detective
 			--["bm_w_coltds"] = "Кросскилл Детектив",
 			["bm_lemon_dmc_desc"] = "Мечтаете о скрытном и мощном револьвере? Мечты сбываются.\n\n#{skill_color}#Наносит двойной урон при атаке сзади.##",
@@ -2541,8 +2544,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if weapon_names then		
 			if weapon_names == 2 then -- Латиница
 				LocalizationManager:add_localized_strings({	
-		["bm_w_maxim9"] = "Gecko M2",
-		["bm_w_x_maxim9"] = "Парные Gecko M2",
+		["bm_w_maxim9"] = "Magnus 9",
+		["bm_w_x_maxim9"] = "Парные Magnus 9",
 		["bm_w_stech"] = "Igor Automatik",
 		["bm_w_x_stech"] = "Парные Igor Automatik",
 		["bm_wp_pis_g26"] = "Chimano 26 Compact",
@@ -2605,13 +2608,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shatters_fury"] = "Phoenix .500",
 		["bm_w_peacemaker"] = "Peacemaker .45LC",
 		["bm_w_hpb"] = "Hi-Power",
-		["bm_w_p99"] = "Gruber 99",
+		["bm_w_p99"] = "Lakner G99",
 		["bm_w_derringer"] = "Derringer",
 		["bm_w_amt"] = "Automag .44",
 		["bm_w_coltds"] = "Crosskill Investigator",
 		["kfa_scope"] = "Прицел KFA-2 Smart-Link",
 		["bm_w_px4"] = "Bernetti Hx4 Canaan",
-		["bm_w_papa320"] = "Signature M19",
+		["bm_w_papa320"] = "M19",
 		["bm_w_p90"] = "Project-90",
 		["bm_w_x_p90"] = "Парные Project-90",
 		["bm_w_mp7"] = "SpecOps-7",
@@ -2627,7 +2630,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_scorpion"] = "Парные Cobra",
 		["bm_w_coal"] = "Tatonka",
 		["bm_w_vityaz"] = "AK Gen 21 Tactical",
-		["bm_w_shepheard"] = "Signature-10", 
+		["bm_w_shepheard"] = "FIK PC9"", 
 		["bm_w_mp5"] = "Compact-5",	
 		["bm_w_x_mp5"] = "Парные Compact-5",	
 		["bm_w_m45"] = "Swedish K",
@@ -2705,7 +2708,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov",
 		["bm_w_x_akmsu"] = "Парные Krinkov",
 		["bm_w_tilt"] = "KVK-99",
-		["bm_w_g36k"] = "SG36K",
+		["bm_w_g36k"] = "JP36K",
 		["bm_w_scarl"] = "Eagle Light",
 		["bm_w_rk62"] = "Velmer",
 		["bm_w_mcbravo"] = "Chimera",
@@ -2713,7 +2716,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_contraband"] = "Bigger Friend 7.62",
 		["bm_w_fal"] = "Falcon 58",	
 		["bm_w_asval"] = "Valkyria",
-		["bm_w_galil"] = "Defender 7.62",
+		["bm_w_galil"] = "Gecko 7.62",
 		["bm_w_scar"] = "Eagle Heavy",			
 		["bm_w_ching"] = "M1 Galant",
 		["bm_w_m14"] = "M308",
@@ -2721,7 +2724,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shak12"] = "KS-12 Urban",
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 		["bm_w_hcar"] = "Akron HC",
-		["bm_w_mcx_spear"] = "Signature M7",
+		["bm_w_mcx_spear"] = "FIK M7",
 		["bm_w_vss"] = "Viktoriya",
 		["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
 		["bm_w_xr2"] = "XR-2",
@@ -2770,8 +2773,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shatters_fury"] = "Феникс .500",
 		["bm_w_osipr"] = "САБР",
 		["bm_w_osipr_gl"] = "САБР - подствольник", 
-		["bm_w_maxim9"] = "Геко М2",
-		["bm_w_x_maxim9"] = "Парные Геко М2",
+		["bm_w_maxim9"] = "Магнус 9",
+		["bm_w_x_maxim9"] = "Парные Магнус 9",
 		["bm_w_stech"] = "Стычкин Автоматический",
 		["bm_w_x_stech"] = "Парные Стычкины",
 		["bm_wp_pis_g26"] = "Чимано 26 Компакт",
@@ -2836,7 +2839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--Browning Hi-Power
 			["bm_w_hpb"] = "Хай-Пауэр",
 			--Walther P99
-			["bm_w_p99"] = "Грубер 99",
+			["bm_w_p99"] = "Лакнер Г99",
 			--Derringer
 			["bm_w_derringer"] = "Деринжер",
 			--Automag .44
@@ -2844,7 +2847,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--Colt Detective
 			["bm_w_coltds"] = "Кросскилл Детектив",
 			--SIG P320
-			["bm_w_papa320"] = "Сигнатур 19",
+			["bm_w_papa320"] = "М19",
 		["bm_w_p90"] = "Проджект-90",
 		["bm_w_x_p90"] = "Парные Проджект-90",
 		["bm_w_mp7"] = "СпекОпс-7",
@@ -2860,7 +2863,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_scorpion"] = "Парные Кобры",
 		["bm_w_coal"] = "Татонка",
 		["bm_w_vityaz"] = "АК 21 Тактический",
-		["bm_w_shepheard"] = "Сигнатур 10",
+		["bm_w_shepheard"] = "ФИК ПС9"",
 		["bm_w_mp5"] = "Компакт-5",	
 		["bm_w_x_mp5"] = "Парные Компакт-5",
 		["bm_w_m45"] = "Карл M-45",
@@ -2942,7 +2945,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--CUSTOM ARs
 			--AN-94/92
 			["bm_w_tilt"] = "КВК 99",			["bm_w_tilt"] = "КВК 99",
-			["bm_w_g36k"] = "СГ 36K",			["bm_w_scarl"] = "Игл Лайт",
+			["bm_w_g36k"] = "ДЖП 36K",			["bm_w_scarl"] = "Игл Лайт",
 			["bm_w_rk62"] = "Вельмер",
 			["bm_w_mcbravo"] = "Химера",
 			["bm_w_ar18"] = "КАР-18",
@@ -2953,11 +2956,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_g3"] = "Гевер 3",
 		["bm_w_contraband"] = "Большой дружок 7.62",
 		["bm_w_asval"] = "Валькирия",
-		["bm_w_galil"] = "Дефендер 7.62",
+		["bm_w_galil"] = "Геко 7.62",
 		["bm_w_shak12"] = "КС 12",
 --Custom DMRs
 			--MCX Spear
-			["bm_w_mcx_spear"] = "Сигнатур M7",
+			["bm_w_mcx_spear"] = "ФИК M7",
 			["bm_w_ngsierra"] = "Амикус 277",
 			["bm_w_vss"] = "Виктория",
 			["bm_w_g3hk79"] = "Гевер А3 с гранатометом",
@@ -3135,7 +3138,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_2006m"] = "Akimbo 2006Ms",
 					--Frenchman Model 87
 					["bm_w_model3"] = "S&W Model 3",	
-					["bm_w_x_model3"] = "Akimbo Model 3s",	
+					["bm_w_x_model3"] = "Akimbo Model 3s",
 					--Shatter's Fury
 					["bm_w_chinchilla"] = "S&W Model 29",
 					["bm_w_x_chinchilla"] = "Akimbo Model 29s",

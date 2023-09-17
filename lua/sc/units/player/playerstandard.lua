@@ -3686,6 +3686,7 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 
 	--Applys the anim weight
 	self._camera_unit:anim_state_machine():set_parameter(state, "alt_inspect", anim_weight)
+	self._equipped_unit:base():tweak_data_anim_play("inspect")
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end

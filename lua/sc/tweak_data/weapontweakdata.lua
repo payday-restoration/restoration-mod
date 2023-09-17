@@ -13966,6 +13966,39 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.always_play_anims = true
 	end
 
+	if self.sidewinder then --Cpone's Titanfall 2 Sidewinder SMR
+		self.sidewinder.categories = {
+			"grenade_launcher",
+			"raygun"
+		}
+		self.sidewinder.use_data.selection_index = 2
+		self.sidewinder.CLIP_AMMO_MAX = 20
+		self.sidewinder.AMMO_MAX = 80
+		self.sidewinder.fire_mode_data.fire_rate = 0.11111111
+		self.sidewinder.kick = self.stat_info.kick_tables.even_recoil
+		self.sidewinder.supported = true
+		self.sidewinder.ads_speed = 0.300
+		self.sidewinder.stats = {
+			damage = 45,
+			spread = 66,
+			recoil = 71,
+			zoom = 1,
+			concealment = 17,
+			alert_size = 2,
+			suppression = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			reload = 20,
+			value = 10
+		}
+		self.sidewinder.panic_suppression_chance = 0.05
+		self.sidewinder.timers.reload_exit_not_empty = 0.9
+		self.sidewinder.timers.reload_not_empty = 3.9
+		self.sidewinder.timers.reload_exit_empty = 0.9
+		self.sidewinder.timers.reload_empty = 3.9
+		self.sidewinder.always_play_anims = true
+	end
+
 	if self.m712 then --Pawcio's M712
 		self.m712.categories = {"pistol"}
 		self.m712.recategorize = {"heavy_pis"}
@@ -18097,21 +18130,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.rays = not weap.keep_rays and 1 or weap.rays
 				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
 					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.ads_speed = weap.ads_speed - 0.1
 					if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
 						if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
 							table.insert(weap.categories, "shotgun_light")
 							weap.ene_hs_mult = 0.5
+							weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 0.85 ) * 100
+							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1 ) * 100
+							weap.ads_speed = weap.ads_speed - 0.02
 						elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
 							weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
-							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.2 ) * 100
+							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.1 ) * 100
 							weap.ene_hs_mult = 0.65
+							weap.ads_speed = weap.ads_speed - 0.1
 						elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
 							table.insert(weap.categories, "shotgun_break")
 							weap.damage_falloff.start_dist = math.ceil( (weap.damage_falloff.start_dist / 100) * 1.1 ) * 100
-							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.2 ) * 100
+							weap.damage_falloff.end_dist = math.ceil( (weap.damage_falloff.end_dist / 100) * 1.15 ) * 100
 							weap.ene_hs_mult = 0.8
+							weap.ads_speed = weap.ads_speed - 0.06
 						end
 					end
 					if weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then

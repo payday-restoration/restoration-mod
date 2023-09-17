@@ -66,14 +66,15 @@ tweak_data.shotgun = {
 	ads_moving_spread_mult = 1.5
 }
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.2,
+		hipfire_spread_mult = 1.3,
+		ads_multishot_spread_mult = 4,
 		moving_spread_mult = 1.8
 	}
 	tweak_data.shotgun_heavy = {
-		hipfire_spread_mult = 0.5
+		hipfire_spread_mult = 0.45
 	}
 	tweak_data.shotgun_break = {
-		hipfire_spread_mult = 1.2
+		hipfire_spread_mult = 1.15
 	}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,

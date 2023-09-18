@@ -13708,7 +13708,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.czevo.panic_suppression_chance = 0.05
 		self.czevo.timers = deep_clone(self.shepheard.timers)
 		self.x_czevo.use_data.selection_index = 5 
-	end	
+	end
+
+	if self.lapd then --Carl's M2019 Blaster
+		self.lapd.recategorize = {"heavy_pis", "handcannon"}
+		self.lapd.damage_type = "heavy_pistol"
+		self.lapd.desc_id = "thatgun_desc"
+		self.lapd.has_description = true
+		self.lapd.fire_mode_data.fire_rate = 0.24
+		self.lapd.CLIP_AMMO_MAX = 5
+		self.lapd.AMMO_MAX = 30
+		self.lapd.kick = self.stat_info.kick_tables.moderate_kick
+		self.lapd.supported = true
+		self.lapd.ads_speed = 0.200
+		self.lapd.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 4800,
+			min_mult = 0.3
+		}
+		self.lapd.stats = {
+			damage = 60,
+			spread = 86,
+			recoil = 57,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 27,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.lapd.stats_modifiers = nil
+		self.lapd.panic_suppression_chance = 0.05
+		self.lapd.armor_piercing_chance = 0.5
+		self.lapd.can_shoot_through_enemy = true
+		self.lapd.can_shoot_through_enemy_unlim = true
+		self.lapd.sounds.fire2 = "rbull_fire"
+		self.lapd.timers = deep_clone(self.new_raging_bull.timers)
+	end
 
 	if self.akm_nomag then --Leather Dann's Early Access AK
 		self.akm_nomag.warsaw = true
@@ -13996,6 +14035,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sidewinder.timers.reload_not_empty = 3.9
 		self.sidewinder.timers.reload_exit_empty = 0.9
 		self.sidewinder.timers.reload_empty = 3.9
+		self.sidewinder.always_hipfire = true
 		self.sidewinder.always_play_anims = true
 	end
 

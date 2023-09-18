@@ -31603,6 +31603,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
+	if self.parts.wpn_fps_pis_lapd_grip_pearl then
+
+		self.parts.wpn_fps_pis_lapd_body_standard.stance_mod = {
+			wpn_fps_pis_lapd = { translation = Vector3(0.15, 0, -0.65) }
+		}
+
+		self.parts.wpn_fps_pis_lapd_grip_cherry.supported = true
+		self.parts.wpn_fps_pis_lapd_grip_cherry.stats = deep_clone(grips.recoil_acc)
+		self.parts.wpn_fps_pis_lapd_grip_cherry.custom_stats = deep_clone(grips.recoil_acc)
+
+		self.parts.wpn_fps_pis_lapd_grip_pearl.supported = true
+		self.parts.wpn_fps_pis_lapd_grip_pearl.stats = deep_clone(grips.acc_1)
+		self.parts.wpn_fps_pis_lapd_grip_pearl.custom_stats = deep_clone(grips.acc_1)
+
+		self.parts.wpn_fps_pis_lapd_grip_polymer.supported = true
+		self.parts.wpn_fps_pis_lapd_grip_polymer.stats = deep_clone(grips.quickdraw_1)
+		self.parts.wpn_fps_pis_lapd_grip_polymer.custom_stats = deep_clone(grips.quickdraw_1)
+
+	end
+
 --Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id .. "_npc"] and not self[factory_id].real_factory_id then

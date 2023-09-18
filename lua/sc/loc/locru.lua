@@ -881,6 +881,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_loading"] = "Загружается",
 		["menu_state_ingame"] = "В игре",
 		
+		
+		["menu_description"] = "План",
 		-- ///Stuff ripped from the various locale files we had ///
 		
 		--Halloween Dozer Sword
@@ -1417,9 +1419,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
+			--M2019 Blaster
+			["thatgun_desc"] = "Вот это волына!\n\nИменно та самая!\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 			--Malorian 3516
 			--Киберсрань
-			["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",			
+			["whydoyoucome"] = "Единственный в своем роде, сделанный специально для Джонни Сильверхенда.\n\n#{skill_color}#Можеть пробивать врагов и их броню.\nВо время стрельбы от бедра пули будут рикошетить от поверхностей. Пули пробивают стены, если стрелять в режиме прицеливания.\nУдар прикладом выпускает волну огня в коротком радиусе.##",			
 			--Colt Detective
 			--["bm_w_coltds"] = "Кросскилл Детектив",
 			["bm_lemon_dmc_desc"] = "Мечтаете о скрытном и мощном револьвере? Мечты сбываются.\n\n#{skill_color}#Наносит двойной урон при атаке сзади.##",

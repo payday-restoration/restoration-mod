@@ -1470,17 +1470,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_x_model3"] = "아킴보 Frenchman Model 87 리볼버",
 		["bm_x_model3_sc_desc"] = "이 쌍리볼버를 들고 정오에 당신의 내면에 있는 투덜거리는 자질을 끌어내고 경찰에게 듀얼을 도전하세요.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		--Raging bull
-		["bm_rage_sc_desc"] = "매우 강력한 단거리 대포. 정렬하는 멍청이들을 맞추어 빠르게 쓰려트립니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적 여러 명을 관통할 수 있습니다.##",	
-		["bm_x_rage_sc_desc"] = "전혀 좋지도 않고 실용적이지도 않지만, 은행 강도 사건에서 이것들을 빼내서 경찰력을 압박하고 싶을 때 사용할 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적 여러 명을 관통할 수 있습니다.##",	
+		["bm_rage_sc_desc"] = "매우 강력한 단거리 대포. 정렬하는 멍청이들을 맞추어 빠르게 쓰려트립니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",	
+		["bm_x_rage_sc_desc"] = "전혀 좋지도 않고 실용적이지도 않지만, 은행 강도 사건에서 이것들을 빼내서 경찰력을 압박하고 싶을 때 사용할 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",	
 		--Castigo
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#방탄복과 여러 적, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#방탄복과 다수의 적, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복과 여러 적, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가시키는## 팬링 기능이 있습니다.",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복과 다수의 적, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가시키는## 팬링 기능이 있습니다.",
 		--CUSTOM HANDGUNS
+		--M2019 Blaster
+		["thatgun_desc"] = "이건 총이야!\n\n알잖아, 그 총!\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",
+		--Malorian 3516
+		["whydoyoucome"] = "로커보이 조니 실버핸드를 위한 특별히 제작된 유일한 총기입니다.\n\n#{skill_color}#다수의 적과 방탄복을 관통할 수 있습니다.\n탄은 지향 사격하는 동안 표면을 튕겨내고 조준하는 동안에는 벽을 관통합니다.\n개머리판으로 공격할 시 단거리를 가진 불길을 발사합니다.##",				
 		--Px4
 		["bm_w_px4"] = "Bernetti Hx4 Canaan 권총",		
 		--Browning Hi-Power
@@ -2660,9 +2664,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Derringer
 						["bm_w_derringer"] = "Derringer",
 						--Automag .44
-						["bm_w_amt"] = "Automag .44",						
-						--Malorian 3516
-						["whydoyoucome"] = "로커보이 조니 실버핸드를 위한 특별히 제작된 유일한 총기입니다.\n\n#{skill_color}#다수의 적과 방탄복을 관통할 수 있습니다.\n탄은 지향 사격하는 동안 표면을 튕겨내고 조준하는 동안에는 벽을 관통합니다.\n개머리판으로 공격할 시 단거리를 가진 불길을 발사합니다.##",
+						["bm_w_amt"] = "Automag .44",
 		
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",

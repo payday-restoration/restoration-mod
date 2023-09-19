@@ -50,6 +50,12 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value * 2
 	},
+	--Disable unnecceary invulnerability for patrol guard
+	[105930] = {
+		values = {
+			invulnerable = false
+		}
+	},
 	-- Fix power cut SO delay and add some random delay
 	[104685] = {
 		values = {

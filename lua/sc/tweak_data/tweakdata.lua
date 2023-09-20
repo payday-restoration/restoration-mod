@@ -80,7 +80,7 @@ tweak_data.shotgun = {
 	}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.75
+		swap_bonus = 1.8
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
@@ -158,7 +158,7 @@ tweak_data.assault_rifle = {
 	}
 
 tweak_data.akimbo = {
-	swap_bonus = 0.75,
+	swap_bonus = 0.8,
 	ads_move_speed_mult = 0.75,
 	ads_moving_spread_mult = 3,
 	hipfire_spread_mult = 2,

@@ -2498,6 +2498,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_m_big"] = "Casket Magazine",
 					--Crosskill Chunky
 					["bm_w_m1911"] = "Crosskill A1",
+					["bm_w_x_m1911"] = "Price & MacTavish",
 					--Crosskill Guard
 					["bm_w_shrew"] = "Crosskill Guard",
 					["bm_w_x_shrew"] = "Barry & Paul",
@@ -2882,9 +2883,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({	
 
 				["bm_w_pl14"] = "WS-14",
+				["bm_w_x_pl14"] = "Akimbo WS-14s",
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
+				["bm_w_x_m1911"] = "Akimbo Crosskill A1s",
 				["bm_w_x_sparrow"] = "Akimbo Sparrows",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scarl"] = "VF-6M",

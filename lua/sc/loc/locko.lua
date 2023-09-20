@@ -941,6 +941,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_lobby"] = "Lobby",
 		["menu_state_loading"] = "Loading",
 		["menu_state_ingame"] = "Ingame",
+
+		["menu_description"] = "The Plan",				
 		
 		-- ///Stuff ripped from the various locale files we had ///
 		

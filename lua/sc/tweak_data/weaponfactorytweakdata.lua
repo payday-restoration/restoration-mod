@@ -6710,6 +6710,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
 	self.parts.wpn_fps_pis_g17_ck.stats = { value = 1 }
 	self.parts.wpn_fps_pis_g17_ck.custom_stats = nil
 	self.parts.wpn_fps_pis_g17_ck.forbids = nil
+	
+	self.parts.wpn_fps_pis_g17_s_mount = {
+		type = "shitass",
+		name_id = "none",
+		unit = "units/payday2/weapons/wpn_fps_pis_g18c/wpn_fps_pis_g18c"
+		,
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_g17_g_mount = {
+		type = "shitass2",
+		name_id = "none",
+		unit = "units/payday2/weapons/wpn_fps_pis_g22c/wpn_fps_pis_g22c"
+		,
+		stats = {
+			value = 1
+		}
+	}
 		
 	--Chimano 88 Part Additions
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_g_ergo")
@@ -6717,6 +6736,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+
+	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_s_stock")
+
+	self.wpn_fps_pis_g17.override.wpn_fps_pis_g18c_s_stock = {
+		adds = {"wpn_fps_pis_g17_s_mount"},
+		parent = "shitass"
+	}
+	self.wpn_fps_pis_g17.override.wpn_fps_pis_g18c_g_ergo = {
+		adds = {"wpn_fps_pis_g17_g_mount"},
+		parent = "shitass2"
+	}
 
 	self.wpn_fps_pis_g17_npc.override = deep_clone(self.wpn_fps_pis_g17.override)
 	self.wpn_fps_pis_g17_npc.uses_parts = deep_clone(self.wpn_fps_pis_g17.uses_parts)
@@ -12591,16 +12621,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g17", "resmod_x_g17", function(s
 		reload = -3
 	}
 	
+	self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_s_stock = {
+		adds = {"wpn_fps_pis_g17_s_mount"},
+		parent = "shitass"
+	}
+	self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_g_ergo = {
+		adds = {"wpn_fps_pis_g17_g_mount"},
+		parent = "shitass2"
+	}
+	
 	--Chimano 88 Part Additions
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_g_ergo")
-	table.insert(self.wpn_fps_pis_x_g17_npc.uses_parts, "wpn_fps_pis_g18c_g_ergo")
-
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_x_g17_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
-
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_x_g17_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
 
+	self.wpn_fps_pis_x_g17_npc.override = deep_clone(self.wpn_fps_pis_x_g17.override)
 	self.wpn_fps_pis_x_g17_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_g17.uses_parts)	
 	
 end)
@@ -15753,6 +15788,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 	self.parts.wpn_fps_pis_chinchilla_g_death.supported = true
 	self.parts.wpn_fps_pis_chinchilla_g_death.stats = deep_clone(grips.recoil_1)
 
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_m3x")
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_crimson")
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_x400v")
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_laser")
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
+	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
+
+	self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
+	self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
+	self.wpn_fps_pis_chinchilla.override.wpn_fps_pis_2006m_fl_adapter = {
+		parent = "shitass",
+		a_obj = "a_vg"
+	}
+
 end)
 
 --Akimbo Castigo .44
@@ -16462,7 +16511,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_rage", "resmod_x_rage", function
 		reload = "reload",
 		reload_not_empty = "reload"
 	}
-	
+
 	self.wpn_fps_pis_x_rage.adds = {}
 
 	self.wpn_fps_pis_x_rage.override = {
@@ -18455,6 +18504,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = deep_clone(stocks.remove_folder_stats)	
 
 	self.wpn_fps_smg_vityaz.override = self.wpn_fps_smg_vityaz.override or {}
+
 	
 end)
 
@@ -32467,6 +32517,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 	self.wpn_fps_lmg_rpk_npc.override = deep_clone(self.wpn_fps_lmg_rpk.override)
+
+	for i, part_id in pairs(self.wpn_fps_pis_chinchilla.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].a_obj then
+			if self.parts[part_id].a_obj == "a_fl"  then
+				self.wpn_fps_pis_chinchilla.adds[part_id] = {
+					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
+				}
+				self.wpn_fps_pis_chinchilla.override[part_id] = {
+					parent = "shitass",
+					a_obj = "a_vg"
+				}
+			end
+		end
+	end
+	self.wpn_fps_pis_chinchilla_npc.adds = deep_clone(self.wpn_fps_pis_chinchilla.adds)
+	self.wpn_fps_pis_chinchilla_npc.override = deep_clone(self.wpn_fps_pis_chinchilla.override)
 
 	for i, part_id in pairs(self.wpn_fps_pis_rage.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].a_obj then

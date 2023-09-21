@@ -325,7 +325,7 @@ function MutatorGoldfarbDozers:setup()
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = tweak_data.group_ai._tactics.SKULL_tank,
+					tactics = tweak_data.group_ai._tactics.GREEN_tank_DW,
 					rank = 3
 				},
 				{

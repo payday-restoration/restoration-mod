@@ -5,7 +5,6 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on bnk="soundbanks/sfx_hos" />
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan" />
 	</dependencies>
@@ -16,6 +15,10 @@
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="phalanx_minion_assault" />
 			<var name="_default_weapon_id" value="beretta92_titan" />
+			<var name="_default_weapons" type="table">
+				<var name="primary" value="aa12_npc"/>
+				<var name="secondary" value="beretta92_titan"/>
+			</var>			
 		</extension>
 		<extension name="inventory" class="CopInventory" >
 			<var name="_shield_unit_name" value="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" />

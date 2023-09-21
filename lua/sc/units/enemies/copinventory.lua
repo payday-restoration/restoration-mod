@@ -28,4 +28,26 @@ function CopInventory:add_unit_by_name(new_unit_name, equip)
 	end
 
 	self:add_unit(new_unit, equip)
+	
+
+	if self._unit:base()._tweak_table == "phalanx_minion" or self._unit:base()._tweak_table == "phalanx_minion_assault" then	
+		self._shield_break_data = {
+			anim_global_switch = "cop",
+			tweak_table_name_switch = "city_swat_titan_assault",
+			weapon_switch_selection = 2,
+			hurt_data = {
+			hurt_type = "stagger"
+		}
+	}	
+	elseif self._unit:base()._tweak_table == "phalanx_vip" then	
+		self._shield_break_data = {
+			anim_global_switch = "cop",
+			tweak_table_name_switch = "phalanx_vip_break",
+			weapon_switch_selection = 2,
+			hurt_data = {
+			hurt_type = "hurt"
+		}
+	}
+	end
+	
 end

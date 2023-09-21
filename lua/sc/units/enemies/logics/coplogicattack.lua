@@ -169,7 +169,7 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 					end
 
 					my_data.shield_knock_cooldown = data.t + math_random(12, 24)
-				elseif data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
+				elseif data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" or data.unit:base()._tweak_table == "phalanx_vip_break" then
 					data.unit:sound():say("a05", true)
 				else
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")

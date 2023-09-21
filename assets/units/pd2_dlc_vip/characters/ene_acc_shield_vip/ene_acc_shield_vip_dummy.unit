@@ -1,0 +1,24 @@
+<unit type="items" slot="8" >
+	<!-- <network sync="spawn"/> -->
+    <object file="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" />
+
+    <extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<!--
+		<extension name="base" class="ShieldFlashBase">
+			<var name="_shield_tweak_name" value="phalanx_vip"/>
+			<var name="_effect_parent_obj_name" value="e_01"/>
+		</extension>	
+		<extension name="damage" class="UnitDamage">
+			<var name="_collision_event" value="USM_Drop"/>
+			<var name="_collision_sfx_quite_time" value="0.1"/>
+		</extension>
+		-->
+	</extensions>
+	
+	<!--
+	<sounds>
+		<default_soundsource source="rp_ene_acc_shield_phalanx"/>
+	</sounds>
+	-->
+</unit>

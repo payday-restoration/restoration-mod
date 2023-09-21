@@ -2840,6 +2840,34 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.captain_type = restoration.captain_types.winter
 	self.phalanx_vip.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_vip")
+	
+	--Winters, shield broken
+	self.phalanx_vip_break = deep_clone(self.phalanx_vip)
+	self.phalanx_vip_break.tags = {"law", "special", "captain"}
+	self.phalanx_vip_break.rotation_speed = 3
+	self.phalanx_vip_break.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+	self.phalanx_vip_break.dodge = presets.dodge.elite
+	self.phalanx_vip_break.move_speed = presets.move_speed.very_fast
+	self.phalanx_vip_break.can_throw_frag = true	
+	self.phalanx_vip_break.HEALTH_INIT = 140
+	self.phalanx_vip_break.headshot_dmg_mul = 2.5
+	self.phalanx_vip_break.allowed_stances = nil
+	self.phalanx_vip_break.allowed_poses = nil
+	self.phalanx_vip_break.no_equip_anim = nil
+	self.phalanx_vip_break.no_run_start = nil
+	self.phalanx_vip_break.no_run_stop = nil
+	self.phalanx_vip_break.always_face_enemy = nil
+	self.phalanx_vip_break.wall_fwd_offset = nil	
+	self.phalanx_vip_break.damage.explosion_damage_mul = 0.40
+	self.phalanx_vip_break.damage.rocket_damage_mul = 0.40
+	self.phalanx_vip_break.damage.fire_pool_damage_mul = 0.20
+	self.phalanx_vip_break.damage.bullet_damage_mul = 0.45
+	self.phalanx_vip_break.damage.fire_damage_mul = 0.30		
+	self.phalanx_vip_break.modify_health_on_tweak_change = true
+	self.phalanx_vip_break.announce_incomming = nil
+	self.phalanx_vip_break.marshal_logic = true	
+	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 15
+	table.insert(self._enemy_list, "phalanx_vip_break")		
 end
 
 function CharacterTweakData:_init_spring(presets)

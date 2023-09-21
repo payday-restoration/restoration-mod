@@ -309,7 +309,7 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 		if AIAttentionObject.REACT_SHOOT <= new_reaction and new_att_obj.verified and contact_chatter_time_ok and (data.unit:anim_data().idle or data.unit:anim_data().move) and new_att_obj.is_person and data.char_tweak.chatter.contact then
 			if data.unit:anim_data().idle or data.unit:anim_data().move then
 				local tweak_table = data.unit:base()._tweak_table
-				if tweak_table == "phalanx_vip" then
+				if tweak_table == "phalanx_vip" or tweak_table == "phalanx_vip_break" then
 					data.unit:sound():say("a01", true)
 				elseif tweak_table == "spring" then
 					data.unit:sound():say("a01", true)						

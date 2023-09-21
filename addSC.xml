@@ -945,8 +945,11 @@
 	<!--Winter with his cool shield (Jarey)-->
 	<!--doesn't exist yet :c NVM IT DOES NOW BAYBEEEEEE-->	
 	<model				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>	
-	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>	
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip_dummy" load="true"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip"/>	
+	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>
 
 	<!--Winter AssFuckeng Squad-->
 
@@ -966,6 +969,11 @@
 	<df_nm				path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf" force="false"/>
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/helmets_omnia_atlas"  force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>		
+	
+	<!--Phalanx Shields-->
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx"/>	
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" force="true" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx_dummy" load="true"/>	
 	
 	<!--Halloween Axe-->
 	<object				path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>

@@ -321,24 +321,25 @@ function MutatorGoldfarbDozers:setup()
 			amount = {4, 5},
 			spawn = {
 				{
-					unit = "FBI_tank",
+					unit = "SKULL_tank",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = tweak_data.group_ai._tactics.GREEN_tank_DW,
+					tactics = tweak_data.group_ai._tactics.SKULL_tank,
 					rank = 3
 				},
 				{
-					unit = "boom_M4203",
+					unit = "CS_tazer",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.ELITE_boom,
+					tactics = tweak_data.group_ai._tactics.DW_tazer,
 					rank = 2
 				},
 				{
-					unit = "GS_swat_M4",
+					unit = "GS_swat_R870",
 					freq = 1,
-					tactics = tweak_data.group_ai._tactics.ELITE_swat_rifle,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.ELITE_swat_shotgun,
 					rank = 1
 				},
 				{
@@ -347,7 +348,7 @@ function MutatorGoldfarbDozers:setup()
 					amount_max = 1,
 					tactics = tweak_data.group_ai._tactics.FBI_medic_flank,
 					rank = 2
-				}		
+				}	
 			}
 		}			
 	end

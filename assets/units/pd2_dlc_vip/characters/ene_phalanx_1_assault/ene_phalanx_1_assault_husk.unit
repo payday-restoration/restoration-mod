@@ -16,7 +16,7 @@
 			<var name="_tweak_table" value="phalanx_minion_assault" />
 			<var name="_default_weapon_id" value="beretta92_titan" />
 			<var name="_default_weapons" type="table">
-				<var name="primary" value="aa12_npc"/>
+				<var name="primary" value="aa12_conc_npc"/>
 				<var name="secondary" value="beretta92_titan"/>
 			</var>			
 		</extension>

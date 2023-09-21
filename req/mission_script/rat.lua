@@ -9,12 +9,12 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
 return {
 	--Replace Heavy SWATs that spawn from the chopper with cloakers
-	[101650] = {
+	[101571] = {
 		values = {
             enemy = clonker
 		}
 	},
-	[101651] = {
+	[101572] = {
 		values = {
             enemy = clonker
 		}

@@ -17,18 +17,12 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 780
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 740	
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 690
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
 		ponr_value = 660
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
 		ponr_value = 630	
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 600		
+		ponr_value = 600	
 	end
 
 return {

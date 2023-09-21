@@ -4401,6 +4401,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360"] = "Eagle Eye",
 		["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
 		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
+		
+		["mutator_goldfarbdozers"] = "Double Firepower",
+		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4429,6 +4433,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a ASU unit.",
 		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green or Black Bulldozer spawns, there is a chance that it will be replaced by a Skulldozer.",
 		["menu_cs_modifier_10secondsresponsetime"] = "All police assaults now start at maximum intensity.",
+		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
 
 		["bm_menu_skill"] = "Crew Boosts",
 

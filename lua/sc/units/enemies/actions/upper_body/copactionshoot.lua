@@ -679,6 +679,7 @@ function CopActionShoot:update(t)
 			
 			if self._throw_frag and self._ext_brain._throw_frag_t < t and 2000 >= target_dis and 500 <= target_dis then
                 local is_spring = self._ext_base._tweak_table == "spring"
+				local is_senator_armstrong = self._ext_base._tweak_table == "phalanx_vip_break"
                 local is_tank_mini = self._ext_base._tweak_table == "tank_mini"
                 local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
                 if is_spring then
@@ -704,6 +705,8 @@ function CopActionShoot:update(t)
 						
 					if is_tank_mini then	
 						self._unit:sound():say("g90", true, nil, true)
+					elseif is_senator_armstrong then	
+						self._unit:sound():say("a01", true, nil, true)	
 					else
 						self._unit:sound():say("use_gas", true, nil, true)	
 					end

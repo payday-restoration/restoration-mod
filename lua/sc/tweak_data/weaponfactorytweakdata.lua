@@ -12629,11 +12629,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g17", "resmod_x_g17", function(s
 		adds = {"wpn_fps_pis_g17_g_mount"},
 		parent = "shitass2"
 	}
-	
+
 	--Chimano 88 Part Additions
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_g_ergo")
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_x_g17.uses_parts, "wpn_fps_pis_g18c_s_stock")
 
 	self.wpn_fps_pis_x_g17_npc.override = deep_clone(self.wpn_fps_pis_x_g17.override)
 	self.wpn_fps_pis_x_g17_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_g17.uses_parts)	
@@ -16498,6 +16499,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g18c", "resmod_x_g18c", function
 		magazine_empty = "last_recoil"
 	}
 
+	table.insert(self.wpn_fps_pis_x_g18c.uses_parts, "wpn_fps_pis_g18c_s_stock")
+
+	self.wpn_fps_pis_x_g18c_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_g18c.uses_parts)	
+
 end)
 
 --Akimbo Raging Bulls
@@ -17492,10 +17497,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_czech", "resmod_x_czech", functi
 	}
 	
 	table.insert(self.wpn_fps_pis_x_czech.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_x_czech_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	table.insert(self.wpn_fps_pis_x_czech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_x_czech_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
-		
+	table.insert(self.wpn_fps_pis_x_czech.uses_parts, "wpn_fps_pis_czech_s_standard")
+
 	self.wpn_fps_pis_x_czech_npc.override = deep_clone(self.wpn_fps_pis_x_czech.override)	
 	self.wpn_fps_pis_x_czech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_czech.uses_parts)		
 
@@ -17653,10 +17657,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", functi
 		end
 	end	
 	
-	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_x_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_x_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
+	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_stech_s_standard")
 		
 	self.wpn_fps_pis_x_stech_npc.override = deep_clone(self.wpn_fps_pis_x_stech.override)	
 	self.wpn_fps_pis_x_stech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_stech.uses_parts)		

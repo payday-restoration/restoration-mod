@@ -15789,6 +15789,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 	self.parts.wpn_fps_pis_chinchilla_g_death.supported = true
 	self.parts.wpn_fps_pis_chinchilla_g_death.stats = deep_clone(grips.recoil_1)
 
+	self.parts.wpn_fps_pis_chinchilla_fl_mount = {
+		type = "shitass",
+		name_id = "none",
+		unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
 	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_m3x")
 	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_crimson")
 	table.insert(self.wpn_fps_pis_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_x400v")
@@ -15798,7 +15808,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 
 	self.wpn_fps_pis_chinchilla.adds = self.wpn_fps_pis_chinchilla.adds or {}
 	self.wpn_fps_pis_chinchilla.override = self.wpn_fps_pis_chinchilla.override or {}
-	self.wpn_fps_pis_chinchilla.override.wpn_fps_pis_2006m_fl_adapter = {
+
+	self.wpn_fps_pis_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
 		parent = "shitass",
 		a_obj = "a_vg"
 	}
@@ -21864,7 +21875,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			lock_burst = true,
 			tekna_burst = true,
-			rof_mult = 2.1153846
+			rof_mult = 2.1153846,
+			alt_desc = "bm_wally_desc",
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -32525,7 +32537,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts[part_id] and self.parts[part_id].a_obj then
 			if self.parts[part_id].a_obj == "a_fl"  then
 				self.wpn_fps_pis_chinchilla.adds[part_id] = {
-					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
+					"wpn_fps_pis_chinchilla_fl_mount","wpn_fps_pis_usp_fl_adapter"
 				}
 				self.wpn_fps_pis_chinchilla.override[part_id] = {
 					parent = "shitass",

@@ -6676,8 +6676,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.chinchilla.can_shoot_through_enemy = true
 				self.chinchilla.can_shoot_through_enemy_unlim = true
 				self.chinchilla.reload_speed_multiplier = 1.12
-				self.chinchilla.timers.reload_exit_empty = 0.5
-				self.chinchilla.timers.reload_exit_not_empty = 0.5
+				self.chinchilla.timers.reload_exit_empty = 0.3
+				self.chinchilla.timers.reload_exit_not_empty = 0.3
 
 			--Deagle
 				--Back to secondary

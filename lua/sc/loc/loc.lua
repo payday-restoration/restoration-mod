@@ -1920,6 +1920,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
+				["bm_wally_desc"] = "#{important_2}#Hey kiddo...##",
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950 RPM.##",

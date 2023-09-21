@@ -4034,6 +4034,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
 
+	local akimbo_rev = {'x_rage','x_chinchilla','x_2006m','x_model3','x_judge',"x_korth"}
+	for i, wep_id in ipairs(akimbo_rev) do
+		self[wep_id].BURST_FIRE = 2
+		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
+		self[wep_id].sounds.magazine_empty = nil
+		self[wep_id].categories = {"akimbo", "pistol"}
+	end
+	self.x_judge.categories = {"akimbo", "shotgun"}
+
 	tact_rel = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
@@ -4073,13 +4083,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 	self.ching.lock_slide_alt = true
 	self.ching.sounds.magazine_empty = "ching_magazine_empty"
-
-	local akimbo_rev = {'x_rage','x_chinchilla','x_2006m','x_model3','x_judge',"x_korth"}
-	for i, wep_id in ipairs(akimbo_rev) do
-		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 2
-		self[wep_id].sounds.magazine_empty = nil
-	end
 
 	local ap_50 = {
 		'asval','scar','contraband','fal','galil'

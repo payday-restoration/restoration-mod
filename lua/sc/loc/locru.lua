@@ -4540,6 +4540,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360"] = "Орлиный глаз",
 		["mutator_quickscope360_desc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
 		["mutator_quickscope360_longdesc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
+		
+		["mutator_goldfarbdozers"] = "Double Firepower",
+		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4568,6 +4572,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "Все агенты по спасению заложников получают дополнительный 15% шанс стать Титановыми агентами.",
 		["menu_cs_modifier_dozer_lmg"] = "Когда появляется Зеленый или Черный Бульдозер, есть шанс, что его заменит Скаллдозер.",
 		["menu_cs_modifier_10secondsresponsetime"] = "Полицейские штурмы сразу имеют максимальную интенсивность.",
+		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
 
 		["bm_menu_skill"] = "Бонусы для команды",
 

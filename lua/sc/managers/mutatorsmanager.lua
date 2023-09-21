@@ -44,6 +44,7 @@ function MutatorsManager:init()
 		MutatorQuickScope360:new(self),
 		MutatorCrazyTaser:new(self),
 		MutatorMasterDodger:new(self),
+		MutatorGoldfarbDozers:new(self),
 		MutatorBirthday:new(self)
 	}
 	self._active_mutators = {}

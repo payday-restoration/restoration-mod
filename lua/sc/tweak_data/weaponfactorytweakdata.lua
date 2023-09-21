@@ -6904,13 +6904,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 	self.parts.wpn_fps_pis_rage_g_ergo.supported = true
 	self.parts.wpn_fps_pis_rage_g_ergo.stats = deep_clone(grips.recoil_1)
 
-	self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
+	self.parts.wpn_fps_pis_rage_fl_mount = {
+		type = "shitass",
+		name_id = "bm_wp_judge_b_standard",
+		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota",
+		stats = {
+			value = 1
+		}
+	}
 	
 	--Bronco .44 Part Additions
 	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_m3x")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_crimson")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
+	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
+
+	self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
+	self.wpn_fps_pis_rage.override.wpn_fps_pis_2006m_fl_adapter = {
+		parent = "shitass",
+		a_obj = "a_vg"
+	}
 	
-	--table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
-	
+	self.wpn_fps_pis_rage_npc.override = deep_clone(self.wpn_fps_pis_rage.override)	
 	self.wpn_fps_pis_rage_npc.uses_parts = deep_clone(self.wpn_fps_pis_rage.uses_parts)	
 
 	self.wpn_fps_pis_rage_primary = nil
@@ -16444,6 +16462,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_rage", "resmod_x_rage", function
 		reload = "reload",
 		reload_not_empty = "reload"
 	}
+	
+	self.wpn_fps_pis_x_rage.adds = {}
+
 	self.wpn_fps_pis_x_rage.override = {
 		wpn_fps_pis_rage_body_standard = {
 			animations = {		
@@ -16466,13 +16487,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_rage", "resmod_x_rage", function
 			}
 		}
 	}
+
+	self.wpn_fps_pis_x_rage.override.wpn_fps_pis_2006m_fl_adapter = {
+		parent = "shitass",
+		a_obj = "a_vg"
+	}
+
 	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_x_rage_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
-	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_x_rage_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
-	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_ns_pis_meatgrinder")
-	table.insert(self.wpn_fps_pis_x_rage_npc.uses_parts, "wpn_fps_upg_ns_pis_meatgrinder")		
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_m3x")
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_crimson")
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_x400v")
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_laser")
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
+	table.insert(self.wpn_fps_pis_x_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
 		
+	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
+	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
 	self.wpn_fps_pis_x_rage_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_rage.uses_parts)
 
 end)
@@ -32436,6 +32466,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	end
+	self.wpn_fps_lmg_rpk_npc.override = deep_clone(self.wpn_fps_lmg_rpk.override)
+
+	for i, part_id in pairs(self.wpn_fps_pis_rage.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].a_obj then
+			if self.parts[part_id].a_obj == "a_fl"  then
+				self.wpn_fps_pis_rage.adds[part_id] = {
+					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
+				}
+				self.wpn_fps_pis_rage.override[part_id] = {
+					parent = "shitass",
+					a_obj = "a_vg"
+				}
+			end
+		end
+	end
+	self.wpn_fps_pis_rage_npc.adds = deep_clone(self.wpn_fps_pis_rage.adds)
+	self.wpn_fps_pis_rage_npc.override = deep_clone(self.wpn_fps_pis_rage.override)
+
+	for i, part_id in pairs(self.wpn_fps_pis_x_rage.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].a_obj then
+			if self.parts[part_id].a_obj == "a_fl"  then
+				self.wpn_fps_pis_x_rage.adds[part_id] = {
+					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
+				}
+				self.wpn_fps_pis_x_rage.override[part_id] = {
+					parent = "shitass",
+					a_obj = "a_vg"
+				}
+			end
+		end
+	end
+	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
+	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

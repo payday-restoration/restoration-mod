@@ -1126,6 +1126,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--10-0
 		["bm_wp_upg_i_tekna"] = "Набор 'Текна'",
 		["bm_wp_upg_i_tekna_desc"] = "Оружие стреляет только #{risk}#очередями##.",
+		["bm_wally_desc"] = "#{important_2}#Эй, малой...##",
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "Набор АМР-16 B3",
@@ -2587,6 +2588,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_colt_1911"] = "Crosskill Operator II",
 		["bm_w_x_1911"] = "Mustang & Sally",
 		["bm_w_m1911"] = "Crosskill A1",
+		["bm_w_x_m1911"] = "Price & MacTavish",
 		["bm_w_shrew"] = "Crosskill Guard",
 		["bm_w_x_shrew"] = "Barry & Paul",
 		["bm_w_usp"] = "Interceptor-45",
@@ -2815,6 +2817,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_colt_1911"] = "Кросскилл Оператор II",
 		["bm_w_x_1911"] = "Мустанг и Сэлли",
 		["bm_w_m1911"] = "Кроскилл А1",
+		["bm_w_x_m1911"] = "Прайс и МакТавиш",
 		["bm_w_shrew"] = "Кроскилл Гард",
 		["bm_w_x_shrew"] = "Барри и Пол",
 		["bm_w_usp"] = "Интерсептор-45",

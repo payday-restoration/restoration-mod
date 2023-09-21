@@ -2783,7 +2783,7 @@ end
 
 function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip = deep_clone(self.phalanx_minion)
-	self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan", "captain"}
+	self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan", "captain", "phalanx_vip"}
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.damage.immune_to_knockback = true
 	self.phalanx_vip.immune_to_knock_down = true
@@ -2872,7 +2872,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"law", "custom", "special", "captain"}
+	self.spring.tags = {"law", "custom", "special", "captain", "spring"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
@@ -2933,6 +2933,7 @@ function CharacterTweakData:_init_spring(presets)
 	
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
+	self.headless_hatman.tags = {"law", "custom", "special", "captain", "headless_hatman"}
 	self.headless_hatman.speech_prefix_p1 = "cpa"
 	self.headless_hatman.speech_prefix_p2 = nil
 	self.headless_hatman.speech_prefix_count = nil
@@ -3017,7 +3018,7 @@ end
 
 function CharacterTweakData:_init_autumn(presets)
 	self.autumn = deep_clone(presets.base)
-	self.autumn.tags = {"law", "custom", "special", "customvo"}
+	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn"}
 	self.autumn.experience = {}
 	self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.autumn.weapon = deep_clone(presets.weapon.normal)

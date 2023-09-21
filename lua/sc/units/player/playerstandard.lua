@@ -834,8 +834,16 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						local spin_up_semi = fire_mode == "single" and weap_base:weapon_tweak_data().spin_up_semi
 						if not spin_up_semi then
-							if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
-								weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
+							local second_gun_base = weap_base._second_gun and weap_base._second_gun:base()
+							local second_gun_turn = weap_base._second_turn
+							if second_gun_turn ~= true then
+								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
+									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
+								end
+								if second_gun_base then
+									second_gun_base:tweak_data_anim_stop("fire")
+									second_gun_base:tweak_data_anim_stop("fire_steelsight")
+								end
 							end
 						end
 

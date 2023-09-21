@@ -4029,7 +4029,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 2
+		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
 

@@ -2615,6 +2615,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_m_big"] = "캐스킷 탄창",
 					--Crosskill Chunky
 					["bm_w_m1911"] = "Crosskill A1",
+					["bm_w_x_m1911"] = "프라이스 & 맥태비시",	
 					--Crosskill Guard
 					["bm_w_shrew"] = "Crosskill Guard",
 					["bm_w_x_shrew"] = "베리 & 폴",
@@ -2993,9 +2994,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({
 
 				["bm_w_pl14"] = "WS-14",
+				["bm_w_x_pl14"] = "아킴보 WS-14",		
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "아킴보 Chimano 22C",
 				["bm_w_x_1911"] = "아킴보 Operator II",
+				["bm_w_x_m1911"] = "아킴보 Crosskill A1",		
 				["bm_w_x_sparrow"] = "아킴보 Sparrow",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scarl"] = "VF-6M",

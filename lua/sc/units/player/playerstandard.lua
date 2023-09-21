@@ -3051,9 +3051,6 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				end
 			end
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
-			if defense_data then 
-				defense_data.charge_lerp_value = action_data.charge_lerp_value
-			end
 			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
 			
@@ -3079,7 +3076,9 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 	end
 	local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
 	local char_damage = character_unit:character_damage()
+	local fire_on_charge = melee_tweak and melee_tweak.stats.charge_bonus_fire
 	local charge_lerp_value = defense_data.charge_lerp_value
+	local charge_fire_check = (fire_on_charge and charge_lerp_value and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not fire_on_charge and true)
 
 	if melee_tweak.random_special_effects then
 		local selector = WeightedSelector:new()
@@ -3109,7 +3108,6 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 		char_damage:damage_tase(action_data)
 	end
 
-	local charge_fire_check = (tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and charge_lerp_value and charge_lerp_value > tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start) or (not tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_fire and true)
 	if melee_tweak.fire_dot_data and charge_fire_check and char_damage.damage_fire then
 		local action_data = {
 			variant = "fire",

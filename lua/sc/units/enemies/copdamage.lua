@@ -1703,6 +1703,10 @@ function CopDamage:damage_melee(attack_data)
 	else
 		variant = 0
 	end
+	
+	if attack_data.charge_lerp_value then
+		result.charge_lerp_value = attack_data.charge_lerp_value
+	end
 
 	local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
 

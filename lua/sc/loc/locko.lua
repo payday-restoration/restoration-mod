@@ -4514,9 +4514,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360_desc"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
 		["mutator_quickscope360_longdesc"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
 		
-		["mutator_goldfarbdozers"] = "Double Firepower",
-		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers"] = "화력 두배",
+		["mutator_goldfarbdozers_desc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
+		["mutator_goldfarbdozers_longdesc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4545,7 +4545,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "모든 HRT 유닛은 15%의 추가 확률로 ASU 유닛이 됩니다.",
 		["menu_cs_modifier_dozer_lmg"] = "그린 또는 블랙 불도저가 생성될 때마다 스컬도저로 교체될 확률이 생깁니다.",
 		["menu_cs_modifier_10secondsresponsetime"] = "모든 경찰 습격은 이제 최대 강도로 시작됩니다.",
-		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
+		["menu_cs_modifier_dozerpairs"] = "불도저는 이제 항상 쌍으로 스폰됩니다.",
 
 		["bm_menu_skill"] = "팀원 부스트",
 

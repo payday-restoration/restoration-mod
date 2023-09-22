@@ -30,7 +30,7 @@ return {
 				{
 					name = "meetingroom2",
 					force = 2,
-					position = Vector3(5300, 200, 900)
+					position = Vector3(5300, 2000, 900)
 				},
 				{
 					name = "admin",

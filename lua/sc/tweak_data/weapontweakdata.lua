@@ -3235,8 +3235,8 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = per_pellet and 1.75 or 3.5
-	self.stat_info.shotgun_spread_increase_ads = per_pellet and 2 or 1
+	self.stat_info.shotgun_spread_increase = 1.75
+	self.stat_info.shotgun_spread_increase_ads = 6
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
@@ -10799,7 +10799,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.saiga.stats = {
 					damage = 45,
-					spread = 31,
+					spread = 19,
 					recoil = 43,
 					spread_moving = 7,
 					zoom = 1,
@@ -10836,7 +10836,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sko12.stats = {
 					damage = 45,
-					spread = 41,
+					spread = 31,
 					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
@@ -10876,7 +10876,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.aa12.stats = {
 					damage = 45,
-					spread = 39,
+					spread = 31,
 					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
@@ -10917,7 +10917,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ultima.stats = {
 					damage = 45,
-					spread = 29,
+					spread = 21,
 					recoil = 45,
 					spread_moving = 7,
 					zoom = 1,
@@ -10967,7 +10967,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.spas12.stats = {
 					damage = 45,
-					spread = 38,
+					spread = 30,
 					recoil = 55,
 					spread_moving = 7,
 					zoom = 1,
@@ -11008,7 +11008,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.benelli.stats = {
 					damage = 45,
-					spread = 43,
+					spread = 35,
 					recoil = 49,
 					spread_moving = 7,
 					zoom = 1,
@@ -11052,7 +11052,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					total_ammo_mod = 200,
 					damage = 45,
 					alert_size = 2,
-					spread = 31,
+					spread = 19,
 					spread_moving = 8,
 					recoil = 41,
 					value = 1,
@@ -11084,7 +11084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.striker.stats = {
 					damage = 45,
-					spread = 31,
+					spread = 22,
 					recoil = 43,
 					spread_moving = 7,
 					zoom = 1,
@@ -11117,7 +11117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.rota.stats = {
 					damage = 45,
-					spread = 36,
+					spread = 26,
 					recoil = 41,
 					spread_moving = 7,
 					zoom = 1,
@@ -11160,7 +11160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_judge.stats = {
 					damage = 60,
-					spread = 23,
+					spread = 43,
 					recoil = 53,
 					spread_moving = 5,
 					zoom = 1,
@@ -11206,7 +11206,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m590.stats = {
 					damage = 60,
-					spread = 40,
+					spread = 60,
 					recoil = 45,
 					spread_moving = 6,
 					zoom = 1,
@@ -11259,7 +11259,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.supernova.stats = {
 					damage = 60,
-					spread = 48,
+					spread = 68,
 					recoil = 47,
 					spread_moving = 6,
 					zoom = 1,
@@ -11303,7 +11303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.r870.stats = {
 					damage = 60,
-					spread = 42,
+					spread = 62,
 					recoil = 51,
 					spread_moving = 6,
 					zoom = 1,
@@ -11343,7 +11343,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ksg.stats = {
 					damage = 60,
-					spread = 45,
+					spread = 65,
 					recoil = 41,
 					spread_moving = 7,
 					zoom = 1,
@@ -11393,7 +11393,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m1897.stats = {
 					damage = 60,
-					spread = 51,
+					spread = 71,
 					recoil = 41,
 					spread_moving = 6,
 					zoom = 1,
@@ -11430,7 +11430,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.serbu.stats = {
 					damage = 60,
-					spread = 36,
+					spread = 56,
 					recoil = 41,
 					spread_moving = 6,
 					zoom = 1,
@@ -11480,7 +11480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.m37.stats = {
 					damage = 60,
-					spread = 43,
+					spread = 63,
 					recoil = 51,
 					spread_moving = 6,
 					zoom = 1,
@@ -11515,7 +11515,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.judge.stats = {
 					damage = 60,
-					spread = 33,
+					spread = 53,
 					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
@@ -11560,7 +11560,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.b682.stats = {
 					damage = 90,
-					spread = 61,
+					spread = 71,
 					recoil = 41,
 					spread_moving = 6,
 					zoom = 1,
@@ -11649,7 +11649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.huntsman.stats = {
 					damage = 90,
-					spread = 58,
+					spread = 66,
 					recoil = 43,
 					spread_moving = 6,
 					zoom = 1,
@@ -11694,7 +11694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.coach.stats = {
 					damage = 90,
-					spread = 58,
+					spread = 66,
 					recoil = 43,
 					spread_moving = 6,
 					zoom = 1,
@@ -13178,7 +13178,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.amr12.stats = {
 				damage = 45,
-				spread = 31,
+				spread = 21,
 				recoil = 49,
 				zoom = 1,
 				concealment = 21,
@@ -13212,7 +13212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.minibeck.stats = {
 				damage = 45,
-				spread = 26,
+				spread = 22,
 				recoil = 69,
 				zoom = 1,
 				concealment = 25,
@@ -13260,7 +13260,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.beck.stats = {
 				damage = 60,
-				spread = 45,
+				spread = 65,
 				recoil = 55,
 				spread_moving = 6,
 				zoom = 1,
@@ -13305,7 +13305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.bs23.stats = {
 				damage = 90,
-				spread = 51,
+				spread = 61,
 				recoil = 41,
 				spread_moving = 5,
 				zoom = 1,
@@ -13627,7 +13627,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.qsho.stats = {
 				damage = 90,
-				spread = 16,
+				spread = 26,
 				recoil = 41,
 				zoom = 1,
 				concealment = 25,
@@ -14516,7 +14516,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.mp153.stats = {
 			damage = 45,
-			spread = 31,
+			spread = 21,
 			recoil = 51,
 			zoom = 1,
 			concealment = 21,
@@ -14558,7 +14558,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.wmtx.stats = {
 			damage = 60,
-			spread = 34,
+			spread = 44,
 			recoil = 59,
 			spread_moving = 7,
 			zoom = 1,
@@ -14578,7 +14578,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 	
 	if self.jackhammer then --Pawcio's Jackhammer
-		self.jackhammer.recategorize = { "light_shot" }
+		self.jackhammer.recategorize = { "heavy_shot" } --it's effectively semi auto
 		self.jackhammer.damage_type = "shotgun"
 		self.jackhammer.damage_type_single_ray = "sniper"
 		self.jackhammer.upgrade_blocks = nil
@@ -14595,13 +14595,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.jackhammer.supported = true
 		self.jackhammer.ads_speed = 0.400
 		self.jackhammer.damage_falloff = {
-			start_dist = 800,
+			start_dist = 600,
 			end_dist = 3300,
 			min_mult = 0.5
 		}
 		self.jackhammer.stats = {
-			damage = 45,
-			spread = 31,
+			damage = 60,
+			spread = 41,
 			recoil = 53,
 			spread_moving = 7,
 			zoom = 1,
@@ -14639,7 +14639,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.quadbarrel.fire_mode_data = {}
 		self.quadbarrel.fire_mode_data.fire_rate = 0.171428
 		self.quadbarrel.supported = true
-		self.quadbarrel.ads_speed = 0.500
+		self.quadbarrel.ads_speed = 0.420
 		self.quadbarrel.damage_falloff = {
 			start_dist = 500,
 			end_dist = 3000,
@@ -16639,6 +16639,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.timers.reload_not_empty = 2.4
 	end
 
+	if self.pd3_qbz191 then --RJC9000 and PlayBONK's PAYDAY "THE SERVERS ARE DOWN! CAN'T PLAY, IDIOT" 3 QBZ-191
+		self.pd3_qbz191.categories = {
+			"assault_rifle",
+			"dmr"
+		}
+		self.pd3_qbz191.warsaw = true
+		self.pd3_qbz191.recategorize = { "light_ar" }
+		self.pd3_qbz191.desc_id = "true"
+		self.pd3_qbz191.has_description = true
+		self.pd3_qbz191.tactical_reload = 1
+		self.pd3_qbz191.AMMO_MAX = 150
+		self.pd3_qbz191.fire_mode_data.fire_rate = 0.08
+		self.pd3_qbz191.kick = self.stat_info.kick_tables.right_recoil	
+		self.pd3_qbz191.supported = true
+		self.pd3_qbz191.ads_speed = 0.280
+		self.pd3_qbz191.damage_falloff = {
+			start_dist = 1400,
+			end_dist = 4500,
+			min_mult = 0.75
+		}
+		self.pd3_qbz191.stats = {
+			damage = 24,
+			spread = 78,
+			recoil = 75,
+			zoom = 1,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.pd3_qbz191.stats_modifiers = nil
+		self.pd3_qbz191.armor_piercing_chance = 0.25
+		self.pd3_qbz191.timers.reload_empty = 3.55
+		self.pd3_qbz191.timers.reload_exit_empty = 0.95
+		self.pd3_qbz191.timers.reload_exit_not_empty = 1.4
+		self.pd3_qbz191.panic_suppression_chance = 0.05
+	end
+
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand
 		self.malorian_3516.recategorize = { "heavy_pis", "handcannon" }
 		self.malorian_3516.desc_id = "whydoyoucome"
@@ -17651,7 +17692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.f500.CLIP_AMMO_MAX = 6
 		self.f500.AMMO_MAX = 30
 		self.f500.supported = true
-		self.f500.ads_speed = 0.400
+		self.f500.ads_speed = 0.300
 		self.f500.damage_falloff = {
 			start_dist = 900,
 			end_dist = 3300,
@@ -17659,7 +17700,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.f500.stats = {
 			damage = 60,
-			spread = 41,
+			spread = 51,
 			recoil = 35,
 			spread_moving = 6,
 			zoom = 1,

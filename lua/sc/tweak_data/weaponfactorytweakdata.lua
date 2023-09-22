@@ -1472,7 +1472,7 @@ local grips = {
 					total_ammo_mod = per_pellet and -102 or -68,
 					damage = per_pellet and 0 or 15,
 					recoil = -20,
-					spread = 12,
+					spread = 5,
 					spread_multi = {1, 1},	
 					suppression = -1,
 					moving_spread = 0
@@ -1488,7 +1488,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.8,
+					falloff_end_mult = 1.5,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1502,7 +1502,7 @@ local grips = {
 					concealment = -3,
 					total_ammo_mod = per_pellet and -102 or -52,
 					damage = per_pellet and 0 or 15,
-					spread = 12,
+					spread = 5,
 					spread_multi = {1, 1},	
 					recoil = -20,
 					moving_spread = 0,
@@ -1519,7 +1519,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.8,
+					falloff_end_mult = 1.5,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1534,7 +1534,7 @@ local grips = {
 					total_ammo_mod = per_pellet and -102 or -68,
 					damage = per_pellet and 0 or 30,
 					recoil = -20,
-					spread = 12,
+					spread = 5,
 					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1
@@ -1553,7 +1553,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.8,
+					falloff_end_mult = 1.5,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1565,7 +1565,7 @@ local grips = {
 					total_ammo_mod = per_pellet and -102 or -52,
 					damage = per_pellet and 0 or 30,	
 					recoil = -20,
-					spread = 12,
+					spread = 5,
 					spread_multi = {1, 1},	
 					suppression = -1,
 					moving_spread = 0
@@ -1585,7 +1585,7 @@ local grips = {
 					can_shoot_through_titan_shield = true,
 					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.8,
+					falloff_end_mult = 1.5,
 					ads_speed_mult = 1.075
 				}
 			},

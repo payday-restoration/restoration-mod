@@ -381,6 +381,7 @@
 		<hook file="sc/mutators/new/mutatormasterdodger.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfullautoinbuilding.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorgoldfarbdozers.lua" source_file="lib/mutators/basemutator"/>
+		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>

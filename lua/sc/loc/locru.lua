@@ -4258,7 +4258,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--New Units Hints
 	    ["loading_new_units_res_title"] = "Restoration - советы о новых противниках",
 		["loading_new_units_res_1"] = "OMNIA ASU (агенты поддержки) усиливают урон товарищей при помощи желтых лазеров.",
-		["loading_new_units_res_2"] = "LPF получает больше урона от оружия ближнего боя.",
+		["loading_new_units_res_2"] = "LPF получает больше урона от оружия ближнего боя. Враги помечены фиолетовым цветом, когда их лечит LPF.",
 		["loading_new_units_res_3"] = "Слабые противники получают дополнительное здоровье от LPF. В этом случае они помечаются фиолетовым цветом.",
 		["loading_new_units_res_4"] = "Титановые Клокеры обладают продвинутой экипировкой, которая делает их практически невидимыми, но издает такие же звуки, как экипировка стандартных Клокеров.",
 		["loading_new_units_res_5"] = "Титановые Дозеры предпочитают держать грабителей на расстоянии, чтобы выцелить их из своего Рельсотрона.",
@@ -4541,9 +4541,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360_desc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
 		["mutator_quickscope360_longdesc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
 		
-		["mutator_goldfarbdozers"] = "Double Firepower",
-		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers"] = "Двойные неприятности",
+		["mutator_goldfarbdozers_desc"] = "Все бульдозеры теперь появляются парами.",
+		["mutator_goldfarbdozers_longdesc"] = "Все бульдозеры теперь появляются парами. Не влияет на заскриптованных бульдозеров.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4572,7 +4572,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "Все агенты по спасению заложников получают дополнительный 15% шанс стать Титановыми агентами.",
 		["menu_cs_modifier_dozer_lmg"] = "Когда появляется Зеленый или Черный Бульдозер, есть шанс, что его заменит Скаллдозер.",
 		["menu_cs_modifier_10secondsresponsetime"] = "Полицейские штурмы сразу имеют максимальную интенсивность.",
-		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
+		["menu_cs_modifier_dozerpairs"] = "Все бульдозеры теперь появляются парами.",
 
 		["bm_menu_skill"] = "Бонусы для команды",
 

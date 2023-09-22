@@ -4111,7 +4111,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_title"] = "Restoration Unit Tips",
 		["loading_new_units_res_1"] = "OMNIA ASUs will provide damage bonuses to nearby allies marked by giving them Yellow laser attachments.",
 		["loading_new_units_res_2"] = "LPFs are weak to melee.",
-		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple.",
+		["loading_new_units_res_3"] = "Lighter units will be overhealed by the LPF. Enemies are outlined in purple during overhealing process.",
 		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear.",
 		["loading_new_units_res_5"] = "Titan Dozers prefer putting distance between them and their target to unleash the full potential of their railguns undisturbed.",
 		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",

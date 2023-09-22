@@ -249,6 +249,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pal.ai_group_type = lapd
 	
 	self.friend.ai_group_type = lapd
+	self.friend.package = {"packages/lvl_friend", "packages/miscassets"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd

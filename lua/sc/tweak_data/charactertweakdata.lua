@@ -2424,6 +2424,7 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.use_radio = nil
 	self.tank_biker.no_omnia_heal = true
 	self.tank_biker.no_asu = true
+	self.tank_biker.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_biker")	
 end
 

@@ -284,7 +284,7 @@ function PlayerStandard:_check_action_throw_projectile(t, input)
 	end
 
 	--Here!
-	local action_forbidden = not PlayerBase.USE_GRENADES or not self:_projectile_repeat_allowed() or self:chk_action_forbidden("interact") or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod()
+	local action_forbidden = not PlayerBase.USE_GRENADES or not self:_projectile_repeat_allowed() or self:chk_action_forbidden("interact") or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod() or self:_in_burst()
 
 	if action_forbidden then
 		return
@@ -309,7 +309,7 @@ function PlayerStandard:_check_action_throw_grenade(t, input)
 	end
 
 	--Here!
-	local action_forbidden = not PlayerBase.USE_GRENADES or self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_is_throwing_grenade() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod()
+	local action_forbidden = not PlayerBase.USE_GRENADES or self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_is_throwing_grenade() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_meleeing() or self:_is_using_bipod() or self:_in_burst()
 
 	if action_forbidden then
 		return
@@ -3377,7 +3377,7 @@ function PlayerStandard:_start_action_reload(t)
 
 	self._queue_fire = nil
 	self._queue_burst = nil
-	
+
 	--Drop My Mag compatibilty
 	--I might take the time to better integrate this into the reload timers so you're not instantly dropping a mag right when you reload
 	for _, weapon_base in ipairs({ weapon, weapon._second_gun and weapon._second_gun:base() }) do

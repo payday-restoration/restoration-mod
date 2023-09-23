@@ -4345,6 +4345,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_new_units_res_17"] = "Bravo临界反应部队的血量和伤害都比一般单位要强上许多，他们进攻时会频繁地投掷破片手雷，你最好不要只在一个小坑位上蹲太久。",
         ["loading_new_units_res_18"] = "阿肯拥有他自己的D项目系列泰坦部队。他们看起来不同但实际属性是相同的。他们的整体视觉效果和穿着特征也是基本一致的，因此你可以轻易地认出不同的兵种。",
         ["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快且会迅速清空你耐力的毒气弹。",
+		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
         -- Captain Hints
         ["loading_captains_res_title"] = "恢复MOD劫匪小贴士(四季队长)",
         ["loading_captains_res_1"] = "要击败夏日队长，得先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",

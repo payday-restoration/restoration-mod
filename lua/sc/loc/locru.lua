@@ -4276,6 +4276,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_17"] = "Отряды Браво используют осколочные гранаты. Обращайте внимание на их уникальные звук и эффект.",
 		["loading_new_units_res_18"] = "АКАН использует собственных Титановых юнитов - так называемая D-СЕРИЯ, разработанная корпорацией DRAK.",
 		["loading_new_units_res_19"] = "Гренадер использует гранаты со слезоточивым газом, которые наносят продолжительный урон игрокам, стоящим в облаке. На 'Смертном приговоре' он вооружен более смертоносным паралитическим газом, который также уменьшает выносливость.",
+		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
 		--Captain Hints
 		["loading_captains_res_title"] = "Restoration - советы о капитанах",
 		["loading_captains_res_1"] = "Чтобы победить капитана Саммерса, нужно сначала обезвредить его команду, начиная с Дока. Саммерс будет неубиваем, пока вся его команда жива; остальные двое будут практически неуязвимы, пока жив Док.",

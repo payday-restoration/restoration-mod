@@ -1888,8 +1888,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_damage_control"] = "Hip Flask",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
-		--WEAPON & ATTACHMENT DESCRIPTIONS 
-			--[[ MANUFACTURERS ]]
+		--WEAPON & ATTACHMENT DESCRIPTIONS
+		--[[ MANUFACTURERS ]]
 				--In-Universe Manufacturer deets
 					--Crosskill/Corvus (Payday/OTWD) = Colt
 					--DSC [Defense System Crosskill] (PD2) = Saco Defense
@@ -4116,8 +4116,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_5"] = "Cloakers can easily counter lone or cut off heisters.",
 		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
 		["loading_gameplay_res_7"] = "Green Bulldozers deal high amounts of damage and can often break even the heaviest of armors with a single shot.",
-		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine.",
-		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire and will fire until their belts are empty.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine. They also run faster than other dozers but have much less health.",
+		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire that knockbacks on close range and will fire until their belts are empty. Their top armor can take up more damage than regular dozer but move as slow as Titandozers.",
 		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers, high rate of fire and good damage. An unholy union of Green and Black dozers.",
 		["loading_gameplay_res_11"] = "Target priority is important. A Bulldozer of any type is worth more attention than a Light SWAT.",
 		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 10%.",
@@ -4146,31 +4146,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_5"] = "Titan Dozers prefer putting distance between them and their target to unleash the full potential of their railguns undisturbed.",
 		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",
 		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers.",
-		["loading_new_units_res_8"] = "Titan Shields can only be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic, and special AP rounds in Sentry Guns.",
+		["loading_new_units_res_8"] = "Titan Shields can be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic or with special AP rounds in Sentry Guns. Even shooting their shield long enough can make them drop it but beware of their sudden tactic change.",
 		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
 		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily, indicated by a blue UI overlay.",
 		["loading_new_units_res_11"] = "Veteran Cops will drop Tear Gas grenades on death when killed by anything but a headshot.",
 		["loading_new_units_res_12"] = "Veteran Cops move quickly making shots harder to land.",
 		["loading_new_units_res_13"] = "The Riot Gear clad Titan SWAT are somewhat resistant to melee.",
 		["loading_new_units_res_14"] = "Titan SWAT cannot be taken hostage or converted to fight on your side.",
-		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns.",
+		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns that either push back or concusses the enemy.",
 		["loading_new_units_res_16"] = "The dreaded Bravo units spawn on Pro Jobs only, when a PONR is triggered. They are powerful no-nonsense enemies with enhanced body armor, and more powerful weapons.",
 		["loading_new_units_res_17"] = "Bravo units can throw frag grenades. Mind your surroundings when you see them flashing and emitting a beeping countdown.",
 		["loading_new_units_res_18"] = "AKAN fields their own Titan units called D-Series, developed by their R&D firm DRAK.",
 		["loading_new_units_res_19"] = "The Grenadier launches tear gas grenades at range with his underbarrel attachment, damaging players that stand in the cloud. On Death Sentence he instead comes armed with deadlier, stamina-draining nerve gas grenades.",
+		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
 		--Captain Hints
 		["loading_captains_res_title"] = "Restoration Captain Tips",
 		["loading_captains_res_1"] = "To take Captain Summers down, target his crew first starting with Doc. He's unkillable until his entire crew is dead, and the other two are nearly invulnerable until Doc is dead.",		
 		["loading_captains_res_2"] = "Don't hug Captain Summers. He WILL melt you with his flamethrower.",		
 		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and take advantage of his immobility.",	
 		["loading_captains_res_4"] = "Captain Spring throws Cluster HE grenades periodically.",	
-		["loading_captains_res_5"] = "Captain Spring may be dangerous, but he is incredibly slow and has poor range.",	
+		["loading_captains_res_5"] = "Captain Spring may be dangerous due to his pushback firepower, but he is incredibly slow and has poor range.",	
 		["loading_captains_res_6"] = "Captain Autumn will loudly taunt when he attacks.",	
 		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival, as to not ruin the element of surprise.",	
 		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected in the map for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
 		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
 		["loading_captains_res_10"] = "Captain Winters is nearly immune to explosives and fire, and has strong bullet resistance, but is somewhat vulnerable to melee.",	
-		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable.",	
+		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable but his shield can be shot off after shooting at it long enough. Beware of his Phase 2 though.",	
 		["loading_captains_res_12"] = "Captain Winters will wander the map, healing and overhealing nearby enemies.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Restoration Stealth Tips",
@@ -4432,7 +4433,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
 		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
 		
-		["mutator_goldfarbdozers"] = "Double Firepower",
+		["mutator_goldfarbdozers"] = "Double Trouble",
 		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
 		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
 		--Crime spree modifier changes

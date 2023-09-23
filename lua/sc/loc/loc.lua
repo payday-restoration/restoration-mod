@@ -1889,6 +1889,68 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
 		--WEAPON & ATTACHMENT DESCRIPTIONS 
+			--[[ MANUFACTURERS ]]
+				--In-Universe Manufacturer deets
+					--Crosskill/Corvus (Payday/OTWD) = Colt
+					--DSC [Defense System Crosskill] (PD2) = Saco Defense
+					--Simmons Armory (PD2) = Springfield Armory 
+						--same acronym lol
+					--Bernetti = Beretta
+					--Chimano/Stryk = Glock 
+					--SG = HK (Heckler Und Koch)
+					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
+						--Signature = European Branches, FIK = American Branch?
+					--VF (OTWD + PD3) = FNH
+					--Lakner (PD2) = Walther
+					--Kang Arms (PD2) = Norinco
+					--Northwest (PD3) = China South Industries Group
+					--Touro = Taurus (lmao)
+					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
+						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
+					--ITI (OTWD) = IMI/IWI
+					--CR/TKA (PD2/OTWD) = CZ
+					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
+					--Ferino (OTWD) = Franchi
+					--Moretti (PD2) = Benelli(?)
+					--Stefan (PD2) = Steyr
+					--Wasp = Magpul
+						--idunno
+					--Repeater/Eaton (PD2/OTWD) = Winchester
+					--Rangehitter (PD2) = Marlin
+						--"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
+
+					["manufacturer_colt"] = "Crosskill",
+					["manufacturer_saco"] = "DSC",
+					["manufacturer_springfield"] = "Simmons",
+					["manufacturer_sigusa"] = "FIK",
+					["manufacturer_keltec"] = "LWI",
+					["manufacturer_winchester"] = "Eaton",
+					["manufacturer_marlin"] = "Rangehitter",
+					["manufacturer_swesson"] = "J&M",
+
+					["manufacturer_fnh"] = "VF",
+					["manufacturer_sig"] = "Signature",
+					["manufacturer_hk"] = "S&G",
+					["manufacturer_walther"] = "Lakner",
+					["manufacturer_steyr"] = "Stefan",
+					["manufacturer_glock"] = "Chimano",
+
+					["manufacturer_benelli"] = "Moretti",
+					["manufacturer_franchi"] = "Ferino",
+					["manufacturer_beretta"] = "Bernetti",
+
+					["manufacturer_kalashnikov"] = "IZMHA",
+					["manufacturer_tula"] = "IZMHA",
+					["manufacturer_cz"] = "TKA",
+
+					["manufacturer_imi"] = "ITI",
+
+					["manufacturer_taurus"] = "Touro",
+
+					["manufacturer_chinaindustries"] = "Northwest",
+					["manufacturer_norinco"] = "Kang Arms",
+
+
 			--Contains anything that should always be set regardless of the weapon names option chosen like descriptions or Resmod added weapons and attachments
 			--[[ RESMOD WEAPONS + ATTACHMENTS ]]
 				--socom deez nuts--
@@ -2404,38 +2466,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	if weapon_names then
 		if weapon_names <= 2 then --Resmod names
 			LocalizationManager:add_localized_strings({	
-
-				--In-Universe Manufacturer deets
-
-					--Crosskill/Corvus (Payday/OTWD) = Colt
-					--DSC [Defense System Crosskill] (PD2) = Saco Defense
-					--Simmons Armory (PD2) = Springfield Armory 
-						--same acronym lol
-					--Bernetti = Beretta
-					--Chimano/Stryk = Glock 
-					--SG = HK (Heckler Und Koch)
-					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
-						--Signature = European Branches, FIK = American Branch?
-					--VF (OTWD + PD3) = FNH
-					--Lakner (PD2) = Walther
-					--Kang Arms (PD2) = Norinco
-					--Northwest (PD3) = China South Industries Group
-					--Public Defender (PD2) = Taurus (lmao)
-					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
-						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
-					--ITI (OTWD) = IMI/IWI
-					--CR/TKA (PD2/OTWD) = CZ
-					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
-					--Ferino (OTWD) = Franchi
-					--Moretti (PD2) = Benelli(?)
-					--Stefan (PD2) = Steyr
-					--Wasp = Magpul
-						--idunno
-					--Repeater/Eaton (PD2/OTWD) = Winchester
-						--Combine the names into "Repeaton" maybe?
-					--Rangehitter (PD2) = Marlin
-						--"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
-
 
 				--[[ PISTOLS ]]
 					--Gecko Pistol
@@ -4605,7 +4635,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ranged weapons to have a chance to stagger Shield enemies when shooting their shield; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields## and #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ability to stagger shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger

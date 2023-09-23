@@ -4239,7 +4239,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_17"] = "브라보 유닛은 파편 수류탄을 던질 수 있습니다. 주변이 깜박이고 경고음을 듣고 카운트다운되는 것을 주의하십시오.",
 		["loading_new_units_res_18"] = "아칸은 그의 연구개발 회사인 DRAK에서 개발한 D-시리즈라고 불리는 자체 타이탄 유닛을 배치합니다.",
 		["loading_new_units_res_19"] = "척탄병은 장착된 언더베럴을 사용하여 원거리에서 최루 가스 유탄을 발사하여 구름 속에 있는 플레이어에게 피해를 줍니다. 데스 센텐스에선 대신 더 치명적이고 스태미나를 소모하는 신경가스 유탄으로 무장합니다.",
-		
+		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
+		-- Captain Hints
 		["loading_captains_res_title"] = "레스토레이션 캡틴 팁",
 		["loading_captains_res_1"] = "캡틴 서머스를 쓰러뜨리려면 먼저 닥과 그의 팀원들부터 목표로 삼으십시오. 그는 그의 모든 팀원들이 죽을 때까지 죽일 수 없으며 다른 두 사람은 닥이 죽을 때까지는 거의 무적입니다.",		
 		["loading_captains_res_2"] = "캡틴 서머스를 안아주지 마십시오. 그는 화염 방사기로 당신을 녹일 것입니다.",		

@@ -331,14 +331,12 @@ else
 		["units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_mod_fbi/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		
 		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
-		["units/pd2_mod_fbi/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",		
 		
 		--Bravo Shotgun
@@ -346,7 +344,6 @@ else
 		["units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
 		["units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
 		["units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
-		["units/pd2_mod_fbi/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun",
 		
 		--Bravo LMG

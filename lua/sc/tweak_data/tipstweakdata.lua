@@ -284,6 +284,12 @@ function TipsTweakData:init()
 			category = "new_units_res"
 		},	
 		{
+			cat_index = 20,
+			image = "enemy_tshield",
+			consoles = true,
+			category = "new_units_res"
+		},
+		{
 			cat_index = 1,
 			image = "enemy_summers",
 			consoles = true,

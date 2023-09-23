@@ -2319,7 +2319,9 @@ function CharacterTweakData:_init_tank(presets)
 	
 	--Skulldozers, More tanky but moves as slow as Titandozers
 	self.tank_skull = deep_clone(self.tank)
-	self.tank_skull.dt_suppress = nil
+	self.tank_skull.dt_suppress = {
+		range = 300
+	}
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
 	self.tank_skull.move_speed = presets.move_speed.very_slow
@@ -17861,11 +17863,6 @@ function CharacterTweakData:_set_overkill_290()
 	
 	self.spring.dt_suppress = {
 		range = 2500
-	}
-	
-	--Skulldozers can now push back players
-	self.tank_skull.dt_suppress = {
-		range = 300
 	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45

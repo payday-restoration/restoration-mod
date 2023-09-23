@@ -697,19 +697,28 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							end
 						else
 							if restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShooting") then
-								if input.btn_primary_attack_press and fire_mode == "single" and not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
-									local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
-									local next_fire_last = weap_base._next_fire_allowed - next_fire
-									local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
-									local next_fire_current_t = weap_base._next_fire_allowed - t
-									local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
-									local queue_exlude = (restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") and 60 / restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude")) or 0.6
-									if queue_exlude >= next_fire and next_fire_current_t < next_fire_delay * queue_window then
-										self._queue_fire = true
+								if input.btn_primary_attack_press and fire_mode == "single" then
+									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
+										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+										local next_fire_last = weap_base._next_fire_allowed - next_fire
+										local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
+										local next_fire_current_t = weap_base._next_fire_allowed - t
+										local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
+										local queue_exlude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") or 0.6
+										local next_fire_queue = 60 / queue_exlude
+
+										if next_fire_queue >= next_fire and next_fire_current_t < next_fire_delay * queue_window then
+											self._queue_fire = true
+										end
+									else
+										if not input.fake_attack then
+											self._queue_burst = true
+										end
 									end
 								end
 							else
 								self._queue_fire = nil
+								self._queue_burst = nil
 							end
 							self:_check_stop_shooting()
 
@@ -807,6 +816,10 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					if fired then
 						self._queue_fire = nil
 						self._already_fired = true
+
+						if input.clear_queue then
+							self._queue_burst = nil
+						end
 
 						if weap_base._descope_on_fire then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
@@ -946,6 +959,7 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 			self._queue_reload_interupt = true
 		end
 		self._queue_fire = nil
+		self._queue_burst = nil
 		if not self._equipped_unit:base():weapon_tweak_data().spin_up_shoot then
 			self._spin_up_shoot = nil
 		end
@@ -1430,6 +1444,7 @@ function PlayerStandard:_start_action_running(t)
 	end
 				
 	self._queue_fire = nil
+	self._queue_burst = nil
 	self._running_wanted = false
 
 	if (not self._state_data.shake_player_start_running or not self._ext_camera:shaker():is_playing(self._state_data.shake_player_start_running)) and managers.user:get_setting("use_headbob") then
@@ -2458,11 +2473,15 @@ function PlayerStandard:_update_burst_fire(t)
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
 		end
-		if self._equipped_unit:base():burst_rounds_remaining() or (self._equipped_unit:base():in_burst_mode() and self._equipped_unit:base()._auto_burst and not self._equipped_unit:base():clip_empty() and self._controller and self._controller:get_input_bool("primary_attack")) then
-			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
+		local auto_burst = self._equipped_unit:base()._auto_burst
+		local queue_burst = not auto_burst and (self._queue_burst and not self:_in_burst())
+		local burst_complete = self._equipped_unit:base()._burst_rounds_remaining <= 0
+		if self._equipped_unit:base():burst_rounds_remaining() or queue_burst or (self._equipped_unit:base():in_burst_mode() and auto_burst and not self._equipped_unit:base():clip_empty() and self._controller and self._controller:get_input_bool("primary_attack")) then
+			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true, fake_attack = true, clear_queue = not auto_burst and burst_complete })
 		end
 	end
 end
+
 
 --Recoil used at the end of burst fire.
 function PlayerStandard:force_recoil_kick(weap_base, shots_fired)

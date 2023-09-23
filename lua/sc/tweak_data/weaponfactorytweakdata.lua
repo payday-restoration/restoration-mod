@@ -6937,7 +6937,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 	self.parts.wpn_fps_pis_rage_fl_mount = {
 		type = "shitass",
 		name_id = "bm_wp_judge_b_standard",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota",
+		unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
+		--unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota",
 		stats = {
 			value = 1
 		}
@@ -6953,6 +6954,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_raging_bull", "resmod_raging_bull"
 	table.insert(self.wpn_fps_pis_rage.uses_parts, "wpn_fps_upg_fl_pis_perst")
 
 	self.wpn_fps_pis_rage.override = self.wpn_fps_pis_rage.override or {}
+	self.wpn_fps_pis_rage.override.wpn_fps_pis_usp_fl_adapter = {
+		parent = "shitass",
+		a_obj = "a_vg"
+	}
 	self.wpn_fps_pis_rage.override.wpn_fps_pis_2006m_fl_adapter = {
 		parent = "shitass",
 		a_obj = "a_vg"
@@ -15792,8 +15797,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_chinchilla", "resmod_chinchilla", 
 	self.parts.wpn_fps_pis_chinchilla_fl_mount = {
 		type = "shitass",
 		name_id = "none",
-		unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray"
-		,
+		unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_cobray/wpn_fps_smg_x_cobray",
 		stats = {
 			value = 1
 		}
@@ -15819,7 +15823,20 @@ end)
 --Akimbo Castigo .44
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_chinchilla", "resmod_x_chinchilla", function(self)
 
-	--Nothing yet
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_m3x")
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_crimson")
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_x400v")
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_laser")
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_tlr1")
+	table.insert(self.wpn_fps_pis_x_chinchilla.uses_parts, "wpn_fps_upg_fl_pis_perst")
+
+	self.wpn_fps_pis_x_chinchilla.adds = self.wpn_fps_pis_x_chinchilla.adds or {}
+	self.wpn_fps_pis_x_chinchilla.override = self.wpn_fps_pis_x_chinchilla.override or {}
+
+	self.wpn_fps_pis_x_chinchilla.override.wpn_fps_pis_usp_fl_adapter = {
+		parent = "shitass",
+		a_obj = "a_vg"
+	}
 
 end)
 
@@ -32533,6 +32550,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_lmg_rpk_npc.override = deep_clone(self.wpn_fps_lmg_rpk.override)
 
+	for i, part_id in pairs(self.wpn_fps_pis_x_chinchilla.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].a_obj then
+			if self.parts[part_id].a_obj == "a_fl"  then
+				self.wpn_fps_pis_x_chinchilla.adds[part_id] = {
+					"wpn_fps_pis_chinchilla_fl_mount","wpn_fps_pis_usp_fl_adapter"
+				}
+				self.wpn_fps_pis_x_chinchilla.override[part_id] = {
+					parent = "shitass",
+					a_obj = "a_vg"
+				}
+			end
+		end
+	end
+	self.wpn_fps_pis_x_chinchilla_npc.adds = deep_clone(self.wpn_fps_pis_x_chinchilla.adds)
+	self.wpn_fps_pis_x_chinchilla_npc.override = deep_clone(self.wpn_fps_pis_x_chinchilla.override)
+
 	for i, part_id in pairs(self.wpn_fps_pis_chinchilla.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].a_obj then
 			if self.parts[part_id].a_obj == "a_fl"  then
@@ -32553,7 +32586,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		if self.parts[part_id] and self.parts[part_id].a_obj then
 			if self.parts[part_id].a_obj == "a_fl"  then
 				self.wpn_fps_pis_rage.adds[part_id] = {
-					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_2006m_fl_adapter"
+					"wpn_fps_pis_rage_fl_mount","wpn_fps_pis_usp_fl_adapter"
 				}
 				self.wpn_fps_pis_rage.override[part_id] = {
 					parent = "shitass",

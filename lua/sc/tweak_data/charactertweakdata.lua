@@ -2734,7 +2734,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.fire_pool_damage_mul = 0.25
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
-	self.phalanx_minion.damage.shield_knocked = true
+	self.phalanx_minion.damage.shield_knocked = false
 	self.phalanx_minion.priority_shout = "f31"
 	self.phalanx_minion.bot_priority_shout = "f31x_any"		
 	self.phalanx_minion.move_speed = presets.move_speed.normal

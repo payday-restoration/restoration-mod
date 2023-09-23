@@ -291,6 +291,8 @@ function PlayerStandard:_check_action_throw_projectile(t, input)
 	end
 
 	self:_start_action_throw_projectile(t, input)
+	self._queue_fire = nil
+	self._queue_burst = nil
 
 	return true
 end
@@ -314,6 +316,8 @@ function PlayerStandard:_check_action_throw_grenade(t, input)
 	end
 
 	self:_start_action_throw_grenade(t, input)
+	self._queue_fire = nil
+	self._queue_burst = nil
 
 	return action_wanted
 end
@@ -369,6 +373,8 @@ function PlayerStandard:_check_action_melee(t, input)
 	local instant = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 
 	self:_start_action_melee(t, input, instant)
+	self._queue_fire = nil
+	self._queue_burst = nil
 
 	--Stop chainsaw when no longer meleeing.
 	if input.btn_melee_release then
@@ -959,7 +965,6 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 			self._queue_reload_interupt = true
 		end
 		self._queue_fire = nil
-		self._queue_burst = nil
 		if not self._equipped_unit:base():weapon_tweak_data().spin_up_shoot then
 			self._spin_up_shoot = nil
 		end
@@ -3370,6 +3375,9 @@ function PlayerStandard:_start_action_reload(t)
 		end
 	end
 
+	self._queue_fire = nil
+	self._queue_burst = nil
+	
 	--Drop My Mag compatibilty
 	--I might take the time to better integrate this into the reload timers so you're not instantly dropping a mag right when you reload
 	for _, weapon_base in ipairs({ weapon, weapon._second_gun and weapon._second_gun:base() }) do

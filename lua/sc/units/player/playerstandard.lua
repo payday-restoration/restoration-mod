@@ -26,7 +26,7 @@ local norecoil_blacklist = { --From Zdann
 	
 	--Pistols
 	["peacemaker"] = true,
-	["model3"] = true
+	--["model3"] = true
 }
 
 local sound_buffer = BeardLib.Utils:FindMod("Megumin's Staff") and XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")

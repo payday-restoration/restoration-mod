@@ -2756,7 +2756,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.can_be_tased = false
 	self.phalanx_minion.immune_to_knock_down = true
 	self.phalanx_minion.immune_to_concussion = true
-	self.phalanx_minion.damage.immune_to_knockback = false
+	self.phalanx_minion.damage.immune_to_knockback = true
 	self.phalanx_minion.spawn_sound_event_2 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true

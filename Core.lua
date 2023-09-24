@@ -271,6 +271,7 @@ function restoration:Init()
 		"cane", --Santa's Workshop
 		"brb", --Brooklyn Bank
 		"mus", --The Diamond
+		"born", --Biker 1
 		"run", --Heat Street
 		"ranc", --Midland Ranch
 		"sah", --Shacklethorne
@@ -341,8 +342,7 @@ function restoration:Init()
 		"vit", --White House
 		"nmh", --No Mercy
 		"des",	--Henry's Rock	
-		"bph", --Hell's Island
-		"born", --Biker 1		
+		"bph", --Hell's Island		
 		"fex", --Buluc's Mansion
 		--Skirmish heists below
 		"skmc_mad",

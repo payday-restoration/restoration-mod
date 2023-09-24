@@ -20,6 +20,28 @@ return {
 		[102872] = {
 			ponr = ponr_value
 	},
+	[101687] = {
+		groups = {
+			GREEN_tanks = false,
+			BLACK_tanks = false,
+			SKULL_tanks = false,
+			TIT_tanks = false,
+			CS_shields = false,
+			FBI_shields = false,
+			FBI_shields_boom = false,
+			GS_shields = false,
+			GS_shields_boom = false,
+			GS_defend_shields = false
+		}
+	},
+	[102827] = {
+		groups = {
+			GREEN_tanks = false,
+			BLACK_tanks = false,
+			SKULL_tanks = false,
+			TIT_tanks = false
+		}
+	},
 	-- Delay SWAT response
 	[100327] = {
 		on_executed = {

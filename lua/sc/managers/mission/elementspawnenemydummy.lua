@@ -2107,7 +2107,7 @@ local murkywater_normal_overkill = {
 		
 		--fbi
 		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
-		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi_r870/ene_murkywater_light_fbi_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -2220,7 +2220,7 @@ local murkywater_mayhem = {
 		
 		--fbi
 		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
-		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi_r870/ene_murkywater_light_fbi_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -2332,7 +2332,7 @@ local murkywater_deathwish = {
 		
 		--fbi
 		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1", 
-		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi_r870/ene_murkywater_light_fbi_r870"]  = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -2445,7 +2445,7 @@ local murkywater_hecu = {
 		
 		--fbi
 		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1", 
-		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi_r870/ene_murkywater_light_fbi_r870"]  = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 		

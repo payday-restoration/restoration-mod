@@ -1,13 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 690
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 660
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 630	
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+	
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
 		ponr_value = 600	
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
 		ponr_value = 570	
@@ -128,10 +122,16 @@ return {
 			interval = 60
 		},
 		groups = {
-			tac_bull_rush = false,
-			tac_shield_wall = false,
-			tac_shield_wall_ranged = false,
-			tac_shield_wall_charge = false
+			GREEN_tanks = false,
+			BLACK_tanks = false,
+			SKULL_tanks = false,
+			TIT_tanks = false,
+			CS_shields = false,
+			FBI_shields = false,
+			FBI_shields_boom = false,
+			GS_shields = false,
+			GS_shields_boom = false,
+			GS_defend_shields = false
 		}
 	},
 	--Made Locke less annoying

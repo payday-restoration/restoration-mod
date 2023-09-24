@@ -1,5 +1,7 @@
 <table directory="assets">		
 	
+	<!--RPK for The Commissar that outsmarted you again-->
+	<unit_mat			path="units/pd2_mod_reapers/weapons/wpn_npc_rpk_sc/wpn_npc_rpk_sc" load="false" force="false"/>
 
 	<!--Biker Dozer-->
 	<unit				path="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1" load="true"/>

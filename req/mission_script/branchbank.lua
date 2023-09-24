@@ -5,13 +5,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		bulldozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 900
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 840
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 780
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
 		ponr_value = 720
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
 		ponr_value = 660	

@@ -44,6 +44,7 @@ return {
 		ponr = ponr_value_1
 	},
 	[100929] = {
+		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value_2
 	},
 	--fixes some spawn typos

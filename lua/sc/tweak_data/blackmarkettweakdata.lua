@@ -1847,6 +1847,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"underbarrel_electric_groza",
 		"underbarrel_m203_groza",
 		"copr_ability",
+		"xmas_snowball",
 		"poison_gas_grenade",
 		"launcher_poison",
 		"launcher_poison_ms3gl_conversion",

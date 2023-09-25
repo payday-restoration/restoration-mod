@@ -362,6 +362,12 @@ function TipsTweakData:init()
 			category = "captains_res"
 		},	
 		{
+			cat_index = 13,
+			image = "enemy_winters_sc",
+			consoles = true,
+			category = "captains_res"
+		},	
+		{
 			cat_index = 1,
 			image = "general_cameras",
 			consoles = true,

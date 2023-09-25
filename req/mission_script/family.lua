@@ -1,19 +1,11 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 900
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 900
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 860
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
-		ponr_value = 860
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 830
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 780	
-	end
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+		ponr_value = 360
+	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+		ponr_value = 480
+	end	
 
 return {
 	--Pro Job PONR 
@@ -24,6 +16,23 @@ return {
 	[100370] = {
 		values = {
 			enabled = true
+		}
+	},
+	--disable the bad van escape spots
+	[100754] = {
+		values = {
+			enabled = false
+		}
+	},
+	[100755] = {
+		values = {
+			enabled = false
+		}
+	},
+	--Disable the SWAT Turret
+	[102124] = {
+		values = {
+			enabled = false
 		}
 	}
 }	

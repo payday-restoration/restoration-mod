@@ -2319,7 +2319,9 @@ function CharacterTweakData:_init_tank(presets)
 	
 	--Skulldozers, More tanky but moves as slow as Titandozers
 	self.tank_skull = deep_clone(self.tank)
-	self.tank_skull.dt_suppress = nil
+	self.tank_skull.dt_suppress = {
+		range = 300
+	}
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
 	self.tank_skull.move_speed = presets.move_speed.very_slow
@@ -2408,6 +2410,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_mini.headshot_dmg_mul = 15.625
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	self.tank_mini.can_throw_frag = true
+	self.tank_mini.grenade_toss_chance = 0.4
 	self.tank_mini.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_mini")	
 end
@@ -2424,6 +2427,7 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.use_radio = nil
 	self.tank_biker.no_omnia_heal = true
 	self.tank_biker.no_asu = true
+	self.tank_biker.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_biker")	
 end
 
@@ -2733,7 +2737,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.fire_pool_damage_mul = 0.25
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
-	self.phalanx_minion.damage.shield_knocked = true
+	self.phalanx_minion.damage.shield_knocked = false
 	self.phalanx_minion.priority_shout = "f31"
 	self.phalanx_minion.bot_priority_shout = "f31x_any"		
 	self.phalanx_minion.move_speed = presets.move_speed.normal
@@ -2753,7 +2757,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.can_be_tased = false
 	self.phalanx_minion.immune_to_knock_down = true
 	self.phalanx_minion.immune_to_concussion = true
-	self.phalanx_minion.damage.immune_to_knockback = false
+	self.phalanx_minion.damage.immune_to_knockback = true
 	self.phalanx_minion.spawn_sound_event_2 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
@@ -2783,7 +2787,7 @@ end
 
 function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip = deep_clone(self.phalanx_minion)
-	self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan", "captain"}
+	self.phalanx_vip.tags = {"law", "shield", "special", "shield_titan", "captain", "phalanx_vip"}
 	self.phalanx_vip.damage.shield_knocked = false
 	self.phalanx_vip.damage.immune_to_knockback = true
 	self.phalanx_vip.immune_to_knock_down = true
@@ -2840,14 +2844,46 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.captain_type = restoration.captain_types.winter
 	self.phalanx_vip.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_vip")
+	
+	--Winters, shield broken
+	self.phalanx_vip_break = deep_clone(self.phalanx_vip)
+	self.phalanx_vip_break.tags = {"law", "special", "captain"}
+	self.phalanx_vip_break.rotation_speed = 3
+	self.phalanx_vip_break.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+	self.phalanx_vip_break.dodge = presets.dodge.elite
+	self.phalanx_vip_break.move_speed = presets.move_speed.very_fast
+	self.phalanx_vip_break.can_throw_frag = true	
+	self.phalanx_vip_break.grenade_cooldown = 12
+	self.phalanx_vip_break.grenade_toss_chance = 1
+	self.phalanx_vip_break.HEALTH_INIT = 140
+	self.phalanx_vip_break.headshot_dmg_mul = 2.5
+	self.phalanx_vip_break.allowed_stances = nil
+	self.phalanx_vip_break.allowed_poses = nil
+	self.phalanx_vip_break.no_equip_anim = nil
+	self.phalanx_vip_break.no_run_start = nil
+	self.phalanx_vip_break.no_run_stop = nil
+	self.phalanx_vip_break.always_face_enemy = nil
+	self.phalanx_vip_break.wall_fwd_offset = nil	
+	self.phalanx_vip_break.damage.explosion_damage_mul = 0.40
+	self.phalanx_vip_break.damage.rocket_damage_mul = 0.40
+	self.phalanx_vip_break.damage.fire_pool_damage_mul = 0.20
+	self.phalanx_vip_break.damage.bullet_damage_mul = 0.45
+	self.phalanx_vip_break.damage.fire_damage_mul = 0.30		
+	self.phalanx_vip_break.modify_health_on_tweak_change = true
+	self.phalanx_vip_break.announce_incomming = nil
+	self.phalanx_vip_break.marshal_logic = true	
+	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 15
+	table.insert(self._enemy_list, "phalanx_vip_break")		
 end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"law", "custom", "special", "captain"}
+	self.spring.tags = {"law", "custom", "special", "captain", "spring"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
+	self.spring.grenade_cooldown = 12
+	self.spring.grenade_toss_chance = 1
 	self.spring.no_run_start = true
 	self.spring.no_run_stop = true
 	self.spring.no_retreat = true
@@ -2905,6 +2941,7 @@ function CharacterTweakData:_init_spring(presets)
 	
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
+	self.headless_hatman.tags = {"law", "custom", "special", "captain", "headless_hatman"}
 	self.headless_hatman.speech_prefix_p1 = "cpa"
 	self.headless_hatman.speech_prefix_p2 = nil
 	self.headless_hatman.speech_prefix_count = nil
@@ -2989,7 +3026,7 @@ end
 
 function CharacterTweakData:_init_autumn(presets)
 	self.autumn = deep_clone(presets.base)
-	self.autumn.tags = {"law", "custom", "special", "customvo"}
+	self.autumn.tags = {"law", "custom", "special", "customvo", "autumn"}
 	self.autumn.experience = {}
 	self.autumn.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.autumn.weapon = deep_clone(presets.weapon.normal)
@@ -17831,11 +17868,6 @@ function CharacterTweakData:_set_overkill_290()
 	
 	self.spring.dt_suppress = {
 		range = 2500
-	}
-	
-	--Skulldozers can now push back players
-	self.tank_skull.dt_suppress = {
-		range = 300
 	}
 		
 	self.autumn.damage.bullet_damage_mul = 0.45

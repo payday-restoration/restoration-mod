@@ -195,11 +195,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
-		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto weapons to assist with oversampling (sending inputs faster than the weapon can fire).",
-		["RestorationModQueuedShootingWindowTitleID"] = "Buffer Fire Input Sensitivity",
-		["RestorationModQueuedShootingWindowDescID"] = "Determines the window of time for your fire input to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
-		["RestorationModQueuedShootingExcludeTitleID"] = "Buffer Inputs Fire Rate Limit",
+		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).",
+		["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
+		["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
+		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Firerate Limit",
 		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
+		["RestorationModQueuedShootingMidBurstTitleID"] = "Burstfire Mid-Burst Input Buffer",
+		["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
@@ -938,6 +940,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_lobby"] = "Lobby",
 		["menu_state_loading"] = "Loading",
 		["menu_state_ingame"] = "Ingame",
+		
+		["menu_description"] = "The Plan",
 		
 		-- ///Stuff ripped from the various locale files we had ///
 		
@@ -1886,7 +1890,69 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_damage_control"] = "Hip Flask",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
-		--WEAPON & ATTACHMENT DESCRIPTIONS 
+		--WEAPON & ATTACHMENT DESCRIPTIONS
+		--[[ MANUFACTURERS ]]
+				--In-Universe Manufacturer deets
+					--Crosskill/Corvus (Payday/OTWD) = Colt
+					--DSC [Defense System Crosskill] (PD2) = Saco Defense
+					--Simmons Armory (PD2) = Springfield Armory 
+						--same acronym lol
+					--Bernetti = Beretta
+					--Chimano/Stryk = Glock 
+					--SG = HK (Heckler Und Koch)
+					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
+						--Signature = European Branches, FIK = American Branch?
+					--VF (OTWD + PD3) = FNH
+					--Lakner (PD2) = Walther
+					--Kang Arms (PD2) = Norinco
+					--Northwest (PD3) = China South Industries Group
+					--Touro = Taurus (lmao)
+					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
+						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
+					--ITI (OTWD) = IMI/IWI
+					--CR/TKA (PD2/OTWD) = CZ
+					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
+					--Ferino (OTWD) = Franchi
+					--Moretti (PD2) = Benelli(?)
+					--Stefan (PD2) = Steyr
+					--Wasp = Magpul
+						--idunno
+					--Repeater/Eaton (PD2/OTWD) = Winchester
+					--Rangehitter (PD2) = Marlin
+						--"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
+
+					["manufacturer_colt"] = "Crosskill",
+					["manufacturer_saco"] = "DSC",
+					["manufacturer_springfield"] = "Simmons",
+					["manufacturer_sigusa"] = "FIK",
+					["manufacturer_keltec"] = "LWI",
+					["manufacturer_winchester"] = "Eaton",
+					["manufacturer_marlin"] = "Rangehitter",
+					["manufacturer_swesson"] = "J&M",
+
+					["manufacturer_fnh"] = "VF",
+					["manufacturer_sig"] = "Signature",
+					["manufacturer_hk"] = "S&G",
+					["manufacturer_walther"] = "Lakner",
+					["manufacturer_steyr"] = "Stefan",
+					["manufacturer_glock"] = "Chimano",
+
+					["manufacturer_benelli"] = "Moretti",
+					["manufacturer_franchi"] = "Ferino",
+					["manufacturer_beretta"] = "Bernetti",
+
+					["manufacturer_kalashnikov"] = "IZMHA",
+					["manufacturer_tula"] = "IZMHA",
+					["manufacturer_cz"] = "TKA",
+
+					["manufacturer_imi"] = "ITI",
+
+					["manufacturer_taurus"] = "Touro",
+
+					["manufacturer_chinaindustries"] = "Northwest",
+					["manufacturer_norinco"] = "Kang Arms",
+
+
 			--Contains anything that should always be set regardless of the weapon names option chosen like descriptions or Resmod added weapons and attachments
 			--[[ RESMOD WEAPONS + ATTACHMENTS ]]
 				--socom deez nuts--
@@ -1918,6 +1984,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
+				["bm_wally_desc"] = "#{important_2}#Hey kiddo...##",
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst#{skill_color}# fire rate is #{skill_color}#increased to 950 RPM.##",
@@ -2072,6 +2139,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--CUSTOM PISTOLS
+					--M2019 Blaster
+					["thatgun_desc"] = "It's the gun!\n\nYou know, that gun!\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
 					--Malorian 3516
 					["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",
 					--Colt Detective
@@ -2238,6 +2307,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Akimbo Krinkov
 				["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 				--CUSTOM ARs
+					--QBZ-191
+					["bm_qbz191_sc_desc"] = "Next generation Chinese assault rifle chambered in 5.8x42mm.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 					--AN-94/92
 					["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
 					--NV4
@@ -2400,38 +2471,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if weapon_names <= 2 then --Resmod names
 			LocalizationManager:add_localized_strings({	
 
-				--In-Universe Manufacturer deets
-
-					--Crosskill/Corvus (Payday/OTWD) = Colt
-					--DSC [Defense System Crosskill] (PD2) = Saco Defense
-					--Simmons Armory (PD2) = Springfield Armory 
-						--same acronym lol
-					--Bernetti = Beretta
-					--Chimano/Stryk = Glock 
-					--SG = HK (Heckler Und Koch)
-					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
-						--Signature = European Branches, FIK = American Branch?
-					--VF (OTWD + PD3) = FNH
-					--Lakner (PD2) = Walther
-					--Kang Arms (PD2) = Norinco
-					--Northwest (PD3) = China South Industries Group
-					--Public Defender (PD2) = Taurus (lmao)
-					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
-						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
-					--ITI (OTWD) = IMI/IWI
-					--CR/TKA (PD2/OTWD) = CZ
-					--TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
-					--Ferino (OTWD) = Franchi
-					--Moretti (PD2) = Benelli(?)
-					--Stefan (PD2) = Steyr
-					--Wasp = Magpul
-						--idunno
-					--Repeater/Eaton (PD2/OTWD) = Winchester
-						--Combine the names into "Repeaton" maybe?
-					--Rangehitter (PD2) = Marlin
-						--"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
-
-
 				--[[ PISTOLS ]]
 					--Gecko Pistol
 					["bm_w_maxim9"] = "Magnus 9",
@@ -2494,6 +2533,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_m_big"] = "Casket Magazine",
 					--Crosskill Chunky
 					["bm_w_m1911"] = "Crosskill A1",
+					["bm_w_x_m1911"] = "Price & MacTavish",
 					--Crosskill Guard
 					["bm_w_shrew"] = "Crosskill Guard",
 					["bm_w_x_shrew"] = "Barry & Paul",
@@ -2746,6 +2786,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--QBZ-191
+						["bm_w_pd3_qbz191"] = "Northwest B-9",
 						--AN-94/92
 						["bm_w_tilt"] = "KVK-99",
 						--HK G36
@@ -2878,9 +2920,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({	
 
 				["bm_w_pl14"] = "WS-14",
+				["bm_w_x_pl14"] = "Akimbo WS-14s",
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
+				["bm_w_x_m1911"] = "Akimbo Crosskill A1s",
 				["bm_w_x_sparrow"] = "Akimbo Sparrows",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scarl"] = "VF-6M",
@@ -4078,8 +4122,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_5"] = "Cloakers can easily counter lone or cut off heisters.",
 		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
 		["loading_gameplay_res_7"] = "Green Bulldozers deal high amounts of damage and can often break even the heaviest of armors with a single shot.",
-		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine.",
-		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire and will fire until their belts are empty.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine. They also run faster than other dozers but have much less health.",
+		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire that knockbacks on close range and will fire until their belts are empty. Their top armor can take up more damage than regular dozer but move as slow as Titandozers.",
 		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers, high rate of fire and good damage. An unholy union of Green and Black dozers.",
 		["loading_gameplay_res_11"] = "Target priority is important. A Bulldozer of any type is worth more attention than a Light SWAT.",
 		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 10%.",
@@ -4103,37 +4147,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_title"] = "Restoration Unit Tips",
 		["loading_new_units_res_1"] = "OMNIA ASUs will provide damage bonuses to nearby allies marked by giving them Yellow laser attachments.",
 		["loading_new_units_res_2"] = "LPFs are weak to melee.",
-		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple.",
+		["loading_new_units_res_3"] = "Lighter units will be overhealed by the LPF. Enemies are outlined in purple during overhealing process.",
 		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear.",
 		["loading_new_units_res_5"] = "Titan Dozers prefer putting distance between them and their target to unleash the full potential of their railguns undisturbed.",
 		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",
 		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers.",
-		["loading_new_units_res_8"] = "Titan Shields can only be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic, and special AP rounds in Sentry Guns.",
+		["loading_new_units_res_8"] = "Titan Shields can be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic or with special AP rounds in Sentry Guns. Even shooting their shield long enough can make them drop it; beware of their sudden tactic change when it happens.",
 		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
 		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily, indicated by a blue UI overlay.",
 		["loading_new_units_res_11"] = "Veteran Cops will drop Tear Gas grenades on death when killed by anything but a headshot.",
 		["loading_new_units_res_12"] = "Veteran Cops move quickly making shots harder to land.",
 		["loading_new_units_res_13"] = "The Riot Gear clad Titan SWAT are somewhat resistant to melee.",
 		["loading_new_units_res_14"] = "Titan SWAT cannot be taken hostage or converted to fight on your side.",
-		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns.",
+		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns that either push back or concusses the enemy.",
 		["loading_new_units_res_16"] = "The dreaded Bravo units spawn on Pro Jobs only, when a PONR is triggered. They are powerful no-nonsense enemies with enhanced body armor, and more powerful weapons.",
 		["loading_new_units_res_17"] = "Bravo units can throw frag grenades. Mind your surroundings when you see them flashing and emitting a beeping countdown.",
 		["loading_new_units_res_18"] = "AKAN fields their own Titan units called D-Series, developed by their R&D firm DRAK.",
 		["loading_new_units_res_19"] = "The Grenadier launches tear gas grenades at range with his underbarrel attachment, damaging players that stand in the cloud. On Death Sentence he instead comes armed with deadlier, stamina-draining nerve gas grenades.",
+		["loading_new_units_res_20"] = "Titan Shields have flashbang panels mounted on their shields. As a panel charges up, you can shoot it to stop it, breaking it and briefly stunning the wielder in the process.",
 		--Captain Hints
 		["loading_captains_res_title"] = "Restoration Captain Tips",
-		["loading_captains_res_1"] = "To take Captain Summers down, target his crew first starting with Doc. He's unkillable until his entire crew is dead, and the other two are nearly invulnerable until Doc is dead.",		
+		["loading_captains_res_1"] = "Captain Summers' high damage resistance drops as each member of his crew is taken out. Target Doc first as he can heal the rest of his crew so long as he's standing.",		
 		["loading_captains_res_2"] = "Don't hug Captain Summers. He WILL melt you with his flamethrower.",		
-		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and take advantage of his immobility.",	
+		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and take advantage of his low mobility.",	
 		["loading_captains_res_4"] = "Captain Spring throws Cluster HE grenades periodically.",	
-		["loading_captains_res_5"] = "Captain Spring may be dangerous, but he is incredibly slow and has poor range.",	
+		["loading_captains_res_5"] = "Captain Spring may be dangerous due to his knockback capabilites but he is incredibly slow and has poor range.",	
 		["loading_captains_res_6"] = "Captain Autumn will loudly taunt when he attacks.",	
-		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival, as to not ruin the element of surprise.",	
-		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected in the map for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
+		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival as to not ruin his element of surprise.",	
+		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected when active for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
 		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
-		["loading_captains_res_10"] = "Captain Winters is nearly immune to explosives and fire, and has strong bullet resistance, but is somewhat vulnerable to melee.",	
-		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable.",	
+		["loading_captains_res_10"] = "Captain Winters has a strong resistance to bullets and even stronger ones to explosives and fire. Despite that, he is somewhat vulnerable to melee.",	
+		["loading_captains_res_11"] = "Captain Winters' shield cannot be pierced but it will break after soaking up enough damage; like Titan Shields, beware of his second phase.",	
 		["loading_captains_res_12"] = "Captain Winters will wander the map, healing and overhealing nearby enemies.",	
+		["loading_captains_res_13"] = "Captain Winters' shield has flashbang panels like those used by Titan Shields; just keep in mind his flashbang panels don't break after being shot.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Restoration Stealth Tips",
 		["loading_stealth_res_1"] = "The security Command Post will send guards to investigate malfunctioning cameras, allowing it to be used as a lure.",	
@@ -4393,6 +4439,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360"] = "Eagle Eye",
 		["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
 		["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
+		
+		["mutator_goldfarbdozers"] = "Double Trouble",
+		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4421,6 +4471,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a ASU unit.",
 		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green or Black Bulldozer spawns, there is a chance that it will be replaced by a Skulldozer.",
 		["menu_cs_modifier_10secondsresponsetime"] = "All police assaults now start at maximum intensity.",
+		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
 
 		["bm_menu_skill"] = "Crew Boosts",
 
@@ -4592,7 +4643,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ranged weapons to have a chance to stagger Shield enemies when shooting their shield; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields## #{risk}#and## #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ability to stagger shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger

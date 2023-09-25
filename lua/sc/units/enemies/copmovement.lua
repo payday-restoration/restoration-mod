@@ -58,6 +58,7 @@ action_variants.tank_black.walk = TankCopActionWalk
 action_variants.tank_skull = clone(security_variant)
 action_variants.tank_skull.walk = TankCopActionWalk
 action_variants.biker_guard = security_variant
+action_variants.phalanx_vip_break = security_variant
 action_variants.phalanx_minion_assault = clone(security_variant)
 action_variants.phalanx_minion_assault.hurt = ShieldActionHurt
 action_variants.phalanx_minion_assault.walk = ShieldCopActionWalk
@@ -325,7 +326,7 @@ function CopMovement:do_omnia(self)
 					"summers"
 				}				
 				heal_range = 1600
-			elseif self._unit:base()._tweak_table == "phalanx_vip" then
+			elseif self._unit:base()._tweak_table == "phalanx_vip" or self._unit:base()._tweak_table == "phalanx_vip_break" then
 				heal_range = 2000
 				heal_vo = "heal_chatter_winters"
 			end

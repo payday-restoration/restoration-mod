@@ -103,7 +103,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"sparrow",
 					"x_sparrow",
 					"gator",
-					"pl14"
+					"pl14",
+					"x_pl14"
 				}
 			},
 		l15 = {

@@ -197,12 +197,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAutoDMRsDescID"] = "반자동 및 완전 자동 발사 모드가 있는 모든 지정사수 소총에 완전 자동으로 설정할 지 여부를 전환합니다.",
 		["RestorationModSprintCancelTitleID"] = "위기모면 에이스 효과 전력 질주 시 재장전 취소",
 		["RestorationModSprintCancelDescID"] = "\"위기모면\" 스킬을 사용 중일때 전력 질주를 시작하면 진행 중인 재장전을 취소할지 여부를 설정합니다. 전력 질주 중에 재장전은 영향을 받지 않습니다.",			
-		["RestorationModQueuedShootingTitleID"] = "발사 입력 버퍼",
-		["RestorationModQueuedShootingDescID"] = "오버샘플링(무기가 발사할 수 있는 것보다 빠르게 발사)을 지원하기 위해 반자동 무기에 대한 발사 입력 버퍼링을 활성화/비활성화합니다.",
-		["RestorationModQueuedShootingWindowTitleID"] = "발사 입력 대기 감도 버퍼",
-		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링할 발사 입력 시간을 결정합니다. (높은 값 = 초기 버퍼)",
-		["RestorationModQueuedShootingExcludeTitleID"] = "발사 속도 입력 제한 버퍼",
-		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 입력의 버퍼링을 제한합니다.",		
+		["RestorationModQueuedShootingTitleID"] = "발사 선입력",
+		["RestorationModQueuedShootingDescID"] = "오버샘플링(무기가 발사할 수 있는 것보다 빠르게 발사)을 지원하기 위해 반자동 및 무기의 발사 선입력을 활성화/비활성화합니다.",
+		["RestorationModQueuedShootingWindowTitleID"] = "단발 선입력 감도",
+		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링되는 발사 선입력 시간 간격을 결정합니다. (높은 값 = 더 일찍 선입력)",
+		["RestorationModQueuedShootingExcludeTitleID"] = "단발 선입력 발사 속도 제한",
+		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 선입력의 버퍼링을 제한합니다.",
+		["RestorationModQueuedShootingMidBurstTitleID"] = "점사 점사 선입력",
+		["RestorationModQueuedShootingMidBurstDescID"] = "점사 도중에 만들어지는 버퍼 선입력을 결정합니다.",				
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
@@ -941,6 +943,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_lobby"] = "Lobby",
 		["menu_state_loading"] = "Loading",
 		["menu_state_ingame"] = "Ingame",
+
+		["menu_description"] = "The Plan",				
 		
 		-- ///Stuff ripped from the various locale files we had ///
 		
@@ -1470,17 +1474,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_x_model3"] = "아킴보 Frenchman Model 87 리볼버",
 		["bm_x_model3_sc_desc"] = "이 쌍리볼버를 들고 정오에 당신의 내면에 있는 투덜거리는 자질을 끌어내고 경찰에게 듀얼을 도전하세요.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		--Raging bull
-		["bm_rage_sc_desc"] = "매우 강력한 단거리 대포. 정렬하는 멍청이들을 맞추어 빠르게 쓰려트립니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적 여러 명을 관통할 수 있습니다.##",	
-		["bm_x_rage_sc_desc"] = "전혀 좋지도 않고 실용적이지도 않지만, 은행 강도 사건에서 이것들을 빼내서 경찰력을 압박하고 싶을 때 사용할 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적 여러 명을 관통할 수 있습니다.##",	
+		["bm_rage_sc_desc"] = "매우 강력한 단거리 대포. 정렬하는 멍청이들을 맞추어 빠르게 쓰려트립니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",	
+		["bm_x_rage_sc_desc"] = "전혀 좋지도 않고 실용적이지도 않지만, 은행 강도 사건에서 이것들을 빼내서 경찰력을 압박하고 싶을 때 사용할 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",	
 		--Castigo
 		["bm_chinchilla_sc_desc"] = "강력하고 정확하며 스타일리시합니다. DC에서 더 내구성이 강한 적들을 돌파하는 데 유용합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		["bm_x_chinchilla_sc_desc"] = "시카리오는 그의 마크가 다운되었는지 확인해야 하며, 이 2개가 이를 보장합니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		--RUS-12
-		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#방탄복과 여러 적, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
+		["bm_rsh12_sc_desc"] = "한 손으로 대구경탄 싸기 시합의 절대적인 마지막 수단.\n\n#{skill_color}#방탄복과 다수의 적, 방패 및 얇은 벽을 관통할 수 있습니다.##",			
 		--SAA/Peacemaker
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복과 여러 적, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가시키는## 팬링 기능이 있습니다.",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복과 다수의 적, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가시키는## 팬링 기능이 있습니다.",
 		--CUSTOM HANDGUNS
+		--M2019 Blaster
+		["thatgun_desc"] = "이건 총이야!\n\n알잖아, 그 총!\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",
+		--Malorian 3516
+		["whydoyoucome"] = "로커보이 조니 실버핸드를 위한 특별히 제작된 유일한 총기입니다.\n\n#{skill_color}#다수의 적과 방탄복을 관통할 수 있습니다.\n탄은 지향 사격하는 동안 표면을 튕겨내고 조준하는 동안에는 벽을 관통합니다.\n개머리판으로 공격할 시 단거리를 가진 불길을 발사합니다.##",				
 		--Px4
 		["bm_w_px4"] = "Bernetti Hx4 Canaan 권총",		
 		--Browning Hi-Power
@@ -1702,6 +1710,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
 		
 		--CUSTOM ARs
+		--QBZ-191
+		["bm_w_pd3_qbz191"] = "Northwest B-9 소총",
+		["bm_qbz191_sc_desc"] = "5.8x42mm 구경탄을 사용하는 차세대 중국 돌격소총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 25%를 가합니다.##",
 		--AN-94/92
 		["bm_w_tilt"] = "KVK-99 소총",
 		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",	
@@ -2525,7 +2536,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_copr_ability"] = "약병",
 		["bm_grenade_damage_control"] = "힙 플라스크",
 		["bm_grenade_smoke_screen_grenade_desc"] = "범위: #{skill_color}#4m## \n지속 시간: #{skill_color}#12초## \n기폭: #{skill_color}#정지 상태를 유지한 후 1초## \n\n이것 하나만 던지면, 연기 속으로 사라져서, 적이 당신을 제대로 조준하지 못하게 할 수 있습니다.",
-		
+
+
+		["manufacturer_colt"] = "Crosskill",
+		["manufacturer_saco"] = "DSC",
+		["manufacturer_springfield"] = "Simmons",
+		["manufacturer_sigusa"] = "FIK",
+		["manufacturer_keltec"] = "LWI",
+		["manufacturer_winchester"] = "Eaton",
+		["manufacturer_marlin"] = "Rangehitter",
+		["manufacturer_swesson"] = "J&M",
+
+		["manufacturer_fnh"] = "VF",
+		["manufacturer_sig"] = "Signature",
+		["manufacturer_hk"] = "S&G",
+		["manufacturer_walther"] = "Lakner",
+		["manufacturer_steyr"] = "Stefan",
+		["manufacturer_glock"] = "Chimano",
+
+		["manufacturer_benelli"] = "Moretti",
+		["manufacturer_franchi"] = "Ferino",
+		["manufacturer_beretta"] = "Bernetti",
+
+		["manufacturer_kalashnikov"] = "IZMHA",
+		["manufacturer_tula"] = "IZMHA",
+		["manufacturer_cz"] = "TKA",
+
+		["manufacturer_imi"] = "ITI",
+
+		["manufacturer_taurus"] = "Touro",
+
+		["manufacturer_chinaindustries"] = "Northwest",
+		["manufacturer_norinco"] = "Kang Arms",
+
 		
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
@@ -2609,6 +2652,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_1911_m_big"] = "캐스킷 탄창",
 					--Crosskill Chunky
 					["bm_w_m1911"] = "Crosskill A1",
+					["bm_w_x_m1911"] = "프라이스 & 맥태비시",
 					--Crosskill Guard
 					["bm_w_shrew"] = "Crosskill Guard",
 					["bm_w_x_shrew"] = "베리 & 폴",
@@ -2660,9 +2704,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--Derringer
 						["bm_w_derringer"] = "Derringer",
 						--Automag .44
-						["bm_w_amt"] = "Automag .44",						
-						--Malorian 3516
-						["whydoyoucome"] = "로커보이 조니 실버핸드를 위한 특별히 제작된 유일한 총기입니다.\n\n#{skill_color}#다수의 적과 방탄복을 관통할 수 있습니다.\n탄은 지향 사격하는 동안 표면을 튕겨내고 조준하는 동안에는 벽을 관통합니다.\n개머리판으로 공격할 시 단거리를 가진 불길을 발사합니다.##",
+						["bm_w_amt"] = "Automag .44",
 		
 						--Colt Detective
 						["bm_w_coltds"] = "Crosskill Investigator",
@@ -2989,9 +3031,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			LocalizationManager:add_localized_strings({
 
 				["bm_w_pl14"] = "WS-14",
+				["bm_w_x_pl14"] = "아킴보 WS-14",
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "아킴보 Chimano 22C",
 				["bm_w_x_1911"] = "아킴보 Operator II",
+				["bm_w_x_m1911"] = "아킴보 Crosskill A1",
 				["bm_w_x_sparrow"] = "아킴보 Sparrow",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scarl"] = "VF-6M",
@@ -4190,8 +4234,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_5"] = "클로커는 혼자 있는 하이스터 혹은 하이스터를 가로막을 때 쉽게 반격합니다.",
 		["loading_gameplay_res_6"] = "클로커는 발로 차면 직접적인 체력 피해를 가합니다. 이것은 굴절 또는 반격 스킬로 감소시킬 수 있습니다.",
 		["loading_gameplay_res_7"] = "그린 불도저는 많은 양의 피해량을 입히고 종종 한 발로도 가장 무거운 방탄복을 부술 수도 있습니다.",
-		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다.",
-		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 강력한 제압 사격을 가하고 탄통이 비워질 때까지 사격합니다.",
+		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 피해량 대신 높은 연사력을 가지고 있으며 인상적인 드럼 탄창을 자랑합니다. 또한 다른 불도저보다 빠르게 달려오지만 체력이 훨씬 낮습니다.",
+		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 근거리에서 밀칠 수 있는 강한 제압 사격을 가하고 탄통이 비워질 때까지 사격합니다. 이들의 상의 장갑은 일반 도저보다 더 많은 피해를 견뎌낼 수 있지만 타이탄 도저만큼 느리게 움직입니다.",
 		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체하며, 그린 도저와 블랙 도저를 부정하게 조합하여 높은 연사력과 높은 피해량을 가합니다.",
 		["loading_gameplay_res_11"] = "목표 우선순위가 중요합니다. 모든 타입의 불도저는 경무장 SWAT보다 더 주의할 가치가 있습니다.",
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
@@ -4215,37 +4259,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_title"] = "레스토레이션 유닛 팁",
 		["loading_new_units_res_1"] = "옴니아 ASU는 주변 아군에게 노란색 레이저 부착물을 제공하여 피해량 보너스를 제공합니다.",
 		["loading_new_units_res_2"] = "LPF는 근접 공격에 약합니다.",
-		["loading_new_units_res_3"] = "경무장 유닛은 LPF에 의해 과치료됩니다. 과치료된 적은 보라색 테두리으로 표시됩니다.",
+		["loading_new_units_res_3"] = "경무장 유닛은 LPF에게 과치료를 받을 수 있습니다. 과치료 받는 중인 적은 보라색 윤곽선으로 표시됩니다.",
 		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음을 가지고 있습니다.",
 		["loading_new_units_res_5"] = "타이탄 도저는 방해받지 않고 레일건의 잠재력을 최대한 발휘하기 위해 목표물과 거리를 두는 것을 선호합니다.",
 		["loading_new_units_res_6"] = "타이탄 명사수는 더 높은 연사력과 이동 중에 사격할 수 있는 대신 표준품의 탄당 피해량과 방탄복 관통력을 교환했습니다.",
 		["loading_new_units_res_7"] = "타이탄 명사수는 레이저 사이트를 사용하지 않는 대신 사격하면 보라색 예광을 남깁니다.",
-		["loading_new_units_res_8"] = "타이탄 실드는 Thanatos 대물 저격소총, 찢고 죽인다 베이직을 찍었을때 OVE9000 톱, 센트리 건의 특수 철갑탄 탄으로만 뚫을 수 있습니다.",
+		["loading_new_units_res_8"] = "타이탄 실드는 Thanatos 대물 저격소총, 찢고 죽인다 베이직을 찍었을때 OVE9000 톱, 센트리 건의 특수 철갑탄 탄으로 뚫을 수 있습니다. 방패를 충분히 오랫동안 쏘면 방패를 떨어질 수 있으므로, 방패를 떨이게 한 후 갑자기 바뀌는 전술 변화에 주의하세요.",
 		["loading_new_units_res_9"] = "캡틴 스프링과 타이탄 도저는 항상 추가 헤드샷 피해를 입습니다.",
 		["loading_new_units_res_10"] = "타이탄 테이저는 이동을 일시적으로 매우 감소되는 감전탄을 발사합니다. 맞으면 파란색 UI 오버레이로 표시됩니다.",
 		["loading_new_units_res_11"] = "베테랑 경찰은 헤드샷 이외의 어느것에 의해 죽을 경우 최루 가스를 떨어뜨립니다.",
 		["loading_new_units_res_12"] = "베테랑 경찰은 빠르게 움직여 맞추기 어렵게 만듭니다.",
 		["loading_new_units_res_13"] = "진압 장비를 착용한 타이탄 SWAT은 근접 공격에 저항을 다소 가지고 있습니다.",
 		["loading_new_units_res_14"] = "타이탄 SWAT은 인질로 잡거나 당신 편에 싸우도록 전향시킬 수도 없습니다.",
-		["loading_new_units_res_15"] = "타이탄 SWAT은 경기관총과 자동 산탄총로 무장했습니다.",
+		["loading_new_units_res_15"] = "타이탄 SWAT은 적을 밀어내거나 충격을 유발하는 경기관총과 자동 산탄총로 무장했습니다.",
 		["loading_new_units_res_16"] = "위험한 브라보 유닛은 프로 잡에서 PONR이 트리거될 때만 생성됩니다. 그들은 강화된 방탄복과 더 강력한 무기를 갖춘 강력하고 무자비한 적입니다.",
 		["loading_new_units_res_17"] = "브라보 유닛은 파편 수류탄을 던질 수 있습니다. 주변이 깜박이고 경고음을 듣고 카운트다운되는 것을 주의하십시오.",
 		["loading_new_units_res_18"] = "아칸은 그의 연구개발 회사인 DRAK에서 개발한 D-시리즈라고 불리는 자체 타이탄 유닛을 배치합니다.",
 		["loading_new_units_res_19"] = "척탄병은 장착된 언더베럴을 사용하여 원거리에서 최루 가스 유탄을 발사하여 구름 속에 있는 플레이어에게 피해를 줍니다. 데스 센텐스에선 대신 더 치명적이고 스태미나를 소모하는 신경가스 유탄으로 무장합니다.",
-		
+		["loading_new_units_res_20"] = "타이탄 실드는 방패에 섬광 패널이 장착되어 있습니다. 패널이 충전 중일 때 패널을 쏘아 멈출 수 있으며, 그 과정에서 사용자를 잠시 기절시킬 수 있습니다.",
+		-- Captain Hints
 		["loading_captains_res_title"] = "레스토레이션 캡틴 팁",
-		["loading_captains_res_1"] = "캡틴 서머스를 쓰러뜨리려면 먼저 닥과 그의 팀원들부터 목표로 삼으십시오. 그는 그의 모든 팀원들이 죽을 때까지 죽일 수 없으며 다른 두 사람은 닥이 죽을 때까지는 거의 무적입니다.",		
+		["loading_captains_res_1"] = "캡틴 서머스의 높은 피해 저항력은 그의 팀원이 제거될 때마다 감소됩니다. 닥은 살아있는 동안 나머지 팀원을 치료할 수 있으므로 그를 먼저 목표로 삼으십시오.",		
 		["loading_captains_res_2"] = "캡틴 서머스를 안아주지 마십시오. 그는 화염 방사기로 당신을 녹일 것입니다.",		
-		["loading_captains_res_3"] = "캡틴 스프링은 엄청난 피해를 버틸 수 있지만 결국 쓰러질 것입니다. 그의 수류탄을 조심하고 느린 기동성을 이용하십시오.",	
+		["loading_captains_res_3"] = "캡틴 스프링은 엄청난 피해를 버틸 수 있지만 결국 쓰러질 것입니다. 그의 수류탄을 조심하고 그의 낮은 기동성을 이용하십시오.",	
 		["loading_captains_res_4"] = "캡틴 스프링은 주기적으로 클러스터 고폭 수류탄을 던집니다.",	
-		["loading_captains_res_5"] = "캡틴 스프링은 위험할 수 있지만 엄청나게 느리고 좋지 않은 사거리를 가지고 있습니다.",	
+		["loading_captains_res_5"] = "캡틴 스프링은 밀침 능력을 가고 있어 위험하지만 엄청나게 느리고 사거리가 좋지 않습니다.",	
 		["loading_captains_res_6"] = "캡틴 어텀은 공격할 때 큰 소리로 도발합니다.",	
-		["loading_captains_res_7"] = "다른 캡틴들과 달리 경찰은 기습 요소를 망치지 않기 위해 어텀의 도착을 알리지 않습니다.",	
-		["loading_captains_res_8"] = "캡틴 어텀은 한동안 맵에서 들키지 않으면 당신의 배치물를 점진적으로 비활성화할 것입니다. 비활성화된 배치물은 보라색 테투리로 표시되어 있으며 어텀을 찾아 쓰려트린 경우에만 다시 사용할 수 있습니다.",	
+		["loading_captains_res_7"] = "다른 캡틴들과 달리 경찰은 어텀의 기습 요소를 망치지 않기 위해 어텀의 도착을 알리지 않습니다.",	
+		["loading_captains_res_8"] = "캡틴 어텀은 한동안 활동 중일때 발각되지 않았다면 당신의 배치물를 점진적으로 비활성화할 것입니다. 비활성화된 배치물은 보라색 윤곽선으로 표시되어 있으며 어텀을 찾아 쓰려트린 경우에만 다시 사용할 수 있습니다.",	
 		["loading_captains_res_9"] = "주먹 싸움에서 캡틴 어텀을 이기지 못할 것입니다. 시도조차 하지도 마십시오.",	
-		["loading_captains_res_10"] = "캡틴 윈터스는 폭발물과 불에 거의 면역이며 강력한 총알 저항을 갖고 있지만 근접 공격에 다소 취약합니다.",	
-		["loading_captains_res_11"] = "캡틴 윈터스의 방패는 완전히 뚫을 수 없습니다.",	
-		["loading_captains_res_12"] = "캡틴 윈터스는 맵을 돌아다니며 주변의 적들을 치료하거나 과치료합니다.",	
+		["loading_captains_res_10"] = "캡틴 윈터스는 총알 저항력이 더욱 강하고 폭발물과 불 저항력도 강합니다. 그럼에도 불구하고 근접 공격에는 다소 취약합니다.",	
+		["loading_captains_res_11"] = "캡틴 윈터스의 방패는 뚫을 수 없지만 충분한 피해를 흡수했다면 부서집니다. 타이탄 실드처럼 그의 두 번째 단계를 조심하세요.",	
+		["loading_captains_res_12"] = "캡틴 윈터스는 맵을 돌아다니며 주변의 적들을 치료하거나 과치료합니다.",
+		["loading_captains_res_13"] = "캡틴 윈터스의 방패에는 타이탄 실드가 사용하는 것과 같은 섬광 패널이 있습니다. 그의 섬광 패널은 총에 맞아도 깨지지 않는다는 점을 명심하세요.",
 		--Stealth Hints
 		["loading_stealth_res_title"] = "레스토레이션 스텔스 팁",
 		["loading_stealth_res_1"] = "보안 경비 지휘소는 오작동하는 카메라를 조사하기 위해 경비원을 보내고 이를 이용해 미끼로 사용할 수 있습니다.",	
@@ -4506,6 +4552,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_quickscope360"] = "독수리의 눈",
 		["mutator_quickscope360_desc"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
 		["mutator_quickscope360_longdesc"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
+		
+		["mutator_goldfarbdozers"] = "이중 문제",
+		["mutator_goldfarbdozers_desc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
+		["mutator_goldfarbdozers_longdesc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4534,6 +4584,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_tear_gas"] = "모든 HRT 유닛은 15%의 추가 확률로 ASU 유닛이 됩니다.",
 		["menu_cs_modifier_dozer_lmg"] = "그린 또는 블랙 불도저가 생성될 때마다 스컬도저로 교체될 확률이 생깁니다.",
 		["menu_cs_modifier_10secondsresponsetime"] = "모든 경찰 습격은 이제 최대 강도로 시작됩니다.",
+		["menu_cs_modifier_dozerpairs"] = "불도저는 이제 항상 쌍으로 스폰됩니다.",
 
 		["bm_menu_skill"] = "팀원 부스트",
 
@@ -4714,7 +4765,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
-			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n#{risk}#참고: 이 효과는## #{important_1}#캡틴 윈터스를## #{risk}#넘어뜨릴 수 없습니다.##\n\n에이스: #{owned}#$pro##\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다.\n\n원거리 무기로 실드을 공격할 때 일정 확률로 넘어뜨릴 수 있습니다. 무기의 총 대미지가 높을수록 넉백 확률이 증가합니다.",
+			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n#{risk}#참고:## #{important_1}#타이탄 실드## #{risk}#와## #{important_1}#캡틴 윈터스##는 #{risk}#넘어뜨릴 수 없습니다.##\n\n에이스: #{owned}#$pro##\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다.\n\n실드를 넘어뜨리는 능력이 원거리 무기까지 확장되며, 무기의 총 데미지가 높을수록 확률이 높아집니다.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 			--Scavenger

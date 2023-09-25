@@ -1,4 +1,19 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local murky_guard = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+
+	if Global.game_settings and Global.game_settings.one_down then
+		timelock = 150
+		murky_guard = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
+	end	
+
 return {
+	--More timelock timer on Pro Jobs
+	[101402] = {
+		values = {
+            time = timelock
+		}
+	},
 	-- restores some unused sniper spawns with their SOs
 	[100369] = {
 		values = {
@@ -41,9 +56,10 @@ return {
 		}
 	},
 	--murky spawn changes
+	--Spawn the dozer in security room (PJ only)
 	[101669] = {
 		values = {
-            enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+            enemy = murky_guard
 		}
 	},
 	[101670] = {

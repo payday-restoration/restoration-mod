@@ -1,10 +1,16 @@
 return {
 	[103048] = {
 		groups = {
-			tac_bull_rush = false,
-			tac_shield_wall = false,
-			tac_shield_wall_ranged = false,
-			tac_shield_wall_charge = false
+			GREEN_tanks = false,
+			BLACK_tanks = false,
+			SKULL_tanks = false,
+			TIT_tanks = false,
+			CS_shields = false,
+			FBI_shields = false,
+			FBI_shields_boom = false,
+			GS_shields = false,
+			GS_shields_boom = false,
+			GS_defend_shields = false
 		}
 	}
 }

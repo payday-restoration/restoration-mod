@@ -439,12 +439,13 @@
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/helmets_snp_df" force="false"/>	
 	<texture			path="units/pd2_mod_reapers/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
 
-	<!--Titanshield-->	
+	<!--Titanshield-->
 	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
 	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx_dummy" load="true"/>
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_df" force="false"/>	
 	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_nm" force="false"/>
 	

@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.2.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.2.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -87,8 +87,6 @@
 		<hook file="sc/managers/mission/elementspecialobjective.lua" source_file="lib/managers/mission/elementspecialobjective"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
-		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
-		<hook file="sc/network/matchmaking/networkmatchmakingepic.lua" source_file="lib/network/matchmaking/networkmatchmakingepic"/>
 		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="sc/tweak_data/tweakdatapd2.lua" source_file="lib/tweak_data/tweakdatapd2"/>		
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
@@ -343,6 +341,7 @@
 		<hook file="sc/modifiers/new/modifierfriendlyfire.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifier10secondsresponsetime.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierbravosniper.lua" source_file="lib/modifiers/basemodifier"/>
+		<hook file="sc/modifiers/new/modifierdozerpairs.lua" source_file="lib/modifiers/basemodifier"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
@@ -379,6 +378,8 @@
 		<hook file="sc/mutators/new/mutatorcrazytaser.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatormasterdodger.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfullautoinbuilding.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorgoldfarbdozers.lua" source_file="lib/mutators/basemutator"/>
+		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
@@ -519,6 +520,7 @@
 					<option type="bool" default_value="false" name="QueuedShooting"/>
 					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
+					<option type="bool" default_value="true" name="QueuedShootingMidBurst"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>

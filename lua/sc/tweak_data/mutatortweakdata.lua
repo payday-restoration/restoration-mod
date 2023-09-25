@@ -14,6 +14,10 @@ function MutatorTweakData:init_birthday(tweak_data)
 				buff_id = 2,
 				spawn_rate = 1
 			},
+			lpf = {
+				buff_id = 2,
+				spawn_rate = 1
+			},			
 			shield = {
 				buff_id = 3,
 				spawn_rate = 2

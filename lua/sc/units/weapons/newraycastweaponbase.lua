@@ -218,7 +218,13 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	if full_steelsight then
 		if multi_ray then
 			mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase_ads or 1
+			
+			for _, category in ipairs(self:categories()) do
+				local multishot_spread = tweak_data[category] and tweak_data[category].ads_multishot_spread_mult or 1
+				mul = mul * multishot_spread
+			end
 		end
+		
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
 			mul = mul * tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1
 		end
@@ -611,7 +617,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_ads_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
 		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
-		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.05) or 0.09
+		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
 		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
 		if self._lock_burst then
 			self:_set_burst_mode(true, true)
@@ -1321,7 +1327,7 @@ end
 
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
-	return not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	return self._burst_rounds_remaining <= 0 and not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
 end
 
 function NewRaycastWeaponBase:can_reload()

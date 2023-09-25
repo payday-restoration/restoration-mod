@@ -4345,6 +4345,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_new_units_res_17"] = "Bravo临界反应部队的血量和伤害都比一般单位要强上许多，他们进攻时会频繁地投掷破片手雷，你最好不要只在一个小坑位上蹲太久。",
         ["loading_new_units_res_18"] = "阿肯拥有他自己的D项目系列泰坦部队。他们看起来不同但实际属性是相同的。他们的整体视觉效果和穿着特征也是基本一致的，因此你可以轻易地认出不同的兵种。",
         ["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快且会迅速清空你耐力的毒气弹。",
+		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
         -- Captain Hints
         ["loading_captains_res_title"] = "恢复MOD劫匪小贴士(四季队长)",
         ["loading_captains_res_1"] = "要击败夏日队长，得先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",
@@ -4620,6 +4621,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_quickscope360"] = "Eagle Eye",
         ["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
         ["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
+		
+		["mutator_goldfarbdozers"] = "Double Firepower",
+		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
+		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
 
         -- Crime spree modifier changes
         ["cn_crime_spree_brief"] = "\"罪无止境\"是一系列随机选取并需要连续完成的劫案组合。你完成的每次一次劫案都会为你增加罪无止境等级与奖励。每过20级或26级，你都需要选择一次附加难度因子；每过100级都会增加劫案的基础难度(如枪林弹雨到祸乱横行)，这会使劫案更难完成。等级600之后，玩家的无敌帧将会逐渐减少，Bravo临界反应部队将会开始生成。\n\n##如果你想邀请你的好友一起玩，请先确保他们开始了罪无止境以一起获得等级和奖励##",
@@ -4648,6 +4653,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_cs_modifier_cloaker_smoke"] = "幻影特工现在有50%的概率在他们闪避时扔出一颗闪光弹。",
         ["menu_cs_modifier_cloaker_tear_gas"] = "所有人质救援队的单位都有额外15%的概率被替换为支援兵。",
         ["menu_cs_modifier_dozer_lmg"] = "每当有一只绿熊或黑熊被生成时，它都有概率被替换为一只骷髅熊。",
+		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
 
         ["bm_menu_skill"] = "小队加成",
 

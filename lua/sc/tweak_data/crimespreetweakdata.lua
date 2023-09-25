@@ -834,6 +834,13 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					explosive_resist = {50, "add"}
 				}
 			},
+			--Dozers can now always spawn in pairs
+			{
+				id = "dozer_pairs",
+				class = "ModifierDozerPairs",
+				icon = "crime_spree_more_dozers",
+				data = {}
+			},
 			--MedicDozers have a 50% chance to replace other dozer types
 			{
 				id = "dozer_medic",

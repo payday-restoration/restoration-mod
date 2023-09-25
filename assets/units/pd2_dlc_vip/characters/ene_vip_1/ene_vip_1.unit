@@ -15,6 +15,10 @@
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="phalanx_vip" />
 			<var name="_default_weapon_id" value="mp9" />
+			<var name="_default_weapons" type="table">
+				<var name="primary" value="benelli"/>
+				<var name="secondary" value="mp9"/>
+			</var>			
 		</extension>
 		<extension name="inventory" class="CopInventory" >
 			<var name="_shield_unit_name" value="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" />

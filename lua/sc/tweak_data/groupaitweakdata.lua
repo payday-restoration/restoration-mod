@@ -18835,7 +18835,71 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				specular_mul = 1,
 				color = Vector3(255, 0, 0)
 			}
-		}
+		},
+		phalanx_minion = {
+			flash_charge_stun_sound = "USM_Beep_Stop",
+			flash_charge_stun_effect = "effects/particles/explosions/explosion_flash_grenade",
+			flash_effect = "effects/payday2/particles/character/marshal_bright_light",
+			flash_charge_stun_sound_explosion = "no_sound",
+			flash_charge_timer = 3,
+			beep_effect = "effects/payday2/particles/character/marshal_red_light",
+			flash_charge_stun_range = 300,
+			beep_sound = "USM_Beep",
+			flash_range = 1200,
+			flash_charge_range = 1100,
+			flash_shape_radius = 120,
+			flash_charge_cooldown = 18,
+			flash_slotmask = "persons_no_players",
+			flash_shape = "cylinder",
+			flash_sound = "USM_Flash",
+			flash_range_min = 200,
+			flash_charge_stun_slotmask = "persons_no_players",
+			beep_speeds = {
+				0.1,
+				0.025
+			},
+			beep_light_data = {
+				type_str = "omni|specular",
+				range = 300,
+				beep_mul = 0.3,
+				falloff_exp = 0.5,
+				beep_fade_speed = 4,
+				specular_mul = 1,
+				color = Vector3(255, 0, 0)
+			}
+		},		
+		phalanx_vip = {
+			flash_charge_stun_sound = "USM_Beep_Stop",
+			flash_charge_stun_effect = "effects/particles/explosions/explosion_flash_grenade",
+			flash_effect = "effects/payday2/particles/character/marshal_bright_light",
+			flash_charge_stun_sound_explosion = "no_sound",
+			flash_charge_timer = 1.5,
+			beep_effect = "effects/payday2/particles/character/marshal_red_light",
+			flash_charge_stun_range = 300,
+			beep_sound = "USM_Beep",
+			flash_range = 1200,
+			flash_charge_range = 1100,
+			flash_shape_radius = 120,
+			flash_charge_cooldown = 9,
+			flash_slotmask = "persons_no_players",
+			flash_shape = "cylinder",
+			flash_sound = "USM_Flash",
+			flash_range_min = 200,
+			flash_charge_stun_slotmask = "persons_no_players",
+			beep_speeds = {
+				0.1,
+				0.025
+			},
+			beep_light_data = {
+				type_str = "omni|specular",
+				range = 300,
+				beep_mul = 0.3,
+				falloff_exp = 0.5,
+				beep_fade_speed = 4,
+				specular_mul = 1,
+				color = Vector3(255, 0, 0)
+			}
+		}			
 	}
 	self.flash_shields.default = self.flash_shields.marshal_shield	
 	

@@ -1,33 +1,68 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 1200
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 1170
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 1140	
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
-		ponr_value = 1080	
+	
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+		ponr_value = 1080
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 1080	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
 		ponr_value = 1050	
+	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+		ponr_value = 1020	
 	end
 	
-if Global.game_settings and Global.game_settings.one_down then	
+if Global.game_settings and Global.game_settings.one_down then
+		timelock_normal = 300
+		timelock_fast = 270
+	
 	if tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
 		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	end
 end
 
+local ponr_timer_player_mul = {
+		1,
+		0.85,
+		0.7,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65,
+		0.65
+}
+
 return {
 	--Pro Job PONR 
 	[105790] = {
+		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	[105845] = {
+		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--More timelock timer on Pro Jobs
+	[103137] = {
+		values = {
+            time = timelock_normal
+		}
+	},
+	[100170] = {
+		values = {
+            time = timelock_fast
+		}
 	},
 	--Titan Snipers replace FBI Heavy SWATs on Pro Jobs
 	[100940] = {

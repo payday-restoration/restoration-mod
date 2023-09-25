@@ -284,6 +284,12 @@ function TipsTweakData:init()
 			category = "new_units_res"
 		},	
 		{
+			cat_index = 20,
+			image = "enemy_tshield",
+			consoles = true,
+			category = "new_units_res"
+		},
+		{
 			cat_index = 1,
 			image = "enemy_summers",
 			consoles = true,
@@ -351,6 +357,12 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 12,
+			image = "enemy_winters_sc",
+			consoles = true,
+			category = "captains_res"
+		},	
+		{
+			cat_index = 13,
 			image = "enemy_winters_sc",
 			consoles = true,
 			category = "captains_res"

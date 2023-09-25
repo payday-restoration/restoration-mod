@@ -1703,6 +1703,10 @@ function CopDamage:damage_melee(attack_data)
 	else
 		variant = 0
 	end
+	
+	if attack_data.charge_lerp_value then
+		result.charge_lerp_value = attack_data.charge_lerp_value
+	end
 
 	local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
 
@@ -3324,7 +3328,7 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 		PlayerStandard.say_line(attacker:sound(), "g31x_any")
 	elseif victim_base:has_tag("sniper") then
 		PlayerStandard.say_line(attacker:sound(), "g35x_any")
-	elseif victim_base:has_tag("medic") then
+	elseif victim_base:has_tag("medic") or victim_base:has_tag("lpf") then
 		PlayerStandard.say_line(attacker:sound(), "g36x_any")
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1
@@ -3353,7 +3357,7 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 		unit:sound():say("g31x_any", true)
 	elseif victim_base:has_tag("sniper") then
 		unit:sound():say("g35x_any", true)
-	elseif victim_base:has_tag("medic") then
+	elseif victim_base:has_tag("medic") or victim_base:has_tag("lpf") then
 		unit:sound():say("g36x_any", true)
 	elseif victim_base:has_tag("custom") then
 		local delay = TimerManager:game():time() + 1

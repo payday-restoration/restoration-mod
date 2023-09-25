@@ -1,13 +1,8 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local amount_guards = 8
 
-	if tweak_data:difficulty_to_index(difficulty) <= 2 then
-		ponr_value = 750
-	elseif tweak_data:difficulty_to_index(difficulty) == 3 then
-		ponr_value = 720	
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
-		ponr_value = 690
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+	if tweak_data:difficulty_to_index(difficulty) <= 5 then
 		ponr_value = 660	
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
 		ponr_value = 630	
@@ -15,6 +10,16 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 600		
 	end
 
+	if tweak_data:difficulty_to_index(difficulty) == 8 then	
+		amount_guards = 12
+	end
+	
+	if Global.game_settings and Global.game_settings.one_down then	
+		if tweak_data:difficulty_to_index(difficulty) == 8 then
+			enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
+		end
+	end
+	
 return {
 	--Pro Job PONR
 	[100216] = {
@@ -58,6 +63,23 @@ return {
 	[103446] = {
 		values = {
 			enabled = false --don't even try.....
+		}
+	},
+	--Force spawn all possible guards during Sosa fight (DS only)
+	[101725] = {
+		values = {
+			amount = amount_guards
+		}
+	},
+	--Spawn enforcers during Sosa fight on DS PJ
+	[101845] = {
+		values = {
+            enemy = enforcer_guard
+		}
+	},
+	[101868] = {
+		values = {
+            enemy = enforcer_guard
 		}
 	},
 	--You're Sosa's men, not undercover cops

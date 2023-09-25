@@ -2456,6 +2456,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_stoner63a_rifle = {
 				translation = Vector3(0.015, 8, -3.52)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_pd3_qbz191 = {
+				translation = Vector3(-0.009, 6, -3.5)
+			}
 	
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
 				translation = Vector3(-0.016, -9.5, -2.787),
@@ -22630,6 +22633,56 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 	--[[ RJC9000'S MODS ]]
 
+		--RJC9000 and PlayBONK's PD3 QBZ-191
+		if self.parts.wpn_fps_ass_pd3_qbz191_irons_folded then
+			self.parts.wpn_fps_ass_pd3_qbz191_barrel.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_handguard.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_grip.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_magazine.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_stock.stats = {value = 0}
+
+			self.parts.wpn_fps_ass_pd3_qbz191_smag.supported = true
+			self.parts.wpn_fps_ass_pd3_qbz191_smag.stats = {
+				value = 2,
+				concealment = 1,
+				reload = 5,
+				extra_ammo = -10
+			}
+			self.parts.wpn_fps_ass_pd3_qbz191_smag.custom_stats = { 
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_pd3_qbz191_magazine_quick.supported = true
+			self.parts.wpn_fps_ass_pd3_qbz191_magazine_quick.stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 3
+			}
+			self.parts.wpn_fps_ass_pd3_qbz191_magazine_quick.custom_stats = nil
+			self.parts.wpn_fps_ass_pd3_qbz191_xmag.supported = true
+			self.parts.wpn_fps_ass_pd3_qbz191_xmag.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_fps_ass_pd3_qbz191_xmag.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+
+			self.parts.wpn_fps_ass_pd3_qbz191_stock_extended.supported = true
+			self.parts.wpn_fps_ass_pd3_qbz191_stock_extended.stats = deep_clone(stocks.adj_hvy_rec_stats)
+			self.parts.wpn_fps_ass_pd3_qbz191_stock_extended.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+
+			self.wpn_fps_ass_pd3_qbz191.override = self.wpn_fps_ass_pd3_qbz191.override or {}
+			self.wpn_fps_ass_pd3_qbz191.override.wpn_fps_upg_m4_s_standard = {
+				stats = {},
+				custom_stats = {}
+			}
+
+			self.wpn_fps_ass_pd3_qbz191_npc.uses_parts = deep_clone(self.wpn_fps_ass_pd3_qbz191.uses_parts)
+		
+		end
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack
@@ -31856,7 +31909,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_shak12_ns_muzzle",
 					"wpn_fps_upg_ak_ns_zenitco",
 					"wpn_fps_upg_ak_ns_jmac",
-					"wpn_fps_snp_awp_ns_muzzle"
+					"wpn_fps_snp_awp_ns_muzzle",
+					"wpn_fps_lmg_hk51b_ns_jcomp",
+					"wpn_fps_lmg_kacchainsaw_ns_muzzle",
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then
@@ -31883,7 +31938,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_smg_schakal_ns_silencer",
 					"wpn_fps_snp_msr_ns_suppressor",
 					"wpn_fps_snp_victor_ns_omega",
-					"wpn_fps_upg_ak_ns_tgp"
+					"wpn_fps_upg_ak_ns_tgp",
+					"wpn_fps_lmg_kacchainsaw_ns_suppressor"
 				}
 				for _, part_id in ipairs(attachment_list) do
 					if not table.contains(self[factory_id].uses_parts, part_id) and self.parts[part_id] then

@@ -2307,6 +2307,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Akimbo Krinkov
 				["bm_x_akmsu_sc_desc"] = "A small rifle useful for taking down big men. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 				--CUSTOM ARs
+					--QBZ-191
+					["bm_qbz191_sc_desc"] = "Next generation Chinese assault rifle chambered in 5.8x42mm.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 					--AN-94/92
 					["bm_tilt_sc_desc"] = "#{risk}#The first 2 rounds of each trigger pull## are fired at #{skill_color}#3x the rate of fire.##",
 					--NV4
@@ -2784,6 +2786,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--QBZ-191
+						["bm_w_pd3_qbz191"] = "Northwest B-9",
 						--AN-94/92
 						["bm_w_tilt"] = "KVK-99",
 						--HK G36

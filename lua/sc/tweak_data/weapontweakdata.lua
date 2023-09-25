@@ -16645,7 +16645,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.pd3_qbz191.warsaw = true
 		self.pd3_qbz191.recategorize = { "light_ar" }
-		self.pd3_qbz191.desc_id = "true"
+		self.pd3_qbz191.desc_id = "bm_qbz191_sc_desc"
 		self.pd3_qbz191.has_description = true
 		self.pd3_qbz191.tactical_reload = 1
 		self.pd3_qbz191.AMMO_MAX = 150

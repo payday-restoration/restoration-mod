@@ -2410,6 +2410,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_mini.headshot_dmg_mul = 15.625
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	self.tank_mini.can_throw_frag = true
+	self.tank_mini.grenade_toss_chance = 0.4
 	self.tank_mini.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_mini")	
 end
@@ -2852,6 +2853,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.dodge = presets.dodge.elite
 	self.phalanx_vip_break.move_speed = presets.move_speed.very_fast
 	self.phalanx_vip_break.can_throw_frag = true	
+	self.phalanx_vip_break.grenade_cooldown = 12
+	self.phalanx_vip_break.grenade_toss_chance = 1
 	self.phalanx_vip_break.HEALTH_INIT = 140
 	self.phalanx_vip_break.headshot_dmg_mul = 2.5
 	self.phalanx_vip_break.allowed_stances = nil
@@ -2879,6 +2882,8 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
+	self.spring.grenade_cooldown = 12
+	self.spring.grenade_toss_chance = 1
 	self.spring.no_run_start = true
 	self.spring.no_run_stop = true
 	self.spring.no_retreat = true

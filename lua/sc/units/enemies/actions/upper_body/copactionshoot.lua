@@ -681,19 +681,12 @@ function CopActionShoot:update(t)
                 local is_spring = self._ext_base._tweak_table == "spring"
 				local is_senator_armstrong = self._ext_base._tweak_table == "phalanx_vip_break"
                 local is_tank_mini = self._ext_base._tweak_table == "tank_mini"
-                local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
-                if is_spring then
-                    frag_cooldown = 12
-                end
+                local frag_cooldown = self._common_data.char_tweak.grenade_cooldown or 6 --About time
                 
-                local frag_roll_chance = is_spring and 1 or 0.1
-                if is_tank_mini then
-                    frag_roll_chance = 0.4
-                end            
+                local frag_roll_chance = self._common_data.char_tweak.grenade_toss_chance or 0.1      
                 local frag_roll = math_random() <= frag_roll_chance    
                 local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
-									
-				
+													
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 
 				if frag_roll then

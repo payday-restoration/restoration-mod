@@ -1710,6 +1710,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_akmsu_sc_desc"] = "거물을 쓰러뜨리는 데 유용한 소형 소총. 이 소총은 거의 모든 시나리오에서 제 역할을 할 수 있기 때문에 과소평가해서는 안 됩니다.",
 		
 		--CUSTOM ARs
+		--QBZ-191
+		["bm_w_pd3_qbz191"] = "Northwest B-9 소총",
+		["bm_qbz191_sc_desc"] = "5.8x42mm 구경탄을 사용하는 차세대 중국 돌격소총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 25%를 가합니다.##",
 		--AN-94/92
 		["bm_w_tilt"] = "KVK-99 소총",
 		["bm_tilt_sc_desc"] = "#{risk}#각 방아쇠의 처음 2발은## #{skill_color}#발사 속도의 3배로 발사합니다.##",	

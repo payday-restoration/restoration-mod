@@ -717,8 +717,11 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 											self._queue_fire = true
 										end
 									else
-										if not input.fake_attack then
-											self._queue_burst = true
+										local queue_mid_burst = self:_in_burst() and restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingMidBurst")
+										if queue_mid_burst or not self:_in_burst() then
+											if not input.fake_attack then
+												self._queue_burst = true
+											end
 										end
 									end
 								end

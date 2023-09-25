@@ -59,7 +59,7 @@ return {
             time = timelock_normal
 		}
 	},
-	[100956] = {
+	[100170] = {
 		values = {
             time = timelock_fast
 		}

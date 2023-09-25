@@ -28,5 +28,11 @@ return {
 		values = {
 			enabled = false
 		}
+	},
+	--Disable the SWAT Turret
+	[102124] = {
+		values = {
+			enabled = false
+		}
 	}
 }	

@@ -4176,7 +4176,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival as to not ruin his element of surprise.",	
 		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected when active for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
 		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
-		["loading_captains_res_10"] = "Captain Winters has a strong resistance to bullets and an even stronger ones to explosives and fire. Despite that, he is somewhat vulnerable to melee.",	
+		["loading_captains_res_10"] = "Captain Winters has a strong resistance to bullets and even stronger ones to explosives and fire. Despite that, he is somewhat vulnerable to melee.",	
 		["loading_captains_res_11"] = "Captain Winters' shield cannot be pierced but it will break after soaking up enough damage; like Titan Shields, beware of his second phase.",	
 		["loading_captains_res_12"] = "Captain Winters will wander the map, healing and overhealing nearby enemies.",	
 		["loading_captains_res_13"] = "Captain Winters' shield has flashbang panels like those used by Titan Shields; just keep in mind his flashbang panels don't break after being shot.",	

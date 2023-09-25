@@ -18,11 +18,11 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	end
 
 	if tweak_data:difficulty_to_index(difficulty) <= 5 then
-		ponr_value = 660
+		ponr_value = 300
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 630	
+		ponr_value = 420	
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 600	
+		ponr_value = 540	
 	end
 
 return {

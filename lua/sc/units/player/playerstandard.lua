@@ -623,7 +623,6 @@ end
 
 ]]--
 
-
 function PlayerStandard:_check_action_primary_attack(t, input)
 	local new_action = nil
 	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release or input.real_input_pressed or self._queue_fire or self._spin_up_shoot
@@ -656,8 +655,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 				local queue_exlude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") or 0.6
 				local queue_mid_burst = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingMidBurst")
 			
-				if queue_inputs and weap_base:in_burst_mode() and queue_mid_burst then
-					if input.real_input_pressed then
+				if queue_inputs and weap_base:in_burst_mode() then
+					if queue_mid_burst and input.real_input_pressed then
 						self._queue_burst = true
 					end
 				else

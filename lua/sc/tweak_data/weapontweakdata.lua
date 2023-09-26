@@ -3410,66 +3410,66 @@ function WeaponTweakData:_init_stats()
 		--Bullet hoses will be around here.
 			horizontal_recoil = {
 				standing = {
-					0.525 * self.stat_info.stance_recoil_mults.standing,
-					0.475 * self.stat_info.stance_recoil_mults.standing,
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
 					-0.5 * self.stat_info.stance_recoil_mults.standing,
 					0.5 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.525 * self.stat_info.stance_recoil_mults.crouching,
-					0.475 * self.stat_info.stance_recoil_mults.crouching,
-					-0.5 * self.stat_info.stance_recoil_mults.crouching,
-					0.5 * self.stat_info.stance_recoil_mults.crouching
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
+					-0.475 * self.stat_info.stance_recoil_mults.crouching,
+					0.475 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.525 * self.stat_info.stance_recoil_mults.steelsight,
-					0.475 * self.stat_info.stance_recoil_mults.steelsight,
-					-0.5 * self.stat_info.stance_recoil_mults.steelsight,
-					0.5 * self.stat_info.stance_recoil_mults.steelsight
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.45
 			},
 			horizontal_left_recoil = {
 				standing = {
-					0.525 * self.stat_info.stance_recoil_mults.standing,
-					0.475 * self.stat_info.stance_recoil_mults.standing,
-					-0.6 * self.stat_info.stance_recoil_mults.standing,
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
+					-0.55 * self.stat_info.stance_recoil_mults.standing,
 					0.4 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.525 * self.stat_info.stance_recoil_mults.crouching,
-					0.475 * self.stat_info.stance_recoil_mults.crouching,
-					-0.6 * self.stat_info.stance_recoil_mults.crouching,
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
+					-0.55 * self.stat_info.stance_recoil_mults.crouching,
 					0.4 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.525 * self.stat_info.stance_recoil_mults.steelsight,
-					0.475 * self.stat_info.stance_recoil_mults.steelsight,
-					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					0.4 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.45
 			},
 			horizontal_right_recoil = {
 				standing = {
-					0.525 * self.stat_info.stance_recoil_mults.standing,
-					0.475 * self.stat_info.stance_recoil_mults.standing,
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
 					-0.4 * self.stat_info.stance_recoil_mults.standing,
-					0.6 * self.stat_info.stance_recoil_mults.standing
+					0.55 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.525 * self.stat_info.stance_recoil_mults.crouching,
-					0.475 * self.stat_info.stance_recoil_mults.crouching,
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
 					-0.4 * self.stat_info.stance_recoil_mults.crouching,
-					0.6 * self.stat_info.stance_recoil_mults.crouching
+					0.55 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.525 * self.stat_info.stance_recoil_mults.steelsight,
-					0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
 					-0.4 * self.stat_info.stance_recoil_mults.steelsight,
-					0.6 * self.stat_info.stance_recoil_mults.steelsight
+					0.55 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.45
 			},
 
 		--Your average SMG and Pistol will be around here.
@@ -8152,10 +8152,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil
 			self.rpk.always_use_standing = true
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.400
+			self.rpk.ads_speed = 0.420
 			self.rpk.damage_falloff = {
-				start_dist = 2700,
-				end_dist = 5800,
+				start_dist = 2300,
+				end_dist = 5000,
 				min_mult = 0.6
 			}
 			self.rpk.stats = {
@@ -8164,7 +8164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				recoil = 71,
 				spread_moving = 5,
 				zoom = 1,
-				concealment = 17,
+				concealment = 16,
 				suppression = 7,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -18334,8 +18334,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if table.contains(weap.categories, "lmg") or table.contains(weap.categories, "minigun") then
 				if weap.weapon_movement_penalty then
 					weap.rms = (1 + weap.weapon_movement_penalty) / 2
-					weap.smt_mult = 2
-					weap.smt_range = { 0.55, 1 }
+					weap.smt_mult = 5
+					weap.smt_range = { 0.75, 1.8 }
 				end
 				weap.ene_hs_mult = 0.5
 				weap.zoom_recoil_reduction = 0.02
@@ -18538,7 +18538,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 			pdw = 0.675,
 			typh = 0.82,
-			lmg = 0.625,
+			lmg = 0.61,
 				mmg = 0.95,
 			minigun = 0.55,
 		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency

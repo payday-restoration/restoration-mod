@@ -8172,12 +8172,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		stats = {
 			value = 6,
 			spread = -1,
-			concealment = 4,
-			reload = 6,
+			concealment = 3,
+			reload = 4,
 			extra_ammo = -45
 		},
 		custom_stats = {
-			ads_speed_mult = 0.9
+			ads_speed_mult = 0.925
 		}
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_m_quad = {
@@ -23987,12 +23987,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_lmg_rpk_m_jungle.stats = {
 					value = 6,
 					spread = -1,
-					concealment = 4,
-					reload = 6,
+					concealment = 3,
+					reload = 4,
 					extra_ammo = -45
 				}
 				self.parts.wpn_lmg_rpk_m_jungle.custom_stats = {
-					ads_speed_mult = 0.9
+					ads_speed_mult = 0.925
 				}
 		
 				--(Holt 9mm) Luxury Grip

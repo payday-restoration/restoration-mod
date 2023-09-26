@@ -102,7 +102,7 @@ tweak_data.smg = {
 		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
-		ads_moving_spread_mult = 2.6667,
+		ads_moving_spread_mult = 3,
 		hipfire_spread_mult = 3.3333
 	}
 		tweak_data.wolf_brigade = {

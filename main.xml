@@ -556,9 +556,6 @@
 				<option type="bool" default_value="false" name="CloakerTurn"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
 				<divider name="tod_divider" size="15"/>
-				<option type="bool" default_value="false" name="SevenHold"/>
-				<option type="bool" default_value="false" name="SevenHoldDeployCancel"/>
-				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="false" name="BotsNoDrop"/>
 				<divider name="tod_divider" size="15"/>

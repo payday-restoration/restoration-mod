@@ -182,6 +182,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingWindowDescID"] = "Время, которое ваши нажатия будут в очереди, в зависимости от задержки оружия. Чем выше, тем раньше нажатия попадут в очередь.",
 		["RestorationModQueuedShootingExcludeTitleID"] = "Ограничение очереди",
 		["RestorationModQueuedShootingExcludeDescID"] = "Ограничивает очередь для оружия, которое стреляет быстрее, чем указано в этой настройке.",
+		["RestorationModQueuedShootingMidBurstTitleID"] = "Очередь нажатий во время стрельбы оружейной очередью",
+		["RestorationModQueuedShootingMidBurstDescID"] = "Заносит нажатия на курок в очередь, если они были сделаны во время стрельбы оружейной очередью.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "Отключить отдачу в прицеле",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Отключает анимацию отдачи во время прицеливания. Опция не влияет на некоторое оружие (луки, огнеметы)",
 		["RestorationModNoSwapOnReviveTitleID"] = "Отключить переключение оружия после поднятия",
@@ -1233,6 +1235,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_rds"] = "Средняя оптика со встроенным прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_rds_mount"] = "Средняя оптика с дополнительными прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_vari"] = "Оптика с настраиваемым прицелом.\n#{risk}#Увеличение 4-8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		--Я отказываюсь это переводить
+		["bm_wp_upg_o_4_valentine"] = "\"I got a class assignment for all of y'all!\"\n\nОптика с настраиваемым прицелом.\n#{risk}#Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
 		["bm_wp_upg_o_5"] = "Дальнобойная оптика.\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_5_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_6"] = "Дальнобойная оптика.\n#{risk}#Увеличение 6x.##",
@@ -1647,6 +1652,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_akmsu_sc_desc"] = "Маленькие винтовки против больших людей. Подойдут для любого случая.",
 		
 		--CUSTOM ARs
+			--QBZ-191
+			["bm_qbz191_sc_desc"] = "Китайская штурмовая винтовка следующего поколения с патронником под калибр 5,8х42 мм.\n\n#{skill_color}#Наносит 25% урона через броню.##",
 			--AN-94/92
 			["bm_tilt_sc_desc"] = "#{risk}#Первые два выстрела## каждого нажатия на курок обладают #{skill_color}#тройной скорострельностью.##",
 			--HK G36
@@ -2956,6 +2963,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_rk62"] = "Вельмер",
 			["bm_w_mcbravo"] = "Химера",
 			["bm_w_ar18"] = "КАР-18",
+			["bm_w_pd3_qbz191"] = "Нортвест Б-9",
 		["bm_w_ching"] = "M1 Галант",
 		["bm_w_m14"] = "M308",
 		["bm_w_fal"] = "Фалкон 58",	

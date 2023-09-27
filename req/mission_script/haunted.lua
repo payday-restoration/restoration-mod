@@ -113,8 +113,6 @@ return {
 	[100546] = {
 	ponr = 300,
 	on_executed = {
-		{ id = 100909, delay = 0 },
-		{ id = 102226, delay = 0 },
 		{ id = 102689, delay = 3 }
 		}
 	},

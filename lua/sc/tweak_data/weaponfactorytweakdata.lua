@@ -5795,7 +5795,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 	--Tan Body
 	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_salad_legend")
 	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
+	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_schmidt")
+	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+
+	self.wpn_fps_smg_p90.override = self.wpn_fps_smg_p90.override or {}
+
+	self.wpn_fps_smg_p90.override.wpn_fps_upg_o_schmidt = {
+		desc_id = "bm_wp_upg_o_4_valentine",
+		custom_stats = {
+			big_scope = true
+		}
+	}
 	
+	self.wpn_fps_smg_p90_npc.override = deep_clone(self.wpn_fps_smg_p90.override)
 	self.wpn_fps_smg_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_p90.uses_parts)
 
 end)
@@ -5817,7 +5829,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_p90", "resmod_x_p90", function(s
 
 	--Kobus 90 Part Additions
 	table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
+	table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_upg_o_schmidt")
+	table.insert(self.wpn_fps_smg_x_p90.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+
+	self.wpn_fps_smg_x_p90.override = self.wpn_fps_smg_x_p90.override or {}
 	
+	self.wpn_fps_smg_x_p90_npc.override = deep_clone(self.wpn_fps_smg_x_p90.override)
 	self.wpn_fps_smg_x_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_p90.uses_parts)
 
 end)
@@ -32669,6 +32686,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
 	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
+
+	self.wpn_fps_smg_x_p90.override.wpn_fps_upg_o_schmidt = {
+		stats = {},
+		adds = {"wpn_fps_upg_o_schmidt_steelsight"},
+		desc_id = "bm_wp_upg_o_4_valentine_x",
+		custom_stats = {
+			big_scope = true
+		}
+	}
+	self.wpn_fps_smg_x_p90.override.wpn_fps_upg_o_schmidt_steelsight = {
+		stats = {},
+		adds = {},
+		unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt"
+	}
+	self.wpn_fps_smg_x_p90_npc.override = deep_clone(self.wpn_fps_smg_x_p90.override)
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

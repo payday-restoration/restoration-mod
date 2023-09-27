@@ -276,7 +276,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModLoadoutsTitleID"] = "Меню подготовки из Альфы",
 		["RestorationModLoadoutsDescID"] = "Включить или выключить меню подготовки из альфа-версии игры.",
 		["RestorationModDistrictTitleID"] = "Описания районов в CRIME.NET",
-		["RestorationModDistrictDescID"] = "Включить или вылючить описания районов в CRIME.NET. Описания не соответствуют геймплею.",
+		["RestorationModDistrictDescID"] = "Включить или выключить описания районов в CRIME.NET. Описания не соответствуют геймплею.",
 		["RestorationModSCOptionsButtonTitleID"] = "Опции Restoration Overhaul",
 		["RestorationModSCOptionsButtonDescID"] = "Опции Restoration Overhaul",
 		["RestorationModSCTitleID"] = "Complete Overhaul (DEBUG)",
@@ -1235,8 +1235,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_rds"] = "Средняя оптика со встроенным прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_rds_mount"] = "Средняя оптика с дополнительными прицелом.\n#{risk}#Увеличение 1.1-4x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_vari"] = "Оптика с настраиваемым прицелом.\n#{risk}#Увеличение 4-8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
-		--Я отказываюсь это переводить
-		["bm_wp_upg_o_4_valentine"] = "\"I got a class assignment for all of y'all!\"\n\nОптика с настраиваемым прицелом.\n#{risk}#Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		--Я отказываюсь это переводить --да и не надо - Марши
+		["bm_wp_upg_o_4_valentine"] = "Оптика с настраиваемым прицелом.\n#{risk}#Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
 		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
 		["bm_wp_upg_o_5"] = "Дальнобойная оптика.\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_5_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 5x.##",
@@ -1653,7 +1653,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--CUSTOM ARs
 			--QBZ-191
-			["bm_qbz191_sc_desc"] = "Китайская штурмовая винтовка следующего поколения с патронником под калибр 5,8х42 мм.\n\n#{skill_color}#Наносит 25% урона через броню.##",
+			["bm_qbz191_sc_desc"] = "Китайская штурмовая винтовка нового поколения, использующая калибр 5,8х42 мм.\n\n#{skill_color}#Наносит 25% урона через броню.##",
 			--AN-94/92
 			["bm_tilt_sc_desc"] = "#{risk}#Первые два выстрела## каждого нажатия на курок обладают #{skill_color}#тройной скорострельностью.##",
 			--HK G36
@@ -2179,7 +2179,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
 			
 			["bm_suit_var_suit_prison_subject"] = "Подопытный",
-			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборотории АКАНа. Вдруг секрет их сверхъестественных способностей таистя в этой робе?",
+			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборотории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
 			
 			
 		--Weapon Colors
@@ -2971,7 +2971,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_g3"] = "Гевер 3",
 		["bm_w_contraband"] = "Большой дружок 7.62",
 		["bm_w_asval"] = "Валькирия",
-		["bm_w_galil"] = "Геко 7.62",
+		["bm_w_galil"] = "Гекко 7.62",
 		["bm_w_shak12"] = "КС 12",
 --Custom DMRs
 			--MCX Spear

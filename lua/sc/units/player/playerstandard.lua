@@ -213,7 +213,7 @@ end
 
 function PlayerStandard:_start_action_ducking(t)
 	--Here!
-	if not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
+	if self:_on_zipline() then
 		return
 	end
 
@@ -2398,8 +2398,10 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	end
 	--]]
 
-	local duration = tweak_data.player.TRANSITION_DURATION 
+	local head_duration = tweak_data.player.TRANSITION_DURATION
+	local head_duration_multiplier = 1
 	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+	local duration = head_duration + (self._equipped_unit:base():transition_duration() or 0)
 	
 	if not unequipped then
 		stance_id = self._equipped_unit:base():get_stance_id()
@@ -2440,7 +2442,7 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	misc_attribs = (not self:_is_using_bipod() or self:_is_throwing_projectile() or stances.bipod) and (self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard)
 	local new_fov = self:get_zoom_fov(misc_attribs) + 0
 
-	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
+	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration, head_duration_multiplier, head_duration)
 	managers.menu:set_mouse_sensitivity(self:in_steelsight())
 
 	if PlayerStandard.set_ads_objects then

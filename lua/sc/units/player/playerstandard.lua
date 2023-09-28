@@ -2761,7 +2761,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 end)
 
 function PlayerStandard:_update_slide_locks()
-	local weap_base = self._equipped_unit:base()
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 	if weap_base and weap_base:weapon_tweak_data().lock_slide and not self:_is_reloading() then
 		if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
 			weap_base:tweak_data_anim_stop("magazine_empty")

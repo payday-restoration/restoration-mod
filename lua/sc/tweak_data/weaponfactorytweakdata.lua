@@ -7608,8 +7608,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_schmidt")
 	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 
-	self.wpn_fps_ass_scar.adds = self.wpn_fps_ass_scar.adds or {}
-
 	self.wpn_fps_ass_scar.adds.wpn_fps_upg_o_northtac = {
 		"wpn_fps_ass_scar_o_flipups_down"
 	}
@@ -7623,6 +7621,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 		custom_stats = {}
 	}
 	
+	self.wpn_fps_ass_scar_npc.adds = deep_clone(self.wpn_fps_ass_scar.adds)
 	self.wpn_fps_ass_scar_npc.override = deep_clone(self.wpn_fps_ass_scar.override)
 	self.wpn_fps_ass_scar_npc.uses_parts = deep_clone(self.wpn_fps_ass_scar.uses_parts)
 	
@@ -8880,6 +8879,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	}
 	self.parts.wpn_fps_ass_g3_m_psg.third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
 
+	self.wpn_fps_ass_g3.adds.wpn_fps_upg_o_northtac = {
+		"wpn_fps_ass_g3_body_rail"
+	}
+	self.wpn_fps_ass_g3.adds.wpn_fps_upg_o_schmidt = {
+		"wpn_fps_ass_g3_body_rail"
+	}
+
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_ass_g3_m_psg")
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_smg_mp5_s_adjust")
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_northtac")
@@ -8887,6 +8893,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt")
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 
+	self.wpn_fps_ass_g3_npc.adds = deep_clone(self.wpn_fps_ass_g3.adds)
 	self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
 	
 end)	

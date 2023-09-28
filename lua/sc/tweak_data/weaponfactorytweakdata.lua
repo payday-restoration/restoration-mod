@@ -32698,6 +32698,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_smg_x_p90.override.wpn_fps_upg_o_schmidt_steelsight = {
 		stats = {},
 		adds = {},
+		animations = {
+			fire_steelsight = "recoil",
+			fire = "recoil"
+		},
 		unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt"
 	}
 	self.wpn_fps_smg_x_p90_npc.override = deep_clone(self.wpn_fps_smg_x_p90.override)

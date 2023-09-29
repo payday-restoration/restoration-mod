@@ -14,6 +14,12 @@ return {
 	[101106] = {
 		ponr = ponr_value
 	},
+	--Disable the SWAT Turrets
+	[101147] = {
+		values = {
+			enabled = false
+		}
+	},
 	-- Reduce amount of ambush bulldozers
 	[101557] = {
 		values = {

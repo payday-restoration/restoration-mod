@@ -1,5 +1,7 @@
 Month = os.date("%m")
 Day = os.date("%d")
+
+local job = Global.level_data and Global.level_data.level_id
 --Different ransom per wave
 function SkirmishTweakData:_init_ransom_amounts()
 	self.ransom_amounts = {
@@ -21,6 +23,7 @@ end
 --This is probs unused, but setting to scaled (for the average skirmish map size) DS values to be on the safe side.
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 local map_scale_factor = 1
+
 	for _,vl in pairs(restoration.very_large_levels) do
 		if job == vl then
 			map_scale_factor = 1.3

@@ -213,7 +213,7 @@ end
 
 function PlayerStandard:_start_action_ducking(t)
 	--Here!
-	if self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_on_zipline() then
+	if self:_on_zipline() then
 		return
 	end
 
@@ -324,7 +324,7 @@ end
 
 function PlayerStandard:_action_interact_forbidden()
 	--Here!
-	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
+	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
 
 	return action_forbidden
 end
@@ -418,12 +418,21 @@ function PlayerStandard:_check_action_reload(t, input)
 end
 
 function PlayerStandard:_check_use_item(t, input)
+	local pressed, released, holding = nil
+
+	if self._use_item_expire_t then
+		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_use_item_press, input.btn_use_item_release, input.btn_use_item_state)
+	else
+		holding = input.btn_use_item_state
+		released = input.btn_use_item_release
+		pressed = input.btn_use_item_press
+	end
+
 	local new_action = nil
-	local action_wanted = input.btn_use_item_press
 
 	--Here!
-	if action_wanted then
-		local action_forbidden = self._use_item_expire_t or self:_interacting() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
+	if pressed then
+		local action_forbidden = self._use_item_expire_t or self:_interacting() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
 
 		if not action_forbidden and managers.player:can_use_selected_equipment(self._unit) then
 			self:_start_action_use_item(t)
@@ -434,7 +443,7 @@ function PlayerStandard:_check_use_item(t, input)
 		end
 	end
 
-	if input.btn_use_item_release then
+	if released then
 		self:_interupt_action_use_item()
 	end
 
@@ -1059,22 +1068,20 @@ function PlayerStandard:_check_action_night_vision(t, input)
 end
 
 function PlayerStandard:_check_action_interact(t, input)
-	if restoration.Options:GetValue("OTHER/SevenHold") then 
-		local deploy_cancel = restoration.Options:GetValue("OTHER/SevenHoldDeployCancel")
-		if self:_interacting() then
-			if (not deploy_cancel and input.btn_interact_press) or (deploy_cancel and input.btn_use_item_press) then
-				self:_interupt_action_interact()
-				return false
-			else
-				return false
-			end
-		end
+	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
+	local pressed, released, holding = nil
+
+	if self._interact_expire_t then
+		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_interact_press, input.btn_interact_release, input.btn_interact_state)
+	else
+		holding = input.btn_interact_state
+		released = input.btn_interact_release
+		pressed = input.btn_interact_press
 	end
 
-	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
 	local new_action, timer, interact_object = nil
 
-	if input.btn_interact_press then
+	if pressed then
 		if _G.IS_VR then
 			self._interact_hand = input.btn_interact_left_press and PlayerHand.LEFT or PlayerHand.RIGHT
 		end
@@ -1093,6 +1100,7 @@ function PlayerStandard:_check_action_interact(t, input)
 					self._ext_camera:camera_unit():base():set_limits(80, 50)
 				end
 				self:_start_action_interact(t, input, timer, interact_object)
+				self:_chk_tap_to_interact_enable(t, timer, interact_object)
 				self._queue_burst = nil
 				self._queue_fire = nil
 			end
@@ -1144,8 +1152,7 @@ function PlayerStandard:_check_action_interact(t, input)
 		force_secondary_intimidate = true
 	end
 
-	if input.btn_interact_release then
-		local released = true
+	if released then
 
 		if _G.IS_VR then
 			local release_hand = input.btn_interact_left_release and PlayerHand.LEFT or PlayerHand.RIGHT
@@ -2391,8 +2398,10 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	end
 	--]]
 
-	local duration = tweak_data.player.TRANSITION_DURATION 
+	local head_duration = tweak_data.player.TRANSITION_DURATION
+	local head_duration_multiplier = 1
 	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+	local duration = head_duration + (self._equipped_unit:base():transition_duration() or 0)
 	
 	if not unequipped then
 		stance_id = self._equipped_unit:base():get_stance_id()
@@ -2433,7 +2442,7 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	misc_attribs = (not self:_is_using_bipod() or self:_is_throwing_projectile() or stances.bipod) and (self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard)
 	local new_fov = self:get_zoom_fov(misc_attribs) + 0
 
-	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
+	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration, head_duration_multiplier, head_duration)
 	managers.menu:set_mouse_sensitivity(self:in_steelsight())
 
 	if PlayerStandard.set_ads_objects then
@@ -2581,7 +2590,7 @@ function PlayerStandard:_check_action_steelsight(t, input)
 		end
 	end
 
-	if managers.user:get_setting("hold_to_steelsight") and input.btn_steelsight_release then
+	if self._setting_hold_to_steelsight and input.btn_steelsight_release then
 		self._steelsight_wanted = false
 
 		if self._state_data.in_steelsight then
@@ -2752,7 +2761,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 end)
 
 function PlayerStandard:_update_slide_locks()
-	local weap_base = self._equipped_unit:base()
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 	if weap_base and weap_base:weapon_tweak_data().lock_slide and not self:_is_reloading() then
 		if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
 			weap_base:tweak_data_anim_stop("magazine_empty")
@@ -3774,7 +3783,9 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 
 		self._unequip_weapon_expire_t = nil
 
-		self:_start_action_equip_weapon(t)
+		if not self:_interacting() then
+			self:_start_action_equip_weapon(t)
+		end
 	end
 
 	if self._equip_weapon_expire_t and self._equip_weapon_expire_t <= t then

@@ -2331,7 +2331,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic = deep_clone(self.tank)
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
-	self.tank_medic.is_special = true
 	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
 	self.tank_medic.move_speed = presets.move_speed.normal

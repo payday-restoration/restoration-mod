@@ -2358,8 +2358,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
-		{ 0, 2.5},
-		{50, 5}
+		{ 0, 4},
+		{50, 6}
 	}
 	
 	--Yakuza--

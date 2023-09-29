@@ -67,5 +67,28 @@ return {
 		values = {
 			amount = 3
 		}
+	},
+	-- Don't play the "Ah, that's the vault guys" dialogue if vault has been opened in stealth
+	--[[[105757] = {
+		values = {
+			enabled = false
+		},
+		on_executed = {
+			{id = 105221, delay = 0}
+		}
+	},
+	[100750] = {
+		on_executed = {
+			{id = 105757, delay = 0}
+		}
+	},	]]--
+	--Activate zipline when wine is picked up
+	[105900] = {
+		values = {
+			counter_target = 1
+		}--[[,--This enable waypoint.
+		on_executed = {
+			{id = 104569, delay = 0}
+		}]]--
 	}
 }

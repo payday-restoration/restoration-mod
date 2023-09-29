@@ -4641,7 +4641,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "Bullseye",
-				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor; has a cooldown of #{important_1}#5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor.",
+				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor; has a cooldown of #{important_1}#5## seconds.\n\n\n\nIf armor is capable of #{skill_color}#fully regenerating##, lethal headshots reduce the cooldown by #{skill_color}#0.5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor.\n\nThe cooldown reduction is increased by an additional #{skill_color}#0.5## seconds.\n\n",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
@@ -5106,8 +5106,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
-		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds.",
-		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds.",
+		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
+		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
 		["menu_deck23_3_1_desc"] = "You gain ##5%## more health.",
 		["menu_deck23_3_1_short"] = "You gain ##5%## more health.",
 		["menu_deck23_3_2_desc"] = "You gain ##3.75%## more armor.",

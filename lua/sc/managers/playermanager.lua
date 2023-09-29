@@ -862,6 +862,19 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 	end
 end
 
+function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
+	if not self:player_unit() or attacker_unit ~= self:player_unit() then
+		return
+	end
+
+	self._message_system:notify(Message.OnLethalHeadShot, nil, attack_data)
+
+	local regen_armor_bonus_cd_reduction = managers.player:upgrade_value("player", "headshot_regen_armor_bonus_cd_reduction", 0)
+	if self._on_headshot_dealt_t then
+		self._on_headshot_dealt_t = self._on_headshot_dealt_t - regen_armor_bonus_cd_reduction
+	end
+end
+
 --Add extra checks to make sure that it only looks for killing headshots done with valid guns.
 function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 	if not self._coroutine_mgr:is_running("ammo_efficiency") then

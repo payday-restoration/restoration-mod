@@ -689,13 +689,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 11},
 				[1] = {
 					upgrades = {
-						"player_headshot_regen_armor_bonus_1"
+						"player_headshot_regen_armor_bonus_1",
+						"player_headshot_regen_armor_bonus_cd_reduction_2"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_headshot_regen_armor_bonus_2"
+						"player_headshot_regen_armor_bonus_2",
+						"player_headshot_regen_armor_bonus_cd_reduction_2"
 					},
 					cost = self.costs.hightierpro
 				}

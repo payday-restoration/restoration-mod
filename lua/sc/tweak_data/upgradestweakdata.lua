@@ -1015,6 +1015,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.5, --Basic
 						3.5 --Ace
 					}
+					self.values.player.headshot_regen_armor_bonus_cd_reduction = {
+						0.5, --Basic
+						1 --Ace
+					}
 					self.on_headshot_dealt_cooldown = 5
 					
 					self.skill_descs.prison_wife = {
@@ -4070,6 +4074,24 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "knockback_resistance",
+			category = "player"
+		}
+	}
+	self.definitions.player_headshot_regen_armor_bonus_cd_reduction_1 = {
+		name_id = "menu_player_headshot_regen_armor_bonus",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "headshot_regen_armor_bonus_cd_reduction",
+			category = "player"
+		}
+	}
+	self.definitions.player_headshot_regen_armor_bonus_cd_reduction_2 = {
+		name_id = "menu_player_headshot_regen_armor_bonus",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "headshot_regen_armor_bonus_cd_reduction",
 			category = "player"
 		}
 	}

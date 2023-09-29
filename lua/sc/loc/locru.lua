@@ -4750,7 +4750,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "В яблочко",
-				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.",
+				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка на #{skill_color}#$skill_value_b3## секунды.\n\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка еще на #{skill_color}#$skill_value_p2## секунды.",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Железный человек",
@@ -4775,11 +4775,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Rip and Tear formally Carbon Blade
 				["menu_carbon_blade_beta_sc"] = "Рвать и метать",
-				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПила OVE9000 теперь распиливает щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства пилой, арбалетами, луками, гранатометами и ракетометами имеют #{skill_color}#50%## шанс посеять панику среди врагов на расстоянии #{skill_color}#10## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##",
+				["menu_carbon_blade_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПила OVE9000 теперь распиливает щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nУбийства пилой, арбалетами, луками, гранатометами и ракетометами имеют #{skill_color}#$skill_value_p1## шанс посеять панику среди врагов на расстоянии #{skill_color}#$skill_value_p2## метров.\n\n#{risk}#Паника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.##",
 
 				--Fully Loaded--
 				["menu_bandoliers_beta_sc"] = "Вооружен до зубов",
-				["menu_bandoliers_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаш общий запас патронов увеличен на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы подбираете на #{skill_color}#$skill_value_p1## больше патронов из коробочек.\n\nВаш шанс получить метательное оружие из коробочки патронов увеличено на #{skill_color}#5%##; шанс увеличивается еще на #{skill_color}#1%## за каждый подбор. Шанс обнуляется, когда вы получаете метательное оружие из коробочки.\n\n#{risk}#Не работает на метательное оружие из перков.##",
+				["menu_bandoliers_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаш общий запас патронов увеличен на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы подбираете на #{skill_color}#$skill_value_p1## больше патронов из коробочек.\n\nВаш шанс получить метательное оружие из коробочки патронов увеличено на #{skill_color}#$skill_value_p2##; шанс увеличивается еще на #{skill_color}#$skill_value_p3## за каждый подбор. Шанс обнуляется, когда вы получаете метательное оружие из коробочки.\n\n#{risk}#Не работает на метательное оружие из перков.##",
 
 		--[[   TECHNICIAN   ]]--
 
@@ -4848,7 +4848,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Эффективный расход",
-				["menu_single_shot_ammo_return_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#$skill_value_ub1## убийства в голову из #{skill_color}#винтовок## в течение #{skill_color}#$skill_value_ub2## секунд восстановят #{skill_color}#$skill_value_ub3## от вашего боезапаса (минимум #{skill_color}#1## патрон).\n\nПИКОВЫЙ: #{owned}#$pro##\nНавык теперь срабатывает после #{skill_color}#$skill_value_up1## убийств в голову в течение #{skill_color}#$skill_value_up2## секунд.",
+				["menu_single_shot_ammo_return_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#$skill_value_b1## убийства в голову из #{skill_color}#винтовок## в течение #{skill_color}#$skill_value_b2## секунд восстановят #{skill_color}#$skill_value_b3## от вашего боезапаса (минимум #{skill_color}#1## патрон).\n\nПИКОВЫЙ: #{owned}#$pro##\nНавык теперь срабатывает после #{skill_color}#$skill_value_p1## убийств в голову в течение #{skill_color}#$skill_value_p2## секунд.",
 
 				--Aggressive Reload
 				["menu_engineering_beta_sc"] = "Агрессивная перезарядка",
@@ -4856,7 +4856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Рикошет",
-				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями наносят #{skill_color}#$skill_value_ub1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_ub2## метров.\n\nЗа каждые #{skill_color}#$skill_value_ub3## метров, в которых вы находитесь от врага, эффект перебрасывается на еще одного врага, до #{skill_color}#$skill_value_ub4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями #{skill_color}#не теряют урон с расстоянием.## Радиус навыка увеличен на #{skill_color}#$skill_value_up1## метр.\n\nЗа каждые #{skill_color}#$skill_value_ub3## метров от врага, эффект наносит дополнительные #{skill_color}#$skill_value_up2## урона; вплоть до #{skill_color}#$skill_value_up3## урона.",
+				["menu_kilmer_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями наносят #{skill_color}#$skill_value_b1## урона ближайшему врагу в радиусе #{skill_color}#$skill_value_b2## метров.\n\nЗа каждые #{skill_color}#$skill_value_b3## метров, в которых вы находитесь от врага, эффект перебрасывается на еще одного врага, до #{skill_color}#$skill_value_b4## раз.\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову из #{skill_color}#винтовок## в режиме одиночной стрельбы или очередями #{skill_color}#не теряют урон с расстоянием.## Радиус навыка увеличен на #{skill_color}#$skill_value_p1## метр.\n\nЗа каждые #{skill_color}#$skill_value_b3## метров от врага, эффект наносит дополнительные #{skill_color}#$skill_value_p2## урона; вплоть до #{skill_color}#$skill_value_p3## урона.",
 
 		--[[   GHOST   ]]--
 
@@ -4924,7 +4924,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Удар исподтишка",
-				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вам не наносится урон в течение #{skill_color}#3## секунд, то вы получите #{skill_color}#$skill_value_b1## шанс критического попадания, пока по вам не нанесут урон.\n\nКритические попадания наносят на #{skill_color}#50%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
+				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вам не наносится урон в течение #{skill_color}#$skill_value_b1## секунд, то вы получите #{skill_color}#$skill_value_b2## шанс критического попадания, пока по вам не нанесут урон.\n\nКритические попадания наносят на #{skill_color}#50%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
@@ -4955,11 +4955,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Desperado--
 				["menu_expert_handling_sc"] = "Меткий стрелок",
-				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из #{skill_color}#пистолета## дает #{skill_color}#$skill_value_ub1## бонус к точности и дальнобойности на #{skill_color}#$skill_value_ub2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_ub3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и дальнобойности до #{skill_color}#$skill_value_up1## секунд.",
+				["menu_expert_handling_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждое убийство в голову из #{skill_color}#пистолета## дает #{skill_color}#$skill_value_b1## бонус к точности и дальнобойности на #{skill_color}#$skill_value_b2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_b3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к точности и дальнобойности до #{skill_color}#$skill_value_p1## секунд.",
 
 				--Trigger Happy--
 				["menu_trigger_happy_beta_sc"] = "Неудержимый стрелок",
-				["menu_trigger_happy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждый выстрел в голову из #{skill_color}#пистолета## дает дополнительные #{skill_color}#$skill_value_ub1## урона на #{skill_color}#$skill_value_ub2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_ub3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к урону до #{skill_color}#$skill_value_up1## секунд. Эффект теперь накладывается еще #{skill_color}#$skill_value_up2## раз.",
+				["menu_trigger_happy_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nКаждый выстрел в голову из #{skill_color}#пистолета## дает дополнительные #{skill_color}#$skill_value_b1## урона на #{skill_color}#$skill_value_b2## секунды. Этот эффект накладывается до #{skill_color}#$skill_value_b3## раз, а длительность обновляется при каждом выстреле в голову.\n\nПИКОВЫЙ: #{owned}#$pro##\nУвеличивает длительность бонуса к урону до #{skill_color}#$skill_value_p1## секунд. Эффект теперь накладывается еще #{skill_color}#$skill_value_p2## раз.",
 
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--
@@ -5172,9 +5172,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Sweet liquor eases the pain--
 		["menu_deck19_1_desc_sc"] = "Теперь вы можете использовать Фляжку.\n\n##30%## получаемого урона по здоровью будет задержано на ##8## секунд.\n\nВы можете нажать на кнопку метательного оружия, чтобы использовать Фляжку и мгновенно отвергнуть задержанный урон.\n\nКогда вы отвергаете задержанный урон, ##150%## этого урона возвращается вам в качестве здоровья. Фляжку можно использовать раз в ##30## секунд.\n\n##50% вашей брони превращается в 50% здоровья.##",
-		["menu_deck19_3_desc_sc"] = "Задержка Фляжки сокращается на ##2## секунды за каждого убитого врага.",
+		["menu_deck19_3_desc_sc"] = "Задержка Фляжки сокращается на ##4## секунды за каждого убитого врага.",
 		["menu_deck19_5_desc_sc"] = "Если вы не получаете урон в течение ##4## секунд, любой задержанный урон будет отвергнут.\n\nВы отвечаете на пейджеры на ##25%## быстрее.",
-		["menu_deck19_7_desc_sc"] = "Когда у вас меньше ##50%## здоровья, задержка Фляжки сокращается на ##4## секунды за каждого убитого врага.",
+		["menu_deck19_7_desc_sc"] = "Когда у вас меньше ##50%## здоровья, задержка Фляжки сокращается на ##6## секунды за каждого убитого врага.",
 		["menu_deck19_9_desc_sc"] = "Вы получаете на ##25%## больше здоровья после поднятия.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 		
 		--it's not a war crime if they're not people--

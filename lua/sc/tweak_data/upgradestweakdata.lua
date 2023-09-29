@@ -1024,7 +1024,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.skill_descs.prison_wife = {
 					skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
 					skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
-					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10)
+					skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
+					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
+					skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
 					}
 
 				--Iron Man
@@ -1093,6 +1095,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							amount = 200
 						}
 					}
+					
+					self.skill_descs.carbon_blade = {
+					skill_value_p1 = tostring(self.values.saw.panic_when_kill[1].chance * 100).."%", -- Chance to cause panic
+					skill_value_p2 = tostring(self.values.saw.panic_when_kill[1].area / 100) -- Area of panic
+					}
 				
 			--Fully Loaded
 				--Basic
@@ -1104,8 +1111,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.bandoliers = {
-					skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier [1] % 1 * 100).."%", -- +Max ammo capacity
+					skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
 					skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100), -- Increase ammo pick up
+					skill_value_p2 = tostring(self.values.player.regain_throwable_from_ammo[1].chance * 100).."%", --Chance to pick up throwable from ammo boxes
+					skill_value_p3 = tostring(self.values.player.regain_throwable_from_ammo [1].chance_inc * 100).."%" -- Increase chance to pick up throwable if ammo box didn't give one
 					}
 		
 	--TECHNICIAN--
@@ -1314,11 +1323,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.fast_fire = {
-				skill_value_ub1 = "3", -- Amount of headshot kills to return ammo
-				skill_value_ub2 = "8", -- Timer
-				skill_value_ub3 = "3%", -- Amount of ammo which will be returned in % (minimum 1 ammo)
-				skill_value_up1 = "2", -- Amount of headshot kills for ace version
-				skill_value_up2 = "12" -- Timer for ace version
+				skill_value_b1 = tostring(self.values.player.head_shot_ammo_return[1].headshots), -- Amount of headshot kills to return ammo
+				skill_value_b2 = tostring(self.values.player.head_shot_ammo_return[1].time), -- Timer
+				skill_value_b3 = tostring(self.values.player.head_shot_ammo_return[1].ammo * 100).."%", -- Amount of ammo which will be returned in % (minimum 1 ammo)
+				skill_value_p1 = tostring(self.values.player.head_shot_ammo_return[2].headshots), -- Amount of headshot kills for ace version
+				skill_value_p2 = tostring(self.values.player.head_shot_ammo_return[2].time) -- Timer for ace version
 				}
 				
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
@@ -1341,13 +1350,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.headshot_no_falloff = {true}
 				
 				self.skill_descs.body_expertise = {
-				skill_value_ub1 = "70%", -- Minimal ricochet damage
-				skill_value_ub2 = "4", -- Minimal radius (in meters) to ricochet
-				skill_value_ub3 = "8", -- Give bonus damage and enemy chain for every X meters.
-				skill_value_ub4 = "3", -- Max ricochet chain possible
-				skill_value_up1 = "1", -- This is how much increased (in meters) minimal radius
-				skill_value_up2 = "10%", -- Ricochet damage increase for every X meters
-				skill_value_up3 = "100%" -- Max ricochet damage
+				skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage
+				skill_value_b2 = tostring((self.values.snp.graze_damage[1].radius) / 100), -- Minimal radius (in meters) to ricochet
+				skill_value_b3 = tostring(self.values.snp.graze_damage[1].range_increment / 100), -- Give bonus damage and enemy chain for every X meters.
+				skill_value_b4 = tostring(self.values.snp.graze_damage[1].max_chain), -- Max ricochet chain possible
+				skill_value_p1 = tostring((self.values.snp.graze_damage[2].radius - self.values.snp.graze_damage[1].radius) / 100), -- This is how much increased (in meters) minimal radius
+				skill_value_p2 = tostring(self.values.snp.graze_damage[2].damage_factor_range * 100).."%", -- Ricochet damage increase for every X meters
+				skill_value_p3 = "100%" -- Max ricochet damage
 				}
 
 	--GHOST--
@@ -1606,7 +1615,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.backstab = {
-				skill_value_b1 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
+				skill_value_b1 = tostring(self.values.player.unseen_increased_crit_chance[1].min_time), -- Time to activate crit bonus when player don't get damage
+				skill_value_b2 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
 				skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus
 				}
 	
@@ -1739,10 +1749,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.expert_handling = {
-				skill_value_ub1 = "8%", -- Accuracy bonus per stack
-				skill_value_ub2 = "4", -- Duration of buff (basic)
-				skill_value_ub3 = "5", -- Max amount of stacks
-				skill_value_up1 = "8" -- Duration of buff (ace)
+				skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
+				skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
+				skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
+				skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time) -- Duration of buff (ace)
 				}
 				
 			--Trigger Happy
@@ -1752,11 +1762,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.trigger_happy = {
-				skill_value_ub1 = "5%", -- Damage bonus per stack
-				skill_value_ub2 = "4", -- Duration of buff (basic)
-				skill_value_ub3 = "5", -- Max stacks (basic)
-				skill_value_up1 = "8", -- Duration of buff (ace)
-				skill_value_up2 = "5" -- How many additional stacks give ace version
+				skill_value_b1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].damage_bonus % 1 * 100).."%", -- Damage bonus per stack
+				skill_value_b2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_time), -- Duration of buff (basic)
+				skill_value_b3 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks), -- Max stacks (basic)
+				skill_value_p1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_time), -- Duration of buff (ace)
+				skill_value_p2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_stacks - self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks) -- How many additional stacks give ace version
 				}
 			
 		--Revenant

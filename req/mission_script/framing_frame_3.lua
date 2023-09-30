@@ -90,5 +90,11 @@ return {
 		on_executed = {
 			{id = 104569, delay = 0}
 		}]]--
+	},
+	--Wine now giving it's bag value if secured by zipline
+	[105224] = {
+		values = {
+			operation = "secure"
+		}
 	}
 }

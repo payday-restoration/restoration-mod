@@ -2,16 +2,16 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	if tweak_data:difficulty_to_index(difficulty) <= 5 then
-		ponr_value = 240	
+		ponr_value = 440
 	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 210
+		ponr_value = 400
 	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 180		
+		ponr_value = 360		
 	end
 
 return {
 	--Pro Job PONR 
-	[102047] = {
+	[101375] = {
 		ponr = ponr_value
 	}
 }

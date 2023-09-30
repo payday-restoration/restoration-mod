@@ -25,6 +25,12 @@ return {
 	[100216] = {
 		ponr = ponr_value
 	},
+	--Player now can steal paintings during stealth (Basically player can take a painting when "Find to switch" objective is triggered)
+	[100292] = {
+		on_executed = {
+			{ id = 101070, delay = 0 }
+		}
+	},
 	-- Enter main hall
 	[103594] = {
 		difficulty = 0.5

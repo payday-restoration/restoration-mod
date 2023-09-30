@@ -20,6 +20,22 @@ return {
 	[102207] = {
 		ponr = ponr_value
 	},
+	--Allow snipers spawn more frequently
+	[103192] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[100481] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[100484] = {
+		values = {
+			chance = 100
+		}
+	},
 	-- Add power cut SO delay
 	[100313] = {
 		values = {

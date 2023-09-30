@@ -31938,7 +31938,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_t9fastburst_receiver.perks = nil
 		self.parts.wpn_fps_ass_t9fastburst_receiver.stats = { value = 0 }
 		self.parts.wpn_fps_ass_t9fastburst_receiver.adds = { "g11_lock_burst" }
-		
+
 		--Magazines
 		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.stats = {
@@ -32172,7 +32172,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			supported = true,
 			custom_stats = {
-				g11_burst = true
+				g11_burst = true,
+				ads_speed_mult = 1.1
 			},
 			stats = {
 				value = 10

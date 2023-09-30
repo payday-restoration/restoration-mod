@@ -16683,6 +16683,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9fastburst.categories = { "assault_rifle" }
 		self.t9fastburst.recategorize = { "heavy_ar" }
 		self.t9fastburst.damage_type = "assault_rifle"
+		self.t9fastburst.has_description = true
 		self.t9fastburst.CLIP_AMMO_MAX = 45
 		self.t9fastburst.AMMO_MAX = 120
 		self.t9fastburst.burst = nil

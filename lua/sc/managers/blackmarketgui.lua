@@ -4541,7 +4541,7 @@ function BlackMarketGui:update_info_text()
 			local weapon_category = nil
 			local is_akimbo = false
 			local firemode_string = ""
-			local add_burst, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
+			local add_burst, add_auto, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
@@ -4572,6 +4572,10 @@ function BlackMarketGui:update_info_text()
 						swap_firemode = true
 						firemode_modded = true
 						break
+					elseif stats.add_auto then
+						add_auto = true
+						add_firemode = true
+						firemode_modded = true
 					elseif stats.add_burst then
 						add_burst = true
 						add_firemode = true
@@ -4603,12 +4607,15 @@ function BlackMarketGui:update_info_text()
 					if add_burst then
 						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") 
 					end
+					if add_auto then
+						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto") 
+					end
 					if weapon_tweak.BURST_FIRE then
 						local burst_type = nil --weapon_tweak.BURST_TYPE
 						if weapon_tweak.BURST_ONLY then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						else
-							if is_akimbo then
+							if is_akimbo or weapon_tweak.BURST_FIRE_DEFAULT then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
 							elseif burst_to_auto then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")

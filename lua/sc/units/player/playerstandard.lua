@@ -2499,8 +2499,8 @@ end
 
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
-	if alive(self._equipped_unit) and self._equipped_unit:base() then
-		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base():in_burst_mode() then
+		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
 		end
@@ -2509,9 +2509,11 @@ function PlayerStandard:_update_burst_fire(t)
 		local auto_burst = self._equipped_unit:base()._auto_burst
 		local queue_burst = not auto_burst and (self._queue_burst and not self:_in_burst())
 		local burst_complete = self._equipped_unit:base()._burst_rounds_remaining <= 0
-		if self._equipped_unit:base():burst_rounds_remaining() or queue_burst or (self._equipped_unit:base():in_burst_mode() and auto_burst and not self._equipped_unit:base():clip_empty() and input_bool) then
+		if self._equipped_unit:base():burst_rounds_remaining() or queue_burst or (auto_burst and not self._equipped_unit:base():clip_empty() and input_bool) then
 			self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true, fake_attack = true, real_input_pressed = input_pressed, clear_queue = not auto_burst and burst_complete })
 		end
+	else
+		self._queue_burst = nil
 	end
 end
 

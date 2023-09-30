@@ -16679,6 +16679,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pd3_qbz191.panic_suppression_chance = 0.05
 	end
 
+	if self.t9fastburst then --RJC9000 and PlayBONK's port of 3arc's absolute sin of a G11
+		self.t9fastburst.categories = { "assault_rifle" }
+		self.t9fastburst.recategorize = { "heavy_ar" }
+		self.t9fastburst.damage_type = "assault_rifle"
+		self.t9fastburst.CLIP_AMMO_MAX = 45
+		self.t9fastburst.AMMO_MAX = 120
+		self.t9fastburst.burst = nil
+		self.t9fastburst.fire_mode_data.burst_cooldown = nil
+		self.t9fastburst.BURST_COUNT = nil
+		self.t9fastburst.fire_mode_data.fire_rate = 0.13043478
+		self.t9fastburst.CAN_TOGGLE_FIREMODE = true
+		self.t9fastburst.FIRE_MODE = "auto"
+		self.t9fastburst.BURST_FIRE_DEFAULT = true
+		self.t9fastburst.BURST_FIRE = 3
+		self.t9fastburst.BURST_FIRE_RATE_MULTIPLIER = 1.9760869
+		self.t9fastburst.BURST_DELAY = 0.125
+		self.t9fastburst.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+		self.t9fastburst.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+		self.t9fastburst.kick = {}
+		self.t9fastburst.kick = self.stat_info.kick_tables.moderate_kick
+		self.t9fastburst.supported = true
+		self.t9fastburst.ads_speed = 0.320
+		self.t9fastburst.damage_falloff = {
+			start_dist = 2200,
+			end_dist = 7000,
+			min_mult = 0.3333
+		}	
+		self.t9fastburst.stats = {
+			damage = 30,
+			spread = 83,
+			recoil = 81,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 21,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.t9fastburst.stats_modifiers = nil
+		self.t9fastburst.panic_suppression_chance = 0.05
+		self.t9fastburst.sounds.fire = "t9fastburst_fire"
+		self.t9fastburst.sounds.fire_single = "t9fastburst_fire"
+		self.t9fastburst.sounds.fire_auto = "t9fastburst_fire"
+		self.t9fastburst.sounds.use_fix = nil
+		self.t9fastburst.sounds.stop_fire = "judge_x_fire"
+	end
+
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand
 		self.malorian_3516.recategorize = { "heavy_pis", "handcannon" }
 		self.malorian_3516.desc_id = "whydoyoucome"

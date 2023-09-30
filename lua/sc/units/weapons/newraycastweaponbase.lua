@@ -618,7 +618,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
-		self._lock_burst = self:weapon_tweak_data().LOCK_BURST
+		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST
 		if self._lock_burst then
 			self:_set_burst_mode(true, true)
 		end
@@ -702,9 +702,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					self:weapon_tweak_data().animations.reload_name_id = "akm"
 				end
 			end
+			if stats.g11_burst then
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 4.565217	
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.2
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
+				self:weapon_tweak_data().BURST_DELAY = 0.15
+				self:weapon_tweak_data().LOCK_BURST = nil
+			end	
 			if stats.funco_chan then
-				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_DELAY = 0.06
+				self:weapon_tweak_data().BURST_FIRE = 3
+				self:weapon_tweak_data().BURST_DELAY = 0.08
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
 			if stats.s7_flexfire then
@@ -795,7 +802,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_DELAY = 0.07
+				self:weapon_tweak_data().BURST_DELAY = 0.08
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
@@ -939,6 +946,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.stop_fire2 then
 				self:weapon_tweak_data().sounds.stop_fire2 = stats.stop_fire2
+			end
+			if stats.lock_burst then
+				self._lock_burst = true
 			end
 			if stats.big_scope then
 				self._has_big_scope = true
@@ -1327,7 +1337,19 @@ end
 
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
-	return self._burst_rounds_remaining <= 0 and not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	return self._burst_rounds_remaining <= 0 and not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self._lock_burst and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+end
+
+function NewRaycastWeaponBase:can_toggle_firemode()
+	if self:gadget_overrides_weapon_functions() then
+		return self:gadget_function_override("can_toggle_firemode")
+	end
+
+	if self._toggable_fire_modes then
+		return #self._toggable_fire_modes > 1
+	end
+
+	return not self._lock_burst and tweak_data.weapon[self._name_id].CAN_TOGGLE_FIREMODE
 end
 
 function NewRaycastWeaponBase:can_reload()

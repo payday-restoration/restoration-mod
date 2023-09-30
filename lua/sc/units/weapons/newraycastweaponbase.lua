@@ -1337,7 +1337,7 @@ end
 
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
-	return self._burst_rounds_remaining <= 0 and not self._macno and self._has_burst_fire and not self._locked_fire_mode and not self._lock_burst and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	return self._has_burst_fire and not self._locked_fire_mode and not self._lock_burst and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
 end
 
 function NewRaycastWeaponBase:can_toggle_firemode()
@@ -1349,8 +1349,9 @@ function NewRaycastWeaponBase:can_toggle_firemode()
 		return #self._toggable_fire_modes > 1
 	end
 
-	return not self._lock_burst and tweak_data.weapon[self._name_id].CAN_TOGGLE_FIREMODE
+	return not self._lock_burst and self._burst_rounds_remaining <= 0 and not self._macno and tweak_data.weapon[self._name_id].CAN_TOGGLE_FIREMODE
 end
+
 
 function NewRaycastWeaponBase:can_reload()
 	if self:ammo_base()._starwars then

@@ -32037,7 +32037,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		--Grips
 		self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.stats = {
-			value = 0,
+			value = 1,
 			recoil = -2,
 			concealment = 1
 		}
@@ -32047,7 +32047,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.stats = {
-			value = 0,
+			value = 2,
 			recoil = 2,
 			concealment = -1
 		}
@@ -32055,7 +32055,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_ass_t9fastburst_handle_01.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_handle_01.stats = {
-			value = 0,
+			value = 4,
 			spread = 2,
 			recoil = -2,
 			concealment = -1
@@ -32063,15 +32063,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_ass_t9fastburst_handle_pro.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_handle_pro.stats = {
-			value = 0,
-			recoil = 1,
-			spread = 2,
+			value = 5,
+			recoil = 2,
+			spread = 1,
 			concealment = -2
 		}
 
 		self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.stats = {
-			value = 0,
+			value = 2,
 			spread = 1,
 			recoil = -2
 		}
@@ -32079,7 +32079,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 		self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.supported = true
 		self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.stats = {
-			value = 0,
+			value = 5,
 			recoil = -4,
 			concealment = 2
 		}

@@ -16727,6 +16727,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9fastburst.sounds.fire_auto = "t9fastburst_fire"
 		self.t9fastburst.sounds.use_fix = nil
 		self.t9fastburst.sounds.stop_fire = "judge_x_fire"
+		self.t9fastburst.timers.reload_exit_empty = 0.9
+		self.t9fastburst.timers.reload_not_empty = 2.31
+		self.t9fastburst.timers.reload_exit_not_empty = 0.8
 	end
 
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand

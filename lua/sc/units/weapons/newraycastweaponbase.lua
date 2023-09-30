@@ -705,7 +705,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.g11_burst then
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 4.565217	
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.2
-				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 				self:weapon_tweak_data().BURST_DELAY = 0.15
 				self:weapon_tweak_data().LOCK_BURST = nil
 			end	

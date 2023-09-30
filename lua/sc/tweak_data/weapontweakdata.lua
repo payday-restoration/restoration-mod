@@ -16696,8 +16696,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9fastburst.BURST_FIRE = 3
 		self.t9fastburst.BURST_FIRE_RATE_MULTIPLIER = 1.9760869
 		self.t9fastburst.BURST_DELAY = 0.125
-		self.t9fastburst.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
-		self.t9fastburst.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+		self.t9fastburst.BURST_FIRE_RECOIL_MULTIPLIER = 0.33
+		self.t9fastburst.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 		self.t9fastburst.kick = {}
 		self.t9fastburst.kick = self.stat_info.kick_tables.moderate_kick
 		self.t9fastburst.supported = true

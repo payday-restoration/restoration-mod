@@ -14,6 +14,48 @@ return {
 	[100220] = {
 		ponr = ponr_value
 	},
+	--Snipers that look on Panic Room zone now spawn more than 1 time
+	[101128] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[101121] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[101520] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[101113] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[101140] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	[101136] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	--Should decrease sniper spawn intensity (I hope)
+	[101202] = {
+		values = {
+			chance = 2
+		}
+	},
+	[100686] = {
+		values = {
+			chance = 4
+		}
+	},
 	-- Boss spawn
 	[100521] = {
 		difficulty = 0.1

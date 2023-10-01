@@ -5110,8 +5110,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are ##5%## faster.",
 		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are ##5%## faster.",
 
-		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
-		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
+		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the ##\"Bullseye\"## skill if active.",
+		["menu_deck23_3_short"] = "Each headshot you achieve heals you for ##3## health.\n\nThis cannot occur more than once every ##5## seconds; cooldown reduction is shared with the ##\"Bullseye\"## skill if active.",
 		["menu_deck23_3_1_desc"] = "You gain ##5%## more health.",
 		["menu_deck23_3_1_short"] = "You gain ##5%## more health.",
 		["menu_deck23_3_2_desc"] = "You gain ##3.75%## more armor.",

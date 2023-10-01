@@ -4763,7 +4763,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n\n방탄복이 #{skill_color}#완전히 재생되어 있는 경우## 치명적인 헤드샷을 하면 재사용 대기시간이 #{skill_color}#0.5##초 단축됩니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.\n\n재사용 대기시간 감소 효과가 #{skill_color}#0.5##초만큼 추가로 증가합니다.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
@@ -5238,8 +5238,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_1_4_desc"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
 		["menu_deck23_1_4_short"] = "앉거나 가방을 들때의 이동 속도가 ##5%##만큼 빨라집니다.",
 		
-		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
-		["menu_deck23_3_short"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생합니다.",
+		["menu_deck23_3_desc"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생하며, 재사용 대기시간 감소는 활성화된 경우 #{skill_color}#\"불스아이\"## 스킬과 공유됩니다.",
+		["menu_deck23_3_short"] = "헤드샷을 할 때마다 체력을 ##3##씩 회복합니다.\n\n이 효과는 매 ##5##초마다 한 번만 발생하며, 재사용 대기시간 감소는 활성화된 경우 #{skill_color}#\"불스아이\"## 스킬과 공유됩니다.",
 		["menu_deck23_3_1_desc"] = "체력을 ##5%##만큼 얻습니다.",
 		["menu_deck23_3_1_short"] = "체력을 ##5%##만큼 얻습니다.",
 		["menu_deck23_3_2_desc"] = "방탄력을 ##3.75%##만큼 얻습니다.",

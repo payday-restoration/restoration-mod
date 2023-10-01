@@ -1670,6 +1670,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_bdgr_desc"] = "",
 			--MW22 Honey Badger
 			["bm_w_mcbravo_desc"] = "#{skill_color}#Встроенный глушитель## и дозвуковые патроны #{risk}#.300 BLK## делают Химеру идеальной для близких дистанций.",
+			--BOCW CARV2
+			["bm_wp_upg_i_g11"] = "Система К1",
+			["bm_wp_upg_i_g11_desc"] = "Увеличивает скорострельность стрельбы очередью до #{skill_color}#2100## и #{skill_color}#дает возможность менять режим стрельбы.##",
 			--AR-18
 			--["bm_w_ar18"] = "КАР-18",
 			
@@ -2724,6 +2727,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_g36k"] = "JP36K",
 		["bm_w_scarl"] = "Eagle Light",
 		["bm_w_rk62"] = "Velmer",
+		["bm_w_t9fastburst"] = "CARV.2",
 		["bm_w_mcbravo"] = "Chimera",
 		["bm_w_ar18"] = "CAR-18",
 		["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -2964,6 +2968,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_mcbravo"] = "Химера",
 			["bm_w_ar18"] = "КАР-18",
 			["bm_w_pd3_qbz191"] = "Нортвест Б-9",
+			["bm_w_t9fastburst"] = "КАРВ.2",
 		["bm_w_ching"] = "M1 Галант",
 		["bm_w_m14"] = "M308",
 		["bm_w_fal"] = "Фалкон 58",	

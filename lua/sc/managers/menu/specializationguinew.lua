@@ -183,7 +183,7 @@ function SpecializationGuiNew:update_detail_panels(item)
 				text_params.text = text_params.text:gsub("#%{(.-)%}#", "##")
 				local ability_text = self._details_panel:text(text_params)
 
-				managers.menu_component:add_colors_to_text_object(ability_text, #color_range > 1 and unpack(color_range) or tweak_data.screen_colors.resource)
+				managers.menu_component:add_colors_to_text_object(ability_text, unpack( #color_range > 1 and color_range or {tweak_data.screen_colors.resource} ))
 				ExtendedPanel.make_fine_text(ability_text)
 				ability_text:set_y(y_pos + margin)
 
@@ -267,7 +267,7 @@ function SpecializationGuiNew:update_detail_panels(item)
 		text_params.text = text_params.text:gsub("#%{(.-)%}#", "##")
 		local ability_text = self._details_panel:text(text_params)
 
-		managers.menu_component:add_colors_to_text_object(ability_text, #color_range > 1 and unpack(color_range) or tweak_data.screen_colors.resource)
+		managers.menu_component:add_colors_to_text_object(ability_text, unpack( #color_range > 1 and color_range or {tweak_data.screen_colors.resource} ))
 		ExtendedPanel.make_fine_text(ability_text)
 		ability_text:set_y(y_pos + margin)
 

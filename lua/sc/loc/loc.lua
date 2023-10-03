@@ -4649,7 +4649,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields## #{risk}#and## #{important_1}#Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ability to stagger shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#10%## faster.\n\nYour ability to stagger shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -4929,10 +4929,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_category_mod"] = "Mod",
 
 		--Shared Perks--
-		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##25%## more damage. Does not apply to throwables or launchers.",
-		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##25%## more damage. Does not apply to throwables or launchers.",
-		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do ##25%## more damage. Does not apply to throwables or launchers.",
-		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##25%## more damage. Does not apply to throwables or launchers.",
+		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#25%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## concealment.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#20%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour armor is increased by ##15%## for ballistic vests.",
@@ -4946,7 +4946,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck4_5_desc_sc"] = "Your dodge meter will be filled to ##200%## of its normal maximum when you are revived.\n\nYour camera loop duration is increased by ##20## seconds.",
 		["menu_deck4_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck4_9_desc_sc"] = "Dodging an attack causes you to regenerate ##1## health every second for the next ##5## seconds. This effect can stack, but all stacks are lost whenever you take health damage.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck4_9_desc_sc"] = "Dodging an attack causes you to regenerate ##1## health every second for the next ##5## seconds. This effect can stack but all stacks are lost whenever you take health damage.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Hitman--
 		["menu_deck5_1_sc"] = "Gun-fu",
@@ -4954,7 +4954,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "With a Pencil",
 		["menu_deck5_7_sc"] = "Expert Assassin",
 
-		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores ##25## health. You can store up to ##75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.",
+		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores #{skill_color}#25## health. You can store up to #{risk}#75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of #{important_1}#5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to #{risk}#240## temporary health at once.",
 		["menu_deck5_3_desc_sc"] = "Your dodge meter fills up by ##100%## of your dodge when your armor is restored.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_5_desc_sc"] = "You store ##60%## more health.\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck5_7_desc_sc"] = "You gain ##120## temporary health when you are revived.\n\nYou gain an additional ##5## dodge points.",
@@ -4968,7 +4968,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Crew Chief
-		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.\n\nIncreases your shout distance by ##25%.##\n\nYour dodge is increased by ##5## points.",
+		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by #{skill_color}#50%.##\n\n#{risk}#NOTE: Crew perks do not stack.##\n\nIncreases your shout distance by #{skill_color}#25%.##\n\nYour dodge is increased by #{skill_color}#5## points.",
 		["menu_deck1_5_desc_sc"] = "You gain an additional ##10%## more health.\n\nYour crew gain ##5%## more health.\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck1_7_desc_sc"] = "You gain ##10%## more armor.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNOTE: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
@@ -4988,7 +4988,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Gambler--
-		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##3 to 6## health.\n\nHealing has an ##8## second cooldown but every ammo box you pick up reduces it by ##1 to 4## seconds.",
+		["menu_deck10_1_desc_sc"] = "Ammo boxes you pick up also yield medical supplies that heal you for #{skill_color}#3 to 6## health.\n\nHealing has an #{important_1}#8## second cooldown but every ammo box you pick up reduces it by #{skill_color}#1 to 4## seconds.",
 		["menu_deck10_3_desc_sc"] = "When you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou gain ##5## dodge points.",
 		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo boxes by an additional ##1## point.\n\nWhen you get healed from picking up ammo boxes, your dodge meter is also filled up by ##100%## of your dodge.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo boxes, your teammates also get healed for ##50%## of the amount.\n\nYour dodge is increased by an additional ##5## points.",
@@ -5006,13 +5006,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Sociopath--
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##18## meters, you take ##5%## less damage from enemies.",
-		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates ##20## armor.\n\nThis cannot occur more than once every ##5## seconds. Each kill during cooldown reduces it by ##0.5## seconds; melee kills reduce it by an additional ##1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain ##5## dodge points.",
+		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#20## armor.\n\nThis cannot occur more than once every #{important_1}#5## seconds. Each kill during cooldown reduces it by #{skill_color}#0.5## seconds; melee kills reduce it by an additional #{skill_color}#1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#5## dodge points.",
 		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis shares its cooldown with Tension (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##15## armor; melee kills double the amount.\n\nThis shares its cooldown with Tension (Card 3).\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##8## concealment while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3##; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## concealment.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.\n\nYou gain the ability to place ##2## body bag cases.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
@@ -5034,42 +5034,42 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Anarchist--
 		["menu_st_spec_15"] = "Anarchist", --there's a random space at the end of the original string
-		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.",
-		["menu_deck15_3_desc_sc"] = "##50% of your health## is converted into ##50% armor.##",
-		["menu_deck15_5_desc_sc"] = "##50% of your health## is converted into ##100% armor.##\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
-		["menu_deck15_7_desc_sc"] = "##50% of your health## is converted into ##150% armor.##",
-		["menu_deck15_9_desc_sc"] = "Dealing damage will grant you armor - This can only occur once every ##5## seconds. Heavier armors are granted more armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to #{skill_color}#8## armor per second. Heavier armor regenerates more armor per tick but has a longer delay between ticks.\n\n#{risk}#NOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.##",
+		["menu_deck15_3_desc_sc"] = "#{risk}#50% of your health## is converted into #{skill_color}#50% armor.##",
+		["menu_deck15_5_desc_sc"] = "#{risk}#50% of your health## is converted into #{skill_color}#100% armor.##\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+		["menu_deck15_7_desc_sc"] = "#{risk}#50% of your health## is converted into #{skill_color}#150% armor.##",
+		["menu_deck15_9_desc_sc"] = "#{skill_color}#Dealing damage will grant you armor,## with heavier armor being granted more armor.\nThis can only occur once every #{important_1}#5## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 
 		--Scarface--
-		["menu_deck17_1_desc_sc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nThe Injector can only be used once every ##30## seconds.",
+		["menu_deck17_1_desc_sc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#30%## of all damage taken for #{skill_color}#4## seconds; you can still take damage during the effect.\n\nThe Injector can only be used once every #{important_1}#30## seconds.",
 		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Injector is active.",
 		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
 		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##60%## while below ##25%## health.",
 		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the Injector effect while at maximum health, the recharge time of the Injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYour dodge is increased by ##5## points.",
+		["menu_deck18_1_desc_sc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#12## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#75%.##\n\nThe Smoke Bomb has a #{important_1}#40## second cooldown, but killing enemies will reduce this cooldown by #{skill_color}#1## second.\n\nYour dodge is increased by #{skill_color}#5## points.",
 		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_5_desc_sc"] = "Dodging an attack reduces the smoke bomb's cooldown by ##1## second.\n\nYou carry ##1## additional body bag in your inventory.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##40%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n##30%## of the damage taken to your health is applied over ##8## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time.\n\nThe flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##",
+		["menu_deck19_1_desc_sc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#30%## of the damage taken to your health is applied over #{skill_color}#8## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#150%## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#30## second cooldown.\n\nLose #{important_1}#50%## of your armor and gain #{skill_color}#50%## more health.",
 		["menu_deck19_3_desc_sc"] = "The cooldown of your flask is reduced by ##4## seconds for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.\n\nYou answer pagers ##25%## faster.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask is reduced by ##6## seconds for each enemy you kill.",
 		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_1_desc_sc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.",
+		["menu_deck20_1_desc_sc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#11## seconds, and has a cooldown of #{important_1}#80## seconds.",
 		["menu_deck20_3_desc_sc"] = "Enemies you or the tagged unit kill extend the duration of the gas dispenser by ##2## seconds. This increase is reduced by ##0.2## seconds each time it happens.",
 		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduces damage you take by ##0.5## points up to a maximum of ##8## until the Gas Dispenser's effect and cooldown ends.\n\nYour camera loop duration is increased by ##20## seconds.",
 		["menu_deck20_7_desc_sc"] = "Healing from the Gas Dispenser is increased by ##100%.##",
 		["menu_deck20_9_desc_sc"] = "Each enemy you kill will reduce the cooldown of the Gas Dispenser by ##2## seconds.\n\nEach enemy the tagged unit kills will reduce the cooldown of the Gas Dispenser by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Biker--
-		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##2## health. This can only occur once every ##5## seconds.",
+		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain #{skill_color}#2## health. This can only occur once every #{important_1}#5## seconds.",
 		["menu_deck16_3_desc_sc"] = "You regenerate ##10## armor every ##5## seconds.",
 		["menu_deck16_5_desc_sc"] = "Every ##25%## armor missing reduces cooldown to kill regen by ##0.5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 		["menu_deck16_7_desc_sc"] = "You now regenerate ##20## armor every ##5## seconds.\n\nKilling an enemy with a melee weapon causes the next armor regen tick to occur ##1## second sooner.",
@@ -5080,7 +5080,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_3_desc_sc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.",
 		["menu_deck12_5_desc_sc"] = "The lower your health, the less damage you take. When your health is below ##100%##, you will take up to ##20%## less damage.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 		["menu_deck12_7_desc_sc"] = "The lower your health, the more your effective your dodge becomes when you kill an enemy using melee.\n\nWhen your health is below ##100%##, melee kills fill your meter by up to ##125%## of your dodge as well as increasing the grace period of your next dodge by up to ##300%##, to a maximum of ##900ms.##\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck12_9_desc_sc"] = "The maximum amount of deflection you can gain is raised to ##80%.##\n\nOnce per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNOTE: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck12_9_desc_sc"] = "The maximum amount of deflection you can gain is raised to #{skill_color}#80%.##\n\nOnce per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\n#{risk}#NOTE: This effect does not apply to, nor is it refreshed by, going down by cloaker kicks and taser shocks.##\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
@@ -5091,7 +5091,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##2.5## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Leech
-		["menu_deck22_1_desc_sc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#10%## of your max health and #{risk}#disables your armor## for #{skill_color}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## and taking damage will remove one segment. Killing #{skill_color}#3## enemies will restore one segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.",
+		["menu_deck22_1_desc_sc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#10%## of your max health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.",
 		["menu_deck22_3_desc_sc"] = "While the Ampule is active, taking damage heals your teammates for #{skill_color}#1%## of their max health.",
 		["menu_deck22_5_desc_sc"] = "The Ampule's duration is increased to #{skill_color}#10## seconds and the cooldown reduction is increased by #{skill_color}#1## additional second.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 		["menu_deck22_7_desc_sc"] = "While the Ampule is active your health is now divided into segments of #{skill_color}#5%.##",
@@ -5152,7 +5152,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Rouge
 			["menu_deck4_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYou swap between your weapons an additional ##30%## faster.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Hitman
-			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores ##25## health. You can store up to ##75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.\n\nYou carry ##1## additional body bag in your inventory.",
+			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores #{skill_color}#25## health. You can store up to #{risk}#75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of #{important_1}#5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to #{risk}#240## temporary health at once.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
 			--Crook
 			["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##15%## for ballistic vests.\n\nYou pick locks ##20%## faster.",
 			--Burglar
@@ -5160,11 +5160,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Infiltrator
 			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##5## seconds or until you miss; stacks up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates ##20## armor.\n\nKilling an enemy within ##18## meters regenerates an additional ##15## armor.\n\nThis cannot occur more than once every ##5## seconds. Each kill during cooldown reduces it by ##0.5## seconds; melee kills reduce it by an additional ##1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry ##1## additional body bag in your inventory.",
+			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#20## armor.\n\nKilling an enemy within #{skill_color}#18## meters regenerates an additional #{skill_color}#15## armor.\n\nThis cannot occur more than once every #{important_1}#5## seconds. Each kill during cooldown reduces it by #{skill_color}#0.5## seconds; melee kills reduce it by an additional #{skill_color}#1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##2 to 5## health.\n\nHealing has a ##10## second cooldown, but every ammo box you pick up reduces it by ##1 to 4## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals ##2## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.75## seconds and only while wearing the ##Flak Jacket.## Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##30## armor while wearing the Flak Jacket.\n\nYou gain ##4## concealment while wearing the Flak Jacket.\n\nYou gain the ability to place ##2## body bag cases.",
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3## seconds; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## concealment.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#2## body bag cases.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Ex-Pres
@@ -5174,19 +5174,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Anarchist
 			["menu_deck15_mrwi_desc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
 			--Biker
-			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain ##2## health. This can only occur once every ##5## seconds.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain #{skill_color}#2## health. This can only occur once every #{important_1}#5## seconds.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "Unlocks the ##Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for ##20%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by ##20%## while the Injector is active.\n\nThe Injector can only be used once every ##30## seconds.",
+			["menu_deck17_mrwi_desc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#20%## of all damage taken for #{skill_color}#4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by #{skill_color}#20%## while the Injector is active.\n\nThe Injector can only be used once every #{important_1}#30## seconds.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "Unlocks the ##Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%.##\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.\n\nYour dodge is increased by an additonal ##5## points.\n\nYou carry ##1## additional body bag in your inventory.",
+			["menu_deck18_mrwi_desc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#12## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#75%.##\n\nThe Smoke Bomb has a #{important_1}#40## second cooldown, but killing enemies will reduce this cooldown by #{skill_color}#1## second.\n\nYour dodge is increased by an additonal #{skill_color}#5## points.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Unlocks the ##Hip Flask## for use in place of a throwable.\n\n##20%## of the damage taken to your health is applied over ##5## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##150%## of the remaining damage-over-time.\n\nThe flask has a ##30## second cooldown.\n\n##50% of your armor## is converted to ##50% health.##\n\nYou answer pagers ##25%## faster.",
+			["menu_deck19_mrwi_desc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#20%## of the damage taken to your health is applied over #{skill_color}#5## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#150%## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#30## second cooldown.\n\nLose #{important_1}#50%## of your armor and gain #{skill_color}#50%## more health.\n\nYou answer pagers #{skill_color}#25%## faster.",
 			--Tag Team
-			["menu_deck20_mrwi_desc"] = "Unlocks the ##Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within ##18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##4## health and the tagged unit for ##2## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.\n\nYour camera loop duration is increased by ##20## seconds.",
+			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#11## seconds  and has a cooldown of #{important_1}#80## seconds.\n\nYour camera loop duration is increased by #{skill_color}#20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the ##Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting ##10## seconds with a radius of ##15## meters. The ##first## feedback loop has a ##100%## chance to stun most enemies, with every ##1.2## seconds afterwards having a ##60%## chance to stun.\n\nThe Pocket ECM Device has an ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##2.5## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a #{skill_color}#10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting #{skill_color}#10## seconds with a radius of #{skill_color}#15## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM Device has an #{important_1}#80## second cooldown timer, but each kill you perform will shorten the cooldown timer by #{skill_color}#2.5## seconds.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "Unlocks the ##Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore ##5%## of your maximum health and disables your armor for ##6## seconds.\n\nWhile the Ampule is active your health is divided into segments of ##10%## and damage taken from enemies will remove one segment. Killing ##3## enemies will restore one segment of your health and block damage for ##1## second.\n\nThe Ampule has a ##40## second cooldown.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",

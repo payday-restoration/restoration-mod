@@ -14,6 +14,12 @@ return {
 	[100818] = {
 		ponr = ponr_value
 	},
+	--Technically should fix softlock when blowtorch interactions are unavailable. Also player can't abuse keys in loud
+	[100778] = {
+		on_executed = {
+			{id = 101278, delay = 0}
+		}
+	},
 	[101190] = {
 		reinforce = {
 			{

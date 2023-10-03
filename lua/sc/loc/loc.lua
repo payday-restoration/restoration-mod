@@ -5188,6 +5188,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 
+		["menu_deck23_9_desc"] = "Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
+		
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Tabula Rasa",
 		["menu_st_spec_0_desc"] = "It is hypothesized that human beings are born without inherent ideas, thoughts, or ideologies and that these are all learned behaviors from various experiences. In some ways this can cause one to have great difficulty, in other ways this can be seen as an advantage. The Tabula Rasa perk deck offers benefits that may not seem obvious at first and even detrimental, but a greater challenge can sometimes bring about other rewards.",

@@ -641,7 +641,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	--This portion of the code will need to be cut and reworked once infinite is in progress.
 	--Might be ideal to use/abuse lua virtual tables and vary them based on captain type.
 	local wave_9_captain = math.random()
-	local job = Global.level_data and Global.level_data.level_id
 	
 	--Always force the big scary halloween guy, maybe look into a faction check down the line?
 	if job == "skm_nightmare_lvl" then

@@ -361,6 +361,7 @@ function restoration:Init()
 		"constantine_smackdown_lvl", --Smackdown
 		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
 		"nmh_res", --Resmod edit of no mercy.
+		"lvl_friday", --Crashing Capitol
 		"physics_citystreets", -- BOWORKS Day 1
 		"physics_core",-- BOWRORKS Day 3
 		"cold_gold",-- Cold Gold 

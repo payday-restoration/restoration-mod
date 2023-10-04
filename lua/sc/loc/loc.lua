@@ -2936,7 +2936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_scarl"] = "VF-6M",
 				["bm_w_schakal"] = "AMP 45",
 				["bm_w_tecci"] = "SG 416C",
-				["bm_w_l85a2"] = "ROS L85", --[R]oyal [O]rdanance + BAE [S]ystems
+				["bm_w_l85a2"] = "L-95",
 				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_vhs"] = "HVH-2",
 				["bm_w_contraband"] = "SG 417D"

@@ -2,13 +2,13 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 if Global.game_settings and Global.game_settings.one_down then
-	if tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 6 or difficulty_index == 7 or difficulty_index == 8 then
 		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
-	if tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 	end
-	if tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 or difficulty_index == 8 then
 		titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
@@ -16,11 +16,11 @@ if Global.game_settings and Global.game_settings.one_down then
 	end
 end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 6 then
+	if difficulty_index <= 6 then
 		vault_guard = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 7 then
 		vault_guard = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		vault_guard = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
 	end
 	

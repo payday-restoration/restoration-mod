@@ -1,11 +1,11 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 1080
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 1050	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		ponr_value = 1020	
 	end
 	
@@ -13,7 +13,7 @@ if Global.game_settings and Global.game_settings.one_down then
 		timelock_normal = 300
 		timelock_fast = 270
 	
-	if tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 or difficulty_index == 8 then
 		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	end
 end

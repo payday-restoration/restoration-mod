@@ -1,20 +1,20 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) == 6 then
+	if difficulty_index == 6 then
 		bulldozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 720
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 660	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		ponr_value = 600
 	end
 	
 if Global.game_settings and Global.game_settings.one_down then	
-	if tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 8 then
 		bulldozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
 end

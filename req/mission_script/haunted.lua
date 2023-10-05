@@ -3,7 +3,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 --Instead of bad dozer spam following by a random cloaker, Safehouse Nightmare has now proper scripted endless assault that features variety of Zombie Forces
 --Scripted Spawn List
-	if tweak_data:difficulty_to_index(difficulty) <= 3 then
+	if difficulty_index <= 3 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_swat_1/ene_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_swat_2/ene_swat_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_swat_3/ene_swat_3"
@@ -20,7 +20,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
 		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
-	elseif tweak_data:difficulty_to_index(difficulty) == 4 then
+	elseif difficulty_index == 4 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_swat_3/ene_swat_3"
@@ -37,7 +37,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
 		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 then
+	elseif difficulty_index == 5 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"
@@ -54,7 +54,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
 		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 then
+	elseif difficulty_index == 6 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"
@@ -71,7 +71,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
 		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 7 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"
@@ -88,7 +88,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
 		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"

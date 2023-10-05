@@ -1,27 +1,25 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
+local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
+local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 
-	if tweak_data:difficulty_to_index(difficulty) <= 6 then
-		gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
-		gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	if difficulty_index == 7 or difficulty_index == 8 then
 		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
 		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"	
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 4 then
-		gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 5 or tweak_data:difficulty_to_index(difficulty) == 6 then
+	if difficulty_index == 5 or difficulty_index == 6 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-	elseif tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 7 or difficulty_index == 8 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 300
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 420	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		ponr_value = 540	
 	end
 

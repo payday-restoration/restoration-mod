@@ -1,13 +1,13 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value_1 = 1560
 		ponr_value_2 = 840
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value_1 = 1530
 		ponr_value_2 = 810
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	elseif difficulty_index == 8 then
 		ponr_value_1 = 1500
 		ponr_value_2 = 780
 	end

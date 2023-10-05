@@ -2953,6 +2953,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
 	self.headless_hatman.no_omnia_heal = true
+	self.headless_hatman.dt_suppress = nil
 	self.headless_hatman.captain_type = restoration.captain_types.hvh
 	table.insert(self._enemy_list, "headless_hatman")
 end

@@ -3,6 +3,8 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
 local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+local fbiagent_1 = "units/payday2/characters/ene_fbi_1/ene_fbi_1"
+local fbiagent_2 = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
 
 	if difficulty_index == 7 or difficulty_index == 8 then
 		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
@@ -14,6 +16,28 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 	elseif difficulty_index == 7 or difficulty_index == 8 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
+	
+	if difficulty_index == 8 then
+		fbiagent_1 = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
+	end	
+	
+	if Global.game_settings and Global.game_settings.one_down then
+		fbiagent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
+		fbiagent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
+	
+	if difficulty_index == 6 then
+		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+	end	
+	
+	if difficulty_index <= 6 then
+		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
+		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
+	elseif difficulty_index == 7 or difficulty_index == 8 then
+		gensec_rifle = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
+		gensec_smg = "units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc"
+	end
+end	
+		
 
 	if difficulty_index <= 5 then
 		ponr_value = 300
@@ -24,49 +48,99 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 	end
 
 return {
-	--Pro Job PONR
+	--Pro Job PONR 
 	[100329] = {
 		ponr = ponr_value
 	},
-	--Force FBI Agents
+	--FBI Agents, gets replaced with Ready Teams on Pro Jobs
+	[100514] = {
+		values = {
+            enemy = fbiagent_1
+		}
+	},
 	[100515] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100520] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100521] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100547] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100551] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100560] = {
+		values = {
+            enemy = fbiagent_1
+		}
+	},
+	[100562] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100563] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100564] = {
+		values = {
+            enemy = fbiagent_1
+		}
+	},
+	[100566] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100567] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100568] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100569] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100570] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100571] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
+		}
+	},
+	[100572] = {
+		values = {
+            enemy = fbiagent_1
 		}
 	},
 	[100573] = {
 		values = {
-            enemy = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
+            enemy = fbiagent_2
 		}
 	},
 	--GenSec Scripted Spawns
@@ -283,62 +357,62 @@ return {
 		}
 	},
 	--Van Bulldozers
-	[101178] = {
+	[103750] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101179] = {
+	[103751] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101180] = {
+	[103752] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101181] = {
+	[103753] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101182] = {
+	[103754] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101183] = {
+	[103755] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101184] = {
+	[103756] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101185] = {
+	[103757] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101186] = {
+	[103758] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101187] = {
+	[103759] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101188] = {
+	[103760] = {
 		values = {
             enemy = gensec_dozer
 		}
 	},
-	[101189] = {
+	[103761] = {
 		values = {
             enemy = gensec_dozer
 		}

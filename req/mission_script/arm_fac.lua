@@ -14,6 +14,21 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 	elseif difficulty_index == 7 or difficulty_index == 8 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
+	
+	if Global.game_settings and Global.game_settings.one_down then
+	if difficulty_index == 6 then
+		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+	end	
+	
+	if difficulty_index <= 6 then
+		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
+		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
+	elseif difficulty_index == 7 or difficulty_index == 8 then
+		gensec_rifle = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
+		gensec_smg = "units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc"
+	end
+end	
+		
 
 	if difficulty_index <= 5 then
 		ponr_value = 300

@@ -59,7 +59,7 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"	
 	elseif difficulty_index == 8 then
 		swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		swat_2 = "units/payday2/characters/ene_titan_shotgun/ene_titan_shotgun"
+		swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		spooc =  "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"

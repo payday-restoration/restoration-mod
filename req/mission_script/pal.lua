@@ -27,32 +27,6 @@ return {
     [102551] = {
         ponr_end = true
     },
-	--Fixes SWAT chopper that lands on Mitchell's roof not spawning at all (also fixes choppers having no sounds)
-	[101688] = {
-		values = {
-			enabled = true
-		trigger_list = {
-			<table id="1" name="run_sequence" notify_unit_id="100603" notify_unit_sequence="swat" time="0"/>
-			<table id="2" name="run_sequence" notify_unit_id="100603" notify_unit_sequence="heli_street_seventh_flyin" time="0"/>
-			}	
-		}
-	},
-	[101687] = {
-		values = {
-		trigger_list = {
-			<table id="1" name="run_sequence" notify_unit_id="102724" notify_unit_sequence="swat" time="0"/>
-			<table id="2" name="run_sequence" notify_unit_id="102724" notify_unit_sequence="heli_suburbia_flyin" time="0"/>
-			}	
-		}
-	},
-	[101689] = {
-		values = {
-		trigger_list = {
-			<table id="1" name="run_sequence" notify_unit_id="100719" notify_unit_sequence="swat" time="0"/>
-			<table id="2" name="run_sequence" notify_unit_id="100719" notify_unit_sequence="heli_street_fourth_flyin" time="0"/>
-			}	
-		}
-	},
 	--Bain no longer will remind to find Mitchell when players masked up or when the door has been crowbarred
 	[102410] = {
 		on_executed = {
@@ -71,16 +45,6 @@ return {
 		}
 	},
 	[101733] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[101717] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[101718] = {
 		values = {
             enemy = australian_sniper
 		}

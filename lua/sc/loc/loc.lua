@@ -2001,7 +2001,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
 				["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",
 				--AR-15 MAGS
-				["bm_wp_upg_vintage_fal_sc"] = "Vintage Mag",
+				["bm_wp_upg_vintage_fal_sc"] = "Ridgeback Mag",
 				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 				["bm_wp_upg_mil_sc"] = "Milspec Mag",
 				["bm_wp_upg_tac_sc"] = "Tactical Mag",
@@ -2932,12 +2932,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
 				["bm_w_x_m1911"] = "Akimbo Crosskill A1s",
 				["bm_w_x_sparrow"] = "Akimbo Sparrows",
+				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scarl"] = "VF-6M",
 				["bm_w_schakal"] = "AMP 45",
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_l85a2"] = "L-95",
-				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_vhs"] = "HVH-2",
 				["bm_w_contraband"] = "SG 417D"
 	

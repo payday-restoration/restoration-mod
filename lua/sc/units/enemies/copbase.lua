@@ -47,6 +47,10 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		GroupAIStateBesiege:set_assault_endless(true)
 		managers.hud:set_buff_enabled("vip", true)
 		
+		--managers.groupai:state():set_fake_assault_mode(true)
+		--managers.groupai:state():set_wave_mode(besiege)
+		--managers.groupai:state():set_assault_mode(true)			
+		
 		if managers.skirmish:is_skirmish() then
 			managers.skirmish:set_captain_active()
 		end

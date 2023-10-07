@@ -23,6 +23,10 @@
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="str_swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>			
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/pd2_dlc_cro/vehicles/veh_truck_police/veh_truck_police_anim_01_stage_02" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/pd2_dlc_cro/vehicles/veh_truck_police/veh_truck_police_anim_01_stage_03" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/pd2_dlc_cro/vehicles/veh_truck_police/veh_truck_police_anim_02_stage_03" target_type="sequence_manager" merge_mode="script_merge"/>
+		
 		<mod file="blackhawks.xml" type="custom_xml" target_file="units/payday2/vehicles/air_vehicle_blackhawk/vehicle_blackhawk" target_type="sequence_manager" merge_mode="script_merge"/>
 	</ScriptMods>	
 	
@@ -201,11 +205,11 @@
 		<hook file="sc/tweak_data/enveffecttweakdata.lua" source_file="lib/tweak_data/enveffecttweakdata"/>
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
-	    	<hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
+	    <hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 		<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 		<hook file="sc/units/enemies/copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/huskcopbrain.lua" source_file="lib/units/enemies/cop/huskcopbrain"/>
-	    	<hook file="sc/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk.lua" source_file="lib/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk"/>
+	    <hook file="sc/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk.lua" source_file="lib/units/civilians/actions/lower_body/escortwithsuitcaseactionwalk"/>
 		<hook file="sc/units/civilians/civilianbase.lua" source_file="lib/units/civilians/civilianbase"/>
 		<hook file="sc/units/civilians/civilianbrain.lua" source_file="lib/units/civilians/civilianbrain"/>
 		<hook file="sc/units/civilians/civiliandamage.lua" source_file="lib/units/civilians/civiliandamage"/>
@@ -215,7 +219,7 @@
 		<hook file="sc/units/props/timergui.lua" source_file="lib/units/props/timergui"/>
 		<hook file="sc/units/props/texttemplatebase.lua" source_file="lib/units/props/texttemplatebase"/>		
 		<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
-	    	<hook file="sc/units/pickups/gageassignmentbase.lua" source_file="lib/units/pickups/gageassignmentbase"/>
+	    <hook file="sc/units/pickups/gageassignmentbase.lua" source_file="lib/units/pickups/gageassignmentbase"/>
 		<hook file="sc/player_actions/skills/playeractiondamagecontrol.lua" source_file="lib/player_actions/skills/playeractiondamagecontrol"/>
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>

@@ -2800,8 +2800,10 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
 	if self:get_ai_group_type() == "russia" then
 		self.phalanx_vip.spawn_sound_event = "cpw_a01"
+		self.phalanx_vip.spawn_sound_event_2 = "cloaker_spawn"
 	else
 		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
+		self.phalanx_vip.spawn_sound_event_2 = nil
 	end	
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -2811,7 +2813,6 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.ecm_vulnerability = nil	
 	self.phalanx_vip.die_sound_event = "mga_death_scream"
 	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
-	self.phalanx_vip.spawn_sound_event_2 = nil
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true

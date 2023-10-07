@@ -3509,6 +3509,46 @@ function CopDamage:bag_explode()
 	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
 end
 
+function CopDamage:taser_bag_explode()	
+	local pos = self._unit:get_object(Idstring("Spine2")):position()
+
+	local range = 400
+	local damage = 800
+	local ply_damage = 0
+	local normal = math.UP
+	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local curve_pow = 4
+	local custom_params = {
+		camera_shake_max_mul = 4,
+		effect = "effects/particles/explosions/electric_grenade",
+		sound_event = "grenade_electric_explode",
+		feedback_range = range * 2
+	}
+	
+	--Kill this dude if he isn't already
+	self._unit:character_damage():damage_mission({damage = 9999999})
+	
+	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)
+
+	--Taser BOOM
+	local damage_params = {
+		player_damage = ply_damage,
+		tase_strength = "heavy",
+		hit_pos = pos,
+		range = range,
+		collision_slotmask = slot_mask,
+		curve_pow = curve_pow,
+		damage = damage,
+		ignore_unit = self._unit,
+		alert_radius = 20000,
+		user = self._unit,
+		owner = self._unit
+	}
+
+	managers.explosion:detect_and_tase(damage_params)	
+	--managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)	
+end
+
 function CopDamage:_apply_damage_reduction(damage)
 	local damage_reduction = self._unit:movement():team().damage_reduction or 0
 

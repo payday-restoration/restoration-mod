@@ -2798,7 +2798,11 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
-	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"	
+	if self:get_ai_group_type() == "russia" then
+		self.phalanx_vip.spawn_sound_event = "cpw_a01"
+	else
+		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
+	end	
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
 	self.phalanx_vip.priority_shout_max_dis = 3000
@@ -18458,7 +18462,6 @@ function CharacterTweakData:character_map()
 				"ene_omnia_city_3",
 				"ene_omnia_heavy",
 				"ene_omnia_heavy_r870",
-				"ene_omnia_heavy_benelli",
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",

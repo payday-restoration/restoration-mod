@@ -58,6 +58,8 @@ function restoration:Init()
 		gallery = restoration.captain_types.winter, --art gallery
 		red2 = restoration.captain_types.winter, --fwb
 		watchdogs_1 = restoration.captain_types.winter, --Watchdogs Day 1
+		crojob3 = restoration.captain_types.winter, --The Bomb: Forest
+		crojob3_night = restoration.captain_types.winter, --The Bomb: Forest Night
 		--Custom Heists--
 		office_strike = restoration.captain_types.winter, --office strike
 		schl = restoration.captain_types.winter, --Scarlet Club House
@@ -182,6 +184,8 @@ function restoration:Init()
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
 		"skm_nightmare_lvl",
+		"crojob3",
+		"crojob3_night",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl", 
 		"constantine_policestation_lvl"

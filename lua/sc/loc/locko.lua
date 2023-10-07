@@ -1258,7 +1258,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_suppressor_boss"] = "\"전율적이야...\"\n\n총소리를 #{skill_color}#조용하게## 만들고 #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
 		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#총소리를 조용하게 만들고## #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##\n\n#{important_1}#이 소음기는 조준 할 때 시야를 차단당할 수 있습니다.##",
 
-		["bm_wp_upg_vintage_fal_sc"] = "빈티지 탄창",
+		["bm_wp_upg_vintage_fal_sc"] = "리지백 탄창",
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
 		["bm_wp_upg_tac_sc"] = "전술 탄창",

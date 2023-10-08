@@ -236,8 +236,6 @@ function restoration:Init()
 		"kenaz", --Golden Grin Casino
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
-		"crojob3", --Bomb: Forest
-		"crojob3_night", --Ditto
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
@@ -288,6 +286,8 @@ function restoration:Init()
 		"gallery", --Art Gallery
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
+		"crojob3", --Bomb: Forest
+		"crojob3_night", --Ditto
 		"spa", --Brooklyn 10-10
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		

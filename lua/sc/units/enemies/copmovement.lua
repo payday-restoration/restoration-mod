@@ -349,14 +349,16 @@ function CopMovement:do_omnia(self)
 							end
 						end
 					end
-					if enemy_found then
+					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
+					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					
+					if enemy_found and my_team == team then
 						local health_left = enemy:character_damage()._health
 						local max_health = enemy:character_damage()._HEALTH_INIT
 						local overheal_mult = enemy_tweak_data.overheal_mult or 1
-						local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
-						local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
 						
-						if not my_team == team then
+						if convert then
 							return
 						end
 						
@@ -418,17 +420,20 @@ function CopMovement:do_asu(self)
 							end
 						end
 					end
-					if enemy_found then
-						local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
-						local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
-						
-						if not my_team == team then
+					
+					local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
+					local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+					
+					if enemy_found and my_team == team then		
+						local convert = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.is_converted
+						if convert then
 							return
-						end					
+						end	
 					
 						if enemy:base():get_total_buff("base_damage") > 0 then
 							return
 						end
+																		
 						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)		
 														
 						enemy:base():enable_asu_laser(true)

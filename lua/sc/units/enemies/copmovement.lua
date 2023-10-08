@@ -353,6 +353,12 @@ function CopMovement:do_omnia(self)
 						local health_left = enemy:character_damage()._health
 						local max_health = enemy:character_damage()._HEALTH_INIT
 						local overheal_mult = enemy_tweak_data.overheal_mult or 1
+						local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
+						local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+						
+						if not my_team == team then
+							return
+						end
 						
 						max_health = enemy:character_damage()._HEALTH_INIT * overheal_mult
 						
@@ -413,6 +419,13 @@ function CopMovement:do_asu(self)
 						end
 					end
 					if enemy_found then
+						local team = enemy:brain() and enemy:brain()._logic_data and enemy:brain()._logic_data.team
+						local my_team = self._unit:brain() and self._unit:brain()._logic_data and self._unit:brain()._logic_data.team
+						
+						if not my_team == team then
+							return
+						end					
+					
 						if enemy:base():get_total_buff("base_damage") > 0 then
 							return
 						end

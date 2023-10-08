@@ -1,4 +1,5 @@
-<table directory="assets">	
+<table directory="assets">
+
 	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var1" />
 	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var1_contour" />
 	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var2" />
@@ -104,16 +105,7 @@
     <unit				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
     <object				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<cooked_physics		path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<model				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-
-	<!-- sniper -->
-    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>
-    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<object				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_contour" />	
-	<cooked_physics		path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<model				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>	
 	
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" load="true"/>

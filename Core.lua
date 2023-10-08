@@ -467,10 +467,6 @@ function restoration:Init()
 		"constantine_fiesta_lvl",    -- COnstantine Scores (Fiesta)
 		"constantine_yacht_lvl"	,	-- COnstantine Scores (Showdown)
 		"constantine_jungle_lvl"    -- Constantine Scores (Welcome To The Jungle)
-
-
-
-		
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

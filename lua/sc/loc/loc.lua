@@ -4158,7 +4158,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_5"] = "Titan Dozers prefer putting distance between them and their target to unleash the full potential of their railguns undisturbed.",
 		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",
 		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers.",
-		["loading_new_units_res_8"] = "Titan Shields can be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic or with special AP rounds in Sentry Guns. Even shooting their shield long enough can make them drop it; beware of their sudden tactic change when it happens.",
+		["loading_new_units_res_8"] = "Titan Shields can be pierced with Anti-Material rifles, OVE9000 Saw when using Rip and Tear basic or with special AP rounds in Sentry Guns. Even shooting their shield long enough can make them drop it; beware of their sudden tactic change when it happens.",
 		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
 		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily, indicated by a blue UI overlay.",
 		["loading_new_units_res_11"] = "Veteran Cops will drop Tear Gas grenades on death when killed by anything but a headshot.",

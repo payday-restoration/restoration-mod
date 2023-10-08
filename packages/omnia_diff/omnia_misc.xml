@@ -228,6 +228,8 @@
 	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
 	<!-- specials end -->
 
 	<!--OMNIA Textures-->

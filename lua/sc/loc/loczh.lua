@@ -335,6 +335,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModHolidayTitleID"] = "节日活动",
         ["RestorationModHolidayDescID"] = "开启或关闭 节日活动 对大修的影响",
         ["RestorationModCloakerTurnTitleID"] = "幻影特工飞踢时视角转向",
+		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
+		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",			
         ["RestorationModCloakerTurnDescID"] = "开启或关闭幻影特工飞踢你时，你的视角自动转向它的效果。",
         ["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
         ["RestorationModRestoreHitFlashDescID"] = "启用或禁用恢复Mod的受击闪屏",

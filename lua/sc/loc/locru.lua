@@ -285,6 +285,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModBotsNoDropDescID"] = "Боты больше не будут сбрасывать мешки.",
 		["RestorationModCloakerTurnTitleID"] = "Пинок Клокера: Поворачивать камеру",
 		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",	
+		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
+		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",			
 		["RestorationModHolidayTitleID"] = "Праздничные эффекты",
 		["RestorationModHolidayDescID"] = "Включает или выключает праздничные эффекты в моде.",
 		["RestorationModRestoreHitFlashTitleID"] = "Вспышка при уроне",

@@ -236,6 +236,8 @@ function restoration:Init()
 		"kenaz", --Golden Grin Casino
 		"peta", --Goatsim 1
 		"mad", --Boiling Point
+		"crojob3", --Bomb: Forest
+		"crojob3_night", --Ditto
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
@@ -299,8 +301,6 @@ function restoration:Init()
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
-		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
-		"crojob3_night", --Ditto
 		--Skirmish heists below
 		"skm_big2",
 		"skm_mallcrasher",

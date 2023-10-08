@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7.5, 0.75, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 6, 0.7, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -3492,7 +3492,7 @@ function WeaponTweakData:_init_stats()
 					-0.45 * self.stat_info.stance_recoil_mults.steelsight,
 					0.45 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.3
+				min_h_recoil = 0.25
 			},
 			left_recoil = {
 				standing = {
@@ -3513,7 +3513,7 @@ function WeaponTweakData:_init_stats()
 					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
 					0.3 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.3
+				min_h_recoil = 0.25
 			},
 			right_recoil = {
 				standing = {
@@ -3534,7 +3534,7 @@ function WeaponTweakData:_init_stats()
 					-0.3 * self.stat_info.stance_recoil_mults.steelsight,
 					0.6 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.3
+				min_h_recoil = 0.25
 			},
 
 			the_wolf_brigade = {
@@ -3556,7 +3556,7 @@ function WeaponTweakData:_init_stats()
 					-0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight,
 					0.45 * self.stat_info.stance_recoil_mults_wolf_brigade.steelsight
 				},
-				min_h_recoil = 0.4
+				min_h_recoil = 0.25
 			},
 
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
@@ -3579,7 +3579,7 @@ function WeaponTweakData:_init_stats()
 					-0.375 * self.stat_info.stance_recoil_mults.steelsight,
 					0.375 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.2
+				min_h_recoil = 0.18
 			},
 			moderate_left_kick = {
 				standing = {
@@ -3600,7 +3600,7 @@ function WeaponTweakData:_init_stats()
 					-0.6 * self.stat_info.stance_recoil_mults.steelsight,
 					0.2 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.2
+				min_h_recoil = 0.18
 			},
 			moderate_right_kick = {
 				standing = {
@@ -3621,7 +3621,7 @@ function WeaponTweakData:_init_stats()
 					-0.2 * self.stat_info.stance_recoil_mults.steelsight,
 					0.6 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.2
+				min_h_recoil = 0.18
 			},
 
 		--DMRs, Sniper Rifles, and heavy shotguns will be around here.
@@ -3644,7 +3644,7 @@ function WeaponTweakData:_init_stats()
 				-0.225 * self.stat_info.stance_recoil_mults.steelsight,
 				0.225 * self.stat_info.stance_recoil_mults.steelsight
 			},
-			min_h_recoil = 0.05
+			min_h_recoil = 0.08
 		},
 
 		left_kick = {
@@ -3666,7 +3666,7 @@ function WeaponTweakData:_init_stats()
 				-0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.05 * self.stat_info.stance_recoil_mults.steelsight
 			},
-			min_h_recoil = 0.05
+			min_h_recoil = 0.08
 		},
 
 		right_kick = {
@@ -3688,7 +3688,7 @@ function WeaponTweakData:_init_stats()
 				0.05 * self.stat_info.stance_recoil_mults.steelsight,
 				0.4 * self.stat_info.stance_recoil_mults.steelsight
 			},
-			min_h_recoil = 0.05
+			min_h_recoil = 0.08
 		},
 
 		kick_m2 = { --Why the recoil is multiplied by x10 in playerturret vs just making the kick values 0.2 instead of 0.02 I will never understand
@@ -16495,6 +16495,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m6d.sounds.stop_fire = "akm_stop"
 		self.m6d.armor_piercing_chance = 1
 		self.m6d.timers = deep_clone(self.deagle.timers)
+	end
+
+	if self.m7caseless then --RJC9000, PlayBONK, and Offyerocker's M7 SMG
+		self.m7caseless.recategorize = { "light_smg" }		
+		self.m7caseless.damage_type = "machine_gun"
+		self.m7caseless.has_description = true
+		self.m7caseless.kick = self.stat_info.kick_tables.vertical_kick
+		self.m7caseless.FIRE_MODE = "auto"
+		self.m7caseless.CAN_TOGGLE_FIREMODE = false
+		self.m7caseless.BURST_FIRE = false
+		self.m7caseless.fire_mode_data.fire_rate = 0.06666666
+		self.m7caseless.CLIP_AMMO_MAX = 60
+		self.m7caseless.AMMO_MAX = 90
+		self.m7caseless.supported = true
+		self.m7caseless.ads_speed = 0.200
+		self.m7caseless.damage_falloff = {
+			start_dist = 900,
+			end_dist = 4700,
+			min_mult = 0.25
+		}
+		self.m7caseless.stats = {
+			damage = 20,
+			spread = 61,
+			recoil = 83,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 28,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.m7caseless.stats_modifiers = nil
+		self.m7caseless.timers.reload_exit_not_empty = 0.55
+		self.m7caseless.timers.reload_not_empty = 1.44
+		self.m7caseless.timers.reload_empty = 1.8
+		self.m7caseless.timers.reload_exit_empty = 0.75
+		self.m7caseless.sounds.use_fix = nil
+		self.m7caseless.sounds.stop_fire = "judge_x_fire"
+		self.m7caseless.panic_suppression_chance = 0.05
 	end
 
 	if self.alpha57_prim then --RJC9000 and PlayBONK's MW2022 AR57

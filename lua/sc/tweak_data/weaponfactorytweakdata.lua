@@ -21307,7 +21307,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 	self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
 
 	self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
-	self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
 	self.parts.wpn_fps_snp_awp_ns_suppressor.has_description = true
 	self.parts.wpn_fps_snp_awp_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
 	self.parts.wpn_fps_snp_awp_ns_suppressor.stats = {
@@ -22769,8 +22768,83 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				custom_stats = {}
 			}
 
-			self.wpn_fps_ass_pd3_qbz191_npc.uses_parts = deep_clone(self.wpn_fps_ass_pd3_qbz191.uses_parts)
+			self.wpn_fps_ass_pd3_qbz191_npc.uses_parts = deep_clone(self.wpn_fps_ass_pd3_qbz191.uses_parts)	
+		end
+
+		--RJC9000, PlayBONK, and Offyerocker's M7 SMG
+		if self.parts.wpn_fps_smg_m7caseless_barrel then
+
+			self.parts.wpn_fps_smg_m7caseless_stock_collapsed.supported = true
+			self.parts.wpn_fps_smg_m7caseless_stock_collapsed.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_smg_m7caseless_stock_collapsed.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+			self.parts.wpn_fps_smg_m7caseless_suppressor.supported = true
+			self.parts.wpn_fps_smg_m7caseless_suppressor.has_description = true
+			self.parts.wpn_fps_smg_m7caseless_suppressor.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_smg_m7caseless_suppressor.stats = {
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_smg_m7caseless_suppressor.custom_stats = nil
+			self.parts.wpn_fps_smg_m7caseless_suppressor.perks = {"silencer"}
+
+
+			self.parts.wpn_fps_smg_m7caseless_scope.supported = true
+			self.parts.wpn_fps_smg_m7caseless_scope.desc_id = "bm_wp_upg_o_2"
+			self.parts.wpn_fps_smg_m7caseless_scope.stats = {
+				value = 0,
+				zoom = 10
+			}
+			self.parts.wpn_fps_smg_m7caseless_scope.custom_stats = nil
+
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.supported = true
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.perks = {"scope"}
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.stats = { value = 0, zoom = 10 }
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.custom_stats = { disable_steelsight_recoil_anim = true }
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.stance_mod = {
+				wpn_fps_smg_m7caseless = {
+					translation = Vector3(0, -18, -4.31)
+				}
+			}
+
+			local optic_steelsights = {
+				wpn_fps_smg_m7caseless_scope_classic = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
+					steelsight_swap_progress_trigger = 0.9
+				}
+			}
+			local steelsight_id = nil
+			for part_id, steelsight_data in pairs(optic_steelsights) do
+				steelsight_id = part_id .. "_steelsight"
+				self.parts[part_id].steelsight_visible = false
+				self.parts[part_id].adds = self.parts[part_id].adds or {}
 		
+				table.insert(self.parts[part_id].adds, steelsight_id)
+		
+				self.parts[steelsight_id] = steelsight_data
+				self.parts[steelsight_id].steelsight_visible = true
+				self.parts[steelsight_id].stats = {
+					value = 1
+				}
+				self.parts[steelsight_id].type = "sight_swap"
+				self.parts[steelsight_id].third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				self.parts[steelsight_id].skip_third_thq = true
+				self.parts[steelsight_id].a_obj = "a_o"
+				self.parts[steelsight_id].visibility = {
+					{
+						objects = {
+							g_shortdot = false,
+							g_reticle = false,
+							g_mullplan = false,
+							g_gfx_lens_3 = false,
+							g_gfx_lens_2 = false,
+							g_gfx_lens = false
+						}
+					}
+				}
+			end
 		end
 
 	--[[ GAMBYT'S MODS ]]

@@ -2003,7 +2003,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가지고 있습니다.",		
-		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 은폐도에 따라 결정됩니다.",		
+		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 기동성에 따라 결정됩니다.",		
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.\n\n지로로 플레이하는 동안, 완전 충전 공격으로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 #{important_1}#\"정의의 도구\"## 따위가 아니야.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
 		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
@@ -2248,9 +2248,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "임팩트 지연",
 		
-		["bm_menu_stats_detection"] = "Encumbrance",
-		["bm_menu_stats_min_detection"] = "Encumbrance",
-		["bm_menu_stats_max_detection"] = "Encumbrance",		
+		["bm_menu_stats_detection"] = "착용감",
+		["bm_menu_stats_min_detection"] = "착용감",
+		["bm_menu_stats_max_detection"] = "착용감",		
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "머즐",
@@ -2475,12 +2475,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "적은 은페도 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p1_mod"] = "적은 은페도 수정치",
-		["bm_menu_bonus_concealment_p2"] = "많은 은페도 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p2_mod"] = "많은 은페도 수정치",
-		["bm_menu_bonus_concealment_p3"] = "대규모 은페도 보너스 및 안정성 패널티",
-		["bm_menu_bonus_concealment_p3_mod"] = "대규모 은페도 수정치",
+		["bm_menu_bonus_concealment_p1"] = "적은 기동성 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p1_mod"] = "적은 기동성 수정치",
+		["bm_menu_bonus_concealment_p2"] = "많은 기동성 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p2_mod"] = "많은 기동성 수정치",
+		["bm_menu_bonus_concealment_p3"] = "대규모 기동성 보너스 및 안정성 패널티",
+		["bm_menu_bonus_concealment_p3_mod"] = "대규모 기동성 수정치",
 		["bm_menu_bonus_spread_p1"] = "적은 명중률 보너스 및 안정성 패널티",
 		["bm_menu_bonus_spread_p1_mod"] = "적은 명중률 수정치",
 		["bm_menu_bonus_spread_n1"] = "대규모 안정성 보너스 및 명중률 패널티",
@@ -2491,7 +2491,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "당신과 당신의 팀원은 경험치 보상을 +5%만큼 받습니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
-		["bm_menu_concealment"] = "은페도\n",
+		["bm_menu_concealment"] = "기동성\n",
 		["bm_menu_bonus_spread_p2_mod"] = "많은 명중률 수정치",
 		["bm_menu_bonus_spread_p3_mod"] = "대규모 명중률 수정치",
 		["bm_menu_bonus_recoil_p2_mod"] = "많은 안정성 수정치",
@@ -4328,7 +4328,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_1"] = "산탄총은 명중률이 낮아 장거리에서 효율성을 잃는 반면 명중률이 높으면 여러 대상을 공격하는 능력이 저하됩니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오!",	
 		["loading_equip_skills_res_2"] = "권총은 다른 무기류에 비해 교체 속도가 빠릅니다.",	
 		["loading_equip_skills_res_3"] = "레스토레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 대미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
-		["loading_equip_skills_res_4"] = "대미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은페도가 낮습니다.",	
+		["loading_equip_skills_res_4"] = "대미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 기동성이 낮습니다.",	
 		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
 		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 타입을 선택할 수 있습니다.",	
 		["loading_equip_skills_res_7"] = "특성 덱은 상당한 대미지 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다.",	
@@ -4358,7 +4358,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "레스토레이션 모드는 특성 효과를 비활성화하는 대가로 돈과 경험치 획득을 더욱 증가하는 2개의 새로운 특성 덱을 추가합니다. 더 나은 보상을 위해 도전해보십시오!",
 		["loading_equip_skills_res_32"] = "조준할 때 명중률 보너스를 얻으려면 조준 애니메이션이 끝날 때까지 기다려야 합니다. 무기를 개조할 때 \"조준 시간\" 능력치를 주시하세요.",
 		["loading_equip_skills_res_33"] = "긴 총열, 더 튼튼한 개머리판 및 확장 탄창은 장점이 있지만 교체, 재장전, 조준 및 전력 질주 후 사격을 꽤 어렵게 만듭니다. 너무 많이 개조하면 무기를 사용하기가 번거로워집니다.",
-		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 은페도에 영향을 받습니다.",
+		["loading_equip_skills_res_34"] = "개머리판의 근접 속도는 들고 있는 무기의 기동성에 영향을 받습니다.",
 		["loading_equip_skills_res_35"] = "\"조준 시간\" 능력치는 \"전력 질주 후 사격\" 능력치에도 영항을 줍니다. \"전력 질주 후 사격\" 시간은 전력 질주를 멈춘 후 무기를 발사할 수 있는 데 걸리는 시간입니다.",
 		["loading_equip_skills_res_36"] = "전투 중 소음기는 당신이 적을 조준할때 적이 회피할 가능성을 줄입니다. 그들이 당신을 피하지 않고 보내는 시간을 대신 당신을 쏘는 데 쓰일 가능성이 있음을 명심하십시오.",
 		
@@ -4624,7 +4624,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_regen_desc"] = "플레이어가 매 4초마다 체력을 1 회복합니다.",
 
 		["menu_crew_quiet"] = "은페자",
-		["menu_crew_quiet_desc"] = "플레이어의 은페도가 2만큼 증가합니다.",
+		["menu_crew_quiet_desc"] = "플레이어의 기동성을 2만큼 증가시킵니다.",
 
 		["menu_crew_generous"] = "비축자",
 		["menu_crew_generous_desc"] = "플레이어의 투척 무기를 매 70킬마다 한 개씩 얻습니다.",
@@ -4917,18 +4917,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
-			["menu_thick_skin_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접 무기의 은페도를 #{skill_color}#2##만큼 증가시킵니다.\n\n에이스: #{owned}#$pro##\n모든 방탄 조끼의 은페도를 #{skill_color}#4##만큼, 다른 모든 방탄복의 은페도를 #{skill_color}#2##만큼 증가합니다.\n\n모든 방탄 조끼의 은페도를 #{skill_color}#4##만큼 증가합니다.",
+			["menu_thick_skin_beta_desc_sc"] = "베이직: #{owned}#$basic##\n근접 무기의 기동성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 방탄 조끼의 기동성이 #{skill_color}#4##만큼, 다른 모든 방탄복의 기동성이 #{skill_color}#2##만큼 증가합니다.",
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n#{risk}#참고: 이동 속도는 현재 자세의 최대 이동 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n기동성이 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n#{risk}#참고: 이동 속도는 현재 자세의 최대 이동 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n기동성이 #{skill_color}#35##에서 ##1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
 			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전 당해도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 역감전을 일으켜 테이저를 밀쳐냅니다.\n\n#{risk}#참고: 감전으로 인한 명중률과 반동 페널티는 여전히 적용됩니다.##\n\n적의 총격으로 인한 밀쳐짐이 #{skill_color}#30%## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저에게 감전 당한 직후 #{skill_color}#2##초 이내에 상호작용 키를 누르면 테이저를 역감전시켜 테이저의 최대 체력의 #{skill_color}#50##만큼 피해를 가합니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
 			
 			--Sneaky Bastard--
-			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			
+			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n기동성이 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n기동성이 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 			--Second Wind
@@ -4937,7 +4937,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 은페도가 #{skill_color}#2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 기동성이 #{skill_color}#2##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
@@ -4953,7 +4953,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n은페도가 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n은페도가 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n기동성이 #{skill_color}#35##에서 #{skill_color}#3##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n기동성이 #{skill_color}#35##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
 			--[[   GUNSLINGER SUBTREE   ]]--
@@ -5065,7 +5065,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 #{skill_color}#25%만큼 증가합니다.##\n\n#{skill_color}#25%##만큼의 많은 피해를 가합니다.\n\n#{risk}#참고: 피해 증가 효과는## #{important_1}#투척 무기 또는 발사기에 적용되지 않습니다.##",
-		["menu_deckall_4_desc_sc"] = "은페도가 #{skill_color}#1##만큼 증가합니다.\n\n방탄복 착용 시 이동 속도 저하가 #{skill_color}#15%## 감소합니다.\n\n일차와 작업을 완료하면 경험치를 #{skill_color}#45%##만큼 얻습니다.\n\n#{skill_color}#25%##만큼 많은 피해를 가합니다.\n\n#{risk}#참고: 피해 증가 효과는## #{important_1}#투척 무기 또는 발사기에 적용되지 않습니다.##",
+		["menu_deckall_4_desc_sc"] = "기동성이 #{skill_color}#1##만큼 증가합니다.\n\n방탄복 착용 시 이동 속도 저하가 #{skill_color}#15%## 감소합니다.\n\n일차와 작업을 완료하면 경험치를 #{skill_color}#45%##만큼 얻습니다.\n\n#{skill_color}#25%##만큼 많은 피해를 가합니다.\n\n#{risk}#참고: 피해 증가 효과는## #{important_1}#투척 무기 또는 발사기에 적용되지 않습니다.##",
 		["menu_deckall_6_desc_sc"] = "당신과 당신의 팀원이 사용할 수 있는 #{skill_color}#투척 무기 가방## 장비를 잠금 해제합니다. 투척 무기 케이스는 하이스트 중에 투척 무기를 보충하는 데 사용할 수 있습니다.\n\n#{skill_color}#25%##만큼 많은 피해를 가합니다.\n\n#{risk}#참고: 피해 증가 효과는## #{important_1}#투척 무기 또는 발사기에 적용되지 않습니다.##",
 		["menu_deckall_8_desc_sc"] = "의료 가방의 상호 작용 속도가 #{skill_color}#20%##만큼 빨라집니다.\n\n#{skill_color}#25%##만큼의 많은 피해를 가합니다.\n\n#{risk}#참고: 피해 증가 효과는## #{important_1}#투척 무기 또는 발사기에 적용되지 않습니다.##",
 
@@ -5147,7 +5147,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "##18##미터 내에 있는 적을 죽이면 ##25%## 확률로 ##12##미터 반경에 있는 주변 적들에게 패닉을 퍼뜨리며, 근접 무기로 적을 죽이면 확률이 두 배로 증가합니다.\n\n패닉은 적들을 통제할 수 없는 공포로 몰아넣습니다.\n\n이 효과는 긴장 (3번째 카드)과 재사용 대기시간을 공유합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
 
 		--Grinder--		
-		["menu_deck11_1_desc_sc"] = "적에게 피해를 가하면 #{skill_color}#3##초 동안 매 초마다 체력이 #{skill_color}#2##씩 회복합니다. 이 효과는 최대 #{skill_color}#5##회까지 중첩됩니다.\n#{risk}방편복##을 착용한 동안에만 #{important_1}#0.75##초마다 중첩을 얻을 수 있습니다.\n방편복의 방탄력을 #{important_1}#30##만큼 잃지만 은폐도를 #{skill_color}#8##만큼 얻습니다.\n\n#{risk}#참고: 센트리 건이나 지속 피해 효과로 적에게 피해를 가해도 중첩을 부여되지 않습니다.##",
+		["menu_deck11_1_desc_sc"] = "적에게 피해를 가하면 #{skill_color}#3##초 동안 매 초마다 체력이 #{skill_color}#2##씩 회복합니다. 이 효과는 최대 #{skill_color}#5##회까지 중첩됩니다.\n#{risk}방편복##을 착용한 동안에만 #{important_1}#0.75##초마다 중첩을 얻을 수 있습니다.\n방편복의 방탄력을 #{important_1}#30##만큼 잃지만 기동성을 #{skill_color}#8##만큼 얻습니다.\n\n#{risk}#참고: 센트리 건이나 지속 피해 효과로 적에게 피해를 가해도 중첩을 부여되지 않습니다.##",
 		["menu_deck11_3_desc_sc"] = "효과가 중첩될 때마다 체력을 ##1## 추가로 회복합니다.",
 		["menu_deck11_5_desc_sc"] = "중첩이 ##2##초 동안 추가로 지속됩니다.\n\n시체가방 케이스가 ##2##개로 증가합니다.",
 		["menu_deck11_7_desc_sc"] = "효과가 중첩될 때마다 체력을 ##1## 추가로 더 회복합니다.",
@@ -5298,7 +5298,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "탄약 상자를 획득하면 체력을 ##2##-##5##만큼 회복됩니다.\n\n재사용 대기시간은 ##10##초이지만, 탄약 상자를 획득할 때마다 재사용 대기시간이 ##1##-##4##초씩 감소합니다.\n\n탄약 상자를 획득하면 다른 팀원들에게 평상 비율의 ##15%##만큼 탄약을 줍니다.\n\n페이저에 응답하는 속도가 ##25%##만큼 빨라집니다.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "적에게 피해를 가하면 #{skill_color}#3##초 동안 매 초마다 체력이 #{skill_color}#2##씩 회복합니다. 이 효과는 최대 #{skill_color}#5##회까지 중첩됩니다.\n#{risk}방편복##을 착용한 동안에만 #{important_1}#0.75##초마다 중첩을 얻을 수 있습니다.\n방편복의 방탄력을 #{important_1}#30##만큼 잃지만 은폐도를 #{skill_color}#8##만큼 얻습니다.\n\n#{risk}#참고: 센트리 건이나 지속 피해 효과로 적에게 피해를 가해도 중첩을 부여되지 않습니다.##\n\n시체가방 케이스가 #{skill_color}#2##개로 증가합니다.",
+			["menu_deck11_mrwi_desc"] = "적에게 피해를 가하면 #{skill_color}#3##초 동안 매 초마다 체력이 #{skill_color}#2##씩 회복합니다. 이 효과는 최대 #{skill_color}#5##회까지 중첩됩니다.\n#{risk}방편복##을 착용한 동안에만 #{important_1}#0.75##초마다 중첩을 얻을 수 있습니다.\n방편복의 방탄력을 #{important_1}#30##만큼 잃지만 기동성을 #{skill_color}#8##만큼 얻습니다.\n\n#{risk}#참고: 센트리 건이나 지속 피해 효과로 적에게 피해를 가해도 중첩을 부여되지 않습니다.##\n\n시체가방 케이스가 #{skill_color}#2##개로 증가합니다.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 적을 죽일 때마다 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
 			--Ex-Pres

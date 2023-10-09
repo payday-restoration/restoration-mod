@@ -3512,8 +3512,8 @@ end
 function CopDamage:taser_bag_explode()    
 	local pos = self._unit:get_object(Idstring("Spine2")):position()
 
-	local range = 400
-	local damage = 800
+	local range = 750
+	local damage = 300
 	local ply_damage = 0
 	local normal = math.UP
 	local slot_mask = managers.slot:get_mask("explosion_targets")
@@ -3524,10 +3524,7 @@ function CopDamage:taser_bag_explode()
 		sound_event = "grenade_electric_explode",
 		feedback_range = range * 2
 	}
-	
-	--Kill this dude if he isn't already
-	self._unit:character_damage():damage_mission({damage = 9999999})
-	
+		
 	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)
 
 	--Taser BOOM
@@ -3542,6 +3539,50 @@ function CopDamage:taser_bag_explode()
 		ignore_unit = self._unit,
 		alert_radius = 1
 	})
+	
+	managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)		
+end
+
+function CopDamage:grenadier_bag_explode()    
+	local pos = self._unit:get_object(Idstring("Spine2")):position()
+
+	local range = 750
+	local damage = 0
+	local ply_damage = 0
+	local normal = math.UP
+	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local curve_pow = 4
+	local custom_params = {
+		camera_shake_max_mul = 4,
+		effect = "effects/payday2/particles/explosions/grenade_explosion",
+		sound_event = "grenade_explode",
+		feedback_range = range * 2
+	}
+	local tweak_entry = {
+		damage = 0,
+		player_damage = 0,
+		curve_pow = 0,
+		range = 0,
+		name_id = "bm_poison_gas_grenade",
+		poison_gas_range = 600,
+		poison_gas_duration = 12,
+		poison_gas_fade_time = 0.1,
+		poison_gas_tick_time = 0.3,
+		poison_gas_dot_data = {
+			hurt_animation_chance = 1,
+			dot_damage = 1.5,
+			dot_length = 10.15,
+			dot_tick_period = 0.5
+		}
+	}
+	
+	--Do a shit ton of damage to this dude
+	self._unit:character_damage():damage_mission({damage = 40})
+	
+	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)
+
+	--Gas explosion
+	managers.player:spawn_poison_gas(pos, normal, tweak_entry, nil)
 	
 	managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)		
 end

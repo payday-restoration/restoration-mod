@@ -77,6 +77,22 @@ function PoisonGasEffect:update(t, dt)
 					end
 				end
 			end
+		else
+			self._damage_tick_timer = self._damage_tick_timer - dt
+
+			if self._damage_tick_timer <= 0 then
+				self._damage_tick_timer = self._tweak_data.poison_gas_tick_time or 0.1
+				local nearby_units = World:find_units_quick("sphere", self._position, self._range, managers.slot:get_mask("enemies"))
+
+				for _, unit in ipairs(nearby_units) do
+					if not table.contains(self._unit_list, unit) then
+						local hurt_animation = not self._dot_data.hurt_animation_chance or math.rand(1) < self._dot_data.hurt_animation_chance
+
+						managers.dot:add_doted_enemy(unit, TimerManager:game():time(), self._grenade_unit, self._dot_data.dot_length, self._dot_data.dot_damage, hurt_animation, "poison", self._grenade_id, true)
+						table.insert(self._unit_list, unit)
+					end
+				end
+			end		
 		end
 	end
 end

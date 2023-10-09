@@ -2437,19 +2437,19 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100128] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100130] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100131] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100132] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100692] = {
@@ -2485,11 +2485,11 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101719] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101722] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101725] = {
@@ -2497,15 +2497,15 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101728] = {
-			interval = 25,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101731] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101734] = {
-			interval = 20,
+			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101737] = {
@@ -2517,7 +2517,7 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
 		},
 		[101791] = {
-			interval = 25,
+			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},

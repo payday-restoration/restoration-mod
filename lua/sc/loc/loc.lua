@@ -4833,7 +4833,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#3## points of mobility under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of mobility under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#3## points of encumbrance under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of encumbrance under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 

@@ -3509,7 +3509,7 @@ function CopDamage:bag_explode()
 	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
 end
 
-function CopDamage:taser_bag_explode()	
+function CopDamage:taser_bag_explode()    
 	local pos = self._unit:get_object(Idstring("Spine2")):position()
 
 	local range = 400
@@ -3531,22 +3531,19 @@ function CopDamage:taser_bag_explode()
 	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)
 
 	--Taser BOOM
-	local damage_params = {
+	local hit_units, splinters = managers.explosion:detect_and_tase({
 		player_damage = ply_damage,
 		tase_strength = "heavy",
 		hit_pos = pos,
 		range = range,
 		collision_slotmask = slot_mask,
-		curve_pow = curve_pow,
-		damage = damage,
+		curve_pow = 4,
+		damage = 3,
 		ignore_unit = self._unit,
-		alert_radius = 20000,
-		user = self._unit,
-		owner = self._unit
-	}
-
-	managers.explosion:detect_and_tase(damage_params)	
-	--managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)	
+		alert_radius = 1
+	})
+	
+	managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)		
 end
 
 function CopDamage:_apply_damage_reduction(damage)

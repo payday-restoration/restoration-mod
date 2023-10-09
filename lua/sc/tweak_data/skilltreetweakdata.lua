@@ -1412,11 +1412,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_ballistic_vest_concealment_1",
-						"player_deep_pockets_concealment_modifier_1",	
-						"player_level_1_armor_addend",
-						"player_level_2_armor_addend",
-						"player_level_3_armor_addend",
-						"player_level_4_armor_addend"
+						"player_deep_pockets_concealment_modifier_1"
 					},
 					cost = self.costs.pro
 				}	

@@ -2247,6 +2247,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "임팩트 지연",
+		
+		["bm_menu_stats_detection"] = "Encumbrance",
+		["bm_menu_stats_min_detection"] = "Encumbrance",
+		["bm_menu_stats_max_detection"] = "Encumbrance",		
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "머즐",

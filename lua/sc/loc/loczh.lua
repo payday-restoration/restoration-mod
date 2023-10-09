@@ -2333,6 +2333,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
         ["bm_menu_attack_speed"] = "攻击间隔",
         ["bm_menu_impact_delay"] = "攻击前摇",
+		
+		["bm_menu_stats_detection"] = "Encumbrance",
+		["bm_menu_stats_min_detection"] = "Encumbrance",
+		["bm_menu_stats_max_detection"] = "Encumbrance",		
 
         ["bm_menu_pickup"] = "捡弹量",
         ["bm_menu_ads_speed"] = "瞄准时间",

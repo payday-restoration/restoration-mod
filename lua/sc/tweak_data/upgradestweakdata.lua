@@ -413,10 +413,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Add 20 to the values in this table to get in game amounts.
 	--Things marked with * don't follow the x, x, x, x, x*y, x, x*y (y = 2, usually) increment logic
 	self.values.player.body_armor.armor = { --increments of 2
-		0, --Suit
-		2, --LBV
-		4, --BV
-		6, --HBV
+		2, --Suit
+		4, --LBV
+		6, --BV
+		8, --HBV
 		11, --Flak (2 increments + 1)
 		13, --CTV
 		18 --ICTV (2 increments + 1)

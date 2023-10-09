@@ -1371,7 +1371,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
 		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
 		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
-		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's concealment rating.",
+		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's mobility rating.",
 		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
 			["bm_melee_raiden_info"] = "This is no #{important_1}#\"tool of justice\"## in your hands.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_thejobissnotyours_info"] = "This isn't even your sword.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
@@ -1616,6 +1616,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_attack_speed"] = "Repeat Delay",
 		["bm_menu_impact_delay"] = "Impact Delay",
 		
+		["bm_menu_stats_detection"] = "Encumbrance",
+		["bm_menu_stats_min_detection"] = "Encumbrance",
+		["bm_menu_stats_max_detection"] = "Encumbrance",
+		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",
 		["bm_menu_barrel_ext_plural"] = "Muzzles",
@@ -1826,12 +1830,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_r0991"] = "AR-15 Varmint Pistol",
 		
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Stability penalty",
-		["bm_menu_bonus_concealment_p1_mod"] = "Small Concealment Modifier",
-		["bm_menu_bonus_concealment_p2"] = "Large Concealment bonus and Stability penalty",
-		["bm_menu_bonus_concealment_p2_mod"] = "Large Concealment Modifier",
-		["bm_menu_bonus_concealment_p3"] = "Massive Concealment bonus and Stability penalty",
-		["bm_menu_bonus_concealment_p3_mod"] = "Massive Concealment Modifier",
+		["bm_menu_bonus_concealment_p1"] = "Small Mobility bonus and Stability penalty",
+		["bm_menu_bonus_concealment_p1_mod"] = "Small Mobility Modifier",
+		["bm_menu_bonus_concealment_p2"] = "Large Mobility bonus and Stability penalty",
+		["bm_menu_bonus_concealment_p2_mod"] = "Large Mobility Modifier",
+		["bm_menu_bonus_concealment_p3"] = "Massive Mobility bonus and Stability penalty",
+		["bm_menu_bonus_concealment_p3_mod"] = "Massive Mobility Modifier",
 		["bm_menu_bonus_spread_p1"] = "Small Accuracy bonus and Stability penalty",
 		["bm_menu_bonus_spread_p1_mod"] = "Small Accuracy Modifier",
 		["bm_menu_bonus_spread_n1"] = "Massive Stability bonus and Accuracy penalty",
@@ -1842,7 +1846,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% Experience reward for you and your crew.",
 		["bm_menu_spread"] = "Accuracy\n",
 		["bm_menu_recoil"] = "Stability\n",
-		["bm_menu_concealment"] = "Concealment\n",
+		["bm_menu_concealment"] = "Mobility\n",
 		["bm_menu_bonus_spread_p2_mod"] = "Large Accuracy Modifier",
 		["bm_menu_bonus_spread_p3_mod"] = "Massive Accuracy Modifier",
 		["bm_menu_bonus_recoil_p2_mod"] = "Large Stability Modifier",
@@ -4232,7 +4236,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_17"] = "Bullets that pierce shields deal half damage.",	
 		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",
 		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
-		["loading_equip_skills_res_20"] = "The higher a weapon's concealment is, the faster you can draw and holster it.",	
+		["loading_equip_skills_res_20"] = "The higher a weapon's mobility is, the faster you can draw and holster it.",	
 		["loading_equip_skills_res_21"] = "The Chainsaw and Kazaguruma deal damage to enemies in front of you while held.",	
 		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade deal massive damage when stabbing enemies in the back.",	
 		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor speed.",	
@@ -4246,7 +4250,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks which provide increased money and XP gain at the cost of disabling your perks. Challenge yourself for better rewards!",
 		["loading_equip_skills_res_32"] = "Aiming mechanics have been changed to require you to be fully aimed to reap the benefits of aimed accuracy. Keep an eye on your \"Aim Time\" stat as you mod your weapon.",
 		["loading_equip_skills_res_33"] = "Long barrels, sturdier stocks and extended magazines have their merits but they can hit swap, reload, aim and sprint-to-fire times pretty hard; using too many will leave your weapon cumbersome to use.",
-		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's concealment rating.",
+		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's mobility rating.",
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
 		["loading_equip_skills_res_36"] = "During combat, silencers reduce the likelihood of enemies evading your aim. Just be aware that the time they spend not dodging you is likely going to be put towards shooting you instead.",
 		--Misc Hints
@@ -4511,7 +4515,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_regen_desc"] = "Players heal 1 health every 4 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
-		["menu_crew_quiet_desc"] = "Players gain 2 more concealment.",
+		["menu_crew_quiet_desc"] = "Players gain 2 more mobility.",
 
 		["menu_crew_generous"] = "Stockpiler ",
 		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.",
@@ -4793,18 +4797,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",
-				["menu_thick_skin_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIncreases the concealment of melee weapons by #{skill_color}#2.##\n\nACE: #{owned}#$pro##\nIncreases the concealment of all ballistic vests by #{skill_color}#4##, and all other armors by #{skill_color}#2.##\n\nIncreases the armor of all ballistic vests and the suit by #{skill_color}#20.##",
+				["menu_thick_skin_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIncreases the mobility of melee weapons by #{skill_color}#2.##\n\nACE: #{owned}#$pro##\nIncreases the mobility of all ballistic vests by #{skill_color}#4##, and all other armors by #{skill_color}#2.##",
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#3## points of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of concealment under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#3## points of mobility under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of mobility under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
 				["menu_insulation_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting shocked no longer forces you to shoot and the shock attack from a Taser has a #{skill_color}#15%## chance to backfire, knocking back the Taser in the process.\n\n#{risk}#NOTE: The accuracy and recoil penalties from being shocked still apply.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#30%.##\n\nACE: #{owned}#$pro##\nInteracting with an enemy Taser within #{skill_color}#2## seconds of him electrocuting you will counter-electrocute him, dealing #{skill_color}#50%## of his max health as damage.\n\nThe slowdown effect and duration of Titan Taser attacks are reduced by #{skill_color}#50%.##",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#3## points of concealment under #{skill_color}#35##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#1## point of concealment under #{skill_color}#35##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
+				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#3## points of mobility under #{skill_color}#35##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#1## point of mobility under #{skill_color}#35##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 				--Second Wind
@@ -4813,7 +4817,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Optical Illusions--
 				["menu_optic_illusions_sc"] = "Optical Illusions",
-				["menu_optic_illusions_desc_sc"] = "BASIC: #{owned}#$basic##\nYou draw and holster weapons #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\nIncreases the concealment of all guns by #{skill_color}#2.##",
+				["menu_optic_illusions_desc_sc"] = "BASIC: #{owned}#$basic##\nYou draw and holster weapons #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\nIncreases the mobility of all guns by #{skill_color}#2.##",
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
@@ -4829,7 +4833,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#3## points of concealment under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of concealment under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#3## points of mobility under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of mobility under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 
@@ -4932,7 +4936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#25%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## concealment.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#20%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
@@ -5014,7 +5018,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3##; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## concealment.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3##; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.\n\nYou gain the ability to place ##2## body bag cases.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
@@ -5166,7 +5170,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Gambler
 			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##2 to 5## health.\n\nHealing has a ##10## second cooldown, but every ammo box you pick up reduces it by ##1 to 4## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3## seconds; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## concealment.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#2## body bag cases.",
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3## seconds; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#2## body bag cases.",
 			--Yakuza
 			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
 			--Ex-Pres

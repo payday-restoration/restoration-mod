@@ -2236,6 +2236,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",
 		
+		["bm_menu_stats_detection"] = "Encumbrance",
+		["bm_menu_stats_min_detection"] = "Encumbrance",
+		["bm_menu_stats_max_detection"] = "Encumbrance",		
+		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Насадка",
 		["bm_menu_barrel_ext_plural"] = "Насадки",

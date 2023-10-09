@@ -4379,7 +4379,7 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},
-	chca = {
+	["chca"] = {
 		[100131] = {
 			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"] 

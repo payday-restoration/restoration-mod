@@ -22787,7 +22787,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				alert_size = -1
 			}
 			self.parts.wpn_fps_smg_m7caseless_suppressor.custom_stats = nil
-			self.parts.wpn_fps_smg_m7caseless_suppressor.perks = {"silencer"}
+			self.parts.wpn_fps_smg_m7caseless_suppressor.perks = {"silencer", "gadget"}
 
 
 			self.parts.wpn_fps_smg_m7caseless_scope.supported = true
@@ -22798,21 +22798,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_smg_m7caseless_scope.custom_stats = nil
 
-			self.parts.wpn_fps_smg_m7caseless_scope_classic.supported = true
-			self.parts.wpn_fps_smg_m7caseless_scope_classic.perks = {"scope"}
-			self.parts.wpn_fps_smg_m7caseless_scope_classic.stats = { value = 0, zoom = 10 }
-			self.parts.wpn_fps_smg_m7caseless_scope_classic.custom_stats = { disable_steelsight_recoil_anim = true }
-			self.parts.wpn_fps_smg_m7caseless_scope_classic.stance_mod = {
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle = deep_clone(self.parts.wpn_fps_smg_m7caseless_scope_classic)
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.pcs = {}
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.supported = true
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.is_a_unlockable = nil
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.desc_id = "bm_wp_upg_o_2"
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc"
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.perks = {"scope"}
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.stats = { value = 0, zoom = 10 }
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.custom_stats = { disable_steelsight_recoil_anim = true }
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.stance_mod = {
 				wpn_fps_smg_m7caseless = {
 					translation = Vector3(0, -18, -4.31)
 				}
 			}
 
 			local optic_steelsights = {
-				wpn_fps_smg_m7caseless_scope_classic = {
+				wpn_fps_smg_m7caseless_scope_reticle = {
 					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 					unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_shortdot/wpn_fps_upg_o_shortdot",
-					steelsight_swap_progress_trigger = 0.9
+					steelsight_swap_progress_trigger = 0.99
 				}
 			}
 			local steelsight_id = nil
@@ -22844,7 +22849,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						}
 					}
 				}
+				self.parts[steelsight_id].texture_switch = {
+					channel = "diffuse_texture",
+					material = {
+						"gfx_reddot1",
+						"screen"
+					}
+				}
 			end
+
+			self.parts.wpn_fps_smg_m7caseless_scope_classic.pcs = nil
+			self.parts.wpn_fps_smg_m7caseless_scope_ach.pcs = nil
+
+			table.insert(self.wpn_fps_smg_m7caseless.uses_parts, "wpn_fps_smg_m7caseless_scope_reticle")
 		end
 
 	--[[ GAMBYT'S MODS ]]

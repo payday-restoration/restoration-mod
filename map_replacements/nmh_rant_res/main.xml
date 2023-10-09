@@ -9,7 +9,7 @@
 			<value_node value="levels/instances/unique/nmh/nmh_fuge/world/world"/>
 		</packages>
 	</instance>
-	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
+	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
 		<add file="levels/nmh_res/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>

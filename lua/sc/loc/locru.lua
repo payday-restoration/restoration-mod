@@ -1,3 +1,5 @@
+Month = os.date("%m")
+Day = os.date("%d")
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
 
 -- ResMod english.json
@@ -1386,7 +1388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_type54_sc_desc"] = "Советский пистолет под тяжелый калибр 7.62×25мм, обладает подствольным дробовиком в качестве дополнительного способа избавиться от проблем.",
 		["bm_x_type54_sc_desc"] = "Двух стволов мало? Попробуйте четыре.",		
 		--Broomstick--
-		["bm_c96_sc_desc"] = "\"...Ваше слово, товарищ Маузер!\"\n\nИнновационный немецкий пистолет, который модифицировали под автоматический огонь.\n\nЭто оружие перезаряжается обоймами по десять патронов.",
+		["bm_c96_sc_desc"] = "\"...Ваше слово, товарищ Маузер!\"\n\nИнновационный немецкий пистолет, который модифицировали под автоматический огонь.\n\n#{risk}#Это оружие перезаряжается обоймами по десять патронов.##",
 		["bm_wp_c96_nozzle"] = "Насадка Бластер-44",
 		["bm_wp_c96_nozzle_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#1.5 сек.##\nСкорость зарядки: #{skill_color}#3/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#2 сек.##",
 		--Sub2000
@@ -1417,7 +1419,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Chunky 1911 
 		["bm_m1911_sc_desc"] = "Перевыпуск старенького Crosskill .45. Почти не отличается от оригинала.",
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nАльтернативный огонь выпускает боезапас #{skill_color}#с повышенной скоростью##, за счет #{important_1}#отдачи, точности и невозможности прицеливания.##.\n\nМожет пробивать броню, врагов, щитов и тонкие стены.##",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nАльтернативный огонь выпускает боезапас #{skill_color}#с повышенной скоростью##, за счет #{important_1}#отдачи, точности и невозможности прицеливания.##\n\n##Может пробивать броню, врагов, щитов и тонкие стены.##",
 		--CUSTOM HANDGUNS AND ATTACHMENTS
 			--Browning Hi-Power
 			--["bm_w_hpb"] = "Хай-Пауэр",
@@ -3922,6 +3924,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
   if not easterless then
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
+	if Month == "4" and Day == "1" then
+		shalashaska = 1
+	end
 	if twirl <= shalashaska then
 		LocalizationManager:add_localized_strings({	
 			["bm_w_peacemaker"] = "Revolver Ocelot",
@@ -3942,9 +3947,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		})
 	end
 
-	 local cute = math.rand(1)
-	 local funny = 10.02
-	 if cute <= funny then
+	 local stalker = math.rand(1)
+	 local anekdot = 0.02
+	 if Month == "4" and Day == "1" then
+		anekdot = 1
+	 end
+	 if stalker <= anekdot then
 		 LocalizationManager:add_localized_strings({			
 			-- Иди своей дорогой, сталкер
 			["bm_w_striker"] = "Отбойник", -- Ну в параше не прям Protecta используется, но визуально похоже
@@ -4566,6 +4574,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fullautoinbuilding_desc"] = "Титановые снайперы и их эквиваленты теперь стреляют из своих винтовок в автоматическом режиме по игрокам, которые находятся близко к ним.",
 		["mutator_fullautoinbuilding_longdesc"] = "Титановые снайперы и их эквиваленты теперь стреляют из своих винтовок в автоматическом режиме по игрокам, которые находятся на расстоянии не более 10 метров.",
 		
+		["mutator_crazytaser"] = "Шоковая терапия",
+		["mutator_crazytaser_desc"] = "Тазеры теперь не имеют задержку перед применением удара электрошоком.",
+		["mutator_crazytaser_longdesc"] = "Тазеры теперь не имеют задержку перед применением удара электрошоком.\n\nПримечание: Задержка для использования следующего удара шоком все еще есть.",
+
+		["mutator_masterdodger"] = "Увернись от этого!",
+		["mutator_masterdodger_desc"] = "Ветеран копы теперь уворачиваются от всех пуль.",
+		["mutator_masterdodger_longdesc"] = "Ветеран копы теперь уворачиваются от всех пуль.",
+		
 		["mutator_quickscope360"] = "Орлиный глаз",
 		["mutator_quickscope360_desc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
 		["mutator_quickscope360_longdesc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
@@ -5035,6 +5051,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	if not easterless then
 	 local butt = math.rand(1)
 	 local frame = 0.01
+	 if Month == "4" and Day == "1" then
+		frame = 1
+	 end
 	 if butt <= frame then
 		 LocalizationManager:add_localized_strings({	
 			["menu_st_spec_23"] = "Полурак-полухуй",

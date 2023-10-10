@@ -1,3 +1,5 @@
+Month = os.date("%m")
+Day = os.date("%d")
 local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
 	local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
@@ -3854,6 +3856,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		local twirl = math.rand(1)
 		local shalashaska = 0.06
+		if Month == "4" and Day == "1" then
+			shalashaska = 1
+		end
 		if bobcat or not easterless and twirl <= shalashaska then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_peacemaker"] = "Revolver Ocelot",
@@ -3877,6 +3882,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		local cute = math.rand(1)
 		local funny = 0.02
+		if Month == "4" and Day == "1" then
+			funny = 1
+		end
 		if eggplant or not easterless and cute <= funny then
 			LocalizationManager:add_localized_strings({	
 			--It's an "Upotte!!" reference
@@ -3954,6 +3962,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 		local big = math.rand(1)
 		local pistol = 0.02
+		if Month == "4" and Day == "1" then
+			pistol = 1
+		end
 		if shitpost or not easterless and big <= pistol then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_deagle"] = "Big Pistol",
@@ -4916,6 +4927,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		local butt = math.rand(1)
 		local frame = 0.01
+		if Month == "4" and Day == "1" then
+			frame = 1
+		end
 		if registeredloser or not easterless and butt <= frame then
 			LocalizationManager:add_localized_strings({	
 				["menu_st_spec_23"] = "Helminth",

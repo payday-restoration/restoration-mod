@@ -1470,7 +1470,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b1 = tostring(self.values.player.melee_concealment_modifier[1]), -- concealment for melee
 					skill_value_p1 = tostring(self.values.player.deep_pockets_concealment_modifier[1] + self.values.player.ballistic_vest_concealment[1]), -- concealment for all ballistic vests
 					skill_value_p2 = tostring(self.values.player.deep_pockets_concealment_modifier[1]), -- concealment for other armor
-					skill_value_p3 = tostring(self.values.player.level_2_armor_addend[1]*10) -- +armor for bv, lbv, hbv and suit
 					}
 
 			--Moving Target

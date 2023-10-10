@@ -100,7 +100,8 @@ function AchievementsTweakData:init(tweak_data)
 	--Makes Not Hard Enough actually work
 	self.complete_heist_achievements.farm_1 = {
 		killed = {
-			spring = 0
+			spring = 0,
+			headless_hatman = 0
 		},
 		award = "farm_1",
 		job = "dinner",

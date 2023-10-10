@@ -2310,7 +2310,7 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank")
 	
 	
-	--Blackdozers, Move faster than Greendozers but have a bit less EHP
+	--Blackdozers, Move faster than other dozers but have a bit less EHP
 	self.tank_black = deep_clone(self.tank)
 	self.tank_black.move_speed = presets.move_speed.normal
 	self.tank_black.HEALTH_INIT = 425
@@ -2324,6 +2324,7 @@ function CharacterTweakData:_init_tank(presets)
 	}
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
+	self.tank_skull.headshot_dmg_mul = 9.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	

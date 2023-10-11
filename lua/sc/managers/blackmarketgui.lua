@@ -4841,19 +4841,6 @@ function BlackMarketGui:update_info_text()
 					rays = nil
 				end
 
-				if exp_ammo then
-					description = managers.localization:text("bm_menu_weapon_exp_no_hs_info")
-					for color_id in string.gmatch(description, "#%{(.-)%}#") do
-						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
-					end
-					description = description:gsub("#%{(.-)%}#", "##")
-					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays then
-						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
-					else
-						updated_texts[4].text = updated_texts[4].text .. description
-					end
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				else
 					if ap_desc then
 						description = managers.localization:text( ap_desc )
 						for color_id in string.gmatch(description, "#%{(.-)%}#") do
@@ -4884,6 +4871,19 @@ function BlackMarketGui:update_info_text()
 						end
 						table.insert(updated_texts[4].resource_color, (ene_hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
 					end
+
+				if exp_ammo then
+					description = managers.localization:text("bm_menu_weapon_exp_no_hs_info")
+					for color_id in string.gmatch(description, "#%{(.-)%}#") do
+						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+					end
+					description = description:gsub("#%{(.-)%}#", "##")
+					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays then
+						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+					else
+						updated_texts[4].text = updated_texts[4].text .. description
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end
 				
 

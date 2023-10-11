@@ -1161,7 +1161,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "Fires a lead slug that #{skill_color}#deals 75% of its damage through body armor and pierces enemies and thin walls.##",
 		["bm_wp_upg_a_slug_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, multiple enemies, shields and thin walls.##",
 		["bm_wp_upg_a_slug_titan_desc"] = "Fires a lead slug that #{skill_color}#pierces body armor, multiple enemies, shields, titan-shields and thin walls.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nRounds have #{skill_color}#no falloff## but #{important_1}#cannot headshot.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "Fires an #{heat_warm_color}#explosive## slug with a blast radius of #{skill_color}#1.5## meters.\nSlugs have #{skill_color}#no falloff## but #{risk}#damage is split between the slug and explosion.##",
 		["bm_wp_upg_a_custom_desc"] = "Fires #{important_1}#6## larger, heavier pellets that deal #{skill_color}#increased## damage.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#15%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#90## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.##", --NOT IN USE
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires magnesium shards that have up to a #{skill_color}#40%## chance to #{heat_warm_color}#set enemies on fire##, dealing #{heat_warm_color}#120## damage over #{skill_color}#2## seconds.\n\n#{risk}#Chance is reduced over range and can only stun enemies before damage falloff starts.\n\nDeals fire damage instead of bullet damage.##",
@@ -1281,7 +1281,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_ene_hs_mult_end"] = " of their normal value.",
 		["bm_menu_weapon_hs_mult_1"] = "Headshots deal ",
 		["bm_menu_weapon_hs_mult_2"] = " more damage to non-captain enemies.",
-		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive ammo;## #{important_1}#cannot headshot.##",
+		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive slugs;## #{risk}#damage is split evenly between the slug and explosion.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",
@@ -1310,19 +1310,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
-		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{important_1}#cannot headshot.##",
+		["bm_bow_exp_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nVelocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\n#{risk}#Arrows explode on impact;## #{risk}#damage is split between the arrow and explosion.##",
 		["bm_w_bow_exp_desc"] = "Fire arrows that #{risk}#explode## on impact in a #{skill_color}#2## meter radius.\n\n#{important_1}#Arrow velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_bow_light_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 		["bm_w_bow_heavy_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_xbow_sc_desc"] = "Bolts can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_xbow_exp_sc_desc"] = "#{risk}#Bolts explode on impact;## #{important_1}#cannot headshot.##",
+		["bm_xbow_exp_sc_desc"] = "#{risk}#Bolts explode on impact;## #{risk}#damage is split evenly the bolt and explosion.##",
 		["bm_w_xbow_exp_desc"] = "Fire bolts that #{risk}#explode## on impact in a #{skill_color}#2## meter radius.\n\n#{important_1}#Bolt velocity is reduced, they cannot be retrieved for reuse and cannot perform headshots.##",
 		["bm_w_xbow_light_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#180## poison damage over #{skill_color}#6## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 		["bm_w_xbow_heavy_poison_desc"] = "Fire bolts laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#240## poison damage over #{skill_color}#8## seconds.\n\n#{important_1}#Bolt velocity is slightly reduced.##",
 
 		["bm_airbow_sc_desc"] = "Arrows can be retrieved by picking them up.\n\n#{skill_color}#Can pierce body armor.##",
-		["bm_airbow_exp_sc_desc"] = "#{risk}#Arrows explode on impact;## #{important_1}#cannot headshot.##",
+		["bm_airbow_exp_sc_desc"] = "#{risk}#Arrows explode on impact;## #{risk}#damage is split evenly between the arrow and explosion.##",
 		["bm_w_airbow_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
@@ -2035,6 +2035,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M6D
 					["kfa_scope"] = "KFA-2 Smart-Link Scope",
 					["kfa_scope_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
+					--M6D
+					["halo_scope"] = "Smart-Linked Scope",
+					["halo_scope_2_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
 					--M200 WIDOWMAKER
 					["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
 					["bm_wp_upg_i_iw_widowmaker_desc"] = "A prototype weapon kit manufactured by Kendall Ballistics.\n\nModifies this weapon to chamber special #{skill_color}#double-stacked munitions.##",
@@ -4662,7 +4665,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "Bullseye",
-				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor; has a cooldown of #{important_1}#5## seconds.\n\n\n\nIf armor is capable of #{skill_color}#fully regenerating##, lethal headshots reduce the cooldown by #{skill_color}#0.5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor.\n\nThe cooldown reduction is increased by an additional #{skill_color}#0.5## seconds.\n\n",
+				["menu_prison_wife_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots regenerate #{skill_color}#5## armor; has a cooldown of #{important_1}#5## seconds.\n\nIf armor is capable of #{skill_color}#fully regenerating##, lethal headshots reduce the cooldown by #{skill_color}#0.5## seconds.\n\nACE: #{owned}#$pro##\nHeadshots regenerate an additional #{skill_color}#30## armor.\n\nThe cooldown reduction is increased by an additional #{skill_color}#0.5## seconds.\n\n",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",

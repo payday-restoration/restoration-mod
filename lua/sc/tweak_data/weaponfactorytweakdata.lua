@@ -22780,6 +22780,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.parts.wpn_fps_smg_m7caseless_suppressor.supported = true
 			self.parts.wpn_fps_smg_m7caseless_suppressor.has_description = true
+			self.parts.wpn_fps_smg_m7caseless_suppressor.sub_type = "laser"
 			self.parts.wpn_fps_smg_m7caseless_suppressor.desc_id = "bm_wp_upg_suppressor"
 			self.parts.wpn_fps_smg_m7caseless_suppressor.stats = {
 				value = 2,
@@ -22799,10 +22800,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_m7caseless_scope.custom_stats = nil
 
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle = deep_clone(self.parts.wpn_fps_smg_m7caseless_scope_classic)
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.name_id = "halo_scope"
+			self.parts.wpn_fps_smg_m7caseless_scope_reticle.desc_id = "halo_scope_2_desc"
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.pcs = {}
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.supported = true
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.is_a_unlockable = nil
-			self.parts.wpn_fps_smg_m7caseless_scope_reticle.desc_id = "bm_wp_upg_o_2"
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc"
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.perks = {"scope"}
 			self.parts.wpn_fps_smg_m7caseless_scope_reticle.stats = { value = 0, zoom = 10 }

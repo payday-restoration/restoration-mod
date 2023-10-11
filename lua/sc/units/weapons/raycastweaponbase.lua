@@ -1,9 +1,19 @@
-local mvec3_add = mvector3.add
-local mvec3_dis_sq = mvector3.distance_sq
-local mvec3_mul = mvector3.multiply
 local mvec3_set = mvector3.set
-
+local mvec3_add = mvector3.add
+local mvec3_dot = mvector3.dot
+local mvec3_sub = mvector3.subtract
+local mvec3_mul = mvector3.multiply
+local mvec3_norm = mvector3.normalize
+local mvec3_dir = mvector3.direction
+local mvec3_set_l = mvector3.set_length
+local mvec3_len = mvector3.length
+local mvec3_dis_sq = mvector3.distance_sq
+local mvec3_len_sq = mvector3.length_sq
+local math_clamp = math.clamp
+local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
+local tmp_vec2 = Vector3()
+local tmp_rot1 = Rotation()
 
 local init_original = RaycastWeaponBase.init
 function RaycastWeaponBase:init(...)
@@ -1360,6 +1370,43 @@ function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, da
 	end
 
 	return defense_data
+end
+
+function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+	local hit_unit = col_ray.unit
+	user_unit = alive(user_unit) and user_unit or nil
+	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+
+	if not user_unit or not self:chk_friendly_fire(hit_unit, user_unit) then
+		if not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood then
+			self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+		end
+
+		if not blank and weapon_unit then
+			local weap_base = weapon_unit:base()
+
+			if weap_base and weap_base.chk_shield_knock then
+				weap_base:chk_shield_knock(hit_unit, col_ray, weapon_unit, user_unit, damage)
+			end
+		end
+	end
+
+	if not blank and weapon_unit then
+		mvec3_set(tmp_vec1, col_ray.position)
+		mvec3_set(tmp_vec2, col_ray.ray)
+		mvec3_norm(tmp_vec2)
+		mvec3_mul(tmp_vec2, 20)
+		mvec3_sub(tmp_vec1, tmp_vec2)
+		self.super:on_collision(col_ray, weapon_unit, user_unit, damage * 0.5, blank, no_sound)
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.5, user_unit, weapon_unit, managers.network:session():local_peer():id())
+
+		return {
+			variant = "explosion",
+			col_ray = col_ray
+		}
+	end
+
+	return nil
 end
 
 function InstantExplosiveBulletBase:on_collision_server(position, normal, damage, user_unit, weapon_unit, owner_peer_id, owner_selection_index)

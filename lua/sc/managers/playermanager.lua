@@ -870,7 +870,8 @@ function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
 	self._message_system:notify(Message.OnLethalHeadShot, nil, attack_data)
 
 	local regen_armor_bonus_cd_reduction = managers.player:upgrade_value("player", "headshot_regen_armor_bonus_cd_reduction", 0)
-	if self._on_headshot_dealt_t then
+	local anarchist = managers.player:has_category_upgrade("player", "armor_grinding")
+	if self._on_headshot_dealt_t and not anarchist then
 		self._on_headshot_dealt_t = self._on_headshot_dealt_t - regen_armor_bonus_cd_reduction
 	end
 end

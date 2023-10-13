@@ -160,6 +160,7 @@ function restoration:Init()
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
+		skm_firestarter_2 = restoration.captain_types.autumn,--FBI Holdout 
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
@@ -355,6 +356,7 @@ function restoration:Init()
 		"skm_arena",
 		"skmc_ovengrill",
 		"skm_watchdogs_stage2",
+		"skm_firestarter_2",
 		--Custom Heists below--
 		"thechase",
 		"daymare", --Hell's Nightmare

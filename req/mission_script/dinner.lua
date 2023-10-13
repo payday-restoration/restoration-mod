@@ -295,11 +295,6 @@ return {
 		}
 	},
 	--Murky Elite Soldiers replace some regular Murky Mercs on VH-DS PJs
-	[103082] = {
-		values = {
-            enemy = murkyman_2
-		}
-	},
 	[103083] = {
 		values = {
             enemy = murkyman_1
@@ -368,6 +363,26 @@ return {
 	[101852] = {
 		values = {
             enemy = murkyman_2
+		}
+	},
+	[101382] = {
+		values = {
+            enemy = murkyman_1
+		}
+	},
+	[101383] = {
+		values = {
+            enemy = murkyman_1
+		}
+	},
+	[101385] = {
+		values = {
+            enemy = murkyman_2
+		}
+	},
+	[101386] = {
+		values = {
+            enemy = murkyman_3
 		}
 	},
 	--disables the Swat Turret

@@ -27,13 +27,8 @@ return {
     [102551] = {
         ponr_end = true
     },
-	--Bain no longer will remind to find Mitchell when players masked up or when the door has been crowbarred
+	--Bain no longer will remind to find Mitchell when players masked up
 	[102410] = {
-		on_executed = {
-            {id = 100096, delay = 0}
-		}
-	},
-	[100551] = {
 		on_executed = {
             {id = 100096, delay = 0}
 		}

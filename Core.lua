@@ -470,7 +470,20 @@ function restoration:Init()
 		"constantine_yacht_lvl"	,	-- COnstantine Scores (Showdown)
 		"constantine_jungle_lvl"    -- Constantine Scores (Welcome To The Jungle)
 	}
-	
+	--[[
+	--Support Factions (will spawn alongside the main force)
+	--OMNIA
+	restoration.omnia_support = {
+		"arm_for", -Train Heist
+		"pbr", --Beneath the Mountain
+		"des", --Henry's Rock
+		"vit", --White House
+		"welcome_to_the_jungle_2", -- Big Oil Day 2
+		--Custom Heists--
+		"wetwork" -- Wetworks
+		--"wetwork_burn"
+	}
+	--]]
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	
 	local environment_settings = { --edit this one

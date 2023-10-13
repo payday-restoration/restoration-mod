@@ -1496,6 +1496,25 @@ function CopActionShoot:anim_clbk_melee_strike()
 				end
 			end
 		end
+		
+	local melee_tweak_npc = tweak_data.weapon.npc_melee[self._unit:base():melee_weapon()]
+	if melee_tweak_npc and melee_tweak_npc.tase_data then
+		if self._attention.unit:character_damage().on_non_lethal_electrocution then
+			if not self._attention.unit:character_damage().can_be_tased or self._attention.unit:character_damage():can_be_tased() then
+				self._attention.unit:character_damage():on_non_lethal_electrocution(melee_tweak_npc.tase_data.electrocution_time_mul)
+			end
+		elseif self._attention.unit:character_damage().damage_tase then
+			self._attention.unit:character_damage():damage_tase({
+				variant = melee_tweak_npc.tase_data.tase_strength or "light",
+				damage = 0,
+				attacker_unit = self._unit,
+				col_ray = {
+					position = shoot_from_pos + fwd * 50,
+					ray = mvector3.copy(target_vec)
+				}
+			})
+		end
+	end
 
 		if defense_data and defense_data ~= "friendly_fire" then
 			if defense_data == "countered" then
@@ -1571,4 +1590,5 @@ function CopActionShoot:anim_clbk_melee_strike()
 			end
 		end
 	end
+	self._melee_unit = nil
 end

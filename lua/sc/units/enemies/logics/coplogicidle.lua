@@ -50,6 +50,102 @@ function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, ..
 	return math.min(attention_reaction, REACT_ARREST)
 end
 
+-- Fix defend_area objectives being force relocated to areas with players in them
+-- Fix lost follow objectives not refreshing for criminals in idle logic and Jokers in attack logic
+-- Use the old defend_area behavior for the hunt objective for which it makes much more sense
+function CopLogicIdle._chk_relocate(data)
+	local my_data = data.internal_data
+	local objective = data.objective
+	local objective_type = objective and objective.type
+
+	if objective_type == "follow" then
+		local follow_unit = objective.follow_unit
+		local unit_pos = follow_unit:movement().get_walk_to_pos and follow_unit:movement():get_walk_to_pos() or follow_unit:movement():m_pos()
+		local dis_sq = mvector3.distance_sq(data.m_pos, unit_pos)
+
+		if data.is_tied and objective.lose_track_dis and dis_sq > objective.lose_track_dis ^ 2 then
+			data.brain:set_objective(nil)
+			return true
+		end
+
+		local relocated_dis_sq = data.is_tied and my_data.advancing and objective.distance and (objective.distance * 0.5) ^ 2 or 100
+		if objective.relocated_to and mvector3.distance_sq(objective.relocated_to, unit_pos) < relocated_dis_sq then
+			return
+		elseif data.is_converted then
+			if not TeamAILogicIdle._check_should_relocate(data, data.internal_data, objective) then
+				return
+			end
+		elseif math.abs(unit_pos.z - data.m_pos.z) > 200 or objective.distance and dis_sq > objective.distance ^ 2 then
+		elseif managers.navigation:raycast({ pos_from = data.m_pos, pos_to = unit_pos }) then
+		elseif objective.shield_cover_unit and data.attention_obj and data.attention_obj.verified and data.attention_obj.reaction >= AIAttentionObject.REACT_AIM then
+			if mvector3.distance_sq(objective.relocated_to or data.m_pos, data.attention_obj.m_pos) > mvector3.distance_sq(unit_pos, data.attention_obj.m_pos) then
+				return
+			end
+		else
+			return
+		end
+
+		objective.in_place = nil
+		objective.path_data = nil
+		objective.nav_seg = follow_unit:movement():nav_tracker():nav_segment()
+		objective.relocated_to = mvector3.copy(unit_pos)
+
+		data.logic._exit(data.unit, "travel")
+
+		return true
+	elseif objective_type == "hunt" then
+		local objective_area = objective.area or managers.groupai:state():get_area_from_nav_seg_id(objective.nav_seg or data.unit:movement():nav_tracker():nav_segment())
+		if not objective_area or next(objective_area.criminal.units) then
+			return
+		end
+
+		local found_areas = {
+			[objective_area] = true
+		}
+		local areas_to_search = {
+			objective_area
+		}
+		local target_area
+
+		while next(areas_to_search) do
+			local current_area = table.remove(areas_to_search, 1)
+
+			if next(current_area.criminal.units) then
+				target_area = current_area
+				break
+			end
+
+			for _, n_area in pairs(current_area.neighbours) do
+				if not found_areas[n_area] then
+					found_areas[n_area] = true
+					table.insert(areas_to_search, n_area)
+				end
+			end
+		end
+
+		if not target_area then
+			return
+		end
+
+		objective.in_place = nil
+		objective.path_data = nil
+		objective.area = target_area
+		objective.nav_seg = target_area.pos_nav_seg
+
+		data.logic._exit(data.unit, "travel")
+
+		return true
+	elseif objective_type == "free" or not objective then
+		if data.cool or not data.is_converted and data.team.id ~= "criminal1" or data.path_fail_t and data.t - data.path_fail_t < 5 then
+			return
+		end
+
+		managers.groupai:state():on_criminal_jobless(data.unit)
+
+		return my_data ~= data.internal_data
+	end
+end
+
 --Done just to add a safety check that (hopefully) fixes an upgrade_value crash
 function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	local surrender = false
@@ -108,6 +204,9 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	return surrender
 end
 
+-- Improve and simplify attention handling
+-- Moved certain checks into their own functions for easier adjustments and improved target priority calculation
+-- Enemies no longer put low priority on reviving players and will prefer keeping their current target if there's a priority tie
 function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_func)
 	local best_target_distance
 	local best_target, best_target_priority_slot, best_target_reaction = CopLogicIdle._get_forced_attention(data)
@@ -117,10 +216,10 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 
 	reaction_func = reaction_func or CopLogicIdle._chk_reaction_to_attention_object
 
-	local my_data = data.internal_data
-	local far_range = my_data.weapon_range.far
-	local optimal_range = my_data.weapon_range.optimal
-	local close_range = my_data.weapon_range.close
+	local weapon_range = data.internal_data.weapon_range or { optimal = 1500, far = 3000, close = 750 }
+	local far_range = weapon_range.far
+	local optimal_range = weapon_range.optimal
+	local close_range = weapon_range.close
 	local murder = data.tactics and data.tactics.murder
 
 	for u_key, attention_data in pairs(attention_objects) do
@@ -170,6 +269,11 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 
 					-- Prefer keeping current target (this was also in vanilla code but the priority slot was clamped so in close range it was mostly ignored)
 					if data.attention_obj and data.attention_obj.u_key == u_key and data.t - attention_data.acquire_t < 4 then
+						target_priority_slot = target_priority_slot - 1
+					end
+
+					-- Focus on kingpin injector user
+					if weight_mul < 0.01 then
 						target_priority_slot = target_priority_slot - 1
 					end
 

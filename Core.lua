@@ -302,6 +302,7 @@ function restoration:Init()
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
+		"sand", --The Ukrainian Prisoner
 		--Skirmish heists below
 		"skm_big2",
 		"skm_mallcrasher",
@@ -384,8 +385,7 @@ function restoration:Init()
 		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
 		"mex", --Border Crossing
-		"mex_cooking", --Border Crystals		
-		"sand", --The Ukrainian Prisoner			
+		"mex_cooking", --Border Crystals			
 		--Skirmish heists below
 		"skm_nightmare_lvl", --Safehouse Nightmare SKM
 		--Custom Heists below--

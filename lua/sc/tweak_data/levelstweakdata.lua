@@ -287,6 +287,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_par.package = {"packages/narr_arm_par", "packages/gensecmisc"}
 	self.arm_und.package = {"packages/narr_arm_und", "packages/gensecmisc"}
 
+
+	--//OMNIA STUFF\\--
+	self.arm_for.package = {"packages/narr_arm_for", "packages/omniamisc"}
+	self.pbr.package = {"packages/narr_jerry1", "packages/omniamisc"}
+	self.des.package = {"packages/job_des", "packages/omniamisc"}
+	self.vit.package = {"packages/dlcs/vit/job_vit", "packages/omniamisc"}
+	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/omniamisc"}
 	
 	--///NEW OUTFITS\\\--
 	

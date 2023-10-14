@@ -95,6 +95,7 @@
 		<packages>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
 			<value_node value="packages/narr_jerry2"/>
+			<value_node value="packages/omniamisc"/>
 			<value_node value="levels/instances/unique/friend/computer_usb/world/world"/>
 			<value_node value="levels/narratives/armadillo/arm_for/pc_only/pc_only"/>
 			<value_node value="levels/instances/unique/dark/thermal_paste/world/world"/>

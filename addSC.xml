@@ -1,5 +1,5 @@
 <table directory="assets">		
-    <!--Heavy Shotgunner Helmet Plink-->
+    <!--Heavy Shotgunner Helmet  Plink-->
 	<add from_db="true" path="soundbanks/weapon_swatturret" type="bnk">
 		<bnk load="true" path="soundbanks/weapon_swatturret" unload="true"/>
 	</add>

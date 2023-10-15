@@ -515,12 +515,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--Bomb: Forest--
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"
-	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/americamisc", "packages/omniamisc"}
+	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/murkywatermisc"}
 
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
 	self.crojob3_night.flashlights_on = true
-	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/americamisc", "packages/omniamisc"}
+	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/murkywatermisc"}
 	
 	--///BAG FIXES\\\--
 	self.pbr2.max_bags = 20

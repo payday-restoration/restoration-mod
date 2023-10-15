@@ -86,13 +86,27 @@ function CopSound:init(unit)
 		ids_func("units/payday2/characters/ene_city_guard_2/ene_city_guard_2_husk"),
 		ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3"),
 		ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk"),
+		--Murky SWAT
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1_husk"),		
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_husk"),	
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
 		--Murky FBI SWATs
 		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk"),		
 		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk"),	
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk"),		
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk"),
+		--Murky City/Zeals
+		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk"),
 		--Murky NYPD Guards
 		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1"),
 		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_husk"),
@@ -122,7 +136,9 @@ function CopSound:init(unit)
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"),	
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk")			
+		ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_husk")
 	}
 	local american_dozer_list = {
 		ids_func("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
@@ -137,17 +153,37 @@ function CopSound:init(unit)
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc_husk"),	
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"),
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),
-		ids_func("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk")		
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_husk"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_husk"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"),
+		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk")
 	}
 	--Scary gruff filtered lines, reserve for mercs and what not
 	local l5d_list = {
 		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"),
 		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
+		ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),	
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+		ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),
 		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1_husk"),	
 		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
-		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_husk"),		
+		ids_func("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk"),	
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city_husk"),
 		ids_func("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"),
 		ids_func("units/payday2/characters/ene_murkywater_1/ene_murkywater_1_husk"),	
 		ids_func("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"),
@@ -171,11 +207,15 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),	
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield"),
-		ids_func("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk"),	
+		ids_func("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk"),
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"),
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_husk"),
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
-		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk")	
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"),
+		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk")
 	}		
 	local female_enemy_list = {
 		ids_func("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"),

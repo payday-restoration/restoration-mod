@@ -2,53 +2,53 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	if difficulty_index <= 2 or difficulty_index == 3 then
-		specialenemy_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-		specialenemy_2 = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
-		specialenemy_3 = "units/payday2/characters/ene_swat_3_sc/ene_swat_3_sc"
-		shield = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
-		tank = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-		taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"
-		swat_1 = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
-		swat_2 = "units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"
-		swat_3 = "units/payday2/characters/ene_swat_3_sc/ene_swat_3_sc"
-		swat_4 = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
-		swat_5 = "units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
+		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
+		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
+		shield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"
+		tank = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
+		taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		swat_1 = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"
+		swat_2 = "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"
+		swat_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
+		swat_4 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+		swat_5 = "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 	elseif difficulty_index == 4 or difficulty_index == 5 then
-		specialenemy_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-		specialenemy_2 = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
-		specialenemy_3 = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"
-		shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-		tank = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-		taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"
-		swat_1 = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"
-		swat_2 = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"
-		swat_3 = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-		swat_4 = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
-		swat_5 = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
+		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
+		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
+		shield = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"
+		tank = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
+		taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		swat_1 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
+		swat_2 = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+		swat_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
+		swat_4 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+		swat_5 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 	elseif difficulty_index == 6 or difficulty_index == 7 then
-		specialenemy_1 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-		specialenemy_2 = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
-		specialenemy_3 = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		shield = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec"
-		tank = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-		taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"
-		swat_1 = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		swat_2 = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc"
-		swat_3 = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
-		swat_4 = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
-		swat_5 = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"
+		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"
+		shield = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"
+		tank = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+		taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		swat_1 = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"
+		swat_2 = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"
+		swat_3 = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"
+		swat_4 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+		swat_5 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 	elseif difficulty_index == 8 then
-		specialenemy_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
-		specialenemy_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		specialenemy_3 = "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		tank = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
-		taser = "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"
-		swat_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"
-		swat_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"
-		swat_3 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"
-		swat_4 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_5 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"
+		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"
+		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		shield = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"
+		tank = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+		taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		swat_1 = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"
+		swat_2 = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"
+		swat_3 = "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"
+		swat_4 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"
+		swat_5 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
 	end
 
 	if difficulty_index <= 5 then
@@ -60,19 +60,19 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	end
 	
 	if Global.game_settings and Global.game_settings.one_down then
-	--OMNIA+Captain Winters Encounter on DSPJ
+	--Captain Winters Encounter on DSPJ
 	if difficulty_index == 8 then
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
 		specialenemy_2 = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
 		specialenemy_3 = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-		shield = "units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield"
-		tank = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-		taser = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"
-		swat_1 = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"
-		swat_2 = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"
-		swat_3 = "units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"
-		swat_4 = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"
-		swat_5 = "units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"
+		shield = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"
+		tank = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+		taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
+		swat_1 = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"
+		swat_2 = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"
+		swat_3 = "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"
+		swat_4 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"
+		swat_5 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
 	end
 end
 
@@ -81,23 +81,23 @@ return {
 	[103031] = {
 			ponr = ponr_value
 	},
-	--Three Way Fight
+	--Three Way Fight feat. Murkywater
 	--1st Van (left one)
 	[100776] = {
 		values = {
-            enemy = specialenemy_1, --Winters spawns here if it's on DSPJ, otherwise spawn ZEAL Skulldozer
+            enemy = specialenemy_1, --Winters spawns here if it's on DSPJ, otherwise spawn Murky Skulldozer
 			team = "mobster1"
 		}
 	},
 	[100555] = {
 		values = {
-            enemy = specialenemy_3, --OMNIA Titandozer spawns here if it's on DSPJ, otherwise spawn ZEAL Taser
+            enemy = specialenemy_3, --OMNIA Titandozer spawns here if it's on DSPJ, otherwise spawn Murky Taser
 			team = "mobster1"
 		}
 	},
 	[100017] = {
 		values = {
-            enemy = specialenemy_2, --Winters men spawns here if it's on DSPJ, otherwise spawn ZEAL Heavy Units (from 10017 to 100768)
+            enemy = specialenemy_2, --Winters men spawns here if it's on DSPJ, otherwise spawn Murky Heavy Units (from 10017 to 100768)
 			team = "mobster1"
 		}
 	},

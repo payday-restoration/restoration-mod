@@ -1,6 +1,12 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	
+local chance_dozer_left = math.rand(1)
+local chance_dozer_middle = math.rand(1)
+local chance_dozer_right = math.rand(1)
+local chance_titan_swat_left = math.rand(1)
+local chance_titan_swat_right = math.rand(1)
+local chance_elite = math.rand(1)
+
 	if difficulty_index <= 5 then
 		ponr_value = 330
 	elseif difficulty_index == 6 or difficulty_index == 7 then
@@ -8,7 +14,129 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	elseif difficulty_index == 8 then
 		ponr_value = 240		
 	end
-
+    
+	
+	--Setting up scirpted SWAT spawns
+	if difficulty_index <= 4 then
+		shield_unit = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
+		shotgun_unit = "units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
+	elseif difficulty_index == 5 then
+		shield_unit = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
+		shotgun_unit = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"		
+	elseif difficulty_index == 6 or difficulty_index == 7 then
+		shield_unit = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec"
+		shotgun_unit = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"
+	else
+		shield_unit = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+		shotgun_unit = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+	end
+	
+	--Titan Shields replace usual scripted shields on OVK+ with PJ
+	if Global.game_settings and Global.game_settings.one_down and difficulty_index >= 5 then	
+		shield_unit = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
+		--2 scripted SWAT units will be replaced by titan SWAT
+		if chance_titan_swat_left < 0.5 then
+			titan_swat_left = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+		else
+			titan_swat_left = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		end
+		if chance_titan_swat_right < 0.5 then
+			titan_swat_right = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+		else
+			titan_swat_right = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		end
+	end
+	
+	
+	--Random titan unit for OVK+. Otherwise - vet cop
+	if difficulty_index <= 4 then
+		random_elite_unit = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
+	else
+		if difficulty_index ~= 8 then
+			if chance_elite < 0.25 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+			elseif chance_elite < 0.50 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"
+			elseif chance_elite < 0.75 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+			else
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+			end
+		else
+			if chance_elite < 0.20 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+			elseif chance_elite < 0.40 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"
+			elseif chance_elite < 0.60 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+			elseif chance_elite < 0.80 then
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+			else
+				random_elite_unit = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+			end
+		end
+	end
+	
+	--Setting up random dozers for DW+
+	if difficulty_index == 6 or difficulty_index == 7 then
+		if chance_dozer_left < 0.35 then
+			tank_replacement_left = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+		elseif chance_dozer_left < 0.70 then
+			tank_replacement_left = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+		else
+			tank_replacement_left = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+		end
+		
+		if chance_dozer_middle < 0.25 then
+			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+		elseif chance_dozer_middle < 0.50 then
+			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+		else
+			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+		end
+		
+		if chance_dozer_right < 0.25 then
+			tank_replacement_right = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+		elseif chance_dozer_right < 0.50 then
+			tank_replacement_right = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+		else
+			tank_replacement_right = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+		end
+	end
+	
+	if difficulty_index == 8 then
+		if chance_dozer_left < 0.25 then
+			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+		elseif chance_dozer_left < 0.50 then
+			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+		elseif chance_dozer_left < 0.75 then
+			tank_replacement_left = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+		else
+			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+		end
+		
+		if chance_dozer_middle < 0.25 then
+			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+		elseif chance_dozer_middle < 0.50 then
+			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+		elseif chance_dozer_middle < 0.75 then
+			tank_replacement_middle = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+		else
+			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+		end
+		
+		if chance_dozer_right < 0.25 then
+			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+		elseif chance_dozer_right < 0.50 then
+			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+		elseif chance_dozer_right < 0.75 then
+			tank_replacement_right = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+		else
+			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+		end
+	end
+	
+	
 return {
 	--Pro Job PONR 
 	[100220] = {
@@ -43,6 +171,96 @@ return {
 	[101136] = {
 		values = {
 			trigger_times = 0
+		}
+	},
+	--SWAT units replacement
+	[101164] = {
+		values = {
+			enemy = shield_unit
+		}
+	},
+	[101151] = {
+		values = {
+			enemy = shield_unit
+		}
+	},
+	[101156] = {
+		values = {
+			enemy = shotgun_unit
+		}
+	},
+	[101160] = {
+		values = {
+			enemy = shotgun_unit
+		}
+	},
+	[101158] = {
+		values = {
+			enemy = titan_swat_left
+		}
+	},
+	[101159] = {
+		values = {
+			enemy = titan_swat_right
+		}
+	},
+	--Use unhooked scripted swat spawn for random titan unit (or vet cop if VH or lower diffs)
+	[101678] = {
+		on_executed = {
+			{ id = 101166, delay = 0 }
+		}
+	},
+	[101166] = {
+		values = {
+			enemy = random_elite_unit
+		}
+	},
+	--Mobsters are friendly to cops (in Commissar panic room section)
+	--P.S. The Commissar now friendly to cops either but this is an instance
+	[101505] = {
+		values = {
+			team = "law1"
+		}
+	},
+	[101497] = {
+		values = {
+			team = "law1"
+		}
+	},
+	[101496] = {
+		values = {
+			team = "law1"
+		}
+	},
+	[101506] = {
+		values = {
+			team = "law1"
+		}
+	},
+	[100190] = {
+		values = {
+			team = "law1"
+		}
+	},
+	[100191] = {
+		values = {
+			team = "law1"
+		}
+	},
+	--Dozer replacements
+	[101133] = {
+		values = {
+			enemy = tank_replacement_left
+		}
+	},
+	[101137] = {
+		values = {
+			enemy = tank_replacement_middle
+		}
+	},
+	[101141] = {
+		values = {
+			enemy = tank_replacement_right
 		}
 	},
 	--Should decrease sniper spawn intensity (I hope)

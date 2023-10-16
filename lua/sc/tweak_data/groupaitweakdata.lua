@@ -19888,6 +19888,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0,
 		0
 	}
+	--just in case since titan snipers might sometimes retreat
+	self.besiege.assault.groups.titan_snipers = {
+		0,
+		0,
+		0
+	}
 	--prevent from spawning snowman outside of the event
 	self.besiege.assault.groups.snowman_boss = {
 		0,
@@ -20236,6 +20242,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0
 	}
 	self.besiege.recon.groups.Phalanx = {
+		0,
+		0,
+		0
+	}
+	--ditto but for recon units
+	self.besiege.recon.groups.titan_snipers = {
 		0,
 		0,
 		0

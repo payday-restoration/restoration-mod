@@ -20,8 +20,8 @@ return {
 	[102207] = {
 		ponr = ponr_value
 	},
-	--Allow snipers spawn more frequently
-	[103192] = {
+	--Allow snipers spawn more frequently (Disabled because snipers may stuck in each other on SO position)
+	--[[[103192] = {
 		values = {
 			trigger_times = 0
 		}
@@ -35,7 +35,7 @@ return {
 		values = {
 			chance = 100
 		}
-	},
+	},--]]
 	-- Add power cut SO delay
 	[100313] = {
 		values = {

@@ -15,7 +15,7 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 3,
-			image = "enemy_zeal_sc",
+			image = "weapon_primary_secondary",
 			consoles = true,
 			category = "gameplay_res"
 		},

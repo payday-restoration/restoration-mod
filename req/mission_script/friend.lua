@@ -15,9 +15,7 @@ local amount_guards = 8
 	end
 	
 	if Global.game_settings and Global.game_settings.one_down then	
-		if difficulty_index == 8 then
-			enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
-		end
+		enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 	end
 	
 return {
@@ -77,7 +75,7 @@ return {
 			amount = amount_guards
 		}
 	},
-	--Spawn enforcers during Sosa fight on DS PJ
+	--Spawn enforcers during Sosa fight on PJ
 	[101845] = {
 		values = {
             enemy = enforcer_guard

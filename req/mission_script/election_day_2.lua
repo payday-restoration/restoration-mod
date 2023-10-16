@@ -4,6 +4,12 @@ local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 
+	if difficulty_index == 7 then
+	   swat_overkill = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
+	elseif difficulty_index == 8 then
+	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
+	end
+
 	if difficulty_index <= 5 then
 		ponr_value = 360	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
@@ -11,7 +17,7 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 	elseif difficulty_index == 8 then
 		ponr_value = 300		
 	end
-	
+		
 if Global.game_settings and Global.game_settings.one_down then
 	swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 	swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"

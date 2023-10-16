@@ -1,5 +1,14 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
+local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
+local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
+
+	 if difficulty_index == 7 then
+	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
+	elseif difficulty_index == 8 then
+	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
+	end
 	
 	if difficulty_index <= 5 then
 		ponr_value = 1080
@@ -12,10 +21,9 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 if Global.game_settings and Global.game_settings.one_down then
 		timelock_normal = 300
 		timelock_fast = 270
-	
-	if difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 or difficulty_index == 8 then
-		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
-	end
+		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
+		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
+		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
 
 local ponr_timer_player_mul = {
@@ -64,40 +72,110 @@ return {
             time = timelock_fast
 		}
 	},
-	--Titan Snipers replace FBI Heavy SWATs on Pro Jobs
-	[100940] = {
+	--Harasser Tweaks
+	[100883] = {
 		values = {
-            enemy = australian_sniper
+            enemy = swat_normal
 		}
 	},
-	[100956] = {
+	[100884] = {
 		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100971] = {
-		values = {
-            enemy = australian_sniper
+            enemy = swat_hard
 		}
 	},
 	[100885] = {
 		values = {
-            enemy = australian_sniper
+            enemy = swat_overkill
+		}
+	},
+	[100332] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100334] = {
+		values = {
+            enemy = swat_hard
 		}
 	},
 	[100336] = {
 		values = {
-            enemy = australian_sniper
+            enemy = swat_overkill
+		}
+	},
+	[100906] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100907] = {
+		values = {
+            enemy = swat_hard
 		}
 	},
 	[100908] = {
 		values = {
-            enemy = australian_sniper
+            enemy = swat_overkill
+		}
+	},
+	[100922] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100923] = {
+		values = {
+            enemy = swat_hard
 		}
 	},
 	[100924] = {
 		values = {
-            enemy = australian_sniper
+            enemy = swat_overkill
+		}
+	},
+	[100938] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100939] = {
+		values = {
+            enemy = swat_hard
+		}
+	},
+	[100940] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[100954] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100955] = {
+		values = {
+            enemy = swat_hard
+		}
+	},
+	[100956] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[100969] = {
+		values = {
+            enemy = swat_normal
+		}
+	},
+	[100970] = {
+		values = {
+            enemy = swat_hard
+		}
+	},
+	[100971] = {
+		values = {
+            enemy = swat_overkill
 		}
 	},
 	-- Reinforce groups in front of the vault

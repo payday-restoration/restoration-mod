@@ -52,7 +52,7 @@ local chance_elite = math.rand(1)
 	if difficulty_index <= 4 then
 		random_elite_unit = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
 	else
-		if difficulty_index == 8 then
+		if difficulty_index ~= 8 then
 			if chance_elite < 0.25 then
 				random_elite_unit = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 			elseif chance_elite < 0.50 then

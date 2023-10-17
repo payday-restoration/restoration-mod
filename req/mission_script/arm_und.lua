@@ -32,7 +32,7 @@ local fbiagent_2 = "units/payday2/characters/ene_fbi_2/ene_fbi_2"
 	if difficulty_index <= 6 then
 		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
 		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
-	elseif difficulty_index == 7 or difficulty_index == 8 then
+	else
 		gensec_rifle = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
 		gensec_smg = "units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc"
 	end
@@ -43,7 +43,7 @@ end
 		ponr_value = 300
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 420	
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 540	
 	end
 

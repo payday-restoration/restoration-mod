@@ -34,7 +34,7 @@ end
 		ponr_value = 300
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 420	
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 540	
 	end
 

@@ -5,13 +5,13 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 480
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 450
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 420	
 	end
 
 return {
-		--Pro Job PONR 
-		[101196] = {
-			ponr = ponr_value
+	--Pro Job PONR 
+	[101196] = {
+		ponr = ponr_value
 	}
 }

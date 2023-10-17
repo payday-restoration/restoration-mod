@@ -15,14 +15,14 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		ponr_value = 150
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 120	
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 90	
 	end
 	
 	if Global.game_settings and Global.game_settings.one_down then
 		swat_amount = 6
 		murky_amount = 5
-	if difficulty_index == 4 or difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 or difficulty_index == 8 then
+	if difficulty_index >= 4 then
 		murkyman_1 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
 		murkyman_2 = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun"
 		murkyman_3 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
@@ -57,7 +57,7 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"	
-	elseif difficulty_index == 8 then
+	else
 		swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		spooc =  "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"

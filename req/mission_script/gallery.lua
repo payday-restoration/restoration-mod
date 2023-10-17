@@ -7,7 +7,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	elseif difficulty_index == 7 then
 		jerome_dude = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
 		smg_dude = "units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"	
-	elseif difficulty_index == 8 then
+	else
 		jerome_dude = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 		smg_dude = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
 	end

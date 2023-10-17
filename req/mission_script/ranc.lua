@@ -7,7 +7,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value_1 = 1530
 		ponr_value_2 = 810
-	elseif difficulty_index == 8 then
+	else
 		ponr_value_1 = 1500
 		ponr_value_2 = 780
 	end

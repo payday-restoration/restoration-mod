@@ -3,7 +3,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	if difficulty_index <= 7 then
 		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-	elseif difficulty_index == 8 then
+	else
 		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 	end	
 	
@@ -11,7 +11,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 420	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 390
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 360		
 	end
 

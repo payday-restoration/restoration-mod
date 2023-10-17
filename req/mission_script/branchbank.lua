@@ -16,7 +16,7 @@ local vaultdoor = 66
 		ponr_value = 720
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 660	
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 600
 	end
 	

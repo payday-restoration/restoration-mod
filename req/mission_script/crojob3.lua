@@ -37,7 +37,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		swat_3 = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"
 		swat_4 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		swat_5 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty_index == 8 then
+	else
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
@@ -55,7 +55,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 660	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 630
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 600		
 	end
 	

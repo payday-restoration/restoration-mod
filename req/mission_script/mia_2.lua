@@ -6,12 +6,30 @@ local chance_dozer_right = math.rand(1)
 local chance_titan_swat_left = math.rand(1)
 local chance_titan_swat_right = math.rand(1)
 local chance_elite = math.rand(1)
+local dozer_table = {
+	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+	dozer_skull = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+}
+local titan_table = { 
+	titan_swat_rifle = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	titan_swat_shotgun = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun",
+	titan_hrt = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1",
+	omnia_lpf = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf",
+	titan_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
+	titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
+	invis_woman = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+}
 
 	if difficulty_index <= 5 then
 		ponr_value = 330
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 300
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 240		
 	end
     
@@ -36,14 +54,14 @@ local chance_elite = math.rand(1)
 		shield_unit = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		--2 scripted SWAT units will be replaced by titan SWAT
 		if chance_titan_swat_left < 0.5 then
-			titan_swat_left = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+			titan_swat_left = titan_table.titan_swat_rifle
 		else
-			titan_swat_left = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			titan_swat_left = titan_table.titan_swat_shotgun
 		end
 		if chance_titan_swat_right < 0.5 then
-			titan_swat_right = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+			titan_swat_right = titan_table.titan_swat_rifle
 		else
-			titan_swat_right = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			titan_swat_right = titan_table.titan_swat_shotgun
 		end
 	end
 	
@@ -54,25 +72,25 @@ local chance_elite = math.rand(1)
 	else
 		if difficulty_index ~= 8 then
 			if chance_elite < 0.25 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+				random_elite_unit = titan_table.titan_hrt
 			elseif chance_elite < 0.50 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"
+				random_elite_unit = titan_table.omnia_lpf
 			elseif chance_elite < 0.75 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+				random_elite_unit = titan_table.titan_sniper
 			else
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+				random_elite_unit = titan_table.titan_taser
 			end
 		else
 			if chance_elite < 0.20 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
+				random_elite_unit = titan_table.titan_hrt
 			elseif chance_elite < 0.40 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"
+				random_elite_unit = titan_table.omnia_lpf
 			elseif chance_elite < 0.60 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+				random_elite_unit = titan_table.titan_sniper
 			elseif chance_elite < 0.80 then
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+				random_elite_unit = titan_table.titan_taser
 			else
-				random_elite_unit = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+				random_elite_unit = titan_table.invis_woman
 			end
 		end
 	end
@@ -80,59 +98,59 @@ local chance_elite = math.rand(1)
 	--Setting up random dozers for DW+
 	if difficulty_index == 6 or difficulty_index == 7 then
 		if chance_dozer_left < 0.35 then
-			tank_replacement_left = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			tank_replacement_left = dozer_table.dozer_skull
 		elseif chance_dozer_left < 0.70 then
-			tank_replacement_left = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			tank_replacement_left = dozer_table.dozer_black
 		else
-			tank_replacement_left = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+			tank_replacement_left = dozer_table.dozer_green
 		end
 		
 		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			tank_replacement_middle = dozer_table.dozer_skull
 		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			tank_replacement_middle = dozer_table.dozer_black
 		else
-			tank_replacement_middle = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+			tank_replacement_middle = dozer_table.dozer_green
 		end
 		
 		if chance_dozer_right < 0.25 then
-			tank_replacement_right = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			tank_replacement_right = dozer_table.dozer_skull
 		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			tank_replacement_right = dozer_table.dozer_black
 		else
-			tank_replacement_right = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+			tank_replacement_right = dozer_table.dozer_green
 		end
 	end
 	
 	if difficulty_index == 8 then
 		if chance_dozer_left < 0.25 then
-			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+			tank_replacement_left = dozer_table.dozer_zeal_black
 		elseif chance_dozer_left < 0.50 then
-			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+			tank_replacement_left = dozer_table.dozer_zeal_skull
 		elseif chance_dozer_left < 0.75 then
-			tank_replacement_left = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+			tank_replacement_left = dozer_table.dozer_titan
 		else
-			tank_replacement_left = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+			tank_replacement_left = dozer_table.dozer_zeal_benelli
 		end
 		
 		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+			tank_replacement_middle = dozer_table.dozer_zeal_black
 		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+			tank_replacement_middle = dozer_table.dozer_zeal_skull
 		elseif chance_dozer_middle < 0.75 then
-			tank_replacement_middle = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+			tank_replacement_middle = dozer_table.dozer_titan
 		else
-			tank_replacement_middle = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+			tank_replacement_middle = dozer_table.dozer_zeal_benelli
 		end
 		
 		if chance_dozer_right < 0.25 then
-			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+			tank_replacement_right = dozer_table.dozer_zeal_black
 		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+			tank_replacement_right = dozer_table.dozer_zeal_skull
 		elseif chance_dozer_right < 0.75 then
-			tank_replacement_right = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+			tank_replacement_right = dozer_table.dozer_titan
 		else
-			tank_replacement_right = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+			tank_replacement_right = dozer_table.dozer_zeal_benelli
 		end
 	end
 	

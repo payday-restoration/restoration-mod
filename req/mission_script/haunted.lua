@@ -88,7 +88,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
 		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
-	elseif difficulty_index == 8 then
+	else
 		swat_1 = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"
 		swat_3 = "units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"

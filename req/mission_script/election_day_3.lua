@@ -5,7 +5,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		jerome_dude = "units/payday2/characters/ene_security_3/ene_security_3"	
 	elseif difficulty_index == 7 then
 		jerome_dude = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
-	elseif difficulty_index == 8 then
+	else
 		jerome_dude = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 	end
 
@@ -13,7 +13,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 360	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 330	
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 300		
 	end
 

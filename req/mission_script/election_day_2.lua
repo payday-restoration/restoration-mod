@@ -14,7 +14,7 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 		ponr_value = 360	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 330
-	elseif difficulty_index == 8 then
+	else
 		ponr_value = 300		
 	end
 		

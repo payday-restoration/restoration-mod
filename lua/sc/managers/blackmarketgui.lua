@@ -5185,7 +5185,7 @@ function BlackMarketGui:update_info_text()
 		local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)
 		dodge_rating = math.clamp(dodge_rating + mod_dodge + skill_dodge, 0, 0.45)
 		if dodge_rating and dodge_rating > 0 then
-			local description = managers.localization:text("bm_menu_dodge_grace", {grace_bonus = (dodge_rating * 1000) .. "ms"})
+			local description = managers.localization:text("bm_menu_dodge_grace", {grace_bonus = math.round(dodge_rating * 1000) .. "ms"})
 			local diff_desc = ""
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color,  tweak_data.screen_colors[dodge_rating == 0.45 and "stat_maxed" or color_id])

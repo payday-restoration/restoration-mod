@@ -1,5 +1,46 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local chance_dozer_var = math.rand(1)
+local chance_dozer = 75
+local dozer_table = {
+	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+	dozer_skull = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
+	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
+}
+
+if Global.game_settings and Global.game_settings.one_down then
+	if difficulty_index == 8 then
+		chance_dozer = 100
+	end
+end	
+
+
+	--Setting up the dozer randomizer
+	if difficulty_index == 6 or difficulty_index == 7 then
+		if chance_dozer_var < 0.35 then
+			dozer = dozer_table.dozer_skull
+		elseif chance_dozer_var < 0.70 then
+			dozer = dozer_table.dozer_black
+		else
+			dozer = dozer_table.dozer_green
+		end
+	end
+
+	if difficulty_index == 8 then
+		if chance_dozer_var < 0.25 then
+			dozer = dozer_table.dozer_zeal_black
+		elseif chance_dozer_var < 0.50 then
+			dozer = dozer_table.dozer_zeal_skull
+		elseif chance_dozer_var < 0.75 then
+			dozer = dozer_table.dozer_titan
+		else
+			dozer = dozer_table.dozer_zeal_benelli
+		end
+	end
 
 	if difficulty_index <= 5 then
 		ponr_value = 540	
@@ -8,6 +49,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	else
 		ponr_value = 420	
 	end
+	
 
 return {
 	--Pro Job PONR 
@@ -18,6 +60,17 @@ return {
 	[100778] = {
 		on_executed = {
 			{id = 101278, delay = 0}
+		}
+	},
+	[102869] = {
+		values = {
+            chance = chance_dozer
+		}
+	},
+	--Dozer gets randomized
+	[102870] = {
+		values = {
+            enemy = dozer
 		}
 	},
 	[101190] = {

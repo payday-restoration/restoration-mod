@@ -760,7 +760,7 @@ function PlayerManager:check_skills()
 	if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
 		local function speed_up_on_kill()
 			if #managers.player:smoke_screens() == 0 then
-				managers.player:speed_up_grenade_cooldown(1)
+				managers.player:speed_up_grenade_cooldown(2)
 			end
 		end
 

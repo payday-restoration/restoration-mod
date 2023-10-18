@@ -2369,10 +2369,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_dot_4x4"] = "작은 도트",
 		["menu_reticle_dmc_dot_2x2"] = "더 작은 점",
 
+
 		
-		--Blackmarket gui per-armor skill descriptions.
-		
-		["bm_menu_dodge_grace"] = "회피 시 유예 시간을 최대 #{skill_color}#0.3##까지 #{skill_color}#$grace_bonus%##만큼 부여합니다.\n\n유예 시간은 회피 미터가 소진되거나 다시 피해를 입을 수 있을 때까지 걸리는 시간입니다. 유예 시간은 리스크 레벨이 높을수록 점점 짧아집니다.",
+		--Blackmarket gui per-armor skill descriptions.	
+		["bm_menu_dodge_grace"] = "희피 시 추가 유예 시간: #{skill_color}#$grace_bonus##",
+		["bm_menu_dodge_grace_cap"] = "현재 작업의 #{risk}#$risk_level##에 따라 회피 시 유예 시간이 #{important_1}#$grace_bonus_cap##로 제한됩니다.",
 		
 		["bm_menu_armor_grinding_1"] = "간격당 방탄복 재생량: $passive_armor_regen",
 		["bm_menu_armor_grinding_2"] = "간격당 방탄복 재생량: $passive_armor_regen \n적중 시 방탄복 재생량: $active_armor_regen",

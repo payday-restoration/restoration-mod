@@ -1739,6 +1739,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 
 		--Blackmarket gui per-armor skill descriptions.
+		["bm_menu_append_milliseconds"] = "ms",
 		["bm_menu_dodge_grace"] = "ADDITIONAL GRACE PERIOD ON DODGE: #{skill_color}#$grace_bonus##",
 		["bm_menu_dodge_grace_cap"] = "Grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's risk level of #{risk}#$risk_level##",
 

@@ -415,7 +415,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			3,
 			"above",
 			50,
-			4
+			3
 		}
 	}
 	

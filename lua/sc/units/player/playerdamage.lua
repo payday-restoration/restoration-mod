@@ -84,6 +84,7 @@ function PlayerDamage:init(unit)
 	--Unique resmod stuff.
 	self._ally_attack = false --Whether or not an ally dealt the last attack. Prevents certain cheese with friendly fire.
 	self._dodge_points = 0.0 --The player's dodge stat, gets set by set_dodge_points once players enter their standard state.
+	self._dodge_interval = 0.0
 	self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 	self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 	self._in_smoke_bomb = 0.0 --Sicario tracking stuff; 0 = not in smoke, 1 = inside smoke, 2 = inside own smoke. Tfw no explicit enum support in lua :(
@@ -493,7 +494,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
 		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
@@ -636,7 +637,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
 		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
@@ -1442,6 +1443,7 @@ function PlayerDamage:set_dodge_points()
 		+managers.player:body_armor_value("dodge")
 		+managers.player:skill_dodge_chance(false, false, false))
 		or 0.0
+	self._dodge_interval = math.clamp(self._dodge_points, 0, 0.45 - (0.45 - (tweak_data.player.damage.MIN_DAMAGE_INTERVAL)) ) 
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	end

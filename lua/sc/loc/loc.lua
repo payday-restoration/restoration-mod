@@ -1273,7 +1273,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_bonus_sc_none_desc"] = "DISABLES BOOSTS FROM WEAPON SKINS.",
 		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_menu_weapon_multishot_1"] = "Damage is divided between",
+		["bm_menu_weapon_multishot_1"] = "Damage is split between",
 		["bm_menu_weapon_multishot_2"] = "projectiles, each dealing",
 		["bm_menu_weapon_multishot_3"] = "damage.",
 		["bm_menu_weapon_ene_hs_mult_sub"] = "Enemy headshot multipliers are reduced to ",
@@ -1739,7 +1739,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 
 		--Blackmarket gui per-armor skill descriptions.
-		["bm_menu_dodge_grace"] = "Dodging grants a #{skill_color}#$grace_bonus%## longer grace period, up to a maximum of #{skill_color}#300ms.##\n\nA grace period is the amount of time needed to pass until your dodge meter can be drained or you can take damage again; grace periods get shorter with greater risk levels.",
+		["bm_menu_dodge_grace"] = "ADDITIONAL GRACE PERIOD ON DODGE: #{skill_color}#$grace_bonus##",
+		["bm_menu_dodge_grace_cap"] = "Additional grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's risk level of #{risk}#$risk_level##",
 
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen## \nArmor regenerated when damaging enemies: #{skill_color}#$active_armor_regen##",

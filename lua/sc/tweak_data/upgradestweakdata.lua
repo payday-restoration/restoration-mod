@@ -408,6 +408,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--This is overridden/ignored if a weapon in any of these categories is given its own movement penalty
 	self.weapon_movement_penalty.minigun = 0.6
 	self.weapon_movement_penalty.lmg = 0.8
+
+	self.values.player.detection_risk_stamina_regen = {
+		{
+			0.375,
+			3,
+			"above",
+			50,
+			4
+		}
+	}
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
@@ -2912,6 +2922,16 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
+	self.definitions.player_detection_risk_stamina_regen = {
+		name_id = "menu_player_detection_risk_stamina_regen",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "detection_risk_stamina_regen",
+			category = "player"
+		}
+	}		
+
 	self.definitions.player_small_loot_multiplier_1 = {
 		name_id = "menu_player_small_loot_multiplier",
 		category = "feature",

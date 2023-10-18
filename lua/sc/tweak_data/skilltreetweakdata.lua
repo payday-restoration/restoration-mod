@@ -93,7 +93,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_counter_strike_melee",
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",
-		"player_civ_calming_alerts"
+		"player_civ_calming_alerts",
+		"player_detection_risk_stamina_regen"
 	}
 
 --[[   SKILLTREES   ]]--

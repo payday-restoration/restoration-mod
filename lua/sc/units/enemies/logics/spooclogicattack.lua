@@ -1,34 +1,30 @@
--- More consistent Cloaker attacks. Why would Cloakers not be allowed to start a sprint attack when another cop is in the way?
+-- More consistent Cloaker attacks, why wouldn't they be allowed to start a sprint attack when another cop is in the way?
 function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	if my_data.spooc_attack or data.t <= data.spooc_attack_timeout_t or data.unit:movement():chk_action_forbidden("walk") then
 		return
 	end
 
 	local focus_enemy = data.attention_obj
-	if not focus_enemy.nav_tracker or not focus_enemy.is_person or not focus_enemy.verified or focus_enemy.reaction < AIAttentionObject.REACT_SHOOT then
+	if not focus_enemy.nav_tracker or not focus_enemy.is_person then
 		return
 	end
 
-	if focus_enemy.criminal_record and (focus_enemy.criminal_record.status or SpoocLogicAttack._is_last_standing_criminal(focus_enemy)) then
+	if not focus_enemy.criminal_record or focus_enemy.criminal_record.status then
 		return
 	end
 
-	if focus_enemy.verified_dis > (my_data.want_to_take_cover and 1500 or 2500) then
+	if focus_enemy.reaction < AIAttentionObject.REACT_SHOOT or focus_enemy.dis > (my_data.want_to_take_cover and 1500 or 2500) then
 		return
 	end
 
-	if focus_enemy.unit:movement().zipline_unit and focus_enemy.unit:movement():zipline_unit() then
+	if SpoocLogicAttack._is_last_standing_criminal(focus_enemy) or not focus_enemy.unit:movement():is_SPOOC_attack_allowed() or focus_enemy.unit:movement():zipline_unit() then
 		return
 	end
 
-	if focus_enemy.unit:movement().is_SPOOC_attack_allowed and not focus_enemy.unit:movement():is_SPOOC_attack_allowed() then
+	if not my_data.spooc_attack_delay_t then
+		my_data.spooc_attack_delay_t = data.t + math.map_range_clamped(focus_enemy.dis, 0, 500, 0.5, 0)
 		return
-	end
-
-	if not data.spooc_attack_delay_t then
-		data.spooc_attack_delay_t = focus_enemy.verified_t + 0.8
-		return
-	elseif data.spooc_attack_delay_t > data.t then
+	elseif my_data.spooc_attack_delay_t > data.t then
 		return
 	end
 
@@ -46,7 +42,7 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 
 	local action = SpoocLogicAttack._chk_request_action_spooc_attack(data, my_data, flying_strike)
 	if action then
-		data.spooc_attack_delay_t = nil
+		my_data.spooc_attack_delay_t = nil
 
 		my_data.spooc_attack = {
 			start_t = data.t,

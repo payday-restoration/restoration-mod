@@ -60,3 +60,11 @@ function CopInventory:add_unit_by_name(new_unit_name, equip)
 	end
 	
 end
+
+-- Add left hand align place for akimbo weapons
+Hooks:PostHook(CopInventory, "init", "sh_init", function (self)
+	self._align_places.left_hand = self._align_places.left_hand or {
+		on_body = true,
+		obj3d_name = Idstring("a_weapon_left_front")
+	}
+end)

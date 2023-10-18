@@ -2933,10 +2933,15 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 
 			self._armor_stats_shown = {
 				{
+					name = "health"
+				},
+				{
 					name = "armor"
 				},
 				{
-					name = "health"
+					name = "regen_time",
+					inverted = true,
+					append = "s"
 				},
 				{
 					name = "deflection"
@@ -2958,11 +2963,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					name = "stamina"
-				},
-				{
-					name = "regen_time",
-					inverted = true,
-					append = "s"
 				}
 			}
 			local x = 0

@@ -1568,7 +1568,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.dodge_heal_no_armor = {0.02}
 					
 					self.skill_descs.jail_diet = {
-					skill_value_p1 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%" -- HP regen on dodge
+					skill_value_b1 = tostring(self.values.player.detection_risk_add_dodge_chance[1][1] * 100), --Dodge increase per concealment check
+					skill_value_b2 = tostring(self.values.player.detection_risk_add_dodge_chance[1][2]), -- Dodge for X concealment
+					skill_value_b3 = tostring(self.values.player.detection_risk_add_dodge_chance[1][4]), --Concealment threshold
+					skill_value_b4 = tostring(self.values.player.detection_risk_add_dodge_chance[1][5] * 100), --Max dodge points
+					skill_value_p1 = tostring(self.values.player.detection_risk_add_dodge_chance[2][2]), -- Dodge for X concealment ACE
+					skill_value_p2 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%" -- HP regen on dodge
 					}
 			
 		--Silent Killer--

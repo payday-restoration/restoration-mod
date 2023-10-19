@@ -844,7 +844,7 @@ function HUDTeammate:set_revives_amount(revive_amount)
 		local revive_text = player_panel:child("revive_text")
 
 		if revive_text then
-			revive_text:set_text(tostring(math.max(revive_amount - 1, 0)) .. "x")
+			revive_text:set_text(" "..tostring(math.max(revive_amount - 1, 0)) .. "x")
 		end
 	end
 end

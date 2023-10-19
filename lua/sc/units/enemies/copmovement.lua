@@ -1360,6 +1360,7 @@ end
 
 function CopMovement:anim_clbk_police_called(unit)
 	local group_state = managers.groupai:state()
+	local job = Global.level_data and Global.level_data.level_id
 
 	if Network:is_server() then
 		if not group_state:is_ecm_jammer_active("call") then
@@ -1367,21 +1368,26 @@ function CopMovement:anim_clbk_police_called(unit)
 
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "called")
 
-			if cop_type == "civ" then
-				group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
-				group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-				group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-				group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
-				group_state:_delay_whisper_suspicion_mul_decay()		
+			--Instant failure on the relevant tutorial heists
+			if job == "short1_stage1" or job == "short1_stage2" or job == "firestarter_3_res" then 
+				group_state:on_police_called(self:coolness_giveaway())
 			else
-				group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
-				group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-				group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-				group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
-				group_state:_delay_whisper_suspicion_mul_decay()	
-				
-				--Maybe one day
-				--self:set_cool(true, nil, false)
+				if cop_type == "civ" then
+					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
+					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
+					group_state:_delay_whisper_suspicion_mul_decay()		
+				else
+					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
+					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
+					group_state:_delay_whisper_suspicion_mul_decay()	
+					
+					--Maybe one day
+					--self:set_cool(true, nil, false)
+				end
 			end
 		else
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "call_interrupted")

@@ -1523,7 +1523,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_weapon_concealment_increase_2",
+						"player_weapon_concealment_increase_1",
+						"player_weapon_concealment_increase_2"
 					},
 					cost = self.costs.hightierpro
 				}

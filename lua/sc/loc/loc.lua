@@ -4817,14 +4817,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#3## points of encumbrance under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of encumbrance under #{skill_color}#35##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#2## points of encumbrance under #{skill_color}#30##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{skill_color}#1## point of encumbrance under #{skill_color}#30##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
 				["menu_insulation_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting shocked no longer forces you to shoot and the shock attack from a Taser has a #{skill_color}#15%## chance to backfire, knocking back the Taser in the process.\n\n#{risk}#NOTE: The accuracy and recoil penalties from being shocked still apply.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#30%.##\n\nACE: #{owned}#$pro##\nInteracting with an enemy Taser within #{skill_color}#2## seconds of him electrocuting you will counter-electrocute him, dealing #{skill_color}#50%## of his max health as damage.\n\nThe slowdown effect and duration of Titan Taser attacks are reduced by #{skill_color}#50%.##",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#3## points of encumbrance under #{skill_color}#35##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#1## point of encumbrance under #{skill_color}#35##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
+				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#2## points of encumbrance under #{skill_color}#30##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{skill_color}#1## point of encumbrance under #{skill_color}#30##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 				--Second Wind
@@ -4849,7 +4849,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#3## points of encumbrance under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of encumbrance under #{skill_color}#35## up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#2## points of encumbrance under #{skill_color}#30##, up to a maximum of #{skill_color}#30%.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#3%## critical hit chance for every #{skill_color}#1## point of encumbrance under #{skill_color}#30##, up to a maximum of #{skill_color}#30%.##\n\nYour critical hit chance is increased by an additional #{skill_color}#50%## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 

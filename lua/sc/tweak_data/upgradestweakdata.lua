@@ -411,11 +411,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.detection_risk_stamina_regen = {
 		{
-			0.375,
+			0.25,
 			3,
 			"above",
 			50,
-			3
+			2
 		}
 	}
 	
@@ -432,14 +432,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		18 --ICTV (2 increments + 1)
 	}
 	
-	self.values.player.body_armor.movement = { --increments of 0.04
+	self.values.player.body_armor.movement = { --*increments of 0.04
 		1,
 		0.96,
 		0.92,
 		0.88,
-		0.76, --3 increments instead of 2
-		0.72,
-		0.6 --3 increments instead of 2
+		0.72, --4 increments
+		0.7, --0.5 increments
+		0.6 --2.5 increments
 	}
 	self.values.player.body_armor.dodge = { --*increments of 0.1
 		0.2,
@@ -450,14 +450,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		-0.2, --half increment
 		-0.3
 	}
-	self.values.player.body_armor.dodge_grace = { --increments of 0.075
-		1.50,
-		1.425,
-		1.35,
-		1.275,
-		1.125,
-		1.05,
-		1.0
+	self.values.player.body_armor.dodge_grace = { --UNUSED, increments of 0.075
+		1, --.50,
+		1, --.425,
+		1, --.35,
+		1, --.275,
+		1, --.125,
+		1, --.05,
+		1  --.0
 	}
 	self.values.player.body_armor.concealment = { --*increments of 2
 		30,
@@ -466,7 +466,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		22,
 		16,	--3 increments
 		8, --4 increments
-		2 --3 increments
+		4 --2 increments
 	}
 	self.values.player.body_armor.damage_shake = { --increments of 0.1
 		1.0,
@@ -1489,16 +1489,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
 						0.015,
-						3,
+						2,
 						"below",
-						35,
+						30,
 						0.15
 					},
 					{ --Ace
 						0.015,
 						1,
 						"below",
-						35,
+						30,
 						0.15
 					}
 				}
@@ -1547,7 +1547,23 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 			--Sneaky Bastard
-				--Concealment stuff same as vanilla.
+				--Basic
+				self.values.player.detection_risk_add_dodge_chance = {
+					{
+						0.01,
+						2,
+						"below",
+						30,
+						0.1
+					},
+					{
+						0.01,
+						1,
+						"below",
+						30,
+						0.1
+					}
+				}
 				--Ace
 					self.values.player.dodge_heal_no_armor = {0.02}
 					
@@ -1654,16 +1670,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.detection_risk_add_crit_chance = {
 					{ --Basic
 						0.03,
-						3,
+						2,
 						"below",
-						35,
+						30,
 						0.3
 					},
 					{ --Ace
 						0.03,
 						1,
 						"below",
-						35,
+						30,
 						0.3
 					}
 				}

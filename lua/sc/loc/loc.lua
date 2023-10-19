@@ -1900,7 +1900,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--Perk Deck Throwables
 		["bm_grenade_copr_ability"] = "Ampule",
 		["bm_grenade_damage_control"] = "Hip Flask",
-		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#4m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
+		["bm_grenade_smoke_screen_grenade_desc"] = "Radius: #{skill_color}#6m## \nDuration: #{skill_color}#12s## \nFuse: #{skill_color}#1 second after remaining stationary## \n\nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
 		
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]

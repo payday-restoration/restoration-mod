@@ -15892,7 +15892,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	else
 		self.enemy_spawn_groups.Cap_Spring = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -15913,8 +15913,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Taser_Titan",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				}					
@@ -15991,7 +15991,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -16012,8 +16012,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				}					
@@ -16082,7 +16082,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = {4, 4},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -16095,8 +16095,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}				
@@ -18816,7 +18816,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}								
 		self.enemy_spawn_groups.SKM_Cap_Spring_W9 = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -18837,15 +18837,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Taser_Titan",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				},					
 			}
 		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
-			amount = {5, 5},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -18866,15 +18866,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},					
 			}
 		}
 		self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = {
-			amount = {4, 4},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -18887,8 +18887,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}				

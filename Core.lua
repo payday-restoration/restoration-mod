@@ -242,6 +242,7 @@ function restoration:Init()
 		"bex", --San Martin Bank
 		"trai", --Lost in Transit
 		"corp", --Hostile Takeover
+		"mus", --The Diamond
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -275,7 +276,6 @@ function restoration:Init()
 		"welcome_to_the_jungle_2", --Big Oil 2. Scripted cloaker hell.
 		"cane", --Santa's Workshop
 		"brb", --Brooklyn Bank
-		"mus", --The Diamond
 		"born", --Biker 1
 		"run", --Heat Street
 		"ranc", --Midland Ranch

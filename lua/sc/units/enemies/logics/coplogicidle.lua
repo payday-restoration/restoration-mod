@@ -371,54 +371,36 @@ function CopLogicIdle._get_attention_weight(attention_data, att_unit, distance)
 	return 1 / weight_mul
 end
 
--- Fix defend_area objectives being force relocated to areas with players in them
-local _chk_relocate_original = CopLogicIdle._chk_relocate
-function CopLogicIdle._chk_relocate(data, ...)
-	local objective = data.objective
-	local objective_type = objective and objective.type
-	if objective_type == "follow" then
-		return _chk_relocate_original(data, ...)
-	elseif objective_type == "hunt" then
-		local objective_area = objective.area
-		if not objective_area or next(objective_area.criminal.units) then
+-- Show hint to player when surrender is impossible
+local on_intimidated_original = CopLogicIdle.on_intimidated
+function CopLogicIdle.on_intimidated(data, amount, aggressor_unit, ...)
+	local surrender = on_intimidated_original(data, amount, aggressor_unit, ...)
+	if surrender or data.char_tweak.priority_shout or not data.team.foes.criminal1 or data.char_tweak.surrender == tweak_data.character.presets.surrender.special then
+		data._skip_surrender_hints = nil
+		return surrender
+	end
+
+	local surrender_window_expired = data.surrender_window and data.surrender_window.window_expire_t < data.t
+	local too_many_hostages = not managers.groupai:state():has_room_for_police_hostage()
+	if not data.char_tweak.surrender or surrender_window_expired or too_many_hostages then
+		local peer = managers.network:session():peer_by_unit(aggressor_unit)
+		if not peer then
 			return
 		end
 
-		local found_areas = {
-			[objective_area] = true
-		}
-		local areas_to_search = {
-			objective_area
-		}
-		local target_area
-
-		while next(areas_to_search) do
-			local current_area = table.remove(areas_to_search, 1)
-
-			if next(current_area.criminal.units) then
-				target_area = current_area
-				break
-			end
-
-			for _, n_area in pairs(current_area.neighbours) do
-				if not found_areas[n_area] then
-					found_areas[n_area] = true
-					table.insert(areas_to_search, n_area)
-				end
-			end
+		if not data._skip_surrender_hints then
+			data._skip_surrender_hints = surrender_window_expired and 0 or 1
 		end
 
-		if not target_area then
-			return
+		if data._skip_surrender_hints <= 0 then
+			if peer:id() == managers.network:session():local_peer():id() then
+				managers.hint:show_hint("convert_enemy_failed")
+			else
+				managers.network:session():send_to_peer(peer, "sync_show_hint", "convert_enemy_failed")
+			end
+			data._skip_surrender_hints = 3
+		else
+			data._skip_surrender_hints = data._skip_surrender_hints - 1
 		end
-
-		objective.in_place = nil
-		objective.path_data = nil
-		objective.area = target_area
-		objective.nav_seg = target_area.pos_nav_seg
-
-		data.logic._exit(data.unit, "travel")
-
-		return true
 	end
 end

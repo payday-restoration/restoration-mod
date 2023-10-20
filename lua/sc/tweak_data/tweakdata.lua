@@ -7,6 +7,7 @@ tweak_data.hud.revive_colors_resmod = {
 	restoration.Options:GetValue("HUD/Colors/DownsZero"),
 	restoration.Options:GetValue("HUD/Colors/DownsOne"),
 	restoration.Options:GetValue("HUD/Colors/DownsTwo"),
+	restoration.Options:GetValue("HUD/Colors/DownsThreePlus"),
 	restoration.Options:GetValue("HUD/Colors/DownsThreePlus")
 }
 

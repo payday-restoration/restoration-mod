@@ -2533,8 +2533,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.05
 	}	
 	self.values.player.copr_activate_bonus_health_ratio = {
-		0.1,
-		0.05 --Copycat
+		0.05,
+		0.025 --Copycat
 	}	
 	self.values.player.copr_teammate_heal = {
 		0.01,

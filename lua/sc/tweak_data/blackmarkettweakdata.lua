@@ -1901,7 +1901,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_jav.expire_t = 0.9
 	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
-	self.projectiles.smoke_screen_grenade.base_cooldown = 40
+	self.projectiles.smoke_screen_grenade.base_cooldown = 35
 	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3

@@ -990,7 +990,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиенте — хорошая добыча, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняли портовый склад, который они используют как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы проникнем туда и возьмем девку в заложники. Мурки не могут позволить себе потерять ее и они заплатят за ее освобождение, может быть даже вышеупомянутой и весьма ценной добычей. Что скажете, банда?",
 		
 		--Side Jobs
-		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above while Captain Spring is still present on the level."
+		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга."
 		
 	})
 

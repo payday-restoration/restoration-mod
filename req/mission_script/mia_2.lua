@@ -66,8 +66,8 @@ local titan_table = {
 	end
 	
 	
-	--Random titan unit for OVK+. Otherwise - vet cop
-	if difficulty_index <= 4 then
+	--Random titan unit for Mayhem+. Otherwise - vet cop
+	if difficulty_index <= 5 then
 		random_elite_unit = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
 	else
 		if difficulty_index ~= 8 then

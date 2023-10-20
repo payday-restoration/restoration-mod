@@ -441,7 +441,7 @@
 					
 					<option type="color" default_value="Color.white" name="DownsThreePlus" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.yellow" name="DownsTwo" desc_id="RestorationModColorOption"/>
-					<option type="color" default_value="Color.yellow" name="DownsOne" desc_id="RestorationModColorOption"/>
+					<option type="color" default_value="Color(1, 0.37, 0)" name="DownsOne" desc_id="RestorationModColorOption"/>
 					<option type="color" default_value="Color.red" name="DownsZero" desc_id="RestorationModColorOption"/>
 				</option_group>
 				<option_group name="Extra">

@@ -844,7 +844,7 @@ function HUDTeammate:set_revives_amount(revive_amount)
 		local revive_text = player_panel:child("revive_text")
 
 		if revive_text then
-			revive_text:set_color(tweak_data.hud.revive_colors[revive_amount] or tweak_data.hud.revive_colors[4])
+			revive_text:set_color(tweak_data.hud.revive_colors_resmod[revive_amount] or tweak_data.hud.revive_colors[4])
 			revive_text:set_text(" "..tostring(math.max(revive_amount - 1, 0)) .." ".. managers.localization:get_default_macro("BTN_SKULL"))
 		end
 	end

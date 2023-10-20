@@ -3,7 +3,7 @@ if not tweak_data then
 end
 
 tweak_data.accessibility_colors.screenflash.hit_flash.default = Color(255, 255, 250, 180) / 255
-tweak_data.hud.revive_colors = {
+tweak_data.hud.revive_colors_resmod = {
 	restoration.Options:GetValue("HUD/Colors/DownsZero"),
 	restoration.Options:GetValue("HUD/Colors/DownsOne"),
 	restoration.Options:GetValue("HUD/Colors/DownsTwo"),

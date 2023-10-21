@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 6, 0.7, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 6, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -4516,7 +4516,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_maxim9.stats = {
 					damage = 18,
 					spread = 45,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -4551,7 +4551,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g18c.stats = {
 					damage = 20,
 					spread = 42,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -4584,7 +4584,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_czech.stats = {
 					damage = 20,
 					spread = 49,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 29,
@@ -4617,7 +4617,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jowi.stats = {
 					damage = 24,
 					spread = 42,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -4650,7 +4650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_stech.stats = {
 					damage = 24,
 					spread = 50,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -4684,7 +4684,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g17.stats = {
 					damage = 24,
 					spread = 49,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 31,
@@ -4718,7 +4718,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_b92fs.stats = {
 					damage = 24,
 					spread = 51,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -4751,7 +4751,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_pl14.stats = {
 					damage = 24,
 					spread = 44,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -4784,7 +4784,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_holt.stats = {
 					damage = 24,
 					spread = 47,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 31,
@@ -4827,7 +4827,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fmg9.stats = {
 					damage = 24,
 					spread = 59,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 29,
@@ -4871,7 +4871,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.beer.stats = {
 					damage = 24,
 					spread = 64,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 29,
@@ -4911,7 +4911,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_packrat.stats = {
 					damage = 24,
 					spread = 49,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 30,
@@ -4946,7 +4946,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_g22c.stats = {
 					damage = 30,
 					spread = 42,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 10,
 					zoom = 1,
 					concealment = 29,
@@ -4979,7 +4979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_p226.stats = {
 					damage = 30,
 					spread = 49,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 80,
 					zoom = 1,
 					concealment = 29,
@@ -5012,7 +5012,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sparrow.stats = {
 					damage = 30,
 					spread = 44,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -5053,7 +5053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.maxim9.stats = {
 					damage = 18,
 					spread = 55,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -5101,7 +5101,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.stats = {
 					damage = 18,
 					spread = 66,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
@@ -5134,7 +5134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_18c.stats = {
 					damage = 20,
 					spread = 52,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -5171,7 +5171,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.czech.stats = {
 					damage = 20,
 					spread = 59,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 29,
@@ -5210,7 +5210,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stech.stats = {
 					damage = 24,
 					spread = 60,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 30,
@@ -5244,7 +5244,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ppk.stats = {
 					damage = 24,
 					spread = 54,
-					recoil = 95,
+					recoil = 93,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -5281,7 +5281,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g26.stats = {
 					damage = 24,
 					spread = 52,
-					recoil = 95,
+					recoil = 93,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -5314,7 +5314,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.legacy.stats = {
 					damage = 24,
 					spread = 54,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 31,
@@ -5356,7 +5356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holt.stats = {
 					damage = 24,
 					spread = 57,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 31,
@@ -5389,7 +5389,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_17.stats = {
 					damage = 24,
 					spread = 59,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 31,
@@ -5422,7 +5422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b92fs.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -5455,7 +5455,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pl14.stats = {
 					damage = 24,
 					spread = 54,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -5489,7 +5489,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.packrat.stats = {
 					damage = 24,
 					spread = 59,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 30,
@@ -5522,7 +5522,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 32,
@@ -5569,7 +5569,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g22c.stats = {
 					damage = 30,
 					spread = 52,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -5603,7 +5603,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sparrow.stats = {
 					damage = 30,
 					spread = 54,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -5636,7 +5636,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p226.stats = {
 					damage = 30,
 					spread = 59,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 80,
 					zoom = 1,
 					concealment = 29,
@@ -5672,7 +5672,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hs2000.stats = {
 					damage = 30,
 					spread = 60,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -5710,7 +5710,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_m1911.stats = {
 					damage = 45,
 					spread = 51,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -5744,7 +5744,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_shrew.stats = {
 					damage = 45,
 					spread = 42,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 31,
@@ -5778,7 +5778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_usp.stats = {
 					damage = 45,
 					spread = 51,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -5811,7 +5811,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_1911.stats = {
 					damage = 45,
 					spread = 45,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 29,
@@ -5847,7 +5847,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54.stats = {
 					damage = 45,
 					spread = 56,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 29,
@@ -5882,7 +5882,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54_underbarrel.stats = {
 					damage = 90,
 					spread = 46,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 29,
@@ -5929,7 +5929,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.c96.stats = {
 					damage = 45,
 					spread = 67,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -5976,7 +5976,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sub2000.stats = {
 					damage = 45,
 					spread = 72,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -6010,7 +6010,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_korth.stats = {
 					damage = 60,
 					spread = 63,
-					recoil = 47,
+					recoil = 45,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6048,7 +6048,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_2006m.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 26,
@@ -6089,7 +6089,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_model3.stats = {
 					damage = 60,
 					spread = 63,
-					recoil = 39,
+					recoil = 37,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 27,
@@ -6129,7 +6129,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_rage.stats = {
 					damage = 60,
 					spread = 64,
-					recoil = 35,
+					recoil = 33,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6172,7 +6172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_chinchilla.stats = {
 					damage = 60,
 					spread = 70,
-					recoil = 35,
+					recoil = 33,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6216,7 +6216,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.stats = {
 					damage = 90,
 					spread = 51,
-					recoil = 21,
+					recoil = 19,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,
@@ -6256,7 +6256,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rsh12.stats = {
 					damage = 90,
 					spread = 76,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 23,
@@ -6303,7 +6303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54.stats = {
 					damage = 45,
 					spread = 66,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 29,
@@ -6337,7 +6337,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.stats = {
 					damage = 90,
 					spread = 56,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 29,
@@ -6373,7 +6373,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shrew.stats = {
 					damage = 45,
 					spread = 52,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 31,
@@ -6412,7 +6412,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.usp.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -6445,7 +6445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.colt_1911.stats = {
 					damage = 45,
 					spread = 55,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 29,
@@ -6480,7 +6480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 30,
@@ -6514,7 +6514,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.korth.stats = {
 					damage = 60,
 					spread = 73,
-					recoil = 57,
+					recoil = 55,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6550,7 +6550,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mateba.stats = {
 					damage = 60,
 					spread = 71,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 26,
@@ -6585,7 +6585,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model3.stats = {
 					damage = 60,
 					spread = 76,
-					recoil = 49,
+					recoil = 47,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 27,
@@ -6622,7 +6622,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_raging_bull.stats = {
 					damage = 60,
 					spread = 76,
-					recoil = 47,
+					recoil = 45,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6660,7 +6660,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.chinchilla.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 45,
+					recoil = 43,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -6700,7 +6700,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.stats = {
 					damage = 90,
 					spread = 61,
-					recoil = 37,
+					recoil = 35,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -6749,7 +6749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.stats = {
 					damage = 90,
 					spread = 81,
-					recoil = 55,
+					recoil = 53,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 25,
@@ -6806,7 +6806,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_p90.stats = {
 					damage = 18,
 					spread = 66,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 27,
@@ -6869,7 +6869,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hailstorm.stats = {
 					damage = 15,
 					spread = 46,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -6913,7 +6913,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_baka.stats = {
 					damage = 20,
 					spread = 48,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -6949,7 +6949,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.stats = {
 					damage = 20,
 					spread = 61,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -6992,7 +6992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sr2.stats = {
 					damage = 20,
 					spread = 55,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -7037,7 +7037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vityaz.stats = {
 					damage = 24,
 					spread = 62,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7071,7 +7071,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shepheard.stats = {
 					damage = 24,
 					spread = 65,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -7105,7 +7105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coal.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 26,
@@ -7140,7 +7140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_scorpion.stats = {
 					damage = 24,
 					spread = 51,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 31,
@@ -7176,7 +7176,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mp5.stats = {
 					damage = 24,
 					spread = 58,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 24,
@@ -7225,7 +7225,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.stats = {
 					damage = 18,
 					spread = 71,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 27,
@@ -7269,7 +7269,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p90.stats = {
 					damage = 18,
 					spread = 76,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 27,
@@ -7305,7 +7305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tec9.stats = {
 					damage = 20,
 					spread = 55,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 10,
 					zoom = 1,
 					concealment = 29,
@@ -7341,7 +7341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baka.stats = {
 					damage = 20,
 					spread = 58,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -7373,7 +7373,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cobray.stats = {
 					damage = 20,
 					spread = 60,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 1,
 					zoom = 1,
 					concealment = 29,
@@ -7414,7 +7414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp9.stats = {
 					damage = 20,
 					spread = 63,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 31,
@@ -7452,7 +7452,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sr2.stats = {
 					damage = 20,
 					spread = 65,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -7495,7 +7495,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scorpion.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 31,
@@ -7530,7 +7530,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.stats = {
 					damage = 24,
 					spread = 68,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 24,
@@ -7572,7 +7572,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.erma.stats = {
 					damage = 30,
 					spread = 68,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -7608,7 +7608,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.stats = {
 					damage = 30,
 					spread = 44,
-					recoil = 59,
+					recoil = 57,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7649,7 +7649,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_uzi.stats = {
 					damage = 30,
 					spread = 50,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7693,7 +7693,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.stats = {
 					damage = 30,
 					spread = 56,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 25,
@@ -7730,7 +7730,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.schakal.stats = {
 					damage = 30,
 					spread = 66,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -7762,7 +7762,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m45.stats = {
 					damage = 30,
 					spread = 61,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7796,7 +7796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.stats = {
 					damage = 30,
 					spread = 59,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -7833,7 +7833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mac10.stats = {
 					damage = 30,
 					spread = 54,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7875,7 +7875,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1928.stats = {
 					damage = 30,
 					spread = 62,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -7918,7 +7918,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.stats = {
 					damage = 30,
 					spread = 60,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -7969,7 +7969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.stats = {
 				damage = 20,
 				spread = 71,
-				recoil = 77,
+				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 21,
@@ -8115,7 +8115,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.stats = {
 				damage = 24,
 				spread = 41,
-				recoil = 97,
+				recoil = 95,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 20,
@@ -8161,7 +8161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.stats = {
 				damage = 30,
 				spread = 68,
-				recoil = 71,
+				recoil = 69,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 16,
@@ -8208,7 +8208,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 14,
@@ -8258,7 +8258,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 16,
@@ -8307,7 +8307,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg42.stats = {
 					damage = 45,
 					spread = 59,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 17,
@@ -8356,7 +8356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 15,
@@ -8403,7 +8403,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.stats = {
 					damage = 45,
 					spread = 57,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -8443,7 +8443,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ranc_heavy_machine_gun.stats = {
 					damage = 120,
 					spread = 81,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 20,
@@ -8490,7 +8490,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.stats = {
 				damage = 20,
 				spread = 11,
-				recoil = 87,
+				recoil = 85,
 				spread_moving = 25,
 				zoom = 1,
 				concealment = 16,
@@ -8544,7 +8544,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.stats = {
 				damage = 30,
 				spread = 10,
-				recoil = 77,
+				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 14,
@@ -8590,7 +8590,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amcar.stats = {
 					damage = 20,
 					spread = 75,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -8633,7 +8633,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.s552.stats = {
 					damage = 20,
 					spread = 86,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -8679,7 +8679,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36.stats = {
 					damage = 20,
 					spread = 79,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -8716,7 +8716,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vhs.stats = {
 					damage = 20,
 					spread = 89,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 28,
@@ -8757,7 +8757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_olympic.stats = {
 					damage = 20,
 					spread = 63,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -8795,7 +8795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m4.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -8843,7 +8843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak5.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 87,
+					recoil = 85,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -8879,7 +8879,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.corgi.stats = {
 					damage = 24,
 					spread = 84,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -8915,7 +8915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug.stats = {
 					damage = 24,
 					spread = 88,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -8954,7 +8954,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -8988,7 +8988,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.stats = {
 					damage = 24,
 					spread = 80,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -9029,7 +9029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.olympic.stats = {
 					damage = 20,
 					spread = 73,
-					recoil = 83,
+					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -9065,7 +9065,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.famas.stats = {
 					damage = 20,
 					spread = 85,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 4,
 					zoom = 1,
 					concealment = 28,
@@ -9107,7 +9107,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.komodo.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -9147,7 +9147,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -9187,7 +9187,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m16.stats = {
 					damage = 30,
 					spread = 83,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -9227,7 +9227,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l85a2.stats = {
 					damage = 30,
 					spread = 91,
-					recoil = 91,
+					recoil = 89,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -9267,7 +9267,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_akmsu.stats = {
 					damage = 30,
 					spread = 63,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
@@ -9302,7 +9302,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.stats = {
 					damage = 30,
 					spread = 77,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 27,
@@ -9341,7 +9341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm_gold.stats = {
 					damage = 30,
 					spread = 77,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -9377,7 +9377,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.groza.stats = {
 					damage = 30,
 					spread = 82,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -9430,7 +9430,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.groza_underbarrel.stats = {
 					damage = 36,
 					spread = 61,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -9480,7 +9480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb.stats = {
 					damage = 30,
 					spread = 73,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,
@@ -9524,7 +9524,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akmsu.stats = {
 					damage = 30,
 					spread = 73,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
@@ -9567,7 +9567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.asval.stats = {
 					damage = 45,
 					spread = 80,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -9607,7 +9607,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scar.stats = {
 					damage = 45,
 					spread = 86,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -9648,7 +9648,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galil.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 61,
+					recoil = 59,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -9690,7 +9690,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fal.stats = {
 					damage = 45,
 					spread = 83,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -9727,7 +9727,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband.stats = {
 					damage = 45,
 					spread = 84,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -9764,7 +9764,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contraband_m203.stats = {
 					damage = 36,
 					spread = 64,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -9803,7 +9803,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.shak12.stats = {
 					damage = 60,
 					spread = 80,
-					recoil = 59,
+					recoil = 57,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 24,
@@ -9843,7 +9843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_m14.stats = {
 					damage = 60,
 					spread = 90,
-					recoil = 59,
+					recoil = 57,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 21,
@@ -9890,7 +9890,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.stats = {
 					damage = 60,
 					spread = 94,
-					recoil = 53,
+					recoil = 51,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 22,
@@ -9936,7 +9936,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ching.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -9977,7 +9977,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hcar.stats = {
 					damage = 60,
 					spread = 78,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 20,
@@ -10025,7 +10025,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.qbu88.stats = {
 					damage = 60,
 					spread = 91,
-					recoil = 65,
+					recoil = 63,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -10075,7 +10075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,
@@ -10126,7 +10126,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.winchester1874.stats = {
 					damage = 90,
 					spread = 85,
-					recoil = 77,
+					recoil = 75,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 23,
@@ -10164,7 +10164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msr.stats = {
 					damage = 90,
 					spread = 96,
-					recoil = 57,
+					recoil = 55,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 22,
@@ -10202,7 +10202,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.awp.stats = {
 					damage = 90,
 					spread = 97,
-					recoil = 47,
+					recoil = 45,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 20,
@@ -10241,7 +10241,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r700.stats = {
 					damage = 90,
 					spread = 100,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 25,
@@ -10280,7 +10280,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scout.stats = {
 					damage = 90,
 					spread = 98,
-					recoil = 49,
+					recoil = 47,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 24,
@@ -10325,7 +10325,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.victor.stats = {
 					damage = 60,
 					spread = 86,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -10375,7 +10375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wa2000.stats = {
 					damage = 90,
 					spread = 99,
-					recoil = 37,
+					recoil = 35,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -10417,7 +10417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.siltstone.stats = {
 					damage = 90,
 					spread = 91,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 19,
@@ -10469,7 +10469,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbl.stats = {
 					damage = 120,
 					spread = 86,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 22,
@@ -10505,7 +10505,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mosin.stats = {
 					damage = 120,
 					spread = 92,
-					recoil = 55,
+					recoil = 53,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 24,
@@ -10544,7 +10544,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model70.stats = {
 					damage = 120,
 					spread = 99,
-					recoil = 47,
+					recoil = 45,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 22,
@@ -10582,7 +10582,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r93.stats = {
 					damage = 120,
 					spread = 100,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 20,
@@ -10619,7 +10619,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.desertfox.stats = {
 					damage = 120,
 					spread = 98,
-					recoil = 43,
+					recoil = 41,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 24,
@@ -10656,7 +10656,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bessy.stats = {
 					damage = 180,
 					spread = 66,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -10713,7 +10713,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.contender.stats = {
 					damage = 120,
 					spread = 81,
-					recoil = 45,
+					recoil = 43,
 					spread_moving = 9,
 					zoom = 1,
 					concealment = 28,
@@ -10752,7 +10752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.stats = {
 				damage = 180,
 				spread = 96,
-				recoil = 13,
+				recoil = 11,
 				spread_moving = 8,
 				zoom = 1,
 				concealment = 16,
@@ -10800,7 +10800,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saiga.stats = {
 					damage = 45,
 					spread = 19,
-					recoil = 43,
+					recoil = 41,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -10837,7 +10837,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sko12.stats = {
 					damage = 45,
 					spread = 31,
-					recoil = 55,
+					recoil = 53,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 16,
@@ -10877,7 +10877,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aa12.stats = {
 					damage = 45,
 					spread = 31,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 21,
@@ -10918,7 +10918,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ultima.stats = {
 					damage = 45,
 					spread = 21,
-					recoil = 45,
+					recoil = 43,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 25,
@@ -10968,7 +10968,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.spas12.stats = {
 					damage = 45,
 					spread = 30,
-					recoil = 55,
+					recoil = 53,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 25,
@@ -11009,7 +11009,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.benelli.stats = {
 					damage = 45,
 					spread = 35,
-					recoil = 49,
+					recoil = 47,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 23,
@@ -11054,7 +11054,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					alert_size = 2,
 					spread = 19,
 					spread_moving = 8,
-					recoil = 41,
+					recoil = 39,
 					value = 1,
 					extra_ammo = 101,
 					reload = 20,
@@ -11085,7 +11085,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.striker.stats = {
 					damage = 45,
 					spread = 22,
-					recoil = 43,
+					recoil = 41,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -11118,7 +11118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rota.stats = {
 					damage = 45,
 					spread = 26,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -11161,7 +11161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_judge.stats = {
 					damage = 60,
 					spread = 43,
-					recoil = 53,
+					recoil = 51,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 26,
@@ -11207,7 +11207,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m590.stats = {
 					damage = 60,
 					spread = 60,
-					recoil = 45,
+					recoil = 43,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 24,
@@ -11260,7 +11260,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.supernova.stats = {
 					damage = 60,
 					spread = 68,
-					recoil = 47,
+					recoil = 45,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 23,
@@ -11304,7 +11304,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r870.stats = {
 					damage = 60,
 					spread = 62,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -11344,7 +11344,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksg.stats = {
 					damage = 60,
 					spread = 65,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -11394,7 +11394,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1897.stats = {
 					damage = 60,
 					spread = 71,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 21,
@@ -11431,7 +11431,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.serbu.stats = {
 					damage = 60,
 					spread = 56,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 26,
@@ -11481,7 +11481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m37.stats = {
 					damage = 60,
 					spread = 63,
-					recoil = 51,
+					recoil = 49,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -11516,7 +11516,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.judge.stats = {
 					damage = 60,
 					spread = 53,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 26,
@@ -11561,7 +11561,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b682.stats = {
 					damage = 90,
 					spread = 71,
-					recoil = 41,
+					recoil = 39,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 21,
@@ -11599,7 +11599,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.boot.stats = {
 					damage = 90,
 					spread = 44,
-					recoil = 33,
+					recoil = 31,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
@@ -11650,7 +11650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.huntsman.stats = {
 					damage = 90,
 					spread = 66,
-					recoil = 43,
+					recoil = 41,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -11695,7 +11695,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coach.stats = {
 					damage = 90,
 					spread = 66,
-					recoil = 43,
+					recoil = 41,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -11749,7 +11749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.stats = {
 					damage = 24,
 					spread = 41,
-					recoil = 97,
+					recoil = 95,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 17,
@@ -11805,7 +11805,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.system.stats = {
 					damage = 24,
 					spread = 31,
-					recoil = 97,
+					recoil = 95,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 21,
@@ -11865,7 +11865,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.money.stats = {
 						damage = 24,
 						spread = 31,
-						recoil = 97,
+						recoil = 95,
 						spread_moving = 6,
 						zoom = 1,
 						concealment = 21,
@@ -11918,7 +11918,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ecp.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 26,
@@ -11955,7 +11955,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.frankish.stats = {
 					damage = 60,
 					spread = 91,
-					recoil = 85,
+					recoil = 83,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -11990,7 +11990,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arblast.stats = {
 					damage = 90,
 					spread = 100,
-					recoil = 81,
+					recoil = 79,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 27,
@@ -12026,7 +12026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.plainsrider.stats = {
 					damage = 60,
 					spread = 100,
-					recoil = 97,
+					recoil = 95,
 					spread_moving = 12,
 					zoom = 1,
 					concealment = 31,
@@ -12066,7 +12066,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.long.stats = {
 					damage = 90,
 					spread = 100,
-					recoil = 97,
+					recoil = 95,
 					spread_moving = 12,
 					zoom = 1,
 					concealment = 30,
@@ -12117,7 +12117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.elastic.stats = {
 					damage = 90,
 					spread = 100,
-					recoil = 93,
+					recoil = 91,
 					spread_moving = 12,
 					zoom = 1,
 					concealment = 30,
@@ -12160,7 +12160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hunter.stats = {
 					damage = 120,
 					spread = 96,
-					recoil = 89,
+					recoil = 87,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -12202,7 +12202,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.gre_m79.stats = {
 					damage = 72,
 					spread = 91,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 20,
@@ -12245,7 +12245,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m32.stats = {
 					damage = 72,
 					spread = 73,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 12,
@@ -12288,7 +12288,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ray.stats = {
 					damage = 300,
 					spread = 76,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 5,
 					concealment = 10,
@@ -12351,7 +12351,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ms3gl.stats = {
 					damage = 36,
 					spread = 61,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 19,
@@ -12387,7 +12387,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.arbiter.stats = {
 					damage = 60,
 					spread = 91,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 13,
@@ -12427,7 +12427,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.slap.stats = {
 					damage = 72,
 					spread = 91,
-					recoil = 73,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -12469,7 +12469,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.china.stats = {
 					damage = 72,
 					spread = 56,
-					recoil = 63,
+					recoil = 61,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 12,
@@ -12510,7 +12510,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rpg7.stats = {
 					damage = 400,
 					spread = 76,
-					recoil = 71,
+					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 10,
@@ -12546,7 +12546,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			suppression = 8,
 			zoom = 1,
 			spread = 1,
-			recoil = 97,
+			recoil = 95,
 			spread_moving = 7,
 			damage = 90,
 			concealment = 22,
@@ -12573,7 +12573,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				suppression = 8,
 				zoom = 1,
 				spread = 1,
-				recoil = 97,
+				recoil = 95,
 				spread_moving = 7,
 				damage = 90,
 				concealment = 22,
@@ -12715,7 +12715,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.stats = {
 			damage = 90,
 			spread = 81,
-			recoil = 39,
+			recoil = 37,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 24,
@@ -12765,7 +12765,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.osipr.stats = {
 			damage = 24,
 			spread = 81,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 21,
@@ -12806,7 +12806,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.osipr_gl.stats = {
 			damage = 60,
 			spread = 26,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 21,
@@ -12864,7 +12864,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.socom.stats = {
 			damage = 45,
 			spread = 65,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 26,
@@ -12903,7 +12903,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_socom.stats = {
 			damage = 45,
 			spread = 55,
-			recoil = 77,
+			recoil = 75,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 26,
@@ -12936,7 +12936,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toym16.stats = {
 			damage = 4,
 			spread = 100,
-			recoil = 97,
+			recoil = 95,
 			zoom = 1,
 			concealment = 32,
 			suppression = 1,
@@ -12972,7 +12972,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toy1911.stats = {
 			damage = 4,
 			spread = 100,
-			recoil = 97,
+			recoil = 95,
 			zoom = 1,
 			concealment = 32,
 			suppression = 1,
@@ -13012,7 +13012,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hpb.stats = {
 			damage = 24,
 			spread = 60,
-			recoil = 89,
+			recoil = 87,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 31,
@@ -13049,7 +13049,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.lebman.stats = {
 				damage = 30,
 				spread = 50,
-				recoil = 77,
+				recoil = 75,
 				zoom = 1,
 				concealment = 27,
 				suppression = 8,
@@ -13093,7 +13093,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ak5s.stats = {
 				damage = 24,
 				spread = 66,
-				recoil = 85,
+				recoil = 83,
 				spread_moving = 8,
 				zoom = 1,
 				concealment = 26,
@@ -13134,7 +13134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.car9.stats = {
 				damage = 20,
 				spread = 58,
-				recoil = 85,
+				recoil = 83,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 26,
@@ -13178,7 +13178,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amr12.stats = {
 				damage = 45,
 				spread = 21,
-				recoil = 49,
+				recoil = 47,
 				zoom = 1,
 				concealment = 22,
 				suppression = 8,
@@ -13212,7 +13212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.minibeck.stats = {
 				damage = 45,
 				spread = 22,
-				recoil = 69,
+				recoil = 67,
 				zoom = 1,
 				concealment = 26,
 				alert_size = 2,
@@ -13260,7 +13260,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.beck.stats = {
 				damage = 60,
 				spread = 65,
-				recoil = 55,
+				recoil = 53,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 24,
@@ -13305,7 +13305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bs23.stats = {
 				damage = 90,
 				spread = 61,
-				recoil = 41,
+				recoil = 39,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 22,
@@ -13347,7 +13347,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sg416.stats = {
 				damage = 24,
 				spread = 81,
-				recoil = 85,
+				recoil = 83,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 23,
@@ -13391,7 +13391,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.aknato.stats = {
 				damage = 24,
 				spread = 81,
-				recoil = 89,
+				recoil = 87,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 25,
@@ -13427,7 +13427,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.smolak.stats = {
 				damage = 24,
 				spread = 73,
-				recoil = 81,
+				recoil = 79,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 28,
@@ -13463,7 +13463,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spike.stats = {
 				damage = 30,
 				spread = 80,
-				recoil = 75,
+				recoil = 73,
 				zoom = 1,
 				concealment = 26,
 				suppression = 8,
@@ -13501,7 +13501,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.bdgr.stats = {
 				damage = 30,
 				spread = 78,
-				recoil = 71,
+				recoil = 69,
 				zoom = 1,
 				concealment = 25,
 				alert_size = 2,
@@ -13553,7 +13553,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sgs.stats = {
 				damage = 60,
 				spread = 91,
-				recoil = 57,
+				recoil = 55,
 				zoom = 1,
 				concealment = 21,
 				suppression = 8,
@@ -13589,7 +13589,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.qrl.stats = {
 				damage = 240,
 				spread = 76,
-				recoil = 65,
+				recoil = 63,
 				zoom = 1,
 				concealment = 10,
 				alert_size = 2,
@@ -13627,7 +13627,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.qsho.stats = {
 				damage = 90,
 				spread = 26,
-				recoil = 41,
+				recoil = 39,
 				zoom = 1,
 				concealment = 26,
 				alert_size = 2,
@@ -13665,7 +13665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.derringer.stats = {
 			damage = 90,
 			spread = 41,
-			recoil = 51,
+			recoil = 49,
 			zoom = 1,
 			concealment = 32,
 			suppression = 7,
@@ -13723,7 +13723,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tilt.stats = {
 			damage = 24,
 			spread = 78,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 26,
@@ -13760,7 +13760,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.czevo.stats = {
 			damage = 20,
 			spread = 56,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -13796,7 +13796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lapd.stats = {
 			damage = 60,
 			spread = 86,
-			recoil = 57,
+			recoil = 55,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 28,
@@ -13833,7 +13833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.akm_nomag.stats = {
 			damage = 30,
 			spread = 77,
-			recoil = 73,
+			recoil = 71,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 30,
@@ -13876,7 +13876,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tingledingle.stats = {
 			damage = 18,
 			spread = 71,
-			recoil = 81,
+			recoil = 79,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 29,
@@ -13945,7 +13945,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hmcar.stats = {
 			damage = 90,
 			spread = 91,
-			recoil = 51,
+			recoil = 49,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 19,
@@ -13984,7 +13984,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nckuro.stats = {
 			damage = 12,
 			spread = 81,
-			recoil = 81,
+			recoil = 79,
 			zoom = 1,
 			concealment = 12,
 			alert_size = 2,
@@ -14015,7 +14015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.raygun.stats = {
 			damage = 18,
 			spread = 86,
-			recoil = 85,
+			recoil = 83,
 			zoom = 1,
 			concealment = 24,
 			alert_size = 2,
@@ -14051,7 +14051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.umd_launcher.stats = {
 			damage = 60,
 			spread = 91,
-			recoil = 85,
+			recoil = 83,
 			zoom = 1,
 			concealment = 29,
 			alert_size = 2,
@@ -14087,7 +14087,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sidewinder.stats = {
 			damage = 45,
 			spread = 66,
-			recoil = 71,
+			recoil = 69,
 			zoom = 1,
 			concealment = 18,
 			alert_size = 2,
@@ -14129,7 +14129,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m712.stats = {
 			damage = 45,
 			spread = 67,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 27,
@@ -14167,7 +14167,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fmgnine.stats = {
 			damage = 24,
 			spread = 55,
-			recoil = 81,
+			recoil = 79,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -14209,7 +14209,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_fmgnine.stats = {
 			damage = 24,
 			spread = 45,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 29,
@@ -14253,7 +14253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.p99.stats = {
 			damage = 24,
 			spread = 60,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 30,
@@ -14297,7 +14297,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g19.stats = {
 			damage = 24,
 			spread = 58,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 31,
@@ -14336,7 +14336,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fp45.stats = {
 			damage = 90,
 			spread = 51,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 32,
@@ -14379,7 +14379,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.duke1911.stats = {
 			damage = 60,
 			spread = 53,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 28,
@@ -14421,7 +14421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ppsh.stats = {
 			damage = 30,
 			spread = 52,
-			recoil = 79,
+			recoil = 77,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 19,
@@ -14471,7 +14471,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lewis.stats = {
 			damage = 60,
 			spread = 61,
-			recoil = 63,
+			recoil = 61,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 18,
@@ -14516,7 +14516,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mp153.stats = {
 			damage = 45,
 			spread = 21,
-			recoil = 51,
+			recoil = 49,
 			zoom = 1,
 			concealment = 22,
 			alert_size = 2,
@@ -14558,7 +14558,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.wmtx.stats = {
 			damage = 60,
 			spread = 44,
-			recoil = 59,
+			recoil = 57,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -14601,7 +14601,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.jackhammer.stats = {
 			damage = 60,
 			spread = 41,
-			recoil = 53,
+			recoil = 51,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 26,
@@ -14647,7 +14647,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.quadbarrel.stats = {
 			damage = 90,
 			spread = 58,
-			recoil = 43,
+			recoil = 41,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 22,
@@ -14692,7 +14692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.stats = {
 			damage = 90,
 			spread = 52,
-			recoil = 47,
+			recoil = 45,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -14738,7 +14738,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.super.stats = {
 			damage = 180,
 			spread = 36,
-			recoil = 11,
+			recoil = 9,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,
@@ -14778,7 +14778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fazertron.stats = {
 			damage = 20,
 			spread = 81,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -14822,7 +14822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g36k.stats = {
 			damage = 24,
 			spread = 81,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 25,
@@ -14867,7 +14867,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ar18.stats = {
 			damage = 24,
 			spread = 83,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -14905,7 +14905,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ak12.stats = {
 			damage = 24,
 			spread = 81,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 23,
@@ -14953,7 +14953,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.scarl.stats = {
 			damage = 30,
 			spread = 86,
-			recoil = 87,
+			recoil = 85,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 22,
@@ -14994,7 +14994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xeno.stats = {
 			damage = 45,
 			spread = 71,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 18,
@@ -15044,7 +15044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sks.stats = {
 			damage = 45,
 			spread = 81,
-			recoil = 79,
+			recoil = 77,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 26,
@@ -15089,7 +15089,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.skspug.stats = {
 			damage = 45,
 			spread = 83,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 27,
@@ -15135,7 +15135,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vss.stats = {
 			damage = 60,
 			spread = 82,
-			recoil = 75,
+			recoil = 73,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 21,
@@ -15191,7 +15191,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.g3hk79.stats = {
 			damage = 60,
 			spread = 89,
-			recoil = 61,
+			recoil = 59,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 20,
@@ -15242,7 +15242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.moss464spx.stats = {
 			damage = 90,
 			spread = 83,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 22,
@@ -15288,7 +15288,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.winchester1894.stats = {
 			damage = 90,
 			spread = 88,
-			recoil = 75,
+			recoil = 73,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 21,
@@ -15331,7 +15331,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m1894.stats = {
 			damage = 90,
 			spread = 78,
-			recoil = 69,
+			recoil = 67,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 28,
@@ -15369,7 +15369,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.k31.stats = {
 			damage = 120,
 			spread = 97,
-			recoil = 51,
+			recoil = 49,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 23,
@@ -15413,7 +15413,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.l115.stats = {
 			damage = 120,
 			spread = 99,
-			recoil = 35,
+			recoil = 33,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 21,
@@ -15459,7 +15459,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.svd.stats = {
 			damage = 90,
 			spread = 91,
-			recoil = 41,
+			recoil = 39,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 19,
@@ -15508,7 +15508,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.musket.stats = {
 			damage = 180,
 			spread = 61,
-			recoil = 77,
+			recoil = 75,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 19,
@@ -15562,7 +15562,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.stats = {
 			damage = 120,
 			spread = 91,
-			recoil = 7,
+			recoil = 5,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 12,
@@ -15609,7 +15609,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m200.stats = {
 			damage = 180,
 			spread = 99,
-			recoil = 15,
+			recoil = 13,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 14,
@@ -15664,7 +15664,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr2.stats = {
 			damage = 180,
 			spread = 98,
-			recoil = 11,
+			recoil = 9,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 15,
@@ -15703,7 +15703,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.stats = {
 			damage = 36,
 			spread = 41,
-			recoil = 69,
+			recoil = 67,
 			zoom = 1,
 			concealment = 26,
 			alert_size = 2,
@@ -15740,7 +15740,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.as24.stats = {
 			damage = 60,
 			spread = 18,
-			recoil = 71,
+			recoil = 69,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -15778,7 +15778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.deckard.stats = {
 			damage = 60,
 			spread = 71,
-			recoil = 51,
+			recoil = 49,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 24,
@@ -15822,7 +15822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.duskrifle.stats = {
 				damage = 120,
 				spread = 100,
-				recoil = 81,
+				recoil = 79,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 25,
@@ -15859,7 +15859,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.duskmg.stats = {
 				damage = 30,
 				spread = 77,
-				recoil = 91,
+				recoil = 89,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 25,
@@ -15893,7 +15893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.duskpistol.stats = {
 				damage = 45,
 				spread = 85,
-				recoil = 91,
+				recoil = 89,
 				spread_moving = 9,
 				zoom = 1,
 				concealment = 31,
@@ -15924,7 +15924,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.riviter.stats = {
 				damage = 300,
 				spread = 71,
-				recoil = 81,
+				recoil = 79,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 10,
@@ -15962,7 +15962,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.coltds.stats = {
 			damage = 45,
 			spread = 61,
-			recoil = 51,
+			recoil = 49,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 29,
@@ -15998,7 +15998,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tommy.stats = {
 			damage = 30,
 			spread = 64,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,
@@ -16040,7 +16040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.smg45.stats = {
 			damage = 30,
 			spread = 66,
-			recoil = 83,
+			recoil = 81,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 25,
@@ -16082,7 +16082,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.troglodyte.stats = {
 			damage = 30,
 			spread = 94,
-			recoil = 27,
+			recoil = 25,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 26,
@@ -16123,7 +16123,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cssdeagle.stats = {
 			damage = 90,
 			spread = 51,
-			recoil = 21,
+			recoil = 19,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 27,
@@ -16176,7 +16176,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.owlfbullpup.stats = {
 				damage = 45,
 				spread = 86,
-				recoil = 83,
+				recoil = 81,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 22,
@@ -16219,7 +16219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.plasmaproto.stats = {
 				damage = 60,
 				spread = 81,
-				recoil = 81,
+				recoil = 79,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 21,
@@ -16255,7 +16255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hhpc.stats = {
 				damage = 90,
 				spread = 66,
-				recoil = 79,
+				recoil = 77,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 23,
@@ -16297,7 +16297,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.predator_spear_crossbow.stats = {
 				damage = 60,
 				spread = 91,
-				recoil = 85,
+				recoil = 83,
 				spread_moving = 8,
 				zoom = 1,
 				concealment = 27,
@@ -16351,7 +16351,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.type99inc.stats = {
 				damage = 24,
 				spread = 31,
-				recoil = 97,
+				recoil = 95,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 21,
@@ -16396,7 +16396,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.papa320.stats = {
 			damage = 24,
 			spread = 66,
-			recoil = 89,
+			recoil = 87,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 30,
@@ -16437,7 +16437,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_papa320.stats = {
 			damage = 24,
 			spread = 56,
-			recoil = 79,
+			recoil = 77,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 30,
@@ -16475,7 +16475,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m6d.stats = {
 			damage = 90,
 			spread = 86,
-			recoil = 27,
+			recoil = 25,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 23,
@@ -16518,7 +16518,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m7caseless.stats = {
 			damage = 20,
 			spread = 61,
-			recoil = 83,
+			recoil = 81,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 29,
@@ -16571,7 +16571,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.alpha57_prim.stats = {
 			damage = 18,
 			spread = 77,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 25,
@@ -16615,7 +16615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.nova4.stats = {
 			damage = 24,
 			spread = 86,
-			recoil = 91,
+			recoil = 89,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 24,
@@ -16658,7 +16658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m4_usasoc.stats = {
 			damage = 30,
 			spread = 81,
-			recoil = 83,
+			recoil = 81,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 23,
@@ -16703,7 +16703,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pd3_qbz191.stats = {
 			damage = 24,
 			spread = 78,
-			recoil = 75,
+			recoil = 73,
 			zoom = 1,
 			concealment = 23,
 			suppression = 8,
@@ -16752,7 +16752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9fastburst.stats = {
 			damage = 30,
 			spread = 83,
-			recoil = 81,
+			recoil = 79,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -16795,7 +16795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.malorian_3516.stats = {
 			damage = 90,
 			spread = 81,
-			recoil = 37,
+			recoil = 35,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 23,
@@ -16842,7 +16842,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.swhiskey.stats = {
 			damage = 90,
 			spread = 81,
-			recoil = 25,
+			recoil = 23,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 24,
@@ -16893,7 +16893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.akilo_2022.stats = {
 				damage = 30,
 				spread = 76,
-				recoil = 73,
+				recoil = 71,
 				zoom = 1,
 				concealment = 22,
 				suppression = 8,
@@ -16929,7 +16929,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.akilo105_2022.stats = {
 				damage = 24,
 				spread = 76,
-				recoil = 77,
+				recoil = 75,
 				zoom = 1,
 				concealment = 22,
 				suppression = 8,
@@ -16964,7 +16964,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcbravo.stats = {
 			damage = 30,
 			spread = 78,
-			recoil = 75,
+			recoil = 73,
 			zoom = 1,
 			concealment = 23,
 			alert_size = 2,
@@ -17009,7 +17009,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.stats = {
 			damage = 45,
 			spread = 83,
-			recoil = 59,
+			recoil = 57,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -17060,7 +17060,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.stats = {
 			damage = 45,
 			spread = 85,
-			recoil = 65,
+			recoil = 63,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 23,
@@ -17115,7 +17115,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.vk78_commando.stats = {
 			damage = 60,
 			spread = 81,
-			recoil = 75,
+			recoil = 73,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 23,
@@ -17163,7 +17163,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a.stats = {
 			damage = 24,
 			spread = 61,
-			recoil = 73,
+			recoil = 71,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,
@@ -17209,7 +17209,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a_rifle.stats = {
 			damage = 24,
 			spread = 71,
-			recoil = 79,
+			recoil = 77,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 22,
@@ -17248,7 +17248,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.stats = {
 			damage = 120,
 			spread = 101,
-			recoil = 11,
+			recoil = 9,
 			spread_moving = 8,
 			zoom = 1,
 			concealment = 10,
@@ -17291,7 +17291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amt.stats = {
 			damage = 90,
 			spread = 63,
-			recoil = 33,
+			recoil = 31,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 24,
@@ -17339,7 +17339,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.xr2.stats = {
 			damage = 45,
 			spread = 88,
-			recoil = 65,
+			recoil = 63,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 25,
@@ -17414,7 +17414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.crysis3_typhoon.stats = {
 			damage = 10,
 			spread = 11,
-			recoil = 91,
+			recoil = 89,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 18,
@@ -17484,7 +17484,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.iuhTTIPlus.stats = {
 			damage = 60,
 			spread = 82,
-			recoil = 55,
+			recoil = 53,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 15, --18,
@@ -17532,7 +17532,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rsass.stats = {
 			damage = 60,
 			spread = 83,
-			recoil = 57,
+			recoil = 55,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 19,
@@ -17574,7 +17574,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.fg42.stats = {
 			damage = 60,
 			spread = 73,
-			recoil = 61,
+			recoil = 59,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 20,
@@ -17623,7 +17623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ar47.stats = {
 			damage = 30,
 			spread = 77,
-			recoil = 71,
+			recoil = 69,
 			zoom = 1,
 			concealment = 25,
 			suppression = 8,
@@ -17669,7 +17669,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.omni.stats = {
 			damage = 30,
 			spread = 49,
-			recoil = 71,
+			recoil = 69,
 			zoom = 1,
 			concealment = 26,
 			suppression = 8,
@@ -17719,7 +17719,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sierra458.stats = {
 			damage = 60,
 			spread = 87,
-			recoil = 55,
+			recoil = 53,
 			zoom = 1,
 			concealment = 22,
 			suppression = 7,
@@ -17763,7 +17763,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.makarov.stats = {
 			damage = 24,
 			spread = 56,
-			recoil = 91,
+			recoil = 89,
 			spread_moving = 9,
 			zoom = 1,
 			concealment = 32,
@@ -17796,7 +17796,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.f500.stats = {
 			damage = 60,
 			spread = 51,
-			recoil = 35,
+			recoil = 33,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 26,
@@ -17919,7 +17919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mg34.stats = {
 			damage = 45,
 			spread = 61,
-			recoil = 67,
+			recoil = 65,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 18,
@@ -17969,7 +17969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sasha.stats = {
 			damage = 24,
 			spread = 16,
-			recoil = 81,
+			recoil = 79,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 15,
@@ -18018,7 +18018,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.abzats.stats = {
 			damage = 90,
 			spread = 11,
-			recoil = 51,
+			recoil = 49,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 17,
@@ -18067,7 +18067,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ashot.stats = {
 			damage = 90,
 			spread = 36,
-			recoil = 31,
+			recoil = 29,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 30,
@@ -18102,7 +18102,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.owen.stats = {
 			damage = 30,
 			spread = 81,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 7,
 			zoom = 1,
 			concealment = 24,
@@ -18127,7 +18127,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aek971.stats = {
 			damage = 20,
 			spread = 81,
-			recoil = 89,
+			recoil = 87,
 			spread_moving = 6,
 			zoom = 1,
 			concealment = 28,
@@ -18149,7 +18149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.welrod.stats = {
 			damage = 60,
 			spread = 96,
-			recoil = 89,
+			recoil = 87,
 			concealment = 26,
 			suppression = 8,
 			alert_size = 2,
@@ -18172,7 +18172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pb.stats = {
 			damage = 24,
 			spread = 96,
-			recoil = 93,
+			recoil = 91,
 			concealment = 30,
 			alert_size = 2,
 			suppression = 8,
@@ -18195,7 +18195,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hshdm.stats = {
 			damage = 20,
 			spread = 91,
-			recoil = 93,
+			recoil = 91,
 			concealment = 31,
 			alert_size = 2,
 			suppression = 8,
@@ -18219,7 +18219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.max9.stats = {
 			damage = 24,
 			spread = 86,
-			recoil = 93,
+			recoil = 91,
 			concealment = 27,
 			alert_size = 2,
 			suppression = 8,
@@ -18265,7 +18265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cold.stats = {
 			damage = 45,
 			spread = 91,
-			recoil = 85,
+			recoil = 83,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 26,

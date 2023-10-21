@@ -1047,7 +1047,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_watchdogs_stage2_briefing"] = "미아 칼리엔테는 살아있는 물건이 될걸세. 친구들, 그녀는 수년 동안 DC에서 머키워터의 작전 뒤에 있는 두뇌 역할을 하고 있었지. 얼마 전 머키워터는 어느 부두의 창고를 인수하여 추가 유통 지점으로 사용하고 있다네, 우리의 목표는 그들이 최근 해외에서 약탈한 전리품들을 확인하는 것이지. 거기에 들어가서 그 애새끼를 잡고 인질로 삼을걸세. 머키들은 그녀를 잃을 순 없을테니 그녀를 구하기 위해 우리에게 돈을 줄 것이라네. 아마도 앞서 언급한 좀 더 가치 있는 약탈품을 줄까?, 자네들의 생각은 어떨세?",
 
 		--Side Jobs
-		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above while Captain Spring is still present on the level."
+		["menu_challenge_menu_challenge_moon_6_obj"] = "도살장 작업에서 오버킬 난이도 이상으로 캡틴 스프링을 물리치지 않은채로 완료하십시오."
 		
 	})
 
@@ -5185,7 +5185,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "주사기 효과 동안 최대 체력보다 초과해서 회복했을 경우, 회복한 체력 ##5##마다 주사기 재사용 대기 시간이 ##1##초씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##을 잠금 해제합니다.\n\n연막탄을 투척하면 #{skill_color}#12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 #{skill_color}#100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 #{skill_color}#75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 #{important_1}#40##초이며, 적을 죽이면 재사용 대기시간이 #{skill_color}#2##초씩 감소합니다.\n\n회피 포인트가 #{skill_color}#5##만큼 증가합니다.",
+		["menu_deck18_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##을 잠금 해제합니다.\n\n연막탄을 투척하면 #{skill_color}#12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 #{skill_color}#100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 #{skill_color}#75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 #{important_1}#35##초이며, 적을 죽이면 재사용 대기시간이 #{skill_color}#2##초씩 감소합니다.\n\n회피 포인트가 #{skill_color}#5##만큼 증가합니다.",
 		["menu_deck18_3_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n\n인벤토리에 시체가방을 ##1##개를 추가로 가집니다.",
 		["menu_deck18_7_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 더 증가합니다.",
@@ -5228,7 +5228,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##2.5##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
-		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#10%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.",
+		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.",
 		["menu_deck22_3_desc_sc"] = "약병 효과가 활성화된 동안 피해를 받으면 팀원의 최대 체력의 #{skill_color}#1%##가 회복됩니다.",
 		["menu_deck22_5_desc_sc"] = "약병 효과의 지속시간이 #{skill_color}#10##초로 증가하고 적을 죽일 시 재사용 대기시간이 #{skill_color}#1##초 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 #{skill_color}#75%##만큼 빨라집니다.",
 		["menu_deck22_7_desc_sc"] = "약병 효과가 활성화되어 있는 동안 체력이 #{skill_color}#5%## 단위로 분할됩니다.",
@@ -5314,7 +5314,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Kingpin
 			["menu_deck17_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##를 잠금 해제합니다.\n\n주사기를 사용하면 #{skill_color}#4##초 동안 받은 모든 피해의 #{skill_color}#30%##만큼 회복합니다. 효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기는 매 #{important_1}#30##초마다 한 번만 사용할 수 있습니다.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##을 잠금 해제합니다.\n\n연막탄을 투척하면 #{skill_color}#12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 #{skill_color}#100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 #{skill_color}#75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 #{important_1}#40##초이지만 적을 죽이면 재사용 대기시간이 #{skill_color}#1##초씩 감소합니다.\n\n회피 포인트가 #{skill_color}#5##만큼 증가합니다.\n\n인벤토리에 시체가방을 #{skill_color}#1##개를 추가로 가집니다.",
+			["menu_deck18_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#연막탄##을 잠금 해제합니다.\n\n연막탄을 투척하면 #{skill_color}#12##초 동안 지속되는 연막을 생성합니다. 연막 안에 있는 동안, 당신과 당신의 팀원은 방탄력을 #{skill_color}#100%## 더 빠르게 재생하고 연막 안에 있는 적의 명중률이 #{skill_color}#75%##만큼 감소합니다.\n\n연막탄의 재사용 대기시간은 #{important_1}#35##초이지만 적을 죽이면 재사용 대기시간이 #{skill_color}#1##초씩 감소합니다.\n\n회피 포인트가 #{skill_color}#5##만큼 증가합니다.\n\n인벤토리에 시체가방을 #{skill_color}#1##개를 추가로 가집니다.",
 			--Stoic
 			["menu_deck19_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#힙 플라스크##를 잠금 해제합니다.\n\n체력에 입은 피해의 #{skill_color}#30%##가 #{skill_color}#8##초에 걸쳐 적용됩니다.\n\n플라스크를 사용하면 시간 경과에 따른 피해가 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 #{skill_color}#150%##만큼 치유합니다.\n\n플라스크의 재사용 대기시간은 #{important_1}#30##초입니다.\n\n##방탄력의 #{important_1}#50%##를 잃고 체력을 #{skill_color}#50%## 더 얻습니다.\n\n페이저에 응답하는 속도가 #{skill_color}#25%##만큼 빨라집니다.",
 			--Tag Team
@@ -5322,7 +5322,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Hacker
 			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#10##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#15##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#1.2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#2.5##초씩 단축됩니다.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#10%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 #{skill_color}#75%##만큼 빨라집니다.",
+			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#2.5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 #{skill_color}#75%##만큼 빨라집니다.",
 
 		["menu_deck23_9_desc"] = "덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 

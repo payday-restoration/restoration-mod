@@ -216,9 +216,9 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 		visible = false,
 		layer = 1,
 		w = self._player_panel:w(),
-		x = name:x(), 
+		x = name:x(),
 		h = bag_h + 2,
-		y = name:top() - 23 
+		y = name:top() - 23
 	})
 
 	self:_create_carry(carry_panel)
@@ -310,7 +310,7 @@ end
 
 function HUDTeammate:_create_radial_health(radial_health_panel)
 	self._radial_health_panel = radial_health_panel
-	local radial_size = 64 
+	local radial_size = 64
 	local radial_bg = radial_health_panel:bitmap({
 		texture = "guis/textures/restoration/hud_radialbg",
 		name = "radial_bg",
@@ -811,12 +811,8 @@ end
 
 function HUDTeammate:set_name(teammate_name)
 	local teammate_panel = self._panel
-	local player_panel = self._panel:child("player")
 	local name = teammate_panel:child("name")
-	local revive_panel = player_panel:child("revive_panel")
 	local name_bg = teammate_panel:child("name_bg")
-	local revive_text = revive_panel:child("revive_text")
-	local revive_bg = revive_panel:child("revive_bg")
 	local callsign = teammate_panel:child("callsign")
 	local name_text
 	if restoration.Options:GetValue("HUD/UppercaseNames") then
@@ -829,12 +825,6 @@ function HUDTeammate:set_name(teammate_name)
 	managers.hud:make_fine_text(name)
 	name:set_h(h)
 	name_bg:set_w(name:w() + 4)
-	local r_h = revive_text:h()
-	managers.hud:make_fine_text(revive_text)
-	revive_text:set_h(r_h)
-	revive_bg:set_w(revive_text:w() + 4)
-	revive_text:set_x(name_bg:right() + 4)
-	revive_bg:set_x(name_bg:right() + 4)
 end
 
 function HUDTeammate:set_revives_amount(revive_amount)
@@ -848,6 +838,23 @@ function HUDTeammate:set_revives_amount(revive_amount)
 			revive_text:set_text(" "..tostring(math.max(revive_amount - 1, 0)) .." ".. managers.localization:get_default_macro("BTN_SKULL"))
 		end
 	end
+	self:set_revive_position()
+end
+
+function HUDTeammate:set_revive_position()
+	local teammate_panel = self._panel
+	local player_panel = self._panel:child("player")
+	local revive_panel = player_panel:child("revive_panel")
+	local revive_text = revive_panel:child("revive_text")
+	local revive_bg = revive_panel:child("revive_bg")
+	local name_bg = teammate_panel:child("name_bg")
+
+	local r_h = revive_text:h()
+	managers.hud:make_fine_text(revive_text)
+	revive_text:set_h(r_h)
+	revive_bg:set_w(revive_text:w() + 4)
+	revive_text:set_x(name_bg:right() + 4)
+	revive_bg:set_x(name_bg:right() + 4)
 end
 
 function HUDTeammate:_set_amount_string(text, amount)
@@ -956,7 +963,7 @@ function HUDTeammate:layout_special_equipments()
 	local name = teammate_panel:child("name")
 	local w = teammate_panel:w()
 	for i, panel in ipairs(special_equipment) do
-		if self._main_player then		
+		if self._main_player then
 			panel:set_x( w - (panel:w() + 0) * (i) )
 			panel:set_y( panel:h() )
 		else

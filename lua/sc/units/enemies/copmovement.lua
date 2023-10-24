@@ -1353,23 +1353,28 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 		allow_network = true
 	}
 
+
 	if Network:is_server() or not self:chk_action_forbidden(action_data) then
 		self:action_request(action_data)
 	end
 end
 
+
 function CopMovement:anim_clbk_police_called(unit)
 	local group_state = managers.groupai:state()
 	local job = Global.level_data and Global.level_data.level_id
+
 
 	if Network:is_server() then
 		if not group_state:is_ecm_jammer_active("call") then
 			local cop_type = tostring(group_state.blame_triggers[self._ext_base._tweak_table])
 
+
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "called")
 
+
 			--Instant failure on the relevant tutorial heists
-			if job == "short1_stage1" or job == "short1_stage2" or job == "firestarter_3_res" then 
+			if job == "short1_stage1" or job == "short1_stage2" then 
 				group_state:on_police_called(self:coolness_giveaway())
 			else
 				if cop_type == "civ" then

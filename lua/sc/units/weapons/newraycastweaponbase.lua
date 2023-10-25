@@ -1362,7 +1362,7 @@ function NewRaycastWeaponBase:can_reload()
 end
 
 function NewRaycastWeaponBase:_check_toggle_burst()
-	if not self:is_npc() and not self._lock_burst then
+	if not self:is_npc() and not self._lock_burst and self._burst_rounds_remaining == 0 then
 		if self:in_burst_mode() then
 			self:_set_burst_mode(false, self.AKIMBO and not self._has_auto)
 			return true
@@ -1372,6 +1372,7 @@ function NewRaycastWeaponBase:_check_toggle_burst()
 		end
 	end
 end
+
 
 function NewRaycastWeaponBase:_set_burst_mode(status, skip_sound)
 	self._in_burst_mode = status

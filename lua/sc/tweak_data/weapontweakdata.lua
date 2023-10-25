@@ -3471,6 +3471,70 @@ function WeaponTweakData:_init_stats()
 				},
 				min_h_recoil = 0.45
 			},
+		--Bullet hoses will be around here.
+			horizontal_recoil_mg = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
+					-0.5 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
+					-0.475 * self.stat_info.stance_recoil_mults.crouching,
+					0.475 * self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.475 * self.stat_info.stance_recoil_mults.steelsight,
+					0.475 * self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.65
+			},
+			horizontal_left_recoil_mg = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
+					-0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.4 * self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
+					-0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.4 * self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.4 * self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.55
+			},
+			horizontal_right_recoil_mg = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.5 * self.stat_info.stance_recoil_mults.standing,
+					-0.4 * self.stat_info.stance_recoil_mults.standing,
+					0.55 * self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.5 * self.stat_info.stance_recoil_mults.crouching,
+					-0.4 * self.stat_info.stance_recoil_mults.crouching,
+					0.55 * self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.5 * self.stat_info.stance_recoil_mults.steelsight,
+					-0.4 * self.stat_info.stance_recoil_mults.steelsight,
+					0.55 * self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.55
+			},
 
 		--Your average SMG and Pistol will be around here.
 			even_recoil = {
@@ -7968,7 +8032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.tecci.stats = {
 				damage = 20,
-				spread = 71,
+				spread = 70,
 				recoil = 75,
 				spread_moving = 5,
 				zoom = 1,
@@ -8000,7 +8064,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m249.CLIP_AMMO_MAX = 200
 			self.m249.AMMO_MAX = 300
 			self.m249.fire_mode_data.fire_rate = 0.075
-			self.m249.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.m249.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 			self.m249.always_use_standing = true
 			self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 			self.m249.supported = true
@@ -8012,7 +8076,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.m249.stats = {
 				damage = 24,
-				spread = 58,
+				spread = 56,
 				recoil = 78,
 				spread_moving = 5,
 				zoom = 1,
@@ -8149,18 +8213,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.fire_mode_data.fire_rate = 0.1
 			self.rpk.CAN_TOGGLE_FIREMODE = true
 			self.rpk.BURST_FIRE = false
-			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.rpk.kick = self.stat_info.kick_tables.horizontal_recoil_mg
 			self.rpk.always_use_standing = true
 			self.rpk.supported = true
-			self.rpk.ads_speed = 0.420
+			self.rpk.ads_speed = 0.440
 			self.rpk.damage_falloff = {
-				start_dist = 2300,
+				start_dist = 2100,
 				end_dist = 5000,
 				min_mult = 0.6
 			}
 			self.rpk.stats = {
 				damage = 30,
-				spread = 68,
+				spread = 65,
 				recoil = 69,
 				spread_moving = 5,
 				zoom = 1,
@@ -8177,7 +8241,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rpk.bipod_req_scope = true
 			self.rpk.timers.reload_exit_empty = 1.45
 			self.rpk.timers.reload_exit_not_empty = 0.85
-			self.rpk.reload_speed_multiplier = 0.9
+			self.rpk.reload_speed_multiplier = 0.85
 		
 	--[[     HEAVY MGs     ]]
 
@@ -8194,7 +8258,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.CLIP_AMMO_MAX = 75
 				self.m60.AMMO_MAX = 120
 				self.m60.fire_mode_data.fire_rate = 0.1034482
-				self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.m60.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
 				self.m60.always_use_standing = true
 				self.m60.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.m60.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
@@ -8208,7 +8272,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.stats = {
 					damage = 60,
 					spread = 61,
-					recoil = 67,
+					recoil = 65,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 14,
@@ -8243,7 +8307,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.par.fire_mode_data.fire_rate = 0.092307
 				self.par.AMMO_MAX = 120
 				self.par.kick = {}
-				self.par.kick = self.stat_info.kick_tables.horizontal_left_recoil
+				self.par.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 				self.par.always_use_standing = true
 				self.par.panic_suppression_chance = 0.05
 				self.par.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -8257,8 +8321,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.par.stats = {
 					damage = 60,
-					spread = 61,
-					recoil = 63,
+					spread = 59,
+					recoil = 61,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 16,
@@ -8306,7 +8370,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mg42.stats = {
 					damage = 45,
-					spread = 59,
+					spread = 55,
 					recoil = 63,
 					spread_moving = 5,
 					zoom = 1,
@@ -8341,7 +8405,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.fire_mode_data.fire_rate = 0.075
 				self.hk21.CAN_TOGGLE_FIREMODE = true
 				self.hk21.fake_semi_anims = true
-				self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil
+				self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
 				self.hk21.always_use_standing = true
 				self.hk21.panic_suppression_chance = 0.05
 				self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -8356,7 +8420,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.stats = {
 					damage = 45,
 					spread = 61,
-					recoil = 69,
+					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 15,
@@ -8403,7 +8467,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.stats = {
 					damage = 45,
 					spread = 57,
-					recoil = 65,
+					recoil = 67,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 20,
@@ -9295,7 +9359,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm.supported = true
 				self.akm.ads_speed = 0.340
 				self.akm.damage_falloff = {
-					start_dist = 2300,
+					start_dist = 2100,
 					end_dist = 5000,
 					min_mult = 0.6
 				}
@@ -9334,7 +9398,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.akm_gold.supported = true
 				self.akm_gold.ads_speed = 0.380
 				self.akm_gold.damage_falloff = {
-					start_dist = 2300,
+					start_dist = 2100,
 					end_dist = 5000,
 					min_mult = 0.6
 				}
@@ -18433,7 +18497,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 					weap.rms = (1 + weap.weapon_movement_penalty) / 2
 					weap.smt_mult = 5
-					weap.smt_range = { 0.75, 1.5 }
+					weap.smt_range = { 0.75, 1.75 }
 				end
 				weap.ene_hs_mult = 0.5
 				weap.zoom_recoil_reduction = 0.02

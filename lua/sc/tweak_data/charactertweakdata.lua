@@ -3455,15 +3455,16 @@ function CharacterTweakData:_init_civilian(presets)
 	}
 	self.civilian.experience.cable_tie = "tie_civ"
 	self.civilian.die_sound_event = "l1n_x01a_any_3p"
-	self.civilian.silent_priority_shout = "f37"
+	self.civilian.custom_shout = true
+	self.civilian.silent_priority_shout = "g27" --pd3 moment, not sure if this voiceline is always loaded though
 	self.civilian.speech_prefix_p1 = "cm"
 	self.civilian.speech_prefix_count = 2
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
 	if job == "haunted" then
-	self.civilian.no_civ_penalty = true --they're not real anyway
+		self.civilian.no_civ_penalty = true --they're not real anyway
 	else
-	self.civilian.no_civ_penalty = false
+		self.civilian.no_civ_penalty = false
 	end
 	self.civilian.challenges = {type = "civilians"}
 	if job == "nmh" or job == "nmh_res" then

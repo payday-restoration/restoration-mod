@@ -1206,7 +1206,11 @@ function PlayerStandard:_start_action_intimidate(t, secondary)
 		elseif voice_type == "mark_cop" or voice_type == "mark_cop_quiet" then
 			interact_type = "cmd_point"
 			if voice_type == "mark_cop_quiet" then
-				sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].silent_priority_shout .. "_any"
+				if tweak_data.character[prime_target.unit:base()._tweak_table].custom_shout then
+					sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].silent_priority_shout
+				else
+					sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].silent_priority_shout .. "_any"
+				end
 			elseif tweak_data.character[prime_target.unit:base()._tweak_table].custom_shout then --Special boss shoutouts.
 				sound_name = tweak_data.character[prime_target.unit:base()._tweak_table].priority_shout
 			else
@@ -3614,6 +3618,30 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 	local prime_target = self:_get_interaction_target(char_table, my_head_pos, cam_fwd)
 
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only, secondary)
+end
+
+--Add civs to the valid target pool for marking during stealth
+local _get_interaction_target_old = PlayerStandard._get_interaction_target
+function PlayerStandard:_get_interaction_target(char_table, my_head_pos, cam_fwd, ...)
+	local range = tweak_data.player.long_dis_interaction.highlight_range * managers.player:upgrade_value("player", "intimidate_range_mul", 1) * managers.player:upgrade_value("player", "passive_intimidate_range_mul", 1)
+
+	for u_key, u_data in pairs(managers.enemy:all_civilians()) do
+		if u_data.unit:movement():cool() then
+			self:_add_unit_to_char_table(char_table, u_data.unit, 1, range, false, false, 0.001, my_head_pos, cam_fwd)
+		end
+	end
+
+	return _get_interaction_target_old(self, char_table, my_head_pos, cam_fwd, ...)
+end
+
+--Make sure they're cool before being markable! 
+local _get_intimidation_action_old = PlayerStandard._get_intimidation_action
+function PlayerStandard:_get_intimidation_action(prime_target, ...)
+	if prime_target and prime_target.unit_type == 1 and prime_target.unit:movement():cool() then
+		return "mark_cop_quiet" or nil, false, prime_target
+	end
+
+	return _get_intimidation_action_old(self, prime_target, ...)
 end
 
 --Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???

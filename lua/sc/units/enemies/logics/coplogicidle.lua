@@ -68,8 +68,7 @@ function CopLogicIdle._chk_relocate(data)
 			return true
 		end
 
-		local relocated_dis_sq = data.is_tied and my_data.advancing and objective.distance and (objective.distance * 0.5) ^ 2 or 100
-		if objective.relocated_to and mvector3.distance_sq(objective.relocated_to, unit_pos) < relocated_dis_sq then
+		if objective.relocated_to and mvector3.equal(objective.relocated_to, unit_pos) then
 			return
 		elseif data.is_converted then
 			if not TeamAILogicIdle._check_should_relocate(data, data.internal_data, objective) then

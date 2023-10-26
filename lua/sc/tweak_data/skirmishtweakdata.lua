@@ -916,6 +916,9 @@ function SkirmishTweakData:_init_wave_modifiers()
 		{
 			class = "ModifierSniperAim",
 			data = {speed = 2}
+		},
+		{
+			class = "ModifierUberChargeShields"
 		}
 	}
 	self.wave_modifiers[7] = {{class = "ModifierBravoSniper"}}

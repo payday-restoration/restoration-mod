@@ -32,6 +32,10 @@
 			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
 				<file :name="civ_male_locke_escort_contour.material_config"/>
 			</group>
+			<!-- consistent casino guard's face -->
+			<group :name="pd2_dlc_casino/props/cas_secret_service_1_casino_poses/">
+				<file :name="cas_secret_service_1_casino_dead_poses.material_config"/>
+			</group>
 			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
 				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>

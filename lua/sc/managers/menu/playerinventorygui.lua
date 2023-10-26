@@ -411,6 +411,15 @@ function PlayerInventoryGui:_get_armor_stats(name)
 			skill_stats[stat.name] = {
 				value = skill_value
 			}
+		elseif stat.name == "crit" then
+			local base = 0
+			local mod = managers.player:body_armor_value("crit", upgrade_level)
+			base_stats[stat.name] = {
+				value = (base + mod) * 100
+			}
+			skill_stats[stat.name] = {
+				value = managers.player:critical_hit_chance(detection_risk) * 100
+			}
 		end
 
 		skill_stats[stat.name].skill_in_effect = skill_stats[stat.name].skill_in_effect or skill_stats[stat.name].value ~= 0
@@ -455,6 +464,11 @@ function PlayerInventoryGui:setup_player_stats(panel)
 		},
 		{
 			name = "stamina"
+		},
+		{
+			name = "crit",
+			procent = true,
+			revert = true
 		}
 	}
 	local stats_panel = panel:child("stats_panel")

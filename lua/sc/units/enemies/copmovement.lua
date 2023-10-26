@@ -1377,21 +1377,19 @@ function CopMovement:anim_clbk_police_called(unit)
 			if job == "short1_stage1" or job == "short1_stage2" then 
 				group_state:on_police_called(self:coolness_giveaway())
 			else
-				if cop_type == "civ" then
+				--If it's actually in stealth, have it make people uber suspicious! 
+				if group_state:whisper_mode() then
 					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
 					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
 					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
 					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
 					group_state:_delay_whisper_suspicion_mul_decay()		
-				else
-					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
-					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
-					group_state:_delay_whisper_suspicion_mul_decay()	
 					
 					--Maybe one day
 					--self:set_cool(true, nil, false)
+				else
+				--Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason
+					group_state:on_police_called(self:coolness_giveaway())
 				end
 			end
 		else

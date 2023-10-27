@@ -451,7 +451,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.priority_shout = "g29"
 	self.fbi_vet.bot_priority_shout = "g29"
 	self.fbi_vet.priority_shout_max_dis = 3000
-	self.fbi_vet.silent_priority_shout = nil
 	self.fbi_vet.is_special = true
 	self.fbi_vet.custom_shout = true		
 	self.fbi_vet.can_shoot_while_dodging = true

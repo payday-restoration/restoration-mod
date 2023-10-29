@@ -16885,7 +16885,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.malorian_3516.lock_slide = nil
 		self.malorian_3516.sounds.magazine_empty = nil
 		self.malorian_3516.sounds.stop_fire = "judge_x_fire"
-		self.malorian_3516.swap_speed_multiplier = 0.6
+		self.malorian_3516.swap_speed_multiplier = 0.5
 	end
 
 	if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500

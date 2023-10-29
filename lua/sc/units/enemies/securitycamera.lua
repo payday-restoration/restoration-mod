@@ -1,13 +1,33 @@
---[[local gen_cooldown = SecurityCamera.generate_cooldown
+--Sora wuz here
+Hooks:PostHook(SecurityCamera, "init", "postinit_test_cam", function(self)
+    self._initialized_yaw = false
+    self._current_yaw_action = 1
+    -- 1 = Increase
+    -- 2 = Decrease
+end)
+
 function SecurityCamera:generate_cooldown(amount)
+	local mission_script_element = self._mission_script_element
+
+	self:set_detection_enabled(false)
+	managers.statistics:camera_destroyed()
+
+	if mission_script_element then
+		mission_script_element:on_destroyed(self._unit)
+	end
+
+	if self._access_camera_mission_element then
+		self._access_camera_mission_element:access_camera_operation_destroy()
+	end
+
+	self._destroyed = true
+	
 	if managers.job and (managers.job:current_job_id() == "safehouse" or managers.job:current_job_id() == "custom_safehouse" or managers.job:current_job_id() == "chill" or managers.job:current_job_id() == "chill_combat") then
 		--Smashing your own security cameras isn't the best idea
 	else
 		managers.hint:show_hint("destroyed_security_camera")
-	end
-	return gen_cooldown(self, amount)
-end]]--
---rest in peiece maybe we can do something cool with cams one day
+	end	
+end
 
 function SecurityCamera:update(unit, t, dt)
 	self:_update_tape_loop_restarting(unit, t, dt)
@@ -24,6 +44,59 @@ function SecurityCamera:update(unit, t, dt)
 	end
 
 	self:_upd_sound(unit, t)
+	
+    local current_yaw = self._yaw
+    local current_pitch = self._pitch
+    local max_yaw_positive = 60
+    local max_yaw_negative = -60
+
+    self:_init_dynamic_yaw()
+
+    if self._current_yaw_action == 1 then
+        if math.floor(self._yaw) == max_yaw_positive then
+            self._current_yaw_action = 2
+        else
+            self:_increase_yaw()
+        end
+    end
+
+    if self._current_yaw_action == 2 then
+        if math.floor(self._yaw) == max_yaw_negative then
+            self._current_yaw_action = 1
+        else
+            self:_decrease_yaw()
+        end
+    end	
+end
+
+function SecurityCamera:_init_dynamic_yaw()
+    local max_yaw_negative = -60
+    local current_pitch = self._pitch
+
+    if not self._initialized_yaw then
+        self._initialized_yaw = true
+        self:apply_rotations(max_yaw_negative, current_pitch)
+    end
+end
+
+function SecurityCamera:_increase_yaw()
+    local max_yaw_positive = 60
+    local current_pitch = self._pitch
+
+    if self._yaw <= max_yaw_positive then
+        local new_yaw = self._yaw + 0.1
+        self:apply_rotations(new_yaw, current_pitch)
+    end
+end
+
+function SecurityCamera:_decrease_yaw()
+    local max_yaw_negative = -60
+    local current_pitch = self._pitch
+
+    if self._yaw >= max_yaw_negative then
+        local new_yaw = self._yaw - 0.1
+        self:apply_rotations(new_yaw, current_pitch)
+    end
 end
 	
 function SecurityCamera:_sound_the_alarm(detected_unit)

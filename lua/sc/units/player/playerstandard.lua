@@ -3813,7 +3813,7 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 
 		self._unequip_weapon_expire_t = nil
 
-		if not self:_interacting() then
+		if not self:_interacting() or (self:_interacting() and managers.player:has_category_upgrade("player", "no_interrupt_interaction")) then
 			self:_start_action_equip_weapon(t)
 		end
 	end

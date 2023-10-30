@@ -8127,6 +8127,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 				stats = {
 					value = 5,
 					concealment = 2,
+					recoil = -4,
 					reload = 4,
 					extra_ammo = -30,
 				},
@@ -8221,6 +8222,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		stats = {
 			value = 6,
 			spread = -1,
+			recoil = -4,
 			concealment = 3,
 			reload = 4,
 			extra_ammo = -45
@@ -8233,6 +8235,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 		fps_animation_weight = "ban_mag",
 		stats = {
 			value = 6,
+			recoil = -2,
 			concealment = 1,
 			reload = 1,
 			extra_ammo = -15
@@ -24170,6 +24173,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_lmg_rpk_m_jungle.stats = {
 					value = 6,
 					spread = -1,
+					recoil = -4,
 					concealment = 3,
 					reload = 4,
 					extra_ammo = -45

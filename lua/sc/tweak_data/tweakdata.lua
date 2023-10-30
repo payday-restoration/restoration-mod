@@ -106,13 +106,21 @@ tweak_data.smg = {
 		ads_move_speed_mult = 0.7142857, --lowered to 0.5
 	}
 	tweak_data.lmg = {
+		ads_moving_recoil = 1.25,
 		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 3,
 		hipfire_spread_mult = 3.3333
 	}
+		tweak_data.lmg_moving = {
+			ads_moving_recoil = 0.8
+		}
+		tweak_data.rambo = {
+			hipfire_spread_mult = 0.5
+		}
 		tweak_data.wolf_brigade = {
+			ads_moving_recoil = 0.8,
 			moving_spread_mult = 0.2,
 			hipfire_spread_mult = 0.5
 		}
@@ -135,6 +143,7 @@ tweak_data.snp = {
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
+		ads_moving_recoil = 1.1,
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
 		ads_move_speed_mult = 0.888889 --lowered to 0.4
@@ -150,10 +159,12 @@ tweak_data.snp = {
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
+	ads_moving_recoil = 1.05,
 	ads_move_speed_mult = 0.45,
 	hipfire_spread_mult = 1.15
 }
 	tweak_data.crb = {
+		ads_moving_recoil = 0.95238,
 		hipfire_spread_mult = 0.86956,
 		swap_bonus = 1.1,
 		ads_move_speed_mult = 1.11111 --raised to 0.5

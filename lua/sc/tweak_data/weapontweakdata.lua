@@ -8014,7 +8014,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tecci.desc_id = "bm_w_tecci_desc_sc"
 			self.tecci.categories = {
 				"lmg",
-				"smg"
+				"smg",
+				"lmg_moving"
 			}
 			self.tecci.kick = self.stat_info.kick_tables.even_recoil
 			self.tecci.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -8252,7 +8253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m60.categories = {
 					"lmg",
 					"smg",
-					"wolf_brigade",
+					"rambo",
 					"mmg"
 				}
 				self.m60.CLIP_AMMO_MAX = 75
@@ -8444,6 +8445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk51b.categories = {
 					"lmg",
 					"smg",
+					"lmg_moving",
 					"mmg"
 				}
 				self.hk51b.desc_id = "bm_hk51b_sc_desc"

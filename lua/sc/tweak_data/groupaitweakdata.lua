@@ -19241,11 +19241,6 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			map_scale_factor = 0.55
 		end
 	end
-		
-	--Fuck this heist
-	if job == "chew" then
-		map_scale_factor = 0.25
-	end
 	
 	--Reduced spawns if playing in Solo offline
 	if Global and Global.game_settings and Global.game_settings.single_player then

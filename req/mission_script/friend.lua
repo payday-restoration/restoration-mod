@@ -23,8 +23,8 @@ return {
 	[100216] = {
 		ponr = ponr_value
 	},
-	--Player now can steal paintings during stealth (Basically player can take a painting when "Find to switch" objective is triggered)
-	[100292] = {
+	-- Player now can steal paintings when boat escape triggered
+	[100216] = {
 		on_executed = {
 			{ id = 101070, delay = 0 }
 		}

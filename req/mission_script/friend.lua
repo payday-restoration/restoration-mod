@@ -19,12 +19,9 @@ local amount_guards = 8
 	end
 	
 return {
-	--Pro Job PONR
+	--Pro Job PONR + Players now can steal paintings when boat escape triggered
 	[100216] = {
-		ponr = ponr_value
-	},
-	-- Player now can steal paintings when boat escape triggered
-	[100216] = {
+		ponr = ponr_value,
 		on_executed = {
 			{ id = 101070, delay = 0 }
 		}

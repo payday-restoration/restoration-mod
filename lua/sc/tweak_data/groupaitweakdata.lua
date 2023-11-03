@@ -19242,6 +19242,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		end
 	end
 	
+	--Fuck this heist
+	--Yes, it needs drastically reduced spawns. It's a tiny heist with little/no cover, a lot of scripted spawns, harrassers, and a damn helicopter. Leave it be
+	if job == "chew" then
+		map_scale_factor = 0.25
+	end
+	
 	--Reduced spawns if playing in Solo offline
 	if Global and Global.game_settings and Global.game_settings.single_player then
 		map_scale_factor = map_scale_factor * 0.75

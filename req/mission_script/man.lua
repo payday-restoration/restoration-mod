@@ -111,7 +111,7 @@ return {
 	--Titan Cloaker on DSPJ
 	[102409] = {
 		values = {
-            enemy = australian_sniper
+            enemy = woman_spooc
 		}
 	},
 	--Titan Shields replace regular ones during escape part

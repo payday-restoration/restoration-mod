@@ -17333,6 +17333,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.timers.reload_exit_not_empty = 0.75
 	end
 
+	if self.srs99_s7 then --RJC9000's PD3 GM6 Lynx
+		self.pd3_lynx.categories = {
+			"snp",
+			"semi_snp",
+			"amr"
+		}
+		self.pd3_lynx.recategorize = { "antim_snp" }
+		self.pd3_lynx.hs_mult = 2
+		self.pd3_lynx.damage_type = "anti_materiel"
+		self.pd3_lynx.upgrade_blocks = nil
+		self.pd3_lynx.CLIP_AMMO_MAX = 5
+		self.pd3_lynx.AMMO_MAX = 15
+		self.pd3_lynx.tactical_reload = 1
+		self.pd3_lynx.fire_mode_data.fire_rate = 0.66666667
+		self.pd3_lynx.sms = sms_preset.semi_snp_amr
+		self.pd3_lynx.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+		self.pd3_lynx.supported = true
+		self.pd3_lynx.ads_speed = 0.620
+		self.pd3_lynx.damage_falloff = {
+			start_dist = 8000,
+			end_dist = 20000,
+			min_mult = 0.5
+		}
+		self.pd3_lynx.stats = {
+			damage = 120,
+			spread = 93,
+			recoil = 7,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 13,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.pd3_lynx.armor_piercing_chance = 1
+		self.pd3_lynx.can_shoot_through_titan_shield = true
+		self.pd3_lynx.stats_modifiers = nil
+		self.pd3_lynx.reload_speed_multiplier = 0.8
+		self.pd3_lynx.panic_suppression_chance = 0.05
+		self.pd3_lynx.timers.equip = 1.1
+		self.pd3_lynx.timers.reload_not_empty = 3.2
+		self.pd3_lynx.timers.reload_exit_not_empty = 0.5
+		self.pd3_lynx.timers.reload_empty = 3.5
+		self.pd3_lynx.timers.reload_exit_empty = 0.9
+	end
+
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 		self.amt.recategorize = { "heavy_pis", "handcannon" }		
 		self.amt.damage_type = "heavy_pistol"			

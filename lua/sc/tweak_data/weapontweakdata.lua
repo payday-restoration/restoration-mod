@@ -17333,7 +17333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.timers.reload_exit_not_empty = 0.75
 	end
 
-	if self.srs99_s7 then --RJC9000's PD3 GM6 Lynx
+	if self.pd3_lynx then --RJC9000's PD3 GM6 Lynx
 		self.pd3_lynx.categories = {
 			"snp",
 			"semi_snp",

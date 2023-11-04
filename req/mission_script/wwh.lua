@@ -7,37 +7,11 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 930
 	else
 		ponr_value = 900	
-	end
-	
-local ponr_timer_player_mul = {
-		1,
-		0.8,
-		0.6,
-		0.4,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35,
-		0.35
-}	
+	end	
 
 return {
 	--Pro Job PONR 
 	[100914] = {
-		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	-- Gradually increase difficulty

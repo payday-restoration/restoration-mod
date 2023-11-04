@@ -48,6 +48,7 @@ local cloaker_table = {
 	--setting up the cloaker randomizer
 	if difficulty_index <= 7 then
 		clonker = cloaker_table.spooc
+		clonker_2 = cloaker_table.spooc
 	else
 		if chance_cloaker_var_1 < 0.50 then
 			clonker = cloaker_table.zeal_spooc

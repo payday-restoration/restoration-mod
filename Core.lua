@@ -140,7 +140,6 @@ function restoration:Init()
 		family = restoration.captain_types.autumn, --diamond store
 		framing_frame_1 = restoration.captain_types.autumn, --art gallery but ff
 		framing_frame_3 = restoration.captain_types.autumn, --Powerbox simulator
-		glace = restoration.captain_types.autumn, --Green Bridge
 		jewelry_store = restoration.captain_types.autumn, --Jewelry Store
 		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
 		man = restoration.captain_types.autumn, --undercover--

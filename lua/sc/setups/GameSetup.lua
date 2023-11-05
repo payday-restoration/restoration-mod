@@ -145,7 +145,11 @@ function GameSetup:load_packages()
 			"levels/narratives/elephant/mad/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-	
+	 elseif ai_type == m then 
+        faction_package = {
+			"packages/omniamisc"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
 	elseif ai_type == f then
         faction_package = {
             "packages/job_bex",

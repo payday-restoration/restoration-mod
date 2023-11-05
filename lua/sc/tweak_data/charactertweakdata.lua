@@ -7011,7 +7011,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mossberg = deep_clone(presets.weapon.normal.is_shotgun_pump)
 	presets.weapon.normal.mossberg.RELOAD_SPEED = 1.5
 	presets.weapon.normal.is_shotgun_mag = deep_clone(presets.weapon.normal.is_shotgun_pump)
-	presets.weapon.normal.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.normal.is_shotgun_mag.RELOAD_SPEED = 0.5
 	presets.weapon.normal.is_shotgun_mag.autofire_rounds = {4, 9}
 	presets.weapon.normal.is_shotgun_mag.FALLOFF = {
 		{
@@ -7147,6 +7147,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}	
+	presets.weapon.normal.is_shotgun_semi = deep_clone(presets.weapon.normal.is_shotgun_mag)
+	presets.weapon.normal.is_shotgun_semi.RELOAD_SPEED = 0.25	
 	presets.weapon.normal.is_flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
 	presets.weapon.normal.is_flamethrower.melee_speed = nil
 	presets.weapon.normal.is_flamethrower.melee_dmg = nil
@@ -8385,7 +8387,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_shotgun_mag.focus_dis = 200
 	presets.weapon.good.is_shotgun_mag.spread = 15
 	presets.weapon.good.is_shotgun_mag.miss_dis = 20
-	presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.5
 	presets.weapon.good.is_shotgun_mag.melee_speed = nil
 	presets.weapon.good.is_shotgun_mag.melee_dmg = nil
 	presets.weapon.good.is_shotgun_mag.melee_retry_delay = nil
@@ -8530,6 +8532,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.good.is_shotgun_semi = deep_clone(presets.weapon.good.is_shotgun_mag)
+	presets.weapon.good.is_shotgun_semi.RELOAD_SPEED = 0.25		
 	presets.weapon.good.is_flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
 	presets.weapon.good.is_flamethrower.melee_speed = nil
 	presets.weapon.good.is_flamethrower.melee_dmg = nil
@@ -10560,7 +10564,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_shotgun_mag.focus_dis = 200
 	presets.weapon.expert.is_shotgun_mag.spread = 15
 	presets.weapon.expert.is_shotgun_mag.miss_dis = 10
-	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
+	presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.5
 	presets.weapon.expert.is_shotgun_mag.melee_speed = nil
 	presets.weapon.expert.is_shotgun_mag.melee_dmg = nil
 	presets.weapon.expert.is_shotgun_mag.melee_retry_delay = nil
@@ -10705,6 +10709,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.weapon.expert.is_shotgun_semi = deep_clone(presets.weapon.expert.is_shotgun_mag)
+	presets.weapon.expert.is_shotgun_semi.RELOAD_SPEED = 0.25			
 	presets.weapon.expert.is_flamethrower = deep_clone(presets.weapon.expert.is_shotgun_pump)
 	presets.weapon.expert.is_flamethrower.autofire_rounds = {25, 50}
 	presets.weapon.expert.is_flamethrower.RELOAD_SPEED = 0.5
@@ -12156,6 +12162,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
+	presets.weapon.deathwish.is_shotgun_mag.RELOAD_SPEED = 0.5	
 	presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 		{
 			r = 100,
@@ -12302,6 +12309,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}		
 	}
+	presets.weapon.deathwish.is_shotgun_semi = deep_clone(presets.weapon.deathwish.is_shotgun_mag)
+	presets.weapon.deathwish.is_shotgun_semi.RELOAD_SPEED = 0.25		
 	presets.weapon.deathwish.is_pistol.melee_dmg = enemy_melee_damage_deathwish
 	presets.weapon.deathwish.is_pistol.FALLOFF = {
 		{
@@ -15629,6 +15638,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}		
+	--This doesn't really matter since Semi-autos for bots just use is_shotgun_mag anyway, but just in case
+	presets.weapon.gang_member.is_shotgun_semi = deep_clone(presets.weapon.gang_member.is_shotgun_mag)		
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
 	restoration.log_shit("SC: normal presets")
 	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)
@@ -17473,6 +17484,9 @@ function CharacterTweakData:_set_easy()
 	self.spring.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = false
 	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
+	
 	--No Gas on Autumn on lower difficulties
 	self.autumn.can_deploy_tear_gas = false
 	self.autumn.chance_use_gas = 0		
@@ -17522,6 +17536,9 @@ function CharacterTweakData:_set_normal()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
+	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
 		
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 4.0
@@ -17580,6 +17597,9 @@ function CharacterTweakData:_set_hard()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
+	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
 	
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 5.0
@@ -17643,6 +17663,9 @@ function CharacterTweakData:_set_overkill()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17709,6 +17732,9 @@ function CharacterTweakData:_set_overkill_145()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
+	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17769,6 +17795,9 @@ function CharacterTweakData:_set_easy_wish()
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
 	self.taser.shock_damage = 6.0
+	
+	--Benellidozers don't use frag grenades on lower difficulties
+	self.tank_mini.can_throw_frag = false
 
 	self:_set_characters_weapon_preset("expert", "good")
 	self:_set_characters_dodge_preset("athletic_overkill")

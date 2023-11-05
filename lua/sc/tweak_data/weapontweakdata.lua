@@ -1111,7 +1111,7 @@ local crew_wep_preset = {
 		self.benelli_npc.suppression = 3	
 		self.benelli_npc.auto = nil
 		self.benelli_npc.FIRE_MODE = "single"
-		self.benelli_npc.usage = "is_shotgun_mag"
+		self.benelli_npc.usage = "is_shotgun_semi"
 		self.benelli_npc.anim_usage = "is_shotgun_pump"
 		
 		self.bayou_npc = deep_clone(self.benelli_npc)
@@ -18856,7 +18856,7 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {}
 	}	
 	self.benelli_npc = {
-		usage = "is_shotgun_mag",
+		usage = "is_shotgun_semi",
 		anim_usage = "is_shotgun_pump",
 		sounds = {},
 		use_data = {}

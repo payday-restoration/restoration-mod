@@ -191,6 +191,14 @@ local armour = {
 	[Idstring("body_ammo"):key()] = true,
 }
 
+local head_hitboxes = {
+    [Idstring("glass_shield"):key()] = true,
+    [Idstring("glass_swat"):key()] = true,
+    [Idstring("glass_c"):key()] = true,
+    [Idstring("glass_altyn"):key()] = true,
+    [Idstring("visor"):key()] = true
+}
+
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 
@@ -863,7 +871,7 @@ function CopDamage:damage_bullet(attack_data)
 
 	local result = nil
 	local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 
 	if head and not weap_base.thrower_unit and self._unit:base():has_tag("tank") then
 		mvector3.set(mvec_1, attack_data.col_ray.ray)

@@ -68,11 +68,9 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "disable_lpf_buff"))		
-end)
+	}, callback(self, self, "disable_lpf_buff"))	
 
---Yufu Wang Hitbox fix
-Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
+	--Yufu Wang Hitbox fix
 	if self._tweak_table == "triad_boss" then
 		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(16)
 		self._unit:body("body"):set_sphere_radius(22)	
@@ -99,8 +97,7 @@ Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 		if head then
 			head:set_sphere_radius(16)
 		end
-	end
-	
+	end	
 end)
 
 function CopBase:random_mat_seq_initialization()

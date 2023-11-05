@@ -473,13 +473,8 @@ function restoration:Init()
 	--Support Factions (will spawn alongside the main force)
 	--OMNIA
 	restoration.omnia_support = {
-		"arm_for", --Train Heist
-		"pbr", --Beneath the Mountain
-		"des", --Henry's Rock
-		"vit", --White House
-		"welcome_to_the_jungle_2", --Big Oil Day 2
-		--Custom Heists--
-		"wetwork" --Wetworks
+		"wetwork", --Wetworks
+		"bluewave" --Bluewave
 		--"wetwork_burn"
 	}
 	

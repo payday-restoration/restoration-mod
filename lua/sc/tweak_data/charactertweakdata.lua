@@ -17484,9 +17484,6 @@ function CharacterTweakData:_set_easy()
 	self.spring.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = false
 	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
-	
 	--No Gas on Autumn on lower difficulties
 	self.autumn.can_deploy_tear_gas = false
 	self.autumn.chance_use_gas = 0		
@@ -17536,10 +17533,7 @@ function CharacterTweakData:_set_normal()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
-	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
-		
+			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 4.0
 	self.taser.shock_damage = 4.0
@@ -17597,10 +17591,7 @@ function CharacterTweakData:_set_hard()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
-	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
-	
+		
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 5.0
 	self.taser.shock_damage = 5.0
@@ -17663,9 +17654,6 @@ function CharacterTweakData:_set_overkill()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
-	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17732,9 +17720,6 @@ function CharacterTweakData:_set_overkill_145()
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
-	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17796,9 +17781,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.spooc.kick_damage = 6.0
 	self.taser.shock_damage = 6.0
 	
-	--Benellidozers don't use frag grenades on lower difficulties
-	self.tank_mini.can_throw_frag = false
-
 	self:_set_characters_weapon_preset("expert", "good")
 	self:_set_characters_dodge_preset("athletic_overkill")
 	self.fbi.can_shoot_while_dodging = true

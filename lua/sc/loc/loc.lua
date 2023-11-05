@@ -2220,7 +2220,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Ksp 58
 				["bm_par_sc_desc"] = "A heavier sibling machinegun to the KSP-90 typically mounted on vehicles. Trades mobility for an even bigger bullet.",
 				--Versteckt-51/HK51B
-				["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",
+				["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further than the Brenner's.",
 				--Buzzsaw/Mg42
 				["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Has improved hipfire spread and recoil.##",
 				["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",

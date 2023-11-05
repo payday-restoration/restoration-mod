@@ -2,8 +2,10 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local chance_dozer_1 = math.rand(1)
 local chance_dozer_2 = math.rand(1)
+local dozer_ambush_chance_ovk = 50
 local dozer_ambush_chance_dw = 65
 local dozer_ambush_chance_ds = 80
+local random_dozer = 1
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
@@ -15,6 +17,8 @@ local dozer_table = {
 }
 
 	if Global.game_settings and Global.game_settings.one_down then
+		random_dozer = 2
+		dozer_ambush_chance_ovk = 70
 		dozer_ambush_chance_dw = 80
 		dozer_ambush_chance_ds = 100
 	end	
@@ -73,6 +77,37 @@ local dozer_table = {
 	end
 	
 return {
+	--Pro Job Stuff
+	[101783] = {
+		values = {
+            amount = random_dozer
+		}
+	},
+	[101784] = {
+		values = {
+            amount = random_dozer
+		}
+	},
+	[101723] = {
+		values = {
+            chance = dozer_ambush_chance_ovk
+		}
+	},
+	[101779] = {
+		values = {
+            chance = dozer_ambush_chance_ovk
+		}
+	},
+	[101780] = {
+		values = {
+            chance = dozer_ambush_chance_dw
+		}
+	},
+	[101781] = {
+		values = {
+            chance = dozer_ambush_chance_ds
+		}
+	},
 	--Dozers gets randomized
 	[101766] = {
 		values = {

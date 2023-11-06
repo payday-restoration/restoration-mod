@@ -106,7 +106,7 @@ tweak_data.smg = {
 		ads_move_speed_mult = 0.7142857, --lowered to 0.5
 	}
 	tweak_data.lmg = {
-		ads_moving_recoil = 1.25,
+		ads_moving_recoil = 1.15,
 		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
@@ -114,13 +114,13 @@ tweak_data.smg = {
 		hipfire_spread_mult = 3.3333
 	}
 		tweak_data.lmg_moving = {
-			ads_moving_recoil = 0.8
+			ads_moving_recoil = 0.8695652
 		}
 		tweak_data.rambo = {
 			hipfire_spread_mult = 0.5
 		}
 		tweak_data.wolf_brigade = {
-			ads_moving_recoil = 0.8,
+			ads_moving_recoil = 0.8695652,
 			moving_spread_mult = 0.2,
 			hipfire_spread_mult = 0.5
 		}

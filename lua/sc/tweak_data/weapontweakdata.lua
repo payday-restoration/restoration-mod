@@ -17377,7 +17377,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pd3_lynx.stats_modifiers = nil
 		self.pd3_lynx.reload_speed_multiplier = 0.8
 		self.pd3_lynx.panic_suppression_chance = 0.05
-		self.pd3_lynx.timers.equip = 1.1
+		self.pd3_lynx.timers.equip = 1.3
 		self.pd3_lynx.timers.reload_not_empty = 3.2
 		self.pd3_lynx.timers.reload_exit_not_empty = 0.5
 		self.pd3_lynx.timers.reload_empty = 3.5

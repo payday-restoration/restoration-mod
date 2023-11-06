@@ -78,6 +78,7 @@ function restoration:Init()
 		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
 		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
 		fuel		= restoration.captain_types.winter, --Fuel Feuds 
+		icing = restoration.captain_types.winter, --Road Rage
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
 		pal = restoration.captain_types.summer, --counterfeit
@@ -338,7 +339,8 @@ function restoration:Init()
 		"constantine_yacht_lvl", --  Showdown  (Constantine Scores) 
 		"constantine_policestation_lvl", -- Precint Raid (Constantine Scores)
 		"constantine_murkyairport",		 -- Murky Airport (Consantine Scores) 
-		"hogar"-- The House Robbery 
+		"hogar",-- The House Robbery
+		"icing"	--Roag Rage	
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.

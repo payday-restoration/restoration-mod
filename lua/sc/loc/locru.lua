@@ -4800,7 +4800,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "В яблочко",
-				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка на #{skill_color}#$skill_value_b3## секунды.\n\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка еще на #{skill_color}#$skill_value_p2## секунды.",
+				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка на #{skill_color}#$skill_value_b3## секунды.\n$anarc_disable\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка еще на #{skill_color}#$skill_value_p2## секунды.\n$anarc_disable",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Железный человек",
@@ -4856,7 +4856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Пуленепробиваемый",
-				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВашу броню теперь нельзя прошить.\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня полностью заполнена, любой полученный урон уменьшится на число, равное #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее.",
+				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВашу броню теперь нельзя прошить.\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня полностью заполнена, любой полученный урон уменьшится на число, равное #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее. $anarc_disable",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--
@@ -5214,6 +5214,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_5_desc_sc"] = "Теперь вы будете вылечены на ##30%## от любого полученного урона в течение ##6## секунд после использования Инъектора.\n\nПока действует Инъектор, враги будут держать вас в приоритете.",
 		["menu_deck17_7_desc_sc"] = "Количество восстанавливаемого Инъектором здоровья увеличено на ##60%## если у вас меньше ##25%## здоровья.",
 		["menu_deck17_9_desc_sc"] = "Пока у вас полное здоровье, за каждые ##5## очков здоровья, полученные во время действия Инъектора, Инъектор восстановится на ##2## секунды быстрее.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
+		["menu_anarc_disable"] = "#{important_1}#(Этот эффект не работает для набора перков Анархист)##",
 
 		--10 feet higher--
 		["menu_st_spec_18"] = "Сикарио",

@@ -4244,14 +4244,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "machine_gun"
 	end
 	
-	recat = { "amcar", "s552", "g36", "olympic", "x_olympic" }
+	recat = { "amcar", "s552", "g36", "olympic", "x_olympic", "vhs", "famas" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "crb")
 		self[ wep_id ].recategorize = { "light_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
-	recat = { "new_m4", "ak5", "aug", "flint", "ak74", "corgi", "vhs", "famas", "komodo", "hajk" }
+	recat = { "new_m4", "ak5", "aug", "flint", "ak74", "corgi", "komodo", "hajk" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
@@ -13916,6 +13916,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.tingledingle then --Zdanns's TBP
+		table.insert(self.tingledingle.categories, "crb")
 		self.tingledingle.bmp = 999999
 		self.tingledingle.no_auto_anims = true		
 		self.tingledingle.recategorize = { "light_ar" }
@@ -14821,6 +14822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.fazertron then --Pawcio's Calico M960
+		table.insert(self.fazertron.categories, "crb")
 		self.fazertron.recategorize = { "light_ar" }
 		self.fazertron.damage_type = "assault_rifle"
 		self.fazertron.FIRE_MODE = "auto"

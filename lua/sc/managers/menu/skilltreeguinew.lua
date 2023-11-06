@@ -480,6 +480,7 @@ function NewSkillTreeGui:_update_description(item)
 	local basic_color_index = 1
 	local pro_color_index = 2 + (skill_descs[1] or 0)
 	local max_deflection_add = managers.player:upgrade_value("player", "max_deflection_add", 0) or 0
+	local max_deflection_add = managers.player:upgrade_value("player", "max_deflection_add", 0)
 	local yakuza_deflection = max_deflection_add > 0 or nil
 	local max_deflection = tweak_data.upgrades.max_deflection + max_deflection_add
 
@@ -504,7 +505,8 @@ function NewSkillTreeGui:_update_description(item)
 	local macroes = {
 		basic = basic_cost,
 		pro = pro_cost,
-		deflection = max_deflection * 100 .. "%" .. (yakuza_deflection and " " .. managers.localization:text("menu_yakuza_deflection_add") or "")
+		deflection = max_deflection * 100 .. "%" .. (yakuza_deflection and " " .. managers.localization:text("menu_yakuza_deflection_add") or ""),
+		anarc_disable = (managers.player:has_category_upgrade("player", "armor_grinding") and managers.localization:text("menu_anarc_disable")) or ""
 	}
 
 	for i, d in pairs(skill_descs) do

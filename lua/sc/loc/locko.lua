@@ -1597,7 +1597,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
 		--Versteckt-51/HK51B
 		["bm_w_hk51b"] = "Versteckt-51B 중기관총",
-		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판. 이 기관총은 Compact-5 크기로 축소되어 발사 속도가 더욱 증가했습니다.",
+		["bm_hk51b_sc_desc"] = "Brenner-21의 애프터마켓 전환판. 이 기관총은 Compact-5 크기로 축소되었고 Brenner보다 발사 속도가 더욱 빨라졌습니다.",
 		--M134
 		["bm_m134_sc_desc"] = "\"너가 내딛는 걸음마다 적의 시체가 널려져있다...\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 		--Microgun
@@ -4786,11 +4786,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "불스아이",
-			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n방탄복이 #{skill_color}#완전히 재생되어 있는 경우## 치명적인 헤드샷을 하면 재사용 대기시간이 #{skill_color}#0.5##초 단축됩니다.\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.\n\n재사용 대기시간 감소 효과가 #{skill_color}#0.5##초만큼 추가로 증가합니다.",
+			["menu_prison_wife_beta_desc_sc"] = "베이직: #{owned}#$basic##\n헤드샷 성공시 방탄력을 #{skill_color}#5##만큼 회복합니다. 재사용 대기시간은 #{important_1}#5##초입니다.\n\n치명적인 헤드샷을 하면 재사용 대기시간이 #{skill_color}#0.5##초 단축됩니다. $anarc_disable\n\n에이스: #{owned}#$pro##\n헤드샷 성공시 추가로 방탄력을 #{skill_color}#30##만큼 회복합니다.\n\n재사용 대기시간 감소 효과가 #{skill_color}#0.5##초만큼 추가로 증가합니다. $anarc_disable",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "철인",
-			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n#{risk}#참고:## #{important_1}#타이탄 실드와 캡틴 윈터스##는 #{risk}#넘어뜨릴 수 없습니다.##\n\n에이스: #{owned}#$pro##\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다.\n\n실드를 넘어뜨리는 능력이 원거리 무기까지 확장되며, 무기의 총 데미지가 높을수록 확률이 높아집니다.",
+			["menu_juggernaut_beta_desc_sc"] = "베이직: #{owned}#$basic##\n개량형 복합 전술 조끼를 착용할 수 있게 됩니다.\n\n실드를 근접 공격하면 넘어뜨립니다.\n\n#{risk}#참고:## #{important_1}#타이탄 실드와 캡틴 윈터스##는 #{risk}#넘어뜨릴 수 없습니다.##\n\n에이스: #{owned}#$pro##\n방탄력이 #{skill_color}#10%##만큼 더 빨리 회복됩니다. $anarc_disable\n\n실드를 넘어뜨리는 능력이 원거리 무기까지 확장되며, 무기의 총 데미지가 높을수록 확률이 높아집니다.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 			--Scavenger
@@ -4844,7 +4844,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Bulletproof--
 			["menu_iron_man_sc"] = "방탄",
-			["menu_iron_man_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 뚫리지 않습니다.\n\n#{risk}#참고: 자가 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄복이 가득 차 있는 동안 받는 피해가 최대 방탄력의 #{skill_color}#15%##만큼 감소합니다.\n\n방탄복이 #{skill_color}#15%## 더 빨리 회복됩니다.",
+			["menu_iron_man_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 뚫리지 않습니다.\n\n#{risk}#참고: 자가 피해에는 적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n방탄복이 가득 차 있는 동안 받는 피해가 최대 방탄력의 #{skill_color}#15%##만큼 감소합니다.\n\n방탄복이 #{skill_color}#15%## 더 빨리 회복됩니다. $anarc_disable",
 
 			--[[   BREACHER SUBTREE   ]]--
 			--Silent Drilling--
@@ -5178,11 +5178,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Anarchist--
 		["menu_st_spec_15"] = "아나키스트", --there's a random space at the end of the original string
-		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 #{skill_color}#8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 무거울 수록 많은 방탄력을 재생하지만 매 재생 간의 간격이 길어집니다.\n\n#{risk}#참고: 이 특성 덱을 사용할 때 방탄복 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.##",
+		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 #{skill_color}#8##만큼 방탄복과 동일한 속도로 방탄력을 주기적으로 재생합니다. 방탄복이 무거울 수록 많은 방탄력을 재생하지만 매 재생 간의 간격이 길어집니다.\n\n#{risk}#참고: 이 특성 덱을 사용하면 방탄복 회복 속도를 높이거나 방탄복 재생과 관련된 재사용 대기시간 감소가 있는 스킬과 덱 효과가 비활성화됩니다.##",
 		["menu_deck15_3_desc_sc"] = "#{risk}#체력의 50%##가 #{skill_color}#50%##만큼 방탄량으로 전환됩니다.",
 		["menu_deck15_5_desc_sc"] = "#{risk}#체력의 50%##가 #{skill_color}#100%##만큼 방탄량으로 전환됩니다.\n\n당신과 당신의 팀원에게 위협을 받는 시민은 ##25%##만큼 오래동안 받습니다.",
 		["menu_deck15_7_desc_sc"] = "#{risk}#체력의 50%##가 #{skill_color}#150%##만큼 방탄량으로 전환됩니다.",
 		["menu_deck15_9_desc_sc"] = "#{skill_color}피해를 가하면 방어구가 부여되고,## 방탄복이 무거울수록 방탄력이 더 많이 부여됩니다. 이 효과는 매 #{important_1}#3##초마다 발생합니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
+		["menu_anarc_disable"] = "#{important_1}#(아나키스트에 인해 비활성화됨)##",
 
 		--Scarface--
 		["menu_deck17_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#주사기##를 잠금 해제합니다.\n\n주사기를 사용하면 #{skill_color}#4##초 동안 받은 모든 피해의 #{skill_color}#30%##만큼 회복합니다. 효과가 지속되는 동안에도 여전히 피해를 입을 수 있습니다.\n\n주사기는 매 #{important_1}#30##초마다 한 번만 사용할 수 있습니다.",

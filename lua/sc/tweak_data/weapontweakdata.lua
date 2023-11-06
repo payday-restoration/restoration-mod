@@ -15613,7 +15613,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.desc_id = "bm_m107cq_sc_desc"
 		self.m107cq.tactical_reload = 1
 		self.m107cq.AMMO_MAX = 15
-		self.m107cq.fire_mode_data.fire_rate = 0.5454545
+		self.m107cq.fire_mode_data.fire_rate = 0.48
 		self.m107cq.sms = sms_preset.semi_snp_amr
 		self.m107cq.kick = deep_clone(self.stat_info.kick_tables.right_kick)
 		self.m107cq.kick.crouching = self.m107cq.kick.standing
@@ -17347,7 +17347,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pd3_lynx.CLIP_AMMO_MAX = 5
 		self.pd3_lynx.AMMO_MAX = 15
 		self.pd3_lynx.tactical_reload = 1
-		self.pd3_lynx.fire_mode_data.fire_rate = 0.66666667
+		self.pd3_lynx.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
+		self.pd3_lynx.fire_mode_data.fire_rate = 0.545454
 		self.pd3_lynx.sms = sms_preset.semi_snp_amr
 		self.pd3_lynx.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
 		self.pd3_lynx.supported = true

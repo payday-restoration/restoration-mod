@@ -2528,8 +2528,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0, 10, -0.1)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_pd3_lynx = {
-				translation = Vector3(0.04, -4.5, 0.7),
-				rotation = Rotation(0.038,0.05,0)
+				translation = Vector3(0.03, -4.5, 0.63),
+				rotation = Rotation(0.02,0.15,0)
 			}
 
 		--CUSTOM WEAPS THAT NEED REALIGNMENT
@@ -12626,7 +12626,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
-			weap.rotation = Rotation(-0.07, 0, 0)
+			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
 
@@ -20887,7 +20887,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
-			weap.rotation = Rotation(-0.07, 0, 0)
+			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
 
@@ -22875,6 +22875,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_snp_pd3_lynx_bolt then
 
+			self.parts.wpn_fps_snp_pd3_lynx_receiver.forbids = nil
+
+			self.parts.wpn_fps_snp_pd3_lynx_scope.supported = true
+			self.parts.wpn_fps_snp_pd3_lynx_scope.pcs = nil
+			self.parts.wpn_fps_snp_pd3_lynx_scope.stats = {
+				value = 0,
+				zoom = 30
+			}
+
+			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_specter")
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_aimpoint")
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_docter")
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_eotech")
@@ -22896,6 +22906,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_atibal")
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_spot")
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_bmg")
+
+			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_sig")
+			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 
 			self.wpn_fps_snp_pd3_lynx_npc.uses_parts = deep_clone(self.wpn_fps_snp_pd3_lynx.uses_parts)
 		end

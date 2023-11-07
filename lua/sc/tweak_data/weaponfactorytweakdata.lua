@@ -2490,9 +2490,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_skspug = {
 				translation = Vector3(0, 2.5, -0.68)
 			}
-
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3hk79 = {
 				translation = Vector3(0.02, 1.8, -3.415)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_br55 = {
+				translation = Vector3(-0.01, 1, -1.21)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
@@ -22915,16 +22917,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_br55_receiver then
 
+			self.parts.wpn_fps_ass_br55_barrel_heavy.supported = true
+			self.parts.wpn_fps_ass_br55_barrel_heavy.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_br55_barrel_heavy.custom_stats = deep_clone(barrels.long_b2_stats)
+
 			self.parts.wpn_fps_ass_br55_scope.supported = true
 			self.parts.wpn_fps_ass_br55_scope.desc_id = "bm_wp_upg_o_2"
 			self.parts.wpn_fps_ass_br55_scope.pcs = nil
 			self.parts.wpn_fps_ass_br55_scope.stats = { value = 0, zoom = 10 }
+			self.parts.wpn_fps_ass_br55_scope.stance_mod = {
+				wpn_fps_ass_br55 = {
+					translation = Vector3(-0.01, -4, 0.985)
+				}
+			}
 			
 			self.parts.wpn_fps_ass_br55_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_barrel.custom_stats = nil
 			self.parts.wpn_fps_ass_br55_charging_handle.stats = { value = 0 }
 			self.parts.wpn_fps_ass_br55_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_ass_br55_receiver.stats = { value = 0 }
 			self.parts.wpn_fps_ass_br55_receiver.perks = nil
+
+			self.parts.wpn_fps_ass_br55_br75_so.supported = true
+			self.parts.wpn_fps_ass_br55_br75_so.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_br75_so.custom_stats = nil
+			self.parts.wpn_fps_ass_br55_br75_so.adds = {"wpn_fps_ass_br55_br75_sounds"}
+
+			self.parts.wpn_fps_ass_br55_br75_sounds = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_br55_br75_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						fire = "br75_fire",
+						fire_single = "br75_fire",
+						fire_auto = "br75_fire"
+					}
+				}
+			}
 
 		end
 

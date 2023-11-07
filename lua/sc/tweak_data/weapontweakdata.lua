@@ -17352,12 +17352,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.25
 		self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
 		self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+		self.br55.lock_slide = true
 		self.br55.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
 		self.br55.supported = true
-		self.br55.ads_speed = 0.340
+		self.br55.ads_speed = 0.300
 		self.br55.damage_falloff = {
-			start_dist = 1500,
-			end_dist = 7500,
+			start_dist = 900,
+			end_dist = 7000,
 			min_mult = 0.4
 		}
 		self.br55.stats = {
@@ -17374,10 +17375,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.br55.armor_piercing_chance = 1
-		self.br55.can_shoot_through_titan_shield = true
+		self.br55.armor_piercing_chance = 0.5
 		self.br55.stats_modifiers = nil
 		self.br55.panic_suppression_chance = 0.05
+		self.br55.sounds.magazine_empty = "wp_rifle_slide_lock"
+		self.br55.reload_speed_multiplier = 0.85
+		self.br55.timers.reload_exit_not_empty = 0.4
+		self.br55.timers.reload_exit_empty = 0.4
 	end
 
 	if self.pd3_lynx then --RJC9000's PD3 GM6 Lynx
@@ -18596,11 +18600,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 					weap.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 					weap.rms = (1 + weap.weapon_movement_penalty) / 2
+					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "wolf_brigade") and not table.contains(weap.categories, "minigun") then
+						weap.sms = weap.sms / 1.5
+						weap.rms = weap.weapon_movement_penalty
+						weap.zoom_recoil_reduction = 0.02
+					end
 					weap.smt_mult = 5
-					weap.smt_range = { 0.75, 1.75 }
+					weap.smt_range = { 0.75, 1.35 }
 				end
 				weap.ene_hs_mult = 0.5
-				weap.zoom_recoil_reduction = 0.02
 			end
 
 			if weap.recategorize and not weap.recoil_values then

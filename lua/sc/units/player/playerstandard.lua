@@ -674,11 +674,15 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 				if weap_base:out_of_ammo() then
 					self._spin_up_shoot = nil
+					self._queue_burst = nil
+					self._queue_fire = nil
 					if input.btn_primary_attack_press then
 						weap_base:dryfire()
 					end
 				elseif weap_base.clip_empty and weap_base:clip_empty() then
 					self._spin_up_shoot = nil
+					self._queue_burst = nil
+					self._queue_fire = nil
 					if self:_is_using_bipod() then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
@@ -2114,6 +2118,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_slide_locks()
 	self:_shooting_move_speed_timer(t, dt)
 	self:_last_shot_t(t, dt)
+	self:_update_js_t(t, dt)
 	self:_update_d_scope_t(t, dt)
 	self:_update_spread_stun_t(t, dt)
 	self:_update_drain_stamina(t, dt)
@@ -2152,6 +2157,16 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	
 end)
+
+function PlayerStandard:_update_js_t(t, dt)
+	if self._js_t then
+		self._js_t = self._js_t - dt
+		if self._js_t < 0 then
+			self._js_t = nil
+			self._unit:sound():say("a01x_any", true)
+		end
+	end
+end
 
 function PlayerStandard:_update_d_scope_t(t, dt)
 	if self._d_scope_t then
@@ -2221,8 +2236,8 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 			self._shooting_move_speed_wait = nil
 		end
 	elseif self._shooting_move_speed_t then
+		self._shooting_move_speed_mult = math.clamp(math.lerp(1 , self._shooting_move_speed_mult_max, self._shooting_move_speed_t), self._shooting_move_speed_mult_max, 1)
 		self._shooting_move_speed_t = self._shooting_move_speed_t - dt
-		self._shooting_move_speed_mult = math.lerp(1 , self._shooting_move_speed_mult_max, self._shooting_move_speed_t) 
 		if self._shooting_move_speed_t < 0 then
 			self._shooting_move_speed_t = nil
 			self._shooting_move_speed_mult = nil
@@ -3767,6 +3782,13 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 		return
 	end
 	
+	local weap_base = self._equipped_unit and self._equipped_unit:base()
+	local weap_id = weap_base and weap_base:get_name_id()
+	local player_char = managers.criminals:local_character_name()
+	if player_char and player_char == "jowi" and weap_id and weap_id == "malorian_3516" then
+		self._js_t = 2.6
+	end
+
 	--Anim weight randomizing
 	local anim_weight = 0
 	if (math.random() < 0.5) then
@@ -3781,6 +3803,10 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end
+
+Hooks:PostHook(PlayerStandard, "_interupt_action_cash_inspect", "ResPlayerStandardPostInteruptInspect", function(self, t)
+	self._js_t = nil
+end)
 
 function PlayerStandard:_start_action_unequip_weapon(t, data)
 	local speed_multiplier = self:_get_swap_speed_multiplier()

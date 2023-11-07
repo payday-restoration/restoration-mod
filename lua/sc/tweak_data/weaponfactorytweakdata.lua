@@ -22913,6 +22913,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_snp_pd3_lynx_npc.uses_parts = deep_clone(self.wpn_fps_snp_pd3_lynx.uses_parts)
 		end
 
+		if self.parts.wpn_fps_ass_br55_receiver then
+
+			self.parts.wpn_fps_ass_br55_scope.supported = true
+			self.parts.wpn_fps_ass_br55_scope.desc_id = "bm_wp_upg_o_2"
+			self.parts.wpn_fps_ass_br55_scope.pcs = nil
+			self.parts.wpn_fps_ass_br55_scope.stats = { value = 0, zoom = 10 }
+			
+			self.parts.wpn_fps_ass_br55_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_charging_handle.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_receiver.stats = { value = 0 }
+			self.parts.wpn_fps_ass_br55_receiver.perks = nil
+
+		end
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack

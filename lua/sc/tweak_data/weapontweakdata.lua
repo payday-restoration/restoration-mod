@@ -17333,6 +17333,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.timers.reload_exit_not_empty = 0.75
 	end
 
+	if self.br55 then --RJC9000's PD3 GM6 Lynx
+		self.br55.recategorize = { "dmr_ar" }
+		self.br55.damage_type = "sniper"
+		self.br55.is_bullpup = true
+		self.br55.upgrade_blocks = nil
+		self.br55.CLIP_AMMO_MAX = 36
+		self.br55.AMMO_MAX = 60
+		self.br55.fire_mode_data.fire_rate = 0.15
+		self.br55.fire_mode_data.burst_cooldown = nil
+		self.br55.FIRE_MODE = "single"		
+		self.br55.CAN_TOGGLE_FIREMODE = false
+		self.br55.BURST_COUNT = nil
+		self.br55.burst = nil
+		self.br55.BURST_FIRE_DEFAULT = true
+		self.br55.BURST_FIRE = 3
+		self.br55.BURST_DELAY = 0.1
+		self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.25
+		self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+		self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+		self.br55.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+		self.br55.supported = true
+		self.br55.ads_speed = 0.340
+		self.br55.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 7500,
+			min_mult = 0.4
+		}
+		self.br55.stats = {
+			damage = 60,
+			spread = 91,
+			recoil = 76,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 22,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.br55.armor_piercing_chance = 1
+		self.br55.can_shoot_through_titan_shield = true
+		self.br55.stats_modifiers = nil
+		self.br55.panic_suppression_chance = 0.05
+	end
+
 	if self.pd3_lynx then --RJC9000's PD3 GM6 Lynx
 		self.pd3_lynx.categories = {
 			"snp",
@@ -19051,112 +19098,3 @@ function WeaponTweakData:_precalculate_values()
 	self.mp5_cloak_npc.AMMO_MAX = self.mp5_cloak_npc.CLIP_AMMO_MAX * self.mp5_cloak_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 end
-
-Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
-	if self.SetupAttachmentPoint then
-		--[
-		self:SetupAttachmentPoint( "par", {
-			name = "a_o", -- Name of Attachment Point ( This can be a preexisting one or a new one. )
-			base_a_obj = "a_o", -- ( Optional ) Attachment point position to base the attachment point off of.
-			--part_attach_data = {
-			--	{"wpn_fps_lmg_par_upper_reciever"}, -- Attachments to attach to. ( Supports multiple if the attachment has multiple variants. )
-			--	"g_cover" -- The object on the attachment to attach to. ( If this object is animated 90% of the time it should move with it. )
-			--},
-			position = Vector3( 0, 6, 0 ), -- Position to offset from the part object. ( Default: Vector3( 0, 0, 0 ) )
-			rotation = RotationCAP( 0, 0, 0 ) -- Rotation to offset from the part object. ( Default: Rotation( 0, 0, 0 ) )
-		})
-		--]]
-		--[
-		self:SetupAttachmentPoint( "m249", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			--part_attach_data = {
-			--	{"wpn_fps_lmg_m249_upper_reciever"},
-			--	"g_dustcover"
-			--},
-			position = Vector3( 0, 3, 0 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-		--]]
-
-		self:SetupAttachmentPoint( "m60", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			--part_attach_data = {
-			--	{"wpn_fps_lmg_m60_upper_reciever"},
-			--	"g_dustcover"
-			--},
-			position = Vector3( 0, 6.1, 0.5 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-		--[[
-		self:SetupAttachmentPoint( "mg42", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			--part_attach_data = {
-			--	{"wpn_fps_lmg_mg42_reciever"},
-			--	"g_lid"
-			--},
-			position = Vector3( 0, 0, 0 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-		--]]
-
-		self:SetupAttachmentPoint( "hk21", {
-			name = "a_s_fix",
-			base_a_obj = "a_s",
-			position = Vector3( 0, 1.35, 0 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-		self:SetupAttachmentPoint( "ak5", {
-			name = "a_s_fix",
-			base_a_obj = "a_s",
-			position = Vector3( 0, 0, -1.1 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-
-		self:SetupAttachmentPoint( "groza", {
-			name = "a_m_fix",
-			base_a_obj = "a_m",
-			position = Vector3( 0, 0.6, -0.6 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-		self:SetupAttachmentPoint( "asval", {
-			name = "a_m_fix",
-			base_a_obj = "a_m",
-			part_attach_data = {
-				{"wpn_fps_ass_asval_m_standard_dummy"},
-				"g_mag"
-			},
-			position = Vector3( 0, -4, 6 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-		self:SetupAttachmentPoint( "saiga", {
-			name = "a_ns_fix",
-			base_a_obj = "a_ns",
-			position = Vector3( 0, 0, -0.19 ),
-			rotation = RotationCAP( 0, 0, 0 )
-		})
-
-		if self.bessy then
-			self:SetupAttachmentPoint( "bessy", {
-				name = "a_o",
-				base_a_obj = "a_ns",
-				position = Vector3( 0, -80, 1.8 ),
-				rotation = RotationCAP( 0, 0, 0 )
-			})
-			self:SetupAttachmentPoint( "bessy", {
-				name = "a_fl",
-				base_a_obj = "a_ns",
-				position = Vector3( -2.2, -30, -1.2 ),
-				rotation = RotationCAP( 0, 0, 185 )
-			})
-		end
-
-	end
-end)	

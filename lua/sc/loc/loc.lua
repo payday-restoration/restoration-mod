@@ -2905,8 +2905,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Custom Snipers
 						--Guerilla
 						["bm_w_sgs"] = "Guerilla 542",	
-						--M107
-						["bm_w_m107cq"] = "Northwest AM-2",
+						--PD3 Lynx
+						["bm_w_pd3_lynx"] = "HET-5 Red Fox",
+						--AMR2
+						["bm_w_amr2"] = "Northwest AM-2",
 						--M107
 						["bm_w_m107cq"] = "Thanatos 107",
 						--M200
@@ -3591,6 +3593,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m95"] = "Barrett M95",
 					["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 					--Custom Snipers
+						--PD3 Lynx
+						["bm_w_pd3_lynx"] = "SERO Gepard M6",
 						--M107
 						["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 

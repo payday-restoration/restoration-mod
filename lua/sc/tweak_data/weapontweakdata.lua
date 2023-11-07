@@ -19098,3 +19098,112 @@ function WeaponTweakData:_precalculate_values()
 	self.mp5_cloak_npc.AMMO_MAX = self.mp5_cloak_npc.CLIP_AMMO_MAX * self.mp5_cloak_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 end
+
+Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
+	if self.SetupAttachmentPoint then
+		--[
+		self:SetupAttachmentPoint( "par", {
+			name = "a_o", -- Name of Attachment Point ( This can be a preexisting one or a new one. )
+			base_a_obj = "a_o", -- ( Optional ) Attachment point position to base the attachment point off of.
+			--part_attach_data = {
+			--	{"wpn_fps_lmg_par_upper_reciever"}, -- Attachments to attach to. ( Supports multiple if the attachment has multiple variants. )
+			--	"g_cover" -- The object on the attachment to attach to. ( If this object is animated 90% of the time it should move with it. )
+			--},
+			position = Vector3( 0, 6, 0 ), -- Position to offset from the part object. ( Default: Vector3( 0, 0, 0 ) )
+			rotation = RotationCAP( 0, 0, 0 ) -- Rotation to offset from the part object. ( Default: Rotation( 0, 0, 0 ) )
+		})
+		--]]
+		--[
+		self:SetupAttachmentPoint( "m249", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			--part_attach_data = {
+			--	{"wpn_fps_lmg_m249_upper_reciever"},
+			--	"g_dustcover"
+			--},
+			position = Vector3( 0, 3, 0 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+		--]]
+
+		self:SetupAttachmentPoint( "m60", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			--part_attach_data = {
+			--	{"wpn_fps_lmg_m60_upper_reciever"},
+			--	"g_dustcover"
+			--},
+			position = Vector3( 0, 6.1, 0.5 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		--[[
+		self:SetupAttachmentPoint( "mg42", {
+			name = "a_o",
+			base_a_obj = "a_o",
+			--part_attach_data = {
+			--	{"wpn_fps_lmg_mg42_reciever"},
+			--	"g_lid"
+			--},
+			position = Vector3( 0, 0, 0 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+		--]]
+
+		self:SetupAttachmentPoint( "hk21", {
+			name = "a_s_fix",
+			base_a_obj = "a_s",
+			position = Vector3( 0, 1.35, 0 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		self:SetupAttachmentPoint( "ak5", {
+			name = "a_s_fix",
+			base_a_obj = "a_s",
+			position = Vector3( 0, 0, -1.1 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+
+		self:SetupAttachmentPoint( "groza", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			position = Vector3( 0, 0.6, -0.6 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		self:SetupAttachmentPoint( "asval", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			part_attach_data = {
+				{"wpn_fps_ass_asval_m_standard_dummy"},
+				"g_mag"
+			},
+			position = Vector3( 0, -4, 6 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		self:SetupAttachmentPoint( "saiga", {
+			name = "a_ns_fix",
+			base_a_obj = "a_ns",
+			position = Vector3( 0, 0, -0.19 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		if self.bessy then
+			self:SetupAttachmentPoint( "bessy", {
+				name = "a_o",
+				base_a_obj = "a_ns",
+				position = Vector3( 0, -80, 1.8 ),
+				rotation = RotationCAP( 0, 0, 0 )
+			})
+			self:SetupAttachmentPoint( "bessy", {
+				name = "a_fl",
+				base_a_obj = "a_ns",
+				position = Vector3( -2.2, -30, -1.2 ),
+				rotation = RotationCAP( 0, 0, 185 )
+			})
+		end
+
+	end
+end)	

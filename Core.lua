@@ -720,6 +720,9 @@ restoration.wepnames = {
 	"resmod_no_renames"
 }
 
+-- Detect if ResMod is active to disable PDTH Challenges Standalone
+DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",

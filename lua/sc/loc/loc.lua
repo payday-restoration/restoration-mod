@@ -891,12 +891,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["bm_menu_amount_locked"] = "NONE IN STOCK",
 
-		["pdth_hud_challenges"] = "Challenges",
-		["pdth_hud_challenges_hint"] = "View completed and active challenges.",
-		["pdth_hud_active_challenges"] = "Active Challenges",
-		["pdth_hud_active_challenges_hint"] = "Current and active challenges.",
-		["pdth_hud_completed_challenges"] = "Completed Challenges",
-		["pdth_hud_completed_challenges_hint"] = "Completed and rewarded challenges.",
+		["resmod_challenges"] = "Challenges",
+		["resmod_challenges_hint"] = "View completed and active challenges.",
+		["resmod_active_challenges"] = "Active Challenges",
+		["resmod_active_challenges_hint"] = "Current and active challenges.",
+		["resmod_completed_challenges"] = "Completed Challenges",
+		["resmod_completed_challenges_hint"] = "Completed and rewarded challenges.",
 
 		["ch_vs_desc"] = "Using a $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 		["ch_vs_head_shots_desc"] = "Using a $weapon, defeat $count $eneType with Headshots.",

@@ -582,7 +582,6 @@
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
 				<divider name="tod_divider" size="15"/>
-				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>

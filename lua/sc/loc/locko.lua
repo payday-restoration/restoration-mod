@@ -890,12 +890,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["bm_menu_amount_locked"] = "재고 없음",
 
-		["pdth_hud_challenges"] = "챌린지",
-		["pdth_hud_challenges_hint"] = "완료 및 활성화 된 챌린지를 봅니다.",
-		["pdth_hud_active_challenges"] = "활성화되어 있는 챌린지",
-		["pdth_hud_active_challenges_hint"] = "진행률 및 활성화 된 챌린지를 봅니다.",
-		["pdth_hud_completed_challenges"] = "완료된 챌린지",
-		["pdth_hud_completed_challenges_hint"] = "완료 및 달성된 챌린지를 봅니다.",
+		["resmod_challenges"] = "챌린지",
+		["resmod_challenges_hint"] = "완료 및 활성화 된 챌린지를 봅니다.",
+		["resmod_active_challenges"] = "활성화되어 있는 챌린지",
+		["resmod_active_challenges_hint"] = "진행률 및 활성화 된 챌린지를 봅니다.",
+		["resmod_completed_challenges"] = "완료된 챌린지",
+		["resmod_completed_challenges_hint"] = "완료 및 달성된 챌린지를 봅니다.",
 
 		["ch_vs_desc"] = "Using $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 		["ch_vs_head_shots_desc"] = "Using the $weapon, defeat $count $eneType with Headshots.",

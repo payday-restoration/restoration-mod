@@ -929,12 +929,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["bm_menu_amount_locked"] = "库存不足",
 
         -- These won't be used until Chinese font is supported. Will there be? Maybe(laugh).
-        ["pdth_hud_challenges"] = "挑战",
-        ["pdth_hud_challenges_hint"] = "查看已完成与已激活的挑战。",
-        ["pdth_hud_active_challenges"] = "已激活的挑战",
-        ["pdth_hud_active_challenges_hint"] = "当前已激活的挑战。",
-        ["pdth_hud_completed_challenges"] = "已完成的挑战",
-        ["pdth_hud_completed_challenges_hint"] = "已领取奖励的已完成挑战。",
+        ["resmod_challenges"] = "挑战",
+        ["resmod_challenges_hint"] = "查看已完成与已激活的挑战。",
+        ["resmod_active_challenges"] = "已激活的挑战",
+        ["resmod_active_challenges_hint"] = "当前已激活的挑战。",
+        ["resmod_completed_challenges"] = "已完成的挑战",
+        ["resmod_completed_challenges_hint"] = "已领取奖励的已完成挑战。",
 
         -- ["ch_vs_desc"] = "Using $weapon s, defeat $count $eneType. Using melee does not contribute to this challenge.",
         -- ["ch_vs_head_shots_desc"] = "Using the $weapon s, defeat $count $eneType with Headshots.",

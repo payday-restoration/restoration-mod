@@ -3008,7 +3008,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m95"] = "Thanatos 95",
 					--Custom Snipers
 						--Guerilla
-						["bm_w_sgs"] = "Guerilla 542",	
+						["bm_w_sgs"] = "Guerilla 542",
+						--PD3 Lynx
+						["bm_w_pd3_lynx"] = "HET-5 Red Fox",
+						--AMR2
+						["bm_w_amr2"] = "Northwest AM-2",						
 						--M107
 						["bm_w_m107cq"] = "Northwest AM-2",
 						--M107
@@ -3692,6 +3696,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_m95"] = "바렛 M95",
 						 ["bm_wp_m95_b_barrel_long"] = "AW50F 소염기가 장착된 긴 총열",
 					--Custom Snipers
+						--PD3 Lynx
+						["bm_w_pd3_lynx"] = "SERO 게파트 M6",					
 						--M107
 						["bm_m107cq_sc_desc"] = "M95의 발사속도가 마음에 들지 않았다면 M107은 당신이 원하는 것을 미세한 붉은 안개로 전달할 것입니다.\n\n#{skill_color}#캡틴이 아닌 적에게 주는 헤드샷 피해량을 100%만큼 더 가합니다.\n방탄복과 여러 적, 방패, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.##",						 
 

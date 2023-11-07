@@ -4805,11 +4805,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bullseye--
 				["menu_prison_wife_beta_sc"] = "В яблочко",
-				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка на #{skill_color}#$skill_value_b3## секунды.\n$anarc_disable\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка еще на #{skill_color}#$skill_value_p2## секунды.\n$anarc_disable",
+				["menu_prison_wife_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nПопадания в голову восстанавливают #{skill_color}#$skill_value_b1## брони раз в #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка на #{skill_color}#$skill_value_b3## секунды. $anarc_disable\n\n\nПИКОВЫЙ: #{owned}#$pro##\nПопадания в голову восстанавливают еще #{skill_color}#$skill_value_p1## брони каждые #{important_1}#$skill_value_b2## секунд.\n\nУбийства в голову уменьшают перезарядку навыка еще на #{skill_color}#$skill_value_p2## секунды. $anarc_disable\n",
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Железный человек",
-				["menu_juggernaut_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nОткрывает возможность носить #{skill_color}#Улучшенный комбинированный тактический бронежилет.##\n\nПри ударе Щитов оружием ближнего боя, они отбрасываются от вашей силы.\n#{risk}#Не работает против## #{important_1}#Титановых Щитов## #{risk}#и## #{important_1}#Капитана Винтерса.##\n\nПИКОВЫЙ: #{owned}#$pro##\nОгнестрельное оружие получает шанс отбросить Щиты. Шанс отбрасывания зависит от урона оружия.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p1## быстрее.",
+				["menu_juggernaut_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nОткрывает возможность носить #{skill_color}#Улучшенный комбинированный тактический бронежилет.##\n\nПри ударе Щитов оружием ближнего боя, они отбрасываются от вашей силы.\n#{risk}#Не работает против## #{important_1}#Титановых Щитов## #{risk}#и## #{important_1}#Капитана Винтерса.##\n\nПИКОВЫЙ: #{owned}#$pro##\nОгнестрельное оружие получает шанс отбросить Щиты. Шанс отбрасывания зависит от урона оружия.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p1## быстрее. $anarc_disable",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger

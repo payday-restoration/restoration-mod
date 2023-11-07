@@ -3040,6 +3040,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_sgs"] = "Партизан 553",	
 			["bm_w_m107cq"] = "Морс .50",
 			["bm_w_m200"] = "ТФ 141",
+			["bm_w_pd3_lynx"] = "ХЕТ-5 Ред Фокс",
+			["bm_w_amr2"] = "Нортвест АМ-2",
 		["bm_w_m1894"] = "Mare's Leg",
 		["bm_w_moss464spx"] = "Москони ЭсПиЭкс",
 		["bm_w_winchester1894"] = "Репитер 1894",	
@@ -3658,6 +3660,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M95
 					["bm_w_m95"] = "Barrett M95",
 					["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
+					
+					--PD3 Lynx
+					["bm_w_pd3_lynx"] = "SERO Gepard M6",
 
 				--[[SPECIALS]]
 					--GL40		

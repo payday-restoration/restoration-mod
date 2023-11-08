@@ -1176,10 +1176,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_titan_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты, титан щиты и тонкие стены.##",
 		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля с радиусом взрыва #{skill_color}#1.5## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{risk}#урон поделен поровну между пулей и взрывом.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#6## больших дробинок, которые #{skill_color}#увеличивают урон##",
-		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.##",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Магниевые осколки обладают #{skill_color}#40%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#120## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Магниевые осколки обладают #{skill_color}#60%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#180## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Магниевые осколки обладают #{skill_color}#80%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#240## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием и становится нулевым за пределом минимальной дальности.\n\nНаносит огненный урон.##",
+		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием.##",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Магниевые осколки обладают #{skill_color}#40%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#120## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием.\n\nНаносит огненный урон.##",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Магниевые осколки обладают #{skill_color}#60%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#180## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием.\n\nНаносит огненный урон.##",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Магниевые осколки обладают #{skill_color}#80%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#240## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием.\n\nНаносит огненный урон.##",
 		["bm_wp_upg_a_rip"] = "Дробь 'Томбстоун'",
 		["bm_wp_upg_a_rip_auto_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#60## урона ядом в течение #{skill_color}#1## секунды.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
 		["bm_wp_upg_a_rip_semi_desc_sc"] = "#{stats_positive}#Ядовитая## дробь, которая может оглушить врагов. Наносит #{stats_positive}#120## урона ядом в течение #{skill_color}#2## секунд.\n\n#{risk}#Время действия уменьшается с расстоянием.##",
@@ -1544,7 +1544,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Ksp 58	
 		["bm_par_sc_desc"] = "Более тяжелый родственник КСП-90, который обычно ставят на технику. Меньше мобильность, больше пуля.",	
 		--Buzzsaw/Mg42	
-		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Отдача увеличена на 25% при стрельбе от бедра.##",
+		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Лучше стрелять от бедра.##",
 		["bm_wp_mg42_b_vg38"] = "Насадка Бластер-19",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#2 сек.##\nСкорость зарядки: #{skill_color}#9/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#4 сек.##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
@@ -1554,6 +1554,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
+		--Custom MGs
+			--TF2 Minigun
+		["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
+		["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
+		["bm_wp_wpn_fps_lmg_tomislav_body_desc"] = "#{skill_color}#Раскручивается на 20% быстрее.##",
+		["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Попадания по противникам на расстоянии не более 9.75 метров сбивают их с ног.##\n\n#{important_1}#Раскручивается на 30% медленнее.##",
+		["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Раскручивается на 50% медленнее.##",
+		["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% шанс при попадании по врагу поджечь его, нанося## #{heat_warm_color}#60## #{skill_color}#урона в течение 4 секунд.##\n#{risk}#Шанс уменьшается с расстоянием.\nНаносит огненный урон.##",
 
          --Grimm
 		--["bm_w_basset"] = "Гримм 12",	
@@ -1927,8 +1935,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_penalty_info"] = "Скорость передвижения уменьшена на ",
 		["bm_menu_weapon_movement_bonus_info"] = "Скорость передвижения увеличена на ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " ,когда оружие в руках",
-		["bm_menu_sms_info_cont"] = "штраф удваивается во время стрельбы.",
-		["bm_menu_sms_info_cont_2"] = "штраф удваивается во время стрельбы из-за установленных модулей.",
+		["bm_menu_sms_info_cont"] = "штраф увеличивается во время стрельбы.",
+		["bm_menu_sms_info_cont_2"] = "штраф увеличивается во время стрельбы из-за установленных модулей.",
 		["bm_menu_sms_info_2"] = " при стрельбе.",
 		["bm_menu_stat_sms_info_2"] = " во время стрельбы из-за установленных модулей.",
 		["bm_menu_weapon_slot_search_empty"] = "\n##НИЧЕГО НЕ НАЙДЕНО ПО ЗАПРОСУ## ##\"$search\"##",

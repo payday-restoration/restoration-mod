@@ -2160,10 +2160,14 @@ end)
 
 function PlayerStandard:_update_js_t(t, dt)
 	if self._js_t then
-		self._js_t = self._js_t - dt
-		if self._js_t < 0 then
+		if self:_is_cash_inspecting() then
+			self._js_t = self._js_t - dt
+			if self._js_t < 0 then
+				self._js_t = nil
+				self._unit:sound():say("a01x_any", true)
+			end
+		else
 			self._js_t = nil
-			self._unit:sound():say("a01x_any", true)
 		end
 	end
 end
@@ -3803,10 +3807,6 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end
-
-Hooks:PostHook(PlayerStandard, "_interupt_action_cash_inspect", "ResPlayerStandardPostInteruptInspect", function(self, t)
-	self._js_t = nil
-end)
 
 function PlayerStandard:_start_action_unequip_weapon(t, data)
 	local speed_multiplier = self:_get_swap_speed_multiplier()

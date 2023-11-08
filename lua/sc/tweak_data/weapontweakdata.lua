@@ -17339,7 +17339,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.br55.is_bullpup = true
 		self.br55.upgrade_blocks = nil
 		self.br55.CLIP_AMMO_MAX = 36
-		self.br55.AMMO_MAX = 60
+		self.br55.AMMO_MAX = 90
 		self.br55.fire_mode_data.fire_rate = 0.15
 		self.br55.fire_mode_data.burst_cooldown = nil
 		self.br55.FIRE_MODE = "single"		
@@ -17359,10 +17359,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.br55.damage_falloff = {
 			start_dist = 900,
 			end_dist = 7000,
-			min_mult = 0.4
+			min_mult = 0.53333
 		}
 		self.br55.stats = {
-			damage = 60,
+			damage = 45,
 			spread = 91,
 			recoil = 76,
 			spread_moving = 8,
@@ -17375,7 +17375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			value = 9,
 			reload = 20
 		}
-		self.br55.armor_piercing_chance = 0.5
+		self.br55.armor_piercing_chance = 0.25
 		self.br55.stats_modifiers = nil
 		self.br55.panic_suppression_chance = 0.05
 		self.br55.sounds.magazine_empty = "wp_rifle_slide_lock"

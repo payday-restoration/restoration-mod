@@ -17340,7 +17340,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.br55.upgrade_blocks = nil
 		self.br55.CLIP_AMMO_MAX = 36
 		self.br55.AMMO_MAX = 90
-		self.br55.fire_mode_data.fire_rate = 0.15
+		self.br55.fire_mode_data.fire_rate = 0.171428
 		self.br55.fire_mode_data.burst_cooldown = nil
 		self.br55.FIRE_MODE = "single"		
 		self.br55.CAN_TOGGLE_FIREMODE = false
@@ -17349,7 +17349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.br55.BURST_FIRE_DEFAULT = true
 		self.br55.BURST_FIRE = 3
 		self.br55.BURST_DELAY = 0.1
-		self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.25
+		self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.571428
 		self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
 		self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 		self.br55.lock_slide = true

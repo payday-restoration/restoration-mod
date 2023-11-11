@@ -15741,7 +15741,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {7, 7},
+			amount = {6, 6},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15754,8 +15754,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 6,
-					amount_max = 6,
+					amount_min = 5,
+					amount_max = 5,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				}				
@@ -15763,7 +15763,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {9, 9},
+			amount = {8, 8},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15776,8 +15776,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 6,
-					amount_max = 6,
+					amount_min = 5,
+					amount_max = 5,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
@@ -15793,7 +15793,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {13, 13},
+			amount = {10, 10},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15806,8 +15806,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 8,
-					amount_max = 8,
+					amount_min = 5,
+					amount_max = 5,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
@@ -18787,7 +18787,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 
 	--Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = {13, 13},
+			amount = {10, 10},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -18800,8 +18800,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 8,
-					amount_max = 8,
+					amount_min = 5,
+					amount_max = 5,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},

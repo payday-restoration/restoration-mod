@@ -149,5 +149,40 @@ return {
 		values = {
             enemy = swat_overkill
 		}
+	},
+	[103125] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103133] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103134] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103135] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103136] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103137] = {
+		values = {
+            enemy = swat_overkill
+		}
+	},
+	[103138] = {
+		values = {
+            enemy = swat_overkill
+		}
 	}
 }

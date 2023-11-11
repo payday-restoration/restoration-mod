@@ -15719,28 +15719,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {3, 3},
-			spawn = {
-				{
-					unit = "Phalanx_vip_new",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_winters,
-					rank = 1
-				},
-				{
-					unit = "Phalanx_minion_new",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion,
-					rank = 2
-				}					
-			}
-		}	
-	elseif difficulty_index == 6 then
-		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {5, 5},
 			spawn = {
 				{
@@ -15758,10 +15736,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
-				}				
+				}					
 			}
-		}
-	elseif difficulty_index == 7 then
+		}	
+	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {7, 7},
 			spawn = {
@@ -15776,24 +15754,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 6,
+					amount_max = 6,
 					tactics = self._tactics.Cap_winters_minion,
-					rank = 2
-				},
-				{
-					unit = "Phalanx_sniper",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}				
 			}
 		}
-	else
+	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {10, 10},
+			amount = {9, 9},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15814,8 +15784,38 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}				
+			}
+		}
+	else
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = {13, 13},
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 8,
+					amount_max = 8,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
@@ -18787,7 +18787,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 
 	--Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = {10, 10},
+			amount = {13, 13},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -18800,16 +18800,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 6,
-					amount_max = 6,
+					amount_min = 8,
+					amount_max = 8,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 3,
-					amount_max = 3,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}

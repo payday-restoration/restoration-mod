@@ -183,6 +183,7 @@ local debug_spawn_groups = true
 			value_of(v, k, indent, seen)
 		end
 	end
+	
 --Uncommenting this seemed to fix captain spawning issues
 --Better check here what's causing the no captain spawn issue (might be some weight issue maybe?)
 --[[
@@ -366,7 +367,7 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 
 	return group
 end
---]]
+]]--
 -- Make hostage count affect hesitation delay
 local _begin_assault_task_original = GroupAIStateBesiege._begin_assault_task
 function GroupAIStateBesiege:_begin_assault_task(...)

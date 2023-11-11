@@ -24,6 +24,10 @@
 	<!--model				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
 	<!--sequence_manager	path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
 	
+    <!--Security Cameras-->    
+    <sequence_manager   path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+    <!--texture         path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera_df" force="true"-->   
+	
 	<!--ASU Laser-->	
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser" />
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser_flare" />

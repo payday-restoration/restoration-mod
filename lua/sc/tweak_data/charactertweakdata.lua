@@ -2818,11 +2818,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
-	if job == "crojob3" or job == "crojob3_night" then
-		self.phalanx_vip.ends_assault_on_death = false --the Reaper assault is still going after dealing with Winters
-	else
-		self.phalanx_vip.ends_assault_on_death = true
-	end
+	self.phalanx_vip.ends_assault_on_death = true
 	self.phalanx_vip.do_omnia = true
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}

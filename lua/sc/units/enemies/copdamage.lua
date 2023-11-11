@@ -313,7 +313,7 @@ function CopDamage:damage_fire(attack_data)
 	end
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
-	local head = attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
+	local head = attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 
 	if head and weap_unit and alive(weap_unit) and weap_unit:base() and not weap_unit:base().thrower_unit and attack_data.col_ray and attack_data.col_ray.ray and self._unit:base():has_tag("tank") then
 		mvector3.set(mvec_1, attack_data.col_ray.ray)
@@ -1271,7 +1271,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 
 	local from_pos, attack_dir, result = nil
 	local body = self._unit:body(i_body)
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 	local hit_pos = mvector3.copy(body:position())
 	attack_data.pos = hit_pos
 	attack_data.headshot = head
@@ -1427,7 +1427,7 @@ function CopDamage:damage_melee(attack_data)
 	local is_civlian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local is_gangster = CopDamage.is_gangster(self._unit:base()._tweak_table)
 	local is_cop = not is_civlian and not is_gangster
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect or attack_data.damage
@@ -1730,7 +1730,7 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 		attacker_unit = attacker_unit
 	}
 	local body = self._unit:body(i_body)
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 	local damage = damage_percent * self._HEALTH_INIT_PRECENT
 	local damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
 	local result = nil
@@ -1819,6 +1819,7 @@ end
 
 local old_death = CopDamage.die
 function CopDamage:die(attack_data)
+	local job = Global.level_data and Global.level_data.level_id
 	--Increment skirmish kill counter.
 	if managers.skirmish:is_skirmish() then
 		managers.skirmish:do_kill()
@@ -1848,7 +1849,11 @@ function CopDamage:die(attack_data)
 	end
 
 	if self._char_tweak.ends_assault_on_death then
-		managers.groupai:state():force_end_assault_phase()
+		if job == "crojob3" or job == "crojob3_night" then
+			--No assault end, as they're not the assaulting force
+		else
+			managers.groupai:state():force_end_assault_phase()
+		end
 		managers.hud:set_buff_enabled("vip", false)
 	end
 

@@ -130,7 +130,7 @@ end
 		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
 		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
-		vet_cop = "units/pd2_dlc_hvh/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 	elseif difficulty_index == 4 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
@@ -148,7 +148,7 @@ end
 		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
 		medic = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_titan_1/ene_fbi_titan_1"
-		vet_cop = "units/pd2_dlc_hvh/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 	elseif difficulty_index == 5 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
@@ -166,7 +166,7 @@ end
 		spooc = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
 		medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"
 		old_chains = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"
-		vet_cop = "units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"
+		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 	elseif difficulty_index == 6 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"

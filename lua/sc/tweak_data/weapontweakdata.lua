@@ -17333,9 +17333,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.srs99_s7.timers.reload_exit_not_empty = 0.75
 	end
 
-	if self.br55 then --RJC9000's PD3 GM6 Lynx
+	if self.br55 then --RJC9000's Halo BR55
 		self.br55.recategorize = { "dmr_ar" }
-		self.br55.damage_type = "sniper"
+		self.br55.damage_type = "assault_rifle"
 		self.br55.is_bullpup = true
 		self.br55.upgrade_blocks = nil
 		self.br55.CLIP_AMMO_MAX = 36

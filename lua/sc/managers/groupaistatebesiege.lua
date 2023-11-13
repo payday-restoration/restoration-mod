@@ -186,7 +186,7 @@ local debug_spawn_groups = true
 	
 --Uncommenting this seemed to fix captain spawning issues
 --Better check here what's causing the no captain spawn issue (might be some weight issue maybe?)
---[[
+--[ [
 function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, ai_task)
 	local spawn_group_desc = tweak_data.group_ai.enemy_spawn_groups[spawn_group_type]
 	local wanted_nr_units = nil

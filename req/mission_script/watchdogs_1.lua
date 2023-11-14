@@ -21,14 +21,23 @@ local chance_overkill = 65
 		chance_normal = 45
 		chance_hard = 75
 		chance_overkill = 100
+	if difficulty_index == 7 or difficulty_index == 8 then
+		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+	end
+	if difficulty_index <= 5 then
 		fbi_agent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		fbi_agent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 		fbi_agent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-	if difficulty_index >= 5 then
+	else
+		fbi_agent_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+		fbi_agent_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		fbi_agent_3 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+	end	
+	if difficulty_index <= 5 then
+		titan_shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
+	else
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-	if difficulty_index == 8 then
-		fbi_agent_1 = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
 	end
 end
 
@@ -110,6 +119,111 @@ return {
 	[101873] = {
 		values = {
             chance = chance_overkill
+		}
+	},
+	[100360] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100361] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100363] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100367] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100371] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100372] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100373] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100374] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100375] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100376] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100377] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100378] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100379] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100392] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100395] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100404] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100432] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100433] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[100435] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100436] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[100438] = {
+		values = {
+            enemy = titan_swat_1
 		}
 	},
 	[102841] = {

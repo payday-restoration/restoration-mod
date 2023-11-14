@@ -1407,6 +1407,7 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield_break.use_animation_on_fire_damage = nil
 	self.marshal_shield_break.damage.shield_knocked = nil
 	self.marshal_shield_break.modify_health_on_tweak_change = true
+	self.marshal_shield_break.tmp_invulnerable_on_tweak_change = 1.5 --still better than 3 seconds
 	self.marshal_shield_break.no_mutator_weapon_override = true
 	self.marshal_shield_break.unintimidateable = true
 	self.marshal_shield_break.no_asu = true
@@ -17930,6 +17931,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.marshal_shield.overheal_mult = 2
 	self.phalanx_minion.overheal_mult = 2
 	self.phalanx_minion_assault.overheal_mult = 2
+	
+	--Winters' shields are immune to ECM feedback effects :)
+	self.phalanx_minion.ecm_vulnerability = 0
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil

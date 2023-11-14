@@ -183,10 +183,7 @@ local debug_spawn_groups = true
 			value_of(v, k, indent, seen)
 		end
 	end
-	
---Uncommenting this seemed to fix captain spawning issues
---Better check here what's causing the no captain spawn issue (might be some weight issue maybe?)
---[ [
+
 function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, ai_task)
 	local spawn_group_desc = tweak_data.group_ai.enemy_spawn_groups[spawn_group_type]
 	local wanted_nr_units = nil
@@ -245,11 +242,19 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 			total_wgt = total_wgt + spawn_entry.freq
 		end
 	end
+	
+	--Forced groups (mostly captains) spawn instantly.
+	if not spawn_group_desc.force then
+		for _, sp_data in ipairs(spawn_group.spawn_pts) do
+			sp_data.delay_t = self._t + math.rand(0.5)
+		end
+	end
 
 	local spawn_task = {
 		objective = not grp_objective.element and self._create_objective_from_group_objective(grp_objective),
 		units_remaining = {},
 		spawn_group = spawn_group,
+		force = spawn_group_desc.force,
 		spawn_group_type = spawn_group_type,
 		ai_task = ai_task
 	}
@@ -367,7 +372,7 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 
 	return group
 end
-]]--
+
 -- Make hostage count affect hesitation delay
 local _begin_assault_task_original = GroupAIStateBesiege._begin_assault_task
 function GroupAIStateBesiege:_begin_assault_task(...)

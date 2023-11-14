@@ -15720,6 +15720,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {5, 5},
+			force = true,
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15742,6 +15743,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {6, 6},
+			force = true,
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15764,6 +15766,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {8, 8},
+			force = true,
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15794,6 +15797,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
 			amount = {10, 10},
+			force = true,
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -15827,6 +15831,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {1, 1},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -15841,6 +15846,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {3, 3},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -15863,6 +15869,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 7 then	
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {5, 5},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -15893,6 +15900,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	else
 		self.enemy_spawn_groups.Cap_Spring = {
 			amount = {7, 7},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -15926,6 +15934,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {1, 1},
+			force = true,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -15940,6 +15949,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {3, 3},
+			force = true,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -15962,6 +15972,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {5, 5},
+			force = true,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -15992,6 +16003,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
 			amount = {7, 7},
+			force = true,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -16025,6 +16037,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {1, 1},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -16039,6 +16052,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {3, 3},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -16061,6 +16075,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {4, 4},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -16083,6 +16098,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	else
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {5, 5},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Autumn",
@@ -16107,6 +16123,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--Captain Summers
 	self.enemy_spawn_groups.Cap_Summers = {
 		amount = {4, 4},
+		force = true,
 		spawn = {
 			{
 				unit = "Cap_Summers",
@@ -18788,6 +18805,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {10, 10},
+			force = true,
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -18817,6 +18835,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}								
 		self.enemy_spawn_groups.SKM_Cap_Spring_W9 = {
 			amount = {7, 7},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Spring",
@@ -18846,6 +18865,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
 			amount = {7, 7},
+			force = true,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -18875,6 +18895,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 		self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = {
 			amount = {5, 5},
+			force = true,
 			spawn = {
 				{
 					unit = "Cap_Autumn",

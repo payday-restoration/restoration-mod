@@ -1473,7 +1473,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_c96_nozzle"] = "블라스테크 DL-44 머즐",
 		["bm_wp_c96_nozzle_desc_sc"] = "#{skill_color}#머나먼 은하계##에서 왔다고 하는 이 기술은 무기를 #{risk}#플라즈마를 발사하는 노리쇠##로 변환하고 #{risk}#재충전 탄창##을 사용합니다.\n\n재충전 지연: #{skill_color}#2초##\n재충전 속도: #{skill_color}#3초## #{important_1}#(과열시 반감됨)##\n과열 패널티: #{important_1}#2초##",
 		--Sub2000		
-		["bm_sub2000_sc_desc"] = "제조 품질이 의심스러운 권총형 카빈. 작은 권총 탄환은 더 긴 총열에서 나올 때 훨씬 더 강하게 명중하고 접이식 기능은 적절한 은폐성을 가지게 합니다.",	
+		["bm_sub2000_sc_desc"] = "제조 품질이 의심스러운 접이식 권총형 카빈. 작은 권총 탄환은 더 긴 총열에서 나올 때 훨씬 더 강하게 명중하고 접이식 기능 덕분에 제대로 된 은폐성을 가졌습니다.\n\n그냥 오믈렛처럼 접히지만 않으면 됩니다.",	
 		--Deagle
 		["bm_deagle_sc_desc"] = "이 반자동 마법 지팡이에 대해 더 할 말이 있나요? 그냥 나쁜 자식들에게 손을 흔들고 \"헤디쿠스 익스플로디쿠스!\"라고 외치세요.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
 		["bm_x_deagle_sc_desc"] = "실제로 전투에 참여하려면 진짜 재정신을 차려야하는 쌍둥이 손목 파과자들입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 적을 관통할 수 있습니다.##",	
@@ -3158,7 +3158,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_sparrow_g_cowboy_desc"] = "그 무게을 짊어지고 살아라.",
 						--SUB2000
 						["bm_w_sub2000"] = "켈텍 SUB-2000",
-						["bm_sub2000_sc_desc"] = "지금까지 만들어진 총 중 하나입니다. 작은 권총 총알은 더 긴 총열에서 나올 때 훨씬 더 세게 맞추고 접을 수 있는 기능 덕분에 적절한 은폐가 가능합니다.",
+						["bm_sub2000_sc_desc"] = "지금까지 만들어진 총 중 하나입니다. 작은 권총 총알은 더 긴 총열에서 나올 때 훨씬 강하게 명중하고 접이식 기능 덕분에 제대로 된 은폐성이 가능합니다.",
 						["bm_wp_sub2000_fg_gen2"] = "Gen2 총열덮개",
 						["bm_wp_sub2000_fg_railed"] = "레드 라이온 R6 총열덮개",
 						["bm_wp_sub2000_fg_suppressed"] = "소음기가 장착된 쿼드 레일 총열덮개",	
@@ -4700,7 +4700,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Joker
 			["menu_stockholm_syndrome_beta_sc"] = "조커",
-			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: #{owned}#$basic##\n하이스트가 라우드로 진행될 때 항복한 비특수 적 #{skill_color}#1명##을 당신의 편에서 싸우게 만들 수 있습니다. 전환된 적은 스킬의 목적과 구금된 플레이어를 거래하기 위해 인질로 간주됩니다.\n\n전환된 적은 받는 피해가 #{skill_color}#60%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신은 동시에 #{skill_color}#2##명의 비특수 적을 전환할 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 #{skill_color}#20%##만큼 감소합니다.",
+			["menu_stockholm_syndrome_beta_desc_sc"] = "베이직: #{owned}#$basic##\n하이스트가 라우드로 진행될 때 항복한 비특수 적 #{skill_color}#1##명을 당신의 편에서 싸우게 만들 수 있습니다. 전환된 적은 스킬의 목적과 구금된 플레이어를 거래하기 위해 인질로 간주됩니다.\n\n전환된 적은 받는 피해가 #{skill_color}#60%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n당신은 동시에 #{skill_color}#2##명의 비특수 적을 전환할 수 있습니다.\n\n전환된 적은 추가로 받는 피해가 #{skill_color}#20%##만큼 감소합니다.",
 
 			--Partners in Crime
 			["menu_control_freak_beta_sc"] = "공범",
@@ -4927,7 +4927,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Spotter--
 			["menu_ecm_2x_beta_sc"] = "스포터",
-			["menu_ecm_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n마킹된 적이 #{skill_color}#20##미터 이상 있을 때 피해를 추가로 #{skill_color}#25%##만큼 입습니다.\n\n에이스: #{owned}#$pro##\n미킹된 적은 모든 사거리에서 모든 공격 속성으로부터 추가로 피해를 #{skill_color}#35%##만큼 입습니다.",
+			["menu_ecm_2x_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신이 마킹한 적은 #{risk}#20##미터 이상 있을 때 피해를 추가로 #{skill_color}#25%##만큼 받습니다.\n\n에이스: #{owned}#$pro##\n당신이 마킹한 적들은 #{skill_color}#모든 사거리에서## 추가로 #{skill_color}#35%##만큼 피해를 더 받습니다.",
 			
 			--[[   ARTFUL DODGER SUBTREE  ]]--
 			--Duck and Cover--
@@ -4936,7 +4936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Evasion--
 			["menu_awareness_beta_sc"] = "위기모면",
-			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 추가로 ##5%##만큼 증가합니다.\n\n낙하 피해가 ##75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n달리면서 재장전할 수 있습니다.\n\n#{item_stage_2}#전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.##",			
+			["menu_awareness_beta_desc_sc"] = "베이직: #{owned}#$basic##\n이동 속도가 추가로 #{skill_color}#5%##만큼 증가합니다.\n\n낙하 피해가 #{skill_color}#75%##만큼 감소합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#달리면서 재장전할 수 있습니다.##\n\n#{item_stage_2}#전력 질주 할때도 재장전을 취소하는 설정은 레스토레이션 모드의 추가 옵션에서 찾을 수 있습니다.##",			
 			
 			--Deep Pockets--
 			["menu_thick_skin_beta_sc"] = "깊은 주머니",
@@ -4944,14 +4944,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Moving Target--
 			["menu_dire_need_beta_sc"] = "움직이는 표적",
-			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{skill_color}#30##에서 #{skill_color}#2##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n#{risk}#참고: 이동 속도는 현재 자세의 최대 이동 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n착용감이 #{skill_color}#30##에서 ##2##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##만큼 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
+			["menu_dire_need_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{risk}#30##에서 #{risk}#2##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##씩 증가합니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#50%## 빨라집니다.\n\n#{risk}#참고: 이동 속도는 현재 자세의 최대 이동 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n착용감이 #{risk}#30##에서 #{risk}#1##씩 낮아질 수록 최대 #{skill_color}#15%##까지 이동 속도가 #{skill_color}#1.5%##씩 증가합니다.\n\n전력 질주하는 동안 회피 미터는 1초마다 회피의 #{skill_color}#15%##만큼, 집라인을 타는 동안 1초마다 회피의 #{skill_color}#30%##만큼 채워집니다.",
 	
 			--Shockproof
 			["menu_insulation_beta_sc"] = "절연갑옷",
-			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n감전 당해도 더 이상 총을 강제로 쏘지 않으며 #{skill_color}#15%## 확률로 역감전을 일으켜 테이저를 밀쳐냅니다.\n\n#{risk}#참고: 감전으로 인한 명중률과 반동 페널티는 여전히 적용됩니다.##\n\n적의 총격으로 인한 밀쳐짐이 #{skill_color}#30%## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저에게 감전 당한 직후 #{skill_color}#2##초 이내에 상호작용 키를 누르면 테이저를 역감전시켜 테이저의 최대 체력의 #{skill_color}#50##만큼 피해를 가합니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
+			["menu_insulation_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#감전 당해도 더 이상 총을 강제로 쏘지 않으며## #{skill_color}#15%## 확률로 역감전을 일으켜 테이저를 밀쳐냅니다.\n\n#{risk}#참고: 감전으로 인한 명중률과 반동 페널티는 여전히 적용됩니다.##\n\n적의 총격으로 인한 밀쳐짐이 #{skill_color}#30%## 감소합니다.\n\n에이스: #{owned}#$pro##\n테이저에게 감전 당한 직후 #{skill_color}#2##초 이내에 상호작용 키를 누르면 테이저를 #{skill_color}#역감전시켜## 테이저의 최대 체력의 #{skill_color}#50##만큼 피해를 가합니다.\n\n타이탄 테이저, 캡틴 원터스 및 엔지니어 일렉트라 총알 공격의 둔화 효과 및 지속 시간이 #{skill_color}#50%##만큼 감소합니다.",
 			
 			--Sneaky Bastard--
-			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{skill_color}#30##에서 #{skill_color}#2##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{skill_color}#30##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#1%##만큼의 회피 포인트를 최대 #{skill_color}#10%##만큼까지 얻습니다.\n\n방탄복이 부서진 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 부서질 때마다 한 번만 발생합니다.",			
+			["menu_jail_diet_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{risk}#30##에서 #{risk}#2##씩 낮아질 수록 최대 #{skill_color}#10%##까지 회피 포인트를 #{skill_color}#1%##씩 얻습니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{risk}#30##에서 #{risk}#1##씩 낮아질 수록 최대 #{skill_color}#10%##까지 회피 포인트를 #{skill_color}#1%##씩 얻습니다.\n\n방탄복이 파괴된 동안 공격을 회피하면 최대 체력의 #{skill_color}#2%##만큼 회복됩니다. 이 효과는 방탄복이 파괴될 때마다 한 번만 발생합니다.",			
 
 			--[[   SILENT KILLER SUBTREE   ]]--
 			--Second Wind
@@ -4964,7 +4964,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 및 엘리트 적을 비폭발 원거리 무기로 죽이면 추가 탄약 상자를 떨굽니다.",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 및 엘리트 적을 비폭발 원거리 무기로 죽이면 #{skill_color}#추가 탄약 상자를 떨굽니다.##",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
@@ -4976,7 +4976,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{skill_color}#30##에서 #{skill_color}#2##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{skill_color}#30##에서 #{skill_color}#1##씩 낮아질 수록 #{skill_color}#3%##의 치명타 확률을 최대 #{skill_color}#30%##까지 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{risk}#30##에서 #{risk}#2##씩 낮아질 수록 최대 #{skill_color}#30%##까지 치명타 확률을 #{skill_color}#3%##씩 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{risk}#30##에서 #{risk}#1##씩 낮아질 수록 최대 #{skill_color}#30%##까지 치명타 확률을 #{skill_color}#3%##씩 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
 			--[[   GUNSLINGER SUBTREE   ]]--
@@ -4992,9 +4992,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_gun_fighter_sc"] = "총잡이",
 			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 장전 속도가 #{skill_color}#5%##만큼 빨라집니다.\n\n#{skill_color}#권총##의 명중률에 대한 이동 패널티가 #{skill_color}#40%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 장전 속도가 추가로 #{skill_color}#25%##만큼 빨라집니다.",
 
-			--아킴보--
-			["menu_아킴보_skill_sc"] = "아킴보",
-			["menu_아킴보_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 명중률이 #{skill_color}#10%##만큼 증가합니다.",
+			--Akimbo--
+			["menu_akimbo_skill_sc"] = "아킴보",
+			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 명중률이 #{skill_color}#10%##만큼 증가합니다.",
 
 			--Desperado--
 			["menu_expert_handling_sc"] = "데스페라도",

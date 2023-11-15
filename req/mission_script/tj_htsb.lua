@@ -9,8 +9,8 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 600
 	end
     
-    if Global.game_settings and Global.game_settings.one_down and difficulty_index >= 5 then	
-        vet_on_break = "units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"
+    if Global.game_settings and Global.game_settings.one_down and difficulty_index == 8 then	
+        vet_on_break = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
     end
 return {
 	--Pro Job PONR 

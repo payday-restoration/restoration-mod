@@ -20300,7 +20300,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 
 	local captain_cooldown = 2700
-	local captain_min_diff = 0.5
+	local captain_min_diff = 0.3
 	local dozer_cooldown = 90
 
 	if Global.game_settings and Global.game_settings.one_down then

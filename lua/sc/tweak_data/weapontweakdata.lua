@@ -4366,11 +4366,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].recategorize = { "antim_snp" }
 		self[ wep_id ].damage_type = "anti_materiel"
 	end
-	
-	recat = { "mp7", "p90", "x_p90", "lemming" }
-	for i, wep_id in ipairs(recat) do
-		self[ wep_id ].damage_type = "pdw"
-	end
 
 	recat = { "flamethrower_mk2", "system", "kacchainsaw_flamethrower" }
 	for i, wep_id in ipairs(recat) do
@@ -16611,7 +16606,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			"pdw"
 		}	
 		self.alpha57_prim.recategorize = { "light_smg" }		
-		self.alpha57_prim.damage_type = "pdw"
+		self.alpha57_prim.damage_type = "machine_gun"
 		self.alpha57_prim.has_description = true
 		self.alpha57_prim.kick = self.stat_info.kick_tables.even_recoil
 		self.alpha57_prim.nato = true
@@ -18805,7 +18800,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.1,
 		pistol = 1.25, --Compensate for low range.
-		smg = 1.1,
+		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.82,
 			lmg = 0.61,

@@ -191,6 +191,23 @@ local armour = {
 	[Idstring("body_ammo"):key()] = true,
 }
 
+local limbs = {
+	[Idstring("rag_LeftUpLeg"):key()] = true,
+	[Idstring("rag_LeftLeg"):key()] = true,
+	[Idstring("rag_LeftFoot"):key()] = true,
+	[Idstring("rag_RightUpLeg"):key()] = true,
+	[Idstring("rag_RightLeg"):key()] = true,
+	[Idstring("rag_RightFoot"):key()] = true
+}
+
+local damage_type_mult = {
+	machine_gun = 0.6,
+	pistol = 0.7,
+	assault_rifle = 0.7,
+	heavy_pistol = 0.8,
+	sniper = 0.8
+}
+
 local head_hitboxes = {
     [Idstring("glass_shield"):key()] = true,
     [Idstring("glass_swat"):key()] = true,
@@ -826,6 +843,7 @@ function CopDamage:damage_bullet(attack_data)
 	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	or self._unit:base()._tweak_table == "headless_hatman" or self._unit:base()._tweak_table == "tank_titan_assault"	
 	
 	local hit_body = attack_data.col_ray.body
+
 	if armour[hit_body:name():key()] and not ignore then -- dozer armour negates damage
 		local pierce_armor = nil
 		
@@ -936,6 +954,10 @@ function CopDamage:damage_bullet(attack_data)
 			end		
 		end		
 	end	
+
+	if damage_type_mult[damage_type] and limbs[hit_body:name():key()] then
+		damage = damage * damage_type_mult[damage_type]
+	end
 
 	if not self._damage_reduction_multiplier and head then
 		local weapon_hs_mult = attack_data.weapon_unit:base()._hs_mult or 1

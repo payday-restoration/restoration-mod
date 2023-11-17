@@ -4387,6 +4387,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_fatroll"] = "Grace Period (in s)",
 		["mutator_fatroll_desc"] = "Custom Damage Grace value (in s).",
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to different value, meaning that there is your specific delay on instances of damage. Minimum is 0 s, maximum is 0.25 s",
+		
+		["mutator_overheal"] = "Overheal Expert",
+		["menu_mutator_overheal_mult_override"] = "Overheal Multiplier",
+		["menu_mutator_overheal_mult_override_toggle"] = "Allow overheal captains",
+		["mutator_overheal_desc"] = "LPF can nowoverheal most of the police enforcement units.",
+		["mutator_overheal_longdesc"] = "LPF can now overheal all police enforcement units excluding cloakers. \n\nMutator can't override overheal multiplier for units whose value is higher than mutator one.",
+		
+		["mutator_asu_buff"] = "Enhanced Power",
+		["menu_mutator_captain_asu_buff_toggle"] = "Allow buff captains",
+		["mutator_asu_buff_desc"] = "ASU can now buff special units and weapons damage at maximum strength.",
+		["mutator_asu_buff_longdesc"] = "ASU can now buff special units (except cloakers) and buff weapons damage like on Death Sentence.",
+		
+		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
+		["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
+		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
+		
+		--[[
+		["mutator_captain_replace"] = "Captain Switcher",
+		["menu_mutator_captain_replace"] = "Captain",
+		["menu_mutator_captain_replace_winter"] = "Winters",
+		["menu_mutator_captain_replace_autumn"] = "Autumn",
+		["menu_mutator_captain_replace_spring"] = "Spring",
+		["menu_mutator_captain_replace_summer"] = "Summers",
+		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
+		--]]
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",

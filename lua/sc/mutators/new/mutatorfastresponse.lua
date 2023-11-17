@@ -1,4 +1,3 @@
---Faster sniper aiming--
 MutatorFastResponse = MutatorFastResponse or class(BaseMutator)
 MutatorFastResponse._type = "MutatorFastResponse"
 MutatorFastResponse.name_id = "mutator_fastresponse"

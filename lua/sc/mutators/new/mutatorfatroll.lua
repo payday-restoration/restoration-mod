@@ -1,6 +1,4 @@
 --Customazible damage grace--
-
---Why--
 MutatorFatRoll = MutatorFatRoll or class(BaseMutator)
 MutatorFatRoll._type = "MutatorFatRoll"
 MutatorFatRoll.name_id = "mutator_fatroll"
@@ -31,7 +29,7 @@ function MutatorFatRoll:name()
 	local name = MutatorFatRoll.super.name(self)
 
 	if self:_mutate_name("fatroll") then
-		return string.format("%s - %.0f%%", name, tonumber(self:value("fatroll"))*100)
+		return string.format("%s - %.3f", name, tonumber(self:value("fatroll")))
 	else
 		return name
 	end

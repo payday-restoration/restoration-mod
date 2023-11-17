@@ -14,7 +14,7 @@ MutatorCloakerCuff.icon_coords = {
 	6,
 	4
 }
---You either a smart fella or fart smella
+
 function MutatorCloakerCuff:setup(data)
 	tweak_data.character.spooc.cuff_on_melee = true
 end

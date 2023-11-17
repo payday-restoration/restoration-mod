@@ -418,6 +418,7 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 			flashbang_unit = "units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang"
 		end
 
+		flashbang_unit = managers.mutators:modify_value("GroupAIStateBase:SpawnSpecialFlashbang", flashbang_unit)
 		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
 		flash_grenade:base():activate(shoot_from_pos, data.duration)

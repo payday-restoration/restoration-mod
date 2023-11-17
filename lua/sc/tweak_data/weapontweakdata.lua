@@ -16600,6 +16600,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m7caseless.panic_suppression_chance = 0.05
 	end
 
+	if self.x_m7caseless then
+		self.x_m7caseless.recategorize = { "light_smg" }		
+		self.x_m7caseless.damage_type = "machine_gun"
+		self.x_m7caseless.has_description = true
+		self.x_m7caseless.kick = self.stat_info.kick_tables.vertical_kick
+		self.x_m7caseless.FIRE_MODE = "auto"
+		self.x_m7caseless.CAN_TOGGLE_FIREMODE = false
+		self.x_m7caseless.BURST_FIRE = false
+		self.x_m7caseless.fire_mode_data.fire_rate = 0.06666666
+		self.x_m7caseless.CLIP_AMMO_MAX = 120
+		self.x_m7caseless.AMMO_MAX = 180
+		self.x_m7caseless.supported = true
+		self.x_m7caseless.ads_speed = 0.200
+		self.x_m7caseless.damage_falloff = {
+			start_dist = 900,
+			end_dist = 4700,
+			min_mult = 0.25
+		}
+		self.x_m7caseless.stats = {
+			damage = 20,
+			spread = 51,
+			recoil = 71,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 29,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.x_m7caseless.stats_modifiers = nil
+		self.x_m7caseless.weapon_hold = "x_akmsu"
+		self.x_m7caseless.animations.reload_name_id = "x_p90"
+		self.x_m7caseless.reload_speed_multiplier = 0.65
+		self.x_m7caseless.timers.reload_not_empty = 2.45
+		self.x_m7caseless.timers.reload_exit_not_empty = 1.1
+		self.x_m7caseless.timers.reload_empty = 3
+		self.x_m7caseless.timers.reload_exit_empty = 0.9
+		self.x_m7caseless.sounds.use_fix = nil
+		self.x_m7caseless.sounds.stop_fire = "judge_x_fire"
+		self.x_m7caseless.panic_suppression_chance = 0.05
+	end
+
+	if self.m7caseless_prim then
+		self.m7caseless_prim.use_data.selection_index = 5
+	end
+
 	if self.alpha57_prim then --RJC9000 and PlayBONK's MW2022 AR57
 		self.alpha57_prim.categories = {
 			"smg",

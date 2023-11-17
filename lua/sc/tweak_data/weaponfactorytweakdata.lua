@@ -22873,6 +22873,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_m7caseless_scope_ach.pcs = nil
 
 			table.insert(self.wpn_fps_smg_m7caseless.uses_parts, "wpn_fps_smg_m7caseless_scope_reticle")
+
+			self.wpn_fps_smg_x_m7caseless.override = self.wpn_fps_smg_x_m7caseless.override or {}
+			self.wpn_fps_smg_x_m7caseless.override.wpn_fps_smg_m7caseless_scope = {
+				desc_id = "empty",
+				stats = { value = 0 }
+			}
+
 		end
 
 		if self.parts.wpn_fps_snp_pd3_lynx_bolt then

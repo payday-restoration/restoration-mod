@@ -5,6 +5,7 @@ CopMovement._NET_EVENTS = {
 
 local action_variants = CopMovement._action_variants
 local security_variant = action_variants.security
+local job = Global.level_data and Global.level_data.level_id
 
 action_variants.dave = security_variant
 action_variants.cop_civ = security_variant
@@ -103,6 +104,15 @@ function CopMovement:post_init()
 	self._unit:kill_mover()
 	self._unit:set_driving("script")
 
+	--[[
+	if job == "short1_stage1" or job == "short1_stage2" then 
+		self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
+	else
+		self._unit:unit_data().has_alarm_pager = false
+	end
+	self._unit:unit_data().has_called_police = false
+	]]--
+	
 	self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
 	local event_list = {
 		"bleedout",
@@ -1359,19 +1369,18 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 	end
 end
 
-
 function CopMovement:anim_clbk_police_called(unit)
 	local group_state = managers.groupai:state()
-	local job = Global.level_data and Global.level_data.level_id
-
 
 	if Network:is_server() then
 		if not group_state:is_ecm_jammer_active("call") then
 			local cop_type = tostring(group_state.blame_triggers[self._ext_base._tweak_table])
 
-
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "called")
 
+			--Pager call done
+			--self._unit:unit_data().has_alarm_pager = false
+			--self._unit:unit_data().has_called_police = true
 
 			--Instant failure on the relevant tutorial heists
 			if job == "short1_stage1" or job == "short1_stage2" then 
@@ -1384,9 +1393,10 @@ function CopMovement:anim_clbk_police_called(unit)
 					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
 					group_state._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 1
 					group_state:_delay_whisper_suspicion_mul_decay()		
-					
+										
 					--Maybe one day
-					--self:set_cool(true, nil, false)
+					--self._unit:brain():terminate_all_suspicion()
+					--self:set_cool(true, nil, false)			
 				else
 				--Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason
 					group_state:on_police_called(self:coolness_giveaway())

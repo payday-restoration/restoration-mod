@@ -842,7 +842,7 @@ function CopDamage:damage_bullet(attack_data)
 	
 	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	or self._unit:base()._tweak_table == "headless_hatman" or self._unit:base()._tweak_table == "tank_titan_assault"	
 	
-	local hit_body = attack_data.col_ray.body
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 
 	if armour[hit_body:name():key()] and not ignore then -- dozer armour negates damage
 		local pierce_armor = nil
@@ -1293,8 +1293,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 
 	local from_pos, attack_dir, result = nil
 	local body = self._unit:body(i_body)
-	local hit_body = attack_data.col_ray.body
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
 	local hit_pos = mvector3.copy(body:position())
 	attack_data.pos = hit_pos
 	attack_data.headshot = head
@@ -1450,7 +1449,7 @@ function CopDamage:damage_melee(attack_data)
 	local is_civlian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local is_gangster = CopDamage.is_gangster(self._unit:base()._tweak_table)
 	local is_cop = not is_civlian and not is_gangster
-	local hit_body = attack_data.col_ray.body
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
@@ -1754,8 +1753,7 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 		attacker_unit = attacker_unit
 	}
 	local body = self._unit:body(i_body)
-	local hit_body = attack_data.col_ray.body
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
+	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
 	local damage = damage_percent * self._HEALTH_INIT_PRECENT
 	local damage_effect = damage_effect_percent * self._HEALTH_INIT_PRECENT
 	local result = nil

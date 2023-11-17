@@ -10,7 +10,7 @@ MutatorOverheal.reductions = {
 	exp = 0
 }
 MutatorOverheal.disables_achievements = false
-MutatorOverheal.categories = {"enemies"}
+MutatorOverheal.categories = {"gameplay","enemies"}
 MutatorOverheal.icon_coords = {
 	8,
 	4
@@ -50,14 +50,12 @@ function MutatorOverheal:setup(data)
 		end
 	end
 	
-	tweak_data.medic.lpf_radius = tweak_data.medic.lpf_radius * 2
-	
 	char_tweak.security.overheal_mult = new_overheal_mult
 	char_tweak.gensec.overheal_mult = new_overheal_mult
 	char_tweak.fbi_vet.overheal_mult = new_overheal_mult
 	char_tweak.fbi_vet_boss.overheal_mult = new_overheal_mult
 	char_tweak.meme_man.overheal_mult = new_overheal_mult
-	char_tweak.meme_man_shield = new_overheal_mult
+	char_tweak.meme_man_shield.overheal_mult = new_overheal_mult
 	char_tweak.vetlod.overheal_mult = new_overheal_mult
 	char_tweak.heavy_swat.overheal_mult = new_overheal_mult
 	char_tweak.fbi_swat_vet.overheal_mult = new_overheal_mult

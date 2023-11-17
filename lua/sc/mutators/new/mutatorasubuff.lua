@@ -10,7 +10,7 @@ MutatorASUBuff.reductions = {
 	exp = 0
 }
 MutatorASUBuff.disables_achievements = false
-MutatorASUBuff.categories = {"enemies"}
+MutatorASUBuff.categories = {"gameplay","enemies"}
 MutatorASUBuff.icon_coords = {
 	7,
 	4

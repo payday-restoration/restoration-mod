@@ -12639,7 +12639,7 @@ end
 			}
 		},
 		access = access_type_all,
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	self.unit_categories.piggydozer = {
@@ -12670,7 +12670,7 @@ end
 			}
 		},
 		access = access_type_all,
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 end

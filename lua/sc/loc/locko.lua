@@ -4488,6 +4488,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll_desc"] = "피해 유예 시간 값(초 단위)을 설정합니다.",
 		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원의 피해 유예를 다른 값으로 설정합니다. 피해 인스턴스가 특정 지연이 있음을 의미합니다. 최소값은 0초이며, 최대값은 0.25초입니다.",
 		
+		["mutator_overheal"] = "과치료 전문의",
+		["menu_mutator_overheal_mult_override"] = "과치료 배율",
+		["menu_mutator_overheal_mult_override_toggle"] = "캡틴 과치료 허용",
+		["mutator_overheal_desc"] = "LPF는 이제 대부분의 경찰 유닛을 과치료할 수 있습니다.",
+		["mutator_overheal_longdesc"] = "LPF는 이제 클로커를 제외한 모든 경찰 집행 유닛을 과잉 치료할 수 있습니다. \n\n뮤테이터는 값이 뮤테이터보다 높은 유닛의 과치료 배율을 재정의할 수 없습니다.",
+		
+		["mutator_asu_buff"] = "향상된 화력",
+		["menu_mutator_captain_asu_buff_toggle"] = "캡틴 버프 허용",
+		["mutator_asu_buff_desc"] = "ASU는 이제 특수 유닛를 버프시킬 수 있고 무기 대미지를 최대 화력으로 강화할 수 있습니다.",
+		["mutator_asu_buff_longdesc"] = "ASU는 이제 특수 유닛(클로커 제외)을 버프시킬 수 있고 데스 센텐스 난이도처럼 무기 대미지를 강화할 수 있습니다.",
+		
+		["mutator_bo_flashbang"] = "당신의 의견은 나의 선택",
+		["menu_mutator_flashbang_cooking_time"] = "쿠킹 시간 (초 단위)",
+		["mutator_bo_flashbang_desc"] = "섬광탄은 이제 파괴할 수 없습니다.",
+		["mutator_bo_flashbang_longdesc"] = "섬광탄은 이제 파괴할 수 없습니다.",
+		
+		--[[
+		["mutator_captain_replace"] = "캡틴 스위처",
+		["menu_mutator_captain_replace"] = "캡틴",
+		["menu_mutator_captain_replace_winter"] = "윈터스",
+		["menu_mutator_captain_replace_autumn"] = "어텀",
+		["menu_mutator_captain_replace_spring"] = "스프링",
+		["menu_mutator_captain_replace_summer"] = "서머스",
+		["menu_mutator_captain_replace_hvh"] = "지옥 타이탄 도저",
+		--]]		
+		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",
 		["menu_mutator_enemy_spawn"] = "적 스폰량 배율",

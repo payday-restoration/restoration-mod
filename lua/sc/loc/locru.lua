@@ -4516,6 +4516,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll"] = "Лютый троллинг",
 		["mutator_fatroll_desc"] = "Грейс период (в с)",
 		["mutator_fatroll_longdesc"] = "Задержка на получение урона для игроков и ботов теперь зависит от этого значения. Минимум - 0 с, максимум - 0.25 с.",
+		
+		["mutator_overheal"] = "Эксперт сверхлечения",
+		["menu_mutator_overheal_mult_override"] = "Множитель сверхлечения",
+		["menu_mutator_overheal_mult_override_toggle"] = "Включить сверхлечение для капитанов",
+		["mutator_overheal_desc"] = "LPF теперь может давать дополнительное здоровье почти всем противникам.",
+		["mutator_overheal_longdesc"] = "LPF теперь может давать дополнительное здоровье всем противникам, кроме клокеров. \n\nМутатор не может перезаписать значение множителя для тех противников, множитель у которых выше, чем заданное Вами значение.",
+		
+		["mutator_asu_buff"] = "Мощь всех стволов",
+		["menu_mutator_captain_asu_buff_toggle"] = "Включить возмоность усилить урон капитанам",
+		["mutator_asu_buff_desc"] = "ASU теперь может усиливать оружия особых противников и он всегда усиливает урон оружий по-максимуму.",
+		["mutator_asu_buff_longdesc"] = "ASU теперь может усиливать оружия особых противников (кроме клокеров) и усиливает урон оружий как на сложность Смертный Приговор.",
+		
+		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
+		["menu_mutator_flashbang_cooking_time"] = "Время до срабатывания (в с)",
+		["mutator_bo_flashbang_desc"] = "Светошумовые гранаты теперь нельзя сломать.",
+		["mutator_bo_flashbang_longdesc"] = "Светошумовые гранаты теперь нельзя сломать.",
 
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

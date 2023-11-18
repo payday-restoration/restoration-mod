@@ -113,10 +113,6 @@ function MutatorOverheal:name()
 	if self:_mutate_name("overheal_mult_override") then
 		return string.format("%s - %.0f%%", name, tonumber(self:value("overheal_mult_override"))*100)
 	end
-	
-	if self:_mutate_name("captain_overheal_mult_override") then
-		name = string.format("%s - %s", name, managers.localization:text("menu_mutator_overheal_mult_override_toggle_1"))
-	end
 		
 	return name
 end

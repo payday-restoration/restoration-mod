@@ -4391,15 +4391,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_overheal"] = "Overheal Expert",
 		["menu_mutator_overheal_mult_override"] = "Overheal Multiplier",
 		["menu_mutator_overheal_mult_override_toggle"] = "Allow overheal captains",
-		["mutator_overheal_desc"] = "LPF can nowoverheal most of the police enforcement units.",
+		["mutator_overheal_desc"] = "LPF can now overheal most of the police enforcement units.",
 		["mutator_overheal_longdesc"] = "LPF can now overheal all police enforcement units excluding cloakers. \n\nMutator can't override overheal multiplier for units whose value is higher than mutator one.",
 		
 		["mutator_asu_buff"] = "Enhanced Power",
 		["menu_mutator_captain_asu_buff_toggle"] = "Allow buff captains",
 		["mutator_asu_buff_desc"] = "ASU can now buff special units and weapons damage at maximum strength.",
-		["mutator_asu_buff_longdesc"] = "ASU can now buff special units (except cloakers) and buff weapons damage like on Death Sentence.",
+		["mutator_asu_buff_longdesc"] = "ASU can now buff special units (except cloakers) and buff weapons damage like on Death Sentence difficulty.",
 		
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
+		["menu_mutator_flashbang_cooking_time"] = "Cooking time (in s)",
 		["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
 		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
 		

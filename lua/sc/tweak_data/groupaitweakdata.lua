@@ -8507,11 +8507,11 @@ end
 		},
 		access = access_type_all,
 		special_type = "shield",
-		is_captain = true
+		ignore_spawn_cap = true
 	}	
 	--Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
-	self.unit_categories.Phalanx_sniper.is_captain = true
+	self.unit_categories.Phalanx_sniper.ignore_spawn_cap = true
 
 	
 	--Captain Autumn
@@ -8576,7 +8576,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	--Titan Cloakers that spawn with Autumn on Death Sentence, ignores spawncaps 
 	self.unit_categories.Titan_Spooc = {
@@ -8608,7 +8608,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}		
 	--Captain Summers
 	self.unit_categories.Cap_Summers = {
@@ -8795,7 +8795,7 @@ end
 			},
 			access = access_type_all,
 			special_type = "tank",
-			is_captain = true
+			ignore_spawn_cap = true
 		}
 	--OMNIA Saiga Dozers that spawn with Spring (Ignores spawncaps)
 		self.unit_categories.OMNIA_Tank = {
@@ -8827,7 +8827,7 @@ end
 			},
 			access = access_type_all,
 			special_type = "tank",
-			is_captain = true
+			ignore_spawn_cap = true
 		}	
 	--OMNIA Tasers that spawn with Spring on Death Wish	(Also ignores spawncaps)
 	self.unit_categories.OMNIA_Taser = {
@@ -8859,7 +8859,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "taser",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	--Titan Tasers that specifically spawn with Spring replacing OMNIA Tasers on Death Sentence (Also ignores spawncaps)
 	self.unit_categories.Taser_Titan = {
@@ -8891,7 +8891,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "taser",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--Headless Titandozer Boss
@@ -8956,7 +8956,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "tank",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--Cloakers that spawn with boss on Death Wish
@@ -8989,7 +8989,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	--Ghost Titancloakers that spawn with boss on Death Sentence
 	self.unit_categories.HVH_Boss_Spooc = {
@@ -9021,7 +9021,7 @@ end
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 
 	--mutator unit categories

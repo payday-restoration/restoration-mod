@@ -1019,6 +1019,7 @@ local standard_spawngroups = {
 		"FBI_defend_b",
 		"GS_defend_b",
 		"CS_heavys",
+		"titan_snipers",
 		"snowman_boss",
 		"piggydozer"
 	},

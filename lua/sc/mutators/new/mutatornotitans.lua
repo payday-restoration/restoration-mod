@@ -118,7 +118,7 @@ function MutatorNoTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--Have "ZEAL" Cloakers act as Hatman's minions on DS
@@ -151,7 +151,7 @@ function MutatorNoTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "spooc",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--OMNIA Tasers replaces their titan counterparts in Spring's squad on DS
@@ -184,7 +184,7 @@ function MutatorNoTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "taser",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--OMNIA Shields replace their titan counterparts in Winters' squad
@@ -217,7 +217,7 @@ function MutatorNoTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "shield",
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--OMNIA Grenadiers replace Titan Snipers in Winters' squad (why not?)
@@ -249,7 +249,7 @@ function MutatorNoTitans:setup(data)
 			}			
 		},
 		access = access_type_all,
-		is_captain = true
+		ignore_spawn_cap = true
 	}
 	
 	--Titan Shotgunner replacing Heavy SWAT R870--

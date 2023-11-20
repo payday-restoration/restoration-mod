@@ -2327,7 +2327,7 @@ function CharacterTweakData:_init_tank(presets)
 	}
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
-	self.tank_skull.headshot_dmg_mul = 8.5
+	self.tank_skull.headshot_dmg_mul = 9.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	

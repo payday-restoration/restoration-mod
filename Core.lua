@@ -60,6 +60,7 @@ function restoration:Init()
 		watchdogs_1 = restoration.captain_types.winter, --Watchdogs Day 1
 		crojob3 = restoration.captain_types.winter, --The Bomb: Forest
 		crojob3_night = restoration.captain_types.winter, --The Bomb: Forest Night
+		brb = restoration.captain_types.winter, --brookyn ten-ten benk
 		--Custom Heists--
 		office_strike = restoration.captain_types.winter, --office strike
 		schl = restoration.captain_types.winter, --Scarlet Club House
@@ -77,7 +78,7 @@ function restoration:Init()
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
 		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
-		fuel		= restoration.captain_types.winter, --Fuel Feuds 
+		fuel = restoration.captain_types.winter, --Fuel Feuds 
 		icing = restoration.captain_types.winter, --Road Rage
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
@@ -144,6 +145,7 @@ function restoration:Init()
 		jewelry_store = restoration.captain_types.autumn, --Jewelry Store
 		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
 		man = restoration.captain_types.autumn, --undercover--
+		sah = restoration.captain_types.autumn, --shacklethrone auction
 		watchdogs_2 = restoration.captain_types.autumn, --Watchdogs Day 2 Night
 		watchdogs_1_night = restoration.captain_types.autumn, --Watchdogs Day 1 Night
 		--Custom Heists--
@@ -240,6 +242,7 @@ function restoration:Init()
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
+		"chca", --Black Cat Heist
 		"trai", --Lost in Transit
 		"corp", --Hostile Takeover
 		"mus", --The Diamond
@@ -296,7 +299,6 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"roberts", --Go Bank
 		"family", --Diamond Store
-		"chca", --Black Cat Heist
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"rat", --Cook Off
 		"chas", --Dragon Heist	

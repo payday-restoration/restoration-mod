@@ -22,27 +22,27 @@ return {
 	-- Increase spawn group intervals in pipe arena
 	[105278] = {
 		values = {
-			interval = 12
+			interval = 7
 		}
 	},
 	[102086] = {
 		values = {
-			interval = 12
+			interval = 7
 		}
 	},
 	[103986] = {
 		values = {
-			interval = 12
+			interval = 7
 		}
 	},
 	[101777] = {
 		values = {
-			interval = 12
+			interval = 7
 		}
 	},
 	[101778] = {
 		values = {
-			interval = 12
+			interval = 7
 		}
 	}
 }

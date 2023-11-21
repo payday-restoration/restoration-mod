@@ -8,7 +8,7 @@
 		<others>
 			<param key="sky_texture" value="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
 			<param key="global_world_overlay_mask_texture" value="units/pd2_dlc_jerry/terrain/jry_terrain_weight_df"/>
-			<param key="underlay" value="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+			<param key="underlay" value="core/environments/skies/default/default"/>
 			<param key="sun_ray_color_scale" value="1.5"/>
 			<param key="global_world_overlay_texture" value="units/pd2_dlc_jerry/terrain/jry_terrain_df"/>
 			<param key="sun_ray_color" value="0.82745099067688 0.52941179275513 0.44705882668495"/>

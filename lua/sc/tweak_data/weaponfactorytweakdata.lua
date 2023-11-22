@@ -17753,6 +17753,15 @@ end)
 --Akimbo Igor Automatik
 Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", function(self)
 
+	self.parts.wpn_fps_pis_x_stech_s_mount = {
+		type = "shitass",
+		name_id = "none",
+		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech/wpn_fps_pis_stech",
+		stats = {
+			value = 1
+		}
+	}
+
 	self.wpn_fps_pis_x_stech.override.wpn_fps_pis_g18c_co_1 = {
 		a_obj = "a_ns",
 		parent = "barrel"
@@ -17770,6 +17779,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", functi
 			concealment = -2
 		}
 	}
+
+	self.wpn_fps_pis_x_stech.override.wpn_fps_pis_stech_s_standard = {
+		parent = "shitass",
+		a_obj = "a_s"
+	}
+
 	for i, part_id in pairs(self.wpn_fps_pis_x_stech.uses_parts) do
 		if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "gadget" then
 			if not self.wpn_fps_pis_x_stech.adds then
@@ -17784,6 +17799,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", functi
 		end
 	end	
 	
+	self.wpn_fps_pis_x_stech.adds.wpn_fps_pis_stech_s_standard = {
+		"wpn_fps_pis_x_stech_s_mount"
+	}
+
 	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_stech_s_standard")

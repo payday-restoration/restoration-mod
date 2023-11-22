@@ -137,7 +137,7 @@ tweak_data.smg = {
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	ads_stationary_spread_mult = 0.25,
+	ads_stationary_spread_mult = 0.2,
 	hipfire_spread_mult = 1.5,
 	hipfire_moving_spread_mult = 1.5
 }
@@ -161,6 +161,7 @@ tweak_data.snp = {
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
 	ads_moving_recoil = 1.05,
+	ads_stationary_spread_mult = 0.9,
 	ads_move_speed_mult = 0.45,
 	hipfire_spread_mult = 1.15
 }

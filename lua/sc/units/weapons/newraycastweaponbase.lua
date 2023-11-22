@@ -1100,11 +1100,13 @@ end
 function NewRaycastWeaponBase:armor_piercing_chance()
 	local final_ap = 0
 	local skill_ap = self._skill_global_ap or 0
+	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "ap_bullets") then
 			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 1)
 		end
 	end
+	skill_ap = skill_ap + ((is_single and self._single_fire_ap_add) or 0)
 	if self._fire_mode == ids_volley then
 		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
@@ -1886,13 +1888,6 @@ function NewRaycastWeaponBase:can_shoot_through_enemy_unlim()
 	return fire_mode_data and fire_mode_data.can_shoot_through_enemy_unlim or self._can_shoot_through_enemy_unlim
 end
 
-
-function NewRaycastWeaponBase:armor_piercing_chance()
-	local ap_value = self._armor_piercing_chance
-	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
-	ap_value = ap_value + ((is_single and self._single_fire_ap_add) or 0)
-	return ap_value or 0
-end
 
 function NewRaycastWeaponBase:can_shoot_through_enemy()
 	local can_shoot_through_enemy = nil

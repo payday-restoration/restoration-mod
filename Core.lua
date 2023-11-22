@@ -354,6 +354,8 @@ function restoration:Init()
 		"des",	--Henry's Rock	
 		"bph", --Hell's Island		
 		"fex", --Buluc's Mansion
+		"peta2", --Goats day 2
+		"nail",	--Lab Rats
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -383,10 +385,8 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
-		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
 		"help", --Prison Nightmare		
-		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
 		"mex", --Border Crossing
 		"mex_cooking", --Border Crystals			

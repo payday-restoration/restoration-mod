@@ -3822,11 +3822,11 @@ local spawnpoint_delays = {
 	},
 	["peta2"] = {
 		[100128] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100130] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100131] = {
@@ -3858,11 +3858,11 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100694] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101217] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},

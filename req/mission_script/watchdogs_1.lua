@@ -46,6 +46,7 @@ return {
 	[102872] = {
 			ponr = ponr_value
 	},
+	--fixes the diff scaling with chance of ambush shields
 	[102316] = {
 		values = {
 			difficulty_normal = "true",
@@ -101,11 +102,13 @@ return {
 			TIT_tanks = false
 		}
 	},
+	--one additional man on DS (from 3 to 4)
 	[102845] = {
 		values = {
             amount = fbi_dudes
 		}
 	},
+	--ambush chance tweaks on PJs
 	[102315] = {
 		values = {
             chance = chance_normal
@@ -121,6 +124,7 @@ return {
             chance = chance_overkill
 		}
 	},
+	--those guys replace scripted ambush beat cops on DW-DS PJ
 	[100360] = {
 		values = {
             enemy = titan_swat_1
@@ -226,6 +230,7 @@ return {
             enemy = titan_swat_1
 		}
 	},
+	--FBI Ready Teams on Overkill below, gets replaced with Titan squad on Mayhem+
 	[102841] = {
 		values = {
             enemy = fbi_agent_1
@@ -246,6 +251,7 @@ return {
             enemy = fbi_agent_2
 		}
 	},
+	--FBI Shields for Overkill below, gets replaced with Titan shields on Mayhem+
 	[102848] = {
 		values = {
             enemy = titan_shield

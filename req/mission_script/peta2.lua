@@ -40,11 +40,6 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	[101217] = {
-		values = {
-			interval = 10
-		}
-	},
 	[102374] = {
 		values = {
 			elements = {

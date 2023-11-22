@@ -3830,31 +3830,31 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100131] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100132] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100133] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100007] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100019] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100692] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100693] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100694] = {

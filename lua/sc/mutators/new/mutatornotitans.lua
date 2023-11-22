@@ -836,6 +836,37 @@ function MutatorNoTitans:setup(data)
 			special_type = "shield"
 		}
 	end	
+		--Reinforce Shields
+		tweak_data.group_ai.unit_categories.GS_shield_defend = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+				},
+				russia = {
+					Idstring("units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
+				},
+				zombie = {
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
+				},								
+				murkywater = {
+					Idstring("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield")
+				},					
+				nypd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+				},	
+				lapd = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+				}			
+			},
+			access = access_type_all,
+			special_type = nil
+		}
 	
 	--Titan Tank--
 	if difficulty_index <= 7 then

@@ -4384,23 +4384,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_minidozers_longdesc"] = "Whenever a Black Bulldozer spawns, there is a 50% chance that it will be replaced by a Bulldozer wielding an M1014.\n\nNOTE: If the Medic Bulldozer mutator is enabled, then the Semi-Auto Shotgun Bulldozer will have a 33.3% chance of replacing a Black Bulldozer.",
 
 		["mutator_fatroll"] = "Fat Roll",
-		["menu_mutator_fatroll"] = "Grace Period (in s)",
-		["mutator_fatroll_desc"] = "Custom Damage Grace value (in s).",
-		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to different value, meaning that there is your specific delay on instances of damage. Minimum is 0 s, maximum is 0.25 s",
+		["menu_mutator_fatroll"] = "Grace Period (in seconds)",
+		["mutator_fatroll_desc"] = "Custom Damage Grace value (in seconds).",
+		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crewmembers is changed to a specific value. Damage grace affects how often instances of damage are calculated, lower values will cause you to take more damage in a shorter amount of time.",
 		
 		["mutator_overheal"] = "Overheal Expert",
 		["menu_mutator_overheal_mult_override"] = "Overheal Multiplier",
-		["menu_mutator_overheal_mult_override_toggle"] = "Allow overheal captains",
-		["mutator_overheal_desc"] = "LPF can now overheal most of the police enforcement units.",
-		["mutator_overheal_longdesc"] = "LPF can now overheal all police enforcement units excluding cloakers. \n\nMutator can't override overheal multiplier for units whose value is higher than mutator one.",
+		["menu_mutator_overheal_mult_override_toggle"] = "Include Captains",
+		["mutator_overheal_desc"] = "LPFs can now overheal most enemies.",
+		["mutator_overheal_longdesc"] = "LPF can now overheal the entirety of assault units (except Cloakers).\n\nNote: Some units will still use their own overheal multiplier, regardless of Mutator settings.",
 		
 		["mutator_asu_buff"] = "Enhanced Power",
-		["menu_mutator_captain_asu_buff_toggle"] = "Allow buff captains",
-		["mutator_asu_buff_desc"] = "ASU can now buff special units and weapons damage at maximum strength.",
-		["mutator_asu_buff_longdesc"] = "ASU can now buff special units (except cloakers) and buff weapons damage like on Death Sentence difficulty.",
+		["menu_mutator_captain_asu_buff_toggle"] = "Include Captains",
+		["mutator_asu_buff_desc"] = "ASUs can now buff most Special Units.",
+		["mutator_asu_buff_longdesc"] = "ASUs can now buff most Special Units (except Cloakers).",
 		
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
-		["menu_mutator_flashbang_cooking_time"] = "Cooking time (in s)",
+		["menu_mutator_flashbang_cooking_time"] = "Fuse Time (in seconds)",
 		["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
 		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
 		

@@ -2315,7 +2315,7 @@ function CharacterTweakData:_init_tank(presets)
 	
 	--Blackdozers, Move faster than other dozers but have a bit less EHP
 	self.tank_black = deep_clone(self.tank)
-	self.tank_black.move_speed = presets.move_speed.normal
+	self.tank_black.move_speed = presets.move_speed.fast_dozer
 	self.tank_black.HEALTH_INIT = 425
 	table.insert(self._enemy_list, "tank_black")
 	
@@ -2337,7 +2337,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
-	self.tank_medic.move_speed = presets.move_speed.normal
+	self.tank_medic.move_speed = presets.move_speed.fast_dozer
 	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
@@ -16895,6 +16895,65 @@ function CharacterTweakData:_presets(tweak_data)
 					},
 					cbt = {
 						fwd = 297,
+						strafe = 297,
+						bwd = 297
+					}
+				},
+				run = {
+					hos = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					hos = {
+						fwd = 191,
+						strafe = 191,
+						bwd = 191
+					},
+					cbt = {
+						fwd = 191,
+						strafe = 191,
+						bwd = 191
+					}
+				},
+				run = {
+					hos = {
+						fwd = 305,
+						strafe = 191,
+						bwd = 191
+					},
+					cbt = {
+						fwd = 305,
+						strafe = 191,
+						bwd = 191
+					}
+				}
+			}
+		},
+		fast_dozer = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 488,
 						strafe = 297,
 						bwd = 297
 					}

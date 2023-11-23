@@ -962,7 +962,9 @@ local standard_spawngroups = {
 		"FBI_heavys",
 		"FBI_heavys_boom",
 		"GS_heavys",
-		"GS_heavys_boom"
+		"GS_heavys_boom",
+		--just in case
+		"Cap_Winters"
 	},
 	["proprietary_pal"] = {
 		"CS_defend_c",

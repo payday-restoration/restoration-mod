@@ -17904,8 +17904,8 @@ function CharacterTweakData:_set_overkill_290()
 	self.tank_glass_damage_mul = 0.5
 	
 	--Speed boost on BlackDozers/MedicDozers
-	self.tank_black.move_speed = presets.move_speed.fast
-	self.tank_medic.move_speed = presets.move_speed.fast
+	self.tank_black.move_speed = self.presets.move_speed.fast
+	self.tank_medic.move_speed = self.presets.move_speed.fast
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17986,8 +17986,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_glass_damage_mul = 0.5
 
 	--Speed boost on BlackDozers/MedicDozers, Blackdozers will also always run
-	self.tank_black.move_speed = presets.move_speed.fast_dozer
-	self.tank_medic.move_speed = presets.move_speed.fast	
+	self.tank_black.move_speed = self.presets.move_speed.fast_dozer
+	self.tank_medic.move_speed = self.presets.move_speed.fast	
 				
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0

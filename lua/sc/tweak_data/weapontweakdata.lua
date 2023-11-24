@@ -16831,6 +16831,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.pd3_qbz191.panic_suppression_chance = 0.05
 	end
 
+	if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
+		self.t9british.categories = { "assault_rifle" }
+		self.t9british.recategorize = { "dmr_ar" }
+		self.t9british.damage_type = "assault_rifle"
+		self.t9british.has_description = true
+		self.t9british.CLIP_AMMO_MAX = 20
+		self.t9british.AMMO_MAX = 80
+		self.t9british.fire_mode_data.fire_rate = 0.112149532
+		self.t9british.kick = {}
+		self.t9british.kick = self.stat_info.kick_tables.vertical_kick
+		self.t9british.supported = true
+		self.t9british.ads_speed = 0.340
+		self.t9british.damage_falloff = {
+			start_dist = 3100,
+			end_dist = 7000,
+			min_mult = 0.4
+		}	
+		self.t9british.stats = {
+			damage = 45,
+			spread = 86,
+			recoil = 81,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 22,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.t9british.stats_modifiers = nil
+		self.t9british.panic_suppression_chance = 0.05
+		self.t9british.sounds.use_fix = nil
+	end
+
 	if self.t9fastburst then --RJC9000 and PlayBONK's port of 3arc's absolute sin of a G11
 		self.t9fastburst.categories = { "assault_rifle" }
 		self.t9fastburst.recategorize = { "heavy_ar" }

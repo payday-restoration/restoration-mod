@@ -29,14 +29,11 @@ local chance_overkill = 65
 		fbi_agent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		fbi_agent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 		fbi_agent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
+		titan_shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
 	else
 		fbi_agent_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		fbi_agent_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		fbi_agent_3 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-	end	
-	if difficulty_index <= 5 then
-		titan_shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-	else
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 end

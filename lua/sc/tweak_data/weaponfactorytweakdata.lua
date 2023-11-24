@@ -22993,6 +22993,62 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		end
 
+		if self.parts.wpn_fps_ass_t9british_irons then
+			self.parts.wpn_fps_ass_t9british_barrel.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_t9british_stock_adapter.supported = true
+			self.parts.wpn_fps_ass_t9british_stock_adapter.stats = { value = 0 }
+			self.parts.wpn_fps_ass_t9british_flash_hider.supported = true
+			self.parts.wpn_fps_ass_t9british_flash_hider.stats = { value = 0 }
+
+			--Ultralite
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_02.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_02.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_02.stats.value = 1
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_02.custom_stats = deep_clone(barrels.short_b1_stats)
+			--Cavalry
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_01.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_01.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_01.stats.value = 2
+			self.parts.wpn_fps_ass_t9british_barrel_heavy_01.custom_stats = deep_clone(barrels.long_b1_stats)
+			--Reinforced
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.stats.value = 4
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.stats.recoil = 2
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.stats.concealment = -2
+			self.parts.wpn_fps_ass_t9british_barrel_mix_01.custom_stats = deep_clone(barrels.long_b1_stats)
+			--Ranger
+			self.parts.wpn_fps_ass_t9british_barrel_02.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_02.stats = { value = 5, recoil = 4, concealment = -2 }
+			self.parts.wpn_fps_ass_t9british_barrel_02.custom_stats = nil
+			--Takedown
+			self.parts.wpn_fps_ass_t9british_barrel_01.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_01.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_01.stats.value = 6
+			self.parts.wpn_fps_ass_t9british_barrel_01.custom_stats = deep_clone(barrels.long_b2_stats)
+			--Task Force
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.supported = true
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.stats.value = 8
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.stats.recoil = -6
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.stats.concealment = 0
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.custom_stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_t9british_barrel_mix_02.custom_stats.ads_speed_mult = nil
+
+			self.parts.wpn_fps_ass_t9british_irons.supported = true
+			self.parts.wpn_fps_ass_t9british_irons.stats = { value = 0, gadget_zoom = 1 }
+
+			self.parts.wpn_fps_ass_t9british_scope.supported = true
+			self.parts.wpn_fps_ass_t9british_scope.stats = { value = 0, zoom = 5 }
+			self.parts.wpn_fps_ass_t9british_scope.stance_mod = {
+				wpn_fps_ass_t9british = {
+					translation = Vector3( 0.013, -25, -2.65 )
+				}
+			}
+
+		end
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack

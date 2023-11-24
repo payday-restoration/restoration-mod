@@ -16865,6 +16865,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9british.stats_modifiers = nil
 		self.t9british.panic_suppression_chance = 0.05
 		self.t9british.sounds.use_fix = nil
+		self.t9british.timers.reload_empty = 3.1
+		self.t9british.timers.reload_exit_empty = 0.65
+		self.t9british.timers.reload_not_empty = 2.1
+		self.t9british.timers.reload_exit_not_empty = 0.75
 	end
 
 	if self.t9fastburst then --RJC9000 and PlayBONK's port of 3arc's absolute sin of a G11

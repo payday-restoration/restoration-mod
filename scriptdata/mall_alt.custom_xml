@@ -7,7 +7,7 @@
 		<others>
 			<param key="sky_texture" value="core/environments/skies/sky_1224_clear_sky/sky_1224_clear_sky"/>
 			<param key="global_world_overlay_mask_texture" value=""/>
-			<param key="underlay" value="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+			<param key="underlay" value="core/environments/skies/default/default"/>
 			<param key="sun_ray_color_scale" value="3.57572"/>
 			<param key="global_world_overlay_texture" value=""/>
 			<param key="sun_ray_color" value="0.952941 0.796078 0.298039"/>

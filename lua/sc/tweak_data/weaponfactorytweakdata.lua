@@ -22055,6 +22055,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	--Cavalry Ammo
+	self.parts.wpn_fps_upg_a_cavalry = {
+		pcs = {},
+		type = "ammo",
+		name_id = "bm_wp_upg_a_cavalry",
+		a_obj = "a_body",
+		has_description = true,
+		no_cull = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			ap_desc = "bm_ap_armor_weapon_sc_desc",
+			armor_piercing_add = 1,
+		},
+		stats = {
+			value = 5
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
 	--Croon HS-10
 	self.parts.wpn_fps_upg_i_eye = {
 		pcs = nil,
@@ -22992,6 +23015,322 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 		end
+	
+		if self.parts.wpn_fps_ass_t9fastburst_receiver then
+			self.parts.wpn_fps_ass_t9fastburst_receiver.perks = nil
+			self.parts.wpn_fps_ass_t9fastburst_receiver.stats = { value = 0 }
+			self.parts.wpn_fps_ass_t9fastburst_receiver.adds = { "g11_lock_burst" }
+	
+			--Magazines
+				--55 Rnd Drum
+				self.parts.wpn_fps_ass_t9fastburst_xmag_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_xmag_01.stats = {
+					value = 2,
+					extra_ammo = 9,
+					concealment = -1,
+					reload = -2
+				}
+				self.parts.wpn_fps_ass_t9fastburst_xmag_01.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+				--Jungle-Style Mag
+				self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.stats = {
+					value = 3,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				--66 Rnd Speed Mag
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.stats = {
+					value = 5,
+					extra_ammo = 21,
+					concealment = -3,
+					reload = -1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.custom_stats = {
+					ads_speed_mult = 1.075
+				}
+				--STANAG 63 Rnd Drum
+				self.parts.wpn_fps_ass_t9fastburst_xmag_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_xmag_pro.stats = {
+					value = 6,
+					extra_ammo = 18,
+					concealment = -2,
+					reload = -4
+				}
+				self.parts.wpn_fps_ass_t9fastburst_xmag_pro.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				--SAS Mag Clamp
+				self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.stats = {
+					value = 7,
+					spread = -1,
+					concealment = -2,
+					reload = 8
+				}
+				self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+				--Salvo 75 Rnd Fast Mag
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.stats = {
+					value = 8,
+					extra_ammo = 30,
+					concealment = -4,
+					reload = -3
+				}
+				self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.custom_stats = {
+					ads_speed_mult = 1.1
+				}
+	
+			--Barrels
+				--Rapid Fire
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.has_description = false
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.stats.value = 1
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.stats.recoil = -2
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.custom_stats.rof_mult = 1.08
+				--Cavalry
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.desc_id = "bm_ap_armor_weapon_sc_desc"
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.has_description = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.stats = { value = 2, concealment = -2 }
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.adds = {"wpn_fps_upg_a_cavalry"}
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.custom_stats = {}
+				--Strike Team
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.has_description = false
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.stats.value = 4
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.stats.recoil = -4
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.custom_stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.custom_stats.rof_mult = 1.13
+				--Titanium
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.has_description = false
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.stats.value = 5
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.stats.recoil = -6
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.custom_stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.custom_stats.rof_mult = 1.16
+				--Match Grade
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.has_description = false
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.stats.value = 6
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.custom_stats = deep_clone(barrels.long_b2_stats)
+				--Task Force
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.stats.value = 8
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.stats.recoil = -6
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.stats.concealment = 0
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.custom_stats.ads_speed_mult = nil
+	
+			--Grips
+				--Speed Tape
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.stats = {
+					value = 1,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--Drop Shot Wrap
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.stats = {
+					value = 2,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.custom_stats = {}
+				--Field Tape
+				self.parts.wpn_fps_ass_t9fastburst_handle_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_handle_01.stats = {
+					value = 3,
+					spread = 2,
+					recoil = -2,
+					concealment = -1
+				}
+				--SASR Jungle Wrap
+				self.parts.wpn_fps_ass_t9fastburst_handle_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_handle_pro.stats = {
+					value = 4,
+					recoil = 2,
+					spread = 1,
+					concealment = -2
+				}
+				--Serpent Wrap
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.stats = {
+					value = 5,
+					spread = 1,
+					recoil = -2
+				}
+				self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.custom_stats = {}
+				--Airborne Elastic Wrap
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+	
+			--Stocks
+				--Tactical Stock
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.stats = {
+					value = 3,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.custom_stats = {}
+				--Marathon Stock
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.stats = {
+					value = 4,
+					recoil = 4,
+					concealment = -2
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.custom_stats = {}
+				--Duster Stock
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.stats = {
+					value = 5,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--CQB Pad
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+				--SAS Combat Stock
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.stats = {
+					value = 7,
+					recoil = -2,
+					spread = 1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.custom_stats = {}
+				--Raider Pad
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.supported = true
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.stats = {
+					value = 8,
+					recoil = -4,
+					spread = 1,
+					concealment = 1
+				}
+				self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+	
+			self.parts.g11_lock_burst = {
+				pcs = {},
+				type = "custom",
+				sub_type = "autofire",
+				name_id = "bm_wp_upg_i_g11",
+				a_obj = "a_body",
+				alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				custom_stats = {
+					ignore_modify_firemode = true,
+					lock_burst = true
+				},
+				stats = {
+					value = 0
+				},
+				internal_part = true
+			}
+	
+			self.parts.wpn_fps_ass_t9fastburst_i_g11athome = {
+				pcs = {},
+				type = "custom",
+				sub_type = "autofire",
+				name_id = "bm_wp_upg_i_g11",
+				a_obj = "a_body",
+				has_description = true,
+				alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				custom_stats = {
+					modify_firemode = true,
+					g11_burst = true,
+					ads_speed_mult = 1.1
+				},
+				stats = {
+					value = 10
+				},
+				override = {
+					wpn_fps_ass_t9fastburst_receiver = {
+						adds = {}
+					}
+				},
+				adds = {
+					"wpn_fps_ass_t9fastburst_g11_sound_switch"
+				},
+				forbids = {
+					"g11_lock_burst",
+	
+					"wpn_fps_ass_t9fastburst_barrel_mix_01",
+					"wpn_fps_ass_t9fastburst_barrel_short_01",
+					"wpn_fps_ass_t9fastburst_barrel_short_pro",
+	
+					"wpn_fps_ass_t9fastburst_magazine_mix_01",
+					"wpn_fps_ass_t9fastburst_magazine_mix_pro",
+					"wpn_fps_ass_t9fastburst_xmag_01",
+					"wpn_fps_ass_t9fastburst_xmag_pro"
+				},
+				internal_part = true,
+				dlc = "sc"
+			}
+	
+			self.parts.wpn_fps_ass_t9fastburst_g11_sound_switch = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_breech_ck_switch",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				no_cull = true,
+				internal_part = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						fire_auto = "g36_fire_single",
+						fire_single = "g36_fire_single",
+						fire = "g36_fire_single"
+					}
+				}
+			}
+	
+			table.insert(self.wpn_fps_ass_t9fastburst.uses_parts, "wpn_fps_ass_t9fastburst_i_g11athome")
+	
+			self.wpn_fps_ass_t9fastburst_npc.uses_parts = deep_clone(self.wpn_fps_ass_t9fastburst.uses_parts)
+		end
 
 		if self.parts.wpn_fps_ass_t9british_irons then
 			self.parts.wpn_fps_ass_t9british_barrel.supported = true
@@ -23009,9 +23348,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_t9british_barrel_heavy_02.custom_stats = deep_clone(barrels.short_b1_stats)
 				--Cavalry
 				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.supported = true
-				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.stats = deep_clone(barrels.long_b1_stats)
-				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.stats.value = 2
-				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.custom_stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.desc_id = "bm_ap_armor_weapon_sc_desc"
+				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.has_description = true
+				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.stats = { value = 2, concealment = -2 }
+				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.adds = {"wpn_fps_upg_a_cavalry"}
+				self.parts.wpn_fps_ass_t9british_barrel_heavy_01.custom_stats = {}
 				--Reinforced
 				self.parts.wpn_fps_ass_t9british_barrel_mix_01.supported = true
 				self.parts.wpn_fps_ass_t9british_barrel_mix_01.stats = deep_clone(barrels.long_b1_stats)
@@ -23107,6 +23448,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 0.975
 				}
 				--Drop Shot Wrap
+				self.parts.wpn_fps_ass_t9british_handle_mix_01.pcs = {}
 				self.parts.wpn_fps_ass_t9british_handle_mix_01.supported = true
 				self.parts.wpn_fps_ass_t9british_handle_mix_01.stats = {
 					value = 2,
@@ -23148,7 +23490,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_t9british_handle_mix_02.custom_stats = {
 					ads_speed_mult = 0.95
 				}
-	
+
 			--STOCKS
 				--Tactical Stock
 				self.parts.wpn_fps_ass_t9british_stock_stalker_01.supported = true
@@ -23217,7 +23559,226 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation = Vector3( 0.013, -25, -2.65 )
 				}
 			}
+		end
 
+		if self.parts.wpn_fps_smg_lc10_gadget_mount then
+
+			self.parts.wpn_fps_smg_lc10_flash_hider.supported = true
+			self.parts.wpn_fps_smg_lc10_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_smg_lc10_flash_hider.custom_stats = {}
+			self.parts.wpn_fps_smg_lc10_stock_adapter.supported = true
+			self.parts.wpn_fps_smg_lc10_stock_adapter.stats = { value = 0 }
+			self.parts.wpn_fps_smg_lc10_stock_adapter.custom_stats = {}
+			self.parts.wpn_fps_smg_lc10_stock.supported = true
+			self.parts.wpn_fps_smg_lc10_stock.stats = { value = 0 }
+			self.parts.wpn_fps_smg_lc10_stock.custom_stats = {}
+
+			--BARRELS
+				--Extended
+				self.parts.wpn_fps_smg_lc10_barrel_01.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_01.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_lc10_barrel_01.stats.value = 1
+				self.parts.wpn_fps_smg_lc10_barrel_01.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Cavalry
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.desc_id = "bm_ap_armor_weapon_sc_desc"
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.has_description = true
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.stats = { value = 2, concealment = -2 }
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.adds = {"wpn_fps_upg_a_cavalry"}
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01.custom_stats = {}
+				--Reinforced
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.stats.value = 4
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.stats.recoil = 2
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.stats.concealment = -2
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Ranger
+				self.parts.wpn_fps_smg_lc10_barrel_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_01_pro.stats = { value = 5, recoil = 4, concealment = -2 }
+				self.parts.wpn_fps_smg_lc10_barrel_01_pro.custom_stats = nil
+				--Rifled
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01_pro.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01_pro.stats.value = 6
+				self.parts.wpn_fps_smg_lc10_barrel_heavy_01_pro.custom_stats = deep_clone(barrels.long_b2_stats)
+				--Task Force
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.stats.value = 8
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.stats.recoil = -6
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.stats.concealment = 0
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_lc10_barrel_mix_01_pro.custom_stats.ads_speed_mult = nil
+
+			--MAGAZINES
+				--45 Rnd
+				self.parts.wpn_fps_smg_lc10_xmag_01.supported = true
+				self.parts.wpn_fps_smg_lc10_xmag_01.has_description = false
+				self.parts.wpn_fps_smg_lc10_xmag_01.stats = { value = 1, extra_ammo = 15, concealment = -1 , reload = -3}
+				self.parts.wpn_fps_smg_lc10_xmag_01.custom_stats = { ads_speed_mult = 1.025 }
+				--Fast Mag
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01.supported = true
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01.has_description = false
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				--42 Rnd Speed Mag
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01.supported = true
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01.has_description = false
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01.stats = {
+					value = 4,
+					extra_ammo = 12,
+					spread = -1,
+					concealment = -2,
+					reload = 1
+				}
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01.custom_stats = { ads_speed_mult = 1.025 }
+				--STANAG 55 Rnd 
+				self.parts.wpn_fps_smg_lc10_xmag_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_xmag_01_pro.has_description = false
+				self.parts.wpn_fps_smg_lc10_xmag_01_pro.stats = {
+					value = 5,
+					extra_ammo = 25,
+					concealment = -3,
+					reload = -5
+				}
+				self.parts.wpn_fps_smg_lc10_xmag_01_pro.custom_stats = { ads_speed_mult = 1.075 }
+				--Vandal Speed Loader
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01_pro.has_description = false
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01_pro.stats = {
+					value = 6,
+					spread = -1,
+					concealment = -1,
+					reload = 6
+				}
+				self.parts.wpn_fps_smg_lc10_magazine_fast_01_pro.custom_stats = { ads_speed_mult = 1.025 }
+				--Salvo 52 Rnd Fast Mag
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01_pro.has_description = false
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01_pro.stats = {
+					value = 8,
+					extra_ammo = 22,
+					spread = -1,
+					concealment = -3,
+					reload = 2
+				}
+				self.parts.wpn_fps_smg_lc10_magazine_mix_01_pro.custom_stats = { ads_speed_mult = 1.05 }
+
+			--GRIPS
+				--Speed Tape
+				self.parts.wpn_fps_smg_lc10_quickdraw_01.supported = true
+				self.parts.wpn_fps_smg_lc10_quickdraw_01.stats = {
+					value = 1,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_lc10_quickdraw_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--Drop Shot Wrap
+				self.parts.wpn_fps_smg_lc10_mixhandle_01.supported = true
+				self.parts.wpn_fps_smg_lc10_mixhandle_01.stats = {
+					value = 2,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_lc10_mixhandle_01.custom_stats = {}
+				--Field Tape
+				self.parts.wpn_fps_smg_lc10_handle_01.supported = true
+				self.parts.wpn_fps_smg_lc10_handle_01.stats = {
+					value = 3,
+					spread = 2,
+					recoil = -2,
+					concealment = -1
+				}
+				--SASR Jungle Wrap
+				self.parts.wpn_fps_smg_lc10_handle_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_handle_01_pro.stats = {
+					value = 4,
+					recoil = 2,
+					spread = 1,
+					concealment = -2
+				}
+				--Serpent Wrap
+				self.parts.wpn_fps_smg_lc10_quickdraw_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_quickdraw_01_pro.stats = {
+					value = 5,
+					spread = 1,
+					recoil = -2
+				}
+				self.parts.wpn_fps_smg_lc10_quickdraw_01_pro.custom_stats = {}
+				--Airborne Elastic Wrap
+				self.parts.wpn_fps_smg_lc10_mixhandle_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_mixhandle_01_pro.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_smg_lc10_mixhandle_01_pro.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+
+			--STOCKS
+				--Tactical Stock
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01.stats = {
+					value = 3,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01.custom_stats = {}
+				--Wire Stock
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01.stats = {
+					value = 4,
+					recoil = 4,
+					concealment = -2
+				}
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01.custom_stats = {}
+				--Duster Stock
+				self.parts.wpn_fps_smg_lc10_stock_mix_01.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_mix_01.stats = {
+					value = 5,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_lc10_stock_mix_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--No Stock
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01_pro.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_smg_lc10_stock_minimal_01_pro.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+				--SAS Combat Stock
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01_pro.stats = {
+					value = 7,
+					recoil = -2,
+					spread = 1
+				}
+				self.parts.wpn_fps_smg_lc10_stock_cheekrest_01_pro.custom_stats = {}
+				--Raider Stock
+				self.parts.wpn_fps_smg_lc10_stock_mix_01_pro.supported = true
+				self.parts.wpn_fps_smg_lc10_stock_mix_01_pro.stats = {
+					value = 8,
+					recoil = -4,
+					spread = 1,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_lc10_stock_mix_01_pro.custom_stats = {
+					ads_speed_mult = 0.975
+				}
 		end
 
 	--[[ GAMBYT'S MODS ]]
@@ -32386,302 +32947,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_lapd_grip_polymer.custom_stats = deep_clone(grips.quickdraw_1)
 	end
 
-	if self.parts.wpn_fps_ass_t9fastburst_receiver then
-		self.parts.wpn_fps_ass_t9fastburst_receiver.perks = nil
-		self.parts.wpn_fps_ass_t9fastburst_receiver.stats = { value = 0 }
-		self.parts.wpn_fps_ass_t9fastburst_receiver.adds = { "g11_lock_burst" }
 
-		--Magazines
-		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_01.stats = {
-			value = 2,
-			spread = -1,
-			concealment = -1,
-			reload = 3
-		}
-		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.stats = {
-			value = 4,
-			spread = -1,
-			concealment = -2,
-			reload = 8
-		}
-		self.parts.wpn_fps_ass_t9fastburst_magazine_fast_pro.custom_stats = {
-			ads_speed_mult = 1.025
-		}
-
-		self.parts.wpn_fps_ass_t9fastburst_xmag_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_xmag_01.stats = {
-			value = 6,
-			extra_ammo = 9,
-			concealment = -1,
-			reload = -2
-		}
-		self.parts.wpn_fps_ass_t9fastburst_xmag_01.custom_stats = {
-			ads_speed_mult = 1.025
-		}
-		self.parts.wpn_fps_ass_t9fastburst_xmag_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_xmag_pro.stats = {
-			value = 6,
-			extra_ammo = 18,
-			concealment = -2,
-			reload = -4
-		}
-		self.parts.wpn_fps_ass_t9fastburst_xmag_pro.custom_stats = {
-			ads_speed_mult = 1.05
-		}
-
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.stats = {
-			value = 8,
-			extra_ammo = 21,
-			concealment = -3,
-			reload = -1
-		}
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_01.custom_stats = {
-			ads_speed_mult = 1.075
-		}
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.stats = {
-			value = 9,
-			extra_ammo = 30,
-			concealment = -4,
-			reload = -3
-		}
-		self.parts.wpn_fps_ass_t9fastburst_magazine_mix_pro.custom_stats = {
-			ads_speed_mult = 1.1
-		}
-
-		--Barrels
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.stats = deep_clone(barrels.short_b1_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.stats.recoil = -2
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.custom_stats = deep_clone(barrels.short_b1_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_01.custom_stats.rof_mult = 1.08
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.stats = deep_clone(barrels.short_b2_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.stats.recoil = -4
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.custom_stats = deep_clone(barrels.short_b2_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_01.custom_stats.rof_mult = 1.13
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.stats = deep_clone(barrels.short_b3_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.stats.recoil = -6
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.custom_stats = deep_clone(barrels.short_b3_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_short_pro.custom_stats.rof_mult = 1.16
-		
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.stats = deep_clone(barrels.long_b1_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_mix_pro.custom_stats = deep_clone(barrels.long_b1_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_01.custom_stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.supported = true
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.has_description = false
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.stats = deep_clone(barrels.long_b3_stats)
-		self.parts.wpn_fps_ass_t9fastburst_barrel_heavy_pro.custom_stats = deep_clone(barrels.long_b3_stats)
-
-		--Grips
-			--Speed Tape
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.stats = {
-				value = 1,
-				recoil = -2,
-				concealment = 1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_01.custom_stats = {
-				ads_speed_mult = 0.975
-			}
-			--Drop Shot Wrap
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.stats = {
-				value = 2,
-				recoil = 2,
-				concealment = -1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_01.custom_stats = {}
-			--Field Tape
-			self.parts.wpn_fps_ass_t9fastburst_handle_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_handle_01.stats = {
-				value = 3,
-				spread = 2,
-				recoil = -2,
-				concealment = -1
-			}
-			--SASR Jungle Wrap
-			self.parts.wpn_fps_ass_t9fastburst_handle_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_handle_pro.stats = {
-				value = 4,
-				recoil = 2,
-				spread = 1,
-				concealment = -2
-			}
-			--Serpent Wrap
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.stats = {
-				value = 5,
-				spread = 1,
-				recoil = -2
-			}
-			self.parts.wpn_fps_ass_t9fastburst_quickdraw_pro.custom_stats = {}
-			--Airborne Elastic Wrap
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.stats = {
-				value = 6,
-				recoil = -4,
-				concealment = 2
-			}
-			self.parts.wpn_fps_ass_t9fastburst_handle_mix_pro.custom_stats = {
-				ads_speed_mult = 0.95
-			}
-
-		--Stocks
-			--Tactical Stock
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.stats = {
-				value = 3,
-				recoil = 2,
-				concealment = -1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_01.custom_stats = {}
-			--Marathon Stock
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.stats = {
-				value = 4,
-				recoil = 4,
-				concealment = -2
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_cheekrest_pro.custom_stats = {}
-			--Duster Stock
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.stats = {
-				value = 5,
-				recoil = -2,
-				concealment = 1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_01.custom_stats = {
-				ads_speed_mult = 0.975
-			}
-			--CQB Pad
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.stats = {
-				value = 6,
-				recoil = -4,
-				concealment = 2
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_minimal_pro.custom_stats = {
-				ads_speed_mult = 0.95
-			}
-			--SAS Combat Stock
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.stats = {
-				value = 7,
-				recoil = -2,
-				spread = 1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_01.custom_stats = {}
-			--Raider Pad
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.supported = true
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.stats = {
-				value = 8,
-				recoil = -4,
-				spread = 1,
-				concealment = 1
-			}
-			self.parts.wpn_fps_ass_t9fastburst_stock_mix_pro.custom_stats = {
-				ads_speed_mult = 0.975
-			}
-
-		self.parts.g11_lock_burst = {
-			pcs = {},
-			type = "custom",
-			sub_type = "autofire",
-			name_id = "bm_wp_upg_i_g11",
-			a_obj = "a_body",
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			supported = true,
-			custom_stats = {
-				lock_burst = true
-			},
-			stats = {
-				value = 0
-			},
-			internal_part = true
-		}
-
-		self.parts.wpn_fps_ass_t9fastburst_i_g11athome = {
-			pcs = {},
-			type = "custom",
-			sub_type = "autofire",
-			name_id = "bm_wp_upg_i_g11",
-			a_obj = "a_body",
-			has_description = true,
-			alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			supported = true,
-			custom_stats = {
-				g11_burst = true,
-				ads_speed_mult = 1.1
-			},
-			stats = {
-				value = 10
-			},
-			override = {
-				wpn_fps_ass_t9fastburst_receiver = {
-					adds = {}
-				}
-			},
-			adds = {
-				"wpn_fps_ass_t9fastburst_g11_sound_switch"
-			},
-			forbids = {
-				"g11_lock_burst",
-
-				"wpn_fps_ass_t9fastburst_barrel_mix_01",
-				"wpn_fps_ass_t9fastburst_barrel_short_01",
-				"wpn_fps_ass_t9fastburst_barrel_short_pro",
-
-				"wpn_fps_ass_t9fastburst_magazine_mix_01",
-				"wpn_fps_ass_t9fastburst_magazine_mix_pro",
-				"wpn_fps_ass_t9fastburst_xmag_01",
-				"wpn_fps_ass_t9fastburst_xmag_pro"
-			},
-			internal_part = true,
-			dlc = "sc"
-		}
-
-		self.parts.wpn_fps_ass_t9fastburst_g11_sound_switch = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			a_obj = "a_body",
-			type = "ammo",
-			name_id = "bm_wp_breech_ck_switch",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			no_cull = true,
-			internal_part = true,
-			stats = {
-				value = 5
-			},
-			custom_stats = {
-				sounds = {
-					fire_auto = "g36_fire_single",
-					fire_single = "g36_fire_single",
-					fire = "g36_fire_single"
-				}
-			}
-		}
-
-		table.insert(self.wpn_fps_ass_t9fastburst.uses_parts, "wpn_fps_ass_t9fastburst_i_g11athome")
-
-		self.wpn_fps_ass_t9fastburst_npc.uses_parts = deep_clone(self.wpn_fps_ass_t9fastburst.uses_parts)
-
-	end
 
 --Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do

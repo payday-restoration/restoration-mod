@@ -23036,6 +23036,64 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_t9british_barrel_mix_02.custom_stats = deep_clone(barrels.long_b3_stats)
 			self.parts.wpn_fps_ass_t9british_barrel_mix_02.custom_stats.ads_speed_mult = nil
 
+			--30 STANAG
+			self.parts.wpn_fps_ass_t9british_xmag_01.supported = true
+			self.parts.wpn_fps_ass_t9british_xmag_01.has_description = false
+			self.parts.wpn_fps_ass_t9british_xmag_01.stats = { value = 1, extra_ammo = 10, concealment = -1 , reload = -3}
+			self.parts.wpn_fps_ass_t9british_xmag_01.custom_stats = { ads_speed_mult = 1.025 }
+			--Jungle-Style Mag
+			self.parts.wpn_fps_ass_t9british_magazine_fast_01.supported = true
+			self.parts.wpn_fps_ass_t9british_magazine_fast_01.has_description = false
+			self.parts.wpn_fps_ass_t9british_magazine_fast_01.stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 3
+			}
+			--25 Rnd Speed Mag
+			self.parts.wpn_fps_ass_t9british_magazine_mix_01.supported = true
+			self.parts.wpn_fps_ass_t9british_magazine_mix_01.has_description = false
+			self.parts.wpn_fps_ass_t9british_magazine_mix_01.stats = {
+				value = 4,
+				extra_ammo = 5,
+				spread = -1,
+				concealment = -2,
+				reload = 1
+			}
+			self.parts.wpn_fps_ass_t9british_magazine_mix_01.custom_stats = { ads_speed_mult = 1.025 }
+			--STANAG 40 Rnd Mag
+			self.parts.wpn_fps_ass_t9british_xmag_02.supported = true
+			self.parts.wpn_fps_ass_t9british_xmag_02.has_description = false
+			self.parts.wpn_fps_ass_t9british_xmag_02.stats = {
+				value = 5,
+				extra_ammo = 20,
+				concealment = -3,
+				reload = -5
+			}
+			self.parts.wpn_fps_ass_t9british_xmag_02.custom_stats = { ads_speed_mult = 1.075 }
+			--SAS Mag Clamp
+			self.parts.wpn_fps_ass_t9british_magazine_fast_02.supported = true
+			self.parts.wpn_fps_ass_t9british_magazine_fast_02.has_description = false
+			self.parts.wpn_fps_ass_t9british_magazine_fast_02.stats = {
+				value = 6,
+				spread = -1,
+				concealment = -1,
+				reload = 6
+			}
+			self.parts.wpn_fps_ass_t9british_magazine_fast_02.custom_stats = { ads_speed_mult = 1.025 }
+			--Salvo 30 Rnd Fast Mag
+			self.parts.wpn_fps_ass_t9british_magazine_mix_02.supported = true
+			self.parts.wpn_fps_ass_t9british_magazine_mix_02.has_description = false
+			self.parts.wpn_fps_ass_t9british_magazine_mix_02.stats = {
+				value = 8,
+				extra_ammo = 10,
+				spread = -1,
+				concealment = -3,
+				reload = 2
+			}
+			self.parts.wpn_fps_ass_t9british_magazine_mix_02.custom_stats = { ads_speed_mult = 1.05 }
+
+
 			self.parts.wpn_fps_ass_t9british_irons.supported = true
 			self.parts.wpn_fps_ass_t9british_irons.stats = { value = 0, gadget_zoom = 1 }
 
@@ -23774,7 +23832,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1,
 					reload = -3
 				}
-		
+				self.parts.wpn_fps_ass_scar_m_extended.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+
 				--(Broomstick) Snub Barrel
 				--Doesn't actually seem to appear???
 				self.parts.wpn_fps_pis_c96_b_short.supported = true

@@ -235,6 +235,11 @@ return {
             enemy = titan_taser
 		}
 	},
+	[106869] = {
+		values = {
+            enemy = titan_taser
+		}
+	},
 	[101885] = {
 		values = {
             enemy = woman_spooc

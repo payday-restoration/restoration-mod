@@ -2427,7 +2427,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tommy = {
 				translation = Vector3(0.045, -15.2, -4.235)
 			}
-
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_lc10 = {
+				translation = Vector3(-0.005, 7, -0.455),
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.135),

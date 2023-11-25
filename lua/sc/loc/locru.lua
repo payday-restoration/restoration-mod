@@ -1555,6 +1555,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Custom MGs
+			--Stoner 63 (LMG)
+		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape",
+		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",
+		["bm_wp_wpn_fps_lmg_stoner63a_handle_01"] = "Field Tape",
+		["bm_wp_wpn_fps_lmg_stoner63a_handle_02"] = "SASR Jungle Grip",
+		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_02"] = "Serpent Wrap",
+		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_02"] = "Airborne Elastic Wrap",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_01"] = "100 Rnd",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_02"] = "STANAG 125 Rnd",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_01"] = "Fast Mag",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_02"] = "Vandal Speed Loader",
 			--TF2 Minigun
 		["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
 		["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
@@ -4521,10 +4532,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_overheal_mult_override"] = "Множитель сверхлечения",
 		["menu_mutator_overheal_mult_override_toggle"] = "Включить сверхлечение для капитанов",
 		["mutator_overheal_desc"] = "LPF теперь может давать дополнительное здоровье почти всем противникам.",
-		["mutator_overheal_longdesc"] = "LPF теперь может давать дополнительное здоровье всем противникам, кроме клокеров. \n\nМутатор не может перезаписать значение множителя для тех противников, множитель у которых выше, чем заданное Вами значение.",
+		["mutator_overheal_longdesc"] = "LPF теперь может давать дополнительное здоровье всем противникам, кроме клокеров. \n\nПримечание:Мутатор не может перезаписать значение множителя для тех противников, множитель у которых выше, чем заданное Вами значение.",
 		
 		["mutator_asu_buff"] = "Мощь всех стволов",
-		["menu_mutator_captain_asu_buff_toggle"] = "Включить возмоность усилить урон капитанам",
+		["menu_mutator_captain_asu_buff_toggle"] = "Включить усиления урона для капитанов",
 		["mutator_asu_buff_desc"] = "ASU теперь может усиливать оружия особых противников и он всегда усиливает урон оружий по-максимуму.",
 		["mutator_asu_buff_longdesc"] = "ASU теперь может усиливать оружия особых противников (кроме клокеров) и усиливает урон оружий как на сложность Смертный Приговор.",
 		
@@ -4532,6 +4543,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_flashbang_cooking_time"] = "Время до срабатывания (в с)",
 		["mutator_bo_flashbang_desc"] = "Светошумовые гранаты теперь нельзя сломать.",
 		["mutator_bo_flashbang_longdesc"] = "Светошумовые гранаты теперь нельзя сломать.",
+		
+		["mutator_grenade_mayhem"] = "Тотальное побоище!",
+		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Гранаты для обычных и элитных врагов",
+		["menu_mutator_grenade_mayhem_thugs_toggle"] = "Гранаты для бандитов",
+		["menu_mutator_grenade_mayhem_specials_toggle"] = "Гранаты для особых врагов",
+		["menu_mutator_grenade_mayhem_bosses_toggle"] = "Гранаты для боссов",
+		["menu_mutator_grenade_mayhem_captains_toggle"] = "Гранаты для капитанов",
+		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "Include Frag Underbarrels for Grenadiers",
+		["mutator_grenade_mayhem_desc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.",
+		["mutator_grenade_mayhem_longdesc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.\n\nПримечание: Враги с огнеметами будут кидать молотовы вместо осколочных; Клокеры будут кидать слезоточивый газ вместо осколочных.",
 
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",
@@ -5007,7 +5028,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
-				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#$skill_value_b1## больше урона по особым и титановым врагам.\n\n#{risk}#Не действует на ракетометы и гранатометы.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносите еще #{skill_color}#$skill_value_p1## дополнительного урона по особым и титановым врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#$skill_value_p2##; убийство сзади заполнят ее на #{skill_color}#$skill_value_p3##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
+				["menu_hitman_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы наносите на #{skill_color}#$skill_value_b1## больше урона по особым и элитным врагам.\n\n#{risk}#Не действует на ракетометы и гранатометы.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы наносите еще #{skill_color}#$skill_value_p1## дополнительного урона по особым и элитным врагам.\n\nУбийство врага в голову заполнит вашу полоску уворота на #{skill_color}#$skill_value_p2##; убийство сзади заполнят ее на #{skill_color}#$skill_value_p3##; этот эффект складывается с убийством в голову.\n\n#{risk}#Убийства при помощи## #{important_1}#взрывов, огня и при нанесении урона через время## #{risk}#не считаются.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Подлый прием",

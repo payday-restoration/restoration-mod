@@ -50,6 +50,7 @@ function MutatorsManager:init()
 		MutatorOverheal:new(self),
 		MutatorASUBuff:new(self),
 		MutatorBoFlashbang:new(self),
+		MutatorGrenadeMayhem:new(self),
 		--MutatorNoOutlines:new(self),
 		--MutatorCaptainReplacer:new(self),		
 		--MutatorFactionsReplacer:new(self),

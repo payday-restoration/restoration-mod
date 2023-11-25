@@ -390,6 +390,7 @@
 		<hook file="sc/mutators/new/mutatoroverheal.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorasubuff.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorboflashbang.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorgrenademayhem.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorcaptainreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->

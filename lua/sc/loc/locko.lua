@@ -1604,6 +1604,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_shuno_sc_desc"] = "\"이건 너의 길이다. 네가 올 때는, 혼자서 걸어오게 되겠지.\"\n\n총열을 일정 속도 이상으로 회전시켜야 발사가 가능합니다. 조준 중에는 회전 속도를 유지합니다.",
 
 		--Custom MGs
+		--Stoner 63 (LMG)
+		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "스피드 테이프",
+		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "드롭샷 랩",
+		["bm_wp_wpn_fps_lmg_stoner63a_handle_01"] = "필드 테이프",
+		["bm_wp_wpn_fps_lmg_stoner63a_handle_02"] = "SASR 정글 손잡이",
+		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_02"] = "세르팡 랩",
+		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_02"] = "공수부대용 탄성 랩",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_01"] = "100발 탄창",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_02"] = "STANAG 125발 탄창",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_01"] = "패스트 탄창",
+		["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_02"] = "반달 스피드 로더",		
 		--TF2 Minigun
 		["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
 		["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",

@@ -2230,6 +2230,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Microgun
 				["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
 				--Custom MGs
+					--Stoner 63 (LMG)
+					["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape",
+					["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",
+					["bm_wp_wpn_fps_lmg_stoner63a_handle_01"] = "Field Tape",
+					["bm_wp_wpn_fps_lmg_stoner63a_handle_02"] = "SASR Jungle Grip",
+					["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_02"] = "Serpent Wrap",
+					["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_02"] = "Airborne Elastic Wrap",
+					["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_01"] = "100 Rnd",
+					["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_02"] = "STANAG 125 Rnd",
+					["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_01"] = "Fast Mag",
+					["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_02"] = "Vandal Speed Loader",
 					--TF2 Minigun
 					["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "",
 					["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",

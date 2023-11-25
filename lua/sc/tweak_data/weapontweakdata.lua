@@ -16979,7 +16979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a.always_use_standing = true
 		self.stoner63a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 		self.stoner63a.supported = true
-		self.stoner63a.ads_speed = 0.480
+		self.stoner63a.ads_speed = 0.400
 		self.stoner63a.damage_falloff = {
 			start_dist = 2100,
 			end_dist = 6800,
@@ -16988,7 +16988,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a.stats = {
 			damage = 24,
 			spread = 61,
-			recoil = 71,
+			recoil = 79,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 19,

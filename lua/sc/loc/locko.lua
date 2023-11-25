@@ -1791,6 +1791,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 여러 적을 관통할 수 있습니다.##",		
 		
 		--Custom DMRs
+		--BOCW EM2
+		["bm_w_t9british"] = "EM2 소총",
+		["bm_wp_wpn_fps_ass_t9british_xmag_01"] = "30발 탄창",
+		["bm_wp_wpn_fps_ass_t9british_xmag_01_desc"] = "",
+		["bm_wp_wpn_fps_ass_t9british_magazine_mix_01"] = "25발 스피드 탄창",
+		["bm_wp_wpn_fps_ass_t9british_magazine_mix_01_desc"] = "",
+		["bm_wp_wpn_fps_ass_t9british_xmag_02"] = "STANAG 탄창",
+		["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30발 패스트 탄창",		
 		--MCX Spear
 		["bm_w_mcx_spear"] = "Signature M5 소총",
 		["bm_mcx_spear_sc_desc"] = "#{skill_color}#방탄복을 관통해 대미지의 50%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",

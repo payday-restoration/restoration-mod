@@ -8,13 +8,7 @@
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_back_2/ene_acc_bulldozer_back_2" />
-		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest_2/ene_acc_bulldozer_chest_2" />
-		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_helmet_plate_3/ene_acc_bulldozer_helmet_plate_3" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck" />
-		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache_2/ene_acc_bulldozer_stomache_2" />
-		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_throat/ene_acc_bulldozer_3_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om" />			
+		<depends_on unit="units/payday2/weapons/wpn_npc_lmg_m249_dozer/wpn_npc_lmg_m249_dozer" />
 	</dependencies>
 
 	<extensions>
@@ -22,7 +16,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_skull" />
-			<var name="_default_weapon_id" value="m60_om" />
+			<var name="_default_weapon_id" value="m249_dozer" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

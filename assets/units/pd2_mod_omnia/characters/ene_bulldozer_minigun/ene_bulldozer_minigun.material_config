@@ -1,43 +1,43 @@
-<materials version="3" group="ene_bulldozer_1">
+<materials version="3" group="ene_bulldozer_minigun">
     <material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df"/>
     </material>
     <material name="mtr_body_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df"/>
     </material>
     <material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_nm"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_df"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df"/>
     </material>	
 	
     <material name="mtr_helmet_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <bump_normal_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_nm"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_df"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df"/>
     </material>	
 	
     <material name="mtr_helmet_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet_df" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df" mip="4"/>
     </material>	
     <material name="mtr_bulldozer_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" mip="1"/>
     </material>
     <material name="mtr_bulldozer_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" mip="4"/>
     </material>
     <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
 	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df"/>
 		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
     </material>
     <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" mip="4"/>
     </material>
     <material name="mtr_glass_contour" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
         <diffuse_texture file="units/white_df"/>

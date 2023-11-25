@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="debris" slot="18">
-	<object file="units/pd2_mod_omnia/characters/ene_acc_bulldozer_3_neck/ene_acc_bulldozer_3_neck" />
+	<object file="units/pd2_mod_omnia/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 	</extensions>

@@ -2498,6 +2498,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_br55 = {
 				translation = Vector3(-0.01, 1, -1.21)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_t9british = {
+				translation = Vector3(-0.014, -5, -2.638),
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
 				translation = Vector3(0.045, 5.7, -3.092)
@@ -23561,6 +23564,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation = Vector3( 0.013, -25, -2.65 )
 				}
 			}
+
+			self.wpn_fps_ass_t9british.override = self.wpn_fps_ass_t9british.override or {}
+
+			for i, part_id in pairs(self.wpn_fps_ass_t9british.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type == "sight" and part_id ~= "wpn_fps_ass_t9british_scope" then
+					self.wpn_fps_ass_t9british.override[part_id] = self.wpn_fps_ass_t9british.override[part_id] or {}
+					self.wpn_fps_ass_t9british.override[part_id].forbids = deep_clone(self.parts[part_id].forbids) or {}
+					table.insert(self.wpn_fps_ass_t9british.override[part_id].forbids , "wpn_fps_ass_t9british_irons")
+				end
+			end
+			
+			self.wpn_fps_ass_t9british_npc.override = deep_clone(self.wpn_fps_ass_t9british.override)
+
 		end
 
 		if self.parts.wpn_fps_smg_lc10_gadget_mount then

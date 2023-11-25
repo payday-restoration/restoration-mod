@@ -16840,7 +16840,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lc10.CAN_TOGGLE_FIREMODE = true
 		self.lc10.CLIP_AMMO_MAX = 30
 		self.lc10.AMMO_MAX = 120
-		self.lc10.kick = self.stat_info.kick_tables.horizontal_recoil
+		self.lc10.kick = self.stat_info.kick_tables.even_recoil
 		self.lc10.panic_suppression_chance = 0.05
 		self.lc10.supported = true
 		self.lc10.ads_speed = 0.200
@@ -16865,6 +16865,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.lc10.stats_modifiers = nil
 		self.lc10.panic_suppression_chance = 0.05
+		self.lc10.timers.reload_not_empty = 2.18
+		self.lc10.timers.reload_exit_not_empty = 0.65
+		self.lc10.timers.reload_empty = 2.48
+		self.lc10.timers.reload_exit_empty = 0.52
 	end
 
 	if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
@@ -16975,7 +16979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a.CAN_TOGGLE_FIREMODE = false
 		self.stoner63a.fire_mode_data.fire_rate = 0.0829875
 		self.stoner63a.AMMO_MAX = 300
-		self.stoner63a.kick = self.stat_info.kick_tables.even_recoil
+		self.stoner63a.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
 		self.stoner63a.always_use_standing = true
 		self.stoner63a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 		self.stoner63a.supported = true

@@ -23565,6 +23565,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			}
 
+			table.insert(self.wpn_fps_ass_t9british.uses_parts, "wpn_fps_ass_t9british_handle_mix_01")
+	
 			self.wpn_fps_ass_t9british.override = self.wpn_fps_ass_t9british.override or {}
 
 			for i, part_id in pairs(self.wpn_fps_ass_t9british.uses_parts) do
@@ -23574,8 +23576,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					table.insert(self.wpn_fps_ass_t9british.override[part_id].forbids , "wpn_fps_ass_t9british_irons")
 				end
 			end
-			
+
 			self.wpn_fps_ass_t9british_npc.override = deep_clone(self.wpn_fps_ass_t9british.override)
+			self.wpn_fps_ass_t9british_npc.uses_parts = deep_clone(self.wpn_fps_ass_t9british.uses_parts)
+
+	
 
 		end
 

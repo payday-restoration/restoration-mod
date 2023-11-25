@@ -16865,8 +16865,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.lc10.stats_modifiers = nil
 		self.lc10.panic_suppression_chance = 0.05
-		self.lc10.timers.reload_not_empty = 2.18
-		self.lc10.timers.reload_exit_not_empty = 0.65
+		self.lc10.timers.reload_not_empty = 2.11
+		self.lc10.timers.reload_exit_not_empty = 0.72
 		self.lc10.timers.reload_empty = 2.48
 		self.lc10.timers.reload_exit_empty = 0.52
 	end

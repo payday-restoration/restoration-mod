@@ -4523,6 +4523,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bo_flashbang_desc"] = "섬광탄은 이제 파괴할 수 없습니다.",
 		["mutator_bo_flashbang_longdesc"] = "섬광탄은 이제 파괴할 수 없습니다.",
 		
+		["mutator_grenade_mayhem"] = "총체적 난국",
+		["menu_mutator_grenade_mayhem_usuals_toggle"] = "일반 및 엘리트 적 포함",
+		["menu_mutator_grenade_mayhem_thugs_toggle"] = "갱단 포함",
+		["menu_mutator_grenade_mayhem_specials_toggle"] = "특수 적 포함",
+		["menu_mutator_grenade_mayhem_bosses_toggle"] = "보스 포함",
+		["menu_mutator_grenade_mayhem_captains_toggle"] = "캡틴 포함",
+		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "척탄병의 파편 유탄 언더베럴 포함",
+		["mutator_grenade_mayhem_desc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.",
+		["mutator_grenade_mayhem_longdesc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.\n\n참고: 화염방사기를 사용하는 적들은 파편 수류탄 대신 화염병을 사용하고, 클로커는 최루탄을 사용합니다.",		
 		--[[
 		["mutator_captain_replace"] = "캡틴 스위처",
 		["menu_mutator_captain_replace"] = "캡틴",

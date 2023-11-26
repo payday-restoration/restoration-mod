@@ -94,10 +94,14 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.tank_skull.grenade_toss_chance = 0.4
 		char_tweak.tank_titan.can_throw_frag = true
 		char_tweak.tank_titan.grenade_toss_chance = 0.4
+		char_tweak.tank_titan_assault.can_throw_frag = true
+		char_tweak.tank_titan_assault.grenade_toss_chance = 0.4
 		char_tweak.tank_medic.can_throw_frag = true
 		char_tweak.tank_medic.grenade_toss_chance = 0.4
 		char_tweak.tank_hw.can_throw_frag = true
 		char_tweak.tank_hw.grenade_toss_chance = 0.4
+		char_tweak.tank_hw_black.can_throw_frag = true
+		char_tweak.tank_hw_black.grenade_toss_chance = 0.4
 		char_tweak.omnia_lpf.can_throw_frag = true
 		char_tweak.heavy_swat_sniper.can_throw_frag = true
 		char_tweak.taser_titan.can_throw_frag = true
@@ -120,6 +124,7 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.drug_lord_boss.can_throw_frag = true
 		char_tweak.biker_boss.can_throw_frag = true
 		char_tweak.deep_boss.can_throw_frag = true
+		char_tweak.fbi_vet_boss.can_throw_frag = true
 	end
 	
 	if gm_captains == "on" then

@@ -27,6 +27,7 @@ end
 
 function MutatorGrenadeMayhem:setup(data)
 	local char_tweak = tweak_data.character
+	local faction = tweak_data.levels:get_ai_group_type()
 	local gm_usuals = self:get_grenade_mayhem_usuals()
 	local gm_thugs = self:get_grenade_mayhem_thugs()
 	local gm_specials = self:get_grenade_mayhem_specials()
@@ -92,10 +93,17 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.tank_black.grenade_toss_chance = 0.4
 		char_tweak.tank_skull.can_throw_frag = true
 		char_tweak.tank_skull.grenade_toss_chance = 0.4
-		char_tweak.tank_titan.can_throw_frag = true
-		char_tweak.tank_titan.grenade_toss_chance = 0.4
-		char_tweak.tank_titan_assault.can_throw_frag = true
-		char_tweak.tank_titan_assault.grenade_toss_chance = 0.4
+		if faction == "russia" or faction == "federales" then
+			char_tweak.tank_titan.can_deploy_tear_gas = true
+			char_tweak.tank_titan.chance_use_gas = 0.4
+			char_tweak.tank_titan_assault.can_deploy_tear_gas = true
+			char_tweak.tank_titan_assault.chance_use_gas = 0.4
+		else
+			char_tweak.tank_titan.can_throw_frag = true
+			char_tweak.tank_titan.grenade_toss_chance = 0.4
+			char_tweak.tank_titan_assault.can_throw_frag = true
+			char_tweak.tank_titan_assault.grenade_toss_chance = 0.4
+		end
 		char_tweak.tank_medic.can_throw_frag = true
 		char_tweak.tank_medic.grenade_toss_chance = 0.4
 		char_tweak.tank_hw.can_throw_frag = true

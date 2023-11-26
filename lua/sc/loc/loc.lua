@@ -4425,13 +4425,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_grenade_mayhem"] = "Total Carnage!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Include Commons and Elites",
-		["menu_mutator_grenade_mayhem_thugs_toggle"] = "Include Bandits",
+		["menu_mutator_grenade_mayhem_thugs_toggle"] = "Include Gangsters",
 		["menu_mutator_grenade_mayhem_specials_toggle"] = "Include Specials",
 		["menu_mutator_grenade_mayhem_bosses_toggle"] = "Include Bosses",
 		["menu_mutator_grenade_mayhem_captains_toggle"] = "Include Captains",
 		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "Include Frag Underbarrels for Grenadiers",
-		["mutator_grenade_mayhem_desc"] = "Non-Bravo enemies can now throw the frag grenades.",
-		["mutator_grenade_mayhem_longdesc"] = "Non-Bravo enemies can now throw the frag grenades.\n\nNote: Enemies with flamethrowers will use molotovs instead of frags; Cloakers will use tear gas instead of frags.",
+		["mutator_grenade_mayhem_desc"] = "Non-Bravo enemies can now throw frag grenades.",
+		["mutator_grenade_mayhem_longdesc"] = "Non-Bravo enemies can now throw frag grenades.\n\nNote: Enemies with flamethrowers will use molotovs instead of frags; Cloakers will use tear gas instead of frags.",
 		--[[
 		["mutator_captain_replace"] = "Captain Switcher",
 		["menu_mutator_captain_replace"] = "Captain",

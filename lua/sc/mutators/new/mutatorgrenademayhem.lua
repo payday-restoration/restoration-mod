@@ -93,14 +93,12 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.tank_black.grenade_toss_chance = 0.4
 		char_tweak.tank_skull.can_throw_frag = true
 		char_tweak.tank_skull.grenade_toss_chance = 0.4
+		char_tweak.tank_titan.can_throw_frag = true
+		char_tweak.tank_titan.grenade_toss_chance = 0.4
 		if faction == "russia" or faction == "federales" then
-			char_tweak.tank_titan.can_deploy_tear_gas = true
-			char_tweak.tank_titan.chance_use_gas = 0.4
 			char_tweak.tank_titan_assault.can_deploy_tear_gas = true
 			char_tweak.tank_titan_assault.chance_use_gas = 0.4
 		else
-			char_tweak.tank_titan.can_throw_frag = true
-			char_tweak.tank_titan.grenade_toss_chance = 0.4
 			char_tweak.tank_titan_assault.can_throw_frag = true
 			char_tweak.tank_titan_assault.grenade_toss_chance = 0.4
 		end

@@ -4525,7 +4525,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_grenade_mayhem"] = "총체적 난국",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "일반 및 엘리트 적 포함",
-		["menu_mutator_grenade_mayhem_thugs_toggle"] = "갱단 포함",
+		["menu_mutator_grenade_mayhem_thugs_toggle"] = "갱스터 포함",
 		["menu_mutator_grenade_mayhem_specials_toggle"] = "특수 적 포함",
 		["menu_mutator_grenade_mayhem_bosses_toggle"] = "보스 포함",
 		["menu_mutator_grenade_mayhem_captains_toggle"] = "캡틴 포함",

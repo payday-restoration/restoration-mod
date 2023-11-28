@@ -16969,7 +16969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.t9fastburst.timers.reload_exit_not_empty = 0.8
 	end
 
-	if self.stoner63a then --RJC9000 and PlayBONK's BOCW Stoner 63A LMG (WIP)
+	if self.stoner63a then --RJC9000 and PlayBONK's BOCW Stoner 63A LMG
 		self.stoner63a.recategorize = { "light_mg" }
 		self.stoner63a.categories = {
 			"lmg",
@@ -17029,21 +17029,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a_rifle.CAN_TOGGLE_FIREMODE = false
 		self.stoner63a_rifle.fire_mode_data.fire_rate = 0.06666666
 		self.stoner63a_rifle.AMMO_MAX = 150
-		self.stoner63a_rifle.kick = self.stat_info.kick_tables.even_recoil
+		self.stoner63a_rifle.kick = self.stat_info.kick_tables.horizontal_recoil
 		self.stoner63a_rifle.supported = true
-		self.stoner63a_rifle.ads_speed = 0.320
+		self.stoner63a_rifle.ads_speed = 0.340
 		self.stoner63a_rifle.damage_falloff = {
-			start_dist = 2000,
+			start_dist = 1700,
 			end_dist = 6500,
 			min_mult = 0.4166
 		}
 		self.stoner63a_rifle.stats = {
 			damage = 24,
 			spread = 71,
-			recoil = 77,
+			recoil = 75,
 			spread_moving = 5,
 			zoom = 1,
-			concealment = 22,
+			concealment = 21,
 			suppression = 8,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -17053,6 +17053,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.stoner63a_rifle.stats_modifiers = nil
 		self.stoner63a_rifle.panic_suppression_chance = 0.05
+		self.stoner63a_rifle.timers.reload_not_empty = 2.01
+		self.stoner63a_rifle.timers.reload_exit_not_empty = 0.8
+		self.stoner63a_rifle.timers.reload_empty = 3.23
+		self.stoner63a_rifle.timers.reload_exit_empty = 0.8
 	end
 
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand

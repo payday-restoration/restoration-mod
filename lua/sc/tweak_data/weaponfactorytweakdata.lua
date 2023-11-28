@@ -24004,6 +24004,44 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_lmg_stoner63a_npc.uses_parts = deep_clone(self.wpn_fps_lmg_stoner63a.uses_parts)
 		end
 
+		if self.parts.wpn_fps_ass_stoner63a_rifle_irons_modified then
+
+			self.parts.wpn_fps_ass_stoner63a_rifle_irons.supported = true
+			self.parts.wpn_fps_ass_stoner63a_rifle_irons.stance_mod = {
+				wpn_fps_ass_stoner63a_rifle = {
+					translation = Vector3(0, -5, -1.7),
+					rotation = Rotation(-0.000872665, 0, -0, -1)
+				}
+			}
+			self.parts.wpn_fps_ass_stoner63a_rifle_irons_modified.supported = true
+			self.parts.wpn_fps_ass_stoner63a_rifle_irons_modified.stance_mod = {
+				wpn_fps_ass_stoner63a_rifle = {
+					translation = Vector3(0, -5, -1.7),
+					rotation = Rotation(-0.000872665, 0, -0, -1)
+				}
+			}
+
+			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_short.supported = true
+			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_shortwpn_fps_ass_stoner63a_rifle_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine.supported = true
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine.custom_stats = {}
+
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.supported = true
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.stats = { 
+				value = 3,
+				concealment = -4,
+				reload = -6,
+				extra_ammo = 30
+			}
+			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.custom_stats = {
+				ads_speed_mult = 0.9
+			}
+
+		end
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack

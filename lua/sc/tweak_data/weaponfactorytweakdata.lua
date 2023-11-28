@@ -24023,7 +24023,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_short.supported = true
 			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_short.stats = deep_clone(barrels.short_b2_stats)
-			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_shortwpn_fps_ass_stoner63a_rifle_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_stoner63a_rifle_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
 
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine.supported = true
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine.stats = { value = 0 }

@@ -52,7 +52,7 @@ function MutatorsManager:init()
 		MutatorBoFlashbang:new(self),
 		MutatorGrenadeMayhem:new(self),
 		--MutatorNoOutlines:new(self),
-		--MutatorCaptainReplacer:new(self),		
+		MutatorCaptainReplacer:new(self),		
 		--MutatorFactionsReplacer:new(self),
 		MutatorBirthday:new(self)
 	}

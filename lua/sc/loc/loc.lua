@@ -4432,15 +4432,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "Include Frag Underbarrels for Grenadiers",
 		["mutator_grenade_mayhem_desc"] = "Non-Bravo enemies can now throw frag grenades.",
 		["mutator_grenade_mayhem_longdesc"] = "Non-Bravo enemies can now throw frag grenades.\n\nNote: Enemies with flamethrowers will use molotovs instead of frags; Cloakers will use tear gas instead of frags.",
-		--[[
-		["mutator_captain_replace"] = "Captain Switcher",
+		
+		["mutator_captain_replace"] = "Everlasting Season",	
 		["menu_mutator_captain_replace"] = "Captain",
 		["menu_mutator_captain_replace_winter"] = "Winters",
 		["menu_mutator_captain_replace_autumn"] = "Autumn",
 		["menu_mutator_captain_replace_spring"] = "Spring",
 		["menu_mutator_captain_replace_summer"] = "Summers",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
-		--]]
+		["mutator_captain_replace_desc"] = "Allows you change captain that may appear on heist.",
+		["mutator_captain_replace_longdesc"] = "Allows you change captain that may appear on heist.\n\nNote: Mutator can't override scripted captain encounters.",
+		
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",

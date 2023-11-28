@@ -4554,6 +4554,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_desc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.",
 		["mutator_grenade_mayhem_longdesc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.\n\nПримечание: Враги с огнеметами будут кидать молотовы вместо осколочных; Клокеры будут кидать слезоточивый газ вместо осколочных.",
 
+		["mutator_captain_replace"] = "Вечная непогода",	
+		["menu_mutator_captain_replace"] = "Капитан",
+		["menu_mutator_captain_replace_winter"] = "Винтерс",
+		["menu_mutator_captain_replace_autumn"] = "Отем",
+		["menu_mutator_captain_replace_spring"] = "Спринг",
+		["menu_mutator_captain_replace_summer"] = "Саммерс",
+		["menu_mutator_captain_replace_hvh"] = "АТБГШИЛ",
+		["mutator_captain_replace_desc"] = "Позволяет менять капитана, который может появиться на ограблении.",
+		["mutator_captain_replace_longdesc"] = "Позволяет менять капитана, который может появиться на ограблении.\n\nПримечание: Мутатор не может заменить капитанов, которые приходят по скрипту.",
+		
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",
 		["mutator_spawn_mult_desc"] = "Спауны врагов увеличены.",

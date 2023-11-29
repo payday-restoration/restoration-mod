@@ -17059,6 +17059,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.stoner63a_rifle.timers.reload_exit_empty = 0.8
 	end
 
+	if self.bf2042_ayylmao then --RJC9000's BF2042 Ayy Lmao Pistol
+		self.bf2042_ayylmao.recategorize = { "light_pis" }
+		self.bf2042_ayylmao.damage_type = "light_pistol"
+		self.bf2042_ayylmao.fire_mode_data.fire_rate = 0.0882352
+		self.bf2042_ayylmao.AMMO_MAX = 75
+		self.bf2042_ayylmao.CLIP_AMMO_MAX = 17
+		self.bf2042_ayylmao.tactical_reload = 1
+		self.bf2042_ayylmao.lock_slide = true
+		self.bf2042_ayylmao.kick = self.stat_info.kick_tables.even_recoil
+		self.bf2042_ayylmao.supported = true
+		self.bf2042_ayylmao.ads_speed = 0.140
+		self.bf2042_ayylmao.damage_falloff = {
+			start_dist = 1500,
+			end_dist = 3800,
+			min_mult = 0.25
+		}
+		self.bf2042_ayylmao.stats = {
+			damage = 24,
+			spread = 51,
+			recoil = 91,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 30,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.bf2042_ayylmao.stats_modifiers = nil
+		self.bf2042_ayylmao.timers.reload_empty = 2.12
+		self.bf2042_ayylmao.timers.reload_exit_empty = 0.45
+		self.bf2042_ayylmao.timers.reload_not_empty = 1.71
+		self.bf2042_ayylmao.timers.reload_exit_not_empty = 0.47
+	end
+
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand
 		self.malorian_3516.recategorize = { "heavy_pis", "handcannon" }
 		self.malorian_3516.desc_id = "whydoyoucome"

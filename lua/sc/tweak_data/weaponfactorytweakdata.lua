@@ -23579,9 +23579,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.wpn_fps_ass_t9british_npc.override = deep_clone(self.wpn_fps_ass_t9british.override)
 			self.wpn_fps_ass_t9british_npc.uses_parts = deep_clone(self.wpn_fps_ass_t9british.uses_parts)
-
-	
-
 		end
 
 		if self.parts.wpn_fps_smg_lc10_gadget_mount then
@@ -24039,6 +24036,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.custom_stats = {
 				ads_speed_mult = 0.9
 			}
+		end
+
+		if self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude then
+
+			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.supported = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.adds = {}
+			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.stats = { value = 0 }
+			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.custom_stats = {}
+			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.supported = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.custom_stats = {}
+
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.supported = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.stats = { value = 0 }
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.custom_stats = {}
+
+			self.parts.wpn_fps_pis_bf2042_ayylmao_rd6.supported = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_rd6.stats = { value = 2, zoom = 1 }
+
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.supported = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.has_description = true
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.stats = {
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.custom_stats = nil
+			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.perks = {"silencer"}
 
 		end
 

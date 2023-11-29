@@ -4532,15 +4532,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "척탄병의 파편 유탄 언더베럴 포함",
 		["mutator_grenade_mayhem_desc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.",
 		["mutator_grenade_mayhem_longdesc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.\n\n참고: 화염방사기를 사용하는 적들은 파편 수류탄 대신 화염병을 사용하고, 클로커는 최루탄을 사용합니다.",		
-		--[[
-		["mutator_captain_replace"] = "캡틴 스위처",
+
+		["mutator_captain_replace"] = "영구적인 계절",
 		["menu_mutator_captain_replace"] = "캡틴",
 		["menu_mutator_captain_replace_winter"] = "윈터스",
 		["menu_mutator_captain_replace_autumn"] = "어텀",
 		["menu_mutator_captain_replace_spring"] = "스프링",
 		["menu_mutator_captain_replace_summer"] = "서머스",
 		["menu_mutator_captain_replace_hvh"] = "지옥 타이탄 도저",
-		--]]		
+		["mutator_captain_replace_desc"] = "하이스트에 나타날 수 있는 캡틴을 변경할 수 있습니다.",
+		["mutator_captain_replace_longdesc"] = "하이스트에 나타날 수 있는 캡틴을 변경할 수 있습니다.\n\n참고: 해당 뮤테이터는 스크립트된 캡틴 엔카운터를 바꿀 수 없습니다.",	
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

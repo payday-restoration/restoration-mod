@@ -17090,6 +17090,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.bf2042_ayylmao.stats_modifiers = nil
+		self.bf2042_ayylmao.panic_suppression_chance = 0.05
 		self.bf2042_ayylmao.timers.reload_empty = 2.12
 		self.bf2042_ayylmao.timers.reload_exit_empty = 0.45
 		self.bf2042_ayylmao.timers.reload_not_empty = 1.71

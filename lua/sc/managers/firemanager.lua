@@ -19,6 +19,7 @@ local draw_obstructed_splinters = nil
 local draw_splinter_hits = nil
 local debug_draw_duration = 3
 
+--[[
 function FireManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
@@ -211,6 +212,7 @@ function FireManager:_add_doted_enemy(enemy_unit, fire_damage_received_time, wea
 
 	self:check_achievemnts(enemy_unit, fire_damage_received_time)
 end
+--]]
 
 function FireManager:detect_and_give_dmg(params)
 	local hit_pos = params.hit_pos

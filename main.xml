@@ -108,7 +108,7 @@
 		<hook file="sc/tweak_data/preplanningtweakdata.lua" source_file="lib/tweak_data/preplanningtweakdata"/>
 		<hook file="sc/managers/blackmarketmanager.lua" source_file="lib/managers/blackmarketmanager"/>
 		<hook file="sc/managers/skilltreemanager.lua" source_file="lib/managers/skilltreemanager"/>
-		<hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/>
+		<!--hook file="sc/managers/dotmanager.lua" source_file="lib/managers/dotmanager"/-->
 		<hook file="sc/managers/enemymanager.lua" source_file="lib/managers/enemymanager"/>
 		<hook file="sc/managers/explosionmanager.lua" source_file="lib/managers/explosionmanager"/>
 		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>

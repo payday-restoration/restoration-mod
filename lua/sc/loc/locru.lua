@@ -4950,7 +4950,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Rifleman
 				["menu_rifleman_sc"] = "Пехотинец",
-				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и дальнобойности во время прицеливания.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и дальнобойности во время прицеливания.",
+				["menu_rifleman_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Винтовки## получают на #{skill_color}#$skill_value_b1## больше точности и дальнобойности во время прицеливания.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Винтовки## получают еще на #{skill_color}#$skill_value_p1## больше точности и дальнобойности во время прицеливания.\n\nСкорость прицеливания и задержка после бега быстрее и меньше соответственно на #{skill_color}#$skill_value_p2##.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Килмер",

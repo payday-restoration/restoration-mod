@@ -18,12 +18,24 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 		ponr_value = 1020	
 	end
 	
+	if difficulty_index >= 6 then
+		timelock_normal = 240
+		timelock_fast = 210
+	end
+	
 if Global.game_settings and Global.game_settings.one_down then
-		timelock_normal = 300
-		timelock_fast = 270
+
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+
+	if difficulty_index <= 5 then
+		timelock_normal = 240
+		timelock_fast = 210
+	else
+		timelock_normal = 300
+		timelock_fast = 270
+	end	
 end
 
 local ponr_timer_player_mul = {
@@ -61,7 +73,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	--More timelock timer on Pro Jobs
+	--More timelock timer on higher diifs and Pro Jobs
 	[103137] = {
 		values = {
             time = timelock_normal

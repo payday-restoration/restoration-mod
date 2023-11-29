@@ -2,10 +2,20 @@ local difficulty = Global.game_settings and Global.game_settings.difficulty or "
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local murky_guard = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
 
-	if Global.game_settings and Global.game_settings.one_down then
+	if difficulty_index >= 6 then
 		timelock = 150
-		murky_guard = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 	end	
+
+if Global.game_settings and Global.game_settings.one_down then
+
+		murky_guard = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
+		
+	if difficulty_index <= 5 then
+		timelock = 150
+	else	
+		timelock = 210
+	end
+end
 
 return {
 	--More timelock timer on Pro Jobs

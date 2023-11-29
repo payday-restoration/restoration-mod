@@ -4827,9 +4827,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_discipline_sc"] = "Sharpshooter",
 				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst increase your rate of fire by #{skill_color}#20%## for #{skill_color}#10## seconds.",
 
-				--Rifleman
+				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
-				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#15%## more accuracy and range while aiming down sights.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#15%## more accuracy and range while aiming down sights.",
+				["menu_rifleman_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## more accuracy and range while aiming down sights.\n\nACE: #{owned}#$pro##\n#{skill_color}#Rifles## gain an additional #{skill_color}#$skill_value_p1## more accuracy and range while aiming down sights.\n\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#rifles## are #{skill_color}#$skill_value_p2## faster.",
 
 				--Kilmer--
 				["menu_heavy_impact_beta_sc"] = "Kilmer",
@@ -4839,7 +4839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
 				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#3## lethal headshots with #{skill_color}#rifles## in less than #{skill_color}#8## seconds will grant #{skill_color}#3%## of your total ammo, to a minimum of #{skill_color}#1## round, back to the weapon.\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#2## lethal headshots within #{skill_color}#12## seconds of each other.",
 
-				--Aggressive Reload
+				--Aggressive Reload--
 				["menu_engineering_beta_sc"] = "Aggressive Reload",
 				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst will increase your reload speed by #{skill_color}#25%## for #{skill_color}#10## seconds.\n\nACE: #{owned}#$pro##\nThe reload speed bonus increases to #{skill_color}#50%## and can be triggered regardless of fire mode.",
 
@@ -4905,11 +4905,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Optical Illusions--
 				["menu_optic_illusions_sc"] = "Optical Illusions",
-				["menu_optic_illusions_desc_sc"] = "BASIC: #{owned}#$basic##\nYou draw and holster weapons #{skill_color}#15%## faster.\n\nACE: #{owned}#$pro##\nIncreases the mobility of all guns by #{skill_color}#2.##",
+				["menu_optic_illusions_desc_sc"] = "BASIC: #{owned}#$basic##\nYou draw and holster weapons #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nIncreases the mobility of all guns by #{skill_color}#$skill_value_p1.##",
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
-				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#5%## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#10%## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
+				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#skill_value_p1## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",

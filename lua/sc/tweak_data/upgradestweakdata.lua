@@ -1300,10 +1300,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.steelsight_accuracy_inc = {0.85, 0.7}
 					self.values.assault_rifle.steelsight_range_inc = {1.15, 1.3}
 					self.values.snp.steelsight_range_inc = {1.15, 1.3}
+
+					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.075}
+					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
 					
 					self.skill_descs.fire_control = {
 					skill_value_b1 = tostring(self.values.snp.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
-					skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%"
+					skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%",
+					skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 					
 			--Aggressive Reload
@@ -1608,8 +1612,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--The Professional
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {
-						1.05,
-						1.15
+						1.0375,
+						1.075
 					}
 				--Ace
 					self.values.player.special_double_drop = {true}
@@ -4972,6 +4976,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "pick_up_multiplier",
 			category = "akimbo"
+		}
+	}
+	self.definitions.assault_rifle_enter_steelsight_speed_multiplier = {
+		name_id = "menu_assault_rifle_enter_steelsight_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "enter_steelsight_speed_multiplier",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.snp_enter_steelsight_speed_multiplier = {
+		name_id = "menu_snp_enter_steelsight_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "enter_steelsight_speed_multiplier",
+			category = "snp"
 		}
 	}
 	self.definitions.weapon_enter_steelsight_speed_multiplier_1 = {

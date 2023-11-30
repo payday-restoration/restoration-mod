@@ -123,31 +123,6 @@ function NewFlamethrowerBase:_update_stats_values()
 		if stats.damage_far_mul then
 			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
-
-		if stats.use_rare_dot then
-			self._ammo_data = {
-				bullet_class = "FlameBulletBase",
-				fire_dot_data = {
-					dot_damage = 0.8,
-					dot_trigger_chance = 60,
-					dot_length = 6.1,
-					dot_tick_period = 0.5
-				}
-			}
-		end
-
-		--Worst way to eat a steak, seriously what the fuck's wrong with you
-		if stats.use_well_done_dot then
-			self._ammo_data = {
-				bullet_class = "FlameBulletBase",
-				fire_dot_data = {
-					dot_damage = 3.2,
-					dot_trigger_chance = 60,
-					dot_length = 1.6,
-					dot_tick_period = 0.5
-				}					
-			}
-		end
 	end
 
 	--Effect range, set to longest possible falloff distance.

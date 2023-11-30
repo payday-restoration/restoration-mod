@@ -660,6 +660,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	return result
 end
 
+--[[
 -- Fix inverted suppression - in vanilla, the closer your shots are to an enemy, the less they suppress them
 local check_autoaim_original = RaycastWeaponBase.check_autoaim
 function RaycastWeaponBase:check_autoaim(...)
@@ -675,7 +676,6 @@ end
 
 -- Fix stale alerts, if alert radius changed since the last time an alert occurred it may get discarded wrongly
 -- This only really affects saws
---[[
 function RaycastWeaponBase:_check_alert(rays, fire_pos, direction, user_unit)
 	if self:gadget_overrides_weapon_functions() then
 		local r = self:gadget_function_override("_check_alert", self, rays, fire_pos, direction, user_unit)

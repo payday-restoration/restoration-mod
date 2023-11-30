@@ -150,6 +150,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.sah.ai_group_type = fbi
 	self.sah.flashlights_on = true
 	
+	self.tag.ai_group_type = fbi
+	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
 	self.man.ai_group_type = fbi

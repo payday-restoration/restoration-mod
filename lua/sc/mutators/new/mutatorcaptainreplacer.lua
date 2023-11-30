@@ -65,7 +65,7 @@ function MutatorCaptainReplacer:setup()
 	--Winters 
 	if difficulty_index <= 5 then
 		winter_preset = {
-			amount = {5, 5},
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -88,7 +88,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	elseif difficulty_index == 6 then
 		winter_preset = {
-			amount = {6, 6},
+			amount = 6,
 			force = true,
 			spawn = {
 				{
@@ -111,7 +111,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 7 then
 		winter_preset = {
-			amount = {8, 8},
+			amount = 8,
 			force = true,
 			spawn = {
 				{
@@ -142,7 +142,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	else
 		winter_preset = {
-			amount = {10, 10},
+			amount = 10,
 			force = true,
 			spawn = {
 				{
@@ -176,7 +176,7 @@ function MutatorCaptainReplacer:setup()
 	--Captain Spring
 	if difficulty_index <= 5 then
 		spring_preset = {
-			amount = {1, 1},
+			amount = 1,
 			force = true,
 			spawn = {
 				{
@@ -191,7 +191,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	elseif difficulty_index == 6 then
 		spring_preset = {
-			amount = {3, 3},
+			amount = 3,
 			force = true,
 			spawn = {
 				{
@@ -214,7 +214,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 7 then	
 		spring_preset = {
-			amount = {5, 5},
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -245,7 +245,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	else
 		spring_preset = {
-			amount = {7, 7},
+			amount = 7,
 			force = true,
 			spawn = {
 				{
@@ -279,7 +279,7 @@ function MutatorCaptainReplacer:setup()
 	--HVH boss
 	if difficulty_index <= 5 then
 		spooky_preset = {
-			amount = {1, 1},
+			amount = 1,
 			force = true,
 			spawn = {
 				{
@@ -294,7 +294,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	elseif difficulty_index == 6 then
 		spooky_preset = {
-			amount = {3, 3},
+			amount = 3,
 			force = true,
 			spawn = {
 				{
@@ -317,7 +317,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 7 then
 		spooky_preset = {
-			amount = {5, 5},
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -348,7 +348,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	else
 		spooky_preset = {
-			amount = {7, 7},
+			amount = 7,
 			force = true,
 			spawn = {
 				{
@@ -382,7 +382,7 @@ function MutatorCaptainReplacer:setup()
 	--Captain Autumn 
 	if difficulty_index <= 5 then
 		autumn_preset = {
-			amount = {1, 1},
+			amount = 1,
 			force = true,
 			spawn = {
 				{
@@ -397,7 +397,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 6 then
 		spooky_preset = {
-			amount = {3, 3},
+			amount = 3,
 			force = true,
 			spawn = {
 				{
@@ -420,7 +420,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	elseif difficulty_index == 7 then
 		spooky_preset = {
-			amount = {4, 4},
+			amount = 4,
 			force = true,
 			spawn = {
 				{
@@ -443,7 +443,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	else
 		spooky_preset = {
-			amount = {5, 5},
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -468,7 +468,7 @@ function MutatorCaptainReplacer:setup()
 	
 	--Captain Summers 
 	summer_preset = {
-		amount = {4, 4},
+		amount = 4,
 		force = true,
 		spawn = {
 			{

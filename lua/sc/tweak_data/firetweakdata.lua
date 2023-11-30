@@ -21,23 +21,23 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	}
 
 
-	
+
 	fire_entries.weapon_flamethrower_mk2 = {
-		dot_trigger_chance = 0.5,
+		dot_trigger_chance = 0.60,
 		dot_damage = 1.6,
 		dot_length = 3.1,
 		dot_trigger_max_distance = false
 	}
 	fire_entries.ammo_flamethrower_mk2_rare = {
-		dot_trigger_chance = 0.75,
-		dot_damage = 15,
-		dot_length = 1.5,
+		dot_trigger_chance = 0.60,
+		dot_damage = 0.8,
+		dot_length = 6.1,
 		dot_trigger_max_distance = false
 	}
 	fire_entries.ammo_flamethrower_mk2_welldone = {
-		dot_trigger_chance = 0.75,
-		dot_damage = 25,
-		dot_length = 1.5,
+		dot_trigger_chance = 0.60,
+		dot_damage = 3.2,
+		dot_length = 1.6,
 		dot_trigger_max_distance = false
 	}
 

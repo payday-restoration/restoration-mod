@@ -12776,11 +12776,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flamethrower_mk2", "resmod_flameth
 	self.parts.wpn_fps_fla_mk2_mag_rare.desc_id = "bm_wp_fla_mk2_mag_rare_desc_sc"
 	self.parts.wpn_fps_fla_mk2_mag_rare.has_description = true
 	self.parts.wpn_fps_fla_mk2_mag_rare.supported = true
-	self.parts.wpn_fps_fla_mk2_mag_rare.stats = {
-		value = 5
-	}
-	self.parts.wpn_fps_fla_mk2_mag_rare.custom_stats = {
-		use_rare_dot = true
+	self.parts.wpn_fps_fla_mk2_mag_rare.stats = { value = 5 }
+	self.parts.wpn_fps_fla_mk2_mag_rare.adds = { "wpn_fps_fla_mk2_ammo_rare" }
+	self.parts.wpn_fps_fla_mk2_ammo_rare = {
+		a_obj = "a_body",
+		type = "ammo",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		internal_part = true,
+		name_id = "bm_wp_upg_a_fla_mk2_ammo_rare",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		pcs = {},
+		stats = {
+			value = 0
+		},
+		custom_stats = {
+			bullet_class = "FlameBulletBase",
+			dot_data_name = "ammo_flamethrower_mk2_rare"
+		}
 	}
 
 	--Well Done
@@ -12794,11 +12806,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flamethrower_mk2", "resmod_flameth
 	self.parts.wpn_fps_fla_mk2_mag_welldone.name_id = "bm_wp_fla_mk2_mag_welldone"
 	self.parts.wpn_fps_fla_mk2_mag_welldone.desc_id = "bm_wp_fla_mk2_mag_well_desc_sc"
 	self.parts.wpn_fps_fla_mk2_mag_welldone.supported = true
-	self.parts.wpn_fps_fla_mk2_mag_welldone.stats = {
-		value = 5
-	}
-	self.parts.wpn_fps_fla_mk2_mag_welldone.custom_stats = {
-		use_well_done_dot = true
+	self.parts.wpn_fps_fla_mk2_mag_welldone.stats = { value = 5 }
+	self.parts.wpn_fps_fla_mk2_mag_welldone.adds = { "wpn_fps_fla_mk2_ammo_welldone" }
+	self.parts.wpn_fps_fla_mk2_ammo_welldone = {
+		a_obj = "a_body",
+		type = "ammo",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		internal_part = true,
+		name_id = "bm_wp_upg_a_fla_mk2_ammo_welldone",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		pcs = {},
+		stats = {
+			value = 0
+		},
+		custom_stats = {
+			bullet_class = "FlameBulletBase",
+			dot_data_name = "ammo_flamethrower_mk2_welldone"
+		}
 	}
 	
 	--Part Additions

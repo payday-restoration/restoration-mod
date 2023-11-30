@@ -1,25 +1,23 @@
 <?xml version="1.0"?>
 <tweaks>
-	<!-- Re-add money death state redirect -->
+	<!-- Restore old dozer punch animation -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
-			<state name="std"/>
+			<state name="upper_body/melee"/>
+			<anim name="cbt_rifle_melee"/>
 		</search>
-		<target mode="attach">
-			<to name="death_money" redirect="std/death/money"/>
+		<target mode="attributes">
+			<attr name="weight" value="rifle * (1 - tank)"/>
 		</target>
 	</tweak>
-	<!-- Actually set base_need_upd otherwise stand actions end too soon -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
-			<state name="std/stand/still/std_from_crh"/>
-			<keys/>
+			<state name="upper_body/melee"/>
 		</search>
 		<target mode="attach">
-			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
-			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
+			<anim name="tank_melee" weight="tank"/>
 		</target>
 	</tweak>
 	<!-- Give akimbo pistol users a neutral idle animation -->
@@ -33,153 +31,25 @@
 			<attr name="weight" value="cop * ntl * (pistol+akimbo_pistol)"/>
 		</target>
 	</tweak>
-	<!-- Actually set base_need_upd otherwise crouch actions end too soon -->
+	<!-- Upper body blend fixes -->
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
-			<state name="std/crouch/still/crh_from_std"/>
-			<keys/>
+			<state name="upper_body/empty"/>
+			<from_group name="upper_body/stand_reload"/>
 		</search>
-		<target mode="attach">
-			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
-			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
-		</target>
-	</tweak>
-	<!-- Dodge state fixes -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/dodge"/>
-			<keys/>
-		</search>
-		<target mode="attach">
-			<!-- The state should have these regardless of whether the actual copaction forces updating -->
-			<key at="enter" set_extension="anim_data" extension_key="base_need_upd" extension_value="true"/>
-			<key at="exit" set_extension="anim_data" extension_key="base_need_upd" extension_value="false"/>
-
-			<!-- Recoil anims cause bugey head rotation -->
-			<key at="enter" set_extension="anim_data" extension_key="base_no_recoil" extension_value="true"/>
-			<key at="exit" set_extension="anim_data" extension_key="base_no_recoil" extension_value="false"/>
-		</target>
-	</tweak>
-	<!-- Shield navlink displacement fix -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/stand/nav_link"/>
-		</search>
-		<target mode="attach">
-			<from_group name="std/crouch/still" blend="3"/>
-		</target>
-	</tweak>
-	<!-- Navlink exit state fixes -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/stand/nav_link/fwd_2m"/>
-			<exit/>
-		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/crouch/still/idle"/>
+		<target mode="replace">
+			<from name="upper_body/stand_reload" blend="0"/>
 		</target>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
 		<search>
 			<xml/>
-			<state name="std/stand/nav_link/fwd_4m"/>
-			<exit/>
+			<state name="upper_body/empty"/>
+			<from_group name="upper_body/crouch_reload"/>
 		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/crouch/still/idle"/>
-		</target>
-	</tweak>
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/stand/nav_link/e_nl_slide_fwd_4m"/>
-			<exit/>
-		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/crouch/still/idle"/>
-		</target>
-	</tweak>
-	<!-- Make medic heals an upper_body animation -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std"/>
-			<to name="heal"/>
-		</search>
-		<target mode="attributes">
-			<attr name="redirect" value="upper_body/heal"/>
-		</target>
-	</tweak>
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="upper_body"/>
-		</search>
-		<target mode="append">
-			<state name="upper_body/heal" type="mix" segment="upper_body" mute="upper_body_ext">
-				<anim name="heal" weight="rifle"/>
-				<keys>
-					<key at="enter" set_extension="anim_data" extension_key="healing" extension_value="true"/>
-					<key at="exit" set_extension="anim_data" extension_key="healing" extension_value="false"/>
-				</keys>
-				<exit name="upper_body/empty"/>
-			</state>
-		</target>
-	</tweak>
-	<!-- Poison state fixes -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/hurt/poison/enter"/>
-		</search>
-		<target mode="attributes">
-			<attr name="type" value="once"/>
-		</target>
-	</tweak>
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/hurt/poison/enter"/>
-			<exit/>
-		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/hurt/poison/loop"/>
-		</target>
-	</tweak>
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/hurt/poison/exit"/>
-			<exit/>
-		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/stand/still/idle/look"/>
-		</target>
-	</tweak>
-	<!-- Revive exit fix -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/interact/revive/exit"/>
-			<exit/>
-		</search>
-		<target mode="attributes">
-			<attr name="name" value="std/stand/still/idle/look"/>
-		</target>
-	</tweak>
-	<!-- Bleedout state fixes -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
-		<search>
-			<xml/>
-			<state name="std/bleedout"/>
-			<to name="death"/>
-		</search>
-		<target mode="attributes">
-			<attr name="redirect" value="std/fatal/to_dead"/>
+		<target mode="replace">
+			<from name="upper_body/crouch_reload" blend="0"/>
 		</target>
 	</tweak>
 	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
@@ -192,4 +62,4 @@
 			<attr name="redirect" value="std/fatal/enter"/>
 		</target>
 	</tweak>
-</tweaks>	
+</tweaks>

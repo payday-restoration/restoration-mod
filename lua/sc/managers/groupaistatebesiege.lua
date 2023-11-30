@@ -1051,8 +1051,11 @@ function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, deto
 				end
 
 				if detonate_pos and shooter_u_data then
-					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false)
-					self:apply_grenade_cooldown()
+					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false, false)
+					
+					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.rand(0, 1)^0.5)
+					task_data.use_smoke = false
+					--self:apply_grenade_cooldown()
 
 					u_data.unit:sound():say("d01", true)
 
@@ -1096,8 +1099,12 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 				end
 
 				if detonate_pos and shooter_u_data then
-					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true)
-					self:apply_grenade_cooldown(true)
+					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true, false)
+					
+					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random()^0.5)
+					task_data.use_smoke = false
+					
+					--self:apply_grenade_cooldown(true)
 
 					u_data.unit:sound():say("d02", true)	
 					u_data.unit:movement():play_redirect("throw_grenade")					

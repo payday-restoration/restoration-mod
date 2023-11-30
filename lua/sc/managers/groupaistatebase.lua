@@ -360,20 +360,7 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	return balance_multipliers[nr_players]
 end
 
-function GroupAIStateBase:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, ignore_control, flashbang)
-	self._smoke_grenades = self._smoke_grenades or {}
-	local data = {
-		id = id,
-		detonate_pos = detonate_pos,
-		shooter_pos = shooter_pos,
-		duration = duration,
-		ignore_control = ignore_control,
-		flashbang = flashbang
-	}
-	self._smoke_grenades[id] = data
-end
-
-function GroupAIStateBase:detonate_world_smoke_grenade(id)
+function GroupAIStateBase:detonate_world_smoke_grenade(id, sync)
 	self._smoke_grenades = self._smoke_grenades or {}
 
 	if not self._smoke_grenades[id] then
@@ -421,7 +408,14 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		flashbang_unit = managers.mutators:modify_value("GroupAIStateBase:SpawnSpecialFlashbang", flashbang_unit)
 		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
-		flash_grenade:base():activate(shoot_from_pos, data.duration)
+		
+		managers.network:session():send_to_peers_synched("sync_flash_grenade_data", flash_grenade, data.shooter_pos or Vector3(), data.instant and true or false)
+
+		if data.instant then
+			flash_grenade:base():activate_immediately(data.shooter_pos, data.duration)
+		else
+			flash_grenade:base():activate(data.shooter_pos, data.duration)
+		end
 
 		self._smoke_grenades[id] = nil
 	else
@@ -446,7 +440,12 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		local smoke_grenade = World:spawn_unit(smoke_grenade_id, det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
 		--log("spawning smoke!! was it tear gas?")
-		smoke_grenade:base():activate(shoot_from_pos, data.duration)
+				
+		if data.instant then
+			smoke_grenade:base():activate_immediately(data.shooter_pos, data.duration)
+		else
+			smoke_grenade:base():activate(data.shooter_pos, data.duration)
+		end
 
 		local voice_line = "g40x_any"
 		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
@@ -454,33 +453,13 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
-		self._smoke_end_t = Application:time() + data.duration
+		
+		self:_update_smoke_end_t(TimerManager:game():time() + data.duration)
 	end
-end
-
-function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
-	self._smoke_grenades = self._smoke_grenades or {}
-	local id = #self._smoke_grenades
-
-	self:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, true, flashbang)
-	self:detonate_world_smoke_grenade(id)
-end
-
-function GroupAIStateBase:sync_smoke_grenade_kill()
-	if self._smoke_grenades then
-		for id, data in pairs(self._smoke_grenades) do
-			if alive(data.grenade) and data.grenade:base() and data.grenade:base().preemptive_kill then
-				data.grenade:base():preemptive_kill()
-			end
-		end
-
-		self._smoke_grenades = {}
-		self._smoke_end_t = nil
-	end
-end
-
-function GroupAIStateBase:smoke_and_flash_grenades()
-	return self._smoke_grenades
+	
+	if sync and not flashbang and Network:is_server() then
+		managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.shooter_pos or Vector3(), data.duration, data.flashbang and true or false, data.instant and true or false)
+	end	
 end
 
 --No longer increases with more players, also ignores converts.
@@ -806,12 +785,6 @@ function GroupAIStateBase:_delay_whisper_suspicion_mul_decay()
 end
 
 function GroupAIStateBase:on_enemy_unregistered(unit)
-	if self:is_unit_in_phalanx_minion_data(unit:key()) then
-		self:unregister_phalanx_minion(unit:key())
-		CopLogicPhalanxMinion:chk_should_breakup()
-		CopLogicPhalanxMinion:chk_should_reposition()
-	end
-
 	self._police_force = self._police_force - 1
 	local u_key = unit:key()
 
@@ -829,6 +802,12 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 
 		fail_clbk(unit)
 	end
+	
+	if self:is_unit_in_phalanx_minion_data(unit:key()) then
+		self:unregister_phalanx_minion(unit:key())
+		CopLogicPhalanxMinion:chk_should_breakup()
+		CopLogicPhalanxMinion:chk_should_reposition()
+	end	
 
 	local e_data = self._police[u_key]
 

@@ -900,14 +900,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
 	end
 
-	if ray_res.enemies_in_cone then
-		for enemy_data, dis_error in pairs(ray_res.enemies_in_cone) do
-			if not enemy_data.unit:movement():cool() then
-				enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
-			end
-		end
-	end
-
+	self:_build_suppression(ray_res.enemies_in_cone, suppr_mul)
 	managers.player:send_message(Message.OnWeaponFired, nil, self._unit, ray_res)
 
 	--Autofire soundfix integration.

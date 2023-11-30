@@ -584,7 +584,7 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
 	dot_length = 10.15,
 	dot_tick_period = 0.5
 }
-
+--[[
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
 	dot_length = 4.1,
@@ -598,6 +598,7 @@ tweak_data.dot_types.bleed = {
 	dot_damage = 2,
 	hurt_animation_chance = 0
 }
+]]--
 
 --Fire!
 tweak_data.fire.effects.money_short = {

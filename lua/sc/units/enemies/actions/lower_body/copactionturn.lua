@@ -1,3 +1,4 @@
+--[[
 local tmp_rot = Rotation()
 local mrot_set_ypr = mrotation.set_yaw_pitch_roll
 
@@ -47,3 +48,4 @@ function CopActionTurn:_upd_wait_full_blend(t)
 		end
 	end
 end
+]]--

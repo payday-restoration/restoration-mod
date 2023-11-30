@@ -4804,8 +4804,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
-			["menu_shotgun_cqb_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 타격",
@@ -4935,7 +4935,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[  COMBAT ENGINEER SUBTREE   ]]--
 			--Rifleman
 			["menu_rifleman_sc"] = "라이플맨",
-			["menu_rifleman_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#소총##으로 조준하는 동안 소총의 명중률과 사거리가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##으로 조준하는 동안 소총의 명중률과 사거리가 추가로 #{skill_color}#15%##만큼 더 증가합니다.",			
+			["menu_rifleman_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#소총##으로 조준하는 동안 소총의 명중률과 사거리가 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#소총##으로 조준하는 동안 소총의 명중률과 사거리가 추가로 #{skill_color}#$skill_value_p1##만큼 더 증가합니다.\n\n#{skill_color}#소총##의 조준 속도 및 전력 질주 후 사격 속도가 #{skill_color}#$skill_value_p2##만큼 더 빨라집니다.",			
 			
 			--Sharpshooter--
 			["menu_discipline_sc"] = "명사수",
@@ -5011,53 +5011,53 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SILENT KILLER SUBTREE   ]]--
 			--Second Wind
 			["menu_scavenger_beta_sc"] = "새로운 활력",
-			["menu_scavenger_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 부서지면 #{skill_color}#3##초 동안 이동속도가 #{skill_color}#10%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n방탄복이 완전히 부서진 상태로 첫 번째 공격을 가하면 근처에 있는 적이 비틀거리게 됩니다.\n\n이 효과는 방탄복이 재생된 후 #{skill_color}#3##초 동안 지속됩니다.",
+			["menu_scavenger_beta_desc_sc"] = "베이직: #{owned}#$basic##\n방탄복이 부서지면 #{skill_color}#$skill_value_b2##초 동안 이동속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n방탄복이 완전히 부서진 상태로 첫 번째 공격을 가하면 근처에 있는 적이 비틀거리게 됩니다.\n\n이 효과는 방탄복이 재생된 후 #{skill_color}#$skill_value_p1##초 동안 지속됩니다.",
 			
 			--Optical Illusions--
 			["menu_optic_illusions_sc"] = "착시 현상",
-			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#15%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 기동성이 #{skill_color}#2##만큼 증가합니다.",
+			["menu_optic_illusions_desc_sc"] = "베이직: #{owned}#$basic##\n무기 교체 속도가 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n모든 무기의 기동성이 #{skill_color}#$skill_value_p1##만큼 증가합니다.",
 
 			--The Professional--
 			["menu_silence_expert_beta_sc"] = "프로페셔널",
-			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#10%##만큼 더 빨라집니다.\n\n특수 및 엘리트 적을 비폭발 원거리 무기로 죽이면 #{skill_color}#추가 탄약 상자를 떨굽니다.##",
+			["menu_silence_expert_beta_desc_sc"] = "베이직: #{owned}#$basic##\n조준 속도와 전력 질주 후 발사가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n조준 속도와 전력 질주 후 발사가 추가로 #{skill_color}#$skill_value_p1##만큼 더 빨라집니다.\n\n특수 및 엘리트 적을 비폭발 원거리 무기로 죽이면 #{skill_color}#추가 탄약 상자를 떨굽니다.##",
 
 			--Unseen Strike, formally Dire Need--
 			["menu_backstab_beta_sc"] = "기습 공격",
-			["menu_backstab_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#3##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 #{skill_color}#15%##만큼 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 #{skill_color}#4##초 동안 지속됩니다.",
+			["menu_backstab_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#$skill_value_b1##초 동안 피해를 입지 않는다면, 피해를 입을 때까지 치명타 확률을 #{skill_color}#$skill_value_b2##만큼 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n기습 공격의 치명타 확률이 피해를 입은 후 #{skill_color}#$skill_value_p1##초 동안 지속됩니다.",
 
 			--Cleaner--
 			["menu_hitman_beta_sc"] = "청소부",
-			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 및 엘리트 적에게 #{skill_color}#10%##만큼 피해를 더 가합니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n특수 및 엘리트 적에게 추가로 #{skill_color}#15%##만큼 더 가합니다.\n\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#12.5%##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#75%##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
+			["menu_hitman_beta_desc_sc"] = "베이직: #{owned}#$basic##\n특수 및 엘리트 적에게 #{skill_color}#$skill_value_b1##만큼 피해를 더 가합니다.\n\n#{risk}#참고:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n특수 및 엘리트 적에게 추가로 #{skill_color}#$skill_value_p1##만큼 더 가합니다.\n\n헤드샷으로 적을 죽이면 회피 미터가 회피의 #{skill_color}#$skill_value_p2##만큼 채워집니다.\n\n적을 뒤에서 죽이면 회피 미터가 회피의 #{skill_color}#$skill_value_p3##만큼 채워집니다. 또한 헤드샷 킬을 통해 주어지는 회피와 중첩이 가능합니다.\n\n#{risk}#참고:## #{important_1}#폭발물, 불 또는 지속 피해 효과로 죽이면## #{risk}#회피가 채워지지 않습니다.##",
 
 			--Low Blow--
 			["menu_unseen_strike_beta_sc"] = "로 블로",
-			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{risk}#30##에서 #{risk}#2##씩 낮아질 수록 최대 #{skill_color}#30%##까지 치명타 확률을 #{skill_color}#3%##씩 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{risk}#30##에서 #{risk}#1##씩 낮아질 수록 최대 #{skill_color}#30%##까지 치명타 확률을 #{skill_color}#3%##씩 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#50%##만큼 증가합니다.",
+			["menu_unseen_strike_beta_desc_sc"] = "베이직: #{owned}#$basic##\n착용감이 #{risk}#$skill_value_b3##에서 #{risk}#$skill_value_b2##씩 낮아질 수록 최대 #{skill_color}#$skill_value_b4##까지 치명타 확률을 #{skill_color}#$skill_value_b1##씩 얻습니다.\n\n치명타 피해가 추가로 #{skill_color}#50%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n착용감이 #{risk}#$skill_value_p3##에서 #{risk}#$skill_value_p2##씩 낮아질 수록 최대 #{skill_color}#$skill_value_p4##까지 치명타 확률을 #{skill_color}#$skill_value_p1##씩 얻습니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 추가로 #{skill_color}#$skill_value_p5##만큼 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
 			--[[   GUNSLINGER SUBTREE   ]]--
 			--Equilibrium--
 			["menu_equilibrium_beta_sc"] = "이퀼리브리엄",
-			["menu_equilibrium_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신과 당신의 동료들의 #{skill_color}#권총##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 뽑고 넣는 시간이 #{skill_color}#100%##만큼 빨라집니다.",
+			["menu_equilibrium_beta_desc_sc"] = "베이직: #{owned}#$basic##\n당신과 당신의 동료들의 #{skill_color}#권총##의 안정성이 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 뽑고 넣는 시간이 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
 
 			--Gun Nut--
 			["menu_dance_instructor_sc"] = "총기광",
-			["menu_dance_instructor_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 지향 사격 명중률을 #{skill_color}#20%##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 발사 속도가 #{skill_color}#15%##만큼 빨라집니다.\n\n이제 #{skill_color}#권총##은 #{skill_color}#방탄복을 관통할 수 있습니다.##",
+			["menu_dance_instructor_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 지향 사격 명중률을 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 발사 속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.\n\n이제 #{skill_color}#권총##은 방탄복을 관통하여 #{skill_color}$skill_value_p2##의 피해를 가할 수 있습니다.",
 
 			--Over Pressurized/Gunfighter--
 			["menu_gun_fighter_sc"] = "총잡이",
-			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 장전 속도가 #{skill_color}#5%##만큼 빨라집니다.\n\n#{skill_color}#권총##의 명중률에 대한 이동 패널티가 #{skill_color}#40%##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 장전 속도가 추가로 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 장전 속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n#{skill_color}#권총##의 명중률에 대한 이동 패널티가 #{skill_color}#$skill_value_b2##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 장전 속도가 추가로 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
 
 			--Akimbo--
 			["menu_akimbo_skill_sc"] = "아킴보",
-			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#10##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 명중률이 #{skill_color}#10%##만큼 증가합니다.",
+			["menu_akimbo_skill_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#아킴보##의 안정성이 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#아킴보##의 명중률이 #{skill_color}#$skill_value_p1##만큼 증가합니다.",
 
 			--Desperado--
 			["menu_expert_handling_sc"] = "데스페라도",
-			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 무기의 명중률과 사거리를 #{skill_color}#8%##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 #{skill_color}#권총##으로 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#4##초 증가합니다.",
+			["menu_expert_handling_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#$skill_value_b2##초 동안 무기의 명중률과 사거리를 #{skill_color}#$skill_value_b1##만큼 증가시킵니다.\n\n이 효과는 #{skill_color}#$skill_value_b3##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n명중률 및 사거리 증가 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가합니다.",
 
 			--Trigger Happy--
 			["menu_trigger_happy_beta_sc"] = "난사광",
-			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#4##초 동안 대미지가 #{skill_color}#5%##만큼 증가됩니다.\n\n이 효과는 #{skill_color}#5##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 추가로 #{skill_color}#4##초 증가하고 최대 중첩 수가 #{skill_color}#5##회 더 증가합니다.",
+			["menu_trigger_happy_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##으로 헤드샷 할 시 #{skill_color}#$skill_value_b2##초 동안 대미지가 #{skill_color}#$skill_value_b1##만큼 증가됩니다.\n\n이 효과는 #{skill_color}#$skill_value_b3##번 중첩될 수 있으며 각 중첩의 지속 시간은 헤드샷 할 시 다시 되돌려집니다.\n\n에이스: #{owned}#$pro##\n대미지 증가 부스트 지속 시간이 추가로 #{skill_color}#$skill_value_p1##초 증가하고 최대 중첩 수가 #{skill_color}#$skill_value_p2##회 더 증가합니다.",
 
 			--[[   REVENANT SUBTREE  ]]--
 			--Running From Death--

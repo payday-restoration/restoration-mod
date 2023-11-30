@@ -4533,8 +4533,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_desc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.",
 		["mutator_grenade_mayhem_longdesc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.\n\n참고: 화염방사기를 사용하는 적들은 파편 수류탄 대신 화염병을 사용하고, 클로커는 최루탄을 사용합니다.",		
 
-		["mutator_captain_replace"] = "영구적인 계절",
-		["menu_mutator_captain_replace"] = "캡틴",
+		["mutator_captain_replace"] = "영원한 계절",
+		["menu_mutator_captain_replace"] = "캡틴",'
+		["menu_mutator_captain_replace_1"] = "캡틴 (1일차)",
+		["menu_mutator_captain_replace_2"] = "캡틴 (2일차)",
+		["menu_mutator_captain_replace_3"] = "캡틴 (3일차)",		
 		["menu_mutator_captain_replace_winter"] = "윈터스",
 		["menu_mutator_captain_replace_autumn"] = "어텀",
 		["menu_mutator_captain_replace_spring"] = "스프링",

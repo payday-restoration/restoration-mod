@@ -32,6 +32,7 @@ action_variants.vetlod = security_variant
 action_variants.meme_man = security_variant
 action_variants.meme_man_shield = clone(security_variant)
 action_variants.meme_man_shield.hurt = ShieldActionHurt
+action_variants.meme_man_shield.turn = ShieldActionTurn
 action_variants.meme_man_shield.walk = ShieldCopActionWalk
 action_variants.spring = clone(security_variant)
 action_variants.spring.walk = TankCopActionWalk
@@ -77,7 +78,7 @@ function CopMovement:post_init()
 	self._ext_base = unit:base()
 	self._ext_damage = unit:character_damage()
 	self._ext_inventory = unit:inventory()
-	self._tweak_data = tweak_data.character[self._ext_base._tweak_table]
+	self._tweak_data = self._ext_base:char_tweak()
 
 	tweak_data:add_reload_callback(self, self.tweak_data_clbk_reload)
 	self._machine:set_callback_object(self)
@@ -103,7 +104,7 @@ function CopMovement:post_init()
 
 	self._unit:kill_mover()
 	self._unit:set_driving("script")
-
+	
 	--[[
 	if job == "short1_stage1" or job == "short1_stage2" then 
 		self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
@@ -111,68 +112,49 @@ function CopMovement:post_init()
 		self._unit:unit_data().has_alarm_pager = false
 	end
 	self._unit:unit_data().has_called_police = false
-	]]--
-	
-	self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
-	local event_list = {
-		"bleedout",
-		"light_hurt",
-		"heavy_hurt",
-		"expl_hurt",
-		"hurt",
-		"hurt_sick",
-		"shield_knock",
-		"knock_down",
-		"stagger",
-		"counter_tased",
-		"taser_tased",
-		"death",
-		"fatal",
-		"fire_hurt",
-		"poison_hurt",
-		"concussion"
-	}
+	]]--	
 
-	table.insert(event_list, "healed")
-	self._unit:character_damage():add_listener("movement", event_list, callback(self, self, "damage_clbk"))
-	self._unit:inventory():add_listener("movement", {
-		"equip",
-		"unequip"
-	}, callback(self, self, "clbk_inventory"))
+	self._unit:unit_data().has_alarm_pager = self._tweak_data.has_alarm_pager
+
+	self._ext_damage:add_listener("movement", self._dmg_clbk_event_list, callback(self, self, "damage_clbk"))
+	self._ext_inventory:add_listener("movement", self._inventory_clbk_event_list, callback(self, self, "clbk_inventory"))
 	self:add_weapons()
 
-	if self._unit:inventory():is_selection_available(2) then
-		if self._unit:inventory():shield_unit() then
-			if self._unit:inventory():is_selection_available(1) then
-				self._unit:inventory():equip_selection(1, true)
+	if self._ext_inventory:is_selection_available(2) then
+		if self._ext_inventory:shield_unit() then
+			if self._ext_inventory:is_selection_available(1) then
+				self._ext_inventory:equip_selection(1, true)
 
-				local primary = self._unit:inventory():unit_by_selection(2)
+				local primary = self._ext_inventory:unit_by_selection(2)
 
 				primary:set_visible(false)
 				primary:set_enabled(false)
 			else
-				self._unit:inventory():equip_selection(2, true)
+				self._ext_inventory:equip_selection(2, true)
 			end
-		elseif managers.groupai:state():whisper_mode() or not self._unit:inventory():is_selection_available(1) then
-			self._unit:inventory():equip_selection(2, true)
+		elseif managers.groupai:state():whisper_mode() or not self._ext_inventory:is_selection_available(1) then
+			self._ext_inventory:equip_selection(2, true)
 		else
-			self._unit:inventory():equip_selection(1, true)
+			self._ext_inventory:equip_selection(1, true)
 		end
-	elseif self._unit:inventory():is_selection_available(1) then
-		self._unit:inventory():equip_selection(1, true)
+	elseif self._ext_inventory:is_selection_available(1) then
+		self._ext_inventory:equip_selection(1, true)
 	end
 
-	if not self._unit:inventory():shield_unit() and self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
+	if not self._ext_inventory:shield_unit() and self._ext_inventory:equipped_selection() == 2 and managers.groupai:state():whisper_mode() then
 		self._ext_inventory:set_weapon_enabled(false)
 	end
 
-	local fwd = self._m_rot:y()
 	self._action_common_data = {
+		gnd_ray = false,
+		is_cool = self._cool,
 		stance = self._stance,
 		pos = self._m_pos,
 		rot = self._m_rot,
-		fwd = fwd,
-		right = self._m_rot:x(),
+		fwd = self._m_fwd,
+		right = self._m_right,
+		look_vec = self._m_head_fwd,
+		allow_fire = self._allow_fire,
 		unit = unit,
 		machine = self._machine,
 		ext_movement = self,
@@ -185,17 +167,19 @@ function CopMovement:post_init()
 		char_tweak = self._tweak_data,
 		nav_tracker = self._nav_tracker,
 		active_actions = self._active_actions,
-		queued_actions = self._queued_actions,
-		look_vec = mvector3.copy(fwd)
+		queued_actions = self._queued_actions
+	}
+	self._move_dir = Vector3()
+	self._fake_ray_data = {
+		unit = false,
+		position = Vector3(),
+		ray = math.DOWN
 	}
 
 	self:upd_ground_ray()
-
-	if self._gnd_ray then
-		self:set_position(self._gnd_ray.position)
-	end
-
+	self:set_position(self._gnd_ray.position)
 	self:_post_init()
+	
 	self._omnia_cooldown = 0
 	self._asu_cooldown = 0
 	self._aoe_blackout_cooldown = 0	
@@ -205,23 +189,16 @@ function CopMovement:post_init()
 		managers.groupai:state():register_blackout_source(self._unit)
 	end
 	
-	self:set_cloaked(true)
-end	
+	self:set_cloaked(true)	
+end
 
 function CopMovement:_upd_actions(t)
 	local a_actions = self._active_actions
 	local has_no_action = true
+	local need_upd = nil
 
 	for i_action, action in ipairs(a_actions) do
 		if action then
-			if action.update then
-				action:update(t)
-			end
-
-			if not self._need_upd and action.need_upd then
-				self._need_upd = action:need_upd()
-			end
-
 			if action.expired and action:expired() then
 				a_actions[i_action] = false
 
@@ -230,7 +207,6 @@ function CopMovement:_upd_actions(t)
 				end
 
 				self._ext_brain:action_complete_clbk(action)
-				self._ext_base:chk_freeze_anims()
 
 				for _, action in ipairs(a_actions) do
 					if action then
@@ -240,62 +216,97 @@ function CopMovement:_upd_actions(t)
 					end
 				end
 			else
+				need_upd = need_upd or action.need_upd and action:need_upd()
+
+				if action.update then
+					action:update(t)
+				end
+
 				has_no_action = nil
 			end
 		end
 	end
 
-	if has_no_action then
-		if not self._queued_actions or not next(self._queued_actions) then
+	self._need_upd = need_upd
+
+	if not self._queued_actions or not next(self._queued_actions) then
+		if has_no_action then
 			self:action_request({
-				body_part = 1,
+				body_part = 3,
 				type = "idle"
 			})
-		end
-	end
 
-	if not a_actions[1] then
-		if not self._queued_actions or not next(self._queued_actions) then
-			if not a_actions[2] then
-				if not a_actions[3] or a_actions[3]:type() == "idle" then
-					if not self:chk_action_forbidden("action") then
-						self:action_request({
-							body_part = 1,
-							type = "idle"
-						})
-					end
-				elseif not self:chk_action_forbidden("action") then
-					self:action_request({
-						body_part = 2,
-						type = "idle"
-					})
-				end
-			elseif a_actions[2]:type() == "idle" then
-				if not a_actions[3] or a_actions[3]:type() == "idle" then
-					if not self:chk_action_forbidden("action") then
-						self:action_request({
-							body_part = 1,
-							type = "idle"
-						})
-					end
-				end
-			elseif not a_actions[3] and not self:chk_action_forbidden("action") then
+			if self._ext_anim.spawn then
+				self:play_redirect("idle")
+			end
+		elseif a_actions[1] then
+			if a_actions[1]:type() == "idle" then
 				self:action_request({
+					client_interrupt = true,
 					body_part = 3,
 					type = "idle"
 				})
+			end
+		elseif a_actions[2] and a_actions[2]:type() == "idle" then
+			if not a_actions[3] or a_actions[3]:type() == "idle" then
+				self:action_request({
+					non_persistent = true,
+					client_interrupt = true,
+					body_part = 2,
+					type = "idle"
+				})
+
+				if not a_actions[3] then
+					self:action_request({
+						body_part = 3,
+						type = "idle"
+					})
+				end
+			end
+		elseif a_actions[2] and not a_actions[3] then
+			local action_forbidden = nil
+			local action_data = {
+				body_part = 3,
+				type = "idle"
+			}
+
+			if Network:is_server() then
+				action_forbidden = self:chk_action_forbidden("action")
+			else
+				action_data.block_type = "action"
+				action_forbidden = self:chk_action_forbidden(action_data)
+			end
+
+			if not action_forbidden then
+				self:action_request(action_data)
+			end
+		elseif not a_actions[2] and a_actions[3] and a_actions[3]:type() ~= "idle" then
+			local action_forbidden = nil
+			local action_data = {
+				body_part = 2,
+				type = "idle"
+			}
+
+			if Network:is_server() then
+				action_forbidden = self:chk_action_forbidden("walk")
+			else
+				action_data.block_type = "walk"
+				action_forbidden = self:chk_action_forbidden(action_data)
+			end
+
+			if not action_forbidden then
+				self:action_request(action_data)
 			end
 		end
 	end
 
 	self:_upd_stance(t)
 
-	if not self._need_upd then
-		if self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._stance.transition or self._suppression.transition then
-			self._need_upd = true
-		end
+	if not self._need_upd and (self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._force_updating or self._stance.transition or self._suppression.transition) then
+		self._need_upd = true
 	end
-
+	
+	--Custom stuff
 	if self._tweak_data.do_omnia then
 		if not self._unit:character_damage():dead() then			
 			self:do_omnia(self)		
@@ -306,7 +317,7 @@ function CopMovement:_upd_actions(t)
 		if not self._unit:character_damage():dead() then			
 			self:do_asu(self)		
 		end
-	end	
+	end		
 end
 
 Hooks:PreHook(CopMovement, "_upd_stance", "res_upd_stance", function(self, t)
@@ -1047,16 +1058,6 @@ function CopMovement:_get_latest_tase_action()
 
 	if self._active_actions[3] and self._active_actions[3]:type() == "tase" and not self._active_actions[3]:expired() then
 		return self._active_actions[3]
-	end
-end
-
-function CopMovement:sync_taser_fire()
-	local tase_action, is_queued = self:_get_latest_tase_action()
-
-	if is_queued then
-		tase_action.firing_at_husk = true
-	elseif tase_action then
-		tase_action:fire_taser()
 	end
 end
 

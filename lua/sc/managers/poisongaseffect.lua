@@ -38,6 +38,15 @@ function PoisonGasEffect:update(t, dt)
 
 		if not self._started_fading and self._timer <= self._fade_time then
 			World:effect_manager():fade_kill(self._effect)
+			--We actually need this
+			if not self._sound_killed then
+				self._sound_source:post_event("lung_loop_end")
+				managers.enemy:add_delayed_clbk("PoisonGasEffect", callback(ProjectileBase, ProjectileBase, "_dispose_of_sound", {
+					sound_source = self._sound_source
+				}), TimerManager:game():time() + 4)
+
+				self._sound_killed = true
+			end			
 
 			self._started_fading = true
 		end

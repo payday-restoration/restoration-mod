@@ -26,9 +26,6 @@
 				<file :name="ene_secret_service_2.unit"/>
 				<file :name="ene_secret_service_2_husk.unit"/>
 			</group>
-			<group :name="pd2_dlc_born/characters/ene_biker_female_2/">
-				<file :name="ene_biker_female_2_husk.unit"/>
-			</group>
 			<group :name="pd2_dlc_bph/characters/civ_male_locke_escort/">
 				<file :name="civ_male_locke_escort_contour.material_config"/>
 			</group>
@@ -37,7 +34,6 @@
 				<file :name="cas_secret_service_1_casino_dead_poses.material_config"/>
 			</group>
 			<group :name="pd2_dlc_spa/characters/ene_sniper_3/">
-				<file :name="ene_sniper_3.unit"/>
 				<file :name="ene_sniper_3_husk.unit"/>
 			</group>
 			<group :name="payday2/characters/ene_fbi_3/">

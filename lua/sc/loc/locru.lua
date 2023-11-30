@@ -4555,7 +4555,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_longdesc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.\n\nПримечание: Враги с огнеметами будут кидать молотовы вместо осколочных; Клокеры будут кидать слезоточивый газ вместо осколочных.",
 
 		["mutator_captain_replace"] = "Вечная непогода",	
-		["menu_mutator_captain_replace"] = "Капитан",
+		["menu_mutator_captain_replace_1"] = "Капитан (день 1)",
+		["menu_mutator_captain_replace_2"] = "Капитан (день 2)",
+		["menu_mutator_captain_replace_3"] = "Капитан (день 3)",
 		["menu_mutator_captain_replace_winter"] = "Винтерс",
 		["menu_mutator_captain_replace_autumn"] = "Отем",
 		["menu_mutator_captain_replace_spring"] = "Спринг",

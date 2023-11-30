@@ -17,14 +17,16 @@ MutatorCaptainReplacer.icon_coords = {
 }
 
 function MutatorCaptainReplacer:register_values(mutator_manager)
-	self:register_value("captain_replace", "winter", "cr")
+	self:register_value("captain_replace_1", "winter", "cr1")
+	self:register_value("captain_replace_2", "winter", "cr2")
+	self:register_value("captain_replace_3", "winter", "cr3")
 end
 
 function MutatorCaptainReplacer:name(lobby_data)
 	local name = MutatorCaptainReplacer.super.name(self)
 
 	if self:_mutate_name("captain_replace") then
-		return string.format("%s - %s", name, managers.localization:text("menu_mutator_captain_replace_" .. tostring(self:value("captain_replace"))))
+		return string.format("%s - %s", name, managers.localization:text("menu_mutator_captain_replace_" .. tostring(self:get_captain_override())))
 	else
 		return name
 	end
@@ -52,6 +54,7 @@ end
 function MutatorCaptainReplacer:setup()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	
 	local winter_preset = nil
 	local spring_preset = nil
 	local summer_preset = nil
@@ -522,17 +525,27 @@ function MutatorCaptainReplacer:setup()
 	tweak_data.group_ai.enemy_spawn_groups.Cap_Summers = new_captain
 end
 
-function MutatorCaptainReplacer:get_captain_override()
-	return self:value("captain_replace")
+function MutatorCaptainReplacer:get_captain_override(specific_day)
+--specific_day need only for settings
+if specific_day == nil then
+	local current_heist_stage = 1
+	if #(managers.job:current_job_chain_data() or {}) > 1 then
+		current_heist_stage = managers.job:current_stage() or 1
+	end
+	log("captain_replace  "..tostring(self:value("captain_replace_"..tostring(current_heist_stage))))
+	return self:value("captain_replace_"..tostring(current_heist_stage))
+else
+	return self:value("captain_replace_"..tostring(specific_day))
+end
 end
 
 function MutatorCaptainReplacer:setup_options_gui(node)
 	local params = {
 		callback = "_update_mutator_value",
-		name = "captain_selector_choice",
-		text_id = "menu_mutator_captain_replace",
+		name = "captain_selector_choice_1",
+		text_id = "menu_mutator_captain_replace_1",
 		filter = true,
-		update_callback = callback(self, self, "_update_captain_override")
+		update_callback = callback(self, self, "_update_captain_override_1")
 	}
 	local data_node = {
 		{
@@ -564,16 +577,49 @@ function MutatorCaptainReplacer:setup_options_gui(node)
 	}
 	local new_item = node:create_item(data_node, params)
 
-	new_item:set_value(self:get_captain_override())
+	new_item:set_value(self:get_captain_override(1))
 	node:add_item(new_item)
+	
+	local params = {
+		callback = "_update_mutator_value",
+		name = "captain_selector_choice_2",
+		text_id = "menu_mutator_captain_replace_2",
+		filter = true,
+		update_callback = callback(self, self, "_update_captain_override_2")
+	}
+	local new_item = node:create_item(data_node, params)
 
+	new_item:set_value(self:get_captain_override(2))
+	node:add_item(new_item)
+	
+	local params = {
+		callback = "_update_mutator_value",
+		name = "captain_selector_choice_3",
+		text_id = "menu_mutator_captain_replace_3",
+		filter = true,
+		update_callback = callback(self, self, "_update_captain_override_3")
+	}
+	local new_item = node:create_item(data_node, params)
+
+	new_item:set_value(self:get_captain_override(3))
+	node:add_item(new_item)
+	
+	
 	self._node = node
 
 	return new_item
 end
 
-function MutatorCaptainReplacer:_update_captain_override(item)
-	self:set_value("captain_replace", item:value())
+function MutatorCaptainReplacer:_update_captain_override_1(item)
+	self:set_value("captain_replace_1", item:value())
+end
+
+function MutatorCaptainReplacer:_update_captain_override_2(item)
+	self:set_value("captain_replace_2", item:value())
+end
+
+function MutatorCaptainReplacer:_update_captain_override_3(item)
+	self:set_value("captain_replace_3", item:value())
 end
 
 function MutatorCaptainReplacer:reset_to_default()

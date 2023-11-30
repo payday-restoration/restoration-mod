@@ -4434,7 +4434,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_longdesc"] = "Non-Bravo enemies can now throw frag grenades.\n\nNote: Enemies with flamethrowers will use molotovs instead of frags; Cloakers will use tear gas instead of frags.",
 		
 		["mutator_captain_replace"] = "Everlasting Season",	
-		["menu_mutator_captain_replace"] = "Captain",
+		["menu_mutator_captain_replace_1"] = "Captain (Day 1)",
+		["menu_mutator_captain_replace_2"] = "Captain (Day 2)",
+		["menu_mutator_captain_replace_3"] = "Captain (Day 3)",
 		["menu_mutator_captain_replace_winter"] = "Winters",
 		["menu_mutator_captain_replace_autumn"] = "Autumn",
 		["menu_mutator_captain_replace_spring"] = "Spring",

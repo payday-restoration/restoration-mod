@@ -1261,12 +1261,7 @@ local grips = {
 					rays = 16,
 					trail_effect = "",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = 2.25,
-						dot_trigger_chance = 30,
-						dot_length = 2.1,
-						dot_tick_period = 0.5
-					}
+					dot_data_name = "ammo_dragons_breath_auto"
 				}
 			},
 	
@@ -1291,12 +1286,7 @@ local grips = {
 					rays = 16,
 					trail_effect = "",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = 3,
-						dot_trigger_chance = 40,
-						dot_length = 2.1,
-						dot_tick_period = 0.5
-					}
+					dot_data_name = "ammo_dragons_breath"
 				}
 			},
 	
@@ -1319,12 +1309,7 @@ local grips = {
 					rays = 16,
 					trail_effect = "",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = 3,
-						dot_trigger_chance = 40,
-						dot_length = 2.1,
-						dot_tick_period = 0.5
-					}
+					dot_data_name = "ammo_dragons_breath"
 				}
 			},
 	
@@ -1349,12 +1334,7 @@ local grips = {
 					rays = 16,
 					trail_effect = "",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = 4.5,
-						dot_trigger_chance = 50,
-						dot_length = 2.1,
-						dot_tick_period = 0.5
-					}
+					dot_data_name = "ammo_dragons_breath_pump"
 				}
 			},
 	
@@ -1376,12 +1356,7 @@ local grips = {
 					rays = 16,
 					trail_effect = "",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = 6,
-						dot_trigger_chance = 80,
-						dot_length = 2.1,
-						dot_tick_period = 0.5
-					}
+					dot_data_name = "ammo_dragons_breath_heavy"
 				}
 			},
 	

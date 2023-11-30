@@ -8159,12 +8159,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.kacchainsaw_flamethrower.can_shoot_through_shield = false
 			self.kacchainsaw_flamethrower.can_shoot_through_wall = false
 			self.kacchainsaw_flamethrower.kick = self.stat_info.kick_tables.even_recoil
-			self.kacchainsaw_flamethrower.fire_dot_data = {
-				dot_damage = 1.6,
-				dot_trigger_chance = 50,
-				dot_length = 3.1,
-				dot_tick_period = 0.5
-			}
+			self.kacchainsaw_flamethrower.dot_data_name = "weapon_kacchainsaw_flamethrower"
 			self.kacchainsaw_flamethrower.supported = true
 			self.kacchainsaw_flamethrower.ads_speed = 0.400
 			self.kacchainsaw_flamethrower.damage_falloff = {
@@ -11792,6 +11787,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flamethrower_mk2.can_shoot_through_shield = false
 				self.flamethrower_mk2.can_shoot_through_wall = false
 				self.flamethrower_mk2.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.flamethrower_mk2.dot_data_name = "weapon_flamethrower_mk2"
 				self.flamethrower_mk2.fire_dot_data = {
 					dot_damage = 1.6,
 					dot_trigger_chance = 50,

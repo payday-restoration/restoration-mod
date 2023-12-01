@@ -4,23 +4,22 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	fire_entries.default_fire = {
 		PROCESSED = true,
 		name = "default",
-		dot_length = 6,
+		dot_length = 3.1,
 		dot_trigger_chance = 0.35,
 		dot_trigger_max_distance = 3000,
-		dot_grace_period = 1,
+		dot_grace_period = 0.1,
 		variant = "fire",
-		dot_damage = 13,
+		dot_damage = 0.3,
 		damage_class = "FlameBulletBase",
 		dot_tick_period = 0.5
 	}
+
 	fire_entries.weapon_kacchainsaw_flamethrower = {
 		dot_trigger_chance = 0.5,
 		dot_damage = 1.6,
 		dot_length = 3.1,
 		dot_trigger_max_distance = false
 	}
-
-
 
 	fire_entries.weapon_flamethrower_mk2 = {
 		dot_trigger_chance = 0.60,
@@ -98,11 +97,18 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	}
 
 	fire_entries.melee_spoon_gold = {
-		dot_trigger_chance = 0.2,
-		dot_damage = 7,
-		dot_length = 3,
+		dot_trigger_chance = 0.5,
+		dot_damage = 2,
+		dot_length = 3.1,
 		dot_trigger_max_distance = false
 	}
+	fire_entries.melee_therkatana = {
+		dot_trigger_chance = 1,
+		dot_damage = 2,
+		dot_length = 3.1,
+		dot_trigger_max_distance = false
+	}
+
 	fire_entries.proj_molotov = {
 		dot_trigger_chance = 1,
 		dot_damage = 21,

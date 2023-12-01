@@ -18,10 +18,10 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		PROCESSED = true,
 		name = "default",
 		dot_length = 6,
-		dot_damage = 25,
+		dot_damage = 2.0,
 		damage_class = "PoisonBulletBase",
 		dot_tick_period = 0.5,
-		dot_grace_period = 1,
+		dot_grace_period = 0.1,
 		variant = "poison"
 	}
 	poison_entries.weapon_dotbulletbase = {
@@ -73,16 +73,21 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 end
 
 function DOTTweakData:_init_dot_entries_bleed(entries)
-	local poison_entries = {}
-	entries.poison = poison_entries
-	poison_entries.default_poison = {
+	local bleed_entries = {}
+	entries.bleed = bleed_entries
+	bleed_entries.default_bleed = {
 		PROCESSED = true,
 		name = "default",
-		dot_length = 6,
-		dot_damage = 25,
-		damage_class = "PoisonBulletBase",
+		dot_length = 6.1,
+		dot_damage = 0.3,
+		damage_class = "BleedBulletBase",
 		dot_tick_period = 0.5,
-		dot_grace_period = 1,
-		variant = "poison"
+		dot_grace_period = 0.1,
+		variant = "bleed"
+	}
+
+	bleed_entries.melee_bleed = {
+		dot_damage = 2.0,
+		dot_length = 3.1,
 	}
 end

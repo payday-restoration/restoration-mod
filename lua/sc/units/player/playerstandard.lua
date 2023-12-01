@@ -3172,11 +3172,15 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 		melee_tweak = selector:select()
 	end
 
-	if melee_tweak.dot_data and char_damage.damage_dot then
-		local data = managers.dot:create_dot_data(melee_tweak.dot_data.type, melee_tweak.dot_data.custom_data)
+	if melee_tweak.dot_data_name and charge_fire_check and char_damage.damage_dot and defense_data and defense_data ~= "friendly_fire" and (not char_damage.dead or not char_damage:dead()) then
+		local data = tweak_data.dot:get_dot_data(melee_tweak.dot_data_name)
 		local damage_class = CoreSerialize.string_to_classtable(data.damage_class)
 
-		damage_class:start_dot_damage(col_ray, nil, data, melee_entry)
+		if damage_class then
+			damage_class:start_dot_damage(col_ray, nil, data, melee_entry, self._unit, defense_data)
+		else
+			Application:error("[PlayerStandard:_check_melee_special_damage] No '" .. tostring(data.damage_class) .. "' class found for dot tweak with name '" .. tostring(melee_tweak.dot_data_name) .. "'.")
+		end
 	end
 
 	if melee_tweak.tase_data and char_damage.damage_tase then
@@ -3188,18 +3192,6 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 		}
 
 		char_damage:damage_tase(action_data)
-	end
-
-	if melee_tweak.fire_dot_data and charge_fire_check and char_damage.damage_fire then
-		local action_data = {
-			variant = "fire",
-			damage = 0,
-			attacker_unit = self._unit,
-			col_ray = col_ray,
-			fire_dot_data = melee_tweak.fire_dot_data
-		}
-
-		char_damage:damage_fire(action_data)
 	end
 
 	if melee_tweak.instant_kill and char_damage.damage_mission then
@@ -3214,6 +3206,7 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 
 		char_damage:damage_melee(action_data)
 	end
+
 end
 
 function PlayerStandard:_perform_sync_melee_damage(hit_unit, col_ray, damage, damage_effect)

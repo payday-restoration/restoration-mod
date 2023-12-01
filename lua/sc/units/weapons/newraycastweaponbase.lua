@@ -1022,6 +1022,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		if stats.armor_piercing_override then
 			self._armor_piercing_chance = stats.armor_piercing_override
 		end
+		if stats.dot_data_name and self._ammo_data then
+			self._ammo_data.dot_data_name = stats.dot_data_name
+		end
 		if tweak_data.weapon.factory.parts[part_id].type ~= "ammo" then
 			if stats.ammo_pickup_min_mul then
 				self._ammo_data.ammo_pickup_min_mul = self._ammo_data.ammo_pickup_min_mul and self._ammo_data.ammo_pickup_min_mul * stats.ammo_pickup_min_mul or stats.ammo_pickup_min_mul

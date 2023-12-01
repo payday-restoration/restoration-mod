@@ -4699,13 +4699,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--BIRE xddddddd--
 		self.melee_weapons.spoon_gold.type = "axe"
-		self.melee_weapons.spoon_gold.fire_dot_data = {
-			dot_trigger_chance = "50",
-			dot_damage = "2",
-			dot_length = "3.1",
-			dot_trigger_max_distance = "3000",
-			dot_tick_period = "0.5"
-		}	
+		self.melee_weapons.spoon_gold.dot_data_name = "melee_spoon_gold"
 		self.melee_weapons.spoon_gold.info_id = "bm_melee_spoon_gold_info"
 		self.melee_weapons.spoon_gold.stats.min_damage = 6
 		self.melee_weapons.spoon_gold.stats.max_damage = 12.001
@@ -5651,13 +5645,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.therkatana.stats.charge_bonus_speed = nil
 		self.melee_weapons.therkatana.stats.charge_bonus_fire = true
 		self.melee_weapons.therkatana.stats.range = 180
-		self.melee_weapons.therkatana.fire_dot_data = {
-			dot_trigger_chance = "100",
-			dot_damage = "2",
-			dot_length = "3.1",
-			dot_trigger_max_distance = "3000",
-			dot_tick_period = "0.5"
-		}	
+		self.melee_weapons.therkatana.dot_data_name = "melee_therkatana"
 	end
 
 	if self.melee_weapons.hfblade then --Rikerus's HF Blade (Katana 1.8x speed, 1/2 damage)

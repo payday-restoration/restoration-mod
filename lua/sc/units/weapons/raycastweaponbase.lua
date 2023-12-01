@@ -77,158 +77,6 @@ function RaycastWeaponBase:get_damage_type()
 	end
 end
 
---Fire no longer memes on shields.
-function FlameBulletBase:bullet_slotmask()
-	return managers.slot:get_mask("bullet_impact_targets")
-end	
-
---Add shield knocking to FlameBulletBase
-function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
-	local hit_unit = col_ray.unit
-	user_unit = alive(user_unit) and user_unit or nil
-
-	if user_unit and self:chk_friendly_fire(hit_unit, user_unit) then
-		return "friendly_fire"
-	end
-
-	weapon_unit = alive(weapon_unit) and weapon_unit or nil
-	local endurance_alive_chk = false
-
-	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
-
-	--Give DB Shield Knock if the player has the skill.
-	if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
-		local enemy_unit = hit_unit:parent()
-
-		if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then
-			if enemy_unit:base():char_tweak() then
-				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
-					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
-
-					if knock_chance > math.random() then
-						local damage_info = {
-							damage = 0,
-							type = "shield_knock",
-							variant = "melee",
-							col_ray = col_ray,
-							result = {
-								variant = "melee",
-								type = "shield_knock"
-							}
-						}
-
-						enemy_unit:character_damage():_call_listeners(damage_info)
-					end
-				end
-			end
-		end
-	end
-
-	if hit_unit:damage() then
-		local body_dmg_ext = col_ray.body:extension() and col_ray.body:extension().damage
-
-		if body_dmg_ext then
-			local sync_damage = not blank and hit_unit:id() ~= -1
-			local network_damage = math.ceil(damage * 163.84)
-			local body_damage = network_damage / 163.84
-
-			if sync_damage and managers.network:session() then
-				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
-				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
-
-				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
-			end
-
-			local local_damage = not blank or hit_unit:id() == -1
-
-			if local_damage then
-				endurance_alive_chk = true
-				local weap_cats = weapon_unit and weapon_unit:base().categories and weapon_unit:base():categories()
-
-				body_dmg_ext:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-
-				if hit_unit:alive() then
-					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage)
-				end
-
-				if weap_cats and hit_unit:alive() then
-					for _, category in ipairs(weap_cats) do
-						body_dmg_ext:damage_bullet_type(category, user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
-					end
-				end
-			end
-		end
-	end
-
-	if endurance_alive_chk and not hit_unit:alive() then
-		return
-	end
-
-	local do_shotgun_push, result, do_push, push_mul = nil
-	local hit_dmg_ext = hit_unit:character_damage()
-	local play_impact_flesh = not hit_dmg_ext or not hit_dmg_ext._no_blood
-
-	if not blank and weapon_unit then
-		local weap_base = weapon_unit:base()
-
-		if weap_base and weap_base.chk_shield_knock then
-			weap_base:chk_shield_knock(hit_unit, col_ray, weapon_unit, user_unit, damage)
-		end
-
-		if hit_dmg_ext and hit_dmg_ext.damage_fire then
-			local was_alive = not hit_dmg_ext:dead()
-			local armor_piercing, knock_down, stagger, variant = nil
-
-			if weap_base then
-				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down = weap_base.is_knock_down and weap_base:is_knock_down()
-				stagger = weap_base.is_stagger and weap_base:is_stagger()
-				variant = weap_base.variant and weap_base:variant()
-			end
-
-			result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
-
-			if result ~= "friendly_fire" then
-				local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
-
-				if ammo_data and ammo_data.push_units then
-					local has_died = hit_dmg_ext:dead()
-					do_push = true
-					push_mul = self:_get_character_push_multiplier(weapon_unit, was_alive and has_died)
-
-					if result and result.type == "death" and weap_base.should_shotgun_push and weap_base:should_shotgun_push() then
-						do_shotgun_push = true
-					end
-				end
-			else
-				play_impact_flesh = false
-			end
-		else
-			local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
-			do_push = ammo_data and ammo_data.push_units
-		end
-	elseif weapon_unit then
-		local weap_base = weapon_unit:base()
-		local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
-		do_push = ammo_data and ammo_data.push_units
-	end
-
-	if do_push then
-		managers.game_play_central:physics_push(col_ray, push_mul)
-	end
-
-	if do_shotgun_push then
-		managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance, user_unit)
-	end
-
-	--Play Impact flesh is never true on fire bullets. No need for this conditional.
-
-	--DB Always plays impact sound and effects.
-	self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
-
-	return result
-end
-
 function RaycastWeaponBase:can_shoot_through_titan_shield()
 	return self._can_shoot_through_titan_shield
 end
@@ -1198,8 +1046,6 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 end
 --]]
 
-
-
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
 	local hit_unit = col_ray.unit
 	user_unit = alive(user_unit) and user_unit or nil
@@ -1311,7 +1157,6 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	return result
 end
 
-
 --[[
 function DOTBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
 	local result = DOTBulletBase.super.on_collision(self, col_ray, weapon_unit, user_unit, damage, blank, self.NO_BULLET_INPACT_SOUND)
@@ -1336,6 +1181,160 @@ function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_i
 	managers.dot:add_doted_enemy(col_ray.unit, TimerManager:game():time(), weapon_unit, dot_length, dot_data.dot_damage, hurt_animation, self.VARIANT, weapon_id)
 end
 --]]
+
+
+--Fire no longer memes on shields.
+function FlameBulletBase:bullet_slotmask()
+	return managers.slot:get_mask("bullet_impact_targets")
+end	
+
+--Add shield knocking to FlameBulletBase
+function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+	local hit_unit = col_ray.unit
+	user_unit = alive(user_unit) and user_unit or nil
+
+	if user_unit and self:chk_friendly_fire(hit_unit, user_unit) then
+		return "friendly_fire"
+	end
+
+	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+	local endurance_alive_chk = false
+
+	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
+
+	--Give DB Shield Knock if the player has the skill.
+	if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
+		local enemy_unit = hit_unit:parent()
+
+		if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then
+			if enemy_unit:base():char_tweak() then
+				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
+					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
+
+					if knock_chance > math.random() then
+						local damage_info = {
+							damage = 0,
+							type = "shield_knock",
+							variant = "melee",
+							col_ray = col_ray,
+							result = {
+								variant = "melee",
+								type = "shield_knock"
+							}
+						}
+
+						enemy_unit:character_damage():_call_listeners(damage_info)
+					end
+				end
+			end
+		end
+	end
+
+	if hit_unit:damage() then
+		local body_dmg_ext = col_ray.body:extension() and col_ray.body:extension().damage
+
+		if body_dmg_ext then
+			local sync_damage = not blank and hit_unit:id() ~= -1
+			local network_damage = math.ceil(damage * 163.84)
+			local body_damage = network_damage / 163.84
+
+			if sync_damage and managers.network:session() then
+				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
+				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
+
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+			end
+
+			local local_damage = not blank or hit_unit:id() == -1
+
+			if local_damage then
+				endurance_alive_chk = true
+				local weap_cats = weapon_unit and weapon_unit:base().categories and weapon_unit:base():categories()
+
+				body_dmg_ext:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+
+				if hit_unit:alive() then
+					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage)
+				end
+
+				if weap_cats and hit_unit:alive() then
+					for _, category in ipairs(weap_cats) do
+						body_dmg_ext:damage_bullet_type(category, user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+					end
+				end
+			end
+		end
+	end
+
+	if endurance_alive_chk and not hit_unit:alive() then
+		return
+	end
+
+	local do_shotgun_push, result, do_push, push_mul = nil
+	local hit_dmg_ext = hit_unit:character_damage()
+	local play_impact_flesh = not hit_dmg_ext or not hit_dmg_ext._no_blood
+
+	if not blank and weapon_unit then
+		local weap_base = weapon_unit:base()
+
+		if weap_base and weap_base.chk_shield_knock then
+			weap_base:chk_shield_knock(hit_unit, col_ray, weapon_unit, user_unit, damage)
+		end
+
+		if hit_dmg_ext and hit_dmg_ext.damage_fire then
+			local was_alive = not hit_dmg_ext:dead()
+			local armor_piercing, knock_down, stagger, variant = nil
+
+			if weap_base then
+				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
+				knock_down = weap_base.is_knock_down and weap_base:is_knock_down()
+				stagger = weap_base.is_stagger and weap_base:is_stagger()
+				variant = weap_base.variant and weap_base:variant()
+			end
+
+			result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage, armor_piercing, false, knock_down, stagger, variant)
+
+			if result ~= "friendly_fire" then
+				local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
+
+				if ammo_data and ammo_data.push_units then
+					local has_died = hit_dmg_ext:dead()
+					do_push = true
+					push_mul = self:_get_character_push_multiplier(weapon_unit, was_alive and has_died)
+
+					if result and result.type == "death" and weap_base.should_shotgun_push and weap_base:should_shotgun_push() then
+						do_shotgun_push = true
+					end
+				end
+			else
+				play_impact_flesh = false
+			end
+		else
+			local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
+			do_push = ammo_data and ammo_data.push_units
+		end
+	elseif weapon_unit then
+		local weap_base = weapon_unit:base()
+		local ammo_data = weap_base and weap_base.ammo_data and weap_base:ammo_data()
+		do_push = ammo_data and ammo_data.push_units
+	end
+
+	if do_push then
+		managers.game_play_central:physics_push(col_ray, push_mul)
+	end
+
+	if do_shotgun_push then
+		managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance, user_unit)
+	end
+
+	--Play Impact flesh is never true on fire bullets. No need for this conditional.
+
+	--DB Always plays impact sound and effects.
+	self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+
+	return result
+end
+
 
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
@@ -1388,7 +1387,6 @@ function BleedBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
  	end
 end
 --]]
-
 
 --Adds a blood splat effect every time the bleed deals damage.
 function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
@@ -1523,7 +1521,6 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		managers.network:session():send_to_peer_synched(peer, "sync_explosion_results", count_cops, count_gangsters, count_civilians, count_cop_kills, count_gangster_kills, count_civilian_kills, owner_selection_index)
 	end
 end
-
 
 function InstantExplosiveBulletBase:on_collision_client(position, normal, damage, user_unit)
 	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.

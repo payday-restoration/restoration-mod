@@ -5717,7 +5717,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 
 	if self.melee_weapons.pkat then --Predator Pack Katana (Golden Spoon)
 		self.melee_weapons.pkat.info_id = "bm_melee_fire_info"	
-		self.melee_weapons.pkat.fire_dot_data = deep_clone(self.melee_weapons.spoon_gold.fire_dot_data)
+		self.melee_weapons.pkat.dot_data_name = "melee_spoon_gold"
 		self.melee_weapons.pkat.stats = deep_clone(self.melee_weapons.spoon_gold.stats)
 		self.melee_weapons.pkat.anim_speed_mult = 0.75
 	end

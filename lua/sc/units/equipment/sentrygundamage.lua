@@ -436,7 +436,14 @@ function SentryGunDamage:damage_fire(attack_data)
 		end
 	end
 
-	if self._char_tweak.FIRE_DMG_MUL then
+	local weap_base = alive(weapon_unit) and weapon_unit:base()
+	local proj_id = weap_base and weap_base._tweak_projectile_entry
+	local turret_instakill = proj_id and tweak_data.projectiles[proj_id].turret_instakill
+
+	if turret_instakill then
+		self._shield_health = 0
+		damage = math.huge
+	elseif self._char_tweak.FIRE_DMG_MUL then
 		damage = damage * self._char_tweak.FIRE_DMG_MUL
 	end
 

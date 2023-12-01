@@ -38,7 +38,9 @@ function EnvironmentFire:_do_damage()
 
 				if Network:is_server() then
 					local user = self._user_unit
-					user = alive(user) and user or nil				
+					local weapon = self._weapon_unit
+					user = alive(user) and user or nil
+					weapon = alive(weapon) and weapon or nil
 					local hit_units, splinters = managers.fire:detect_and_give_dmg({
 						player_damage = 0,
 						push_units = false,
@@ -49,10 +51,10 @@ function EnvironmentFire:_do_damage()
 						damage = self._damage,
 						ignore_unit = user or self._unit,
 						user = user,
-						owner = self._unit,
+						owner = weapon or self._unit,
 						alert_radius = self._fire_alert_radius,
 						no_alert = self._no_fire_alert,
-						fire_dot_data = self._fire_dot_data,
+						dot_data = self._dot_data,
 						is_molotov = self._is_molotov
 					})
 				end

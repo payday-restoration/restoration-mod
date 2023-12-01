@@ -117,32 +117,43 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_trigger_max_distance = false
 	}
 
+	--THROWABLES
+	--This is for the explosion, not the ground fire
 	fire_entries.proj_molotov = {
 		dot_trigger_chance = 1,
-		dot_damage = 21,
-		dot_length = 10,
+		dot_damage = 3.0,
+		dot_length = 3.1,
 		dot_trigger_max_distance = false,
 		is_molotov = true
 	}
+	fire_entries.proj_fire_com = {
+		dot_trigger_chance = 1,
+		dot_damage = 3.0,
+		dot_length = 6.1,
+		dot_trigger_max_distance = false
+	}
 	fire_entries.proj_launcher_incendiary = {
 		dot_trigger_max_distance = false,
-		dot_damage = 21,
+		dot_damage = 3.0,
+		dot_length = 3.1,
 		dot_trigger_chance = 1
 	}
 	fire_entries.proj_launcher_incendiary_arbiter = {
 		dot_trigger_max_distance = false,
-		dot_damage = 21,
-		dot_length = 3,
+		dot_damage = 3.0,
+		dot_length = 3.1,
 		dot_trigger_chance = 1
 	}
-	fire_entries.proj_fire_com = {
-		dot_trigger_chance = 1,
-		dot_damage = 21,
-		dot_length = 2,
-		dot_trigger_max_distance = false
-	}
+
+	--GROUND FIRES
 	fire_entries.proj_molotov_groundfire = {
 		is_molotov = true,
+		dot_trigger_max_distance = false
+	}
+	fire_entries.proj_incendiary_groundfire = {
+		dot_trigger_max_distance = false
+	}
+	fire_entries.proj_ray_groundfire = {
 		dot_trigger_max_distance = false
 	}
 	fire_entries.proj_launcher_incendiary_groundfire = {

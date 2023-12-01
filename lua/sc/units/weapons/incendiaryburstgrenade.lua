@@ -1,3 +1,4 @@
+--[[
 --Modify class to function as a timed molotov.
 IncendiaryBurstGrenade = IncendiaryBurstGrenade or class(GrenadeBase)
 
@@ -64,3 +65,4 @@ function IncendiaryBurstGrenade:add_damage_result(unit, is_dead, damage_percent)
 		self:_check_achievements(unit, is_dead, damage_percent, 1, 1)
 	end
 end
+--]]

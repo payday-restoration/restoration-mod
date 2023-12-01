@@ -206,11 +206,7 @@ tweak_data.projectiles.rocket_ray_frag.player_damage = 45
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
-tweak_data.projectiles.rocket_ray_frag.incendiary = {
-	burn_duration = 10,
-	damage = 3,
-	player_damage = 1.5
-}
+tweak_data.projectiles.rocket_ray_frag.incendiary = true
 
 --Grenade launcher stuff--
 local frag_40mm = {
@@ -514,9 +510,10 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 }
 
 --Molliest of tovs--
-tweak_data.projectiles.molotov.damage = 3
-tweak_data.projectiles.molotov.player_damage = 3
+tweak_data.projectiles.molotov.damage = 3.0
+tweak_data.projectiles.molotov.player_damage = 3.0
 tweak_data.projectiles.molotov.burn_duration = 10
+tweak_data.projectiles.molotov.range = 300
 
 --Incendiary Nades, idea to make em a mollie--
 tweak_data.projectiles.fir_com.damage = 6

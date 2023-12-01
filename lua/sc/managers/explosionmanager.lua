@@ -29,6 +29,7 @@ local draw_splinter_hits = nil
 local draw_shield_obstructions = nil
 local draw_duration = 3
 
+--[[
 --Alt version of vanilla _detect_hits. Kept as is to avoid crashing if Overkill adds in a new grenade type.
 --Generates splinters and returns objects that might potentially be hit.
 function ExplosionManager:_generate_hits(params)
@@ -302,7 +303,6 @@ function ExplosionManager:_send_alert(params)
 	})
 end
 
---[[ --Disabled for now as this stuff does not play nice with the scale-up bulldozers
 function ExplosionManager:detect_and_stun(params)
 	local bodies, splinters = self:_generate_hits(params)
 	local hit_units, results = self:_apply_damage(bodies, splinters, params, "stun_hit", "stun", false)
@@ -327,7 +327,6 @@ function ExplosionManager:detect_and_tase(params)
 
 	return hit_units, splinters, results
 end
-]]
 
 function ExplosionManager:units_to_push(units_to_push, from_pos, range)
 	range = math_min(range, 500)
@@ -496,3 +495,4 @@ function ExplosionManager:draw_shield_obstructions(hit_pos, shield_ray_pos)
 		new_brush:cylinder(hit_pos, shield_ray_pos, 1.5)
 	end
 end
+--]]

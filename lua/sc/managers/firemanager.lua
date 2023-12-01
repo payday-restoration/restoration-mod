@@ -212,7 +212,6 @@ function FireManager:_add_doted_enemy(enemy_unit, fire_damage_received_time, wea
 
 	self:check_achievemnts(enemy_unit, fire_damage_received_time)
 end
---]]
 
 function FireManager:detect_and_give_dmg(params)
 	local hit_pos = params.hit_pos
@@ -541,6 +540,7 @@ function FireManager:client_damage_and_push(from_pos, normal, user_unit, dmg, ra
 
 	managers.explosion:units_to_push(units_to_push, from_pos, range)
 end
+--]]
 
 function FireManager:give_local_player_dmg(pos, range, damage, user_unit)
 	local player = managers.player:player_unit()

@@ -297,7 +297,7 @@ function GroupAITweakData:_init_chatter_data()
 		group_min = 0,
 		queue = "d02"
 	}
-	self.enemy_chatter.ecm = {
+	self.enemy_chatter.jammer = {
 		radius = 1000,
 		max_nr = 20,
 		duration = {2, 4},

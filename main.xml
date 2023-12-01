@@ -174,15 +174,13 @@
 		<hook file="sc/units/enemies/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 		<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionhealed.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionhealed"/>
-		<hook file="sc/units/enemies/actions/upper_body/copactionreload.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionreload"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactiontase.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactiontase"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionidle.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionidle"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionturn.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionturn"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
-		<!--hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/-->
+		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 		<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
-		<hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="sc/core/coreunitdamage.lua" source_file="core/lib/units/coreunitdamage"/>		
 		<hook file="sc/units/enemies/huskcopbase.lua" source_file="lib/units/enemies/cop/huskcopbase"/>

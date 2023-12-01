@@ -35,25 +35,6 @@ function CopActionWalk:_adjust_move_anim(side, speed)
 	return redir_res
 end
 
--- Fix navlink rubberbanding for clients
--- This function uses CopActionAct._get_act_index to determine the navlink action that is synced to clients
--- By temporarily replacing it with a function that returns 0, clients will not treat this walk action start as a navlink
--- The navlink animation is later synced when it actually happens
-local _init_original = CopActionWalk._init
-local _get_act_index_temp = function () return 0 end
-function CopActionWalk:_init(...)
-	local _get_act_index = CopActionAct._get_act_index
-	CopActionAct._get_act_index = _get_act_index_temp
-
-	local result = _init_original(self, ...)
-
-	CopActionAct._get_act_index = _get_act_index
-
-	self._nav_link_synched_with_start = nil
-
-	return result
-end
-
 if Network:is_client() then
 	return
 end

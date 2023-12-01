@@ -11315,15 +11315,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 			alt_desc = "bm_mosin_tranq_desc",
 			trail_effect = "_dmc/effects/warsaw_trail",
 			bullet_class = "PoisonBulletBase",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 6.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 1
-				}
-			},
+			dot_data_name = "weapon_tranq_heavy",
 			can_shoot_through_enemy = false
 		}
 	}
@@ -19310,17 +19302,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 			value = 0
 		},
 		custom_stats = {
-			bullet_class = "PoisonBulletBase",
 			trail_effect = "_dmc/effects/warsaw_trail",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 2.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.2
-				}
-			}
+			bullet_class = "PoisonBulletBase",
+			dot_data_name = "weapon_tranq"
 		}
 	}
 
@@ -19338,17 +19322,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		override = {
 			wpn_fps_pis_maxim9_a_tranq = {
 				custom_stats = {
-					bullet_class = "PoisonBulletBase",
 					trail_effect = "_dmc/effects/warsaw_trail",
-					dot_data = { 
-						type = "poison",
-						custom_data = {
-							dot_damage = 1.5,
-							dot_length = 1.1,
-							dot_tick_period = 0.5,
-							hurt_animation_chance = 0
-						}
-					}
+					bullet_class = "PoisonBulletBase",
+					dot_data_name = "weapon_tranq_light"
 				}
 			}
 		}
@@ -32012,15 +31988,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_sierra458_bush_switch.custom_stats = {
 			trail_effect = "_dmc/effects/warsaw_trail",
 			bullet_class = "PoisonBulletBase",
-			dot_data = { 
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 4.1,
-					dot_tick_period = 0.5,
-					hurt_animation_chance = 0.6
-				}
-			},
+			dot_data_name = "weapon_tranq_medium",
 			can_shoot_through_shield = false,
 			can_shoot_through_enemy = false
 		}

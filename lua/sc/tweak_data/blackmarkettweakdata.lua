@@ -4663,14 +4663,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--Payday DLC? Nah it's a walking dead game you cunts.--
 		self.melee_weapons.barbedwire.type = "axe"
-		self.melee_weapons.barbedwire.dot_data = {
-			type = "bleed",
-			custom_data = {
-				dot_damage = 2,
-				dot_length = 3.1,
-				hurt_animation_chance = 0.0
-			}
-		}
+		self.melee_weapons.barbedwire.dot_data_name = "melee_bleed"
 		self.melee_weapons.barbedwire.info_id = "bm_melee_barbedwire_info"
 		self.melee_weapons.barbedwire.stats.min_damage = 6
 		self.melee_weapons.barbedwire.stats.max_damage = 12.001
@@ -4727,14 +4720,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 				},
 				{
 					weight = 12,
-					dot_data = {
-						type = "bleed",
-						custom_data = {
-							dot_damage = 2.0,
-							dot_length = 3.1,
-							dot_tick_period = 0.5
-						}
-					}
+					dot_data_name = "melee_bleed"
 				},
 				{
 					weight = 7,
@@ -4744,15 +4730,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 				},
 				{
 					weight = 5,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							hurt_animation_chance = 01,
-							dot_damage = 1.5,
-							dot_length = 4.1,
-							dot_tick_period = 0.5
-						}
-					}
+					dot_data_name = "melee_piggy_hammer"
 				},
 				{
 					weight = 1,
@@ -4903,14 +4881,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.gerber.stats.concealment = 29
 		
 		--REMEMBER THE BASICS OF--
-		self.melee_weapons.cqc.dot_data = {	
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 4.1,
-				hurt_animation_chance = 0.5
-			}
-		}	
+		self.melee_weapons.cqc.dot_data_name = "melee_cqc"
 		self.melee_weapons.cqc.stats.min_damage = 1.2
 		self.melee_weapons.cqc.stats.max_damage = 2.401
 		self.melee_weapons.cqc.stats.min_damage_effect = 0.5
@@ -4919,14 +4890,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cqc.stats.range = 150
 		self.melee_weapons.cqc.stats.concealment = 30
 			--LET'S GO PRACTICE MEDICINE--
-			self.melee_weapons.fear.dot_data = {
-				type = "poison",
-				custom_data = {
-					dot_damage = 1.5,
-					dot_length = 4.1,
-					hurt_animation_chance = 0.5
-				}
-			}
+			self.melee_weapons.fear.dot_data_name = "melee_melee_fear"
 			self.melee_weapons.fear.stats.min_damage = 1.2
 			self.melee_weapons.fear.stats.max_damage = 2.401
 			self.melee_weapons.fear.stats.min_damage_effect = 0.5
@@ -5019,14 +4983,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.poker.stats.concealment = 27
 
 		--Clowns to the left of me, jokers to the right--
-		self.melee_weapons.clean.dot_data = {
-			type = "bleed",
-			custom_data = {
-				dot_damage = 2,
-				dot_length = 3.1,
-				hurt_animation_chance = 0.0
-			}
-		}
+		self.melee_weapons.clean.dot_data_name = "melee_bleed"
 		self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 		self.melee_weapons.clean.stats.weapon_type = "sharp"
 		self.melee_weapons.clean.stats.min_damage = 3
@@ -5608,14 +5565,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.tridagger.stats.charge_time = 1.2
 		self.melee_weapons.tridagger.stats.concealment = 27
 		self.melee_weapons.tridagger.stats.range = 160
-		self.melee_weapons.tridagger.dot_data = {
-			type = "bleed",
-			custom_data = {
-				dot_damage = 2,
-				dot_length = 3.1,
-				hurt_animation_chance = 0.0
-			}
-		}
+		self.melee_weapons.tridagger.dot_data_name = "melee_bleed"
 		self.melee_weapons.tridagger.info_id = "bm_melee_bleed_info"
 		self.melee_weapons.tridagger.sounds.equip = "knife_equip"
 		self.melee_weapons.tridagger.sounds.hit_air = "knife_hit_air"
@@ -5667,14 +5617,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	if self.melee_weapons.invincible then --Rikerus's Pincer Blades (Lucille Bat)
 		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"
 		self.melee_weapons.invincible.stats = deep_clone(self.melee_weapons.barbedwire.stats)
-		self.melee_weapons.invincible.dot_data = {
-			type = "bleed",
-			custom_data = {
-				dot_damage = 2,
-				dot_length = 3.1,
-				hurt_animation_chance = 0.0
-			}
-		}
+		self.melee_weapons.invincible.dot_data_name = "melee_bleed"
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
 
@@ -5738,14 +5681,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	
 	if self.melee_weapons.predator_wristblades then --Predator Pack Wristblades (Lucille Bat)
 		self.melee_weapons.predator_wristblades.info_id = "bm_melee_bleed_info"
-		self.melee_weapons.predator_wristblades.dot_data = {
-			type = "bleed",
-			custom_data = {
-				dot_damage = 2,
-				dot_length = 3.1,
-				hurt_animation_chance = 0.0
-			}
-		}
+		self.melee_weapons.predator_wristblades.dot_data_name = "melee_bleed"
 		self.melee_weapons.predator_wristblades.stats = deep_clone(self.melee_weapons.barbedwire.stats)
 		self.melee_weapons.predator_wristblades.anim_speed_mult = 0.6
 	end

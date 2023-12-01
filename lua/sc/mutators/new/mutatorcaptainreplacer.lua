@@ -25,7 +25,7 @@ end
 function MutatorCaptainReplacer:name(lobby_data)
 	local name = MutatorCaptainReplacer.super.name(self)
 
-	if self:_mutate_name("captain_replace") then
+	if self:_mutate_name("captain_replace_1") or self:_mutate_name("captain_replace_2") or self:_mutate_name("captain_replace_3") then
 		return string.format("%s - %s", name, managers.localization:text("menu_mutator_captain_replace_" .. tostring(self:get_captain_override())))
 	else
 		return name

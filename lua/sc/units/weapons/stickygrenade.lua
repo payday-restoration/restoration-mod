@@ -85,6 +85,19 @@ function StickyGrenade:_attach_to_hit_unit(is_remote)
 					mvector3.rotate_with(local_pos, rot)
 				end
 			end
+			local target_base_ext = hit_unit and hit_unit.base and hit_unit:base()
+			local char_tweak = target_base_ext and target_base_ext.char_tweak and target_base_ext:char_tweak()
+			if char_tweak and char_tweak.use_animation_on_fire_damage ~= false and damage_ext.force_hurt then
+				damage_info = {
+					damage = 0,
+					type = "fire_hurt",
+					col_ray = self._col_ray,
+					result = {
+						type = "fire_hurt"
+					}
+				}
+				damage_ext:force_hurt(damage_info)
+			end
 		elseif not alive(self._col_ray.body) or not self._col_ray.body:enabled() then
 			hit_unit:m_rotation(rot)
 			mrotation.invert(rot)

@@ -2553,9 +2553,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_sticky_grenade"] = "셈텍스 수류탄",
 		["bm_grenade_sticky_grenade_desc"] = "대미지: #{risk}#800## \n범위: #{skill_color}#4m## \n기폭: #{skill_color}#2.5초## \n\n사람을 포함한 대부분의 물체 표면에 들러붙는 투척용 폭발물입니다!",
 		--Molotov
-		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60씩## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
+		["bm_grenade_molotov_desc"] = "대미지 (화염 지대): #{heat_warm_color}#10초당 1200까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60까지## \n대미지 (폭발): #{heat_warm_color}#30## \n반경 (화염 지대): #{skill_color}#3.75m## \n반경 (폭발): #{skill_color}#3m## \n지속 시간 (화염 지대): #{skill_color}#10초## \n기폭: #{skill_color}#충격 시 폭발## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n부서지는 병과 인화성 액체와 불붙은 천으로 이루어져 있습니다. 간단하고, 저렴하지만, 매우 효과적입니다. 이걸로 전부 불태워 버리십시오.",
 		--Incendiary
-		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): #{heat_warm_color}#12초당 1440까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 60씩## \n범위: #{skill_color}#3.75m## \n지속 시간 (화염 지대): #{skill_color}#12초## \n기폭: #{skill_color}#2.5초## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n자연적으로 발화하는 인을 담은 수류탄입니다. 벽과 모퉁이을 이용해서 적에게 던지기 적합합니다.",
+		["bm_grenade_fir_com_desc"] = "대미지 (화염 지대): #{heat_warm_color}#12초당 1440까지##\n대미지 (화염): #{heat_warm_color}#3초 동안 120까지## \n대미지 (폭발): #{heat_warm_color}#30## \n반경 (화염 지대): #{skill_color}#3.75m## \n반경 (폭발): #{skill_color}#4.5m## \n지속 시간 (화염 지대): #{skill_color}#12초## \n기폭: #{skill_color}#2.5초## \n- #{skill_color}#50%## 확률로 적들을 #{heat_warm_color}#점화##시켜 대부분의 적들을 패닉 상태로 만듭니다.\n\n자연적으로 발화하는 인을 담은 수류탄입니다. 벽과 모퉁이을 이용해서 적에게 던지기 적합합니다.",
 		--Concussion
 		["bm_concussion_desc"] = "범위: #{skill_color}#10m## \n- 최대 #{skill_color}#4초## 동안 적을 스턴시킵니다.\n- #{skill_color}#7초## 동안 적의 명중률이 #{skill_color}#50%##만큼 감소합니다. \n- #{important_1}#타이탄 실드, 타이탄 도저 및 캡틴은 스턴 효과에 면역입니다.## \n\n이 조그맣고 짜릿한 녀석은 적들을 깜짝 놀래켜서, 그들을 처리할 조금의 순간을 벌어줍니다.",
 		--Gas

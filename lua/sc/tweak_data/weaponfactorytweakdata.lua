@@ -1181,6 +1181,7 @@ local grips = {
 					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
 					dot_data_name = "ammo_rip_pump"
+				}
 			},
 	
 			a_rip_heavy_override = {

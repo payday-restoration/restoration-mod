@@ -14,6 +14,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_tick_period = 0.5
 	}
 
+	--Underbarrel KAC ChainsSAW Flamethrower
 	fire_entries.weapon_kacchainsaw_flamethrower = {
 		dot_trigger_chance = 0.5,
 		dot_damage = 1.6,
@@ -21,6 +22,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_trigger_max_distance = false
 	}
 
+	--Flamethrower Mk.2
 	fire_entries.weapon_flamethrower_mk2 = {
 		dot_trigger_chance = 0.60,
 		dot_damage = 1.6,
@@ -40,7 +42,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_trigger_max_distance = false
 	}
 
-	--
+	--MA-17 Flamethrower
 	fire_entries.weapon_system = {
 		dot_trigger_chance = 0.60,
 		dot_damage = 1.6,
@@ -104,6 +106,7 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		use_weapon_damage_falloff_chance = true
 	}
 
+	--MELEE
 	fire_entries.melee_spoon_gold = {
 		dot_trigger_chance = 0.5,
 		dot_damage = 2,

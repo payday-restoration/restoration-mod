@@ -188,8 +188,17 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_length = 3.1,
 		dot_damage = 3.0,
 	}
+	fire_entries.hatman_molotov_groundfire = {
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5,
+		dot_length = 3.1,
+		dot_damage = 1.0,
+	}
 	fire_entries.enemy_triad_boss_groundfire = {
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5,
+		dot_length = 3.1,
+		dot_damage = 1.0,
 	}
 	fire_entries.enemy_mutator_cloaker_groundfire = {
 		dot_trigger_max_distance = false

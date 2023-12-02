@@ -109,13 +109,13 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	--MELEE
 	fire_entries.melee_spoon_gold = {
 		dot_trigger_chance = 0.5,
-		dot_damage = 2,
+		dot_damage = 2.0,
 		dot_length = 3.1,
 		dot_trigger_max_distance = false
 	}
 	fire_entries.melee_therkatana = {
 		dot_trigger_chance = 1,
-		dot_damage = 2,
+		dot_damage = 2.0,
 		dot_length = 3.1,
 		dot_trigger_max_distance = false
 	}
@@ -150,13 +150,13 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	fire_entries.proj_launcher_incendiary_arbiter = { --25MM Incendiary Rounds
 		dot_trigger_max_distance = false,
 		dot_damage = 3.0,
-		dot_length = 3.1,
+		dot_length = 2.1,
 		dot_trigger_chance = 1
 	}
 	fire_entries.proj_launcher_incendiary_3gl = { --25MM Incendiary Rounds
 		dot_trigger_max_distance = false,
 		dot_damage = 3.0,
-		dot_length = 3.1,
+		dot_length = 1.1,
 		dot_trigger_chance = 1
 	}
 

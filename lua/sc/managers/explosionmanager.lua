@@ -29,7 +29,7 @@ local draw_splinter_hits = nil
 local draw_shield_obstructions = nil
 local draw_duration = 3
 
---Allow for explosives to carry DoT data since FireManager based explosions seem to really hate Dozers
+--Allow for explosives to carry DoT data since FireManager based explosions seem to really hate Dozers and also support for curve_pow
 function ExplosionManager:_damage_characters(detect_results, params, variant, damage_func_name)
 	local user_unit = params.user
 	local owner = params.owner
@@ -150,6 +150,7 @@ function ExplosionManager:_damage_characters(detect_results, params, variant, da
 	return results
 end
 
+--Old ExplosionManager stuff; keeping as a means of reference in case anything resmod needs is missing from updated code to support U240.3
 --[[
 --Alt version of vanilla _detect_hits. Kept as is to avoid crashing if Overkill adds in a new grenade type.
 --Generates splinters and returns objects that might potentially be hit.

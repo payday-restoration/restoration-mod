@@ -226,19 +226,14 @@ local incendiary_40mm = {
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
 	tweak_data.projectiles[proj_id].curve_pow = 1.5
+	tweak_data.projectiles[proj_id].range = 500
 	tweak_data.projectiles[proj_id].player_damage = 3
 	tweak_data.projectiles[proj_id].burn_duration = 5
-	tweak_data.projectiles[proj_id].fire_dot_data = {
-		dot_damage = 1,
-		dot_trigger_max_distance = 3000,
-		dot_trigger_chance = 50,
-		dot_length = 3.1,
-		dot_tick_period = 0.5
-	}
+	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary"
 end
 
 local electric_40mm = {
-	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_incendiary_slap'
+	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_electric_slap'
 }
 for i, proj_id in ipairs(electric_40mm) do
 	tweak_data.projectiles[proj_id].damage = 40

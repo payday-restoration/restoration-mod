@@ -153,6 +153,12 @@ function FireTweakData:_init_dot_entries_fire(entries)
 		dot_length = 3.1,
 		dot_trigger_chance = 1
 	}
+	fire_entries.proj_launcher_incendiary_3gl = { --25MM Incendiary Rounds
+		dot_trigger_max_distance = false,
+		dot_damage = 3.0,
+		dot_length = 3.1,
+		dot_trigger_chance = 1
+	}
 
 	--GROUND FIRES
 	fire_entries.proj_molotov_groundfire = { --Molotov
@@ -178,7 +184,9 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	}
 	fire_entries.equipment_tripmine_groundfire = { --Tripmines
 		dot_trigger_max_distance = false,
-		dot_trigger_chance = 1
+		dot_trigger_chance = 0.5,
+		dot_length = 3.1,
+		dot_damage = 3.0,
 	}
 	fire_entries.enemy_triad_boss_groundfire = {
 		dot_trigger_max_distance = false

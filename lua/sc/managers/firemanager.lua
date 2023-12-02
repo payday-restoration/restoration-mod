@@ -551,8 +551,7 @@ function FireManager:give_local_player_dmg(pos, range, damage, user_unit)
 			position = pos,
 			range = range,
 			damage = damage,
-			attacker_unit = user_unit,
-			ignite_character = ignite_character
+			attacker_unit = user_unit
 		})
 	end
 end 

@@ -108,13 +108,53 @@ function EnvEffectTweakData:incendiary_burst_fire()
 	return params
 end	
 
+function EnvEffectTweakData:incendiary_fire()
+	local params = {
+		sound_event = "white_explosion",
+		damage = 6,
+		player_damage = 3,
+		range = 75,
+		burn_duration = 12,
+		burn_tick_period = 0.5,
+		curve_pow = 3,
+		sound_event_burning = "burn_loop_gen",
+		sound_event_burning_stop = "burn_loop_gen_stop_fade",
+		sound_event_impact_duration = 4,
+		alert_radius = 15000,
+		fire_alert_radius = 15000,
+		dot_data_name = "proj_incendiary_groundfire",
+		effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion_sc"
+	}
+	return params
+end
+
+function EnvEffectTweakData:incendiary_launcher_fire()
+	local params = {
+		--sound_event = "white_explosion",
+		damage = 6,
+		player_damage = 3,
+		range = 75,
+		burn_duration = 12,
+		burn_tick_period = 0.5,
+		curve_pow = 3,
+		sound_event_burning = "burn_loop_gen",
+		sound_event_burning_stop = "burn_loop_gen_stop_fade",
+		sound_event_impact_duration = 4,
+		alert_radius = 15000,
+		fire_alert_radius = 15000,
+		dot_data_name = "proj_incendiary_groundfire",
+		effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion_sc"
+	}
+	return params
+end
+
 function EnvEffectTweakData:ray_fire()
 	local params = {
 		sound_event = "gl_explode",
 		damage = 6,
 		player_damage = 3,
 		range = 75,
-		burn_duration = 12,
+		burn_duration = 15,
 		burn_tick_period = 0.5,
 		curve_pow = 3,
 		sound_event_burning = "burn_loop_gen",
@@ -132,13 +172,7 @@ function EnvEffectTweakData:trip_mine_fire()
 	local params = {
 		damage = 6,
 		player_damage = 0,
-		fire_dot_data = {
-			dot_damage = 1,
-			dot_trigger_max_distance = 3000,
-			dot_trigger_chance = 50,
-			dot_length = 3.1,
-			dot_tick_period = 0.5
-		},
+		dot_data_name = "equipment_tripmine_groundfire",
 		range = 75,
 		burn_duration = 10,
 		burn_tick_period = 0.5,

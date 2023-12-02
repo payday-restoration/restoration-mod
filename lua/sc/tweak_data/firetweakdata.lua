@@ -154,22 +154,28 @@ function FireTweakData:_init_dot_entries_fire(entries)
 	--GROUND FIRES
 	fire_entries.proj_molotov_groundfire = { --Molotov
 		is_molotov = true,
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5
 	}
 	fire_entries.proj_incendiary_groundfire = { --Incendiary Grenade
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5
 	}
 	fire_entries.proj_ray_groundfire = { --M202 FLASH Rounds
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5
 	}
 	fire_entries.proj_launcher_incendiary_groundfire = { --40MM Incendiary Rounds
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5
 	}
 	fire_entries.proj_launcher_incendiary_arbiter_groundfire = { --25MM Incendiary Rounds
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 0.5
 	}
 	fire_entries.equipment_tripmine_groundfire = { --Tripmines
-		dot_trigger_max_distance = false
+		dot_trigger_max_distance = false,
+		dot_trigger_chance = 1
 	}
 	fire_entries.enemy_triad_boss_groundfire = {
 		dot_trigger_max_distance = false

@@ -207,6 +207,7 @@ tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 tweak_data.projectiles.rocket_ray_frag.incendiary = true
+tweak_data.projectiles.rocket_ray_frag.dot_data_name = "proj_ray_frag"
 
 --Grenade launcher stuff--
 local frag_40mm = {
@@ -510,23 +511,18 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 }
 
 --Molliest of tovs--
+tweak_data.projectiles.molotov.range = 300
 tweak_data.projectiles.molotov.damage = 3.0
 tweak_data.projectiles.molotov.player_damage = 3.0
 tweak_data.projectiles.molotov.burn_duration = 10
-tweak_data.projectiles.molotov.range = 300
+tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
 
 --Incendiary Nades, idea to make em a mollie--
-tweak_data.projectiles.fir_com.damage = 6
-tweak_data.projectiles.fir_com.player_damage = 3
-tweak_data.projectiles.fir_com.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
-}
-tweak_data.projectiles.fir_com.range = 75
-tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
+tweak_data.projectiles.fir_com.range = 450
+tweak_data.projectiles.fir_com.damage = 3.0
+tweak_data.projectiles.fir_com.player_damage = 3.0
+tweak_data.projectiles.fir_com.burn_duration = 12
+tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 
 --Throwing Card--
 tweak_data.projectiles.wpn_prj_ace.damage = 24

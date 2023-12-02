@@ -49,7 +49,7 @@ function FragGrenade:_detonate(tag, unit, body, other_unit, other_body, position
 	managers.explosion:give_local_player_dmg(pos, range, self._damage, self:thrower_unit() or self._unit, self._curve_pow) --Pass in the user unit.
 	managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
 
-	local hit_units, splinters = managers[grenade_tweak.incendiary and "fire" or "explosion"]:detect_and_give_dmg({
+	local hit_units, splinters = managers.explosion:detect_and_give_dmg({
 		player_damage = 0,
 		hit_pos = pos,
 		range = range,

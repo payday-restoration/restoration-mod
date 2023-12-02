@@ -22,7 +22,7 @@ function MolotovGrenade:_detonate(tag, unit, body, other_unit, other_body, posit
 	local range = self._range
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
-	managers.fire:give_local_player_dmg(pos, range, self._player_damage)
+	managers.explosion:give_local_player_dmg(pos, range, self._player_damage or self._damage, self:thrower_unit() or self._unit, self._curve_pow)
 	print("[MolotovGrenade:_detonate] dot data ", inspect(self._dot_data))
 
 	local params = {
@@ -46,6 +46,25 @@ function MolotovGrenade:_detonate(tag, unit, body, other_unit, other_body, posit
 	if self._unit:id() ~= -1 then
 		managers.network:session():send_to_peers_synched("sync_detonate_molotov_grenade", self._unit, "base", GrenadeBase.EVENT_IDS.detonate, normal)
 	end
+
+	self:_handle_hiding_and_destroying(true, destruction_delay)
+end
+
+
+function MolotovGrenade:_detonate_on_client(normal)
+	if self._detonated then
+		return
+	end
+
+	self._detonated = true
+	local pos = self._unit:position()
+	local range = self._range
+	local explosion_normal = math.UP
+	
+	managers.explosion:give_local_player_dmg(pos, range, self._player_damage or self._damage, self:thrower_unit() or self._unit, self._curve_pow)
+	managers.fire:client_damage_and_push(pos, explosion_normal, nil, self._damage, range, self._curve_pow)
+
+	local destruction_delay = self:_spawn_environment_fire(normal)
 
 	self:_handle_hiding_and_destroying(true, destruction_delay)
 end

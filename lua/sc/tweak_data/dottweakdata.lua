@@ -53,36 +53,57 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		hurt_animation_chance = 1
 	}
 	poison_entries.ammo_rip_auto = {
+		dot_damage = 1.5,
+		dot_length = 2.1,
 		use_weapon_damage_falloff = true,
-		dot_damage = 12,
-		dot_length = 5
+		duration_falloff_end_mult = 0.5,
+		hurt_animation_chance = 0.1
 	}
 	poison_entries.ammo_rip = {
+		dot_damage = 1.5,
+		dot_length = 4.1,
 		use_weapon_damage_falloff = true,
-		dot_damage = 12,
-		dot_length = 5
+		duration_falloff_end_mult = 0.5,
+		hurt_animation_chance = 0.2
 	}
 	poison_entries.ammo_rip_pump = {
+		dot_damage = 1.5,
+		dot_length = 6.1,
 		use_weapon_damage_falloff = true,
-		dot_damage = 12,
-		dot_length = 5
+		duration_falloff_end_mult = 0.5,
+		hurt_animation_chance = 0.3
 	}
 	poison_entries.ammo_rip_heavy = {
+		dot_damage = 1.5,
+		dot_length = 8.1,
 		use_weapon_damage_falloff = true,
-		dot_damage = 12,
-		dot_length = 5
+		duration_falloff_end_mult = 0.5,
+		hurt_animation_chance = 0.4
 	}
 	
 	--(CROSS)BOW PROJECTILES
-	poison_entries.ammo_proj_bow = {
-		damage_class = "ProjectilesPoisonBulletBase"
+	poison_entries.ammo_proj_elastic = {
+		damage_class = "ProjectilesPoisonBulletBase",
+		dot_damage = 1.5,
+		dot_length = 8.1,
+		hurt_animation_chance = 0.8
 	}
-	poison_entries.ammo_proj_crossbow = clone(poison_entries.ammo_proj_bow)
-	poison_entries.ammo_proj_arblast = clone(poison_entries.ammo_proj_bow)
+	poison_entries.ammo_proj_arblast = clone(poison_entries.ammo_proj_elastic)
+	poison_entries.ammo_proj_long = clone(poison_entries.ammo_proj_elastic)
+	poison_entries.ammo_proj_bow = {
+		damage_class = "ProjectilesPoisonBulletBase",
+		dot_damage = 1.5,
+		dot_length = 6.1,
+		hurt_animation_chance = 0.6
+	}
 	poison_entries.ammo_proj_frankish = clone(poison_entries.ammo_proj_bow)
-	poison_entries.ammo_proj_long = clone(poison_entries.ammo_proj_bow)
-	poison_entries.ammo_proj_ecp = clone(poison_entries.ammo_proj_bow)
-	poison_entries.ammo_proj_elastic = clone(poison_entries.ammo_proj_bow)
+	poison_entries.ammo_proj_crossbow = clone(poison_entries.ammo_proj_bow)
+	poison_entries.ammo_proj_ecp = {
+		damage_class = "ProjectilesPoisonBulletBase",
+		dot_damage = 1.5,
+		dot_length = 4.1,
+		hurt_animation_chance = 0.4
+	}
 	--MELEE
 	poison_entries.melee_piggy_hammer = {
 		hurt_animation_chance = 0.5,
@@ -109,18 +130,23 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	--GAS
 	poison_entries.proj_gas_grenade_cloud = {
 		apply_hurt_once = true,
-		dot_damage = 2,
-		dot_length = 30
+		dot_damage = 1.5,
+		dot_length = 10.15
 	}
 	poison_entries.proj_launcher_cloud = {
 		apply_hurt_once = true,
-		dot_damage = 1,
-		dot_length = 30
+		dot_damage = 1.5,
+		dot_length = 8.15
 	}
 	poison_entries.proj_launcher_arbiter_cloud = {
 		apply_hurt_once = true,
-		dot_damage = 0.8,
-		dot_length = 10
+		dot_damage = 1.5,
+		dot_length = 6.15
+	}
+	poison_entries.proj_launcher_3gl_cloud = {
+		apply_hurt_once = true,
+		dot_damage = 1.5,
+		dot_length = 4.15
 	}
 end
 

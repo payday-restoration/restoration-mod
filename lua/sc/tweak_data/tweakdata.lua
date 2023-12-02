@@ -259,12 +259,7 @@ for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].poison_gas_duration = 10
 	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
 	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
-	tweak_data.projectiles[proj_id].poison_gas_dot_data = {
-		hurt_animation_chance = 1,
-		dot_damage = 1.5,
-		dot_length = 8.15,
-		dot_tick_period = 0.5
-	}
+	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud"
 end
 
 --Arbiter--
@@ -298,12 +293,7 @@ tweak_data.projectiles.launcher_poison_arbiter.poison_gas_range = 600
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 8
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 6.15,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 
 --SABR Grenade Launcher.
 tweak_data.projectiles.launcher_frag_osipr = {
@@ -364,12 +354,7 @@ tweak_data.projectiles.launcher_poison_osipr = {
 	poison_gas_duration = 8,
 	poison_gas_fade_time = 0.1,
 	poison_gas_tick_time = 0.3,
-	poison_gas_dot_data = {
-		hurt_animation_chance = 1,
-		dot_damage = 1.5,
-		dot_length = 6.15,
-		dot_tick_period = 0.5
-	}
+	poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 }
 
 --3GL
@@ -399,12 +384,8 @@ tweak_data.projectiles.launcher_poison.poison_gas_range = 600
 tweak_data.projectiles.launcher_poison.poison_gas_duration = 6
 tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 4.15,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
+
 --Gee 3GL, why do you get to have 2 poison grenades? ( except now you don't :^) )
 --In the event you somehow manage to keep this "attached" via the exclusive kit
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.damage = 0
@@ -415,12 +396,7 @@ tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_range = 600
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 6
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 4.1,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
@@ -571,12 +547,7 @@ tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 600
 tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 12
 tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
-tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 10.15,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data_name = "proj_gas_grenade_cloud"
 --[[
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",

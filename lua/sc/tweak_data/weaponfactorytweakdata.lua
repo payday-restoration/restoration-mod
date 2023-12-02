@@ -1148,17 +1148,7 @@ local grips = {
 					bullet_class = "PoisonBulletBase",
 					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
-					dot_data = { 
-						type = "poison",
-						custom_data = {
-							dot_damage = 1.5,
-							dot_length = 2.1,
-							dot_tick_period = 0.5,
-							use_weapon_damage_falloff = true,
-							duration_falloff_end_mult = 0.5,
-							hurt_animation_chance = 0.1
-						}
-					}
+					dot_data_name = "ammo_rip_auto"
 				}
 			},
 		
@@ -1174,17 +1164,7 @@ local grips = {
 					bullet_class = "PoisonBulletBase",
 					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
-					dot_data = { 
-						type = "poison",
-						custom_data = {
-							dot_damage = 1.5,
-							dot_length = 4.1,
-							dot_tick_period = 0.5,
-							use_weapon_damage_falloff = true,
-							duration_falloff_end_mult = 0.5,
-							hurt_animation_chance = 0.2
-						}
-					}
+					dot_data_name = "ammo_rip"
 				}
 			},
 	
@@ -1200,18 +1180,7 @@ local grips = {
 					bullet_class = "PoisonBulletBase",
 					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
-					dot_data = { 
-						type = "poison",
-						custom_data = {
-							dot_damage = 1.5,
-							dot_length = 6.1,
-							dot_tick_period = 0.5,
-							use_weapon_damage_falloff = true,
-							duration_falloff_end_mult = 0.5,
-							hurt_animation_chance = 0.3
-						}
-					}
-				}
+					dot_data_name = "ammo_rip_pump"
 			},
 	
 			a_rip_heavy_override = {
@@ -1225,17 +1194,7 @@ local grips = {
 					bullet_class = "PoisonBulletBase",
 					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
-					dot_data = { 
-						type = "poison",
-						custom_data = {
-							dot_damage = 1.5,
-							dot_length = 8.1,
-							dot_tick_period = 0.5,
-							use_weapon_damage_falloff = true,
-							duration_falloff_end_mult = 0.5,
-							hurt_animation_chance = 0.40
-						}
-					}
+					dot_data_name = "ammo_rip_heavy"
 				}
 			},
 	
@@ -13159,15 +13118,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 	self.parts.wpn_fps_upg_a_bow_poison.stats = {damage = -15}
 	self.parts.wpn_fps_upg_a_bow_poison.custom_stats = {
 		launcher_grenade = "bow_poison_arrow",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 6.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.6
-			}
-		}
+		dot_data_name = "ammo_proj_bow"
 	}
 
 end)
@@ -13719,15 +13670,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 	self.parts.wpn_fps_upg_a_crossbow_poison.is_a_unlockable = true
 	self.parts.wpn_fps_upg_a_crossbow_poison.custom_stats = {
 		launcher_grenade = "crossbow_poison_arrow",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 6.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.6
-			}
-		}
+		dot_data_name = "ammo_proj_crossbow"
 	}
 	
 	--Explosive Bolts
@@ -13848,15 +13791,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 	self.parts.wpn_fps_bow_arblast_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_arblast_m_poison.custom_stats = {
 		launcher_grenade = "arblast_poison_arrow",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 8.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.8
-			}
-		}
+		dot_data_name = "ammo_proj_arblast"
 	}
 	
 	--Explosive Bolt
@@ -13887,15 +13822,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 	self.parts.wpn_fps_bow_frankish_m_poison.stats = {damage = -15}
 	self.parts.wpn_fps_bow_frankish_m_poison.custom_stats = {
 		launcher_grenade = "frankish_poison_arrow",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 6.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.6
-			}
-		}
+		dot_data_name = "ammo_proj_frankish"
 	}
 	
 	--Explosive Bolt
@@ -13941,15 +13868,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 	self.parts.wpn_fps_bow_long_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_long_m_poison.custom_stats = {
 		launcher_grenade = "long_poison_arrow",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 8.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.8
-			}
-		}
+		dot_data_name = "ammo_proj_long"
 	}
 
 end)
@@ -16234,15 +16153,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.stats = {damage = -15}
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison.custom_stats = {
 		launcher_grenade = "ecp_arrow_poison",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 4.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.4
-			}
-		}
+		dot_data_name = "ammo_proj_ecp"
 	}
 
 	self.wpn_fps_bow_ecp.override = self.wpn_fps_bow_ecp.override or {}
@@ -17121,15 +17032,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 	self.parts.wpn_fps_bow_elastic_m_poison.stats = {damage = -30}
 	self.parts.wpn_fps_bow_elastic_m_poison.custom_stats = {
 		launcher_grenade = "elastic_arrow_poison",
-		dot_data = {
-			type = "poison",
-			custom_data = {
-				dot_damage = 1.5,
-				dot_length = 8.1, 
-				dot_tick_period = 0.5,
-				hurt_animation_chance = 0.8
-			}
-		}
+		dot_data_name = "ammo_proj_bow"
 	}
 
 end)
@@ -30928,12 +30831,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ignore_statistic = true,
 			armor_piercing_add = 0.01,
 			trail_effect = "_dmc/effects/nato_trail",
-			fire_dot_data = {
-				dot_damage = 3,
-				dot_trigger_chance = 80,
-				dot_length = 2.1,
-				dot_tick_period = 0.5
-			}
+			dot_data_name = "ammo_dragons_breath"
 		}
 	end
 

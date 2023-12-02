@@ -617,6 +617,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.static_weapon_preset = true
 	self.medic.no_asu = true
 	self.medic.no_omnia_heal = true
+	self.medic.can_be_healed = false
 	table.insert(self._enemy_list, "medic")
 	
 	self.medic_summers = deep_clone(self.medic)
@@ -656,6 +657,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.do_omnia = true
 	self.medic_summers.follower = true
 	self.medic_summers.no_omnia_heal = true
+	self.medic_summers.can_be_healed = false
 	self.medic_summers.min_obj_interrupt_dis = 300
 	self.medic_summers.reduce_summers_dr_on_death = true
 	table.insert(self._enemy_list, "medic_summers")
@@ -713,6 +715,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.tags = {"law", "lpf", "special", "customvo"}
 	self.omnia_lpf.do_omnia = true
 	self.omnia_lpf.no_omnia_heal = true
+	self.omnia_lpf.can_be_healed = false
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
@@ -1291,6 +1294,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.spawn_sound_event = "mga_deploy_snipers"
 	self.sniper.do_not_drop_ammo = true
 	self.sniper.no_mutator_weapon_override = true
+	self.sniper.can_be_healed = false
 	table.insert(self._enemy_list, "sniper")
 end
 
@@ -1651,6 +1655,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.no_asu = true
 	self.triad_boss.always_drop = true	
 	self.triad_boss.no_omnia_heal = true	
+	self.triad_boss.can_be_healed = false	
 	self.triad_boss.can_reload_while_moving_tmp = true
 	self.triad_boss.throwable = "molotov"
 	self.triad_boss.invulnerable_to_slotmask = {
@@ -1675,6 +1680,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
 	self.triad_boss_no_armor.use_radio = nil
 	self.triad_boss_no_armor.radio_prefix = "fri_"
+	self.triad_boss_no_armor.can_be_healed = false	
 
 	table.insert(self._enemy_list, "triad_boss_no_armor")
 end
@@ -1741,6 +1747,9 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.ignore_headshot = false
 	self.deep_boss.no_headshot_add_mul = true
 	--self.deep_boss.player_health_scaling_mul = 1.1
+	self.deep_boss.can_be_healed = false	
+	self.deep_boss.no_omnia_heal = true	
+	self.deep_boss.no_asu = true	
 
 	table.insert(self._enemy_list, "deep_boss")
 end
@@ -1980,6 +1989,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.heal_cooldown = 22.5
 	self.biker_boss.die_sound_event = "fl1n_x02a_any_3p"
 	self.biker_boss.no_omnia_heal = true
+	self.biker_boss.can_be_healed = false
 	table.insert(self._enemy_list, "biker_boss")
 end
 
@@ -2073,6 +2083,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.heal_cooldown = 22.5
 	self.chavez_boss.die_sound_event = "l1n_burndeath"
 	self.chavez_boss.no_omnia_heal = true
+	self.chavez_boss.can_be_healed = false
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -2452,6 +2463,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.heal_cooldown = 22.5
 	self.drug_lord_boss.no_omnia_heal = true
 	self.drug_lord_boss.die_sound_event = "l1n_burndeath"
+	self.drug_lord_boss.can_be_healed = false
 	
 	--M203 Launcher
 	self.drug_lord_boss.throwable = "launcher_m203"
@@ -2500,6 +2512,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.heal_cooldown = 1
 	self.drug_lord_boss_stealth.no_omnia_heal = true
 	self.drug_lord_boss_stealth.no_asu = true	
+	self.drug_lord_boss_stealth.can_be_healed = false
 	self.drug_lord_boss_stealth.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
@@ -2604,6 +2617,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
+	self.tank_medic.can_be_healed = false
 	self.tank_medic.move_speed = presets.move_speed.normal
 	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
@@ -3116,6 +3130,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 		entrance = true
 	}		
 	self.phalanx_vip.no_omnia_heal = true	
+	self.phalanx_vip.can_be_healed = false
 	self.phalanx_vip.captain_type = restoration.captain_types.winter
 	self.phalanx_vip.no_mutator_weapon_override = true
 	table.insert(self._enemy_list, "phalanx_vip")
@@ -3147,6 +3162,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.modify_health_on_tweak_change = true
 	self.phalanx_vip_break.announce_incomming = nil
 	self.phalanx_vip_break.marshal_logic = true	
+	self.phalanx_vip_break.can_be_healed = false
 	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 15
 	table.insert(self._enemy_list, "phalanx_vip_break")		
 end
@@ -3207,6 +3223,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.is_special = true
 	self.spring.no_asu = true
 	self.spring.no_omnia_heal = true
+	self.spring.can_be_healed = false
 	self.spring.min_obj_interrupt_dis = 300
 	self.spring.dt_suppress = {
 		range = 2000
@@ -3229,6 +3246,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
 	self.headless_hatman.no_omnia_heal = true
+	self.headless_hatman.can_be_healed = false
 	self.headless_hatman.dt_suppress = nil
 	self.headless_hatman.captain_type = restoration.captain_types.hvh
 	table.insert(self._enemy_list, "headless_hatman")
@@ -3294,6 +3312,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.no_asu = true
 	self.summers.leader = {max_nr_followers = 3}
 	self.summers.no_omnia_heal = true
+	self.summers.can_be_healed = false
 	self.summers.min_obj_interrupt_dis = 300
 	self.summers.captain_type = restoration.captain_types.summer
 	self.summers.no_mutator_weapon_override = true
@@ -3382,6 +3401,7 @@ function CharacterTweakData:_init_autumn(presets)
 	}
 	self.autumn.do_autumn_blackout = true --if true, deployables in a radius around this cop will be disabled
 	self.autumn.no_omnia_heal = true
+	self.autumn.can_be_healed = false
 	self.autumn.min_obj_interrupt_dis = 300
 	self.autumn.captain_type = restoration.captain_types.autumn
 	table.insert(self._enemy_list, "autumn")
@@ -3492,6 +3512,7 @@ function CharacterTweakData:_init_taser(presets)
 		taunt = true
 	}
 	self.taser_summers.no_omnia_heal = true
+	self.taser_summers.can_be_healed = false
 	self.taser_summers.min_obj_interrupt_dis = 300
 	self.taser_summers.reduce_summers_dr_on_death = true
 	table.insert(self._enemy_list, "taser_summers")
@@ -3648,6 +3669,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
 	self.boom_summers.no_omnia_heal = true
+	self.boom_summers.can_be_healed = false
 	self.boom_summers.marshal_logic = nil
 	self.boom_summers.min_obj_interrupt_dis = 300
 	self.boom_summers.reduce_summers_dr_on_death = true
@@ -4821,6 +4843,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.HEALTH_INIT = 2
 	presets.base.headshot_dmg_mul = 2
 	presets.base.use_animation_on_fire_damage = true
+	presets.base.can_be_healed = true --Just in case
 	presets.base.SPEED_WALK = {
 		ntl = 120,
 		hos = 180,

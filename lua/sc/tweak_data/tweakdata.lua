@@ -848,9 +848,6 @@ for i, proj_id in ipairs(velocity) do
 	end
 end
 
-
-
-
 --Hatman Molotov
 tweak_data.projectiles.hatman_molotov = {}
 tweak_data.projectiles.hatman_molotov.env_effect = "hatman_molotov_fire"
@@ -862,8 +859,8 @@ tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 --Mutator tweak vars, makes it easier to toggle stuff on/off as needed
 tweak_data.disable_shotgun_push = false
 
-tweak_data.medic.cooldown = 90
-tweak_data.medic.radius = 400
+tweak_data.medic.cooldown = 0
+tweak_data.medic.radius = 900
 tweak_data.medic.lpf_radius = 800
 
 --ASU damage bonus (Titan HRT)
@@ -876,39 +873,6 @@ else
 	tweak_data.asu_damage_buff = 20
 end	
 
-if difficulty_index <= 4 then
-	tweak_data.medic.doc_radius = 1500
-elseif difficulty_index == 5 then
-	tweak_data.medic.doc_radius = 2500
-elseif difficulty_index == 6 then
-	tweak_data.medic.doc_radius = 5000
-else
-	tweak_data.medic.doc_radius = 9999999
-end			
-
-tweak_data.medic.disabled_units = {
-	"phalanx_vip",
-	"phalanx_vip_break",
-	"spring",
-	"headless_hatman",
-	"taser_summers",
-	"boom_summers",
-	"medic_summers",
-	"summers",
-	"autumn",
-	"medic",
-	"sniper",
-	"tank_medic",
-	"omnia_lpf"
-}
-tweak_data.medic.cooldown_summers = 0
-tweak_data.radius_summers = 100000
-tweak_data.medic.whitelisted_units = {
-	"summers"
-}
-tweak_data.medic.whitelisted_units_summer_squad = {
-	"summers"
-}
 tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil
 tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil

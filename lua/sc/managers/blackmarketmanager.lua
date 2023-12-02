@@ -44,7 +44,7 @@ function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, det
 								
 	return multiplier
 end
---]]
+]]--
 
 function BlackMarketManager:visibility_modifiers()
 	local skill_bonuses = 0

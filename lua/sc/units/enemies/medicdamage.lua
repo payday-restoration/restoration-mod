@@ -1,81 +1,37 @@
-function MedicDamage:heal_unit(unit, override_cooldown)
+--Change cooldowns based on unit healed
+function MedicDamage:heal_unit(unit)
 	if self._unit:movement():chk_action_forbidden("action") then
 		return false
 	end
-
-	local t = Application:time()
+	
 	local my_tweak_data = self._unit:base()._tweak_table
 	local target_tweak_table = unit:base()._tweak_table
 	local target_char_tweak = tweak_data.character[target_tweak_table]
-
-	if not override_cooldown then
-		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
-			if unit:character_damage()._healed_cooldown_t and unit:character_damage()._healed_cooldown_t > t then
-				return false
-			else
-				local cooldown = target_char_tweak.heal_cooldown or 10
-				cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
-
-				if t < self._heal_cooldown_t + cooldown then
-					return false
-				end
-			end
-		end
-	end
-
-	if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
-		if table.contains(tweak_data.medic.disabled_units, target_tweak_table) then
-			return false
-		end
-	elseif my_tweak_data == "medic_summers" then
-		if not table.contains(tweak_data.medic.whitelisted_units, target_tweak_table) then
-			return false
-		end
-	else
-		if not table.contains(tweak_data.medic.whitelisted_units_summer_squad, target_tweak_table) then
-			return false
-		end
-	end
-
-	local team = unit:movement().team and unit:movement():team()
-
-	if team and team.id ~= "law1" then
-		if not team.friends or not team.friends.law1 then
-			return false
-		end
-	end
-
-	if unit:brain() then
-		if unit:brain().converted then
-			if unit:brain():converted() then
-				return false
-			end
-		elseif unit:brain()._logic_data and unit:brain()._logic_data.is_converted then
-			return false
-		end
-	end
-
-	self._heal_cooldown_t = t
-
-	local healed_cooldown = target_char_tweak.heal_cooldown or 10
-
-	unit:character_damage()._healed_cooldown_t = t + healed_cooldown
-
+	local cooldown = target_char_tweak.heal_cooldown or 10
+	
+	cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
+		
+	self._heal_cooldown_t = TimerManager:game():time() + self._heal_cooldown + cooldown
+		
+	unit:character_damage():do_medic_heal()
+				
+	--Reveal the Medic that did it! Seriously, fuck that guy!
 	if not self._unit:character_damage():dead() then
 		if self._unit:contour() then
 			self._unit:contour():add("medic_show", false)
 			self._unit:contour():flash("medic_show", 0.2)
 		end
-
-		local action_data = {
-			body_part = 3,
-			type = "heal",
-			client_interrupt = Network:is_client()
-		}
-
-		self._unit:movement():action_request(action_data)
 	end
 
+	local action_data = {
+		client_interrupt = true,
+		body_part = 3,
+		type = "heal",
+		blocks = {
+			action = -1
+		}
+	}
+	
 	--To do: make this actually sync correctly, since Overkill likely never will
 	if Global.game_settings.difficulty == "sm_wish" then
 		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
@@ -83,13 +39,14 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 
 			unit:base():enable_asu_laser(true)
 		end
-	end
+	end	
 
-	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
-	MedicActionHeal:check_achievements()
+	self._unit:movement():action_request(action_data)
+	self._unit:sound():say("heal")
+	managers.network:session():send_to_peers_synched("sync_medic_heal", self._unit:id() ~= -1 and self._unit or nil)
+	MedicActionHeal.check_achievements()
 
 	return true
-
 end
 
 -- Make medics require line of sight to heal

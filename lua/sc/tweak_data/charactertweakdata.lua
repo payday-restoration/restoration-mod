@@ -4274,7 +4274,7 @@ function CharacterTweakData:_presets(tweak_data)
 		fire = {
 			health_reference = 1,
 			zones = {
-				{fire = 1}
+				{light = 1}
 			}
 		},
 		poison = {
@@ -4335,31 +4335,6 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.hurt_severities.elite_easy = deep_clone(presets.hurt_severities.light_hurt_fire_poison)
-	presets.hurt_severities.elite_easy.fire = {
-		health_reference = "current",
-		zones = {
-			{
-				health_limit = 0.3,
-				none = 0.2,
-				light = 0.7,
-				fire = 0.05
-			},
-			{
-				health_limit = 0.6,
-				light = 0.4,
-				fire = 0.4
-			},
-			{
-				health_limit = 0.9,
-				light = 0.2,
-				fire = 0.2
-			},
-			{
-				light = 0,
-				fire = 1
-			}
-		}
-	}
 	presets.hurt_severities.elite_easy.bullet = {
 		health_reference = "current",
 		zones = {
@@ -4574,7 +4549,7 @@ function CharacterTweakData:_presets(tweak_data)
 		fire = {
 			health_reference = "current",
 			zones = {
-				{fire = 1}
+				{light = 1}
 			}
 		},
 		poison = {

@@ -611,7 +611,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 							local is_valid_combat_target = target_priority_slot ~= 0 and reaction >= AIAttentionObject.REACT_COMBAT
 							local check_healing_sources = is_valid_combat_target and att_unit:character_damage().check_medic_heal
 
-							if check_healing_sources and not t_cont(tweak_data.medic.disabled_units, att_base._tweak_table) then
+							if check_healing_sources and not att_base:char_tweak().can_be_healed == false then
 								if not att_unit:anim_data() or not att_unit:anim_data().act then
 									local team = att_unit:brain() and att_unit:brain()._logic_data and att_unit:brain()._logic_data.team
 									local proceed = true

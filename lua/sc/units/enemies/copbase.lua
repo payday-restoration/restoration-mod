@@ -98,6 +98,26 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 			head:set_sphere_radius(16)
 		end
 	end	
+	
+	--Faction appropriate colors for Cloaker NVGs
+	local faction = tweak_data.levels:get_ai_group_type()
+    local lights = self._unit:get_objects_by_type(Idstring("light"))
+	if faction == "russia" then
+		if self._tweak_table == "spooc" or self._tweak_table == "spooc_titan" then
+			for k, v in pairs(lights) do
+				v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+			end
+		end
+	end
+	
+	if faction == "federales" then
+		if self._tweak_table == "spooc_titan" then
+			for k, v in pairs(lights) do
+				v:set_color(Color(hsv_to_rgb(200, 1, 1)))
+			end
+		end
+	end	
+	
 end)
 
 function CopBase:random_mat_seq_initialization()
@@ -274,25 +294,6 @@ function CopBase:_chk_spawn_gear()
 		end
 	end
 end
-
-Hooks:PostHook(CopBase, "post_init", "cloker_blue_night_vision", function (self)
-	local faction = tweak_data.levels:get_ai_group_type()
-    local lights = self._unit:get_objects_by_type(Idstring("light"))
-	if faction == "russia" then
-	if self._tweak_table == "spooc" or self._tweak_table == "spooc_titan" then
-    for k, v in pairs(lights) do
-        v:set_color(Color(hsv_to_rgb(200, 1, 1)))
-		end
-	end
-end
-	if faction == "federales" then
-	if self._tweak_table == "spooc_titan" then
-    for k, v in pairs(lights) do
-        v:set_color(Color(hsv_to_rgb(200, 1, 1)))
-		end
-	end
-end
-end)
 
 local weapons_map = {
 	--Secret Service Bois--

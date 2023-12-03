@@ -1298,9 +1298,13 @@
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/nato_light_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/nato_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Warsaw Tracer-->
     <effect				path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/warsaw_light_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/warsaw_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
     <effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>

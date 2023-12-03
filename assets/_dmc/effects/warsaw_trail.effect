@@ -1,8 +1,8 @@
 <effect force_synch="false">
     <use_random>
         <effect name="effects/payday2/particles/weapons/streaks/ball_streak"/>
-        <effect name="effects/payday2/particles/weapons/streaks/big_light_streak"/>
-        <effect name="effects/payday2/particles/weapons/streaks/light_streak"/>
+        <effect name="_dmc/effects/parts/warsaw_big_light_streak"/>
+        <effect name="_dmc/effects/parts/warsaw_light_streak"/>
         <effect name="_dmc/effects/parts/warsaw_streak"/>
         <effect name="effects/payday2/particles/weapons/streaks/traveling_streak"/>
         <effect name="_dmc/effects/parts/warsaw_streak"/>

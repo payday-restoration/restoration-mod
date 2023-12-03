@@ -396,7 +396,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}
 	elseif difficulty_index == 6 then
-		spooky_preset = {
+		autumn_preset = {
 			amount = 3,
 			force = true,
 			spawn = {
@@ -419,7 +419,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}	
 	elseif difficulty_index == 7 then
-		spooky_preset = {
+		autumn_preset = {
 			amount = 4,
 			force = true,
 			spawn = {
@@ -442,7 +442,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}	
 	else
-		spooky_preset = {
+		autumn_preset = {
 			amount = 5,
 			force = true,
 			spawn = {

@@ -1195,6 +1195,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.heal_cooldown = 1.875
 	self.city_swat_titan.overheal_mult = 1.25
 	self.city_swat_titan.marshal_logic = true
+	self.city_swat_titan.no_xmas_hat = true
 	--for shieldless titan units
 	self.city_swat_titan.modify_health_on_tweak_change = true
 	self.city_swat_titan.tmp_invulnerable_on_tweak_change = 1.5 --better than 3 seconds
@@ -2590,6 +2591,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.no_asu = true
 	self.tank.heal_cooldown = 22.5
 	self.tank.min_obj_interrupt_dis = 600
+	self.tank.no_xmas_hat = true
 	table.insert(self._enemy_list, "tank")
 	
 	
@@ -2815,6 +2817,7 @@ function CharacterTweakData:_init_spooc(presets)
 	end		
 	self.spooc_titan.die_sound_event_2 = "mga_death_scream"
 	self.spooc_titan.heal_cooldown = 15
+	self.spooc_titan.no_xmas_hat = true
 	table.insert(self._enemy_list, "spooc_titan")
 
 	--Kung Fu Master/Test Subject
@@ -3060,6 +3063,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.yellow_blood = true
 	self.phalanx_minion.heal_cooldown = 7.5
 	self.phalanx_minion.no_mutator_weapon_override = true
+	self.phalanx_minion.no_xmas_hat = true
 	table.insert(self._enemy_list, "phalanx_minion")
 	
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
@@ -3229,6 +3233,7 @@ function CharacterTweakData:_init_spring(presets)
 		range = 2000
 	}
 	self.spring.captain_type = restoration.captain_types.spring
+	self.spring.no_xmas_hat = true
 	table.insert(self._enemy_list, "spring")
 	
 	--Headless Titandozer Boss 
@@ -3404,6 +3409,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.can_be_healed = false
 	self.autumn.min_obj_interrupt_dis = 300
 	self.autumn.captain_type = restoration.captain_types.autumn
+	self.autumn.no_xmas_hat = true
 	table.insert(self._enemy_list, "autumn")
 end	
 
@@ -3540,10 +3546,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
+	self.taser_titan.no_xmas_hat = true
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-	self.taser_titan.yellow_blood = false
+		self.taser_titan.yellow_blood = false
 	else
-	self.taser_titan.yellow_blood = true
+		self.taser_titan.yellow_blood = true
 	end	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 11.25
@@ -16682,7 +16689,7 @@ function CharacterTweakData:_presets(tweak_data)
 	end
 	presets.surrender = {}
 	presets.surrender.always = {base_chance = 1}
-	presets.surrender.never = {base_chance = 0}
+	presets.surrender.never = {base_chance = 0, impossible = true}
 	presets.surrender.easy = {
 		base_chance = 0.75,
 		significant_chance = 0.35,

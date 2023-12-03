@@ -214,8 +214,9 @@ function TeamAILogicIdle.on_long_dis_interacted(data, other_unit, secondary)
 	local should_stay = false
 
 	if objective_type == "follow" then
-		if data.unit:movement():carrying_bag() and not data.unit:movement()._should_stay then
-			local throw_distance = tweak_data.ai_carry.throw_distance * data.unit:movement():carry_tweak().throw_distance_multiplier
+		if data.unit:movement():carrying_bag() and not data.unit:movement():should_stay() then
+			local carry_type_tweak = data.unit:movement():carry_type_tweak()
+			local throw_distance = tweak_data.ai_carry.throw_distance * (carry_type_tweak and carry_type_tweak.throw_distance_multiplier or 1)
 			local dist = data.unit:position() - other_unit:position()
 			local throw_bag = mvec3_dot(dist, dist) < throw_distance * throw_distance
 

@@ -1312,15 +1312,25 @@
     <effect				path="_dmc/effects/parts/warsaw_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
     <effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_sterwers_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_r_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_republic_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_e_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_empire_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_t_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_techno_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>

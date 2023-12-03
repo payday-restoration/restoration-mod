@@ -133,7 +133,7 @@ function Drill:on_sabotage_SO_started(saboteur)
 
 		self._unit:timer_gui():set_jammed(true)
 
-		if not self._bain_report_sabotage_clbk_id then
+		if self.is_drill and not self._bain_report_sabotage_clbk_id then
 			self._bain_report_sabotage_clbk_id = "Drill_bain_report_sabotage" .. tostring(self._unit:key())
 
 			managers.enemy:add_delayed_clbk(self._bain_report_sabotage_clbk_id, callback(self, self, "clbk_bain_report_sabotage"), TimerManager:game():time() + 2 + 4 * math.random())

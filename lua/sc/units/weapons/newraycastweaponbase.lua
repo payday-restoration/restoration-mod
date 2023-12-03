@@ -1050,20 +1050,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._use_shell_ejection_effect = nil
 			ignore_tracer = true
 			if self._empire then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e" .. ((self:is_npc() and "_npc") or "" ))
 			elseif self._republic then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_r")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_r" .. ((self:is_npc() and "_npc") or ""))
 			elseif self._techno_union then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t" .. ((self:is_npc() and "_npc") or ""))
 			elseif self._mandalorian then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m" .. ((self:is_npc() and "_npc") or ""))
 			else
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail" .. ((self:is_npc() and "_npc") or ""))
 			end
 		elseif self._trail_effect_pls then
 			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
 		elseif self._terminator then
-			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t" .. ((self:is_npc() and "_npc") or ""))
 			ignore_tracer = true
 		elseif self._plasma_b then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/plasma_b_trail")
@@ -1078,11 +1078,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 		pewpewpewpew = os.date("%m%d")
 		if pewpewpewpew == "0401" and not ignore_tracer then
-			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_m" .. ((self:is_npc() and "_npc") or ""))
 			if self._nato then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail" .. ((self:is_npc() and "_npc") or ""))
 			elseif self._warsaw then
-				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e")
+				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_e" .. ((self:is_npc() and "_npc") or ""))
 			end
 		end
 	end	

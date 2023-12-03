@@ -182,9 +182,15 @@
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
 	<object				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_contour" />				
-	<cooked_physics		path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
+	<sequence_manager	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
+
+	<!--Grenadier-->
+	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	
+	<texture			path="units/payday2/characters/shared_textures/glass_op" force="false"/>
 
 	<!-- OMNIA taster (for Spring squad) -->
 	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
@@ -197,24 +203,6 @@
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
-
-	<!--Grenadier-->
-	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<sequence_manager	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<model				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
-	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
-	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
-	
-	<texture			path="units/payday2/characters/shared_textures/glass_op" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
 	
 	<!-- medic -->
     <unit				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" load="true"/>

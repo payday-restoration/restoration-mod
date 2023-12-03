@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" orientation_object="rp_altyn" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_altyn" />
+			<object name="c_altyn" collision_type="convex" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+	<graphics>
+		<object name="g_helmet_plate" enabled="true" />
+	</graphics>
+	
+</dynamic_object>

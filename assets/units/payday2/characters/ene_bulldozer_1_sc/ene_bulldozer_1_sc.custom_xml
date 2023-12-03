@@ -9,6 +9,51 @@
 			<var_stomache 	  value="'units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
 			<var_back 		  value="'units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
 		</variables>	
+		<sequence name="'select_face'" startup="true" once="true">
+			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_a', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
+			<run_sequence name="'face'..pick('_a','_a','_c','_d','_e', '_b', '_g', '_f')" />												
+		</sequence>		
+
+		<sequence editable_state="true" name="'head_balaclava_a'" triggable="true" once="true">	
+			<object enabled="true" name="'g_head'"/>
+			<object enabled="true" name="'g_head_lod1'"/>	
+
+		</sequence>							
+
+		<sequence editable_state="true" name="'head_balaclava_b'" triggable="true" once="true">	
+			<object enabled="true" name="'g_balaclava_a'"/>
+			<object enabled="true" name="'g_balaclava_a_lod1'"/>	
+		</sequence>							
+
+		<sequence editable_state="true" name="'face_a'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_a'"/>
+			<object enabled="true" name="'g_face_a_lod1'"/>
+		</sequence>								
+		<sequence editable_state="true" name="'face_b'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_b'"/>
+			<object enabled="true" name="'g_face_b_lod1'"/>
+		</sequence>								
+		<sequence editable_state="true" name="'face_c'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_c'"/>
+			<object enabled="true" name="'g_face_c_lod1'"/>
+		</sequence>								
+		<sequence editable_state="true" name="'face_d'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_d'"/>
+			<object enabled="true" name="'g_face_d_lod1'"/>
+		</sequence>								
+		<sequence editable_state="true" name="'face_e'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_e'"/>
+			<object enabled="true" name="'g_face_e_lod1'"/>
+		</sequence>	
+		<sequence editable_state="true" name="'face_f'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_f'"/>
+			<object enabled="true" name="'g_face_f_lod1'"/>
+		</sequence>	
+		<sequence editable_state="true" name="'face_g'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_g'"/>
+			<object enabled="true" name="'g_face_g_lod1'"/>
+		</sequence>	
+		
 		<sequence name="'int_seq_helmet_plate'" once="true">
 			<body enabled="false" name="'body_helmet_plate'"/>
 			<object enabled="false" name="'g_helmet_plate'"/>
@@ -59,6 +104,8 @@
 			<body enabled="false" name="'body_armor_chest'"/>
 			<object enabled="false" name="'g_armor_chest'"/>
 			<object enabled="false" name="'g_armor_chest_lod1'"/>
+			<object enabled="false" name="'g_shells_chest'"/>
+			<object enabled="false" name="'g_shells_chest_lod1'"/>
 			<decal_mesh enabled="false" name="'dm_armor_chest'"/>
 			<spawn_unit name="vars.var_chest" position="object_pos('Spine1')" rotation="object_rot('Spine1')"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
@@ -75,6 +122,8 @@
 			<body enabled="false" name="'body_armor_stomache'"/>
 			<object enabled="false" name="'g_armor_stomache'"/>
 			<object enabled="false" name="'g_armor_stomache_lod1'"/>
+			<object enabled="false" name="'g_shells_stomache'"/>
+			<object enabled="false" name="'g_shells_stomache_lod1'"/>
 			<decal_mesh enabled="false" name="'dm_armor_stomache'"/>
 			<spawn_unit name="vars.var_stomache"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>

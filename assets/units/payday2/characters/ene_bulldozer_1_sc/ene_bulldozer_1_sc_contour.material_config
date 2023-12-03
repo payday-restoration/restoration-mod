@@ -5,12 +5,6 @@
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
-    <material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
-        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>		
-    </material>	
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_1">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="1"/>
@@ -20,6 +14,68 @@
     <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_bulldozer_static">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_bulldozer_static_lod1">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_bulldozer_static_lod2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+    </material>		
+	<material name="mtr_swat_static" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/swat_body_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+    <material name="mtr_swat_static_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/swat_body_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_swat_static_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/swat_body_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>	
+    <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_body_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

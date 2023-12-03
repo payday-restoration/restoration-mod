@@ -8,12 +8,6 @@ local table_contains = table.contains
 local enemies_visor = {
 	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3"),
 	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk"),
-	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
-	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
-	ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"),
-	ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk"),
-	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),    
-	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk"),    
 	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"),
 	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
@@ -32,10 +26,6 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_husk"),                 	
 	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
 	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 	
-	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"),
-	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk"),
-	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk"),     
 	ids_func("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"),
 	ids_func("units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_husk"),                 
 	ids_func("units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
@@ -100,12 +90,7 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk"),                 	
 }
 
-local enemies_plink = {
-	ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
-	ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),
-	ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-	ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),
-	  
+local enemies_plink = {	  
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                     
 	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
@@ -160,8 +145,6 @@ local enemies_plink = {
 }
 
 local grenadier_smash = {
-	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1"),
-	ids_func("units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"),
 	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
@@ -212,8 +195,10 @@ local head_hitboxes = {
     [Idstring("glass_shield"):key()] = true,
     [Idstring("glass_swat"):key()] = true,
     [Idstring("glass_c"):key()] = true,
+    [Idstring("glass_d"):key()] = true,
     [Idstring("glass_altyn"):key()] = true,
-    [Idstring("visor"):key()] = true
+    [Idstring("altyn_visor"):key()] = true,
+    [Idstring("glass_visor"):key()] = true
 }
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
@@ -225,7 +210,7 @@ Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 		local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
 
 		self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("helmet"))
-	end	
+	end		
 end)
 
 function CopDamage:_spawn_head_gadget(params)
@@ -503,6 +488,10 @@ function CopDamage:damage_fire(attack_data)
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
 
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+
 				self:_spawn_head_gadget({
 					skip_push = true,
 					position = body:position(),
@@ -713,6 +702,10 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 			self._unit:damage():run_sequence_simple("grenadier_glass_break")
 		elseif self._head_body_name then
 			local body = self._unit:body(self._head_body_name)
+
+			if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+				self._unit:damage():run_sequence_simple("spawn_helmet")
+			end
 
 			self:_spawn_head_gadget({
 				skip_push = true,
@@ -1086,6 +1079,10 @@ function CopDamage:damage_bullet(attack_data)
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
+					if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+						self._unit:damage():run_sequence_simple("spawn_helmet")
+					end
+				
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -1320,6 +1317,10 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+			
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
@@ -1595,6 +1596,10 @@ function CopDamage:damage_melee(attack_data)
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
+					if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+						self._unit:damage():run_sequence_simple("spawn_helmet")
+					end
+				
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -1782,6 +1787,10 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+			
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
@@ -2159,6 +2168,10 @@ function CopDamage:damage_explosion(attack_data)
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
 
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+
 				self:_spawn_head_gadget({
 					skip_push = true,
 					position = body:position(),
@@ -2302,6 +2315,10 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
+				
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
 
 				self:_spawn_head_gadget({
 					skip_push = true,

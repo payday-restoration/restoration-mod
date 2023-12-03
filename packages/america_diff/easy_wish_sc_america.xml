@@ -31,18 +31,12 @@
 	
 	<!--vanilla unit texture overrides-->	
 	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
-	<texture			path="units/payday2/characters/shared_textures/swat_fbi_body_df" />
-	<texture			path="units/payday2/characters/shared_textures/fbi_heads_atlas_df" />		
+	<texture			path="units/payday2/characters/shared_textures/spook_heavy_nm" />
+	<texture			path="units/payday2/characters/shared_textures/swat_body_df" />
+	<texture			path="units/payday2/characters/shared_textures/swat_body_nm" />
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />
-	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />
 	
-		
-	
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>	
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 
@@ -63,12 +57,13 @@
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" load="true"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>	
 	
-	<!-- fbi tier -->
+	<!-- fbi tier here for pro jobs-->
 	<!--fbi swat 1-->
     <unit				path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" />	
 	<object				path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" />	
+	<sequence_manager	path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" />	
 	<material_config	path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" />	
 	<material_config	path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc_contour" />	
 	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" />	
@@ -76,48 +71,33 @@
 	<!--fbi swat 2-->
     <unit				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
-	<object				path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc" />	
 
 	<!--fbi swat 3-->
     <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
-	<object				path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
-	<cooked_physics		path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
 	
 	<!--fbi heavy 1-->
 	<unit				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" load="true"/>
 	<unit				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk" load="true"/>
 	<model				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />		
 	<object				path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />
-	<material_config	path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_contour" />		
+	<sequence_manager	path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />
 	<cooked_physics		path="units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc" />	
-	
-	<!--fbi heavy r870-->
+
+	<!-- fbi heavy r870 -->
     <unit				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<cooked_physics		path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<model				path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-
-	<!-- sniper -->
-    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>
-    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<object				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
-	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_contour" />	
-	<cooked_physics		path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
 	
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" load="true"/>
 	<unit				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc_husk" load="true"/>
-	<object				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" />	
-	<model				path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc" />		
+
+	<!-- altyn visor -->
+	<unit_obj			path="units/payday2/characters/ene_acc_altynvisor/ene_acc_altynvisor" load="true"/>	
+	
+	<!-- sniper -->
+    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>						
 	<!-- fbi tier end -->
 
 	<!-- gensec tier -->
@@ -126,39 +106,26 @@
     <unit				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
 	<object				path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_contour" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
+	<sequence_manager	path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />	
 	
 	<!--city swat 2-->
     <unit				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
-	<object				path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc" />	
 
 	<!--city swat 3-->
     <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk" load="true"/>	
-	<model				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
-	<object				path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
-	<cooked_physics		path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
 	
 	<!--city heavy g36-->
 	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" load="true"/>
 	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk" load="true"/>
 	<model				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />		
 	<object				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_contour" />		
-	<cooked_physics		path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
+	<sequence_manager	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
 	
 	<!--city heavy r870-->
     <unit				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<cooked_physics		path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<model				path="units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 		
 	<!--Gensec Shield Acc-->
 	<model				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
@@ -174,9 +141,6 @@
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true"/>
-	<object				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />	
-	<model				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />	
-	<cooked_physics		path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />		
 	<!-- gensec tier end -->	
 	
 	<!-- specials-->
@@ -222,27 +186,15 @@
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
 	<object				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
-	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_contour" />				
-	<cooked_physics		path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
+	<sequence_manager	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
 
 	<!--Grenadier-->
 	<object				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<sequence_manager	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<cooked_physics		path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<model				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
-	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<material_config	path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
 	<unit				path="units/payday2/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
 	
 	<texture			path="units/payday2/characters/shared_textures/glass_op" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
 	
 	<!-- medic -->
     <unit				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" load="true"/>

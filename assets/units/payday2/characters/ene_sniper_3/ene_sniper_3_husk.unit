@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_sniper_3/ene_sniper_3" />
+	<object file="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" />
 
 	<dependencies>
 		
@@ -20,7 +20,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod" />
+			<var name="_head_gear_object" value="g_hat_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
 			<var name="_head_gear" value="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" />
 		</extension>

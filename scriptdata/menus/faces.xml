@@ -1,13 +1,18 @@
 <table>	
-	<table search="unit">			
+	<table search="unit">		
+				
+	
 				<variables>
+					<!-- misc beatcop shit -->
 					<var_pick_head_b value="1"/>
-					<var_pick_murky value="1"/>					
+					<var_pick_murky value="1"/>	
 				</variables>
+				
+				<!-- EXPOSED HEADS END -->
 				
 				<!-- a = default head. 
 					 b = race-swapped head. 
-				-->
+				-->		
 
 				<filter name="'filter_pick_normalhead'">
 					<check value="vars.var_pick_murky >= 0"/>

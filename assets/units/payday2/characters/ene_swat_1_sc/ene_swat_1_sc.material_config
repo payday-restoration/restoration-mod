@@ -1,17 +1,4 @@
 <materials version="3" group="ene_swat_1">
-	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
-	</material>
-	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="1"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="1"/>
-	</material>
-	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="4"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="4"/>
-	</material>
-
 	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>
@@ -25,28 +12,72 @@
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df" mip="4"/>
 	</material>
 
-	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/helmets_atlas_df"/>
+	<material name="mtr_swat_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>
 	</material>
-	<material name="mtr_ene_acc_swat_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="1"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/helmets_atlas_df" mip="1"/>
+	<material name="mtr_swat_static_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df" mip="1"/>
 	</material>
-	<material name="mtr_ene_acc_swat_helmet_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/helmets_atlas_df" mip="4"/>
+	<material name="mtr_swat_static_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df" mip="4"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="1"/>
+	</material>
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>
+	</material>
+
+	<material name="mtr_body_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+	</material>
+	<material name="mtr_body_static_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="1"/>
+	</material>
+	<material name="mtr_body_static_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>
 	</material>
 
 	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
-        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/swat_body_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
 	</material>
 	<material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <bump_normal_texture file="units/payday2/textures/blank_nm"/>
-        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/swat_body_df" mip="4"/>
+	</material>
+	
+	<material name="mtr_glass_yellow" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+	<material name="mtr_glass_yellow_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/payday2/textures/blank_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>
+	</material>
+
+	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<self_illumination_texture 		file="units/payday2/characters/shared_textures/spook_il"/>
+		<opacity_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
+		<variable 						value="reddot" type="scalar" name="il_multiplier"/>
 	</material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

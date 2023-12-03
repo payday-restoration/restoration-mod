@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc" />
+	<object file="units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc" />
 
 	<dependencies>
 		
@@ -25,10 +25,12 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head_body_name_2" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="3" />
+			<var name="_nr_head_gear_objects" value="8" />
 			<var name="_head_gear" value="units/payday2/characters/ene_acc_shield_helmet/ene_acc_shield_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+			<var name="_head_gear_decal_mesh_2" value="dm_glass_shield" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

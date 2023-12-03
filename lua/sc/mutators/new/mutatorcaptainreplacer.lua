@@ -396,7 +396,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}
 	elseif difficulty_index == 6 then
-		spooky_preset = {
+		autumn_preset = {
 			amount = 3,
 			force = true,
 			spawn = {
@@ -419,7 +419,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}	
 	elseif difficulty_index == 7 then
-		spooky_preset = {
+		autumn_preset = {
 			amount = 4,
 			force = true,
 			spawn = {
@@ -442,7 +442,7 @@ function MutatorCaptainReplacer:setup()
 			}
 		}	
 	else
-		spooky_preset = {
+		autumn_preset = {
 			amount = 5,
 			force = true,
 			spawn = {
@@ -532,7 +532,6 @@ if specific_day == nil then
 	if #(managers.job:current_job_chain_data() or {}) > 1 then
 		current_heist_stage = managers.job:current_stage() or 1
 	end
-	log("captain_replace  "..tostring(self:value("captain_replace_"..tostring(current_heist_stage))))
 	return self:value("captain_replace_"..tostring(current_heist_stage))
 else
 	return self:value("captain_replace_"..tostring(specific_day))

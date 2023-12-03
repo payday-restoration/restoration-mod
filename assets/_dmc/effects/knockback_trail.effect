@@ -1,0 +1,31 @@
+<effect force_synch="false">
+    <use_random>
+        <effect name="effects/payday2/particles/weapons/streaks/ball_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/big_light_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/light_streak"/>
+        <effect name="_dmc/effects/parts/knockback_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/traveling_streak"/>
+        <effect name="_dmc/effects/parts/knockback_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/traveling_streak"/>
+        <effect name="_dmc/effects/parts/knockback_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/traveling_streak"/>
+        <effect name="_dmc/effects/parts/knockback_streak"/>
+        <effect name="_dmc/effects/parts/knockback_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/traveling_streak"/>
+        <effect name="effects/payday2/particles/weapons/streaks/ball_streak"/>
+    </use_random>
+    <atom name="burka" min_size="1" max_size="1" lifetime="0.1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <worldtransform transform_rotations="false"/>
+            <boxrandomsize min="0.1 0.1" max="0.1 0.1"/>
+            <boxrandomopacity min="0" max="0"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="0.1 0.1" color_input="constant" color="0 0 0" opacity_input="constant" opacity="0" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0"/>
+        </visualizerstack>
+    </atom>
+</effect>

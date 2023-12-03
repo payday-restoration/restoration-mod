@@ -1318,6 +1318,11 @@
 	<!--Plasma Tracer-->
     <effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+	<!--Other Tracers-->
+    <effect				path="_dmc/effects/knockback_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Cloud-->
 	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	

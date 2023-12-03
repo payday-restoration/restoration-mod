@@ -532,7 +532,6 @@ if specific_day == nil then
 	if #(managers.job:current_job_chain_data() or {}) > 1 then
 		current_heist_stage = managers.job:current_stage() or 1
 	end
-	log("captain_replace  "..tostring(self:value("captain_replace_"..tostring(current_heist_stage))))
 	return self:value("captain_replace_"..tostring(current_heist_stage))
 else
 	return self:value("captain_replace_"..tostring(specific_day))

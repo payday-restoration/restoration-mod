@@ -3250,6 +3250,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
+	self.headless_hatman.ff_fire = true
 	self.headless_hatman.no_omnia_heal = true
 	self.headless_hatman.can_be_healed = false
 	self.headless_hatman.dt_suppress = nil
@@ -3663,6 +3664,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
+	self.boom_summers.ff_fire = true
 	self.boom_summers.no_retreat = true
 	self.boom_summers.no_limping = true
 	self.boom_summers.no_arrest = true

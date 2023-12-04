@@ -298,21 +298,24 @@ function CopDamage:_spawn_head_gadget(params)
 end
 
 
+
 function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	local attacker_unit = attack_data.attacker_unit
+	local attacker_unit_base = attacker_unit and alive(attacker_unit) and attacker_unit:base()
+	local attacker_unit_char_tweak = attacker_unit_base and attacker_unit_base.char_tweak and attacker_unit_base:char_tweak()
+	local allow_ff = attacker_unit_char_tweak and attacker_unit_char_tweak.ff_fire
+	local weap_unit = attack_data.weapon_unit
 	
-	if self:is_friendly_fire(attack_data.attacker_unit) then
+	if not allow_ff and self:is_friendly_fire(attacker_unit) then
 		return "friendly_fire"
 	end	
 	
-	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+	if self:chk_immune_to_attacker(attacker_unit) then
 		return
 	end
-
-	local attacker_unit = attack_data.attacker_unit
-	local weap_unit = attack_data.weapon_unit
 
 	if attacker_unit and alive(attacker_unit) then
 		if attacker_unit:base() and attacker_unit:base().thrower_unit then
@@ -320,7 +323,7 @@ function CopDamage:damage_fire(attack_data)
 			weap_unit = attack_data.attacker_unit
 		end
 
-		if self:is_friendly_fire(attacker_unit) then
+		if not allow_ff and self:is_friendly_fire(attacker_unit) then
 			return "friendly_fire"
 		end
 	end

@@ -827,6 +827,7 @@ end
 
 --Hatman Molotov
 tweak_data.projectiles.hatman_molotov = {}
+tweak_data.projectiles.hatman_molotov.range = 300
 tweak_data.projectiles.hatman_molotov.env_effect = "hatman_molotov_fire"
 
 --But why--

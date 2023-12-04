@@ -2022,6 +2022,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.hatman_molotov.unit_dummy = "units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_husk"
 	self.projectiles.hatman_molotov.physic_effect = Idstring("physic_effects/molotov_throw")
 	self.projectiles.hatman_molotov.throwable = false
+	self.projectiles.hatman_molotov.range = 300
 	self.projectiles.hatman_molotov.is_a_grenade = true
 	self.projectiles.hatman_molotov.add_trail_effect = true
 	self.projectiles.hatman_molotov.impact_detonation = true

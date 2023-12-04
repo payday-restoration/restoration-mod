@@ -84,7 +84,7 @@ end
 
 function FragGrenade:sync_detonate_incendiary_grenade(event_id, normal)
 	if event_id == GrenadeBase.EVENT_IDS.detonate then
-		self:_detonate_on_client(normal)
+		self:_detonate_incendiary_on_client(normal)
 	end
 end
 
@@ -105,17 +105,12 @@ function FragGrenade:_spawn_environment_fire(normal)
 	return time_until_destruction
 end
 
-function FragGrenade:_detonate_on_client(normal)
-	if self._detonated then
-		return
-	end
-
-	self._detonated = true
+function FragGrenade:_detonate_incendiary_on_client(normal)
 	local pos = self._unit:position()
 	local range = self._range
 	local explosion_normal = math.UP
-
-	managers.fire:give_local_player_dmg(pos, range, self._player_damage)
+	
+	managers.explosion:give_local_player_dmg(pos, range, self._player_damage or self._damage, self:thrower_unit() or self._unit, self._curve_pow)
 	managers.fire:client_damage_and_push(pos, explosion_normal, nil, self._damage, range, self._curve_pow)
 
 	local destruction_delay = self:_spawn_environment_fire(normal)

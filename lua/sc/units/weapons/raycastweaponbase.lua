@@ -1347,9 +1347,6 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 	local flammable = char_tweak and char_tweak.flammable ~= false
 	local can_dot = flammable
 	local chance = dot_data.dot_trigger_chance
-	local weapon = nil
-	local attacker = alive(user_unit) and user_unit or nil
-	local distance = mvector3.distance(attacker:position(), target_unit:position())
 	local weap_base = weapon_unit and weapon_unit.base and weapon_unit:base()
 
 	if not can_dot then
@@ -1358,7 +1355,7 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 
 	if dot_data.use_weapon_damage_falloff_chance then
 		if weap_base and weap_base.get_damage_falloff then
-			chance = weap_base:get_damage_falloff(dot_data.dot_trigger_chance, col_ray, user_unit)
+			chance = weap_base:get_damage_falloff(chance, col_ray, user_unit)
 		end
 	end
 
@@ -1367,6 +1364,10 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 	if not can_dot then
 		return
 	end
+
+	local weapon = nil
+	local attacker = alive(user_unit) and user_unit or nil
+	local distance = mvector3.distance(attacker:position(), target_unit:position())
 
 	if attacker then
 		local base_ext = attacker:base()

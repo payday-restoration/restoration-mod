@@ -4890,7 +4890,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cqc.stats.range = 150
 		self.melee_weapons.cqc.stats.concealment = 30
 			--LET'S GO PRACTICE MEDICINE--
-			self.melee_weapons.fear.dot_data_name = "melee_melee_fear"
+			self.melee_weapons.fear.dot_data_name = "melee_fear"
 			self.melee_weapons.fear.stats.min_damage = 1.2
 			self.melee_weapons.fear.stats.max_damage = 2.401
 			self.melee_weapons.fear.stats.min_damage_effect = 0.5

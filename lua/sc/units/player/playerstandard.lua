@@ -4108,6 +4108,7 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 	end
 
 	if self._equip_weapon_expire_t and self._equip_weapon_expire_t <= t then
+		self._equipping_mask = nil
 		self._equip_weapon_expire_t = nil
 
 		if input.btn_steelsight_state then

@@ -303,20 +303,22 @@ function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+
+	if self:chk_immune_to_attacker(attacker_unit) then
+		return
+	end
+
 	local attacker_unit = attack_data.attacker_unit
 	local attacker_unit_base = attacker_unit and alive(attacker_unit) and attacker_unit:base()
 	local attacker_unit_char_tweak = attacker_unit_base and attacker_unit_base.char_tweak and attacker_unit_base:char_tweak()
-	local allow_ff = attacker_unit_char_tweak and attacker_unit_char_tweak.ff_fire
+	local cannot_be_ff = self._char_tweak.immune_to_ff_fire
+	local allow_ff = not cannot_be_ff and attacker_unit_char_tweak and attacker_unit_char_tweak.can_ff_fire
 	local weap_unit = attack_data.weapon_unit
 	
 	if not allow_ff and self:is_friendly_fire(attacker_unit) then
 		return "friendly_fire"
 	end	
 	
-	if self:chk_immune_to_attacker(attacker_unit) then
-		return
-	end
-
 	if attacker_unit and alive(attacker_unit) then
 		if attacker_unit:base() and attacker_unit:base().thrower_unit then
 			attacker_unit = attacker_unit:base():thrower_unit()
@@ -2021,15 +2023,19 @@ function CopDamage:damage_explosion(attack_data)
 		return
 	end	
 
-	if attack_data.weapon_unit and alive(attack_data.weapon_unit) then
+	local attacker_unit = attack_data.attacker_unit
+	local attacker_unit_base = attacker_unit and alive(attacker_unit) and attacker_unit:base()
+	local attacker_unit_char_tweak = attacker_unit_base and attacker_unit_base.char_tweak and attacker_unit_base:char_tweak()
+	local cannot_be_ff = self._char_tweak.immune_to_ff_exp
+	local allow_ff = not cannot_be_ff and attacker_unit_char_tweak and attacker_unit_char_tweak.can_ff_exp
+	local weap_unit = attack_data.weapon_unit
+
+	if not allow_ff and attack_data.weapon_unit and alive(attack_data.weapon_unit) then
 		if attack_data.weapon_unit:base() and attack_data.weapon_unit:base()._variant == "explosion" and not attack_data.weapon_unit:base()._thrower_unit then
 			-- no friendly fire >:(
 			return
 		end
 	end
-
-	local attacker_unit = attack_data.attacker_unit
-	local weap_unit = attack_data.weapon_unit
 
 	if attacker_unit and alive(attacker_unit) then
 		if attacker_unit:base() and attacker_unit:base().thrower_unit then
@@ -2037,7 +2043,7 @@ function CopDamage:damage_explosion(attack_data)
 			weap_unit = attack_data.attacker_unit
 		end
 
-		if self:is_friendly_fire(attacker_unit) then
+		if not allow_ff and self:is_friendly_fire(attacker_unit) then
 			return "friendly_fire"
 		end
 	end
@@ -2049,6 +2055,7 @@ function CopDamage:damage_explosion(attack_data)
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local result = nil
 	local damage = attack_data.damage
+
 		
 	--Use a different damage resistance when being hit by a rocket	
 	if alive(weap_unit) then

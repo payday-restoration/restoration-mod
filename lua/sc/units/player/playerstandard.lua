@@ -738,7 +738,7 @@ PlayerStandard._primary_action_get_value = {
 			return input.btn_primary_attack_state
 		end,
 		single = function (self, t, input, params, weap_unit, weap_base)
-			if input.btn_primary_attack_press then
+			if input.btn_primary_attack_press or self._queue_fire then
 				return true
 			end
 
@@ -764,9 +764,8 @@ PlayerStandard._primary_action_get_value = {
 		end,
 		single = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
 			local trigger_pressed = nil
-
 			if start_shooting then
-				trigger_pressed = input.btn_primary_attack_press
+				trigger_pressed = input.btn_primary_attack_press or self._queue_fire
 
 				if not trigger_pressed then
 					if self._single_shot_autofire then
@@ -975,12 +974,38 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								end
 							end
 						elseif not params or not params.no_check_stop_shooting_early then
+							if queue_inputs then
+								if input.btn_primary_attack_press and fire_mode == "single" then
+									self._primary_attack_input_cache = nil
+									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
+										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+										local next_fire_last = weap_base._next_fire_allowed - next_fire
+										local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
+										local next_fire_current_t = weap_base._next_fire_allowed - t
+										local next_fire_queue = 60 / queue_exlude
+
+										if next_fire_queue >= next_fire and next_fire_current_t < next_fire_delay * queue_window then
+											self._queue_fire = true
+										end
+									else
+										if (self:_in_burst() and queue_mid_burst) or not self:_in_burst() then
+											if input.real_input_pressed or not input.fake_attack then
+												self._queue_burst = true
+											end
+										end
+									end
+								end
+							else
+								self._queue_fire = nil
+								self._queue_burst = nil
+							end
 							self:_check_stop_shooting()
 
 							return false
 						else
 							if queue_inputs then
 								if input.btn_primary_attack_press and fire_mode == "single" then
+									self._primary_attack_input_cache = nil
 									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
 										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 										local next_fire_last = weap_base._next_fire_allowed - next_fire
@@ -1239,7 +1264,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 	end
 
 	self:_chk_action_stop_shooting(new_action)
-	
+
 	return new_action
 end
 

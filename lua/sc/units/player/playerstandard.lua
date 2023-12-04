@@ -190,6 +190,8 @@ end
 
 function PlayerStandard:_interupt_action_interact(t, input, complete)
 	if self._interact_expire_t then
+		self:_clear_tap_to_interact()
+
 		self._interact_expire_t = nil
 
 		if alive(self._interact_params.object) then
@@ -324,7 +326,7 @@ end
 
 function PlayerStandard:_action_interact_forbidden()
 	--Here!
-	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
+	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self._equipping_mask or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
 
 	return action_forbidden
 end
@@ -420,7 +422,7 @@ end
 function PlayerStandard:_check_use_item(t, input)
 	local pressed, released, holding = nil
 
-	if self._use_item_expire_t then
+	if self._use_item_expire_t and not self._interact_expire_t then
 		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_use_item_press, input.btn_use_item_release, input.btn_use_item_state)
 	else
 		holding = input.btn_use_item_state
@@ -432,7 +434,7 @@ function PlayerStandard:_check_use_item(t, input)
 
 	--Here!
 	if pressed then
-		local action_forbidden = self._use_item_expire_t or self:_interacting() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
+		local action_forbidden = self._use_item_expire_t or self._equipping_mask or self:_interacting() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
 
 		if not action_forbidden and managers.player:can_use_selected_equipment(self._unit) then
 			self:_start_action_use_item(t)
@@ -1041,7 +1043,7 @@ function PlayerStandard:_check_stop_shooting()
 	end
 end
 
-function PlayerStandard:_start_action_charging_weapon(t)
+function PlayerStandard:_start_action_charging_weapon(t, no_redirect)
 	self._state_data.charging_weapon = true
 	self._state_data.charging_weapon_data = {
 		t = t,
@@ -1054,7 +1056,9 @@ function PlayerStandard:_start_action_charging_weapon(t)
 	local no_charge_anims = weap_base:weapon_tweak_data().no_charge_anims
 	if not no_charge_anims then
 		self._equipped_unit:base():tweak_data_anim_play("charge", speed_multiplier)
-		self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
+		if not no_redirect then
+			self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
+		end
 	end
 end
 
@@ -1076,7 +1080,7 @@ function PlayerStandard:_check_action_interact(t, input)
 	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
 	local pressed, released, holding = nil
 
-	if self._interact_expire_t then
+	if self._interact_expire_t and not self._use_item_expire_t then
 		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_interact_press, input.btn_interact_release, input.btn_interact_state)
 	else
 		holding = input.btn_interact_state

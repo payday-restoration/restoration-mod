@@ -3419,7 +3419,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.experience = {}
 	self.taser.weapon = deep_clone(presets.weapon.normal)
 	self.taser.weapon.is_rifle.tase_distance = 1400
-	self.taser.weapon.is_rifle.aim_delay_tase = {0.75, 0.75}
+	self.taser.weapon.is_rifle.aim_delay_tase = {2, 2}
 	self.taser.weapon.is_rifle.tase_sphere_cast_radius = 30
 	self.taser.detection = presets.detection.normal
 	self.taser.HEALTH_INIT = 30
@@ -5190,7 +5190,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_rifle.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_rifle.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_rifle.tase_distance = 1400
-	presets.weapon.normal.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.normal.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.normal.is_rifle.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_rifle.range = {
@@ -7400,7 +7400,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_rifle.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_rifle.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_rifle.tase_distance = 1400
-	presets.weapon.good.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.good.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.good.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.good.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 	presets.weapon.good.is_rifle.range = {
@@ -9577,7 +9577,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_rifle.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_rifle.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_rifle.tase_distance = 1400
-	presets.weapon.expert.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.expert.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.expert.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.expert.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 	presets.weapon.expert.is_rifle.range = {

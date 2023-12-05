@@ -4437,6 +4437,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_1"] = "Captain (Day 1)",
 		["menu_mutator_captain_replace_2"] = "Captain (Day 2)",
 		["menu_mutator_captain_replace_3"] = "Captain (Day 3)",
+		["menu_mutator_captain_replace_no_captain_override"] = "No Changes",
 		["menu_mutator_captain_replace_winter"] = "Winters",
 		["menu_mutator_captain_replace_autumn"] = "Autumn",
 		["menu_mutator_captain_replace_spring"] = "Spring",

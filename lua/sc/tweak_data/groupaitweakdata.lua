@@ -15716,6 +15716,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}			
 	end
 	
+	--Reserved for mutator
+	self.enemy_spawn_groups.Fake_Captain = {}
+	
 	--New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
@@ -19937,6 +19940,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local captain_type = restoration.captain_spawns[job]
 	if captain_type and not table.contains(restoration.disable_natural_captain, job) then
 		self.besiege.assault.groups[captain_type.spawn_group] = {0, 0.2, 0.3}
+	else
+		self.besiege.assault.groups.Fake_Captain = {0,0,0}
 	end		
 	
 	if difficulty_index <= 7 then
@@ -20331,6 +20336,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		},
 		Cap_Autumn = {
 			cooldown = captain_cooldown / 2,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		Fake_Captain = {
+			cooldown = captain_cooldown,
 			min_diff = captain_min_diff,
 			sustain_only = true
 		},

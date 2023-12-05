@@ -35,3 +35,7 @@ function ModifierMedicAdrenaline:modify_value(id, value)
 	end
 	return value
 end
+
+--Just in case
+function ModifierMedicAdrenaline:OnEnemyHealed(target)
+end

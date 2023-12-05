@@ -3329,3 +3329,19 @@ end
 function CopDamage:can_attach_projectiles()
 	return not self._char_tweak.cannot_attach_projectiles
 end
+
+--Doing this to get rid of unused CrimeSpree stuff just in case
+function CopDamage:do_medic_heal()
+	self._healed = true
+	self._health = self._HEALTH_INIT
+	self._health_ratio = 1
+
+	self:_update_debug_ws()
+
+	if self._unit:contour() then
+		self._unit:contour():add("medic_heal")
+		self._unit:contour():flash("medic_heal", 0.2)
+	end
+
+	return true
+end

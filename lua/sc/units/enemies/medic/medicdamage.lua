@@ -42,11 +42,54 @@ function MedicDamage:heal_unit(unit)
 	end	
 
 	self._unit:movement():action_request(action_data)
-	self._unit:sound():say("heal")
+	self._unit:sound():say("heal", true)
 	managers.network:session():send_to_peers_synched("sync_medic_heal", self._unit:id() ~= -1 and self._unit or nil)
 	MedicActionHeal.check_achievements()
 
 	return true
+end
+
+function MedicDamage:sync_heal_action()
+	self._heal_cooldown_t = TimerManager:game():time() + self._heal_cooldown
+	local action_data = nil
+
+	if Network:is_server() then
+		if not self._unit:anim_data().act then
+			action_data = {
+				body_part = 3,
+				type = "heal",
+				blocks = {
+					action = -1
+				}
+			}
+		end
+	else
+		action_data = {
+			block_type = "action",
+			type = "heal",
+			body_part = 3,
+			client_interrupt = not self._unit:anim_data().act,
+			blocks = {
+				action = -1
+			}
+		}
+	end
+	
+	--Reveal the Medic that did it! Seriously, fuck that guy!
+	if not self._unit:character_damage():dead() then
+		if self._unit:contour() then
+			self._unit:contour():add("medic_show", false)
+			self._unit:contour():flash("medic_show", 0.2)
+		end
+	end	
+
+	if action_data then
+		self._unit:movement():action_request(action_data)
+	end
+
+	if self._unit:sound() then
+		self._unit:sound():say("heal")
+	end
 end
 
 -- Make medics require line of sight to heal

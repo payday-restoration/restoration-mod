@@ -1280,41 +1280,37 @@ function CopDamage:damage_bullet(attack_data)
 	return result
 end
 
-function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, i_result, death)
+function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, variant, death)
 	if self._dead then
 		return
 	end
 
-	local attack_data = {
-		variant = "bullet",
-		attacker_unit = attacker_unit
-	}
-
-	local from_pos, attack_dir, result = nil
 	local body = self._unit:body(i_body)
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and body and body:name() == self._ids_head_body_name
-	local hit_pos = mvector3.copy(body:position())
+	local head = self._head_body_name and body and body:name() == self._ids_head_body_name
+	local damage = damage_percent * self._HEALTH_INIT_PRECENT
+	local attack_data = {}
+	local hit_pos = mvector3.copy(self._unit:movement():m_pos())
+
+	mvector3.set_z(hit_pos, hit_pos.z + hit_offset_height)
+
 	attack_data.pos = hit_pos
+	attack_data.attacker_unit = attacker_unit
+	attack_data.variant = "bullet"
 	attack_data.headshot = head
-	attack_data.weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()	
+	attack_data.weapon_unit = attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
+	local attack_dir, distance = nil
 
 	if attacker_unit then
-		from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
-
-		attack_dir = hit_pos - from_pos
-		mvector3.normalize(attack_dir)
+		attack_dir = hit_pos - attacker_unit:movement():m_head_pos()
+		distance = mvector3.normalize(attack_dir)
 	else
-		attack_dir = -self._unit:rotation():y()
+		attack_dir = self._unit:rotation():y()
 	end
 
 	attack_data.attack_dir = attack_dir
-
-	local damage = damage_percent * self._HEALTH_INIT_PRECENT
-	attack_data.damage = damage
+	local shotgun_push, result = nil
 
 	if death then
-		attack_data.damage = self._health
-
 		if head then
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
@@ -1395,32 +1391,46 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 		if data.weapon_unit then
 			self:_check_special_death_conditions("bullet", body, attacker_unit, data.weapon_unit)
 			managers.statistics:killed_by_anyone(data)
+
+			if managers.enemy:is_corpse_disposal_enabled() and data.weapon_unit:base()._do_shotgun_push and distance then
+				shotgun_push = distance <= managers.game_play_central:get_shotgun_push_range(attacker_unit)
+			end
 		end
 	else
-		local result_type = "dmg_rcv"
+		local result_type = variant == 1 and "knock_down" or variant == 2 and "stagger" or self:get_damage_type(damage_percent, "bullet")
 
-		if i_result == 1 then
+		if variant == 3 then
 			result_type = "healed"
-
-			attack_data.damage = self._health
-		else
-			self:_apply_damage_to_health(damage)
 		end
 
 		result = {
 			variant = "bullet",
 			type = result_type
 		}
+
+		if result_type ~= "healed" then
+			self:_apply_damage_to_health(damage)
+		else
+			self:do_medic_heal()
+		end
 	end
 
+	attack_data.variant = "bullet"
+	attack_data.attacker_unit = attacker_unit
 	attack_data.result = result
+	attack_data.damage = damage
 	attack_data.is_synced = true
 
-	if not self._no_blood and damage > 0 then
+	if not self._no_blood then
 		managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	end
 
+	self:_send_sync_bullet_attack_result(attack_data, hit_offset_height)
 	self:_on_damage_received(attack_data)
+
+	if shotgun_push then
+		managers.game_play_central:_do_shotgun_push(self._unit, hit_pos, attack_dir, distance)
+	end
 end
 
 function CopDamage:damage_melee(attack_data)
@@ -2238,108 +2248,109 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 	end
 
 	local variant = CopDamage._ATTACK_VARIANTS[i_attack_variant]
-	local was_healed = nil
-
-	if variant == "healed" then
-		variant = "explosion"
-		was_healed = true
-	end
-
+	local damage = damage_percent * self._HEALTH_INIT_PRECENT
 	local attack_data = {
 		variant = variant,
 		attacker_unit = attacker_unit,
 		weapon_unit = weapon_unit or attacker_unit and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
 	}
-
-	local attacker = attack_data.attacker_unit
-	local weapon_unit = weapon_unit
-
-	if attacker and attacker:base() and attacker:base().thrower_unit then
-		attacker = attacker:base():thrower_unit()
-		weapon_unit = attack_data.attacker_unit
-	end
-
-	if not weapon_unit then
-		weapon_unit = attacker_unit and attacker_unit:inventory() and alive(attacker_unit:inventory():equipped_unit()) and attacker_unit:inventory():equipped_unit()
-	end
-
-	local hit_pos = mvector3.copy(self._unit:position())
-	mvector3.set_z(hit_pos, hit_pos.z + 100)
-
-	local attack_dir, result = nil
-
-	if direction then
-		attack_dir = direction
-	elseif attacker_unit then
-		local from_pos = nil
-
-		if attacker_unit:movement() then
-			if attacker_unit:movement().m_detect_pos then
-				from_pos = attacker_unit:movement():m_detect_pos()
-			elseif attacker_unit:movement().m_head_pos then
-				from_pos = attacker_unit:movement():m_head_pos()
-			else
-				from_pos = attacker_unit:position()
-			end
-		else
-			from_pos = attacker_unit:position()
-		end
-
-		attack_dir = hit_pos - from_pos
-		mvector3.normalize(attack_dir)
-	else
-		attack_dir = -self._unit:rotation():y()
-	end
-
-	attack_data.attack_dir = attack_dir
-	hit_pos = hit_pos - attack_dir * 5
-	attack_data.pos = hit_pos
-
-	local damage = damage_percent * self._HEALTH_INIT_PRECENT
-	attack_data.damage = damage
+	local result = nil
 
 	if death then
-		attack_data.damage = self._health
-
-		if variant ~= "stun" then
-			if table_contains(grenadier_smash, self._unit:name()) then
-				self._unit:damage():run_sequence_simple("grenadier_glass_break")
-			elseif self._head_body_name then
-				local body = self._unit:body(self._head_body_name)
-
-				self:_spawn_head_gadget({
-					skip_push = true,
-					position = body:position(),
-					rotation = body:rotation()
-				})
-			end
-		end
-
-		if Network:is_server() and self._char_tweak.gas_on_death then
-			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
-		end
-
 		result = {
 			type = "death",
 			variant = variant
 		}
+		
+		if Network:is_server() and self._char_tweak.gas_on_death then
+			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
+		end				
 
 		self:die(attack_data)
 
 		local data = {
 			variant = "explosion",
+			head_shot = false,
 			name = self._unit:base()._tweak_table,
 			stats_name = self._unit:base()._stats_name,
-			weapon_unit = weapon_unit
+			weapon_unit = attack_data.weapon_unit
 		}
 
 		managers.statistics:killed_by_anyone(data)
+	else
+		local result_type = variant == "stun" and "hurt_sick" or variant == "healed" and "healed" or self:get_damage_type(damage_percent, "explosion")
+		result = {
+			type = result_type,
+			variant = variant
+		}
 
-		self:chk_killshot(attacker, "explosion", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
+		if variant == "healed" then
+			self:do_medic_heal()
+		else
+			self:_apply_damage_to_health(damage)
+		end
+	end
+
+	attack_data.result = result
+	attack_data.damage = damage
+	attack_data.is_synced = true
+	local attack_dir = nil
+
+	if direction then
+		attack_dir = direction
+	elseif attacker_unit then
+		attack_dir = self._unit:position() - attacker_unit:position()
+
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = self._unit:rotation():y()
+	end
+
+	attack_data.attack_dir = attack_dir
+
+	if death and self._head_body_name then
+		local body = self._unit:body(self._head_body_name)
 		
-		if attacker == managers.player:player_unit() then
-			if alive(attacker) then
-				self:_comment_death(attacker, self._unit)
+		if table_contains(grenadier_smash, self._unit:name()) then
+			self._unit:damage():run_sequence_simple("grenadier_glass_break")	
+		else
+			self:_spawn_head_gadget({
+				skip_push = true,
+				position = body:position(),
+				rotation = body:rotation(),
+				dir = Vector3()
+			})
+		end
+	end
+
+	if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
+		managers.hud:on_hit_confirmed()
+		managers.statistics:shot_fired({
+			hit = true,
+			weapon_unit = attack_data.weapon_unit
+		})
+	end
+
+	if result.type == "death" then
+		local data = {
+			variant = "explosion",
+			head_shot = false,
+			name = self._unit:base()._tweak_table,
+			stats_name = self._unit:base()._stats_name,
+			weapon_unit = attack_data.weapon_unit
+		}
+		local attacker_unit = attack_data.attacker_unit
+
+		if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
+			attacker_unit = attacker_unit:base():thrower_unit()
+			data.weapon_unit = attack_data.attacker_unit
+		end
+
+		self:chk_killshot(attacker_unit, "explosion", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
+
+		if attacker_unit == managers.player:player_unit() then
+			if alive(attacker_unit) then
+				self:_comment_death(attacker_unit, self._unit)
 			end
 
 			self:_show_death_hint(self._unit:base()._tweak_table)
@@ -2348,46 +2359,24 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 			if CopDamage.is_civilian(self._unit:base()._tweak_table) then
 				managers.money:civilian_killed()
 			end
-
-			self:_check_damage_achievements(attack_data, false)
 		end
-	else
-		local result_type = "dmg_rcv"
-
-		if was_healed then
-			result_type = "healed"
-
-			attack_data.damage = self._health
-		else
-			self:_apply_damage_to_health(damage)
-		end
-
-		result = {
-			type = result_type,
-			variant = variant
-		}
-	end
-
-	attack_data.result = result
-	attack_data.is_synced = true
-	weapon_unit = attack_data.weapon_unit or weapon_unit
-
-	if damage > 0 and variant ~= "stun" and attacker == managers.player:player_unit() and alive(attacker) then
-		managers.hud:on_hit_confirmed()
-		managers.statistics:shot_fired({
-			hit = true,
-			weapon_unit = attack_data.weapon_unit
-		})
 	end
 
 	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
 		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
 	end
 
-	if variant ~= "stun" and not self._no_blood and damage > 0 then
+	if not self._no_blood then
+		local hit_pos = mvector3.copy(self._unit:movement():m_pos())
+
+		mvector3.set_z(hit_pos, hit_pos.z + 100)
 		managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	end
 
+	attack_data.pos = self._unit:position()
+
+	mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+	self:_send_sync_explosion_attack_result(attack_data)
 	self:_on_damage_received(attack_data)
 end
 

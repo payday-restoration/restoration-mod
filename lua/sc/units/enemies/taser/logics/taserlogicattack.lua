@@ -99,6 +99,8 @@ Hooks:PostHook(TaserLogicAttack, "enter", "sh_enter", function (data)
 	CopLogicBase.queue_task(my_data, my_data.detection_task_key, TaserLogicAttack._upd_enemy_detection, data, data.t + 0.2)
 end)
 
+--Taser crash, my beloved
+--[[
 local _upd_enemy_detection_original = TaserLogicAttack._upd_enemy_detection
 function TaserLogicAttack._upd_enemy_detection(data, is_synchronous, ...)
 	local my_data = data.internal_data
@@ -109,6 +111,7 @@ function TaserLogicAttack._upd_enemy_detection(data, is_synchronous, ...)
 		CopLogicBase.queue_task(my_data, my_data.detection_task_key, TaserLogicAttack._upd_enemy_detection, data, data.t + 0.2, data.important)
 	end
 end
+]]--
 
 function TaserLogicAttack.update(data)
 	local my_data = data.internal_data

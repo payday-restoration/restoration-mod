@@ -253,7 +253,6 @@
 						<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
-						<hook file="sc/units/enemies/actions/upper_body/medicactionheal.lua" source_file="lib/units/enemies/medic/actions/upper_body/medicactionheal"/>
 						<hook file="sc/units/enemies/spooc/actions/lower_body/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 					<!--LOGICS-->
 						<hook file="sc/units/enemies/logics/coplogicinactive.lua" source_file="lib/units/enemies/cop/logics/coplogicinactive"/>
@@ -266,7 +265,7 @@
 						<hook file="sc/units/enemies/logics/coplogicattack.lua" source_file="lib/units/enemies/cop/logics/coplogicattack"/>
 						<hook file="sc/units/enemies/logics/coplogicarrest.lua" source_file="lib/units/enemies/cop/logics/coplogicarrest"/>
 						<hook file="sc/units/enemies/logics/tankcoplogicattack.lua" source_file="lib/units/enemies/tank/logics/tankcoplogicattack"/>
-						<hook file="sc/units/enemies/logics/taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>
+						<hook file="sc/units/enemies/taser/logics/taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>
 						<hook file="sc/units/enemies/logics/spooclogicattack.lua" source_file="lib/units/enemies/spooc/logics/spooclogicattack"/>
 						<hook file="sc/units/enemies/logics/shieldlogicattack.lua" source_file="lib/units/enemies/shield/logics/shieldlogicattack"/>
 						<hook file="sc/units/enemies/logics/coplogicsniper.lua" source_file="lib/units/enemies/cop/logics/coplogicsniper"/>	
@@ -283,7 +282,7 @@
 					<hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
 					<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
 					<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
-					<hook file="sc/units/enemies/medicdamage.lua" source_file="lib/units/enemies/medic/medicdamage"/>
+					<hook file="sc/units/enemies/medic/medicdamage.lua" source_file="lib/units/enemies/medic/medicdamage"/>
 					<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 					<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 					<hook file="sc/units/enemies/tankmediccopdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>

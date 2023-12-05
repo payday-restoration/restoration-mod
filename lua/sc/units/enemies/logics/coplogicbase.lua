@@ -12,6 +12,7 @@ local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 local tmp_vec3 = Vector3()
 
+
 -- Instant detection outside of stealth
 local _create_detected_attention_object_data_original = CopLogicBase._create_detected_attention_object_data
 function CopLogicBase._create_detected_attention_object_data(...)
@@ -21,6 +22,7 @@ function CopLogicBase._create_detected_attention_object_data(...)
 	end
 	return data
 end
+
 
 -- Make shield_cover tactics stick closer to their shield tactics providers
 Hooks:PreHook(CopLogicBase, "on_new_objective", "sh_on_new_objective", function (data, old_objective)
@@ -67,12 +69,14 @@ Hooks:PreHook(CopLogicBase, "on_new_objective", "sh_on_new_objective", function 
 	end
 end)
 
+
 -- Remove follow unit as soon as it dies, not just after the body despawned
 function CopLogicBase.on_objective_unit_damaged(data, unit, attacker_unit)
 	if unit:character_damage()._dead then
 		data.objective_failed_clbk(data.unit, data.objective)
 	end
 end
+
 
 -- Allow more dodge directions
 function CopLogicBase.chk_start_action_dodge(data, reason)
@@ -242,6 +246,7 @@ function CopLogicBase.chk_start_action_dodge(data, reason)
 	return action
 end
 
+
 -- Check for verified interrupt distance and remove bad marshal interrupt distance
 function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	attention = attention or data.attention_obj
@@ -293,6 +298,7 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	return false, false
 end
 
+
 -- Fix function not working accurately for clients/NPCs
 function CopLogicBase.chk_am_i_aimed_at(data, attention_obj, max_dot)
 	if not attention_obj.is_person then
@@ -309,12 +315,14 @@ function CopLogicBase.chk_am_i_aimed_at(data, attention_obj, max_dot)
 	return max_dot < mvec3_dot(tmp_vec2, tmp_vec1)
 end
 
+
 -- Reduce maximum update delay
 local _upd_attention_obj_detection_original = CopLogicBase._upd_attention_obj_detection
 function CopLogicBase._upd_attention_obj_detection(...)
 	local delay = _upd_attention_obj_detection_original(...)
 	return math.min(0.5, delay)
 end
+
 
 -- Fix incorrect checks and improve surrender conditions
 function CopLogicBase._evaluate_reason_to_surrender(data, my_data, aggressor_unit)

@@ -642,6 +642,8 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
 	self.medic_summers.immune_to_knock_down = true
+	self.medic_summers.immune_to_ff_exp = true
+	self.medic_summers.immune_to_ff_fire = true
 	self.medic_summers.priority_shout = "f45"
 	self.medic_summers.bot_priority_shout = "f45x_any"
 	self.medic_summers.speech_prefix_p1 = "rmdc"
@@ -2592,6 +2594,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.heal_cooldown = 22.5
 	self.tank.min_obj_interrupt_dis = 600
 	self.tank.no_xmas_hat = true
+	self.tank.immune_to_ff_exp = true
 	table.insert(self._enemy_list, "tank")
 	
 	
@@ -3177,6 +3180,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
+	self.spring.can_ff_exp = true
 	self.spring.grenade_cooldown = 12
 	self.spring.grenade_toss_chance = 1
 	self.spring.no_run_start = true
@@ -3250,6 +3254,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
+	self.headless_hatman.can_ff_fire = true
 	self.headless_hatman.no_omnia_heal = true
 	self.headless_hatman.can_be_healed = false
 	self.headless_hatman.dt_suppress = nil
@@ -3301,6 +3306,8 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.dodge = presets.dodge.elite
 	self.summers.can_be_tased = false
 	self.summers.immune_to_concussion = true
+	self.summers.immune_to_ff_exp = true
+	self.summers.immune_to_ff_fire = true
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
@@ -3419,7 +3426,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.experience = {}
 	self.taser.weapon = deep_clone(presets.weapon.normal)
 	self.taser.weapon.is_rifle.tase_distance = 1400
-	self.taser.weapon.is_rifle.aim_delay_tase = {0.75, 0.75}
+	self.taser.weapon.is_rifle.aim_delay_tase = {2, 2}
 	self.taser.weapon.is_rifle.tase_sphere_cast_radius = 30
 	self.taser.detection = presets.detection.normal
 	self.taser.HEALTH_INIT = 30
@@ -3495,6 +3502,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.no_retreat = true
 	self.taser_summers.no_limping = true
 	self.taser_summers.immune_to_concussion = true
+	self.taser_summers.immune_to_ff_fire = true
+	self.taser_summers.immune_to_ff_exp = true
 	self.taser_summers.no_damage_mission = true
 	self.taser_summers.no_arrest = true
 	self.taser_summers.immune_to_knock_down = true
@@ -3663,11 +3672,14 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ignore_medic_revive_animation = false
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
+	self.boom_summers.can_ff_fire = true
 	self.boom_summers.no_retreat = true
 	self.boom_summers.no_limping = true
 	self.boom_summers.no_arrest = true
 	self.boom_summers.immune_to_knock_down = true
 	self.boom_summers.immune_to_concussion = true
+	self.boom_summers.immune_to_ff_exp = true
+	self.boom_summers.immune_to_ff_fire = true
 	self.boom_summers.no_damage_mission = true
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
@@ -5190,7 +5202,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.is_rifle.melee_speed = enemy_melee_speed.normal
 	presets.weapon.normal.is_rifle.melee_dmg = enemy_melee_damage_base
 	presets.weapon.normal.is_rifle.tase_distance = 1400
-	presets.weapon.normal.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.normal.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.normal.is_rifle.melee_retry_delay = {2, 2}
 	presets.weapon.normal.is_rifle.range = {
@@ -7400,7 +7412,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.is_rifle.melee_speed = enemy_melee_speed.good
 	presets.weapon.good.is_rifle.melee_dmg = enemy_melee_damage_good
 	presets.weapon.good.is_rifle.tase_distance = 1400
-	presets.weapon.good.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.good.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.good.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.good.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 	presets.weapon.good.is_rifle.range = {
@@ -9577,7 +9589,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.is_rifle.melee_speed = enemy_melee_speed.expert
 	presets.weapon.expert.is_rifle.melee_dmg = enemy_melee_damage_expert
 	presets.weapon.expert.is_rifle.tase_distance = 1400
-	presets.weapon.expert.is_rifle.aim_delay_tase = {0.75, 0.75}
+	presets.weapon.expert.is_rifle.aim_delay_tase = {2, 2}
 	presets.weapon.expert.is_rifle.tase_sphere_cast_radius = 30
 	presets.weapon.expert.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 	presets.weapon.expert.is_rifle.range = {

@@ -2022,6 +2022,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.hatman_molotov.unit_dummy = "units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_husk"
 	self.projectiles.hatman_molotov.physic_effect = Idstring("physic_effects/molotov_throw")
 	self.projectiles.hatman_molotov.throwable = false
+	self.projectiles.hatman_molotov.range = 300
 	self.projectiles.hatman_molotov.is_a_grenade = true
 	self.projectiles.hatman_molotov.add_trail_effect = true
 	self.projectiles.hatman_molotov.impact_detonation = true
@@ -4890,7 +4891,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.cqc.stats.range = 150
 		self.melee_weapons.cqc.stats.concealment = 30
 			--LET'S GO PRACTICE MEDICINE--
-			self.melee_weapons.fear.dot_data_name = "melee_melee_fear"
+			self.melee_weapons.fear.dot_data_name = "melee_fear"
 			self.melee_weapons.fear.stats.min_damage = 1.2
 			self.melee_weapons.fear.stats.max_damage = 2.401
 			self.melee_weapons.fear.stats.min_damage_effect = 0.5

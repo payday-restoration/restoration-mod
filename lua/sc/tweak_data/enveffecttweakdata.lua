@@ -138,8 +138,8 @@ end
 
 function EnvEffectTweakData:incendiary_fire_arbiter()
 	local params = {
-		damage = 6,
-		player_damage = 3,
+		damage = 4,
+		player_damage = 2,
 		dot_data_name = "proj_launcher_incendiary_arbiter_groundfire",
 		range = 75,
 		burn_duration = 5,

@@ -190,6 +190,8 @@ end
 
 function PlayerStandard:_interupt_action_interact(t, input, complete)
 	if self._interact_expire_t then
+		self:_clear_tap_to_interact()
+
 		self._interact_expire_t = nil
 
 		if alive(self._interact_params.object) then
@@ -324,7 +326,7 @@ end
 
 function PlayerStandard:_action_interact_forbidden()
 	--Here!
-	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
+	local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self._ext_movement:has_carry_restriction() or self:is_deploying() or self._equipping_mask or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:_in_burst()
 
 	return action_forbidden
 end
@@ -420,7 +422,7 @@ end
 function PlayerStandard:_check_use_item(t, input)
 	local pressed, released, holding = nil
 
-	if self._use_item_expire_t then
+	if self._use_item_expire_t and not self._interact_expire_t then
 		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_use_item_press, input.btn_use_item_release, input.btn_use_item_state)
 	else
 		holding = input.btn_use_item_state
@@ -432,7 +434,7 @@ function PlayerStandard:_check_use_item(t, input)
 
 	--Here!
 	if pressed then
-		local action_forbidden = self._use_item_expire_t or self:_interacting() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
+		local action_forbidden = self._use_item_expire_t or self._equipping_mask or self:_interacting() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_in_burst()
 
 		if not action_forbidden and managers.player:can_use_selected_equipment(self._unit) then
 			self:_start_action_use_item(t)
@@ -632,15 +634,237 @@ end
 
 ]]--
 
-function PlayerStandard:_check_action_primary_attack(t, input)
-	local new_action = nil
-	local action_wanted = input.btn_primary_attack_state or input.btn_primary_attack_release or input.real_input_pressed or self._queue_fire or self._spin_up_shoot
 
-	action_wanted = action_wanted or self:is_shooting_count()
-	action_wanted = action_wanted or self:_is_charging_weapon()
+PlayerStandard._primary_action_funcs = {
+	clip_empty = {
+		default = function (self, t, input, params, weap_unit, weap_base)
+			self:_start_action_reload_enter(t)
+
+			return true
+		end,
+		single = function (self, t, input, params, weap_unit, weap_base)
+			if weap_base.should_reload_immediately and weap_base:should_reload_immediately() then
+				self:_start_action_reload_enter(t)
+			else
+				local trigger_pressed = input.btn_primary_attack_press
+
+				if not trigger_pressed then
+					if self._single_shot_autofire then
+						trigger_pressed = input.btn_primary_attack_state
+					else
+						trigger_pressed = self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+
+						if trigger_pressed then
+							self._primary_attack_input_cache = nil
+						end
+					end
+				end
+
+				if trigger_pressed then
+					self:_start_action_reload_enter(t)
+				end
+			end
+
+			return true
+		end
+	},
+	start_fire = {
+		auto = function (self, t, input, params, weap_unit, weap_base, is_bow)
+			if not weap_base:weapon_tweak_data().no_auto_anims then
+				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+				else
+					self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
+				end
+			end
+
+			if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) and (not weap_base.third_person_important or weap_base.third_person_important and not weap_base:third_person_important()) then
+				self._ext_network:send("sync_start_auto_fire_sound", 0)
+			end
+
+			return true
+		end
+	},
+	recoil_anim_redirect = {
+		default = function (self, t, input, params, weap_unit, weap_base, is_bow)
+			local state = nil
+
+			if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
+				if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
+					state = self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
+				else
+					state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+				end
+			elseif weap_base:weapon_tweak_data().animations.recoil_steelsight then
+				if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+				else
+					state = self._ext_camera:play_redirect(weap_base:is_second_sight_on() and self:get_animation("recoil") or self:get_animation("recoil_steelsight"), 1)
+				end
+			end
+
+			if state then
+				self._camera_unit:anim_state_machine():set_parameter(state, "alt_weight", weap_base:alt_fire_active() and 1 or 0)
+			end
+
+			return true
+		end,
+		auto = function (self, t, input, params, weap_unit, weap_base)
+			return true
+		end
+	},
+	sync_blank = {
+		default = function (self, t, input, params, weap_unit, weap_base, impact)
+			if weap_base.third_person_important and weap_base:third_person_important() then
+				self._ext_network:send("shot_blank_reliable", impact, 0)
+			else
+				self._ext_network:send("shot_blank", impact, 0)
+			end
+
+			return true
+		end,
+		auto = function (self, t, input, params, weap_unit, weap_base, impact)
+			if weap_base.third_person_important and weap_base:third_person_important() then
+				self._ext_network:send("shot_blank_reliable", impact, 0)
+			elseif weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire then
+				self._ext_network:send("shot_blank", impact, 0)
+			end
+
+			return true
+		end
+	}
+}
+PlayerStandard._primary_action_get_value = {
+	chk_start_fire = {
+		default = function (self, t, input, params, weap_unit, weap_base)
+			return input.btn_primary_attack_state
+		end,
+		single = function (self, t, input, params, weap_unit, weap_base)
+			if input.btn_primary_attack_press or self._queue_fire then
+				return true
+			end
+
+			if self._single_shot_autofire then
+				return input.btn_primary_attack_state
+			end
+
+			return self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+		end,
+		auto = function (self, t, input, params, weap_unit, weap_base)
+			return input.btn_primary_attack_state
+		end,
+		burst = function (self, t, input, params, weap_unit, weap_base)
+			return input.btn_primary_attack_press
+		end,
+		volley = function (self, t, input, params, weap_unit, weap_base)
+			return input.btn_primary_attack_press
+		end
+	},
+	fired = {
+		default = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
+			return weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+		end,
+		single = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
+			local trigger_pressed = nil
+			if start_shooting then
+				trigger_pressed = input.btn_primary_attack_press or self._queue_fire
+
+				if not trigger_pressed then
+					if self._single_shot_autofire then
+						trigger_pressed = input.btn_primary_attack_state
+					else
+						trigger_pressed = self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+
+						if trigger_pressed then
+							self._primary_attack_input_cache = nil
+						end
+					end
+				end
+			end
+
+			if weap_base:weapon_tweak_data().spin_up_semi then
+				if not self._spin_up_shoot and not self._anim_played then
+					self._anim_played = true
+					local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
+					local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
+					if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
+						weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
+					end
+				end
+				return not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+			else
+				if (trigger_pressed or self._queue_fire) and start_shooting then
+					return weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+				elseif fire_on_release then
+					if input.btn_primary_attack_release then
+						return weap_base:trigger_released(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+					elseif input.btn_primary_attack_state then
+						weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+					end
+				end
+			end
+		end,
+		auto = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
+			if self._spin_up_shoot or input.btn_primary_attack_state then
+				return weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+			end
+		end,
+		burst = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
+			return weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+		end,
+		volley = function (self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, ...)
+			if self._shooting then
+				return weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
+			end
+		end
+	},
+	not_fired = {
+		single = function (self, t, input, params, weap_unit, weap_base)
+			if not self._spin_up_shoot then
+				return false
+			end
+			
+			return true
+		end,
+		burst = function (self, t, input, params, weap_unit, weap_base)
+			if weap_base:shooting_count() == 0 then
+				return false
+			end
+
+			return true
+		end,
+		volley = function (self, t, input, params, weap_unit, weap_base)
+			return self:_is_charging_weapon()
+		end
+	},
+	check_stop_shooting_volley = {
+		volley = function (self, t, input, params, weap_unit, weap_base)
+			self:_check_stop_shooting()
+
+			return true
+		end
+	}
+}
+
+function PlayerStandard:_chk_action_stop_shooting(new_action)
+	if not new_action then
+		self._already_fired = nil
+		self:_check_stop_shooting()
+	end
+end
+
+function PlayerStandard:_check_action_primary_attack(t, input, params)
+	local new_action, action_wanted = nil
+	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and (input.btn_primary_attack_state or input.btn_primary_attack_release or  self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
 
 	if action_wanted then
-		local action_forbidden = self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances()
+		local action_forbidden = nil
+
+		if params and params.action_forbidden ~= nil then
+			action_forbidden = params.action_forbidden
+		elseif self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances() then
+			action_forbidden = true
+		else
+			action_forbidden = false
+		end
 
 		if not action_forbidden then
 			self._queue_reload_interupt = nil
@@ -648,17 +872,19 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 
 			self._ext_inventory:equip_selected_primary(false)
 
-			if self._equipped_unit then
-				local weap_base = self._equipped_unit:base()
+			local weap_unit = self._equipped_unit
+
+			if weap_unit then
+				local weap_base = weap_unit:base()
 				local fire_mode = weap_base:fire_mode()
 				local fire_on_release = weap_base:fire_on_release()
+				--Resmod custom vars
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 				local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
 				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 					force_ads_recoil_anims = nil
 				end
-
 				local queue_inputs = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShooting")
 				local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
 				local queue_exlude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") or 0.6
@@ -683,32 +909,52 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					self._spin_up_shoot = nil
 					self._queue_burst = nil
 					self._queue_fire = nil
-					if self:_is_using_bipod() then
+
+
+					if params and params.no_reload or self:_is_using_bipod() then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
 						end
 
-						self._equipped_unit:base():tweak_data_anim_stop("fire")
-					elseif fire_mode == "single" then
-						if input.btn_primary_attack_press or self._equipped_unit:base().should_reload_immediately and self._equipped_unit:base():should_reload_immediately() then
-							self:_start_action_reload_enter(t)
-						end
+						weap_base:tweak_data_anim_stop("fire")
 					else
-						new_action = true
+						local fire_mode_func = self._primary_action_funcs.clip_empty[fire_mode]
 
-						self:_start_action_reload_enter(t)
+						if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base) then
+							fire_mode_func = self._primary_action_funcs.clip_empty.default
+
+							if fire_mode_func then
+								fire_mode_func(self, t, input, params, weap_unit, weap_base)
+							end
+						end
+
+						new_action = self:_is_reloading()
 					end
-				elseif self._running and not self._equipped_unit:base():run_and_shoot_allowed() then
+				elseif params and params.block_fire then
+					-- Nothing
+				elseif self._running and (params and params.no_running or weap_base.run_and_shoot_allowed and not weap_base:run_and_shoot_allowed()) then
 					self:_interupt_action_running(t)
 				else
 					if not self._shooting then
 						if weap_base:start_shooting_allowed() then
-							local start = fire_mode == "single" and self._queue_fire or input.btn_primary_attack_press
-							start = start or fire_mode == "auto" and input.btn_primary_attack_state
-							start = start or fire_mode == "burst" and input.btn_primary_attack_press
-							start = start or fire_mode == "volley" and input.btn_primary_attack_press
-							start = start and not fire_on_release
-							start = start or fire_on_release and input.btn_primary_attack_release
+							local start = nil
+							local start_fire_func = self._primary_action_get_value.chk_start_fire[fire_mode]
+
+							if start_fire_func then
+								start = start_fire_func(self, t, input, params, weap_unit, weap_base)
+							else
+								start_fire_func = self._primary_action_get_value.chk_start_fire.default
+
+								if start_fire_func then
+									start = start_fire_func(self, t, input, params, weap_unit, weap_base)
+								end
+							end
+
+							if not params or not params.no_start_fire_on_release then
+								start = start and not fire_on_release
+								start = start or fire_on_release and input.btn_primary_attack_release
+							end
+
 							if start then
 								weap_base:start_shooting()
 								self._camera_unit:base():start_shooting()
@@ -717,21 +963,49 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 								self._shooting = true
 								self._shooting_t = t
 								start_shooting = true
+								local fire_mode_func = self._primary_action_funcs.start_fire[fire_mode]
 
-								if fire_mode == "auto" and not weap_base:weapon_tweak_data().no_auto_anims then
-									if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
-									else
-										self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
-									end
+								if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow) then
+									fire_mode_func = self._primary_action_funcs.start_fire.default
 
-									if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) and (not weap_base.third_person_important or weap_base.third_person_important and not weap_base:third_person_important()) then
-										self._ext_network:send("sync_start_auto_fire_sound", 0)
+									if fire_mode_func then
+										fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow)
 									end
 								end
 							end
+						elseif not params or not params.no_check_stop_shooting_early then
+							if queue_inputs then
+								if input.btn_primary_attack_press and fire_mode == "single" then
+									self._primary_attack_input_cache = nil
+									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
+										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+										local next_fire_last = weap_base._next_fire_allowed - next_fire
+										local next_fire_delay = weap_base._next_fire_allowed - next_fire_last
+										local next_fire_current_t = weap_base._next_fire_allowed - t
+										local next_fire_queue = 60 / queue_exlude
+
+										if next_fire_queue >= next_fire and next_fire_current_t < next_fire_delay * queue_window then
+											self._queue_fire = true
+										end
+									else
+										if (self:_in_burst() and queue_mid_burst) or not self:_in_burst() then
+											if input.real_input_pressed or not input.fake_attack then
+												self._queue_burst = true
+											end
+										end
+									end
+								end
+							else
+								self._queue_fire = nil
+								self._queue_burst = nil
+							end
+							self:_check_stop_shooting()
+
+							return false
 						else
 							if queue_inputs then
 								if input.btn_primary_attack_press and fire_mode == "single" then
+									self._primary_attack_input_cache = nil
 									if not weap_base:in_burst_mode() and not weap_base:start_shooting_allowed() then
 										local next_fire = weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
 										local next_fire_last = weap_base._next_fire_allowed - next_fire
@@ -766,13 +1040,14 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					local suppression_mul = managers.blackmarket:threat_multiplier()
 					local dmg_mul = 1
 					local weapon_tweak_data = weap_base:weapon_tweak_data()
-					local ignore_rof_mult_anims = weap_base and weap_base._ignore_rof_mult_anims
 					local primary_category = weapon_tweak_data.categories[1]
+					--Resmod custom var(s)
+					local ignore_rof_mult_anims = weap_base and weap_base._ignore_rof_mult_anims
 
 					if not weapon_tweak_data.ignore_damage_multipliers then
 						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "dmg_multiplier_outnumbered", 1)
 
-						if managers.player:has_category_upgrade("player", "overkill_all_weapons") or weap_base:is_category("shotgun", "saw") then
+						if self._overkill_all_weapons or weap_base:is_category("shotgun", "saw") then
 							dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 						end
 
@@ -780,9 +1055,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 						local damage_health_ratio = managers.player:get_damage_health_ratio(health_ratio, primary_category)
 
 						if damage_health_ratio > 0 then
-							local upgrade_name = weap_base:is_category("saw") and "melee_damage_health_ratio_multiplier" or "damage_health_ratio_multiplier"
-							local damage_ratio = damage_health_ratio
-							dmg_mul = dmg_mul * (1 + managers.player:upgrade_value("player", upgrade_name, 0) * damage_ratio)
+							local upgrade = weap_base:is_category("saw") and self._damage_health_ratio_mul_melee or self._damage_health_ratio_mul
+							dmg_mul = dmg_mul * (1 + upgrade * damage_health_ratio)
 						end
 
 						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
@@ -790,45 +1064,24 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 					end
 
 					dmg_mul = dmg_mul * managers.player:get_temporary_property("birthday_multiplier", 1)
-					local fired = nil
 
-					if fire_mode == "single" then
-						if weap_base:weapon_tweak_data().spin_up_semi then
-							if not self._spin_up_shoot and not self._anim_played then
-								self._anim_played = true
-								local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
-								local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
-									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
-								end
-							end
-							fired = not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+					local fired = nil
+					local fired_func = self._primary_action_get_value.fired[fire_mode]
+
+					if fired_func then
+						fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
+						self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+					else
+						fired_func = self._primary_action_get_value.fired.default
+
+						if fired_func then
+							fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
-						else
-							if (self._queue_fire or input.btn_primary_attack_press) and start_shooting then
-								fired = weap_base:trigger_pressed(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-							elseif fire_on_release then
-								if input.btn_primary_attack_release then
-									fired = weap_base:trigger_released(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-								elseif input.btn_primary_attack_state then
-									weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-								end
-							end
-						end
-					elseif fire_mode == "auto" then
-						if self._spin_up_shoot or input.btn_primary_attack_state then
-							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)		
-							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
-						end
-					elseif fire_mode == "burst" then
-						fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-					elseif fire_mode == "volley" then
-						if self._shooting then
-							fired = weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
 						end
 					end
+
 					if not restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") then
-						if weap_base.manages_steelsight and weap_base:manages_steelsight() then
+						if (not params or not params.no_steelsight) and weap_base.manages_steelsight and weap_base:manages_steelsight() then
 							if weap_base:wants_steelsight() and not self._state_data.in_steelsight then
 								self:_start_action_steelsight(t)
 							elseif not weap_base:wants_steelsight() and self._state_data.in_steelsight then
@@ -859,21 +1112,28 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
 						end
 						
-						managers.rumble:play("weapon_fire")
-
-						local weap_tweak_data = tweak_data.weapon[weap_base:get_name_id()]
-						local shake_multiplier = weap_tweak_data.shake[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
-						local vars = {
-							-1,
-							1
-						}
-						local random = vars[math.random(#vars)]
-						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
-						if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-							self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+						if not params or not params.no_rumble then
+							managers.rumble:play("weapon_fire")
 						end
-						self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
-						self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.2 or 1) , 1, 0.15)
+
+						local weap_tweak_data = weap_base.weapon_tweak_data and weap_base:weapon_tweak_data() or tweak_data.weapon[weap_base:get_name_id()]
+
+						if not params or not params.no_shake then
+							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
+							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+							local vars = {
+								-1,
+								1
+							}
+							local random = vars[math.random(#vars)]
+							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
+								self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+							end
+							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
+							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.2 or 1) , 1, 0.15)
+						end
+
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
@@ -894,31 +1154,19 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							end
 						end
 
-						if (fire_mode == "single" or fire_mode == "burst" or weap_base:weapon_tweak_data().no_auto_anims) and weap_base:get_name_id() ~= "saw" then
-							local state = nil
+						if (not params or not params.no_recoil_anim_redirect) and not weap_tweak_data.no_recoil_anim_redirect then
+							local fire_mode_func = self._primary_action_funcs.recoil_anim_redirect[fire_mode]
 
-							if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
-								if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
-									state = self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
-								else
-									state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+							if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow) then
+								fire_mode_func = self._primary_action_funcs.recoil_anim_redirect.default
+
+								if fire_mode_func then
+									fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow)
 								end
-							elseif weap_tweak_data.animations.recoil_steelsight then
-								if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
-								else
-									state = self._ext_camera:play_redirect(--[[weap_base:is_second_sight_on() and self:get_animation("recoil") or]]self:get_animation("recoil_steelsight"), 1)
-								end
-							end
-							
-							if state then
-								self._camera_unit:anim_state_machine():set_parameter(state, "alt_weight", self._equipped_unit:base():alt_fire_active() and 1 or 0)
 							end
 						end
 
 						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
-
-						cat_print("jansve", "[PlayerStandard] Weapon Recoil Multiplier: " .. tostring(recoil_multiplier))
-
 						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or weap_tweak_data.kick
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
@@ -954,38 +1202,55 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 							end
 						end
 
-						if weap_base.set_recharge_clbk then
+						if (not params or not params.no_recharge_clbk) and weap_base.set_recharge_clbk then
 							weap_base:set_recharge_clbk(callback(self, self, "weapon_recharge_clbk_listener"))
 						end
 
 						managers.hud:set_ammo_amount(weap_base:selection_index(), weap_base:ammo_info())
 
-						local impact = not fired.hit_enemy
 
-						if weap_base.third_person_important and weap_base:third_person_important() then
-							self._ext_network:send("shot_blank_reliable", impact, 0)
-						elseif weap_base.akimbo and not weap_base:weapon_tweak_data().allow_akimbo_autofire or fire_mode == "single" or fire_mode == "burst" then
-							self._ext_network:send("shot_blank", impact, 0)
+						if self._ext_network then
+							local impact = not fired.hit_enemy
+							local sync_blank_func = self._primary_action_funcs.sync_blank[fire_mode]
+
+							if not sync_blank_func or not sync_blank_func(self, t, input, params, weap_unit, weap_base, impact) then
+								sync_blank_func = self._primary_action_funcs.sync_blank.default
+
+								if sync_blank_func then
+									sync_blank_func(self, t, input, params, weap_unit, weap_base, impact)
+								end
+							end
 						end
 
-						if fire_mode == "volley" then
-							self:_check_stop_shooting()
-							new_action = false
+						local stop_volley_func = self._primary_action_get_value.check_stop_shooting_volley[fire_mode]
+
+						if stop_volley_func then
+							new_action = stop_volley_func(self, t, input, params, weap_unit, weap_base)
+						else
+							stop_volley_func = self._primary_action_get_value.check_stop_shooting_volley.default
+
+							if stop_volley_func then
+								new_action = stop_volley_func(self, t, input, params, weap_unit, weap_base)
+							end
 						end
+
 						if fire_mode == "single" and self._spin_up_shoot then
 							self._spin_up_shoot = nil
 							self._already_fired = true
 						end
-					elseif fire_mode == "single" then
-						if not self._spin_up_shoot then
-							new_action = false
+
+					else
+						local not_fired_func = self._primary_action_get_value.not_fired[fire_mode]
+
+						if not_fired_func then
+							new_action = not_fired_func(self, t, input, params, weap_unit, weap_base)
+						else
+							not_fired_func = self._primary_action_get_value.not_fired.default
+
+							if not_fired_func then
+								new_action = not_fired_func(self, t, input, params, weap_unit, weap_base)
+							end
 						end
-					elseif fire_mode == "burst" then
-						if weap_base:shooting_count() == 0 then
-							new_action = false
-						end
-					elseif fire_mode == "volley" then
-						new_action = self:_is_charging_weapon()
 					end
 				end
 			end
@@ -998,10 +1263,8 @@ function PlayerStandard:_check_action_primary_attack(t, input)
 		end
 	end
 
-	if not new_action then
-		self._already_fired = nil
-		self:_check_stop_shooting()
-	end
+	self:_chk_action_stop_shooting(new_action)
+
 	return new_action
 end
 
@@ -1041,7 +1304,7 @@ function PlayerStandard:_check_stop_shooting()
 	end
 end
 
-function PlayerStandard:_start_action_charging_weapon(t)
+function PlayerStandard:_start_action_charging_weapon(t, no_redirect)
 	self._state_data.charging_weapon = true
 	self._state_data.charging_weapon_data = {
 		t = t,
@@ -1054,7 +1317,9 @@ function PlayerStandard:_start_action_charging_weapon(t)
 	local no_charge_anims = weap_base:weapon_tweak_data().no_charge_anims
 	if not no_charge_anims then
 		self._equipped_unit:base():tweak_data_anim_play("charge", speed_multiplier)
-		self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
+		if not no_redirect then
+			self._ext_camera:play_redirect(self:get_animation("charge"), speed_multiplier)
+		end
 	end
 end
 
@@ -1076,7 +1341,7 @@ function PlayerStandard:_check_action_interact(t, input)
 	local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
 	local pressed, released, holding = nil
 
-	if self._interact_expire_t then
+	if self._interact_expire_t and not self._use_item_expire_t then
 		pressed, released, holding = self:_check_tap_to_interact_inputs(t, input.btn_interact_press, input.btn_interact_release, input.btn_interact_state)
 	else
 		holding = input.btn_interact_state
@@ -2562,7 +2827,7 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 	end
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
 
-	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or  self:in_steelsight() or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
+	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
 
 	local weapon = self._equipped_unit:base()
 	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
@@ -3843,6 +4108,7 @@ function PlayerStandard:_update_equip_weapon_timers(t, input)
 	end
 
 	if self._equip_weapon_expire_t and self._equip_weapon_expire_t <= t then
+		self._equipping_mask = nil
 		self._equip_weapon_expire_t = nil
 
 		if input.btn_steelsight_state then

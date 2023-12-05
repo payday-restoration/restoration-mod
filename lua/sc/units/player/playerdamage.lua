@@ -252,7 +252,7 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 	if not self:_chk_can_take_dmg() then
 		return false
 	elseif self._god_mode then
-		if attack_data.damage > 0 then
+		if attack_data.damage and attack_data.damage > 0 then
 			self:_send_damage_drama(attack_data, attack_data.damage)
 		end
 		self:_call_listeners(damage_info)

@@ -1,7 +1,8 @@
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
 --Scale effects per difficulty
 function QuickCsGrenade:_setup_from_tweak_data()
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local grenade_entry = self._tweak_projectile_entry or "cs_grenade_quick"
 	self._tweak_data = tweak_data.projectiles[grenade_entry]
 	self._radius = self._tweak_data.radius or 300
@@ -99,10 +100,17 @@ function QuickCsGrenade:_play_sound_and_effects(...)
 			normal = self._unit:rotation():y()
 		})
 
-		self._smoke_effect = World:effect_manager():spawn({
-			effect = Idstring("effects/payday2/environment/cs_gas_damage_area"),
-			parent = self._unit:orientation_object()
-		})
+		if difficulty_index == 8 then
+			self._smoke_effect = World:effect_manager():spawn({
+				effect = Idstring("effects/particles/explosions/cs_grenade_smoke_ds_sc"),
+				parent = self._unit:orientation_object()
+			})
+		else
+			self._smoke_effect = World:effect_manager():spawn({
+				effect = Idstring("effects/particles/explosions/cs_grenade_smoke_sc"),
+				parent = self._unit:orientation_object()
+			})		
+		end		
 
 		self._set_blurzone = true
 		managers.environment_controller:set_blurzone(self._unit:key(), 1, self._unit:position(), self._radius * self._radius_blurzone_multiplier, 0, true)

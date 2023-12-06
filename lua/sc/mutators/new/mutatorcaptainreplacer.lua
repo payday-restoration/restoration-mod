@@ -61,7 +61,7 @@ function MutatorCaptainReplacer:setup()
 	local autumn_preset = nil
 	local spooky_preset = nil
 	local new_captain = self:get_captain_override()
-	
+	if new_captain ~= "no_captain_override" then
 	--Winters 
 	if difficulty_index <= 5 then
 		winter_preset = {
@@ -523,6 +523,13 @@ function MutatorCaptainReplacer:setup()
 	tweak_data.group_ai.enemy_spawn_groups.HVH_Boss = new_captain
 	tweak_data.group_ai.enemy_spawn_groups.Cap_Autumn = new_captain
 	tweak_data.group_ai.enemy_spawn_groups.Cap_Summers = new_captain
+	tweak_data.group_ai.enemy_spawn_groups.Fake_Captain = new_captain
+	tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {0, 0.2, 0.3}
+	if new_captain == "autumn" then
+		tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown / 2
+	end
+	
+	end
 end
 
 function MutatorCaptainReplacer:get_captain_override(specific_day)
@@ -547,6 +554,11 @@ function MutatorCaptainReplacer:setup_options_gui(node)
 		update_callback = callback(self, self, "_update_captain_override_1")
 	}
 	local data_node = {
+		{
+			value = "no_captain_override",
+			text_id = "menu_mutator_captain_replace_no_captain_override",
+			_meta = "option"
+		},
 		{
 			value = "winter",
 			text_id = "menu_mutator_captain_replace_winter",

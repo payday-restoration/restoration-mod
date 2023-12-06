@@ -499,7 +499,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 2.5 * (1 - self:health_ratio())
 		if grace_bonus then
 			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
 		else 
@@ -642,7 +642,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 2.5 * (1 - self:health_ratio())
 		if grace_bonus then
 			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
 		else

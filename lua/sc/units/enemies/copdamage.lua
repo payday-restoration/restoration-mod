@@ -8,8 +8,6 @@ local table_contains = table.contains
 local enemies_visor = {
 	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3"),
 	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk"),
-	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"),
-	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),

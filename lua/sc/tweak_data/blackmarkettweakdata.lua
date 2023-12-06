@@ -3815,7 +3815,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
 			self.melee_weapons[melee_id].sphere_cast_radius_add_h = 16
 		end
-		self.melee_weapons.meter.anim_attack_charged_vars = nil
 		
 		--melee_hockey
 		--Bad anim set, makes anything using it look like it doesn't have the range its given. Moved weapons out of here into "melee_baseballbat"
@@ -3872,9 +3871,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 0.9473
 			self.melee_weapons[melee_id].sphere_cast_radius_add = 12
 		end
-		self.melee_weapons.freedom.anim_speed_mult = 0.8
-		self.melee_weapons.freedom.anim_attack_vars = {"var1","var2","var4"}
-		self.melee_weapons.freedom.anim_attack_charged_vars = {"var3"} --This however, is not blunt and very capable of stabbing :^)
 		
 		--melee_beardy
 		melee_anim = {
@@ -3936,8 +3932,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].melee_damage_delay = 0.175
 			self.melee_weapons[melee_id].anim_speed_mult = 0.7307
 		end
-		self.melee_weapons.model24.anim_speed_mult = 0.8636
-		self.melee_weapons.microphone.anim_speed_mult = 0.8636
 		
 		--melee_sandsteel
 		melee_anim = {
@@ -4003,29 +3997,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 0.675
 		end	
 		
-		--melee_blunt
-		melee_anim = {
-			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
-			'spatula','swagger','selfie','chac',
-			'iceaxe'
-		}
-		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
-			self.melee_weapons[melee_id].expire_t = 1.05
-			self.melee_weapons[melee_id].repeat_expire_t = 0.8
-			self.melee_weapons[melee_id].melee_damage_delay = 0.1
-			self.melee_weapons[melee_id].anim_speed_mult = 1
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 4
-		end	
-		self.melee_weapons.spatula.anim_speed_mult = 1.3
-		self.melee_weapons.chac.anim_speed_mult = 1.3
-		self.melee_weapons.iceaxe.anim_speed_mult = 0.95
-		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
-		self.melee_weapons.iceaxe.make_decal = true
-		self.melee_weapons.iceaxe.make_effect = true
-
 		--melee_happy
 		melee_anim = {
 			'happy'
@@ -4059,6 +4030,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			}
 		end
 		
+		--melee_blunt
+		melee_anim = {
+			'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
+			'spatula','swagger','selfie','chac',
+			'iceaxe'
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
+			self.melee_weapons[melee_id].expire_t = 1.05
+			self.melee_weapons[melee_id].repeat_expire_t = 0.8
+			self.melee_weapons[melee_id].melee_damage_delay = 0.1
+			self.melee_weapons[melee_id].anim_speed_mult = 1
+			self.melee_weapons[melee_id].sphere_cast_radius_add = 4
+		end	
+
 		--melee_brick
 		--Pretty much a clone of melee_blunt but the hand hold is wider
 		melee_anim = {
@@ -4089,7 +4077,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 0.95
 			self.melee_weapons[melee_id].sphere_cast_radius_add = 4
 		end
-		self.melee_weapons.moneybundle.anim_speed_mult = 1.25
 		
 		--melee_pitchfork
 		melee_anim = {
@@ -4131,9 +4118,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].melee_damage_delay = 0.175
 			self.melee_weapons[melee_id].anim_speed_mult = 0.975
 		end
-		self.melee_weapons.micstand.anim_speed_mult = 1.26666
-		self.melee_weapons.mining_pick.make_decal = true
-		self.melee_weapons.mining_pick.make_effect = true
 		
 		
 		--melee_freedom
@@ -4290,11 +4274,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].repeat_expire_t = 0.575
 			self.melee_weapons[melee_id].melee_damage_delay = 0.125
 		end
-		--It can poke now :^)
-		self.melee_weapons.poker.align_objects = {"a_weapon_right"}
-		self.melee_weapons.poker.anim_attack_vars = {"var1"}
-		self.melee_weapons.poker.anim_attack_charged_vars = {"var2"}
-		self.melee_weapons.poker.anim_speed_mult = 0.8
 		
 		--melee_stab
 		melee_anim = {
@@ -4308,7 +4287,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
 			self.melee_weapons[melee_id].anim_speed_mult = 1.2
 		end
-		self.melee_weapons.scoutknife.anim_speed_mult = 0.7692
 	
 		--melee_taser
 		melee_anim = {
@@ -4323,7 +4301,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].melee_damage_delay = 0.1
 			self.melee_weapons[melee_id].anim_speed_mult = 0.8
 		end
-		
 		
 		--melee_agave
 		melee_anim = {
@@ -4423,38 +4400,43 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.taser.stats.range = 155
 			self.melee_weapons.taser.stats.concealment = 29
 
+		--Money money money--
+		self.melee_weapons.moneybundle.speed_mult = 1.45
+		self.melee_weapons.moneybundle.stats.min_damage = 2.4
+		self.melee_weapons.moneybundle.stats.max_damage = 4.501
+		self.melee_weapons.moneybundle.stats.min_damage_effect = 6.0
+		self.melee_weapons.moneybundle.stats.max_damage_effect = 12.0
+		self.melee_weapons.moneybundle.stats.charge_time = 0.8
+		self.melee_weapons.moneybundle.stats.range = 150
+		self.melee_weapons.moneybundle.stats.concealment = 30
+			--For that you get the belt--
+			--Fitting name, because if you actually like Duke you're a sap
+			self.melee_weapons.sap.speed_mult = 1.45
+			self.melee_weapons.sap.stats.min_damage = 2.4
+			self.melee_weapons.sap.stats.max_damage = 4.501
+			self.melee_weapons.sap.stats.min_damage_effect = 6.0
+			self.melee_weapons.sap.stats.max_damage_effect = 12.0
+			self.melee_weapons.sap.stats.charge_time = 0.8
+			self.melee_weapons.sap.stats.range = 150
+			self.melee_weapons.sap.stats.concealment = 30
+
 		--Le Spatula--	
+		self.melee_weapons.spatula.speed_mult = 1.3
 		self.melee_weapons.spatula.stats.min_damage = 2.4
 		self.melee_weapons.spatula.stats.max_damage = 4.501
 		self.melee_weapons.spatula.stats.min_damage_effect = 6.0
 		self.melee_weapons.spatula.stats.max_damage_effect = 12.0
 		self.melee_weapons.spatula.stats.charge_time = 0.6
-		self.melee_weapons.spatula.stats.range = 150
+		self.melee_weapons.spatula.stats.range = 160
 		self.melee_weapons.spatula.stats.concealment = 30
-			--For that you get the belt--
-			--Fitting name, because if you actually like Duke you're a sap
-			self.melee_weapons.sap.stats.min_damage = 2.4
-			self.melee_weapons.sap.stats.max_damage = 4.501
-			self.melee_weapons.sap.stats.min_damage_effect = 6.0
-			self.melee_weapons.sap.stats.max_damage_effect = 12.0
-			self.melee_weapons.sap.stats.charge_time = 0.6
-			self.melee_weapons.sap.stats.range = 150
-			self.melee_weapons.sap.stats.concealment = 30
-			--Money money money--
-			self.melee_weapons.moneybundle.stats.min_damage = 2.4
-			self.melee_weapons.moneybundle.stats.max_damage = 4.501
-			self.melee_weapons.moneybundle.stats.min_damage_effect = 6.0
-			self.melee_weapons.moneybundle.stats.max_damage_effect = 12.0
-			self.melee_weapons.moneybundle.stats.charge_time = 0.6
-			self.melee_weapons.moneybundle.stats.range = 150
-			self.melee_weapons.moneybundle.stats.concealment = 30
 			--Ay, qué lindo carnaval--	
+			self.melee_weapons.chac.speed_mult = 1.3
 			self.melee_weapons.chac.stats.min_damage = 2.4
 			self.melee_weapons.chac.stats.max_damage = 4.501
 			self.melee_weapons.chac.stats.min_damage_effect = 6.0
 			self.melee_weapons.chac.stats.max_damage_effect = 12.0
 			self.melee_weapons.chac.stats.charge_time = 0.6
-			self.melee_weapons.chac.stats.range = 150
+			self.melee_weapons.chac.stats.range = 160
 			self.melee_weapons.chac.stats.concealment = 30
 
 		--It's da hotline--
@@ -4585,6 +4567,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.model24.explosion_curve_pow = 0.5
 		self.melee_weapons.model24.explosion_damage = 60
 		self.melee_weapons.model24.explosion_range = 500
+		self.melee_weapons.model24.speed_mult = 1.18
 		self.melee_weapons.model24.stats.max_damage = 9.001
 		self.melee_weapons.model24.stats.min_damage = 4.5
 		self.melee_weapons.model24.stats.min_damage_effect = 9.0
@@ -4595,6 +4578,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--Who's up for rockin the mic?--	
 		self.melee_weapons.microphone.special_weapon = "talk"
+		self.melee_weapons.microphone.speed_mult = 1.18
 		self.melee_weapons.microphone.stats.min_damage = 2.4
 		self.melee_weapons.microphone.stats.max_damage = 4.501
 		self.melee_weapons.microphone.stats.min_damage_effect = 6.0
@@ -4630,6 +4614,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.road.stats.concealment = 27
 
 		--Mic stand--
+		self.melee_weapons.micstand.speed_mult = 1.3
 		self.melee_weapons.micstand.stats.min_damage = 4.5
 		self.melee_weapons.micstand.stats.max_damage = 6.001
 		self.melee_weapons.micstand.stats.min_damage_effect = 6.0
@@ -4646,6 +4631,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.hockey.stats.range = 200
 			self.melee_weapons.hockey.stats.concealment = 27
 			--Binary Ruler--
+			self.melee_weapons.meter.anim_attack_charged_vars = nil
 			self.melee_weapons.meter.stats.min_damage = 4.5
 			self.melee_weapons.meter.stats.max_damage = 6.001
 			self.melee_weapons.meter.stats.min_damage_effect = 6.0
@@ -4696,8 +4682,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.spoon_gold.stats.concealment = 24
 		--B-Oink
 		if self.melee_weapons.piggy_hammer then
-			self.melee_weapons.piggy_hammer.anim_speed_mult = 1.13679
 			self.melee_weapons.piggy_hammer.info_id = "bm_melee_piggy_hammer_info"
+			self.melee_weapons.piggy_hammer.speed_mult = 1.15
 			self.melee_weapons.piggy_hammer.stats.min_damage = 4.5
 			self.melee_weapons.piggy_hammer.stats.max_damage = 12.001
 			self.melee_weapons.piggy_hammer.stats.min_damage_effect = 6.0
@@ -4759,7 +4745,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--we postal now--
 		self.melee_weapons.cutters.stats.min_damage = 6
 		self.melee_weapons.cutters.stats.max_damage = 12.001
-		self.melee_weapons.cutters.stats.min_damage_effect = 9.0
+		self.melee_weapons.cutters.stats.min_damage_effect = 6.0
 		self.melee_weapons.cutters.stats.max_damage_effect = 24.0
 		self.melee_weapons.cutters.stats.charge_time = 2.5
 		self.melee_weapons.cutters.stats.range = 170
@@ -4872,6 +4858,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.gerber.stats.charge_time = 0.9
 		self.melee_weapons.gerber.stats.range = 155
 		self.melee_weapons.gerber.stats.concealment = 30
+			--Scout Knife--
+			self.melee_weapons.scoutknife.stats.min_damage = 4.5
+			self.melee_weapons.scoutknife.stats.max_damage = 9.001
+			self.melee_weapons.scoutknife.stats.min_damage_effect = 0.6
+			self.melee_weapons.scoutknife.stats.max_damage_effect = 1.2
+			self.melee_weapons.scoutknife.stats.charge_time = 0.9
+			self.melee_weapons.scoutknife.stats.range = 155
+			self.melee_weapons.scoutknife.stats.concealment = 30
 		
 		--REMEMBER THE BASICS OF--
 		self.melee_weapons.cqc.dot_data_name = "melee_cqc"
@@ -4939,14 +4933,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.bayonet.stats.charge_time = 0.4
 		self.melee_weapons.bayonet.stats.range = 155
 		self.melee_weapons.bayonet.stats.concealment = 29
-			--Scout Knife--
-			self.melee_weapons.scoutknife.stats.min_damage = 3
-			self.melee_weapons.scoutknife.stats.max_damage = 6.001
-			self.melee_weapons.scoutknife.stats.min_damage_effect = 0.6
-			self.melee_weapons.scoutknife.stats.max_damage_effect = 1.2
-			self.melee_weapons.scoutknife.stats.charge_time = 0.4
-			self.melee_weapons.scoutknife.stats.range = 155
-			self.melee_weapons.scoutknife.stats.concealment = 29
 			--Even more pokey knives--
 			self.melee_weapons.pugio.stats.min_damage = 3
 			self.melee_weapons.pugio.stats.max_damage = 6.001
@@ -4967,6 +4953,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--I'm really annoyed that we don't actually poke with it--
 		--We do now :^)
+		self.melee_weapons.poker.align_objects = {"a_weapon_right"}
+		self.melee_weapons.poker.anim_attack_vars = {"var1"}
+		self.melee_weapons.poker.anim_attack_charged_vars = {"var2"}
+		self.melee_weapons.poker.speed_mult = 0.8
 		self.melee_weapons.poker.stats.min_damage = 6
 		self.melee_weapons.poker.stats.max_damage = 12.001
 		self.melee_weapons.poker.stats.min_damage_effect = 1.0
@@ -5156,6 +5146,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.scalper.stats.concealment = 27
 		--Reminds me of how HL2 was gonna have an ice axe--
 		self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
+		self.melee_weapons.iceaxe.speed_mult = 0.95
+		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
+		self.melee_weapons.iceaxe.make_decal = true
+		self.melee_weapons.iceaxe.make_effect = true
 		self.melee_weapons.iceaxe.stats.min_damage = 6
 		self.melee_weapons.iceaxe.stats.max_damage = 12.001
 		self.melee_weapons.iceaxe.stats.min_damage_effect = 1.5
@@ -5175,6 +5169,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--FREEEEEEEDOM--
 		self.melee_weapons.freedom.info_id = "bm_melee_freedom_info"
+		self.melee_weapons.freedom.anim_attack_vars = {"var1","var2","var4"}
+		self.melee_weapons.freedom.anim_attack_charged_vars = {"var3"} --This however, is not blunt and very capable of stabbing :^)
+		self.melee_weapons.freedom.speed_mult = 0.85
 		self.melee_weapons.freedom.stats.min_damage = 6
 		self.melee_weapons.freedom.stats.max_damage = 12.001
 		self.melee_weapons.freedom.stats.min_damage_effect = 4.5
@@ -5201,6 +5198,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.pitchfork.stats.concealment = 25
 		--Manly Miner Men--
 		self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
+		self.melee_weapons.mining_pick.make_decal = true
+		self.melee_weapons.mining_pick.make_effect = true
 		self.melee_weapons.mining_pick.stats.min_damage = 6
 		self.melee_weapons.mining_pick.stats.max_damage = 12.001
 		self.melee_weapons.mining_pick.stats.min_damage_effect = 3.0
@@ -5708,6 +5707,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 
 	if self.melee_weapons.zd_poke then --Zdann's Poke of Death
 		self.melee_weapons.zd_poke.anim_attack_vars = {"var1"}
+		self.melee_weapons.zd_poke.info_id = ""
 		self.melee_weapons.zd_poke.expire_t = 33.4
 		self.melee_weapons.zd_poke.repeat_expire_t = 29.5
 		self.melee_weapons.zd_poke.melee_damage_delay = 28.3

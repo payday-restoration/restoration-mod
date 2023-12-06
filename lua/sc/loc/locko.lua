@@ -4534,10 +4534,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_longdesc"] = "브라보 이외에 적들도 이제 파편 수류탄을 던질 수 있습니다.\n\n참고: 화염방사기를 사용하는 적들은 파편 수류탄 대신 화염병을 사용하고, 클로커는 최루탄을 사용합니다.",		
 
 		["mutator_captain_replace"] = "영원한 계절",
-		["menu_mutator_captain_replace"] = "캡틴",
 		["menu_mutator_captain_replace_1"] = "캡틴 (1일차)",
 		["menu_mutator_captain_replace_2"] = "캡틴 (2일차)",
-		["menu_mutator_captain_replace_3"] = "캡틴 (3일차)",		
+		["menu_mutator_captain_replace_3"] = "캡틴 (3일차)",
+		["menu_mutator_captain_replace_no_captain_override"] = "바꾸지 않음",
 		["menu_mutator_captain_replace_winter"] = "윈터스",
 		["menu_mutator_captain_replace_autumn"] = "어텀",
 		["menu_mutator_captain_replace_spring"] = "스프링",
@@ -5044,11 +5044,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gun Nut--
 			["menu_dance_instructor_sc"] = "총기광",
-			["menu_dance_instructor_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 지향 사격 명중률을 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 발사 속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.\n\n이제 #{skill_color}#권총##은 방탄복을 관통하여 #{skill_color}$skill_value_p2##의 피해를 가할 수 있습니다.",
+			["menu_dance_instructor_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 지향 사격 명중률을 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 발사 속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.\n\n이제 #{skill_color}#권총##은 방탄복을 관통하여 #{skill_color}#$skill_value_p2##의 피해를 가할 수 있습니다.",
 
 			--Over Pressurized/Gunfighter--
 			["menu_gun_fighter_sc"] = "총잡이",
-			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 장전 속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n#{skill_color}#권총##의 명중률에 대한 이동 패널티가 #{skill_color}#$skill_value_b2##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 장전 속도가 추가로 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
+			["menu_gun_fighter_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#권총##의 장전 속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n#{skill_color}#권총##의 명중률에 대한 이동 패널티가 #{skill_color}#$skill_value_p1##만큼 감소합니다.\n\n명중률에 대한 이동 패널티는 안정성에 의해 결정됩니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#권총##의 장전 속도가 추가로 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
 
 			--Akimbo--
 			["menu_akimbo_skill_sc"] = "아킴보",
@@ -5288,7 +5288,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 회피 미터가 초당 회피의 최대 ##10%##씩 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때마다 회피 미터가 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 적을 죽일 때마다 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##100%##보다 낮을 때, 받는 피해가 최대 ##20%## 감소합니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 ##75%##만큼 빨라집니다.",
-		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 근접 공격으로 적을 죽일 때마다 회피 미터가 최대 ##125%##만큼 채워지며 다음 회피의 유예 시간이 ##300%##만큼, 최대 ##0.9##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
+		["menu_deck12_7_desc_sc"] = "체력이 낮을수록 근접 공격으로 적을 죽일 때마다 회피 미터가 더 효과적으로 채워집니다.\n\n체력이 ##100%##보다 낮을 때, 근접 공격으로 적을 죽일 때마다 회피 미터가 최대 ##50%##만큼 채워지며 뱀 문신(3번 카드)의 덱 효과가 누적되고, 다음 회피의 유예 시간이 ##150%##만큼, 최대 ##0.9##초만큼 증가합니다.\n\n회피 포인트가 추가로 ##5##만큼 더 증가합니다.",
 		["menu_deck12_9_desc_sc"] = "얻을 수 있는 최대 굴절량이 #{skill_color}#80%##만큼 증가합니다.\n\n체력이 0이 되었을 때, 다운되는 대신 체력 ##1##과 방탄량이 ##50##만큼 회복된 상태로 생존합니다.\n\n#{risk}#참고: 이 효과는 클로커 킥이나 테이저 전기 충격에 의해 쓰러지는 경우에는 적용되지 않으며 되돌려지지 않습니다.##\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 #{skill_color}#10%## 상승합니다.",
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 

@@ -851,7 +851,7 @@ function CopActionShoot:update(t)
 					end
 				end				
 				
-				local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, falloff, i_range, autotarget)
+				local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, self._w_usage_tweak, falloff, i_range, autotarget)
 
 				if new_target_pos then
 					target_pos = new_target_pos
@@ -1084,7 +1084,7 @@ function CopActionShoot:update(t)
 					end
 				else
 					local spread = self._spread
-					local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, falloff, i_range, autotarget)
+					local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, self._w_usage_tweak, falloff, i_range, autotarget)
 
 					if new_target_pos then
 						target_pos = new_target_pos
@@ -1140,7 +1140,7 @@ function CopActionShoot:update(t)
 	end
 end
 
-function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shooting_local_player)
+function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, w_tweak, falloff, i_range, shooting_local_player)
 	local shoot_hist = self._shoot_history
 	local focus_delay, focus_prog = nil
 
@@ -1172,7 +1172,7 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		dis_lerp = dis / falloff.r
 		hit_chance = math_lerp(hit_chances[1], hit_chances[2], focus_prog)
 	else
-		local prev_falloff = self._falloff[i_range - 1]
+		local prev_falloff = w_tweak.FALLOFF[i_range - 1]
 		dis_lerp = math_min(1, (dis - prev_falloff.r) / (falloff.r - prev_falloff.r))
 		local prev_range_hit_chance = math_lerp(prev_falloff.acc[1], prev_falloff.acc[2], focus_prog)
 		hit_chance = math_lerp(prev_range_hit_chance, math_lerp(hit_chances[1], hit_chances[2], focus_prog), dis_lerp)
@@ -1213,7 +1213,7 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 
 		local miss_min_dis = shooting_local_player and 31 or 150
 		--Crackdown fix for spread rng sometimes causing shots that should miss to hit.
-		local error_vec_len = miss_min_dis + self._spread + self._miss_dis * math_random() * (1 - focus_prog)
+		local error_vec_len = miss_min_dis + w_tweak.spread + w_tweak.miss_dis * (1 - focus_prog)
 
 		mvec3_set_l(error_vec, error_vec_len)
 		mvec3_add(error_vec, pos)

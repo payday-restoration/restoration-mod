@@ -212,8 +212,10 @@ local head_hitboxes = {
     [Idstring("glass_shield"):key()] = true,
     [Idstring("glass_swat"):key()] = true,
     [Idstring("glass_c"):key()] = true,
+    [Idstring("glass_d"):key()] = true,
     [Idstring("glass_altyn"):key()] = true,
-    [Idstring("visor"):key()] = true
+    [Idstring("altyn_visor"):key()] = true,
+    [Idstring("glass_visor"):key()] = true
 }
 
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
@@ -508,6 +510,10 @@ function CopDamage:damage_fire(attack_data)
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
 
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+
 				self:_spawn_head_gadget({
 					skip_push = true,
 					position = body:position(),
@@ -745,6 +751,10 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, death, direct
 			self._unit:damage():run_sequence_simple("grenadier_glass_break")
 		elseif self._head_body_name then
 			local body = self._unit:body(self._head_body_name)
+
+			if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+				self._unit:damage():run_sequence_simple("spawn_helmet")
+			end
 
 			self:_spawn_head_gadget({
 				skip_push = true,
@@ -1085,6 +1095,10 @@ function CopDamage:damage_bullet(attack_data)
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
+					if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+						self._unit:damage():run_sequence_simple("spawn_helmet")
+					end
+				
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -1315,6 +1329,10 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+			
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
@@ -1604,6 +1622,10 @@ function CopDamage:damage_melee(attack_data)
 				if table_contains(grenadier_smash, self._unit:name()) then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
+					if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+						self._unit:damage():run_sequence_simple("spawn_helmet")
+					end
+				
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -1791,6 +1813,10 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 			if table_contains(grenadier_smash, self._unit:name()) then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+			
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
@@ -2173,6 +2199,10 @@ function CopDamage:damage_explosion(attack_data)
 			elseif self._head_body_name then
 				local body = self._unit:body(self._head_body_name)
 
+				if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+					self._unit:damage():run_sequence_simple("spawn_helmet")
+				end
+
 				self:_spawn_head_gadget({
 					skip_push = true,
 					position = body:position(),
@@ -2314,6 +2344,10 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 		if table_contains(grenadier_smash, self._unit:name()) then
 			self._unit:damage():run_sequence_simple("grenadier_glass_break")	
 		else
+			if self._unit:damage() and self._unit:damage():has_sequence("spawn_helmet")  then
+				self._unit:damage():run_sequence_simple("spawn_helmet")
+			end
+		
 			self:_spawn_head_gadget({
 				skip_push = true,
 				position = body:position(),

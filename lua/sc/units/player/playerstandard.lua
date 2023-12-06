@@ -3422,6 +3422,8 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 		return
 	end
 	local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+	local char_base = character_unit:base()
+	local char_tweak = char_base and char_base.char_tweak and char_base:char_tweak()
 	local char_damage = character_unit:character_damage()
 	local fire_on_charge = melee_tweak and melee_tweak.stats.charge_bonus_fire
 	local charge_lerp_value = defense_data.charge_lerp_value
@@ -3456,7 +3458,9 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 			col_ray = col_ray
 		}
 
-		char_damage:damage_tase(action_data)
+		if char_tweak and char_tweak.can_be_tased then
+			char_damage:damage_tase(action_data)
+		end
 	end
 
 	if melee_tweak.instant_kill and char_damage.damage_mission then

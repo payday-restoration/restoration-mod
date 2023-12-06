@@ -1592,6 +1592,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_insubstantial"] = "Phased Gold",
 		["bm_wskn_resmod_palmtop"] = "Tiger Gold",
 		["bm_wskn_resmod_palmtop_desc"] = "The thing you wish for the most, is something you'll never get.",
+		["bm_wskn_resmod_blacktiger"] = "Black Tiger Gold",
 		["bm_wskn_resmod_lildonnie"] = "Pearl Gold",
 		["bm_wskn_resmod_quacko"] = "Blue Gold",
 		["bm_wskn_resmod_snake"] = "Liquid Gold",
@@ -1605,6 +1606,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_2019"] = "Warfare Gold",
 		["bm_wskn_resmod_llenn"] = "Pink Devil",
 		["bm_wskn_resmod_llenn_desc"] = "This isn't exactly what I had in mind, but pink is pink.",
+		["bm_wskn_resmod_sugarhoneyicetea"] = "Zebra Gold",
+		["bm_wskn_resmod_blackzebra"] = "Black Zebra Gold",
+		["bm_wskn_resmod_charlotte"] = "Web Gold",
 		
 		["menu_weapon_color_index_11"] = "Metal + Sights",
 		["menu_weapon_color_index_12"] = "Metal + Magazine",
@@ -4008,10 +4012,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if shitpost or not easterless and big <= pistol then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_deagle"] = "Big Pistol",
-				["bm_w_m16"] = "is that a clarion",
+				["bm_w_m16"] = weapon_names == 2 and "is that a famas" or "is that a clarion",
 				["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
-				["bm_w_x_type54"] = "The twin crosskills",
+				["bm_w_x_type54"] = weapon_names == 2 and "The twin colts" or "The twin crosskills",
 				["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
+			})
+		end
+
+		local blizzard = math.rand(1)
+		local tornado = 0.02
+		if Month == "4" and Day == "1" then
+			tornado = 1
+		end
+		if not easterless and blizzard <= tornado then
+			LocalizationManager:add_localized_strings({	
+				["menu_pattern_scale_small"] = "Justice",
+				["menu_pattern_scale_medium"] = "Premium",
+				["menu_pattern_scale_large"] = "Truth",
 			})
 		end
 	

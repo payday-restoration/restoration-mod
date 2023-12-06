@@ -2002,12 +2002,12 @@ function CopDamage:stun_hit(attack_data)
 	}
 	attack_data.result = result
 	attack_data.pos = attack_data.col_ray.position
+	local damage_percent = 0
+	local attacker = attack_data.attacker_unit
 
-	self:_send_stun_attack_result(attacker, 0, self:_get_attack_variant_index(attack_data.variant), attack_data.col_ray.ray)
+	self:_send_stun_attack_result(attacker, damage_percent, self:_get_attack_variant_index(attack_data.result.variant), attack_data.col_ray.ray)
 	self:_on_damage_received(attack_data)
 	self:_create_stun_exit_clbk()
-
-	return result
 end
 
 function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_variant, death, direction)
@@ -2016,36 +2016,41 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	end
 
 	local variant = CopDamage._ATTACK_VARIANTS[i_attack_variant]
+	local damage = damage_percent * self._HEALTH_INIT_PRECENT
 	local attack_data = {
 		variant = variant,
 		attacker_unit = attacker_unit
 	}
-
-	local hit_pos = mvector3.copy(self._unit:position())
-	mvector3.set_z(hit_pos, hit_pos.z + 100)
-
+	local result = nil
+	local result_type = "concussion"
+	result = {
+		type = result_type,
+		variant = variant
+	}
+	attack_data.result = result
+	attack_data.damage = damage
+	attack_data.is_synced = true
 	local attack_dir = nil
 
 	if direction then
 		attack_dir = direction
 	elseif attacker_unit then
 		attack_dir = self._unit:position() - attacker_unit:position()
+
 		mvector3.normalize(attack_dir)
 	else
-		attack_dir = -self._unit:rotation():y()
+		attack_dir = self._unit:rotation():y()
 	end
 
 	attack_data.attack_dir = attack_dir
-	hit_pos = hit_pos - attack_dir * 5
-	attack_data.pos = hit_pos
 
-	local result = {
-		type = "concussion",
-		variant = variant
-	}
-	attack_data.result = result
-	attack_data.is_synced = true
+	if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
+		managers.hud:on_hit_confirmed()
+	end
 
+	attack_data.pos = self._unit:position()
+
+	mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
 	self:_on_damage_received(attack_data)
 	self:_create_stun_exit_clbk()
 end

@@ -836,7 +836,7 @@ function CopActionHurt:_upd_bleedout(t)
 				elseif self._common_data.allow_fire then
 					local falloff = CopActionShoot._get_shoot_falloff(self, target_dis, self._falloff)
 					local spread = self._spread
-					local new_target_pos = self._attention.handler and self._attention.handler:get_attention_m_pos() or CopActionShoot._get_unit_shoot_pos(self, t, target_pos, target_dis, self._w_usage_tweak)
+					local new_target_pos = self._attention.handler and self._attention.handler:get_attention_m_pos() or CopActionShoot._get_unit_shoot_pos(self, t, target_pos, target_dis, self._w_usage_tweak, falloff)
 
 					if new_target_pos then
 						target_pos = new_target_pos

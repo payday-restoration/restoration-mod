@@ -2059,6 +2059,7 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	self:_create_stun_exit_clbk()
 end
 
+
 function CopDamage:damage_explosion(attack_data)
 	if self._dead or self._invulnerable then
 		return
@@ -2174,7 +2175,7 @@ function CopDamage:damage_explosion(attack_data)
 	else
 		attack_data.damage = damage
 
-		local result_type = attack_data.variant == "stun" and "hurt_sick" or self:get_damage_type(damage_percent, "explosion")
+		local result_type = (allow_ff and "dmg_rcv") or (attack_data.variant == "stun" and "hurt_sick") or self:get_damage_type(damage_percent, "explosion")
 
 		result = {
 			type = result_type,

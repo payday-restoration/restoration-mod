@@ -942,6 +942,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.trail_effect then
 				self._trail_effect_pls = stats.trail_effect
 			end
+			if stats.trail_effect_npc then
+				self._trail_effect_npc = stats.trail_effect_npc
+			end
 			if stats.should_reload_immediately then
 				self._should_reload_immediately = stats.should_reload_immediately
 			end
@@ -1061,12 +1064,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail" .. ((self:is_npc() and "_npc") or ""))
 			end
 		elseif self._trail_effect_pls then
-			self._trail_effect_table.effect = Idstring(self._trail_effect_pls)
+			self._trail_effect_table.effect = Idstring(self._trail_effect_pls) .. ((self._trail_effect_npc and self:is_npc() and "_npc") or ""))
 		elseif self._terminator then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t" .. ((self:is_npc() and "_npc") or ""))
 			ignore_tracer = true
 		elseif self._plasma_b then
-			self._trail_effect_table.effect = Idstring("_dmc/effects/plasma_b_trail")
+			self._trail_effect_table.effect = Idstring("_dmc/effects/plasma_b_trail") .. ((self:is_npc() and "_npc") or ""))
 			ignore_tracer = true
 		elseif self._nato then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/nato_trail")

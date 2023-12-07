@@ -32697,6 +32697,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_upg_fazertron_rec_laserkit_mag.custom_stats = {
 			trail_effect = "_dmc/effects/sterwers_trail_t",
+			trail_effect_npc = true
 		}
 	end
 
@@ -34549,6 +34550,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {value = 0},
 		custom_stats = {
 			trail_effect = "_dmc/effects/sterwers_trail",
+			trail_effect_npc = true
 		},
 		no_cull = true,
 		internal_part = false,
@@ -34607,6 +34609,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {value = 0},
 		custom_stats = {
 			trail_effect = "_dmc/effects/plasma_b_trail",
+			trail_effect_npc = true
 		},
 		no_cull = true,
 		internal_part = true,

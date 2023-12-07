@@ -1064,7 +1064,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail" .. ((self:is_npc() and "_npc") or ""))
 			end
 		elseif self._trail_effect_pls then
-			self._trail_effect_table.effect = Idstring(self._trail_effect_pls) .. (((self._trail_effect_npc and self:is_npc()) and "_npc") or ""))
+			self._trail_effect_table.effect = Idstring(self._trail_effect_pls .. (((self._trail_effect_npc and self:is_npc()) and "_npc") or ""))) 
 		elseif self._terminator then
 			self._trail_effect_table.effect = Idstring("_dmc/effects/sterwers_trail_t" .. ((self:is_npc() and "_npc") or ""))
 			ignore_tracer = true

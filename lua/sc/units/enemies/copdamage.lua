@@ -357,6 +357,10 @@ function CopDamage:damage_fire(attack_data)
 	local is_player = attack_data.attacker_unit == managers.player:player_unit()
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_FIRE
 
+	if allow_ff then
+		damage = damage * 0.5
+	end
+
 	if is_player then
 		if self._char_tweak.priority_shout then
 			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
@@ -2097,6 +2101,9 @@ function CopDamage:damage_explosion(attack_data)
 	local result = nil
 	local damage = attack_data.damage
 
+	if allow_ff then
+		damage = damage * 0.5
+	end
 		
 	--Use a different damage resistance when being hit by a rocket	
 	if alive(weap_unit) then

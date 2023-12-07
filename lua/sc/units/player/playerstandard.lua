@@ -2818,6 +2818,7 @@ function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
 	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 end
 
+
 function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 	local new_action = nil
 	local action_forbidden = false
@@ -2826,11 +2827,14 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 		return
 	end
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
+	action_forbidden = self._camera_unit:base():is_stance_done() ~= true or self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
 
-	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
+	log(tostring( action_forbidden ))
 
 	local weapon = self._equipped_unit:base()
 	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
+
+
 	if not action_forbidden then
 		if bipod_part and bipod_part[1] then
 			local bipod_unit = bipod_part[1].unit:base()
@@ -2847,6 +2851,8 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_slide") })
 			elseif is_leaning then
 				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_lean") })
+			elseif self._camera_unit:base():is_stance_done() ~= true then
+				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_midstance") })
 			end
 		end
 	end

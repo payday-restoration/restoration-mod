@@ -1835,6 +1835,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_slide"] = "Cannot mount while sliding",
 		["hud_hint_bipod_air"] = "Cannot mount while airborne",
 		["hud_hint_bipod_lean"] = "Cannot mount while leaning",
+		["hud_hint_bipod_midstance"] = "Cannot mount while changing stances",
 
 		["hud_interact_autumn_disable"] = "Disabled by Captain Autumn!",
 

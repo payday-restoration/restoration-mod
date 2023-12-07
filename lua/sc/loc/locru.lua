@@ -2240,6 +2240,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_insubstantial"] = "Треснутое золото",
 		["bm_wskn_resmod_palmtop"] = "Тигриное золото",
 		["bm_wskn_resmod_palmtop_desc"] = "",
+		["bm_wskn_resmod_blacktiger"] = "Золото черного тигра",
 		["bm_wskn_resmod_lildonnie"] = "Жемчужное золото",
 		["bm_wskn_resmod_quacko"] = "Потемневшее золото",
 		["bm_wskn_resmod_snake"] = "Расплавленное золото",
@@ -2253,6 +2254,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_2019"] = "Закаленное золото",
 		["bm_wskn_resmod_llenn"] = "Мистер Пинк",
 		["bm_wskn_resmod_llenn_desc"] = "",
+		["bm_wskn_resmod_sugarhoneyicetea"] = "Золото зебры",
+		["bm_wskn_resmod_blackzebra"] = "Золото черной зебры",
+		["bm_wskn_resmod_charlotte"] = "Паучье золото",
 		
 		["menu_weapon_color_index_11"] = "Металл + Прицел",
 		["menu_weapon_color_index_12"] = "Металл + Магазин",

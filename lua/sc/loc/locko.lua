@@ -2242,6 +2242,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_insubstantial"] = "페이스드 골드",
 		["bm_wskn_resmod_palmtop"] = "타이거 골드",
 		["bm_wskn_resmod_palmtop_desc"] = "가장 바라는 것은 결코 얻지 못할 것이다.",
+		["bm_wskn_resmod_blacktiger"] = "블랙 타이거 골드",
 		["bm_wskn_resmod_lildonnie"] = "펄 골드",
 		["bm_wskn_resmod_quacko"] = "블루 골드",
 		["bm_wskn_resmod_snake"] = "리쿼드 골드",
@@ -2255,6 +2256,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_2019"] = "워페어 골드",
 		["bm_wskn_resmod_llenn"] = "핑크 데블",
 		["bm_wskn_resmod_llenn_desc"] = "이건 내가 생각한 것이 정확히는 아니지만 분홍색은 분홍색이야.",
+		["bm_wskn_resmod_sugarhoneyicetea"] = "지브라 골드",
+		["bm_wskn_resmod_blackzebra"] = "블랙 지브라 골드",
+		["bm_wskn_resmod_charlotte"] = "웹 골드",		
 		
 		["menu_weapon_color_index_11"] = "메탈 + 조준기",
 		["menu_weapon_color_index_12"] = "메탈 + 탄창",
@@ -4110,12 +4114,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if shitpost or not easterless and big <= pistol then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_deagle"] = "Big Pistol",
-				["bm_w_m16"] = "is that a clarion",
+				["bm_w_m16"] = weapon_names == 2 and "is that a famas" or "is that a clarion",
 				["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
-				["bm_w_x_type54"] = "The twin crosskills",
+				["bm_w_x_type54"] = weapon_names == 2 and "The twin colts" or "The twin crosskills",
 				["bm_akmsu_sc_desc"] = "A small rifle useful for taking down #{stat_maxed}#BIG MEN##. Not to be underestimated as this rifle can hold its own in just about any scenario.",
 			})
 		end
+		
+		local blizzard = math.rand(1)
+		local tornado = 0.02
+		if Month == "4" and Day == "1" then
+			tornado = 1
+		end
+		if not easterless and blizzard <= tornado then
+			LocalizationManager:add_localized_strings({	
+				["menu_pattern_scale_small"] = "Justice",
+				["menu_pattern_scale_medium"] = "Premium",
+				["menu_pattern_scale_large"] = "Truth",
+			})
+		end		
 	
 end)
 

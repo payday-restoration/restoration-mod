@@ -183,10 +183,10 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_rot", "ResFixBipodADS", function(sel
 		if not self._parent_unit:movement()._current_state:in_steelsight() then
 			self:set_position(PlayerBipod._shoulder_pos or new_shoulder_pos)
 			self:set_rotation(bipod_rot)
-			self._parent_unit:camera():set_position(PlayerBipod._camera_pos or self._output_data.position)
-		elseif not self._parent_unit:movement()._current_state:in_steelsight() then
-			PlayerBipod:set_camera_positions(bipod_pos, self._output_data.position)
+			self._parent_unit:camera():set_position(self._output_data.position)
 		end
+	else
+		mvec3_set(PlayerBipod._shoulder_pos, bipod_pos)
 	end
 end)
 

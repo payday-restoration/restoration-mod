@@ -2792,7 +2792,7 @@ end
 
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
-	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base():in_burst_mode() then
+	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base().in_burst_mode and self._equipped_unit:base():in_burst_mode() then
 		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)

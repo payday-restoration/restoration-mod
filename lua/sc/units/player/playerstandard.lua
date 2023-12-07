@@ -3458,7 +3458,7 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 			col_ray = col_ray
 		}
 
-		if char_tweak and char_tweak.can_be_tased then
+		if char_tweak and char_tweak.can_be_tased ~= false then
 			char_damage:damage_tase(action_data)
 		end
 	end

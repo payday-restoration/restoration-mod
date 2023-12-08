@@ -1997,6 +1997,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
 		["loot_sc_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION!",
+		["loot_sc_wcc_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 2)",
+		["loot_sc_ocp_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим WEAPON COLOR PACK 3)",
+		["loot_sc_faco_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION! (Необходим JIU FENG SMUGGLER PACK 1)",
 
 		["menu_l_global_value_omnia"] = "OMNIA",
 		["menu_l_global_value_omnia_desc"] = "ЭТО ПРЕДМЕТ OMNIA!",
@@ -2241,6 +2244,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_palmtop"] = "Тигриное золото",
 		["bm_wskn_resmod_palmtop_desc"] = "",
 		["bm_wskn_resmod_blacktiger"] = "Золото черного тигра",
+		["bm_wskn_resmod_joe"] = "Экзотическое золото",
+		["bm_wskn_resmod_blackexotic"] = "Темное экзотическое золото",
 		["bm_wskn_resmod_lildonnie"] = "Жемчужное золото",
 		["bm_wskn_resmod_quacko"] = "Потемневшее золото",
 		["bm_wskn_resmod_snake"] = "Расплавленное золото",
@@ -2495,6 +2500,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_slide"] = "Нельзя развернуть во время переката",
 		["hud_hint_bipod_air"] = "Нельзя развернуть в воздухе",
 		["hud_hint_bipod_lean"] = "Нельзя развернуть при наклоне",
+		["hud_hint_bipod_midstance"] = "Нельзя развернуть, пока вы приседаете/встаете",
 		
 		["hud_interact_autumn_disable"] = "Отключено Капитаном Отемом!",
 

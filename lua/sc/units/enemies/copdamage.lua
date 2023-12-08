@@ -3386,7 +3386,7 @@ function CopDamage:do_medic_heal()
 	self:_update_debug_ws()
 
 	if self._unit:contour() then
-		self._unit:contour():add("medic_heal")
+		self._unit:contour():add("medic_heal", true)
 		self._unit:contour():flash("medic_heal", 0.2)
 	end
 

@@ -14,7 +14,7 @@ local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMS
 local starvr = math.rand(1)
 local its_bover = 0.02
 -- he-he
-if starvr <= its_bover then
+if not easterless and starvr <= its_bover then
 MutatorBoFlashbang.icon_coords = {
 	3,
 	2

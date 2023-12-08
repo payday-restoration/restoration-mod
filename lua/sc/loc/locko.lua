@@ -2479,8 +2479,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_sc_bipod_desc"] = "알맞는 표면 위에 #{skill_color}#$BTN_BIPOD## 키를 꾹 눌러 거치하고 다시 꾹 누르면 분리합니다.\n\n거치 할 동안 수직 반동이 수직 반동이 #{skill_color}#50%##, 수평 반동이 #{skill_color}#75%## 감소하고 사거리가 #{skill_color}#30%## 증가합니다.\n\n#{item_stage_2}#거치에 대한 추가 옵션은 레스토레이션 모드의 추가 옵션 메뉴에서 확인할 수 있습니다.##",
 		["hud_hint_bipod_moving"] = "움직이는 동안 거치할 수 없습니다.",
 		["hud_hint_bipod_slide"] = "슬라이딩 하는 동안 거치할 수 없습니다.",
-		["hud_hint_bipod_air"] = "공중에 떠 있을동안 거치할 수 없습니다. ",
+		["hud_hint_bipod_air"] = "공중에 떠 있을 동안 거치할 수 없습니다. ",
 		["hud_hint_bipod_lean"] = "기대는 동안 거치할 수 없습니다.",
+		["hud_hint_bipod_midstance"] = "자세를 바꾸는 동안에는 거치할 수 없습니다.",
 
 		["hud_interact_autumn_disable"] = "캡틴 어텀에 의해 비활성화 되었습니다!",
 

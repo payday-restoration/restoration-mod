@@ -741,3 +741,129 @@ function CopActionHurt:_pseudorandom(a, b)
 		return val
 	end
 end
+
+function CopActionHurt:_upd_bleedout(t)
+	if self._floor_normal then
+		local normal = nil
+
+		if self._ext_anim.bleedout_enter then
+			local rel_t = self._machine:segment_relative_time(Idstring("base"))
+			rel_t = math.min(1, rel_t + 0.5)
+			local rel_prog = math.clamp(rel_t, 0, 1)
+			normal = math.lerp(math.UP, self._floor_normal, rel_prog)
+
+			self._ext_movement:set_m_pos(self._common_data.pos)
+		else
+			normal = self._floor_normal
+			self._floor_normal = nil
+		end
+
+		mvec3_cross(tmp_vec1, self._common_data.fwd, normal)
+		mvec3_cross(tmp_vec2, normal, tmp_vec1)
+
+		local new_rot = Rotation(tmp_vec2, normal)
+
+		self._ext_movement:set_rotation(new_rot)
+	end
+
+	if not self._ext_anim.bleedout_enter and self._weapon_unit then
+		if self._attention and not self._ext_anim.reload and not self._ext_anim.equip then
+			local autotarget, target_pos = nil
+
+			if self._attention.handler then
+				target_pos = self._attention.handler:get_attention_m_pos()
+			elseif self._attention.unit then
+				target_pos = tmp_vec1
+
+				self._attention.unit:character_damage():shoot_pos_mid(target_pos)
+			else
+				target_pos = self._attention.pos
+			end
+
+			local shoot_from_pos = self._ext_movement:m_head_pos()
+			local target_vec = target_pos - shoot_from_pos
+			local target_dis = mvec3_norm(target_vec)
+
+			if not self._modifier_on then
+				self._modifier_on = true
+
+				self._machine:force_modifier(self._head_modifier_name)
+				self._machine:force_modifier(self._arm_modifier_name)
+			end
+
+			if self._look_dir then
+				local angle_diff = self._look_dir:angle(target_vec)
+				local rot_speed_rel = math.pow(math.min(angle_diff / 90, 1), 0.5)
+				local rot_speed = math.lerp(40, 360, rot_speed_rel)
+				local dt = t - self._bleedout_look_t
+				local rot_amount = math.min(rot_speed * dt, angle_diff)
+				local diff_axis = self._look_dir:cross(target_vec)
+				local rot = Rotation(diff_axis, rot_amount)
+				self._look_dir = self._look_dir:rotate_with(rot)
+
+				mvector3.normalize(self._look_dir)
+			else
+				self._look_dir = target_vec
+			end
+
+			self._bleedout_look_t = t
+
+			self._head_modifier:set_target_z(self._look_dir)
+			self._arm_modifier:set_target_y(self._look_dir)
+
+			local aim_polar = self._look_dir:to_polar_with_reference(self._common_data.fwd, math.UP)
+			local aim_spin_d90 = aim_polar.spin / 90
+			local anim = self._machine:segment_state(Idstring("base"))
+			local fwd = 1 - math.clamp(math.abs(aim_spin_d90), 0, 1)
+
+			self._machine:set_parameter(anim, "angle0", fwd)
+
+			local bwd = math.clamp(math.abs(aim_spin_d90), 1, 2) - 1
+
+			self._machine:set_parameter(anim, "angle180", bwd)
+
+			local l = 1 - math.clamp(math.abs(aim_spin_d90 - 1), 0, 1)
+
+			self._machine:set_parameter(anim, "angle90neg", l)
+
+			local r = 1 - math.clamp(math.abs(aim_spin_d90 + 1), 0, 1)
+
+			self._machine:set_parameter(anim, "angle90", r)
+
+			if self._shoot_t < t then
+				if self._weapon_unit:base():clip_empty() then
+					local res = CopActionReload._play_bleedout_reload(self)
+				elseif self._common_data.allow_fire then
+					local falloff, i_range = CopActionShoot._get_shoot_falloff(self, target_dis, self._falloff)
+					local spread = self._spread
+					local new_target_pos = self._attention.handler and self._attention.handler:get_attention_m_pos() or CopActionShoot._get_unit_shoot_pos(self, t, target_pos, target_dis, self._w_usage_tweak, falloff, i_range)
+
+
+					if new_target_pos then
+						target_pos = new_target_pos
+					else
+						spread = math.min(20, spread)
+					end
+
+					local spread_pos = tmp_vec2
+
+					mvec3_rand_orth(spread_pos, target_vec)
+					mvec3_set_l(spread_pos, spread)
+					mvec3_add(spread_pos, target_pos)
+
+					target_dis = mvec3_dir(target_vec, shoot_from_pos, spread_pos)
+
+					self._weapon_base:singleshot(shoot_from_pos, target_vec, falloff.dmg_mul)
+
+					local rand = self:_pseudorandom()
+					self._shoot_t = t + math.lerp(falloff.recoil[1], falloff.recoil[2], rand)
+				end
+			end
+		elseif self._modifier_on then
+			self._modifier_on = false
+
+			self._machine:allow_modifier(self._head_modifier_name)
+			self._machine:allow_modifier(self._arm_modifier_name)
+		end
+	end
+end

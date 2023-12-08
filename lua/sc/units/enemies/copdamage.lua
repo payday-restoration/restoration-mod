@@ -338,6 +338,10 @@ function CopDamage:damage_fire(attack_data)
 	local is_player = attack_data.attacker_unit == managers.player:player_unit()
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_FIRE
 
+	if allow_ff then
+		damage = damage * 0.5
+	end
+
 	if is_player then
 		if self._char_tweak.priority_shout then
 			damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
@@ -1637,7 +1641,7 @@ function CopDamage:damage_melee(attack_data)
 		damage_effect = math.clamp(damage_effect, self._HEALTH_INIT_PRECENT, self._HEALTH_INIT)
 		damage_effect_percent = math.ceil(damage_effect / self._HEALTH_INIT_PRECENT)
 		damage_effect_percent = math.clamp(damage_effect_percent, 1, self._HEALTH_GRANULARITY)
-		local result_type = attack_data.shield_knock and self._char_tweak.damage.shield_knocked and "shield_knock" or attack_data.variant == "counter_tased" and "counter_tased" or attack_data.variant == "taser_tased" and self._char_tweak.damage.can_be_tased and "taser_tased" or attack_data.variant == "counter_spooc" and "expl_hurt" or self:get_damage_type(damage_effect_percent, "melee") or "fire_hurt"
+		local result_type = attack_data.shield_knock and self._char_tweak.damage.shield_knocked and "shield_knock" or attack_data.variant == "counter_tased" and "counter_tased" or attack_data.variant == "taser_tased" and self._char_tweak.can_be_tased ~= false and "taser_tased" or attack_data.variant == "counter_spooc" and "expl_hurt" or self:get_damage_type(damage_effect_percent, "melee") or "fire_hurt"
 		result = {
 			type = result_type,
 			variant = attack_data.variant
@@ -2042,6 +2046,7 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	self:_create_stun_exit_clbk()
 end
 
+
 function CopDamage:damage_explosion(attack_data)
 	if self._dead or self._invulnerable then
 		return
@@ -2084,6 +2089,9 @@ function CopDamage:damage_explosion(attack_data)
 	local result = nil
 	local damage = attack_data.damage
 
+	if allow_ff then
+		damage = damage * 0.5
+	end
 		
 	--Use a different damage resistance when being hit by a rocket	
 	if alive(weap_unit) then
@@ -2154,7 +2162,7 @@ function CopDamage:damage_explosion(attack_data)
 	else
 		attack_data.damage = damage
 
-		local result_type = attack_data.variant == "stun" and "hurt_sick" or self:get_damage_type(damage_percent, "explosion")
+		local result_type = (allow_ff and "dmg_rcv") or (attack_data.variant == "stun" and "hurt_sick") or self:get_damage_type(damage_percent, "explosion")
 
 		result = {
 			type = result_type,

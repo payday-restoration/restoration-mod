@@ -669,7 +669,7 @@ PlayerStandard._primary_action_funcs = {
 		end
 	},
 	start_fire = {
-		auto = function (self, t, input, params, weap_unit, weap_base, is_bow)
+		auto = function (self, t, input, params, weap_unit, weap_base, is_bow, force_ads_recoil_anims)
 			if not weap_base:weapon_tweak_data().no_auto_anims then
 				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
 				else
@@ -965,11 +965,11 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								start_shooting = true
 								local fire_mode_func = self._primary_action_funcs.start_fire[fire_mode]
 
-								if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow) then
+								if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow, force_ads_recoil_anims) then
 									fire_mode_func = self._primary_action_funcs.start_fire.default
 
 									if fire_mode_func then
-										fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow)
+										fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow, force_ads_recoil_anims)
 									end
 								end
 							end
@@ -1127,11 +1127,13 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							}
 							local random = vars[math.random(#vars)]
 							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+							local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
 							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-								self._ext_camera:play_shaker("whizby", random * 0.05 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+								self._ext_camera:play_shaker("whizby", random * math.rand(0.01, 0.1) * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+								self._ext_camera:play_shaker("player_land", math.rand(-0.01, -0.1) * (recoil_multiplier * 0.5) * shake_multiplier, 0, 0 )
 							end
 							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
-							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.2 or 1) , 1, 0.15)
+							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
 						end
 
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
@@ -1155,7 +1157,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						end
 
 						if (not params or not params.no_recoil_anim_redirect) and not weap_tweak_data.no_recoil_anim_redirect then
-							local fire_mode_func = self._primary_action_funcs.recoil_anim_redirect[fire_mode]
+							local fire_mode_func = self._primary_action_funcs.recoil_anim_redirect[weap_base:weapon_tweak_data().no_auto_anims and "default" or fire_mode]
 
 							if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow) then
 								fire_mode_func = self._primary_action_funcs.recoil_anim_redirect.default
@@ -2792,7 +2794,7 @@ end
 
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
-	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base():in_burst_mode() then
+	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base().in_burst_mode and self._equipped_unit:base():in_burst_mode() then
 		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
@@ -2826,11 +2828,12 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 		return
 	end
 	local is_leaning = TacticalLean and ((TacticalLean:GetLeanDirection() or TacticalLean:IsExitingLean()) and true) or nil
-
-	action_forbidden = self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
+	action_forbidden = self._camera_unit:base():is_stance_done() ~= true or self._state_data.in_air or self._is_sliding or (autodeploy and self._move_dir) or is_leaning or self:_on_zipline() or self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon()
 
 	local weapon = self._equipped_unit:base()
 	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", weapon._parts)
+
+
 	if not action_forbidden then
 		if bipod_part and bipod_part[1] then
 			local bipod_unit = bipod_part[1].unit:base()
@@ -2847,6 +2850,8 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_slide") })
 			elseif is_leaning then
 				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_lean") })
+			elseif self._camera_unit:base():is_stance_done() ~= true then
+				managers.hud:show_hint({ time = 2, text = managers.localization:text("hud_hint_bipod_midstance") })
 			end
 		end
 	end
@@ -3458,7 +3463,7 @@ function PlayerStandard:_check_melee_special_damage(col_ray, character_unit, def
 			col_ray = col_ray
 		}
 
-		if char_tweak and char_tweak.can_be_tased then
+		if char_tweak and char_tweak.can_be_tased ~= false then
 			char_damage:damage_tase(action_data)
 		end
 	end

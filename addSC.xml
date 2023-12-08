@@ -1336,7 +1336,9 @@
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Plasma Tracer-->
     <effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/plasma_b_trail_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/plasma_b_streak_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Other Tracers-->
     <effect				path="_dmc/effects/knockback_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>

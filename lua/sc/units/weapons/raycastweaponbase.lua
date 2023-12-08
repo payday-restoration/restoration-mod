@@ -1406,15 +1406,18 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 		attacker_unit = attacker
 	}
 
-	managers.fire:add_doted_enemy(data)
+	local char_dmg_ext = target_unit:character_damage()
+	local friendly_fire = char_dmg_ext:is_friendly_fire(attacker)
+
+	if not friendly_fire then 
+		managers.fire:add_doted_enemy(data)
+	end
 
 	if dot_data.dot_stun_max_distance and weap_base and weap_base.near_falloff_distance and distance > weap_base.near_falloff_distance then
 		return
 	end
 
-	if char_tweak and char_tweak.use_animation_on_fire_damage ~= false then
-		local char_dmg_ext = target_unit:character_damage()
-
+	if not friendly_fire and char_tweak and char_tweak.use_animation_on_fire_damage ~= false then
 		if char_dmg_ext.get_last_time_unit_got_fire_damage and char_dmg_ext.force_hurt then
 			local last_fire_t = char_dmg_ext:get_last_time_unit_got_fire_damage()
 			local t = TimerManager:game():time()

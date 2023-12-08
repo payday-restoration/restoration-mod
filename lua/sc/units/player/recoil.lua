@@ -186,7 +186,9 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_rot", "ResFixBipodADS", function(sel
 			self._parent_unit:camera():set_position(self._output_data.position)
 		end
 	else
-		mvec3_set(PlayerBipod._shoulder_pos, bipod_pos)
+		if PlayerBipod and PlayerBipod._shoulder_pos then
+			mvec3_set(PlayerBipod._shoulder_pos, bipod_pos)
+		end
 	end
 end)
 

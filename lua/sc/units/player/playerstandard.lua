@@ -1129,8 +1129,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
 							local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
 							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-								self._ext_camera:play_shaker("whizby", random * 0.1 * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
-								self._ext_camera:play_shaker("player_land", math.rand(0, -0.1 * recoil_multiplier) * shake_multiplier, 0, 0 )
+								self._ext_camera:play_shaker("whizby", random * math.rand(0.01, 0.1) * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
+								self._ext_camera:play_shaker("player_land", math.rand(-0.01, -0.1) * (recoil_multiplier * 0.5) * shake_multiplier, 0, 0 )
 							end
 							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
 							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)

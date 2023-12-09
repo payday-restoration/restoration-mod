@@ -3270,7 +3270,7 @@ function CopDamage:bag_explode()
 		effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion_sc"
 	}
 
-	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)			
+	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, nil, 0, 1)			
 end
 
 function CopDamage:taser_bag_explode()    

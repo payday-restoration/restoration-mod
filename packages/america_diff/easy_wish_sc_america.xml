@@ -201,9 +201,7 @@
     <unit				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_husk" load="true"/>	
 	<model				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
 	<object				path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />
-	<material_config	path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
-	<material_config	path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5_contour" />					
-	<cooked_physics		path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />	
+	<sequence_manager	path="units/payday2/characters/ene_medic_mp5/ene_medic_mp5" />
 	<!-- specials end -->
 
 	<!-- titans	 -->

@@ -9,8 +9,12 @@ local REACT_SCARED = AIAttentionObject.REACT_SCARED
 local REACT_SUSPICIOUS = AIAttentionObject.REACT_SUSPICIOUS
 
 HuskCopBrain._NET_EVENTS = {
-	weapon_laser_on = 1,
-	weapon_laser_off = 2
+    surrender_cop_tied = 3,
+    surrender_civilian_tied = 5,
+    weapon_laser_off = 2,
+    surrender_civilian_untied = 6,
+    surrender_cop_untied = 4,
+    weapon_laser_on = 1
 }
 
 function HuskCopBrain:post_init()

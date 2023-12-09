@@ -23,6 +23,44 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.sc.track = false
     self.global_values.sc.sort_number = 30
     self.global_values.sc.category = "sc"
+
+        self.global_values.sc_wcc = {}
+        self.global_values.sc_wcc.name_id = "loot_sc_wcc"
+        self.global_values.sc_wcc.desc_id = "loot_sc_wcc_desc"
+        self.global_values.sc_wcc.color = Color('FF69B4')
+        self.global_values.sc_wcc.dlc = false
+        self.global_values.sc_wcc.chance = 0
+        self.global_values.sc_wcc.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
+        self.global_values.sc_wcc.durability_multiplier = 1
+        self.global_values.sc_wcc.drops = false
+        self.global_values.sc_wcc.track = false
+        self.global_values.sc_wcc.sort_number = 31
+        self.global_values.sc_wcc.category = "sc"
+        self.global_values.sc_ocp = {}
+        self.global_values.sc_ocp.name_id = "loot_sc_ocp"
+        self.global_values.sc_ocp.desc_id = "loot_sc_ocp_desc"
+        self.global_values.sc_ocp.color = Color('FF69B4')
+        self.global_values.sc_ocp.dlc = false
+        self.global_values.sc_ocp.chance = 0
+        self.global_values.sc_ocp.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
+        self.global_values.sc_ocp.durability_multiplier = 1
+        self.global_values.sc_ocp.drops = false
+        self.global_values.sc_ocp.track = false
+        self.global_values.sc_ocp.sort_number = 32
+        self.global_values.sc_ocp.category = "sc"
+        self.global_values.sc_faco = {}
+        self.global_values.sc_faco.name_id = "loot_sc_faco"
+        self.global_values.sc_faco.desc_id = "loot_sc_faco_desc"
+        self.global_values.sc_faco.color = Color('FF69B4')
+        self.global_values.sc_faco.dlc = false
+        self.global_values.sc_faco.chance = 0
+        self.global_values.sc_faco.value_multiplier = tweak_data:get_value("money_manager", "global_value_multipliers", "normal")
+        self.global_values.sc_faco.durability_multiplier = 1
+        self.global_values.sc_faco.drops = false
+        self.global_values.sc_faco.track = false
+        self.global_values.sc_faco.sort_number = 33
+        self.global_values.sc_faco.category = "sc"
+
 	--HERE I COME, ROUGHER THAN THE REST OF THEM 
     self.global_values.rest = {}
     self.global_values.rest.name_id = "menu_l_global_value_veritas"

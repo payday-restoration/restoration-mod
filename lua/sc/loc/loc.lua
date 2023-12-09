@@ -1350,6 +1350,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
+		["loot_sc_wcc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM! (REQUIRES WEAPON COLOR PACK 2)",
+		["loot_sc_ocp_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM! (REQUIRES WEAPON COLOR PACK 3)",
+		["loot_sc_faco_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM! (REQUIRES JIU FENG SMUGGLER PACK 1)",
 
 		["menu_l_global_value_omnia"] = "OMNIA",
 		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",
@@ -1593,6 +1596,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_palmtop"] = "Tiger Gold",
 		["bm_wskn_resmod_palmtop_desc"] = "The thing you wish for the most, is something you'll never get.",
 		["bm_wskn_resmod_blacktiger"] = "Black Tiger Gold",
+		["bm_wskn_resmod_joe"] = "Exotic Gold",
+		["bm_wskn_resmod_blackexotic"] = "Black Exotic Gold",
 		["bm_wskn_resmod_lildonnie"] = "Pearl Gold",
 		["bm_wskn_resmod_quacko"] = "Blue Gold",
 		["bm_wskn_resmod_snake"] = "Liquid Gold",
@@ -4456,6 +4461,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_2"] = "Captain (Day 2)",
 		["menu_mutator_captain_replace_3"] = "Captain (Day 3)",
 		["menu_mutator_captain_replace_no_captain_override"] = "No Changes",
+		["menu_mutator_captain_replace_captain_random"] = "Random",		
 		["menu_mutator_captain_replace_winter"] = "Winters",
 		["menu_mutator_captain_replace_autumn"] = "Autumn",
 		["menu_mutator_captain_replace_spring"] = "Spring",

@@ -1262,19 +1262,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_afg"] = "각진 수직 손잡이",
 		["bm_wp_upg_vg_stubby"] = "단축형 수직 손잡이",
 		["bm_wp_upg_vg_tac"] = "TAC 수직 손잡이",
-		
-		["fucktheatf"] = "저건 흉악범죄네.",			
-		
+		["fucktheatf"] = "저건 흉악범죄네.",	
 		["bm_wp_upg_flash_hider"] = "#{skill_color}#총구 플래시를 숨겨주고## #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
 		["bm_wp_upg_suppressor"] = "총소리를 #{skill_color}#조용하게## 만들고 #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
 		["bm_wp_upg_suppressor_boss"] = "\"전율적이야...\"\n\n총소리를 #{skill_color}#조용하게## 만들고 #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##",
 		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#총소리를 조용하게 만들고## #{risk}#적이 당신의 조준을 회피할 확률을 줄입니다.##\n\n#{important_1}#이 소음기는 조준 할 때 시야를 차단당할 수 있습니다.##",
-
 		["bm_wp_upg_vintage_fal_sc"] = "리지백 탄창",
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
 		["bm_wp_upg_tac_sc"] = "전술 탄창",
-
+		["bm_wp_upg_o_shortdot_dmc"] = "쇼트닷 조준경",
+		["bm_wp_upg_o_5_default"] = "원거리 조준경\n조준선을 수정할 수 있는 기본 저격소총 조준경을 부착합니다.\n#{skill_color}#5x 배율##",		
 		["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
 		["bm_wp_upg_drum_desc"] = "",
 		["bm_wp_upg_drum2_desc"] = "",

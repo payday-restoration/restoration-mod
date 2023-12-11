@@ -18,7 +18,7 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 		PROCESSED = true,
 		name = "default",
 		dot_length = 6,
-		dot_damage = 2.0,
+		dot_damage = 1.5,
 		damage_class = "PoisonBulletBase",
 		dot_tick_period = 0.5,
 		dot_grace_period = 0.1,

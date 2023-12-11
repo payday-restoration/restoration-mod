@@ -1588,6 +1588,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_cleangold"] = "Clean Gold",
 		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
 		["bm_wskn_resmod_imissfauna_desc"] = "Mother Nature would never betray you... right?",
+		["bm_wskn_resmod_uuuuu"] = "Gothic Ceres Gold",
+		["bm_wskn_resmod_uuuuu_desc"] = "Nature is kind of dark and beautiful at the same time, right?",
 		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
 		["bm_wskn_resmod_ownthiscity_desc"] = "It's our time now! Let's get this shit started!",
 		["bm_wskn_resmod_kindoffeel"] = "Abstract Dark Gold",

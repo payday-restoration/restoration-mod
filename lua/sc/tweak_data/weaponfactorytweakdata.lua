@@ -8679,8 +8679,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 	--Pirate Barrel
 	self.parts.wpn_fps_gre_m79_barrel_short.pcs = {}
 	self.parts.wpn_fps_gre_m79_barrel_short.supported = true
-	self.parts.wpn_fps_gre_m79_barrel_short.stats = deep_clone(barrels.short_b1_stats)
-	self.parts.wpn_fps_gre_m79_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_gre_m79_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+	self.parts.wpn_fps_gre_m79_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
 	self.parts.wpn_fps_gre_m79_barrel_short.adds = {
 		"wpn_fps_gre_m79_sight_up"
 	}
@@ -8693,12 +8693,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 
 	self.parts.wpn_fps_gre_m79_sight_up.stance_mod = {
 		wpn_fps_gre_m79 = {
-			translation = Vector3(0, -8, 1),
-			rotation = Rotation(0, -5, 0)
+			translation = Vector3(0, -8, -3.56),
+			rotation = Rotation(0, 0, 0)
 		},
 		wpn_fps_gre_china = {
-			translation = Vector3(0, -12, 1),
-			rotation = Rotation(0, -5, 0)
+			translation = Vector3(0, -12, -3.4),
+			rotation = Rotation(0, 0, 0)
 		}
 	}
 
@@ -19749,6 +19749,13 @@ end)
 --Basilisk 3V
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ms3gl", "resmod_ms3gl", function(self)
 
+	self.parts.wpn_fps_gre_ms3gl_o_standard.stance_mod = {
+		wpn_fps_gre_ms3gl = {
+			translation = Vector3(0, 0, 0.5),
+			rotation = Rotation(0, -5.25, 0)
+		}
+	}
+	
 	--Fang Barrel
 	self.parts.wpn_fps_gre_ms3gl_b_long.pcs = {
 		10,

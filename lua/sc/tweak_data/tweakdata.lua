@@ -225,9 +225,9 @@ local incendiary_40mm = {
 }
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
+	tweak_data.projectiles[proj_id].player_damage = 3
 	tweak_data.projectiles[proj_id].curve_pow = 1.5
 	tweak_data.projectiles[proj_id].range = 500
-	tweak_data.projectiles[proj_id].player_damage = 3
 	tweak_data.projectiles[proj_id].burn_duration = 5
 	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary"
 end

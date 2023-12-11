@@ -129,21 +129,25 @@ function DOTTweakData:_init_dot_entries_poison(entries)
 	}
 	--GAS
 	poison_entries.proj_gas_grenade_cloud = {
+		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
 		dot_length = 10.15
 	}
 	poison_entries.proj_launcher_cloud = {
+		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
 		dot_length = 8.15
 	}
 	poison_entries.proj_launcher_arbiter_cloud = {
+		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
 		dot_length = 6.15
 	}
 	poison_entries.proj_launcher_3gl_cloud = {
+		hurt_animation_chance = 1,
 		apply_hurt_once = true,
 		dot_damage = 1.5,
 		dot_length = 4.15

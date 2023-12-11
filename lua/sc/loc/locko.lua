@@ -2234,8 +2234,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Weapon Colors
 		["bm_wskn_resmod_blackgold"] = "블랙 골드",
 		["bm_wskn_resmod_cleangold"] = "클린 골드",
-		["bm_wskn_resmod_imissfauna"] = "케레스 골드",
-		["bm_wskn_resmod_imissfauna_desc"] = "대자연은 결코 당신을 배신하지 않을 겁니다... 그렇죠?",
+		["bm_wskn_resmod_imissfauna"] = "세레스 골드",
+		["bm_wskn_resmod_imissfauna_desc"] = "대자연은 널 절대로 배신하지 않을거야... 맞지?",
+		["bm_wskn_resmod_uuuuu"] = "고딕 세레스 골드",
+		["bm_wskn_resmod_uuuuu_desc"] = "자연은 어둡기도 하고 아름답기도 하지?",		
 		["bm_wskn_resmod_ownthiscity"] = "플뢰르 골드",
 		["bm_wskn_resmod_ownthiscity_desc"] = "우리의 시간이 왔어! 한 판 해보자고!",
 		["bm_wskn_resmod_kindoffeel"] = "앱스트랙트 다크 골드",

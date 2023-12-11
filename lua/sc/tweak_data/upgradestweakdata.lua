@@ -1744,8 +1744,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					
 					self.skill_descs.akimbo = {
 					skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
-					skill_value_p1 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
-					skill_value_p2 = tostring(self.values.pistol.reload_speed_multiplier[2] % 1 * 100).."%"
+					skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
+					skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%"
 					}
 				
 			--Akimbo

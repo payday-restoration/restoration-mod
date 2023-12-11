@@ -2237,6 +2237,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_cleangold"] = "Чистое золото",
 		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
 		["bm_wskn_resmod_imissfauna_desc"] = "",
+		["bm_wskn_resmod_uuuuu"] = "Готическая Церера",
+		["bm_wskn_resmod_uuuuu_desc"] = "",
 		["bm_wskn_resmod_ownthiscity"] = "Царское золото",
 		["bm_wskn_resmod_kindoffeel"] = "Абстрактно-темное золото",
 		["bm_wskn_resmod_kindoffeel2"] = "Абстрактно-яркое золото",

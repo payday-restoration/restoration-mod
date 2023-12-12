@@ -1,4 +1,5 @@
 local mvec1 = Vector3()
+local is_pro = Global.game_settings and Global.game_settings.one_down
 PlayerDamage._UPPERS_COOLDOWN = tweak_data.upgrades.values.first_aid_kit.uppers_cooldown
 
 function PlayerDamage:init(unit)
@@ -304,7 +305,10 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	local attacker_unit = attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
 
-	log(tostring( self_damage ))
+	if is_pro and self_damage then
+		attack_data.damage = attack_data.damage * 2
+	end
+
 	if alive(attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 	end

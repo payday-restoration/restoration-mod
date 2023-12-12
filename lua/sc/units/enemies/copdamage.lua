@@ -218,6 +218,8 @@ local head_hitboxes = {
     [Idstring("glass_visor"):key()] = true
 }
 
+local is_pro = Global.game_settings and Global.game_settings.one_down
+
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 
@@ -968,8 +970,13 @@ function CopDamage:damage_bullet(attack_data)
 		end		
 	end	
 
-	if damage_type_mult[damage_type] and limbs[hit_body:name():key()] then
-		damage = damage * damage_type_mult[damage_type]
+	if limbs[hit_body:name():key()] then
+		if damage_type_mult[damage_type] then
+			damage = damage * damage_type_mult[damage_type]
+		end
+		if is_pro then
+			damage = damage * 0.75
+		end
 	end
 
 	if not self._damage_reduction_multiplier and head then

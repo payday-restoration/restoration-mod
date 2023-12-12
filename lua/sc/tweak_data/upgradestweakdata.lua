@@ -505,14 +505,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.15, --subtract 1 increment instead of adding 1
 		0.10 --subtract 1 increment instead of adding 2
 	}
-	self.values.player.body_armor.regen_delay = { --increments of 0.2
-		2.00,
-		2.20,
-		2.40,
-		2.60,
-		3.20, --3 increments instead of 2
-		3.40,
-		4.00 --3 increments instead of 2
+	self.values.player.body_armor.regen_delay = { --increments of 0.25
+		2.25,
+		2.50,
+		2.75,
+		3.00,
+		3.75, --3 increments instead of 2
+		4.00,
+		4.75 --3 increments instead of 2
 	}
 
 	self.values.rep_upgrades.values = {0}

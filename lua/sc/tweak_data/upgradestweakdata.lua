@@ -399,7 +399,7 @@ end)
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 0.0005
-	self.explosive_bullet.player_dmg_mul = 1
+	self.explosive_bullet.player_dmg_mul = 0.5
 	self.explosive_bullet.range = 150
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4

@@ -30,12 +30,12 @@ local norecoil_blacklist = { --From Zdann
 }
 
 local sound_buffer = BeardLib.Utils:FindMod("Megumin's Staff") and XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")
-
+local is_pro = Global.game_settings and Global.game_settings.one_down
 local original_init = PlayerStandard.init
 function PlayerStandard:init(unit)
 	original_init(self, unit)
 
-	if Global.game_settings and Global.game_settings.one_down then
+	if is_pro then
 		self._slotmask_bullet_impact_targets = self._slotmask_bullet_impact_targets + 3
 	else
 		self._slotmask_bullet_impact_targets = managers.mutators:modify_value("PlayerStandard:init:melee_slot_mask", self._slotmask_bullet_impact_targets)
@@ -910,8 +910,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					self._queue_burst = nil
 					self._queue_fire = nil
 
-
-					if params and params.no_reload or self:_is_using_bipod() or (Global.game_settings and Global.game_settings.one_down) then
+					local manual_reloads = restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
+					if params and params.no_reload or self:_is_using_bipod() or is_pro or manual_reloads then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
 						end

@@ -1770,7 +1770,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = "ms",
 		["bm_menu_dodge_grace"] = "ADDITIONAL GRACE PERIOD ON DODGE: #{skill_color}#$grace_bonus##",
-		["bm_menu_dodge_grace_cap"] = "Grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's risk level of #{risk}#$risk_level##",
+		["bm_menu_dodge_grace_cap"] = "Grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's ",
+		["bm_menu_dodge_grace_jp_cap"] = "#{important_1}#Pro-Job## rating",
+		["bm_menu_dodge_grace_both"] = " and ",
+		["bm_menu_dodge_grace_diff_cap"] = "risk level of #{risk}#$risk_level##",
 
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen## \nArmor regenerated when damaging enemies: #{skill_color}#$active_armor_regen##",

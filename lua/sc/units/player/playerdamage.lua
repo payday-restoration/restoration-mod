@@ -1449,7 +1449,13 @@ function PlayerDamage:set_dodge_points()
 		+managers.player:body_armor_value("dodge")
 		+managers.player:skill_dodge_chance(false, false, false))
 		or 0.0
-	self._dodge_interval = math.clamp(self._dodge_points, 0, 0.45 - (0.45 - (tweak_data.player.damage.MIN_DAMAGE_INTERVAL)) ) 
+	local current_diff = Global.game_settings.difficulty or "easy"
+	local is_pro = Global.game_settings and Global.game_settings.one_down
+	local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)			
+	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
+	local grace_cap = (0.45 - (0.45 - diff_reduction))
+	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
+	log(tostring( self._dodge_interval ))
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	end

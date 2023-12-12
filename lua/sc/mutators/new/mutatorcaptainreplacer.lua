@@ -510,17 +510,27 @@ function MutatorCaptainReplacer:setup()
 	
 	if new_captain == "captain_random" then
 		new_captain = math.random()
+	if new_captain < 0.24 then
+		new_captain = "winter"
+	elseif new_captain >= 0.24 and new_captain < 0.48 then
+		new_captain = "spring"
+	elseif new_captain >= 0.48 and new_captain < 0.72 then
+		new_captain = "summer"
+	elseif new_captain >= 0.72 and new_captain < 0.96 then
+		new_captain = "autumn"
+	else
+		new_captain = "hvh"
 	end
 	
-	if new_captain == "winter" or new_captain < 0.24 then
+	if new_captain == "winter" then
 		new_captain = winter_preset
-	elseif new_captain == "spring" or new_captain < 0.48 then
+	elseif new_captain == "spring" then
 		new_captain = spring_preset
-	elseif new_captain == "hvh" or new_captain >= 0.96 then 
+	elseif new_captain == "hvh" then 
 		new_captain = spooky_preset
-	elseif new_captain == "summer" or new_captain < 0.72 then
+	elseif new_captain == "summer" then
 		new_captain = summer_preset
-	elseif new_captain == "autumn" or new_captain < 0.96 then
+	elseif new_captain == "autumn" then
 		new_captain = autumn_preset
 	end
 	

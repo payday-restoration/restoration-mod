@@ -4049,13 +4049,7 @@ local sms_preset = {
 		self.money.flame_max_range = 1300
 		self.money.single_flame_effect_duration = 1
 		self.money.panic_suppression_chance = 0.2
-		self.money.fire_dot_data = {
-			dot_trigger_chance = 0.75,
-			dot_damage = 10,
-			dot_length = 1,
-			dot_trigger_max_distance = 1300,
-			dot_tick_period = 0.5
-		}
+		self.money.dot_data_name = "weapon_money"
 		self.money.stats = {
 			zoom = 1,
 			total_ammo_mod = 21,

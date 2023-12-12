@@ -2287,6 +2287,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(-0.001, -1, -3.325)
 		}
 	
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m79 = {
+			translation = Vector3(0.05, -1.5, -0.2),
+			rotation = Rotation(0, -2.16, 0)
+		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_gre_m32 = {
 			translation = Vector3(0, 12.5, -3.475)
 		}
@@ -8681,9 +8685,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 	self.parts.wpn_fps_gre_m79_barrel_short.supported = true
 	self.parts.wpn_fps_gre_m79_barrel_short.stats = deep_clone(barrels.short_b3_stats)
 	self.parts.wpn_fps_gre_m79_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
-	self.parts.wpn_fps_gre_m79_barrel_short.adds = {
-		"wpn_fps_gre_m79_sight_up"
-	}
+	self.parts.wpn_fps_gre_m79_barrel_short.adds = {}
 	self.parts.wpn_fps_gre_m79_barrel_short.forbids = {}
 	--Sawed-off Stock
 	self.parts.wpn_fps_gre_m79_stock_short.pcs = {}
@@ -8701,6 +8703,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 			rotation = Rotation(0, 0, 0)
 		}
 	}
+
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_specter")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_aimpoint")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_docter")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_eotech")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_t1micro")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_cmore")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_cs")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_rx30")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_rx01")	
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_reflex")	
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_eotech_xps")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_uh")	
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_tf90")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_spot")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_bmg")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_health")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_hamr")
+	table.insert(self.wpn_fps_gre_m79.uses_parts, "wpn_fps_upg_o_atibal")
+
+	self.wpn_fps_gre_m79.override = self.wpn_fps_gre_m79.override or {}
+	self.wpn_fps_gre_m79.adds = self.wpn_fps_gre_m79.adds or {}
 
 end)	
 
@@ -33914,6 +33941,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt"
 	}
 	self.wpn_fps_smg_x_p90_npc.override = deep_clone(self.wpn_fps_smg_x_p90.override)
+
+	for i, part_id in pairs(self.wpn_fps_gre_m79.uses_parts) do
+		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
+			self.wpn_fps_gre_m79.override[part_id] = self.wpn_fps_gre_m79.override[part_id] or {}
+			self.wpn_fps_gre_m79.override[part_id].a_obj = "a_os"
+			self.wpn_fps_gre_m79.override[part_id].parent = "barrel"
+			self.wpn_fps_gre_m79.override[part_id].forbids = {"wpn_fps_gre_m79_sight_up", "wpn_fps_gre_m79_barrel_short"}
+			self.wpn_fps_gre_m79.override[part_id].override = {
+				wpn_fps_gre_m79_barrel = {
+					adds = {}
+				},
+				wpn_fps_gre_m79_barrel_short = {
+					adds = {}
+				}
+			}
+			self.wpn_fps_gre_m79.adds[part_id] = self.wpn_fps_gre_m79.adds[part_id] or {}
+			self.wpn_fps_gre_m79.adds[part_id] = {"wpn_fps_smg_sr2_o_rail"}
+		end
+	end
+
+	self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail = self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail or {}
+	self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail.a_obj = "a_os"
+	self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail.parent = "barrel"
+	self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail.forbids = {"wpn_fps_gre_m79_sight_up"}
+	self.wpn_fps_gre_m79.override.wpn_fps_smg_sr2_o_rail.adds = {}
+
+	self.wpn_fps_gre_m79_npc.uses_parts = deep_clone(self.wpn_fps_gre_m79.uses_parts)
+	self.wpn_fps_gre_m79_npc.override = deep_clone(self.wpn_fps_gre_m79.override)
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

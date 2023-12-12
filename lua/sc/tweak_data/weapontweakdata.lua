@@ -1,4 +1,5 @@
 local job = Global.level_data and Global.level_data.level_id
+local is_pro = Global.game_settings and Global.game_settings.one_down
 local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 local damage_set = {
@@ -9963,7 +9964,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.timers.reload_empty = 3.8
 				self.g3.timers.reload_exit_empty = 0.9
 				self.g3.timers.reload_exit_not_empty = 1.05
-				self.g3.reload_speed_multiplier = 1.45
+				self.g3.reload_speed_multiplier = 1.425
 				
 			--Galant (M1 Garand)
 				self.hcar.categories = { 
@@ -18182,6 +18183,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.nothing.stats_modifiers = nil
 		self.nothing.swap_speed_multiplier = 2
+		self.nothing.weapon_movement_penalty = 1.07
 		self.nothing.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,
@@ -18217,6 +18219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.nothing2.stats_modifiers = nil
 		self.nothing2.swap_speed_multiplier = 2
+		self.nothing2.weapon_movement_penalty = 1.07
 		self.nothing2.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,
@@ -18665,7 +18668,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:get_swap_speed_multiplier(weap)
 			end
 
-			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+			if not is_pro then
+				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+			end
 			if weap.shake and not weap.shake.bypass_global_shake then
 				weap.shake = {
 					fire_multiplier = 0.75,
@@ -19009,7 +19014,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.33
+	if not is_pro then
+		pickup_multiplier = pickup_multiplier * 1.33
+	end
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

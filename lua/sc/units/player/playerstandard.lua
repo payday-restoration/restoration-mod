@@ -911,7 +911,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					self._queue_fire = nil
 
 
-					if params and params.no_reload or self:_is_using_bipod() then
+					if params and params.no_reload or self:_is_using_bipod() or (Global.game_settings and Global.game_settings.one_down) then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
 						end
@@ -927,7 +927,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								fire_mode_func(self, t, input, params, weap_unit, weap_base)
 							end
 						end
-
 						new_action = self:_is_reloading()
 					end
 				elseif params and params.block_fire then

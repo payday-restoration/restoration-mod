@@ -521,6 +521,7 @@ function MutatorCaptainReplacer:setup()
 	else
 		new_captain = "hvh"
 	end
+	end
 	
 	if new_captain == "winter" then
 		new_captain = winter_preset

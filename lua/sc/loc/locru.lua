@@ -2427,8 +2427,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = " мс",
 		["bm_menu_dodge_grace"] = "Увеличение длительности периода бессмертия при увороте: #{skill_color}#$grace_bonus##\n\nПериод бессмертия - время, во время которого вы не можете получить урон или потерять уворот.",
-		["bm_menu_dodge_grace_cap"] = "Максимальное увеличение длительности периода бессмертия равно #{important_1}#$grace_bonus_cap##, потому что сейчас выбрана сложность #{risk}#$risk_level##",
-
+		["bm_menu_dodge_grace_cap"] = "Максимальное увеличение длительности периода бессмертия равно #{important_1}#$grace_bonus_cap##, потому что стоит ",
+		["bm_menu_dodge_grace_jp_cap"] = "модификатор #{important_1}#Pro-Job##",
+		["bm_menu_dodge_grace_both"] = " и ",
+		["bm_menu_dodge_grace_diff_cap"] = "сложность #{risk}#$risk_level##",
 		["bm_menu_armor_grinding_1"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen## \nВосстановление брони за нанесение урона: #{skill_color}#$active_armor_regen##",
 

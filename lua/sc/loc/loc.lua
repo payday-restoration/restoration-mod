@@ -2747,6 +2747,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_hk51b"] = "Versteckt-51B",
 					--Microgun
 					["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
+					--CUSTOM SMGs
+						["bm_w_sig_xm250"] = "FIK MG277",
 
 				--[[ SHOTGUNS ]]
 					--Grimm

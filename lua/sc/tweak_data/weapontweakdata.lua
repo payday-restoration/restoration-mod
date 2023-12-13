@@ -7570,6 +7570,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.has_description = true
 				self.new_mp5.desc_id = "bm_mp5_sc_desc"
 				self.new_mp5.BURST_FIRE = 3
+				self.new_mp5.BURST_DELAY = 0.08
+				self.new_mp5.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.new_mp5.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 				self.new_mp5.ADAPTIVE_BURST_SIZE = false			
 				self.new_mp5.panic_suppression_chance = 0.05
 				self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
@@ -9180,6 +9183,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.fire_mode_data.fire_rate = 0.085714285
 				self.hajk.AMMO_MAX = 75
 				self.hajk.BURST_FIRE = 2
+				self.hajk.BURST_DELAY = 0.06
+				self.hajk.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.hajk.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 				self.hajk.ADAPTIVE_BURST_SIZE = false											
 				self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 				self.hajk.categories = {
@@ -19063,9 +19069,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	if not is_pro then
-		pickup_multiplier = pickup_multiplier * 1.33
-	end
+	pickup_multiplier = pickup_multiplier * ((is_pro and 1.165) or 1.33)
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

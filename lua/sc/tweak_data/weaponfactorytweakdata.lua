@@ -2441,6 +2441,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.014, -5, -2.638),
 			}
 
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
+				translation = Vector3(0.02, 4, 0.03),
+				rotation = Rotation(0.11, -0.09, 0)
+			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
 				translation = Vector3(0.045, 5.7, -3.092)
 			}
@@ -30053,21 +30057,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 0,
 			zoom = 8
 		}
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stance_mod = {
-			wpn_fps_ass_mcx_spear = {
-				translation = Vector3(-0.0, -5, 1.4)
-			}
+		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stance_mod.wpn_fps_ass_mcx_spear = {
+			translation = Vector3(-0.0, -5, 1.4)
 		}
-
+		
 		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.supported = true
 		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stats = {
 			value = 0,
 			zoom = 8
 		}
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stance_mod = {
-			wpn_fps_ass_mcx_spear = {
-				translation = Vector3(-0.0, -5, 1.4)
-			}
+		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stance_mod.wpn_fps_ass_mcx_spear = {
+			translation = Vector3(-0.0, -5, 1.4)
 		}
 
 		--BCM Grip
@@ -30130,6 +30130,61 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_mcx_spear_npc.default_blueprint = deep_clone(self.wpn_fps_ass_mcx_spear.default_blueprint)
 		self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
 		self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
+	end
+
+	if self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight then
+		self.parts.wpn_fps_lmg_sig_xm250_magazine.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_sig_xm250_magazine.custom_stats = {}
+		self.parts.wpn_fps_lmg_sig_xm250_stock.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_sig_xm250_stock.custom_stats = {}
+
+		self.parts.wpn_fps_lmg_sig_xm250_suppressor.supported = true
+		self.parts.wpn_fps_lmg_sig_xm250_suppressor.pcs = nil
+		self.parts.wpn_fps_lmg_sig_xm250_suppressor.stats = {
+			value = 0,
+			alert_size = -1,
+			suppression = -12
+		}
+		self.parts.wpn_fps_lmg_sig_xm250_suppressor.custom_stats = nil
+
+		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.supported = true
+		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stats = {
+			value = 0,
+			zoom = 8
+		}
+		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stance_mod = {
+			wpn_fps_lmg_sig_xm250 = {
+				translation = Vector3(0, -8, 1.95)
+			}		
+		}
+		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight.stance_mod = {}
+
+
+		for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.default_blueprint) do
+			attachment_list = {
+				"wpn_fps_lmg_sig_xm250_irons_angled"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_lmg_sig_xm250.default_blueprint[i] = "resmod_dummy"
+				end
+			end
+		end
+
+		for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.uses_parts) do
+			attachment_list = {
+				"wpn_fps_upg_o_box"
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_lmg_sig_xm250.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
+
+		self.wpn_fps_lmg_sig_xm250_npc.default_blueprint = deep_clone(self.wpn_fps_lmg_sig_xm250.default_blueprint)
+		self.wpn_fps_lmg_sig_xm250_npc.uses_parts = deep_clone(self.wpn_fps_lmg_sig_xm250.uses_parts)
+
 	end
 
 	if self.parts.wpn_fps_upg_jackhammer_i_autofire then --Pawcio's Jackhammer

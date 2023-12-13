@@ -17347,6 +17347,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.timers.reload_exit_not_empty = 0.7
 	end
 
+	if self.sig_xm250 then --RJC9000 and PlayBONK's SIG XM250
+		self.sig_xm250.categories = {
+			"lmg",
+			"smg"
+		}
+		self.sig_xm250.recategorize = { "light_mg" }
+		self.sig_xm250.damage_type = "machine_gun"
+		self.sig_xm250.sms = sms_preset.lmg_60
+		self.sig_xm250.weapon_movement_penalty = sms_preset.lmg_60
+		self.sig_xm250.CLIP_AMMO_MAX = 50
+		self.sig_xm250.AMMO_MAX = 240
+		self.sig_xm250.FIRE_MODE = "auto"
+		self.sig_xm250.fire_mode_data.fire_rate = 0.075
+		self.sig_xm250.CAN_TOGGLE_FIREMODE = true
+		self.sig_xm250.kick = {}
+		self.sig_xm250.kick = self.stat_info.kick_tables.horizontal_recoil_mg
+		self.sig_xm250.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.sig_xm250.supported = true
+		self.sig_xm250.ads_speed = 0.500
+		self.sig_xm250.damage_falloff = {
+			start_dist = 2300,
+			end_dist = 6600,
+			min_mult = 0.66667
+		}	
+		self.sig_xm250.stats = {
+			damage = 30,
+			spread = 67,
+			recoil = 67,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 17,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.sig_xm250.stats_modifiers = nil
+		self.sig_xm250.panic_suppression_chance = 0.05
+		self.sig_xm250.can_shoot_through_enemy = false
+		self.sig_xm250.can_shoot_through_wall = false
+		self.sig_xm250.can_shoot_through_shield = false
+		self.sig_xm250.reload_speed_multiplier = 0.8
+		self.sig_xm250.sounds.spin_start = "wp_m249_lever_release"
+		self.sig_xm250.spin_up_shoot = true
+		self.sig_xm250.spin_up_t = 0.07
+		self.sig_xm250.spin_down_t = 0.00000001
+		self.sig_xm250.timers.reload_empty = 3.5
+		self.sig_xm250.timers.reload_exit_empty = 0.5
+		self.sig_xm250.timers.reload_not_empty = 4.6
+		self.sig_xm250.timers.reload_exit_not_empty = 0.5
+	end
+
 	if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
 		self.ngsierra.categories = { 
 			"assault_rifle",

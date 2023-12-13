@@ -2966,6 +2966,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_smg45"] = "Страйкер .45",			
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "КРАЙНЕТ Тайфун",
+			
+			["bm_w_sig_xm250"] = "ФИК МГ277",
 		["bm_w_tecci"] = "Контрабандист",
 		["bm_w_m249"] = "КСП 90",
 		["bm_w_kacchainsaw"] = "Кэмпбелл 74",

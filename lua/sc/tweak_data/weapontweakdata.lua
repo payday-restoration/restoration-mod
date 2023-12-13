@@ -17340,10 +17340,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.can_shoot_through_shield = false
 		self.mcx_spear.hs_mult = 1.33333
 		self.mcx_spear.armor_piercing_chance = 0.5
-		self.mcx_spear.timers.reload_empty = 3.1
-		self.mcx_spear.timers.reload_exit_empty = 0.9
-		self.mcx_spear.timers.reload_not_empty = 2.2
-		self.mcx_spear.timers.reload_exit_not_empty = 1.12
+		self.mcx_spear.reload_speed_multiplier  = 0.85
+		self.mcx_spear.timers.reload_empty = 2.6
+		self.mcx_spear.timers.reload_exit_empty = 0.7
+		self.mcx_spear.timers.reload_not_empty = 1.55
+		self.mcx_spear.timers.reload_exit_not_empty = 0.7
 	end
 
 	if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77

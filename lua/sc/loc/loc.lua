@@ -4480,8 +4480,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Spring",
 		["menu_mutator_captain_replace_summer"] = "Summers",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
-		["mutator_captain_replace_desc"] = "Allows you change captain that may appear on heist.",
-		["mutator_captain_replace_longdesc"] = "Allows you change captain that may appear on heist.\n\nNote: Mutator can't override scripted captain encounters.",
+		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
+		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 		
 
 		["mutator_spawn_mult"] = "Amplified Response",

@@ -1,4 +1,3 @@
-
 function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_id, amount)
 	local factory_data = self[factory_id]
 	local parts = {}
@@ -33990,6 +33989,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	self.wpn_fps_gre_m79_npc.uses_parts = deep_clone(self.wpn_fps_gre_m79.uses_parts)
 	self.wpn_fps_gre_m79_npc.override = deep_clone(self.wpn_fps_gre_m79.override)
+
+	for part_id, k in pairs(self.parts) do
+		if self.parts[part_id] and self.parts[part_id].type and (self.parts[part_id].type == "sight" or self.parts[part_id].type == "second_sight") then
+			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
+			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
+			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
+			if zoom >= 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
+				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.005)
+			end
+		end
+	end
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--

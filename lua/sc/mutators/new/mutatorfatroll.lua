@@ -21,8 +21,12 @@ function MutatorFatRoll:register_values(mutator_manager)
 end
 
 function MutatorFatRoll:setup(data)
-	tweak_data.player.damage.MIN_DAMAGE_INTERVAL = self:get_fatroll()
-	tweak_data.character.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = self:get_fatroll()
+	local new_grace = self:get_fatroll()
+	local old_grace = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
+	if new_grace < old_grace then
+		tweak_data.player.damage.MIN_DAMAGE_INTERVAL = new_grace
+		tweak_data.character.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = new_grace
+	end
 end
 
 function MutatorFatRoll:name()

@@ -10,6 +10,13 @@ local enemy_melee_speed = {
 	expert = 1,
 	deathwish = 1,
 }
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local damage_grace_base = 0.45
+local damage_grace_base_pro = 0.4
+local damage_grace_easydeathwish = 0.35
+local damage_grace_easydeathwish_pro = 0.3
+local damage_grace_death_sentence = 0.25
+local damage_grace_death_sentence_pro = 0.2
 
 local old_init = CharacterTweakData.init
 function CharacterTweakData:init(tweak_data, presets)
@@ -4936,7 +4943,11 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
-	presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_base_pro
+	else
+		presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_base
+	end
 	presets.gang_member_damage.respawn_time_penalty = 0
 	presets.gang_member_damage.base_respawn_time_penalty = 5
 	presets.weapon = {}
@@ -17191,7 +17202,6 @@ function CharacterTweakData:_set_easy()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 25
 	self.spa_vip.HEALTH_INIT = 25
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
@@ -17254,7 +17264,6 @@ function CharacterTweakData:_set_normal()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 50
 	self.spa_vip.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 50
@@ -17317,7 +17326,6 @@ function CharacterTweakData:_set_hard()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 75
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 75
 	self.spa_vip.HEALTH_INIT = 75
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 75
@@ -17380,7 +17388,6 @@ function CharacterTweakData:_set_overkill()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
@@ -17442,7 +17449,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 125
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 125
 	self.spa_vip.HEALTH_INIT = 125
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 125
@@ -17504,7 +17510,11 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 150
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	if pro_job then
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_easydeathwish_pro
+	else
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_easydeathwish
+	end
 	self.old_hoxton_mission.HEALTH_INIT = 150
 	self.spa_vip.HEALTH_INIT = 150
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 150
@@ -17572,7 +17582,11 @@ function CharacterTweakData:_set_overkill_290()
 		
 	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 175
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
+	if pro_job then
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_easydeathwish_pro
+	else
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_easydeathwish
+	end
 	self.old_hoxton_mission.HEALTH_INIT = 175
 	self.spa_vip.HEALTH_INIT = 175
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 175
@@ -17657,7 +17671,11 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self:_multiply_all_speeds(1.05, 1.1)
 	self.presets.gang_member_damage.HEALTH_INIT = 200
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
+	if pro_job then
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_death_sentence_pro
+	else
+		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_death_sentence
+	end
 	self.old_hoxton_mission.HEALTH_INIT = 200
 	self.spa_vip.HEALTH_INIT = 200
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 200

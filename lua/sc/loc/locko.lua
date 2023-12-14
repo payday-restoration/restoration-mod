@@ -2844,13 +2844,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m60"] = "M60",
 					--Ksp 58
 					["bm_w_par"] = "KSP-58B",
-					["bm_wp_par_b_short"] = "Comped Barrel",
+					["bm_wp_par_b_short"] = "컴페드 총열",
 					--Buzzsaw/Mg42
 					["bm_w_mg42"] = "Buzzsaw-42",
 					--Versteckt-51/HK51B
 					["bm_w_hk51b"] = "Versteckt-51B",
 					--Microgun
 					["bm_wp_wpn_fps_lmg_shuno_body_red"] = "붉은 몸체",
+					--CUSTOM SMGs
+					["bm_w_sig_xm250"] = "FIK MG277",					
 
 				--[[ SHOTGUNS ]]
 					--Grimm
@@ -4572,8 +4574,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_spring"] = "스프링",
 		["menu_mutator_captain_replace_summer"] = "서머스",
 		["menu_mutator_captain_replace_hvh"] = "지옥 타이탄 도저",
-		["mutator_captain_replace_desc"] = "하이스트에 나타날 수 있는 캡틴을 변경할 수 있습니다.",
-		["mutator_captain_replace_longdesc"] = "하이스트에 나타날 수 있는 캡틴을 변경할 수 있습니다.\n\n참고: 해당 뮤테이터는 스크립트된 캡틴 엔카운터를 바꿀 수 없습니다.",	
+		["mutator_captain_replace_desc"] = "하이스트 도중에 생성되는 캡틴을 변경합니다.",
+		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다.",	
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

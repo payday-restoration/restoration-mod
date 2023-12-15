@@ -119,13 +119,13 @@ local crew_wep_preset = {
 	},
 	sniper_auto = {
 		mag_capacity = 8,
-		fire_rate = 1.090909,
+		fire_rate = 1.5,
 		damage = 9.0
 	},
 	sniper_bolt = {	
 		mag_capacity = 5,
-		fire_rate = 3,
-		damage = 18.0
+		fire_rate = 4,
+		damage = 12.0
 	}
 }
 
@@ -3013,7 +3013,6 @@ local crew_wep_preset = {
 			self.awp_crew.FIRE_MODE = "single"
 		end
 
-	
 	--LMGS
 		function WeaponTweakData:_init_data_tecci_crew()
 			self.tecci_crew.categories = clone(self.tecci.categories)
@@ -4254,7 +4253,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "akmsu", "x_akmsu" }
 	for i, wep_id in ipairs(recat) do
-		table.insert(self[ wep_id ].categories, "crb")
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
@@ -9301,6 +9299,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l85a2.panic_suppression_chance = 0.05
 
 			--Akimbo Krinkov
+				self.x_akmsu.categories = {
+					"akimbo",
+					"assault_rifle",
+					"crb"
+				}
 				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
 				self.x_akmsu.has_description = true		
 				self.x_akmsu.sounds.fire = "akm_fire_single"
@@ -9560,7 +9563,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Krinkov
 				self.akmsu.categories = {
-					"assault_rifle"
+					"assault_rifle",
+					"crb"
 				}
 				self.akmsu.AMMO_MAX = 60
 				self.akmsu.has_description = true

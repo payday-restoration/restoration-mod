@@ -1966,6 +1966,10 @@ function CopDamage:stun_hit(attack_data)
 	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
 		return
 	end
+	
+	if self:is_friendly_fire(attack_data.attacker_unit) then
+		return "friendly_fire"
+	end	
 
 	if self._dead or self._invulnerable or self._unit:in_slot(16, 21, 22) then
 		return
@@ -1989,10 +1993,6 @@ function CopDamage:stun_hit(attack_data)
 
 	if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
 		attacker_unit = attacker_unit:base():thrower_unit()
-	end
-
-	if self:is_friendly_fire(attacker_unit) then
-		return "friendly_fire"
 	end
 
 	local attacker = attack_data.attacker_unit
@@ -2034,6 +2034,11 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	}
 	local result = nil
 	local result_type = "concussion"
+	
+	if self._char_tweak.tank_concussion then
+		result_type = "expl_hurt"
+	end
+	
 	result = {
 		type = result_type,
 		variant = variant

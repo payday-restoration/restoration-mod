@@ -5184,22 +5184,29 @@ function BlackMarketGui:update_info_text()
 		local mod_dodge = managers.player:body_armor_value("dodge", upgrade_level)
 		local skill_dodge = managers.player:skill_dodge_chance(false, false, false, slot_data.name, detection_risk)
 		local current_diff = Global.game_settings.difficulty or "easy"
+		local is_pro = Global.game_settings and Global.game_settings.one_down
 		local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)
 		dodge_rating = math.clamp((dodge_rating + mod_dodge + skill_dodge) * 1000, 0, 450)
 		if dodge_rating and dodge_rating > 0 then
 			local description = managers.localization:text("bm_menu_dodge_grace", { grace_bonus = dodge_rating .. managers.localization:text("bm_menu_append_milliseconds") } )
 			local diff_desc = ""
+			local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
+			local grace_cap = (0.45 - (0.45 - diff_reduction)) * 1000 
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
 				table.insert(updated_texts[4].resource_color,  tweak_data.screen_colors[dodge_rating == 450 and "stat_maxed" or color_id])
 			end
-			if difficulty_id > 3 then
-				diff_desc = "\n" .. managers.localization:text("bm_menu_dodge_grace_cap", { grace_bonus_cap = ( 0.45 - (0.45 - ( (difficulty_id == 4 or difficulty_id == 5) and 0.35 or difficulty_id == 6 and 0.25 ) ) ) * 1000 .. managers.localization:text("bm_menu_append_milliseconds") , risk_level = managers.localization:text( tweak_data.difficulty_name_ids[tostring(current_diff)] ) })
+			if difficulty_id > 3 or is_pro then
+				diff_desc = "\n" .. managers.localization:text("bm_menu_dodge_grace_cap", { grace_bonus_cap = grace_cap .. managers.localization:text("bm_menu_append_milliseconds") } ) .. 
+				((is_pro and managers.localization:text("bm_menu_dodge_grace_jp_cap")) or "") ..
+				((is_pro and difficulty_id > 3 and managers.localization:text("bm_menu_dodge_grace_both")) or "") .. 
+				((difficulty_id > 3 and managers.localization:text("bm_menu_dodge_grace_diff_cap", { risk_level = managers.localization:text( tweak_data.difficulty_name_ids[tostring(current_diff)] ) } ) ) or "")
 
 				for color_id in string.gmatch(diff_desc, "#%{(.-)%}#") do
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 				end
 			end
-			description = description:gsub("#%{(.-)%}#", "##") .. diff_desc:gsub("#%{(.-)%}#", "##") 
+
+			description = description:gsub("#%{(.-)%}#", "##") .. ((dodge_rating > (grace_cap + 0.01)) and diff_desc:gsub("#%{(.-)%}#", "##") or "")  
 			updated_texts[4].text = updated_texts[4].text .. description
 		end
 		updated_texts[4].below_stats = true

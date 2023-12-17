@@ -111,7 +111,7 @@
             <constantage age="99999"/>
             <boxrandomangle min="0" max="360"/>
             <boxrandomrotation relative="world" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
-            <localboxrandomposition min="-24 10 -40" max="24 10 18"/>
+            <localboxrandomposition min="-14 15 -20" max="14 15 14"/>
         </initializerstack>
         <simulatorstack>
             <velocityintegrator channel="world"/>
@@ -146,7 +146,7 @@
             <constantage age="99999"/>
             <boxrandomangle min="0" max="360"/>
             <boxrandomrotation relative="world" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
-            <localboxrandomposition min="-24 10 -40" max="24 10 18"/>
+            <localboxrandomposition min="-14 15 -20" max="14 15 14"/>
         </initializerstack>
         <simulatorstack>
             <velocityintegrator channel="world"/>

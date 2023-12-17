@@ -399,7 +399,7 @@ end)
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 0.0005
-	self.explosive_bullet.player_dmg_mul = 1
+	self.explosive_bullet.player_dmg_mul = 0.5
 	self.explosive_bullet.range = 150
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
@@ -505,14 +505,14 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.15, --subtract 1 increment instead of adding 1
 		0.10 --subtract 1 increment instead of adding 2
 	}
-	self.values.player.body_armor.regen_delay = { --increments of 0.2
-		2.00,
-		2.20,
-		2.40,
-		2.60,
-		3.20, --3 increments instead of 2
-		3.40,
-		4.00 --3 increments instead of 2
+	self.values.player.body_armor.regen_delay = { --increments of 0.25
+		2.25,
+		2.50,
+		2.75,
+		3.00,
+		3.75, --3 increments instead of 2
+		4.00,
+		4.75 --3 increments instead of 2
 	}
 
 	self.values.rep_upgrades.values = {0}
@@ -1744,8 +1744,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					
 					self.skill_descs.akimbo = {
 					skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
-					skill_value_p1 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
-					skill_value_p2 = tostring(self.values.pistol.reload_speed_multiplier[2] % 1 * 100).."%"
+					skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
+					skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%"
 					}
 				
 			--Akimbo
@@ -2274,15 +2274,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.on_killshot_cooldown_reduction_melee = 1.5
 
 	--Anarchist stuff--
-	self.values.player.armor_grinding = { --increments of 0.3/0.2
+	self.values.player.armor_grinding = { --increments of 0.25
 		{
-			{2.4, 4.4},
-			{2.7, 4.6},
-			{3.0, 4.8},
-			{3.3, 5.0},
-			{3.9, 5.4},
-			{4.2, 5.6},
-			{4.8, 6.0}
+			{3.6, 4.5},
+			{3.8, 4.75},
+			{4.0, 5.0},
+			{4.2, 5.25},
+			{4.6, 5.75},
+			{4.8, 6.0},
+			{5.2, 6.5}
 		}
 	}
 	
@@ -2327,13 +2327,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = { --increments of 0.02
-		1.20,
-		1.18,
 		1.16,
 		1.14,
+		1.12,
 		1.1,
-		1.08,
-		1.04
+		1.06,
+		1.04,
+		1.02
 	}
 
 	--I AM A BAD MOTHERFUCKA--

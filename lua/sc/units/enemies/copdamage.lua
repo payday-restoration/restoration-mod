@@ -199,6 +199,8 @@ local head_hitboxes = {
     [Idstring("glass_visor"):key()] = true
 }
 
+local is_pro = Global.game_settings and Global.game_settings.one_down
+
 Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
 
@@ -950,8 +952,13 @@ function CopDamage:damage_bullet(attack_data)
 		end		
 	end	
 
-	if damage_type_mult[damage_type] and limbs[hit_body:name():key()] then
-		damage = damage * damage_type_mult[damage_type]
+	if limbs[hit_body:name():key()] then
+		if damage_type_mult[damage_type] then
+			damage = damage * damage_type_mult[damage_type]
+		end
+		if is_pro then
+			damage = damage * 0.75
+		end
 	end
 
 	if not self._damage_reduction_multiplier and head then
@@ -1933,7 +1940,7 @@ function CopDamage:die(attack_data)
 		boom_boom = managers.modifiers:modify_value("CopDamage:CanBoomBoom", boom_boom)
 		boom_boom = managers.mutators:modify_value("CopDamage:CanBoomBoom", boom_boom)
 		if boom_boom then
-			MutatorExplodingEnemies._detonate(MutatorExplodingEnemies, self, attack_data, true, 60, 500)
+			self:kamikaze_bag_explode()
 		end
 	end
 	
@@ -1946,6 +1953,10 @@ function CopDamage:stun_hit(attack_data)
 	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
 		return
 	end
+	
+	if self:is_friendly_fire(attack_data.attacker_unit) then
+		return "friendly_fire"
+	end	
 
 	if self._dead or self._invulnerable or self._unit:in_slot(16, 21, 22) then
 		return
@@ -1969,10 +1980,6 @@ function CopDamage:stun_hit(attack_data)
 
 	if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
 		attacker_unit = attacker_unit:base():thrower_unit()
-	end
-
-	if self:is_friendly_fire(attacker_unit) then
-		return "friendly_fire"
 	end
 
 	local attacker = attack_data.attacker_unit
@@ -2014,6 +2021,11 @@ function CopDamage:sync_damage_stun(attacker_unit, damage_percent, i_attack_vari
 	}
 	local result = nil
 	local result_type = "concussion"
+	
+	if self._char_tweak.tank_concussion then
+		result_type = "expl_hurt"
+	end
+	
 	result = {
 		type = result_type,
 		variant = variant
@@ -3336,6 +3348,47 @@ function CopDamage:grenadier_bag_explode()
 	})	
 	
 	managers.network:session():send_to_peers_synched("sync_explosion_to_client", nil, pos, normal, ply_damage, range, curve_pow)		
+end
+
+function CopDamage:kamikaze_bag_explode()    
+	local pos = self._unit:get_object(Idstring("Spine2")):position()
+
+	local range = 400
+	local damage = 500
+	local ply_damage = 250
+	local normal = math.UP
+	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local curve_pow = 4
+	local custom_params = {
+		camera_shake_max_mul = 4,
+		effect = "effects/payday2/particles/explosions/grenade_explosion",
+		sound_event = "grenade_explode",
+		feedback_range = range * 2
+	}
+	local tweak_entry = {
+		damage = damage,
+		player_damage = ply_damage,
+		curve_pow = curve_pow,
+		range = range
+	}
+	
+	managers.explosion:give_local_player_dmg(pos, range, ply_damage)
+	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)	
+	
+	local damage_params = {
+		no_raycast_check_characters = true,
+		hit_pos = pos,
+		range = range,
+		collision_slotmask = managers.slot:get_mask("explosion_targets"),
+		curve_pow = curve_pow,
+		damage = damage,
+		player_damage = ply_damage,
+		ignore_unit = alive(self._unit) and self._unit or nil
+	}
+
+	managers.explosion:detect_and_give_dmg(damage_params)
+	managers.network:session():send_to_peers_synched("element_explode_on_client", pos, normal, damage, range, curve_pow)
+	
 end
 
 --Added stuff for CG22 mutator

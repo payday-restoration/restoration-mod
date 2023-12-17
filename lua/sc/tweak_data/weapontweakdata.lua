@@ -1,4 +1,5 @@
 local job = Global.level_data and Global.level_data.level_id
+local is_pro = Global.game_settings and Global.game_settings.one_down
 local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 local damage_set = {
@@ -118,13 +119,13 @@ local crew_wep_preset = {
 	},
 	sniper_auto = {
 		mag_capacity = 8,
-		fire_rate = 1.090909,
+		fire_rate = 1.5,
 		damage = 9.0
 	},
 	sniper_bolt = {	
 		mag_capacity = 5,
-		fire_rate = 3,
-		damage = 18.0
+		fire_rate = 4,
+		damage = 12.0
 	}
 }
 
@@ -3012,7 +3013,6 @@ local crew_wep_preset = {
 			self.awp_crew.FIRE_MODE = "single"
 		end
 
-	
 	--LMGS
 		function WeaponTweakData:_init_data_tecci_crew()
 			self.tecci_crew.categories = clone(self.tecci.categories)
@@ -4048,13 +4048,7 @@ local sms_preset = {
 		self.money.flame_max_range = 1300
 		self.money.single_flame_effect_duration = 1
 		self.money.panic_suppression_chance = 0.2
-		self.money.fire_dot_data = {
-			dot_trigger_chance = 0.75,
-			dot_damage = 10,
-			dot_length = 1,
-			dot_trigger_max_distance = 1300,
-			dot_tick_period = 0.5
-		}
+		self.money.dot_data_name = "weapon_money"
 		self.money.stats = {
 			zoom = 1,
 			total_ammo_mod = 21,
@@ -4259,7 +4253,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "akmsu", "x_akmsu" }
 	for i, wep_id in ipairs(recat) do
-		table.insert(self[ wep_id ].categories, "crb")
 		self[ wep_id ].recategorize = { "heavy_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
@@ -7575,6 +7568,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.has_description = true
 				self.new_mp5.desc_id = "bm_mp5_sc_desc"
 				self.new_mp5.BURST_FIRE = 3
+				self.new_mp5.BURST_DELAY = 0.08
+				self.new_mp5.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.new_mp5.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 				self.new_mp5.ADAPTIVE_BURST_SIZE = false			
 				self.new_mp5.panic_suppression_chance = 0.05
 				self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
@@ -9185,6 +9181,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hajk.fire_mode_data.fire_rate = 0.085714285
 				self.hajk.AMMO_MAX = 75
 				self.hajk.BURST_FIRE = 2
+				self.hajk.BURST_DELAY = 0.06
+				self.hajk.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.hajk.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 				self.hajk.ADAPTIVE_BURST_SIZE = false											
 				self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 				self.hajk.categories = {
@@ -9300,6 +9299,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l85a2.panic_suppression_chance = 0.05
 
 			--Akimbo Krinkov
+				self.x_akmsu.categories = {
+					"akimbo",
+					"assault_rifle",
+					"crb"
+				}
 				self.x_akmsu.desc_id = "bm_x_akmsu_sc_desc"
 				self.x_akmsu.has_description = true		
 				self.x_akmsu.sounds.fire = "akm_fire_single"
@@ -9559,7 +9563,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Krinkov
 				self.akmsu.categories = {
-					"assault_rifle"
+					"assault_rifle",
+					"crb"
 				}
 				self.akmsu.AMMO_MAX = 60
 				self.akmsu.has_description = true
@@ -9963,7 +9968,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3.timers.reload_empty = 3.8
 				self.g3.timers.reload_exit_empty = 0.9
 				self.g3.timers.reload_exit_not_empty = 1.05
-				self.g3.reload_speed_multiplier = 1.45
+				self.g3.reload_speed_multiplier = 1.425
 				
 			--Galant (M1 Garand)
 				self.hcar.categories = { 
@@ -12260,7 +12265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 24,
+					concealment = 23,
 					suppression = 1,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -12445,7 +12450,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 69,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 16,
+					concealment = 17,
 					suppression = 1,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -17345,10 +17350,65 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.can_shoot_through_shield = false
 		self.mcx_spear.hs_mult = 1.33333
 		self.mcx_spear.armor_piercing_chance = 0.5
-		self.mcx_spear.timers.reload_empty = 3.1
-		self.mcx_spear.timers.reload_exit_empty = 0.9
-		self.mcx_spear.timers.reload_not_empty = 2.2
-		self.mcx_spear.timers.reload_exit_not_empty = 1.12
+		self.mcx_spear.reload_speed_multiplier  = 0.85
+		self.mcx_spear.timers.reload_empty = 2.6
+		self.mcx_spear.timers.reload_exit_empty = 0.7
+		self.mcx_spear.timers.reload_not_empty = 1.55
+		self.mcx_spear.timers.reload_exit_not_empty = 0.7
+	end
+
+	if self.sig_xm250 then --RJC9000 and PlayBONK's SIG XM250
+		self.sig_xm250.categories = {
+			"lmg",
+			"smg"
+		}
+		self.sig_xm250.recategorize = { "light_mg" }
+		self.sig_xm250.damage_type = "machine_gun"
+		self.sig_xm250.sms = sms_preset.lmg_60
+		self.sig_xm250.weapon_movement_penalty = sms_preset.lmg_60
+		self.sig_xm250.CLIP_AMMO_MAX = 50
+		self.sig_xm250.AMMO_MAX = 240
+		self.sig_xm250.FIRE_MODE = "auto"
+		self.sig_xm250.fire_mode_data.fire_rate = 0.075
+		self.sig_xm250.CAN_TOGGLE_FIREMODE = true
+		self.sig_xm250.kick = {}
+		self.sig_xm250.kick = self.stat_info.kick_tables.horizontal_recoil_mg
+		self.sig_xm250.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.sig_xm250.supported = true
+		self.sig_xm250.ads_speed = 0.500
+		self.sig_xm250.damage_falloff = {
+			start_dist = 2300,
+			end_dist = 6600,
+			min_mult = 0.66667
+		}	
+		self.sig_xm250.stats = {
+			damage = 30,
+			spread = 67,
+			recoil = 67,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 17,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.sig_xm250.stats_modifiers = nil
+		self.sig_xm250.panic_suppression_chance = 0.05
+		self.sig_xm250.can_shoot_through_enemy = false
+		self.sig_xm250.can_shoot_through_wall = false
+		self.sig_xm250.can_shoot_through_shield = false
+		self.sig_xm250.reload_speed_multiplier = 0.8
+		self.sig_xm250.sounds.spin_start = "wp_m249_lever_release"
+		self.sig_xm250.spin_up_shoot = true
+		self.sig_xm250.spin_up_t = 0.07
+		self.sig_xm250.spin_down_t = 0.00000001
+		self.sig_xm250.timers.reload_empty = 3.5
+		self.sig_xm250.timers.reload_exit_empty = 0.5
+		self.sig_xm250.timers.reload_not_empty = 4.6
+		self.sig_xm250.timers.reload_exit_not_empty = 0.5
 	end
 
 	if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
@@ -18182,6 +18242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.nothing.stats_modifiers = nil
 		self.nothing.swap_speed_multiplier = 2
+		self.nothing.weapon_movement_penalty = 1.07
 		self.nothing.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,
@@ -18217,6 +18278,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.nothing2.stats_modifiers = nil
 		self.nothing2.swap_speed_multiplier = 2
+		self.nothing2.weapon_movement_penalty = 1.07
 		self.nothing2.timers = {
 			reload_not_empty = 0,
 			reload_empty = 0,
@@ -18665,7 +18727,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:get_swap_speed_multiplier(weap)
 			end
 
-			weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+			if not is_pro then
+				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
+			end
 			if weap.shake and not weap.shake.bypass_global_shake then
 				weap.shake = {
 					fire_multiplier = 0.75,
@@ -19009,7 +19073,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * 1.33
+	pickup_multiplier = pickup_multiplier * ((is_pro and 1.165) or 1.33)
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

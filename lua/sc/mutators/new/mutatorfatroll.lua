@@ -44,7 +44,7 @@ function MutatorFatRoll:_min_grace()
 end
 
 function MutatorFatRoll:_max_grace()
-	return 0.25
+	return 0.45
 end
 
 function MutatorFatRoll:setup_options_gui(node)

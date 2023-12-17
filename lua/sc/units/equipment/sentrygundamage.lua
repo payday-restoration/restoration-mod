@@ -518,7 +518,7 @@ function SentryGunDamage:damage_fire(attack_data)
 		end
 	end
 
-	self._unit:network():send("damage_fire", attacker, damage_percent, send_hit_shield, self._dead and true or false, Vector3(), nil, nil, send_destroy_shield)
+	self._unit:network():send("damage_fire", attacker, damage_sync, self._dead and true or false, attack_data.col_ray.ray, 0, false)
 
 	if not self._dead then
 		self._unit:brain():on_damage_received(attack_data.attacker_unit)

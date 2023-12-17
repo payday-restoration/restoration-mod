@@ -152,7 +152,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModGCGPYPMMSACTextDescID"] = "Disables text based easter eggs from being rolled. Requires restart.",
 		["RestorationModForceEggsOptionsButtonTitleID"] = "Force Easter Egg Text",
 		["RestorationModForceEggsOptionsButtonDescID"] = "Force enable individual easter egg texts; ignores the effects of \"Super Cereal Text\" if its enabled.\nToggling anything in here requires a restart.",
-			["RestorationModUpotteTitleID"] = "Enrole in Seishou Academy",
+			["RestorationModUpotteTitleID"] = "Enroll in Seishou Academy",
 			["RestorationModUpotteDescID"] = "Work with the Modern Literature teacher or something",
 			["RestorationModCrabBattleTitleID"] = "Now There's A Pretty Meme",
 			["RestorationModCrabBattleDescID"] = "Exquisite!",
@@ -197,7 +197,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
-		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).",
+		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
 		["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
 		["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
 		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Firerate Limit",
@@ -208,6 +208,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
+		["RestorationModManualReloadsTitleID"] = "Manual Reloads",
+		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty.\nThis is always enabled for Pro-Jobs, regardless of setting.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -1242,13 +1244,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{risk}#3x magnification.##",
 
 		--'Nade Launchers--
+		--Incendiary UGL Nades
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#120## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
 		["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#80## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
-		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#40## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
+		["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "Fires a round that creates a #{heat_warm_color}#pool of fire## at point of impact.\nThe pool has a radius of #{skill_color}#3.75m##, lasts #{skill_color}#5## seconds and deals #{skill_color}#36## damage/sec to enemies standing in it with a chance to set them on fire, causing most to panic while dealing an additional #{skill_color}#60## damage over #{skill_color}#3## seconds.",
+		--Frag UGL Nade
 		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that creates an #{risk}#explosion## at point of impact. The explosion deals #{skill_color}#720## damage and has a radius of #{skill_color}#5## meters.",
-		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#360## damage, has a radius of #{skill_color}#5## meters, and has a chance to #{ghost_color}#tase enemies.##",
-		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#180## damage, has a radius of #{skill_color}#5## meters, and has a chance to #{ghost_color}#tase enemies.##",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage, has a radius of #{skill_color}#3## meters, and has a chance to #{ghost_color}#tase enemies.##",
+		--Taser UGL Nades
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#360## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
+		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#180## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that creates a #{ghost_color}#burst of electricity## at point of impact. The burst deals #{skill_color}#300## damage in a radius of #{skill_color}#5## meters and has a chance to #{ghost_color}#tase enemies.##",
+		--Gas UGL Nades
 		["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6 Round",
 		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "Fires a round that creates a #{stats_positive}#cloud of poisonous gas## at point of impact.\nThe gas has a radius of #{skill_color}#6## meters, lingers for #{skill_color}#10## seconds, deals #{skill_color}#240## damage over #{skill_color}#8## seconds, and #{stats_positive}#induces vomiting## in most enemies #{important_1}#1## time when caught in it.",
 		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "Fires a round that creates a #{stats_positive}#cloud of poisonous gas## at point of impact.\nThe gas has a radius of #{skill_color}#6## meters, lingers for #{skill_color}#8## seconds, deals #{skill_color}#180## damage over #{skill_color}#6## seconds, and #{stats_positive}#induces vomiting## in most enemies #{important_1}#1## time when caught in it.",
@@ -1588,6 +1594,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_cleangold"] = "Clean Gold",
 		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
 		["bm_wskn_resmod_imissfauna_desc"] = "Mother Nature would never betray you... right?",
+		["bm_wskn_resmod_uuuuu"] = "Gothic Ceres Gold",
+		["bm_wskn_resmod_uuuuu_desc"] = "Nature is kind of dark and beautiful at the same time, right?",
 		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
 		["bm_wskn_resmod_ownthiscity_desc"] = "It's our time now! Let's get this shit started!",
 		["bm_wskn_resmod_kindoffeel"] = "Abstract Dark Gold",
@@ -1762,7 +1770,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = "ms",
 		["bm_menu_dodge_grace"] = "ADDITIONAL GRACE PERIOD ON DODGE: #{skill_color}#$grace_bonus##",
-		["bm_menu_dodge_grace_cap"] = "Grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's risk level of #{risk}#$risk_level##",
+		["bm_menu_dodge_grace_cap"] = "Grace period on dodge is capped to #{important_1}#$grace_bonus_cap## due to the current job's ",
+		["bm_menu_dodge_grace_jp_cap"] = "#{important_1}#Pro-Job## rating",
+		["bm_menu_dodge_grace_both"] = " and ",
+		["bm_menu_dodge_grace_diff_cap"] = "risk level of #{risk}#$risk_level##",
 
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen## \nArmor regenerated when damaging enemies: #{skill_color}#$active_armor_regen##",
@@ -2736,6 +2747,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_hk51b"] = "Versteckt-51B",
 					--Microgun
 					["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
+					--CUSTOM SMGs
+						["bm_w_sig_xm250"] = "FIK MG277",
 
 				--[[ SHOTGUNS ]]
 					--Grimm
@@ -4467,8 +4480,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Spring",
 		["menu_mutator_captain_replace_summer"] = "Summers",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
-		["mutator_captain_replace_desc"] = "Allows you change captain that may appear on heist.",
-		["mutator_captain_replace_longdesc"] = "Allows you change captain that may appear on heist.\n\nNote: Mutator can't override scripted captain encounters.",
+		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
+		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 		
 
 		["mutator_spawn_mult"] = "Amplified Response",

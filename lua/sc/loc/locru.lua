@@ -179,7 +179,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSevenHoldDeployCancelTitleID"] = "Снаряжение отменяет интеракцию",
 		["RestorationModSevenHoldDeployCancelDescID"] = "Кнопка снаряжения будет отменять текущую интеракцию. Требует включения Липких интеракций.",
 		["RestorationModQueuedShootingTitleID"] = "Очередь нажатий",
-		["RestorationModQueuedShootingDescID"] = "Включить/выключить занос нажатия на курок в очередь для полуавтоматического оружия.",
+		["RestorationModQueuedShootingDescID"] = "Включить/выключить занос нажатия на курок в очередь для полуавтоматического оружия.\nПри использовании этой функции выключает оригинальную (ванильную) версию этой настройки.",
 		["RestorationModQueuedShootingWindowTitleID"] = "Чувствительность очереди",
 		["RestorationModQueuedShootingWindowDescID"] = "Время, которое ваши нажатия будут в очереди, в зависимости от задержки оружия. Чем выше, тем раньше нажатия попадут в очередь.",
 		["RestorationModQueuedShootingExcludeTitleID"] = "Ограничение очереди",
@@ -190,6 +190,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoADSRecoilAnimsDescID"] = "Отключает анимацию отдачи во время прицеливания. Опция не влияет на некоторое оружие (луки, огнеметы)",
 		["RestorationModNoSwapOnReviveTitleID"] = "Отключить переключение оружия после поднятия",
 		["RestorationModNoSwapOnReviveDescID"] = "Когда вас поднимут, оружие больше не будет переключаться с вторичного на основное.",
+		["RestorationModManualReloadsTitleID"] = "Перезарядка вручную",
+		["RestorationModManualReloadsDescID"] = "Выключает автоматическую перезарядку, когда магазин оружия пуст.\nВсегда включено на миссиях с модификатором Pro-Job, независимо от настройки.",
 		["RestorationModSecondSightSprintTitleID"] = "Кнопка спринта включает второй прицел",
 		["RestorationModSecondSightSprintDescID"] = "Переключаться между прицелами с помощью кнопки спринта, а не гаджета. С этой настройкой нельзя использовать спринт во время прицеливания, а кнопка гаджета будет включать и выключать гаджеты даже во время прицеливания.",
 		["RestorationModAimDeploysBipodTitleID"] = "Прицеливание с сошками",
@@ -1001,7 +1003,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "HAVE NO FEAR, CAPTAIN WINTERS IS HERE!!",
+			["hud_assault_vip"] = "ГОСПОДА ГРАБИТЕЛИ, ВЫ ОКРУЖЕНЫ",
 		})
 	elseif captain_type == restoration.captain_types.winter then
 		LocalizationManager:add_localized_strings({	
@@ -2237,6 +2239,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_cleangold"] = "Чистое золото",
 		["bm_wskn_resmod_imissfauna"] = "Обработанное золото",
 		["bm_wskn_resmod_imissfauna_desc"] = "",
+		["bm_wskn_resmod_uuuuu"] = "Готическая Церера",
+		["bm_wskn_resmod_uuuuu_desc"] = "",
 		["bm_wskn_resmod_ownthiscity"] = "Царское золото",
 		["bm_wskn_resmod_kindoffeel"] = "Абстрактно-темное золото",
 		["bm_wskn_resmod_kindoffeel2"] = "Абстрактно-яркое золото",
@@ -2423,8 +2427,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = " мс",
 		["bm_menu_dodge_grace"] = "Увеличение длительности периода бессмертия при увороте: #{skill_color}#$grace_bonus##\n\nПериод бессмертия - время, во время которого вы не можете получить урон или потерять уворот.",
-		["bm_menu_dodge_grace_cap"] = "Максимальное увеличение длительности периода бессмертия равно #{important_1}#$grace_bonus_cap##, потому что сейчас выбрана сложность #{risk}#$risk_level##",
-
+		["bm_menu_dodge_grace_cap"] = "Максимальное увеличение длительности периода бессмертия равно #{important_1}#$grace_bonus_cap##, потому что стоит ",
+		["bm_menu_dodge_grace_jp_cap"] = "модификатор #{important_1}#Pro-Job##",
+		["bm_menu_dodge_grace_both"] = " и ",
+		["bm_menu_dodge_grace_diff_cap"] = "сложность #{risk}#$risk_level##",
 		["bm_menu_armor_grinding_1"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Восстановление брони за раз: #{skill_color}#$passive_armor_regen## \nВосстановление брони за нанесение урона: #{skill_color}#$active_armor_regen##",
 
@@ -2960,6 +2966,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_smg45"] = "Страйкер .45",			
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "КРАЙНЕТ Тайфун",
+			
+			["bm_w_sig_xm250"] = "ФИК МГ277",
 		["bm_w_tecci"] = "Контрабандист",
 		["bm_w_m249"] = "КСП 90",
 		["bm_w_kacchainsaw"] = "Кэмпбелл 74",
@@ -5071,7 +5079,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Ковбой",
-				["menu_gun_fighter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пистолеты## перезаряжаются на #{skill_color}#$skill_value_b1## быстрее.\n\nШтраф к точности при стрельбе во время движения уменьшен на #{skill_color}#$skill_value_p1## для пистолетов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Пистолеты## перезаряжаются еще на #{skill_color}#$skill_value_p2## быстрее.",
+				["menu_gun_fighter_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Пистолеты## перезаряжаются на #{skill_color}#$skill_value_b1## быстрее.\n\nШтраф к точности при стрельбе во время движения уменьшен на #{skill_color}#$skill_value_b2## для пистолетов.\n\nУменьшение штрафа на точность зависит от стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Пистолеты## перезаряжаются еще на #{skill_color}#$skill_value_p2## быстрее.",
 
 				--Akimbo--
 				["menu_akimbo_skill_sc"] = "Акимбо",

@@ -31,6 +31,28 @@ return {
             {id = 100096, delay = 0}
 		}
 	},
+	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
+	--Disables the turret
+	[102821] = {
+		values = {
+			enabled = false
+		}
+	},
+	[101965] = {
+		values = {
+			enabled = false
+		}
+	},
+	--Forces the reinforcments to spawn instead
+	[102819] = {
+		values = {
+			difficulty_overkill = "true",
+			difficulty_overkill_145 = "true",
+			difficulty_easy_wish = "true",
+			difficulty_overkill_290 = "true",
+			difficulty_sm_wish = "true"
+		}
+	},
 	--Replace some Rooftop SWATs with Titan Snipers on Overkill-DS PJ
 	[101735] = {
 		values = {

@@ -1034,7 +1034,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_watchdogs_stage2_briefing"] = "Mia Calienté is a real piece of work, friends. For years she's been the brains behind the Murkywater's operations in DC. Not too long ago, Murkywater took over a warehouse at the docks and they've using it as an additional distribution point. Our target is there checking in on some loot recently plundered from abroard. We're going to get in there, grab the dwankie and take her hostage. The Murkies can't afford to lose her, they will pay for her release, maybe with the aforementioned and rather valuable plunder, what do you say gang?",
 		
 		--Side Jobs
-		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above without killing Captain Spring."
+		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above without killing Captain Spring.",
+		
+		
+		--Generic Captain Text
+		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT"
 		
 	})
 

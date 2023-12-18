@@ -17625,7 +17625,21 @@ function CharacterTweakData:_set_sm_wish()
 	self:_set_characters_melee_preset("2.5", "2")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
-	self.hrt.can_shoot_while_dodging = true		
+	self.hrt.can_shoot_while_dodging = true
+
+	--Bosses that use Machine Guns have pushback abilities applied
+	--The Commissar
+	self.mobster_boss.dt_suppress = {
+		range = 500
+	}
+	--Overkill MC Boss
+	self.biker_boss.dt_suppress = {
+		range = 500
+	}
+	--Gabriel
+	self.deep_boss.dt_suppress = {
+		range = 500
+	}
 	
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5

@@ -227,13 +227,13 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	}
 	
 	self.jobs.vit.contract_cost = {			
-		750000,
-		950000,
-		1000000,
-		1250000,
-		1800000,
-		1800000,
-		1800000
+		54000,
+		108000,
+		270000,
+		540000,
+		700000,
+		700000,
+		700000
 	}
 	
 	--Undercover
@@ -248,13 +248,13 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	}
 	
 	self.jobs.man.contract_cost = {			
-		800000,
-		950000,
-		1000000,
-		1250000,
-		1600000,
-		1600000,
-		1600000
+		54000,
+		108000,
+		270000,
+		540000,
+		700000,
+		700000,
+		700000
 	}
 	
 	--Midland Ranch

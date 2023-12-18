@@ -995,7 +995,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга.",
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT"
+		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ"
 		
 	})
 
@@ -4557,8 +4557,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		
 		["mutator_asu_buff"] = "Мощь всех стволов",
 		["menu_mutator_captain_asu_buff_toggle"] = "Включить усиления урона для капитанов",
-		["mutator_asu_buff_desc"] = "ASU теперь может усиливать оружия особых противников и он всегда усиливает урон оружий по-максимуму.",
-		["mutator_asu_buff_longdesc"] = "ASU теперь может усиливать оружия особых противников (кроме клокеров) и усиливает урон оружий как на сложность Смертный Приговор.",
+		["mutator_asu_buff_desc"] = "ASU теперь может усиливать оружия особых противников.",
+		["mutator_asu_buff_longdesc"] = "ASU теперь может усиливать оружия особых противников (кроме клокеров) и усиливает урон оружий как на сложности Смертный Приговор.",
 		
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
 		["menu_mutator_flashbang_cooking_time"] = "Время до срабатывания (в с)",

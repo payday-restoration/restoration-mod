@@ -84,6 +84,23 @@ return {
             time = timelock_fast
 		}
 	},
+	-- Enable roof spawns
+	[100006] = {
+		values = {
+			spawn_groups = { 100019, 100007, 100692 }
+		}
+	},
+	-- Roof spawn intervals
+	[100007] = {
+		values = {
+			interval = 20
+		}
+	},
+	[100692] = {
+		values = {
+			interval = 20
+		}
+	},
 	--Harasser Tweaks
 	[100883] = {
 		values = {

@@ -562,6 +562,16 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		end
 	end
 	
+	
+	--Fixes gangsters not having any pain burn lines
+	if self._prefix == "ict1_" or self._prefix == "ict2_" or self._prefix == "bik1_" or self._prefix == "bik2_" or self._prefix == "lt1_" or self._prefix == "lt2_" or self._prefix == "rt1_" or self._prefix == "rt2_" then
+			if sound_name == "burnhurt" then
+				full_sound = "l1n_burnhurt"
+			elseif sound_name == "burndeath" then
+				full_sound = "l1n_burndeath"
+			end
+		end
+	
 	if self._prefix == "l4n_" then
 		if sound_name == "x02a_any_3p" then
 			sound_name = "x01a_any_3p"

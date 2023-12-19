@@ -1165,13 +1165,19 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								1
 							}
 							local random = vars[math.random(#vars)]
-							recoil_v = (recoil_v or 1) * math.rand(0.75, 1.5)
-							recoil_h = (recoil_h or 0) * math.rand(0.75, 1.5)
 							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
 							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
+							local category_mul = 1
+							for _, category in ipairs(weap_base:categories()) do
+								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
+								category_mul = category_mul * shake_mul
+							end
+							recoil_v = (recoil_v or 1) * math.rand(0.5, 1.5) * category_mul
+							recoil_h = (recoil_h or 0) * math.rand(0.5, 1.5)
 							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
-								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier, 0, 0 )
+								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier * fire_rate, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
+								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier * fire_rate, 0, 0 )
 							end
 							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
 							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)

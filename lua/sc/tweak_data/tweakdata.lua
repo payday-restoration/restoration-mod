@@ -70,7 +70,8 @@ tweak_data.grenade_launcher = {
 
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
-	ads_moving_spread_mult = 1.25
+	ads_moving_spread_mult = 1.25,
+	shake_mul = 2
 }
 	tweak_data.shotgun_light = {
 		hipfire_spread_mult = 1.25,
@@ -91,9 +92,11 @@ tweak_data.shotgun = {
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
+		shake_mul = 0.25
 	}
 		tweak_data.flamethrower_lmg = {
 			ads_move_speed_mult = 0.7,
+			shake_mul = 0.25
 		}
 
 tweak_data.smg = {
@@ -111,10 +114,12 @@ tweak_data.smg = {
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 3,
-		hipfire_spread_mult = 3.3333
+		hipfire_spread_mult = 3.3333,
+		shake_mul = 1.5
 	}
 		tweak_data.lmg_moving = {
-			ads_moving_recoil = 0.8695652
+			ads_moving_recoil = 0.8695652,
+			shake_mul = 0.6667
 		}
 		tweak_data.rambo = {
 			hipfire_spread_mult = 0.5
@@ -122,7 +127,8 @@ tweak_data.smg = {
 		tweak_data.wolf_brigade = {
 			ads_moving_recoil = 0.8695652,
 			moving_spread_mult = 0.2,
-			hipfire_spread_mult = 0.5
+			hipfire_spread_mult = 0.5,
+			shake_mul = 0.6667
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,
@@ -139,23 +145,27 @@ tweak_data.snp = {
 	ads_move_speed_mult = 0.45,
 	ads_stationary_spread_mult = 0.2,
 	hipfire_spread_mult = 1.5,
-	hipfire_moving_spread_mult = 1.5
+	hipfire_moving_spread_mult = 1.5,
+	shake_mul = 1.2
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
 		ads_moving_recoil = 1.1,
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
-		ads_move_speed_mult = 0.888889 --lowered to 0.4
+		ads_move_speed_mult = 0.888889, --lowered to 0.4
+		shake_mul = 1.2
 	}
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.05,
 			hipfire_moving_spread_mult = 0.1,
 			ads_moving_spread_mult = 0.1,
+			shake_mul = 0.1
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
-		ads_move_speed_mult = 0.6
+		ads_move_speed_mult = 0.6,
+		shake_mul = 1.2
 	}
 
 tweak_data.assault_rifle = {
@@ -163,7 +173,8 @@ tweak_data.assault_rifle = {
 	ads_moving_recoil = 1.05,
 	ads_stationary_spread_mult = 0.9,
 	ads_move_speed_mult = 0.45,
-	hipfire_spread_mult = 1.15
+	hipfire_spread_mult = 1.15,
+	shake_mul = 1.05
 }
 	tweak_data.crb = {
 		ads_moving_recoil = 0.95238,
@@ -174,7 +185,8 @@ tweak_data.assault_rifle = {
 	tweak_data.dmr = {
 		hipfire_spread_mult = 1.7391304,
 		moving_spread_mult = 1.5,
-		ads_move_speed_mult = 0.888889 --lowered to 0.4
+		ads_move_speed_mult = 0.888889, --lowered to 0.4
+		shake_mul = 1.1
 	}
 
 tweak_data.akimbo = {

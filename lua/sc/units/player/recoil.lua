@@ -239,6 +239,7 @@ function FPCameraPlayerBase:recoil_kick(up, down, left, right, min_h_recoil)
 	local min_h_recoil = min_h_recoil or 0.25
 	h =  h < 0 and math.min( left * min_h_recoil , h ) or math.max( right * min_h_recoil , h )
 	self._recoil_kick.h.accumulated = (self._recoil_kick.h.accumulated or 0) + h
+	return v, h
 end
 
 function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)

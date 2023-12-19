@@ -851,6 +851,7 @@ function PlayerStandard:_chk_action_stop_shooting(new_action)
 	end
 end
 
+
 function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local new_action, action_wanted = nil
 	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and (input.btn_primary_attack_state or input.btn_primary_attack_release or  self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
@@ -1117,24 +1118,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 						local weap_tweak_data = weap_base.weapon_tweak_data and weap_base:weapon_tweak_data() or tweak_data.weapon[weap_base:get_name_id()]
 
-						if not params or not params.no_shake then
-							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
-							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
-							local vars = {
-								-1,
-								1
-							}
-							local random = vars[math.random(#vars)]
-							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
-							local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
-							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-								self._ext_camera:play_shaker("whizby", random * math.rand(0.01, 0.1) * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
-								self._ext_camera:play_shaker("player_land", math.rand(-0.01, -0.1) * (recoil_multiplier * 0.5) * shake_multiplier, 0, 0 )
-							end
-							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
-							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
-						end
-
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
@@ -1172,7 +1155,27 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 						local min_h_recoil = kick_tweak_data.min_h_recoil
-						self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier, min_h_recoil)
+						local recoil_v, recoil_h = self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier, min_h_recoil)
+
+						if not params or not params.no_shake then
+							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
+							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+							local vars = {
+								-1,
+								1
+							}
+							local random = vars[math.random(#vars)]
+							recoil_v = (recoil_v or 1) * math.rand(0.75, 1.5)
+							recoil_h = (recoil_h or 0) * math.rand(0.75, 1.5)
+							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
+							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
+								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
+								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier, 0, 0 )
+							end
+							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
+							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
+						end
 
 						if self._shooting_t then
 							local time_shooting = t - self._shooting_t

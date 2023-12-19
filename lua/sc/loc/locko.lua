@@ -1052,7 +1052,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_challenge_menu_challenge_moon_6_obj"] = "도살장 작업에서 오버킬 난이도 이상으로 캡틴 스프링을 물리치지 않은채로 완료하십시오.",
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT"
+		["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기"
 		
 	})
 
@@ -1086,9 +1086,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "악몽을 마주하고 잠에서 깨어나라",
 		})
-	else LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기", --이것 또한 바꿀 필요가 있어서 추가했음
-		})	
 	end
 	
 end)

@@ -6150,9 +6150,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	self.parts.wpn_fps_smg_mp5_fg_mp5sd.stats = {
 		value = 2,
 		suppression = 12,
-		alert_size = -1
+		alert_size = -1,
+		recoil = 2,
 	}
 	self.parts.wpn_fps_smg_mp5_fg_mp5sd.perks = {"silencer"}
+	self.parts.wpn_fps_smg_mp5_fg_mp5sd.custom_stats = {
+		rof_mult = 0.875
+	}
 	
 	--(Compact-5) Drum Mag
 	self.parts.wpn_fps_smg_mp5_m_drum = {

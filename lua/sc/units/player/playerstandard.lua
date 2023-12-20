@@ -843,14 +843,12 @@ PlayerStandard._primary_action_get_value = {
 		end
 	}
 }
-
 function PlayerStandard:_chk_action_stop_shooting(new_action)
 	if not new_action then
 		self._already_fired = nil
 		self:_check_stop_shooting()
 	end
 end
-
 
 function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local new_action, action_wanted = nil
@@ -1170,11 +1168,12 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
 							local category_mul = 1
 							for _, category in ipairs(weap_base:categories()) do
+								log(tostring(category ))
 								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
 								category_mul = category_mul * shake_mul
 							end
-							recoil_v = (recoil_v or 1) * math.rand(0.5, 1.5) * category_mul
-							recoil_h = (recoil_h or 0) * math.rand(0.5, 1.5)
+							recoil_v = ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul
+							recoil_h = (recoil_v == 0 and 0) or ((recoil_h or 0) * math.rand(0.5, 1.5))
 							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
 								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier * fire_rate, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
 								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier * fire_rate, 0, 0 )

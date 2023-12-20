@@ -160,7 +160,7 @@ tweak_data.snp = {
 			hipfire_spread_mult = 0.05,
 			hipfire_moving_spread_mult = 0.1,
 			ads_moving_spread_mult = 0.1,
-			shake_mul = 0.1
+			shake_mul = 0
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,

@@ -17370,7 +17370,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sig_xm250.AMMO_MAX = 240
 		self.sig_xm250.FIRE_MODE = "auto"
 		self.sig_xm250.fire_mode_data.fire_rate = 0.075
-		self.sig_xm250.CAN_TOGGLE_FIREMODE = true
+		self.sig_xm250.CAN_TOGGLE_FIREMODE = false
+		self.sig_xm250.BURST_FIRE = false
 		self.sig_xm250.kick = {}
 		self.sig_xm250.kick = self.stat_info.kick_tables.horizontal_recoil_mg
 		self.sig_xm250.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"

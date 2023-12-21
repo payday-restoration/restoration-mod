@@ -20360,6 +20360,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	self.parts.wpn_fps_upg_ak_s_zenitco.custom_stats = deep_clone(stocks.nocheeks_to_folder_stats)
 
 	--Taktika Railed Cover
+	self.parts.wpn_fps_upper_mount_unit = {
+		type = "shitass",
+		name_id = "none",
+		unit = "units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9/wpn_fps_smg_pm9"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.pcs = {
 		10,
 		20,
@@ -20372,13 +20382,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		spread = -1,
 		recoil = 2,
 	}
-	--[[
-	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override)
-	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_rpg7_sight_adapter = {
-		a_obj = "a_o_sm"
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.forbids = {
+		"wpn_fps_upg_o_ak_scopemount"
 	}
-	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.adds = {"wpn_fps_rpg7_sight_adapter"}
-	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.a_obj = "a_o_sm"
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.adds = {
+		"wpn_fps_upper_mount_unit"
+	}
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override)
+	for part_id, i in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override) do
+		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type ~= "foregrip" then
+			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[part_id].a_obj = "a_o"
+			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[part_id].parent = "shitass"
+		end
+	end
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.stance_mod = {
 		wpn_fps_ass_74 = {
 			translation = Vector3(-0.005, 15.5, -4.6)
@@ -20400,6 +20416,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 			translation = Vector3(-0.005, 15.5, -4.6)
 		}
 	}
+	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0, -3.6, 1.13)
+		end
+	end
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter_piggyback = {}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter_piggyback = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter)
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter_piggyback.stance_mod) do
@@ -20472,7 +20493,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 			weap.translation = weap.translation + Vector3(0,10,0)
 		end
 	end
-	--]]
 
 	--Taktika Charging Handle
 	self.parts.wpn_fps_upg_ak_dh_zenitco.pcs = {

@@ -20361,7 +20361,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 
 	--Taktika Railed Cover
 	self.parts.wpn_fps_upper_mount_unit = {
-		type = "shitass",
+		type = "shitass2",
 		name_id = "none",
 		unit = "units/pd2_dlc_sawp/weapons/wpn_fps_smg_pm9/wpn_fps_smg_pm9"
 		,
@@ -20378,9 +20378,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.supported = true
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.stats = {
-		value = 3,
-		spread = -1,
-		recoil = 2,
+		value = 2,
+		spread = -1
 	}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.forbids = {
 		"wpn_fps_upg_o_ak_scopemount",
@@ -20397,7 +20396,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	for part_id, i in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override) do
 		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type ~= "foregrip" then
 			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[part_id].a_obj = "a_o"
-			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[part_id].parent = "shitass"
+			self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[part_id].parent = "shitass2"
 		end
 	end
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.stance_mod = {
@@ -20415,6 +20414,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 		},
 		wpn_fps_smg_akmsu = {
 			translation = Vector3(-0.005, 15.5, -4.34)
+		},
+
+		wpn_fps_lmg_rpk = {
+			translation = Vector3(0.045, 17.5, -4.55)
 		},
 
 		wpn_fps_ass_akm_nomag = {

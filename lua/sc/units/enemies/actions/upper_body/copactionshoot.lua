@@ -828,6 +828,7 @@ function CopActionShoot:update(t)
 
 				self._ext_movement:action_request(reload_action)
 			end
+			CopActionReload._play_reload(self, t)
 		elseif self._autofiring then
 			if not self._common_data.allow_fire or not target_vec then
 				self._weapon_base:stop_autofire()

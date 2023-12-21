@@ -850,6 +850,7 @@ function PlayerStandard:_chk_action_stop_shooting(new_action)
 	end
 end
 
+
 function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local new_action, action_wanted = nil
 	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and (input.btn_primary_attack_state or input.btn_primary_attack_release or  self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
@@ -1168,13 +1169,16 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
 							local category_mul = 1
 							for _, category in ipairs(weap_base:categories()) do
-								log(tostring(category ))
 								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
 								category_mul = category_mul * shake_mul
 							end
-							recoil_v = ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul
-							recoil_h = (recoil_v == 0 and 0) or ((recoil_h or 0) * math.rand(0.5, 1.5))
-							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
+							local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+							if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+								force_ads_recoil_anims = nil
+							end
+							recoil_v = math.clamp( ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul , 0, 5)
+							recoil_h =(recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2, 2)
+							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims then
 								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier * fire_rate, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
 								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier * fire_rate, 0, 0 )
 							end
@@ -2843,9 +2847,11 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 
 	if not action_forbidden then
 		if bipod_part and bipod_part[1] then
-			local bipod_unit = bipod_part[1].unit:base()
+			local bipod_unit = bipod_part[1].unit and bipod_part[1].unit.base and bipod_part[1].unit:base()
 
-			bipod_unit:check_state(autodeploy)
+			if bipod_unit then
+				bipod_unit:check_state(autodeploy)
+			end
 
 			new_action = true
 		end

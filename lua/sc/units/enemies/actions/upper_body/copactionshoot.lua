@@ -883,9 +883,9 @@ function CopActionShoot:update(t)
 				local fired = self._weapon_base:trigger_held(shoot_from_pos, target_vec, dmg_mul, autotarget, nil, nil, nil, self._attention.unit)
 
 				if fired then
-					if fired.hit_enemy and fired.hit_enemy.type == "death" and self._unit:unit_data().mission_element then
-						self._unit:unit_data().mission_element:event("killshot", self._unit)
-					end
+					--if fired.hit_enemy and fired.hit_enemy.type == "death" and self._unit:unit_data().mission_element then
+					--	self._unit:unit_data().mission_element:event("killshot", self._unit)
+					--end
 					
 					if vis_state == 1 and not ext_anim.recoil and not ext_anim.base_no_recoil and not ext_anim.move then
 						if self._tank_animations then

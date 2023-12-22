@@ -46,11 +46,13 @@ tweak_data.pistol = {
 
 tweak_data.bow = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.6
+	ads_move_speed_mult = 0.6,
+	shake_mul = 0
 }
 tweak_data.crossbow = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.5
+	ads_move_speed_mult = 0.5,
+	shake_mul = 0
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 1.6,

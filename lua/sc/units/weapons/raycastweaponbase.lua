@@ -210,8 +210,17 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
    return raycast_current_damage_orig(self, dmg_mul)
 end
 
+local ids_volley = Idstring("volley")
 function RaycastWeaponBase:get_object_damage_mult()
-	return 1
+	if self._fire_mode and self._fire_mode == ids_volley then
+		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
+		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
+		return volley_fire_mode and volley_fire_mode.object_damage_mult or 0.75
+	elseif self._rays and self._rays == 1 and self:weapon_tweak_data().object_damage_mult_single_ray then
+		return self:weapon_tweak_data().object_damage_mult_single_ray
+	else
+		return self:weapon_tweak_data().object_damage_mult or 1
+	end
 end
 
 function RaycastWeaponBase:is_knock_down()
@@ -1154,6 +1163,8 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 		local body_dmg_ext = col_ray.body:extension() and col_ray.body:extension().damage
 
 		if body_dmg_ext then
+			local rays = weapon_unit and weapon_unit.base and ((not weapon_unit:base():weapon_tweak_data().alt_shotgunraycast and weapon_unit:base()._rays) or 1)
+			local object_damage_mult = (weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1) / rays
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			local body_damage = network_damage / 163.84
@@ -1162,7 +1173,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
 				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
 
-				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage * object_damage_mult))
 			end
 
 			local local_damage = not blank or hit_unit:id() == -1
@@ -1174,7 +1185,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				body_dmg_ext:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
 
 				if hit_unit:alive() then
-					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage)
+					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage * object_damage_mult)
 				end
 
 				if weap_cats and hit_unit:alive() then

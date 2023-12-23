@@ -236,6 +236,7 @@
 					<hook file="sc/units/player/playersound.lua" source_file="lib/units/beings/player/playersound"/>
 					<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 					<hook file="sc/units/player/playerincapacitated.lua" source_file="lib/units/beings/player/states/playerincapacitated"/>
+					<hook file="sc/units/player/playerfatal.lua" source_file="lib/units/beings/player/states/playerfatal"/>
 					<hook file="sc/units/player/playermaskoff.lua" source_file="lib/units/beings/player/states/playermaskoff"/>
 					<hook file="sc/units/player/playerturret.lua" source_file="lib/units/beings/player/states/playerturret"/>
 					<hook file="sc/units/player/playerdriving.lua" source_file="lib/units/beings/player/states/playerdriving"/>

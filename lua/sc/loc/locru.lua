@@ -4525,6 +4525,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medicdozers_desc"] = "Теперь появляются Дозеры-медики.",
 		["mutator_medicdozers_longdesc"] = "Каждый раз, когда появляется Бульдозер, есть 50% шанс, что его заменит Бульдозер-медик.\n\nЕсли включен мутатор 'Бульдозеры с полуавтоматическими дробовиками', Бульдозеры-медики будут заменять Черныйх Бульдозеров с шансом 33.3%.",
 
+		--Alternative arsenal
+		["mutator_enemy_damage_longdesc"] = "Players will take different damage than normal from being hit by enemies.",
+
+		--Because of Training
+		["mutator_enemy_health_longdesc"] = "Enemies will spawn with different health than normal, making them easier or harder to kill.",
+
 		["mutator_notitans"] = "Сокращение бюджета",
 		["mutator_notitans_desc"] = "Отключает Титановых юнитов.",
 		["mutator_notitans_longdesc"] = "Любые появления Титановых юнитов отключены.",

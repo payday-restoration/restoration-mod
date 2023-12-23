@@ -4516,6 +4516,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_medicdozers_desc"] = "在任意难度下生成医疗熊。",
         ["mutator_medicdozers_longdesc"] = "每当有一只熊生成时，这只熊都有50%的几率被替换为医疗熊。\n\n提示：如果启用了\"半自动喷子熊\"的突变，则黑熊只有33.3%的几率被替换为医疗熊。",
 
+		--Alternative arsenal
+		["mutator_enemy_damage_longdesc"] = "Players will take different damage than normal from being hit by enemies.",
+
+		--Because of Training
+		["mutator_enemy_health_longdesc"] = "Enemies will spawn with different health than normal, making them easier or harder to kill.",
+
         ["mutator_notitans"] = "资金不足",
         ["mutator_notitans_desc"] = "取消生成泰坦单位。",
         ["mutator_notitans_longdesc"] = "不会有泰坦敌人单位生成。",

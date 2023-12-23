@@ -1582,7 +1582,9 @@ function PlayerStandard:_start_action_intimidate(t, secondary)
 			sound_name = "f39_any"
 			interact_type = "cmd_point"
 
-			prime_target.unit:contour():add("mark_unit", true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+			if prime_target and prime_target.unit and prime_target.unit:contour() then
+				prime_target.unit:contour():add("mark_unit", true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+			end
 		elseif voice_type == "mark_turret" then
 			sound_name = "f44x_any"
 			interact_type = "cmd_point"

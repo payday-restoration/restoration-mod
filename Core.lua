@@ -306,6 +306,7 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
 		"sand", --The Ukrainian Prisoner
+		"deep", --Crude Awakening
 		--Skirmish heists below
 		"skm_big2",
 		"skm_mallcrasher",

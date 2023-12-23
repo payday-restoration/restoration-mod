@@ -3009,7 +3009,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_sierra458"] = "Sierra .458",
 				--[[ SNIPERS ]]
 					--MSR
-					["bm_w_msr"] = "Rattlesnake",	
+					["bm_w_msr"] = "Rattlesnake",
+					["bm_wp_snp_msr_ns_suppressor"] = "바이퍼 소음기",					
 					--R700
 					["bm_w_r700"] = "Reinfeld Model 700",	
 					--QBU88

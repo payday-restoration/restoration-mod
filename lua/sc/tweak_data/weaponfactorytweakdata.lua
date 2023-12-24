@@ -24266,7 +24266,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				zoom = 8
 			}
 			self.parts.wpn_fps_ass_ngsierra_optic_ngsw.stance_mod.wpn_fps_ass_ngsierra = {
-				translation = Vector3(-0.0, -5, 1.4)
+				translation = Vector3(-0.0, -10, -1),
+				rotation = Rotation(-0.03, -0.03, 0)
 			}
 	
 			self.parts.wpn_fps_ass_ngsierra_irons_angled.stance_mod.wpn_fps_snp_tti = { --funni thing to make this play nice with >:3's Mare's Leg

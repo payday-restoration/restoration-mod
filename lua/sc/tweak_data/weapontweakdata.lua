@@ -17349,7 +17349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.can_shoot_through_wall = false
 		self.mcx_spear.can_shoot_through_shield = false
 		self.mcx_spear.hs_mult = 1.33333
-		self.mcx_spear.armor_piercing_chance = 0.5
+		self.mcx_spear.armor_piercing_chance = 0.75
 		self.mcx_spear.reload_speed_multiplier  = 0.85
 		self.mcx_spear.timers.reload_empty = 2.6
 		self.mcx_spear.timers.reload_exit_empty = 0.7

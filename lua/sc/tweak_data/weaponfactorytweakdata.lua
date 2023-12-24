@@ -2419,6 +2419,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.005, 5, -0.115),
 			}
 
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ngsierra = {
+				translation = Vector3(0.02, -6.7, -2.66),
+			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mcx_spear = {
 				translation = Vector3(0.01, 2, -0.2),
 				rotation = Rotation(0.02, -0.055, 0)
@@ -22999,7 +23002,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				desc_id = "empty",
 				stats = { value = 0 }
 			}
-
 		end
 
 		if self.parts.wpn_fps_snp_pd3_lynx_bolt then
@@ -23091,7 +23093,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 			}
-
 		end
 	
 		if self.parts.wpn_fps_ass_t9fastburst_receiver then
@@ -24073,8 +24074,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_lmg_stoner63a.uses_parts, "wpn_fps_lmg_stoner63a_magazine_ext_01")
 			self.wpn_fps_lmg_stoner63a_npc.uses_parts = deep_clone(self.wpn_fps_lmg_stoner63a.uses_parts)
 		end
-
-		if self.parts.wpn_fps_ass_stoner63a_rifle_irons_modified then
+		if self.parts.wpn_fps_ass_stoner63a_rifle_irons_modified then --Stoner AR
 
 			self.parts.wpn_fps_ass_stoner63a_rifle_irons.supported = true
 			self.parts.wpn_fps_ass_stoner63a_rifle_irons.stance_mod = {
@@ -24111,7 +24111,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-		if self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude then
+		if self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude then --AYY LMAO
 
 			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.supported = true
 			self.parts.wpn_fps_pis_bf2042_ayylmao_slide.adds = {}
@@ -24138,7 +24138,318 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.custom_stats = nil
 			self.parts.wpn_fps_pis_bf2042_ayylmao_suppressor.perks = {"silencer"}
+		end
 
+		if self.parts.wpn_fps_ass_ngsierra_irons_angled then --MW2022 RM277
+			self.parts.wpn_fps_ass_ngsierra_magazine.supported = true
+			self.parts.wpn_fps_ass_ngsierra_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ngsierra_magazine.custom_stats = nil
+			self.parts.wpn_fps_ass_ngsierra_grip.supported = true
+			self.parts.wpn_fps_ass_ngsierra_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ngsierra_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_ngsierra_flash_hider.supported = true
+			self.parts.wpn_fps_ass_ngsierra_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ngsierra_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_ngsierra_flash_hider.perks = nil
+	
+			self.parts.wpn_fps_ass_ngsierra_barrel_short.supported = true
+			self.parts.wpn_fps_ass_ngsierra_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_long.supported = true
+			self.parts.wpn_fps_ass_ngsierra_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.supported = true
+			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.parts.wpn_fps_ass_ngsierra_suppressor.supported = true
+			self.parts.wpn_fps_ass_ngsierra_suppressor.has_description = true
+			self.parts.wpn_fps_ass_ngsierra_suppressor.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_ass_ngsierra_suppressor.stats = {
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_ass_ngsierra_suppressor.custom_stats = nil
+
+			self.parts.wpn_fps_ass_ngsierra_comb_ergo.supported = true
+			self.parts.wpn_fps_ass_ngsierra_comb_ergo.stats = {
+				value = 4,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_ngsierra_comb_ergo.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_ngsierra_comb_heavy.supported = true
+			self.parts.wpn_fps_ass_ngsierra_comb_heavy.stats = {
+				value = 2,
+				spread = 1,
+				recoil = 2,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_ngsierra_comb_heavy.custom_stats = nil
+
+			self.parts.wpn_fps_ass_ngsierra_grip_steady.supported = true
+			self.parts.wpn_fps_ass_ngsierra_grip_steady.stats = {
+				value = 2,
+				spread = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_ngsierra_grip_ass.supported = true
+			self.parts.wpn_fps_ass_ngsierra_grip_ass.stats = {
+				value = 3,
+				recoil = 4,
+				spread = -2
+			}
+			self.parts.wpn_fps_ass_ngsierra_grip_tac.supported = true
+			self.parts.wpn_fps_ass_ngsierra_grip_tac.stats = {
+				value = 5,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_ngsierra_grip_tac.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_ngsierra_grip_skeleton.supported = true
+			self.parts.wpn_fps_ass_ngsierra_grip_skeleton.stats = {
+				value = 6,
+				recoil = -4,
+				concealment = 2
+			}
+			self.parts.wpn_fps_ass_ngsierra_grip_skeleton.custom_stats = {
+				ads_speed_mult = 0.95
+			}
+
+			self.parts.wpn_fps_ass_ngsierra_xmag.supported = true
+			self.parts.wpn_fps_ass_ngsierra_xmag.stats = {
+				extra_ammo = 10,
+				concealment = -2,
+				reload = -2
+			}
+			self.parts.wpn_fps_ass_ngsierra_xmag.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+
+			self.parts.wpn_fps_ass_ngsierra_stock_heavy.supported = true
+			self.parts.wpn_fps_ass_ngsierra_stock_heavy.stats = {
+				value = 2,
+				recoil = 2,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_ngsierra_stock_heavy.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+			self.parts.wpn_fps_ass_ngsierra_stock_skeleton.supported = true
+			self.parts.wpn_fps_ass_ngsierra_stock_skeleton.stats = {
+				value = 6,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_ngsierra_stock_skeleton.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			self.parts.wpn_fps_ass_ngsierra_stock_tac.supported = true
+			self.parts.wpn_fps_ass_ngsierra_stock_tac.stats = {
+				value = 8,
+				recoil = -4,
+				concealment = 2
+			}
+			self.parts.wpn_fps_ass_ngsierra_stock_tac.custom_stats = {
+				ads_speed_mult = 0.95
+			}
+
+			self.parts.wpn_fps_ass_ngsierra_optic_ngsw.supported = true
+			self.parts.wpn_fps_ass_ngsierra_optic_ngsw.stats = {
+				value = 0,
+				zoom = 8
+			}
+			self.parts.wpn_fps_ass_ngsierra_optic_ngsw.stance_mod.wpn_fps_ass_ngsierra = {
+				translation = Vector3(-0.0, -5, 1.4)
+			}
+	
+			self.parts.wpn_fps_ass_ngsierra_irons_angled.stance_mod.wpn_fps_snp_tti = { --funni thing to make this play nice with >:3's Mare's Leg
+				translation = Vector3(-1.8, 4, -11.3),
+				rotation = Rotation(-0.02, 0.04, -45)
+			}
+		end
+
+		if self.parts.wpn_fps_ass_mcx_spear_am_default then --RJC9000 and PlayBONK's SIG MCX Spear
+			--no
+			self.parts.wpn_fps_ass_mcx_spear_am_default.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_am_default.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_am_default.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_am_default.custom_stats = nil
+			self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.custom_stats = nil
+			self.parts.wpn_fps_ass_mcx_spear_am_762.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_am_762.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_am_762.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_am_762.custom_stats = nil
+	
+			--DBAL Gadget
+			self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.custom_stats = nil
+	
+			--Default stock
+			self.parts.wpn_fps_ass_mcx_spear_stock.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_stock.custom_stats = nil
+			--Magpul SL
+			self.parts.wpn_fps_ass_mcx_spear_stock_sl.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_stock_sl.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_stock_sl.custom_stats = nil
+			--SPEAR LT
+			self.parts.wpn_fps_ass_mcx_spear_stock_lt.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_stock_lt.stats = deep_clone(stocks.adj_to_fold_stats)
+			self.parts.wpn_fps_ass_mcx_spear_stock_lt.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+	
+			--Default Suppressor
+			self.parts.wpn_fps_ass_mcx_spear_suppressor.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_suppressor.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_suppressor.stats = { 
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_ass_mcx_spear_suppressor.custom_stats = nil
+	
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stats = {
+				value = 0,
+				zoom = 8
+			}
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stance_mod.wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -5, 1.4)
+			}
+			
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stats = {
+				value = 0,
+				zoom = 8
+			}
+			self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stance_mod.wpn_fps_ass_mcx_spear = {
+				translation = Vector3(-0.0, -5, 1.4)
+			}
+	
+			--BCM Grip
+			self.parts.wpn_fps_ass_mcx_spear_vg_bcm.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_vg_bcm.stats = {
+				value = 0
+			}
+			--DD Grip
+			self.parts.wpn_fps_ass_mcx_spear_vg_dd.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_vg_dd.stats = {
+				value = 1,
+				recoil = 2,
+				concealment = -1
+			}
+	
+			--Default Grip
+			self.parts.wpn_fps_ass_mcx_spear_grip.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_grip.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_grip.stats = {}
+			self.parts.wpn_fps_ass_mcx_spear_grip.custom_stats = nil
+			--MCX Grip
+			self.parts.wpn_fps_ass_mcx_spear_grip_lt.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_grip_lt.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mcx_spear_grip_lt.custom_stats = nil
+	
+			--Default Mag
+			self.parts.wpn_fps_ass_mcx_spear_magazine.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_magazine.pcs = nil
+			self.parts.wpn_fps_ass_mcx_spear_magazine.stats = {}
+			self.parts.wpn_fps_ass_mcx_spear_magazine.custom_stats = nil
+			--Lancer Mag
+			self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.stats = {}
+			self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.custom_stats = nil
+			--Photoshop Mag
+			self.parts.wpn_fps_ass_mcx_spear_magazine_meme.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_magazine_meme.stats = {}
+			self.parts.wpn_fps_ass_mcx_spear_magazine_meme.custom_stats = nil
+	
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.supported = true
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.custom_stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.has_description = false
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.forbids = nil
+			self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.perks = nil
+	
+			self.wpn_fps_ass_mcx_spear.override = self.wpn_fps_ass_mcx_spear.override or {}
+			self.wpn_fps_ass_mcx_spear.override.wpn_fps_smg_schakal_vg_surefire = {
+				stats = {
+					value = 1,
+					recoil = 2,
+					concealment = -1
+				}
+			}
+			self.wpn_fps_ass_mcx_spear.override.wpn_fps_upg_m4_s_standard = {
+				stats = {},
+				custom_stats = {},
+			}
+	
+			self.wpn_fps_ass_mcx_spear_npc.default_blueprint = deep_clone(self.wpn_fps_ass_mcx_spear.default_blueprint)
+			self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
+			self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
+		end
+
+		if self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight then
+			self.parts.wpn_fps_lmg_sig_xm250_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_lmg_sig_xm250_magazine.custom_stats = {}
+			self.parts.wpn_fps_lmg_sig_xm250_stock.stats = { value = 0 }
+			self.parts.wpn_fps_lmg_sig_xm250_stock.custom_stats = {}
+	
+			self.parts.wpn_fps_lmg_sig_xm250_suppressor.supported = true
+			self.parts.wpn_fps_lmg_sig_xm250_suppressor.pcs = nil
+			self.parts.wpn_fps_lmg_sig_xm250_suppressor.stats = {
+				value = 0,
+				alert_size = -1,
+				suppression = -12
+			}
+			self.parts.wpn_fps_lmg_sig_xm250_suppressor.custom_stats = nil
+	
+			self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.supported = true
+			self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stats = {
+				value = 0,
+				zoom = 8
+			}
+			self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stance_mod = {
+				wpn_fps_lmg_sig_xm250 = {
+					translation = Vector3(0, -8, 1.95)
+				}		
+			}
+			self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight.stance_mod = {}
+	
+	
+			for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.default_blueprint) do
+				attachment_list = {
+					"wpn_fps_lmg_sig_xm250_irons_angled"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_lmg_sig_xm250.default_blueprint[i] = "resmod_dummy"
+					end
+				end
+			end
+	
+			for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_o_box"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_lmg_sig_xm250.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+	
+			self.wpn_fps_lmg_sig_xm250_npc.default_blueprint = deep_clone(self.wpn_fps_lmg_sig_xm250.default_blueprint)
+			self.wpn_fps_lmg_sig_xm250_npc.uses_parts = deep_clone(self.wpn_fps_lmg_sig_xm250.uses_parts)
 		end
 
 	--[[ GAMBYT'S MODS ]]
@@ -30164,185 +30475,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-	if self.parts.wpn_fps_ass_mcx_spear_am_default then --RJC9000 and PlayBONK's SIG MCX Spear
-
-		--no
-		self.parts.wpn_fps_ass_mcx_spear_am_default.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_am_default.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_am_default.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_am_default.custom_stats = nil
-		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_am_creedmoor.custom_stats = nil
-		self.parts.wpn_fps_ass_mcx_spear_am_762.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_am_762.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_am_762.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_am_762.custom_stats = nil
-
-		--DBAL Gadget
-		self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_gadget_dbal.custom_stats = nil
-
-		--Default stock
-		self.parts.wpn_fps_ass_mcx_spear_stock.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_stock.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_stock.custom_stats = nil
-		--Magpul SL
-		self.parts.wpn_fps_ass_mcx_spear_stock_sl.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_stock_sl.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_stock_sl.custom_stats = nil
-		--SPEAR LT
-		self.parts.wpn_fps_ass_mcx_spear_stock_lt.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_stock_lt.stats = deep_clone(stocks.adj_to_fold_stats)
-		self.parts.wpn_fps_ass_mcx_spear_stock_lt.custom_stats = deep_clone(stocks.adj_to_fold_stats)
-
-		--Default Suppressor
-		self.parts.wpn_fps_ass_mcx_spear_suppressor.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_suppressor.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_suppressor.stats = { 
-			value = 2,
-			suppression = 12,
-			alert_size = -1
-		}
-		self.parts.wpn_fps_ass_mcx_spear_suppressor.custom_stats = nil
-
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stats = {
-			value = 0,
-			zoom = 8
-		}
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw.stance_mod.wpn_fps_ass_mcx_spear = {
-			translation = Vector3(-0.0, -5, 1.4)
-		}
-		
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stats = {
-			value = 0,
-			zoom = 8
-		}
-		self.parts.wpn_fps_ass_mcx_spear_optic_ngsw_remote.stance_mod.wpn_fps_ass_mcx_spear = {
-			translation = Vector3(-0.0, -5, 1.4)
-		}
-
-		--BCM Grip
-		self.parts.wpn_fps_ass_mcx_spear_vg_bcm.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_vg_bcm.stats = {
-			value = 0
-		}
-		--DD Grip
-		self.parts.wpn_fps_ass_mcx_spear_vg_dd.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_vg_dd.stats = {
-			value = 1,
-			recoil = 2,
-			concealment = -1
-		}
-
-		--Default Grip
-		self.parts.wpn_fps_ass_mcx_spear_grip.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_grip.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_grip.stats = {}
-		self.parts.wpn_fps_ass_mcx_spear_grip.custom_stats = nil
-		--MCX Grip
-		self.parts.wpn_fps_ass_mcx_spear_grip_lt.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_grip_lt.stats = { value = 0 }
-		self.parts.wpn_fps_ass_mcx_spear_grip_lt.custom_stats = nil
-
-		--Default Mag
-		self.parts.wpn_fps_ass_mcx_spear_magazine.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_magazine.pcs = nil
-		self.parts.wpn_fps_ass_mcx_spear_magazine.stats = {}
-		self.parts.wpn_fps_ass_mcx_spear_magazine.custom_stats = nil
-		--Lancer Mag
-		self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.stats = {}
-		self.parts.wpn_fps_ass_mcx_spear_magazine_l7awm.custom_stats = nil
-		--Photoshop Mag
-		self.parts.wpn_fps_ass_mcx_spear_magazine_meme.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_magazine_meme.stats = {}
-		self.parts.wpn_fps_ass_mcx_spear_magazine_meme.custom_stats = nil
-
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.supported = true
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.stats = deep_clone(barrels.long_b3_stats)
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.custom_stats = deep_clone(barrels.long_b3_stats)
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.has_description = false
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.forbids = nil
-		self.parts.wpn_fps_ass_mcx_spear_barrel_marksman.perks = nil
-
-		self.wpn_fps_ass_mcx_spear.override = self.wpn_fps_ass_mcx_spear.override or {}
-		self.wpn_fps_ass_mcx_spear.override.wpn_fps_smg_schakal_vg_surefire = {
-			stats = {
-				value = 1,
-				recoil = 2,
-				concealment = -1
-			}
-		}
-		self.wpn_fps_ass_mcx_spear.override.wpn_fps_upg_m4_s_standard = {
-			stats = {},
-			custom_stats = {},
-		}
-
-		self.wpn_fps_ass_mcx_spear_npc.default_blueprint = deep_clone(self.wpn_fps_ass_mcx_spear.default_blueprint)
-		self.wpn_fps_ass_mcx_spear_npc.override = deep_clone(self.wpn_fps_ass_mcx_spear.override)
-		self.wpn_fps_ass_mcx_spear_npc.uses_parts = deep_clone(self.wpn_fps_ass_mcx_spear.uses_parts)
-	end
-
-	if self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight then
-		self.parts.wpn_fps_lmg_sig_xm250_magazine.stats = { value = 0 }
-		self.parts.wpn_fps_lmg_sig_xm250_magazine.custom_stats = {}
-		self.parts.wpn_fps_lmg_sig_xm250_stock.stats = { value = 0 }
-		self.parts.wpn_fps_lmg_sig_xm250_stock.custom_stats = {}
-
-		self.parts.wpn_fps_lmg_sig_xm250_suppressor.supported = true
-		self.parts.wpn_fps_lmg_sig_xm250_suppressor.pcs = nil
-		self.parts.wpn_fps_lmg_sig_xm250_suppressor.stats = {
-			value = 0,
-			alert_size = -1,
-			suppression = -12
-		}
-		self.parts.wpn_fps_lmg_sig_xm250_suppressor.custom_stats = nil
-
-		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.supported = true
-		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stats = {
-			value = 0,
-			zoom = 8
-		}
-		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.stance_mod = {
-			wpn_fps_lmg_sig_xm250 = {
-				translation = Vector3(0, -8, 1.95)
-			}		
-		}
-		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw_steelsight.stance_mod = {}
-
-
-		for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.default_blueprint) do
-			attachment_list = {
-				"wpn_fps_lmg_sig_xm250_irons_angled"
-			}
-			for _, remove_id in ipairs(attachment_list) do
-				if part_id == remove_id then
-					self.wpn_fps_lmg_sig_xm250.default_blueprint[i] = "resmod_dummy"
-				end
-			end
-		end
-
-		for i, part_id in pairs(self.wpn_fps_lmg_sig_xm250.uses_parts) do
-			attachment_list = {
-				"wpn_fps_upg_o_box"
-			}
-			for _, remove_id in ipairs(attachment_list) do
-				if part_id == remove_id then
-					self.wpn_fps_lmg_sig_xm250.uses_parts[i] = "resmod_dummy"
-				end
-			end
-		end
-
-		self.wpn_fps_lmg_sig_xm250_npc.default_blueprint = deep_clone(self.wpn_fps_lmg_sig_xm250.default_blueprint)
-		self.wpn_fps_lmg_sig_xm250_npc.uses_parts = deep_clone(self.wpn_fps_lmg_sig_xm250.uses_parts)
-
-	end
-
 	if self.parts.wpn_fps_upg_jackhammer_i_autofire then --Pawcio's Jackhammer
 
 		self.parts.wpn_fps_upg_jackhammer_i_autofire.supported = true
@@ -33246,13 +33378,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rof_mult = 0.6
 		}
 
-	end
-
-	if self.parts.wpn_fps_ass_ngsierra_irons_angled then
-		self.parts.wpn_fps_ass_ngsierra_irons_angled.stance_mod.wpn_fps_snp_tti = { --funni thing to make this play nice with >:3's Mare's Leg
-			translation = Vector3(-1.8, 4, -11.3),
-			rotation = Rotation(-0.02, 0.04, -45)
-		}
 	end
 
 	if self.parts.wpn_fps_pis_lapd_grip_pearl then

@@ -846,6 +846,7 @@ PlayerStandard._primary_action_get_value = {
 function PlayerStandard:_chk_action_stop_shooting(new_action)
 	if not new_action then
 		self._already_fired = nil
+		self._spin_up_shoot = nil
 		self:_check_stop_shooting()
 	end
 end

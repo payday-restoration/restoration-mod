@@ -19429,20 +19429,5 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			rotation = RotationCAP( 0, 0, 0 )
 		})
 
-		if self.bessy then
-			self:SetupAttachmentPoint( "bessy", {
-				name = "a_o",
-				base_a_obj = "a_ns",
-				position = Vector3( 0, -80, 1.8 ),
-				rotation = RotationCAP( 0, 0, 0 )
-			})
-			self:SetupAttachmentPoint( "bessy", {
-				name = "a_fl",
-				base_a_obj = "a_ns",
-				position = Vector3( -2.2, -30, -1.2 ),
-				rotation = RotationCAP( 0, 0, 185 )
-			})
-		end
-
 	end
 end)	

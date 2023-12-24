@@ -24157,10 +24157,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ngsierra_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
 			self.parts.wpn_fps_ass_ngsierra_barrel_long.supported = true
 			self.parts.wpn_fps_ass_ngsierra_barrel_long.stats = deep_clone(barrels.long_b1_stats)
-			self.parts.wpn_fps_ass_ngsierra_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
 			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.supported = true
 			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.stats = deep_clone(barrels.long_b3_stats)
-			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_ngsierra_barrel_heavy.custom_stats = deep_clone(barrels.long_b3_stats)
 
 			self.parts.wpn_fps_ass_ngsierra_suppressor.supported = true
 			self.parts.wpn_fps_ass_ngsierra_suppressor.has_description = true

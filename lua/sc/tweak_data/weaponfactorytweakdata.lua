@@ -4995,10 +4995,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	
 	--Plastic Stock
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_lmg_rpk_s_standard")
+
+	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_upg_o_sig")
 	
 	--No Stock
 	--table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_upg_ak_s_nostock")
-	--table.insert(self.wpn_fps_ass_akm_npc.uses_parts, "wpn_upg_ak_s_nostock")
 
 	self.wpn_fps_ass_akm_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm.uses_parts)
 end)
@@ -5098,6 +5100,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_snp_victor_s_mod0")
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_sig")
 	
 	self.wpn_fps_ass_akm_gold_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_gold.uses_parts)
 

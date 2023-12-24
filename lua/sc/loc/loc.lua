@@ -2428,7 +2428,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_ass_t9british_xmag_02"] = "STANAG 40 Rnd Mag",
 					["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30 Rnd Fast Mag",
 					--MCX Spear
-					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
+					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
 					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 75% of its damage through body armor, can pierce enemies and headshots deal 33% more damage to non-captain enemies.##",
 					--["bm_w_xeno"] = "MA14 Surge Rifle",	
 					["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",

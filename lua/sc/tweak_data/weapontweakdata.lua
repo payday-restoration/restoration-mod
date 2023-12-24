@@ -17461,11 +17461,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.can_shoot_through_shield = false
 		self.ngsierra.is_bullpup = true
 		self.ngsierra.hs_mult = 1.33333
-		self.ngsierra.armor_piercing_chance = 0.5
-		self.ngsierra.timers.reload_empty = 3.25
-		self.ngsierra.timers.reload_exit_empty = 1.1
-		self.ngsierra.timers.reload_not_empty = 2.35
-		self.ngsierra.timers.reload_exit_not_empty = 1.1
+		self.ngsierra.armor_piercing_chance = 0.75
+		self.ngsierra.timers.reload_empty = 3.21
+		self.ngsierra.timers.reload_exit_empty = 1.12
+		self.ngsierra.timers.reload_not_empty = 2.32
+		self.ngsierra.timers.reload_exit_not_empty = 1.13
 	end
 
 	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando

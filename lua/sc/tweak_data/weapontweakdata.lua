@@ -19387,7 +19387,6 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			position = Vector3( 0, 0, 0 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
-		--]]
 
 		self:SetupAttachmentPoint( "hk21", {
 			name = "a_s_fix",
@@ -19395,6 +19394,7 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			position = Vector3( 0, 1.35, 0 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
+		--]]
 
 		self:SetupAttachmentPoint( "ak5", {
 			name = "a_s_fix",

@@ -7726,6 +7726,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	self.parts.wpn_fps_lmg_hk21_g_ergo.stats = deep_clone(grips.quickdraw_1)
 	self.parts.wpn_fps_lmg_hk21_g_ergo.custom_stats = deep_clone(grips.quickdraw_1)
 
+	self.parts.wpn_fps_hk21_s_fix = {
+		type = "shitass_s",
+		name_id = "none",
+		a_obj = "a_s",
+		unit = "units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
 	--Adds Rails
 	self.wpn_fps_lmg_hk21.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_ass_g3_body_rail" },
@@ -7779,6 +7790,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_hamr")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjust")
+
+	self.wpn_fps_lmg_hk21.override = self.wpn_fps_lmg_hk21.override or {}
+	self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = { 
+		adds = {"wpn_fps_hk21_s_fix"},
+		a_obj = "a_ns",
+		parent = "shitass_s",
+	}
+	self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_wood = { 
+		adds = {"wpn_fps_hk21_s_fix"},
+		a_obj = "a_ns",
+		parent = "shitass_s"
+	}
+	self.wpn_fps_lmg_hk21.override.wpn_fps_smg_mp5_s_adjust = { 
+		adds = {"wpn_fps_hk21_s_fix"},
+		a_obj = "a_ns",
+		parent = "shitass_s"
+	}
+	self.wpn_fps_lmg_hk21.override.wpn_fps_smg_mp5_s_adjusted = { 
+		adds = {"wpn_fps_hk21_s_fix"},
+		a_obj = "a_ns",
+		parent = "shitass_s"
+	}
+
 
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)	
 		
@@ -36163,10 +36197,6 @@ end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then
-		self.wpn_fps_lmg_hk21.override = self.wpn_fps_lmg_hk21.override or {}
-		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = { a_obj = "a_s_fix" } 
-		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_wood = { a_obj = "a_s_fix" } 
-
 		self.wpn_fps_ass_ak5.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5.override.wpn_fps_ass_s552_s_m4 = { a_obj = "a_s_fix" }
@@ -36287,20 +36317,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 			self.wpn_fps_spec_bessy_npc.uses_parts = deep_clone(self.wpn_fps_spec_bessy.uses_parts)
 		end
 	else
-		if not self.wpn_fps_lmg_hk21.override then
-			self.wpn_fps_lmg_hk21.override = {}
-		end
-		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = {
-			desc_id = "missing_cap",
-			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_s_standard",
-			third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_third_lmg_hk21_s_standard"
-		}
-		self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_wood = {
-			desc_id = "missing_cap",
-			unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_fps_lmg_hk21_s_standard",
-			third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_hk21_pts/wpn_third_lmg_hk21_s_standard"
-		}
-
 		if not self.wpn_fps_ass_asval.override then
 			self.wpn_fps_ass_asval.override = {}
 		end

@@ -4514,10 +4514,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_medicdozers_longdesc"] = "다양한 종류의 불도저가 생성될 때마다 50%의 확률로 메딕 도저로 교체됩니다. \n\n참고: 반자동 산탄총 불도저 뮤테이터도 활성화된 경우 메딕 도저는 33.3%의 확률로 블랙 도저를 교체합니다.",
 
 		--Alternative arsenal
-		["mutator_enemy_damage_longdesc"] = "Players will take different damage than normal from being hit by enemies.",
+		["mutator_enemy_damage_longdesc"] = "플레이어가 적에게 맞을 때 평소와 다른 피해를 입게합니다.",
 
 		--Because of Training
-		["mutator_enemy_health_longdesc"] = "Enemies will spawn with different health than normal, making them easier or harder to kill.",
+		["mutator_enemy_health_longdesc"] = "적들은 평소와 다른 체력으로 생성하게 하여 죽이기가 더 쉽게거나 어려워집니다.",
 
 		["mutator_notitans"] = "예산 삭감",
 		["mutator_notitans_desc"] = "타이탄 유닛을 비활성화합니다.",

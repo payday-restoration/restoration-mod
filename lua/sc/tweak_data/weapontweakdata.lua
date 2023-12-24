@@ -17068,6 +17068,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.bf2042_ayylmao.CLIP_AMMO_MAX = 17
 		self.bf2042_ayylmao.tactical_reload = 1
 		self.bf2042_ayylmao.lock_slide = true
+		self.bf2042_ayylmao.lock_slide_alt = true
 		self.bf2042_ayylmao.kick = self.stat_info.kick_tables.even_recoil
 		self.bf2042_ayylmao.supported = true
 		self.bf2042_ayylmao.ads_speed = 0.140
@@ -17319,6 +17320,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.mcx_spear.FIRE_MODE = "auto"
 		self.mcx_spear.CAN_TOGGLE_FIREMODE = true
 		self.mcx_spear.sounds.stop_fire = "g36_stop"
+		self.mcx_spear.lock_slide = true
+		self.mcx_spear.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.mcx_spear.kick = {}
 		self.mcx_spear.kick = self.stat_info.kick_tables.right_kick
 		self.mcx_spear.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -17453,6 +17456,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.stats_modifiers = nil
 		self.ngsierra.panic_suppression_chance = 0.05
 		self.ngsierra.sounds.spin_start = "wp_m249_lever_release"
+		self.ngsierra.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.ngsierra.spin_up_shoot = true
 		self.ngsierra.spin_up_t = 0.1
 		self.ngsierra.spin_down_t = 0.0000000001

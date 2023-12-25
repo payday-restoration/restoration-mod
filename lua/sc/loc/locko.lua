@@ -1663,7 +1663,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "중거리에서 효과적인 펠릿 타입.\n#{skill_color}#펠릿 수를 6개로 줄입니다.##",
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "원거리에서 효과적인 강력한 강철 슬러그탄.\n#{skill_color}#방탄복, 적, 방패, 타이탄 실드, 벽을 관통할 수 있습니다.##",
 		--MP153
-		["bm_w_mp153"] = "Argos I 산탄총",		
+		["bm_w_mp153"] = "Argos I 산탄총",
+		--REBECCA CYBERPUNK
+		["bm_w_rebecca_desc"] = "이건 약간 예측할 수 없지만 피비린내 나는 혼란을 가져올거야. 원래 주인과 비슷하게 말이지.",		
 		--Widowmaker TX
 		["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "확장 탄창",
 		["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "점사 시스템",
@@ -1812,7 +1814,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30발 패스트 탄창",		
 		--MCX Spear
 		["bm_w_mcx_spear"] = "Signature M5 소총",
-		["bm_mcx_spear_sc_desc"] = "#{skill_color}#방탄복을 관통해 대미지의 50%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",
+		["bm_mcx_spear_sc_desc"] = "#{skill_color}#방탄복을 관통해 대미지의 75%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",
 		["bm_w_ngsierra"] = "Amicus 277 소총",
 		["bm_ngsierra_sc_desc"] = "이 소총은 6.8x51mm TCVM 플라스틱 카트리지를 제어하기 위해 고유한 반동 완화 시스템을 사용합니다.\n\n#{skill_color}#방탄복을 관통해 대미지의 75%를 입히고 적 여러 명을 관통할 수 있으며 캡틴이 아닌 적에게 주는 헤드샷 피해량을 33%만큼 더 가합니다.##",		
 		--["bm_w_xeno"] = "MA14 Surge 소총",	

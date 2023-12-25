@@ -1187,14 +1187,10 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						end
 
 						if not self._hit_in_air and weap_base and weap_base:weapon_tweak_data().rebecca then
-							local force_a_nature = -self._ext_camera:forward():normalized()
-							if self._state_data.in_air then
-								force_a_nature = force_a_nature * 450
-								self._hit_in_air = true
-							else
-								force_a_nature = force_a_nature * 700
-							end
-							self:push(force_a_nature , true, 0.2, true)
+							self._hit_in_air = self._state_data.in_air and true
+							local force_a_nature = -self._ext_camera:forward()
+							force_a_nature = Vector3(force_a_nature.x, force_a_nature.y, ((self._state_data.in_air and force_a_nature.z) or 0)):normalized()
+							self:push(force_a_nature * ((self._state_data.in_air and 500) or 700) , true, 0.2, true)
 						end
 
 						if self._shooting_t then

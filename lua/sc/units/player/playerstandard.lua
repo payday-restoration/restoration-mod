@@ -851,7 +851,6 @@ function PlayerStandard:_chk_action_stop_shooting(new_action)
 	end
 end
 
-
 function PlayerStandard:_check_action_primary_attack(t, input, params)
 	local new_action, action_wanted = nil
 	action_wanted = (not params or params.action_wanted == nil or params.action_wanted) and (input.btn_primary_attack_state or input.btn_primary_attack_release or  self:is_shooting_count() or self:_is_charging_weapon() or input.real_input_pressed or self._queue_fire or self._spin_up_shoot)
@@ -1159,8 +1158,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 						if not params or not params.no_shake then
 							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
-							local
- shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
 							local vars = {
 								-1,
 								1
@@ -1179,8 +1177,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								force_ads_recoil_anims = nil
 							end
 							recoil_v = math.clamp( ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul , 0, 5)
-							recoil_h =(recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2, 2)
-							if self._state_data.in_steelsight and weap_base:weapon_tweak_data().force_shake or ((no_recoil_anims or weap_base._disable_steelsight_recoil_anim) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims) then
+							recoil_h = (recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2, 2)
+							if (self._state_data.in_steelsight or weap_base:weapon_tweak_data().hipfire_shake) and (weap_base:weapon_tweak_data().force_shake or ((no_recoil_anims or weap_base._disable_steelsight_recoil_anim) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims)) then
 								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.25 * shake_multiplier * fire_rate, var_lr * 0.25, vars[math.random(#vars)] * 0.25 )
 								self._ext_camera:play_shaker("player_land", recoil_v * -0.05 * shake_multiplier * fire_rate, 0, 0 )
 							end
@@ -1188,9 +1186,15 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
 						end
 
-						if weap_base and weap_base:weapon_tweak_data().rebecca then
-							local force_a_nature = -self._ext_camera:forward():with_z(-0.2):normalized() * 450
-							self:push(force_a_nature, true, 0.2, true)
+						if not self._hit_in_air and weap_base and weap_base:weapon_tweak_data().rebecca then
+							local force_a_nature = -self._ext_camera:forward():normalized()
+							if self._state_data.in_air then
+								force_a_nature = force_a_nature * 450
+								self._hit_in_air = true
+							else
+								force_a_nature = force_a_nature * 700
+							end
+							self:push(force_a_nature , true, 0.2, true)
 						end
 
 						if self._shooting_t then

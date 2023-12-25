@@ -13706,8 +13706,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.qsho.reload_speed_multiplier = 4
 		end
 
-
-
 	if self.derringer then --Carl's Derringer
 		self.derringer.recategorize = {"heavy_pis"}
 		self.derringer.damage_type = "heavy_pistol"
@@ -16003,7 +16001,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.riviter.panic_suppression_chance = 0.05
 		end
 
-
 	if self.coltds then --Mira's Colt Detective
 		self.coltds.recategorize = {"heavy_pis"}
 		self.coltds.damage_type = "heavy_pistol"
@@ -17170,6 +17167,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cp2077_guts.sms = 0.5
 		self.cp2077_guts.rebecca = true
 		self.cp2077_guts.descope_on_fire = true
+		self.cp2077_guts.hipfire_shake = true
 		self.cp2077_guts.supported = true
 		self.cp2077_guts.ads_speed = 0.400
 		self.cp2077_guts.damage_falloff = {

@@ -4113,12 +4113,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender'}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
 	end
 	self.sterling.lock_slide_alt = true
+	self.schakal.lock_slide_alt = true
 	self.m1911.lock_slide_alt = true
 	self.rpg7.sounds.magazine_empty = nil
 	self.coach.sounds.magazine_empty = nil
@@ -17146,6 +17147,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.malorian_3516.sounds.magazine_empty = nil
 		self.malorian_3516.sounds.stop_fire = "judge_x_fire"
 		self.malorian_3516.swap_speed_multiplier = 0.4
+	end
+
+	if self.cp2077_guts then
+		table.insert(self.cp2077_guts.categories, "shotgun_smasher")
+		self.cp2077_guts.recategorize = { "break_shot" }	
+		self.cp2077_guts.damage_type = "shotgun_heavy"
+		self.cp2077_guts.damage_type_single_ray = "anti_materiel"
+		self.cp2077_guts.desc_id = "bm_w_rebecca_desc"
+		self.cp2077_guts.has_description = true
+		self.cp2077_guts.always_play_anims = true
+		self.cp2077_guts.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+		self.cp2077_guts.rays = 20
+		self.cp2077_guts.kick = self.stat_info.kick_tables.vertical_kick
+		self.cp2077_guts.CLIP_AMMO_MAX = 6
+		self.cp2077_guts.AMMO_MAX = 20
+		self.cp2077_guts.CAN_TOGGLE_FIREMODE = false							
+		self.cp2077_guts.BURST_FIRE = false
+		self.cp2077_guts.fire_mode_data.fire_rate = 1
+		self.cp2077_guts.fire_rate_multiplier = 1.25
+		self.cp2077_guts.force_shake = true
+		self.cp2077_guts.sms = 0.5
+		self.cp2077_guts.rebecca = true
+		self.cp2077_guts.descope_on_fire = true
+		self.cp2077_guts.supported = true
+		self.cp2077_guts.ads_speed = 0.400
+		self.cp2077_guts.damage_falloff = {
+			start_dist = 800,
+			end_dist = 3000,
+			min_mult = 0.25
+		}
+		self.cp2077_guts.stats = {
+			damage = 180,
+			spread = 16,
+			recoil = 3,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 18,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.cp2077_guts.stats_modifiers = nil
+		self.cp2077_guts.reload_speed_multiplier = 0.95
+		self.cp2077_guts.panic_suppression_chance = 0.05
+		self.cp2077_guts.timers.shotgun_reload_exit_not_empty = 0.5
+		self.cp2077_guts.timers.shotgun_reload_exit_empty = 0.77
+		self.cp2077_guts.timers.shotgun_reload_first_shell_offset = 0.25
+		self.cp2077_guts.timers.shotgun_reload_shell = 0.73
 	end
 
 	if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500

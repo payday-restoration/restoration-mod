@@ -4695,6 +4695,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_goldfarbdozers"] = "Двойные неприятности",
 		["mutator_goldfarbdozers_desc"] = "Все бульдозеры теперь появляются парами.",
 		["mutator_goldfarbdozers_longdesc"] = "Все бульдозеры теперь появляются парами. Не влияет на заскриптованных бульдозеров.",
+		
+		["mutator_spoocsquad"] = "Sneaky Squad",
+		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
+		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4724,6 +4728,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_lmg"] = "Когда появляется Зеленый или Черный Бульдозер, есть шанс, что его заменит Скаллдозер.",
 		["menu_cs_modifier_10secondsresponsetime"] = "Полицейские штурмы сразу имеют максимальную интенсивность.",
 		["menu_cs_modifier_dozerpairs"] = "Все бульдозеры теперь появляются парами.",
+		["menu_cs_modifier_spoocsquad"] = "Cloakers now tend to spawn in groups.",
 
 		["bm_menu_skill"] = "Бонусы для команды",
 

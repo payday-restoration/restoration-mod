@@ -883,6 +883,13 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					damage = {5, "add"}
 				}
 			},
+			--Cloakers tend to spawn in groups
+			{
+				id = "spooc_squad",
+				class = "ModifierSpoocSquad",
+				icon = "crime_spree_assault_extender",
+				data = {}
+			},
 			--gren go boom
 			{
 				id = "gren_boom",

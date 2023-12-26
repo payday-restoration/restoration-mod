@@ -73,6 +73,14 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
+	-- Make server hack guranteed when solo
+	[104494] = {
+		pre_func = function (self)
+			if table.size(managers.network:session():peers()) == 0 then
+				self._chance = 100
+			end
+		end
+	},
 	--More timelock timer on higher diifs and Pro Jobs
 	[103137] = {
 		values = {

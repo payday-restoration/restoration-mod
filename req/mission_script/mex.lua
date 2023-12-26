@@ -59,6 +59,12 @@ return {
 			GS_defend_shields = false
 		}
 	},
+	-- Remove red lights from keycard readers because vault can be opened in loud now
+	[103709] = {
+		values = {
+			enabled = false
+		}
+	},
 	--female/guard bikers
 	[100670] = {
 		values = {

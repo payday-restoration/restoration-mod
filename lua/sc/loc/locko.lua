@@ -1665,7 +1665,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--MP153
 		["bm_w_mp153"] = "Argos I 산탄총",
 		--REBECCA CYBERPUNK
-		["bm_w_rebecca_desc"] = "이건 약간 예측할 수 없지만 피비린내 나는 혼란을 가져올거야. 원래 주인과 비슷하게 말이지.",		
+		["bm_w_rebecca_desc"] = "이건 약간 예측할 수 없지만 피비린내 나는 혼란을 가져올거야.",		
 		--Widowmaker TX
 		["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "확장 탄창",
 		["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "점사 시스템",

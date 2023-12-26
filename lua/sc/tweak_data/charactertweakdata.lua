@@ -3097,7 +3097,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
-	if self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.phalanx_vip.spawn_sound_event = "cpw_a01"
 		self.phalanx_vip.spawn_sound_event_2 = "cloaker_spawn"
 	else
@@ -3318,7 +3318,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
-	if self:get_ai_group_type() == "russia" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.summers.spawn_sound_event = "cloaker_spawn"
 	else
 		self.summers.spawn_sound_event = "cpa_a02_01"

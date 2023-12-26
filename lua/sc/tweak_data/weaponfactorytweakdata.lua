@@ -9028,10 +9028,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	--CQB Foregrip
 	self.parts.wpn_fps_ass_galil_fg_mar.pcs = {}
 	self.parts.wpn_fps_ass_galil_fg_mar.supported = true
-	self.parts.wpn_fps_ass_galil_fg_mar.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_ass_galil_fg_mar.stats = deep_clone(barrels.short_b3_stats)
 	self.parts.wpn_fps_ass_galil_fg_mar.stats.recoil = -2
-	self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 3
-	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats = deep_clone(barrels.short_b3_stats)
 	self.parts.wpn_fps_ass_galil_fg_mar.custom_stats.rof_mult = 1.15384615
 	self.parts.wpn_fps_ass_galil_fg_mar.forbids = {}
 	self.parts.wpn_fps_ass_galil_fg_mar.override = {

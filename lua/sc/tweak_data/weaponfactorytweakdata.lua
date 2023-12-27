@@ -998,7 +998,7 @@ local grips = {
 				desc_id = per_pellet and "bm_wp_upg_a_piercing_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -60 or -6,
+					damage = per_pellet and -45 or -6,
 					spread = 5
 				},
 				custom_stats = {
@@ -1155,7 +1155,7 @@ local grips = {
 				desc_id = "bm_wp_upg_a_rip_semi_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -40 or -15
+					damage = per_pellet and -30 or -15
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
@@ -1228,7 +1228,7 @@ local grips = {
 				desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -40 or -15
+					damage = per_pellet and -30 or -15
 				},
 				custom_stats = {
 					ignore_rof_mult_anims = true,
@@ -1324,9 +1324,9 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					total_ammo_mod = per_pellet and -68 or -68,
+					total_ammo_mod = per_pellet and -49 or -68,
 					spread = per_pellet and -10 or -5,
-					damage = per_pellet and 0 or 15
+					damage = per_pellet and 30 or 15
 				},
 				custom_stats = {
 					hip_mult = 1.5,
@@ -2370,8 +2370,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
-				translation = Vector3(-0.04, -0.8, -0.135),
-				rotation = Rotation(-0.11, 0 ,-0.7)
+				translation = Vector3(-0.04, -0.8, -0.2),
+				rotation = Rotation(-0.11, 0.1 ,-0.7)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_wmtx = {
 				translation = Vector3(-0.015, 9.2, -0.385)
@@ -7107,10 +7107,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 	self.wpn_fps_pis_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_judge.override.wpn_fps_upg_ns_shot_shark)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 	
 	table.insert(self.wpn_fps_pis_judge.uses_parts, "wpn_fps_upg_judge_legend")
@@ -16701,11 +16707,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 	self.wpn_fps_pis_x_judge.override.wpn_fps_sho_ultima_ns_comp = deep_clone(self.wpn_fps_pis_x_judge.override.wpn_fps_upg_ns_shot_shark)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)	
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)			
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)	
 
 	self.wpn_fps_pis_x_judge.override.wpn_fps_pis_judge_body_standard = {
 		animations = {		
@@ -16952,8 +16964,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_system", "resmod_system", function
 
 end)
 
---Signature
+--Signature SMG
 Hooks:PostHook(WeaponFactoryTweakData, "_init_shepheard", "resmod_shepheard", function(self)
+
+	self.parts.wpn_fps_smg_shepheard_o_standard.stance_mod = {
+		wpn_fps_smg_shepheard = {
+			translation = Vector3(0, -15, 0)
+		}
+	}
 
 	--Short Foregrip
 	self.parts.wpn_fps_smg_shepheard_body_short.pcs = {
@@ -18643,7 +18661,48 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	self.parts.wpn_fps_smg_vityaz_s_short.stats = deep_clone(stocks.remove_folder_stats)		
 	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = deep_clone(stocks.remove_folder_stats)	
 
+	self.parts.wpn_fps_smg_vityaz_s_filler = {
+		texture_bundle_folder = "fawp",
+		dlc = "fawp",
+		type = "stock",
+		name_id = "bm_wp_vityaz_s_short",
+		unit = "units/pd2_dlc_fawp/weapons/wpn_fps_smg_vityaz_pts/wpn_fps_smg_vityaz_s_short",
+		third_unit = "units/pd2_dlc_fawp/weapons/wpn_fps_smg_vityaz_pts/wpn_third_smg_vityaz_s_standard",
+		a_obj = "a_s"
+	}
+
+	self.parts.wpn_fps_vityaz_s = {
+		type = "shitass_s",
+		name_id = "none",
+		unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_schakal/wpn_fps_smg_x_schakal"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
+	table.insert(self.wpn_fps_smg_vityaz.uses_parts, "wpn_fps_lmg_rpk_s_standard")
+	table.insert(self.wpn_fps_smg_vityaz.uses_parts, "wpn_fps_upg_ak_s_zenitco")
+
 	self.wpn_fps_smg_vityaz.override = self.wpn_fps_smg_vityaz.override or {}
+
+	self.wpn_fps_smg_vityaz.override.wpn_fps_lmg_rpk_s_standard = {
+		stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats),
+		adds = {"wpn_fps_vityaz_s", "wpn_fps_smg_vityaz_s_filler"},
+		parent = "shitass_s"
+	}
+	self.wpn_fps_smg_vityaz.override.wpn_fps_upg_ak_s_zenitco = {
+		stats = { },
+		custom_stats = { },
+		adds = {"wpn_fps_vityaz_s"},
+		parent = "shitass_s"
+	}
+
+	self.wpn_fps_smg_vityaz.stock_adapter = "wpn_fps_snp_victor_s_adapter"
+	self.wpn_fps_smg_vityaz_npc.stock_adapter = self.wpn_fps_smg_vityaz.stock_adapter
+	self.wpn_fps_smg_vityaz_npc.override = deep_clone(self.wpn_fps_smg_vityaz.override)	
+	self.wpn_fps_smg_vityaz_npc.uses_parts = deep_clone(self.wpn_fps_smg_vityaz.uses_parts)	
 
 	
 end)
@@ -25698,7 +25757,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_sg416_o_standard.unit = "units/mods/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_long"
 					self.parts.wpn_fps_ass_sg416_o_standard.stance_mod = {
 						wpn_fps_ass_sg416 = {
-							translation = Vector3(-0.08, 0, -0.35),
+							translation = Vector3(-0.08, -3.5, -0.35),
 							rotation = Rotation(0.05, 0, 0)
 						}
 					}
@@ -27916,6 +27975,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_tti_fg_rail.adds = nil
 			self.parts.wpn_fps_gas_block.adds = nil
 			self.parts.wpn_fps_m16_fg_railed_vanilla.adds = { "wpn_fps_gas_block" }
+
+			self.parts.wpn_fps_shot_omni_o_standard.stance_mod = {
+				wpn_fps_shot_omni = {
+					translation = Vector3(-0.03, -14, 0),
+					rotation = Rotation(-0.1, 0, 0)
+				}
+			}
 	
 			self.parts.wpn_fps_shot_omni_m_contraband.supported = true
 			self.parts.wpn_fps_shot_omni_m_contraband.stats = {
@@ -27960,10 +28026,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_omni.override = self.wpn_fps_shot_omni.override or {}
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_auto_override)
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_auto_override)
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_auto_override)
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_auto_override)
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_auto_override)
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_auto_override)
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_auto_override)
 	
 			self.wpn_fps_shot_omni_npc.override = deep_clone(self.wpn_fps_shot_omni.override)
@@ -28830,6 +28902,30 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 
+			self.parts.wpn_fps_smg_shepheard_body_ar45.supported = true
+			self.parts.wpn_fps_smg_shepheard_body_ar45.keep_damage = true
+			self.parts.wpn_fps_smg_shepheard_body_ar45.stats = {
+				value = 7,
+				damage = 6,
+				recoil = -6,
+				concealment = -2,
+				total_ammo_mod = -41
+			}
+			self.parts.wpn_fps_smg_shepheard_body_ar45.custom_stats = {
+				rof_mult = 0.88235294,
+				ads_speed_mult = 1.111111,
+				damage_min_mult = 1.2,
+				alt_ammo_pickup_min_mul = 0.7674,
+				alt_ammo_pickup_max_mul = 0.7674,
+				ammo_pickup_min_mul = 0.7674,
+				ammo_pickup_max_mul = 0.7674
+			}
+			self.parts.wpn_fps_smg_shepheard_body_ar45.stance_mod = {
+				wpn_fps_smg_shepheard = {
+					translation = Vector3(0.02, -14.8, 0.26)
+				}
+			}
+			
 		end
 
 

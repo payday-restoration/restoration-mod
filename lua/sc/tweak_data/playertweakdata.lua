@@ -746,6 +746,17 @@ function PlayerTweakData:_init_awp()
 	self.stances.awp.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
+local default_init_g3 = PlayerTweakData._init_g3
+function PlayerTweakData:_init_g3()
+	default_init_g3(self)	
+	pivot_shoulder_translation = Vector3(10.6681, 21.5458, -1.73827)
+	pivot_shoulder_rotation = Rotation(0.106686, -0.0859334, 0.627737)
+	pivot_head_translation = Vector3(-0.03, 17, 0.16)
+	pivot_head_rotation = Rotation(0.01, 0, 0)
+	self.stances.g3.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.g3.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
 
 
 if SystemFS:exists("assets/mod_overrides/AR15 Overhaul") then

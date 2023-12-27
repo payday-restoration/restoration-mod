@@ -7073,39 +7073,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_sr2.animations.second_gun_versions = self.x_sr2.animations.second_gun_versions or {}
 				self.x_sr2.animations.second_gun_versions.reload = "reload"
 
-			--AK GEN 21 Tactical
-				self.vityaz.tactical_reload = 1	
-				self.vityaz.use_data.selection_index = 2
-				self.vityaz.BURST_FIRE = false
-				self.vityaz.AMMO_MAX = 150
-				self.vityaz.CAN_TOGGLE_FIREMODE = true
-				self.vityaz.kick = self.stat_info.kick_tables.right_recoil
-				self.vityaz.supported = true
-				self.vityaz.ads_speed = 0.180
-				self.vityaz.damage_falloff = {
-					start_dist = 1100,
-					end_dist = 4500,
-					min_mult = 0.25
-				}
-				self.vityaz.stats = {
-					damage = 24,
-					spread = 62,
-					recoil = 85,
-					spread_moving = 8,
-					zoom = 1,
-					concealment = 27,
-					suppression = 10,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 200,
-					value = 5,
-					reload = 20
-				}
-				self.vityaz.stats_modifiers = nil
-				self.vityaz.panic_suppression_chance = 0.05
-				self.vityaz.timers.reload_exit_empty = 1.05
-				self.vityaz.timers.reload_exit_not_empty = 0.95
-
 			--Singature SMG (MPX)
 				--HOW MANY SIGNATURES DOES THIS GAME HAVE AAAAAAAAAAAAAAAAAAAAAA
 				self.shepheard.use_data.selection_index = 2
@@ -7607,6 +7574,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--PRIMARIES
 
+			--AK GEN 21 Tactical
+				self.vityaz.tactical_reload = 1	
+				self.vityaz.use_data.selection_index = 2
+				self.vityaz.BURST_FIRE = false
+				self.vityaz.AMMO_MAX = 120
+				self.vityaz.CAN_TOGGLE_FIREMODE = true
+				self.vityaz.fire_mode_data.fire_rate = 0.075
+				self.vityaz.kick = self.stat_info.kick_tables.right_recoil
+				self.vityaz.supported = true
+				self.vityaz.ads_speed = 0.200
+				self.vityaz.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 4000,
+					min_mult = 0.2
+				}
+				self.vityaz.stats = {
+					damage = 30,
+					spread = 62,
+					recoil = 79,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 27,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 5,
+					reload = 20
+				}
+				self.vityaz.stats_modifiers = nil
+				self.vityaz.panic_suppression_chance = 0.05
+				self.vityaz.timers.reload_exit_empty = 1.05
+				self.vityaz.timers.reload_exit_not_empty = 0.95
+
 			--MP40
 				self.erma.has_description = true
 				self.erma.desc_id = "bm_erma_sc_desc"
@@ -7777,7 +7778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.schakal.kick = self.stat_info.kick_tables.even_recoil
 				self.schakal.panic_suppression_chance = 0.05
 				self.schakal.supported = true
-				self.schakal.ads_speed = 0.200
+				self.schakal.ads_speed = 0.160
 				self.schakal.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3500,
@@ -11208,7 +11209,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_judge.fire_mode_data.fire_rate = 0.2
 				self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.x_judge.rays = 9
+				self.x_judge.rays = 6
 				self.x_judge.BURST_FIRE = 2
 				self.x_judge.AMMO_MAX = 60
 				self.x_judge.supported = true
@@ -11562,7 +11563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"shotgun_pistol"
 				}
 				self.judge.fire_mode_data.fire_rate = 0.2
-				self.judge.rays = 9
+				self.judge.rays = 6
 				self.judge.kick = self.stat_info.kick_tables.left_kick
 				self.judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.judge.AMMO_MAX = 30
@@ -18098,26 +18099,26 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.omni.recategorize = { "light_shot" }
 		self.omni.damage_type = "shotgun"
 		self.omni.damage_type_single_ray = "sniper"
-		self.omni.rays = 9
+		self.omni.rays = 6
 		self.omni.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 		self.omni.AMMO_MAX = 60
 		self.omni.tactical_reload = 1		
 		self.omni.CLIP_AMMO_MAX = 10
 		self.omni.fire_mode_data.fire_rate = 0.15
-		self.omni.FIRE_MODE = "single"		
-		self.omni.CAN_TOGGLE_FIREMODE = false
+		self.omni.FIRE_MODE = "auto"		
+		self.omni.CAN_TOGGLE_FIREMODE = true
 		self.omni.BURST_FIRE = false
 		self.omni.kick = self.stat_info.kick_tables.moderate_kick
 		self.omni.supported = true
-		self.omni.ads_speed = 0.240
+		self.omni.ads_speed = 0.220
 		self.omni.damage_falloff = {
 			start_dist = 1000,
-			end_dist = 3000,
+			end_dist = 3800,
 			min_mult = 0.66667
 		}
 		self.omni.stats = {
 			damage = 30,
-			spread = 49,
+			spread = 59,
 			recoil = 69,
 			zoom = 1,
 			concealment = 26,
@@ -18870,6 +18871,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			if table.contains(weap.categories, "shotgun") then
 				weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+			end
+
+			if table.contains(weap.categories, "amr") then
+				weap.force_shake = true
+				weap.hipfire_shake = true
 			end
 			
 			if table.contains(weap.categories, "dmr") then

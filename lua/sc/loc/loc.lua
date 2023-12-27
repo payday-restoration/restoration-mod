@@ -1330,7 +1330,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap25_armor_weapon_sc_desc"] = "#{skill_color}#Weapon deals an additional 25% of its damage through armor.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 25% of its damage through body armor.##",
 		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
-		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies and thin walls.##",
+		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
 		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
@@ -2404,7 +2404,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_fal_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",	
 				["bm_fal_ap25_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",	
 				--ASS VAL
-				["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#Deals 25% of its damage through body armor.##",
+				["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 25% of its damage through body armor.##",
 				--Galil
 				["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_galil_ap25_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
@@ -2414,7 +2414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",
 
 				--Galant
-				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 				--M308
 				["bm_m14_sc_desc"] = "Fast and accurate, just be sure to keep the recoil in check, especially on full-auto.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 				--G3
@@ -2427,7 +2427,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 				["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 				--HCAR
-				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
+				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
 				--Custom DMRs
 					--BOCW EM2
 					["bm_w_t9british"] = "EM2",

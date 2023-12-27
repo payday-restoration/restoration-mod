@@ -4143,22 +4143,31 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.lock_slide_alt = true
 	self.ching.sounds.magazine_empty = "ching_magazine_empty"
 
-	local ap_50 = {
+	local ap_25 = {
 		'asval','scar','contraband','fal','galil'
 	}
-	for i, wep_id in ipairs(ap_50) do
+	for i, wep_id in ipairs(ap_25) do
 		self[wep_id].armor_piercing_chance = 0.25
 		self[wep_id].has_description = true
 		self[wep_id].desc_id = "bm_ap_armor_20_weapon_sc_desc"
 	end
 
-	local ap_80 = {
-		'g3','new_m14','ching','shak12','hcar'
+	local ap_50 = {
+		'g3','new_m14','shak12'
 	}
-	for i, wep_id in ipairs(ap_80) do
+	for i, wep_id in ipairs(ap_50) do
 		self[wep_id].armor_piercing_chance = 0.5
 		self[wep_id].has_description = true
 		self[wep_id].desc_id = "bm_ap_armor_50_weapon_sc_desc"
+	end
+
+	local ap_75 = {
+		'ching','hcar'
+	}
+	for i, wep_id in ipairs(ap_75) do
+		self[wep_id].armor_piercing_chance = 0.75
+		self[wep_id].has_description = true
+		self[wep_id].desc_id = "bm_ap_armor_80_weapon_sc_desc"
 	end
 
 	--Just fucking put this shit on everything
@@ -10009,6 +10018,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.ching.stats_modifiers = nil	
+				self.ching.armor_piercing_chance = 0.75
 				self.ching.can_shoot_through_enemy = true
 				self.ching.can_shoot_through_enemy_unlim = true
 				self.ching.can_shoot_through_wall = false
@@ -10050,6 +10060,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.hcar.stats_modifiers = nil
+				self.hcar.armor_piercing_chance = 0.75
 				self.hcar.panic_suppression_chance = 0.05
 				self.hcar.can_shoot_through_wall = false
 				self.hcar.can_shoot_through_enemy = true

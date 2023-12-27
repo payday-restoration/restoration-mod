@@ -1237,7 +1237,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복과 여러 적, 얇은 벽을 관통하고 피해의 75%만큼 가하는## 납 슬러그탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 여러 적, 방패, 타이탄 실드, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",
 		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5##미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#폴오프가 없지만## #{risk}#피해 판정은 슬러그와 폭발로 나누어집니다.##",
-		["bm_wp_upg_a_custom_desc"] = "#{skill_color}#피해량을 증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
+		["bm_wp_upg_a_custom_desc"] = "피해량을 #{skill_color}#증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
+		["bm_wp_upg_a_custom_4_desc"] = "피해량을 #{skill_color}#증가시키는## 더 크고 무거운 펠릿 #{important_1}#4발##을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#90##까지 가하는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 가합니다.##",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "#{skill_color}#40%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#120##까지 가하는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 가합니다.##",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "#{skill_color}#60%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#180##까지 가하는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리에 길 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.\n\n총알 피해 대신 화염 피해를 가합니다.##",
@@ -1252,10 +1253,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#180##의 출혈 피해를 가하는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		--["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#8##초에 걸쳐 #{skill_color}#240##의 출혈 피해를 가하는 #{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
+		["bm_wp_upg_a_piercing_9_auto_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#9발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n{skill_color}#헤드샷 피해량이 100% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
 		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
 		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",
 		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적의 헤드샷 배율이 감소하지 않습니다.##",		
@@ -1938,7 +1941,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_multishot_1"] = "발사체가",
-		["bm_menu_weapon_multishot_2"] = "발로 나뉘어져서, 각각",
+		["bm_menu_weapon_multishot_2"] = "발로 나뉘어져, 각각",
 		["bm_menu_weapon_multishot_3"] = "피해를 가합니다.",
 		["bm_menu_weapon_ene_hs_mult_sub"] = "적의 헤드샷 배율이 정상 값의 ",
 		["bm_menu_weapon_ene_hs_mult_add"] = "적의 헤드샷 배율이 정상 값의 ",
@@ -4686,9 +4689,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_goldfarbdozers_desc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
 		["mutator_goldfarbdozers_longdesc"] = "생성되는 모든 불도저는 항상 쌍으로 배치됩니다.",
 		
-		["mutator_spoocsquad"] = "Sneaky Squad",
-		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
-		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
+		["mutator_spoocsquad"] = "비열한 분대",
+		["mutator_spoocsquad_desc"] = "클로커가 그룹으로 생성되는 경우가 있습니다.",
+		["mutator_spoocsquad_longdesc"] = "클로커가 그룹으로 생성되는 경우가 있습니다.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4718,7 +4721,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_lmg"] = "그린 또는 블랙 불도저가 생성될 때마다 스컬도저로 교체될 확률이 생깁니다.",
 		["menu_cs_modifier_10secondsresponsetime"] = "모든 경찰 습격은 이제 최대 강도로 시작됩니다.",
 		["menu_cs_modifier_dozerpairs"] = "불도저는 이제 항상 쌍으로 스폰됩니다.",
-		["menu_cs_modifier_spoocsquad"] = "Cloakers now tend to spawn in groups.",
+		["menu_cs_modifier_spoocsquad"] = "클로커가 그룹으로 생성되는 경우가 있습니다.",
 
 		["bm_menu_skill"] = "팀원 부스트",
 

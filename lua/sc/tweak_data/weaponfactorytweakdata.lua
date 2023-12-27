@@ -2038,7 +2038,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(0, -2, -2.77)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
-			translation = Vector3(0.03, 0.5, -3.395)
+			translation = Vector3(0.01, 2.5, -3.395)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
 			translation = Vector3(0, -1.5, 1.585),
@@ -7525,8 +7525,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 		40
 	}
 	self.parts.wpn_fps_ass_scar_b_long.supported = true
+	self.parts.wpn_fps_ass_scar_b_long.has_description = true
+	self.parts.wpn_fps_ass_scar_b_long.desc_id = "bm_ap25_armor_weapon_sc_desc"
+	self.parts.wpn_fps_ass_scar_b_long.adds = { "wpn_fps_upg_a_ap25" }
 	self.parts.wpn_fps_ass_scar_b_long.stats = deep_clone(barrels.long_b2_stats)
 	self.parts.wpn_fps_ass_scar_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_scar_b_long.alt_desc = "bm_scar_ap25_sc_desc"
 	--Short Barrel
 	self.parts.wpn_fps_ass_scar_b_short.pcs = {
 		10,
@@ -8449,12 +8453,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	--Marksman Foregrip
 	self.parts.wpn_fps_ass_fal_fg_04.pcs = {}
 	self.parts.wpn_fps_ass_fal_fg_04.supported = true
+	self.parts.wpn_fps_ass_fal_fg_04.has_description = true
+	self.parts.wpn_fps_ass_fal_fg_04.desc_id = "bm_ap25_armor_weapon_sc_desc"
+	self.parts.wpn_fps_ass_fal_fg_04.adds = { "wpn_fps_upg_a_ap25" }
 	self.parts.wpn_fps_ass_fal_fg_04.stats = {
 		value = 4,
 		spread = 1,
 		concealment = -1
 	}
 	self.parts.wpn_fps_ass_fal_fg_04.custom_stats = {
+		alt_desc = "bm_fal_ap25_sc_desc",
 		falloff_start_mult = 1.075,
 		falloff_end_mult = 1.075,
 		ads_speed_mult = 1.025
@@ -8799,10 +8807,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	--DMR Kit
 	self.parts.wpn_fps_ass_g3_b_sniper.pcs = {}
 	self.parts.wpn_fps_ass_g3_b_sniper.supported = true
+	self.parts.wpn_fps_ass_g3_b_sniper.has_description = true
+	self.parts.wpn_fps_ass_g3_b_sniper.desc_id = "bm_ap25_armor_weapon_sc_desc"
 	self.parts.wpn_fps_ass_g3_b_sniper.stats = deep_clone(barrels.long_b2_stats)
 	self.parts.wpn_fps_ass_g3_b_sniper.custom_stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_g3_b_sniper.custom_stats.alt_desc = "bm_g3_ap25_sc_desc"
 	self.parts.wpn_fps_ass_g3_b_sniper.override = {}
-	self.parts.wpn_fps_ass_g3_b_sniper.adds = {}
+	self.parts.wpn_fps_ass_g3_b_sniper.adds = { "wpn_fps_upg_a_ap25" }
 	
 	--Just in case
 	self.parts.wpn_fps_ammo_type.supported = true
@@ -9060,10 +9071,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	--Sniper Foregrip
 	self.parts.wpn_fps_ass_galil_fg_sniper.pcs = {}
 	self.parts.wpn_fps_ass_galil_fg_sniper.supported = true
+	self.parts.wpn_fps_ass_galil_fg_sniper.has_description = true
+	self.parts.wpn_fps_ass_galil_fg_sniper.desc_id = "bm_ap25_armor_weapon_sc_desc"
 	self.parts.wpn_fps_ass_galil_fg_sniper.stats = deep_clone(barrels.long_b2_stats)
-	self.parts.wpn_fps_ass_galil_fg_sniper.stats.recoil = 2
-	self.parts.wpn_fps_ass_galil_fg_sniper.stats.concealment = -3
 	self.parts.wpn_fps_ass_galil_fg_sniper.custom_stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_ass_galil_fg_sniper.custom_stats.alt_desc = "bm_galil_ap25_sc_desc"
+	self.parts.wpn_fps_ass_galil_fg_sniper.adds = { "wpn_fps_upg_a_ap25" }
 	
 	--Sniper Grip
 	self.parts.wpn_fps_ass_galil_g_sniper.pcs = {}
@@ -9107,7 +9120,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	self.parts.wpn_fps_ass_galil_s_sniper.stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 	self.parts.wpn_fps_ass_galil_s_sniper.custom_stats = deep_clone(stocks.folder_to_fixed_acc1_rec2_stats)
 
+	self.wpn_fps_ass_galil.override.wpn_fps_shot_r870_ris_special = {
+		unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_o_scopemount"
+	}
 
+	self.wpn_fps_ass_galil_npc.override = deep_clone(self.wpn_fps_ass_galil.override)
+	
 end)	
 
 --Clarion 
@@ -22211,6 +22229,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	--AP 25 Ammo
+	self.parts.wpn_fps_upg_a_ap25 = {
+		pcs = {},
+		type = "ammo",
+		name_id = "bm_wp_upg_a_ap25",
+		a_obj = "a_body",
+		has_description = true,
+		no_cull = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			armor_piercing_add = 0.25,
+		},
+		stats = {
+			value = 5
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
 	--Cavalry Ammo
 	self.parts.wpn_fps_upg_a_cavalry = {
 		pcs = {},
@@ -27680,11 +27720,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 1.59459,
 					can_shoot_through_enemy = false,
 					armor_piercing_override = 0,
+					armor_piercing_add_override = 0,
 					ignore_rof_mult_anims = true,
 					rof_mult = 1.0416666,
 					ads_speed_mult = 0.888888
 				}
-				self.parts.wpn_fps_ass_scar_body_light.forbids = { "wpn_fps_ass_scar_m_extended" }
+				self.parts.wpn_fps_ass_scar_body_light.forbids = { "wpn_fps_ass_scar_m_extended", "bm_wp_upg_a_ap25", "wpn_fps_ass_scar_b_long" }
 				for k, used_part_id in ipairs(self.wpn_fps_ass_scar.uses_parts) do
 					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_ass_scar_body_light.override[used_part_id] then
 						if self.parts[used_part_id].type == "magazine" then
@@ -27698,6 +27739,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+				self.parts.wpn_fps_ass_scar_body_light.override = self.parts.wpn_fps_ass_scar_body_light.override or {}
+				self.parts.wpn_fps_ass_scar_body_light.override.wpn_fps_ass_scar_b_long = {
+					adds = {},
+					desc_id = ""
+				}
 	
 				self.parts.wpn_fps_ass_ak_body_mamba.supported = true
 				self.parts.wpn_fps_ass_ak_body_mamba.keep_damage = true
@@ -28817,7 +28863,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_ass_g3_body_hk33.forbids = {
 				"wpn_fps_ass_g3_m_psg",
-				"wpn_fps_ass_g3_fg_psg",
 				"wpn_fps_ass_g3_b_sniper"
 			}
 			
@@ -28925,7 +28970,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation = Vector3(0.02, -14.8, 0.26)
 				}
 			}
-			
+
 		end
 
 

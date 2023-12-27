@@ -7530,7 +7530,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 	self.parts.wpn_fps_ass_scar_b_long.adds = { "wpn_fps_upg_a_ap25" }
 	self.parts.wpn_fps_ass_scar_b_long.stats = deep_clone(barrels.long_b2_stats)
 	self.parts.wpn_fps_ass_scar_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
-	self.parts.wpn_fps_ass_scar_b_long.alt_desc = "bm_scar_ap25_sc_desc"
+	self.parts.wpn_fps_ass_scar_b_long.custom_stats.alt_desc = "bm_scar_ap25_sc_desc"
 	--Short Barrel
 	self.parts.wpn_fps_ass_scar_b_short.pcs = {
 		10,
@@ -9125,7 +9125,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 	}
 
 	self.wpn_fps_ass_galil_npc.override = deep_clone(self.wpn_fps_ass_galil.override)
-	
+
 end)	
 
 --Clarion 

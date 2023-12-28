@@ -26,7 +26,7 @@ if Global.game_settings and Global.game_settings.one_down then
 	teargaschopper = 2
 	vaultdoor = 100
 	if difficulty_index == 8 then
-		bulldozer_1 = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
+		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		teargasmayhem = 4
@@ -64,7 +64,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	--Don't repeat the same dialog
+	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
 	[105362] = {
 		values = {
 			trigger_times = 1

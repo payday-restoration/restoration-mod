@@ -236,6 +236,7 @@
 					<hook file="sc/units/player/playersound.lua" source_file="lib/units/beings/player/playersound"/>
 					<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 					<hook file="sc/units/player/playerincapacitated.lua" source_file="lib/units/beings/player/states/playerincapacitated"/>
+					<hook file="sc/units/player/playerfatal.lua" source_file="lib/units/beings/player/states/playerfatal"/>
 					<hook file="sc/units/player/playermaskoff.lua" source_file="lib/units/beings/player/states/playermaskoff"/>
 					<hook file="sc/units/player/playerturret.lua" source_file="lib/units/beings/player/states/playerturret"/>
 					<hook file="sc/units/player/playerdriving.lua" source_file="lib/units/beings/player/states/playerdriving"/>
@@ -367,6 +368,7 @@
 		<hook file="sc/modifiers/new/modifierbravosniper.lua" source_file="lib/modifiers/basemodifier"/>
 		<hook file="sc/modifiers/new/modifierdozerpairs.lua" source_file="lib/modifiers/basemodifier"/>
 		<hook file="sc/modifiers/new/modifieruberchargeshields.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierspoocsquad.lua" source_file="lib/modifiers/basemodifier"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
@@ -409,6 +411,7 @@
 		<hook file="sc/mutators/new/mutatorboflashbang.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorgrenademayhem.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorcaptainreplacer.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorspoocsquad.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>

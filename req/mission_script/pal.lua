@@ -8,6 +8,10 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	else
 		ponr_value = 60
 	end
+	
+	if Global.game_settings and Global.game_settings.single_player then
+		ponr_value = ponr_value * 2 
+	end
 
 if Global.game_settings and Global.game_settings.one_down and difficulty_index >= 5 then	
 	titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"

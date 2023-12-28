@@ -38,6 +38,11 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			if data.values then
 				for k, v in pairs(data.values) do
 					element._values[k] = v
+					
+					--making sure that changing chance values work
+					if k == "chance" and element.chance_operation_set_chance then
+						element:chance_operation_set_chance(v)
+					end
 				end
 			end
 			
@@ -91,6 +96,10 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 
 			if data.func then
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, data.func)
+			end
+			
+			if data.pre_func then
+				Hooks:PreHook( element, "on_executed", "sh_pre_func_" .. element_id, data.pre_func )
 			end
 		end
 	end

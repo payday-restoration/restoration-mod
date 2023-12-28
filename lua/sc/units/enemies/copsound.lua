@@ -153,14 +153,14 @@ function CopSound:init(unit)
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc_husk"),	
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"),
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc_husk"),	
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_husk"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_husk"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"),
-		ids_func("units/pd2_mod_omnia/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk")
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_husk"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"),
+		ids_func("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli_husk")
 	}
 	--Scary gruff filtered lines, reserve for mercs and what not
 	local l5d_list = {
@@ -561,6 +561,16 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 			--log("OW MY BONES")
 		end
 	end
+	
+	
+	--Fixes gangsters not having any pain burn lines
+	if self._prefix == "ict1_" or self._prefix == "ict2_" or self._prefix == "bik1_" or self._prefix == "bik2_" or self._prefix == "lt1_" or self._prefix == "lt2_" or self._prefix == "rt1_" or self._prefix == "rt2_" then
+			if sound_name == "burnhurt" then
+				full_sound = "l1n_burnhurt"
+			elseif sound_name == "burndeath" then
+				full_sound = "l1n_burndeath"
+			end
+		end
 	
 	if self._prefix == "l4n_" then
 		if sound_name == "x02a_any_3p" then

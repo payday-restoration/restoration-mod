@@ -57,20 +57,34 @@ return {
 		ponr = ponr_value
 	},
 	--Technically should fix softlock when blowtorch interactions are unavailable. Also player can't abuse keys in loud
-	[100778] = {
+	[102704] = {
 		on_executed = {
 			{id = 101278, delay = 0}
 		}
+	},	
+	--Always comment that all c4 are placed (why it's chance based to begin with, Overkill...)
+	[103810] = {
+		values = {
+            chance = 100
+		}
 	},
+	-- Need for scripted dozer changes
+	[103809] = {
+		on_executed = {
+			{id = 102869, delay = 0}
+		}
+	},
+	-- 100% chance to spawn dozer on DS
 	[102869] = {
 		values = {
             chance = chance_dozer
 		}
 	},
-	--Dozer gets randomized
+	--Dozer gets randomized + repositioned to the boat loot drop point
 	[102870] = {
 		values = {
-            enemy = dozer
+            enemy = dozer,
+			position = Vector3(-4574, 5314, -400)
 		}
 	},
 	[101190] = {

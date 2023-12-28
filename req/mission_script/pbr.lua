@@ -19,6 +19,10 @@ return {
 	[101774] = {
 		ponr = ponr_value
 	},
+	--End PONR once everyone is inside the chopper
+	[102357] = {
+        ponr_end = true
+    },
 	--replace most of the murkies with resmod versions
 	--Left blockade
 	[100620] = {

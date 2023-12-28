@@ -75,6 +75,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -129,6 +130,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -186,6 +188,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		"FBI_spoocs",
@@ -243,6 +246,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -297,6 +301,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		"FBI_spoocs",
@@ -351,6 +356,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		--Recurring spawns
@@ -407,6 +413,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc"
 		--Recurring spawns
@@ -967,7 +974,8 @@ local standard_spawngroups = {
 		"Cap_Autumn",
 		"Cap_Spring",
 		"Cap_Summers",
-		"HVH_Boss"
+		"HVH_Boss",
+		"Fake_Captain"
 	},
 	["proprietary_pal"] = {
 		"CS_defend_c",
@@ -1025,6 +1033,7 @@ local standard_spawngroups = {
 		"GS_defend_b",
 		"CS_heavys",
 		"titan_snipers",
+		"Fake_Captain",
 		"snowman_boss",
 		"piggydozer"
 	},

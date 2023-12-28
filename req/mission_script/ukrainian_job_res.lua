@@ -22,5 +22,11 @@ return {
 	},
 	[102033] = {
 		ponr = ponr_value
+	},
+	--Give glass cutter to all players
+	[100007] = {
+		func = function(self)
+			managers.network:session():send_to_peers_synched("give_equipment", self._values.equipment, self._values.amount)
+		end
 	}
 }

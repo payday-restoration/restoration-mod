@@ -2164,7 +2164,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			taser_tased = true,
 			poison = false,
 			bleed = false,
-			fire = true, --only direct fire damage
+			fire = false,
 			projectile = true,
 			swat_van = true,
 			sentry_gun = false,

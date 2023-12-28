@@ -1,3 +1,9 @@
+local timer_achievement = 20
+
+if Global.game_settings and Global.game_settings.single_player then
+	timer_achievement = 200
+end
+
 return {
 	-- Increase PONR timers
 	[102646] = {
@@ -19,30 +25,41 @@ return {
 		{ id = 104945, delay = 180 }
 		}
 	},
+	-- Timer for achievement is increased in solo offline
+	[103532] = {
+		values = {
+			timer = timer_achievement
+		}
+	},
+	[103542] = {
+		values = {
+			time = timer_achievement
+		}
+	},
 	-- Increase spawn group intervals in pipe arena
 	[105278] = {
 		values = {
-			interval = 7
+			interval = 15
 		}
 	},
 	[102086] = {
 		values = {
-			interval = 7
+			interval = 15
 		}
 	},
 	[103986] = {
 		values = {
-			interval = 7
+			interval = 15
 		}
 	},
 	[101777] = {
 		values = {
-			interval = 7
+			interval = 15
 		}
 	},
 	[101778] = {
 		values = {
-			interval = 7
+			interval = 15
 		}
 	}
 }

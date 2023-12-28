@@ -56,6 +56,7 @@ end
 function MutatorCaptainReplacer:setup()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	local job = Global.level_data and Global.level_data.level_id
 	
 	local winter_preset = nil
 	local spring_preset = nil
@@ -534,17 +535,25 @@ function MutatorCaptainReplacer:setup()
 	elseif new_captain == "autumn" then
 		new_captain = autumn_preset
 	end
-	
-	tweak_data.group_ai.enemy_spawn_groups.Cap_Winters = new_captain
-	tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = new_captain
-	tweak_data.group_ai.enemy_spawn_groups.HVH_Boss = new_captain
-	tweak_data.group_ai.enemy_spawn_groups.Cap_Autumn = new_captain
-	tweak_data.group_ai.enemy_spawn_groups.Cap_Summers = new_captain
-	tweak_data.group_ai.enemy_spawn_groups.Fake_Captain = new_captain
-	tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {0, 0.2, 0.3}
-	if new_captain == "autumn" then
-		tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown / 2
+	-- Exclude double captain groups
+	local captain_type = restoration.captain_spawns[job]
+	if table.contains(restoration.disable_natural_captain, job) then
+	else
+		if captain_type then
+			tweak_data.group_ai.enemy_spawn_groups.Cap_Winters = new_captain
+			tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = new_captain
+			tweak_data.group_ai.enemy_spawn_groups.HVH_Boss = new_captain
+			tweak_data.group_ai.enemy_spawn_groups.Cap_Autumn = new_captain
+			tweak_data.group_ai.enemy_spawn_groups.Cap_Summers = new_captain
+		else
+			tweak_data.group_ai.enemy_spawn_groups.Fake_Captain = new_captain
+			tweak_data.group_ai.besiege.assault.groups.Fake_Captain = {0, 0.2, 0.3}
+			if new_captain == "autumn" then
+				tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown = tweak_data.group_ai.besiege.group_constraints.Fake_Captain.cooldown / 2
+			end
+		end	
 	end
+	
 	
 	end
 end

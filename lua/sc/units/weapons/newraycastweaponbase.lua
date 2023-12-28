@@ -1028,6 +1028,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		if stats.armor_piercing_override then
 			self._armor_piercing_chance = stats.armor_piercing_override
 		end
+		if stats.armor_piercing_add_override then
+			self._single_fire_ap_add = stats.armor_piercing_add_override
+		end
 		if stats.dot_data_name and self._ammo_data then
 			self._ammo_data.dot_data_name = stats.dot_data_name
 		end
@@ -1872,18 +1875,6 @@ function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
 				end
 			end
 		end
-	end
-end
-
-function NewRaycastWeaponBase:get_object_damage_mult()
-	if self._fire_mode == ids_volley then
-		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
-		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
-		return volley_fire_mode and volley_fire_mode.object_damage_mult or 0.75
-	elseif self._rays and self._rays == 1 and self:weapon_tweak_data().object_damage_mult_single_ray then
-		return self:weapon_tweak_data().object_damage_mult_single_ray
-	else
-		return self:weapon_tweak_data().object_damage_mult or 1
 	end
 end
 

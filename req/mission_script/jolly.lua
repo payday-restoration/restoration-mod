@@ -13,5 +13,9 @@ return {
 	--Pro Job PONR 
 	[100082] = {
 		ponr = ponr_value
-	}
+	},
+	--End PONR once everyone is inside the truck
+	[100771] = {
+        ponr_end = true
+    }
 }

@@ -843,10 +843,10 @@ PlayerStandard._primary_action_get_value = {
 		end
 	}
 }
-
 function PlayerStandard:_chk_action_stop_shooting(new_action)
 	if not new_action then
 		self._already_fired = nil
+		self._spin_up_shoot = nil
 		self:_check_stop_shooting()
 	end
 end
@@ -1117,24 +1117,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 						local weap_tweak_data = weap_base.weapon_tweak_data and weap_base:weapon_tweak_data() or tweak_data.weapon[weap_base:get_name_id()]
 
-						if not params or not params.no_shake then
-							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
-							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
-							local vars = {
-								-1,
-								1
-							}
-							local random = vars[math.random(#vars)]
-							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
-							local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier()
-							if self._state_data.in_steelsight and (no_recoil_anims or weap_base._disable_steelsight_recoil_anim) then
-								self._ext_camera:play_shaker("whizby", random * math.rand(0.01, 0.1) * shake_multiplier, vars[math.random(#vars)] * 0.25, vars[math.random(#vars)] * 0.25  )
-								self._ext_camera:play_shaker("player_land", math.rand(-0.01, -0.1) * (recoil_multiplier * 0.5) * shake_multiplier, 0, 0 )
-							end
-							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
-							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
-						end
-
 						self._equipped_unit:base():tweak_data_anim_stop("unequip")
 						self._equipped_unit:base():tweak_data_anim_stop("equip")
 
@@ -1172,7 +1154,46 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local always_standing = weap_tweak_data.always_use_standing
 						local up, down, left, right = unpack(kick_tweak_data[always_standing and "standing" or self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 						local min_h_recoil = kick_tweak_data.min_h_recoil
-						self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier, min_h_recoil)
+						local recoil_v, recoil_h = self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier, min_h_recoil)
+
+						if not params or not params.no_shake then
+							local shake_tweak_data = weap_tweak_data.shake[fire_mode] or weap_tweak_data.shake
+							local shake_multiplier = shake_tweak_data[self._state_data.in_steelsight and "fire_steelsight_multiplier" or "fire_multiplier"]
+							local vars = {
+								-1,
+								1
+							}
+							local random = vars[math.random(#vars)]
+							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
+							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
+							local category_mul = 1
+							for _, category in ipairs(weap_base:categories()) do
+								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
+								category_mul = category_mul * shake_mul
+							end
+							local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+							if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+								force_ads_recoil_anims = nil
+							end
+							recoil_v = math.clamp( ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul , 0, 5)
+							recoil_h = (recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2.5, 2.5)
+							if (self._state_data.in_steelsight or weap_base:weapon_tweak_data().hipfire_shake) and (weap_base:weapon_tweak_data().force_shake or ((no_recoil_anims or weap_base._disable_steelsight_recoil_anim) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims)) then
+								local zoom_level = (not weap_base:is_second_sight_on() and not weap_base:weapon_tweak_data().rebecca and self._equipped_unit:base():zoom() == 65 and -1) or 1
+								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.125 * shake_multiplier * fire_rate, var_lr * 0.25 * zoom_level, vars[math.random(#vars)] * 0.25 )
+								self._ext_camera:play_shaker("player_land", recoil_v * 0.05 * math.abs(shake_multiplier) * fire_rate * zoom_level, 0, 0 )
+							end
+							self._ext_camera:play_shaker("fire_weapon_rot", 1 * shake_multiplier)
+							self._ext_camera:play_shaker("fire_weapon_kick", 1 * shake_multiplier * (self._state_data.in_steelsight and 0.25 or 1) , 1, 0.15)
+						end
+
+						if not self._hit_in_air and weap_base and weap_base:weapon_tweak_data().rebecca then
+							self._hit_in_air = self._state_data.in_air and true
+							local force_a_nature = -self._ext_camera:forward()
+							force_a_nature = Vector3(force_a_nature.x, force_a_nature.y, ((self._state_data.in_air and force_a_nature.z) or 0)):normalized()
+							force_a_nature = (not self._state_data.in_air and force_a_nature:with_z(-0.5)) or force_a_nature
+							self:push(force_a_nature * ((self._state_data.in_air and 450) or 750) , true, 0.2, true)
+						end
 
 						if self._shooting_t then
 							local time_shooting = t - self._shooting_t
@@ -1570,7 +1591,9 @@ function PlayerStandard:_start_action_intimidate(t, secondary)
 			sound_name = "f39_any"
 			interact_type = "cmd_point"
 
-			prime_target.unit:contour():add("mark_unit", true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+			if prime_target and prime_target.unit and prime_target.unit:contour() then
+				prime_target.unit:contour():add("mark_unit", true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
+			end
 		elseif voice_type == "mark_turret" then
 			sound_name = "f44x_any"
 			interact_type = "cmd_point"
@@ -2835,9 +2858,11 @@ function PlayerStandard:_check_action_deploy_bipod(t, input, autodeploy)
 
 	if not action_forbidden then
 		if bipod_part and bipod_part[1] then
-			local bipod_unit = bipod_part[1].unit:base()
+			local bipod_unit = bipod_part[1].unit and bipod_part[1].unit.base and bipod_part[1].unit:base()
 
-			bipod_unit:check_state(autodeploy)
+			if bipod_unit then
+				bipod_unit:check_state(autodeploy)
+			end
 
 			new_action = true
 		end

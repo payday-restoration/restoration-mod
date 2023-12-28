@@ -100,6 +100,9 @@
 	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
 	
+	<!-- Border Crossing-->
+	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
+
 	<!-- Remove "editor_only" stuff that smh show up in usual game -->
 	<continent			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!-- ~~Dragon~~ Dragan Heist -->
 	<continent			path="levels/narratives/vlad/peta/stage1/world/world" force="true" unload="true"/> <!-- Goat Sim D1 -->
@@ -1251,12 +1254,9 @@
 	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" load = "true"/>
+	
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
+	<!--<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" load = "true"/>-->
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	

@@ -210,8 +210,17 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
    return raycast_current_damage_orig(self, dmg_mul)
 end
 
+local ids_volley = Idstring("volley")
 function RaycastWeaponBase:get_object_damage_mult()
-	return 1
+	if self._fire_mode and self._fire_mode == ids_volley then
+		local fire_mode_data = self:weapon_tweak_data().fire_mode_data
+		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
+		return volley_fire_mode and volley_fire_mode.object_damage_mult or 0.75
+	elseif self._rays and self._rays == 1 and self:weapon_tweak_data().object_damage_mult_single_ray then
+		return self:weapon_tweak_data().object_damage_mult_single_ray
+	else
+		return self:weapon_tweak_data().object_damage_mult or 1
+	end
 end
 
 function RaycastWeaponBase:is_knock_down()
@@ -507,86 +516,6 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	return result
 end
-
---[[
--- Fix inverted suppression - in vanilla, the closer your shots are to an enemy, the less they suppress them
-local check_autoaim_original = RaycastWeaponBase.check_autoaim
-function RaycastWeaponBase:check_autoaim(...)
-	local closest_ray, suppression_enemies = check_autoaim_original(self, ...)
-	if suppression_enemies then
-		for k, dis_error in pairs(suppression_enemies) do
-			suppression_enemies[k] = 1 - dis_error
-		end
-	end
-
-	return closest_ray, suppression_enemies
-end
-
--- Fix stale alerts, if alert radius changed since the last time an alert occurred it may get discarded wrongly
--- This only really affects saws
-function RaycastWeaponBase:_check_alert(rays, fire_pos, direction, user_unit)
-	if self:gadget_overrides_weapon_functions() then
-		local r = self:gadget_function_override("_check_alert", self, rays, fire_pos, direction, user_unit)
-		if r ~= nil then
-			return
-		end
-	end
-	
-	local group_ai = managers.groupai:state()
-	local t = TimerManager:game():time()
-	local exp_t = t + 1.5
-	local all_alerts = self._alert_events
-	local alert_rad = self._alert_size / 4
-	local from_pos = tmp_vec1
-	local tolerance = 500 * 500
-
-	mvec3_set(from_pos, direction)
-	mvec3_mul(from_pos, -alert_rad) 
-	mvec3_add(from_pos, fire_pos)
-
-	for i = #all_alerts, 1, -1 do
-		if all_alerts[i][3] < t then	-- This alert is too old. remove
-			table.remove(all_alerts, i)
-		end
-	end
-
-	if #rays > 0 then
-		for _, ray in ipairs(rays) do
-			local event_pos = ray.position
-			for i = #all_alerts, 1, -1 do
-				local alert = all_alerts[i]
-				if alert_rad <= alert[4] and mvec3_dis_sq(alert[1], event_pos) < tolerance and mvec3_dis_sq(alert[2], from_pos) < tolerance then -- this alert is fresh and very close to the new one. skip the new alert
-					event_pos = nil
-					break
-				end
-			end
-
-			if event_pos then
-				-- The new alert can go through to enemy manager to be distributed to AI units
-				table.insert(all_alerts, {event_pos, from_pos, exp_t, alert_rad})
-				group_ai:propagate_alert({"bullet", event_pos, alert_rad, self._setup.alert_filter, user_unit, from_pos})
-			end
-		end
-	end
-
-	local fire_alerts = self._alert_fires
-	local cached = false
-	for i = #fire_alerts, 1, -1 do
-		local alert = fire_alerts[i]
-		if alert[2] < t then	-- This alert is too old. remove
-			table.remove(fire_alerts, i)
-		elseif self._alert_size <= alert[3] and mvec3_dis_sq(alert[1], fire_pos) < tolerance then -- this alert is fresh and very close to the new one. skip the new alert
-			cached = true
-			break
-		end
-	end
-
-	if not cached then
-		table.insert(fire_alerts, {fire_pos, exp_t, self._alert_size})
-		group_ai:propagate_alert({"bullet", fire_pos, self._alert_size, self._setup.alert_filter, user_unit, from_pos})
-	end
-end
---]]
 
 --Original mod by 90e, uploaded by DarKobalt.
 --Reverb fixed by Doctor Mister Cool, aka Didn'tMeltCables, aka DinoMegaCool
@@ -1182,6 +1111,7 @@ function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_i
 end
 --]]
 
+FlameBulletBase.VARIANT = "bullet"
 
 --Fire no longer memes on shields.
 function FlameBulletBase:bullet_slotmask()
@@ -1234,6 +1164,8 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 		local body_dmg_ext = col_ray.body:extension() and col_ray.body:extension().damage
 
 		if body_dmg_ext then
+			local rays = weapon_unit and weapon_unit.base and ((not weapon_unit:base():weapon_tweak_data().alt_shotgunraycast and weapon_unit:base()._rays) or 1)
+			local object_damage_mult = (weapon_unit and weapon_unit.base and weapon_unit:base().get_object_damage_mult and weapon_unit:base():get_object_damage_mult() or 1) / rays
 			local sync_damage = not blank and hit_unit:id() ~= -1
 			local network_damage = math.ceil(damage * 163.84)
 			local body_damage = network_damage / 163.84
@@ -1242,7 +1174,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
 				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
 
-				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit and user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage * object_damage_mult))
 			end
 
 			local local_damage = not blank or hit_unit:id() == -1
@@ -1254,7 +1186,7 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 				body_dmg_ext:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
 
 				if hit_unit:alive() then
-					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage)
+					body_dmg_ext:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, body_damage * object_damage_mult)
 				end
 
 				if weap_cats and hit_unit:alive() then

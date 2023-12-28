@@ -308,6 +308,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	if is_pro and self_damage then
 		attack_data.damage = attack_data.damage * 2
 	end
+	
+	--Mutators/Modifiers stuff
+	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)	
 
 	if alive(attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)

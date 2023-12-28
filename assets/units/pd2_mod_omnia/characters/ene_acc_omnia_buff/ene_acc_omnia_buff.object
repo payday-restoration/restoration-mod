@@ -1,13 +1,12 @@
 <dynamic_object>
-	<diesel materials="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" orientation_object="rp_ami_03_mask" />
+	<diesel materials="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" orientation_object="rp_fab_mega_alien_mask" />
 	<graphics>
 		<object name="g_frame" enabled="false" />
 		<object name="g_g" enabled="false" />
 		<object name="g_il" enabled="false" />
-		<object name="g_flare" enabled="false" />
 	</graphics>
 	<effects>
-		<effect_spawner name="eye_smoke_01" enabled="true" object="e_effect_02" effect="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" />
-		<effect_spawner name="eye_smoke_02" enabled="true" object="e_effect_03" effect="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" />
+		<effect_spawner name="light1" enabled="true" object="e_light1" effect="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" />
+		<effect_spawner name="light2" enabled="true" object="e_light2" effect="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" />
 	</effects>
 </dynamic_object>

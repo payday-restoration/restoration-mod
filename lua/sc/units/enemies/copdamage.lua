@@ -315,7 +315,8 @@ function CopDamage:damage_fire(attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local attacker_unit_base = attacker_unit and alive(attacker_unit) and attacker_unit:base()
 	local attacker_unit_char_tweak = attacker_unit_base and attacker_unit_base.char_tweak and attacker_unit_base:char_tweak()
-	local cannot_be_ff = self._char_tweak.immune_to_ff_fire
+	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+	local cannot_be_ff = not is_civilian and self._char_tweak.immune_to_ff_fire
 	local allow_ff = not cannot_be_ff and attacker_unit_char_tweak and attacker_unit_char_tweak.can_ff_fire
 	local weap_unit = attack_data.weapon_unit
 	
@@ -338,7 +339,6 @@ function CopDamage:damage_fire(attack_data)
 		self._unit:movement():set_cloaked(true, true)
 	end
 
-	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local head = attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name and head_hitboxes[attack_data.col_ray.body:name():key()]
 
 	if head and weap_unit and alive(weap_unit) and weap_unit:base() and not weap_unit:base().thrower_unit and attack_data.col_ray and attack_data.col_ray.ray and self._unit:base():has_tag("tank") then
@@ -2084,7 +2084,8 @@ function CopDamage:damage_explosion(attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local attacker_unit_base = attacker_unit and alive(attacker_unit) and attacker_unit:base()
 	local attacker_unit_char_tweak = attacker_unit_base and attacker_unit_base.char_tweak and attacker_unit_base:char_tweak()
-	local cannot_be_ff = self._char_tweak.immune_to_ff_exp
+	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
+	local cannot_be_ff = not is_civilian and self._char_tweak.immune_to_ff_exp
 	local allow_ff = not cannot_be_ff and attacker_unit_char_tweak and attacker_unit_char_tweak.can_ff_exp
 	local weap_unit = attack_data.weapon_unit
 

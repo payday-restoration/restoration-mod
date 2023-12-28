@@ -3235,14 +3235,14 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = 1.75
-	self.stat_info.shotgun_spread_increase_ads = 6
+	self.stat_info.shotgun_spread_increase = 1.45
+	self.stat_info.shotgun_spread_increase_ads = 5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
 
-	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
-	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
+	self.stat_info.base_spread = 12.1 --How much spread area you have at 0 accuracy.
+	self.stat_info.spread_per_accuracy = -0.12 --How much each point of accuracy reduces spread area.
 	self.stats.spread = {}
 	for i = 0, 100, 1 do
 		table.insert(self.stats.spread, self.stat_info.base_spread + (i * self.stat_info.spread_per_accuracy))
@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.7, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 7, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}

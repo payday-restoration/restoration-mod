@@ -2215,7 +2215,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		}
 		
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_erma = {
-			translation = Vector3(0.005, 5, -4.152)
+			translation = Vector3(0.005, 6.9, -4.152)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_schakal = {
 			translation = Vector3(0, 7.15, -2.81)
@@ -14901,7 +14901,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 		custom_stats = deep_clone(stocks.remove_folder_stats)
 	}
 	
-	self.wpn_fps_smg_schakal.default_blueprint[8] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+	for i, part_id in pairs(self.wpn_fps_smg_schakal.default_blueprint) do
+		attachment_list = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_schakal.default_blueprint[i] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+			end
+		end
+	end	
 
 	for i, part_id in pairs(self.wpn_fps_smg_schakal.uses_parts) do
 		attachment_list = {
@@ -28967,7 +28976,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_smg_shepheard_body_ar45.stance_mod = {
 				wpn_fps_smg_shepheard = {
-					translation = Vector3(0.02, -14.8, 0.26)
+					translation = Vector3(-0.005, -1.8, 0.285)
+				}
+			}
+			self.parts.wpn_fps_smg_shepheard_body_ar45.override.wpn_fps_smg_shepheard_o_standard.stance_mod = {
+				wpn_fps_smg_shepheard = {
+					translation = Vector3(0, -13, -0.28)
 				}
 			}
 

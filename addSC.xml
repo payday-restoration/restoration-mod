@@ -102,6 +102,8 @@
 	
 	<!-- Border Crossing-->
 	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_tanker/world/world" force="true" unload="true"/>
 
 	<!-- Remove "editor_only" stuff that smh show up in usual game -->
 	<continent			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!-- ~~Dragon~~ Dragan Heist -->

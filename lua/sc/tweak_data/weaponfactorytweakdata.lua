@@ -5263,7 +5263,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	}
 
 	--table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
-	--table.insert(self.wpn_fps_smg_akmsu_npc.uses_parts, "wpn_upg_ak_s_nostock")	
 
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_snp_victor_s_mod0")
@@ -28846,144 +28845,154 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_g3_body_hk33 then --Tangerine's Pack of Exclusive Sets
 
-			self.parts.wpn_fps_ass_g3_body_hk33.supported = true
-			self.parts.wpn_fps_ass_g3_body_hk33.keep_damage = true
-			self.parts.wpn_fps_ass_g3_body_hk33.stats = {
-				value = 8,
-				spread = -3,
-				recoil = 28,
-				concealment = 2,
-				damage = -36,
-				extra_ammo = 10,
-				total_ammo_mod = 300
-			}
-			self.parts.wpn_fps_ass_g3_body_hk33.custom_stats = {
-				ads_speed_mult = 0.78947,
-				rof_mult = 1.25,
-				armor_piercing_override = 0,
-				armor_piercing_add_override = 0,
-				falloff_start_mult = 0.7272727,
-				falloff_end_mult = 0.9333333,
-				damage_min_mult = 1.04166666,
-				alt_ammo_pickup_min_mul = 3.23,
-				alt_ammo_pickup_max_mul = 3.23,
-				ammo_pickup_min_mul = 3.23,
-				ammo_pickup_max_mul = 3.23
-			}
-			self.parts.wpn_fps_ass_g3_body_hk33.forbids = {
-				"wpn_fps_ass_g3_m_psg",
-				"wpn_fps_ass_g3_b_sniper"
-			}
-			
-			self.parts.wpn_fps_ass_g3_body_hk33.override = {
-				wpn_fps_ass_g3_body_upper = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_body_upper_hk33",
-					third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_upper_hk33"
-				},
-				wpn_fps_ass_g3_body_lower = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_body_lower_hk33",
-					third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_lower_hk33"
-				},
-				wpn_fps_ass_g3_m_mag = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33_old",
-					third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_m_hk33"
-				},
-				wpn_fps_ass_g3_fg_bipod = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33_old",
-					third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_fg_hk33",
-					parent = "exclusive_set",
-					a_obj = "a_fg_hk33"
-				},
-				wpn_fps_smg_mp5_s_adjust = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_s_hk33",
-					third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_s_adjust"
-				},
-				wpn_fps_smg_mp5_s_adjusted = {
-					unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_s_hk33",
-					third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_s_adjust"
+			--HK33
+				self.parts.wpn_fps_ass_g3_body_hk33.supported = true
+				self.parts.wpn_fps_ass_g3_body_hk33.keep_damage = true
+				self.parts.wpn_fps_ass_g3_body_hk33.stats = {
+					value = 8,
+					spread = -3,
+					recoil = 28,
+					concealment = 2,
+					damage = -36,
+					extra_ammo = 10,
+					total_ammo_mod = 300
 				}
-			}
-	
-			for i, part_id in pairs(self.wpn_fps_ass_g3.uses_parts) do
-				if self.parts[part_id] and self.parts[part_id].type then
-					if self.parts[part_id].type == "foregrip" then
-						self.parts.wpn_fps_ass_g3_body_hk33.override[part_id] = self.parts.wpn_fps_ass_g3_body_hk33.override[part_id] or {}
-						self.parts.wpn_fps_ass_g3_body_hk33.override[part_id].parent = "exclusive_set"
-						self.parts.wpn_fps_ass_g3_body_hk33.override[part_id].a_obj = "a_fg_hk33"
+				self.parts.wpn_fps_ass_g3_body_hk33.custom_stats = {
+					alt_desc = "bm_wp_wpn_fps_ass_g3_body_hk33_desc",
+					ads_speed_mult = 0.78947,
+					rof_mult = 1.25,
+					armor_piercing_override = 0,
+					armor_piercing_add_override = 0,
+					falloff_start_mult = 0.7272727,
+					falloff_end_mult = 0.9333333,
+					damage_min_mult = 1.04166666,
+					alt_ammo_pickup_min_mul = 3.23,
+					alt_ammo_pickup_max_mul = 3.23,
+					ammo_pickup_min_mul = 3.23,
+					ammo_pickup_max_mul = 3.23
+				}
+				self.parts.wpn_fps_ass_g3_body_hk33.forbids = {
+					"wpn_fps_ass_g3_m_psg",
+					"wpn_fps_ass_g3_b_sniper"
+				}
+				self.parts.wpn_fps_ass_g3_body_hk33.override = {
+					wpn_fps_ass_g3_body_upper = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_body_upper_hk33",
+						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_upper_hk33"
+					},
+					wpn_fps_ass_g3_body_lower = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_body_lower_hk33",
+						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_body_lower_hk33"
+					},
+					wpn_fps_ass_g3_m_mag = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_m_hk33_old",
+						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_m_hk33"
+					},
+					wpn_fps_ass_g3_fg_bipod = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_fg_hk33_old",
+						third_unit = "units/mods/weapons/wpn_third_ass_g3_hk33/wpn_third_ass_g3_fg_hk33",
+						parent = "exclusive_set",
+						a_obj = "a_fg_hk33"
+					},
+					wpn_fps_smg_mp5_s_adjust = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_s_hk33",
+						third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_s_adjust"
+					},
+					wpn_fps_smg_mp5_s_adjusted = {
+						unit = "units/mods/weapons/wpn_fps_ass_g3_hk33/wpn_fps_ass_g3_s_hk33",
+						third_unit = "units/payday2/weapons/wpn_third_smg_mp5_pts/wpn_third_smg_mp5_s_adjust"
+					}
+				}
+		
+				for i, part_id in pairs(self.wpn_fps_ass_g3.uses_parts) do
+					if self.parts[part_id] and self.parts[part_id].type then
+						if self.parts[part_id].type == "foregrip" then
+							self.parts.wpn_fps_ass_g3_body_hk33.override[part_id] = self.parts.wpn_fps_ass_g3_body_hk33.override[part_id] or {}
+							self.parts.wpn_fps_ass_g3_body_hk33.override[part_id].parent = "exclusive_set"
+							self.parts.wpn_fps_ass_g3_body_hk33.override[part_id].a_obj = "a_fg_hk33"
+						end
 					end
 				end
-			end
 
-			self.parts.wpn_fps_ass_galil_body_intermediate.supported = true
-			self.parts.wpn_fps_ass_galil_body_intermediate.keep_damage = true
-			self.parts.wpn_fps_ass_galil_body_intermediate.stats = {
-				value = 5,
-				damage = -15,
-				spread = -1,
-				recoil = 10,
-				concealment = 1,
-				extra_ammo = 10,
-				total_ammo_mod = 100
-			}
-			self.parts.wpn_fps_ass_galil_body_intermediate.custom_stats = {
-				ads_speed_mult = 0.842105,
-				damage_min_mult = 0.625,
-				falloff_start_mult = 0.72,
-				armor_piercing_override = 0,
-				armor_piercing_add_override = 0,
-				alt_ammo_pickup_min_mul = 1.78,
-				alt_ammo_pickup_max_mul = 1.78,
-				ammo_pickup_min_mul = 1.78,
-				ammo_pickup_max_mul = 1.78
-			}
-			self.parts.wpn_fps_ass_galil_body_intermediate.override = {
-				wpn_fps_ass_galil_body_standard = { unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_body_intermediate_new" },
-				wpn_fps_ass_galil_m_standard = {
-					unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_m_intermediate_new",
-					third_unit = "units/mods/weapons/wpn_third_ass_galil_intermediate/wpn_third_ass_galil_m_intermediate_new"
-				},
-				wpn_fps_ass_galil_fg_sar = { 
-					unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_fg_intermediate",
-					third_unit = "units/mods/weapons/wpn_third_ass_galil_intermediate/wpn_third_ass_galil_fg_intermediate"
+			--Galil 5.56
+				self.parts.wpn_fps_ass_galil_body_intermediate.supported = true
+				self.parts.wpn_fps_ass_galil_body_intermediate.keep_damage = true
+				self.parts.wpn_fps_ass_galil_body_intermediate.stats = {
+					value = 5,
+					damage = -15,
+					spread = -1,
+					recoil = 10,
+					concealment = 1,
+					extra_ammo = 10,
+					total_ammo_mod = 100
 				}
-			}
-			self.parts.wpn_fps_ass_galil_body_intermediate.forbids = {
-				"wpn_upg_ak_g_standard",
-				"wpn_fps_ass_galil_fg_sniper"
-			}
-			self.parts.wpn_fps_ass_galil_body_intermediate.adds = {
-				"wpn_fps_ass_galil_body_intermediate_sound"
-			}
+				self.parts.wpn_fps_ass_galil_body_intermediate.custom_stats = {
+					ads_speed_mult = 0.842105,
+					damage_min_mult = 0.625,
+					falloff_start_mult = 0.72,
+					armor_piercing_override = 0,
+					armor_piercing_add_override = 0,
+					alt_ammo_pickup_min_mul = 1.78,
+					alt_ammo_pickup_max_mul = 1.78,
+					ammo_pickup_min_mul = 1.78,
+					ammo_pickup_max_mul = 1.78
+				}
+				self.parts.wpn_fps_ass_galil_body_intermediate.override = {
+					wpn_fps_ass_galil_body_standard = { unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_body_intermediate_new" },
+					wpn_fps_ass_galil_m_standard = {
+						unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_m_intermediate_new",
+						third_unit = "units/mods/weapons/wpn_third_ass_galil_intermediate/wpn_third_ass_galil_m_intermediate_new"
+					},
+					wpn_fps_ass_galil_fg_sar = { 
+						unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_fg_intermediate",
+						third_unit = "units/mods/weapons/wpn_third_ass_galil_intermediate/wpn_third_ass_galil_fg_intermediate"
+					}
+				}
+				self.parts.wpn_fps_ass_galil_body_intermediate.forbids = {
+					"wpn_upg_ak_g_standard",
+					"wpn_fps_ass_galil_fg_sniper"
+				}
+				self.parts.wpn_fps_ass_galil_body_intermediate.adds = {
+					"wpn_fps_ass_galil_body_intermediate_sound"
+				}
 
 
-			self.parts.wpn_fps_smg_shepheard_body_ar45.supported = true
-			self.parts.wpn_fps_smg_shepheard_body_ar45.keep_damage = true
-			self.parts.wpn_fps_smg_shepheard_body_ar45.stats = {
-				value = 7,
-				damage = 6,
-				recoil = -6,
-				concealment = -2,
-				total_ammo_mod = -41
-			}
-			self.parts.wpn_fps_smg_shepheard_body_ar45.custom_stats = {
-				rof_mult = 0.88235294,
-				ads_speed_mult = 1.111111,
-				damage_min_mult = 1.2,
-				alt_ammo_pickup_min_mul = 0.7674,
-				alt_ammo_pickup_max_mul = 0.7674,
-				ammo_pickup_min_mul = 0.7674,
-				ammo_pickup_max_mul = 0.7674
-			}
-			self.parts.wpn_fps_smg_shepheard_body_ar45.stance_mod = {
-				wpn_fps_smg_shepheard = {
-					translation = Vector3(-0.005, -1.8, 0.285)
+			--AR-45
+				self.parts.wpn_fps_smg_shepheard_body_ar45.supported = true
+				self.parts.wpn_fps_smg_shepheard_body_ar45.keep_damage = true
+				self.parts.wpn_fps_smg_shepheard_body_ar45.stats = {
+					value = 7,
+					damage = 6,
+					recoil = -6,
+					concealment = -2,
+					total_ammo_mod = -41
 				}
-			}
-			self.parts.wpn_fps_smg_shepheard_body_ar45.override.wpn_fps_smg_shepheard_o_standard.stance_mod = {
-				wpn_fps_smg_shepheard = {
-					translation = Vector3(0, -13, -0.28)
+				self.parts.wpn_fps_smg_shepheard_body_ar45.custom_stats = {
+					rof_mult = 0.88235294,
+					ads_speed_mult = 1.111111,
+					damage_min_mult = 1.2,
+					alt_ammo_pickup_min_mul = 0.7674,
+					alt_ammo_pickup_max_mul = 0.7674,
+					ammo_pickup_min_mul = 0.7674,
+					ammo_pickup_max_mul = 0.7674
 				}
-			}
+				self.parts.wpn_fps_smg_shepheard_body_ar45.stance_mod = {
+					wpn_fps_smg_shepheard = {
+						translation = Vector3(-0.005, -1.8, 0.285)
+					}
+				}
+				self.parts.wpn_fps_smg_shepheard_body_ar45.override.wpn_fps_smg_shepheard_o_standard.stance_mod = {
+					wpn_fps_smg_shepheard = {
+						translation = Vector3(0, -13, -0.28)
+					}
+				}
+
+			--DD AMCAR
+				self.parts.wpn_fps_ass_amcar_body_ddm4.supported = true
+				self.parts.wpn_fps_ass_amcar_body_ddm4.stats = { value = 0 }
+				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = {}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.override = self.parts.wpn_fps_ass_amcar_body_ddm4.override or {}
 
 		end
 
@@ -34586,6 +34595,37 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
 			if zoom >= 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
 				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.005)
+			end
+		end
+	end
+
+	if self.parts.wpn_fps_ass_amcar_body_ddm4 then
+		for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] then
+					if self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
+							adds = {},
+							override = {},
+							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_fg_ddm4_vg_dummy",
+							third_unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_fg_ddm4_vg_dummy"
+						}
+					elseif self.parts[used_part_id].type == "upper_reciever" then
+						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
+							adds = {},
+							override = {},
+							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_ddm4_upper",
+							third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_upper"
+						}
+					elseif self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
+							adds = {},
+							override = {},
+							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_ddm4_lower",
+						third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_lower"
+					}
+				end
+				end
 			end
 		end
 	end

@@ -3,6 +3,7 @@ Day = os.date("%d")
 local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
 	local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
+	local my_wife = restoration and restoration.Options:GetValue("OTHER/ForceEggs/MyWife")
 	local bobcat = restoration and restoration.Options:GetValue("OTHER/ForceEggs/CrabBattle")
 	local shitpost = restoration and restoration.Options:GetValue("OTHER/ForceEggs/BigMan")
 	local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
@@ -154,6 +155,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModForceEggsOptionsButtonDescID"] = "Force enable individual easter egg texts; ignores the effects of \"Super Cereal Text\" if its enabled.\nToggling anything in here requires a restart.",
 			["RestorationModUpotteTitleID"] = "Enroll in Seishou Academy",
 			["RestorationModUpotteDescID"] = "Work with the Modern Literature teacher or something",
+			["RestorationModMyWifeTitleID"] = "G Less Than 3",
+			["RestorationModMyWifeDescID"] = "The inner machinations of DMC's mind are an enigma",
 			["RestorationModCrabBattleTitleID"] = "Now There's A Pretty Meme",
 			["RestorationModCrabBattleDescID"] = "Exquisite!",
 			["RestorationModEmberMyBelovedTitleID"] = "Go EXTREME Digital",
@@ -3993,11 +3996,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_g3"] = "Jiisuri",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+						["bm_wp_wpn_fps_ass_g3_body_hk33"] = "HK33 \"Chuusuri\" Set",
+						["bm_wp_wpn_fps_ass_g3_body_hk33_desc"] = "\"Call me that again, I dare you!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nDespite HK33's haugty attitude, she's been lovingly nicknamed \"Chuusuri\" by her peers, much to her chagrin.",
 						["bm_menu_jiisuri_stock"] = "Pantyhose",
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",
 						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
+					["bm_w_schakal"] = "UMP",
+						["bm_schakal_sc_desc"] = "An elementary schooler attending #{stats_positive}#Seishou Academy.##\nCousin to the G3 family; she's currently living together with them as she attends school. She often gets into fights with MP5K.",
 					["bm_w_uzi"] = "Uzi",
 						["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
 					["bm_w_mac10"] = "Ram",
@@ -4036,8 +4043,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_spas12"] = "Supasu",
 						["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
 					["bm_w_benelli"] = "Beneri M4",
-						["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
-					
+						["bm_benelli_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
+			})
+		end
+		if my_wife then
+			LocalizationManager:add_localized_strings({	
+				["bm_w_g3"] = "Jiisuri",
+					["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+					["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+					["bm_menu_jiisuri_stock"] = "Pantyhose",
 			})
 		end
 	

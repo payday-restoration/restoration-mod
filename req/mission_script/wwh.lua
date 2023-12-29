@@ -14,6 +14,23 @@ return {
 	[100914] = {
 		ponr = ponr_value
 	},
+	--The love story of 2 beat cops
+	[101241] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
+	},
+	[101242] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
+	},
 	-- Gradually increase difficulty
 	[100810] = {
 		difficulty = 0.25

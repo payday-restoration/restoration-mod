@@ -14919,7 +14919,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 		}
 		for _, remove_id in ipairs(attachment_list) do
 			if part_id == remove_id then
-				self.wpn_fps_smg_schakal.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+				self.wpn_fps_smg_schakal.uses_parts[i] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
 			end
 		end
 	end	

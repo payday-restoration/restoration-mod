@@ -81,6 +81,23 @@ return {
 			end
 		end
 	},
+	--Prevent shields/dozers from disabling the timelock
+	[101195] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+	},
+	[102268] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+	},
 	--More timelock timer on higher diifs and Pro Jobs
 	[103137] = {
 		values = {

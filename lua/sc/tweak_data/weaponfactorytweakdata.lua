@@ -28989,11 +28989,41 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			--DD AMCAR
 				self.parts.wpn_fps_ass_amcar_body_ddm4.supported = true
-				self.parts.wpn_fps_ass_amcar_body_ddm4.stats = { value = 0 }
-				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {}
-				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = {}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.keep_damage = true
+				self.parts.wpn_fps_ass_amcar_body_ddm4.stats = {
+					value = 8,
+					damage = 25,
+					total_ammo_mod = -112,
+					recoil = -18,
+					spread = -3,
+					concealment = -2
+				}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {
+					rof_mult = 0.625,
+					damage_min_mult = 0.44444,
+					alt_ammo_pickup_min_mul = 0.3402,
+					alt_ammo_pickup_max_mul = 0.3402,
+					ammo_pickup_min_mul = 0.3402,
+					ammo_pickup_max_mul = 0.3402
+				}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = { "wpn_fps_upg_i_m16a2" }
 				self.parts.wpn_fps_ass_amcar_body_ddm4.override = self.parts.wpn_fps_ass_amcar_body_ddm4.override or {}
 
+			--Two Tone CAR-4
+				self.parts.wpn_fps_ass_m4_body_tantone.supported = true
+				self.parts.wpn_fps_ass_m4_body_tantone.stats = { 
+					value = 8,
+					recoil = -4,
+					spread = -3,
+					concealment = -2
+				}
+				self.parts.wpn_fps_ass_m4_body_tantone.custom_stats = {
+					rof_mult = 1.13333,
+					falloff_start_mult = 0.736842,
+					falloff_end_mult = 0.8064516
+				}
+				self.parts.wpn_fps_ass_m4_body_tantone.forbids = { "wpn_fps_upg_i_m16a2" }
+				self.parts.wpn_fps_ass_m4_body_tantone.override = self.parts.wpn_fps_ass_m4_body_tantone.override or {}
 		end
 
 
@@ -34602,29 +34632,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_ass_amcar_body_ddm4 then
 		for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_ass_amcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "foregrip" or
+					self.parts[used_part_id].type == "barrel" then
+						table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
+					elseif self.parts[used_part_id].type == "magazine" then
+						if self.parts[used_part_id].stats and (self.parts[used_part_id].stats.extra_ammo and self.parts[used_part_id].stats.extra_ammo > 0) or
+						self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.damage_min_mult then
+							table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
+						end
+					end
+				end
 				if not self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] then
-					if self.parts[used_part_id].type == "foregrip" then
-						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
-							adds = {},
-							override = {},
-							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_fg_ddm4_vg_dummy",
-							third_unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_fg_ddm4_vg_dummy"
-						}
-					elseif self.parts[used_part_id].type == "upper_reciever" then
-						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
-							adds = {},
-							override = {},
-							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_ddm4_upper",
-							third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_upper"
-						}
-					elseif self.parts[used_part_id].type == "lower_reciever" then
+					if self.parts[used_part_id].type == "lower_reciever" then
 						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
 							adds = {},
 							override = {},
 							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_ddm4_lower",
-						third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_lower"
-					}
+							third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_lower"
+						}
+					end
 				end
+			end
+		end
+	end	
+	if self.parts.wpn_fps_ass_m4_body_tantone then
+		for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_m4_body_tantone.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "upper_reciever" or
+					self.parts[used_part_id].type == "foregrip" or
+					self.parts[used_part_id].type == "barrel" then
+						table.insert(self.parts.wpn_fps_ass_m4_body_tantone.forbids, used_part_id)
+					end
+				end
+				if not self.parts.wpn_fps_ass_m4_body_tantone.override[used_part_id] then
+					if self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_m4_body_tantone.override[used_part_id] = {
+							adds = {},
+							override = {},
+							unit = "units/mods/weapons/wpn_fps_ass_m4_tantone/wpn_fps_ass_m4_tantone_lower"
+						}
+					end
 				end
 			end
 		end

@@ -11,6 +11,13 @@ Hooks:PostHook(ElementSpecialObjective, "clbk_objective_failed", "res_clbk_objec
 	end
 end)
 
+-- Keep position saved for AI SOs to fix some older map scripting
+Hooks:PreHook(ElementSpecialObjective, "_finalize_values", "sh__finalize_values", function (self, values)
+	if self:value("so_action"):begins("AI") and values.path_style == "destination" then
+		self._AI_SO_pos = values.position
+	end
+end)
+
 -- Keep hunt and search as actual objective types instead of making it defend_area
 -- This is done to be able to differentiate between those objectives and make hunt work properly (search is currently unused)
 local get_objective_original = ElementSpecialObjective.get_objective

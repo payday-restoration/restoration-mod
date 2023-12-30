@@ -3773,7 +3773,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.custom_shout = true
 	self.civilian.silent_priority_shout = "g27" --pd3 moment, not sure if this voiceline is always loaded though
 	self.civilian.speech_prefix_p1 = "cm"
-	self.civilian.speech_prefix_count = 2
+	self.civilian.speech_prefix_count = 6
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
 	if job == "haunted" then

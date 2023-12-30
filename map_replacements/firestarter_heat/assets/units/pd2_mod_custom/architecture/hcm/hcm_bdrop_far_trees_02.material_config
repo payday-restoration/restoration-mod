@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="mat_air_backdrop_vegetation" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:OPACITY_TEXTURE:RL_BACKDROP" version="2">
+        <variable value="0.5" type="scalar" name="alpha_ref"/>
+        <diffuse_texture file="units/pd2_mod_custom/architecture/hcm/vegetation_green_df"/>
+        <opacity_texture file="units/payday2/architecture/air_backdrop/air_backdrop_vegetation_op"/>
+    </material>
+
+</materials>

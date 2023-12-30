@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_hcm_bdrop_mid_road_tcrossing_16x16" materials="units/pd2_mod_custom/architecture/hcm/hcm_backdrop_street_v2" />
+    <bodies>
+        <body enabled="true" template="editor" name="body0" >
+            <object collision_type="box" name="c_box_01" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_hcm_bdrop_mid_road_tcrossing16x16" />
+        <object enabled="true" name="g_hcm_bdrop_trees" />
+        <object enabled="true" name="g_hcm_veg_and_prop" />
+    </graphics>
+</dynamic_object>

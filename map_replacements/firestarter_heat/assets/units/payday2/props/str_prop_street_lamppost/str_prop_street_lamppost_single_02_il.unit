@@ -1,9 +1,0 @@
-<unit type="str" slot="1" >
-    <object file="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_single_02_il" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-	<dependencies>
-    	<depends_on effect="effects/payday2/particles/flares/street_light_flare_big" />
-    </dependencies>
-</unit>

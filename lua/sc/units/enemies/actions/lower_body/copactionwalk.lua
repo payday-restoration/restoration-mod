@@ -158,10 +158,15 @@ function CopActionWalk:_init()
 			end
 		end
 
+		local cur_pos = common_data.pos
+		if path[1].x ~= cur_pos.x or path[1].y ~= cur_pos.y then
+			table_insert(path, 1, mvec3_cpy(cur_pos))
+		end
+
 		-- Run path simplification even in stealth, fixes things like Mitchell taking a detour on Counterfeit as he walks to the basement door
 		if not action_desc.path_simplified then
 			-- this is valid, as it iterates directly over the simplified path table instead of creating a new table
-			self._calculate_simplified_path(mvec3_cpy(common_data.pos), path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
+			self._calculate_simplified_path(path, 2, true, true) -- just do 2 iterations, the function is stupid cheap anyway (at least comparatively to the update functions)
 		end
 	else
 		-- while not necessary for clients, this is necessary for drop-ins
@@ -296,8 +301,9 @@ function CopActionWalk:_chk_start_anim(next_pos)
 
 	if can_turn_and_fire then -- why they don't just check this here is beyond me
 		local path_angle = path_dir:to_polar_with_reference(self._common_data.fwd, math_up).spin
+		local pose = self._ext_anim.pose or self._fallback_pose
 		if math_abs(path_angle) > 135 then
-			if mvec3_len(self._anim_movement[self._ext_anim.pose].run_start_turn_bwd.ds) < path_len - 100 then
+			if mvec3_len(self._anim_movement[pose].run_start_turn_bwd.ds) < path_len - 100 then
 				if path_angle > 0 then
 					path_angle = path_angle - 360
 				end
@@ -309,14 +315,14 @@ function CopActionWalk:_chk_start_anim(next_pos)
 				}
 			end
 		elseif path_angle < -65 then
-			if mvec3_len(self._anim_movement[self._ext_anim.pose].run_start_turn_r.ds) < path_len - 100 then
+			if mvec3_len(self._anim_movement[pose].run_start_turn_r.ds) < path_len - 100 then
 				self._start_run_turn = {
 					self._common_data.rot:yaw(),
 					path_angle,
 					"r"
 				}
 			end
-		elseif path_angle > 65 and mvec3_len(self._anim_movement[self._ext_anim.pose].run_start_turn_l.ds) < path_len - 100 then
+		elseif path_angle > 65 and mvec3_len(self._anim_movement[pose].run_start_turn_l.ds) < path_len - 100 then
 			self._start_run_turn = {
 				self._common_data.rot:yaw(),
 				path_angle,
@@ -354,7 +360,7 @@ function CopActionWalk._calculate_shortened_path(path)
 
 			mvec3_lerp(test_pos, last_pos.x and last_pos or last_pos.c_class:end_position(), path[i], 0.8) -- if the previous navpoint is a navlink, shorten the path based off it's end position
 
-			if not managers.navigation:raycast({pos_from = test_pos, pos_to = CopActionWalk._nav_point_pos(path[i + 1])}) then
+			if not CopActionWalk._chk_shortcut_pos_to_pos(test_pos, CopActionWalk._nav_point_pos(path[i + 1])) then
 				mvec3_set(path[i], test_pos)
 			end
 		end
@@ -391,7 +397,11 @@ function CopActionWalk._apply_padding_to_simplified_path(path)
 				mvec3_lerp(offset, offset, trace[1], 0.5)
 
 				local last_pos = path[i - 1] -- if the previous navpoint is a navlink, apply padding based off it's end position
-				if not managers.navigation:raycast({pos_from = offset, pos_to = CopActionWalk._nav_point_pos(path[i + 1])}) and not managers.navigation:raycast({pos_from = last_pos.x and last_pos or last_pos.c_class:end_position(), pos_to = offset}) then
+				last_pos = last_pos.x and last_pos or last_pos.c_class:end_position()
+
+				local next_pos = CopActionWalk._nav_point_pos(path[i + 1])
+
+				if not CopActionWalk._chk_shortcut_pos_to_pos(last_pos, offset) and not CopActionWalk._chk_shortcut_pos_to_pos(offset, next_pos) then
 					mvec3_set(pos, offset)
 				end
 			end
@@ -497,6 +507,7 @@ function CopActionWalk:on_exit()
 		self:_stop_walk()
 	end
 
+	self:_set_ik_modifier_state(false)
 	self._ext_movement:drop_held_items()
 
 	if self._sync then
@@ -515,37 +526,6 @@ function CopActionWalk:on_exit()
 
 	if self._nav_link_invul_on then
 		self._common_data.ext_damage:set_invulnerable(false)
-	end
-end
-
-function CopActionWalk:_upd_wait_for_full_blend(t)
-	if self._ext_anim.needs_idle and not self._ext_anim.to_idle then
-		if not self._ext_movement:play_redirect("idle") then
-			return
-		end
-
-		self._ext_movement:spawn_wanted_items()
-	end
-
-	if not self._ext_anim.to_idle and self._ext_anim.idle_full_blend then
-		self._waiting_full_blend = nil
-
-		if self:_init() then
-			self._ext_movement:drop_held_items()
-
-			if self._updator == "_upd_wait_for_full_blend" then -- _init sometimes changes the updator
-				self:_set_updator(nil)
-			end
-		else
-			-- no need to check for being the host, clients will never fail _init unless something is really badly wrong (and nothing you do at that point matters anyway)
-			self._ext_movement:action_request({ -- DON'T expire the action, it didn't succeed and don't sync a navpoint because the action hasn't even been synced
-				body_part = 2,
-				type = "idle"
-			})
-		end
-	else
-		self._ext_movement:set_m_rot(self._unit:rotation())
-		self._ext_movement:set_m_pos(self._unit:position())
 	end
 end
 
@@ -667,13 +647,10 @@ function CopActionWalk:update(t)
 				-- forcing the end_pose to stand might be better since generally navlink animations are made for standing enemies
 				if stop_pose and not self._next_is_nav_link then
 					if stop_pose ~= anim_data.pose then
-						self._ext_movement:action_request({
-							body_part = 4,
-							type = stop_pose
-						})
+						self._ext_movement:play_redirect(stop_pose)
 					end
 				else
-					stop_pose = self._ext_anim.pose
+					stop_pose = anim_data.pose or self._fallback_pose
 				end
 
 				if vis_state < 3 and self._ext_anim.run then -- shouldn't play run_stop anims in a high LOD state or if we're not actually running
@@ -713,7 +690,7 @@ function CopActionWalk:update(t)
 			self:_set_updator("_upd_walk_turn_first_frame")
 		end
 
-		local walk_anim_velocities = self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name] -- wounded is unused
+		local walk_anim_velocities = self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or self._fallback_pose][self._stance.name] -- wounded is unused
 		local real_velocity = self._cur_vel
 		local variant = self._haste
 		-- Tried tying this to the velocity of the animations themselves, but it just led to some issues like dozers just barely not running fast enough to play the run animation and doing a fast walk instead
@@ -732,16 +709,6 @@ function CopActionWalk:update(t)
 	end
 
 	self:_set_new_pos(dt)
-end
-
-function CopActionWalk:_upd_start_anim_first_frame(t)
-	-- Like run_stop animations, speed up the animation if necessary
-	self:_start_move_anim(self._start_run_turn and self._start_run_turn[3] or self._start_run_straight, "run", self:_get_current_max_walk_speed("fwd") / self._walk_anim_velocities[self._ext_anim.pose or "stand"][self._stance.name][self._haste].fwd, self._start_run_turn)
-
-	self._start_max_vel = 0
-
-	self:_set_updator("_upd_start_anim")
-	self._ext_base:chk_freeze_anims()
 end
 
 function CopActionWalk:_upd_start_anim(t)
@@ -842,7 +809,7 @@ function CopActionWalk:_upd_start_anim(t)
 			mvec3_set(tmp_vec2, self._curve_path[2])
 			mvec3_sub(tmp_vec2, self._curve_path[1])
 
-			if mvec3_dot(tmp_vec1, tmp_vec2) < 0 and not managers.navigation:raycast({pos_from = old_pos, pos_to = self._curve_path[3]}) then
+			if mvec3_dot(tmp_vec1, tmp_vec2) < 0 and not CopActionWalk._chk_shortcut_pos_to_pos(old_pos, self._curve_path[3]) then
 				table_remove(self._curve_path, 2)
 			else
 				break
@@ -915,7 +882,7 @@ end
 function CopActionWalk:on_attention(attention)
 	if attention then
 		if attention.handler then
-			if (managers.groupai:state():enemy_weapons_hot() and react_shoot or react_surprised) <= attention.reaction then -- no moonwalkers anymore
+			if react_surprised <= attention.reaction then
 				self._attention_pos = attention.handler:get_attention_m_pos()
 			else
 				self._attention_pos = nil
@@ -935,26 +902,33 @@ function CopActionWalk:on_attention(attention)
 end
 
 function CopActionWalk:_get_current_max_walk_speed(move_dir)
-	if move_dir == "l" or move_dir == "r" then
-		move_dir = "strafe"
+	move_dir = self._move_dir_convert[move_dir] or move_dir
+
+	local pose = self._ext_anim.pose or self._fallback_pose
+	local speed = self._common_data.char_tweak.move_speed[pose][self._haste][self._stance.name][move_dir]
+	local speed_modifier = self._ext_movement:speed_modifier()
+	if speed_modifier then
+		speed = speed * speed_modifier
 	end
 
-	local speed = self._common_data.char_tweak.move_speed[self._ext_anim.pose][self._haste][self._stance.name][move_dir] * (self._unit:brain().is_hostage and self._unit:brain():is_hostage() and self._common_data.char_tweak.hostage_move_speed or 1)
-	if not self._sync then
-		if self:_husk_needs_speedup() then -- Only apply a speed boost to the husk if it's necessary to do so
-			speed = speed * (1 + (Unit.occluded(self._unit) and 1 or CopActionWalk.lod_multipliers[self._ext_base:lod_stage()] or 1))
+	local is_host = Network:is_server() or Global.game_settings.single_player
+	if not is_host then
+		if self:_husk_needs_speedup() then
+			local lod = self._ext_base:lod_stage()
+			local lod_multiplier = 1 + (Unit.occluded(self._unit) and 1 or CopActionWalk.lod_multipliers[lod] or 1)
+			speed = speed * lod_multiplier
 		elseif not managers.groupai:state():enemy_weapons_hot() then
 			speed = speed * tweak_data.network.stealth_speed_boost
 		end
 	end
-	
+
 	if managers.mutators:is_mutator_active(MutatorCG22) then
 		local cg22 = managers.mutators:get_mutator(MutatorCG22)
 
 		if cg22:can_enemy_be_affected_by_buff("yellow", self._unit) then
 			speed = speed * cg22:get_enemy_yellow_multiplier()
 		end
-	end	
+	end
 
 	return speed
 end
@@ -983,11 +957,7 @@ function CopActionWalk:save(save_data)
 	save_data.nav_path = {self._nav_point_pos(self._simplified_path[2])} -- TODO: premature path advancement in _nav_chk_walk could cause the enemy to walk through obstructions on drop-in
 end
 
-function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations, z_test, apply_padding)
-	if good_pos then
-		table_insert(path, 1, good_pos)
-	end
-
+function CopActionWalk._calculate_simplified_path(path, nr_iterations, z_test, apply_padding)
 	-- if it's only 2 entries, we can't do anything
 	if #path <= 2 then
 		return
@@ -1000,7 +970,7 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 		local nav_point = path[i]
 		local next_nav_point = CopActionWalk._nav_point_pos(path[i + 1])
 		-- If the current isn't a navlink, attempt to shortcut
-		if nav_point.x and math_abs((nav_point.z - prev_nav_point.z) + (nav_point.z - next_nav_point.z)) < 60 and not managers.navigation:raycast({pos_from = prev_nav_point, pos_to = next_nav_point}) then
+		if nav_point.x and math_abs((nav_point.z - prev_nav_point.z) + (nav_point.z - next_nav_point.z)) < 60 and not CopActionWalk._chk_shortcut_pos_to_pos(prev_nav_point, next_nav_point) then
 			table_remove(path, i) -- We can skip this navpoint
 		else
 			-- current navpoint didn't get removed, if the navpoint is a navlink then use it's end position to shortcut
@@ -1016,7 +986,7 @@ function CopActionWalk._calculate_simplified_path(good_pos, path, nr_iterations,
 		end
 
 		if nr_iterations > 1 then
-			CopActionWalk._calculate_simplified_path(nil, path, nr_iterations - 1, z_test, apply_padding)
+			CopActionWalk._calculate_simplified_path(path, nr_iterations - 1, z_test, apply_padding)
 		end
 	end
 end
@@ -1274,17 +1244,10 @@ function CopActionWalk:_adjust_move_anim(side, speed)
 	local enter_t = nil
 	local move_side = anim_data.move_side
 	if move_side and (side == move_side or self._matching_walk_anims[side][move_side]) then
-		enter_t = self._machine:segment_relative_time(idstr_base) * self._walk_anim_lengths[anim_data.pose or "stand"][self._stance.name][speed][side]
+		enter_t = self._machine:segment_relative_time(idstr_base) * self._walk_anim_lengths[anim_data.pose or self._fallback_pose][self._stance.name][speed][side]
 	end
 
-	local could_freeze = anim_data.can_freeze and (not anim_data.upper_body_active or anim_data.upper_body_empty)
-	local redir_res = self._ext_movement:play_redirect(speed .. "_" .. side, enter_t)
-
-	if could_freeze then
-		self._ext_base:chk_freeze_anims()
-	end
-
-	return redir_res
+	return self._ext_movement:play_redirect(speed .. "_" .. side, enter_t)
 end
 
 function CopActionWalk:get_walk_to_pos()
@@ -1348,7 +1311,10 @@ function CopActionWalk:_upd_stop_anim_first_frame(t)
 		return
 	end
 
-	self._machine:set_speed(redir_res, self:_get_current_max_walk_speed(self._stop_anim_side) / self._walk_anim_velocities[self._ext_anim.pose][self._stance.name][self._haste][self._stop_anim_side])
+	local pose = self._ext_anim.pose or self._fallback_pose
+	local speed_mul = self:_get_current_max_walk_speed(self._stop_anim_side) / self._walk_anim_velocities[pose][self._stance.name][self._haste][self._stop_anim_side]
+
+	self._machine:set_speed(redir_res, speed_mul)
 
 	self._stop_anim_init_pos = mvec3_cpy(self._last_pos)
 	self._stop_anim_end_pos = self._nav_point_pos(self._simplified_path[2])
@@ -1356,9 +1322,8 @@ function CopActionWalk:_upd_stop_anim_first_frame(t)
 
 	self:_set_updator("_upd_stop_anim")
 
-	self._stop_anim_displacement_f = stop_anim_displacement_functions[self._ext_anim.pose][self._stop_anim_side]
+	self._stop_anim_displacement_f = stop_anim_displacement_functions[pose][self._stop_anim_side]
 
-	self._ext_base:chk_freeze_anims()
 	self:update(t)
 end
 
@@ -1590,8 +1555,9 @@ function CopActionWalk:_upd_nav_link(t)
 	if self._ext_anim.act and not self._ext_anim.walk then
 		self._last_pos = self._unit:position() -- new vector, no need to copy
 
+		self._unit:m_rotation(tmp_rot1)
+		self._ext_movement:set_m_rot(tmp_rot1)
 		self._ext_movement:set_m_pos(self._last_pos)
-		self._ext_movement:set_m_rot(self._unit:rotation())
 	else -- don't check for self._simplified_path[2] in case a client finishes before the next navpoint gets synced
 		self._simplified_path[1] = mvec3_cpy(self._common_data.pos)
 
@@ -1607,7 +1573,7 @@ function CopActionWalk:_upd_nav_link(t)
 				self._next_is_nav_link = nil -- in case there's two navlinks in a row but we can't move directly to the second then handle it correctly
 			elseif not self._next_is_nav_link then -- next is not a navlink, another shortcut attempt is a possibility
 				-- we're not obstructed to the next navpoint, attempt to shortcut based on the position we actually ended up at after the navlink
-				self._calculate_simplified_path(nil, self._simplified_path, 1, true, true) -- i know this iterates over the entire path and it's not hugely likely to find a new shortcut, but it also shortens and applies padding based off the position we actually ended up at
+				self._calculate_simplified_path(self._simplified_path, 1, true, true) -- i know this iterates over the entire path and it's not hugely likely to find a new shortcut, but it also shortens and applies padding based off the position we actually ended up at
 
 				if not self._simplified_path[2].x then
 					self._next_is_nav_link = self._simplified_path[2] -- if the shortcut was successful and the next navpoint is now a navlink, properly account for it
@@ -1713,10 +1679,11 @@ function CopActionWalk:_upd_walk_turn(t)
 	if self._ext_anim.walk_turn then
 		self._last_pos = self._unit:position() -- new vector, no need to copy
 
+		self._unit:m_rotation(tmp_rot1)
+		self._ext_movement:set_m_rot(tmp_rot1)
 		self._ext_movement:set_m_pos(self._last_pos)
 
 		self:_set_new_pos(TimerManager:game():delta_time())
-		self._ext_movement:set_m_rot(self._unit:rotation())
 	else
 		if self._walk_turn_blend_to_middle then
 			self._machine:set_animation_time_all_segments(0.5)
@@ -1728,7 +1695,7 @@ function CopActionWalk:_upd_walk_turn(t)
 
 		local c_index = self._curve_path_index + 2
 		while c_index < #self._curve_path do
-			if not managers.navigation:raycast({pos_from = self._common_data.pos, pos_to = self._curve_path[c_index]}) then -- TODO: fix, what's the point in calculating a curved path if you just get rid of it
+			if not CopActionWalk._chk_shortcut_pos_to_pos(self._common_data.pos, self._curve_path[c_index]) then -- TODO: fix, what's the point in calculating a curved path if you just get rid of it
 				table_remove(self._curve_path, c_index - 1)
 			else
 				break

@@ -1,0 +1,6 @@
+ <materials version="3" group="wallpaper_mat_group">
+    <material name="mtl_wallpaper" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture		file="units/payday2/architecture/lcm/lcm_int_01_df"/>
+        <bump_normal_texture	file="units/payday2/architecture/lcm/lcm_int_01_nm"/>
+    </material>
+</materials>

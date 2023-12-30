@@ -5,6 +5,8 @@
 	<nav_data path="nav_manager_data" script_data_type="binary"/>
 	<world_sounds path="world_sounds" script_data_type="binary"/>
 	<world_cameras path="world_cameras" script_data_type="binary"/>
+	<continent path="toproof/toproof" script_data_type="binary"/>
+	<mission path="toproof/toproof" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
@@ -12,4 +14,28 @@
 	<continent path="editor_only/editor_only" script_data_type="binary"/>
 	<mission path="editor_only/editor_only" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
+	<texture path="cube_lights/103326"/>
+	<texture path="cube_lights/103336"/>
+	<texture path="cube_lights/103340"/>
+	<texture path="cube_lights/101819"/>
+	<texture path="cube_lights/105754"/>
+	<texture path="cube_lights/103258"/>
+	<texture path="cube_lights/101948"/>
+	<texture path="cube_lights/103265"/>
+	<texture path="cube_lights/102532"/>
+	<texture path="cube_lights/102535"/>
+	<texture path="cube_lights/102100"/>
+	<texture path="cube_lights/102870"/>
+	<texture path="cube_lights/102653"/>
+	<texture path="cube_lights/103708"/>
+	<texture path="cube_lights/103207"/>
+	<environment path="environments/fs3_heat_v7" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat_v6" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat_v5" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat_v4" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat_v3" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat_v2" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_shadow_testing_v2" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_shadow_testing" script_data_type="custom_xml"/>
+	<environment path="environments/fs3_heat" script_data_type="custom_xml"/>
 </table>

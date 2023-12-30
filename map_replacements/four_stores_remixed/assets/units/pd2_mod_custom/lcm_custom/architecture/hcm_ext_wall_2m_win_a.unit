@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="hcm" slot="1">
+	<network sync="spawn" />
+	<object file="units/pd2_mod_custom/lcm_custom/architecture/hcm_ext_wall_2m_win_a" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

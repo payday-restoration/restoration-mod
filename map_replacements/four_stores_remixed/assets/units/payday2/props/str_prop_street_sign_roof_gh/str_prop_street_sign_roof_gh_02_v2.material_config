@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="str_prop_street_sign_roof_mat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_BACKDROP" version="2">
+        <diffuse_texture file="units/payday2/props/str_prop_street_sign_roof_gh/str_prop_street_sign_roof_gh_02_v2"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_street_sign_roof/str_prop_street_sign_roof_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

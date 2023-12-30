@@ -6,6 +6,7 @@ local teargaschopper = 1
 local teargas = 1
 local teargasmayhem = 2
 local vaultdoor = 66
+local snipers = 1
 
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
@@ -18,6 +19,12 @@ local vaultdoor = 66
 		ponr_value = 660	
 	else
 		ponr_value = 600
+	end
+	
+	if difficulty_index == 6 or difficulty_index == 7 then
+		snipers = 2
+	elseif difficulty_index == 8 then
+		snipers = 3
 	end
 	
 if Global.game_settings and Global.game_settings.one_down then
@@ -63,6 +70,44 @@ return {
 	[102149] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	-- Special ambush chance increase
+	[103072] = {
+		values = {
+			chance = 75
+		}
+	},
+	[105563] = {
+		values = {
+			player_1 = true
+		}
+	},
+	[105574] = {
+		values = {
+			player_1 = true
+		}
+	},
+	--Restores unused cloaker ambush spawns
+	[105571] = {
+		values = {
+			enabled = true
+		}
+	},
+	[105584] = {
+		values = {
+			enabled = true
+		}
+	},
+	[105607] = {
+		values = {
+			enabled = true
+		}
+	},
+	--more snipers on high diffs
+	[101200] = {
+		values = {
+			amount = snipers
+		}
 	},
 	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
 	[105362] = {

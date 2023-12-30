@@ -1,0 +1,7 @@
+<unit type="off" slot="1" >
+    <object file="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension name="damage" class="UnitDamage" />
+    </extensions>
+</unit>

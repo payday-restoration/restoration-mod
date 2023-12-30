@@ -1,0 +1,13 @@
+<unit type="static" slot="1" >
+    <object file="units/pd2_mod_custom/props/red_diamond_room/big_red_security_door" />
+    <network sync="spawn"/>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+	<extension name="interaction" class="UseInteractionExt">
+      <var name="tweak_data" value="open_door" />
+	  <var name="_interact_object" value="interaction_location" />
+	  </extension>
+  </extensions>
+    <dependencies/>
+</unit>

@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_com_prop_store_sign_wall" materials="units/pd2_mod_custom/props/com_prop_store_sign_wall/com_prop_store_sign_wall" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object collision_type="box" name="c_box_01" />
+        </body>
+    </bodies>
+	<decal_surfaces>
+        <decal_mesh enabled="true" name="dm_plastic" material="plastic" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_g" />
+		
+    </graphics>
+</dynamic_object>

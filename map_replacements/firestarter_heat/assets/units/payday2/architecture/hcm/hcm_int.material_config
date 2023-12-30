@@ -2,12 +2,12 @@
     <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
     <material name="mat_hcm_int_a" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
         <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_a_df"/>
-        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_quick_diamond_ext"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
         <bump_normal_texture file="units/payday2/architecture/hcm/hcm_int_01_a_nm"/>
     </material>
     <material name="mat_hcm_int_b" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
         <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_b_df"/>
-        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_quick_diamond_ext"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
         <bump_normal_texture file="units/payday2/architecture/hcm/hcm_int_01_b_nm"/>
     </material>
     <material name="mat_hcm_int_glass" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">

@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_sign" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VEGETATION_BENDING" version="2">
+        <diffuse_texture file="units/pd2_mod_custom/props/str_prop_street_signs/str_prop_street_signs_lamppost_df"/>
+        <variable value="0.40000000596046" type="scalar" name="speed"/>
+        <variable value="80 0.20000000298023 0" type="vector3" name="detail_settings"/>
+        <variable value="0 1 0" type="vector3" name="branch_settings"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_street_signs/str_prop_street_signs_nm"/>
+    </material>
+</materials>

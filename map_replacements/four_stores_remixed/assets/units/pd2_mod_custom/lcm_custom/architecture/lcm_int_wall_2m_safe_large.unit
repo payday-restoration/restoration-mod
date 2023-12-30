@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="lcm" slot="1">
+	<network sync="spawn" />
+	<object file="units/pd2_mod_custom/lcm_custom/architecture/lcm_int_wall_2m_safe_large" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

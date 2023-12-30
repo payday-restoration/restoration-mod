@@ -6,50 +6,75 @@
 	<world_sounds path="world_sounds" script_data_type="binary"/>
 	<world_cameras path="world_cameras" script_data_type="binary"/>
 	<massunit path="massunit" reload="true"/>
-	<continent path="editor_only/editor_only" script_data_type="binary"/>
-	<mission path="editor_only/editor_only" script_data_type="binary"/>
-	<continent path="world/world" script_data_type="binary"/>
-	<mission path="world/world" script_data_type="binary"/>
+	<continent path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
+	<mission path="lighting_fixes/lighting_fixes" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
 	<continent path="env/env" script_data_type="binary"/>
 	<mission path="env/env" script_data_type="binary"/>
+	<continent path="lightfx/lightfx" script_data_type="binary"/>
+	<mission path="lightfx/lightfx" script_data_type="binary"/>
+	<continent path="world/world" script_data_type="binary"/>
+	<mission path="world/world" script_data_type="binary"/>
+	<continent path="bounce_lights/bounce_lights" script_data_type="binary"/>
+	<mission path="bounce_lights/bounce_lights" script_data_type="binary"/>
+	<continent path="editor_only/editor_only" script_data_type="binary"/>
+	<mission path="editor_only/editor_only" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
-	<environment path="environments/fs1_finalex" script_data_type="custom_xml"/>
-	<texture path="cubemaps/40"/>
-	<texture path="cube_lights/103295"/>
-	<texture path="cube_lights/102395"/>
-	<texture path="cube_lights/103287"/>
-	<texture path="cube_lights/102814"/>
-	<texture path="cube_lights/101160"/>
-	<texture path="cube_lights/101288"/>
-	<texture path="cube_lights/101191"/>
-	<texture path="cube_lights/101220"/>
-	<texture path="cube_lights/101280"/>
+	<texture path="cube_lights/102751"/>
+	<environment path="environments/fs1_sunset" script_data_type="custom_xml"/>
+	<texture path="cube_lights/104803"/>
+	<texture path="cube_lights/100383"/>
 	<texture path="cube_lights/101171"/>
 	<texture path="cube_lights/101163"/>
+	<texture path="cube_lights/103680"/>
+	<texture path="cube_lights/102808"/>
+	<texture path="cube_lights/103681"/>
 	<texture path="cube_lights/103684"/>
 	<texture path="cube_lights/103686"/>
 	<texture path="cube_lights/103685"/>
 	<texture path="cube_lights/103792"/>
-	<texture path="cube_lights/101153"/>
-	<texture path="cube_lights/104404"/>
 	<texture path="cube_lights/101633"/>
 	<texture path="cube_lights/103690"/>
+	<texture path="cube_lights/104404"/>
+	<texture path="cube_lights/101153"/>
 	<texture path="cube_lights/102805"/>
-	<texture path="cube_lights/102808"/>
-	<texture path="cube_lights/103681"/>
-	<texture path="cube_lights/103680"/>
+	<texture path="cube_lights/101160"/>
+	<texture path="cube_lights/101191"/>
+	<texture path="cube_lights/101220"/>
+	<texture path="cube_lights/101280"/>
+	<environment path="environments/fs1_heat" script_data_type="custom_xml"/>
+	<texture path="cube_lights/104751"/>
+	<texture path="cube_lights/104670"/>
+	<texture path="cube_lights/104669"/>
+	<texture path="cube_lights/104749"/>
+	<texture path="cube_lights/104085"/>
+	<texture path="cube_lights/103621"/>
+	<texture path="cube_lights/104340"/>
+	<texture path="cube_lights/104311"/>
+	<texture path="cube_lights/102395"/>
+	<texture path="cube_lights/102392"/>
+	<texture path="cube_lights/101748"/>
+	<texture path="cube_lights/100381"/>
+	<texture path="cube_lights/104450"/>
+	<texture path="cube_lights/104452"/>
+	<texture path="cube_lights/104437"/>
+	<texture path="cube_lights/102753"/>
+	<texture path="cube_lights/102400"/>
+	<environment path="environments/fs1_finalex" script_data_type="custom_xml"/>
+	<texture path="cubemaps/40"/>
+	<texture path="cube_lights/103295"/>
+	<texture path="cube_lights/103287"/>
+	<texture path="cube_lights/102814"/>
+	<texture path="cube_lights/101288"/>
 	<texture path="cube_lights/103288"/>
 	<texture path="cube_lights/103289"/>
 	<texture path="cube_lights/101954"/>
-	<texture path="cube_lights/104340"/>
 	<texture path="cube_lights/103290"/>
 	<texture path="cube_lights/103286"/>
 	<texture path="cube_lights/103284"/>
 	<texture path="cube_lights/103285"/>
 	<texture path="cube_lights/104028"/>
-	<texture path="cube_lights/104085"/>
 	<texture path="cube_lights/101358"/>
 	<texture path="cube_lights/101356"/>
 	<environment path="environments/fs1" script_data_type="custom_xml"/>

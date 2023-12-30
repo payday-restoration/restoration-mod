@@ -1,0 +1,13 @@
+<materials version="3">
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="mat_off_prop_fluorescent">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_fluorescent_df"/>
+        <self_illumination_texture file="units/payday2/architecture/hcm/hcm_int_01_fluorescent_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="mat_off_prop_light" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/props/off_prop_lights/off_prop_light_spot_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+</materials>

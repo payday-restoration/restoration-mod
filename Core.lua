@@ -63,6 +63,7 @@ function restoration:Init()
 		rvd2 = restoration.captain_types.winter, --Garnet Group Boutique
 		brb = restoration.captain_types.winter, --brookyn ten-ten benk
 		--Custom Heists--
+		four_stores_remixed = restoration.captain_types.winter, --Four Stores (Remixed)
 		office_strike = restoration.captain_types.winter, --office strike
 		schl = restoration.captain_types.winter, --Scarlet Club House
 		firestarter_2_res = restoration.captain_types.winter, --firestarter day 2 edit

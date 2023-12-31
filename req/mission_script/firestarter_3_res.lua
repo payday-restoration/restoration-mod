@@ -1,7 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-local bulldozer_2 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local bulldozer_2 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local teargaschopper = 1
 local teargas = 1
 local teargasmayhem = 2

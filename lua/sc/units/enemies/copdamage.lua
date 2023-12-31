@@ -3440,9 +3440,19 @@ function CopDamage:do_medic_heal()
 	self:_update_debug_ws()
 
 	if self._unit:contour() then
-		self._unit:contour():add("medic_heal", true)
-		self._unit:contour():flash("medic_heal", 0.2)
+		local crackhead = Idstring("Head")
+		local attach_to_unit = self._unit:get_object(crackhead)
+		if not attach_to_unit then
+			return
+		end
+		
+		World:effect_manager():spawn({
+			effect = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"),
+			parent = attach_to_unit
+		})	
+		--self._unit:contour():add("medic_heal", true)
+		--self._unit:contour():flash("medic_heal", 0.2)
 	end
-
+	
 	return true
 end

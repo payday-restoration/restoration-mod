@@ -102,6 +102,8 @@
 	
 	<!-- Border Crossing-->
 	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_tanker/world/world" force="true" unload="true"/>
 
 	<!-- Remove "editor_only" stuff that smh show up in usual game -->
 	<continent			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!-- ~~Dragon~~ Dragan Heist -->
@@ -1256,7 +1258,9 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
 	
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
-	<!--<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" load = "true"/>-->
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	

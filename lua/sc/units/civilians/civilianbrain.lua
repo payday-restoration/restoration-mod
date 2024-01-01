@@ -1,3 +1,4 @@
+--Add more alert types to Civilians
 function CivilianBrain:on_cool_state_changed(state)
 	if self._logic_data then
 		self._logic_data.cool = state

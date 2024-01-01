@@ -1,31 +1,3 @@
 <?xml version="1.0"?>
 <tweaks>
-	<!-- Re-add money death animations -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_subset">
-		<search>
-			<xml/>
-		</search>
-		<target mode="attach">
-			<anim name="death_money_var1" file="anims/shared/rifle/generic/death_money_var1" blend_set="all"/>
-			<anim name="death_money_var2" file="anims/shared/rifle/generic/death_money_var2" blend_set="all"/>
-			<anim name="death_money_var3" file="anims/shared/rifle/generic/death_money_var3" blend_set="all"/>
-			<anim name="death_money_var4" file="anims/shared/rifle/generic/death_money_var4" blend_set="all"/>
-			<anim name="death_money_var5" file="anims/shared/rifle/generic/death_money_var5" blend_set="all"/>
-			<anim name="death_money_var6" file="anims/shared/rifle/generic/death_money_var6" blend_set="all"/>
-			<anim name="death_money_var7" file="anims/shared/rifle/generic/death_money_var7" blend_set="all"/>
-			<anim name="death_money_var8" file="anims/shared/rifle/generic/death_money_var8" blend_set="all"/>
-			<anim name="death_money_var9" file="anims/shared/rifle/generic/death_money_var9" blend_set="all"/>
-			<anim name="death_money_var10" file="anims/shared/rifle/generic/death_money_var10" blend_set="all"/>
-		</target>
-	</tweak>
-	<!-- Make medic heals an upper_body animation -->
-	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_subset">
-		<search>
-			<xml/>
-			<anim name="heal"/>
-		</search>
-		<target mode="attributes">
-			<attr name="blend_set" value="upper_body_aim"/>
-		</target>
-	</tweak>
 </tweaks>

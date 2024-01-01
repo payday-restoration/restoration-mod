@@ -1,0 +1,29 @@
+<table>
+	<add from_db="true" path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref" type="unit">
+		<material_config path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref"/>
+		<effect load="true" path="effects/particles/weapons/flashlight/flashlight"/>
+		<effect load="true" path="effects/payday2/particles/window/storefront_window_small"/>
+		<material_config path="units/payday2/props/dest_glass/glass_shatter"/>
+		<animation_def path="anims/units/helicopter/helicopter"/>
+		<animation_state_machine path="anims/units/helicopter/helicopter"/>
+		<animation_states path="anims/units/helicopter/std"/>
+		<animation_subset path="anims/units/helicopter/std"/>
+		<object path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref"/>
+		<sequence_manager path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops"/>
+		<unit path="units/payday2/vehicles/air_vehicle_blackhawk/helicopter_cops_ref"/>
+	</add>
+	<add from_db="true" path="effects/particles/dest/circle_puffs" type="effect">
+		<effect load="true" path="effects/particles/dest/circle_puffs"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/gen_prop_square_goal_marker_8x15/gen_prop_square_goal_marker_8x15" type="unit">
+		<material_config path="units/payday2/props/gen_prop_square_goal_marker_8x15/gen_prop_square_goal_marker_8x15"/>
+		<object path="units/payday2/props/gen_prop_square_goal_marker_8x15/gen_prop_square_goal_marker_8x15"/>
+		<sequence_manager path="units/payday2/props/gen_prop_square_goal_marker_8x15/gen_prop_square_goal_marker_8x15"/>
+		<unit path="units/payday2/props/gen_prop_square_goal_marker_8x15/gen_prop_square_goal_marker_8x15"/>
+	</add>
+	<add from_db="true" path="units/test/jocke/plane_black_temp" type="unit">
+		<unit path="units/test/jocke/plane_black_temp"/>
+		<object path="units/test/jocke/plane_black_temp"/>
+		<material_config path="units/test/jocke/plane_black_temp"/>
+	</add>
+</table>

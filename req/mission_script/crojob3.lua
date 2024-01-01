@@ -81,6 +81,15 @@ return {
 	[103031] = {
 			ponr = ponr_value
 	},
+	--fixes one of the ai_hunt SOs not having taser access
+	[100675] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "tank", "shield", "taser"})
+			end
+		end
+	},
 	--Three Way Fight feat. Murkywater
 	--1st Van (left one)
 	[100776] = {
@@ -160,9 +169,6 @@ return {
 		values = {
 			enemy = taser,
 			team = "mobster1"
-		},
-		on_executed = {
-			{ id = 100660, delay = 0 }
 		}
 	},
 	[100549] = {

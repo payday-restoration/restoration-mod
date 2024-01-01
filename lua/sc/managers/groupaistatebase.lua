@@ -969,6 +969,7 @@ function GroupAIStateBase:_get_anticipation_duration(anticipation_duration_table
 	
 end	
 
+-- Add chance for enemies to comment on squad member deaths
 local _remove_group_member_ori = GroupAIStateBase._remove_group_member
 function GroupAIStateBase:_remove_group_member(group, u_key, is_casualty)
 	_remove_group_member_ori(self, group, u_key, is_casualty)
@@ -1718,4 +1719,39 @@ function GroupAIStateBase:_count_police_force(task_name)
 		end
 	end
 	return amount
+end
+
+-- Make jokers follow their actual owner instead of the closest player
+local _determine_objective_for_criminal_AI_original = GroupAIStateBase._determine_objective_for_criminal_AI
+function GroupAIStateBase:_determine_objective_for_criminal_AI(unit, ...)
+	local logic_data = unit:brain()._logic_data
+	if logic_data.is_converted and alive(logic_data.minion_owner) then
+		return {
+			type = "follow",
+			scan = true,
+			follow_unit = logic_data.minion_owner
+		}
+	end
+
+	return _determine_objective_for_criminal_AI_original(self, unit, ...)
+end
+
+-- Adjust objective data for rescue and steal SOs
+Hooks:PreHook(GroupAIStateBase, "add_special_objective", "sh_add_special_objective", function (self, id, objective_data)
+	if type(id) ~= "string" or not id:match("^carrysteal") and not id:match("^rescue") then
+		return
+	end
+
+	objective_data.interval = 4
+	objective_data.search_dis_sq = 4000000
+	objective_data.objective.interrupt_dis = 600
+	objective_data.objective.interrupt_health = 0.8
+	objective_data.objective.pose = nil
+end)
+
+-- Disable drama zones to prevent skipping of anticipation, build and regroup phases
+-- The zones are only used for that, which makes the phases inconsistent for no real reason
+function GroupAIStateBase:_add_drama(amount)
+	self._drama_data.amount = math.clamp(self._drama_data.amount + amount, 0, 1)
+	self._drama_data.zone = nil
 end

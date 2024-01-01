@@ -1,10 +1,16 @@
+--Remove ASU Laser when they surrender
 Hooks:PostHook(CopLogicIntimidated, "enter", "fuck_enter", function(data, new_logic_name, enter_params)
 	data.unit:base():disable_asu_laser(true)
 end)
 
+--Remove OMNIA buffs/no pager on tie down
 function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	local my_data = data.internal_data
 	aggressor_unit = alive(aggressor_unit) and aggressor_unit
+
+	if managers.groupai:state():rescue_state() then
+		CopLogicIntimidated._add_delayed_rescue_SO(data, my_data)
+	end
 
 	if my_data.surrender_clbk_registered then
 		managers.groupai:state():remove_from_surrendered(data.unit)
@@ -26,6 +32,8 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	data.brain:rem_pos_rsrv("stand")
 	managers.groupai:state():on_enemy_tied(data.unit:key())
 	data.unit:base():set_slot(data.unit, 22)
+	managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.surrender_cop_tied)
+	data.unit:movement():remove_giveaway()
 
 	if not data.brain:is_pager_started() then
 		data.unit:interaction():set_tweak_data("hostage_convert")
@@ -39,7 +47,7 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	if data.unit:contour() then
 		data.unit:contour():remove("omnia_heal", true)
 		data.unit:contour():remove("medic_buff", true)
-	end		
+	end			
 
 	if aggressor_unit then
 		data.unit:character_damage():drop_pickup()
@@ -49,7 +57,7 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 			managers.statistics:tied({
 				name = data.unit:base()._tweak_table
 			})
-		else
+		elseif aggressor_unit:base() and aggressor_unit:base().is_husk_player then
 			aggressor_unit:network():send_to_unit({
 				"statistics_tied",
 				data.unit:base()._tweak_table
@@ -60,140 +68,28 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	managers.groupai:state():on_criminal_suspicion_progress(nil, data.unit, nil)
 end
 
-function CopLogicIntimidated._add_delayed_rescue_SO(data, my_data)
-	if data.char_tweak.flee_type ~= "hide" then
-		if data.unit:unit_data() and data.unit:unit_data().not_rescued then
-			-- Nothing
-		elseif my_data.delayed_clbks and my_data.delayed_clbks[my_data.delayed_rescue_SO_id] then
-			managers.enemy:reschedule_delayed_clbk(my_data.delayed_rescue_SO_id, TimerManager:game():time() + 2)
-		else
-			if my_data.rescuer then
-				local rescuer = my_data.rescuer
-								
-				if rescuer:brain():objective() then
-					managers.groupai:state():on_objective_failed(rescuer, rescuer:brain():objective())
-				end
-				my_data.rescuer = nil
-			elseif my_data.rescue_SO_id then
-				managers.groupai:state():remove_special_objective(my_data.rescue_SO_id)
-
-				my_data.rescue_SO_id = nil
-			end
-
-			--my_data.delayed_rescue_SO_id = "rescue" .. tostring(data.unit:key())
-
-			 CopLogicIntimidated.register_rescue_SO(nil, data)
-		end
-	end
-end
-
-function CopLogicIntimidated.register_rescue_SO(ignore_this, data)
-	local my_data = data.internal_data
-
-	--CopLogicBase.on_delayed_clbk(my_data, my_data.delayed_rescue_SO_id)
-
-	my_data.delayed_rescue_SO_id = nil
-	local my_tracker = nil
-	local objective_pos = nil
-	
-	if data.unit and data.unit:character_damage() and not data.unit:character_damage():dead() and data.unit:movement() and data.unit:movement():nav_tracker() then
-		my_tracker = data.unit:movement():nav_tracker()
-		objective_pos = my_tracker:field_position()
-	end
-	
-	if not my_tracker then
-		log("go fuck yourself")
-		
-		return
-	end
-	
-	local followup_objective = {
-		scan = true,
-		type = "act",
-		stance = "hos",
-		action = {
-			variant = "idle",
-			body_part = 1,
-			type = "act",
-			blocks = {
-				action = -1,
-				walk = -1
-			}
-		},
-		action_duration = tweak_data.interaction.free.timer
-	}
-	local objective = {
-		stance = "hos",
-		type = "act",
-		scan = true,
-		destroy_clbk_key = false,
-		follow_unit = data.unit,
-		pos = mvector3.copy(objective_pos),
-		nav_seg = data.unit:movement():nav_tracker():nav_segment(),
-		fail_clbk = callback(CopLogicIntimidated, CopLogicIntimidated, "on_rescue_SO_failed", data),
-		complete_clbk = callback(CopLogicIntimidated, CopLogicIntimidated, "on_rescue_SO_completed", data),
-		action = {
-			variant = "untie",
-			body_part = 1,
-			type = "act",
-			blocks = {
-				action = -1,
-				walk = -1
-			}
-		},
-		action_duration = tweak_data.interaction.free.timer,
-		followup_objective = followup_objective
-	}
-	local so_descriptor = {
-		interval = 2,
-		search_dis_sq = 4000000,
-		AI_group = "enemies",
-		base_chance = 1,
-		chance_inc = 0,
-		usage_amount = 1,
-		objective = objective,
-		search_pos = mvector3.copy(data.m_pos),
-		admin_clbk = callback(CopLogicIntimidated, CopLogicIntimidated, "on_rescue_SO_administered", data),
-		verification_clbk = callback(CopLogicIntimidated, CopLogicIntimidated, "rescue_SO_verification", data)
-	}
-	local so_id = "rescue" .. tostring(data.unit:key())
-	my_data.rescue_SO_id = so_id
-
-	managers.groupai:state():add_special_objective(so_id, so_descriptor)
-end
-
-function CopLogicIntimidated._unregister_rescue_SO(data, my_data)
-	if my_data.rescuer then
-		local rescuer = my_data.rescuer
-		if alive(rescuer) and rescuer:brain() and rescuer:brain():objective() then
-			managers.groupai:state():on_objective_failed(rescuer, rescuer:brain():objective())
-		end
-		my_data.rescuer = nil
-	elseif my_data.rescue_SO_id then
-		managers.groupai:state():remove_special_objective(my_data.rescue_SO_id)
-
-		my_data.rescue_SO_id = nil
-	elseif my_data.delayed_rescue_SO_id then
-		CopLogicBase.chk_cancel_delayed_clbk(my_data, my_data.delayed_rescue_SO_id)
-	end
-end
-
--- Only allow hostage rescue if it's part of our tactics (or if we don't have any tactics to allow scripted cop/security spawns to rescue hostages)
-local rescue_SO_verification_original = CopLogicIntimidated.rescue_SO_verification
+-- Tweak hostage rescue conditions
 function CopLogicIntimidated.rescue_SO_verification(ignore_this, data, unit, ...)
-	local logic_data = unit:brain()._logic_data
-	if not logic_data or not logic_data.tactics or logic_data.tactics.rescue_hostages or logic_data.objective and logic_data.objective.grp_objective == "recon_area" then
-		return rescue_SO_verification_original(ignore_this, data, unit, ...)
+	if unit:movement():cool() then
+		return false
 	end
-end
 
-function CopLogicIntimidated.on_rescue_SO_failed(ignore_this, data)
-	local my_data = data.internal_data
+	if not unit:base():char_tweak().rescue_hostages then
+		return false
+	end
 
-	if my_data.rescuer then
-		my_data.rescuer = nil
-		my_data.delayed_rescue_SO_id = "rescue" .. tostring(data.unit:key())
+	if data.team.foes[unit:movement():team().id] then
+		return false
+	end
 
-		CopLogicIntimidated.register_rescue_SO(nil, data)
+	local objective = unit:brain():objective()
+	if not objective or objective.type == "free" or not objective.area then
+		return true
+	end
+
+	local nav_seg = unit:movement():nav_tracker():nav_segment()
+	local hostage_nav_seg = data.unit:movement():nav_tracker():nav_segment()
+	if objective.area.nav_segs[hostage_nav_seg] or hostage_nav_seg == nav_seg then
+		return objective.area.nav_segs[nav_seg] or managers.groupai:state()._rescue_allowed
 	end
 end

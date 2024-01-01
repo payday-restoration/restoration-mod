@@ -279,14 +279,15 @@ function CopMovement:do_omnia(self)
 								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
 							end										
 							if enemy:contour() then
-								if overheal_mult > 1 then
-									enemy:contour():add("omnia_heal", false)
-									enemy:contour():flash("omnia_heal", 0.2)
-
+								if overheal_mult > 1 then								
+									--enemy:contour():add("omnia_heal", false)
+									--enemy:contour():flash("omnia_heal", 0.2)
 									enemy:base():enable_lpf_buff(true)
+									enemy:base():lpf_heal_effect(true)
 								else
-									enemy:contour():add("medic_heal", false)
-									enemy:contour():flash("medic_heal", 0.2)
+									--enemy:contour():add("medic_heal", false)
+									--enemy:contour():flash("medic_heal", 0.2)
+									enemy:base():lpf_heal_effect(false)
 								end
 							end		
 							enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))

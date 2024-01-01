@@ -1240,10 +1240,9 @@ end
 -- Making them retreat only afterwards gives them more time to complete their objectives
 local _assign_recon_groups_to_retire_original = GroupAIStateBesiege._assign_recon_groups_to_retire
 function GroupAIStateBesiege:_assign_recon_groups_to_retire(...)
-	if self._task_data.assault.phase == "anticipation" then
-		return
+	if not self._rescue_allowed then
+		return _assign_recon_groups_to_retire_original(self, ...)
 	end
-	return _assign_recon_groups_to_retire_original(self, ...)
 end
 
 -- Tweak importance of spawn group distance in spawn group weight based on the groups to spawn
@@ -1542,6 +1541,11 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "assign_enemy_to_group_ai", function
 
 	self:_add_group_member(group, unit:key())
 	self:set_enemy_assigned(area, unit:key())
+end)
+
+-- Make this function properly set rescue state again for checking if recon tasks are allowed
+Hooks:OverrideFunction(GroupAIStateBase, "_set_rescue_state", function (self, state)
+	self._rescue_allowed = state
 end)
 
 -- Fix for potential crash when a group objective does not have a coarse path

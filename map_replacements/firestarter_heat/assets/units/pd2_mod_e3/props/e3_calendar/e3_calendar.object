@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_calendar" materials="units/pd2_mod_e3/props/e3_calendar/e3_calendar" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object collision_type="box" name="c_box_01" />
+        </body>
+    </bodies>
+	<decal_surfaces default_material="thin_layer" static="true">
+		<decal_mesh name="c_box_01" material="thin_layer" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_mesh" />
+    </graphics>
+</dynamic_object>

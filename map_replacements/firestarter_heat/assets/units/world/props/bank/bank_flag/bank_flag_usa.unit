@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<unit type="storm" slot="1">
-  <object file="units/world/props/bank/bank_flag/bank_flag_usa" />
-  <extensions>
-    <extension name="unit_data" class="ScriptUnitData" />
-  </extensions>
-</unit>

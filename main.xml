@@ -588,8 +588,12 @@
 				<option type="bool" default_value="false" name="GCGPYPMMSACText"/>
 				<option_group name="ForceEggs">
 					<option type="bool" default_value="false" name="Upotte"/>
+					<option type="bool" default_value="false" name="MyWife"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="CrabBattle"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="EmberMyBeloved"/>
+					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="BigMan"/>
 				</option_group>
 				<divider name="tod_divider" size="15"/>

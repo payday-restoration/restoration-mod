@@ -72,11 +72,11 @@ tweak_data.grenade_launcher = {
 
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
-	ads_moving_spread_mult = 1.25,
+	ads_moving_spread_mult = 1.15,
 	shake_mul = 2
 }
 	tweak_data.shotgun_auto = {
-		hipfire_spread_mult = 0.3,
+		hipfire_spread_mult = 0.25,
 	}
 	tweak_data.shotgun_light = {
 		hipfire_spread_mult = 1.25,
@@ -100,11 +100,11 @@ tweak_data.shotgun = {
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
-		shake_mul = 0.25
+		shake_mul = 0
 	}
 		tweak_data.flamethrower_lmg = {
 			ads_move_speed_mult = 0.7,
-			shake_mul = 0.25
+			shake_mul = 0
 		}
 
 tweak_data.smg = {

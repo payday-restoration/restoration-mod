@@ -341,11 +341,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.cop.speech_prefix_p2 = "n"
 	self.cop.speech_prefix_count = 4
-	if job == "wwh" then
-		self.cop.access = "cop"
-	else
-		self.cop.access = "fbi"
-	end
+	self.cop.access = "fbi"
 	self.cop.silent_priority_shout = "f37"
 	self.cop.dodge = presets.dodge.average
 	self.cop.deathguard = true
@@ -3777,7 +3773,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.custom_shout = true
 	self.civilian.silent_priority_shout = "g27" --pd3 moment, not sure if this voiceline is always loaded though
 	self.civilian.speech_prefix_p1 = "cm"
-	self.civilian.speech_prefix_count = 2
+	self.civilian.speech_prefix_count = 6
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
 	if job == "haunted" then

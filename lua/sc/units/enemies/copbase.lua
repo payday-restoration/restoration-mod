@@ -24,6 +24,32 @@ function CopBase:disable_lpf_buff(state)
 	end
 end
 
+function CopBase:lpf_heal_effect(overheal)
+	if overheal then
+		local body_obj = Idstring("Spine2")
+		local attach_to_body = self._unit:get_object(body_obj)
+		if not attach_to_body then
+			return
+		end
+
+		World:effect_manager():spawn({
+			effect = Idstring("effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple"),
+			parent = attach_to_body
+		})
+	else
+		local body_obj = Idstring("Spine2")
+		local attach_to_body = self._unit:get_object(body_obj)
+		if not attach_to_body then
+			return
+		end
+
+		World:effect_manager():spawn({
+			effect = Idstring("effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green"),
+			parent = attach_to_body
+		})
+	end
+end
+
 function CopBase:enable_asu_laser(state)
 	local weapon = self._unit:inventory():equipped_unit()
 	if weapon then

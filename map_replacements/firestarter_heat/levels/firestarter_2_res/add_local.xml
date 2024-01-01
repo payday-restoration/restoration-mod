@@ -7,13 +7,27 @@
 	<world_cameras path="world_cameras" script_data_type="binary"/>
 	<continent path="pc_only/pc_only" script_data_type="binary"/>
 	<mission path="pc_only/pc_only" script_data_type="binary"/>
-	<continent path="coverpoints/coverpoints" script_data_type="binary"/>
-	<mission path="coverpoints/coverpoints" script_data_type="binary"/>
-	<continent path="background/background" script_data_type="binary"/>
-	<mission path="background/background" script_data_type="binary"/>
 	<continent path="world/world" script_data_type="binary"/>
 	<mission path="world/world" script_data_type="binary"/>
+	<continent path="background/background" script_data_type="binary"/>
+	<mission path="background/background" script_data_type="binary"/>
 	<continent path="editor_only/editor_only" script_data_type="binary"/>
 	<mission path="editor_only/editor_only" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
+	<texture path="cube_lights/100633"/>
+	<texture path="cube_lights/103722"/>
+	<texture path="cube_lights/103720"/>
+	<texture path="cube_lights/102636"/>
+	<environment path="environments/fs2_heat" script_data_type="custom_xml"/>
+	<texture path="cube_lights/100461"/>
+	<texture path="cube_lights/102257"/>
+	<texture path="cube_lights/102533"/>
+	<texture path="cube_lights/100955"/>
+	<texture path="cube_lights/100953"/>
+	<texture path="cube_lights/102971"/>
+	<texture path="cube_lights/100956"/>
+	<texture path="cube_lights/102962"/>
+	<texture path="cube_lights/102963"/>
+	<texture path="cube_lights/100675"/>
+	<texture path="cube_lights/102965"/>
 </table>

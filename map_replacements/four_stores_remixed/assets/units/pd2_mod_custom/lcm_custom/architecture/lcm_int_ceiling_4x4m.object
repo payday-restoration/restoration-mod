@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<metadata material_config_group="wallpaper_mat_group"/>
+	<diesel materials="units/pd2_mod_custom/lcm_custom/architecture/lcm_int_wallpaper_1" orientation_object="rp_root" />
+	
+	<bodies>
+		<body name="body_main" enabled="true" template="static">
+			<object name="rp_root"/>
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>	
+	</bodies>
+	
+	<decal_surfaces default_material="marble" static="true">
+	</decal_surfaces>
+	
+	<graphics>
+		<graphic_group name="g_group" enabled="true" culling_object="co_culling">
+			<object name="g_g" 		enabled="true" 	shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+</dynamic_object>

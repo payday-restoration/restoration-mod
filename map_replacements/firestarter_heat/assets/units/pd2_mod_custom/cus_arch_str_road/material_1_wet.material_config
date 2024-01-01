@@ -1,0 +1,15 @@
+<materials version="3" group="road_mat_type">
+    <material name="mat_str_01" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture		file="units/payday2/architecture/str/str_01_wet_df"/>
+        <bump_normal_texture	file="units/payday2/architecture/str/str_01_nm"/>
+    </material>
+    <material name="mat_str_marking_01" version="2" decal_material="concrete" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" >
+        <diffuse_texture		file="units/payday2/architecture/str/str_ext_marking_01_df"/>
+        <bump_normal_texture	file="units/payday2/architecture/str/str_ext_marking_01_nm"/>
+        <variable				value="0.053000003099442" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_str_deco_manhole" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR">
+        <diffuse_texture		file="units/payday2/architecture/str/str_deco_manhole_df"/>
+        <bump_normal_texture	file="units/payday2/architecture/str/str_deco_manhole_nm"/>
+    </material>
+</materials>

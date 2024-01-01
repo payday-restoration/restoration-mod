@@ -1,0 +1,6 @@
+<unit type="hcm" slot="1" >
+    <object file="units/pd2_mod_custom/architecture/hcm/hcm_bdrop_mid_road_straight16x16_v2" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

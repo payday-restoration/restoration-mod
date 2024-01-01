@@ -4701,9 +4701,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_goldfarbdozers_desc"] = "Все бульдозеры теперь появляются парами.",
 		["mutator_goldfarbdozers_longdesc"] = "Все бульдозеры теперь появляются парами. Не влияет на заскриптованных бульдозеров.",
 		
-		["mutator_spoocsquad"] = "Sneaky Squad",
-		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
-		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
+		["mutator_spoocsquad"] = "Отряд ниндзей",
+		["mutator_spoocsquad_desc"] = "Клокеры появляются группами.",
+		["mutator_spoocsquad_longdesc"] = "Клокеры появляются группами.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",

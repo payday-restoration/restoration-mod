@@ -14,7 +14,7 @@ function ElementUnitSequence:on_executed(...)
 			if self._id == 106265 then
 				return
 			end
-		elseif level_id == "four_stores" then
+		elseif level_id == "four_stores" or level_id == "four_stores_remixed" then
 			if self._id == 103683 then
 				return
 			end

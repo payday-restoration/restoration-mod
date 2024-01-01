@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="rp_root" mode="add">
+        <parent root="true" />
+    </object3d>
+	<object3d name="a_c" mode="add">
+		<parent name="rp_root" />
+		<position x="0" y="0" z="0" />
+		<rotation w="1" x="0" y="0" z="0" />
+	</object3d>
+	
+	<import file="lcm_int_floor_2x2m.obj" type="obj" create_objects="true">
+        <rootpoint name="rp_root">
+            <default/>
+        </rootpoint>
+        <rootpoint	name="a_c">
+            <object	name="c_c" />
+        </rootpoint>
+    </import>
+</modelscript>

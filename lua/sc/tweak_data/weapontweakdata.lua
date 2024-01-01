@@ -3235,14 +3235,14 @@ function WeaponTweakData:_init_stats()
 	}
 
 	--Multiplier for spread on multi-raycast weapons. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-	self.stat_info.shotgun_spread_increase = 1.75
-	self.stat_info.shotgun_spread_increase_ads = 6
+	self.stat_info.shotgun_spread_increase = 1.45
+	self.stat_info.shotgun_spread_increase_ads = 5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
 	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
 
-	self.stat_info.base_spread = 10.1 --How much spread area you have at 0 accuracy.
-	self.stat_info.spread_per_accuracy = -0.1 --How much each point of accuracy reduces spread area.
+	self.stat_info.base_spread = 12.1 --How much spread area you have at 0 accuracy.
+	self.stat_info.spread_per_accuracy = -0.12 --How much each point of accuracy reduces spread area.
 	self.stats.spread = {}
 	for i = 0, 100, 1 do
 		table.insert(self.stats.spread, self.stat_info.base_spread + (i * self.stat_info.spread_per_accuracy))
@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.7, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 7, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -3816,7 +3816,6 @@ local sms_preset = {
 }
 
 --[[     WEAPON BACKUPS     ]]
-	--IMAGINE ANNUALLY ADDING THEN REMOVING CONTENT FROM THE GAME
 	local PICKUP = {
 		AR_LOW_CAPACITY = 7,
 		SHOTGUN_HIGH_CAPACITY = 4,
@@ -17107,6 +17106,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.bf2042_ayylmao.timers.reload_exit_empty = 0.45
 		self.bf2042_ayylmao.timers.reload_not_empty = 1.71
 		self.bf2042_ayylmao.timers.reload_exit_not_empty = 0.47
+	end
+
+	if self.rc_auto9 then
+		self.rc_auto9.use_data.selection_index = 2
+		self.rc_auto9.recategorize = { "heavy_pis" }
+		self.rc_auto9.has_description = true
+		self.rc_auto9.damage_type = "heavy_pistol"
+		self.rc_auto9.BURST_FIRE = 3
+		self.rc_auto9.BURST_DELAY = 0.18
+		self.rc_auto9.BURST_FIRE_DEFAULT = true
+		self.rc_auto9.BURST_FIRE_RATE_MULTIPLIER = 1.4285714
+		self.rc_auto9.BURST_FIRE_RANGE_MULTIPLIER = 2
+		self.rc_auto9.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
+		self.rc_auto9.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+		self.rc_auto9.ADAPTIVE_BURST_SIZE = false		
+		self.rc_auto9.CAN_TOGGLE_FIREMODE = false
+		self.rc_auto9.FIRE_MODE = "auto"	
+		self.rc_auto9.fire_mode_data.fire_rate = 0.085714
+		self.rc_auto9.AMMO_MAX = 120
+		self.rc_auto9.CLIP_AMMO_MAX = 50
+		self.rc_auto9.lock_slide = true
+		self.rc_auto9.lock_slide_alt = true
+		self.rc_auto9.kick = self.stat_info.kick_tables.even_recoil
+		self.rc_auto9.supported = true
+		self.rc_auto9.ads_speed = 0.180
+		self.rc_auto9.damage_falloff = {
+			start_dist = 900,
+			end_dist = 2800,
+			min_mult = 0.2
+		}
+		self.rc_auto9.stats = {
+			damage = 30,
+			spread = 61,
+			recoil = 71,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 11,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 1,
+			reload = 20
+		}
+		self.rc_auto9.stats_modifiers = nil
+		self.rc_auto9.muzzleflash = "effects/payday2/particles/weapons/308_muzzle"
+		self.rc_auto9.swap_speed_multiplier = 0.45
+		self.rc_auto9.panic_suppression_chance = 0.05
+		self.rc_auto9.timers.reload_empty = 2.08
+		self.rc_auto9.timers.reload_exit_empty = 0.5
+		self.rc_auto9.timers.reload_not_empty = 1.5
+		self.rc_auto9.timers.reload_exit_not_empty = 0.54
 	end
 
 	if self.malorian_3516 then --RJC9000 and PlayBONK's 2077 Silverhand

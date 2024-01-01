@@ -56,6 +56,37 @@ return {
 	[100818] = {
 		ponr = ponr_value
 	},
+	--Should fix enemies getting stuck
+	[101088] = {
+		values = {
+			enabled = true
+		}
+	},
+	[101238] = {
+		values = {
+			enabled = true
+		}
+	},
+	[100999] = {
+		values = {
+			enabled = true
+		}
+	},
+	[101265] = {
+		values = {
+			enabled = true
+		}
+	},
+	[101262] = {
+		values = {
+			enabled = true
+		}
+	},
+	[101264] = {
+		values = {
+			enabled = true
+		}
+	},
 	--Technically should fix softlock when blowtorch interactions are unavailable. Also player can't abuse keys in loud
 	[102704] = {
 		on_executed = {

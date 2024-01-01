@@ -4594,7 +4594,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.shovel.stats.max_damage_effect = 18.0
 		self.melee_weapons.shovel.stats.charge_time = 1.8
 		self.melee_weapons.shovel.stats.range = 180
-		self.melee_weapons.shovel.attack_allowed_expire_t = 0.1
 		self.melee_weapons.shovel.stats.concealment = 27
 		--Slutshaming--	
 		self.melee_weapons.branding_iron.stats.min_damage = 4.5

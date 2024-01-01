@@ -24827,8 +24827,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 			self.wpn_fps_shot_cp2077_guts_npc.uses_parts = deep_clone(self.wpn_fps_shot_cp2077_guts.uses_parts)
-
 		end --Rebecca Cyberpunk
+
+		if self.parts.wpn_fps_pis_rc_auto9_receiver then
+			self.parts.wpn_fps_pis_rc_auto9_receiver.perks = nil
+		end
 
 	--[[ GAMBYT'S MODS ]]
 

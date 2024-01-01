@@ -995,7 +995,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга.",
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ"
+		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
+		
+		--Boiling Point RU text tweaks
+		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
+		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
 		
 	})
 

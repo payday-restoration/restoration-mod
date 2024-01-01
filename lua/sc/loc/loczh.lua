@@ -1114,7 +1114,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above without killing Captain Spring.",
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT"
+		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT",
+		
+		--Boiling Point RU text tweaks
+		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
+		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
 		
     })
 

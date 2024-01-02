@@ -256,7 +256,7 @@
 					<material materials="mtr_body_lod1" max_distance="1500"/>
 					<material materials="mtr_body_lod2"/>
 				</object>
-				<object name="g_body_lod1" 	enabled="true" lod="1" >
+				<object name="g_body_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2"/>
 				</object>

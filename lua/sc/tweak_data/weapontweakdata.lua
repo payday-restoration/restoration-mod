@@ -17118,7 +17118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rc_auto9.BURST_FIRE_DEFAULT = true
 		self.rc_auto9.BURST_FIRE_RATE_MULTIPLIER = 1.4285714
 		self.rc_auto9.BURST_FIRE_RANGE_MULTIPLIER = 2
-		self.rc_auto9.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
+		self.rc_auto9.BURST_FIRE_RECOIL_MULTIPLIER = 0.35
 		self.rc_auto9.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 		self.rc_auto9.ADAPTIVE_BURST_SIZE = false		
 		self.rc_auto9.CAN_TOGGLE_FIREMODE = false
@@ -17139,7 +17139,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rc_auto9.stats = {
 			damage = 30,
 			spread = 61,
-			recoil = 71,
+			recoil = 73,
 			spread_moving = 5,
 			zoom = 1,
 			concealment = 25,
@@ -17152,7 +17152,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.rc_auto9.stats_modifiers = nil
 		self.rc_auto9.muzzleflash = "effects/payday2/particles/weapons/308_muzzle"
-		self.rc_auto9.swap_speed_multiplier = 0.45
+		self.rc_auto9.swap_speed_multiplier = 0.4
 		self.rc_auto9.panic_suppression_chance = 0.05
 		self.rc_auto9.timers.reload_empty = 2.08
 		self.rc_auto9.timers.reload_exit_empty = 0.5

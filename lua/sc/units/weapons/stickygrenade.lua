@@ -97,6 +97,7 @@ function StickyGrenade:_attach_to_hit_unit(is_remote)
 					}
 				}
 				damage_ext:force_hurt(damage_info)
+				damage_ext._unit:sound():say("burnhurt", nil, nil, nil, nil)
 			end
 		elseif not alive(self._col_ray.body) or not self._col_ray.body:enabled() then
 			hit_unit:m_rotation(rot)

@@ -31,6 +31,7 @@ function CopActionHurt:init(action_desc, common_data)
 	local crouching = self._ext_anim.crouch or self._ext_anim.crouching or self._ext_anim.hurt and self._machine:get_parameter(self._machine:segment_state(Idstring("base")), "crh") > 0
 	local fire_variant = "fire"
 	local redir_res = nil
+	local play_fire_death = nil
 	local action_type = action_desc.hurt_type
 
 	if action_type == "knock_down" then
@@ -266,23 +267,65 @@ function CopActionHurt:init(action_desc, common_data)
 		if self._ext_anim.run or self._ext_anim.sprint or self._ext_anim.ragdoll or action_desc.variant == "bleed" then
 			self:force_ragdoll()
 		else
+			local variant = 1
+			local weapon_unit = action_desc.weapon_unit
+			local base_ext = alive(weapon_unit) and weapon_unit:base()
+			local td = nil
+	
+			if base_ext then
+				td = base_ext.weapon_tweak_data and base_ext:weapon_tweak_data() or base_ext.projectile_entry and base_ext:projectile_entry() and tweak_data.projectiles[base_ext:projectile_entry()] or base_ext.get_name_id and tweak_data.weapon[base_ext:get_name_id()]
+
+				if td then
+					fire_variant = td.fire_variant or fire_variant
+				end
+			end
+
 			self:_prepare_ragdoll()
 
-			redir_res = self._ext_movement:play_redirect("death_poison")
+			if td and td.manticore then
+				local variant_count = CopActionHurt.fire_death_anim_variants[fire_variant] or 5
 
-			if not redir_res then
-				debug_pause("[CopActionHurt:init] death_poison redirect failed in", self._machine:segment_state(Idstring("base")))
+	
+				if variant_count > 1 then
+					variant = self:_pseudorandom(variant_count)
+				end
 
-				return
+				redir_res = self._ext_movement:play_redirect("death_" .. fire_variant)
+	
+				if not redir_res then
+					debug_pause("[CopActionHurt:init] death_fire redirect failed in", self._machine:segment_state(Idstring("base")))
+	
+					return
+				end
+				
+				play_fire_death = true
+	
+				for i = 1, variant_count do
+					local state_value = 0
+	
+					if i == variant then
+						state_value = 1
+					end
+	
+					self._machine:set_parameter(redir_res, "var" .. tostring(i), state_value)
+				end
+			else
+				redir_res = self._ext_movement:play_redirect("death_poison")
+	
+				if not redir_res then
+					debug_pause("[CopActionHurt:init] death_poison redirect failed in", self._machine:segment_state(Idstring("base")))
+	
+					return
+				end
+	
+				local variant = CopActionHurt.forced_death_var or self.poison_death_anim_variants[is_female and "female" or "male"] or 1
+	
+				if not CopActionHurt.forced_death_var and variant > 1 then
+					variant = self:_pseudorandom(variant)
+				end
+	
+				self._machine:set_parameter(redir_res, "var" .. tostring(variant), 1)
 			end
-
-			local variant = CopActionHurt.forced_death_var or self.poison_death_anim_variants[is_female and "female" or "male"] or 1
-
-			if not CopActionHurt.forced_death_var and variant > 1 then
-				variant = self:_pseudorandom(variant)
-			end
-
-			self._machine:set_parameter(redir_res, "var" .. tostring(variant), 1)
 		end
 	elseif action_type == "death" and not crouching and (self._ext_anim.run or self._ext_anim.sprint) and self._ext_anim.move_fwd and not common_data.char_tweak.no_run_death_anim then
 		self:_prepare_ragdoll()
@@ -563,7 +606,7 @@ function CopActionHurt:init(action_desc, common_data)
 	end
 
 	if not self._unit:base().nick_name then
-		if action_desc.variant == "fire" then
+		if action_desc.variant == "fire" or play_fire_death then
 			local base_ext = self._unit:base()
 
 			if action_desc.hurt_type == "fire_hurt" then

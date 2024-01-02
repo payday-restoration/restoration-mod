@@ -1055,8 +1055,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_challenge_menu_challenge_moon_6_obj"] = "도살장 작업에서 오버킬 난이도 이상으로 캡틴 스프링을 물리치지 않은채로 완료하십시오.",
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기"
+		["hud_assault_vip"] = "캡틴을 죽여 어썰트 종료시키기",
 		
+		--Boiling Point RU text tweaks
+		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
+		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
 	})
 
 

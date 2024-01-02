@@ -1041,7 +1041,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		
 		--Generic Captain Text
-		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT"
+		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT",
+		
+		--Boiling Point RU text tweaks
+		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
+		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
+		
 		
 	})
 
@@ -1774,7 +1779,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_lua"] = "Powered by Lua!",
 		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
 		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
-		
 		
 		
 

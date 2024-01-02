@@ -540,6 +540,7 @@ tweak_data.projectiles.poison_gas_grenade.player_damage = 0
 tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
 tweak_data.projectiles.poison_gas_grenade.range = 0
 tweak_data.projectiles.poison_gas_grenade.name_id = "bm_poison_gas_grenade"
+tweak_data.projectiles.poison_gas_grenade.manticore = true
 tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 600
 tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 12
 tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1

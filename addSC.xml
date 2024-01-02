@@ -140,12 +140,25 @@
 	<mission			path="levels/instances/unique/fex/fex_security_room_left/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/fex/fex_security_room_right/world/world" force="true" />
 	
+	<!--Boiling Point edit-->
 	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
 	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/art2/art2" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/collision/collision" force="true" unload="true"/>
+	<!--proper textures for Boiling Point (and more authentic) by Psyhowithdrill-->
+	<texture path="units/pd2_dlc_mad/characters/civ_male_scientist_01/scientist_01_body_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/characters/civ_male_scientist_02/scientist_02_body_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/equipment/mad_interactable_door_keycard/screen_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_interactable_tablet_stand/mad_prop_interactable_tablet_stand_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_keycard/keycard_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_ctscanner/mad_prop_medical_ctscanner_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_glovebox/mad_prop_medical_glovebox_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_carm_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_trolley_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_military_laptop/mad_prop_military_laptop_screen_login_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_sign_electricity/mad_prop_sign_electricity_df" force="true"/>
 	
 	<mission			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->

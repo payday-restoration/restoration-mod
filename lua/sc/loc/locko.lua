@@ -1354,9 +1354,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "충돌 지점에 #{ghost_color}#전기 폭발##을 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#5##미터 반경에 #{skill_color}#180##의 피해를 가하고 일정 확률로 #{ghost_color}#적을 감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "충돌 지점에 #{ghost_color}#전기 폭발##를 일으키는 유탄을 발사합니다. 폭발은 #{skill_color}#3##미터 반경에 #{skill_color}#300##의 피해를 가하고 일정 확률로 #{ghost_color}#적을 감전시킵니다.##",
 		["bm_wp_upg_a_grenade_launcher_poison"] = "맨티코어-6 생화학탄",
-		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#10##초 동안 머물며 #{skill_color}#8##초에 걸쳐 피해를 #{skill_color}#240##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#8##초 동안 머물며 #{skill_color}#6##초에 걸쳐 피해를 #{skill_color}#180##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
-		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#6##초 동안 머물며 #{skill_color}#4##초에 걸쳐 피해를 #{skill_color}#120##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#8##초 동안 머물며 #{skill_color}#8##초에 걸쳐 피해를 #{skill_color}#240##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#6##초 동안 머물며 #{skill_color}#6##초에 걸쳐 피해를 #{skill_color}#180##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
+		["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "충돌 지점에 #{stats_positive}#맹독 가스 구름##을 생성하는 유탄을 발사합니다.\n가스는 #{skill_color}#6##미터 반경에 #{skill_color}#4##초 동안 머물며 #{skill_color}#4##초에 걸쳐 피해를 #{skill_color}#120##까지 가하고 가스에 갇힌 대부분의 적들에게 #{stats_positive}#구토##를 #{important_1}#한 번만## 유발합니다.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "레어",

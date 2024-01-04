@@ -1488,7 +1488,7 @@ function CopDamage:damage_melee(attack_data)
 	local is_gangster = CopDamage.is_gangster(self._unit:base()._tweak_table)
 	local is_cop = not is_civlian and not is_gangster
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
-	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()]
+	local head = hit_body and self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and (hit_body:name() == self._ids_head_body_name or head_hitboxes[hit_body:name():key()])
 	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect or attack_data.damage

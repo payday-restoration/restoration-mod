@@ -653,7 +653,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.speech_prefix_p2 = nil
 	self.medic_summers.custom_voicework = nil
 	self.medic_summers.spawn_sound_event = "rmdc_entrance"
-	self.medic_summers.die_sound_event = "mga_death_scream"
 	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 	self.medic_summers.is_special = true
@@ -722,7 +721,6 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.no_omnia_heal = true
 	self.omnia_lpf.can_be_healed = false
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
-	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
 	self.omnia_lpf.no_asu = true
 	self.omnia_lpf.marshal_logic = true
@@ -2657,7 +2655,6 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.ecm_hurts = {}
-	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
 	self.tank_titan.is_special = true
@@ -2820,8 +2817,7 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_titan.custom_voicework = nil
 	else
 		self.spooc_titan.custom_voicework = "tspook"
-	end		
-	self.spooc_titan.die_sound_event_2 = "mga_death_scream"
+	end
 	self.spooc_titan.heal_cooldown = 15
 	self.spooc_titan.no_xmas_hat = true
 	table.insert(self._enemy_list, "spooc_titan")
@@ -3229,7 +3225,6 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.spring.announce_incomming = "incomming_captain"
 	self.spring.spawn_sound_event_2 = "cloaker_spawn"
-	self.spring.die_sound_event_2 = "mga_death_scream"
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
 	self.spring.no_asu = true
@@ -3515,7 +3510,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.speech_prefix_p1 = "fl"
 	self.taser_summers.speech_prefix_p2 = "n"
 	self.taser_summers.speech_prefix_count = 1
-	self.taser_summers.die_sound_event = "mga_death_scream"
 	self.taser_summers.use_radio = "dsp_radio_russian"
 	self.taser_summers.spawn_sound_event = nil
 	self.taser_summers.custom_voicework = nil
@@ -3551,7 +3545,6 @@ function CharacterTweakData:_init_taser(presets)
 		self.taser_titan.spawn_sound_event = "tsr_elite"
 	end	
 	self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
-	self.taser_titan.die_sound_event = "mga_death_scream"
 	self.taser_titan.custom_voicework = nil
 	self.taser_titan.surrender = nil
 	self.taser_titan.dodge = presets.dodge.elite
@@ -3666,7 +3659,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.speech_prefix_p2 = "n"
 	self.boom_summers.speech_prefix_count = 1
 	self.boom_summers.custom_voicework = nil
-	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_radio = "dsp_radio_russian"
 	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5

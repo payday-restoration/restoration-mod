@@ -1,15 +1,19 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 
+	--So it will not crash
 	if difficulty_index == 7 then
 	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
 	elseif difficulty_index == 8 then
 	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
 	end
 	
+	
+	--High PONR Timer to work with ponr player scaling
 	if difficulty_index <= 5 then
 		ponr_value = 1080
 	elseif difficulty_index == 6 or difficulty_index == 7 then
@@ -18,17 +22,21 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 		ponr_value = 1020	
 	end
 	
+	
+	--Increase the time lock timers on mayhem above, will probably fuck 12 angry minutes achivement
 	if difficulty_index >= 6 then
 		timelock_normal = 240
 		timelock_fast = 210
 	end
-	
-if Global.game_settings and Global.game_settings.one_down then
 
+--IF we're in Pro Job, then do this shit below
+if shadow_fucked_me_hard then
+	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and most importantly...Titan Snipers on Overkill above
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 
+	--Increase the time lock timers on all diffs, will probably fuck 12 angry minutes achivement even more
 	if difficulty_index <= 5 then
 		timelock_normal = 240
 		timelock_fast = 210
@@ -64,7 +72,7 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--Pro Job PONR 
+	--Pro Job PONR, for both BEAST and thermite entries
 	[105790] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
@@ -81,7 +89,7 @@ return {
 			end
 		end
 	},
-	--Prevent shields/dozers from disabling the timelock
+	--Prevent shields/dozers from disabling the timelock (Are we living in PDTH?)
 	[101195] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then

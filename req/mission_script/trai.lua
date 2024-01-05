@@ -30,7 +30,7 @@ return {
             trigger_times = 0
 		}
 	},
-	--Bravo Guards
+	--Bravo Guards, if we're robbing the Army why there's no Bravo guards?
 	[100676] = {
 		values = {
             enemy = bravo_guard_table.bravo_guard_1

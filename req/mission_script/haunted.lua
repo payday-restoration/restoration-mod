@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 --Instead of bad dozer spam following by a random cloaker, Safehouse Nightmare has now proper scripted endless assault that features variety of Zombie Forces
 --Scripted Spawn List
 	if difficulty_index <= 3 then
@@ -112,7 +112,9 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		old_chains = "units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 		vet_cop = "units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"
 end
-	if Global.game_settings and Global.game_settings.one_down then
+
+	--Yes, i have to place this shit under the regular spawns cause Non-PJ spawns will overwrite the PJ spawns so it would not work properly
+	if shadow_fucked_me_hard then
 	if difficulty_index <= 3 then
 		swat_1 = "units/pd2_mod_halloween/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_2 = "units/pd2_mod_halloween/characters/ene_fbi_swat_2/ene_fbi_swat_2"
@@ -226,7 +228,7 @@ end
 	
 
 return {
-	--PONR/Restores unused cloaker vault spawn
+	--PONR/Restores unused cloaker vault spawn that spawns a dozer as a *BOOO* mechanic
 	[100546] = {
 	ponr = 360,
 	on_executed = {

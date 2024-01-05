@@ -44,7 +44,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value * 2
 	},
-	--prevent dozers/shields from disabling the power
+	--prevent dozers/shields from disabling the power (Are we living in PDTH.....again?)
 	[104699] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
@@ -138,7 +138,7 @@ return {
 			base_delay_rand = 15
 		}
 	},
-	-- Always have 3 power boxes to defend regardless of difficulty
+	-- Always have 3 power boxes to defend regardless of difficulty, cause 5 power boxes is already pain in the ass
 	[104661] = {
 		values = {
 			amount = 3

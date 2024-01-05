@@ -1,5 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty_index = tweak_data:difficulty_to_index(difficulty
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+--Why not have a blackdozer in one of the choppers, yeah?
 local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 local bulldozer_2 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local teargaschopper = 1
@@ -7,7 +9,8 @@ local teargas = 1
 local teargasmayhem = 2
 local vaultdoor = 66
 local snipers = 1
-
+	
+	--Same in DS
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
@@ -21,20 +24,22 @@ local snipers = 1
 		ponr_value = 600
 	end
 	
+	--More snipers cause 1 sniper on DS is not enough
 	if difficulty_index == 6 or difficulty_index == 7 then
 		snipers = 2
 	elseif difficulty_index == 8 then
 		snipers = 3
 	end
 	
-if Global.game_settings and Global.game_settings.one_down then
+--If we're in Pro Job, then do this shit below	
+if shadow_fucked_me_hard then
 	teargas = 2
 	teargasmayhem = 3
 	teargaschopper = 2
 	vaultdoor = 100
+	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		teargasmayhem = 4
 	end
@@ -66,8 +71,8 @@ end
 }
 
 return {
-	--Pro Job PONR 
-	[102149] = {
+	--Pro Job PONR, triggers when the fire is done, should probably trigger when the vault opens instead
+	[100872] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},

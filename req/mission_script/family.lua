@@ -29,7 +29,7 @@ return {
 			enabled = false
 		}
 	},
-	--Disable the SWAT Turret
+	--Disable the SWAT Turret, 2015 really meant the slowly removal of reinforce units
 	[102124] = {
 		values = {
 			enabled = false

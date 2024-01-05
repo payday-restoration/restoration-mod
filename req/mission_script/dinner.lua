@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty_index = tweak_data:difficulty_to_index(difficulty
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local swat_amount = 4
 local murky_amount = 2
 local murkyman_1 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
@@ -7,6 +8,7 @@ local murkyman_2 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_
 local murkyman_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 
+	--replace murky greendozer with bendozer on DS
 	if difficulty_index == 8 then
 		murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli"
 	end
@@ -19,15 +21,19 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		ponr_value = 90	
 	end
 	
-	if Global.game_settings and Global.game_settings.one_down then
+	--If we're in Pro Job, then do this shit below
+	if shadow_fucked_me_hard then
+	--increase the amount of scripted swat van spawns and murky spawns
 		swat_amount = 6
 		murky_amount = 5
+	--Elite Murkies start replace some murkymans, will probably fuck you up inside the Slaughterhouse
 	if difficulty_index >= 4 then
 		murkyman_1 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
 		murkyman_2 = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun"
 		murkyman_3 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
 	end
 		
+	--Scripted swat spawns tweaks
 	if difficulty_index <= 2 then
 		swat_1 = "units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"
 		swat_2 = "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"
@@ -51,6 +57,7 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"		
 	elseif difficulty_index == 7 then
+		--some units are titan units now
 		swat_1 = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"
 		swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		spooc =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
@@ -58,6 +65,7 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"	
 	else
+		--Titan squad to fuck you over on DSPJ
 		swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		spooc =  "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
@@ -385,10 +393,10 @@ return {
             enemy = murkyman_3
 		}
 	},
-	--disables the Swat Turret
-	[100305] = {
+	--disables the Swat Turret, it's not really needed here, eh?
+	[102484] = {
 		values = {
-            enabled = false
+            chance = 0
 		}
 	}
 }

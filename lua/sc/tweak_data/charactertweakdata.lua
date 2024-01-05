@@ -918,7 +918,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_melee_preset = true	
 	self.heavy_swat_sniper.custom_voicework = nil
 	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
-	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
@@ -3101,9 +3100,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.priority_shout_max_dis = 3000
 	self.phalanx_vip.flammable = false
 	self.phalanx_vip.can_be_tased = false
-	self.phalanx_vip.ecm_vulnerability = nil	
-	self.phalanx_vip.die_sound_event = "mga_death_scream"
-	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
+	self.phalanx_vip.ecm_vulnerability = nil
+	self.phalanx_vip.die_sound_event = "l2n_x01a_any_3p"
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
@@ -3143,7 +3141,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	
 	--Winters, shield broken
 	self.phalanx_vip_break = deep_clone(self.phalanx_vip)
-	self.phalanx_vip_break.tags = {"law", "special", "captain"}
+	self.phalanx_vip_break.tags = {"law", "custom", "special", "captain"}
 	self.phalanx_vip_break.rotation_speed = 3
 	self.phalanx_vip_break.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.phalanx_vip_break.dodge = presets.dodge.elite
@@ -3314,7 +3312,6 @@ function CharacterTweakData:_init_summers(presets)
 	else
 		self.summers.spawn_sound_event = "cpa_a02_01"
 	end
-	self.summers.die_sound_event = "mga_death_scream"
 	self.summers.fire_bag_death = true	
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil

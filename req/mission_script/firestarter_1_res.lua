@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+--table for Colombian gangsters
 local gangster_table = {
 	colombian_1 = "units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1",
 	colombian_2 = "units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2",
@@ -7,6 +8,7 @@ local gangster_table = {
 	colombian_enforcer = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 }
 	
+	--High PONR Timer to work with ponr player scaling
 	if difficulty_index <= 5 then
 		ponr_value = 1080	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
@@ -46,6 +48,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
+	--do this shit instead so I won't need to edit the mission file if we update Firestarter again
 	[103949] = {
 		values = {
             enemy = gangster_table.colombian_1

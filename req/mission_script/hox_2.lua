@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var = math.rand(1)
 local chance_dozer = 25
 local dozer_table = {
@@ -12,13 +13,15 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
+	--Increase chance of spawning scripted dozer
 	if difficulty_index == 5 or difficulty_index == 6 then
 		chance_dozer = 50
 	elseif difficulty_index == 7 or difficulty_index == 8 then
 		chance_dozer = 75
 	end
 	
-	if Global.game_settings and Global.game_settings.one_down then
+	--If we're in Pro Job, then increase the chance even further
+	if shadow_fucked_me_hard then
 	if difficulty_index == 5 or difficulty_index == 6 then
 		chance_dozer = 75
 	elseif difficulty_index == 7 or difficulty_index == 8 then
@@ -26,7 +29,7 @@ local dozer_table = {
 	end
 end	
 
-	--Setting up the dozer randomizer
+	--Setting up the dozer randomizer, so cool
 	if difficulty_index == 4 or difficulty_index == 5 then
 		if chance_dozer_var < 0.50 then
 			dozer = dozer_table.dozer_black

@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local ambush_doors_chance = 85
 local ambush_amount = 1
 local dozer_vault = 4
@@ -19,17 +20,24 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
-if Global.game_settings and Global.game_settings.one_down then
+
+--If we're in Pro Job, then do this shit below
+if shadow_fucked_me_hard then
 	    ambush_amount = 2
+	--titan dozer replaces some dozers on Mayhem above	
 	if difficulty_index >= 6 then
 		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
+	--Titan cloakers replace scripted cloakers
+	--One additional dozer in the vault
+	--Ambush is more deadly
 	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_doors_chance = 100
 		ambush_amount = 3
 		dozer_vault = 5
 	end
+	--Titan units replace some of the scripted spawns
 	if difficulty_index >= 5 then
 		titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
@@ -42,7 +50,7 @@ end
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
 	end	
 
-	--Setting up random vault dozers for Mayhem+
+	--Setting up random vault dozers for Mayhem+, that's rad!
 	if difficulty_index == 6 or difficulty_index == 7 then
 		if chance_dozer_vault_1 < 0.35 then
 			vault_dozer_1 = dozer_table.dozer_skull
@@ -180,7 +188,7 @@ return {
             enemy = vault_guard
 		}
 	},
-	--DOZER RANDOMIZER IN THE VAULT!!!!!!!!!!
+	--DOZER RANDOMIZER IN THE VAULT!, You better get trip mines like in PDTH or suffer
 	[100763] = {
 		values = {
             enemy = vault_dozer_1

@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_1 = math.rand(1)
 local chance_dozer_2 = math.rand(1)
 local dozer_ambush_chance_ovk = 50
@@ -15,15 +16,15 @@ local dozer_table = {
 	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
-
-	if Global.game_settings and Global.game_settings.one_down then
+	--If we're in Pro Job, then change scripted dozers stuff shit
+	if shadow_fucked_me_hard then
 		random_dozer = 2
 		dozer_ambush_chance_ovk = 70
 		dozer_ambush_chance_dw = 80
 		dozer_ambush_chance_ds = 100
 	end	
 
-	--Setting up the dozer randomizer
+	--Setting up the dozer randomizer, this is so fucking cool
 	if difficulty_index == 4 or difficulty_index == 5 then
 		if chance_dozer_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black

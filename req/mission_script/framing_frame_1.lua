@@ -1,6 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
+	--security rooms should always have the shotgun guard
 	if difficulty_index <= 6 then
 		jerome_dude = "units/payday2/characters/ene_security_3/ene_security_3"
 		smg_dude = "units/payday2/characters/ene_security_2/ene_security_2"	

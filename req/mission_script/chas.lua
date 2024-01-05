@@ -1,7 +1,9 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var = math.rand(1)
 local chance_dozer = 75
+--set up the table for the randomizer
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
@@ -12,14 +14,15 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
-if Global.game_settings and Global.game_settings.one_down then
+--If we're in Pro Job, then do this shit below
+if shadow_fucked_me_hard then
+	--DSPJ has 100% of spawning the scripted dozer
 	if difficulty_index == 8 then
 		chance_dozer = 100
 	end
-end	
+end
 
-
-	--Setting up the dozer randomizer
+	--Setting up the dozer randomizer, oh yeah
 	if difficulty_index == 6 or difficulty_index == 7 then
 		if chance_dozer_var < 0.35 then
 			dozer = dozer_table.dozer_skull
@@ -111,7 +114,7 @@ return {
             chance = chance_dozer
 		}
 	},
-	--Dozer gets randomized + repositioned to the boat loot drop point
+	--Dozer gets randomized + repositioned to the boat loot drop point (honestly, better spot than vanilla)
 	[102870] = {
 		values = {
             enemy = dozer,

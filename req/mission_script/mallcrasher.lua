@@ -18,7 +18,7 @@ return {
 			{ id = 300164, delay = 45 }
 		}
 	},
-	--access fix
+	--access fix, beat cops use fbi access
 	[302019] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then

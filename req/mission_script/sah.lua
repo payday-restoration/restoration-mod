@@ -134,7 +134,7 @@ return {
 			GS_defend_shields = false
 		}
 	},
-	--Made Locke less annoying
+	--Made Locke less annoying, really shut the fuck up
 	[101989] = {
 		values = {
 			trigger_times = 1

@@ -58,7 +58,7 @@ return {
 				}
 			}
 		},
-		--fixes the issue with turret objective
+		--fixes the issue with turret objective (the area trigger is depending on these units instead of SO trigger)
 		[102783] = {
 			values = {
 				rules = {
@@ -71,6 +71,7 @@ return {
 				}
 			}
 		},
+		--DON'T DESPAWN THESE DOZERS, PLEASEEEEE! THEY ARE IMPORTANT!
 		[103639] = {
 			values = {
 				rules = {

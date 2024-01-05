@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local amount_guards = 8
 
 	if difficulty_index <= 5 then
@@ -14,12 +15,12 @@ local amount_guards = 8
 		amount_guards = 12
 	end
 	
-	if Global.game_settings and Global.game_settings.one_down then	
+	if shadow_fucked_me_hard then	
 		enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 	end
 	
 return {
-	--Pro Job PONR + Players now can steal paintings when boat escape triggered
+	--Pro Job PONR + Players now can steal paintings when boat escape triggered (if we do it on stealth tho)
 	[100216] = {
 		ponr = ponr_value,
 		on_executed = {

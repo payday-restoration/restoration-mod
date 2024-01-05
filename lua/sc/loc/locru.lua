@@ -4705,7 +4705,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_goldfarbdozers_desc"] = "Все бульдозеры теперь появляются парами.",
 		["mutator_goldfarbdozers_longdesc"] = "Все бульдозеры теперь появляются парами. Не влияет на заскриптованных бульдозеров.",
 		
-		["mutator_spoocsquad"] = "Отряд ниндзей",
+		["mutator_spoocsquad"] = "Отряд ниндзя",
 		["mutator_spoocsquad_desc"] = "Клокеры появляются группами.",
 		["mutator_spoocsquad_longdesc"] = "Клокеры появляются группами.",
 		--Crime spree modifier changes

@@ -32,7 +32,7 @@ return {
 	[102654] = {
 		ponr = ponr_value
 	},
-	--Disable PONR if you somehow what to print money, re-trigger again if you done with it
+	--Disable PONR if you somehow want to print money, re-trigger again if you done with it
     [102551] = {
         ponr_end = true
     },
@@ -57,8 +57,6 @@ return {
 	--Forces the reinforcments to spawn instead
 	[102819] = {
 		values = {
-			difficulty_overkill = "true",
-			difficulty_overkill_145 = "true",
 			difficulty_easy_wish = "true",
 			difficulty_overkill_290 = "true",
 			difficulty_sm_wish = "true"

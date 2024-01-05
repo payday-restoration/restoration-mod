@@ -2512,7 +2512,7 @@ end
 
 
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
-	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	if not weapon then
 		return
 	end

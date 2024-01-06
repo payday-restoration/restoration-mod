@@ -915,8 +915,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.has_alarm_pager = false
 	self.heavy_swat_sniper.calls_in = true
 	self.heavy_swat_sniper.static_dodge_preset = true
-	self.heavy_swat_sniper.static_melee_preset = true	
-	self.heavy_swat_sniper.custom_voicework = nil
+	self.heavy_swat_sniper.static_melee_preset = true
 	self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
@@ -1242,6 +1241,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_elite_guard.tags = {"law", "city_swat"}
 	self.weekend_elite_guard.dt_suppress = nil
 	self.weekend_elite_guard.silent_priority_shout = "f37"
+	self.weekend_elite_guard.is_special = false
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.yellow_blood = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard

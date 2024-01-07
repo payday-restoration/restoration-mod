@@ -9,5 +9,11 @@ return {
 		values = {
 			enabled = false
 		}
+	},
+	--allow snipers to spawn even if c4 arrives
+	[104556] = {
+		values = {
+			enabled = false
+		}
 	}
 }

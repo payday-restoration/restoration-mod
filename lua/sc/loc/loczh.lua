@@ -4,16 +4,19 @@ Or The update is so less that I should not bother you guys in that case.
 I tried to make my mod have a lower priorty, but it didn't work, so I can only do something here.
 THIS CAN RLY MAKES MY WORK MUCH MORE CONVENIENT, so PLZ don't delete it since it only affects Chinese.  --]]
 if ChinStringFixes and ChinStringFixes.settings and ChinStringFixes.settings.Mod_Support and ChinStringFixes.settings.Mod_Support.Resmod and ChinStringFixes.settings.Mod_Support.Resmod.Resmod_Compat and ChinStringFixes.settings.Mod_Support.Resmod.Resmod_Compat ~= 1 and ChinStringFixes.settings.Enable_String then
-	return
+    return
 end
 
+Month = os.date("%m")
+Day = os.date("%d")
 local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
-local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
-local bobcat = restoration and restoration.Options:GetValue("OTHER/ForceEggs/CrabBattle")
-local shitpost = restoration and restoration.Options:GetValue("OTHER/ForceEggs/BigMan")
-local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
-
+    local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
+    local my_wife = restoration and restoration.Options:GetValue("OTHER/ForceEggs/MyWife")
+    local bobcat = restoration and restoration.Options:GetValue("OTHER/ForceEggs/CrabBattle")
+    local shitpost = restoration and restoration.Options:GetValue("OTHER/ForceEggs/BigMan")
+    local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
+-- Here's a NBSP: 
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
     LocalizationManager:add_localized_strings({
@@ -31,8 +34,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["menu_infamy_go_inf_rep"] = "使用声望（晋升至下一转的0级）",
         ["menu_infamy_go_inf_prestige"] = "使用恶名池（晋升至下一转的100级）",
         ["menu_st_spec_23"] = "模仿者",
-        ["menu_st_spec_24"] = "白板",
-        ["menu_st_spec_25"] = "天赋异禀",
         ["bm_menu_drag_handle"] = "拉机柄",
         ["bm_wp_upg_a_grenade_launcher_hornet"] = "蜂巢榴弹",
         ["bm_menu_gadget_placement"] = "附件位置",
@@ -185,6 +186,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModAltLastDownColorDescID"] = "将被逮捕前最后一次倒地时角色边框的颜色设置为 color_sin_classic*.",
         ["RestorationModNoBleedoutTiltTitleID"] = "取消倒地视角的倾斜",
         ["RestorationModNoBleedoutTiltDescID"] = "倒地后玩家的视角将不再倾斜",
+        ["RestorationModGOTTAGETAGRIPTitleID"] = "Hide ALL Foregrips",  --tra
+        ["RestorationModGOTTAGETAGRIPDescID"] = "Hides *all* attachments of the \"vertical_grip\" type from appearing in menus; ones already attached to weapons are unaffected. Requires restart.",
         ["RestorationModADSTransitionStyleTitleID"] = "瞄准风格",
         ["RestorationModADSTransitionStyleDescID"] = "改变你使用瞄准的动作风格。",
         ["RestorationModGCGPYPMMSACTitleID"] = "禁用星战武器", -- may need improved
@@ -195,6 +198,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModForceEggsOptionsButtonDescID"] = "无视禁用，强制显示彩蛋文本。\n重启劫案生效。",
             ["RestorationModUpotteTitleID"] = "游戏的梗",  --eggplant
             ["RestorationModUpotteDescID"] = "原友觉醒！\n有关三国杀、守望先锋、战地、原神、CF、CSGO、Apex等游戏的梗。",
+            ["RestorationModMyWifeTitleID"] = "G Less Than 3",
+            ["RestorationModMyWifeDescID"] = "The inner machinations of DMC's mind are an enigma",
             ["RestorationModCrabBattleTitleID"] = "国外的梗",  --bobcat
             ["RestorationModCrabBattleDescID"] = "左轮山猫",
             ["RestorationModEmberMyBelovedTitleID"] = "鹰姐的梗",  --registeredloser
@@ -223,14 +228,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModSevenHoldDeployCancelDescID"] = "勾选以使用放置随身装备的按键取消互动。需要先开启轻按互动切换。",
         ["RestorationModQueuedShootingTitleID"] = "连点射击辅助输入",
         ["RestorationModQueuedShootingDescID"] = "半自动武器在连续点鼠标两下时，可能因为射击间隔还没到，第二发没射出来。\n勾选此选项帮助你在射击间隔期间按鼠标也会等待间隔结束自动帮你开火。",
-        ["RestorationModQueuedShootingWindowTitleID"] = "辅助输入的灵敏度",
+        ["RestorationModQueuedShootingWindowTitleID"] = "单发辅助输入的灵敏度",
         ["RestorationModQueuedShootingWindowDescID"] = "以百分比决定你在间隔达到之前什么时候点鼠标可以让下一发射出来，值高意味着更早。\n例：3秒间隔+0.2值=射击后等2.4秒再点鼠标就会让第二发在又0.6秒后自动射出来",
-        ["RestorationModQueuedShootingExcludeTitleID"] = "辅助输入的武器限制",
+        ["RestorationModQueuedShootingExcludeTitleID"] = "单发辅助输入的武器限制",
         ["RestorationModQueuedShootingExcludeDescID"] = "只为高于此选项所设射速(RPM)的武器启用辅助输入。",
+        ["RestorationModQueuedShootingMidBurstTitleID"] = "速射辅助输入",--Burstfire Mid-Burst Input Buffer",
+        ["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.", --tra
         ["RestorationModNoADSRecoilAnimsTitleID"] = "取消瞄准后坐力动作",
         ["RestorationModNoADSRecoilAnimsDescID"] = "勾选以取消你在瞄准时射击产生的后坐力动画。\n有些武器不受此选项影响（换言之即手动操作的枪械，弓弩，火焰喷射器）",
         ["RestorationModNoSwapOnReviveTitleID"] = "被救起时不强制切换武器",
         ["RestorationModNoSwapOnReviveDescID"] = "勾选以避免在“苟延残喘”技能未专精且使用主武器倒地时，\n被救起后强行切换出主武器。",
+        ["RestorationModManualReloadsTitleID"] = "手动换弹",
+        ["RestorationModManualReloadsDescID"] = "禁止在弹匣打空时自动换弹。\n但专家模式里始终会启用。",
         ["RestorationModSecondSightSprintTitleID"] = "使用冲刺按键切换次要瞄具",
         ["RestorationModSecondSightSprintDescID"] = "使用冲刺按键而不是附件按键来在瞄准时切换为次要瞄具。\n这将导致你无法在瞄准时即刻切换为奔跑状态。", -- try
         ["RestorationModAimDeploysBipodTitleID"] = "瞄准时自动用脚架",
@@ -335,9 +344,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModHolidayTitleID"] = "节日活动",
         ["RestorationModHolidayDescID"] = "开启或关闭 节日活动 对大修的影响",
         ["RestorationModCloakerTurnTitleID"] = "幻影特工飞踢时视角转向",
-		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
-		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",			
         ["RestorationModCloakerTurnDescID"] = "开启或关闭幻影特工飞踢你时，你的视角自动转向它的效果。",
+        ["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors", --tra
+        ["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (仅用于Vanilla HUD).",            
         ["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
         ["RestorationModRestoreHitFlashDescID"] = "启用或禁用恢复Mod的受击闪屏",
         ["RestorationModBotsNoDropTitleID"] = "禁用Bot队友丢包",
@@ -377,7 +386,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["restoration_level_data_alex_2"] = "清晨5:55 , 计策",
         ["restoration_level_data_alex_3"] = "清晨7:20 , 华盛顿正义大桥",
         ["restoration_level_data_alex_1_res"] = "凌晨3:30 , 寂静岭",
-        ["restoration_level_data_alex_2_res"] = "清晨5:55 , 项目",
+        ["restoration_level_data_alex_2_res"] = "清晨5:55 , 交易",
         ["restoration_level_data_alex_3_res"] = "清晨7:20 , 华盛顿正义大桥",
         ["restoration_level_data_firestarter_1"] = "傍晚7:25 , 私人机场",
         ["restoration_level_data_firestarter_1_res"] = "傍晚7:25 , 私人机场",
@@ -743,6 +752,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModHostagesTextTitleID"] = "人质数量颜色",
         ["RestorationModHintTextTitleID"] = "提示字体颜色",
         ["RestorationModMaskOnTextTitleID"] = "佩戴面具字体颜色",
+        ["RestorationModDownsThreePlusTitleID"] = "倒地计数器（剩余3+倒地次数）",
+        ["RestorationModDownsTwoTitleID"] = "倒地计数器（剩余2次）",
+        ["RestorationModDownsOneTitleID"] = "倒地计数器（剩余1次）",
+        ["RestorationModDownsZeroTitleID"] = "倒地计数器（剩余0次）",
         ["RestorationModStopAllBotsTitleID"] = "停下全部AI",
         ["RestorationModStopAllBotsDescID"] = "长按AI停止键以停下全部AI。",
         ["RestorationModPONRTrackTitleID"] = "任务即将失败音乐",
@@ -928,13 +941,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
         ["bm_menu_amount_locked"] = "库存不足",
 
-        -- These won't be used until Chinese font is supported. Will there be? Maybe(laugh).
         ["resmod_challenges"] = "挑战",
-        ["resmod_challenges_hint"] = "查看已完成与已激活的挑战。",
-        ["resmod_active_challenges"] = "已激活的挑战",
-        ["resmod_active_challenges_hint"] = "当前已激活的挑战。",
+        ["resmod_challenges_hint"] = "查看已完成和进行中的挑战。",
+        ["resmod_active_challenges"] = "进行中的挑战",
+        ["resmod_active_challenges_hint"] = "现在正在进行的挑战。",
         ["resmod_completed_challenges"] = "已完成的挑战",
-        ["resmod_completed_challenges_hint"] = "已领取奖励的已完成挑战。",
+        ["resmod_completed_challenges_hint"] = "已经完成并获取了奖励的挑战。",
 
         -- ["ch_vs_desc"] = "Using $weapon s, defeat $count $eneType. Using melee does not contribute to this challenge.",
         -- ["ch_vs_head_shots_desc"] = "Using the $weapon s, defeat $count $eneType with Headshots.",
@@ -1010,6 +1022,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["menu_state_lobby"] = "大厅中",
         ["menu_state_loading"] = "加载中",
         ["menu_state_ingame"] = "游戏中",
+
+        ["menu_description"] = "The Plan", --tra
 
         -- ///Stuff ripped from the various locale files we had ///
 
@@ -1109,17 +1123,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
         -- Watchdogs Holdout
         ["heist_skm_watchdogs_stage2_briefing"] = "劫持Mia Calienté是个真正的活，朋友。她已经在幕后主使黑水在特区的行动好几年了。就在不久之前，黑水接管了码头的一个仓库作为额外的分配点。我们的目标正在那里清点从船上刚掠夺不久的货。我们将突入这里，抓住这小崽子作为人质。黑水的人无法接受失去她，他们将会愿意去花钱赎人，没准在上述条件下我们还能要价更高，伙计们你们觉得呢？",
-		
-		--Side Jobs
-		["menu_challenge_menu_challenge_moon_6_obj"] = "Complete the Slaughterhouse job on the OVERKILL difficulty or above without killing Captain Spring.",
-		
-		--Generic Captain Text
-		["hud_assault_vip"] = "KILL CAPTAIN TO END ASSAULT",
-		
-		--Boiling Point RU text tweaks
-		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
-		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
-		
+        
+        --Side Jobs
+        ["menu_challenge_menu_challenge_moon_6_obj"] = "以枪林弹雨或以上难度下，完成屠宰场且不击杀春日队长。",
+        
+        
+        --Generic Captain Text
+        ["hud_assault_vip"] = "击败队长以结束突击",
+        
+        --Boiling Point RU text tweaks
+        ["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА", --医务室
+        ["mad_txt_006"] = "ОПЕРАЦИОННАЯ"  --手术室
+        
+        
     })
 
     local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -1127,10 +1143,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
     local job = Global.level_data and Global.level_data.level_id
     local captain_type = job and restoration.captain_spawns[job]
     local random_captain = math.rand(1)
-	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "HAVE NO FEAR, CAPTAIN WINTERS IS HERE!!",
-		})
+    if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
+        LocalizationManager:add_localized_strings({ 
+            ["hud_assault_vip"] = "毋需恐惧，冬日队长在此！！",
+        })
     elseif captain_type == restoration.captain_types.winter then
         LocalizationManager:add_localized_strings({
             ["hud_assault_vip"] = "凛冬盾阵来袭"
@@ -1304,6 +1320,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- 10-0
         ["bm_wp_upg_i_tekna"] = "Tekna速射改装套件",
         ["bm_wp_upg_i_tekna_desc"] = "锁定武器的射击模式为#{risk}#三连发速射模式##，也许与#{skill_color}#长戟##搭配更加？", -- ?
+        ["bm_wally_desc"] = "#{important_2}#嘿，小子……##",
 
         -- AMR16--
         ["bm_wp_upg_i_m16a2"] = "AMR-16 A4型改装套件",
@@ -1330,14 +1347,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_ns_duck_desc_sc"] = "使弹丸散布面呈横向扩散，而非缩小散布。",
         ["bm_wp_ns_ultima_desc_sc"] = "增加75%的弹丸扩散。",
         ["bm_wp_upg_a_slug_sc"] = "独头弹",
-        ["bm_wp_upg_a_slug_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人、盾牌和薄墙壁##。\n对敌人的基础爆头倍率减少至#{important_1}#50%##。",
-        ["bm_wp_upg_a_slug_spam_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人和薄墙壁##，但穿透护甲时仅造成#{skill_color}#80%##的伤害。",
-        ["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，#{skill_color}#不受任何衰减##，但也#{important_1}#不能触发爆头##。\n",
+        ["bm_wp_upg_a_slug_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人、盾牌和薄墙壁##。",--\n对敌人的基础爆头倍率减少至#{important_1}#65%##。",
+        ["bm_wp_upg_a_slug_spam_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人和薄墙壁##，但穿透护甲时仅造成#{skill_color}#75%##的伤害。",
+        ["bm_wp_upg_a_slug_titan_desc"] = "射出一发精准的弹头，可以#{skill_color}#穿透护甲、敌人、盾牌、泰坦盾牌和薄墙壁##.",
+        ["bm_wp_upg_a_explosive_desc_sc"] = "射出一发能使人眩晕的爆炸半径为#{skill_color}#1.5米##的致命性爆炸弹头，弹头#{skill_color}#不受任何衰减##，其#{risk}#直击伤害与爆炸伤害分别计算##。\n",
         ["bm_wp_upg_a_custom_desc"] = "发射更少量但更大号的共#{important_1}#6##发自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。",
+        ["bm_wp_upg_a_custom_4_desc"] = "发射更少量但更大号的共#{important_1}#4##发自制弹丸以牺牲#{important_1}#弹丸密度、有效射程、弹药量和捡弹量##来换取#{skill_color}#高伤害输出##。",
         ["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#15%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#90##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。",
-        ["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
-        ["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#60%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
-        ["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#80%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+        ["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#40%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#120##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。",--\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+        ["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#60%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#180##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。",--\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
+        ["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "发射一些用镁片制成的燃烧弹丸，可以#{skill_color}#烧穿敌人护甲##，并有最高#{skill_color}#80%##的概率#{heat_warm_color}#点燃敌人##，在#{skill_color}#2##秒内造成#{skill_color}#240##点伤害，并有几率晕眩敌人。\n#{risk}#点燃几率随距离增加而减小且只能点燃衰减末距内的敌人##。",--\n\n#{important_1}#任何攻击都不再被计为一般实弹的攻击##",
         ["bm_wp_upg_a_rip_auto_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#2##秒内造成#{stats_positive}#60##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
         ["bm_wp_upg_a_rip_semi_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
         ["bm_wp_upg_a_rip_pump_desc_sc"] = "发射一些#{stats_positive}#剧毒的##铅弹，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害，并有几率眩晕敌人。\n\n#{risk}#毒弹的效果随距离减小##。",
@@ -1350,13 +1369,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，#{skill_color}#8##秒内对敌人造成#{skill_color}#240##点流血伤害。",
         --]]
         ["bm_wp_upg_a_piercing_auto_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
+        ["bm_wp_upg_a_piercing_9_auto_desc_sc"] = "发射#{skill_color}#9##发箭形弹，可以击穿敌人护甲。",
         ["bm_wp_upg_a_piercing_semi_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
         ["bm_wp_upg_a_piercing_pump_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
         ["bm_wp_upg_a_piercing_heavy_desc_sc"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲。",
-        ["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#50%##且对敌人的基础爆头倍率没有减少。",
-        ["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#50%##且对敌人的基础爆头倍率没有减少。",
-        ["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#50%##且对敌人的基础爆头倍率没有减少。",
-        ["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#50%##且对敌人的基础爆头倍率没有减少。",
+        ["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#100%##且对敌人的基础爆头倍率没有减少。",
+        ["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "发射#{skill_color}#9##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#100%##且对敌人的基础爆头倍率没有减少。",
+        ["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#100%##且对敌人的基础爆头倍率没有减少。",
+        ["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#100%##且对敌人的基础爆头倍率没有减少。",
+        ["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "发射#{skill_color}#12##发箭形弹，可以击穿敌人护甲，爆头造成的伤害额外增加#{skill_color}#100%##且对敌人的基础爆头倍率没有减少。",
 
         -- Generic Mods--
         ["bm_wp_upg_vg_afg"] = "水平前握把",
@@ -1370,6 +1391,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_upg_suppressor"] = "使你的武器#{skill_color}#消音##并#{risk}#降低敌人在被你瞄准时进行躲避的概率##。",
         ["bm_wp_upg_suppressor_warn"] = "使你的武器#{skill_color}#消音##并#{risk}#降低敌人在被你瞄准时进行躲避的概率##。\n\n#{important_1}#可能会阻挡瞄具的视野##",
 
+        ["bm_wp_upg_vintage_fal_sc"] = "背背弹匣",  --Ridgeback Mag
         ["bm_wp_upg_vintage_sc"] = "复古弹匣",
         ["bm_wp_upg_mil_sc"] = "军标弹匣",
         ["bm_wp_upg_tac_sc"] = "战术弹匣",
@@ -1420,6 +1442,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_upg_o_4_rds"] = "带有整合型反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
         ["bm_wp_upg_o_4_rds_mount"] = "顶部装有反射次瞄具的中距瞄准仪。\n#{risk}#1.1-4倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
         ["bm_wp_upg_o_4_vari"] = "变焦瞄准镜。\n#{risk}#4-8倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+        ["bm_wp_upg_o_4_valentine"] = "\"我为你们准备了个活儿！\"\n\n可调节缩放瞄具。\n#{risk}#4-8倍放大倍率##\n\n瞄准时按下 #{skill_color}#$BTN_GADGET## 在主瞄具和次要瞄具之间切换。",
+        ["bm_wp_upg_o_4_valentine_x"] = "杂鱼，杂鱼！\n阿米诺斯，草拟吗憋！\n我一点也不在乎，我一点也不在意！\n我才不会关心呢，哼！",
         ["bm_wp_upg_o_5"] = "长距瞄准仪。\n#{risk}#5倍放大倍率##",
         ["bm_wp_upg_o_5_range"] = "内置#{skill_color}#测距仪##的长距瞄准器。\n#{risk}#5倍放大倍率##",
         ["bm_wp_upg_o_6"] = "长距瞄准仪。\n#{risk}#6倍放大倍率##",
@@ -1429,6 +1453,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
         ["bm_wp_upg_o_iwelo"] = "光明浮动十字瞄具。\n#{risk}#1.1倍放大倍率##",
         ["bm_wp_upg_o_iwrds"] = "精准红点瞄准镜。\n#{risk}#1.5倍放大倍率##",
+        ["bm_wp_raygun_o_waw"] = "OG Iron Sight Alignment",
+		["bm_wp_raygun_o_waw_desc"] = "Changes the iron sight alignment to how it was before Call of Duty: Black Ops II", --tra
 
         ["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW瞄具", -- try Trigonom SCRW Scope
 
@@ -1449,17 +1475,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_upg_o_magnifier_desc"] = "瞄准时按下 #{skill_color}#$BTN_GADGET## 来升起/放下瞄具放大镜。\n#{risk}#3倍放大倍率##",
 
         -- 'Nade Launchers--
+        --Incendiary UGL Nades
         ["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#120##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
         ["bm_wp_upg_a_grenade_launcher_incendiary_arbiter_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#80##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
-        ["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#40##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
+        ["bm_wp_upg_a_grenade_launcher_incendiary_ms3gl_desc_sc"] = "受到撞击时释放半径为#{skill_color}#3.75米##的#{heat_warm_color}#火焰##，持续#{skill_color}#5##秒。火焰上的敌人每秒受到#{skill_color}#36##点伤害，且有几率被点燃。被点燃的敌人会陷入硬直并在#{skill_color}#3##秒内受到额外#{skill_color}#60##点伤害。",
+        --Frag UGL Nade
         ["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "受到撞击时产生半径为5米的#{risk}#爆炸##，对敌人造成#{skill_color}#720##点伤害。",
-        ["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "受到撞击时释放#{ghost_color}#高压电流##，爆炸半径#{skill_color}#5米##，电流会造成#{skill_color}#180##点伤害并有几率#{ghost_color}#电击敌人##。",
         ["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "受到撞击时释放#{ghost_color}#高压电流##，爆炸半径#{skill_color}#5米##，电流会造成#{skill_color}#360##点伤害并有几率#{ghost_color}#电击敌人##。",
-        ["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "受到撞击时释放#{ghost_color}#高压电流##，爆炸半径#{skill_color}#2.5米##，电流会造成#{skill_color}#300##点伤害并有几率#{ghost_color}#电击敌人##。",
+        ["bm_wp_upg_a_grenade_launcher_electric_ms3gl_desc_sc"] = "受到撞击时释放#{ghost_color}#高压电流##，爆炸半径#{skill_color}#5米##，电流会造成#{skill_color}#180##点伤害并有几率#{ghost_color}#电击敌人##。",
+        ["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "受到撞击时释放#{ghost_color}#高压电流##，爆炸半径#{skill_color}#5米##，电流会造成#{skill_color}#300##点伤害并有几率#{ghost_color}#电击敌人##。",
+        
         ["bm_wp_upg_a_grenade_launcher_poison"] = "Manticore-6毒气弹",
-        ["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#10##秒，#{skill_color}#8##秒内造成总计#{skill_color}#240##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
-        ["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#8##秒，#{skill_color}#8##秒内造成总计#{skill_color}#240##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
-        ["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#6##秒，#{skill_color}#4##秒内造成总计#{skill_color}#120##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
+        ["bm_wp_upg_a_grenade_launcher_poison_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#8##秒，#{skill_color}#8##秒内造成总计#{skill_color}#240##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
+        ["bm_wp_upg_a_grenade_launcher_poison_arbiter_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#6##秒，#{skill_color}#8##秒内造成总计#{skill_color}#180##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
+        ["bm_wp_upg_a_grenade_launcher_poison_ms3gl_desc_sc"] = "受到撞击时释放一团#{stats_positive}#有毒气体##，蔓延半径#{skill_color}#6米##，持续#{skill_color}#4##秒，#{skill_color}#4##秒内造成总计#{skill_color}#120##点伤害，并且会#{stats_positive}#硬直一次##大部分踏进去的敌人。",
 
         -- Flamethrowers--
         ["bm_wp_fla_mk2_mag_rare_sc"] = "稀有",
@@ -1559,7 +1588,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- LEO
         ["bm_hs2000_sc_desc"] = "国际刑警组织特工、狡猾的克罗地亚警察和国际犯罪分子都发现这种袖珍爆破手十分有效。",
         -- 5/7 pistol
-        ["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
+        ["bm_lemming_sc_desc"] = "高威力与大容量的结合。如果有人能吃了20枪没事，你可能不应该向他射击。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         -- socom deez nuts--
         ["bm_w_socom_desc"] = "豺狼的配枪选择。一款设计新潮，使用.45ACP子弹的可靠、强力的手枪。",
         -- Crosskill
@@ -1584,7 +1613,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_c96_nozzle"] = "DL-44爆能枪口", -- Suppressor into Muzzle --checkout
         ["bm_wp_c96_nozzle_desc_sc"] = "来自遥远银河的科技将这把枪转化为发射等离子光束以及使用充能弹夹。\n\n充能冷却: #{item_stage_2}#2##秒\n充能速率: #{skill_color}#3##发/秒 (过热时减半)\n过热惩罚: #{item_stage_2}#2##秒",
         -- Sub2000
-        ["bm_sub2000_sc_desc"] = "制造质量存疑的卡宾手枪。小巧的手枪子弹从长枪管射出时打身上加倍的疼，并且折叠能力使其隐蔽性首屈一指。",
+        ["bm_sub2000_sc_desc"] = "制造质量存疑的折叠式卡宾手枪。小巧的手枪子弹从长枪管射出时打身上加倍的疼，并且折叠能力使其隐蔽性首屈一指。\n只要别让你自己被打的叫\"叠\"了。",
         -- Deagle
         ["bm_deagle_sc_desc"] = "还有什么拿着这个半自动法杖需要说的吗？只需要挥向坏蛋们大喊：\"崩！沙卡拉卡！\"\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",
         ["bm_x_deagle_sc_desc"] = "实实在在地把这双持手腕毁灭者带进战场的人是十足的疯子。\n\n可#{skill_color}#穿透护甲和敌人##造成#{skill_color}#50%##的伤害。",
@@ -1619,26 +1648,34 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_w_derringer"] = "Derringer手枪",
         -- Automag .44
         ["bm_w_amt"] = "Automag.44手枪",
+
+        ["thatgun_desc"] = "这就是那把枪！\n\n哪把？就...那把！\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+
+        ["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",  --tra
+
         -- Colt Detective
         ["bm_w_coltds"] = "Crosskill Investigator左轮手枪",
         ["bm_lemon_dmc_desc"] = "假如你有一把隐蔽的高威力左轮。现在不用假如了，调查员左轮如你所想。\n\n从背后攻击敌人造成2倍伤害。",
 
         -- M6D
         ["kfa_scope"] = "KFA-2 智联瞄具",
-        ["kfa_scope_desc"] = "使你能够对接面具和装配的#{skill_color}#智联##瞄具。\n#{risk}#2x放大倍率。##",
+        ["kfa_scope_desc"] = "使你能够对接面具和装配的#{skill_color}#智联##瞄具。\n#{risk}#2倍放大倍率。##",
+        --M6D
+        ["halo_scope"] = "智联瞄具",
+        ["halo_scope_2_desc"] = "使你能够对接面具和装配的#{skill_color}#智联##瞄具。\n#{risk}#2倍放大倍率。##",
         -- SIG P320
         -- ["bm_w_papa320"] = "M19", --not sure what it is
         ["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32发装弹匣", -- tra
 
         -- Kobus 90--
         ["bm_w_p90"] = "Project-90冲锋枪",
-        ["bm_p90_sc_desc"] = "又称斗牛犬冲锋枪，同时是SpecOps-7冲锋枪的竞争对手，由于外形经常被评价为未来感十足的空间枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
+        ["bm_p90_sc_desc"] = "又称斗牛犬冲锋枪，同时是SpecOps-7冲锋枪的竞争对手，由于外形经常被评价为未来感十足的空间枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         ["bm_wp_p90_body_p90_tan"] = "棕褐枪身",
         ["bm_wp_90_body_boxy"] = "OMNIA突击框架",
         ["bm_wp_90_body_boxy_desc"] = "从一个老旧的OMNIA仓库废址里找回的，这个框架无论对性能还是手感都没有影响，不过它体现的块状美使得它适合被拥有。",
         -- Spec Ops
         ["bm_w_mp7"] = "SpecOps-7冲锋枪",
-        ["bm_mp7_sc_desc"] = "一款轻型冲锋枪，同时是Project-90冲锋枪的竞争对手。并不像某些人期待的那样具备下挂榴弹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
+        ["bm_mp7_sc_desc"] = "一款轻型冲锋枪，同时是Project-90冲锋枪的竞争对手。并不像某些人期待的那样具备下挂榴弹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         -- Compact-5/MP5
         ["bm_w_mp5"] = "Compact-5冲锋枪",
         ["bm_mp5_sc_desc"] = "Gewehr-3的小妹妹。\n射击快速，精准同时操控简单，你还指望冲锋枪能比这更好吗？",
@@ -1648,7 +1685,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Uzi
         ["bm_uzi_sc_desc"] = "慢下来开火的时候，Uzi是一款可靠，操控简单的冲锋枪，使得它依然能拿来碰一碰，尤其是能将它转变为.41 AE时。",
         -- Heather
-        ["bm_sr2_sc_desc"] = "使用一种专门的9×21mm子弹，Heather冲锋枪是俄罗斯对Project-90冲锋枪和SpecOps-7冲锋枪的回应。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#50%##的伤害。",
+        ["bm_sr2_sc_desc"] = "使用一种专门的9×21mm子弹，Heather冲锋枪是俄罗斯对Project-90冲锋枪和SpecOps-7冲锋枪的回应。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#50%##的伤害。",
         -- Chicago Typewriter
         ["bm_thompson_sc_desc"] = "堂堂正正大弹鼓，即便是你也能撂倒敌人时一展雄风。",
         -- MP40
@@ -1657,7 +1694,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- CUSTOM SMGs
         -- AR57
         ["bm_w_alpha57_prim"] = "FSS飓风冲锋枪",
-        ["bm_w_alpha57_prim_desc"] = "FSS飓风以有效射程和停止力的牺牲为代价换取了高强的弹容量和稳定性。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
+        ["bm_w_alpha57_prim_desc"] = "FSS飓风以有效射程和停止力的牺牲为代价换取了高强的弹容量和稳定性。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         -- LWRC
         ["bm_w_smg45"] = "FT Striker .45冲锋枪",
         ["bm_w_smg45_desc"] = "\"Jackal\" AMP-45冲锋枪的美式复制品。",
@@ -1703,6 +1740,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "适合近距离的弹种。\n单发弹丸数量提升至10颗。",
         ["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "适合中距离的弹种。\n单发弹丸数量降低至6颗。",
         ["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "强力的钢弹头，长距离作战十分有效\n能够穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁。",
+        --REBECCA CYBERPUNK
+        ["bm_w_rebecca_desc"] = "尽管有些不太可控，但它引发的血腥浩劫无可撼动。",
         -- MP153
         ["bm_w_mp153"] = "Argos I 霰弹枪",
         -- Widowmaker TX
@@ -1764,6 +1803,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- HK G36
         ["bm_w_hkg36"] = "SG36K步枪",
 
+        ["bm_qbz191_sc_desc"] = "是新一代5.8x42mm口径的中国突击步枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+
         -- AMR-16
         ["bm_m16_sc_desc"] = "作为AMCAR前身的经典步枪。通过更强的火力弥补其隐蔽和距离上的不足。",
         -- AK 7.62
@@ -1804,6 +1845,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- MW22 Honey Badger
         ["bm_w_mcbravo"] = "Chimera", -- tra
         ["bm_w_mcbravo_desc"] = "With an #{skill_color}#integrated suppressor## and slow, high-energy subsonic #{risk}#.300 BLK## rounds, the Chimera is adept at close-quarters combat.",
+        --BOCW CARV2
+        ["bm_w_t9fastburst"] = "CARV.2",
+        ["bm_wp_upg_i_g11"] = "K1 Internals",
+        ["bm_wp_upg_i_g11_desc"] = "Increases the burst fire rate to #{skill_color}#2100 RPM## and #{skill_color}#unlocks the fire selector.##",
         -- AR-18
         ["bm_w_ar18"] = "CAR-18",
 
@@ -1830,7 +1875,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_w_par"] = "KSP-58B重机枪",
         ["bm_par_sc_desc"] = "相对KSP-90更重，通常架设在载具上的机枪弟妹。用机动性换来了更大的口径。",
 
-        ["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further.",  --tra
+        ["bm_hk51b_sc_desc"] = "Aftermarket conversion of the Brenner-21, shrinking this MG down to Compact-5 sizes and increasing its rate of fire even further than the Brenner's.",  --tra
         
         -- Buzzsaw/Mg42
         ["bm_w_mg42"] = "Buzzsaw-42重机枪",
@@ -1848,6 +1893,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_shuno_sc_desc"] = "\"#{heat_warm_color}#这是你的道路。当你到来，你将以孤独为伴。##\"\n\n开火前有预转前摇；瞄准时保持旋转。",
 
         -- Custom MGs
+        --Stoner 63 (LMG)
+        ["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape", --tra
+        ["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",
+        ["bm_wp_wpn_fps_lmg_stoner63a_handle_01"] = "Field Tape",
+        ["bm_wp_wpn_fps_lmg_stoner63a_handle_02"] = "SASR Jungle Grip",
+        ["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_02"] = "Serpent Wrap",
+        ["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_02"] = "Airborne Elastic Wrap",
+        ["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_01"] = "100 Rnd",
+        ["bm_wp_wpn_fps_lmg_stoner63a_magazine_ext_02"] = "STANAG 125 Rnd",
+        ["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_01"] = "Fast Mag",
+        ["bm_wp_wpn_fps_lmg_stoner63a_magazine_fast_02"] = "Vandal Speed Loader",
         -- TF2 Minigun
         ["bm_wp_wpn_fps_lmg_sasha_body_desc"] = "", -- tra
         ["bm_wp_wpn_fps_lmg_iron_curtain_body_desc"] = "",
@@ -1857,22 +1913,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",
 
         -- Galant--
-        ["bm_galant_sc_desc"] = "经典二战作战步枪。可靠，精准，换弹迅速。\n\n空仓换弹速度更快并且可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_galant_sc_desc"] = "经典二战作战步枪。可靠，精准，换弹迅速。\n\n空仓换弹速度更快并且可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
         -- M308
-        ["bm_m14_sc_desc"] = "快速且精准，只要确保控制住后坐力，尤其是全自动开火的时候。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_m14_sc_desc"] = "快速且精准，只要确保控制住后坐力，尤其是全自动开火的时候。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
         -- FAL
         ["bm_w_fal"] = "Falcon 58步枪",
-        ["bm_fal_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你求助于这把枪。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+        ["bm_fal_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你会求助于这把枪的。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+        ["bm_fal_ap25_sc_desc"] = "自由世界的正当武装。当你不得不干掉一些重甲混蛋的时候，你会求助于这把枪的。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。",   
         -- SCAR
-        ["bm_scar_sc_desc"] = "未来的战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+        ["bm_scar_sc_desc"] = "未来的战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+        ["bm_scar_ap25_sc_desc"] = "未来的战斗步枪。依托着在手感和弹道伤害上有着良好的平衡，在美国海军陆战队和特种力量中应用广泛。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
         ["bm_scarl_sc_desc"] = "未来的战斗步枪......不，虽然它在民用市场很受欢迎，但军队认为他们不需要另一把5.56步枪。",
         -- G3
         ["bm_w_g3"] = "Gewehr-3步枪",
-        ["bm_g3_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_g3_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+        ["bm_g3_ap25_sc_desc"] = "作为Compact-5和Brenner-21的大姐头，这把枪的精准度可与狙击枪一较高下。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人##。",
         -- Little Friend
         ["bm_w_contraband"] = "Bigger Friend 7.62步枪",
-        ["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按下 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
-        ["bm_m203_weapon_sc_desc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按住 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
+        ["bm_m203_weapon_sc_desc_pc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。\n按下 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
+        ["bm_m203_weapon_sc_desc"] = "疤面煞星私人款\"小伙伴\"AMR-16的大姐头。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。\n按住 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
         -- VMP
         ["bm_m203_vmp_sc_desc_pc"] = "疤面煞星私人款“小伙伴”AMR-16步枪的仿制品。\n\n按下 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
         ["bm_m203_vmp_sc_desc"] = "疤面煞星私人款“小伙伴”AMR-16步枪的仿制品。\n\n按住 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
@@ -1883,34 +1942,43 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_asval_sc_desc"] = "选择小型步枪弹也许会让你在枪手中沦为泛泛之众，或者说你选这把枪。\n\n#{skill_color}#完全消音##并且#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
         -- Galil
         ["bm_w_galil"] = "Defender 7.62步枪",
-        ["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+        ["bm_galil_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+        ["bm_galil_ap25_sc_desc"] = "一款在芬兰设计的基础上模仿来的步枪，并且本身也是经典款AK的衍生品。模仿是最真诚的恭维。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害。",
         -- KS12
-        ["bm_shak12_sc_desc"] = "一款故意凸显其强大无比的12.7x55mm弹筒的无托式设计战斗步枪。极其紧凑的包装蕴含极其凶残的屠杀。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_shak12_sc_desc"] = "一款故意凸显其强大无比的12.7x55mm弹筒的无托式设计战斗步枪。极其紧凑的包装蕴含极其凶残的屠杀。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
         ["bm_shak12_sc_oden_desc"] = "一款故意凸显其强大无比的12.7x55mm弹筒的无托式设计战斗步枪。极其紧凑的包装蕴含极其凶残的屠杀。\n\n可#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         -- ShAK-12
         ["bm_wp_shak12_body_vks"] = "\"VISha\"枪托",
         ["bm_wp_shak12_body_vks_ap_desc"] = "装载大威力弹#{skill_color}#允许达到全面护甲穿透和穿盾能力##。 枪托和枪闩用了更敦实的材料加固使 #{important_1}#射速降低##。",
         -- HCAR
         ["bm_w_hcar"] = "Akron HC步枪",
-        ["bm_hcar_sc_desc"] = "一把经典二战机枪的现代版本。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_hcar_sc_desc"] = "一把经典二战机枪的现代版本。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
 
         -- Custom DMRs
+        --BOCW EM2
+        ["bm_w_t9british"] = "EM2步枪",  --tra
+        ["bm_wp_wpn_fps_ass_t9british_xmag_01"] = "30 Rnd",
+        ["bm_wp_wpn_fps_ass_t9british_xmag_01_desc"] = "",
+        ["bm_wp_wpn_fps_ass_t9british_magazine_mix_01"] = "25 Rnd Speed Mag",
+        ["bm_wp_wpn_fps_ass_t9british_magazine_mix_01_desc"] = "",
+        ["bm_wp_wpn_fps_ass_t9british_xmag_02"] = "STANAG 40 Rnd Mag",
+        ["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30 Rnd Fast Mag",
         -- MCX Spear
         ["bm_w_mcx_spear"] = "Signature M7步枪",
-        ["bm_mcx_spear_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
+        ["bm_mcx_spear_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#33%##的伤害。",
         ["bm_w_g3hk79"] = "Gewehr-A3 GL79步枪",
-        ["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
+        ["bm_g3hk79_sc_desc_pc"] = "Gewehr-3步枪的改版，可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n\n装有#{skill_color}#下挂榴弹发射器##，按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
         -- ["bm_g3hk79_sc_desc"] = "Gewehr-3步枪的改版，装有#{skill_color}#下挂榴弹发射器##。\n\n按#{skill_color}#$BTN_BIPOD##切换到下挂榴弹发射器。",
         -- BO3 XR2
         ["bm_w_xr2"] = "XR-2步枪",
-        ["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能#{skill_color}#提升射速##的独特#{skill_color}#三连发速射模式##。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
+        ["bm_xr2_sc_desc"] = "这把XR-2是个被设计来应对极其多变的战斗环境的多功能步枪。有着能#{skill_color}#提升射速##的独特#{skill_color}#三连发速射模式##。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
         ["bm_wp_xr2_handle_01_sc"] = "全自动枪闩",
         ["bm_xr2_handle_01_sc_desc"] = "以#{important_1}#失去射速提高##为代价，将三连发速射模式改为#{skill_color}#连发模式##。",
         ["bm_wp_xr2_handle_02_sc"] = "快速开火枪闩",
         ["bm_xr2_handle_02_sc_desc"] = "以#{important_1}#提高后坐力##为代价将三连发速射模式的射速提升到#{skill_color}#950RPM##。\n\n三连发射击间隔时间和半自动射击射速不受影响。",
         -- SIERRA .458
         ["bm_w_sierra458"] = "Sierra .458步枪",
-        ["bm_w_sierra458_sc_desc"] = "钱恩斯作为团队中的武器大师，研发了一种高伤害高射速的Tecci战术步枪替代品，以应对紧急情况。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_w_sierra458_sc_desc"] = "钱恩斯作为团队中的武器大师，研发了一种高伤害高射速的Tecci战术步枪替代品，以应对紧急情况。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
         ["bm_w_sierra458_beo_desc"] = "钱恩斯作为团队中的武器大师，研发了一种高伤害高射速的Tecci战术步枪替代品，以应对紧急情况。\n\n能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         ["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "将.458 SOCOM子弹换成#{stats_positive}#沾染毒药##的.450 Bushmaster子弹，命中时#{skill_color}#眩晕敌人##并在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害。\n\n但#{important_1}#不再能穿透敌人##",
         ["bm_w_sierra458_ivy_desc"] = "钱恩斯作为团队中的武器大师，研发了一种高伤害高射速的Tecci战术步枪替代品，以应对紧急情况。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透薄墙壁##。\n命中后使敌人#{stats_positive}#中毒##。", -- tra fix
@@ -1995,6 +2063,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Light Crossbow       
         ["bm_wp_avelyn"] = "“万箭齐发”套件",
         ["bm_wp_avelyn_desc"] = "一种真正的#{skill_color}#齐射##套件。\n让你可以一次射出#{skill_color}#3##发箭矢。",
+        ["bm_wp_avelyn_override_desc"] = "一种极其稀有的#{skill_color}#速射##弓弩。\n通过精巧的射击让你能连续射出#{skill_color}#3##发箭矢。\n\n可以#{skill_color}#穿透护甲##",
 
         -- GL40     
         ["bm_w_gre_m79_sc_desc"] = "咚了个砰！\n\n按下 #{skill_color}#$BTN_GADGET## 切换到折叠瞄具。\n\n该瞄具视野限制在#{skill_color}#30m##内。",
@@ -2017,15 +2086,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_menu_weapon_multishot_3"] = "点伤害。",
         ["bm_menu_weapon_ene_hs_mult_sub"] = "对敌人的基础爆头倍率减少至 ",
         ["bm_menu_weapon_ene_hs_mult_add"] = "对敌人的基础爆头倍率增加至 ",
-        ["bm_menu_weapon_hs_mult_1"] = "爆头非队长敌人会额外造成",
-        ["bm_menu_weapon_hs_mult_2"] = "点伤害。",
+        ["bm_menu_weapon_hs_mult_1"] = "爆头非队长单位可额外造成",
+        ["bm_menu_weapon_hs_mult_2"] = "的伤害。",
         ["bm_menu_weapon_ene_hs_mult_end"] = "",
-        ["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#使用了高爆弹药##，#{important_1}#无法造成爆头##。",
+        ["bm_menu_weapon_exp_no_hs_info"] = "使用了#{risk}#高爆弹药##，#{risk}#直击伤害和爆炸伤害分开计算##。",
         ["bm_menu_weapon_movement_penalty_info"] = "移动速度降低 ",
         ["bm_menu_weapon_movement_bonus_info"] = "移动速度提升 ",
-        ["bm_menu_sms_info_cont"] = "射击时惩罚翻倍。",
-        ["bm_menu_sms_info_cont_2"] = "受配件影响，射击时惩罚翻倍。",
+        ["bm_menu_sms_info_cont"] = "射击时惩罚提升。",
+        ["bm_menu_sms_info_cont_2"] = "受配件影响，射击时惩罚提升。",
         ["bm_menu_sms_info_2"] = "  ，在你射击时。",
+        ["bm_menu_weapon_slot_search_empty"] = "\n##未找到该内容的结果：## ##\"$search\"##",
         ["bm_menu_stat_sms_info_2"] = " ，在你射击时。\n该惩罚受当前配件影响。",
         ["bm_menu_weapon_movement_penalty_info_2"] = "，在你手持时",
         ["bm_menu_weapon_slot_warning_1"] = "\n##//////////             无 法 使 用             //////////\n",
@@ -2040,27 +2110,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_rapidfire_generic_desc"] = "Can be #{skill_color}#rapid-fired for an increased fire rate## at the cost of #{important_1}#more recoil and reduced effective range.##", -- tra
         ["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         ["bm_ap_armor_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。",
-        ["bm_ap_armor_20_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#20%##的伤害。",
-        ["bm_ap_armor_50_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",
-        ["bm_ap_armor_80_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
-        ["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#80%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
+        ["bm_ap25_armor_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#125%##的伤害。",
+        ["bm_ap_armor_20_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+        ["bm_ap_armor_50_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",  --tra fix?
+        ["bm_ap_armor_80_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         ["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
         ["bm_heavy_ap_no_mult_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
 
         ["bm_bow_sc_desc"] = "轻按#{skill_color}#$BTN_FIRE##以快速射击，但#{important_1}#伤害减半##且#{important_1}#下垂更快##。\n按住#{skill_color}#$BTN_FIRE##以拉弓，然后松开以射击。\n弓拉的越满，伤害和箭的飞行速度越高。\n\n按下#{skill_color}#$BTN_AIM##停止拉弓。\n\n箭矢可以#{skill_color}#捡起回收##。\n能够#{skill_color}#穿透护甲##。",
-        ["bm_bow_exp_sc_desc"] = "轻按#{skill_color}#$BTN_FIRE##以快速射击，但#{important_1}#伤害减半##且#{important_1}#下垂更快##。\n按住#{skill_color}#$BTN_FIRE##以拉弓，然后松开以射击。\n弓拉的越满，箭的飞行速度越高。\n\n按下#{skill_color}#$BTN_AIM##停止拉弓。\n\n箭矢在#{skill_color}#撞击时爆炸##，#{important_1}#无法造成爆头##。",
-        ["bm_w_bow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#2##米内所有敌人的箭矢。\n\n#{important_1}#箭矢的飞行速度降低，且无法爆头和回收##",
+        ["bm_bow_exp_sc_desc"] = "轻按#{skill_color}#$BTN_FIRE##以快速射击，但#{important_1}#伤害减半##且#{important_1}#下垂更快##。\n按住#{skill_color}#$BTN_FIRE##以拉弓，然后松开以射击。\n弓拉的越满，箭的飞行速度越高。\n\n按下#{skill_color}#$BTN_AIM##停止拉弓。\n\n箭矢在#{skill_color}#撞击时爆炸##，#{risk}#直击伤害和爆炸伤害分开计算##。",
+        ["bm_w_bow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#2##米内所有敌人的箭矢。\n\n#{important_1}#箭矢的飞行速度降低，且无法回收##",
         ["bm_w_bow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
         ["bm_w_bow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的箭矢，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#箭矢的飞行速度略微降低##",
 
         ["bm_xbow_sc_desc"] = "弩箭可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
-        ["bm_xbow_exp_sc_desc"] = "弩箭在#{skill_color}#撞击时爆炸##，#{important_1}#无法造成爆头##。",
-        ["bm_w_xbow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#2##米内所有敌人的弩箭。\n\n#{important_1}#弩箭的飞行速度降低，且无法爆头和回收##",
+        ["bm_xbow_exp_sc_desc"] = "弩箭在#{skill_color}#撞击时爆炸##，#{risk}#直击伤害和爆炸伤害分开计算##。",
+        ["bm_w_xbow_exp_desc"] = "发射在撞击时#{risk}#爆炸##伤害半径#{skill_color}#2##米内所有敌人的弩箭。\n\n#{important_1}#弩箭的飞行速度降低，且无法回收##",
         ["bm_w_xbow_light_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#6##秒内造成#{stats_positive}#180##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
         ["bm_w_xbow_heavy_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#8##秒内造成#{stats_positive}#240##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
 
         ["bm_airbow_sc_desc"] = "箭矢可以#{skill_color}#捡起回收##。\n\n能够#{skill_color}#穿透护甲##。",
-        ["bm_airbow_exp_sc_desc"] = "箭矢在#{skill_color}#撞击时爆炸##，#{important_1}#无法造成爆头##。",
+        ["bm_airbow_exp_sc_desc"] = "箭矢在#{skill_color}#撞击时爆炸##，#{risk}#直击伤害和爆炸伤害分开计算##。",
         ["bm_w_airbow_poison_desc"] = "发射沾有#{stats_positive}#剧毒##的弩箭，在#{skill_color}#4##秒内造成#{stats_positive}#120##点伤害并有概率眩晕敌人。\n\n#{important_1}#弩箭的飞行速度略微降低##",
 
         ["bm_40mm_weapon_sc_desc"] = "按下 $BTN_GADGET 切换到折叠瞄具。\n\n该瞄具视野限制在30m内。",
@@ -2077,6 +2148,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Overhaul Content Indicators--
         ["loot_sc"] = "Restoration Overhaul",
         ["loot_sc_desc"] = "这是一件RESTORATION大修的物品!",
+        ["loot_sc_wcc_desc"] = "这是一件RESTORATION大修的物品! (需要WEAPON COLOR PACK 2)",
+        ["loot_sc_ocp_desc"] = "这是一件RESTORATION大修的物品! (需要WEAPON COLOR PACK 3)",
+        ["loot_sc_faco_desc"] = "这是一件RESTORATION大修的物品! (需要JIU FENG SMUGGLER PACK 1)",
 
         ["menu_l_global_value_omnia"] = "OMNIA",
         ["menu_l_global_value_omnia_desc"] = "这是一件OMNIA的物品!",
@@ -2111,7 +2185,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
         ["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
         ["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
-        ["bm_melee_weapon_info"] = "在武装抢劫中，用枪托殴打受害者通常比直接开枪射击或利器刺击他们更常见。\n\n#{skill_color}#枪托的最高攻击频率显著受到所用武器的隐匿度影响##",
+        ["bm_melee_weapon_info"] = "在武装抢劫中，用枪托殴打受害者通常比直接开枪射击或利器刺击他们更常见。\n\n#{skill_color}#枪托的最高攻击频率显著受到所用武器灵活性的影响##",
         ["bm_melee_katana_info"] = "新作武士刀是一款艺术品，且为全新锻造款。它未曾饱尝鲜血，也未曾留名青史。它只是在等待一个主上来开创这些。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。\n\n当扮演治郎时，用此武器蓄力击杀幻影特工可以触发一个独特动画效果。",
         ["bm_melee_raiden_info"] = "你的手中并无\"#{risk}#正义之器##\"。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。",
         ["bm_melee_thejobissnotyours_info"] = "这甚至不是你的剑。\n\n完全蓄力时出刀速度加快#{skill_color}#50%##，允许快速进行后续挥砍。",
@@ -2147,6 +2221,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_melee_specialist_info"] = "双份匕首，双倍快乐。\n连续攻击时，第一次攻击之后的每次攻击都是#{skill_color}#双倍伤害##。\n", -- Specialist Knives, Talons, Knuckle Daggers, Push Daggers
         ["bm_melee_cleaver_info"] = "上砍雪花盖顶，下砍老树盘根。\n爆头伤害减少#{skill_color}#50%##，对身体和其他部分的伤害增加#{skill_color}#50%##。",
         ["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+        ["bm_melee_piggy_hammer_info"] = "对特殊敌人造成的伤害额外增加#{skill_color}#100%##。\n\n每次击中敌人都有几率对其造成一次#{skill_color}#随机特殊效果##：\n#{skill_color}#12%##的概率造成#{skill_color}#流血##；#{skill_color}#7%##的概率造成#{ghost_color}#电击##；#{skill_color}#5%##的概率造成#{stats_positive}#中毒##；#{skill_color}#1%##的概率#{risk}#直接击杀##。", --Piggu
         -- tra       
         -- Melee Weapons
         ["bm_melee_twins"] = "Sai", -- Plural form is still "sai"  --tra what is this
@@ -2309,6 +2384,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wskn_resmod_cleangold"] = "Clean Gold",
         ["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
         ["bm_wskn_resmod_imissfauna_desc"] = "Mother Nature would never betray you... right?",
+        ["bm_wskn_resmod_uuuuu"] = "Gothic Ceres Gold",
+        ["bm_wskn_resmod_uuuuu_desc"] = "Nature is kind of dark and beautiful at the same time, right?",
         ["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
         ["bm_wskn_resmod_ownthiscity_desc"] = "It's our time now! Let's get this shit started!",
         ["bm_wskn_resmod_kindoffeel"] = "Abstract Dark Gold",
@@ -2316,6 +2393,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wskn_resmod_insubstantial"] = "Phased Gold",
         ["bm_wskn_resmod_palmtop"] = "Tiger Gold",
         ["bm_wskn_resmod_palmtop_desc"] = "The thing you wish for the most, is something you'll never get.",
+        ["bm_wskn_resmod_blacktiger"] = "Black Tiger Gold",
+        ["bm_wskn_resmod_joe"] = "Exotic Gold",
+        ["bm_wskn_resmod_blackexotic"] = "Black Exotic Gold",
         ["bm_wskn_resmod_lildonnie"] = "Pearl Gold",
         ["bm_wskn_resmod_quacko"] = "Blue Gold",
         ["bm_wskn_resmod_snake"] = "Liquid Gold",
@@ -2329,6 +2409,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_wskn_resmod_2019"] = "Warfare Gold",
         ["bm_wskn_resmod_llenn"] = "Pink Devil",
         ["bm_wskn_resmod_llenn_desc"] = "This isn't exactly what I had in mind, but pink is pink.",
+        ["bm_wskn_resmod_sugarhoneyicetea"] = "Zebra Gold",
+        ["bm_wskn_resmod_blackzebra"] = "Black Zebra Gold",
+        ["bm_wskn_resmod_charlotte"] = "Web Gold",
 
         ["menu_weapon_color_index_11"] = "Metal + Sights",
         ["menu_weapon_color_index_12"] = "Metal + Magazine",
@@ -2348,10 +2431,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
         ["bm_menu_attack_speed"] = "攻击间隔",
         ["bm_menu_impact_delay"] = "攻击前摇",
-		
-		["bm_menu_stats_detection"] = "Encumbrance",
-		["bm_menu_stats_min_detection"] = "Encumbrance",
-		["bm_menu_stats_max_detection"] = "Encumbrance",		
+
+        ["bm_menu_stats_detection"] = "隐蔽负荷",  --tra 累赘、负担
+        ["bm_menu_stats_min_detection"] = "隐蔽负荷",
+        ["bm_menu_stats_max_detection"] = "隐蔽负荷",
 
         ["bm_menu_pickup"] = "捡弹量",
         ["bm_menu_ads_speed"] = "瞄准时间",
@@ -2486,7 +2569,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         -- Blackmarket gui per-armor skill descriptions.
         ["bm_menu_armor_grinding_1"] = "无政府主义者每次回复的护甲值: #{skill_color}#$passive_armor_regen##",
         ["bm_menu_armor_grinding_2"] = "无政府主义者每次回复的护甲值: #{skill_color}#$passive_armor_regen## \n无政府主义者每次击中敌人回复的护甲值: #{skill_color}#$active_armor_regen##",
-        ["bm_menu_dodge_grace"] = "成功闪避将使你获得#{skill_color}#$grace_bonus%##的无敌时间，最多#{skill_color}#300ms##。\n\n难度越高，受击无敌时间越短。", -- Bonus damage grace on dodge
+        --["bm_menu_dodge_grace"] = "成功闪避将使你获得#{skill_color}#$grace_bonus%##的无敌时间，最多#{skill_color}#300ms##。\n\n难度越高，受击无敌时间越短。", -- Bonus damage grace on dodge
+
+        ["bm_menu_append_milliseconds"] = "ms",
+        ["bm_menu_dodge_grace"] = "闪避额外无敌帧：#{skill_color}#$grace_bonus##",
+        ["bm_menu_dodge_grace_cap"] = "闪避无敌帧被限制为 #{important_1}#$grace_bonus_cap## ，由于当前劫案的 ",
+        ["bm_menu_dodge_grace_jp_cap"] = "#{important_1}#专家模式##选项",
+        ["bm_menu_dodge_grace_both"] = " 和 ",
+        ["bm_menu_dodge_grace_diff_cap"] = "#{risk}#$risk_level##风险等级 ",
 
         ["bm_menu_armor_max_health_store_1"] = "前总统存储血量上限: #{skill_color}#$health_stored##",
         ["bm_menu_armor_max_health_store_2"] = "前总统存储血量上限: #{skill_color}#$health_stored## \n前总统杀敌护甲回复速度加成: #{skill_color}#$regen_bonus%##"
@@ -2562,6 +2652,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         ["hud_hint_bipod_slide"] = "滑行时无法放置",
         ["hud_hint_bipod_air"] = "在空中无法放置",
         ["hud_hint_bipod_lean"] = "探头时无法放置",
+        ["hud_hint_bipod_midstance"] = "改变姿势时无法放置",
 
         ["hud_interact_autumn_disable"] = "已被 秋日队长 禁用！",
 
@@ -2613,12 +2704,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         ["bm_w_beck_desc"] = "在犯罪世界里最流行的霰弹枪又回来了，仍然在霰弹枪世界里拥有一席之地！最早在2011年的犯罪狂潮当中出现，这把霰弹枪被证明在近距离情况下非常可靠。",
 
         -- Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-        ["bm_menu_bonus_concealment_p1"] = "少量隐匿度加成，少量稳定性减少",
-        ["bm_menu_bonus_concealment_p1_mod"] = "少量隐匿度加成",
-        ["bm_menu_bonus_concealment_p2"] = "大量隐匿度加成，大量稳定性减少",
-        ["bm_menu_bonus_concealment_p2_mod"] = "大量隐匿度加成",
-        ["bm_menu_bonus_concealment_p3"] = "极大量隐匿度加成，极大量稳定性减少",
-        ["bm_menu_bonus_concealment_p3_mod"] = "极大量隐匿度加成",
+        ["bm_menu_bonus_concealment_p1"] = "少量灵活性加成，少量稳定性减少",
+        ["bm_menu_bonus_concealment_p1_mod"] = "少量灵活性加成",
+        ["bm_menu_bonus_concealment_p2"] = "大量灵活性加成，大量稳定性减少",
+        ["bm_menu_bonus_concealment_p2_mod"] = "大量灵活性加成",
+        ["bm_menu_bonus_concealment_p3"] = "极大量灵活性加成，极大量稳定性减少",
+        ["bm_menu_bonus_concealment_p3_mod"] = "极大量灵活性加成",
         ["bm_menu_bonus_spread_p1"] = "少量精准度加成，少量稳定性减少",
         ["bm_menu_bonus_spread_p1_mod"] = "少量精准度加成",
         ["bm_menu_bonus_spread_n1"] = "极大量稳定性加成，极大量精准度减少",
@@ -2629,7 +2720,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         ["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "你和你的队友获得5%的额外经验。",
         ["bm_menu_spread"] = "精准度\n",
         ["bm_menu_recoil"] = "稳定性\n",
-        ["bm_menu_concealment"] = "隐匿度\n",
+        ["bm_menu_concealment"] = "灵活性\n",  --灵活性
         ["bm_menu_bonus_spread_p2_mod"] = "大量精准度加成",
         ["bm_menu_bonus_spread_p3_mod"] = "极大量精准度加成",
         ["bm_menu_bonus_recoil_p2_mod"] = "大量稳定性加成",
@@ -2650,17 +2741,80 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         -- Perk Deck Throwables
         ["bm_grenade_copr_ability"] = "水蛭安瓿瓶",
         ["bm_grenade_damage_control"] = "修士酒壶",
-        ["bm_grenade_smoke_screen_grenade_desc"] = "爆炸半径：#{skill_color}#4##米 \n持续时间：#{skill_color}#12##秒 \n引爆：静止#{skill_color}#1##秒后 \n\n扔一颗烟雾弹，消失在烟幕中，让你的敌人更难瞄准你。",
+        ["bm_grenade_smoke_screen_grenade_desc"] = "爆炸半径：#{skill_color}#6##米 \n持续时间：#{skill_color}#12##秒 \n引爆：静止#{skill_color}#1##秒后 \n\n扔一颗烟雾弹，消失在烟幕中，让你的敌人更难瞄准你。",
+
+        --WEAPON & ATTACHMENT DESCRIPTIONS
+        --[[ MANUFACTURERS ]]
+                --In-Universe Manufacturer deets
+                    --Crosskill/Corvus (Payday/OTWD) = Colt
+                    --DSC [Defense System Crosskill] (PD2) = Saco Defense
+                    --Simmons Armory (PD2) = Springfield Armory 
+                        --same acronym lol
+                    --Bernetti = Beretta
+                    --Chimano/Stryk = Glock 
+                    --SG = HK (Heckler Und Koch)
+                    --Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
+                        --Signature = European Branches, FIK = American Branch?
+                    --VF (OTWD + PD3) = FNH
+                    --Lakner (PD2) = Walther
+                    --Kang Arms (PD2) = Norinco
+                    --Northwest (PD3) = China South Industries Group
+                    --Touro = Taurus (lmao)
+                    --LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
+                        --LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
+                    --ITI (OTWD) = IMI/IWI
+                    --CR/TKA (PD2/OTWD) = CZ
+                    --TTO [Tecci Tactical Operations] (PD2) = Taran Tactical
+                    --Ferino (OTWD) = Franchi
+                    --Moretti (PD2) = Benelli(?)
+                    --Stefan (PD2) = Steyr
+                    --Wasp = Magpul
+                        --idunno
+                    --Repeater/Eaton (PD2/OTWD) = Winchester
+                    --Rangehitter (PD2) = Marlin
+                        --"Rangehitter" was bummed off it's original "Bernetti Rangehitter" name as "Bernetti"/Beretta doesn't make the SBL
+
+                    ["manufacturer_colt"] = "Crosskill",
+                    ["manufacturer_saco"] = "DSC",
+                    ["manufacturer_springfield"] = "Simmons",
+                    ["manufacturer_sigusa"] = "FIK",
+                    ["manufacturer_keltec"] = "LWI",
+                    ["manufacturer_winchester"] = "Eaton",
+                    ["manufacturer_marlin"] = "Rangehitter",
+                    ["manufacturer_swesson"] = "J&M",
+
+                    ["manufacturer_fnh"] = "VF",
+                    ["manufacturer_sig"] = "Signature",
+                    ["manufacturer_hk"] = "S&G",
+                    ["manufacturer_walther"] = "Lakner",
+                    ["manufacturer_steyr"] = "Stefan",
+                    ["manufacturer_glock"] = "Chimano",
+
+                    ["manufacturer_benelli"] = "Moretti",
+                    ["manufacturer_franchi"] = "Ferino",
+                    ["manufacturer_beretta"] = "Bernetti",
+
+                    ["manufacturer_kalashnikov"] = "IZMHA",
+                    ["manufacturer_tula"] = "IZMHA",
+                    ["manufacturer_cz"] = "TKA",
+
+                    ["manufacturer_imi"] = "ITI",
+
+                    ["manufacturer_taurus"] = "Touro",
+
+                    ["manufacturer_chinaindustries"] = "Northwest",
+                    ["manufacturer_norinco"] = "Kang Arms",
+
 
         -- Throwables--
-        ["bm_grenade_xmas_snowball_desc"] = "伤害：#{risk}#240## \n爆炸半径：#{skill_color}#1##米 \n恢复速度：每#{skill_color}#25##秒一个 \n\n沉进水里，再丢进冰箱，你就拥有了一件致命的投掷武器。就那么简单。",
+        ["bm_grenade_xmas_snowball_desc"] = "伤害：#{risk}#180## \n爆炸半径：#{skill_color}#1##米 \n恢复速度：每#{skill_color}#25##秒一个 \n\n沉进水里，再丢进冰箱，你就拥有了一件致命的投掷武器。就那么简单。",
         ["bm_concussion_desc"] = "爆炸半径：#{skill_color}#10##米 \n晕眩敌人最长#{skill_color}#4##秒 \n#{skill_color}#7##秒内敌人精准度减少#{skill_color}#50%## \n#{skill_color}#晕眩##所有范围内的敌人，#{important_1}#泰坦盾兵、泰坦熊和队长##除外。\n\n这个可爱的小玩意可以震瞎附近所有人的狗眼，给你额外的时间击杀他们。",
         ["bm_grenade_frag_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n就是一颗高爆手榴弹，还有什么好说的？",
         ["bm_dynamite_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#4##米 \n引爆：#{skill_color}#3##秒后 \n\n不会到处滚动或弹跳，但是爆炸半径略低一点。\n设计是用来炸石头的，当然也可以用来炸人。",
         ["bm_grenade_frag_com_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n就是一颗换了皮的高爆手榴弹，OVERKILL那性子没什么好说的。",
         ["bm_grenade_dada_com_desc"] = "伤害：#{risk}#800## \n爆炸半径：#{skill_color}#5##米 \n引爆：#{skill_color}#3##秒后 \n\n娃娃的外表炸弹的心，来自祖国母亲的爱。",
-        ["bm_grenade_molotov_desc"] = "伤害（火焰）：#{skill_color}#10##秒内造成#{heat_warm_color}#1200##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n火焰半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#10##秒\n引爆：#{skill_color}#撞击物体##时 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n玻璃瓶、可燃液体与一块碎布的完美结合，简单而有效。",
-        ["bm_grenade_fir_com_desc"] = "伤害（火焰）：#{skill_color}#12##秒内造成#{heat_warm_color}#1440##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n火焰半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#12##秒 \n引爆：#{skill_color}#2.5##秒后 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n白磷手榴弹，适合反弹到敌人那边点燃他们。",
+        ["bm_grenade_molotov_desc"] = "伤害（火焰）：#{skill_color}#10##秒内造成#{heat_warm_color}#1200##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n爆炸伤害：#{risk}#30## \n爆炸半径：#{skill_color}#3##米 \n火焰半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#10##秒\n引爆：#{skill_color}#撞击物体##时 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n玻璃瓶、可燃液体与一块碎布的完美结合，简单而有效。",
+        ["bm_grenade_fir_com_desc"] = "伤害（火焰）：#{skill_color}#12##秒内造成#{heat_warm_color}#1440##点伤害 \n伤害（点燃）：#{skill_color}#3##秒内造成#{heat_warm_color}#60##点伤害 \n爆炸伤害：#{risk}#30## \n爆炸半径：#{skill_color}#4.5##米 \n火焰半径：#{skill_color}#3.75##米 \n持续时间（火焰）：#{skill_color}#12##秒 \n引爆：#{skill_color}#2.5##秒后 \n有#{skill_color}#50%##的概率点燃敌人并使其陷入硬直。\n\n白磷手榴弹，适合反弹到敌人那边点燃他们。",
         ["bm_wpn_prj_ace_desc"] = "伤害：#{skill_color}#240## \n\n拥有锋利边缘的加重纸牌，金牌杀手口袋里的必备物品。",
         ["bm_wpn_prj_four_desc"] = "伤害（击中）：#{skill_color}#200## \n伤害（毒素）： #{skill_color}#4##秒内造成#{stats_positive}#120##点伤害 \n每#{skill_color}#0.5##秒有#{skill_color}#50%##的几率干扰敌人 \n\n流星镖拥有悠久的充满血腥的历史，纯钢打造的淬毒武器是你面对的敌人最可怕的噩梦。",
         ["bm_wpn_prj_target_desc"] = "伤害：#{skill_color}#240## \n\n精准而有效的无声杀人武器。兜里揣两把，干啥都不怕。",
@@ -2692,459 +2846,479 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
             3 = real names (i.e. SA 1911 Operator, HK 416c)
         ]]
         if weapon_names then
-        if weapon_names <= 2 then --Resmod names
-            LocalizationManager:add_localized_strings({ 
-                --[[ PISTOLS ]]
-                    --Gecko Pistol
-                    ["bm_w_maxim9"] = "Gecko M2",
-                    ["bm_w_x_maxim9"] = "Akimbo Gecko M2s",
-                    --Igor (APS)
-                    ["bm_w_stech"] = "Igor Automatik",
-                    ["bm_w_x_stech"] = "Akimbo Igor Automatiks",
-                    --Chimano Compact
-                    ["bm_wp_pis_g26"] = "Chimano 26 Compact",
-                    ["bm_w_jowi"] = "Akimbo Chimano 26 Compacts",
-                    --Glock 18c
-                    ["bm_w_glock_18c"] = "Chimano 18C",
-                    ["bm_w_x_g18c"] = "Akimbo Chimano 18Cs",
-                    --CZ 75
-                    ["bm_w_czech"] = "Czech 92",
-                    ["bm_w_x_czech"] = "Akimbo Czech 92s",
-                    --PPK (Gruber)
-                    ["bm_w_ppk"] = "Gruber Kurz",
-                    ["bm_w_x_ppk"] = "Akimbo Gruber Kurzes",
-                    --M13
-                    ["bm_w_legacy"] = "M13",
-                    ["bm_w_x_legacy"] = "Akimbo M13s",  
-                    --Glock 17
-                    ["bm_w_glock_17"] = "Chimano 88",
-                    ["bm_w_x_g17"] = "Akimbo Chimano 88s",
-                    --Bernetti 9
-                    ["bm_w_b92fs"] = "Bernetti 92",
-                    ["bm_w_x_b92fs"] = "Akimbo Bernetti 92s",
-                    --White Streak
-                    ["bm_w_pl14"] = "White Streak",
-                    ["bm_w_x_pl14"] = "Akimbo White Streaks",
-                    --Holt 9mm
-                    ["bm_w_holt"] = "HOLT 9mm",
-                    ["bm_w_x_holt"] = "Akimbo HOLT 9mms",
-                    --FMG-9
-                    ["bm_w_fmg9"] = "Wasp DS-9",
-                    --93R
-                    ["bm_w_beer"] = "Bernetti 93R",
-                    --Contractor Pistols 
-                    ["bm_w_packrat"] = "Contractor M30",
-                    ["bm_w_x_packrat"] = "Akimbo Contractor M30s",
-                    --Breech (Luger) 
-                    ["bm_w_breech"] = "Parabellum-08",
-                    --Chimano Custom
-                    ["bm_w_g22c"] = "Chimano Custom",
-                    ["bm_w_x_g22c"] = "Akimbo Chimano Customs",
-                    --Signature .40
-                    ["bm_w_p226"] = "Signature .40",
-                    --LEO
-                    ["bm_w_hs2000"] = "LEO-40",
-                    ["bm_wp_hs2000_sl_long"] = "Elite Slide",
-                    --5/7 pistol
-                    ["bm_w_lemming"] = "Acuto 5/7",
-                    --Baby Deagle--
-                    ["bm_w_sparrow"] = "Sparrow 941",
-                    --Crosskill
-                    ["bm_w_colt_1911"] = "Crosskill Operator II",
-                    ["bm_w_x_1911"] = "Mustang & Sally",
-                    ["bm_wp_1911_m_big"] = "Casket Magazine",
-                    --Crosskill Chunky
-                    ["bm_w_m1911"] = "Crosskill A1",
-                    --Crosskill Guard
-                    ["bm_w_shrew"] = "Crosskill Guard",
-                    ["bm_w_x_shrew"] = "Barry & Paul",
-                    --USP 
-                    ["bm_w_usp"] = "Interceptor-45",
-                    ["bm_w_x_usp"] = "Akimbo Interceptor-45s",
-                    ["bm_wp_usp_m_big"] = "Casket Magazine",
-                    ["bm_wp_pis_usp_b_match"] = "Freeman Slide",
-                    --Model 54 
-                    ["bm_w_type54"] = "CC-33",
-                    ["bm_w_x_type54"] = "Akimbo CC-33s",
-                    --Broomstick--
-                    ["bm_w_c96"] = "Broomstick",
-                    ["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
-                    --Sub2000
-                    ["bm_w_sub2000"] = "Cavity .40",
-                    --Deagle
-                    ["bm_w_deagle"] = "Deagle",
-                    ["bm_w_x_deagle"] = "Akimbo Deagles",
-                    --Kahn .357
-                    ["bm_w_korth"] = "Kahn .357",
-                    ["bm_w_x_korth"] = "Akimbo Kahn .357s",
-                    --Matever 2006m
-                    ["bm_w_mateba"] = "Matever 9mm", --:^)
-                    ["bm_wp_2006m_b_short"] = "Tachikoma Barrel",   
-                    ["bm_wp_2006m_b_medium"] = "Togusa Barrel", 
-                    ["bm_wp_2006m_b_long"] = "Kusanagi Barrel", 
-                    ["bm_w_x_2006m"] = "Akimbo Matevers",
-                    --Frenchman Model 87
-                    ["bm_w_model3"] = "Frenchman 87",   
-                    ["bm_w_x_model3"] = "Akimbo Frenchman 87s", 
-                    --Raging bull
-                    ["bm_w_raging_bull"] = "Bronco .44",    
-                    ["bm_w_x_rage"] = "Akimbo Bronco .44s",
-                    --Castigo
-                    ["bm_w_chinchilla"] = "Castigo .44",
-                    ["bm_w_x_chinchilla"] = "Akimbo Castigo .44s",
-                    --RUS-12
-                    ["bm_w_rsh12"] = "RUS-12",
-                    --SAA/Peacemaker
-                    ["bm_w_peacemaker"] = "Peacemaker .45LC",
-                    --CUSTOM PISTOLS
-                        --Px4
-                        ["bm_w_px4"] = "Bernetti Hx4 Canaan",
-                        --Browning Hi-Power
-                        ["bm_w_hpb"] = "Hi-Power",
-                        --Browning Hi-Power (Mira)
-                        --["bm_w_hpb"] = "Hi-Power",
-                        --Walther P99
-                        ["bm_w_p99"] = "Gruber 99",
-                        --Derringer
-                        ["bm_w_derringer"] = "Derringer",
-                        --Automag .44
-                        ["bm_w_amt"] = "Automag .44",
-                        --Colt Detective
-                        ["bm_w_coltds"] = "Crosskill Investigator",
-                        --SIG P320
-                        ["bm_w_papa320"] = "Signature M19",
-                        ["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
-                --[[ SMGs ]]
-                    --Kobus 90--
-                    ["bm_w_p90"] = "Project-90",
-                    ["bm_w_x_p90"] = "Akimbo Project-90s",
-                    ["bm_wp_p90_b_ninja"] = "Ninja Barrel",
-                    ["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
-                    --Spec Ops
-                    ["bm_w_mp7"] = "SpecOps-7",
-                    --Tec-9
-                    ["bm_w_tec9"] = "T3K Urban",
-                    ["bm_w_x_tec9"] = "Akimbo T3K Urbans",
-                    --Heather
-                    ["bm_w_sr2"] = "Heather-2M",
-                    ["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
-                    --CMP
-                    ["bm_w_mp9"] = "CMP-9",
-                    --Miyaka
-                    ["bm_w_pm9"] = "Miyaka 9 Special",
-                    --Micro Uzi
-                    ["bm_w_baka"] = "Micro Uzi",
-                    ["bm_w_x_baka"] = "Akimbo Micro Uzis",
-                    --Cobra/Skorpion
-                    ["bm_w_scorpion"] = "Cobra",
-                    ["bm_w_x_scorpion"] = "Akimbo Cobras",
-                    ["bm_wp_scorpion_m_extended"] = "Dual Magazines",
-                    --Tatonka
-                    ["bm_w_coal"] = "Tatonka",
-                    --AK Gen
-                    ["bm_w_vityaz"] = "AK Gen 21 Tactical",
-                    --Signature SMG
-                    ["bm_w_shepheard"] = "Signature-10",
-                    --Compact-5/MP5
-                    ["bm_w_mp5"] = "Compact-5", 
-                    ["bm_w_x_mp5"] = "Akimbo Compact-5s",
-                    ["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
-                    --Swedish K
-                    ["bm_w_m45"] = "Swedish K",
-                    --Pachett/Sterling
-                    ["bm_w_sterling"] = "Patchette L2A1",
-                    ["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-                    --Uzi
-                    ["bm_w_uzi"] = "Uzi",
-                    --Chicago Typewriter
-                    ["bm_w_m1928"] = "Chicago Typewriter",
-                    --Mark 10
-                    ["bm_w_mac10"] = "Mark 10",
-                    ["bm_w_x_mac10"] = "Akimbo Mark 10s",
-                    --MP40
-                    ["bm_w_erma"] = "MP 40",
-                    --Jackal
-                    ["bm_w_schakal"] = "Jackal",
-                    --Kross Vertex
-                    ["bm_w_polymer"] = "Kross Vertex",
-                    --CUSTOM SMGs
-                        --AR57
-                        ["bm_w_alpha57_prim"] = "FSS Hurricane",
-                        --LWRC
-                        ["bm_w_smg45"] = "FT Striker .45",
-                        --Typhoon
-                        ["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
-                --[[ MGs ]]
-                    --Bootleg/HK416c
-                    ["bm_w_tecci"] = "Bootlegger",
-                    ["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
-                    --KSP/M249
-                    ["bm_w_m249"] = "KSP-90",
-                    --ChainSAW
-                    ["bm_w_kacchainsaw"] = "Campbell 74",
-                    --RPK
-                    ["bm_w_rpk"] = "RPK",
-                    --Brenner 21/HK21
-                    ["bm_w_hk21"] = "Brenner-21",
-                    --M60
-                    ["bm_w_m60"] = "M60",
-                    --Ksp 58
-                    ["bm_w_par"] = "KSP-58B",
-                    ["bm_wp_par_b_short"] = "Comped Barrel",
-                    --Buzzsaw/Mg42
-                    ["bm_w_mg42"] = "Buzzsaw-42",
-                    --Versteckt-51/HK51B
-                    ["bm_w_hk51b"] = "Versteckt-51B",
-                    --Microgun
-                    ["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
+            if weapon_names == 1 then
 
-                --[[ SHOTGUNS ]]
-                    --Grimm
-                    ["bm_w_basset"] = "Grimm 12G",  
-                    --Saiga
-                    ["bm_w_saiga"] = "IZHMA 12G",
-                    --AA12
-                    ["bm_w_aa12"] = "Steakout 12G",
-                    --Spas12
-                    ["bm_w_spas12"] = "Predator 12G",
-                    --Benelli
-                    ["bm_w_benelli"] = "M1014",
-                    --Argos III
-                    ["bm_w_ultima"] = "Argos III",
-                    --Street Sweeper
-                    ["bm_w_striker"] = "Street Sweeper",
-                    --Goliath
-                    ["bm_w_rota"] = "Goliath 12G",
-                    --VD-12
-                    ["bm_w_sko12"] = "VD-12",
-                    ["bm_w_x_sko12"] = "Akimbo VD-12s",
-                    --GSPS
-                    ["bm_w_m37"] = "GSPS 12G",
-                    --Supernova
-                    ["bm_w_supernova"] = "Deimos",
-                    --Loco
-                    ["bm_w_serbu"] = "Locomotive 12G",
-                    --Reinfeld 88
-                    ["bm_w_m1897"] = "Repeater 1897",
-                    --Mosconi 12g
-                    ["bm_w_m590"] = "Mosconi Tactical 12G",
-                    --R870
-                    ["bm_w_r870"] = "Reinfeld 880",
-                    --KSG
-                    ["bm_w_ksg"] = "Raven 12G",
-                    --Breaker 10g
-                    ["bm_w_boot"] = "Breaker 10G",
-                    --Claire Angélique Florette du Bertrand
-                    ["bm_w_coach"] = "Claire S/S 12G",
-                    --Mosconi
-                    ["bm_w_huntsman"] = "Mosconi S/S 12G",
-                    --Judge
-                    ["bm_w_judge"] = "The Judge",
-                    ["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
-                    --Joceline
-                    ["bm_w_b682"] = "Joceline O/U 12G", 
-                    --Custom Shotguns
-                        --Doomstick
-                        ["bm_w_quadbarrel"] = "Doomstick",
-                        --Widowmaker TX
-                        ["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
-                        ["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
-                --[[ ARs ]]
-                    --S552
-                    ["bm_w_s552"] = "Commando 552",
-                    --M733/AMCAR
-                    ["bm_w_amcar"] = "AM-CAR",
-                    --G36
-                    ["bm_w_g36"] = "JP36",
-                    --VHS/Lion's Roar
-                    ["bm_w_vhs"] = "Lion's Roar",
-                    ["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
-                    ["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
-                    --Olympic/Para
-                    ["bm_w_olympic"] = "Para-23",
-                    ["bm_w_x_olympic"] = "Akimbo Para-23s",
-                    --TAR-21
-                    ["bm_w_komodo"] = "Tempest-95",
-                    --Famas
-                    ["bm_w_famas"] = "Clarion 5.56",
-                    --M4/CAR-4
-                    ["bm_w_m4"] = "CAR-4",
-                    ["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
-                    ["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
-                    --AK5
-                    ["bm_w_ak5"] = "Ak 5",
-                    --Union 5.56
-                    ["bm_w_corgi"] = "Union 5.56",
-                    ["bm_wp_corgi_b_short"] = "MSG Barrel",
-                    --UAR
-                    ["bm_w_aug"] = "UAR A2",
-                    ["bm_wp_upg_b_hbar"] = "Heavy Barrel",  
-                    --AK17
-                    ["bm_w_ak12"] = "AK-17",
-                    --AK 5.45
-                    ["bm_w_ak74"] = "AK 5.45",
-                    --CR 805
-                    ["bm_w_hajk"] = "CR 805B",
-                    --AMR-16
-                    ["bm_w_m16"] = "AMR-16",
-                    --Queen's Wrath
-                    ["bm_w_l85a2"] = "Queen's Wrath",
-                    --AK 7.62
-                    ["bm_w_akm"] = "AK 7.62",
-                    ["bm_w_akm_gold"] = "Golden AK 7.62",
-                    ["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
-                    --KETCHUPKNOB--
-                    --ASPIRING POKEMON TRAINER, ASH KETCHNOV--
-                    ["bm_w_groza"] = "OB-14st Byk-1", --Hopefully less silly than its Ketchup name
-                    --"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
-                    --Although, a Russian word for "region/zone/area" followed up with a Polish word...
-                    --Eh, whatever
-                    --CHIKUBI
-                    ["bm_w_tkb"] = "Rodion 3B",
-                    ["bm_wp_tkb_m_bakelite"] = "Siberian 15x3 Magazine",
-                    --Krinkov
-                    ["bm_w_akmsu"] = "Krinkov",
-                    --Akimbo Krinkov
-                    ["bm_w_x_akmsu"] = "Akimbo Krinkovs",
-                    --CUSTOM ARs
-                        --AN-94/92
-                        ["bm_w_tilt"] = "KVK-99",
-                        --HK G36
-                        ["bm_w_g36k"] = "SG36K",
-                        --SCAR-L
-                        ["bm_w_scarl"] = "Eagle Light",
-                        --Valmet Rk.62
-                        ["bm_w_rk62"] = "Velmer",
-                        --MW22 Honey Badger
-                        ["bm_w_mcbravo"] = "Chimera",
-                        --AR-18
-                        ["bm_w_ar18"] = "CAR-18",
-                --[[ DMRs ]]
-                    --Little Friend
-                    ["bm_w_contraband"] = "Bigger Friend 7.62",
-                    --FAL
-                    ["bm_w_fal"] = "Falcon 58",     
-                    --ASS VAL
-                    ["bm_w_asval"] = "Valkyria",
-                    --Galil
-                    ["bm_w_galil"] = "Defender 7.62",
-                    --SCAR
-                    ["bm_w_scar"] = "Eagle Heavy",          
-                    --Galant--
-                    ["bm_w_ching"] = "M1 Galant",
-                    --M308
-                    ["bm_w_m14"] = "M308",
-                    --G3
-                    ["bm_w_g3"] = "Gewehr-3",
-                    ["bm_wp_g3_b_sniper"] = "Macro Barrel",
-                    ["bm_wp_g3_b_short"] = "Micro Barrel",
-                    --KS12
-                    ["bm_w_shak12"] = "KS-12 Urban",
-                    --HCAR
-                    ["bm_w_hcar"] = "Akron HC",
-                    
-                    --Custom DMRs
-                        --MCX Spear
-                        ["bm_w_mcx_spear"] = "Signature M7",
-                        ["bm_w_ngsierra"] = "Amicus 277",
-                        --VSS
-                        ["bm_w_vss"] = "Viktoriya",
-                        --G3 HK79
-                        ["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
-                        --BO3 XR2
-                        ["bm_w_xr2"] = "XR-2",
-                        --SIERRA .458
-                        ["bm_w_sierra458"] = "Sierra .458",
-                --[[ SNIPERS ]]
-                    --MSR
-                    ["bm_w_msr"] = "Rattlesnake",   
-                    --R700
-                    ["bm_w_r700"] = "Reinfeld Model 700",   
-                    --QBU88
-                    ["bm_w_qbu88"] = "Káng Arms X1",
-                    --Winchester 1874
-                    ["bm_w_winchester1874"] = "Repeater 1874",  
-                    --TTI(TTY)
-                    ["bm_w_tti"] = "Tecci Tactical .308",
-                    --Icky Vicky
-                    ["bm_w_victor"] = "SA North Star",
-                    --Scunt
-                    ["bm_w_scout"] = "Pronghorn",
-                    --AWP
-                    ["bm_w_awp"] = "Amaroq 900",
-                    --WA2000
-                    ["bm_w_wa2000"] = "Lebensauger .300",
-                    --Rangerhitter
-                    ["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
-                    --Contender G2
-                    ["bm_w_contender"] = "Aran G2",
-                    --Model 70
-                    ["bm_w_model70"] = "Platypus 70",
-                    --SVD
-                    ["bm_w_siltstone"] = "Grom",
-                    --Mosin--
-                    ["bm_w_mosin"] = "Nagant",
-                    --Desert Fox
-                    ["bm_w_desertfox"] = "Desertfox",
-                    --R93
-                    ["bm_w_r93"] = "R93",
-                    --Thanatos--
-                    ["bm_w_m95"] = "Thanatos .50 BMG",
-                    --Custom Snipers
-                        --Guerilla
-                        ["bm_w_sgs"] = "Guerilla 542",  
-                        --M107
-                        ["bm_w_m107cq"] = "Mors .50 BMG",
-                        --M200
-                        ["bm_w_m200"] = "TF-141",
-                        --Marlin 1894
-                        ["bm_w_m1894"] = "Mare's Leg",
-                        --SPX Centerfire
-                        ["bm_w_moss464spx"] = "Mosconi SPX",
-                        --Winchester 1894
-                        ["bm_w_winchester1894"] = "Repeater 1894",
+            elseif weapon_names <= 2 then --Resmod names
+                LocalizationManager:add_localized_strings({	
+    
+                    --[[ PISTOLS ]]
+                        --Gecko Pistol
+                        ["bm_w_maxim9"] = "Magnus 9",
+                        ["bm_w_x_maxim9"] = "Akimbo Magnus 9s",
+                        --Igor (APS)
+                        ["bm_w_stech"] = "Igor Automatik",
+                        ["bm_w_x_stech"] = "Akimbo Igor Automatiks",
+                        --Chimano Compact
+                        ["bm_wp_pis_g26"] = "Chimano 26 Compact",
+                        ["bm_w_jowi"] = "Akimbo Chimano 26 Compacts",
+                        --Glock 18c
+                        ["bm_w_glock_18c"] = "Chimano 18C",
+                        ["bm_w_x_g18c"] = "Akimbo Chimano 18Cs",
+                        --CZ 75
+                        ["bm_w_czech"] = "CR 92",
+                        ["bm_w_x_czech"] = "Akimbo CR 92s",
+                        --PPK (Gruber)
+                        ["bm_w_ppk"] = "Gruber Kurz",
+                        ["bm_w_x_ppk"] = "Akimbo Gruber Kurzes",
+                        --M13
+                        ["bm_w_legacy"] = "M13",
+                        ["bm_w_x_legacy"] = "Akimbo M13s",	
+                        --Glock 17
+                        ["bm_w_glock_17"] = "Chimano 88",
+                        ["bm_w_x_g17"] = "Akimbo Chimano 88s",
+                        --Bernetti 9
+                        ["bm_w_b92fs"] = "Bernetti 92",
+                        ["bm_w_x_b92fs"] = "Akimbo Bernetti 92s",
+                        --White Streak
+                        ["bm_w_pl14"] = "White Streak",
+                        ["bm_w_x_pl14"] = "Akimbo White Streaks",
+                        --Holt 9mm
+                        ["bm_w_holt"] = "Holt 9",
+                        ["bm_w_x_holt"] = "Akimbo Holt 9s",
+                        --FMG-9
+                        ["bm_w_fmg9"] = "Wasp DS-9",
+                        --93R
+                        ["bm_w_beer"] = "Bernetti 93R",
+                        --Contractor Pistols 
+                        ["bm_w_packrat"] = "Contractor M30L",
+                        ["bm_w_x_packrat"] = "Akimbo Contractor M30Ls",
+                        --Breech (Luger) 
+                        ["bm_w_breech"] = "Parabellum-08",
+                        --Chimano Custom
+                        ["bm_w_g22c"] = "Chimano Custom",
+                        ["bm_w_x_g22c"] = "Akimbo Chimano Customs",
+                        --Signature .40
+                        ["bm_w_p226"] = "Signature .40",
+                        --LEO
+                        ["bm_w_hs2000"] = "LEO-40",
+                        ["bm_wp_hs2000_sl_long"] = "Elite Slide",
+                        --5/7 pistol
+                        ["bm_w_lemming"] = "Acuto 5/7",
+                        --Baby Deagle--
+                        ["bm_w_sparrow"] = "Sparrow 941",
+                        ["bm_w_x_sparrow"] = "Spike & Vicious",
+                        --Crosskill
+                        ["bm_w_colt_1911"] = "Crosskill Operator II",
+                        ["bm_w_x_1911"] = "Mustang & Sally",
+                        ["bm_wp_1911_m_big"] = "Casket Magazine",
+                        --Crosskill Chunky
+                        ["bm_w_m1911"] = "Crosskill A1",
+                        ["bm_w_x_m1911"] = "Price & MacTavish",
+                        --Crosskill Guard
+                        ["bm_w_shrew"] = "Crosskill Guard",
+                        ["bm_w_x_shrew"] = "Barry & Paul",
+                        --USP 
+                        ["bm_w_usp"] = "Interceptor-45",
+                        ["bm_w_x_usp"] = "Akimbo Interceptor-45s",
+                        ["bm_wp_usp_m_big"] = "Casket Magazine",
+                        ["bm_wp_pis_usp_b_match"] = "Freeman Slide",
+                        --Model 54 
+                        ["bm_w_type54"] = "CC-33",
+                        ["bm_w_x_type54"] = "Akimbo CC-33s",
+                        --Broomstick--
+                        ["bm_w_c96"] = "Broomstick",
+                        ["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
+                        --Sub2000
+                        ["bm_w_sub2000"] = "Cavity .40",
+                        --Deagle
+                        ["bm_w_deagle"] = "Deagle",
+                        ["bm_w_x_deagle"] = "Akimbo Deagles",
+                        --Kahn .357
+                        ["bm_w_korth"] = "Kahn .357",
+                        ["bm_w_x_korth"] = "Akimbo Kahn .357s",
+                        --Matever 2006m
+                        ["bm_w_mateba"] = "Matever 9mm", --:^)
+                        ["bm_wp_2006m_b_short"] = "Tachikoma Barrel",	
+                        ["bm_wp_2006m_b_medium"] = "Togusa Barrel",	
+                        ["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
+                        ["bm_w_x_2006m"] = "Akimbo Matevers",
+                        --Frenchman Model 87
+                        ["bm_w_model3"] = "J&M Model 87",	
+                        ["bm_w_x_model3"] = "Akimbo Model 87s",	
+                        --Raging bull
+                        ["bm_w_raging_bull"] = "Bronco .44",	
+                        ["bm_w_x_rage"] = "Akimbo Bronco .44s",
+                        --Castigo
+                        ["bm_w_chinchilla"] = "Castigo .44",
+                        ["bm_w_x_chinchilla"] = "Akimbo Castigo .44s",
+                        --RUS-12
+                        ["bm_w_rsh12"] = "RUS-12",
+                        --SAA/Peacemaker
+                        ["bm_w_peacemaker"] = "Peacemaker .45LC",
+                        --CUSTOM PISTOLS
+                            --Px4
+                            ["bm_w_px4"] = "Bernetti Hx4 Canaan",
+                            --Browning Hi-Power
+                            ["bm_w_hpb"] = "Hi-Power",
+                            --Browning Hi-Power (Mira)
+                            --["bm_w_hpb"] = "Hi-Power",
+                            --Walther P99
+                            ["bm_w_p99"] = "Lakner G99",
+                            --Derringer
+                            ["bm_w_derringer"] = "Derringer",
+                            --Automag .44
+                            ["bm_w_amt"] = "Automag .44",
+                            --Colt Detective
+                            ["bm_w_coltds"] = "Crosskill Investigator",
+                            --SIG P320
+                            ["bm_w_papa320"] = "M19",
+                            ["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
+                    --[[ SMGs ]]
+                        --Kobus 90--
+                        ["bm_w_p90"] = "Project-90",
+                        ["bm_w_x_p90"] = "Akimbo Project-90s",
+                        ["bm_wp_p90_b_ninja"] = "Ninja Barrel",
+                        ["bm_wp_90_body_boxy"] = "OMNIA Assault Stock",
+                        --Spec Ops
+                        ["bm_w_mp7"] = "SpecOps-7",
+                        --Tec-9
+                        ["bm_w_tec9"] = "T3K Urban",
+                        ["bm_w_x_tec9"] = "Akimbo T3K Urbans",
+                        --Heather
+                        ["bm_w_sr2"] = "Heather-2M",
+                        ["bm_w_x_sr2"] = "Akimbo Heather-2Ms",
+                        --CMP
+                        ["bm_w_mp9"] = "CMP-9",
+                        --Miyaka
+                        ["bm_w_pm9"] = "Miyaka 9 Special",
+                        --Micro Uzi
+                        ["bm_w_baka"] = "Micro Uzi",
+                        ["bm_w_x_baka"] = "Akimbo Micro Uzis",
+                        --Cobra/Skorpion
+                        ["bm_w_scorpion"] = "Cobra",
+                        ["bm_w_x_scorpion"] = "Akimbo Cobras",
+                        ["bm_wp_scorpion_m_extended"] = "Dual Magazines",
+                        --Tatonka
+                        ["bm_w_coal"] = "AK-19 Tatonka",
+                        --AK Gen
+                        ["bm_w_vityaz"] = "AK-19-01 Tasunka",
+                        --Signature SMG
+                        ["bm_w_shepheard"] = "FIK PC9",
+                        --Compact-5/MP5
+                        ["bm_w_mp5"] = "Compact-5",	
+                        ["bm_w_x_mp5"] = "Akimbo Compact-5s",
+                        ["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
+                        --Swedish K
+                        ["bm_w_m45"] = "Swedish K",
+                        --Pachett/Sterling
+                        ["bm_w_sterling"] = "Patchette L2A1",
+                        ["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
+                        --Uzi
+                        ["bm_w_uzi"] = "Uzi",
+                        --Chicago Typewriter
+                        ["bm_w_m1928"] = "Chicago Typewriter",
+                        --Mark 10
+                        ["bm_w_mac10"] = "Mark 10",
+                        ["bm_w_x_mac10"] = "Akimbo Mark 10s",
+                        --MP40
+                        ["bm_w_erma"] = "MP 40",
+                        --Jackal
+                        ["bm_w_schakal"] = "Jackal",
+                        --Kross Vertex
+                        ["bm_w_polymer"] = "Kross Vertex",
+                        --CUSTOM SMGs
+                            --AR57
+                            ["bm_w_alpha57_prim"] = "FSS Hurricane",
+                            --LWRC
+                            ["bm_w_smg45"] = "FT Striker .45",
+                            --Typhoon
+                            ["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
+                    --[[ MGs ]]
+                        --Bootleg/HK416c
+                        ["bm_w_tecci"] = "Bootlegger",
+                        ["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
+                        --KSP/M249
+                        ["bm_w_m249"] = "KSP-90",
+                        --ChainSAW
+                        ["bm_w_kacchainsaw"] = "Campbell 74",
+                        --RPK
+                        ["bm_w_rpk"] = "RPK",
+                        --Brenner 21/HK21
+                        ["bm_w_hk21"] = "Brenner-21",
+                        --M60
+                        ["bm_w_m60"] = "M60",
+                        --Ksp 58
+                        ["bm_w_par"] = "KSP-58B",
+                        ["bm_wp_par_b_short"] = "Comped Barrel",
+                        --Buzzsaw/Mg42
+                        ["bm_w_mg42"] = "Buzzsaw-42",
+                        --Versteckt-51/HK51B
+                        ["bm_w_hk51b"] = "Versteckt-51B",
+                        --Microgun
+                        ["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
+                        --CUSTOM SMGs
+                        ["bm_w_sig_xm250"] = "FIK MG277",
+    
+                    --[[ SHOTGUNS ]]
+                        --Grimm
+                        ["bm_w_basset"] = "Grimm 12G",	
+                        --Saiga
+                        ["bm_w_saiga"] = "IZHMA 12G",
+                        --AA12
+                        ["bm_w_aa12"] = "Steakout 12G",
+                        --Spas12
+                        ["bm_w_spas12"] = "Predator 12G",
+                        --Benelli
+                        ["bm_w_benelli"] = "M1014 12G",
+                        --Argos III
+                        ["bm_w_ultima"] = "Argos III 12G",
+                        --Street Sweeper
+                        ["bm_w_striker"] = "Street Sweeper 12G",
+                        --Goliath
+                        ["bm_w_rota"] = "Goliath 12G",
+                        --VD-12
+                        ["bm_w_sko12"] = "VD-12G",
+                        ["bm_w_x_sko12"] = "Akimbo VD-12s",
+                        --GSPS
+                        ["bm_w_m37"] = "GSPS 12G",
+                        --Supernova
+                        ["bm_w_supernova"] = "Deimos 12G",
+                        --Loco
+                        ["bm_w_serbu"] = "Locomotive 12G",
+                        --Reinfeld 88
+                        ["bm_w_m1897"] = "Repeater 1897 12G",
+                        --Mosconi 12g
+                        ["bm_w_m590"] = "Mosconi Tactical 12G",
+                        --R870
+                        ["bm_w_r870"] = "Reinfeld 880 12G",
+                        --KSG
+                        ["bm_w_ksg"] = "Raven 12G",
+                        --Breaker 10g
+                        ["bm_w_boot"] = "Breaker 10G",
+                        --Claire Angélique Florette du Bertrand
+                        ["bm_w_coach"] = "Claire S/S 12G",
+                        --Mosconi
+                        ["bm_w_huntsman"] = "Mosconi S/S 12G",
+                        --Judge
+                        ["bm_w_judge"] = "The Judge .410",
+                        ["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
+                        --Joceline
+                        ["bm_w_b682"] = "Joceline O/U 12G",	
+                        --Custom Shotguns
+                            --Doomstick
+                            ["bm_w_quadbarrel"] = "Doomstick",
+                            --Widowmaker TX
+                            ["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
+                            ["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
+                    --[[ ARs ]]
+                        --S552
+                        ["bm_w_s552"] = "Commando 552",
+                        --M733/AMCAR
+                        ["bm_w_amcar"] = "AM-CAR",
+                        --G36
+                        ["bm_w_g36"] = "JP36",
+                        --VHS/Lion's Roar
+                        ["bm_w_vhs"] = "Lion's Roar",
+                        ["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
+                        ["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
+                        --Olympic/Para
+                        ["bm_w_olympic"] = "Para-23",
+                        ["bm_w_x_olympic"] = "Akimbo Para-23s",
+                        --TAR-21
+                        ["bm_w_komodo"] = "Tempest-95", --it's modeled after the X95, not the 21
+                        --Famas
+                        ["bm_w_famas"] = "Clarion 5.56",
+                        --M4/CAR-4
+                        ["bm_w_m4"] = "CAR-4",
+                        ["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
+                        ["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
+                        --AK5
+                        ["bm_w_ak5"] = "Ak 5",
+                        --Union 5.56
+                        ["bm_w_corgi"] = "Union 5.56",
+                        ["bm_wp_corgi_b_short"] = "MSG Barrel",
+                        --UAR
+                        ["bm_w_aug"] = "UAR A2",
+                        ["bm_wp_upg_b_hbar"] = "Heavy Barrel",	
+                        --AK17
+                        ["bm_w_ak12"] = "AK-17",
+                        --AK 5.45
+                        ["bm_w_ak74"] = "AK 5.45",
+                        --CR 805
+                        ["bm_w_hajk"] = "CR 805B",
+                        --AMR-16
+                        ["bm_w_m16"] = "AMR-16",
+                        --Queen's Wrath
+                        ["bm_w_l85a2"] = "Queen's Wrath",
+                        --AK 7.62
+                        ["bm_w_akm"] = "AK 7.62",
+                        ["bm_w_akm_gold"] = "Golden AK 7.62",
+                        ["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
+                        --KETCHUPKNOB--
+                        --ASPIRING POKEMON TRAINER, ASH KETCHNOV--
+                        ["bm_w_groza"] = "OB-14st Byk-1", --Hopefully less silly than its Ketchup name
+                        --"OB-14st" being an awful combo of "Oblast" (a word for region/zone/area, as well as literally having BLAST in the name) and the "14" in "OTs-14"
+                        --Although, a Russian word for "region/zone/area" followed up with a Polish word...
+                        --Eh, whatever
+                        --CHIKUBI
+                        ["bm_w_tkb"] = "Rodion 3B",
+                        ["bm_wp_tkb_m_bakelite"] = "Siberian 15x3 Magazine",
+                        --Krinkov
+                        ["bm_w_akmsu"] = "Krinkov",
+                        --Akimbo Krinkov
+                        ["bm_w_x_akmsu"] = "Akimbo Krinkovs",
+                        --CUSTOM ARs
+                            --QBZ-191
+                            ["bm_w_pd3_qbz191"] = "Northwest B-9",
+                            --AN-94/92
+                            ["bm_w_tilt"] = "KVK-99",
+                            --HK G36
+                            ["bm_w_g36k"] = "JP36K",
+                            --SCAR-L
+                            ["bm_w_scarl"] = "Eagle Light",
+                            --Valmet Rk.62
+                            ["bm_w_rk62"] = "Velmer",
+                            --MW22 Honey Badger
+                            ["bm_w_mcbravo"] = "Chimera",
+                            --AR-18
+                            ["bm_w_ar18"] = "CAR-18",
+                    --[[ DMRs ]]
+                        --Little Friend
+                        ["bm_w_contraband"] = "Bigger Friend 7.62",
+                        --FAL
+                        ["bm_w_fal"] = "Falcon 58",
+                        --ASS VAL
+                        ["bm_w_asval"] = "Valkyria",
+                        --Galil
+                        ["bm_w_galil"] = "Gecko 7.62",
+                        --SCAR
+                        ["bm_w_scar"] = "Eagle Heavy",
+                        --Galant--
+                        ["bm_w_ching"] = "M1 Galant",
+                        --M308
+                        ["bm_w_m14"] = "M308",
+                        --G3
+                        ["bm_w_g3"] = "Gewehr-3",
+                        ["bm_wp_g3_b_sniper"] = "Macro Barrel",
+                        ["bm_wp_g3_b_short"] = "Micro Barrel",
+                        --KS12
+                        ["bm_w_shak12"] = "KS-12 Urban",
+                        --HCAR
+                        ["bm_w_hcar"] = "Akron HC",
+                        
+                        --Custom DMRs
+                            --MCX Spear
+                            ["bm_w_mcx_spear"] = "FIK M7",
+                            ["bm_w_ngsierra"] = "Amicus 277",
+                            --VSS
+                            ["bm_w_vss"] = "Viktoriya",
+                            --G3 HK79
+                            ["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
+                            --BO3 XR2
+                            ["bm_w_xr2"] = "XR-2",
+                            --SIERRA .458
+                            ["bm_w_sierra458"] = "Sierra .458",
+                    --[[ SNIPERS ]]
+                        --MSR
+                        ["bm_w_msr"] = "Rattlesnake",	
+                        ["bm_wp_snp_msr_ns_suppressor"] = "Viper Suppressor",   
+                        --R700
+                        ["bm_w_r700"] = "Reinfeld Model 700",	
+                        --QBU88
+                        ["bm_w_qbu88"] = "Káng Arms X1",
+                        --Winchester 1874
+                        ["bm_w_winchester1874"] = "Repeater 1874", --"Repeater" is the stand-in/fake name for the IRL manufacturer "Winchester"; I know "Eaton" exists from OTWD
+                        --TTI(TTY)
+                        ["bm_w_tti"] = "Tecci Tactical .308",
+                        --Icky Vicky
+                        ["bm_w_victor"] = "SA North Star",
+                        --Scunt
+                        ["bm_w_scout"] = "Pronghorn",
+                        --AWP
+                        ["bm_w_awp"] = "AIM 900F", --Dunno why Overkill didn't use the naming method used for OTWD; the model itself even uses OTWD's method by directly referencing "AIM" on the receiver
+                        --WA2000
+                        ["bm_w_wa2000"] = "Lebensauger",
+                        --Rangerhitter
+                        ["bm_w_sbl"] = "Rangehitter Mk. 2", --It's not a Beretta gun so "Rangehitter" is the stand-in/fake name for the IRL manufacturer "Marlin"
+                        --Contender G2
+                        ["bm_w_contender"] = "Aran G2",
+                        --Model 70
+                        ["bm_w_model70"] = "Platypus 70",
                         --SVD
-                        ["bm_w_svd"] = "SV7",
-                        ["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
-                        --L115
-                        ["bm_w_l115"] = "AIM 90M",
-                --[[ LAUNCHERS & BOWS ]]
-                    --GL40      
-                    ["bm_w_gre_m79"] = "GL-40",
-                    --3GL
-                    ["bm_w_ms3gl"] = "Basilisk 3GL",
-                    --PIGLET/M32
-                    ["bm_w_m32"] = "Piglet",
-                    --China Puff
-                    ["bm_w_china"] = "China Puff",
-                    --Compact 40mm
-                    ["bm_w_slap"] = "Compact 40mm",
-                    --Arbiter
-                    ["bm_w_arbiter"] = "Arbiter",
-                    --RPG
-                    ["bm_w_rpg7"] = "HRL-7",
-                    --COMMANDO 101/M202 FLASH
-                    ["bm_w_ray"] = "Commando 101 FLASH",
-                --[[ UNIVERSAL ATTACHMENTS ]]
-                    --MUZZLE DEVICES
-                    ["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
-                    --SIGHTS
-                    ["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW Scope",
-            })
-        end
+                        ["bm_w_siltstone"] = "Grom",
+                        --Mosin--
+                        ["bm_w_mosin"] = "Nagant",
+                        --Desert Fox
+                        ["bm_w_desertfox"] = "Desertfox",
+                        --R93
+                        ["bm_w_r93"] = "R93",
+                        --Thanatos--
+                        ["bm_w_m95"] = "Thanatos 95",
+                        --Custom Snipers
+                            --Guerilla
+                            ["bm_w_sgs"] = "Guerilla 542",	
+                            --PD3 Lynx
+                            ["bm_w_pd3_lynx"] = "HET-5 Red Fox",
+                            --AMR2
+                            ["bm_w_amr2"] = "Northwest AM-2",
+                            --M107
+                            ["bm_w_m107cq"] = "Thanatos 107",
+                            --M200
+                            ["bm_w_m200"] = "TF 141",
+                            --Marlin 1894
+                            ["bm_w_m1894"] = "Mare's Leg",
+                            --SPX Centerfire
+                            ["bm_w_moss464spx"] = "Mosconi SPX",
+                            --Winchester 1894
+                            ["bm_w_winchester1894"] = "Repeater 1894",
+                            --SVD
+                            ["bm_w_svd"] = "SV7",
+                            ["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
+                            --L115
+                            ["bm_w_l115"] = "AIM 90M",
+                    --[[ LAUNCHERS & BOWS ]]
+                        --GL40		
+                        ["bm_w_gre_m79"] = "GL-40",
+                        --3GL
+                        ["bm_w_ms3gl"] = "Basilisk 3GL",
+                        --PIGLET/M32
+                        ["bm_w_m32"] = "Piglet",
+                        --China Puff
+                        ["bm_w_china"] = "China Puff",
+                        --Compact 40mm
+                        ["bm_w_slap"] = "Compact 40mm",
+                        --Arbiter
+                        ["bm_w_arbiter"] = "Arbiter",
+                        --RPG
+                        ["bm_w_rpg7"] = "HRL-7",
+                        --COMMANDO 101/M202 FLASH
+                        ["bm_w_ray"] = "Commando 101 FLASH",
+                    --[[ UNIVERSAL ATTACHMENTS ]]
+                        --MUZZLE DEVICES
+                        ["bm_wp_upg_ns_ass_smg_stubby"] = "Stubby Flash Hider",
+                        --SIGHTS
+                        ["bm_wpn_fps_upg_o_hamr"] = "Trigonom SCRW Scope",
+                })
+            end
 
         if weapon_names == 2 then --Resmod names (No nicknames)
             LocalizationManager:add_localized_strings({ 
 
                 ["bm_w_pl14"] = "WS-14",
-                ["bm_w_g22c"] = "Chimano 22C",
-                ["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
-                ["bm_w_x_1911"] = "Akimbo Operator IIs",
-                ["bm_w_schakal"] = "AMP 45",
-                ["bm_w_tecci"] = "SG 416C",
+				["bm_w_x_pl14"] = "Akimbo WS-14s",
+				["bm_w_g22c"] = "Chimano 22C",
+				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
+				["bm_w_x_1911"] = "Akimbo Operator IIs",
+				["bm_w_x_m1911"] = "Akimbo Crosskill A1s",
+				["bm_w_x_sparrow"] = "Akimbo Sparrows",
                 ["bm_w_x_judge"] = "Akimbo Judges",
-                ["bm_w_vhs"] = "HVH-2",
-                ["bm_w_contraband"] = "SG 417D"
+				["bm_w_scar"] = "VF-7S",
+				["bm_w_scarl"] = "VF-6M",
+				["bm_w_schakal"] = "AMP 45",
+				["bm_w_tecci"] = "SG 416C",
+				["bm_w_l85a2"] = "L-95",
+				["bm_w_vhs"] = "HVH-2",
+				["bm_w_contraband"] = "SG 417D"
     
             })
         elseif weapon_names == 3 then --DMCWO Reelnames
@@ -3326,12 +3500,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     --P90
                     ["bm_w_p90"] = "FN P90 TR",
                     ["bm_w_x_p90"] = "Akimbo P90s",
-                    ["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the MP7. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+                    ["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the MP7. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
                     ["bm_wp_p90_b_long"] = "PS90 Barrel",
                     ["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
                     --MP7
                     ["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
-                    ["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the P90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+                    ["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the P90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
                     ["bm_wp_mp7_b_suppressed"] = "B&T Rotex-II Suppressor",
                     ["bm_wp_mp7_s_long"] = "Extended Stock",
                     ["bm_wp_mp7_m_extended"] = "MP7 40rnd Magazine",
@@ -3356,7 +3530,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     --SR-2M
                     ["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
                     ["bm_w_x_sr2"] = "Akimbo SR-2Ms",
-                    ["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the SR-2M is the Russian answer to the P90 and MP7 SMGs.\n\n#{skill_color}#Deals 80% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
+                    ["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the SR-2M is the Russian answer to the P90 and MP7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
                     --Miyaka 9
                     ["bm_w_pm9"] = "Minebea PM-9",
                     --FMG9
@@ -3650,8 +3824,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                 --[[DMRs]]
                     --417
                     ["bm_w_contraband"] = "H&K HK417 w/ M203",
-                    ["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
-                    ["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+                    ["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 25% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
+                    ["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 25% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
                         --VMP
                         ["bm_m203_vmp_sc_desc_pc"] = "A replica of Scarface's personal \"Little Friend\" M16.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
                         ["bm_m203_vmp_sc_desc"] = "A replica of Scarface's personal \"Little Friend\" M16.\n\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
@@ -3689,7 +3863,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
                     --Raifu
                     ["bm_w_g3"] = "H&K G3A3",
-                    ["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 80% of its damage through body armor and can pierce enemies and thin walls.##",
+                    ["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies and thin walls.##",
+                    ["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the  MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##", 
                     ["bm_wp_g3_b_short"] = "Short Barrel",
                     ["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
                     ["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
@@ -3713,7 +3888,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",
                     --Custom DMRs
                         --G3 HK79
-                        ["bm_g3hk79_sc_desc_pc"] = "A variant of the G3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 80% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
+                        ["bm_g3hk79_sc_desc_pc"] = "A variant of the G3 that comes equipped with an #{skill_color}#underbarrel grenade launcher## and #{skill_color}#deals 50% of its damage through body armor and can pierce enemies and thin walls.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 
                 --[[SNIPERS]]
                     --Titty
@@ -3764,13 +3939,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_wp_r93_body_wood"] = "Long Range Sporter 2 Stock",
                     --SRS
                     ["bm_w_desertfox"] = "DTA Stealth Recon Scout",
-                    --M95
-                    ["bm_w_m95"] = "Barrett M95",
+                    --Flintlock
+                    ["bm_w_bessy"] = "Land Pattern Musket",
 
                     --M95
                     ["bm_w_m95"] = "Barrett M95",
                     ["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
                     --Custom Snipers
+                        --PD3 Lynx
+                        ["bm_w_pd3_lynx"] = "SERO Gepard M6",
                         --M107
                         ["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
@@ -4051,8 +4228,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         end
     end 
 
+            local yurenjie
+            if Month == "4" and Day == "1" then
+                yurenjie = true
+            end
+
             local twirl = math.rand(1)
             local shalashaska = 0.06
+            if yurenjie then
+                shalashaska = 1
+            end
             if bobcat or not easterless and twirl <= shalashaska then
                 LocalizationManager:add_localized_strings({
                     ["bm_w_peacemaker"] = "左轮山猫",
@@ -4075,6 +4260,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
             local game_meme = math.rand(1)
             local game_meme_fun = 0.05
+            if yurenjie then
+                game_meme_fun = 1
+            end
             if eggplant or not easterless and game_meme <= game_meme_fun then
                 LocalizationManager:add_localized_strings({
                     -- SanGuoSha
@@ -4097,6 +4285,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
             local game_meme_2 = math.rand(1)
             local game_meme_fun_2 = 0.01
+            if yurenjie then
+                game_meme_fun_2 = 1
+            end
             if eggplant or not easterless and game_meme_2 <= game_meme_fun_2 then
                 LocalizationManager:add_localized_strings({
                     -- Genshin Impact
@@ -4117,6 +4308,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
             local chinese_meme = math.rand(1)
             local chinese_meme_fun = 0.05
+            if yurenjie then
+                chinese_meme_fun = 1
+            end
             if registeredloser or not easterless and chinese_meme <= chinese_meme_fun then
                 LocalizationManager:add_localized_strings({
                     ["bm_melee_swing_arc_1"] = "有#{skill_color}#较宽##的攻击范围。",
@@ -4125,14 +4319,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                     ["bm_melee_swing_arc_4"] = "有#{skill_color}#巨他妈宽##的攻击范围。",
                     ["ene_spring"] = "惊蛰战士",
                     ["bm_w_contraband"] = "大姐头7.62步枪",
-                    ["bm_m203_weapon_sc_desc_pc"] = "鹰姐私人款\"大朋友\"AMR-16的姐妹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按下 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
-                    ["bm_m203_weapon_sc_desc"] = "鹰姐私人款\"大朋友\"AMR-16的姐妹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。\n按住 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
+                    ["bm_m203_weapon_sc_desc_pc"] = "鹰姐私人款\"大朋友\"AMR-16的姐妹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。\n按下 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
+                    ["bm_m203_weapon_sc_desc"] = "鹰姐私人款\"大朋友\"AMR-16的姐妹。\n\n可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。\n按住 #{skill_color}#$BTN_BIPOD## 切换到下挂榴弹发射器。",
                     ["bm_saiga_sc_desc"] = "这把全自动霰弹枪正适合枪马的你。"
                 })
             end
 
             local big = math.rand(1)
             local pistol = 0.02
+            if yurenjie then
+                pistol = 1
+            end
             if shitpost or not easterless and big <= pistol then
                 LocalizationManager:add_localized_strings({
                     ["bm_melee_great_info"] = "试着去刺击，但穿了个洞。\n\n攒累#{skill_color}#九成##之力，斩出一剑，剑尖即可深入#{skill_color}#半米##远方，视野也得以拓宽。",
@@ -4146,6 +4343,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
             end
 
 
+        --yurenjie data check another way
         local getaf = os.date("*t")
         if getaf.month == 4 and getaf.day == 1 then
             LocalizationManager:add_localized_strings({
@@ -4196,48 +4394,48 @@ elseif ai_type == m then
 end
 
 if _G.HopLib then
-	local ai_type = tweak_data.levels:get_ai_group_type()
-	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
-	local lapd = tweak_data.levels.ai_groups.lapd
-	local mex = tweak_data.levels.ai_groups.federales
-	local akan = tweak_data.levels.ai_groups.russia
-	local nypd = tweak_data.levels.ai_groups.nypd
-	local fbi = tweak_data.levels.ai_groups.fbi
-	local breins = tweak_data.levels.ai_groups.zombie
+    local ai_type = tweak_data.levels:get_ai_group_type()
+    local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+    local lapd = tweak_data.levels.ai_groups.lapd
+    local mex = tweak_data.levels.ai_groups.federales
+    local akan = tweak_data.levels.ai_groups.russia
+    local nypd = tweak_data.levels.ai_groups.nypd
+    local fbi = tweak_data.levels.ai_groups.fbi
+    local breins = tweak_data.levels.ai_groups.zombie
 
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
-	end)
+    Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+        loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
+    end)
 
-	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
-		end)
-	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)	
-	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
-		end)
-	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
-		end)
-	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
-		end)
-	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
-		end)
-	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
-		end)
-	end
+    if ai_type == murkywetew then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
+        end)
+    elseif ai_type == lapd then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+        end)    
+    elseif ai_type == mex then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")        
+        end)
+    elseif ai_type == akan then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")       
+        end)
+    elseif ai_type == nypd then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")       
+        end)
+    elseif ai_type == fbi then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")        
+        end)
+    elseif ai_type == breins then
+        Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+            loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")     
+        end)
+    end
  end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
@@ -4324,8 +4522,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_gameplay_res_5"] = "幻影特工喜欢抓那些落单的劫匪，与你的队友待在一起，否则就等着进局子喝茶吧。",
         ["loading_gameplay_res_6"] = "幻影特工在飞踢你后会对你的血量造成直接的伤害。此伤害可以被\"血量减伤分数\"或逃犯格斗系二阶的\"反\'控\'精英\"技能减少。",
         ["loading_gameplay_res_7"] = "绿熊有极高的单发伤害并会尝试突然从侧翼突入，打空子弹，然后逃走。你作为一个69岁的老劫匪要小心不要大意了，没有闪，然后就被偷袭了。",
-        ["loading_gameplay_res_8"] = "使用高射速高弹容伊孜玛霰弹枪的黑熊极具进攻性并会直接从正面冲向劫匪。这使得他们会很容易被发现，但如果你还没做好准备，他们会变得极具威胁性。",
-        ["loading_gameplay_res_9"] = "使用轻机枪的骷髅熊会给其它单位提供火力掩护，同时也会在各种情况下准备好突入，不射空弹匣他们不会停火。",
+        ["loading_gameplay_res_8"] = "黑熊使用的是以伤害为代价换取的高射速和高弹容的伊孜玛霰弹枪，他们的血比别的熊少，但跑的更快。",
+        ["loading_gameplay_res_9"] = "使用轻机枪的骷髅熊会在近距离给予压倒性的击退火力，不射空弹匣他们不会停火。此外他们身着可以抵御更多伤害的顶级护甲，但这也使得他们走的跟泰坦熊一样慢。",
         ["loading_gameplay_res_10"] = "手雷熊取代了加特林熊在能投掷高爆手雷的同时，使用着Benelli霰弹枪。高伤高射速，绿熊和黑熊的完美结合。",
         ["loading_gameplay_res_11"] = "选择正确的目标很重要，任意一只熊都比一个轻甲水军更值得注意。（但我不是在叫你无脑优先怼熊）",
         ["loading_gameplay_res_12"] = "在\"死刑宣判\"难度下，熊会在面甲破碎后进入狂怒模式，狂怒模式下他们的伤害会提高10%。",
@@ -4349,38 +4547,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_new_units_res_title"] = "恢复MOD劫匪小贴士(敌对单位)", -- ASU : Assault Support Unit ： 支援兵
         ["loading_new_units_res_1"] = "OMNIA支援兵会给附近队友的武器安装黄色镭射附件并提高他们的武器伤害。",
         ["loading_new_units_res_2"] = "维生部队非常害怕近战攻击。",
-        ["loading_new_units_res_3"] = "轻型部队可以被身边的维生部队超量治疗。受到超量治疗的敌人以紫色标记。",
+        ["loading_new_units_res_3"] = "轻型部队可以被身边的维生部队超量治疗。正在接受超量治疗的敌人会以紫色标记。",
         ["loading_new_units_res_4"] = "泰坦幻影特工使用了先进了装备以致于他们几乎是隐身的，但他们会发出\"嗞嗞\"的声音。戴上你的耳机，聆听他们发出的声音，找出他们的位置，一枪爆他们的狗头！",
         ["loading_new_units_res_5"] = "泰坦熊会尽可能避免与你正面作战，他们会试图保持安全距离并对你进行火力压制。",
         ["loading_new_units_res_6"] = "泰坦狙击手以降低伤害和不能穿甲为代价换取了更高的射速和移动射击的能力。",
         ["loading_new_units_res_7"] = "泰坦狙击手在瞄准时没有红色的镭射，但它们射击后会留下子弹轨迹。看准轨迹找到它们的位置。",
-        ["loading_new_units_res_8"] = "泰坦盾兵的盾牌只能被反器材狙击步枪、\"锯刃轰鸣\"基础技能下的OVE9000电锯、以及使用AP弹的哨戒机枪穿透。",
+        ["loading_new_units_res_8"] = "泰坦盾兵的盾牌可以被部分反器材狙击步枪、\"锯刃轰鸣\"基础技能下的OVE9000电锯、或使用AP弹的哨戒机枪穿透。不过你也可以用大量的火力击落盾牌，但小心泰坦盾兵在这时进行突然的战术改变。",
         ["loading_new_units_res_9"] = "春日队长和泰坦熊会受到额外的爆头伤害。",
         ["loading_new_units_res_10"] = "泰坦泰瑟会使用电击枪限制你的移动。当你被电击枪射中时，你的屏幕周边会出现一圈蓝色的光作为指示。",
         ["loading_new_units_res_11"] = "非爆头和非近战击杀反恐老兵会使其拉开一颗催泪弹。",
         ["loading_new_units_res_12"] = "反恐老兵会空翻躲避子弹，他们还会迅速地移动以使自己更难被击中。",
         ["loading_new_units_res_13"] = "泰坦特警身着防爆装备，对近战伤害有些许的抗性，但这点抗性在高额近战伤害下并没有什么卵用。",
         ["loading_new_units_res_14"] = "泰坦特警不会投降，也不能被转化为变节警察为你作战。",
-        ["loading_new_units_res_15"] = "泰坦特警装备了轻机枪和全自动霰弹枪，这使得他们对你极具威胁性。",
+        ["loading_new_units_res_15"] = "泰坦特警装备了轻机枪和全自动霰弹枪，他们可以击退你或眩晕你。",
         ["loading_new_units_res_16"] = "触发\"有去无回\"时，Bravo临界反应部队会参与镇压劫匪。他们拥有更高级的护甲和更强力的武器，还会投掷破片手雷，他们可不想跟你多逼逼。",
         ["loading_new_units_res_17"] = "Bravo临界反应部队的血量和伤害都比一般单位要强上许多，他们进攻时会频繁地投掷破片手雷，你最好不要只在一个小坑位上蹲太久。",
         ["loading_new_units_res_18"] = "阿肯拥有他自己的D项目系列泰坦部队。他们看起来不同但实际属性是相同的。他们的整体视觉效果和穿着特征也是基本一致的，因此你可以轻易地认出不同的兵种。",
         ["loading_new_units_res_19"] = "掷弹兵的武器有能发射催泪瓦斯的下挂件，站在瓦斯中的玩家会持续受到伤害。在\"死刑宣判\"难度下，他装备了更致命的、伤血更快且会迅速清空你耐力的毒气弹。",
-		["loading_new_units_res_20"] = "Titan Shields utilizes flashes that will use against you. Watch for red lights and beeping sounds. You can shoot shield's flash panels to stun them as they charge.",
+        ["loading_new_units_res_20"] = "泰坦盾兵的盾牌上设有闪光夹板，夹板充能时你可以通过射击夹板来阻止他闪你，并眩晕他一小会儿。",
         -- Captain Hints
         ["loading_captains_res_title"] = "恢复MOD劫匪小贴士(四季队长)",
         ["loading_captains_res_1"] = "要击败夏日队长，得先从他的医疗单位入手。夏日队长的队员死亡前，队长几乎是无敌的。而他的左右护法在医疗兵还活着时几乎是无懈可击的。",
         ["loading_captains_res_2"] = "不要靠近夏日队长，否则他会使用他的喷火器迅速把你燃烧殆尽。", -- 夏日队长还装备了一把电击枪以拖慢你的移动。
         ["loading_captains_res_3"] = "春日队长可以承受成吨的伤害，但他并不是无敌的。注意他扔出的手雷，试着放他风筝，他的行动比乌龟还慢。",
         ["loading_captains_res_4"] = "春日队长时不时会扔出一颗高爆手雷。不要长时间靠他太近。",
-        ["loading_captains_res_5"] = "春日队长也许具有高威胁性，但他的输出范围实在是太有限了，而且他走的是真的很——慢——。",
+        ["loading_captains_res_5"] = "春日队长也许因其击退性火力具有高威胁性，但他的输出范围实在是太有限了，而且他走的是真的很——慢——。",
         ["loading_captains_res_6"] = "秋日队长在他攻击你时会大声地嘲讽你，利用这一点来确定他的位置。",
         ["loading_captains_res_7"] = "不像其他队长，警方不会扛着个大喇叭告诉你秋日队长来了，这是为了给你一个\"惊喜\"。",
         ["loading_captains_res_8"] = "秋日队长在未被发现的情况下存活一段时间后就会破坏掉你部署的随身装备。被破坏的随身装备会变为紫色，只有在队长被击败时才能重新使用。",
         ["loading_captains_res_9"] = "你也许未能在第一次与秋日队长的交战中就击败他......不，想都别想。",
         ["loading_captains_res_10"] = "冬日队长对爆炸和火焰几乎免疫，并且有很强的抗子弹能力，但很容易受到近战伤害。",
-        ["loading_captains_res_11"] = "冬日队长的盾牌是无法穿透的。",
+        ["loading_captains_res_11"] = "冬日队长的盾牌无法穿透，但足够大的火力依然可以击落他的盾牌。与泰坦盾兵一样，注意他的战术改变。",
         ["loading_captains_res_12"] = "冬日队长的行动模式和能力已被重做。他现在会在整个地图上移动游走，并治疗甚至是超量治疗他周围大片区域的警察。同时他还会找机会带领他的队友们冲锋陷阵。",
+        ["loading_captains_res_13"] = "冬日队长的盾牌与泰坦盾兵一样，加装了闪光夹板，但这夹板经过特殊的防护增强和加固，已经无法被打断了。",	
         -- Stealth Hints
         ["loading_stealth_res_title"] = "恢复MOD劫匪小贴士(潜入)",
         ["loading_stealth_res_1"] = "保安们不再会因为看到损坏的摄像头而立即警觉。有一个专门的保安会来检查摄像头，因此你可以用摄像头作为诱饵。",
@@ -4409,7 +4608,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_equip_skills_res_1"] = "霰弹枪的精准度越低，弹丸扩散越大，但射程也越低，只有亲自体验和测试才知道如何均衡二者。注意考虑用什么针对狙击手，不建议主副武器都使用霰弹枪的散弹丸。",
         ["loading_equip_skills_res_2"] = "掏出手枪的速度非常快，且多数手枪的精准度和稳定性都很可观。如果你不是为了整一些特别的活，那么手枪可能会是一个非常理想的副武器。",
         ["loading_equip_skills_res_3"] = "恢复MOD中的武器各有利弊，用法各有千秋。使用高伤害的武器可以更快地清理敌军，但你可能在不知不觉中就把子弹打完了。",
-        ["loading_equip_skills_res_4"] = "高伤害的武器通常隐匿度较低，除非它们有其它的缺点——如打不准和射太慢。",
+        ["loading_equip_skills_res_4"] = "高伤害的武器通常灵活性较低，除非它们有其它的缺点——如打不准和射太慢。",
         ["loading_equip_skills_res_5"] = "沃尔夫升级了我们的哨戒机枪，它们即使被损坏也可以修复了。维修需要一些时间，但一旦你启动自动维修模式，它们就会自己慢慢修复。",
         ["loading_equip_skills_res_6"] = "如果你解锁了哨戒机枪的AP弹，你可以在放置物菜单内切换哨戒机枪的默认弹药使用种类。",
         ["loading_equip_skills_res_7"] = "天赋牌组能为你提供显著的伤害加成，有些牌组还有珍贵而罕见的治疗能力。如果你想冲击高难度，一定不能忽略它们。",
@@ -4425,7 +4624,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_equip_skills_res_17"] = "穿过盾牌的子弹伤害减半。",
         ["loading_equip_skills_res_18"] = "Peacemaker.45左轮手枪和Phoenix.500左轮手枪可以像狙击步枪一样穿透护甲、敌人等。",
         ["loading_equip_skills_res_19"] = "如果你有闪避点数，那么你能在游戏中的屏幕右边看到一个蓝色的条。当它闪烁时，你就能闪避一次敌人的攻击，并消耗黑线下面的部分。你可以在Steam指南中找到关于闪避机制的更多解释。",
-        ["loading_equip_skills_res_20"] = "枪械武器隐藏度越高, 拔枪和收枪的速度越快。",
+        ["loading_equip_skills_res_20"] = "枪械武器灵活性越高, 拔枪和收枪的速度越快。",
         ["loading_equip_skills_res_21"] = "电锯和风车刀蓄力时可以对面前的敌人造成伤害。",
         ["loading_equip_skills_res_22"] = "蝴蝶刀和折叠刀背刺能对敌人造成巨大的伤害。",
         ["loading_equip_skills_res_23"] = "冰镐和十字镐造成更高的爆头伤害，但攻击速度变得更慢。",
@@ -4439,7 +4638,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["loading_equip_skills_res_31"] = "恢复MOD增加了两个新的天赋牌组(通用牌组和空白牌组)，通用牌组只提供每个天赋都有的普通加成，空白牌组什么加成都没有。使用这俩牌组可以获得经验和金钱奖励加成。",
         ["loading_equip_skills_res_32"] = "瞄准技能的改动使得你必须瞄准完全才能享受相关技能加成。在改装枪的时候多留心\"瞄准时间\"这一属性。",
         ["loading_equip_skills_res_33"] = "长枪管，坚固枪托以及扩容弹夹虽然有各自的优点，但他们对切枪、换弹、瞄准和冲刺开火这些硬直时间负面影响巨大；用太多这类配件会让你的枪十分笨重。",
-        ["loading_equip_skills_res_34"] = "枪托近战的攻击速度受武器本身隐蔽度影响。",
+        ["loading_equip_skills_res_34"] = "枪托近战的攻击速度受武器本身灵活性影响。",
         ["loading_equip_skills_res_35"] = "\"瞄准时间\"属性也适用于\"冲刺-开火时间\"。\"冲刺-开火时间\"指的是在从你停止冲刺到能够射击的这段硬直时间。",
         ["loading_equip_skills_res_36"] = "在战斗中，消音器会降低敌人在被你瞄准时进行闪避动作的可能性。但你要知道，他们既然不花时间躲避你的射击，那就肯定会用这个时间射击你。",
         -- Misc Hints
@@ -4520,11 +4719,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_medicdozers_desc"] = "在任意难度下生成医疗熊。",
         ["mutator_medicdozers_longdesc"] = "每当有一只熊生成时，这只熊都有50%的几率被替换为医疗熊。\n\n提示：如果启用了\"半自动喷子熊\"的突变，则黑熊只有33.3%的几率被替换为医疗熊。",
 
-		--Alternative arsenal
-		["mutator_enemy_damage_longdesc"] = "Players will take different damage than normal from being hit by enemies.",
+        --Alternative arsenal
+        ["mutator_enemy_damage_longdesc"] = "玩家受到来源于敌人的伤害会不同。",
 
-		--Because of Training
-		["mutator_enemy_health_longdesc"] = "Enemies will spawn with different health than normal, making them easier or harder to kill.",
+        --Because of Training
+        ["mutator_enemy_health_longdesc"] = "敌人的血量在生成时不同。",
 
         ["mutator_notitans"] = "资金不足",
         ["mutator_notitans_desc"] = "取消生成泰坦单位。",
@@ -4547,11 +4746,49 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_minidozers_longdesc"] = "每当有一只黑熊生成时，这只熊都有50%的几率被替换为一只手持M1014的手雷熊。\n\n提示：如果启用了\"医疗熊\"的突变，则黑熊只有33.3%的几率被替换为手雷熊。",
 
         ["mutator_fatroll"] = "死亡翻滚",
-        ["menu_mutator_fatroll"] = "Grace Period (in s)", -- tra
-        ["mutator_fatroll_desc"] = "Custom Damage Grace value (in s).",
-        ["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to different value, meaning that there is your specific delay on instances of damage. Minimum is 0 s, maximum is 0.25 s",
-        ["mutator_fatroll_desc"] = "取消无敌帧。",
-        ["mutator_fatroll_longdesc"] = "玩家和AI队友的受击无敌时间都会被设置为0，这将意味着你被击中多少枪就会受到多少伤害，且AI队友将难以生存。",
+        ["menu_mutator_fatroll"] = "Grace Period (in seconds)",
+        ["mutator_fatroll_desc"] = "Custom Damage Grace value (in seconds).",
+        ["mutator_fatroll_longdesc"] = "Damage grace on players and AI crewmembers is changed to a specific value. Damage grace affects how often instances of damage are calculated, lower values will cause you to take more damage in a shorter amount of time.",
+        
+        ["mutator_overheal"] = "Overheal Expert",
+        ["menu_mutator_overheal_mult_override"] = "Overheal Multiplier",
+        ["menu_mutator_overheal_mult_override_toggle"] = "Include Captains",
+        ["mutator_overheal_desc"] = "LPFs can now overheal most enemies.",
+        ["mutator_overheal_longdesc"] = "LPF can now overheal the entirety of assault units (except Cloakers).\n\nNote: Some units will still use their own overheal multiplier, regardless of Mutator settings.",
+        
+        ["mutator_asu_buff"] = "Enhanced Power",
+        ["menu_mutator_captain_asu_buff_toggle"] = "Include Captains",
+        ["mutator_asu_buff_desc"] = "ASUs can now buff most Special Units.",
+        ["mutator_asu_buff_longdesc"] = "ASUs can now buff most Special Units (except Cloakers).",
+        
+        ["mutator_bo_flashbang"] = "Your Opinion - My Choice",
+        ["menu_mutator_flashbang_cooking_time"] = "Fuse Time (in seconds)",
+        ["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
+        ["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
+        
+        ["mutator_grenade_mayhem"] = "Total Carnage!",
+        ["menu_mutator_grenade_mayhem_usuals_toggle"] = "Include Commons and Elites",
+        ["menu_mutator_grenade_mayhem_thugs_toggle"] = "Include Gangsters",
+        ["menu_mutator_grenade_mayhem_specials_toggle"] = "Include Specials",
+        ["menu_mutator_grenade_mayhem_bosses_toggle"] = "Include Bosses",
+        ["menu_mutator_grenade_mayhem_captains_toggle"] = "Include Captains",
+        --["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "Include Frag Underbarrels for Grenadiers",
+        ["mutator_grenade_mayhem_desc"] = "Non-Bravo enemies can now throw frag grenades.",
+        ["mutator_grenade_mayhem_longdesc"] = "Non-Bravo enemies can now throw frag grenades.\n\nNote: Enemies with flamethrowers will use molotovs instead of frags; Cloakers will use tear gas instead of frags.",
+        
+        ["mutator_captain_replace"] = "Everlasting Season", 
+        ["menu_mutator_captain_replace_1"] = "Captain (Day 1)",
+        ["menu_mutator_captain_replace_2"] = "Captain (Day 2)",
+        ["menu_mutator_captain_replace_3"] = "Captain (Day 3)",
+        ["menu_mutator_captain_replace_no_captain_override"] = "No Changes",
+        ["menu_mutator_captain_replace_captain_random"] = "Random",     
+        ["menu_mutator_captain_replace_winter"] = "Winters",
+        ["menu_mutator_captain_replace_autumn"] = "Autumn",
+        ["menu_mutator_captain_replace_spring"] = "Spring",
+        ["menu_mutator_captain_replace_summer"] = "Summers",
+        ["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
+        ["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
+        ["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 
         ["mutator_spawn_mult"] = "犯罪响应增幅",
         ["menu_mutator_enemy_spawn"] = "刷兵倍率",
@@ -4580,16 +4817,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_piggybank_desc"] = "警察爆金币啦！用小猪钞票喂饱金猪存钱罐吧！",
         ["mutator_piggybank_longdesc"] = "收获日2-九周年活动事件：\n\n特定劫案内，被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并丢给巨大的金色小猪存钱罐，将存钱罐喂得越来越胖，然后打碎它。打碎小猪存钱罐时，小猪存钱罐越大，你在劫案结束时获得的经验和钱也越多。",
 
-		["mutator_piggyrevenge"] = "Piggy's Revenge",
-		["mutator_piggyrevenge_desc"] = "Enemies killed drop piggy bucks to feed to the Golden Pig and earn buffs.",
-		["mutator_piggyrevenge_longdesc"] = "PAYDAY 2 10th Anniversary event:\n\nEnemies killed will have a chance to drop Piggy Bucks. Piggy Bucks are temporary bags that can be used to grow the Golden Piggy and earn buffs on certain heists, and doing so has a chance to spawn the Flamethrower wielding Piggy Dozer. The bigger the Piggy the more bonus XP and money will be rewarded at the end of the heist.",		
+        ["mutator_piggyrevenge"] = "金猪的复仇",
+        ["mutator_piggyrevenge_desc"] = "警察爆金币啦！用小猪钞票喂饱金猪来获得特殊效果和更多奖励吧！",
+        ["mutator_piggyrevenge_longdesc"] = "收获日2-十周年活动事件：\n\n被击杀的敌人有几率掉落小猪钞票，每包小猪钞票只会暂时留在地上，你需要在它们消失前拿起并喂给巨大的金色小猪，将金猪喂得越来越胖。你会通过喂饱金猪来获得各种增益效果，金猪会越来越大，最后打碎金猪。打碎金猪时，金猪越大，你在劫案结束时获得的奖励也越多。但要小心，每当你为金猪投喂一定的钞票，都会有使用喷火器的疣猪熊出现来阻止你！",       
 
-		["menu_pda10_post_objective_3_desc"] = "Complete 25 Heists on any difficulty",
-		["menu_pda10_post_objective_5_desc"] = "Kill 50 enemies with Sniper Rifles",
-		["menu_pda10_post_objective_2_desc"] = "Secure 50 loot bags",
-		["menu_pda10_post_objective_6_desc"] = "Kill 50 enemies with Melee Weapons",
-		["menu_pda10_post_objective_1_desc"] = "Kill 50 Dozers",
-		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
+        ["menu_pda10_post_objective_3_desc"] = "任意难度下，完成25场劫案",
+        ["menu_pda10_post_objective_5_desc"] = "使用狙击步枪击杀50名敌人",
+        ["menu_pda10_post_objective_2_desc"] = "成功运走50包战利品",
+        ["menu_pda10_post_objective_6_desc"] = "使用近战武器击杀50名敌人",
+        ["menu_pda10_post_objective_1_desc"] = "累计击杀50个熊",
+        ["menu_pda10_post_objective_4_desc"] = "收集50个盖奇包裹",
 
         ["mutator_bravos_only"] = "死亡地带",
         ["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
@@ -4613,7 +4850,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["faction_selector_choice"] = "阵营: ",
 
         --tra
-        ["mutator_cloakercuff"] = "Сonjurer",
+        ["mutator_cloakercuff"] = "Conjurer",
         ["mutator_cloakercuff_desc"] = "Cloaker melee strikes will now cuff players.",
         ["mutator_cloakercuff_longdesc"] = "Melee strikes from cloakers will force players into a cuffed state.",
         
@@ -4645,17 +4882,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_fullautoinbuilding_desc"] = "Titan Snipers and their equivalents will now fire their rifles on full auto at close range.",
         ["mutator_fullautoinbuilding_longdesc"] = "Titan Snipers, Bravo Sharpshooters will now fire their rifles on full auto at close range (within 10 meters).",
         
-        ["mutator_quickscope360"] = "Eagle Eye",
-        ["mutator_quickscope360_desc"] = "Snipers now aim their rifles 100% faster.",
-        ["mutator_quickscope360_longdesc"] = "Snipers now aim their rifles 100% faster.",
-		
-		["mutator_goldfarbdozers"] = "Double Firepower",
-		["mutator_goldfarbdozers_desc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		["mutator_goldfarbdozers_longdesc"] = "All Bulldozers that spawn will always deploy in pairs.",
-		
-		["mutator_spoocsquad"] = "Sneaky Squad",
-		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
-		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
+        ["mutator_quickscope360"] = "鹰眼",
+        ["mutator_quickscope360_desc"] = "狙击手瞄准的速度加快100%。",
+        ["mutator_quickscope360_longdesc"] = "狙击手瞄准的速度加快100%。",
+
+        ["mutator_goldfarbdozers"] = "双重麻烦",
+		["mutator_goldfarbdozers_desc"] = "所有熊都成双成对地生成。",
+		["mutator_goldfarbdozers_longdesc"] = "所有熊都成双成对地生成。",
+
+        ["mutator_spoocsquad"] = "鬼鬼祟祟",
+        ["mutator_spoocsquad_desc"] = "幻影特工一组一组地生成。",
+        ["mutator_spoocsquad_longdesc"] = "幻影特工一组一组地生成。",
+
         -- Crime spree modifier changes
         ["cn_crime_spree_brief"] = "\"罪无止境\"是一系列随机选取并需要连续完成的劫案组合。你完成的每次一次劫案都会为你增加罪无止境等级与奖励。每过20级或26级，你都需要选择一次附加难度因子；每过100级都会增加劫案的基础难度(如枪林弹雨到祸乱横行)，这会使劫案更难完成。等级600之后，玩家的无敌帧将会逐渐减少，Bravo临界反应部队将会开始生成。\n\n##如果你想邀请你的好友一起玩，请先确保他们开始了罪无止境以一起获得等级和奖励##",
         ["menu_cs_next_modifier_forced"] = "",
@@ -4683,8 +4921,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_cs_modifier_cloaker_smoke"] = "幻影特工现在有50%的概率在他们闪避时扔出一颗闪光弹。",
         ["menu_cs_modifier_cloaker_tear_gas"] = "所有人质救援队的单位都有额外15%的概率被替换为支援兵。",
         ["menu_cs_modifier_dozer_lmg"] = "每当有一只绿熊或黑熊被生成时，它都有概率被替换为一只骷髅熊。",
-		["menu_cs_modifier_dozerpairs"] = "Bulldozers will now always spawn in pairs.",
-		["menu_cs_modifier_spoocsquad"] = "Cloakers now tend to spawn in groups.",
+        ["menu_cs_modifier_10secondsresponsetime"] = "警方突击现在从最高强度开始。",
+        ["menu_cs_modifier_dozerpairs"] = "熊总是成双成对地生成。",
+        ["menu_cs_modifier_spoocsquad"] = "幻影特工现在会一组一组地生成。",
 
         ["bm_menu_skill"] = "小队加成",
 
@@ -4716,7 +4955,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_crew_regen_desc"] = "所有玩家的血量每4秒回复1点",
 
         ["menu_crew_quiet"] = "无影无踪",
-        ["menu_crew_quiet_desc"] = "所有玩家的隐匿度增加2",
+        ["menu_crew_quiet_desc"] = "所有玩家的灵活性增加2",
 
         ["menu_crew_generous"] = "有备无患",
         ["menu_crew_generous_desc"] = "所有玩家每击杀70名敌人将获得1个投掷物补充",
@@ -4829,6 +5068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         -- Shotgun CQB  
         ["menu_shotgun_cqb_beta_sc"] = "巷斗战术",
         ["menu_shotgun_cqb_beta_desc_sc"] = "掌握: #{risk}#$basic##\n霰弹枪和火焰喷射器的开镜速度和冲刺转开火速度加快#{skill_color}#7.5%##。\n\n专精: #{risk}#$pro##\n霰弹枪和火焰喷射器的换弹速度加快#{skill_color}#25%##。",
+        ["menu_shotgun_cqb_per_pellet_desc_sc"] = "掌握: #{risk}#$basic##\n霰弹枪和火焰喷射器的开镜速度和冲刺转开火速度加快#{skill_color}#7.5%##。\n\n专精: #{risk}#$pro##\n霰弹枪和火焰喷射器的换弹速度加快#{skill_color}#25%##。",--\n\n能射出多发弹丸的霰弹枪每颗弹丸都可以穿透#{skill_color}#1##名敌人。",
 
         -- Shotgun Impact
         ["menu_shotgun_impact_beta_sc"] = "强力冲击",
@@ -4837,7 +5077,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Pigeon Shooting  
         ["menu_far_away_beta_sc"] = "飞靶射手",
-        ["menu_far_away_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你开镜瞄准时的移动速度加快#{skill_color}#50%##。\n\n#{important_1}#提示：该效果会覆盖你原本的最大速度##\n\n专精: #{risk}#$pro##\n霰弹枪和火焰喷射器开镜瞄准时增加#{skill_color}#30%##的精准，霰弹枪还额外增加#{skill_color}#30%##的射程。",
+        ["menu_far_away_beta_desc_sc"] = "掌握: #{risk}#$basic##\n能射出多发弹丸的霰弹枪每颗弹丸都可以穿透#{skill_color}#1##名敌人且可以#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害，此效果可以与任意穿甲伤害叠加，最高叠加至#{skill_color}#100%##。\n\n专精: #{risk}#$pro##\n霰弹枪和火焰喷射器开镜瞄准时增加#{skill_color}#30%##的精准和衰减始末距。",
 
         -- Gung Ho
         ["menu_close_by_beta_sc"] = "激情四\"射\"",
@@ -4870,11 +5110,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Bullseye--
         ["menu_prison_wife_beta_sc"] = "正中靶心",
-        ["menu_prison_wife_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会恢复你#{skill_color}#5##点护甲值，冷却时间#{skill_color}#5##秒。\n\n专精: #{risk}#$pro##\n完成爆头击杀恢复的护甲值增加#{skill_color}#30##。",
+        ["menu_prison_wife_beta_desc_sc"] = "掌握: #{risk}#$basic##\n完成爆头击杀会恢复你#{skill_color}#5##点护甲值，冷却时间#{skill_color}#5##秒，爆头杀敌可以立即减少冷却时间#{skill_color}#0.5##秒。 $anarc_disable\n\n专精: #{risk}#$pro##\n完成爆头击杀恢复的护甲值增加#{skill_color}#30##，爆头杀敌现在可以立即减少冷却时间#{skill_color}#1##秒。 $anarc_disable",
 
         -- Iron Man
         ["menu_juggernaut_beta_sc"] = "钢铁之躯",
-        ["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n#{important_1}#提示：对冬日队长无效##\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##。",
+        ["menu_juggernaut_beta_desc_sc"] = "掌握: #{risk}#$basic##\n解锁 #{skill_color}#改良型复合战术背心## 以供你使用。\n\n近战打盾可以#{skill_color}#击退或推倒盾兵##。\n\n#{important_1}#提示：对泰坦盾兵和冬日队长无效##\n\n专精: #{risk}#$pro##\n现在远程武器射击盾也有几率#{skill_color}#击退或推倒盾兵##，击倒概率取决于武器伤害。\n\n护甲恢复速度加快#{skill_color}#10%##。 $anarc_disable",
 
         -- }
 
@@ -4935,7 +5175,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Bulletproof--
         ["menu_iron_man_sc"] = "刀枪不入",
-        ["menu_iron_man_desc_sc"] = "掌握: #{risk}#$basic##\n你的护甲现在#{skill_color}#不能被穿透##\n#{important_1}#提示：对自我伤害无效##\n\n专精: #{risk}#$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的#{skill_color}#15%##\n\n你的护甲恢复速度加快#{skill_color}#15%##",
+        ["menu_iron_man_desc_sc"] = "掌握: #{risk}#$basic##\n你的护甲现在#{skill_color}#不能被穿透##\n#{important_1}#提示：对自我伤害无效##\n\n专精: #{risk}#$pro##\n当你的护甲值为满时，你将获得减伤，减伤的量等于你护甲值上限的#{skill_color}#15%##\n\n你的护甲恢复速度加快#{skill_color}#15%## $anarc_disable",
 
         -- }
 
@@ -4964,7 +5204,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Fire Trap 火焰陷阱  Kickstarter
         ["menu_fire_trap_beta_sc"] = "物理修复",
-        ["menu_fire_trap_beta_desc_sc"] = "掌握: #{risk}#$basic##\n钻机损坏后，近战武器有#{skill_color}#75%##的概率在攻击钻机后将其修复。\n\n#{important_1}#提示：每次损坏只有一次机会，若修复失败则本次无法再使用近战武器修复##\n\n专精: #{risk}#$pro##\n你#{skill_color}#互动时不再收起武器##。\n\n你可以在互动时自由地转向、蹲伏、瞄准和开火。",
+        ["menu_fire_trap_beta_desc_sc"] = "掌握: #{risk}#$basic##\n钻机或电锯损坏后，近战武器有#{skill_color}#75%##的概率在攻击钻机或电锯后将其修复。\n\n#{important_1}#提示：每次损坏只有一次机会，若修复失败则本次无法再使用近战武器修复##\n\n专精: #{risk}#$pro##\n你#{skill_color}#互动时不再收起武器##。\n\n你可以在互动时自由地转向、瞄准和开火。",
 
         -- }
 
@@ -5014,11 +5254,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Deep Pockets--
         ["menu_thick_skin_beta_sc"] = "深层口袋",
-        ["menu_thick_skin_beta_desc_sc"] = "掌握: #{risk}#$basic##\n近战武器的隐匿度增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n所有防弹背心的隐匿度增加#{skill_color}#4##，其它护甲则增加#{skill_color}#2##。\n\n两件套西装和所有防弹背心的护甲增加#{skill_color}#20##。",
+        ["menu_thick_skin_beta_desc_sc"] = "掌握: #{risk}#$basic##\n近战武器的灵活性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n所有防弹背心的灵活性增加#{skill_color}#4##，其它护甲则增加#{skill_color}#2##。\n\n两件套西装和所有防弹背心的护甲增加#{skill_color}#20##。",
 
         -- Moving Target--
         ["menu_dire_need_beta_sc"] = "移动目标",
-        ["menu_dire_need_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#3##点暴露风险都将获得#{skill_color}#1.5%##的移动速度加成，最多加快#{skill_color}#15%##。\n\n专精: #{risk}#$pro##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#1##点暴露风险都将获得#{skill_color}#1.5%##的移动速度加成，最多加快#{skill_color}#15%##。\n\n冲刺时，你的闪避条每秒增加你闪避点数的#{skill_color}#15%##；\n滑索上，你的闪避条每秒增加你闪避点数的#{skill_color}#30%##。",
+        ["menu_dire_need_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的隐蔽负荷低于#{skill_color}#30##时，每降低#{skill_color}#2##点隐蔽负荷都将获得#{skill_color}#1.5%##的移动速度加成，最多加快#{skill_color}#15%##。\n\n你瞄准时的移动速度加快#{skill_color}#50%##。\n#{important_1}#提示：该效果会覆盖你原本的最大速度##\n\n专精: #{risk}#$pro##\n当你的隐蔽负荷低于#{skill_color}#30##时，每降低#{skill_color}#1##点隐蔽负荷都将获得#{skill_color}#1.5%##的移动速度加成，最多加快#{skill_color}#15%##。\n\n冲刺时，你的闪避条每秒增加你闪避点数的#{skill_color}#15%##；\n滑索上，你的闪避条每秒增加你闪避点数的#{skill_color}#30%##。",
 
         -- Shockproof
         ["menu_insulation_beta_sc"] = "绝缘装甲",
@@ -5031,27 +5271,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Second Wind
         ["menu_scavenger_beta_sc"] = "卷土重来",
-        ["menu_scavenger_beta_desc_sc"] = "掌握: #{risk}#$basic##\n护甲被破坏后你将在#{skill_color}#3##秒内获得#{skill_color}#10%##的移动速度加成\n\n专精: #{risk}#$pro##\n护甲被破坏后，你射出的第一发子弹将必定击倒敌人\n\n该效果在你护甲恢复后#{skill_color}#3##秒内仍然有效",
+        ["menu_scavenger_beta_desc_sc"] = "掌握: #{risk}#$basic##\n护甲被破坏后你将在#{skill_color}#$skill_value_b2##秒内获得#{skill_color}#$skill_value_b1##的移动速度加成\n\n专精: #{risk}#$pro##\n护甲被破坏后，你射出的第一发子弹将必定击倒敌人\n\n该效果在你护甲恢复后#{skill_color}#$skill_value_p1##秒内仍然有效",
 
         -- Optical Illusions--
         ["menu_optic_illusions_sc"] = "光学幻象",
-        ["menu_optic_illusions_desc_sc"] = "掌握: #{risk}#$basic##\n你的切枪速度加快#{skill_color}#15%##。\n\n专精: #{risk}#$pro##\n所有武器的隐匿度增加#{skill_color}#2##。",
+        ["menu_optic_illusions_desc_sc"] = "掌握: #{risk}#$basic##\n你的切枪速度加快#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n所有武器的灵活性增加#{skill_color}#$skill_value_p1##。",
 
         -- The Professional--
         ["menu_silence_expert_beta_sc"] = "职业杀手",
-        ["menu_silence_expert_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你使用武器瞄准的速度和冲刺转开火的速度加快#{skill_color}#5%##。\n\n专精: #{risk}#$pro##\n你使用武器瞄准的速度和冲刺转开火的速度额外加快#{skill_color}#10%##。\n\n被使用一般实弹的武器击杀的特殊敌人会额外掉落一个弹药盒。",
+        ["menu_silence_expert_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你使用武器瞄准的速度和冲刺转开火的速度加快#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n你使用武器瞄准的速度和冲刺转开火的速度额外加快#{skill_color}#$skill_value_p1##。\n\n被使用一般实弹的武器击杀的特殊敌人会额外掉落一个弹药盒。",
 
         -- Unseen Strike, formally Dire Need--
         ["menu_backstab_beta_sc"] = "掩其无备",
-        ["menu_backstab_beta_desc_sc"] = "掌握: #{risk}#$basic##\n如果你在#{skill_color}#3##秒内没有受到任何伤害，你将获得#{skill_color}#15%##的暴击率加成直到你受到伤害为止。\n\n成功暴击将使你造成的伤害提升#{skill_color}#50%##。\n\n#{important_1}#提示：\"杀手\"天赋的临时虚血自动衰减不算受到伤害，而临时虚血因非衰减因素降低都算受到伤害##\n\n专精: #{risk}#$pro##\n受到伤害后，暴击率加成仍将持续#{skill_color}#4##秒。",
+        ["menu_backstab_beta_desc_sc"] = "掌握: #{risk}#$basic##\n如果你在#{skill_color}#$skill_value_b1##秒内没有受到任何伤害，你将获得#{skill_color}#$skill_value_b2##的暴击率加成直到你受到伤害为止。\n\n成功暴击将使你造成的伤害提升#{skill_color}#50%##。\n\n#{important_1}#提示：\"杀手\"天赋的临时虚血自动衰减不算受到伤害，而临时虚血因非衰减因素降低都算受到伤害##\n\n专精: #{risk}#$pro##\n受到伤害后，暴击率加成仍将持续#{skill_color}#$skill_value_p1##秒。",
 
         -- Cleaner--
         ["menu_hitman_beta_sc"] = "清道夫",
-        ["menu_hitman_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你对特殊敌人造成的伤害增加#{skill_color}#10%##。\n\n#{important_1}#提示：该效果不适用于榴弹发射器和火箭筒##\n\n专精: #{risk}#$pro##\n你对特殊敌人造成的伤害额外增加#{skill_color}#15%##。\n\n爆头击杀敌人将使你的闪避条增加闪避点数的#{skill_color}#12.5%##，击杀一名背对你的敌人将使你的闪避条增加闪避点数的#{skill_color}#75%##，两者可以叠加。\n\n#{important_1}#提示：使用爆炸物或火焰这样的持续伤害击杀敌人无法获得闪避条的增加##\n",
+        ["menu_hitman_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你对特殊敌人造成的伤害增加#{skill_color}#$skill_value_b1##。\n\n#{important_1}#提示：该效果不适用于榴弹发射器和火箭筒##\n\n专精: #{risk}#$pro##\n你对特殊敌人造成的伤害额外增加#{skill_color}#$skill_value_p1##。\n\n爆头击杀敌人将使你的闪避条增加闪避点数的#{skill_color}#$skill_value_p2##，击杀一名背对你的敌人将使你的闪避条增加闪避点数的#{skill_color}#$skill_value_p3##，两者可以叠加。\n\n#{important_1}#提示：使用爆炸物或火焰这样的持续伤害击杀敌人无法获得闪避条的增加##\n",
 
         -- Low Blow--
         ["menu_unseen_strike_beta_sc"] = "下作手段",
-        ["menu_unseen_strike_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#3##点暴露风险都将获得#{skill_color}#3%##的暴击率，最多增加#{skill_color}#30%##。\n\n成功暴击将使你造成的伤害提升#{skill_color}#50%##。\n\n专精: #{risk}#$pro##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#1##点暴露风险都将获得#{skill_color}#3%##的暴击率，最多增加#{skill_color}#30%##。\n\n使用枪械或近战武器从背后攻击一名敌人的暴击几率额外增加#{skill_color}#50%##。",
+        ["menu_unseen_strike_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的隐蔽负荷低于#{skill_color}#$skill_value_b3##时，每降低#{skill_color}#$skill_value_b2##点隐蔽负荷都将获得#{skill_color}#$skill_value_b1##的暴击率，最多增加#{skill_color}#$skill_value_b4##。\n\n成功暴击将使你造成的伤害提升#{skill_color}#50%##。\n\n专精: #{risk}#$pro##\n当你的隐蔽负荷低于#{skill_color}#$skill_value_p3##时，每降低#{skill_color}#$skill_value_p2##点隐蔽负荷都将获得#{skill_color}#$skill_value_p1##的暴击率，最多增加#{skill_color}#$skill_value_p4##。\n\n使用枪械或近战武器从背后攻击一名敌人的暴击几率额外增加#{skill_color}#$skill_value_p5##。",
 
         -- }
         -- }
@@ -5087,7 +5327,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         -- }
 
         -- Sneaky Bastard--
-        ["menu_jail_diet_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#3##点暴露风险都将获得#{skill_color}#1##点闪避点数，最多增加#{skill_color}#10##点\n\n专精: #{risk}#$pro##\n当你的暴露风险低于#{skill_color}#35##时，每降低#{skill_color}#1##点暴露风险都将获得#{skill_color}#1##点闪避点数，最多增加#{skill_color}#10##点\n\n你的护甲被破坏时，每次闪避成功都将恢复你血量上限#{skill_color}#2%##的血量",
+        ["menu_jail_diet_beta_desc_sc"] = "掌握: #{risk}#$basic##\n当你的隐蔽负荷低于#{skill_color}#30##时，每降低#{skill_color}#2##点隐蔽负荷都将获得#{skill_color}#1##点闪避点数，最多增加#{skill_color}#10##点\n\n专精: #{risk}#$pro##\n当你的隐蔽负荷低于#{skill_color}#30##时，每降低#{skill_color}#1##点隐蔽负荷都将获得#{skill_color}#1##点闪避点数，最多增加#{skill_color}#10##点\n\n你的护甲被破坏时，每次闪避成功都将恢复你血量上限#{skill_color}#2%##的血量",
 
         -- Sharpshooter--
         ["menu_discipline_sc"] = "神枪手",
@@ -5107,7 +5347,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Rifleman
         ["menu_rifleman_sc"] = "步枪精通",
-        ["menu_rifleman_desc_sc"] = "掌握: #{risk}#$basic##\n突击步枪和狙击步枪在瞄准时的精准度和射程提高#{skill_color}#15%##。\n\n专精: #{risk}#$pro##\n突击步枪和狙击步枪在瞄准时的精准度和射程额外增加#{skill_color}#15%##",
+        ["menu_rifleman_desc_sc"] = "掌握: #{risk}#$basic##\n突击步枪和狙击步枪在瞄准时的精准度和射程提高#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n突击步枪和狙击步枪在瞄准时的精准度和射程额外增加#{skill_color}#$skill_value_p1##。\n\n你使用武器瞄准的速度和冲刺转开火的速度加快#{skill_color}#$skill_value_p2##。",
 
         -- Aggressive Reload
         ["menu_engineering_beta_sc"] = "迅猛装填",
@@ -5119,27 +5359,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         -- Equilibrium--
         ["menu_equilibrium_beta_sc"] = "沉着冷静",
-        ["menu_equilibrium_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你与你队友的手枪稳定性增加#{skill_color}#2##。\n\n专精: #{risk}#$pro##\n手枪的切枪速度加快#{skill_color}#100%##。",
+        ["menu_equilibrium_beta_desc_sc"] = "掌握: #{risk}#$basic##\n你与你队友的手枪稳定性增加#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n手枪的切枪速度加快#{skill_color}#$skill_value_p1##。",
 
         -- Gun Nut--
         ["menu_dance_instructor_sc"] = "手枪狂徒",
-        ["menu_dance_instructor_desc_sc"] = "掌握: #{risk}#$basic##\n腰射时，手枪的精准度增加#{skill_color}#20%##。\n\n专精: #{risk}#$pro##\n手枪的射速增加#{skill_color}#15%##。\n\n你的手枪现在可以#{skill_color}#穿透护甲##造成#{skill_color}#100%##的伤害。",
+        ["menu_dance_instructor_desc_sc"] = "掌握: #{risk}#$basic##\n腰射时，手枪的精准度增加#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n手枪的射速增加#{skill_color}#$skill_value_p1##。\n\n你的手枪现在可以#{skill_color}#穿透护甲##造成#{skill_color}#$skill_value_p2##的伤害。",
 
         -- Over Pressurized/Gunfighter--
         ["menu_gun_fighter_sc"] = "手枪斗士",
-        ["menu_gun_fighter_desc_sc"] = "掌握: #{risk}#$basic##\n手枪的换弹速度加快#{skill_color}#5%##。\n\n在移动时，手枪受到的精准度惩罚减少#{skill_color}#40%##。\n\n移动时的精准度惩罚程度取决于稳定性\n\n专精: #{risk}#$pro##\n手枪的换弹速度额外加快#{skill_color}#25%##。",
+        ["menu_gun_fighter_desc_sc"] = "掌握: #{risk}#$basic##\n手枪的换弹速度加快#{skill_color}#$skill_value_b1##。\n\n在移动时，手枪受到的精准度惩罚减少#{skill_color}#$skill_value_b2##。\n\n移动时的精准度惩罚程度取决于稳定性\n\n专精: #{risk}#$pro##\n手枪的换弹速度额外加快#{skill_color}#$skill_value_p1##。",
 
         -- Akimbo--
         ["menu_akimbo_skill_sc"] = "孤岛飞鹰",
-        ["menu_akimbo_skill_desc_sc"] = "掌握: #{risk}#$basic##\n双持武器的稳定性增加#{skill_color}#10##。\n\n专精: #{risk}#$pro##\n双持武器的精准度增加#{skill_color}#10##。",
+        ["menu_akimbo_skill_desc_sc"] = "掌握: #{risk}#$basic##\n双持武器的稳定性增加#{skill_color}#$skill_value_b1##。\n\n专精: #{risk}#$pro##\n双持武器的精准度增加#{skill_color}#$skill_value_p1##。",
 
         -- Desperado--
         ["menu_expert_handling_sc"] = "亡命之徒",
-        ["menu_expert_handling_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头会在#{skill_color}#4##秒内提高你所有武器#{skill_color}#8%##的精准度和射程。\n该效果可叠加#{skill_color}#5##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n#{important_1}#提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器##\n\n专精: #{risk}#$pro##\n该效果的持续时间延长至#{skill_color}#8##秒，重置后持续时间也是八秒。",
+        ["menu_expert_handling_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头会在#{skill_color}#$skill_value_b2##秒内提高你所有武器#{skill_color}#$skill_value_b1##的精准度和射程。\n该效果可叠加#{skill_color}#$skill_value_b3##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间刷新。\n\n#{important_1}#提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器##\n\n专精: #{risk}#$pro##\n该效果的持续时间延长至#{skill_color}#$skill_value_b2+$skill_value_p1##秒，刷新后的持续时间也是如此。",
 
         -- Trigger Happy--
         ["menu_trigger_happy_beta_sc"] = "乱枪狂人",
-        ["menu_trigger_happy_beta_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头会在#{skill_color}#4##秒内提高手枪#{skill_color}#5%##的伤害。\n该效果可叠加#{skill_color}#4##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间重置为四秒。\n\n专精: #{risk}#$pro##\n该效果的可叠加次数增加至#{skill_color}#10##次，持续时间延长至#{skill_color}#8##秒，重置后持续时间也是八秒。",
+        ["menu_trigger_happy_beta_desc_sc"] = "掌握: #{risk}#$basic##\n使用手枪完成爆头会在#{skill_color}#$skill_value_b2##秒内提高手枪#{skill_color}#$skill_value_b1##的伤害。\n该效果可叠加#{skill_color}#$skill_value_b3##次，每次使用手枪#{skill_color}#爆头##可以使效果持续时间刷新。\n\n专精: #{risk}#$pro##\n该效果的可叠加次数增加至#{skill_color}#$skill_value_b3+$skill_value_p2##次，持续时间延长至#{skill_color}#$skill_value_b2+$skill_value_p1##秒，刷新后的持续时间也是如此。",
 
         -- Running From Death--
         ["menu_nine_lives_beta_sc"] = "死里逃生",
@@ -5182,6 +5422,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
     if not easterless then
         local butt = math.rand(1)
         local frame = 0.01
+        if Month == "4" and Day == "1" then
+            frame = 1
+        end
         if butt <= frame then
             LocalizationManager:add_localized_strings({
                 ["menu_st_spec_23"] = "瑞典蠢驴",
@@ -5203,7 +5446,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
         -- Shared Perks--
         ["menu_deckall_2_desc_sc"] = "你的爆头伤害增加##25%##。\n\n你造成的伤害增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒。",
-        ["menu_deckall_4_desc_sc"] = "你的隐匿度增加##1##。\n\n防弹背心带来的移动速度惩罚减少##15%##。\n\n你完成单日劫案和整个合约后获得的经验值增加##45%##。\n\n你造成的伤害额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒。",
+        ["menu_deckall_4_desc_sc"] = "你的灵活性增加##1##。\n\n防弹背心带来的移动速度惩罚减少##15%##。\n\n你完成单日劫案和整个合约后获得的经验值增加##45%##。\n\n你造成的伤害额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒。",
         ["menu_deckall_6_desc_sc"] = "##解锁手雷箱##以供你使用。\n\n你造成的伤害再额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒。",
         ["menu_deckall_8_desc_sc"] = "你使用医疗箱的速度加快##20%##。\n\n你造成的伤害再次额外增加##25%##，该效果不适用于投掷物、榴弹发射器和火箭筒。",
 
@@ -5295,7 +5538,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
         -- Grinder--
 
-        ["menu_deck11_1_desc_sc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##8##。",
+        ["menu_deck11_1_desc_sc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的灵活性增加##8##。",
         ["menu_deck11_3_desc_sc"] = "每层增益中每秒回复的血量额外增加##1##点。",
         ["menu_deck11_5_desc_sc"] = "每层增益的持续时间额外增加##2##秒。\n\n你可以放置##2##个尸体袋箱。",
         ["menu_deck11_7_desc_sc"] = "每层增益中每秒回复的血量再额外增加##1##点。",
@@ -5344,9 +5587,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         -- Sweet liquor eases the pain--
 
         ["menu_deck19_1_desc_sc"] = "解锁##修士酒壶##以供你使用。\n\n你受到的对##血量##的伤害中的##30%##不会立刻使你丢失血量，而是变成虚血在##8##秒内逐渐衰减完。\n\n你可以按使用投掷物的按键激活修士酒壶并立刻使虚血变为实血。\n\n当虚血变为实血时，你也会恢复虚血转变量##150%##的血量。修士酒壶的冷却时间为##30##秒。\n\n你##50%##的##护甲量##将转变为##50%##的##血量##。",
-        ["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##2.5##秒。",
+        ["menu_deck19_3_desc_sc"] = "每击杀一名敌人，你的酒壶冷却时间就减少##4##秒。",
         ["menu_deck19_5_desc_sc"] = "在##4##秒内没受到伤害将会立即使虚血变为实血(即触发酒壶的效果)。\n\n你回答对讲机所需的时间减少##25%##。",
-        ["menu_deck19_7_desc_sc"] = "你的血量低于##50%##时，你每击杀一名敌人将减少修士酒壶的冷却时间##5##秒。",
+        ["menu_deck19_7_desc_sc"] = "你的血量低于##50%##时，你每击杀一名敌人将减少修士酒壶的冷却时间##6##秒。",
         ["menu_deck19_9_desc_sc"] = "你倒地被救起后的剩余血量提高##25%##。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
         -- it's not a war crime if they're not people--
@@ -5370,7 +5613,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         ["menu_deck12_1_desc_sc"] = "你的血量低于##100%##时，血量越少，你的闪避条被动增长的速度越快，最快可以达到每秒增加闪避点数的##10%##。\n\n你的闪避点数增加##5##。",
         ["menu_deck12_3_desc_sc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。",
         ["menu_deck12_5_desc_sc"] = "你的血量低于##100%##时，血量越少，你受到的伤害越少，最多可以获得##20%##的伤害减免。\n\n你打包尸体和与人质互动的速度加快##75%##。",
-        ["menu_deck12_7_desc_sc"] = "你的血量低于##100%##时，血量越少，你使用近战武器杀敌增加的闪避条越多，最多可以达到每用近战武器击杀一个敌人增加闪避点数的##125%##。\n\n使用近战武器击杀敌人将使你下一次成功闪避获取的无敌时间增加##300%##，最多增加到##0.9##秒。\n\n你的闪避点数额外增加##5##。",
+        ["menu_deck12_7_desc_sc"] = "你的血量低于##100%##时，血量越少，你使用近战武器杀敌增加的闪避条越多，最多可以达到每用近战武器击杀一个敌人增加闪避点数的##50%##,并与\"蛇之刺青\"（卡牌3）叠加。\n\n使用近战武器击杀敌人将使你下一次成功闪避获取的无敌时间增加##150%##，最多增加到##0.9##秒。\n\n你的闪避点数额外增加##5##。",
         ["menu_deck12_9_desc_sc"] = "你的血量减伤分数上限提高至##80%##。\n\n受到致命伤害时，你不会倒地，你的血量会变为##1##并获得##50##点护甲值，该效果只能触发一次，每次倒地起身或使用应急急救包后重置使用次数。\n\n提示：该效果不适用于也不能被幻影特工飞踢或泰瑟警察电击造成的倒地刷新\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
         ["menu_yakuza_deflection_add"] = "（因极道增加）",
 
@@ -5456,7 +5699,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         -- Gambler
         ["menu_deck10_mrwi_desc"] = "你捡起一个弹药盒会回复##2##至##5##点血量。\n冷却时间为##10##秒，每捡起一个弹药盒会减少冷却时间##1##至##4##秒。\n\n你从敌人掉落的弹药盒中获得弹药时，你的团队成员会获得##15%##个弹药盒的弹药补充。\n\n你回答对讲机所需的时间减少##25%##。",
         -- Grinder
-        ["menu_deck11_mrwi_desc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的隐匿度增加##4##。\n\n你可以放置##2##个尸体袋箱。",
+        ["menu_deck11_mrwi_desc"] = "身穿##防爆弹衣##时，成功伤害到敌人将使你在##3##秒内每秒回复##2##点血量。\n\n该效果可以叠加，但每##0.75##秒只能叠加一层，最高叠加##5##层。使用哨戒机枪、火焰或毒素伤害到敌人不能为你叠加回血效果。\n\n你所有护甲的护甲量减少##30##。\n\n你防爆弹衣的灵活性增加##4##。\n\n你可以放置##2##个尸体袋箱。",
         -- Yakuza
         ["menu_deck12_mrwi_desc"] = "你的血量低于##100%##时，血量越少，你杀敌增加的闪避条越多，最多可以达到每击杀一个敌人增加闪避点数的##50%##。\n\n你打包尸体和与人质互动的速度加快##75%##。",
         -- Ex-Pres
@@ -5479,6 +5722,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         ["menu_deck21_mrwi_desc"] = "解锁##便携式ECM干扰器##以供你使用。\n\n游戏中你可以按##$BTN_ABILITY;##键激活便携式ECM干扰器。\n\n警报响起前使用便携式ECM干扰器会带来电子干扰的效果，所有电子设备都将失效，对讲机也会被延迟，干扰持续##10##秒。\n\n警报响起后使用便携式ECM干扰器会带来反馈效果，反馈开始时必定使所有半径##15##米内的敌人失去行动能力，随后每##1.2##秒都有##60%##的几率眩晕范围内的敌人，反馈持续##10##秒。\n\n便携式ECM干扰器每##80##秒的冷却时间可以充能一次，击杀一名敌人将使冷却时间减少##2.5##秒。",
         -- Leech
         ["menu_deck22_mrwi_desc"] = "解锁并装备##水蛭安瓿瓶##。\n\n对局中你可以使用投掷物按键来启用水蛭安瓶，启用时会直接恢复##5%##的总血量并且在生效期间取消你的全部护甲。\n\n与此同时你的血量以血上限的每##10%##来被分割成小格，每受任意一次伤害移除整个格。同时每击杀##3##名敌人回复一格且免伤##1##秒。\n\n水蛭安瓶能够持续##6##秒钟并且有##40##秒冷却。\n\n你打包尸体和与人质互动的速度加快##75%##。",
+
+        ["menu_deck23_9_desc"] = "天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
         -- Better Description in Chinese
         ["menu_st_spec_6_desc"] = "骗术师是一个多面手，他和犯罪这个词一样古老。\n\n说真的，骗术师是无所不能的。他能偷会盗、花言巧语，一两句话就能将一个滔天大罪瞒天过海。他一生都以欺骗和犯罪为活。",
@@ -5536,6 +5781,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
         ["rpd_menu_dialog_title"] = "你确定吗？",
         ["rpd_menu_dialog_text"] = "如果你重置 $perk_deck_name 天赋，你会被返还 $points_to_refund 天赋点。",
 
+        --Strings for Lobby Player Info
+		["menu_st_spec_24"] = "白板",
+		["menu_st_spec_25"] = "先天异禀",
         -- MOD PERK DECKS
         -- OFFYERROCKER'S MERCENARY PERK DECK  --check
         --[[["menu_deck_kmerc_1_desc_sc"] = "Years of battle have made your skin tough. Take greatly reduced damage from heavy hits to your health so that ##no single attack can kill you##.\n\nYou gain ##5%## more health.",

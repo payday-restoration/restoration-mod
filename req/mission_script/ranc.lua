@@ -48,6 +48,27 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value_2
 	},
+	--Fixed snipers being able to spawn only once
+	[100368] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100369] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100370] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100371] = {
+		values = {
+            trigger_times = 0
+		}
+	},
 	--fixes some spawn typos
 	[100683] = {
 		values = {

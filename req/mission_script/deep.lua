@@ -37,6 +37,57 @@ return {
 			time = timer_achievement
 		}
 	},
+	--Fixed snipers being able to spawn only once
+	[100368] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100369] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100370] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100371] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100372] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100373] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100374] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100375] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100376] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100377] = {
+		values = {
+            trigger_times = 0
+		}
+	},
 	-- Increase spawn group intervals in pipe arena
 	[105278] = {
 		values = {

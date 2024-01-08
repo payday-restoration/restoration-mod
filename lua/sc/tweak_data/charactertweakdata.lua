@@ -653,7 +653,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.speech_prefix_p2 = nil
 	self.medic_summers.custom_voicework = nil
 	self.medic_summers.spawn_sound_event = "rmdc_entrance"
-	self.medic_summers.die_sound_event = "mga_death_scream"
 	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 	self.medic_summers.is_special = true
@@ -722,7 +721,6 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.no_omnia_heal = true
 	self.omnia_lpf.can_be_healed = false
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
-	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
 	self.omnia_lpf.no_asu = true
 	self.omnia_lpf.marshal_logic = true
@@ -917,10 +915,8 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.has_alarm_pager = false
 	self.heavy_swat_sniper.calls_in = true
 	self.heavy_swat_sniper.static_dodge_preset = true
-	self.heavy_swat_sniper.static_melee_preset = true	
-	self.heavy_swat_sniper.custom_voicework = nil
-	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
-	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
+	self.heavy_swat_sniper.static_melee_preset = true
+	self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
@@ -1245,6 +1241,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_elite_guard.tags = {"law", "city_swat"}
 	self.weekend_elite_guard.dt_suppress = nil
 	self.weekend_elite_guard.silent_priority_shout = "f37"
+	self.weekend_elite_guard.is_special = false
 	self.weekend_elite_guard.can_throw_frag = false
 	self.weekend_elite_guard.yellow_blood = false
 	self.weekend_elite_guard.chatter = presets.enemy_chatter.guard
@@ -2657,7 +2654,6 @@ function CharacterTweakData:_init_tank(presets)
 		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.ecm_hurts = {}
-	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
 	self.tank_titan.is_special = true
@@ -2820,8 +2816,7 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_titan.custom_voicework = nil
 	else
 		self.spooc_titan.custom_voicework = "tspook"
-	end		
-	self.spooc_titan.die_sound_event_2 = "mga_death_scream"
+	end
 	self.spooc_titan.heal_cooldown = 15
 	self.spooc_titan.no_xmas_hat = true
 	table.insert(self._enemy_list, "spooc_titan")
@@ -3105,9 +3100,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.priority_shout_max_dis = 3000
 	self.phalanx_vip.flammable = false
 	self.phalanx_vip.can_be_tased = false
-	self.phalanx_vip.ecm_vulnerability = nil	
-	self.phalanx_vip.die_sound_event = "mga_death_scream"
-	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
+	self.phalanx_vip.ecm_vulnerability = nil
+	self.phalanx_vip.die_sound_event = "l2n_x01a_any_3p"
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
@@ -3147,7 +3141,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	
 	--Winters, shield broken
 	self.phalanx_vip_break = deep_clone(self.phalanx_vip)
-	self.phalanx_vip_break.tags = {"law", "special", "captain"}
+	self.phalanx_vip_break.tags = {"law", "custom", "special", "captain"}
 	self.phalanx_vip_break.rotation_speed = 3
 	self.phalanx_vip_break.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.phalanx_vip_break.dodge = presets.dodge.elite
@@ -3229,7 +3223,6 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.spring.announce_incomming = "incomming_captain"
 	self.spring.spawn_sound_event_2 = "cloaker_spawn"
-	self.spring.die_sound_event_2 = "mga_death_scream"
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
 	self.spring.no_asu = true
@@ -3319,7 +3312,6 @@ function CharacterTweakData:_init_summers(presets)
 	else
 		self.summers.spawn_sound_event = "cpa_a02_01"
 	end
-	self.summers.die_sound_event = "mga_death_scream"
 	self.summers.fire_bag_death = true	
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
@@ -3515,7 +3507,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.speech_prefix_p1 = "fl"
 	self.taser_summers.speech_prefix_p2 = "n"
 	self.taser_summers.speech_prefix_count = 1
-	self.taser_summers.die_sound_event = "mga_death_scream"
 	self.taser_summers.use_radio = "dsp_radio_russian"
 	self.taser_summers.spawn_sound_event = nil
 	self.taser_summers.custom_voicework = nil
@@ -3551,7 +3542,6 @@ function CharacterTweakData:_init_taser(presets)
 		self.taser_titan.spawn_sound_event = "tsr_elite"
 	end	
 	self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
-	self.taser_titan.die_sound_event = "mga_death_scream"
 	self.taser_titan.custom_voicework = nil
 	self.taser_titan.surrender = nil
 	self.taser_titan.dodge = presets.dodge.elite
@@ -3666,7 +3656,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.speech_prefix_p2 = "n"
 	self.boom_summers.speech_prefix_count = 1
 	self.boom_summers.custom_voicework = nil
-	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_radio = "dsp_radio_russian"
 	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5

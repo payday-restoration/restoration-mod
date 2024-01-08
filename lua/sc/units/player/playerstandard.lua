@@ -2404,16 +2404,18 @@ end
 
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
-	self:_update_burst_fire(t)
-	self:_update_slide_locks()
-	self:_shooting_move_speed_timer(t, dt)
-	self:_last_shot_t(t, dt)
+	if alive(self._equipped_unit) then
+		self:_update_burst_fire(t)
+		self:_update_slide_locks()
+		self:_shooting_move_speed_timer(t, dt)
+		self:_last_shot_t(t, dt)
+	end
 	self:_update_js_t(t, dt)
 	self:_update_d_scope_t(t, dt)
 	self:_update_spread_stun_t(t, dt)
 	self:_update_drain_stamina(t, dt)
 
-	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	if weapon:weapon_tweak_data().ads_spool then
 		weapon:update_spin()
 	end
@@ -2492,7 +2494,7 @@ function PlayerStandard:_update_drain_stamina(t, dt)
 end
 
 function PlayerStandard:_last_shot_t(t, dt)
-	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	local fire_mode = weapon and weapon:fire_mode()
 	if weapon then
 		if self._shooting and fire_mode == "auto" then
@@ -2512,7 +2514,7 @@ end
 
 
 function PlayerStandard:_shooting_move_speed_timer(t, dt)
-	local weapon = self._equipped_unit and self._equipped_unit:base()
+	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	if not weapon then
 		return
 	end

@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_1 = math.rand(1)
 local chance_dozer_2 = math.rand(1)
 local ambush_unit_amount = 1
@@ -14,11 +15,14 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
-if Global.game_settings and Global.game_settings.one_down then
+--If we're in Pro Job, then do this shit below
+if shadow_fucked_me_hard then
+	--First, replace scripted shields and harassers with titan shields/snipers
 	if difficulty_index >= 5 then
 		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
+	--DS, has Titan cloaker replace scripted escape cloaker and have more units during escape part
 	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_unit_amount = 2
@@ -27,7 +31,7 @@ if Global.game_settings and Global.game_settings.one_down then
 end
 
 
-	--Setting up the dozer randomizer
+	--Setting up the dozer randomizer, so cool
 	if difficulty_index == 4 or difficulty_index == 5 then
 		if chance_dozer_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black

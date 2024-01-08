@@ -1,6 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
+	--Two PONR timers due to diffrient routes
 	if difficulty_index <= 5 then
 		ponr_value_1 = 960
 		ponr_value_2 = 600

@@ -1111,7 +1111,7 @@ function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_i
 end
 --]]
 
-FlameBulletBase.VARIANT = "bullet"
+FlameBulletBase.VARIANT = "fire_bullet"
 
 --Fire no longer memes on shields.
 function FlameBulletBase:bullet_slotmask()

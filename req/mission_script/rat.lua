@@ -18,7 +18,7 @@ local cloaker_table = {
 	woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 }
 
-	--Setting up the dozer randomizer
+	--Setting up the dozer randomizer, it's so cool
 	if difficulty_index == 4 or difficulty_index == 5 then
 		if chance_dozer_var < 0.50 then
 			dozer = dozer_table.dozer_black
@@ -45,7 +45,7 @@ local cloaker_table = {
 		end
 	end
 	
-	--setting up the cloaker randomizer
+	--setting up the cloaker randomizer, this is also cool
 	if difficulty_index <= 7 then
 		clonker = cloaker_table.spooc
 		clonker_2 = cloaker_table.spooc

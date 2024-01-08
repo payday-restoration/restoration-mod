@@ -217,7 +217,7 @@ function CopActionHurt:init(action_desc, common_data)
 
 			return
 		end
-	elseif action_type == "death" and action_desc.variant == "fire" then
+	elseif action_type == "death" and (action_desc.variant == "fire" or action_desc.variant == "fire_bullet")then
 		local variant = 1
 		local weapon_unit = action_desc.weapon_unit
 		local base_ext = alive(weapon_unit) and weapon_unit:base()
@@ -606,7 +606,7 @@ function CopActionHurt:init(action_desc, common_data)
 	end
 
 	if not self._unit:base().nick_name then
-		if action_desc.variant == "fire" or play_fire_death then
+		if action_desc.variant == "fire" or action_desc.variant == "fire_bullet" or play_fire_death then
 			local base_ext = self._unit:base()
 
 			if action_desc.hurt_type == "fire_hurt" then

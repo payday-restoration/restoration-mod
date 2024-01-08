@@ -1,11 +1,12 @@
 local timer_achievement = 20
+local we_single_now = Global.game_settings and Global.game_settings.single_player
 
-if Global.game_settings and Global.game_settings.single_player then
+if we_single_now then
 	timer_achievement = 200
 end
 
 return {
-	-- Increase PONR timers
+	-- Increase PONR timers, seriously there are a lot of skulldozers on high diffs especially with 2 pushover minidozers at the end on DS (luckily they are bendozers)
 	[102646] = {
 		values = {
 			time_normal = 300,
@@ -34,6 +35,57 @@ return {
 	[103542] = {
 		values = {
 			time = timer_achievement
+		}
+	},
+	--Fixed snipers being able to spawn only once
+	[100368] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100369] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100370] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100371] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100372] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100373] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100374] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100375] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100376] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100377] = {
+		values = {
+            trigger_times = 0
 		}
 	},
 	-- Increase spawn group intervals in pipe arena

@@ -59,6 +59,7 @@ return {
 		}
 	},
 	--FBI Team Responders
+	--Don't let ZEAL Dozers spawn on DS
 	[102346] = {
 		values = {
             enemy = responder_table.responder_dozer

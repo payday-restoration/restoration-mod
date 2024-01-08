@@ -1,6 +1,8 @@
 --I love Majima so much
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+--Why not have a blackdozer in one of the choppers, yeah?
 local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 local bulldozer_2 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local teargaschopper = 1
@@ -10,6 +12,7 @@ local vaultdoor = 66
 local copcars = 1
 local snipers = 1
 
+	--Same in DS
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
@@ -27,20 +30,22 @@ local snipers = 1
 		copcars = 2
 	end
 
+	--More snipers cause 1 sniper on DS is not enough
 	if difficulty_index == 6 or difficulty_index == 7 then
 		snipers = 2
 	elseif difficulty_index == 8 then
 		snipers = 3
 	end
-	
-if Global.game_settings and Global.game_settings.one_down then
+
+--If we're in Pro Job, then do this shit below
+if shadow_fucked_me_hard then
 	teargas = 2
 	teargasmayhem = 3
 	teargaschopper = 2
 	vaultdoor = 100
+	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		teargasmayhem = 4
 	end
@@ -72,7 +77,7 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--Pro Job PONR 
+	--Pro Job PONR, triggers when the van loot secure is on, should probably trigger when the vault opens instead
 	[104452] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value

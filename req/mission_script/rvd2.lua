@@ -14,7 +14,7 @@ return {
 	[101106] = {
 		ponr = ponr_value
 	},
-	--Disable the SWAT Turrets
+	--Disable the SWAT Turrets, why would they add those fucking annoying turrets in this day, spawning reinforcments is already ENOUGH!!!!
 	[101147] = {
 		values = {
 			enabled = false

@@ -1,5 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local fbi_dudes = 3
 local chance_normal = 25
 local chance_hard = 50
@@ -17,7 +18,9 @@ local chance_overkill = 65
 		fbi_dudes = 4
 	end	
 	
-	if Global.game_settings and Global.game_settings.one_down then
+	
+	--If we're in Pro Job, do this shit below
+	if shadow_fucked_me_hard then
 		chance_normal = 45
 		chance_hard = 75
 		chance_overkill = 100

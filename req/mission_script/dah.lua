@@ -1,7 +1,8 @@
 local chance_ovk = 10
 local chance_dw = 20
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 
-if Global.game_settings and Global.game_settings.one_down then	
+if shadow_fucked_me_hard then	
 	chance_ovk = chance_ovk + 5
 	chance_dw = chance_dw + 5
 end

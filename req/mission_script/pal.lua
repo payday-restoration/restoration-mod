@@ -1,6 +1,9 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local we_single_now = Global.game_settings and Global.game_settings.single_player
 
+	--PDTH's styled PONR, run faster
 	if difficulty_index <= 5 then
 		ponr_value = 90
 	elseif difficulty_index == 6 or difficulty_index == 7 then
@@ -9,11 +12,14 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 		ponr_value = 60
 	end
 	
-	if Global.game_settings and Global.game_settings.single_player then
+	--PONR is less stricted in singleplayer
+	if we_single_now then
 		ponr_value = ponr_value * 2 
 	end
 
-if Global.game_settings and Global.game_settings.one_down and difficulty_index >= 5 then	
+--If we're in Pro Job, do this shit below
+if shadow_fucked_me_hard and difficulty_index >= 5 then
+	--these shields are slow but will fuck a bit harder than regular shields once in position
 	titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
@@ -26,6 +32,7 @@ return {
 	[102654] = {
 		ponr = ponr_value
 	},
+	--Disable PONR if you somehow want to print money, re-trigger again if you done with it
     [102551] = {
         ponr_end = true
     },
@@ -50,8 +57,6 @@ return {
 	--Forces the reinforcments to spawn instead
 	[102819] = {
 		values = {
-			difficulty_overkill = "true",
-			difficulty_overkill_145 = "true",
 			difficulty_easy_wish = "true",
 			difficulty_overkill_290 = "true",
 			difficulty_sm_wish = "true"

@@ -17,6 +17,7 @@ return {
 	[105069] = {
 		ponr = ponr_value
 	},
+	--There's no cops in White Xmas, yes i'm serious
 	[100288] = {
 		values = {
             sound_event = "earthquake_siren"

@@ -1701,7 +1701,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]), -- concealment tresholder for crit chance
 					skill_value_b4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%", -- Max possible crit chance
 					skill_value_p1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
-					skill_value_p2 = tostring(self.values.player.detection_risk_add_crit_chance[1][2]),
+					skill_value_p2 = tostring(self.values.player.detection_risk_add_crit_chance[2][2]),
 					skill_value_p3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]),
 					skill_value_p4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%",
 					skill_value_p5 = tostring(self.values.player.backstab_crits[1] * 100).."%" -- Additional crit chance if you attack from behind

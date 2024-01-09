@@ -3420,6 +3420,16 @@ function CopDamage:can_attach_projectiles()
 	return not self._char_tweak.cannot_attach_projectiles
 end
 
+function CopDamage:check_medic_heal()
+	if self._unit:movement():chk_action_forbidden("action") then
+		return false
+	end
+
+	local medic = managers.enemy:get_nearby_medic(self._unit)
+
+	return medic and medic:character_damage():heal_unit(self._unit)
+end
+
 --Doing this to get rid of unused CrimeSpree stuff just in case
 function CopDamage:do_medic_heal()
 	self._healed = true
@@ -3443,5 +3453,16 @@ function CopDamage:do_medic_heal()
 		--self._unit:contour():flash("medic_heal", 0.2)
 	end
 	
+	return true
+end
+
+function CopDamage:do_medic_heal_and_action(sync)
+	self:do_medic_heal()
+	self._unit:movement():request_healed_action()
+
+	if sync then
+		self._unit:network():send("sync_action_healed", true)
+	end
+
 	return true
 end

@@ -1,5 +1,9 @@
 --Change cooldowns based on unit healed
 function MedicDamage:heal_unit(unit)	
+	if self._unit:movement():chk_action_forbidden("action") then
+		return false
+	end
+
 	local my_tweak_data = self._unit:base()._tweak_table
 	local target_tweak_table = unit:base()._tweak_table
 	local target_char_tweak = tweak_data.character[target_tweak_table]
@@ -46,6 +50,10 @@ function MedicDamage:heal_unit(unit)
 end
 
 function MedicDamage:sync_heal_action()
+	if self._unit:movement():chk_action_forbidden("action") then
+		return false
+	end
+
 	self._heal_cooldown_t = TimerManager:game():time() + self._heal_cooldown
 	local action_data = nil
 
@@ -103,10 +111,6 @@ end
 --Don't actually heal if he's doing something
 function MedicDamage:is_available_for_healing(requesting_unit)
 	if self._unit:movement():chk_action_forbidden("action") then
-		return false
-	end
-
-	if self._unit:anim_data().act then
 		return false
 	end
 

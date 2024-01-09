@@ -3,7 +3,7 @@
 	"description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
 	"author" : "Rhynne, DoktorAkcel, SC, & The Restoration Mod Crew",
 	"contact" : "Join the official Steam group",
-	"version" : "12.2.4",
+	"version" : "12.3",
 	"priority" : 46,
 	"blt_version" : 2,
 	"image" : "res.png",

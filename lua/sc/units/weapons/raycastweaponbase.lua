@@ -1298,8 +1298,8 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 	end
 
 	local weapon = nil
+	local distance = nil
 	local attacker = alive(user_unit) and user_unit or nil
-	local distance = mvector3.distance(attacker:position(), target_unit:position())
 
 	if attacker then
 		local base_ext = attacker:base()
@@ -1316,6 +1316,7 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 			return
 		end
 
+		distance = mvector3.distance(attacker:position(), target_unit:position())
 		can_dot = distance <= dot_data.dot_trigger_max_distance
 	end
 
@@ -1345,7 +1346,7 @@ function FlameBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 		managers.fire:add_doted_enemy(data)
 	end
 
-	if dot_data.dot_stun_max_distance and weap_base and weap_base.near_falloff_distance and distance > weap_base.near_falloff_distance then
+	if distance and dot_data.dot_stun_max_distance and weap_base and weap_base.near_falloff_distance and distance > weap_base.near_falloff_distance then
 		return
 	end
 

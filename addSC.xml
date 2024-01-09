@@ -2107,19 +2107,7 @@
 	<animation			path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
-	
-	<!--Money Thrower Death Animations-->
-	<animation			path="anims/shared/rifle/generic/death_money_var1" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var2" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var3" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var4" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var5" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var6" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var7" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var8" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var9" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var10" load="true"/>
-	
+		
 	<!--LOD Vet Cop-->		
 	<object				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>

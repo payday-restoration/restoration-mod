@@ -19004,7 +19004,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							-0.025,
 							{1, 1.1},
-							1
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_shot" then
@@ -19061,8 +19061,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							-0.05,
-							{1, 1.25},
+							-0.03,
+							{1, 1.15},
 							2
 						}
 					}

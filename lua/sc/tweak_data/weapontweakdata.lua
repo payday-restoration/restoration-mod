@@ -19012,14 +19012,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.recoil_values = {
 						{ 80, 60 },
 						4,
-						0.3
+						0.3,
+						srm = {
+							-0.025,
+							{1, 1.1},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "break_shot" then
 					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,
-						0.2
+						0.2,
+						srm = {
+							-0.025,
+							{1, 1.1},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "light_smg" then
 					weap.sads_mult = 0.5

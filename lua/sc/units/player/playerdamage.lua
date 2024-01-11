@@ -224,7 +224,7 @@ function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
 		return false
 	end
 
-	local movement_ext = alive(unit) and unit:movement() --Deals with funny case with enemy thrown frags.
+	local movement_ext = alive(unit) and unit.movement and unit:movement() --Deals with funny case with enemy thrown frags.
 	if not movement_ext or movement_ext:team() ~= self._unit:movement():team() and movement_ext:friendly_fire() then
 		return false
 	end

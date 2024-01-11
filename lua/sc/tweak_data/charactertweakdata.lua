@@ -3120,7 +3120,8 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.no_damage_mission = true
 	self.phalanx_vip.slowing_bullets = {
         duration = 1.5,
-        power = 0.75
+        power = 0.75,
+		range = 2000
     }	
 	self.phalanx_vip.static_weapon_preset = false
 	--self.phalanx_vip.death_animation = "death_run" 
@@ -3246,7 +3247,8 @@ function CharacterTweakData:_init_spring(presets)
 	self.headless_hatman.custom_voicework = "hatman"
 	self.headless_hatman.slowing_bullets = {
 		duration = 1,
-		power = 0.5
+		power = 0.5,
+		range = 2000
 	}
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
@@ -3518,7 +3520,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.slowing_bullets = {
 		duration = 3,
 		power = 1,
-		taunt = true
+		taunt = true,
+		range = 1000
 	}
 	self.taser_summers.no_omnia_heal = true
 	self.taser_summers.can_be_healed = false
@@ -3559,7 +3562,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.slowing_bullets = {
 		duration = 3,
 		power = 1,
-		taunt = true
+		taunt = true,
+		range = 1000
 	}
 	table.insert(self._enemy_list, "taser_titan")
 	
@@ -3568,7 +3572,8 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan_reaper.slowing_bullets = {
 		duration = 3,
 		power = 1,
-		taunt = true
+		taunt = true,
+		range = 2000
 	}	
 	table.insert(self._enemy_list, "taser_titan_reaper")
 end

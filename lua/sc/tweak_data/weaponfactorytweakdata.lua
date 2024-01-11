@@ -1537,8 +1537,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.33 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.33 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1558,8 +1558,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.33 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.33 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1580,8 +1580,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.33 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.33 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1601,8 +1601,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.33 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.33 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
 					ignore_statistic = true,
 					rays = 1,
 					block_b_storm = true,	
@@ -13213,8 +13213,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_plainsrider", "resmod_plainsrider"
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "west_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.8,
+		ammo_pickup_min_mul = 0.8
 	}
 	
 	--Poisoned Arrows
@@ -13791,8 +13791,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "crossbow_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 
 end)
@@ -13912,8 +13912,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_arblast", "resmod_arblast", functi
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "arblast_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 
 end)
@@ -13943,8 +13943,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_frankish", "resmod_frankish", func
 		alt_desc = "bm_xbow_exp_sc_desc",
 		launcher_grenade = "frankish_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 	table.insert(self.wpn_fps_bow_frankish.uses_parts, "avelyn" )
 
@@ -13963,8 +13963,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_long", "resmod_long", function(sel
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "long_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 	
 	--Poison Arrow
@@ -16264,8 +16264,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ecp", "resmod_ecp", function(self)
 		alt_desc = "bm_airbow_exp_sc_desc",
 		launcher_grenade = "ecp_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 	
 	--Poison Arrow
@@ -17156,8 +17156,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_elastic", "resmod_elastic", functi
 		alt_desc = "bm_bow_exp_sc_desc",
 		launcher_grenade = "elastic_arrow_exp",
 		block_b_storm = true,
-		ammo_pickup_max_mul = 0.7,
-		ammo_pickup_min_mul = 0.7
+		ammo_pickup_max_mul = 0.85,
+		ammo_pickup_min_mul = 0.85
 	}
 	
 	--Poison Arrows
@@ -24831,6 +24831,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_pis_rc_auto9_receiver then
 			self.parts.wpn_fps_pis_rc_auto9_receiver.perks = nil
+			self.parts.wpn_fps_pis_rc_auto9_cartoon = {
+				pcs = {},
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_rc_auto9_cartoon",
+				has_description = true,
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				supported = true,
+				stats = {
+					value = 0
+				},
+				custom_stats = {
+					trail_effect = "_dmc/effects/plasma_b_trail",
+				}
+			}
+
+			table.insert( self.wpn_fps_pis_rc_auto9.uses_parts, "wpn_fps_pis_rc_auto9_cartoon")
+			self.wpn_fps_pis_rc_auto9_npc.uses_parts = deep_clone(self.wpn_fps_pis_rc_auto9.uses_parts)
 		end
 
 	--[[ GAMBYT'S MODS ]]

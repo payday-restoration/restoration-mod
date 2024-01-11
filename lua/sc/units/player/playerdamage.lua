@@ -577,11 +577,12 @@ function PlayerDamage:damage_bullet(attack_data)
 		local hit_in_air = self._unit:movement():current_state()._hit_in_air
 		local on_ladder = self._unit:movement():current_state():on_ladder() 
 		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
+		local range = nil
 
 		--Apply slow debuff if bullet has one.
 		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
 			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
-			local range = slow_data and slow_data.range 
+			range = slow_data and slow_data.range 
 			if not range or (range and distance < range) then
 				if slow_data.taunt then
 					attacker_unit:sound():say("post_tasing_taunt")
@@ -590,7 +591,6 @@ function PlayerDamage:damage_bullet(attack_data)
 			end
 		end
 
-		local range = nil
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then

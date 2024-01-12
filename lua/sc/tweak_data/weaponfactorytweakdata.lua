@@ -22194,7 +22194,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			lock_burst = true,
 			tekna_burst = true,
-			rof_mult = 2.1153846,
+			rof_mult = 2.0408163,
 			alt_desc = "bm_wally_desc",
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",

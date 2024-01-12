@@ -5029,7 +5029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_p226.AMMO_MAX = 120
 				self.x_p226.FIRE_MODE = "single"
 				self.x_p226.fire_mode_data = {}
-				self.x_p226.fire_mode_data.fire_rate = 0.092307
+				self.x_p226.fire_mode_data.fire_rate = 0.1
 				self.x_p226.supported = true
 				self.x_p226.ads_speed = 0.160
 				self.x_p226.damage_falloff = {
@@ -5685,7 +5685,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.p226.desc_id = "bm_p226_sc_desc"					
 				self.p226.AMMO_MAX = 60
 				self.p226.CLIP_AMMO_MAX = 15
-				self.p226.fire_mode_data.fire_rate = 0.09230769
+				self.p226.fire_mode_data.fire_rate = 0.1
 				self.p226.kick = self.stat_info.kick_tables.even_recoil
 				self.p226.supported = true
 				self.p226.ads_speed = 0.160
@@ -5721,7 +5721,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hs2000.tactical_reload = 1
 				self.hs2000.FIRE_MODE = "single"
 				self.hs2000.fire_mode_data = {}
-				self.hs2000.fire_mode_data.fire_rate = 0.09523809
+				self.hs2000.fire_mode_data.fire_rate = 0.10344827
 				self.hs2000.kick = self.stat_info.kick_tables.left_recoil
 				self.hs2000.supported = true
 				self.hs2000.ads_speed = 0.160
@@ -5757,7 +5757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_m1911.has_description = true
 				self.x_m1911.desc_id = "bm_m1911_sc_desc"				
 				self.x_m1911.tactical_reload = 1	
-				self.x_m1911.fire_mode_data.fire_rate = 0.10714285
+				self.x_m1911.fire_mode_data.fire_rate = 0.1111111
 				self.x_m1911.CLIP_AMMO_MAX = 14
 				self.x_m1911.AMMO_MAX = 80
 				self.x_m1911.kick = self.stat_info.kick_tables.even_recoil
@@ -5791,7 +5791,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Crosskill Guard
 				self.x_shrew.has_description = true
 				self.x_shrew.desc_id = "bm_x_shrew_sc_desc"				
-				self.x_shrew.fire_mode_data.fire_rate = 0.1
+				self.x_shrew.fire_mode_data.fire_rate = 0.106194
 				self.x_shrew.CLIP_AMMO_MAX = 12
 				self.x_shrew.AMMO_MAX = 80
 				self.x_shrew.kick = self.stat_info.kick_tables.moderate_kick
@@ -5828,7 +5828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_usp.kick = self.stat_info.kick_tables.right_recoil
 				self.x_usp.CLIP_AMMO_MAX = 24
 				self.x_usp.AMMO_MAX = 80
-				self.x_usp.fire_mode_data.fire_rate = 0.11538461
+				self.x_usp.fire_mode_data.fire_rate = 0.122448979
 				self.x_usp.supported = true
 				self.x_usp.ads_speed = 0.200
 				self.x_usp.damage_falloff = {
@@ -5860,7 +5860,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_1911.desc_id = "bm_x_1911_sc_desc"					
 				self.x_1911.CLIP_AMMO_MAX = 16
 				self.x_1911.AMMO_MAX = 80
-				self.x_1911.fire_mode_data.fire_rate = 0.1034482
+				self.x_1911.fire_mode_data.fire_rate = 0.1176470588
 				self.x_1911.kick = self.stat_info.kick_tables.even_recoil
 				self.x_1911.supported = true
 				self.x_1911.ads_speed = 0.180
@@ -5896,7 +5896,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_type54.AMMO_MAX = 80
 				self.x_type54.FIRE_MODE = "single"
 				self.x_type54.fire_mode_data = {}
-				self.x_type54.fire_mode_data.fire_rate = 0.11538461
+				self.x_type54.fire_mode_data.fire_rate = 0.1304347
 				self.x_type54.kick = self.stat_info.kick_tables.left_recoil
 				self.x_type54.supported = true
 				self.x_type54.ads_speed = 0.180
@@ -6066,7 +6066,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_korth.damage_falloff = {
 					start_dist = 900,
 					end_dist = 4000,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.x_korth.stats = {
 					damage = 60,
@@ -6104,7 +6104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_2006m.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 4200,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.x_2006m.stats = {
 					damage = 60,
@@ -6145,7 +6145,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_model3.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3800,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.x_model3.stats = {
 					damage = 60,
@@ -6352,7 +6352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54.tactical_reload = 1
 				self.type54.FIRE_MODE = "single"
 				self.type54.fire_mode_data = {}
-				self.type54.fire_mode_data.fire_rate = 0.11538461
+				self.type54.fire_mode_data.fire_rate = 0.1304347
 				self.type54.kick = self.stat_info.kick_tables.left_recoil
 				self.type54.supported = true
 				self.type54.ads_speed = 0.180
@@ -6389,6 +6389,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.fire_mode_data.fire_rate = 0.24
 				self.type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 				self.type54_underbarrel.supported = true
+				self.type54_underbarrel.use_stance = nil
 				self.type54_underbarrel.ads_speed = 0.180
 				self.type54_underbarrel.damage_falloff = {
 					start_dist = 700,
@@ -6420,7 +6421,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Crosskill Guard
 				self.shrew.has_description = true
 				self.shrew.desc_id = "bm_shrew_sc_desc"			
-				self.shrew.fire_mode_data.fire_rate = 0.1
+				self.shrew.fire_mode_data.fire_rate = 0.106194
 				self.shrew.CLIP_AMMO_MAX = 6
 				self.shrew.AMMO_MAX = 40
 				self.shrew.kick = self.stat_info.kick_tables.moderate_kick
@@ -6458,7 +6459,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					unequip = 0.5,
 					equip = 0.35
 				}
-				self.usp.fire_mode_data.fire_rate = 0.11538461
+				self.usp.fire_mode_data.fire_rate = 0.122448979
 				self.usp.AMMO_MAX = 40
 				self.usp.kick = self.stat_info.kick_tables.right_recoil
 				self.usp.CLIP_AMMO_MAX = 12
@@ -6492,7 +6493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Crosskill (1911)
 				self.colt_1911.has_description = true
 				self.colt_1911.desc_id = "bm_1911_sc_desc"				
-				self.colt_1911.fire_mode_data.fire_rate = 0.10714285
+				self.colt_1911.fire_mode_data.fire_rate = 0.1176470588
 				self.colt_1911.CLIP_AMMO_MAX = 8
 				self.colt_1911.AMMO_MAX = 40
 				self.colt_1911.kick = self.stat_info.kick_tables.even_recoil
@@ -6527,7 +6528,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.has_description = true
 				self.m1911.desc_id = "bm_m1911_sc_desc"				
 				self.m1911.tactical_reload = 1	
-				self.m1911.fire_mode_data.fire_rate = 0.10714285
+				self.m1911.fire_mode_data.fire_rate = 0.1111111
 				self.m1911.CLIP_AMMO_MAX = 7
 				self.m1911.AMMO_MAX = 40
 				self.m1911.kick = self.stat_info.kick_tables.even_recoil
@@ -6570,7 +6571,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.korth.damage_falloff = {
 					start_dist = 900,
 					end_dist = 4000,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.korth.stats = {
 					damage = 60,
@@ -6588,8 +6589,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.korth.stats_modifiers = nil
 				self.korth.armor_piercing_chance = 0.5
+				self.korth.swap_speed_multiplier = 0.65
 				self.korth.can_shoot_through_enemy = true
 				self.korth.panic_suppression_chance = 0.05
+				self.korth.reload_speed_multiplier = 0.92
 				self.korth.timers.reload_exit_empty = 0.8
 				self.korth.timers.reload_exit_not_empty = 0.8
 
@@ -6606,7 +6609,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mateba.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 4200,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.mateba.stats = {
 					damage = 60,
@@ -6626,7 +6629,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mateba.armor_piercing_chance = 0.5
 				self.mateba.can_shoot_through_enemy = true
 				self.mateba.panic_suppression_chance = 0.05
-				self.mateba.reload_speed_multiplier = 1.3
+				self.mateba.reload_speed_multiplier = 1.24
 				self.mateba.timers.reload_exit_empty = 0.55
 				self.mateba.timers.reload_exit_not_empty = 0.55
 
@@ -6641,7 +6644,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.model3.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3800,
-					min_mult = 0.25
+					min_mult = 0.2
 				}
 				self.model3.stats = {
 					damage = 60,
@@ -12918,7 +12921,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			equip = 0.35
 		}	
 		self.socom.tactical_reload = 1	
-		self.socom.fire_mode_data.fire_rate = 0.10714285
+		self.socom.fire_mode_data.fire_rate = 0.117647058
 		self.socom.CLIP_AMMO_MAX = 12
 		self.socom.AMMO_MAX = 40
 		self.socom.kick = self.stat_info.kick_tables.even_recoil
@@ -12957,7 +12960,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_socom.tactical_reload = 2
 		self.x_socom.BURST_FIRE = 2
 		self.x_socom.BURST_FIRE_RATE_MULTIPLIER = 2
-		self.x_socom.fire_mode_data.fire_rate = 0.10714285
+		self.x_socom.fire_mode_data.fire_rate = 0.117647058
 		self.x_socom.CLIP_AMMO_MAX = 24
 		self.x_socom.AMMO_MAX = 80
 		self.x_socom.kick = self.stat_info.kick_tables.even_recoil

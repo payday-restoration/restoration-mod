@@ -162,6 +162,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
 
 
 	local swat_2 = unit_name == Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc")
@@ -170,6 +172,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk")
 	
 	local swat_heavy_r870 = unit_name == Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk")
@@ -177,6 +181,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
 	
 	local swat_heavy_1 = unit_name == Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk")
@@ -184,13 +190,15 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk")
 
 	local swat_3 = unit_name == Idstring("units/payday2/characters/ene_swat_3/ene_swat_3")
 	or unit_name == Idstring("units/payday2/characters/ene_swat_3/ene_swat_3_husk") 
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk")
 
 	local swat_sniper = unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")
@@ -198,6 +206,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper_husk")
 	
 	local swat_shield = unit_name == Idstring("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk") 
@@ -205,6 +215,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")
 	or unit_name == Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk")
 	
     if self._unit:damage() and self._unit:damage():has_sequence("swat_smg") and swat_1 then
         self._unit:damage():run_sequence_simple("swat_smg") 		
@@ -218,12 +230,12 @@ function CopBase:random_mat_seq_initialization()
 		self._unit:damage():run_sequence_simple("swat_sg_helmetlight")				
 	elseif self._unit:damage() and self._unit:damage():has_sequence("heavy_swat_ar") and swat_heavy_1 then
 		self._unit:damage():run_sequence_simple("heavy_swat_ar")	
-	elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_heavy_1 then
-		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")		
+	--[[elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_heavy_1 then
+		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")--]]
 	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_ar") and swat_3 and not flashlights_on then
 		self._unit:damage():run_sequence_simple("swat_ar")	
-	elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_3 then
-		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")
+	--[[elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_3 then
+		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")--]]
 	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_sniper") and swat_sniper then
 		self._unit:damage():run_sequence_simple("swat_sniper")	
 	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_shield") and swat_shield then

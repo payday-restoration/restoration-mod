@@ -36,8 +36,6 @@ local enemies_visor = {
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),                 
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"),                 
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
 	ids_func("units/pd2_mod_reapers/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
@@ -108,9 +106,6 @@ local enemies_plink = {
 	
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),
-	
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),     
 	
 	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
 	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk"),

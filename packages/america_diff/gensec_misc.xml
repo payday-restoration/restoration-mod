@@ -5,8 +5,6 @@
 	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
-	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>
 	
 	<!-- gensec tier -->
 	<!--city swat 1-->
@@ -26,20 +24,23 @@
 	<cooked_physics		path="units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc" />	
 	<!-- gensec tier end -->	
 	
-	
 	<!-- for pro jobs -->
-	<!--city heavy g36-->
-	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" load="true"/>
-	<unit				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk" load="true"/>
-	<model				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />		
-	<object				path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />	
-	<material_config	path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_contour" />		
-	<cooked_physics		path="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" />
-	
-	<!--city heavy ump, use him only for Armored Transport heists-->
-	<unit				path="units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc" load="true"/>
-	<unit				path="units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc_husk" load="true"/>
+	<!--FTSU Guards -->	
+	<unit				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" load="true" />
+	<unit				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1_husk" load="true" />	
+	<object				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
+	<cooked_physics		path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
+	<model				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
+
+	<unit				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2" load="true" />
+	<unit				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2_husk" load="true"  />	
+	<object				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
+	<model				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
+	<material_config	path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2" />	
+	<material_config	path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2_contour"  />	
+	<cooked_physics		path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
+
+	<texture			path="units/payday2/characters/shared_textures/swat_city_df_guard" />
 	
 	<!--FBI Ready Teams-->
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1" load="true"/>	

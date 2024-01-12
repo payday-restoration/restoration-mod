@@ -10915,7 +10915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.sko12.stats_modifiers = nil
-				self.sko12.reload_speed_multiplier = 0.675
+				self.sko12.reload_speed_multiplier = 0.7
 				self.sko12.panic_suppression_chance = 0.05
 				self.sko12.timers.reload_empty = 3.4
 				self.sko12.timers.reload_exit_empty = 1.0

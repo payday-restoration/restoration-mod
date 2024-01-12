@@ -202,9 +202,10 @@ local limbs = {
 
 local damage_type_mult = {
 	machine_gun = 0.6,
+	heavy_pistol = 0.6,
 	pistol = 0.7,
 	assault_rifle = 0.7,
-	heavy_pistol = 0.8,
+	handcannon = 0.8,
 	sniper = 0.8
 }
 

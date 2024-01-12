@@ -224,7 +224,7 @@ function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
 		return false
 	end
 
-	local movement_ext = alive(unit) and unit:movement() --Deals with funny case with enemy thrown frags.
+	local movement_ext = alive(unit) and unit.movement and unit:movement() --Deals with funny case with enemy thrown frags.
 	if not movement_ext or movement_ext:team() ~= self._unit:movement():team() and movement_ext:friendly_fire() then
 		return false
 	end
@@ -576,18 +576,21 @@ function PlayerDamage:damage_bullet(attack_data)
 		local in_air = self._unit:movement():current_state():in_air()
 		local hit_in_air = self._unit:movement():current_state()._hit_in_air
 		local on_ladder = self._unit:movement():current_state():on_ladder() 
+		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
+		local range = nil
 
 		--Apply slow debuff if bullet has one.
 		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
 			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
-			if slow_data.taunt then
-				attacker_unit:sound():say("post_tasing_taunt")
+			range = slow_data and slow_data.range 
+			if not range or (range and distance < range) then
+				if slow_data.taunt then
+					attacker_unit:sound():say("post_tasing_taunt")
+				end
+				managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 			end
-			managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 		end
 
-		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
-		local range = nil
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then

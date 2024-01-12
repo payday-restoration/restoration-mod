@@ -1183,7 +1183,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты и тонкие стены.##",
 		["bm_wp_upg_a_slug_spam_desc"] = "Свинцовая пуля, которая #{skill_color}#наносит 75% урона через броню, пробивает врагов и тонкие стены.##",
 		["bm_wp_upg_a_slug_titan_desc"] = "Свинцовая пуля, которая #{skill_color}#пробивает броню, врагов, щиты, титан щиты и тонкие стены.##",
-		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля с радиусом взрыва #{skill_color}#1.5## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{risk}#урон поделен поровну между пулей и взрывом.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "#{heat_warm_color}#Взрывная## пуля с радиусом взрыва #{skill_color}#2## метра.\n#{skill_color}#Не теряет урон с расстоянием##, но #{risk}#урон поделен поровну между пулей и взрывом.##",
 		["bm_wp_upg_a_custom_desc"] = "#{important_1}#6## больших дробинок, которые #{skill_color}#увеличивают урон##",
 		["bm_wp_upg_a_custom_4_desc"] = "#{important_1}#4## большие дробинки, которые #{skill_color}#увеличивают урон##",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Магниевые осколки обладают #{skill_color}#15%## шансом #{heat_warm_color}#поджечь врагов##, прерывая и нанося #{heat_warm_color}#90## урона в течение #{skill_color}#2## секунд.\n\n#{risk}#Шанс уменьшается с расстоянием.##",
@@ -1450,6 +1450,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
+			--Auto-9
+			["bm_wp_rc_auto9_cartoon"] = "Мультяшные трейсеры",
+			["bm_wp_rc_auto9_cartoon_desc"] = "Вечеринка прямо как в 1988!",
 			--M2019 Blaster
 			["thatgun_desc"] = "Вот это волына!\n\nИменно та самая!\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 			--Malorian 3516

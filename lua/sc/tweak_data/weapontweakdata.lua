@@ -4274,7 +4274,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "dmr")
-		self[ wep_id ].recategorize = { "dmr_ar" }
+		self[ wep_id ].recategorize = { "dmr_ar", "light_dmr" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
@@ -4383,7 +4383,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"peacemaker","model3",
 		"r870","ksg","boot","m37","m1897","m590","supernova","huntsman","b682","coach",
 		"winchester1874","mosin","m95","r93","msr","model70","r700","sbl","desertfox","scout","awp","bessy",
-		"flamethrower_mk2","system","kacchainsaw_flamethrower",
+		"flamethrower_mk2","system","kacchainsaw_flamethrower","money",
 		"kacchainsaw","m134","shuno",
 		"china"
 	}
@@ -4392,7 +4392,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	recat = {
-		"flamethrower_mk2","system","kacchainsaw_flamethrower",
+		"flamethrower_mk2","system","kacchainsaw_flamethrower","money",
 		"kacchainsaw","m134","shuno"
 	}
 	for i, wep_id in ipairs(recat) do
@@ -8045,11 +8045,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				total_ammo_mod = 200,
 				value = 1,
 				reload = 20
-			}
-			self.tecci.recoil_values = {
-				{ 80, 60 },
-				7.5,
-				0.6
 			}
 			self.tecci.stats_modifiers = nil
 			self.tecci.reload_speed_multiplier = 1
@@ -12810,6 +12805,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.shatters_fury.object_damage_mult = 2
 		--self.shatters_fury.animations.reload_name_id = "chinchilla"
 		self.shatters_fury.reload_speed_multiplier = 0.9
+		self.shatters_fury.force_shake = true
 		self.shatters_fury.timers = deep_clone(self.new_raging_bull.timers)
 		--this line doesn't do shit
 		--self.shatters_fury.custom = true
@@ -18939,7 +18935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.force_shake = true
 				weap.hipfire_shake = true
 			end
-			
+	
 			if table.contains(weap.categories, "dmr") then
 				weap.SINGLE_FIRE_AP_ADD = 0.25
 			end
@@ -18956,7 +18952,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "wolf_brigade") and not table.contains(weap.categories, "minigun") then
 						weap.sms = weap.sms / 1.5
 						weap.rms = weap.weapon_movement_penalty
-						weap.zoom_recoil_reduction = 0.02
+						weap.zoom_recoil_reduction = 0.025
 					end
 					weap.smt_mult = 5
 					weap.smt_range = { 0.75, 1.35 }
@@ -18988,26 +18984,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							0.5
 						}
 					end
-				elseif weap.recategorize[1] == "light_shot" then
-						weap.sads_mult = 0.4
+				elseif weap.categories[1] == "flamethrower" then
 					weap.recoil_values = {
 						{ 80, 60 },
 						5,
-						0.4
+						0.4,
+						srm = {
+							0.075,
+							{0.25, 1},
+							0
+						}
+					}
+				elseif weap.recategorize[1] == "light_shot" then
+					weap.sads_mult = 0.4
+					weap.recoil_values = {
+						{ 80, 60 },
+						5,
+						0.4,
+						srm = {
+							-0.025,
+							{1, 1.1},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "heavy_shot" then
 					weap.sads_mult = 0.3
 					weap.recoil_values = {
 						{ 80, 60 },
 						4,
-						0.3
+						0.3,
+						srm = {
+							-0.025,
+							{1, 1.1},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "break_shot" then
 					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						3,
-						0.2
+						0.2,
+						srm = {
+							-0.025,
+							{1, 1.1},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "light_smg" then
 					weap.sads_mult = 0.5
@@ -19035,35 +19057,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.recoil_values = {
 						{ 80, 60 },
 						6.5,
-						0.4
+						0.4,
+						srm = {
+							-0.008,
+							{1, 1.08},
+							4
+						}
 					}
 				elseif weap.recategorize[1] == "dmr_ar" then
 					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						5.5,
-						0.2
+						0.2,
+						srm = {
+							-0.03,
+							{1, 1.15},
+							2
+						}
 					}
 				elseif weap.recategorize[1] == "light_mg" then
 					weap.sads_mult = 0.2
 					weap.recoil_values = {
 						{ 80, 60 },
 						6,
-						0.3
+						0.3,
+						srm = {
+							0.01,
+							{0.8, 1},
+							14
+						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
 					weap.sads_mult = 0.1
 					weap.recoil_values = {
 						{ 80, 60 },
 						5.5,
-						0.2
+						0.2,
+						srm = {
+							0.0125,
+							{0.8, 1},
+							9
+						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then
 					weap.sads_mult = 0.1
 					weap.recoil_values = {
 						{ 80, 60 },
 						5,
-						0.1
+						0.1,
+						srm = {
+							0.016,
+							{0.6, 1},
+							19
+						}
 					}
 				elseif weap.recategorize[1] == "light_snp" then
 					weap.sads_mult = 0.3

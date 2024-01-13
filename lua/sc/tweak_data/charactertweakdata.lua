@@ -2957,7 +2957,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.static_weapon_preset = true
 	self.shield.detection = presets.detection.normal
-	self.shield.HEALTH_INIT = 13
+	self.shield.HEALTH_INIT = 15
 	self.shield.headshot_dmg_mul = 2.2
 	self.shield.damage_resistance = presets.damage_resistance.none
 	self.shield.damage.explosion_damage_mul = 0.8
@@ -3018,7 +3018,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.static_weapon_preset = true
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.0
-	self.phalanx_minion.HEALTH_INIT = 19.5
+	self.phalanx_minion.HEALTH_INIT = 22.5
 	self.phalanx_minion.damage_resistance = presets.damage_resistance.none
 	self.phalanx_minion.damage.explosion_damage_mul = 0.25
 	self.phalanx_minion.damage.rocket_damage_mul = 0.25

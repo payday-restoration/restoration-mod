@@ -1932,6 +1932,11 @@ function CopDamage:die(attack_data)
 		self._unit:contour():remove("medic_show", false)
 		self._unit:contour():remove("medic_buff", false)
 	end
+	
+	if self._unit:base() then
+		self._unit:base():disable_lpf_buff(true)
+		self._unit:base():disable_asu_laser(true)
+	end
 
 	if self._unit:base()._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("kill_spook_lights")
@@ -3449,32 +3454,6 @@ function CopDamage:do_medic_heal()
 	self._health_ratio = 1
 
 	self:_update_debug_ws()
-
-	if self._unit:contour() then
-		local crackhead = Idstring("Head")
-		local attach_to_unit = self._unit:get_object(crackhead)
-		if not attach_to_unit then
-			return
-		end
-		
-		World:effect_manager():spawn({
-			effect = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"),
-			parent = attach_to_unit
-		})	
-		--self._unit:contour():add("medic_heal", true)
-		--self._unit:contour():flash("medic_heal", 0.2)
-	end
 	
-	return true
-end
-
-function CopDamage:do_medic_heal_and_action(sync)
-	self:do_medic_heal()
-	self._unit:movement():request_healed_action()
-
-	if sync then
-		self._unit:network():send("sync_action_healed", true)
-	end
-
 	return true
 end

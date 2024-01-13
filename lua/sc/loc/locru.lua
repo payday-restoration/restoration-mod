@@ -186,6 +186,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingExcludeDescID"] = "Ограничивает очередь для оружия, которое стреляет быстрее, чем указано в этой настройке.",
 		["RestorationModQueuedShootingMidBurstTitleID"] = "Очередь нажатий во время стрельбы оружейной очередью",
 		["RestorationModQueuedShootingMidBurstDescID"] = "Заносит нажатия на курок в очередь, если они были сделаны во время стрельбы оружейной очередью.",
+		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Ограничение для стрельбы очередями",
+		["RestorationModQueuedShootingBurstExcludeDescID"] = "Ограничивает занесение нажатий в очередь для оружий, задержка которых ниже, чем выставленная этой настройкой.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "Отключить отдачу в прицеле",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Отключает анимацию отдачи во время прицеливания. Опция не влияет на некоторое оружие (луки, огнеметы)",
 		["RestorationModNoSwapOnReviveTitleID"] = "Отключить переключение оружия после поднятия",
@@ -1644,9 +1646,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "Самая распространенная винтовка под .223. Подойдет для любых целей.",
 		--G36
-		["bm_g36_sc_desc"] = "Еще один претендент на звание 'лучшей пластиковой винтовки'.",		
+		["bm_g36_sc_desc"] = "Еще один претендент на звание 'лучшей пластиковой винтовки'.",
+		["bm_wp_upg_i_m8a1"] = "Набор М8",
+		["bm_wp_upg_i_m8a1_desc"] = "Оружие будет стрелять только #{risk}#очередями по 4##, взамен увеличивая скорость стрельбы и размер магазина",
 		--VHS/Lion's Roar	
-		["bm_vhs_sc_desc"] = "Тяжелая в пользовании винтовка, способная на впечатляющий результат в руках умельца.\n\nВозможно, в ней боевой дух Драгана.",		
+		["bm_vhs_sc_desc"] = "Тяжелая в пользовании винтовка, способная на впечатляющий результат в руках умельца.\n\nВозможно, в ней боевой дух Драгана.",
+		["bm_wp_upg_i_swordfish"] = "Набор 'Рыба-меч'",
+		["bm_wp_upg_i_swordfish_desc"] = "Оружие будет стрелять только #{risk}#очередями по 5##, взамен увеличивая скорость стрельбы и размер магазин",
 		--Olympic/Para
 		["bm_menu_sc_olympic_desc"] = "Чудовищный пистолет-переросток, стреляющий винтовочными патронами в автоматическом режиме. Экзистенциальный кризис, из которого можно стрелять.",
 		--TAR-21/Para

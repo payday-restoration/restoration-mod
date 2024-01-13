@@ -5721,6 +5721,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_snp_tti_s_vltor")
 
+	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_i_m8a1")
+
 	self.wpn_fps_ass_g36_npc.uses_parts = deep_clone(self.wpn_fps_ass_g36.uses_parts)
 
 end)
@@ -11589,7 +11591,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	self.parts.wpn_fps_ass_vhs_b_sniper.supported = true
 	self.parts.wpn_fps_ass_vhs_b_sniper.stats = deep_clone(barrels.long_b3_stats)
 	self.parts.wpn_fps_ass_vhs_b_sniper.custom_stats = deep_clone(barrels.long_b3_stats)
-	
+
+	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_i_swordfish")
+	self.wpn_fps_ass_vhs_npc.uses_parts = deep_clone(self.wpn_fps_ass_vhs.uses_parts)
+
 end)
 
 --LEO
@@ -22183,6 +22188,82 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		internal_part = true,
 		dlc = "sc"
 	}	
+
+	self.parts.wpn_fps_upg_i_m8a1 = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_m8a1",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {
+			lock_burst = true,
+			m8a1_burst = true,
+			rof_mult = 1.6666666666666666666666666666667,
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 1
+		},
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 8,
+			concealment = -1,
+			extra_ammo = 2
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	for k, used_part_id in ipairs(self.wpn_fps_ass_g36.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "magazine" then
+				if self.parts[used_part_id].stats and self.parts[used_part_id].stats.extra_ammo then
+					table.insert(self.parts.wpn_fps_upg_i_m8a1.forbids, used_part_id)
+				end
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_i_swordfish = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_swordfish",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {
+			lock_burst = true,
+			swordfish_burst = true,
+			rof_mult = 1.29411764,
+			falloff_start_mult = 0.8,
+			falloff_end_mult = 1
+		},
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 10,
+			concealment = -4,
+			recoil = 6,
+			extra_ammo = 5
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
+	for k, used_part_id in ipairs(self.wpn_fps_ass_vhs.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "magazine" then
+				if self.parts[used_part_id].stats and self.parts[used_part_id].stats.extra_ammo then
+					table.insert(self.parts.wpn_fps_upg_i_swordfish.forbids, used_part_id)
+				end
+			end
+		end
+	end
 
 	self.parts.wpn_fps_upg_i_tekna = {
 		pcs = {},

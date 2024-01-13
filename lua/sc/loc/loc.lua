@@ -203,10 +203,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
 		["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
 		["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
-		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Firerate Limit",
+		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
 		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
 		["RestorationModQueuedShootingMidBurstTitleID"] = "Burstfire Mid-Burst Input Buffer",
 		["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
+		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Burstfire Input Buffer Delay Limit", --TODO
+		["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs to weapons that have a delay *below* the delay (ms) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
@@ -2341,8 +2343,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
 				--G36
 				["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
+				["bm_wp_upg_i_m8a1"] = "M8 Burst Kit",
+				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine",
 				--VHS/Lion's Roar
 				["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",
+				["bm_wp_upg_i_swordfish"] = "Swordfish Burst Kit",
+				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine",
 				--Olympic/Para
 				["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
 				--TAR-21/Para

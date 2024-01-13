@@ -22199,7 +22199,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			lock_burst = true,
 			m8a1_burst = true,
-			rof_mult = 1.6666666666666666666666666666667,
+			rof_mult = 1.33333333,
 			falloff_start_mult = 0.9,
 			falloff_end_mult = 1
 		},

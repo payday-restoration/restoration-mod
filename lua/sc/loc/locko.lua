@@ -208,8 +208,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링되는 발사 선입력 시간 간격을 결정합니다. (높은 값 = 더 일찍 선입력)",
 		["RestorationModQueuedShootingExcludeTitleID"] = "단발 선입력 발사 속도 제한",
 		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 선입력의 버퍼링을 제한합니다.",
-		["RestorationModQueuedShootingMidBurstTitleID"] = "점사 점사 선입력",
-		["RestorationModQueuedShootingMidBurstDescID"] = "점사 도중에 만들어지는 버퍼 선입력을 결정합니다.",				
+		["RestorationModQueuedShootingMidBurstTitleID"] = "점사 중간 발사 선입력",
+		["RestorationModQueuedShootingMidBurstDescID"] = "점사 도중에 만들어지는 버퍼 선입력을 결정합니다.",
+		["RestorationModQueuedShootingBurstExcludeTitleID"] = "점사 선입력 제한", --TODO
+		["RestorationModQueuedShootingBurstExcludeDescID"] = "이 옵션으로 설정된 지연(밀리초)보다 *낮은* 선입력을 가진 무기에 대한 발사 선입력을 제한합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
@@ -1204,7 +1206,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--10-0
 		["bm_wp_upg_i_tekna"] = "테크나 점사 킷",
-		["bm_wp_upg_i_tekna_desc"] = "이 무기에 #{risk}#3점사 발사 모드##로 잠굽니다.",
+		["bm_wp_upg_i_tekna_desc"] = "이 무기를 #{risk}#3점사 발사 모드##로 고정시킵니다. #{skill_color}#글레이브##와 함께 사용하면 어떨까요?",
+		["bm_wally_desc"] = "#{important_2}#안녕 꼬마야...##",
 
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 킷",
@@ -1688,9 +1691,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "세계에서 가장 많이 생산된 .223탄을 사용하는 소총이자, 훌륭한 다목적 소총입니다.",
 		--G36
-		["bm_g36_sc_desc"] = "'최고의 플라스틱 소총' 상을 위한 또 다른 최고 순위 경쟁자.",		
+		["bm_g36_sc_desc"] = "'최고의 플라스틱 소총' 상을 위한 또 다른 최고 순위 경쟁자.",
+		["bm_wp_upg_i_m8a1"] = "M8 점사 킷",
+		["bm_wp_upg_i_m8a1_desc"] = "발사 모드를 #{risk}#4점사##로 고정하여 발사 속도를 향상시키고 탄창에 추가 탄약을 제공합니다.",		
 		--VHS/Lion's Roar
 		["bm_vhs_sc_desc"] = "유능한 자의 손에서 인상적인 성능을 자랑하고 다루기 힘든 소총.\n\n전투에서 드라간의 분노의 영혼을 널리 알린다고 합니다.",
+		["bm_wp_upg_i_swordfish"] = "소드피시 점사 킷",
+		["bm_wp_upg_i_swordfish_desc"] = "발사 모드를 #{risk}#5점사##로 고정하여 발사 속도를 향상시키고 탄창에 추가 탄약을 제공합니다.",
 		--Olympic/Para
 		["bm_w_olympic"] = "Para-23 소총",
 		["bm_menu_sc_olympic_desc"] = "완전 자동 방식으로 소총탄을 발사하고 엄청나게 큰 권총. 이 총은 총알을 쏘는 실존적 위기입니다.",	

@@ -7749,6 +7749,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.fire_mode_data.fire_rate = 0.0545454545
 				self.polymer.CAN_TOGGLE_FIREMODE = true
 				self.polymer.BURST_FIRE = 2
+				self.polymer.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.polymer.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
+				self.polymer.BURST_DELAY = 0.06
 				self.polymer.ADAPTIVE_BURST_SIZE = false													
 				self.polymer.kick = self.stat_info.kick_tables.even_recoil
 				self.polymer.supported = true
@@ -7785,6 +7788,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.schakal.AMMO_MAX = 120
 				self.schakal.CLIP_AMMO_MAX = 25
 				self.schakal.BURST_FIRE = 2
+				self.schakal.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
+				self.schakal.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
+				self.schakal.BURST_DELAY = 0.08
 				self.schakal.ADAPTIVE_BURST_SIZE = false											
 				self.schakal.kick = self.stat_info.kick_tables.even_recoil
 				self.schakal.panic_suppression_chance = 0.05
@@ -8251,6 +8257,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.hk51b.fire_mode_data.fire_rate = 0.063157
 			self.hk51b.CAN_TOGGLE_FIREMODE = true
 			self.hk51b.BURST_FIRE = 3
+			self.hk51b.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
+			self.hk51b.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
+			self.hk51b.BURST_DELAY = 0.12
 			self.hk51b.kick = self.stat_info.kick_tables.right_kick
 			self.hk51b.panic_suppression_chance = 0.05
 			self.hk51b.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -8444,6 +8453,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk21.AMMO_MAX = 160
 				self.hk21.fire_mode_data.fire_rate = 0.075
 				self.hk21.CAN_TOGGLE_FIREMODE = true
+				self.hk21.BURST_FIRE = 3
+				self.hk21.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.hk21.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.1
+				self.hk21.BURST_DELAY = 0.18
 				self.hk21.fake_semi_anims = true
 				self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
 				self.hk21.always_use_standing = true

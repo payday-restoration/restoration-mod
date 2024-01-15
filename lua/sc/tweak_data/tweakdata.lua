@@ -916,19 +916,19 @@ tweak_data.casino = {
 		15000,
 		15000
 	},
-	prefer_cost = 5000,
-	prefer_chance = 0.1,
+	prefer_cost = 500000,
+	prefer_chance = 0.2,
 	secure_card_cost = {
-		10000,
-		20000,
-		30000
+		1000000,
+		3300000,
+		6500000
 	},
 	secure_card_level = {
 		0,
 		0,
 		0
 	},
-	infamous_cost = 100000,
+	infamous_cost = 3000000,
 	infamous_chance = 3
 }	
 

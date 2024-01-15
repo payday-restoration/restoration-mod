@@ -3438,11 +3438,17 @@ function CopDamage:can_attach_projectiles()
 end
 
 function CopDamage:check_medic_heal()
-	if self._unit:movement():chk_action_forbidden("action") then
+	if self._unit:anim_data().act then
 		return false
 	end
 
 	local medic = managers.enemy:get_nearby_medic(self._unit)
+	
+	if medic and medic.anim_data then
+		if medic:anim_data().hurt or medic:anim_data().heavy_hurt then
+			return false
+		end
+	end
 
 	return medic and medic:character_damage():heal_unit(self._unit)
 end

@@ -208,10 +208,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingWindowDescID"] = "무기 발사 시간 지연의 %에 따라 버퍼링되는 발사 선입력 시간 간격을 결정합니다. (높은 값 = 더 일찍 선입력)",
 		["RestorationModQueuedShootingExcludeTitleID"] = "단발 선입력 발사 속도 제한",
 		["RestorationModQueuedShootingExcludeDescID"] = "이 옵션으로 설정한 발사 속도(RPM) *이상으로* 발사하는 무기에 대한 발사 선입력의 버퍼링을 제한합니다.",
-		["RestorationModQueuedShootingMidBurstTitleID"] = "점사 중간 발사 선입력",
+		["RestorationModQueuedShootingMidBurstTitleID"] = "중간 점사 선입력",
 		["RestorationModQueuedShootingMidBurstDescID"] = "점사 도중에 만들어지는 버퍼 선입력을 결정합니다.",
-		["RestorationModQueuedShootingBurstExcludeTitleID"] = "점사 선입력 제한", --TODO
-		["RestorationModQueuedShootingBurstExcludeDescID"] = "이 옵션으로 설정된 지연(밀리초)보다 *낮은* 선입력을 가진 무기에 대한 발사 선입력을 제한합니다.",		
+		["RestorationModQueuedShootingBurstExcludeTitleID"] = "중간 점사 선입력 제한", --TODO
+		["RestorationModQueuedShootingBurstExcludeDescID"] = "이 옵션으로 설정된 값(ms)보다 *낮은* 점사 지연을 갖는 무기에 대해 *사격하는 동안* 이루어진 발사 선입력의 버퍼링을 제한합니다.",		
 		["RestorationModNoADSRecoilAnimsTitleID"] = "조준 중 반동 애니메이션 없음",
 		["RestorationModNoADSRecoilAnimsDescID"] = "조준 중 반동 애니메이션을 활성화하거나 비활성화합니다. 일부 무기는 이 옵션의 영향을 받지 않습니다(예: 수동으로 작동하는 총, 활, 화염방사기).",
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
@@ -1690,6 +1690,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_s552_sc_desc"] = "다른 5.56mm탄을 사용하는 소형 소총에 대한 훌륭한 대안용 소총, 국토감시부에서 선호하는 소총이기도 합니다. 또한 더 나은 사거리를 제공하는 특수 스위스제 5.56mm탄을 사용합니다.",				
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "세계에서 가장 많이 생산된 .223탄을 사용하는 소총이자, 훌륭한 다목적 소총입니다.",
+		["bm_wp_upg_i_og_rof"] = "발사 속도 제한기",
+		["bm_wp_upg_i_og_rof_desc"] = "이 무기의 터무니없이 낮은 발사 속도를 복원합니다. 관심이 있다면...",
 		--G36
 		["bm_g36_sc_desc"] = "'최고의 플라스틱 소총' 상을 위한 또 다른 최고 순위 경쟁자.",
 		["bm_wp_upg_i_m8a1"] = "M8 점사 킷",
@@ -1795,7 +1797,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--G3
 		["bm_w_g3"] = "Gewehr-3 소총",
 		["bm_g3_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
-		
+		["bm_g3_ap25_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 75%를 가하고 어러 적을 관통할 수 있습니다.##",	
+		["bm_g3_sg1_sc_desc"] = "Compact-5 및 Brenner-21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복과 적, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
 		--Little Friend--
 		["bm_w_contraband"] = "Bigger Friend 7.62 소총",	
 		["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 AMR-16의 큰 자매.\n\n#{skill_color}#방탄복을 관통해 피해의 25%를 가하고## #{skill_color}#$BTN_BIPOD## 키를 누르면 장착된 유탄 발사기로 전환됩니다.",
@@ -1812,6 +1815,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Galil
 		["bm_w_galil"] = "Defender 7.62 소총",
 		["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 25%를 가합니다.##",
+		["bm_galil_ap25_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가합니다.##",
+		["bm_galil_556_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체로도 고전적인 AK 소총의 파생품입니다. 모방은 아첨의 진정한 형태입니다.",		
 		--KS12
 		["bm_shak12_sc_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적을 관통할 수 있습니다.##",
 		["bm_shak12_sc_oden_desc"] = "매우 강력한 12.7x55mm 카트리지를 자랑하는 불펍 디자인의 전투 소총입니다. 매우 컴팩트한 패키지에 담긴 최고의 대학살을 적들에게 보여줄 수 있습니다.\n\n#{skill_color}#적, 방탄복, 방패 및 얇은 벽을 관통할 수 있습니다.##",		
@@ -2536,6 +2541,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_sniper"] = "매크로 총열",
 		["bm_wp_g3_b_short"] = "마이크로 총열",
 		["bm_wp_g3_m_psg"] = "프레지션 탄창",
+		["bm_wp_upg_i_g3sg1"] = "프레지션 내부",
+		["bm_wp_upg_i_g3sg1_desc"] = "#{skill_color}#완전한 방탄복 관통력과 방패 관통 능력을 부여하는## 고화력 탄을 장전합니다. 부품은 더 무거운 재료로 강화되어 #{important_1}#발사 속도가 감소되고## 무기를 #{risk}#반자동##으로 고정합니다.",		
 		["bm_wp_shak12_body_vks"] = "강화 프레임",
 		
 		--VMP HK416c Fixed Stock
@@ -3672,7 +3679,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						--Raifu
 						["bm_w_g3"] = "H&K G3A3",
-						["bm_g3_sc_desc"] = "MP5 및 HK21의 언니, 또한 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",
+						["bm_g3_sc_desc"] = "MP5 및 HK21의 언니, 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.##",
+						["bm_g3_ap25_sc_desc"] = "MP5 및 HK21의 언니, 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복을 관통해 피해의 75%를 가하고 어러 적 및 얇은 벽을 관통할 수 있습니다.",	
+						["bm_g3_sg1_sc_desc"] = "MP5 및 HK21의 언니, 이 소총의 명중률은 저격수보다 뛰어납니다.\n\n#{skill_color}#방탄복, 적, 방패, 얇은 벽을 관통할 수 있습니다.##",						
 						["bm_wp_g3_b_short"] = "단축 총열",
 						["bm_wp_g3_b_sniper"] = "PSG-1 총열",
 						["bm_wp_g3_fg_psg"] = "PSG-1 총열덮개",
@@ -4095,6 +4104,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_g3"] = "Jiisuri",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+						["bm_g3_sg1_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",						
 						["bm_wp_wpn_fps_ass_g3_body_hk33"] = "HK33 \"Chuusuri\" Set",
 						["bm_wp_wpn_fps_ass_g3_body_hk33_desc"] = "\"Call me that again, I dare you!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nDespite HK33's haugty attitude, she's been lovingly nicknamed \"Chuusuri\" by her peers, much to her chagrin.",						
 						["bm_menu_jiisuri_stock"] = "Pantyhose",

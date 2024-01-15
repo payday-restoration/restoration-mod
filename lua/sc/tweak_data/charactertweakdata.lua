@@ -2613,6 +2613,8 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
 	self.tank_skull.headshot_dmg_mul = 9.5
+	self.tank_skull.damage.explosion_damage_mul = 1.5
+	self.tank_skull.damage.rocket_damage_mul = 1.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
@@ -3174,7 +3176,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"law", "custom", "special", "captain", "spring"}
+	self.spring.tags = {"law", "custom", "special", "captain", "spring", "tank"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true

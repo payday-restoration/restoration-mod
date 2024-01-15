@@ -255,7 +255,7 @@
 						<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
-						<hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/>
+						<!--hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/-->
 						<hook file="sc/units/enemies/spooc/actions/lower_body/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 						<hook file="sc/units/enemies/actions/upper_body/copactionhealed.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionhealed"/>
 					<!--LOGICS-->

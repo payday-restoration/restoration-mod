@@ -77,12 +77,37 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--Pro Job PONR, for both BEAST and thermite entries
-	[105790] = {
+	--Pro Job PONR. Heli and van timers increased
+	--[[[105790] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	[105845] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value
+	},--]]
+	--Helicopter
+	[105804] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value + 300
+	},
+	--Van
+	[103405] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value + 300
+	},
+	--C4 route
+	[101373] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value
+	},
+	--Bus
+	[104782] = {
+		ponr_player_mul = ponr_timer_player_mul,
+		ponr = ponr_value
+	},
+	--Elevator
+	[101391] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},

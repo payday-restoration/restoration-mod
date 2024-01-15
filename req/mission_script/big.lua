@@ -35,6 +35,11 @@ if shadow_fucked_me_hard then
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+	
+	--Titan snipers in C4 route for DSPJ
+	if difficulty_index == 8 then
+		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+	end
 
 	--Increase the time lock timers on all diffs, will probably fuck 12 angry minutes achivement even more
 	if difficulty_index <= 5 then
@@ -105,6 +110,60 @@ return {
 				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
 			end
 		end
+	},
+	--adds swat access so titan snipers can move to SO spot
+	[102890] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
+			end
+		end
+	},
+	[102896] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
+			end
+		end
+	},
+	[102900] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
+			end
+		end
+	},
+	[102906] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
+			end
+		end
+	},
+	--Titan Snipers replace C4 route snipers on DSPJ
+	[102883] = {
+		values = {
+            enemy = titan_sniper_c4
+		}
+	},
+	[102893] = {
+		values = {
+            enemy = titan_sniper_c4
+		}
+	},
+	[102898] = {
+		values = {
+            enemy = titan_sniper_c4
+		}
+	},
+	[102901] = {
+		values = {
+            enemy = titan_sniper_c4
+		}
 	},
 	--More timelock timer on higher diifs and Pro Jobs
 	[103137] = {

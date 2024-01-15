@@ -4273,14 +4273,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
-		table.insert(self[ wep_id ].categories, "dmr")
+		table.insert(self[ wep_id ].categories, "dmr_l")
 		self[ wep_id ].recategorize = { "dmr_ar", "light_dmr" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
 	recat = { "ching", "g3", "new_m14", "shak12", "hcar" }
 	for i, wep_id in ipairs(recat) do
-		table.insert(self[ wep_id ].categories, "dmr")
+		table.insert(self[ wep_id ].categories, "dmr_h")
 		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "sniper"
 	end
@@ -9994,7 +9994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Galant (M1 Garand)
 				self.hcar.categories = { 
 					"assault_rifle",
-					"dmr"
+					"dmr_h"
 				}
 				self.ching.FIRE_MODE = "single"
 				self.ching.fire_mode_data.fire_rate = 0.12
@@ -10040,7 +10040,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Ohio Ord. HCAR
 				self.hcar.categories = { 
 					"assault_rifle",
-					"dmr"
+					"dmr_h"
 				}
 				self.hcar.has_description = true
 				self.hcar.desc_id = "bm_hcar_sc_desc"	
@@ -15056,7 +15056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.xeno then --Pawcio's Pulse Rifle
 		self.xeno.categories = {
 			"assault_rifle",
-			"dmr"
+			"dmr_l"
 		}
 		self.xeno.recategorize = {"dmr_ar"}
 		self.xeno.damage_type = "assault_rifle"
@@ -15104,7 +15104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.sks then
 		self.sks.categories = { 
 			"assault_rifle",
-			"dmr"
+			"dmr_l"
 		}
 		self.sks.sounds.magazine_empty = "wp_rifle_slide_lock"
 		self.sks.lock_slide = true
@@ -15151,7 +15151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.skspug then
 		self.skspug.categories = { 
 			"assault_rifle",
-			"dmr"
+			"dmr_l"
 		}
 		self.skspug.recategorize = {"dmr_ar"}
 		self.skspug.damage_type = "sniper"
@@ -15194,7 +15194,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.vss then
 		self.vss.categories = { 
 			"assault_rifle",
-			"dmr",
+			"dmr_h",
 		}
 		self.vss.recategorize = {"dmr_ar"}
 		self.vss.warsaw = true
@@ -15247,7 +15247,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.g3hk79 then
 		self.g3hk79.categories = { 
 			"assault_rifle",
-			"dmr",
+			"dmr_h",
 		}
 		self.g3hk79.recategorize = {"dmr_ar"}
 		self.g3hk79.damage_type = "sniper"
@@ -16234,7 +16234,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if self.owlfbullpup then
 			self.owlfbullpup.categories = { 
 				"assault_rifle",
-				"dmr",
+				"dmr_l",
 			}
 			self.owlfbullpup.recategorize = { "dmr_ar" }
 			self.owlfbullpup.damage_type = "sniper"
@@ -16280,7 +16280,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if self.plasmaproto then
 			self.plasmaproto.categories = { 
 				"assault_rifle",
-				"dmr",
+				"dmr_h",
 			}
 			self.plasmaproto.recategorize = { "dmr_ar" }
 			self.plasmaproto.damage_type = "sniper"
@@ -16814,8 +16814,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.pd3_qbz191 then --RJC9000 and PlayBONK's PAYDAY "THE SERVERS ARE DOWN! CAN'T PLAY, IDIOT" 3 QBZ-191
 		self.pd3_qbz191.categories = {
-			"assault_rifle",
-			"dmr"
+			"assault_rifle"
 		}
 		self.pd3_qbz191.warsaw = true
 		self.pd3_qbz191.recategorize = { "light_ar" }
@@ -17433,7 +17432,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.mcx_spear then --RJC9000 and PlayBONK's SIG MCX Spear
 		self.mcx_spear.categories = { 
 			"assault_rifle",
-			"dmr" 
+			"dmr_l" 
 		}
 		self.mcx_spear.recategorize = { "dmr_ar" }
 		self.mcx_spear.desc_id = "bm_mcx_spear_sc_desc"
@@ -17543,7 +17542,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
 		self.ngsierra.categories = { 
 			"assault_rifle",
-			"dmr" 
+			"dmr_l" 
 		}
 		self.ngsierra.recategorize = { "dmr_ar" }
 		self.ngsierra.desc_id = "bm_ngsierra_sc_desc"
@@ -17600,7 +17599,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 		self.vk78_commando.categories = { 
 			"assault_rifle",
-			"dmr"
+			"dmr_h"
 		}
 		self.vk78_commando.categories = { "assault_rifle" }
 		self.vk78_commando.recategorize = { "dmr_ar" }
@@ -17834,7 +17833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.xr2 then --KillerKrayola + Pawcio + splish's BO3 XR-2
 		self.xr2.categories = { 
 			"assault_rifle",
-			"dmr"
+			"dmr_l"
 		}
 		self.xr2.recategorize = { "dmr_ar" }
 		self.xr2.damage_type = "assault_rifle"
@@ -18079,7 +18078,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.fg42 then --Killerwolf's FG42
 		self.fg42.categories = { 
 			"assault_rifle",
-			"dmr"
+			"dmr_h"
 		}
 		self.fg42.recategorize = { "dmr_ar" }
 		self.fg42.categories = { "assault_rifle"}
@@ -18211,7 +18210,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.sierra458 then --Tangerine and PlayBONK's FTAC Recon :^)
 		self.sierra458.categories = {
 			"assault_rifle",
-			"dmr"
+			"dmr_h"
 		}
 		self.sierra458.recategorize = { "dmr_ar" }
 		self.sierra458.damage_type = "sniper"
@@ -18952,11 +18951,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.hipfire_shake = true
 			end
 	
-			if table.contains(weap.categories, "dmr") then
+			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") then
 				weap.SINGLE_FIRE_AP_ADD = 0.25
 			end
 
-			if table.contains(weap.categories, "dmr") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then
+			if table.contains(weap.categories, "dmr_h") or table.contains(weap.categories, "snp") or table.contains(weap.categories, "mmg") then
 				weap.sounds.fire_single3 = "judge_x_fire"
 			end
 
@@ -19235,7 +19234,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			shotgun_break = per_pellet and 1.06 or 1, --Heavy
 			shotgun_super = per_pellet and 1.10 or 1,
 		--assault_rifle = 1, 
-			dmr = 0.9,
+			dmr_l = 0.9,
+			dmr_h = 0.9,
 			--snp = 1, 
 				semi_snp = 0.8,
 				amr = 0.96,

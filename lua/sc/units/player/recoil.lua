@@ -341,7 +341,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				if weap_base._starwars then
 					speed = 1
 				else
-					speed = weap_base:fire_rate_multiplier()
+					speed = weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims )
 				end
 				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
 					redirect_name = Idstring("recoil_exit")
@@ -354,7 +354,6 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 			--]]
 		end
 	end
-	
 	self._anim_empty_state_wanted = false
 	local result = self._unit:play_redirect(redirect_name, offset_time)
 

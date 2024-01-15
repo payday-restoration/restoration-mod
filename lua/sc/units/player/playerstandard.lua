@@ -888,8 +888,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				local queue_inputs = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShooting")
 				local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
 				local queue_exlude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") or 0.6
-				local queue_mid_burst = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingMidBurst")
-			
+				local queue_burst_exclude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingBurstExclude") or 0.3
+				local queue_mid_burst = weap_base._burst_delay and queue_burst_exclude and queue_burst_exclude > weap_base._burst_delay and restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingMidBurst")
 				if queue_inputs and weap_base:in_burst_mode() then
 					if queue_mid_burst and input.real_input_pressed then
 						self._queue_burst = true
@@ -1151,7 +1151,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local srm = weap_tweak_data.recoil_values and weap_tweak_data.recoil_values.srm
 						local shots_fired = srm and math.max(weap_base._shots_fired - 1 - (srm[3] or 0), 0)  or 0
 						local shots_fired_mult = srm and math.round(100000 * math.clamp( 1 - (shots_fired * srm[1]) , srm[2][1], srm[2][2])) / 100000
-						log(tostring( shots_fired_mult ))
 						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired_mult or 1)
 						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or weap_tweak_data.kick
 						local always_standing = weap_tweak_data.always_use_standing

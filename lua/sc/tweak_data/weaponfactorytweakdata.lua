@@ -3948,6 +3948,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		}
 	}
 	--CAR-4 Override Tables
+	self.wpn_fps_ass_m4.override.wpn_fps_upg_i_og_rof = {
+		custom_stats = {
+			rof_mult = 0.8
+		}
+	}
 	--[[
 	self.wpn_fps_ass_m4.override.wpn_fps_upg_m4_s_standard_vanilla = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid",
@@ -3961,6 +3966,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m16_s_fixed")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_m16a2")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_og_rof")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -4084,6 +4090,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	}
 
 	--AMCAR Override Tables
+	self.wpn_fps_ass_amcar.override.wpn_fps_upg_i_og_rof = {
+		custom_stats = {
+			rof_mult = 0.625
+		}
+	}
 	--[[
 	self.wpn_fps_ass_amcar.override.wpn_fps_upg_m4_s_standard_vanilla = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid",
@@ -4139,6 +4150,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_upper_reciever_edge")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_ballos")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_core")
+
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_og_rof")
 	
 	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
@@ -8946,6 +8959,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt")
 	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3sg1")
 
 	self.wpn_fps_ass_g3_npc.adds = deep_clone(self.wpn_fps_ass_g3.adds)
 	self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
@@ -9884,6 +9898,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
 
 				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") or 
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
 					table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
 					table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
 					self[ factory_id ].override = self[ factory_id ].override or {}
@@ -22164,7 +22179,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		internal_part = true,
 		dlc = "sc"
-	}	
+	}
+
+	self.parts.wpn_fps_upg_i_g3sg1 = {
+		pcs = {},
+		type = "custom",
+		sub_type = "singlefire",
+		name_id = "bm_wp_upg_i_g3sg1",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {
+			alt_desc = "bm_g3_sg1_sc_desc",
+			rof_mult = 0.5,
+			armor_piercing_override = 1,
+			can_shoot_through_wall = true,
+			can_shoot_through_shield = true,
+			ignore_rof_mult_anims = true,
+			ads_speed_mult = 1.263157,
+			hip_mult = 1.666666,
+			damage_min_mult = 1.25,
+			sms = 0.7,
+			alt_ammo_pickup_min_mul = 0.875,
+			alt_ammo_pickup_max_mul = 0.875,
+			ammo_pickup_min_mul = 0.875,
+			ammo_pickup_max_mul = 0.875,
+			falloff_start_mult = 1.30,
+			falloff_end_mult = 1.30
+		},
+		perks = { "fire_mode_single" },
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_singlefire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 8,
+			spread = 6,
+			concealment = -4
+		},
+		override = {
+			wpn_fps_ass_g3_b_long = {
+				unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_b_sniper",
+				third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_b_sniper"
+			}
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
+	for k, used_part_id in ipairs(self.wpn_fps_ass_g3.uses_parts) do
+		if not table.contains(self.wpn_fps_ass_g3.default_blueprint, used_part_id) then
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "barrel" or
+				(self.parts[used_part_id].stats and self.parts[used_part_id].stats.damage) then
+					table.insert(self.parts.wpn_fps_upg_i_g3sg1.forbids, used_part_id)
+				end
+			end
+		end
+	end
+
+
 	
 	self.parts.wpn_fps_upg_i_93r = {
 		pcs = {},
@@ -22289,7 +22362,46 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		internal_part = true,
 		dlc = "sc"
-	}	
+	}
+
+	self.parts.wpn_fps_upg_i_og_rof = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_og_rof",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {
+		},
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 1,
+			spread = 2,
+			recoil = 2
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	attachment_list = {
+		"wpn_fps_ass_m4",
+		"wpn_fps_ass_amcar"
+	}
+	for i, factory_id in ipairs(attachment_list) do
+		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "exclusive_set" then
+					if self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.rof_mult then
+						table.insert(self.parts.wpn_fps_upg_i_og_rof.forbids, used_part_id)
+					end
+				end
+			end
+		end
+	end
 
 	--B3 Kit (M16A2 kit)
 	self.parts.wpn_fps_upg_i_m16a2 = {
@@ -29031,6 +29143,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					total_ammo_mod = 100
 				}
 				self.parts.wpn_fps_ass_galil_body_intermediate.custom_stats = {
+					alt_desc = "bm_galil_556_sc_desc",
 					ads_speed_mult = 0.842105,
 					damage_min_mult = 0.625,
 					falloff_start_mult = 0.72,

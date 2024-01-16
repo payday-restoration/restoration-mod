@@ -1341,7 +1341,7 @@ function PlayerManager:get_hostage_bonus_addend(category)
 end
 
 --Instantly reloads all equipped weapons. Used by Running from Death Ace.
-function PlayerManager:reload_weapons()
+function PlayerManager:reload_weapons(bypass_purse)
 	local weapons = {
 		self:player_unit():inventory():unit_by_selection(1), --Secondary
 		self:player_unit():inventory():unit_by_selection(2), --Primary
@@ -1351,7 +1351,7 @@ function PlayerManager:reload_weapons()
 	for _, weapon in pairs(weapons) do
 		if weapon and weapon.base then
 			local weapon_base = weapon:base()
-			weapon_base:on_reload(nil)
+			weapon_base:on_reload(nil, bypass_purse)
 			managers.statistics:reloaded()
 			managers.hud:set_ammo_amount(weapon_base:selection_index(), weapon_base:ammo_info())
 		end

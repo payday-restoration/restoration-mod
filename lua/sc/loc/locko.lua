@@ -217,7 +217,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
 		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬 없이 주 무기로 쓰러질 때 소생 시 강제 무기 교체를 비활성화합니다.",
 		["RestorationModManualReloadsTitleID"] = "수동 재장전",
-		["RestorationModManualReloadsDescID"] = "탄창이 비어 있을 때 자동 재장전을 비활성화합니다.\n프로 잡에는 설정과 관계없이 항상 활성화되어 있습니다.",		
+		["RestorationModManualReloadsDescID"] = "탄창이 비어 있을 때 자동 재장전을 비활성화합니다.",		
 		["RestorationModSecondSightSprintTitleID"] = "전력 질주 버튼 누르는 동안 보조 조준기 전환",
 		["RestorationModSecondSightSprintDescID"] = "가젯 버튼 대신 전력 질주 버튼을 사용하여 조준 도중에 보조 조준기로 전환합니다.\n활성화된 가젯은 U232 이전처럼 전환할 수 있지만 조준 도중에는 전력 질주를 할 수 없습니다.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS 스타일",

@@ -78,14 +78,6 @@ local ponr_timer_player_mul = {
 
 return {
 	--Pro Job PONR. Heli and van timers increased
-	--[[[105790] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
-	},
-	[105845] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
-	},--]]
 	--Helicopter
 	[105804] = {
 		ponr_player_mul = ponr_timer_player_mul,

@@ -93,6 +93,12 @@ return {
 	[101801] = {
 			flashlight = false
 	},
+	--Give saw to all players (Resmod edit not always give saw for every player)
+	[101865] = {
+		func = function(self)
+			managers.network:session():send_to_peers_synched("give_equipment", self._values.equipment, self._values.amount)
+		end
+	},
 	--dozers gets randomized
 	[102433] = {
 		values = {

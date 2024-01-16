@@ -6002,6 +6002,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.c96.stats_modifiers = nil
+				self.c96.keep_ammo = 1
 				self.c96.timers.reload_empty = 3.9
 				self.c96.timers.reload_exit_empty = 0.6
 				self.c96.timers.reload_not_empty = 2.7
@@ -10419,6 +10420,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.victor.stats_modifiers = nil
+				self.victor.keep_ammo = 1
 				self.victor.reload_speed_multiplier = 0.9
 				self.victor.armor_piercing_chance = 1
 				self.victor.ignore_reload_objects_not_empty = true
@@ -10599,6 +10601,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.mosin.stats_modifiers = nil
+				self.mosin.keep_ammo = 1
 				self.mosin.panic_suppression_chance = 0.05
 				self.mosin.timers.reload_speed_multiplier = 1.05
 				self.mosin.timers.reload_empty = 2.6
@@ -11655,6 +11658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.b682.stats_modifiers = nil
+				self.b682.keep_ammo = 1
 				self.b682.panic_suppression_chance = 0.05
 				self.b682.stats_modifiers = {damage = 1}
 				self.b682.reload_speed_multiplier = 1.02
@@ -11789,6 +11793,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.coach.stats_modifiers = nil
+				self.coach.keep_ammo = 1
 				self.coach.panic_suppression_chance = 0.05
 				self.coach.timers.reload_exit_empty = 0.3
 				self.coach.timers.reload_exit_not_empty = 0.3
@@ -16491,6 +16496,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.papa320.reload_speed_multiplier = 1.3
+		self.papa320.keep_ammo = 1
 		self.papa320.timers.reload_exit_empty = 0.8
 		self.papa320.timers.reload_empty = 2.15
 		self.papa320.timers.reload_exit_not_empty = 1
@@ -16885,6 +16891,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.lc10.stats_modifiers = nil
+		self.lc10.keep_ammo = 1
 		self.lc10.panic_suppression_chance = 0.05
 		self.lc10.timers.reload_not_empty = 2.11
 		self.lc10.timers.reload_exit_not_empty = 0.72
@@ -16924,6 +16931,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.t9british.stats_modifiers = nil
+		self.t9british.keep_ammo = 1
 		self.t9british.is_bullpup = true
 		self.t9british.panic_suppression_chance = 0.05
 		self.t9british.sounds.use_fix = nil
@@ -18506,6 +18514,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.sasha.stats_modifiers = nil
+		self.sasha.keep_ammo = 1
 		self.sasha.panic_suppression_chance = 0.05
 		self.sasha.object_damage_mult = 0.8
 		self.sasha.ads_spool = true
@@ -18856,7 +18865,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:get_swap_speed_multiplier(weap)
 			end
 
-			if not is_pro then
+			if is_pro then
+				if weap.keep_ammo ~= 1 then
+					weap.keep_ammo = 0
+				end
+			else
 				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
 			end
 			if weap.shake and not weap.shake.bypass_global_shake then

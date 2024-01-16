@@ -62,21 +62,42 @@ else
 			end
 		else
 			if ammo_base:get_ammo_remaining_in_clip() > 0 and ammo_base:weapon_tweak_data().tactical_reload == 1 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 
 			elseif ammo_base:get_ammo_remaining_in_clip() > 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 
 			elseif ammo_base:get_ammo_remaining_in_clip() >= 3 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 3))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 2 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 
-			elseif ammo_base:get_ammo_remaining_in_clip() > 0 and not ammo_base:weapon_tweak_data().tactical_reload then
+			elseif ammo_base:get_ammo_remaining_in_clip() > 0 and (not ammo_base:weapon_tweak_data().tactical_reload or ammo_base:weapon_tweak_data().tactical_reload == 0) then
+				if ammo_base:weapon_tweak_data().keep_ammo == 0 then
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))
 			elseif self._setup.expend_ammo then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip()))

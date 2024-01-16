@@ -911,7 +911,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					self._queue_fire = nil
 
 					local manual_reloads = restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
-					if params and params.no_reload or self:_is_using_bipod() or is_pro or manual_reloads then
+					if params and params.no_reload or self:_is_using_bipod() --[[or is_pro]] or manual_reloads then
 						if input.btn_primary_attack_press then
 							weap_base:dryfire()
 						end

@@ -4092,7 +4092,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	--AMCAR Override Tables
 	self.wpn_fps_ass_amcar.override.wpn_fps_upg_i_og_rof = {
 		custom_stats = {
-			rof_mult = 0.625
+			rof_mult = 0.68125
 		}
 	}
 	--[[
@@ -22223,6 +22223,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		},
 		forbids = {},
+		adds = { "wpn_fps_ass_g3sg1_sounds" },
 		internal_part = true,
 		dlc = "sc"
 	}
@@ -22237,6 +22238,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	self.parts.wpn_fps_ass_g3sg1_sounds = {
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_g3sg1_sounds",
+		unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
+		internal_part = true,
+		no_cull = true,
+		stats = {
+			value = 5
+		},
+		custom_stats = {
+			sounds = {
+				fire_single2 = "ching_fire"
+			}
+		}
+	}
 
 	
 	self.parts.wpn_fps_upg_i_93r = {

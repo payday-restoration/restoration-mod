@@ -1731,7 +1731,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.skill_descs.dance_instructor = {
 					skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
 					skill_value_p1 = tostring(self.values.pistol.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF bonus
-					skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100) -- AP boost
+					skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%" -- AP boost
 					}
 
 			--Gunfighter

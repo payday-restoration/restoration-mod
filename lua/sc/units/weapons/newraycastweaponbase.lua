@@ -63,34 +63,34 @@ else
 		else
 			if ammo_base:get_ammo_remaining_in_clip() > 0 and ammo_base:weapon_tweak_data().tactical_reload == 1 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 1))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 
 			elseif ammo_base:get_ammo_remaining_in_clip() > 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 2))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 2 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 1))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 
 			elseif ammo_base:get_ammo_remaining_in_clip() >= 3 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 3))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 3))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 2 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 2))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 2))
 			elseif ammo_base:get_ammo_remaining_in_clip() == 1 and ammo_base:weapon_tweak_data().tactical_reload == 3 then
 				if no_purse then
-					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - ammo_base:get_ammo_remaining_in_clip())
+					ammo_base:set_ammo_total(ammo_base:get_ammo_total() - (ammo_base:get_ammo_remaining_in_clip() - 1))
 				end
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip() + 1))
 

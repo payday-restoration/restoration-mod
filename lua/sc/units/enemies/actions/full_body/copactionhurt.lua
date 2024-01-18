@@ -79,9 +79,9 @@ function CopActionHurt:init(action_desc, common_data)
 		end
 
 		local dir_str = nil
-		local fwd_dot = action_desc.direction_vec:dot(common_data.fwd)
+		local fwd_dot = action_desc.direction_vec and action_desc.direction_vec:dot(common_data.fwd)
 
-		if fwd_dot < 0 then
+		if fwd_dot and fwd_dot < 0 then
 			local hit_pos = action_desc.hit_pos
 			local hit_vec = (hit_pos - common_data.pos):with_z(0):normalized()
 

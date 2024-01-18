@@ -3369,7 +3369,11 @@ function CopDamage:grenadier_bag_explode()
 end
 
 function CopDamage:kamikaze_bag_explode()    
-	local pos = self._unit:get_object(Idstring("Spine2")):position()
+	local pos = alive(self._unit) and (self._unit:get_object(Idstring("Spine2")):position() or self._unit:position())
+
+	if not pos then
+		return
+	end
 
 	local range = 400
 	local damage = 500

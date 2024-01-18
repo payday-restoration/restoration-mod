@@ -2528,10 +2528,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
-		0.5
+		0.6
 	}	
 	self.values.team.pocket_ecm_heal_on_kill = {
-		0.25
+		0.3
 	}	
 	
 	--Leech
@@ -2554,8 +2554,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.copr_speed_up_on_kill = {
 		1
 	}	
-	self.copr_ability_cooldown = 40
-	self.copr_risen_cooldown_add = 30
+	self.copr_ability_cooldown = 45
+	self.copr_risen_cooldown_add = 45
 
 	--Copycat
 	local health_boost = 0.05

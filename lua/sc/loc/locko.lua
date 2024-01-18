@@ -5381,11 +5381,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#10##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#15##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#1.2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#2.5##초씩 단축됩니다.",
+		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#7##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#8##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#1.5##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
-		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##5##만큼 회복됩니다.",
+		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##6##만큼 회복됩니다.",
 		["menu_deck21_7_desc_sc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
-		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##2.5##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##3##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.",
@@ -5480,7 +5480,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 #{skill_color}#18##미터 내에 있는 동료를 보고 투척 무기 사용 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 #{skill_color}#4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 #{skill_color}#2##만큼 회복합니다.\n\n효과는 #{skill_color}#11##초 동안 지속되며 재사용 대기시간은 #{important_1}#80##초입니다.\n\n카메라 루프 지속 시간이 #{skill_color}#20##초로 증가합니다.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#10##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#15##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#1.2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#2.5##초씩 단축됩니다.",
+			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#7##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#8##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#1.5##초씩 단축됩니다.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#2.5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 #{skill_color}#75%##만큼 빨라집니다.",
 

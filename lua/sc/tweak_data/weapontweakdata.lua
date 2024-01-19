@@ -17604,6 +17604,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ngsierra.timers.reload_exit_not_empty = 1.13
 	end
 
+	if self.owd_m1a then --RJC9000's OTWD M1A
+		self.owd_m1a.categories = { 
+			"assault_rifle",
+			"dmr_h" 
+		}
+		self.owd_m1a.recategorize = { "dmr_ar" }
+		self.owd_m1a.damage_type = "sniper"
+		self.owd_m1a.CLIP_AMMO_MAX = 10
+		self.owd_m1a.AMMO_MAX = 60
+		self.owd_m1a.FIRE_MODE = "single"
+		self.owd_m1a.CAN_TOGGLE_FIREMODE = false
+		self.owd_m1a.tactical_reload = 1
+		self.owd_m1a.kick = {}
+		self.owd_m1a.kick = self.stat_info.kick_tables.vertical_kick
+		self.owd_m1a.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+		self.owd_m1a.supported = true
+		self.owd_m1a.ads_speed = 0.360
+		self.owd_m1a.damage_falloff = {
+			start_dist = 3200,
+			end_dist = 7200,
+			min_mult = 0.4
+		}	
+		self.owd_m1a.stats = {
+			damage = 60,
+			spread = 91,
+			recoil = 59,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 7,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 200,
+			value = 9,
+			reload = 20
+		}
+		self.owd_m1a.stats_modifiers = nil
+		self.owd_m1a.panic_suppression_chance = 0.05
+		self.owd_m1a.can_shoot_through_enemy = true
+		self.owd_m1a.can_shoot_through_wall = false
+		self.owd_m1a.can_shoot_through_shield = false
+		self.owd_m1a.armor_piercing_chance = 0.75
+		self.owd_m1a.timers.equip = 0.4
+		self.owd_m1a.timers.reload_exit_empty = 0.7
+		self.owd_m1a.timers.reload_exit_not_empty = 0.7
+		self.owd_m1a.sounds.fire = "m14_fire"
+		self.owd_m1a.sounds.fire_single = "m14_fire"
+		self.owd_m1a.sounds.fire_auto = "m14_fire_loop"
+		self.owd_m1a.sounds.stop_fire = "m14_stop"
+	end
+
 	if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 		self.vk78_commando.categories = { 
 			"assault_rifle",

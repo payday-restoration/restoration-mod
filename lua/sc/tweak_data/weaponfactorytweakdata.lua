@@ -2442,6 +2442,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_t9british = {
 				translation = Vector3(-0.014, -5, -2.638),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_owd_m1a = {
+				translation = Vector3(-0.008, 7.5, -3.86),
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 				translation = Vector3(0.02, 4, 0.03),
@@ -5827,6 +5830,24 @@ end)
 
 --M308
 Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
+
+	self.parts.wpn_fps_ass_m14_sounds = {
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_g3sg1_sounds",
+		unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
+		internal_part = true,
+		no_cull = true,
+		stats = {
+			value = 5
+		},
+		custom_stats = {
+			sounds = {
+				fire_single2 = "ching_fire"
+			}
+		}
+	}
 
 	--Abraham Body
 	self.parts.wpn_fps_ass_m14_body_ebr.pcs = {
@@ -25062,6 +25083,75 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			table.insert( self.wpn_fps_pis_rc_auto9.uses_parts, "wpn_fps_pis_rc_auto9_cartoon")
 			self.wpn_fps_pis_rc_auto9_npc.uses_parts = deep_clone(self.wpn_fps_pis_rc_auto9.uses_parts)
+		end
+
+		if self.parts.wpn_fps_ass_owd_m1a_receiver then
+			self.parts.wpn_fps_ass_owd_m1a_flash_hider.stats = {}
+			self.parts.wpn_fps_ass_owd_m1a_flash_hider.custom_stats = {}
+
+			self.parts.wpn_fps_ass_owd_m1a_receiver.adds = { "wpn_fps_ass_m14_sounds" }
+			self.parts.wpn_fps_ass_owd_m1a_receiver.stance_mod = {
+				wpn_fps_ass_owd_m1a = {
+					translation = Vector3(-0.024, 0, -0.015)
+				}
+			}
+
+			self.parts.wpn_fps_ass_owd_m1a_magazine_20.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_magazine_20.stats = {
+				value = 2,
+				extra_ammo = 10,
+				reload = -2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_owd_m1a_magazine_20.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+
+			self.parts.wpn_fps_ass_owd_m1a_barrel_short.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_owd_m1a_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_owd_m1a_barrel_long.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_owd_m1a_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
+
+			self.parts.wpn_fps_ass_owd_m1a_stock_cheekrest.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_stock_cheekrest.stats = {
+				value = 4,
+				spread = 1,
+				recoil = -2
+			}
+
+			self.parts.wpn_fps_ass_owd_m1a_stock_light.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_stock_light.stats = {
+				value = 7,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_ass_owd_m1a_stock_light.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+			
+			self.parts.wpn_fps_ass_owd_m1a_stock_throwback.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_stock_throwback.stats = {
+				value = 0
+			}
+			self.parts.wpn_fps_ass_owd_m1a_stock_throwback.custom_stats = nil
+
+			self.parts.wpn_fps_ass_owd_m1a_stock_wood.supported = true
+			self.parts.wpn_fps_ass_owd_m1a_stock_wood.stats = {
+				value = 8,
+				recoil = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_ass_owd_m1a_stock_wood.custom_stats = nil
+
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_northtac")
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt")
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+		
+			self.wpn_fps_ass_owd_m1a_npc.adds = deep_clone(self.wpn_fps_ass_owd_m1a.adds)
+			self.wpn_fps_ass_owd_m1a_npc.uses_parts = deep_clone(self.wpn_fps_ass_owd_m1a.uses_parts)
 		end
 
 	--[[ GAMBYT'S MODS ]]

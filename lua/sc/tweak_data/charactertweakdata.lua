@@ -2601,6 +2601,7 @@ function CharacterTweakData:_init_tank(presets)
 	--Blackdozers, Move faster than other dozers but have a bit less EHP
 	self.tank_black = deep_clone(self.tank)
 	self.tank_black.move_speed = presets.move_speed.normal
+	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
 	table.insert(self._enemy_list, "tank_black")
 	
@@ -2626,6 +2627,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.no_omnia_heal = true
 	self.tank_medic.can_be_healed = false
 	self.tank_medic.move_speed = presets.move_speed.normal
+	self.tank_medic.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
@@ -2644,17 +2646,14 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.ecm_vulnerability = 0		
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.tank_titan.custom_voicework = "tdozer_ru"
+		self.tank_titan.yellow_blood = false
 	else
 		self.tank_titan.custom_voicework = "tdozer"
+		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.speech_prefix_p1 = "heck"
 	self.tank_titan.speech_prefix_p2 = nil
 	self.tank_titan.speech_prefix_count = nil
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.tank_titan.yellow_blood = false
-	else
-		self.tank_titan.yellow_blood = true
-	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
@@ -4472,6 +4471,8 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		tase = true
 	}
+	presets.hurt_severities.only_explosion_hurts_tankblack = deep_clone(presets.hurt_severities.only_explosion_hurts)
+	presets.hurt_severities.only_explosion_hurts_tankblack.tase = false
 	presets.hurt_severities.only_fire_and_poison_hurts = {
 		bullet = {
 			health_reference = 1,

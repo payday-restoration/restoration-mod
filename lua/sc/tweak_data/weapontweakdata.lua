@@ -17614,7 +17614,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.owd_m1a.CLIP_AMMO_MAX = 10
 		self.owd_m1a.AMMO_MAX = 60
 		self.owd_m1a.FIRE_MODE = "single"
-		self.owd_m1a.CAN_TOGGLE_FIREMODE = false
+		self.owd_m1a.CAN_TOGGLE_FIREMODE = true
+		self.owd_m1a.BURST_FIRE = false
+		self.owd_m1a.no_auto_anims = true
+		self.owd_m1a.fire_mode_data.fire_rate = 0.085714285
 		self.owd_m1a.tactical_reload = 1
 		self.owd_m1a.kick = {}
 		self.owd_m1a.kick = self.stat_info.kick_tables.vertical_kick
@@ -17645,7 +17648,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.owd_m1a.can_shoot_through_enemy = true
 		self.owd_m1a.can_shoot_through_wall = false
 		self.owd_m1a.can_shoot_through_shield = false
-		self.owd_m1a.armor_piercing_chance = 0.75
+		self.owd_m1a.armor_piercing_chance = 0.50
 		self.owd_m1a.timers.equip = 0.4
 		self.owd_m1a.timers.reload_exit_empty = 0.7
 		self.owd_m1a.timers.reload_exit_not_empty = 0.7

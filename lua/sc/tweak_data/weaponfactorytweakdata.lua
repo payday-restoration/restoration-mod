@@ -25149,6 +25149,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt")
 			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_i_singlefire")
+			table.insert(self.wpn_fps_ass_owd_m1a.uses_parts, "wpn_fps_upg_i_autofire")
 		
 			self.wpn_fps_ass_owd_m1a_npc.adds = deep_clone(self.wpn_fps_ass_owd_m1a.adds)
 			self.wpn_fps_ass_owd_m1a_npc.uses_parts = deep_clone(self.wpn_fps_ass_owd_m1a.uses_parts)

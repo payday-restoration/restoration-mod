@@ -1242,7 +1242,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_desc"] = "#{skill_color}#방탄복과 여러 적, 얇은 벽을 관통하는## 납 슬러그탄을 발사합니다.",	
 		["bm_wp_upg_a_slug_spam_desc"] = "#{skill_color}#방탄복과 여러 적, 얇은 벽을 관통하고 피해의 75%만큼 가하는## 납 슬러그탄을 발사합니다.",
 		["bm_wp_upg_a_slug_titan_desc"] = "#{skill_color}#방탄복과 여러 적, 방패, 타이탄 실드, 얇은 벽을 관통할 수 있는## 납 슬러그탄을 발사합니다.",
-		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#1.5##미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#폴오프가 없지만## #{risk}#피해 판정은 슬러그와 폭발로 나누어집니다.##",
+		["bm_wp_upg_a_explosive_desc_sc"] = "폭발 반경이 #{skill_color}#2##미터인 #{heat_warm_color}#폭발성## 슬러그탄을 발사합니다.\n이 슬러그탄은 #{skill_color}#폴오프가 없지만## #{risk}#피해 판정은 슬러그와 폭발로 나누어집니다.##",
 		["bm_wp_upg_a_custom_desc"] = "피해량을 #{skill_color}#증가시키는## 더 크고 무거운 펠릿 #{important_1}#6발##을 발사합니다.",
 		["bm_wp_upg_a_custom_4_desc"] = "피해량을 #{skill_color}#증가시키는## 더 크고 무거운 펠릿 #{important_1}#4발##을 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "#{skill_color}#15%## 확률로 #{heat_warm_color}#적을 불태워## #{skill_color}#2초에 걸쳐## 피해를 #{heat_warm_color}#90##까지 가하는 마그네슘 파편을 발사합니다.\n\n#{risk}#확률은 사거리가 멀어질 수록 감소하며, 데미지 폴오프가 시작되기 전에만 적을 기절시킬 수 있습니다.##",
@@ -1508,6 +1508,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_peacemaker"] = "Peacemaker .45LC 리볼버",
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#인류 최고의 권총.##\n\n#{skill_color}#방탄복과 다수의 적, 방패 및 얇은 벽을 관통할 수 있습니다.##\n\n#{important_1}#반동이 증가하고 유효 범위가 감소하고 조준을 할 수 없는 대신## #{skill_color}#발사 속도가 증가시키는## 팬링 기능이 있습니다.",
 		--CUSTOM HANDGUNS
+		--Auto-9
+		["bm_wp_rc_auto9_cartoon"] = "애니메이션 시리즈 트레이서",
+		["bm_wp_rc_auto9_cartoon_desc"] = "1988년 시절처럼 파티를 즐겨보자!",		
 		--M2019 Blaster
 		["thatgun_desc"] = "이건 총이야!\n\n알잖아, 그 총!\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 다수의 적을 관통할 수 있습니다.##",
 		--Malorian 3516

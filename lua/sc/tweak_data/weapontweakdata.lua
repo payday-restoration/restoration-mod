@@ -4210,7 +4210,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "deagle", "x_deagle", "model3", "x_model3", "rsh12", "new_raging_bull", "x_rage", "peacemaker", "mateba", "x_2006m", "chinchilla", "x_chinchilla", "korth","x_korth" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_pis", "handcannon" }
-		self[ wep_id ].damage_type = "heavy_pistol"
+		self[ wep_id ].damage_type = "handcannon"
 	end
 	
 	recat = { "saiga", "aa12", "benelli", "ultima", "spas12", "striker", "rota", "x_rota", "basset", "x_basset", "sko12", "x_sko12" }
@@ -10915,7 +10915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.sko12.stats_modifiers = nil
-				self.sko12.reload_speed_multiplier = 0.675
+				self.sko12.reload_speed_multiplier = 0.7
 				self.sko12.panic_suppression_chance = 0.05
 				self.sko12.timers.reload_empty = 3.4
 				self.sko12.timers.reload_exit_empty = 1.0
@@ -12761,7 +12761,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Phoenix .500
 	if self.shatters_fury then
 		self.shatters_fury.recategorize = { "heavy_pis", "handcannon" }
-		self.shatters_fury.damage_type = "heavy_pistol"
+		self.shatters_fury.damage_type = "handcannon"
 		self.shatters_fury.fire_mode_data.fire_rate = 0.2142857
 		self.shatters_fury.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"	
 		--if restoration.Options:GetValue("OTHER/ComboSounds") then
@@ -13715,7 +13715,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.derringer then --Carl's Derringer
 		self.derringer.recategorize = {"heavy_pis"}
-		self.derringer.damage_type = "heavy_pistol"
+		self.derringer.damage_type = "handcannon"
 		self.derringer.always_play_anims = true
 		self.derringer.AMMO_MAX = 20
 		self.derringer.kick = self.stat_info.kick_tables.right_kick
@@ -13845,7 +13845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.lapd then --Carl's M2019 Blaster
 		self.lapd.recategorize = {"heavy_pis", "handcannon"}
-		self.lapd.damage_type = "heavy_pistol"
+		self.lapd.damage_type = "handcannon"
 		self.lapd.desc_id = "thatgun_desc"
 		self.lapd.has_description = true
 		self.lapd.fire_mode_data.fire_rate = 0.24
@@ -14383,7 +14383,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.fp45 then --Pawcio's FP45 Liberator
 		self.fp45.recategorize = {"heavy_pis"}
-		self.fp45.damage_type = "heavy_pistol"
+		self.fp45.damage_type = "handcannon"
 		self.fp45.has_description = true
 		self.fp45.desc_id = "bm_ap_weapon_sc_desc"
 		self.fp45.lock_slide = true
@@ -14430,7 +14430,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.duke1911 then --Pawcio's Duke Nukem 1911
 		self.duke1911.recategorize = {"heavy_pis"}
-		self.duke1911.damage_type = "heavy_pistol"
+		self.duke1911.damage_type = "handcannon"
 		self.duke1911.lock_slide = true
 		self.duke1911.fire_mode_data.fire_rate = 0.15
 		self.duke1911.CLIP_AMMO_MAX = 8
@@ -16010,7 +16010,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.coltds then --Mira's Colt Detective
 		self.coltds.recategorize = {"heavy_pis"}
-		self.coltds.damage_type = "heavy_pistol"
+		self.coltds.damage_type = "handcannon"
 		self.coltds.autograph_multiplier = 2
 		self.coltds.object_damage_mult = 1.2
 		self.coltds.has_description = true
@@ -16173,7 +16173,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.cssdeagle then --PlayBONK and Mira's CS Deagle
 		table.insert(self.cssdeagle.categories, "cs_spread")
 		self.cssdeagle.recategorize = {"heavy_pis"}
-		self.cssdeagle.damage_type = "heavy_pistol"
+		self.cssdeagle.damage_type = "handcannon"
 		self.cssdeagle.desc_id = "bm_ap_armor_80_weapon_sc_desc"
 		self.cssdeagle.has_description = true
 		self.cssdeagle.object_damage_mult = 1.2
@@ -16521,7 +16521,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.m6d then --RJC9000 and Offyerrocker's M6D
 		self.m6d.recategorize = { "heavy_pis", "handcannon" }		
-		self.m6d.damage_type = "heavy_pistol"
+		self.m6d.damage_type = "handcannon"
 		self.m6d.has_description = true
 		self.m6d.kick = self.stat_info.kick_tables.vertical_kick
 		self.m6d.FIRE_MODE = "auto"
@@ -17108,7 +17108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.rc_auto9.use_data.selection_index = 2
 		self.rc_auto9.recategorize = { "heavy_pis" }
 		self.rc_auto9.has_description = true
-		self.rc_auto9.damage_type = "heavy_pistol"
+		self.rc_auto9.damage_type = "pistol"
 		self.rc_auto9.BURST_FIRE = 3
 		self.rc_auto9.BURST_DELAY = 0.18
 		self.rc_auto9.BURST_FIRE_DEFAULT = true
@@ -17160,7 +17160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.malorian_3516.recategorize = { "heavy_pis", "handcannon" }
 		self.malorian_3516.desc_id = "whydoyoucome"
 		self.malorian_3516.has_description = true
-		self.malorian_3516.damage_type = "heavy_pistol"
+		self.malorian_3516.damage_type = "handcannon"
 		self.malorian_3516.fire_mode_data.fire_rate = 0.451127819548
 		self.malorian_3516.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.malorian_3516.AMMO_MAX = 20
@@ -17259,7 +17259,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
 		self.swhiskey.recategorize = { "heavy_pis", "handcannon" }
-		self.swhiskey.damage_type = "heavy_pistol"
+		self.swhiskey.damage_type = "handcannon"
 		self.swhiskey.fire_mode_data.fire_rate = 0.4195804
 		self.swhiskey.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 		self.swhiskey.AMMO_MAX = 20
@@ -17777,7 +17777,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 		self.amt.recategorize = { "heavy_pis", "handcannon" }		
-		self.amt.damage_type = "heavy_pistol"			
+		self.amt.damage_type = "handcannon"			
 		self.amt.tactical_reload = 1
 		self.amt.use_data.selection_index = 2
 		self.amt.has_description = true
@@ -18861,7 +18861,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					end
 				elseif weap.damage_type == "pdw" then
 					weap.object_damage_mult = 1.5
-				elseif weap.damage_type == "heavy_pistol" then
+				elseif weap.damage_type == "handcannon" then
 					weap.object_damage_mult = 1.2
 				elseif weap.damage_type == "shotgun" then
 					weap.object_damage_mult = 0.75

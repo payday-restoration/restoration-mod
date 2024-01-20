@@ -19474,16 +19474,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 		30,
 		40	
 	}
-	self.parts.wpn_fps_sho_ultima_ns_comp.desc_id = "bm_wp_ns_ultima_desc_sc"
-	self.parts.wpn_fps_sho_ultima_ns_comp.has_description = true
 	self.parts.wpn_fps_sho_ultima_ns_comp.supported = true
 	self.parts.wpn_fps_sho_ultima_ns_comp.stats = {
 		value = 5,
-		spread_multi = {1.75, 1.75}
+		spread = -4,
+		recoil = 10,
+		concealment = -1
 	}
 	self.parts.wpn_fps_sho_ultima_ns_comp.custom_stats = {
-		falloff_start_mult = 1,
-		falloff_end_mult = 1
+		falloff_start_mult = 0.8,
+		falloff_end_mult = 0.8
 	}
 	
 	--Flak Frame Null Stock

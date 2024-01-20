@@ -2091,6 +2091,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["halo_scope"] = "Smart-Linked Scope",
 					["halo_scope_2_desc"] = "Enable interfacing between your mask and the mounted #{skill_color}#Smart-Link## scope.\n#{risk}#2x magnification.##",
 					--M200 WIDOWMAKER
+					["bm_w_m200_iw"] = "Widowmaker",
 					["bm_wp_upg_i_iw_widowmaker"] = "Widowmaker Kit",
 					["bm_wp_upg_i_iw_widowmaker_desc"] = "A prototype weapon kit manufactured by Kendall Ballistics.\n\nModifies this weapon to chamber special #{skill_color}#double-stacked munitions.##",
 					--NV4
@@ -2501,6 +2502,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_scout_m_extended"] = "Standoff Speed Magazine",
 				--AWP
 				["bm_awp_sc_desc"] = "A sniper known for it's exceptional range and accuracy. Who would've thought the original models were built by three guys in a shed?\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				["bm_awp_cs_dragon"] = "AWP | Dragon Lore",
+				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
 				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
 				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
@@ -2552,6 +2555,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
 				["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
 				--Light Crossbow		
+				["bm_w_frankish_avelyn"] = "Avelyn",
 				["bm_wp_avelyn"] = "Avelyn Kit",
 				["bm_wp_avelyn_desc"] = "A #{skill_color}#repeating crossbow## kit.\nAllows for firing a volley of #{skill_color}#3## bolts with a single trigger pull.",
 				["bm_wp_avelyn_override_desc"] = "An extremely rare rapid-firing crossbow.\nFires #{skill_color}#three## successive bolts by means of an elaborate mechanism.\n\n#{skill_color}#Can pierce body armor.##",
@@ -2645,6 +2649,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_m1911"] = "Price & MacTavish",
 					--Crosskill Guard
 					["bm_w_shrew"] = "Crosskill Guard",
+					["bm_w_shrew_joshua"] = "A Light Shining in Darkness",
 					["bm_w_x_shrew"] = "Barry & Paul",
 					--USP 
 					["bm_w_usp"] = "Interceptor-45",
@@ -2656,6 +2661,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_type54"] = "Akimbo CC-33s",
 					--Broomstick--
 					["bm_w_c96"] = "Broomstick",
+					["bm_w_c96_dl44"] = "DL-44",
 					["bm_wp_c96_nozzle"] = "BlasTech DL-44 Muzzle",
 					--Sub2000
 					["bm_w_sub2000"] = "Cavity .40",
@@ -2735,12 +2741,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shepheard"] = "FIK PC9",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",	
+					["bm_w_mp5sd"] = "Compact-5SD",	
+					["bm_w_mp5k"] = "Compact-5K",
+					["bm_w_mp5k_pdw"] = "Compact-5K PDW",
 					["bm_w_x_mp5"] = "Akimbo Compact-5s",
 					["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
 					--Swedish K
 					["bm_w_m45"] = "Swedish K",
 					--Pachett/Sterling
 					["bm_w_sterling"] = "Patchette L2A1",
+					["bm_w_sterling_e11"] = "E-11",
 					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
 					--Uzi
 					["bm_w_uzi"] = "Uzi",
@@ -2877,6 +2887,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_hajk"] = "CR 805B",
 					--AMR-16
 					["bm_w_m16"] = "AMR-16",
+					["bm_w_m16a1"] = "AMR-16A1",
 					--Queen's Wrath
 					["bm_w_l85a2"] = "Queen's Wrath",
 					--AK 7.62
@@ -2914,20 +2925,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
+					["bm_w_contraband_m16"] = "Little Friend 5.56",
+					["bm_w_contraband_mpx"] = "OMNIA PC9 9mm",
 					--FAL
 					["bm_w_fal"] = "Falcon 58",
+					["bm_w_fal_l1a1"] = "Falcon SLR",
+					["bm_w_fal_sa58"] = "Falcon 58 OSW",
+					["bm_w_fal_idf"] = "Falcon RMT",
 					--ASS VAL
 					["bm_w_asval"] = "Valkyria",
 					--Galil
 					["bm_w_galil"] = "Gecko 7.62",
+					["bm_w_galil_galatz"] = "Gekkota 7.62",
+					["bm_w_galil_mar"] = "Micro Gecko 7.62",
+					["bm_w_galil_556"] = "Gecko 5.56",
+					["bm_w_galil_mar_556"] = "Micro Gecko 5.56",
 					--SCAR
 					["bm_w_scar"] = "Eagle Heavy",
+					["bm_w_scar_l"] = "Eagle Light",
 					--Galant--
 					["bm_w_ching"] = "M1 Galant",
 					--M308
 					["bm_w_m14"] = "M308",
 					--G3
 					["bm_w_g3"] = "Gewehr-3",
+					["bm_w_g3_sg1"] = "Gewehr-S1",
+					["bm_w_g3_msg"] = "Gewehr-90",
+					["bm_w_g3_psg"] = "Präzision Gewehr-1",
+					["bm_w_g3_hk33"] = "SG-33",
+					["bm_w_g3_hk33_fo3"] = "R91",
 					["bm_wp_g3_b_sniper"] = "Macro Barrel",
 					["bm_wp_g3_b_short"] = "Micro Barrel",
 					--KS12
@@ -3042,12 +3068,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_sparrow"] = "Akimbo Sparrows",
 				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_scar"] = "VF-7S",
+				["bm_w_scar_l"] = "VF-6M",
 				["bm_w_scarl"] = "VF-6M",
 				["bm_w_schakal"] = "AMP 45",
 				["bm_w_tecci"] = "SG 416C",
 				["bm_w_l85a2"] = "L-95",
 				["bm_w_vhs"] = "HVH-2",
-				["bm_w_contraband"] = "SG 417D"
+				["bm_w_contraband"] = "SG 417D GL",
+				["bm_w_contraband_m16"] = "AMR-16 GL",
+				["bm_w_contraband_mpx"] = "OMNIA PC9 GL",
 	
 			})
 		elseif weapon_names == 3 then --DMCWO Reelnames
@@ -3142,6 +3171,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_sub2000_fg_suppressed"] = "Quad Rail Handguard w/Suppressor",
 					--C96
 					["bm_w_c96"] = "Mauser C96",
+					["bm_w_c96_dl44"] = "BlasTech DL-44",
 					["bm_wp_c96_b_long"] = "Carbine Barrel",
 					["bm_wp_c96_nozzle"] = "DL-44 Muzzle",
 					["bm_wp_c96_sight"] = "Schmidt & Bender 1-8x24 PM Short Dot",
@@ -3162,6 +3192,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_m1911"] = "Akimbo 1911A1s",
 					--Crosskill Guard
 					["bm_w_shrew"] = "Colt Defender",
+					["bm_w_shrew_joshua"] = "A Light Shining in Darkness",
 					["bm_w_x_shrew"] = "Akimbo Defenders",
 					--Interceptor
 					["bm_w_usp"] = "H&K USP Tactical",
@@ -3274,6 +3305,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
 					--MP5
 					["bm_w_mp5"] = "H&K MP5A2",
+					["bm_w_mp5sd"] = "H&K MP5SD",	
+					["bm_w_mp5k"] = "H&K MP5K",	
+					["bm_w_mp5k_pdw"] = "H&K MP5K PDW",
 					["bm_w_x_mp5"] = "Akimbo MP5A2s",
 					["bm_mp5_sc_desc"] = "The little sister to the G3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 					["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
@@ -3299,6 +3333,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
 					--Pachette
 					["bm_w_sterling"] = "Sterling L2A1",
+					["bm_w_sterling_e11"] = "BlasTech E-11",
 					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
 					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
 					["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
@@ -3529,6 +3564,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--M16
 					["bm_w_m16"] = "Colt M16A4",
+					["bm_w_m16a1"] = "Colt M16A1",
 					["bm_wp_m16_fg_railed"] = "Daniel Defense Lite Rail",
 					["bm_wp_m16_fg_vietnam"] = "M16A1 Handguard",
 					--["bm_wp_m16_s_solid"] = "M16 Stock",
@@ -3553,6 +3589,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[DMRs]]
 					--417
 					["bm_w_contraband"] = "H&K HK417 w/ M203",
+					["bm_w_contraband_m16"] = "Colt M16A1 w/ M203",
+					["bm_w_contraband_mpx"] = "SIG MPX w/ M203",
 					["bm_m203_weapon_sc_desc_pc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 25% of its damage through body armor and can pierce enemies.##\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
 					["bm_m203_weapon_sc_desc"] = "The big sister to Scarface's personal \"Little Friend\" M16.\n\n#{skill_color}#Deals 25% of its damage through body armor and can pierce enemies.##\nHolding #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",
 						--VMP
@@ -3561,10 +3599,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				
 					--SCAR
 					["bm_w_scar"] = "FN Mk.17",
+					["bm_w_scar_l"] = "FN Mk.16",
 					["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
 					["bm_wp_scar_s_sniper"] = "Mk.20 Stock",
 					--FAL
 					["bm_w_fal"] = "FN FAL",
+					["bm_w_fal_l1a1"] = "FAL L1A1",
+					["bm_w_fal_sa58"] = "DSA SA58 OSW",
+					["bm_w_fal_idf"] = "IWI Romat",
 					["bm_wp_fal_body_standard"] = "DSA SA58 Handguard",
 					["bm_wp_fal_fg_wood"] = "Wooden FAL Handguard",
 					["bm_wp_fal_fg_04"] = "DSA Freefloat Handguard",
@@ -3576,6 +3618,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_upg_vintage_fal_sc"] = "20rnd Magazine",
 					--Galil
 					["bm_w_galil"] = "IWI Galil ARM",
+					["bm_w_galil_galatz"] = "IWI Galatz",
+					["bm_w_galil_mar"] = "IWI Micro Galil",
+					["bm_w_galil_556"] = "IWI Galil ARM",
+					["bm_w_galil_mar_556"] = "IWI Micro Galil",
 					["bm_wp_galil_fg_sniper"] = "IWI Galatz Handguard",
 					["bm_wp_galil_fg_sar"] = "IWI Galil SAR Handguard",
 					["bm_wp_galil_fg_mar"] = "IWI Galil MAR Handguard",
@@ -3592,6 +3638,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Raifu
 					["bm_w_g3"] = "H&K G3A3",
+					["bm_w_g3_hk33"] = "H&K HK33",
+					["bm_w_g3_sg1"] = "H&K G3SG1",
+					["bm_w_g3_msg"] = "H&K MSG90",
+					["bm_w_g3_psg"] = "H&K PSG-1",
+					["bm_w_g3_fo3"] = "R91",
 					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies and thin walls.##",
 					["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
 					["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
@@ -3995,6 +4046,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
 					["bm_w_m16"] = "Ichiroku",
+					["bm_w_m16a1"] = "Ichiroku",
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
 					["bm_w_m4"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
@@ -4011,11 +4063,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",
+					["bm_w_fal_l1a1"] = "Faru",
+					["bm_w_fal_sa58"] = "Faru",
+					["bm_w_fal_idf"] = "Faru",
 						["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 						["bm_fal_ap25_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
 					["bm_w_m14"] = "Ichiyon",
 						["bm_m14_sc_desc"] = "\"What are those westerners doin' copying AKs!? Buncha traitors!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nEasy-going and chalk-full of puns. Currently going through a fashion-sense crisis.",
 					["bm_w_g3"] = "Jiisuri",
+					["bm_w_g3_sg1"] = "Jiisuri",
+					["bm_w_g3_msg"] = "Jiisuri",
+					["bm_w_g3_psg"] = "Jiisuri",
+					["bm_w_g3_hk33"] = "HK33",
+					["bm_w_g3_hk33_fo3"] = "R91",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_sg1_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
@@ -4025,6 +4085,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",
+					["bm_w_mp5sd"] = "MP5SD",	
+					["bm_w_mp5k"] = "MP5K",	
+					["bm_w_mp5k_pdw"] = "MP5K",
 						["bm_mp5_sc_desc"] = "\"If that's your hobby...\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nOne of Jiisuri's many younger siblings and the student council president of the elementary division.",
 					["bm_w_schakal"] = "UMP",
 						["bm_schakal_sc_desc"] = "An elementary schooler attending #{stats_positive}#Seishou Academy.##\nCousin to the G3 family; she's currently living together with them as she attends school. She often gets into fights with MP5K.",
@@ -4072,6 +4135,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if my_wife then
 			LocalizationManager:add_localized_strings({	
 				["bm_w_g3"] = "Jiisuri",
+				["bm_w_g3_sg1"] = "Jiisuri",
+				["bm_w_g3_msg"] = "Jiisuri",
+				["bm_w_g3_psg"] = "Jiisuri",
+				["bm_w_g3_hk33"] = "HK33",
+				["bm_w_g3_hk33_fo3"] = "R91",
 					["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 					["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 					["bm_menu_jiisuri_stock"] = "Pantyhose",

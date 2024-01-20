@@ -55,7 +55,7 @@ end
 	
 
 return {
-	--Pro Job PONR 
+	--Pro Job PONR
 	[100818] = {
 		ponr = ponr_value
 	},
@@ -146,7 +146,23 @@ return {
 		on_executed = {
 			{id = 101278, delay = 0}
 		}
-	},	
+	},
+	--Allow plant c4 when escape sequence is started (At least this works when player picked up c4 before escape trigger)
+	[102146] = {
+		values = {
+			enabled = false
+		}
+	},
+	[100821] = {
+		values = {
+			trigger_times = 1
+		}
+	},
+	[102127] = {
+		values = {
+			trigger_times = 1
+		}
+	},
 	--Always comment that all c4 are placed (why it's chance based to begin with, Overkill...)
 	[103810] = {
 		values = {
@@ -165,11 +181,12 @@ return {
             chance = chance_dozer
 		}
 	},
-	--Dozer gets randomized + repositioned to the boat loot drop point (honestly, better spot than vanilla)
+	--Dozer gets randomized + repositioned to the boat loot drop point
 	[102870] = {
 		values = {
             enemy = dozer,
-			position = Vector3(-4574, 5314, -400)
+			position = Vector3(-4627, 5521, -400),
+			rotation = Rotation(140, 0, -0)
 		}
 	},
 	[101190] = {

@@ -30,6 +30,12 @@ return {
             trigger_times = 0
 		}
 	},
+	--Don't disable office doors if alarm is triggered
+	[104178] = {
+		values = {
+            enabled = false
+		}
+	},
 	--Bravo Guards, if we're robbing the Army why there's no Bravo guards?
 	[100676] = {
 		values = {

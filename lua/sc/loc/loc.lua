@@ -2341,6 +2341,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS. Uses special Swiss-made 5.6mm rounds that offer better range.",
 				--M733/AMCAR
 				["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
+				["bm_wp_upg_i_patriot"] = "The Patriot",
+				["bm_wp_upg_i_patriot_desc"] = "An assault pistol developed for #{important_1}#[REDACTED]##.\n\nThe feeder mechanism inside the drum magazine forms an #{important_1}#[REDACTED]## shape.",
 				["bm_wp_upg_i_og_rof"] = "Rate Limiter",
 				["bm_wp_upg_i_og_rof_desc"] = "Restores the weapon's absurdly low fire rate if that's what you're interested in...",
 				--G36

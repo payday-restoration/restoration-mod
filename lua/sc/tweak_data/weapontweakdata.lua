@@ -3228,8 +3228,8 @@ function WeaponTweakData:_init_stats()
 		standing = 3.5,
 		moving_crouching = 2.5,
 		crouching = 2.5,
-		moving_steelsight = 0.075,
-		steelsight = 0.075,
+		moving_steelsight = 0.1,
+		steelsight = 0.1,
 		bipod = 1,
 		player_turret = 1,
 	}

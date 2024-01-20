@@ -837,6 +837,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
 			end	
+			
+			if stats.bandana then
+				self:weapon_tweak_data().tactical_reload = nil
+				self._bandana = true
+			end	
 
 			if stats.type99_stats then
 				--have to do this due to how this thing is set up, can't have both equipped anyways

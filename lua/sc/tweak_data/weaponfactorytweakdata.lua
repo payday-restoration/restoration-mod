@@ -4154,6 +4154,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_ballos")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_upper_reciever_core")
 
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_patriot")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_og_rof")
 	
 	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
@@ -5835,7 +5836,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		a_obj = "a_body",
 		type = "ammo",
-		name_id = "bm_g3sg1_sounds",
+		name_id = "bm_m14_sounds",
 		unit = "units/pd2_dlc_old/weapons/wpn_fps_ass_ching/wpn_fps_ass_ching",
 		internal_part = true,
 		no_cull = true,
@@ -22201,6 +22202,117 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		internal_part = true,
 		dlc = "sc"
 	}
+
+	self.parts.wpn_fps_upg_i_patriot = {
+		pcs = {},
+		type = "exclusive_set",
+		name_id = "bm_wp_upg_i_patriot",
+		a_obj = "a_body",
+		has_description = true,
+		custom_stats = {},
+		perks = { "fire_mode_auto" },
+		alt_icon = "guis/dlcs/tng/textures/pd2/blackmarket/icons/masks/tng_bandana",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 10,
+			spread = -44,
+			recoil = -12,
+			concealment = -6,
+			extra_ammo = 70
+		},
+		custom_stats = {
+			alt_desc = "bm_wp_upg_i_patriot_desc",
+			lock_auto = true,
+			bandana = true,
+			falloff_start_mult = 0.166666,
+			falloff_end_mult = 0.2181818,
+			alt_ammo_pickup_min_mul = 0,
+			alt_ammo_pickup_max_mul = 0,
+			ammo_pickup_min_mul = 0,
+			ammo_pickup_max_mul = 0,
+			hip_mult = 1.666666,
+			rof_mult = 1.25,
+			ads_speed_mult = 1.3846153,
+			damage_min_mult = 0.6,
+			muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle",
+			sms = 0.5
+		},
+		override = {
+			wpn_fps_ass_m16_os_frontsight = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			},
+			wpn_fps_m4_uupg_b_medium_vanilla = {
+				unit = "units/payday2/weapons/wpn_fps_ass_aug_pts/wpn_fps_aug_b_long",
+				third_unit = "units/payday2/weapons/wpn_third_ass_aug_pts/wpn_third_ass_aug_b_long"
+			},
+			wpn_fps_upg_m4_s_adapter = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			},
+			wpn_fps_upg_m4_s_adapter = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			},
+			wpn_fps_upg_m4_s_standard_vanilla = {
+				unit = "units/payday2/weapons/wpn_fps_smg_olympic_pts/wpn_fps_smg_olympic_s_short",
+				third_unit = "units/payday2/weapons/wpn_third_smg_olympic_pts/wpn_third_smg_olympic_s_short"
+			},
+			wpn_fps_m4_uupg_m_std_vanilla = {
+				unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_m_drum",
+				third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
+			}
+		},
+		stance_mod = {
+			wpn_fps_ass_amcar = {
+				translation = Vector3(0, 8, 0),
+			}
+		},
+		forbids = {},
+		adds = {"wpn_fps_ass_patriot_sounds"},
+		dlc = "sc"
+	}
+	for k, used_part_id in ipairs(self.wpn_fps_ass_amcar.uses_parts) do
+		if not table.contains(self.wpn_fps_ass_amcar.default_blueprint, used_part_id) then
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "barrel" or
+				self.parts[used_part_id].type == "foregrip" or
+				self.parts[used_part_id].type == "upper_reciever" or
+				self.parts[used_part_id].type == "lower_reciever" or
+				self.parts[used_part_id].type == "sight" or
+				self.parts[used_part_id].type == "second_sight" or
+				self.parts[used_part_id].type == "grip" or
+				self.parts[used_part_id].type == "gadget" or
+				self.parts[used_part_id].type == "stock" or
+				self.parts[used_part_id].type == "custom" or
+				self.parts[used_part_id].type == "bonus" or
+				self.parts[used_part_id].type == "barrel_ext" or
+				self.parts[used_part_id].type == "magazine" then
+					table.insert(self.parts.wpn_fps_upg_i_patriot.forbids, used_part_id)
+				end
+			end
+		end
+	end
+	self.parts.wpn_fps_ass_patriot_sounds = {
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_patriots_sounds",
+		unit = "units/pd2_dlc_big/weapons/wpn_fps_ass_fal/wpn_fps_ass_fal",
+		internal_part = true,
+		no_cull = true,
+		stats = {
+			value = 5
+		},
+		custom_stats = {
+			sounds = {
+				fire_single = "fn_fal_fire_1p_single"
+			}
+		}
+	}
+
 
 	self.parts.wpn_fps_upg_i_g3sg1 = {
 		pcs = {},

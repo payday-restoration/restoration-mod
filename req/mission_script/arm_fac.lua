@@ -26,14 +26,10 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 	end	
 
-	--GenSec SWAT on Mayhem below, Tangerine will not convice me to add FTSU Agents, or will he?
+	--FTSU Agents on Mayhem below
 	if difficulty_index <= 6 then
-		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
-	--Replace GenSec SWAT with their Heavy counterparts, it means that Heavy UMPER also spawns (I hope everyone is okay with that)	
-	else
-		gensec_rifle = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
-		gensec_smg = "units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc"
+		gensec_rifle = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
+		gensec_smg = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
 	end
 end	
 		

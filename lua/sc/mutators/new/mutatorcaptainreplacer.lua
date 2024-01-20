@@ -400,29 +400,6 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 6 then
 		autumn_preset = {
-			amount = 3,
-			force = true,
-			spawn = {
-				{
-					unit = "Cap_Autumn",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_autumn,
-					rank = 1
-				},
-				{
-					unit = "Autumn_Spooc",
-					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
-					tactics = tweak_data.group_ai._tactics.Cap_autumn,
-					rank = 2
-				}					
-			}
-		}	
-	elseif difficulty_index == 7 then
-		autumn_preset = {
 			amount = 4,
 			force = true,
 			spawn = {
@@ -444,7 +421,7 @@ function MutatorCaptainReplacer:setup()
 				}					
 			}
 		}	
-	else
+	elseif difficulty_index == 7 then
 		autumn_preset = {
 			amount = 5,
 			force = true,
@@ -458,10 +435,33 @@ function MutatorCaptainReplacer:setup()
 					rank = 1
 				},
 				{
-					unit = "Titan_Spooc",
+					unit = "Autumn_Spooc",
 					freq = 1,
 					amount_min = 4,
 					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	else
+		autumn_preset = {
+			amount = 6,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Titan_Spooc",
+					freq = 1,
+					amount_min = 5,
+					amount_max = 5,
 					tactics = tweak_data.group_ai._tactics.Cap_autumn,
 					rank = 2
 				}				

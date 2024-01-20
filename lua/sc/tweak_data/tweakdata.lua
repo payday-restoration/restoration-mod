@@ -190,9 +190,15 @@ tweak_data.assault_rifle = {
 		swap_bonus = 1.1,
 		ads_move_speed_mult = 1.11111 --raised to 0.5
 	}
-	tweak_data.dmr = {
+	tweak_data.dmr_l = {
 		hipfire_spread_mult = 1.7391304,
+		moving_spread_mult = 1.2,
+		shake_mul = 1.05
+	}
+	tweak_data.dmr_h = {
+		hipfire_spread_mult = 1.9565217,
 		moving_spread_mult = 1.5,
+		ads_stationary_spread_mult = 0.8,
 		ads_move_speed_mult = 0.888889, --lowered to 0.4
 		shake_mul = 1.1
 	}
@@ -910,19 +916,19 @@ tweak_data.casino = {
 		15000,
 		15000
 	},
-	prefer_cost = 5000,
-	prefer_chance = 0.1,
+	prefer_cost = 500000,
+	prefer_chance = 0.2,
 	secure_card_cost = {
-		10000,
-		20000,
-		30000
+		1000000,
+		3300000,
+		6500000
 	},
 	secure_card_level = {
 		0,
 		0,
 		0
 	},
-	infamous_cost = 100000,
+	infamous_cost = 3000000,
 	infamous_chance = 3
 }	
 

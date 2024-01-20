@@ -19,23 +19,17 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
 	end
 	
-	
 	--If we're in Pro Job, change some of the spawns
 	if shadow_fucked_me_hard then
 	--Skully boy starts to spawn on Mayhem now cause I like placing Skullies like that one map editor man in Reservoir Dogs Day 2
 	if difficulty_index == 6 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-	end	
+	end
 	
-	
-	--GenSec SWAT on Mayhem below, Tangerine will not convice me to add FTSU Agents, or will he?
+	--FTSU Agents on Mayhem below
 	if difficulty_index <= 6 then
-		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
-	--Replace GenSec SWAT with their Heavy counterparts, it means that Heavy UMPER also spawns (I hope everyone is okay with that) 	
-	else
-		gensec_rifle = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"
-		gensec_smg = "units/payday2/characters/ene_city_heavy_ump_sc/ene_city_heavy_ump_sc"
+		gensec_rifle = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
+		gensec_smg = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
 	end
 end	
 		

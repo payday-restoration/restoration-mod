@@ -11,7 +11,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 return {
 	--Pro Job PONR 
-	[101640] = {
+	[101174] = {
 		ponr = ponr_value
 	},
 	--Dimitri's men are friendly to cops

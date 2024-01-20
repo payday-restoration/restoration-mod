@@ -11,6 +11,11 @@ function HuskCopDamage:die(attack_data)
 		self._unit:contour():remove("medic_show", false)
 		self._unit:contour():remove("medic_buff", false)
 	end
+	
+	if self._unit:base() then
+		self._unit:base():disable_lpf_buff(true)
+		self._unit:base():disable_asu_laser(true)
+	end	
 
 	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then
 		self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)

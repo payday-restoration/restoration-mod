@@ -203,16 +203,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
 		["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
 		["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
-		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Firerate Limit",
+		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
 		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
-		["RestorationModQueuedShootingMidBurstTitleID"] = "Burstfire Mid-Burst Input Buffer",
+		["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",
 		["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
+		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
+		["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
 		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
 		["RestorationModManualReloadsTitleID"] = "Manual Reloads",
-		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty.\nThis is always enabled for Pro-Jobs, regardless of setting.",
+		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -2339,10 +2341,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_s552_sc_desc"] = "An elegant alternative to other compact 5.56mm rifles, the preferred choice among DHS. Uses special Swiss-made 5.6mm rounds that offer better range.",
 				--M733/AMCAR
 				["bm_amcar_sc_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle.",
+				["bm_wp_upg_i_patriot"] = "The Patriot",
+				["bm_wp_upg_i_patriot_desc"] = "An assault pistol developed for #{important_1}#[REDACTED]##.\n\nThe feeder mechanism inside the drum magazine forms an #{important_1}#[REDACTED]## shape.",
+				["bm_wp_upg_i_og_rof"] = "Rate Limiter",
+				["bm_wp_upg_i_og_rof_desc"] = "Restores the weapon's absurdly low fire rate if that's what you're interested in...",
 				--G36
 				["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
+				["bm_wp_upg_i_m8a1"] = "M8 Burst Kit",
+				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine",
 				--VHS/Lion's Roar
 				["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",
+				["bm_wp_upg_i_swordfish"] = "Swordfish Burst Kit",
+				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine",
 				--Olympic/Para
 				["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
 				--TAR-21/Para
@@ -2418,6 +2428,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Galil
 				["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_galil_ap25_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
+				["bm_galil_556_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.",
 				--SCAR		
 				["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_scar_ap25_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
@@ -2430,7 +2441,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--G3
 				["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 				["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
+				["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 				["bm_wp_g3_m_psg"] = "Präzision Magazine",
+				["bm_wp_upg_i_g3sg1"] = "Präzision Internals",
+				["bm_wp_upg_i_g3sg1_desc"] = "Loads high-powered rounds that #{skill_color}#grant full armor penetration and shield piercing capabilites.## Parts are reinforced with heavier materials #{important_1}#reducing rate of fire## and locking your weapon to #{risk}#semi-auto##.",
 				--KS12
 				["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 				["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
@@ -3579,7 +3593,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Raifu
 					["bm_w_g3"] = "H&K G3A3",
 					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies and thin walls.##",
-					["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the  MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
+					["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
+					["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 					["bm_wp_g3_b_short"] = "Short Barrel",
 					["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
 					["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",
@@ -4003,6 +4018,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_g3"] = "Jiisuri",
 						["bm_g3_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_g3_ap25_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
+						["bm_g3_sg1_sc_desc"] = "\"Let's settle this!\"\n\nA highschooler attending #{stats_positive}#Seishou Academy.##\nElegant but a bit of a klutz. The eldest of her many sisters and DMC's #{stat_maxed}#raifu.##",
 						["bm_wp_wpn_fps_ass_g3_body_hk33"] = "HK33 \"Chuusuri\" Set",
 						["bm_wp_wpn_fps_ass_g3_body_hk33_desc"] = "\"Call me that again, I dare you!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nDespite HK33's haugty attitude, she's been lovingly nicknamed \"Chuusuri\" by her peers, much to her chagrin.",
 						["bm_menu_jiisuri_stock"] = "Pantyhose",
@@ -5272,11 +5288,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has a #{skill_color}#10## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#15## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#2.5## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has a #{skill_color}#7## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#8## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
-		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##5## health.",
+		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##6## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##2.5## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##3## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#5%## of your max health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.",
@@ -5372,7 +5388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#11## seconds  and has a cooldown of #{important_1}#80## seconds.\n\nYour camera loop duration is increased by #{skill_color}#20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a #{skill_color}#10## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, lasting #{skill_color}#10## seconds with a radius of #{skill_color}#15## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM Device has an #{important_1}#80## second cooldown timer, but each kill you perform will shorten the cooldown timer by #{skill_color}#2.5## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has a #{skill_color}#7## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#8## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#2.5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 

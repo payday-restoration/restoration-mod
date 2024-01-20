@@ -1212,7 +1212,7 @@ function PlayerDamage:revive(silent)
 		self:fill_dodge_meter(3.0, true)
 	end
 	if managers.player:has_category_upgrade("player", "revive_reload") then
-		managers.player:reload_weapons()
+		managers.player:reload_weapons(true)
 	end
 
 	--Update What Doesn't Kill

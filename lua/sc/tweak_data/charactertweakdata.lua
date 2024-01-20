@@ -2601,6 +2601,7 @@ function CharacterTweakData:_init_tank(presets)
 	--Blackdozers, Move faster than other dozers but have a bit less EHP
 	self.tank_black = deep_clone(self.tank)
 	self.tank_black.move_speed = presets.move_speed.normal
+	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
 	table.insert(self._enemy_list, "tank_black")
 	
@@ -2613,6 +2614,8 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
 	self.tank_skull.headshot_dmg_mul = 9.5
+	self.tank_skull.damage.explosion_damage_mul = 1.5
+	self.tank_skull.damage.rocket_damage_mul = 1.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
@@ -2624,6 +2627,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.no_omnia_heal = true
 	self.tank_medic.can_be_healed = false
 	self.tank_medic.move_speed = presets.move_speed.normal
+	self.tank_medic.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
@@ -2642,17 +2646,14 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.ecm_vulnerability = 0		
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
 		self.tank_titan.custom_voicework = "tdozer_ru"
+		self.tank_titan.yellow_blood = false
 	else
 		self.tank_titan.custom_voicework = "tdozer"
+		self.tank_titan.yellow_blood = true
 	end
 	self.tank_titan.speech_prefix_p1 = "heck"
 	self.tank_titan.speech_prefix_p2 = nil
 	self.tank_titan.speech_prefix_count = nil
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.tank_titan.yellow_blood = false
-	else
-		self.tank_titan.yellow_blood = true
-	end
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
@@ -2957,7 +2958,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.static_weapon_preset = true
 	self.shield.detection = presets.detection.normal
-	self.shield.HEALTH_INIT = 13
+	self.shield.HEALTH_INIT = 15
 	self.shield.headshot_dmg_mul = 2.2
 	self.shield.damage_resistance = presets.damage_resistance.none
 	self.shield.damage.explosion_damage_mul = 0.8
@@ -3018,7 +3019,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.static_weapon_preset = true
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.0
-	self.phalanx_minion.HEALTH_INIT = 19.5
+	self.phalanx_minion.HEALTH_INIT = 22.5
 	self.phalanx_minion.damage_resistance = presets.damage_resistance.none
 	self.phalanx_minion.damage.explosion_damage_mul = 0.25
 	self.phalanx_minion.damage.rocket_damage_mul = 0.25
@@ -3174,7 +3175,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"law", "custom", "special", "captain", "spring"}
+	self.spring.tags = {"law", "custom", "special", "captain", "spring", "tank"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
@@ -4470,6 +4471,8 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		tase = true
 	}
+	presets.hurt_severities.only_explosion_hurts_tankblack = deep_clone(presets.hurt_severities.only_explosion_hurts)
+	presets.hurt_severities.only_explosion_hurts_tankblack.tase = false
 	presets.hurt_severities.only_fire_and_poison_hurts = {
 		bullet = {
 			health_reference = 1,

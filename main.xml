@@ -255,8 +255,9 @@
 						<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 						<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
-						<hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/>
+						<!--hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/-->
 						<hook file="sc/units/enemies/spooc/actions/lower_body/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
+						<hook file="sc/units/enemies/actions/upper_body/copactionhealed.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionhealed"/>
 					<!--LOGICS-->
 						<hook file="sc/units/enemies/logics/coplogicinactive.lua" source_file="lib/units/enemies/cop/logics/coplogicinactive"/>
 						<hook file="sc/units/enemies/logics/coplogicintimidated.lua" source_file="lib/units/enemies/cop/logics/coplogicintimidated"/>
@@ -286,7 +287,6 @@
 					<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
 					<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
 					<hook file="sc/units/enemies/medic/medicdamage.lua" source_file="lib/units/enemies/medic/medicdamage"/>
-					<hook file="sc/units/enemies/medic/huskmedicdamage.lua" source_file="lib/units/enemies/medic/huskmedicdamage"/>
 					<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 					<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 					<hook file="sc/units/enemies/tankmediccopdamage.lua" source_file="lib/units/enemies/tank/tankmediccopdamage"/>
@@ -564,6 +564,7 @@
 					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
 					<option type="bool" default_value="true" name="QueuedShootingMidBurst"/>
+					<option type="number" default_value="0.3" min="0" max="3" step="0.01" show_value="true" name="QueuedShootingBurstExclude"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>

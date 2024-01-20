@@ -1690,7 +1690,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_s552_sc_desc"] = "다른 5.56mm탄을 사용하는 소형 소총에 대한 훌륭한 대안용 소총, 국토감시부에서 선호하는 소총이기도 합니다. 또한 더 나은 사거리를 제공하는 특수 스위스제 5.56mm탄을 사용합니다.",				
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "세계에서 가장 많이 생산된 .223탄을 사용하는 소총이자, 훌륭한 다목적 소총입니다.",
-		["bm_wp_upg_i_og_rof"] = "발사 속도 제한기",
+		["bm_wp_upg_i_patriot"] = "더 패트리엇",
+		["bm_wp_upg_i_patriot_desc"] = "#{important_1}#[편집됨]##을 위해 개발된 돌격 권총입니다.\n\n드럼 탄창 내부의 피더 메커니즘은 #{important_1}#[편집됨]## 모양을 형성합니다.",		
+		["bm_wp_upg_i_og_rof"] = "발사 속도 리미터",
 		["bm_wp_upg_i_og_rof_desc"] = "이 무기의 터무니없이 낮은 발사 속도를 복원합니다. 관심이 있다면...",
 		--G36
 		["bm_g36_sc_desc"] = "'최고의 플라스틱 소총' 상을 위한 또 다른 최고 순위 경쟁자.",

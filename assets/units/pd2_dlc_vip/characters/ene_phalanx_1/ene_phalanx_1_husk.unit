@@ -20,7 +20,7 @@
 			</var>			
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx_dummy" />
+			<var name="_shield_unit_name" value="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy" />
 			<var name="_shield_break_data" type="table">
 				<var name="anim_global_switch" value="cop"/>
 				<var name="stats_name_switch" value="city_swat_titan"/>

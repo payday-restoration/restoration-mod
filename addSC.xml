@@ -1005,9 +1005,13 @@
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_il" force="false" load="true"/>		
 	
 	<!--Phalanx Shields-->
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx"/>	
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx_dummy" load="true"/>	
+	<unit_mat_seq		path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" load="true"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />		
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc_dummy" />		
+
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left" />	
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right" />	
+	<unit_obj			path="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_top" />	
 	
 	<!--Halloween Axe-->
 	<object				path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>

@@ -1,0 +1,119 @@
+<dynamic_object>
+    <diesel materials="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc"  orientation_object="rp_ene_acc_shield_phalanx" />
+    <sequence_manager file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
+	
+	<bodies>
+		<body name="held_body_middle" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield" 					collision_type="convex" padding="-2" />
+			<object name="c_shield2" 					collision_type="convex" padding="-2" />
+			<object name="c_shield3" 					collision_type="convex" padding="-2" />
+			<object name="c_shield4" 					collision_type="convex" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+		
+		<body name="held_body_left" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_l"	collision_type="convex" padding="-2" />
+		</body>
+		
+
+		<body name="held_body_right" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_r" 					collision_type="convex" padding="-2" />
+		</body>
+
+		<body name="held_body_top" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_top" 				collision_type="convex" padding="-2" />
+		</body>
+<!-- rename this to glass to enable glass shattering -->
+		<body name="glass_dummy" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_glass" 	collision_type="convex" />
+		</body>
+
+		<body name="dropped_body_middle" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield" 							collision_type="convex" />
+			<object name="c_shield2" 							collision_type="convex" />
+			<object name="c_shield3" 							collision_type="convex" />
+			<object name="c_shield4" 							collision_type="convex" />
+			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />
+		</body>		
+
+		<body name="dropped_body_left" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_l"	collision_type="convex" padding="-2" />
+		</body>
+
+		<body name="dropped_body_right" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_r"	collision_type="convex" padding="-2" />
+		</body>
+
+		<body name="dropped_body_top" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_shield_top" 				collision_type="convex" padding="-2" />
+		</body>
+		
+
+		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_light_01" collision_type="box" />
+		</body>
+
+		<body name="light_02" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_phalanx" />
+			<object name="c_light_02" collision_type="box" />
+		</body>
+	</bodies>
+	
+    <decal_surfaces>
+        <decal_mesh name="dm_metal" enabled="true" material="shield" />
+        <decal_mesh name="dm_metal_l" enabled="true" material="shield" />
+        <decal_mesh name="dm_metal_r" enabled="true" material="shield" />
+        <decal_mesh name="dm_metal_top" enabled="true" material="shield" />
+        <decal_mesh name="dm_glass" enabled="true" material="glass" />
+    </decal_surfaces>
+	
+    <graphics>
+		<lod_object name="lod_shield">
+        	<object name="g_shield"		enabled="true" >
+				<material materials="mtr_shield" />
+				<material materials="mtr_shield_lod1" max_distance="1000" />
+				<material materials="mtr_shield_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+		
+		<lod_object name="lod_shield_top">
+        	<object name="g_shield_top"		enabled="true" >
+				<material materials="mtr_shield"  />
+				<material materials="mtr_shield_lod1" max_distance="1000" />
+				<material materials="mtr_shield_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+		
+		<lod_object name="lod_shield_left">
+        	<object name="g_shield_l"		enabled="true" >
+				<material materials="mtr_shield"  />
+				<material materials="mtr_shield_lod1" max_distance="1000" />
+				<material materials="mtr_shield_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+		
+		<lod_object name="lod_shield_right">
+        	<object name="g_shield_r"		enabled="true" >
+				<material materials="mtr_shield" />
+				<material materials="mtr_shield_lod1" max_distance="1000" />
+				<material materials="mtr_shield_lod2" max_distance="1500" />
+			</object>
+		</lod_object>
+		
+        <object name="g_badge"		enabled="false" />
+        <object name="g_light_01" 	enabled="true" />
+        <object name="g_glass" 		enabled="true" />
+		<object name="g_light_02" 	enabled="true" />
+    </graphics>
+	
+</dynamic_object>

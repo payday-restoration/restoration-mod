@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" orientation_object="rp_shield_bit_right" />
+	
+	<bodies>
+		<body name="body_collision_01" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_shield_bit_right" />						
+			<object name="c_shield_r" collision_type="convex" />
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="steel_no_decal"/>
+	
+	<graphics>
+		<object name="g_shield_r_acc" enabled="true" />
+	</graphics>
+	
+</dynamic_object>

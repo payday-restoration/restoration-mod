@@ -1,0 +1,287 @@
+<table>
+	<unit>
+		<variables>
+			<var_light_1_state value="1"/>
+			<var_debris_l value="1"/>
+			<var_debris_r value="1"/>
+			<var_debris_top value="1"/>
+			<var_light_2_state value="1"/>
+			<var_shield_state value="1"/>
+			<var_charging_1_state value="0"/>
+			<var_charging_2_state value="0"/>
+		</variables>
+		<filter name="'filter_light_1_disabled'">
+			<check value="vars.var_light_1_state == 0"/>
+		</filter>
+		<filter name="'filter_debris_l'">
+			<check value="vars.var_debris_l == 0"/>
+		</filter>
+		<filter name="'filter_debris_r'">
+			<check value="vars.var_debris_r == 0"/>
+		</filter>
+		<filter name="'filter_debris_top'">
+			<check value="vars.var_debris_top == 0"/>
+		</filter>
+		<filter name="'filter_light_1_enabled'">
+			<check value="vars.var_light_1_state == 1"/>
+		</filter>
+		<filter name="'filter_light_1_charging'">
+			<check value="vars.var_charging_1_state == 1"/>
+		</filter>
+		<filter name="'filter_light_2_disabled'">
+			<check value="vars.var_light_2_state == 0"/>
+		</filter>
+		<filter name="'filter_light_2_enabled'">
+			<check value="vars.var_light_2_state == 1"/>
+		</filter>
+		<filter name="'filter_light_2_charging'">
+			<check value="vars.var_charging_2_state == 1"/>
+		</filter>
+		<filter check_all="true" name="'filter_can_flash_start_only_light_1'">
+			<check value="vars.var_shield_state == 1"/>
+			<check value="vars.var_light_1_state == 1"/>
+			<check value="vars.var_light_2_state == 0"/>
+		</filter>
+		<filter check_all="true" name="'filter_can_flash_start_only_light_2'">
+			<check value="vars.var_shield_state == 1"/>
+			<check value="vars.var_light_1_state == 0"/>
+			<check value="vars.var_light_2_state == 1"/>
+		</filter>
+		<filter check_all="true" name="'filter_can_flash_start_both_lights'">
+			<check value="vars.var_shield_state == 1"/>
+			<check value="vars.var_light_1_state == 1"/>
+			<check value="vars.var_light_2_state == 1"/>
+		</filter>
+		<filter check_all="true" name="'filter_can_flash_light_1'">
+			<check value="vars.var_shield_state == 1"/>
+			<check value="vars.var_light_1_state == 1"/>
+			<check value="vars.var_charging_1_state == 1"/>
+		</filter>
+		<filter check_all="true" name="'filter_can_flash_light_2'">
+			<check value="vars.var_shield_state == 1"/>
+			<check value="vars.var_light_2_state == 1"/>
+			<check value="vars.var_charging_2_state == 1"/>
+		</filter>
+		
+		<sequence name="'enable_body'" triggable="true">
+			<body enabled="false" name="'held_body_middle'"/>
+			<body enabled="true" name="'dropped_body_middle'"/>
+			
+			<body filter="'filter_debris_l'" enabled="false" name="'held_body_left'"/>
+			<body filter="'filter_debris_l'" enabled="true" name="'dropped_body_left'"/>
+			
+			<body filter="'filter_debris_r'" enabled="false" name="'held_body_right'"/>
+			<body filter="'filter_debris_r'" enabled="true" name="'dropped_body_right'"/>
+			
+			<body filter="'filter_debris_top'" enabled="false" name="'held_body_top'"/>
+			<body filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
+			
+			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1_blink'"/>
+			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2_blink'"/>
+		</sequence>
+		
+		<sequence editable_state="false" name="'disable_light_1'" triggable="true">
+			<body enabled="false" name="'light_01'"/>
+			<object enabled="false" name="'g_light_01'"/>
+			<function extension="'base'" filter="'filter_light_1_charging'" function="'clbk_seq_chk_interrupt_flash'" param1="object('e_01')"/>
+			<set_variables var_light_1_state="0"/>
+			<set_variables var_charging_1_state="0"/>
+		</sequence>
+		<sequence editable_state="false" name="'disable_light_2'" triggable="true">
+			<body enabled="false" name="'light_02'"/>
+			<object enabled="false" name="'g_light_02'"/>
+			<function extension="'base'" filter="'filter_light_2_charging'" function="'clbk_seq_chk_interrupt_flash'" param1="object('e_02')"/>
+			<set_variables var_light_2_state="0"/>
+			<set_variables var_charging_2_state="0"/>
+		</sequence>
+		<sequence editable_state="false" name="'disable_light_1_blink'" triggable="true">
+			<body enabled="false" name="'light_01'"/>
+			<object enabled="false" name="'g_light_01'"/>
+			<object enabled="true" name="'g_light_01'" start_time="0.1"/>
+			<object enabled="false" name="'g_light_01'" start_time="0.2"/>
+			<object enabled="true" name="'g_light_01'" start_time="0.3"/>
+			<object enabled="false" name="'g_light_01'" start_time="0.6"/>
+			<function extension="'base'" filter="'filter_light_1_charging'" function="'clbk_seq_chk_interrupt_flash'" param1="object('e_01')"/>
+			<set_variables var_light_1_state="0"/>
+			<set_variables var_charging_1_state="0"/>
+		</sequence>
+		<sequence editable_state="false" name="'disable_light_2_blink'" triggable="true">
+			<body enabled="false" name="'light_02'"/>
+			<object enabled="false" name="'g_light_02'"/>
+			<object enabled="true" name="'g_light_02'" start_time="0.1"/>
+			<object enabled="false" name="'g_light_02'" start_time="0.2"/>
+			<object enabled="true" name="'g_light_02'" start_time="0.3"/>
+			<object enabled="false" name="'g_light_02'" start_time="0.6"/>
+			<function extension="'base'" filter="'filter_light_2_charging'" function="'clbk_seq_chk_interrupt_flash'" param1="object('e_02')"/>
+			<set_variables var_light_2_state="0"/>
+			<set_variables var_charging_2_state="0"/>
+		</sequence>
+		<sequence editable_state="false" name="'int_seq_light_1_hit'" triggable="false">
+			<object enabled="false" name="'g_light_01'"/>
+			<object delayed_filter="'filter_light_1_enabled'" enabled="true" name="'g_light_01'" start_time="0.1"/>
+			<object delayed_filter="'filter_light_1_enabled'" enabled="false" name="'g_light_01'" start_time="0.2"/>
+			<object delayed_filter="'filter_light_1_enabled'" enabled="true" name="'g_light_01'" start_time="0.3"/>
+			<effect name="'effects/particles/dest/security_camera_dest'" parent="'e_01'"/>
+		</sequence>
+		<sequence editable_state="false" name="'int_seq_light_2_hit'" triggable="false">
+			<object enabled="false" name="'g_light_02'"/>
+			<object delayed_filter="'filter_light_2_enabled'" enabled="true" name="'g_light_02'" start_time="0.1"/>
+			<object delayed_filter="'filter_light_2_enabled'" enabled="false" name="'g_light_02'" start_time="0.2"/>
+			<object delayed_filter="'filter_light_2_enabled'" enabled="true" name="'g_light_02'" start_time="0.3"/>
+			<effect name="'effects/particles/dest/security_camera_dest'" parent="'e_02'"/>
+		</sequence>
+		<sequence editable_state="false" name="'int_seq_light_1_break'" once="true" triggable="false">
+			<sound action="'play'" event="'USM_Bulb_BRK'" object="'c_light_01'"/>
+			<effect align="object_rot('e_01')" damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_01')"/>
+			<effect align="object_rot('e_01')" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_01')"/>
+			<function extension="'base'" function="'clbk_seq_chk_interrupt_flash_hit'" param1="object_pos('e_01')" param2="object_rot_y('e_01')" param3="src_unit_unit()"/>
+			<run_sequence name="'disable_light_1_blink'"/>
+		</sequence>
+		<sequence editable_state="false" name="'int_seq_light_2_break'" once="true" triggable="false">
+			<sound action="'play'" event="'USM_Bulb_BRK'" object="'c_light_02'"/>
+			<effect align="object_rot('e_02')" damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_02')"/>
+			<effect align="object_rot('e_02')" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_02')"/>
+			<function extension="'base'" function="'clbk_seq_chk_interrupt_flash_hit'" param1="object_pos('e_02')" param2="object_rot_y('e_02')" param3="src_unit_unit()"/>
+			<run_sequence name="'disable_light_2_blink'"/>
+		</sequence>
+		
+		<sequence editable_state="false" name="'int_seq_glass_break'" once="true" triggable="false">
+			<object enabled="false" name="'g_glass'"/>	
+			<body enabled="false" name="'glass'"/>	
+			<decal_mesh enabled="false" name="'dm_glass'"/>	
+		
+			<sound action="'play'" event="'bulldozer_visor_shatter'" object="'c_glass'"/>
+			
+			<effect align="object_rot('e_03')" damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_03')"/>
+			<effect align="object_rot('e_03')" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" position="object_pos('e_03')"/>
+		</sequence>
+		
+		<sequence editable_state="false" name="'int_seq_shield_break'" once="true" triggable="true">
+			<set_variables var_shield_state="0"/>
+			
+			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1'"/>
+			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2'"/>
+			
+			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
+			
+			<function extension="'damage'" function="'parent_function'" param1="'inventory'" param2="'on_shield_break'" param3="src_unit_unit()"/>
+		</sequence>
+		
+		<sequence editable_state="false" name="'verify_start_flash'" triggable="false">
+			<run_sequence filter="'filter_can_flash_start_only_light_1'" name="'start_flash_light_1'"/>
+			<run_sequence filter="'filter_can_flash_start_only_light_2'" name="'start_flash_light_2'"/>
+			<run_sequence filter="'filter_can_flash_start_both_lights'" name="'start_flash_light_'..pick('1','2')"/>
+		</sequence>
+		<sequence editable_state="false" name="'start_flash_light_1'" triggable="false">
+			<set_variables var_charging_1_state="1"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_01')"/>
+		</sequence>
+		<sequence editable_state="false" name="'start_flash_light_2'" triggable="false">
+			<set_variables var_charging_2_state="1"/>
+			<function extension="'base'" function="'clbk_seq_flash_start'" param1="object('e_02')"/>
+		</sequence>
+		<sequence editable_state="false" name="'verify_flash'" triggable="false">
+			<run_sequence filter="'filter_can_flash_light_1'" name="'flash_light_1'"/>
+			<run_sequence filter="'filter_can_flash_light_2'" name="'flash_light_2'"/>
+		</sequence>
+		<sequence editable_state="false" name="'flash_light_1'" triggable="false">
+			<set_variables var_charging_1_state="0"/>
+			<function extension="'base'" function="'clbk_seq_flash'" param1="object_pos('e_01')" param2="object_rot_y('e_01')"/>
+		</sequence>
+		<sequence editable_state="false" name="'flash_light_2'" triggable="false">
+			<set_variables var_charging_2_state="0"/>
+			<function extension="'base'" function="'clbk_seq_flash'" param1="object_pos('e_02')" param2="object_rot_y('e_02')"/>
+		</sequence>
+		
+		<!-- mother brains -->
+		<body name="'held_body_left'">
+			<endurance damage="30" explosion="25" melee="30">
+				<run_sequence name="'int_seq_shield_break_l'"/>
+			</endurance>
+		</body>
+
+		<body name="'held_body_right'">
+			<endurance damage="30" explosion="25" melee="30">
+				<run_sequence name="'int_seq_shield_break_r'"/>
+			</endurance>
+		</body>
+
+		<body name="'held_body_top'">
+			<endurance damage="30" explosion="25" melee="30">
+				<run_sequence name="'int_seq_shield_break_top'"/>
+			</endurance>
+		</body>
+		
+		<body name="'held_body_middle'">
+			<endurance damage="150" explosion="120" melee="150">
+				<run_sequence name="'int_seq_shield_break'"/>
+			</endurance>
+		</body>
+		
+		<body name="'glass'">
+			<endurance damage="15" explosion="10" melee="15">
+				<run_sequence name="'int_seq_glass_break'"/>
+			</endurance>
+		</body>
+		
+		<!-- destroy left -->
+		<sequence editable_state="false" name="'int_seq_shield_break_l'" once="true" triggable="true">
+			<object enabled="false" name="'g_shield_l'"/>	
+			<body enabled="false" name="'held_body_left'"/>
+			<decal_mesh enabled="false" name="'dm_metal_l'"/>	
+		
+			<set_variables filter_debris_l="0"/>			
+			
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_r')" rotation="object_rot('drop_shield_r')"/>						
+			
+			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
+		</sequence>		
+		
+
+		<!-- destroy right -->
+		<sequence editable_state="false" name="'int_seq_shield_break_r'" once="true" triggable="true">
+			<body enabled="false" name="'held_body_right'"/>
+			<object enabled="false" name="'g_shield_r'"/>	
+			<decal_mesh enabled="false" name="'dm_metal_r'"/>	
+
+			<set_variables filter_debris_r="0"/>			
+
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_l')" rotation="object_rot('drop_shield_l')"/>			
+			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
+		</sequence>		
+
+		<!-- destroy top -->
+		<sequence editable_state="false" name="'int_seq_shield_break_top'" once="true" triggable="true">
+			
+			<object enabled="false" name="'g_shield_top'"/>	
+			<body enabled="false" name="'held_body_top'"/>
+			<decal_mesh enabled="false" name="'dm_metal_top'"/>	
+
+			<set_variables filter_debris_top="0"/>			
+
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_top'" position="object_pos('drop_shield_top')" rotation="object_rot('drop_shield_top')"/>						
+			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
+		</sequence>		
+		
+		<body name="'light_01'">
+			<endurance bullet="1" lock="1">
+				<run_sequence filter="'filter_light_1_enabled'" name="'int_seq_light_1_hit'"/>
+				<run_sequence filter="'filter_can_flash_light_1'" name="'int_seq_light_1_break'"/>
+				<run_sequence filter="'filter_light_1_enabled'" name="'reset_body_damage'"/>
+			</endurance>
+		</body>
+		
+		<body name="'light_02'">
+			<endurance bullet="1" lock="1">
+				<run_sequence filter="'filter_light_2_enabled'" name="'int_seq_light_2_hit'"/>
+				<run_sequence filter="'filter_can_flash_light_2'" name="'int_seq_light_2_break'"/>
+				<run_sequence filter="'filter_light_2_enabled'" name="'reset_body_damage'"/>
+			</endurance>
+		</body>
+
+		<sequence editable_state="false" name="'reset_body_damage'" triggable="false">
+			<set_damage bullet="0"/>
+		</sequence>
+		
+	</unit>
+</table>

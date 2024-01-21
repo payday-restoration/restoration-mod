@@ -112,6 +112,7 @@ if GGWEPNENAME then
 				if table.contains(blueprint, "wpn_fps_pis_c96_nozzle") then
 					return managers.localization:text("bm_w_c96_dl44")
 				end
+
 		--[[     SMGs     ]]--
 			elseif factory_id == "wpn_fps_smg_mp5" then
 				if table.contains(blueprint, "wpn_fps_smg_mp5_fg_m5k") then
@@ -129,12 +130,42 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_w_sterling_e11")
 				end
 
+		--[[     MGs     ]]--
+			elseif factory_id == "wpn_fps_lmg_mg42" then
+				if table.contains(blueprint, "wpn_fps_lmg_mg42_b_vg38") then
+					return managers.localization:text("bm_w_mg42_dlt19")
+				end
+
 		--[[     ARs     ]]--
 			elseif factory_id == "wpn_fps_ass_amcar" then
 				if table.contains(blueprint, "wpn_fps_upg_i_patriot") then
 					return managers.localization:text("bm_wp_upg_i_patriot")
 				end
+
+			elseif factory_id == "wpn_fps_ass_g36" then
+				if table.contains(blueprint, "wpn_fps_upg_g36_fg_long") then
+					if table.contains(blueprint, "wpn_fps_ass_g36_o_vintage") then
+						return managers.localization:text("bm_w_g36_long")
+					else
+						return managers.localization:text("bm_w_g36_v")
+					end
+				elseif table.contains(blueprint, "wpn_fps_ass_g36_fg_c") then
+					return managers.localization:text("bm_w_g36_c")
+				else
+					if table.contains(blueprint, "wpn_fps_ass_g36_o_vintage") then
+						return managers.localization:text("bm_w_g36_k")
+					end
+				end
 	
+			elseif factory_id == "wpn_fps_ass_aug" then
+				if table.contains(blueprint, "wpn_fps_aug_body_f90") then
+					return managers.localization:text("bm_w_aug_f90")
+				else
+					if table.contains(blueprint, "wpn_fps_aug_fg_a3") then
+						return managers.localization:text("bm_w_aug_a3")
+					end
+				end
+
 			elseif factory_id == "wpn_fps_ass_m16" then
 				if table.contains(blueprint, "wpn_fps_m16_fg_vietnam") then
 					return managers.localization:text("bm_w_m16a1")

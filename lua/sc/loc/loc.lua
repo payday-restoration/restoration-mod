@@ -2791,11 +2791,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_par_b_short"] = "Comped Barrel",
 					--Buzzsaw/Mg42
 					["bm_w_mg42"] = "Buzzsaw-42",
+					["bm_w_mg42_dlt19"] = "DLT-19",
 					--Versteckt-51/HK51B
 					["bm_w_hk51b"] = "Versteckt-51B",
 					--Microgun
 					["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
-					--CUSTOM SMGs
+					--CUSTOM MGs
 						["bm_w_sig_xm250"] = "FIK MG277",
 
 				--[[ SHOTGUNS ]]
@@ -2855,7 +2856,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M733/AMCAR
 					["bm_w_amcar"] = "AM-CAR",
 					--G36
-					["bm_w_g36"] = "JP36",
+					["bm_w_g36"] = "JP-36KV",
+					["bm_w_g36_k"] = "JP-36K",
+					["bm_w_g36_c"] = "JP-36C",
+					["bm_w_g36_v"] = "JP-36V",
+					["bm_w_g36_long"] = "JP-36",
 					--VHS/Lion's Roar
 					["bm_w_vhs"] = "Lion's Roar",
 					["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
@@ -2878,6 +2883,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_corgi_b_short"] = "MSG Barrel",
 					--UAR
 					["bm_w_aug"] = "UAR A2",
+					["bm_w_aug_a3"] = "UAR A3",
+					["bm_w_aug_f90"] = "Raptor 90",
 					["bm_wp_upg_b_hbar"] = "Heavy Barrel",	
 					--AK17
 					["bm_w_ak12"] = "AK-17",
@@ -3400,6 +3407,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_hk21_g_ergo"] = "HK21 Ergo Grip",
 					--MG42
 					["bm_w_mg42"] = "Mauser Maschinengewehr 42",
+					["bm_w_mg42_dlt19"] = "BlasTech DLT-19",
 					["bm_wp_mg42_b_mg34"] = "Maschinengewehr 34 Barrel",
 					["bm_wp_mg42_b_vg38"] = "BlasTech DLT-19 Barrel",
 					--Versteckt-51/HK51B
@@ -3518,8 +3526,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_vhs_b_sniper"] = "Sniper Barrel",
 					["bm_wp_vhs_b_silenced"] = "Suppressed Barrel",
 					--JP36
-					["bm_w_g36"] = "H&K G36K",
-					["bm_wp_g36_fg_c"] = "G36c Handguard",
+					["bm_w_g36"] = "H&K G36KV",
+					["bm_w_g36_k"] = "H&K G36K",
+					["bm_w_g36_c"] = "H&K G36C",
+					["bm_w_g36_v"] = "H&K G36V",
+					["bm_w_g36_long"] = "H&K G36",
+					["bm_wp_g36_fg_c"] = "G36C Handguard",
 					["bm_wp_g36_fg_ksk"] = "Knights Armament Co. RAS Handguard",
 					["bm_wp_g36_s_kv"] = "G36KV Stock",
 					["bm_wp_g36_s_sl8"] = "SL8 Stock",
@@ -3538,6 +3550,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--AUG
 					["bm_w_aug"] = "Steyr AUG A2",
+					["bm_w_aug_a3"] = "Steyr AUG A3",
+					["bm_w_aug_f90"] = "Thales F90",
 					["bm_wp_aug_fg_a3"] = "A3 Rail",
 					["bm_wp_aug_body_f90"] = "Thales F90 Kit",
 					--Boatgun
@@ -4051,6 +4065,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m4"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
+					["bm_w_aug_a3"] = "AUG",
+					["bm_w_aug_f90"] = "AUG",
 						["bm_aug_sc_desc"] = "#{stats_negative}#\"RUN AWAY! PLEAD FOR YOUR LIFE!\"##\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nPresident of the middleschool student council.",
 					["bm_wp_ak5_fg_fnc"] = "Funco Kit",
 						["bm_wp_ak5_fg_fnc_desc"] = "\"To respond to its master's wishes is a tool's joy.\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nGives off a heavy \"main protagonist\" aura.",

@@ -199,6 +199,8 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc_husk")
 	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
 	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
+	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk")
 
 	local swat_sniper = unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")

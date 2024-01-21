@@ -2054,6 +2054,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
 				["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",
 				--2006M Hailstorm
+				["bm_w_hailstorm_2006m"] = "Hailstorm-9",
+				["bm_w_hailstorm_rsh12"] = "Hailstorm-12",
 				["bm_wp_upg_i_iw_hailstorm"] = "Hailstorm Kit",
 				["bm_wp_upg_i_iw_hailstorm_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions.##",
 				["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "A prototype weapon kit manufactured by Fujiwara Heavy Industries.\n\nModifies this weapon to chamber special #{skill_color}#triple-stacked munitions## but #{important_1}#damage though armor is reduced by 50% and can no longer pierce shields.##",
@@ -2236,6 +2238,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--MP40
 				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 				--CUSTOM SMGs
+					["bm_w_m7caseless"] = "Misriah Armory M7 SMG",
+					["bm_w_m7caseless_supp"] = "Misriah Armory M7S SMG",
+					["bm_w_x_m7caseless"] = "Dual M7 SMGs",
+					["bm_w_x_m7caseless_supp"] = "Dual M7S SMGs",
 					--AR57
 					["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
 					--LWRC
@@ -2749,7 +2755,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Swedish K
 					["bm_w_m45"] = "Swedish K",
 					--Pachett/Sterling
-					["bm_w_sterling"] = "Patchette L2A1",
+					["bm_w_sterling"] = "Patchette L2A3",
+					["bm_w_sterling_sd"] = "Patchette L34A1",
+					["bm_w_sterling_pistol"] = "Patchette Mk. VII",
 					["bm_w_sterling_e11"] = "E-11",
 					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
 					--Uzi
@@ -2878,6 +2886,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
 					--AK5
 					["bm_w_ak5"] = "Ak 5",
+					["bm_w_ak5b"] = "Ak 5B",
+					["bm_w_ak5c"] = "Ak 5C",
+					["bm_w_ak5_fnc"] = "VF Carabine",
 					--Union 5.56
 					["bm_w_corgi"] = "Union 5.56",
 					["bm_wp_corgi_b_short"] = "MSG Barrel",
@@ -3339,16 +3350,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_uzi_fg_rail"] = "FAB Defense Uzi Tri-Rail System",
 					["bm_wp_uzi_b_suppressed"] = "Two-Stage Suppressor",
 					--Pachette
-					["bm_w_sterling"] = "Sterling L2A1",
+					["bm_w_sterling"] = "Sterling L2A3",
+					["bm_w_sterling_sd"] = "Sterling L34A1",
+					["bm_w_sterling_pistol"] = "Sterling Mk. VII",
 					["bm_w_sterling_e11"] = "BlasTech E-11",
 					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
 					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-					["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
-					["bm_wp_sterling_m_long"] = "34rnd L2A1 Magazine",
+					["bm_wp_sterling_m_short"] = "15rnd Magazine",
+					["bm_wp_sterling_m_long"] = "34rnd Magazine",
 					--
 					["bm_w_mac10"] = "Ingram M10",
 					["bm_w_x_mac10"] = "Akimbo M10s",
-					["bm_wp_mac10_m_extended"] = "30rnd M10 Magazine",
+					["bm_wp_mac10_m_extended"] = "30rnd Magazine",
 					["bm_wp_mac10_body_ris"] = "MAC Rail System", --I'm getting nothing but airsoft results so generic name
 					["bm_wp_mac10_s_skel"] = "Low Mount Skeleton Stock",
 					--Thompson
@@ -3363,8 +3376,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_schakal"] = "H&K UMP-45",
 					["bm_wp_schakal_b_civil"] = "USC Barrel",
 					["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
-					["bm_wp_schakal_m_short"] = "15rnd UMP Magazine",
-					["bm_wp_schakal_m_long"] = "45rnd UMP Magazine",
+					["bm_wp_schakal_m_short"] = "15rnd Magazine",
+					["bm_wp_schakal_m_long"] = "45rnd Magazine",
 					--M45
 					["bm_w_m45"] = "Carl Gustaf Kpist M/45",
 					["bm_wp_smg_m45_m_extended"] = "50rnd M/45 Magazine",
@@ -3435,23 +3448,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[SHOTGUNS]]
 					--Saiga
 					["bm_w_basset"] = "Spike X1S Saiga",
-					["bm_w_basset_m_extended"] = "10rnd AGP Arms Saiga Magazine",
+					["bm_w_basset_m_extended"] = "10rnd AGP Arms Magazine",
 					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
-					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Drum",
 					["bm_wp_saiga_fg_holy"] = "Fuglystick Rail System",
 					--AA12
 					["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
-					["bm_wp_aa12_barrel_long"] = "Standard AA-12 Barrel",
-					["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
+					["bm_wp_aa12_barrel_long"] = "Standard Barrel",
+					["bm_wp_aa12_mag_drum"] = "20rnd Drum",
 					--Six12
 					["bm_w_rota"] = "Crye Precision SIX12",
 					--M1014
 					["bm_w_benelli"] = "Benelli M4 Super 90",
-					["bm_wp_ben_b_long"] = "Long M4 Barrel",
-					["bm_wp_ben_b_short"] = "NFA M4 Barrel",
-					["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
-					["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
+					["bm_wp_ben_b_long"] = "Long Barrel",
+					["bm_wp_ben_b_short"] = "NFA Barrel",
+					["bm_wp_ben_s_collapsed"] = "Collapsed Stock",
+					["bm_wp_ben_fg_standard"] = "Tactical Stock",
 					--SPAS-12
 					["bm_w_spas12"] = "Franchi SPAS-12",
 					["bm_wp_spas12_b_long"] = "8rnd Tube",
@@ -3559,11 +3572,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--AK12
 					["bm_w_ak12"] = "Kalashnikov Concern AK-12",
 					--Ak5
-					 ["bm_w_ak5"] = "Bofors Ak 5",
-					 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
-					 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
-					 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
-					 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+					["bm_w_ak5"] = "Bofors Ak 5",
+					["bm_w_ak5b"] = "Bofors Ak 5B",
+					["bm_w_ak5c"] = "Bofors Ak 5C",
+					["bm_w_ak5_fnc"] = "FN FNC",
+					["bm_wp_ak5_fg_ak5c"] = "Ak 5C Handguard",
+					["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
+					["bm_wp_ak5_s_ak5b"] = "Ak 5B Stock",
+					["bm_wp_ak5_s_ak5c"] = "Ak 5C Stock",
 					--CAR-4
 					["bm_w_m4"] = "Colt M4A1",
 					--AK74

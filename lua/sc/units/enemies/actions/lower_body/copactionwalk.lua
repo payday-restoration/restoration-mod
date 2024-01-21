@@ -1,3 +1,31 @@
+local mvec3_set = mvector3.set
+local mvec3_z = mvector3.z
+local mvec3_set_z = mvector3.set_z
+local mvec3_sub = mvector3.subtract
+local mvec3_norm = mvector3.normalize
+local mvec3_add = mvector3.add
+local mvec3_mul = mvector3.multiply
+local mvec3_lerp = mvector3.lerp
+local mvec3_cpy = mvector3.copy
+local mvec3_set_l = mvector3.set_length
+local mvec3_dot = mvector3.dot
+local mvec3_cross = mvector3.cross
+local mvec3_dis = mvector3.distance
+local mvec3_dis_sq = mvector3.distance_sq
+local mvec3_len = mvector3.length
+local mvec3_rot = mvector3.rotate_with
+local mrot_lookat = mrotation.set_look_at
+local mrot_slerp = mrotation.slerp
+local math_abs = math.abs
+local math_max = math.max
+local math_min = math.min
+local tmp_vec1 = Vector3()
+local tmp_vec2 = Vector3()
+local tmp_vec3 = Vector3()
+local tmp_vec4 = Vector3()
+local temp_rot1 = Rotation()
+local idstr_base = Idstring("base")
+
 -- Helper function to get the final path position
 function CopActionWalk:get_destination_pos()
 	return self._nav_point_pos(self._simplified_path and self._simplified_path[#self._simplified_path] or self._nav_path and self._nav_path[#self._nav_path])

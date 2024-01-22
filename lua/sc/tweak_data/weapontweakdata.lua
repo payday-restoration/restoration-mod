@@ -4077,12 +4077,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590','m45'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9','china','scout','qbu88','m1897','sko12','victor','hcar','awp','supernova','m590','m45','pm9','baka','type54','m1911','vityaz','groza','contraband','shak12','winchester1874','sbl','arbiter'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911' }
+	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_baka' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
@@ -5721,7 +5721,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hs2000.desc_id = "bm_hs2000_sc_desc"						
 						self.hs2000.CLIP_AMMO_MAX = 16
 						self.hs2000.AMMO_MAX = 60
-						self.hs2000.tactical_reload = 1
 						self.hs2000.FIRE_MODE = "single"
 						self.hs2000.fire_mode_data = {}
 						self.hs2000.fire_mode_data.fire_rate = 0.10344827
@@ -5758,8 +5757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Akimbo Crosskill Chunky
 						self.x_m1911.has_description = true
-						self.x_m1911.desc_id = "bm_m1911_sc_desc"				
-						self.x_m1911.tactical_reload = 1	
+						self.x_m1911.desc_id = "bm_m1911_sc_desc"
 						self.x_m1911.fire_mode_data.fire_rate = 0.1111111
 						self.x_m1911.CLIP_AMMO_MAX = 14
 						self.x_m1911.AMMO_MAX = 80
@@ -6353,7 +6351,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.type54.desc_id = "bm_type54_sc_desc"					
 						self.type54.CLIP_AMMO_MAX = 9
 						self.type54.AMMO_MAX = 40
-						self.type54.tactical_reload = 1
 						self.type54.FIRE_MODE = "single"
 						self.type54.fire_mode_data = {}
 						self.type54.fire_mode_data.fire_rate = 0.1304347
@@ -6456,7 +6453,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Interceptor .45
 						self.usp.has_description = true
-						self.usp.desc_id = "bm_usp_sc_desc"			
+						self.usp.desc_id = "bm_usp_sc_desc"
 						self.usp.timers = {
 							reload_not_empty = 1.47,
 							reload_empty = 2.12,
@@ -6467,7 +6464,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.usp.AMMO_MAX = 40
 						self.usp.kick = self.stat_info.kick_tables.right_recoil
 						self.usp.CLIP_AMMO_MAX = 12
-						self.usp.tactical_reload = 1
 						self.usp.supported = true
 						self.usp.ads_speed = 0.200
 						self.usp.damage_falloff = {
@@ -6496,7 +6492,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Crosskill (1911)
 						self.colt_1911.has_description = true
-						self.colt_1911.desc_id = "bm_1911_sc_desc"				
+						self.colt_1911.desc_id = "bm_1911_sc_desc"
 						self.colt_1911.fire_mode_data.fire_rate = 0.1176470588
 						self.colt_1911.CLIP_AMMO_MAX = 8
 						self.colt_1911.AMMO_MAX = 40
@@ -6530,8 +6526,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Crosskill Chunky (M1911)
 						self.m1911.has_description = true
-						self.m1911.desc_id = "bm_m1911_sc_desc"				
-						self.m1911.tactical_reload = 1	
+						self.m1911.desc_id = "bm_m1911_sc_desc"
 						self.m1911.fire_mode_data.fire_rate = 0.1111111
 						self.m1911.CLIP_AMMO_MAX = 7
 						self.m1911.AMMO_MAX = 40
@@ -7590,7 +7585,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--PRIMARIES
 
 					--AK GEN 21 Tactical
-						self.vityaz.tactical_reload = 1	
 						self.vityaz.use_data.selection_index = 2
 						self.vityaz.BURST_FIRE = false
 						self.vityaz.AMMO_MAX = 120
@@ -9441,7 +9435,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.groza.has_description = true
 						self.groza.AMMO_MAX = 90
 						self.groza.CLIP_AMMO_MAX = 30
-						self.groza.tactical_reload = 1
 						self.groza.FIRE_MODE = "auto"
 						self.groza.fire_mode_data.fire_rate = 0.08571428571
 						self.groza.CAN_TOGGLE_FIREMODE = true
@@ -9793,7 +9786,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 						self.contraband.has_description = true
 						self.contraband.AMMO_MAX = 60
-						self.contraband.tactical_reload = 1
 						self.contraband.FIRE_MODE = "auto"
 						self.contraband.fire_mode_data.fire_rate = 0.1
 						self.contraband.CAN_TOGGLE_FIREMODE = true
@@ -9863,8 +9855,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					
 					--KS12 Urban (ShAK-12/ASh-12.7)
 						self.shak12.desc_id = "bm_shak12_sc_desc"
-						self.shak12.has_description = true			
-						self.shak12.tactical_reload = 1	
+						self.shak12.has_description = true
 						self.shak12.CLIP_AMMO_MAX = 20
 						self.shak12.AMMO_MAX = 60
 						self.shak12.FIRE_MODE = "single"
@@ -10223,7 +10214,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25
 						self.winchester1874.timers.shotgun_reload_exit_empty = 1
-						self.winchester1874.tactical_reload = 1
 						self.winchester1874.stats_modifiers = nil
 						self.winchester1874.panic_suppression_chance = 0.05
 			
@@ -10542,7 +10532,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sbl.BURST_FIRE_SPREAD_MULTIPLIER = 2
 						self.sbl.CAN_TOGGLE_FIREMODE = false
 						self.sbl.kick = self.stat_info.kick_tables.left_kick
-						self.sbl.tactical_reload = 1
 						self.sbl.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.sbl.supported = true
 						self.sbl.ads_speed = 0.340
@@ -11849,7 +11838,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.has_description = true
 						self.boot.AMMO_MAX = 40
 						self.boot.CLIP_AMMO_MAX = 6
-						self.boot.tactical_reload = 1
 						self.boot.fire_mode_data.fire_rate = 1
 						self.boot.rays = 9
 						self.boot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
@@ -12466,7 +12454,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}		
 						self.arbiter.fire_mode_data.fire_rate = 0.5
 						self.arbiter.CLIP_AMMO_MAX = 5
-						self.arbiter.tactical_reload = 1
 						self.arbiter.AMMO_MAX = 6
 						self.arbiter.rays = 1
 						self.arbiter.supported = true

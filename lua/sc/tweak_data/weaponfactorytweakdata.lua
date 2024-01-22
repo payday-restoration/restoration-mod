@@ -13924,6 +13924,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 
 	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")		
 	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")		
+	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_smg_schakal_vg_surefire")		
 	
 	self.wpn_fps_smg_baka_npc.uses_parts = deep_clone(self.wpn_fps_smg_baka.uses_parts)	
 
@@ -18857,6 +18858,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	table.insert(self.wpn_fps_smg_pm9.uses_parts, "wpn_fps_smg_pm9_m_extended")
 	table.insert(self.wpn_fps_smg_pm9.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_smg_pm9.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_pm9.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_smg_pm9_npc.uses_parts = deep_clone(self.wpn_fps_smg_pm9.uses_parts)	
 		
@@ -34865,10 +34867,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self[factory_id].override = self[factory_id].override or {}
 			self[factory_id].override.wpn_fps_upg_vg_ass_smg_verticalgrip = {a_obj = "a_fl", custom_stats = { ads_speed_mult = 1.05 }, forbids = {}, desc_id = "fucktheatf"}
 			self[factory_id].override.wpn_fps_upg_vg_ass_smg_stubby = {a_obj = "a_fl", custom_stats = { ads_speed_mult = 1.025 }, forbids = {}, desc_id = "fucktheatf"}
+			self[factory_id].override.wpn_fps_smg_schakal_vg_surefire = {a_obj = "a_fl", custom_stats = { ads_speed_mult = 1.05 }, forbids = {}, desc_id = "fucktheatf", stats = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip.stats)}
 	
 			if self[factory_id].adds and self[factory_id].adds.wpn_fps_upg_fl_pis_laser then
 				self[factory_id].adds.wpn_fps_upg_vg_ass_smg_verticalgrip = deep_clone(self[factory_id].adds.wpn_fps_upg_fl_pis_laser)
 				self[factory_id].adds.wpn_fps_upg_vg_ass_smg_stubby = deep_clone(self[factory_id].adds.wpn_fps_upg_fl_pis_laser)
+				self[factory_id].adds.wpn_fps_smg_schakal_vg_surefire = deep_clone(self[factory_id].adds.wpn_fps_upg_fl_pis_laser)
 			end
 	
 			self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
@@ -34877,7 +34881,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			for part_id, i in pairs(self[factory_id].override) do
 				attachment_list = {
 					"wpn_fps_upg_vg_ass_smg_verticalgrip",
-					"wpn_fps_upg_vg_ass_smg_stubby"
+					"wpn_fps_upg_vg_ass_smg_stubby",
+					"wpn_fps_smg_schakal_vg_surefire"
 				}
 	
 				for _, override_id in ipairs(attachment_list) do

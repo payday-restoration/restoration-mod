@@ -1218,6 +1218,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_b93o_desc"] = "#{important_1}#추가 반동을 대가로## 3점사를 #{skill_color}#자동 발사 설정으로 교체합니다.##",
 
 		--2006M Hailstorm
+		["bm_w_hailstorm_2006m"] = "Hailstorm-9",
+		["bm_w_hailstorm_rsh12"] = "Hailstorm-12",		
 		["bm_wp_upg_i_iw_hailstorm"] = "헬스톰 킷",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 #{skill_color}#삼중 챔버 스택 탄약을 사용하도록 개조합니다.##",
 		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "후지와라 중공업에서 제조된 프로토타입 무기 키트.\n\n이 무기를 특수 #{skill_color}#삼중 챔버 스택 탄약을 사용하도록 개조하는## 대신 #{important_1}#방탄복을 관통해 주는 피해가 50%정도 감소하고 실드을 뚫을 수 없습니다.##",
@@ -1572,6 +1574,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_erma_sc_desc"] = "제 2차 세계 대전동안 보병의 손에 널리 사용되었던 상당히 안정적인 기관단총으로, 그저 탄창을 손잡이로 사용하지 마십시오.",	
 
 		--CUSTOM SMGs
+		["bm_w_m7caseless"] = "Misriah Armory M7 기관단총",
+		["bm_w_m7caseless_supp"] = "Misriah Armory M7S 기관단총",
+		["bm_w_x_m7caseless"] = "듀얼 M7 기관단총",
+		["bm_w_x_m7caseless_supp"] = "듀얼 M7S 기관단총",		
 		--AR57
 		["bm_w_alpha57_prim"] = "FSS Hurricane 기관단총",
 		["bm_w_alpha57_prim_desc"] = "FSS Hurricane 기관단총은 사거리와 저지력을 희생한 대신 탄약 용량을 늘리고 안정성을 높였습니다.\n\n#{skill_color}#방탄복을 관통해 대미지의 75%를 가하고 캡틴이 아닌 적에게 주는 헤드샷 피해량을 66%만큼 더 가합니다.##",		
@@ -2846,7 +2852,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Swedish K
 					["bm_w_m45"] = "Swedish K",
 					--Pachett/Sterling
-					["bm_w_sterling"] = "Patchette L2A1",
+					["bm_w_sterling"] = "Patchette L2A3",
+					["bm_w_sterling_sd"] = "Patchette L34A1",
+					["bm_w_sterling_pistol"] = "Patchette Mk. VII",
 					["bm_w_sterling_e11"] = "E-11",
 					["bm_wp_sterling_b_e11"] = "블라스테크 E-11 총열",
 					--Uzi
@@ -2975,6 +2983,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_upg_s_fixed"] = "CAR 고정형 개머리판",
 					--AK5
 					["bm_w_ak5"] = "Ak 5",
+					["bm_w_ak5b"] = "Ak 5B",
+					["bm_w_ak5c"] = "Ak 5C",
+					["bm_w_ak5_fnc"] = "VF Carabine",					
 					--Union 5.56
 					["bm_w_corgi"] = "Union 5.56",
 					["bm_wp_corgi_b_short"] = "MSG 총열",
@@ -3429,16 +3440,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_uzi_fg_rail"] = "FAB 방어용 우지 삼중 레일 시스템",
 						["bm_wp_uzi_b_suppressed"] = "2단계 소음기",
 						--Pachette
-						["bm_w_sterling"] = "스텔링 L2A1",
+						["bm_w_sterling"] = "스텔링 L2A3",
+						["bm_w_sterling_sd"] = "스텔링 L34A1",
+						["bm_w_sterling_pistol"] = "스텔링 Mk. VII",						
 						["bm_w_sterling_e11"] = "블라스테크 E-11",
 						["bm_wp_sterling_b_suppressed"] = "L34A1 총열",
 						["bm_wp_sterling_b_e11"] = "블라스테크 E-11 총열",
-						["bm_wp_sterling_m_short"] = "15발 L2A1 탄창",
-						["bm_wp_sterling_m_long"] = "34발 L2A1 탄창",
+						["bm_wp_sterling_m_short"] = "15발 탄창",
+						["bm_wp_sterling_m_long"] = "34발 탄창",
 						--
 						["bm_w_mac10"] = "잉그램 M10",
 						["bm_w_x_mac10"] = "아킴보 M10",
-						["bm_wp_mac10_m_extended"] = "30발 M10 탄창",
+						["bm_wp_mac10_m_extended"] = "30발 탄창",
 						["bm_wp_mac10_body_ris"] = "MAC 레일 시스템", --I'm getting nothing but airsoft results so generic name
 						["bm_wp_mac10_s_skel"] = "로우 마운트 스켈레톤 개머리판",
 						--Thompson
@@ -3453,8 +3466,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_schakal"] = "H&K UMP-45",
 						["bm_wp_schakal_b_civil"] = "USC 총열",
 						["bm_wp_schakal_ns_silencer"] = "젬테크 QD UMP 소음기",
-						["bm_wp_schakal_m_short"] = "15발 UMP 탄창",
-						["bm_wp_schakal_m_long"] = "45발 UMP 탄창",
+						["bm_wp_schakal_m_short"] = "15발 탄창",
+						["bm_wp_schakal_m_long"] = "45발 탄창",
 						--M45
 						["bm_w_m45"] = "칼 구스타프 M/45 기관단총",
 						["bm_wp_smg_m45_m_extended"] = "50발 M/45 탄창",
@@ -3523,23 +3536,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--[[SHOTGUNS]]
 						--Saiga
 						["bm_w_basset"] = "스파이크 X1S 사이가",
-						["bm_w_basset_m_extended"] = "10발 AGP 암즈 사이가 탄창",
+						["bm_w_basset_m_extended"] = "10발 AGP 암즈 탄창",
 						["bm_w_saiga"] = "칼라시니코프 사이가-12K",
 						["bm_wp_saiga_fg_lowerrail"] = "울티막 AK 모듈식 레일 포엔드 시스템",
-						["bm_wp_saiga_m_20rnd"] = "20발 MD 암즈 사이가 드럼탄창",
+						["bm_wp_saiga_m_20rnd"] = "20발 MD 암즈 드럼탄창",
 						["bm_wp_saiga_fg_holy"] = "퍼글리스틱 레일 시스템",
 						--AA12
 						["bm_w_aa12"] = "MPS 자동 돌격 산탄총-12 CQB",
-						["bm_wp_aa12_barrel_long"] = "표준 AA12 총열",
-						["bm_wp_aa12_mag_drum"] = "20발 AA-12 드럼탄창",
+						["bm_wp_aa12_barrel_long"] = "표준 총열",
+						["bm_wp_aa12_mag_drum"] = "20발 드럼탄창",
 						--Six12
 						["bm_w_rota"] = "크라이 프리시전 식스12",
 						--M1014
 						["bm_w_benelli"] = "베넬리 M4 슈퍼 90",
-						["bm_wp_ben_b_long"] = "긴 M4 총열",
-						["bm_wp_ben_b_short"] = "NFA M4 총열",
-						["bm_wp_ben_s_collapsed"] = "순납형 M4 개머리판",
-						["bm_wp_ben_fg_standard"] = "M4 택티컬 개머리판",
+						["bm_wp_ben_b_long"] = "긴 총열",
+						["bm_wp_ben_b_short"] = "NFA 총열",
+						["bm_wp_ben_s_collapsed"] = "순납형 개머리판",
+						["bm_wp_ben_fg_standard"] = "택티컬 개머리판",
 						--SPAS-12
 						["bm_w_spas12"] = "프란치 SPAS-12",
 						["bm_wp_spas12_b_long"] = "8발 튜브",
@@ -3649,10 +3662,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_ak12"] = "칼라시니코프 AK-12",
 						--Ak5
 						["bm_w_ak5"] = "보포스 Ak 5",
-						["bm_wp_ak5_fg_ak5c"] = "Ak 5c 총열덮개",
+						["bm_w_ak5b"] = "보포스 Ak 5B",
+						["bm_w_ak5c"] = "보포스 Ak 5C",
+						["bm_w_ak5_fnc"] = "FN FNC",
+						["bm_wp_ak5_fg_ak5c"] = "Ak 5C 총열덮개",
 						["bm_wp_ak5_fg_fnc"] = "FN FNC 총열덮개",
-						["bm_wp_ak5_s_ak5b"] = "Ak 5b 개머리판",
-						["bm_wp_ak5_s_ak5c"] = "Ak 5c 개머리판",
+						["bm_wp_ak5_s_ak5b"] = "Ak 5B 개머리판",
+						["bm_wp_ak5_s_ak5c"] = "Ak 5C 개머리판",
 						--CAR-4
 						["bm_w_m4"] = "콜트 M4A1",
 						--AK74

@@ -1166,6 +1166,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_b93o_desc"] = "Заменяет стрельбу очередями на #{skill_color}#автоматическую##, но #{important_1}#увеличивает отдачу.##",
 
 		--2006M Hailstorm
+		["bm_w_hailstorm_2006m"] = "Хейлшторм-9",
+		["bm_w_hailstorm_rsh12"] = "Хейлшторм-12",
 		["bm_wp_upg_i_iw_hailstorm"] = "Набор Хейлшторм",
 		["bm_wp_upg_i_iw_hailstorm_desc"] = "Позволяет стрелять особыми #{skill_color}#тройными боеприпасами.##",
 		["bm_wp_upg_i_iw_hailstorm_no_pen_desc"] = "Позволяет стрелять особыми #{skill_color}#тройными боеприпасами##, но #{important_1}#урон по броне уменьшается на 50% и отключается пробитие щитов.##",
@@ -2755,7 +2757,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_mp5k_pdw"] = "Compact-5K PDW",
 		["bm_w_x_mp5"] = "Парные Compact-5",	
 		["bm_w_m45"] = "Swedish K",
-		["bm_w_sterling"] = "Patchette L2A1",
+		["bm_w_sterling"] = "Patchette L2A3",
+		["bm_w_sterling_sd"] = "Patchette L34A1",
+		["bm_w_sterling_pistol"] = "Patchette Mk. VII",
 		["bm_w_sterling_e11"] = "E-11",
 		["bm_wp_sterling_b_e11"] = "Ствол BlasTech E-11",
 		["bm_w_uzi"] = "Uzi",
@@ -2768,6 +2772,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_alpha57_prim"] = "FSS Hurricane",
 		["bm_w_smg45"] = "FT Striker .45",
 		["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
+		["bm_w_m7caseless"] = "Misriah Armory M7",
+		["bm_w_m7caseless_supp"] = "Misriah Armory M7S",
+		["bm_w_x_m7caseless"] = "Парные M7",
+		["bm_w_x_m7caseless_supp"] = "Парные M7S",
 		["bm_w_tecci"] = "Bootlegger",
 		["bm_w_m249"] = "KSP-90",
 		["bm_w_rpk"] = "RPK",
@@ -2821,6 +2829,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_m4"] = "CAR-4",
 		["bm_wp_upg_fg_m4a1"] = "Em-Four Kit",
 		["bm_w_ak5"] = "Ak 5",
+		["bm_w_ak5b"] = "Ak 5B",
+		["bm_w_ak5c"] = "Ak 5C",
+		["bm_w_ak5_fnc"] = "VF Carabine",
 		["bm_w_corgi"] = "Union 5.56",	
 		["bm_w_aug"] = "UAR A2",
 		["bm_w_aug_a3"] = "UAR A3",
@@ -3019,7 +3030,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_mp5k_pdw"] = "Компакт-5К ПДВ",
 		["bm_w_x_mp5"] = "Парные Компакт-5",
 		["bm_w_m45"] = "Карл M-45",
-		["bm_w_sterling"] = "Патчетт A1",
+		["bm_w_sterling"] = "Патчетт Л2A3",
+		["bm_w_sterling_sd"] = "Патчетт Л34А1",
+		["bm_w_sterling_pistol"] = "Патчетт Мк. VII",
 		["bm_w_sterling_e11"] = "Е-11",
 		["bm_w_uzi"] = "Узи",
 		["bm_w_m1928"] = "Чикагская машинка",
@@ -3035,6 +3048,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_smg45"] = "Страйкер .45",			
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "КРАЙНЕТ Тайфун",
+			
+			["bm_w_m7caseless"] = "Мисрих M7",
+			["bm_w_m7caseless_supp"] = "Мисрих М7С",
+			["bm_w_x_m7caseless"] = "Парные M7",
+			["bm_w_x_m7caseless_supp"] = "Парные M7С",
 			
 			["bm_w_sig_xm250"] = "ФИК МГ277",
 		["bm_w_tecci"] = "Контрабандист",
@@ -3088,6 +3106,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_famas"] = "Клэрион 5.56",
 		["bm_w_m4"] = "КАР-4",
 		["bm_w_ak5"] = "АК 5",
+		["bm_w_ak5b"] = "АК 5Б",
+		["bm_w_ak5c"] = "АК 5С",
+		["bm_w_ak5_fnc"] = "Карабин ВФ",
 		["bm_w_corgi"] = "Юнион 5.56",
 		["bm_w_aug"] = "ЮАР A2",
 		["bm_w_aug_a3"] = "ЮАР А3",
@@ -3437,12 +3458,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_sterling_e11"] = "BlasTech E-11",
 					["bm_wp_sterling_b_suppressed"] = "L34A1 Barrel",
 					["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
-					["bm_wp_sterling_m_short"] = "15rnd L2A1 Magazine",
-					["bm_wp_sterling_m_long"] = "34rnd L2A1 Magazine",
+					["bm_wp_sterling_m_short"] = "15rnd Magazine",
+					["bm_wp_sterling_m_long"] = "34rnd Magazine",
 					--
 					["bm_w_mac10"] = "Ingram M10",
 					["bm_w_x_mac10"] = "Akimbo M10s",
-					["bm_wp_mac10_m_extended"] = "30rnd M10 Magazine",
+					["bm_wp_mac10_m_extended"] = "30rnd Magazine",
 					["bm_wp_mac10_body_ris"] = "MAC Rail System", --I'm getting nothing but airsoft results so generic name
 					["bm_wp_mac10_s_skel"] = "Low Mount Skeleton Stock",
 					--Thompson
@@ -3457,8 +3478,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_schakal"] = "H&K UMP-45",
 					["bm_wp_schakal_b_civil"] = "USC Barrel",
 					["bm_wp_schakal_ns_silencer"] = "GemTech QD UMP Suppressor",
-					["bm_wp_schakal_m_short"] = "15rnd UMP Magazine",
-					["bm_wp_schakal_m_long"] = "45rnd UMP Magazine",
+					["bm_wp_schakal_m_short"] = "15rnd Magazine",
+					["bm_wp_schakal_m_long"] = "45rnd Magazine",
 					--M45
 					["bm_w_m45"] = "Carl Gustaf Kpist M/45",
 					["bm_wp_smg_m45_m_extended"] = "50rnd M/45 Magazine",
@@ -3525,23 +3546,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[SHOTGUNS]]
 					--Saiga
 					["bm_w_basset"] = "Spike X1S Saiga",
-					["bm_w_basset_m_extended"] = "10rnd AGP Arms Saiga Magazine",
+					["bm_w_basset_m_extended"] = "10rnd AGP Arms Magazine",
 					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
-					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Saiga Drum",
+					["bm_wp_saiga_m_20rnd"] = "20rnd MD Arms Drum",
 					["bm_wp_saiga_fg_holy"] = "Fuglystick Rail System",
 					--AA12
 					["bm_w_aa12"] = "MPS Auto Assault-12 CQB",
-					["bm_wp_aa12_barrel_long"] = "Standard AA-12 Barrel",
-					["bm_wp_aa12_mag_drum"] = "20rnd AA-12 Drum",
+					["bm_wp_aa12_barrel_long"] = "Standard Barrel",
+					["bm_wp_aa12_mag_drum"] = "20rnd Drum",
 					--Six12
 					["bm_w_rota"] = "Crye Precision SIX12",
 					--M1014
 					["bm_w_benelli"] = "Benelli M4 Super 90",
-					["bm_wp_ben_b_long"] = "Long M4 Barrel",
-					["bm_wp_ben_b_short"] = "NFA M4 Barrel",
-					["bm_wp_ben_s_collapsed"] = "Collapsed M4 Stock",
-					["bm_wp_ben_fg_standard"] = "M4 Tactical Stock",
+					["bm_wp_ben_b_long"] = "Long Barrel",
+					["bm_wp_ben_b_short"] = "NFA Barrel",
+					["bm_wp_ben_s_collapsed"] = "Collapsed Stock",
+					["bm_wp_ben_fg_standard"] = "Tactical Stock",
 					--SPAS-12
 					["bm_w_spas12"] = "Franchi SPAS-12",
 					["bm_wp_spas12_b_long"] = "8rnd Tube",
@@ -3649,11 +3670,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--AK12
 					["bm_w_ak12"] = "Kalashnikov Concern AK-12",
 					--Ak5
-					 ["bm_w_ak5"] = "Bofors Ak 5",
-					 ["bm_wp_ak5_fg_ak5c"] = "Ak 5c Handguard",
-					 ["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
-					 ["bm_wp_ak5_s_ak5b"] = "Ak 5b Stock",
-					 ["bm_wp_ak5_s_ak5c"] = "Ak 5c Stock",
+					["bm_w_ak5"] = "Bofors Ak 5",
+					["bm_w_ak5b"] = "Bofors Ak 5B",
+					["bm_w_ak5c"] = "Bofors Ak 5C",
+					["bm_w_ak5_fnc"] = "FN FNC",
+					["bm_wp_ak5_fg_ak5c"] = "Ak 5C Handguard",
+					["bm_wp_ak5_fg_fnc"] = "FN FNC Handguard",
+					["bm_wp_ak5_s_ak5b"] = "Ak 5B Stock",
+					["bm_wp_ak5_s_ak5c"] = "Ak 5C Stock",
 					--CAR-4
 					["bm_w_m4"] = "Colt M4A1",
 					--AK74

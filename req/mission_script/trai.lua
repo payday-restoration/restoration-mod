@@ -4,6 +4,10 @@ local bravo_guard_table = {
 	bravo_guard_3 = "units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"
 }
 return {
+	--Trigger Hunt (Endless Assault)
+	[103743] = {
+		hunt = true
+	},
 	--Fixed snipers being able to spawn only once
 	[100368] = {
 		values = {

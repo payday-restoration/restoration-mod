@@ -162,16 +162,39 @@ return {
 			{ id = 100364, delay = 0 }
 		}
 	},
-	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
+	--Don't repeat the same dialog with chopper deploying units
 	[105362] = {
 		values = {
 			trigger_times = 1
 		}
 	},
-	[105435] = {
+	--Made Tear Gas heli have loopable spawn
+	--set this to 100% so it will always trigger the chance of tear gas heli squad
+	[105496] = { 
 		values = {
-			trigger_times = 1
+			chance = 100
 		}
+	},
+	[100631] = {
+		on_executed = {
+			{id = 101747, delay = 150, delay_rand = 120}
+		}
+	},
+	--the heli1 spawn's trigger_times is set to 1 for some reason, switching to 0 to make the chopper still spawn after once
+	[101424] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	--kill chopper spawns once heli squad deploys tear gas
+	[102297] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(105610)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
 	},
 	--Pro Job Stuff
 	--The vault door is always locked
@@ -189,6 +212,9 @@ return {
 	[105610] = {
 		values = {
 			amount = teargaschopper
+		},
+		on_executed = {
+			{id = 105496, delay = 15}
 		}
 	},
 	--More rooms filled with tear gas

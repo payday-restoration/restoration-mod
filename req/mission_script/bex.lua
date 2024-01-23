@@ -1,5 +1,11 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
+
+	if shadow_fucked_me_hard then
+		hunt_projob = true
+	end	
 
 	if difficulty_index <= 5 then
 		ponr_value = 600	
@@ -39,6 +45,10 @@ return {
 	[101485] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--Pro Job Hunt (Endless Assault)
+	[101829] = {
+		hunt = hunt_projob
 	},
 	-- restores some unused sniper spawns with their SOs
 	[100372] = {

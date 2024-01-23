@@ -46,6 +46,14 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 				end
 			end
 			
+			
+		--check if this element is supposed to trigger endless assault
+		if data.hunt then
+			Hooks:PostHook(element, "on_executed", "sh_on_executed_hunt_" .. element_id, function ()
+				managers.groupai:state():set_wave_mode(data.hunt and "hunt" or "besiege")
+			end)
+		end	
+			
 		-- Check if this element is supposed to trigger a point of no return
 		local is_pro_job = Global.game_settings and Global.game_settings.one_down
 		if is_pro_job then

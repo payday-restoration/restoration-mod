@@ -5698,7 +5698,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 
 	--Default Handguard
-	table.insert(self.parts.wpn_fps_ass_g36_fg_k.forbids, "wpn_fps_smg_pm9_fl_adapter")
+	table.insert(self.parts.wpn_fps_ass_g36_fg_k.forbids, "wpn_fps_pis_usp_fl_adapter")
 
 	--Compact Foregrip
 	self.parts.wpn_fps_ass_g36_fg_c.pcs = {
@@ -5718,7 +5718,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 		falloff_end_mult = 0.925,
 		ads_speed_mult = 0.975
 	}
-	table.insert(self.parts.wpn_fps_ass_g36_fg_c.forbids, "wpn_fps_smg_pm9_fl_adapter")
+	table.insert(self.parts.wpn_fps_ass_g36_fg_c.forbids, "wpn_fps_pis_usp_fl_adapter")
 	
 	--Polizei Special Foregrip
 	self.parts.wpn_fps_ass_g36_fg_ksk.pcs = {
@@ -5764,10 +5764,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 		"wpn_fps_ass_g36_body_standard",
 		"wpn_fps_ass_g36_g_standard"
 	}
-	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_ass_g36.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_smg_pm9_fl_adapter" }
+	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_ass_g36.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_ass_g36.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_pis_usp_fl_adapter" }
 	
 	self.wpn_fps_ass_g36.override = self.wpn_fps_ass_g36.override or {}
 	self.wpn_fps_ass_g36.override.wpn_fps_upg_m4_s_standard = {
@@ -5802,7 +5802,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 		stats = deep_clone(stocks.folder_to_hvy_acc2_stats),
 		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
-	self.wpn_fps_ass_g36.override.wpn_fps_smg_pm9_fl_adapter = {
+	self.wpn_fps_ass_g36.override.wpn_fps_pis_usp_fl_adapter = {
 		a_obj = "a_vg"
 	}
 

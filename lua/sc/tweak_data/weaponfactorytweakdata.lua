@@ -18894,6 +18894,44 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		end
 	end
 
+	self.parts.wpn_fps_sho_m590_s_standard_adapter = {
+		a_obj = "a_s",
+		type = "stock",
+		name_id = "bm_wp_m590_s_standard",
+		unit = "units/pd2_dlc_fawp/weapons/wpn_fps_sho_m590_pts/wpn_fps_sho_m590_s_standard",
+		third_unit = "units/pd2_dlc_fawp/weapons/wpn_fps_sho_m590_pts/wpn_third_sho_m590_s_standard",
+		stats = {
+			value = 1
+		},
+		visibility = {
+			{
+				objects = {
+					g_stock = false
+				}
+			}
+		}
+	}
+	self.parts.wpn_fps_sho_m590_s = {
+		type = "shitass_s",
+		name_id = "none",
+		unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova/wpn_fps_sho_supernova"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
+	self.wpn_fps_sho_m590.stock_adapter = "wpn_fps_snp_flint_s_adapter"
+	self.wpn_fps_sho_m590_npc.stock_adapter = "wpn_fps_snp_flint_s_adapter"
+
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_snp_victor_s_mod0")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_snp_tti_s_vltor")	
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_sho_sko12_stock")
+
 	--Override Table
 	self.wpn_fps_sho_m590.override = {
 		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override),
@@ -18904,11 +18942,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override),
 		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 	}
+	
+	attachment_list = {
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_upg_m4_s_crane",
+		"wpn_fps_upg_m4_s_mk46",
+		"wpn_fps_snp_victor_s_mod0",
+		"wpn_fps_upg_m4_s_ubr",
+		"wpn_fps_snp_tti_s_vltor",
+		"wpn_fps_sho_sko12_stock"
+	}
+	for _, part_id in ipairs(attachment_list) do
+		self.wpn_fps_sho_m590.override[part_id] = self.wpn_fps_sho_m590.override[part_id] or {}
+		self.wpn_fps_sho_m590.override[part_id].adds = {
+			"wpn_fps_sho_m590_s",
+			"wpn_fps_sho_m590_s_standard_adapter"
+		}
+		self.wpn_fps_sho_m590.override[part_id].parent = "shitass_s"
+	end
 
 	self.wpn_fps_sho_m590.override.wpn_fps_addon_ris = {
 		unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_gadget_rail"
 	}
 
+	self.wpn_fps_sho_m590_npc.override = deep_clone(self.wpn_fps_sho_m590.override)
+	self.wpn_fps_sho_m590_npc.uses_parts = deep_clone(self.wpn_fps_sho_m590.uses_parts)
 end)
 
 --AK Gen 21 Tactical SMG

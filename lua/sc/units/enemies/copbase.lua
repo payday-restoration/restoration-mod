@@ -220,6 +220,55 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
 	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk")
 	
+	-- beatcop
+	local cop1 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
+	
+	local cop2 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
+	
+	local cop3 = unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3") 
+	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")	
+	
+	local cop4 = unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4") 
+	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")	
+
+	-- fbi
+	local fbi1 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1_husk")
+	
+	local fbi2 = unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2_husk")	
+	
+	local fbi3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3_husk")	
+
+	-- sec
+	local sec1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1")
+	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
+	
+	local sec2 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")	
+	
+	local sec3 = unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")	
+	
+	local sec4 = unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4_husk")	
+	
+	local sec5 = unit_name == Idstring("units/payday2/characters/ene_security_5/ene_security_5") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_5/ene_security_5_husk")	
+	
+	local sec6 = unit_name == Idstring("units/payday2/characters/ene_security_6/ene_security_6") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_6/ene_security_6_husk")	
+	
+	local sec7 = unit_name == Idstring("units/payday2/characters/ene_security_7/ene_security_7") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_7/ene_security_7_husk")	
+	
     if self._unit:damage() and self._unit:damage():has_sequence("swat_smg") and swat_1 then
         self._unit:damage():run_sequence_simple("swat_smg") 		
     elseif self._unit:damage() and self._unit:damage():has_sequence("swat_sg") and swat_2 and not flashlights_on then
@@ -241,30 +290,38 @@ function CopBase:random_mat_seq_initialization()
 	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_sniper") and swat_sniper then
 		self._unit:damage():run_sequence_simple("swat_sniper")	
 	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_shield") and swat_shield then
-		self._unit:damage():run_sequence_simple("swat_shield")	
+		self._unit:damage():run_sequence_simple("swat_shield")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_pistol") and cop1 then
+		self._unit:damage():run_sequence_simple("cop_pistol")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_revolver") and cop2 then
+		self._unit:damage():run_sequence_simple("cop_revolver")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_smg") and cop3 then
+		self._unit:damage():run_sequence_simple("cop_smg")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_sg") and cop4 then
+		self._unit:damage():run_sequence_simple("cop_sg")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_pistol") and sec1 then
+		self._unit:damage():run_sequence_simple("sec_pistol")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_smg") and sec2 then
+		self._unit:damage():run_sequence_simple("sec_smg")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_sg") and sec3 then
+		self._unit:damage():run_sequence_simple("sec_sg")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_4") and sec4 then
+		self._unit:damage():run_sequence_simple("sec_4")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_5") and sec5 then
+		self._unit:damage():run_sequence_simple("sec_5")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_6") and sec6 then
+		self._unit:damage():run_sequence_simple("sec_6")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_7") and sec7 then
+		self._unit:damage():run_sequence_simple("sec_7")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_1") and fbi1 then
+		self._unit:damage():run_sequence_simple("fbi_1")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_2") and fbi2 then
+		self._unit:damage():run_sequence_simple("fbi_2")					
+	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_3") and fbi3 then
+		self._unit:damage():run_sequence_simple("fbi_3")					
 	end
 
-       	
-	--BEAT COP FACE STUFF STARTS HERE	
-	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")
 	
-	local cop2_3 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
-	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
-	
-	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_2_3") and cop2_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_cop_2_3")	
-	end	
 	--END BEAT COP FACE STUFF
 
 	-- sniper nonsense (don't trust this being executed every time a common unit spawns tbh)
@@ -298,38 +355,7 @@ function CopBase:random_mat_seq_initialization()
 	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_3_to_zombie") and sniper_gensec and faction == "zombie" then
 		self._unit:damage():run_sequence_simple("switch_sniper_3_to_zombie")	
 	end	
-	
-	--START FBI HRT FACES.
-	local fbi_1_2 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1_husk")	
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2_husk")
-	
-	local fbi_3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3_husk")	
-	
-	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_1_2") and fbi_1_2 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_1_2")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	
-	end	 	
-	
-	--security $!!SLAT^* insanity	
-	local sec_2_3 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3")
-	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")
-	
-	local sec_1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
-	
-	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_1") and sec_1 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_sec_1")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_2_3") and sec_2_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_sec_2_3")	
-	end
-	--end security shit
-	
+			
     local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk")	
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")

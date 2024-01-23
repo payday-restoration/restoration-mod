@@ -191,7 +191,7 @@
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" />
+	<decal_surfaces default_material="flesh_yellow" />
 
 	<effects>
 		<effect_spawner name="es_light" enabled="false" object="e_light" effect="effects/particles/character/cloaker_goggle" />

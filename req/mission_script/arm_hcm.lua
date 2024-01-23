@@ -1,6 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
 local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
 local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
@@ -28,6 +29,7 @@ local fbiagent_3 = "units/payday2/characters/ene_fbi_3/ene_fbi_3"
 	
 	--If we're in Pro Job, change some of the spawns
 	if shadow_fucked_me_hard then
+		hunt_projob = true
 		--Ready Team Agents replace Fbi_2 and 3
 		fbiagent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		fbiagent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
@@ -54,9 +56,10 @@ end
 	end
 
 return {
-	--Pro Job PONR, triggers when van/chopper arrives cause that's better
+	--Pro Job PONR+Hunt (Endless assault), triggers when van/chopper arrives cause that's better
 	[100329] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		hunt = hunt_projob
 	},
 	--FBI Agents, you don't want to see Zeal HRT from FBI Suvs
 	[100514] = {

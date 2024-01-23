@@ -3,6 +3,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var = math.rand(1)
 local chance_dozer = 75
+local hunt_projob = false
 --set up the table for the randomizer
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
@@ -16,6 +17,7 @@ local dozer_table = {
 
 --If we're in Pro Job, then do this shit below
 if shadow_fucked_me_hard then
+		hunt_projob = true
 	--DSPJ has 100% of spawning the scripted dozer
 	if difficulty_index == 8 then
 		chance_dozer = 100
@@ -57,7 +59,8 @@ end
 return {
 	--Pro Job PONR
 	[100818] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		hunt = hunt_projob
 	},
 	--Should fix enemies getting stuck
 	[101088] = {

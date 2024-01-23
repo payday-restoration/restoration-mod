@@ -1,6 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
 local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
 local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
@@ -20,6 +21,7 @@ local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_
 	
 	--If we're in Pro Job, change some of the spawns
 	if shadow_fucked_me_hard then
+		hunt_projob = true
 	--Skully boy starts to spawn on Mayhem now cause I like placing Skullies like that one map editor man in Reservoir Dogs Day 2
 	if difficulty_index == 6 then
 		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
@@ -42,9 +44,10 @@ end
 	end
 
 return {
-	--Pro Job PONR, triggers when van arrives cause that's better
+	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
 	[100329] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		hunt = hunt_projob
 	},
 	--GenSec Scripted Spawns
 	--Drivers

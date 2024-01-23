@@ -153,9 +153,9 @@ elseif ai_type == m then
 		["units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
 		["units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
 		
-		["units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",	
-		["units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",
-		["units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",		
+		["units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",	
+		["units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",
+		["units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",		
 	
 	    --Murky Bravo Shotgun
 		["units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky",

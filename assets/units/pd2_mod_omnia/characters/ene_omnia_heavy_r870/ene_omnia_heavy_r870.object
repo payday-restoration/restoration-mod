@@ -195,7 +195,7 @@
         </constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" >
+	<decal_surfaces default_material="flesh_yellow" >
 		<decal_mesh name="dm_helmet" 				enabled="true" material="steel_no_decal" />
 		<decal_mesh name="c_body_plate" 			enabled="true" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>

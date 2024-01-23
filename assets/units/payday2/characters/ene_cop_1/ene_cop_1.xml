@@ -78,14 +78,14 @@
 		<sequence editable_state="true" name="'fbi_2'" triggable="true" once="true">						
 			<set_variables var_gadgets_fbi="2"/>
 			<run_sequence name="'gadget_meat_grinder'"/>
-			<material_config name="'units/payday2/characters/ene_fbi_1/ene_fbi_1'"/>																		
+			<material_config name="'units/payday2/characters/ene_fbi_1/ene_fbi_1'"/>																					
 		</sequence>
 		
 		<sequence editable_state="true" name="'fbi_3'" triggable="true" once="true">						
 			<set_variables var_gadgets_fbi="3"/>
 			<set_variables var_head_value="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>
-			<material_config name="'units/payday2/characters/ene_fbi_1/ene_fbi_1'"/>																		
+			<material_config name="'units/payday2/characters/ene_fbi_1/ene_fbi_1'"/>																					
 		</sequence>
 
 		<filter name="'check_cop_pistol'">
@@ -195,19 +195,18 @@
 			<run_sequence filter="'check_sec_7'" name="'body_sec_7'"/>
 			
 			<!-- fbi 1 -->
-			<run_sequence filter="'check_fbi_1'" name="'fbi_1'"/>
+			<run_sequence filter="'check_fbi_1'" name="'fbi_1_var'"/>
 			
 			<!-- fbi 2 -->
-			<run_sequence filter="'check_fbi_2'" name="'fbi_2'"/>
-			<run_sequence filter="'check_fbi_2'" name="'hedz'"/>
+			<run_sequence filter="'check_fbi_2'" name="'fbi_2_var'"/>
 			
 			<!-- fbi 3 -->
-			<run_sequence filter="'check_fbi_3'" name="'fbi_3'"/>
+			<run_sequence filter="'check_fbi_3'" name="'fbi_3_var'"/>
 		</sequence>
 
 		<!-- VARIATIONS - FBIs -->
 			<!-- pistol -->
-			<sequence editable_state="true" name="'fbi_1'" once="true" triggable="true">				
+			<sequence editable_state="true" name="'fbi_1_var'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_fbi1'"/>
 				<object enabled="true" name="'g_body_fbi1_lod1'"/>	
 				<object enabled="true" name="'g_hat_lod3'"/>
@@ -222,13 +221,13 @@
 			</sequence>	
 			
 			<!-- rifle -->
-			<sequence editable_state="true" name="'fbi_2'" once="true" triggable="true">				
+			<sequence editable_state="true" name="'fbi_2_var'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_fbi2'"/>
 				<object enabled="true" name="'g_body_fbi2_lod1'"/>				
 			</sequence>					
 			
 			<!-- smg -->
-			<sequence editable_state="true" name="'fbi_3'" once="true" triggable="true">				
+			<sequence editable_state="true" name="'fbi_3_var'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_fbi3'"/>
 				<object enabled="true" name="'g_body_fbi3_lod1'"/>	
 

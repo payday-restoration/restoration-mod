@@ -3,13 +3,15 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 local spooc_amount = 1
 
-	if shadow_fucked_me_hard then
+if shadow_fucked_me_hard then
 	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+		spooc_amount = 2
 	end
 	if difficulty_index >= 4 then
-		bravo_dozer "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
-	end	
+		bravo_dozer = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
+	end
+end	
 	
 	if difficulty_index <= 5 then
 		ponr_value = 600
@@ -18,11 +20,6 @@ local spooc_amount = 1
 	else
 		ponr_value = 540	
 	end
-	
-	if difficulty_index == 8 then
-		spooc_amount = 2
-	end	
-end
 	
 
 return {

@@ -127,7 +127,7 @@ return {
 	--Trigger the heli spawn in police_called instead of triggering during hacking
 	[100131] = {
 		on_executed = {
-			{id = 101608, delay = 150, delay_rand = 30}
+			{id = 101608, delay = 180}
 		}
 	},
 	--remove the line
@@ -145,7 +145,7 @@ return {
 	--loop the choppa
 	[103297] = {
 		on_executed = {
-			{ id = 101608, delay = 90}
+			{ id = 101608, delay = 240}
 		}
 	},
 	--tweak the delays

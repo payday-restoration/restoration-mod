@@ -4082,7 +4082,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_baka' }
+	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_baka','x_basset' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
@@ -4374,7 +4374,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "flamethrower"
 	end
 
-	recat = { "p90", "aug", "arbiter", "komodo", "corgi", "vhs", "wa2000", "desertfox", "m95", "shak12", "l85a2", "groza", "groza_underbarrel", "ksg", "rota", "basset", "famas", "qbu88", "hailstorm", "tkb"}
+	recat = { "p90", "aug", "arbiter", "komodo", "corgi", "vhs", "wa2000", "desertfox", "m95", "shak12", "l85a2", "groza", "groza_underbarrel", "ksg", "rota", "basset", "x_basset", "famas", "qbu88", "hailstorm", "tkb"}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].is_bullpup = true
 	end
@@ -11031,6 +11031,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--[[     LIGHT SHOTGUNS     ]]
 
 				--PRIMARIES
+
+					--Akimbo Grimms
+						self.x_basset.categories = {
+							"akimbo",
+							"shotgun"
+						}
+						self.x_basset.rays = 9
+						self.x_basset.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+						self.x_basset.CLIP_AMMO_MAX = 10
+						self.x_basset.AMMO_MAX = 80
+						self.x_basset.fire_mode_data.fire_rate = 0.1333333
+						self.x_basset.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
+						self.x_basset.panic_suppression_chance = 0.05
+						self.x_basset.supported = true
+						self.x_basset.ads_speed = 0.480
+						self.x_basset.damage_falloff = {
+							start_dist = 100,
+							end_dist = 1000,
+							min_mult = 0.5
+						}
+						self.x_basset.stats = {
+							zoom = 1,
+							total_ammo_mod = 200,
+							damage = 45,
+							alert_size = 2,
+							spread = 3,
+							spread_moving = 8,
+							recoil = 19,
+							value = 1,
+							extra_ammo = 101,
+							reload = 20,
+							suppression = 9,
+							concealment = 21
+						}		
+						self.x_basset.stats_modifiers = nil
+						self.x_basset.reload_speed_multiplier = 0.6
+						self.x_basset.always_hipfire = true
+						self.x_basset.timers.reload_not_empty = 2.1
+						self.x_basset.timers.reload_exit_not_empty = 1.6
+						self.x_basset.timers.reload_empty = 2.92
+						self.x_basset.timers.reload_exit_empty = 1.18
+						self.x_basset.sounds.fire_single = "basset_x_fire_single"
 
 					--Izhma 12G
 						self.saiga.desc_id = "bm_saiga_sc_desc"
@@ -18654,11 +18696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Akimbo Spec Ops (Akimbo MP7)
 		--DISABLED--	
 			self.x_mp7.use_data.selection_index = 5
-	
-		--Akimbo Grimms
-		--DISABLED--
-			self.x_basset.use_data.selection_index = 5
-				
+					
 		--Akimbo Goliath 12g
 		--DISABLED--
 			self.x_rota.use_data.selection_index = 5
@@ -18886,6 +18924,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.smt_range = { 0.75, 1.35 }
 				end
 				weap.ene_hs_mult = 0.5
+			end
+
+			if table.contains(weap.categories, "akimbo") then
+				if weap.fire_mode_data and weap.fire_mode_data.fire_rate then
+					if weap.CAN_TOGGLE_FIREMODE == true then
+						weap.fire_mode_data.fire_rate = weap.fire_mode_data.fire_rate / 1.15
+					else
+						weap.fire_mode_data.fire_rate = weap.fire_mode_data.fire_rate / 1.30
+					end
+				end
 			end
 
 			if weap.recategorize and not weap.recoil_values then

@@ -16757,6 +16757,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 
 end)
 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_basset", "resmod_x_basset", function(self)
+	
+	self.wpn_fps_sho_x_basset.override = {
+		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override),
+		wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override),
+		wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override),					
+		wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_slug_semi_override),
+		wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override),
+		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override),
+		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+	}
+
+	self.wpn_fps_sho_x_basset.override.wpn_fps_sho_basset_m_extended = {
+		stats = {
+			extra_ammo = 10, 
+			reload = -2, 
+			concealment = -2
+		}
+	}
+
+	self.wpn_fps_sho_x_basset_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_basset.uses_parts)
+
+end)
+
 --Promotional mods
 Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	
@@ -35352,6 +35376,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
 	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
+
+	for i, part_id in pairs(self.wpn_fps_sho_x_basset.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_singlefire",
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_a_explosive"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_sho_x_basset.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	self.wpn_fps_sho_x_basset_npc.override = deep_clone(self.wpn_fps_sho_x_basset.override)
 
 	self.wpn_fps_smg_x_p90.override.wpn_fps_upg_o_schmidt = {
 		stats = {},

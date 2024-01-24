@@ -20,12 +20,25 @@ return {
 	[100137] = {
 		ponr = ponr_value
 	},
-	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
+	--PDTH's OVK 145+ Throwback+Make this dozer spawn loopable like in PDTH (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
 	[101320] = {
 		values = {
 			enemy = bulldozer,
 			participate_to_group_ai = true
+		},
+		on_executed = {
+			{id = 105615, delay = 30, delay_rand = 10}
 		}
+	},
+	--Disable this spawn once George the pilot gets Kauzo out
+	[100121] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(101320)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
 	},
 	-- Remove spawn groups closest to broken bridge part
 	[101176] = {

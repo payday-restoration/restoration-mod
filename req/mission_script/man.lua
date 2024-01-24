@@ -32,7 +32,7 @@ end
 
 	if difficulty_index <= 4 then
 		gas_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-	elseif difficulty_index == 5 or difficulty_index == 6 then difficulty_index == 7 then
+	elseif difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 then
 		gas_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 	else
 		gas_dozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"

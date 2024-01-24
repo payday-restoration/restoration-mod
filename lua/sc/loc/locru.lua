@@ -2787,7 +2787,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_mg42_dlt19"] = "DLT-19",
 		["bm_wp_mg42_b_vg38"] = "Ствол BlasTech DLT-19",
 		["bm_w_hk51b"] = "Versteckt-51B",
-		["bm_w_basset"] = "Grimm 12G",	
+		["bm_w_basset"] = "Grimm 12G",
+		["bm_w_x_basset"] = "Brothers Grimm 12G",
 		["bm_w_saiga"] = "IZHMA 12G",
 		["bm_w_aa12"] = "Steakout 12G",
 		["bm_w_spas12"] = "Predator 12G",
@@ -3067,6 +3068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_mg42_dlt19"] = "ДЛТ-19",
 		["bm_w_hk51b"] = "Ферштект-51",
 		["bm_w_basset"] = "Гримм 12",
+		["bm_w_x_basset"] = "Братья Гримм 12",
 		["bm_w_saiga"] = "Ижма 12",
 		["bm_w_aa12"] = "Стейкаут 12",
 	    ["bm_w_spas12"] = "Хищник 12",
@@ -3546,6 +3548,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[SHOTGUNS]]
 					--Saiga
 					["bm_w_basset"] = "Spike X1S Saiga",
+					["bm_w_x_basset"] = "Akimbo Spike X1S Saiga",
 					["bm_w_basset_m_extended"] = "10rnd AGP Arms Magazine",
 					["bm_w_saiga"] = "Kalashnikov Concern Saiga-12K",
 					["bm_wp_saiga_fg_lowerrail"] = "Ultimak AK Modular Rail Forend System",
@@ -4214,6 +4217,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			  ["bm_x_deagle_sc_desc"] = "Все перепутали... \n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 			["bm_w_saw"] = "Болгарка",
 			  ["bm_ap_saw_sc_desc"] = "Легендарный инструмент в узких кругах Crime.Net, благодаря которому было распилено не один десяток голов цивилов.\n\n#{skill_color}#Прорезает броню.##",
+			["bm_w_x_basset"] = "Акимбо Грибы",
 			-- Я НЕ СМОТРЮ АНИМЕ, У МЕНЯ ДЕД - МУСУЛЬМАНИН
 			-- --SEISHOU ACADEMY
 				-- --MIDDLE SCHOOLERS

@@ -22861,7 +22861,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	for i, factory_id in ipairs(attachment_list) do
 		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
-				if self.parts[used_part_id].type == "exclusive_set" then
+				if self.parts[used_part_id].type ~= "custom" then
 					if self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.rof_mult then
 						table.insert(self.parts.wpn_fps_upg_i_og_rof.forbids, used_part_id)
 					end

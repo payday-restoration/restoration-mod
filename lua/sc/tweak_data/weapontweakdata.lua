@@ -12604,6 +12604,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.china.panic_suppression_chance = 0.05
 						self.china.stats_modifiers = {damage = 10}
 						self.china.reload_speed_multiplier = 0.8
+						self.china.descope_on_fire = true
 						self.china.timers.shotgun_reload_first_shell_offset = 0.5
 						self.china.timers.shotgun_reload_exit_empty = 1.4
 						self.china.timers.shotgun_reload_exit_not_empty = 0.7

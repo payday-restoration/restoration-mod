@@ -68,6 +68,7 @@ tweak_data.grenade_launcher = {
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.4, --lowered to 0.2
+		shake_mul = 0
 	}
 
 tweak_data.shotgun = {

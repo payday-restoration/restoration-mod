@@ -4646,6 +4646,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
 		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 		
+		["mutator_no_outlines"] = "NO OUTLINES PLACEHOLDER",
+		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
+		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
+		
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",

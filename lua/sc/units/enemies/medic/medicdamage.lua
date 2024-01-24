@@ -5,6 +5,8 @@ function MedicDamage:heal_unit(unit)
 	local target_char_tweak = tweak_data.character[target_tweak_table]
 	local cooldown = target_char_tweak.heal_cooldown or 10
 	
+	local disable_outlines = false 
+	disable_outlines = managers.mutators:modify_value("MedicDamage:DisableOutlines", disable_outlines)
 	cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
 		
 	self._heal_cooldown_t = TimerManager:game():time() + self._heal_cooldown + cooldown
@@ -13,7 +15,7 @@ function MedicDamage:heal_unit(unit)
 				
 	--Reveal the Medic that did it! Seriously, fuck that guy!
 	if not self._unit:character_damage():dead() then
-		if self._unit:contour() then
+		if self._unit:contour() and not disable_outlines then
 			self._unit:contour():add("medic_show", false)
 			self._unit:contour():flash("medic_show", 0.2)
 		end
@@ -48,6 +50,8 @@ end
 function MedicDamage:sync_heal_action()
 	self._heal_cooldown_t = TimerManager:game():time() + self._heal_cooldown
 	local action_data = nil
+	local disable_outlines = false 
+	disable_outlines = managers.mutators:modify_value("MedicDamage:DisableOutlines", disable_outlines)
 
 	if Network:is_server() then
 		if not self._unit:movement():chk_action_forbidden("action") then
@@ -73,7 +77,7 @@ function MedicDamage:sync_heal_action()
 	
 	--Reveal the Medic that did it! Seriously, fuck that guy!
 	if not self._unit:character_damage():dead() then
-		if self._unit:contour() then
+		if self._unit:contour() and not disable_outlines then
 			self._unit:contour():add("medic_show", false)
 			self._unit:contour():flash("medic_show", 0.2)
 		end

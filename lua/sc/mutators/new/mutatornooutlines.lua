@@ -37,13 +37,16 @@ function MutatorNoOutlines:setup(data)
 	tweak_data.contour.character.downed_color = no_outline
 	tweak_data.contour.character.friendly_color = no_outline
 	tweak_data.contour.character_interactable.standard_color = no_outline
+	tweak_data.contour.character_interactable.selected_color = no_outline
 	tweak_data.contour.character.dangerous_color = no_outline
 	tweak_data.contour.character.more_dangerous_color = no_outline
-	tweak_data.contour.character_interactable.standard_color = no_outline
+	tweak_data.contour.deployable.standard_color = no_outline
 	tweak_data.contour.deployable.selected_color = no_outline
 	tweak_data.contour.deployable.disabled_color = no_outline
 	tweak_data.contour.deployable.active_color = no_outline
 	tweak_data.contour.deployable.interact_color = no_outline
+	tweak_data.contour.upgradable.standard_color = no_outline
+	tweak_data.contour.upgradable.selected_color = no_outline
 	tweak_data.contour.character.heal_color = no_outline
 	tweak_data.contour.character.tmp_invulnerable_color = no_outline
 	tweak_data.contour.character.vulnerable_color = no_outline

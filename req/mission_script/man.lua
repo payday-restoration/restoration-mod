@@ -151,7 +151,13 @@ return {
 	--tweak the delays
 	[103295] = {
 		on_executed = {
-			{ id = 103298, delay = 24}
+			{ id = 103298, delay = 24},
+			{ id = 102950, delay = 16}
+		}
+	},
+	[102950] = {
+		on_executed = {
+			{ id = 103895, delay = 4}
 		}
 	},
 	[103298] = {

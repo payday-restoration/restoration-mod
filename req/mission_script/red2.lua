@@ -160,6 +160,12 @@ return {
 			enabled = false
 		}
 	},
+	--Disable The SWAT Van Turret
+	[105914] = { 
+		values = {
+			chance = 0
+		}
+	},
 	--Higher diffs forces both scripted window cloaker and taser spawns
 	[100875] = {
 		values = {

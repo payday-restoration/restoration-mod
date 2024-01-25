@@ -1,5 +1,5 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
 
 	if difficulty_index <= 5 then

@@ -30,6 +30,13 @@ if shadow_fucked_me_hard then
 	end
 end
 
+	if difficulty_index <= 4 then
+		gas_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+	elseif difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 then
+		gas_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+	else
+		gas_dozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+	end
 
 	--Setting up the dozer randomizer, so cool
 	if difficulty_index == 4 or difficulty_index == 5 then
@@ -109,6 +116,116 @@ return {
 		values = {
             enemy = dozer_2
 		}
+	},
+	--Have the gas chopper be a dozer chopper that has loopable spawn
+	--Change the dialogue that have Bain warning you about incoming dozers
+	[102950] = {
+		values = {
+			dialogue = "Play_ban_s02_b"
+		}
+	},
+	--Trigger the heli spawn in police_called instead of triggering during hacking
+	[100131] = {
+		on_executed = {
+			{id = 101608, delay = 180}
+		}
+	},
+	--remove the line
+	[102010] = {
+		on_executed = {
+			{ id = 101608, remove = true}
+		}
+	},
+	--switch to 0 to make loopable dozer chopper spawn possible
+	[101608] = {
+		values = {
+			trigger_times = 0
+		}
+	},
+	--loop the choppa
+	[103297] = {
+		on_executed = {
+			{ id = 101608, delay = 240}
+		}
+	},
+	--tweak the delays
+	[103295] = {
+		on_executed = {
+			{ id = 103298, delay = 24},
+			{ id = 102950, delay = 16}
+		}
+	},
+	[102950] = {
+		on_executed = {
+			{ id = 103895, delay = 4}
+		}
+	},
+	[103298] = {
+		on_executed = {
+			{ id = 101716, delay = 3}
+		}
+	},
+	--Replace the spawns with dozers
+	[103293] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[103294] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104045] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104046] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104047] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104048] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104049] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	[104050] = {
+		values = {
+            enemy = gas_dozer
+		}
+	},
+	--disable the Gas SO (it's useless anyway)
+	[103302] = {
+		values = {
+			enabled = false
+		}
+	},
+	[103303] = {
+		values = {
+			enabled = false
+		}
+	},
+	--disable this once done with hacking
+	[102754] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(103297)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
 	},
 	--Pro Job Stuff
 	--More squad units waiting at the escape on DSPJ

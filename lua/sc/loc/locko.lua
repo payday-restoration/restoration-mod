@@ -2906,7 +2906,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 				--[[ SHOTGUNS ]]
 					--Grimm
-					["bm_w_basset"] = "Grimm 12G",	
+					["bm_w_basset"] = "Grimm 12G",
+					["bm_w_x_basset"] = "Brothers Grimm 12G",
 					--Saiga
 					["bm_w_saiga"] = "IZHMA 12G",
 					--AA12
@@ -3536,6 +3537,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--[[SHOTGUNS]]
 						--Saiga
 						["bm_w_basset"] = "스파이크 X1S 사이가",
+						["bm_w_x_basset"] = "아킴보 스파이크 X1S 사이가",
 						["bm_w_basset_m_extended"] = "10발 AGP 암즈 탄창",
 						["bm_w_saiga"] = "칼라시니코프 사이가-12K",
 						["bm_wp_saiga_fg_lowerrail"] = "울티막 AK 모듈식 레일 포엔드 시스템",

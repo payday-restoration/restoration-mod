@@ -411,6 +411,7 @@
 		<hook file="sc/mutators/new/mutatorgrenademayhem.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorcaptainreplacer.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorspoocsquad.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatornooutlines.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>

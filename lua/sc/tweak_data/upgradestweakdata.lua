@@ -210,7 +210,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"pitchfork",
 					"shrew",
 					"x_shrew",
-					"basset"
+					"basset",
+					"x_basset"
 				}
 			},
 		l28 = {

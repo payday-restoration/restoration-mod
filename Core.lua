@@ -116,7 +116,7 @@ function restoration:Init()
 		dinner = restoration.captain_types.spring, --Slaughterhouse
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
-		chas = restoration.captain_types.spring, --Dragon Heist
+		--chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
 		firestarter_3_res = restoration.captain_types.spring, --firestarter day 3 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 

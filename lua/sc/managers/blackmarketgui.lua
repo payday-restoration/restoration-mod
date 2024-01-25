@@ -4880,7 +4880,7 @@ function BlackMarketGui:update_info_text()
 						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
 					end
 					description = description:gsub("#%{(.-)%}#", "##")
-					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays then
+					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays or ap_desc or (hs_mult_desc and hs_mult ~= 1) or ene_hs_mult ~= 1 then
 						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 					else
 						updated_texts[4].text = updated_texts[4].text .. description

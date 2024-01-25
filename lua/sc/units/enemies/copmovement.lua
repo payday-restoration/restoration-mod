@@ -273,9 +273,12 @@ function CopMovement:do_omnia(self)
 						
 						if health_left < max_health then
 							local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-							if self._unit:contour() then
-								self._unit:contour():add("medic_show", false)
-								self._unit:contour():flash("medic_show", 0.2)
+							local disable_outlines = managers.mutators:modify_value("CopMovement:DisableOutlines", false)
+							if self._unit:contour()  then
+								if not disable_outlines then
+									self._unit:contour():add("medic_show", false)
+									self._unit:contour():flash("medic_show", 0.2)
+								end
 								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
 							end										
 							if enemy:contour() then

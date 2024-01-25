@@ -16757,6 +16757,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 
 end)
 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_basset", "resmod_x_basset", function(self)
+	
+	self.wpn_fps_sho_x_basset.override = {
+		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override),
+		wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override),
+		wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override),					
+		wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_slug_semi_override),
+		wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override),
+		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override),
+		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+	}
+
+	self.wpn_fps_sho_x_basset.override.wpn_fps_sho_basset_m_extended = {
+		stats = {
+			extra_ammo = 10, 
+			reload = -2, 
+			concealment = -2
+		}
+	}
+
+	self.wpn_fps_sho_x_basset_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_basset.uses_parts)
+
+end)
+
 --Promotional mods
 Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	
@@ -18894,6 +18918,44 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		end
 	end
 
+	self.parts.wpn_fps_sho_m590_s_standard_adapter = {
+		a_obj = "a_s",
+		type = "stock",
+		name_id = "bm_wp_m590_s_standard",
+		unit = "units/pd2_dlc_fawp/weapons/wpn_fps_sho_m590_pts/wpn_fps_sho_m590_s_standard",
+		third_unit = "units/pd2_dlc_fawp/weapons/wpn_fps_sho_m590_pts/wpn_third_sho_m590_s_standard",
+		stats = {
+			value = 1
+		},
+		visibility = {
+			{
+				objects = {
+					g_stock = false
+				}
+			}
+		}
+	}
+	self.parts.wpn_fps_sho_m590_s = {
+		type = "shitass_s",
+		name_id = "none",
+		unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova/wpn_fps_sho_supernova"
+		,
+		stats = {
+			value = 1
+		}
+	}
+
+	self.wpn_fps_sho_m590.stock_adapter = "wpn_fps_snp_flint_s_adapter"
+	self.wpn_fps_sho_m590_npc.stock_adapter = "wpn_fps_snp_flint_s_adapter"
+
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_snp_victor_s_mod0")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_snp_tti_s_vltor")	
+	table.insert(self.wpn_fps_sho_m590.uses_parts, "wpn_fps_sho_sko12_stock")
+
 	--Override Table
 	self.wpn_fps_sho_m590.override = {
 		wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override),
@@ -18904,11 +18966,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override),
 		wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 	}
+	
+	attachment_list = {
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_upg_m4_s_crane",
+		"wpn_fps_upg_m4_s_mk46",
+		"wpn_fps_snp_victor_s_mod0",
+		"wpn_fps_upg_m4_s_ubr",
+		"wpn_fps_snp_tti_s_vltor",
+		"wpn_fps_sho_sko12_stock"
+	}
+	for _, part_id in ipairs(attachment_list) do
+		self.wpn_fps_sho_m590.override[part_id] = self.wpn_fps_sho_m590.override[part_id] or {}
+		self.wpn_fps_sho_m590.override[part_id].adds = {
+			"wpn_fps_sho_m590_s",
+			"wpn_fps_sho_m590_s_standard_adapter"
+		}
+		self.wpn_fps_sho_m590.override[part_id].parent = "shitass_s"
+	end
 
 	self.wpn_fps_sho_m590.override.wpn_fps_addon_ris = {
 		unit = "units/payday2/weapons/wpn_fps_shot_r870_pts/wpn_fps_shot_r870_gadget_rail"
 	}
 
+	self.wpn_fps_sho_m590_npc.override = deep_clone(self.wpn_fps_sho_m590.override)
+	self.wpn_fps_sho_m590_npc.uses_parts = deep_clone(self.wpn_fps_sho_m590.uses_parts)
 end)
 
 --AK Gen 21 Tactical SMG
@@ -22803,7 +22885,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	for i, factory_id in ipairs(attachment_list) do
 		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
-				if self.parts[used_part_id].type == "exclusive_set" then
+				if self.parts[used_part_id].type ~= "custom" then
 					if self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.rof_mult then
 						table.insert(self.parts.wpn_fps_upg_i_og_rof.forbids, used_part_id)
 					end
@@ -35294,6 +35376,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_pis_x_rage_npc.adds = deep_clone(self.wpn_fps_pis_x_rage.adds)
 	self.wpn_fps_pis_x_rage_npc.override = deep_clone(self.wpn_fps_pis_x_rage.override)
+
+	for i, part_id in pairs(self.wpn_fps_sho_x_basset.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_singlefire",
+			"wpn_fps_upg_i_autofire",
+			"wpn_fps_upg_a_explosive"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_sho_x_basset.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	self.wpn_fps_sho_x_basset_npc.override = deep_clone(self.wpn_fps_sho_x_basset.override)
 
 	self.wpn_fps_smg_x_p90.override.wpn_fps_upg_o_schmidt = {
 		stats = {},

@@ -51,7 +51,7 @@ function MutatorsManager:init()
 		MutatorASUBuff:new(self),
 		MutatorBoFlashbang:new(self),
 		MutatorGrenadeMayhem:new(self),
-		--MutatorNoOutlines:new(self),
+		MutatorNoOutlines:new(self),
 		MutatorCaptainReplacer:new(self),
 		MutatorSpoocSquad:new(self),
 		--MutatorFactionsReplacer:new(self),

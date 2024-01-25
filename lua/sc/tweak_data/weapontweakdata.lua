@@ -4550,7 +4550,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	--[[     BASE WEAPONS     ]]--
-
+	--Sorted by "Primary Skill Use > Sub-category > Primary/Secondary"
+	
 		--[[     PISTOLS     ]]--
 
 			--[[     LIGHT PISTOLS     ]]
@@ -18929,7 +18930,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if table.contains(weap.categories, "akimbo") then
 				if weap.fire_mode_data and weap.fire_mode_data.fire_rate then
-					if weap.CAN_TOGGLE_FIREMODE == true then
+					if weap.CAN_TOGGLE_FIREMODE == true or weap.FIRE_MODE == "auto" then
 						weap.fire_mode_data.fire_rate = weap.fire_mode_data.fire_rate / 1.15
 					else
 						weap.fire_mode_data.fire_rate = weap.fire_mode_data.fire_rate / 1.30

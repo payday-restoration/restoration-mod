@@ -46,10 +46,6 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	--Pro Job Hunt (Endless Assault)
-	[101829] = {
-		hunt = hunt_projob
-	},
 	-- restores some unused sniper spawns with their SOs
 	[100372] = {
 		values = {
@@ -161,8 +157,9 @@ return {
 			}
 		}
 	},
-	-- Disable parts reinforce when drill is done
+	-- Disable parts reinforce when drill is done+Pro Job Hunt (Endless Assault)
 	[101829] = {
+		hunt = hunt_projob,
 		reinforce = {
 			{
 				name = "parts_car"

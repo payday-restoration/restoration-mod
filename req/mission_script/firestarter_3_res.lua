@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 --Why not have a blackdozer in one of the choppers, yeah?
 local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 local bulldozer_2 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
@@ -24,15 +24,15 @@ local snipers = 1
 		ponr_value = 600
 	end
 	
-	--More snipers cause 1 sniper on DS is not enough
+	--More snipers cause 1 sniper on higher diffs is not enough
 	if difficulty_index == 6 or difficulty_index == 7 then
 		snipers = 2
 	elseif difficulty_index == 8 then
 		snipers = 3
 	end
 	
---If we're in Pro Job, then do this shit below	
-if shadow_fucked_me_hard then
+--If we're in Pro Job, then do this stuff below	
+if pro_job then
 	teargas = 2
 	teargasmayhem = 3
 	teargaschopper = 2

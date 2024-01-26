@@ -1,7 +1,7 @@
 local timer_achievement = 20
-local we_single_now = Global.game_settings and Global.game_settings.single_player
+local solo = Global.game_settings and Global.game_settings.single_player
 
-if we_single_now then
+if solo then
 	timer_achievement = 200
 end
 

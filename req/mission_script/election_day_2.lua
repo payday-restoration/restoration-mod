@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
@@ -20,8 +20,8 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 		ponr_value = 300		
 	end
 
---IF we're in Pro Job, then do this shit below similiar to Big Bank	
-if shadow_fucked_me_hard then
+--IF we're in Pro Job, then do this stuff below similiar to Big Bank	
+if pro_job then
 	swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 	swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 	swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"

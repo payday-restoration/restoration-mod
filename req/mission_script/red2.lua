@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local ambush_doors_chance = 85
 local ambush_amount = 1
 local dozer_vault = 4
@@ -21,8 +21,8 @@ local dozer_table = {
 }
 
 
---If we're in Pro Job, then do this shit below
-if shadow_fucked_me_hard then
+--If we're in Pro Job, then do this stuff below
+if pro_job then
 	    ambush_amount = 2
 	--titan dozer replaces some dozers on Mayhem above	
 	if difficulty_index >= 6 then

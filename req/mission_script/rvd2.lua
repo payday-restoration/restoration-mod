@@ -1,9 +1,9 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local spooc_amount = 1
 
-if shadow_fucked_me_hard then
+if pro_job then
 	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		spooc_amount = 2

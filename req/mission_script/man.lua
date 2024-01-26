@@ -118,12 +118,6 @@ return {
 		}
 	},
 	--Have the gas chopper be a dozer chopper that has loopable spawn
-	--Change the dialogue that have Bain warning you about incoming dozers
-	[102950] = {
-		values = {
-			dialogue = "Play_ban_s02_b"
-		}
-	},
 	--Trigger the heli spawn in police_called instead of triggering during hacking
 	[100131] = {
 		on_executed = {
@@ -145,7 +139,7 @@ return {
 	--loop the choppa
 	[103297] = {
 		on_executed = {
-			{ id = 101608, delay = 240}
+			{ id = 101608, delay = 180}
 		}
 	},
 	--tweak the delays

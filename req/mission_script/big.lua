@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
@@ -35,7 +35,7 @@ local blow_the_wall_chance = 50
 	end
 
 --IF we're in Pro Job, then do this shit below
-if shadow_fucked_me_hard then
+if pro_job then
 	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and Titan Snipers on Overkill above
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"

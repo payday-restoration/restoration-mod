@@ -14843,7 +14843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.panic_suppression_chance = 0.05
 			end
 
-			if self.ar18 then --Pawcio's AR=18
+			if self.ar18 then --Pawcio's AR-18
 				self.ar18.recategorize = { "light_ar" }
 				self.ar18.damage_type = "assault_rifle"
 				self.ar18.tactical_reload = 1
@@ -17013,6 +17013,90 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.timers.reload_empty = 2.93
 				self.swhiskey.timers.reload_exit_not_empty = 0.55
 				self.swhiskey.timers.reload_not_empty = 2.93
+			end
+
+			if self.sbeta then
+				self.sbeta.recategorize = {"light_snp"}
+				self.sbeta.damage_type = "sniper"
+				self.sbeta.always_play_anims = true
+				self.sbeta.tactical_reload = 1
+				self.sbeta.has_description = true
+				self.sbeta.desc_id = "bm_ap_weapon_sc_desc"
+				self.sbeta.AMMO_MAX = 40
+				self.sbeta.FIRE_MODE = "single"
+				self.sbeta.fire_mode_data = {}
+				self.sbeta.fire_mode_data.fire_rate = 0.631578947
+				self.sbeta.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+				self.sbeta.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.sbeta.CAN_TOGGLE_FIREMODE = false
+				self.sbeta.kick = self.stat_info.kick_tables.vertical_kick
+				self.sbeta.supported = true
+				self.sbeta.ads_speed = 0.280
+				self.sbeta.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 4500,
+					min_mult = 0.5
+				}
+				self.sbeta.stats = {
+					damage = 90,
+					spread = 88,
+					recoil = 73,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 22,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.sbeta.stats_modifiers = nil
+				self.sbeta.panic_suppression_chance = 0.05
+			end
+
+			if self.malima then
+				self.malima.recategorize = { "heavy_ar" }
+				self.malima.damage_type = "assault_rifle"
+				self.malima.tactical_reload = 1
+				self.malima.warsaw = true
+				self.malima.CLIP_AMMO_MAX = 30
+				self.malima.AMMO_MAX = 120
+				self.malima.FIRE_MODE = "auto"
+				self.malima.fire_mode_data = {}
+				self.malima.fire_mode_data.fire_rate = 0.0923076
+				self.malima.CAN_TOGGLE_FIREMODE = true
+				self.malima.kick = {}
+				self.malima.kick = self.stat_info.kick_tables.moderate_kick
+				self.malima.supported = true
+				self.malima.ads_speed = 0.280
+				self.malima.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 5500,
+					min_mult = 0.6
+				}	
+				self.malima.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 63,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.malima.stats_modifiers = nil
+				self.malima.reload_speed_multiplier = 0.77
+				self.malima.is_bullpup = true
+				self.malima.timers.reload_empty = 2.6
+				self.malima.timers.reload_exit_empty = 0.6
+				self.malima.timers.reload_not_empty = 2
+				self.malima.timers.reload_exit_not_empty = 0.6
+				self.malima.panic_suppression_chance = 0.05
 			end
 
 			--RJC9000 and PlayBONK's MW2022 AKs

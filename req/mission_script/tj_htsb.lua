@@ -14,7 +14,7 @@ local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_
         vet_on_break = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
     end
 return {
-	--Pro Job PONR 
+	--Pro Job PONR (when the vault is open i think i forgot)
 	[103669] = {
 		ponr = ponr_value
 	},

@@ -4082,11 +4082,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_baka','x_basset' }
+	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
 		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.25
+		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
@@ -4095,13 +4097,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(akimbo_rev) do
 		self[wep_id].BURST_FIRE = 2
 		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
 		self[wep_id].sounds.magazine_empty = nil
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
 	self.x_judge.categories = {"akimbo", "shotgun"}
 
-	tact_rel = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard'}
+	tact_rel = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard','x_baka'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].categories = {"akimbo", "smg"}
@@ -4110,6 +4114,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
+	end
+	tact_rel = {'x_basset'}
+	for i, wep_id in ipairs(tact_rel) do
+		self[wep_id].tactical_reload = 2
+		self[wep_id].categories = {"akimbo", "shotgun"}
 	end
 
 	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}

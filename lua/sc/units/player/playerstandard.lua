@@ -1299,6 +1299,8 @@ function PlayerStandard:_check_stop_shooting()
 		self._camera_unit:base():stop_shooting(self._equipped_unit:base():recoil_wait())
 
 		local weap_base = self._equipped_unit:base()
+		local weap_tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data() or tweak_data.weapon[weap_base:get_name_id()]
+		local srm = weap_tweak_data and weap_tweak_data.recoil_values and weap_tweak_data.recoil_values.srm
 		local fire_mode = weap_base:fire_mode()
 		local is_auto_fire_mode = fire_mode == "auto"
 		local is_volley_fire_mode = fire_mode == "volley"
@@ -1310,7 +1312,7 @@ function PlayerStandard:_check_stop_shooting()
 			if (not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire) then
 				self._ext_network:send("sync_stop_auto_fire_sound", 0)
 			end
-			weap_base._next_fire_allowed = weap_base._next_fire_allowed + (next_fire * 0.8)
+			weap_base._next_fire_allowed = weap_base._next_fire_allowed + (next_fire * ((srm and srm[2][2] > 1 and 0.6) or 0.15) )
 		end
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")

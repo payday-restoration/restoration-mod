@@ -17025,7 +17025,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbeta.AMMO_MAX = 40
 				self.sbeta.FIRE_MODE = "single"
 				self.sbeta.fire_mode_data = {}
-				self.sbeta.fire_mode_data.fire_rate = 0.631578947
+				self.sbeta.fire_mode_data.fire_rate = 0.9473684
+				self.sbeta.fire_rate_multiplier = 1.5
 				self.sbeta.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
 				self.sbeta.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.sbeta.CAN_TOGGLE_FIREMODE = false

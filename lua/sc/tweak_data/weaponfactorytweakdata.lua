@@ -27641,6 +27641,64 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_swhiskey_grip_steady.custom_stats = {}
 		end
 
+		if self.parts.wpn_fps_ass_malima_receiver then
+			self.parts.wpn_fps_ass_malima_vertical_grip.stats = { value = 1 }
+			self.parts.wpn_fps_ass_malima_vertical_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_malima_am_default.stats = { value = 1 }
+			self.parts.wpn_fps_ass_malima_am_default.custom_stats = nil
+			self.parts.wpn_fps_ass_malima_am_545.stats = { value = 1 }
+			self.parts.wpn_fps_ass_malima_am_545.custom_stats = nil
+			self.parts.wpn_fps_ass_malima_am_single_tap.stats = { value = 1 }
+			self.parts.wpn_fps_ass_malima_am_single_tap.custom_stats = nil
+			self.parts.wpn_fps_ass_malima_barrel.stats = { value = 1 }
+			self.parts.wpn_fps_ass_malima_barrel.custom_stats = nil
+		end
+
+		if self.parts.wpn_fps_snp_sbeta_receiver then
+			self.parts.wpn_fps_snp_sbeta_barrel.stats = { value = 1 }
+			self.parts.wpn_fps_snp_sbeta_barrel.custom_stats = nil
+			self.parts.wpn_fps_snp_sbeta_handguard.stats = { value = 1 }
+			self.parts.wpn_fps_snp_sbeta_handguard.custom_stats = nil
+			self.parts.wpn_fps_snp_sbeta_stock.stats = { value = 1 }
+			self.parts.wpn_fps_snp_sbeta_stock.custom_stats = nil
+			self.parts.wpn_fps_snp_sbeta_magazine.reload_objects = {
+				hide_mag = "g_bullet",
+				reload_not_empty = "g_bullet",
+				reload = "g_bullet"
+			}
+			self.parts.wpn_fps_snp_sbeta_magazine.visibility = {
+				{
+					objects = {
+						g_bullet = false
+					}
+				}
+			}
+
+			self.parts.wpn_fps_snp_sbeta_barrel_short.supported = true
+			self.parts.wpn_fps_snp_sbeta_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_snp_sbeta_barrel_short.stats.extra_ammo = -2
+			self.parts.wpn_fps_snp_sbeta_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+			self.parts.wpn_fps_snp_sbeta_lever_fast.supported = true
+			self.parts.wpn_fps_snp_sbeta_lever_fast.stats = {
+				spread = -2,
+				recoil = -2
+			}
+			self.parts.wpn_fps_snp_sbeta_lever_fast.custom_stats = { rof_mult = 1.073684 }
+			self.parts.wpn_fps_snp_sbeta_lever_steady.supported = true
+			self.parts.wpn_fps_snp_sbeta_lever_steady.stats = {
+				spread = 2,
+				recoil = 2
+
+			}
+			self.parts.wpn_fps_snp_sbeta_lever_steady.custom_stats = { rof_mult = 0.968421 }
+
+			self.parts.wpn_fps_snp_sbeta_stock_no.supported = true
+			self.parts.wpn_fps_snp_sbeta_stock_no.stats = deep_clone(stocks.remove_fixed_stats)
+			self.parts.wpn_fps_snp_sbeta_stock_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
+		end
+		
+
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack

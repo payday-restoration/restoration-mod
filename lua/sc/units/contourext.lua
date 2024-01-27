@@ -1,5 +1,5 @@
 ContourExt._types.medic_show = {
-	priority = 1,
+	priority = 2,
 	material_swap_required = true,
 	fadeout = 2,
 	color = tweak_data.contour.character.dangerous_color

@@ -36,3 +36,12 @@ function CivilianBrain:on_cool_state_changed(state)
 
 	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
 end
+
+Hooks:PostHook(CivilianBrain, "on_hostage_move_interaction", "on_hostage_move_interaction_mutator_no_outlines", function (self,interacting_unit, command)
+	local disable_outlines = managers.mutators:modify_value("CivilianBrain:DisableOutlines", false)
+	if command == "move" then
+		if disable_outlines then
+			self._unit:contour():remove("friendly")
+		end
+	end
+end)

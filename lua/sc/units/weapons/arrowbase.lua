@@ -90,3 +90,10 @@ function ArrowBase:_calculate_autohit_direction()
 		return tmp_vec1
 	end
 end	
+
+Hooks:PostHook(ArrowBase, "reload_contour", "reload_contour_mutator_no_outlines", function(self)
+    disable_outlines = managers.mutators:modify_value("ArrowBase:DisableOutlines", false)
+	if disable_outlines then
+		self._unit:contour():remove("deployable_selected")
+	end
+end)

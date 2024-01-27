@@ -20,3 +20,8 @@ ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ab
 	priority = 1,
 	color = Vector3(0.5,0,1)
 }
+
+ContourExt._types.disable_outline = { --for mutator
+	priority = 1,
+	color = Vector3(0,0,0)
+}

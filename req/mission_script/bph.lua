@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local murky_guard = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
 
 	--More timelock timer to release Bain on Mayhem above
@@ -9,7 +9,7 @@ local murky_guard = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_m
 	end	
 
 --If we're in Pro Job, do this shit below
-if shadow_fucked_me_hard then
+if pro_job then
 	--replace regular guard with a dozer (booo)
 	murky_guard = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 	--even more timelock timer

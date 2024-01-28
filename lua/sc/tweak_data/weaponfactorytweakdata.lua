@@ -27693,6 +27693,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_snp_sbeta_lever_steady.custom_stats = { rof_mult = 0.968421 }
 
+			self.parts.wpn_fps_snp_sbeta_stock_light.supported = true
+			self.parts.wpn_fps_snp_sbeta_stock_light.stats = {
+				spread = 1,
+				recoil = -2,
+			}
+			self.parts.wpn_fps_snp_sbeta_stock_light.custom_stats = nil
+			self.parts.wpn_fps_snp_sbeta_stock_tac.supported = true
+			self.parts.wpn_fps_snp_sbeta_stock_tac.stats = {
+				spread = -1,
+				recoil = -2,
+				concealment = 2
+			}
+			self.parts.wpn_fps_snp_sbeta_stock_tac.custom_stats = { ads_speed_mult = 1.05 }
 			self.parts.wpn_fps_snp_sbeta_stock_no.supported = true
 			self.parts.wpn_fps_snp_sbeta_stock_no.stats = deep_clone(stocks.remove_fixed_stats)
 			self.parts.wpn_fps_snp_sbeta_stock_no.custom_stats = deep_clone(stocks.remove_fixed_stats)

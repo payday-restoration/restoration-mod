@@ -250,12 +250,22 @@ function CopBase:random_mat_seq_initialization()
 	-- sec
 	local sec1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1")
 	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
-	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk")
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk")
+
 	local sec2 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
 	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk")
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk")
 	
 	local sec3 = unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3") 
 	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3")	
+	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk")
 	
 	local sec4 = unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4") 
 	or unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4_husk")	

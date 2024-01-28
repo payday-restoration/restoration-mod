@@ -19156,7 +19156,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.3,
 						srm = {
 							0.01,
-							{0.8, 1},
+							{0.8, 1.01},
 							14
 						}
 					}
@@ -19168,7 +19168,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.2,
 						srm = {
 							0.0125,
-							{0.8, 1},
+							{0.8, 1.01},
 							9
 						}
 					}

@@ -245,7 +245,7 @@ function HuskPlayerMovement:_update_zipline_sled(t, dt)
 end
 
 Hooks:PostHook(HuskPlayerMovement, "set_character_anim_variables", "set_character_anim_variables_mutator_no_outlines", function (self)
-	disable_outlines = managers.mutators:modify_value("MedicDamage:DisableOutlines", false)
+	local disable_outlines = managers.mutators:modify_value("HuskPlayerMovement:DisableOutlines", false)
 	if disable_outlines then
 		self._unit:contour():remove("teammate")
 	end

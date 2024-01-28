@@ -103,9 +103,10 @@ end
 Hooks:PostHook(ECMJammerBase, "sync_net_event", "sync_net_event_no_outlines", function(self,event_id)
 	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
 	if disable_outlines then
-	if event_id == net_events.feedback_flash then
-		self._unit:contour():remove("deployable_active")
-	end
+	local net_events = self._NET_EVENTS
+		if event_id == net_events.feedback_flash then
+			self._unit:contour():remove("deployable_active")
+		end
 	end
 end)
 

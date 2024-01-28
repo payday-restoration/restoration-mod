@@ -758,6 +758,7 @@ function CopActionShoot:update(t)
 					end
 
 					if is_autumn then
+						--[[
 						if not self._ext_brain._set_endless_assault then
 							local ai_task_data = managers.groupai:state()._task_data
 
@@ -769,6 +770,7 @@ function CopActionShoot:update(t)
 								end
 							end
 						end
+						]]--
 
 						local gas_roll = math_random() <= self._common_data.char_tweak.chance_use_gas or 0.3
 

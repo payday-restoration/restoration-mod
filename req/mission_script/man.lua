@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_1 = math.rand(1)
 local chance_dozer_2 = math.rand(1)
 local ambush_unit_amount = 1
@@ -15,8 +15,8 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
---If we're in Pro Job, then do this shit below
-if shadow_fucked_me_hard then
+--If we're in Pro Job, then do this stuff below
+if pro_job then
 	--First, replace scripted shields and harassers with titan shields/snipers
 	if difficulty_index >= 5 then
 		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
@@ -118,12 +118,6 @@ return {
 		}
 	},
 	--Have the gas chopper be a dozer chopper that has loopable spawn
-	--Change the dialogue that have Bain warning you about incoming dozers
-	[102950] = {
-		values = {
-			dialogue = "Play_ban_s02_b"
-		}
-	},
 	--Trigger the heli spawn in police_called instead of triggering during hacking
 	[100131] = {
 		on_executed = {
@@ -145,7 +139,7 @@ return {
 	--loop the choppa
 	[103297] = {
 		on_executed = {
-			{ id = 101608, delay = 240}
+			{ id = 101608, delay = 180}
 		}
 	},
 	--tweak the delays

@@ -170,6 +170,7 @@
 				<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
 				<hook file="sc/managers/trademanager.lua" source_file="lib/managers/trademanager"/>
 				<hook file="sc/managers/gameplaycentralmanager.lua" source_file="lib/managers/gameplaycentralmanager"/>
+				<hook file="sc/managers/hudmanager.lua" source_file="lib/managers/hudmanager"/>
 				<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
 				<hook file="sc/managers/dialogmanager.lua" source_file="lib/managers/dialogmanager"/>
 				<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
@@ -319,6 +320,7 @@
 					<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
 					<hook file="sc/units/equipment/sentrygunbase.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbase"/>
 					<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
+					<hook file="sc/units/equipment/sentryguncontour.lua" source_file="lib/units/equipment/sentry_gun/sentryguncontour"/>
 				<!--ENV-->
 					<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>
 				<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>

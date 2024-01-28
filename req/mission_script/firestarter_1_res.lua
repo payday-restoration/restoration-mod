@@ -48,7 +48,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	--do this shit instead so I won't need to edit the mission file if we update Firestarter again
+	--replace gangsters with colombians via lua instead so I won't need to edit the mission file if we update Firestarter again
 	[103949] = {
 		values = {
             enemy = gangster_table.colombian_1

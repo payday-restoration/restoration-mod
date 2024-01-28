@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
 local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
@@ -28,7 +28,7 @@ local fbiagent_3 = "units/payday2/characters/ene_fbi_3/ene_fbi_3"
 	end	
 	
 	--If we're in Pro Job, change some of the spawns
-	if shadow_fucked_me_hard then
+	if pro_job then
 		hunt_projob = true
 		--Ready Team Agents replace Fbi_2 and 3
 		fbiagent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"

@@ -1,9 +1,9 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 
-	if shadow_fucked_me_hard then
+	if pro_job then
 		hunt_projob = true
 	end	
 
@@ -45,10 +45,6 @@ return {
 	[101485] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
-	},
-	--Pro Job Hunt (Endless Assault)
-	[101829] = {
-		hunt = hunt_projob
 	},
 	-- restores some unused sniper spawns with their SOs
 	[100372] = {
@@ -161,8 +157,9 @@ return {
 			}
 		}
 	},
-	-- Disable parts reinforce when drill is done
+	-- Disable parts reinforce when drill is done+Pro Job Hunt (Endless Assault)
 	[101829] = {
+		hunt = hunt_projob,
 		reinforce = {
 			{
 				name = "parts_car"

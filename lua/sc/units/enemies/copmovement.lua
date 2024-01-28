@@ -854,7 +854,7 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 	local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
 
 	--Fingers crossed this fixes the funny shield_knock playing twice
-	if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt" or hurt_type == "shield_knock") then
+	if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt" or hurt_type == "shield_knock" or hurt_type == "hurt" or hurt_type == "light_hurt" or hurt_type == "expl_hurt") then
 		request_action = false
 	end
 

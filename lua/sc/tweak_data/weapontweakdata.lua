@@ -4082,11 +4082,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911','x_baka','x_basset' }
+	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
 		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.25
+		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
@@ -4095,13 +4097,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(akimbo_rev) do
 		self[wep_id].BURST_FIRE = 2
 		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
 		self[wep_id].sounds.magazine_empty = nil
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
 	self.x_judge.categories = {"akimbo", "shotgun"}
 
-	tact_rel = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard'}
+	tact_rel = {'x_sr2','x_mp5', 'x_coal', 'x_mp7', 'x_mp9', 'x_p90', 'x_polymer', 'x_schakal', 'x_scorpion', 'x_tec9','x_shepheard','x_baka'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].categories = {"akimbo", "smg"}
@@ -4110,6 +4114,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
+	end
+	tact_rel = {'x_basset'}
+	for i, wep_id in ipairs(tact_rel) do
+		self[wep_id].tactical_reload = 2
+		self[wep_id].categories = {"akimbo", "shotgun"}
 	end
 
 	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}
@@ -14834,7 +14843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.panic_suppression_chance = 0.05
 			end
 
-			if self.ar18 then --Pawcio's AR=18
+			if self.ar18 then --Pawcio's AR-18
 				self.ar18.recategorize = { "light_ar" }
 				self.ar18.damage_type = "assault_rifle"
 				self.ar18.tactical_reload = 1
@@ -17004,6 +17013,91 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.timers.reload_empty = 2.93
 				self.swhiskey.timers.reload_exit_not_empty = 0.55
 				self.swhiskey.timers.reload_not_empty = 2.93
+			end
+
+			if self.sbeta then
+				self.sbeta.recategorize = {"light_snp"}
+				self.sbeta.damage_type = "sniper"
+				self.sbeta.always_play_anims = true
+				self.sbeta.tactical_reload = 1
+				self.sbeta.has_description = true
+				self.sbeta.desc_id = "bm_ap_weapon_sc_desc"
+				self.sbeta.AMMO_MAX = 40
+				self.sbeta.FIRE_MODE = "single"
+				self.sbeta.fire_mode_data = {}
+				self.sbeta.fire_mode_data.fire_rate = 0.9473684
+				self.sbeta.fire_rate_multiplier = 1.5
+				self.sbeta.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+				self.sbeta.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.sbeta.CAN_TOGGLE_FIREMODE = false
+				self.sbeta.kick = self.stat_info.kick_tables.vertical_kick
+				self.sbeta.supported = true
+				self.sbeta.ads_speed = 0.280
+				self.sbeta.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 4500,
+					min_mult = 0.5
+				}
+				self.sbeta.stats = {
+					damage = 90,
+					spread = 88,
+					recoil = 73,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 22,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.sbeta.stats_modifiers = nil
+				self.sbeta.panic_suppression_chance = 0.05
+			end
+
+			if self.malima then
+				self.malima.recategorize = { "heavy_ar" }
+				self.malima.damage_type = "assault_rifle"
+				self.malima.tactical_reload = 1
+				self.malima.warsaw = true
+				self.malima.CLIP_AMMO_MAX = 30
+				self.malima.AMMO_MAX = 120
+				self.malima.FIRE_MODE = "auto"
+				self.malima.fire_mode_data = {}
+				self.malima.fire_mode_data.fire_rate = 0.0923076
+				self.malima.CAN_TOGGLE_FIREMODE = true
+				self.malima.kick = {}
+				self.malima.kick = self.stat_info.kick_tables.moderate_kick
+				self.malima.supported = true
+				self.malima.ads_speed = 0.280
+				self.malima.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 5500,
+					min_mult = 0.6
+				}	
+				self.malima.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 63,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.malima.stats_modifiers = nil
+				self.malima.reload_speed_multiplier = 0.77
+				self.malima.is_bullpup = true
+				self.malima.timers.reload_empty = 2.6
+				self.malima.timers.reload_exit_empty = 0.6
+				self.malima.timers.reload_not_empty = 2
+				self.malima.timers.reload_exit_not_empty = 0.6
+				self.malima.panic_suppression_chance = 0.05
 			end
 
 			--RJC9000 and PlayBONK's MW2022 AKs

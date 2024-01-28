@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 
 	--Setting up the murkies for epic three way fight
 	if difficulty_index <= 2 or difficulty_index == 3 then
@@ -61,7 +61,7 @@ local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_
 		ponr_value = 600		
 	end
 	
-	if shadow_fucked_me_hard then
+	if pro_job then
 	--Captain Winters Encounter on DSPJ (probably the only scripted captain encounter in vanilla heists)
 	if difficulty_index == 8 then
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
@@ -84,7 +84,7 @@ return {
 			end
 		end
 	},
-	--Three Way Fight feat. Murkywater, make Akan's mercs shit their pants and fight Murkies
+	--Three Way Fight feat. Murkywater, make Akan's mercs fight Murkies by changing teams
 	--1st Van (left one)
 	[100776] = {
 		values = {

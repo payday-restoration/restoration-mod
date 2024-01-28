@@ -41,7 +41,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

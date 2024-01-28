@@ -161,3 +161,10 @@ function AmmoClip:sync_net_event(event, peer)
 		end
 	end
 end
+
+Hooks:PostHook(AmmoClip, "reload_contour", "reload_contour_ammo_mutator_no_outlines", function(self)
+    disable_outlines = managers.mutators:modify_value("AmmoClip:DisableOutlines", false)
+	if disable_outlines then
+		self._unit:contour():remove("deployable_selected")
+	end
+end)

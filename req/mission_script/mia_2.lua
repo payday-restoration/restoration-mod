@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_left = math.rand(1)
 local chance_dozer_middle = math.rand(1)
 local chance_dozer_right = math.rand(1)
@@ -51,7 +51,7 @@ local titan_table = {
 	end
 	
 	--Titan Shields replace usual scripted shields on OVK+ with PJ
-	if shadow_fucked_me_hard and difficulty_index >= 5 then	
+	if pro_job and difficulty_index >= 5 then	
 		shield_unit = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		--2 scripted SWAT units will be replaced by titan SWAT
 		if chance_titan_swat_left < 0.5 then

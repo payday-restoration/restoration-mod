@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 
 	--security rooms should always have the shotgun guard
 	if difficulty_index <= 6 then
@@ -20,7 +20,7 @@ local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_
 	end
 
 --If we're in Pro Job, then replace some scripted heavy harrassers with Titan Snipers on ovk above 	
-if shadow_fucked_me_hard then
+if pro_job then
 	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
 

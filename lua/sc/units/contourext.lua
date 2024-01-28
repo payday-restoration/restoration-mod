@@ -1,5 +1,5 @@
 ContourExt._types.medic_show = {
-	priority = 1,
+	priority = 2,
 	material_swap_required = true,
 	fadeout = 2,
 	color = tweak_data.contour.character.dangerous_color
@@ -19,4 +19,9 @@ ContourExt._types.medic_buff = {
 ContourExt._types.deployable_blackout = { --for autumn's deployable disabling ability
 	priority = 1,
 	color = Vector3(0.5,0,1)
+}
+
+ContourExt._types.disable_outline = { --for mutator
+	priority = 1,
+	color = Vector3(0,0,0)
 }

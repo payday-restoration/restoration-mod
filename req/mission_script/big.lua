@@ -1,10 +1,10 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
-local someone_gone_and_fucked_the_wall_up_chance = 50
+local blow_the_wall_chance = 50
 
 	--So it will not crash
 	if difficulty_index == 7 then
@@ -23,20 +23,20 @@ local someone_gone_and_fucked_the_wall_up_chance = 50
 	end
 	
 	if difficulty_index == 6 or difficulty_index == 7 then
-		someone_gone_and_fucked_the_wall_up_chance = 80
+		blow_the_wall_chance = 80
 	elseif difficulty_index == 8 then
-		someone_gone_and_fucked_the_wall_up_chance = 100
+		blow_the_wall_chance = 100
 	end
 	
-	--Increase the time lock timers on mayhem above, will probably fuck 12 angry minutes achivement
+	--Increase the time lock timers on mayhem above
 	if difficulty_index >= 6 then
 		timelock_normal = 240
 		timelock_fast = 210
 	end
 
 --IF we're in Pro Job, then do this shit below
-if shadow_fucked_me_hard then
-	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and most importantly...Titan Snipers on Overkill above
+if pro_job then
+	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and Titan Snipers on Overkill above
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
 		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
@@ -46,7 +46,7 @@ if shadow_fucked_me_hard then
 		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	end
 
-	--Increase the time lock timers on all diffs, will probably fuck 12 angry minutes achivement even more
+	--Increase the time lock timers on all diffs
 	if difficulty_index <= 5 then
 		timelock_normal = 240
 		timelock_fast = 210
@@ -169,7 +169,7 @@ return {
 	--More chance for blowing up the wall/also faster time to trigger
 	[102451] = {
 		values = {
-            chance = someone_gone_and_fucked_the_wall_up_chance
+            chance = blow_the_wall_chance
 		},
 		on_executed = {
 			{ id = 104386, delay = 60 }
@@ -177,7 +177,7 @@ return {
 	},
 	[102469] = {
 		values = {
-            chance = someone_gone_and_fucked_the_wall_up_chance
+            chance = blow_the_wall_chance
 		},
 		on_executed = {
 			{ id = 104388, delay = 60 }

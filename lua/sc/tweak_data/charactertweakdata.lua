@@ -2596,11 +2596,10 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.no_xmas_hat = true
 	self.tank.immune_to_ff_exp = true
 	table.insert(self._enemy_list, "tank")
-	
-	
-	--Blackdozers, Move faster than other dozers but have a bit less EHP
+		
+	--Blackdozers, Move faster than other dozers but have a bit less EHP and can be stunned by explosives
 	self.tank_black = deep_clone(self.tank)
-	self.tank_black.move_speed = presets.move_speed.normal
+	self.tank_black.move_speed = presets.move_speed.slow_plus
 	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
 	table.insert(self._enemy_list, "tank_black")
@@ -2619,14 +2618,14 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_skull")
 	
-	--Medic Dozer, ditto from Blackdozers
+	--Medic Dozer, can be stunned like Blackdozers
 	self.tank_medic = deep_clone(self.tank)
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
 	self.tank_medic.can_be_healed = false
-	self.tank_medic.move_speed = presets.move_speed.normal
+	self.tank_medic.move_speed = presets.move_speed.slow
 	self.tank_medic.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_medic.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self.tank_medic.tags, "medic")
@@ -16457,6 +16456,66 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
+		--About 10% faster than normal 'slow', mainly used for Blackdozers
+		slow_plus = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 144,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 144,
+						strafe = 144,
+						bwd = 144
+					},
+					cbt = {
+						fwd = 158,
+						strafe = 144,
+						bwd = 144
+					}
+				},
+				run = {
+					hos = {
+						fwd = 396,
+						strafe = 144,
+						bwd = 144
+					},
+					cbt = {
+						fwd = 396,
+						strafe = 144,
+						bwd = 144
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					hos = {
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
+					},
+					cbt = {
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
+					}
+				},
+				run = {
+					hos = {
+						fwd = 208,
+						strafe = 130,
+						bwd = 130
+					},
+					cbt = {
+						fwd = 208,
+						strafe = 130,
+						bwd = 130
+					}
+				}
+			}
+		},
 		normal = {
 			stand = {
 				walk = {
@@ -16575,65 +16634,6 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
-		fast_dozer = {
-			stand = {
-				walk = {
-					ntl = {
-						fwd = 150,
-						strafe = 120,
-						bwd = 110
-					},
-					hos = {
-						fwd = 488,
-						strafe = 297,
-						bwd = 297
-					},
-					cbt = {
-						fwd = 488,
-						strafe = 297,
-						bwd = 297
-					}
-				},
-				run = {
-					hos = {
-						fwd = 488,
-						strafe = 297,
-						bwd = 297
-					},
-					cbt = {
-						fwd = 488,
-						strafe = 297,
-						bwd = 297
-					}
-				}
-			},
-			crouch = {
-				walk = {
-					hos = {
-						fwd = 191,
-						strafe = 191,
-						bwd = 191
-					},
-					cbt = {
-						fwd = 191,
-						strafe = 191,
-						bwd = 191
-					}
-				},
-				run = {
-					hos = {
-						fwd = 305,
-						strafe = 191,
-						bwd = 191
-					},
-					cbt = {
-						fwd = 305,
-						strafe = 191,
-						bwd = 191
-					}
-				}
-			}
-		},	
 		very_fast = {
 			stand = {
 				walk = {
@@ -17537,10 +17537,6 @@ function CharacterTweakData:_set_overkill_290()
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5
 	self.tank_glass_damage_mul = 0.5
-	
-	--Speed boost on BlackDozers/MedicDozers
-	self.tank_black.move_speed = self.presets.move_speed.fast
-	self.tank_medic.move_speed = self.presets.move_speed.fast
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -17637,10 +17633,6 @@ function CharacterTweakData:_set_sm_wish()
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5
 	self.tank_glass_damage_mul = 0.5
-
-	--Speed boost on BlackDozers/MedicDozers, Blackdozers will also always run
-	self.tank_black.move_speed = self.presets.move_speed.fast_dozer
-	self.tank_medic.move_speed = self.presets.move_speed.fast	
 				
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0

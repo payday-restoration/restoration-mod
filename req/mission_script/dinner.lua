@@ -1,6 +1,6 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-local shadow_fucked_me_hard = Global.game_settings and Global.game_settings.one_down
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local swat_amount = 4
 local murky_amount = 2
 local murkyman_1 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
@@ -21,12 +21,12 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		ponr_value = 90	
 	end
 	
-	--If we're in Pro Job, then do this shit below
-	if shadow_fucked_me_hard then
+	--If we're in Pro Job, then do this stuff below
+	if pro_job then
 	--increase the amount of scripted swat van spawns and murky spawns
 		swat_amount = 6
 		murky_amount = 5
-	--Elite Murkies start replace some murkymans, will probably fuck you up inside the Slaughterhouse
+	--Elite Murkies start replace some regular murkies
 	if difficulty_index >= 4 then
 		murkyman_1 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
 		murkyman_2 = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun"
@@ -65,7 +65,7 @@ local murky_greendozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r87
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"	
 	else
-		--Titan squad to fuck you over on DSPJ
+		--Titan squad on DSPJ
 		swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 		spooc =  "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"

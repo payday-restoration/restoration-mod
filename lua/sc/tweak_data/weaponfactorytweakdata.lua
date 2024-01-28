@@ -3680,7 +3680,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_m4_upg_fg_mk12.forbids = { "wpn_fps_addon_ris" }
 	self.parts.wpn_fps_m4_upg_fg_mk12.supported = true
 	self.parts.wpn_fps_m4_upg_fg_mk12.stats = {
-		value = 0
+		value = 10,
+		spread = 4,
+		concealment = -4
+	}	
+	self.parts.wpn_fps_m4_upg_fg_mk12.custom_stats = {
+		falloff_start_mult = 1.3,
+		falloff_end_mult = 1.3,
+		ads_speed_mult = 1.1
 	}	
 	self.parts.wpn_fps_m4_upg_fg_mk12.perks = nil
 	self.parts.wpn_fps_m4_upg_fg_mk12.stance_mod = {
@@ -35564,6 +35571,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							override = {},
 							unit = "units/mods/weapons/wpn_fps_ass_m4_tantone/wpn_fps_ass_m4_tantone_lower"
 						}
+					end
+				end
+			end
+		end
+	end
+
+	if self.parts.wpn_fps_m4_upg_fg_mk12 then
+		for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_m4_upg_fg_mk12.forbids, used_part_id) then
+					if used_part_id ~= "wpn_fps_m4_uupg_b_sd" then
+						if self.parts[used_part_id].type == "foregrip" or
+						self.parts[used_part_id].type == "vertical_grip" or
+						self.parts[used_part_id].type == "barrel" then
+							table.insert(self.parts.wpn_fps_m4_upg_fg_mk12.forbids, used_part_id)
+						end
 					end
 				end
 			end

@@ -61,14 +61,12 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 		ponr_value = 600		
 	end
 	
-	if pro_job then
+	if pro_job and difficulty_index == 8 then
 	--Captain Winters Encounter on DSPJ (probably the only scripted captain encounter in vanilla heists)
-	if difficulty_index == 8 then
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
 		specialenemy_2 = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
 		specialenemy_3 = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
-end
 
 return {
 	--Pro Job PONR

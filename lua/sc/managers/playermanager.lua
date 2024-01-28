@@ -178,7 +178,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			local can_reload = primary_base and primary_base.can_reload and primary_base:can_reload()
 
 			if can_reload then
-				primary_base:on_reload()
+				primary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(primary_base:selection_index(), primary_base:ammo_info())
 			end
@@ -197,7 +197,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			local can_reload = secondary_base and secondary_base.can_reload and secondary_base:can_reload()
 
 			if can_reload then
-				secondary_base:on_reload()
+				secondary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(secondary_base:selection_index(), secondary_base:ammo_info())
 			end

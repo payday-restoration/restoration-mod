@@ -4378,7 +4378,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_5"] = "Cloakers can easily counter lone or cut off heisters.",
 		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
 		["loading_gameplay_res_7"] = "Green Bulldozers deal high amounts of damage and can often break even the heaviest of armors with a single shot.",
-		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine. They also run faster than other dozers but have much less health.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers trade damage for high rate of fire and boast an impressive drum magazine. They also run faster than other dozers but have much less health and can be stunned with explosives.",
 		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers lay down heavy suppressive fire that knockbacks on close range and will fire until their belts are empty. Their top armor can take up more damage than regular dozer but move as slow as Titandozers.",
 		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers, high rate of fire and good damage. An unholy union of Green and Black dozers.",
 		["loading_gameplay_res_11"] = "Target priority is important. A Bulldozer of any type is worth more attention than a Light SWAT.",

@@ -8050,7 +8050,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.tecci.stats = {
 						damage = 20,
 						spread = 70,
-						recoil = 75,
+						recoil = 79,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 22,
@@ -8089,7 +8089,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.stats = {
 						damage = 24,
 						spread = 56,
-						recoil = 78,
+						recoil = 81,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 18,
@@ -8110,7 +8110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.timers.reload_exit_empty = 1.2
 					self.m249.timers.reload_exit_not_empty = 1.2
 					self.m249.panic_suppression_chance = 0.05
-					self.m249.reload_speed_multiplier = 0.75
+					self.m249.reload_speed_multiplier = 0.78
 			
 				--IM AT SOUP (KAC ChainSAW)
 					self.kacchainsaw.categories = {
@@ -8134,7 +8134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw.stats = {
 						damage = 24,
 						spread = 43,
-						recoil = 78,
+						recoil = 79,
 						spread_moving = 5,
 						zoom = 1,
 						concealment = 21,
@@ -19155,9 +19155,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						6,
 						0.3,
 						srm = {
-							0.01,
-							{0.8, 1},
-							14
+							0.02,
+							{0.8, 1.01},
+							9
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -19168,8 +19168,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.2,
 						srm = {
 							0.0125,
-							{0.8, 1},
-							9
+							{0.8, 1.01},
+							14
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then

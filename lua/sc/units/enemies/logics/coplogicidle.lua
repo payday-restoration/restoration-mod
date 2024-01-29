@@ -60,7 +60,7 @@ function CopLogicIdle._chk_relocate(data)
 
 	if objective_type == "follow" then
 		local follow_unit = objective.follow_unit
-		local unit_pos = follow_unit:movement().get_walk_to_pos and follow_unit:movement():get_walk_to_pos() or follow_unit:movement():m_pos()
+		local unit_pos = follow_unit:movement().get_walk_to_pos and follow_unit:movement():get_walk_to_pos() or follow_unit:movement():m_newest_pos()
 		local dis_sq = mvector3.distance_sq(data.m_pos, unit_pos)
 
 		if data.is_tied and objective.lose_track_dis and dis_sq > objective.lose_track_dis ^ 2 then
@@ -68,7 +68,7 @@ function CopLogicIdle._chk_relocate(data)
 			return true
 		end
 
-		local relocated_dis_sq = data.is_tied and my_data.advancing and objective.distance and (objective.distance * 0.5) ^ 2 or 100
+		local relocated_dis_sq = data.is_tied and my_data.advancing and objective.distance and math.max(objective.distance * 0.5 ^ 2, 100) or 100
 		if objective.relocated_to and mvector3.distance_sq(objective.relocated_to, unit_pos) < relocated_dis_sq then
 			return
 		elseif data.is_converted then

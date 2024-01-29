@@ -22686,6 +22686,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		a_obj = "a_body",
 		has_description = true,
 		custom_stats = {
+			lock_semi = true,
 			alt_desc = "bm_g3_sg1_sc_desc",
 			rof_mult = 0.5,
 			armor_piercing_override = 1,

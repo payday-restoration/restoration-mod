@@ -24,20 +24,30 @@ MutatorNoOutlines.icon_coords = {
 end
 --]]
 function MutatorNoOutlines:modify_value(id, value)
-	--Need clean-up this crap later
-	if id == "HuskPlayerMovement:DisableOutlines" or id == "CopMovement:DisableOutlines" or id == "MedicDamage:DisableOutlines" or id == "TripMineBase:DisableOutlines" or id == "ECMJammerBase:DisableOutlines" or id == "CivilianBrain:DisableOutlines" or id == "HUDManager:DisableOutlines" or id == "AmmoClip:DisableOutlines" or id == "ArrowBase:DisableOutlines" or id == "SentryGunContour:DisableOutlines" then
-		return true
-	end	
+	local outlines_change_table = {
+		"HuskPlayerMovement",
+		"CopMovement",
+		"MedicDamage",
+		"TripMineBase",
+		"ECMJammerBase",
+		"CivilianBrain",
+		"HUDManager",
+		"AmmoClip",
+		"ArrowBase",
+		"SentryGunContour"
+	}
+	for _, id_modifier in ipairs(outlines_change_table) do
+		if id == id_modifier..":DisableOutlines" then
+			value = true
+		end	
+	end
 	return value
 end
 
 function MutatorNoOutlines:setup(data)
 	--Maybe it's possible to make jokers and enemies outlines show up in LoS
 	local no_outline = Vector3(0,0,0)
-	
-	tweak_data.interaction.revive.contour_preset = disable_outline
-	--tweak_data.interaction.revive.contour_preset_selected = disable_outline
-	
+	--idk why some contour colors are not overriding
 	tweak_data.contour.interactable.standard_color = no_outline
 	tweak_data.contour.character.downed_color = no_outline
 	tweak_data.contour.character.friendly_color = no_outline

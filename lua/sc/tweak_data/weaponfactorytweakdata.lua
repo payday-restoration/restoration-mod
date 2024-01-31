@@ -22128,7 +22128,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 			recoil = -6
 		},
 		custom_stats = {
-			rof_mult = 1.53846153,
+			rof_mult = 1.571428571,
 			falloff_start_mult = 0.19230769,
 			falloff_end_mult = 0.78571428
 		},

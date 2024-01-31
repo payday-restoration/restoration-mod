@@ -8037,13 +8037,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.tecci.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 					self.tecci.CLIP_AMMO_MAX = 100
 					self.tecci.AMMO_MAX = 360
-					self.tecci.fire_mode_data.fire_rate = 0.0857142
+					self.tecci.fire_mode_data.fire_rate = 0.07692307
 					self.tecci.CAN_TOGGLE_FIREMODE = true
 					self.tecci.panic_suppression_chance = 0.05
 					self.tecci.supported = true
 					self.tecci.ads_speed = 0.360
 					self.tecci.damage_falloff = {
-						start_dist = 1600,
+						start_dist = 1800,
 						end_dist = 5800,
 						min_mult = 0.5
 					}
@@ -8075,7 +8075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m249.has_description = true
 					self.m249.CLIP_AMMO_MAX = 200
 					self.m249.AMMO_MAX = 300
-					self.m249.fire_mode_data.fire_rate = 0.075
+					self.m249.fire_mode_data.fire_rate = 0.0731707
 					self.m249.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 					self.m249.always_use_standing = true
 					self.m249.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
@@ -8122,7 +8122,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw.has_description = true
 					self.kacchainsaw.CLIP_AMMO_MAX = 200
 					self.kacchainsaw.AMMO_MAX = 300
-					self.kacchainsaw.fire_mode_data.fire_rate = 0.0923076
+					self.kacchainsaw.fire_mode_data.fire_rate = 0.08571428
 					self.kacchainsaw.kick = self.stat_info.kick_tables.even_recoil
 					self.kacchainsaw.supported = true
 					self.kacchainsaw.ads_speed = 0.400

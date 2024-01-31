@@ -128,15 +128,16 @@ tweak_data.smg = {
 	}
 		tweak_data.lmg_moving = {
 			ads_moving_recoil = 0.8695652,
-			shake_mul = 0.6667
+			shake_mul = 0.6667,
+			hipfire_spread_mult = 0.6667
 		}
 		tweak_data.rambo = {
-			hipfire_spread_mult = 0.5
+			hipfire_spread_mult = 0.4167
 		}
 		tweak_data.wolf_brigade = {
 			ads_moving_recoil = 0.8695652,
 			moving_spread_mult = 0.2,
-			hipfire_spread_mult = 0.5,
+			hipfire_spread_mult = 0.4167,
 			shake_mul = 0.6667
 		}
 	tweak_data.minigun = {

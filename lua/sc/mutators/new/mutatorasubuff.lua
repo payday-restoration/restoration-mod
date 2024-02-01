@@ -24,7 +24,7 @@ end
 function MutatorASUBuff:setup(data)
 	local char_tweak = tweak_data.character
 	local captains_asu_buff = self:get_captain_asu_buff()
-	local range_asu_buff = self:get_range_asu_buff()
+	--local range_asu_buff = self:get_range_asu_buff()
 	--Force ASU damage buff from DS
 	tweak_data.asu_damage_buff = 20
 	
@@ -57,7 +57,7 @@ function MutatorASUBuff:setup(data)
 	char_tweak.taser_titan.no_asu = false
 	char_tweak.taser_titan_reaper.no_asu = false
 	
-	if captains_asu_buff == "on" then
+	if captains_asu_buff then
 	char_tweak.phalanx_vip.no_asu = false
 	char_tweak.phalanx_vip_break.no_asu = false
 	char_tweak.spring.no_asu = false
@@ -168,7 +168,7 @@ function MutatorASUBuff:setup_options_gui(node)
 end
 
 function MutatorASUBuff:_toggle_captain_asu_buff(item)
-	self:set_value("captain_asu_buff", item:value())
+	self:set_value("captain_asu_buff", item:value() == "on")
 end
 --[[
 function MutatorASUBuff:_toggle_range_asu_buff(item)
@@ -179,7 +179,7 @@ function MutatorASUBuff:reset_to_default()
 	self:clear_values()
 
 	if self._node then
-		local toggle = self._node:item("captain_asu_buff")
+		local toggle = self._node:item("captain_asu_buff_toggle")
 
 		if toggle then
 			toggle:set_value(self:get_captain_asu_buff() and "on" or "off")
@@ -194,7 +194,7 @@ function MutatorASUBuff:reset_to_default()
 end
 
 function MutatorASUBuff:options_fill()
-	if self:get_captain_asu_buff() == "on" then
+	if self:get_captain_asu_buff() then
 		return 1
 	else
 		return 0

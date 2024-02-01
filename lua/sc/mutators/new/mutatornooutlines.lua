@@ -119,14 +119,14 @@ function MutatorNoOutlines:setup_options_gui(node)
 end
 
 function MutatorNoOutlines:_toggle_no_outlines_enemies(item)
-	self:set_value("no_outlines_enemies", item:value())
+	self:set_value("no_outlines_enemies", item:value() == "on")
 end
 
 function MutatorNoOutlines:reset_to_default()
 	self:clear_values()
 
 	if self._node then
-		local toggle = self._node:item("no_outlines_enemies")
+		local toggle = self._node:item("no_outlines_enemies_toggle")
 
 		if toggle then
 			toggle:set_value(self:get_no_outlines_enemies() and "on" or "off")
@@ -135,7 +135,7 @@ function MutatorNoOutlines:reset_to_default()
 end
 
 function MutatorNoOutlines:options_fill()
-	if self:get_no_outlines_enemies() == "on" then
+	if self:get_no_outlines_enemies() then
 		return 1
 	else
 		return 0

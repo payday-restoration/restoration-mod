@@ -36,11 +36,6 @@ local enemy_contours = {
 if disable_outlines then
 	do_outline = false
 	local disable_enemy_outlines = managers.mutators:modify_value("ContourExt:DisableEnemyOutlines", false)
-	if disable_enemy_outlines == "on" then
-		disable_enemy_outlines = true
-	else
-		disable_enemy_outlines = false
-	end
 	if disable_outlines and not disable_enemy_outlines then
 		for _, enemy_contour in ipairs(enemy_contours) do
 			if type == enemy_contour then

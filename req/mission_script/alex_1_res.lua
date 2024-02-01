@@ -3,6 +3,7 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var_1 = math.rand(1)
 local chance_dozer_var_2 = math.rand(1)
+local chance_dozer_var_3 = math.rand(1)
 local chance_cloaker_var_1 = math.rand(1)
 local chance_cloaker_var_2 = math.rand(1)
 local dozer_trigger_times = 2
@@ -85,6 +86,32 @@ local cloaker_table = {
 		end
 	end
 	
+	if difficulty_index == 4 or difficulty_index == 5 then
+		if chance_dozer_var_3 < 0.50 then
+			dozer_3 = dozer_table.dozer_black
+		else
+			dozer_3 = dozer_table.dozer_green
+		end
+	elseif difficulty_index == 6 or difficulty_index == 7 then
+		if chance_dozer_var_3 < 0.35 then
+			dozer_3 = dozer_table.dozer_skull
+		elseif chance_dozer_var_3 < 0.70 then
+			dozer_3 = dozer_table.dozer_black
+		else
+			dozer_3 = dozer_table.dozer_green
+		end
+	elseif difficulty_index == 8 then
+		if chance_dozer_var_3 < 0.25 then
+			dozer_3 = dozer_table.dozer_zeal_black
+		elseif chance_dozer_var_3 < 0.50 then
+			dozer_3 = dozer_table.dozer_zeal_skull
+		elseif chance_dozer_var_3 < 0.75 then
+			dozer_3 = dozer_table.dozer_titan
+		else
+			dozer_3 = dozer_table.dozer_zeal_benelli
+		end
+	end
+	
 	--setting up the cloaker randomizer, this is also cool
 	if difficulty_index <= 7 then
 		clonker = cloaker_table.spooc
@@ -146,7 +173,7 @@ return {
             amount = 2
 		},
 		on_executed = {
-			{id = 100965, delay = 240}
+			{id = 100965, delay = 300}
 		}
 	},
 	--trigger_times to 0; making the loop possible
@@ -169,9 +196,10 @@ return {
 	--unused cloakers are replaced with dozers (have trigger times set up, moved their position, spawns on DW and above)
 	[101650] = {
 		values = {
-            enemy = dozer_1,
+            enemy = dozer_2,
 			enabled = enable_special_dozers,
-			position = Vector3(4569, 537, 1205.660)
+			position = Vector3(4569, 537, 1205.660),
+			trigger_times = dozer_trigger_times
 		},
 		on_executed = {
 			{id = 100376, delay = 0}
@@ -179,9 +207,10 @@ return {
 	},
 	[101651] = {
 		values = {
-            enemy = dozer_2,
+            enemy = dozer_3,
 			enabled = enable_special_dozers,
-			position = Vector3(4579, 611, 1206.850)
+			position = Vector3(4579, 611, 1206.850),
+			trigger_times = dozer_trigger_times
 		},
 		on_executed = {
 			{id = 100376, delay = 0}

@@ -10602,6 +10602,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.mosin.stats_modifiers = nil
 						self.mosin.keep_ammo = 1
+						self.mosin.descope_on_fire = true
 						self.mosin.panic_suppression_chance = 0.05
 						self.mosin.timers.reload_speed_multiplier = 1.05
 						self.mosin.timers.reload_empty = 2.6
@@ -18952,6 +18953,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
 							table.insert(weap.categories, "shotgun_light")
 							weap.ene_hs_mult = 0.5
+							if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
+								table.insert(weap.categories, "shotgun_light_semi")
+							end
 						elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 							table.insert(weap.categories, "shotgun_heavy")
 							weap.ene_hs_mult = 0.65

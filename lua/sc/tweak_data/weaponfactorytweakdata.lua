@@ -26,7 +26,7 @@ local sight_1_5x_offset = {
 	},
 	offset = Vector3(0,-8,0),
 	exclude = {
-		"wpn_fps_snp_mosin"
+		--"wpn_fps_snp_mosin"
 	}
 }
 
@@ -2084,7 +2084,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			translation = Vector3(0, 0.5, -4.03)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
-			translation = Vector3(0, -0.8, -4.28)
+			translation = Vector3(0, -19.8, -4.28)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
 			translation = Vector3(0, -6.9, -3.95)
@@ -21398,9 +21398,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 			weap.translation = weap.translation + Vector3(0,-22,-0.01)
 		end
 	end
-	self.parts.wpn_fps_upg_o_northtac.stance_mod.wpn_fps_snp_mosin = {
-		translation = Vector3(0, -0.8, -4.28) + Vector3(0,-41,-0.03)
-	}
 	table.insert( self.parts.wpn_fps_upg_o_northtac.forbids, "wpn_fps_ass_scar_o_flipups_up" )
 
 

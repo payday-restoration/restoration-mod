@@ -80,10 +80,13 @@ tweak_data.shotgun = {
 		hipfire_spread_mult = 0.25,
 	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.25,
+		hipfire_spread_mult = 1.35,
 		--ads_multishot_spread_mult = 4,
 		moving_spread_mult = 1.5
 	}
+		tweak_data.shotgun_light_semi = {
+			hipfire_spread_mult = 0.7407
+		}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.45,
 		--ads_multishot_spread_mult = 0.9
@@ -93,7 +96,7 @@ tweak_data.shotgun = {
 		--ads_multishot_spread_mult = 1
 	}
 		tweak_data.shotgun_smasher = {
-			shake_mul = 5
+			shake_mul = 4
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,

@@ -4735,7 +4735,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_summer"] = "서머스",
 		["menu_mutator_captain_replace_hvh"] = "지옥 타이탄 도저",
 		["mutator_captain_replace_desc"] = "하이스트 도중에 생성되는 캡틴을 변경합니다.",
-		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다.",	
+		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다.",
+
+		["mutator_no_outlines"] = "전문가 리얼리즘",
+		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
+		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

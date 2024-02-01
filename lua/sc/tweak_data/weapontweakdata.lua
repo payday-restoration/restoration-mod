@@ -11127,13 +11127,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sko12.rays = 9
 						self.sko12.AMMO_MAX = 80
 						self.sko12.CLIP_AMMO_MAX = 25
-						self.sko12.fire_mode_data.fire_rate = 0.19047619
+						self.sko12.fire_mode_data.fire_rate = 0.181818181
 						self.sko12.kick = self.stat_info.kick_tables.moderate_kick
 						self.sko12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.sko12.FIRE_MODE = "single"				
 						self.sko12.CAN_TOGGLE_FIREMODE = false
 						self.sko12.supported = true
-						self.sko12.ads_speed = 0.460
+						self.sko12.ads_speed = 0.440
 						self.sko12.damage_falloff = {
 							start_dist = 600,
 							end_dist = 3000,
@@ -11154,7 +11154,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.sko12.stats_modifiers = nil
-						self.sko12.reload_speed_multiplier = 0.7
+						self.sko12.reload_speed_multiplier = 0.72
 						self.sko12.panic_suppression_chance = 0.05
 						self.sko12.timers.reload_empty = 3.4
 						self.sko12.timers.reload_exit_empty = 1.0
@@ -11211,7 +11211,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ultima.CLIP_AMMO_MAX = 7
 						self.ultima.AMMO_MAX = 80
 						self.ultima.use_data.selection_index = 2
-						self.ultima.fire_mode_data.fire_rate = 0.181818181
+						self.ultima.fire_mode_data.fire_rate = 0.2
 						self.ultima.kick = self.stat_info.kick_tables.moderate_kick
 						self.ultima.supported = true
 						self.ultima.ads_speed = 0.300
@@ -11255,7 +11255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.AMMO_MAX = 80
 						self.spas12.CLIP_AMMO_MAX = 6
 						self.spas12.CAN_TOGGLE_FIREMODE = false
-						self.spas12.fire_mode_data.fire_rate = 0.22222222
+						self.spas12.fire_mode_data.fire_rate = 0.25
 						self.spas12.BURST_FIRE = 2
 						self.spas12.BURST_FIRE_RATE_MULTIPLIER = 5
 						self.spas12.BURST_FIRE_RECOIL_MULTIPLIER = 0.25
@@ -11301,7 +11301,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.benelli.CLIP_AMMO_MAX = 5
 						self.benelli.rays = 9
 						self.benelli.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.benelli.fire_mode_data.fire_rate = 0.2
+						self.benelli.fire_mode_data.fire_rate = 0.22222222
 						self.benelli.CAN_TOGGLE_FIREMODE = false
 						self.benelli.kick = self.stat_info.kick_tables.moderate_kick
 						self.benelli.supported = true
@@ -11376,7 +11376,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.striker.rays = 9
 						self.striker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.striker.AMMO_MAX = 40
-						self.striker.fire_mode_data.fire_rate = 0.1875
+						self.striker.fire_mode_data.fire_rate = 0.2
 						self.striker.CAN_TOGGLE_FIREMODE = false
 						self.striker.CLIP_AMMO_MAX = 12
 						self.striker.kick = self.stat_info.kick_tables.right_kick
@@ -11411,7 +11411,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rota.rays = 9
 						self.rota.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.rota.kick = self.stat_info.kick_tables.vertical_kick
-						self.rota.fire_mode_data.fire_rate = 0.16667
+						self.rota.fire_mode_data.fire_rate = 0.17647058
 						self.rota.panic_suppression_chance = 0.05
 						self.rota.supported = true
 						self.rota.ads_speed = 0.300
@@ -11852,7 +11852,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.AMMO_MAX = 40
 						self.b682.fire_mode_data = {}
 						self.b682.CAN_TOGGLE_FIREMODE = false
-						self.b682.fire_mode_data.fire_rate = 0.2181818
+						self.b682.fire_mode_data.fire_rate = 0.2727272
 						self.b682.sounds.fire_single = "b682_fire"
 						self.b682.sounds.fire_auto = "b682_fire"		
 						self.b682.kick = self.stat_info.kick_tables.vertical_kick
@@ -11891,6 +11891,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.AMMO_MAX = 40
 						self.boot.CLIP_AMMO_MAX = 6
 						self.boot.fire_mode_data.fire_rate = 1
+						self.boot.fire_rate_multiplier = 0.91667
 						self.boot.rays = 9
 						self.boot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.boot.kick = self.stat_info.kick_tables.right_kick
@@ -11926,8 +11927,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.boot.stats_modifiers = nil
 						self.boot.panic_suppression_chance = 0.05
-						self.boot.stats_modifiers = {damage = 1}
-						self.boot.reload_speed_multiplier = 0.75
+						self.boot.reload_speed_multiplier = 0.725
 
 					--Mosconi 12G
 						self.huntsman.desc_id = "bm_menu_sc_huntsman_desc"
@@ -11943,7 +11943,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.CAN_TOGGLE_FIREMODE = false
 						self.huntsman.DELAYED_BURST_RECOIL = false
 						self.huntsman.fire_mode_data = {}
-						self.huntsman.fire_mode_data.fire_rate = 0.171428
+						self.huntsman.fire_mode_data.fire_rate = 0.2
 						self.huntsman.kick = self.stat_info.kick_tables.vertical_kick
 						self.huntsman.supported = true
 						self.huntsman.ads_speed = 0.380
@@ -11992,7 +11992,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.DELAYED_BURST_RECOIL = false
 						self.coach.ADAPTIVE_BURST_SIZE = false
 						self.coach.fire_mode_data = {}
-						self.coach.fire_mode_data.fire_rate = 0.171428
+						self.coach.fire_mode_data.fire_rate = 0.2
 						self.coach.supported = true
 						self.coach.ads_speed = 0.380
 						self.coach.damage_falloff = {

@@ -26,6 +26,7 @@ local sight_1_5x_offset = {
 	},
 	offset = Vector3(0,-8,0),
 	exclude = {
+		""
 		--"wpn_fps_snp_mosin"
 	}
 }
@@ -2187,6 +2188,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp9 = {
 			translation = Vector3(0, 11.6, -3.47)
+		}
+		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_pm9 = {
+			translation = Vector3(0.158, 1.6, -5.141),
+			rotation = Rotation(-0.08, 0, 0.55)
 		}
 		self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_cobray = {
 			translation = Vector3(0, 9.2, 0)

@@ -366,7 +366,7 @@ function TripMineBase:_play_sound_and_effects(range)
 
 	managers.explosion:play_sound_and_effects(self._position, self._unit:rotation():y(), range, custom_params)
 end
-
+--[[
 Hooks:PostHook(TripMineBase, "setup", "setup_no_outlines", function(self,sensor_upgrade)
 	local upgrade = managers.player:has_category_upgrade("trip_mine", "can_switch_on_off") or managers.player:has_category_upgrade("trip_mine", "sensor_toggle")
 	local disable_outlines = managers.mutators:modify_value("TripMineBase:DisableOutlines", false)
@@ -381,3 +381,4 @@ Hooks:PostHook(TripMineBase, "contour_selected", "contour_selected_no_outlines",
 		self._unit:contour():remove("deployable_selected")
 	end
 end)
+--]]

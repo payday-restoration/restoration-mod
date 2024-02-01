@@ -4743,6 +4743,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_desc"] = "Позволяет менять капитана, который может появиться на ограблении.",
 		["mutator_captain_replace_longdesc"] = "Позволяет менять капитана, который может появиться на ограблении.\n\nПримечание: Мутатор не может заменить капитанов, которые приходят по скрипту.",
 		
+		["mutator_no_outlines"] = "Expert Realism",
+		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
+		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
+		
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",
 		["mutator_spawn_mult_desc"] = "Спауны врагов увеличены.",

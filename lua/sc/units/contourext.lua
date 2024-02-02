@@ -57,7 +57,12 @@ if do_outline then
 	if fadeout and multiplier then
 		fadeout = fadeout * multiplier
 	end
-
+	
+	if fadeout and self.fadeout_start_percent ~= nil then
+		local fadeout_start_t_dummy = math.lerp(TimerManager:game():time(), fadeout and TimerManager:game():time() + fadeout or 0, self.fadeout_start_percent)
+		local fadeout_length_dummy = fadeout - fadeout_start_t_dummy
+	end
+	
 	sync = sync and not self._is_child_contour or false
 
 	if sync then
@@ -86,6 +91,10 @@ if do_outline then
 		if setup.type == type then
 			if fadeout then
 				setup.fadeout_t = TimerManager:game():time() + fadeout
+				if self.fadeout_start_percent ~= nil then
+					setup.fadeout_start_t = math.lerp(TimerManager:game():time(), setup.fadeout_t, self.fadeout_start_percent)
+					setup.fadeout_length = setup.fadeout_t - setup.fadeout_start_t
+				end
 			elseif not setup.data.unique then
 				setup.ref_c = setup.ref_c + 1
 			end
@@ -117,6 +126,8 @@ if do_outline then
 		ref_c_element = is_element and 1 or nil,
 		sync = sync,
 		fadeout_t = fadeout and TimerManager:game():time() + fadeout or nil,
+		fadeout_start_t = fadeout_start_t_dummy or nil,
+		fadeout_length = fadeout_length_dummy or nil,
 		color = override_color or nil,
 		data = data
 	}
@@ -126,15 +137,6 @@ if do_outline then
 		local mov_ext = self._unit:movement()
 
 		if mov_ext and mov_ext.m_com then
-			setup.ray_pos = mov_ext:m_com()
-		end
-	end
-	
-	if data.ray_check_rev then
-		setup.upd_skip_count = ContourExt.raycast_update_skip_count
-		local mov_ext = self._unit:movement()
-
-		if mov_ext and not mov_ext.m_com then
 			setup.ray_pos = mov_ext:m_com()
 		end
 	end

@@ -3111,6 +3111,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		recoil = 2,
 		spread = -1
 	}
+	self.parts.wpn_fps_upg_ak_fg_tapco.forbids = {
+		"wpn_fps_ak_extra_ris"
+	}
 	
 	--Lightweight Rail
 	self.parts.wpn_fps_upg_fg_midwest.pcs = {}
@@ -3124,16 +3127,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	--AK Slavic Dragon Barrel
 	self.parts.wpn_fps_upg_ak_b_draco.pcs = {}
 	self.parts.wpn_fps_upg_ak_b_draco.supported = true
-	self.parts.wpn_fps_upg_ak_b_draco.stats = {
-		value = 2,
-		spread = -2,
-		concealment = 2
-	}
-	self.parts.wpn_fps_upg_ak_b_draco.custom_stats = {
-		falloff_start_mult = 0.9,
-		falloff_end_mult = 0.9,
-		ads_speed_mult = 0.95
-	}
+	self.parts.wpn_fps_upg_ak_b_draco.stats = deep_clone(barrels.short_b2_stats)
+	self.parts.wpn_fps_upg_ak_b_draco.custom_stats = deep_clone(barrels.short_b2_stats)
 	
 	--AK Quadstacked Mag
 	self.parts.wpn_fps_upg_ak_m_quad.pcs = {}
@@ -8256,6 +8251,13 @@ end)
 --RPK
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
+	self.parts.wpn_fps_lmg_rpk_fg_wood.forbids = {
+		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
+		"wpn_fps_upg_vg_ass_smg_stubby",
+		"wpn_fps_smg_schakal_vg_surefire",
+		"wpn_fps_addon_ris"
+	}
+
 	--Tactical Foregrip
 	self.parts.wpn_fps_lmg_rpk_fg_standard.pcs = {
 		10,
@@ -8341,6 +8343,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_m_quick")		
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ak_m_quad")	
+
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 			
 
 	self.wpn_fps_lmg_rpk.adds = { 
@@ -8397,16 +8402,38 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 	self.wpn_fps_lmg_rpk.override.wpn_upg_ak_fg_combo3 = {
 		adds = {
 			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		},
+		forbids = {
+			"wpn_fps_addon_ris",
+			"wpn_fps_ak_extra_ris",
+			"wpn_fps_upg_bp_lmg_lionbipod"
 		}
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_ak_fg_tapco = {
 		adds = {
 			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		},
+		forbids = {
+			"wpn_fps_ak_extra_ris",
+			"wpn_fps_upg_bp_lmg_lionbipod"
 		}
 	}
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_fg_midwest = {
 		adds = {
 			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		}
+	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = { recoil = -2, concealment = 1 },
+		forbids = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+		}
+	}
+	self.wpn_fps_lmg_rpk.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = { value = 0 },
+		forbids = {
+			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
+			"wpn_fps_upg_bp_lmg_lionbipod"
 		}
 	}
 
@@ -35403,9 +35430,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	for i, part_id in pairs(self.wpn_fps_lmg_rpk.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].type then
 			if self.parts[part_id].type == "vertical_grip" then
-				self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id] = {
-					parent = "shitass"
-				}
+				self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id] = self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id] or {}
+				self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id].parent = "shitass"
 			end
 		end
 	end

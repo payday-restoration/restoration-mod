@@ -167,55 +167,7 @@ return {
 			end
 		end
 	},
-	[100591] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100593] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
 	[100595] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100600] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100603] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100604] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100607] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
 				self._values.SO_access_original = self._values.SO_access
@@ -248,14 +200,6 @@ return {
 		end
 	},
 	[100615] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[100619] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
 				self._values.SO_access_original = self._values.SO_access
@@ -298,39 +242,9 @@ return {
             enemy = bravo_sniper
 		}
 	},
-	[100590] = {
-		values = {
-            enemy = gamma_sniper
-		}
-	},
-	[100592] = {
-		values = {
-            enemy = gamma_sniper
-		}
-	},
 	[100594] = {
 		values = {
             enemy = bravo_sniper
-		}
-	},
-	[100601] = {
-		values = {
-            enemy = gamma_sniper
-		}
-	},
-	[100602] = {
-		values = {
-            enemy = gamma_sniper
-		}
-	},
-	[100605] = {
-		values = {
-            enemy = gamma_sniper
-		}
-	},
-	[100606] = {
-		values = {
-            enemy = gamma_sniper
 		}
 	},
 	[100608] = {
@@ -350,12 +264,7 @@ return {
 	},
 	[100614] = {
 		values = {
-            enemy = gamma_sniper
-		}
-	},
-	[100618] = {
-		values = {
-            enemy = gamma_sniper
+            enemy = bravo_sniper
 		}
 	},
 	--Titan Shields for OVK+ (PJ only)

@@ -240,7 +240,6 @@ function restoration:Init()
 		"friend", --Scarface Mansion
 		"kenaz", --Golden Grin Casino
 		"peta", --Goatsim 1
-		"mad", --Boiling Point
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
@@ -284,6 +283,7 @@ function restoration:Init()
 		"born", --Biker 1
 		"run", --Heat Street
 		"ranc", --Midland Ranch
+		"mad", --Boiling Point
 		"sah", --Shacklethorne
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain

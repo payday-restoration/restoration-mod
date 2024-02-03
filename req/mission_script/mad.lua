@@ -12,7 +12,7 @@ local dozer_table = {
 }
 local eseries_table = {
 	e102_gamma = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-	e106_delta = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	e106_delta = "units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
 	e110_eta = "units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
 	e123_omega = "units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2",
 	e1000_ghost = "units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"

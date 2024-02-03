@@ -24,7 +24,7 @@ local cloaker_table = {
 	woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 }
 
-	--enable the special dozers (the ones that replaces unused cloaker spawns
+	--enable the special dozers (the ones that replace unused cloaker spawns)
 	if difficulty_index >= 7 then
 		enable_special_dozers = true
 	end

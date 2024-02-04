@@ -18,7 +18,7 @@ return {
 	--trigger in alarm rather than in the second assault
 	[100022] = {
 		on_executed = {
-			{id = 102530, delay = 480} --6 mins delay to trigger
+			{id = 102530, delay = 360} --6 mins delay to trigger
 		}
 	},
 	--not need to have that anymore

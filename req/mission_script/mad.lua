@@ -43,11 +43,11 @@ local eseries_table = {
 		end
 	elseif difficulty_index == 8 then
 		if chance_dozer_var_1 < 0.25 then
-			dozer_1 = dozer_table.dozer_zeal_black
+			dozer_1 = dozer_table.dozer_black
 		elseif chance_dozer_var_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_zeal_skull
+			dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_var_1 < 0.75 then
-			dozer_1 = dozer_table.dozer_zeal_benelli
+			dozer_1 = dozer_table.dozer_benelli
 		else
 			dozer_1 = eseries_table.e123_omega
 		end
@@ -69,11 +69,11 @@ local eseries_table = {
 		end
 	elseif difficulty_index == 8 then
 		if chance_dozer_var_2 < 0.25 then
-			dozer_2 = dozer_table.dozer_zeal_black
+			dozer_2 = dozer_table.dozer_black
 		elseif chance_dozer_var_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_zeal_skull
+			dozer_2 = dozer_table.dozer_skull
 		elseif chance_dozer_var_2 < 0.75 then
-			dozer_2 = dozer_table.dozer_zeal_benelli
+			dozer_2 = dozer_table.dozer_benelli
 		else
 			dozer_2 = eseries_table.e123_omega
 		end

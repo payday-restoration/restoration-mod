@@ -80,10 +80,13 @@ tweak_data.shotgun = {
 		hipfire_spread_mult = 0.25,
 	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.25,
+		hipfire_spread_mult = 1.35,
 		--ads_multishot_spread_mult = 4,
 		moving_spread_mult = 1.5
 	}
+		tweak_data.shotgun_light_semi = {
+			hipfire_spread_mult = 0.7407
+		}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.45,
 		--ads_multishot_spread_mult = 0.9
@@ -93,7 +96,7 @@ tweak_data.shotgun = {
 		--ads_multishot_spread_mult = 1
 	}
 		tweak_data.shotgun_smasher = {
-			shake_mul = 5
+			shake_mul = 4
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -128,15 +131,16 @@ tweak_data.smg = {
 	}
 		tweak_data.lmg_moving = {
 			ads_moving_recoil = 0.8695652,
-			shake_mul = 0.6667
+			shake_mul = 0.6667,
+			hipfire_spread_mult = 0.6667
 		}
 		tweak_data.rambo = {
-			hipfire_spread_mult = 0.5
+			hipfire_spread_mult = 0.4167
 		}
 		tweak_data.wolf_brigade = {
 			ads_moving_recoil = 0.8695652,
 			moving_spread_mult = 0.2,
-			hipfire_spread_mult = 0.5,
+			hipfire_spread_mult = 0.4167,
 			shake_mul = 0.6667
 		}
 	tweak_data.minigun = {

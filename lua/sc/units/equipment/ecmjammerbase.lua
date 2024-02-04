@@ -99,7 +99,7 @@ function ECMJammerBase:clbk_feedback()
 		managers.enemy:add_delayed_clbk(self._feedback_clbk_id, callback(self, self, "clbk_feedback"), t + self._feedback_interval)
 	end
 end
-
+--[[
 Hooks:PostHook(ECMJammerBase, "sync_net_event", "sync_net_event_no_outlines", function(self,event_id)
 	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
 	if disable_outlines then
@@ -152,3 +152,4 @@ Hooks:PostHook(ECMJammerBase, "contour_selected", "contour_selected_no_outlines"
 		self._unit:contour():remove("deployable_selected")
 	end
 end)
+--]]

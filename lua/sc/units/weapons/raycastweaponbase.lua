@@ -1499,8 +1499,8 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		mvec3_mul(tmp_vec2, 20)
 		mvec3_sub(tmp_vec1, tmp_vec2)
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
-		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.5) * overkill, blank, no_sound)
-		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.5, user_unit, weapon_unit, managers.network:session():local_peer():id())
+		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.25) * overkill, blank, no_sound)
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.75, user_unit, weapon_unit, managers.network:session():local_peer():id())
 
 		return {
 			variant = "explosion",
@@ -1516,7 +1516,6 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 
 	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
 
-	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Funny vanilla code doesn't call this and works off of magic because reasons idk.
 	local hit_units, splinters, results = managers.explosion:detect_and_give_dmg({
 		hit_pos = position,
 		range = self.RANGE,

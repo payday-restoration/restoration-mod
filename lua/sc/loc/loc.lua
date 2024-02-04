@@ -2883,6 +2883,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_famas"] = "Clarion 5.56",
 					--M4/CAR-4
 					["bm_w_m4"] = "CAR-4",
+					["bm_w_m4_mk12"] = "CAR-12 SPR",
 					["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
 					["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
 					--AK5
@@ -2977,6 +2978,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_g3_b_short"] = "Micro Barrel",
 					--KS12
 					["bm_w_shak12"] = "KS-12 Urban",
+					["bm_w_shak12_vks"] = "KSV-12 Urban",
 					--HCAR
 					["bm_w_hcar"] = "Akron HC",
 					
@@ -3584,6 +3586,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_ak5_s_ak5c"] = "Ak 5C Stock",
 					--CAR-4
 					["bm_w_m4"] = "Colt M4A1",
+					["bm_w_m4_mk12"] = "Mk 12 SPR",
 					--AK74
 					["bm_w_ak74"] = "Kalashnikov Concern AKS-74",
 					--805
@@ -4081,6 +4084,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m16a1"] = "Ichiroku",
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
 					["bm_w_m4"] = "Em-Four",
+					["bm_w_m4_mk12"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
 					["bm_w_aug_a3"] = "AUG",
@@ -4646,9 +4650,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
 		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 		
-		["mutator_no_outlines"] = "NO OUTLINES PLACEHOLDER",
+		["mutator_no_outlines"] = "Expert Realism",
 		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
 		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
 		
 
 		["mutator_spawn_mult"] = "Amplified Response",
@@ -5316,9 +5321,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##18## meters, you take ##5%## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#20## armor.\n\nThis cannot occur more than once every #{important_1}#5## seconds. Each kill during cooldown reduces it by #{skill_color}#0.5## seconds; melee kills reduce it by an additional #{skill_color}#1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis shares its cooldown with Tension (Card 3).\n\nYou carry ##1## additional body bag in your inventory.",
-		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##15## armor; melee kills double the amount.\n\nThis shares its cooldown with Tension (Card 3).\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis shares its cooldown with Tension (Card 3).\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##2%## health.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##1## additional body bag in your inventory.",
+		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##18## meters regenerates ##15## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3##; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
@@ -5394,7 +5399,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has a #{skill_color}#7## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#8## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#8## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
 		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##6## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
@@ -5494,7 +5499,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#11## seconds  and has a cooldown of #{important_1}#80## seconds.\n\nYour camera loop duration is increased by #{skill_color}#20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has a #{skill_color}#7## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#8## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#8## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#2.5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 

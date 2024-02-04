@@ -35,8 +35,10 @@ function MutatorGrenadeMayhem:setup(data)
 	local gm_captains = self:get_grenade_mayhem_captains()
 	local sosa_cosplay = self:get_grenade_mayhem_sosa_cosplay()
 	
+	log("gm_usuals is "..tostring(gm_usuals).."gm_thugs is "..tostring(gm_thugs).."gm_specials is "..tostring(gm_specials).."gm_bosses is "..tostring(gm_bosses).."gm_captains is "..tostring(gm_captains))
 	
-	if gm_usuals == "on" then
+	
+	if gm_usuals then
 		char_tweak.security.can_throw_frag = true
 		char_tweak.gensec.can_throw_frag = true
 		char_tweak.gensec_guard.can_throw_frag = true
@@ -61,7 +63,7 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.hrt_titan.can_throw_frag = true
 	end
 	
-	if gm_thugs == "on" then
+	if gm_thugs then
 		char_tweak.gangster.can_throw_frag = true
 		char_tweak.mobster.can_throw_frag = true
 		char_tweak.biker.can_throw_frag = true
@@ -77,7 +79,7 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.enforcer.can_throw_frag = true
 	end
 	
-	if gm_specials == "on" then
+	if gm_specials then
 		char_tweak.shield.can_throw_frag = true
 		char_tweak.phalanx_minion_assault.can_throw_frag = true
 		char_tweak.boom.can_throw_frag = true
@@ -124,7 +126,7 @@ function MutatorGrenadeMayhem:setup(data)
 	end
 	--]]
 	
-	if gm_bosses == "on" then
+	if gm_bosses then
 		char_tweak.hector_boss.can_throw_frag = true
 		char_tweak.mobster_boss.can_throw_frag = true
 		char_tweak.drug_lord_boss.can_throw_frag = true
@@ -133,7 +135,7 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.fbi_vet_boss.can_throw_frag = true
 	end
 	
-	if gm_captains == "on" then
+	if gm_captains then
 		char_tweak.phalanx_vip.can_throw_frag = true
 		char_tweak.phalanx_vip.grenade_toss_chance = 1
 		char_tweak.phalanx_vip.grenade_cooldown = 12
@@ -432,23 +434,23 @@ function MutatorGrenadeMayhem:setup_options_gui(node)
 end
 
 function MutatorGrenadeMayhem:_toggle_grenade_mayhem_usuals(item)
-	self:set_value("grenade_mayhem_usuals", item:value())
+	self:set_value("grenade_mayhem_usuals", item:value() == "on")
 end
 
 function MutatorGrenadeMayhem:_toggle_grenade_mayhem_thugs(item)
-	self:set_value("grenade_mayhem_thugs", item:value())
+	self:set_value("grenade_mayhem_thugs", item:value() == "on")
 end
 
 function MutatorGrenadeMayhem:_toggle_grenade_mayhem_specials(item)
-	self:set_value("grenade_mayhem_specials", item:value())
+	self:set_value("grenade_mayhem_specials", item:value() == "on")
 end
 
 function MutatorGrenadeMayhem:_toggle_grenade_mayhem_bosses(item)
-	self:set_value("grenade_mayhem_bosses", item:value())
+	self:set_value("grenade_mayhem_bosses", item:value() == "on")
 end
 
 function MutatorGrenadeMayhem:_toggle_grenade_mayhem_captains(item)
-	self:set_value("grenade_mayhem_captains", item:value())
+	self:set_value("grenade_mayhem_captains", item:value() == "on")
 end
 
 --[[function MutatorGrenadeMayhem:_toggle_grenade_mayhem_sosa_cosplay(item)
@@ -459,31 +461,31 @@ function MutatorGrenadeMayhem:reset_to_default()
 	self:clear_values()
 
 	if self._node then
-		local toggle1 = self._node:item("grenade_mayhem_usuals")
+		local toggle1 = self._node:item("grenade_mayhem_usuals_toggle")
 
 		if toggle1 then
 			toggle1:set_value(self:get_grenade_mayhem_usuals() and "on" or "off")
 		end
 		
-		local toggle2 = self._node:item("grenade_mayhem_thugs")
+		local toggle2 = self._node:item("grenade_mayhem_thugs_toggle")
 
 		if toggle2 then
 			toggle2:set_value(self:get_grenade_mayhem_thugs() and "on" or "off")
 		end
 		
-		local toggle3 = self._node:item("grenade_mayhem_specials")
+		local toggle3 = self._node:item("grenade_mayhem_specials_toggle")
 
 		if toggle3 then
 			toggle3:set_value(self:get_grenade_mayhem_specials() and "on" or "off")
 		end
 		
-		local toggle4 = self._node:item("grenade_mayhem_bosses")
+		local toggle4 = self._node:item("grenade_mayhem_bosses_toggle")
 
 		if toggle4 then
 			toggle4:set_value(self:get_grenade_mayhem_bosses() and "on" or "off")
 		end
 		
-		local toggle5 = self._node:item("grenade_mayhem_captains")
+		local toggle5 = self._node:item("grenade_mayhem_captains_toggle")
 
 		if toggle5 then
 			toggle5:set_value(self:get_grenade_mayhem_captains() and "on" or "off")
@@ -499,19 +501,19 @@ end
 
 function MutatorGrenadeMayhem:options_fill()
 	local total_fill = 0
-	if self:get_grenade_mayhem_usuals() == "on" then
+	if self:get_grenade_mayhem_usuals() then
 		total_fill = total_fill + 0.2
 	end
-	if self:get_grenade_mayhem_thugs() == "on" then
+	if self:get_grenade_mayhem_thugs() then
 		total_fill = total_fill + 0.2
 	end
-	if self:get_grenade_mayhem_specials() == "on" then
+	if self:get_grenade_mayhem_specials() then
 		total_fill = total_fill + 0.2
 	end
-	if self:get_grenade_mayhem_bosses() == "on" then
+	if self:get_grenade_mayhem_bosses() then
 		total_fill = total_fill + 0.2
 	end
-	if self:get_grenade_mayhem_captains() == "on" then
+	if self:get_grenade_mayhem_captains() then
 		total_fill = total_fill + 0.2
 	end
 	return total_fill

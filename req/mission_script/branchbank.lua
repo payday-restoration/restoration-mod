@@ -47,6 +47,7 @@ if pro_job then
 	if difficulty_index == 8 then
 		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
+		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		teargasmayhem = 4
 	end
 end
@@ -106,20 +107,23 @@ return {
 			player_1 = true
 		}
 	},
-	--Restores unused cloaker ambush spawns
+	--Restores unused cloaker ambush spawns+Titan Cloaker on DSPJ
 	[105571] = {
 		values = {
-			enabled = true
+			enabled = true,
+			enemy = woman_spooc
 		}
 	},
 	[105584] = {
 		values = {
-			enabled = true
+			enabled = true,
+			enemy = woman_spooc
 		}
 	},
 	[105607] = {
 		values = {
-			enabled = true
+			enabled = true,
+			enemy = woman_spooc
 		}
 	},
 	--More cop cars arrive on DW+ (similiar to Firestarter Day 3)
@@ -162,8 +166,13 @@ return {
 			{ id = 100364, delay = 0 }
 		}
 	},
-	--Don't repeat the same dialog with chopper deploying units
+	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
 	[105362] = {
+		values = {
+			trigger_times = 1
+		}
+	},
+	[105435] = {
 		values = {
 			trigger_times = 1
 		}

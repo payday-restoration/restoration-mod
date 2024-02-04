@@ -39,9 +39,7 @@ end
 
 Hooks:PostHook(CivilianBrain, "on_hostage_move_interaction", "on_hostage_move_interaction_mutator_no_outlines", function (self,interacting_unit, command)
 	local disable_outlines = managers.mutators:modify_value("CivilianBrain:DisableOutlines", false)
-	if command == "move" then
-		if disable_outlines then
-			self._unit:contour():remove("friendly")
-		end
+	if disable_outlines then
+		self._unit:contour():remove("friendly", true)
 	end
 end)

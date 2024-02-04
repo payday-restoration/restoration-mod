@@ -14,6 +14,44 @@ return {
 	[100720] = {
 		ponr = ponr_value
 	},
+	--Loopable heli 
+	--trigger in alarm rather than in the second assault
+	[100022] = {
+		on_executed = {
+			{id = 102530, delay = 480} --6 mins delay to trigger
+		}
+	},
+	--not need to have that anymore
+	[101908] = {
+		values = {
+			enabled = false
+		}
+	},
+	--and you too
+	[102538] = {
+		values = {
+			enabled = false
+		}
+	},
+	--loop the choppa
+	[102530] = {
+		values = {
+			trigger_times = 0
+		},
+		on_executed = {
+			{ id = 102530, delay = 180}
+		}
+	},
+	--kill the loop
+	[100720] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(102530)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
+	},
 	-- Slow down roof and garage spawns
 	[100007] = {
 		values = {

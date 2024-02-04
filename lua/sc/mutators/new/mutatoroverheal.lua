@@ -90,7 +90,7 @@ function MutatorOverheal:setup(data)
 	char_tweak.tank_hw.overheal_mult = new_overheal_mult
 	char_tweak.tank_mini.overheal_mult = new_overheal_mult
 	
-	if overheal_captains == "on" then -- If player wanna buff captains too
+	if overheal_captains then -- If player wanna buff captains too
 	-- Doc is LPF but now he can buff everyone. Have fun :^)
 	char_tweak.summers.overheal_mult = new_overheal_mult
 	char_tweak.summers.no_omnia_heal = false
@@ -202,7 +202,7 @@ function MutatorOverheal:setup_options_gui(node)
 end
 
 function MutatorOverheal:_toggle_captain_overheal_mult_override(item)
-	self:set_value("captain_overheal_mult_override", item:value())
+	self:set_value("captain_overheal_mult_override", item:value() == "on")
 end
 
 function MutatorOverheal:_update_overheal_mult_override(item)

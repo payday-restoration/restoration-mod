@@ -35423,15 +35423,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		override = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override)
 	}
 
+
 	for part_id, i in pairs(self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override) do
 		self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id].parent = "shitass"
 	end
 
+	self.wpn_fps_lmg_rpk.override.wpn_fps_lmg_rpk_body_lowerreceiver = {
+		adds = {
+			"wpn_fps_ak_bolt",
+			"wpn_fps_lmg_rpk_ak_unit"
+		},
+		override = {}
+	}
 	for i, part_id in pairs(self.wpn_fps_lmg_rpk.uses_parts) do
 		if self.parts[part_id] and self.parts[part_id].type then
 			if self.parts[part_id].type == "vertical_grip" then
-				self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id] = self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id] or {}
-				self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount.override[part_id].parent = "shitass"
+				self.wpn_fps_lmg_rpk.override.wpn_fps_lmg_rpk_body_lowerreceiver.override[part_id] = {
+					parent = "shitass"
+				}
 			end
 		end
 	end

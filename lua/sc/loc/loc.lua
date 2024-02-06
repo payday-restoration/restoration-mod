@@ -4588,6 +4588,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans"] = "Budget Cuts",
 		["mutator_notitans_desc"] = "Disables Titan Units.",
 		["mutator_notitans_longdesc"] = "All spawn instances of Titan Units are disabled.",
+		
+		["mutator_onlytitans"] = "Budget Buffs",
+		["mutator_onlytitans_desc"] = "Titan Units replace all non-titan units.",
+		["mutator_onlytitans_longdesc"] = "All spawn instances of non-Titan Units are replaced with Titan units.",
 
 		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",

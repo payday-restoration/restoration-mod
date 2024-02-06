@@ -33,7 +33,7 @@ function MutatorMememanOnly:modify_unit_categories(group_ai_tweak, difficulty_in
 	medic = 0
 }
 for group, units_data in pairs(group_ai_tweak.unit_categories) do
-	if group == "Phalanx_minion" or group == "Phalanx_vip" or group == "Cap_Summers" or group == "Cap_Autumn" or group == "HVH_Boss" or units_data.is_captain then
+	if group == "Phalanx_minion" or group == "Phalanx_vip" or group == "Cap_Summers" or group == "Cap_Autumn" or group == "HVH_Boss" or units_data.ignore_spawn_cap then
 	
 	else
 		for group_sub, units_data_sub in pairs(group_ai_tweak.unit_categories[group].unit_types) do

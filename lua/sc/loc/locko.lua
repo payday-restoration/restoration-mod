@@ -4675,6 +4675,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans"] = "예산 삭감",
 		["mutator_notitans_desc"] = "타이탄 유닛을 비활성화합니다.",
 		["mutator_notitans_longdesc"] = "타이탄 유닛의 모든 스폰 인스턴스가 비활성화됩니다.",
+		
+		["mutator_onlytitans"] = "Budget Buffs",
+		["mutator_onlytitans_desc"] = "Titan Units replace all non-titan units.",
+		["mutator_onlytitans_longdesc"] = "All spawn instances of non-Titan Units are replaced with Titan units.",
 
 		["mutator_mememanonly"] = "라이라이차차차",
 		["mutator_mememanonly_desc"] = "새끼...기열!",

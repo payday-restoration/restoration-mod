@@ -31,6 +31,211 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_body_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
 	
+	
+	<!--Only Titans-->
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<!--Titan SWAT-->
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_red_df" load="true" force="false"/>
+	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>
+	
+	<!--skeleton SWAT m4-->
+    <object				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk" load="true"/>
+	
+	<!--skeleton SWAT saiga-->	
+    <object				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2_husk" load="true"/>
+	
+	<!--skeleton SWAT acc-->	
+    <sequence_manager	path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+    <object				path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_acc_skull/ene_acc_skull"/>
+
+
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
+	
+	<unit				path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	
+	<unit				path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	
+	<!--Titan Shotgunner-->	
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+
+	<!--Titanshield-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
+	
+	<!--Titan Rifle-->	
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	
+	<!--Titan Sniper-->
+	<object				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>	
+
+	<!--Titanshield-->
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" />
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/ene_acc_shield_akan_phalanx_dummy" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_df" force="false"/>	
+	<texture			path="units/pd2_mod_reapers/characters/ene_acc_shield_akan_phalanx/akan_phalanx_nm" force="false"/>	
+	
+	<unit				path="units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>
+	
+	<object				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
+	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spine_df" />
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spine_nm" />	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/skull_df" />	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/skull_nm" />	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/helmets_snp_df" force="false"/>	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/ene_phalanx_snp_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_tit_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/k63_nm" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+	<df_nm				path="units/pd2_mod_sharks/characters/shared_textures/heads_murkywater" force="false"/>
+	
+	<!--Titandozer-->
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
+	
+	<object				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false" load="true"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+	
+	<object				path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
+	
+	<!--titandozer accs-->	
+	<unit_obj				path="units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large" />
+
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	
+	<unit_obj				path="units/pd2_mod_reapers/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+	<!--textures-->
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/vip_2_body_df" force="false"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/heads_dozer_il" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/heads_dozer_df" force="false"/>
+	
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/heads_dozer_hurt_df" force="false"/>
+	<texture			path="units/pd2_mod_reapers/characters/shared_textures/heads_dozer_hurt_nm" force="false"/>
+	
+	<!--titandozer accs-->	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+	
+	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
+	
 	<!--Clone Army Mutator-->
 	<!--Russian AK101+GP for Grenadier-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>

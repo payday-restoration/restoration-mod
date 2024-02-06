@@ -389,6 +389,7 @@
 		<hook file="sc/mutators/mutatorpiggyrevenge.lua" source_file="lib/mutators/mutatorpiggyrevenge"/>
 		<!--///NEW MUTATORS GO HERE\\\-->
 		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatoronlytitans.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorfatroll.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorminidozers.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatormememan.lua" source_file="lib/mutators/basemutator"/>

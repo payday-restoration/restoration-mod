@@ -13,8 +13,8 @@ MutatorOnlyTitans.incompatibility_tags = {
 	"titans"
 }
 MutatorOnlyTitans.icon_coords = {
-	4,
-	3
+	6,
+	2
 }	
 
 function MutatorOnlyTitans:setup(data)

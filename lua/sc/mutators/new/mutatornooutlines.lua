@@ -10,8 +10,8 @@ MutatorNoOutlines.reductions = {
 MutatorNoOutlines.disables_achievements = false
 MutatorNoOutlines.categories = {"gameplay"}
 MutatorNoOutlines.icon_coords = {
-	2,
-	1
+	7,
+	2
 }
 
 function MutatorNoOutlines:register_values(mutator_manager)

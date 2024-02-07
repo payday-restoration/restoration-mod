@@ -4655,8 +4655,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
 		
 		["mutator_no_outlines"] = "Expert Realism",
-		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
-		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
+		["mutator_no_outlines_desc"] = "Majority of outlines are disabled.",
+		["mutator_no_outlines_longdesc"] = "Majority of outlines are disabled as well as name labels above players/bots.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
 		
 

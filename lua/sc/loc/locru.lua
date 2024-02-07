@@ -4683,9 +4683,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans_desc"] = "Отключает Титановых юнитов.",
 		["mutator_notitans_longdesc"] = "Любые появления Титановых юнитов отключены.",
 		
-		["mutator_onlytitans"] = "Budget Buffs",
-		["mutator_onlytitans_desc"] = "Titan Units replace all non-titan units.",
-		["mutator_onlytitans_longdesc"] = "All spawn instances of non-Titan Units are replaced with Titan units.",
+		["mutator_onlytitans"] = "Повышение бюджета",
+		["mutator_onlytitans_desc"] = "Титановые юниты заменяют всех обычных юнитов.",
+		["mutator_onlytitans_longdesc"] = "Вместо обычных юнитов будут появляться их Титановые версии.",
 
 		["mutator_mememanonly"] = "ХАХАХА, ОБМАНУЛ ВАС!",
 		["mutator_mememanonly_desc"] = "СТРАДАЙ",
@@ -4747,10 +4747,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_desc"] = "Позволяет менять капитана, который может появиться на ограблении.",
 		["mutator_captain_replace_longdesc"] = "Позволяет менять капитана, который может появиться на ограблении.\n\nПримечание: Мутатор не может заменить капитанов, которые приходят по скрипту.",
 		
-		["mutator_no_outlines"] = "Expert Realism",
-		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
-		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
-		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
+		["mutator_no_outlines"] = "Эксперт Реализм",
+		["mutator_no_outlines_desc"] = "Почти все контуры отключены.",
+		["mutator_no_outlines_longdesc"] = "Почти все контуры отключены. Также отключены ники над ботами/игроками.",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить контуры противников",
 		
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

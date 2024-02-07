@@ -1,4 +1,4 @@
---Opposite of--
+--Opposite of Budget Cuts--
 MutatorOnlyTitans = MutatorOnlyTitans or class(BaseMutator)
 MutatorOnlyTitans._type = "MutatorOnlyTitans"
 MutatorOnlyTitans.name_id = "mutator_onlytitans"
@@ -129,28 +129,28 @@ function MutatorOnlyTitans:setup(data)
 	tweak_data.group_ai.unit_categories.OMNIA_Taser = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")					
+			},
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")						
 			},
 			zombie = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
-			},					
-			russia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
-			},
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")								
+			},						
 			murkywater = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
 			},
 			federales = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
-			},				
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser")				
+			},										
 			nypd = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
 			},	
 			lapd = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
 			},
 			fbi = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser")
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")				
 			}			
 		},
 		access = access_type_all,
@@ -711,7 +711,7 @@ function MutatorOnlyTitans:setup(data)
 	}
 	end
 	
-	--Titan SWAT--
+	--Titan Rifle for light SWAT
 		tweak_data.group_ai.unit_categories.FBI_swat_M4 = {
 			unit_types = {
 			america = {
@@ -772,7 +772,7 @@ function MutatorOnlyTitans:setup(data)
 			access = access_type_all
 		}
 	
-	--Titan Shotgunners
+	--Titan Shotgunners for light shotgunners
 	tweak_data.group_ai.unit_categories.FBI_swat_R870 = {
 		unit_types = {
 			america = {
@@ -833,6 +833,7 @@ function MutatorOnlyTitans:setup(data)
 			access = access_type_all
 		}	
 
+	--Titan Rifles for Heavies
 	tweak_data.group_ai.unit_categories.GS_heavy_G36 = {
 			unit_types = {
 			america = {
@@ -893,6 +894,7 @@ function MutatorOnlyTitans:setup(data)
 			access = access_type_all
 		}	
 
+	--Titan Shotgunners for Shotgun Heavies
 	tweak_data.group_ai.unit_categories.GS_heavy_R870 = {
 			unit_types = {
 			america = {
@@ -1052,7 +1054,7 @@ function MutatorOnlyTitans:setup(data)
 			special_type = nil
 		}
 		
-	--Titan Snipers for Grenadiers	
+	--Titan Snipers replace Grenadiers	
 	tweak_data.group_ai.unit_categories.boom_M4203 = {
 			unit_types = {
 			america = {
@@ -1083,7 +1085,7 @@ function MutatorOnlyTitans:setup(data)
 		access = access_type_all
 	}	
 	
-	--Titan Tank--
+	--Titan Tanks--
 	tweak_data.group_ai.unit_categories.FBI_tank = {
 			unit_types = {
 			america = {
@@ -1115,7 +1117,6 @@ function MutatorOnlyTitans:setup(data)
 		special_type = "tank"
 	}
 	
-	--Titan Tank--
 	tweak_data.group_ai.unit_categories.BLACK_tank = {
 			unit_types = {
 			america = {
@@ -1147,7 +1148,6 @@ function MutatorOnlyTitans:setup(data)
 		special_type = "tank"
 	}
 	
-	--Titan Tank--
 	tweak_data.group_ai.unit_categories.SKULL_tank = {
 			unit_types = {
 			america = {
@@ -1220,6 +1220,11 @@ function MutatorOnlyTitans:setup(data)
 				},
 				russia = {
 					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
 					Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
 				},
 				zombie = {
@@ -1229,6 +1234,11 @@ function MutatorOnlyTitans:setup(data)
 					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
 				},
 				federales = {
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
 					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
 					Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")						
 				},					

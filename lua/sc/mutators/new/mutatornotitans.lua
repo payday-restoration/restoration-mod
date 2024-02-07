@@ -9,6 +9,9 @@ MutatorNoTitans.reductions = {
 }
 MutatorNoTitans.disables_achievements = true
 MutatorNoTitans.categories = {"enemies"}
+MutatorNoTitans.incompatibility_tags = {
+	"replaces_units"
+}
 MutatorNoTitans.icon_coords = {
 	4,
 	3

@@ -22611,7 +22611,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {
 			value = 10,
 			spread = -44,
-			recoil = -12,
+			recoil = -16,
 			concealment = -6,
 			extra_ammo = 70
 		},
@@ -30285,41 +30285,25 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts.wpn_fps_ass_m4_body_dust then
 	
 				self.parts.wpn_fps_ass_m4_body_dust.supported = true
-				self.parts.wpn_fps_ass_m4_body_dust.stats = { value = 0 }
-				self.parts.wpn_fps_ass_m4_body_dust.custom_stats = nil
-				self.parts.wpn_fps_ass_m4_body_dust.forbids = {}
-				for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
-					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] then
-						if self.parts[used_part_id].type == "upper_reciever" then
-							self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_dust"
-							}
-						elseif self.parts[used_part_id].type == "lower_reciever" then
-							self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_dust"
-							}
-						elseif self.parts[used_part_id].type == "foregrip" then
-							self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
-								forbids = {},
-								adds = {},
-								override = {}
-							}
-						end
-					end
-				end
-				--These won't get overridden by the above for loop (aren't in the uses_parts list at the time of generation?) so I'm doing it manually here
-				self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_upg_m4_fg_hera = {
-					unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
-					forbids = {},
-					adds = {},
-					override = {}
+				self.parts.wpn_fps_ass_m4_body_dust.stats = {
+					value = 8,
+					recoil = 2,
+					spread = -4
 				}
-				self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_uupg_m4_fg_victorcar = {
-					unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_fg_dust",
-					forbids = {},
-					adds = {},
-					override = {}
+				self.parts.wpn_fps_ass_m4_body_dust.custom_stats = {
+					rof_mult = 1.08,
+					falloff_end_mult = 0.8870967
+				}
+				self.parts.wpn_fps_ass_m4_body_dust.stance_mod = {}
+				self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_m4_uupg_b_medium_vanilla = nil
+				self.parts.wpn_fps_ass_m4_body_dust.override.wpn_fps_m4_uupg_o_flipup.stance_mod = {
+					wpn_fps_ass_m4 = {
+						translation = Vector3(-0.02, 0, 0.04),
+						rotation = Rotation(0, -0.2, 0)
+					}
+				}
+				self.parts.wpn_fps_ass_m4_body_dust.forbids = { 
+					"wpn_fps_m4_uupg_b_sd"
 				}
 	
 				--A RIGHTEOUS MAN NEVER HAS WEALTH
@@ -35627,6 +35611,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							unit = "units/mods/weapons/wpn_fps_ass_m4_tantone/wpn_fps_ass_m4_tantone_lower"
 						}
 					end
+				end
+			end
+		end
+	end
+
+	if self.parts.wpn_fps_ass_m4_body_dust then
+		for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_m4_body_dust.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "foregrip" then
+						table.insert(self.parts.wpn_fps_ass_m4_body_dust.forbids, used_part_id)
+					end
+				end
+				if self.parts[used_part_id].type == "upper_reciever" then
+					self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_dust"
+					}
+				elseif self.parts[used_part_id].type == "lower_reciever" then
+					self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
+						unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_dust"
+					}
 				end
 			end
 		end

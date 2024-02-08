@@ -18901,12 +18901,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if is_pro then
+				--[[
 				if weap.keep_ammo ~= 1 then
 					weap.keep_ammo = 0
 				end
+				--]]
 			else
 				weap.reload_speed_multiplier = (weap.reload_speed_multiplier or 1) * 1.1
 			end
+
 			if weap.shake and not weap.shake.bypass_global_shake then
 				weap.shake = {
 					fire_multiplier = 0.75,
@@ -19248,14 +19251,14 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.059, 0.029}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.056, 0.028}},
-		{damage = 24,  pickup = {0.054, 0.027}},
-		{damage = 30,  pickup = {0.051, 0.026}},
-		{damage = 45,  pickup = {0.049, 0.025}},
-		{damage = 60,  pickup = {0.045, 0.024}},
-		{damage = 90,  pickup = {0.043, 0.023}},
-		{damage = 120, pickup = {0.040, 0.022}},
+		{damage = 18,  pickup = {0.059, 0.027}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.056, 0.026}},
+		{damage = 24,  pickup = {0.054, 0.025}},
+		{damage = 30,  pickup = {0.051, 0.024}},
+		{damage = 45,  pickup = {0.049, 0.023}},
+		{damage = 60,  pickup = {0.045, 0.022}},
+		{damage = 90,  pickup = {0.043, 0.022}},
+		{damage = 120, pickup = {0.040, 0.021}},
 		{damage = 180, pickup = {0.037, 0.020}},
 		{damage = 240, pickup = {0.033, 0.018}},
 		{damage = 360, pickup = {0.027, 0.015}},
@@ -19320,7 +19323,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	end
 
 	--Blanket pickup
-	pickup_multiplier = pickup_multiplier * ((is_pro and 1.165) or 1.33)
+	pickup_multiplier = pickup_multiplier * ((is_pro and 1) or 1.33)
 
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier

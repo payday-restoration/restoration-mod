@@ -10,7 +10,7 @@ MutatorOnlyTitans.reductions = {
 MutatorOnlyTitans.disables_achievements = true
 MutatorOnlyTitans.categories = {"enemies"}
 MutatorOnlyTitans.incompatibility_tags = {
-	"titans"
+	"replaces_units"
 }
 MutatorOnlyTitans.icon_coords = {
 	6,
@@ -122,6 +122,39 @@ function MutatorOnlyTitans:setup(data)
 		},
 		access = access_type_all,
 		special_type = "spooc",
+		ignore_spawn_cap = true
+	}
+	
+	--White Titandozers for Hatman
+	tweak_data.group_ai.unit_categories.HVH_Boss_Headless = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			russia = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			zombie = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},					
+			murkywater = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			federales = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			},
+			fbi = {
+				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+			}			
+		},
+		access = access_type_all,
+		special_type = "tank",
 		ignore_spawn_cap = true
 	}
 	

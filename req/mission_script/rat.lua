@@ -167,7 +167,14 @@ return {
 			{id = 101651, delay = 25}
 		}
 	},
-	--make the choppers loopable+2 chopper spawns on DW and DS (PJ only)
+	--remove the line+trigger the loop here
+	[100941] = {
+		on_executed = {
+			{id = 100945, remove = true},
+			{id = 100965, delay = 180}
+		}
+	},
+	--loop the choppa+2 chopper spawns on DW and DS (PJ only)
 	[100966] = {
 		values = {
             amount = chopper_amount

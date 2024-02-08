@@ -1022,28 +1022,28 @@ function MutatorOnlyTitans:setup(data)
 		tweak_data.group_ai.unit_categories.FBI_heavy_R870 = {
 			unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")				
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")				
 			},
 			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat")				
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")				
 			},
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},	
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
 			}				
 			},
 			access = access_type_all

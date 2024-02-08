@@ -357,7 +357,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -386,7 +386,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_shotgun/ene_titan_shotgun")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
@@ -416,7 +416,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -445,7 +445,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -476,7 +476,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_shotgun/ene_titan_shotgun")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
@@ -727,7 +727,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -757,7 +757,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -788,7 +788,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_shotgun/ene_titan_shotgun")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
@@ -818,7 +818,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_shotgun/ene_titan_shotgun")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
@@ -849,7 +849,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -879,7 +879,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_rifle/ene_titan_rifle")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")						
@@ -910,7 +910,7 @@ function MutatorOnlyTitans:setup(data)
 				Idstring("units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},
 			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_titan_shotgun/ene_titan_shotgun")						
+				Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun")						
 			},					
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
@@ -1184,28 +1184,28 @@ function MutatorOnlyTitans:setup(data)
 		tweak_data.group_ai.unit_categories.medic_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
 				},					
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4")
+					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf")
 				},					
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
+					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 				},
 				fbi = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
 				}				
 			},
 			access = access_type_all,

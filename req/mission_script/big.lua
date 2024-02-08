@@ -8,7 +8,7 @@ local blow_the_wall_chance = 50
 
 	--So it will not crash
 	if difficulty_index == 7 then
-	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
+	   swat_overkill = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
 	elseif difficulty_index == 8 then
 	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
 	end

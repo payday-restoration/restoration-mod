@@ -9512,7 +9512,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.05
 						}
 						self.groza_underbarrel.stats = {
-							damage = 36,
+							damage = 72,
 							spread = 61,
 							recoil = 49,
 							spread_moving = 5,
@@ -9846,7 +9846,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.05
 						}
 						self.contraband_m203.stats = {
-							damage = 36,
+							damage = 72,
 							spread = 64,
 							recoil = 67,
 							spread_moving = 6,
@@ -12847,7 +12847,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 1,
 				reload = 20
 			}
-			self.osipr_gl.stats_modifiers = nil
+			self.osipr_gl.stats_modifiers = {damage = 10}
 			self.osipr_gl.timers.reload_not_empty = 3.34
 			self.osipr_gl.timers.reload_exit_not_empty = 0.8
 			self.osipr_gl.timers.reload_empty = 4.5		
@@ -19251,19 +19251,19 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
-		{damage = 18,  pickup = {0.059, 0.027}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
-		{damage = 20,  pickup = {0.056, 0.026}},
-		{damage = 24,  pickup = {0.054, 0.025}},
-		{damage = 30,  pickup = {0.051, 0.024}},
-		{damage = 45,  pickup = {0.049, 0.023}},
-		{damage = 60,  pickup = {0.045, 0.022}},
-		{damage = 90,  pickup = {0.043, 0.022}},
-		{damage = 120, pickup = {0.040, 0.021}},
-		{damage = 180, pickup = {0.037, 0.020}},
-		{damage = 240, pickup = {0.033, 0.018}},
-		{damage = 360, pickup = {0.027, 0.015}},
-		{damage = 600, pickup = {0.021, 0.012}}, --Light GLs
-		{damage = 800, pickup = {0.016, 0.009}}, --Heavy GLs
+		{damage = 18,  pickup = {0.059, 0.026}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.056, 0.025}},
+		{damage = 24,  pickup = {0.054, 0.024}},
+		{damage = 30,  pickup = {0.051, 0.023}},
+		{damage = 45,  pickup = {0.049, 0.022}},
+		{damage = 60,  pickup = {0.045, 0.021}},
+		{damage = 90,  pickup = {0.043, 0.020}},
+		{damage = 120, pickup = {0.040, 0.019}},
+		{damage = 180, pickup = {0.037, 0.018}},
+		{damage = 240, pickup = {0.033, 0.015}},
+		{damage = 360, pickup = {0.027, 0.012}},
+		{damage = 600, pickup = {0.021, 0.010}}, --Light GLs
+		{damage = 800, pickup = {0.016, 0.008}}, --Heavy GLs
 		{damage = 900, pickup = {0.012, 0.005}}, --Rocket Launchers
 		{damage = 1200, pickup = {0.008, 0.002}}
 	}
@@ -19290,8 +19290,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.61,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using per-pellet, pickup is increased to compensate for the inconsistency
-			flamethrower = per_pellet and 0.7 / 1.33 or 1, --flamethrowers do not get the pickup bonus of per_pellet
+		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using perpellet, pickup is increased to compensate for the inconsistency
+			flamethrower = per_pellet and 0.7 / 1.33 or 1, --flamethrowers do not get the pickup bonus of per_pellet since they do not use per_pellet
 			shotgun_auto = per_pellet and 1.33 / (1.33 * 0.92) or 1, --Omni
 			shotgun_light = per_pellet and 0.92 or 1, --Auto
 			shotgun_heavy = per_pellet and 0.94 or 1, --Light

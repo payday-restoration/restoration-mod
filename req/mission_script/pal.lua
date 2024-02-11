@@ -42,6 +42,16 @@ return {
             {id = 100096, delay = 0}
 		}
 	},
+	--You already planted the drill, not need the drill reminder dialogue to play
+	[100574] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(103297)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
+	},
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
 	--Disables the turret
 	[102821] = {
@@ -60,6 +70,12 @@ return {
 			difficulty_easy_wish = "true",
 			difficulty_overkill_290 = "true",
 			difficulty_sm_wish = "true"
+		}
+	},
+	--delay the next anim by few more seconds to let the previous anim end
+	[101647] = {
+		on_executed = {
+            {id = 101648, delay = 10.5}
 		}
 	},
 	--Replace some Rooftop SWATs with Titan Snipers on Overkill-DS PJ

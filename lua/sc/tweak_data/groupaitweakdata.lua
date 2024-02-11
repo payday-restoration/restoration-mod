@@ -799,7 +799,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
 				},
 				russia = {
-					Idstring("units/pd2_mod_reapers/characters/ene_akan_veteran_2/ene_akan_veteran_2")
+					Idstring("units/pd2_mod_reapers/characters/ene_akan_veteran_1/ene_akan_veteran_1")
 				},
 				zombie = {
 					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1")

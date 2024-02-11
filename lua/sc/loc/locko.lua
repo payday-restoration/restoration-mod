@@ -4675,6 +4675,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans"] = "예산 삭감",
 		["mutator_notitans_desc"] = "타이탄 유닛을 비활성화합니다.",
 		["mutator_notitans_longdesc"] = "타이탄 유닛의 모든 스폰 인스턴스가 비활성화됩니다.",
+		
+		["mutator_onlytitans"] = "예산 증액",
+		["mutator_onlytitans_desc"] = "타이탄 유닛이 타이탄이 아닌 모든 유닛을 대체합니다.",
+		["mutator_onlytitans_longdesc"] = "타이탄이 아닌 유닛의 모든 생성 인스턴스을 타이탄 유닛으로 대체합니다.",
 
 		["mutator_mememanonly"] = "라이라이차차차",
 		["mutator_mememanonly_desc"] = "새끼...기열!",
@@ -4738,9 +4742,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다.",
 
 		["mutator_no_outlines"] = "전문가 리얼리즘",
-		["mutator_no_outlines_desc"] = "NO OUTLINES PLACEHOLDER.",
-		["mutator_no_outlines_longdesc"] = "NO OUTLINES PLACEHOLDER.",
-		["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
+		["mutator_no_outlines_desc"] = "대부분의 윤곽선이 비활성화됩니다.",
+		["mutator_no_outlines_longdesc"] = "대부분의 윤곽선과 플레이어/봇 위의 이름 라벨이 비활성화됩니다.",
+		["menu_mutator_no_outlines_enemies_toggle"] = "적 윤곽선 비활성화",
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

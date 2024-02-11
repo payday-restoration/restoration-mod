@@ -136,3 +136,41 @@ function GamePlayCentralManager:set_flashlights_on(flashlights_on)
 		end
 	end
 end
+
+-- This need for PJ outlines changes (for 6th sense skill)
+Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(self, unit, use_player_upgrades)
+	self._auto_highlighted_enemies = self._auto_highlighted_enemies or {}
+
+	if self._auto_highlighted_enemies[unit:key()] and Application:time() < self._auto_highlighted_enemies[unit:key()] then
+		return false
+	end
+
+	self._auto_highlighted_enemies[unit:key()] = Application:time() + (managers.groupai:state():whisper_mode() and 9 or 4)
+
+	if not unit:contour() then
+		debug_pause_unit(unit, "[GamePlayCentralManager:auto_highlight_enemy]: Unit doesn't have Contour Extension")
+	end
+
+	local time_multiplier = 1
+	local contour_type = "mark_enemy_sixth_sense" -- default outline for 6th sense
+
+	if unit:base() and unit:base().is_security_camera then
+		contour_type = "mark_unit"
+		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
+	elseif use_player_upgrades then
+		-- Different check because `get_contour_for_marked_enemy` will return wrong outline otherwise
+		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+			contour_type = "mark_enemy_damage_bonus"
+		end
+
+		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+			contour_type = "mark_enemy_damage_bonus_distance"
+		end
+		
+		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
+	end
+
+	unit:contour():add(contour_type, true, time_multiplier)
+
+	return true
+end)

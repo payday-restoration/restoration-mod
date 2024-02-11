@@ -12,8 +12,8 @@ MutatorGrenadeMayhem.reductions = {
 MutatorGrenadeMayhem.disables_achievements = false
 MutatorGrenadeMayhem.categories = {"gameplay","enemies"}
 MutatorGrenadeMayhem.icon_coords = {
-	2,
-	1
+	1,
+	5
 }	
 
 function MutatorGrenadeMayhem:register_values(mutator_manager)

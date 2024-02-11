@@ -4728,6 +4728,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_notitans"] = "资金不足",
         ["mutator_notitans_desc"] = "取消生成泰坦单位。",
         ["mutator_notitans_longdesc"] = "不会有泰坦敌人单位生成。",
+		
+		["mutator_onlytitans"] = "Budget Buffs",
+		["mutator_onlytitans_desc"] = "Titan Units replace all non-titan units.",
+		["mutator_onlytitans_longdesc"] = "All spawn instances of non-Titan Units are replaced with Titan units.",
 
         ["mutator_mememanonly"] = "哈哈哈哈，你们一帮傻逼！",
         ["mutator_mememanonly_desc"] = "受苦吧......",

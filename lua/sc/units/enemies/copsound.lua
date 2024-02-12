@@ -234,8 +234,8 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk")		
 	}
 	local russian_medic_list = {
-                ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
-	        ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk")
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk")
 	}
 	local russian_merc_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1"),

@@ -166,6 +166,13 @@ return {
 			end
 		end
 	},
+	--Trigger custom scripted skulldozers after 20 seconds
+	[101967] = {
+		on_executed = {
+			{ id = 400001, delay = 20 },
+			{ id = 400002, delay = 20 }
+		}
+	},
 	--More chance for blowing up the wall/also faster time to trigger
 	[102451] = {
 		values = {

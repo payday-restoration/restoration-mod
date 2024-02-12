@@ -1,16 +1,23 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local dozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local dozer_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-local shield = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc") or (difficulty <= 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec") or (difficulty <= 5 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1")
+local shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local overkill_above = difficulty >= 5
 local mayhem_above = difficulty >= 6
-local diff_scaling = 12.5 * difficulty
-local enabled_chance_taser_and_shields = math.rand(1) <= diff_scaling
-local enabled_chance_dozer = math.rand(1) <= diff_scaling
-local enabled_chance_dozer_scaffold = math.rand(1) <= diff_scaling
-local enabled_chance_shield_scaffold = math.rand(1) <= diff_scaling
+local diff_scaling = 0.125 * difficulty
+local enabled_chance_taser_and_shields = math.random() < diff_scaling
+local enabled_chance_dozer = math.random() < diff_scaling
+local enabled_chance_dozer_scaffold = math.random() < diff_scaling
+local enabled_chance_shield_scaffold = math.random() < diff_scaling
 
+
+	if difficulty == 7 then
+		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
+	elseif difficulty == 8 then
+		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+	end
+	
 local optsBulldozer = {
     enemy = dozer,
     enabled = (overkill_above and enabled_chance_dozer)

@@ -3,6 +3,7 @@ local dozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldoze
 local dozer_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local overkill_above = difficulty >= 5
 local mayhem_above = difficulty >= 6
 local diff_scaling = 0.125 * difficulty
@@ -16,6 +17,10 @@ local enabled_chance_shield_scaffold = math.random() < diff_scaling
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 	elseif difficulty == 8 then
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+	end
+	
+	if pro_job and difficulty >= 5 then
+		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 	
 local optsBulldozer = {
@@ -76,14 +81,14 @@ return {
             400005,
             "shield_scaffolding_1",
             Vector3(-4100, -22849, 7115.008),
-            Rotation(2, -0, -0),
+            Rotation(0, -0, -0),
             optsShield_scaff
         ),
 		 restoration:gen_dummy(
             400006,
             "shield_scaffolding_2",
             Vector3(-2781.016, -23341.270, 7115.008),
-            Rotation(83, -0, -0),
+            Rotation(90, -0, -0),
             optsShield_scaff
         ),
 		restoration:gen_dummy(

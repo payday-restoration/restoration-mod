@@ -4,7 +4,6 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
-local dozer_vault = 4
 local both_window_swats_only = true
 local stair_blockade_chance = 0
 local chance_dozer_vault_1 = math.rand(1)
@@ -32,13 +31,11 @@ if pro_job then
 		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
 	--Titan cloakers replace scripted cloakers
-	--One additional dozer in the vault
 	--Ambush is more deadly
 	if difficulty_index == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_doors_chance = 100
 		ambush_amount = 3
-		dozer_vault = 5
 	end
 	--Titan units replace some of the scripted spawns
 	if difficulty_index >= 5 then
@@ -307,12 +304,6 @@ return {
 	[100529] = {
 		values = {
             amount = ambush_amount
-		}
-	},
-	--DSPJ has all vault dozer spawns enabled
-	[100225] = {
-		values = {
-            amount = dozer_vault
 		}
 	},
 	--Spawn replacements

@@ -949,7 +949,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		-- New challanges
 		["ch_melee_test"] = "Cloak and Dagger",
-		["ch_melee_test_desc"] = "Kill Captain Autumn uses only fists",
+		["ch_melee_test_desc"] = "Kill Captain Autumn using only your fists",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",

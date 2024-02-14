@@ -174,7 +174,7 @@ function ChallengesTweakData:init()
         depends_on = {
 			melee_weapons = {"fists"}
 		},
-        flag_id = "melee_test"
+        flag_id = "melee_test",
     }
 		
 	self.weapon = {}

@@ -945,6 +945,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
 		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+
+		-- New challanges
+		["ch_melee_test"] = "Cloak and Dagger",
+		["ch_melee_test_desc"] = "Kill Captain Autumn uses only fists",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",

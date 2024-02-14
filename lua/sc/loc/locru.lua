@@ -885,6 +885,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
 		["ch_watchdogs_d1_heavy_wpn1"] = "Пройти первый день ограбления 'Сторожевые псы', используя только УКТЖ, миниганы, ракетометы или снайперскую винтовку Thanatos, на уровни сложности OVERKILL или выше. Для выполнения этого испытания, ограбление нужно играть с самого начала.",
+
+		-- New challanges
+		["ch_melee_test"] = "Cloak and Dagger",
+		["ch_melee_test_desc"] = "Kill Captain Autumn uses only fists",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",

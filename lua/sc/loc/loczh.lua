@@ -1014,6 +1014,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["ch_watchdogs_d1_heavy_wpn1_hl"] = "更厚的甲，更猛的枪",
         ["ch_watchdogs_d1_heavy_wpn1"] = "完成看门狗劫案的第一天，装备改良型联合战术防弹衣，同时使用加特林机枪、Thanatos狙击步枪或者RPG。要求OVERKILL难度及以上。要完成此挑战你必须从头开始进行劫案。",
 
+        -- New challanges
+		["ch_melee_test"] = "Cloak and Dagger",
+		["ch_melee_test_desc"] = "Kill Captain Autumn uses only fists",
+
         ["test_net"] = "Fast.Net",
         ["menu_test"] = "",
         ["state_filter"] = "状态",

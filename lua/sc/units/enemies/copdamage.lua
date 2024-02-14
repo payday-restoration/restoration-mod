@@ -1719,6 +1719,10 @@ function CopDamage:damage_melee(attack_data)
 				managers.achievment:award_progress(tweak_data.achievement.final_rule.stat)
 			end
 
+			if self._char_tweak and self._char_tweak.autumn and attack_data.name_id and attack_data.name_id == "fists" then
+				managers.challenges_res:set_flag("melee_test")
+			end
+
 			if is_civilian then
 				managers.money:civilian_killed()
 			else

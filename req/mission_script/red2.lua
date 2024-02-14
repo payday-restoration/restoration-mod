@@ -6,6 +6,7 @@ local ambush_doors_chance = 85
 local ambush_amount = 1
 local dozer_vault = 4
 local both_window_swats_only = true
+local stair_blockade_chance = 0
 local chance_dozer_vault_1 = math.rand(1)
 local chance_dozer_vault_2 = math.rand(1)
 local chance_dozer_vault_3 = math.rand(1)
@@ -50,6 +51,10 @@ end
 
 	if difficulty_index >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
+	end	
+	
+	if difficulty_index >= 5 then
+		stair_blockade_chance = 100 --100% to always spawn 3 tasers+1 heavy swat in staircase escape (145+ throwback)
 	end	
 
 	--Setting up random vault dozers for Mayhem+, that's rad!
@@ -168,10 +173,74 @@ return {
 			enabled = hunt_projob
 		}
 	},
-	--Disable The SWAT Van Turret
+	--spawn lobby blockade shields
+	[101660] = { 
+		on_executed = {
+			{id = 400001, delay = 0},
+			{id = 400002, delay = 0}
+		}
+	},
+	--Use turret's chance to spawn lobby snipers instead
 	[105914] = { 
 		values = {
-			chance = 0
+			chance = 45
+		},
+		on_executed = {
+			{id = 105921, remove = true},
+			{id = 400003, delay = 1},
+			{id = 400004, delay = 2},
+			{id = 400005, delay = 3},
+			{id = 400006, delay = 4},
+			{id = 400007, delay = 5},
+			{id = 400008, delay = 6}
+		}
+	},
+	--two extra possible dozers spawn on DW+ (PJ Only)
+	[100569] = { 
+		on_executed = {
+			{id = 400024, delay = 0},
+			{id = 400025, delay = 0}
+		}
+	},
+	--one extra Bo Dozer
+	[101953] = { 
+		on_executed = {
+			{id = 400020, delay = 1}
+		}
+	},
+	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)
+	[100635] = {
+		on_executed = {
+			{id = 400010, delay = 0},
+			{id = 400011, delay = 0},
+			{id = 400012, delay = 0},
+			{id = 400013, delay = 0},
+			{id = 400014, delay = 0},
+			{id = 400015, delay = 0},
+			{id = 400016, delay = 0},
+			{id = 400017, delay = 0},
+			{id = 400018, delay = 0},
+			{id = 400019, delay = 0}
+		}
+	},
+	--Spawn two extra dozers on DS as a 193+ throwback
+	[100850] = { 
+		on_executed = {
+			{id = 400021, delay = 20},
+			{id = 400022, delay = 20}
+		}
+	},
+	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
+	[103710] = { 
+		values = {
+			chance = stair_blockade_chance
+		},
+		on_executed = {
+			{id = 101400, remove = true},
+			{id = 400026, delay = 0},
+			{id = 400027, delay = 0},
+			{id = 400028, delay = 0},
+			{id = 400029, delay = 0}
 		}
 	},
 	--Higher diffs forces both scripted window cloaker and taser spawns
@@ -247,11 +316,6 @@ return {
 		}
 	},
 	--Spawn replacements
-	[105119] = {
-		values = {
-            enemy = titan_dozer
-		}
-	},
 	[106858] = {
 		values = {
             enemy = titan_taser

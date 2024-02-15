@@ -35,6 +35,12 @@ local dozer_table = {
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
+	
+	if difficulty_index <= 5 then
+		ponr_value = 420	
+	else
+		ponr_value = 720	
+	end
 
 --If we're in Pro Job, then do this stuff below
 if pro_job then
@@ -194,8 +200,9 @@ return {
 			enabled = hunt_projob
 		}
 	},
-	--spawn lobby blockade shields
+	--spawn lobby blockade shields+Pro Job PONR
 	[101660] = { 
+		ponr = ponr_value,
 		on_executed = {
 			{id = 400001, delay = 0},
 			{id = 400002, delay = 0}

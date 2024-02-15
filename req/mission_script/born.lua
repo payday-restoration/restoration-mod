@@ -14,6 +14,12 @@ return {
 	[100720] = {
 		ponr = ponr_value
 	},
+	--Disable the turret
+	[101175] = {
+		values = {
+			enabled = false
+		}
+	},
 	--Loopable heli 
 	--trigger in alarm rather than in the second assault
 	[100022] = {
@@ -51,6 +57,12 @@ return {
 				turn_this_shit_off:set_enabled(false)
 			end
 		end
+	},
+	--Spawn Bikerdozer after opening the door
+	[102786] = {
+		on_executed = {
+			{ id = 400001, delay = 0}
+		}
 	},
 	-- Slow down roof and garage spawns
 	[100007] = {

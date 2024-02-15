@@ -4,17 +4,20 @@ local sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
 local security_1 = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
 local security_2 = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 local security_3 = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.125 * difficulty
+local hard_above = difficulty >= 3
 local very_hard_above = difficulty >= 4
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
 local enabled_chance_more_guards = math.random() < diff_scaling
 local enabled_chance_shields = math.random() < diff_scaling
+local enabled_chance_cloakers = math.random() < diff_scaling
 
 	if difficulty == 7 then
 		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
@@ -124,6 +127,22 @@ local optsBulldozer_special = {
     enemy = tank_skull,
     enabled = (death_wish_above and pro_job)
 }
+local optsCloaker_rush_1 = {
+    enemy = cloaker,
+	participate_to_group_ai = true,
+	trigger_times = 3,
+	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
+	on_executed = { { id = 400023, delay = 3 } },
+    enabled = (hard_above and enabled_chance_cloakers)
+}
+local optsCloaker_rush_2 = {
+    enemy = cloaker,
+	participate_to_group_ai = true,
+	trigger_times = 3,
+	spawn_action = "e_sp_repel_into_window",
+	on_executed = { { id = 400023, delay = 3 } },
+    enabled = (hard_above and enabled_chance_cloakers)
+}
 local optsBulldozer_BO = {
     enemy = tank,
 	on_executed = { { id = 400023, delay = 0 } },
@@ -139,8 +158,8 @@ local optsSWAT_Heavy = {
 	participate_to_group_ai = true,
     enabled = true
 }
-local optsBulldozer_SO = {
-    SO_access = "4096",
+local optsBulldozer_Cloaker_SO = {
+    SO_access = "4096"+"1024",
 	path_style = "none",
 	scan = true,
 	interval = 2,
@@ -317,24 +336,24 @@ return {
         ),
 		restoration:gen_so(
             400023,
-            "dozer_hunt_so",
+            "dozer_cloaker_hunt_so",
             Vector3(-2657, -3569, -90),
             Rotation(90, -0, -0),
-            optsBulldozer_SO
+            optsBulldozer_Cloaker_SO
         ),
 		--two PJ dozers when leaving the vault
 		restoration:gen_dummy(
             400024,
             "projob_tank_exit_vault_1",
-            Vector3(-3359, 1790, -15),
-            Rotation(90, -0, -0),
+            Vector3(3359, 1790, -15),
+            Rotation(-90, 0, -0),
             optsBulldozer_special
         ),
 		restoration:gen_dummy(
             400025,
             "projob_tank_exit_vault_2",
-            Vector3(3359, 702, -15),
-            Rotation(90, -0, -0),
+            Vector3(3359, 713, -15),
+            Rotation(-90, 0, -0),
             optsBulldozer_special
         ),
 		--145+ throwback, 3 tasers+1 heavy swat in staircase escape
@@ -365,6 +384,28 @@ return {
             Vector3(5553, -2502, -135.691),
             Rotation(-90, 0, -0),
             optsSWAT_Heavy
+        ),
+		--3 cloakers coming down the vent+elevator
+		restoration:gen_dummy(
+            400030,
+            "cloaker_rush_1",
+            Vector3(483, 352, 475.020),
+            Rotation(0, 0, -0),
+            optsCloaker_rush_1
+        ),
+		restoration:gen_dummy(
+            400031,
+            "cloaker_rush_2",
+            Vector3(677, 57, 475.020),
+            Rotation(90, -0, -0),
+            optsCloaker_rush_2
+        ),
+		restoration:gen_dummy(
+            400032,
+            "cloaker_rush_3",
+            Vector3(677, 12, 475.020),
+            Rotation(90, -0, -0),
+            optsCloaker_rush_2
         )
     }
 }

@@ -166,7 +166,7 @@ return {
 			end
 		end
 	},
-	--Trigger custom scripted skulldozers after 20 seconds
+	--Trigger custom scripted dozers after 20 seconds
 	[101967] = {
 		on_executed = {
 			{ id = 400001, delay = 20 },

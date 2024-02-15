@@ -1,11 +1,9 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local skulldozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/payday2/characters/ene_spook_1/ene_spook_1"
 local rouge = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local overkill_above = difficulty >= 5
-local mayhem_above = difficulty >= 6
-local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
 local diff_scaling = 0.125 * difficulty
 local enabled_chance_cloakers = math.random() < diff_scaling
@@ -15,9 +13,9 @@ if pro_job and difficulty == 8 then
 end	
 
 local optsBulldozer = {
-    enemy = skulldozer,
+    enemy = tank,
     on_executed = { { id = 400003, delay = 0 } },
-    enabled = mayhem_above
+    enabled = overkill_above
 }
 local optsCloaker_1 = {
 	enemy = cloaker,
@@ -61,10 +59,6 @@ local optsTitanCloaker_2 = {
 	on_executed = { { id = 400017, delay = 0 } },
     enabled = (death_sentence and pro_job)
 }
-local optsBulldozer_C4 = {
-    enemy = skulldozer,
-    enabled = (death_wish_above and pro_job)
-}
 local optsBulldozer_SO = {
     SO_access = "4096",
 	path_style = "none",
@@ -95,7 +89,7 @@ local optsCloaker_Hide_SO_2 = {
 
 return {
     elements = {
-        -- Skulldozers that spawn after cops arrive (20 seconds after)
+        -- Bulldozers that spawn after cops arrive (20 seconds after)
         restoration:gen_dummy(
             400001,
             "fwb_dozer_1",
@@ -216,20 +210,6 @@ return {
             Vector3(-6642, 1505, -599),
             Rotation(0, 0, -0),
             optsCloaker_Hide_SO_1
-        ),
-		restoration:gen_dummy(
-            400018,
-            "skulldozer_c4_1",
-            Vector3(-6106, 1793, -600.007),
-            Rotation(-90, -0, -0),
-            optsBulldozer_C4
-        ),
-		restoration:gen_dummy(
-            400019,
-            "skulldozer_c4_2",
-            Vector3(-6106, 1685, -600.007),
-            Rotation(-90, -0, -0),
-            optsBulldozer_C4
         )
     }
 }

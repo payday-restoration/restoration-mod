@@ -48,6 +48,7 @@ if pro_job then
 	--Ambush is more deadly
 	if difficulty_index == 8 then
 		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_doors_chance = 100
 		ambush_amount = 3
 	end

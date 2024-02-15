@@ -236,6 +236,12 @@ return {
 			{id = 400020, delay = 1}
 		}
 	},
+	--Make this Bo Dozer use custom set up AI_Hunt
+	[105119] = { 
+		on_executed = {
+			{id = 400023, delay = 0}
+		}
+	},
 	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)
 	[100635] = {
 		on_executed = {
@@ -256,6 +262,12 @@ return {
 		on_executed = {
 			{id = 400021, delay = 20},
 			{id = 400022, delay = 20}
+		}
+	},
+	--Killing Bo The Manager results of spawning two angry dozers
+	[100689] = {
+		on_executed = {
+			{id = 100682, delay = 0}
 		}
 	},
 	--spawn 3 rushing cloakers after 50 seconds of starting the assault

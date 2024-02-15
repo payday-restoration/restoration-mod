@@ -132,7 +132,6 @@ local optsCloaker_rush_1 = {
 	participate_to_group_ai = true,
 	trigger_times = 3,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
-	on_executed = { { id = 400023, delay = 3 } },
     enabled = (hard_above and enabled_chance_cloakers)
 }
 local optsCloaker_rush_2 = {
@@ -140,7 +139,6 @@ local optsCloaker_rush_2 = {
 	participate_to_group_ai = true,
 	trigger_times = 3,
 	spawn_action = "e_sp_repel_into_window",
-	on_executed = { { id = 400023, delay = 3 } },
     enabled = (hard_above and enabled_chance_cloakers)
 }
 local optsBulldozer_BO = {
@@ -158,8 +156,8 @@ local optsSWAT_Heavy = {
 	participate_to_group_ai = true,
     enabled = true
 }
-local optsBulldozer_Cloaker_SO = {
-    SO_access = "4096"+"1024",
+local optsBulldozer_SO = {
+    SO_access = "4096",
 	path_style = "none",
 	scan = true,
 	interval = 2,
@@ -339,7 +337,7 @@ return {
             "dozer_cloaker_hunt_so",
             Vector3(-2657, -3569, -90),
             Rotation(90, -0, -0),
-            optsBulldozer_Cloaker_SO
+            optsBulldozer_SO
         ),
 		--two PJ dozers when leaving the vault
 		restoration:gen_dummy(

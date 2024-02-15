@@ -266,6 +266,26 @@ return {
 			{id = 400032, delay = 50}
 		}
 	},
+	[102068] = {
+		values = {
+			elements = {
+				103388,
+				105162,
+				400030
+			}
+		}
+	},
+	[102167] = { 
+		values = {
+			elements = {
+				102130,
+				105176,
+				102135,
+				400031,
+				400032
+			}
+		}
+	},
 	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
 	[103710] = { 
 		values = {
@@ -428,12 +448,12 @@ return {
 	},
 	[103163] = {
 		values = {
-            enemy = titan_taser
+            enemy = taser
 		}
 	},
 	[103231] = {
 		values = {
-            enemy = titan_taser
+            enemy = taser
 		}
 	},
 	[102575] = {

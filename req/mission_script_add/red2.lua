@@ -116,7 +116,7 @@ local optsSniper_6 = {
 	participate_to_group_ai = true,
 	on_executed = { { id = 400009, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
-    enabled = very_hard_above
+    enabled = death_wish_above
 }
 local optsBulldozer_193 = {
     enemy = tank,

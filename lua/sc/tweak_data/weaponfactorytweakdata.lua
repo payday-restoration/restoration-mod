@@ -27770,6 +27770,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.stats = { value = 1 }
 			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.custom_stats = nil
 			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.perks = nil
+			self.parts.wpn_fps_lmg_raid_ww2_bren_receiver.stance_mod = {
+				wpn_fps_lmg_raid_ww2_bren = {
+					translation = Vector3(0, -4, -0.05)
+				}
+			}
 
 			self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long.supported = true
 			self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long.stats = deep_clone(barrels.long_b2_stats)

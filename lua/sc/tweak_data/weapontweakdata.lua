@@ -36,7 +36,6 @@ local damage_set = {
 		"fal_crew",
 		"asval_crew",
 		"contraband_crew",
-		"hcar_crew",
 	},
 	shotgun_auto = {
 		"saiga_crew",
@@ -89,6 +88,7 @@ local damage_set = {
 		"mg42_crew",
 		"m60_crew",
 		"kacchainsaw_crew",
+		"hcar_crew",
 	}
 }
 local crew_wep_preset = {
@@ -2161,22 +2161,6 @@ local crew_wep_preset = {
 			self.scar_crew.suppression = 2.2
 			self.scar_crew.FIRE_MODE = "auto"
 		end
-
-		function WeaponTweakData:_init_data_hcar_crew()
-			self.hcar_crew.categories = clone(self.hcar.categories)
-			self.hcar_crew.sounds.prefix = "hcar_npc"
-			self.hcar_crew.use_data.selection_index = 2
-			self.hcar_crew.DAMAGE = crew_wep_preset.assault_rifle.damage
-			self.hcar_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
-			self.hcar_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-			self.hcar_crew.auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
-			self.hcar_crew.CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
-			self.hcar_crew.NR_CLIPS_MAX = 5
-			self.hcar_crew.hold = "rifle"
-			self.hcar_crew.alert_size = 2500
-			self.hcar_crew.suppression = 2.2
-			self.hcar_crew.FIRE_MODE = "auto"
-		end
 		
 		function WeaponTweakData:_init_data_fal_crew()
 			self.fal_crew.categories = clone(self.fal.categories)
@@ -3096,6 +3080,22 @@ local crew_wep_preset = {
 			self.hk21_crew.alert_size = 2500
 			self.hk21_crew.suppression = 2.4
 			self.hk21_crew.FIRE_MODE = "auto"
+		end
+
+		function WeaponTweakData:_init_data_hcar_crew()
+			self.hcar_crew.categories = clone(self.hcar.categories)
+			self.hcar_crew.sounds.prefix = "hcar_npc"
+			self.hcar_crew.use_data.selection_index = 2
+			self.hcar_crew.DAMAGE = crew_wep_preset.lmg.damage
+			self.hcar_crew.muzzleflash = "effects/payday2/particles/weapons/762_auto"
+			self.hcar_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+			self.hcar_crew.auto.fire_rate = crew_wep_preset.lmg.fire_rate
+			self.hcar_crew.CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+			self.hcar_crew.NR_CLIPS_MAX = 5
+			self.hcar_crew.hold = "rifle"
+			self.hcar_crew.alert_size = 2500
+			self.hcar_crew.suppression = 2.2
+			self.hcar_crew.FIRE_MODE = "auto"
 		end
 		
 		function WeaponTweakData:_init_data_hk51b_crew()
@@ -4170,7 +4170,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	local ap_75 = {
-		'ching','hcar'
+		'ching'
 	}
 	for i, wep_id in ipairs(ap_75) do
 		self[wep_id].armor_piercing_chance = 0.75
@@ -4287,7 +4287,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
-	recat = { "ching", "g3", "new_m14", "shak12", "hcar" }
+	recat = { "ching", "g3", "new_m14", "shak12" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "dmr_h")
 		self[ wep_id ].recategorize = { "dmr_ar" }
@@ -4327,7 +4327,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].weapon_movement_penalty = sms_preset.lmg_90
 	end
 
-	recat = { "m60", "par" }
+	recat = { "m60", "par", "hcar" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "mmg")
 		self[ wep_id ].recategorize = { "heavy_mg" }
@@ -6400,7 +6400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.type54_underbarrel.fire_mode_data.fire_rate = 0.24
 						self.type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 						self.type54_underbarrel.supported = true
-						self.type54_underbarrel.use_stance = nil
+						self.type54_underbarrel.use_stance = "type54"
 						self.type54_underbarrel.ads_speed = 0.180
 						self.type54_underbarrel.damage_falloff = {
 							start_dist = 700,
@@ -8352,7 +8352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.categories = {
 							"lmg",
 							"smg",
-							"mmg"
+							"lmg_moving"
 						}
 						self.hk21.desc_id = "bm_hk21_sc_desc"
 						self.hk21.has_description = true
@@ -8398,6 +8398,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
 						self.hk21.timers.reload_exit_empty = 1.3
 						self.hk21.timers.reload_exit_not_empty = 1.3
+
+					--Ohio Ord. HCAR
+						self.hcar.categories = {
+							"lmg",
+							"smg",
+							"mmg",
+							"lmg_moving"
+						}
+						self.hcar.has_description = true
+						self.hcar.desc_id = "bm_hcar_sc_desc"	
+						self.hcar.CLIP_AMMO_MAX = 20
+						self.hcar.AMMO_MAX = 120
+						self.hcar.fire_mode_data.fire_rate = 0.12
+						self.hcar.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+						self.hcar.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
+						self.hcar.supported = true
+						self.hcar.ads_speed = 0.480
+						self.hcar.damage_falloff = {
+							start_dist = 1700,
+							end_dist = 5400,
+							min_mult = 0.4
+						}
+						self.hcar.stats = {
+							damage = 60,
+							spread = 68,
+							recoil = 59,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 15,
+							suppression = 5,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 9,
+							reload = 20
+						}
+						self.hcar.stats_modifiers = nil
+						self.hcar.panic_suppression_chance = 0.05
+						self.hcar.timers.reload_exit_empty = 0.8
+						self.hcar.timers.reload_exit_not_empty = 0.7
 
 					--M60
 						self.m60.has_description = true
@@ -9995,7 +10035,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.reload_speed_multiplier = 1.425
 						
 					--Galant (M1 Garand)
-						self.hcar.categories = { 
+						self.ching.categories = { 
 							"assault_rifle",
 							"dmr_h"
 						}
@@ -10039,47 +10079,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.timers.reload_exit_empty = 0.85
 						self.ching.timers.reload_not_empty = 2.2
 						self.ching.timers.reload_exit_not_empty = 1
-
-					--Ohio Ord. HCAR
-						self.hcar.categories = { 
-							"assault_rifle",
-							"dmr_h"
-						}
-						self.hcar.has_description = true
-						self.hcar.desc_id = "bm_hcar_sc_desc"	
-						self.hcar.CLIP_AMMO_MAX = 20
-						self.hcar.AMMO_MAX = 60
-						self.hcar.fire_mode_data.fire_rate = 0.12
-						self.hcar.kick = self.stat_info.kick_tables.moderate_kick
-						self.hcar.supported = true
-						self.hcar.ads_speed = 0.400
-						self.hcar.damage_falloff = {
-							start_dist = 3200,
-							end_dist = 8000,
-							min_mult = 0.5
-						}
-						self.hcar.stats = {
-							damage = 60,
-							spread = 78,
-							recoil = 63,
-							spread_moving = 5,
-							zoom = 1,
-							concealment = 22,
-							suppression = 5,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 200,
-							value = 9,
-							reload = 20
-						}
-						self.hcar.stats_modifiers = nil
-						self.hcar.armor_piercing_chance = 0.75
-						self.hcar.panic_suppression_chance = 0.05
-						self.hcar.can_shoot_through_wall = false
-						self.hcar.can_shoot_through_enemy = true
-						self.hcar.can_shoot_through_enemy_unlim = true
-						self.hcar.timers.reload_exit_empty = 0.8
-						self.hcar.timers.reload_exit_not_empty = 0.7
 
 			--[[     LIGHT SNIPERS     ]]
 				
@@ -14457,7 +14456,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lewis.CAN_TOGGLE_FIREMODE = false
 				self.lewis.CLIP_AMMO_MAX = 47
 				self.lewis.AMMO_MAX = 120
-				self.lewis.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.lewis.kick = self.stat_info.kick_tables.horizontal_recoil_mg
 				self.lewis.always_use_standing = true
 				self.lewis.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 				self.lewis.supported = true
@@ -17630,26 +17629,27 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.raid_ww2_bren.recategorize = { "heavy_mg" }
 				self.raid_ww2_bren.categories = {
 					"lmg",
-					"smg"
+					"smg",
+					"mmg",
+					"lmg_moving"
 				}
 				self.raid_ww2_bren.damage_type = "machine_gun"
 				self.raid_ww2_bren.CLIP_AMMO_MAX = 20
 				self.raid_ww2_bren.BURST_FIRE = false
 				self.raid_ww2_bren.CAN_TOGGLE_FIREMODE = true
 				self.raid_ww2_bren.fire_mode_data.fire_rate = 0.12
-				self.raid_ww2_bren.AMMO_MAX = 120
+				self.raid_ww2_bren.AMMO_MAX = 160
 				self.raid_ww2_bren.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
-				self.raid_ww2_bren.always_use_standing = true
 				self.raid_ww2_bren.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.raid_ww2_bren.supported = true
-				self.raid_ww2_bren.ads_speed = 0.520
+				self.raid_ww2_bren.ads_speed = 0.480
 				self.raid_ww2_bren.damage_falloff = {
-					start_dist = 1200,
+					start_dist = 1600,
 					end_dist = 5800,
-					min_mult = 0.33333
+					min_mult = 0.53333
 				}
 				self.raid_ww2_bren.stats = {
-					damage = 60,
+					damage = 45,
 					spread = 53,
 					recoil = 67,
 					spread_moving = 5,
@@ -17669,8 +17669,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.raid_ww2_bren.spin_up_t = 0.08
 				self.raid_ww2_bren.spin_down_t = 0.00000001
 				self.raid_ww2_bren.reload_speed_multiplier = 0.7
-				self.raid_ww2_bren.sms = sms_preset.lmg_120
-				self.raid_ww2_bren.weapon_movement_penalty = sms_preset.lmg_120
+				self.raid_ww2_bren.sms = sms_preset.lmg_90
+				self.raid_ww2_bren.weapon_movement_penalty = sms_preset.lmg_90
 				self.raid_ww2_bren.timers.reload_not_empty = 2.0
 				self.raid_ww2_bren.timers.reload_exit_not_empty = 0.8
 				self.raid_ww2_bren.timers.reload_empty = 2.5

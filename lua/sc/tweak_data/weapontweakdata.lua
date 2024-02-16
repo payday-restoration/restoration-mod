@@ -8300,7 +8300,105 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--[[     HEAVY MGs     ]]
 
-				--PRIMARIES
+				--PRIMARIES			
+					--Buzzsaw (MG42)
+						self.mg42.categories = {
+							"lmg",
+							"smg",
+							"wolf_brigade",
+							"mmg"
+						}
+						self.mg42.sounds.fire = "mg42_fire"
+						self.mg42.sounds.fire_single = "mg42_fire"
+						self.mg42.CLIP_AMMO_MAX = 50
+						self.mg42.AMMO_MAX = 160
+						self.mg42.has_description = true
+						self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
+						self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
+						self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+						self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+						self.mg42.supported = true
+						self.mg42.ads_speed = 0.500
+						self.mg42.damage_falloff = {
+							start_dist = 2000,
+							end_dist = 6000,
+							min_mult = 0.53333
+						}
+						self.mg42.stats = {
+							damage = 45,
+							spread = 55,
+							recoil = 63,
+							spread_moving = 5,
+							zoom = 1,
+							concealment = 17,
+							suppression = 6,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 9,
+							reload = 20
+						}
+						self.mg42.stats_modifiers = nil
+						self.mg42.panic_suppression_chance = 0.05
+						self.mg42.sounds.spin_start = "wp_mg42_lever_release"
+						self.mg42.spin_up_shoot = true
+						self.mg42.spin_up_t = 0.09
+						self.mg42.spin_down_t = 0.00000001
+						self.mg42.reload_speed_multiplier = 1
+						self.mg42.timers.reload_exit_empty = 1.65
+						self.mg42.timers.reload_exit_not_empty = 1.65
+			
+					--Brenner 21 (HK21)
+						self.hk21.categories = {
+							"lmg",
+							"smg",
+							"mmg"
+						}
+						self.hk21.desc_id = "bm_hk21_sc_desc"
+						self.hk21.has_description = true
+						self.hk21.CLIP_AMMO_MAX = 100
+						self.hk21.AMMO_MAX = 160
+						self.hk21.fire_mode_data.fire_rate = 0.075
+						self.hk21.CAN_TOGGLE_FIREMODE = true
+						self.hk21.BURST_FIRE = 3
+						self.hk21.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+						self.hk21.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.1
+						self.hk21.BURST_DELAY = 0.18
+						self.hk21.fake_semi_anims = true
+						self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
+						self.hk21.always_use_standing = true
+						self.hk21.panic_suppression_chance = 0.05
+						self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+						self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
+						self.hk21.supported = true
+						self.hk21.ads_speed = 0.520
+						self.hk21.damage_falloff = {
+							start_dist = 1600,
+							end_dist = 5100,
+							min_mult = 0.44444
+						}
+						self.hk21.stats = {
+							damage = 45,
+							spread = 61,
+							recoil = 67,
+							spread_moving = 7,
+							zoom = 1,
+							concealment = 15,
+							suppression = 6,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 9,
+							reload = 20
+						}
+						self.hk21.stats_modifiers = nil
+						self.hk21.reload_speed_multiplier = 0.88
+						self.hk21.bipod_req_scope = true
+						self.hk21.animations.ignore_nonemptyreload = true
+						self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
+						self.hk21.timers.reload_exit_empty = 1.3
+						self.hk21.timers.reload_exit_not_empty = 1.3
+
 					--M60
 						self.m60.has_description = true
 						self.m60.desc_id = "bm_m60_sc_desc"		
@@ -8399,104 +8497,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.par.timers.reload_empty = 6.3
 						self.par.timers.reload_exit_empty = 1.325
 						self.par.timers.reload_exit_not_empty = 1.325
-			
-					--Buzzsaw (MG42)
-						self.mg42.categories = {
-							"lmg",
-							"smg",
-							"wolf_brigade",
-							"mmg"
-						}
-						self.mg42.sounds.fire = "mg42_fire"
-						self.mg42.sounds.fire_single = "mg42_fire"
-						self.mg42.CLIP_AMMO_MAX = 50
-						self.mg42.AMMO_MAX = 160
-						self.mg42.has_description = true
-						self.mg42.desc_id = "bm_wolf_brigade_sc_desc"
-						self.mg42.kick = self.stat_info.kick_tables.the_wolf_brigade
-						self.mg42.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
-						self.mg42.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
-						self.mg42.supported = true
-						self.mg42.ads_speed = 0.500
-						self.mg42.damage_falloff = {
-							start_dist = 2000,
-							end_dist = 6000,
-							min_mult = 0.53333
-						}
-						self.mg42.stats = {
-							damage = 45,
-							spread = 55,
-							recoil = 63,
-							spread_moving = 5,
-							zoom = 1,
-							concealment = 17,
-							suppression = 6,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 200,
-							value = 9,
-							reload = 20
-						}
-						self.mg42.stats_modifiers = nil
-						self.mg42.panic_suppression_chance = 0.05
-						self.mg42.sounds.spin_start = "wp_mg42_lever_release"
-						self.mg42.spin_up_shoot = true
-						self.mg42.spin_up_t = 0.09
-						self.mg42.spin_down_t = 0.00000001
-						self.mg42.reload_speed_multiplier = 1
-						self.mg42.timers.reload_exit_empty = 1.65
-						self.mg42.timers.reload_exit_not_empty = 1.65
-			
-					--Brenner 21 (HK21)
-						self.hk21.categories = {
-							"lmg",
-							"smg",
-							"mmg"
-						}
-						self.hk21.desc_id = "bm_hk21_sc_desc"
-						self.hk21.has_description = true
-						self.hk21.CLIP_AMMO_MAX = 100
-						self.hk21.AMMO_MAX = 160
-						self.hk21.fire_mode_data.fire_rate = 0.075
-						self.hk21.CAN_TOGGLE_FIREMODE = true
-						self.hk21.BURST_FIRE = 3
-						self.hk21.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-						self.hk21.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.1
-						self.hk21.BURST_DELAY = 0.18
-						self.hk21.fake_semi_anims = true
-						self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
-						self.hk21.always_use_standing = true
-						self.hk21.panic_suppression_chance = 0.05
-						self.hk21.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
-						self.hk21.shell_ejection = "effects/payday2/particles/weapons/shells/shell_762_lmg"
-						self.hk21.supported = true
-						self.hk21.ads_speed = 0.520
-						self.hk21.damage_falloff = {
-							start_dist = 1600,
-							end_dist = 5100,
-							min_mult = 0.44444
-						}
-						self.hk21.stats = {
-							damage = 45,
-							spread = 61,
-							recoil = 67,
-							spread_moving = 7,
-							zoom = 1,
-							concealment = 15,
-							suppression = 6,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 200,
-							value = 9,
-							reload = 20
-						}
-						self.hk21.stats_modifiers = nil
-						self.hk21.reload_speed_multiplier = 0.88
-						self.hk21.bipod_req_scope = true
-						self.hk21.animations.ignore_nonemptyreload = true
-						self.hk21.timers.reload_not_empty = self.hk21.timers.reload_empty
-						self.hk21.timers.reload_exit_empty = 1.3
-						self.hk21.timers.reload_exit_not_empty = 1.3
 
 				--EMPLACEMENTS
 
@@ -17623,6 +17623,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pd3_lynx.timers.reload_exit_not_empty = 0.5
 				self.pd3_lynx.timers.reload_empty = 3.5
 				self.pd3_lynx.timers.reload_exit_empty = 0.9
+			end
+
+
+			if self.raid_ww2_bren then --RJC9000 and PlayBONK's RAID WWII Bren Mk1
+				self.raid_ww2_bren.recategorize = { "heavy_mg" }
+				self.raid_ww2_bren.categories = {
+					"lmg",
+					"smg"
+				}
+				self.raid_ww2_bren.damage_type = "machine_gun"
+				self.raid_ww2_bren.CLIP_AMMO_MAX = 20
+				self.raid_ww2_bren.BURST_FIRE = false
+				self.raid_ww2_bren.CAN_TOGGLE_FIREMODE = true
+				self.raid_ww2_bren.fire_mode_data.fire_rate = 0.12
+				self.raid_ww2_bren.AMMO_MAX = 120
+				self.raid_ww2_bren.kick = self.stat_info.kick_tables.horizontal_right_recoil_mg
+				self.raid_ww2_bren.always_use_standing = true
+				self.raid_ww2_bren.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.raid_ww2_bren.supported = true
+				self.raid_ww2_bren.ads_speed = 0.520
+				self.raid_ww2_bren.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 5800,
+					min_mult = 0.33333
+				}
+				self.raid_ww2_bren.stats = {
+					damage = 60,
+					spread = 53,
+					recoil = 67,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 16,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.raid_ww2_bren.stats_modifiers = nil
+				self.raid_ww2_bren.panic_suppression_chance = 0.05
+				self.raid_ww2_bren.sounds.spin_start = "wp_m60_reload_lever_release"
+				self.raid_ww2_bren.spin_up_shoot = true
+				self.raid_ww2_bren.spin_up_t = 0.08
+				self.raid_ww2_bren.spin_down_t = 0.00000001
+				self.raid_ww2_bren.reload_speed_multiplier = 0.7
+				self.raid_ww2_bren.sms = sms_preset.lmg_120
+				self.raid_ww2_bren.weapon_movement_penalty = sms_preset.lmg_120
+				self.raid_ww2_bren.timers.reload_not_empty = 2.0
+				self.raid_ww2_bren.timers.reload_exit_not_empty = 0.8
+				self.raid_ww2_bren.timers.reload_empty = 2.5
+				self.raid_ww2_bren.timers.reload_exit_empty = 0.8
 			end
 		
 		--[[     TANGERINE'S MODS     ]]--

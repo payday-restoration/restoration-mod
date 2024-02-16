@@ -2462,7 +2462,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 				["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 				--HCAR
-				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
+				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.",
 				--Custom DMRs
 					--BOCW EM2
 					["bm_w_t9british"] = "EM2",
@@ -2985,6 +2985,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12_vks"] = "KSV-12 Urban",
 					--HCAR
 					["bm_w_hcar"] = "Akron HC",
+					["bm_w_hcar_bar"] = "Akron HC",
 					
 					--Custom DMRs
 						--MCX Spear
@@ -3703,6 +3704,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
 					--HCAR
 					["bm_w_hcar"] = "Ohio Ordnance HCAR",
+					["bm_w_hcar"] = "Browning BAR",
 					--GARAND
 					["bm_w_ching"] = "Springfield Armory M1 Garand",
 					["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",

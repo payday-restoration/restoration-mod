@@ -21513,8 +21513,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 	self.parts.wpn_fps_lmg_hcar_barrel_short.stats = deep_clone(barrels.short_b1_stats)
 	self.parts.wpn_fps_lmg_hcar_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
 	self.parts.wpn_fps_lmg_hcar_barrel_dmr.supported = true
-	self.parts.wpn_fps_lmg_hcar_barrel_dmr.stats = deep_clone(barrels.long_b3_stats)
-	self.parts.wpn_fps_lmg_hcar_barrel_dmr.custom_stats = deep_clone(barrels.long_b3_stats)
+	self.parts.wpn_fps_lmg_hcar_barrel_dmr.stats = deep_clone(barrels.long_b2_stats)
+	self.parts.wpn_fps_lmg_hcar_barrel_dmr.custom_stats = deep_clone(barrels.long_b2_stats)
 
 	self.parts.wpn_fps_lmg_hcar_m_stick.supported = true
 	self.parts.wpn_fps_lmg_hcar_m_stick.stats = {
@@ -27764,6 +27764,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_sbeta_stock_no.stats = deep_clone(stocks.remove_fixed_stats)
 			self.parts.wpn_fps_snp_sbeta_stock_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
 		end
+
+		if self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long then
+			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.pcs = nil
+			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.stats = { value = 1 }
+			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.custom_stats = nil
+			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.perks = nil
+
+			self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long.supported = true
+			self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_lmg_raid_ww2_bren_pad_buffered.supported = true
+			self.parts.wpn_fps_lmg_raid_ww2_bren_pad_buffered.stats = { value = 2, recoil = 2, concealment = -1 }
+			self.parts.wpn_fps_lmg_raid_ww2_bren_pad_buffered.custom_stats = nil
+
+			self.parts.wpn_fps_lmg_raid_ww2_bren_magazine.pcs = nil
+
+			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.supported = true
+			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.stats = { value = 5, extra_ammo = 10, concealment = -1, reload = -2 }
+			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.custom_stats = { ads_speed_mult = 0.95 }
+		end
 		
 
 	--[[ GAMBYT'S MODS ]]
@@ -29803,14 +29824,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts.wpn_fps_lmg_hcar_body_ww2 then
 				--BAR kit
 				self.parts.wpn_fps_lmg_hcar_body_ww2.supported = true
-				self.parts.wpn_fps_lmg_hcar_body_ww2.stats = {
-					value = 0,
-					recoil = 2,
-				}
-				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats = {
-					rof_mult = 0.9
-				}
-				self.parts.wpn_fps_lmg_hcar_body_ww2.forbids = nil
+				self.parts.wpn_fps_lmg_hcar_body_ww2.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_lmg_hcar_body_ww2.stats.recoil = 2
+				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats.rof_mult = 0.9
+				self.parts.wpn_fps_lmg_hcar_body_ww2.forbids = {}
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stance_mod = nil
 				self.parts.wpn_fps_lmg_hcar_body_ww2.override = {
 					wpn_fps_lmg_hcar_barrel_standard = {
@@ -35632,6 +35650,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_m4_body_dust.override[used_part_id] = {
 						unit = "units/mods/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_dust"
 					}
+				end
+			end
+		end
+	end
+
+	if self.parts.wpn_fps_lmg_hcar_body_ww2 then
+		for k, used_part_id in ipairs(self.wpn_fps_lmg_hcar.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_lmg_hcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_m4_body_dust.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "stock" or
+					self.parts[used_part_id].type == "sight" or
+					self.parts[used_part_id].type == "barrel" then
+						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id)
+					end
 				end
 			end
 		end

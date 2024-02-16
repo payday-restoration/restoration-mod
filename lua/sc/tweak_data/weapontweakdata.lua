@@ -15231,7 +15231,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4200,
-					min_mult = 0.4
+					min_mult = 0.6
 				}
 				self.m2.stats = {
 					damage = 30,
@@ -15253,7 +15253,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.panic_suppression_chance = 0.05
 			end
 
-
 			if self.m1a1 then
 				self.m1a1.categories = { 
 					"assault_rifle",
@@ -15273,8 +15272,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.supported = true
 				self.m1a1.ads_speed = 0.200
 				self.m1a1.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 4200,
+					start_dist = 1800,
+					end_dist = 4900,
 					min_mult = 0.4
 				}
 				self.m1a1.stats = {

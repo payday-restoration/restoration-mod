@@ -24823,10 +24823,94 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 			if self.parts.wpn_fps_upg_m1a1_scope_m84 then --Pawcio's RAID M1A1/M2 Carbines
+				--Shared
+				self.parts.wpn_fps_upg_m1a1_barrel_long.supported = true
+				self.parts.wpn_fps_upg_m1a1_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_m1a1_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_m1a1_barrel_short.supported = true
+				self.parts.wpn_fps_upg_m1a1_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_upg_m1a1_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
 				self.parts.wpn_fps_upg_m1a1_scope_m84.supported = true
 				self.parts.wpn_fps_upg_m1a1_scope_m84.desc_id = "bm_wp_upg_o_2_5"
 				self.parts.wpn_fps_upg_m1a1_scope_m84.stats = { value = 1, zoom = 15 }
-				
+
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.supported = true
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.desc_id = "bm_wp_upg_flash_hider"
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.has_description = true
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats = deep_clone(muzzle_device.muzzle_a_stats)
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats.suppression = 12
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+
+				self.parts.wpn_fps_upg_m1a1_ns_supp.supported = true
+				self.parts.wpn_fps_upg_m1a1_ns_supp.has_description = true
+				self.parts.wpn_fps_upg_m1a1_ns_supp.desc_id = "bm_wp_upg_suppressor"
+				self.parts.wpn_fps_upg_m1a1_ns_supp.stats = {
+					value = 2,
+					suppression = 12,
+					alert_size = -1
+				}
+				self.parts.wpn_fps_upg_m1a1_ns_supp.custom_stats = nil
+				self.parts.wpn_fps_upg_m1a1_ns_supp.perks = {"silencer"}
+
+				--M1A1
+				self.parts.wpn_fps_upg_m1a1_mag_30dual.stats = {
+					value = 2,
+					reload = -5,
+					extra_ammo = 15,
+					concealment = -2
+				}
+				self.parts.wpn_fps_upg_m1a1_mag_30dual.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				self.parts.wpn_fps_upg_m1a1_mag_30dual.stats = {
+					value = 2,
+					spread = -1,
+					reload = -2,
+					extra_ammo = 15,
+					concealment = -3
+				}
+				self.parts.wpn_fps_upg_m1a1_mag_30dual.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+
+				--M2
+				self.parts.wpn_fps_upg_m2_mag_15.supported = true
+				self.parts.wpn_fps_upg_m2_mag_15.stats = { value = 1, reload = 5, concealment = 2, extra_ammo = -15}
+				self.parts.wpn_fps_upg_m2_mag_15.custom_stats = { ads_speed_mult = 0.95 }
+
+				self.parts.wpn_fps_upg_m2_mag_30dual.supported = true
+				self.parts.wpn_fps_upg_m2_mag_30dual.stats = { value = 2, reload = 3, concealment = -1, spread = -1}
+				self.parts.wpn_fps_upg_m2_mag_30dual.custom_stats = nil
+
+				self.parts.wpn_fps_upg_m2_stock_cheekrest.supported = true
+				self.parts.wpn_fps_upg_m2_stock_cheekrest.stats = { value = 2, recoil = 2, concealment = -1}
+				self.parts.wpn_fps_upg_m2_stock_cheekrest.custom_stats = nil
+
+				self.parts.wpn_fps_upg_m2_stock_ammopounches.supported = true
+				self.parts.wpn_fps_upg_m2_stock_ammopounches.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				self.parts.wpn_fps_upg_m2_stock_ammopounches.custom_stats = nil
+
+				self.parts.wpn_fps_upg_m2_stock_m1a1.supported = true
+				self.parts.wpn_fps_upg_m2_stock_m1a1.stats = deep_clone(stocks.fixed_to_folder_stats)
+				self.parts.wpn_fps_upg_m2_stock_m1a1.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+
+				self.parts.wpn_fps_upg_m2_stock_m1a1ammopounches.supported = true
+				self.parts.wpn_fps_upg_m2_stock_m1a1ammopounches.stats = {
+					value = 4,
+					spread = -2,
+					recoil = -4,
+					concealment = 2,
+					reload = 3
+				}
+				self.parts.wpn_fps_upg_m2_stock_m1a1ammopounches.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+
 			end
 
 	--[[ RJC9000'S MODS ]]

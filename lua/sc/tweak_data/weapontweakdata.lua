@@ -15025,7 +15025,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.lock_slide = true
 				self.sks.lock_slide_alt = true
 				self.sks.recategorize = {"dmr_ar"}
-				self.sks.damage_type = "sniper"
+				self.sks.damage_type = "assault_rifle"
 				self.sks.AMMO_MAX = 80
 				self.sks.CLIP_AMMO_MAX = 10
 				self.sks.tactical_reload = 1
@@ -15069,7 +15069,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"dmr_l"
 				}
 				self.skspug.recategorize = {"dmr_ar"}
-				self.skspug.damage_type = "sniper"
+				self.skspug.damage_type = "assault_rifle"
 				self.skspug.AMMO_MAX = 40
 				self.skspug.CLIP_AMMO_MAX = 20
 				self.skspug.tactical_reload = 1
@@ -15210,6 +15210,95 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3hk79.timers.reload_exit_not_empty = 1
 				self.g3hk79.reload_speed_multiplier = 1
 			end
+
+			if self.m2 then
+				self.m2.categories = { 
+					"assault_rifle",
+				}
+				self.m2.recategorize = {"heavy_ar"}
+				self.m2.damage_type = "assault_rifle"
+				self.m2.AMMO_MAX = 120
+				self.m2.CLIP_AMMO_MAX = 30
+				self.m2.tactical_reload = 1
+				self.m2.FIRE_MODE = "auto"
+				self.m2.CAN_TOGGLE_FIREMODE = true
+				self.m2.fire_mode_data = {}
+				self.m2.fire_mode_data.fire_rate = 0.08
+				--self.m2.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak_smol"
+				self.m2.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.m2.supported = true
+				self.m2.ads_speed = 0.220
+				self.m2.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 4200,
+					min_mult = 0.4
+				}
+				self.m2.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 75,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.m2.lock_slide = true
+				self.m2.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.m2.stats_modifiers = nil
+				self.m2.panic_suppression_chance = 0.05
+			end
+
+
+			if self.m1a1 then
+				self.m1a1.categories = { 
+					"assault_rifle",
+					"dmr_l"
+				}
+				self.m1a1.recategorize = {"dmr_ar"}
+				self.m1a1.damage_type = "assault_rifle"
+				self.m1a1.AMMO_MAX = 80
+				self.m1a1.CLIP_AMMO_MAX = 15
+				self.m1a1.tactical_reload = 1
+				self.m1a1.FIRE_MODE = "single"
+				self.m1a1.CAN_TOGGLE_FIREMODE = false
+				self.m1a1.fire_mode_data = {}
+				self.m1a1.fire_mode_data.fire_rate = 0.1
+				--self.m1a1.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak_smol"
+				self.m1a1.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.m1a1.supported = true
+				self.m1a1.ads_speed = 0.200
+				self.m1a1.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 4200,
+					min_mult = 0.4
+				}
+				self.m1a1.stats = {
+					damage = 45,
+					spread = 81,
+					recoil = 75,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.m1a1.lock_slide = true
+				self.m1a1.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.m1a1.stats_modifiers = nil
+				self.m1a1.armor_piercing_chance = 0.25
+				self.m1a1.can_shoot_through_enemy = false
+				self.m1a1.panic_suppression_chance = 0.05
+			end
+
 						
 			if self.moss464spx then --Pawcio's SPX Centerfire
 				self.moss464spx.recategorize = {"light_snp"}

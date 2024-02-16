@@ -24822,6 +24822,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
+			if self.parts.wpn_fps_upg_m1a1_scope_m84 then --Pawcio's RAID M1A1/M2 Carbines
+				self.parts.wpn_fps_upg_m1a1_scope_m84.supported = true
+				self.parts.wpn_fps_upg_m1a1_scope_m84.desc_id = "bm_wp_upg_o_2_5"
+				self.parts.wpn_fps_upg_m1a1_scope_m84.stats = { value = 1, zoom = 15 }
+				
+			end
+
 	--[[ RJC9000'S MODS ]]
 
 		--RJC9000 and PlayBONK's PD3 QBZ-191

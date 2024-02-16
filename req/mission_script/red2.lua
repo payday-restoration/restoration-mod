@@ -243,6 +243,7 @@ return {
 		}
 	},
 	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)
+	--Spawn 2 defend shields on Overkill and above
 	[100635] = {
 		on_executed = {
 			{id = 400010, delay = 0},
@@ -254,7 +255,9 @@ return {
 			{id = 400016, delay = 0},
 			{id = 400017, delay = 0},
 			{id = 400018, delay = 0},
-			{id = 400019, delay = 0}
+			{id = 400019, delay = 0},
+			{id = 400041, delay = 0},
+			{id = 400042, delay = 0}
 		}
 	},
 	--Spawn two extra dozers on DS as a 193+ throwback
@@ -271,11 +274,14 @@ return {
 		}
 	},
 	--spawn 3 rushing cloakers after 50 seconds of starting the assault
+	--spawn 2 scripted tasers after 90 seconds of starting the assault
 	[103984] = { 
 		on_executed = {
 			{id = 400030, delay = 50},
 			{id = 400031, delay = 50},
-			{id = 400032, delay = 50}
+			{id = 400032, delay = 50},
+			{id = 400037, delay = 90},
+			{id = 400038, delay = 90}
 		}
 	},
 	[102068] = {
@@ -299,6 +305,7 @@ return {
 		}
 	},
 	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
+	--Spawn 2 blackdozers as a sudden spawn on DS (50% chance)
 	[103710] = { 
 		values = {
 			chance = stair_blockade_chance
@@ -308,7 +315,9 @@ return {
 			{id = 400026, delay = 0},
 			{id = 400027, delay = 0},
 			{id = 400028, delay = 0},
-			{id = 400029, delay = 0}
+			{id = 400029, delay = 0},
+			{id = 400035, delay = 6},
+			{id = 400036, delay = 6}
 		}
 	},
 	--Higher diffs forces both scripted window cloaker and taser spawns

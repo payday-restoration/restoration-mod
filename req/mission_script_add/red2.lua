@@ -2,6 +2,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
 local sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local tank_black = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
 local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
@@ -10,14 +11,17 @@ local security_1 = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
 local security_2 = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 local security_3 = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local diff_scaling = 0.125 * difficulty
+local diff_scaling_1 = 0.125 * difficulty
+local diff_scaling_2 = 0.065 * difficulty
 local hard_above = difficulty >= 3
 local very_hard_above = difficulty >= 4
+local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
-local enabled_chance_more_guards = math.random() < diff_scaling
-local enabled_chance_shields = math.random() < diff_scaling
-local enabled_chance_cloakers = math.random() < diff_scaling
+local enabled_chance_more_guards = math.random() < diff_scaling_1
+local enabled_chance_shields = math.random() < diff_scaling_1
+local enabled_chance_cloakers = math.random() < diff_scaling_1
+local enabled_chance_dozers = math.random() < diff_scaling_2
 
 	if difficulty == 7 then
 		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
@@ -100,14 +104,14 @@ local optsSniper_3 = {
 local optsSniper_4 = {
 	enemy = sniper,
 	participate_to_group_ai = true,
-	on_executed = { { id = 103127, delay = 3 } },
+	on_executed = { { id = 400033, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_5 = {
 	enemy = sniper,
 	participate_to_group_ai = true,
-	on_executed = { { id = 103124, delay = 3 } },
+	on_executed = { { id = 400034, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
@@ -135,7 +139,7 @@ local optsCloaker_rush_1 = {
     enabled = (hard_above and enabled_chance_cloakers)
 }
 local optsCloaker_rush_2 = {
-    enemy = cloaker,
+	enemy = cloaker,
 	participate_to_group_ai = true,
 	trigger_times = 3,
 	spawn_action = "e_sp_repel_into_window",
@@ -150,6 +154,30 @@ local optsTaser = {
     enemy = taser,
 	participate_to_group_ai = true,
     enabled = true
+}
+local optsTaser_special = {
+    enemy = taser,
+	participate_to_group_ai = true,
+	spawn_action = "e_sp_down_12m",
+    enabled = true
+}
+local optsDozerAmbush = {
+    enemy = tank_black,
+	participate_to_group_ai = true,
+	spawn_action = "e_sp_down_10m_swing_in_var2",
+    enabled = (death_sentence and enabled_chance_dozers)
+}
+local optsShield_Defend_1 = {
+    enemy = shield,
+    on_executed = { { id = 400040, delay = 0 } },
+	participate_to_group_ai = true,
+    enabled = overkill_above
+}
+local optsShield_Defend_2 = {
+    enemy = shield,
+    on_executed = { { id = 400039, delay = 0 } },
+	participate_to_group_ai = true,
+    enabled = overkill_above
 }
 local optsSWAT_Heavy = {
     enemy = swat_shotgunner,
@@ -170,6 +198,15 @@ local optsSniper_SO = {
 	align_rotation = true,
 	interval = 2,
     so_action = "AI_sniper"
+}
+local optsShieldDefend_SO = {
+	SO_access = "2048",
+	scan = true,
+	align_position = true,
+	needs_pos_rsrv = true,
+	align_rotation = true,
+	interval = 2,
+    so_action = "AI_defend"
 }
 
 return {
@@ -404,6 +441,76 @@ return {
             Vector3(677, 12, 475.020),
             Rotation(90, -0, -0),
             optsCloaker_rush_2
+        ),
+		restoration:gen_so(
+            400033,
+            "special_sniper_so_2",
+            Vector3(-1175, -1375, 475),
+            Rotation(0, 0, 0),
+            optsSniper_SO
+        ),
+		restoration:gen_so(
+            400034,
+            "special_sniper_so_3",
+            Vector3(-1000, -1375, 475),
+            Rotation(0, 0, 0),
+            optsSniper_SO
+        ),
+		restoration:gen_dummy(
+            400035,
+            "dozer_ambush_elevator_1",
+            Vector3(5879, -3035, 464.309),
+            Rotation(90, -0, -0),
+            optsDozerAmbush
+        ),
+		restoration:gen_dummy(
+            400036,
+            "dozer_ambush_elevator_2",
+            Vector3(5879, -3252, 464.309),
+            Rotation(90, -0, -0),
+            optsDozerAmbush
+        ),
+		restoration:gen_dummy(
+            400037,
+            "taser_special_1",
+            Vector3(-777, -1616, 475),
+            Rotation(0, 0, -0),
+            optsTaser_special
+        ),
+		restoration:gen_dummy(
+            400038,
+            "taser_special_2",
+            Vector3(-861, -1616, 475),
+            Rotation(0, 0, -0),
+            optsTaser_special
+        ),
+		restoration:gen_so(
+            400039,
+            "shield_defend_so_1",
+            Vector3(3307, 700, -15),
+            Rotation(90, -0, -0),
+            optsShieldDefend_SO
+        ),
+		restoration:gen_so(
+            400040,
+            "shield_defend_so_2",
+            Vector3(3307, 1800, -15),
+            Rotation(90, -0, -0),
+            optsShieldDefend_SO
+        ),
+		restoration:gen_dummy(
+            400041,
+            "shield_defend_1",
+            Vector3(3963, 1836, -42.895),
+            Rotation(90, -0, -0),
+            optsShield_Defend_1
+        ),
+        restoration:gen_dummy(
+            400042,
+            "shield_defend_2",
+            Vector3(3959, 721, -43.895),
+            Rotation(90, -0, -0),
+            optsShield_Defend_2
         )
     }
 }

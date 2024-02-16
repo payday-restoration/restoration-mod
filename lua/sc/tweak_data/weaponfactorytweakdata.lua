@@ -35658,7 +35658,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_lmg_hcar_body_ww2 then
 		for k, used_part_id in ipairs(self.wpn_fps_lmg_hcar.uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
-				if not table.contains(self.wpn_fps_lmg_hcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_m4_body_dust.forbids, used_part_id) then
+				if not table.contains(self.wpn_fps_lmg_hcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id) then
 					if self.parts[used_part_id].type == "stock" or
 					self.parts[used_part_id].type == "sight" or
 					self.parts[used_part_id].type == "barrel" then

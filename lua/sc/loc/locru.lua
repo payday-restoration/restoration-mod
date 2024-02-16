@@ -1559,7 +1559,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Brenner 21/HK21
 		["bm_hk21_sc_desc"] = "Большая младшая сестра винтовки Гевер-3. Увеличенная скорострельность отлично подходит для подавляющего огня.",	
 		--HCAR
-		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.##",	
+		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.",	
 		--M60
 		["bm_m60_sc_desc"] = "Так называемая 'Свинка' - тяжелая и пожирающая патроны. Вблизи никому не выжить.",	
 		--Ksp 58	
@@ -2887,6 +2887,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shak12"] = "KS-12 Urban",
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 		["bm_w_hcar"] = "Akron HC",
+		["bm_w_hcar_bar"] = "Akron HC",
 		["bm_w_mcx_spear"] = "FIK M7",
 		["bm_w_vss"] = "Viktoriya",
 		["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
@@ -3067,6 +3068,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_rpk"] = "РПК",
 		["bm_w_hk21"] = "Бреннер 21",
 		["bm_w_hcar"] = "Акрон",
+		["bm_w_hcar_bar"] = "Акрон",
 		["bm_w_m60"] = "M60",
 		["bm_w_par"] = "КСП 58",
 		["bm_w_mg42"] = "Косторез 42",
@@ -3792,6 +3794,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
 					--HCAR
 					["bm_w_hcar"] = "Ohio Ordnance HCAR",
+					["bm_w_hcar_bar"] = "Browning BAR",
 					--GARAND
 					["bm_w_ching"] = "Springfield Armory M1 Garand",
 					["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",

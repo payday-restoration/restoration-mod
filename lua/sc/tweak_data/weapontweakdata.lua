@@ -9195,8 +9195,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.famas.stats_modifiers = nil
 						self.famas.timers.reload_not_empty = 2.6
-						self.famas.timers.reload_exit_empty = 0.4
 						self.famas.timers.reload_exit_not_empty = 0.55
+						self.famas.timers.reload_empty = 3.65
+						self.famas.timers.reload_exit_empty = 0.6
 						self.famas.panic_suppression_chance = 0.05
 						self.famas.BURST_FIRE = 3
 						self.famas.ADAPTIVE_BURST_SIZE = false
@@ -10541,6 +10542,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sbl.BURST_FIRE_SPREAD_MULTIPLIER = 2
 						self.sbl.CAN_TOGGLE_FIREMODE = false
 						self.sbl.kick = self.stat_info.kick_tables.left_kick
+						self.sbl.shell_ejection = "_dmc/effects/shell_shak_sniper"
 						self.sbl.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.sbl.supported = true
 						self.sbl.ads_speed = 0.340
@@ -15224,7 +15226,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.CAN_TOGGLE_FIREMODE = true
 				self.m2.fire_mode_data = {}
 				self.m2.fire_mode_data.fire_rate = 0.08
-				--self.m2.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak_smol"
+				self.m2.shell_ejection = "_dmc/effects/shell_shak_smol"
 				self.m2.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.m2.supported = true
 				self.m2.ads_speed = 0.220
@@ -15267,7 +15269,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.CAN_TOGGLE_FIREMODE = false
 				self.m1a1.fire_mode_data = {}
 				self.m1a1.fire_mode_data.fire_rate = 0.1
-				--self.m1a1.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak_smol"
+				self.m1a1.shell_ejection = "_dmc/effects/shell_shak_smol"
 				self.m1a1.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.m1a1.supported = true
 				self.m1a1.ads_speed = 0.200
@@ -15407,6 +15409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1894.fire_mode_data.fire_rate = 0.857142857
 				self.m1894.fire_rate_multiplier = 1.4285714
 				self.m1894.CAN_TOGGLE_FIREMODE = false
+				self.m1894.shell_ejection = "_dmc/effects/shell_shak_sniper"
 				self.m1894.kick = self.stat_info.kick_tables.right_kick
 				self.m1894.supported = true
 				self.m1894.ads_speed = 0.260
@@ -17115,7 +17118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbeta.fire_mode_data = {}
 				self.sbeta.fire_mode_data.fire_rate = 0.9473684
 				self.sbeta.fire_rate_multiplier = 1.5
-				self.sbeta.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+				self.sbeta.shell_ejection = "_dmc/effects/shell_shak_sniper"
 				self.sbeta.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 				self.sbeta.CAN_TOGGLE_FIREMODE = false
 				self.sbeta.kick = self.stat_info.kick_tables.vertical_kick
@@ -17711,7 +17714,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pd3_lynx.timers.reload_empty = 3.5
 				self.pd3_lynx.timers.reload_exit_empty = 0.9
 			end
-
 
 			if self.raid_ww2_bren then --RJC9000 and PlayBONK's RAID WWII Bren Mk1
 				self.raid_ww2_bren.recategorize = { "heavy_mg" }

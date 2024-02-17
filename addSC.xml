@@ -1303,9 +1303,12 @@
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
 	
-	<!--Weapon Mod Trails-->
-	<!--M249/240 casings-->
+	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
+	<!--Weapon Mod Trails-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>

@@ -24822,7 +24822,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
-			if self.parts.wpn_fps_upg_m1a1_scope_m84 then --Pawcio's RAID M1A1/M2 Carbines
+			if self.parts.wpn_fps_upg_m1a1_scope_m84 then --Pawcio's BF M1A1/M2 Carbines
 				--Shared
 				self.parts.wpn_fps_upg_m1a1_barrel_long.supported = true
 				self.parts.wpn_fps_upg_m1a1_barrel_long.stats = deep_clone(barrels.long_b2_stats)

@@ -15236,10 +15236,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.stats = {
 					damage = 30,
 					spread = 71,
-					recoil = 75,
+					recoil = 73,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 24,
+					concealment = 22,
 					suppression = 8,
 					alert_size = 1,
 					extra_ammo = 101,
@@ -15279,7 +15279,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.stats = {
 					damage = 45,
 					spread = 81,
-					recoil = 75,
+					recoil = 71,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 27,

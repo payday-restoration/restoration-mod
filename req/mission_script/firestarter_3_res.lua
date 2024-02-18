@@ -1,5 +1,5 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local pro_job = Global.game_settings and Global.game_settings.one_down
 --Why not have a blackdozer in one of the choppers, yeah?
 local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"

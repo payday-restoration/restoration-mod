@@ -86,6 +86,10 @@ local optsCloaker_Hide_SO_2 = {
 	interval = 2,
     so_action = "e_so_sneak_wait_stand"
 }
+local optsRandom_Cloakers = {
+	on_executed = { { id = 400004, delay = 0 }, { id = 400005, delay = 0 }, { id = 400006, delay = 0 }, { id = 400007, delay = 0 }, { id = 400008, delay = 0 } },
+	amount = 3
+}
 
 return {
     elements = {
@@ -210,6 +214,10 @@ return {
             Vector3(-6642, 1505, -599),
             Rotation(0, 0, -0),
             optsCloaker_Hide_SO_1
+        ),
+		restoration:gen_random(
+            400018,
+            optsRandom_Cloakers
         )
     }
 }

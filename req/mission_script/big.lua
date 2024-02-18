@@ -177,9 +177,7 @@ return {
 	[101377] = {
 		on_executed = {
 			{ id = 400014, delay = 5 },
-			{ id = 400015, delay = 5 },
-			{ id = 400018, delay = 5 },
-			{ id = 400019, delay = 5 }
+			{ id = 400015, delay = 5 }
 		}
 	},	
 	--Trigger ambush cloakers

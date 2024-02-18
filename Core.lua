@@ -243,7 +243,6 @@ function restoration:Init()
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
-		"chca", --Black Cat Heist
 		"trai", --Lost in Transit
 		"corp", --Hostile Takeover
 		"mus", --The Diamond
@@ -278,6 +277,7 @@ function restoration:Init()
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2", --Big Oil 2. Scripted cloaker hell.
+		"arena", -- Alesso Heist
 		"cane", --Santa's Workshop
 		"brb", --Brooklyn Bank
 		"born", --Biker 1
@@ -351,6 +351,7 @@ function restoration:Init()
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
 		"pbr2", --Birth of Sky
+		"chca", --Black Cat Heist
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy

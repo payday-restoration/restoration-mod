@@ -15253,7 +15253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m2.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.m2.stats_modifiers = nil
 				self.m2.panic_suppression_chance = 0.05
-				self.m2.timers.reload_exit_not_empty = 0.5
+				self.m2.timers.reload_exit_not_empty = 0.59
 				self.m2.timers.reload_exit_empty = 0.72
 			end
 

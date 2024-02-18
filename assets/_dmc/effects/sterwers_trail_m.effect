@@ -1,7 +1,6 @@
 <effect force_synch="false">
-    <use_random>
-        <effect name="_dmc/effects/parts/sw_mando_streak"/>
-    </use_random>
+    <use name="_dmc/effects/parts/sw_mando_streak_round"/>
+    <use name="_dmc/effects/parts/sw_mando_streak"/>
     <atom name="burka" min_size="1" max_size="1" lifetime="0.1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
         <initializerstack>
             <localboxrandomposition min="0 0 0" max="0 0 0"/>

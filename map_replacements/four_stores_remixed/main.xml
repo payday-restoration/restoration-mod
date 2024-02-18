@@ -1,0 +1,61 @@
+<table min_lib_ver="4.5" name="four_stores_remixed">
+	<level ai_group_type="america" briefing_dialog="Play_pln_fourstores_stage1_brief" name_id="heist_four_stores_hl" brief_id="heist_four_stores_briefing" cube="cube_apply_heist_bank" ghost_bonus="0.05" id="four_stores_remixed" intro_event="Play_pln_fourstores_stage1_intro_a" max_bags="5" music="heist">
+		<assets/>
+		<outro_event>
+			<value_node value="Play_pln_fourstores_stage1_end_a"/>
+			<value_node value="Play_pln_fourstores_stage1_end_b"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/vlad_four_stores"/>
+			<value_node value="levels/narratives/vlad/four_stores/world"/>
+			<value_node value="levels/narratives/vlad/four_stores/world_sounds"/>
+			<value_node value="levels/narratives/vlad/four_stores/world/world"/>
+			<value_node value="levels/narratives/vlad/four_stores/editor_only/editor_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="vld_fourstores_brf" contact="vlad" name_id="heist_four_stores_hl" debrief_event="vld_fourstores_debrief" brief_id="heist_four_stores_crimenet" icon="guis/dlcs/bro/textures/pd2/crimenet/fourstores" id="four_stores" jc="20" load_screen="guis/dlcs/pic/textures/loading/job_fourstores" max_mission_xp="6000" min_mission_xp="6000" region="street">
+		<chain>
+			<table level_id="four_stores_remixed" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="8000"/>
+			<value_node value="16000"/>
+			<value_node value="40000"/>
+			<value_node value="80000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+			<value_node value="100000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="vld_fourstores_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_fours1"/>
+			<value_node value="cn_fours2"/>
+			<value_node value="cn_fours3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<payout>
+			<value_node value="9000"/>
+			<value_node value="18000"/>
+			<value_node value="45000"/>
+			<value_node value="90000"/>
+			<value_node value="120000"/>
+			<value_node value="120000"/>
+			<value_node value="120000"/>
+		</payout>
+	</narrative>
+</table>

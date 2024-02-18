@@ -1,9 +1,0 @@
-<materials version="3">
-    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP" decal_material="glass_breakable" version="2" name="glass_breakable">
-        <variable value="2 1 0.76999998092651" type="vector3" name="fresnel_settings"/>
-        <opacity_texture file="units/payday2/glass/glass_clear_small_op"/>
-        <diffuse_texture file="units/payday2/glass/glass_clear_small_blue_df"/>
-         <reflection_texture file="environments/cubemaps/cubemap_hospital_01" type="cubemap"/>
-        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
-    </material>
-</materials>

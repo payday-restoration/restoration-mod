@@ -37,8 +37,6 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 
 	managers.player:spawn_poison_gas(pos, normal, tweak_entry, self._unit)
 	managers.explosion:play_sound_and_effects(pos, normal, range, self._custom_params)
-	self._unit:body("static_body"):set_fixed()
-	self._unit:set_extension_update_enabled(Idstring("base"), false)
 
 	self._timer = nil
 	self._detonated = true
@@ -46,8 +44,12 @@ function PoisonGasGrenade:_detonate(tag, unit, body, other_unit, other_body, pos
 	self:remove_trail_effect()
 
 	if Network:is_server() then
-		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
+		if self._unit:id() ~= -1 then
+			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "base", GrenadeBase.EVENT_IDS.detonate)
+		end
 	end
+
+	self:_handle_hiding_and_destroying(false, nil)
 end
 
 function PoisonGasGrenade:_detonate_on_client()

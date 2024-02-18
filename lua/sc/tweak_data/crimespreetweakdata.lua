@@ -191,11 +191,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.bex
 			},
 			{
-				stage_id = "four_stores",
+				stage_id = "four_stores_remixed",
 				add = debug_very_short_add,
-				id = "four_stores",
+				id = "four_stores_remixed",
 				icon = "csm_four_stores",
-				level = tweak_data.narrative.stages.four_stores
+				level = tweak_data.narrative.stages.four_stores_remixed
 			},
 			{
 				stage_id = "ukrainian_job_res",
@@ -882,6 +882,13 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				data = {
 					damage = {5, "add"}
 				}
+			},
+			--Cloakers tend to spawn in groups
+			{
+				id = "spooc_squad",
+				class = "ModifierSpoocSquad",
+				icon = "crime_spree_assault_extender",
+				data = {}
 			},
 			--gren go boom
 			{

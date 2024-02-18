@@ -1,6 +1,11 @@
+local pro_job = Global.game_settings and Global.game_settings.one_down
 function PlayerTweakData:_set_easy()
 	self.damage.automatic_respawn_time = 120
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	end
 	self.suspicion.max_value = 6
 	self.suspicion.range_mul = 0.8
 	self.suspicion.buildup_mul = 0.8
@@ -8,7 +13,11 @@ end
 
 function PlayerTweakData:_set_normal()
 	self.damage.automatic_respawn_time = 175
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	end
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
@@ -16,14 +25,22 @@ end
 
 function PlayerTweakData:_set_hard()
 	self.damage.automatic_respawn_time = 220
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	end
 	self.suspicion.max_value = 7
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
 end
 
 function PlayerTweakData:_set_overkill()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	end
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -31,7 +48,11 @@ function PlayerTweakData:_set_overkill()
 end
 
 function PlayerTweakData:_set_overkill_145()
-	self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.4
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.45
+	end
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
@@ -48,8 +69,12 @@ end
 function PlayerTweakData:_set_easy_wish()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1
-	self.suspicion.buildup_mul = 1	
-	self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	self.suspicion.buildup_mul = 1
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	end
 	self.damage.custody_ammo_drained  = 0.75
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -64,7 +89,11 @@ function PlayerTweakData:_set_overkill_290()
 	self.suspicion.max_value = 9
 	self.suspicion.range_mul = 1.1
 	self.suspicion.buildup_mul = 1.1
-	self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.35
+	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.30
 	}
@@ -96,7 +125,11 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.max_value = 10
 	self.suspicion.range_mul = 1.2
 	self.suspicion.buildup_mul = 1.2
-	self.damage.MIN_DAMAGE_INTERVAL = 0.25
+	if pro_job then
+		self.damage.MIN_DAMAGE_INTERVAL = 0.2
+	else
+		self.damage.MIN_DAMAGE_INTERVAL = 0.25
+	end
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.3
 	}		
@@ -711,6 +744,17 @@ function PlayerTweakData:_init_awp()
 	pivot_head_rotation = Rotation(0.12, -0.07, 0)
 	self.stances.awp.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.awp.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+end
+
+local default_init_g3 = PlayerTweakData._init_g3
+function PlayerTweakData:_init_g3()
+	default_init_g3(self)	
+	pivot_shoulder_translation = Vector3(10.6681, 21.5458, -1.73827)
+	pivot_shoulder_rotation = Rotation(0.106686, -0.0859334, 0.627737)
+	pivot_head_translation = Vector3(-0.01, 15, 0.16)
+	pivot_head_rotation = Rotation(0.01, 0, 0)
+	self.stances.g3.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.g3.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end
 
 

@@ -140,6 +140,16 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 				mvector3.spread(mvec_spread, self:_get_spread(user_unit))
 			end
 
+			local char_tweak = not self._set_trail and alive(user_unit) and user_unit.base and user_unit:base().char_tweak and user_unit:base():char_tweak()
+			if char_tweak then
+				if char_tweak.dt_suppress then
+					self._trail_effect_table.effect = Idstring("_dmc/effects/knockback_trail")
+				elseif char_tweak.dt_sgunner or char_tweak.slowing_bullets then
+					self._trail_effect_table.effect = Idstring("_dmc/effects/concussion_trail")
+				end
+				self._set_trail = true
+			end
+
 			self:_spawn_trail_effect(mvec_spread, col_ray)
 		end
 	end

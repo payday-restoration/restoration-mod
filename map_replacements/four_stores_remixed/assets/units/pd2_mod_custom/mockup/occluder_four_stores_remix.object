@@ -1,0 +1,89 @@
+<dynamic_object>
+    <diesel orientation_object="rp_occluder_four_stores" materials="units/payday2/mockup/occluder_plane" />
+	 <bodies>
+        <body name="static_body" template="editor" enabled="true" >
+            <object name="rp_occluder_four_stores"/>
+            <object collision_type="mesh_mopp" enabled="true" name="g_occluder_plane_04"/>
+        </body>
+    </bodies>
+	<occluders>
+        <occluder name="oc_plane_01" />
+		<occluder name="oc_plane_02" />
+		<occluder name="oc_plane_03" />
+		<occluder name="oc_plane_04" />
+		<occluder name="oc_plane_05" />
+		<occluder name="oc_plane_06" />
+		<occluder name="oc_plane_07" />
+		<occluder name="oc_plane_08" />
+		<occluder name="oc_plane_09" />
+		<occluder name="oc_plane_10" />
+		<occluder name="oc_plane_11" />
+		<occluder name="oc_plane_12" />
+		<occluder name="oc_plane_13" />
+		<occluder name="oc_plane_14" />
+		<occluder name="oc_plane_15" />
+		<occluder name="oc_plane_16" />
+		<occluder name="oc_plane_17" />
+		<occluder name="oc_plane_18" />
+		<occluder name="oc_plane_19" />
+		<occluder name="oc_plane_20" />
+		<occluder name="oc_plane_21" />
+		<occluder name="oc_plane_22" />
+		<occluder name="oc_plane_23" />
+		<occluder name="oc_plane_24" />
+		<occluder name="oc_plane_25" />
+		<occluder name="oc_plane_26" />
+		<occluder name="oc_plane_27" />
+		<occluder name="oc_plane_28" />
+		<occluder name="oc_plane_29" />
+		<occluder name="oc_plane_30" />
+		<occluder name="oc_plane_31" />
+		<occluder name="oc_plane_32" />
+		<occluder name="oc_plane_33" />
+		<occluder name="oc_plane_34" />
+		<occluder name="oc_plane_35" />
+		<occluder name="oc_plane_36" />
+		<occluder name="oc_plane_37" />
+		<occluder name="oc_plane_38" />
+    </occluders>
+    <graphics>
+		<object name="g_occluder_plane_01" enabled="true"/>
+		<object name="g_occluder_plane_02" enabled="true"/>
+		<object name="g_occluder_plane_03" enabled="true"/>
+		<object name="g_occluder_plane_04" enabled="true"/>
+		<object name="g_occluder_plane_05" enabled="true"/>
+		<object name="g_occluder_plane_06" enabled="true"/>
+		<object name="g_occluder_plane_07" enabled="true"/>
+		<object name="g_occluder_plane_08" enabled="true"/>
+		<object name="g_occluder_plane_09" enabled="true"/>
+		<object name="g_occluder_plane_10" enabled="true"/>
+		<object name="g_occluder_plane_11" enabled="true"/>
+		<object name="g_occluder_plane_12" enabled="true"/>
+		<object name="g_occluder_plane_13" enabled="true"/>
+		<object name="g_occluder_plane_14" enabled="true"/>
+		<object name="g_occluder_plane_15" enabled="true"/>
+		<object name="g_occluder_plane_16" enabled="true"/>
+		<object name="g_occluder_plane_17" enabled="true"/>
+		<object name="g_occluder_plane_18" enabled="true"/>
+		<object name="g_occluder_plane_19" enabled="true"/>
+		<object name="g_occluder_plane_20" enabled="true"/>
+		<object name="g_occluder_plane_21" enabled="true"/>
+		<object name="g_occluder_plane_22" enabled="true"/>
+		<object name="g_occluder_plane_23" enabled="true"/>
+		<object name="g_occluder_plane_24" enabled="true"/>
+		<object name="g_occluder_plane_25" enabled="true"/>
+		<object name="g_occluder_plane_26" enabled="true"/>
+		<object name="g_occluder_plane_27" enabled="true"/>
+		<object name="g_occluder_plane_28" enabled="true"/>
+		<object name="g_occluder_plane_29" enabled="true"/>
+		<object name="g_occluder_plane_30" enabled="true"/>
+		<object name="g_occluder_plane_31" enabled="true"/>
+		<object name="g_occluder_plane_32" enabled="true"/>
+		<object name="g_occluder_plane_33" enabled="true"/>
+		<object name="g_occluder_plane_34" enabled="true"/>
+		<object name="g_occluder_plane_35" enabled="true"/>
+		<object name="g_occluder_plane_36" enabled="true"/>
+		<object name="g_occluder_plane_37" enabled="true"/>
+		<object name="g_occluder_plane_38" enabled="true"/>
+    </graphics>
+</dynamic_object>

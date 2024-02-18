@@ -21,6 +21,14 @@
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" >
 			<var name="_shield_unit_name" value="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx/ene_acc_shield_phalanx_dummy" />
+			<var name="_shield_break_data" type="table">
+				<var name="anim_global_switch" value="cop"/>
+				<var name="stats_name_switch" value="city_swat_titan"/>
+				<var name="tweak_table_name_switch" value="city_swat_titan"/>
+				<var name="hurt_data" value="table">
+					<var name="hurt_type" value="hurt"/>
+				</var>
+			</var>				
 		</extension>
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

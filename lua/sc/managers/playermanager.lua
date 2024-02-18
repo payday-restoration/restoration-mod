@@ -178,7 +178,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			local can_reload = primary_base and primary_base.can_reload and primary_base:can_reload()
 
 			if can_reload then
-				primary_base:on_reload()
+				primary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(primary_base:selection_index(), primary_base:ammo_info())
 			end
@@ -197,7 +197,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			local can_reload = secondary_base and secondary_base.can_reload and secondary_base:can_reload()
 
 			if can_reload then
-				secondary_base:on_reload()
+				secondary_base:on_reload(nil, true)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(secondary_base:selection_index(), secondary_base:ammo_info())
 			end
@@ -760,7 +760,7 @@ function PlayerManager:check_skills()
 	if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
 		local function speed_up_on_kill()
 			if #managers.player:smoke_screens() == 0 then
-				managers.player:speed_up_grenade_cooldown(1)
+				managers.player:speed_up_grenade_cooldown(2)
 			end
 		end
 
@@ -859,6 +859,20 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 
 	if damage_ext and regen_health_bonus > 0 then
 		damage_ext:restore_health(regen_health_bonus, true)
+	end
+end
+
+function PlayerManager:on_lethal_headshot_dealt(attacker_unit, attack_data)
+	if not self:player_unit() or attacker_unit ~= self:player_unit() then
+		return
+	end
+
+	self._message_system:notify(Message.OnLethalHeadShot, nil, attack_data)
+
+	local regen_armor_bonus_cd_reduction = managers.player:upgrade_value("player", "headshot_regen_armor_bonus_cd_reduction", 0)
+	local anarchist = managers.player:has_category_upgrade("player", "armor_grinding")
+	if self._on_headshot_dealt_t and not anarchist then
+		self._on_headshot_dealt_t = self._on_headshot_dealt_t - regen_armor_bonus_cd_reduction
 	end
 end
 
@@ -1327,7 +1341,7 @@ function PlayerManager:get_hostage_bonus_addend(category)
 end
 
 --Instantly reloads all equipped weapons. Used by Running from Death Ace.
-function PlayerManager:reload_weapons()
+function PlayerManager:reload_weapons(bypass_purse)
 	local weapons = {
 		self:player_unit():inventory():unit_by_selection(1), --Secondary
 		self:player_unit():inventory():unit_by_selection(2), --Primary
@@ -1337,7 +1351,7 @@ function PlayerManager:reload_weapons()
 	for _, weapon in pairs(weapons) do
 		if weapon and weapon.base then
 			local weapon_base = weapon:base()
-			weapon_base:on_reload(nil)
+			weapon_base:on_reload(nil, bypass_purse)
 			managers.statistics:reloaded()
 			managers.hud:set_ammo_amount(weapon_base:selection_index(), weapon_base:ammo_info())
 		end

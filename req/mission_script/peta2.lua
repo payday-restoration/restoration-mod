@@ -1,11 +1,12 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	--High PONR Timer to work with ponr player scaling
+	if difficulty_index <= 5 then
 		ponr_value = 1080
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 1050	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 1020		
 	end
 
@@ -39,11 +40,6 @@ return {
 	[100580] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
-	},
-	[101217] = {
-		values = {
-			interval = 10
-		}
 	},
 	[102374] = {
 		values = {

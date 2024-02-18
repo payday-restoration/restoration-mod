@@ -195,6 +195,7 @@ function PlayerInventoryGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "attack_speed" then
 			local base = tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)
+			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -209,6 +210,7 @@ function PlayerInventoryGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "impact_delay" then
 			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)) or 0
+			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -411,6 +413,15 @@ function PlayerInventoryGui:_get_armor_stats(name)
 			skill_stats[stat.name] = {
 				value = skill_value
 			}
+		elseif stat.name == "crit" then
+			local base = 0
+			local mod = managers.player:body_armor_value("crit", upgrade_level)
+			base_stats[stat.name] = {
+				value = (base + mod) * 100
+			}
+			skill_stats[stat.name] = {
+				value = managers.player:critical_hit_chance(detection_risk) * 100
+			}
 		end
 
 		skill_stats[stat.name].skill_in_effect = skill_stats[stat.name].skill_in_effect or skill_stats[stat.name].value ~= 0
@@ -455,6 +466,11 @@ function PlayerInventoryGui:setup_player_stats(panel)
 		},
 		{
 			name = "stamina"
+		},
+		{
+			name = "crit",
+			procent = true,
+			revert = true
 		}
 	}
 	local stats_panel = panel:child("stats_panel")

@@ -1,14 +1,21 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	--High PONR Timer to work with ponr player scaling
+	if difficulty_index <= 5 then
 		ponr_value = 1560	
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 1530	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 1500	
 	end
 	
+local biker_table = {
+	guard_biker = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1",
+	female_1 = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1",
+	female_2 = "units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2",
+	female_3 = "units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
+}
 local ponr_timer_player_mul = {
 		1,
 		0.85,
@@ -54,65 +61,71 @@ return {
 			GS_defend_shields = false
 		}
 	},
+	-- Remove red lights from keycard readers because vault can be opened in loud now
+	[103709] = {
+		values = {
+			enabled = false
+		}
+	},
 	--female/guard bikers
 	[100670] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
+            enemy = biker_table.female_3
 		}
 	},
 	[100673] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"
+            enemy = biker_table.female_2
 		}
 	},
 	[100116] = {
 		values = {
-            enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+            enemy = biker_table.guard_biker
 		}
 	},
 	[101571] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
+            enemy = biker_table.female_3
 		}
 	},
 	[101556] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"
+            enemy = biker_table.female_1
 		}
 	},
 	[101037] = {
 		values = {
-            enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+            enemy = biker_table.guard_biker
 		}
 	},
 	[101034] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"
+            enemy = biker_table.female_2
 		}
 	},
 	[101222] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
+            enemy = biker_table.female_3
 		}
 	},
 	[101235] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2"
+            enemy = biker_table.female_2
 		}
 	},
 	[101310] = {
 		values = {
-            enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+            enemy = biker_table.guard_biker
 		}
 	},
 	[101683] = {
 		values = {
-            enemy = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"
+            enemy = biker_table.female_1
 		}
 	},
 	[101866] = {
 		values = {
-            enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+            enemy = biker_table.guard_biker
 		}
 	}
 }

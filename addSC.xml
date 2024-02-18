@@ -1,5 +1,5 @@
 <table directory="assets">		
-    <!--Heavy Shotgunner Helmet Plink-->
+    <!--Heavy Shotgunner Helmet  Plink-->
 	<add from_db="true" path="soundbanks/weapon_swatturret" type="bnk">
 		<bnk load="true" path="soundbanks/weapon_swatturret" unload="true"/>
 	</add>
@@ -23,6 +23,10 @@
 	<!--unit				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
 	<!--model				path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
 	<!--sequence_manager	path="units/payday2/equipment/gen_interactable_sec_safe_05x05_titan/gen_interactable_sec_safe_05x05_titan" force="true"/-->
+	
+    <!--Security Cameras-->    
+    <sequence_manager   path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+    <!--texture         path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera_df" force="true"-->   
 	
 	<!--ASU Laser-->	
 	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser" />
@@ -94,6 +98,19 @@
 	<!-- hotline day 2 -->
 	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
+	
+	<!-- Border Crossing-->
+	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/mex/mex_tanker/world/world" force="true" unload="true"/>
+
+	<!-- Remove "editor_only" stuff that smh show up in usual game -->
+	<continent			path="levels/narratives/jiu/chas/world/world" force="true" unload="true"/> <!-- ~~Dragon~~ Dragan Heist -->
+	<continent			path="levels/narratives/vlad/peta/stage1/world/world" force="true" unload="true"/> <!-- Goat Sim D1 -->
+	
+	<continent			path="levels/narratives/locke/sah/world/world" force="true" unload="true"/> <!-- Increase ziplines speed on Shacklethorne Auction -->
+	
 	
 	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
 	
@@ -123,14 +140,27 @@
 	<mission			path="levels/instances/unique/fex/fex_security_room_left/world/world" force="true" /> 
 	<mission			path="levels/instances/unique/fex/fex_security_room_right/world/world" force="true" />
 	
+	<!--Boiling Point edit-->
 	<cover_data			path="levels/narratives/elephant/mad/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/elephant/mad/nav_manager_data" force="true" unload="true"/>
 	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/art2/art2" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/collision/collision" force="true" unload="true"/>
+	<!--proper textures for Boiling Point (and more authentic) by Psyhowithdrill-->
+	<texture path="units/pd2_dlc_mad/characters/civ_male_scientist_01/scientist_01_body_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/characters/civ_male_scientist_02/scientist_02_body_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/equipment/mad_interactable_door_keycard/screen_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_interactable_tablet_stand/mad_prop_interactable_tablet_stand_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_keycard/keycard_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_ctscanner/mad_prop_medical_ctscanner_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_glovebox/mad_prop_medical_glovebox_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_carm_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_trolley_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_military_laptop/mad_prop_military_laptop_screen_login_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/props/mad_prop_sign_electricity/mad_prop_sign_electricity_df" force="true"/>
 	
-	<mission			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
+	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
@@ -171,8 +201,6 @@
 	<mission			path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
 	
 	<continent			path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
-	
-	<!--<continent			path="levels/narratives/classics/dah/world/world" force="true" unload="true"/-->
 	
 	<cover_data			path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
@@ -223,12 +251,6 @@
 	<mission			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
-	
-	<!--First World Bank-->
-	<mission			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/> 
-	<nav_data			path="levels/narratives/classics/red2/nav_manager_data" force="true" unload="true"/>	
-	<cover_data			path="levels/narratives/classics/red2/cover_data" force="true" unload="true"/>
 
 	<!--UNDERCOVER-->
 	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
@@ -811,7 +833,8 @@
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
 	
 	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_omnia_helmet" force="true"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df" force="true"/>	
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_df" force="true"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/bulldozer_minigun_helmet_df" force="true"/>
 
 	<!--OMNIA BENELLI DOZER BITS-->	
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
@@ -1235,12 +1258,11 @@
 	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" load = "true"/>
+	
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	
@@ -1281,32 +1303,56 @@
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
 	
-	<!--Weapon Mod Trails-->
-	<!--M249/240 casings-->
+	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
+	<!--Weapon Mod Trails-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/nato_light_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/nato_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Warsaw Tracer-->
     <effect				path="_dmc/effects/warsaw_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/warsaw_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/warsaw_light_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/warsaw_big_light_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--STERWERS Tracer-->
     <effect				path="_dmc/effects/sterwers_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_sterwers_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_sterwers_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_r" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_r_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_republic_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_republic_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_e" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_e_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_empire_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_empire_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_t" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_t_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_techno_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_techno_streak_round" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/sterwers_trail_m" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Plasma Tracer-->
     <effect				path="_dmc/effects/plasma_b_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/plasma_b_trail_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/plasma_b_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/plasma_b_streak_round" force="false" load="true" unload="true" reload="true"/>
+	<!--Other Tracers-->
+    <effect				path="_dmc/effects/knockback_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
 	<!--Cloud-->
 	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	
@@ -2053,19 +2099,7 @@
 	<animation			path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
-	
-	<!--Money Thrower Death Animations-->
-	<animation			path="anims/shared/rifle/generic/death_money_var1" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var2" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var3" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var4" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var5" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var6" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var7" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var8" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var9" load="true"/>
-	<animation			path="anims/shared/rifle/generic/death_money_var10" load="true"/>
-	
+		
 	<!--LOD Vet Cop-->		
 	<object				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>

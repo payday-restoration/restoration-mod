@@ -3,6 +3,13 @@ if not tweak_data then
 end
 
 tweak_data.accessibility_colors.screenflash.hit_flash.default = Color(255, 255, 250, 180) / 255
+tweak_data.hud.revive_colors_resmod = {
+	restoration.Options:GetValue("HUD/Colors/DownsZero"),
+	restoration.Options:GetValue("HUD/Colors/DownsOne"),
+	restoration.Options:GetValue("HUD/Colors/DownsTwo"),
+	restoration.Options:GetValue("HUD/Colors/DownsThreePlus"),
+	restoration.Options:GetValue("HUD/Colors/DownsThreePlus")
+}
 
 tweak_data.ammo = {}
 tweak_data.ammo.ricochet = {}
@@ -39,11 +46,13 @@ tweak_data.pistol = {
 
 tweak_data.bow = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.6
+	ads_move_speed_mult = 0.6,
+	shake_mul = 0
 }
 tweak_data.crossbow = {
 	swap_bonus = 1,
-	ads_move_speed_mult = 0.5
+	ads_move_speed_mult = 0.5,
+	shake_mul = 0
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -59,17 +68,25 @@ tweak_data.grenade_launcher = {
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.4, --lowered to 0.2
+		shake_mul = 0
 	}
 
 tweak_data.shotgun = {
 	ads_move_speed_mult = 0.5,
-	ads_moving_spread_mult = 1.25
+	ads_moving_spread_mult = 1.15,
+	shake_mul = 2
 }
+	tweak_data.shotgun_auto = {
+		hipfire_spread_mult = 0.25,
+	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.25,
+		hipfire_spread_mult = 1.35,
 		--ads_multishot_spread_mult = 4,
 		moving_spread_mult = 1.5
 	}
+		tweak_data.shotgun_light_semi = {
+			hipfire_spread_mult = 0.7407
+		}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.45,
 		--ads_multishot_spread_mult = 0.9
@@ -78,15 +95,20 @@ tweak_data.shotgun = {
 		hipfire_spread_mult = 1.15,
 		--ads_multishot_spread_mult = 1
 	}
+		tweak_data.shotgun_smasher = {
+			shake_mul = 4
+		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
 		swap_bonus = 1.8
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
+		shake_mul = 0
 	}
 		tweak_data.flamethrower_lmg = {
 			ads_move_speed_mult = 0.7,
+			shake_mul = 0
 		}
 
 tweak_data.smg = {
@@ -99,15 +121,27 @@ tweak_data.smg = {
 		ads_move_speed_mult = 0.7142857, --lowered to 0.5
 	}
 	tweak_data.lmg = {
+		ads_moving_recoil = 1.15,
 		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 3,
-		hipfire_spread_mult = 3.3333
+		hipfire_spread_mult = 3.3333,
+		shake_mul = 1.5
 	}
+		tweak_data.lmg_moving = {
+			ads_moving_recoil = 0.8695652,
+			shake_mul = 0.6667,
+			hipfire_spread_mult = 0.6667
+		}
+		tweak_data.rambo = {
+			hipfire_spread_mult = 0.4167
+		}
 		tweak_data.wolf_brigade = {
+			ads_moving_recoil = 0.8695652,
 			moving_spread_mult = 0.2,
-			hipfire_spread_mult = 0.5
+			hipfire_spread_mult = 0.4167,
+			shake_mul = 0.6667
 		}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,
@@ -122,39 +156,56 @@ tweak_data.smg = {
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	ads_stationary_spread_mult = 0.25,
+	ads_stationary_spread_mult = 0.2,
 	hipfire_spread_mult = 1.5,
-	hipfire_moving_spread_mult = 1.5
+	hipfire_moving_spread_mult = 1.5,
+	shake_mul = 1.2
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
+		ads_moving_recoil = 1.1,
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
-		ads_move_speed_mult = 0.888889 --lowered to 0.4
+		ads_move_speed_mult = 0.888889, --lowered to 0.4
+		shake_mul = 1.2
 	}
 		tweak_data.s7 = {
-			hipfire_spread_mult = 0.15,
-			hipfire_moving_spread_mult = 0.33334,
+			hipfire_spread_mult = 0.05,
+			hipfire_moving_spread_mult = 0.1,
+			ads_moving_spread_mult = 0.1,
+			shake_mul = 0
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
-		ads_move_speed_mult = 0.6
+		ads_move_speed_mult = 0.6,
+		shake_mul = 1.2
 	}
 
 tweak_data.assault_rifle = {
 	swap_bonus = 1,
+	ads_moving_recoil = 1.05,
+	ads_stationary_spread_mult = 0.9,
 	ads_move_speed_mult = 0.45,
-	hipfire_spread_mult = 1.15
+	hipfire_spread_mult = 1.15,
+	shake_mul = 1.05
 }
 	tweak_data.crb = {
+		ads_moving_recoil = 0.95238,
 		hipfire_spread_mult = 0.86956,
 		swap_bonus = 1.1,
 		ads_move_speed_mult = 1.11111 --raised to 0.5
 	}
-	tweak_data.dmr = {
+	tweak_data.dmr_l = {
 		hipfire_spread_mult = 1.7391304,
+		moving_spread_mult = 1.2,
+		shake_mul = 1.05
+	}
+	tweak_data.dmr_h = {
+		hipfire_spread_mult = 1.9565217,
 		moving_spread_mult = 1.5,
-		ads_move_speed_mult = 0.888889 --lowered to 0.4
+		ads_stationary_spread_mult = 0.8,
+		ads_move_speed_mult = 0.888889, --lowered to 0.4
+		shake_mul = 1.1
 	}
 
 tweak_data.akimbo = {
@@ -186,11 +237,8 @@ tweak_data.projectiles.rocket_ray_frag.player_damage = 45
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 2
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
-tweak_data.projectiles.rocket_ray_frag.incendiary = {
-	burn_duration = 10,
-	damage = 3,
-	player_damage = 1.5
-}
+tweak_data.projectiles.rocket_ray_frag.incendiary = true
+tweak_data.projectiles.rocket_ray_frag.dot_data_name = "proj_ray_frag"
 
 --Grenade launcher stuff--
 local frag_40mm = {
@@ -208,20 +256,15 @@ local incendiary_40mm = {
 }
 for i, proj_id in ipairs(incendiary_40mm) do
 	tweak_data.projectiles[proj_id].damage = 6
-	tweak_data.projectiles[proj_id].curve_pow = 1.5
 	tweak_data.projectiles[proj_id].player_damage = 3
+	tweak_data.projectiles[proj_id].curve_pow = 1.5
+	tweak_data.projectiles[proj_id].range = 500
 	tweak_data.projectiles[proj_id].burn_duration = 5
-	tweak_data.projectiles[proj_id].fire_dot_data = {
-		dot_damage = 1,
-		dot_trigger_max_distance = 3000,
-		dot_trigger_chance = 50,
-		dot_length = 3.1,
-		dot_tick_period = 0.5
-	}
+	tweak_data.projectiles[proj_id].dot_data_name = "proj_launcher_incendiary"
 end
 
 local electric_40mm = {
-	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_incendiary_slap'
+	'launcher_electric','launcher_electric_china','launcher_electric_m32','underbarrel_electric','underbarrel_electric_groza','launcher_electric_slap'
 }
 for i, proj_id in ipairs(electric_40mm) do
 	tweak_data.projectiles[proj_id].damage = 40
@@ -238,16 +281,12 @@ for i, proj_id in ipairs(poison_40mm) do
 	tweak_data.projectiles[proj_id].player_damage = 0
 	tweak_data.projectiles[proj_id].curve_pow = 0
 	tweak_data.projectiles[proj_id].range = 0
+	--tweak_data.projectiles[proj_id].manticore = true
 	tweak_data.projectiles[proj_id].poison_gas_range = 600
-	tweak_data.projectiles[proj_id].poison_gas_duration = 10
+	tweak_data.projectiles[proj_id].poison_gas_duration = 8
 	tweak_data.projectiles[proj_id].poison_gas_fade_time = 0.1
 	tweak_data.projectiles[proj_id].poison_gas_tick_time = 0.3
-	tweak_data.projectiles[proj_id].poison_gas_dot_data = {
-		hurt_animation_chance = 1,
-		dot_damage = 1.5,
-		dot_length = 8.15,
-		dot_tick_period = 0.5
-	}
+	tweak_data.projectiles[proj_id].poison_gas_dot_data_name = "proj_launcher_cloud"
 end
 
 --Arbiter--
@@ -261,13 +300,7 @@ tweak_data.projectiles.launcher_incendiary_arbiter.damage = 4
 tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
-tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_incendiary_arbiter.dot_data_name = "proj_launcher_incendiary_arbiter"
 tweak_data.projectiles.launcher_electric_arbiter.damage = 30
 tweak_data.projectiles.launcher_electric_arbiter.player_damage = 15
 tweak_data.projectiles.launcher_electric_arbiter.range = 300
@@ -277,16 +310,12 @@ tweak_data.projectiles.launcher_poison_arbiter.damage = 0
 tweak_data.projectiles.launcher_poison_arbiter.player_damage = 0
 tweak_data.projectiles.launcher_poison_arbiter.curve_pow = 0
 tweak_data.projectiles.launcher_poison_arbiter.range = 0
+--tweak_data.projectiles.launcher_poison_arbiter.manticore = true
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 8
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_duration = 6
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_arbiter.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 6.15,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison_arbiter.poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 
 --SABR Grenade Launcher.
 tweak_data.projectiles.launcher_frag_osipr = {
@@ -306,13 +335,7 @@ tweak_data.projectiles.launcher_incendiary_osipr = {
 	launch_speed = 2500,
 	curve_pow = 0.75,
 	player_damage = 2,
-	fire_dot_data = {
-		dot_trigger_chance = 50,
-		dot_damage = 1,
-		dot_length = 3.1,
-		dot_trigger_max_distance = 3000,
-		dot_tick_period = 0.5
-	},
+	dot_data_name = "proj_launcher_incendiary_arbiter",
 	range = 350,
 	init_timer = nil,
 	mass_look_up_modifier = 0,
@@ -343,16 +366,12 @@ tweak_data.projectiles.launcher_poison_osipr = {
 	player_damage = 0,
 	curve_pow = 0,
 	range = 0,
+	--manticore = true,
 	poison_gas_range = 600,
-	poison_gas_duration = 8,
+	poison_gas_duration = 6,
 	poison_gas_fade_time = 0.1,
 	poison_gas_tick_time = 0.3,
-	poison_gas_dot_data = {
-		hurt_animation_chance = 1,
-		dot_damage = 1.5,
-		dot_length = 6.15,
-		dot_tick_period = 0.5
-	}
+	poison_gas_dot_data_name = "proj_launcher_arbiter_cloud"
 }
 
 --3GL
@@ -363,13 +382,7 @@ tweak_data.projectiles.launcher_frag_ms3gl.range = 500
 tweak_data.projectiles.launcher_incendiary_ms3gl.damage = 2
 tweak_data.projectiles.launcher_incendiary_ms3gl.player_damage = 1
 tweak_data.projectiles.launcher_incendiary_ms3gl.burn_duration = 5
-tweak_data.projectiles.launcher_incendiary_ms3gl.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_incendiary_ms3gl.dot_data_name = "proj_launcher_incendiary_3gl"
 tweak_data.projectiles.launcher_electric_ms3gl.damage = 18
 tweak_data.projectiles.launcher_electric_ms3gl.player_damage = 6
 tweak_data.projectiles.launcher_electric_ms3gl.curve_pow = 1
@@ -378,32 +391,25 @@ tweak_data.projectiles.launcher_poison.damage = 0
 tweak_data.projectiles.launcher_poison.player_damage = 0
 tweak_data.projectiles.launcher_poison.curve_pow = 0
 tweak_data.projectiles.launcher_poison.range = 0
+--tweak_data.projectiles.launcher_poison.manticore = true
 tweak_data.projectiles.launcher_poison.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison.poison_gas_duration = 6
+tweak_data.projectiles.launcher_poison.poison_gas_duration = 4
 tweak_data.projectiles.launcher_poison.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 4.15,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
+
 --Gee 3GL, why do you get to have 2 poison grenades? ( except now you don't :^) )
 --In the event you somehow manage to keep this "attached" via the exclusive kit
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.damage = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.player_damage = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.curve_pow = 0
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.range = 0
+--tweak_data.projectiles.launcher_poison_ms3gl_conversion.manticore = true
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_range = 600
-tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 6
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_duration = 4
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_fade_time = 0.1
 tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_tick_time = 0.3
-tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 4.1,
-	dot_tick_period = 0.5
-}
+tweak_data.projectiles.launcher_poison_ms3gl_conversion.poison_gas_dot_data_name = "proj_launcher_3gl_cloud"
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
@@ -494,22 +500,18 @@ tweak_data.projectiles.sticky_grenade.warning_data = {
 }
 
 --Molliest of tovs--
-tweak_data.projectiles.molotov.damage = 3
-tweak_data.projectiles.molotov.player_damage = 3
+tweak_data.projectiles.molotov.range = 300
+tweak_data.projectiles.molotov.damage = 3.0
+tweak_data.projectiles.molotov.player_damage = 3.0
 tweak_data.projectiles.molotov.burn_duration = 10
+tweak_data.projectiles.molotov.dot_data_name = "proj_molotov"
 
 --Incendiary Nades, idea to make em a mollie--
-tweak_data.projectiles.fir_com.damage = 6
-tweak_data.projectiles.fir_com.player_damage = 3
-tweak_data.projectiles.fir_com.fire_dot_data = {
-	dot_damage = 1,
-	dot_trigger_max_distance = 3000,
-	dot_trigger_chance = 50,
-	dot_length = 3.1,
-	dot_tick_period = 0.5
-}
-tweak_data.projectiles.fir_com.range = 75
-tweak_data.blackmarket.projectiles.fir_com.impact_detonation = false
+tweak_data.projectiles.fir_com.range = 450
+tweak_data.projectiles.fir_com.damage = 3.0
+tweak_data.projectiles.fir_com.player_damage = 3.0
+tweak_data.projectiles.fir_com.burn_duration = 12
+tweak_data.projectiles.fir_com.dot_data_name = "proj_fire_com"
 
 --Throwing Card--
 tweak_data.projectiles.wpn_prj_ace.damage = 24
@@ -554,17 +556,13 @@ tweak_data.projectiles.poison_gas_grenade.player_damage = 0
 tweak_data.projectiles.poison_gas_grenade.curve_pow = 0
 tweak_data.projectiles.poison_gas_grenade.range = 0
 tweak_data.projectiles.poison_gas_grenade.name_id = "bm_poison_gas_grenade"
+--tweak_data.projectiles.poison_gas_grenade.manticore = true
 tweak_data.projectiles.poison_gas_grenade.poison_gas_range = 600
 tweak_data.projectiles.poison_gas_grenade.poison_gas_duration = 12
 tweak_data.projectiles.poison_gas_grenade.poison_gas_fade_time = 0.1
 tweak_data.projectiles.poison_gas_grenade.poison_gas_tick_time = 0.3
-tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data = {
-	hurt_animation_chance = 1,
-	dot_damage = 1.5,
-	dot_length = 10.15,
-	dot_tick_period = 0.5
-}
-
+tweak_data.projectiles.poison_gas_grenade.poison_gas_dot_data_name = "proj_gas_grenade_cloud"
+--[[
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
 	dot_length = 4.1,
@@ -578,6 +576,7 @@ tweak_data.dot_types.bleed = {
 	dot_damage = 2,
 	hurt_animation_chance = 0
 }
+]]--
 
 --Fire!
 tweak_data.fire.effects.money_short = {
@@ -863,11 +862,11 @@ for i, proj_id in ipairs(velocity) do
 	end
 end
 
-
-
-
 --Hatman Molotov
 tweak_data.projectiles.hatman_molotov = {}
+tweak_data.projectiles.hatman_molotov.range = 300
+tweak_data.projectiles.hatman_molotov.damage = 6.0
+tweak_data.projectiles.hatman_molotov.player_damage = 6.0
 tweak_data.projectiles.hatman_molotov.env_effect = "hatman_molotov_fire"
 
 --But why--
@@ -877,8 +876,8 @@ tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999
 --Mutator tweak vars, makes it easier to toggle stuff on/off as needed
 tweak_data.disable_shotgun_push = false
 
-tweak_data.medic.cooldown = 90
-tweak_data.medic.radius = 400
+tweak_data.medic.cooldown = 0
+tweak_data.medic.radius = 900
 tweak_data.medic.lpf_radius = 800
 
 --ASU damage bonus (Titan HRT)
@@ -891,39 +890,6 @@ else
 	tweak_data.asu_damage_buff = 20
 end	
 
-if difficulty_index <= 4 then
-	tweak_data.medic.doc_radius = 1500
-elseif difficulty_index == 5 then
-	tweak_data.medic.doc_radius = 2500
-elseif difficulty_index == 6 then
-	tweak_data.medic.doc_radius = 5000
-else
-	tweak_data.medic.doc_radius = 9999999
-end			
-
-tweak_data.medic.disabled_units = {
-	"phalanx_vip",
-	"phalanx_vip_break",
-	"spring",
-	"headless_hatman",
-	"taser_summers",
-	"boom_summers",
-	"medic_summers",
-	"summers",
-	"autumn",
-	"medic",
-	"sniper",
-	"tank_medic",
-	"omnia_lpf"
-}
-tweak_data.medic.cooldown_summers = 0
-tweak_data.radius_summers = 100000
-tweak_data.medic.whitelisted_units = {
-	"summers"
-}
-tweak_data.medic.whitelisted_units_summer_squad = {
-	"summers"
-}
 tweak_data.achievement.complete_heist_achievements.pain_train.num_players = nil
 tweak_data.achievement.complete_heist_achievements.anticimex.num_players = nil
 tweak_data.achievement.complete_heist_achievements.ovk_8.num_players = nil
@@ -955,19 +921,19 @@ tweak_data.casino = {
 		15000,
 		15000
 	},
-	prefer_cost = 5000,
-	prefer_chance = 0.1,
+	prefer_cost = 500000,
+	prefer_chance = 0.2,
 	secure_card_cost = {
-		10000,
-		20000,
-		30000
+		1000000,
+		3300000,
+		6500000
 	},
 	secure_card_level = {
 		0,
 		0,
 		0
 	},
-	infamous_cost = 100000,
+	infamous_cost = 3000000,
 	infamous_chance = 3
 }	
 

@@ -1,8 +1,5 @@
 <unit type="gen" slot="30">
 	<object file="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" />
-	<dependencies>
-		<depends_on effect="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted" />
-	</dependencies>
     <extensions>
         <extension class="ScriptUnitData" name="unit_data" />
     </extensions>

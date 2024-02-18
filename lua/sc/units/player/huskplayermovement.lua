@@ -243,7 +243,14 @@ function HuskPlayerMovement:_update_zipline_sled(t, dt)
 		end
 	end
 end
-
+--[[
+Hooks:PostHook(HuskPlayerMovement, "set_character_anim_variables", "set_character_anim_variables_mutator_no_outlines", function (self)
+	local disable_outlines = managers.mutators:modify_value("HuskPlayerMovement:DisableOutlines", false)
+	if disable_outlines then
+		self._unit:contour():remove("teammate")
+	end
+end)
+--]]
 --[[local draw_player_newest_pos = nil
 local draw_player_detect_pos = nil
 

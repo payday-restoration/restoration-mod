@@ -6,14 +6,14 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="fbi_heavy_swat" />
-			<var name="_default_weapon_id" value="r870"/>
+			<var name="_default_weapon_id" value="benelli"/>
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

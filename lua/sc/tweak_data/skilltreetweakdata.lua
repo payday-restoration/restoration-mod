@@ -93,7 +93,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_counter_strike_melee",
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",
-		"player_civ_calming_alerts"
+		"player_civ_calming_alerts",
+		"player_detection_risk_stamina_regen"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -689,13 +690,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 11},
 				[1] = {
 					upgrades = {
-						"player_headshot_regen_armor_bonus_1"
+						"player_headshot_regen_armor_bonus_1",
+						"player_headshot_regen_armor_bonus_cd_reduction_2"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_headshot_regen_armor_bonus_2"
+						"player_headshot_regen_armor_bonus_2",
+						"player_headshot_regen_armor_bonus_cd_reduction_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1158,7 +1161,9 @@ function SkillTreeTweakData:init(tweak_data)
 						"assault_rifle_steelsight_accuracy_inc_2",
 						"snp_steelsight_accuracy_inc_2",
 						"assault_rifle_steelsight_range_inc_2",
-						"snp_steelsight_range_inc_2"
+						"snp_steelsight_range_inc_2",
+						"assault_rifle_enter_steelsight_speed_multiplier",
+						"snp_enter_steelsight_speed_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1410,11 +1415,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_ballistic_vest_concealment_1",
-						"player_deep_pockets_concealment_modifier_1",	
-						"player_level_1_armor_addend",
-						"player_level_2_armor_addend",
-						"player_level_3_armor_addend",
-						"player_level_4_armor_addend"
+						"player_deep_pockets_concealment_modifier_1"
 					},
 					cost = self.costs.pro
 				}	
@@ -1524,7 +1525,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_weapon_concealment_increase_2",
+						"player_weapon_concealment_increase_1",
+						"player_weapon_concealment_increase_2"
 					},
 					cost = self.costs.hightierpro
 				}

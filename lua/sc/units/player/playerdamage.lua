@@ -1,4 +1,5 @@
 local mvec1 = Vector3()
+local is_pro = Global.game_settings and Global.game_settings.one_down
 PlayerDamage._UPPERS_COOLDOWN = tweak_data.upgrades.values.first_aid_kit.uppers_cooldown
 
 function PlayerDamage:init(unit)
@@ -84,6 +85,7 @@ function PlayerDamage:init(unit)
 	--Unique resmod stuff.
 	self._ally_attack = false --Whether or not an ally dealt the last attack. Prevents certain cheese with friendly fire.
 	self._dodge_points = 0.0 --The player's dodge stat, gets set by set_dodge_points once players enter their standard state.
+	self._dodge_interval = 0.0
 	self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 	self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 	self._in_smoke_bomb = 0.0 --Sicario tracking stuff; 0 = not in smoke, 1 = inside smoke, 2 = inside own smoke. Tfw no explicit enum support in lua :(
@@ -222,7 +224,7 @@ function PlayerDamage:is_friendly_fire(unit, check_ally_attack, is_explosive)
 		return false
 	end
 
-	local movement_ext = alive(unit) and unit:movement() --Deals with funny case with enemy thrown frags.
+	local movement_ext = alive(unit) and unit.movement and unit:movement() --Deals with funny case with enemy thrown frags.
 	if not movement_ext or movement_ext:team() ~= self._unit:movement():team() and movement_ext:friendly_fire() then
 		return false
 	end
@@ -251,7 +253,7 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 	if not self:_chk_can_take_dmg() then
 		return false
 	elseif self._god_mode then
-		if attack_data.damage > 0 then
+		if attack_data.damage and attack_data.damage > 0 then
 			self:_send_damage_drama(attack_data, attack_data.damage)
 		end
 		self:_call_listeners(damage_info)
@@ -302,6 +304,14 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	--Get hit direction and display it on hud.
 	local attacker_unit = attack_data.attacker_unit
 	local self_damage = attacker_unit and alive(attacker_unit) and attacker_unit == self._unit
+
+	if is_pro and self_damage then
+		attack_data.damage = attack_data.damage * 2
+	end
+	
+	--Mutators/Modifiers stuff
+	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)	
+
 	if alive(attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position(), attack_data.col_ray and attack_data.col_ray.ray or damage_info.attack_dir)
 	end
@@ -360,7 +370,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	local health_subtracted = self:_calc_armor_damage(attack_data)
 
 	--Apply health damage.
-	if ((attack_data.armor_piercing or variant == "explosion") and not self._unpierceable) or self_damage then
+	if ((attack_data.armor_piercing or variant == "explosion" or variant == "fire") and not self._unpierceable) or self_damage then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
@@ -493,10 +503,10 @@ function PlayerDamage:damage_bullet(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 2.5 * (1 - self:health_ratio())
 		if grace_bonus then
 			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
 		else 
@@ -566,18 +576,21 @@ function PlayerDamage:damage_bullet(attack_data)
 		local in_air = self._unit:movement():current_state():in_air()
 		local hit_in_air = self._unit:movement():current_state()._hit_in_air
 		local on_ladder = self._unit:movement():current_state():on_ladder() 
+		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
+		local range = nil
 
 		--Apply slow debuff if bullet has one.
 		if tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not driving then
 			local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
-			if slow_data.taunt then
-				attacker_unit:sound():say("post_tasing_taunt")
+			range = slow_data and slow_data.range 
+			if not range or (range and distance < range) then
+				if slow_data.taunt then
+					attacker_unit:sound():say("post_tasing_taunt")
+				end
+				managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 			end
-			managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
 		end
 
-		local distance = attacker_unit and hit_pos and mvector3.distance(attacker_unit:position(), hit_pos)
-		local range = nil
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then
@@ -636,10 +649,10 @@ function PlayerDamage:damage_fire_hit(attack_data)
 	local pm = managers.player
 	local t = pm:player_timer():time()
 	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
-	local grace_bonus = self._dmg_interval < 0.300 and math.min(self._dmg_interval * armor_dodge_mult, 0.300)
+	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
-		local yakuza_grace_ratio = 3 * (1 - self:health_ratio())
+		local yakuza_grace_ratio = 2.5 * (1 - self:health_ratio())
 		if grace_bonus then
 			grace_bonus = math.min(grace_bonus * yakuza_grace_ratio, 0.9)
 		else
@@ -1199,7 +1212,7 @@ function PlayerDamage:revive(silent)
 		self:fill_dodge_meter(3.0, true)
 	end
 	if managers.player:has_category_upgrade("player", "revive_reload") then
-		managers.player:reload_weapons()
+		managers.player:reload_weapons(true)
 	end
 
 	--Update What Doesn't Kill
@@ -1442,6 +1455,13 @@ function PlayerDamage:set_dodge_points()
 		+managers.player:body_armor_value("dodge")
 		+managers.player:skill_dodge_chance(false, false, false))
 		or 0.0
+	local current_diff = Global.game_settings.difficulty or "easy"
+	local is_pro = Global.game_settings and Global.game_settings.one_down
+	local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)			
+	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
+	local grace_cap = (0.45 - (0.45 - diff_reduction))
+	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
+	log(tostring( self._dodge_interval ))
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	end

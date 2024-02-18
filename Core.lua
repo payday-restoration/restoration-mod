@@ -58,7 +58,12 @@ function restoration:Init()
 		gallery = restoration.captain_types.winter, --art gallery
 		red2 = restoration.captain_types.winter, --fwb
 		watchdogs_1 = restoration.captain_types.winter, --Watchdogs Day 1
+		crojob3 = restoration.captain_types.winter, --The Bomb: Forest
+		crojob3_night = restoration.captain_types.winter, --The Bomb: Forest Night
+		rvd2 = restoration.captain_types.winter, --Garnet Group Boutique
+		brb = restoration.captain_types.winter, --brookyn ten-ten benk
 		--Custom Heists--
+		four_stores_remixed = restoration.captain_types.winter, --Four Stores (Remixed)
 		office_strike = restoration.captain_types.winter, --office strike
 		schl = restoration.captain_types.winter, --Scarlet Club House
 		firestarter_2_res = restoration.captain_types.winter, --firestarter day 2 edit
@@ -75,7 +80,8 @@ function restoration:Init()
 		tonisl1 = restoration.captain_types.winter, --Grand Harvest
 		constantine_penthouse_lvl = restoration.captain_types.winter, --Penthouse Crasher (Constantine Scores)
 		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
-
+		fuel = restoration.captain_types.winter, --Fuel Feuds 
+		icing = restoration.captain_types.winter, --Road Rage
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
 		pal = restoration.captain_types.summer, --counterfeit
@@ -94,6 +100,7 @@ function restoration:Init()
 		constantine_mobsterclub_lvl = restoration.captain_types.summer, --Aurora (Borealis?!) Club
 		constantine_harbor_lvl = restoration.captain_types.summer, --Harboring a Grudge
 		firestarter_1_res = restoration.captain_types.summer, --firestarter day 1 res edit version
+		constantine_murkyairport_lvl = restoration.captain_types.summer, --Murky Airport (Constantine Scores)
 		bag_sim_2 = restoration.captain_types.summer, --Bag Simulator 2
 		RogueCompany = restoration.captain_types.summer, --Rogue Company
 		Security_Avenue = restoration.captain_types.summer, --Gensec HQ Raid day 1
@@ -109,7 +116,7 @@ function restoration:Init()
 		dinner = restoration.captain_types.spring, --Slaughterhouse
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
-		chas = restoration.captain_types.spring, --Dragon Heist
+		--chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
 		firestarter_3_res = restoration.captain_types.spring, --firestarter day 3 res edit version
 		hardware_store = restoration.captain_types.spring, --Hardware Store 
@@ -125,7 +132,6 @@ function restoration:Init()
 		sh_raiders = restoration.captain_types.spring, --Safehouse Raiders
 		bluewave = restoration.captain_types.spring,  --res map bluewave
 		dwn1 = restoration.captain_types.spring, --Deep Inside
-		constantine_murkyairport_lvl = restoration.captain_types.spring, --Murky Airport (Constantine Scores)
 		jambank = restoration.captain_types.spring, --Botched Bank
 		arena_club30 = restoration.captain_types.spring, -- Arena Orange 
 
@@ -138,10 +144,10 @@ function restoration:Init()
 		family = restoration.captain_types.autumn, --diamond store
 		framing_frame_1 = restoration.captain_types.autumn, --art gallery but ff
 		framing_frame_3 = restoration.captain_types.autumn, --Powerbox simulator
-		glace = restoration.captain_types.autumn, --Green Bridge
 		jewelry_store = restoration.captain_types.autumn, --Jewelry Store
 		ukrainian_job = restoration.captain_types.autumn, --Ukrainian Job
 		man = restoration.captain_types.autumn, --undercover--
+		sah = restoration.captain_types.autumn, --shacklethrone auction
 		watchdogs_2 = restoration.captain_types.autumn, --Watchdogs Day 2 Night
 		watchdogs_1_night = restoration.captain_types.autumn, --Watchdogs Day 1 Night
 		--Custom Heists--
@@ -158,6 +164,7 @@ function restoration:Init()
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
+		skm_firestarter_2 = restoration.captain_types.autumn,--FBI Holdout 
 
 		--I'm not typing out the whole name
 		help = restoration.captain_types.hvh, --Prison Nightmare
@@ -182,6 +189,8 @@ function restoration:Init()
 	--Put heist IDs in this table to disable naturally occuring captains if they're defined above as well, mostly for scripted captain encounters
 	restoration.disable_natural_captain = {	
 		"skm_nightmare_lvl",
+		"crojob3",
+		"crojob3_night",
 		--Custom Heists--
 		"constantine_gunrunnerclubhouse_lvl", 
 		"constantine_policestation_lvl"
@@ -231,12 +240,12 @@ function restoration:Init()
 		"friend", --Scarface Mansion
 		"kenaz", --Golden Grin Casino
 		"peta", --Goatsim 1
-		"mad", --Boiling Point
 		"watchdogs_2_day", --Watchdogs Day 2 
 		"watchdogs_2", --Watchdogs Day 2 but night
 		"bex", --San Martin Bank
 		"trai", --Lost in Transit
 		"corp", --Hostile Takeover
+		"mus", --The Diamond
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"lit1", --California's restoration
@@ -268,12 +277,13 @@ function restoration:Init()
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2", --Big Oil 2. Scripted cloaker hell.
+		"arena", -- Alesso Heist
 		"cane", --Santa's Workshop
 		"brb", --Brooklyn Bank
-		"mus", --The Diamond
 		"born", --Biker 1
 		"run", --Heat Street
 		"ranc", --Midland Ranch
+		"mad", --Boiling Point
 		"sah", --Shacklethorne
 		"glace", --Green Bridge
 		"pbr", --Beneath the Mountain
@@ -282,6 +292,8 @@ function restoration:Init()
 		"gallery", --Art Gallery
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
+		"crojob3", --Bomb: Forest
+		"crojob3_night", --Ditto
 		"spa", --Brooklyn 10-10
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
@@ -289,14 +301,13 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"roberts", --Go Bank
 		"family", --Diamond Store
-		"chca", --Black Cat Heist
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"rat", --Cook Off
 		"chas", --Dragon Heist	
 		"pent", --Mountain Master Heist
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
-		"crojob3", --Bomb: Forest, slightly reduced spawns to offset little cover/heist difficulty
-		"crojob3_night", --Ditto
+		"sand", --The Ukrainian Prisoner
+		"deep", --Crude Awakening
 		--Skirmish heists below
 		"skm_big2",
 		"skm_mallcrasher",
@@ -332,18 +343,23 @@ function restoration:Init()
 		"constantine_dwtd_lvl", -- Dance with The Devil (Constantine Scores)
 		"constantine_yacht_lvl", --  Showdown  (Constantine Scores) 
 		"constantine_policestation_lvl", -- Precint Raid (Constantine Scores)
-		"constantine_murkyairport"		 -- Murky Airport (Consantine Scores) 
+		"constantine_murkyairport",		 -- Murky Airport (Consantine Scores) 
+		"hogar",-- The House Robbery
+		"icing"	--Road Rage	
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
 		"pbr2", --Birth of Sky
+		"chca", --Black Cat Heist
 		"rvd2", --Reservoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
 		"nmh", --No Mercy
 		"des",	--Henry's Rock	
 		"bph", --Hell's Island		
 		"fex", --Buluc's Mansion
+		"peta2", --Goats day 2
+		"nail",	--Lab Rats
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -351,6 +367,7 @@ function restoration:Init()
 		"skm_arena",
 		"skmc_ovengrill",
 		"skm_watchdogs_stage2",
+		"skm_firestarter_2",
 		--Custom Heists below--
 		"thechase",
 		"daymare", --Hell's Nightmare
@@ -361,6 +378,7 @@ function restoration:Init()
 		"constantine_smackdown_lvl", --Smackdown
 		"constantine_restaurant_lvl", --Blood in the Water (Constantine Scores)
 		"nmh_res", --Resmod edit of no mercy.
+		"lvl_friday", --Crashing Capitol
 		"physics_citystreets", -- BOWORKS Day 1
 		"physics_core",-- BOWRORKS Day 3
 		"cold_gold",-- Cold Gold 
@@ -371,14 +389,11 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
-		"peta2", --Goats day 2. Fuck this heist too	
 		"mia_2", --Hotline Miami 2	
 		"help", --Prison Nightmare		
-		"nail",	--Lab Rats. Fuck this heist		
 		"chill_combat",	--Safehouse Raid	
 		"mex", --Border Crossing
-		"mex_cooking", --Border Crystals		
-		"sand", --The Ukrainian Prisoner			
+		"mex_cooking", --Border Crystals			
 		--Skirmish heists below
 		"skm_nightmare_lvl", --Safehouse Nightmare SKM
 		--Custom Heists below--
@@ -462,10 +477,13 @@ function restoration:Init()
 		"constantine_fiesta_lvl",    -- COnstantine Scores (Fiesta)
 		"constantine_yacht_lvl"	,	-- COnstantine Scores (Showdown)
 		"constantine_jungle_lvl"    -- Constantine Scores (Welcome To The Jungle)
-
-
-
-		
+	}
+	--Support Factions (will spawn alongside the main force)
+	--OMNIA
+	restoration.omnia_support = {
+		"wetwork", --Wetworks
+		"bluewave" --Bluewave
+		--"wetwork_burn"
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
@@ -708,6 +726,9 @@ restoration.wepnames = {
 	"resmod_no_renames"
 }
 
+-- Detect if ResMod is active to disable PDTH Challenges Standalone
+DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",
@@ -777,6 +798,8 @@ function restoration:send_sync_environment(to)
 	end
 end
 
+	restoration.loaded_elements = false
+
 --Stealing this from SH cause it's way better
 function restoration:require(file)
 	local path = ModPath .. "req/" .. file .. ".lua"
@@ -792,3 +815,188 @@ function restoration:mission_script_patches()
 	end
 	return self._mission_script_patches
 end
+
+
+--mission_script_add allows to add actual custom stuff to heists
+function restoration:mission_script_add()
+		restoration.loaded_elements = false
+		if self._mission_script_add == nil then
+			local level_id = Global.game_settings and Global.game_settings.level_id
+			if level_id then
+				self._mission_script_add = self:require("mission_script_add/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
+			end
+		end
+		return self._mission_script_add
+	end
+
+	function restoration:gen_dummy(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSpawnEnemyDummy",
+			values = {
+				execute_on_startup = opts.execute_on_startup or false,
+				participate_to_group_ai = opts.participate_to_group_ai or false,
+				position = pos,
+				force_pickup = opts.force_pickup or "none",
+				voice = opts.voice or 0,
+				enemy = opts.enemy or "units/payday2/characters/ene_swat_1/ene_swat_1",
+				trigger_times = opts.trigger_times or 0,
+				spawn_action = opts.spawn_action or "none",
+				accessibility = opts.accessibility or "any",
+				on_executed = opts.on_executed or {},
+				rotation = rot,
+				team = opts.team or "default",
+				base_delay = opts.base_delay or 0,
+				enabled = opts.enabled or false,
+				amount = opts.amount or 0,
+				interval = opts.interval or 5,
+			},
+		}
+	end
+
+	function restoration:gen_spawngroup(id, name, elements, interval)
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSpawnEnemyGroup",
+			values = {
+				on_executed = {},
+				trigger_times = 0,
+				base_delay = 0,
+				ignore_disabled = false,
+				amount = 0,
+				spawn_type = "ordered",
+				team = "default",
+				execute_on_startup = false,
+				enabled = true,
+				preferred_spawn_groups = {
+					"tac_shield_wall_charge",
+					"FBI_spoocs",
+					"tac_tazer_charge",
+					"tac_tazer_flanking",
+					"tac_shield_wall",
+					"tac_swat_rifle_flank",
+					"tac_shield_wall_ranged",
+					"tac_bull_rush",
+				},
+				elements = elements,
+				interval = interval or 0,
+			},
+		}
+	end
+
+	function restoration:gen_so(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSpecialObjective",
+			values = {
+				path_style = opts.path_style or "destination",
+				align_position = opts.align_position or false,
+				ai_group = "enemies",
+				is_navigation_link = false,
+				position = pos,
+				scan = opts.scan or false,
+				needs_pos_rsrv = opts.needs_pos_rsrv or false,
+				enabled = true,
+				execute_on_startup = false,
+				rotation = rot,
+				base_delay = 0,
+				action_duration_min = 0,
+				search_position = pos,
+				use_instigator = true,
+				trigger_times = 0,
+				trigger_on = "none",
+				search_distance = 0,
+				so_action = opts.so_action or "none",
+				path_stance = opts.path_stance or "hos",
+				path_haste = "run",
+				repeatable = false,
+				attitude = "engage",
+				interval = opts.interval or -1,
+				action_duration_max = 0,
+				align_rotation = opts.align_rotation or false,
+				pose = opts.pose or "none",
+				forced = true,
+				base_chance = 1,
+				interaction_voice = "none",
+				SO_access = opts.SO_access or "512", -- default to sniper
+				chance_inc = 0,
+				interrupt_dmg = 1,
+				interrupt_objective = false,
+				on_executed = {},
+				interrupt_dis = opts.interrupt_dis or 1,
+				patrol_path = "none",
+			},
+		}
+	end
+
+	function restoration:gen_areatrigger(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementAreaTrigger",
+			module = "CoreElementArea",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 1,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				interval = 0.1,
+				trigger_on = "on_enter",
+				instigator = "player",
+				shape_type = opts.shape_type or "box",
+				width = opts.width or 500,
+				depth = opts.depth or 500,
+				height = opts.height or 500,
+				radius = opts.radius or 250,
+				spawn_unit_elements = {},
+				amount = opts.amount or "1",
+				instigator_name = "",
+				use_disabled_shapes = false,
+				substitute_object = "",
+			},
+		}
+	end
+	
+	function restoration:gen_random(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementRandom",
+			module = "CoreElementRandom",
+			values = {
+				execute_on_startup = false,
+				trigger_times = 0,
+				ignore_disabled = false,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				enabled = true,
+				amount = opts.amount or 0,
+				amount_random = opts.amount_random or 0
+			},
+		}
+	end
+
+	function restoration:log(...)
+		if self.logging then
+			log("[StreamlinedHeistingAI] " .. table.concat({...}, " "))
+		end
+	end
+
+	function restoration:warn(...)
+		log("[StreamlinedHeistingAI][Warning] " .. table.concat({...}, " "))
+	end
+
+	function restoration:error(...)
+		log("[StreamlinedHeistingAI][Error] " .. table.concat({...}, " "))
+	end
+

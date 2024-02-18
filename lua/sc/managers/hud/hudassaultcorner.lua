@@ -7,6 +7,8 @@ Hooks:PostHook(HUDAssaultCorner, "init", "SCHUDAssaultInit", function(self)
 		buff_icon = self._captain.icon
 	end
 	
+	buff_icon = managers.mutators:modify_value("HUDAssaultCorner:NewCaptainIcon", buff_icon)
+	
 	--Always gonna be HVH now
 	if restoration.force_halloween then
 		buff_icon = "guis/textures/pd2/hud_buff_halloween"
@@ -14,6 +16,16 @@ Hooks:PostHook(HUDAssaultCorner, "init", "SCHUDAssaultInit", function(self)
 
 	if managers.skirmish:is_skirmish() then		
 		buff_icon = "guis/textures/pd2/hud_buff_generic"
+	end
+	
+	if restoration.Options:GetValue("OTHER/DisableMutatorColors") then
+		self._assault_mode = "normal"
+		self._assault_color = Color(1, 1, 1, 0)
+		self._vip_assault_color = Color(1, 1, 0.5019607843137255, 0)		
+		
+		if managers.skirmish:is_skirmish() then
+			self._assault_color = tweak_data.screen_colors.skirmish_color
+		end		
 	end
 
 	if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then

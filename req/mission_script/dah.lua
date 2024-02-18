@@ -1,49 +1,49 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local chance_ovk = 10
+local chance_dw = 20
+local pro_job = Global.game_settings and Global.game_settings.one_down
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
-		ponr_value = 420
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
-		ponr_value = 390
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
-		ponr_value = 360
-	end
-
-local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}
+if pro_job then	
+	chance_ovk = chance_ovk + 5
+	chance_dw = chance_dw + 5
+end
 
 return {
-	--Pro Job PONR 
-	[104949] = {
-		ponr = ponr_value
+	--Disable outline for Ralph if he is tied
+	[100461] = {
+		on_executed = {
+			{id = 100082, delay = 0}
+		}
 	},
-	--PONR for stealth
-	[101916] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value * 2
+	-- Increase chances to spawn red diamond if PJ is enabled
+	[104079] = {
+		values = {
+			chance = chance_ovk
+		}
+	},
+	[104082] = {
+		values = {
+			chance = chance_dw
+		}
+	},
+	-- Slow down vault group spawns
+	[100722] = {
+		values = {
+			interval = 30
+		}
+	},
+	[100723] = {
+		values = {
+			interval = 30
+		}
+	},
+	[104821] = {
+		values = {
+			interval = 30
+		}
+	},
+	[104822] = {
+		values = {
+			interval = 30
+		}
 	}
 }
---100457 - vault door open
---101916 - 

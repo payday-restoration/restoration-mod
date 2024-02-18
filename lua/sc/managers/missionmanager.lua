@@ -1,16 +1,31 @@
+--[[
 local level_id = Global.game_settings and Global.game_settings.level_id
 if Global.editor_mode then
 	return
 end
-
+]]--
 -- Add custom mission script changes and triggers for specific levels
 -- Execution of mission scripts can trigger reinforce locations (trigger that has just a name disables previously enabled reinforcement with that id)
 -- Mission script elements can be disabled or enabled
 -- From Streamlined Heisting
 
 local mission_script_elements = restoration:mission_script_patches()
+local mission_add = restoration:mission_script_add()
 if not mission_script_elements then
 	return
+end
+
+
+if mission_add then
+	-- Load the elements from the file
+	Hooks:PreHook(MissionScript, "init", "eclipse_missionmanager_init", function(self, data)
+		if not restoration.loaded_elements and data.name == "default" then
+			for _,element in ipairs(mission_add.elements) do
+                table.insert(data.elements, element)
+            end
+			restoration.loaded_elements = true
+		end
+	end)
 end
 
 Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", function (self)
@@ -38,8 +53,21 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			if data.values then
 				for k, v in pairs(data.values) do
 					element._values[k] = v
+					
+					--making sure that changing chance values work
+					if k == "chance" and element.chance_operation_set_chance then
+						element:chance_operation_set_chance(v)
+					end
 				end
 			end
+			
+			
+		--check if this element is supposed to trigger endless assault
+		if data.hunt then
+			Hooks:PostHook(element, "on_executed", "sh_on_executed_hunt_" .. element_id, function ()
+				managers.groupai:state():set_wave_mode(data.hunt and "hunt" or "besiege")
+			end)
+		end	
 			
 		-- Check if this element is supposed to trigger a point of no return
 		local is_pro_job = Global.game_settings and Global.game_settings.one_down
@@ -47,8 +75,6 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			if data.ponr then
 				local function set_ponr()
 					local ponr_timer_balance_mul = data.ponr_player_mul and managers.groupai:state():_get_balancing_multiplier(data.ponr_player_mul) or 1
-					--log("ponr_player_mul = "..tostring(ponr_player_mul))
-					--log("ponr_timer_balance_mul = "..tostring(ponr_timer_balance_mul))
 					managers.groupai:state():set_point_of_no_return_timer(data.ponr * ponr_timer_balance_mul, 0)
 				end
 				
@@ -93,6 +119,10 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 
 			if data.func then
 				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, data.func)
+			end
+			
+			if data.pre_func then
+				Hooks:PreHook( element, "on_executed", "sh_pre_func_" .. element_id, data.pre_func )
 			end
 		end
 	end

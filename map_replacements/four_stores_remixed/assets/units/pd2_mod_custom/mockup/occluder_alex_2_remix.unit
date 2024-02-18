@@ -1,0 +1,8 @@
+<unit type="str" slot="1" >
+    <object file="units/pd2_mod_custom/mockup/occluder_alex_2_remix" />
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData">
+			<var name="only_visible_in_editor" value="true" />
+		</extension>
+    </extensions>
+</unit>

@@ -48,7 +48,7 @@ function MutatorTitandozers:setup()
 	--Replace Spring, not a pretty way to do it but it works
 	if difficulty_index <= 5 then
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = {1, 1},
+			amount = 1,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -62,7 +62,7 @@ function MutatorTitandozers:setup()
 		}	
 	elseif difficulty_index == 6 then
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = {3, 3},
+			amount = 3,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -84,7 +84,7 @@ function MutatorTitandozers:setup()
 		}
 	elseif difficulty_index == 7 then
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = {5, 5},
+			amount = 5,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -114,7 +114,7 @@ function MutatorTitandozers:setup()
 		}	
 	else
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = {5, 5},
+			amount = 7,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -135,8 +135,8 @@ function MutatorTitandozers:setup()
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 2,
-					amount_max = 2,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = tweak_data.group_ai._tactics.HVH_boss,
 					rank = 2
 				}					

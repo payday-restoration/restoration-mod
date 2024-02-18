@@ -1,17 +1,17 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) <= 7 then
+	if difficulty_index <= 7 then
 		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 	end	
 	
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 420	
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 390
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 360		
 	end
 
@@ -20,12 +20,43 @@ return {
 	[100137] = {
 		ponr = ponr_value
 	},
-	--PDTH's OVK 145+ Throwback (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
+	--PDTH's OVK 145+ Throwback+Make this dozer spawn loopable like in PDTH (Fixes the special scaffolding spawn not using the zipline and replaces cloaker with bulldozer)
 	[101320] = {
 		values = {
 			enemy = bulldozer,
 			participate_to_group_ai = true
+		},
+		on_executed = {
+			{id = 105615, delay = 30, delay_rand = 10}
 		}
+	},
+	--trigger custom spawns during escape part
+	[103111] = {
+		on_executed = {
+			{id = 400001, delay = 0},
+			{id = 400002, delay = 0},
+			{id = 400003, delay = 0},
+			{id = 400004, delay = 0}
+		}
+	},
+	--trigger custom spawns in scaffolding part
+	[103543] = {
+		on_executed = {
+			{id = 400005, delay = 0},
+			{id = 400006, delay = 0},
+			{id = 400007, delay = 0},
+			{id = 400008, delay = 0}
+		}
+	},
+	--Disable this spawn once George the pilot gets Kauzo out
+	[100121] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(101320)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end
 	},
 	-- Remove spawn groups closest to broken bridge part
 	[101176] = {

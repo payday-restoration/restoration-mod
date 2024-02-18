@@ -1,11 +1,12 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	--High PONR Timer to work with ponr player scaling
+	if difficulty_index <= 5 then
 		ponr_value = 1200
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 1140
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 1080
 	end
 
@@ -39,6 +40,32 @@ return {
 	[101226] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--Fixed snipers being able to spawn only once
+	[100368] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100369] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100370] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100371] = {
+		values = {
+            trigger_times = 0
+		}
+	},
+	[100372] = {
+		values = {
+            trigger_times = 0
+		}
 	},
 	[103595] = {
 		reinforce = {

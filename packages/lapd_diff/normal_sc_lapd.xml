@@ -221,8 +221,8 @@
 	<unit				path="units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3_husk" load="true"/>
 	
 	<!--swat shield 2-->
-	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>
-	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk" load="true"/>
 		
 	<!--LAPD Sniper -->	
 	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1" load="true" />

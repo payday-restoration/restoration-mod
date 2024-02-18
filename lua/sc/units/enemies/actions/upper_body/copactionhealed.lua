@@ -6,43 +6,36 @@ function CopActionHealed:init(action_desc, common_data)
 	self._body_part = action_desc.body_part
 	self._unit = common_data.unit
 	self._machine = common_data.machine
-	self._attention = common_data.attention
 	self._action_desc = action_desc
-	self._healed = false
 
-	if self._ext_movement:play_redirect("use_syringe") then
-		self._ext_movement:spawn_wanted_items()
-		self._unit:sound():say("hr01")
+	if self._ext_anim.upper_body_active and not self._ext_anim.upper_body_empty then
+		self._ext_movement:play_redirect("up_idle")
+	end
 
-		if action_desc.allow_network then
-			local params = {
-				CopActionHurt.hurt_type_to_idx(action_desc.type),
-				action_desc.body_part,
-				CopActionHurt.death_type_to_idx("normal"),
-				CopActionHurt.type_to_idx(action_desc.type),
-				CopActionHurt.variant_to_idx("healed"),
-				Vector3(),
-				Vector3()
-			}
-
-			common_data.ext_network:send("action_hurt_start", unpack(params))
+	if not self._ext_movement:play_redirect("use_syringe", action_desc.start_anim_time) then
+		return
+	end
+	
+	--Fancy effect when these guys enter the heal state
+	if self._unit:contour() then
+		local crackhead = Idstring("Head")
+		local attach_to_unit = self._unit:get_object(crackhead)
+		if not attach_to_unit then
+			return
 		end
-
-		return true
-	end
-end
-
-function CopActionHealed:on_exit()
-	self._ext_movement:drop_held_items()
-end
-
-function CopActionHealed:update(t)
-	if not self._unit:anim_data().heal then
-		self._healed = true
-		self._expired = true
+		
+		World:effect_manager():spawn({
+			effect = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"),
+			parent = attach_to_unit
+		})	
+		--self._unit:contour():add("medic_heal", true)
+		--self._unit:contour():flash("medic_heal", 0.2)
 	end
 
-	if self._ext_anim.base_need_upd then
-		self._ext_movement:upd_m_head_pos()
-	end
+	self._unit:sound():say("hr01")
+	CopActionAct._create_blocks_table(self, action_desc.blocks)
+	self._ext_movement:enable_update()
+
+	return true
 end
+

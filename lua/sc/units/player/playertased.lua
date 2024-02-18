@@ -3,6 +3,23 @@ function PlayerTased:enter(state_data, enter_data)
 	self._ids_tased_boost = Idstring("tased_boost")
 	self._ids_tased = Idstring("tased")
 	self._ids_counter_tase = Idstring("tazer_counter")
+
+	local projectile_entry = managers.blackmarket:equipped_projectile()
+
+	if tweak_data.blackmarket.projectiles[projectile_entry].is_a_grenade then
+		self:_interupt_action_throw_grenade()
+	else
+		self:_interupt_action_throw_projectile()
+	end
+
+	self:_interupt_action_reload()
+	self:_interupt_action_steelsight()
+
+	local t = managers.player:player_timer():time()
+
+	self:_interupt_action_melee(t)
+	self:_interupt_action_ladder(t)
+	self:_interupt_action_charging_weapon(t)
 	self:_start_action_tased(managers.player:player_timer():time(), state_data.non_lethal_electrocution)
 
 	local all_criminals = managers.groupai:state():all_char_criminals()
@@ -41,19 +58,6 @@ function PlayerTased:enter(state_data, enter_data)
 
 	--Removed free reload from being tased.
 
-	local projectile_entry = managers.blackmarket:equipped_projectile()
-
-	if tweak_data.blackmarket.projectiles[projectile_entry].is_a_grenade then
-		self:_interupt_action_throw_grenade()
-	else
-		self:_interupt_action_throw_projectile()
-	end
-
-	self:_interupt_action_reload()
-	self:_interupt_action_steelsight()
-	self:_interupt_action_melee(managers.player:player_timer():time())
-	self:_interupt_action_ladder(managers.player:player_timer():time())
-	self:_interupt_action_charging_weapon(managers.player:player_timer():time())
 
 	self._rumble_electrified = managers.rumble:play("electrified")
 	self.tased = true
@@ -169,14 +173,7 @@ end
 
 
 function PlayerTased:update(t, dt)
-	if self._equipped_unit then
-		local weap_base = self._equipped_unit:base()
-		local fire_mode = weap_base:fire_mode()
-		if fire_mode == "volley" then
-			self:_check_action_weapon_firemode(t, { btn_weapon_firemode_press = true }) --volley currently just DUMPS your ammo anf bypasses refire delays, so force firemode switch to not dump ammo as fast
-		end
-	end
-
+	
 	self._num_shocks = self._num_shocks or 0 --potential fix for the rare occurance of self._num_shocks being nil while in the tase state maybe
 
 	PlayerTased.super.update(self, t, dt)
@@ -194,5 +191,29 @@ function PlayerTased:clbk_exit_to_std()
 
 	if current_state_name == "tased" and managers.network:session() then
 		managers.player:set_player_state("standard")
+	end
+end
+
+-- Add random pitch when tased (Tasers are now evil!)
+local _check_action_shock_original = PlayerTased._check_action_shock
+function PlayerTased:_check_action_shock(t, input, ...)
+	local do_shock = self._next_shock and self._next_shock < t
+
+	_check_action_shock_original(self, t, input, ...)
+
+	if do_shock then
+		self._cam_start_pitch = self._unit:camera():camera_unit():base()._camera_properties.pitch
+		self._cam_target_pitch = math.clamp(self._cam_start_pitch + math.rand(-5, 5), -90, 90)
+		self._cam_start_pitch_t = t
+		self._cam_target_pitch_t = t + 0.2
+	end
+
+	if self._cam_start_pitch then
+		if t > self._cam_target_pitch_t then
+			self._cam_start_pitch = nil
+		else
+			local pitch = math.map_range(t, self._cam_start_pitch_t, self._cam_target_pitch_t, self._cam_start_pitch, self._cam_target_pitch)
+			self._unit:camera():camera_unit():base():set_pitch(pitch)
+		end
 	end
 end

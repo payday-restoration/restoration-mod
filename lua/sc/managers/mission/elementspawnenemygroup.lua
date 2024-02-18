@@ -75,6 +75,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -129,6 +130,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -186,6 +188,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		"FBI_spoocs",
@@ -243,6 +246,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc",
 		"FBI_spoocs",
@@ -297,6 +301,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		"FBI_spoocs",
@@ -351,6 +356,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		"single_spooc",
 		--Recurring spawns
@@ -407,6 +413,7 @@ local standard_spawngroups = {
 		"HVH_Boss",
 		"Cap_Autumn",
 		"Cap_Summers",
+		"Fake_Captain",
 		--Cloakers
 		--"single_spooc"
 		--Recurring spawns
@@ -962,7 +969,13 @@ local standard_spawngroups = {
 		"FBI_heavys",
 		"FBI_heavys_boom",
 		"GS_heavys",
-		"GS_heavys_boom"
+		"GS_heavys_boom",
+		"Cap_Winters",
+		"Cap_Autumn",
+		"Cap_Spring",
+		"Cap_Summers",
+		"HVH_Boss",
+		"Fake_Captain"
 	},
 	["proprietary_pal"] = {
 		"CS_defend_c",
@@ -1019,6 +1032,8 @@ local standard_spawngroups = {
 		"FBI_defend_b",
 		"GS_defend_b",
 		"CS_heavys",
+		"titan_snipers",
+		"Fake_Captain",
 		"snowman_boss",
 		"piggydozer"
 	},
@@ -2437,19 +2452,19 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100128] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100130] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100131] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100132] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100692] = {
@@ -2485,11 +2500,11 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101719] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101722] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101725] = {
@@ -2497,15 +2512,15 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101728] = {
-			interval = 25,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101731] = {
-			interval = 20,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101734] = {
-			interval = 20,
+			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101737] = {
@@ -2517,7 +2532,7 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"]
 		},
 		[101791] = {
-			interval = 25,
+			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},
@@ -3821,47 +3836,47 @@ local spawnpoint_delays = {
 	},
 	["peta2"] = {
 		[100128] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100130] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100131] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100132] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100133] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100007] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100019] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100692] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100693] = {
-			interval = 0,
+			interval = 10,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[100694] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		},
 		[101217] = {
-			interval = 0,
+			interval = 20,
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},
@@ -4379,7 +4394,7 @@ local spawnpoint_delays = {
 			preferred_spawn_groups = standard_spawngroups["standard"]
 		}
 	},
-	chca = {
+	["chca"] = {
 		[100131] = {
 			interval = 15,
 			preferred_spawn_groups = standard_spawngroups["standard_with_single_spooc"] 

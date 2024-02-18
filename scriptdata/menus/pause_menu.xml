@@ -1,17 +1,17 @@
 <table>
     <menu search="menu;id='pause_menu'">
         <node search="node;name='pause'">
-            <item index="after:item;name='player_list'" next_node="pdth_hud_challenges" name="pdth_challenges" text_id="pdth_hud_challenges" help_id="pdth_hud_challenges_hint" visible_callback="PDTHChall"/>
+            <item index="after:item;name='player_list'" next_node="resmod_challenges" name="resmod_challenges" text_id="resmod_challenges" help_id="resmod_challenges_hint"/>
         </node>
 
-        <node align_line="0.75" menu_components="" modifier="PDTHHudActiveChallenges" refresh="PDTHHudActiveChallenges" name="pdth_hud_active_challenges">
+        <node align_line="0.75" menu_components="" modifier="PDTHHudActiveChallenges" refresh="PDTHHudActiveChallenges" name="resmod_active_challenges">
         </node>
-        <node align_line="0.75" menu_components="" modifier="PDTHHudCompletedChallenges" refresh="PDTHHudCompletedChallenges" name="pdth_hud_completed_challenges">
+        <node align_line="0.75" menu_components="" modifier="PDTHHudCompletedChallenges" refresh="PDTHHudCompletedChallenges" name="resmod_completed_challenges">
         </node>
 
-        <node align_line="0.75" menu_components="" modifier="" name="pdth_hud_challenges">
-            <item next_node="pdth_hud_active_challenges" name="active_challenges" text_id="pdth_hud_active_challenges" help_id="pdth_hud_active_challenges_hint"/>
-            <item next_node="pdth_hud_completed_challenges" name="completed_challenges" text_id="pdth_hud_completed_challenges" help_id="pdth_hud_completed_challenges_hint"/>
+        <node align_line="0.75" menu_components="" modifier="" name="resmod_challenges">
+            <item next_node="resmod_active_challenges" name="active_challenges" text_id="resmod_active_challenges" help_id="resmod_active_challenges_hint"/>
+            <item next_node="resmod_completed_challenges" name="completed_challenges" text_id="resmod_completed_challenges" help_id="resmod_completed_challenges_hint"/>
             <item back="true" name="back" previous_node="true" text_id="menu_back" visible_callback="is_pc_controller"/>
         </node>
     </menu>

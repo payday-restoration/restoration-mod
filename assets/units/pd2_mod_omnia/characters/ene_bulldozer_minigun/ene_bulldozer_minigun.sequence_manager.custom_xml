@@ -1,5 +1,14 @@
 <table>
 	<unit>
+		<variables>
+			<var_helmet value="'units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet'"/>
+			<var_helmet_plate value="'units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
+			<var_neck value="'units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
+			<var_throat value="'units/pd2_mod_omnia/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
+			<var_chest value="'units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
+			<var_stomache value="'units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
+			<var_back value="'units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
+		</variables>
 		<sequence name="'int_seq_helmet_plate'" once="true">
 			<body enabled="false" name="'body_helmet_plate'"/>
 			<object enabled="false" name="'g_helmet_plate'"/>
@@ -9,7 +18,7 @@
 			<object enabled="true" name="'g_helmet_glass'"/>
 			<object enabled="true" name="'g_helmet_glass_lod1'"/>
 			<decal_mesh enabled="true" name="'dm_helmet_glass'"/>
-			<spawn_unit name="'units/payday2/characters/ene_acc_bulldozer_helmet_plate_2/ene_acc_bulldozer_helmet_plate_2'" position="object_pos('Head')" rotation="object_rot('Head')"/>
+			<spawn_unit name="vars.var_helmet_plate" position="object_pos('Head')" rotation="object_rot('Head')"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Head'"/>
 		</sequence>
 		<sequence name="'int_seq_helmet_glass_01'" once="true">
@@ -24,6 +33,7 @@
 			<body enabled="false" name="'body_helmet_glass'"/>
 			<body enabled="false" name="'body_helmet'"/>
 			<object enabled="false" name="'g_helmet_glass'"/>
+			<object enabled="false" name="'g_helmet_glass_contour'"/>
 			<object enabled="false" name="'g_helmet_glass_lod1'"/>
 			<object enabled="false" name="'g_helmet_glass_crk'"/>
 			<object enabled="false" name="'g_helmet_glass_crk_lod1'"/>
@@ -33,20 +43,23 @@
 			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'e_glass' )" position="v()"/>
 			<function extension="'character_damage'" function="'seq_clbk_vizor_shatter'" start_time="1"/>
 		</sequence>
+		<sequence name="'int_seq_helmet_pop'" once="true">
+			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Head'"/>
+			<sound action="'play'" event="'knife_equip'" object="'Head'"/>
+			<sound action="'play'" event="'knife_hit_gen'" object="'Head'"/>
+			<sound action="'play'" event="'knuckles_hit_gen'" object="'Head'"/>
+			<sound action="'play'" event="'knuckles_hit_gen'" object="'Head'"/>
+			<object enabled="false" name="'g_helmet'"/>
+			<object enabled="false" name="'g_helmet_lod1'"/>
+			<decal_mesh enabled="false" name="'dm_helmet'"/>
+			<spawn_unit name="vars.var_helmet" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 450 * rand(), 650 * rand() )"/>
+		</sequence>
 		<sequence name="'int_seq_armor_chest'" once="true">
 			<body enabled="false" name="'body_armor_chest'"/>
 			<object enabled="false" name="'g_armor_chest'"/>
 			<object enabled="false" name="'g_armor_chest_lod1'"/>
 			<decal_mesh enabled="false" name="'dm_armor_chest'"/>
-			<spawn_unit name="'units/payday2/characters/ene_acc_bulldozer_chest_2/ene_acc_bulldozer_chest_2'" position="object_pos('Spine1')" rotation="object_rot('Spine1')"/>
-			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
-		</sequence>
-		<sequence name="'int_seq_armor_stomache'" once="true">
-			<body enabled="false" name="'body_armor_stomache'"/>
-			<object enabled="false" name="'g_armor_stomache'"/>
-			<object enabled="false" name="'g_armor_stomache_lod1'"/>
-			<decal_mesh enabled="false" name="'dm_armor_stomache'"/>
-			<spawn_unit name="'units/payday2/characters/ene_acc_bulldozer_stomache_2/ene_acc_bulldozer_stomache_2'" position="object_pos('Hips')" rotation="object_rot('Hips')"/>
+			<spawn_unit name="vars.var_chest" position="object_pos('Spine1')" rotation="object_rot('Spine1')"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
 		</sequence>
 		<sequence name="'int_seq_armor_back'" once="true">
@@ -54,21 +67,29 @@
 			<object enabled="false" name="'g_armor_back'"/>
 			<object enabled="false" name="'g_armor_back_lod1'"/>
 			<decal_mesh enabled="false" name="'dm_armor_back'"/>
-			<spawn_unit name="'units/payday2/characters/ene_acc_bulldozer_back_2/ene_acc_bulldozer_back_2'" position="object_pos('Spine1')" rotation="object_rot('Spine1')"/>
+			<spawn_unit name="vars.var_back" position="object_pos('Spine1')" rotation="object_rot('Spine1')"/>
+			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
+		</sequence>
+		<sequence name="'int_seq_armor_stomache'" once="true">
+			<body enabled="false" name="'body_armor_stomache'"/>
+			<object enabled="false" name="'g_armor_stomache'"/>
+			<object enabled="false" name="'g_armor_stomache_lod1'"/>
+			<decal_mesh enabled="false" name="'dm_armor_stomache'"/>
+			<spawn_unit name="vars.var_stomache"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Spine1'"/>
 		</sequence>
 		<sequence name="'int_seq_armor_throat'" once="true">
 			<body enabled="false" name="'body_armor_throat'"/>
 			<object enabled="false" name="'g_throat'"/>
 			<object enabled="false" name="'g_throat_lod1'"/>
-			<spawn_unit name="'units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_throat/ene_acc_bulldozer_ben_throat'" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
+			<spawn_unit name="vars.var_throat" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<sequence name="'int_seq_armor_neck'" once="true">
 			<body enabled="false" name="'body_armor_neck'"/>
 			<object enabled="false" name="'g_neck'"/>
 			<object enabled="false" name="'g_neck_lod1'"/>
-			<spawn_unit name="'units/pd2_mod_omnia/characters/ene_acc_bulldozer_ben_neck/ene_acc_bulldozer_ben_neck'" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
+			<spawn_unit name="vars.var_neck" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<body name="'body_helmet_plate'">
@@ -84,19 +105,24 @@
 				<run_sequence name="'int_seq_helmet_glass_02'"/>
 			</endurance>
 		</body>
+		<body name="'head'">
+			<endurance explosion="35">
+				<run_sequence name="'int_seq_helmet_pop'"/>
+			</endurance>
+		</body>
+		<body name="'body_armor_back'">
+			<endurance damage="95" explosion="85">
+				<run_sequence name="'int_seq_armor_back'"/>
+			</endurance>
+		</body>
 		<body name="'body_armor_chest'">
-			<endurance damage="8" explosion="50">
+			<endurance damage="95" explosion="75">
 				<run_sequence name="'int_seq_armor_chest'"/>
 			</endurance>
 		</body>
 		<body name="'body_armor_stomache'">
-			<endurance damage="8" explosion="50">
+			<endurance damage="75" explosion="50">
 				<run_sequence name="'int_seq_armor_stomache'"/>
-			</endurance>
-		</body>
-		<body name="'body_armor_back'">
-			<endurance damage="8" explosion="50">
-				<run_sequence name="'int_seq_armor_back'"/>
 			</endurance>
 		</body>
 		<body name="'body_armor_throat'">
@@ -136,6 +162,21 @@
 			<constraint enabled="false" name="'LeftArm'"/>
 			<constraint enabled="false" name="'RightArm'"/>
 			<constraint enabled="false" name="'Head'"/>
+		</sequence>
+		<sequence editable_state="true" name="'prepare_ragdoll'" triggable="true">
+			<body enabled="false" motion="'dynamic'" name="'rag_Hips'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftLeg'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_RightLeg'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine1'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Spine2'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftForeArm'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_RightForeArm'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
 		</sequence>
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
 			<body enabled="false" name="'body'"/>

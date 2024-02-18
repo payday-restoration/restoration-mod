@@ -7,7 +7,9 @@ end
 -- Don't exit attack logic while chasing
 function TankCopLogicAttack._chk_exit_attack_logic(data, ...)
 	if not data.internal_data.walking_to_chase_pos then
-		CopLogicAttack._chk_exit_attack_logic(data, ...)
+		if not data.attention_obj or data.attention_obj.dis > 2000 or data.attention_obj.reaction < AIAttentionObject.REACT_COMBAT then
+			CopLogicAttack._chk_exit_attack_logic(data, ...)
+		end
 	end
 end
 
@@ -43,39 +45,23 @@ function TankCopLogicAttack.update(data)
 	end
 
 	local enemy_visible = focus_enemy.verified
-	local engage = my_data.attitude == "engage"
-	local z_dist = math.abs(data.m_pos.z - focus_enemy.m_pos.z)
-	local walk = focus_enemy.verified_dis < (focus_enemy.verified and 800 or 300)
-	local chase
-
-	if AIAttentionObject.REACT_COMBAT <= focus_enemy.reaction then
-		if enemy_visible then
-			chase = z_dist < 300 or focus_enemy.verified_dis > 2000 or engage and focus_enemy.verified_dis > 500
-
-			if walk and unit:anim_data().run then
-				unit:brain():action_request({
-					body_part = 2,
-					type = "idle"
-				})
-			end
-		else
-			chase = z_dist < 300 or focus_enemy.verified_dis > 2000 or engage and (not focus_enemy.verified_t or data.t - focus_enemy.verified_t > 5 or focus_enemy.verified_dis > 700)
+	if focus_enemy.reaction >= AIAttentionObject.REACT_COMBAT then
+		-- Stop running if we're close enough
+		if enemy_visible and focus_enemy.dis < 400 and unit:anim_data().run then
+			unit:brain():action_request({
+				body_part = 2,
+				type = "idle"
+			})
 		end
-	end
 
-	if chase then
 		if my_data.walking_to_chase_pos then
 			-- Check if the current chase pos is too far from our focus enemy and if so, cancel chase to get a better pos
-			if mvector3.distance_sq(my_data.walking_to_chase_pos:get_destination_pos(), focus_enemy.m_pos) > 1440000 then
+			if my_data.chase_enemy and mvector3.distance_sq(my_data.walking_to_chase_pos:get_destination_pos(), my_data.chase_enemy.m_pos) > 1440000 then
 				TankCopLogicAttack._cancel_chase_attempt(data, my_data)
 			end
-			return
 		elseif my_data.pathing_to_chase_pos then
-			return
 		elseif my_data.chase_path then
-			-- Fix incorrect path starting position
-			CopLogicAttack._correct_path_start_pos(data, my_data.chase_path)
-			TankCopLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, walk and "walk" or "run")
+			TankCopLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, enemy_visible and focus_enemy.dis < 800 and "walk" or "run")
 		elseif my_data.chase_pos then
 			local from_pos = unit:movement():nav_tracker():field_position()
 			local to_pos = my_data.chase_pos
@@ -99,6 +85,7 @@ function TankCopLogicAttack.update(data)
 			end
 		elseif focus_enemy.nav_tracker then
 			my_data.chase_pos = CopLogicAttack._find_flank_pos(data, my_data, focus_enemy.nav_tracker, 1000)
+			my_data.chase_enemy = focus_enemy
 		end
 	else
 		TankCopLogicAttack._cancel_chase_attempt(data, my_data)

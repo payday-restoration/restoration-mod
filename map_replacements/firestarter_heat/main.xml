@@ -1,5 +1,5 @@
 <table name="firestarter_heat">
-	<level ai_group_type="fbi" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="loud_suit">
+	<level ai_group_type="fbi" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="jumpsuit">
 		<add file="levels/firestarter_1_res/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -16,8 +16,7 @@
 			<value_node value="levels/narratives/h_firestarter/stage_1/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/editor_only/editor_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/env/env"/>
-			<value_node value="levels/narratives/classics/dinner/lights/lights"/>
-			<value_node value="levels/instances/unique/chew/chew_swat_van/world/world"/>
+			<value_node value="levels/instances/unique/mus_helicopter/world_sounds"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -37,10 +36,6 @@
 			<value_node value="levels/narratives/h_firestarter/stage_2/background/background"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/pc_only/pc_only"/>
 			<value_node value="levels/narratives/h_firestarter/stage_2/editor_only/editor_only"/>
-			<value_node value="levels/narratives/escapes/escape_cafe/temp/temp"/>
-			<value_node value="levels/narratives/armadillo/arm_und/pc_only/pc_only"/>
-			<value_node value="packages/addbdu"/>
-			<value_node value="levels/instances/unique/pbr/pbr_mountain_vault/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
@@ -57,7 +52,6 @@
 		<packages>
 			<value_node value="packages/narr_firestarter3"/>
 			<value_node value="packages/job_firestarter"/>
-			<value_node value="packages/miscassets"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/world_sounds"/>
 			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
@@ -66,6 +60,9 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
+	<instance id="loot_heli_cage">
+		<packages/>
+	</instance>
 	<narrative brief_id="heist_firestarter_crimenet" briefing_event="hct_firestarter_brf" contact="hector" custom="true" debrief_event="hct_firestarter_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_01" id="firestarter" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" name_id="heist_firestarter">
 		<chain>
 			<table level_id="firestarter_1_res" type="d" type_id="heist_type_hijack"/>
@@ -93,6 +90,9 @@
 			<value_node value="cn_fires2"/>
 			<value_node value="cn_fires3"/>
 		</crimenet_videos>
+		<debrief_event>
+			<value_node value="hct_firestarter_debrief"/>
+		</debrief_event>
 		<experience_mul>
 			<value_node value="1.2"/>
 			<value_node value="1.2"/>
@@ -121,13 +121,13 @@
 			<value_node value="30000"/>
 		</min_mission_xp>
 		<payout>
-			<value_node value="70000"/>
-			<value_node value="95000"/>
-			<value_node value="125000"/>
-			<value_node value="200000"/>
-			<value_node value="250000"/>
-			<value_node value="250000"/>
-			<value_node value="250000"/>
+			<value_node value="7000"/>
+			<value_node value="9500"/>
+			<value_node value="12500"/>
+			<value_node value="20000"/>
+			<value_node value="25000"/>
+			<value_node value="25000"/>
+			<value_node value="25000"/>
 		</payout>
 	</narrative>
 </table>

@@ -1,0 +1,89 @@
+<effect force_synch="false">
+    <atom name="Glow" min_size="1" max_size="1" lifetime="0.8" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="0" fade_in_length="10" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomvelocity relative="effect" min="0 0 10000" max="0 0 10000"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomsize min="150 150" max="150 150"/>
+            <boxrandomposition relative="effect" min="0 0 270" max="0 0 270"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <rotationbyvelocity velocity="50000"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+            <billboard texture="effects/payday2/textures/flares/disco_flare_big_02_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="premultiplied" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="keys" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <color_keys loop="false">
+                    <key t="0" v="0 0 0"/>
+                    <key t="0.031782064586878" v="20 120 255"/>
+                    <key t="0.52381002902985" v="20 120 255"/>
+                    <key t="0.79710102081299" v="0 0 0"/>
+                </color_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="2" v="3600"/>
+                </rotation_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

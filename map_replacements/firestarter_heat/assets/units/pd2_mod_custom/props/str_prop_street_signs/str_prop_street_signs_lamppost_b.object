@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel orientation_object="rp_str_prop_street_signs_lamppost_b" materials="units/pd2_mod_custom/props/str_prop_street_signs/str_prop_street_signs_lamppost" />
+    <bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object name="rp_str_prop_street_signs_lamppost_b" />
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

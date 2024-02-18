@@ -1,3 +1,7 @@
+function HuskPlayerBase:update_concealment()
+	--Just in case
+end
+
 function HuskPlayerBase:pre_destroy(unit)
 	UnitBase.pre_destroy(self, unit) -- if this isn't done at the start of the function, any converts with this husk player as their follow_unit can possibly crash the game, thanks Overkill!
 

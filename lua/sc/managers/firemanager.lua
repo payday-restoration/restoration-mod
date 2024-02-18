@@ -19,6 +19,7 @@ local draw_obstructed_splinters = nil
 local draw_splinter_hits = nil
 local debug_draw_duration = 3
 
+--[[
 function FireManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
@@ -539,6 +540,7 @@ function FireManager:client_damage_and_push(from_pos, normal, user_unit, dmg, ra
 
 	managers.explosion:units_to_push(units_to_push, from_pos, range)
 end
+--]]
 
 function FireManager:give_local_player_dmg(pos, range, damage, user_unit)
 	local player = managers.player:player_unit()
@@ -549,8 +551,7 @@ function FireManager:give_local_player_dmg(pos, range, damage, user_unit)
 			position = pos,
 			range = range,
 			damage = damage,
-			attacker_unit = user_unit,
-			ignite_character = ignite_character
+			attacker_unit = user_unit
 		})
 	end
 end 

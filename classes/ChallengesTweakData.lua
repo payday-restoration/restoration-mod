@@ -165,6 +165,17 @@ function ChallengesTweakData:init()
 		xp = small_xp,
 		awards_achievment = "duck_hunting"
 	}
+
+    self.new_challenges = {}
+    self.new_challenges.melee_test = {
+        title_id = "ch_melee_test",
+        description_id = "ch_melee_test_desc",
+        xp = gigantic_xp,
+        depends_on = {
+			melee_weapons = {"fists"}
+		},
+        flag_id = "melee_test",
+    }
 		
 	self.weapon = {}
 	

@@ -242,11 +242,19 @@ function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, grp_
 			total_wgt = total_wgt + spawn_entry.freq
 		end
 	end
+	
+	--Forced groups (mostly captains) spawn instantly.
+	if not spawn_group_desc.force then
+		for _, sp_data in ipairs(spawn_group.spawn_pts) do
+			sp_data.delay_t = self._t + math.rand(0.5)
+		end
+	end
 
 	local spawn_task = {
 		objective = not grp_objective.element and self._create_objective_from_group_objective(grp_objective),
 		units_remaining = {},
 		spawn_group = spawn_group,
+		force = spawn_group_desc.force,
 		spawn_group_type = spawn_group_type,
 		ai_task = ai_task
 	}
@@ -1043,8 +1051,11 @@ function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, deto
 				end
 
 				if detonate_pos and shooter_u_data then
-					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false)
-					self:apply_grenade_cooldown()
+					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false, false)
+					
+					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.rand(0, 1)^0.5)
+					task_data.use_smoke = false
+					--self:apply_grenade_cooldown()
 
 					u_data.unit:sound():say("d01", true)
 
@@ -1088,8 +1099,12 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 				end
 
 				if detonate_pos and shooter_u_data then
-					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true)
-					self:apply_grenade_cooldown(true)
+					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true, false)
+					
+					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random()^0.5)
+					task_data.use_smoke = false
+					
+					--self:apply_grenade_cooldown(true)
 
 					u_data.unit:sound():say("d02", true)	
 					u_data.unit:movement():play_redirect("throw_grenade")					
@@ -1225,10 +1240,9 @@ end
 -- Making them retreat only afterwards gives them more time to complete their objectives
 local _assign_recon_groups_to_retire_original = GroupAIStateBesiege._assign_recon_groups_to_retire
 function GroupAIStateBesiege:_assign_recon_groups_to_retire(...)
-	if self._task_data.assault.phase == "anticipation" then
-		return
+	if not self._rescue_allowed then
+		return _assign_recon_groups_to_retire_original(self, ...)
 	end
-	return _assign_recon_groups_to_retire_original(self, ...)
 end
 
 -- Tweak importance of spawn group distance in spawn group weight based on the groups to spawn
@@ -1527,6 +1541,11 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "assign_enemy_to_group_ai", function
 
 	self:_add_group_member(group, unit:key())
 	self:set_enemy_assigned(area, unit:key())
+end)
+
+-- Make this function properly set rescue state again for checking if recon tasks are allowed
+Hooks:OverrideFunction(GroupAIStateBase, "_set_rescue_state", function (self, state)
+	self._rescue_allowed = state
 end)
 
 -- Fix for potential crash when a group objective does not have a coarse path

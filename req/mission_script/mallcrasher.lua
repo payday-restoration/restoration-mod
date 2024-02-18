@@ -1,9 +1,9 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 300	
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 or tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 480
 	end
 
@@ -18,20 +18,29 @@ return {
 			{ id = 300164, delay = 45 }
 		}
 	},
-	-- access fix (doesn't work for some reason)
+	--access fix, beat cops use fbi access
 	[302019] = {
-		values = {
-			SO_access = "96"
-		}
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
 	},
 	[302021] = {
-		values = {
-			SO_access = "96"
-		}
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
 	},
 	[302022] = {
-		values = {
-			SO_access = "96"
-		}
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
 	}
 }

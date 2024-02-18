@@ -708,3 +708,10 @@ function CopBrain:_chk_use_cover_grenade(unit)
 		self._nr_flashbang_covers_used = (self._nr_flashbang_covers_used or 0) + 1
 	end
 end
+
+-- Don't trigger damage callback from poison damage as it would make enemies go into shoot action
+-- when they stand inside a poison cloud, regardless of any targets being visible or not
+local clbk_damage_original = CopBrain.clbk_damage
+function CopBrain:clbk_damage(my_unit, damage_info, ...)
+	return damage_info.variant ~= "poison" and clbk_damage_original(self, my_unit, damage_info, ...)
+end

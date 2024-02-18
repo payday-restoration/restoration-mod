@@ -176,9 +176,14 @@ function SpecializationGuiNew:update_detail_panels(item)
 				text_params.text = text_params.text:gsub("\n\n", " ")
 				text_params.text = text_params.text:gsub("\n", " ")
 				text_params.alpha = locked and 0.75 or 1
+				local color_range = {}
+				for color_id in string.gmatch(text_params.text, "#%{(.-)%}#") do
+					table.insert(color_range, tweak_data.screen_colors[color_id])
+				end
+				text_params.text = text_params.text:gsub("#%{(.-)%}#", "##")
 				local ability_text = self._details_panel:text(text_params)
 
-				managers.menu_component:add_colors_to_text_object(ability_text, tweak_data.screen_colors.resource)
+				managers.menu_component:add_colors_to_text_object(ability_text, unpack( #color_range > 1 and color_range or {tweak_data.screen_colors.resource} ))
 				ExtendedPanel.make_fine_text(ability_text)
 				ability_text:set_y(y_pos + margin)
 
@@ -255,9 +260,14 @@ function SpecializationGuiNew:update_detail_panels(item)
 		end
 
 		text_params.text = text_string
+		local color_range = {}
+		for color_id in string.gmatch(text_params.text, "#%{(.-)%}#") do
+			table.insert(color_range, tweak_data.screen_colors[color_id])
+		end
+		text_params.text = text_params.text:gsub("#%{(.-)%}#", "##")
 		local ability_text = self._details_panel:text(text_params)
 
-		managers.menu_component:add_colors_to_text_object(ability_text, tweak_data.screen_colors.resource)
+		managers.menu_component:add_colors_to_text_object(ability_text, unpack( #color_range > 1 and color_range or {tweak_data.screen_colors.resource} ))
 		ExtendedPanel.make_fine_text(ability_text)
 		ability_text:set_y(y_pos + margin)
 

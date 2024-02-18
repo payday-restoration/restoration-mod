@@ -1,8 +1,0 @@
-<materials version="3">
-    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
-    <material name="mat_ind_ext_garagedoor01_clean" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
-        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_garagedoor01_clean_df"/>
-        <reflection_texture file="environments/cubemaps/cubemap_steel" type="cubemap"/>
-        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_garagedoor01_nm"/>
-    </material>
-</materials>

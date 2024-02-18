@@ -78,6 +78,8 @@ function CopActionShoot:init(action_desc, common_data)
 	self._spread = weapon_usage_tweak.spread or 20
 	self._miss_dis = weapon_usage_tweak.miss_dis or 30
 	self._automatic_weap = weap_tweak.auto and weapon_usage_tweak.autofire_rounds and true or nil
+	self._reload_speed = self._ext_movement:get_reload_speed_multiplier()
+	self._looped_expire_time = self._ext_movement:get_looped_reload_time() or nil
 	self._glint_effect = weapon_unit:effect_spawner(Idstring("glint_scope"))
 	self._falloff = weapon_usage_tweak.FALLOFF or {
 		{
@@ -325,7 +327,7 @@ function CopActionShoot:on_attention(attention, old_attention)
 	end
 
 	self._shooting_player = nil
-	self._shooting_husk_unit = nil
+	self._shooting_husk_player = nil
 	self._next_vis_ray_t = nil
 	self._can_attack_with_special_move = nil
 	self._deploy_gas = nil
@@ -362,17 +364,17 @@ function CopActionShoot:on_attention(attention, old_attention)
 			else
 				if self._is_server then
 					if attention.unit:base() and attention.unit:base().is_husk_player then
-						self._shooting_husk_unit = true
+						self._shooting_husk_player = true
 						self._next_vis_ray_t = t - 1
 					end
 				else
-					self._shooting_husk_unit = true
+					self._shooting_husk_player = true
 					self._next_vis_ray_t = t - 1
 				end
 			end
 
 			if self._is_server then
-				if self._shooting_player or self._shooting_husk_unit then
+				if self._shooting_player or self._shooting_husk_player then
 					if self._ext_brain._deploy_gas_t then
 						self._deploy_gas = true
 					end
@@ -581,7 +583,7 @@ end
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type, distance)
 	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
 		mvec3_set_l(target_vec, distance / 1300)
-		if ProjectileBase.throw_projectile(grenade_type, shoot_from_pos, target_vec, nil, self._unit, true) then
+		if ProjectileBase.throw_projectile_npc(grenade_type, shoot_from_pos, target_vec, self._unit) then
 			return true
 		end
 	elseif grenade_type == "tear_gas" then
@@ -618,8 +620,7 @@ function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, gr
 end
 
 function CopActionShoot:update(t)
-	local vis_state = self._ext_base:lod_stage()
-	vis_state = vis_state or 4
+	local vis_state = self._ext_base:lod_stage() or 4
 
 	if not self._autofiring and vis_state ~= 1 then
 		if self._skipped_frames < vis_state * 3 then
@@ -631,9 +632,13 @@ function CopActionShoot:update(t)
 		end
 	end
 
+	if self._ext_anim.base_need_upd then
+		self._ext_movement:upd_m_head_pos()
+	end
+
 	local shoot_from_pos = self._shoot_from_pos
 	local ext_anim = self._ext_anim
-	local target_pos, target_vec, target_dis, autotarget = nil
+	local target_vec, target_dis, autotarget, target_pos = nil
 
 	if self._attention then
 		target_pos, target_vec, target_dis, autotarget = self:_get_target_pos(shoot_from_pos, self._attention, t)
@@ -663,13 +668,19 @@ function CopActionShoot:update(t)
 
 		target_vec = self:_upd_ik(target_vec, fwd_dot, t)
 	end
+
+	if ext_anim.reload then
+		if self._looped_expire_t and self._looped_expire_t < t then
+			self._looped_expire_t = nil
+			self._ext_movement:play_redirect("reload_looped_exit")
+		end
+		return
+	elseif ext_anim.equip or ext_anim.melee then
+		return
+	end
 	
 	if self._shield_use_cooldown and target_vec and self._common_data.allow_fire and self._shield_use_cooldown < t and target_dis < self._shield_use_range then
-		local new_cooldown = self._shield_base:request_use(t)
-
-		if new_cooldown then
-			self._shield_use_cooldown = new_cooldown
-		end
+		self._shield_use_cooldown = self._shield_base:request_use(t) or self._shield_use_cooldown
 	end	
 
 	if not ext_anim.reload and not ext_anim.equip and not ext_anim.melee then
@@ -696,16 +707,16 @@ function CopActionShoot:update(t)
 						
 						proceed_as_usual = nil
 						
-					if is_tank_mini then	
-						self._unit:sound():say("g90", true, nil, true)
-					elseif is_senator_armstrong then	
-						self._unit:sound():say("a01", true, nil, true)	
-					else
-						self._unit:sound():say("use_gas", true, nil, true)	
+						if is_tank_mini then	
+							self._unit:sound():say("g90", true, nil, true)
+						elseif is_senator_armstrong then	
+							self._unit:sound():say("a01", true, nil, true)	
+						else
+							self._unit:sound():say("use_gas", true, nil, true)	
+						end
 					end
 				end
-			end
-		end	
+			end	
 
 			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t and 2000 >= target_dis and 500 <= target_dis then
 				self._ext_brain._throw_molotov_t = t + 10
@@ -747,6 +758,7 @@ function CopActionShoot:update(t)
 					end
 
 					if is_autumn then
+						--[[
 						if not self._ext_brain._set_endless_assault then
 							local ai_task_data = managers.groupai:state()._task_data
 
@@ -758,6 +770,7 @@ function CopActionShoot:update(t)
 								end
 							end
 						end
+						]]--
 
 						local gas_roll = math_random() <= self._common_data.char_tweak.chance_use_gas or 0.3
 
@@ -818,6 +831,7 @@ function CopActionShoot:update(t)
 				self._autoshots_fired = nil
 			end
 
+			--[[
 			if self._is_server then
 				self._exiting_to_reload = true
 
@@ -828,6 +842,8 @@ function CopActionShoot:update(t)
 
 				self._ext_movement:action_request(reload_action)
 			end
+			--]]
+			CopActionReload._play_reload(self, t)
 		elseif self._autofiring then
 			if not self._common_data.allow_fire or not target_vec then
 				self._weapon_base:stop_autofire()
@@ -842,6 +858,7 @@ function CopActionShoot:update(t)
 				local falloff, i_range = self:_get_shoot_falloff(target_dis, self._falloff)
 				local dmg_buff = self._ext_base:get_total_buff("base_damage")
 				local dmg_mul = (1 + dmg_buff) * falloff.dmg_mul
+				local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, self._w_usage_tweak, falloff, i_range, autotarget)
 
 				if managers.mutators:is_mutator_active(MutatorCG22) then
 					local cg22_mutator = managers.mutators:get_mutator(MutatorCG22)
@@ -849,9 +866,7 @@ function CopActionShoot:update(t)
 					if cg22_mutator:can_enemy_be_affected_by_buff("green", self._unit) then
 						dmg_mul = dmg_mul * cg22_mutator:get_enemy_green_multiplier()
 					end
-				end				
-				
-				local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, falloff, i_range, autotarget)
+				end			
 
 				if new_target_pos then
 					target_pos = new_target_pos
@@ -860,15 +875,20 @@ function CopActionShoot:update(t)
 				end
 
 				local spread_pos = temp_vec2
-
-				mvec3_rand_orth(spread_pos, target_vec)
+	
+				mvec3_set(spread_pos, target_vec)
+				mvec3_rand_orth(spread_pos)
 				mvec3_set_l(spread_pos, spread)
 				mvec3_add(spread_pos, target_pos)
-				mvec3_dir(target_vec, shoot_from_pos, spread_pos)
-
+	
+				target_dis = mvec3_dir(target_vec, shoot_from_pos, spread_pos)
 				local fired = self._weapon_base:trigger_held(shoot_from_pos, target_vec, dmg_mul, autotarget, nil, nil, nil, self._attention.unit)
 
 				if fired then
+					--if fired.hit_enemy and fired.hit_enemy.type == "death" and self._unit:unit_data().mission_element then
+					--	self._unit:unit_data().mission_element:event("killshot", self._unit)
+					--end
+					
 					if vis_state == 1 and not ext_anim.recoil and not ext_anim.base_no_recoil and not ext_anim.move then
 						if self._tank_animations then
 							self._ext_movement:play_redirect("recoil_single")
@@ -905,21 +925,23 @@ function CopActionShoot:update(t)
 
 				self._shoot_t = t + moving_cooldown
 			elseif self._line_of_sight_t then
-				if not self._shooting_husk_unit or self._next_vis_ray_t < t then
-					if self._shooting_husk_unit then
+				if not self._shooting_husk_player or self._next_vis_ray_t < t then
+					if self._shooting_husk_player then
 						self._next_vis_ray_t = t + 2
 					end
-					
+
+					--[[
 					if Network:is_server() and alive(self._ext_inventory._shield_unit) and target_dis < 1100 and self._ext_inventory._shield_unit:base() and self._ext_inventory._shield_unit:base().request_start_flash and self._ext_inventory._shield_unit:base():can_request_flash(t) then
 						self._ext_inventory._shield_unit:base():request_start_flash()
-					end					
+					end
+					--]]
 
 					local fire_line_is_obstructed = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", managers.slot:get_mask("AI_visibility"), "ray_type", "ai_vision")
 
 					if fire_line_is_obstructed then
 						if self._use_sniper_focus or t - self._line_of_sight_t > 3 then
 							if self._draw_aim_delay_vis_proc then
-								local draw_duration = self._shooting_husk_unit and 4 or 2
+								local draw_duration = self._shooting_husk_player and 4 or 2
 
 								local line = Draw:brush(Color.yellow:with_alpha(0.5), draw_duration)
 								line:cylinder(shoot_from_pos, fire_line_is_obstructed.position, 0.5)
@@ -974,7 +996,7 @@ function CopActionShoot:update(t)
 
 						if not self._last_vis_check_status and t - self._line_of_sight_t > 1 then
 							if self._draw_focus_delay_vis_reset then
-								local draw_duration = self._shooting_husk_unit and 4 or 2
+								local draw_duration = self._shooting_husk_player and 4 or 2
 
 								local line_1 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
 								line_1:cylinder(shoot_from_pos, self._shoot_history.m_last_pos, 0.5)
@@ -1021,14 +1043,14 @@ function CopActionShoot:update(t)
 					end
 
 					if self._draw_fire_line_ray then
-						local draw_duration = self._shooting_husk_unit and 2 or 0.1
+						local draw_duration = self._shooting_husk_player and 2 or 0.1
 						local line_to_pos = fire_line_is_obstructed and fire_line_is_obstructed.position or target_pos
 						local line = fire_line_is_obstructed and Draw:brush(Color.red:with_alpha(0.2), draw_duration) or Draw:brush(Color.white:with_alpha(0.2), draw_duration)
 						line:cylinder(shoot_from_pos, line_to_pos, 0.1)
 					end
 
 					self._last_vis_check_status = shoot
-				elseif self._shooting_husk_unit then
+				elseif self._shooting_husk_player then
 					shoot = self._last_vis_check_status
 				end
 			else
@@ -1084,7 +1106,7 @@ function CopActionShoot:update(t)
 					end
 				else
 					local spread = self._spread
-					local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, falloff, i_range, autotarget)
+					local new_target_pos = self._shoot_history and self:_get_unit_shoot_pos(t, target_pos, target_dis, self._w_usage_tweak, falloff, i_range, autotarget)
 
 					if new_target_pos then
 						target_pos = new_target_pos
@@ -1134,13 +1156,9 @@ function CopActionShoot:update(t)
 			end
 		end
 	end
-
-	if self._ext_anim.base_need_upd then
-		self._ext_movement:upd_m_head_pos()
-	end
 end
 
-function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shooting_local_player)
+function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, w_tweak, falloff, i_range, shooting_local_player)
 	local shoot_hist = self._shoot_history
 	local focus_delay, focus_prog = nil
 
@@ -1172,7 +1190,7 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		dis_lerp = dis / falloff.r
 		hit_chance = math_lerp(hit_chances[1], hit_chances[2], focus_prog)
 	else
-		local prev_falloff = self._falloff[i_range - 1]
+		local prev_falloff = w_tweak.FALLOFF[i_range - 1]
 		dis_lerp = math_min(1, (dis - prev_falloff.r) / (falloff.r - prev_falloff.r))
 		local prev_range_hit_chance = math_lerp(prev_falloff.acc[1], prev_falloff.acc[2], focus_prog)
 		hit_chance = math_lerp(prev_range_hit_chance, math_lerp(hit_chances[1], hit_chances[2], focus_prog), dis_lerp)
@@ -1213,7 +1231,7 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 
 		local miss_min_dis = shooting_local_player and 31 or 150
 		--Crackdown fix for spread rng sometimes causing shots that should miss to hit.
-		local error_vec_len = miss_min_dis + self._spread + self._miss_dis * math_random() * (1 - focus_prog)
+		local error_vec_len = miss_min_dis + w_tweak.spread + w_tweak.miss_dis * (1 - focus_prog)
 
 		mvec3_set_l(error_vec, error_vec_len)
 		mvec3_add(error_vec, pos)
@@ -1496,6 +1514,25 @@ function CopActionShoot:anim_clbk_melee_strike()
 				end
 			end
 		end
+		
+	local melee_tweak_npc = tweak_data.weapon.npc_melee[self._unit:base():melee_weapon()]
+	if melee_tweak_npc and melee_tweak_npc.tase_data then
+		if self._attention.unit:character_damage().on_non_lethal_electrocution then
+			if not self._attention.unit:character_damage().can_be_tased or self._attention.unit:character_damage():can_be_tased() then
+				self._attention.unit:character_damage():on_non_lethal_electrocution(melee_tweak_npc.tase_data.electrocution_time_mul)
+			end
+		elseif self._attention.unit:character_damage().damage_tase then
+			self._attention.unit:character_damage():damage_tase({
+				variant = melee_tweak_npc.tase_data.tase_strength or "light",
+				damage = 0,
+				attacker_unit = self._unit,
+				col_ray = {
+					position = shoot_from_pos + fwd * 50,
+					ray = mvector3.copy(target_vec)
+				}
+			})
+		end
+	end
 
 		if defense_data and defense_data ~= "friendly_fire" then
 			if defense_data == "countered" then
@@ -1571,4 +1608,5 @@ function CopActionShoot:anim_clbk_melee_strike()
 			end
 		end
 	end
+	self._melee_unit = nil
 end

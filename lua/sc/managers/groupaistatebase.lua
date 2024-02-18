@@ -360,20 +360,7 @@ function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	return balance_multipliers[nr_players]
 end
 
-function GroupAIStateBase:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, ignore_control, flashbang)
-	self._smoke_grenades = self._smoke_grenades or {}
-	local data = {
-		id = id,
-		detonate_pos = detonate_pos,
-		shooter_pos = shooter_pos,
-		duration = duration,
-		ignore_control = ignore_control,
-		flashbang = flashbang
-	}
-	self._smoke_grenades[id] = data
-end
-
-function GroupAIStateBase:detonate_world_smoke_grenade(id)
+function GroupAIStateBase:detonate_world_smoke_grenade(id, sync)
 	self._smoke_grenades = self._smoke_grenades or {}
 
 	if not self._smoke_grenades[id] then
@@ -418,9 +405,17 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 			flashbang_unit = "units/payday2/weapons/wpn_frag_flashbang/wpn_frag_flashbang"
 		end
 
+		flashbang_unit = managers.mutators:modify_value("GroupAIStateBase:SpawnSpecialFlashbang", flashbang_unit)
 		local flash_grenade = World:spawn_unit(Idstring(flashbang_unit), det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
-		flash_grenade:base():activate(shoot_from_pos, data.duration)
+		
+		managers.network:session():send_to_peers_synched("sync_flash_grenade_data", flash_grenade, data.shooter_pos or Vector3(), data.instant and true or false)
+
+		if data.instant then
+			flash_grenade:base():activate_immediately(data.shooter_pos, data.duration)
+		else
+			flash_grenade:base():activate(data.shooter_pos, data.duration)
+		end
 
 		self._smoke_grenades[id] = nil
 	else
@@ -445,7 +440,12 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		local smoke_grenade = World:spawn_unit(smoke_grenade_id, det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
 		--log("spawning smoke!! was it tear gas?")
-		smoke_grenade:base():activate(shoot_from_pos, data.duration)
+				
+		if data.instant then
+			smoke_grenade:base():activate_immediately(data.shooter_pos, data.duration)
+		else
+			smoke_grenade:base():activate(data.shooter_pos, data.duration)
+		end
 
 		local voice_line = "g40x_any"
 		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
@@ -453,33 +453,13 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
-		self._smoke_end_t = Application:time() + data.duration
+		
+		self:_update_smoke_end_t(TimerManager:game():time() + data.duration)
 	end
-end
-
-function GroupAIStateBase:sync_smoke_grenade(detonate_pos, shooter_pos, duration, flashbang)
-	self._smoke_grenades = self._smoke_grenades or {}
-	local id = #self._smoke_grenades
-
-	self:queue_smoke_grenade(id, detonate_pos, shooter_pos, duration, true, flashbang)
-	self:detonate_world_smoke_grenade(id)
-end
-
-function GroupAIStateBase:sync_smoke_grenade_kill()
-	if self._smoke_grenades then
-		for id, data in pairs(self._smoke_grenades) do
-			if alive(data.grenade) and data.grenade:base() and data.grenade:base().preemptive_kill then
-				data.grenade:base():preemptive_kill()
-			end
-		end
-
-		self._smoke_grenades = {}
-		self._smoke_end_t = nil
-	end
-end
-
-function GroupAIStateBase:smoke_and_flash_grenades()
-	return self._smoke_grenades
+	
+	if sync and not data.flashbang and Network:is_server() then
+		managers.network:session():send_to_peers_synched("sync_smoke_grenade", data.detonate_pos, data.shooter_pos or Vector3(), data.duration, data.flashbang and true or false, data.instant and true or false)
+	end	
 end
 
 --No longer increases with more players, also ignores converts.
@@ -805,12 +785,6 @@ function GroupAIStateBase:_delay_whisper_suspicion_mul_decay()
 end
 
 function GroupAIStateBase:on_enemy_unregistered(unit)
-	if self:is_unit_in_phalanx_minion_data(unit:key()) then
-		self:unregister_phalanx_minion(unit:key())
-		CopLogicPhalanxMinion:chk_should_breakup()
-		CopLogicPhalanxMinion:chk_should_reposition()
-	end
-
 	self._police_force = self._police_force - 1
 	local u_key = unit:key()
 
@@ -828,6 +802,12 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 
 		fail_clbk(unit)
 	end
+	
+	if self:is_unit_in_phalanx_minion_data(unit:key()) then
+		self:unregister_phalanx_minion(unit:key())
+		CopLogicPhalanxMinion:chk_should_breakup()
+		CopLogicPhalanxMinion:chk_should_reposition()
+	end	
 
 	local e_data = self._police[u_key]
 
@@ -989,6 +969,7 @@ function GroupAIStateBase:_get_anticipation_duration(anticipation_duration_table
 	
 end	
 
+-- Add chance for enemies to comment on squad member deaths
 local _remove_group_member_ori = GroupAIStateBase._remove_group_member
 function GroupAIStateBase:_remove_group_member(group, u_key, is_casualty)
 	_remove_group_member_ori(self, group, u_key, is_casualty)
@@ -1738,4 +1719,39 @@ function GroupAIStateBase:_count_police_force(task_name)
 		end
 	end
 	return amount
+end
+
+-- Make jokers follow their actual owner instead of the closest player
+local _determine_objective_for_criminal_AI_original = GroupAIStateBase._determine_objective_for_criminal_AI
+function GroupAIStateBase:_determine_objective_for_criminal_AI(unit, ...)
+	local logic_data = unit:brain()._logic_data
+	if logic_data.is_converted and alive(logic_data.minion_owner) then
+		return {
+			type = "follow",
+			scan = true,
+			follow_unit = logic_data.minion_owner
+		}
+	end
+
+	return _determine_objective_for_criminal_AI_original(self, unit, ...)
+end
+
+-- Adjust objective data for rescue and steal SOs
+Hooks:PreHook(GroupAIStateBase, "add_special_objective", "sh_add_special_objective", function (self, id, objective_data)
+	if type(id) ~= "string" or not id:match("^carrysteal") and not id:match("^rescue") then
+		return
+	end
+
+	objective_data.interval = 4
+	objective_data.search_dis_sq = 4000000
+	objective_data.objective.interrupt_dis = 600
+	objective_data.objective.interrupt_health = 0.8
+	objective_data.objective.pose = nil
+end)
+
+-- Disable drama zones to prevent skipping of anticipation, build and regroup phases
+-- The zones are only used for that, which makes the phases inconsistent for no real reason
+function GroupAIStateBase:_add_drama(amount)
+	self._drama_data.amount = math.clamp(self._drama_data.amount + amount, 0, 1)
+	self._drama_data.zone = nil
 end

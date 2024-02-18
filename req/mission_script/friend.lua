@@ -1,29 +1,31 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local amount_guards = 8
 
-	if tweak_data:difficulty_to_index(difficulty) <= 5 then
+	if difficulty_index <= 5 then
 		ponr_value = 660	
-	elseif tweak_data:difficulty_to_index(difficulty) == 6 or tweak_data:difficulty_to_index(difficulty) == 7 then
+	elseif difficulty_index == 6 or difficulty_index == 7 then
 		ponr_value = 630	
-	elseif tweak_data:difficulty_to_index(difficulty) == 8 then
+	else
 		ponr_value = 600		
 	end
 
-	if tweak_data:difficulty_to_index(difficulty) == 8 then	
+	if difficulty_index == 8 then	
 		amount_guards = 12
 	end
 	
-	if Global.game_settings and Global.game_settings.one_down then	
-		if tweak_data:difficulty_to_index(difficulty) == 8 then
-			enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
-		end
+	if pro_job then	
+		enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 	end
 	
 return {
-	--Pro Job PONR
+	--Pro Job PONR + Players now can steal paintings when boat escape triggered (if we do it on stealth tho)
 	[100216] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		on_executed = {
+			{ id = 101070, delay = 0 }
+		}
 	},
 	-- Enter main hall
 	[103594] = {
@@ -71,7 +73,7 @@ return {
 			amount = amount_guards
 		}
 	},
-	--Spawn enforcers during Sosa fight on DS PJ
+	--Spawn enforcers during Sosa fight on PJ
 	[101845] = {
 		values = {
             enemy = enforcer_guard

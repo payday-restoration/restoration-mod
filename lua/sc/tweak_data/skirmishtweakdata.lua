@@ -641,7 +641,6 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	--This portion of the code will need to be cut and reworked once infinite is in progress.
 	--Might be ideal to use/abuse lua virtual tables and vary them based on captain type.
 	local wave_9_captain = math.random()
-	local job = Global.level_data and Global.level_data.level_id
 	
 	--Always force the big scary halloween guy, maybe look into a faction check down the line?
 	if job == "skm_nightmare_lvl" then
@@ -658,7 +657,23 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		assault_groups.SKM_GREEN_Tank[10] = 0.0
 		assault_groups.SKM_SKULL_Tank[10] = 0.0
 		assault_groups.SKM_TIT_Tank[10] = 0.0
-		assault_groups.SKM_FBI_spoocs[10] = 0.05	
+		assault_groups.SKM_FBI_spoocs[10] = 0.05
+	--- Winters is sick today so Autumn is replacing him on duty 
+	elseif job == "skm_firestarter_2" then
+		self.captain = "SKM_Cap_Autumn_W9"
+				assault_groups.SKM_Cap_Autumn[10] = 5
+				assault_groups.SKM_Light_Swat[10] = 0.35
+				assault_groups.SKM_Heavy_Swat[10] = 0.25
+				assault_groups.SKM_Shields[10] = 0.14
+				assault_groups.SKM_Shields_Booms[10] = 0.01
+				assault_groups.SKM_Tazers[10] = 0.09
+				assault_groups.SKM_Booms[10] = 0.01
+				assault_groups.SKM_HRTs[10] = 0.1
+				assault_groups.SKM_BLACK_Tank[10] = 0.015
+				assault_groups.SKM_GREEN_Tank[10] = 0.015
+				assault_groups.SKM_SKULL_Tank[10] = 0.015
+				assault_groups.SKM_TIT_Tank[10] = 0.005
+				assault_groups.SKM_FBI_spoocs[10] = 0.0	
 	else
 		if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 			if wave_9_captain < 0.24 then --Spooky halloween boss.
@@ -901,6 +916,9 @@ function SkirmishTweakData:_init_wave_modifiers()
 		{
 			class = "ModifierSniperAim",
 			data = {speed = 2}
+		},
+		{
+			class = "ModifierUberChargeShields"
 		}
 	}
 	self.wave_modifiers[7] = {{class = "ModifierBravoSniper"}}

@@ -1,0 +1,87 @@
+<table>
+	<unit>
+		<!--Camera State-->
+		<!--0 = Default	-->
+		<!--1 = Titan	-->
+		<variables>
+			<var_type value="0"/>
+		</variables>
+		
+		<filter name="'filter_default'">
+			<check value="vars.var_type == 0"/>
+		</filter>
+		<filter name="'filter_titan'">
+			<check value="vars.var_type == 1"/>
+		</filter>
+		<!--Camera Health-->
+		<body name="'c_security_camera'">
+			<endurance bullet="1" explosion="1" melee="0.5">
+				<run_sequence filter="'filter_default'" name=" 'stop' "/>
+			</endurance>
+		</body>
+		
+		<!--Camera Killed-->
+		<sequence name="'stop'" triggable="true">
+			<run_sequence name="'spot_light_disable'"/>
+
+			<effect				name="'effects/particles/dest/security_camera_dest'" parent="'CameraYaw'"/>
+			<sound				action="'play'" event="'emitter_security_camera_explode'" source="''"/>
+
+			<animation_group	enabled="true" name="'dead'"/>
+
+			<attention	giveaway="'broken_cam'"		operation="'add'"				preset_name="'broken_cam_ene_ntl'"/>
+			<function	extension="'base'"			function="'generate_cooldown'"	param1="1"/>
+
+			<object		enabled="true"		name="'g_security_camera_break'"/>
+			<object		enabled="true"		name="'g_security_camera'"/>
+			<object		enabled="false"		name="'g_security_camera_light'"/>
+			<body		enabled="false"		name="'c_security_camera'"/>
+			<decal_mesh	enabled="true"		name="'dm_security_camera'"/>
+		</sequence>
+		
+		<!--Camera State Default-->
+		<sequence editable_state="true" name="'default'" triggable="true">
+			<set_variables	var_type="0"/>
+			
+			<graphic_group	visibility="true"	name="'g_default'"/>
+			<graphic_group	visibility="false"	name="'g_titan'"/>
+			
+			<decal_mesh		enabled="true" name="'dm_security_camera'"/>
+			<body			enabled="true" name="'c_security_camera'"/>
+			<body			enabled="false"	name="'c_deathwish'"/>
+			<decal_mesh		enabled="false"	name="'dm_body_steel_deathwish'"/>
+			<decal_mesh		enabled="false"	name="'dm_neck_steel_deathwish'"/>
+		</sequence>
+		
+		<!--Camera State Titan-->
+		<sequence editable_state="true" name="'deathwish'" triggable="true">
+			<set_variables	var_type="1"/>
+			
+			<graphic_group	visibility="false"	name="'g_default'"/>
+			<graphic_group	visibility="true"	name="'g_titan'"/>
+			
+			<decal_mesh		enabled="false" name="'dm_security_camera'"/>
+			<body			enabled="false" name="'c_security_camera'"/>
+			<body			enabled="true"	name="'c_deathwish'"/>
+			<decal_mesh		enabled="true"	name="'dm_body_steel_deathwish'"/>
+			<decal_mesh		enabled="true"	name="'dm_neck_steel_deathwish'"/>
+		</sequence>
+		
+		<!--Toggle Flashlight Effect-->
+		<sequence name=" 'spot_light_disable' " triggable="true">
+			<effect_spawner enabled="false" name="'spot_light'"/>
+		</sequence>
+		<sequence name=" 'spot_light_enable' " triggable="true">
+			<effect_spawner enabled="true" name="'spot_light'"/>
+		</sequence>
+		
+		<!--Toggle Active Camera Blink-->
+		<sequence name=" 'blink_disable' " triggable="true">
+			<animation_group enabled="false" name="'light'"/>
+		</sequence>
+		<sequence name=" 'blink_enable' " triggable="true">
+			<animation_group enabled="true" name="'light'"/>
+		</sequence>
+		
+	</unit>
+</table>

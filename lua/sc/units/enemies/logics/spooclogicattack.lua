@@ -1,4 +1,4 @@
--- More consistent Cloaker attacks. Why would Cloakers not be allowed to start a sprint attack when another cop is in the way?
+-- More consistent Cloaker attacks, why wouldn't they be allowed to start a sprint attack when another cop is in the way?
 function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	if my_data.spooc_attack or data.t <= data.spooc_attack_timeout_t or data.unit:movement():chk_action_forbidden("walk") then
 		return
@@ -22,6 +22,7 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	end
 
 	if focus_enemy.unit:movement().is_SPOOC_attack_allowed and not focus_enemy.unit:movement():is_SPOOC_attack_allowed() then
+
 		return
 	end
 
@@ -46,7 +47,7 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 
 	local action = SpoocLogicAttack._chk_request_action_spooc_attack(data, my_data, flying_strike)
 	if action then
-		data.spooc_attack_delay_t = nil
+		my_data.spooc_attack_delay_t = nil
 
 		my_data.spooc_attack = {
 			start_t = data.t,

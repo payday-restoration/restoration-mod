@@ -605,6 +605,7 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.ecm_jammer.blackout_vulnerable = true
 	self.trip_mine.blackout_vulnerable = true
 	self.grenade_briefcase.blackout_vulnerable = true
+	self.grenade_crate.blackout_vulnerable = true
 	--Grenade crate
 	self.invisible_interaction_open_superfast = {
 		icon = "develop",

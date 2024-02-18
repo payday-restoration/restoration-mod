@@ -1,4 +1,6 @@
 function MutatorsManager:init()
+	self:ProfileLoad()
+
 	managers.mutators = self
 	self._message_system = MessageSystem:new()
 	self._lobby_delay = -1
@@ -45,6 +47,14 @@ function MutatorsManager:init()
 		MutatorCrazyTaser:new(self),
 		MutatorMasterDodger:new(self),
 		MutatorGoldfarbDozers:new(self),
+		MutatorOverheal:new(self),
+		MutatorASUBuff:new(self),
+		MutatorBoFlashbang:new(self),
+		MutatorGrenadeMayhem:new(self),
+		MutatorNoOutlines:new(self),
+		MutatorCaptainReplacer:new(self),
+		MutatorSpoocSquad:new(self),
+		MutatorOnlyTitans:new(self),
 		--MutatorFactionsReplacer:new(self),
 		MutatorBirthday:new(self)
 	}
@@ -112,4 +122,36 @@ end
 
 function MutatorsManager:should_disable_statistics()
 	return false
+end
+
+Hooks:PostHook(MutatorsManager, "set_enabled", "res_set_enabled", function(self)
+	self:ProfileSave()
+end)
+
+function MutatorsManager:ProfileLoad()
+	local file = io.open(SavePath .. "ResMutatorsSave.json", "r")
+	
+	if not file then 
+		return false 
+	end
+	
+	local fileT= file:read("*all"):gsub("%[%],","{},") 
+	file : close()
+	
+	if string.len(fileT) < 10 or fileT == "[]" then 
+		return 
+	end
+	
+	Global.mutators = Global.mutators or { mutator_values = {}, active_on_load = {} }
+	Global.mutators.mutator_values = json.decode(fileT)
+end
+
+function MutatorsManager:ProfileSave()
+	local file = io.open(SavePath .. "ResMutatorsSave.json", "w+")
+	if not file then 
+		return false 
+	end
+	
+	file:write(json.encode(Global.mutators.mutator_values))
+	file:close()
 end

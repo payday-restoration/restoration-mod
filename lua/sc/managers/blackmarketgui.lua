@@ -749,6 +749,7 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "attack_speed" then
 			local base = tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)
+			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -763,6 +764,7 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "impact_delay" then
 			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)) or 0
+			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -2933,10 +2935,15 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 
 			self._armor_stats_shown = {
 				{
+					name = "health"
+				},
+				{
 					name = "armor"
 				},
 				{
-					name = "health"
+					name = "regen_time",
+					inverted = true,
+					append = "s"
 				},
 				{
 					name = "deflection"
@@ -2958,11 +2965,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					name = "stamina"
-				},
-				{
-					name = "regen_time",
-					inverted = true,
-					append = "s"
 				}
 			}
 			local x = 0
@@ -4541,7 +4543,7 @@ function BlackMarketGui:update_info_text()
 			local weapon_category = nil
 			local is_akimbo = false
 			local firemode_string = ""
-			local add_burst, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
+			local add_burst, add_auto, burst_to_auto, auto_to_burst, lock_burst, lock_auto, lock_semi, lock_firemode, add_firemode, swap_firemode, firemode_modded = nil
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
@@ -4572,6 +4574,10 @@ function BlackMarketGui:update_info_text()
 						swap_firemode = true
 						firemode_modded = true
 						break
+					elseif stats.add_auto then
+						add_auto = true
+						add_firemode = true
+						firemode_modded = true
 					elseif stats.add_burst then
 						add_burst = true
 						add_firemode = true
@@ -4603,12 +4609,15 @@ function BlackMarketGui:update_info_text()
 					if add_burst then
 						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") 
 					end
+					if add_auto then
+						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto") 
+					end
 					if weapon_tweak.BURST_FIRE then
 						local burst_type = nil --weapon_tweak.BURST_TYPE
 						if weapon_tweak.BURST_ONLY then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						else
-							if is_akimbo then
+							if is_akimbo or weapon_tweak.BURST_FIRE_DEFAULT then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
 							elseif burst_to_auto then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
@@ -4834,19 +4843,6 @@ function BlackMarketGui:update_info_text()
 					rays = nil
 				end
 
-				if exp_ammo then
-					description = managers.localization:text("bm_menu_weapon_exp_no_hs_info")
-					for color_id in string.gmatch(description, "#%{(.-)%}#") do
-						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
-					end
-					description = description:gsub("#%{(.-)%}#", "##")
-					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays then
-						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
-					else
-						updated_texts[4].text = updated_texts[4].text .. description
-					end
-					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				else
 					if ap_desc then
 						description = managers.localization:text( ap_desc )
 						for color_id in string.gmatch(description, "#%{(.-)%}#") do
@@ -4877,6 +4873,19 @@ function BlackMarketGui:update_info_text()
 						end
 						table.insert(updated_texts[4].resource_color, (ene_hs_mult < 1 and tweak_data.screen_colors.important_1 or tweak_data.screen_colors.skill_color) )
 					end
+
+				if exp_ammo then
+					description = managers.localization:text("bm_menu_weapon_exp_no_hs_info")
+					for color_id in string.gmatch(description, "#%{(.-)%}#") do
+						table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+					end
+					description = description:gsub("#%{(.-)%}#", "##")
+					if slot_data.global_value and slot_data.global_value ~= "normal" and updated_texts[4].text ~= "" or weapon_tweak.has_description or rays or ap_desc or (hs_mult_desc and hs_mult ~= 1) or ene_hs_mult ~= 1 then
+						updated_texts[4].text = updated_texts[4].text .. "\n" .. description
+					else
+						updated_texts[4].text = updated_texts[4].text .. description
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end
 				
 
@@ -5169,13 +5178,35 @@ function BlackMarketGui:update_info_text()
 		end
 		local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
 		local upgrade_level = bm_armor_tweak.upgrade_level
-		local dodge_grace = tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] and (tweak_data.upgrades.values.player.body_armor.dodge_grace[upgrade_level] - 1) * 100
-		if dodge_grace and dodge_grace > 0 then
-			local description = managers.localization:text("bm_menu_dodge_grace", {grace_bonus = dodge_grace})
+		local detection_risk = managers.blackmarket:get_suspicion_offset_from_custom_data({armors = slot_data.name}, tweak_data.player.SUSPICION_OFFSET_LERP or 0.75)
+		detection_risk = math.round(detection_risk * 100)
+		local dodge_rating = 0
+		local mod_dodge = managers.player:body_armor_value("dodge", upgrade_level)
+		local skill_dodge = managers.player:skill_dodge_chance(false, false, false, slot_data.name, detection_risk)
+		local current_diff = Global.game_settings.difficulty or "easy"
+		local is_pro = Global.game_settings and Global.game_settings.one_down
+		local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(current_diff) or 0) - 2)
+		dodge_rating = math.clamp((dodge_rating + mod_dodge + skill_dodge) * 1000, 0, 450)
+		if dodge_rating and dodge_rating > 0 then
+			local description = managers.localization:text("bm_menu_dodge_grace", { grace_bonus = dodge_rating .. managers.localization:text("bm_menu_append_milliseconds") } )
+			local diff_desc = ""
+			local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
+			local grace_cap = (0.45 - (0.45 - diff_reduction)) * 1000 
 			for color_id in string.gmatch(description, "#%{(.-)%}#") do
-				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+				table.insert(updated_texts[4].resource_color,  tweak_data.screen_colors[dodge_rating == 450 and "stat_maxed" or color_id])
 			end
-			description = description:gsub("#%{(.-)%}#", "##")
+			if difficulty_id > 3 or is_pro then
+				diff_desc = "\n" .. managers.localization:text("bm_menu_dodge_grace_cap", { grace_bonus_cap = grace_cap .. managers.localization:text("bm_menu_append_milliseconds") } ) .. 
+				((is_pro and managers.localization:text("bm_menu_dodge_grace_jp_cap")) or "") ..
+				((is_pro and difficulty_id > 3 and managers.localization:text("bm_menu_dodge_grace_both")) or "") .. 
+				((difficulty_id > 3 and managers.localization:text("bm_menu_dodge_grace_diff_cap", { risk_level = managers.localization:text( tweak_data.difficulty_name_ids[tostring(current_diff)] ) } ) ) or "")
+
+				for color_id in string.gmatch(diff_desc, "#%{(.-)%}#") do
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors[color_id])
+				end
+			end
+
+			description = description:gsub("#%{(.-)%}#", "##") .. ((dodge_rating > (grace_cap + 0.01)) and diff_desc:gsub("#%{(.-)%}#", "##") or "")  
 			updated_texts[4].text = updated_texts[4].text .. description
 		end
 		updated_texts[4].below_stats = true

@@ -436,7 +436,14 @@ function SentryGunDamage:damage_fire(attack_data)
 		end
 	end
 
-	if self._char_tweak.FIRE_DMG_MUL then
+	local weap_base = alive(weapon_unit) and weapon_unit:base()
+	local proj_id = weap_base and weap_base._tweak_projectile_entry
+	local turret_instakill = proj_id and tweak_data.projectiles[proj_id].turret_instakill
+
+	if turret_instakill then
+		self._shield_health = 0
+		damage = math.huge
+	elseif self._char_tweak.FIRE_DMG_MUL then
 		damage = damage * self._char_tweak.FIRE_DMG_MUL
 	end
 
@@ -511,7 +518,7 @@ function SentryGunDamage:damage_fire(attack_data)
 		end
 	end
 
-	self._unit:network():send("damage_fire", attacker, damage_percent, send_hit_shield, self._dead and true or false, Vector3(), nil, nil, send_destroy_shield)
+	self._unit:network():send("damage_fire", attacker, damage_sync, self._dead and true or false, attack_data.col_ray.ray, 0, false)
 
 	if not self._dead then
 		self._unit:brain():on_damage_received(attack_data.attacker_unit)

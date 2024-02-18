@@ -1,0 +1,8 @@
+<unit type="str" slot="1" >
+    <object file="units/pd2_mod_custom/cus_arch_str_road/str_ext_road_16x16m_tcross_matgrp_manhole" />
+   	<network sync="spawn"/>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

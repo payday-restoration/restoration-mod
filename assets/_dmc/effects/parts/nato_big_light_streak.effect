@@ -1,0 +1,32 @@
+<effect force_synch="false">
+    <atom name="sparks0" min_size="1" max_size="1" lifetime="0.8" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="0" fade_in_length="10" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update_render" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 270" max="0 0 270"/>
+            <boxrandomvelocity relative="effect" min="0 0 10000" max="0 0 10000"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomuvoffset uv_size="0.0625 0.0625" frame_start="0 0.9375" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+            <boxrandomrotation relative="effect" min="0 0 0" max="0 0 0" min_rot="0" max_rot="0"/>
+            <boxrandomaspectsize size="2 50" min="1" max="3"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <rotationbyvelocity velocity="50000"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="identity" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="keys" opacity_input="constant" opacity="255" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="0.0625 0.0625" uv_offset_input="channel">
+                <color_keys loop="false">
+                    <key t="0" v="255 100 100"/>
+                    <key t="0.79864639043808" v="0 0 0"/>
+                </color_keys>
+            </billboard>
+            <light per_particle_age="false" shadow_caster="false" specular="true" color_input="constant" color="192.00001525879 100 100" multiplier_input="keys" far_range_input="constant" far_range="150">
+                <multiplier_keys loop="false">
+                    <key t="0" v="0.019999999552965"/>
+                    <key t="0.30481284856796" v="0"/>
+                    <key t="0.54812836647034" v="0.019999999552965"/>
+                    <key t="0.79000002145767" v="0"/>
+                </multiplier_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+</effect>

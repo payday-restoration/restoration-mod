@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_calendar" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_mod_e3/props/e3_calendar/e3_calendar_df"/>
+    </material>
+</materials>

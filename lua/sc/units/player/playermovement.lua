@@ -7,6 +7,9 @@ function PlayerMovement:init(...)
 		managers.player:has_category_upgrade("temporary", "dmg_dampener_close_contact")
 		
 	self._underdog_skill_data.chk_interval_active = 1 --temp test
+
+	local detection_risk_stamina_regen = managers.player:upgrade_value("player", "detection_risk_stamina_regen")
+	self._stamina_regen_add = managers.player:get_value_from_risk_upgrade(detection_risk_stamina_regen) or 0
 end
 
 function PlayerMovement:on_SPOOCed(enemy_unit, flying_strike)
@@ -175,4 +178,12 @@ function PlayerMovement:_calc_suspicion_ratio_and_sync(observer_unit, status, lo
 			managers.network:session():send_to_peers_synched("suspicion", peer:id(), suspicion_sync)
 		end
 	end
+end
+
+function PlayerMovement:_restart_stamina_regen_timer()
+	self._regenerate_timer = ((tweak_data.player.movement_state.stamina.REGENERATE_TIME or 5) + self._stamina_regen_add ) * managers.player:upgrade_value("player", "stamina_regen_timer_multiplier", 1)
+end
+
+function PlayerMovement:activate_regeneration()
+	self._regenerate_timer = ((tweak_data.player.movement_state.stamina.REGENERATE_TIME or 5) + self._stamina_regen_add ) * managers.player:upgrade_value("player", "stamina_regen_timer_multiplier", 1)
 end

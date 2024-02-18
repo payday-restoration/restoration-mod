@@ -214,8 +214,9 @@ function TeamAILogicIdle.on_long_dis_interacted(data, other_unit, secondary)
 	local should_stay = false
 
 	if objective_type == "follow" then
-		if data.unit:movement():carrying_bag() and not data.unit:movement()._should_stay then
-			local throw_distance = tweak_data.ai_carry.throw_distance * data.unit:movement():carry_tweak().throw_distance_multiplier
+		if data.unit:movement():carrying_bag() and not data.unit:movement():should_stay() then
+			local carry_type_tweak = data.unit:movement():carry_type_tweak()
+			local throw_distance = tweak_data.ai_carry.throw_distance * (carry_type_tweak and carry_type_tweak.throw_distance_multiplier or 1)
 			local dist = data.unit:position() - other_unit:position()
 			local throw_bag = mvec3_dot(dist, dist) < throw_distance * throw_distance
 
@@ -611,7 +612,7 @@ function TeamAILogicIdle._get_priority_attention(data, attention_objects, reacti
 							local is_valid_combat_target = target_priority_slot ~= 0 and reaction >= AIAttentionObject.REACT_COMBAT
 							local check_healing_sources = is_valid_combat_target and att_unit:character_damage().check_medic_heal
 
-							if check_healing_sources and not t_cont(tweak_data.medic.disabled_units, att_base._tweak_table) then
+							if check_healing_sources and not att_base:char_tweak().can_be_healed == false then
 								if not att_unit:anim_data() or not att_unit:anim_data().act then
 									local team = att_unit:brain() and att_unit:brain()._logic_data and att_unit:brain()._logic_data.team
 									local proceed = true

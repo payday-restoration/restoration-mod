@@ -28,6 +28,7 @@ StatisticsManager.special_unit_ids = {
 	"headless_hatman",
 	"summers",
 	"omnia_lpf",
+	"phalanx_vip_break",
 	"hrt_titan",
 	"fbi_vet",
 	"city_swat_titan",

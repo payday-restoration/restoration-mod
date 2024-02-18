@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_street_sign_roof_gh/str_prop_street_sign_roof_gh_02_v2" orientation_object="rp_str_prop_street_sign_roof_contest_01" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_str_prop_street_sign_roof_contest_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

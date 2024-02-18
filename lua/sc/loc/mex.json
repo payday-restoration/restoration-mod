@@ -29,11 +29,11 @@
   "ene_fbi_titan" : "D-100 OCELOT ASU",
   "ene_phalanx_1_assault" : "D-117 EPSILON SHIELD",
   "ene_spook_cloak_1" : "D-1000 GHOST SPOOC",
-  "ene_titan_grenadier" : "DRAK Titan Grenadier",
+  "ene_titan_grenadier" : "D-290 OMICRON GRENADIER",
   "ene_subject_enforcer" : "D-145 SIGMA FLAMER",
   "ene_titan_rifle" : "D-106 DELTA SOLDIER",
   "ene_titan_shotgun" : "D-106 DELTA SOLDIER",
   "ene_titan_sniper" : "D-102 GAMMA SNIPER",
   "ene_titan_taser" : "D-110 ETA TASER",
-  "ene_vip_2" : "D-123 OMEGA MKII BOMBDOZER"
+  "ene_vip_2" : "D-123 OMEGA TANK"
 }

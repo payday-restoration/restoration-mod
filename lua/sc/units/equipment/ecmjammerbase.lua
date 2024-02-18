@@ -99,3 +99,57 @@ function ECMJammerBase:clbk_feedback()
 		managers.enemy:add_delayed_clbk(self._feedback_clbk_id, callback(self, self, "clbk_feedback"), t + self._feedback_interval)
 	end
 end
+--[[
+Hooks:PostHook(ECMJammerBase, "sync_net_event", "sync_net_event_no_outlines", function(self,event_id)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+	local net_events = self._NET_EVENTS
+		if event_id == net_events.feedback_flash then
+			self._unit:contour():remove("deployable_active")
+		end
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "set_active", "set_active_no_outlines", function(self,active)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+		if active then
+			self._unit:contour():remove("deployable_active")
+		end
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "_set_battery_low", "_set_battery_low_no_outlines", function(self)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+		if not self._unit:contour():is_flashing() then
+			self._unit:contour():remove("deployable_active")
+		end
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "_set_feedback_active", "_set_feedback_active_no_outlines", function(self,state)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+		if state then
+			self._unit:contour():remove("deployable_active")
+		end
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "contour_interaction", "contour_interaction_no_outlines", function(self)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+		if managers.player:has_category_upgrade("ecm_jammer", "can_activate_feedback") and managers.network:session() and self._unit:contour() and self._owner_id == managers.network:session():local_peer():id() then
+			self._unit:contour():remove("deployable_interactable")
+		end
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "contour_selected", "contour_selected_no_outlines", function(self)
+	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)
+	if disable_outlines then
+		self._unit:contour():remove("deployable_selected")
+	end
+end)
+--]]

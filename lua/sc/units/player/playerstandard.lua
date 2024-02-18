@@ -1731,7 +1731,9 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	
 	if self._shooting_move_speed_t then
 		multiplier = multiplier * self._shooting_move_speed_mult
-	elseif self:_is_reloading() and weapon and weapon._rms then
+	end
+	
+	if self:_is_reloading() and weapon and weapon._rms then
 		multiplier = multiplier * weapon._rms
 	end
 

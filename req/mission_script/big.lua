@@ -183,20 +183,12 @@ return {
 	--Trigger ambush cloakers
 	[105836] = {
 		on_executed = {
-			{ id = 400004, delay = 0 },
-			{ id = 400005, delay = 0 },
-			{ id = 400006, delay = 0 },
-			{ id = 400007, delay = 0 },
-			{ id = 400008, delay = 0 }
+			{ id = 400018, delay = 0 }
 		}
 	},
 	[106001] = {
 		on_executed = {
-			{ id = 400004, delay = 0 },
-			{ id = 400005, delay = 0 },
-			{ id = 400006, delay = 0 },
-			{ id = 400007, delay = 0 },
-			{ id = 400008, delay = 0 }
+			{ id = 400018, delay = 0 }
 		}
 	},
 	--More chance for blowing up the wall/also faster time to trigger

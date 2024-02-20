@@ -212,10 +212,6 @@ return {
             Vector3(-6642, 1505, -599),
             Rotation(0, 0, -0),
             optsCloaker_Hide_SO_1
-        ),
-		restoration:gen_random(
-            400018,
-            optsRandom_Cloakers
         )
     }
 }

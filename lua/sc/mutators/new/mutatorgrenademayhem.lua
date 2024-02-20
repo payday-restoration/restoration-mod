@@ -35,8 +35,6 @@ function MutatorGrenadeMayhem:setup(data)
 	local gm_captains = self:get_grenade_mayhem_captains()
 	local sosa_cosplay = self:get_grenade_mayhem_sosa_cosplay()
 	
-	log("gm_usuals is "..tostring(gm_usuals).."gm_thugs is "..tostring(gm_thugs).."gm_specials is "..tostring(gm_specials).."gm_bosses is "..tostring(gm_bosses).."gm_captains is "..tostring(gm_captains))
-	
 	
 	if gm_usuals then
 		char_tweak.security.can_throw_frag = true

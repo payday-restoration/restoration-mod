@@ -965,26 +965,6 @@ function restoration:mission_script_add()
 			},
 		}
 	end
-	
-	function restoration:gen_random(id, name, opts)
-		opts = opts or {}
-		return {
-			id = id,
-			editor_name = name,
-			class = "ElementRandom",
-			module = "CoreElementRandom",
-			values = {
-				execute_on_startup = false,
-				trigger_times = 0,
-				ignore_disabled = false,
-				on_executed = opts.on_executed or {},
-				base_delay = opts.base_delay or 0,
-				enabled = true,
-				amount = opts.amount or 0,
-				amount_random = opts.amount_random or 0
-			},
-		}
-	end
 
 	function restoration:log(...)
 		if self.logging then

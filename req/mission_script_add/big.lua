@@ -5,8 +5,10 @@ local rouge = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8
-local diff_scaling = 0.125 * difficulty
+local diff_scaling = 0.065 * difficulty
+local diff_scaling_2 = 0.085 * difficulty
 local enabled_chance_cloakers = math.random() < diff_scaling
+local enabled_chance_cloakers_2 = math.random() < diff_scaling_2
 
 if pro_job and difficulty == 8 then
 	cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
@@ -27,7 +29,7 @@ local optsCloaker_2 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400010, delay = 0 } },
-    enabled = (overkill_above and enabled_chance_cloakers)
+    enabled = (overkill_above and enabled_chance_cloakers_2)
 }
 local optsCloaker_3 = {
 	enemy = cloaker,
@@ -39,7 +41,7 @@ local optsCloaker_4 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400012, delay = 0 } },
-    enabled = (overkill_above and enabled_chance_cloakers)
+    enabled = (overkill_above and enabled_chance_cloakers_2)
 }
 local optsCloaker_5 = {
 	enemy = cloaker,
@@ -85,10 +87,6 @@ local optsCloaker_Hide_SO_2 = {
 	interrupt_dis = 5,
 	interval = 2,
     so_action = "e_so_sneak_wait_stand"
-}
-local optsRandom_Cloakers = {
-	on_executed = { { id = 400004, delay = 0 }, { id = 400005, delay = 0 }, { id = 400006, delay = 0 }, { id = 400007, delay = 0 }, { id = 400008, delay = 0 } },
-	amount = 3
 }
 
 return {
@@ -214,10 +212,6 @@ return {
             Vector3(-6642, 1505, -599),
             Rotation(0, 0, -0),
             optsCloaker_Hide_SO_1
-        ),
-		restoration:gen_random(
-            400018,
-            optsRandom_Cloakers
         )
     }
 }

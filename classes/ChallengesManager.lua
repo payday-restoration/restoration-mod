@@ -288,6 +288,9 @@ function ChallengesManagerRes:_completed_challenge( name )
 		-- 	return
 		-- end
 		-- managers.experience:add_points( self._challenges_map_res[ name ].xp, true )
+		if self._challenges_map_res[ name ].cc then
+			managers.custom_safehouse:add_coins( self._challenges_map_res[ name ].cc )
+		end
 	end
 
 
@@ -505,14 +508,14 @@ function ChallengesManagerRes:_correct_level( level_id )
 	-- end
 	-- return Global.level_data.level_id == level_id
 
-	if not Global.load_level then 
+	if not Global.load_level then
 		return
 	end
 
-	local current_level = Global.game_settings.level_id
+	local current_level = managers.job:current_level_id()
 	if type( level_id ) == "table" then
-		for _, diff in ipairs( level_id ) do
-			if diff == current_level then
+		for _, level in ipairs( level_id ) do
+			if level == current_level then
 				return true
 			end
 		end
@@ -527,6 +530,28 @@ function ChallengesManagerRes:_correct_level( level_id )
 	return true
 end
 
+function ChallengesManagerRes:_correct_job( job_id )
+	if not Global.job_manager.current_job then
+		return
+	end
+
+	local current_job = managers.job:current_real_job_id()
+	if type( job_id ) == "table" then
+		for _, job in ipairs( job_id ) do
+			if job == current_job then
+				return true
+			end
+		end
+
+		return false
+	end
+
+	if job_id ~= current_job then
+		return false
+	end
+
+	return true
+end
 
 function ChallengesManagerRes:_correct_difficulty( difficulty )
 	local curr_diff = Global.game_settings.difficulty
@@ -654,7 +679,7 @@ function ChallengesManagerRes:never_bleedout( name, data )
 end
 
 
-function ChallengesManagerRes:overkill_success( name, data )
+function ChallengesManagerRes:level_success( name, data )
 	if not self:_correct_level( self._challenges_map_res[ name ].level_id ) then
 		return
 	end
@@ -708,6 +733,94 @@ function ChallengesManagerRes:overkill_no_trade( name, data )
 
 	if managers.trade._num_trades > 0 then
 		return
+	end
+
+	return true
+end
+
+function ChallengesManagerRes:job_success( name, data )
+	if not self:_correct_job( self._challenges_map_res[ name ].job_id ) then
+		return
+	end
+
+	if not self:_check_level_completed( data ) then
+		return
+	end
+
+	if not self:_correct_difficulty( self._challenges_map_res[ name ].difficulty ) then
+		return
+	end
+
+	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
+		--return false
+	end
+
+	if not managers.job:on_last_stage() then
+		return false
+	end
+
+	return true
+end
+
+function ChallengesManagerRes:pro_job_success( name, data )
+	if not self:_correct_job( self._challenges_map_res[ name ].job_id ) then
+		return
+	end
+
+	if not self:_check_level_completed( data ) then
+		return
+	end
+
+	if not self:_correct_difficulty( self._challenges_map_res[ name ].difficulty ) then
+		return
+	end
+
+	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
+		--return false
+	end
+
+	if not Global.game_settings.one_down then
+		return false
+	end
+
+	if not managers.job:on_last_stage() then
+		return false
 	end
 
 	return true

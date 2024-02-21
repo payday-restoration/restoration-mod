@@ -661,6 +661,20 @@ function CopDamage:damage_fire(attack_data)
 		managers.player:send_message(Message.OnEnemyShot, nil, self._unit, attack_data)
 	end
 
+	local summersandcrew = {
+		"medic_summers",
+		"summers",
+		"taser_summers",
+		"boom_summers"
+	}
+
+	local weapon_unit = attack_data.weapon_unit
+	local weapon_id = alive(weapon_unit) and weapon_unit:base().name_id
+
+	if self._unit:base()._tweak_table == summersandcrew and weapon_id == "flamethrower_mk2" then
+		managers.challenges_res:set_flag("summers_test")
+	end
+
 	return result
 end
 

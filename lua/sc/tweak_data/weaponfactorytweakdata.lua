@@ -3984,6 +3984,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_m16a2")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_og_rof")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -4179,6 +4180,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_patriot")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_og_rof")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	
 	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
@@ -22950,6 +22952,42 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.rof_mult then
 						table.insert(self.parts.wpn_fps_upg_i_og_rof.forbids, used_part_id)
 					end
+				end
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_s_saintvictor_hera = {
+		pcs = {},
+		type = "stock",
+		name_id = "bm_wp_upg_s_saintvictor_hera",
+		a_obj = "a_s",
+		unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera",
+		third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+		alt_icon = "guis/dlcs/savi/textures/pd2/blackmarket/icons/mods/wpn_fps_snp_victor_sbr_kit",
+		supported = true,
+		stats = deep_clone(stocks.adj_to_to_thumb_stats),
+		custom_stats = deep_clone(stocks.adj_to_to_thumb_stats),
+		forbids = {},
+		dlc = "sc"
+	}
+
+	attachment_list = {
+		"wpn_fps_smg_olympic",
+		"wpn_fps_ass_tecci",
+
+		"wpn_fps_ass_amcar",
+		"wpn_fps_ass_m4",
+
+		"wpn_fps_ass_m16",
+		"wpn_fps_ass_contraband",
+		"wpn_fps_snp_tti"
+	}
+	for i, factory_id in ipairs(attachment_list) do
+		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "grip" then
+					table.insert(self.parts.wpn_fps_upg_s_saintvictor_hera.forbids, used_part_id)
 				end
 			end
 		end

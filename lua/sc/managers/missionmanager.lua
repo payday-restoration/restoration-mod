@@ -1,16 +1,31 @@
+--[[
 local level_id = Global.game_settings and Global.game_settings.level_id
 if Global.editor_mode then
 	return
 end
-
+]]--
 -- Add custom mission script changes and triggers for specific levels
 -- Execution of mission scripts can trigger reinforce locations (trigger that has just a name disables previously enabled reinforcement with that id)
 -- Mission script elements can be disabled or enabled
 -- From Streamlined Heisting
 
 local mission_script_elements = restoration:mission_script_patches()
+local mission_add = restoration:mission_script_add()
 if not mission_script_elements then
 	return
+end
+
+
+if mission_add then
+	-- Load the elements from the file
+	Hooks:PreHook(MissionScript, "init", "eclipse_missionmanager_init", function(self, data)
+		if not restoration.loaded_elements and data.name == "default" then
+			for _,element in ipairs(mission_add.elements) do
+                table.insert(data.elements, element)
+            end
+			restoration.loaded_elements = true
+		end
+	end)
 end
 
 Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", function (self)

@@ -885,6 +885,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
 		["ch_watchdogs_d1_heavy_wpn1"] = "Пройти первый день ограбления 'Сторожевые псы', используя только УКТЖ, миниганы, ракетометы или снайперскую винтовку Thanatos, на уровни сложности OVERKILL или выше. Для выполнения этого испытания, ограбление нужно играть с самого начала.",
+
+		-- New challanges
+		["ch_melee_test"] = "Босс качалки",
+		["ch_melee_test_desc"] = "Убейте капитана Отема кулаками",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1252,6 +1256,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_5_scope"] = "Слабая оптика.\n#{risk}#Увеличение 1.5x.##",
 		["bm_wp_upg_o_1_8"] = "Коллиматорный прицел.\n#{risk}#Увеличение 1.8.##",
 		--["bm_wp_upg_o_1_8_irons"] = "Коллиматорный прицел с дополнительной мушкой.\n#{risk}#Увеличение 1-1.8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
+		["bm_wp_upg_o_2"] = "Обычная оптика.\n#{risk}#Увеличение 2х.##",
+		["bm_wp_upg_o_2_5"] = "Обычная оптика.\n#{risk}#Увеличение 2.5х.##",
 		["bm_wp_upg_o_3"] = "Средняя оптика.\n#{risk}#Увеличение 3x##",
 		["bm_wp_upg_o_3_range"] = "Средняя оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 3x.##",
 		["bm_wp_upg_o_3_rds"] = "Средняя оптика с дополнительным отражательным прицелом.\n#{risk}#Увеличение 1-3x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы переключится между прицелами.",
@@ -1555,7 +1561,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Brenner 21/HK21
 		["bm_hk21_sc_desc"] = "Большая младшая сестра винтовки Гевер-3. Увеличенная скорострельность отлично подходит для подавляющего огня.",	
 		--HCAR
-		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.##",	
+		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.",	
 		--M60
 		["bm_m60_sc_desc"] = "Так называемая 'Свинка' - тяжелая и пожирающая патроны. Вблизи никому не выжить.",	
 		--Ksp 58	
@@ -2883,6 +2889,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_shak12"] = "KS-12 Urban",
 		["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 		["bm_w_hcar"] = "Akron HC",
+		["bm_w_hcar_bar"] = "Akron HC",
 		["bm_w_mcx_spear"] = "FIK M7",
 		["bm_w_vss"] = "Viktoriya",
 		["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
@@ -3063,6 +3070,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_rpk"] = "РПК",
 		["bm_w_hk21"] = "Бреннер 21",
 		["bm_w_hcar"] = "Акрон",
+		["bm_w_hcar_bar"] = "Акрон",
 		["bm_w_m60"] = "M60",
 		["bm_w_par"] = "КСП 58",
 		["bm_w_mg42"] = "Косторез 42",
@@ -3788,6 +3796,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12"] = "Kalashnikov Concern ShAK-12",
 					--HCAR
 					["bm_w_hcar"] = "Ohio Ordnance HCAR",
+					["bm_w_hcar_bar"] = "Browning BAR",
 					--GARAND
 					["bm_w_ching"] = "Springfield Armory M1 Garand",
 					["bm_wp_ching_fg_railed"] = "Amega Mini-Scout-Mount",

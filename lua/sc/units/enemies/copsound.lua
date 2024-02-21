@@ -232,10 +232,12 @@ function CopSound:init(unit)
 	local russian_cloaker_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"),
 		ids_func("units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk")		
-	}	
-	local russian_merc_list = {
+	}
+	local russian_medic_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"),
-		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk"),
+		ids_func("units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk")
+	}
+	local russian_merc_list = {
 		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
 		ids_func("units/pd2_mod_reapers/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk"),	
 		--Custom stuff below
@@ -456,6 +458,7 @@ function CopSound:init(unit)
 	local female_enemy = table_contains(female_enemy_list, self._unit:name())
 	local russian_taser = table_contains(russian_taser_list, self._unit:name())
 	local russian_cloaker = table_contains(russian_cloaker_list, self._unit:name())
+	local russian_medic = table_contains(russian_medic_list, self._unit:nane())
 	local russian_merc = table_contains(russian_merc_list, self._unit:name())
 	local russian_mobster = table_contains(russian_mobster_list, self._unit:name())
 	local cobra_gangster = table_contains(cobras_list, self._unit:name())
@@ -479,7 +482,9 @@ function CopSound:init(unit)
 	elseif russian_taser then
 		self._prefix = ("rtsr") .. "_"	
 	elseif russian_cloaker then
-		self._prefix = ("rclk") .. "_"	
+		self._prefix = ("rclk") .. "_"
+	elseif russian_medic then
+		self._prefix = ("rmdc") .. "_"
 	elseif russian_merc then
 		self._prefix = ("r") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("n") .. "_"	
 	elseif russian_mobster then

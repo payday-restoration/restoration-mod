@@ -202,7 +202,18 @@ function PlayerTased:_check_action_shock(t, input, ...)
 	_check_action_shock_original(self, t, input, ...)
 
 	if do_shock then
-		local cam_base = self._unit:camera():camera_unit():base()
-		cam_base:animate_pitch(t, nil, cam_base._camera_properties.pitch + math.random(-10, 10), 0.25)
+		self._cam_start_pitch = self._unit:camera():camera_unit():base()._camera_properties.pitch
+		self._cam_target_pitch = math.clamp(self._cam_start_pitch + math.rand(-5, 5), -90, 90)
+		self._cam_start_pitch_t = t
+		self._cam_target_pitch_t = t + 0.2
+	end
+
+	if self._cam_start_pitch then
+		if t > self._cam_target_pitch_t then
+			self._cam_start_pitch = nil
+		else
+			local pitch = math.map_range(t, self._cam_start_pitch_t, self._cam_target_pitch_t, self._cam_start_pitch, self._cam_target_pitch)
+			self._unit:camera():camera_unit():base():set_pitch(pitch)
+		end
 	end
 end

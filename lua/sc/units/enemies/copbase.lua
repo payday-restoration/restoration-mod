@@ -12,9 +12,21 @@ function CopBase:enable_lpf_buff(state)
 	
 	local align_obj_name = Idstring("Head")
 	local align_obj = self._unit:get_object(align_obj_name)
-	self._overheal_unit = World:spawn_unit(Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff"), Vector3(), Rotation())	
+	local effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff")
+	--Maybe there's another way to handle effects
+	--[[if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_black" or self._unit:base()._tweak_table == "tank_skull" or self._unit:base()._tweak_table == "tank_titan" or self._unit:base()._tweak_table == "tank_hw" or self._unit:base()._tweak_table == "taser_titan" then
+		effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high")
+	end--]]
+	if self._unit:base()._tweak_table == "city_swat_titan" or self._unit:base()._tweak_table == "city_swat_titan_assault" then
+		local faction = tweak_data.levels:get_ai_group_type()
+		if faction == "america" or faction == "nypd" or faction == "lapd" or faction == "fbi" then
+			effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high")
+		end
+	end
+	
+	self._overheal_unit = World:spawn_unit(effect_id, Vector3(), Rotation())	
 
-	self._unit:link(align_obj_name, self._overheal_unit, self._overheal_unit:orientation_object():name())
+	self._unit:link(align_obj_name, self._overheal_unit, self._overheal_unit:orientation_object():name(),Vector3(), Rotation())
 end
 
 function CopBase:disable_lpf_buff(state)
@@ -25,24 +37,18 @@ function CopBase:disable_lpf_buff(state)
 end
 
 function CopBase:lpf_heal_effect(overheal)
+	local body_obj = Idstring("Spine2")
+	local attach_to_body = self._unit:get_object(body_obj)
+	if not attach_to_body then
+		return
+	end
+	
 	if overheal then
-		local body_obj = Idstring("Spine2")
-		local attach_to_body = self._unit:get_object(body_obj)
-		if not attach_to_body then
-			return
-		end
-
 		World:effect_manager():spawn({
 			effect = Idstring("effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple"),
 			parent = attach_to_body
 		})
 	else
-		local body_obj = Idstring("Spine2")
-		local attach_to_body = self._unit:get_object(body_obj)
-		if not attach_to_body then
-			return
-		end
-
 		World:effect_manager():spawn({
 			effect = Idstring("effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green"),
 			parent = attach_to_body

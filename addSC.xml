@@ -160,7 +160,7 @@
 	<texture path="units/pd2_dlc_mad/props/mad_prop_military_laptop/mad_prop_military_laptop_screen_login_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/props/mad_prop_sign_electricity/mad_prop_sign_electricity_df" force="true"/>
 	
-	<mission			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
+	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
 
 	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
@@ -251,12 +251,6 @@
 	<mission			path="levels/narratives/continental/spa/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
-	
-	<!--First World Bank-->
-	<mission			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/classics/red2/world/world" force="true" unload="true"/> 
-	<nav_data			path="levels/narratives/classics/red2/nav_manager_data" force="true" unload="true"/>	
-	<cover_data			path="levels/narratives/classics/red2/cover_data" force="true" unload="true"/>
 
 	<!--UNDERCOVER-->
 	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
@@ -1230,8 +1224,14 @@
 	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	
+	<!--Omnia Buff Effect for OMNIA T Swat-->
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false" load="true"/>
+	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
@@ -1275,9 +1275,12 @@
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
 	
-	<!--Weapon Mod Trails-->
-	<!--M249/240 casings-->
+	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
+	<!--Weapon Mod Trails-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>

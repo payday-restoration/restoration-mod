@@ -21404,6 +21404,26 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			min_diff = captain_min_diff,
 			sustain_only = true
 		},
+		SKM_Cap_Winters_W9 = {
+			cooldown = captain_cooldown,
+			sustain_only = true
+		},
+		SKM_Cap_Spring_W9 = {
+			cooldown = captain_cooldown,
+			sustain_only = true
+		},
+		SKM_HVH_Boss_W9 = {
+			cooldown = captain_cooldown,
+			sustain_only = true
+		},
+		SKM_Cap_Summers_W9 = {
+			cooldown = captain_cooldown,
+			sustain_only = true
+		},
+		SKM_Cap_Autumn_W9 = {
+			cooldown = captain_cooldown,
+			sustain_only = true
+		},
 		GREEN_tanks = {
 			cooldown = dozer_cooldown
 		},

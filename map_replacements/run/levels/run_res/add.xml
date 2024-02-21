@@ -466,7 +466,7 @@
 	<texture path="levels/mods/run_res/cube_lights/100714"/>
 	<texture path="levels/mods/run_res/cube_lights/100762"/>
 	<add from_db="true" path="core/environments/skies/default/default" type="scene">
-		<scene path="core/environments/skies/default/default"/>
 		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+		<scene path="core/environments/skies/default/default"/>
 	</add>
 </table>

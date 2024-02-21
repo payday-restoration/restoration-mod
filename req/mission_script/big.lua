@@ -166,6 +166,39 @@ return {
 			end
 		end
 	},
+	--Trigger custom scripted dozers after 20 seconds
+	[101967] = {
+		on_executed = {
+			{ id = 400001, delay = 20 },
+			{ id = 400002, delay = 20 }
+		}
+	},
+	--Trigger custom c4 route spawns
+	[101377] = {
+		on_executed = {
+			{ id = 400014, delay = 5 },
+			{ id = 400015, delay = 5 }
+		}
+	},	
+	--Trigger ambush cloakers
+	[105836] = {
+		on_executed = {
+			{ id = 400004, delay = 0 },
+			{ id = 400005, delay = 0 },
+			{ id = 400006, delay = 0 },
+			{ id = 400007, delay = 0 },
+			{ id = 400008, delay = 0 }
+		}
+	},
+	[106001] = {
+		on_executed = {
+			{ id = 400004, delay = 0 },
+			{ id = 400005, delay = 0 },
+			{ id = 400006, delay = 0 },
+			{ id = 400007, delay = 0 },
+			{ id = 400008, delay = 0 }
+		}
+	},
 	--More chance for blowing up the wall/also faster time to trigger
 	[102451] = {
 		values = {

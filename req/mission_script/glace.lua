@@ -30,6 +30,24 @@ return {
 			{id = 105615, delay = 30, delay_rand = 10}
 		}
 	},
+	--trigger custom spawns during escape part
+	[103111] = {
+		on_executed = {
+			{id = 400001, delay = 0},
+			{id = 400002, delay = 0},
+			{id = 400003, delay = 0},
+			{id = 400004, delay = 0}
+		}
+	},
+	--trigger custom spawns in scaffolding part
+	[103543] = {
+		on_executed = {
+			{id = 400005, delay = 0},
+			{id = 400006, delay = 0},
+			{id = 400007, delay = 0},
+			{id = 400008, delay = 0}
+		}
+	},
 	--Disable this spawn once George the pilot gets Kauzo out
 	[100121] = {
 		func = function(self)

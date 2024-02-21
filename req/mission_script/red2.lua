@@ -4,8 +4,12 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
-local dozer_vault = 4
 local both_window_swats_only = true
+local stair_blockade_chance = 0
+local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local taser = (difficulty_index == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = (difficulty_index == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
+local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
 local chance_dozer_vault_1 = math.rand(1)
 local chance_dozer_vault_2 = math.rand(1)
 local chance_dozer_vault_3 = math.rand(1)
@@ -21,6 +25,22 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
+	if difficulty_index == 5 or difficulty_index == 6 then
+		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+	elseif difficulty_index == 7 then
+		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
+	elseif difficulty_index == 8 then
+		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+	end
+	
+	if difficulty_index <= 5 then
+		ponr_value = 420	
+	else
+		ponr_value = 720	
+	end
 
 --If we're in Pro Job, then do this stuff below
 if pro_job then
@@ -31,13 +51,12 @@ if pro_job then
 		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
 	--Titan cloakers replace scripted cloakers
-	--One additional dozer in the vault
 	--Ambush is more deadly
 	if difficulty_index == 8 then
+		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_doors_chance = 100
 		ambush_amount = 3
-		dozer_vault = 5
 	end
 	--Titan units replace some of the scripted spawns
 	if difficulty_index >= 5 then
@@ -45,11 +64,18 @@ if pro_job then
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		swat_shotgunner = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 end
 
 	if difficulty_index >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
+	end	
+	
+	if difficulty_index >= 5 then
+		stair_blockade_chance = 100 --100% to always spawn 3 tasers+1 heavy swat in staircase escape (145+ throwback)
 	end	
 
 	--Setting up random vault dozers for Mayhem+, that's rad!
@@ -162,16 +188,136 @@ return {
 			enabled = false
 		}
 	},
+	--Disable the right vault path
+	[105498] = {
+		values = {
+			enabled = false
+		}
+	},
 	--Trigger Hunt on Pro Jobs (Endless Assault)
 	[102366] = {
 		values = {
 			enabled = hunt_projob
 		}
 	},
-	--Disable The SWAT Van Turret
+	--spawn lobby blockade shields+Pro Job PONR
+	[101660] = { 
+		ponr = ponr_value,
+		on_executed = {
+			{id = 400001, delay = 0},
+			{id = 400002, delay = 0}
+		}
+	},
+	--Use turret's chance to spawn lobby snipers instead
 	[105914] = { 
 		values = {
-			chance = 0
+			chance = 45
+		},
+		on_executed = {
+			{id = 105921, remove = true},
+			{id = 400003, delay = 1},
+			{id = 400004, delay = 2},
+			{id = 400005, delay = 3},
+			{id = 400006, delay = 4},
+			{id = 400007, delay = 5},
+			{id = 400008, delay = 6}
+		}
+	},
+	--two extra possible dozers spawn on DW+ (PJ Only)
+	[100569] = { 
+		on_executed = {
+			{id = 400024, delay = 0},
+			{id = 400025, delay = 0}
+		}
+	},
+	--one extra Bo Dozer
+	[101953] = { 
+		on_executed = {
+			{id = 400020, delay = 1}
+		}
+	},
+	--Make this Bo Dozer use custom set up AI_Hunt
+	[105119] = { 
+		on_executed = {
+			{id = 400023, delay = 0}
+		}
+	},
+	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)
+	--Spawn 2 defend shields on Overkill and above
+	[100635] = {
+		on_executed = {
+			{id = 400010, delay = 0},
+			{id = 400011, delay = 0},
+			{id = 400012, delay = 0},
+			{id = 400013, delay = 0},
+			{id = 400014, delay = 0},
+			{id = 400015, delay = 0},
+			{id = 400016, delay = 0},
+			{id = 400017, delay = 0},
+			{id = 400018, delay = 0},
+			{id = 400019, delay = 0},
+			{id = 400041, delay = 0},
+			{id = 400042, delay = 0}
+		}
+	},
+	--Spawn two extra dozers on DS as a 193+ throwback
+	[100850] = { 
+		on_executed = {
+			{id = 400021, delay = 20},
+			{id = 400022, delay = 20}
+		}
+	},
+	--Killing Bo The Manager results of spawning two angry dozers
+	[100689] = {
+		on_executed = {
+			{id = 100682, delay = 0}
+		}
+	},
+	--spawn 3 rushing cloakers after 50 seconds of starting the assault
+	--spawn 2 scripted tasers after 90 seconds of starting the assault
+	[103984] = { 
+		on_executed = {
+			{id = 400030, delay = 50},
+			{id = 400031, delay = 50},
+			{id = 400032, delay = 50},
+			{id = 400037, delay = 90},
+			{id = 400038, delay = 90}
+		}
+	},
+	[102068] = {
+		values = {
+			elements = {
+				103388,
+				105162,
+				400030
+			}
+		}
+	},
+	[102167] = { 
+		values = {
+			elements = {
+				102130,
+				105176,
+				102135,
+				400031,
+				400032
+			}
+		}
+	},
+	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
+	--Spawn 2 blackdozers as a sudden spawn on DS (50% chance)
+	[103710] = { 
+		values = {
+			chance = stair_blockade_chance
+		},
+		on_executed = {
+			{id = 101400, remove = true},
+			{id = 400026, delay = 0},
+			{id = 400027, delay = 0},
+			{id = 400028, delay = 0},
+			{id = 400029, delay = 0},
+			{id = 400035, delay = 6},
+			{id = 400036, delay = 6}
 		}
 	},
 	--Higher diffs forces both scripted window cloaker and taser spawns
@@ -240,18 +386,7 @@ return {
             amount = ambush_amount
 		}
 	},
-	--DSPJ has all vault dozer spawns enabled
-	[100225] = {
-		values = {
-            amount = dozer_vault
-		}
-	},
 	--Spawn replacements
-	[105119] = {
-		values = {
-            enemy = titan_dozer
-		}
-	},
 	[106858] = {
 		values = {
             enemy = titan_taser
@@ -284,12 +419,12 @@ return {
 	},
 	[100617] = {
 		values = {
-            enemy = woman_spooc
+            enemy = cloaker
 		}
 	},
 	[100618] = {
 		values = {
-            enemy = woman_spooc
+            enemy = cloaker
 		}
 	},
 	[102897] = {
@@ -334,12 +469,12 @@ return {
 	},
 	[103163] = {
 		values = {
-            enemy = titan_taser
+            enemy = taser
 		}
 	},
 	[103231] = {
 		values = {
-            enemy = titan_taser
+            enemy = taser
 		}
 	},
 	[102575] = {
@@ -384,22 +519,22 @@ return {
 	},
 	[103395] = {
 		values = {
-            enemy = woman_spooc
+            enemy = cloaker
 		}
 	},
 	[103463] = {
 		values = {
-            enemy = titan_swat_2
+            enemy = shield
 		}
 	},
 	[103465] = {
 		values = {
-            enemy = titan_shield
+            enemy = swat_shotgunner
 		}
 	},
 	[103466] = {
 		values = {
-            enemy = titan_taser
+            enemy = taser
 		}
 	},
 	[103693] = {

@@ -928,7 +928,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModArmorFixDescID"] = "방탄복 플래시 수정을 활성화하거나 비활성화합니다.",
 
 		-- /// Challenges Below ///
-		-- Challenges don't have korean fonts
+		-- Challenges doesn't have korean fonts
 		["ch_deploy_ammobag_hl"] = "Last Bullet!",
 		["ch_deploy_ammobag"] = "Deploy $count Ammo Bags.",
 		["ch_plant_tripmine_hl"] = "Laser Show",
@@ -945,6 +945,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
 		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+
+		-- New challanges
+		["ch_melee_test"] = "Cloak and Dagger",
+		["ch_melee_test_desc"] = "Kill Captain Autumn using only your fists",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1316,6 +1320,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_8"] = "레드 닷 조준기.\n#{risk}#1.8x 배율.##",
 		--["bm_wp_upg_o_1_8_irons"] = "보조 기계식 조준기가 있는 레드 닷 조준기.\n#{risk}#1-1.8x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",
 		["bm_wp_upg_o_2"] = "저전력 스코프.\n#{risk}#2x 배율.##",
+		["bm_wp_upg_o_2_5"] = "저전력 스코프.\n#{risk}#2.5x 배율.##",
 		["bm_wp_upg_o_3"] = "중거리 조준경.\n#{risk}#3x 배율.##",
 		["bm_wp_upg_o_3_range"] = "#{skill_color}#거리 측정기##가 내장된 중거리 조준경.\n#{risk}#3x 배율.##",
 		["bm_wp_upg_o_3_rds"] = "상단에 장착된 반사식 조준기가 달려있는 중거리 조준경.\n#{risk}#1.1-3x 배율.##\n\n조준 도중 #{skill_color}#$BTN_GADGET## 키를 누르면 조준기 전환이 가능합니다.",		
@@ -1834,7 +1839,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shak12_body_vks_ap_desc"] = "#{skill_color}#완전한 방탄복 관통과 실드 관통 능력을 부여하는## 고화력 탄을 장전하게 해줍니다. 개머리판과 노리쇠는 더 무거운 재료로 강화되어서 #{important_1}#발사 속도가 감소합니다.##",
 		--HCAR
 		["bm_w_hcar"] = "Akron HC 소총",
-		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.\n\n#{skill_color}#방탄복을 관통해 피해의 50%를 가하고 여러 적을 관통할 수 있습니다.##",		
+		["bm_hcar_sc_desc"] = "제 2차 세계 대전 당시의 고전적인 기관총을 현대식으로 개량한 기관총입니다.",		
 		
 		--Custom DMRs
 		--BOCW EM2
@@ -3072,6 +3077,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shak12_vks"] = "KSV-12 Urban",
 					--HCAR
 					["bm_w_hcar"] = "Akron HC",
+					["bm_w_hcar_bar"] = "Akron HC",
 
 					--Custom DMRs
 						--MCX Spear
@@ -3788,6 +3794,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_shak12"] = "칼라시니코프 ShAK-12",
 						--HCAR
 						["bm_w_hcar"] = "오하이오 오드넌스 HCAR",
+						["bm_w_hcar_bar"] = "브라우닝 BAR",
 						--GARAND
 						["bm_w_ching"] = "스프링필드 아머리 M1 그랜드",
 						["bm_wp_ching_fg_railed"] = "아메가 미니 스카웃 마운트",

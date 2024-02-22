@@ -2072,7 +2072,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
 				["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",
 				--AR-15 Mods
-				["bm_wp_upg_north_s"] = "North Star Stock",
+				["bm_wp_upg_s_saintvictor_hera"] = "North Star Combo Stock",
 				["bm_wp_upg_vintage_fal_sc"] = "Ridgeback Mag",
 				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 				["bm_wp_upg_mil_sc"] = "Milspec Mag",

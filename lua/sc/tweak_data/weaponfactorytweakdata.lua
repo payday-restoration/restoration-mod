@@ -22986,7 +22986,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	for i, factory_id in ipairs(attachment_list) do
 		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
-				if self.parts[used_part_id].type == "grip" then
+				if self.parts[used_part_id].type == "grip" and self.parts[used_part_id].pcs then
 					table.insert(self.parts.wpn_fps_upg_s_saintvictor_hera.forbids, used_part_id)
 				end
 			end

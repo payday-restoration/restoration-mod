@@ -881,6 +881,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_deploy_fak"] = "Разложить $count аптечек первой помощи.",
 		["ch_deploy_sentry_hl"] = "Любитель Уайт Месы",
 		["ch_deploy_sentry"] = "Разложить $count турелей.",
+		
+		["ch_bridge_no_bleedouts_hl"] = "Зеленый Мост: непробиваемый",
+		["ch_bridge_no_bleedouts"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\", ни разу не упав",
+		["ch_duck_hunting_hl"] = "Мост слишком далеко!",
+		["ch_duck_hunting"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\". Для выполнения необходимо играть контракт с самого начала",
 
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
@@ -889,10 +894,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		-- New challanges
 		["ch_melee_test"] = "Босс качалки",
 		["ch_melee_test_desc"] = "Убейте капитана Отема кулаками",
-		["ch_pro_job_test"] = "Not Even The Army Could Stop Us",
-		["ch_pro_job_test_desc"] = "Complete Firestarter Pro Job on Mayhem or above",
-		["ch_summers_test"] = "Old Gens Are Better",
-		["ch_summers_test_desc"] = "Defeat Captain Summers and his crew with only Mk.1 Flamethrower",
+		["ch_pro_job_test"] = "Даже армия не остановит нас",
+		["ch_pro_job_test_desc"] = "Завершите контракт \"Поджигатель\" с модификатором Pro Job на уровне сложности \"Хаос\" и выше            ",
+		["ch_summers_test"] = "Да не горит у меня!!!",
+		["ch_summers_test_desc"] = "Убейте Капитана Саммерса и его отряд огнеметом Mk.1",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1230,6 +1235,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_suppressor_boss"] = "\"What a thrill...\"\n\n#{skill_color}#Заглушает## оружие и #{risk}#уменьшает шанс того, что противники увернутся от вашего огня.##",
 		["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Заглушает## оружие и #{risk}#уменьшает шанс того, что противники увернутся от вашего огня.##\n\n#{important_1}#Может мешать прицеливанию.##",
 
+		["bm_wp_upg_s_saintvictor_hera"] = "Новомодный приклад",
+		["bm_wp_upg_vintage_fal_sc"] = "Классический магазин",
 		["bm_wp_upg_vintage_sc"] = "Винтажный магазин",
 		["bm_wp_upg_mil_sc"] = "Армейский магазин",
 		["bm_wp_upg_tac_sc"] = "Тактический магазин",

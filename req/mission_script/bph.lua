@@ -24,7 +24,7 @@ return {
 	--More timelock timer on Pro Jobs
 	[101402] = {
 		values = {
-            time = timelock
+            timer = timelock
 		}
 	},
 	-- restores some unused sniper spawns with their SOs

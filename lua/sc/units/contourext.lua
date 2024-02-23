@@ -48,11 +48,11 @@ local do_outline = true
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
-    "mark_enemy_damage_bonus",
-    "mark_enemy_damage_bonus_distance",
-    "mark_unit_dangerous",
-    "mark_unit_dangerous_damage_bonus",
-    "mark_unit_dangerous_damage_bonus_distance"
+	"mark_enemy_damage_bonus",
+	"mark_enemy_damage_bonus_distance",
+	"mark_unit_dangerous",
+	"mark_unit_dangerous_damage_bonus",
+	"mark_unit_dangerous_damage_bonus_distance"
 }
 if disable_outlines then
 	do_outline = false

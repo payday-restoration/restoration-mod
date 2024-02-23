@@ -220,142 +220,246 @@
 			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
 		/>
 	</WeaponSkin>
+	<WeaponSkin id="resmod_rat" is_a_color_skin="true" global_value="sc" sort_number="18" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_in33/weapon_colors/pattern/pattern_in33_02_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_ratdark" is_a_color_skin="true" global_value="sc" sort_number="19" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_in33/weapon_colors/pattern/pattern_in33_02_df"
+			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_rocker" is_a_color_skin="true" global_value="sc" sort_number="20" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_03_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_shocker" is_a_color_skin="true" global_value="sc" sort_number="21" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_03_df"
+			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_whitefire" is_a_color_skin="true" global_value="sc" sort_number="22" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_15_df"
+			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+		/>
+	</WeaponSkin>
+	<WeaponSkin id="resmod_blackfire" is_a_color_skin="true" global_value="sc" sort_number="23" rarity="epic">
+		<color_skin_data
+			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+			pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_15_df"
+			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+		/>
+	</WeaponSkin>
 
 	<!--Color Pack 2-->
-	<WeaponSkin id="resmod_palmtop" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="100" rarity="legendary" desc_id="bm_wskn_resmod_palmtop_desc">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_21_df"
-			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_blacktiger" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="102" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_21_df"
-			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_joe" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="103" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_12_df"
-			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_blackexotic" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="104" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_12_df"
-			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_llenn" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="105" rarity="legendary" desc_id="bm_wskn_resmod_llenn_desc">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_16_df"
-			gradient_default = "units/pd2_dlc_wcc/weapon_colors/pattern_gradient/gradient_camo_19_df"
-		/>
-	</WeaponSkin>
+		<WeaponSkin id="resmod_palmtop" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="100" rarity="legendary" desc_id="bm_wskn_resmod_palmtop_desc">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_21_df"
+				gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_blacktiger" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="102" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_21_df"
+				gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_joe" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="103" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_12_df"
+				gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_blackexotic" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="104" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_wcc/weapon_colors/pattern/pattern_camo_12_df"
+				gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_llenn" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_wcc" dlc="wcc" sort_number="105" rarity="legendary" desc_id="bm_wskn_resmod_llenn_desc">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_inf3/weapon_colors/pattern/pattern_inf_16_df"
+				gradient_default = "units/pd2_dlc_wcc/weapon_colors/pattern_gradient/gradient_camo_19_df"
+			/>
+		</WeaponSkin>
 
 	<!--Color Pack 3-->
-	<WeaponSkin id="resmod_sugarhoneyicetea" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="200" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_19_df"
-			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_blackzebra" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="201" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_19_df"
-			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_charlotte" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="202" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_16_df"
-			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
-		/>
-	</WeaponSkin>
+		<WeaponSkin id="resmod_sugarhoneyicetea" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="200" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_19_df"
+				gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_blackzebra" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="201" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_19_df"
+				gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_charlotte" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_ocp" dlc="ocp" sort_number="202" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_ocp/weapon_colors/pattern/pattern_ocp_16_df"
+				gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+			/>
+		</WeaponSkin>
 
 	<!--Jiu Feng Smuggler 1-->
-	<WeaponSkin id="resmod_topography" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="300" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_16_df"
-			gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
-		/>
-	</WeaponSkin>
-	<WeaponSkin id="resmod_2019" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="301" rarity="legendary">
-		<color_skin_data
-			base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
-			base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
-			base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
-			base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
-			base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
-			base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
-			base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
-			pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_16_df"
-			gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
-		/>
-	</WeaponSkin>
+		<WeaponSkin id="resmod_topography" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="300" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_16_df"
+				gradient_default = "units/pd2_dlc_in32/weapon_colors/pattern_gradient/gradient_in32_03_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_2019" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="301" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_16_df"
+				gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_joker" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="302" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_07_df"
+				gradient_default = "units/pd2_dlc_anv/weapon_colors/pattern_gradient/gradient_anv_01_df"
+			/>
+		</WeaponSkin>
+		<WeaponSkin id="resmod_jokerw" is_a_color_skin="true" texture_bundle_folder="sc" global_value_category="sc" global_value="sc_faco" dlc="faco" sort_number="303" rarity="legendary">
+			<color_skin_data
+				base_default = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_default"
+				base_metal = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_metal"
+				base_plastic = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_plastic"
+				base_half = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half"
+				base_half_02 = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_half_02"
+				base_detail = "units/pd2_dlc_wcc/weapon_colors/base_gradient/base_gradient_wcc_pattern_details"
+				base_variation = "units/pd2_dlc_wcs/weapon_colors/base_gradient/wcs_black_df"
+				pattern_default = "units/pd2_dlc_faco/weapon_colors/pattern/pattern_faco_07_df"
+				gradient_default = "units/pd2_dlc_pxp4/weapon_colors/pattern_gradient/pxp4_gradient_03_df"
+			/>
+		</WeaponSkin>
 
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackgold"/>
@@ -375,6 +479,12 @@
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_quacko"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_snake"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_dioxide"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_rat"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_ratdark"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_shocker"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_rocker"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_whitefire"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackfire"/>
 
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_topography"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_2019"/>
@@ -388,5 +498,8 @@
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_sugarhoneyicetea"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_blackzebra"/>
 		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_charlotte"/>
+
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_joker"/>
+		<texture path="guis/dlcs/sc/textures/pd2/blackmarket/icons/weapon_color/resmod_jokerw"/>
 	</AddFiles>
 </table>

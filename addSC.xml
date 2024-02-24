@@ -1255,7 +1255,10 @@
 	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan" load="true"/>	
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>

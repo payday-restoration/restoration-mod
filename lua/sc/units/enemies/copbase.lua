@@ -11,24 +11,34 @@ local units_no_gear = {
 	"fbi",
 	"hrt",
 	-- for LPF mutator
+	"hrt_titan",
 	"fbi_vet",
 	"security",
 	"gensec_guard",
 	"city_swat_guard"		
 }
 
-local omnia_tswat = {
+local omnia_tswat = { -- OMNIA T SWAT need higher effect position
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk")
 }
 
+local units_low = { -- Zeal heavies and grenadier need lower effect position
+	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
+}
+
 local hrt_exclude_list = { -- for HRT enemies where usual effect position will be better
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")	
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
 }
 
 local murky_no_gear = { -- Majority of murky units looks better with "no_gear" effect position
@@ -56,10 +66,10 @@ function CopBase:enable_lpf_buff(state)
 	local effect_usual = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
 	local effect_no_gear = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear")
 	local effect_high = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high")
+	local effect_low = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_heavy")
+	local effect_tank = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank")
+	local effect_tank_titan = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan")
 	local effect_id = effect_usual
-	-- Need later
-	--local is_mutator = managers.modifiers:modify_value("CopBase:ExpandLPF", false)
-	--local faction = tweak_data.levels:get_ai_group_type()
  	
 	local unit = self._unit:base()._tweak_table
 	local unit_name = self._unit:name()
@@ -75,11 +85,22 @@ function CopBase:enable_lpf_buff(state)
 	if table.contains(omnia_tswat, unit_name) then
 		effect_id = effect_high
 	end
-	--Maybe there's another way to handle effects
-	--[[if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_black" or self._unit:base()._tweak_table == "tank_skull" or self._unit:base()._tweak_table == "tank_titan" or self._unit:base()._tweak_table == "tank_hw" or self._unit:base()._tweak_table == "taser_titan" then
-		effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high")
-	end--]]
 	
+	if table.contains(units_low, unit_name) then
+		effect_id = effect_low
+	end
+		
+	if unit == "taser_titan" then
+		effect_id = effect_high
+	end
+		
+	if string.match(unit, "tank") then
+		effect_id = effect_tank
+		if unit == "tank_titan" then
+			effect_id = effect_tank_titan
+		end
+	end
+
 	self._overheal_unit = World:effect_manager():spawn({
 			effect = effect_id,
 			parent = align_obj

@@ -43,7 +43,7 @@ local death_sentence = difficulty == 8
 	
 	if pro_job then
 	if difficulty >= 5 then
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser
+		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 	if difficulty == 8 then

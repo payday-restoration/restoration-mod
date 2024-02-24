@@ -41,11 +41,15 @@ local death_sentence = difficulty == 8
 		swat_heavy_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
 	
-	if pro_job and difficulty >= 5 then
-		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+	if pro_job then
+	if difficulty >= 5 then
+		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 	end
+	if difficulty == 8 then
+		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+	end
+end
 
 local optsCloaker = {
     enemy = cloaker,

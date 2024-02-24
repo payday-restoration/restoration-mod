@@ -962,6 +962,7 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_husk" force="true" load="true"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_il"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_body_df" force="true"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_head_df" force="true"/>		
 
@@ -973,6 +974,9 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip_dummy" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>
+	
+	<!--Cigar smoke for Winters-->
+	<effect				path="effects/particles/character/cigarette_smoke_winters" load="true"/>
 
 	<!--Winter AssFuckeng Squad-->
 

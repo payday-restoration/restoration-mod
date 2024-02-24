@@ -234,5 +234,9 @@
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 	</graphics>
-		
+	
+	<effects>
+		<effect_spawner name="smoke" enabled="true" object="g_mouth" effect="effects/particles/character/cigarette_smoke_winters"/>
+	</effects>
+	
 </dynamic_object>

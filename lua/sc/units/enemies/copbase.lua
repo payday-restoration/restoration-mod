@@ -10,6 +10,7 @@ local units_no_gear = {
 	"cop",
 	"fbi",
 	"hrt",
+	"swat",
 	-- for LPF mutator
 	"hrt_titan",
 	"fbi_vet",

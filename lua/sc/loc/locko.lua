@@ -1240,6 +1240,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_ghosts_mk32"] = "MK32 킷",
 		["bm_wp_upg_i_ghosts_mk32_desc"] = "태스크 포스 스토커의 프로토타입 무기 키트.\n\n단발을 #{skill_color}#2점사로 교체합니다.##",
 		
+		--AR-15 Mods
+		["bm_wp_upg_s_saintvictor_hera"] = "킬러 인센트 개머리판",
+		
 		--NV4
 		["bm_wp_upg_o_iwelo"] = "플로팅 조명 조준점이 있는 발광 광학 조준기\n#{risk}#1.1x 배율.##",
 		["bm_wp_upg_o_iwrds"] = "정밀 레드 닷 조준기.\n#{risk}#1.5x 배율.##",
@@ -2304,8 +2307,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_camo"] = "카모 골드",
 		["bm_wskn_resmod_camo2"] = "헤이즈 골드",
 		["bm_wskn_resmod_digital"] = "디지털 골드",
-		["bm_wskn_resmod_splinter"] = "스플린터 골드",
+		["bm_wskn_resmod_splinter"] = "나르바 골드",
 		["bm_wskn_resmod_urban"] = "우반 골드",
+		["bm_wskn_resmod_rat"] = "스플린터 골드",
+		["bm_wskn_resmod_ratdark"] = "스플린터 다크 골드",
+		["bm_wskn_resmod_rocker"] = "스태딕 골드",
+		["bm_wskn_resmod_shocker"] = "스태딕 다크 골드",
+		["bm_wskn_resmod_whitefire"] = "플레임 골드",
+		["bm_wskn_resmod_blackfire"] = "플레임 다크 골드",		
 		["bm_wskn_resmod_dioxide"] = "카본 골드",
 		["bm_wskn_resmod_topography"] = "토포그래피 골드",
 		["bm_wskn_resmod_2019"] = "워페어 골드",
@@ -2313,7 +2322,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_llenn_desc"] = "이건 내가 생각한 것이 정확히는 아니지만 분홍색은 분홍색이야.",
 		["bm_wskn_resmod_sugarhoneyicetea"] = "지브라 골드",
 		["bm_wskn_resmod_blackzebra"] = "블랙 지브라 골드",
-		["bm_wskn_resmod_charlotte"] = "웹 골드",		
+		["bm_wskn_resmod_charlotte"] = "웹 골드",
+		["bm_wskn_resmod_joker"] = "라프 온 골드",
+		["bm_wskn_resmod_jokerw"] = "라프 온 화이트",		
 		
 		["menu_weapon_color_index_11"] = "메탈 + 조준기",
 		["menu_weapon_color_index_12"] = "메탈 + 탄창",

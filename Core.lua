@@ -974,7 +974,7 @@ function restoration:mission_script_add()
 			class = "ElementEnemyDummyTrigger",
 			values = {
 				execute_on_startup = false,
-				trigger_times = opts.trigger_times or 1,
+				trigger_times = opts.trigger_times or 0,
 				elements = opts.elements or {},
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,

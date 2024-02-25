@@ -4676,7 +4676,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_summer_blacklist_toggle"] = "Blacklist Summers for Random",
 		["menu_mutator_autumn_blacklist_toggle"] = "Blacklist Autumn for Random",
 		["menu_mutator_hvh_blacklist_toggle"] = "Blacklist HHHTDFH for Random",
-		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Include Commons and Elites",
 		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
 		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged. Blacklisting all captains for \"Random\" option will sequence to use \"No Changes\" option.",
 		

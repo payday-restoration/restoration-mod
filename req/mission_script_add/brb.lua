@@ -122,11 +122,11 @@ local optsrespawn_murkies_2 = {
 }
 local optsrespawn_murkies_3 = {
 	on_executed = { 
-		{ id = 400012, delay = 45 },
-		{ id = 400013, delay = 45 },
-		{ id = 400014, delay = 45 },
-		{ id = 400015, delay = 45 },
-		{ id = 400016, delay = 45 }
+		{ id = 400012, delay = 60 },
+		{ id = 400013, delay = 60 },
+		{ id = 400014, delay = 60 },
+		{ id = 400015, delay = 60 },
+		{ id = 400016, delay = 60 }
 	},
 	elements = { 
 		400012
@@ -135,11 +135,11 @@ local optsrespawn_murkies_3 = {
 }
 local optsrespawn_murkies_4 = {
 	on_executed = { 
-		{ id = 400020, delay = 25 },
-		{ id = 400021, delay = 25 },
-		{ id = 400022, delay = 25 },
-		{ id = 400023, delay = 25 },
-		{ id = 400024, delay = 25 }
+		{ id = 400020, delay = 15 },
+		{ id = 400021, delay = 15 },
+		{ id = 400022, delay = 15 },
+		{ id = 400023, delay = 15 },
+		{ id = 400024, delay = 15 }
 	},
 	elements = { 
 		400020

@@ -925,7 +925,7 @@ function restoration:mission_script_add()
 				interaction_voice = "none",
 				SO_access = opts.SO_access or "512", -- default to sniper
 				chance_inc = 0,
-				interrupt_dmg = 1,
+				interrupt_dmg = opts.interrupt_dmg or 1,
 				interrupt_objective = false,
 				on_executed = {},
 				interrupt_dis = opts.interrupt_dis or 1,

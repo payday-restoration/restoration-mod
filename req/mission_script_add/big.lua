@@ -75,8 +75,9 @@ local optsCloaker_Hide_SO_1 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interrupt_dis = 5,
+	interrupt_dmg = 0.3,
 	interval = 2,
-    so_action = "e_so_sneak_wait_crh"
+    so_action = "e_so_idle_by_container"
 }
 local optsCloaker_Hide_SO_2 = {
     SO_access = "1024",
@@ -85,6 +86,7 @@ local optsCloaker_Hide_SO_2 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interrupt_dis = 5,
+	interrupt_dmg = 0.3,
 	interval = 2,
     so_action = "e_so_sneak_wait_stand"
 }

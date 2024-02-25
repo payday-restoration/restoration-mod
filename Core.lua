@@ -985,6 +985,23 @@ function restoration:mission_script_add()
 			},
 		}
 	end
+	
+	function restoration:gen_missionscript(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "MissionScriptElement",
+			module = "CoreMissionScriptElement",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				enabled = true
+			},
+		}
+	end
 
 	function restoration:log(...)
 		if self.logging then

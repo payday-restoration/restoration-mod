@@ -245,7 +245,7 @@ local optsSWAT_HeavyShotgun = {
     enabled = true
 }
 local optsDefend_and_Sniper_SO = {
-	SO_access = tostring(512+2048+4096+8192),
+	SO_access = tostring(512+2048+8192),
 	scan = true,
 	align_position = true,
 	needs_pos_rsrv = true,

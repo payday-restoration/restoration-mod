@@ -238,6 +238,27 @@ function PlayerStandard:_start_action_ducking(t)
 	end
 end
 
+function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
+	if self._is_sliding or not skip_can_stand_check and not self:_can_stand() then
+		return
+	end
+
+	self._state_data.ducking = false
+
+	self:_stance_entered()
+	self:_update_crosshair_offset()
+
+	local velocity = self._unit:mover():velocity()
+
+	self._unit:kill_mover()
+	self:_activate_mover(PlayerStandard.MOVER_STAND, velocity)
+	self._ext_network:send("action_change_pose", 1, self._unit:position())
+	self:_upd_attention()
+	if AdvMov and PlayerStandard._cancel_slide then
+		self:_cancel_slide()
+	end
+end
+
 function PlayerStandard:_check_action_throw_projectile(t, input)
 	local projectile_entry = managers.blackmarket:equipped_projectile()
 	local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
@@ -1748,6 +1769,11 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	return final_speed
 end
 
+Hooks:PostHook(PlayerStandard, "_update_movement", "ResUpdMovement", function(self, t, dt)
+	if not self._move_dir then
+		self._running_wanted = false
+	end
+end)
 
 
 --Allows for melee sprinting.
@@ -1775,7 +1801,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self._is_sliding or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
 		self._running_wanted = true
 		return
 	end

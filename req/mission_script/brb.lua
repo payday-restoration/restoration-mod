@@ -17,7 +17,11 @@ local hunt_projob = false
 
 return {
 	--Pro Job PONR+Hunt (Endless Assault)
+	--Spawn Murkies after 2 minutes
 	[101121] = {
+	on_executed = {
+			{id = 400001, delay = 0}
+	},
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},

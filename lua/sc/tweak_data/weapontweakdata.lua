@@ -5937,7 +5937,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Akimbo Model 54 Underbarrel
 						self.x_type54_underbarrel.rays = 9
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.x_type54_underbarrel.AMMO_MAX = 30
+						self.x_type54_underbarrel.AMMO_MAX = 20
 						self.x_type54_underbarrel.BURST_FIRE = 2
 						self.x_type54_underbarrel.tactical_reload = nil
 						self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
@@ -6394,7 +6394,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Model 54 Underbarrel
 						self.type54_underbarrel.rays = 9
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.type54_underbarrel.AMMO_MAX = 15
+						self.type54_underbarrel.AMMO_MAX = 10
 						self.type54_underbarrel.CLIP_AMMO_MAX = 1
 						self.type54_underbarrel.fire_mode_data = {}
 						self.type54_underbarrel.fire_mode_data.fire_rate = 0.24
@@ -8167,7 +8167,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw_flamethrower.desc_id = "bm_ap_flamethrower_sc_desc"
 					self.kacchainsaw_flamethrower.rays = 16
 					self.kacchainsaw_flamethrower.CLIP_AMMO_MAX = 30
-					self.kacchainsaw_flamethrower.AMMO_MAX = 90
+					self.kacchainsaw_flamethrower.AMMO_MAX = 150
 					self.kacchainsaw_flamethrower.fire_mode_data.fire_rate = 0.1
 					self.kacchainsaw_flamethrower.single_flame_effect_duration = 1
 					self.kacchainsaw_flamethrower.armor_piercing_chance = 1
@@ -9544,7 +9544,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.groza_underbarrel.kick = self.stat_info.kick_tables.moderate_kick
 						self.groza_underbarrel.panic_suppression_chance = 0.05
 						self.groza_underbarrel.ignore_damage_upgrades = true
-						self.groza_underbarrel.AMMO_MAX = 6
+						self.groza_underbarrel.AMMO_MAX = 5
 						self.groza_underbarrel.supported = true
 						self.groza_underbarrel.ads_speed = 0.340
 						self.groza_underbarrel.damage_falloff = {
@@ -9878,7 +9878,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contraband_m203.panic_suppression_chance = 0.05
 						self.contraband_m203.ignore_damage_upgrades = true
 						self.contraband_m203.use_stance = nil
-						self.contraband_m203.AMMO_MAX = 6
+						self.contraband_m203.AMMO_MAX = 5
 						self.contraband_m203.supported = true
 						self.contraband_m203.ads_speed = 0.400
 						self.contraband_m203.damage_falloff = {
@@ -12822,7 +12822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.osipr_gl.AMMO_MAX = 9
 			self.osipr_gl.tactical_reload = 1
 			self.osipr_gl.is_bullpup = true
-			self.osipr_gl.CLIP_AMMO_MAX = 5
+			self.osipr_gl.CLIP_AMMO_MAX = 6
 			self.osipr_gl.fire_mode_data.fire_rate = 0.5
 			self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
 			self.osipr_gl.supported = true

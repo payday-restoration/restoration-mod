@@ -269,9 +269,7 @@ local optsrespawn_taser_and_shields_1 = {
 		{ id = 400049, delay = 47 }
 	},
 	elements = { 
-		400047,
-		400048,
-		400049
+		400048
 	},
     event = "death"
 }
@@ -282,9 +280,7 @@ local optsrespawn_taser_and_shields_2 = {
 		{ id = 400055, delay = 47 }
 	},
 	elements = { 
-		400053,
-		400054,
-		400055
+		400054
 	},
     event = "death"
 }

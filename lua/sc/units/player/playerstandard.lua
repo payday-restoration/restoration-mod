@@ -239,7 +239,7 @@ function PlayerStandard:_start_action_ducking(t)
 end
 
 function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
-	if self._is_sliding or not skip_can_stand_check and not self:_can_stand() then
+	if (is_pro and self._is_sliding) or not skip_can_stand_check and not self:_can_stand() then
 		return
 	end
 
@@ -1801,7 +1801,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self._is_sliding or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
 		self._running_wanted = true
 		return
 	end

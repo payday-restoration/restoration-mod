@@ -955,7 +955,8 @@
 	
 	<!--Winter with his cool cigar (Jarey)-->
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>	
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true" load="true"/>	

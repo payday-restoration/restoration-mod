@@ -1959,6 +1959,10 @@ function CopDamage:die(attack_data)
 	if self._unit:base()._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("kill_spook_lights")
 	end
+	
+	if self._unit:base()._tweak_table == "phalanx_vip" or self._unit:base()._tweak_table == "phalanx_vip_break" then
+		self._unit:damage():run_sequence_simple("kill_smoke_winters")
+	end
 
 	if self._char_tweak.failure_on_death then
 		managers.groupai:state():set_point_of_no_return_timer(5, 0)

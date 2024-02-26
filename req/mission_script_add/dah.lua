@@ -10,9 +10,13 @@ local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local diff_scaling = 0.065 * difficulty
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8
+local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
+local enabled_chance_helipad_shields = math.random() < diff_scaling
+local enabled_chance_helipad_dozer = math.random() < diff_scaling
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
@@ -41,15 +45,11 @@ local death_sentence = difficulty == 8
 		swat_heavy_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
 	
-	if pro_job then
-	if difficulty >= 5 then
+	if pro_job and difficulty == 8 then
 		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-	if difficulty == 8 then
 		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 	end
-end
 
 local optsCloaker = {
     enemy = cloaker,
@@ -173,7 +173,7 @@ local optsTaser_roofblockade_2 = {
 local optsBulldozer = {
     enemy = tank,
 	participate_to_group_ai = true,
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_extra_elevator_spawns)
 }
 local optsBulldozer_helipad = {
     enemy = tank,
@@ -181,7 +181,7 @@ local optsBulldozer_helipad = {
 	on_executed = { 
 		{ id = 400069, delay = 0 } 
 	},
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_helipad_dozer)
 }
 local optsShield_helipad_1 = {
     enemy = shield,
@@ -189,7 +189,7 @@ local optsShield_helipad_1 = {
 	on_executed = { 
 		{ id = 400070, delay = 0 } 
 	},
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_helipad_shields)
 }
 local optsShield_helipad_2 = {
     enemy = shield,
@@ -197,12 +197,12 @@ local optsShield_helipad_2 = {
 	on_executed = { 
 		{ id = 400071, delay = 0 } 
 	},
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_helipad_shields)
 }
 local optsTaser = {
     enemy = taser,
 	participate_to_group_ai = true,
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_extra_elevator_spawns)
 }
 local optsBulldozer_Ambush = {
     enemy = tank,
@@ -269,7 +269,7 @@ local optsrespawn_taser_and_shields_1 = {
 		{ id = 400049, delay = 47 }
 	},
 	elements = { 
-		400048
+		400047
 	},
     event = "death"
 }
@@ -280,7 +280,7 @@ local optsrespawn_taser_and_shields_2 = {
 		{ id = 400055, delay = 47 }
 	},
 	elements = { 
-		400054
+		400053
 	},
     event = "death"
 }

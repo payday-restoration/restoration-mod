@@ -2037,7 +2037,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.02, 2, -3.85)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ching = {
-				translation = Vector3(0, -2, -2.77)
+				translation = Vector3(0, -8, -2.77)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
 				translation = Vector3(0.01, 2.5, -3.395)
@@ -12603,11 +12603,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 	self.parts.wpn_fps_smg_cobray_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_cobray_ns_silencer.has_description = true
 	self.parts.wpn_fps_smg_cobray_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_smg_cobray_ns_silencer.stats = {
-		value = 3,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_smg_cobray_ns_silencer.stats = deep_clone(muzzle_device.supp_c_alt_stats)
 	self.parts.wpn_fps_smg_cobray_ns_silencer.perks = {"silencer"}
 
 	if not self.wpn_fps_smg_cobray.override then
@@ -21511,11 +21507,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 	self.parts.wpn_fps_upg_ak_ns_tgp.supported = true
 	self.parts.wpn_fps_upg_ak_ns_tgp.has_description = true
 	self.parts.wpn_fps_upg_ak_ns_tgp.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_upg_ak_ns_tgp.stats = {
-		value = 2,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_upg_ak_ns_tgp.stats = deep_clone(muzzle_device.supp_rec_stats)
+	self.parts.wpn_fps_upg_ak_ns_tgp.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
 	self.parts.wpn_fps_upg_ak_ns_tgp.perks = {"silencer"}
 
 

@@ -4922,6 +4922,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.use_data.selection_index = 2
 						self.beer.BURST_FIRE = 3
 						self.beer.BURST_DELAY = 0.04
+						self.beer.BURST_FIRE_RECOIL_MULTIPLIER = 0.6
+						self.beer.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 						self.beer.BURST_FIRE_DEFAULT = true
 						self.beer.BURST_FIRE_RATE_MULTIPLIER = 1.7647058823
 						self.beer.ADAPTIVE_BURST_SIZE = false		

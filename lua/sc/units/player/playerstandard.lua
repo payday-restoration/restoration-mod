@@ -2399,7 +2399,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
-			elseif anim_attack_charged_right_vars and angle and (angle <= 45) and (angle >= 0) then
+			elseif anim_attack_charged_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
@@ -2409,7 +2409,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
-			elseif anim_attack_right_vars and angle and (angle <= 45) and (angle >= 0) then
+			elseif anim_attack_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]

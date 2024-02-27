@@ -12674,6 +12674,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saw.CLIP_AMMO_MAX = 20
 				self.saw.AMMO_MAX = 40
 				self.saw.kick = self.stat_info.kick_tables.none
+				self.saw.ign_ts = true
 				self.saw.supported = true
 				self.saw.stats = {
 					alert_size = 2,
@@ -12701,6 +12702,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.saw_secondary.desc_id = "bm_ap_saw_sc_desc"
 					self.saw_secondary.CLIP_AMMO_MAX = 20
 					self.saw_secondary.AMMO_MAX = 20
+					self.saw_secondary.ign_ts = true
 					self.saw_secondary.supported = true
 					self.saw_secondary.stats = {
 						alert_size = 2,

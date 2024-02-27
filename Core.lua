@@ -998,7 +998,27 @@ function restoration:mission_script_add()
 				trigger_times = opts.trigger_times or 0,
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
-				enabled = true
+				enabled = opts.enabled or true
+			},
+		}
+	end
+	
+	function restoration:gen_toggleelement(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementToggle",
+			module = "CoreElementToggle",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				set_trigger_times = opts.set_trigger_times or -1,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				enabled = true,
+				toggle = opts.toggle or "on"
 			},
 		}
 	end

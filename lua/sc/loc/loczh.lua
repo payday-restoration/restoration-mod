@@ -1021,7 +1021,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["ch_pro_job_test"] = "Not Even The Army Could Stop Us",
 		["ch_pro_job_test_desc"] = "Complete Firestarter Pro Job on Mayhem or above",
 		["ch_summers_test"] = "Old Gens Are Better",
-		["ch_summers_test_desc"] = "Defeat Captain Summers and his crew with only Mk.1 Flamethrower",
+		["ch_summers_test_desc"] = "Defeat Captain Summers with only using the Mk.1 Flamethrower",
 
         ["test_net"] = "Fast.Net",
         ["menu_test"] = "",

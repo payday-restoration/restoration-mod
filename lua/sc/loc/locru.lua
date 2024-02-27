@@ -897,8 +897,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_pro_job_test"] = "Даже армия не остановит нас",
 		["ch_pro_job_test_desc"] = "Завершите контракт \"Поджигатель\" с модификатором Pro Job на уровне сложности \"Хаос\" и выше            ",
 		["ch_summers_test"] = "Да не горит у меня!!!",
-		["ch_summers_test_desc"] = "Defeat Captain Summers with only using the Mk.1 Flamethrower",
-		
+		["ch_summers_test_desc"] = "Убейте Капитана Саммерса огнеметом Mk.1",
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
 		["state_filter"] = "Статус",

@@ -1775,6 +1775,35 @@ Hooks:PostHook(PlayerStandard, "_update_movement", "ResUpdMovement", function(se
 	end
 end)
 
+function PlayerStandard:_check_action_run(t, input)
+	if self._setting_hold_to_run and input.btn_run_release or self._running and not self._move_dir then
+		self._running_wanted = false
+
+		if self._running then
+			self:_end_action_running(t)
+
+			if input.btn_steelsight_state and not self._state_data.in_steelsight then
+				self._steelsight_wanted = true
+			end
+		end
+	elseif not self._setting_hold_to_run and input.btn_run_release and not self._move_dir then
+		self._running_wanted = false
+	elseif input.btn_run_press or self._running_wanted then
+		if input.btn_run_press and self._running_wanted == true then
+			--self._running_wanted = false
+			--return
+		end
+		if not self._running or self._end_running_expire_t then
+			self:_start_action_running(t)
+		elseif self._running and not self._setting_hold_to_run then
+			self:_end_action_running(t)
+
+			if input.btn_steelsight_state and not self._state_data.in_steelsight then
+				self._steelsight_wanted = true
+			end
+		end
+	end
+end
 
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)

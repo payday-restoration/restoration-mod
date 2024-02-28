@@ -698,6 +698,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
 
+		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
+		
 		if not self:is_npc() then
 			self._descope_on_fire = self:weapon_tweak_data().descope_on_fire
 			self._rms = self:weapon_tweak_data().rms

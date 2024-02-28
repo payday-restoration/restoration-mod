@@ -103,29 +103,30 @@ function ChallengesTweakData:init()
 		--No visible counter?
 		xp = mid_xp,
     }
-    
+
     self.session = {}
-	--[[
+--[[
     self.session.testing1 = {
 		title_id = "ch_branch_bank_sm_wish_hl",
 		description_id = "ch_branch_bank_sm_wish",
 		xp = gigantic_xp,
 		cc = simple_cc,
 		level_id = {
-            "four_stores",
+            "four_stores_remixed",
             "rat",
             "ukrainian_job_res"
         },
-		difficulty = "sm_wish",
+		difficulty = "easy_wish",
 		session_stopped = {
-			callback = "overkill_success"
+			callback = "level_success"
 		}
     }
-	]]--
+]]
     self.session.bridge_no_bleedouts_hard = {
 		title_id = "ch_bridge_no_bleedouts_hl",
 		description_id = "ch_bridge_no_bleedouts",
 		xp = huge_xp,
+        cc = 1,
 		level_id = "glace",
 		difficulty = {
 			"hard",
@@ -140,7 +141,10 @@ function ChallengesTweakData:init()
 		title_id = "ch_watchdogs_d1_heavy_wpn1_hl",
 		description_id = "ch_watchdogs_d1_heavy_wpn1",
 		xp = gigantic_xp,
-		level_id = "watchdogs_1",
+		level_id =  {
+            "watchdogs_1",
+            "watchdogs_1_night"
+        },
         difficulty = overkill_and_above,
         primaries = {
             "m134",
@@ -153,8 +157,20 @@ function ChallengesTweakData:init()
             "level_7"
         },
 		session_stopped = {
-			callback = "overkill_success"
+			callback = "level_success"
 		}
+    }
+    self.session.pro_job_test = {
+        title_id = "ch_pro_job_test",
+        description_id = "ch_pro_job_test_desc",
+        difficulty = easywish_and_above,
+        job_id = {
+            "firestarter"
+        },
+        cc = 6,
+        session_stopped = {
+            callback = "pro_job_success"
+        }
     }
     self.achievment = {}
     self.achievment.duck_hunting = {
@@ -176,9 +192,28 @@ function ChallengesTweakData:init()
 		},
         flag_id = "melee_test",
     }
-		
-	self.weapon = {}
+    self.new_challenges.summers_test = {
+        title_id = "ch_summers_test",
+        description_id = "ch_summers_test_desc",
+        xp = gigantic_xp,
+        depends_on = {
+			primaries = {"flamethrower_mk2"}
+		},
+        flag_id = "summers_test",
+    }
 	
+	self.new_challenges.winters_test = {
+        title_id = "ch_winters_test",
+        description_id = "ch_winters_test_desc",
+        xp = gigantic_xp,
+        depends_on = {
+			melee_weapons = {"wing", "switchblade"}
+		},
+        flag_id = "winters_test",
+    }
+
+	self.weapon = {}
+
 
     self:weapon_challenges()
 end

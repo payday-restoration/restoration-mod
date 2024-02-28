@@ -545,6 +545,13 @@ function CopDamage:damage_fire(attack_data)
 				self:_AI_comment_death(attacker_unit, self._unit)
 			end
 		end
+		
+		local weapon_unit = attack_data.weapon_unit
+		local weapon_id = alive(weapon_unit) and weapon_unit:base().name_id
+
+		if self._unit:base()._tweak_table == "summers" and weapon_id == "flamethrower_mk2" then
+			managers.challenges_res:set_flag("summers_test")
+		end
 	end
 
 	local weapon_unit = weap_unit
@@ -1702,6 +1709,10 @@ function CopDamage:damage_melee(attack_data)
 			if self._unit:base()._tweak_table == "autumn" and attack_data.name_id and attack_data.name_id == "fists" then
 				managers.challenges_res:set_flag("melee_test")
 			end
+			
+			if self._unit:base()._tweak_table == "phalanx_vip" and attack_data.name_id and (attack_data.name_id == "wing" or attack_data.name_id == "switchblade") then
+				managers.challenges_res:set_flag("winters_test")
+			end
 
 			if is_civilian then
 				managers.money:civilian_killed()
@@ -1926,6 +1937,14 @@ function CopDamage:die(attack_data)
 
 	if self._unit:base()._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("kill_spook_lights")
+	end
+	
+	if self._unit:base()._tweak_table == "phalanx_vip" or self._unit:base()._tweak_table == "phalanx_vip_break" then
+		self._unit:damage():run_sequence_simple("kill_smoke_winters")
+	end
+	
+	if self._unit:base()._tweak_table == "summers" then
+		self._unit:damage():run_sequence_simple("kill_feet_fire_summers")
 	end
 
 	if self._char_tweak.failure_on_death then

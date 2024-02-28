@@ -1104,6 +1104,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Guard variant, different entry type as a failsafe
 	self.city_swat_guard = deep_clone(self.city_swat)	
 	self.city_swat_guard.headshot_dmg_mul = 8.5
+	self.city_swat_guard.overheal_mult = 1
 	self.city_swat_guard.access = "security"
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	if job == "nmh" or job == "nmh_res" then

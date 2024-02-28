@@ -217,6 +217,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.player_style = "tux"
 	
 	self.brb.ai_group_type = nypd
+	self.brb.package = {"packages/lvl_brb", "packages/murkywatermisc"}
 	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd

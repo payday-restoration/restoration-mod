@@ -107,7 +107,7 @@ return {
 	[101391] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
-	},
+	}, 
 	-- Make server hack guranteed when solo
 	[104494] = {
 		pre_func = function (self)
@@ -166,11 +166,13 @@ return {
 			end
 		end
 	},
-	--Trigger custom scripted dozers after 20 seconds
+	--Trigger dozers if the manager has been killed
 	[101967] = {
 		on_executed = {
 			{ id = 400001, delay = 20 },
-			{ id = 400002, delay = 20 }
+			{ id = 400002, delay = 20 },
+			{ id = 400046, delay = 200 },
+			{ id = 400047, delay = 200 }
 		}
 	},
 	--Trigger custom c4 route spawns
@@ -180,23 +182,43 @@ return {
 			{ id = 400015, delay = 5 }
 		}
 	},	
-	--Trigger ambush cloakers
-	[105836] = {
+	--Trigger ambush cloakers when the gates open on loud
+	[104397] = {
 		on_executed = {
-			{ id = 400004, delay = 0 },
-			{ id = 400005, delay = 0 },
-			{ id = 400006, delay = 0 },
-			{ id = 400007, delay = 0 },
-			{ id = 400008, delay = 0 }
+			{ id = 400042, delay = 0 }
 		}
 	},
-	[106001] = {
+	--Disable Bravos/Cloakers/Dozers spawns on startup
+	[100017] = {
 		on_executed = {
-			{ id = 400004, delay = 0 },
-			{ id = 400005, delay = 0 },
-			{ id = 400006, delay = 0 },
-			{ id = 400007, delay = 0 },
-			{ id = 400008, delay = 0 }
+			{ id = 400034, delay = 3 },
+			{ id = 400045, delay = 3 }
+		}
+	},
+	--Enable Bravos/Cloakers on loud
+	[100023] = {
+		on_executed = {
+			{ id = 400020, delay = 0 }
+		}
+	},
+	--Spawn Bravos when opening the elevator
+	[105806] = {
+		on_executed = {
+			{ id = 400018, delay = 0 }
+		}
+	},
+	--Spawn Bravos when the bus crashes
+	[105810] = {
+		on_executed = {
+			{ id = 400019, delay = 0 }
+		}
+	},
+	--Spawn Defend Shields when the chopper arrives
+	[105804] = {
+		on_executed = {
+			{ id = 400035, delay = 0 },
+			{ id = 400036, delay = 0 },
+			{ id = 400037, delay = 0 }
 		}
 	},
 	--More chance for blowing up the wall/also faster time to trigger

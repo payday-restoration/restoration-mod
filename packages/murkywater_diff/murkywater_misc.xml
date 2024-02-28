@@ -329,6 +329,31 @@
 	<df_nm				path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/helmets_heavy_taser_atlas_df" force="false"/>
 	
+	<!--the spooky boi-->
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook" load="true"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>		
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_contour"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_husk" load="true"/>
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>				
+	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>				
+	<!--Murky Cloaker Debris-->
+	<!--head-->
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris" load="false"/>
+	<!--body-->
+	<model				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris" load="false"/>
+	
 	<!--Murkydozers (For Slaughterhouse and Birth of Sky)-->		
 	<!-- greendozer -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" load="true"/>

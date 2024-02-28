@@ -238,6 +238,27 @@ function PlayerStandard:_start_action_ducking(t)
 	end
 end
 
+function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
+	if (is_pro and self._is_sliding) or not skip_can_stand_check and not self:_can_stand() then
+		return
+	end
+
+	self._state_data.ducking = false
+
+	self:_stance_entered()
+	self:_update_crosshair_offset()
+
+	local velocity = self._unit:mover():velocity()
+
+	self._unit:kill_mover()
+	self:_activate_mover(PlayerStandard.MOVER_STAND, velocity)
+	self._ext_network:send("action_change_pose", 1, self._unit:position())
+	self:_upd_attention()
+	if AdvMov and PlayerStandard._cancel_slide then
+		self:_cancel_slide()
+	end
+end
+
 function PlayerStandard:_check_action_throw_projectile(t, input)
 	local projectile_entry = managers.blackmarket:equipped_projectile()
 	local projectile_tweak = tweak_data.blackmarket.projectiles[projectile_entry]
@@ -1748,7 +1769,41 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	return final_speed
 end
 
+Hooks:PostHook(PlayerStandard, "_update_movement", "ResUpdMovement", function(self, t, dt)
+	if not self._move_dir then
+		self._running_wanted = false
+	end
+end)
 
+function PlayerStandard:_check_action_run(t, input)
+	if self._setting_hold_to_run and input.btn_run_release or self._running and not self._move_dir then
+		self._running_wanted = false
+
+		if self._running then
+			self:_end_action_running(t)
+
+			if input.btn_steelsight_state and not self._state_data.in_steelsight then
+				self._steelsight_wanted = true
+			end
+		end
+	elseif not self._setting_hold_to_run and input.btn_run_release and not self._move_dir then
+		self._running_wanted = false
+	elseif input.btn_run_press or self._running_wanted then
+		if input.btn_run_press and self._running_wanted == true then
+			--self._running_wanted = false
+			--return
+		end
+		if not self._running or self._end_running_expire_t then
+			self:_start_action_running(t)
+		elseif self._running and not self._setting_hold_to_run then
+			self:_end_action_running(t)
+
+			if input.btn_steelsight_state and not self._state_data.in_steelsight then
+				self._steelsight_wanted = true
+			end
+		end
+	end
+end
 
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
@@ -1775,7 +1830,7 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or self:_in_burst() or self._state_data.ducking and not self:_can_stand()then
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
 		self._running_wanted = true
 		return
 	end
@@ -2373,7 +2428,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
-			elseif anim_attack_charged_right_vars and angle and (angle <= 45) and (angle >= 0) then
+			elseif anim_attack_charged_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_charge_h = true
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
@@ -2383,7 +2438,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
-			elseif anim_attack_right_vars and angle and (angle <= 45) and (angle >= 0) then
+			elseif anim_attack_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_h = true
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]

@@ -2037,7 +2037,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.02, 2, -3.85)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ching = {
-				translation = Vector3(0, -2, -2.77)
+				translation = Vector3(0, -8, -2.77)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_g3 = {
 				translation = Vector3(0.01, 2.5, -3.395)
@@ -3984,6 +3984,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_m4_uupg_fg_rail_m4a1")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_m16a2")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_og_rof")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -4179,6 +4180,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_patriot")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_og_rof")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	
 	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
@@ -4342,6 +4344,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
 		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
 	}
+	self.wpn_fps_ass_m16.override.wpn_fps_upg_s_saintvictor_hera = {
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	}
 
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_cola_legend")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
@@ -4349,6 +4355,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_pts")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_smg_olympic_s_short")		
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_i_m16a2")
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	
 	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
 
@@ -4459,6 +4466,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats),
 		custom_stats = deep_clone(stocks.nocheeks_to_fixed_acc2_rec2_stats)
 	}
+	self.wpn_fps_smg_olympic.override.wpn_fps_upg_s_saintvictor_hera = {
+		stats = deep_clone(stocks.nocheeks_to_thumb_stats),
+		custom_stats = deep_clone(stocks.nocheeks_to_thumb_stats)
+	}
 
 	self.wpn_fps_smg_olympic.override.wpn_fps_m4_uupg_b_medium.override = {
 		wpn_fps_smg_olympic_fg_olympic = {
@@ -4538,6 +4549,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_ass_m16_s_fixed")			
+	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_upg_s_saintvictor_hera")			
 		
 	self.wpn_fps_smg_olympic_npc.override = deep_clone(self.wpn_fps_smg_olympic.override)
 	self.wpn_fps_smg_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_olympic.uses_parts)
@@ -8636,7 +8648,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	self.wpn_fps_snp_msr.override = {}
 
 	table.insert(self.wpn_fps_snp_msr.uses_parts, "wpn_fps_snp_model70_iron_sight")
-	table.insert(self.wpn_fps_snp_msr_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
 			
 	self.wpn_fps_snp_msr_npc.override = deep_clone(self.wpn_fps_snp_msr.override)
 	self.wpn_fps_snp_msr_npc.uses_parts = deep_clone(self.wpn_fps_snp_msr.uses_parts)
@@ -12591,11 +12602,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 	self.parts.wpn_fps_smg_cobray_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_cobray_ns_silencer.has_description = true
 	self.parts.wpn_fps_smg_cobray_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_smg_cobray_ns_silencer.stats = {
-		value = 3,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_smg_cobray_ns_silencer.stats = deep_clone(muzzle_device.supp_c_alt_stats)
 	self.parts.wpn_fps_smg_cobray_ns_silencer.perks = {"silencer"}
 
 	if not self.wpn_fps_smg_cobray.override then
@@ -14894,6 +14901,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(s
 		stats = deep_clone(stocks.folded_to_thumb),
 		custom_stats = deep_clone(stocks.folded_to_thumb)
 	}
+	self.wpn_fps_ass_tecci.override.wpn_fps_upg_s_saintvictor_hera = {
+		stats = deep_clone(stocks.folded_to_fixed_stats),
+		custom_stats = deep_clone(stocks.folded_to_fixed_stats)
+	}
 
 	--New parts
 	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_tecci_legend")
@@ -15818,6 +15829,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", 
 		stats = deep_clone(stocks.remove_fixed_stats),
 		custom_stats = deep_clone(stocks.remove_fixed_stats)
 	}
+	self.wpn_fps_ass_contraband.override.wpn_fps_upg_s_saintvictor_hera = {
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	}
 	
 	--So it has more than like 3 parts
 	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_g_ergo")
@@ -15937,11 +15952,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 		stats = {}, --deep_clone(stocks.remove_fixed_stats),
 		custom_stats = {} --deep_clone(stocks.remove_fixed_stats)
 	}
+	self.wpn_fps_snp_tti.override.wpn_fps_upg_s_saintvictor_hera = {
+		stats = deep_clone(stocks.fixed_to_thumbhole_stats),
+		custom_stats = deep_clone(stocks.fixed_to_thumbhole_stats)
+	}
 
 	--Contractor Custom parts
 	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_m4_uupg_o_flipup")
 	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 
 	--table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_smg_olympic_s_short")
 	--table.insert(self.wpn_fps_snp_tti_npc.uses_parts, "wpn_fps_smg_olympic_s_short")
@@ -21486,11 +21506,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 	self.parts.wpn_fps_upg_ak_ns_tgp.supported = true
 	self.parts.wpn_fps_upg_ak_ns_tgp.has_description = true
 	self.parts.wpn_fps_upg_ak_ns_tgp.desc_id = "bm_wp_upg_suppressor"
-	self.parts.wpn_fps_upg_ak_ns_tgp.stats = {
-		value = 2,
-		suppression = 12,
-		alert_size = -1
-	}
+	self.parts.wpn_fps_upg_ak_ns_tgp.stats = deep_clone(muzzle_device.supp_rec_stats)
+	self.parts.wpn_fps_upg_ak_ns_tgp.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
 	self.parts.wpn_fps_upg_ak_ns_tgp.perks = {"silencer"}
 
 
@@ -22950,6 +22967,46 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					if self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.rof_mult then
 						table.insert(self.parts.wpn_fps_upg_i_og_rof.forbids, used_part_id)
 					end
+				end
+			end
+		end
+	end
+
+	self.parts.wpn_fps_upg_s_saintvictor_hera = {
+		pcs = {},
+		type = "stock",
+		name_id = "bm_wp_upg_s_saintvictor_hera",
+		a_obj = "a_s",
+		unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera",
+		third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
+		alt_icon = "guis/dlcs/savi/textures/pd2/blackmarket/icons/mods/wpn_fps_snp_victor_sbr_kit",
+		supported = true,
+		stats = deep_clone(stocks.adj_to_to_thumb_stats),
+		custom_stats = deep_clone(stocks.adj_to_to_thumb_stats),
+		override = {
+			wpn_fps_upg_m4_g_standard_vanilla = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		},
+		forbids = {},
+		dlc = "sc"
+	}
+
+	attachment_list = {
+		"wpn_fps_smg_olympic",
+
+		"wpn_fps_ass_amcar",
+		"wpn_fps_ass_m4",
+
+		"wpn_fps_ass_m16",
+		"wpn_fps_snp_tti"
+	}
+	for i, factory_id in ipairs(attachment_list) do
+		for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "grip" and self.parts[used_part_id].pcs then
+					table.insert(self.parts.wpn_fps_upg_s_saintvictor_hera.forbids, used_part_id)
 				end
 			end
 		end

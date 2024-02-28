@@ -20,9 +20,12 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-    <material name="mtr_mouth" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+    <material name="mtr_mouth" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
 		<bump_normal_texture 	file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>
+		<self_illumination_texture 	file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_il"/>
+		<variable type="scalar" name="il_bloom" value="1"/>
+        <variable type="scalar" name="il_multiplier" value="sun"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

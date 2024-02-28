@@ -502,7 +502,7 @@ function PlayerDamage:damage_bullet(attack_data)
 
 	local pm = managers.player
 	local t = pm:player_timer():time()
-	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
@@ -648,7 +648,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 
 	local pm = managers.player
 	local t = pm:player_timer():time()
-	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil

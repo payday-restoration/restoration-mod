@@ -950,6 +950,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		-- New challanges
 		["ch_melee_test"] = "Cloak and Dagger",
 		["ch_melee_test_desc"] = "Kill Captain Autumn using only your fists",
+		["ch_pro_job_test"] = "Not Even The Army Could Stop Us",
+		["ch_pro_job_test_desc"] = "Complete Firestarter Pro Job on Mayhem or above",
+		["ch_summers_test"] = "Old Gens Are Better",
+		["ch_summers_test_desc"] = "Kill Captain Summers with only using the Mk.1 Flamethrower",
+		["ch_winters_test"] = "Injustice Served",
+		["ch_winters_test_desc"] = "Kill Captain Winters while he holding shield with only using Switchblade or Wing Butterfly Knife",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1617,7 +1623,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_cleangold"] = "Clean Gold",
 		["bm_wskn_resmod_imissfauna"] = "Ceres Gold",
 		["bm_wskn_resmod_imissfauna_desc"] = "Mother Nature would never betray you... right?",
-		["bm_wskn_resmod_uuuuu"] = "Gothic Ceres Gold",
+		["bm_wskn_resmod_uuuuu"] = "Gothic Ceres Gold", --#GothFauna
 		["bm_wskn_resmod_uuuuu_desc"] = "Nature is kind of dark and beautiful at the same time, right?",
 		["bm_wskn_resmod_ownthiscity"] = "Fleur Gold",
 		["bm_wskn_resmod_ownthiscity_desc"] = "It's our time now! Let's get this shit started!",
@@ -1635,9 +1641,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_camo"] = "Camo Gold",
 		["bm_wskn_resmod_camo2"] = "Haze Gold",
 		["bm_wskn_resmod_digital"] = "Digital Gold",
-		["bm_wskn_resmod_splinter"] = "Splinter Gold",
+		["bm_wskn_resmod_splinter"] = "Narva Gold",
 		["bm_wskn_resmod_urban"] = "Urban Gold",
 		["bm_wskn_resmod_dioxide"] = "Carbon Gold",
+		["bm_wskn_resmod_rat"] = "Splinter Gold",
+		["bm_wskn_resmod_ratdark"] = "Splinter Dark Gold",
+		["bm_wskn_resmod_rocker"] = "Static Gold",
+		["bm_wskn_resmod_shocker"] = "Static Dark Gold",
+		["bm_wskn_resmod_whitefire"] = "Flame Gold",
+		["bm_wskn_resmod_blackfire"] = "Flame Dark Gold",
 		["bm_wskn_resmod_topography"] = "Topography Gold",
 		["bm_wskn_resmod_2019"] = "Warfare Gold",
 		["bm_wskn_resmod_llenn"] = "Pink Devil",
@@ -1645,6 +1657,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_sugarhoneyicetea"] = "Zebra Gold",
 		["bm_wskn_resmod_blackzebra"] = "Black Zebra Gold",
 		["bm_wskn_resmod_charlotte"] = "Web Gold",
+		["bm_wskn_resmod_joker"] = "Laugh on Gold",
+		["bm_wskn_resmod_jokerw"] = "Laugh on White",
 		
 		["menu_weapon_color_index_11"] = "Metal + Sights",
 		["menu_weapon_color_index_12"] = "Metal + Magazine",
@@ -2067,7 +2081,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--M32 MK32 Kit
 				["bm_wp_upg_i_ghosts_mk32"] = "MK32 Kit",
 				["bm_wp_upg_i_ghosts_mk32_desc"] = "A prototype weapon kit from Task Force: STALKER.\n\nTrade single fire for #{skill_color}#2-round bursts.##",
-				--AR-15 MAGS
+				--AR-15 Mods
+				["bm_wp_upg_s_saintvictor_hera"] = "Killer Instinct Stock",
 				["bm_wp_upg_vintage_fal_sc"] = "Ridgeback Mag",
 				["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 				["bm_wp_upg_mil_sc"] = "Milspec Mag",
@@ -4658,8 +4673,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_spring"] = "Spring",
 		["menu_mutator_captain_replace_summer"] = "Summers",
 		["menu_mutator_captain_replace_hvh"] = "HHHTDFH",
+		["menu_mutator_winter_blacklist_toggle"] = "Blacklist Winters for \"Random\" option",
+		["menu_mutator_spring_blacklist_toggle"] = "Blacklist Spring for \"Random\" option",
+		["menu_mutator_summer_blacklist_toggle"] = "Blacklist Summers for \"Random\" option",
+		["menu_mutator_autumn_blacklist_toggle"] = "Blacklist Autumn for \"Random\" option",
+		["menu_mutator_hvh_blacklist_toggle"] = "Blacklist HHHTDFH for \"Random\" option",
 		["mutator_captain_replace_desc"] = "Changes the Captain that spawns during a heist.",
-		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged.",
+		["mutator_captain_replace_longdesc"] = "The Captain that will spawn during a heist will instead be the selected Captain.\n\nNote: Scripted Captain Encounters will be unchanged. Blacklisting all captains for \"Random\" option will sequence to use \"No Changes\" option.",
 		
 		["mutator_no_outlines"] = "Expert Realism",
 		["mutator_no_outlines_desc"] = "Majority of outlines are disabled.",

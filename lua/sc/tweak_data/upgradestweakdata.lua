@@ -511,9 +511,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		2.50,
 		2.75,
 		3.00,
-		3.75, --3 increments instead of 2
-		4.00,
-		4.75 --3 increments instead of 2
+		3.50,
+		3.75,
+		4.25
 	}
 
 	self.values.rep_upgrades.values = {0}

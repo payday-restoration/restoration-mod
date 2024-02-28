@@ -176,6 +176,7 @@
 				<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
 				<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 				<hook file="sc/managers/perpetualeventmanager.lua" source_file="lib/managers/perpetualeventmanager"/>
+				<hook file="sc/managers/lootmanager.lua" source_file="lib/managers/lootmanager"/>
 			<!--UNITS-->
 				<!--PROPS-->
 					<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>

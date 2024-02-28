@@ -22,6 +22,7 @@ local enabled_chance_more_guards = math.random() < diff_scaling_1
 local enabled_chance_shields = math.random() < diff_scaling_1
 local enabled_chance_cloakers = math.random() < diff_scaling_1
 local enabled_chance_dozers = math.random() < diff_scaling_2
+local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 
 	if difficulty == 7 then
 		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
@@ -129,7 +130,7 @@ local optsBulldozer_193 = {
 }
 local optsBulldozer_special = {
     enemy = tank_skull,
-    enabled = (death_wish_above and pro_job)
+    enabled = (death_wish_above and pro_job and enabled_chance_dozers_exitvault)
 }
 local optsCloaker_rush_1 = {
     enemy = cloaker,
@@ -206,7 +207,7 @@ local optsShieldDefend_SO = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_defend"
+    so_action = "AI_sniper"
 }
 
 return {

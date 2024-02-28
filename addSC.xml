@@ -917,13 +917,15 @@
 	
 	<!--Winter with his cool cigar (Jarey)-->
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>	
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true" load="true"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_husk" force="true" load="true"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_il"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_body_df" force="true"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_head_df" force="true"/>		
 
@@ -935,6 +937,9 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip_dummy" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>
+	
+	<!--Cigar smoke for Winters-->
+	<effect				path="effects/particles/character/cigarette_smoke_winters" load="true"/>
 
 	<!--Winter AssFuckeng Squad-->
 
@@ -1017,6 +1022,7 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
 	
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
@@ -1218,20 +1224,13 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" force="true"/>
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
 	
-	<!--Omnia Buff Effect-->
-	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
-	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<!--Omnia Buff Effect for OMNIA T Swat-->
-	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false" load="true"/>
 	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank" load="true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan" load="true"/>	
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
@@ -1274,6 +1273,18 @@
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
+	<texture			path="effects/textures/e_sniper_trail_df" />
+	<texture			path="effects/textures/e_sniper_trail_1_df" />
+	<texture			path="effects/textures/e_sniper_trail_2_df" />
+	<texture			path="effects/textures/e_sniper_trail_3_df" />
+	<texture			path="effects/textures/e_sniper_trail_4_df" />
+	<texture			path="effects/textures/e_sniper_trail_5_df" />
+	<effect				path="effects/particles/weapons/vapor_trail_1" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_2" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_3" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_4" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_5" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_sc" force="false"/>
 	
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
@@ -1437,6 +1448,9 @@
 	<object				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc_thq" load="false"/>
+
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/wpn_fps_pis_x_judge" load="false"/>

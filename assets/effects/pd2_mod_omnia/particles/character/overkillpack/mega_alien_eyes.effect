@@ -6,7 +6,43 @@
             <boxrandomangle min="120" max="-124"/>
             <boxrandomaspectsize size="8 10" min="1" max="1.3"/>
             <constantage age="99999"/>
-            <localboxrandomposition min="-1 0 -4" max="1 0 -4"/>
+            <localboxrandomposition min="-4 7 15" max="-4 7 15"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="1" teleport_cap="1" current_position="true" channel="world" normal_variation="0" teleport_event="true" positioner="box">
+                <box min="0 0 1" max="0 0 1" min_normal="0 0 1" max_normal="0 0 1"/>
+                <normal min_velocity="2" max_velocity="5"/>
+            </teleporter>
+            <constantacceleration relative="world" acceleration="0 0 -3"/>
+            <worldtransform transform_rotations="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_smoke_04_6x6_seq_loop" intensity="dimlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.16 0.16" uv_offset_input="keys" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="36" fps="24" loop="true">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.10000000149012 0.10000000149012"/>
+                    <key t="0.64371770620346" v="1 1.5"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="138 0 166"/>
+                    <key t="1.5662651062012" v="0 0 0"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.2564544677734" v="255"/>
+                    <key t="4.6933083534241" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+	<atom name="Smoke Add" min_size="12" max_size="12" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="500" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomangle min="120" max="-124"/>
+            <boxrandomaspectsize size="8 10" min="1" max="1.3"/>
+            <constantage age="99999"/>
+            <localboxrandomposition min="4 7 15" max="4 7 15"/>
         </initializerstack>
         <simulatorstack>
             <velocityintegrator channel="world"/>

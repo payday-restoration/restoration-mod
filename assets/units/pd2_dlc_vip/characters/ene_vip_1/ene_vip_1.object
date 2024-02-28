@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	<diesel materials="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<sequence_manager file="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -234,5 +234,9 @@
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 	</graphics>
-		
+	
+	<effects>
+		<effect_spawner name="smoke_winters" enabled="true" object="g_mouth" effect="effects/particles/character/cigarette_smoke_winters"/>
+	</effects>
+	
 </dynamic_object>

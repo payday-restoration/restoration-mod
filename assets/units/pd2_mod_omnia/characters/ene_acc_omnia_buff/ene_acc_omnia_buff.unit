@@ -1,6 +1,0 @@
-<unit type="gen" slot="30">
-	<object file="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

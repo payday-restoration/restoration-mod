@@ -224,10 +224,10 @@ return {
 		}
 	},
 	--two extra possible dozers spawn on DW+ (PJ Only)
-	[100569] = { 
+	[103705] = { 
 		on_executed = {
-			{id = 400024, delay = 0},
-			{id = 400025, delay = 0}
+			{id = 400024, delay = 15},
+			{id = 400025, delay = 15}
 		}
 	},
 	--one extra Bo Dozer

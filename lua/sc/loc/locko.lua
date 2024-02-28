@@ -949,6 +949,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		-- New challanges
 		["ch_melee_test"] = "Cloak and Dagger",
 		["ch_melee_test_desc"] = "Kill Captain Autumn using only your fists",
+		["ch_pro_job_test"] = "Not Even The Army Could Stop Us",
+		["ch_pro_job_test_desc"] = "Complete Firestarter Pro Job on Mayhem or above",
+		["ch_summers_test"] = "Old Gens Are Better",
+		["ch_summers_test_desc"] = "Kill Captain Summers with only using the Mk.1 Flamethrower",
+		["ch_winters_test"] = "Injustice Served",
+		["ch_winters_test_desc"] = "Kill Captain Winters while he holding shield with only using Switchblade or Wing Butterfly Knife",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1235,6 +1241,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--M32 MK32 Kit
 		["bm_wp_upg_i_ghosts_mk32"] = "MK32 킷",
 		["bm_wp_upg_i_ghosts_mk32_desc"] = "태스크 포스 스토커의 프로토타입 무기 키트.\n\n단발을 #{skill_color}#2점사로 교체합니다.##",
+		
+		--AR-15 Mods
+		["bm_wp_upg_s_saintvictor_hera"] = "킬러 인센트 개머리판",
 		
 		--NV4
 		["bm_wp_upg_o_iwelo"] = "플로팅 조명 조준점이 있는 발광 광학 조준기\n#{risk}#1.1x 배율.##",
@@ -2300,8 +2309,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_camo"] = "카모 골드",
 		["bm_wskn_resmod_camo2"] = "헤이즈 골드",
 		["bm_wskn_resmod_digital"] = "디지털 골드",
-		["bm_wskn_resmod_splinter"] = "스플린터 골드",
+		["bm_wskn_resmod_splinter"] = "나르바 골드",
 		["bm_wskn_resmod_urban"] = "우반 골드",
+		["bm_wskn_resmod_rat"] = "스플린터 골드",
+		["bm_wskn_resmod_ratdark"] = "스플린터 다크 골드",
+		["bm_wskn_resmod_rocker"] = "스태딕 골드",
+		["bm_wskn_resmod_shocker"] = "스태딕 다크 골드",
+		["bm_wskn_resmod_whitefire"] = "플레임 골드",
+		["bm_wskn_resmod_blackfire"] = "플레임 다크 골드",		
 		["bm_wskn_resmod_dioxide"] = "카본 골드",
 		["bm_wskn_resmod_topography"] = "토포그래피 골드",
 		["bm_wskn_resmod_2019"] = "워페어 골드",
@@ -2309,7 +2324,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_llenn_desc"] = "이건 내가 생각한 것이 정확히는 아니지만 분홍색은 분홍색이야.",
 		["bm_wskn_resmod_sugarhoneyicetea"] = "지브라 골드",
 		["bm_wskn_resmod_blackzebra"] = "블랙 지브라 골드",
-		["bm_wskn_resmod_charlotte"] = "웹 골드",		
+		["bm_wskn_resmod_charlotte"] = "웹 골드",
+		["bm_wskn_resmod_joker"] = "라프 온 골드",
+		["bm_wskn_resmod_jokerw"] = "라프 온 화이트",		
 		
 		["menu_weapon_color_index_11"] = "메탈 + 조준기",
 		["menu_weapon_color_index_12"] = "메탈 + 탄창",
@@ -4745,8 +4762,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_captain_replace_spring"] = "스프링",
 		["menu_mutator_captain_replace_summer"] = "서머스",
 		["menu_mutator_captain_replace_hvh"] = "지옥 타이탄 도저",
+		["menu_mutator_winter_blacklist_toggle"] = "\"랜덤\" 옵션에 윈터스를 블랙리스트에 올리기",
+		["menu_mutator_spring_blacklist_toggle"] = "\"랜덤\" 옵션에 스프링을 블랙리스트에 올리기",
+		["menu_mutator_summer_blacklist_toggle"] = "\"랜덤\" 옵션에 서머스를 블랙리스트에 올리기",
+		["menu_mutator_autumn_blacklist_toggle"] = "\"랜덤\" 옵션에 어텀을 블랙리스트에 올리기",
+		["menu_mutator_hvh_blacklist_toggle"] = "\"랜덤\" 옵션에 HHHTDFH를 블랙리스트에 올리기",		
 		["mutator_captain_replace_desc"] = "하이스트 도중에 생성되는 캡틴을 변경합니다.",
-		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다.",
+		["mutator_captain_replace_longdesc"] = "하이스트에 생성되는 캡틴 대신 선택된 캡틴이 생성됩니다.\n\n참고: 스크립트로 생성되는 캡틴 엔카운터는 바뀌지 않습니다. \"랜덤\" 옵션에 모든 캡틴을 블랙리스트에 추가하면 \"바꾸지 않음\" 옵션이 사용됩니다.",
 
 		["mutator_no_outlines"] = "전문가 리얼리즘",
 		["mutator_no_outlines_desc"] = "대부분의 윤곽선이 비활성화됩니다.",

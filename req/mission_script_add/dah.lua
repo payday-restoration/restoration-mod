@@ -275,14 +275,27 @@ local optsrespawn_taser_and_shields_1 = {
 }
 local optsrespawn_taser_and_shields_2 = {
 	on_executed = { 
-		{ id = 400053, delay = 45 },
+		{ id = 400053, delay = 47 },
 		{ id = 400054, delay = 46 },
-		{ id = 400055, delay = 47 }
+		{ id = 400055, delay = 45 }
 	},
 	elements = { 
 		400053
 	},
     event = "death"
+}
+local enable_snipers = {
+	elements = { 
+		400072,
+		400073
+	}
+}
+local disable_snipers = {
+	toggle = "off",
+	elements = { 
+		400072,
+		400073
+	}
 }
 
 return {
@@ -823,6 +836,16 @@ return {
             Vector3(-2964, -2366, 379.754),
             Rotation(0, 0, -0),
             optsDefend_and_Sniper_SO
+        ),
+		restoration:gen_toggleelement(
+            400076,
+            "enable_snipers",
+            enable_snipers
+        ),
+		restoration:gen_toggleelement(
+            400077,
+            "disable_snipers",
+            disable_snipers
         )
     }
 }

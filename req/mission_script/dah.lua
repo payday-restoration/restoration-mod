@@ -11,7 +11,6 @@ local cop_3 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"
 		hard_above = true
 	end
 	
-
 if pro_job then	
 	chance_ovk = chance_ovk + 5
 	chance_dw = chance_dw + 5
@@ -24,12 +23,20 @@ return {
 			{id = 100082, delay = 0}
 		}
 	},
+	-- disable atrium snipers on startup
+	[100000] = {
+		on_executed = {
+			{ id = 400077, delay = 3 },
+		}
+	},
 	-- delay the elevator spawn
 	-- trigger the 3 cloakers event
+	-- enable autrium snipers
 	[100429] = {
 		on_executed = {
 			{id = 102128, delay = 45},
-			{id = 102196, delay = 10}
+			{id = 102196, delay = 10},
+			{id = 400076, delay = 0}
 		}
 	},
 	-- make the elevator do actual beep sound
@@ -173,10 +180,10 @@ return {
 		}
 	},
 	--Spawn atrium snipers when you pick up diamonds on loud
-	[104010] = { 
+	[105129] = {
 		on_executed = {
 			{id = 400072, delay = 0},
-			{id = 400073, delay = 0}
+			{id = 400073, delay = 3}
 		}
 	},
 	--Get rid of cringe turret, replace with proper ambush from PDTH

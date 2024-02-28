@@ -492,10 +492,16 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		end
 
 		local trail = World:effect_manager():spawn(self._trail_effect_table)
+		self._trail_effect_table_sniper = clone(self._trail_effect_table)
+		self._trail_effect_table_sniper.effect = Idstring("effects/particles/weapons/vapor_trail_sc")
+		local trail_sniper = self._use_sniper_trail and World:effect_manager():spawn(self._trail_effect_table_sniper)
 
 		if furthest_hit then
 			mvector3.set_y(self._trail_length, furthest_hit and furthest_hit.distance)
 			World:effect_manager():set_simulator_var_vector2(trail, Idstring("trail"), Idstring("simulator_length"), Idstring("size"), self._trail_length)
+			if self._use_sniper_trail then
+				World:effect_manager():set_simulator_var_vector2(trail_sniper, Idstring("trail"), Idstring("simulator_length"), Idstring("size"), self._trail_length)
+			end
 		end
 	end
 

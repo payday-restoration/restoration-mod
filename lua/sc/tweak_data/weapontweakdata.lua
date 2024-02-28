@@ -19151,8 +19151,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if table.contains(weap.categories, "amr") then
+				weap.use_sniper_trail = true
 				weap.force_shake = true
-				weap.hipfire_shake = true
+				--weap.hipfire_shake = true
 			end
 	
 			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") then

@@ -1307,6 +1307,18 @@
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
+	<texture			path="effects/textures/e_sniper_trail_df" />
+	<texture			path="effects/textures/e_sniper_trail_1_df" />
+	<texture			path="effects/textures/e_sniper_trail_2_df" />
+	<texture			path="effects/textures/e_sniper_trail_3_df" />
+	<texture			path="effects/textures/e_sniper_trail_4_df" />
+	<texture			path="effects/textures/e_sniper_trail_5_df" />
+	<effect				path="effects/particles/weapons/vapor_trail_1" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_2" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_3" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_4" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_5" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_sc" force="false"/>
 	
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>

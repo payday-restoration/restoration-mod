@@ -39,6 +39,11 @@ local optsBulldozer = {
     on_executed = { { id = 400003, delay = 0 } },
     enabled = overkill_above
 }
+local optsBulldozer_2 = {
+    enemy = tank,
+    on_executed = { { id = 400003, delay = 0 } },
+    enabled = death_sentence
+}
 local optsCloaker_1 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
@@ -237,6 +242,15 @@ local disable_bravos = {
 		400042
 	}
 }
+local disable_bo_dozers = {
+	toggle = "off",
+	elements = { 
+		400001,
+		400002,
+		400046,
+		400047
+	}
+}
 local optsrespawn_shields = {
 	on_executed = { 
 		{ id = 400035, delay = 45 },
@@ -248,6 +262,24 @@ local optsrespawn_shields = {
 	},
     event = "death"
 }
+local optsmanager_has_been_killed = {
+	on_executed = { 
+		{ id = 400044, delay = 0 },
+	},
+	elements = { 
+		101506
+	},
+    event = "death"
+}
+local enable_bo_dozers_the_sequel = {
+	elements = { 
+		400001,
+		400002,
+		400046,
+		400047
+	}
+}
+
 
 return {
     elements = {
@@ -262,8 +294,8 @@ return {
         restoration:gen_dummy(
             400002,
             "fwb_dozer_2",
-            Vector3(3911, 2473, -1200),
-            Rotation(-90, -0, -0),
+            Vector3(3911, -4422, -1021),
+            Rotation(-90, 0, -0),
             optsBulldozer
         ),
         restoration:gen_so(
@@ -539,6 +571,37 @@ return {
             400042,
             "spawn_cloakers",
             spawn_cloakers
+        ),
+		restoration:gen_dummytrigger(
+            400043,
+            "manager_death",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsmanager_has_been_killed
+        ),
+		restoration:gen_toggleelement(
+            400044,
+            "enable_dozers",
+            enable_bo_dozers_the_sequel
+        ),
+		restoration:gen_toggleelement(
+            400045,
+            "disable_dozers",
+            disable_bo_dozers
+        ),
+		restoration:gen_dummy(
+            400046,
+            "fwb_dozer_3",
+            Vector3(7498, -207, -1590.010),
+            Rotation(180, 0, -0),
+            optsBulldozer_2
+        ),
+        restoration:gen_dummy(
+            400047,
+            "fwb_dozer_4",
+            Vector3(3874, 2469, -1200.010),
+            Rotation(-90, 0, -0),
+            optsBulldozer_2
         )
     }
 }

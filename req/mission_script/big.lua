@@ -166,11 +166,13 @@ return {
 			end
 		end
 	},
-	--Trigger custom scripted dozers after 20 seconds
+	--Trigger dozers if the manager has been killed
 	[101967] = {
 		on_executed = {
 			{ id = 400001, delay = 20 },
-			{ id = 400002, delay = 20 }
+			{ id = 400002, delay = 20 },
+			{ id = 400046, delay = 200 },
+			{ id = 400047, delay = 200 }
 		}
 	},
 	--Trigger custom c4 route spawns
@@ -186,10 +188,11 @@ return {
 			{ id = 400042, delay = 0 }
 		}
 	},
-	--Disable Bravos/Cloakers spawns on startup
+	--Disable Bravos/Cloakers/Dozers spawns on startup
 	[100017] = {
 		on_executed = {
-			{ id = 400034, delay = 3 }
+			{ id = 400034, delay = 3 },
+			{ id = 400045, delay = 3 }
 		}
 	},
 	--Enable Bravos/Cloakers on loud

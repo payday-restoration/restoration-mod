@@ -161,9 +161,9 @@ local optsrespawn_murkies_5 = {
 }
 local optsrespawn_murkies_cloakers = {
 	on_executed = { 
-		{ id = 400017, delay = 35 },
-		{ id = 400018, delay = 35 },
-		{ id = 400019, delay = 35 }
+		{ id = 400017, delay = 55 },
+		{ id = 400018, delay = 55 },
+		{ id = 400019, delay = 55 }
 	},
 	elements = { 
 		400017

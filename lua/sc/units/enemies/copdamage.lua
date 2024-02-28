@@ -1729,6 +1729,10 @@ function CopDamage:damage_melee(attack_data)
 			if self._unit:base()._tweak_table == "autumn" and attack_data.name_id and attack_data.name_id == "fists" then
 				managers.challenges_res:set_flag("melee_test")
 			end
+			
+			if self._unit:base()._tweak_table == "phalanx_vip" and attack_data.name_id and (attack_data.name_id == "wing" or attack_data.name_id == "switchblade") then
+				managers.challenges_res:set_flag("winters_test")
+			end
 
 			if is_civilian then
 				managers.money:civilian_killed()

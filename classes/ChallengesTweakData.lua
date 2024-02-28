@@ -201,6 +201,16 @@ function ChallengesTweakData:init()
 		},
         flag_id = "summers_test",
     }
+	
+	self.new_challenges.winters_test = {
+        title_id = "ch_winters_test",
+        description_id = "ch_winters_test_desc",
+        xp = gigantic_xp,
+        depends_on = {
+			melee_weapons = {"wing", "switchblade"}
+		},
+        flag_id = "winters_test",
+    }
 
 	self.weapon = {}
 

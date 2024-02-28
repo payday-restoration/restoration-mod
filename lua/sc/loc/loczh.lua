@@ -1021,7 +1021,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["ch_pro_job_test"] = "Not Even The Army Could Stop Us",
 		["ch_pro_job_test_desc"] = "Complete Firestarter Pro Job on Mayhem or above",
 		["ch_summers_test"] = "Old Gens Are Better",
-		["ch_summers_test_desc"] = "Defeat Captain Summers with only using the Mk.1 Flamethrower",
+		["ch_summers_test_desc"] = "Kill Captain Summers with only using the Mk.1 Flamethrower",
+		["ch_winters_test"] = "Injustice Served",
+		["ch_winters_test_desc"] = "Kill Captain Winters while he holding shield with only using Switchblade or Wing Butterfly Knife",
 
         ["test_net"] = "Fast.Net",
         ["menu_test"] = "",

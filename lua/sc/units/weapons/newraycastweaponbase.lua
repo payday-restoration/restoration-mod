@@ -698,6 +698,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
 
+		self._use_vapor_trail = self:weapon_tweak_data().use_vapor_trail
 		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
 
 		if not self:is_npc() then
@@ -906,8 +907,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.descope_on_fire then		
 				self._descope_on_fire = stats.descope_on_fire
 			end
-			if stats.use_sniper_trail then		
-				self._use_sniper_trail = stats.use_sniper_trail
+			if stats.use_vapor_trail then		
+				self._use_vapor_trail = stats.use_vapor_trail
 			end
 			if stats.duration_falloff_start_mult then		
 				self._duration_falloff_start_mult = self._duration_falloff_start_mult * stats.duration_falloff_start_mult

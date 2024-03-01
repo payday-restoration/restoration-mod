@@ -22000,7 +22000,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		falloff_end_mult = 0.9375,
 		damage_min_mult = 1,
 		descope_on_fire = true,
-		use_sniper_trail = true
+		use_vapor_trail = true
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
 		"wpn_fps_snp_awp_b_long",

@@ -2093,12 +2093,6 @@ local murkywater_normal_overkill = {
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 
-		--Custom Heist Stuff
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-		["units/pd2_mod_ttr/characters/ene_captain_dozer/ene_captain_dozer"] = "units/pd2_dlc_vip/characters/ene_spring/ene_spring",
-
 		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
 		--swat
 		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
@@ -2206,12 +2200,6 @@ local murkywater_mayhem = {
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 
-		--Custom Heist Stuff
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-		["units/pd2_mod_ttr/characters/ene_captain_dozer/ene_captain_dozer"] = "units/pd2_dlc_vip/characters/ene_spring/ene_spring",
-
 		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
 		--swat
 		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -2317,12 +2305,6 @@ local murkywater_deathwish = {
 		["units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-		
-		--Custom Heist Stuff
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-		["units/pd2_mod_ttr/characters/ene_captain_dozer/ene_captain_dozer"] = "units/pd2_dlc_vip/characters/ene_spring/ene_spring",
 
 		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
 		--swat
@@ -2430,13 +2412,6 @@ local murkywater_hecu = {
 		["units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 		
-		
-		--Custom Heist Stuff
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_1/ene_agent_soldier_1"] = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_2/ene_agent_soldier_2"] = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
-		["units/pd2_mod_ttr/characters/ene_agent_soldier_3/ene_agent_soldier_3"] = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-		["units/pd2_mod_ttr/characters/ene_captain_dozer/ene_captain_dozer"] = "units/pd2_dlc_vip/characters/ene_spring/ene_spring",
-
 		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
 		--swat
 		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",

@@ -21999,7 +21999,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		falloff_start_mult = 0.5,
 		falloff_end_mult = 0.9375,
 		damage_min_mult = 1,
-		descope_on_fire = true
+		descope_on_fire = true,
+		use_sniper_trail = true
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
 		"wpn_fps_snp_awp_b_long",
@@ -35923,9 +35924,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
 				if not table.contains(self.wpn_fps_lmg_hcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id) then
 					if self.parts[used_part_id].type == "stock" or
-					self.parts[used_part_id].type == "sight" or
+					--self.parts[used_part_id].type == "sight" or
 					self.parts[used_part_id].type == "barrel" then
 						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id)
+					end
+					if self.parts[used_part_id].type == "sight" then
+						self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id] = self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id] or {}
+						self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds = (self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds)) or {}
+						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds, "wpn_fps_rpg7_sight_adapter")
 					end
 				end
 			end

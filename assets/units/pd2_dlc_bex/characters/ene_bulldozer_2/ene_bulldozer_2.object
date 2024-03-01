@@ -359,16 +359,16 @@
 			</lod_object>
 
 			<lod_object name="lod_shoulderpad_l">
-				<object name="g_shoulderpad_l" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_shoulderpad_l" 				enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 				</object>
-				<object name="g_shoulderpad_l_lod1" 		enabled="true" lod="1" >
+				<object name="g_shoulderpad_l_lod1" 		enabled="false" lod="1" >
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_shoulderpad_r">
-				<object name="g_shoulderpad_r" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_shoulderpad_r" 				enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 				</object>
-				<object name="g_shoulderpad_r_lod1" 		enabled="true" lod="1" >
+				<object name="g_shoulderpad_r_lod1" 		enabled="false" lod="1" >
 				</object>
 			</lod_object>
 

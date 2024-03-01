@@ -46,6 +46,28 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
+	--Allow only one turret to spawn (for some reason map designer allowed to spawn turrets on hard instead)
+	[102990] = {
+		values = {
+			difficulty_hard = "false"
+		}
+	},
+	--Disable other SWAT Turrets
+	[102991] = {
+		values = {
+			enabled = false
+		}
+	},
+	[102992] = {
+		values = {
+			enabled = false
+		}
+	},
+	[103003] = {
+		values = {
+			enabled = false
+		}
+	},
 	-- restores some unused sniper spawns with their SOs
 	[100372] = {
 		values = {
@@ -158,7 +180,12 @@ return {
 		}
 	},
 	-- Disable parts reinforce when drill is done+Pro Job Hunt (Endless Assault)
+	-- Has a chance to spawn dozers inside the vault
 	[101829] = {
+		on_executed = {
+			{id = 400001, delay = 6},
+			{id = 400002, delay = 6}
+		},
 		hunt = hunt_projob,
 		reinforce = {
 			{

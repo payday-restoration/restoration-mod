@@ -211,6 +211,16 @@ function ChallengesTweakData:init()
 		},
         flag_id = "winters_test",
     }
+	
+	self.new_challenges.spring_test = {
+        title_id = "ch_spring_test",
+        description_id = "ch_spring_test_desc",
+        xp = gigantic_xp,
+        depends_on = {
+			primaries = {"m134", "shuno"}
+		},
+        flag_id = "spring_test",
+    }
 
 	self.weapon = {}
 

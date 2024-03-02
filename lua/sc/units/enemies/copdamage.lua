@@ -1248,6 +1248,13 @@ function CopDamage:damage_bullet(attack_data)
 			if is_civilian then
 				managers.money:civilian_killed()
 			end
+			
+			local weapon_unit = attack_data.weapon_unit
+			local weapon_id = alive(weapon_unit) and weapon_unit:base().name_id
+
+			if self._unit:base()._tweak_table == "spring" and (weapon_id == "m134" or weapon_id == "shuno") then
+				managers.challenges_res:set_flag("spring_test")
+			end
 		elseif attack_data.attacker_unit:base().sentry_gun then
 			if Network:is_server() then
 				local server_info = weap_base:server_information()

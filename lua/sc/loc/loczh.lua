@@ -1024,6 +1024,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_summers_test_desc"] = "Kill Captain Summers with only using the Mk.1 Flamethrower",
 		["ch_winters_test"] = "Injustice Served",
 		["ch_winters_test_desc"] = "Kill Captain Winters while he holding shield with only using Switchblade or Wing Butterfly Knife",
+		["ch_spring_test"] = "Mine's Bigger Than Yours",
+		["ch_spring_test_desc"] = "Kill Captain Spring with only using Vulcan Minigun or XL 5.56 Microgun",
 
         ["test_net"] = "Fast.Net",
         ["menu_test"] = "",

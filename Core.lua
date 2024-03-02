@@ -1022,6 +1022,56 @@ function restoration:mission_script_add()
 			},
 		}
 	end
+	
+	function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementPointOfNoReturn",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 1,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				tweak_id = "noreturn",
+				time_easy = opts.time_easy or 0,
+				time_normal = opts.time_normal or 0,
+				time_hard = opts.time_hard or 0,
+				time_overkill = opts.time_overkill or 0,
+				time_overkill_145 = opts.time_overkill_145 or 0,
+				time_easy_wish = opts.time_easy_wish or 0,
+				time_overkill_290 = opts.time_overkill_290 or 0,
+				time_sm_wish = opts.time_sm_wish or 0,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false
+			},
+		}
+	end
+	
+	function restoration:gen_dialogue(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementDialogue",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				dialogue = opts.dialogue or "none",
+				enabled = true,
+				can_not_be_muted = opts.can_not_be_muted or false,
+				execute_on_executed_when_done = opts.execute_on_executed_when_done or false,
+				play_on_player_instigator_only = opts.play_on_player_instigator_only or false,
+				use_instigator = opts.use_instigator or false,
+				use_position = opts.use_position or false
+			},
+		}
+	end
 
 	function restoration:log(...)
 		if self.logging then

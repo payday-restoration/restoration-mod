@@ -35,12 +35,6 @@ local dozer_table = {
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
-	
-	if difficulty_index <= 5 then
-		ponr_value = 420	
-	else
-		ponr_value = 720	
-	end
 
 --If we're in Pro Job, then do this stuff below
 if pro_job then
@@ -188,6 +182,27 @@ return {
 			enabled = false
 		}
 	},
+	--Disable lobby shields on startup
+	--Disable Overdrill PONR
+	[100326] = { 
+		on_executed = {
+			{id = 400044, delay = 3},
+			{id = 400049, delay = 3}
+		}
+	},
+	--Enable lobby shields on loud
+	[101300] = { 
+		on_executed = {
+			{id = 400043, delay = 0}
+		}
+	},
+	--Enable Overdrill PONR if Overdrill gets activated
+	[104136] = { 
+		on_executed = {
+			{id = 400045, delay = 0},
+			{id = 400046, delay = 0}
+		}
+	},
 	--Disable the right vault path
 	[105498] = {
 		values = {
@@ -202,10 +217,11 @@ return {
 	},
 	--spawn lobby blockade shields+Pro Job PONR
 	[101660] = { 
-		ponr = ponr_value,
 		on_executed = {
 			{id = 400001, delay = 0},
-			{id = 400002, delay = 0}
+			{id = 400002, delay = 0},
+			{id = 400047, delay = 0},
+			{id = 400048, delay = 0}
 		}
 	},
 	--Use turret's chance to spawn lobby snipers instead
@@ -239,7 +255,7 @@ return {
 	--Make this Bo Dozer use custom set up AI_Hunt
 	[105119] = { 
 		on_executed = {
-			{id = 400023, delay = 0}
+			{id = 400023, delay = 3}
 		}
 	},
 	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)

@@ -172,6 +172,125 @@ function ChallengesTweakData:init()
             callback = "pro_job_success"
         }
     }
+	
+	self.session.pdth_style_fwb = {
+        title_id = "ch_pdth_style_fwb",
+        description_id = "ch_pdth_style_fwb_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "red2"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_heat = {
+        title_id = "ch_pdth_style_heat",
+        description_id = "ch_pdth_style_heat_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "run_res"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_panic = {
+        title_id = "ch_pdth_style_panic",
+        description_id = "ch_pdth_style_panic_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "flat"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_bridge = {
+        title_id = "ch_pdth_style_bridge",
+        description_id = "ch_pdth_style_bridge_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "glace"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_diamond = {
+        title_id = "ch_pdth_style_diamond",
+        description_id = "ch_pdth_style_diamond_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "dah"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_slaughterhouse = {
+        title_id = "ch_pdth_style_slaughterhouse",
+        description_id = "ch_pdth_style_slaughterhouse_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "dinner"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_counterfeit = {
+        title_id = "ch_pdth_style_counterfeit",
+        description_id = "ch_pdth_style_counterfeit_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "pal"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_undercover = {
+        title_id = "ch_pdth_style_undercover",
+        description_id = "ch_pdth_style_undercover_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "man"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	self.session.pdth_style_nomercy = {
+        title_id = "ch_pdth_style_nomercy",
+        description_id = "ch_pdth_style_nomercy_desc",
+        difficulty = overkill_and_above,
+        level_id = {
+            "nmh_res"
+        },
+		xp = huge_xp,
+        cc = 6,
+        session_stopped = {
+            callback = "pdth_style_success"
+        }
+    }
+	
     self.achievment = {}
     self.achievment.duck_hunting = {
 		title_id = "ch_duck_hunting_hl",

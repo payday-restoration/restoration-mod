@@ -826,6 +826,77 @@ function ChallengesManagerRes:pro_job_success( name, data )
 	return true
 end
 
+function ChallengesManagerRes:pdth_style_success( name, data )
+	if not self:_correct_level( self._challenges_map_res[ name ].level_id ) then
+		return
+	end
+
+	if not self:_check_level_completed( data ) then
+		return
+	end
+
+	if not self:_correct_difficulty( self._challenges_map_res[ name ].difficulty ) then
+		return
+	end
+	
+	--[[ 
+	tbh I have no idea why weapons, armors, grenades, etc do nothing for challenge completion in any non-weapon mastery challenge (Especially when we have 2 different checks??? Why???).
+	So for now at least this challenge type should do something
+	Need fix equipment check for other challenges later
+	--]]
+	
+	local pdth_primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"} --idk which AK fit better so - both
+	local pdth_secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"}
+	
+	local correct_primary = false
+	local correct_secondary = false
+	local correct_melee = false
+	local correct_armor = false
+	local blank_perkdeck = false
+	local no_skills = false
+	
+	local current_primary = managers.blackmarket:equipped_primary()
+	current_primary = managers.weapon_factory:get_weapon_id_by_factory_id(current_primary.factory_id)
+	local current_secondary = managers.blackmarket:equipped_secondary()
+	current_secondary = managers.weapon_factory:get_weapon_id_by_factory_id(current_secondary.factory_id)
+	
+	for _, player_primary in ipairs(pdth_primaries) do
+		if current_primary == player_primary then
+			correct_primary = true
+		end
+	end
+	
+	for _, player_secondary in ipairs(pdth_secondaries) do
+		if current_secondary == player_secondary then
+			correct_secondary = true
+		end
+	end
+	
+	if managers.blackmarket:equipped_melee_weapon() == "weapon" then
+		correct_melee = true
+	end
+
+	if managers.blackmarket:equipped_armor() == "level_1" or managers.blackmarket:equipped_armor() == "level_2" then
+		correct_armor = true
+	end
+	
+	if managers.skilltree:points() == 100 then
+		no_skills = true
+	end
+	
+	local current_specialization = managers.skilltree:get_specialization_value("current_specialization")
+	if current_specialization == 24 or current_specialization == 25 then
+		blank_perkdeck = true
+	end
+
+	
+	if correct_primary and correct_secondary and correct_melee and correct_armor and blank_perkdeck and no_skills then
+		return true
+	else
+		return false
+	end
+end
+
 
 ---------------------------------------------------
 

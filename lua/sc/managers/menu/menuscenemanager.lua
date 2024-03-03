@@ -1,6 +1,10 @@
 Month = os.date("%m")
 Day = os.date("%d")	
 
+Hooks:PostHook(MenuSceneManager, "init", "ResInit", function(self)
+	self._forced_secondaries = {}
+end)
+
 Hooks:PostHook(MenuSceneManager, "_set_up_environments", "ResHalloweenColorGrade", function(self)
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 		self._environments.standard.color_grading = "color_halloween"

@@ -25,10 +25,17 @@ tweak_data.ammo.ricochet.autohit = {
 	near_angle = 60
 }
 
+tweak_data.scene_pose_items.husk_ray = {
+	"primary"
+}
 tweak_data.scene_pose_items.husk_bessy = {
 	"primary"
 }
 
+tweak_data.scene_poses.weapon.g3 = {
+	"husk_m95",
+	"husk_m249"
+}
 tweak_data.scene_poses.weapon.bessy = {
 	"husk_bessy",
 	required_pose = true
@@ -96,7 +103,7 @@ tweak_data.shotgun = {
 		--ads_multishot_spread_mult = 1
 	}
 		tweak_data.shotgun_smasher = {
-			shake_mul = 4
+			shake_mul = 3
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -127,7 +134,7 @@ tweak_data.smg = {
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 3,
 		hipfire_spread_mult = 3.3333,
-		shake_mul = 1.5
+		shake_mul = 1.4
 	}
 		tweak_data.lmg_moving = {
 			ads_moving_recoil = 0.8695652,
@@ -159,7 +166,7 @@ tweak_data.snp = {
 	ads_stationary_spread_mult = 0.2,
 	hipfire_spread_mult = 1.5,
 	hipfire_moving_spread_mult = 1.5,
-	shake_mul = 1.2
+	shake_mul = 1.1
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
@@ -167,7 +174,7 @@ tweak_data.snp = {
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
 		ads_move_speed_mult = 0.888889, --lowered to 0.4
-		shake_mul = 1.2
+		shake_mul = 1.1
 	}
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.05,
@@ -178,7 +185,7 @@ tweak_data.snp = {
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
 		ads_move_speed_mult = 0.6,
-		shake_mul = 1.2
+		shake_mul = 1.1
 	}
 
 tweak_data.assault_rifle = {

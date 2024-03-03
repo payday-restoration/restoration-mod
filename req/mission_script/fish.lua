@@ -35,9 +35,21 @@ local ponr_timer_player_mul = {
 }
 
 return {
-	--Pro Job PONR when someone hack laptop in first time
+	--Pro Job PONR when someone hacks the laptop for the first time
 	[100036] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--Increase PONR timers
+	[100720] = {
+		values = {
+			time_normal = 60,
+			time_hard = 60,
+			time_overkill = 60,
+			time_overkill_145 = 60,
+			time_easy_wish = 60,
+			time_overkill_290 = 60,
+			time_sm_wish = 60
+		}
 	}
 }

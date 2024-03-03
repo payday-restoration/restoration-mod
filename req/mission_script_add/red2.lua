@@ -125,7 +125,10 @@ local optsSniper_6 = {
 }
 local optsBulldozer_193 = {
     enemy = tank,
-	on_executed = { { id = 400023, delay = 0 } },
+	on_executed = { 
+		{ id = 400023, delay = 3 },
+		{ id = 400052, delay = 0 },
+	},
     enabled = death_sentence
 }
 local optsBulldozer_special = {
@@ -137,6 +140,9 @@ local optsCloaker_rush_1 = {
 	participate_to_group_ai = true,
 	trigger_times = 3,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
+	on_executed = { 
+		{ id = 400051, delay = 0 }
+	},
     enabled = (hard_above and enabled_chance_cloakers)
 }
 local optsCloaker_rush_2 = {
@@ -148,7 +154,10 @@ local optsCloaker_rush_2 = {
 }
 local optsBulldozer_BO = {
     enemy = tank,
-	on_executed = { { id = 400023, delay = 0 } },
+	on_executed = { 
+		{ id = 400023, delay = 3 },
+		{ id = 400052, delay = 0 }
+	},
     enabled = true
 }
 local optsTaser = {
@@ -160,6 +169,9 @@ local optsTaser_special = {
     enemy = taser,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_12m",
+	on_executed = { 
+		{ id = 400050, delay = 0 }
+	},
     enabled = true
 }
 local optsDozerAmbush = {
@@ -208,6 +220,68 @@ local optsShieldDefend_SO = {
 	align_rotation = true,
 	interval = 2,
     so_action = "AI_sniper"
+}
+local enable_shields = {
+	elements = { 
+		400001,
+		400002
+	}
+}
+local disable_shields = {
+	toggle = "off",
+	elements = { 
+		400001,
+		400002
+	}
+}
+local disable_OverdrillPONR = {
+	toggle = "off",
+	elements = { 
+		400048
+	}
+}
+local enable_OverdrillPONR = {
+	elements = { 
+		400048
+	}
+}
+local disable_RegularPONR = {
+	toggle = "off",
+	elements = { 
+		400047
+	}
+}
+local optsRegularPONR = {
+	time_normal = 420,
+	time_hard = 420,
+	time_overkill = 420,
+	time_overkill_145 = 420,
+	time_easy_wish = 600,
+    time_overkill_290 = 600,
+	time_sm_wish = 600,
+	enabled = pro_job
+}
+local optsOverdrillPONR = {
+	time_normal = 1800,
+	time_hard = 1800,
+	time_overkill = 1800,
+	time_overkill_145 = 1800,
+	time_easy_wish = 1800,
+    time_overkill_290 = 1800,
+	time_sm_wish = 1800,
+	enabled = pro_job
+}
+local Bain_sendtasers = {
+	dialogue = "Play_ban_s01_b",
+	can_not_be_muted = true
+}
+local Bain_senddozers = {
+	dialogue = "Play_ban_s02_b",
+	can_not_be_muted = true
+}
+local Bain_sendcloakers = {
+	dialogue = "Play_ban_s04",
+	can_not_be_muted = true
 }
 
 return {
@@ -512,6 +586,60 @@ return {
             Vector3(3959, 721, -43.895),
             Rotation(90, -0, -0),
             optsShield_Defend_2
+        ),
+		restoration:gen_toggleelement(
+            400043,
+            "enable_lobby_shields",
+            enable_shields
+        ),
+		restoration:gen_toggleelement(
+            400044,
+            "disable_lobby_shields",
+            disable_shields
+        ),
+		restoration:gen_toggleelement(
+            400045,
+            "enable_OverdrillPONR",
+            enable_OverdrillPONR
+        ),
+		restoration:gen_toggleelement(
+            400046,
+            "disable_RegularPONR",
+            disable_RegularPONR
+        ),
+		restoration:gen_pointofnoreturn(
+            400047,
+            "Regular_PONR",
+            Vector3(-2657, -3569, -90),
+            Rotation(90, -0, -0),
+            optsRegularPONR
+        ),
+		restoration:gen_pointofnoreturn(
+            400048,
+            "Overdrill_PONR",
+            Vector3(-2657, -3569, -90),
+            Rotation(90, -0, -0),
+            optsOverdrillPONR
+        ),
+		restoration:gen_toggleelement(
+            400049,
+            "disable_OverdrillPONR",
+            disable_OverdrillPONR
+        ),
+		restoration:gen_dialogue(
+            400050,
+            "they_sending_tasers",
+            Bain_sendtasers
+        ),
+		restoration:gen_dialogue(
+            400051,
+            "they_sending_cloakers",
+            Bain_sendcloakers
+        ),
+		restoration:gen_dialogue(
+            400052,
+            "they_sending_dozers",
+            Bain_senddozers
         )
     }
 }

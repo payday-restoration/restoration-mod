@@ -2474,6 +2474,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_stoner63a = {
 				translation = Vector3(-0.012, 0.8, -0.052)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_raid_ww2_bren = {
+				translation = Vector3(3.555, -0.2, -0.59),
+				rotation = Rotation(-0.07, -0, 0)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
 				translation = Vector3(0.0, 2, -4.03)
@@ -21995,7 +21999,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 		falloff_start_mult = 0.5,
 		falloff_end_mult = 0.9375,
 		damage_min_mult = 1,
-		descope_on_fire = true
+		descope_on_fire = true,
+		use_vapor_trail = true
 	}
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.forbids = {
 		"wpn_fps_snp_awp_b_long",
@@ -22083,7 +22088,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.supported = true
 	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_4_vari"
 	self.parts.wpn_fps_upg_o_schmidt.stats = {
-		zoom = 30,
+		zoom = 70,
 		value = 8
 	}
 	self.parts.wpn_fps_upg_o_schmidt.custom_stats = {
@@ -22095,20 +22100,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(0, -25, -0.8)
+			weap.translation = weap.translation + Vector3(0, -15, -0.8)
 		end
 	end
 	table.insert( self.parts.wpn_fps_upg_o_schmidt.forbids, "wpn_fps_ass_scar_o_flipups_up" )
 
 	self.parts.wpn_fps_upg_o_schmidt_magnified.supported = true
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stats = {
-		gadget_zoom = 70,
+		gadget_zoom = 30,
 		value = 1
 	}
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(0, -15, -0.8)
+			weap.translation = weap.translation + Vector3(0, -25, -0.8)
 		end
 	end
 
@@ -27986,6 +27991,64 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.supported = true
 			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.stats = { value = 5, extra_ammo = 10, concealment = -1, reload = -2 }
 			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.custom_stats = { ads_speed_mult = 0.95 }
+
+
+			self.parts.wpn_fps_lmg_raid_ww2_bren_o_unit = {
+				a_obj = "a_body",
+				type = "shitass_o",
+				name_id = "none",
+				unit = "units/pd2_dlc_ecp/weapons/wpn_fps_bow_ecp/wpn_fps_bow_ecp"
+				,
+				stats = {
+					value = 1
+				}
+			}
+
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_specter")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_aimpoint")	
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_docter")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_eotech")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_t1micro")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_rx30")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_rx01")	
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_reflex")	
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_eotech_xps")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_cmore")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_acog")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_cs")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_spot")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_bmg")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_uh")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_fc1")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_tf90")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_poe")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_health")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_hamr")
+			table.insert(self.wpn_fps_lmg_raid_ww2_bren.uses_parts, "wpn_fps_upg_o_atibal")	
+
+			self.wpn_fps_lmg_raid_ww2_bren.adds = self.wpn_fps_lmg_raid_ww2_bren.adds or {}
+			self.wpn_fps_lmg_raid_ww2_bren.override = self.wpn_fps_lmg_raid_ww2_bren.override or {}
+			self.wpn_fps_lmg_raid_ww2_bren.override.wpn_fps_upg_o_hamr_reddot = {
+				parent = "shitass_o"
+			}
+			self.wpn_fps_lmg_raid_ww2_bren.override.wpn_fps_upg_o_atibal_reddot = {
+				parent = "shitass_o"
+			}
+			self.wpn_fps_lmg_raid_ww2_bren.override.wpn_fps_bow_elastic_rail = {
+				parent = "shitass_o"
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_lmg_raid_ww2_bren.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "sight" then
+						self.wpn_fps_lmg_raid_ww2_bren.adds[used_part_id] = {"wpn_fps_lmg_raid_ww2_bren_o_unit", "wpn_fps_bow_elastic_rail"}
+						self.wpn_fps_lmg_raid_ww2_bren.override[used_part_id] = { 
+							parent = "shitass_o"
+						}
+					end
+				end
+			end
+
 		end
 		
 
@@ -34136,7 +34199,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_lmg_fg42_so_waw.pcs = nil
 
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_specter")
-		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_specter")	
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_aimpoint")	
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_docter")
 		table.insert(self.wpn_fps_lmg_fg42.uses_parts, "wpn_fps_upg_o_eotech")
@@ -35862,9 +35924,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
 				if not table.contains(self.wpn_fps_lmg_hcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id) then
 					if self.parts[used_part_id].type == "stock" or
-					self.parts[used_part_id].type == "sight" or
+					--self.parts[used_part_id].type == "sight" or
 					self.parts[used_part_id].type == "barrel" then
 						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.forbids, used_part_id)
+					end
+					if self.parts[used_part_id].type == "sight" then
+						self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id] = self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id] or {}
+						self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds = (self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds)) or {}
+						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds, "wpn_fps_rpg7_sight_adapter")
 					end
 				end
 			end

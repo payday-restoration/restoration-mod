@@ -2095,3 +2095,7 @@ function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
 		self._unit:network():send_to_host("damage_bullet", attacker, 1, 1, 1, 0, false)
 	end
 end
+
+function PlayerDamage:stun_hit(attack_data)
+	return
+end

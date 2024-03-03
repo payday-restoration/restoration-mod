@@ -39,5 +39,17 @@ return {
 	[102089] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--Increase Stealth PONR timers
+	[101416] = {
+		values = {
+			time_normal = 90,
+			time_hard = 90,
+			time_overkill = 90,
+			time_overkill_145 = 90,
+			time_easy_wish = 90,
+			time_overkill_290 = 90,
+			time_sm_wish = 90
+		}
 	}
 }	

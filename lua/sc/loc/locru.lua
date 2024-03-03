@@ -900,6 +900,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_summers_test_desc"] = "Убейте капитана Саммерса огнеметом Mk.1",
 		["ch_winters_test"] = "Торжество несправедливости",
 		["ch_winters_test_desc"] = "Убейте капитана Винтерса ножом-бабочкой или выкидным ножом, пока он держит щит",
+		["ch_spring_test"] = "У меня волына больше",
+		["ch_spring_test_desc"] = "Убейте капитана Спринга миниганом Вулкан или микроганом XL 5.56",
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",

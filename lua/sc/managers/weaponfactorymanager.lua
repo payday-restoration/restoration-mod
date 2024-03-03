@@ -50,6 +50,51 @@ function WeaponFactoryManager:get_part_desc_by_part_id_from_weapon(part_id, fact
 	return Application:production_build() and managers.localization:text(desc_id) or ""
 end
 
+--[[ --trying to make sound_switch stuff respect override tables (to no avail currently)
+function WeaponFactoryManager:get_sound_switch(switch_group, factory_id, blueprint)
+	local factory = tweak_data.weapon.factory
+	local forbidden = self:_get_forbidden_parts(factory_id, blueprint)
+	local override = self:_get_override_parts(factory_id, blueprint)
+	local part = self:_part_data(part_id, factory_id, override)
+	local t = {}
+
+	--for _, part_id in ipairs(self:get_assembled_blueprint(factory_id, blueprint)) do
+
+	--end
+
+	for _, part_id in ipairs(blueprint) do
+		if not forbidden[part_id] and factory.parts[part_id].sound_switch and factory.parts[part_id].sound_switch[switch_group] and not table.contains(t, part_id) then
+			table.insert(t, part_id)
+		end
+	end
+
+	if #t > 0 then
+		if #t > 1 then
+			local part_x, part_y = nil
+
+			table.sort(t, function (x, y)
+				part_x = factory.parts[x]
+				part_y = factory.parts[y]
+
+				if part_x.sub_type == "silencer" then
+					return true
+				end
+
+				if part_y.sub_type == "silencer" then
+					return false
+				end
+
+				return x < y
+			end)
+		end
+
+		return factory.parts[ t[1] ].sound_switch[switch_group]
+	end
+
+	return nil
+end
+--]]
+
 --Debug stuff
 --[[
 function WeaponFactoryManager:unpack_blueprint_from_string(factory_id, blueprint_string)

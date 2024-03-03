@@ -36,12 +36,18 @@ end
 
 local optsBulldozer = {
     enemy = tank,
-    on_executed = { { id = 400003, delay = 0 } },
+    on_executed = { 
+		{ id = 400003, delay = 3 },
+		{ id = 400048, delay = 0 },
+	},
     enabled = overkill_above
 }
 local optsBulldozer_2 = {
     enemy = tank,
-    on_executed = { { id = 400003, delay = 0 } },
+    on_executed = { 
+		{ id = 400003, delay = 3 },
+		{ id = 400048, delay = 0 }
+	},
     enabled = death_sentence
 }
 local optsCloaker_1 = {
@@ -278,6 +284,10 @@ local enable_bo_dozers_the_sequel = {
 		400046,
 		400047
 	}
+}
+local Bain_senddozers = {
+	dialogue = "Play_ban_s02_b",
+	can_not_be_muted = true
 }
 
 
@@ -602,6 +612,11 @@ return {
             Vector3(3874, 2469, -1200.010),
             Rotation(-90, 0, -0),
             optsBulldozer_2
+        ),
+		restoration:gen_dialogue(
+            400048,
+            "they_sending_dozers",
+            Bain_senddozers
         )
     }
 }

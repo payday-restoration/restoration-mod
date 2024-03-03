@@ -318,11 +318,11 @@
 			</lod_object>
 
 			<lod_object name="lod_shoulderpad_l">
-				<object name="g_shoulderpad_l" 				enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_shoulderpad_l" 				enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_bulldozer" max_distance="1500" />
 					<material materials="mtr_bulldozer_lod_2" />
 				</object>
-				<object name="g_shoulderpad_l_lod1" 		enabled="true" lod="1" >
+				<object name="g_shoulderpad_l_lod1" 		enabled="false" lod="1" >
 					<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_static_lod" />
 				</object>

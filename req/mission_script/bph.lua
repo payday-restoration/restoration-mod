@@ -21,6 +21,18 @@ if pro_job then
 end
 
 return {
+	--Increase PONR timers
+	[101161] = {
+		values = {
+			time_normal = 480,
+			time_hard = 480,
+			time_overkill = 450,
+			time_overkill_145 = 450,
+			time_easy_wish = 450,
+			time_overkill_290 = 420,
+			time_sm_wish = 420
+		}
+	},
 	--More timelock timer on Pro Jobs
 	[101402] = {
 		values = {

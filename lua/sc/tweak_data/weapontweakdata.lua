@@ -10815,6 +10815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}	
 						self.contender.stats_modifiers = nil
 						self.contender.panic_suppression_chance = 0.05
+						self.contender.use_vapor_trail = true
 						self.contender.reload_speed_multiplier = 0.85
 						self.contender.timers.reload_not_empty = 1.12
 						self.contender.timers.reload_empty = self.contender.timers.reload_not_empty
@@ -10853,6 +10854,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						reload = 20
 					}
 					self.m95.armor_piercing_chance = 1
+					self.m95.use_vapor_trail = true
 					self.m95.reload_speed_multiplier = 1.07
 					self.m95.can_shoot_through_titan_shield = true
 					self.m95.hs_mult = 2
@@ -13995,6 +13997,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hmcar.stats_modifiers = nil
 				self.hmcar.reload_speed_multiplier = 0.75
 				self.hmcar.tsnipar = true
+				self.hmcar.use_sniper_trail = true
 				self.hmcar.sounds.fire_single = "zsniper_npc1a_1shot"
 				self.hmcar.sounds.fire = "zsniper_npc1a_1shot"
 				self.hmcar.sounds.fire_auto = "zsniper_npc1a_1shot"
@@ -15672,6 +15675,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.m107cq.armor_piercing_chance = 1
+				self.m107cq.use_vapor_trail = true
 				self.m107cq.can_shoot_through_titan_shield = true
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
@@ -15728,6 +15732,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload_exit_empty = 0.6,
 					reload_exit_not_empty = 0.95
 				}
+				self.m200.use_vapor_trail = true
 				self.m200.reload_speed_multiplier = 0.9
 				self.m200.reload_not_empty_speed_multiplier = 0.85
 				self.m200.armor_piercing_chance = 1
@@ -15773,6 +15778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}
+				self.amr2.use_vapor_trail = true
 				self.amr2.fire_mode_data.fire_rate = 1.090909
 				self.amr2.fire_rate_multiplier = 0.90909091
 				self.amr2.timers = deep_clone(self.msr.timers)
@@ -17613,6 +17619,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}
+				self.srs99_s7.use_vapor_trail = true
 				self.srs99_s7.armor_piercing_chance = 1
 				self.srs99_s7.can_shoot_through_titan_shield = true
 				self.srs99_s7.stats_modifiers = nil
@@ -17711,6 +17718,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}
+				self.pd3_lynx.use_vapor_trail = true
 				self.pd3_lynx.armor_piercing_chance = 1
 				self.pd3_lynx.can_shoot_through_titan_shield = true
 				self.pd3_lynx.stats_modifiers = nil
@@ -19151,7 +19159,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if table.contains(weap.categories, "amr") then
-				weap.use_sniper_trail = true
 				weap.force_shake = true
 				--weap.hipfire_shake = true
 			end

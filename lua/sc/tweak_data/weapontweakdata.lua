@@ -14113,6 +14113,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     PAWCIO'S MODS     ]]--
+			if self.mars then --Pawcio's Mars Automatic
+				self.mars.recategorize = { "heavy_pis", "handcannon" }
+				self.mars.has_description = true
+				self.mars.damage_type = "handcannon"
+				self.mars.fire_mode_data.fire_rate = 0.2
+				self.mars.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.mars.AMMO_MAX = 20
+				self.mars.CLIP_AMMO_MAX = 8
+				self.mars.kick = self.stat_info.kick_tables.vertical_kick
+				self.mars.supported = true
+				self.mars.ads_speed = 0.240
+				self.mars.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3200,
+					min_mult = 0.2
+				}
+				self.mars.stats = {
+					damage = 90,
+					spread = 65,
+					recoil = 43,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.mars.stats_modifiers = nil
+				self.mars.panic_suppression_chance = 0.05
+				self.mars.can_shoot_through_enemy = true
+				self.mars.armor_piercing_chance = 0.5
+				self.mars.object_damage_mult = 1.2
+				self.mars.tactical_reload = 1
+				self.mars.timers = deep_clone(self.deagle.timers)
+				self.mars.sounds.magazine_empty = nil
+				self.mars.sounds.stop_fire = "judge_x_fire"
+			end
+
 			if self.m712 then --Pawcio's M712
 				self.m712.categories = {"pistol"}
 				self.m712.recategorize = {"heavy_pis"}

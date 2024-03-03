@@ -4180,7 +4180,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Just fucking put this shit on everything
 	for wep_id, i in pairs(self) do
-		if self[ wep_id ].stats then
+		if self[ wep_id ].stats and not self[ wep_id ].external_support then
 			self[ wep_id ].recategorize = { "unsupported" }
 			self[ wep_id ].ads_speed = 0.69
 			self[ wep_id ].damage_falloff = {

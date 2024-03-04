@@ -20,7 +20,7 @@ local enabled_chance_helipad_dozer = math.random() < diff_scaling
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
+		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_smg = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"

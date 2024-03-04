@@ -252,10 +252,19 @@
     <unit				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
 
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe" />
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe"/>
+	
+	<!-- sniper -->
+    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<object				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config	path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_contour" />	
+	<cooked_physics		path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />
 	
 	<!--fbi heavy 1-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" load="true"/>

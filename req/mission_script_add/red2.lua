@@ -178,6 +178,9 @@ local optsDozerAmbush = {
     enemy = tank_black,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_10m_swing_in_var2",
+	on_executed = {
+		{ id = 400052, delay = 0 }
+	},
     enabled = (death_sentence and enabled_chance_dozers)
 }
 local optsShield_Defend_1 = {

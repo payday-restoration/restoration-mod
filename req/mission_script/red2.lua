@@ -15,6 +15,7 @@ local chance_dozer_vault_2 = math.rand(1)
 local chance_dozer_vault_3 = math.rand(1)
 local chance_dozer_vault_4 = math.rand(1)
 local chance_dozer_vault_5 = math.rand(1)
+local enabled_chance_dozers_office = math.rand(1)
 local dozer_table = {
 	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -34,6 +35,13 @@ local dozer_table = {
 	elseif difficulty_index == 8 then
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+	end
+	
+	
+	if enabled_chance_dozers_office < 0.45 then
+		office_dozers = false
+	else
+		office_dozers = true
 	end
 
 --If we're in Pro Job, then do this stuff below
@@ -563,9 +571,22 @@ return {
             enemy = titan_shield
 		}
 	},
+	--if one of these dozers spawn in, disable dozers that spawn from elevator
 	[103603] = {
 		values = {
-            enemy = titan_dozer
+            enemy = titan_dozer,
+			enabled = office_dozers
+		},
+		on_executed = {
+			{id = 400053, delay = 0}
+		}
+	},
+	[103390] = {
+		values = {
+            enabled = office_dozers
+		},
+		on_executed = {
+			{id = 400053, delay = 0}
 		}
 	}
 }

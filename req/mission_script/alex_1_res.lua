@@ -168,9 +168,9 @@ return {
 		}
 	},
 	--remove the line+trigger the loop here
-	[100941] = {
+	[100945] = {
 		on_executed = {
-			{id = 100945, remove = true},
+			{id = 100946, remove = true},
 			{id = 100965, delay = 180}
 		}
 	},

@@ -20,7 +20,7 @@ local enabled_chance_helipad_dozer = math.random() < diff_scaling
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
+		sniper = "units/payday2/characters/ene_sniper_2/ene_sniper_2"
 		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_smg = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"
@@ -55,6 +55,9 @@ local optsCloaker = {
     enemy = cloaker,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_climb_up_3m_down_1m",
+	on_executed = { 
+		{ id = 400078, delay = 4.5 } 
+	},
     enabled = true
 }
 local optsSniperAmbush_1 = {
@@ -261,6 +264,13 @@ local optsDefendDozer_SO = {
 	align_rotation = true,
 	interval = 2,
     so_action = "AI_defend"
+}
+local optsCloaker_SO = {
+    SO_access = "1024",
+	path_style = "none",
+	scan = true,
+	interval = 2,
+    so_action = "AI_hunt"
 }
 local optsrespawn_taser_and_shields_1 = {
 	on_executed = { 
@@ -846,6 +856,13 @@ return {
             400077,
             "disable_snipers",
             disable_snipers
+        ),
+		restoration:gen_so(
+            400078,
+            "cloaker_hunt_so",
+            Vector3(-100, -1903, 1175),
+            Rotation(90, -0, -0),
+            optsCloaker_SO
         )
     }
 }

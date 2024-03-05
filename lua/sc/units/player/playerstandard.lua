@@ -29,6 +29,11 @@ local norecoil_blacklist = { --From Zdann
 	--["model3"] = true
 }
 
+local melee_vars = {
+	"player_melee",
+	"player_melee_var2"
+}
+
 local sound_buffer = BeardLib.Utils:FindMod("Megumin's Staff") and XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")
 local is_pro = Global.game_settings and Global.game_settings.one_down
 local original_init = PlayerStandard.init
@@ -2117,6 +2122,7 @@ function PlayerStandard:_update_melee_timers(t, input)
     local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	local instant = melee_weapon.instant
+	local no_hit_shaker = melee_weapon.no_hit_shaker
 	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
@@ -2164,8 +2170,77 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
-		self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
+		local num_casts = (self._melee_attack_var_charge_h and melee_tweak_data.raycasts_charge_h) or (self._melee_attack_var_h and melee_weapon.raycasts_h) or (max_charge and melee_weapon.raycasts_charge) or (melee_weapon.raycasts) or 1
+		if num_casts > 1 then --Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this new mess by DMC
+			local from = self._unit:movement():m_head_pos()
+			local rotation = self._unit:movement():m_head_rot()
+			local base_direction = rotation:y()
+			
+			local yaw = rotation:yaw()
+			local pitch = rotation:pitch()
+			local roll = rotation:roll()
 
+			local no_shaker = nil
+			local hit_body, hit_gen = nil
+
+			local function collect_melee_hits(angle, unique_hits)
+				local l_r = 0 --placeholder
+				local new_rotation = Rotation(yaw+angle, pitch+(angle * l_r), roll)
+				local direction = new_rotation:y()
+				local to = from + direction * range
+
+				local col_ray = self:_calc_melee_hit_ray(t, 20, from, direction)
+				if col_ray then
+					local hit_unit = col_ray.unit
+					if hit_unit and alive(hit_unit) then
+						local u_key = hit_unit:key()
+						if unique_hits[u_key] then
+						else
+							unique_hits[u_key] = hit_unit
+							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
+						end
+					end
+
+					if hit_unit and hit_unit.character_damage and hit_unit:character_damage() then
+						hit_body = true
+					else
+						hit_gen = true
+					end
+				else
+				end
+				if not no_hit_shaker and not no_shaker then
+					self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, lerp_value))
+				end
+
+			if col_ray then
+			end
+				no_shaker = true
+			end
+
+			local is_even = num_casts % 2 == 0
+			local half_casts = math.floor(num_casts / 2)
+			local angle_interval = 10
+
+			local unique_hits = {}
+			if not is_even then
+				collect_melee_hits(0,unique_hits)
+			end
+			if num_casts > 1 then
+				for i = 1, half_casts, 1 do 
+					local left_angle = i * angle_interval
+					local right_angle = -left_angle
+					collect_melee_hits(left_angle,unique_hits)
+					collect_melee_hits(right_angle,unique_hits)
+				end
+			end
+			if hit_body then
+				self:_play_melee_sound(melee_entry, "hit_body")
+			elseif hit_gen then
+				self:_play_melee_sound(melee_entry, "hit_gen")
+			end
+		else
+			self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
+		end
 		self._state_data.melee_damage_delay_t = nil
 		self._state_data.melee_hit_ray = nil
 	end
@@ -3209,7 +3284,7 @@ function PlayerStandard:_update_slide_locks()
 	end
 end
 
-function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
+function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, direction)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[melee_entry]
 	local range = melee_tweak_data.stats.range or 150
@@ -3228,30 +3303,28 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 		range = range + charge_bonus_range
 	end
 
-	local sphere_cast_radius_add = (has_charged_range and self._melee_attack_var_charge_h and melee_tweak_data.sphere_cast_radius_add_charged_h) or (self._melee_attack_var_h and melee_tweak_data.sphere_cast_radius_add_h) or melee_tweak_data.sphere_cast_radius_add
+	--local sphere_cast_radius_add = (has_charged_range and self._melee_attack_var_charge_h and melee_tweak_data.sphere_cast_radius_add_charged_h) or (self._melee_attack_var_h and melee_tweak_data.sphere_cast_radius_add_h) or melee_tweak_data.sphere_cast_radius_add
 	if sphere_cast_radius_add then
 		sphere_cast_radius = sphere_cast_radius + sphere_cast_radius_add
 		range = range - sphere_cast_radius_add
 	end
 
-	local from = self._unit:movement():m_head_pos()
-	local to = from + self._unit:movement():m_head_rot():y() * range
+	local from = from or self._unit:movement():m_head_pos()
+	local to = from + (direction or self._unit:movement():m_head_rot():y()) * range
+
+	--Draw:brush(Color.red:with_alpha(0.2),5):line(from,to)
+	--Draw:brush(Color.green:with_alpha(0.2),5):sphere(to,sphere_cast_radius)
 
 	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
 end
 
-
-local melee_vars = {
-	"player_melee",
-	"player_melee_var2"
-}
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, no_shaker, no_sound)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 	local sphere_cast_radius = 20
-	local col_ray = nil
+	local col_ray = col_ray or nil
 	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
 	local make_decal = tweak_data.blackmarket.melee_weapons[melee_entry].make_decal or nil
 	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw or nil --not implemented yet
@@ -3262,14 +3335,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	self._state_data._charger_melee_active = nil
 
 	-- If true, disables the shaker when a melee weapon connects
-	if not melee_weapon.no_hit_shaker then
+	if not melee_weapon.no_hit_shaker and not no_shaker then
 		self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 	end
-	
-	if melee_hit_ray then
-		col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
-	else
-		col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
+	if not col_ray then
+		if melee_hit_ray then
+			col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
+		else
+			col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
+		end
 	end
 	if col_ray and alive(col_ray.unit) then
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
@@ -3277,14 +3351,16 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		damage = damage * managers.player:get_melee_dmg_multiplier()
 		damage_effect = damage_effect * damage_effect_mul
 		col_ray.sphere_cast_radius = sphere_cast_radius
-		local hit_unit = col_ray.unit
+		local hit_unit = hit_unit or col_ray.unit
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
-				self:_play_melee_sound(melee_entry, "hit_body")
+				if not no_sound then
+					self:_play_melee_sound(melee_entry, "hit_body")
+				end
 			end
 			if not hit_unit:character_damage()._no_blood then
 				managers.game_play_central:play_impact_flesh({col_ray = col_ray})
@@ -3305,7 +3381,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
 			else
-				self:_play_melee_sound(melee_entry, "hit_gen")
+				if not no_sound then
+					self:_play_melee_sound(melee_entry, "hit_gen")
+				end
 			end
 			managers.game_play_central:play_impact_sound_and_effects({
 				decal = make_saw and "saw",

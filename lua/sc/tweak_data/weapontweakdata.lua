@@ -12417,7 +12417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ray.CLIP_AMMO_MAX = 4
 						self.ray.AMMO_MAX = 8
 						self.ray.BURST_FIRE = 4
-						self.ray.BURST_DELAY = 2
+						self.ray.BURST_DELAY = 1
 						self.ray.BURST_FIRE_RATE_MULTIPLIER = 8
 						self.ray.rays = 1
 						self.ray.supported = true
@@ -12636,7 +12636,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rpg7.has_description = true
 						self.rpg7.rays = 1
 						self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
-						self.rpg7.fire_mode_data.fire_rate = 3
+						self.rpg7.fire_mode_data.fire_rate = 2
 						self.rpg7.AMMO_MAX = 3
 						self.rpg7.supported = true
 						self.rpg7.ads_speed = 0.460

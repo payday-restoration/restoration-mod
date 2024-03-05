@@ -2171,7 +2171,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
 		local num_casts = (self._melee_attack_var_charge_h and melee_tweak_data.raycasts_charge_h) or (self._melee_attack_var_h and melee_weapon.raycasts_h) or (max_charge and melee_weapon.raycasts_charge) or (melee_weapon.raycasts) or 1
-		if num_casts > 1 then --Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this new mess by DMC
+		if num_casts > 1 then 
+			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
 			local from = self._unit:movement():m_head_pos()
 			local rotation = self._unit:movement():m_head_rot()
 			local base_direction = rotation:y()
@@ -2184,8 +2185,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local hit_body, hit_gen = nil
 
 			local function collect_melee_hits(angle, unique_hits)
-				local l_r = 0 --placeholder
-				local new_rotation = Rotation(yaw+angle, pitch+(angle * l_r), roll)
+				local new_rotation = Rotation(yaw+angle, pitch, roll)
 				local direction = new_rotation:y()
 				local to = from + direction * range
 
@@ -2212,9 +2212,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 					self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, lerp_value))
 				end
 
-			if col_ray then
-			end
 				no_shaker = true
+
+				return hit_body
 			end
 
 			local is_even = num_casts % 2 == 0
@@ -2222,10 +2222,18 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local angle_interval = 10
 
 			local unique_hits = {}
-			if not is_even then
-				collect_melee_hits(0,unique_hits)
-			end
-			if num_casts > 1 then
+			local l_r = self._melee_attack_var_l_r
+			if l_r then
+				for i = 1, num_casts, 1 do 
+					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + 5) * l_r)
+					local hit = collect_melee_hits(angle,unique_hits)
+					if hit then 
+					end
+				end
+			else
+				if not is_even then
+					collect_melee_hits(0,unique_hits)
+				end
 				for i = 1, half_casts, 1 do 
 					local left_angle = i * angle_interval
 					local right_angle = -left_angle
@@ -2456,6 +2464,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	self._melee_attack_var = 0
 	self._melee_attack_var_h = nil
 	self._melee_attack_var_charge_h = nil
+	self._melee_attack_var_l_r = nil
 
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
@@ -2501,20 +2510,25 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 			if anim_attack_charged_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_charge_h = true
+				self._melee_attack_var_l_r = 1
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
 			elseif anim_attack_charged_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_charge_h = true
+				self._melee_attack_var_l_r = -1
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
 			end
 		elseif self._stick_move then
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_h = true
+				self._melee_attack_var_left = true
+				self._melee_attack_var_l_r = 1
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
 			elseif anim_attack_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_h = true
+				self._melee_attack_var_l_r = -1
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]
 			end
@@ -3283,7 +3297,7 @@ function PlayerStandard:_update_slide_locks()
 		end	
 	end
 end
-
+PlayerStandard._DRAW_MELEE_DEBUG = nil
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, direction)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[melee_entry]
@@ -3312,8 +3326,10 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	local from = from or self._unit:movement():m_head_pos()
 	local to = from + (direction or self._unit:movement():m_head_rot():y()) * range
 
-	--Draw:brush(Color.red:with_alpha(0.2),5):line(from,to)
-	--Draw:brush(Color.green:with_alpha(0.2),5):sphere(to,sphere_cast_radius)
+	if PlayerStandard._DRAW_MELEE_DEBUG then
+		Draw:brush(Color.red:with_alpha(0.2),5):line(from,to)
+		Draw:brush(Color.green:with_alpha(0.2),5):sphere(to,sphere_cast_radius)
+	end
 
 	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
 end

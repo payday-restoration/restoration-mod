@@ -3794,9 +3794,13 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		end
 		
 		--melee_great
-		--It's basically "melee_baseballbat" but with more windup
+		--It's basically "melee_baseballbat" but with more windup and directional anims
 		melee_anim = {
-			'great','meter'
+			'baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer',
+			'stick','spoon','spoon_gold','hockey',
+			'freedom','meter',
+			'beardy',
+			'great'
 		}
 		--unsure if this'll work, hope it does
 		if self.melee_weapons.halloween_sword then
@@ -3805,7 +3809,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_great"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var4"}
 			self.melee_weapons[melee_id].anim_attack_left_vars = {"var1"}
 			self.melee_weapons[melee_id].anim_attack_right_vars = {"var2"}
 			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var3"}
@@ -3858,8 +3862,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_baseballbat
 		melee_anim = {
-			'stick','spoon','spoon_gold','hockey',
-			'freedom'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
@@ -3874,7 +3876,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_beardy
 		melee_anim = {
-			'beardy','baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			if self.melee_weapons[melee_id] then
@@ -4634,6 +4635,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.hockey.stats.range = 200
 			self.melee_weapons.hockey.stats.concealment = 27
 			--Binary Ruler--
+			self.melee_weapons.meter.raycasts_h = 3
 			self.melee_weapons.meter.anim_attack_charged_vars = nil
 			self.melee_weapons.meter.stats.min_damage = 4.5
 			self.melee_weapons.meter.stats.max_damage = 6.001

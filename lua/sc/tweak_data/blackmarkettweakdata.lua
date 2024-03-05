@@ -3810,9 +3810,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_attack_left_vars = {"var1"}
 			self.melee_weapons[melee_id].anim_attack_right_vars = {"var2"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
-				var1 = "left",
-				var2 = "right",
-				var4 = "left"
+				var1 = {"left", 0.2},
+				var2 = {"right", 0.2},
+				var4 = {"left", 0.8}
 			}
 			self.melee_weapons[melee_id].expire_t = 1.45
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
@@ -3962,10 +3962,10 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].timing_fix = {"var3"} --What attack varants are subject to "timing_fix_speed_mult"
 			self.melee_weapons[melee_id].timing_fix_speed_mult = 0.75 --Applies a speed mult to attack variants in "timing_fix". Has no bearing on other timers like repeat, expire, delay
-			self.melee_weapons[melee_id].anim_attack_var_dir = {
-				var1 = "right",
-				var2 = "left",
-				var3 = "left"
+			self.melee_weapons[melee_id].anim_attack_var_dir =  {
+				var1 = {"right", 0.1},
+				var2 = {"left", 0.1},
+				var3 = {"left", 0.4}
 			}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var3"}
 			self.melee_weapons[melee_id].anim_attack_left_vars = {"var2"}
@@ -4780,6 +4780,14 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--I'm a little annoyed that we can't actually use it like a shield--
 		--NOW WE CAN--
 		self.melee_weapons.buck.info_id = "bm_melee_buck_info"	
+		self.melee_weapons.buck.cleave = 2
+		self.melee_weapons.buck.raycasts_charge = 5
+		self.melee_weapons.buck.anim_attack_vars = {"var1"}
+		self.melee_weapons.buck.anim_attack_charged_vars = {"var2"}
+		self.melee_weapons.buck.anim_attack_var_dir = {
+			var1 = {"right", 0},
+			var2 = {"right", -0.1},
+		}
 		self.melee_weapons.buck.stats.min_damage = 3
 		self.melee_weapons.buck.stats.max_damage = 6.001
 		self.melee_weapons.buck.stats.min_damage_effect = 6.0
@@ -4788,7 +4796,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.buck.stats.range = 165
 		self.melee_weapons.buck.stats.concealment = 28
 		self.melee_weapons.buck.block = 0.9
-		self.melee_weapons.buck.raycasts_h = 3
 		--self.melee_weapons.buck.sphere_cast_radius_add = 8
 			--The target is a briefcase. Discretion is of the essence.--
 			self.melee_weapons.briefcase.info_id = "bm_melee_briefcase_info"	
@@ -5264,6 +5271,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--
 		self.melee_weapons.sandsteel.info_id = "bm_melee_katana_info"
+		self.melee_weapons.sandsteel.cleave = 3
+		self.melee_weapons.sandsteel.raycasts = 3
 		self.melee_weapons.sandsteel.raycasts_h = 5
 		self.melee_weapons.sandsteel.stats.min_damage = 6
 		self.melee_weapons.sandsteel.stats.max_damage = 12.001
@@ -5277,8 +5286,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.sandsteel.stats.concealment = 26
 		--C/C quality master race--
 		self.melee_weapons.great.info_id = "bm_melee_great_info"
-		self.melee_weapons.great.raycasts = 3
-		self.melee_weapons.great.raycasts_h = 5
+		self.melee_weapons.great.cleave = 5
+		self.melee_weapons.great.raycasts = 5
+		self.melee_weapons.great.raycasts_h = 7
 		self.melee_weapons.great.raycasts_charge = 1
 		self.melee_weapons.great.stats.min_damage = 9
 		self.melee_weapons.great.stats.max_damage = 18.001
@@ -5304,7 +5314,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 	
 		--Chainsaw + Gun--
 		self.melee_weapons.cs.info_id = "bm_melee_cs_info"
-		self.melee_weapons.cs.raycasts_h = 5
+		self.melee_weapons.cs.raycasts = 5
 		self.melee_weapons.cs.make_saw = true
 		self.melee_weapons.cs.chainsaw = {
 			tick_damage = 3,

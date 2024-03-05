@@ -2185,9 +2185,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local hit_body, hit_gen, use_cleave = nil
 
 			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
-				local v_mult = v_mult or 0
+				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the arc fom the top going down, - starts the arc fom the bottom going up
 				local l_r = l_r or 1
-				local new_rotation = Rotation(yaw+(angle*(1 - v_mult)), pitch-(angle*(v_mult*l_r)), roll)
+				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult))),pitch-(angle*(v_mult*l_r)), roll)
 				local direction = new_rotation:y()
 				local to = from + direction * range
 
@@ -2228,11 +2228,13 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local cleave = melee_weapon.cleave or num_casts
 
 			local unique_hits = {}
-			local l_r = self._melee_attack_var_l_r and (self._melee_attack_var_l_r == "left" and 1 or self._melee_attack_var_l_r == "right" and -1) or nil
+
+			local l_r = self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1) ) or nil
+			local v_mult = self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]
 			if l_r then
 				for i = 1, num_casts, 1 do 
 					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + 5) * l_r)
-					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r)
+					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult)
 					if cleave_enemy then
 						cleave = cleave - 1
 						if cleave < 1 then

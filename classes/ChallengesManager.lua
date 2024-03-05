@@ -132,60 +132,108 @@ function ChallengesManagerRes:_check_depends_on( name )
 			end
 		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.equipment then
+		local correct_equipment = false
 		for _,equipment in ipairs( self._challenges_map_res[ name ].depends_on.equipment ) do
-			if not managers.player:has_aquired_equipment( equipment ) then
-				--return false
+			if managers.blackmarket:equipped_deployable(1) == equipment or managers.blackmarket:equipped_deployable(2) == equipment then
+				correct_equipment = true
 			end
 		end
+		if not correct_equipment then
+			return false
+		end
 	end
+	
+
 	if self._challenges_map_res[ name ].depends_on.primaries then
-		for _,primaries in ipairs( self._challenges_map_res[ name ].depends_on.primaries ) do
-			if not managers.blackmarket:equipped_primary( primaries ) then
-				--return false
+		local correct_primary = false
+		local current_primary = managers.blackmarket:equipped_primary()
+		current_primary = managers.weapon_factory:get_weapon_id_by_factory_id(current_primary.factory_id)
+		for _, primary in ipairs(self._challenges_map_res[ name ].depends_on.primaries) do
+			if primary == current_primary then
+				correct_primary = true
 			end
 		end
+		if not correct_primary then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.secondaries then
-		for _,secondaries in ipairs( self._challenges_map_res[ name ].depends_on.secondaries ) do
-			if not managers.blackmarket:equipped_secondary( secondaries ) then
-				--return false
+		local correct_secondary = false
+		local current_secondary = managers.blackmarket:equipped_secondary()
+		current_secondary = managers.weapon_factory:get_weapon_id_by_factory_id(current_secondary.factory_id)
+		for _, secondary in ipairs(self._challenges_map_res[ name ].depends_on.secondaries) do
+			if secondary == current_secondary then
+				correct_secondary = true
 			end
 		end
+		if not correct_secondary then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.masks then
-		for _,masks in ipairs( self._challenges_map_res[ name ].depends_on.masks ) do
-			if not managers.blackmarket:equipped_mask( masks ) then
-				--return false
+		local correct_mask = false
+		local equipped_mask = managers.blackmarket:equipped_mask()
+		local current_mask = managers.blackmarket:get_real_mask_id(equipped_mask.mask_id)
+		for _, mask in ipairs( self._challenges_map_res[ name ].depends_on.masks ) do
+			if mask == current_mask then
+				correct_mask = true
 			end
 		end
+		if not correct_mask then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.character then
-		for _,character in ipairs( self._challenges_map_res[ name ].depends_on.character ) do
-			if not managers.blackmarket:equipped_character( character ) then
-				--return false
+		local correct_character = false
+		local current_character = managers.blackmarket:get_real_character()
+		for _, character in ipairs( self._challenges_map_res[ name ].depends_on.character ) do
+			if character == current_character then
+				correct_character = true
 			end
 		end
+		if not correct_character then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.armors then
-		for _,armors in ipairs( self._challenges_map_res[ name ].depends_on.armors ) do
-			if not managers.blackmarket:equipped_armor( armors ) then
-				--return false
+		local correct_armor = false
+		for _, armor in ipairs( self._challenges_map_res[ name ].depends_on.armors ) do
+			if managers.blackmarket:equipped_armor() == armor then
+				correct_armor = true
 			end
 		end
+		if not correct_armor then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.melee_weapons then
-		for _,melee_weapons in ipairs( self._challenges_map_res[ name ].depends_on.melee_weapons ) do
-			if not managers.blackmarket:equipped_melee_weapon( melee_weapons ) then
-				--return false
+		local correct_melee = false
+		for _, melee_weapon in ipairs( self._challenges_map_res[ name ].depends_on.melee_weapons ) do
+			if managers.blackmarket:equipped_melee_weapon() == melee_weapon then
+				correct_melee = true
 			end
 		end
+		if not correct_melee then
+			return false
+		end
 	end
+	
 	if self._challenges_map_res[ name ].depends_on.grenades then
-		for _,grenades in ipairs( self._challenges_map_res[ name ].depends_on.grenades ) do
-			if not managers.blackmarket:equipped_grenade( grenades ) then
-				--return false
+		local correct_grenade = false
+		for _, grenade in ipairs( self._challenges_map_res[ name ].depends_on.grenades ) do
+			if not managers.blackmarket:equipped_grenade() == grenade then
+				correct_grenade = true
 			end
+		end
+		if not correct_grenade then
+			return false
 		end
 	end
 
@@ -692,26 +740,8 @@ function ChallengesManagerRes:level_success( name, data )
 		return
 	end
 
-	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
-		--return false
+	if not self:_check_depends_on(name) then
+		return false
 	end
 
 	return true
@@ -751,26 +781,8 @@ function ChallengesManagerRes:job_success( name, data )
 		return
 	end
 
-	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
-		--return false
+	if not self:_check_depends_on(name) then
+		return false
 	end
 
 	if not managers.job:on_last_stage() then
@@ -793,26 +805,8 @@ function ChallengesManagerRes:pro_job_success( name, data )
 		return
 	end
 
-	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
-		--return false
-	end
-	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
-		--return false
+	if not self:_check_depends_on(name) then
+		return false
 	end
 
 	if not Global.game_settings.one_down then
@@ -839,46 +833,12 @@ function ChallengesManagerRes:pdth_style_success( name, data )
 		return
 	end
 	
-	--[[ 
-	tbh I have no idea why weapons, armors, grenades, etc do nothing for challenge completion in any non-weapon mastery challenge (Especially when we have 2 different checks??? Why???).
-	So for now at least this challenge type should do something
-	Need fix equipment check for other challenges later
-	--]]
-	
-	local pdth_primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"} --idk which AK fit better so - both
-	local pdth_secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"}
-	
-	local correct_primary = false
-	local correct_secondary = false
-	local correct_melee = false
-	local correct_armor = false
+	if not self:_check_depends_on(name) then
+		return false
+	end	
+
 	local blank_perkdeck = false
 	local no_skills = false
-	
-	local current_primary = managers.blackmarket:equipped_primary()
-	current_primary = managers.weapon_factory:get_weapon_id_by_factory_id(current_primary.factory_id)
-	local current_secondary = managers.blackmarket:equipped_secondary()
-	current_secondary = managers.weapon_factory:get_weapon_id_by_factory_id(current_secondary.factory_id)
-	
-	for _, player_primary in ipairs(pdth_primaries) do
-		if current_primary == player_primary then
-			correct_primary = true
-		end
-	end
-	
-	for _, player_secondary in ipairs(pdth_secondaries) do
-		if current_secondary == player_secondary then
-			correct_secondary = true
-		end
-	end
-	
-	if managers.blackmarket:equipped_melee_weapon() == "weapon" then
-		correct_melee = true
-	end
-
-	if managers.blackmarket:equipped_armor() == "level_1" or managers.blackmarket:equipped_armor() == "level_2" then
-		correct_armor = true
-	end
 	
 	if managers.skilltree:points() == 100 then
 		no_skills = true
@@ -890,7 +850,7 @@ function ChallengesManagerRes:pdth_style_success( name, data )
 	end
 
 	
-	if correct_primary and correct_secondary and correct_melee and correct_armor and blank_perkdeck and no_skills then
+	if blank_perkdeck and no_skills then
 		return true
 	else
 		return false

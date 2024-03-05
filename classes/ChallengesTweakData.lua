@@ -146,16 +146,11 @@ function ChallengesTweakData:init()
             "watchdogs_1_night"
         },
         difficulty = overkill_and_above,
-        primaries = {
-            "m134",
-            "m95"
-        },
-        secondaries = {
-            "rpg7"
-        },
-        armors = {
-            "level_7"
-        },
+		depends_on = {
+			primaries = {"m134","m95"},
+			secondaries = {"rpg7"},
+			armors = {"level_7"}
+		},
 		session_stopped = {
 			callback = "level_success"
 		}
@@ -182,6 +177,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -195,6 +196,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -208,6 +215,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -221,6 +234,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -234,6 +253,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -247,6 +272,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -258,6 +289,12 @@ function ChallengesTweakData:init()
         level_id = {
             "pal"
         },
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
 		xp = huge_xp,
         cc = 6,
         session_stopped = {
@@ -271,6 +308,12 @@ function ChallengesTweakData:init()
         level_id = {
             "man"
         },
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
 		xp = huge_xp,
         cc = 6,
         session_stopped = {
@@ -286,6 +329,12 @@ function ChallengesTweakData:init()
         },
 		xp = huge_xp,
         cc = 6,
+		depends_on = {
+			primaries = {"amcar","new_m14","ak74", "akm","r870","hk21", "gre_m79"},
+			secondaries = {"b92fs","mac10", "glock_18c", "new_raging_bull", "colt_1911", "new_mp5","serbu"},
+			melee_weapons = {"weapon"},
+			armors = {"level_1", "level_2"}
+		},
         session_stopped = {
             callback = "pdth_style_success"
         }
@@ -306,18 +355,12 @@ function ChallengesTweakData:init()
         title_id = "ch_melee_test",
         description_id = "ch_melee_test_desc",
         xp = gigantic_xp,
-        depends_on = {
-			melee_weapons = {"fists"}
-		},
         flag_id = "melee_test",
     }
     self.new_challenges.summers_test = {
         title_id = "ch_summers_test",
         description_id = "ch_summers_test_desc",
         xp = gigantic_xp,
-        depends_on = {
-			primaries = {"flamethrower_mk2"}
-		},
         flag_id = "summers_test",
     }
 	
@@ -325,9 +368,6 @@ function ChallengesTweakData:init()
         title_id = "ch_winters_test",
         description_id = "ch_winters_test_desc",
         xp = gigantic_xp,
-        depends_on = {
-			melee_weapons = {"wing", "switchblade"}
-		},
         flag_id = "winters_test",
     }
 	
@@ -335,9 +375,6 @@ function ChallengesTweakData:init()
         title_id = "ch_spring_test",
         description_id = "ch_spring_test_desc",
         xp = gigantic_xp,
-        depends_on = {
-			primaries = {"m134", "shuno"}
-		},
         flag_id = "spring_test",
     }
 

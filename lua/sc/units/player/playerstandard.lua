@@ -2182,22 +2182,27 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local roll = rotation:roll()
 
 			local no_shaker = nil
-			local hit_body, hit_gen = nil
+			local hit_body, hit_gen, use_cleave = nil
 
-			local function collect_melee_hits(angle, unique_hits)
-				local new_rotation = Rotation(yaw+angle, pitch, roll)
+			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
+				local v_mult = v_mult or 0
+				local l_r = l_r or 1
+				local new_rotation = Rotation(yaw+(angle*(1 - v_mult)), pitch-(angle*(v_mult*l_r)), roll)
 				local direction = new_rotation:y()
 				local to = from + direction * range
 
 				local col_ray = self:_calc_melee_hit_ray(t, 20, from, direction)
+				local ignore_hit = nil
 				if col_ray then
 					local hit_unit = col_ray.unit
 					if hit_unit and alive(hit_unit) then
 						local u_key = hit_unit:key()
 						if unique_hits[u_key] then
+							use_cleave = nil
 						else
 							unique_hits[u_key] = hit_unit
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
+							use_cleave = true
 						end
 					end
 
@@ -2214,20 +2219,25 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 				no_shaker = true
 
-				return hit_body
+				return hit_body, use_cleave
 			end
 
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
 			local angle_interval = 10
+			local cleave = melee_weapon.cleave or num_casts
 
 			local unique_hits = {}
-			local l_r = self._melee_attack_var_l_r
+			local l_r = self._melee_attack_var_l_r and (self._melee_attack_var_l_r == "left" and 1 or self._melee_attack_var_l_r == "right" and -1) or nil
 			if l_r then
 				for i = 1, num_casts, 1 do 
 					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + 5) * l_r)
-					local hit = collect_melee_hits(angle,unique_hits)
-					if hit then 
+					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r)
+					if cleave_enemy then
+						cleave = cleave - 1
+						if cleave < 1 then
+							break
+						end
 					end
 				end
 			else
@@ -2510,12 +2520,12 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 			if anim_attack_charged_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_charge_h = true
-				self._melee_attack_var_l_r = 1
+				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
 			elseif anim_attack_charged_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_charge_h = true
-				self._melee_attack_var_l_r = -1
+				self._melee_attack_var_l_r = "right"
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
 			end
@@ -2523,12 +2533,12 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_h = true
 				self._melee_attack_var_left = true
-				self._melee_attack_var_l_r = 1
+				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
 			elseif anim_attack_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_h = true
-				self._melee_attack_var_l_r = -1
+				self._melee_attack_var_l_r = "right"
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]
 			end
@@ -2536,6 +2546,11 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		local fix_anim_timer = anim_attack_param and timing_fix and table.contains(timing_fix, anim_attack_param)
 		if fix_anim_timer then
 			speed = speed * timing_fix_speed_mult
+		end
+
+		local var_dir = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_var_dir
+		if var_dir and var_dir[anim_attack_param] then
+			self._melee_attack_var_l_r = var_dir[anim_attack_param]
 		end
 		local state = self._ext_camera:play_redirect(self:get_animation("melee_attack"), speed) --Apply speed mult to animation.
 		if anim_attack_param then

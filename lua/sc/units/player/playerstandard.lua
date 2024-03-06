@@ -2129,6 +2129,8 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local can_run = self._unit:movement():is_above_stamina_threshold()
 	local lerp_value = self:_get_melee_charge_lerp_value(t)
 	local max_charge = lerp_value and lerp_value >= 0.99
+	local charge_bonus_start = melee_weapon.stats and melee_weapon.stats.charge_bonus_start or 0.5
+	local has_charge_bonus = lerp_value and lerp_value >= charge_bonus_start
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then
@@ -2170,7 +2172,11 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
-		local num_casts = (self._melee_attack_var_charge_h and melee_tweak_data.raycasts_charge_h) or (self._melee_attack_var_h and melee_weapon.raycasts_h) or (max_charge and melee_weapon.raycasts_charge) or (melee_weapon.raycasts) or 1
+		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
+		(has_charge_bonus and melee_weapon.raycasts_charge) or 
+		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
+		(melee_weapon.raycasts) or 1
+		
 		if num_casts > 1 then 
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
 			local from = self._unit:movement():m_head_pos()
@@ -2187,7 +2193,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
 				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the arc fom the top going down, - starts the arc fom the bottom going up
 				local l_r = l_r or 1
-				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult))),pitch-(angle*(v_mult*l_r)), roll)
+				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
 				local direction = new_rotation:y()
 				local to = from + direction * range
 
@@ -2202,7 +2208,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 						else
 							unique_hits[u_key] = hit_unit
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
-							use_cleave = true
+							use_cleave = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and true
 						end
 					end
 
@@ -2298,7 +2304,6 @@ function PlayerStandard:_update_melee_timers(t, input)
 		self._melee_repeat_damage_bonus = nil 
 	end
 end
-
 function PlayerStandard:_interupt_action_melee(t)
 	if not self:_is_meleeing() then
 		return

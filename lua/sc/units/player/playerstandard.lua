@@ -2129,8 +2129,6 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local can_run = self._unit:movement():is_above_stamina_threshold()
 	local lerp_value = self:_get_melee_charge_lerp_value(t)
 	local max_charge = lerp_value and lerp_value >= 0.99
-	local charge_bonus_start = melee_weapon.stats and melee_weapon.stats.charge_bonus_start or 0.5
-	local has_charge_bonus = lerp_value and lerp_value >= charge_bonus_start
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then
@@ -2173,7 +2171,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
 		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
-		(has_charge_bonus and melee_weapon.raycasts_charge) or 
+		(self._melee_charge_bonus and melee_weapon.raycasts_charge) or 
 		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
 		(melee_weapon.raycasts) or 1
 
@@ -2398,7 +2396,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	--Lets skills give faster melee charge and swing speeds.
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
-	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 2 --i.e. never get the bonus
+	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 
 	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_speed or 1
 	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
@@ -2437,9 +2435,9 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		bayonet_melee = true
 	end
 	
-	self._melee_charge_bonus_range = nil
+	self._melee_charge_bonus = nil
 	if charge_lerp_value and charge_lerp_value >= charge_bonus_start then
-		self._melee_charge_bonus_range = true
+		self._melee_charge_bonus = true
 		speed = math.max(speed, speed * (charge_lerp_value * charge_bonus_speed))
 		melee_damage_delay = math.min(melee_damage_delay, melee_damage_delay / (charge_lerp_value * charge_bonus_speed))
 		melee_expire_t = math.min(melee_expire_t, melee_expire_t / (charge_lerp_value * charge_bonus_speed))
@@ -3334,7 +3332,7 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	local active_weapon_range = active_weapon_stats and math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0) or 0
 	range = range + wtd_base_range + active_weapon_range
 
-	local has_charged_range = self._melee_charge_bonus_range and self._melee_charge_bonus_range == true
+	local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
 	local charge_bonus_range = melee_tweak_data.stats.charge_bonus_range or 0
 	if has_charged_range then
 		range = range + charge_bonus_range
@@ -3463,7 +3461,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		end
 		character_unit = character_unit or hit_unit
 
-		if self._melee_charge_bonus_range then
+		if self._melee_charge_bonus then
 			if special_weapon == "megumin" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
 				local exp_dmg = melee_weapon.explosion_damage or 60

@@ -3802,7 +3802,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--melee_great
 		--It's basically "melee_baseballbat" but with more windup and directional anims
 		melee_anim = {
-			'baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer','stick','spoon','spoon_gold','hockey','beardy',
+			'baseballbat','barbedwire','beardy',
 			'freedom','great','meter'
 		}
 		--unsure if this'll work, hope it does
@@ -3835,18 +3835,25 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		end
 		
 		--melee_hockey
-		--Bad anim set, makes anything using it look like it doesn't have the range its given.
 		melee_anim = {
+			'stick','hockey'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_hockey"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var4"}
-			self.melee_weapons[melee_id].timing_fix = {"var4"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3","var4"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.8},
+				var2 = {"left", -0.1},
+				var3 = {"left", 0.8},
+				var4 = {"left", -0.1}
+			}
+			self.melee_weapons[melee_id].timing_fix = {"var2", "var4"}
 			self.melee_weapons[melee_id].timing_fix_speed_mult = 0.58
 			self.melee_weapons[melee_id].expire_t = 0.8
 			self.melee_weapons[melee_id].repeat_expire_t = 0.6
 			self.melee_weapons[melee_id].melee_damage_delay = 0.175
+			self.melee_weapons[melee_id].anim_speed_mult = 0.54545
 		end
 		
 		--melee_briefcase
@@ -3876,13 +3883,18 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_baseballbat
 		melee_anim = {
-			--'stick','spoon','spoon_gold','hockey',
-			--'freedom'
+			'spoon','spoon_gold','piggy_hammer'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"} --No more stabbing with blunt objects
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.4},
+				var2 = {"left", 0.9},
+				var3 = {"left", -0.1},
+				var4 = {"left", 0.4}
+			}
 			self.melee_weapons[melee_id].expire_t = 1.025
 			self.melee_weapons[melee_id].repeat_expire_t = 0.9
 			self.melee_weapons[melee_id].melee_damage_delay = 0.275
@@ -3892,13 +3904,18 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_beardy
 		melee_anim = {
-			--'beardy','baseballbat','barbedwire','dingdong','alien_maul','piggy_hammer'
+			'dingdong','alien_maul','fireaxe'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			if self.melee_weapons[melee_id] then
 				self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
 				self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 				self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
+				self.melee_weapons[melee_id].anim_attack_var_dir = {
+					var1 = {"left", 0.2},
+					var2 = {"left", 0.9},
+					var3 = {"left", 0.8}
+				}
 				self.melee_weapons[melee_id].expire_t = 1.45
 				self.melee_weapons[melee_id].repeat_expire_t = 1.2
 				self.melee_weapons[melee_id].melee_damage_delay = 0.65
@@ -4200,7 +4217,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		
 		--melee_pickaxe
 		melee_anim = {
-			'mining_pick','fireaxe','micstand'
+			'mining_pick','micstand'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_pickaxe"
@@ -4406,9 +4423,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_global_param = "melee_ballistic"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right","a_weapon_left"}
-			self.melee_weapons.ballistic.anim_attack_vars = {"var1","var3"}
-			self.melee_weapons.ballistic.anim_attack_charged_vars = {"var2","var4"}
-			self.melee_weapons.ballistic.anim_attack_var_dir = {
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3"}
+			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2","var4"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", 0.7},
 				var2 = {"left", 0},
 				var3 = {"right", -0.2},
@@ -5567,6 +5584,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.beardy.stats.range = 220
 		self.melee_weapons.beardy.stats.concealment = 25
 		--For the longest time the Fireaxe was the most satisfying melee weapon to use, seriously sucks they killed its swing animation--
+		self.melee_weapons.fireaxe.cleave = 1
+		self.melee_weapons.fireaxe.raycasts = 5
 		self.melee_weapons.fireaxe.stats.min_damage = 9
 		self.melee_weapons.fireaxe.stats.max_damage = 18.001
 		self.melee_weapons.fireaxe.stats.min_damage_effect = 3.0

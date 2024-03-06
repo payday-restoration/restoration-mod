@@ -3823,15 +3823,23 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].expire_t = 1.45
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
 			self.melee_weapons[melee_id].melee_damage_delay = 0.6
-			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
+			self.melee_weapons[melee_id].anim_speed_mult = 1.34
 			--self.melee_weapons[melee_id].sphere_cast_radius_add_h = 16
+		end
+		melee_anim = {
+			'freedom','great','beardy'
+		}
+		if self.melee_weapons.halloween_sword then
+			table.insert(melee_anim, "halloween_sword")
+		end
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].anim_speed_mult = 1.26
 		end
 		melee_anim = {
 			'freedom','great'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var3"}
-			--self.melee_weapons[melee_id].sphere_cast_radius_add_h = 16
 		end
 		
 		--melee_hockey
@@ -3919,7 +3927,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 				self.melee_weapons[melee_id].expire_t = 1.45
 				self.melee_weapons[melee_id].repeat_expire_t = 1.2
 				self.melee_weapons[melee_id].melee_damage_delay = 0.65
-				self.melee_weapons[melee_id].anim_speed_mult = 1.2631
+				self.melee_weapons[melee_id].anim_speed_mult = 1.12
 				--self.melee_weapons[melee_id].sphere_cast_radius_add = 16
 			end
 		end

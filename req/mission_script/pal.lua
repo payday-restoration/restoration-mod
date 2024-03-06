@@ -55,6 +55,18 @@ return {
 			end
 		end
 	},
+	--Disable Grenadiers on startup
+	[100023] = {
+		on_executed = {
+            {id = 400030, delay = 3}
+		}
+	},
+	--Enable Grenadiers if Mitchell has been killed
+	[102351] = {
+		on_executed = {
+            {id = 400029, delay = 0}
+		}
+	},
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
 	--Disables the turret
 	[102821] = {
@@ -118,6 +130,19 @@ return {
 			enabled = false
 		}
 	},
+	--Warn about shields
+	[101469] = {
+		on_executed = {
+            {id = 400018, delay = 0}
+		}
+	},
+	--Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
+	--Bain warns about them
+	[102081] = {
+		on_executed = {
+            {id = 400019, delay = 5}
+		}
+	},
 	--Spawn custom PDTH styled snipers at the start of 2nd assault
 	--Bain warns about them
 	[102082] = {
@@ -129,6 +154,15 @@ return {
 			{id = 400005, delay = 5},
 			{id = 400016, delay = 7}
 		}
+	},
+	--Add the missing sniper access
+	[102399] = {
+		pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "sniper", "spooc"})
+			end
+		end
 	},
 	--Replace some Rooftop SWATs with Titan Snipers on Overkill-DS PJ
 	[101735] = {

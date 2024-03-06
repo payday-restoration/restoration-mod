@@ -36,7 +36,7 @@ local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"

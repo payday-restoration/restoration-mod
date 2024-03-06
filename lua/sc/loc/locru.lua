@@ -2372,6 +2372,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",
+		["bm_menu_cleave"] = "Прорубание",
 		
 		["bm_menu_stats_detection"] = "Нагрузка",
 		["bm_menu_stats_min_detection"] = "Низкая нагрузка",

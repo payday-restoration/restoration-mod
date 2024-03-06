@@ -1704,6 +1704,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_attack_speed"] = "Repeat Delay",
 		["bm_menu_impact_delay"] = "Impact Delay",
+		["bm_menu_cleave"] = "Cleave",
 		
 		["bm_menu_stats_detection"] = "Encumbrance",
 		["bm_menu_stats_min_detection"] = "Encumbrance",

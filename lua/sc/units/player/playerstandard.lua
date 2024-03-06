@@ -2176,7 +2176,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		(has_charge_bonus and melee_weapon.raycasts_charge) or 
 		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
 		(melee_weapon.raycasts) or 1
-		
+
 		if num_casts > 1 then 
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
 			local from = self._unit:movement():m_head_pos()
@@ -2231,7 +2231,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
 			local angle_interval = 10
-			local cleave = melee_weapon.cleave or num_casts
+			local cleave = melee_weapon.cleave or 1
 
 			local unique_hits = {}
 
@@ -2304,6 +2304,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 		self._melee_repeat_damage_bonus = nil 
 	end
 end
+
 function PlayerStandard:_interupt_action_melee(t)
 	if not self:_is_meleeing() then
 		return

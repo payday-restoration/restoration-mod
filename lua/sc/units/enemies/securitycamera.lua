@@ -134,8 +134,8 @@ function SecurityCamera:_sound_the_alarm(detected_unit)
 end	
 
 function SecurityCamera:clbk_call_the_police()
-	local vanilla_behaviour = managers.mutators:modify_value("SecurityCamera:VanillaPoliceCall", false)
-	if not vanilla_behaviour then
+	local vanilla_behavior = managers.mutators:modify_value("SecurityCamera:VanillaPoliceCall", false)
+	if not vanilla_behavior then
 		managers.groupai:state():on_criminal_suspicion_progress(nil, self._unit, nil)
 	
 		self:_stop_all_sounds()

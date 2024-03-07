@@ -79,7 +79,7 @@ return {
 	[104573] = {
 		on_executed = {
 			{id = 400025, delay = 15},
-			{id = 400039, delay = 0}
+			{id = 400038, delay = 0}
 		}
 	},
 	--Change chopper squad

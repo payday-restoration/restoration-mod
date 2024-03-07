@@ -5053,7 +5053,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_spoocsquad"] = "鬼鬼祟祟",
         ["mutator_spoocsquad_desc"] = "幻影特工一组一组地生成。",
         ["mutator_spoocsquad_longdesc"] = "幻影特工一组一组地生成。",
-
+		
+		["mutator_vanilla_police_call"] = "Intruder Alert",
+		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls.",
+		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls.",
         -- Crime spree modifier changes
         ["cn_crime_spree_brief"] = "\"罪无止境\"是一系列随机选取并需要连续完成的劫案组合。你完成的每次一次劫案都会为你增加罪无止境等级与奖励。每过20级或26级，你都需要选择一次附加难度因子；每过100级都会增加劫案的基础难度(如枪林弹雨到祸乱横行)，这会使劫案更难完成。等级600之后，玩家的无敌帧将会逐渐减少，Bravo临界反应部队将会开始生成。\n\n##如果你想邀请你的好友一起玩，请先确保他们开始了罪无止境以一起获得等级和奖励##",
         ["menu_cs_next_modifier_forced"] = "",

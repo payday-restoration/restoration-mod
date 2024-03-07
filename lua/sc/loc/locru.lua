@@ -2099,7 +2099,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_pattern_knife"] = "Атакует быстрыми ударами. Заряженная атака бьет размахом.",
+		["bm_melee_pattern_knife"] = "Атакует быстрыми ударами. Заряженная атака бьет с небольшим размахом.",
 
 		["bm_melee_pattern_knife2"] = "Бьет с широким размахом. Движение в сторону влияет на направление атаки.", --Also works with "melee_clean" and "melee_grip"
 
@@ -4934,8 +4934,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_spoocsquad_longdesc"] = "Клокеры появляются группами.",
 		
 		["mutator_vanilla_police_call"] = "Посторонние на объекте",
-		["mutator_vanilla_police_call_desc"] = "Звонки в полицию поднимают тревогу вместо заполнения шкалы подозрения.",
-		["mutator_vanilla_police_call_longdesc"] = "Звонки в полицию поднимают тревогу вместо заполнения шкалы подозрения.",
+		["mutator_vanilla_police_call_desc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
+		["mutator_vanilla_police_call_longdesc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "Серия преступлений - режим, в котором вас предстоит сыграть бесконечную серию ограблений, идущих подряд. С каждым пройденным ограблением, ваши Ранг и Награда буду повышаться! Каждый 20-й и 26-й ранг вам предстоит выбрать модификатор, а каждые 100 рангов повысится уровень риска, что сделает последующие ограбления сложнее. После 600 ранга, задержка на получение урона будет уменьшаться, и среди обычных врагов начнут появляться отряды Браво.\n\n##При игре с друзьями, не забудьте убедиться, что они начали свою Серию преступлений, или они не смогут получать Ранги и Награды.##",
 		["menu_cs_next_modifier_forced"] = "",

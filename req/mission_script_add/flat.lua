@@ -1,18 +1,31 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local chavez_enforcer = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
+local chavez_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local diff_scaling = 0.113 * difficulty
+local death_sentence = difficulty == 8
 local overkill_above = difficulty >= 5
 local hard_above = difficulty >= 3
+local enabled_chance_shields = math.random() < diff_scaling
 
 	if difficulty == 6 then
+		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
+		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
 	elseif difficulty == 8 then
+		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+	end
+	
+	if pro_job and difficulty >= 6 then
+		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 
 local optsSWAT_Heavy145 = {
@@ -62,6 +75,70 @@ local optsCloaker = {
     enemy = cloaker,
 	participate_to_group_ai = true,
     enabled = hard_above
+}
+local optsShield_1 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400050, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsShield_2 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400051, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsShield_3 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400052, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsShield_4 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400053, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsShield_5 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400054, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsShield_6 = {
+    enemy = shield,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400055, delay = 0 }
+	},
+    enabled = hard_above
+}
+local optsEnforcer = {
+    enemy = chavez_enforcer,
+	team = "mobster1",
+    enabled = death_sentence
+}
+local optsEnforcerPJ = {
+    enemy = chavez_enforcer,
+	team = "mobster1",
+    enabled = (death_sentence and pro_job)
+}
+local optsLieutenant = {
+    enemy = chavez_lieutenant,
+	participate_to_group_ai = true,
+	team = "mobster1",
+    enabled = death_sentence
 }
 local optsTaser = {
     enemy = taser,
@@ -115,13 +192,21 @@ local optsSniper_SO = {
 }
 local optsAI_Defend = {
     SO_access = "4096",
-	path_style = "none",
 	scan = true,
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
     so_action = "AI_defend"
+}
+local optsShield_Defend_SO = {
+	SO_access = "2048",
+	scan = true,
+	align_position = true,
+	needs_pos_rsrv = true,
+	align_rotation = true,
+	interval = 2,
+    so_action = "AI_sniper"
 }
 local Bain_senddozers = {
 	dialogue = "Play_ban_s02_a",
@@ -189,9 +274,20 @@ local spawn_SWATsquad = {
 		{ id = 400031, delay = 1.5 }
 	}
 }
+local spawn_Shields = {
+	enabled = (hard_above and enabled_chance_shields),
+	on_executed = { 
+		{ id = 400044, delay = 0 },
+		{ id = 400045, delay = 0 },
+		{ id = 400046, delay = 0 },
+		{ id = 400047, delay = 0 },
+		{ id = 400048, delay = 0 },
+		{ id = 400049, delay = 0 }
+	}
+}
 local optsrespawn_swat_1 = {
 	on_executed = { 
-		{ id = 400021, delay = 45 }
+		{ id = 400021, delay = 20 }
 	},
 	elements = { 
 		400021
@@ -200,7 +296,7 @@ local optsrespawn_swat_1 = {
 }
 local optsrespawn_swat_2 = {
 	on_executed = { 
-		{ id = 400022, delay = 45 },
+		{ id = 400022, delay = 20 }
 	},
 	elements = { 
 		400022
@@ -493,6 +589,144 @@ return {
             400042,
             "they_sending_shields",
             Bain_sendshields
+        ),
+		restoration:gen_missionscript(
+            400043,
+            "spawn_defend_shields",
+            spawn_Shields
+        ),
+		restoration:gen_dummy(
+            400044,
+            "shield_1",
+            Vector3(-889.027, 18.536, 700.001),
+            Rotation(-90, 0, -0),
+            optsShield_1
+        ),
+		restoration:gen_dummy(
+            400045,
+            "shield_2",
+            Vector3(-956.985, 16.162, 700.001),
+            Rotation(-90, -0, -0),
+            optsShield_2
+        ),
+		restoration:gen_dummy(
+            400046,
+            "shield_3",
+            Vector3(-1012.951, 14.208, 700.001),
+            Rotation(-90, 0, -0),
+            optsShield_3
+        ),
+		restoration:gen_dummy(
+            400047,
+            "shield_4",
+            Vector3(-57, 1640, 697.988),
+            Rotation(90, -0, -0),
+            optsShield_4
+        ),
+		restoration:gen_dummy(
+            400048,
+            "shield_5",
+            Vector3(-1704, 1478, 375.600),
+            Rotation(-90, -0, -0),
+            optsShield_5
+        ),
+		restoration:gen_dummy(
+            400049,
+            "shield_6",
+            Vector3(22, 1430, 375.600),
+            Rotation(90, -0, -0),
+            optsShield_6
+        ),
+		restoration:gen_so(
+            400050,
+            "shield_defend_so_1",
+            Vector3(-1057, 497, 700.001),
+            Rotation(78, -0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_so(
+            400051,
+            "shield_defend_so_2",
+            Vector3(-1037.821, 698.270, 700.001),
+            Rotation(109, -0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_so(
+            400052,
+            "shield_defend_so_3",
+            Vector3(-962.004, 583.511, 700.001),
+            Rotation(89, -0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_so(
+            400053,
+            "shield_defend_so_4",
+            Vector3(-684, 1663, 746.988),
+            Rotation(90, -0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_so(
+            400054,
+            "shield_defend_so_5",
+            Vector3(-1470, 1486, 375.600),
+            Rotation(0, 0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_so(
+            400055,
+            "shield_defend_so_6",
+            Vector3(-289, 1521, 375.600),
+            Rotation(0, 0, -0),
+            optsShield_Defend_SO
+        ),
+		restoration:gen_dummy(
+            400056,
+            "enforcer_1",
+            Vector3(245, 361, 1349.998),
+            Rotation(65, 0, -0),
+            optsEnforcer
+        ),
+		restoration:gen_dummy(
+            400057,
+            "enforcer_2",
+            Vector3(134.792, 232.511, 1349.998),
+            Rotation(33, -0, -0),
+            optsEnforcerPJ
+        ),
+		restoration:gen_dummy(
+            400058,
+            "enforcer_3",
+            Vector3(-1741.349, 268.777, 1351.463),
+            Rotation(-63, 0, -0),
+            optsEnforcer
+        ),
+		restoration:gen_dummy(
+            400059,
+            "enforcer_4",
+            Vector3(-1643, 115, 1351.463),
+            Rotation(-53, 0, -0),
+            optsEnforcerPJ
+        ),
+		restoration:gen_dummy(
+            400060,
+            "enforcer_5",
+            Vector3(299, -181, 700.001),
+            Rotation(0, 0, -0),
+            optsEnforcer
+        ),
+		restoration:gen_dummy(
+            400061,
+            "enforcer_6",
+            Vector3(106, -181, 700.001),
+            Rotation(0, 0, -0),
+            optsEnforcerPJ
+        ),
+		restoration:gen_dummy(
+            400062,
+            "chavez_lieutenant",
+            Vector3(-1549.617, 1427.445, 702.700),
+            Rotation(172, 0, -0),
+            optsLieutenant
         )
     }
 }

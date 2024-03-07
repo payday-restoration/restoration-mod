@@ -49,6 +49,31 @@ return {
 			{id = 400037, delay = 75}
 		}
 	},
+	--Spawn Shields after placing the last c4
+	[101787] = {
+		on_executed = {
+			{ id = 400043, delay = 0}
+		}
+	},
+	--Spawn Enforcers next to Chavez on DS
+	[100201] = {
+		on_executed = {
+			{ id = 400058, delay = 0},
+			{ id = 400059, delay = 0}
+		}
+	},
+	[100275] = {
+		on_executed = {
+			{ id = 400056, delay = 0},
+			{ id = 400057, delay = 0}
+		}
+	},
+	[100397] = {
+		on_executed = {
+			{ id = 400060, delay = 0},
+			{ id = 400061, delay = 0}
+		}
+	},
 	--Spawn Rooftop Heavy SWATs after killing all of the snipers
 	--Enable Cloaker spawns
 	[104573] = {
@@ -77,10 +102,13 @@ return {
 			{ id = 104691, remove = true}
 		}
 	},
+	--Spawn Heavy SWAT squad if it's overkill above
+	--Spawns Chavez's Lieutenant in Panic Room on DS
 	[102680] = {
 		on_executed = {
 			{ id = 104691, delay = 0},
-			{ id = 400001, delay = 8}
+			{ id = 400001, delay = 8},
+			{ id = 400062, delay = 0}
 		}
 	}
 }

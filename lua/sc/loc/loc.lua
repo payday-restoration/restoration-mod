@@ -1453,7 +1453,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_pattern_cutter"] = "Attack with downward strikes or charge up to perform range extending jabs.",
 
 		["bm_melee_pattern_great"] = "Attack with downward strikes, strafe for wide swings or charge up to perform range extending jabs. Strafing influences attack direction.",
-			["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings. Strafing influences attack direction.", -- Also works for "melee_cs"
+		["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings. Strafing influences attack direction.", -- Also works for "melee_cs"
 
 		["bm_melee_pattern_katana"] = "Attack with diagonal strikes or strafe for wide swings. Strafing influences attack direction.",
 
@@ -4872,8 +4872,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
 		
 		["mutator_vanilla_police_call"] = "Intruder Alert",
-		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls.",
-		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls.",
+		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
+		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",

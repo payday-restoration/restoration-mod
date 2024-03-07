@@ -16,7 +16,7 @@ MutatorVanillaPoliceCall.icon_coords = {
 }
 
 function MutatorVanillaPoliceCall:modify_value(id, value)
-	if id == "CopMovement:VanillaPoliceCall" then
+	if id == "CopMovement:VanillaPoliceCall" or id == "SecurityCamera:VanillaPoliceCall" or id == "CopBrain:VanillaPoliceCall" then
 		return true
 	end
 	return value

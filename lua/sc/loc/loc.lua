@@ -1444,30 +1444,70 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
 		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
 		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
+
+		--Attack patterns
+		["bm_melee_pattern_knife"] = "Attack with quick stabs or charge up to perform a wider slash.",
+		["bm_melee_pattern_knife2"] = "Attack with sweeping slashes. Your side-to-side movement influences attack direction.",
+		["bm_melee_pattern_boxcutter"] = "Attack with sweeping slashes.", --Also works with "melee_catch"
+		["bm_melee_pattern_blunt"] = "Attack with downward swings or charge up for a wider swing.", --Also works with "melee_brick"
+		["bm_melee_pattern_axe"] = "Attack with downward swings.", --Also works with the icepick
+		["bm_melee_pattern_cs"] = "Attack with a downward cut or move sideways for a sweeping slash.",
+		["bm_melee_pattern_great"] = "Attack with a downward cut or move sideways for a sweeping slash.",
+			["bm_melee_pattern_great_blunt"] = "Attack with a downward swing or move sideways for a wide swing.",
+			["bm_melee_pattern_great_no_stab"] = "Attack with a downward swing, move sideways for a sweeping slash or charge your attack to perform a stab.",
+		["bm_melee_pattern_katana"] = "Attack with a diagonal cut or move sideways for a sweeping slash.",
+		["bm_melee_pattern_boxing"] = "Attack with quick jabs or charge up to perform a hook or an uppercut. Your side-to-side movement influences attack direction.",
+
+
+		--Weapon Butt
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's mobility rating.",
+
+		--URSA/USMC KA-BAR
+		["bm_melee_kabar_desc"] = "The URSA Knife is a hard wearing, indestructible fighting/utility knife dating back to 1942.\nBowie blade, serrated edge, no nonsense. A Classic.",
+
+		--Katana
 		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
 			["bm_melee_raiden_info"] = "This is no #{important_1}#\"tool of justice\"## in your hands.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_thejobissnotyours_info"] = "This isn't even your sword.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_2077tkata_info"] = "Nano filament heated blade.\nThe purest essence of a katana, no add-ons, no modifications, only ripping hot steel.\n\nFully charged attacks #{heat_warm_color}#set enemies on fire,## dealing #{heat_warm_color}#120## fire damage over #{skill_color}#3## seconds.",
-		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.", --Buckler Shield
-		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.", --Briefcase
+
+		--Buckler Shield
+		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+
+		--Briefcase
+		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+
 		["bm_melee_pitch_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##", --Randal Pitchfork
 			["bm_melee_charge_info"] = "Sprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals #{skill_color}#30## damage every #{skill_color}#0.25## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals #{skill_color}#18## damage every #{skill_color}#0.18## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##", --Kazaguruma
-		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",-- Wing Butterfly Knife
-		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals #{skill_color}#200%## damage when attacking enemies from behind.",-- Switchblade Knife
-		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- Psycho Knife
-		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- Headless Dozer Sword
-			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- im not gaj
-		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", -- Great Sword
-		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", -- Great Sword
+		--ROAMING FROTHING MADNESS
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals #{skill_color}#30## damage every #{skill_color}#0.25## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##",
+		--Kazaguruma
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals #{skill_color}#18## damage every #{skill_color}#0.18## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##",
+		--Wing Butterfly Knife
+		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",
+		--Switchblade Knife
+		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals #{skill_color}#200%## damage when attacking enemies from behind.",
+		--Psycho Knife
+		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+		--Headless Dozer Sword
+		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+			--im not gaj
+			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+		--Wt ring u got bithc?
+		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.",
+			--Jebus
 			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.",
-		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
+		--FREEDOM ISN'T FREE
+		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", 
+		--Pounder Nailgun
+		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
 			["bm_melee_thebestweapon_info"] = "#{skill_color}#The best weapon in the game.##",
-		["bm_melee_iceaxe_info"] = "Deals #{skill_color}#50%## more headshot damage.", -- Icepick
-		["bm_melee_mining_pick_info"] = "Deals #{skill_color}#50%## more headshot damage.", --Gold Fever (Pickaxe)
-		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves #{skill_color}#instantly refill your stamina.##", -- OVERKILL Boxing Gloves
+		--Icepick
+		["bm_melee_iceaxe_info"] = "Deals #{skill_color}#50%## more headshot damage.",
+		--Gold Fever (Pickaxe)
+		["bm_melee_mining_pick_info"] = "Deals #{skill_color}#50%## more headshot damage.",
+		--OVERKILL Boxing Gloves
+		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves #{skill_color}#instantly refill your stamina.##", 
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Lucille Baseball Bat
 			["bm_melee_bleed_info"] = "Deals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
@@ -1487,7 +1527,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
-		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with butt of the weapon.\n\nAttacking with at least a #{skill_color}#50%## charge performs a sweeping slash.",
+		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with the butt of the weapon.\n\nAttacking with at least a #{skill_color}#50%## charge performs a sweeping slash.",
 		["bm_melee_megumins_staff_info"] = "Cast a powerful explosion when fully charged!\nCan be cast as far as #{skill_color}#30## meters on any surface or being; #{risk}#it cannot be cast into the air.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",

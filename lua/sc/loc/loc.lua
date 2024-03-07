@@ -1452,10 +1452,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_melee_pattern_cutter"] = "Attack with downward strikes or charge up to perform range extending jabs.",
 
-		["bm_melee_pattern_great"] = "Attack with downward strikes, strafe for wide swings or charge up to perform range extending jabs.",
-			["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings.", -- Also works for "melee_cs"
+		["bm_melee_pattern_great"] = "Attack with downward strikes, strafe for wide swings or charge up to perform range extending jabs. Strafing influences attack direction.",
+			["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings. Strafing influences attack direction.", -- Also works for "melee_cs"
 
-		["bm_melee_pattern_katana"] = "Attack with diagonal strikes or strafe for wide swings.",
+		["bm_melee_pattern_katana"] = "Attack with diagonal strikes or strafe for wide swings. Strafing influences attack direction.",
 
 		["bm_melee_pattern_fist"] = "Attack with quick jabs or charge up to perform a hook. Strafing influences attack direction.",
 
@@ -1502,9 +1502,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--im not gaj
 			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 		--Wt ring u got bithc?
-		["bm_melee_great_info"] = "Try thrusting attack, but hole.",
+		["bm_melee_great_info"] = "#{item_stage_2}#\"Try thrusting attack, but hole.\"##\n\nThe sword made famous by William Wallace.\nSix feet of razor-sharp steel, it was carried in a scabbard made from the skin of a tax-man.\n\nHow's that for sticking it to the authorities?",
 			--Jebus
-			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.",
+			["bm_melee_jebus_info"] = "Light and #{item_stage_2}#dark##\n#{item_stage_2}#Black## and white.\n#{stats_positive}#Life## and #{important_1}#death##\n\nThe Binary Sword holds no middle ground as it turns your opponents #{important_1}#OFF##",
 		--FREEDOM ISN'T FREE
 		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.", 
 		--Pounder Nailgun
@@ -1516,18 +1516,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_mining_pick_info"] = "Deals #{skill_color}#50%## more headshot damage.",
 		--OVERKILL Boxing Gloves
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves #{skill_color}#instantly refill your stamina.##", 
-		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Alabama Razor
-		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Lucille Baseball Bat
+		--Alabama Razor
+		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", 
+		--Lucille Baseball Bat
+		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", 
 			["bm_melee_bleed_info"] = "Deals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
 			["bm_melee_inner_child_info"] = "Get in touch with your inner child.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
-		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.", --Gold Spoon
+		--Gold Spoon
+		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.", 
 			["bm_melee_fire_info"] = "Has a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.",
-		["bm_melee_cqc_info"] = "Contains an exotic poison that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.", --Kunai, Syringe
-		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals #{skill_color}#120## melee damage to them. This can be increased with skills.", --Empty Palm Kata
+		--Kunai,
+		["bm_melee_cqc_info"] = "Even the mightiest of opponents will fall when touched a single time by this poison dipped Kunai Knife.\n\nContains an exotic poison that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.",
+			["bm_melee_watson_info"] = "\"It'll only hurt for a second, okay?\"\n\nContains an unknown concoction that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.", 
+		--Empty Palm Kata
+		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals #{skill_color}#120## melee damage to them. This can be increased with skills.",
+		--Slot Lever
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
-		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
+		--Specialist Knives, Talons, Knuckle Daggers, Push Daggers
+		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", 
 		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
+		--Who needs pants?
 		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+		--That oinky sploinky
 		["bm_melee_piggy_hammer_info"] = "Deals #{skill_color}#100%## more damage to special and elite enemies.\n\nHas a chance to deal one of the following #{risk}#random effects## upon a successful strike:\n\n-#{skill_color}#12%## chance to inflict #{important_1}#bleed##\n-#{skill_color}#7%## chance to #{ghost_color}#tase##\n-#{skill_color}#5%## chance to inflict #{stats_positive}#poison##\n-#{skill_color}#1%## chance to #{risk}#insta-kill##", --Piggu
 
 		--Melee Weapons

@@ -5108,8 +5108,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.alien_maul.stats.concealment = 24
 		--we postal now--
 		self.melee_weapons.cutters.cleave = 1
-		self.melee_weapons.cutters.raycasts = 6
-		self.melee_weapons.cutters.raycasts_charge = 12
+		self.melee_weapons.cutters.raycasts = 12
+		self.melee_weapons.cutters.raycasts_charge = 6
 		self.melee_weapons.cutters.stats.min_damage = 6
 		self.melee_weapons.cutters.stats.max_damage = 12.001
 		self.melee_weapons.cutters.stats.min_damage_effect = 6.0
@@ -5276,6 +5276,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.scoutknife.stats.concealment = 30
 		
 		--REMEMBER THE BASICS OF--
+		self.melee_weapons.cqc.info_id = "bm_melee_cqc_info"
 		self.melee_weapons.cqc.cleave = 1
 		self.melee_weapons.cqc.raycasts = 4
 		self.melee_weapons.cqc.raycasts_charge = 4
@@ -5298,7 +5299,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.fear.stats.charge_time = 0.25
 			self.melee_weapons.fear.stats.range = 150
 			self.melee_weapons.fear.stats.concealment = 30
-			self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
+			self.melee_weapons.fear.info_id = "bm_melee_watson_info"
 
 		--you got blood on my suit--
 		self.melee_weapons.wing.info_id = "bm_melee_wing_info"	
@@ -5886,6 +5887,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.halloween_sword then
+		self.melee_weapons.halloween_sword.attack_pattern = "bm_melee_pattern_great_no_stab"
 		self.melee_weapons.halloween_sword.anim_attack_charged_vars = nil
 		self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
 		self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0
@@ -6157,8 +6159,8 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	if self.melee_weapons.tridagger then --NotSoIrish's Jagdkommando Tri-Dagger
 		self.melee_weapons.tridagger.stats = deep_clone(self.melee_weapons.gerber.stats)
 		self.melee_weapons.tridagger.cleave = 1
-		self.melee_weapons.tridagger.raycasts = 2
-		self.melee_weapons.tridagger.raycasts_charge = 4
+		self.melee_weapons.tridagger.raycasts = 4
+		self.melee_weapons.tridagger.raycasts_charge = 8
 		self.melee_weapons.tridagger.stats.charge_time = 1.2
 		self.melee_weapons.tridagger.stats.concealment = 27
 		self.melee_weapons.tridagger.stats.range = 160
@@ -6169,7 +6171,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.tridagger.sounds.hit_gen = "knife_hit_gen"
 		self.melee_weapons.tridagger.sounds.hit_body = "knife_hit_body"
 		self.melee_weapons.tridagger.sounds.charge = "knife_charge"
-		self.melee_weapons.tridagger.anim_speed_mult = 1
+		self.melee_weapons.tridagger.anim_speed_mult = 0.9
 	end
 
 	if self.melee_weapons.toyknife then
@@ -6222,6 +6224,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.dragon_slayer then --Silent Enforcer's Dragon Slayer (Halloween Dozer Sword)
+		self.melee_weapons.dragon_slayer.attack_pattern = "bm_melee_pattern_great_no_stab"
 		self.melee_weapons.dragon_slayer.info_id = "bm_melee_goat_info"
 		self.melee_weapons.dragon_slayer.special_weapon = "panic"
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
@@ -6310,6 +6313,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.melee_g36 then --Zdann's G36 (Nailgun but with the G36's max damage profile + range)
+		self.melee_weapons.melee_g36.attack_pattern = nil
 		self.melee_weapons.melee_g36.info_id = "bm_melee_thebestweapon_info"	
 		self.melee_weapons.melee_g36.hit_pre_calculation = true
 		self.melee_weapons.melee_g36.stats = deep_clone(self.melee_weapons.nin.stats)

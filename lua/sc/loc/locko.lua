@@ -2111,32 +2111,74 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_1"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 범위를 가지고 있습니다.",
-		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가지고 있습니다.",		
-		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 기동성에 따라 결정됩니다.",		
+		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가지고 있습니다.",
+
+		--Attack patterns
+		["bm_melee_pattern_knife"] = "빠른 찌르기로 공격하거나 충전하여 더 넓은 베기를 할 수 있습니다.",
+		["bm_melee_pattern_knife2"] = "일제한 베기로 공격합니다. 좌우로 움직임에 따라 공격 방향에 영향을 미칩니다.",
+		["bm_melee_pattern_boxcutter"] = "일제한 베기로 공격합니다.", --Also works with "melee_catch"
+		["bm_melee_pattern_blunt"] = "하향 스윙으로 공격하거나 충전하여 더 넓은 스윙으로 공격할 수 있습니다.", --Also works with "melee_brick"
+		["bm_melee_pattern_axe"] = "하향 스윙으로 공격합니다.", --Also works with the icepick
+		["bm_melee_pattern_cs"] = "하향 베기로 공격하거나 옆으로 움직여 전면 베기로 공격할 수 있습니다.",
+		["bm_melee_pattern_great"] = "하향 베기로 공격하거나 옆으로 움직여 전면 베기로 공격할 수 있습니다.",
+			["bm_melee_pattern_great_blunt"] = "하향 스윙으로 공격하거나 옆으로 움직여 넓은 스윙으로 공격합니다.",
+			["bm_melee_pattern_great_no_stab"] = "하향 스윙으로 공격하고, 옆으로 움직여 전면 베기를 하거나, 충전하여 찌르기를 가합니다.",
+		["bm_melee_pattern_katana"] = "대각선 베기로 공격하거나 옆으로 움직여 전면 베기를 할 수 있습니다.",
+		["bm_melee_pattern_boxing"] = "빠른 잽으로 공격하거나 충전하여 훅 또는 어퍼컷을 수행합니다. 좌우로 움직임에 따라 공격 방향에 영향을 미칩니다.",
+
+
+		--Weapon Butt
+		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 기동성에 따라 결정됩니다.",
+
+
+
+		--URSA/USMC KA-BAR
+		["bm_melee_kabar_desc"] = "URSA 칼은 1942년에 제작되었으며 내구성이 뛰어나고 파괴시키기 힘든 전투 및 만능 칼입니다.\n보위 블레이드, 톱니 모양의 가장자리, 말도 안 될거 같은 클래식.",
+
+		--Katana
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.\n\n지로로 플레이하는 동안, 완전 충전 공격으로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 #{important_1}#\"정의의 도구\"## 따위가 아니야.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
 		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
-		["bm_melee_2077tkata_info"] = "나노 필라멘트로 구성된 가열 칼날입니다.\n추가 기능과 수정 없고 카타나의 가장 순수한 본질로만 이루워져있고 뜨거운 강철을 찢어버립니다.\n\n완전히 충전한 채 공격하면 #{heat_warm_color}#적을 불태워## #{skill_color}#3##초에 걸쳐 #{heat_warm_color}#120##의 화염 피해를 가합니다.",		
-		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.", --Buckler Shield
-		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.", --Briefcase		
+		["bm_melee_2077tkata_info"] = "나노 필라멘트로 구성된 가열 칼날입니다.\n추가 기능과 수정 없고 카타나의 가장 순수한 본질로만 이루워져있고 뜨거운 강철을 찢어버립니다.\n\n완전히 충전한 채 공격하면 #{heat_warm_color}#적을 불태워## #{skill_color}#3##초에 걸쳐 #{heat_warm_color}#120##의 화염 피해를 가합니다.",
+
+		--Buckler Shield
+		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.",
+
+		--Briefcase
+		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.",
+		
 		["bm_melee_pitch_info"] = "피치로 찌르고 몇몇 피치들을 찌르자.\n\n전력 질주를 할 때 앞으로 전진하는 동안 #{skill_color}#0.4##초마다 전방의 대상에게 #{skill_color}#45##의 피해를 가합니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 #{important_1}#15%##가 소모되고, 적을 죽이면 스태미나를 #{skill_color}#10%##만큼 회복합니다.\n\n#{important_1}#전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.##", --Randal Pitchfork		
 		["bm_melee_charge_info"] = "전력 질주를 할 때 앞으로 전진하는 동안 #{skill_color}#0.4##초마다 전방의 대상에게 #{skill_color}#45##의 피해를 가합니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 #{skill_color}#15%##가 소모되고, 적을 죽이면 스태미나를 #{skill_color}#10%##만큼 회복합니다.\n\n#{important_1}#전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.##",	
-		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 #{skill_color}#0.25##초마다 전방의 대상에게 #{skill_color}#30##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 #{skill_color}#0.18##초마다 전방의 대상에게 #{skill_color}#18##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##", --Kazaguruma
-		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 #{skill_color}#400%##의 피해를 줍니다.",-- Wing Butterfly Knife
-		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 #{skill_color}#200%##의 피해를 줍니다.",-- Switchblade Knife
-		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- Psycho Knife
-		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- Headless Dozer Sword
-		["bm_melee_goat_info"] = "\"그건 검이라 하기엔 너무나 컸다. 엄청나게 크고, 두껍고, 무겁고, 그리고 조잡했다. 그것은 그야말로 철괴였다.\"\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- im not gaj		
-		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- Great Sword
-		["bm_melee_freedom_info"] = "흰색과 번갈아 가는 빨간색 줄무늬 13 줄과 주에 있는 파란색 직사각형, 작은 흰색 다섯개 별 50 개, 애국심 한 꼬집, 자유의 컵 두 개가 있는 부러진 깃대입니다.\n\n짜짠, 당신은 치명적인 무기를 가지고 있습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- wtf	
-		["bm_melee_jebus_info"] = "빛과 어둠.\n\n흑백과 백색.\n\n생명과 죽음.\n\n바이너리 소드는 상대방을 자르기 때문에 중간 지점이 없습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",		
-		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.", -- Pounder
-		["bm_melee_thebestweapon_info"] = "#{skill_color}#게임에서 나오는 최고의 무기.##",
-		["bm_melee_iceaxe_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.", -- Icepick
-		["bm_melee_mining_pick_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.", --Gold Fever (Pickaxe)
-		["bm_melee_boxing_gloves_info"] = "난 벨을 울린걸 들은 적 없는데.\n\nOVERKILL 권투 글러브로 적을 처치하면 #{skill_color}#즉시 스태미나가 채워집니다.##", -- OVERKILL Boxing Gloves
-		["bm_melee_clean_info"] = "경찰이 필요로 하는 깨끗한 면도를 제공하십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.", --Alabama Razor
+		--ROAMING FROTHING MADNESS
+		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 #{skill_color}#0.25##초마다 전방의 대상에게 #{skill_color}#30##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##",
+		--Kazaguruma
+		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 #{skill_color}#0.18##초마다 전방의 대상에게 #{skill_color}#18##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##",
+		--Wing Butterfly Knife
+		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 #{skill_color}#400%##의 피해를 줍니다.",
+		--Switchblade Knife
+		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 #{skill_color}#200%##의 피해를 줍니다.",
+		--Psycho Knife
+		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+		--Headless Dozer Sword
+		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+			--im not gaj
+			["bm_melee_goat_info"] = "\"그건 검이라 하기엔 너무나 컸다. 엄청나게 크고, 두껍고, 무겁고, 그리고 조잡했다. 그것은 그야말로 철괴였다.\"\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+		--Wt ring u got bithc?	
+		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",
+			--Jebus
+			["bm_melee_jebus_info"] = "빛과 어둠.\n\n흑백과 백색.\n\n생명과 죽음.\n\n바이너리 소드는 상대방을 자르기 때문에 중간 지점이 없습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",
+		--FREEDOM ISN'T FREE
+		["bm_melee_freedom_info"] = "흰색과 번갈아 가는 빨간색 줄무늬 13 줄과 주에 있는 파란색 직사각형, 작은 흰색 다섯개 별 50 개, 애국심 한 꼬집, 자유의 컵 두 개가 있는 부러진 깃대입니다.\n\n짜짠, 당신은 치명적인 무기를 가지고 있습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- wtf			
+		--Pounder Nailgun
+		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.",
+			["bm_melee_thebestweapon_info"] = "#{skill_color}#게임에서 나오는 최고의 무기.##",
+		--Icepick
+		["bm_melee_iceaxe_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.",
+		--Gold Fever (Pickaxe)
+		["bm_melee_mining_pick_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.",
+		--OVERKILL Boxing Gloves
+		["bm_melee_boxing_gloves_info"] = "난 벨을 울린걸 들은 적 없는데.\n\nOVERKILL 권투 글러브로 적을 처치하면 #{skill_color}#즉시 스태미나가 채워집니다.##",
+		["bm_melee_clean_info"] = "경찰이 필요로 하는 깨끗한 면도를 제공하십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",
 		["bm_melee_barbedwire_info"] = "여생에서 불쌍한 놈을 기다리지 않아... 그리고 난 그냥... 망할 야구 방망이와 이야기하고 있잖아!\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.", --Lucille Baseball Bat
 		["bm_melee_bleed_info"] = "#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",
 		["bm_melee_inner_child_info"] = "내면의 아이와 소통해보십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",		
@@ -2155,7 +2197,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "데드맨의 곡선",		
-		["bm_melee_revenant_heirloom_info"] = "낮은 충전으로 공격하면 휘두를 때 빠른 잽을 합니다.\n\n최소 #{skill_color}#25%## 충전한 상태로 공격하면 전면 베기를 합니다.",
+		["bm_melee_revenant_heirloom_info"] = "낮은 충전으로 공격하면 무기 개머리판으로 빠른 잽을 날립니다.\n\n최소 #{skill_color}#50%## 이상 충전한 상태로 공격하면 전면 베기를 합니다.",
 		["bm_melee_megumins_staff_info"] = "완전 충전하여 강력한 폭발을 시전하세요!\n모든 표면이나 존재에 최대 #{skill_color}#30##미터까지 시전할 수 있으며 #{risk}#공중에서는 시전이 불가능합니다.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",		
 		
 		["bm_menu_weapon_bayonet_header"] = "주무기 통계 기준:",
@@ -2372,6 +2414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "임팩트 지연",
+		["bm_menu_cleave"] = "갈라짐",
 		
 		["bm_menu_stats_detection"] = "착용감",
 		["bm_menu_stats_min_detection"] = "착용감",

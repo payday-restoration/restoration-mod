@@ -32,14 +32,14 @@ local optsSWAT_Heavy145 = {
     enemy = swat_shotgunner,
 	participate_to_group_ai = true,
 	on_executed = { 
-		{ id = 400014, delay = 1 }
+		{ id = 400014, delay = 0 },
+		{ id = 400014, delay = 5 }
 	},
     enabled = true
 }
 local optsSWAT_Rooftop_1 = {
     enemy = swat_shotgunner,
 	spawn_action = "e_sp_crh_to_std_rifle",
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400023, delay = 1 }
 	},
@@ -48,7 +48,6 @@ local optsSWAT_Rooftop_1 = {
 local optsSWAT_Rooftop_2 = {
     enemy = swat_shotgunner,
 	spawn_action = "e_sp_crh_to_std_rifle",
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400024, delay = 1 }
 	},
@@ -727,6 +726,13 @@ return {
             Vector3(-1549.617, 1427.445, 702.700),
             Rotation(172, 0, -0),
             optsLieutenant
+        ),
+		restoration:gen_dummy(
+            400063,
+            "enforcer_7",
+            Vector3(-295, 465, -322.531),
+            Rotation(0, 0, -0),
+            optsEnforcer
         )
     }
 }

@@ -107,8 +107,14 @@ return {
 	[102680] = {
 		on_executed = {
 			{ id = 104691, delay = 0},
-			{ id = 400001, delay = 8},
+			{ id = 400001, delay = 4.5},
 			{ id = 400062, delay = 0}
+		}
+	},
+	--Spawn enforcer near the escape on DS
+	[100635] = {
+		on_executed = {
+			{ id = 400063, delay = 0}
 		}
 	}
 }

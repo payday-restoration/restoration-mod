@@ -1446,17 +1446,37 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
 
 		--Attack patterns
-		["bm_melee_pattern_knife"] = "Attack with quick stabs or charge up to perform a wider slash.",
-		["bm_melee_pattern_knife2"] = "Attack with sweeping slashes. Your side-to-side movement influences attack direction.",
-		["bm_melee_pattern_boxcutter"] = "Attack with sweeping slashes.", --Also works with "melee_catch"
-		["bm_melee_pattern_blunt"] = "Attack with downward swings or charge up for a wider swing.", --Also works with "melee_brick"
-		["bm_melee_pattern_axe"] = "Attack with downward swings.", --Also works with the icepick
-		["bm_melee_pattern_cs"] = "Attack with a downward cut or move sideways for a sweeping slash.",
-		["bm_melee_pattern_great"] = "Attack with a downward cut or move sideways for a sweeping slash.",
-			["bm_melee_pattern_great_blunt"] = "Attack with a downward swing or move sideways for a wide swing.",
-			["bm_melee_pattern_great_no_stab"] = "Attack with a downward swing, move sideways for a sweeping slash or charge your attack to perform a stab.",
-		["bm_melee_pattern_katana"] = "Attack with a diagonal cut or move sideways for a sweeping slash.",
-		["bm_melee_pattern_boxing"] = "Attack with quick jabs or charge up to perform a hook or an uppercut. Your side-to-side movement influences attack direction.",
+		["bm_melee_pattern_knife"] = "Attack with quick jabs or charge up for wider swings.",
+
+		["bm_melee_pattern_knife2"] = "Attack with wide swings. Strafing influences attack direction.", --Also works with "melee_clean" and "melee_grip"
+
+		["bm_melee_pattern_ballistic"] = "Attack with quick jabs or charge up for wide swings and downward strikes. Strafing influences attack direction.", 
+		["bm_melee_pattern_poker"] = "Attack with downward strikes or charge up to perform range extending jabs.", 
+
+		["bm_melee_pattern_boxcutter"] = "Attack with wide swings.", --Also works with "melee_catch" and "melee_agave"
+
+		["bm_melee_pattern_shield"] = "Attack with forward bashes or charge up for wide swings.",
+
+		["bm_melee_pattern_briefcsae"] = "Attack with forward bashes or charge up for downward strikes.",
+
+		["bm_melee_pattern_blunt"] = "Attack with downward strikes or charge up for wide swings.", --Also works with "melee_brick", "melee_happy", "melee_cleaver", "melee_beardy"
+		
+		["bm_melee_pattern_axe"] = "Attack with downward strikes.", --Also works with "melee_psycho" and "melee_pickaxe"
+
+		["bm_melee_pattern_cutter"] = "Attack with downward strikes or charge up to perform range extending jabs.",
+
+		["bm_melee_pattern_great"] = "Attack with downward strikes, strafe for wide swings or charge up to perform range extending jabs.",
+			["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings.", -- Also works for "melee_cs"
+
+		["bm_melee_pattern_katana"] = "Attack with diagonal strikes or strafe for wide swings.",
+
+		["bm_melee_pattern_fist"] = "Attack with quick jabs or charge up to perform a hook. Strafing influences attack direction.",
+
+		["bm_melee_pattern_boxing"] = "Attack with quick jabs or charge up to perform a left hook or a right uppercut. Strafing influences attack direction.",
+
+		["bm_melee_pattern_tiger"] = "Attack with right jabs or charge up to perform a left uppercut or a right hook. Strafing influences charged attack direction.",
+
+		["bm_melee_pattern_jab"] = "Attack with quick jabs.", --For anything that basically only has centered hitboxes like "melee_pitchfork", "melee_wing" and "melee_fight"
 
 
 		--Weapon Butt
@@ -1494,11 +1514,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--im not gaj
 			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 		--Wt ring u got bithc?
-		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.",
+		["bm_melee_great_info"] = "Try thrusting attack, but hole.",
 			--Jebus
-			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.",
+			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.",
 		--FREEDOM ISN'T FREE
-		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", 
+		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.", 
 		--Pounder Nailgun
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.",
 			["bm_melee_thebestweapon_info"] = "#{skill_color}#The best weapon in the game.##",

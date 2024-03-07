@@ -4985,22 +4985,12 @@ function BlackMarketGui:update_info_text()
 
 		local melee_tweak_data = tweak_data.blackmarket.melee_weapons[slot_data.name]
 		local has_info_id = melee_tweak_data.info_id
-		local swing_arc_h = melee_tweak_data.sphere_cast_radius_add_h
-		local swing_arc_charged_h = melee_tweak_data.sphere_cast_radius_add_charged_h
-		local swing_arc = melee_tweak_data.sphere_cast_radius_add_charged_h or melee_tweak_data.sphere_cast_radius_add_h or melee_tweak_data.sphere_cast_radius_add
+		local has_attack_pattern = melee_tweak_data.attack_pattern
 
-		if has_info_id or swing_arc then
+		if has_info_id or has_attack_pattern then
 			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
-			if swing_arc then
-				if swing_arc >= 16 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_4") or (swing_arc_h and "bm_melee_swing_arc_h_4") or "bm_melee_swing_arc_4")
-				elseif swing_arc >= 12 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_3") or (swing_arc_h and "bm_melee_swing_arc_h_3") or "bm_melee_swing_arc_3")
-				elseif swing_arc >= 8 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_2") or (swing_arc_h and "bm_melee_swing_arc_h_2") or "bm_melee_swing_arc_2")
-				elseif swing_arc >= 4 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_1") or (swing_arc_h and "bm_melee_swing_arc_h_1") or "bm_melee_swing_arc_1")
-				end
+			if has_attack_pattern then
+				desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].attack_pattern)
 			end
 
 			for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do

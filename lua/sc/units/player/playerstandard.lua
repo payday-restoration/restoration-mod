@@ -2129,6 +2129,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 	local can_run = self._unit:movement():is_above_stamina_threshold()
 	local lerp_value = self:_get_melee_charge_lerp_value(t)
 	local max_charge = lerp_value and lerp_value >= 0.99
+	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
+	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
+	--local range = melee_weapon.stats.range + charge_bonus_range
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then
@@ -2173,9 +2176,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
 		(self._melee_charge_bonus and melee_weapon.raycasts_charge) or 
 		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
-		(melee_weapon.raycasts) or 1
+		(melee_weapon.raycasts)
 
-		if num_casts > 1 then 
+		if num_casts and num_casts > 1 then
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
 			local from = self._unit:movement():m_head_pos()
 			local rotation = self._unit:movement():m_head_rot()
@@ -2193,9 +2196,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 				local l_r = l_r or 1
 				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
 				local direction = new_rotation:y()
-				local to = from + direction * range
+				local to = from + direction --* range
 
-				local col_ray = self:_calc_melee_hit_ray(t, 20, from, direction)
+				local col_ray = self:_calc_melee_hit_ray(t, 10, from, direction)
 				local ignore_hit = nil
 				if col_ray then
 					local hit_unit = col_ray.unit
@@ -2206,7 +2209,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 						else
 							unique_hits[u_key] = hit_unit
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
-							use_cleave = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and true
+							use_cleave = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and hit_unit:character_damage().dead and not hit_unit:character_damage():dead() and true
 						end
 					end
 
@@ -2228,7 +2231,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
-			local angle_interval = 10
+			local angle_interval = (self._melee_charge_bonus and melee_weapon.interval_charge or melee_weapon.interval or 10) / 4
 			local cleave = melee_weapon.cleave or 1
 
 			local unique_hits = {}
@@ -2237,7 +2240,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local v_mult = self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]
 			if l_r then
 				for i = 1, num_casts, 1 do 
-					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + 5) * l_r)
+					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2) ) * l_r)
 					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult)
 					if cleave_enemy then
 						cleave = cleave - 1
@@ -3318,7 +3321,9 @@ function PlayerStandard:_update_slide_locks()
 		end	
 	end
 end
+
 PlayerStandard._DRAW_MELEE_DEBUG = nil
+PlayerStandard._DRAW_MELEE_DEBUG_HITS = nil
 function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, direction)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[melee_entry]
@@ -3347,12 +3352,15 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	local from = from or self._unit:movement():m_head_pos()
 	local to = from + (direction or self._unit:movement():m_head_rot():y()) * range
 
+	local col_ray = self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
+	
 	if PlayerStandard._DRAW_MELEE_DEBUG then
-		Draw:brush(Color.red:with_alpha(0.2),5):line(from,to)
-		Draw:brush(Color.green:with_alpha(0.2),5):sphere(to,sphere_cast_radius)
+		local dist = PlayerStandard._DRAW_MELEE_DEBUG_HITS and col_ray and col_ray.position
+		Draw:brush(Color.red:with_alpha(0.2),5):line(from,dist or to)
+		Draw:brush(Color.green:with_alpha(0.2),5):sphere(dist or to,sphere_cast_radius)
 	end
 
-	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
+	return col_ray
 end
 
 function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, no_shaker, no_sound)

@@ -4412,6 +4412,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			'tiger'
 		}
 		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_tiger"
 			self.melee_weapons[melee_id].anim_global_param = "melee_tiger"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left","a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
@@ -6018,6 +6019,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_ballistic"
 			self.melee_weapons[melee_id].anim_global_param = "revenant_heirloom"
 			self.melee_weapons[melee_id].anim_attack_vars = {"var3"}
 			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var4"}
@@ -6052,6 +6054,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_tiger"
 			self.melee_weapons[melee_id].anim_global_param = "melee_tiger"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left","a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
@@ -6075,6 +6078,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_knife"
 			self.melee_weapons[melee_id].anim_global_param = "melee_knife"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
@@ -6097,6 +6101,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_knife"
 			self.melee_weapons[melee_id].anim_global_param = "melee_stab"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"}

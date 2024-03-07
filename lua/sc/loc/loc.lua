@@ -1432,19 +1432,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_swing_arc_1"] = "Has a #{skill_color}#wide## swing radius.",
-		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing radius.",
-		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing radius.",
-		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing radius.",
-		["bm_melee_swing_arc_h_1"] = "Has a #{skill_color}#wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_2"] = "Has a #{skill_color}#very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_3"] = "Has a #{skill_color}#very, very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_4"] = "Has a #{skill_color}#massive## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_1"] = "Charged attacks have a #{skill_color}#wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
-
 		--Attack patterns
 		["bm_melee_pattern_knife"] = "Attack with quick jabs or charge up for wider swings.",
 
@@ -1483,6 +1470,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's mobility rating.",
 
 		--URSA/USMC KA-BAR
+		["bm_melee_kabar_desc"] = "The URSA Knife is a hard wearing, indestructible fighting/utility knife dating back to 1942.\nBowie blade, serrated edge, no nonsense. A Classic.",
 		["bm_melee_kabar_desc"] = "The URSA Knife is a hard wearing, indestructible fighting/utility knife dating back to 1942.\nBowie blade, serrated edge, no nonsense. A Classic.",
 
 		--Katana
@@ -1547,7 +1535,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
-		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with the butt of the weapon.\n\nAttacking with at least a #{skill_color}#50%## charge performs a sweeping slash.",
+		["bm_melee_revenant_heirloom_info"] = "\"You don't want to see this up close, skin bag\"",
 		["bm_melee_megumins_staff_info"] = "Cast a powerful explosion when fully charged!\nCan be cast as far as #{skill_color}#30## meters on any surface or being; #{risk}#it cannot be cast into the air.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",

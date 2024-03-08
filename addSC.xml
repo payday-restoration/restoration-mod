@@ -1988,6 +1988,9 @@
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>
 
+	<!-- Right swing for "melee_beardy" taken from "melee_great"; wtf it actually melds well and doesn't have hand clipping issues????? -->
+	<animation			path="anims/fps/melee/beardy/melee_attack_var4" force="true"/>
+
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation			path="anims/shared/pistol/combat/cbt_crh_idle" force="true"/>

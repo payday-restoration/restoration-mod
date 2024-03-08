@@ -1446,7 +1446,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 				["bm_melee_pattern_briefcsae"] = "Attack with forward strikes or charge up by at least #{skill_color}#50%## for downward swings.",
 
-				["bm_melee_pattern_blunt"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings.", --Also works with "melee_brick", "melee_happy", "melee_cleaver", "melee_beardy"
+				["bm_melee_pattern_blunt"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings.", --Also works with "melee_brick", "melee_happy" and "melee_cleaver"
+
+				["bm_melee_pattern_beardy"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings. Strafing influences charged attack direction.",
 				
 				["bm_melee_pattern_axe"] = "Attack with downward strikes.", --Also works with "melee_psycho" and "melee_pickaxe"
 
@@ -1594,7 +1596,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_cqc_info"] = "Even the mightiest of opponents will fall when touched a single time by this poison dipped Kunai Knife.\n\nContains an exotic poison that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.",
 		--Sai
 		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
-		["bm_melee_twins_info"] = "Once in a while, a victim of the Sai realize a little too late that it doesn't matter how blunt the weapons are.\nIn a matter of seconds they have disarmed you of your sharp ones.",
+		["bm_melee_twins_info"] = "Once in a while, a victim of the Sai realize a little too late that it doesn't matter how blunt the weapons are.\nIn a matter of seconds they have disarmed you of your sharp ones.\n\nParrying an enemy attack deals #{skill_color}#60## melee damage to them. This can be increased with skills.",
 		--Tekko-Kagi
 		["bm_melee_tiger_info"] = "Originally used to scale walls and trees, these sharp claws swiftly turned into weapons when whoever wielded them was discovered.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
 		--Empty Palm Kata
@@ -1621,7 +1623,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 				--im not gaj
 				["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 		--Buckler Shield
-		["bm_melee_buck_info"] = "In the right hands, the Buckler Shield was as much a weapon as a means of defense.\nWorn on the forearm, it could be slammed into an enemy with enough force to knock them out of their breeches.\n\nSurprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+		["bm_melee_buck_info"] = "In the right hands, the Buckler Shield was as much a weapon as a means of defense.\nWorn on the forearm, it could be slammed into an enemy with enough force to knock them out of their breeches.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
 
 		--Bolt cutters
 		["bm_melee_cutters_info"] = "Your favorite serial killers need more than just an axe, a knife or a glove with razor fingers.\nThey need bolt cutters to quietly get into those places you thought were locked.\n\nWhere you thought you were safe...",
@@ -1646,7 +1648,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_scoutknife_info"] = "Don't let the rusty and worn appearance turn you off. A knife is always a knife - and some say an old knife ages just like a good wine (no one has probably ever said that). Try it out and you'll see things will bleed.",
 		--Shears
 		["bm_melee_shawn_info"] = "Did you know that Sheep shearing is considered a sport? Maybe we should invent a new sport: cop shearing? No? Why not? Whatever... use them however you see fit, I guess...",
-		--Bayonet
+		--Crook
+		["bm_melee_stick"] = "Shepherd's Crook",
 		["bm_melee_stick_info"] = "Tired after a long heist? Want to look old and wise? Maybe smash a cop's face in? The Shepherd's cane can do it all.",
 
 		--Pounder Nailgun

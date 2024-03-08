@@ -103,6 +103,9 @@
 			<anim name="mp5_vg_inspect" 							file="anims/fps/mp5/mp5_vg_inspect" blend_set="all"/>
 			
 			<anim name="peacemaker_inspect_alt" 					file="anims/fps/peacemaker/peacemaker_inspect_alt" blend_set="all"/>
+
+
+			<anim name="melee_beardy_attack_var4" 					file="anims/fps/melee/beardy/melee_attack_var4" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

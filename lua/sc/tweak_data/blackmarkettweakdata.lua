@@ -3927,20 +3927,24 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		end
 		
 		--melee_beardy
+		--made into an alternative directional set to "melee_great" that's suited for wider grips though it lacks the stab anim
 		melee_anim = {
 			'beardy','piggy_hammer','dingdong','alien_maul','fireaxe'
 		}
 		for i, melee_id in ipairs(melee_anim) do
 			if self.melee_weapons[melee_id] then
-				self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_blunt"
+				self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_beardy"
 				self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
 				self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 				self.melee_weapons[melee_id].anim_attack_vars = {"var2","var3"}
-				self.melee_weapons[melee_id].anim_attack_charged_vars = {"var1"}
+				self.melee_weapons[melee_id].anim_attack_charged_vars = {"var1","var4"}
+				self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var1"}
+				self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
 				self.melee_weapons[melee_id].anim_attack_var_dir = {
 					var1 = {"left", 0.2},
 					var2 = {"left", 0.9},
-					var3 = {"left", 0.8}
+					var3 = {"left", 0.8},
+					var4 = {"right", 0.2}
 				}
 				self.melee_weapons[melee_id].expire_t = 1.45
 				self.melee_weapons[melee_id].repeat_expire_t = 1.2
@@ -5039,7 +5043,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.barbedwire.stats.concealment = 25
 		--I get it, it's the hotline--
 		self.melee_weapons.baseballbat.info_id = "bm_melee_bat_info"
-		self.melee_weapons.baseballbat.cleave = 1
+		self.melee_weapons.baseballbat.cleave = 2
 		self.melee_weapons.baseballbat.raycasts = 10
 		self.melee_weapons.baseballbat.raycasts_h = 15
 		self.melee_weapons.baseballbat.stats.min_damage = 6
@@ -5051,7 +5055,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.baseballbat.stats.concealment = 26
 			--Shephard's cane--
 			self.melee_weapons.stick.info_id = "bm_melee_stick_info"
-			self.melee_weapons.stick.cleave = 1
+			self.melee_weapons.stick.cleave = 2
 			self.melee_weapons.stick.raycasts = 10
 			self.melee_weapons.stick.raycasts_h = 15
 			self.melee_weapons.stick.type = "axe"
@@ -5131,7 +5135,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		end
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.info_id = "bm_melee_dingdong_info"
-		self.melee_weapons.dingdong.cleave = 1
+		self.melee_weapons.dingdong.cleave = 2
 		self.melee_weapons.dingdong.raycasts = 10
 		self.melee_weapons.dingdong.raycasts_charge = 15
 		self.melee_weapons.dingdong.stats.min_damage = 6
@@ -5144,7 +5148,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--Ayy Hammer--
 			self.melee_weapons.alien_maul.info_id = "bm_melee_alien_maul_info"
 			self.melee_weapons.alien_maul.type = "axe"
-			self.melee_weapons.alien_maul.cleave = 1
+			self.melee_weapons.alien_maul.cleave = 2
 			self.melee_weapons.alien_maul.raycasts = 10
 			self.melee_weapons.alien_maul.raycasts_charge = 15
 			self.melee_weapons.alien_maul.stats.min_damage = 6
@@ -5193,6 +5197,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--self.melee_weapons.buck.sphere_cast_radius_add = 8
 			--The target is a briefcase. Discretion is of the essence.--
 			self.melee_weapons.briefcase.info_id = "bm_melee_briefcase_info"	
+			self.melee_weapons.briefcase.cleave = 1
 			self.melee_weapons.briefcase.raycasts = 8
 			self.melee_weapons.briefcase.raycasts_charge = 12
 			self.melee_weapons.briefcase.stats.min_damage = 2.4
@@ -5256,29 +5261,29 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.ballistic.sounds.hit_gen = "knife_hit_gen"
 		self.melee_weapons.ballistic.sounds.hit_body = "knife_hit_body"
 		self.melee_weapons.ballistic.sounds.charge = "knife_charge"
-		self.melee_weapons.ballistic.cleave = 1
+		self.melee_weapons.ballistic.cleave = 2
 		self.melee_weapons.ballistic.raycasts = 6
 		self.melee_weapons.ballistic.raycasts_charge = 20
 		self.melee_weapons.ballistic.stats.min_damage = 4.5
 		self.melee_weapons.ballistic.stats.max_damage = 9.001
 		self.melee_weapons.ballistic.stats.min_damage_effect = 1.0
 		self.melee_weapons.ballistic.stats.max_damage_effect = 2.0
-		self.melee_weapons.ballistic.stats.charge_time = 1.05
+		self.melee_weapons.ballistic.stats.charge_time = 1.15
 		self.melee_weapons.ballistic.stats.range = 160
-		self.melee_weapons.ballistic.stats.concealment = 29
+		self.melee_weapons.ballistic.stats.concealment = 28
 		--Can't fight nature jack--	
 		self.melee_weapons.twins.info_id = "bm_melee_twins_info"
 		self.melee_weapons.twins.cleave = 1
 		self.melee_weapons.twins.raycasts = 6
-		self.melee_weapons.twins.raycasts_charge = 20
-		self.melee_weapons.twins.stats.min_damage = 4.5
-		self.melee_weapons.twins.stats.min_damage = 4.5
+		self.melee_weapons.twins.raycasts_charge = 12
+		self.melee_weapons.twins.stats.min_damage = 3.0
 		self.melee_weapons.twins.stats.max_damage = 9.001
 		self.melee_weapons.twins.stats.min_damage_effect = 3.0
 		self.melee_weapons.twins.stats.max_damage_effect = 6.0
 		self.melee_weapons.twins.stats.charge_time = 1.15
 		self.melee_weapons.twins.stats.range = 170
 		self.melee_weapons.twins.stats.concealment = 28
+		self.melee_weapons.twins.counter_damage = 6
 
 
 		--memed hard enough into the game--

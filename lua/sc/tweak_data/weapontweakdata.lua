@@ -109,16 +109,16 @@ local crew_wep_preset = {
 	},
 	shotgun_auto = {
 		mag_capacity = 10,
-		fire_rate = 0.1714285,
+		fire_rate = 0.3333333,
 		damage = 7.5
 	},
 	shotgun_pump = {
 		mag_capacity = 7,
-		fire_rate = 0.8571428,
+		fire_rate = 1,
 		damage = 15.0
 	},
 	sniper_auto = {
-		mag_capacity = 8,
+		mag_capacity = 5,
 		fire_rate = 1.5,
 		damage = 9.0
 	},
@@ -17823,6 +17823,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.raid_ww2_bren.timers.reload_exit_not_empty = 0.8
 				self.raid_ww2_bren.timers.reload_empty = 2.5
 				self.raid_ww2_bren.timers.reload_exit_empty = 0.8
+			end
+
+			if self.tkb0146 then
+				self.tkb0146.warsaw = true
+				self.tkb0146.recategorize = { "light_ar" }
+				self.tkb0146.has_description = false
+				self.tkb0146.tactical_reload = 1
+				self.tkb0146.fire_rate_init_delay = 0
+				self.tkb0146.fire_rate_init_count = 2
+				self.tkb0146.fire_rate_init_mult = 0.7
+				self.tkb0146.BURST_FIRE = 3
+				self.tkb0146.BURST_DELAY = 0.18
+				self.tkb0146.BURST_FIRE_RATE_MULTIPLIER = 3.333333
+				self.tkb0146.BURST_FIRE_RECOIL_MULTIPLIER = 0.7
+				self.tkb0146.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
+				self.tkb0146.CAN_TOGGLE_FIREMODE = false
+				self.tkb0146.AMMO_MAX = 150
+				self.tkb0146.kick = self.stat_info.kick_tables.right_recoil	
+				self.tkb0146.supported = true
+				self.tkb0146.ads_speed = 0.260
+				self.tkb0146.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4100,
+					min_mult = 0.5
+				}
+				self.tkb0146.stats = {
+					damage = 24,
+					spread = 73,
+					recoil = 79,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tkb0146.stats_modifiers = nil
+				self.tkb0146.panic_suppression_chance = 0.05
 			end
 		
 		--[[     TANGERINE'S MODS     ]]--

@@ -28052,7 +28052,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+		end
 
+		if self.parts.wpn_fps_ass_tkb0146_custom_burst then
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.perks = nil
 		end
 		
 

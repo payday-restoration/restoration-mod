@@ -92,7 +92,8 @@ tweak_data.shotgun = {
 		moving_spread_mult = 1.5
 	}
 		tweak_data.shotgun_light_semi = {
-			hipfire_spread_mult = 0.7407
+			hipfire_spread_mult = 0.61538,
+			moving_spread_mult = 0.66667
 		}
 	tweak_data.shotgun_heavy = {
 		hipfire_spread_mult = 0.55,

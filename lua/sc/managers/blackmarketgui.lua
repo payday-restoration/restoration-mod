@@ -4988,8 +4988,13 @@ function BlackMarketGui:update_info_text()
 		local has_global_value = slot_data.global_value and slot_data.global_value ~= "normal"
 		if has_global_value then
 			updated_texts[2].text = "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-			table.insert(updated_texts[2].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+			if updated_texts[2].text ~= "## ##" then
+				table.insert(updated_texts[2].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+			else
+				has_global_value = nil
+			end
 		end
+
 
 		local melee_tweak_data = tweak_data.blackmarket.melee_weapons[slot_data.name]
 		local has_info_id = melee_tweak_data.info_id
@@ -5006,7 +5011,7 @@ function BlackMarketGui:update_info_text()
 			end
 			desc_text = desc_text:gsub("#%{(.-)%}#", "##")
 
-			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n" or "") .. desc_text
+			updated_texts[2].text = ((has_global_value and updated_texts[2].text .. "\n") or "") .. desc_text
 		end
 
 		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)

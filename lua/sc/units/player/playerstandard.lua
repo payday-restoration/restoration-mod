@@ -2192,7 +2192,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local hit_body, hit_gen, use_cleave = nil
 
 			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
-				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the arc fom the top going down, - starts the arc fom the bottom going up
+				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the line fom the top going down, - starts the line fom the bottom going up
 				local l_r = l_r or 1
 				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
 				local direction = new_rotation:y()
@@ -2203,13 +2203,14 @@ function PlayerStandard:_update_melee_timers(t, input)
 				if col_ray then
 					local hit_unit = col_ray.unit
 					if hit_unit and alive(hit_unit) then
+						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
 						if unique_hits[u_key] then
 							use_cleave = nil
 						else
 							unique_hits[u_key] = hit_unit
+							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
-							use_cleave = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and hit_unit:character_damage().dead and not hit_unit:character_damage():dead() and true
 						end
 					end
 

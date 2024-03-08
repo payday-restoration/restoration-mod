@@ -4982,6 +4982,14 @@ function BlackMarketGui:update_info_text()
 		updated_texts[1].text = self._slot_data.name_localized
 
 		updated_texts[2].resource_color = {}
+		updated_texts[2].text = ""
+		updated_texts[2].below_stats = true
+
+		local has_global_value = slot_data.global_value and slot_data.global_value ~= "normal"
+		if has_global_value then
+			updated_texts[2].text = "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
+			table.insert(updated_texts[2].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+		end
 
 		local melee_tweak_data = tweak_data.blackmarket.melee_weapons[slot_data.name]
 		local has_info_id = melee_tweak_data.info_id
@@ -4998,8 +5006,7 @@ function BlackMarketGui:update_info_text()
 			end
 			desc_text = desc_text:gsub("#%{(.-)%}#", "##")
 
-			updated_texts[2].text = desc_text
-			updated_texts[2].below_stats = true
+			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n" or "") .. desc_text
 		end
 
 		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)
@@ -5059,14 +5066,14 @@ function BlackMarketGui:update_info_text()
 			updated_texts[3].below_stats = true
 		end
 
-		updated_texts[4].resource_color = {}
+		--updated_texts[4].resource_color = {}
 
-		if slot_data.global_value and slot_data.global_value ~= "normal" then
-			updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-			table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
-		end
+		--if slot_data.global_value and slot_data.global_value ~= "normal" then
+		--	updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
+		--	table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+		--end
 
-		updated_texts[4].below_stats = true
+		--updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.grenade then
 		local is_perk_throwable = tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown and not tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown_no_perk
 		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[slot_data.name].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))

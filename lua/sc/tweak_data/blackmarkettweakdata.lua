@@ -3800,10 +3800,30 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].melee_charge_shaker = ""
 		end
 		
+		--melee_baseballbat
+		melee_anim = {
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"} --No more stabbing with blunt objects
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.4},
+				var2 = {"left", 0.9},
+				var3 = {"left", -0.1},
+				var4 = {"left", 0.4}
+			}
+			self.melee_weapons[melee_id].expire_t = 1.025
+			self.melee_weapons[melee_id].repeat_expire_t = 0.9
+			self.melee_weapons[melee_id].melee_damage_delay = 0.275
+			self.melee_weapons[melee_id].anim_speed_mult = 0.9473
+			--self.melee_weapons[melee_id].sphere_cast_radius_add = 12
+		end
+
 		--melee_great
 		--It's basically "melee_baseballbat" but with more windup and directional anims
 		melee_anim = {
-			'barbedwire','baseballbat','spoon','stick','hockey','meter','spoon_gold','freedom',
+			'spoon','meter','spoon_gold','freedom',
 			'great'
 		}
 		--unsure if this'll work, hope it does
@@ -3825,8 +3845,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			}
 			self.melee_weapons[melee_id].expire_t = 1.45
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
-			self.melee_weapons[melee_id].melee_damage_delay = 0.6
-			self.melee_weapons[melee_id].anim_speed_mult = 1.34
+			self.melee_weapons[melee_id].melee_damage_delay = 0.63
+			self.melee_weapons[melee_id].anim_speed_mult = 1.26
 			--self.melee_weapons[melee_id].sphere_cast_radius_add_h = 16
 		end
 
@@ -3836,6 +3856,51 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			for i, melee_id in ipairs(melee_anim) do
 				self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great"
 				self.melee_weapons[melee_id].anim_attack_charged_vars = {"var3"}
+			end
+		
+		--melee_beardy
+		--made into an alternative directional set to "melee_great" that's suited for wider grips though it lacks the stab anim
+		melee_anim = {
+			'hockey','barbedwire','baseballbat','stick',
+			'piggy_hammer','dingdong','alien_maul',
+			'beardy','fireaxe'
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			if self.melee_weapons[melee_id] then
+				self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_beardy"
+				self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
+				self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+				self.melee_weapons[melee_id].anim_attack_vars = {"var2","var3"}
+				self.melee_weapons[melee_id].anim_attack_charged_vars = {"var1","var4"}
+				self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var1"}
+				self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
+				self.melee_weapons[melee_id].anim_attack_var_dir = {
+					var1 = {"left", 0.2},
+					var2 = {"left", 0.9},
+					var3 = {"left", 0.8},
+					var4 = {"right", 0.2}
+				}
+				self.melee_weapons[melee_id].expire_t = 1.45
+				self.melee_weapons[melee_id].repeat_expire_t = 1.2
+				self.melee_weapons[melee_id].melee_damage_delay = 0.63
+				self.melee_weapons[melee_id].anim_speed_mult = 1.26
+				--self.melee_weapons[melee_id].sphere_cast_radius_add = 16
+			end
+		end
+			--melee_beardy directional attacks without needing charge
+			melee_anim = {
+				'hockey','barbedwire','baseballbat','stick'
+			}
+			for i, melee_id in ipairs(melee_anim) do
+				if self.melee_weapons[melee_id] then
+					self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
+					self.melee_weapons[melee_id].anim_attack_vars = {"var2","var3"}
+					self.melee_weapons[melee_id].anim_attack_left_vars = {"var1"}
+					self.melee_weapons[melee_id].anim_attack_right_vars = {"var4"}
+					self.melee_weapons[melee_id].anim_attack_charged_vars = nil
+					self.melee_weapons[melee_id].anim_attack_charged_left_vars = nil
+					self.melee_weapons[melee_id].anim_attack_charged_right_vars = nil
+				end
 			end
 		
 		--melee_hockey
@@ -3894,54 +3959,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 				var2 = {"left", -0.9}
 			}
 			self.melee_weapons[melee_id].anim_speed_mult = 1.4
-		end
-		
-		--melee_baseballbat
-		melee_anim = {
-		}
-		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"} --No more stabbing with blunt objects
-			self.melee_weapons[melee_id].anim_attack_var_dir = {
-				var1 = {"left", 0.4},
-				var2 = {"left", 0.9},
-				var3 = {"left", -0.1},
-				var4 = {"left", 0.4}
-			}
-			self.melee_weapons[melee_id].expire_t = 1.025
-			self.melee_weapons[melee_id].repeat_expire_t = 0.9
-			self.melee_weapons[melee_id].melee_damage_delay = 0.275
-			self.melee_weapons[melee_id].anim_speed_mult = 0.9473
-			--self.melee_weapons[melee_id].sphere_cast_radius_add = 12
-		end
-		
-		--melee_beardy
-		--made into an alternative directional set to "melee_great" that's suited for wider grips though it lacks the stab anim
-		melee_anim = {
-			'beardy','piggy_hammer','dingdong','alien_maul','fireaxe'
-		}
-		for i, melee_id in ipairs(melee_anim) do
-			if self.melee_weapons[melee_id] then
-				self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_beardy"
-				self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
-				self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-				self.melee_weapons[melee_id].anim_attack_vars = {"var2","var3"}
-				self.melee_weapons[melee_id].anim_attack_charged_vars = {"var1","var4"}
-				self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var1"}
-				self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
-				self.melee_weapons[melee_id].anim_attack_var_dir = {
-					var1 = {"left", 0.2},
-					var2 = {"left", 0.9},
-					var3 = {"left", 0.8},
-					var4 = {"right", 0.2}
-				}
-				self.melee_weapons[melee_id].expire_t = 1.45
-				self.melee_weapons[melee_id].repeat_expire_t = 1.2
-				self.melee_weapons[melee_id].melee_damage_delay = 0.65
-				self.melee_weapons[melee_id].anim_speed_mult = 1.12
-				--self.melee_weapons[melee_id].sphere_cast_radius_add = 16
-			end
 		end
 
 		--melee_cutters
@@ -4272,7 +4289,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].expire_t = 1.1
 			self.melee_weapons[melee_id].repeat_expire_t = 0.95
 			self.melee_weapons[melee_id].melee_damage_delay = 0.175
-			self.melee_weapons[melee_id].anim_speed_mult = 0.975
+			self.melee_weapons[melee_id].anim_speed_mult = 1
 		end
 		
 		
@@ -5031,6 +5048,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.barbedwire.stats.charge_time = 2.4
 		self.melee_weapons.barbedwire.stats.range = 200
 		self.melee_weapons.barbedwire.stats.concealment = 25
+		self.melee_weapons.barbedwire.speed_mult = 0.97
 		--It has a crowbar we can't use--
 		self.melee_weapons.dingdong.info_id = "bm_melee_dingdong_info"
 		self.melee_weapons.dingdong.cleave = 2
@@ -5043,6 +5061,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.dingdong.stats.charge_time = 2.5
 		self.melee_weapons.dingdong.stats.range = 210
 		self.melee_weapons.dingdong.stats.concealment = 24
+		self.melee_weapons.dingdong.speed_mult = 0.94
 			--Ayy Hammer--
 			self.melee_weapons.alien_maul.info_id = "bm_melee_alien_maul_info"
 			self.melee_weapons.alien_maul.type = "axe"
@@ -5056,11 +5075,12 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.alien_maul.stats.charge_time = 2.5
 			self.melee_weapons.alien_maul.stats.range = 210
 			self.melee_weapons.alien_maul.stats.concealment = 24
+			self.melee_weapons.alien_maul.speed_mult = 0.94
 		--I get it, it's the hotline--
 		self.melee_weapons.baseballbat.info_id = "bm_melee_bat_info"
 		self.melee_weapons.baseballbat.cleave = 2
-		self.melee_weapons.baseballbat.raycasts = 10
-		self.melee_weapons.baseballbat.raycasts_h = 15
+		self.melee_weapons.baseballbat.raycasts = 15
+		self.melee_weapons.baseballbat.raycasts_h = 25
 		self.melee_weapons.baseballbat.stats.min_damage = 6
 		self.melee_weapons.baseballbat.stats.max_damage = 12.001
 		self.melee_weapons.baseballbat.stats.min_damage_effect = 9.0
@@ -5071,8 +5091,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--Shephard's cane--
 			self.melee_weapons.stick.info_id = "bm_melee_stick_info"
 			self.melee_weapons.stick.cleave = 2
-			self.melee_weapons.stick.raycasts = 10
-			self.melee_weapons.stick.raycasts_h = 15
+			self.melee_weapons.stick.raycasts = 15
+			self.melee_weapons.stick.raycasts_h = 25
 			self.melee_weapons.stick.type = "axe"
 			self.melee_weapons.stick.stats.min_damage = 6
 			self.melee_weapons.stick.stats.max_damage = 12.001
@@ -5084,8 +5104,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
 			self.melee_weapons.spoon.info_id = "bm_melee_spoon_info"
 			self.melee_weapons.spoon.cleave = 2
-			self.melee_weapons.spoon.raycasts = 10
-			self.melee_weapons.spoon.raycasts_h = 15
+			self.melee_weapons.spoon.raycasts = 15
+			self.melee_weapons.spoon.raycasts_h = 25
 			self.melee_weapons.spoon.stats.min_damage = 6
 			self.melee_weapons.spoon.stats.max_damage = 12.001
 			self.melee_weapons.spoon.stats.min_damage_effect = 9.0
@@ -5105,6 +5125,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.hockey.stats.charge_time = 2
 		self.melee_weapons.hockey.stats.range = 200
 		self.melee_weapons.hockey.stats.concealment = 27
+		self.melee_weapons.hockey.speed_mult = 1.02
 			--Binary Ruler--
 			self.melee_weapons.meter.info_id = "bm_melee_meter_info"
 			self.melee_weapons.meter.cleave = 1
@@ -5118,6 +5139,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.meter.stats.charge_time = 2
 			self.melee_weapons.meter.stats.range = 200
 			self.melee_weapons.meter.stats.concealment = 27
+			self.melee_weapons.meter.speed_mult = 1.02
 
 		--BIRE xddddddd--
 		self.melee_weapons.spoon_gold.type = "axe"
@@ -5812,31 +5834,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.mining_pick.stats.range = 180
 		self.melee_weapons.mining_pick.stats.concealment = 26
 		self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
-		--Fear the beard--
-		self.melee_weapons.beardy.info_id = "bm_melee_beardy_info"
-		self.melee_weapons.beardy.cleave = 3
-		self.melee_weapons.beardy.raycasts = 20
-		self.melee_weapons.beardy.raycasts_charge_h = 25
-		self.melee_weapons.beardy.stats.min_damage = 9
-		self.melee_weapons.beardy.stats.max_damage = 18.001
-		self.melee_weapons.beardy.stats.min_damage_effect = 3.0
-		self.melee_weapons.beardy.stats.max_damage_effect = 9.0
-		self.melee_weapons.beardy.stats.charge_time = 2.1
-		self.melee_weapons.beardy.stats.range = 220
-		self.melee_weapons.beardy.stats.concealment = 25
-		--For the longest time the Fireaxe was the most satisfying melee weapon to use, seriously sucks they killed its swing animation--
-		self.melee_weapons.fireaxe.info_id = "bm_melee_fireaxe_info"
-		self.melee_weapons.fireaxe.cleave = 1
-		self.melee_weapons.fireaxe.raycasts = 12
-		self.melee_weapons.fireaxe.raycasts_charge_h = 18
-		self.melee_weapons.fireaxe.stats.min_damage = 9
-		self.melee_weapons.fireaxe.stats.max_damage = 18.001
-		self.melee_weapons.fireaxe.stats.min_damage_effect = 3.0
-		self.melee_weapons.fireaxe.stats.max_damage_effect = 9.0
-		self.melee_weapons.fireaxe.stats.charge_time = 1.9
-		self.melee_weapons.fireaxe.stats.range = 180
-		self.melee_weapons.fireaxe.stats.concealment = 26
-		self.melee_weapons.fireaxe.speed_mult = 1.22
 
 		--YOOOOOOOOOOOOOOOOOOOOOOOOOOO--
 		self.melee_weapons.sandsteel.info_id = "bm_melee_katana_info"
@@ -5856,19 +5853,45 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--C/C quality master race--
 		self.melee_weapons.great.info_id = "bm_melee_great_info"
 		self.melee_weapons.great.cleave = 5
-		self.melee_weapons.great.raycasts = 15
+		self.melee_weapons.great.raycasts = 16
 		self.melee_weapons.great.raycasts_h = 30
 		self.melee_weapons.great.raycasts_charge = 6
 		self.melee_weapons.great.stats.min_damage = 9
 		self.melee_weapons.great.stats.max_damage = 18.001
 		self.melee_weapons.great.stats.min_damage_effect = 2.4
 		self.melee_weapons.great.stats.max_damage_effect = 6.0
-		self.melee_weapons.great.stats.charge_time = 2.1
+		self.melee_weapons.great.stats.charge_time = 2
 		self.melee_weapons.great.stats.range = 200
 		self.melee_weapons.great.stats.charge_bonus_start = 0.9
 		self.melee_weapons.great.stats.charge_bonus_range = 50
 		self.melee_weapons.great.stats.concealment = 26
 		self.melee_weapons.great.speed_mult = 0.94
+		--Fear the beard--
+		self.melee_weapons.beardy.info_id = "bm_melee_beardy_info"
+		self.melee_weapons.beardy.cleave = 3
+		self.melee_weapons.beardy.raycasts = 20
+		self.melee_weapons.beardy.raycasts_charge_h = 25
+		self.melee_weapons.beardy.stats.min_damage = 9
+		self.melee_weapons.beardy.stats.max_damage = 18.001
+		self.melee_weapons.beardy.stats.min_damage_effect = 3.0
+		self.melee_weapons.beardy.stats.max_damage_effect = 9.0
+		self.melee_weapons.beardy.stats.charge_time = 2.2
+		self.melee_weapons.beardy.stats.range = 220
+		self.melee_weapons.beardy.stats.concealment = 25
+		self.melee_weapons.beardy.speed_mult = 0.91
+		--For the longest time the Fireaxe was the most satisfying melee weapon to use, seriously sucks they killed its swing animation--
+		self.melee_weapons.fireaxe.info_id = "bm_melee_fireaxe_info"
+		self.melee_weapons.fireaxe.cleave = 1
+		self.melee_weapons.fireaxe.raycasts = 12
+		self.melee_weapons.fireaxe.raycasts_charge_h = 18
+		self.melee_weapons.fireaxe.stats.min_damage = 6
+		self.melee_weapons.fireaxe.stats.max_damage = 18.001
+		self.melee_weapons.fireaxe.stats.min_damage_effect = 3.0
+		self.melee_weapons.fireaxe.stats.max_damage_effect = 12.0
+		self.melee_weapons.fireaxe.stats.charge_time = 1.85
+		self.melee_weapons.fireaxe.stats.range = 190
+		self.melee_weapons.fireaxe.stats.concealment = 26
+		self.melee_weapons.fireaxe.speed_mult = 1.02
 	
 		--Fires actual nails when--
 		self.melee_weapons.nin.info_id = "bm_melee_nin_info" 

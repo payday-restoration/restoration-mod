@@ -1975,6 +1975,9 @@
 	<animation			path="anims/fps/melee/catch/catch_attack_var2" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var2" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var3" force="true"/>
+
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_1/fps_vehicle_bike_1" force="true"/>
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/fps_vehicle_bike_2" force="true"/>
 	
 	<!-- Original melee_axe anims since the newest iteration of it causes the weapon to desync from the hand really badly -->
 	<animation			path="anims/fps/melee/garber/melee_attack_var1" force="true"/>

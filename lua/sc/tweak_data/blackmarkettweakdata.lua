@@ -5143,9 +5143,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--BIRE xddddddd--
 		self.melee_weapons.spoon_gold.type = "axe"
-		self.melee_weapons.spoon_gold.cleave = 1
-		self.melee_weapons.spoon_gold.raycasts = 10
-		self.melee_weapons.spoon_gold.raycasts_h = 15
+		self.melee_weapons.spoon_gold.cleave = 2
+		self.melee_weapons.spoon_gold.raycasts = 15
+		self.melee_weapons.spoon_gold.raycasts_h = 25
 		self.melee_weapons.spoon_gold.dot_data_name = "melee_spoon_gold"
 		self.melee_weapons.spoon_gold.info_id = "bm_melee_spoon_gold_info"
 		self.melee_weapons.spoon_gold.stats.min_damage = 6

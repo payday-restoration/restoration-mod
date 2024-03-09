@@ -389,6 +389,7 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
+		"haunted", --Safehouse Nightmare
 		"mia_2", --Hotline Miami 2	
 		"help", --Prison Nightmare		
 		"chill_combat",	--Safehouse Raid	
@@ -1069,6 +1070,23 @@ function restoration:mission_script_add()
 				play_on_player_instigator_only = opts.play_on_player_instigator_only or false,
 				use_instigator = opts.use_instigator or false,
 				use_position = opts.use_position or false
+			},
+		}
+	end
+	
+	function restoration:gen_preferedadd(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementEnemyPreferedAdd",
+			values = {
+				execute_on_startup = false,
+				base_delay = opts.base_delay or 0,
+				trigger_times = opts.trigger_times or 0,
+				spawn_groups = opts.spawn_groups or {},
+				on_executed = opts.on_executed or {},
+				enabled = true
 			},
 		}
 	end

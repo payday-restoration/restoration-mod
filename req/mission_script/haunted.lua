@@ -25,8 +25,8 @@ return {
 	--Spawn ambush cloakers
 	[102204] = { 
 		on_executed = {
-			{id = 400033, delay = 0},
-			{id = 400034, delay = 0}
+			{id = 400039, delay = 0.5},
+			{id = 400040, delay = 0.5}
 		}
 	},
 	--Disables the AI Remover to prevent vault spawn from despawning after few seconds

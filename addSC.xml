@@ -1975,9 +1975,6 @@
 	<animation			path="anims/fps/melee/catch/catch_attack_var2" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var2" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var3" force="true"/>
-
-	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_1/fps_vehicle_bike_1" force="true"/>
-	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/fps_vehicle_bike_2" force="true"/>
 	
 	<!-- Original melee_axe anims since the newest iteration of it causes the weapon to desync from the hand really badly -->
 	<animation			path="anims/fps/melee/garber/melee_attack_var1" force="true"/>
@@ -2149,6 +2146,11 @@
 	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>
 	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman_2"/>
 
+	<!--Drivable vehicle handling stuff-->	
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_1/fps_vehicle_bike_1" force="true"/>
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/fps_vehicle_bike_2" force="true"/>
+	<object				path="units/pd2_dlc_shoutout_raid/vehicles/fps_vehicle_muscle_1/fps_vehicle_muscle_1" force="true"/>
+	<object				path="units/pd2_dlc_cage/vehicles/fps_vehicle_falcogini_1/fps_vehicle_falcogini_1" force="true"/>
 
 	<!--Payday 10th Anniversary-->	
 	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stars_df"/>

@@ -159,12 +159,12 @@
 		<!-- IMPORTANT: suspension supported_mass must be 1/4 of chassis mass, if not vehicle behavior is undefined -->
 		<!-- IMPORTANT: downforce should not go above 20, or it will compress the suspension and make the car unable to handle bumps -->
 		<!-- IMPORTANT: use inertia multipliers with care -->
-		<chassis body="body_chassis" mass="2500" center_of_mass_offset="0.0 0.0 0.0" inertia_multiplier="2.0 1.1 5.1" downforce_strength="15.0" drag_strength="4.0"/>
+		<chassis body="body_chassis" mass="2500" center_of_mass_offset="0.0 0.0 0.0" inertia_multiplier="2.0 1.1 8.0" downforce_strength="15.0" drag_strength="4.0"/>
 		<wheels>
-			<wheel spin_object="anim_tire_front_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="1000" />
-			<wheel spin_object="anim_tire_front_left"   turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="1000" />
-			<wheel spin_object="anim_tire_rear_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1000" />
-			<wheel spin_object="anim_tire_rear_left"   	turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1000" />
+			<wheel spin_object="anim_tire_front_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_front_left"   turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_rear_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1500" />
+			<wheel spin_object="anim_tire_rear_left"   	turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1500" />
 		</wheels>
 		<suspension max_compression="0.05" max_extension="0.05" spring_strength="55000" damper_rate="5000" supported_mass="625" />
 		<gearbox switch_time="0.1" ratio_multiplier="4.0">

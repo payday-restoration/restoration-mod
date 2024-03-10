@@ -23321,7 +23321,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		stats = {
 			value = 10,
-			extra_ammo = 3,
+			damage = -90,
+			total_ammo_mod = 204,
 			extra_ammo = 3,
 			reload = -2,
 			spread = -4
@@ -23948,7 +23949,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				self.wpn_fps_snp_amr2.override = self.wpn_fps_snp_amr2.override or {}
 				self.wpn_fps_snp_amr2.override.wpn_fps_snp_model70_iron_sight = { 
-					adds = {"wpn_fps_gre_arbiter_o_standard"}
+					adds = {"wpn_fps_smg_hajk_o_standard"}
 				}
 				
 				self.wpn_fps_snp_amr2_npc.override = deep_clone(self.wpn_fps_snp_amr2.override)

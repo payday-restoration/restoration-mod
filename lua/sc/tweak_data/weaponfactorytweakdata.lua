@@ -4095,6 +4095,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	table.insert(self.wpn_fps_pis_g18c.uses_parts, "wpn_fps_upg_i_autofire")	
 	table.insert(self.wpn_fps_pis_g18c.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_g18c.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_g18c.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -6006,6 +6007,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_m14_legend")
 	--Vertical Grips
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_ass_m14.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")
 
@@ -6024,6 +6026,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 
 	self.wpn_fps_ass_m14.override = self.wpn_fps_ass_m14.override or {}
 
+	self.wpn_fps_ass_m14.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = { value = 0, recoil = 4, concealment = -2 }
+	}
 	self.wpn_fps_ass_m14.override.wpn_fps_upg_o_northtac = {
 		depends_on = "extra"
 	}
@@ -6304,6 +6309,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_i_autofire")
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_deagle_npc.uses_parts = deep_clone(self.wpn_fps_pis_deagle.uses_parts)
 
@@ -6586,6 +6592,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_1911_npc.uses_parts = deep_clone(self.wpn_fps_pis_1911.uses_parts)	
 
@@ -6962,6 +6969,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	table.insert(self.wpn_fps_pis_g17.uses_parts, "wpn_fps_pis_g18c_s_stock")
 
@@ -7050,6 +7058,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 	table.insert(self.wpn_fps_pis_beretta.uses_parts, "wpn_fps_upg_i_93r")
 	table.insert(self.wpn_fps_pis_beretta.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_beretta.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_beretta.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_beretta_npc.uses_parts = deep_clone(self.wpn_fps_pis_beretta.uses_parts)
 		
@@ -7270,6 +7279,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_i_tekna")
 	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_usp_npc.uses_parts = deep_clone(self.wpn_fps_pis_usp.uses_parts)	
 
@@ -7311,6 +7321,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 	
 	table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_g22c_npc.uses_parts = deep_clone(self.wpn_fps_pis_g22c.uses_parts)	
 	
@@ -7625,6 +7636,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ppk", "resmod_ppk", function(self)
 	table.insert(self.wpn_fps_pis_ppk.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_ppk.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_ppk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_ppk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_ppk_npc.uses_parts = deep_clone(self.wpn_fps_pis_ppk.uses_parts)		
 	
@@ -7952,6 +7964,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p226", "resmod_p226", function(sel
 	
 	table.insert(self.wpn_fps_pis_p226.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_p226.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_p226.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_p226_npc.uses_parts = deep_clone(self.wpn_fps_pis_p226.uses_parts)
 
@@ -9553,6 +9566,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_scorpion_s_unfolded")
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_scorpion.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_smg_scorpion.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folded_to_adj_rec2),
@@ -10931,6 +10945,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_pis_g18c_m_mag_33rnd")	
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_g26.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_g26_npc.uses_parts = deep_clone(self.wpn_fps_pis_g26.uses_parts)	
 
@@ -11371,6 +11386,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_c96_npc.uses_parts = deep_clone(self.wpn_fps_pis_c96.uses_parts)		
 	
@@ -11945,6 +11961,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hs2000", "resmod_hs2000", function
 	table.insert(self.wpn_fps_pis_hs2000.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_hs2000.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_hs2000.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_hs2000.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_hs2000_npc.uses_parts = deep_clone(self.wpn_fps_pis_hs2000.uses_parts)		
 	
@@ -13575,6 +13592,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mateba", "resmod_mateba", function
 	table.insert(self.wpn_fps_pis_2006m.uses_parts, "wpn_fps_upg_i_iw_hailstorm")
 	table.insert(self.wpn_fps_pis_2006m.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_2006m.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_2006m.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_2006m_npc.uses_parts = deep_clone(self.wpn_fps_pis_2006m.uses_parts)		
 
@@ -14175,11 +14193,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	self.parts.wpn_fps_smg_baka_s_unfolded.stats.value = 0
 	self.parts.wpn_fps_smg_baka_s_unfolded.custom_stats = deep_clone(stocks.unfold_folded_stats)
 
-	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")		
-	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")		
-	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_smg_schakal_vg_surefire")		
+	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_smg_baka.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
-	self.wpn_fps_smg_baka_npc.uses_parts = deep_clone(self.wpn_fps_smg_baka.uses_parts)	
+	self.wpn_fps_smg_baka_npc.uses_parts = deep_clone(self.wpn_fps_smg_baka.uses_parts)
 
 end)
 
@@ -14447,6 +14465,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 	table.insert(self.wpn_fps_pis_sparrow.uses_parts, "wpn_fps_pis_g18c_co_1")	
 	table.insert(self.wpn_fps_pis_sparrow.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_sparrow.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_sparrow.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_sparrow_npc.uses_parts = deep_clone(self.wpn_fps_pis_sparrow.uses_parts)	
 
@@ -14525,6 +14544,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 		wpn_fps_spec_bessy = {
 			translation = Vector3(0.05, -12, -4),
 			rotation = Rotation(0, 0, 0.01)
+		},
+
+		wpn_fps_snp_m200 = {
+			translation = Vector3(0, -2, -3.7),
+			rotation = Rotation(0, 0.2, 0.0)
+		},
+		wpn_fps_snp_amr2 = {
+			translation = Vector3(-0.01, 1, -3.08),
+			rotation = Rotation(0.02, -0.1, 0),
 		},
 		wpn_fps_snp_musket = {
 			translation = Vector3(0, -6, -3.9)
@@ -14719,6 +14747,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pl14", "resmod_pl14", function(sel
 	table.insert(self.wpn_fps_pis_pl14.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_pl14.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_pl14.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_pl14.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	
 	self.wpn_fps_pis_pl14_npc.uses_parts = deep_clone(self.wpn_fps_pis_pl14.uses_parts)
 
@@ -15147,6 +15176,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", functi
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
 	self.wpn_fps_pis_packrat_npc.uses_parts = deep_clone(self.wpn_fps_pis_packrat.uses_parts)
 
@@ -22095,7 +22125,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.supported = true
 	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_4_vari"
 	self.parts.wpn_fps_upg_o_schmidt.stats = {
-		zoom = 70,
+		zoom = 30,
+		base_zoom_off = 70,
 		value = 8
 	}
 	self.parts.wpn_fps_upg_o_schmidt.custom_stats = {
@@ -22107,20 +22138,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(0, -15, -0.8)
+			weap.translation = weap.translation + Vector3(0, -25, -0.8)
 		end
 	end
 	table.insert( self.parts.wpn_fps_upg_o_schmidt.forbids, "wpn_fps_ass_scar_o_flipups_up" )
 
 	self.parts.wpn_fps_upg_o_schmidt_magnified.supported = true
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stats = {
-		gadget_zoom = 30,
+		gadget_zoom = 70,
 		value = 1
 	}
 	self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt_magnified.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(0, -25, -0.8)
+			weap.translation = weap.translation + Vector3(0, -15, -0.8)
 		end
 	end
 
@@ -23291,6 +23322,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {
 			value = 10,
 			extra_ammo = 3,
+			extra_ammo = 3,
 			reload = -2,
 			spread = -4
 		},
@@ -23887,22 +23919,40 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_m200_supp.custom_stats = nil
 				self.parts.wpn_fps_upg_m200_supp.perks = {"silencer"}
 				
-				table.insert(self.wpn_fps_snp_m200.uses_parts, "wpn_fps_upg_i_iw_widowmaker")	
-				table.insert(self.wpn_fps_snp_m200_npc.uses_parts, "wpn_fps_upg_i_iw_widowmaker")	
+				table.insert(self.wpn_fps_snp_m200.uses_parts, "wpn_fps_upg_i_iw_widowmaker")
+				table.insert(self.wpn_fps_snp_m200.uses_parts, "wpn_fps_snp_model70_iron_sight")
+
+				self.wpn_fps_snp_m200.override = self.wpn_fps_snp_m200.override or {}
+				self.wpn_fps_snp_m200.override.wpn_fps_snp_model70_iron_sight = { 
+					adds = {"wpn_fps_gre_arbiter_o_standard"}
+				}
+				
+				self.wpn_fps_snp_m200_npc.override = deep_clone(self.wpn_fps_snp_m200.override)
+				self.wpn_fps_snp_m200_npc.uses_parts = deep_clone(self.wpn_fps_snp_m200.uses_parts)
 			end
 		
 			if self.parts.wpn_fps_upg_amr2_barrel_short then --Pawcio's AMR-2
-				self.parts.wpn_fps_upg_amr2_barrel_short.supported = true
-				self.parts.wpn_fps_upg_amr2_barrel_short.stats = deep_clone(barrels.short_b3_stats)
-				self.parts.wpn_fps_upg_amr2_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
-		
 				self.parts.wpn_fps_upg_amr2_bipod.supported = true
 				self.parts.wpn_fps_upg_amr2_bipod.stats = { value = 0 }
 				self.parts.wpn_fps_upg_amr2_bipod.custom_stats = nil
-		
 				self.parts.wpn_fps_snp_amr2_mag.supported = true
 				self.parts.wpn_fps_snp_amr2_mag.stats = { value = 0 }
 				self.parts.wpn_fps_snp_amr2_mag.custom_stats = nil
+				self.parts.wpn_fps_snp_amr2_bolt.override = {}
+
+				self.parts.wpn_fps_upg_amr2_barrel_short.supported = true
+				self.parts.wpn_fps_upg_amr2_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_upg_amr2_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+				table.insert(self.wpn_fps_snp_amr2.uses_parts, "wpn_fps_snp_model70_iron_sight")
+
+				self.wpn_fps_snp_amr2.override = self.wpn_fps_snp_amr2.override or {}
+				self.wpn_fps_snp_amr2.override.wpn_fps_snp_model70_iron_sight = { 
+					adds = {"wpn_fps_gre_arbiter_o_standard"}
+				}
+				
+				self.wpn_fps_snp_amr2_npc.override = deep_clone(self.wpn_fps_snp_amr2.override)
+				self.wpn_fps_snp_amr2_npc.uses_parts = deep_clone(self.wpn_fps_snp_amr2.uses_parts)
 			end
 		
 			if self.parts.wpn_fps_upg_m107cq_ammo_416 then --Pawcio's M107
@@ -35866,7 +35916,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	for part_id, k in pairs(self.parts) do
 		if self.parts[part_id] and self.parts[part_id].type and (self.parts[part_id].type == "sight" or self.parts[part_id].type == "second_sight") then
-			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
+			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.base_zoom_off or self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
 			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
 			if zoom >= 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then

@@ -816,7 +816,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.widowmaker then
 				self:weapon_tweak_data().tactical_reload = nil
 				self:weapon_tweak_data().BURST_FIRE = 2
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 12
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 17
 				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.1
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false

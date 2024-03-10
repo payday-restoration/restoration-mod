@@ -4567,7 +4567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 				--PRIMARIES
 
-					--Akimbo Geck M2 (Maxim 9)
+					--Akimbo Gecko M2 (Maxim 9)
 						self.x_maxim9.categories = {
 							"akimbo",
 							"pistol",
@@ -6080,7 +6080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_korth.damage_falloff = {
 							start_dist = 900,
 							end_dist = 4000,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.x_korth.stats = {
 							damage = 60,
@@ -6118,7 +6118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_2006m.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4200,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.x_2006m.stats = {
 							damage = 60,
@@ -6159,7 +6159,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_model3.damage_falloff = {
 							start_dist = 1000,
 							end_dist = 3800,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.x_model3.stats = {
 							damage = 60,
@@ -6199,7 +6199,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_rage.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4000,
-							min_mult = 0.3
+							min_mult = 0.3333
 						}
 						self.x_rage.stats = {
 							damage = 60,
@@ -6242,7 +6242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_chinchilla.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 4500,
-							min_mult = 0.3
+							min_mult = 0.3333
 						}
 						self.x_chinchilla.stats = {
 							damage = 60,
@@ -6582,7 +6582,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.damage_falloff = {
 							start_dist = 900,
 							end_dist = 4000,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.korth.stats = {
 							damage = 60,
@@ -6620,7 +6620,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mateba.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4200,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.mateba.stats = {
 							damage = 60,
@@ -6655,7 +6655,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.damage_falloff = {
 							start_dist = 1000,
 							end_dist = 3800,
-							min_mult = 0.2
+							min_mult = 0.25
 						}
 						self.model3.stats = {
 							damage = 60,
@@ -6692,7 +6692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_raging_bull.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4000,
-							min_mult = 0.3
+							min_mult = 0.3333
 						}
 						self.new_raging_bull.stats = {
 							damage = 60,
@@ -6730,7 +6730,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.chinchilla.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 4500,
-							min_mult = 0.3
+							min_mult = 0.3333
 						}
 						self.chinchilla.stats = {
 							damage = 60,
@@ -13697,7 +13697,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.derringer.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 3200,
-					min_mult = 0.1111
+					min_mult = 0.16667
 				}
 				self.derringer.stats = {
 					damage = 90,
@@ -13828,7 +13828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lapd.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4800,
-					min_mult = 0.3
+					min_mult = 0.3333
 				}
 				self.lapd.stats = {
 					damage = 60,
@@ -14128,7 +14128,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mars.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3200,
-					min_mult = 0.2
+					min_mult = 0.22222
 				}
 				self.mars.stats = {
 					damage = 90,
@@ -16962,7 +16962,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.rc_auto9 then
 				self.rc_auto9.use_data.selection_index = 2
-				self.rc_auto9.recategorize = { "heavy_pis" }
+				self.rc_auto9.recategorize = { "light_pis" }
 				self.rc_auto9.has_description = true
 				self.rc_auto9.damage_type = "pistol"
 				self.rc_auto9.BURST_FIRE = 3
@@ -17864,6 +17864,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.tkb0146.stats_modifiers = nil
 				self.tkb0146.panic_suppression_chance = 0.05
+				self.tkb0146.timers.reload_empty = 3.63
+				self.tkb0146.timers.reload_exit_empty = 0.65
+				self.tkb0146.timers.reload_not_empty = 2.2
+				self.tkb0146.timers.reload_exit_not_empty = 0.45
 			end
 		
 		--[[     TANGERINE'S MODS     ]]--

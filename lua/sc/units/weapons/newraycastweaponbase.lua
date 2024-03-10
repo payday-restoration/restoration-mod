@@ -402,7 +402,7 @@ function NewRaycastWeaponBase:stop_shooting(...)
 	if self._fire_rate_init_progress then
 		self._fire_rate_init_progress = nil
 		self._fire_rate_init_cancel = true
-		self._next_fire_allowed = self._next_fire_allowed + self._burst_delay
+		self._next_fire_allowed = self._next_fire_allowed + self._fire_rate_init_delay
 	end
 	if self._name_id == "m134" or self._name_id == "shuno" or self:weapon_tweak_data().spin_up_t then
 		self._vulcan_firing = nil
@@ -661,6 +661,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	
 		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
 		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
+		self._fire_rate_init_delay = self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
 		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
 	else	
@@ -1445,6 +1446,7 @@ function NewRaycastWeaponBase:_check_toggle_burst()
 			return true
 		elseif (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE) or (self._fire_mode == NewRaycastWeaponBase.IDSTRING_AUTO and not self:can_toggle_firemode()) then
 			self:_set_burst_mode(true, self.AKIMBO)
+			self._fire_rate_init_progress = nil
 			return true
 		end
 	end

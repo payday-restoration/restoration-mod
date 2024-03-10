@@ -324,6 +324,7 @@
 					<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>
 				<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>
 				<hook file="sc/units/vehicles/animatedvehiclebase.lua" source_file="lib/units/vehicles/animatedvehiclebase"/>
+				<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 				<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 				<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
 				<hook file="sc/units/pickups/gageassignmentbase.lua" source_file="lib/units/pickups/gageassignmentbase"/>
@@ -414,6 +415,7 @@
 		<hook file="sc/mutators/new/mutatorcaptainreplacer.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorspoocsquad.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatornooutlines.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorvanillapolicecall.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>

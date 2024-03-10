@@ -1026,6 +1026,25 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_winters_test_desc"] = "Kill Captain Winters while he holding shield with only using Switchblade or Wing Butterfly Knife",
 		["ch_spring_test"] = "Mine's Bigger Than Yours",
 		["ch_spring_test_desc"] = "Kill Captain Spring with only using Vulcan Minigun or XL 5.56 Microgun",
+		
+		["ch_pdth_style_fwb"] = "Old School: First World Bank",
+		["ch_pdth_style_fwb_desc"] = "Complete First World Bank on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_heat"] = "Old School: Heat Street",
+		["ch_pdth_style_heat_desc"] = "Complete Heat Street on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_panic"] = "Old School: Panic Room",
+		["ch_pdth_style_panic_desc"] = "Complete Panic Room on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_bridge"] = "Old School: Green Bridge",
+		["ch_pdth_style_bridge_desc"] = "Complete Green Bridge on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_diamond"] = "Old School: Diamond Heist",
+		["ch_pdth_style_diamond_desc"] = "Complete Diamond Heist on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_slaughterhouse"] = "Old School: Slaughterhouse",
+		["ch_pdth_style_slaughterhouse_desc"] = "Complete Slaughterhouse on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_counterfeit"] = "Old School: Counterfeit",
+		["ch_pdth_style_counterfeit_desc"] = "Complete Counterfeit on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_undercover"] = "Old School: Undercover",
+		["ch_pdth_style_undercover_desc"] = "Complete Undercover on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_nomercy"] = "Old School: No Mercy",
+		["ch_pdth_style_nomercy_desc"] = "Complete No Mercy on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH ",
 
         ["test_net"] = "Fast.Net",
         ["menu_test"] = "",
@@ -5034,7 +5053,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_spoocsquad"] = "鬼鬼祟祟",
         ["mutator_spoocsquad_desc"] = "幻影特工一组一组地生成。",
         ["mutator_spoocsquad_longdesc"] = "幻影特工一组一组地生成。",
-
+		
+		["mutator_vanilla_police_call"] = "Intruder Alert",
+		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
+		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
         -- Crime spree modifier changes
         ["cn_crime_spree_brief"] = "\"罪无止境\"是一系列随机选取并需要连续完成的劫案组合。你完成的每次一次劫案都会为你增加罪无止境等级与奖励。每过20级或26级，你都需要选择一次附加难度因子；每过100级都会增加劫案的基础难度(如枪林弹雨到祸乱横行)，这会使劫案更难完成。等级600之后，玩家的无敌帧将会逐渐减少，Bravo临界反应部队将会开始生成。\n\n##如果你想邀请你的好友一起玩，请先确保他们开始了罪无止境以一起获得等级和奖励##",
         ["menu_cs_next_modifier_forced"] = "",

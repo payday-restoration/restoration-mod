@@ -20,12 +20,12 @@ local enabled_chance_helipad_dozer = math.random() < diff_scaling
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
+		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 		swat_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 		swat_smg = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 		swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
@@ -55,11 +55,13 @@ local optsCloaker = {
     enemy = cloaker,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_climb_up_3m_down_1m",
+	on_executed = { 
+		{ id = 400078, delay = 4.5 } 
+	},
     enabled = true
 }
 local optsSniperAmbush_1 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400014, delay = 0 },
     },
@@ -67,7 +69,6 @@ local optsSniperAmbush_1 = {
 }
 local optsSniperAmbush_2 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400017, delay = 0 },
     },
@@ -75,7 +76,6 @@ local optsSniperAmbush_2 = {
 }
 local optsSniperAmbush_3 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400016, delay = 0 },
     },
@@ -83,7 +83,6 @@ local optsSniperAmbush_3 = {
 }
 local optsSniperAmbush_4 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400015, delay = 0 },
     },
@@ -91,7 +90,6 @@ local optsSniperAmbush_4 = {
 }
 local optsSniper_escape = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400060, delay = 5 },
     },
@@ -100,7 +98,6 @@ local optsSniper_escape = {
 }
 local optsSniper_1 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400074, delay = 2.5 },
     },
@@ -109,7 +106,6 @@ local optsSniper_1 = {
 }
 local optsSniper_2 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400075, delay = 2.5 },
     },
@@ -122,7 +118,6 @@ local optsShield_roofblockade_1 = {
 		{ id = 400051, delay = 3 } 
 	},
 	spawn_action = "e_sp_clk_3_5m_dwn_vent_var2",
-	participate_to_group_ai = true,
     enabled = overkill_above
 }
 local optsShield_roofblockade_2 = {
@@ -131,7 +126,6 @@ local optsShield_roofblockade_2 = {
 		{ id = 400052, delay = 3 } 
 	},
 	spawn_action = "e_sp_clk_3_5m_dwn_vent_var2",
-	participate_to_group_ai = true,
     enabled = overkill_above
 }
 local optsShield_roofblockade_3 = {
@@ -140,7 +134,6 @@ local optsShield_roofblockade_3 = {
 		{ id = 400057, delay = 4.5 } 
 	},
 	spawn_action = "e_sp_climb_up_3m_down_1m",
-	participate_to_group_ai = true,
     enabled = overkill_above
 }
 local optsShield_roofblockade_4 = {
@@ -149,12 +142,10 @@ local optsShield_roofblockade_4 = {
 		{ id = 400058, delay = 4.5 } 
 	},
 	spawn_action = "e_sp_climb_up_3m_down_1m",
-	participate_to_group_ai = true,
     enabled = overkill_above
 }
 local optsTaser_roofblockade_1 = {
     enemy = taser,
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400050, delay = 3 } 
 	},
@@ -163,7 +154,6 @@ local optsTaser_roofblockade_1 = {
 }
 local optsTaser_roofblockade_2 = {
     enemy = taser,
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400056, delay = 4.5 } 
 	},
@@ -185,7 +175,6 @@ local optsBulldozer_helipad = {
 }
 local optsShield_helipad_1 = {
     enemy = shield,
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400070, delay = 0 } 
 	},
@@ -193,7 +182,6 @@ local optsShield_helipad_1 = {
 }
 local optsShield_helipad_2 = {
     enemy = shield,
-	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400071, delay = 0 } 
 	},
@@ -261,6 +249,13 @@ local optsDefendDozer_SO = {
 	align_rotation = true,
 	interval = 2,
     so_action = "AI_defend"
+}
+local optsCloaker_SO = {
+    SO_access = "1024",
+	path_style = "none",
+	scan = true,
+	interval = 2,
+    so_action = "AI_hunt"
 }
 local optsrespawn_taser_and_shields_1 = {
 	on_executed = { 
@@ -846,6 +841,13 @@ return {
             400077,
             "disable_snipers",
             disable_snipers
+        ),
+		restoration:gen_so(
+            400078,
+            "cloaker_hunt_so",
+            Vector3(-100, -1903, 1175),
+            Rotation(90, -0, -0),
+            optsCloaker_SO
         )
     }
 }

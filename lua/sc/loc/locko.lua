@@ -958,6 +958,25 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_spring_test"] = "Mine's Bigger Than Yours",
 		["ch_spring_test_desc"] = "Kill Captain Spring with only using Vulcan Minigun or XL 5.56 Microgun",
 		
+		["ch_pdth_style_fwb"] = "Old School: First World Bank",
+		["ch_pdth_style_fwb_desc"] = "Complete First World Bank on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_heat"] = "Old School: Heat Street",
+		["ch_pdth_style_heat_desc"] = "Complete Heat Street on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_panic"] = "Old School: Panic Room",
+		["ch_pdth_style_panic_desc"] = "Complete Panic Room on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_bridge"] = "Old School: Green Bridge",
+		["ch_pdth_style_bridge_desc"] = "Complete Green Bridge on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_diamond"] = "Old School: Diamond Heist",
+		["ch_pdth_style_diamond_desc"] = "Complete Diamond Heist on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_slaughterhouse"] = "Old School: Slaughterhouse",
+		["ch_pdth_style_slaughterhouse_desc"] = "Complete Slaughterhouse on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_counterfeit"] = "Old School: Counterfeit",
+		["ch_pdth_style_counterfeit_desc"] = "Complete Counterfeit on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_undercover"] = "Old School: Undercover",
+		["ch_pdth_style_undercover_desc"] = "Complete Undercover on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_nomercy"] = "Old School: No Mercy",
+		["ch_pdth_style_nomercy_desc"] = "Complete No Mercy on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH ",
+		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
 		["state_filter"] = "State",
@@ -2092,32 +2111,74 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_swing_arc_charge_h_1"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_2"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#더 넓은## 스윙 범위를 가지고 있습니다.",
 		["bm_melee_swing_arc_charge_h_3"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#매우 넓은## 스윙 범위를 가지고 있습니다.",
-		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가지고 있습니다.",		
-		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 기동성에 따라 결정됩니다.",		
+		["bm_melee_swing_arc_charge_h_4"] = "옆으로 움직일 때 충전 공격은 #{skill_color}#엄청나게 넓은## 스윙 범위를 가지고 있습니다.",
+
+		--Attack patterns
+		["bm_melee_pattern_knife"] = "빠른 찌르기로 공격하거나 충전하여 더 넓은 베기를 할 수 있습니다.",
+		["bm_melee_pattern_knife2"] = "일제한 베기로 공격합니다. 좌우로 움직임에 따라 공격 방향에 영향을 미칩니다.",
+		["bm_melee_pattern_boxcutter"] = "일제한 베기로 공격합니다.", --Also works with "melee_catch"
+		["bm_melee_pattern_blunt"] = "하향 스윙으로 공격하거나 충전하여 더 넓은 스윙으로 공격할 수 있습니다.", --Also works with "melee_brick"
+		["bm_melee_pattern_axe"] = "하향 스윙으로 공격합니다.", --Also works with the icepick
+		["bm_melee_pattern_cs"] = "하향 베기로 공격하거나 옆으로 움직여 전면 베기로 공격할 수 있습니다.",
+		["bm_melee_pattern_great"] = "하향 베기로 공격하거나 옆으로 움직여 전면 베기로 공격할 수 있습니다.",
+			["bm_melee_pattern_great_blunt"] = "하향 스윙으로 공격하거나 옆으로 움직여 넓은 스윙으로 공격합니다.",
+			["bm_melee_pattern_great_no_stab"] = "하향 스윙으로 공격하고, 옆으로 움직여 전면 베기를 하거나, 충전하여 찌르기를 가합니다.",
+		["bm_melee_pattern_katana"] = "대각선 베기로 공격하거나 옆으로 움직여 전면 베기를 할 수 있습니다.",
+		["bm_melee_pattern_boxing"] = "빠른 잽으로 공격하거나 충전하여 훅 또는 어퍼컷을 수행합니다. 좌우로 움직임에 따라 공격 방향에 영향을 미칩니다.",
+
+
+		--Weapon Butt
+		["bm_melee_weapon_info"] = "무장 강도 사건에서 총기로 피해자를 구타하는 것은 쏘거나 찌르는 것보다는 일반적으로 더 보통입니다.\n\n반복적으로 휘두르는 사이의 지연은 사용 중인 무기의 기동성에 따라 결정됩니다.",
+
+
+
+		--URSA/USMC KA-BAR
+		["bm_melee_kabar_desc"] = "URSA 칼은 1942년에 제작되었으며 내구성이 뛰어나고 파괴시키기 힘든 전투 및 만능 칼입니다.\n보위 블레이드, 톱니 모양의 가장자리, 말도 안 될거 같은 클래식.",
+
+		--Katana
 		["bm_melee_katana_info"] = "신사쿠토 카타나는 걸작이지만 새로 단조된 작품이기도 합니다. 이 카타나는 피를 맛본 적이 없고, 진정한 유산이나 역사도 없습니다. 단지 그것을 이루워 줄 수 있는 주인을 기다리고 있을 뿐입니다.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.\n\n지로로 플레이하는 동안, 완전 충전 공격으로 클로커를 죽이면 스폐셜 킬을 발동시킵니다.",
 		["bm_melee_raiden_info"] = "그건 네 손에 있는 #{important_1}#\"정의의 도구\"## 따위가 아니야.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
 		["bm_melee_thejobissnotyours_info"] = "이건 네놈의 검 따위가 아니지.\n\n완전 충전일때 #{skill_color}#50%## 더 빨리 휘둘려 다음 공격을 빠르게 할 수 있습니다.",
-		["bm_melee_2077tkata_info"] = "나노 필라멘트로 구성된 가열 칼날입니다.\n추가 기능과 수정 없고 카타나의 가장 순수한 본질로만 이루워져있고 뜨거운 강철을 찢어버립니다.\n\n완전히 충전한 채 공격하면 #{heat_warm_color}#적을 불태워## #{skill_color}#3##초에 걸쳐 #{heat_warm_color}#120##의 화염 피해를 가합니다.",		
-		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.", --Buckler Shield
-		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.", --Briefcase		
+		["bm_melee_2077tkata_info"] = "나노 필라멘트로 구성된 가열 칼날입니다.\n추가 기능과 수정 없고 카타나의 가장 순수한 본질로만 이루워져있고 뜨거운 강철을 찢어버립니다.\n\n완전히 충전한 채 공격하면 #{heat_warm_color}#적을 불태워## #{skill_color}#3##초에 걸쳐 #{heat_warm_color}#120##의 화염 피해를 가합니다.",
+
+		--Buckler Shield
+		["bm_melee_buck_info"] = "현대 무기에도 통한다는게 놀라울 정도로 효과적입니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.",
+
+		--Briefcase
+		["bm_melee_briefcase_info"] = "안에 뭐가 들어있든 간에, 그 서류 가방 자체는 놀랍도록 탄력이 뛰어납니다.\n\n충전하는 동안 받는 원거리 피해가 #{skill_color}#10%## 감소합니다.",
+		
 		["bm_melee_pitch_info"] = "피치로 찌르고 몇몇 피치들을 찌르자.\n\n전력 질주를 할 때 앞으로 전진하는 동안 #{skill_color}#0.4##초마다 전방의 대상에게 #{skill_color}#45##의 피해를 가합니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 #{important_1}#15%##가 소모되고, 적을 죽이면 스태미나를 #{skill_color}#10%##만큼 회복합니다.\n\n#{important_1}#전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.##", --Randal Pitchfork		
 		["bm_melee_charge_info"] = "전력 질주를 할 때 앞으로 전진하는 동안 #{skill_color}#0.4##초마다 전방의 대상에게 #{skill_color}#45##의 피해를 가합니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n전력 질주 중에 적을 맞추면 최대 스태미나의 #{skill_color}#15%##가 소모되고, 적을 죽이면 스태미나를 #{skill_color}#10%##만큼 회복합니다.\n\n#{important_1}#전력 질주 충전이 아닐 때도 적의 공격을 반격할 수 없습니다.##",	
-		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 #{skill_color}#0.25##초마다 전방의 대상에게 #{skill_color}#30##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 #{skill_color}#0.18##초마다 전방의 대상에게 #{skill_color}#18##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##", --Kazaguruma
-		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 #{skill_color}#400%##의 피해를 줍니다.",-- Wing Butterfly Knife
-		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 #{skill_color}#200%##의 피해를 줍니다.",-- Switchblade Knife
-		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- Psycho Knife
-		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- Headless Dozer Sword
-		["bm_melee_goat_info"] = "\"그건 검이라 하기엔 너무나 컸다. 엄청나게 크고, 두껍고, 무겁고, 그리고 조잡했다. 그것은 그야말로 철괴였다.\"\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.", -- im not gaj		
-		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- Great Sword
-		["bm_melee_freedom_info"] = "흰색과 번갈아 가는 빨간색 줄무늬 13 줄과 주에 있는 파란색 직사각형, 작은 흰색 다섯개 별 50 개, 애국심 한 꼬집, 자유의 컵 두 개가 있는 부러진 깃대입니다.\n\n짜짠, 당신은 치명적인 무기를 가지고 있습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- wtf	
-		["bm_melee_jebus_info"] = "빛과 어둠.\n\n흑백과 백색.\n\n생명과 죽음.\n\n바이너리 소드는 상대방을 자르기 때문에 중간 지점이 없습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",		
-		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.", -- Pounder
-		["bm_melee_thebestweapon_info"] = "#{skill_color}#게임에서 나오는 최고의 무기.##",
-		["bm_melee_iceaxe_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.", -- Icepick
-		["bm_melee_mining_pick_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.", --Gold Fever (Pickaxe)
-		["bm_melee_boxing_gloves_info"] = "난 벨을 울린걸 들은 적 없는데.\n\nOVERKILL 권투 글러브로 적을 처치하면 #{skill_color}#즉시 스태미나가 채워집니다.##", -- OVERKILL Boxing Gloves
-		["bm_melee_clean_info"] = "경찰이 필요로 하는 깨끗한 면도를 제공하십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.", --Alabama Razor
+		--ROAMING FROTHING MADNESS
+		["bm_melee_cs_info"] = "찢고 죽여라, 모두 끝날때 까지.\n\n충전하는 동안 #{skill_color}#0.25##초마다 전방의 대상에게 #{skill_color}#30##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##",
+		--Kazaguruma
+		["bm_melee_ostry_info"] = "돌려라아아아아~\n\n충전하는 동안 #{skill_color}#0.18##초마다 전방의 대상에게 #{skill_color}#18##의 피해를 줍니다. 피해량은 스킬로 늘릴 수 있습니다.\n\n#{important_1}#적의 근접 공격을 반격할 수 없습니다.##",
+		--Wing Butterfly Knife
+		["bm_melee_wing_info"] = "변장 도구와 잘 어울릴거 같습니다!\n\n뒤에서 적을 공격하면 #{skill_color}#400%##의 피해를 줍니다.",
+		--Switchblade Knife
+		["bm_melee_switchblade_info"] = "폭력을 위해 설계되었으며 리볼버처럼 치명적입니다. 이것이 바로 스위치블레이드입니다!\n\n뒤에서 적을 공격할 때 #{skill_color}#200%##의 피해를 줍니다.",
+		--Psycho Knife
+		["bm_melee_chef_info"] = "이것이 슈퍼마켓에서 고기를 자르는 데 사용되었는지 확실하지 않습니다.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+		--Headless Dozer Sword
+		["bm_melee_headless_sword_info"] = "악몽에서 위조한 검.\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+			--im not gaj
+			["bm_melee_goat_info"] = "\"그건 검이라 하기엔 너무나 컸다. 엄청나게 크고, 두껍고, 무겁고, 그리고 조잡했다. 그것은 그야말로 철괴였다.\"\n\n완전히 충전된 상태로 공격하면 주변 #{skill_color}#12##미터 반경 내에 있는 적들에게 패닉을 퍼트립니다.",
+		--Wt ring u got bithc?	
+		["bm_melee_great_info"] = "스러스트 공격을 시도했지만 곤경에 처했습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",
+			--Jebus
+			["bm_melee_jebus_info"] = "빛과 어둠.\n\n흑백과 백색.\n\n생명과 죽음.\n\n바이너리 소드는 상대방을 자르기 때문에 중간 지점이 없습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.",
+		--FREEDOM ISN'T FREE
+		["bm_melee_freedom_info"] = "흰색과 번갈아 가는 빨간색 줄무늬 13 줄과 주에 있는 파란색 직사각형, 작은 흰색 다섯개 별 50 개, 애국심 한 꼬집, 자유의 컵 두 개가 있는 부러진 깃대입니다.\n\n짜짠, 당신은 치명적인 무기를 가지고 있습니다.\n\n차지 공격을 #{skill_color}#90%## 이상 충전하면 찌르기를 하여 사거리를 #{skill_color}#0.5##미터 확장합니다.", -- wtf			
+		--Pounder Nailgun
+		["bm_melee_nin_info"] = "유효사거리가 짧고 아주 빠른 못을 발사합니다. 여전히 근접 킬로 간주됩니다.",
+			["bm_melee_thebestweapon_info"] = "#{skill_color}#게임에서 나오는 최고의 무기.##",
+		--Icepick
+		["bm_melee_iceaxe_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.",
+		--Gold Fever (Pickaxe)
+		["bm_melee_mining_pick_info"] = "헤드샷 피해를 #{skill_color}#50%##만큼 많이 줍니다.",
+		--OVERKILL Boxing Gloves
+		["bm_melee_boxing_gloves_info"] = "난 벨을 울린걸 들은 적 없는데.\n\nOVERKILL 권투 글러브로 적을 처치하면 #{skill_color}#즉시 스태미나가 채워집니다.##",
+		["bm_melee_clean_info"] = "경찰이 필요로 하는 깨끗한 면도를 제공하십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",
 		["bm_melee_barbedwire_info"] = "여생에서 불쌍한 놈을 기다리지 않아... 그리고 난 그냥... 망할 야구 방망이와 이야기하고 있잖아!\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.", --Lucille Baseball Bat
 		["bm_melee_bleed_info"] = "#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",
 		["bm_melee_inner_child_info"] = "내면의 아이와 소통해보십시오.\n\n#{skill_color}#3##초 동안 #{skill_color}#120##의 출혈 피해를 가합니다.",		
@@ -2136,7 +2197,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "데드맨의 곡선",		
-		["bm_melee_revenant_heirloom_info"] = "낮은 충전으로 공격하면 휘두를 때 빠른 잽을 합니다.\n\n최소 #{skill_color}#25%## 충전한 상태로 공격하면 전면 베기를 합니다.",
+		["bm_melee_revenant_heirloom_info"] = "낮은 충전으로 공격하면 무기 개머리판으로 빠른 잽을 날립니다.\n\n최소 #{skill_color}#50%## 이상 충전한 상태로 공격하면 전면 베기를 합니다.",
 		["bm_melee_megumins_staff_info"] = "완전 충전하여 강력한 폭발을 시전하세요!\n모든 표면이나 존재에 최대 #{skill_color}#30##미터까지 시전할 수 있으며 #{risk}#공중에서는 시전이 불가능합니다.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",		
 		
 		["bm_menu_weapon_bayonet_header"] = "주무기 통계 기준:",
@@ -2353,6 +2414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_attack_speed"] = "반복 지연",
 		["bm_menu_impact_delay"] = "임팩트 지연",
+		["bm_menu_cleave"] = "갈라짐",
 		
 		["bm_menu_stats_detection"] = "착용감",
 		["bm_menu_stats_min_detection"] = "착용감",
@@ -4880,6 +4942,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_spoocsquad"] = "비열한 분대",
 		["mutator_spoocsquad_desc"] = "클로커가 그룹으로 생성되는 경우가 있습니다.",
 		["mutator_spoocsquad_longdesc"] = "클로커가 그룹으로 생성되는 경우가 있습니다.",
+		
+		["mutator_vanilla_police_call"] = "Intruder Alert",
+		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
+		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -5039,21 +5105,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Underdog--
 			["menu_underdog_beta_sc"] = "언더독",
-			["menu_underdog_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 공격력이 #{skill_color}#10%## 증가합니다.\n\n에이스: #{owned}#$pro##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#7##초 동안 입는 피해가 #{skill_color}#10%## 감소합니다.",
+			["menu_underdog_beta_desc_sc"] = "베이직: #{owned}#$basic##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#$skill_value_b2##초 동안 공격력이 #{skill_color}#$skill_value_b1## 증가합니다.\n\n에이스: #{owned}#$pro##\n반경 #{skill_color}#18##미터 내에 적이 세 명 이상 있을 경우, #{skill_color}#$skill_value_p2##초 동안 입는 피해가 #{skill_color}#$skill_value_p1## 감소합니다.",
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
-			["menu_shotgun_cqb_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#7.5%##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
+			["menu_shotgun_cqb_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 조준 속도와 전력 질주 후 사격 속도가 #{skill_color}#$skill_value_b1##만큼 빨라집니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##의 장전속도가 #{skill_color}#$skill_value_p1##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 타격",
-			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 펠릿이 #{skill_color}#3##발 더 발사됩니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
-			["menu_shotgun_impact_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#2##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 최소 데미지가 #{skill_color}#25%## 증가합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
+			["menu_shotgun_impact_beta_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 펠릿이 #{skill_color}#$skill_value_p1## 더 발사됩니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
+			["menu_shotgun_impact_per_pellet_desc_sc"] = "베이직: #{owned}#$basic##\n#{skill_color}#산탄총과 화염방사기##의 안정성이 #{skill_color}#$skill_value_b1##만큼 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총##의 최소 데미지가 #{skill_color}#$skill_value_p1## 증가합니다.\n\n#{risk}#참고: 슬러그탄과 폭발탄을 사용하는 #{skill_color}#산탄총##에는 적용되지 않습니다.##",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
-			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n여러 발사체를 발사하는 #{skill_color}#산탄총##을 사용할 때, 발사된 각 발사체는 적 #{skill_color}#1##명을 관통할 수 있으며 방탄복을 관통하여 #{skill_color}#25%##의 피해를 가합니다.\n\n#{skill_color}#산탄총##이 방탄복 관통을 가지고 있을 경우 스킬의 효과가 최대 #{skill_color}#100%##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##30%##만큼 증가합니다.",
+			["menu_far_away_beta_desc_sc"] = "베이직: #{owned}#$basic##\n여러 발사체를 발사하는 #{skill_color}#산탄총##을 사용할 때, 발사된 각 발사체는 적 #{skill_color}#1##명을 관통할 수 있으며 방탄복을 관통하여 #{skill_color}#$skill_value_b1##의 피해를 가합니다.\n\n#{skill_color}#산탄총##이 방탄복 관통을 가지고 있을 경우 스킬의 효과가 최대 #{skill_color}#100%##까지 증가합니다.\n\n에이스: #{owned}#$pro##\n#{skill_color}#산탄총과 화염방사기##로 조준하는 동안 산탄총과 화염방사기의 명중률과 사거리가 ##$skill_value_p1##만큼 증가합니다.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
@@ -5529,11 +5595,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(야쿠자 특성 덱 효과로 의해 부스트 받았습니다)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#8##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#10##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#1.5##초씩 단축됩니다.",
+		["menu_deck21_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#10##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#10##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#1.6##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#2##초씩 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
-		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##6##만큼 회복됩니다.",
+		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 체력이 ##5##만큼 회복됩니다.",
 		["menu_deck21_7_desc_sc"] = "모든 방탄복의 회복 시간이 ##10%##만큼 감소합니다.\n\n회피 포인트가 ##10##만큼 추가로 증가합니다.",
-		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##3##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
+		["menu_deck21_9_desc_sc"] = "피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 체력이 ##2.5##만큼 회복됩니다.\n\n덱 완성 보너스: PAYDAY 카드에서 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.",
@@ -5628,7 +5694,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#기체 디스펜서##를 잠금 해제합니다.\n\n기체 디스펜서를 활성화하려면 #{skill_color}#18##미터 내에 있는 동료를 보고 투척 무기 사용 키를 눌러 태그로 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 #{skill_color}#4##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 #{skill_color}#2##만큼 회복합니다.\n\n효과는 #{skill_color}#11##초 동안 지속되며 재사용 대기시간은 #{important_1}#80##초입니다.\n\n카메라 루프 지속 시간이 #{skill_color}#20##초로 증가합니다.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#8##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#10##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#2##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#1.5##초씩 단축됩니다.",
+			["menu_deck21_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#휴대용 ECM 장치##를 잠금 해제합니다.\n\n휴대용 ECM의 지속 시간은 #{skill_color}#10##초입니다.\n\n알람이 울리기 전에 활성화하면 재밍 효과가 발생하여 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 뒤에는 활성화하면 #{skill_color}#10##미터 반경을 가진 피드백 효과가 발생합니다. #{skill_color}#첫 번째## 피드백 루프는 #{skill_color}#100%##의 확률로 대부분의 적을 스턴시키고, 이후 #{skill_color}#1.6##초마다 #{skill_color}#60%##의 확률로 스턴시킵니다.\n\n휴대용 ECM 재머는 #{important_1}#80##초의 재사용 대기시간이 있으며, 적을 처치할 때마다 재사용 대기시간이 #{skill_color}#2##초씩 단축됩니다.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "투척 무기 대신 사용할 수 있는 #{skill_color}#리치 약병##을 잠금 해제합니다.\n\n약병을 사용하면 최대 체력의 #{skill_color}#2.5%##를 회복하고 #{important_1}#6##초 동안 #{risk}#방탄력을 비활성화합니다.##\n\n활성화되어 있는 동안, 체력이 #{skill_color}#10%## 단위로 분할되며 피해를 받으면 하나의 단위가 제거됩니다. 적 #{skill_color}#3##명을 죽이면 체력의 한 분할을 회복하고 #{skill_color}#1##초 동안 피해를 차단합니다.\n\n리치 약병의 재사용 대기시간은 #{important_1}#40##초입니다.\n\n시체 가방을 싸는 시간과 인질을 상호작용 하는 속도가 #{skill_color}#75%##만큼 빨라집니다.",
 

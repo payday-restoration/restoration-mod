@@ -483,6 +483,8 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 	if not pager_data then
 		return
 	end
+	
+	local vanilla_behavior = managers.mutators:modify_value("CopBrain:VanillaPoliceCall", false)
 
 	if status == "started" then
 		self._unit:sound():stop()
@@ -528,12 +530,16 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 		else
 			self._unit:interaction():set_active(false, true)
 			
-			--Unconvincing pager response
-			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
-			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.15
-			managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
+			if not vanilla_behavior then			
+				--Unconvincing pager response
+				managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
+				managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+				managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+				managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.15
+				managers.groupai:state():_delay_whisper_suspicion_mul_decay()
+			else
+				managers.groupai:state():on_police_called("alarm_pager_bluff_failed")
+			end
 
 			if is_dead then
 				self._unit:sound():corpse_play(self:_get_radio_id("dsp_radio_fooled_4"), nil, true)
@@ -549,12 +555,16 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 			self._unit:interaction():set_active(false, true)
 		end
 	elseif status == "interrupted" then
-		--Suspicion Increase from an interrupted pager
-		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
-		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
-		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
+		if not vanilla_behavior then
+			--Suspicion Increase from an interrupted pager
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()
+		else
+			managers.groupai:state():on_police_called("alarm_pager_hang_up")
+		end
 		
 		--Tutorial Heists will sound an alarm to prevent a soft lock
 		local job = Global.level_data and Global.level_data.level_id
@@ -626,12 +636,17 @@ function CopBrain:clbk_alarm_pager(ignore_this, data)
 			self._unit:sound():play(self:_get_radio_id("dsp_radio_reminder_1"), nil, true)
 		end			
 
-		--Suspicion Increase from a dropped pager
-		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
-		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
-		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
+		local vanilla_behavior = managers.mutators:modify_value("CopBrain:VanillaPoliceCall", false)
+		if not vanilla_behavior then
+			--Suspicion Increase from a dropped pager
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()	
+		else
+			managers.groupai:state():on_police_called("alarm_pager_not_answered")
+		end
 
 		--Tutorial Heists will sound an alarm to prevent a soft lock
 		local job = Global.level_data and Global.level_data.level_id

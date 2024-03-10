@@ -1000,6 +1000,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -45 or -6,
+					total_ammo_mod = per_pellet and -49 or -68,
 					spread = 5
 				},
 				custom_stats = {
@@ -1007,11 +1008,11 @@ local grips = {
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.5 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
+					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
 					hs_mult = 2,
 					hs_mult_desc = true,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
 					damage_min_mult = 5,
 					armor_piercing_add = 1,		
@@ -1035,6 +1036,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -60 or -15,
+					total_ammo_mod = per_pellet and -68 or -52,
 					spread = 5
 				},
 				custom_stats = {
@@ -1042,11 +1044,11 @@ local grips = {
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.5 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
+					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
 					hs_mult = 2,
 					hs_mult_desc = true,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
 					damage_min_mult = per_pellet and 6 or 6.666666,
 					armor_piercing_add = 1,
@@ -1070,18 +1072,19 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -90 or -30,
+					total_ammo_mod = per_pellet and -52 or -68,
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.35 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
+					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
 					hs_mult = 2,
 					hs_mult_desc = true,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
 					damage_min_mult = 5.333333,
 					armor_piercing_add = 1,
@@ -1105,18 +1108,19 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = per_pellet and -150 or -30,
+					total_ammo_mod = per_pellet and -38 or -52,
 					spread = 5
 				},
 				custom_stats = {
-					hip_mult = 0.5,
+					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
 					ene_hs_mult_add = per_pellet and 0.2 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
+					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
 					hs_mult = 2,
 					hs_mult_desc = true,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
 					damage_min_mult = per_pellet and 4 or 5,
 					armor_piercing_add = 1,
@@ -1211,8 +1215,8 @@ local grips = {
 					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
 					rof_mult = 0.9,
-					falloff_start_mult = 1.1,
-					falloff_end_mult = 0.8,
+					falloff_start_mult = 1.15,
+					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
 					ignore_statistic = true,
 					bullet_class = "FlameBulletBase",
@@ -1236,8 +1240,8 @@ local grips = {
 					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
 					rof_mult = 0.9,
-					falloff_start_mult = 1.1,
-					falloff_end_mult = 0.8,
+					falloff_start_mult = 1.15,
+					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
 					ignore_statistic = true,
 					bullet_class = "FlameBulletBase",
@@ -1259,8 +1263,8 @@ local grips = {
 				custom_stats = {
 					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
-					falloff_start_mult = 1.1,
-					falloff_end_mult = 0.8,
+					falloff_start_mult = 1.15,
+					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
 					ignore_statistic = true,
 					bullet_class = "FlameBulletBase",
@@ -1284,8 +1288,8 @@ local grips = {
 					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
 					alt_rof_mult = 0.9,
-					falloff_start_mult = 1.1,
-					falloff_end_mult = 0.8,
+					falloff_start_mult = 1.15,
+					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
 					ignore_statistic = true,
 					bullet_class = "FlameBulletBase",
@@ -1306,8 +1310,8 @@ local grips = {
 				custom_stats = {
 					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
 					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
-					falloff_start_mult = 1.1,
-					falloff_end_mult = 0.8,
+					falloff_start_mult = 1.15,
+					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
 					ignore_statistic = true,
 					bullet_class = "FlameBulletBase",
@@ -1331,11 +1335,11 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1,
+					falloff_start_mult = 1.05,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.66667 or 0.66667,
-					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					rays = 6
 				}
 			},
@@ -1350,11 +1354,11 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.66667 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					rays = 6
 				}
 			},
@@ -1369,11 +1373,11 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.75 or 0.6666667,
-					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					rays = 6
 				}	
 			},
@@ -1387,11 +1391,11 @@ local grips = {
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1,
+					falloff_start_mult = 1.1,
 					falloff_end_mult = per_pellet and 0.7 or 0.8,
 					damage_min_mult = per_pellet and 0.83333 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.65 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.65 or 0.8,
+					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
 					rays = 6
 				}	
 			},
@@ -1423,7 +1427,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.5,
+					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1454,7 +1458,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.5,
+					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1488,7 +1492,7 @@ local grips = {
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.5,
+					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1520,7 +1524,7 @@ local grips = {
 					can_shoot_through_titan_shield = true,
 					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
 					falloff_start_mult = 1.2,
-					falloff_end_mult = 1.5,
+					falloff_end_mult = 1.4,
 					ads_speed_mult = 1.075
 				}
 			},
@@ -1538,8 +1542,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1559,8 +1563,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1581,8 +1585,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1602,8 +1606,8 @@ local grips = {
 				custom_stats = {
 					ads_speed_mult = 1.15,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.5 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.5 or 0.7,
+					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
 					ignore_statistic = true,
 					rays = 1,
 					block_b_storm = true,	
@@ -2423,6 +2427,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4_usasoc = {
 				translation = Vector3(-0.005, 5, -0.115),
+			}
+			self.parts.wpn_fps_upg_o_eotech.stance_mod.wpn_fps_ass_tkb0146 = {
+				translation = Vector3(-0.015, 5.4, -1.206)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
@@ -28048,7 +28055,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+		end
 
+		if self.parts.wpn_fps_ass_tkb0146_custom_burst then
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.stats = { value = 0 }
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.custom_stats = nil
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.perks = nil
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.stats = { value = 0 }
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.custom_stats = nil
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.perks = nil
+
+
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.supported = true
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.supported = true
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+
+			table.insert(self.wpn_fps_ass_tkb0146.uses_parts, "wpn_fps_upg_ak_m_quad")
+			table.insert(self.wpn_fps_ass_tkb0146.uses_parts, "wpn_fps_upg_ak_m_quick")
+			self.wpn_fps_ass_tkb0146_npc.uses_parts = deep_clone(self.wpn_fps_ass_tkb0146.uses_parts)
 		end
 		
 

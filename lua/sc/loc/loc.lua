@@ -959,6 +959,25 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_spring_test"] = "Mine's Bigger Than Yours",
 		["ch_spring_test_desc"] = "Kill Captain Spring with only using Vulcan Minigun or XL 5.56 Microgun",
 		
+		["ch_pdth_style_fwb"] = "Old School: First World Bank",
+		["ch_pdth_style_fwb_desc"] = "Complete First World Bank on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_heat"] = "Old School: Heat Street",
+		["ch_pdth_style_heat_desc"] = "Complete Heat Street on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_panic"] = "Old School: Panic Room",
+		["ch_pdth_style_panic_desc"] = "Complete Panic Room on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_bridge"] = "Old School: Green Bridge",
+		["ch_pdth_style_bridge_desc"] = "Complete Green Bridge on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_diamond"] = "Old School: Diamond Heist",
+		["ch_pdth_style_diamond_desc"] = "Complete Diamond Heist on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_slaughterhouse"] = "Old School: Slaughterhouse",
+		["ch_pdth_style_slaughterhouse_desc"] = "Complete Slaughterhouse on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_counterfeit"] = "Old School: Counterfeit",
+		["ch_pdth_style_counterfeit_desc"] = "Complete Counterfeit on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_undercover"] = "Old School: Undercover",
+		["ch_pdth_style_undercover_desc"] = "Complete Undercover on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH",
+		["ch_pdth_style_nomercy"] = "Old School: No Mercy",
+		["ch_pdth_style_nomercy_desc"] = "Complete No Mercy on OVERKILL difficuly or above, wearing Two-piece Suit or LBV, having no skills, using Innatae or Tabula Rasa perk decks, Weapon Butt melee and weapons from PD:TH ",
+		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
 		["state_filter"] = "State",
@@ -1413,62 +1432,306 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_battle_rifle"] = "Battle Rifle",
 
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
-		["bm_melee_swing_arc_1"] = "Has a #{skill_color}#wide## swing radius.",
-		["bm_melee_swing_arc_2"] = "Has a #{skill_color}#very wide## swing radius.",
-		["bm_melee_swing_arc_3"] = "Has a #{skill_color}#very, very wide## swing radius.",
-		["bm_melee_swing_arc_4"] = "Has a #{skill_color}#massive## swing radius.",
-		["bm_melee_swing_arc_h_1"] = "Has a #{skill_color}#wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_2"] = "Has a #{skill_color}#very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_3"] = "Has a #{skill_color}#very, very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_h_4"] = "Has a #{skill_color}#massive## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_1"] = "Charged attacks have a #{skill_color}#wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_2"] = "Charged attacks have a #{skill_color}#very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_3"] = "Charged attacks have a #{skill_color}#very, very wide## swing radius when moving sideways.",
-		["bm_melee_swing_arc_charge_h_4"] = "Charged attacks have a #{skill_color}#massive## swing radius when moving sideways.",
+			--Attack patterns - These are added at the end of melee weapon descriptions and are purposely phrased to leave the end result of a melee attack ambiguous so I don't have to make different lines for something cutting vs something bludgeoning vs something stabbing etc.
+				["bm_melee_pattern_knife"] = "Attack with quick jabs or charge up by at least #{skill_color}#50%## for wider swings.",
+
+				["bm_melee_pattern_knife2"] = "Attack with wide swings. Strafing influences attack direction.", --Also works with "melee_clean", "melee_grip" and "melee_agave"
+
+				["bm_melee_pattern_ballistic"] = "Attack with quick jabs or charge up by at least #{skill_color}#50%## for wide swings and downward strikes. Strafing influences attack direction.", 
+				["bm_melee_pattern_poker"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## to perform range extending jabs.", 
+
+				["bm_melee_pattern_boxcutter"] = "Attack with wide swings.", --Also works with "melee_catch" and "melee_road"
+
+				["bm_melee_pattern_shield"] = "Attack with forward strikes or charge up by at least #{skill_color}#50%## for wide swings.",
+
+				["bm_melee_pattern_briefcsae"] = "Attack with forward strikes or charge up by at least #{skill_color}#50%## for downward swings.",
+
+				["bm_melee_pattern_blunt"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings.", --Also works with "melee_brick", "melee_happy" and "melee_cleaver"
+
+				["bm_melee_pattern_beardy"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings. Strafing influences charged attack direction.",
+				
+				["bm_melee_pattern_axe"] = "Attack with downward strikes.", --Also works with "melee_psycho" and "melee_pickaxe"
+
+				["bm_melee_pattern_cutter"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## to perform range extending jabs.",
+
+				["bm_melee_pattern_great"] = "Attack with downward strikes, strafe for wide swings or charge up by at least #{skill_color}#90%## to perform range extending jabs. Strafing influences attack direction.",
+					["bm_melee_pattern_great_no_stab"] = "Attack with downward strikes or strafe for wide swings. Strafing influences attack direction.", -- Also works for "melee_cs"
+
+				["bm_melee_pattern_katana"] = "Attack with diagonal strikes or strafe for wide swings. Strafing influences attack direction.",
+
+				["bm_melee_pattern_fist"] = "Attack with quick jabs or charge up by at least #{skill_color}#50%## to perform a hook. Strafing influences attack direction.",
+
+				["bm_melee_pattern_boxing"] = "Attack with quick jabs or charge up by at least #{skill_color}#50%## to perform a left hook or a right uppercut. Strafing influences attack direction.",
+
+				["bm_melee_pattern_tiger"] = "Attack with right jabs or charge up by at least #{skill_color}#50%## to perform a left uppercut or a right hook. Strafing influences charged attack direction.",
+
+				["bm_melee_pattern_jab"] = "Attack with quick jabs.", --For anything that basically only has centered hitboxes like "melee_pitchfork", "melee_wing" and "melee_fight"
+
+
+		--Weapon Butt
 		["bm_melee_weapon_info"] = "In armed robberies, beating the victims with firearms is usually more common than to shoot or stab them.\n\nThe delay between repeated swings is further modified by the used weapon's mobility rating.",
-		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.\n\nAs Jiro, killing a Cloaker with a charged melee attack will trigger a special kill.",
+
+		--URSA/USMC KA-BAR
+		["bm_melee_kabar_info"] = "The URSA Knife is a hard wearing, indestructible fighting/utility knife dating back to 1942.\n\nBowie blade, serrated edge, no nonsense.\n\nA Classic.",
+		--Krieger
+		["bm_melee_kampfmesser_info"] = "The official combat knife of the German Bundeswehr Armed Forces. This series of knives are manufactured to exacting ISO standards with substantially improved cutting edge capacity.\n\nGood choice for CQC.",
+		--Berger
+		["bm_melee_gerber_info"] = "The Berger Combat Knife is a popular tactical knife with a folding clip point blade. Compact, light and high-tech materials makes for a fast and dangerous tool.",
+		--Lambo
+		["bm_melee_rambo_info"] = "A survival knife with a heavy bowie blade. The length, sawtooth spine and centered tip works just as well in the wilderness as it does in close combat.",
+
+		--Tomahawk
+		["bm_melee_tomahawk_info"] = "When you're in a situation where time is of the essence, you can't waste time wondering if you have the right tool for the heist.\nNo matter what's on the other side of that door or vault, you want a tool with the same single-minded determination as the robber wielding it.",
+		--Becker Machete
+		["bm_melee_becker_info"] = "A specialized machete that smashes, bashes, prys, hammers and cuts.\nIt is equally powerful at lifting stubborn hinge pins, prying open doors or windows, and hammering out display cases as it is efficient at cutting police cable ties.",
+		--Baton
+		["bm_melee_baton_info"] = "The most tactically sophisticated impact weapon currently available to law enforcement.\nTested by the most elite federal teams, it has proven itself virtually indestructible.",
+			["bm_melee_happy_info"] = "Joy's personal baton, for when code isn't enough.",
+		--Shovel
+		["bm_melee_shovel_info"] = "The K.L.A.S. can be used for a variety of recreational purposes.\nIt can also be used as a weapon - use the edges and you'll be cutting through flesh and bone or use the flat to bludgeon some poor S.O.B. into an early grave.",
+
+		--MONEY MONEY MONEY
+		["bm_melee_moneybundle_info"] = "L-O-D-S OF E-M-O-N-E\nWhat's that spell?\nLOADSAMONEY!\n\nProb'ly.\n\nWOP IT OUT!",
+		--Fists
+		["bm_melee_fists_info"] = "You're no boxer, but you can still throw a pretty good punch.\nAll it takes is some strength, speed and timing and you'll land a striking blow in no time.",
+		--& Knuckles
+		["bm_melee_brass_knuckles_info"] = "Knuckle style weapons have been used all over the world for hundreds of years.\nBrass knuckles concentrate the punch's force by directing it towards a harder and smaller area, increasing the chanecs of tissue disruption. Hit hard enough and you'll even fracture some bones.",
+
+		--Lucille
+		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", 
+			["bm_melee_bleed_info"] = "Deals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
+			["bm_melee_inner_child_info"] = "Get in touch with your inner child.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
+
+		--Bayonet
+		["bm_melee_bayonet_info"] = "A rugged bayonet, meant for mounting on the end of your rifle and thrusting it into the bodies of your foes.\n\nDoing that makes sense though. You'll just use it like a regular knife, won't you?",
+		--Bullseye
+		["bm_melee_bullseye_info"] = "I don't even know what to say to be honest - this is not something you would bring to a fight unless you were some kind of psycho, right?\nI mean, this is intended for chopping logs and going camping, not robbing banks.\n\nRight?",
+		--X46
+		["bm_melee_x46_info"] = "The X46 is a single 6\" piece of coated A2 steel in a partially serrated bowie blade configuration with a false top edge.\nIntergrated guard and glass breaker pommel tip.\nThe multi-purpose field design of this knife makes it as useful on the battlefield as it is in an emergency.",
+		--Gunther
+		["bm_melee_dingdong_info"] = "A sledgehammer.\nA battering ram.\nA pry bar.\nAll three are essential breaching tools for heisters who need to get through doors quickly.\nThe Ding Dong combines these three tools into one package as tight as the crew.",
+
+		--Cleaver girl
+		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
+		--Batshit insane
+		["bm_melee_bat_info"] = "A baseball bat, no more, no less.\n\nMeant for use in sport, you'll be using it for something much more sinister.",
+		--Machete
+		["bm_melee_machete_info"] = "You like hurting people, that's why you use this dirty, old machete.\nGaping wounds, crudely hacked-off limbs and the blood curdling screams of your enemies keep you going.\n\nTruly the weapon of a cruel, cruel heister.",
+		--Fireaxe
+		["bm_melee_fireaxe_info"] = "Do you like hurting other people?\n\nIf you do, what better way to do it than with something intended to save lives! Show your victims the fire in your eyes as you save them from yourself in one quick chop.",
+		--Briefcase
+		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+
+		--KA-BAR Tanto
+		["bm_melee_kabar_tanto_info"] = "The Tanto blade shape, of Asian influence, has a thick pointed blade that's good for penetration. This knife is designed for the toughest of tasks.",
+
+		--UberHaxorNova
+		["bm_melee_toothbrush_info"] = "A small plastic toothbrush, sharpened into a make-shift shiv, ready to be driven into your next victim.",
+
+		--Psycho Knife
+		--["bm_melee_chef_info"] = "Whether you're an angry heister or a psycho bank robber, this hot-forged, laser sharpened chef knife in fine, stainless molybdenum steel will serve you for years.\n\nBy the way, did you know that the traditional chef's knife was originally intended to slice and disjoint large cuts of flesh?\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+
+		--Trench Knife
+		["bm_melee_fairbair_info"] = "A favorite among British Commandos, the Trench Knife is great at inflicting slashing cuts. A very popular knife, it remains in use and production today.",
+		--Swag
+		["bm_melee_swagger_info"] = "Issue commands, improve your public image or simply use it to administer corporeal punishment! The Swagger Stick is a must have accessory for any self-respecting leader. Old Blood and Guts carried one and his even had a hidden blade.",
+		--FREEDOM ISN'T FREE
+		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.", 
+		--Who needs pants?
+		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
+
+		--Hammer
+		["bm_melee_hammer_info"] = "The \"Carpenter’s Delight\" is Jacket’s favorite hammer. The hammer is the perfect tool to deliver blunt blows to people you don’t like.\n\nThe most common uses for hammers are to drive nails, fit parts, forge metal, and break apart objects, none of which Jacket cares for particularly much.",
+
+		--OVERKILL Boxing Gloves
+		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves #{skill_color}#instantly refill your stamina.##", 
+
+		--A stick of lies
+		["bm_melee_shillelagh_info"] = "It's hard to determine the true origins of the shillelagh. How can you pinpoint the first time someone picked up a stout stick and brained someone else with it? And the shillelagh really hasn't evolved too much beyond that. Some prize blackthorn wood, while some might fill the head with molten lead.\n\nAt the end of the day, it really is just a bloody heavy stick that cracks skulls.",
+
+		--Bottle
+		["bm_melee_whiskey_info"] = "There are several rules and regulations that a bottle of whiskey has to go through in order to be called a scotch whiskey. Having a hard bottle isn’t necessarily one of them, but that matters little to Bonnie, who sees an empty Rivertown Glen bottle as her favorite melee weapon.\n\nNeedless to say, it gives her enemies headaches for all the wrong reasons.",
+
+		--Dragan's Cleaver
+		["bm_melee_meat_cleaver_info"] = "The cleaver is a kind of knife primarily used for cutting through meat and bone, but rather than using precise cuts the cleaver delivers powerful hammer-like blows that rend even the most durable flesh. Cleavers have a long history of butchering human beings as well as livestock.\n\nYou'll be doing the former.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
+
+		--Poker
+		["bm_melee_poker_info"] = "A long piece of iron with a pointy end is a fine implement for tending to smoldering embers, but it is also the perfect implement for causing havoc and extreme discomfort.\n\nIf you don’t believe us, ask your server for an ‘Edward II’.",
+		--Tenderizer
+		["bm_melee_tenderizer_info"] = "While it was mainly designed for softening and flattening tough strips of steak, it has also proven useful for softening and flattening tough strips of cop.\n\nGoes great with a light hollandaise.",
+		--Fork
+		["bm_melee_fork_info"] = "What’s the difference between a truckload of bowling balls and a truckload of dead dozers? You can’t unload a truckload of bowling balls with the Motherforker.\n\nEnjoy with pepper seasoning.",
+		--Speng Bib
+		["bm_melee_spatula_info"] = "A melee weapon with a dual purpose – use it to smear a cop all across the road, and then let others use it to scoop up their remains.\n\nTake an extra napkin for this one.",
+
+		--PIPPA NO
+		["bm_melee_mining_pick_info"] = "There's gold in 'dem 'der hills! And by hills we mean teeth. But, hills or teeth, nothing digs the gold out faster than a swinging spike of pig iron.\n\nDeals #{skill_color}#50%## more headshot damage.",
+		--Ebay Seller
+		["bm_melee_scalper_info"] = "For the victor, it is the symbol of war, of power and of dominance.\n\nFor the loser, it is the symbol of a really, really bad haircut.",
+		--NAOW THIS IS A KNOIFE
+		["bm_melee_bowie_info"] = "Nine inches of clip-point fighting steel. It's origins lie in the age of the classic pirate, but it was the famous Brawl of Carroll County (and a dozen bloodied men) that brought it wide-spread fame",
+		--MY BRAND
+		["bm_melee_branding_iron_info"] = "It may have been designed to mark the thick hides of cattle for identification, but fire-heated iron is even more effective against the soft flesh of a deputy or marshall.",
+
+		--Mic
+		["bm_melee_microphone_info"] = "\"Please speak clearly into the microphone.\"",
+		--Mic Stand
+		["bm_melee_micstand_info"] = "Might as well use the stand the microphone came with.",
+		--Nighty Night
+		["bm_melee_oldbaton_info"] = "#{stats_positive}#\"THE SAFEWORD IS 'POLICE BRUTALITY'!\"##",
+		--Metal Detector
+		["bm_melee_detector_info"] = "You should probably leave this thing turned off.",
+
+		--Croupier Rake
+		["bm_melee_croupier_rake_info"] = "An item for the sole use of pulling currency in? Perfect for you heisters! Show those pesky cops exactly why the house always wins.",
+		--Switchblade Knife
+		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals #{skill_color}#200%## damage when attacking enemies from behind.",
+		--Slot Lever
+		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
+		--ZAP ZAP MOTHERFUCKER
+		["bm_melee_taser_info"] = "Exact sweet, electifiying revenge againsts those smug Tasers.\n\nElectrocutes and interrupts targets on touch when fully charged.",
+
+		--Kunai
+		["bm_melee_cqc_info"] = "Even the mightiest of opponents will fall when touched a single time by this poison dipped Kunai Knife.\n\nContains an exotic poison that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.",
+		--Sai
+		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
+		["bm_melee_twins_info"] = "Once in a while, a victim of the Sai realize a little too late that it doesn't matter how blunt the weapons are.\nIn a matter of seconds they have disarmed you of your sharp ones.\n\nParrying an enemy attack deals #{skill_color}#60## melee damage to them. This can be increased with skills.",
+		--Tekko-Kagi
+		["bm_melee_tiger_info"] = "Originally used to scale walls and trees, these sharp claws swiftly turned into weapons when whoever wielded them was discovered.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
+		--Empty Palm Kata
+		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals #{skill_color}#120## melee damage to them. This can be increased with skills.",
+		--Katana
+		["bm_melee_katana_info"] = "The Shinsakuto-Katana is a masterpiece, but also freshly forged. It has not tasted blood, and has no real heritage or history. It is simply waiting for a wielder with which to create that.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_raiden_info"] = "This is no #{important_1}#\"tool of justice\"## in your hands.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_thejobissnotyours_info"] = "This isn't even your sword.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up slash.",
 			["bm_melee_2077tkata_info"] = "Nano filament heated blade.\nThe purest essence of a katana, no add-ons, no modifications, only ripping hot steel.\n\nFully charged attacks #{heat_warm_color}#set enemies on fire,## dealing #{heat_warm_color}#120## fire damage over #{skill_color}#3## seconds.",
-		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.", --Buckler Shield
-		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.", --Briefcase
-		["bm_melee_pitch_info"] = "Pitch your forks and fork up some pitches.\n\nSprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##", --Randal Pitchfork
-			["bm_melee_charge_info"] = "Sprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals #{skill_color}#30## damage every #{skill_color}#0.25## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals #{skill_color}#18## damage every #{skill_color}#0.18## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##", --Kazaguruma
-		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",-- Wing Butterfly Knife
-		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals #{skill_color}#200%## damage when attacking enemies from behind.",-- Switchblade Knife
-		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- Psycho Knife
-		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- Headless Dozer Sword
-			["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.", -- im not gaj
-		["bm_melee_great_info"] = "Try thrusting attack, but hole.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", -- Great Sword
-		["bm_melee_freedom_info"] = "Thirteen stripes of red alternating with white, a blue rectangle in the canton, fifty small, white, five-pointed stars, a pinch of patriotism, two cups of freedom and a broken flag pole.\n\nVoilà - you have yourself a deadly weapon.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.", -- Great Sword
-			["bm_melee_jebus_info"] = "Light and dark.\n\nBlack and white.\n\nLife and death.\n\nThe Binary Sword holds no middle ground as it turns your opponents OFF.\n\nCharging an attack by at least #{skill_color}#90%## performs a thrust, extending range by #{skill_color}#0.5## meters.",
-		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
-			["bm_melee_thebestweapon_info"] = "#{skill_color}#The best weapon in the game.##",
-		["bm_melee_iceaxe_info"] = "Deals #{skill_color}#50%## more headshot damage.", -- Icepick
-		["bm_melee_mining_pick_info"] = "Deals #{skill_color}#50%## more headshot damage.", --Gold Fever (Pickaxe)
-		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves #{skill_color}#instantly refill your stamina.##", -- OVERKILL Boxing Gloves
-		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Alabama Razor
-		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", --Lucille Baseball Bat
-			["bm_melee_bleed_info"] = "Deals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
-			["bm_melee_inner_child_info"] = "Get in touch with your inner child.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.",
-		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.", --Gold Spoon
-			["bm_melee_fire_info"] = "Has a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.",
-		["bm_melee_cqc_info"] = "Contains an exotic poison that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.", --Kunai, Syringe
-		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals #{skill_color}#120## melee damage to them. This can be increased with skills.", --Empty Palm Kata
-		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a #{skill_color}#5%## chance to deal #{skill_color}#10x## times the damage and knockdown.",
-		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
-		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
-		["bm_melee_erica_info"] = "A sane person would throw this.\n\nFully charged hits against living enemies have a #{skill_color}#5%## chance to explode dealing #{risk}#720## damage in a #{skill_color}#5## meter radius from the point of impact.",
-		["bm_melee_piggy_hammer_info"] = "Deals #{skill_color}#100%## more damage to special and elite enemies.\n\nHas a chance to deal one of the following #{risk}#random effects## upon a successful strike:\n\n-#{skill_color}#12%## chance to inflict #{important_1}#bleed##\n-#{skill_color}#7%## chance to #{ghost_color}#tase##\n-#{skill_color}#5%## chance to inflict #{stats_positive}#poison##\n-#{skill_color}#1%## chance to #{risk}#insta-kill##", --Piggu
 
-		--Melee Weapons
-		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
+		--Ayy L-Maul
+		["bm_melee_alien_maul_info"] = "A hammer made to commemorate the launch of the Alienware Alpha.",
+
+		--Beardy
+		["bm_melee_beardy_info"] = "The Vikings emerged from the dark forests of the pagan North, and left a bloody trail of destruction from Iceland to Istanbul.\nTheir weapon was the two-handed bearded axe.",
+		--Morningstar
+		["bm_melee_morning_info"] = "If the deep punctures from the spikes don't kill you, the catastrophic trauma from the blunt head certainly will.\nThis weapon left a swathe of mangled bodies on the medieval battlefield.",
+		--Wt ring u got bithc?
+		["bm_melee_great_info"] = "#{item_stage_2}#\"Try thrusting attack, but hole.\"##\n\nThe sword made famous by William Wallace.\nSix feet of razor-sharp steel, it was carried in a scabbard made from the skin of a tax-man.\n\nHow's that for sticking it to the authorities?",
+			--Jebus
+			["bm_melee_jebus_info"] = "Light and #{item_stage_2}#dark##\n#{item_stage_2}#Black## and white.\n#{stats_positive}#Life## and #{important_1}#death##\n\nThe Binary Sword holds no middle ground as it turns your opponents #{important_1}#OFF##",
+			--Headless Dozer Sword
+			["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+				--im not gaj
+				["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+		--Buckler Shield
+		["bm_melee_buck_info"] = "In the right hands, the Buckler Shield was as much a weapon as a means of defense.\nWorn on the forearm, it could be slammed into an enemy with enough force to knock them out of their breeches.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+
+		--Bolt cutters
+		["bm_melee_cutters_info"] = "Your favorite serial killers need more than just an axe, a knife or a glove with razor fingers.\nThey need bolt cutters to quietly get into those places you thought were locked.\n\nWhere you thought you were safe...",
+
+		--Natsumi
+		["bm_melee_boxcutter_info"] = "It may seem like a utilitarian tool but if this blade can cut through the tough-bastard vacuum-sealed plastic of packaging crates, it can deal with anything the cops might wrap themselves in.",
+
+		--Selfie
+		["bm_melee_selfie_info"] = "As Hoxton said, \"look at that fucking berk with the selfie-stick. What a bellend. I bet it's strong, though. Y'know, I should take it off him and twat him with it. Back in a mo...\"",
+		--Lara
+		["bm_melee_iceaxe_info"] = "When you're scaling the slick cliffs beneath Angel Falls, you need something that can gouge into the hard rock. When you're robbing banks in D.C., you need something that can gouge into the helmets of cops.\n\nDeals #{skill_color}#50%## more headshot damage.",
+			["bm_melee_iceaxe_gen_info"] = "Deals #{skill_color}#50%## more headshot damage.",
+		--Dive
+		["bm_melee_pugio_info"] = "Simple and strong. Whether you're cutting throats, or cutting dolphins free of tangling fishing nets, it gets the job done. And it looks badass on your hip when you come swaggering out of the surf.",
+		--Gator
+		["bm_melee_gator_info"] = "They say you can last three weeks without food, and three days without water, but in a hostile environment you won't last three hours without a good blade at your side.",
+
+		--Pitch fork
+		["bm_melee_pitch_info"] = "Bidents, tridents, who cares? They're basically pitch forks. If Poseidon and Lucifer can use them, so can we.\n\nSprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
+			["bm_melee_charge_info"] = "Sprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
+		--BONK
+		["bm_melee_scoutknife_info"] = "Don't let the rusty and worn appearance turn you off. A knife is always a knife - and some say an old knife ages just like a good wine (no one has probably ever said that). Try it out and you'll see things will bleed.",
+		--Shears
+		["bm_melee_shawn_info"] = "Did you know that Sheep shearing is considered a sport? Maybe we should invent a new sport: cop shearing? No? Why not? Whatever... use them however you see fit, I guess...",
+		--Crook
+		["bm_melee_stick"] = "Shepherd's Crook",
+		["bm_melee_stick_info"] = "Tired after a long heist? Want to look old and wise? Maybe smash a cop's face in? The Shepherd's cane can do it all.",
+
+		--Pounder Nailgun
+		["bm_melee_nin_info"] = "The Pounder, Wolf's favorite nailgun. \n\nWhen people ask about the name, Wolf is quick to correct it to \"The Punder\" and as they say that he screams: \"Nailed it!\"\n\nFires nails which have a short effective range and instant travel. Still counts as a melee kill.",
+			["bm_melee_thebestweapon_info"] = "#{stats_positive}#The best weapon in the game.##",
+
+		--Ballistic Knives
+		["bm_melee_ballistic_info"] = "Jimmy isn't the kind of guy that thinks less is more, which is why he has twin set of Specialist knives.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
+
+		--ALSO ZAP ZAP MOTHERFUCKER
+		["bm_melee_zeus_info"] = "A pair of homebrew electric knuckle dusters that electrocutes and interrupts targets on touch when fully charged.",
+
+		--Wing Butterfly Knife
+		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals #{skill_color}#400%## damage when attacking enemies from behind.",
+
+		--PICKLE
+		["bm_melee_road_info"] = "The Chain Whip is Rust's melee weapon of choice, being a fan of old school pain-inducing instruments.\nThe actual Chain Whip itself was bought, not stolen, by Rust at a hardware store. He felt that a tool this important was worth paying for. It provides a certain classy touch to the whooshing sound it makes as it's whipping across yet another face.",
+
+		--ROAMING FROTHING MADNESS
+		["bm_melee_cs_info"] = "Rip and tear, until it is done.\n\nDeals #{skill_color}#30## damage every #{skill_color}#0.25## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##",
+
+		--WHERE'S THE LEAK MA'AM?
+		["bm_melee_shock_info"] = "\"Would you kindly...\"",
+
+		--YOU KNOW WHEN THAT HOTLINE RING
+		["bm_melee_brick_info"] = "Make no mistake - this isn't just any phone, this is the #{stat_maxed}#HOTLINE## #{skill_color}#8000X##, the height of communication in the 80's.\n\nHello, who's there?\nI just called to say...\n\nI hate you.",
+
+		--OMG IT SPINS
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals #{skill_color}#18## damage every #{skill_color}#0.18## seconds to targets in front of you while charging. This can be increased with skills.\n\n#{important_1}#Cannot parry enemy attacks.##",
+
+		--Pencil
+		["bm_melee_sword"] = "Pencil", 
+		["bm_melee_sword_info"] = "\"John is a man of focus, commitment, sheer will... something you know very little about.\n\nI once saw him kill three men in a bar... with a pencil...\n\nWith a fucking pencil.\"",
+
+		--Russian Machete
+		["bm_melee_oxide_info"] = "Groundbreaking design creates a trusty melee weapon.  It needed to be able to do machete work for the heavy vegetation areas as well as knife work for the camp. It also needed handle garrison labor.\nThe tool could be used for down pilots, field soldiers, and anyone else who needed a good field knife.", 
+
+		--Another Machete
+		["bm_melee_agave_info"] = "To take a life as a sicario is not only about killing - it's about intimidation. Something that leaves a print inside those who witness the mayhem. That's where Sangres' machete comes into play. Someone carrying something as deadly as a machete is probably insane enough to use it too.\n\nSangres named his machete \"El Verdugo\" - a fitting name for a fitting tool.",
+
+		--Alabama Razor
+		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals #{skill_color}#120## bleed damage over #{skill_color}#3## seconds.", 
+		
+		--Kento's Tanto
+		["bm_melee_ohwell_info"] = "Along with the katana, the tanto was a staple of all samurai.\n\nThis belonged to Kento, though where he aquired from it is unknown.",
+
+		--Spoon
+		["bm_melee_spoon_info"] = "Only a spoonful, right?", 
+		--Gold Spoon
+		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.", 
+			["bm_melee_fire_info"] = "Has a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.",
+
+		--ADOBE FALSH(LITE)
+		["bm_melee_aziz_info"] = "\"I’m not really building a shelter, but I buyed like a ton of cans and some water now and also this brand new flash light. Cause when the world goes dark, you gotta have some kind light or you’ll be dead with in the hour. I promise you that!\"",
+
+		--Chac
+		["bm_melee_chac_info"] = "Get into the rhythm with this maraca and shake up some skulls, literally.",
+
+		--Sap
+		["bm_melee_sap_info"] = "The Leather Sap is a gentleman's weapon.\n\nA simple pat on the head and your foe goes down. Duke wields the Leather Sap with a certain grace and brutality that that sometimes goes overboard and inflicts more damage than needed.\n\nSo wield with caution - or not.",
+
+		--Hockey Stick
+		["bm_melee_hockey_info"] = "A beautifully fashioned length of wood. Perfectly suited for smashing a puck into the net, and smashing the fuck out of teeth.", 
+
+		--Ruler
+		["bm_melee_meter_info"] = "Our two handed great ruler is the biggest ruler we make. But don't let its size fool you, as there's nothing awkward or clumsy about this awesome ruler.", 
+
+		--Hooked
+		["bm_melee_catch_info"] = "The Hook is a reliable tool and frankly its not rocket science. That raw wooden handle with a strong metal hook seems plain and simple enough, right? The Hook will guarantee to cause much mess.\n\nIt’s use is only limited by your own twisted imagination in how to get your enemies hooked. Impaling your opponents in the mouth or snagging their bodies? \n\nStay sharp, bring something nasty to the fight.", 
+
+		--Syringe
+		["bm_melee_watson_info"] = "\"It'll only hurt for a second, okay?\"\n\nContains an unknown concoction that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.", 
+
+		--That oinky sploinky
+		["bm_melee_piggy_hammer_info"] = "Oink.\n\nDeals #{skill_color}#100%## more damage to special and elite enemies and as a chance to deal one of the following #{risk}#random effects## upon a successful strike:\n-#{skill_color}#12%## chance to inflict #{important_1}#bleed##\n-#{skill_color}#7%## chance to #{ghost_color}#tase##\n-#{skill_color}#5%## chance to inflict #{stats_positive}#poison##\n-#{skill_color}#1%## chance to #{risk}#insta-kill##", --Piggu
+
+		--Knuckle Daggers, Push Daggers
+		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.", 
 
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
-		["bm_melee_revenant_heirloom_info"] = "Attacking with a low charge performs a quick jab with end of the weapon.\n\nAttacking with at least a #{skill_color}#25%## charge performs a sweeping slash.",
+		["bm_melee_revenant_heirloom_info"] = "\"You don't want to see this up close, skin bag\"",
 		["bm_melee_megumins_staff_info"] = "Cast a powerful explosion when fully charged!\nCan be cast as far as #{skill_color}#30## meters on any surface or being; #{risk}#it cannot be cast into the air.##\n\n#{important_1}#Charge speed is unaffected by skills.\nCharging distorts vision, drains stamina and progressively slows down your movement.\nYou are instantly downed upon successfully casting an explosion; skills and perks that delay or save you from going down are ignored.##",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",
@@ -1685,6 +1948,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_menu_attack_speed"] = "Repeat Delay",
 		["bm_menu_impact_delay"] = "Impact Delay",
+		["bm_menu_cleave"] = "Cleave",
 		
 		["bm_menu_stats_detection"] = "Encumbrance",
 		["bm_menu_stats_min_detection"] = "Encumbrance",
@@ -1896,9 +2160,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_assault_restored_down"] = "Assault Survived - Restoring 1 Down",
 		["hud_assault_remaining_single"] = "1 Assault Remaining Until Down Restore",
 		["hud_assault_remaining_plural"] = " Assaults Remaining Until Down Restore",
-
-		--String override for the stungun--
-		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 
@@ -4792,6 +5053,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_spoocsquad"] = "Sneaky Squad",
 		["mutator_spoocsquad_desc"] = "Cloakers tend to spawn in groups.",
 		["mutator_spoocsquad_longdesc"] = "Cloakers tend to spawn in groups.",
+		
+		["mutator_vanilla_police_call"] = "Intruder Alert",
+		["mutator_vanilla_police_call_desc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
+		["mutator_vanilla_police_call_longdesc"] = "Enables vanilla behavior for police calls, pagers and cameras.",
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -4946,21 +5211,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   SHOTGUNNER SUBTREE   ]]--
 				--Underdog--
 				["menu_underdog_beta_sc"] = "Underdog",
-				["menu_underdog_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you receive a #{skill_color}#10%## damage bonus that lasts for #{skill_color}#7## seconds.\n\nACE: #{owned}#$pro##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you also receive a #{skill_color}#10%## damage reduction that lasts for #{skill_color}#7## seconds.",
+				["menu_underdog_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you receive a #{skill_color}#$skill_value_b1## damage bonus that lasts for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nWhen three or more enemies are within #{skill_color}#18## meters of you, you also receive a #{skill_color}#$skill_value_p1## damage reduction that lasts for #{skill_color}#$skill_value_p2## seconds.",
 
 				--Shotgun CQB
 				["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
-				["menu_shotgun_cqb_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#7.5%## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#25%## faster.",
+				["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#$skill_value_p1## faster.",
+				["menu_shotgun_cqb_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds for #{skill_color}#shotguns and flamethrowers## are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns and flamethrowers## reload #{skill_color}#$skill_value_p1## faster.",
 
 				--Shotgun Impact
 				["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#3## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
-				["menu_shotgun_impact_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\nThe minimum damage of #{skill_color}#shotguns## is increased by #{skill_color}#25%.##\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
+				["menu_shotgun_impact_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Shotguns## fire #{skill_color}#$skill_value_p1## extra pellets.\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
+				["menu_shotgun_impact_per_pellet_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nThe minimum damage of #{skill_color}#shotguns## is increased by #{skill_color}#$skill_value_p1.##\n\n#{risk}#NOTE: Does not apply to shotguns using slugs or explosive rounds.##",
 
 				--Pigeon Shooting
 				["menu_far_away_beta_sc"] = "Pigeon Shooter",
-				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy and deals #{skill_color}#25%## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#shotgun(s)## may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#30%## while aiming down sights.",
+				["menu_far_away_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen using a #{skill_color}#shotgun## firing multiple projectiles, each projectile fired is capable of piercing through #{skill_color}#1## enemy and deals #{skill_color}#$skill_value_b1## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#shotgun(s)## may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nThe accuracy and range of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#$skill_value_p1## while aiming down sights.",
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -5359,7 +5624,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies in a ##12## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3##; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.75## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3## seconds; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.7## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.\n\nYou gain the ability to place ##2## body bag cases.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
@@ -5432,11 +5697,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_yakuza_deflection_add"] = "(Boosted by Yakuza)",
 
 		--Hacker--
-		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#8## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
+		["menu_deck21_1_desc_sc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#10## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.6## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#2## seconds.",
 		["menu_deck21_3_desc_sc"] = "Your dodge is increased by ##5## points.",
-		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##6## health.",
+		["menu_deck21_5_desc_sc"] = "Killing an enemy while the feedback effect is active will regenerate ##5## health.",
 		["menu_deck21_7_desc_sc"] = "Your armor recovery rate is increased by ##10%.##\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##3## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck21_9_desc_sc"] = "Crew members killing enemies while the feedback effect is active will regenerate ##2.5## health.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#5%## of your max health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.",
@@ -5532,7 +5797,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Tag Team
 			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#11## seconds  and has a cooldown of #{important_1}#80## seconds.\n\nYour camera loop duration is increased by #{skill_color}#20## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#8## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#2## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#1.5## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#10## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#10## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.6## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has an #{important_1}#80## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#2## seconds.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#2.5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
 

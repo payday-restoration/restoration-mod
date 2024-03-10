@@ -21,7 +21,6 @@ local death_sentence = difficulty == 8
 local enabled_chance_more_guards = math.random() < diff_scaling_1
 local enabled_chance_shields = math.random() < diff_scaling_1
 local enabled_chance_cloakers = math.random() < diff_scaling_1
-local enabled_chance_dozers = math.random() < diff_scaling_2
 local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 
 	if difficulty == 7 then
@@ -37,7 +36,7 @@ local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
@@ -178,7 +177,10 @@ local optsDozerAmbush = {
     enemy = tank_black,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_10m_swing_in_var2",
-    enabled = (death_sentence and enabled_chance_dozers)
+	on_executed = {
+		{ id = 400052, delay = 0 }
+	},
+    enabled = death_sentence
 }
 local optsShield_Defend_1 = {
     enemy = shield,
@@ -232,6 +234,13 @@ local disable_shields = {
 	elements = { 
 		400001,
 		400002
+	}
+}
+local disable_elevator_dozers = {
+	toggle = "off",
+	elements = { 
+		400035,
+		400036
 	}
 }
 local disable_OverdrillPONR = {
@@ -640,6 +649,11 @@ return {
             400052,
             "they_sending_dozers",
             Bain_senddozers
+        ),
+		restoration:gen_toggleelement(
+            400053,
+            "disable_if_office_dozers_spawn_in",
+            disable_elevator_dozers
         )
     }
 }

@@ -909,7 +909,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
 					
 					self.skill_descs.underdog = {
-					skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]) -- +Stability
+					skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]), -- +Stability
+					skill_value_p1 = tostring((per_pellet and  self.values.shotgun.damage_min_bonus[1] % 1 * 100) or self.values.shotgun.extra_rays[1]) .. ((per_pellet and "%") or "") -- Ace Effect
 					}
 
 			--Shotgun CQB
@@ -941,8 +942,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.ap_bullets = {0.25}
 					self.values.shotgun.can_shoot_through_enemy = {true}
 				--Ace
-					self.values.shotgun.steelsight_accuracy_inc = {0.7}
-					self.values.shotgun.steelsight_range_inc = {1.3}
+					self.values.shotgun.steelsight_accuracy_inc = {0.8}
+					self.values.shotgun.steelsight_range_inc = {1.2}
 					
 					self.skill_descs.far_away = {
 					skill_value_b1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%", -- AP for shotguns
@@ -2520,19 +2521,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Hacker
 	self.values.player.pocket_ecm_jammer_base = {
 		{
-			cooldown_drain = 1.5,
-			duration = 8.1,
+			cooldown_drain = 2,
+			duration = 10.1,
 			affects_cameras = true,
 			affects_pagers = true,
-			feedback_interval = 2,
+			feedback_interval = 1.6,
 			feedback_range = 1000
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {
-		0.6
+		0.5
 	}	
 	self.values.team.pocket_ecm_heal_on_kill = {
-		0.3
+		0.25
 	}	
 	
 	--Leech

@@ -777,6 +777,13 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 				value = -skill,
 				skill_in_effect = base > 0 and skill > 0
 			}
+		elseif stat.name == "cleave" then
+			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].cleave) or 1
+			base_stats[stat.name] = {
+				min_value = base,
+				max_value = base,
+				value = base
+			}
 		elseif stat.name == "range" then
 			local base_min = stats_data.range
 			local base_max = stats_data.range
@@ -3061,6 +3068,10 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					multiple_of = "damage"
 				},
 				{
+					range = true,
+					name = "cleave",
+				},
+				{
 					inverse = true,
 					name = "attack_speed",
 					num_decimals = 2,
@@ -4971,25 +4982,28 @@ function BlackMarketGui:update_info_text()
 		updated_texts[1].text = self._slot_data.name_localized
 
 		updated_texts[2].resource_color = {}
+		updated_texts[2].text = ""
+		updated_texts[2].below_stats = true
+
+		local has_global_value = slot_data.global_value and slot_data.global_value ~= "normal"
+		if has_global_value then
+			updated_texts[2].text = "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
+			if updated_texts[2].text ~= "## ##" then
+				table.insert(updated_texts[2].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+			else
+				has_global_value = nil
+			end
+		end
+
 
 		local melee_tweak_data = tweak_data.blackmarket.melee_weapons[slot_data.name]
 		local has_info_id = melee_tweak_data.info_id
-		local swing_arc_h = melee_tweak_data.sphere_cast_radius_add_h
-		local swing_arc_charged_h = melee_tweak_data.sphere_cast_radius_add_charged_h
-		local swing_arc = melee_tweak_data.sphere_cast_radius_add_charged_h or melee_tweak_data.sphere_cast_radius_add_h or melee_tweak_data.sphere_cast_radius_add
+		local has_attack_pattern = melee_tweak_data.attack_pattern
 
-		if has_info_id or swing_arc then
+		if has_info_id or has_attack_pattern then
 			local desc_text = has_info_id and managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].info_id) or ""
-			if swing_arc then
-				if swing_arc >= 16 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_4") or (swing_arc_h and "bm_melee_swing_arc_h_4") or "bm_melee_swing_arc_4")
-				elseif swing_arc >= 12 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_3") or (swing_arc_h and "bm_melee_swing_arc_h_3") or "bm_melee_swing_arc_3")
-				elseif swing_arc >= 8 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_2") or (swing_arc_h and "bm_melee_swing_arc_h_2") or "bm_melee_swing_arc_2")
-				elseif swing_arc >= 4 then
-					desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text((swing_arc_charged_h and "bm_melee_swing_arc_charge_h_1") or (swing_arc_h and "bm_melee_swing_arc_h_1") or "bm_melee_swing_arc_1")
-				end
+			if has_attack_pattern then
+				desc_text = desc_text .. ((has_info_id and "\n\n") or "") .. managers.localization:text(tweak_data.blackmarket.melee_weapons[slot_data.name].attack_pattern)
 			end
 
 			for color_id in string.gmatch(desc_text, "#%{(.-)%}#") do
@@ -4997,8 +5011,7 @@ function BlackMarketGui:update_info_text()
 			end
 			desc_text = desc_text:gsub("#%{(.-)%}#", "##")
 
-			updated_texts[2].text = desc_text
-			updated_texts[2].below_stats = true
+			updated_texts[2].text = ((has_global_value and updated_texts[2].text .. "\n") or "") .. desc_text
 		end
 
 		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)
@@ -5058,14 +5071,14 @@ function BlackMarketGui:update_info_text()
 			updated_texts[3].below_stats = true
 		end
 
-		updated_texts[4].resource_color = {}
+		--updated_texts[4].resource_color = {}
 
-		if slot_data.global_value and slot_data.global_value ~= "normal" then
-			updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
-			table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
-		end
+		--if slot_data.global_value and slot_data.global_value ~= "normal" then
+		--	updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:to_upper_text(tweak_data.lootdrop.global_values[slot_data.global_value].desc_id) .. "##"
+		--	table.insert(updated_texts[4].resource_color, tweak_data.lootdrop.global_values[slot_data.global_value].color)
+		--end
 
-		updated_texts[4].below_stats = true
+		--updated_texts[4].below_stats = true
 	elseif identifier == self.identifiers.grenade then
 		local is_perk_throwable = tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown and not tweak_data.blackmarket.projectiles[slot_data.name].base_cooldown_no_perk
 		local amount = is_perk_throwable and 1 or math.round(tweak_data.blackmarket.projectiles[slot_data.name].max_amount *  managers.player:upgrade_value("player", "throwables_multiplier", 1))

@@ -237,6 +237,13 @@ function PlayerInventoryGui:_get_melee_weapon_stats(name)
 				value = -skill,
 				skill_in_effect = base > 0 and skill > 0
 			}
+		elseif stat.name == "cleave" then
+			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].cleave) or 1
+			base_stats[stat.name] = {
+				min_value = base,
+				max_value = base,
+				value = base
+			}
 		elseif stat.name == "range" then
 			local base_min = stats_data.range
 			local base_max = stats_data.range
@@ -827,6 +834,10 @@ function PlayerInventoryGui:_update_stats(name)
 				range = true,
 				name = "damage_effect",
 				multiple_of = "damage"
+			},
+			{
+				range = true,
+				name = "cleave",
 			},
 			{
 				inverse = true,

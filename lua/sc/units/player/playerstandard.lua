@@ -29,6 +29,11 @@ local norecoil_blacklist = { --From Zdann
 	--["model3"] = true
 }
 
+local melee_vars = {
+	"player_melee",
+	"player_melee_var2"
+}
+
 local sound_buffer = BeardLib.Utils:FindMod("Megumin's Staff") and XAudio and blt.xaudio.setup() and XAudio.Buffer:new( BeardLib.Utils:FindMod("Megumin's Staff").ModPath .. "assets/soundbank/megumins_staff_charge.ogg")
 local is_pro = Global.game_settings and Global.game_settings.one_down
 local original_init = PlayerStandard.init
@@ -1062,7 +1067,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					local weapon_tweak_data = weap_base:weapon_tweak_data()
 					local primary_category = weapon_tweak_data.categories[1]
 					--Resmod custom var(s)
-					local ignore_rof_mult_anims = weap_base and weap_base._ignore_rof_mult_anims
+					local ignore_rof_mult_anims = weap_base and (weap_base._ignore_rof_mult_anims or weap_base._fire_rate_init_progress)
 
 					if not weapon_tweak_data.ignore_damage_multipliers then
 						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "dmg_multiplier_outnumbered", 1)
@@ -2117,12 +2122,16 @@ function PlayerStandard:_update_melee_timers(t, input)
     local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	local instant = melee_weapon.instant
+	local no_hit_shaker = melee_weapon.no_hit_shaker
 	local melee_charger = melee_weapon.special_weapon and melee_weapon.special_weapon == "charger"
 	local angle = self._stick_move and mvector3.angle(self._stick_move, math.Y)
 	local moving_forwards = angle and angle <= 15
 	local can_run = self._unit:movement():is_above_stamina_threshold()
 	local lerp_value = self:_get_melee_charge_lerp_value(t)
 	local max_charge = lerp_value and lerp_value >= 0.99
+	--local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
+	--local charge_bonus_range = has_charged_range and melee_weapon.stats.charge_bonus_range or 0
+	--local range = melee_weapon.stats.range + charge_bonus_range
 
 	-- No stamina regen while actively charging an attack with "charger" type melee weapons at max charge
 	if melee_charger and self._state_data.meleeing and max_charge then
@@ -2164,8 +2173,102 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
-		self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
+		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
+		(self._melee_charge_bonus and melee_weapon.raycasts_charge) or 
+		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
+		(melee_weapon.raycasts)
 
+		if num_casts and num_casts > 1 then
+			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
+			local from = self._unit:movement():m_head_pos()
+			local rotation = self._unit:movement():m_head_rot()
+			local base_direction = rotation:y()
+			
+			local yaw = rotation:yaw()
+			local pitch = rotation:pitch()
+			local roll = rotation:roll()
+
+			local no_shaker = nil
+			local hit_body, hit_gen, use_cleave = nil
+
+			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
+				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the line fom the top going down, - starts the line fom the bottom going up
+				local l_r = l_r or 1
+				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
+				local direction = new_rotation:y()
+				local to = from + direction --* range
+
+				local col_ray = self:_calc_melee_hit_ray(t, 10, from, direction)
+				local ignore_hit = nil
+				if col_ray then
+					local hit_unit = col_ray.unit
+					if hit_unit and alive(hit_unit) then
+						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
+						local u_key = hit_unit:key()
+						if unique_hits[u_key] then
+							use_cleave = nil
+						else
+							unique_hits[u_key] = hit_unit
+							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
+							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
+						end
+					end
+
+					if hit_unit and hit_unit.character_damage and hit_unit:character_damage() then
+						hit_body = true
+					else
+						hit_gen = true
+					end
+				else
+				end
+				if not no_hit_shaker and not no_shaker then
+					self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, lerp_value))
+				end
+
+				no_shaker = true
+
+				return hit_body, use_cleave
+			end
+
+			local is_even = num_casts % 2 == 0
+			local half_casts = math.floor(num_casts / 2)
+			local angle_interval = (self._melee_charge_bonus and melee_weapon.interval_charge or melee_weapon.interval or 10) / 4
+			local cleave = melee_weapon.cleave or 1
+
+			local unique_hits = {}
+
+			local l_r = self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1) ) or nil
+			local v_mult = self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]
+			if l_r then
+				for i = 1, num_casts, 1 do 
+					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2) ) * l_r)
+					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult)
+					if cleave_enemy then
+						cleave = cleave - 1
+						if cleave < 1 then
+							break
+						end
+					end
+				end
+			else
+				if not is_even then
+					collect_melee_hits(0,unique_hits)
+				end
+				for i = 1, half_casts, 1 do 
+					local left_angle = i * angle_interval
+					local right_angle = -left_angle
+					collect_melee_hits(left_angle,unique_hits)
+					collect_melee_hits(right_angle,unique_hits)
+				end
+			end
+			if hit_body then
+				self:_play_melee_sound(melee_entry, "hit_body")
+			elseif hit_gen then
+				self:_play_melee_sound(melee_entry, "hit_gen")
+			end
+		else
+			self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
+		end
 		self._state_data.melee_damage_delay_t = nil
 		self._state_data.melee_hit_ray = nil
 	end
@@ -2297,7 +2400,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	--Lets skills give faster melee charge and swing speeds.
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
-	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 2 --i.e. never get the bonus
+	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 
 	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_speed or 1
 	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
@@ -2336,9 +2439,9 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		bayonet_melee = true
 	end
 	
-	self._melee_charge_bonus_range = nil
+	self._melee_charge_bonus = nil
 	if charge_lerp_value and charge_lerp_value >= charge_bonus_start then
-		self._melee_charge_bonus_range = true
+		self._melee_charge_bonus = true
 		speed = math.max(speed, speed * (charge_lerp_value * charge_bonus_speed))
 		melee_damage_delay = math.min(melee_damage_delay, melee_damage_delay / (charge_lerp_value * charge_bonus_speed))
 		melee_expire_t = math.min(melee_expire_t, melee_expire_t / (charge_lerp_value * charge_bonus_speed))
@@ -2381,6 +2484,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	self._melee_attack_var = 0
 	self._melee_attack_var_h = nil
 	self._melee_attack_var_charge_h = nil
+	self._melee_attack_var_l_r = nil
 
 	if instant_hit then
 		local hit = skip_damage or self:_do_melee_damage(t, bayonet_melee)
@@ -2426,20 +2530,25 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 			if anim_attack_charged_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_charge_h = true
+				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_charged_left_vars and math.random(#anim_attack_charged_left_vars)
 				anim_attack_param = anim_attack_charged_left_vars and anim_attack_charged_left_vars[self._melee_attack_var]
 			elseif anim_attack_charged_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_charge_h = true
+				self._melee_attack_var_l_r = "right"
 				self._melee_attack_var = anim_attack_charged_right_vars and math.random(#anim_attack_charged_right_vars)
 				anim_attack_param = anim_attack_charged_right_vars and anim_attack_charged_right_vars[self._melee_attack_var]
 			end
 		elseif self._stick_move then
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_h = true
+				self._melee_attack_var_left = true
+				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
 			elseif anim_attack_right_vars and angle and (angle <= 46) and (angle >= 0) then
 				self._melee_attack_var_h = true
+				self._melee_attack_var_l_r = "right"
 				self._melee_attack_var = anim_attack_right_vars and math.random(#anim_attack_right_vars)
 				anim_attack_param = anim_attack_right_vars and anim_attack_right_vars[self._melee_attack_var]
 			end
@@ -2447,6 +2556,11 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		local fix_anim_timer = anim_attack_param and timing_fix and table.contains(timing_fix, anim_attack_param)
 		if fix_anim_timer then
 			speed = speed * timing_fix_speed_mult
+		end
+
+		local var_dir = tweak_data.blackmarket.melee_weapons[melee_entry].anim_attack_var_dir
+		if var_dir and var_dir[anim_attack_param] then
+			self._melee_attack_var_l_r = var_dir[anim_attack_param]
 		end
 		local state = self._ext_camera:play_redirect(self:get_animation("melee_attack"), speed) --Apply speed mult to animation.
 		if anim_attack_param then
@@ -3209,7 +3323,9 @@ function PlayerStandard:_update_slide_locks()
 	end
 end
 
-function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
+PlayerStandard._DRAW_MELEE_DEBUG = nil
+PlayerStandard._DRAW_MELEE_DEBUG_HITS = nil
+function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, direction)
 	local melee_entry = managers.blackmarket:equipped_melee_weapon()
 	local melee_tweak_data = tweak_data.blackmarket.melee_weapons[melee_entry]
 	local range = melee_tweak_data.stats.range or 150
@@ -3222,36 +3338,39 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius)
 	local active_weapon_range = active_weapon_stats and math.max((active_weapon_stats and active_weapon_stats.jab_range or active_weapon_stats.bayonet_range) or 0, 0) or 0
 	range = range + wtd_base_range + active_weapon_range
 
-	local has_charged_range = self._melee_charge_bonus_range and self._melee_charge_bonus_range == true
+	local has_charged_range = self._melee_charge_bonus and self._melee_charge_bonus == true
 	local charge_bonus_range = melee_tweak_data.stats.charge_bonus_range or 0
 	if has_charged_range then
 		range = range + charge_bonus_range
 	end
 
-	local sphere_cast_radius_add = (has_charged_range and self._melee_attack_var_charge_h and melee_tweak_data.sphere_cast_radius_add_charged_h) or (self._melee_attack_var_h and melee_tweak_data.sphere_cast_radius_add_h) or melee_tweak_data.sphere_cast_radius_add
+	--local sphere_cast_radius_add = (has_charged_range and self._melee_attack_var_charge_h and melee_tweak_data.sphere_cast_radius_add_charged_h) or (self._melee_attack_var_h and melee_tweak_data.sphere_cast_radius_add_h) or melee_tweak_data.sphere_cast_radius_add
 	if sphere_cast_radius_add then
 		sphere_cast_radius = sphere_cast_radius + sphere_cast_radius_add
 		range = range - sphere_cast_radius_add
 	end
 
-	local from = self._unit:movement():m_head_pos()
-	local to = from + self._unit:movement():m_head_rot():y() * range
+	local from = from or self._unit:movement():m_head_pos()
+	local to = from + (direction or self._unit:movement():m_head_rot():y()) * range
 
-	return self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
+	local col_ray = self._unit:raycast("ray", from, to, "slot_mask", self._slotmask_bullet_impact_targets, "sphere_cast_radius", sphere_cast_radius, "ray_type", "body melee")
+	
+	if PlayerStandard._DRAW_MELEE_DEBUG then
+		local dist = PlayerStandard._DRAW_MELEE_DEBUG_HITS and col_ray and col_ray.position
+		Draw:brush(Color.red:with_alpha(0.2),5):line(from,dist or to)
+		Draw:brush(Color.green:with_alpha(0.2),5):sphere(dist or to,sphere_cast_radius)
+	end
+
+	return col_ray
 end
 
-
-local melee_vars = {
-	"player_melee",
-	"player_melee_var2"
-}
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, no_shaker, no_sound)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 	local sphere_cast_radius = 20
-	local col_ray = nil
+	local col_ray = col_ray or nil
 	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
 	local make_decal = tweak_data.blackmarket.melee_weapons[melee_entry].make_decal or nil
 	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw or nil --not implemented yet
@@ -3262,14 +3381,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	self._state_data._charger_melee_active = nil
 
 	-- If true, disables the shaker when a melee weapon connects
-	if not melee_weapon.no_hit_shaker then
+	if not melee_weapon.no_hit_shaker and not no_shaker then
 		self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 	end
-	
-	if melee_hit_ray then
-		col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
-	else
-		col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
+	if not col_ray then
+		if melee_hit_ray then
+			col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
+		else
+			col_ray = self:_calc_melee_hit_ray(t, sphere_cast_radius)
+		end
 	end
 	if col_ray and alive(col_ray.unit) then
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
@@ -3277,14 +3397,16 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		damage = damage * managers.player:get_melee_dmg_multiplier()
 		damage_effect = damage_effect * damage_effect_mul
 		col_ray.sphere_cast_radius = sphere_cast_radius
-		local hit_unit = col_ray.unit
+		local hit_unit = hit_unit or col_ray.unit
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
-				self:_play_melee_sound(melee_entry, "hit_body")
+				if not no_sound then
+					self:_play_melee_sound(melee_entry, "hit_body")
+				end
 			end
 			if not hit_unit:character_damage()._no_blood then
 				managers.game_play_central:play_impact_flesh({col_ray = col_ray})
@@ -3305,7 +3427,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
 			else
-				self:_play_melee_sound(melee_entry, "hit_gen")
+				if not no_sound then
+					self:_play_melee_sound(melee_entry, "hit_gen")
+				end
 			end
 			managers.game_play_central:play_impact_sound_and_effects({
 				decal = make_saw and "saw",
@@ -3346,7 +3470,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		end
 		character_unit = character_unit or hit_unit
 
-		if self._melee_charge_bonus_range then
+		if self._melee_charge_bonus then
 			if special_weapon == "megumin" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
 				local exp_dmg = melee_weapon.explosion_damage or 60

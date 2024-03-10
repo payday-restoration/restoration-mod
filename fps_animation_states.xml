@@ -37,8 +37,19 @@
 		</target>
 	</tweak>
 <!--Nailgun End-->
-	
-	
+
+<!--Beardy-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_attack"/>
+			<anim name="melee_attack_var4" weight="melee_knife * var4"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_beardy_attack_var4" weight="melee_beardy * var4"/>
+		</target>
+	</tweak>
+<!--Beardy End-->
 	
 <!--SABR-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">

@@ -49,7 +49,7 @@ local optsBesiegeDummy_3 = {
 }
 local begin_the_nightmare = {
 	on_executed = { 
-		{ id = 400032, delay = 10 }
+		{ id = 400038, delay = 10 }
 	}
 }
 local nightmare_spawngroups = {
@@ -249,35 +249,35 @@ return {
 		restoration:gen_dummy(
             400027,
             "enemy_dummy_26",
-            Vector3(-3088, 4646, -398.479),
-            Rotation(-90, 0, -0),
+            Vector3(-2184, 4791, -398.479),
+            Rotation(-180, 0, -0),
             optsBesiegeDummy_2
         ),
 		restoration:gen_dummy(
             400028,
             "enemy_dummy_27",
-            Vector3(-3088, 4717, -398.479),
-            Rotation(-90, 0, -0),
+            Vector3(-2259, 4791, -398.479),
+            Rotation(-180, 0, -0),
             optsBesiegeDummy_2
         ),
 		restoration:gen_dummy(
             400029,
             "enemy_dummy_28",
-            Vector3(-3088, 4795, -398.479),
-            Rotation(-90, 0, -0),
+            Vector3(-2330, 4791, -398.479),
+            Rotation(-180, 0, -0),
             optsBesiegeDummy_2
         ),
 		restoration:gen_dummy(
             400030,
             "enemy_dummy_29",
-            Vector3(-3014, 4795, -398.479),
+            Vector3(-2401, 4791, -398.479),
             Rotation(-180, 0, -0),
             optsBesiegeDummy_2
         ),
 		restoration:gen_dummy(
             400031,
             "enemy_dummy_30",
-            Vector3(-2936, 4795, -398.479),
+            Vector3(-2467, 4791, -398.479),
             Rotation(-180, 0, -0),
             optsBesiegeDummy_2
         ),
@@ -315,7 +315,7 @@ return {
 			400037,
 			"nightmare_besiege_06",
 			{400027, 400028, 400029, 400030, 400031},
-			75
+			30
 		),
 		restoration:gen_preferedadd(
             400038,

@@ -18,6 +18,7 @@ return {
 		on_executed = {
 		--be gone
 			{id = 101669, remove = true},
+			{id = 102710, remove = true},
 		--trigger spawngroups after 10 seconds
 			{id = 400001, delay = 0}
 		}

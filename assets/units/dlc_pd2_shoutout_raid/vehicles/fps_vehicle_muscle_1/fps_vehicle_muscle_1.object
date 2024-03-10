@@ -228,14 +228,14 @@
 		<suspension max_compression="0.18" max_extension="0.22" spring_strength="55000" damper_rate="4500" supported_mass="500" />
 		<gearbox switch_time="0.1" ratio_multiplier="4.0">
 			<ratios>
-				<ratio value="-3.0" />
-				<ratio value="0.0" />
-				<ratio value="4.0" />
-				<ratio value="2.0" />
-				<ratio value="1.6" />
-				<ratio value="1.2" />
+				<ratio value="-3.23" />
+				<ratio value="0.00" />
+				<ratio value="2.65" />
+				<ratio value="1.93" />
+				<ratio value="1.39" />
+				<ratio value="1.00" />
 			</ratios>
 		</gearbox>
-		<engine max_torque="500" max_rpm="6000"/>
+		<engine max_torque="600" max_rpm="6000"/>
 	</vehicle>
 </dynamic_object>

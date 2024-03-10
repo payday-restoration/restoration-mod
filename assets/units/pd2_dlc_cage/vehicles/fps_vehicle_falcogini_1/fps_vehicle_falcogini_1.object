@@ -207,17 +207,16 @@
 		<gearbox switch_time="0.1" ratio_multiplier="4.0">
 			<ratios>
 				<ratio value="-2.81" />
-				<ratio value="0.0" />
-				<ratio value="3.85" />
-				<ratio value="2.50" />
-				<ratio value="1.90" />
-				<ratio value="1.51" />
-				<ratio value="1.25" />
-				<ratio value="1.02" />
-				<ratio value="0.92" />
+				<ratio value="0.00" />
+				<ratio value="3.31" />
+				<ratio value="2.05" />
+				<ratio value="1.46" />
+				<ratio value="1.14" />
+				<ratio value="0.94" />
+				<ratio value="0.78" />
 			</ratios>
 		</gearbox>
-		<engine max_torque="600" max_rpm="9000"/>
+		<engine max_torque="700" max_rpm="9000"/>
 	</vehicle>
 
 </dynamic_object>

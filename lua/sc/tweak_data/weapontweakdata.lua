@@ -17830,6 +17830,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.recategorize = { "light_ar" }
 				self.tkb0146.has_description = false
 				self.tkb0146.tactical_reload = 1
+				self.tkb0146.is_bullpup = true
 				self.tkb0146.fire_rate_init_delay = 0
 				self.tkb0146.fire_rate_init_count = 2
 				self.tkb0146.fire_rate_init_mult = 0.7
@@ -17844,16 +17845,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.supported = true
 				self.tkb0146.ads_speed = 0.260
 				self.tkb0146.damage_falloff = {
-					start_dist = 1800,
+					start_dist = 2100,
 					end_dist = 4100,
 					min_mult = 0.5
 				}
 				self.tkb0146.stats = {
 					damage = 24,
-					spread = 73,
-					recoil = 79,
+					spread = 74,
+					recoil = 85,
 					zoom = 1,
-					concealment = 25,
+					concealment = 26,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,

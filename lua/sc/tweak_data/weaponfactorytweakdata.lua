@@ -2428,6 +2428,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4_usasoc = {
 				translation = Vector3(-0.005, 5, -0.115),
 			}
+			self.parts.wpn_fps_upg_o_eotech.stance_mod.wpn_fps_ass_tkb0146 = {
+				translation = Vector3(-0.015, 5.4, -1.206)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
 				translation = Vector3(-0.008, 2.6, -0.12)
@@ -28055,7 +28058,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_ass_tkb0146_custom_burst then
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.stats = { value = 0 }
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.custom_stats = nil
+			self.parts.wpn_fps_ass_tkb0146_muzzle_brake.perks = nil
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.stats = { value = 0 }
+			self.parts.wpn_fps_ass_tkb0146_custom_burst.custom_stats = nil
 			self.parts.wpn_fps_ass_tkb0146_custom_burst.perks = nil
+
+
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.supported = true
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.supported = true
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_tkb0146_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+
+			table.insert(self.wpn_fps_ass_tkb0146.uses_parts, "wpn_fps_upg_ak_m_quad")
+			table.insert(self.wpn_fps_ass_tkb0146.uses_parts, "wpn_fps_upg_ak_m_quick")
+			self.wpn_fps_ass_tkb0146_npc.uses_parts = deep_clone(self.wpn_fps_ass_tkb0146.uses_parts)
 		end
 		
 

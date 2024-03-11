@@ -260,12 +260,14 @@ local spawn_cloakers = {
 	}
 }
 local spawn_rooftopSWAT = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400021, delay = 0 },
 		{ id = 400022, delay = 0 }
 	}
 }
 local spawn_SWATsquad = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400028, delay = 0 },
 		{ id = 400029, delay = 0.5 },

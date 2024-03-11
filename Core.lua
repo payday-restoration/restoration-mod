@@ -999,7 +999,7 @@ function restoration:mission_script_add()
 				trigger_times = opts.trigger_times or 0,
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
-				enabled = opts.enabled or true
+				enabled = opts.enabled or false
 			},
 		}
 	end

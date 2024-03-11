@@ -209,6 +209,7 @@ local optsCloaker_Hide_SO_2 = {
     so_action = "e_so_sneak_wait_stand"
 }
 local spawn_bravo_eleavtor_escape = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400021, delay = 0 },
 		{ id = 400022, delay = 0 },
@@ -216,6 +217,7 @@ local spawn_bravo_eleavtor_escape = {
 	}
 }
 local spawn_bravo_bus_escape = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400027, delay = 0 },
 		{ id = 400028, delay = 0 },
@@ -227,6 +229,7 @@ local spawn_bravo_bus_escape = {
 	}
 }
 local spawn_cloakers = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400004, delay = 0 },
 		{ id = 400005, delay = 0 },

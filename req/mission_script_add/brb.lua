@@ -171,6 +171,7 @@ local optsrespawn_murkies_cloakers = {
     event = "death"
 }
 local global_murky_spawn_mission_script = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400002, delay = 120 },
 		{ id = 400003, delay = 120 },

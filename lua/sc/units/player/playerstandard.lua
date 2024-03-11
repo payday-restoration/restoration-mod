@@ -3357,8 +3357,8 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	
 	if PlayerStandard._DRAW_MELEE_DEBUG then
 		local dist = PlayerStandard._DRAW_MELEE_DEBUG_HITS and col_ray and col_ray.position
-		Draw:brush(Color.red:with_alpha(0.2),5):line(from,dist or to)
-		Draw:brush(Color.green:with_alpha(0.2),5):sphere(dist or to,sphere_cast_radius)
+		Draw:brush(Color.blue:with_alpha(0.1),3):line(from,dist or to)
+		Draw:brush(dist and Color.red:with_alpha(0.05) or Color.green:with_alpha(0.1),3):sphere(dist or to,sphere_cast_radius)
 	end
 
 	return col_ray

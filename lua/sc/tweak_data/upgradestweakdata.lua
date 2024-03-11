@@ -2148,7 +2148,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend_grinder = {-3}
+	self.values.player.level_5_armor_addend_grinder = {-4}
 	self.values.player.flak_jacket_concealment = {
 		8,
 		4
@@ -2159,7 +2159,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		tick_time = 1,
 		total_ticks = 3,
 		max_stacks = 5,
-		stacking_cooldown = 0.7,
+		stacking_cooldown = 0.5,
 		add_stack_sources = {
 			bullet = true,
 			explosion = true,
@@ -2231,11 +2231,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
  			10 --Copycat
  		},
  		cdr = {1 , 4}, --Amount cooldown is reduced on ammo box pickup.
-		{3, 6}, --Amounts healed per level
-		{4, 7},
-		{5, 8},
+		{2, 6}, --Amounts healed per level
+		{3, 7},
+		{4, 8},
 
-		{2, 5} --Copycat
+		{1, 5} --Copycat
  	}
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
@@ -2313,9 +2313,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Ex President
 	self.values.player.armor_health_store_amount = {
+		0.3,
 		0.4,
-		0.6,
-		0.8
+		0.5
 	}	
 	self.values.player.armor_max_health_store_multiplier = {
 		1.25
@@ -2363,10 +2363,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Chico--
 	--kingpin
 	self.values.temporary.chico_injector = {
-		{0.3, 4},
-		{0.3, 5},
-		{0.3, 6},
-		{0.2, 4} --Copycat's version
+		{0.25, 4},
+		{0.25, 5},
+		{0.25, 6},
+		{0.15, 4} --Copycat's version
 	}
 	self.values.player.chico_injector_speed = {
 		1.2
@@ -2377,7 +2377,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.6}
+		{0.25, 0.5}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
 		{0.5, 2}
@@ -2453,7 +2453,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}}
 	self.values.player.less_armor_wild_health = {{
 		0.25,
-		0.2
+		0.1
 	}}
 	self.values.player.less_armor_wild_cooldown = {{
 		0.25,
@@ -2475,7 +2475,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_extension = 0,
 			kill_duration = 0,
 			kill_dropoff = 0,
-			duration = 11,
+			duration = 8,
 			tagged_health_gain_ratio = 0.5
 		},
 		{
@@ -2485,7 +2485,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_extension = 2,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
-			duration = 11,
+			duration = 8,
 			tagged_health_gain_ratio = 0.5
 		},
 		{
@@ -2495,7 +2495,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			kill_extension = 2,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
-			duration = 11,
+			duration = 8,
 			tagged_health_gain_ratio = 0.5
 		}
 	}
@@ -2525,8 +2525,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			duration = 10.1,
 			affects_cameras = true,
 			affects_pagers = true,
-			feedback_interval = 1.6,
-			feedback_range = 1000
+			feedback_interval = 1.2,
+			feedback_range = 625
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {

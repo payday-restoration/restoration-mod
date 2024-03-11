@@ -3830,6 +3830,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		if self.melee_weapons.halloween_sword then
 			table.insert(melee_anim, "halloween_sword")
 		end
+		if self.melee_weapons.zweihander then
+			table.insert(melee_anim, "zweihander")
+		end
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
 			self.melee_weapons[melee_id].anim_global_param = "melee_great"
@@ -5169,7 +5172,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.piggy_hammer.stats.special_damage_multiplier = 2
 			self.melee_weapons.piggy_hammer.stats.charge_time = 2.5
 			self.melee_weapons.piggy_hammer.stats.range = 200
-			self.melee_weapons.piggy_hammer.stats.concealment = 23
+			self.melee_weapons.piggy_hammer.stats.concealment = 24
 			self.melee_weapons.piggy_hammer.random_special_effects = {
 				{
 					weight = 75,
@@ -5999,6 +6002,25 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0
 	end
 
+	if self.melee_weapons.zweihander then
+		self.melee_weapons.zweihander.info_id = "bm_melee_zweihander_info"
+		self.melee_weapons.zweihander.cleave = 5
+		self.melee_weapons.zweihander.raycasts = 20
+		self.melee_weapons.zweihander.raycasts_h = 35
+		self.melee_weapons.zweihander.raycasts_charge = 6
+		self.melee_weapons.zweihander.stats.min_damage = 9
+		self.melee_weapons.zweihander.stats.max_damage = 18.001
+		self.melee_weapons.zweihander.stats.min_damage_effect = 4.0
+		self.melee_weapons.zweihander.stats.max_damage_effect = 12.0
+		self.melee_weapons.zweihander.stats.charge_time = 3
+		self.melee_weapons.	.stats.range = 220
+		self.melee_weapons.zweihander.stats.charge_bonus_start = 0.9
+		self.melee_weapons.zweihander.stats.charge_bonus_range = 50
+		self.melee_weapons.zweihander.stats.concealment = 26
+		self.melee_weapons.zweihander.speed_mult = 0.77
+		self.melee_weapons.zweihander.counter_damage = 18
+	end
+
 	local melee_anim = {}
 	
 	--melee_sandsteel
@@ -6077,7 +6099,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].expire_t = 1.45
 			self.melee_weapons[melee_id].repeat_expire_t = 1.20
 			self.melee_weapons[melee_id].melee_damage_delay = 0.6
-			self.melee_weapons[melee_id].anim_speed_mult = 1.34
+			self.melee_weapons[melee_id].anim_speed_mult = 1.26
 		end
 	end
 
@@ -6255,7 +6277,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
 		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99
 		self.melee_weapons.megumins_staff.stats.charge_bonus_range = 2800
-		self.melee_weapons.megumins_staff.stats.concealment = 22
+		self.melee_weapons.megumins_staff.stats.concealment = 23
 		self.melee_weapons.megumins_staff.stats.charge_time = 55
 		self.melee_weapons.megumins_staff.ignore_charge_speed = true
 		self.melee_weapons.megumins_staff.special_weapon = "megumin"
@@ -6336,10 +6358,15 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.dragon_slayer.info_id = "bm_melee_goat_info"
 		self.melee_weapons.dragon_slayer.special_weapon = "panic"
 		self.melee_weapons.dragon_slayer.stats = deep_clone(self.melee_weapons.halloween_sword.stats)
+		self.melee_weapons.dragon_slayer.stats.min_damage_effect = 9.0
+		self.melee_weapons.dragon_slayer.stats.max_damage_effect = 24.0
+		self.melee_weapons.dragon_slayer.stats.range = 250
+		self.melee_weapons.dragon_slayer.stats.concealment = 24
 		self.melee_weapons.dragon_slayer.sounds = deep_clone(self.melee_weapons.halloween_sword.sounds)
 		self.melee_weapons.dragon_slayer.sounds.hit_body = "cash_loot_drop_reveal"
 		self.melee_weapons.dragon_slayer.sounds.hit_gen = "cash_loot_drop_reveal"
 		self.melee_weapons.dragon_slayer.anim_attack_charged_vars = nil
+		self.melee_weapons.dragon_slayer.speed_mult = 0.85
 	end
 
 	if self.melee_weapons.Binary_Blade then --Kalidor's Binary Blade (Greatsword)

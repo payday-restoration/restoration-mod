@@ -30297,6 +30297,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 		
 				--HK M16
+				self.parts.wpn_fps_ass_contraband_o_sayhello = {
+					type = "exclusive_set_o",
+					name_id = "none",
+					unit = "units/mods/weapons/wpn_fps_smg_car9/wpn_fps_smg_car9"
+					,
+					stats = {
+						value = 1
+					}
+				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.supported = true
 				self.parts.wpn_fps_ass_contraband_body_sayhello.keep_damage = true
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stats = {
@@ -30328,6 +30337,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.adds = {
+					"wpn_fps_smg_car9_upper_standard",
+					"wpn_fps_ass_m4_ns_frontsight",
+					"wpn_fps_ass_contraband_body_sayhello_sound_dummy",
+					"wpn_fps_ass_contraband_o_sayhello"
+				}
+
 				self.parts.wpn_fps_ass_contraband_body_sayhello.override = {
 					wpn_fps_ass_contraband_body_standard = {
 						unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_reciever",
@@ -30367,7 +30383,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						parent = "exclusive_set",
 						a_obj = "a_g"
 					},
-					wpn_fps_amcar_uupg_body_upperreciever = {
+					wpn_fps_smg_car9_upper_standard = {
 						parent = "exclusive_set",
 						a_obj = "a_upper"
 					},
@@ -30375,7 +30391,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						parent = "exclusive_set",
 						a_obj = "a_gl"
 					},
-					wpn_fps_ass_m16_os_frontsight = {
+					wpn_fps_ass_m4_ns_frontsight = {
 						parent = "exclusive_set",
 						a_obj = "a_os"
 					},
@@ -30423,11 +30439,46 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							}
 						elseif self.parts[part_id].type == "sight" then
 							if not table.contains(self.wpn_fps_ass_contraband.default_blueprint, part_id) then
-								table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.forbids, part_id )
+								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] = self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] or {}
+								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].parent = "exclusive_set_o"
+								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].stance_mod = {
+									wpn_fps_ass_contraband = {
+										translation = self.parts[part_id].stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+									}
+								}
+								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].adds = self.parts[part_id].adds and deep_clone(self.parts[part_id].adds) or {}
+								table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].adds, "wpn_fps_smg_car9_o_rail" )
+								--table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.forbids, part_id )
 							end
 						end
 					end
 				end
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_upg_o_specter_piggyback = {
+					stance_mod = {
+						wpn_fps_ass_contraband = {
+							translation = self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+						}
+					}
+				}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_upg_o_hamr_reddot = {
+					parent = "exclusive_set_o",
+					stance_mod = {
+						wpn_fps_ass_contraband = {
+							translation = self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+						}
+					}
+				}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_upg_o_atibal_reddot = {
+					parent = "exclusive_set_o",
+					stance_mod = {
+						wpn_fps_ass_contraband = {
+							translation = self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+						}
+					}
+				}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_smg_car9_o_rail = {
+					parent = "exclusive_set_o"
+				}
 		
 				--G2 Kit
 				self.parts.wpn_fps_snp_contender_receiver_hunt.supported = true
@@ -35921,7 +35972,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
 			if zoom >= 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
-				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.005)
+				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
 			end
 		end
 	end

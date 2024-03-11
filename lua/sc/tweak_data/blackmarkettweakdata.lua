@@ -6013,7 +6013,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.zweihander.stats.min_damage_effect = 4.0
 		self.melee_weapons.zweihander.stats.max_damage_effect = 12.0
 		self.melee_weapons.zweihander.stats.charge_time = 3
-		self.melee_weapons.	.stats.range = 220
+		self.melee_weapons.zweihander.stats.range = 220
 		self.melee_weapons.zweihander.stats.charge_bonus_start = 0.9
 		self.melee_weapons.zweihander.stats.charge_bonus_range = 50
 		self.melee_weapons.zweihander.stats.concealment = 26

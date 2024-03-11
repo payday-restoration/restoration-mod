@@ -167,7 +167,6 @@
 				<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>
 				<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 				<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
-				<hook file="sc/managers/trademanager.lua" source_file="lib/managers/trademanager"/>
 				<hook file="sc/managers/gameplaycentralmanager.lua" source_file="lib/managers/gameplaycentralmanager"/>
 				<hook file="sc/managers/hudmanager.lua" source_file="lib/managers/hudmanager"/>
 				<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>

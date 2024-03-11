@@ -30336,7 +30336,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						translation = Vector3(0, -9.5, -0.905)
 					}
 				}
-				self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {
+					"wpn_fps_upg_o_45rds", --I do not care to make these work, someone else can deal with these if they want them so much
+					"wpn_fps_upg_o_45rds2",
+					"wpn_fps_upg_o_45steel"
+				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.adds = {
 					"wpn_fps_smg_car9_upper_standard",
 					"wpn_fps_ass_m4_ns_frontsight",

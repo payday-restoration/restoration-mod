@@ -3174,6 +3174,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M4/CAR-4
 					["bm_w_m4"] = "CAR-4",
 					["bm_w_m4_mk12"] = "CAR-12 SPR",
+					["bm_w_m4_lr300"] = "TR-300",
 					["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
 					["bm_wp_upg_s_fixed"] = "CAR Fixed Stock",
 					--AK5
@@ -3878,6 +3879,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--CAR-4
 					["bm_w_m4"] = "Colt M4A1",
 					["bm_w_m4_mk12"] = "Mk 12 SPR",
+					["bm_w_m4_lr300"] = "ZM LR-300",
 					--AK74
 					["bm_w_ak74"] = "Kalashnikov Concern AKS-74",
 					--805
@@ -4377,6 +4379,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_m16_sc_desc"] = "\"I won't lose!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nThe energetic and foul-mouthed figurehead of the school.",
 					["bm_w_m4"] = "Em-Four",
 					["bm_w_m4_mk12"] = "Em-Four",
+					["bm_w_m4_lr300"] = "Em-Four",
 						["bm_m4_sc_desc"] = "\"Don't underestimate a service rifle!\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nVice-president of the middleschool student council.",
 					["bm_w_aug"] = "AUG",
 					["bm_w_aug_a3"] = "AUG",

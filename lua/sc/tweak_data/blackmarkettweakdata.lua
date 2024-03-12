@@ -3833,6 +3833,9 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		if self.melee_weapons.zweihander then
 			table.insert(melee_anim, "zweihander")
 		end
+		if self.melee_weapons.broad then
+			table.insert(melee_anim, "broad")
+		end
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
 			self.melee_weapons[melee_id].anim_global_param = "melee_great"
@@ -3894,9 +3897,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			melee_anim = {
 				'hockey','barbedwire','baseballbat','stick'
 			}
-			if self.melee_weapons.broad then
-				table.insert(melee_anim, "broad")
-			end
 			for i, melee_id in ipairs(melee_anim) do
 				if self.melee_weapons[melee_id] then
 					self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
@@ -6050,24 +6050,9 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	if self.melee_weapons.broad then
-		self.melee_weapons.broad.anim_global_param = "melee_beardy"
-		self.melee_weapons.broad.align_objects = {"a_weapon_right"}
-		self.melee_weapons.broad.anim_attack_vars = {"var2","var3"}
-		self.melee_weapons.broad.anim_attack_left_vars = {"var1"}
-		self.melee_weapons.broad.anim_attack_right_vars = {"var4"}
 		self.melee_weapons.broad.anim_attack_charged_vars = nil
 		self.melee_weapons.broad.anim_attack_charged_left_vars = nil
 		self.melee_weapons.broad.anim_attack_charged_right_vars = nil
-		self.melee_weapons.broad.anim_attack_var_dir = {
-			var1 = {"left", 0.2},
-			var2 = {"left", 0.9},
-			var3 = {"left", 0.8},
-			var4 = {"right", 0.2}
-		}
-		self.melee_weapons.broad.expire_t = 1.45
-		self.melee_weapons.broad.repeat_expire_t = 1.2
-		self.melee_weapons.broad.melee_damage_delay = 0.63
-		self.melee_weapons.broad.anim_speed_mult = 1.26
 		self.melee_weapons.broad.attack_pattern = "bm_melee_pattern_great_no_stab"
 		self.melee_weapons.broad.info_id = "bm_melee_broad_info"
 		self.melee_weapons.broad.cleave = 3

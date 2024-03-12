@@ -2191,7 +2191,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local no_shaker = nil
 			local hit_body, hit_gen, use_cleave = nil
 
-			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
+			local function collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
 				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the line fom the top going down, - starts the line fom the bottom going up
 				local l_r = l_r or 1
 				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
@@ -2202,15 +2202,19 @@ function PlayerStandard:_update_melee_timers(t, input)
 				local ignore_hit = nil
 				if col_ray then
 					local hit_unit = col_ray.unit
+					local body_dmg_ext = col_ray.body and col_ray.body:extension() and col_ray.body:extension().damage
 					if hit_unit and alive(hit_unit) then
 						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
 						if unique_hits[u_key] then
 							use_cleave = nil
+							if not is_enemy and body_dmg_ext then
+								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
+							end
 						else
 							unique_hits[u_key] = hit_unit
 							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
-							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
+							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
 						end
 					end
 
@@ -2242,7 +2246,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			if l_r then
 				for i = 1, num_casts, 1 do 
 					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2) ) * l_r)
-					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult)
+					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
 					if cleave_enemy then
 						cleave = cleave - 1
 						if cleave < 1 then
@@ -3364,7 +3368,7 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	return col_ray
 end
 
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, no_shaker, no_sound)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -3395,7 +3399,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
 		local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
 		damage = damage * managers.player:get_melee_dmg_multiplier()
+		damage = damage / (dmg_div or 1)
 		damage_effect = damage_effect * damage_effect_mul
+		damage_effect = damage_effect / (dmg_div or 1)
 		col_ray.sphere_cast_radius = sphere_cast_radius
 		local hit_unit = hit_unit or col_ray.unit
 		if hit_unit:character_damage() then
@@ -3408,7 +3414,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					self:_play_melee_sound(melee_entry, "hit_body")
 				end
 			end
-			if not hit_unit:character_damage()._no_blood then
+			if not hit_unit:character_damage()._no_blood and not no_effect then
 				managers.game_play_central:play_impact_flesh({col_ray = col_ray})
 				managers.game_play_central:play_impact_sound_and_effects({
 					col_ray = col_ray,
@@ -3431,13 +3437,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					self:_play_melee_sound(melee_entry, "hit_gen")
 				end
 			end
-			managers.game_play_central:play_impact_sound_and_effects({
-				decal = make_saw and "saw",
-				col_ray = col_ray,
-				effect = (not make_effect and not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")) or nil,
-				no_decal = (not make_decal and not make_saw) and true,
-				no_sound = true
-			})
+			if not no_effect then
+				managers.game_play_central:play_impact_sound_and_effects({
+					decal = make_saw and "saw",
+					col_ray = col_ray,
+					effect = (not make_effect and not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")) or nil,
+					no_decal = (not make_decal and not make_saw) and true,
+					no_sound = true
+				})
+			end
 		end
 
 		--Out of date syncing method, reenable in case it was load bearing.

@@ -663,7 +663,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 				self.skill_descs.fast_learner = {
 				skill_value_b1 = tostring((1-self.first_aid_kit.revived_damage_reduction[1][1]) * 100).."%", -- DR for revived player
-				skill_value_b2 = tostring(self.first_aid_kit.revived_damage_reduction[1][2]) -- Duration of DR effect
+				skill_value_b2 = tostring(self.first_aid_kit.revived_damage_reduction[1][2]), -- Duration of DR effect
+				skill_value_p1 = tostring((1-(self.first_aid_kit.revived_damage_reduction[1][1] - self.first_aid_kit.revived_damage_reduction[2][1])) * 100).."%", -- Aced DR for revived player
 				}
 
 			--Uppers

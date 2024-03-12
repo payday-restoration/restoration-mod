@@ -5145,77 +5145,77 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   MEDIC SUBTREE   ]]--
 				--Combat Medic
 				["menu_combat_medic_beta_sc"] = "Combat Medic",
-				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#10%## damage reduction for #{skill_color}#5## seconds while and after reviving another crew member.\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#30%## more health.",
+				["menu_combat_medic_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## damage reduction for #{skill_color}#$skill_value_b2## seconds while and after reviving another crew member.\n\nACE: #{owned}#$pro##\nReviving a crew member gives them #{skill_color}#$skill_value_p1## more health.",
 
 				--Quick Fix
 				["menu_tea_time_beta_sc"] = "Quick Fix",
-				["menu_tea_time_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by #{skill_color}#50%.##\n\nACE: #{owned}#$pro##\nCrew members that use your First Aid Kits take #{skill_color}#50%## less damage for #{skill_color}#5## seconds.",
+				["menu_tea_time_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\nCrew members that use your First Aid Kits take #{skill_color}#$skill_value_p1## less damage for #{skill_color}#$skill_value_p2## seconds.",
 
 				--Pain Killers
 				["menu_fast_learner_beta_sc"] = "Painkillers",
-				["menu_fast_learner_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nCrew members you revive take #{skill_color}#25%## less damage for #{skill_color}#5## seconds.\n\nACE: #{owned}#$pro##\nThe damage reduction is increased by an additional #{skill_color}#25%.##",
+				["menu_fast_learner_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nCrew members you revive take #{skill_color}#$skill_value_b1## less damage for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nThe damage reduction is increased by an additional #{skill_color}#$skill_value_p1.##",
 
 				--Uppers
 				["menu_tea_cookies_beta_sc"] = "Uppers",
-				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now carry and deploy #{skill_color}#6## First Aid Kits.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#9## First Aid Kits.\n\nYour deployed First Aid Kits will #{skill_color}#auto-revive## you or any crew members going down within #{skill_color}#5## meters of it; a #{important_1}#60## second cooldown for auto-revival is applied to whoever was auto-revived.\n\n#{risk}#NOTE: First Aid Kits will not revive anyone in a Swan Song state.##",
+				["menu_tea_cookies_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now carry and deploy #{skill_color}#$skill_value_b1## First Aid Kits.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#$skill_value_p1## First Aid Kits.\n\nYour deployed First Aid Kits will #{skill_color}#auto-revive## you or any crew members going down within #{skill_color}#5## meters of it; a #{important_1}#$skill_value_p2## second cooldown for auto-revival is applied to whoever was auto-revived.\n\n#{risk}#NOTE: First Aid Kits will not revive anyone in a Swan Song state.##",
 
 				--Combat Doctor
 				["menu_medic_2x_beta_sc"] = "Combat Doctor",
-				["menu_medic_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour Doctor Bags carry additional supplies, allowing them to be used #{skill_color}#1## more time.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#2## Doctor Bags.",
+				["menu_medic_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour Doctor Bags carry additional supplies, allowing them to be used #{skill_color}#$skill_value_b1## more time.\n\nACE: #{owned}#$pro##\nYou can now carry and deploy #{skill_color}#$skill_value_p1## Doctor Bags.",
 
 				--Inspire
 				["menu_inspire_beta_sc"] = "Inspire",
-				["menu_inspire_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou revive crew members #{skill_color}#50%## faster.\n\nShouting at your crew members will increase their movement and reload speed by #{skill_color}#20%## for #{skill_color}#10## seconds.\n\nACE: #{owned}#$pro##\nYou can revive a downed crew member you have a line of sight on up to #{skill_color}#9## meters away from you by shouting at them; ranged revives have a cooldown of #{important_1}#90## seconds between uses.",
+				["menu_inspire_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou revive crew members #{skill_color}#$skill_value_b1## faster.\n\nShouting at your crew members will increase their movement and reload speed by #{skill_color}#$skill_value_b2## for #{skill_color}#$skill_value_b3## seconds.\n\nACE: #{owned}#$pro##\nYou can revive a downed crew member you have a line of sight on up to #{skill_color}#9## meters away from you by shouting at them; ranged revives have a cooldown of #{important_1}#$skill_value_p1## seconds between uses.",
 
 			--[[   CONTROLLER SUBTREE   ]]--
 				--Cable Guy
 				["menu_triathlete_beta_sc"] = "Cable Guy",
-				["menu_triathlete_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour supply of cable ties is increased by #{skill_color}#3.##\n\nACE: #{owned}#$pro##\nYour supply of cable ties is increased by an additional #{skill_color}#3.##\n\nYour chance to pick up cable ties from ammo boxes is increased to #{skill_color}#30%.##",
+				["menu_triathlete_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour supply of cable ties is increased by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\nYour supply of cable ties is increased by an additional #{skill_color}#$skill_value_p1.##\n\nYour chance to pick up cable ties from ammo boxes is increased to #{skill_color}#30%.##",
 
 				--Clowns are Scary
 				["menu_cable_guy_beta_sc"] = "Clowns are Scary",
-				["menu_cable_guy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nCivilians remain intimidated #{skill_color}#50%## longer.\n\nACE: #{owned}#$pro##\nThe power and range of your intimidation is increased by #{skill_color}#50%.##",
+				["menu_cable_guy_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nCivilians remain intimidated #{skill_color}#$skill_value_b1## longer.\n\nACE: #{owned}#$pro##\nThe power and range of your intimidation is increased by #{skill_color}#$skill_value_p1.##",
 
 				--Stockholm Syndrome
 				["menu_joker_beta_sc"] = "Stockholm Syndrome",
-				["menu_joker_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhile down, nearby civilians and converted enemies will #{skill_color}#revive you when called over## and will give you an ammo box.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#1## damage absorption for each hostage; stacks up to #{skill_color}#4## times.\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
+				["menu_joker_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhile down, nearby civilians and converted enemies will #{skill_color}#revive you when called over## and will give you an ammo box.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#$skill_value_p1## damage absorption for each hostage; stacks up to #{skill_color}#$skill_value_p2## times.\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
 
 				--Joker
 				["menu_stockholm_syndrome_beta_sc"] = "Joker",
-				["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nOnce the heist has gone loud, you can convert #{skill_color}#1## non-special enemy who has surrendered to fight on your side; they count as hostages for the purpose of skills and trading crew members out of custody.\n\nYour converted enemy takes #{skill_color}#60%## less damage.\n\nACE: #{owned}#$pro##\nYou can now have #{skill_color}#2## non-special enemies converted at the same time.\n\nYour converted enemies takes an additional #{skill_color}#20%## less damage.",
+				["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nOnce the heist has gone loud, you can convert #{skill_color}#1## non-special enemy who has surrendered to fight on your side; they count as hostages for the purpose of skills and trading crew members out of custody.\n\nYour converted enemy takes #{skill_color}#$skill_value_b1## less damage.\n\nACE: #{owned}#$pro##\nYou can now have #{skill_color}#2## non-special enemies converted at the same time.\n\nYour converted enemies takes an additional #{skill_color}#$skill_value_p1## less damage.",
 
 				--Partners in Crime
 				["menu_control_freak_beta_sc"] = "Partners in Crime",
-				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additonal #{skill_color}#3%## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#5%## for each hostage you have; stacks up to #{skill_color}#4## times.",
+				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additonal #{skill_color}#$skill_value_b1## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#$skill_value_p1## for each hostage you have; stacks up to #{skill_color}#4## times.",
 
 				--Hostage Taker
 				["menu_black_marketeer_beta_sc"] = "Hostage Taker",
-				["menu_black_marketeer_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou regenerate #{skill_color}#1## health point every #{skill_color}#4## seconds for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nHealth regen from this skill is increased by #{skill_color}#50%## when you have #{skill_color}#4 or more## hostages.\n\n#{skill_color}#Your civillian hostages will not flee## when they have been rescued by law enforcers.\n\n#{skill_color}#A hostage will trade themselves## for your safe return if you go into custody during an assault.\n\n#{risk}#NOTE: This trade can only occur## #{important_1}#1## #{risk}#time during a heist.##",
+				["menu_black_marketeer_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou regenerate #{skill_color}#$skill_value_b1## health point every #{skill_color}#4## seconds for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nHealth regen from this skill is increased by #{skill_color}#$skill_value_p1## when you have #{skill_color}#4 or more## hostages.\n\n#{skill_color}#Your civillian hostages will not flee## when they have been rescued by law enforcers.\n\n#{skill_color}#A hostage will trade themselves## for your safe return if you go into custody during an assault.\n\n#{risk}#NOTE: This trade can only occur## #{important_1}#1## #{risk}#time during a heist.##",
 
 			--[[   ASSAULT SUBTREE   ]]--
 				--Leadership
 				["menu_stable_shot_beta_sc"] = "Leadership",
-				["menu_stable_shot_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## gain #{skill_color}#2## stability.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#2## stability for #{skill_color}#all weapons.##\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
+				["menu_stable_shot_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nYou and your crew gain #{skill_color}#$skill_value_p2## stability for #{skill_color}#all weapons.##\n\n#{risk}#NOTE: Crew skills do not stack if multiple crew members have this skill.##",
 
 				--MG Handling
 				["menu_scavenger_sc"] = "MG Handling",
-				["menu_scavenger_desc_sc"] = "BASIC: #{owned}#$basic##\nTightens the hipfire accuracy of #{skill_color}#machine guns## by #{skill_color}#20%.##\n\nACE: #{owned}#$pro##\nTightens the hipfire accuracy of #{skill_color}#machine guns## by an additional #{skill_color}#30%.##\n\n#{skill_color}#Machine guns## reload #{skill_color}#25%## faster.",
+				["menu_scavenger_desc_sc"] = "BASIC: #{owned}#$basic##\nTightens the hipfire accuracy of #{skill_color}#machine guns## by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\nTightens the hipfire accuracy of #{skill_color}#machine guns## by an additional #{skill_color}#$skill_value_p1.##\n\n#{skill_color}#Machine guns## reload #{skill_color}#$skill_value_p2## faster.",
 
 				--MG Specialist
 				["menu_sharpshooter_sc"] = "MG Specialist",
-				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#60%## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#15%## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
+				["menu_sharpshooter_desc_sc"] = "BASIC: #{owned}#$basic##\nThe movement penalty to accuracy is reduced by #{skill_color}#$skill_value_b1## for #{skill_color}#machine guns.##\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: #{owned}#$pro##\n#{skill_color}#Machine guns## fire #{skill_color}#$skill_value_p1## faster.\n\nEvery #{skill_color}#5th## bullet fired by a #{skill_color}#machine gun## without releasing the trigger consumes no ammo.",
 
 				--Shock and Awe
 				["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapon## magazine sizes are increased by #{skill_color}#20%.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#30%.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
+				["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#All weapon## magazine sizes are increased by #{skill_color}#$skill_value_b1.##\n\n#{risk}#NOTE: Does not apply to## #{important_1}#bows or launchers.##\n\nACE: #{owned}#$pro##\nThe magazine size increase is raised by an additional #{skill_color}#$skill_value_p2.##\n\n#{skill_color}#All weapons## can be hipfired while sprinting and their sprint-to-fire delay is removed.",
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
-				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#20%## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#40%## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#12.5%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#25%## when using a bipod.",
+				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#$skill_value_b1## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#$skill_value_b2## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#$skill_value_p1%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#$skill_value_p2## when using a bipod.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#50%## of their damage through body armor; effect is increased to #{skill_color}#100%## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#1.5## seconds will grant them an additional #{skill_color}#16.67%## more damage; stacks up to #{skill_color}#3## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5241,11 +5241,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Gung Ho
 				["menu_close_by_beta_sc"] = "Gung-Ho",
-				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#35%.##",
+				["menu_close_by_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Shotguns and flamethrowers## can be hipfired while sprinting and their sprint-to-fire delay is removed.\n\nACE: #{owned}#$pro##\nWhile hip-firing, the rate of fire of #{skill_color}#shotguns and flamethrowers## is increased by #{skill_color}#$skill_value_p1.##",
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#50%## increase to their max damage for #{skill_color}#3## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and lasts an additional #{skill_color}#6## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#60%## faster.",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#$skill_value_b1## increase to their max damage for #{skill_color}#$skill_value_b2## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and instead lasts #{skill_color}#$skill_value_p2## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#$skill_value_p2## faster.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--

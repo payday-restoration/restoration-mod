@@ -941,6 +941,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Zweihander
 		["bm_melee_zweihander"] = "Двуручник",
 		["bm_melee_zweihander_info"] = "Огромный двуручный меч, который больше похож на алебарду, нежели чем меч.\n\nПарирование противника наносит ему #{skill_color}#180## урона в ближнем бою. Навыки позволяют увеличить этот урон.",
+		["bm_melee_broad"] = "Длинный меч",
+		["bm_melee_broad_info"] = "Самое знаковое оружие большинства рыцарей.",
 		
 		--S&W .500
         ["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",

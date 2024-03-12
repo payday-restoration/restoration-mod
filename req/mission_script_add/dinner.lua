@@ -89,7 +89,11 @@ local spawn_murkies = {
 		{ id = 400036, delay = 0 },
 		{ id = 400037, delay = 0 },
 		{ id = 400038, delay = 0 },
-		{ id = 400039, delay = 0 }
+		{ id = 400039, delay = 0 },
+		{ id = 400060, delay = 0 },
+		{ id = 400061, delay = 0 },
+		{ id = 400062, delay = 0 },
+		{ id = 400063, delay = 0 }
 	}
 }
 local optsBesiegeDummy = {
@@ -142,7 +146,7 @@ local spawn_dozer_2 = {
 local optsBulldozer = {
     enemy = tank,
 	on_executed = {
-        { id = 400021, delay = 1.5 },
+        { id = 400021, delay = 0.5 },
 		{ id = 400050, delay = 0 }
     },
     enabled = true
@@ -199,11 +203,6 @@ local optsMurky_SMG = {
 	participate_to_group_ai = true,
     enabled = true
 }
-local optsTaser = {
-    enemy = taser,
-	participate_to_group_ai = true,
-    enabled = true
-}
 local optsSniper_SO = {
 	scan = true,
 	align_position = true,
@@ -214,10 +213,10 @@ local optsSniper_SO = {
 }
 local optsrespawn_murkies_1 = {
 	on_executed = { 
-		{ id = 400028, delay = 35 },
-		{ id = 400029, delay = 35 },
-		{ id = 400030, delay = 35 },
-		{ id = 400031, delay = 35 }
+		{ id = 400028, delay = 15 },
+		{ id = 400029, delay = 15 },
+		{ id = 400030, delay = 15 },
+		{ id = 400031, delay = 15 }
 	},
 	elements = { 
 		400028
@@ -226,10 +225,10 @@ local optsrespawn_murkies_1 = {
 }
 local optsrespawn_murkies_2 = {
 	on_executed = { 
-		{ id = 400032, delay = 35 },
-		{ id = 400033, delay = 35 },
-		{ id = 400034, delay = 35 },
-		{ id = 400035, delay = 35 }
+		{ id = 400032, delay = 15 },
+		{ id = 400033, delay = 15 },
+		{ id = 400034, delay = 15 },
+		{ id = 400035, delay = 15 }
 	},
 	elements = { 
 		400032
@@ -238,13 +237,25 @@ local optsrespawn_murkies_2 = {
 }
 local optsrespawn_murkies_3 = {
 	on_executed = { 
-		{ id = 400036, delay = 35 },
-		{ id = 400037, delay = 35 },
-		{ id = 400038, delay = 35 },
-		{ id = 400039, delay = 35 }
+		{ id = 400036, delay = 15 },
+		{ id = 400037, delay = 15 },
+		{ id = 400038, delay = 15 },
+		{ id = 400039, delay = 15 }
 	},
 	elements = { 
 		400036
+	},
+    event = "death"
+}
+local optsrespawn_murkies_4 = {
+	on_executed = { 
+		{ id = 400060, delay = 15 },
+		{ id = 400061, delay = 15 },
+		{ id = 400062, delay = 15 },
+		{ id = 400063, delay = 15 }
+	},
+	elements = { 
+		400060
 	},
     event = "death"
 }
@@ -285,19 +296,19 @@ local van_spawngroup  = {
 }
 local enable_dozer = {
 	elements = { 
-		400020
+		400057
 	}
 }
 local disable_dozer = {
 	toggle = "off",
 	elements = { 
-		400020
+		400057
 	}
 }
 local disable_dozer_2 = {
 	toggle = "off",
 	elements = { 
-		400019
+		400056
 	}
 }
 local disable_murkies = {
@@ -305,7 +316,8 @@ local disable_murkies = {
 	elements = { 
 		400040,
 		400041,
-		400042
+		400042,
+		400064
 	}
 }
 
@@ -421,8 +433,8 @@ return {
 		restoration:gen_so(
             400016,
             "sniper_so_1",
-            Vector3(-14186, 6438, 887.654),
-            Rotation(90, -0, -0),
+            Vector3(-14101.043, 7791.234, 624.654),
+            Rotation(134, 0, -0),
             optsSniper_SO
         ),
 		restoration:gen_so(
@@ -697,6 +709,41 @@ return {
             Vector3(3600, 2473, -1200),
             Rotation(0, 0, 0),
             optsHunt_SO
+        ),
+		restoration:gen_dummy(
+            400060,
+            "murky_13",
+            Vector3(-11422.900, 5427.540, 282.287),
+            Rotation(-30, 0, -0),
+            optsMurky_Shotgun
+        ),
+		restoration:gen_dummy(
+            400061,
+            "murky_14",
+            Vector3(-11450.400, 5379.910, 282.287),
+            Rotation(-30, 0, -0),
+            optsMurky_Shotgun
+        ),
+		restoration:gen_dummy(
+            400062,
+            "murky_15",
+            Vector3(-11472.900, 5340.940, 282.287),
+            Rotation(-30, 0, -0),
+            optsMurky_SMG
+        ),
+		restoration:gen_dummy(
+            400063,
+            "murky_16",
+            Vector3(-11496.900, 5299.370, 282.287),
+            Rotation(-30, 0, -0),
+            optsMurky_SMG
+        ),
+		restoration:gen_dummytrigger(
+            400064,
+            "respawn_murkies_4",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_murkies_4
         )
     }
 }

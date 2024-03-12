@@ -1991,6 +1991,9 @@
 	<!-- Right swing for "melee_beardy" taken from "melee_great"; wtf it actually melds well and doesn't have hand clipping issues????? -->
 	<animation			path="anims/fps/melee/beardy/melee_attack_var4" force="true"/>
 
+	<!-- Fix for scoutknife position in hand -->
+	<model				path="units/pd2_dlc_peta/weapons/wpn_fps_mel_scoutknife/wpn_fps_mel_scoutknife" force="true"/>
+
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation			path="anims/shared/pistol/combat/cbt_crh_idle" force="true"/>

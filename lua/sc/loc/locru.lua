@@ -5104,7 +5104,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pain Killers
 				["menu_fast_learner_beta_sc"] = "Анальгин",
-				["menu_fast_learner_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nНапарники, поднятые вами, получают на #{skill_color}#$skill_value_b1## меньше урона в течение #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nУрон уменьшен еще на #{skill_color}#$skill_value_b1.##",
+				["menu_fast_learner_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nНапарники, поднятые вами, получают на #{skill_color}#$skill_value_b1## меньше урона в течение #{skill_color}#$skill_value_b2## секунд.\n\nПИКОВЫЙ: #{owned}#$pro##\nУрон уменьшен еще на #{skill_color}#$skill_value_p1.##",
 
 				--Uppers
 				["menu_tea_cookies_beta_sc"] = "Колеса",

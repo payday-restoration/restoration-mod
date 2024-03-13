@@ -637,9 +637,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.revive_health_multiplier = {1.3}
 					
 					self.skill_descs.combat_medic = {
-					skill_value_b1 = tostring((1 - self.values.player.revive_damage_reduction[1]) * 100).."%", -- DR
-					skill_value_b2 = tostring(self.values.temporary.revive_damage_reduction[1][2]), -- DR duration in s
-					skill_value_p1 = tostring(self.revive_health_multiplier[1]%1*100).."%" -- Additional HP for a teammate after reviving
+						skill_value_b1 = tostring((1 - self.values.player.revive_damage_reduction[1]) * 100).."%", -- DR
+						skill_value_b2 = tostring(self.values.temporary.revive_damage_reduction[1][2]), -- DR duration in s
+						skill_value_p1 = tostring(self.revive_health_multiplier[1]%1*100).."%" -- Additional HP for a teammate after reviving
 					}
 					
 			
@@ -650,9 +650,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
 					
 					self.skill_descs.tea_time = {
-					skill_value_b1 = tostring(self.values.first_aid_kit.deploy_time_multiplier[1] * 100).."%", -- Decreasing deploy time
-					skill_value_p1 = tostring(self.values.temporary.first_aid_damage_reduction[1][1] * 100).."%", -- DR after use
-					skill_value_p2 = tostring(self.values.temporary.first_aid_damage_reduction[1][2]) -- Duration of DR effect
+						skill_value_b1 = tostring(self.values.first_aid_kit.deploy_time_multiplier[1] * 100).."%", -- Decreasing deploy time
+						skill_value_p1 = tostring(self.values.temporary.first_aid_damage_reduction[1][1] * 100).."%", -- DR after use
+						skill_value_p2 = tostring(self.values.temporary.first_aid_damage_reduction[1][2]) -- Duration of DR effect
 					}
 
 			--Painkillers--
@@ -662,9 +662,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.fast_learner = {
-				skill_value_b1 = tostring((1-self.first_aid_kit.revived_damage_reduction[1][1]) * 100).."%", -- DR for revived player
-				skill_value_b2 = tostring(self.first_aid_kit.revived_damage_reduction[1][2]), -- Duration of DR effect
-				skill_value_p1 = tostring((1-(self.first_aid_kit.revived_damage_reduction[1][1] - self.first_aid_kit.revived_damage_reduction[2][1])) * 100).."%", -- Aced DR for revived player
+					skill_value_b1 = tostring((1-self.first_aid_kit.revived_damage_reduction[1][1]) * 100).."%", -- DR for revived player
+					skill_value_b2 = tostring(self.first_aid_kit.revived_damage_reduction[1][2]), -- Duration of DR effect
+					skill_value_p1 = tostring((1-(self.first_aid_kit.revived_damage_reduction[1][1] - self.first_aid_kit.revived_damage_reduction[2][1])) * 100).."%", -- Aced DR for revived player
 				}
 
 			--Uppers
@@ -676,9 +676,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.first_aid_kit.uppers_cooldown = 60
 					
 					self.skill_descs.tea_cookies = {
-					skill_value_b1 = tostring(self.values.first_aid_kit.quantity[1] + 3), -- Amount of FAKs (3 by default)
-					skill_value_p1 = tostring(self.values.first_aid_kit.quantity[2] + 3),
-					skill_value_p2 = tostring(self.values.first_aid_kit.uppers_cooldown) -- Uppers's CD
+						skill_value_b1 = tostring(self.values.first_aid_kit.quantity[1] + 3), -- Amount of FAKs (3 by default)
+						skill_value_p1 = tostring(self.values.first_aid_kit.quantity[2] + 3),
+						skill_value_p2 = tostring(self.values.first_aid_kit.uppers_cooldown) -- Uppers's CD
 					}
 
 			--Combat Doctor
@@ -688,8 +688,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.doctor_bag.quantity = {1}
 					
 					self.skill_descs.medic_2x = {
-					skill_value_b1 = tostring(self.values.doctor_bag.amount_increase[1]), -- Charges of medbag
-					skill_value_p1 = tostring(self.values.doctor_bag.quantity[1] + 1) -- Quantity of medbags
+						skill_value_b1 = tostring(self.values.doctor_bag.amount_increase[1]), -- Charges of medbag
+						skill_value_p1 = tostring(self.values.doctor_bag.quantity[1] + 1) -- Quantity of medbags
 					}
 			
 			--Inspire
@@ -709,10 +709,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.inspire = {
-					skill_value_b1 = tostring(self.values.player.revive_interaction_speed_multiplier[1] * 100).."%", -- Revive speed increase
-					skill_value_b2 = tostring(self.morale_boost_reload_speed_bonus % 1 * 100).."%", -- Reload speed bonus
-					skill_value_b3 = tostring(self.morale_boost_time), -- Duration of bonus
-					skill_value_p1 = tostring(self.values.cooldown.long_dis_revive[1][2]) -- CD of ace version
+						skill_value_b1 = tostring(self.values.player.revive_interaction_speed_multiplier[1] * 100).."%", -- Revive speed increase
+						skill_value_b2 = tostring(self.morale_boost_reload_speed_bonus % 1 * 100).."%", -- Reload speed bonus
+						skill_value_b3 = tostring(self.morale_boost_time), -- Duration of bonus
+						skill_value_p1 = tostring(self.values.cooldown.long_dis_revive[1][2]) -- CD of ace version
 					} 
 			
 		--Controller--
@@ -724,8 +724,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.cable_tie.pickup_chance = {true}
 					
 					self.skill_descs.triathlete = {
-					skill_value_b1 = tostring(self.values.cable_tie.quantity_1[1]), -- Additional cable ties on start
-					skill_value_p1 = tostring(self.values.cable_tie.quantity_2[1])
+						skill_value_b1 = tostring(self.values.cable_tie.quantity_1[1]), -- Additional cable ties on start
+						skill_value_p1 = tostring(self.values.cable_tie.quantity_2[1])
 					}
 
 				--Clowns are Scary
@@ -736,8 +736,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.intimidate_aura = {1000}
 						
 						self.skill_descs.cable_guy = {
-						skill_value_b1 = tostring(self.values.player.civ_intimidation_mul[1] % 1 * 100).."%", -- Civilians remain intimidated longer
-						skill_value_p1 = tostring(self.values.player.intimidate_range_mul[1] % 1 * 100).."%" -- The power and range of your intimidation
+							skill_value_b1 = tostring(self.values.player.civ_intimidation_mul[1] % 1 * 100).."%", -- Civilians remain intimidated longer
+							skill_value_p1 = tostring(self.values.player.intimidate_range_mul[1] % 1 * 100).."%" -- The power and range of your intimidation
 						}
 
 				--Joker
@@ -757,8 +757,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.convert_enemies_damage_multiplier = {1.45, 1.45}
 						
 						self.skill_descs.stockholm_syndrome = {
-						skill_value_b1 = tostring((1-self.values.player.passive_convert_enemies_health_multiplier[1])*100).."%", -- Initial DR for converted cop
-						skill_value_p1 = tostring(self.values.player.passive_convert_enemies_health_multiplier[2]*100).."%" -- Additional DR for converted cop
+							skill_value_b1 = tostring((1-self.values.player.passive_convert_enemies_health_multiplier[1])*100).."%", -- Initial DR for converted cop
+							skill_value_p1 = tostring(self.values.player.passive_convert_enemies_health_multiplier[2]*100).."%" -- Additional DR for converted cop
 						}
 
 				--Stockholm Syndrome
@@ -772,8 +772,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						}
 						
 						self.skill_descs.joker = {
-						skill_value_p1 = tostring(self.values.team.damage.hostage_absorption[1] * 10), -- DA per hostage
-						skill_value_p2 = tostring(self.values.team.damage.hostage_absorption_limit) -- Max possible DA
+							skill_value_p1 = tostring(self.values.team.damage.hostage_absorption[1] * 10), -- DA per hostage
+							skill_value_p2 = tostring(self.values.team.damage.hostage_absorption_limit) -- Max possible DA
 						}
 
 				--Partners in Crime--
@@ -783,8 +783,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.hostage_health_multiplier = {1.05}
 						
 						self.skill_descs.control_freak = {
-						skill_value_b1 = tostring(self.values.player.hostage_speed_multiplier[1] % 1 * 100).."%", -- Movement speed per hostage
-						skill_value_p1 = tostring(self.values.player.hostage_health_multiplier[1] % 1 * 100).."%" -- Max HP pool per hostage						
+							skill_value_b1 = tostring(self.values.player.hostage_speed_multiplier[1] % 1 * 100).."%", -- Movement speed per hostage
+							skill_value_p1 = tostring(self.values.player.hostage_health_multiplier[1] % 1 * 100).."%" -- Max HP pool per hostage						
 						}
 							
 				--Hostage Taker
@@ -801,8 +801,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.hostage_health_regen_max_mult = { 1.5 }
 						
 						self.skill_descs.black_marketeer = {
-						skill_value_b1 = tostring(self.values.player.hostage_health_regen_addend[1]*10), -- HP regen
-						skill_value_p1 = tostring(self.values.player.hostage_health_regen_max_mult[1] % 1 * 100).."%" -- HP regen increase when 4+ hostages
+							skill_value_b1 = tostring(self.values.player.hostage_health_regen_addend[1]*10), -- HP regen
+							skill_value_p1 = tostring(self.values.player.hostage_health_regen_max_mult[1] % 1 * 100).."%" -- HP regen increase when 4+ hostages
 						}
 			
 		--Assault--
@@ -813,8 +813,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.team.weapon.recoil_index_addend = {2}
 					
 					self.skill_descs.stable_shot = {
-					skill_value_b1 = tostring(self.values.smg.recoil_index_addend[1]), -- +Stability
-					skill_value_p1 = tostring(self.values.team.weapon.recoil_index_addend[1]) -- +Stability for everyone
+						skill_value_b1 = tostring(self.values.smg.recoil_index_addend[1]), -- +Stability
+						skill_value_p1 = tostring(self.values.team.weapon.recoil_index_addend[1]) -- +Stability for everyone
 					}
 
 			--MG Handling
@@ -824,9 +824,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.reload_speed_multiplier = {1.25}
 					
 					self.skill_descs.rifleman = {
-					skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
-					skill_value_p1 = tostring((self.values.smg.hip_fire_spread_multiplier[1] - self.values.smg.hip_fire_spread_multiplier[2]) % 1 * 100).."%", -- another hipfire +accuracy
-					skill_value_p2 = tostring(self.values.smg.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
+						skill_value_b1 = tostring((1 - self.values.smg.hip_fire_spread_multiplier[1]) % 1 * 100).."%", -- Hipfire +accuracy
+						skill_value_p1 = tostring((self.values.smg.hip_fire_spread_multiplier[1] - self.values.smg.hip_fire_spread_multiplier[2]) % 1 * 100).."%", -- another hipfire +accuracy
+						skill_value_p2 = tostring(self.values.smg.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
 					}
 				
 			--Shock and Awe
@@ -836,8 +836,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.spotter_teamwork = {
-				skill_value_b1 = tostring(self.values.weapon.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
-				skill_value_p1 = tostring((self.values.weapon.clip_ammo_increase[2] - self.values.weapon.clip_ammo_increase[1]) % 1 * 100).."%" -- Additional mag size increase
+					skill_value_b1 = tostring(self.values.weapon.clip_ammo_increase[1] % 1 * 100).."%", -- Mag size increase
+					skill_value_p1 = tostring((self.values.weapon.clip_ammo_increase[2] - self.values.weapon.clip_ammo_increase[1]) % 1 * 100).."%" -- Additional mag size increase
 				}
 				
 				
@@ -850,9 +850,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.full_auto_free_ammo = {5}
 					
 					self.skill_descs.sharpshooter = {
-					skill_value_b1 = tostring((1 - self.values.smg.move_spread_multiplier[1]) % 1 * 100) .."%", -- The movement penalty to accuracy
-					skill_value_p1 = tostring(self.values.smg.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF increase
-					skill_value_p2 = tostring(self.values.smg.full_auto_free_ammo[1]) -- Every X bullet fired without releasing the trigger consumes no ammo					
+						skill_value_b1 = tostring((1 - self.values.smg.move_spread_multiplier[1]) % 1 * 100) .."%", -- The movement penalty to accuracy
+						skill_value_p1 = tostring(self.values.smg.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF increase
+						skill_value_p2 = tostring(self.values.smg.full_auto_free_ammo[1]) -- Every X bullet fired without releasing the trigger consumes no ammo					
 					}
 				
 			--Heavy Impact
@@ -866,10 +866,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.crouching_damage_reduction = {0.875}
 					
 					self.skill_descs.speedy_reload = {
-					skill_value_b1 = tostring(self.values.weapon.knock_down[1] * 100).."%", -- Stagger chance
-					skill_value_b2 = tostring(self.values.weapon.knock_down[1] * 2 * 100).."%", -- Double stagger chance when MG is mounted
-					skill_value_p1 = tostring((1 - self.values.player.crouching_damage_reduction[1]) % 1 * 100).."%", -- DR during crounch
-					skill_value_p2 = tostring((1 - self.values.player.bipod_damage_reduction[1]) % 1 * 100).."%" -- DR when MG is mounted
+						skill_value_b1 = tostring(self.values.weapon.knock_down[1] * 100).."%", -- Stagger chance
+						skill_value_b2 = tostring(self.values.weapon.knock_down[1] * 2 * 100).."%", -- Double stagger chance when MG is mounted
+						skill_value_p1 = tostring((1 - self.values.player.crouching_damage_reduction[1]) % 1 * 100).."%", -- DR during crounch
+						skill_value_p2 = tostring((1 - self.values.player.bipod_damage_reduction[1]) % 1 * 100).."%" -- DR when MG is mounted
 					}
 	
 			--Body Expertise aka Spray N' Pray
@@ -893,11 +893,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 				self.skill_descs.single_shot_ammo_return = {
-				skill_value_b1 = tostring(self.values.player.ap_bullets[1] * 100).."%", -- AP for non-MG
-				skill_value_b2 = tostring(self.values.smg.ap_bullets[1] * 100).."%", -- AP for MG
-				skill_value_p1 = tostring(self.automatic_kills_to_damage_reset_t), -- delay to reset time for keeping buff active
-				skill_value_p2 = tostring(self.values.smg.automatic_kills_to_damage[1][2] * 100).."%", -- Damage increase per stack
-				skill_value_p3 = tostring(self.values.smg.automatic_kills_to_damage[1][1]) -- Amount of stacks
+					skill_value_b1 = tostring(self.values.player.ap_bullets[1] * 100).."%", -- AP for non-MG
+					skill_value_b2 = tostring(self.values.smg.ap_bullets[1] * 100).."%", -- AP for MG
+					skill_value_p1 = tostring(self.automatic_kills_to_damage_reset_t), -- delay to reset time for keeping buff active
+					skill_value_p2 = tostring(self.values.smg.automatic_kills_to_damage[1][2] * 100).."%", -- Damage increase per stack
+					skill_value_p3 = tostring(self.values.smg.automatic_kills_to_damage[1][1]) -- Amount of stacks
 				}
 						
 	--ENFORCER--
@@ -910,8 +910,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.damage_min_bonus = {per_pellet and 1.25 or 1}
 					
 					self.skill_descs.underdog = {
-					skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]), -- +Stability
-					skill_value_p1 = tostring((per_pellet and  self.values.shotgun.damage_min_bonus[1] % 1 * 100) or self.values.shotgun.extra_rays[1]) .. ((per_pellet and "%") or "") -- Ace Effect
+						skill_value_b1 = tostring(self.values.shotgun.recoil_index_addend[1]), -- +Stability
+						skill_value_p1 = tostring((per_pellet and  self.values.shotgun.damage_min_bonus[1] % 1 * 100) or self.values.shotgun.extra_rays[1]) .. ((per_pellet and "%") or "") -- Ace Effect
 					}
 
 			--Shotgun CQB
@@ -921,8 +921,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 					
 					self.skill_descs.shotgun_cqb = {
-					skill_value_b1 = tostring(self.values.shotgun.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed buff
-					skill_value_p1 = tostring(self.values.shotgun.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
+						skill_value_b1 = tostring(self.values.shotgun.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed buff
+						skill_value_p1 = tostring(self.values.shotgun.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
 					}
 				
 			--Underdog
@@ -932,10 +932,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.temporary.dmg_dampener_outnumbered = {{0.9, 7}}
 					
 					self.skill_descs.shotgun_impact = {
-					skill_value_b1 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][1] % 1 * 100).."%", -- Damage buff when surrounded
-					skill_value_b2 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][2]), -- Duration of damage buff
-					skill_value_p1 = tostring((1 - self.values.temporary.dmg_dampener_outnumbered[1][1]) % 1 * 100).."%", -- DR when surrounded
-					skill_value_p2 = tostring(self.values.temporary.dmg_dampener_outnumbered[1][2]) -- Duration of DR
+						skill_value_b1 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][1] % 1 * 100).."%", -- Damage buff when surrounded
+						skill_value_b2 = tostring(self.values.temporary.dmg_multiplier_outnumbered[1][2]), -- Duration of damage buff
+						skill_value_p1 = tostring((1 - self.values.temporary.dmg_dampener_outnumbered[1][1]) % 1 * 100).."%", -- DR when surrounded
+						skill_value_p2 = tostring(self.values.temporary.dmg_dampener_outnumbered[1][2]) -- Duration of DR
 					}
 				
 			--Far Away / Pigeon Shooter
@@ -947,8 +947,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.steelsight_range_inc = {1.2}
 					
 					self.skill_descs.far_away = {
-					skill_value_b1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%", -- AP for shotguns
-					skill_value_p1 = tostring(self.values.shotgun.steelsight_range_inc[1] % 1 * 100).."%" -- Accuracy + range increase
+						skill_value_b1 = tostring(self.values.shotgun.ap_bullets[1] * 100).."%", -- AP for shotguns
+						skill_value_p1 = tostring(self.values.shotgun.steelsight_range_inc[1] % 1 * 100).."%" -- Accuracy + range increase
 					}
 
 			--Close By
@@ -958,7 +958,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.hip_rate_of_fire = {1.35}
 					
 					self.skill_descs.close_by = {
-					skill_value_p1 = tostring(self.values.shotgun.hip_rate_of_fire[1] % 1 * 100).."%" -- Hipfire RoF increase
+						skill_value_p1 = tostring(self.values.shotgun.hip_rate_of_fire[1] % 1 * 100).."%" -- Hipfire RoF increase
 					}
 				
 			--Overkill
@@ -970,10 +970,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.shotgun.swap_speed_multiplier = {1.6}
 					self.values.saw.swap_speed_multiplier = {1.6}
 					self.skill_descs.overkill = {
-					skill_value_b1 = tostring(self.values.temporary.overkill_damage_multiplier[1][1] % 1 * 100).."%", -- OVK's damage increase
-					skill_value_b2 = tostring(self.values.temporary.overkill_damage_multiplier[1][2]), -- Duration of OVK					
-					skill_value_p1 = tostring(self.values.temporary.overkill_damage_multiplier[2][2]),
-					skill_value_p2 = tostring(self.values.shotgun.swap_speed_multiplier[1] % 1 * 100).."%" -- Swap speed bonus
+						skill_value_b1 = tostring(self.values.temporary.overkill_damage_multiplier[1][1] % 1 * 100).."%", -- OVK's damage increase
+						skill_value_b2 = tostring(self.values.temporary.overkill_damage_multiplier[1][2]), -- Duration of OVK					
+						skill_value_p1 = tostring(self.values.temporary.overkill_damage_multiplier[2][2]),
+						skill_value_p2 = tostring(self.values.shotgun.swap_speed_multiplier[1] % 1 * 100).."%" -- Swap speed bonus
 					}
 			
 		--Juggernaut--
@@ -985,8 +985,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.flashbang_multiplier = {1, 0.5}
 					
 					self.skill_descs.oppressor = {
-					skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 100).."%", -- Melee push resistance (depends of armor)
-					skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%" -- Reduce duration of flashbang effect
+						skill_value_b1 = tostring(self.values.player.resist_melee_push[1] * 100).."%", -- Melee push resistance (depends of armor)
+						skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%" -- Reduce duration of flashbang effect
 					}
 				
 				--Die Hard
@@ -996,8 +996,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.show_of_force = {
-					skill_value_b1 = tostring(self.values.player.deflection_addend[1] * 100).."%", -- Additional deflection
-					skill_value_p1 = tostring((self.values.player.deflection_addend[2] - self.values.player.deflection_addend[1]) * 100).."%"
+						skill_value_b1 = tostring(self.values.player.deflection_addend[1] * 100).."%", -- Additional deflection
+						skill_value_p1 = tostring((self.values.player.deflection_addend[2] - self.values.player.deflection_addend[1]) * 100).."%"
 					}
 
 				--Transporter
@@ -1007,7 +1007,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.carry.movement_penalty_nullifier = {true}
 						
 						self.skill_descs.pack_mule = {
-						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%" -- Reducing movement penalty
+							skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%" -- Reducing movement penalty
 						}
 
 				--More Blood To Bleed
@@ -1019,8 +1019,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.iron_man = {
-					skill_value_b1 = tostring(self.values.player.health_multiplier[1] % 1 * 100).."%", -- Additional max HP
-					skill_value_p1 = tostring((self.values.player.health_multiplier[2] - self.values.player.health_multiplier[1]) * 100).."%"
+						skill_value_b1 = tostring(self.values.player.health_multiplier[1] % 1 * 100).."%", -- Additional max HP
+						skill_value_p1 = tostring((self.values.player.health_multiplier[2] - self.values.player.health_multiplier[1]) * 100).."%"
 					}
 
 				--Bullseye
@@ -1035,11 +1035,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.on_headshot_dealt_cooldown = 5
 					
 					self.skill_descs.prison_wife = {
-					skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
-					skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
-					skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
-					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
-					skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
+						skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
+						skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
+						skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
+						skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
+						skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
 					}
 
 				--Iron Man
@@ -1055,7 +1055,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.armor_regen_timer_multiplier = {0.9}
 						
 						self.skill_descs.juggernaut = {
-						skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
+							skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
 						}
 			
 		--Support--
@@ -1066,8 +1066,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.double_drop = {5}
 					
 					self.skill_descs.scavenging = {
-					skill_value_b1 = tostring(self.values.player.increased_pickup_area[1] % 1 * 100).."%", -- Increase ammo pick up range
-					skill_value_p1 = tostring(self.values.player.double_drop[1]) -- +1 ammo box after X kills
+						skill_value_b1 = tostring(self.values.player.increased_pickup_area[1] % 1 * 100).."%", -- Increase ammo pick up range
+						skill_value_p1 = tostring(self.values.player.double_drop[1]) -- +1 ammo box after X kills
 					}
 				
 			--Bulletstorm
@@ -1083,7 +1083,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.bow.reload_speed_multiplier = {1.25}
 					
 					self.skill_descs.portable_saw = {
-					skill_value_p1 = tostring(self.values.saw.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
+						skill_value_p1 = tostring(self.values.saw.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed buff
 					}
 			
 			--Extra Lead
@@ -1093,8 +1093,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.ammo_bag.quantity = {1}
 					
 					self.skill_descs.ammo_2x = {
-					skill_value_b1 = tostring(self.values.ammo_bag.ammo_increase[1] * 100).."%", -- Ammo increase for ammo bags
-					skill_value_p1 = tostring(self.values.ammo_bag.quantity[1] + 1) -- Quantity of ammo bags
+						skill_value_b1 = tostring(self.values.ammo_bag.ammo_increase[1] * 100).."%", -- Ammo increase for ammo bags
+						skill_value_p1 = tostring(self.values.ammo_bag.quantity[1] + 1) -- Quantity of ammo bags
 					}
 
 			--Rip and Tear
@@ -1110,8 +1110,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.carbon_blade = {
-					skill_value_p1 = tostring(self.values.saw.panic_when_kill[1].chance * 100).."%", -- Chance to cause panic
-					skill_value_p2 = tostring(self.values.saw.panic_when_kill[1].area / 100) -- Area of panic
+						skill_value_p1 = tostring(self.values.saw.panic_when_kill[1].chance * 100).."%", -- Chance to cause panic
+						skill_value_p2 = tostring(self.values.saw.panic_when_kill[1].area / 100) -- Area of panic
 					}
 				
 			--Fully Loaded
@@ -1124,10 +1124,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.bandoliers = {
-					skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
-					skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100), -- Increase ammo pick up
-					skill_value_p2 = tostring(self.values.player.regain_throwable_from_ammo[1].chance * 100).."%", --Chance to pick up throwable from ammo boxes
-					skill_value_p3 = tostring(self.values.player.regain_throwable_from_ammo [1].chance_inc * 100).."%" -- Increase chance to pick up throwable if ammo box didn't give one
+						skill_value_b1 = tostring(self.values.player.extra_ammo_multiplier[1] % 1 * 100).."%", -- +Max ammo capacity
+						skill_value_p1 = tostring(self.values.player.fully_loaded_pick_up_multiplier[1] % 1 * 100), -- Increase ammo pick up
+						skill_value_p2 = tostring(self.values.player.regain_throwable_from_ammo[1].chance * 100).."%", --Chance to pick up throwable from ammo boxes
+						skill_value_p3 = tostring(self.values.player.regain_throwable_from_ammo [1].chance_inc * 100).."%" -- Increase chance to pick up throwable if ammo box didn't give one
 					}
 		
 	--TECHNICIAN--
@@ -1141,9 +1141,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.team.deploy_interact_faster = {0.25}
 					
 				self.skill_descs.defense_up = {
-				skill_value_b1 = tostring((1 - self.values.player.deploy_interact_faster[1]) % 1 * 100).."%", -- increase interaciton speed with deployables
-				skill_value_p1 = tostring((1 - self.values.player.deploy_interact_faster[2]) % 1 * 100).."%",
-				skill_value_p2 = tostring(self.values.team.deploy_interact_faster[1] * 100).."%" -- interaction speed bonus for teammates
+					skill_value_b1 = tostring((1 - self.values.player.deploy_interact_faster[1]) % 1 * 100).."%", -- increase interaciton speed with deployables
+					skill_value_p1 = tostring((1 - self.values.player.deploy_interact_faster[2]) % 1 * 100).."%",
+					skill_value_p2 = tostring(self.values.team.deploy_interact_faster[1] * 100).."%" -- interaction speed bonus for teammates
 				}
 				
 			--Nerves of Steel
@@ -1153,7 +1153,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.interacting_damage_multiplier = {0.5}
 					
 					self.skill_descs.sentry_targeting_package = {
-					skill_value_p1 = tostring(self.values.player.interacting_damage_multiplier[1] * 100).."%" -- DR during interaction
+						skill_value_p1 = tostring(self.values.player.interacting_damage_multiplier[1] * 100).."%" -- DR during interaction
 					}
 
 			--Engineering
@@ -1163,8 +1163,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.sentry_gun.armor_multiplier2 = {1.6}
 					
 					self.skill_descs.eco_sentry = {
-					skill_value_b1 = tostring(self.values.sentry_gun.armor_multiplier[1] % 1 * 100).."%", -- more sentry damage
-					skill_value_p1 = tostring(self.values.sentry_gun.armor_multiplier2[1] % 1 * 100).."%" -- more sentry HP
+						skill_value_b1 = tostring(self.values.sentry_gun.armor_multiplier[1] % 1 * 100).."%", -- more sentry damage
+						skill_value_p1 = tostring(self.values.sentry_gun.armor_multiplier2[1] % 1 * 100).."%" -- more sentry HP
 					}
 		
 			--Jack of All Trades
@@ -1174,7 +1174,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.second_deployable = {true}
 					
 					self.skill_descs.engineering = {
-					skill_value_b1 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%" -- more throwables
+						skill_value_b1 = tostring(self.values.player.throwables_multiplier[1] % 1 * 100).."%" -- more throwables
 					}
 	
 			--Tower Defense
@@ -1185,7 +1185,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.sentry_gun.quantity = {1, 2}
 					
 					self.skill_descs.jack_of_all_trades = {
-					skill_value_p1 = tostring(self.values.sentry_gun.quantity[2]) -- Sentries max quantity
+						skill_value_p1 = tostring(self.values.sentry_gun.quantity[2]) -- Sentries max quantity
 					}
 
 				--Bulletproof
@@ -1198,9 +1198,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.armor_regen_timer_multiplier_tier = {0.85}
 						
 						self.skill_descs.tower_defense = {
-						skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV
-						skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1] * 100).."%", -- DA on 1st shot
-						skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%" -- Armor recovery buff
+							skill_value_b1 = tostring(self.values.player.level_5_armor_addend[1]*10), -- +armor for Flak and CTV
+							skill_value_p1 = tostring(self.values.player.armor_full_damage_absorb[1] * 100).."%", -- DA on 1st shot
+							skill_value_p2 = tostring((1 - self.values.player.armor_regen_timer_multiplier_tier[1]) * 100).."%" -- Armor recovery buff
 						}
 			
 		--Breacher--
@@ -1215,7 +1215,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.hardware_expert = {
-				skill_value_p1 = tostring(self.values.player.drill_fix_interaction_speed_multiplier[1] * 100).."%" -- Faster repair speed
+					skill_value_p1 = tostring(self.values.player.drill_fix_interaction_speed_multiplier[1] * 100).."%" -- Faster repair speed
 				}
 				
 			--Demoman
@@ -1228,8 +1228,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.trip_mine.explosion_size_multiplier_1 = {1.3}		
 				--Shaped Charge increase amount handled in tweakdata
 				self.skill_descs.combat_engineering = {
-				skill_value_b1 = tostring((1 - self.values.player.trip_mine_deploy_time_multiplier[1]) * 100).."%", -- Faster deploy time
-				skill_value_p1 = tostring(self.values.trip_mine.explosion_size_multiplier_1[1] % 1 *100).."%" -- Bigger exlposion radio
+					skill_value_b1 = tostring((1 - self.values.player.trip_mine_deploy_time_multiplier[1]) * 100).."%", -- Faster deploy time
+					skill_value_p1 = tostring(self.values.trip_mine.explosion_size_multiplier_1[1] % 1 *100).."%" -- Bigger exlposion radio
 				}
 
 			--Drill Sawgent
@@ -1239,8 +1239,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.drill_expert = {
-				skill_value_b1 = tostring((1 - self.values.player.drill_speed_multiplier[1]) * 100).."%", -- Drill efficiency
-				skill_value_p1 = tostring((self.values.player.drill_speed_multiplier[1] - self.values.player.drill_speed_multiplier[2]) * 100).."%"
+					skill_value_b1 = tostring((1 - self.values.player.drill_speed_multiplier[1]) * 100).."%", -- Drill efficiency
+					skill_value_p1 = tostring((self.values.player.drill_speed_multiplier[1] - self.values.player.drill_speed_multiplier[2]) * 100).."%"
 				}
 				
 			--Fire Trap
@@ -1259,9 +1259,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.player_drill_stun_chance = 0.5
 					
 					self.skill_descs.kick_starter = {
-					skill_value_b1 = tostring(self.values.player.drill_autorepair_1[1] * 100).."%", -- Auto-repair chance
-					skill_value_p1 = tostring(self.values.player.drill_autorepair_2[1] * 100).."%",
-					skill_value_p2 = tostring(self.player_drill_stun_chance * 100).."%" -- Stun chance
+						skill_value_b1 = tostring(self.values.player.drill_autorepair_1[1] * 100).."%", -- Auto-repair chance
+						skill_value_p1 = tostring(self.values.player.drill_autorepair_2[1] * 100).."%",
+						skill_value_p2 = tostring(self.player_drill_stun_chance * 100).."%" -- Stun chance
 					}
 				
 			--Kick Starter
@@ -1279,9 +1279,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
 					
 					self.skill_descs.steady_grip = {
-					skill_value_b1 = tostring(self.values.snp.recoil_index_addend[1]), -- +Stability
-					skill_value_p1 = tostring(self.values.temporary.headshot_fire_rate_mult[1][1] % 1 * 100).."%", -- RoF buff
-					skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]) -- Duration of buff
+						skill_value_b1 = tostring(self.values.snp.recoil_index_addend[1]), -- +Stability
+						skill_value_p1 = tostring(self.values.temporary.headshot_fire_rate_mult[1][1] % 1 * 100).."%", -- RoF buff
+						skill_value_p2 = tostring(self.values.temporary.headshot_fire_rate_mult [1][2]) -- Duration of buff
 					}
 				
 			--Kilmer
@@ -1293,8 +1293,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}		
 					
 					self.skill_descs.heavy_impact = {
-					skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
-					skill_value_p1 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed
+						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
+						skill_value_p1 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed
 					}
 
 			--Rifleman
@@ -1308,9 +1308,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
 					
 					self.skill_descs.fire_control = {
-					skill_value_b1 = tostring(self.values.snp.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
-					skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%",
-					skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
+						skill_value_b1 = tostring(self.values.snp.steelsight_range_inc[1] % 1 * 100).."%", -- Accuracy and range buff
+						skill_value_p1 = tostring((self.values.snp.steelsight_range_inc[2] - self.values.snp.steelsight_range_inc[1]) * 100).."%",
+						skill_value_p2 = tostring(self.values.snp.enter_steelsight_speed_multiplier[1] % 1 * 100).."%" --ADS speed buff
 					}
 					
 			--Aggressive Reload
@@ -1328,9 +1328,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.shock_and_awe = {
-				skill_value_b1 = tostring(self.values.temporary.single_shot_fast_reload[1][1] % 1 * 100).."%", -- Reload speed buff
-				skill_value_b2 = tostring(self.values.temporary.single_shot_fast_reload[1][2]), -- Duration of buff
-				skill_value_p1 = tostring(self.values.temporary.single_shot_fast_reload[2][1] % 1 * 100).."%"
+					skill_value_b1 = tostring(self.values.temporary.single_shot_fast_reload[1][1] % 1 * 100).."%", -- Reload speed buff
+					skill_value_b2 = tostring(self.values.temporary.single_shot_fast_reload[1][2]), -- Duration of buff
+					skill_value_p1 = tostring(self.values.temporary.single_shot_fast_reload[2][1] % 1 * 100).."%"
 				}
 
 			--Ammo Efficiency
@@ -1340,11 +1340,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.fast_fire = {
-				skill_value_b1 = tostring(self.values.player.head_shot_ammo_return[1].headshots), -- Amount of headshot kills to return ammo
-				skill_value_b2 = tostring(self.values.player.head_shot_ammo_return[1].time), -- Timer
-				skill_value_b3 = tostring(self.values.player.head_shot_ammo_return[1].ammo * 100).."%", -- Amount of ammo which will be returned in % (minimum 1 ammo)
-				skill_value_p1 = tostring(self.values.player.head_shot_ammo_return[2].headshots), -- Amount of headshot kills for ace version
-				skill_value_p2 = tostring(self.values.player.head_shot_ammo_return[2].time) -- Timer for ace version
+					skill_value_b1 = tostring(self.values.player.head_shot_ammo_return[1].headshots), -- Amount of headshot kills to return ammo
+					skill_value_b2 = tostring(self.values.player.head_shot_ammo_return[1].time), -- Timer
+					skill_value_b3 = tostring(self.values.player.head_shot_ammo_return[1].ammo * 100).."%", -- Amount of ammo which will be returned in % (minimum 1 ammo)
+					skill_value_p1 = tostring(self.values.player.head_shot_ammo_return[2].headshots), -- Amount of headshot kills for ace version
+					skill_value_p2 = tostring(self.values.player.head_shot_ammo_return[2].time) -- Timer for ace version
 				}
 				
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
@@ -1367,13 +1367,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.headshot_no_falloff = {true}
 				
 				self.skill_descs.body_expertise = {
-				skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage
-				skill_value_b2 = tostring((self.values.snp.graze_damage[1].radius) / 100), -- Minimal radius (in meters) to ricochet
-				skill_value_b3 = tostring(self.values.snp.graze_damage[1].range_increment / 100), -- Give bonus damage and enemy chain for every X meters.
-				skill_value_b4 = tostring(self.values.snp.graze_damage[1].max_chain), -- Max ricochet chain possible
-				skill_value_p1 = tostring((self.values.snp.graze_damage[2].radius - self.values.snp.graze_damage[1].radius) / 100), -- This is how much increased (in meters) minimal radius
-				skill_value_p2 = tostring(self.values.snp.graze_damage[2].damage_factor_range * 100).."%", -- Ricochet damage increase for every X meters
-				skill_value_p3 = "100%" -- Max ricochet damage
+					skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage
+					skill_value_b2 = tostring((self.values.snp.graze_damage[1].radius) / 100), -- Minimal radius (in meters) to ricochet
+					skill_value_b3 = tostring(self.values.snp.graze_damage[1].range_increment / 100), -- Give bonus damage and enemy chain for every X meters.
+					skill_value_b4 = tostring(self.values.snp.graze_damage[1].max_chain), -- Max ricochet chain possible
+					skill_value_p1 = tostring((self.values.snp.graze_damage[2].radius - self.values.snp.graze_damage[1].radius) / 100), -- This is how much increased (in meters) minimal radius
+					skill_value_p2 = tostring(self.values.snp.graze_damage[2].damage_factor_range * 100).."%", -- Ricochet damage increase for every X meters
+					skill_value_p3 = "100%" -- Max ricochet damage
 				}
 
 	--GHOST--
@@ -1432,9 +1432,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.marked_enemy_damage_mul = 1.35
 
 				self.skill_descs.ecm_2x = {
-				skill_value_b1 = tostring(self.values.player.marked_inc_dmg_distance[1][2] % 1 * 100).."%", -- +damage if player position > distance
-				skill_value_b2 = tostring(self.values.player.marked_inc_dmg_distance[1][1]/100), -- distance to get +damage
-				skill_value_p1 = tostring(self.values.player.marked_enemy_damage_mul) -- extra damage on all marked enemies
+					skill_value_b1 = tostring(self.values.player.marked_inc_dmg_distance[1][2] % 1 * 100).."%", -- +damage if player position > distance
+					skill_value_b2 = tostring(self.values.player.marked_inc_dmg_distance[1][1]/100), -- distance to get +damage
+					skill_value_p1 = tostring(self.values.player.marked_enemy_damage_mul) -- extra damage on all marked enemies
 				}
 
 			
@@ -1450,10 +1450,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					1.35
 				}
 				self.skill_descs.sprinter = {
-				skill_value_b1 = tostring((1 - self.values.player.stamina_regen_timer_multiplier[1]) * 100).."%", -- decrease stamina regen delay
-				skill_value_b2 = tostring(self.values.player.stamina_regen_multiplier[1] % 1 * 100).."%", -- faster stamina recovery
-				skill_value_p1 = tostring(self.values.player.crouch_dodge_chance[1] * 100).."%", -- dodge regen when crouching
-				skill_value_p2 = tostring((self.values.player.crouch_speed_multiplier[2] - self.values.player.crouch_speed_multiplier[1]) * 100).."%" -- faster crounch speed
+					skill_value_b1 = tostring((1 - self.values.player.stamina_regen_timer_multiplier[1]) * 100).."%", -- decrease stamina regen delay
+					skill_value_b2 = tostring(self.values.player.stamina_regen_multiplier[1] % 1 * 100).."%", -- faster stamina recovery
+					skill_value_p1 = tostring(self.values.player.crouch_dodge_chance[1] * 100).."%", -- dodge regen when crouching
+					skill_value_p2 = tostring((self.values.player.crouch_speed_multiplier[2] - self.values.player.crouch_speed_multiplier[1]) * 100).."%" -- faster crounch speed
 				}
 
 			--Evasion
@@ -1468,8 +1468,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Run and Reload
 					
 				self.skill_descs.awareness = {
-				skill_value_b1 = tostring(self.values.player.movement_speed_multiplier[1] % 1 * 100).."%", -- +movement speed
-				skill_value_b2 = tostring((1 - self.values.player.fall_damage_multiplier[1]) * 100).."%" -- reduce fall damage
+					skill_value_b1 = tostring(self.values.player.movement_speed_multiplier[1] % 1 * 100).."%", -- +movement speed
+					skill_value_b2 = tostring((1 - self.values.player.fall_damage_multiplier[1]) * 100).."%" -- reduce fall damage
 				}
 				
 			--Deep Pockets
@@ -1484,9 +1484,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.level_4_armor_addend = {2}
 					
 					self.skill_descs.thick_skin = {
-					skill_value_b1 = tostring(self.values.player.melee_concealment_modifier[1]), -- concealment for melee
-					skill_value_p1 = tostring(self.values.player.deep_pockets_concealment_modifier[1] + self.values.player.ballistic_vest_concealment[1]), -- concealment for all ballistic vests
-					skill_value_p2 = tostring(self.values.player.deep_pockets_concealment_modifier[1]), -- concealment for other armor
+						skill_value_b1 = tostring(self.values.player.melee_concealment_modifier[1]), -- concealment for melee
+						skill_value_p1 = tostring(self.values.player.deep_pockets_concealment_modifier[1] + self.values.player.ballistic_vest_concealment[1]), -- concealment for all ballistic vests
+						skill_value_p2 = tostring(self.values.player.deep_pockets_concealment_modifier[1]), -- concealment for other armor
 					}
 
 			--Moving Target
@@ -1514,17 +1514,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.zipline_dodge_chance = {0.3}
 				
 				self.skill_descs.dire_need = {
-				skill_value_b1 = tostring(self.values.player.detection_risk_add_movement_speed[1][1] * 100).."%", -- movement speed per concealment
-				skill_value_b2 = tostring(self.values.player.detection_risk_add_movement_speed[1][2]), -- movement speed per concealment
-				skill_value_b3 = tostring(self.values.player.detection_risk_add_movement_speed[1][4]), -- concealment tresholder for movement speed
-				skill_value_b4 = tostring(self.values.player.detection_risk_add_movement_speed[1][5] * 100).."%", -- max possible movement speed
-				skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
-				skill_value_p1 = tostring(self.values.player.detection_risk_add_movement_speed[2][1] * 100).."%", 
-				skill_value_p2 = tostring(self.values.player.detection_risk_add_movement_speed[2][2]),
-				skill_value_p3 = tostring(self.values.player.detection_risk_add_movement_speed[2][4]), 
-				skill_value_p4 = tostring(self.values.player.detection_risk_add_movement_speed[2][5] * 100).."%",
-				skill_value_p5 = tostring(self.values.player.run_dodge_chance[1] * 100).."%", -- dodge regen while running
-				skill_value_p6 = tostring(self.values.player.zipline_dodge_chance[1] * 100).."%" -- dodge regen while ziplining
+					skill_value_b1 = tostring(self.values.player.detection_risk_add_movement_speed[1][1] * 100).."%", -- movement speed per concealment
+					skill_value_b2 = tostring(self.values.player.detection_risk_add_movement_speed[1][2]), -- movement speed per concealment
+					skill_value_b3 = tostring(self.values.player.detection_risk_add_movement_speed[1][4]), -- concealment tresholder for movement speed
+					skill_value_b4 = tostring(self.values.player.detection_risk_add_movement_speed[1][5] * 100).."%", -- max possible movement speed
+					skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
+					skill_value_p1 = tostring(self.values.player.detection_risk_add_movement_speed[2][1] * 100).."%", 
+					skill_value_p2 = tostring(self.values.player.detection_risk_add_movement_speed[2][2]),
+					skill_value_p3 = tostring(self.values.player.detection_risk_add_movement_speed[2][4]), 
+					skill_value_p4 = tostring(self.values.player.detection_risk_add_movement_speed[2][5] * 100).."%",
+					skill_value_p5 = tostring(self.values.player.run_dodge_chance[1] * 100).."%", -- dodge regen while running
+					skill_value_p6 = tostring(self.values.player.zipline_dodge_chance[1] * 100).."%" -- dodge regen while ziplining
 				}
 
 			--Shockproof
@@ -1548,9 +1548,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}}
 					
 					self.skill_descs.insulation = {
-					skill_value_b1 = tostring((1 - self.values.player.knockback_resistance [1]) * 100).."%", -- knockback resistance
-					skill_value_p1 = tostring(self.values.player.escape_taser[1]), -- escape time
-					skill_value_p2 = tostring(self.counter_taser_damage) -- Damage to taser when counter tase happen
+						skill_value_b1 = tostring((1 - self.values.player.knockback_resistance [1]) * 100).."%", -- knockback resistance
+						skill_value_p1 = tostring(self.values.player.escape_taser[1]), -- escape time
+						skill_value_p2 = tostring(self.counter_taser_damage) -- Damage to taser when counter tase happen
 					}
 
 			--Sneaky Bastard
@@ -1575,12 +1575,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.dodge_heal_no_armor = {0.02}
 					
 					self.skill_descs.jail_diet = {
-					skill_value_b1 = tostring(self.values.player.detection_risk_add_dodge_chance[1][1] * 100), --Dodge increase per concealment check
-					skill_value_b2 = tostring(self.values.player.detection_risk_add_dodge_chance[1][2]), -- Dodge for X concealment
-					skill_value_b3 = tostring(self.values.player.detection_risk_add_dodge_chance[1][4]), --Concealment threshold
-					skill_value_b4 = tostring(self.values.player.detection_risk_add_dodge_chance[1][5] * 100), --Max dodge points
-					skill_value_p1 = tostring(self.values.player.detection_risk_add_dodge_chance[2][2]), -- Dodge for X concealment ACE
-					skill_value_p2 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%" -- HP regen on dodge
+						skill_value_b1 = tostring(self.values.player.detection_risk_add_dodge_chance[1][1] * 100), --Dodge increase per concealment check
+						skill_value_b2 = tostring(self.values.player.detection_risk_add_dodge_chance[1][2]), -- Dodge for X concealment
+						skill_value_b3 = tostring(self.values.player.detection_risk_add_dodge_chance[1][4]), --Concealment threshold
+						skill_value_b4 = tostring(self.values.player.detection_risk_add_dodge_chance[1][5] * 100), --Max dodge points
+						skill_value_p1 = tostring(self.values.player.detection_risk_add_dodge_chance[2][2]), -- Dodge for X concealment ACE
+						skill_value_p2 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%" -- HP regen on dodge
 					}
 			
 		--Silent Killer--
@@ -1591,10 +1591,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_depleted_stagger_shot = {0, 3}
 					
 					self.skill_descs.scavenger = {
-					skill_value_b1 = tostring(self.values.temporary.damage_speed_multiplier[1][1] % 1 * 100).."%", -- movement speed after armor destruction
-					skill_value_b2 = tostring(self.values.temporary.damage_speed_multiplier[1][2]), -- movement speed buff duration
-					skill_value_p1 = tostring(self.values.player.armor_depleted_stagger_shot[2]) -- stagger effect buff duration
-					
+						skill_value_b1 = tostring(self.values.temporary.damage_speed_multiplier[1][1] % 1 * 100).."%", -- movement speed after armor destruction
+						skill_value_b2 = tostring(self.values.temporary.damage_speed_multiplier[1][2]), -- movement speed buff duration
+						skill_value_p1 = tostring(self.values.player.armor_depleted_stagger_shot[2]) -- stagger effect buff duration		
 					}
 
 			--Optical Illusions
@@ -1608,8 +1607,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.optic_illusions = {
-					skill_value_b1 = tostring(self.values.weapon.swap_speed_multiplier[1] % 1 * 100).."%", -- swap speed bonus
-					skill_value_p1 = tostring(self.values.player.weapon_concealment_increase[2]) -- concealment bonus
+						skill_value_b1 = tostring(self.values.weapon.swap_speed_multiplier[1] % 1 * 100).."%", -- swap speed bonus
+						skill_value_p1 = tostring(self.values.player.weapon_concealment_increase[2]) -- concealment bonus
 					}
 
 			--The Professional
@@ -1622,8 +1621,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.special_double_drop = {true}
 					
 					self.skill_descs.silence_expert = {
-					skill_value_b1 = tostring(self.values.weapon.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed up
-					skill_value_p1 = tostring((self.values.weapon.enter_steelsight_speed_multiplier[2] - self.values.weapon.enter_steelsight_speed_multiplier[1]) * 100).."%"
+						skill_value_b1 = tostring(self.values.weapon.enter_steelsight_speed_multiplier[1] % 1 * 100).."%", -- ADS speed up
+						skill_value_p1 = tostring((self.values.weapon.enter_steelsight_speed_multiplier[2] - self.values.weapon.enter_steelsight_speed_multiplier[1]) * 100).."%"
 					}
 
 
@@ -1652,9 +1651,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.backstab = {
-				skill_value_b1 = tostring(self.values.player.unseen_increased_crit_chance[1].min_time), -- Time to activate crit bonus when player don't get damage
-				skill_value_b2 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
-				skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus
+					skill_value_b1 = tostring(self.values.player.unseen_increased_crit_chance[1].min_time), -- Time to activate crit bonus when player don't get damage
+					skill_value_b2 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
+					skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus
 				}
 	
 			--Cleaner, formally spotter
@@ -1672,10 +1671,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.hitman = {
-					skill_value_b1 = tostring(self.values.weapon.special_damage_taken_multiplier[1] % 1 * 100).."%", -- more damage to specials/elites
-					skill_value_p1 = tostring((self.values.weapon.special_damage_taken_multiplier[2] - self.values.weapon.special_damage_taken_multiplier[1]) * 100).."%",
-					skill_value_p2 = tostring(self.values.player.backstab_dodge[1][1] * 100).."%", -- dodge on headshot kill
-					skill_value_p3 = tostring(self.values.player.backstab_dodge[1][2] * 100).."%" -- dodge on "backstab" kill (from behind)
+						skill_value_b1 = tostring(self.values.weapon.special_damage_taken_multiplier[1] % 1 * 100).."%", -- more damage to specials/elites
+						skill_value_p1 = tostring((self.values.weapon.special_damage_taken_multiplier[2] - self.values.weapon.special_damage_taken_multiplier[1]) * 100).."%",
+						skill_value_p2 = tostring(self.values.player.backstab_dodge[1][1] * 100).."%", -- dodge on headshot kill
+						skill_value_p3 = tostring(self.values.player.backstab_dodge[1][2] * 100).."%" -- dodge on "backstab" kill (from behind)
 					}
 
 			--Low Blow
@@ -1699,15 +1698,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.backstab_crits = {0.50}
 					
 					self.skill_descs.unseen_strike = {
-					skill_value_b1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
-					skill_value_b2 = tostring(self.values.player.detection_risk_add_crit_chance[1][2]), -- crit chance per concealment
-					skill_value_b3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]), -- concealment tresholder for crit chance
-					skill_value_b4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%", -- Max possible crit chance
-					skill_value_p1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
-					skill_value_p2 = tostring(self.values.player.detection_risk_add_crit_chance[2][2]),
-					skill_value_p3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]),
-					skill_value_p4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%",
-					skill_value_p5 = tostring(self.values.player.backstab_crits[1] * 100).."%" -- Additional crit chance if you attack from behind
+						skill_value_b1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
+						skill_value_b2 = tostring(self.values.player.detection_risk_add_crit_chance[1][2]), -- crit chance per concealment
+						skill_value_b3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]), -- concealment tresholder for crit chance
+						skill_value_b4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%", -- Max possible crit chance
+						skill_value_p1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
+						skill_value_p2 = tostring(self.values.player.detection_risk_add_crit_chance[2][2]),
+						skill_value_p3 = tostring(self.values.player.detection_risk_add_crit_chance[1][4]),
+						skill_value_p4 = tostring(self.values.player.detection_risk_add_crit_chance[1][5] * 100).."%",
+						skill_value_p5 = tostring(self.values.player.backstab_crits[1] * 100).."%" -- Additional crit chance if you attack from behind
 					}
 		
 	--FUGITIVE--
@@ -1732,9 +1731,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.ap_bullets = {1.0}
 					
 					self.skill_descs.dance_instructor = {
-					skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
-					skill_value_p1 = tostring(self.values.pistol.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF bonus
-					skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%" -- AP boost
+						skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
+						skill_value_p1 = tostring(self.values.pistol.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF bonus
+						skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%" -- AP boost
 					}
 
 			--Gunfighter
@@ -1746,9 +1745,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.move_spread_multiplier = {0.6}
 					
 					self.skill_descs.akimbo = {
-					skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
-					skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
-					skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%"
+						skill_value_b1 = tostring(self.values.pistol.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed bonus
+						skill_value_b2 = tostring((1 - self.values.pistol.move_spread_multiplier[1]) * 100).."%", -- Reduce spread
+						skill_value_p1 = tostring((self.values.pistol.reload_speed_multiplier[2] - self.values.pistol.reload_speed_multiplier[1]) % 1 * 100).."%"
 					}
 				
 			--Akimbo
@@ -1775,8 +1774,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Reserved for future use.
 				
 				self.skill_descs.gun_fighter = {
-				skill_value_b1 = tostring(self.values.akimbo.recoil_index_addend[2]), -- +Stability
-				skill_value_p1 = tostring(self.values.akimbo.spread_index_addend[2]) -- +Accuracy
+					skill_value_b1 = tostring(self.values.akimbo.recoil_index_addend[2]), -- +Stability
+					skill_value_p1 = tostring(self.values.akimbo.spread_index_addend[2]) -- +Accuracy
 				}
 
 			--Desperado
@@ -1786,10 +1785,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.expert_handling = {
-				skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
-				skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
-				skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
-				skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time) -- Duration of buff (ace)
+					skill_value_b1 = tostring((1 - self.values.pistol.stacked_accuracy_bonus[1].accuracy_bonus) * 100).."%", -- Accuracy bonus per stack
+					skill_value_b2 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_time), -- Duration of buff (basic)
+					skill_value_b3 = tostring(self.values.pistol.stacked_accuracy_bonus[1].max_stacks), -- Max amount of stacks
+					skill_value_p1 = tostring(self.values.pistol.stacked_accuracy_bonus[2].max_time) -- Duration of buff (ace)
 				}
 				
 			--Trigger Happy
@@ -1799,11 +1798,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.trigger_happy = {
-				skill_value_b1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].damage_bonus % 1 * 100).."%", -- Damage bonus per stack
-				skill_value_b2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_time), -- Duration of buff (basic)
-				skill_value_b3 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks), -- Max stacks (basic)
-				skill_value_p1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_time), -- Duration of buff (ace)
-				skill_value_p2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_stacks - self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks) -- How many additional stacks give ace version
+					skill_value_b1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].damage_bonus % 1 * 100).."%", -- Damage bonus per stack
+					skill_value_b2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_time), -- Duration of buff (basic)
+					skill_value_b3 = tostring(self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks), -- Max stacks (basic)
+					skill_value_p1 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_time), -- Duration of buff (ace)
+					skill_value_p2 = tostring(self.values.pistol.stacking_hit_damage_multiplier[2].max_stacks - self.values.pistol.stacking_hit_damage_multiplier[1].max_stacks) -- How many additional stacks give ace version
 				}
 			
 		--Revenant
@@ -1815,10 +1814,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.revive_reload = {true}
 					
 					self.skill_descs.nine_lives = {
-					skill_value_b1 = tostring(self.values.temporary.increased_movement_speed[1][1] % 1 * 100).."%", -- Temp movement speed bonus after reviving
-					skill_value_b2 = tostring(self.values.temporary.increased_movement_speed[1][2]), -- Duration of movement speed bonus
-					skill_value_p1 = tostring((1 - self.values.temporary.revived_damage_resist[1][1]) * 100).."%", -- Temp DR bonus after reviving
-					skill_value_p2 = tostring(self.values.temporary.revived_damage_resist[1][2]) -- Duration of DR bonus
+						skill_value_b1 = tostring(self.values.temporary.increased_movement_speed[1][1] % 1 * 100).."%", -- Temp movement speed bonus after reviving
+						skill_value_b2 = tostring(self.values.temporary.increased_movement_speed[1][2]), -- Duration of movement speed bonus
+						skill_value_p1 = tostring((1 - self.values.temporary.revived_damage_resist[1][1]) * 100).."%", -- Temp DR bonus after reviving
+						skill_value_p2 = tostring(self.values.temporary.revived_damage_resist[1][2]) -- Duration of DR bonus
 					}
 				
 			--Undying (Formerly Nine Lives, Formerly Running From Death)
@@ -1830,8 +1829,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.primary_weapon_when_downed = {true}
 					
 					self.skill_descs.running_from_death = {
-					skill_value_b1 = tostring((self.values.player.bleed_out_health_multiplier[1] - 1) * 100).."%", -- Additional HP in bleedout
-					skill_value_p1 = tostring((self.values.player.bleed_out_health_multiplier[2] - self.values.player.bleed_out_health_multiplier[1]) * 100).."%"
+						skill_value_b1 = tostring((self.values.player.bleed_out_health_multiplier[1] - 1) * 100).."%", -- Additional HP in bleedout
+						skill_value_p1 = tostring((self.values.player.bleed_out_health_multiplier[2] - self.values.player.bleed_out_health_multiplier[1]) * 100).."%"
 					}
 
 			--What Doesn't Kill
@@ -1841,8 +1840,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.damage_absorption_addend = {0.3}
 					
 					self.skill_descs.up_you_go = {
-					skill_value_b1 = tostring(self.values.player.damage_absorption_low_revives[1] * 10), -- DA for each down
-					skill_value_p1 = tostring(self.values.player.damage_absorption_addend[1] * 10) -- Permanent DA
+						skill_value_b1 = tostring(self.values.player.damage_absorption_low_revives[1] * 10), -- DA for each down
+						skill_value_p1 = tostring(self.values.player.damage_absorption_addend[1] * 10) -- Permanent DA
 					}
 
 			--Swan Song
@@ -1852,8 +1851,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				
 				self.skill_descs.perseverance = {
-				skill_value_b1 = tostring(self.values.temporary.berserker_damage_multiplier[1][2]), -- Swan song duration
-				skill_value_p1 = tostring(self.values.temporary.berserker_damage_multiplier[2][2] - self.values.temporary.berserker_damage_multiplier[1][2])
+					skill_value_b1 = tostring(self.values.temporary.berserker_damage_multiplier[1][2]), -- Swan song duration
+					skill_value_p1 = tostring(self.values.temporary.berserker_damage_multiplier[2][2] - self.values.temporary.berserker_damage_multiplier[1][2])
 				}
 
 			--Haunt
@@ -1863,8 +1862,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.killshot_extra_spooky_panic_chance = {0.15}
 					
 					self.skill_descs.feign_death = {
-					skill_value_b1 = tostring(self.values.player.killshot_spooky_panic_chance[1] * 100).."%", -- Panic on kill chance for each down
-					skill_value_p1 = tostring(self.values.player.killshot_extra_spooky_panic_chance[1] * 100).."%" -- Permanent flat chance to panic
+						skill_value_b1 = tostring(self.values.player.killshot_spooky_panic_chance[1] * 100).."%", -- Panic on kill chance for each down
+						skill_value_p1 = tostring(self.values.player.killshot_extra_spooky_panic_chance[1] * 100).."%" -- Permanent flat chance to panic
 					}
 				
 			--Messiah
@@ -1882,8 +1881,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.melee_knockdown_mul = {2.0}
 					
 					self.skill_descs.martial_arts = {
-					skill_value_b1 = tostring(self.values.player.melee_damage_dampener[1] * 100).."%", -- Resist to melee damage
-					skill_value_p1 = tostring((self.values.player.melee_knockdown_mul[1] - 1) * 100).."%" -- Knockdown bonus
+						skill_value_b1 = tostring(self.values.player.melee_damage_dampener[1] * 100).."%", -- Resist to melee damage
+						skill_value_p1 = tostring((self.values.player.melee_knockdown_mul[1] - 1) * 100).."%" -- Knockdown bonus
 					}
 				
 			--Bloodthirst
@@ -1898,8 +1897,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 					
 					self.skill_descs.drop_soap = {
-					skill_value_b1 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][1] % 1 * 100).."%", -- Reload speed buff
-					skill_value_b2 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][2]) -- Buff duration
+						skill_value_b1 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][1] % 1 * 100).."%", -- Reload speed buff
+						skill_value_b2 = tostring(self.values.temporary.melee_kill_increase_reload_speed[1][2]) -- Buff duration
 					}
 
 			--Pumping Iron
@@ -1907,8 +1906,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5} --Unused
 				
 				self.skill_descs.steroids = {
-				skill_value_b1 = tostring(self.values.player.melee_swing_multiplier[1] % 1 * 100).."%", -- Faster melee attack speed
-				skill_value_p1 = tostring((self.values.player.melee_swing_multiplier[2] - self.values.player.melee_swing_multiplier[1]) * 100).."%"
+					skill_value_b1 = tostring(self.values.player.melee_swing_multiplier[1] % 1 * 100).."%", -- Faster melee attack speed
+					skill_value_p1 = tostring((self.values.player.melee_swing_multiplier[2] - self.values.player.melee_swing_multiplier[1]) * 100).."%"
 				}
 				
 			--Counter Strike
@@ -1922,9 +1921,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.deflect_ranged = {0.9}
 					
 				self.skill_descs.bloodthirst = {
-				skill_value_b1 = tostring(self.values.player.spooc_damage_resist[1] * 100).."%", -- less HP damage when knocked down
-				skill_value_p1 = tostring((1 - self.values.player.deflect_ranged[1]) * 100).."%", -- DR when charging melee
-				skill_value_p2 = tostring((self.values.player.spooc_damage_resist[2] - self.values.player.spooc_damage_resist[1]) * 100).."%" -- evem less HP damage when knocked down
+					skill_value_b1 = tostring(self.values.player.spooc_damage_resist[1] * 100).."%", -- less HP damage when knocked down
+					skill_value_p1 = tostring((1 - self.values.player.deflect_ranged[1]) * 100).."%", -- DR when charging melee
+					skill_value_p2 = tostring((self.values.player.spooc_damage_resist[2] - self.values.player.spooc_damage_resist[1]) * 100).."%" -- evem less HP damage when knocked down
 				}
 
 			--Frenzy (Berserker)
@@ -1934,8 +1933,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.frenzy_healing_reduction_ratio = 1.5
 				
 				self.skill_descs.wolverine = {
-				skill_value_b1 = tostring(self.values.player.frenzy_deflection[1] * 100).."%", -- +Deflection if player lose HP
-				skill_value_p1 = tostring(self.values.player.frenzy_deflection[2] * 100).."%"
+					skill_value_b1 = tostring(self.values.player.frenzy_deflection[1] * 100).."%", -- +Deflection if player lose HP
+					skill_value_p1 = tostring(self.values.player.frenzy_deflection[2] * 100).."%"
 				}
 				
 			--Berserker (Frenzy)
@@ -1945,8 +1944,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.damage_health_ratio_multiplier = {0.5}
 					
 					self.skill_descs.frenzy = {
-					skill_value_b1 = tostring(self.values.player.melee_damage_health_ratio_multiplier[1] * 100).."%", -- More melee damage when losing HP
-					skill_value_p1 = tostring(self.values.player.damage_health_ratio_multiplier [1] * 100).."%" -- More damage for guns when losing HP
+						skill_value_b1 = tostring(self.values.player.melee_damage_health_ratio_multiplier[1] * 100).."%", -- More melee damage when losing HP
+						skill_value_p1 = tostring(self.values.player.damage_health_ratio_multiplier [1] * 100).."%" -- More damage for guns when losing HP
 					}
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
@@ -2646,7 +2645,37 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.1,
 		1.2,
 		1.3
-	}	
+	}
+	
+	-- Perk Deck loc macros. They located here to make sure that all vanilla values for perks are overwritten by ResMod
+	
+	--Crew Chief
+	self.specialization_descs[1][1] = {
+		perk_value_1 = tostring(self.values.player.passive_health_multiplier[2] % 1 * 100).."%" -- HP increase
+	}
+	self.specialization_descs[1][3] = {
+		perk_value_1 = tostring(self.values.team.stamina.passive_multiplier[1] % 1 * 100).."%", -- Stamina increase (for everyone)
+		perk_value_2 = tostring(self.values.player.passive_intimidate_range_mul[1] % 1 * 100).."%", -- Shout distance increase
+		perk_value_3 = tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
+	}
+	self.specialization_descs[1][5] = {
+		perk_value_1 = tostring((self.values.player.passive_health_multiplier[3] - self.values.player.passive_health_multiplier[1] )*100).."%", -- Additional HP increase
+		perk_value_2 = tostring(self.values.team.health.passive_multiplier[1] % 1 * 100).."%", -- HP increase (for everyone)
+		perk_value_3 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+	}
+	self.specialization_descs[1][7] = {
+		perk_value_1 = tostring(self.values.player.tier_armor_multiplier[1] % 1 * 100).."%", -- Armor increase
+		perk_value_2 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
+	}
+	self.specialization_descs[1][9] = {
+		perk_value_1 = tostring(self.values.team.health.hostage_multiplier[1] % 1 * 100).."%", -- HP boost per hostage
+		perk_value_2 = tostring(self.values.team.stamina.hostage_multiplier[1] % 1 * 100).."%", -- Stamina boost per hostage
+		perk_value_3 = tostring(self.hostage_max_num.health) -- Max amount of hostages
+	}
+	--Muscle
+	self.specialization_descs[2][1] = {
+		perk_value_1 = tostring(self.values.player.passive_health_multiplier[2] % 1 * 100).."%" -- HP increase
+	}
 
 	local editable_skill_btns = {
 		engineering = {

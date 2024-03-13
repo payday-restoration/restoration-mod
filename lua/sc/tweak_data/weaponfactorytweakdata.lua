@@ -6,7 +6,7 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_i
 	for _, part_id in ipairs(factory_data.uses_parts) do
 		part_data = self.parts[part_id]
 
-		if part_data.type and part_data.type == part_type then
+		if part_data and part_data.type and part_data.type == part_type then
 			table.insert(parts, part_id)
 		end
 	end
@@ -22678,16 +22678,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {
 			value = 10,
 			spread = -44,
-			recoil = -16,
+			recoil = -20,
 			concealment = -6,
-			extra_ammo = 70
+			extra_ammo = 70,
+			total_ammo_mod = 355
 		},
 		custom_stats = {
 			alt_desc = "bm_wp_upg_i_patriot_desc",
 			lock_auto = true,
 			bandana = true,
-			falloff_start_mult = 0.166666,
-			falloff_end_mult = 0.2181818,
+			falloff_start_mult = 0.1111111,
+			falloff_end_mult = 0.1454545,
 			alt_ammo_pickup_min_mul = 0,
 			alt_ammo_pickup_max_mul = 0,
 			ammo_pickup_min_mul = 0,
@@ -22697,7 +22698,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			ads_speed_mult = 1.3846153,
 			damage_min_mult = 0.6,
 			muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle",
-			sms = 0.5
+			sms = 0.5,
 		},
 		override = {
 			wpn_fps_ass_m16_os_frontsight = {

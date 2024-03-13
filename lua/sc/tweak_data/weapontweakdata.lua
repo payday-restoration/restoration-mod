@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.6, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 5.5, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}

@@ -244,7 +244,9 @@ function PlayerStandard:_start_action_ducking(t)
 end
 
 function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
-	if (is_pro and self._is_sliding) or not skip_can_stand_check and not self:_can_stand() then
+	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+
+	if (is_pro and self._is_sliding and not slide_threshold) or not skip_can_stand_check and not self:_can_stand() then
 		return
 	end
 
@@ -1828,14 +1830,15 @@ function PlayerStandard:_start_action_running(t)
 
 		return
 	end
-
 	--Consolidated vanilla checks.
 	if not self._move_dir or self:on_ladder() or self:_on_zipline() or not self:_can_run_directional() or managers.player:get_player_rule("no_run") or not self._unit:movement():is_above_stamina_threshold() then
 		self._running_wanted = true
 		return
 	end
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
+	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding and not slide_threshold) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
 		self._running_wanted = true
 		return
 	end

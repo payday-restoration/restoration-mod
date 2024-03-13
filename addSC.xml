@@ -1488,6 +1488,8 @@
 	
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc_thq" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc_thq" load="false"/>
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>

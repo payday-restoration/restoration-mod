@@ -20,9 +20,11 @@ function PoisonGasEffect:init(position, normal, projectile_tweak, grenade_unit)
 
 	self._sound_source:set_position(position)
 	
-    self._sound_source:post_event("lung_explode")
-    self._sound_source:post_event("grenade_gas_explode")
-    self._sound_source:post_event("grenade_gas_stop")	
+	if self._grenade_id and self._grenade_id == "poison_gas_grenade" then
+	    self._sound_source:post_event("lung_explode")
+	    self._sound_source:post_event("grenade_gas_explode")
+	    self._sound_source:post_event("grenade_gas_stop")
+	end
 
 	self._unit_list = {}
 	self._effect = World:effect_manager():spawn({

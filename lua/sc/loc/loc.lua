@@ -1620,6 +1620,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_melee_jebus_info"] = "Light and #{item_stage_2}#dark##\n#{item_stage_2}#Black## and white.\n#{stats_positive}#Life## and #{important_1}#death##\n\nThe Binary Sword holds no middle ground as it turns your opponents #{important_1}#OFF##",
 			--Headless Dozer Sword
 			["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
+				--Headless Dozer Hammer
+				["bm_melee_titham"] = "Headless Bulldozer's Hammer",
+				["bm_melee_titan_hammer_info"] = "A hammer forged from nightmares.\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 				--im not gaj
 				["bm_melee_goat_info"] = "\"It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was like a heap of raw iron.\"\n\nFully charged hits spread panic in a #{skill_color}#12## meter radius around you.",
 			--Wt ring u got bithc?

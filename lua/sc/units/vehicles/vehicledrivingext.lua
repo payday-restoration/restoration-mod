@@ -1,4 +1,4 @@
-
+--[[
 function VehicleDrivingExt:_detect_invalid_possition(t, dt)
 	local respawn = false
 	local rot = self._vehicle:rotation()
@@ -70,3 +70,4 @@ function VehicleDrivingExt:_detect_invalid_possition(t, dt)
 		self:respawn_vehicle(true)
 	end
 end
+--]]

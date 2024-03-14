@@ -44,7 +44,7 @@ local spawn_cloakers = {
 		{ id = 400001, delay = 0 },
 		{ id = 400002, delay = 0 },
 		{ id = 400003, delay = 0 },
-		{ id = 400049, delay = 0 }
+		{ id = 400047, delay = 0 }
 	}
 }
 local spawn_shields_and_taser_1 = {
@@ -53,7 +53,7 @@ local spawn_shields_and_taser_1 = {
 		{ id = 400004, delay = 0 },
 		{ id = 400005, delay = 0 },
 		{ id = 400006, delay = 0 },
-		{ id = 400051, delay = 0 }
+		{ id = 400049, delay = 0 }
 	}
 }
 local spawn_shields_and_taser_2 = {
@@ -62,7 +62,7 @@ local spawn_shields_and_taser_2 = {
 		{ id = 400007, delay = 0 },
 		{ id = 400008, delay = 0 },
 		{ id = 400009, delay = 0 },
-		{ id = 400051, delay = 0 }
+		{ id = 400049, delay = 0 }
 	}
 }
 local spawn_shields_and_dozer = {
@@ -71,7 +71,7 @@ local spawn_shields_and_dozer = {
 		{ id = 400010, delay = 0 },
 		{ id = 400011, delay = 0 },
 		{ id = 400012, delay = 0 },
-		{ id = 400050, delay = 0 }
+		{ id = 400048, delay = 0 }
 	}
 }
 local spawn_murkies = {
@@ -90,10 +90,10 @@ local spawn_murkies = {
 		{ id = 400037, delay = 0 },
 		{ id = 400038, delay = 0 },
 		{ id = 400039, delay = 0 },
+		{ id = 400058, delay = 0 },
+		{ id = 400059, delay = 0 },
 		{ id = 400060, delay = 0 },
-		{ id = 400061, delay = 0 },
-		{ id = 400062, delay = 0 },
-		{ id = 400063, delay = 0 }
+		{ id = 400061, delay = 0 }
 	}
 }
 local optsBesiegeDummy = {
@@ -104,28 +104,28 @@ local optsBesiegeDummy = {
 local optsCloaker = {
     enemy = cloaker,
 	on_executed = { 
-		{ id = 400059, delay = 3 }
+		{ id = 400057, delay = 3 }
 	},
     enabled = true
 }
 local optsTaser = {
     enemy = taser,
 	on_executed = { 
-		{ id = 400059, delay = 3 }
+		{ id = 400057, delay = 3 }
 	},
     enabled = true
 }
 local optsShield = {
     enemy = shield,
 	on_executed = { 
-		{ id = 400059, delay = 3 }
+		{ id = 400057, delay = 3 }
 	},
     enabled = true
 }
 local optsBulldozer_Ambush = {
     enemy = tank,
 	on_executed = { 
-		{ id = 400059, delay = 3 }
+		{ id = 400057, delay = 3 }
 	},
     enabled = true
 }
@@ -147,7 +147,7 @@ local optsBulldozer = {
     enemy = tank,
 	on_executed = {
         { id = 400021, delay = 0.5 },
-		{ id = 400050, delay = 0 }
+		{ id = 400048, delay = 0 }
     },
     enabled = true
 }
@@ -249,13 +249,13 @@ local optsrespawn_murkies_3 = {
 }
 local optsrespawn_murkies_4 = {
 	on_executed = { 
+		{ id = 400058, delay = 15 },
+		{ id = 400059, delay = 15 },
 		{ id = 400060, delay = 15 },
-		{ id = 400061, delay = 15 },
-		{ id = 400062, delay = 15 },
-		{ id = 400063, delay = 15 }
+		{ id = 400061, delay = 15 }
 	},
 	elements = { 
-		400060
+		400058
 	},
     event = "death"
 }
@@ -294,21 +294,10 @@ local van_spawngroup  = {
 		400026
 	}
 }
-local enable_dozer = {
-	elements = { 
-		400057
-	}
-}
 local disable_dozer = {
 	toggle = "off",
 	elements = { 
-		400057
-	}
-}
-local disable_dozer_2 = {
-	toggle = "off",
-	elements = { 
-		400056
+		400019
 	}
 }
 local disable_murkies = {
@@ -317,7 +306,7 @@ local disable_murkies = {
 		400040,
 		400041,
 		400042,
-		400064
+		400062
 	}
 }
 
@@ -635,111 +624,101 @@ return {
         ),
 		restoration:gen_toggleelement(
             400045,
-            "enable_dozer",
-            enable_dozer
-        ),
-		restoration:gen_toggleelement(
-            400046,
             "disable_dozer",
             disable_dozer
         ),
-		restoration:gen_toggleelement(
-            400047,
-            "disable_dozer_2",
-            disable_dozer_2
-        ),
 		restoration:gen_missionscript(
-            400048,
+            400046,
             "spawn_murkies",
             spawn_murkies
         ),
 		restoration:gen_dialogue(
-            400049,
+            400047,
             "they_sending_cloakers",
             Bain_sendcloakers
         ),
 		restoration:gen_dialogue(
-            400050,
+            400048,
             "they_sending_dozers",
             Bain_senddozers
         ),
 		restoration:gen_dialogue(
-            400051,
+            400049,
             "they_sending_tasers",
             Bain_sendtasers
         ),
 		restoration:gen_missionscript(
-            400052,
+            400050,
             "spawn_cloakers",
             spawn_cloakers
         ),
 		restoration:gen_missionscript(
-            400053,
+            400051,
             "spawn_shields_and_taser_1",
             spawn_shields_and_taser_1
         ),
 		restoration:gen_missionscript(
-            400054,
+            400052,
             "spawn_shields_and_taser_2",
             spawn_shields_and_taser_2
         ),
 		restoration:gen_missionscript(
-            400055,
+            400053,
             "spawn_shields_and_dozer",
             spawn_shields_and_dozer
         ),
 		restoration:gen_missionscript(
-            400056,
+            400054,
             "spawn_dozer_1",
             spawn_dozer_1
         ),
 		restoration:gen_missionscript(
-            400057,
+            400055,
             "spawn_dozer_2",
             spawn_dozer_2
         ),
 		restoration:gen_toggleelement(
-            400058,
+            400056,
             "disable_murkies",
             disable_murkies
         ),
 		restoration:gen_so(
-            400059,
+            400057,
             "hunt_so",
             Vector3(3600, 2473, -1200),
             Rotation(0, 0, 0),
             optsHunt_SO
         ),
 		restoration:gen_dummy(
-            400060,
+            400058,
             "murky_13",
             Vector3(-11422.900, 5427.540, 282.287),
             Rotation(-30, 0, -0),
             optsMurky_Shotgun
         ),
 		restoration:gen_dummy(
-            400061,
+            400059,
             "murky_14",
             Vector3(-11450.400, 5379.910, 282.287),
             Rotation(-30, 0, -0),
             optsMurky_Shotgun
         ),
 		restoration:gen_dummy(
-            400062,
+            400060,
             "murky_15",
             Vector3(-11472.900, 5340.940, 282.287),
             Rotation(-30, 0, -0),
             optsMurky_SMG
         ),
 		restoration:gen_dummy(
-            400063,
+            400061,
             "murky_16",
             Vector3(-11496.900, 5299.370, 282.287),
             Rotation(-30, 0, -0),
             optsMurky_SMG
         ),
 		restoration:gen_dummytrigger(
-            400064,
+            400062,
             "respawn_murkies_4",
             Vector3(-2400, -3577, 375),
             Rotation(90, -0, -0),

@@ -35,11 +35,6 @@ return {
 	[104979] = {
 		ponr = ponr_value
 	},
-	[100024] = {
-		on_executed = { 
-			{ id = 400046, delay = 3 }
-		}
-	},
 	--Murky amount gets increased to 5 on PJs
 	[101394] = {
 		values = {
@@ -62,15 +57,14 @@ return {
 	--spawn scripted dozers after some time
 	[103477] = {
 		on_executed = { 
-			{ id = 400048, delay = 5 },
-			{ id = 400056, delay = 30 },
-			{ id = 400057, delay = 30 }
+			{ id = 400046, delay = 5 },
+			{ id = 400054, delay = 30 }
 		}
 	},
 	--stop spawning murkies after the end of 1st assault
 	[102158] = {
 		on_executed = { 
-			{ id = 400058, delay = 0 }
+			{ id = 400056, delay = 0 }
 		}
 	},
 	--PDTH styled ambushes
@@ -128,7 +122,7 @@ return {
 			{ id = 400013, delay = 0 },
 			{ id = 400014, delay = 0 },
 			{ id = 400015, delay = 0 },
-			{ id = 400047, delay = 0 },
+			{ id = 400055, delay = 30 },
 			{ id = 400045, delay = 0 }
 		}
 	},

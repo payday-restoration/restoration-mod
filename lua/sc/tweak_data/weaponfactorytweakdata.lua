@@ -29511,8 +29511,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				--(R700) Low Profile Iron Sight
 				self.parts.wpn_fps_snp_r700_o_is.supported = true
 				self.parts.wpn_fps_snp_r700_o_is.stats = {
-					value = 1,
-					zoom = 1
+					value = 1
 				}
 				
 				--(Bernetti Rangehitter) Mare's Leg Barrel

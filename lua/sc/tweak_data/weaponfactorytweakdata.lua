@@ -10188,43 +10188,44 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	for factory_id, i in pairs(self) do
 		if self[ factory_id ] then
 			local weapon_id = peepee(factory_id)
-			if tweak_data.weapon[ weapon_id ] and tweak_data.weapon[ weapon_id ].categories then
-
-				if table.contains( tweak_data.weapon[ weapon_id ].categories , "snp") or 
-					table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
-					table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
-					table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
-					self[ factory_id ].override = self[ factory_id ].override or {}
-					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
-						stats = {value = 1, concealment = 1, spread = -1},
-						custom_stats = { 
-							empire = true,
-							falloff_start_mult = 0.925,
-							falloff_end_mult = 0.925,
-							ads_speed_mult = 0.975
+			if tweak_data.weapon[ weapon_id ] then
+				local tww = tweak_data.weapon[ weapon_id ]
+				if tww.categories then
+					if table.contains( tww.categories , "snp") or 
+						table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
+						table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
+						table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
+						self[ factory_id ].override = self[ factory_id ].override or {}
+						self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
+							stats = {value = 1, concealment = 1, spread = -1},
+							custom_stats = { 
+								empire = true,
+								falloff_start_mult = 0.925,
+								falloff_end_mult = 0.925,
+								ads_speed_mult = 0.975
+							}
 						}
-					}
-					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
-						stats = {value = 1, concealment = 2, spread = -2},
-						custom_stats = { 
-							empire = true,
-							falloff_start_mult = 0.85,
-							falloff_end_mult = 0.85,
-							ads_speed_mult = 0.95
+						self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
+							stats = {value = 1, concealment = 2, spread = -2},
+							custom_stats = { 
+								empire = true,
+								falloff_start_mult = 0.85,
+								falloff_end_mult = 0.85,
+								ads_speed_mult = 0.95
+							}
 						}
-					}
-					self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
-						stats = {value = 1, concealment = 3, spread = -3},
-						custom_stats = { 
-							empire = true,
-							falloff_start_mult = 0.775,
-							falloff_end_mult = 0.775,
-							ads_speed_mult = 0.925
+						self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
+							stats = {value = 1, concealment = 3, spread = -3},
+							custom_stats = { 
+								empire = true,
+								falloff_start_mult = 0.775,
+								falloff_end_mult = 0.775,
+								ads_speed_mult = 0.925
+							}
 						}
-					}
+					end
 				end
 			end
-
 		end
 	end
 
@@ -11596,6 +11597,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		}
 	}
 
+	for i, part_id in pairs(self.wpn_fps_smg_sterling.uses_parts) do
+		attachment_list = {
+			"wpn_fps_upg_i_singlefire",
+			"wpn_fps_upg_i_autofire"
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_smg_sterling.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	
 	table.insert(self.wpn_fps_smg_sterling.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_smg_sterling.uses_parts, "wpn_fps_upg_m4_s_pts")
 	table.insert(self.wpn_fps_smg_sterling.uses_parts, "wpn_fps_upg_m4_s_crane")
@@ -16575,8 +16588,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_erma", "resmod_erma", function(sel
 		custom_stats = deep_clone(stocks.remove_nocheeks_stats)
 	}
 
-	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_singlefire")
-	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_upg_i_autofire")
 	table.insert(self.wpn_fps_smg_erma.uses_parts, "wpn_fps_smg_mac10_s_no")
 
 	self.wpn_fps_smg_erma_npc.uses_parts = deep_clone(self.wpn_fps_smg_erma.uses_parts)	

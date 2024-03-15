@@ -6540,6 +6540,10 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.melee_g36.attack_pattern = nil
 		self.melee_weapons.melee_g36.info_id = "bm_melee_thebestweapon_info"	
 		self.melee_weapons.melee_g36.hit_pre_calculation = true
+		self.melee_weapons.melee_g36.raycasts = 1
+		self.melee_weapons.melee_g36.raycasts_charge = 1
+		self.melee_weapons.melee_g36.raycasts_h = 1
+		self.melee_weapons.melee_g36.raycasts_charge_h = 1
 		self.melee_weapons.melee_g36.stats = deep_clone(self.melee_weapons.nin.stats)
 		self.melee_weapons.melee_g36.stats.min_damage = 2
 		self.melee_weapons.melee_g36.stats.max_damage = 2

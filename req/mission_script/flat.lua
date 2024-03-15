@@ -1,3 +1,6 @@
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local diff_scaling = 0.095 * difficulty
+local enabled_blocked_roof_access = math.random() < diff_scaling
 return {
 	-- Disable roof/stairs reinforcement
 	[102501] = {
@@ -6,6 +9,53 @@ return {
 		}
 	},
 	[103181] = {
+		values = {
+			enabled = false
+		}
+	},
+	--Restore roof access blockade
+	[100095] = {
+		on_executed = {
+			{id = 100569, remove = true},
+			{id = 400064, delay = 0}
+		}
+	},
+	[100297] = {
+		values = {
+			enabled = enabled_blocked_roof_access
+		},
+		on_executed = {
+			{id = 103611, delay = 0},
+			{id = 400065, delay = 0}
+		}
+	},
+	[100569] = {
+		values = {
+			enabled = true
+		}
+	},
+	[103610] = {
+		values = {
+			enabled = true
+		}
+	},
+	[103611] = {
+		values = {
+			enabled = true
+		}
+	},
+	[103648] = {
+		on_executed = {
+			{id = 103611, remove = true}
+		}
+	},
+	--stop with the smoke bombs, jeez....
+	[103034] = {
+		values = {
+			enabled = false
+		}
+	},
+	[103106] = {
 		values = {
 			enabled = false
 		}
@@ -41,7 +91,7 @@ return {
 			{ id = 104707, delay = 0 }
 		}
 	},
-	--Trigger event spawns after each start assault
+	--Trigger event spawns after each start of the assault wave
 	[104656] = {
 		on_executed = {
 			{id = 400015, delay = 30},

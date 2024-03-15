@@ -292,6 +292,9 @@ local disable_snipers = {
 		400073
 	}
 }
+local Smoke_bomb = {
+	duration = 8
+}
 
 return {
     elements = {
@@ -848,6 +851,27 @@ return {
             Vector3(-100, -1903, 1175),
             Rotation(90, -0, -0),
             optsCloaker_SO
+        ),
+		restoration:gen_smokeandnades(
+            400079,
+            "smoke_grenade_1",
+            Vector3(-2358, -4657, 21.226),
+            Rotation(0, 0, -0),
+            Smoke_bomb
+        ),
+		restoration:gen_smokeandnades(
+            400080,
+            "smoke_grenade_2",
+            Vector3(-3291, -4657, 21.226),
+            Rotation(0, 0, -0),
+            Smoke_bomb
+        ),
+		restoration:gen_smokeandnades(
+            400081,
+            "smoke_grenade_3",
+            Vector3(-4283, -4657, 21.226),
+            Rotation(0, 0, -0),
+            Smoke_bomb
         )
     }
 }

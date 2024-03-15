@@ -315,6 +315,20 @@ local disable_cloakers = {
 		400037
 	}
 }
+local Roof_access_block = {
+	enabled = overkill_above,
+	trigger_times = 1,
+	on_executed = { 
+		{ id = 100297, delay = 0.5 },
+		{ id = 100569, delay = 1 }
+	}
+}
+local disable_open_roof_access = {
+	toggle = "off",
+	elements = { 
+		100569
+	}
+}
 
 return {
     elements = {
@@ -735,6 +749,16 @@ return {
             Vector3(-295, 465, -322.531),
             Rotation(0, 0, -0),
             optsEnforcer
+        ),
+		restoration:gen_missionscript(
+            400064,
+            "roof_access_blockade_random",
+            Roof_access_block
+        ),
+		restoration:gen_toggleelement(
+            400065,
+            "disable_open_roof_access",
+            disable_open_roof_access
         )
     }
 }

@@ -1,10 +1,13 @@
 function MenuCallbackHandler:on_visit_res_guide()
 	local english = Idstring("english"):key() == SystemInfo:language():key()
 	local russian = Idstring("russian"):key() == SystemInfo:language():key()
+	local korean = Idstring("korean"):key() == SystemInfo:language():key()
 	if english then
 		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1366254667")
 	elseif russian then
 		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1923528592")
+	elseif korean then
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=2927620125")
 	end
 end
 

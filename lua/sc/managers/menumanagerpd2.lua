@@ -8,6 +8,8 @@ function MenuCallbackHandler:on_visit_res_guide()
 		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1923528592")
 	elseif korean then
 		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=2927620125")
+	else
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1366254667")
 	end
 end
 

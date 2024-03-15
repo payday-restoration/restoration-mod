@@ -1090,6 +1090,28 @@ function restoration:mission_script_add()
 			},
 		}
 	end
+	
+	function restoration:gen_smokeandnades(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSmokeGrenade",
+			values = {
+				execute_on_startup = false,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				base_delay = opts.base_delay or 0,
+				duration = opts.duration or 0,
+				effect_type = opts.effect_type or "smoke",
+				ignore_control = true,
+				immediate = true,
+				on_executed = opts.on_executed or {},
+				trigger_times = opts.trigger_times or 0
+			},
+		}
+	end
 
 	function restoration:log(...)
 		if self.logging then

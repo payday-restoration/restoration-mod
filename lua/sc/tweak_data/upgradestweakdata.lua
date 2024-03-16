@@ -2779,7 +2779,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Burglar
 	self.specialization_descs[7][1] = {
 		perk_value_1 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
-		perk_value_2 = tostring(self.values.player.crouch_dodge_chance_burglar[1] * 100).."%" -- dodge regen when crouching
+		perk_value_2 = tostring(self.values.player.crouch_dodge_chance_burglar[1] * 100).."%" -- Dodge regen when crouching
 	}
 	self.specialization_descs[7][3] = {
 		perk_value_1 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
@@ -3059,7 +3059,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Stoic
 	self.specialization_descs[19][1] = {
 		perk_value_1 = tostring(self.values.player.damage_control_passive[1][1]).."%", -- % of damage converted into DoT 
-		perk_value_2 = "8", -- Standard DoT duration
+		perk_value_2 = tostring(100 / self.values.player.damage_control_passive[1][2]), -- Standard DoT duration
 		perk_value_3 = tostring(self.values.player.damage_control_healing[1]).."%", -- HP regen defined by remaining DoT damage
 		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
 		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
@@ -3079,20 +3079,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[19][9] = {
 		perk_value_1 = tostring(self.values.player.extra_revive_health[1] * 100).."%" -- Extra revive HP
 	}
-	
-	--Generic perk values (aka templates)
-	--[[
-	tostring(self.values.player.passive_dodge_chance[1] * 100) -- Passive dodge increase
-	tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
-	
-	tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
-	"2" -- Body bag cases quantity. Not defined here so beware
-	tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
-	tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
-	tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
-	tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
-	
-	--]]
 	
 	--Tag Team
 	self.specialization_descs[20][1] = {
@@ -3166,6 +3152,189 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.specialization_descs[22][9] = {
 		perk_value_1 = tostring(self.copr_risen_cooldown_add), -- Additional CD if player revive himself
 		perk_value_2 = tostring(self.values.player.copr_teammate_heal[2] * 100).."%" -- HP regen for teammates buff
+	}
+	
+	--Copycat
+	self.specialization_descs[23][1] = {
+		perk_value_1 = tostring(auto_reload_kills), -- Required kills for auto reload
+		perk_value_2 = tostring(self.values.weapon.mrwi_swap_speed_multiplier[1] % 1 * 100).."%" -- Swap speed bonus
+	}
+	self.specialization_descs[23][3] = {
+		perk_value_1 = tostring(self.values.player.headshot_regen_health_bonus[1] * 10), -- HP regen on headshot
+		perk_value_2 = tostring(self.on_headshot_dealt_cooldown) -- CD of HP regen on headshot (Same CD as Bullseye skill)
+	}
+	self.specialization_descs[23][5] = {
+		perk_value_1 = tostring((self.values.player.dodge_ricochet_bullets[1][3] - 1) * 100).."%", -- Armor break ricochet damage mult
+		perk_value_2 = tostring(self.values.player.dodge_ricochet_bullets[1][2]) -- CD of armor break ricochets
+	}
+	self.specialization_descs[23][7] = {
+		perk_value_1 = tostring(self.values.temporary.mrwi_health_invulnerable[1][1] * 100).."%", -- HP threshold
+		perk_value_2 = tostring(self.values.temporary.mrwi_health_invulnerable[1][2]), -- Invulnerability period
+		perk_value_3 = tostring(self.values.temporary.mrwi_health_invulnerable[1][3]) -- CD of invulnerability
+	}
+	
+	local copycat_boost_choice_table = {
+		tostring(health_boost * 100).."%", -- HP boost
+		tostring(armor_boost * 100).."%", -- Armor boost
+		tostring(dodge_boost * 100), -- Passive dodge boost
+		tostring(crouch_speed_multiplier * 100).."%" -- Crouch speed boost (+carry speed bonus. It defined separately but both have same value)
+	}
+	
+	--Auto-generate descs values for 1,3,5,7 cards with boost choice
+	local indexes_for_copycat_table_1 = {1,3,5,7}
+	local indexes_for_copycat_table_2 = {1,2,3,4}
+	
+	for _, index_1 in ipairs(indexes_for_copycat_table_1) do
+		for _, index_2 in ipairs(indexes_for_copycat_table_2) do
+			self.multi_choice_specialization_descs[23][index_1][index_2].perk_value_1 = copycat_boost_choice_table[index_2]
+		end
+	end
+	
+	--Choice descs for 9 card
+	self.multi_choice_specialization_descs[23][9][1] = { --Crew Chief
+		perk_value_1 = tostring(self.values.team.stamina.passive_multiplier[1] % 1 * 100).."%", -- Stamina increase (for everyone)
+		perk_value_2 = tostring(self.values.player.passive_intimidate_range_mul[1] % 1 * 100).."%", -- Shout distance increase
+		perk_value_3 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+	}
+	self.multi_choice_specialization_descs[23][9][2] = { --Muscle
+		perk_value_1 = self.specialization_descs[2][7].perk_value_1, -- Panic chance
+		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+	}
+	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
+		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[1]) * 100).."%", -- Armor regen buff
+		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
+	}
+	self.multi_choice_specialization_descs[23][9][4] = { --Rogue
+		perk_value_1 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
+		perk_value_2 = tostring(self.values.weapon.passive_swap_speed_multiplier[1] % 1 * 100).."%", -- Swap speed bonus
+		perk_value_3 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
+	}
+	self.multi_choice_specialization_descs[23][9][5] = { --Hitman
+		perk_value_1 = tostring(self.values.player.store_temp_health[1][2] * 10), -- HP stored per kill
+		perk_value_2 = tostring(self.values.player.store_temp_health[1][1] * 10), -- Max possible stored HP
+		perk_value_3 = tostring(self.temp_health_decay * 10), -- Temp HP decay per sec
+		perk_value_4 = tostring(self.temp_health_max * 10), -- Max possible temp HP
+		perk_value_5 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+	}
+	self.multi_choice_specialization_descs[23][9][6] = { --Crook
+		perk_value_1 = tostring(self.values.player.level_2_dodge_addend[1] * 100), -- Dodge increase for vests
+		perk_value_2 = tostring(self.values.player.level_2_armor_multiplier[1] % 1 * 100).."%", -- Armor bonus for vests
+		perk_value_3 = tostring((1 - self.values.player.pick_lock_speed_multiplier[1]) * 100).."%" -- Lockpicking speed bonus
+	}
+	self.multi_choice_specialization_descs[23][9][7] = { --Burglar
+		perk_value_1 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
+		perk_value_2 = tostring(self.values.player.crouch_dodge_chance_burglar[1] * 100).."%", -- Dodge regen when crouching
+		perk_value_3 = tostring(self.values.player.crouch_speed_multiplier_burglar[1] % 1 * 100).."%" -- Movement speed bonus when crouching
+	}
+	self.multi_choice_specialization_descs[23][9][8] = { --Infiltrator
+		perk_value_1 = tostring(self.infiltrator_dr_range / 100), -- Required range to activate DR
+		perk_value_2 = tostring((1 - self.values.temporary.dmg_dampener_close_contact[2][1]) * 100).."%", -- Additional DR when enemy is close
+		perk_value_3 = tostring(self.values.melee.stacking_hit_damage_multiplier[1] * 100).."%", -- Damage boost for melee when player hit enemy successfully
+		perk_value_4 = tostring(self.values.melee.stacking_hit_expire_t[2]), -- Time when damage boost when lost
+		perk_value_5 = tostring(self.max_melee_weapon_dmg_mul_stacks), -- Max amount of damage stacks
+		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
+	}
+	self.multi_choice_specialization_descs[23][9][9] = {--Sociopath
+		perk_value_1 = tostring(self.values.player.killshot_regen_armor_bonus[1] * 10), -- Armor regen on kill
+		perk_value_2 = "18", -- Required range to activate additional armor regen on kill (Same range as "Underdog" skill)
+		perk_value_3 = tostring(self.values.player.killshot_close_regen_armor_bonus[1][1] * 10), -- Additional armor regen when player killed enemy in specified range
+		perk_value_4 = tostring(self.on_killshot_cooldown), -- Cooldown for socio armor regen ability
+		perk_value_5 = tostring(self.on_killshot_cooldown_reduction), -- CD reduction on kill
+		perk_value_6 = tostring(self.on_killshot_cooldown_reduction_melee), -- CD reduction on melee kill
+		perk_value_7 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+	}
+	self.multi_choice_specialization_descs[23][9][10] = {--Gambler
+		perk_value_1 = tostring(self.loose_ammo_restore_health_values[4][1]), -- Min HP regen on ammo pickup
+		perk_value_2 = tostring(self.loose_ammo_restore_health_values[4][2]),-- Max HP regen on ammo pickup
+		perk_value_3 = tostring(self.loose_ammo_restore_health_values.cd[4]),-- CD of healing
+		perk_value_4 = tostring(self.loose_ammo_restore_health_values.cdr[1]), -- Min CD reduction
+		perk_value_5 = tostring(self.loose_ammo_restore_health_values.cdr[2]), -- Max CD reduction
+		perk_value_6 = tostring(self.loose_ammo_give_team_ratio * 100).."%", -- Ammo regen for team
+		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+	}
+	self.multi_choice_specialization_descs[23][9][11] = {--Grinder
+		perk_value_1 = tostring(self.values.player.damage_to_hot[1] * 10), -- HP regen per tick
+		perk_value_2 = tostring(self.damage_to_hot_data.total_ticks/self.damage_to_hot_data.tick_time), -- Duration of 1 stack
+		perk_value_3 = tostring(self.damage_to_hot_data.max_stacks),-- Max amount of stacks
+		perk_value_4 = tostring(self.damage_to_hot_data.stacking_cooldown), -- Stacking CD
+		perk_value_5 = tostring(self.values.player.level_5_armor_addend_grinder[1] * -10), -- Flak Jacket armor reduction
+		perk_value_6 = tostring(self.values.player.flak_jacket_concealment[2]), -- Concealment bonus
+		perk_value_7 = "2" -- Body bag cases quantity. Not defined here so beware
+	}
+	self.multi_choice_specialization_descs[23][9][12] = { --Yakuza
+		perk_value_1 = tostring(self.values.player.kill_dodge_regen[1] * 100).."%", -- Max dodge gain on kill at low HP
+		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+	}
+	self.multi_choice_specialization_descs[23][9][13] = { --Ex-President
+		perk_value_1 = tostring(self.values.player.armor_health_store_amount[1] * 10), -- HP stored per kill
+		perk_value_2 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
+	}
+	self.multi_choice_specialization_descs[23][9][14] = { --Maniac
+		perk_value_1 = tostring(self.max_total_cocaine_stacks), -- Max amount of Hysteria stacks
+		perk_value_2 = tostring(self.cocaine_stacks_dmg_absorption_value * 10), -- DA per X stacks of Hysteria
+		perk_value_3 = tostring(self.cocaine_stacks_convert_levels[1]), -- Amount of stacks required for DA
+		perk_value_4 = tostring(self.cocaine_stacks_decay_amount_per_tick), -- Stack decaying
+		perk_value_5 = tostring(self.cocaine_stacks_decay_t), -- Every X seconds stacks will decay
+		perk_value_6 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
+	}
+	self.multi_choice_specialization_descs[23][9][15] = { --Anarchist
+		perk_value_1 = tostring(self.values.team.player.civ_intimidation_mul[1] % 1 * 100).."%" -- Civs intimidated longer
+	}
+	self.multi_choice_specialization_descs[23][9][16] = { --Biker
+		perk_value_1 = tostring(self.values.player.wild_health_amount[1] * 10), -- HP regen per (team) kill
+		perk_value_2 = tostring(self.wild_trigger_time), -- CD of this ability
+		perk_value_3 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
+	}
+	self.multi_choice_specialization_descs[23][9][17] = { --Kingpin
+		perk_value_1 = tostring(self.values.temporary.chico_injector[4][1] * 100).."%", -- HP regen on damage taken
+		perk_value_2 = tostring(self.values.temporary.chico_injector[4][2]), -- Injector's duration
+		perk_value_3 = tostring(self.values.player.chico_injector_speed[1] % 1 * 100).."%", -- Movement speed bonus when injector is active
+		perk_value_4 = "30", --CD of injector. Not defined here
+		perk_value_5 = "1" -- CD reduction on kill. Not defined here (?)
+	}
+	self.multi_choice_specialization_descs[23][9][18] = { --Sicario
+		perk_value_1 = "12", -- Duration of smoke. Not defined here (?)
+		perk_value_2 = tostring((self.smoke_screen_armor_regen[1] - 1) * 100).."%", -- Armor regen bonus while you inside the smoke screen
+		perk_value_3 = "75%", -- Accuracy debuff for enemies inside the smoke screen. Not defined here (?)
+		perk_value_4 = "35", --CD of smoke bomb. Not defined here
+		perk_value_5 = "2", -- CD reduction on kill
+		perk_value_6 = tostring(self.values.player.passive_dodge_chance[1] * 100), -- Passive dodge increase
+		perk_value_7 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
+	}
+	self.multi_choice_specialization_descs[23][9][19] = { --Stoic
+		perk_value_1 = tostring(self.values.player.damage_control_passive[2][1]).."%", -- % of damage converted into DoT 
+		perk_value_2 = tostring(100 / self.values.player.damage_control_passive[2][2]), -- Standard DoT duration
+		perk_value_3 = tostring(self.values.player.damage_control_healing[1]).."%", -- HP regen defined by remaining DoT damage
+		perk_value_4 = "30", -- CD of alchohol flask. Not defined here
+		perk_value_5 = tostring(self.values.player.armor_to_health_conversion[1]).."%", -- Armor convert rate
+		perk_value_6 = tostring(100 - self.values.player.armor_to_health_conversion[1]).."%", -- HP convert rate
+		perk_value_7 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
+	}
+	self.multi_choice_specialization_descs[23][9][20] = { --Tag Team
+		perk_value_1 = tostring(self.values.player.tag_team_base[1].distance), -- Distance required to activate vape
+		perk_value_2 = tostring(self.values.player.tag_team_base[1].kill_health_gain * 10), -- HP regen per kill for Tag Team user
+		perk_value_3 = tostring(self.values.player.tag_team_base[1].kill_health_gain * self.values.player.tag_team_base[1].tagged_health_gain_ratio * 10), -- HP regen per kill for tagged unit
+		perk_value_4 = tostring(self.values.player.tag_team_base[1].duration), -- Tag duration
+		perk_value_5 = "80", -- CD of vape. Not defined here
+		perk_value_6 = tostring(self.values.player.tape_loop_duration[2] - self.values.player.tape_loop_duration[1]) -- Camera loop bonus
+	}
+	self.multi_choice_specialization_descs[23][9][21] = { --Hacker
+		perk_value_1 = tostring(self.values.player.pocket_ecm_jammer_base[1].duration - 0.1), -- Duration of PECM
+		perk_value_2 = tostring(self.values.player.pocket_ecm_jammer_base[1].feedback_range / 100), -- PECM feedback range
+		perk_value_3 = "100%", -- Proc chance on 1st tick of feedback. Not defined here
+		perk_value_4 = tostring(self.values.player.pocket_ecm_jammer_base[1].feedback_interval), -- Tickrate of every feedback proc
+		perk_value_5 = "60%", -- Proc chance on non-1st ticks of feedback. Not defined here
+		perk_value_6 = "60", -- CD of PECM. Not defined here
+		perk_value_7 = tostring(self.values.player.pocket_ecm_jammer_base[1].cooldown_drain) -- CD reduction on kill
+	}
+	self.multi_choice_specialization_descs[23][9][22] = { --Leech
+		perk_value_1 = tostring(self.values.player.copr_activate_bonus_health_ratio[2] * 100).."%", -- HP regen during activation
+		perk_value_2 = tostring(self.values.temporary.copr_ability[1][2]), -- Duration of effect
+		perk_value_3 = tostring(self.values.player.copr_static_damage_ratio[1] * 100).."%", -- HP for 1 segment
+		perk_value_4 = tostring(self.values.player.copr_kill_life_leech[1]), -- Required kills for 1 restoring segment
+		perk_value_5 = "1", -- Invulnerability period. Not defined here (?)
+		perk_value_6 = tostring(self.copr_ability_cooldown), -- CD of ampule
+		perk_value_7 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	
 	local editable_skill_btns = {

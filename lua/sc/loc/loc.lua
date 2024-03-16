@@ -5727,94 +5727,94 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--CopyCat--
 		["menu_st_spec_23"] = "Copycat",
-		["menu_deck23_1_desc"] = "Killing #{skill_color}#10## enemies reloads your holstered weapon.\n\n#{risk}#NOTE: Kills are counted separately between weapons and the counter only resets once you trigger a reload for the holstered weapon.##\n\nYou swap between weapons #{skill_color}#15%## faster.",
-		["menu_deck23_1_short"] = "Killing #{skill_color}#10## enemies reloads your holstered weapon.\n\nYou swap between weapons #{skill_color}#15%## faster.",
-		["menu_deck23_1_1_desc"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_1_1_short"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_1_2_desc"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_1_2_short"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_1_3_desc"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_1_3_short"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
-		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
+		["menu_deck23_1_desc"] = "Killing #{skill_color}#$perk_value_1## enemies reloads your holstered weapon.\n\n#{risk}#NOTE: Kills are counted separately between weapons and the counter only resets once you trigger a reload for the holstered weapon.##\n\nYou swap between weapons #{skill_color}#$perk_value_2## faster.",
+		["menu_deck23_1_short"] = "Killing #{skill_color}#$perk_value_1## enemies reloads your holstered weapon.\n\nYou swap between weapons #{skill_color}#$perk_value_2## faster.",
+		["menu_deck23_1_1_desc"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_1_1_short"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_1_2_desc"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_1_2_short"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_1_3_desc"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_1_3_short"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_1_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
+		["menu_deck23_1_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
 
-		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for #{skill_color}#3## health.\n\nThis cannot occur more than once every #{important_1}#5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
-		["menu_deck23_3_short"] = "Each headshot you achieve heals you for #{skill_color}#3## health.\n\nThis cannot occur more than once every #{important_1}#5## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
-		["menu_deck23_3_1_desc"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_3_1_short"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_3_2_desc"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_3_2_short"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_3_3_desc"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_3_3_short"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_3_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
-		["menu_deck23_3_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
+		["menu_deck23_3_desc"] = "Each headshot you achieve heals you for #{skill_color}#$perk_value_1## health.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
+		["menu_deck23_3_short"] = "Each headshot you achieve heals you for #{skill_color}#$perk_value_1## health.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds; cooldown reduction is shared with the #{skill_color}#\"Bullseye\"## skill if active.",
+		["menu_deck23_3_1_desc"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_3_1_short"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_3_2_desc"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_3_2_short"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_3_3_desc"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_3_3_short"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_3_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
+		["menu_deck23_3_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
 
-		["menu_deck23_5_desc"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for #{skill_color}#100%## more damage.\n\nArmor break ricochets have a #{important_1}#15## second cooldown.",
-		["menu_deck23_5_short"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for #{skill_color}#100%## more damage.\n\nArmor break ricochets have a #{important_1}#15## second cooldown.",
-		["menu_deck23_5_1_desc"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_5_1_short"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_5_2_desc"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_5_2_short"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_5_3_desc"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_5_3_short"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_5_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
-		["menu_deck23_5_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
+		["menu_deck23_5_desc"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for #{skill_color}#$perk_value_1## more damage.\n\nArmor break ricochets have a #{important_1}#$perk_value_2## second cooldown.",
+		["menu_deck23_5_short"] = "Dodged bullets will ricochet back to the enemy that fired them.\n\nBullets that break your armor will ricochet back to the enemy that fired them for #{skill_color}#$perk_value_1## more damage.\n\nArmor break ricochets have a #{important_1}#$perk_value_2## second cooldown.",
+		["menu_deck23_5_1_desc"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_5_1_short"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_5_2_desc"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_5_2_short"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_5_3_desc"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_5_3_short"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_5_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
+		["menu_deck23_5_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
 
-		["menu_deck23_7_desc"] = "When your health drops below #{skill_color}#50%## you will be immune to health damage for #{skill_color}#2## seconds.\n\nThis cannot occur more than once every #{important_1}#90## seconds.",
-		["menu_deck23_7_short"] = "When your health drops below #{skill_color}#50%## you will be immune to health damage for #{skill_color}#2## seconds.\n\nThis cannot occur more than once every #{important_1}#90## seconds.",
-		["menu_deck23_7_1_desc"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_7_1_short"] = "You gain #{skill_color}#5%## more health.",
-		["menu_deck23_7_2_desc"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_7_2_short"] = "You gain #{skill_color}#3.75%## more armor.",
-		["menu_deck23_7_3_desc"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_7_3_short"] = "Your dodge is increased by #{skill_color}#1.25## points.",
-		["menu_deck23_7_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
-		["menu_deck23_7_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#5%## faster.",
+		["menu_deck23_7_desc"] = "When your health drops below #{skill_color}#$perk_value_1## you will be immune to health damage for #{skill_color}#$perk_value_2## seconds.\n\nThis cannot occur more than once every #{important_1}#$perk_value_3## seconds.",
+		["menu_deck23_7_short"] = "When your health drops below #{skill_color}#$perk_value_1## you will be immune to health damage for #{skill_color}#$perk_value_2## seconds.\n\nThis cannot occur more than once every #{important_1}#$perk_value_3## seconds.",
+		["menu_deck23_7_1_desc"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_7_1_short"] = "You gain #{skill_color}#$perk_value_1## more health.",
+		["menu_deck23_7_2_desc"] = "You gain #{skill_color}#$perk_value_1## more armor.",
+		["menu_deck23_7_2_short"] = "You gain #{skill_color}#$perk_value_1%## more armor.",
+		["menu_deck23_7_3_desc"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_7_3_short"] = "Your dodge is increased by #{skill_color}#$perk_value_1## points.",
+		["menu_deck23_7_4_desc"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
+		["menu_deck23_7_4_short"] = "Your crouched and carry movement speeds are #{skill_color}#$perk_value_1## faster.",
 		--Final Card
 			--Crew Chief
-			["menu_deck1_mrwi_desc"] = "Increases your shout distance by ##25%.##\n\nYou and your crew's stamina is increased by ##50%.##\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##25%## faster.",
+			["menu_deck1_mrwi_desc"] = "You and your crew's stamina is increased by ##$perk_value_1.##\n\nIncreases your shout distance by ##$perk_value_2.##\n\nNOTE: Crew perks do not stack.\n\nYou answer pagers ##$perk_value_3## faster.",
 			--Muscle
-			["menu_deck2_mrwi_desc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck2_mrwi_desc"] = "Every shot you fire with your guns has a ##$perk_value_1## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
 			--Armorer
-			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##10%.##\n\nYou gain the ability to place ##2## body bag cases.",
+			["menu_deck3_mrwi_desc"] = "Your armor recovery rate is increased by ##$perk_value_1.##\n\nYou gain the ability to place ##$perk_value_2## body bag cases.",
 			--Rogue
-			["menu_deck4_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYou swap between your weapons an additional ##30%## faster.\n\nYour camera loop duration is increased by ##20## seconds.",
+			["menu_deck4_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points.\n\nYou swap between your weapons an additional ##$perk_value_2## faster.\n\nYour camera loop duration is increased by ##$perk_value_3## seconds.",
 			--Hitman
-			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores #{skill_color}#25## health. You can store up to #{risk}#75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of #{important_1}#5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to #{risk}#240## temporary health at once.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
+			["menu_deck5_mrwi_desc"] = "Killing an enemy outside of melee stores #{skill_color}#$perk_value_1## health. You can store up to #{risk}#$perk_value_2## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of #{important_1}#$perk_value_3## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to #{risk}#$perk_value_4## temporary health at once.\n\nYou carry #{skill_color}#$perk_value_5## additional body bag in your inventory.",
 			--Crook
-			["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points for ballistic vests.\n\nYour armor is increased by an additional ##15%## for ballistic vests.\n\nYou pick locks ##20%## faster.",
+			["menu_deck6_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points for ballistic vests.\n\nYour armor is increased by an additional ##$perk_value_2## for ballistic vests.\n\nYou pick locks ##$perk_value_3## faster.",
 			--Burglar
-			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additonal ##5## points.\n\nYour dodge meter fills up by ##5%## of your dodge every second while crouching.\n\nYou gain a ##20%## boost in your movement speed when crouching.",
+			["menu_deck7_mrwi_desc"] = "Your dodge is increased by an additonal ##$perk_value_1## points.\n\nYour dodge meter fills up by ##$perk_value_2## of your dodge every second while crouching.\n\nYou gain a ##$perk_value_3## boost in your movement speed when crouching.",
 			--Infiltrator
-			["menu_deck8_mrwi_desc"] = "When you are within ##12## meters of an enemy, you recieve ##10%## less damage from enemies.\n\nEach successful melee hit grants an additional ##8%## melee damage boost for ##5## seconds or until you miss; stacks up to ##5## times.\n\nYour camera loop duration is increased by ##20## seconds.",
+			["menu_deck8_mrwi_desc"] = "When you are within ##$perk_value_1## meters of an enemy, you recieve ##$perk_value_2## less damage from enemies.\n\nEach successful melee hit grants an additional ##$perk_value_3## melee damage boost for ##$perk_value_4## seconds or until you miss; stacks up to ##$perk_value_5## times.\n\nYour camera loop duration is increased by ##$perk_value_6## seconds.",
 			--Sociopath
-			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#20## armor.\n\nKilling an enemy within #{skill_color}#18## meters regenerates an additional #{skill_color}#15## armor.\n\nThis cannot occur more than once every #{important_1}#5## seconds. Each kill during cooldown reduces it by #{skill_color}#0.5## seconds; melee kills reduce it by an additional #{skill_color}#1.5## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
+			["menu_deck9_mrwi_desc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nKilling an enemy within #{skill_color}#$perk_value_2## meters regenerates an additional #{skill_color}#$perk_value_3## armor; melee kills double the amount.\n\nThis cannot occur more than once every #{important_1}#$perk_value_4## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_5## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_6## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
 			--Gambler
-			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##1 to 5## health.\n\nHealing has a ##10## second cooldown, but every ammo box you pick up reduces it by ##1 to 4## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##15%## of normal rate to other crew members.\n\nYou answer pagers ##25%## faster.",
+			["menu_deck10_mrwi_desc"] = "Ammo boxes you pick up also yield medical supplies that heal you for ##$perk_value_1 to $perk_value_2## health.\n\nHealing has a ##$perk_value_3## second cooldown, but every ammo box you pick up reduces it by ##$perk_value_4 to $perk_value_5## seconds.\n\nWhen you pick up ammo, you trigger an ammo pickup for ##$perk_value_6## of normal rate to other crew members.\n\nYou answer pagers ##$perk_value_7## faster.",
 			--Grinder
-			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#2## health every second for #{skill_color}#3## seconds; stacks up to #{skill_color}#5## times.\nYou can only gain a stack every #{important_1}#0.5## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#30## armor but gains #{skill_color}#8## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#2## body bag cases.",
+			["menu_deck11_mrwi_desc"] = "Damaging an enemy heals #{skill_color}#$perk_value_1## health every second for #{skill_color}#$perk_value_2## seconds; stacks up to #{skill_color}#$perk_value_3## times.\nYou can only gain a stack every #{important_1}#$perk_value_4## seconds and only while wearing the #{risk}#Flak Jacket.##\nYour Flak Jacket loses #{important_1}#$perk_value_5## armor but gains #{skill_color}#$perk_value_6## mobility.\n\n#{risk}#NOTE: Damaging enemies with sentries or damage over time effects will not grant stacks.##\n\nYou gain the ability to place #{skill_color}#$perk_value_7## body bag cases.",
 			--Yakuza
-			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##50%## of your dodge.\n\nYou bag corpses and interact with hostages ##75%## faster.",
+			["menu_deck12_mrwi_desc"] = "The lower your health, the more your dodge meter is filled when you kill an enemy.\n\nWhen your health is below ##100%##, your meter fills by up to ##$perk_value_1## of your dodge.\n\nYou bag corpses and interact with hostages ##$perk_value_2## faster.",
 			--Ex-Pres
-			["menu_deck13_mrwi_desc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			["menu_deck13_mrwi_desc"] = "While your armor is up, you will store ##$perk_value_1## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_2## longer.",
 			--Maniac
-			["menu_deck14_mrwi_desc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##720.##\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##120## stacks of Hysteria. Hysteria Stacks decay by ##120## every ##8## seconds.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			["menu_deck14_mrwi_desc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##$perk_value_1.##\n\nHysteria Stacks:\nIncoming damage is reduced by ##$perk_value_2## point for every ##$perk_value_3## stacks of Hysteria. Hysteria Stacks decay by ##$perk_value_4## every ##$perk_value_5## seconds.\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_6## longer.",
 			--Anarchist
-			["menu_deck15_mrwi_desc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.\n\nCivilians intimidated by you and your crew remain intimidated ##25%## longer.",
+			["menu_deck15_mrwi_desc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to ##8## armor per second. Heavier armor regenerates more armor per tick, but has a longer delay between ticks.\n\nNOTE: Skills and perks that increase the armor recovery rate are disabled when using this perk deck.\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_1## longer.",
 			--Biker
-			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain #{skill_color}#2## health. This can only occur once every #{important_1}#5## seconds.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
+			["menu_deck16_mrwi_desc"] = "Every time you or your crew kill an enemy you will gain #{skill_color}#$perk_value_1## health. This can only occur once every #{important_1}#$perk_value_2## seconds.\n\nYou bag corpses and interact with hostages #{skill_color}#$perk_value_3## faster.",
 			--Kingpin
-			["menu_deck17_mrwi_desc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#15%## of all damage taken for #{skill_color}#4## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by #{skill_color}#20%## while the Injector is active.\n\nThe Injector can only be used once every #{important_1}#30## seconds.",
+			["menu_deck17_mrwi_desc"] = "Unlocks the #{skill_color}#Injector## for use in place of a throwable.\n\nActivating the Injector will heal you for #{skill_color}#$perk_value_1## of all damage taken for #{skill_color}#$perk_value_2## seconds.\n\nYou can still take damage during the effect.\n\nYour movement speed is increased by #{skill_color}#$perk_value_3## while the Injector is active.\n\nThe Injector can only be used once every #{important_1}#$perk_value_4## seconds; each kill you perform will shorten the cooldown timer by #{skill_color}#$perk_value_5## seconds.",
 			--Sicario
-			["menu_deck18_mrwi_desc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#12## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#75%.##\n\nThe Smoke Bomb has a #{important_1}#35## second cooldown, but killing enemies will reduce this cooldown by #{skill_color}#1## second.\n\nYour dodge is increased by an additonal #{skill_color}#5## points.\n\nYou carry #{skill_color}#1## additional body bag in your inventory.",
+			["menu_deck18_mrwi_desc"] = "Unlocks the #{skill_color}#Smoke Bomb## for use in place of a standard throwable.\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for #{skill_color}#$perk_value_1## seconds. While standing inside the smoke screen, you and your allies regenerate armor #{skill_color}#$perk_value_2## faster. Any enemies that stand in the smoke will see their accuracy reduced by #{skill_color}#$perk_value_3.##\n\nThe Smoke Bomb has a #{important_1}#$perk_value_4## second cooldown; killing enemies will reduce this cooldown by #{skill_color}#$perk_value_5## seconds.\n\nYour dodge is increased by #{skill_color}#$perk_value_6## points.\n\nYou carry #{skill_color}#$perk_value_7## additional body bag in your inventory.",
 			--Stoic
-			["menu_deck19_mrwi_desc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#20%## of the damage taken to your health is applied over #{skill_color}#5## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#150%## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#30## second cooldown.\n\nLose #{important_1}#50%## of your armor and gain #{skill_color}#50%## more health.\n\nYou answer pagers #{skill_color}#25%## faster.",
+			["menu_deck19_mrwi_desc"] = "Unlocks the #{skill_color}#Hip Flask## for use in place of a throwable.\n\n#{skill_color}#$perk_value_1## of the damage taken to your health is applied over #{skill_color}#$perk_value_2## seconds.\n\nUsing the flask immediately negates any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for #{skill_color}#$perk_value_3## of the remaining damage-over-time.\n\nThe flask has a #{important_1}#$perk_value_4## second cooldown.\n\nLose #{important_1}#$perk_value_5## of your armor and gain #{skill_color}#$perk_value_6## more health.\n\nYou answer pagers #{skill_color}#$perk_value_7## faster.",
 			--Tag Team
-			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#18## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#4## health and the tagged unit for #{skill_color}#2## health.\n\nThe effect lasts for #{skill_color}#8## seconds and has a cooldown of #{important_1}#80## seconds.\n\nYour camera loop duration is increased by #{skill_color}#20## seconds.",
+			["menu_deck20_mrwi_desc"] = "Unlocks the #{skill_color}#Gas Dispenser## for use in place of a throwable.\n\nTo activate the Gas Dispenser you need to directly look at another allied unit within #{skill_color}#$perk_value_1## meters and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for #{skill_color}#$perk_value_2## health and the tagged unit for #{skill_color}#$perk_value_3## health.\n\nThe effect lasts for #{skill_color}#$perk_value_4## seconds and has a cooldown of #{important_1}#$perk_value_5## seconds.\n\nYour camera loop duration is increased by #{skill_color}#$perk_value_6## seconds.",
 			--Hacker
-			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#10## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#6## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#100%## chance to stun most enemies, with every #{skill_color}#1.6## seconds afterwards having a #{skill_color}#60%## chance to stun.\n\nThe Pocket ECM has a #{important_1}#60## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#2## seconds.",
+			["menu_deck21_mrwi_desc"] = "Unlocks the #{skill_color}#Pocket ECM Device## for use in place of a throwable.\n\nThe Pocket ECM has an #{skill_color}#$perk_value_1## second duration.\n\nActivating it before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers.\n\nActivating it after the alarm is raised will trigger its feedback effect with a radius of #{skill_color}#$perk_value_2## meters. The #{skill_color}#first## feedback loop has a #{skill_color}#$perk_value_3## chance to stun most enemies, with every #{skill_color}#$perk_value_4## seconds afterwards having a #{skill_color}#$perk_value_5## chance to stun.\n\nThe Pocket ECM has a #{important_1}#$perk_value_6## second cooldown timer; each kill you perform will shorten the cooldown timer by #{skill_color}#$perk_value_7## seconds.",
 			--Leech
-			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#2.5%## of your maximum health and #{risk}#disable your armor## for #{important_1}#6## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#10%## with damage removing one segment. Killing #{skill_color}#3## enemies will restore a segment of your health and block damage for #{skill_color}#1## second.\n\nThe Ampule has a #{important_1}#40## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#75%## faster.",
+			["menu_deck22_mrwi_desc"] = "Unlocks the #{skill_color}#Ampule## for use in place of a throwable.\n\nActivating the Ampule it will restore #{skill_color}#$perk_value_1## of your max health and #{risk}#disable your armor## for #{important_1}#$perk_value_2## seconds.\n\nWhile active, your health is divided into segments of #{skill_color}#$perk_value_3## with damage removing one segment. Killing #{skill_color}#$perk_value_4## enemies will restore a segment of your health and block damage for #{skill_color}#$perk_value_5## second.\n\nThe Ampule has a #{important_1}#$perk_value_6## second cooldown.\n\nYou bag corpses and interact with hostages #{skill_color}#$perk_value_7## faster.",
 
 		["menu_deck23_9_desc"] = "Deck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 

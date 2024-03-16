@@ -2229,7 +2229,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 				else
 				end
 				if not no_hit_shaker and not no_shaker then
-					self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, lerp_value))
+					self._ext_camera:play_shaker( l_r == 1 and "player_melee_var2" or l_r == -1 and "player_melee" or melee_vars[math.random(#melee_vars)], math.max( 0.2, math.min(0.7,lerp_value) ))
 				end
 
 				no_shaker = true

@@ -6025,14 +6025,25 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	for melee_id, i in pairs (self.melee_weapons) do
 		if self.melee_weapons[melee_id] and self.melee_weapons[melee_id].custom and self.melee_weapons[melee_id].based_on then
 			local based_on_what = self.melee_weapons[self.melee_weapons[melee_id].based_on]
+			self.melee_weapons[melee_id].anim_global_param = based_on_what.anim_global_param
 			self.melee_weapons[melee_id].stats = deep_clone(based_on_what.stats)
+			self.melee_weapons[melee_id].anim_attack_vars = based_on_what.anim_attack_vars and deep_clone(based_on_what.anim_attack_vars) or {"var1"}
+			self.melee_weapons[melee_id].anim_attack_left_vars = based_on_what.anim_attack_left_vars and  deep_clone(based_on_what.anim_attack_left_vars) or nil
+			self.melee_weapons[melee_id].anim_attack_right_vars = based_on_what.anim_attack_right_vars and  deep_clone(based_on_what.anim_attack_right_vars) or nil
+			self.melee_weapons[melee_id].anim_attack_charged_vars = based_on_what.anim_attack_charged_vars and  deep_clone(based_on_what.anim_attack_charged_vars) or nil
+			self.melee_weapons[melee_id].anim_attack_charged_left_vars = based_on_what.anim_attack_charged_left_vars and  deep_clone(based_on_what.anim_attack_charged_left_vars) or nil
+			self.melee_weapons[melee_id].anim_attack_charged_right_vars = based_on_what.anim_attack_charged_right_vars and deep_clone(based_on_what.anim_attack_charged_right_vars) or nil
 			self.melee_weapons[melee_id].cleave = based_on_what.cleave
 			self.melee_weapons[melee_id].raycasts = based_on_what.raycasts
-			self.melee_weapons[melee_id].raycasts_h = based_on_what.speed_mult
-			self.melee_weapons[melee_id].raycasts_charge = based_on_what.raycasts_charg
-			self.melee_weapons[melee_id].raycasts_charge_h = based_on_what.speed_mult
+			self.melee_weapons[melee_id].raycasts_h = based_on_what.raycasts_h
+			self.melee_weapons[melee_id].raycasts_charge = based_on_what.raycasts_charge
+			self.melee_weapons[melee_id].raycasts_charge_h = based_on_what.raycasts_charge_h
 			self.melee_weapons[melee_id].counter_damage = based_on_what.counter_damage
 			self.melee_weapons[melee_id].speed_mult = based_on_what.speed_mult
+			self.melee_weapons[melee_id].expire_t = based_on_what.expire_t
+			self.melee_weapons[melee_id].repeat_expire_t = based_on_what.repeat_expire_t
+			self.melee_weapons[melee_id].melee_damage_delay = based_on_what.melee_damage_delay
+			self.melee_weapons[melee_id].anim_speed_mult = based_on_what.anim_speed_mult
 		end
 	end
 

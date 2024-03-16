@@ -27782,10 +27782,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_m4_usasoc_grip.custom_stats = nil
 			self.parts.wpn_fps_ass_m4_usasoc_handguard.stats = { value = 0 }
 			self.parts.wpn_fps_ass_m4_usasoc_handguard.custom_stats = nil
-			self.parts.wpn_fps_ass_m4_usasoc_magazine.stats = { value = 0 }
-			self.parts.wpn_fps_ass_m4_usasoc_magazine.custom_stats = nil
+			self.parts.wpn_fps_ass_m4_usasoc_handguard.adds = {}
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_usgi.stats = { value = 0 }
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_usgi.custom_stats = nil
 			self.parts.wpn_fps_ass_m4_usasoc_stock.stats = { value = 0 }
 			self.parts.wpn_fps_ass_m4_usasoc_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_m4_usasoc_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_m4_usasoc_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_m4_usasoc_flash_hider.perks = nil
 
 			self.parts.wpn_fps_ass_m4_usasoc_barrel_292.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_barrel_292.stats = deep_clone(barrels.short_b2_stats)
@@ -27799,14 +27803,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_95.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_95.stats = {
 				value = 0,
+				spread = -1,
+				recoil = -4,
+				concealment = 3
+			}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_95.adds = {}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_105.supported = true
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_105.stats = {
+				value = 0,
 				recoil = -2,
 				concealment = 1
 			}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_105.adds = {}
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_dd.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_dd.stats = {
 				value = 0,
 				recoil = -2,
 				concealment = 1
+			}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_fsp.supported = true
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_fsp.stats = {
+				value = 0,
+				recoil = 2,
+				concealment = -1
 			}
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_kac.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_handguard_kac.stats = {
@@ -27815,6 +27834,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = -2,
 				concealment = 2
 			}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_colt.supported = true
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_colt.stats = {
+				value = 0,
+				spread = -2,
+				recoil = -2,
+				concealment = 3
+			}
+			self.parts.wpn_fps_ass_m4_usasoc_handguard_colt.adds = {}
 
 			self.parts.wpn_fps_ass_m4_usasoc_grip_dd.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_grip_dd.stats = { 
@@ -27870,17 +27897,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1,
 				extra_ammo = 2,
 			}
-			self.parts.wpn_fps_ass_m4_usasoc_magazine_mike4.supported = true
-			self.parts.wpn_fps_ass_m4_usasoc_magazine_mike4.stats = {
-				value = 0,
-				concealment = 1,
-				recoil = -2
-			}
 			self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag.supported = true
 			self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag.stats = {
 				value = 0,
 				concealment = 1,
 				recoil = -2
+			}
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag_windowed.supported = true
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_pmag_windowed.stats = {
+				value = 0,
+				concealment = 1,
+				recoil = -2
+			}
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_surefeed.supported = true
+			self.parts.wpn_fps_ass_m4_usasoc_magazine_surefeed.stats = {
+				value = 0,
+				concealment = -1,
+				recoil = 2
 			}
 
 

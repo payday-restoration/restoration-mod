@@ -3284,7 +3284,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 7, 0.6, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 5.5, 0.6, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -11191,7 +11191,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							recoil = 65,
 							spread_moving = 7,
 							zoom = 1,
-							concealment = 22,
+							concealment = 24,
 							suppression = 8,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -11201,7 +11201,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.aa12.stats_modifiers = nil
 						self.aa12.panic_suppression_chance = 0.05
-						self.aa12.reload_speed_multiplier = 1.1
+						self.aa12.reload_speed_multiplier = 1.2
 						self.aa12.sounds.spin_start = "wp_mac10_lever_pull"
 						self.aa12.spin_up_shoot = true
 						self.aa12.spin_up_t = 0.06
@@ -16615,6 +16615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.CLIP_AMMO_MAX = 30
 				self.m4_usasoc.AMMO_MAX = 120
 				self.m4_usasoc.lock_slide = true
+				self.m4_usasoc.lock_slide_alt = true
 				self.m4_usasoc.fire_mode_data.fire_rate = 0.08
 				self.m4_usasoc.FIRE_MODE = "auto"
 				self.m4_usasoc.kick = {}

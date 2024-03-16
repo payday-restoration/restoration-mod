@@ -1454,6 +1454,8 @@
 	
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc_thq" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc_thq" load="false"/>
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
@@ -1956,6 +1958,12 @@
 
 	<!-- Right swing for "melee_beardy" taken from "melee_great"; wtf it actually melds well and doesn't have hand clipping issues????? -->
 	<animation			path="anims/fps/melee/beardy/melee_attack_var4" force="true"/>
+
+	<!-- Fix for scoutknife position in hand -->
+	<model				path="units/pd2_dlc_peta/weapons/wpn_fps_mel_scoutknife/wpn_fps_mel_scoutknife" force="true"/>
+
+	<!-- Slightly larger Greatsword -->
+	<model				path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true"/>
 
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>

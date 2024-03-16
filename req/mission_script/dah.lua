@@ -196,6 +196,10 @@ return {
 			{id = 400011, delay = 3},
 			{id = 400012, delay = 3},
 			{id = 400013, delay = 3},
+		--smoke bombs
+			{id = 400079, delay = 9},
+			{id = 400080, delay = 9.5},
+			{id = 400081, delay = 10},
 		--spawn SWAT squads with specials	
 		--1st squad
 			{id = 400023, delay = 11},

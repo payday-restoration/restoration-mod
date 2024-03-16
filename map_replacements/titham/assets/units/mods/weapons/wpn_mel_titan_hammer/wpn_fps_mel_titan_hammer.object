@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_mel_titan_hammer" materials="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer" />
+    <graphics>
+        <object enabled="true" name="g_titan" shadow_caster="true" />
+    </graphics>
+</dynamic_object>

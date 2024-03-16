@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_safe" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_security_safe_05x05/gen_prop_security_safe_titan_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_security_safe_05x05/gen_prop_security_safe_nm"/>
+    </material>
+</materials>

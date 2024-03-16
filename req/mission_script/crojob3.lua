@@ -1,6 +1,7 @@
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
 
 	--Setting up the murkies for epic three way fight
 	if difficulty_index <= 2 or difficulty_index == 3 then
@@ -61,17 +62,21 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 		ponr_value = 600		
 	end
 	
-	if pro_job and difficulty_index == 8 then
+if pro_job then
+	hunt_projob = true
+	if difficulty_index == 8 then
 	--Captain Winters Encounter on DSPJ (probably the only scripted captain encounter in vanilla heists)
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
 		specialenemy_2 = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
 		specialenemy_3 = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
+end	
 
 return {
 	--Pro Job PONR
 	[103031] = {
-			ponr = ponr_value
+			ponr = ponr_value,
+			hunt = hunt_projob
 	},
 	--fixes one of the ai_hunt SOs not having taser access
 	[100675] = {

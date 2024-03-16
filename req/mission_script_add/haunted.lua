@@ -48,6 +48,7 @@ local optsBesiegeDummy_3 = {
     spawn_action = "e_sp_uno_jump_in"
 }
 local begin_the_nightmare = {
+	enabled = true,
 	on_executed = { 
 		{ id = 400038, delay = 10 }
 	}

@@ -244,7 +244,9 @@ function PlayerStandard:_start_action_ducking(t)
 end
 
 function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
-	if (is_pro and self._is_sliding) or not skip_can_stand_check and not self:_can_stand() then
+	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+
+	if (is_pro and self._is_sliding and not slide_threshold) or not skip_can_stand_check and not self:_can_stand() then
 		return
 	end
 
@@ -1828,14 +1830,15 @@ function PlayerStandard:_start_action_running(t)
 
 		return
 	end
-
 	--Consolidated vanilla checks.
 	if not self._move_dir or self:on_ladder() or self:_on_zipline() or not self:_can_run_directional() or managers.player:get_player_rule("no_run") or not self._unit:movement():is_above_stamina_threshold() then
 		self._running_wanted = true
 		return
 	end
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
+	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding and not slide_threshold) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
 		self._running_wanted = true
 		return
 	end
@@ -2191,7 +2194,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local no_shaker = nil
 			local hit_body, hit_gen, use_cleave = nil
 
-			local function collect_melee_hits(angle, unique_hits, l_r, v_mult)
+			local function collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
 				local v_mult = v_mult or 0 --0 is horizontal, 1 is vertical, + starts the line fom the top going down, - starts the line fom the bottom going up
 				local l_r = l_r or 1
 				local new_rotation = Rotation(yaw+(angle*(1-math.abs(v_mult) * math.abs(v_mult) )),pitch-(angle*(v_mult*l_r)), roll)
@@ -2202,15 +2205,19 @@ function PlayerStandard:_update_melee_timers(t, input)
 				local ignore_hit = nil
 				if col_ray then
 					local hit_unit = col_ray.unit
+					local body_dmg_ext = col_ray.body and col_ray.body:extension() and col_ray.body:extension().damage
 					if hit_unit and alive(hit_unit) then
 						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
 						if unique_hits[u_key] then
 							use_cleave = nil
+							if not is_enemy and body_dmg_ext then
+								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
+							end
 						else
 							unique_hits[u_key] = hit_unit
 							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
-							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, true, true)
+							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
 						end
 					end
 
@@ -2222,7 +2229,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 				else
 				end
 				if not no_hit_shaker and not no_shaker then
-					self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, lerp_value))
+					self._ext_camera:play_shaker( l_r == 1 and "player_melee_var2" or l_r == -1 and "player_melee" or melee_vars[math.random(#melee_vars)], math.max( 0.2, math.min(0.7,lerp_value) ))
 				end
 
 				no_shaker = true
@@ -2242,7 +2249,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			if l_r then
 				for i = 1, num_casts, 1 do 
 					local angle = ((i* l_r) * angle_interval) - (((angle_interval * num_casts * 0.5) + (angle_interval / 2) ) * l_r)
-					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult)
+					local hit, cleave_enemy = collect_melee_hits(angle, unique_hits, l_r, v_mult, num_casts)
 					if cleave_enemy then
 						cleave = cleave - 1
 						if cleave < 1 then
@@ -3357,14 +3364,14 @@ function PlayerStandard:_calc_melee_hit_ray(t, sphere_cast_radius, from, directi
 	
 	if PlayerStandard._DRAW_MELEE_DEBUG then
 		local dist = PlayerStandard._DRAW_MELEE_DEBUG_HITS and col_ray and col_ray.position
-		Draw:brush(Color.red:with_alpha(0.2),5):line(from,dist or to)
-		Draw:brush(Color.green:with_alpha(0.2),5):sphere(dist or to,sphere_cast_radius)
+		Draw:brush(Color.blue:with_alpha(0.1),3):line(from,dist or to)
+		Draw:brush(dist and Color.red:with_alpha(0.05) or Color.green:with_alpha(0.1),3):sphere(dist or to,sphere_cast_radius)
 	end
 
 	return col_ray
 end
 
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, no_shaker, no_sound)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id, hit_unit, col_ray, dmg_div, no_shaker, no_sound, no_effect)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -3395,7 +3402,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(charge_lerp_value)
 		local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
 		damage = damage * managers.player:get_melee_dmg_multiplier()
+		damage = damage / (dmg_div or 1)
 		damage_effect = damage_effect * damage_effect_mul
+		damage_effect = damage_effect / (dmg_div or 1)
 		col_ray.sphere_cast_radius = sphere_cast_radius
 		local hit_unit = hit_unit or col_ray.unit
 		if hit_unit:character_damage() then
@@ -3408,7 +3417,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					self:_play_melee_sound(melee_entry, "hit_body")
 				end
 			end
-			if not hit_unit:character_damage()._no_blood then
+			if not hit_unit:character_damage()._no_blood and not no_effect then
 				managers.game_play_central:play_impact_flesh({col_ray = col_ray})
 				managers.game_play_central:play_impact_sound_and_effects({
 					col_ray = col_ray,
@@ -3431,13 +3440,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					self:_play_melee_sound(melee_entry, "hit_gen")
 				end
 			end
-			managers.game_play_central:play_impact_sound_and_effects({
-				decal = make_saw and "saw",
-				col_ray = col_ray,
-				effect = (not make_effect and not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")) or nil,
-				no_decal = (not make_decal and not make_saw) and true,
-				no_sound = true
-			})
+			if not no_effect then
+				managers.game_play_central:play_impact_sound_and_effects({
+					decal = make_saw and "saw",
+					col_ray = col_ray,
+					effect = (not make_effect and not make_saw and Idstring("effects/payday2/particles/impacts/fallback_impact_pd2")) or nil,
+					no_decal = (not make_decal and not make_saw) and true,
+					no_sound = true
+				})
+			end
 		end
 
 		--Out of date syncing method, reenable in case it was load bearing.
@@ -3502,8 +3513,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:character_damage():set_health(0)
 				self._unit:character_damage():set_armor(0)
 				self._unit:character_damage():force_into_bleedout()
-				self._unit:character_damage():_check_bleed_out(nil)
-    			managers.player:set_player_state("fatal")
+				--self._unit:character_damage():_check_bleed_out(nil)
+    			managers.player:set_player_state("bleed_out")
 			end
 		end
 

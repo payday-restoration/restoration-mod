@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad" orientation_object="rp_wpn_fps_mel_broad" />
+	<graphics>
+		<object name="g_broad" enabled="true" />
+	</graphics>
+</dynamic_object>

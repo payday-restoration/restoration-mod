@@ -6365,6 +6365,10 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.stats.concealment = 23
 		self.melee_weapons.megumins_staff.stats.charge_time = 55
 		self.melee_weapons.megumins_staff.ignore_charge_speed = true
+		self.melee_weapons.megumins_staff.raycasts = 15
+		self.melee_weapons.megumins_staff.raycasts_h = 25
+		self.melee_weapons.megumins_staff.raycasts_charge = 1
+		self.melee_weapons.megumins_staff.raycasts_charge_h = 1
 		self.melee_weapons.megumins_staff.special_weapon = "megumin"
 		self.melee_weapons.megumins_staff.explosion_range = 2000
 		self.melee_weapons.megumins_staff.explosion_damage = 5000

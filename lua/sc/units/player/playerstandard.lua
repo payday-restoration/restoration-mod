@@ -3513,8 +3513,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:character_damage():set_health(0)
 				self._unit:character_damage():set_armor(0)
 				self._unit:character_damage():force_into_bleedout()
-				self._unit:character_damage():_check_bleed_out(nil)
-    			managers.player:set_player_state("fatal")
+				--self._unit:character_damage():_check_bleed_out(nil)
+    			managers.player:set_player_state("bleed_out")
 			end
 		end
 

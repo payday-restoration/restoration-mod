@@ -3,11 +3,11 @@ local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 	--High PONR Timer to work with ponr player scaling
 	if difficulty_index <= 5 then
-		ponr_value = 1560	
+		ponr_value = 1730	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
-		ponr_value = 1530	
+		ponr_value = 1630	
 	else
-		ponr_value = 1500	
+		ponr_value = 1530	
 	end
 	
 local biker_table = {
@@ -18,9 +18,9 @@ local biker_table = {
 }
 local ponr_timer_player_mul = {
 		1,
-		0.85,
+		0.9,
+		0.8,
 		0.7,
-		0.65,
 		0.65,
 		0.65,
 		0.65,
@@ -59,6 +59,17 @@ return {
 			GS_shields = false,
 			GS_shields_boom = false,
 			GS_defend_shields = false
+		}
+	},
+	--Always spawn keycard in Mexico
+	[102270] = {
+		values = {
+			enabled = false
+		}
+	},
+	[100697] = {
+		on_executed = {
+			{id = 102271, delay = 0}
 		}
 	},
 	-- Remove red lights from keycard readers because vault can be opened in loud now

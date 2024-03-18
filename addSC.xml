@@ -1957,6 +1957,9 @@
 	<!--Fixed firing audio for the Grimm-->
 	<unit				path="units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset" force="true"/>
 
+	<!--Fixed wrong sound trigger for pump when shooting; now matches the pump sound used for empty reloads. Fix by Zdann-->
+	<animation			path="anims/fps/m590/m590_recoil" force="true"/>
+
 	<!-- Bearable G3 FPS Animations -->
 	<animation			path="anims/fps/g3/g3_reload_not_empty" force="true"/>
 	<animation			path="anims/fps/g3/g3_reload" force="true"/>

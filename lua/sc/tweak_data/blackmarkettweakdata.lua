@@ -3829,12 +3829,15 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--unsure if this'll work, hope it does
 		if self.melee_weapons.halloween_sword then
 			table.insert(melee_anim, "halloween_sword")
+			self:_clear_melee_anim_vars("halloween_sword")
 		end
 		if self.melee_weapons.zweihander then
 			table.insert(melee_anim, "zweihander")
+			self:_clear_melee_anim_vars("zweihander")
 		end
 		if self.melee_weapons.broad then
 			table.insert(melee_anim, "broad")
+			self:_clear_melee_anim_vars("broad")
 		end
 		for i, melee_id in ipairs(melee_anim) do
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
@@ -4239,6 +4242,22 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
 		end
 		
+		
+		--melee_freedom
+		--Moved 'freedom' to "melee_baseballbat" :^)
+		melee_anim = {}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_jab"
+			self.melee_weapons[melee_id].anim_global_param = "melee_freedom"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", -0.85},
+			}
+			self.melee_weapons[melee_id].expire_t = 1.25
+			self.melee_weapons[melee_id].melee_damage_delay = 0.215
+		end
+	
 		--melee_pitchfork
 		melee_anim = {
 			'pitchfork'
@@ -4301,18 +4320,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_speed_mult = 1
 		end
 		
-		
-		--melee_freedom
-		--Moved 'freedom' to "melee_baseballbat" :^)
-		melee_anim = {}
-		for i, melee_id in ipairs(melee_anim) do
-			self.melee_weapons[melee_id].anim_global_param = "melee_freedom"
-			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
-			self.melee_weapons[melee_id].expire_t = 1.25
-			self.melee_weapons[melee_id].melee_damage_delay = 0.215
-		end
-	
 		--melee_fight
 		melee_anim = {
 			'fight'
@@ -6115,6 +6122,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].anim_global_param = "melee_sandsteel"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].timing_fix = {"var3"}
@@ -6135,6 +6143,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
@@ -6152,10 +6161,31 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	melee_anim = {
+		"astranger"
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_jab"
+			self.melee_weapons[melee_id].anim_global_param = "melee_freedom"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.85},
+			}
+			self.melee_weapons[melee_id].expire_t = 1.25
+			self.melee_weapons[melee_id].repeat_expire_t = 0.8
+			self.melee_weapons[melee_id].melee_damage_delay = 0.215
+		end
+	end
+
+	melee_anim = {
 		'pspear'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_jab"
 			self.melee_weapons[melee_id].anim_global_param = "melee_pitchfork"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
 			self.melee_weapons[melee_id].expire_t = 0.8
@@ -6170,6 +6200,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_great_no_stab"
 			self.melee_weapons[melee_id].anim_global_param = "melee_great"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
@@ -6204,6 +6235,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
@@ -6220,6 +6252,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].anim_global_param = "melee_nin_res"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
@@ -6247,6 +6280,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_ballistic"
 			self.melee_weapons[melee_id].anim_global_param = "revenant_heirloom"
 			self.melee_weapons[melee_id].anim_attack_vars = {"var3"}
@@ -6282,6 +6316,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_tiger"
 			self.melee_weapons[melee_id].anim_global_param = "melee_tiger"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left","a_weapon_right"}
@@ -6306,6 +6341,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_knife"
 			self.melee_weapons[melee_id].anim_global_param = "melee_knife"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
@@ -6329,6 +6365,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_knife"
 			self.melee_weapons[melee_id].anim_global_param = "melee_stab"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
@@ -6352,6 +6389,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
 			self.melee_weapons[melee_id].anim_global_param = "melee_baseballbat"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var4"} --No more stabbing with blunt objects
@@ -6451,6 +6489,22 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.raycasts_charge = 20
 		self.melee_weapons.invincible.dot_data_name = "melee_bleed"
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
+	end
+
+	if self.melee_weapons.astranger then --Rikerus's L'Etranger (Pitchfork)
+		self.melee_weapons.astranger.info_id = "bm_melee_number_3_info"
+		self.melee_weapons.astranger.stats = deep_clone(self.melee_weapons.pitchfork.stats)
+		self.melee_weapons.astranger.cleave = 1
+		self.melee_weapons.astranger.raycasts = 6
+		self.melee_weapons.astranger.raycasts_h = 6
+		self.melee_weapons.astranger.raycasts_charge = 6
+		self.melee_weapons.astranger.raycasts_charge_h = 6
+		self.melee_weapons.astranger.special_weapon = "charger"
+		self.melee_weapons.astranger.chainsaw = {
+			tick_damage = 4.5,
+			tick_delay = 0.4,
+			start_delay = 0.8
+		}
 	end
 
 	if self.melee_weapons.dragon_slayer then --Silent Enforcer's Dragon Slayer (Halloween Dozer Sword)
@@ -6603,3 +6657,12 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 end)
+
+function BlackMarketTweakData:_clear_melee_anim_vars(melee_id)
+	self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
+	self.melee_weapons[melee_id].anim_attack_left_vars = nil
+	self.melee_weapons[melee_id].anim_attack_right_vars = nil
+	self.melee_weapons[melee_id].anim_attack_charged_vars = nil
+	self.melee_weapons[melee_id].anim_attack_charged_left_vars = nil
+	self.melee_weapons[melee_id].anim_attack_charged_right_vars = nil
+end

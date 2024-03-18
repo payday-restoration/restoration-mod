@@ -6068,7 +6068,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sub2000.timers.reload_exit_empty = 0.85
 						self.sub2000.timers.reload_exit_not_empty = 0.95
 
-					--Kahn .357				
+					--Kahn .357
 						self.x_korth.has_description = true
 						self.x_korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
 						self.x_korth.fire_mode_data.fire_rate = 0.18181818
@@ -6076,7 +6076,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_korth.AMMO_MAX = 60
 						self.x_korth.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.x_korth.supported = true
-						self.x_korth.ads_speed = 0.240
+						self.x_korth.ads_speed = 0.200
 						self.x_korth.damage_falloff = {
 							start_dist = 900,
 							end_dist = 4000,
@@ -6114,7 +6114,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_2006m.AMMO_MAX = 60
 						self.x_2006m.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_2006m.supported = true
-						self.x_2006m.ads_speed = 0.200
+						self.x_2006m.ads_speed = 0.180
 						self.x_2006m.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4200,
@@ -6155,7 +6155,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_model3.AMMO_MAX = 60
 						self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
 						self.x_model3.supported = true
-						self.x_model3.ads_speed = 0.200
+						self.x_model3.ads_speed = 0.160
 						self.x_model3.damage_falloff = {
 							start_dist = 1000,
 							end_dist = 3800,
@@ -6195,7 +6195,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_rage.AMMO_MAX = 60
 						self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_rage.supported = true
-						self.x_rage.ads_speed = 0.240
+						self.x_rage.ads_speed = 0.200
 						self.x_rage.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4000,
@@ -6238,7 +6238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_chinchilla.AMMO_MAX = 60
 						self.x_chinchilla.kick = self.stat_info.kick_tables.vertical_kick
 						self.x_chinchilla.supported = true
-						self.x_chinchilla.ads_speed = 0.220
+						self.x_chinchilla.ads_speed = 0.180
 						self.x_chinchilla.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 4500,
@@ -6570,7 +6570,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1911.timers.reload_exit_empty = 0.5
 						self.m1911.timers.reload_exit_not_empty = 0.65
 
-					--Kahn .357				
+					--Kahn .357
 						self.korth.has_description = true
 						self.korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
 						self.korth.fire_mode_data.fire_rate = 0.18181818
@@ -6578,7 +6578,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.AMMO_MAX = 30
 						self.korth.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.korth.supported = true
-						self.korth.ads_speed = 0.240
+						self.korth.ads_speed = 0.200
 						self.korth.damage_falloff = {
 							start_dist = 900,
 							end_dist = 4000,
@@ -6616,7 +6616,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mateba.timers.reload_empty = 3.6
 						self.mateba.kick = self.stat_info.kick_tables.moderate_kick
 						self.mateba.supported = true
-						self.mateba.ads_speed = 0.200
+						self.mateba.ads_speed = 0.180
 						self.mateba.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4200,
@@ -6651,7 +6651,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.AMMO_MAX = 30
 						self.model3.kick = self.stat_info.kick_tables.moderate_kick
 						self.model3.supported = true
-						self.model3.ads_speed = 0.200
+						self.model3.ads_speed = 0.160
 						self.model3.damage_falloff = {
 							start_dist = 1000,
 							end_dist = 3800,
@@ -6688,7 +6688,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_raging_bull.AMMO_MAX = 30
 						self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
 						self.new_raging_bull.supported = true
-						self.new_raging_bull.ads_speed = 0.240
+						self.new_raging_bull.ads_speed = 0.200
 						self.new_raging_bull.damage_falloff = {
 							start_dist = 1200,
 							end_dist = 4000,
@@ -6726,7 +6726,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.chinchilla.AMMO_MAX = 30
 						self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
 						self.chinchilla.supported = true
-						self.chinchilla.ads_speed = 0.220
+						self.chinchilla.ads_speed = 0.180
 						self.chinchilla.damage_falloff = {
 							start_dist = 1400,
 							end_dist = 4500,
@@ -6815,7 +6815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.peacemaker.BURST_FIRE_RANGE_MULTIPLIER = 0.4
 						self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 						self.peacemaker.supported = true
-						self.peacemaker.ads_speed = 0.180
+						self.peacemaker.ads_speed = 0.160
 						self.peacemaker.damage_falloff = {
 							start_dist = 2500,
 							end_dist = 4500,
@@ -12743,7 +12743,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.CLIP_AMMO_MAX = 5
 			self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
 			self.shatters_fury.supported = true
-			self.shatters_fury.ads_speed = 0.220
+			self.shatters_fury.ads_speed = 0.200
 			self.shatters_fury.damage_falloff = {
 				start_dist = 3000,
 				end_dist = 5500,
@@ -13824,7 +13824,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lapd.AMMO_MAX = 30
 				self.lapd.kick = self.stat_info.kick_tables.moderate_kick
 				self.lapd.supported = true
-				self.lapd.ads_speed = 0.200
+				self.lapd.ads_speed = 0.160
 				self.lapd.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4800,
@@ -15915,7 +15915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deckard.AMMO_MAX = 30
 				self.deckard.kick = self.stat_info.kick_tables.moderate_kick
 				self.deckard.supported = true
-				self.deckard.ads_speed = 0.260
+				self.deckard.ads_speed = 0.200
 				self.deckard.damage_falloff = {
 					start_dist = 1300,
 					end_dist = 4100,
@@ -16099,7 +16099,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coltds.AMMO_MAX = 30
 				self.coltds.kick = self.stat_info.kick_tables.moderate_kick
 				self.coltds.supported = true
-				self.coltds.ads_speed = 0.200
+				self.coltds.ads_speed = 0.140
 				self.coltds.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 4000,
@@ -18291,7 +18291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.amt.AMMO_MAX = 40
 			self.amt.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			self.amt.supported = true
-			self.amt.ads_speed = 0.320
+			self.amt.ads_speed = 0.260
 			self.amt.damage_falloff = {
 				start_dist = 1500,
 				end_dist = 4500,

@@ -19293,7 +19293,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.recoil_values = {
 						{ 80, 60 },
 						9,
-						0.7
+						0.7,
+						srm = {
+							0.02,
+							{0.9, 1},
+							4
+						}
 					}
 				elseif weap.recategorize[1] == "heavy_pis" then
 					weap.sads_mult = 0.7
@@ -19362,21 +19367,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.recoil_values = {
 						{ 80, 60 },
 						8,
-						0.6
+						0.6,
+						srm = {
+							0.02,
+							{0.9, 1},
+							4
+						}
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
 					weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						7,
-						0.5
+						0.5,
+						srm = {
+							0.01,
+							{0.9, 1},
+							9
+						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
 					weap.sads_mult = 0.4
 					weap.recoil_values = {
 						{ 80, 60 },
 						7.5,
-						0.6
+						0.6,
+						srm = {
+							-0.005,
+							{1, 1.05},
+							9
+						}
 					}
 				elseif weap.recategorize[1] == "heavy_ar" then
 					weap.sads_mult = 0.3
@@ -19385,8 +19405,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						6.5,
 						0.4,
 						srm = {
-							-0.008,
-							{1, 1.08},
+							-0.01,
+							{1, 1.05},
 							4
 						}
 					}
@@ -19397,9 +19417,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							-0.03,
-							{1, 1.15},
-							2
+							-0.02,
+							{1, 1.1},
+							4
 						}
 					}
 				elseif weap.recategorize[1] == "light_mg" then

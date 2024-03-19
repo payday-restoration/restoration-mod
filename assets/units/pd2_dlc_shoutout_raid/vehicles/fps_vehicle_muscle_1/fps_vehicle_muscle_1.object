@@ -218,22 +218,22 @@
 
 	<vehicle name="vhc_vehicle">
 		<!-- IMPORTANT: suspension supported_mass must be 1/4 of chassis mass, if not vehicle behavior is undefined -->
-		<chassis body="body_chassis" mass="2000" center_of_mass_offset="0.0 0.2 0.2" inertia_multiplier="2.2 1.1 8.1" downforce_strength="4.0" drag_strength="4.0" />
+		<chassis body="body_chassis" mass="2000" center_of_mass_offset="0.0 -0.2 0.2" inertia_multiplier="2.2 1.1 6.1" downforce_strength="4.0" drag_strength="4.0" />
 		<wheels>
-			<wheel spin_object="anim_tire_front_left"	turn_object="anim_tire_axel_front_left"		radius="0.327" width="0.24" mass="20" transmission_ratio="1.1" is_steering="true" max_steering="45" braking_torque="3000" handbrake_torque="0" />
-			<wheel spin_object="anim_tire_front_right"	turn_object="anim_tire_axel_front_right"	radius="0.327" width="0.24" mass="20" transmission_ratio="1.1" is_steering="true" max_steering="45" braking_torque="3000" handbrake_torque="0" />
-			<wheel spin_object="anim_tire_rear_left"	turn_object=""								radius="0.329" width="0.24" mass="30" transmission_ratio="0.7" is_steering="false" max_steering="0" braking_torque="3000" handbrake_torque="2000" />
-			<wheel spin_object="anim_tire_rear_right"	turn_object=""								radius="0.329" width="0.24" mass="30" transmission_ratio="0.7" is_steering="false" max_steering="0" braking_torque="3000" handbrake_torque="2000" />
+			<wheel spin_object="anim_tire_front_left"	turn_object="anim_tire_axel_front_left"		radius="0.327" width="0.24" mass="30" transmission_ratio="1.1" is_steering="true" max_steering="45" braking_torque="3000" handbrake_torque="0" />
+			<wheel spin_object="anim_tire_front_right"	turn_object="anim_tire_axel_front_right"	radius="0.327" width="0.24" mass="30" transmission_ratio="1.1" is_steering="true" max_steering="45" braking_torque="3000" handbrake_torque="0" />
+			<wheel spin_object="anim_tire_rear_left"	turn_object=""								radius="0.329" width="0.24" mass="30" transmission_ratio="0.6" is_steering="false" max_steering="0" braking_torque="3000" handbrake_torque="2000" />
+			<wheel spin_object="anim_tire_rear_right"	turn_object=""								radius="0.329" width="0.24" mass="30" transmission_ratio="0.6" is_steering="false" max_steering="0" braking_torque="3000" handbrake_torque="2000" />
 		</wheels>
 		<suspension max_compression="0.18" max_extension="0.22" spring_strength="55000" damper_rate="4500" supported_mass="500" />
 		<gearbox switch_time="0.1" ratio_multiplier="4.0">
 			<ratios>
-				<ratio value="-3.23" />
-				<ratio value="0.00" />
-				<ratio value="2.65" />
-				<ratio value="1.93" />
-				<ratio value="1.39" />
-				<ratio value="1.00" />
+				<ratio value="-3.2" />
+				<ratio value="0.0" />
+				<ratio value="2.7" />
+				<ratio value="1.9" />
+				<ratio value="1.4" />
+				<ratio value="1.0" />
 			</ratios>
 		</gearbox>
 		<engine max_torque="600" max_rpm="6000"/>

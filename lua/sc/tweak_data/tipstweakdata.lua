@@ -710,6 +710,18 @@ function TipsTweakData:init()
 			category = "equip_skills_res"
 		},	
 		{
+			cat_index = 37,
+			image = "tactics_shooting",
+			consoles = true,
+			category = "equip_skills_res"
+		},	
+		{
+			cat_index = 38,
+			image = "weapon_melee",
+			consoles = true,
+			category = "equip_skills_res"
+		},	
+		{
 			cat_index = 1,
 			image = "crimenet_heists",
 			consoles = true,

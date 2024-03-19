@@ -4802,6 +4802,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's mobility rating.",
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
 		["loading_equip_skills_res_36"] = "During combat, silencers reduce the likelihood of enemies evading your aim. Just be aware that the time they spend not dodging you is likely going to be put towards shooting you instead.",
+		["loading_equip_skills_res_37"] = "Higher magnification optics offer a minor recoil reduction while aiming to aid with shooting targets over longer ranges; this comes at the cost of reduced handling.",
+		["loading_equip_skills_res_38"] = "The \"Cleave\" stat for melee weapons represents how many enemies you can hit with a single attack.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
 		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",	

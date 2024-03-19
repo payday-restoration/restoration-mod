@@ -4104,7 +4104,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"left", -0.2},
-				var2 = {"left", -0.9},
+				var2 = {"right", 0.9},
 				var3 = {"right", -0.2},
 				var4 = {"right", 0.1}
 			}

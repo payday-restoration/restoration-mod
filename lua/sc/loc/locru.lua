@@ -947,7 +947,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_melee_broad_info"] = "Самое знаковое оружие большинства рыцарей.",
 		--Toasty
 		["bm_melee_toast"] = "Тост Алмира",
-		["bm_melee_toast_info"] = "Ты не ты, когда голоден.\n\nУменьшает получаемый урон на #{skill_color}#10%## во время замаха."
+		["bm_melee_toast_info"] = "Ты - не ты, когда голоден.\n\nУменьшает получаемый урон на #{skill_color}#10%## во время замаха."
 		
 		--S&W .500
         ["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",

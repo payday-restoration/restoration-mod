@@ -574,18 +574,18 @@
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
 					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SecondSightSprint"/>
+					<option type="bool" default_value="true" name="WpnFireDescope"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
 					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SprintCancel"/>
+					<option type="bool" default_value="false" name="SecondSightSprint"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AimDeploysBipod"/>
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
 					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="AutoDMRs"/>
+					<option type="bool" default_value="false" name="SprintCancel"/>
 					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="true" name="WpnFireDescope"/>
+					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>

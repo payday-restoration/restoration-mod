@@ -5543,7 +5543,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 		self.melee_weapons.clean.stats.weapon_type = "sharp"
 		self.melee_weapons.clean.cleave = 1
-		self.melee_weapons.clean.raycasts = 10
+		self.melee_weapons.clean.raycasts = 15
 		self.melee_weapons.clean.stats.min_damage = 3
 		self.melee_weapons.clean.stats.max_damage = 3
 		self.melee_weapons.clean.stats.min_damage_effect = 0.6
@@ -5556,7 +5556,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Nyeh hey there's the high roller--
 		self.melee_weapons.switchblade.info_id = "bm_melee_switchblade_info"	
 		self.melee_weapons.switchblade.cleave = 1
-		self.melee_weapons.switchblade.raycasts = 10
+		self.melee_weapons.switchblade.raycasts = 15
 		self.melee_weapons.switchblade.stats.min_damage = 3
 		self.melee_weapons.switchblade.stats.max_damage = 6.001
 		self.melee_weapons.switchblade.stats.min_damage_effect = 0.5
@@ -5570,7 +5570,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.boxcutter.info_id = "bm_melee_boxcutter_info"
 		self.melee_weapons.boxcutter.stats.weapon_type = "sharp"
 		self.melee_weapons.boxcutter.cleave = 1
-		self.melee_weapons.boxcutter.raycasts = 10
+		self.melee_weapons.boxcutter.raycasts = 15
 		self.melee_weapons.boxcutter.stats.min_damage = 3
 		self.melee_weapons.boxcutter.stats.max_damage = 6.001
 		self.melee_weapons.boxcutter.stats.min_damage_effect = 0.5
@@ -5581,7 +5581,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Tacticool Knife--
 		self.melee_weapons.x46.info_id = "bm_melee_x46_info"
 		self.melee_weapons.x46.cleave = 2
-		self.melee_weapons.x46.raycasts = 15
+		self.melee_weapons.x46.raycasts = 20
 		self.melee_weapons.x46.stats.min_damage = 4.5
 		self.melee_weapons.x46.stats.max_damage = 9.001
 		self.melee_weapons.x46.stats.min_damage_effect = 1.5
@@ -5592,7 +5592,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--German Steel--
 			self.melee_weapons.kampfmesser.info_id = "bm_melee_kampfmesser_info"
 			self.melee_weapons.kampfmesser.cleave = 2
-			self.melee_weapons.kampfmesser.raycasts = 15
+			self.melee_weapons.kampfmesser.raycasts = 20
 			self.melee_weapons.kampfmesser.stats.min_damage = 4.5
 			self.melee_weapons.kampfmesser.stats.max_damage = 9.001
 			self.melee_weapons.kampfmesser.stats.min_damage_effect = 1.5
@@ -5673,7 +5673,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Its' another god damn machete--
 		self.melee_weapons.becker.info_id = "bm_melee_becker_info"
 		self.melee_weapons.becker.cleave = 1
-		self.melee_weapons.becker.raycasts = 10
+		self.melee_weapons.becker.raycasts = 15
 		self.melee_weapons.becker.stats.min_damage = 4.5
 		self.melee_weapons.becker.stats.max_damage = 9.001
 		self.melee_weapons.becker.stats.min_damage_effect = 1.8
@@ -5684,7 +5684,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--another machete--
 			self.melee_weapons.oxide.info_id = "bm_melee_oxide_info"
 			self.melee_weapons.oxide.cleave = 1
-			self.melee_weapons.oxide.raycasts = 10
+			self.melee_weapons.oxide.raycasts = 15
 			self.melee_weapons.oxide.stats.min_damage = 4.5
 			self.melee_weapons.oxide.stats.max_damage = 9.001
 			self.melee_weapons.oxide.stats.min_damage_effect = 1.8
@@ -5733,8 +5733,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Dragan's Meat...Cleaver--
 		self.melee_weapons.meat_cleaver.info_id = "bm_melee_meat_cleaver_info"
 		self.melee_weapons.meat_cleaver.cleave = 2
-		self.melee_weapons.meat_cleaver.raycasts = 6
-		self.melee_weapons.meat_cleaver.raycasts_charge = 15
+		self.melee_weapons.meat_cleaver.raycasts = 10
+		self.melee_weapons.meat_cleaver.raycasts_charge = 18
 		self.melee_weapons.meat_cleaver.stats.min_damage = 6
 		self.melee_weapons.meat_cleaver.stats.max_damage = 12.001
 		self.melee_weapons.meat_cleaver.stats.min_damage_effect = 1.8
@@ -5745,8 +5745,8 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.meat_cleaver.headshot_damage_multiplier = 0.5
 			--Throwing knives when?--
 			self.melee_weapons.cleaver.cleave = 2
-			self.melee_weapons.cleaver.raycasts = 6
-			self.melee_weapons.cleaver.raycasts_charge = 15
+			self.melee_weapons.cleaver.raycasts = 10
+			self.melee_weapons.cleaver.raycasts_charge = 18
 			self.melee_weapons.cleaver.info_id = "bm_melee_cleaver_info"
 			self.melee_weapons.cleaver.stats.min_damage = 6
 			self.melee_weapons.cleaver.stats.max_damage = 12.001
@@ -5759,7 +5759,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--It's a hatchet--
 		self.melee_weapons.bullseye.info_id = "bm_melee_bullseye_info"
 		self.melee_weapons.bullseye.cleave = 1
-		self.melee_weapons.bullseye.raycasts = 10
+		self.melee_weapons.bullseye.raycasts = 15
 		self.melee_weapons.bullseye.stats.min_damage = 6
 		self.melee_weapons.bullseye.stats.max_damage = 12.001
 		self.melee_weapons.bullseye.stats.min_damage_effect = 2.0
@@ -5770,7 +5770,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Just like the injuns--
 		self.melee_weapons.tomahawk.info_id = "bm_melee_tomahawk_info"
 		self.melee_weapons.tomahawk.cleave = 1
-		self.melee_weapons.tomahawk.raycasts = 10
+		self.melee_weapons.tomahawk.raycasts = 15
 		self.melee_weapons.tomahawk.stats.min_damage = 6
 		self.melee_weapons.tomahawk.stats.max_damage = 12.001
 		self.melee_weapons.tomahawk.stats.min_damage_effect = 3.0
@@ -5779,11 +5779,11 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.tomahawk.stats.range = 175
 		self.melee_weapons.tomahawk.attack_allowed_expire_t = 0.1
 		self.melee_weapons.tomahawk.stats.concealment = 27
-		self.melee_weapons.tomahawk.speed_mult = 0.98
+		self.melee_weapons.tomahawk.speed_mult = 0.97
 			--another injun tomahawk	
 			self.melee_weapons.scalper.info_id = "bm_melee_scalper_info"
 			self.melee_weapons.scalper.cleave = 1
-			self.melee_weapons.scalper.raycasts = 10
+			self.melee_weapons.scalper.raycasts = 15
 			self.melee_weapons.scalper.stats.min_damage = 6
 			self.melee_weapons.scalper.stats.max_damage = 12.001
 			self.melee_weapons.scalper.stats.min_damage_effect = 3.0
@@ -5792,11 +5792,11 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons.scalper.stats.range = 175
 			self.melee_weapons.scalper.attack_allowed_expire_t = 0.1
 			self.melee_weapons.scalper.stats.concealment = 27
-			self.melee_weapons.scalper.speed_mult = 0.98
+			self.melee_weapons.scalper.speed_mult = 0.97
 		--Reminds me of how HL2 was gonna have an ice axe--
 		self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
 		self.melee_weapons.iceaxe.cleave = 1
-		self.melee_weapons.iceaxe.raycasts = 8
+		self.melee_weapons.iceaxe.raycasts = 6
 		self.melee_weapons.iceaxe.raycasts_charge = 12
 		self.melee_weapons.iceaxe.speed_mult = 0.95
 		self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
@@ -5810,13 +5810,13 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.iceaxe.stats.range = 180
 		self.melee_weapons.iceaxe.stats.concealment = 28
 		self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
-		self.melee_weapons.iceaxe.speed_mult = 0.96
+		self.melee_weapons.iceaxe.speed_mult = 0.95
 		--Whose plumes are gay now Carl? Whose plumes are gay now?--
 		self.melee_weapons.morning.info_id = "bm_melee_morning_info"
 		self.melee_weapons.morning.dot_data_name = "melee_bleed"
 		self.melee_weapons.morning.cleave = 1
-		self.melee_weapons.morning.raycasts = 8
-		self.melee_weapons.morning.raycasts_charge = 12
+		self.melee_weapons.morning.raycasts = 15
+		self.melee_weapons.morning.raycasts_charge = 20
 		self.melee_weapons.morning.stats.min_damage = 6
 		self.melee_weapons.morning.stats.max_damage = 12.001
 		self.melee_weapons.morning.stats.min_damage_effect = 4.5
@@ -5824,7 +5824,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.morning.stats.charge_time = 1.8
 		self.melee_weapons.morning.stats.range = 180
 		self.melee_weapons.morning.stats.concealment = 25
-		self.melee_weapons.morning.speed_mult = 0.94
+		self.melee_weapons.morning.speed_mult = 0.92
 
 		--FREEEEEEEDOM--
 		self.melee_weapons.freedom.info_id = "bm_melee_freedom_info"

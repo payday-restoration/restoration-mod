@@ -17699,7 +17699,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br55.BURST_FIRE = 3
 				self.br55.BURST_DELAY = 0.1
 				self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.571428
-				self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+				self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.333
 				self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 				self.br55.lock_slide = true
 				self.br55.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
@@ -17714,7 +17714,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br55.stats = {
 					damage = 45,
 					spread = 91,
-					recoil = 76,
+					recoil = 81,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 23,

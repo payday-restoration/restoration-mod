@@ -197,6 +197,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["rr_full"] = "Full",
 		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
 		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
+		["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
+		["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not certain weapons de-scope temporarily when shooting. Please note the de-scope is in place to reduce clipping, leaving this disabled will result in some sights clipping when shooting. Setting is ignored on weapons that mention de-scope as a mechanic.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
@@ -1521,6 +1523,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_fireaxe_info"] = "Do you like hurting other people?\n\nIf you do, what better way to do it than with something intended to save lives! Show your victims the fire in your eyes as you save them from yourself in one quick chop.",
 		--Briefcase
 		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+			--Toasty
+			["bm_melee_toast"] = "Almir's Toast",
+			["bm_melee_toast_info"] = "Are ya hungry?\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
 
 		--KA-BAR Tanto
 		["bm_melee_kabar_tanto_info"] = "The Tanto blade shape, of Asian influence, has a thick pointed blade that's good for penetration. This knife is designed for the toughest of tasks.",
@@ -2633,7 +2638,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\n#{important_1}#Lowers pellet count to 6.##",
 					["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of #{skill_color}#piercing body armor, enemies, shields, titan shields, and walls.##",
 					--REBECCA CYBERPUNK
-					["bm_w_rebecca_desc"] = "It'll wreak bloody havoc, though it can be a little unpredictable.",
+					["bm_w_rebecca_desc"] = "It'll wreak bloody havoc, though it can be a little unpredictable.\n#{risk}#Shooting imparts knockback on yourself and temporarily knocks you out of aiming.##",
 					--Widowmaker TX
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
@@ -2807,8 +2812,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_awp_cs_dragon"] = "AWP | Dragon Lore",
 				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
-				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
-				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
+				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
 				--WA2000
 				["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				--Rangerhitter

@@ -992,6 +992,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		if not self:is_npc() then
 			self._descope_on_fire = self:weapon_tweak_data().descope_on_fire
+			self._descope_on_fire_ignore_setting = self:weapon_tweak_data().descope_on_fire_ignore_setting
+			self._descope_on_dmg = self:weapon_tweak_data().descope_on_dmg
 			self._rms = self:weapon_tweak_data().rms
 			self._sms = self:weapon_tweak_data().sms
 			self._smt = self._sms and self:weapon_tweak_data().fire_mode_data and ((self:weapon_tweak_data().fire_mode_data.fire_rate * 5) * (self:weapon_tweak_data().smt_mult or 1))
@@ -1195,6 +1197,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.descope_on_fire then		
 				self._descope_on_fire = stats.descope_on_fire
+			end
+			if stats.descope_on_fire_ignore_setting then		
+				self._descope_on_fire_ignore_setting = stats.descope_on_fire_ignore_setting
 			end
 			if stats.use_vapor_trail then		
 				self._use_vapor_trail = stats.use_vapor_trail

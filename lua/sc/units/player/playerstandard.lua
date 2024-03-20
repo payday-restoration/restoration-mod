@@ -1135,7 +1135,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._queue_burst = nil
 						end
 
-						if weap_base._descope_on_fire then
+						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
 						end
 						

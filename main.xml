@@ -584,6 +584,8 @@
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
 					<divider name="tod_divider" size="15"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
+					<divider name="tod_divider" size="15"/>
+					<option type="bool" default_value="true" name="WpnFireDescope"/>
 				</option_group>
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>

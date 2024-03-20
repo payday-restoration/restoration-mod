@@ -16375,6 +16375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.m6d then --RJC9000 and Offyerrocker's M6D
+				table.insert(self.m6d.categories, "no_shake")
 				self.m6d.recategorize = { "heavy_pis", "handcannon" }		
 				self.m6d.damage_type = "handcannon"
 				self.m6d.has_description = true
@@ -16387,6 +16388,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m6d.CLIP_AMMO_MAX = 12
 				self.m6d.AMMO_MAX = 20
 				self.m6d.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.m6d.descope_on_dmg = true
 				self.m6d.supported = true
 				self.m6d.ads_speed = 0.200
 				self.m6d.damage_falloff = {
@@ -16420,6 +16422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.m7caseless then --RJC9000, PlayBONK, and Offyerocker's M7 SMG
+				table.insert(self.m7caseless.categories, "no_shake")
 				self.m7caseless.recategorize = { "light_smg" }		
 				self.m7caseless.damage_type = "machine_gun"
 				self.m7caseless.has_description = true
@@ -16430,6 +16433,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m7caseless.fire_mode_data.fire_rate = 0.06666666
 				self.m7caseless.CLIP_AMMO_MAX = 60
 				self.m7caseless.AMMO_MAX = 90
+				self.m7caseless.descope_on_dmg = true
 				self.m7caseless.supported = true
 				self.m7caseless.ads_speed = 0.200
 				self.m7caseless.damage_falloff = {
@@ -16462,6 +16466,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.x_m7caseless then
+				table.insert(self.x_m7caseless.categories, "no_shake")
 				self.x_m7caseless.recategorize = { "light_smg" }		
 				self.x_m7caseless.damage_type = "machine_gun"
 				self.x_m7caseless.has_description = true
@@ -16472,6 +16477,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_m7caseless.fire_mode_data.fire_rate = 0.06666666
 				self.x_m7caseless.CLIP_AMMO_MAX = 120
 				self.x_m7caseless.AMMO_MAX = 180
+				self.x_m7caseless.descope_on_dmg = true
 				self.x_m7caseless.supported = true
 				self.x_m7caseless.ads_speed = 0.200
 				self.x_m7caseless.damage_falloff = {
@@ -17082,7 +17088,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.force_shake = true
 				self.cp2077_guts.sms = 0.5
 				self.cp2077_guts.rebecca = true
-				self.cp2077_guts.descope_on_fire = true
+				self.cp2077_guts.descope_on_fire_ignore_setting = true
 				self.cp2077_guts.hipfire_shake = true
 				self.cp2077_guts.supported = true
 				self.cp2077_guts.ads_speed = 0.400
@@ -17581,7 +17587,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 				self.vk78_commando.categories = { 
 					"assault_rifle",
-					"dmr_h"
+					"dmr_h",
+					"no_shake"
 				}
 				self.vk78_commando.categories = { "assault_rifle" }
 				self.vk78_commando.recategorize = { "dmr_ar" }
@@ -17594,6 +17601,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vk78_commando.kick = {}
 				self.vk78_commando.kick = self.stat_info.kick_tables.vertical_kick
 				self.vk78_commando.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.vk78_commando.descope_on_dmg = true
 				self.vk78_commando.supported = true
 				self.vk78_commando.ads_speed = 0.300
 				self.vk78_commando.damage_falloff = {
@@ -17633,6 +17641,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"semi_snp",
 					"amr",
 					"s7",
+					"no_shake"
 				}
 				self.srs99_s7.recategorize = { "antim_snp" }
 				self.srs99_s7.hs_mult = 2
@@ -17641,6 +17650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.srs99_s7.AMMO_MAX = 15
 				self.srs99_s7.sms = sms_preset.semi_snp_amr
 				self.srs99_s7.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+				self.srs99_s7.descope_on_dmg = true
 				self.srs99_s7.supported = true
 				self.srs99_s7.ads_speed = 0.500
 				self.srs99_s7.damage_falloff = {
@@ -17672,6 +17682,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.br55 then --RJC9000's Halo BR55
+				table.insert(self.br55.categories, "no_shake")
 				self.br55.recategorize = { "dmr_ar" }
 				self.br55.damage_type = "assault_rifle"
 				self.br55.is_bullpup = true
@@ -17692,6 +17703,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 				self.br55.lock_slide = true
 				self.br55.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+				self.br55.descope_on_dmg = true
 				self.br55.supported = true
 				self.br55.ads_speed = 0.300
 				self.br55.damage_falloff = {

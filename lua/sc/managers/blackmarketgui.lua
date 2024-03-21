@@ -4767,7 +4767,7 @@ function BlackMarketGui:update_info_text()
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 				local hs_mult = (weapon_tweak and weapon_tweak.hs_mult) or 1
-				local hs_mult_desc = nil
+				local hs_mult_desc = (weapon_tweak and weapon_tweak.hs_mult and true) or nil
 				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local ap_desc = nil
 				local sms = (weapon_tweak and weapon_tweak.sms) or 1

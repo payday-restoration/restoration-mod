@@ -22022,7 +22022,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.has_description = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.keep_damage = true
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.stats = {
-		total_ammo_mod = -102,
+		total_ammo_mod = -81,
 		damage = 30,
 		spread = 1,
 		value = 10,
@@ -22032,6 +22032,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 	self.parts.wpn_fps_snp_awp_conversion_dragonlore.custom_stats = {
 		alt_desc = "bm_bazooka_sc_desc",
 		hs_mult = 1.5,
+		hs_mult_desc = true,
 		ads_speed_mult = 1.2105263,
 		hip_mult = 10,
 		ads_moving_mult = 50,

@@ -5095,6 +5095,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bravos_only"] = "하드라인",
 		["mutator_bravos_only_desc"] = "모든 적들이 강력한 PONR 적들로 대체됩니다.",
 		["mutator_bravos_only_longdesc"] = "스크립트로 스폰되지 않는 모든 스폰 적들은 항상 프로 잡에서 해당하는 스폰 지점에 강력한 스폰으로 대체됩니다. FBI SWAT은 Blue SWAT를 대체하고 FBI SWAT은 방위군 브라보 유닛으로 대체됩니다.",
+		["menu_bravo_replacement_choice"] = "Replacement Method",
+		["menu_mutator_bravo_replacement_all"] = "All Units",
+		["menu_mutator_bravo_replacement_random"] = "Random Chance",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

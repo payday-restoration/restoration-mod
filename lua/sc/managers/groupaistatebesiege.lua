@@ -1403,6 +1403,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 					local units = category.unit_types[current_unit_type]
 					produce_data.name = units[math.random(#units)]
 					produce_data.name = managers.modifiers:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
+					produce_data.name = managers.mutators:modify_value("GroupAIStateBesiege:SpawningUnit", produce_data.name)
 					local spawned_unit = sp_data.mission_element:produce(produce_data)
 					if spawned_unit then
 						local u_key = spawned_unit:key()

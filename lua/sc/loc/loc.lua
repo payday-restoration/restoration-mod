@@ -5012,8 +5012,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
 		
 		["mutator_bravos_only"] = "Hardline",
-		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only_desc"] = "Enemies are replaced by their PONR equivalents.",
+		["mutator_bravos_only_longdesc"] = "Non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["menu_bravo_replacement_choice"] = "Replacement Method",
+		["menu_mutator_bravo_replacement_all"] = "All Units",
+		["menu_mutator_bravo_replacement_random"] = "Random Chance",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",

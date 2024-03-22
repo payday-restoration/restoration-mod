@@ -12681,6 +12681,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.saw.kick = self.stat_info.kick_tables.none
 				self.saw.ign_ts = true
 				self.saw.supported = true
+				self.saw.ads_speed = 0.200
 				self.saw.stats = {
 					alert_size = 2,
 					suppression = 8,
@@ -12709,6 +12710,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.saw_secondary.AMMO_MAX = 20
 					self.saw_secondary.ign_ts = true
 					self.saw_secondary.supported = true
+					self.saw_secondary.ads_speed = 0.200
 					self.saw_secondary.stats = {
 						alert_size = 2,
 						suppression = 8,

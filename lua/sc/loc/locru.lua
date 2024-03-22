@@ -2124,6 +2124,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_pattern_briefcsae"] = "Атакует обычным ударом. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом.",
 
 		["bm_melee_pattern_blunt"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом.", --Also works with "melee_brick", "melee_happy", "melee_cleaver", "melee_beardy"
+		["bm_melee_pattern_blunt_90"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет широким размахом.",
 		
 		["bm_melee_pattern_beardy"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом. Движение в сторону влияет на направление атаки.",
 

@@ -6136,7 +6136,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end	
 
 	melee_anim = {
-		'invincible','psick','pclub','kovac'
+		'invincible','psick','pclub','kovac','mjolnir'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		if self.melee_weapons[melee_id] then
@@ -6441,6 +6441,55 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
+	melee_anim = {
+		"otama"
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_axe"
+			self.melee_weapons[melee_id].anim_global_param = "melee_otamatone"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"right", 0.9},
+				var2 = {"right", 0.9},
+				var3 = {"right", 0.9},
+				var4 = {"right", 0.9},
+			}
+			self.melee_weapons[melee_id].expire_t = 1.15
+			self.melee_weapons[melee_id].repeat_expire_t = 0.61
+			self.melee_weapons[melee_id].melee_damage_delay = 0.22
+			self.melee_weapons[melee_id].anim_speed_mult = 0.85
+		end
+	end
+
+	melee_anim = {
+		"bidetpetition"
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		if self.melee_weapons[melee_id] then
+			self:_clear_melee_anim_vars(melee_id)
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_ballistic"
+			self.melee_weapons[melee_id].anim_global_param = "melee_bidetpetition"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars =  {"var3"}
+			self.melee_weapons[melee_id].anim_attack_charged_vars =  {"var4"}
+			self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var2"}
+			self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"right", 0.2},
+				var2 = {"left", 0.1},
+				var3 = {"right", -0.2},
+				var4 = {"right", 0.9}
+			}
+			self.melee_weapons[melee_id].expire_t = 0.7
+			self.melee_weapons[melee_id].repeat_expire_t = 0.5
+			self.melee_weapons[melee_id].melee_damage_delay = 0.15
+			self.melee_weapons[melee_id].anim_speed_mult = 0.7
+		end
+	end
+
 	if self.melee_weapons.megumins_staff then --Hoppip's Megumin Staff
 		self.melee_weapons.megumins_staff.stats = deep_clone(self.melee_weapons.stick.stats)
 		self.melee_weapons.megumins_staff.stats.charge_bonus_start = 0.99
@@ -6448,10 +6497,6 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.megumins_staff.stats.concealment = 23
 		self.melee_weapons.megumins_staff.stats.charge_time = 55
 		self.melee_weapons.megumins_staff.ignore_charge_speed = true
-		self.melee_weapons.megumins_staff.stats.raycasts = 15
-		self.melee_weapons.megumins_staff.stats.raycasts_h = 25
-		self.melee_weapons.megumins_staff.stats.raycasts_charge = 1
-		self.melee_weapons.megumins_staff.stats.raycasts_charge_h = 1
 		self.melee_weapons.megumins_staff.special_weapon = "megumin"
 		self.melee_weapons.megumins_staff.explosion_range = 2000
 		self.melee_weapons.megumins_staff.explosion_damage = 5000
@@ -6506,7 +6551,6 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.hfblade.stats.max_damage = self.melee_weapons.hfblade.stats.max_damage / 2
 		self.melee_weapons.hfblade.anim_speed_mult = self.melee_weapons.hfblade.anim_speed_mult * 1.85
 	end
-
 	if self.melee_weapons.murasama then --Rikerus's HF Murasama (Katana 1.8x speed, 1/2 damage)
 		self.melee_weapons.murasama.info_id = "bm_melee_thejobissnotyours_info"	
 		self.melee_weapons.murasama.stats = deep_clone(self.melee_weapons.sandsteel.stats)
@@ -6514,7 +6558,6 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.murasama.stats.max_damage = self.melee_weapons.murasama.stats.max_damage / 2
 		self.melee_weapons.murasama.anim_speed_mult = self.melee_weapons.murasama.anim_speed_mult * 1.85
 	end
-
 	if self.melee_weapons.invincible then --Rikerus's Pincer Blades (Lucille Bat)
 		self.melee_weapons.invincible.info_id = "bm_melee_inner_child_info"
 		self.melee_weapons.invincible.stats = deep_clone(self.melee_weapons.barbedwire.stats)
@@ -6524,15 +6567,9 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.invincible.dot_data_name = "melee_bleed"
 		self.melee_weapons.invincible.anim_speed_mult = 0.8695
 	end
-
 	if self.melee_weapons.astranger then --Rikerus's L'Etranger (Pitchfork)
 		self.melee_weapons.astranger.info_id = "bm_melee_number_3_info"
 		self.melee_weapons.astranger.stats = deep_clone(self.melee_weapons.pitchfork.stats)
-		self.melee_weapons.astranger.stats.cleave = 1
-		self.melee_weapons.astranger.stats.raycasts = 6
-		self.melee_weapons.astranger.stats.raycasts_h = 6
-		self.melee_weapons.astranger.stats.raycasts_charge = 6
-		self.melee_weapons.astranger.stats.raycasts_charge_h = 6
 		self.melee_weapons.astranger.special_weapon = "charger"
 		self.melee_weapons.astranger.chainsaw = {
 			tick_damage = 4.5,
@@ -6544,11 +6581,6 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	if self.melee_weapons.drillhead then --GTFO Spear (Pitchfork)
 		self.melee_weapons.drillhead.info_id = "bm_melee_charge_info"
 		self.melee_weapons.drillhead.stats = deep_clone(self.melee_weapons.pitchfork.stats)
-		self.melee_weapons.drillhead.stats.cleave = 1
-		self.melee_weapons.drillhead.stats.raycasts = 6
-		self.melee_weapons.drillhead.stats.raycasts_h = 6
-		self.melee_weapons.drillhead.stats.raycasts_charge = 6
-		self.melee_weapons.drillhead.stats.raycasts_charge_h = 6
 		self.melee_weapons.drillhead.special_weapon = "charger"
 		self.melee_weapons.drillhead.chainsaw = {
 			tick_damage = 4.5,
@@ -6559,31 +6591,33 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	if self.melee_weapons.mastaba then --GTFO Knife (X46)
 		self.melee_weapons.mastaba.info_id = nil
 		self.melee_weapons.mastaba.stats = deep_clone(self.melee_weapons.x46.stats)
-		self.melee_weapons.mastaba.stats.cleave = 2
-		self.melee_weapons.mastaba.stats.raycasts = 20
-		self.melee_weapons.mastaba.stats.raycasts_h = nil
-		self.melee_weapons.mastaba.stats.raycasts_charge = nil
-		self.melee_weapons.mastaba.stats.raycasts_charge_h = nil
 	end
 	if self.melee_weapons.hdh then --GTFO Sledgehammer (Dingdong)
 		self.melee_weapons.hdh.info_id = nil
 		self.melee_weapons.hdh.stats = deep_clone(self.melee_weapons.dingdong.stats)
-		self.melee_weapons.hdh.stats.cleave = 2
-		self.melee_weapons.hdh.stats.raycasts = 10
-		self.melee_weapons.hdh.stats.raycasts_h = nil
-		self.melee_weapons.hdh.stats.raycasts_charge = 15
-		self.melee_weapons.hdh.stats.raycasts_charge_h = 15
-		self.melee_weapons.hdh.stats.speed_mult = 0.94
 	end
 	if self.melee_weapons.kovac then --GTFO Bat (Shovel)
 		self.melee_weapons.kovac.info_id = nil
 		self.melee_weapons.kovac.stats = deep_clone(self.melee_weapons.shovel.stats)
-		self.melee_weapons.kovac.stats.cleave = 1
-		self.melee_weapons.kovac.stats.raycasts = 8
-		self.melee_weapons.kovac.stats.raycasts_h = nil
-		self.melee_weapons.kovac.stats.raycasts_charge = 12
-		self.melee_weapons.kovac.stats.raycasts_charge_h = nil
-		self.melee_weapons.kovac.stats.speed_mult = 0.96
+	end
+
+	if self.melee_weapons.mjolnir then --V4nJ0rDy's Mjölnir (Hammer)
+		self.melee_weapons.mjolnir.info_id = nil
+		self.melee_weapons.mjolnir.attack_pattern = "bm_melee_pattern_blunt_90"
+		self.melee_weapons.mjolnir.stats = deep_clone(self.melee_weapons.hammer.stats)
+		self.melee_weapons.mjolnir.stats.charge_time = 5
+		self.melee_weapons.mjolnir.stats.charge_bonus_start = 0.9
+		self.melee_weapons.mjolnir.stats.speed_mult = 0.9
+		self.melee_weapons.mjolnir.ignore_charge_speed = true
+		self.melee_weapons.mjolnir.explosion_range = 400
+		self.melee_weapons.mjolnir.special_weapon = "mjolnir"
+	end
+	
+	if self.melee_weapons.bidetpetition then -->:3's POSTAL 4 Petiton (Briefcase)
+		self.melee_weapons.bidetpetition.info_id = "bm_melee_bidetpetition_info"
+		self.melee_weapons.bidetpetition.stats = deep_clone(self.melee_weapons.briefcase.stats)
+		self.melee_weapons.bidetpetition.stats.raycasts_charge = 18
+		self.melee_weapons.bidetpetition.stats.raycasts_charge_h = 25
 	end
 
 	if self.melee_weapons.dragon_slayer then --Silent Enforcer's Dragon Slayer (Halloween Dozer Sword)

@@ -3515,6 +3515,29 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:character_damage():force_into_bleedout()
 				--self._unit:character_damage():_check_bleed_out(nil)
     			managers.player:set_player_state("bleed_out")
+			elseif special_weapon == "mjolnir" then
+				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
+				local exp_dmg = melee_weapon.explosion_damage or 60
+				local exp_range = melee_weapon.explosion_range or 500
+				local effect_params = {
+					sound_event = "grenade_electric_explode",
+					effect = "effects/particles/explosions/electric_grenade",
+					sound_muffle_effect = false,
+					feedback_range = exp_range,
+					camera_shake_max_mul = 1
+				}
+				managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, exp_range, effect_params)		
+				managers.explosion:detect_and_tase({
+					hit_pos = col_ray.position,
+					range = exp_range,
+					collision_slotmask = managers.slot:get_mask("enemies"),
+					curve_pow = curve_pow,
+					damage = 0,
+					player_damage = 0,
+					alert_radius = 2500,
+					ignore_unit = self._unit,
+					user = self._unit
+				})
 			end
 		end
 

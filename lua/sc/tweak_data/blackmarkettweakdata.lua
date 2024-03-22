@@ -6237,12 +6237,20 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_beardy"
 			self.melee_weapons[melee_id].anim_global_param = "melee_beardy"
 			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-			self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
+			self.melee_weapons[melee_id].anim_attack_vars = {"var2","var3"}
+			self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2"}
+			self.melee_weapons[melee_id].anim_attack_charged_left_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_charged_right_vars = {"var4"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"left", 0.2},
+				var2 = {"left", 0.9},
+				var3 = {"left", 0.8},
+				var4 = {"right", 0.2}
+			}
 			self.melee_weapons[melee_id].expire_t = 1.45
 			self.melee_weapons[melee_id].repeat_expire_t = 1.2
-			self.melee_weapons[melee_id].melee_damage_delay = 0.65
-			self.melee_weapons[melee_id].anim_speed_mult = 1.2631
-			self.melee_weapons[melee_id].sphere_cast_radius_add = 16
+			self.melee_weapons[melee_id].melee_damage_delay = 0.63
+			self.melee_weapons[melee_id].anim_speed_mult = 1.26
 		end
 	end
 

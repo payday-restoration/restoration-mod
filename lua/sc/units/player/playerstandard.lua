@@ -2176,10 +2176,10 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
-		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
-		(self._melee_charge_bonus and melee_weapon.raycasts_charge) or 
-		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
-		(melee_weapon.raycasts)
+		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.stats.raycasts_charge_h) or 
+		(self._melee_charge_bonus and melee_weapon.stats.raycasts_charge) or 
+		(self._melee_attack_var_h and melee_weapon.stats.raycasts_h) or 
+		(melee_weapon.stats.raycasts)
 
 		if num_casts and num_casts > 1 then
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
@@ -2240,7 +2240,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
 			local angle_interval = (self._melee_charge_bonus and melee_weapon.interval_charge or melee_weapon.interval or 10) / 4
-			local cleave = melee_weapon.cleave or 1
+			local cleave = melee_weapon.stats.cleave or 1
 
 			local unique_hits = {}
 
@@ -2409,7 +2409,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
 	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 
 	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_speed or 1
-	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
+	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.speed_mult or 1
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
 	speed = speed * anim_speed
 	speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)

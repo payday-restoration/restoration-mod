@@ -32426,7 +32426,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -2
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {
-					rof_mult = 0.625,
+					rof_mult = 0.68125,
 					damage_min_mult = 0.44444,
 					alt_ammo_pickup_min_mul = 0.3402,
 					alt_ammo_pickup_max_mul = 0.3402,
@@ -32434,6 +32434,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ammo_pickup_max_mul = 0.3402
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.override = self.parts.wpn_fps_ass_amcar_body_ddm4.override or {}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.override.wpn_fps_upg_m4_m_straight = {
+					unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_m_ddm4",
+					third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_m_ddm4"
+				}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.override.wpn_fps_m4_uupg_m_std_vanilla = {
+					unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_m_ddm4_ext",
+					third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_m_ddm4_ext"
+				}
 
 			--Two Tone CAR-4
 				self.parts.wpn_fps_ass_m4_body_tantone.supported = true
@@ -36050,8 +36058,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts[used_part_id].type == "barrel" then
 						table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
 					elseif self.parts[used_part_id].type == "magazine" then
-						if self.parts[used_part_id].stats and (self.parts[used_part_id].stats.extra_ammo and self.parts[used_part_id].stats.extra_ammo > 0) or
-						self.parts[used_part_id].custom_stats and self.parts[used_part_id].custom_stats.damage_min_mult then
+						if (self.parts[used_part_id].stats and (self.parts[used_part_id].stats.extra_ammo and self.parts[used_part_id].stats.extra_ammo > 0)) or
+						(self.parts[used_part_id].custom_stats and (self.parts[used_part_id].custom_stats.damage_min_mult or self.parts[used_part_id].custom_stats.rof_mult)) then
 							table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
 						end
 					end

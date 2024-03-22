@@ -6612,10 +6612,11 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		self.melee_weapons.mjolnir.explosion_range = 400
 		self.melee_weapons.mjolnir.special_weapon = "mjolnir"
 	end
-	
+
 	if self.melee_weapons.bidetpetition then -->:3's POSTAL 4 Petiton (Briefcase)
 		self.melee_weapons.bidetpetition.info_id = "bm_melee_bidetpetition_info"
 		self.melee_weapons.bidetpetition.stats = deep_clone(self.melee_weapons.briefcase.stats)
+		self.melee_weapons.bidetpetition.stats.concealment = 30
 		self.melee_weapons.bidetpetition.stats.raycasts_charge = 18
 		self.melee_weapons.bidetpetition.stats.raycasts_charge_h = 25
 	end

@@ -13615,11 +13615,10 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(self)
 
 	self.parts.wpn_fps_ass_asval_sound_switch = {
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		a_obj = "a_body",
 		type = "ammo",
 		name_id = "bm_wp_asval_ck_switch",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74",
 		no_cull = true,
 		internal_part = true,
 		stats = {
@@ -13627,10 +13626,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 		},
 		custom_stats = {
 			sounds = {
-				fire = "akm_fire",
-				fire_single = "akm_fire_single",
-				fire_auto = "akm_fire",
-				stop_fire = "akm_stop"
+				fire = "ak74_fire",
+				fire_single = "ak74_fire_single",
+				fire_auto = "ak74_fire",
+				stop_fire = "ak74_stop"
 			}
 		}
 	}
@@ -13643,7 +13642,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 		suppression = -13,
 		alert_size = 1
 	}
-	self.parts.wpn_fps_ass_asval_b_proto.sound_switch = nil
+	self.parts.wpn_fps_ass_asval_b_proto.sub_type = nil
+	self.parts.wpn_fps_ass_asval_b_proto.sound_switch = {
+		suppressed = "regular_b"
+	}
 	self.parts.wpn_fps_ass_asval_b_proto.perks = nil
 	self.parts.wpn_fps_ass_asval_b_proto.adds = { "wpn_fps_ass_asval_sound_switch" }
 	
@@ -32419,20 +32421,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_amcar_body_ddm4.keep_damage = true
 				self.parts.wpn_fps_ass_amcar_body_ddm4.stats = {
 					value = 8,
-					damage = 25,
-					total_ammo_mod = -112,
-					recoil = -18,
+					damage = 0,
+					total_ammo_mod = -94,
+					recoil = -12,
 					spread = -3,
 					concealment = -2
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {
 					rof_mult = 0.68125,
+					hs_mult = 2.25,
+					hs_mult_desc = true,
 					damage_min_mult = 0.44444,
-					alt_ammo_pickup_min_mul = 0.3402,
-					alt_ammo_pickup_max_mul = 0.3402,
-					ammo_pickup_min_mul = 0.3402,
-					ammo_pickup_max_mul = 0.3402
+					alt_ammo_pickup_min_mul = 0.6793,
+					alt_ammo_pickup_max_mul = 0.6793,
+					ammo_pickup_min_mul = 0.6793,
+					ammo_pickup_max_mul = 0.6793
 				}
+				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = {}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.override = self.parts.wpn_fps_ass_amcar_body_ddm4.override or {}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.override.wpn_fps_upg_m4_m_straight = {
 					unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_m_ddm4",
@@ -36055,23 +36060,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
 				if not table.contains(self.wpn_fps_ass_amcar.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id) then
 					if self.parts[used_part_id].type == "foregrip" or
+					self.parts[used_part_id].type == "upper_reciever" or
+					self.parts[used_part_id].type == "lower_reciever" or
 					self.parts[used_part_id].type == "barrel" then
-						table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
+						if self.parts[used_part_id].stats then
+							table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
+						end
 					elseif self.parts[used_part_id].type == "magazine" then
-						if (self.parts[used_part_id].stats and (self.parts[used_part_id].stats.extra_ammo and self.parts[used_part_id].stats.extra_ammo > 0)) or
+						if (self.parts[used_part_id].stats and (self.parts[used_part_id].stats.extra_ammo and self.parts[used_part_id].stats.extra_ammo > 15)) or
 						(self.parts[used_part_id].custom_stats and (self.parts[used_part_id].custom_stats.damage_min_mult or self.parts[used_part_id].custom_stats.rof_mult)) then
 							table.insert(self.parts.wpn_fps_ass_amcar_body_ddm4.forbids, used_part_id)
 						end
-					end
-				end
-				if not self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] then
-					if self.parts[used_part_id].type == "lower_reciever" then
-						self.parts.wpn_fps_ass_amcar_body_ddm4.override[used_part_id] = {
-							adds = {},
-							override = {},
-							unit = "units/mods/weapons/wpn_fps_ass_amcar_ddm4/wpn_fps_ass_amcar_ddm4_lower",
-							third_unit = "units/mods/weapons/wpn_third_ass_amcar_ddm4/wpn_third_ass_amcar_ddm4_lower"
-						}
 					end
 				end
 			end

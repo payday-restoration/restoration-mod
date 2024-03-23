@@ -907,8 +907,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_completed_challenges"] = "Completed Challenges",
 		["resmod_completed_challenges_hint"] = "Completed and rewarded challenges.",
 
-		["ch_vs_desc"] = "Using a $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
-		["ch_vs_head_shots_desc"] = "Using a $weapon, defeat $count $eneType with Headshots.",
+		["ch_vs_desc"] = "Using $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
+		["ch_vs_head_shots_desc"] = "Using $weapon, defeat $count $eneType with Headshots.",
 		["ch_vs"] = "$weapon VS. $eneType $no",
 		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
 

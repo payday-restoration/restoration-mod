@@ -2602,7 +2602,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_drain_stamina(t, dt)
 
 	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
-	if weapon:weapon_tweak_data().ads_spool then
+	if weapon and weapon:weapon_tweak_data().ads_spool then
 		weapon:update_spin()
 	end
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire

@@ -12990,11 +12990,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_northtac_reddot = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
 		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-32,-0.01)
+		end
+	end
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_northtac_alt.stance_mod) do
+		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
 			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
-
 	
 	--Engraved Crosskill Grips
 	self.parts.wpn_fps_pis_1911_g_engraved.pcs = {}
@@ -21504,6 +21509,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 		value = 8,
 		zoom = 30
 	}
+	self.parts.wpn_fps_upg_o_northtac.adds = {
+		"wpn_fps_upg_o_northtac_reddot",
+		"wpn_fps_upg_o_northtac_alt"
+	}
 	self.parts.wpn_fps_upg_o_northtac.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_northtac.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac.stance_mod) do
@@ -21516,15 +21525,41 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 
 	self.parts.wpn_fps_upg_o_northtac_reddot.stats = {
 		value = 1,
-		gadget_zoom = 2
+		gadget_zoom = 10
+	}
+	self.parts.wpn_fps_upg_o_northtac_reddot.custom_stats = {
+		use_primary_steelsight_unit = true
 	}
 	self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-32,-0.01)
+			--weap.translation = weap.translation + Vector3(0,-22,-0.01)
+		end
+	end
+
+	self.parts.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_upg_o_northtac)
+	self.parts.wpn_fps_upg_o_northtac_alt.pcs = nil
+	self.parts.wpn_fps_upg_o_northtac_alt.forbids = nil
+	self.parts.wpn_fps_upg_o_northtac_alt.adds = nil
+	self.parts.wpn_fps_upg_o_northtac_alt.type = "extra"
+	self.parts.wpn_fps_upg_o_northtac_alt.sub_type = "second_sight"
+	self.parts.wpn_fps_upg_o_northtac_alt.perks = { "second_sight" }
+	self.parts.wpn_fps_upg_o_northtac_alt.unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt_magnified"
+	self.parts.wpn_fps_upg_o_northtac_alt.third_unit = nil
+	self.parts.wpn_fps_upg_o_northtac_alt.stats = {
+		value = 1,
+		gadget_zoom = 2
+	}
+	self.parts.wpn_fps_upg_o_northtac_alt.custom_stats = {}
+	self.parts.wpn_fps_upg_o_northtac_alt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac_alt.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
 			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
+	
 
 	--Verge
 	self.parts.wpn_fps_upg_ak_g_edg.supported = true

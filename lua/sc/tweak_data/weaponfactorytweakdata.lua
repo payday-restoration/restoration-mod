@@ -13857,16 +13857,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 		"wpn_fps_ass_sub2000_dh_standard",
 		"wpn_fps_ass_sub2000_o_back"
 	}
+	self.wpn_fps_ass_sub2000.adds.wpn_fps_upg_o_northtac = {
+		"wpn_fps_ass_sub2000_o_adapter"
+	}
+
 	self.parts.wpn_fps_ass_sub2000_o_adapter.adds = { "wpn_fps_ass_sub2000_o_back_down" }
+	self.wpn_fps_ass_sub2000.override.wpn_fps_addon_ris = {
+		parent = "foregrip"
+	}
+	self.wpn_fps_ass_sub2000.override.wpn_fps_upg_o_northtac = {
+		parent = "foregrip"
+	}
+	self.wpn_fps_ass_sub2000.override.wpn_fps_upg_o_northtac_reddot = {
+		parent = "foregrip"
+	}
+
+	table.insert(self.wpn_fps_ass_sub2000.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_sub2000.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+
 	for i, part_id in pairs(self.wpn_fps_ass_sub2000.uses_parts) do
 		if part_id ~= "wpn_fps_ass_sub2000_o_back" and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "sight" then
 			self.parts[part_id].forbids = self.parts[part_id].forbids or {}
 			table.insert(self.parts[part_id].forbids, "wpn_fps_ass_sub2000_o_back")
 		end
 	end
-	self.wpn_fps_ass_sub2000.override.wpn_fps_addon_ris = {
-		parent = "foregrip"
-	}
+
+	self.wpn_fps_ass_sub2000_npc.override = deep_clone(self.wpn_fps_ass_sub2000.override)	
+	self.wpn_fps_ass_sub2000_npc.uses_parts = deep_clone(self.wpn_fps_ass_sub2000.uses_parts)	
 
 
 end)
@@ -13949,9 +13966,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}	
 	
 	table.insert(self.wpn_fps_snp_wa2000.uses_parts, "wpn_fps_snp_model70_iron_sight")
-	table.insert(self.wpn_fps_snp_wa2000_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_wa2000.uses_parts, "wpn_fps_gre_arbiter_o_standard")
-	table.insert(self.wpn_fps_snp_wa2000_npc.uses_parts, "wpn_fps_gre_arbiter_o_standard")
 
 	self.wpn_fps_snp_wa2000_npc.override = deep_clone(self.wpn_fps_snp_wa2000.override)	
 	self.wpn_fps_snp_wa2000_npc.uses_parts = deep_clone(self.wpn_fps_snp_wa2000.uses_parts)	
@@ -22748,6 +22763,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			damage_min_mult = 0.6,
 			muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle",
 			sms = 0.5,
+			srm = {
+				-0.04,
+				{1, 3},
+				9
+			}
 		},
 		override = {
 			wpn_fps_ass_m16_os_frontsight = {

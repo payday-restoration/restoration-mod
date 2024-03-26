@@ -5600,9 +5600,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	self.wpn_fps_ass_ak5.stock_adapter = "wpn_upg_ak_s_adapter"
 	self.wpn_fps_ass_ak5_npc.stock_adapter = "wpn_upg_ak_s_adapter"
 
-	if not self.wpn_fps_ass_ak5.override then
-		self.wpn_fps_ass_ak5.override = {}
-	end
+	self.wpn_fps_ass_ak5.adds.wpn_fps_upg_o_northtac = deep_clone(self.wpn_fps_ass_ak5.adds.wpn_fps_upg_o_specter)
+
+	self.wpn_fps_ass_ak5.override = self.wpn_fps_ass_ak5.override or {}
 
 	self.wpn_fps_ass_ak5.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folder_to_adj_acc1_stats),
@@ -5649,6 +5649,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_ak5_npc.uses_parts = deep_clone(self.wpn_fps_ass_ak5.uses_parts)
+	self.wpn_fps_ass_ak5_npc.adds = deep_clone(self.wpn_fps_ass_ak5.adds)
 end)
 
 --UAR
@@ -30682,7 +30683,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
 					wpn_fps_ass_contraband = {
-						translation = Vector3(0, -9.5, -0.905)
+						translation = Vector3(0, -9.5, -0.92)
 					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.forbids = {
@@ -30842,7 +30843,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					parent = "exclusive_set_o",
 					stance_mod = {
 						wpn_fps_ass_contraband = {
-							translation = self.parts.wpn_fps_upg_o_northtac_alt.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+							translation = self.parts.wpn_fps_upg_o_northtac_alt.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3),
+							rotation = self.parts.wpn_fps_upg_o_northtac_alt.stance_mod.wpn_fps_ass_contraband.rotation
 						}
 					}
 				}

@@ -1321,6 +1321,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
 		["bm_wp_upg_o_5"] = "Дальнобойная оптика.\n#{risk}#Увеличение 5x.##",
 		["bm_wp_upg_o_5_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 5x.##",
+		["bm_wp_upg_o_5_vari"] = "Регулируемая оптика.\n#{risk}#Увеличение 5-8x.##\n\nНажмите #{skill_color}#$BTN_GADGET## во время прицеливания, чтобы изменить кратность увеличения.",
 		["bm_wp_upg_o_6"] = "Дальнобойная оптика.\n#{risk}#Увеличение 6x.##",
 		["bm_wp_upg_o_6_range"] = "Дальнобойная оптика c #{skill_color}#дальномером.##\n#{risk}#Увеличение 6x.##",
 		["bm_wp_upg_o_8"] = "Дальнобойная оптика.\n#{risk}#Увеличение 8x.##",
@@ -1332,7 +1333,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wpn_fps_upg_o_hamr"] = "Прицел Тригоном",
 
 		["bm_wp_upg_o_shortdot_dmc"] = "Прицел Шортдот",
-		["bm_wp_upg_o_5_default"] = "Дальнобойная оптика.\nИспользуйте, чтобы модифицировать перекрестие у стандартного прицела.\n#{skill_color}#Увеличение 5x.##",
+		["bm_wp_upg_o_5_default"] = "Дальнобойная оптика.\nИспользуйте, чтобы модифицировать перекрестие у стандартного прицела.\n#{risk}#Увеличение 5x.##",
 
 		["bm_wp_upg_fl_flashlight"] = "Фонарик переключается на #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_laser"] = "Лазер переключается на #{skill_color}#$BTN_GADGET##",
@@ -4161,12 +4162,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",
 
-						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope",
+						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope  w/Micro Reflex",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
 	
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
+						["bm_wp_upg_o_shortdot"] = "Schmidt & Bender 1-8x24 PM Short Dot",
+						["bm_wp_upg_o_shortdot_dmc"] = "Schmidt & Bender 1-8x24 PM Short Dot",
+						
 						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
 						["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
+						
+						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Reflex",
+						["bm_wp_uupg_o_schmidt"] = "Schmidt & Bender 5-45x56 PM II High Power",
 	
 						["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
 						["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",

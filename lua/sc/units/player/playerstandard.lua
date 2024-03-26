@@ -1210,7 +1210,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							recoil_h = (recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2.5, 2.5)
 							if (self._state_data.in_steelsight or weap_base:weapon_tweak_data().hipfire_shake) and (weap_base:weapon_tweak_data().force_shake or ((no_recoil_anims or weap_base._disable_steelsight_recoil_anim) and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims)) then
 								local zoom_level = (not weap_base:is_second_sight_on() and not weap_base:weapon_tweak_data().rebecca and self._equipped_unit:base():zoom() == 65 and -1) or 1
-								local zoom_level = (not weap_base:is_second_sight_on() and not weap_base:weapon_tweak_data().rebecca and self._equipped_unit:base():zoom() <= 65 and -1) or 1
 								self._ext_camera:play_shaker("whizby",  math.abs(recoil_h) * 0.125 * shake_multiplier * fire_rate, var_lr * 0.25 * zoom_level, vars[math.random(#vars)] * 0.25 )
 								self._ext_camera:play_shaker("player_land", recoil_v * 0.05 * math.abs(shake_multiplier) * fire_rate * zoom_level, 0, 0 )
 							end

@@ -7279,6 +7279,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.mp7.stats_modifiers = nil
+						self.mp7.reload_speed_multiplier = 1.07
 						self.mp7.timers.reload_not_empty = 1.75
 						self.mp7.timers.reload_empty = 2.4	
 						self.mp7.timers.reload_exit_empty = 0.45
@@ -9668,7 +9669,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.akmsu.timers.reload_empty = 3.7
 						self.akmsu.timers.reload_exit_empty = 0.75
 						self.akmsu.timers.reload_exit_not_empty = 0.77
-						self.akmsu.reload_speed_multiplier = 1.11
+						self.akmsu.reload_speed_multiplier = 1.18
+						self.akmsu.reload_not_empty_speed_multiplier = 0.95
 
 			--[[     DMRs     ]]
 

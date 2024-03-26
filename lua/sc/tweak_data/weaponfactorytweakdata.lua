@@ -3865,6 +3865,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		wpn_fps_upg_o_health = {
 			a_obj = "a_o_2"
 		},
+		wpn_fps_upg_o_northtac = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_northtac_reddot = {
+			a_obj = "a_o_2"
+		},
 
 		wpn_fps_upg_m4_o_victor = {
 			a_obj = "a_o_2"
@@ -3996,6 +4002,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_m16a2")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_og_rof")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -4146,6 +4154,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 		"wpn_fps_m4_uupg_draghandle",
 		"wpn_fps_m4_uupg_fg_rail_ext"
 	}
+	self.wpn_fps_ass_amcar.adds.wpn_fps_upg_o_northtac = deep_clone(self.wpn_fps_ass_amcar.adds.wpn_fps_upg_o_specter)
 
 	--AMCAR Default Blueprint, making it use the 30 rounder by default
 	for i, part_id in pairs(self.wpn_fps_ass_amcar.default_blueprint) do
@@ -4193,9 +4202,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_patriot")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_i_og_rof")
 	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_amcar_npc.default_blueprint = deep_clone(self.wpn_fps_ass_amcar.default_blueprint)	
 	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
+	self.wpn_fps_ass_amcar_npc.adds = deep_clone(self.wpn_fps_ass_amcar.adds)	
 end)
 
 --AMR-16 
@@ -4368,6 +4380,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_smg_olympic_s_short")		
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_i_m16a2")
 	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
 
@@ -4561,7 +4575,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_ass_m16_s_fixed")			
-	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_upg_s_saintvictor_hera")			
+	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_upg_s_saintvictor_hera")	
+	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 		
 	self.wpn_fps_smg_olympic_npc.override = deep_clone(self.wpn_fps_smg_olympic.override)
 	self.wpn_fps_smg_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_olympic.uses_parts)
@@ -5014,6 +5030,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_fg_standard")
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_snp_victor_s_mod0")
+	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	--No Stock
 	--table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_upg_ak_s_nostock")
@@ -5100,6 +5118,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_upg_o_sig")
+	
+	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_upg_o_northtac")
 	
 	--No Stock
 	--table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_upg_ak_s_nostock")
@@ -5210,6 +5230,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_snp_victor_s_mod0")
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_akm_gold_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_gold.uses_parts)
 
@@ -5371,6 +5393,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_lmg_rpk_m_ban")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_snp_victor_s_mod0")
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+
 
 	self.wpn_fps_smg_akmsu_npc.override = deep_clone(self.wpn_fps_smg_akmsu.override)
 	self.wpn_fps_smg_akmsu_npc.uses_parts = deep_clone(self.wpn_fps_smg_akmsu.uses_parts)
@@ -5620,6 +5645,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_snp_tti_s_vltor")
 	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_sho_sko12_stock")
+	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_ak5.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_ak5_npc.uses_parts = deep_clone(self.wpn_fps_ass_ak5.uses_parts)
 end)
@@ -5741,6 +5768,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	end	
 
 	table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_aug.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
 
@@ -5870,6 +5899,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_snp_tti_s_vltor")
 
 	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_i_m8a1")
+	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_g36.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_g36_npc.uses_parts = deep_clone(self.wpn_fps_ass_g36.uses_parts)
 
@@ -7601,6 +7632,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 		custom_stats = deep_clone(stocks.folder_to_hvy_acc2_stats)
 	}
 	
+	table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_s552.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+	
+	self.wpn_fps_ass_s552_npc.uses_parts = deep_clone(self.wpn_fps_ass_s552.uses_parts)
+
 	self.wpn_fps_ass_s552_secondary = nil
 	self.wpn_fps_ass_s552_secondary_npc = nil
 end)
@@ -8885,6 +8921,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_snp_victor_s_mod0")
 	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_snp_tti_s_vltor")
+	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_fal.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_fal_npc.override = deep_clone(self.wpn_fps_ass_fal.override)
 	self.wpn_fps_ass_fal_npc.uses_parts = deep_clone(self.wpn_fps_ass_fal.uses_parts)
@@ -9478,7 +9516,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
 
-	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")	
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
@@ -10192,9 +10232,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 				local tww = tweak_data.weapon[ weapon_id ]
 				if tww.categories then
 					if table.contains( tww.categories , "snp") or 
-						table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
-						table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
-						table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
+					table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
 						self[ factory_id ].override = self[ factory_id ].override or {}
 						self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 							stats = {value = 1, concealment = 1, spread = -1},
@@ -11866,6 +11906,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(s
 	}
 	self.parts.wpn_fps_ass_l85a2_g_worn.supported = true
 	self.parts.wpn_fps_ass_l85a2_g_worn.stats = deep_clone(grips.recoil_1)
+
+
+	table.insert(self.wpn_fps_ass_l85a2.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_l85a2.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+	
+	self.wpn_fps_ass_l85a2_npc.uses_parts = deep_clone(self.wpn_fps_ass_l85a2.uses_parts)
 		
 
 end)
@@ -11916,6 +11962,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	self.parts.wpn_fps_ass_vhs_b_sniper.custom_stats = deep_clone(barrels.long_b3_stats)
 
 	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_i_swordfish")
+	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+
 	self.wpn_fps_ass_vhs_npc.uses_parts = deep_clone(self.wpn_fps_ass_vhs.uses_parts)
 
 end)
@@ -12313,8 +12362,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	--Scope Mount
 	self.parts.wpn_fps_upg_o_ak_scopemount.pcs = {}
 	self.parts.wpn_fps_upg_o_ak_scopemount.supported = true
+	self.parts.wpn_fps_upg_o_ak_scopemount.depends_on = nil
+	self.parts.wpn_fps_upg_o_ak_scopemount.adds = {
+		"wpn_fps_gre_arbiter_o_standard"
+	}
 	self.parts.wpn_fps_upg_o_ak_scopemount.stats = { value = 0 }
 	self.parts.wpn_fps_upg_o_ak_scopemount.custom_stats = { big_scope = true }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_ass_ak_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_ass_ak_body_lowerreceiver_gold = { adds = {"wpn_fps_ak_bolt_gold"} }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_smg_akmsu_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_lmg_rpk_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_ass_akm_nomag = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_gre_arbiter_o_standard = {
+		a_obj = "a_o_sm",
+		stance_mod = {
+			wpn_fps_ass_74 = { translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -10, 0.42) },
+			wpn_fps_ass_akm = { translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -10, 0.42) },
+			wpn_fps_ass_akm_gold = { translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -10, 0.42) },
+			wpn_fps_shot_saiga = { translation = Vector3(0.06, 15.5, -4.54) + Vector3(0, -10, 0.42) },
+			wpn_fps_smg_akmsu = { translation = Vector3(-0.005, 15.5, -4.34) + Vector3(0, -10, 0.42) },
+			wpn_fps_lmg_rpk = { translation = Vector3(0.045, 17.5, -4.55) + Vector3(0, -10, 0.42) },
+			wpn_fps_ass_akm_nomag = { translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -10, 0.42) },
+		}
+	}
 	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_74 = {
 		translation = Vector3(-0.005, 15.5, -4.6)
 	}
@@ -12410,6 +12480,27 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 			weap.translation = weap.translation + Vector3(0,10,0)
 		end
 	end
+
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-22,-0.01)
+		end
+	end
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac_reddot = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-32,-0.01)
+		end
+	end
+	self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override.wpn_fps_upg_o_northtac_alt.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
+			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
+		end
+	end
+
 
 	--OVAL Foregrip
 	self.parts.wpn_fps_upg_ass_m4_fg_lvoa.pcs = {}
@@ -12889,9 +12980,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 	
 	--Scope Mount
 	self.parts.wpn_fps_upg_o_m14_scopemount.pcs = {}
+	self.parts.wpn_fps_upg_o_m14_scopemount.depends_on = nil
 	self.parts.wpn_fps_upg_o_m14_scopemount.supported = true
+	self.parts.wpn_fps_upg_o_m14_scopemount.adds = {
+		"wpn_fps_gre_arbiter_o_standard"
+	}
 	self.parts.wpn_fps_upg_o_m14_scopemount.stats = {
 		value = 0
+	}
+	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_gre_arbiter_o_standard = {
+		a_obj = "a_o_sm",
+		stance_mod = {
+			wpn_fps_ass_m14 = { 
+				translation = Vector3(-0.02, -9, -5.05),
+				rotation = Rotation(0, 0.43, 0)
+			}
+		}
 	}
 	self.parts.wpn_fps_upg_o_m14_scopemount.override.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m14 = {
 		translation = Vector3(-0.02, 5.4, -5.2)
@@ -13706,6 +13810,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	self.wpn_fps_ass_asval.stock_adapter = "wpn_upg_ak_s_adapter"	
 	self.wpn_fps_ass_asval_npc.stock_adapter = "wpn_upg_ak_s_adapter"
 
+	self.wpn_fps_ass_asval.adds.wpn_fps_upg_o_northtac = deep_clone(self.wpn_fps_ass_asval.adds.wpn_fps_upg_o_specter)
+
 	self.wpn_fps_ass_asval.override = {
 		--Just in case
 		wpn_upg_ak_g_standard = {
@@ -13809,11 +13915,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_ak_s_solidstock")
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_shak12_ns_muzzle")
-	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")	
-	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_groza_m_speed")		
+	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_shak12_ns_suppressor")
+	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_groza_m_speed")
+	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
-	self.wpn_fps_ass_asval_npc.override = deep_clone(self.wpn_fps_ass_asval.override)		
-	self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)		
+	self.wpn_fps_ass_asval_npc.override = deep_clone(self.wpn_fps_ass_asval.override)
+	self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)
+	self.wpn_fps_ass_asval_npc.adds = deep_clone(self.wpn_fps_ass_asval.adds)
 end)
 
 --Sub2000
@@ -13884,6 +13993,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 
 	self.wpn_fps_ass_sub2000_npc.override = deep_clone(self.wpn_fps_ass_sub2000.override)	
 	self.wpn_fps_ass_sub2000_npc.uses_parts = deep_clone(self.wpn_fps_ass_sub2000.uses_parts)	
+	self.wpn_fps_ass_sub2000_npc.adds = deep_clone(self.wpn_fps_ass_sub2000.adds)	
 
 
 end)
@@ -15096,12 +15206,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hajk", "resmod_hajk", function(sel
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	--VMP parts
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_vg_vmp_vert")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_vg_vmp_cheems")
 	table.insert(self.wpn_fps_smg_hajk.uses_parts, "wpn_fps_vg_vmp_pod")
 
 	self.wpn_fps_smg_hajk_npc.uses_parts = deep_clone(self.wpn_fps_smg_hajk.uses_parts)
+	self.wpn_fps_smg_hajk_npc.override = deep_clone(self.wpn_fps_smg_hajk.override)
 
 end)
 
@@ -15924,6 +16037,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", 
 	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_snp_victor_s_mod0")	
 	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_snp_tti_s_vltor")
 	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_contraband_npc.uses_parts = deep_clone(self.wpn_fps_ass_contraband.uses_parts)		
 
@@ -16145,6 +16260,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flint", "resmod_flint", function(s
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_autofire")
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_upg_ak_m_drum")
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_lmg_rpk_m_ban")
+	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 		
 	self.wpn_fps_ass_flint_npc.uses_parts = deep_clone(self.wpn_fps_ass_flint.uses_parts)	
 
@@ -17004,7 +17121,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_corgi", "resmod_corgi", function(s
 	self.parts.wpn_fps_ass_corgi_b_short.supported = true
 	self.parts.wpn_fps_ass_corgi_b_short.stats = deep_clone(barrels.short_b3_stats)
 	self.parts.wpn_fps_ass_corgi_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+	table.insert(self.wpn_fps_ass_corgi.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_corgi.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
+	self.wpn_fps_ass_corgi_npc.uses_parts = deep_clone(self.wpn_fps_ass_corgi.uses_parts)
+
 end)	
 
 --Compact 40mm
@@ -19428,6 +19550,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 	--Default Mag
 	self.parts.wpn_fps_ass_groza_m_standard.unit = "units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_upg_ak_m_akm"
 
+	self.wpn_fps_ass_groza.adds.wpn_fps_upg_o_northtac = deep_clone(self.wpn_fps_ass_groza.adds.wpn_fps_upg_o_specter)
+
 	self.wpn_fps_ass_groza.override = self.wpn_fps_ass_groza.override or {}
 
 	self.wpn_fps_ass_groza.override.wpn_lmg_rpk_m_ban = {
@@ -19444,8 +19568,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_fps_upg_ak_m_quad")
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_upg_ak_m_drum")
 	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_lmg_rpk_m_ban")
+	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_groza.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	
 	self.wpn_fps_ass_groza_npc.uses_parts = deep_clone(self.wpn_fps_ass_groza.uses_parts)	
+	self.wpn_fps_ass_groza_npc.adds = deep_clone(self.wpn_fps_ass_groza.adds)	
 end)
 
 --KS12 Urban 
@@ -19607,6 +19734,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 
 	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_singlefire")
 	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_autofire")
+	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_shak12_npc.forbids = deep_clone(self.wpn_fps_ass_shak12.forbids)	
 	self.wpn_fps_ass_shak12_npc.uses_parts = deep_clone(self.wpn_fps_ass_shak12.uses_parts)	
@@ -21028,8 +21157,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.supported = true
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.stats = {
-		value = 2,
-		spread = -1
+		value = 2
 	}
 	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.forbids = {
 		"wpn_fps_upg_o_ak_scopemount",
@@ -21075,6 +21203,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 			translation = Vector3(-0.005, 15.5, -4.6)
 		}
 	}
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_ass_ak_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_ass_ak_body_lowerreceiver_gold = { adds = {"wpn_fps_ak_bolt_gold"} }
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_smg_akmsu_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_lmg_rpk_body_lowerreceiver = { adds = {"wpn_fps_ak_bolt"} }
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_ass_akm_nomag = { adds = {"wpn_fps_ak_bolt"} }
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter.stance_mod) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0, -3.6, 1.13)
@@ -21153,6 +21286,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mxm_mods", "resmod_mxm_mods", func
 	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_bmg) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
+		end
+	end	
+
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-22,-0.01)
+		end
+	end
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac_reddot = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-32,-0.01)
+		end
+	end
+	self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override.wpn_fps_upg_o_northtac_alt.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
+			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
 
@@ -21525,8 +21678,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 		zoom = 30
 	}
 	self.parts.wpn_fps_upg_o_northtac.adds = {
-		"wpn_fps_upg_o_northtac_reddot",
-		"wpn_fps_upg_o_northtac_alt"
+		"wpn_fps_upg_o_northtac_reddot", --reddot is now the 2x stand-in
+		"wpn_fps_upg_o_northtac_alt" --This is the reddot; only doing this as "wpn_fps_upg_o_northtac_reddot" is always chosen as the 1st sight to get switched to, dunno what determines order
+	}
+	self.parts.wpn_fps_upg_o_northtac.forbids = {
+		"wpn_fps_amcar_uupg_body_upperreciever",
+		"wpn_fps_ass_m16_os_frontsight",
+		"wpn_fps_ass_scar_o_flipups_up",
+		"wpn_fps_upg_o_xpsg33_magnifier",
+		"wpn_fps_upg_o_sig"
 	}
 	self.parts.wpn_fps_upg_o_northtac.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_northtac.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
@@ -21535,7 +21695,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp3_mods", "resmod_pxp3_mods", fu
 			weap.translation = weap.translation + Vector3(0,-22,-0.01)
 		end
 	end
-	table.insert( self.parts.wpn_fps_upg_o_northtac.forbids, "wpn_fps_ass_scar_o_flipups_up" )
 
 
 	self.parts.wpn_fps_upg_o_northtac_reddot.stats = {
@@ -22676,6 +22835,77 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	--Block scopes unless you have a scopemount
+	self.parts.wpn_fps_mount_lock = {
+		a_obj = "a_o",
+		type = "extra2",
+		name_id = "bm_wp_mount_lock",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		stats = {
+			value = 1
+		},
+		forbids = {
+			"wpn_fps_upg_o_schmidt",
+			"wpn_fps_upg_o_northtac"
+		}
+	}
+
+	attachment_list = {
+		"wpn_fps_ass_74",
+		"wpn_fps_ass_akm",
+		"wpn_fps_ass_akm_gold",
+		"wpn_fps_shot_saiga",
+		"wpn_fps_smg_akmsu",
+		"wpn_fps_lmg_rpk",
+		--Custom weapons
+		"wpn_fps_ass_akm_nomag"
+	}
+	for i, factory_id in ipairs(attachment_list) do
+		if self[factory_id] then
+			for k, used_part_id in ipairs(self[factory_id].uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "lower_reciever" then
+						self.parts[used_part_id].adds = self.parts[used_part_id].adds or {}
+						table.insert(self.parts[used_part_id].adds, "wpn_fps_mount_lock")
+					end
+				end
+			end
+		end
+	end
+
+	for used_part_id, k in pairs(self.parts.wpn_fps_upg_o_ak_scopemount.override) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard" then
+				self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id] = self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id] or {}
+				self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids = self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids or {}
+				if not table.contains(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard") then
+					table.insert(self.parts.wpn_fps_upg_o_ak_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard")
+				end
+			end
+		end
+	end
+	for used_part_id, k in pairs(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard" then
+				self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id] = self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id] or {}
+				self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id].forbids = self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id].forbids or {}
+				if not table.contains(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard") then
+					table.insert(self.parts.wpn_fps_upg_ak_body_upperreceiver_zenitco.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard")
+				end
+			end
+		end
+	end
+	for used_part_id, k in pairs(self.parts.wpn_fps_upg_o_m14_scopemount.override) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_gre_arbiter_o_standard" then
+				self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id] = self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id] or {}
+				self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids = self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids or {}
+				if not table.contains(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard") then
+					table.insert(self.parts.wpn_fps_upg_o_m14_scopemount.override[used_part_id].forbids, "wpn_fps_gre_arbiter_o_standard")
+				end
+			end
+		end
+	end
 
 	self.parts.wpn_fps_upg_i_slower_rof = {
 		type = "custom",
@@ -30600,6 +30830,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						}
 					}
 				}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_upg_o_northtac_reddot = {
+					parent = "exclusive_set_o",
+					stance_mod = {
+						wpn_fps_ass_contraband = {
+							translation = self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+						}
+					}
+				}
+				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_upg_o_northtac_alt = {
+					parent = "exclusive_set_o",
+					stance_mod = {
+						wpn_fps_ass_contraband = {
+							translation = self.parts.wpn_fps_upg_o_northtac_alt.stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+						}
+					}
+				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.override.wpn_fps_smg_car9_o_rail = {
 					parent = "exclusive_set_o"
 				}
@@ -35781,7 +36027,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		end
 	end
-	
+
 	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
 			if self.parts[used_part_id].type == "barrel_ext" then
@@ -35945,7 +36191,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	self.wpn_fps_lmg_rpk.override.wpn_fps_upg_o_ak_scopemount = {
 		adds = {
-			"wpn_fps_lmg_rpk_ak_unit"
+			"wpn_fps_lmg_rpk_ak_unit",
+			"wpn_fps_gre_arbiter_o_standard"
 		},
 		override = deep_clone(self.parts.wpn_fps_upg_o_ak_scopemount.override)
 	}

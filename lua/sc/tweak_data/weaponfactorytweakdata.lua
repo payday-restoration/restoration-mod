@@ -22347,9 +22347,9 @@ end)
 --AMAROQ 900 SCOPE
 Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", function(self)
 	self.parts.wpn_fps_upg_o_schmidt.supported = true
-	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_4_vari"
+	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_5_vari"
 	self.parts.wpn_fps_upg_o_schmidt.stats = {
-		zoom = 30,
+		zoom = 40,
 		base_zoom_off = 70,
 		value = 8
 	}
@@ -22362,7 +22362,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", fu
 	self.parts.wpn_fps_upg_o_schmidt.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	for i, weap in pairs(self.parts.wpn_fps_upg_o_schmidt.stance_mod) do
 		if weap and i ~= wep_id and weap.translation then
-			weap.translation = weap.translation + Vector3(0, -25, -0.8)
+			weap.translation = weap.translation + Vector3(0, -20, -0.8)
 		end
 	end
 	table.insert( self.parts.wpn_fps_upg_o_schmidt.forbids, "wpn_fps_ass_scar_o_flipups_up" )

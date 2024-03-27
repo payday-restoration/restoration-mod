@@ -401,6 +401,7 @@ local crew_wep_preset = {
 	
 		--Sniper Trail for Snipers
 		self.m14_sniper_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
+		self.m14_sniper_npc.use_sniper_trail = true
 	end
 	
 	function WeaponTweakData:_set_sm_wish()
@@ -443,6 +444,7 @@ local crew_wep_preset = {
 	
 		--Sniper Trail for Snipers
 		self.m14_sniper_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
+		self.m14_sniper_npc.use_sniper_trail = true
 	end
 	
 	function WeaponTweakData:_init_data_npc_melee()
@@ -853,12 +855,14 @@ local crew_wep_preset = {
 		self.asval_snp_npc = deep_clone(self.m14_sniper_npc)
 		self.asval_snp_npc.has_suppressor = "suppressed_a"
 		self.asval_snp_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")
+		self.asval_snp_npc.use_sniper_trail = true
 				
 		--Railgun
 		self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 		self.railgun_npc.CLIP_AMMO_MAX = 4
 		self.railgun_npc.DAMAGE = 18
 		self.railgun_npc.trail_effect = Idstring("effects/particles/weapons/sniper_trail_sc")		
+		self.railgun_npc.use_sniper_trail = true		
 		--self.railgun_npc.sounds.prefix = "barrett_npc"
 	end
 	
@@ -1513,6 +1517,7 @@ local crew_wep_preset = {
 		self.scar_npc.suppression = 2.8
 		self.scar_npc.FIRE_MODE = "single"
 		self.scar_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
+		self.scar_npc.use_sniper_trail = true
 		self.scar_npc.usage = "is_dmr"
 		self.scar_npc.anim_usage = "is_rifle"	
 		self.scar_secondary_npc = deep_clone(self.scar_npc)
@@ -1524,6 +1529,7 @@ local crew_wep_preset = {
 		self.dmr_npc = deep_clone(self.scar_npc)
 		self.dmr_npc.sounds.prefix = "saint_victor_npc"
 		self.dmr_npc.trail_effect = Idstring("effects/particles/weapons/titan_trail_sc")
+		self.dmr_npc.use_sniper_trail = true
 		self.dmr_npc.trail = nil
 		
 		--Type-7
@@ -1534,6 +1540,7 @@ local crew_wep_preset = {
 		--Needs a new muzzleflash + Trail effect pls
 		--self.type_7_npc.muzzleflash =  Idstring("effects/payday2/particles/character/taser_hittarget")
 		self.type_7_npc.trail_effect = Idstring("effects/particles/weapons/akan_titan_trail_sc")
+		self.type_7_npc.use_sniper_trail = true
 	end	
 	
 	function WeaponTweakData:_init_data_m249_npc()

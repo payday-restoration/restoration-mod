@@ -2847,9 +2847,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--S7
 					["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 					["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields and thin walls.##",	
-					["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
+					["flexfire_desc"] = "#{important_1}#Scope reduced to a fixed 3x magnification.\nCan no longer pierce titan-grade shields.##",
 					["oracle_scope"] = "Oracle TechLink Scope",
-					["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
+					["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5-10x magnification.##",
 					--SVD
 					["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 					--Highly Modified CAR-4

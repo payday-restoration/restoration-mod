@@ -33891,7 +33891,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	if self.parts.wpn_fps_snp_srs99_s7_scope then
 		self.parts.wpn_fps_snp_srs99_s7_scope.supported = true
+		self.parts.wpn_fps_snp_srs99_s7_scope.has_second_sight = true
 		self.parts.wpn_fps_snp_srs99_s7_scope.stats = { value = 0, zoom = 40 }
+		self.parts.wpn_fps_snp_srs99_s7_scope.adds = { "wpn_fps_snp_srs99_s7_scope_zoom" }
 		self.parts.wpn_fps_snp_srs99_s7_scope.custom_stats = { disable_steelsight_recoil_anim = true }
 		self.parts.wpn_fps_snp_srs99_s7_scope.perks = {"scope"}
 		self.parts.wpn_fps_snp_srs99_s7_scope.stance_mod = {
@@ -33915,6 +33917,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		}
 		self.parts.wpn_fps_snp_srs99_s7_scope_reticle.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
+
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom = deep_clone(self.parts.wpn_fps_snp_srs99_s7_scope)
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.pcs = nil
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.forbids = nil
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.adds = nil
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.type = "extra"
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.sub_type = "second_sight"
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.perks = { "second_sight" }
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_upg_o_schmidt/wpn_fps_upg_o_schmidt_magnified"
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.third_unit = nil
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.stats = {
+			value = 1,
+			gadget_zoom = 90
+		}
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.stance_mod = {
+			wpn_fps_snp_srs99_s7 = {
+				translation = Vector3(0.147, 13, 5.725),
+				rotation = Rotation(0, 0, 1)
+			}
+		}
+		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.custom_stats = {
+			use_primary_steelsight_unit = true
+		}
 
 		local optic_steelsights = {
 			wpn_fps_snp_srs99_s7_scope = {
@@ -33960,6 +33985,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[steelsight_id].visibility = {
 				{
 					objects = {
+						g_gfx_lens = false,
+						g_gfx_lens_2 = false,
+						g_gfx_lens_3 = false,
 						g_box = false,
 						g_s7_barrel = false,
 						g_s7_muzzle_brake = false,
@@ -33982,9 +34010,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_srs99_s7_scope_steelsight.visibility = {
 			{
 				objects = {
+					g_gfx_lens = false,
+					g_gfx_lens_2 = false,
+					g_gfx_lens_3 = false,
 					g_box = false,
-					g_reddot = false,
-					g_reticle = false,
 				}
 			}
 		}
@@ -33995,15 +34024,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.keep_damage = true
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.supported = true
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.override = {
+			wpn_fps_snp_srs99_s7_scope = {
+				adds = { "wpn_fps_snp_srs99_s7_scope_steelsight" }
+			},
+			wpn_fps_snp_srs99_s7_scope_reticle = {
+				adds = { "wpn_fps_snp_srs99_s7_scope_reticle_steelsight" }
+			}
+		}
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.desc_id = "flexfire_desc"
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.stats = {
 			value = 10,
+			zoom = -20,
 			damage = -30,
 			spread = -10,
 			total_ammo_mod = 68,
 			extra_ammo = 6,
 			recoil = 10,
 			concealment = 5
+		}
+		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.stance_mod = {
+			wpn_fps_snp_srs99_s7 = {
+				translation = Vector3(0, -7.1, 0)
+			}
 		}
 		self.parts.wpn_fps_snp_srs99_s7_internals_flexfire.custom_stats = {
 			alt_desc = "bm_w_srs99_s7_flexfire_desc",

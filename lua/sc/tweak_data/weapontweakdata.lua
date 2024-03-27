@@ -3225,7 +3225,7 @@ function WeaponTweakData:_init_stats()
 	end
 
 	self.stats.zoom = {}
-	for i = 1, 12.1, 0.1 do
+	for i = 1, 20.1, 0.1 do
 		table.insert(self.stats.zoom, 65 / i)
 	end
 

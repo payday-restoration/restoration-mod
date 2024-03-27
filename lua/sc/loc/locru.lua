@@ -173,7 +173,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAutoDMRsTitleID"] = "Авто. марксманские винтовки",
 		["RestorationModAutoDMRsDescID"] = "Марксманские винтовки будут сразу установлены в автоматический режим.",
 		["RestorationModWpnFireDescopeTitleID"] = "Выход из прицеливания для некоторых оружий",
-		["RestorationModWpnFireDescopeDescID"] = "Позволяет временно выйти из режима прицеливания во время стрельбы, чтобы не было ситуаций, когда руки во время анимации проходили через камеру игрока. Не работает для оружий, у которых в описании написано про выход из режима прицеливания.",
+		["RestorationModWpnFireDescopeDescID"] = "Позволяет временно выйти из режима прицеливания во время стрельбы, чтобы не было ситуаций, когда руки во время анимации проходили через камеру игрока.\nНе работает для оружий, у которых в описании написано про выход из режима прицеливания.",
 		["RestorationModSprintCancelTitleID"] = "'Изворотливый' отменяет перезарядку",
 		["RestorationModSprintCancelDescID"] = "Пиковый навык \"Изворотливый\" отменит перезарядку при начале бега. Перезарядка во время бега не отменяется.",
 		["RestorationModSevenHoldTitleID"] = "Липкие интеракции (Press2Hold)",
@@ -1902,9 +1902,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--S7
 			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
 			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
-			["flexfire_desc"] = "#{important_1}#Не может пробивать титановые щиты.##",
+			["flexfire_desc"] = "#{important_1}#Увеличение прицела будет равняться 3х\nНе может пробивать титановые щиты.##",
 			["oracle_scope"] = "Прицел Oracle TechLink",
-			["oracle_scope_desc"] = "Меняет точку прицела на #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 5x.##",
+			["oracle_scope_desc"] = "Меняет точку прицела на #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 5-10x.##",
 		--Marlin 1894
 		--["bm_w_m1894"] = "Mare's Leg",
 		--SPX Centerfire

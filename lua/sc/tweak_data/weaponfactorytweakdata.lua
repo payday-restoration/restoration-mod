@@ -22348,6 +22348,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_pxp4_mods", "resmod_pxp4_mods", function(self)
 	self.parts.wpn_fps_upg_o_schmidt.supported = true
 	self.parts.wpn_fps_upg_o_schmidt.desc_id = "bm_wp_upg_o_5_vari"
+	self.parts.wpn_fps_upg_o_schmidt.has_second_sight = true
 	self.parts.wpn_fps_upg_o_schmidt.stats = {
 		zoom = 40,
 		base_zoom_off = 70,

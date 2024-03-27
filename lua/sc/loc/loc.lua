@@ -198,7 +198,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
 		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
 		["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
-		["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not certain weapons de-scope temporarily when shooting. Please note the de-scope is in place to reduce clipping, leaving this disabled will result in some sights clipping when shooting. Setting is ignored on weapons that mention de-scope as a mechanic.",
+		["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sight may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",

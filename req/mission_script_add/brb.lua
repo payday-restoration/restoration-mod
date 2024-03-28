@@ -12,7 +12,12 @@ local murky_taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_t
 local murky_cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
-local mayhem_above = difficulty >= 6
+local death_wish_above = difficulty >= 7
+local dozer_incoming = "Play_ban_s02_a"
+
+	if difficulty >= 5 then
+		dozer_incoming = "Play_ban_s02_b"
+	end
 	
 	if difficulty == 4 or difficulty == 5 then
 		murky_shield = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"
@@ -90,7 +95,7 @@ local optsBulldozer_black = {
 local optsBulldozer_skull = {
     enemy = murky_tank_skull,
 	participate_to_group_ai = true,
-    enabled = mayhem_above
+    enabled = death_wish_above
 }
 local optsrespawn_murkies_1 = {
 	on_executed = { 
@@ -112,8 +117,7 @@ local optsrespawn_murkies_2 = {
 		{ id = 400008, delay = 35 },
 		{ id = 400009, delay = 35 },
 		{ id = 400010, delay = 35 },
-		{ id = 400011, delay = 35 },
-		{ id = 400026, delay = 35 }
+		{ id = 400011, delay = 35 }
 	},
 	elements = { 
 		400007
@@ -122,11 +126,9 @@ local optsrespawn_murkies_2 = {
 }
 local optsrespawn_murkies_3 = {
 	on_executed = { 
-		{ id = 400012, delay = 60 },
-		{ id = 400013, delay = 60 },
-		{ id = 400014, delay = 60 },
-		{ id = 400015, delay = 60 },
-		{ id = 400016, delay = 60 }
+		{ id = 400012, delay = 35 },
+		{ id = 400015, delay = 35 },
+		{ id = 400016, delay = 35 }
 	},
 	elements = { 
 		400012
@@ -170,6 +172,33 @@ local optsrespawn_murkies_cloakers = {
 	},
     event = "death"
 }
+local optsrespawn_murky_dozer_1 = {
+	on_executed = { 
+		{ id = 400013, delay = 90 }
+	},
+	elements = { 
+		400013
+	},
+    event = "death"
+}
+local optsrespawn_murky_dozer_2 = {
+	on_executed = { 
+		{ id = 400014, delay = 90 }
+	},
+	elements = { 
+		400014
+	},
+    event = "death"
+}
+local optsrespawn_murky_dozer_3 = {
+	on_executed = { 
+		{ id = 400026, delay = 90 }
+	},
+	elements = { 
+		400026
+	},
+    event = "death"
+}
 local global_murky_spawn_mission_script = {
 	enabled = true,
 	on_executed = { 
@@ -204,6 +233,11 @@ local global_murky_spawn_mission_script = {
 		{ id = 400030, delay = 120 },
 		{ id = 400031, delay = 120 }
 	}
+}
+local Bain_senddozers = {
+	dialogue = dozer_incoming,
+	trigger_times = 1,
+	can_not_be_muted = true
 }
 
 return {
@@ -467,6 +501,32 @@ return {
             Vector3(-2400, -3677, 375),
             Rotation(90, -0, -0),
             optsrespawn_murkies_5
+        ),
+		restoration:gen_dummytrigger(
+            400038,
+            "respawn_the_murky_7",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_murky_dozer_1
+        ),
+		restoration:gen_dummytrigger(
+            400039,
+            "respawn_the_murky_8",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_murky_dozer_2
+        ),
+		restoration:gen_dummytrigger(
+            400040,
+            "respawn_the_murky_9",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_murky_dozer_3
+        ),
+		restoration:gen_dialogue(
+            400041,
+            "they_sending_dozers",
+            Bain_senddozers
         )
     }
 }

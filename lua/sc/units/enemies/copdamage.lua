@@ -1968,7 +1968,7 @@ function CopDamage:die(attack_data)
 		self._unit:damage():run_sequence_simple("kill_smoke_winters")
 	end
 	
-	if self._unit:base()._tweak_table == "summers" then
+	if self._unit:base()._tweak_table == "summers" or self._unit:base()._tweak_table == "headless_hatman"  then
 		self._unit:damage():run_sequence_simple("kill_feet_fire_summers")
 	end
 

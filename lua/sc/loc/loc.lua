@@ -197,6 +197,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["rr_full"] = "Full",
 		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
 		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
+		["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
+		["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sight may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
 		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
@@ -905,8 +907,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_completed_challenges"] = "Completed Challenges",
 		["resmod_completed_challenges_hint"] = "Completed and rewarded challenges.",
 
-		["ch_vs_desc"] = "Using a $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
-		["ch_vs_head_shots_desc"] = "Using a $weapon, defeat $count $eneType with Headshots.",
+		["ch_vs_desc"] = "Using $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
+		["ch_vs_head_shots_desc"] = "Using $weapon, defeat $count $eneType with Headshots.",
 		["ch_vs"] = "$weapon VS. $eneType $no",
 		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
 
@@ -1268,12 +1270,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_rds_mount"] = "Mid-range scope with a top-mounted reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted reflex sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
+		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_4_valentine"] = "\"I got a class assignment for all of y'all!\"\n\nVariable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
 		["bm_wp_upg_o_5"] = "Long-range scope.\n#{risk}#5x magnification.##",
 		["bm_wp_upg_o_5_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#5x magnification.##",
+		["bm_wp_upg_o_5_vari"] = "Variable zoom scope.\n#{risk}#5-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_6"] = "Long-range scope.\n#{risk}#6x magnification.##",
 		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##",
 		["bm_wp_upg_o_8"] = "Long-range scope.\n#{risk}#8x magnification.##",
@@ -1373,8 +1376,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Deals 25% of its damage through body armor.##",
 		["bm_ap_armor_50_weapon_sc_desc"] = "#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 		["bm_ap_armor_80_weapon_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
-		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
-		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+		["bm_pdw_gen_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
+		["bm_heavy_ap_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 		["bm_heavy_ap_no_mult_weapon_sc_desc"] = "#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 		["bm_bow_sc_desc"] = "Hold #{skill_color}#$BTN_FIRE## to draw an arrow, release to fire.\nDamage and velocity of the arrow increases as you approach full draw.\n\nPress #{skill_color}#$BTN_AIM## to let down your drawn arrow.\n\nArrows can be retrieved by picking them up.\n#{skill_color}#Can pierce body armor.##",
@@ -1447,6 +1450,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 				["bm_melee_pattern_briefcsae"] = "Attack with forward strikes or charge up by at least #{skill_color}#50%## for downward swings.",
 
 				["bm_melee_pattern_blunt"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings.", --Also works with "melee_brick", "melee_happy" and "melee_cleaver"
+					["bm_melee_pattern_blunt_90"] = "Attack with downward strikes or charge up by at least #{skill_color}#90%## for wide swings.",
 
 				["bm_melee_pattern_beardy"] = "Attack with downward strikes or charge up by at least #{skill_color}#50%## for wide swings. Strafing influences charged attack direction.",
 				
@@ -1521,6 +1525,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_fireaxe_info"] = "Do you like hurting other people?\n\nIf you do, what better way to do it than with something intended to save lives! Show your victims the fire in your eyes as you save them from yourself in one quick chop.",
 		--Briefcase
 		["bm_melee_briefcase_info"] = "Whatever may be inside, the briefcase itself is shockingly resilient.\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
+			--Toasty
+			["bm_melee_toast"] = "Almir's Toast",
+			["bm_melee_toast_info"] = "Are ya hungry?\n\nReduces incoming ranged damage by #{skill_color}#10%## while charging.",
 
 		--KA-BAR Tanto
 		["bm_melee_kabar_tanto_info"] = "The Tanto blade shape, of Asian influence, has a thick pointed blade that's good for penetration. This knife is designed for the toughest of tasks.",
@@ -1651,6 +1658,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Pitch fork
 		["bm_melee_pitch_info"] = "Bidents, tridents, who cares? They're basically pitch forks. If Poseidon and Lucifer can use them, so can we.\n\nSprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
+			["bm_melee_number_3_info"] = "\"If you would kill for your ideals, then surely you are ready to die for them!\"\n\nSprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
 			["bm_melee_charge_info"] = "Sprinting forwards starts a sprint charge that deals #{skill_color}#45## damage every #{skill_color}#0.4## seconds to targets in front of you. This can be increased with skills.\n\nHitting an enemy while sprint charging drains #{important_1}#15%## of your max stamina; a killing blow gives back #{skill_color}#10%.##\n\n#{important_1}#You cannot parry enemy attacks, even when not sprint charging.##",
 		--BONK
 		["bm_melee_scoutknife_info"] = "Don't let the rusty and worn appearance turn you off. A knife is always a knife - and some say an old knife ages just like a good wine (no one has probably ever said that). Try it out and you'll see things will bleed.",
@@ -2372,7 +2380,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_suppressor_boss"] = "\"What a thrill...\"\n\n#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##",
 				["bm_wp_upg_suppressor_warn"] = "#{skill_color}#Silences## your weapon and #{risk}#reduces the chance of enemies evading your aim.##\n\n#{important_1}#May block sights.##",
 				["bm_wp_upg_o_shortdot_dmc"] = "Shortdot Scope",
-				["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{skill_color}#5x magnification.##",
+				["bm_wp_upg_o_5_default"] = "Long-range scope.\nAttach to be able to modify the default sniper scope reticle.\n#{risk}#5x magnification.##",
 				["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
 				["bm_wp_upg_drum_desc"] = "",
 				["bm_wp_upg_drum2_desc"] = "",
@@ -2452,7 +2460,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_hs2000_sc_desc"] = "Interpol agents, crooked Croatian cops, and international criminals alike will find this compact blaster effective.",
 				["bm_wp_hs2000_sl_long"] = "Elite Slide",
 				--5/7 pistol
-				["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				["bm_lemming_sc_desc"] = "Power and capacity combined. If it isn't dead in 20 rounds you probably shouldn't be shooting at it.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--Baby Deagle--
 				["bm_sparrow_sc_desc"] = "SEE YOU SPACE COWBOY...",
 				["bm_w_sparrow_sc_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
@@ -2514,13 +2522,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			
 			--[[ SMGs ]]
 				--Kobus 90
-				["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the SpecOps-7 SMG. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				["bm_wp_p90_body_p90_tan"] = "Tan Stock",
 				["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 				--Spec Ops
-				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--Heather
-				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
+				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--Compact-5/MP5
 				["bm_mp5_sc_desc"] = "The little sister to the Gewehr-3.\nFast-firing, accurate and easy to handle, what more could you want out of an SMG?",
 				--Pachett/Sterling
@@ -2538,7 +2546,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_m7caseless"] = "Dual M7 SMGs",
 					["bm_w_x_m7caseless_supp"] = "Dual M7S SMGs",
 					--AR57
-					["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+					["bm_w_alpha57_prim_desc"] = "The FSS Hurricane sacrifices range and stopping power for increased ammo capacity and enhanced stabililty.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 					--LWRC
 					["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
 					--Typhoon
@@ -2632,7 +2640,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_med_desc"] = "Type of pellets effective at medium range.\n#{important_1}#Lowers pellet count to 6.##",
 					["bm_wp_wpn_fps_upg_quadbarrel_ammo_slug_desc"] = "Powerful steel slug effective at long range.\nCapable of #{skill_color}#piercing body armor, enemies, shields, titan shields, and walls.##",
 					--REBECCA CYBERPUNK
-					["bm_w_rebecca_desc"] = "It'll wreak bloody havoc, though it can be a little unpredictable.",
+					["bm_w_rebecca_desc"] = "It'll wreak bloody havoc, though it can be a little unpredictable.\n#{risk}#Shooting imparts knockback on yourself and temporarily knocks you out of aiming.##",
 					--Widowmaker TX
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "Extended Magazine",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "Burst Fire System",
@@ -2764,8 +2772,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_ass_t9british_xmag_02"] = "STANAG 40 Rnd Mag",
 					["bm_wp_wpn_fps_ass_t9british_magazine_mix_02"] = "Salvo 30 Rnd Fast Mag",
 					--MCX Spear
-					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor and headshots deal 33% more damage to non-captain enemies.##",
-					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 75% of its damage through body armor, can pierce enemies and headshots deal 33% more damage to non-captain enemies.##",
+					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Deals 75% of its damage through body armor.##",
+					["bm_ngsierra_sc_desc"] = "Uses a unique recoil mitigation system to control its 6.8x51mm TCVM plastic cartridge.\n\n#{skill_color}#Deals 75% of its damage through body armor, can pierce enemies.##",
 					--["bm_w_xeno"] = "MA14 Surge Rifle",	
 					["bm_xeno_sc_desc_pc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nPress #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
 					["bm_xeno_sc_desc"] = "From \"Armat\" comes this strange piece of space-age technology. Comes equipped with an #{skill_color}#integrated grenade launcher.##\n\nHold #{skill_color}#$BTN_BIPOD## to switch to the grenade launcher.",
@@ -2806,8 +2814,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_awp_cs_dragon"] = "AWP | Dragon Lore",
 				["bm_awp_cs"] = "AWP",
 				["bm_wp_upg_bazooka"] = "Dragon Lore-less Exclusive Set",
-				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##",
-				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+				["bm_wp_upg_bazooka_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##\n#{skill_color}#Allows for piercing titan-shields.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
+				["bm_bazooka_sc_desc"] = "High risk and high reward, this infamous rifle is recognizable by its signature report and one-shot, one-kill policy.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##\n\n#{risk}#Shooting temporarily knocks you out of aiming.##",
 				--WA2000
 				["bm_wa2000_sc_desc"] = "Only a few hundred of these prestigious rifles were made; a sniper fitting for a top-tier hitman.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				--Rangerhitter
@@ -2830,18 +2838,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Flintlock--
 				["bm_bessy_sc_desc"] = "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.\n\n#{skill_color}#Deals 100% more damage to special and elite enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Thanatos--
-				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+				["bm_m95_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 				--Custom Snipers
 					--M107
-					["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					["bm_m107cq_sc_desc"] = "If the Thanatos wasn't up to speed, then the Mors will deliver what you want as a fine, red mist.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 					--M200
-					["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					["bm_m200_sc_desc"] = "For those wanting to perform some sweet 360 no-scope ladder-stall shots.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 					--S7
-					["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
-					["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields and thin walls.##",	
-					["flexfire_desc"] = "#{important_1}#Can no longer pierce titan-grade shields.##",
+					["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+					["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields and thin walls.##",	
+					["flexfire_desc"] = "#{important_1}#Scope reduced to a fixed 3x magnification.\nCan no longer pierce titan-grade shields.##",
 					["oracle_scope"] = "Oracle TechLink Scope",
-					["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5x magnification.##",
+					["oracle_scope_desc"] = "Use to change the reticle of the default #{skill_color}#Smart-Link## scope.\n#{risk}#5-10x magnification.##",
 					--SVD
 					["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 					--Highly Modified CAR-4
@@ -3578,12 +3586,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--P90
 					["bm_w_p90"] = "FN P90 TR",
 					["bm_w_x_p90"] = "Akimbo P90s",
-					["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the MP7. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+					["bm_p90_sc_desc"] = "A bullpup SMG and competitor to the MP7. Frequently commented on as looking like a futuristic space gun.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 					["bm_wp_p90_b_long"] = "PS90 Barrel",
 					["bm_wp_p90_b_civilian"] = "Moerse Lekker Barrel Shroud",
 					--MP7
 					["bm_w_mp7"] = "H&K MP7A2", --PD2's version kinda existed before the real MP7A2 was a thing so there's still some MP7A1 bits on it but w/e
-					["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the P90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 66% more damage to non-captain enemies.##",
+					["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the P90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 					["bm_wp_mp7_b_suppressed"] = "B&T Rotex-II Suppressor",
 					["bm_wp_mp7_s_long"] = "Extended Stock",
 					["bm_wp_mp7_m_extended"] = "MP7 40rnd Magazine",
@@ -3608,7 +3616,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SR-2M
 					["bm_w_sr2"] = "TsNIITochMash SR-2M \"Veresk\"",
 					["bm_w_x_sr2"] = "Akimbo SR-2Ms",
-					["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the SR-2M is the Russian answer to the P90 and MP7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor and headshots deal 50% more damage to non-captain enemies.##",
+					["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the SR-2M is the Russian answer to the P90 and MP7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 					--Miyaka 9
 					["bm_w_pm9"] = "Minebea PM-9",
 					--FMG9
@@ -4064,7 +4072,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--PD3 Lynx
 						["bm_w_pd3_lynx"] = "SERO Gepard M6",
 						--M107
-						["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Headshots deal 100% more damage to non-captain enemies.\nCan pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
+						["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 				--[[SPECIALS]]
 					--GL40		
@@ -4212,10 +4220,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",
 
-						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope",
+						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope w/Micro Reflex",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
+
+						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Reflex",
+						["bm_wp_uupg_o_schmidt"] = "Schmidt & Bender 5-45x56 PM II High Power",
 	
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
+						["bm_wp_upg_o_shortdot"] = "Schmidt & Bender 1-8x24 PM Short Dot",
+						["bm_wp_upg_o_shortdot_dmc"] = "Schmidt & Bender 1-8x24 PM Short Dot",
 						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
 						["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
 	
@@ -4801,6 +4814,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_34"] = "Weapon butt melee speeds are affected by the weapon's mobility rating.",
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
 		["loading_equip_skills_res_36"] = "During combat, silencers reduce the likelihood of enemies evading your aim. Just be aware that the time they spend not dodging you is likely going to be put towards shooting you instead.",
+		["loading_equip_skills_res_37"] = "When aiming, optics have a recoil reduction that scales with their current magnification level to aid in shooting over longer ranges; this comes at the cost of slower aim times.",
+		["loading_equip_skills_res_38"] = "The \"Cleave\" stat for melee weapons represents how many enemies you can hit with a single attack.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
 		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",	
@@ -5004,8 +5019,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pda10_post_objective_4_desc"] = "Collect 50 Gage Packages",
 		
 		["mutator_bravos_only"] = "Hardline",
-		["mutator_bravos_only_desc"] = "All enemies are replaced by their PONR equivalents.",
-		["mutator_bravos_only_longdesc"] = "All non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs at all times. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["mutator_bravos_only_desc"] = "Enemies are replaced by their PONR equivalents.",
+		["mutator_bravos_only_longdesc"] = "Non-scripted spawn enemies are replaced by their Point of No Return equivalent spawns from Pro-Jobs. FBI SWATs will replace Blue SWATs, and FBI SWATs will be replaced by National Guard Bravo units.",
+		["menu_bravo_replacement_choice"] = "Replacement Method",
+		["menu_mutator_bravo_replacement_all"] = "All Units",
+		["menu_mutator_bravo_replacement_random"] = "Random Chance",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
 
 		["mutator_zombie_outbreak"] = "The Dead Walking",
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
@@ -5248,7 +5267,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#$skill_value_b1## increase to their max damage for #{skill_color}#$skill_value_b2## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and instead lasts #{skill_color}#$skill_value_p2## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#$skill_value_p2## faster.",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#$skill_value_b1## increase to their max damage for #{skill_color}#$skill_value_b2## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and instead lasts #{skill_color}#$skill_value_p1## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#$skill_value_p2## faster.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--

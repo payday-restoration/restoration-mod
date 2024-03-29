@@ -558,31 +558,33 @@
 			<option_group name="OTHER">
 
 				<option_group name="WeaponHandling">
-					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
-					<divider name="tod_divider" size="15"/>
+					<option type="bool" default_value="true" name="WpnFireDescope"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="ManualReloads"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="QueuedShooting"/>
 					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
 					<option type="bool" default_value="true" name="QueuedShootingMidBurst"/>
 					<option type="number" default_value="0.3" min="0" max="3" step="0.01" show_value="true" name="QueuedShootingBurstExclude"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
-					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SecondSightSprint"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
-					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SprintCancel"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="7"/>
 					<option type="bool" default_value="false" name="AimDeploysBipod"/>
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="SecondSightSprint"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SprintCancel"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>

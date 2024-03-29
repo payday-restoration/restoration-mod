@@ -4991,6 +4991,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_bravos_only"] = "死亡地带",
         ["mutator_bravos_only_desc"] = "所有敌人将被替换为同等类别的有去无回单位。",
         ["mutator_bravos_only_longdesc"] = "所有非地图脚本生成的敌人都被替换成专家模式有去无回里的同类别单位。FBI SWAT将替代蓝皮SWAT，并且FBI SWAT会被替换成Bravo临界反应部队。",
+		["menu_bravo_replacement_choice"] = "Replacement Method",
+		["menu_mutator_bravo_replacement_all"] = "All Units",
+		["menu_mutator_bravo_replacement_random"] = "Random Chance",
+		["menu_mutator_bravo_replacement_slider"] = "Replacement Chance (in %)",
 
         ["mutator_zombie_outbreak"] = "行尸走肉",
         ["mutator_zombie_outbreak_desc"] = "所有敌军都将被替换为丧尸单位。",

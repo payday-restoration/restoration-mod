@@ -2180,6 +2180,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_armorer = {
 			name_id = "menu_st_spec_3",
 			desc_id = "menu_st_spec_3_desc",
+			force_icon = 5,
 			category = "defensive",
 			{
 				upgrades = {
@@ -2433,6 +2434,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_burglar = {
 			name_id = "menu_st_spec_7",
 			desc_id = "menu_st_spec_7_desc",
+			force_icon = 5,
 			dlc = "character_pack_clover",
 			category = "defensive",
 			{
@@ -3065,15 +3067,17 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			},
 			name_id = "menu_st_spec_16",
-			dlc = "wild",
 			desc_id = "menu_st_spec_16_desc",
-			category = "defensive"
+			force_icon = 1,
+			category = "defensive",
+			dlc = "wild"
 		}
 
 	--YOU AND I--
 	local sc_scarface = {
 			name_id = "menu_st_spec_17",
 			desc_id = "menu_st_spec_17_desc",
+			force_icon = 1,
 			category = {
 				"offensive",
 				"activated"
@@ -3142,6 +3146,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local sc_wall = {
 			name_id = "menu_st_spec_18",
 			desc_id = "menu_st_spec_18_desc",
+			force_icon = 1,
 			category = {
 				"supportive",
 				"activated"
@@ -3361,12 +3366,13 @@ function SkillTreeTweakData:init(tweak_data)
 				}
 			},
 			name_id = "menu_st_spec_20",
-			dlc = "ecp",
 			desc_id = "menu_st_spec_20_desc",
+			force_icon = 1,
 			category = {
 				"supportive",
 				"activated"
-			}
+			},
+			dlc = "ecp"
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
@@ -3444,6 +3450,7 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			desc_id = "menu_st_spec_21_desc",
 			name_id = "menu_st_spec_21",
+			force_icon = 1,
 			category = {
 				"supportive",
 				"activated"
@@ -3533,6 +3540,7 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			desc_id = "menu_st_spec_22_desc",
 			name_id = "menu_st_spec_22",
+			force_icon = 1,
 			category = {
 				"offensive",
 				"activated"

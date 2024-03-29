@@ -5,6 +5,13 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+-- LPF effect positions
+local effect_usual = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
+local effect_no_gear = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear")
+local effect_high = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high")
+local effect_low = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low")
+local effect_tank = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank")
+local effect_tank_titan = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan")
 -- Tables below need for LPF effect handling
 local units_no_gear = { 
 	"cop",
@@ -32,14 +39,24 @@ local units_low = { -- Zeal heavies and grenadier need lower effect position
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"),
+	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
 }
 
 local hrt_exclude_list = { -- for HRT enemies where usual effect position will be better
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk"),
 	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
 }
 
 local murky_no_gear = { -- Majority of murky units looks better with "no_gear" effect position
@@ -53,7 +70,7 @@ local murky_no_gear = { -- Majority of murky units looks better with "no_gear" e
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
-	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
 }
 
 function CopBase:enable_lpf_buff(state)
@@ -64,12 +81,6 @@ function CopBase:enable_lpf_buff(state)
 	local align_obj_name = Idstring("Head")
 	local align_obj = self._unit:get_object(align_obj_name)
 	
-	local effect_usual = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
-	local effect_no_gear = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear")
-	local effect_high = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high")
-	local effect_low = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_heavy")
-	local effect_tank = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank")
-	local effect_tank_titan = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan")
 	local effect_id = effect_usual
  	
 	local unit = self._unit:base()._tweak_table
@@ -90,8 +101,10 @@ function CopBase:enable_lpf_buff(state)
 	if table.contains(units_low, unit_name) then
 		effect_id = effect_low
 	end
-		
-	if unit == "taser_titan" then
+	
+	local faction = tweak_data.levels:get_ai_group_type()
+	
+	if unit == "taser_titan" and faction ~= "zombie" then
 		effect_id = effect_high
 	end
 		
@@ -103,9 +116,9 @@ function CopBase:enable_lpf_buff(state)
 	end
 
 	self._overheal_unit = World:effect_manager():spawn({
-			effect = effect_id,
-			parent = align_obj
-		})
+		effect = effect_id,
+		parent = align_obj
+	})
 end
 
 function CopBase:disable_lpf_buff(state)

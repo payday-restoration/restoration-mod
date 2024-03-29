@@ -1135,7 +1135,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._queue_burst = nil
 						end
 
-						if weap_base._descope_on_fire then
+						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
 						end
 						
@@ -1176,7 +1176,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								end
 							end
 						end
-						local srm = weap_tweak_data.recoil_values and weap_tweak_data.recoil_values.srm
+						local srm = weap_base._srm
 						local shots_fired = srm and math.max(weap_base._shots_fired - 1 - (srm[3] or 0), 0)  or 0
 						local shots_fired_mult = srm and math.round(100000 * math.clamp( 1 - (shots_fired * srm[1]) , srm[2][1], srm[2][2])) / 100000
 						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired_mult or 1)
@@ -2176,10 +2176,10 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 
 	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
-		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.raycasts_charge_h) or 
-		(self._melee_charge_bonus and melee_weapon.raycasts_charge) or 
-		(self._melee_attack_var_h and melee_weapon.raycasts_h) or 
-		(melee_weapon.raycasts)
+		local num_casts = (self._melee_attack_var_charge_h and melee_weapon.stats.raycasts_charge_h) or 
+		(self._melee_charge_bonus and melee_weapon.stats.raycasts_charge) or 
+		(self._melee_attack_var_h and melee_weapon.stats.raycasts_h) or 
+		(melee_weapon.stats.raycasts)
 
 		if num_casts and num_casts > 1 then
 			--Originally by Hoxi and Offyerrocker; butchered into whatever you wanna call this by DMC
@@ -2240,7 +2240,7 @@ function PlayerStandard:_update_melee_timers(t, input)
 			local is_even = num_casts % 2 == 0
 			local half_casts = math.floor(num_casts / 2)
 			local angle_interval = (self._melee_charge_bonus and melee_weapon.interval_charge or melee_weapon.interval or 10) / 4
-			local cleave = melee_weapon.cleave or 1
+			local cleave = melee_weapon.stats.cleave or 1
 
 			local unique_hits = {}
 
@@ -2409,7 +2409,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t) 
 	local charge_bonus_start = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_start or 0.5 
 	local charge_bonus_speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.charge_bonus_speed or 1
-	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].speed_mult or 1
+	local speed = tweak_data.blackmarket.melee_weapons[melee_entry].stats.speed_mult or 1
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
 	speed = speed * anim_speed
 	speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)
@@ -2602,7 +2602,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_drain_stamina(t, dt)
 
 	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
-	if weapon:weapon_tweak_data().ads_spool then
+	if weapon and weapon:weapon_tweak_data().ads_spool then
 		weapon:update_spin()
 	end
 	-- Shitty method to force the HUD to convey a weapon starts off on burstfire
@@ -2613,8 +2613,8 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	end
 	--]]
 
-	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(2):base()
-	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(1):base()
+	local primary = alive(self._unit) and self._unit.inventory and alive(self._unit:inventory():unit_by_selection(2)) and self._unit:inventory():unit_by_selection(2).base and self._unit:inventory():unit_by_selection(2):base()
+	local secondary = alive(self._unit) and self._unit.inventory and alive(self._unit:inventory():unit_by_selection(1)) and self._unit:inventory():unit_by_selection(1).base and self._unit:inventory():unit_by_selection(1):base()
 	if primary and primary._starwars then
 		self:_primary_regen_ammo(t, dt)
 	end
@@ -3515,6 +3515,29 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:character_damage():force_into_bleedout()
 				--self._unit:character_damage():_check_bleed_out(nil)
     			managers.player:set_player_state("bleed_out")
+			elseif special_weapon == "mjolnir" then
+				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
+				local exp_dmg = melee_weapon.explosion_damage or 60
+				local exp_range = melee_weapon.explosion_range or 500
+				local effect_params = {
+					sound_event = "grenade_electric_explode",
+					effect = "effects/particles/explosions/electric_grenade",
+					sound_muffle_effect = false,
+					feedback_range = exp_range,
+					camera_shake_max_mul = 1
+				}
+				managers.explosion:play_sound_and_effects(col_ray.position, col_ray.normal, exp_range, effect_params)		
+				managers.explosion:detect_and_tase({
+					hit_pos = col_ray.position,
+					range = exp_range,
+					collision_slotmask = managers.slot:get_mask("enemies"),
+					curve_pow = curve_pow,
+					damage = 0,
+					player_damage = 0,
+					alert_radius = 2500,
+					ignore_unit = self._unit,
+					user = self._unit
+				})
 			end
 		end
 

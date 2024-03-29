@@ -1,6 +1,4 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local diff_scaling = 0.095 * difficulty
-local enabled_blocked_roof_access = math.random() < diff_scaling
+local enabled_blocked_roof_access = math.random() < 0.45
 return {
 	-- Disable roof/stairs reinforcement
 	[102501] = {
@@ -157,7 +155,7 @@ return {
 	[102680] = {
 		on_executed = {
 			{ id = 104691, delay = 0},
-			{ id = 400001, delay = 4.5},
+			{ id = 400001, delay = 7.5},
 			{ id = 400062, delay = 0}
 		}
 	},

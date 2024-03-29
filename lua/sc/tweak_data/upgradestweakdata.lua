@@ -2526,7 +2526,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			affects_cameras = true,
 			affects_pagers = true,
 			feedback_interval = 1.2,
-			feedback_range = 600
+			feedback_range = 800
 		}
 	}	
 	self.values.player.pocket_ecm_heal_on_kill = {

@@ -2617,6 +2617,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.damage.explosion_damage_mul = 1.5
 	self.tank_skull.damage.rocket_damage_mul = 1.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
+	self.tank_skull.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_skull")
 	
 	--Medic Dozer, can be stunned like Blackdozers

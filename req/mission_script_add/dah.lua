@@ -18,7 +18,7 @@ local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
 local enabled_chance_helipad_dozer = math.random() < diff_scaling
 	
-	if difficulty == 5 or difficulty == 6 then
+	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"

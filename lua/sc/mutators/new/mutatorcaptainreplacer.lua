@@ -853,7 +853,7 @@ function MutatorCaptainReplacer:setup_options_gui(node)
 	}
 	local new_item = node:create_item(data_node, params)
 
-	new_item:set_value(self:winter_blacklist() and "on" or "off")
+	new_item:set_value(self:autumn_blacklist() and "on" or "off")
 	node:add_item(new_item)
 	
 	local params = {
@@ -895,7 +895,7 @@ function MutatorCaptainReplacer:setup_options_gui(node)
 	}
 	local new_item = node:create_item(data_node, params)
 
-	new_item:set_value(self:winter_blacklist() and "on" or "off")
+	new_item:set_value(self:hvh_blacklist() and "on" or "off")
 	node:add_item(new_item)
 	
 	self._node = node

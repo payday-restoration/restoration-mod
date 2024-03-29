@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1" >
+    <object file="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast" />
+    <dependencies>
+        <depends_on bnk="soundbanks/melee_suitcase"/>
+    </dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+    </extensions>
+</unit>

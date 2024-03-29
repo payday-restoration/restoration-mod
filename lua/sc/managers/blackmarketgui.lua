@@ -749,7 +749,7 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "attack_speed" then
 			local base = tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t and tweak_data.blackmarket.melee_weapons[name].repeat_expire_t / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)
-			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
+			base = base / (tweak_data.blackmarket.melee_weapons[name].stats.speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -764,7 +764,7 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 			}
 		elseif stat.name == "impact_delay" then
 			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay and tweak_data.blackmarket.melee_weapons[name].melee_damage_delay / (tweak_data.blackmarket.melee_weapons[name].anim_speed_mult or 1)) or 0
-			base = base / (tweak_data.blackmarket.melee_weapons[name].speed_mult or 1)
+			base = base / (tweak_data.blackmarket.melee_weapons[name].stats.speed_mult or 1)
 			local skill = managers.player:upgrade_value("player", "melee_swing_multiplier", 1) - 1
 			base_stats[stat.name] = {
 				value = base,
@@ -778,7 +778,7 @@ function BlackMarketGui:_get_melee_weapon_stats(name)
 				skill_in_effect = base > 0 and skill > 0
 			}
 		elseif stat.name == "cleave" then
-			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].cleave) or 1
+			local base = (tweak_data.blackmarket.melee_weapons[name] and tweak_data.blackmarket.melee_weapons[name].stats.cleave) or 1
 			base_stats[stat.name] = {
 				min_value = base,
 				max_value = base,
@@ -4767,7 +4767,7 @@ function BlackMarketGui:update_info_text()
 				local upgrade_tweak = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 				local movement_penalty = weapon_tweak and weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 				local hs_mult = (weapon_tweak and weapon_tweak.hs_mult) or 1
-				local hs_mult_desc = nil
+				local hs_mult_desc = (weapon_tweak and weapon_tweak.hs_mult and true) or nil
 				local ene_hs_mult = (weapon_tweak and weapon_tweak.ene_hs_mult) or 1
 				local ap_desc = nil
 				local sms = (weapon_tweak and weapon_tweak.sms) or 1

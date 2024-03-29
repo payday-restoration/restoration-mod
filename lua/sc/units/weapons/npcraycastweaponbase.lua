@@ -34,6 +34,8 @@ Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 
 	local trail = weapon_tweak.trail_effect or Idstring("effects/particles/weapons/weapon_trail")
 
+	self._use_sniper_trail = weapon_tweak.use_sniper_trail
+
 	self._trail_effect_table = {
 		effect = trail,
 		position = Vector3(),
@@ -85,7 +87,7 @@ Hooks:PostHook(NPCRaycastWeaponBase, "destroy", "res_destroy", function(self)
 	end
 end)
 
-function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
+function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray, user_unit)
 	self._obj_fire:m_position(self._trail_effect_table.position)
 	mvector3.set(self._trail_effect_table.normal, direction)
 
@@ -93,7 +95,11 @@ function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
 
 	if col_ray then
 		mvector3.set_y(self._trail_length, col_ray.distance)
-		World:effect_manager():set_simulator_var_vector2(trail, idstr_trail, idstr_simulator_length, idstr_size, self._trail_length)
+		if self._use_sniper_trail then
+			World:effect_manager():set_simulator_var_vector2(trail, idstr_trail, idstr_simulator_length, idstr_size, self._trail_length)
+		else
+			World:effect_manager():set_remaining_lifetime(trail, math.clamp((col_ray.distance - 600) / 10000, 0,  col_ray.distance))
+		end
 	end
 end
 
@@ -157,7 +163,7 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 				self._set_trail = true
 			end
 
-			self:_spawn_trail_effect(mvec_spread, col_ray)
+			self:_spawn_trail_effect(mvec_spread, col_ray, user_unit)
 		end
 	end
 

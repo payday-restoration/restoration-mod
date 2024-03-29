@@ -1,0 +1,26 @@
+<table name="toast">
+    <GlobalValue id="toast" color="Color(1, 0.5, 0)"/>
+
+    <Melee id="toast" based_on="briefcase" info_id="bm_melee_toast_info" unit="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast" third_unit="units/mods/weapons/wpn_mel_toast/wpn_third_toast" texture_bundle_folder="mods" dlc="rest">
+	<stats concealment="25" charge_time="1" min_damage_effect="1" max_damage_effect="1"/>
+	</Melee>
+
+    <AddFiles directory="assets"> 
+        <!-- Titan Hammer -->
+        <cooked_physics path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast"/>
+        <model path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast"/>
+        <object path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast"/>
+        <unit path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast"/>
+        <material_config path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast"/>
+        <material_config path="units/mods/weapons/wpn_mel_toast/wpn_fps_mel_toast_thq"/>
+
+        <cooked_physics path="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast"/>
+        <model path="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast"/>
+        <object path="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast"/>
+        <unit path="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast"/>
+        <material_config path="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast"/>
+
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/toast"/>
+             
+    </AddFiles>
+</table>

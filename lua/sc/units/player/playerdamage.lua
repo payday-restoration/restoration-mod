@@ -1746,6 +1746,14 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 		end
 	end
 
+	local player_inv = self._unit.inventory and self._unit:inventory()
+	local eq_weap = player_inv and player_inv.equipped_unit and player_inv:equipped_unit()
+	local weap_base = eq_weap and eq_weap.base and eq_weap:base()
+
+	if weap_base and weap_base._descope_on_dmg then
+		self._unit:movement():current_state()._d_scope_t = 0.35
+	end
+
 	managers.hud:damage_taken()
 
 	return health_subtracted

@@ -180,8 +180,7 @@ tweak_data.snp = {
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.05,
 			hipfire_moving_spread_mult = 0.1,
-			ads_moving_spread_mult = 0.1,
-			shake_mul = 0
+			ads_moving_spread_mult = 0.1
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
@@ -227,6 +226,10 @@ tweak_data.akimbo = {
 tweak_data.cs_spread = {
 	hipfire_spread_mult = 0.1,
 	hipfire_moving_spread_mult = 50
+}
+
+tweak_data.no_shake = {
+	shake_mul = 0
 }
 
 --Max concealment for guns.

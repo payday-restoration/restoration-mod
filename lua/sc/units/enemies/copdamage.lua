@@ -1960,7 +1960,7 @@ function CopDamage:die(attack_data)
 		self._unit:base():disable_asu_laser(true)
 	end
 
-	if self._unit:base()._tweak_table == "spooc" or self._unit:base()._tweak_table == "spooc_titan" then
+	if self._unit:base()._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("kill_spook_lights")
 	end
 	

@@ -25476,7 +25476,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_m7caseless_scope.desc_id = "bm_wp_upg_o_2"
 			self.parts.wpn_fps_smg_m7caseless_scope.stats = {
 				value = 0,
-				zoom = 10
+				zoom = 10,
+				base_zoom_off = 0
 			}
 			self.parts.wpn_fps_smg_m7caseless_scope.custom_stats = nil
 
@@ -25602,7 +25603,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_br55_scope.supported = true
 			self.parts.wpn_fps_ass_br55_scope.desc_id = "bm_wp_upg_o_2"
 			self.parts.wpn_fps_ass_br55_scope.pcs = nil
-			self.parts.wpn_fps_ass_br55_scope.stats = { value = 0, zoom = 10 }
+			self.parts.wpn_fps_ass_br55_scope.stats = { value = 0, zoom = 10, base_zoom_off = 0 }
 			self.parts.wpn_fps_ass_br55_scope.stance_mod = {
 				wpn_fps_ass_br55 = {
 					translation = Vector3(-0.01, -4, 0.985)
@@ -27271,7 +27272,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"screen"
 				}
 			}
-			self.parts.wpn_fps_pis_m6d_scope_reticle.stats = { value = 0, zoom = 10 }
+			self.parts.wpn_fps_pis_m6d_scope_reticle.stats = { value = 0, zoom = 10, base_zoom_off = 0 }
 			self.parts.wpn_fps_pis_m6d_scope_reticle.custom_stats = { disable_steelsight_recoil_anim = true }
 			self.parts.wpn_fps_pis_m6d_scope_reticle.alt_icon = "guis/dlcs/gage_pack_historical/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_c96_sight"
 			self.parts.wpn_fps_pis_m6d_scope_reticle.steelsight_visible = true
@@ -33892,7 +33893,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_snp_srs99_s7_scope then
 		self.parts.wpn_fps_snp_srs99_s7_scope.supported = true
 		self.parts.wpn_fps_snp_srs99_s7_scope.has_second_sight = true
-		self.parts.wpn_fps_snp_srs99_s7_scope.stats = { value = 0, zoom = 40 }
+		self.parts.wpn_fps_snp_srs99_s7_scope.stats = { value = 0, zoom = 40, base_zoom_off = 0 }
 		self.parts.wpn_fps_snp_srs99_s7_scope.adds = { "wpn_fps_snp_srs99_s7_scope_zoom" }
 		self.parts.wpn_fps_snp_srs99_s7_scope.custom_stats = { disable_steelsight_recoil_anim = true }
 		self.parts.wpn_fps_snp_srs99_s7_scope.perks = {"scope"}
@@ -33929,7 +33930,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.third_unit = nil
 		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.stats = {
 			value = 1,
-			gadget_zoom = 90
+			gadget_zoom = 90,
+			base_zoom_off = 0
 		}
 		self.parts.wpn_fps_snp_srs99_s7_scope_zoom.stance_mod = {
 			wpn_fps_snp_srs99_s7 = {
@@ -36396,7 +36398,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.base_zoom_off or self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
 			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
-			if zoom >= 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
+			if zoom > 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
 				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
 			end
 		end

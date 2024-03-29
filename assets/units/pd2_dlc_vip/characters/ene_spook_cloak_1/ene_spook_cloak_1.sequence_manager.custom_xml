@@ -143,9 +143,9 @@
 			<body enabled="false" name="'body'"/>
 			<body enabled="false" name="'head'"/>
 			<object enabled="false" name="'g_body_lod1'"/>
-			<effect_spawner enabled="true" name="'es_light'"/>
-			<light enabled="true" name="'point_light'"/>
-			<object enabled="true" name="'g_il'"/>
+			<effect_spawner enabled="false" name="'es_light'"/>
+			<light enabled="false" name="'point_light'"/>
+			<object enabled="false" name="'g_il'"/>
 			<effect_spawner enabled="false" name="'shimmer_head'"/>
 			<effect_spawner enabled="false" name="'shimmer_shoulder_left'"/>
 			<effect_spawner enabled="false" name="'shimmer_shoulder_right'"/>

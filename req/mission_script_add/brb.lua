@@ -84,6 +84,9 @@ local optsShield = {
 }
 local optsBulldozer = {
     enemy = murky_tank,
+	on_executed = { 
+		{ id = 400041, delay = 0 }
+	},
 	participate_to_group_ai = true,
     enabled = hard_above
 }

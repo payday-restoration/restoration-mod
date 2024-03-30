@@ -35494,6 +35494,82 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_pis_lapd_grip_polymer.custom_stats = deep_clone(grips.quickdraw_1)
 	end
 
+	if self.parts.wpn_fps_ass_m203 then
+		self.parts.wpn_fps_ass_m203.supported = true
+		self.parts.wpn_fps_ass_m203.stats = {
+			value = 10,
+			concealment = -5,
+			spread = -2,
+			recoil = 4,
+			total_ammo_mod = -41
+		}
+		self.parts.wpn_fps_ass_m203.custom_stats = {
+			ads_speed_mult = 1.125,
+			alt_ammo_pickup_max_mul = 0.8,
+			alt_ammo_pickup_min_mul = 0.8,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8
+		}
+
+		self.parts.wpn_fps_ass_m203.forbids = {}
+		for used_part_id, i in pairs(self.parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].pcs then
+				if self.parts[used_part_id].type and self.parts[used_part_id].type == "vertical_grip" or
+					(self.parts[used_part_id].type == "magazine" and 
+						self.parts[used_part_id].stats and 
+						self.parts[used_part_id].stats.extra_ammo and 
+						self.parts[used_part_id].stats.extra_ammo >= 15) then
+					table.insert(self.parts.wpn_fps_ass_m203.forbids, used_part_id)
+				end
+			end
+		end
+
+		for i, used_part_id in pairs(self.wpn_fps_ass_m4.uses_parts) do
+			self.wpn_fps_ass_m4.override.wpn_fps_ass_m203 = {
+				forbids = deep_clone(self.parts.wpn_fps_ass_m203.forbids)
+			}
+			if self.parts[used_part_id] and self.parts[used_part_id].pcs then
+				if self.parts[used_part_id].type and self.parts[used_part_id].type == "foregrip" or
+					self.parts[used_part_id].type == "barrel" or
+					self.parts[used_part_id].type == "exclusive_set" then
+					table.insert(self.wpn_fps_ass_m4.override.wpn_fps_ass_m203.forbids, used_part_id)
+				end
+			end
+			self.wpn_fps_ass_m4_npc.override = deep_clone(self.wpn_fps_ass_m4.override)
+		end
+		for i, used_part_id in pairs(self.wpn_fps_ass_m16.uses_parts) do
+			self.wpn_fps_ass_m16.override.wpn_fps_ass_m203 = {
+				stats = {
+					value = 10,
+					concealment = -5,
+					spread = -2,
+					recoil = 4,
+					total_ammo_mod = -51,
+				},
+				custom_stats = {
+					ads_speed_mult = 1.125,
+					alt_ammo_pickup_max_mul = 0.74,
+					alt_ammo_pickup_min_mul = 0.74,
+					ammo_pickup_max_mul = 0.74,
+					ammo_pickup_min_mul = 0.74
+				},
+				forbids = deep_clone(self.parts.wpn_fps_ass_m203.forbids)
+			}
+			if self.parts[used_part_id] and self.parts[used_part_id].pcs then
+			end
+			self.wpn_fps_ass_m16_npc.override = deep_clone(self.wpn_fps_ass_m16.override)
+		end
+	end
+
+	if self.parts.wpn_fps_upg_a_m203electric then
+		self.parts.wpn_fps_upg_a_m203electric.supported = true
+		self.parts.wpn_fps_upg_a_m203electric.depends_on = "underbarrel"
+		self.parts.wpn_fps_upg_a_m203viper.supported = true
+		self.parts.wpn_fps_upg_a_m203viper.depends_on = "underbarrel"
+		self.parts.wpn_fps_upg_a_m203bbq.supported = true
+		self.parts.wpn_fps_upg_a_m203bbq.depends_on = "underbarrel"
+	end
+
 
 
 --Make more attachments universally available, cartridge mismatching be damned

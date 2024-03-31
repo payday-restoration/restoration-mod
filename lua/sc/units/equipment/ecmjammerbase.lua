@@ -99,6 +99,26 @@ function ECMJammerBase:clbk_feedback()
 		managers.enemy:add_delayed_clbk(self._feedback_clbk_id, callback(self, self, "clbk_feedback"), t + self._feedback_interval)
 	end
 end
+
+--Sync outline when feedback is ready so every player can see ECM and activate it
+Hooks:PostHook(ECMJammerBase, "contour_interaction", "contour_interaction_feedback_ready_outline_sync", function(self)
+	if managers.player:has_category_upgrade("ecm_jammer", "can_activate_feedback") and managers.network:session() and self._unit:contour() then
+		self._unit:contour():add("deployable_interactable", true)
+	end
+end)
+
+Hooks:PostHook(ECMJammerBase, "_set_feedback_active", "_set_feedback_active_ready_outline_sync", function(self,state)
+	if state then
+		self._unit:contour():remove("deployable_interactable", true)
+		self._unit:contour():add("deployable_active")
+	else
+		if self._unit:contour() then
+			self._unit:contour():remove("deployable_interactable", true)
+			self._unit:contour():remove("deployable_active")
+		end
+	end
+end)
+
 --[[
 Hooks:PostHook(ECMJammerBase, "sync_net_event", "sync_net_event_no_outlines", function(self,event_id)
 	local disable_outlines = managers.mutators:modify_value("ECMJammerBase:DisableOutlines", false)

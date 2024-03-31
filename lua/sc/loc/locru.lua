@@ -4929,6 +4929,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_no_outlines_desc"] = "Почти все контуры отключены.",
 		["mutator_no_outlines_longdesc"] = "Почти все контуры отключены. Также отключены ники над ботами/игроками.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить контуры противников",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить подсвечивающие контуры (кроме обводки для сопровождения цели)",
 		
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

@@ -5053,6 +5053,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_no_outlines_desc"] = "대부분의 윤곽선이 비활성화됩니다.",
 		["mutator_no_outlines_longdesc"] = "대부분의 윤곽선과 플레이어/봇 위의 이름 라벨이 비활성화됩니다.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "적 윤곽선 비활성화",
+		["menu_mutator_no_outlines_objectives_toggle"] = "Disable Highlight Outlines (except escort)",
 		
 		["mutator_spawn_mult"] = "증폭된 대응",
 		["mutator_spawn_mult_desc"] = "적 스폰량이 증가합니다.",

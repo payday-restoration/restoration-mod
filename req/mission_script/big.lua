@@ -84,9 +84,15 @@ local ponr_timer_player_mul = {
 return {
 	--Pro Job PONR. Heli and van timers increased
 	--Helicopter
+	--Spawn Defend Shields when the chopper arrives
 	[105804] = {
 		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value + 300
+		ponr = ponr_value + 300,
+		on_executed = {
+			{ id = 400035, delay = 0 },
+			{ id = 400036, delay = 0 },
+			{ id = 400037, delay = 0 }
+		}
 	},
 	--Van
 	[103405] = {
@@ -211,14 +217,6 @@ return {
 	[105810] = {
 		on_executed = {
 			{ id = 400019, delay = 0 }
-		}
-	},
-	--Spawn Defend Shields when the chopper arrives
-	[105804] = {
-		on_executed = {
-			{ id = 400035, delay = 0 },
-			{ id = 400036, delay = 0 },
-			{ id = 400037, delay = 0 }
 		}
 	},
 	--More chance for blowing up the wall/also faster time to trigger

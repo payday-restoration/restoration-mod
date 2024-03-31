@@ -1,5 +1,4 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_1 = math.rand(1)
 local chance_dozer_2 = math.rand(1)
@@ -25,7 +24,7 @@ local dozer_table = {
 	end	
 
 	--Setting up the dozer randomizer, this is so cool
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
@@ -38,7 +37,7 @@ local dozer_table = {
 			dozer_2 = dozer_table.dozer_green
 		end
 		
-	elseif difficulty_index == 6 or difficulty_index == 7 then	
+	elseif difficulty == 6 or difficulty == 7 then	
 		if chance_dozer_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_1 < 0.50 then
@@ -55,7 +54,7 @@ local dozer_table = {
 			dozer_2 = dozer_table.dozer_green
 		end
 
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_1 < 0.50 then

@@ -1,34 +1,32 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local fbi_dudes = 3
 local chance_normal = 25
 local chance_hard = 50
 local chance_overkill = 65
 	
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 660	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 630	
 	else
 		ponr_value = 600		
 	end
 
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		fbi_dudes = 4
 	end	
-	
-	
+		
 	--If we're in Pro Job, do this stuff below
 	if pro_job then
 		chance_normal = 45
 		chance_hard = 75
 		chance_overkill = 100
-	if difficulty_index == 7 or difficulty_index == 8 then
+	if difficulty == 7 or difficulty == 8 then
 		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 	end
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		fbi_agent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		fbi_agent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 		fbi_agent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"

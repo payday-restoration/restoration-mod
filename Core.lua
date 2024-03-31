@@ -420,8 +420,6 @@ function restoration:Init()
 		"pines", --white xmas
 		"jolly", --aftershock
 		"born", --biker heist D1
-		"ukrainian_job", --uk joj
-		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
 		"chca", --black cat
 		"pent", --Mountain Master 

@@ -1,0 +1,44 @@
+<unit type="cft" slot="1" >
+    <object file="units/world/props/suburbia_hackbox/suburbia_hackbox" />
+
+    <network sync="spawn"/>
+ <dependencies>
+	<depends_on gui="guis/timer_gui" />
+	<depends_on effect="effects/particles/equipment/vault_drill/drill_active" />
+    <depends_on effect="effects/particles/equipment/vault_drill/drill_jammed" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="attention" class="AIAttentionObject" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="base" class="Drill">
+    	<var name="_use_effect" value="false" />
+		  <var name="is_hacking_device" value="true" />
+      <var name="_attention_obj_name" value="detection_point" />
+      <var name="_sabotage_align_obj_name" value="align_point" />
+    </extension>
+    <extension name="interaction" class="UseInteractionExt">
+      <var name="tweak_data" value="invisible_interaction_open_axis_rvd" />
+      <var name="_interact_object" value="interaction_location" />
+    </extension>
+    <extension name="timer_gui" class="TimerGui">
+      <var name="_gui_object" value="timer_gui" />
+      <var name="_jammed_tweak_data" value="hack_suburbia_jammed_axis" />
+      <var name="_start_event" value="hacking_device" />
+      <var name="_jam_event" value="hacking_device_jam" />
+      <var name="_resume_event" value="hacking_device_resume" />
+      <var name="_done_event" value="hacking_device_end" />
+      <var name="_can_jam" value="true" />
+      <var name="_gui_start" value="prop_timer_hack_ipad_gui_start" />
+      <var name="_gui_working" value="prop_timer_hack_ipad_gui_working" />
+      <var name="_gui_done" value="prop_timer_hack_ipad_gui_done" />
+      <var name="_gui_malfunction" value="prop_timer_hack_ipad_gui_malfunction" />
+    </extension>
+  </extensions>
+  <sounds>
+	<default_soundsource source="rp_suburbia_hackbox"/>
+  </sounds>
+
+
+
+</unit>

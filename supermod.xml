@@ -79,6 +79,14 @@
 			<group :name="payday2/weapons/wpn_npc_beretta92/">
 				<file :name="wpn_npc_beretta92.object"/>
 			</group>
+			<!-- object stuff -->
+			<group :name="pd2_dlc_pal/props/pal_prop_flames_of_love_boombox/">
+				<file :name="pal_prop_flames_of_love_boombox.sequence_manager"/> <!-- https://www.youtube.com/watch?v=D_e9GT9PqPQ -->
+			</group>
+			<group :name="world/props/suburbia_hackbox/">
+				<file :name="suburbia_hackbox.sequence_manager"/> <!-- increase the timer up to 4 mins to match with PDTH -->
+				<file :name="suburbia_hackbox.unit"/> <!-- Hackboxes can now jam themselves so Bain's quote about them being old and are prone to crash makes sense -->
+			</group>
 			<!-- Improve navigation data -->
 			<group name="levels/narratives/">
 				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>

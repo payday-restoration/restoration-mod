@@ -781,6 +781,7 @@ function NewRaycastWeaponBase:old_update_stats_values(disallow_replenish, ammo_d
 		self._trail_effect = Idstring(self._ammo_data.trail_effect)
 	else
 		self._trail_effect = self:weapon_tweak_data().trail_effect and Idstring(self:weapon_tweak_data().trail_effect) or self.TRAIL_EFFECT
+		self._trail_effect_npc = self:weapon_tweak_data().trail_effect_npc and Idstring(self:weapon_tweak_data().trail_effect_npc) or nil
 	end
 
 	self._trail_effect_table = {

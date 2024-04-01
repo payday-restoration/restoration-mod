@@ -25401,6 +25401,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_upg_m2_stock_m1a1ammopounches.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 			end
 
+			if self.wpn_fps_pis_bigglock then --Big Bad Glock
+			end
+
 	--[[ RJC9000'S MODS ]]
 
 		--RJC9000 and PlayBONK's PD3 QBZ-191

@@ -14127,6 +14127,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     PAWCIO'S MODS     ]]--
+			if self.bigglock then
+				self.bigglock.use_data.selection_index = 2 --Moved to primary
+				self.bigglock.recategorize = { "heavy_pis", "handcannon" }
+				self.bigglock.has_description = true
+				self.bigglock.damage_type = "handcannon"
+				self.bigglock.fire_mode_data.fire_rate = 0.2727272727
+				self.bigglock.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.bigglock.AMMO_MAX = 40
+				self.bigglock.CLIP_AMMO_MAX = 17
+				self.bigglock.kick = self.stat_info.kick_tables.vertical_kick
+				self.bigglock.supported = true
+				self.bigglock.ads_speed = 0.500
+				self.bigglock.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.bigglock.stats = {
+					damage = 90,
+					spread = 59,
+					recoil = 1,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.bigglock.stats_modifiers = nil
+				self.bigglock.lock_slide = true
+				self.bigglock.panic_suppression_chance = 0.05
+				self.bigglock.armor_piercing_chance = 1
+				self.bigglock.object_damage_mult = 4
+				self.bigglock.tactical_reload = 1
+				self.bigglock.reload_speed_multiplier = 0.8
+				self.bigglock.sms = 0.5
+				self.bigglock.timers.reload_exit_empty = 0.6
+				self.bigglock.timers.reload_exit_not_empty = 0.65
+				self.bigglock.use_ex = true
+				self.bigglock.always_play_anims = true
+				self.bigglock.trail_effect = "_dmc/effects/sterwers_trail_m"
+				self.bigglock.trail_effect_npc = "_dmc/effects/sterwers_trail_m_npc"
+				self.bigglock.bullet_class = "InstantExplosiveBulletBase"
+			end
+
 			if self.mars then --Pawcio's Mars Automatic
 				self.mars.recategorize = { "heavy_pis", "handcannon" }
 				self.mars.has_description = true

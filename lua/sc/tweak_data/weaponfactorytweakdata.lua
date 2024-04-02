@@ -28486,6 +28486,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_pis_zip22_casing then
+			self.parts.wpn_fps_pis_zip22_irons.supported = true
+			self.parts.wpn_fps_pis_zip22_irons.stats = { value = 0 }
+			self.parts.wpn_fps_pis_zip22_irons.custom_stats = nil
+			self.parts.wpn_fps_pis_zip22_underbarrel_rail.supported = true
+			self.parts.wpn_fps_pis_zip22_underbarrel_rail.stats = { value = 0 }
+			self.parts.wpn_fps_pis_zip22_underbarrel_rail.custom_stats = nil
+			self.parts.wpn_fps_pis_zip22_optic_soppo.supported = true
+			self.parts.wpn_fps_pis_zip22_optic_soppo.has_description = true
+			self.parts.wpn_fps_pis_zip22_optic_soppo.desc_id = "bm_wp_upg_o_1_5_scope"
+			self.parts.wpn_fps_pis_zip22_optic_soppo.stats = { value = 0, zoom = 30 }
+			self.parts.wpn_fps_pis_zip22_optic_soppo.custom_stats = nil
+			self.parts.wpn_fps_pis_zip22_optic_uwu.supported = true
+			self.parts.wpn_fps_pis_zip22_optic_uwu.has_description = true
+			self.parts.wpn_fps_pis_zip22_optic_uwu.desc_id = "bm_wp_upg_o_8"
+			self.parts.wpn_fps_pis_zip22_optic_uwu.stats = { value = 0, zoom = 1 }
+			self.parts.wpn_fps_pis_zip22_optic_uwu.custom_stats = nil
 
 			self.parts.wpn_fps_pis_zip22_magazine_drum.supported = true
 			self.parts.wpn_fps_pis_zip22_magazine_drum.stats = {

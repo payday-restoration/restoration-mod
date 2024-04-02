@@ -551,8 +551,6 @@ function RaycastWeaponBase:_soundfix_should_play_normal()
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
 	if not self._setup.user_unit == managers.player:player_unit() then
 		return true
-	elseif tweak_data.weapon[name_id].zippy then
-		return false
 	elseif afsf_blacklist[name_id] or tweak_data.weapon[name_id].sounds.no_fix then
 		return true
 	elseif not tweak_data.weapon[name_id].sounds.fire_single then
@@ -738,7 +736,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	--Autofire soundfix integration.
 	if self:_soundfix_should_play_normal() then
 		if self._bullets_fired then
-			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single and not self._jammed then
+			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single then
 				self:play_tweak_data_sound("stop_fire")
 				if self:_get_sound_event("stop_fire2") then
 					self:play_tweak_data_sound("stop_fire2")
@@ -760,7 +758,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 	
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
-	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix and not self._jammed then
+	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix then
 		self:play_tweak_data_sound("fire_single","fire")
 		if self:_get_sound_event("fire_single2", "fire2") then
 			self:play_tweak_data_sound("fire_single2", "fire2")

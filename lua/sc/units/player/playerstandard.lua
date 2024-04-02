@@ -713,19 +713,30 @@ PlayerStandard._primary_action_funcs = {
 		end
 	},
 	recoil_anim_redirect = {
-		default = function (self, t, input, params, weap_unit, weap_base, is_bow)
+		default = function (self, t, input, params, weap_unit, weap_base, is_bow, no_recoil_anims)
 			local state = nil
+			local zippy = weap_base and weap_base:weapon_tweak_data().zippy
+			local jammed = zippy and weap_base._jammed
 
-			if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
-				if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
-					state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
-				else
-					state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+			if not zippy or jammed then
+				if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
+					if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
+						state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
+					else
+						state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
+					end
+				elseif weap_base:weapon_tweak_data().animations.recoil_steelsight then
+					if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+					else
+						state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
+					end
 				end
-			elseif weap_base:weapon_tweak_data().animations.recoil_steelsight then
-				if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+			elseif zippy then
+				if not self._state_data.in_steelsight then
+					state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier(), 1.6)
 				else
-					state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
+					local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+					state = self._ext_camera:play_redirect(self:get_animation(no_recoil_anims and "idle" or "recoil_steelsight"), weap_base:fire_rate_multiplier(), 1.6)
 				end
 			end
 
@@ -1151,28 +1162,38 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						local spin_up_semi = fire_mode == "single" and weap_base:weapon_tweak_data().spin_up_semi
+						local zippy = weap_base:weapon_tweak_data().zippy
+						local jammed = weap_base._jammed
 						if not spin_up_semi then
-							local second_gun_base = weap_base._second_gun and weap_base._second_gun:base()
-							local second_gun_turn = weap_base._second_turn
-							if second_gun_turn ~= true then
-								if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
-									weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
-								end
-								if second_gun_base then
-									second_gun_base:tweak_data_anim_stop("fire")
-									second_gun_base:tweak_data_anim_stop("fire_steelsight")
+							if not zippy or (zippy and jammed) then
+								local second_gun_base = weap_base._second_gun and weap_base._second_gun:base()
+								local second_gun_turn = weap_base._second_turn
+								if second_gun_turn ~= true then
+									if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset	, fire_anim_offset2) then
+										weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
+									end
+									if second_gun_base then
+										second_gun_base:tweak_data_anim_stop("fire")
+										second_gun_base:tweak_data_anim_stop("fire_steelsight")
+									end
 								end
 							end
+						end
+
+						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
+						local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+							force_ads_recoil_anims = nil
 						end
 
 						if (not params or not params.no_recoil_anim_redirect) and not weap_tweak_data.no_recoil_anim_redirect then
 							local fire_mode_func = self._primary_action_funcs.recoil_anim_redirect[weap_base:weapon_tweak_data().no_auto_anims and "default" or fire_mode]
 
-							if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow) then
+							if not fire_mode_func or not fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow, no_recoil_anims and not force_ads_recoil_anims) then
 								fire_mode_func = self._primary_action_funcs.recoil_anim_redirect.default
 
 								if fire_mode_func then
-									fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow)
+									fire_mode_func(self, t, input, params, weap_unit, weap_base, is_bow, no_recoil_anims and not force_ads_recoil_anims)
 								end
 							end
 						end
@@ -1195,16 +1216,11 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							}
 							local random = vars[math.random(#vars)]
 							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
-							local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
 							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
 							local category_mul = 1
 							for _, category in ipairs(weap_base:categories()) do
 								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
 								category_mul = category_mul * shake_mul
-							end
-							local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-							if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
-								force_ads_recoil_anims = nil
 							end
 							recoil_v = math.clamp( ((recoil_v or 1) * math.rand(0.5, 1.5)) * category_mul , 0, 5)
 							recoil_h = (recoil_v == 0 and 0) or  math.clamp( ((recoil_h or 0) * math.rand(0.5, 1.5)) , -2.5, 2.5)
@@ -1291,6 +1307,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._already_fired = true
 						end
 
+					weap_base._jammed = nil
 					else
 						local not_fired_func = self._primary_action_get_value.not_fired[fire_mode]
 
@@ -3241,7 +3258,9 @@ function PlayerStandard:full_steelsight()
 		force_ads_recoil_anims = nil
 	end
 	local is_turret = managers.player:current_state() and managers.player:current_state() == "player_turret"
-	if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims and not is_turret then
+	local zippy = weap_base and weap_base:weapon_tweak_data().zippy
+	local jammed = zippy and weap_base._jammed
+	if not jammed and restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims and not is_turret then
 		self._ext_camera:play_redirect(self:get_animation("idle"))
 	end
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()

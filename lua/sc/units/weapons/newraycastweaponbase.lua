@@ -1148,6 +1148,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				tweak_data.weapon.system.timers.reload_exit_empty = 0.8
 				tweak_data.weapon.system.timers.reload_exit_not_empty = 0.8
 			end	
+
+			if stats.adj_timers then
+				self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
+				self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
+				self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
+				self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+			end	
 	
 			if stats.m16_burst then
 				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.066666) or 1
@@ -1708,6 +1715,7 @@ function NewRaycastWeaponBase:fire(...)
 			camera:play_redirect(Idstring("idle"))
 		end
 	end
+
 	return result
 end	
 

@@ -28484,6 +28484,42 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_ass_tkb0146.uses_parts, "wpn_fps_upg_ak_m_quick")
 			self.wpn_fps_ass_tkb0146_npc.uses_parts = deep_clone(self.wpn_fps_ass_tkb0146.uses_parts)
 		end
+
+		if self.parts.wpn_fps_pis_zip22_casing then
+
+			self.parts.wpn_fps_pis_zip22_magazine_drum.supported = true
+			self.parts.wpn_fps_pis_zip22_magazine_drum.stats = {
+				extra_ammo = 40,
+				reload = -3,
+				concealment = -4
+			}
+			self.parts.wpn_fps_pis_zip22_magazine_drum.custom_stats = { 
+				ads_speed_mult = 1.1,
+				adj_timers = {
+					reload_empty = 4,
+					reload_exit_empty = 0.7,
+					reload_not_empty = 1.6,
+					reload_exit_not_empty = 1.5
+				}
+			}
+
+			self.parts.wpn_fps_pis_zip22_magazine_drum_110.supported = true
+			self.parts.wpn_fps_pis_zip22_magazine_drum_110.stats = {
+				extra_ammo = 100,
+				reload = -5,
+				concealment = -6
+			}
+			self.parts.wpn_fps_pis_zip22_magazine_drum_110.custom_stats = { 
+				ads_speed_mult = 1.15,
+				adj_timers = {
+					reload_empty = 4,
+					reload_exit_empty = 0.7,
+					reload_not_empty = 1.6,
+					reload_exit_not_empty = 1.5
+				}
+			}
+
+		end
 		
 
 	--[[ GAMBYT'S MODS ]]

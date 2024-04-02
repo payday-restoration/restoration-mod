@@ -484,7 +484,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	local furthest_hit = ray_hits[#ray_hits]
 
-	if (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
+	if dmg_mul ~= 0 and (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
 		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 
@@ -551,6 +551,8 @@ function RaycastWeaponBase:_soundfix_should_play_normal()
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
 	if not self._setup.user_unit == managers.player:player_unit() then
 		return true
+	elseif tweak_data.weapon[name_id].zippy then
+		return false
 	elseif afsf_blacklist[name_id] or tweak_data.weapon[name_id].sounds.no_fix then
 		return true
 	elseif not tweak_data.weapon[name_id].sounds.fire_single then
@@ -673,22 +675,58 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	self:_check_ammo_total(user_unit)
 
-	for i = 1, ammo_usage do
-		if alive(self._obj_fire) then
-			self:_spawn_muzzle_effect(from_pos, direction)
+	if is_player and self:weapon_tweak_data().zippy then
+		local jam = math.rand(1)
+		if jam < 0.33 and self:ammo_base():get_ammo_remaining_in_clip() > 0 then
+			dmg_mul = 0
+			self:dryfire()
+			self._jammed = true
+			self._next_fire_allowed = self._next_fire_allowed + (2 / self:fire_rate_multiplier())
+		elseif jam > 0.66 then
+			dmg_mul = 0
 		end
-		self:_spawn_shell_eject_effect()
 	end
 
-	if self:weapon_tweak_data().muzzleflash_mod then
-		for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+	if not self._jammed then
+		for i = 1, ammo_usage do
 			if alive(self._obj_fire) then
 				self:_spawn_muzzle_effect(from_pos, direction)
+			end
+				self:_spawn_shell_eject_effect()
+		end
+
+		if self:weapon_tweak_data().muzzleflash_mod then
+			for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+				if alive(self._obj_fire) then
+					self:_spawn_muzzle_effect(from_pos, direction)
+				end
 			end
 		end
 	end
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
+
+	if dmg_mul == 0 and not self._jammed then
+		local player_unit = managers.player:player_unit()
+		if player_unit.character_damage and player_unit:character_damage() then
+			if not player_unit:character_damage():is_downed() then
+				player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+				player_unit:character_damage():_calc_health_damage_no_deflection({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			else
+				player_unit:character_damage():_bleed_out_damage({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			end
+		end
+	end
 
 	if self._alert_events and ray_res.rays then
 		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
@@ -700,7 +738,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	--Autofire soundfix integration.
 	if self:_soundfix_should_play_normal() then
 		if self._bullets_fired then
-			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single then
+			if self._bullets_fired == 1 and self:weapon_tweak_data().sounds.fire_single and not self._jammed then
 				self:play_tweak_data_sound("stop_fire")
 				if self:_get_sound_event("stop_fire2") then
 					self:play_tweak_data_sound("stop_fire2")
@@ -722,7 +760,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 	
 	local name_id = self:get_name_id() or "xX69dank420blazermachineXx" 
-	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix then
+	if ray_res and self._setup.user_unit == managers.player:player_unit() and not tweak_data.weapon[name_id].sounds.no_fix and not self._jammed then
 		self:play_tweak_data_sound("fire_single","fire")
 		if self:_get_sound_event("fire_single2", "fire2") then
 			self:play_tweak_data_sound("fire_single2", "fire2")

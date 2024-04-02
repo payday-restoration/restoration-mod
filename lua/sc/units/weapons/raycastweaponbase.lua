@@ -706,7 +706,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
 
-	if dmg_mul == 0 and not self._jammed then
+	if self:weapon_tweak_data().zippy and dmg_mul == 0 and not self._jammed then
 		local player_unit = managers.player:player_unit()
 		if player_unit.character_damage and player_unit:character_damage() then
 			if not player_unit:character_damage():is_downed() then
@@ -1555,7 +1555,7 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		mvec3_sub(tmp_vec1, tmp_vec2)
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.5) * overkill, blank, no_sound)
-		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.75, user_unit, weapon_unit, managers.network:session():local_peer():id())
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
 
 		return {
 			variant = "explosion",

@@ -14525,6 +14525,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     PAWCIO'S MODS     ]]--
 			if self.bigglock then
+				self.bigglock.bmp = 2000
 				self.bigglock.use_data.selection_index = 2 --Moved to primary
 				self.bigglock.recategorize = { "heavy_pis", "handcannon" }
 				self.bigglock.has_description = false
@@ -18343,6 +18344,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.zip22 then
+				self.zip22.bmp = 500
 				self.zip22.categories = {
 					"pistol",
 					"zippy"

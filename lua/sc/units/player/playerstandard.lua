@@ -1139,6 +1139,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					new_action = true
 
 					if fired then
+						local zippy = weap_base:weapon_tweak_data().zippy
+						local jammed = weap_base._jammed
 						self._queue_fire = nil
 						self._already_fired = true
 
@@ -1146,8 +1148,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._queue_burst = nil
 						end
 
-						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting then
-							self._d_scope_t = (weap_base._next_fire_allowed - t) * 0.7
+						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting or jammed then
+							self._d_scope_t = (weap_base._next_fire_allowed - t) * (jammed and 0.9 or 0.7)
 						end
 						
 						if not params or not params.no_rumble then
@@ -1162,8 +1164,6 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						local spin_up_semi = fire_mode == "single" and weap_base:weapon_tweak_data().spin_up_semi
-						local zippy = weap_base:weapon_tweak_data().zippy
-						local jammed = weap_base._jammed
 						if not spin_up_semi then
 							if not zippy or (zippy and jammed) then
 								local second_gun_base = weap_base._second_gun and weap_base._second_gun:base()
@@ -1336,6 +1336,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 	return new_action
 end
+
 
 
 function PlayerStandard:_check_stop_shooting()

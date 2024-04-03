@@ -232,6 +232,10 @@ tweak_data.no_shake = {
 	shake_mul = 0
 }
 
+tweak_data.zippy = {
+	spread_mult = 0
+}
+
 --Max concealment for guns.
 tweak_data.concealment_cap = 32
 

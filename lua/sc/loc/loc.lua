@@ -2510,6 +2510,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--CUSTOM PISTOLS
+					--Zippy 
+					["bm_zippy_sc_desc"] = "The ultimate weapon, in ejection failures and misfires. You'll be lucky to get two shots out of this thing without blowing off your fingers.",
 					--Auto-9
 					["bm_wp_rc_auto9_cartoon"] = "Animated Series Tracers",
 					["bm_wp_rc_auto9_cartoon_desc"] = "Party like it's 1988!",
@@ -3000,6 +3002,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SAA/Peacemaker
 					["bm_w_peacemaker"] = "Peacemaker .45LC",
 					--CUSTOM PISTOLS
+						--ZiP 22
+						["bm_w_zip22"] = "Zippy 3000",
 						--Px4
 						["bm_w_px4"] = "Bernetti Hx4 Canaan",
 						--Browning Hi-Power

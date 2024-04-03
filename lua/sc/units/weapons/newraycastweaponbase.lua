@@ -372,6 +372,13 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if self._alt_fire_active and self._alt_fire_data then
 		multiplier = multiplier * (self._alt_fire_data.spread_mul or 1)
 	end
+	
+	local spread_multiplier = 1
+	for _, category in ipairs(self:categories()) do
+		local spread_mult = tweak_data[category] and tweak_data[category].spread_mult or 1
+		spread_multiplier = spread_multiplier * spread_mult
+	end
+	multiplier = multiplier * spread_multiplier
 
 	spread_area = spread_area * multiplier
 

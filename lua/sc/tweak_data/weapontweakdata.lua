@@ -18352,14 +18352,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.zippy = true
 				self.zip22.recategorize = { "light_pis" }
 				self.zip22.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-				self.zip22.has_description = false
+				self.zip22.desc_id = "bm_zippy_sc_desc"
+				self.zip22.has_description = true
 				self.zip22.tactical_reload = 1
 				self.zip22.is_bullpup = true
 				self.zip22.BURST_FIRE = false
 				self.zip22.CAN_TOGGLE_FIREMODE = false
-				self.zip22.fire_mode_data.fire_rate = 0.0857142
+				self.zip22.fire_mode_data.fire_rate = 0.2727272
+				self.zip22.jam_time = 2
 				self.zip22.CLIP_AMMO_MAX = 10
-				self.zip22.AMMO_MAX = 150
+				self.zip22.AMMO_MAX = 210
 				self.zip22.kick = self.stat_info.kick_tables.vertical_kick	
 				self.zip22.always_play_anims = true
 				self.zip22.supported = true
@@ -18371,8 +18373,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.zip22.stats = {
 					damage = 5,
-					spread = 51,
-					recoil = 101,
+					spread = 101,
+					recoil = 23,
 					zoom = 1,
 					concealment = 32,
 					suppression = 8,
@@ -18389,7 +18391,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.timers.reload_exit_empty = 0.6
 				self.zip22.timers.reload_not_empty = 2
 				self.zip22.timers.reload_exit_not_empty = 0.5
-				self.zip22.always_play_anims = true
 			end
 		
 		--[[     TANGERINE'S MODS     ]]--
@@ -20072,7 +20073,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.1,
 		pistol = 1.25, --Compensate for low range.
-			zippy = 0.25,
+			zippy = 0.15,
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.82,

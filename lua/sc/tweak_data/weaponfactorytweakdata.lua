@@ -28506,11 +28506,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_zip22_magazine_drum.supported = true
 			self.parts.wpn_fps_pis_zip22_magazine_drum.stats = {
 				extra_ammo = 40,
-				reload = -3,
-				concealment = -4
+				reload = -5,
+				concealment = -6
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum.custom_stats = { 
-				ads_speed_mult = 1.1,
+				ads_speed_mult = 1.15,
 				adj_timers = {
 					reload_empty = 4,
 					reload_exit_empty = 0.7,
@@ -28522,11 +28522,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_zip22_magazine_drum_110.supported = true
 			self.parts.wpn_fps_pis_zip22_magazine_drum_110.stats = {
 				extra_ammo = 100,
-				reload = -5,
-				concealment = -6
+				reload = -7,
+				concealment = -8
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum_110.custom_stats = { 
-				ads_speed_mult = 1.15,
+				ads_speed_mult = 1.2,
 				adj_timers = {
 					reload_empty = 4,
 					reload_exit_empty = 0.7,

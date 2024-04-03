@@ -1507,6 +1507,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
+			--Zippy 
+			["bm_zippy_sc_desc"] = "Самое малогабаритное летальное оружие, которое придумало человечество. Правда не стоит ожидать, что оно будет работать без осечек. Вам повезет, если после пары выстрелов это оружие не взорвется в Вашей руке.",
 			--Auto-9
 			["bm_wp_rc_auto9_cartoon"] = "Мультяшные трейсеры",
 			["bm_wp_rc_auto9_cartoon_desc"] = "Вечеринка прямо как в 1988!",
@@ -3156,6 +3158,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_rsh12"] = "РШУ-12",
 		["bm_w_peacemaker"] = "Миротворец .45",
 --CUSTOM HANDGUNS
+			--ZiP 22
+			["bm_w_zip22"] = "Зиппи 3000",
 			--Px4
 			["bm_w_px4"] = "Бернетти Нх4 Канан",
 			--Browning Hi-Power

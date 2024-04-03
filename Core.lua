@@ -345,7 +345,10 @@ function restoration:Init()
 		"constantine_policestation_lvl", -- Precint Raid (Constantine Scores)
 		"constantine_murkyairport",		 -- Murky Airport (Consantine Scores) 
 		"hogar",-- The House Robbery
-		"icing"	--Road Rage	
+		"icing",	--Road Rage	
+		"gunw_lvl",  -- Gun Waashing 
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+		
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -383,7 +386,9 @@ function restoration:Init()
 		"physics_core",-- BOWRORKS Day 3
 		"cold_gold",-- Cold Gold 
 		"constantine_dwtd_lvl", -- Constantine Scores
-		"constantine_yacht_lvl" --  Constantine Scores
+		"constantine_yacht_lvl", --  Constantine Scores
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+
 		
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists

@@ -11201,7 +11201,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contender.CAN_TOGGLE_FIREMODE = false
 						self.contender.kick = self.stat_info.kick_tables.vertical_kick
 						self.contender.supported = true
-						self.contender.ads_speed = 0.220
+						self.contender.ads_speed = 0.200
 						self.contender.damage_falloff = {
 							start_dist = 1800,
 							end_dist = 5000,
@@ -14524,6 +14524,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     PAWCIO'S MODS     ]]--
+			if self.obrez then
+				self.obrez.categories = { 
+					"snp",
+					"gl_pistol"
+				}
+				self.obrez.recategorize = { "heavy_snp" }
+				self.obrez.damage_type = "sniper"
+				self.obrez.bmp = 1
+				self.obrez.has_description = false
+				self.obrez.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.obrez.AMMO_MAX = 15
+				self.obrez.CLIP_AMMO_MAX = 5
+				self.obrez.fire_mode_data.fire_rate = 2
+				self.obrez.fire_rate_multiplier = 1.3333333
+				self.obrez.kick = self.stat_info.kick_tables.vertical_kick
+				self.obrez.warsaw = true
+				self.obrez.supported = true
+				self.obrez.ads_speed = 0.200
+				self.obrez.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6500,
+					min_mult = 0.5
+				}
+				self.obrez.stats = {
+					damage = 120,
+					spread = 62,
+					recoil = 33,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.obrez.stats_modifiers = nil
+				self.obrez.can_shoot_through_enemy = true
+				self.obrez.can_shoot_through_enemy_unlim = true
+				self.obrez.can_shoot_through_wall = true
+				self.obrez.can_shoot_through_shield = true
+				self.obrez.can_shoot_through_titan_shield = false
+				self.obrez.panic_suppression_chance = 0.05
+				self.obrez.armor_piercing_chance = 1
+				self.obrez.object_damage_mult = 4
+				self.obrez.timers.reload_exit_empty = 0.6
+				self.obrez.timers.reload_exit_not_empty = 0.65
+				self.obrez.always_play_anims = true
+			end
+
 			if self.bigglock then
 				self.bigglock.bmp = 2000
 				self.bigglock.use_data.selection_index = 2 --Moved to primary
@@ -14566,7 +14617,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bigglock.sms = 0.5
 				self.bigglock.timers.reload_exit_empty = 0.6
 				self.bigglock.timers.reload_exit_not_empty = 0.65
-				self.bigglock.use_ex = true
 				self.bigglock.always_play_anims = true
 				self.bigglock.trail_effect = "_dmc/effects/sterwers_trail_m"
 				self.bigglock.trail_effect_npc = "_dmc/effects/sterwers_trail_m_npc"

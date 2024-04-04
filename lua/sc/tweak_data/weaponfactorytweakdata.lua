@@ -25404,6 +25404,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.wpn_fps_pis_bigglock then --Big Bad Glock
 			end
 
+			if self.parts.wpn_fps_upg_obrez_barrel then --Obrez
+				self.parts.wpn_fps_upg_obrez_barrel.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_obrez_barrel.custom_stats = deep_clone(barrels.long_b2_stats)
+			end
+
 	--[[ RJC9000'S MODS ]]
 
 		--RJC9000 and PlayBONK's PD3 QBZ-191

@@ -85,7 +85,6 @@
 			</group>
 			<group :name="world/props/suburbia_hackbox/">
 				<file :name="suburbia_hackbox.sequence_manager"/> <!-- increase the timer up to 4 mins to match with PDTH -->
-				<file :name="suburbia_hackbox.unit"/> <!-- Hackboxes can now jam themselves so Bain's quote about them being old and are prone to crash makes sense -->
 			</group>
 			<!-- Improve navigation data -->
 			<group name="levels/narratives/">

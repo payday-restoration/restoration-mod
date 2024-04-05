@@ -425,7 +425,6 @@ function restoration:Init()
 		"pines", --white xmas
 		"jolly", --aftershock
 		"born", --biker heist D1
-		"sah", --shacklethorne
 		"chca", --black cat
 		"pent", --Mountain Master 
 		"lvl_friday", --Mallbank / Crashing Capitol

@@ -172,12 +172,21 @@ return {
 		end
 	},
 	--Trigger dozers if the manager has been killed
+	--Spawn beat cops after 5 seconds of cops arrival
+	--enable spawngroups after 20 seconds
 	[101967] = {
 		on_executed = {
 			{ id = 400001, delay = 20 },
 			{ id = 400002, delay = 20 },
 			{ id = 400046, delay = 200 },
-			{ id = 400047, delay = 200 }
+			{ id = 400047, delay = 200 },
+			{ id = 400049, delay = 5 },
+			{ id = 100129, delay = 20 }
+		}
+	},
+	[100109] = {
+		on_executed = {
+			{ id = 100129, remove = true }
 		}
 	},
 	--Trigger custom c4 route spawns

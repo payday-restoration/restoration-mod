@@ -7,6 +7,10 @@ local bravo_2 = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shot
 local bravo_3 = "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"
 local tank_bravo = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
 local rouge = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+local cop_1 = "units/payday2/characters/ene_cop_1/ene_cop_1"
+local cop_2 = "units/payday2/characters/ene_cop_2/ene_cop_2"
+local cop_3 = "units/payday2/characters/ene_cop_3/ene_cop_3"
+local cop_4 = "units/payday2/characters/ene_cop_4/ene_cop_4"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
@@ -92,8 +96,8 @@ local optsTitanCloaker_2 = {
 	on_executed = { { id = 400017, delay = 0 } },
     enabled = (death_sentence and pro_job)
 }
-local optsBulldozer_SO = {
-    SO_access = "4096",
+local optsHunt_SO = {
+    SO_access = tostring(64+4096),
 	path_style = "none",
 	scan = true,
 	interval = 2,
@@ -155,26 +159,58 @@ local optsBravo_dozer_bus_escape = {
 }
 local optsShield_Defend_1 = {
     enemy = shield,
+	spawn_action = "e_sp_climb_up_3m_down_1m",
 	on_executed = { 
-		{ id = 400038, delay = 0 } 
+		{ id = 400038, delay = 8 } 
 	},
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsShield_Defend_2 = {
     enemy = shield,
+	spawn_action = "e_sp_climb_up_3m_down_1m",
 	on_executed = { 
-		{ id = 400039, delay = 0 } 
+		{ id = 400039, delay = 8 } 
 	},
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsShield_Defend_3 = {
     enemy = shield,
+	spawn_action = "e_sp_climb_up_3m_down_1m",
 	on_executed = { 
-		{ id = 400040, delay = 0 } 
+		{ id = 400040, delay = 8 } 
 	},
+    enabled = true
+}
+local optsCop_1 = {
+    enemy = cop_1,
 	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400003, delay = 0 } 
+	},
+    enabled = true
+}
+local optsCop_2 = {
+    enemy = cop_2,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400003, delay = 0 } 
+	},
+    enabled = true
+}
+local optsCop_3 = {
+    enemy = cop_3,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400003, delay = 0 } 
+	},
+    enabled = true
+}
+local optsCop_4 = {
+    enemy = cop_4,
+	participate_to_group_ai = true,
+	on_executed = { 
+		{ id = 400003, delay = 0 } 
+	},
     enabled = true
 }
 local optsDefend_and_Sniper_SO = {
@@ -238,6 +274,26 @@ local spawn_cloakers = {
 		{ id = 400008, delay = 0 }
 	}
 }
+local spawn_beat_cops = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400050, delay = 0 },
+		{ id = 400051, delay = 0 },
+		{ id = 400052, delay = 0 },
+		{ id = 400053, delay = 0 },
+		{ id = 400054, delay = 0 },
+		{ id = 400055, delay = 0 },
+		{ id = 400056, delay = 0 },
+		{ id = 400057, delay = 0 },
+		{ id = 400058, delay = 0 },
+		{ id = 400059, delay = 0 },
+		{ id = 400060, delay = 0 },
+		{ id = 400061, delay = 0 },
+		{ id = 400062, delay = 0 },
+		{ id = 400063, delay = 0 },
+		{ id = 400064, delay = 0 }
+	}
+}
 local enable_bravos = {
 	elements = { 
 		400018,
@@ -259,17 +315,6 @@ local disable_bo_dozers = {
 		400046,
 		400047
 	}
-}
-local optsrespawn_shields = {
-	on_executed = { 
-		{ id = 400035, delay = 45 },
-		{ id = 400036, delay = 45 },
-		{ id = 400037, delay = 45 }
-	},
-	elements = { 
-		400036
-	},
-    event = "death"
 }
 local optsmanager_has_been_killed = {
 	on_executed = { 
@@ -313,10 +358,10 @@ return {
         ),
         restoration:gen_so(
             400003,
-            "dozer_hunt_so",
+            "hunt_so",
             Vector3(3600, 2473, -1200),
             Rotation(0, 0, 0),
-            optsBulldozer_SO
+            optsHunt_SO
         ),
 		--Cloakers, spawn as ambush in vault hallway (similiar to First World Bank)
 		restoration:gen_dummy(
@@ -534,22 +579,22 @@ return {
 		restoration:gen_dummy(
             400035,
             "shield_heli_1",
-            Vector3(1806, -3449, 954.990),
-            Rotation(0, 0, -0),
+            Vector3(3934, 2371, 225.990),
+            Rotation(-180, 0, -0),
             optsShield_Defend_1
         ),
 		restoration:gen_dummy(
             400036,
             "shield_heli_2",
-            Vector3(1727, -3449, 954.990),
-            Rotation(0, 0, -0),
+            Vector3(3876, 2371, 225.990),
+            Rotation(180, 0, -0),
             optsShield_Defend_2
         ),
 		restoration:gen_dummy(
             400037,
             "shield_heli_3",
-            Vector3(1649, -3442, 954.990),
-            Rotation(0, 0, -0),
+            Vector3(3813, 2371, 225.990),
+            Rotation(180, 0, -0),
             optsShield_Defend_3
         ),
 		restoration:gen_so(
@@ -572,13 +617,6 @@ return {
             Vector3(3426, -953.028, 224.989),
             Rotation(120, -0, -0),
             optsDefend_and_Sniper_SO
-        ),
-		restoration:gen_dummytrigger(
-            400041,
-            "respawn_the_blockade",
-            Vector3(-2400, -3677, 375),
-            Rotation(90, -0, -0),
-            optsrespawn_shields
         ),
 		restoration:gen_missionscript(
             400042,
@@ -620,6 +658,116 @@ return {
             400048,
             "they_sending_dozers",
             Bain_senddozers
+        ),
+		restoration:gen_missionscript(
+            400049,
+            "spawn_the_cops",
+            spawn_beat_cops
+        ),
+		restoration:gen_dummy(
+            400050,
+            "cop_1",
+            Vector3(3897, 2546, -1197.510),
+            Rotation(-90, 0, -0),
+            optsCop_1
+        ),
+        restoration:gen_dummy(
+            400051,
+            "cop_2",
+            Vector3(3853, 2546, -1197.510),
+            Rotation(-90, 0, -0),
+            optsCop_3
+        ),
+		restoration:gen_dummy(
+            400052,
+            "cop_3",
+            Vector3(3816, 2546, -1197.510),
+            Rotation(-90, 0, -0),
+            optsCop_4
+        ),
+        restoration:gen_dummy(
+            400053,
+            "cop_4",
+            Vector3(3771, 2469, -1200.010),
+            Rotation(-90, 0, -0),
+            optsCop_2
+        ),
+		restoration:gen_dummy(
+            400054,
+            "cop_5",
+            Vector3(3732, 2546, -1197.510),
+            Rotation(-90, 0, -0),
+            optsCop_3
+        ),
+        restoration:gen_dummy(
+            400055,
+            "cop_6",
+            Vector3(7456, -426, -1590.010),
+            Rotation(-180, 0, -0),
+            optsCop_2
+        ),
+		restoration:gen_dummy(
+            400056,
+            "cop_7",
+            Vector3(7456, -376, -1590.010),
+            Rotation(-180, 0, -0),
+            optsCop_4
+        ),
+		restoration:gen_dummy(
+            400057,
+            "cop_8",
+            Vector3(7456, -323, -1590.010),
+            Rotation(-180, 0, -0),
+            optsCop_4
+        ),
+		restoration:gen_dummy(
+            400058,
+            "cop_9",
+            Vector3(7456, -277, -1590.010),
+            Rotation(-180, 0, -0),
+            optsCop_3
+        ),
+		restoration:gen_dummy(
+            400059,
+            "cop_10",
+            Vector3(7456, -211, -1590.010),
+            Rotation(-180, 0, -0),
+            optsCop_3
+        ),
+		restoration:gen_dummy(
+            400060,
+            "cop_11",
+            Vector3(4270, -4360, -1187.244),
+            Rotation(-90, 0, -0),
+            optsCop_1
+        ),
+		restoration:gen_dummy(
+            400061,
+            "cop_12",
+            Vector3(4319, -4360, -1187.244),
+            Rotation(-90, 0, -0),
+            optsCop_1
+        ),
+		restoration:gen_dummy(
+            400062,
+            "cop_13",
+            Vector3(4272, -4427, -1187.244),
+            Rotation(-90, 0, -0),
+            optsCop_3
+        ),
+		restoration:gen_dummy(
+            400063,
+            "cop_14",
+            Vector3(4319, -4427, -1187.244),
+            Rotation(-90, 0, -0),
+            optsCop_3
+        ),
+		restoration:gen_dummy(
+            400064,
+            "cop_15",
+            Vector3(4272, -4491, -1187.244),
+            Rotation(-90, 0, -0),
+            optsCop_4
         )
     }
 }

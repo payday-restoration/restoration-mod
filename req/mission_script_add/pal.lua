@@ -63,21 +63,21 @@ local optsGrenadier_1 = {
 	on_executed = {
         { id = 400023, delay = 0 },
     },
-    enabled = overkill_above
+	enabled = true
 }
 local optsGrenadier_2 = {
 	enemy = grenadier,
 	on_executed = {
         { id = 400024, delay = 0 },
     },
-    enabled = overkill_above
+	enabled = true
 }
 local optsGrenadier_3 = {
 	enemy = grenadier,
 	on_executed = {
         { id = 400025, delay = 0 },
     },
-    enabled = death_sentence
+	enabled = death_sentence
 }
 local optsGrenadierDefend_1 = {
 	enemy = grenadier,
@@ -197,24 +197,26 @@ local optsSniper_Grenadier_SO = {
     so_action = "AI_sniper"
 }
 local disable_2nd_police_cruiser = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		100704
 	}
 }
 local disable_grenadiers = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400019
 	}
 }
 local enable_grenadiers = {
+	enabled = overkill_above,
 	elements = { 
 		400019
 	}
 }
 local spawn_grenadiers = {
-	enabled = overkill_above,
 	on_executed = { 
 		{ id = 400020, delay = 0 },
 		{ id = 400021, delay = 0 },

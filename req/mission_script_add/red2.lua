@@ -224,12 +224,14 @@ local optsShieldDefend_SO = {
     so_action = "AI_sniper"
 }
 local enable_shields = {
+	enabled = true,
 	elements = { 
 		400001,
 		400002
 	}
 }
 local disable_shields = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400001,
@@ -237,6 +239,7 @@ local disable_shields = {
 	}
 }
 local disable_elevator_dozers = {
+	enabled = death_sentence,
 	toggle = "off",
 	elements = { 
 		400035,
@@ -244,17 +247,20 @@ local disable_elevator_dozers = {
 	}
 }
 local disable_OverdrillPONR = {
+	enabled = pro_job,
 	toggle = "off",
 	elements = { 
 		400048
 	}
 }
 local enable_OverdrillPONR = {
+	enabled = pro_job,
 	elements = { 
 		400048
 	}
 }
 local disable_RegularPONR = {
+	enabled = pro_job,
 	toggle = "off",
 	elements = { 
 		400047

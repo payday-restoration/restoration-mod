@@ -43,16 +43,14 @@ local optsBulldozer = {
     on_executed = { 
 		{ id = 400003, delay = 3 },
 		{ id = 400048, delay = 0 },
-	},
-    enabled = overkill_above
+	}
 }
 local optsBulldozer_2 = {
     enemy = tank,
     on_executed = { 
 		{ id = 400003, delay = 3 },
 		{ id = 400048, delay = 0 }
-	},
-    enabled = death_sentence
+	}
 }
 local optsCloaker_1 = {
 	enemy = cloaker,
@@ -319,6 +317,7 @@ local disable_bo_dozers = {
 local optsmanager_has_been_killed = {
 	on_executed = { 
 		{ id = 400044, delay = 0 },
+		{ id = 400065, delay = 0 }
 	},
 	elements = { 
 		101506
@@ -326,9 +325,15 @@ local optsmanager_has_been_killed = {
     event = "death"
 }
 local enable_bo_dozers_the_sequel = {
+	enabled = overkill_above,
 	elements = { 
 		400001,
-		400002,
+		400002
+	}
+}
+local enable_bo_dozers_ds = {
+	enabled = death_sentence,
+	elements = {
 		400046,
 		400047
 	}
@@ -768,6 +773,11 @@ return {
             Vector3(4272, -4491, -1187.244),
             Rotation(-90, 0, -0),
             optsCop_4
+        ),
+		restoration:gen_toggleelement(
+            400065,
+            "enable_dozers_ds",
+            enable_bo_dozers_ds
         )
     }
 }

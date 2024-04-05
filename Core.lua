@@ -1020,7 +1020,7 @@ function restoration:mission_script_add()
 				elements = opts.elements or {},
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
-				enabled = true,
+				enabled = opts.enabled or false,
 				toggle = opts.toggle or "on"
 			},
 		}

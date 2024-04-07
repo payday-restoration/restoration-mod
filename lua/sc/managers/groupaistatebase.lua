@@ -1409,7 +1409,9 @@ if Network:is_server() then
 			return
 		end
 
-		self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+		if restoration.civ_death_diff_increase then
+			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+		end
 
 		if not self._hunt_mode and self._assault_number and self._assault_number >= 1 then
 			self._megaphone_hostages_killed = (self._megaphone_hostages_killed or 0) + 1 -- have to track separately to self._hostages_killed because some may be killed before going loud

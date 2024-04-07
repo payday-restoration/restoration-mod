@@ -205,6 +205,7 @@ function restoration:Init()
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.always_bravos = false
+	restoration.civ_death_diff_increase = true
 	
 	--Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
 	restoration.alternate_ponr_behavior = {

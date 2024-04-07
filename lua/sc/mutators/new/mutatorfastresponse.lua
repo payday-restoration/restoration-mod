@@ -14,6 +14,12 @@ MutatorFastResponse.icon_coords = {
 	4
 }
 
+function MutatorFastResponse:setup()
+	if restoration then
+		restoration.civ_death_diff_increase = false
+	end
+end
+
 function MutatorFastResponse:modify_value(id, value)
 	if id == "GroupAIStateBase:CheckingDiff" then
 		return 1

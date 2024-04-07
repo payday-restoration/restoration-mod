@@ -9,12 +9,12 @@ local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_n
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local chance_dozer_vault_1 = math.rand(1)
-local chance_dozer_vault_2 = math.rand(1)
-local chance_dozer_vault_3 = math.rand(1)
-local chance_dozer_vault_4 = math.rand(1)
-local chance_dozer_vault_5 = math.rand(1)
-local enabled_chance_dozers_office = math.rand(1)
+local chance_dozer_vault_1 = math.random()
+local chance_dozer_vault_2 = math.random() 
+local chance_dozer_vault_3 = math.random() 
+local chance_dozer_vault_4 = math.random() 
+local chance_dozer_vault_5 = math.random() 
+local enabled_chance_dozers_office = math.random() 
 local dozer_table = {
 	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",

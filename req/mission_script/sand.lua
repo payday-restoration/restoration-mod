@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_1 = math.rand(1)
-local chance_dozer_2 = math.rand(1)
+local chance_dozer_1 = math.random() 
+local chance_dozer_2 = math.random() 
 local dozer_ambush_chance_ovk = 50
 local dozer_ambush_chance_dw = 65
 local dozer_ambush_chance_ds = 80

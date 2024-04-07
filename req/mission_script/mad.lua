@@ -1,8 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var_1 = math.rand(1)
-local chance_dozer_var_2 = math.rand(1)
-local chance_elite = math.rand(1)
+local chance_dozer_var_1 = math.random() 
+local chance_dozer_var_2 = math.random() 
+local chance_elite = math.random() 
 local double_dozers_only = true
 local dozer_table = {
 	dozer_green = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",

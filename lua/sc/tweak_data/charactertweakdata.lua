@@ -533,6 +533,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.heal_cooldown = 22.5
 	self.meme_man.rescue_hostages = false
 	self.meme_man.steal_loot = false
+	self.meme_man.modify_health_on_tweak_change = true
+	self.meme_man.tmp_invulnerable_on_tweak_change = 6.5
 	self.meme_man.priority_shout = "f30"
 	self.meme_man.bot_priority_shout = "f30x_any"	
 	self.meme_man.custom_shout = false	

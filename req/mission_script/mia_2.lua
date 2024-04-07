@@ -1,11 +1,11 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_left = math.rand(1)
-local chance_dozer_middle = math.rand(1)
-local chance_dozer_right = math.rand(1)
-local chance_titan_swat_left = math.rand(1)
-local chance_titan_swat_right = math.rand(1)
-local chance_elite = math.rand(1)
+local chance_dozer_left = math.random()
+local chance_dozer_middle = math.random()
+local chance_dozer_right = math.random()
+local chance_titan_swat_left = math.random()
+local chance_titan_swat_right = math.random()
+local chance_elite = math.random()
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",

@@ -1,6 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var = math.rand(1)
+local chance_dozer_var = math.random()
 local chance_dozer = 75
 local hunt_projob = false
 --set up the table for the randomizer

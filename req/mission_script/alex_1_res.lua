@@ -1,10 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var_1 = math.rand(1)
-local chance_dozer_var_2 = math.rand(1)
-local chance_dozer_var_3 = math.rand(1)
-local chance_cloaker_var_1 = math.rand(1)
-local chance_cloaker_var_2 = math.rand(1)
+local chance_dozer_var_1 = math.random() 
+local chance_dozer_var_2 = math.random() 
+local chance_dozer_var_3 = math.random() 
+local chance_cloaker_var_1 = math.random() 
+local chance_cloaker_var_2 = math.random() 
 local dozer_trigger_times = 2
 local enable_special_dozers = false
 local chopper_amount = 1

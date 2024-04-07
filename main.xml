@@ -245,6 +245,8 @@
 					<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
 					<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 					<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/> <!--Technically camera related but w/e-->
+				<!--CHARACTERS-->
+					<hook file="sc/units/characters/characterattentionobject.lua" source_file="lib/units/characters/characterattentionobject"/>
 				<!--ENEMIES-->
 					<!--ACTIONS-->
 						<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>

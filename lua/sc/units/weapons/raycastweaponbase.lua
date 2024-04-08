@@ -1568,6 +1568,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
 	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
+	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.
 
 	local hit_units, splinters, results = managers.explosion:detect_and_give_dmg({
 		hit_pos = position,
@@ -1575,7 +1576,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		collision_slotmask = slot_mask,
 		curve_pow = self.CURVE_POW,
 		damage = damage,
-		player_damage = damage * self.PLAYER_DMG_MUL,
+		player_damage = 0,
 		alert_radius = self.ALERT_RADIUS,
 		ignore_unit = weapon_unit,
 		user = user_unit,

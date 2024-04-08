@@ -3280,110 +3280,115 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_o_rmr.perks = {"scope"}
 
 	--STANCE MODS
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_lemming = {
-			translation = Vector3(0, 5, -0.75)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_maxim9 = {
-			translation = Vector3(0, -6, -1)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_beer = {
-			translation = Vector3(0, 0, -0.6)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g18c = {
-			translation = Vector3(0, 0, -0.45)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_czech = {
-			translation = Vector3(0, 0, -0.6)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_stech = {
-			translation = Vector3(0, 0, -0.6)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_breech = {
-			translation = Vector3(0, 0, -0.4),
-			rotation = Rotation(0, -0.38, 0)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_ppk = {
-			translation = Vector3(0, 0, -1)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g26 = {
-			translation = Vector3(-0.01, 0, -0.65)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g17 = {
-			translation = Vector3(0, 0, -0.85)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_holt = {
-			translation = Vector3(0, 5, -0.58)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_legacy = {
-			translation = Vector3(0, 5, -0.68)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_beretta = {
-			translation = Vector3(0, 0, -0.4),
-			rotation = Rotation(0, -0.5, 0)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_pl14 = {
-			translation = Vector3(0, 0, -0.85)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_packrat = {
-			translation = Vector3(0, 0, -1.15)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g22c = {
-			translation = Vector3(0, 0, -0.45),
-			rotation = Rotation(0, -0.3, 0)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_p226 = {
-			translation = Vector3(0, 0, -0.6)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_hs2000 = {
-			translation = Vector3(0, 0, -0.75)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_sparrow = {
-			translation = Vector3(0, 0, -0.93)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_c96 = {
-			translation = Vector3(0, 0, -1.2)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_usp = {
-			translation = Vector3(-0.015, 0, -0.34)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_1911 = {
-			translation = Vector3(0, 0, -0.45)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_m1911 = {
-			translation = Vector3(0, 0, -0.85)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_shrew = {
-			translation = Vector3(0, 5, -0.48)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_type54 = {
-			translation = Vector3(0, 5, 0),
-			rotation = Rotation(0, -1, 0)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_chinchilla = {
-			translation = Vector3(0, 5, -0.75)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_rage = {
-			translation = Vector3(0, 0, -0.45)
-		}
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_deagle = {
-			translation = Vector3(0, 0, -0.48),
-			rotation = Rotation(0, -0.5, 0)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_bow_hunter = {
-			translation = Vector3(0, 8, 0.8)
-		}
-	
-		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_shatters_fury = {
-			translation = Vector3(0, 0, -0.45)
-		}
-
+		--BASE
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_lemming = {
+				translation = Vector3(0, 5, -0.75)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_maxim9 = {
+				translation = Vector3(0, -6, -1)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_beer = {
+				translation = Vector3(0, 0, -0.6)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g18c = {
+				translation = Vector3(0, 0, -0.45)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_czech = {
+				translation = Vector3(0, 0, -0.6)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_stech = {
+				translation = Vector3(0, 0, -0.6)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_breech = {
+				translation = Vector3(0, 0, -0.4),
+				rotation = Rotation(0, -0.38, 0)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_ppk = {
+				translation = Vector3(0, 0, -1)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g26 = {
+				translation = Vector3(-0.01, 0, -0.65)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g17 = {
+				translation = Vector3(0, 0, -0.85)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_holt = {
+				translation = Vector3(0, 5, -0.58)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_legacy = {
+				translation = Vector3(0, 5, -0.68)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_beretta = {
+				translation = Vector3(0, 0, -0.4),
+				rotation = Rotation(0, -0.5, 0)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_pl14 = {
+				translation = Vector3(0, 0, -0.85)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_packrat = {
+				translation = Vector3(0, 0, -1.15)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_g22c = {
+				translation = Vector3(0, 0, -0.45),
+				rotation = Rotation(0, -0.3, 0)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_p226 = {
+				translation = Vector3(0, 0, -0.6)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_hs2000 = {
+				translation = Vector3(0, 0, -0.75)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_sparrow = {
+				translation = Vector3(0, 0, -0.93)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_c96 = {
+				translation = Vector3(0, 0, -1.2)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_usp = {
+				translation = Vector3(-0.015, 0, -0.34)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_1911 = {
+				translation = Vector3(0, 0, -0.45)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_m1911 = {
+				translation = Vector3(0, 0, -0.85)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_shrew = {
+				translation = Vector3(0, 5, -0.48)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_type54 = {
+				translation = Vector3(0, 5, 0),
+				rotation = Rotation(0, -1, 0)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_chinchilla = {
+				translation = Vector3(0, 5, -0.75)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_rage = {
+				translation = Vector3(0, 0, -0.45)
+			}
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_deagle = {
+				translation = Vector3(0, 0, -0.48),
+				rotation = Rotation(0, -0.5, 0)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_bow_hunter = {
+				translation = Vector3(0, 8, 0.8)
+			}
+		
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_shatters_fury = {
+				translation = Vector3(0, 0, -0.45)
+			}
+		--CUSTOM BEARDLIB WEAPONS
+			self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_bigglock = {
+				translation = Vector3(0.005, 9, -2.12),
+				--rotation = Rotation(0.13, 0,0 )
+			}
 
 	--Compact Holosight
 	self.parts.wpn_fps_upg_o_eotech_xps.pcs = {}
@@ -17916,6 +17921,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 			weap.translation = weap.translation + Vector3(0,0,-0.25)
 		end
 	end
+	self.parts.wpn_fps_upg_o_rms.stance_mod.wpn_fps_pis_bigglock = {
+		translation = Vector3(0.005, 9, -2.12* 1.425),
+		--rotation = Rotation(0.13, 0,0 )
+	}
 	
 	self.parts.wpn_fps_upg_o_rikt.has_description = true
 	self.parts.wpn_fps_upg_o_rikt.desc_id = "bm_wp_upg_o_1_2"
@@ -17939,6 +17948,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 			weap.translation = weap.translation + Vector3(0,0,-0.65)
 		end
 	end
+	self.parts.wpn_fps_upg_o_rikt.stance_mod.wpn_fps_pis_bigglock = {
+		translation = Vector3(0.005, 9, -2.12* 1.715),
+		--rotation = Rotation(0.13, 0,0 )
+	}
 
 	--Maelstrom/Razor AMG UH-1
 	self.parts.wpn_fps_upg_o_uh.has_description = true
@@ -38774,13 +38787,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "socomstuff_init", function(self)
 	end
 end)
 
---Override Silent Enforcer's stance_mod data
+--Override stance_mod data
 Hooks:PostHook( WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
 end )
 Hooks:PostHook( WeaponFactoryTweakData, "init", "fort500Init", function(self)
 end )
-
 Hooks:PostHook(WeaponFactoryTweakData, "init", "stoner63a_lmg_mod_init", function(self)
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "BigGlockModInit", function(self)
 end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)

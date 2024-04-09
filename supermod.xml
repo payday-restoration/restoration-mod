@@ -89,6 +89,7 @@
 			<!-- Improve navigation data -->
 			<group name="levels/narratives/">
 				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>
+				<file :name="dentist/mia/stage2/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_1/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_3/nav_manager_data.nav_data"/>
 				<file :name="skm/skm_big2/nav_manager_data.nav_data"/>

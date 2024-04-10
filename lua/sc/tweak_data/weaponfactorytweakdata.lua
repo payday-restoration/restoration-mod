@@ -36547,7 +36547,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			local zoom = (self.parts[part_id].stats and (self.parts[part_id].stats.base_zoom_off or self.parts[part_id].stats.zoom or (self.parts[part_id].stats.gadget_zoom and self.parts[part_id].stats.gadget_zoom > 1 and self.parts[part_id].stats.gadget_zoom))) or 0
 			self.parts[part_id].custom_stats = self.parts[part_id].custom_stats or {}
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
-			if zoom > 0 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
+			if zoom > 2 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
 				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
 			end
 		end

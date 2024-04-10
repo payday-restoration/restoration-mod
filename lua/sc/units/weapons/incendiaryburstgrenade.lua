@@ -68,7 +68,7 @@ function IncendiaryBurstGrenade:_detonate_on_client(normal)
 	local normal = normal or math.UP
 
 	managers.explosion:give_local_player_dmg(pos, range, self._player_damage or self._damage, self:thrower_unit() or self._unit, self._curve_pow)
-	managers.fire:client_damage_and_push(pos, explosion_normal, nil, self._damage, range, self._curve_pow)
+	managers.fire:client_damage_and_push(pos, normal, nil, self._damage, range, self._curve_pow)
 
 	local destruction_delay = self:_spawn_environment_fire(normal)
 

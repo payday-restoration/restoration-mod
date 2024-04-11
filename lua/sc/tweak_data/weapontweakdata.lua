@@ -1423,7 +1423,8 @@ local crew_wep_preset = {
 		self.mac11_npc.NR_CLIPS_MAX = 5
 		self.mac11_npc.auto.fire_rate = 0.06
 		self.mac11_npc.alert_size = 2500
-		self.mac11_npc.hold = {"uzi", "pistol"}
+		self.mac11_npc.hold = "pistol"
+		self.mac11_npc.reload = "uzi"
 		self.mac11_npc.suppression = 2.8
 		self.mac11_npc.FIRE_MODE = "auto"
 	end
@@ -1457,7 +1458,11 @@ local crew_wep_preset = {
 		self.mp9_npc.CLIP_AMMO_MAX = 20
 		self.mp9_npc.NR_CLIPS_MAX = 5
 		self.mp9_npc.auto.fire_rate = 0.06666666666
-		self.mp9_npc.hold = "pistol"
+		self.mp9_npc.hold = {
+			"uzi",
+			"bullpup",
+			"rifle"
+		}
 		self.mp9_npc.alert_size = 2500
 		self.mp9_npc.suppression = 2.2
 		self.mp9_npc.FIRE_MODE = "auto"

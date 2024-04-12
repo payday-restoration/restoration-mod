@@ -1140,7 +1140,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 					if fired then
 						local zippy = weap_base:weapon_tweak_data().zippy
-						local jammed = weap_base._jammed
+						local jammed = zippy and weap_base._jammed
 						self._queue_fire = nil
 						self._already_fired = true
 
@@ -1165,7 +1165,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
 						local spin_up_semi = fire_mode == "single" and weap_base:weapon_tweak_data().spin_up_semi
 						if not spin_up_semi then
-							if not zippy or (zippy and jammed) then
+							if not zippy or jammed then
 								local second_gun_base = weap_base._second_gun and weap_base._second_gun:base()
 								local second_gun_turn = weap_base._second_turn
 								if second_gun_turn ~= true then

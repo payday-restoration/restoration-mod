@@ -35643,6 +35643,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_a_m203bbq.depends_on = "underbarrel"
 	end
 
+	if self.parts.wpn_fps_shot_or12_vg then
+		self.parts.wpn_fps_shot_or12_vg.stats = { value = 0 }
+		self.parts.wpn_fps_shot_or12_vg.custom_stats = nil
+		self.parts.wpn_fps_shot_or12_sight.stats = { value = 0 }
+		self.parts.wpn_fps_shot_or12_sight.custom_stats = nil
+		self.parts.wpn_fps_shot_or12_45steel.stats = { value = 0 }
+		self.parts.wpn_fps_shot_or12_45steel.custom_stats = nil
+	end
+
 
 
 --Make more attachments universally available, cartridge mismatching be damned

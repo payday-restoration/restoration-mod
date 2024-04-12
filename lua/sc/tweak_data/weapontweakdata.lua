@@ -12174,6 +12174,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.serbu.timers.shotgun_reload_shell = 0.5666666666666667
 						self.serbu.timers.shotgun_reload_exit_not_empty = 0.3
 						self.serbu.timers.shotgun_reload_exit_empty = 0.7
+						self.serbu.always_play_anims = true
 
 					--GSPS (Ithaca Model 37)
 						self.m37.desc_id = "bm_slamfire_generic_desc"
@@ -19575,6 +19576,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.reload_speed_multiplier = 1.25
 			self.ashot.panic_suppression_chance = 0.05
 			self.ashot.timers = deep_clone(self.new_raging_bull.timers)
+		end
+
+		if self.or12 then
+			self.or12.recategorize = { "light_shot" }
+			self.or12.categories = { "shotgun" }
+			self.or12.damage_type = "shotgun"
+			self.or12.damage_type_single_ray = "sniper"
+			self.or12.CLIP_AMMO_MAX = 30
+			self.or12.BURST_FIRE = false
+			self.or12.fire_mode_data.fire_rate = 0.15
+			self.or12.AMMO_MAX = 80
+			self.or12.kick = self.stat_info.kick_tables.vertical_kick
+			self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+			self.or12.FIRE_MODE = "single"				
+			self.or12.CAN_TOGGLE_FIREMODE = false
+			self.or12.rays = 9
+			self.or12.supported = true
+			self.or12.ads_speed = 0.420
+			self.or12.damage_falloff = {
+				start_dist = 500,
+				end_dist = 2800,
+				min_mult = 0.5
+			}
+			self.or12.stats = {
+				damage = 45,
+				spread = 25,
+				recoil = 49,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 19,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 1,
+				reload = 20
+			}
+			self.or12.stats_modifiers = nil
+			self.or12.panic_suppression_chance = 0.05
+			self.or12.reload_speed_multiplier = 0.8
 		end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

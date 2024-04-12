@@ -1423,8 +1423,7 @@ local crew_wep_preset = {
 		self.mac11_npc.NR_CLIPS_MAX = 5
 		self.mac11_npc.auto.fire_rate = 0.06
 		self.mac11_npc.alert_size = 2500
-		self.mac11_npc.hold = "pistol"
-		self.mac11_npc.reload = "uzi"
+		self.mac11_npc.hold = {"uzi", "pistol"}
 		self.mac11_npc.suppression = 2.8
 		self.mac11_npc.FIRE_MODE = "auto"
 	end
@@ -1458,11 +1457,7 @@ local crew_wep_preset = {
 		self.mp9_npc.CLIP_AMMO_MAX = 20
 		self.mp9_npc.NR_CLIPS_MAX = 5
 		self.mp9_npc.auto.fire_rate = 0.06666666666
-		self.mp9_npc.hold = {
-			"uzi",
-			"bullpup",
-			"rifle"
-		}
+		self.mp9_npc.hold = "pistol"
 		self.mp9_npc.alert_size = 2500
 		self.mp9_npc.suppression = 2.2
 		self.mp9_npc.FIRE_MODE = "auto"
@@ -14529,6 +14524,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     PAWCIO'S MODS     ]]--
+			if self.holygrail then
+				self.holygrail.recategorize = { "heavy_snp" }
+				self.holygrail.damage_type = "sniper"
+				self.holygrail.desc_id = "bm_heavy_ap_weapon_sc_desc"
+				self.holygrail.has_description = true
+				self.holygrail.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.holygrail.trail_effect = "effects/particles/weapons/sniper_trail_sc"
+				self.holygrail.use_sniper_trail = true
+				self.holygrail.AMMO_MAX = 20
+				self.holygrail.CLIP_AMMO_MAX = 1
+				self.holygrail.fire_mode_data.fire_rate = 2
+				self.holygrail.kick = self.stat_info.kick_tables.vertical_kick
+				self.holygrail.supported = true
+				self.holygrail.ads_speed = 0.300
+				self.holygrail.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.25
+				}
+				self.holygrail.stats = {
+					damage = 180,
+					spread = 91,
+					recoil = 51,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 26,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.holygrail.stats_modifiers = nil
+				self.holygrail.can_shoot_through_enemy = true
+				self.holygrail.can_shoot_through_enemy_unlim = true
+				self.holygrail.can_shoot_through_wall = true
+				self.holygrail.can_shoot_through_shield = true
+				self.holygrail.can_shoot_through_titan_shield = true
+				self.holygrail.panic_suppression_chance = 0.05
+				self.holygrail.armor_piercing_chance = 1
+				self.holygrail.descope_on_fire = true
+				self.holygrail.timers.reload_exit_empty = 0.3
+				self.holygrail.timers.reload_exit_not_empty = 0.3
+			end
+
 			if self.obrez then
 				self.obrez.categories = { 
 					"snp",

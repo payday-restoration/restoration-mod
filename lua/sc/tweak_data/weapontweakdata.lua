@@ -18388,7 +18388,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.raid_ww2_bren.stats_modifiers = nil
 				self.raid_ww2_bren.panic_suppression_chance = 0.05
-				self.raid_ww2_bren.sounds.spin_start = "wp_m60_reload_lever_release"
+				self.raid_ww2_bren.sounds.spin_start = "wp_mg42_lever_release"
 				self.raid_ww2_bren.spin_up_shoot = true
 				self.raid_ww2_bren.spin_up_t = 0.08
 				self.raid_ww2_bren.spin_down_t = 0.00000001
@@ -18495,6 +18495,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.timers.reload_not_empty = 2
 				self.zip22.timers.reload_exit_not_empty = 0.5
 			end
+
+			if self.madsen_mg then
+				self.madsen_mg.recategorize = { "heavy_mg" }
+				self.madsen_mg.categories = {
+					"lmg",
+					"smg",
+					"mmg"
+				}
+				self.madsen_mg.damage_type = "machine_gun"
+				self.madsen_mg.CLIP_AMMO_MAX = 25
+				self.madsen_mg.BURST_FIRE = false
+				self.madsen_mg.CAN_TOGGLE_FIREMODE = false
+				self.madsen_mg.fire_mode_data.fire_rate = 0.1333333
+				self.madsen_mg.AMMO_MAX = 160
+				self.madsen_mg.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
+				self.madsen_mg.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.madsen_mg.supported = true
+				self.madsen_mg.ads_speed = 0.480
+				self.madsen_mg.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6000,
+					min_mult = 0.4
+				}
+				self.madsen_mg.stats = {
+					damage = 60,
+					spread = 57,
+					recoil = 63,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 16,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.madsen_mg.stats_modifiers = nil
+				self.madsen_mg.panic_suppression_chance = 0.05
+				self.madsen_mg.sounds.spin_start = "wp_mg42_lever_release"
+				self.madsen_mg.spin_up_shoot = true
+				self.madsen_mg.spin_up_t = 0.08
+				self.madsen_mg.spin_down_t = 0.00000001
+				self.madsen_mg.reload_speed_multiplier = 0.9
+				self.madsen_mg.sms = sms_preset.lmg_120
+				self.madsen_mg.weapon_movement_penalty = sms_preset.lmg_120
+			end
+
 		
 		--[[     TANGERINE'S MODS     ]]--
 			if self.ar47 then --Tangerine's AR-47

@@ -28554,6 +28554,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 		end
+
+		if self.parts.wpn_fps_lmg_madsen_mg_muzzle then
+			self.parts.wpn_fps_lmg_madsen_mg_muzzle.stats = { value = 0 }
+			self.parts.wpn_fps_lmg_madsen_mg_muzzle.custom_stats = nil
+			self.parts.wpn_fps_lmg_madsen_mg_muzzle.perks = nil
+
+			self.parts.wpn_fps_lmg_madsen_mg_xmag.supported = true
+			self.parts.wpn_fps_lmg_madsen_mg_xmag.stats = {
+				value = 6,
+				extra_ammo = 15,
+				reload = -4,
+				concealment = -3
+			}
+			self.parts.wpn_fps_lmg_madsen_mg_xmag.custom_stats = {
+				ads_speed_mult = 1.075,
+				big_scope = true
+			}
+		end
 		
 
 	--[[ GAMBYT'S MODS ]]

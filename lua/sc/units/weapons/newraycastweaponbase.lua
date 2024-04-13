@@ -1157,10 +1157,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end	
 
 			if stats.adj_timers then
-				self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
-				self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
-				self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
-				self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+				if self:weapon_tweak_data().timers then
+					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
+					self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
+					self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
+					self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+				end
 			end	
 	
 			if stats.m16_burst then

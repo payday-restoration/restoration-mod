@@ -1626,6 +1626,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Custom MGs
+			--Madsen MG
+		["bm_wp_wpn_fps_lmg_madsen_mg_xmag"] = "Магазин на 40 патронов",
 			--Stoner 63 (LMG)
 		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape",
 		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",

@@ -2583,6 +2583,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Microgun
 				["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Has a brief spin-up period before firing; aiming keeps the weapon spun-up.##",
 				--Custom MGs
+					--Madsen MG
+					["bm_wp_wpn_fps_lmg_madsen_mg_xmag"] = "40 Round Mag",
 					--Stoner 63 (LMG)
 					["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape",
 					["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",

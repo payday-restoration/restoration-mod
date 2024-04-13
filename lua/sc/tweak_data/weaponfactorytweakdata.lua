@@ -28561,6 +28561,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_madsen_mg_muzzle.perks = nil
 
 			self.parts.wpn_fps_lmg_madsen_mg_xmag.supported = true
+			self.parts.wpn_fps_lmg_madsen_mg_xmag.has_description = false
 			self.parts.wpn_fps_lmg_madsen_mg_xmag.stats = {
 				value = 6,
 				extra_ammo = 15,

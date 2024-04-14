@@ -27,7 +27,7 @@ local dozer_table = {
 
 	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"

@@ -1202,13 +1202,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.disable_steelsight_recoil_anim then
 				self._disable_steelsight_recoil_anim = true
 			end					
-			
-	
-			if stats.is_pistol then
-				if self:weapon_tweak_data().categories then
-					self:weapon_tweak_data().categories = {"pistol"}
-				end
-			end
 	
 			if stats.srm then		
 				self._srm = stats.srm

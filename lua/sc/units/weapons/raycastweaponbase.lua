@@ -277,6 +277,12 @@ function RaycastWeaponBase:chk_shield_knock(hit_unit, col_ray, weapon_unit, user
 	return false
 end
 
+
+function RaycastWeaponBase:categories()
+	return self:weapon_tweak_data().categories or {}
+end
+
+
 --Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 

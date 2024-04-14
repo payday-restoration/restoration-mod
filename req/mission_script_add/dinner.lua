@@ -295,12 +295,14 @@ local van_spawngroup  = {
 	}
 }
 local disable_dozer = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400019
 	}
 }
 local disable_murkies = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400040,

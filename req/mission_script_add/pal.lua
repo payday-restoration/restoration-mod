@@ -1,11 +1,17 @@
 --TODO: Make scripted Bulldozers spawns that turn off either water or power like in PDTH (with taser as his backup in some power box spots)
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local sniper = "units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"
-local greandier = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1") or "units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+local grenadier = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1") or "units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local death_sentence = difficulty == 8
 local mayhem_above = difficulty >= 6
 local overkill_above = difficulty >= 5
+local deathwish_above = difficulty >= 7
+local manhole_specials_warning = "Play_ban_s03_b"
+
+	if difficulty >= 7 then
+		manhole_specials_warning = "Play_ban_s05"
+	end
 	
 	if difficulty == 6 then
 		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
@@ -17,7 +23,6 @@ local overkill_above = difficulty >= 5
 
 local optsSniper_1 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 100675, delay = 0 },
     },
@@ -25,7 +30,6 @@ local optsSniper_1 = {
 }
 local optsSniper_2 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400006, delay = 0 },
     },
@@ -33,7 +37,6 @@ local optsSniper_2 = {
 }
 local optsSniper_3 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = {
         { id = 400007, delay = 0 },
     },
@@ -41,7 +44,6 @@ local optsSniper_3 = {
 }
 local optsSniper_4 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	spawn_action = "e_sp_armored_truck_1st",
 	on_executed = {
         { id = 400008, delay = 2.5 },
@@ -50,7 +52,6 @@ local optsSniper_4 = {
 }
 local optsSniper_5 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	spawn_action = "e_sp_up_2_75_down_1_25m",
 	on_executed = {
         { id = 400009, delay = 3 },
@@ -58,28 +59,53 @@ local optsSniper_5 = {
     enabled = death_sentence
 }
 local optsGrenadier_1 = {
-	enemy = greandier,
-	participate_to_group_ai = true,
+	enemy = grenadier,
 	on_executed = {
         { id = 400023, delay = 0 },
     },
-    enabled = overkill_above
+	enabled = true
 }
 local optsGrenadier_2 = {
-	enemy = greandier,
-	participate_to_group_ai = true,
+	enemy = grenadier,
 	on_executed = {
         { id = 400024, delay = 0 },
     },
-    enabled = overkill_above
+	enabled = true
 }
 local optsGrenadier_3 = {
-	enemy = greandier,
-	participate_to_group_ai = true,
+	enemy = grenadier,
 	on_executed = {
         { id = 400025, delay = 0 },
     },
-    enabled = death_sentence
+	enabled = death_sentence
+}
+local optsGrenadierDefend_1 = {
+	enemy = grenadier,
+	on_executed = {
+        { id = 400035, delay = 0 },
+    },
+    enabled = deathwish_above
+}
+local optsGrenadierDefend_2 = {
+	enemy = grenadier,
+	on_executed = {
+        { id = 400036, delay = 0 },
+    },
+    enabled = deathwish_above
+}
+local optsGrenadierDefend_3 = {
+	enemy = grenadier,
+	on_executed = {
+        { id = 400037, delay = 0 },
+    },
+    enabled = deathwish_above
+}
+local optsGrenadierDefend_4 = {
+	enemy = grenadier,
+	on_executed = {
+        { id = 400038, delay = 0 },
+    },
+    enabled = deathwish_above
 }
 local optsrespawn_sniper_1 = {
 	on_executed = { 
@@ -171,24 +197,26 @@ local optsSniper_Grenadier_SO = {
     so_action = "AI_sniper"
 }
 local disable_2nd_police_cruiser = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		100704
 	}
 }
 local disable_grenadiers = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400019
 	}
 }
 local enable_grenadiers = {
+	enabled = overkill_above,
 	elements = { 
 		400019
 	}
 }
 local spawn_grenadiers = {
-	enabled = overkill_above,
 	on_executed = { 
 		{ id = 400020, delay = 0 },
 		{ id = 400021, delay = 0 },
@@ -205,7 +233,7 @@ local Bain_sendgrenadiers = {
 	can_not_be_muted = true
 }
 local Bain_sendshields = {
-	dialogue = "Play_ban_s03_b",
+	dialogue = manhole_specials_warning,
 	can_not_be_muted = true
 }
 
@@ -407,6 +435,62 @@ return {
             400030,
             "disable_grenadiers",
             disable_grenadiers
+        ),
+		restoration:gen_dummy(
+            400031,
+            "grenadier_defend_1",
+            Vector3(-5536, -3189, 30.090),
+            Rotation(90, -0, -0),
+            optsGrenadierDefend_1
+        ),
+		restoration:gen_dummy(
+            400032,
+            "grenadier_defend_2",
+            Vector3(-5536, -3129, 30.090),
+            Rotation(90, -0, -0),
+            optsGrenadierDefend_2
+        ),
+		restoration:gen_dummy(
+            400033,
+            "grenadier_defend_3",
+            Vector3(3052, -685, 130.921),
+			Rotation(-180, 0, -0),
+            optsGrenadierDefend_3
+		),
+		restoration:gen_dummy(
+            400034,
+            "grenadier_defend_4",
+            Vector3(3121, -685, 130.921),
+			Rotation(-180, -0, -0),
+            optsGrenadierDefend_4
+		),
+		restoration:gen_so(
+            400035,
+            "grenadier_spot_so_1",
+            Vector3(-5995, -349, 26.200),
+            Rotation(-90, 0, -0),
+            optsSniper_Grenadier_SO
+        ),
+		restoration:gen_so(
+            400036,
+            "grenadier_spot_so_2",
+            Vector3(-5995, -455, 26.200),
+            Rotation(-90, 0, -0),
+            optsSniper_Grenadier_SO
+        ),
+		restoration:gen_so(
+            400037,
+            "grenadier_spot_so_3",
+            Vector3(-796.150, 12.669, 31.663),
+            Rotation(50, -0, -0),
+            optsSniper_Grenadier_SO
+        ),
+		restoration:gen_so(
+            400038,
+            "grenadier_spot_so_4",
+            Vector3(-863, -67, 31.663),
+            Rotation(50, 0, -0),
+            optsSniper_Grenadier_SO
         )
     }
 }

@@ -1,10 +1,9 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 
 	--Setting up the murkies for epic three way fight
-	if difficulty_index <= 2 or difficulty_index == 3 then
+	if difficulty <= 2 or difficulty == 3 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
@@ -16,7 +15,7 @@ local hunt_projob = false
 		swat_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
 		swat_4 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 		swat_5 = "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
-	elseif difficulty_index == 4 or difficulty_index == 5 then
+	elseif difficulty == 4 or difficulty == 5 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
@@ -28,7 +27,7 @@ local hunt_projob = false
 		swat_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 		swat_4 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		swat_5 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"
@@ -54,9 +53,9 @@ local hunt_projob = false
 		swat_5 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
 	end
 
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 660	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 630
 	else
 		ponr_value = 600		
@@ -64,7 +63,7 @@ local hunt_projob = false
 	
 if pro_job then
 	hunt_projob = true
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 	--Captain Winters Encounter on DSPJ (probably the only scripted captain encounter in vanilla heists)
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
 		specialenemy_2 = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"

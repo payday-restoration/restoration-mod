@@ -130,7 +130,7 @@ return {
 			enabled = false
 		}
 	},
-	--Warn about shields
+	--Warn about shields (and grenadiers if it's Death Wish above)
 	[101469] = {
 		on_executed = {
             {id = 400018, delay = 0}
@@ -153,6 +153,31 @@ return {
 			{id = 400004, delay = 5},
 			{id = 400005, delay = 5},
 			{id = 400016, delay = 7}
+		}
+	},
+	--Spawn two extra grenadiers on Death Wish above
+	[103336] = {
+		on_executed = {
+            {id = 400031, delay = 0},
+			{id = 400032, delay = 0}
+		}
+	},
+	[101929] = {
+		on_executed = {
+            {id = 400031, delay = 0},
+			{id = 400032, delay = 0}
+		}
+	},
+	[101803] = {
+		on_executed = {
+            {id = 400033, delay = 0},
+			{id = 400034, delay = 0}
+		}
+	},
+	[101930] = {
+		on_executed = {
+            {id = 400033, delay = 0},
+			{id = 400034, delay = 0}
 		}
 	},
 	--Add the missing sniper access

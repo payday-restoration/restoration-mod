@@ -1,5 +1,4 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 local ambush_doors_chance = 85
@@ -7,15 +6,15 @@ local ambush_amount = 1
 local both_window_swats_only = true
 local stair_blockade_chance = 0
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
-local taser = (difficulty_index == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty_index == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
+local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local chance_dozer_vault_1 = math.rand(1)
-local chance_dozer_vault_2 = math.rand(1)
-local chance_dozer_vault_3 = math.rand(1)
-local chance_dozer_vault_4 = math.rand(1)
-local chance_dozer_vault_5 = math.rand(1)
-local enabled_chance_dozers_office = math.rand(1)
+local chance_dozer_vault_1 = math.random()
+local chance_dozer_vault_2 = math.random() 
+local chance_dozer_vault_3 = math.random() 
+local chance_dozer_vault_4 = math.random() 
+local chance_dozer_vault_5 = math.random() 
+local enabled_chance_dozers_office = math.random() 
 local dozer_table = {
 	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -26,13 +25,13 @@ local dozer_table = {
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 }
 
-	if difficulty_index == 5 or difficulty_index == 6 then
+	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty_index == 7 then
+	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
@@ -49,19 +48,19 @@ if pro_job then
 	    ambush_amount = 2
 		hunt_projob = true
 	--titan dozer replaces some dozers on Mayhem above	
-	if difficulty_index >= 6 then
+	if difficulty >= 6 then
 		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
 	--Titan cloakers replace scripted cloakers
 	--Ambush is more deadly
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_doors_chance = 100
 		ambush_amount = 3
 	end
 	--Titan units replace some of the scripted spawns
-	if difficulty_index >= 5 then
+	if difficulty >= 5 then
 		titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
@@ -72,16 +71,16 @@ if pro_job then
 	end
 end
 
-	if difficulty_index >= 6 then
+	if difficulty >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
 	end	
 	
-	if difficulty_index >= 5 then
+	if difficulty >= 5 then
 		stair_blockade_chance = 100 --100% to always spawn 3 tasers+1 heavy swat in staircase escape (145+ throwback)
 	end	
 
 	--Setting up random vault dozers for Mayhem+, that's rad!
-	if difficulty_index == 6 or difficulty_index == 7 then
+	if difficulty == 6 or difficulty == 7 then
 		if chance_dozer_vault_1 < 0.35 then
 			vault_dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_vault_1 < 0.70 then
@@ -123,7 +122,7 @@ end
 		end
 	end
 
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		if chance_dozer_vault_1 < 0.25 then
 			vault_dozer_1 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_vault_1 < 0.50 then
@@ -175,9 +174,9 @@ end
 		end
 	end
 
-	if difficulty_index <= 6 then
+	if difficulty <= 6 then
 		vault_guard = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
-	elseif difficulty_index == 7 then
+	elseif difficulty == 7 then
 		vault_guard = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"	
 	else
 		vault_guard = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"

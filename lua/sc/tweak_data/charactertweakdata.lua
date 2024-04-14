@@ -533,6 +533,11 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.heal_cooldown = 22.5
 	self.meme_man.rescue_hostages = false
 	self.meme_man.steal_loot = false
+	self.meme_man.modify_health_on_tweak_change = true
+	self.meme_man.tmp_invulnerable_on_tweak_change = 6.5
+	self.meme_man.priority_shout = "f30"
+	self.meme_man.bot_priority_shout = "f30x_any"	
+	self.meme_man.custom_shout = false	
 	table.insert(self._enemy_list, "meme_man")	
 	self.meme_man_shield = deep_clone(self.meme_man)		
 	self.meme_man_shield.tags = {"medic", "special", "shield"}		
@@ -545,7 +550,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.is_special = true
 	self.meme_man_shield.rotation_speed = 0.75
 	self.meme_man_shield.no_asu = true
-	self.meme_man_shield.unintimidateable = true
 	self.meme_man_shield.allowed_poses = {crouch = true}
 	self.meme_man_shield.always_face_enemy = true
 	self.meme_man_shield.move_speed = presets.move_speed.fast
@@ -559,7 +563,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.calls_in = nil
 	self.meme_man_shield.ignore_medic_revive_animation = true
 	self.meme_man_shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
-	self.meme_man_shield.damage.shield_knocked = true		
+	self.meme_man_shield.damage.shield_knocked = true	
+	self.meme_man_shield.custom_shout = false		
 	table.insert(self._enemy_list, "meme_man_shield")	
 
 	--April Fools Vet Cop

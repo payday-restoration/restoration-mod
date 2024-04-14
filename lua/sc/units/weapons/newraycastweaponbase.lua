@@ -372,6 +372,13 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if self._alt_fire_active and self._alt_fire_data then
 		multiplier = multiplier * (self._alt_fire_data.spread_mul or 1)
 	end
+	
+	local spread_multiplier = 1
+	for _, category in ipairs(self:categories()) do
+		local spread_mult = tweak_data[category] and tweak_data[category].spread_mult or 1
+		spread_multiplier = spread_multiplier * spread_mult
+	end
+	multiplier = multiplier * spread_multiplier
 
 	spread_area = spread_area * multiplier
 
@@ -781,6 +788,7 @@ function NewRaycastWeaponBase:old_update_stats_values(disallow_replenish, ammo_d
 		self._trail_effect = Idstring(self._ammo_data.trail_effect)
 	else
 		self._trail_effect = self:weapon_tweak_data().trail_effect and Idstring(self:weapon_tweak_data().trail_effect) or self.TRAIL_EFFECT
+		self._trail_effect_npc = self:weapon_tweak_data().trail_effect_npc and Idstring(self:weapon_tweak_data().trail_effect_npc) or nil
 	end
 
 	self._trail_effect_table = {
@@ -1146,6 +1154,15 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				tweak_data.weapon.system.timers.reload_not_empty = 8
 				tweak_data.weapon.system.timers.reload_exit_empty = 0.8
 				tweak_data.weapon.system.timers.reload_exit_not_empty = 0.8
+			end	
+
+			if stats.adj_timers then
+				if self:weapon_tweak_data().timers then
+					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
+					self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
+					self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
+					self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+				end
 			end	
 	
 			if stats.m16_burst then
@@ -1707,6 +1724,7 @@ function NewRaycastWeaponBase:fire(...)
 			camera:play_redirect(Idstring("idle"))
 		end
 	end
+
 	return result
 end	
 

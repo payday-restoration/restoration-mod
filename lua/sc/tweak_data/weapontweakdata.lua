@@ -182,10 +182,53 @@ local crew_wep_preset = {
 	
 	function WeaponTweakData:_set_normal()
 
+		local diff_reduction = 3
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 1.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
 		--Bot sidearm--
 		self.beretta92_npc.DAMAGE = 1.8
 		
-		local diff_reduction = 3
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
 			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
@@ -217,10 +260,52 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_hard()
+		local diff_reduction = 3
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 1.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
 		--Bot sidearm--
 		self.beretta92_npc.DAMAGE = 1.8
-		
-		local diff_reduction = 3
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
 			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
@@ -252,10 +337,52 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_overkill()
+		local diff_reduction = 2
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 2.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
 		--Bot sidearm--
 		self.beretta92_npc.DAMAGE = 2.8
-		
-		local diff_reduction = 2
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
 			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
@@ -287,10 +414,53 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_overkill_145()
+		local diff_reduction = 1
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 3.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
 		--Bot sidearm--
 		self.beretta92_npc.DAMAGE = 3.8
-		
-		local diff_reduction = 1
+
 		--Everything else--
 		for i, wep_id in ipairs(damage_set.smg) do
 			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
@@ -343,6 +513,82 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_easy_wish()
+		local diff_reduction = 0
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 4.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
+		--Bot sidearm--
+		self.beretta92_npc.DAMAGE = 4.8
+
+		--Everything else--
+		for i, wep_id in ipairs(damage_set.smg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+		end
+		
+		for i, wep_id in ipairs(damage_set.assault_rifle) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_pump) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_bolt) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.lmg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+		end
+		
 		if job == "chew" or job == "glace" then
 			self.swat_van_turret_module.HEALTH_INIT = 787.5
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
@@ -372,6 +618,81 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_overkill_290()
+		local diff_reduction = 0
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 4.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
+		--Bot sidearm--
+		self.beretta92_npc.DAMAGE = 4.8
+
+		--Everything else--
+		for i, wep_id in ipairs(damage_set.smg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+		end
+		
+		for i, wep_id in ipairs(damage_set.assault_rifle) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_pump) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_bolt) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.lmg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+		end
 		if job == "chew" or job == "glace" then
 			self.swat_van_turret_module.HEALTH_INIT = 787.5
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
@@ -405,6 +726,82 @@ local crew_wep_preset = {
 	end
 	
 	function WeaponTweakData:_set_sm_wish()
+		local diff_reduction = 0
+
+		for id, weap in pairs(self) do
+			if weap.categories and weap.stats then
+				local primary_cat = (weap.categories[1] == "akimbo" and weap.categories[2]) or weap.categories[1] or "smg"
+				if self[id .. "_crew"] then
+					if primary_cat == "pistol" then
+						self[id .. "_crew"].DAMAGE = 4.8
+						self[id .. "_crew"].CLIP_AMMO_MAX = 10
+					elseif primary_cat == "smg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.smg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.smg.fire_rate
+						end
+					elseif primary_cat == "lmg" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.lmg.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.lmg.fire_rate
+						end
+					elseif primary_cat == "assault_rifle" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.assault_rifle.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.assault_rifle.fire_rate
+						end
+					elseif primary_cat == "snp" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.sniper_bolt.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.sniper_bolt.fire_rate
+						end
+					elseif primary_cat == "shotgun" then
+						self[id .. "_crew"].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+						self[id .. "_crew"].CLIP_AMMO_MAX = crew_wep_preset.shotgun_pump.mag_capacity
+						if self[id .. "_crew"].auto and self[id .. "_crew"].auto.fire_rate then
+							self[id .. "_crew"].auto.fire_rate = crew_wep_preset.shotgun_pump.fire_rate
+						end
+					end
+				end
+			end
+		end
+
+		--Bot sidearm--
+		self.beretta92_npc.DAMAGE = 4.8
+
+		--Everything else--
+		for i, wep_id in ipairs(damage_set.smg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.smg.damage - diff_reduction
+		end
+		
+		for i, wep_id in ipairs(damage_set.assault_rifle) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.assault_rifle.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.shotgun_pump) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.shotgun_pump.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_auto) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_auto.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.sniper_bolt) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.sniper_bolt.damage - diff_reduction
+		end
+
+		for i, wep_id in ipairs(damage_set.lmg) do
+			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
+		end
+
 		if job == "chew" or job == "glace" then
 			self.swat_van_turret_module.HEALTH_INIT = 900
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
@@ -1026,7 +1423,8 @@ local crew_wep_preset = {
 		self.mac11_npc.NR_CLIPS_MAX = 5
 		self.mac11_npc.auto.fire_rate = 0.06
 		self.mac11_npc.alert_size = 2500
-		self.mac11_npc.hold = {"uzi", "pistol"}
+		self.mac11_npc.hold = "pistol"
+		self.mac11_npc.reload = "uzi"
 		self.mac11_npc.suppression = 2.8
 		self.mac11_npc.FIRE_MODE = "auto"
 	end
@@ -1060,7 +1458,11 @@ local crew_wep_preset = {
 		self.mp9_npc.CLIP_AMMO_MAX = 20
 		self.mp9_npc.NR_CLIPS_MAX = 5
 		self.mp9_npc.auto.fire_rate = 0.06666666666
-		self.mp9_npc.hold = "pistol"
+		self.mp9_npc.hold = {
+			"uzi",
+			"bullpup",
+			"rifle"
+		}
 		self.mp9_npc.alert_size = 2500
 		self.mp9_npc.suppression = 2.2
 		self.mp9_npc.FIRE_MODE = "auto"
@@ -10804,7 +11206,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contender.CAN_TOGGLE_FIREMODE = false
 						self.contender.kick = self.stat_info.kick_tables.vertical_kick
 						self.contender.supported = true
-						self.contender.ads_speed = 0.220
+						self.contender.ads_speed = 0.200
 						self.contender.damage_falloff = {
 							start_dist = 1800,
 							end_dist = 5000,
@@ -11772,6 +12174,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.serbu.timers.shotgun_reload_shell = 0.5666666666666667
 						self.serbu.timers.shotgun_reload_exit_not_empty = 0.3
 						self.serbu.timers.shotgun_reload_exit_empty = 0.7
+						self.serbu.always_play_anims = true
 
 					--GSPS (Ithaca Model 37)
 						self.m37.desc_id = "bm_slamfire_generic_desc"
@@ -14127,6 +14530,152 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     PAWCIO'S MODS     ]]--
+			if self.holygrail then
+				self.holygrail.recategorize = { "heavy_snp" }
+				self.holygrail.damage_type = "sniper"
+				self.holygrail.desc_id = "bm_heavy_ap_weapon_sc_desc"
+				self.holygrail.has_description = true
+				self.holygrail.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.holygrail.trail_effect = "effects/particles/weapons/sniper_trail_sc"
+				self.holygrail.use_sniper_trail = true
+				self.holygrail.AMMO_MAX = 20
+				self.holygrail.CLIP_AMMO_MAX = 1
+				self.holygrail.fire_mode_data.fire_rate = 2
+				self.holygrail.kick = self.stat_info.kick_tables.vertical_kick
+				self.holygrail.supported = true
+				self.holygrail.ads_speed = 0.300
+				self.holygrail.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.25
+				}
+				self.holygrail.stats = {
+					damage = 180,
+					spread = 91,
+					recoil = 51,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 26,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.holygrail.stats_modifiers = nil
+				self.holygrail.can_shoot_through_enemy = true
+				self.holygrail.can_shoot_through_enemy_unlim = true
+				self.holygrail.can_shoot_through_wall = true
+				self.holygrail.can_shoot_through_shield = true
+				self.holygrail.can_shoot_through_titan_shield = true
+				self.holygrail.panic_suppression_chance = 0.05
+				self.holygrail.armor_piercing_chance = 1
+				self.holygrail.descope_on_fire = true
+				self.holygrail.timers.reload_exit_empty = 0.3
+				self.holygrail.timers.reload_exit_not_empty = 0.3
+			end
+
+			if self.obrez then
+				self.obrez.categories = { 
+					"snp",
+					"gl_pistol"
+				}
+				self.obrez.recategorize = { "heavy_snp" }
+				self.obrez.damage_type = "sniper"
+				self.obrez.bmp = 1
+				self.obrez.has_description = false
+				self.obrez.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.obrez.AMMO_MAX = 15
+				self.obrez.CLIP_AMMO_MAX = 5
+				self.obrez.fire_mode_data.fire_rate = 2
+				self.obrez.fire_rate_multiplier = 1.3333333
+				self.obrez.kick = self.stat_info.kick_tables.vertical_kick
+				self.obrez.warsaw = true
+				self.obrez.supported = true
+				self.obrez.ads_speed = 0.200
+				self.obrez.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6500,
+					min_mult = 0.5
+				}
+				self.obrez.stats = {
+					damage = 120,
+					spread = 62,
+					recoil = 33,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.obrez.stats_modifiers = nil
+				self.obrez.can_shoot_through_enemy = true
+				self.obrez.can_shoot_through_enemy_unlim = true
+				self.obrez.can_shoot_through_wall = true
+				self.obrez.can_shoot_through_shield = true
+				self.obrez.can_shoot_through_titan_shield = false
+				self.obrez.panic_suppression_chance = 0.05
+				self.obrez.armor_piercing_chance = 1
+				self.obrez.object_damage_mult = 4
+				self.obrez.timers.reload_exit_empty = 0.6
+				self.obrez.timers.reload_exit_not_empty = 0.65
+				self.obrez.always_play_anims = true
+			end
+
+			if self.bigglock then
+				self.bigglock.bmp = 2000
+				self.bigglock.use_data.selection_index = 2 --Moved to primary
+				self.bigglock.recategorize = { "heavy_pis", "handcannon" }
+				self.bigglock.has_description = false
+				self.bigglock.damage_type = "handcannon"
+				self.bigglock.fire_mode_data.fire_rate = 0.2727272727
+				self.bigglock.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.bigglock.AMMO_MAX = 40
+				self.bigglock.CLIP_AMMO_MAX = 17
+				self.bigglock.kick = self.stat_info.kick_tables.vertical_kick
+				self.bigglock.supported = true
+				self.bigglock.rebecca = {400}
+				self.bigglock.ads_speed = 0.500
+				self.bigglock.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.bigglock.stats = {
+					damage = 90,
+					spread = 59,
+					recoil = 1,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.bigglock.stats_modifiers = nil
+				self.bigglock.lock_slide = true
+				self.bigglock.panic_suppression_chance = 0.05
+				self.bigglock.armor_piercing_chance = 1
+				self.bigglock.object_damage_mult = 4
+				self.bigglock.tactical_reload = 1
+				self.bigglock.reload_speed_multiplier = 0.8
+				self.bigglock.sms = 0.5
+				self.bigglock.timers.reload_exit_empty = 0.6
+				self.bigglock.timers.reload_exit_not_empty = 0.65
+				self.bigglock.always_play_anims = true
+				self.bigglock.trail_effect = "_dmc/effects/sterwers_trail_m"
+				self.bigglock.trail_effect_npc = "_dmc/effects/sterwers_trail_m_npc"
+				self.bigglock.bullet_class = "InstantExplosiveBulletBase"
+			end
+
 			if self.mars then --Pawcio's Mars Automatic
 				self.mars.recategorize = { "heavy_pis", "handcannon" }
 				self.mars.has_description = true
@@ -16307,6 +16856,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     RJC9000'S MODS     ]]--
+			
 			if self.papa320 then --RJC9000 and PlayBONK's MW2019 P320
 				self.papa320.recategorize = { "light_pis" }		
 				self.papa320.damage_type = "light_pistol"
@@ -17100,7 +17650,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.fire_rate_multiplier = 1.25
 				self.cp2077_guts.force_shake = true
 				self.cp2077_guts.sms = 0.5
-				self.cp2077_guts.rebecca = true
+				self.cp2077_guts.rebecca = {750}
 				self.cp2077_guts.descope_on_fire_ignore_setting = true
 				self.cp2077_guts.hipfire_shake = true
 				self.cp2077_guts.supported = true
@@ -17838,7 +18388,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.raid_ww2_bren.stats_modifiers = nil
 				self.raid_ww2_bren.panic_suppression_chance = 0.05
-				self.raid_ww2_bren.sounds.spin_start = "wp_m60_reload_lever_release"
+				self.raid_ww2_bren.sounds.spin_start = "wp_mg42_lever_release"
 				self.raid_ww2_bren.spin_up_shoot = true
 				self.raid_ww2_bren.spin_up_t = 0.08
 				self.raid_ww2_bren.spin_down_t = 0.00000001
@@ -17895,6 +18445,104 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.timers.reload_not_empty = 2.2
 				self.tkb0146.timers.reload_exit_not_empty = 0.45
 			end
+
+			if self.zip22 then
+				self.zip22.bmp = 500
+				self.zip22.categories = {
+					"pistol",
+					"zippy"
+				}
+				self.zip22.zippy = true
+				self.zip22.recategorize = { "light_pis" }
+				self.zip22.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+				self.zip22.desc_id = "bm_zippy_sc_desc"
+				self.zip22.has_description = true
+				self.zip22.tactical_reload = 1
+				self.zip22.is_bullpup = true
+				self.zip22.BURST_FIRE = false
+				self.zip22.CAN_TOGGLE_FIREMODE = false
+				self.zip22.fire_mode_data.fire_rate = 0.2727272
+				self.zip22.jam_time = 2
+				self.zip22.CLIP_AMMO_MAX = 10
+				self.zip22.AMMO_MAX = 210
+				self.zip22.kick = self.stat_info.kick_tables.vertical_kick	
+				self.zip22.always_play_anims = true
+				self.zip22.supported = true
+				self.zip22.ads_speed = 0.100
+				self.zip22.damage_falloff = {
+					start_dist = 600,
+					end_dist = 2200,
+					min_mult = 0.5
+				}
+				self.zip22.stats = {
+					damage = 5,
+					spread = 101,
+					recoil = 23,
+					zoom = 1,
+					concealment = 32,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.zip22.stats_modifiers = nil
+				self.zip22.panic_suppression_chance = 0.05
+				self.zip22.hs_mult = 101
+				self.zip22.timers.reload_empty = 3.25
+				self.zip22.timers.reload_exit_empty = 0.6
+				self.zip22.timers.reload_not_empty = 2
+				self.zip22.timers.reload_exit_not_empty = 0.5
+			end
+
+			if self.madsen_mg then
+				self.madsen_mg.recategorize = { "heavy_mg" }
+				self.madsen_mg.categories = {
+					"lmg",
+					"smg",
+					"mmg"
+				}
+				self.madsen_mg.damage_type = "machine_gun"
+				self.madsen_mg.CLIP_AMMO_MAX = 25
+				self.madsen_mg.BURST_FIRE = false
+				self.madsen_mg.CAN_TOGGLE_FIREMODE = false
+				self.madsen_mg.fire_mode_data.fire_rate = 0.1333333
+				self.madsen_mg.AMMO_MAX = 160
+				self.madsen_mg.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
+				self.madsen_mg.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.madsen_mg.supported = true
+				self.madsen_mg.ads_speed = 0.480
+				self.madsen_mg.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 6000,
+					min_mult = 0.4
+				}
+				self.madsen_mg.stats = {
+					damage = 60,
+					spread = 57,
+					recoil = 63,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 16,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.madsen_mg.stats_modifiers = nil
+				self.madsen_mg.panic_suppression_chance = 0.05
+				self.madsen_mg.sounds.spin_start = "wp_mg42_lever_release"
+				self.madsen_mg.spin_up_shoot = true
+				self.madsen_mg.spin_up_t = 0.08
+				self.madsen_mg.spin_down_t = 0.00000001
+				self.madsen_mg.reload_speed_multiplier = 0.9
+				self.madsen_mg.sms = sms_preset.lmg_120
+				self.madsen_mg.weapon_movement_penalty = sms_preset.lmg_120
+			end
+
 		
 		--[[     TANGERINE'S MODS     ]]--
 			if self.ar47 then --Tangerine's AR-47
@@ -18976,6 +19624,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.reload_speed_multiplier = 1.25
 			self.ashot.panic_suppression_chance = 0.05
 			self.ashot.timers = deep_clone(self.new_raging_bull.timers)
+		end
+
+		if self.or12 then
+			self.or12.recategorize = { "light_shot" }
+			self.or12.categories = { "shotgun" }
+			self.or12.damage_type = "shotgun"
+			self.or12.damage_type_single_ray = "sniper"
+			self.or12.CLIP_AMMO_MAX = 30
+			self.or12.BURST_FIRE = false
+			self.or12.fire_mode_data.fire_rate = 0.15
+			self.or12.AMMO_MAX = 80
+			self.or12.kick = self.stat_info.kick_tables.vertical_kick
+			self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+			self.or12.FIRE_MODE = "single"				
+			self.or12.CAN_TOGGLE_FIREMODE = false
+			self.or12.rays = 9
+			self.or12.supported = true
+			self.or12.ads_speed = 0.420
+			self.or12.damage_falloff = {
+				start_dist = 500,
+				end_dist = 2800,
+				min_mult = 0.5
+			}
+			self.or12.stats = {
+				damage = 45,
+				spread = 25,
+				recoil = 49,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 19,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 1,
+				reload = 20
+			}
+			self.or12.stats_modifiers = nil
+			self.or12.panic_suppression_chance = 0.05
+			self.or12.reload_speed_multiplier = 0.8
 		end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
@@ -19576,6 +20264,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
 		akimbo = 1.1,
 		pistol = 1.25, --Compensate for low range.
+			zippy = 0.15,
 		smg = 1.125,
 			pdw = 0.675,
 			typh = 0.82,

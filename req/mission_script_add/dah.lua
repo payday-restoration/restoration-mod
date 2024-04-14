@@ -280,12 +280,14 @@ local optsrespawn_taser_and_shields_2 = {
     event = "death"
 }
 local enable_snipers = {
+	enabled = true,
 	elements = { 
 		400072,
 		400073
 	}
 }
 local disable_snipers = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400072,

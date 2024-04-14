@@ -1,7 +1,6 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var = math.rand(1)
+local chance_dozer_var = math.random()
 local chance_dozer = 25
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
@@ -14,30 +13,30 @@ local dozer_table = {
 }
 
 	--Increase chance of spawning scripted dozer
-	if difficulty_index == 5 or difficulty_index == 6 then
+	if difficulty == 5 or difficulty == 6 then
 		chance_dozer = 50
-	elseif difficulty_index == 7 or difficulty_index == 8 then
+	elseif difficulty == 7 or difficulty == 8 then
 		chance_dozer = 75
 	end
 	
 	--If we're in Pro Job, then increase the chance even further
 	if pro_job then
-	if difficulty_index == 5 or difficulty_index == 6 then
+	if difficulty == 5 or difficulty == 6 then
 		chance_dozer = 75
-	elseif difficulty_index == 7 or difficulty_index == 8 then
+	elseif difficulty == 7 or difficulty == 8 then
 		chance_dozer = 100
 	end
 end	
 
 	--Setting up the dozer randomizer, so cool
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var < 0.50 then
 			dozer = dozer_table.dozer_black
 		else
 			dozer = dozer_table.dozer_green
 		end
 
-	elseif difficulty_index == 6 or difficulty_index == 7 then	
+	elseif difficulty == 6 or difficulty == 7 then	
 		if chance_dozer_var < 0.25 then
 			dozer = dozer_table.dozer_skull
 		elseif chance_dozer_var < 0.50 then
@@ -46,7 +45,7 @@ end
 			dozer = dozer_table.dozer_green
 		end
 		
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var < 0.25 then
 			dozer = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var < 0.50 then
@@ -58,9 +57,9 @@ end
 		end
 	end
 	
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 300	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 270
 	else
 		ponr_value = 240	

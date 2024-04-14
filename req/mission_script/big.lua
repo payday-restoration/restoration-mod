@@ -1,5 +1,4 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
 local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
@@ -7,29 +6,29 @@ local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy
 local blow_the_wall_chance = 50
 
 	--So it will not crash
-	if difficulty_index == 7 then
+	if difficulty == 7 then
 	   swat_overkill = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
 	end
 	
 	--High PONR Timer to work with ponr player scaling
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 1080
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 1050	
 	else
 		ponr_value = 1020	
 	end
 	
-	if difficulty_index == 6 or difficulty_index == 7 then
+	if difficulty == 6 or difficulty == 7 then
 		blow_the_wall_chance = 80
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		blow_the_wall_chance = 100
 	end
 	
 	--Increase the time lock timers on mayhem above
-	if difficulty_index >= 6 then
+	if difficulty >= 6 then
 		timelock_normal = 240
 		timelock_fast = 210
 	end
@@ -42,12 +41,12 @@ if pro_job then
 		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	
 	--Titan snipers in C4 route for DSPJ
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 	end
 
 	--Increase the time lock timers on all diffs
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		timelock_normal = 240
 		timelock_fast = 210
 	else
@@ -84,9 +83,15 @@ local ponr_timer_player_mul = {
 return {
 	--Pro Job PONR. Heli and van timers increased
 	--Helicopter
+	--Spawn Defend Shields when the chopper arrives
 	[105804] = {
 		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value + 300
+		ponr = ponr_value + 300,
+		on_executed = {
+			{ id = 400035, delay = 0 },
+			{ id = 400036, delay = 0 },
+			{ id = 400037, delay = 0 }
+		}
 	},
 	--Van
 	[103405] = {
@@ -167,12 +172,21 @@ return {
 		end
 	},
 	--Trigger dozers if the manager has been killed
+	--Spawn beat cops after 5 seconds of cops arrival
+	--enable spawngroups after 20 seconds
 	[101967] = {
 		on_executed = {
 			{ id = 400001, delay = 20 },
 			{ id = 400002, delay = 20 },
 			{ id = 400046, delay = 200 },
-			{ id = 400047, delay = 200 }
+			{ id = 400047, delay = 200 },
+			{ id = 400049, delay = 5 },
+			{ id = 100129, delay = 20 }
+		}
+	},
+	[100109] = {
+		on_executed = {
+			{ id = 100129, remove = true }
 		}
 	},
 	--Trigger custom c4 route spawns
@@ -211,14 +225,6 @@ return {
 	[105810] = {
 		on_executed = {
 			{ id = 400019, delay = 0 }
-		}
-	},
-	--Spawn Defend Shields when the chopper arrives
-	[105804] = {
-		on_executed = {
-			{ id = 400035, delay = 0 },
-			{ id = 400036, delay = 0 },
-			{ id = 400037, delay = 0 }
 		}
 	},
 	--More chance for blowing up the wall/also faster time to trigger

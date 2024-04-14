@@ -1,7 +1,6 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var = math.rand(1)
+local chance_dozer_var = math.random()
 local chance_dozer = 75
 local hunt_projob = false
 --set up the table for the randomizer
@@ -19,13 +18,13 @@ local dozer_table = {
 if pro_job then
 		hunt_projob = true
 	--DSPJ has 100% of spawning the scripted dozer
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		chance_dozer = 100
 	end
 end
 
 	--Setting up the dozer randomizer, oh yeah
-	if difficulty_index == 6 or difficulty_index == 7 then
+	if difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var < 0.35 then
 			dozer = dozer_table.dozer_skull
 		elseif chance_dozer_var < 0.70 then
@@ -35,7 +34,7 @@ end
 		end
 	end
 
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		if chance_dozer_var < 0.25 then
 			dozer = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var < 0.50 then
@@ -47,9 +46,9 @@ end
 		end
 	end
 
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 540	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 480	
 	else
 		ponr_value = 420	

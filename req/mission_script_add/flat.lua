@@ -305,11 +305,13 @@ local optsrespawn_swat_2 = {
     event = "death"
 }
 local enable_cloakers = {
+	enabled = hard_above,
 	elements = { 
 		400037
 	}
 }
 local disable_cloakers = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400037
@@ -324,6 +326,7 @@ local Roof_access_block = {
 	}
 }
 local disable_open_roof_access = {
+	enabled = overkill_above,
 	toggle = "off",
 	elements = { 
 		100569

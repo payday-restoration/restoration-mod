@@ -1507,6 +1507,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
+			--Zippy 
+			["bm_zippy_sc_desc"] = "Самое малогабаритное летальное оружие, которое придумало человечество. Правда не стоит ожидать, что оно будет работать без осечек. Вам повезет, если после пары выстрелов это оружие не взорвется в Вашей руке.",
 			--Auto-9
 			["bm_wp_rc_auto9_cartoon"] = "Мультяшные трейсеры",
 			["bm_wp_rc_auto9_cartoon_desc"] = "Вечеринка прямо как в 1988!",
@@ -1624,6 +1626,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Microgun
 		["bm_shuno_sc_desc"] = "\"This is your road. When you come, you'll walk it alone.\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Custom MGs
+			--Madsen MG
+		["bm_wp_wpn_fps_lmg_madsen_mg_xmag"] = "Магазин на 40 патронов",
 			--Stoner 63 (LMG)
 		["bm_wp_wpn_fps_lmg_stoner63a_quickdraw_01"] = "Speed Tape",
 		["bm_wp_wpn_fps_lmg_stoner63a_mixhandle_01"] = "Dropshot Wrap",
@@ -3156,6 +3160,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_rsh12"] = "РШУ-12",
 		["bm_w_peacemaker"] = "Миротворец .45",
 --CUSTOM HANDGUNS
+			--ZiP 22
+			["bm_w_zip22"] = "Зиппи 3000",
 			--Px4
 			["bm_w_px4"] = "Бернетти Нх4 Канан",
 			--Browning Hi-Power
@@ -4929,6 +4935,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_no_outlines_desc"] = "Почти все контуры отключены.",
 		["mutator_no_outlines_longdesc"] = "Почти все контуры отключены. Также отключены ники над ботами/игроками.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить контуры противников",
+		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить подсвечивающие контуры (кроме обводки для сопровождения цели)",
 		
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",

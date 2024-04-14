@@ -484,7 +484,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	local furthest_hit = ray_hits[#ray_hits]
 
-	if (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
+	if dmg_mul ~= 0 and (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
 		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 
@@ -673,22 +673,58 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	self:_check_ammo_total(user_unit)
 
-	for i = 1, ammo_usage do
-		if alive(self._obj_fire) then
-			self:_spawn_muzzle_effect(from_pos, direction)
+	if is_player and self:weapon_tweak_data().zippy then
+		local jam = math.rand(1)
+		if jam < 0.33 and self:ammo_base():get_ammo_remaining_in_clip() > 0 then
+			--dmg_mul = 0
+			--self:dryfire()
+			self._jammed = true
+			self._next_fire_allowed = self._next_fire_allowed + (2 / self:fire_rate_multiplier())
+		elseif jam > 0.66 then
+			dmg_mul = 0
 		end
-		self:_spawn_shell_eject_effect()
 	end
 
-	if self:weapon_tweak_data().muzzleflash_mod then
-		for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+	if not self._jammed then
+		for i = 1, ammo_usage do
 			if alive(self._obj_fire) then
 				self:_spawn_muzzle_effect(from_pos, direction)
+			end
+				self:_spawn_shell_eject_effect()
+		end
+
+		if self:weapon_tweak_data().muzzleflash_mod then
+			for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+				if alive(self._obj_fire) then
+					self:_spawn_muzzle_effect(from_pos, direction)
+				end
 			end
 		end
 	end
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
+
+	if self:weapon_tweak_data().zippy and dmg_mul == 0 and not self._jammed then
+		local player_unit = managers.player:player_unit()
+		if player_unit.character_damage and player_unit:character_damage() then
+			if not player_unit:character_damage():is_downed() then
+				player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+				player_unit:character_damage():_calc_health_damage_no_deflection({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			else
+				player_unit:character_damage():_bleed_out_damage({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			end
+		end
+	end
 
 	if self._alert_events and ray_res.rays then
 		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
@@ -1517,7 +1553,7 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		mvec3_sub(tmp_vec1, tmp_vec2)
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.5) * overkill, blank, no_sound)
-		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.75, user_unit, weapon_unit, managers.network:session():local_peer():id())
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
 
 		return {
 			variant = "explosion",
@@ -1532,6 +1568,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
 	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
+	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.
 
 	local hit_units, splinters, results = managers.explosion:detect_and_give_dmg({
 		hit_pos = position,
@@ -1539,7 +1576,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		collision_slotmask = slot_mask,
 		curve_pow = self.CURVE_POW,
 		damage = damage,
-		player_damage = damage * self.PLAYER_DMG_MUL,
+		player_damage = 0,
 		alert_radius = self.ALERT_RADIUS,
 		ignore_unit = weapon_unit,
 		user = user_unit,

@@ -6050,65 +6050,57 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 		end
 	end
 
-	if self.melee_weapons.halloween_sword then
-		self.melee_weapons.halloween_sword.attack_pattern = "bm_melee_pattern_great_no_stab"
-		self.melee_weapons.halloween_sword.anim_attack_charged_vars = nil
-		self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
-		self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0
-		self.melee_weapons.halloween_sword.stats.range = 200
-		self.melee_weapons.halloween_sword.stats.charge_time = 2.5
-		self.melee_weapons.halloween_sword.stats.speed_mult = 0.85
-	end
+	self.melee_weapons.halloween_sword.attack_pattern = "bm_melee_pattern_great_no_stab"
+	self.melee_weapons.halloween_sword.anim_attack_charged_vars = nil
+	self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
+	self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0
+	self.melee_weapons.halloween_sword.stats.range = 200
+	self.melee_weapons.halloween_sword.stats.charge_time = 2.5
+	self.melee_weapons.halloween_sword.stats.speed_mult = 0.85
 
-	if self.melee_weapons.titham then
-		self.melee_weapons.titham.stats.cleave = 2
-		self.melee_weapons.titham.stats.raycasts = 10
-		self.melee_weapons.titham.stats.raycasts_charge = 15
-		self.melee_weapons.titham.stats.raycasts_charge_h = 15
-		self.melee_weapons.titham.stats.charge_time = 3
-		self.melee_weapons.titham.stats.range = 230
-		self.melee_weapons.titham.stats.speed_mult = 0.85
-	end
+	self.melee_weapons.titham.stats.cleave = 2
+	self.melee_weapons.titham.stats.raycasts = 10
+	self.melee_weapons.titham.stats.raycasts_charge = 15
+	self.melee_weapons.titham.stats.raycasts_charge_h = 15
+	self.melee_weapons.titham.stats.charge_time = 3
+	self.melee_weapons.titham.stats.range = 230
+	self.melee_weapons.titham.stats.speed_mult = 0.85
 
-	if self.melee_weapons.zweihander then
-		self.melee_weapons.zweihander.info_id = "bm_melee_zweihander_info"
-		self.melee_weapons.zweihander.stats.cleave = 5
-		self.melee_weapons.zweihander.stats.raycasts = 20
-		self.melee_weapons.zweihander.stats.raycasts_h = 35
-		self.melee_weapons.zweihander.stats.raycasts_charge = 6
-		self.melee_weapons.zweihander.stats.min_damage = 9
-		self.melee_weapons.zweihander.stats.max_damage = 18.001
-		self.melee_weapons.zweihander.stats.min_damage_effect = 4.0
-		self.melee_weapons.zweihander.stats.max_damage_effect = 12.0
-		self.melee_weapons.zweihander.stats.charge_time = 2.5
-		self.melee_weapons.zweihander.stats.range = 250
-		self.melee_weapons.zweihander.stats.charge_bonus_start = 0.9
-		self.melee_weapons.zweihander.stats.charge_bonus_range = 50
-		self.melee_weapons.zweihander.stats.concealment = 25
-		self.melee_weapons.zweihander.stats.speed_mult = 0.8
-		self.melee_weapons.zweihander.counter_damage = 18
-	end
+	self.melee_weapons.zweihander.info_id = "bm_melee_zweihander_info"
+	self.melee_weapons.zweihander.stats.cleave = 5
+	self.melee_weapons.zweihander.stats.raycasts = 20
+	self.melee_weapons.zweihander.stats.raycasts_h = 35
+	self.melee_weapons.zweihander.stats.raycasts_charge = 6
+	self.melee_weapons.zweihander.stats.min_damage = 9
+	self.melee_weapons.zweihander.stats.max_damage = 18.001
+	self.melee_weapons.zweihander.stats.min_damage_effect = 4.0
+	self.melee_weapons.zweihander.stats.max_damage_effect = 12.0
+	self.melee_weapons.zweihander.stats.charge_time = 2.5
+	self.melee_weapons.zweihander.stats.range = 250
+	self.melee_weapons.zweihander.stats.charge_bonus_start = 0.9
+	self.melee_weapons.zweihander.stats.charge_bonus_range = 50
+	self.melee_weapons.zweihander.stats.concealment = 25
+	self.melee_weapons.zweihander.stats.speed_mult = 0.8
+	self.melee_weapons.zweihander.counter_damage = 18
 
-	if self.melee_weapons.broad then
-		self.melee_weapons.broad.anim_attack_charged_vars = nil
-		self.melee_weapons.broad.anim_attack_charged_left_vars = nil
-		self.melee_weapons.broad.anim_attack_charged_right_vars = nil
-		self.melee_weapons.broad.attack_pattern = "bm_melee_pattern_great_no_stab"
-		self.melee_weapons.broad.info_id = "bm_melee_broad_info"
-		self.melee_weapons.broad.stats.cleave = 3
-		self.melee_weapons.broad.stats.raycasts = 18
-		self.melee_weapons.broad.stats.raycasts_h = 25
-		self.melee_weapons.broad.stats.raycasts_charge = nil
-		self.melee_weapons.broad.stats.min_damage = 9
-		self.melee_weapons.broad.stats.max_damage = 12.001
-		self.melee_weapons.broad.stats.min_damage_effect = 2.4
-		self.melee_weapons.broad.stats.max_damage_effect = 4.5
-		self.melee_weapons.broad.stats.charge_time = 1.85
-		self.melee_weapons.broad.stats.charge_bonus_range = 0
-		self.melee_weapons.broad.stats.range = 190
-		self.melee_weapons.broad.stats.concealment = 27
-		self.melee_weapons.broad.stats.speed_mult = 1.05
-	end
+	self.melee_weapons.broad.anim_attack_charged_vars = nil
+	self.melee_weapons.broad.anim_attack_charged_left_vars = nil
+	self.melee_weapons.broad.anim_attack_charged_right_vars = nil
+	self.melee_weapons.broad.attack_pattern = "bm_melee_pattern_great_no_stab"
+	self.melee_weapons.broad.info_id = "bm_melee_broad_info"
+	self.melee_weapons.broad.stats.cleave = 3
+	self.melee_weapons.broad.stats.raycasts = 18
+	self.melee_weapons.broad.stats.raycasts_h = 25
+	self.melee_weapons.broad.stats.raycasts_charge = nil
+	self.melee_weapons.broad.stats.min_damage = 9
+	self.melee_weapons.broad.stats.max_damage = 12.001
+	self.melee_weapons.broad.stats.min_damage_effect = 2.4
+	self.melee_weapons.broad.stats.max_damage_effect = 4.5
+	self.melee_weapons.broad.stats.charge_time = 1.85
+	self.melee_weapons.broad.stats.charge_bonus_range = 0
+	self.melee_weapons.broad.stats.range = 190
+	self.melee_weapons.broad.stats.concealment = 27
+	self.melee_weapons.broad.stats.speed_mult = 1.05
 
 	local melee_anim = {}
 	

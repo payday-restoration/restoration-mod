@@ -1,11 +1,10 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var_1 = math.rand(1)
-local chance_dozer_var_2 = math.rand(1)
-local chance_dozer_var_3 = math.rand(1)
-local chance_cloaker_var_1 = math.rand(1)
-local chance_cloaker_var_2 = math.rand(1)
+local chance_dozer_var_1 = math.random() 
+local chance_dozer_var_2 = math.random() 
+local chance_dozer_var_3 = math.random() 
+local chance_cloaker_var_1 = math.random() 
+local chance_cloaker_var_2 = math.random() 
 local dozer_trigger_times = 2
 local enable_special_dozers = false
 local chopper_amount = 1
@@ -25,22 +24,22 @@ local cloaker_table = {
 }
 
 	--enable the special dozers (the ones that replace unused cloaker spawns)
-	if difficulty_index >= 7 then
+	if difficulty >= 7 then
 		enable_special_dozers = true
 	end
 
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		dozer_trigger_times = 3
 	end	
 
 	--Setting up the dozer randomizer, this is cool
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_1 < 0.35 then
 			dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_var_1 < 0.70 then
@@ -48,7 +47,7 @@ local cloaker_table = {
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_1 < 0.50 then
@@ -60,13 +59,13 @@ local cloaker_table = {
 		end
 	end
 	
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_2 < 0.50 then
 			dozer_2 = dozer_table.dozer_black
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_2 < 0.35 then
 			dozer_2 = dozer_table.dozer_skull
 		elseif chance_dozer_var_2 < 0.70 then
@@ -74,7 +73,7 @@ local cloaker_table = {
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var_2 < 0.25 then
 			dozer_2 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_2 < 0.50 then
@@ -86,13 +85,13 @@ local cloaker_table = {
 		end
 	end
 	
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_3 < 0.50 then
 			dozer_3 = dozer_table.dozer_black
 		else
 			dozer_3 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_3 < 0.35 then
 			dozer_3 = dozer_table.dozer_skull
 		elseif chance_dozer_var_3 < 0.70 then
@@ -100,7 +99,7 @@ local cloaker_table = {
 		else
 			dozer_3 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var_3 < 0.25 then
 			dozer_3 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_3 < 0.50 then
@@ -113,7 +112,7 @@ local cloaker_table = {
 	end
 	
 	--setting up the cloaker randomizer, this is also cool
-	if difficulty_index <= 7 then
+	if difficulty <= 7 then
 		clonker = cloaker_table.spooc
 		clonker_2 = cloaker_table.spooc
 	else
@@ -130,10 +129,10 @@ local cloaker_table = {
 	end
 	
 if pro_job then
-	if difficulty_index >= 7 then
+	if difficulty >= 7 then
 		chopper_amount = 2
 	end			
-	if difficulty_index <= 7 then
+	if difficulty <= 7 then
 		dozer_trigger_times = 3
 	else
 		dozer_trigger_times = 4

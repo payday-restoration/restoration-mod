@@ -4948,7 +4948,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_no_outlines"] = "写实模式",  --tra
         ["mutator_no_outlines_desc"] = "Majority of outlines are disabled.",
         ["mutator_no_outlines_longdesc"] = "Majority of outlines are disabled as well as name labels above players/bots.",
-        ["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",
+        ["menu_mutator_no_outlines_enemies_toggle"] = "Disable Enemy Outlines",	
+		["menu_mutator_no_outlines_objectives_toggle"] = "Disable Highlight Outlines (except escort)",
 
         ["mutator_spawn_mult"] = "犯罪响应增幅",
         ["menu_mutator_enemy_spawn"] = "刷兵倍率",

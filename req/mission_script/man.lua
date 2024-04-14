@@ -1,8 +1,7 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_1 = math.rand(1)
-local chance_dozer_2 = math.rand(1)
+local chance_dozer_1 = math.random()
+local chance_dozer_2 = math.random()
 local ambush_unit_amount = 1
 local ambush_unit_amount_random = 2 
 local dozer_table = {
@@ -18,28 +17,28 @@ local dozer_table = {
 --If we're in Pro Job, then do this stuff below
 if pro_job then
 	--First, replace scripted shields and harassers with titan shields/snipers
-	if difficulty_index >= 5 then
+	if difficulty >= 5 then
 		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
 	--DS, has Titan cloaker replace scripted escape cloaker and have more units during escape part
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		ambush_unit_amount = 2
 		ambush_unit_amount_random = 3 
 	end
 end
 
-	if difficulty_index <= 4 then
+	if difficulty <= 4 then
 		gas_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-	elseif difficulty_index == 5 or difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 5 or difficulty == 6 or difficulty == 7 then
 		gas_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
 	else
 		gas_dozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 	end
 
 	--Setting up the dozer randomizer, so cool
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
@@ -52,7 +51,7 @@ end
 			dozer_2 = dozer_table.dozer_green
 		end
 		
-	elseif difficulty_index == 6 or difficulty_index == 7 then	
+	elseif difficulty == 6 or difficulty == 7 then	
 		if chance_dozer_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_1 < 0.50 then
@@ -69,7 +68,7 @@ end
 			dozer_2 = dozer_table.dozer_green
 		end
 
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_1 < 0.50 then

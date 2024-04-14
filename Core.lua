@@ -205,6 +205,7 @@ function restoration:Init()
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.always_bravos = false
+	restoration.civ_death_diff_increase = true
 	
 	--Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
 	restoration.alternate_ponr_behavior = {
@@ -345,7 +346,10 @@ function restoration:Init()
 		"constantine_policestation_lvl", -- Precint Raid (Constantine Scores)
 		"constantine_murkyairport",		 -- Murky Airport (Consantine Scores) 
 		"hogar",-- The House Robbery
-		"icing"	--Road Rage	
+		"icing",	--Road Rage	
+		"gunw_lvl",  -- Gun Waashing 
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+		
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -383,7 +387,9 @@ function restoration:Init()
 		"physics_core",-- BOWRORKS Day 3
 		"cold_gold",-- Cold Gold 
 		"constantine_dwtd_lvl", -- Constantine Scores
-		"constantine_yacht_lvl" --  Constantine Scores
+		"constantine_yacht_lvl", --  Constantine Scores
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+
 		
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
@@ -420,9 +426,6 @@ function restoration:Init()
 		"pines", --white xmas
 		"jolly", --aftershock
 		"born", --biker heist D1
-		"ukrainian_job", --uk joj
-		"ukrainian_job_res", --ditto
-		"sah", --shacklethorne
 		"chca", --black cat
 		"pent", --Mountain Master 
 		"lvl_friday", --Mallbank / Crashing Capitol
@@ -1018,7 +1021,7 @@ function restoration:mission_script_add()
 				elements = opts.elements or {},
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
-				enabled = true,
+				enabled = opts.enabled or false,
 				toggle = opts.toggle or "on"
 			},
 		}

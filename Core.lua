@@ -1115,6 +1115,44 @@ function restoration:mission_script_add()
 			},
 		}
 	end
+	
+	function restoration:gen_dynamicfilter(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementFilter",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				mode_assault = true,
+				mode_control = true,
+				difficulty_easy = opts.difficulty_easy or false,
+				difficulty_normal = opts.difficulty_normal or false,
+				difficulty_hard = opts.difficulty_hard or false,
+				difficulty_overkill = opts.difficulty_overkill or false,
+				difficulty_overkill_145 = opts.difficulty_overkill_145 or false,
+				difficulty_easy_wish = opts.difficulty_easy_wish or false,
+				difficulty_overkill_290 = opts.difficulty_overkill_290 or false,
+				difficulty_sm_wish = opts.difficulty_sm_wish or false,
+				player_1 = opts.player_1 or false,
+				player_2 = opts.player_2 or false,
+				player_3 = opts.player_3 or false,
+				player_4 = opts.player_4 or false,
+				platform_pc_only = false,
+				platform_win32 = true,
+				--resmod for consoles when?
+				platform_ps3 = false,
+				platform_ps4_only = false,
+				platform_xb1_only = false,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false
+			},
+		}
+	end
 
 	function restoration:log(...)
 		if self.logging then

@@ -1,6 +1,5 @@
 local job = Global.level_data and Global.level_data.level_id
 local is_pro = Global.game_settings and Global.game_settings.one_down
-local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 local damage_set = {
 	smg = {
@@ -11478,12 +11477,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.damage_falloff = {
 							start_dist = 100,
 							end_dist = 1000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.x_basset.stats = {
 							zoom = 1,
 							total_ammo_mod = 200,
-							damage = 45,
+							damage = 120,
 							alert_size = 2,
 							spread = 3,
 							spread_moving = 8,
@@ -11519,10 +11518,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.damage_falloff = {
 							start_dist = 300,
 							end_dist = 2300,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.saiga.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 19,
 							recoil = 41,
 							spread_moving = 7,
@@ -11556,10 +11555,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sko12.damage_falloff = {
 							start_dist = 600,
 							end_dist = 3000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.sko12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 31,
 							recoil = 53,
 							spread_moving = 7,
@@ -11596,10 +11595,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.aa12.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3200,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.aa12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 31,
 							recoil = 65,
 							spread_moving = 7,
@@ -11637,10 +11636,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ultima.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.ultima.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 21,
 							recoil = 43,
 							spread_moving = 7,
@@ -11687,10 +11686,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3300,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.spas12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 30,
 							recoil = 53,
 							spread_moving = 7,
@@ -11728,10 +11727,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.benelli.damage_falloff = {
 							start_dist = 900,
 							end_dist = 3500,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.benelli.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 35,
 							recoil = 47,
 							spread_moving = 7,
@@ -11769,12 +11768,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.damage_falloff = {
 							start_dist = 300,
 							end_dist = 2100,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.basset.stats = {
 							zoom = 1,
 							total_ammo_mod = 200,
-							damage = 45,
+							damage = 120,
 							alert_size = 2,
 							spread = 19,
 							spread_moving = 8,
@@ -11804,10 +11803,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.striker.damage_falloff = {
 							start_dist = 600,
 							end_dist = 3200,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.striker.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 22,
 							recoil = 41,
 							spread_moving = 7,
@@ -11837,10 +11836,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rota.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3500,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.rota.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 26,
 							recoil = 39,
 							spread_moving = 7,
@@ -11880,10 +11879,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_judge.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.x_judge.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 43,
 							recoil = 51,
 							spread_moving = 5,
@@ -11926,10 +11925,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m590.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2500,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m590.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 60,
 							recoil = 43,
 							spread_moving = 6,
@@ -11979,10 +11978,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.supernova.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2700,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.supernova.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 68,
 							recoil = 45,
 							spread_moving = 6,
@@ -12023,10 +12022,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r870.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.r870.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 62,
 							recoil = 49,
 							spread_moving = 6,
@@ -12063,10 +12062,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ksg.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2800,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.ksg.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 65,
 							recoil = 39,
 							spread_moving = 7,
@@ -12113,10 +12112,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1897.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3100,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m1897.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 71,
 							recoil = 39,
 							spread_moving = 6,
@@ -12151,10 +12150,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.serbu.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2200,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.serbu.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 56,
 							recoil = 39,
 							spread_moving = 6,
@@ -12202,10 +12201,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m37.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2800,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m37.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 63,
 							recoil = 49,
 							spread_moving = 6,
@@ -12237,10 +12236,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.judge.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.judge.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 53,
 							recoil = 61,
 							spread_moving = 5,
@@ -12282,10 +12281,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.damage_falloff = {
 							start_dist = 900,
 							end_dist = 3500,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.b682.stats = {
-							damage = 90,
+							damage = 300,
 							spread = 71,
 							recoil = 39,
 							spread_moving = 6,
@@ -12321,10 +12320,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2500,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.boot.stats = {
-							damage = 90,
+							damage = 300,
 							spread = 44,
 							recoil = 31,
 							spread_moving = 5,
@@ -12371,10 +12370,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3200,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.huntsman.stats = {
-							damage = 90,
+							damage = 300,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -12419,10 +12418,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3100,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.coach.stats = {
-							damage = 90,
+							damage = 300,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -12744,6 +12743,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.gre_m79.fire_mode_data.fire_rate = 1.2
 						self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
 						self.gre_m79.AMMO_MAX = 10
+						self.gre_m79.alt_shotgunraycast = true
 						self.gre_m79.rays = 1
 						self.gre_m79.supported = true
 						self.gre_m79.ads_speed = 0.360
@@ -12787,6 +12787,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						--self.m32.BURST_FIRE_RATE_MULTIPLIER = 3
 						--self.m32.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
 						self.m32.AMMO_MAX = 10
+						self.m32.alt_shotgunraycast = true
 						self.m32.rays = 1
 						self.m32.supported = true
 						self.m32.ads_speed = 0.460
@@ -12892,6 +12893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ms3gl.burst = nil
 						self.ms3gl.AMMO_MAX = 10
+						self.ms3gl.alt_shotgunraycast = true
 						self.ms3gl.rays = 1
 						self.ms3gl.kick = self.stat_info.kick_tables.vertical_kick
 						self.ms3gl.supported = true
@@ -12928,6 +12930,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.arbiter.fire_mode_data.fire_rate = 0.5
 						self.arbiter.CLIP_AMMO_MAX = 5
 						self.arbiter.AMMO_MAX = 6
+						self.arbiter.alt_shotgunraycast = true
 						self.arbiter.rays = 1
 						self.arbiter.supported = true
 						self.arbiter.ads_speed = 0.460
@@ -12968,6 +12971,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.slap.fire_mode_data.fire_rate = 1.2
 						self.slap.kick = self.stat_info.kick_tables.vertical_kick
 						self.slap.AMMO_MAX = 5
+						self.slap.alt_shotgunraycast = true
 						self.slap.rays = 1
 						self.slap.supported = true
 						self.slap.ads_speed = 0.360
@@ -13009,6 +13013,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.china.fire_mode_data.fire_rate = 1.3
 						self.china.fire_rate_multiplier = 0.75
 						self.china.AMMO_MAX = 5
+						self.china.alt_shotgunraycast = true
 						self.china.rays = 1
 						self.china.kick = self.stat_info.kick_tables.vertical_kick
 						self.china.supported = true
@@ -13627,10 +13632,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.amr12.damage_falloff = {
 						start_dist = 500,
 						end_dist = 2800,
-						min_mult = 0.5
+						min_mult = 0.15
 					}
 					self.amr12.stats = {
-						damage = 45,
+						damage = 120,
 						spread = 21,
 						recoil = 47,
 						zoom = 1,
@@ -13661,10 +13666,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.minibeck.damage_falloff = {
 						start_dist = 500,
 						end_dist = 3000,
-						min_mult = 0.5
+						min_mult = 0.15
 					}
 					self.minibeck.stats = {
-						damage = 45,
+						damage = 120,
 						spread = 22,
 						recoil = 67,
 						zoom = 1,
@@ -13709,10 +13714,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.beck.damage_falloff = {
 						start_dist = 600,
 						end_dist = 2400,
-						min_mult = 0.3333
+						min_mult = 0.1333
 					}
 					self.beck.stats = {
-						damage = 60,
+						damage = 180,
 						spread = 65,
 						recoil = 53,
 						spread_moving = 6,
@@ -13754,10 +13759,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.damage_falloff = {
 						start_dist = 800,
 						end_dist = 3600,
-						min_mult = 0.25
+						min_mult = 0.1
 					}
 					self.bs23.stats = {
-						damage = 90,
+						damage = 300,
 						spread = 61,
 						recoil = 39,
 						spread_moving = 5,
@@ -14076,10 +14081,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.qsho.damage_falloff = {
 						start_dist = 900,
 						end_dist = 3500,
-						min_mult = 0.25
+						min_mult = 0.1
 					}
 					self.qsho.stats = {
-						damage = 90,
+						damage = 300,
 						spread = 26,
 						recoil = 39,
 						zoom = 1,
@@ -15122,10 +15127,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp153.damage_falloff = {
 					start_dist = 500,
 					end_dist = 3000,
-					min_mult = 0.5
+					min_mult = 0.15
 				}
 				self.mp153.stats = {
-					damage = 45,
+					damage = 120,
 					spread = 21,
 					recoil = 49,
 					zoom = 1,
@@ -15164,10 +15169,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wmtx.damage_falloff = {
 					start_dist = 400,
 					end_dist = 2500,
-					min_mult = 0.3333
+					min_mult = 0.1333
 				}
 				self.wmtx.stats = {
-					damage = 60,
+					damage = 180,
 					spread = 44,
 					recoil = 57,
 					spread_moving = 7,
@@ -15207,10 +15212,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jackhammer.damage_falloff = {
 					start_dist = 300,
 					end_dist = 2000,
-					min_mult = 0.5
+					min_mult = 0.15
 				}
 				self.jackhammer.stats = {
-					damage = 60,
+					damage = 120,
 					spread = 41,
 					recoil = 51,
 					spread_moving = 7,
@@ -15253,10 +15258,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.quadbarrel.damage_falloff = {
 					start_dist = 500,
 					end_dist = 3000,
-					min_mult = 0.25
+					min_mult = 0.1
 				}
 				self.quadbarrel.stats = {
-					damage = 90,
+					damage = 300,
 					spread = 58,
 					recoil = 41,
 					spread_moving = 6,
@@ -15298,10 +15303,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3600,
-					min_mult = 0.25
+					min_mult = 0.1
 				}
 				self.ks23.stats = {
-					damage = 90,
+					damage = 300,
 					spread = 52,
 					recoil = 45,
 					spread_moving = 6,
@@ -15344,10 +15349,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.super.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3200,
-					min_mult = 0.25
+					min_mult = 0.3333
 				}
 				self.super.stats = {
-					damage = 180,
+					damage = 400,
 					spread = 36,
 					recoil = 9,
 					spread_moving = 6,
@@ -17658,10 +17663,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3000,
-					min_mult = 0.25
+					min_mult = 0.3333
 				}
 				self.cp2077_guts.stats = {
-					damage = 180,
+					damage = 400,
 					spread = 16,
 					recoil = 3,
 					spread_moving = 6,
@@ -18609,10 +18614,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.omni.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3800,
-					min_mult = 0.66667
+					min_mult = 0.16667
 				}
 				self.omni.stats = {
-					damage = 30,
+					damage = 90,
 					spread = 59,
 					recoil = 69,
 					zoom = 1,
@@ -19330,10 +19335,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.f500.damage_falloff = {
 				start_dist = 700,
 				end_dist = 2800,
-				min_mult = 0.3333
+				min_mult = 0.1333
 			}
 			self.f500.stats = {
-				damage = 60,
+				damage = 180,
 				spread = 51,
 				recoil = 33,
 				spread_moving = 6,
@@ -19555,10 +19560,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.damage_falloff = {
 				start_dist = 300,
 				end_dist = 2100,
-				min_mult = 0.25
+				min_mult = 0.1
 			}
 			self.abzats.stats = {
-				damage = 90,
+				damage = 300,
 				spread = 11,
 				recoil = 49,
 				spread_moving = 5,
@@ -19604,10 +19609,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.damage_falloff = {
 				start_dist = 400,
 				end_dist = 2500,
-				min_mult = 0.25
+				min_mult = 0.1
 			}
 			self.ashot.stats = {
-				damage = 90,
+				damage = 300,
 				spread = 36,
 				recoil = 29,
 				spread_moving = 5,
@@ -19645,10 +19650,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.or12.damage_falloff = {
 				start_dist = 500,
 				end_dist = 2800,
-				min_mult = 0.5
+				min_mult = 0.15
 			}
 			self.or12.stats = {
-				damage = 45,
+				damage = 120,
 				spread = 25,
 				recoil = 49,
 				spread_moving = 7,
@@ -19906,53 +19911,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if per_pellet then
-				if table.contains(weap.categories, "grenade_launcher") then
-					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.rays = not weap.keep_rays and 1 or weap.rays
-				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
-					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
-						if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
-							table.insert(weap.categories, "shotgun_light")
-							weap.ene_hs_mult = 0.5
-							if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
-								table.insert(weap.categories, "shotgun_light_semi")
-							end
-						elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
-							table.insert(weap.categories, "shotgun_heavy")
-							weap.ene_hs_mult = 0.65
-						elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
-							table.insert(weap.categories, "shotgun_break")
-							weap.ene_hs_mult = 0.8
+			if weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
+				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
+				if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
+					if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
+						table.insert(weap.categories, "shotgun_light")
+						if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
+							table.insert(weap.categories, "shotgun_light_semi")
 						end
+					elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
+						table.insert(weap.categories, "shotgun_heavy")
+						weap.ene_hs_mult = 0.65
+					elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
+						table.insert(weap.categories, "shotgun_break")
+						weap.ene_hs_mult = 0.8
 					end
-					if weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
-						local is_primary = weap.use_data and weap.use_data.selection_index == 2
-						if weap.stats and weap.stats.damage then
-							if weap.stats.damage == 30 then --Omni
-								weap.stats.damage = 90 --60
-								weap.damage_falloff.min_mult = 0.16667 --0.25
-								weap.object_damage_mult = 0.25
-							elseif weap.stats.damage == 45 then --Auto
-								weap.stats.damage = 120 --90
-								weap.damage_falloff.min_mult = 0.15 --0.2
-								weap.object_damage_mult = 0.25
-							elseif weap.stats.damage == 60 then --Pump
-								weap.stats.damage = 180 --120
-								weap.damage_falloff.min_mult = 0.13333 --0.2
-								weap.object_damage_mult = 0.75
-							elseif weap.stats.damage == 90 then --Break Action
-								weap.stats.damage = 300 --180
-								weap.damage_falloff.min_mult = 0.1 --0.1666667
-								weap.object_damage_mult = 0.75
-							elseif weap.stats.damage == 180 then --Super
-								weap.stats.damage = 400
-								weap.damage_falloff.min_mult = 0.33333
-								weap.object_damage_mult = nil
-							end
-							weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
-						end
+				end
+				if weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
+					local is_primary = weap.use_data and weap.use_data.selection_index == 2
+						weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
 					end
 				end
 			end
@@ -19962,7 +19939,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if table.contains(weap.categories, "amr") then
 				weap.force_shake = true
-				--weap.hipfire_shake = true
 			end
 	
 			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") then

@@ -18513,7 +18513,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.BURST_FIRE = false
 				self.madsen_mg.CAN_TOGGLE_FIREMODE = false
 				self.madsen_mg.fire_mode_data.fire_rate = 0.1333333
-				self.madsen_mg.AMMO_MAX = 160
+				self.madsen_mg.AMMO_MAX = 120
 				self.madsen_mg.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 				self.madsen_mg.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.madsen_mg.supported = true

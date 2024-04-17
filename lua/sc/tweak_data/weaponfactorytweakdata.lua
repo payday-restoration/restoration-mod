@@ -35665,9 +35665,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_shot_or12_vg then
 		self.parts.wpn_fps_shot_or12_vg.stats = { value = 0 }
 		self.parts.wpn_fps_shot_or12_vg.custom_stats = nil
-		self.parts.wpn_fps_shot_or12_sight.stats = { value = 0 }
+		self.parts.wpn_fps_shot_or12_sight.stats = { value = 0, zoom = 1, base_zoom_off = 0 }
 		self.parts.wpn_fps_shot_or12_sight.custom_stats = nil
-		self.parts.wpn_fps_shot_or12_45steel.stats = { value = 0 }
+		self.parts.wpn_fps_shot_or12_sight.stance_mod = {
+			wpn_fps_shot_or12 = {
+				translation = Vector3(0,0,0),
+				rotation = Rotation(0,0,1)
+			}
+		}
+		self.parts.wpn_fps_shot_or12_45steel.stats = { value = 0, gadget_zoom = 1 }
 		self.parts.wpn_fps_shot_or12_45steel.custom_stats = nil
 	end
 

@@ -14940,7 +14940,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fp45.fire_mode_data.fire_rate = 0.08571428571
 				self.fp45.single.fire_rate = 0.08571428571
 				self.fp45.CLIP_AMMO_MAX = 1
-				self.fp45.AMMO_MAX = 20
+				self.fp45.AMMO_MAX = 24
 				self.fp45.kick = self.stat_info.kick_tables.left_recoil
 				self.fp45.supported = true
 				self.fp45.ads_speed = 0.120
@@ -14950,7 +14950,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.25
 				}
 				self.fp45.stats = {
-					damage = 90,
+					damage = 45,
 					spread = 51,
 					recoil = 85,
 					spread_moving = 9,
@@ -14965,6 +14965,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fp45.stats_modifiers = nil
 				self.fp45.panic_suppression_chance = 0.05
+				self.fp45.hs_mult = 2
 				self.fp45.armor_piercing_chance = 1
 				self.fp45.can_shoot_through_enemy = true
 				self.fp45.can_shoot_through_enemy_unlim = true
@@ -18540,6 +18541,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.stats_modifiers = nil
 				self.madsen_mg.panic_suppression_chance = 0.05
 				self.madsen_mg.sounds.spin_start = "wp_mg42_lever_release"
+				self.madsen_mg.timers.reload_not_empty = 2.2
+				self.madsen_mg.timers.reload_exit_not_empty = 0.6
+				self.madsen_mg.timers.reload_empty = 2.9
+				self.madsen_mg.timers.reload_exit_empty = 0.8
 				self.madsen_mg.spin_up_shoot = true
 				self.madsen_mg.spin_up_t = 0.08
 				self.madsen_mg.spin_down_t = 0.00000001
@@ -19667,8 +19672,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.or12.stats_modifiers = nil
+			self.or12.lock_slide = true
+			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
+			self.or12.sounds.spin_start = nil
+			self.or12.spin_up_shoot = nil
+			self.or12.spin_up_t = nil
+			self.or12.spin_down_t = nil
+			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
 			self.or12.panic_suppression_chance = 0.05
 			self.or12.reload_speed_multiplier = 0.8
+			self.or12.timers.reload_not_empty = 2.8
+			self.or12.timers.reload_exit_not_empty = 0.9
+			self.or12.timers.reload_empty = 3.21
+			self.or12.timers.reload_exit_empty = 1.0
 		end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

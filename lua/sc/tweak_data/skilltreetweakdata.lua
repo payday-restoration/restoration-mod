@@ -1899,6 +1899,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
+						"player_counter_strike_spooc_sprint",
 						"player_deflect_ranged",
 						"player_spooc_damage_resist_2"
 					},

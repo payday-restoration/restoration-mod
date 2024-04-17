@@ -40,7 +40,7 @@ return {
 		ponr = ponr_value
 	},
 	--Spawn Snipers on the ships
-	[102812] = {
+	[102182] = {
 		on_executed = {
 			{ id = 400013, delay = 20 }
 		}

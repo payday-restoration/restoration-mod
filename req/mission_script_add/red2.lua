@@ -36,7 +36,7 @@ local enabled_chance_dozers_ambush_escape = math.random() < 0.5
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
+		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
@@ -73,13 +73,13 @@ local optsShield_1 = {
     enemy = shield,
     on_executed = { { id = 100696, delay = 0 } },
 	participate_to_group_ai = true,
-    enabled = enabled_chance_shields
+    enabled = true
 }
 local optsShield_2 = {
     enemy = shield,
     on_executed = { { id = 100695, delay = 0 } },
 	participate_to_group_ai = true,
-    enabled = enabled_chance_shields
+    enabled = true
 }
 local optsSniper_1 = {
 	enemy = sniper,
@@ -219,7 +219,7 @@ local optsShieldDefend_SO = {
     so_action = "AI_sniper"
 }
 local enable_shields = {
-	enabled = true,
+	enabled = enabled_chance_shields,
 	elements = { 
 		400001,
 		400002

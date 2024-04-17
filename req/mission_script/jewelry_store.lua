@@ -3,11 +3,11 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 	
 	if difficulty <= 4 then
-		ponr_value = 300
+		ponr_value = 360
 	elseif difficulty == 5 then
-		ponr_value = 360	
+		ponr_value = 480
 	else
-		ponr_value = 420	
+		ponr_value = 600	
 	end
 	
 	if pro_job then

@@ -38,5 +38,21 @@ return {
 	[100324] = {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
+	},
+	--Spawn Snipers on the ships
+	[102812] = {
+		on_executed = {
+			{ id = 400013, delay = 20 }
+		}
+	},
+	[102335] = {
+		on_executed = {
+			{ id = 400014, delay = 20 }
+		}
+	},
+	[102388] = {
+		on_executed = {
+			{ id = 400015, delay = 20 }
+		}
 	}
 }

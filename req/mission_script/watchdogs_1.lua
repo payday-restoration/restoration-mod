@@ -1,5 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local overkill_below = difficulty <= 5
+local death_wish = difficulty == 7
+local death_sentence = difficulty == 8
 local fbi_dudes = 3
 local chance_normal = 25
 local chance_hard = 50
@@ -13,20 +16,20 @@ local chance_overkill = 65
 		ponr_value = 600		
 	end
 
-	if difficulty == 8 then
+	if death_sentence then
 		fbi_dudes = 4
 	end	
 		
 	--If we're in Pro Job, do this stuff below
 	if pro_job then
 		chance_normal = 45
-		chance_hard = 75
-		chance_overkill = 100
-	if difficulty == 7 or difficulty == 8 then
+		chance_hard = 65
+		chance_overkill = 80
+	if death_wish or death_sentence then
 		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
 	end
-	if difficulty <= 5 then
+	if overkill_below then
 		fbi_agent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 		fbi_agent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 		fbi_agent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
@@ -122,7 +125,7 @@ return {
             chance = chance_overkill
 		}
 	},
-	--those guys replace scripted ambush beat cops on DW-DS PJ
+	--Titan SWAT replace scripted ambush beat cops on DW above PJ
 	[100360] = {
 		values = {
             enemy = titan_swat_1
@@ -268,6 +271,64 @@ return {
 	[102851] = {
 		values = {
             enemy = titan_shield
+		}
+	},
+	--Use unhooked PDTH's leftover shields as 2 extra shields on DS
+	[101279] = {
+		values = {
+            enemy = titan_shield,
+			enabled = death_sentence
+		}
+	},
+	[101280] = {
+		values = {
+            enemy = titan_shield,
+			enabled = death_sentence
+		}
+	},
+	--and extra unhooked SWAT for DS too
+	[101281] = {
+		values = {
+            enemy = titan_swat_1,
+			enabled = death_sentence
+		}
+	},
+	[101282] = {
+		values = {
+            enemy = titan_swat_1,
+			enabled = death_sentence
+		}
+	},
+	[101283] = {
+		values = {
+            enemy = titan_swat_1,
+			enabled = death_sentence
+		}
+	},
+	[101276] = {
+		on_executed = {
+			{ id = 101279, delay = 0 },
+			{ id = 101280, delay = 0 },
+			{ id = 101281, delay = 0 },
+			{ id = 101282, delay = 0 },
+			{ id = 101283, delay = 0 }
+		}
+	},
+	--Spawn Ambush Snipers
+	[100327] = {
+		on_executed = {
+			{ id = 400019, delay = 0 }
+		}
+	},
+	--Spawn the blockade near loot dropoff
+	[107771] = {
+		on_executed = {
+			{ id = 400020, delay = 0 }
+		}
+	},
+	[101459] = {
+		on_executed = {
+			{ id = 400021, delay = 0 }
 		}
 	},
 	-- Delay SWAT response

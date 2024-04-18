@@ -1,24 +1,15 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local solo = Global.game_settings and Global.game_settings.single_player
 
 	--PDTH's styled PONR, run faster
 	if difficulty <= 5 then
-		ponr_value = 90
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 70
+		ponr_value = 120
 	else
-		ponr_value = 60
-	end
-	
-	--PONR is less stricted in singleplayer
-	if solo then
-		ponr_value = ponr_value * 2 
+		ponr_value = 90
 	end
 
---If we're in Pro Job, do this shit below
+--If we're in Pro Job, do this stuff below
 if pro_job and difficulty >= 5 then
-	--these shields are slow but will fuck a bit harder than regular shields once in position
 	titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
@@ -67,6 +58,12 @@ return {
             {id = 400029, delay = 0}
 		}
 	},
+	--Disable the 2nd police crusier if the cops are already alerted
+	[103034] = {
+		on_executed = {
+            {id = 400015, delay = 0}
+		}
+	},
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
 	--Disables the turret
 	[102821] = {
@@ -77,12 +74,6 @@ return {
 	[101965] = {
 		values = {
 			enabled = false
-		}
-	},
-	--Disable the 2nd police crusier if the cops are already alerted
-	[103034] = {
-		on_executed = {
-            {id = 400015, delay = 0}
 		}
 	},
 	--Forces the reinforcments to spawn instead
@@ -152,7 +143,7 @@ return {
 			{id = 400003, delay = 5},
 			{id = 400004, delay = 5},
 			{id = 400005, delay = 5},
-			{id = 400016, delay = 7}
+			{id = 400016, delay = 3.5}
 		}
 	},
 	--Spawn two extra grenadiers on Death Wish above

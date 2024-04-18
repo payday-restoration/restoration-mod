@@ -314,12 +314,6 @@ return {
 			{ id = 101283, delay = 0 }
 		}
 	},
-	--Spawn Ambush Snipers
-	[100327] = {
-		on_executed = {
-			{ id = 400019, delay = 0 }
-		}
-	},
 	--Spawn the blockade near loot dropoff
 	[107771] = {
 		on_executed = {
@@ -332,9 +326,11 @@ return {
 		}
 	},
 	-- Delay SWAT response
+	--Spawn Ambush Snipers
 	[100327] = {
 		on_executed = {
-			{ id = 100768, delay = 30 }
+			{ id = 100768, delay = 30 },
+			{ id = 400019, delay = 0 }
 		}
 	}
 }

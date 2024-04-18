@@ -70,6 +70,7 @@ local optsSniper_SO = {
 	align_position = true,
 	needs_pos_rsrv = true,
 	align_rotation = true,
+	path_stance = "cbt",
 	interval = 2,
     so_action = "AI_sniper"
 }

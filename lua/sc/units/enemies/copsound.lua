@@ -556,6 +556,12 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		end
 	end
 	
+	if self._prefix == "lt1_" then
+		if sound_name == "g90" then
+			sound_name = "c01"
+		end
+	end
+	
 	local fixed_sound = nil
 	
 	if self._prefix == "l1n_" or self._prefix == "l2n_" or self._prefix == "l3n_" then

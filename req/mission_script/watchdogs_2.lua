@@ -45,7 +45,7 @@ return {
 		ponr = ponr_value
 	},
 	--Death Wish now has 2 ships docked
-	[101552] = {
+	[101559] = {
 		values = {
             amount = ship_amount
 		}
@@ -55,7 +55,7 @@ return {
 	--Spawn a scripted dozer after 150 seconds
 	[100486] = {
 		on_executed = {
-			{ id = 400054, delay = 15 },
+			{ id = 400054, delay = 25 },
 			{ id = 400058, delay = 150 },
 			{ id = 400056, delay = 180 }
 		}

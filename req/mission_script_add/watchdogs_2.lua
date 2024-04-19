@@ -4,7 +4,6 @@ local fbi_ready_team_1 = "units/payday2/characters/ene_hoxton_breakout_responder
 local fbi_ready_team_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 local fbi_ready_team_dozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-local overkill_above = difficulty >= 5
 local deathwish_above = difficulty >= 7
 	
 	if difficulty == 5 or difficulty == 6 then
@@ -222,7 +221,7 @@ local spawnGroundSnipers = {
 	}
 }
 local spawnFBI_Agents = {
-	enabled = overkill_above,
+	enabled = true,
 	trigger_times = 3,
 	on_executed = { 
 		{ id = 400035, delay = 0 },

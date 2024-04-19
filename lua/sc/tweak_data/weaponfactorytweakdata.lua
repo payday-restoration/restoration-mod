@@ -2509,6 +2509,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.03, -4.5, 0.63),
 				rotation = Rotation(0.02,0.15,0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_martinihenry = {
+				translation = Vector3(-0.022, -8, -4.022)
+			}
 
 		--CUSTOM WEAPS THAT NEED REALIGNMENT
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
@@ -25417,9 +25420,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.wpn_fps_pis_bigglock then --Big Bad Glock
 			end
 
-			if self.parts.wpn_fps_upg_obrez_barrel then --Obrez
+			if self.parts.wpn_fps_upg_obrez_barrel then --Martini
+				self.parts.wpn_fps_upg_obrez_barrel.supported = true
 				self.parts.wpn_fps_upg_obrez_barrel.stats = deep_clone(barrels.long_b2_stats)
 				self.parts.wpn_fps_upg_obrez_barrel.custom_stats = deep_clone(barrels.long_b2_stats)
+			end
+
+			if self.parts.wpn_fps_upg_martinihenry_barrel_carbine then --Obrez
+				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.supported = true
+				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.custom_stats = deep_clone(barrels.short_b2_stats)
 			end
 
 	--[[ RJC9000'S MODS ]]

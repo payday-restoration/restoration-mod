@@ -14577,8 +14577,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holygrail.panic_suppression_chance = 0.05
 				self.holygrail.armor_piercing_chance = 1
 				self.holygrail.descope_on_fire = true
+				self.holygrail.always_play_anims = true
 				self.holygrail.timers.reload_exit_empty = 0.3
 				self.holygrail.timers.reload_exit_not_empty = 0.3
+			end
+
+			if self.martinihenry then
+				self.martinihenry.recategorize = { "heavy_snp" }
+				self.martinihenry.damage_type = "sniper"
+				self.martinihenry.desc_id = "bm_heavy_ap_weapon_sc_desc"
+				self.martinihenry.has_description = true
+				self.martinihenry.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.martinihenry.use_vapor_trail = true
+				self.martinihenry.AMMO_MAX = 20
+				self.martinihenry.CLIP_AMMO_MAX = 1
+				self.martinihenry.fire_mode_data.fire_rate = 2
+				self.martinihenry.kick = self.stat_info.kick_tables.vertical_kick
+				self.martinihenry.supported = true
+				self.martinihenry.ads_speed = 0.300
+				self.martinihenry.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.25
+				}
+				self.martinihenry.stats = {
+					damage = 180,
+					spread = 91,
+					recoil = 51,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 26,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.martinihenry.stats_modifiers = nil
+				self.martinihenry.can_shoot_through_enemy = true
+				self.martinihenry.can_shoot_through_enemy_unlim = true
+				self.martinihenry.can_shoot_through_wall = true
+				self.martinihenry.can_shoot_through_shield = true
+				self.martinihenry.can_shoot_through_titan_shield = true
+				self.martinihenry.panic_suppression_chance = 0.05
+				self.martinihenry.armor_piercing_chance = 1
+				self.martinihenry.descope_on_fire = true
+				self.martinihenry.always_play_anims = true
+				self.martinihenry.timers.reload_exit_empty = 0.3
+				self.martinihenry.timers.reload_exit_not_empty = 0.3
 			end
 
 			if self.obrez then

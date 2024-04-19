@@ -44,12 +44,6 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
-	--Death Wish now has 2 ships docked
-	[101559] = {
-		values = {
-            amount = ship_amount
-		}
-	},
 	--Spawn FBI Ready Teams
 	--Spawn Ground Snipers after 3 minutes
 	--Spawn a scripted dozer after 150 seconds

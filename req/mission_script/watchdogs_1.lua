@@ -148,7 +148,7 @@ return {
 		}
 	},
 	--Spawn the blockade near loot dropoff
-	[107771] = {
+	[100771] = {
 		on_executed = {
 			{ id = 400020, delay = 0 }
 		}

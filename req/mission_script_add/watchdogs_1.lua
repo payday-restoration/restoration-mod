@@ -3,6 +3,7 @@ local shield = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
 local sniper = "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local mayhem_above = difficulty >= 6
+local death_sentence = difficulty == 8
 local enabled_chance_snipers = math.random() < 0.6
 	
 	if difficulty == 5 or difficulty == 6 then
@@ -65,6 +66,16 @@ local optsSniper_Ambush_3 = {
 	on_executed = { { id = 400006, delay = 0 } },
     enabled = true
 }
+local optsSniper_Ambush_4 = {
+	enemy = sniper,
+	on_executed = { { id = 400024, delay = 0 } },
+    enabled = death_sentence
+}
+local optsSniper_Ambush_5 = {
+	enemy = sniper,
+	on_executed = { { id = 400025, delay = 0 } },
+    enabled = death_sentence
+}
 local optsSniper_SO = {
 	scan = true,
 	align_position = true,
@@ -88,7 +99,9 @@ local spawn_AmbushSnipers = {
 	on_executed = { 
 		{ id = 400001, delay = 0 },
 		{ id = 400002, delay = 0 },
-		{ id = 400003, delay = 0 }
+		{ id = 400003, delay = 0 },
+		{ id = 400022, delay = 0 },
+		{ id = 400023, delay = 0 }
 	}
 }
 local spawn_Squadblockade_1 = {
@@ -253,6 +266,35 @@ return {
             400021,
             "spawn_the_squad_blockade_2",
             spawn_Squadblockade_2
+        ),
+		--2 additional ambush snipers for death sentence
+ 		restoration:gen_dummy(
+            400022,
+            "sniper_ambush_4",
+            Vector3(-2710, 1259, 814.006),
+            Rotation(-115, 0, -0),
+            optsSniper_Ambush_4
+        ),
+		restoration:gen_dummy(
+            400023,
+            "sniper_ambush_5",
+            Vector3(-3405, -2681, 862.098),
+            Rotation(-50, 0, -0),
+            optsSniper_Ambush_5
+        ),
+		restoration:gen_so(
+            400024,
+            "sniper_ambush_so_4",
+            Vector3(-2710, 1259, 814.006),
+            Rotation(-115, 0, -0),
+            optsSniper_SO
+        ),
+		restoration:gen_so(
+            400025,
+            "sniper_ambush_so_5",
+            Vector3(-3405, -2681, 862.098),
+            Rotation(-50, 0, -0),
+            optsSniper_SO
         )
     }
 }

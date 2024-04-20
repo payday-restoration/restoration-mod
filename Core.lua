@@ -931,7 +931,7 @@ function restoration:mission_script_add()
 				chance_inc = 0,
 				interrupt_dmg = opts.interrupt_dmg or 1,
 				interrupt_objective = false,
-				on_executed = {},
+				on_executed = opts.on_executed or {},
 				interrupt_dis = opts.interrupt_dis or 1,
 				patrol_path = "none",
 			},
@@ -1150,6 +1150,26 @@ function restoration:mission_script_add()
 				position = pos,
 				rotation = rot,
 				enabled = opts.enabled or false
+			},
+		}
+	end
+	
+	function restoration:gen_sotrigger(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSpecialObjectiveTrigger",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				event = opts.event or "complete"
 			},
 		}
 	end

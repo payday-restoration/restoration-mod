@@ -5240,7 +5240,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Heavy Impact
 				["menu_speedy_reload_sc"] = "Heavy Impact",
-				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#$skill_value_b1## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#$skill_value_b2## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#$skill_value_p1%## less damage while crouched.\n\nThe effect is raised to #{skill_color}#$skill_value_p2## when using a bipod.",
+				["menu_speedy_reload_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Machine guns## have a #{skill_color}#$skill_value_b1## chance to stagger enemies.\n\nThis chance is raised to #{skill_color}#$skill_value_b2## when using a bipod.\n\n#{risk}#NOTE: Stagger effects do not apply to## #{important_1}#Captains, Bulldozers, Snipers, or Shields.##\n\nACE: #{owned}#$pro##\nYou take #{skill_color}#$skill_value_p1## less damage while crouched.\n\nThe effect is raised to #{skill_color}#$skill_value_p2## when using a bipod.",
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
@@ -5279,7 +5279,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
 				["menu_oppressor_beta_sc"] = "Stun Resistance",
-				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1%## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#$skill_value_p1.##",
+				["menu_oppressor_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemy melee attacks push you back #{skill_color}#$skill_value_b1## less for every point of armor you have.\n\nACE: #{owned}#$pro##\nReduces the visual effect duration of flashbangs by #{skill_color}#$skill_value_p1.##",
 
 				--Die Hard
 				["menu_show_of_force_sc"] = "Die Hard",

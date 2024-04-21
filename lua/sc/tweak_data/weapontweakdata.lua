@@ -6870,6 +6870,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shrew.stats_modifiers = nil
 						self.shrew.panic_suppression_chance = 0.05
 						self.shrew.reload_speed_multiplier = 1.25
+						self.shrew.timers.reload_exit_empty = 0.5
+						self.shrew.timers.reload_exit_not_empty = 0.65
 
 					--Interceptor .45
 						self.usp.has_description = true

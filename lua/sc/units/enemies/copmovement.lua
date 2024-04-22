@@ -598,32 +598,6 @@ function CopMovement:on_suppressed(state)
 	self:enable_update(true)
 end
 
-function CopMovement:synch_attention(attention)
-	if attention and self._unit:character_damage():dead() then
-		--debug_pause_unit(self._unit, "[CopMovement:synch_attention] dead AI", self._unit, inspect(attention))
-	end
-
-	self:_remove_attention_destroy_listener(self._attention)
-	self:_add_attention_destroy_listener(attention)
-
-	if attention and attention.unit and not attention.destroy_listener_key then
-		--debug_pause_unit(attention.unit, "[CopMovement:synch_attention] problematic attention unit", attention.unit)
-		self:synch_attention(nil)
-
-		return
-	end
-
-	local old_attention = self._attention --of course vanilla lacks this for no real reason
-	self._attention = attention
-	self._action_common_data.attention = attention
-
-	for _, action in ipairs(self._active_actions) do
-		if action and action.on_attention then
-			action:on_attention(attention, old_attention)
-		end
-	end
-end
-
 --crash prevention
 function CopMovement:anim_clbk_enemy_spawn_melee_item()
 	if alive(self._melee_item_unit) then

@@ -54,7 +54,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
-				"units/payday2/characters/ene_fbi_swat_3_sc/ene_fbi_swat_3_sc",
+				"units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 				"units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 				"units/payday2/characters/ene_swat_3/ene_swat_3"
 			},
@@ -99,7 +99,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
-				"units/payday2/characters/ene_fbi_swat_3_sc/ene_fbi_swat_3_sc",
+				"units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 				"units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 				"units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
 			},
@@ -1217,7 +1217,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"
 			},
 			swat_2 = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
-			heavy_1 = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
+			heavy_1 = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 			heavy_2 = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 			shield = {
 				"units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
@@ -1952,7 +1952,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
-				"units/payday2/characters/ene_fbi_swat_3_sc/ene_fbi_swat_3_sc",
+				"units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 				"units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 				"units/payday2/characters/ene_swat_3/ene_swat_3"
 			},
@@ -2001,7 +2001,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
-				"units/payday2/characters/ene_fbi_swat_3_sc/ene_fbi_swat_3_sc",
+				"units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 				"units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1",
 				"units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"
 			},

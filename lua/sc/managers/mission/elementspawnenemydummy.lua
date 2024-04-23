@@ -265,6 +265,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_reapers/characters/ene_security_3/ene_security_3"
 			},
+			fsb_security = {
+				"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+				"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+				"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"
+			},
 			cop_1 = "units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3",
@@ -299,6 +304,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/pd2_mod_reapers/characters/ene_security_3/ene_security_3"
+			},
+			fsb_security = {
+				"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+				"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+				"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"
 			},
 			cop_1 = "units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2",
@@ -353,6 +363,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_reapers/characters/ene_security_3/ene_security_3"
 			},
+			fsb_security = {
+				"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+				"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+				"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"
+			},
 			cop_1 = "units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3",
@@ -370,6 +385,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 				"units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2"
 			},
+			fsb_swat_1 = {
+				"units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36",
+				"units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36",
+				"units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1",
+				"units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"
+			},
+			fsb_swat_2 = {
+				"units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870",
+				"units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2"
+			},
 			heavy_1 = {
 				"units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 				"units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
@@ -378,12 +403,24 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 				"units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870"
 			},
+			fsb_heavy = {
+				"units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36",
+				"units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+			},
 			shield = {
 				"units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield"
 			},
+			fsb_shield = {
+				"units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city",
+				"units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield"
+			},
 			sniper = {
 				"units/pd2_mod_reapers/characters/ene_sniper_2/ene_sniper_2",
+				"units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3"
+			},
+			fsb_sniper = {
+				"units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper",
 				"units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3"
 			},
 			taser = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
@@ -409,6 +446,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_reapers/characters/ene_security_3/ene_security_3"
 			},
+			fsb_security = {
+				"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+				"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+				"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"
+			},
 			cop_1 = "units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3",
@@ -421,12 +463,20 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"
 			},
 			swat_2 = "units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2",
+			fsb_swat_1 = {
+				"units/pd2_mod_reapers/characters/ene_city_swat_1/ene_city_swat_1",
+				"units/pd2_mod_reapers/characters/ene_city_swat_3/ene_city_swat_3"
+			},
+			fsb_swat_2 = "units/pd2_mod_reapers/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870",
+			fsb_heavy = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			taser = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
 			shield = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
+			fsb_shield = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 			sniper = "units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3",
+			fsb_sniper = "units/pd2_mod_reapers/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann",
 			cloaker = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
@@ -445,6 +495,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_mod_reapers/characters/ene_security_3/ene_security_3"
 			},
+			fsb_security = {
+				"units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1",
+				"units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2",
+				"units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"
+			},
 			cop_1 = "units/pd2_mod_reapers/characters/ene_cop_1/ene_cop_1",
 			cop_2 = "units/pd2_mod_reapers/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_reapers/characters/ene_cop_3/ene_cop_3",
@@ -456,8 +511,14 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
 				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"
 			},
+			fsb_swat_1 = {
+				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"
+			},
 			swat_2 = "units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+			fsb_swat_2 = "units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
 			heavy_1 = "units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
+			fsb_heavy = "units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 			heavy_2 = "units/pd2_mod_reapers/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 			shield = {
 				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
@@ -467,12 +528,20 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
+			fsb_shield = {
+				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
+			},
 			dozer_1 = {
-				"units/pd2_mod_reapers/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
 				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
 			},
 			dozer_2 = {
@@ -517,7 +586,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper"
+			sniper = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+			fsb_sniper = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper"
 		}
 	},
 	--Zombie
@@ -2403,6 +2473,29 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"):key()] = "cloaker",
 	--Custom Factions
 	--FSB
+	--Security
+	[Idstring("units/payday2/characters/ene_security_winter_1/ene_security_winter_1"):key()] = "security_1",
+	[Idstring("units/payday2/characters/ene_security_winter_2/ene_security_winter_2"):key()] = "security_1",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1"):key()] = "fsb_security",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_2/ene_rus_security_2"):key()] = "fsb_security",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_3/ene_rus_security_3"):key()] = "fsb_security",
+	--Blue/FBI SWAT
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4"):key()] = "fsb_swat_1",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870"):key()] = "fsb_swat_2",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4"):key()] = "fsb_heavy",
+	--City SWAT
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_g36/ene_rus_fsbcity_g36"):key()] = "fsb_swat_1",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_r870/ene_rus_fsbcity_r870"):key()] = "fsb_swat_2",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"):key()] = "fsb_heavy",
+	--ZEALs
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"):key()] = "fsb_swat_1",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"):key = "fsb_heavy"
+	--Specials
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"):key()] = "taser",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"):key()] = "fsb_sniper",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45"):key()] = "fsb_shield",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2"):key()] = "fsb_shield",
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_sr2_city/ene_rus_shield_sr2_city"):key()] = "fsb_shield"
 	
 }
 

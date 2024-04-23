@@ -1,7 +1,3 @@
-if Network:is_client() then
-	return
-end
-
 -- Tweak bag stealing conditions
 function CarryData:clbk_pickup_SO_verification(unit)
 	if not self._steal_SO_data or not self._steal_SO_data.SO_id then
@@ -30,3 +26,10 @@ function CarryData:clbk_pickup_SO_verification(unit)
 		return objective.area.nav_segs[nav_seg] or managers.groupai:state()._rescue_allowed
 	end
 end
+
+-- Make enemies run with stolen bags instead of crouchwalking
+Hooks:PostHook(CarryData, "_chk_register_steal_SO", "sh__chk_register_steal_SO", function (self)
+	if self._steal_SO_data and self._steal_SO_data.pickup_objective and self._steal_SO_data.pickup_objective.followup_objective then
+		self._steal_SO_data.pickup_objective.followup_objective.pose = "stand"
+	end
+end)

@@ -2,8 +2,7 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var_1 = math.random() 
 local chance_dozer_var_2 = math.random() 
-local chance_elite = math.random() 
-local double_dozers_only = true
+local chance_elite = math.random()
 local dozer_table = {
 	dozer_green = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 	dozer_black = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -24,10 +23,6 @@ local eseries_table = {
 		ponr_value = 570	
 	else
 		ponr_value = 540		
-	end
-	
-	if difficulty >= 7 then
-		double_dozers_only = false
 	end	
 	
 	--Setting up the dozer randomizer, this is cool
@@ -159,29 +154,6 @@ return {
 	[101864] = {
 		values = {
             enemy = epsilon_shield
-		}
-	},
-	--High diffs has only dozer pairs blocking the exit (as in disables single dozer mission scripts)
-	[101733] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
-	[101734] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
-	[100854] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
-	--fix this mission script not actually spawning skulldozers
-	[101698] = {
-		on_executed = {
-			{id = 101691, delay = 0},
-			{id = 101692, delay = 0}
 		}
 	},
 	--dozers gets randomized

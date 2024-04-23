@@ -546,7 +546,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_headless = "units/payday2/character/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
 		--Mix of Zombie SWAT+FBI
 		overkill_145 = {
@@ -583,7 +583,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_headless = "units/payday2/character/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
+			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
 			shield = {
 				"units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_mod_halloween/characters/ene_shield_2/ene_shield_2"
@@ -639,7 +639,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"
 			},
-			dozer_headless = "units/payday2/character/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
 		--Zombie GenSec
 		overkill_290 = {
@@ -667,7 +667,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
-			dozer_headless = "units/payday2/character/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
 		--Zombie ZEAL
 		sm_wish = {
@@ -741,7 +741,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker",
 				"units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
-			dozer_headless = "units/payday2/character/ene_bulldozer_4/ene_bulldozer_4",
+			dozer_headless = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
 			grenadier = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
 			sniper = "units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper"

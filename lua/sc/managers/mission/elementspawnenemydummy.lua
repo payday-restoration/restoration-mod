@@ -2182,8 +2182,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
 			},
 			fbi_1 = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2",
-			fbi_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4",
-			fbi_3 = "units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5",
 			swat_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"

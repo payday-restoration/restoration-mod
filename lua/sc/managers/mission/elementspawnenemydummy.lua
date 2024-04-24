@@ -2489,7 +2489,7 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36"):key()] = "fsb_heavy",
 	--ZEALs
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_akmsu/ene_rus_fsbzeal_akmsu"):key()] = "fsb_swat_1",
-	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"):key = "fsb_heavy"
+	[Idstring("units/pd2_dlc_mad/characters/ene_rus_fsbzeal_heavy_ak47_ass/ene_rus_fsbzeal_heavy_ak47_ass"):key = "fsb_heavy",
 	--Specials
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_tazer/ene_rus_tazer"):key()] = "taser",
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_sniper/ene_rus_sniper"):key()] = "fsb_sniper",

@@ -399,7 +399,7 @@ end)
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 0.0005
+	self.explosive_bullet.curve_pow = 0.1
 	self.explosive_bullet.player_dmg_mul = 0.5
 	self.explosive_bullet.range = 200
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range

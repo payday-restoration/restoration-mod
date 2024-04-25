@@ -1789,7 +1789,7 @@ end)
 --Vanilla Gadgets
 Hooks:PostHook(WeaponFactoryTweakData, "_init_gadgets", "resmod_gadgets", function(self)
 
-	self.parts.wpn_fps_addon_ris.unit = "units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/wpn_fps_ass_groza_fl_adapter"
+	--self.parts.wpn_fps_addon_ris.unit = "units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/wpn_fps_ass_groza_fl_adapter"
 	--"units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fl_adapter"
 	--"units/pd2_dlc_berry/weapons/wpn_fps_snp_model70_pts/wpn_fps_snp_model70_fl_rail"
 	--"units/pd2_dlc_sawp/weapons/wpn_fps_ass_groza_pts/wpn_fps_ass_groza_fl_adapter"

@@ -20314,7 +20314,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			shotgun_auto = 1.11, --Omni
 			shotgun_light = 0.92, --Auto
 			shotgun_heavy = 0.94, --Light
-			shotgun_break = 1.06, --Heavy
+			shotgun_break = 1.07, --Heavy
 			shotgun_super = 1.10,
 		--assault_rifle = 1, 
 			dmr_l = 0.9,

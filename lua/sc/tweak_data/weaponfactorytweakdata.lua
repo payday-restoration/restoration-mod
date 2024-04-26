@@ -19613,6 +19613,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		armor_piercing_override = 1,
 		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
+		can_shoot_through_enemy_unlim = true,
 		ignore_rof_mult_anims = true,
 		rof_mult = 0.666666,
 		ads_speed_mult = 1.20,
@@ -23104,6 +23105,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			armor_piercing_override = 1,
 			can_shoot_through_wall = true,
 			can_shoot_through_shield = true,
+			can_shoot_through_enemy_unlim = true,
 			ignore_rof_mult_anims = true,
 			ads_speed_mult = 1.263157,
 			hip_mult = 1.666666,
@@ -32208,6 +32210,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				bullet_class = "PoisonBulletBase",
 				dot_data_name = "weapon_tranq_medium",
 				can_shoot_through_shield = false,
+				can_shoot_through_enemy_unlim = false,
 				can_shoot_through_enemy = false
 			}
 	

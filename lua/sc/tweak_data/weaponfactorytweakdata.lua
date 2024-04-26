@@ -991,25 +991,23 @@ local grips = {
 	--Indented to make for easy code folding in most editors.
 	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
 
-	local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns")
-
 	local shot_ammo = {
 		--Flechettes
 			a_piercing_auto_override = {
-				desc_id = per_pellet and "bm_wp_upg_a_piercing_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_auto_desc_sc",
+				desc_id = "bm_wp_upg_a_piercing_auto_desc_per_pellet",
 				stats = {
 					value = 9,
-					damage = per_pellet and -45 or -6,
-					total_ammo_mod = per_pellet and -49 or -68,
+					damage = -45,
+					total_ammo_mod = -49,
 					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 0.5 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
+					ene_hs_mult_add = 0.5,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					hs_mult = 2,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -1032,25 +1030,25 @@ local grips = {
 			},
 		
 			a_piercing_semi_override = {
-				desc_id = per_pellet and "bm_wp_upg_a_piercing_semi_desc_per_pellet" or "bm_wp_upg_a_piercing_semi_desc_sc",
+				desc_id = "bm_wp_upg_a_piercing_semi_desc_per_pellet",
 				stats = {
 					value = 9,
-					damage = per_pellet and -60 or -15,
-					total_ammo_mod = per_pellet and -68 or -52,
+					damage = -60,
+					total_ammo_mod = -68,
 					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 0.5 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
+					ene_hs_mult_add = 0.5,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					hs_mult = 2,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
-					damage_min_mult = per_pellet and 6 or 6.666666,
+					damage_min_mult = 6,
 					armor_piercing_add = 1,
 					rays = 12
 					--[[
@@ -1068,20 +1066,20 @@ local grips = {
 			},
 		
 			a_piercing_pump_override = {
-				desc_id = per_pellet and "bm_wp_upg_a_piercing_pump_desc_per_pellet" or  "bm_wp_upg_a_piercing_pump_desc_sc",
+				desc_id = "bm_wp_upg_a_piercing_pump_desc_per_pellet",
 				stats = {
 					value = 9,
-					damage = per_pellet and -90 or -30,
-					total_ammo_mod = per_pellet and -52 or -68,
+					damage = -90,
+					total_ammo_mod = -52,
 					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 0.35 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
+					ene_hs_mult_add = 0.35,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					hs_mult = 2,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
@@ -1104,25 +1102,25 @@ local grips = {
 			},
 	
 			a_piercing_heavy_override = {
-				desc_id = per_pellet and "bm_wp_upg_a_piercing_heavy_desc_per_pellet" or  "bm_wp_upg_a_piercing_heavy_desc_sc",
+				desc_id = "bm_wp_upg_a_piercing_heavy_desc_per_pellet",
 				stats = {
 					value = 9,
-					damage = per_pellet and -150 or -30,
-					total_ammo_mod = per_pellet and -38 or -52,
+					damage = -150,
+					total_ammo_mod = -38,
 					spread = 5
 				},
 				custom_stats = {
 					hip_mult = 0.8,
 					ap_desc = "bm_ap_armor_weapon_sc_desc",
 					trail_effect = "_dmc/effects/nato_trail",
-					ene_hs_mult_add = per_pellet and 0.2 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.8 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.8 or 1,
+					ene_hs_mult_add = 0.2,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					hs_mult = 2,
 					hs_mult_desc = true,
 					falloff_start_mult = 1,
 					falloff_end_mult = 1.1,
-					damage_min_mult = per_pellet and 4 or 5,
+					damage_min_mult = 4,
 					armor_piercing_add = 1,
 					rays = 12,		
 					--[[
@@ -1144,14 +1142,14 @@ local grips = {
 				desc_id = "bm_wp_upg_a_rip_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -30 or -6
+					damage = -30
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
 					bullet_class = "PoisonBulletBase",
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = 0.85,
+					ammo_pickup_min_mul = 0.85,
 					dot_data_name = "ammo_rip_auto"
 				}
 			},
@@ -1160,14 +1158,14 @@ local grips = {
 				desc_id = "bm_wp_upg_a_rip_semi_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -30 or -15
+					damage = -30
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
 					bullet_class = "PoisonBulletBase",
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = 0.85,
+					ammo_pickup_min_mul = 0.85,
 					dot_data_name = "ammo_rip"
 				}
 			},
@@ -1176,14 +1174,14 @@ local grips = {
 				desc_id = "bm_wp_upg_a_rip_pump_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -60 or -15
+					damage = -60
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
 					bullet_class = "PoisonBulletBase",
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = 0.85,
+					ammo_pickup_min_mul = 0.85,
 					dot_data_name = "ammo_rip_pump"
 				}
 			},
@@ -1191,14 +1189,14 @@ local grips = {
 			a_rip_heavy_override = {
 				stats = {
 					value = 9,
-					damage = per_pellet and -100 or -30
+					damage = -60
 				},
 				custom_stats = {
 					trail_effect = "_dmc/effects/warsaw_trail",
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_rip",
 					bullet_class = "PoisonBulletBase",
-					ammo_pickup_max_mul = per_pellet and 0.85 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.85 or 1,
+					ammo_pickup_max_mul = 0.85,
+					ammo_pickup_min_mul = 0.85,
 					dot_data_name = "ammo_rip_heavy"
 				}
 			},
@@ -1208,12 +1206,12 @@ local grips = {
 				desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -30 or -6
+					damage = -30
 				},
 				custom_stats = {
 					ignore_rof_mult_anims = true,
-					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
+					ammo_pickup_max_mul = 0.95,
+					ammo_pickup_min_mul = 0.95,
 					rof_mult = 0.9,
 					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
@@ -1233,12 +1231,12 @@ local grips = {
 				desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -30 or -15
+					damage = -30
 				},
 				custom_stats = {
 					ignore_rof_mult_anims = true,
-					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
+					ammo_pickup_max_mul = 0.95,
+					ammo_pickup_min_mul = 0.95,
 					rof_mult = 0.9,
 					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
@@ -1258,11 +1256,11 @@ local grips = {
 				desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
 				stats = {
 					value = 9,
-					damage = per_pellet and -40 or -15
+					damage = -40
 				},
 				custom_stats = {
-					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
+					ammo_pickup_max_mul = 0.95,
+					ammo_pickup_min_mul = 0.95,
 					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
@@ -1282,11 +1280,11 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					damage = per_pellet and -60 or -15
+					damage = -60
 				},
 				custom_stats = {
-					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
+					ammo_pickup_max_mul = 0.95,
+					ammo_pickup_min_mul = 0.95,
 					alt_rof_mult = 0.9,
 					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
@@ -1305,11 +1303,11 @@ local grips = {
 			a_dragons_breath_heavy_override = {
 				stats = {
 					value = 9,
-					damage = per_pellet and -100 or -30
+					damage = -60
 				},
 				custom_stats = {
-					ammo_pickup_max_mul = per_pellet and 0.95 or 1,
-					ammo_pickup_min_mul = per_pellet and 0.95 or 1,
+					ammo_pickup_max_mul = 0.95,
+					ammo_pickup_min_mul = 0.95,
 					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0,
@@ -1329,17 +1327,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					total_ammo_mod = per_pellet and -49 or -68,
-					spread = per_pellet and -10 or -5,
-					damage = per_pellet and 30 or 15
+					total_ammo_mod = -49,
+					spread = -10,
+					damage = 30
 				},
 				custom_stats = {
 					hip_mult = 1.5,
 					falloff_start_mult = 1.05,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
-					damage_min_mult = per_pellet and 0.66667 or 0.66667,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = 0.7,
+					damage_min_mult = 0.66667,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					rays = 6
 				}
 			},
@@ -1348,17 +1346,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and -68 or -52,
-					damage = per_pellet and 60 or 15
+					spread = -10,
+					total_ammo_mod = -68,
+					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
 					falloff_start_mult = 1.1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
-					damage_min_mult = per_pellet and 0.66667 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = 0.7,
+					damage_min_mult = 0.66667,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					rays = 6
 				}
 			},
@@ -1367,17 +1365,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and -52 or -68,
-					damage = per_pellet and 60 or 30
+					spread = -10,
+					total_ammo_mod = -52,
+					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
 					falloff_start_mult = 1.1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
-					damage_min_mult = per_pellet and 0.75 or 0.6666667,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = 0.7,
+					damage_min_mult = 0.75,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					rays = 6
 				}	
 			},
@@ -1385,17 +1383,17 @@ local grips = {
 			a_custom_heavy_override = {
 				stats = {
 					value = 9,
-					spread = per_pellet and -10 or -5,
-					total_ammo_mod = per_pellet and -38 or -52,
-					damage = per_pellet and 60 or 30
+					spread = -10,
+					total_ammo_mod = -38,
+					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
 					falloff_start_mult = 1.1,
-					falloff_end_mult = per_pellet and 0.7 or 0.8,
-					damage_min_mult = per_pellet and 0.83333 or 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					falloff_end_mult = 0.7,
+					damage_min_mult = 0.79999,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					rays = 6
 				}	
 			},
@@ -1407,9 +1405,9 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 10,
-					concealment = -3,
-					total_ammo_mod = per_pellet and -102 or -68,
-					damage = per_pellet and 0 or 15,
+					concealment = -1,
+					total_ammo_mod = -102,
+					damage = 0,
 					recoil = -20,
 					spread = 5,
 					spread_multi = {1, 1},	
@@ -1421,14 +1419,14 @@ local grips = {
 					rays = 1,
 					hip_mult = 2,
 					armor_piercing_add = 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					can_shoot_through_enemy = true,
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 1.4,
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.025
 				}
 			},
 	
@@ -1438,9 +1436,9 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 10,
-					concealment = -3,
-					total_ammo_mod = per_pellet and -102 or -52,
-					damage = per_pellet and 0 or 15,
+					concealment = -1,
+					total_ammo_mod = -102,
+					damage = 0,
 					spread = 5,
 					spread_multi = {1, 1},	
 					recoil = -20,
@@ -1452,14 +1450,14 @@ local grips = {
 					rays = 1,
 					hip_mult = 2,
 					armor_piercing_add = 0.75,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					can_shoot_through_enemy = true,
 					can_shoot_through_wall = true,
 					ap_desc = "bm_ap_armor_80_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 1.4,
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.025
 				}
 			},
 		
@@ -1469,9 +1467,9 @@ local grips = {
 				desc_id = "bm_wp_upg_a_slug_desc",
 				stats = {
 					value = 10,
-					concealment = -3,
-					total_ammo_mod = per_pellet and -102 or -68,
-					damage = per_pellet and 0 or 30,
+					concealment = -1,
+					total_ammo_mod = -102,
+					damage = 0,
 					recoil = -20,
 					spread = 5,
 					spread_multi = {1, 1},	
@@ -1483,9 +1481,9 @@ local grips = {
 					rays = 1,
 					hip_mult = 2,
 					armor_piercing_add = 1,
-					--ene_hs_mult_add = per_pellet and 0.15 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					--ene_hs_mult_add = 0.15,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					can_shoot_through_enemy_unlim = true,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
@@ -1493,16 +1491,16 @@ local grips = {
 					ap_desc = "bm_ap_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 1.4,
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.025
 				}
 			},
 	
 			a_slug_heavy_override = {
 				stats = {
 					value = 10,
-					concealment = -3,
-					total_ammo_mod = per_pellet and -102 or -52,
-					damage = per_pellet and 0 or 30,	
+					concealment = -1,
+					total_ammo_mod = -102,
+					damage = 0,	
 					recoil = -20,
 					spread = 5,
 					spread_multi = {1, 1},	
@@ -1514,9 +1512,9 @@ local grips = {
 					rays = 1,
 					hip_mult = 2,
 					armor_piercing_add = 1,
-					--ene_hs_mult_add = per_pellet and 0.3 or nil,
-					ammo_pickup_max_mul = per_pellet and 0.7 or 0.8,
-					ammo_pickup_min_mul = per_pellet and 0.7 or 0.8,
+					--ene_hs_mult_add = 0.3,
+					ammo_pickup_max_mul = 0.7,
+					ammo_pickup_min_mul = 0.7,
 					can_shoot_through_enemy_unlim = true,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
@@ -1525,7 +1523,7 @@ local grips = {
 					ap_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
 					falloff_start_mult = 1.2,
 					falloff_end_mult = 1.4,
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.025
 				}
 			},
 	
@@ -1535,15 +1533,15 @@ local grips = {
 				stats = {
 					value = 10,
 					recoil = -30,
-					total_ammo_mod = per_pellet and -102 or -102,
-					concealment = -6,
-					damage = per_pellet and 0 or 30
+					total_ammo_mod = -102,
+					concealment = -4,
+					damage = 0
 				},
 				custom_stats = {
-					ads_speed_mult = 1.15,
+					ads_speed_mult = 1.1,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_max_mul = 0.55,
+					ammo_pickup_min_mul = 0.55,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1556,15 +1554,15 @@ local grips = {
 				stats = {
 					value = 10,
 					recoil = -30,
-					total_ammo_mod = per_pellet and -102 or -102,
-					concealment = -6,
-					damage = per_pellet and 0 or 45
+					total_ammo_mod = -102,
+					concealment = -4,
+					damage = 0
 				},
 				custom_stats = {
-					ads_speed_mult = 1.15,
+					ads_speed_mult = 1.1,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_max_mul = 0.55,
+					ammo_pickup_min_mul = 0.55,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1577,16 +1575,16 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 10,
-					total_ammo_mod = per_pellet and -102 or -102,
+					total_ammo_mod = -102,
 					recoil = -30,
-					concealment = -6,
-					damage = per_pellet and 0 or 60
+					concealment = -4,
+					damage = 0
 				},
 				custom_stats = {
-					ads_speed_mult = 1.15,
+					ads_speed_mult = 1.1,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_max_mul = 0.55,
+					ammo_pickup_min_mul = 0.55,
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
@@ -1597,17 +1595,17 @@ local grips = {
 			a_explosive_heavy_override = {
 				stats = {
 					value = 10,
-					total_ammo_mod = per_pellet and -102 or -102,
-					damage = per_pellet and 0 or 90,
+					total_ammo_mod = -102,
+					damage = 0,
 					recoil = -30,
-					concealment = -6,
+					concealment = -4,
 					moving_spread = 3
 				},
 				custom_stats = {
-					ads_speed_mult = 1.15,
+					ads_speed_mult = 1.1,
 					hip_mult = 3,
-					ammo_pickup_max_mul = per_pellet and 0.55 or 0.7,
-					ammo_pickup_min_mul = per_pellet and 0.55 or 0.7,
+					ammo_pickup_max_mul = 0.55,
+					ammo_pickup_min_mul = 0.55,
 					ignore_statistic = true,
 					rays = 1,
 					block_b_storm = true,	
@@ -7381,7 +7379,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
-	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 	
@@ -10585,18 +10583,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_arbiter = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -42,
+				damage = 0,
 				spread = -20,
 				reload = 1,
-				total_ammo_mod = per_pellet and 0 or 462
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 10,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 3 or 6,
-				ammo_pickup_min_mul = per_pellet and 3 or 6,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10605,18 +10603,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_china = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -48,
+				damage = 0,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = per_pellet and 0 or 402
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 3 or 6,
-				ammo_pickup_min_mul = per_pellet and 3 or 6,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10625,18 +10623,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_m32 = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -48,
+				damage = 0,
 				spread = -30,
 				reload = 1,
-				total_ammo_mod = per_pellet and 0 or 402
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 3 or 6,
-				ammo_pickup_min_mul = per_pellet and 3 or 6,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10645,17 +10643,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_m79 = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -36,
+				damage = 0,
 				spread = -30,
-				total_ammo_mod = per_pellet and 0 or 202
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 3 or 6,
-				ammo_pickup_min_mul = per_pellet and 3 or 6,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -10664,9 +10662,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_ms3gl = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -18,
+				damage = 0,
 				spread = -30,
-				total_ammo_mod = per_pellet and 0 or 202
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
@@ -10683,17 +10681,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		wpn_fps_gre_slap = {
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 			stats = {
-				damage = per_pellet and 0 or -36,
+				damage = 0,
 				spread = -30,
-				total_ammo_mod = per_pellet and 0 or 202
+				total_ammo_mod = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_hornet",
 				gl_buck = true,
 				rays = 18,
 				rof_mult = 1.2,
-				ammo_pickup_max_mul = per_pellet and 3 or 6,
-				ammo_pickup_min_mul = per_pellet and 3 or 6,
+				ammo_pickup_max_mul = 3,
+				ammo_pickup_min_mul = 3,
 				sounds = {
 					fire_single2 = "hornet_fire"
 				}
@@ -17321,7 +17319,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
-	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)	
 
@@ -31923,7 +31921,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_auto_override)
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_auto_override)
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_auto_override)
-			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing.desc_id = per_pellet and "bm_wp_upg_a_piercing_9_auto_desc_per_pellet" or "bm_wp_upg_a_piercing_9_auto_desc_sc"
+			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			self.wpn_fps_shot_omni.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_auto_override)
 	

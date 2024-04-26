@@ -12271,7 +12271,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.has_description = true						
 						self.b682.rays = 9
 						self.b682.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.b682.AMMO_MAX = 24
+						self.b682.AMMO_MAX = 30
 						self.b682.fire_mode_data = {}
 						self.b682.CAN_TOGGLE_FIREMODE = false
 						self.b682.fire_mode_data.fire_rate = 0.2727272
@@ -12286,7 +12286,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.1
 						}
 						self.b682.stats = {
-							damage = 300,
+							damage = 240,
 							spread = 71,
 							recoil = 39,
 							spread_moving = 6,
@@ -12310,7 +12310,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Breaker 12g (Model 1887)
 						self.boot.desc_id = "bm_menu_sc_boot_desc"
 						self.boot.has_description = true
-						self.boot.AMMO_MAX = 24
+						self.boot.AMMO_MAX = 30
 						self.boot.CLIP_AMMO_MAX = 6
 						self.boot.fire_mode_data.fire_rate = 1
 						self.boot.fire_rate_multiplier = 0.91667
@@ -12325,7 +12325,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.1
 						}
 						self.boot.stats = {
-							damage = 300,
+							damage = 240,
 							spread = 44,
 							recoil = 31,
 							spread_moving = 5,
@@ -12356,7 +12356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.has_description = true
 						self.huntsman.rays = 9
 						self.huntsman.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.huntsman.AMMO_MAX = 24
+						self.huntsman.AMMO_MAX = 30
 						self.huntsman.sounds.fire_single = "huntsman_fire"
 						self.huntsman.sounds.fire_auto = "huntsman_fire"
 						self.huntsman.BURST_FIRE = 2
@@ -12375,7 +12375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.1
 						}
 						self.huntsman.stats = {
-							damage = 300,
+							damage = 240,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -12405,7 +12405,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.coach.rays = 9
 						self.coach.kick = self.stat_info.kick_tables.vertical_kick
-						self.coach.AMMO_MAX = 12
+						self.coach.AMMO_MAX = 15
 						self.coach.sounds.fire_single = "coach_fire"
 						self.coach.sounds.fire_auto = "coach_fire"
 						self.coach.BURST_FIRE = 2
@@ -12423,7 +12423,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							min_mult = 0.1
 						}
 						self.coach.stats = {
-							damage = 300,
+							damage = 240,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -13748,7 +13748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.damage_type_single_ray = "anti_materiel"
 					self.bs23.always_play_anims = true
 					self.bs23.tactical_reload = 1
-					self.bs23.AMMO_MAX = 24
+					self.bs23.AMMO_MAX = 30
 					self.bs23.CLIP_AMMO_MAX = 3
 					self.bs23.reload_speed_multiplier = 1.3
 					self.bs23.fire_rate_multiplier = 1.20
@@ -13764,7 +13764,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						min_mult = 0.1
 					}
 					self.bs23.stats = {
-						damage = 300,
+						damage = 240,
 						spread = 61,
 						recoil = 39,
 						spread_moving = 5,
@@ -14076,7 +14076,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.qsho.has_description = true
 					self.qsho.no_auto_anims = true	
 					self.qsho.desc_id = "bm_quake_shotgun_sc_desc"
-					self.qsho.AMMO_MAX = 12
+					self.qsho.AMMO_MAX = 15
 					self.qsho.kick = self.stat_info.kick_tables.vertical_kick
 					self.qsho.supported = true
 					self.qsho.ads_speed = 0.400
@@ -14086,7 +14086,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						min_mult = 0.1
 					}
 					self.qsho.stats = {
-						damage = 300,
+						damage = 240,
 						spread = 26,
 						recoil = 39,
 						zoom = 1,
@@ -15293,7 +15293,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.quadbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.quadbarrel.rays = 9
 				self.quadbarrel.kick = self.stat_info.kick_tables.vertical_kick
-				self.quadbarrel.AMMO_MAX = 24
+				self.quadbarrel.AMMO_MAX = 30
 				self.quadbarrel.sounds.stop_fire = "judge_x_fire"
 				self.quadbarrel.BURST_FIRE = 2
 				self.quadbarrel.BURST_DELAY = 0.75
@@ -15311,7 +15311,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.1
 				}
 				self.quadbarrel.stats = {
-					damage = 300,
+					damage = 240,
 					spread = 58,
 					recoil = 41,
 					spread_moving = 6,
@@ -15345,7 +15345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.fire_rate_multiplier = 1.20
 				self.ks23.fire_mode_data.fire_rate = 1.3
 				self.ks23.rays = 9
-				self.ks23.AMMO_MAX = 24
+				self.ks23.AMMO_MAX = 30
 				self.ks23.CLIP_AMMO_MAX = 3		
 				self.ks23.kick = self.stat_info.kick_tables.vertical_kick
 				self.ks23.supported = true
@@ -15356,7 +15356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.1
 				}
 				self.ks23.stats = {
-					damage = 300,
+					damage = 240,
 					spread = 52,
 					recoil = 45,
 					spread_moving = 6,
@@ -19605,7 +19605,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.CLIP_AMMO_MAX = 10
 			self.abzats.BURST_FIRE = false
 			self.abzats.fire_mode_data.fire_rate = 0.2571428
-			self.abzats.AMMO_MAX = 24
+			self.abzats.AMMO_MAX = 30
 			self.abzats.kick = self.stat_info.kick_tables.vertical_kick
 			self.abzats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.abzats.rays = 9
@@ -19617,7 +19617,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 0.1
 			}
 			self.abzats.stats = {
-				damage = 300,
+				damage = 240,
 				spread = 11,
 				recoil = 49,
 				spread_moving = 5,
@@ -19654,7 +19654,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.CLIP_AMMO_MAX = 1
 			self.ashot.BURST_FIRE = false
 			self.ashot.fire_mode_data.fire_rate = 0.6
-			self.ashot.AMMO_MAX = 12
+			self.ashot.AMMO_MAX = 15
 			self.ashot.kick = self.stat_info.kick_tables.vertical_kick
 			self.ashot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.ashot.rays = 9
@@ -19666,7 +19666,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 0.1
 			}
 			self.ashot.stats = {
-				damage = 300,
+				damage = 240,
 				spread = 36,
 				recoil = 29,
 				spread_moving = 5,

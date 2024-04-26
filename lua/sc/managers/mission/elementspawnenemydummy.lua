@@ -834,6 +834,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
+			tshield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 			secret_service = "units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service",
 			fbi_1 = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
@@ -905,6 +906,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 				"units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"
 			},
+			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper"
 		},
 		--Mix of Murkywater Marines+Elites
@@ -951,6 +953,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
+			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 			dozer_3 = {
@@ -994,6 +997,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 			medic = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
+			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 			dozer_3 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
@@ -1086,6 +1090,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
+			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
 			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2"
 		}
 	},
@@ -2348,6 +2353,10 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"):key()] = "dozer_2",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"):key()] = "dozer_3",
 	[Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"):key()] = "tsniper",
+	[Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"):key()] = "tsniper",
+	[Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"):key()] = "tsniper",
+	[Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"):key()] = "tshield",
+	[Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"):key()] = "tshield",
 	--Russia
 	--Beat Cops (unused, were also a part of HRT before One Down Update)
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_ak47_ass/ene_akan_cs_cop_ak47_ass"):key()] = "cop_1",

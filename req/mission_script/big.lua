@@ -121,6 +121,12 @@ return {
 			end
 		end
 	},
+	--Disable Titan Cams
+	[106265] = {
+		values = {
+			enabled = false
+		}
+	},
 	--Prevent shields/dozers from disabling the timelock (Are we living in PDTH?)
 	[101195] = {
 		pre_func = function (self)

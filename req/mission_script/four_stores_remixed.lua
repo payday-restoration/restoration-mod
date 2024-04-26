@@ -12,6 +12,12 @@ return {
 	--Pro Job PONR 
 	[103069] = {
 		ponr = ponr_value
+	},
+	--Disable Titan Cams
+	[103683] = {
+		values = {
+			enabled = false
+		}
 	}
 	--Disables the SWAT Turret
 	--Commented this out since the SWAT Turret is in good position now

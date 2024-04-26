@@ -119,7 +119,6 @@
 				<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 			<!--MANAGERS-->
 				<!--MISSION-->
-					<hook file="sc/managers/mission/coreelementunitsequence.lua" source_file="core/lib/managers/mission/coreelementunitsequence"/>
 					<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 					<hook file="sc/managers/mission/elementspecialobjective.lua" source_file="lib/managers/mission/elementspecialobjective"/>
 					<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>

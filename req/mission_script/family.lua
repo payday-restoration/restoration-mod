@@ -20,6 +20,12 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
+	--Disable Titan Cams
+	[102211] = {
+		values = {
+			enabled = false
+		}
+	},
 	-- restores unused sniper spawn
 	[100370] = {
 		values = {

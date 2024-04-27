@@ -2528,3 +2528,23 @@ Hooks:PreHook(ElementSpawnEnemyDummy, "produce", "sh_produce", function (self, p
 		self._enemy_name = Idstring(table.random(self._enemy_table))
 	end
 end)
+
+local produce_original = ElementSpawnEnemyDummy.produce
+function ElementSpawnEnemyDummy:produce(params, ...)
+	if params and params.name or not self._enemy_mapping then
+		return produce_original(self, params, ...)
+	end
+
+	local original_enemy_name = self._enemy_name
+	if type(self._enemy_mapping) == "table" then
+		self._enemy_name = table.random(self._enemy_mapping)
+	else
+		self._enemy_name = self._enemy_mapping
+	end
+
+	local result = produce_original(self, params, ...)
+
+	self._enemy_name = original_enemy_name
+
+	return result
+end

@@ -2512,7 +2512,12 @@ if tweak_data.levels[level_id] and tweak_data.levels[level_id].group_ai_state ==
 else
 	difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 end
+
+local mission_script_elements = restoration:mission_script_patches()
 Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
+        local element_mapping = mission_script_elements and mission_script_elements[self._id]
+        self._enemy_mapping = element_mapping and element_mapping.enemy
+		
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local mapped_name = self.enemy_mapping[self._enemy_name:key()]
 	local mapped_unit = self.faction_mapping[ai_type] and self.faction_mapping[ai_type][difficulty] and self.faction_mapping[ai_type][difficulty][mapped_name]

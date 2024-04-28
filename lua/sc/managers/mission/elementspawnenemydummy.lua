@@ -155,7 +155,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 			heavy_1 = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 			heavy_2 = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
-			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+			taser = {
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			shield = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 			sniper = "units/payday2/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -237,6 +243,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -405,7 +415,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			fsb_heavy = {
 				"units/pd2_dlc_mad/characters/ene_rus_fsbcity_heavy_g36/ene_rus_fsbcity_heavy_g36",
-				"units/pd2_mod_reapers/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+				"units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36"
 			},
 			shield = {
 				"units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
@@ -471,7 +481,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			heavy_1 = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_reapers/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 			fsb_heavy = "units/pd2_mod_reapers/characters/ene_city_heavy_g36/ene_city_heavy_g36",
-			taser = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+			taser = {
+				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
+			},
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
 			shield = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
 			fsb_shield = "units/pd2_mod_reapers/characters/ene_city_shield/ene_city_shield",
@@ -574,6 +590,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -727,7 +747,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
-			taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
+			taser = {
+				"units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			grenadier = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 			shield = "units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec",
 			sniper = "units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3",
@@ -801,6 +827,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer",
 				"units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer",
 				"units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer",
+				"units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer",
+				"units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -992,7 +1022,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			heavy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 			cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
-			taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+			taser = {
+				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
+			},
 			shield = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city",
 			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
 			medic = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
@@ -1078,6 +1114,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+				"units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -1258,7 +1298,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
-			taser = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+			taser = {
+				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			grenadier = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 			shield = "units/pd2_dlc_bex/characters/ene_city_shield/ene_city_shield",
 			sniper = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
@@ -1340,6 +1386,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -1573,7 +1623,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870",
-			taser = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
+			taser = {
+				"units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			grenadier = "units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1",
 			shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec",
 			sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3",
@@ -1623,11 +1679,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			heavy_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 			heavy_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 			shield = {
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
 			dozer_1 = {
@@ -1668,6 +1724,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -1888,7 +1948,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
-			taser = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
+			taser = {
+				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
+				"units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
+				"units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			shield = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -1934,11 +2000,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			heavy_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 			heavy_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 			shield = {
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
 			dozer_1 = {
@@ -1979,6 +2045,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {
@@ -2156,7 +2226,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			swat_2 = "units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2",
 			heavy_1 = "units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 			heavy_2 = "units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
-			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+			taser = {
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
+				"units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+			},
 			shield = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
@@ -2240,6 +2316,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
 				"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
 			},
 			cloaker = {

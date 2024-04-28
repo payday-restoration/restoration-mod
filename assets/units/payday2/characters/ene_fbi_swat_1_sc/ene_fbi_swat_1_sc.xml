@@ -194,16 +194,16 @@
 		</sequence>				
 
 		<sequence editable_state="true" name="'destroy_altyn'" once="true" triggable="true">
-			<object filter="'check_fbi_shield'" enabled="false" name="'g_helmet_lod11'"/>
-			<object filter="'check_fbi_shield'" enabled="false" name="'g_helmet_lod12'"/>
-			<object filter="'check_fbi_shield'" enabled="false" name="'g_helmet_lod13'"/>
-			<object filter="'check_fbi_shield'" enabled="false" name="'g_helmet_lod14'"/>
-			<body 	filter="'check_fbi_shield'" enabled="false" name="'visor'" />
-			<body 	filter="'check_fbi_shield'" enabled="false" name="'glass_altyn'" />
-			<decal_mesh filter="'check_fbi_shield'" enabled="false" name="'c_altyn_glass'" />
-			<decal_mesh filter="'check_fbi_shield'" enabled="false" name="'c_altyn_visor'" />
-			<effect filter="'check_fbi_shield'" damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>			
-			<effect filter="'check_fbi_shield'" damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
+			<object enabled="false" name="'g_helmet_lod11'"/>
+			<object enabled="false" name="'g_helmet_lod12'"/>
+			<object enabled="false" name="'g_helmet_lod13'"/>
+			<object enabled="false" name="'g_helmet_lod14'"/>
+			<body  enabled="false" name="'visor'" />
+			<body 	enabled="false" name="'glass_altyn'" />
+			<decal_mesh enabled="false" name="'c_altyn_glass'" />
+			<decal_mesh  enabled="false" name="'c_altyn_visor'" />
+			<effect damp_time="4" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>			
+			<effect damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'Head' )" position="v()"/>
 			
 			<sound action="'play'" event="'swatturret_weakspot_hit'" object="'Head'"/>					
 		</sequence>				

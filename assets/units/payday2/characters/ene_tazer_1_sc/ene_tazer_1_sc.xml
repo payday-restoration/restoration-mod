@@ -15,13 +15,13 @@
 		</body>	
 		
 		<body name="'bag'">
-			<endurance damage="15" >
+			<endurance damage="12" >
 				<run_sequence name="'detonate'"/>
 			</endurance>
 		</body>	
 		
 		<body name="'bag_gren'">
-			<endurance damage="15" >
+			<endurance damage="12" >
 				<run_sequence name="'detonate_fart'"/>
 			</endurance>
 		</body>	

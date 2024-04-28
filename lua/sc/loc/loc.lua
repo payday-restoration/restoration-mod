@@ -2557,6 +2557,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--[[ MGs ]]
 				--Bootleg/HK416c
 				["bm_w_tecci_desc_sc"] = "A piston operated rifle specced out like an LMG that can accurately spit lead.",
+				["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
 				--KSP/M249
 				["bm_m249_sc_desc"] = "Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
 				--ChainSAW
@@ -3092,7 +3093,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[ MGs ]]
 					--Bootleg/HK416c
 					["bm_w_tecci"] = "Bootlegger",
-					["bm_wp_tecci_s_minicontra_alt"] = "SG Fixed Stock",
 					--KSP/M249
 					["bm_w_m249"] = "KSP-90",
 					--ChainSAW
@@ -3393,6 +3393,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 				["bm_w_pl14"] = "WS-14",
 				["bm_w_x_pl14"] = "Akimbo WS-14s",
+				["bm_wp_pis_g26"] = "Chimano 26",
+				["bm_w_jowi"] = "Akimbo Chimano 26s",
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
 				["bm_w_x_1911"] = "Akimbo Operator IIs",

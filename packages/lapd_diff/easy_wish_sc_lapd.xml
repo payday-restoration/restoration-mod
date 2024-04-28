@@ -277,6 +277,10 @@
 	<!--city shield-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield" load="true"/>
 	<unit				path="units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield_husk" load="true"/>
+	
+	<!-- Sniper -->	
+	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" load="true" />
+	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3_husk" load="true" />
 	<!-- city tier end -->	
 	
 	<!-- specials-->

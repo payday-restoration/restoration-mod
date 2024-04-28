@@ -172,20 +172,5 @@ return {
 		values = {
 			enemy = murky_guard_elite_1
 		}
-	},
-	--Have one camera guard spawn up to Overkill
-	[103758] = {
-		values = {
-            difficulty_hard = "true",
-			difficulty_overkill = "true",
-			difficulty_overkill_145 = "true"
-		}
-	},
-	[103765] = {
-		values = {
-            difficulty_hard = "false",
-			difficulty_overkill = "false",
-			difficulty_overkill_145 = "false"
-		}
 	}
 }

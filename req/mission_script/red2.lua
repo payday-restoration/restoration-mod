@@ -13,8 +13,7 @@ local chance_dozer_vault_1 = math.random()
 local chance_dozer_vault_2 = math.random() 
 local chance_dozer_vault_3 = math.random() 
 local chance_dozer_vault_4 = math.random() 
-local chance_dozer_vault_5 = math.random() 
-local enabled_chance_dozers_office = math.random() 
+local chance_dozer_vault_5 = math.random()
 local dozer_table = {
 	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
@@ -27,20 +26,13 @@ local dozer_table = {
 
 	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
 	elseif difficulty == 8 then
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-	end
-	
-	
-	if enabled_chance_dozers_office < 0.45 then
-		office_dozers = false
-	else
-		office_dozers = true
 	end
 
 --If we're in Pro Job, then do this stuff below
@@ -328,7 +320,7 @@ return {
 		}
 	},
 	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
-	--Spawn 2 blackdozers as a sudden spawn on DS (50% chance)
+	--Spawn 2 blackdozers as a sudden spawn on DS if there are 3-4 players alive (50% chance)
 	[103710] = { 
 		values = {
 			chance = stair_blockade_chance
@@ -339,8 +331,7 @@ return {
 			{id = 400027, delay = 0},
 			{id = 400028, delay = 0},
 			{id = 400029, delay = 0},
-			{id = 400035, delay = 6},
-			{id = 400036, delay = 6}
+			{id = 400053, delay = 0}
 		}
 	},
 	--Higher diffs forces both scripted window cloaker and taser spawns
@@ -568,24 +559,6 @@ return {
 	[103697] = {
 		values = {
             enemy = titan_shield
-		}
-	},
-	--if one of these dozers spawn in, disable dozers that spawn from elevator
-	[103603] = {
-		values = {
-            enemy = titan_dozer,
-			enabled = office_dozers
-		},
-		on_executed = {
-			{id = 400053, delay = 0}
-		}
-	},
-	[103390] = {
-		values = {
-            enabled = office_dozers
-		},
-		on_executed = {
-			{id = 400053, delay = 0}
 		}
 	}
 }

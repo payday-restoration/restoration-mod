@@ -65,12 +65,3 @@ function CivilianDamage:die(variant)
 	
 	self._unit:sound():play(self._char_tweak.die_sound_event, nil, true)
 end
-
--- Fix crash when civilians check friendly fire on destroyed units
-function CivilianDamage:is_friendly_fire(unit)
-	if unit == managers.player:player_unit() then
-		return false
-	end
-
-	return CopDamage.is_friendly_fire(self, unit)
-end

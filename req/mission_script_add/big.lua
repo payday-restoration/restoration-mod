@@ -293,12 +293,14 @@ local spawn_beat_cops = {
 	}
 }
 local enable_bravos = {
+	enabled = true,
 	elements = { 
 		400018,
 		400042
 	}
 }
 local disable_bravos = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400018,
@@ -306,6 +308,7 @@ local disable_bravos = {
 	}
 }
 local disable_bo_dozers = {
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400001,

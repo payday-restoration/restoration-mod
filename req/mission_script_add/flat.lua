@@ -288,7 +288,7 @@ local spawn_Shields = {
 }
 local optsrespawn_swat_1 = {
 	on_executed = { 
-		{ id = 400021, delay = 20 }
+		{ id = 400021, delay = 30 }
 	},
 	elements = { 
 		400021
@@ -297,7 +297,7 @@ local optsrespawn_swat_1 = {
 }
 local optsrespawn_swat_2 = {
 	on_executed = { 
-		{ id = 400022, delay = 20 }
+		{ id = 400022, delay = 30 }
 	},
 	elements = { 
 		400022

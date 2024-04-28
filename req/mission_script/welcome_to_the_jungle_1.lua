@@ -12,5 +12,11 @@ return {
 	--Pro Job PONR 
 	[101375] = {
 		ponr = ponr_value
+	},
+	--Disable Titan Cams
+	[101301] = {
+		values = {
+			enabled = false
+		}
 	}
 }

@@ -1,6 +1,5 @@
 local job = Global.level_data and Global.level_data.level_id
 local is_pro = Global.game_settings and Global.game_settings.one_down
-local per_pellet = true --restoration and restoration.Options:GetValue("OTHER/WeaponHandling/PerPelletShotguns") 
 
 local damage_set = {
 	smg = {
@@ -6871,6 +6870,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shrew.stats_modifiers = nil
 						self.shrew.panic_suppression_chance = 0.05
 						self.shrew.reload_speed_multiplier = 1.25
+						self.shrew.timers.reload_exit_empty = 0.5
+						self.shrew.timers.reload_exit_not_empty = 0.65
 
 					--Interceptor .45
 						self.usp.has_description = true
@@ -11469,7 +11470,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.rays = 9
 						self.x_basset.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_basset.CLIP_AMMO_MAX = 10
-						self.x_basset.AMMO_MAX = 80
+						self.x_basset.AMMO_MAX = 60
 						self.x_basset.fire_mode_data.fire_rate = 0.1333333
 						self.x_basset.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 						self.x_basset.panic_suppression_chance = 0.05
@@ -11478,12 +11479,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_basset.damage_falloff = {
 							start_dist = 100,
 							end_dist = 1000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.x_basset.stats = {
 							zoom = 1,
 							total_ammo_mod = 200,
-							damage = 45,
+							damage = 120,
 							alert_size = 2,
 							spread = 3,
 							spread_moving = 8,
@@ -11509,7 +11510,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.rays = 9
 						self.saiga.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.saiga.CLIP_AMMO_MAX = 5
-						self.saiga.AMMO_MAX = 80
+						self.saiga.AMMO_MAX = 60
 						self.saiga.fire_mode_data.fire_rate = 0.1333333
 						self.saiga.shake.fire_multiplier = 1
 						self.saiga.shake.fire_steelsight_multiplier = -1
@@ -11519,10 +11520,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.saiga.damage_falloff = {
 							start_dist = 300,
 							end_dist = 2300,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.saiga.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 19,
 							recoil = 41,
 							spread_moving = 7,
@@ -11544,7 +11545,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--VD-12 (SKO12)
 						self.sko12.use_data.selection_index = 2
 						self.sko12.rays = 9
-						self.sko12.AMMO_MAX = 80
+						self.sko12.AMMO_MAX = 60
 						self.sko12.CLIP_AMMO_MAX = 25
 						self.sko12.fire_mode_data.fire_rate = 0.181818181
 						self.sko12.kick = self.stat_info.kick_tables.moderate_kick
@@ -11556,10 +11557,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sko12.damage_falloff = {
 							start_dist = 600,
 							end_dist = 3000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.sko12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 31,
 							recoil = 53,
 							spread_moving = 7,
@@ -11583,7 +11584,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Steakout (AA-12)
 						self.aa12.rays = 9
 						self.aa12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.aa12.AMMO_MAX = 80
+						self.aa12.AMMO_MAX = 60
 						self.aa12.desc_id = "bm_aa12_sc_desc"
 						self.aa12.has_description = true
 						self.aa12.fire_mode_data.fire_rate = 0.2
@@ -11596,10 +11597,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.aa12.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3200,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.aa12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 31,
 							recoil = 65,
 							spread_moving = 7,
@@ -11628,7 +11629,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ultima.rays = 9
 						self.ultima.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.ultima.CLIP_AMMO_MAX = 7
-						self.ultima.AMMO_MAX = 80
+						self.ultima.AMMO_MAX = 60
 						self.ultima.use_data.selection_index = 2
 						self.ultima.fire_mode_data.fire_rate = 0.2
 						self.ultima.kick = self.stat_info.kick_tables.moderate_kick
@@ -11637,10 +11638,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ultima.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3000,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.ultima.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 21,
 							recoil = 43,
 							spread_moving = 7,
@@ -11671,7 +11672,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.has_description = true					
 						self.spas12.rays = 9
 						self.spas12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.spas12.AMMO_MAX = 80
+						self.spas12.AMMO_MAX = 60
 						self.spas12.CLIP_AMMO_MAX = 6
 						self.spas12.CAN_TOGGLE_FIREMODE = false
 						self.spas12.fire_mode_data.fire_rate = 0.25
@@ -11687,10 +11688,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3300,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.spas12.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 30,
 							recoil = 53,
 							spread_moving = 7,
@@ -11716,7 +11717,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--M1014
 						self.benelli.desc_id = "bm_benelli_sc_desc"
 						self.benelli.has_description = true					
-						self.benelli.AMMO_MAX = 80
+						self.benelli.AMMO_MAX = 60
 						self.benelli.CLIP_AMMO_MAX = 5
 						self.benelli.rays = 9
 						self.benelli.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
@@ -11728,10 +11729,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.benelli.damage_falloff = {
 							start_dist = 900,
 							end_dist = 3500,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.benelli.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 35,
 							recoil = 47,
 							spread_moving = 7,
@@ -11760,7 +11761,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.rays = 9
 						self.basset.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.basset.CLIP_AMMO_MAX = 5
-						self.basset.AMMO_MAX = 40
+						self.basset.AMMO_MAX = 30
 						self.basset.fire_mode_data.fire_rate = 0.1333333
 						self.basset.kick = self.stat_info.kick_tables.moderate_left_kick
 						self.basset.panic_suppression_chance = 0.05
@@ -11769,12 +11770,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.damage_falloff = {
 							start_dist = 300,
 							end_dist = 2100,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.basset.stats = {
 							zoom = 1,
 							total_ammo_mod = 200,
-							damage = 45,
+							damage = 120,
 							alert_size = 2,
 							spread = 19,
 							spread_moving = 8,
@@ -11794,7 +11795,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Street Sweeper
 						self.striker.rays = 9
 						self.striker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.striker.AMMO_MAX = 40
+						self.striker.AMMO_MAX = 30
 						self.striker.fire_mode_data.fire_rate = 0.2
 						self.striker.CAN_TOGGLE_FIREMODE = false
 						self.striker.CLIP_AMMO_MAX = 12
@@ -11804,10 +11805,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.striker.damage_falloff = {
 							start_dist = 600,
 							end_dist = 3200,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.striker.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 22,
 							recoil = 41,
 							spread_moving = 7,
@@ -11826,7 +11827,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Goliath 12G
 						self.rota.upgrade_blocks = nil
-						self.rota.AMMO_MAX = 40
+						self.rota.AMMO_MAX = 30
 						self.rota.rays = 9
 						self.rota.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.rota.kick = self.stat_info.kick_tables.vertical_kick
@@ -11837,10 +11838,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rota.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3500,
-							min_mult = 0.5
+							min_mult = 0.15
 						}
 						self.rota.stats = {
-							damage = 45,
+							damage = 120,
 							spread = 26,
 							recoil = 39,
 							spread_moving = 7,
@@ -11874,16 +11875,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_judge.rays = 6
 						self.x_judge.BURST_FIRE = 2
-						self.x_judge.AMMO_MAX = 60
+						self.x_judge.AMMO_MAX = 40
 						self.x_judge.supported = true
 						self.x_judge.ads_speed = 0.200
 						self.x_judge.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.x_judge.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 43,
 							recoil = 51,
 							spread_moving = 5,
@@ -11920,16 +11921,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m590.kick = self.stat_info.kick_tables.vertical_kick
 						self.m590.fire_mode_data.fire_rate = 0.5
 						self.m590.fire_rate_multiplier = 0.9
-						self.m590.AMMO_MAX = 60
+						self.m590.AMMO_MAX = 40
 						self.m590.supported = true
 						self.m590.ads_speed = 0.320
 						self.m590.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2500,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m590.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 60,
 							recoil = 43,
 							spread_moving = 6,
@@ -11957,7 +11958,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.supernova.rays = 9
 						self.supernova.kick = self.stat_info.kick_tables.vertical_kick
 						self.supernova.CLIP_AMMO_MAX = 4
-						self.supernova.AMMO_MAX = 60
+						self.supernova.AMMO_MAX = 40
 						self.supernova.BURST_FIRE = false
 						self.supernova.fire_mode_data.fire_rate = 0.62
 						self.supernova.fire_rate_multiplier = 0.975
@@ -11979,10 +11980,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.supernova.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2700,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.supernova.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 68,
 							recoil = 45,
 							spread_moving = 6,
@@ -12017,16 +12018,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r870.single.fire_rate = 0.5
 						self.r870.fire_mode_data.fire_rate = 0.5
 						self.r870.fire_rate_multiplier = 0.825
-						self.r870.AMMO_MAX = 60
+						self.r870.AMMO_MAX = 40
 						self.r870.supported = true
 						self.r870.ads_speed = 0.300
 						self.r870.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.r870.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 62,
 							recoil = 49,
 							spread_moving = 6,
@@ -12053,7 +12054,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ksg.has_description = true			
 						self.ksg.rays = 9
 						self.ksg.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.ksg.AMMO_MAX = 60
+						self.ksg.AMMO_MAX = 40
 						self.ksg.CLIP_AMMO_MAX = 14
 						self.ksg.fire_mode_data.fire_rate = 0.5
 						self.ksg.fire_rate_multiplier = 0.775
@@ -12063,10 +12064,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ksg.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2800,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.ksg.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 65,
 							recoil = 39,
 							spread_moving = 7,
@@ -12107,16 +12108,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1897.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
 						self.m1897.BURST_FIRE_SPREAD_MULTIPLIER = 3
 						self.m1897.BURST_FIRE_RANGE_MULTIPLIER = 0.66
-						self.m1897.AMMO_MAX = 60
+						self.m1897.AMMO_MAX = 40
 						self.m1897.supported = true
 						self.m1897.ads_speed = 0.280
 						self.m1897.damage_falloff = {
 							start_dist = 800,
 							end_dist = 3100,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m1897.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 71,
 							recoil = 39,
 							spread_moving = 6,
@@ -12142,7 +12143,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.serbu.rays = 9
 						self.serbu.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.serbu.CLIP_AMMO_MAX = 4
-						self.serbu.AMMO_MAX = 30
+						self.serbu.AMMO_MAX = 20
 						self.serbu.fire_mode_data.fire_rate = 0.5
 						self.serbu.fire_rate_multiplier = 0.95
 						self.serbu.kick = self.stat_info.kick_tables.moderate_kick
@@ -12151,10 +12152,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.serbu.damage_falloff = {
 							start_dist = 600,
 							end_dist = 2200,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.serbu.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 56,
 							recoil = 39,
 							spread_moving = 6,
@@ -12182,7 +12183,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m37.rays = 9
 						self.m37.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.m37.CLIP_AMMO_MAX = 5
-						self.m37.AMMO_MAX = 30
+						self.m37.AMMO_MAX = 20
 						self.m37.fire_mode_data.fire_rate = 0.6
 						self.m37.fire_rate_multiplier = 0.85
 						self.m37.BURST_FIRE = 1
@@ -12202,10 +12203,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m37.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2800,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.m37.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 63,
 							recoil = 49,
 							spread_moving = 6,
@@ -12231,16 +12232,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.judge.rays = 6
 						self.judge.kick = self.stat_info.kick_tables.left_kick
 						self.judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.judge.AMMO_MAX = 30
+						self.judge.AMMO_MAX = 20
 						self.judge.supported = true
 						self.judge.ads_speed = 0.200
 						self.judge.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2000,
-							min_mult = 0.3333
+							min_mult = 0.1333
 						}
 						self.judge.stats = {
-							damage = 60,
+							damage = 180,
 							spread = 53,
 							recoil = 61,
 							spread_moving = 5,
@@ -12270,7 +12271,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.has_description = true						
 						self.b682.rays = 9
 						self.b682.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.b682.AMMO_MAX = 40
+						self.b682.AMMO_MAX = 30
 						self.b682.fire_mode_data = {}
 						self.b682.CAN_TOGGLE_FIREMODE = false
 						self.b682.fire_mode_data.fire_rate = 0.2727272
@@ -12282,10 +12283,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.damage_falloff = {
 							start_dist = 900,
 							end_dist = 3500,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.b682.stats = {
-							damage = 90,
+							damage = 240,
 							spread = 71,
 							recoil = 39,
 							spread_moving = 6,
@@ -12309,7 +12310,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Breaker 12g (Model 1887)
 						self.boot.desc_id = "bm_menu_sc_boot_desc"
 						self.boot.has_description = true
-						self.boot.AMMO_MAX = 40
+						self.boot.AMMO_MAX = 30
 						self.boot.CLIP_AMMO_MAX = 6
 						self.boot.fire_mode_data.fire_rate = 1
 						self.boot.fire_rate_multiplier = 0.91667
@@ -12321,10 +12322,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2500,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.boot.stats = {
-							damage = 90,
+							damage = 240,
 							spread = 44,
 							recoil = 31,
 							spread_moving = 5,
@@ -12355,7 +12356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.has_description = true
 						self.huntsman.rays = 9
 						self.huntsman.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-						self.huntsman.AMMO_MAX = 40
+						self.huntsman.AMMO_MAX = 30
 						self.huntsman.sounds.fire_single = "huntsman_fire"
 						self.huntsman.sounds.fire_auto = "huntsman_fire"
 						self.huntsman.BURST_FIRE = 2
@@ -12371,10 +12372,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3200,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.huntsman.stats = {
-							damage = 90,
+							damage = 240,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -12404,7 +12405,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.coach.rays = 9
 						self.coach.kick = self.stat_info.kick_tables.vertical_kick
-						self.coach.AMMO_MAX = 20
+						self.coach.AMMO_MAX = 15
 						self.coach.sounds.fire_single = "coach_fire"
 						self.coach.sounds.fire_auto = "coach_fire"
 						self.coach.BURST_FIRE = 2
@@ -12419,10 +12420,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3100,
-							min_mult = 0.25
+							min_mult = 0.1
 						}
 						self.coach.stats = {
-							damage = 90,
+							damage = 240,
 							spread = 66,
 							recoil = 41,
 							spread_moving = 6,
@@ -12744,6 +12745,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.gre_m79.fire_mode_data.fire_rate = 1.2
 						self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
 						self.gre_m79.AMMO_MAX = 10
+						self.gre_m79.alt_shotgunraycast = true
 						self.gre_m79.rays = 1
 						self.gre_m79.supported = true
 						self.gre_m79.ads_speed = 0.360
@@ -12787,6 +12789,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						--self.m32.BURST_FIRE_RATE_MULTIPLIER = 3
 						--self.m32.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
 						self.m32.AMMO_MAX = 10
+						self.m32.alt_shotgunraycast = true
 						self.m32.rays = 1
 						self.m32.supported = true
 						self.m32.ads_speed = 0.460
@@ -12892,6 +12895,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ms3gl.burst = nil
 						self.ms3gl.AMMO_MAX = 10
+						self.ms3gl.alt_shotgunraycast = true
 						self.ms3gl.rays = 1
 						self.ms3gl.kick = self.stat_info.kick_tables.vertical_kick
 						self.ms3gl.supported = true
@@ -12928,6 +12932,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.arbiter.fire_mode_data.fire_rate = 0.5
 						self.arbiter.CLIP_AMMO_MAX = 5
 						self.arbiter.AMMO_MAX = 6
+						self.arbiter.alt_shotgunraycast = true
 						self.arbiter.rays = 1
 						self.arbiter.supported = true
 						self.arbiter.ads_speed = 0.460
@@ -12968,6 +12973,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.slap.fire_mode_data.fire_rate = 1.2
 						self.slap.kick = self.stat_info.kick_tables.vertical_kick
 						self.slap.AMMO_MAX = 5
+						self.slap.alt_shotgunraycast = true
 						self.slap.rays = 1
 						self.slap.supported = true
 						self.slap.ads_speed = 0.360
@@ -13009,6 +13015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.china.fire_mode_data.fire_rate = 1.3
 						self.china.fire_rate_multiplier = 0.75
 						self.china.AMMO_MAX = 5
+						self.china.alt_shotgunraycast = true
 						self.china.rays = 1
 						self.china.kick = self.stat_info.kick_tables.vertical_kick
 						self.china.supported = true
@@ -13614,7 +13621,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.amr12.damage_type_single_ray = "sniper"
 					self.amr12.rays = 9
 					self.amr12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-					self.amr12.AMMO_MAX = 80
+					self.amr12.AMMO_MAX = 60
 					self.amr12.tactical_reload = 1		
 					self.amr12.CLIP_AMMO_MAX = 5
 					self.amr12.fire_mode_data.fire_rate = 0.17142857
@@ -13627,10 +13634,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.amr12.damage_falloff = {
 						start_dist = 500,
 						end_dist = 2800,
-						min_mult = 0.5
+						min_mult = 0.15
 					}
 					self.amr12.stats = {
-						damage = 45,
+						damage = 120,
 						spread = 21,
 						recoil = 47,
 						zoom = 1,
@@ -13655,16 +13662,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.minibeck.tactical_reload = 1
 					self.minibeck.fire_mode_data.fire_rate = 0.2
 					self.minibeck.CLIP_AMMO_MAX = 5
-					self.minibeck.AMMO_MAX = 40
+					self.minibeck.AMMO_MAX = 30
 					self.minibeck.supported = true
 					self.minibeck.ads_speed = 0.280
 					self.minibeck.damage_falloff = {
 						start_dist = 500,
 						end_dist = 3000,
-						min_mult = 0.5
+						min_mult = 0.15
 					}
 					self.minibeck.stats = {
-						damage = 45,
+						damage = 120,
 						spread = 22,
 						recoil = 67,
 						zoom = 1,
@@ -13703,16 +13710,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.beck.kick = self.stat_info.kick_tables.left_kick
 					self.beck.fire_mode_data.fire_rate = 0.5
 					self.beck.fire_rate_multiplier = 0.9166666
-					self.beck.AMMO_MAX = 60 
+					self.beck.AMMO_MAX = 40
 					self.beck.supported = true
 					self.beck.ads_speed = 0.320
 					self.beck.damage_falloff = {
 						start_dist = 600,
 						end_dist = 2400,
-						min_mult = 0.3333
+						min_mult = 0.1333
 					}
 					self.beck.stats = {
-						damage = 60,
+						damage = 180,
 						spread = 65,
 						recoil = 53,
 						spread_moving = 6,
@@ -13741,7 +13748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.damage_type_single_ray = "anti_materiel"
 					self.bs23.always_play_anims = true
 					self.bs23.tactical_reload = 1
-					self.bs23.AMMO_MAX = 40
+					self.bs23.AMMO_MAX = 30
 					self.bs23.CLIP_AMMO_MAX = 3
 					self.bs23.reload_speed_multiplier = 1.3
 					self.bs23.fire_rate_multiplier = 1.20
@@ -13754,10 +13761,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.damage_falloff = {
 						start_dist = 800,
 						end_dist = 3600,
-						min_mult = 0.25
+						min_mult = 0.1
 					}
 					self.bs23.stats = {
-						damage = 90,
+						damage = 240,
 						spread = 61,
 						recoil = 39,
 						spread_moving = 5,
@@ -14069,17 +14076,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.qsho.has_description = true
 					self.qsho.no_auto_anims = true	
 					self.qsho.desc_id = "bm_quake_shotgun_sc_desc"
-					self.qsho.AMMO_MAX = 20
+					self.qsho.AMMO_MAX = 15
 					self.qsho.kick = self.stat_info.kick_tables.vertical_kick
 					self.qsho.supported = true
 					self.qsho.ads_speed = 0.400
 					self.qsho.damage_falloff = {
 						start_dist = 900,
 						end_dist = 3500,
-						min_mult = 0.25
+						min_mult = 0.1
 					}
 					self.qsho.stats = {
-						damage = 90,
+						damage = 240,
 						spread = 26,
 						recoil = 39,
 						zoom = 1,
@@ -14572,8 +14579,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holygrail.panic_suppression_chance = 0.05
 				self.holygrail.armor_piercing_chance = 1
 				self.holygrail.descope_on_fire = true
+				self.holygrail.always_play_anims = true
 				self.holygrail.timers.reload_exit_empty = 0.3
 				self.holygrail.timers.reload_exit_not_empty = 0.3
+			end
+
+			if self.martinihenry then
+				self.martinihenry.recategorize = { "heavy_snp" }
+				self.martinihenry.damage_type = "sniper"
+				self.martinihenry.desc_id = "bm_heavy_ap_weapon_sc_desc"
+				self.martinihenry.has_description = true
+				self.martinihenry.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.martinihenry.use_vapor_trail = true
+				self.martinihenry.AMMO_MAX = 20
+				self.martinihenry.CLIP_AMMO_MAX = 1
+				self.martinihenry.fire_mode_data.fire_rate = 2
+				self.martinihenry.kick = self.stat_info.kick_tables.vertical_kick
+				self.martinihenry.supported = true
+				self.martinihenry.ads_speed = 0.300
+				self.martinihenry.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.25
+				}
+				self.martinihenry.stats = {
+					damage = 180,
+					spread = 91,
+					recoil = 51,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 26,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.martinihenry.stats_modifiers = nil
+				self.martinihenry.can_shoot_through_enemy = true
+				self.martinihenry.can_shoot_through_enemy_unlim = true
+				self.martinihenry.can_shoot_through_wall = true
+				self.martinihenry.can_shoot_through_shield = true
+				self.martinihenry.can_shoot_through_titan_shield = true
+				self.martinihenry.panic_suppression_chance = 0.05
+				self.martinihenry.armor_piercing_chance = 1
+				self.martinihenry.descope_on_fire = true
+				self.martinihenry.always_play_anims = true
+				self.martinihenry.timers.reload_exit_empty = 0.3
+				self.martinihenry.timers.reload_exit_not_empty = 0.3
 			end
 
 			if self.obrez then
@@ -14935,7 +14989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fp45.fire_mode_data.fire_rate = 0.08571428571
 				self.fp45.single.fire_rate = 0.08571428571
 				self.fp45.CLIP_AMMO_MAX = 1
-				self.fp45.AMMO_MAX = 20
+				self.fp45.AMMO_MAX = 24
 				self.fp45.kick = self.stat_info.kick_tables.left_recoil
 				self.fp45.supported = true
 				self.fp45.ads_speed = 0.120
@@ -14945,7 +14999,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					min_mult = 0.25
 				}
 				self.fp45.stats = {
-					damage = 90,
+					damage = 45,
 					spread = 51,
 					recoil = 85,
 					spread_moving = 9,
@@ -14960,6 +15014,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fp45.stats_modifiers = nil
 				self.fp45.panic_suppression_chance = 0.05
+				self.fp45.hs_mult = 2
 				self.fp45.armor_piercing_chance = 1
 				self.fp45.can_shoot_through_enemy = true
 				self.fp45.can_shoot_through_enemy_unlim = true
@@ -15114,7 +15169,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp153.sounds.stop_fire = "saiga_stop"
 				self.mp153.tactical_reload = 1
 				self.mp153.rays = 9
-				self.mp153.AMMO_MAX = 80
+				self.mp153.AMMO_MAX = 60
 				self.mp153.fire_mode_data.fire_rate = 0.1875
 				self.mp153.kick = self.stat_info.kick_tables.moderate_kick
 				self.mp153.supported = true
@@ -15122,10 +15177,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp153.damage_falloff = {
 					start_dist = 500,
 					end_dist = 3000,
-					min_mult = 0.5
+					min_mult = 0.15
 				}
 				self.mp153.stats = {
-					damage = 45,
+					damage = 120,
 					spread = 21,
 					recoil = 49,
 					zoom = 1,
@@ -15150,7 +15205,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wmtx.damage_type_single_ray = "sniper"
 				self.wmtx.upgrade_blocks = nil
 				self.wmtx.CLIP_AMMO_MAX = 6
-				self.wmtx.AMMO_MAX = 30
+				self.wmtx.AMMO_MAX = 20
 				self.wmtx.rays = 9
 				self.wmtx.CAN_TOGGLE_FIREMODE = false
 				self.wmtx.BURST_FIRE = false
@@ -15164,10 +15219,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wmtx.damage_falloff = {
 					start_dist = 400,
 					end_dist = 2500,
-					min_mult = 0.3333
+					min_mult = 0.1333
 				}
 				self.wmtx.stats = {
-					damage = 60,
+					damage = 180,
 					spread = 44,
 					recoil = 57,
 					spread_moving = 7,
@@ -15193,7 +15248,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jackhammer.damage_type_single_ray = "sniper"
 				self.jackhammer.upgrade_blocks = nil
 				self.jackhammer.CLIP_AMMO_MAX = 10
-				self.jackhammer.AMMO_MAX = 40
+				self.jackhammer.AMMO_MAX = 20
 				self.jackhammer.rays = 9
 				self.jackhammer.CAN_TOGGLE_FIREMODE = true
 				self.jackhammer.BURST_FIRE = false
@@ -15207,10 +15262,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.jackhammer.damage_falloff = {
 					start_dist = 300,
 					end_dist = 2000,
-					min_mult = 0.5
+					min_mult = 0.1333
 				}
 				self.jackhammer.stats = {
-					damage = 60,
+					damage = 180,
 					spread = 41,
 					recoil = 51,
 					spread_moving = 7,
@@ -15238,7 +15293,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.quadbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.quadbarrel.rays = 9
 				self.quadbarrel.kick = self.stat_info.kick_tables.vertical_kick
-				self.quadbarrel.AMMO_MAX = 40
+				self.quadbarrel.AMMO_MAX = 30
 				self.quadbarrel.sounds.stop_fire = "judge_x_fire"
 				self.quadbarrel.BURST_FIRE = 2
 				self.quadbarrel.BURST_DELAY = 0.75
@@ -15253,10 +15308,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.quadbarrel.damage_falloff = {
 					start_dist = 500,
 					end_dist = 3000,
-					min_mult = 0.25
+					min_mult = 0.1
 				}
 				self.quadbarrel.stats = {
-					damage = 90,
+					damage = 240,
 					spread = 58,
 					recoil = 41,
 					spread_moving = 6,
@@ -15290,7 +15345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.fire_rate_multiplier = 1.20
 				self.ks23.fire_mode_data.fire_rate = 1.3
 				self.ks23.rays = 9
-				self.ks23.AMMO_MAX = 40
+				self.ks23.AMMO_MAX = 30
 				self.ks23.CLIP_AMMO_MAX = 3		
 				self.ks23.kick = self.stat_info.kick_tables.vertical_kick
 				self.ks23.supported = true
@@ -15298,10 +15353,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3600,
-					min_mult = 0.25
+					min_mult = 0.1
 				}
 				self.ks23.stats = {
-					damage = 90,
+					damage = 240,
 					spread = 52,
 					recoil = 45,
 					spread_moving = 6,
@@ -15335,7 +15390,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.super.rays = 16
 				self.super.kick = self.stat_info.kick_tables.vertical_kick
 				self.super.CLIP_AMMO_MAX = 1
-				self.super.AMMO_MAX = 20
+				self.super.AMMO_MAX = 18
 				self.super.CAN_TOGGLE_FIREMODE = false							
 				self.super.BURST_FIRE = false
 				self.super.fire_mode_data.fire_rate = 0.5
@@ -15344,10 +15399,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.super.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3200,
-					min_mult = 0.25
+					min_mult = 0.3333
 				}
 				self.super.stats = {
-					damage = 180,
+					damage = 400,
 					spread = 36,
 					recoil = 9,
 					spread_moving = 6,
@@ -17643,7 +17698,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.rays = 20
 				self.cp2077_guts.kick = self.stat_info.kick_tables.vertical_kick
 				self.cp2077_guts.CLIP_AMMO_MAX = 6
-				self.cp2077_guts.AMMO_MAX = 20
+				self.cp2077_guts.AMMO_MAX = 18
 				self.cp2077_guts.CAN_TOGGLE_FIREMODE = false							
 				self.cp2077_guts.BURST_FIRE = false
 				self.cp2077_guts.fire_mode_data.fire_rate = 1
@@ -17658,10 +17713,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3000,
-					min_mult = 0.25
+					min_mult = 0.3333
 				}
 				self.cp2077_guts.stats = {
-					damage = 180,
+					damage = 400,
 					spread = 16,
 					recoil = 3,
 					spread_moving = 6,
@@ -18508,7 +18563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.BURST_FIRE = false
 				self.madsen_mg.CAN_TOGGLE_FIREMODE = false
 				self.madsen_mg.fire_mode_data.fire_rate = 0.1333333
-				self.madsen_mg.AMMO_MAX = 160
+				self.madsen_mg.AMMO_MAX = 120
 				self.madsen_mg.kick = self.stat_info.kick_tables.horizontal_left_recoil_mg
 				self.madsen_mg.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.madsen_mg.supported = true
@@ -18535,6 +18590,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.stats_modifiers = nil
 				self.madsen_mg.panic_suppression_chance = 0.05
 				self.madsen_mg.sounds.spin_start = "wp_mg42_lever_release"
+				self.madsen_mg.timers.reload_not_empty = 2.2
+				self.madsen_mg.timers.reload_exit_not_empty = 0.6
+				self.madsen_mg.timers.reload_empty = 2.9
+				self.madsen_mg.timers.reload_exit_empty = 0.8
 				self.madsen_mg.spin_up_shoot = true
 				self.madsen_mg.spin_up_t = 0.08
 				self.madsen_mg.spin_down_t = 0.00000001
@@ -18596,7 +18655,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.omni.damage_type_single_ray = "sniper"
 				self.omni.rays = 6
 				self.omni.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.omni.AMMO_MAX = 60
+				self.omni.AMMO_MAX = 30
 				self.omni.tactical_reload = 1		
 				self.omni.CLIP_AMMO_MAX = 10
 				self.omni.fire_mode_data.fire_rate = 0.15
@@ -18609,10 +18668,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.omni.damage_falloff = {
 					start_dist = 1000,
 					end_dist = 3800,
-					min_mult = 0.66667
+					min_mult = 0.16667
 				}
 				self.omni.stats = {
-					damage = 30,
+					damage = 90,
 					spread = 59,
 					recoil = 69,
 					zoom = 1,
@@ -19324,16 +19383,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.f500.fire_mode_data.fire_rate = 0.5
 			self.f500.fire_rate_multiplier = 0.9
 			self.f500.CLIP_AMMO_MAX = 6
-			self.f500.AMMO_MAX = 30
+			self.f500.AMMO_MAX = 20
 			self.f500.supported = true
 			self.f500.ads_speed = 0.300
 			self.f500.damage_falloff = {
 				start_dist = 700,
 				end_dist = 2800,
-				min_mult = 0.3333
+				min_mult = 0.1333
 			}
 			self.f500.stats = {
-				damage = 60,
+				damage = 180,
 				spread = 51,
 				recoil = 33,
 				spread_moving = 6,
@@ -19546,7 +19605,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.CLIP_AMMO_MAX = 10
 			self.abzats.BURST_FIRE = false
 			self.abzats.fire_mode_data.fire_rate = 0.2571428
-			self.abzats.AMMO_MAX = 40
+			self.abzats.AMMO_MAX = 30
 			self.abzats.kick = self.stat_info.kick_tables.vertical_kick
 			self.abzats.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.abzats.rays = 9
@@ -19555,10 +19614,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.damage_falloff = {
 				start_dist = 300,
 				end_dist = 2100,
-				min_mult = 0.25
+				min_mult = 0.1
 			}
 			self.abzats.stats = {
-				damage = 90,
+				damage = 240,
 				spread = 11,
 				recoil = 49,
 				spread_moving = 5,
@@ -19595,7 +19654,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.CLIP_AMMO_MAX = 1
 			self.ashot.BURST_FIRE = false
 			self.ashot.fire_mode_data.fire_rate = 0.6
-			self.ashot.AMMO_MAX = 20
+			self.ashot.AMMO_MAX = 15
 			self.ashot.kick = self.stat_info.kick_tables.vertical_kick
 			self.ashot.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.ashot.rays = 9
@@ -19604,10 +19663,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.damage_falloff = {
 				start_dist = 400,
 				end_dist = 2500,
-				min_mult = 0.25
+				min_mult = 0.1
 			}
 			self.ashot.stats = {
-				damage = 90,
+				damage = 240,
 				spread = 36,
 				recoil = 29,
 				spread_moving = 5,
@@ -19634,7 +19693,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.or12.CLIP_AMMO_MAX = 30
 			self.or12.BURST_FIRE = false
 			self.or12.fire_mode_data.fire_rate = 0.15
-			self.or12.AMMO_MAX = 80
+			self.or12.AMMO_MAX = 60
 			self.or12.kick = self.stat_info.kick_tables.vertical_kick
 			self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 			self.or12.FIRE_MODE = "single"				
@@ -19645,10 +19704,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.or12.damage_falloff = {
 				start_dist = 500,
 				end_dist = 2800,
-				min_mult = 0.5
+				min_mult = 0.15
 			}
 			self.or12.stats = {
-				damage = 45,
+				damage = 120,
 				spread = 25,
 				recoil = 49,
 				spread_moving = 7,
@@ -19662,8 +19721,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.or12.stats_modifiers = nil
+			self.or12.lock_slide = true
+			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
+			self.or12.sounds.spin_start = nil
+			self.or12.spin_up_shoot = nil
+			self.or12.spin_up_t = nil
+			self.or12.spin_down_t = nil
+			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
 			self.or12.panic_suppression_chance = 0.05
 			self.or12.reload_speed_multiplier = 0.8
+			self.or12.timers.reload_not_empty = 2.8
+			self.or12.timers.reload_exit_not_empty = 0.9
+			self.or12.timers.reload_empty = 3.21
+			self.or12.timers.reload_exit_empty = 1.0
 		end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
@@ -19906,63 +19976,31 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if per_pellet then
-				if table.contains(weap.categories, "grenade_launcher") then
-					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					weap.rays = not weap.keep_rays and 1 or weap.rays
-				elseif weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
-					weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
-					if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
-						if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
-							table.insert(weap.categories, "shotgun_light")
-							weap.ene_hs_mult = 0.5
-							if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
-								table.insert(weap.categories, "shotgun_light_semi")
-							end
-						elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
-							table.insert(weap.categories, "shotgun_heavy")
-							weap.ene_hs_mult = 0.65
-						elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
-							table.insert(weap.categories, "shotgun_break")
-							weap.ene_hs_mult = 0.8
+			if weap.damage_falloff and weap.damage_falloff.start_dist and weap.rays and weap.damage_type and not table.contains(weap.categories, "flamethrower") then
+				weap.alt_shotgunraycast = weap.alt_shotgunraycast or true
+				if weap.recategorize and weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then	
+					if weap.recategorize[1] == "light_shot" and not table.contains(weap.categories, "shotgun_light") then	
+						table.insert(weap.categories, "shotgun_light")
+						if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
+							table.insert(weap.categories, "shotgun_light_semi")
 						end
-					end
-					if weap.damage_type == "shotgun" or weap.damage_type == "shotgun_heavy" then
-						local is_primary = weap.use_data and weap.use_data.selection_index == 2
-						if weap.stats and weap.stats.damage then
-							if weap.stats.damage == 30 then --Omni
-								weap.stats.damage = 90 --60
-								weap.damage_falloff.min_mult = 0.16667 --0.25
-								weap.object_damage_mult = 0.25
-							elseif weap.stats.damage == 45 then --Auto
-								weap.stats.damage = 120 --90
-								weap.damage_falloff.min_mult = 0.15 --0.2
-								weap.object_damage_mult = 0.25
-							elseif weap.stats.damage == 60 then --Pump
-								weap.stats.damage = 180 --120
-								weap.damage_falloff.min_mult = 0.13333 --0.2
-								weap.object_damage_mult = 0.75
-							elseif weap.stats.damage == 90 then --Break Action
-								weap.stats.damage = 300 --180
-								weap.damage_falloff.min_mult = 0.1 --0.1666667
-								weap.object_damage_mult = 0.75
-							elseif weap.stats.damage == 180 then --Super
-								weap.stats.damage = 400
-								weap.damage_falloff.min_mult = 0.33333
-								weap.object_damage_mult = nil
-							end
-							weap.AMMO_MAX = math.ceil( ((is_primary and 3600 or 1800) * 2) / weap.stats.damage )
-						end
+						weap.ene_hs_mult = 0.5
+					elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
+						table.insert(weap.categories, "shotgun_heavy")
+						weap.ene_hs_mult = 0.65
+					elseif weap.recategorize[1] == "break_shot" and not table.contains(weap.categories, "shotgun_break") then	
+						table.insert(weap.categories, "shotgun_break")
+						weap.ene_hs_mult = 0.8
 					end
 				end
 			end
+
 			if table.contains(weap.categories, "shotgun") then
 				weap.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
 			end
 
 			if table.contains(weap.categories, "amr") then
 				weap.force_shake = true
-				--weap.hipfire_shake = true
 			end
 	
 			if table.contains(weap.categories, "dmr_l") or table.contains(weap.categories, "dmr_h") then
@@ -20271,13 +20309,13 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 			lmg = 0.61,
 				mmg = 0.95,
 			minigun = 0.55,
-		shotgun = per_pellet and 1.33 or 0.7, --Compensate for ease of aim+multikills and/or versatility; if using perpellet, pickup is increased to compensate for the inconsistency
-			flamethrower = per_pellet and 0.7 / 1.33 or 1, --flamethrowers do not get the pickup bonus of per_pellet since they do not use per_pellet
-			shotgun_auto = per_pellet and 1.33 / (1.33 * 0.92) or 1, --Omni
-			shotgun_light = per_pellet and 0.92 or 1, --Auto
-			shotgun_heavy = per_pellet and 0.94 or 1, --Light
-			shotgun_break = per_pellet and 1.06 or 1, --Heavy
-			shotgun_super = per_pellet and 1.10 or 1,
+		shotgun = 1.3, --Pickup is increased to compensate for the inconsistency pf per-pellet damage
+			flamethrower = 0.7 / 1.3, --flamethrowers do not get the pickup bonus as they are not per-pellet based
+			shotgun_auto = 1.11, --Omni
+			shotgun_light = 0.92, --Auto
+			shotgun_heavy = 0.94, --Light
+			shotgun_break = 1.07, --Heavy
+			shotgun_super = 1.10,
 		--assault_rifle = 1, 
 			dmr_l = 0.9,
 			dmr_h = 0.9,

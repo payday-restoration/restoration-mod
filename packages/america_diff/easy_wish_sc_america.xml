@@ -141,6 +141,10 @@
 	<!-- shield -->
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true"/>
+	
+	<!-- sniper -->
+	<unit				path="units/payday2/characters/ene_sniper_3/ene_sniper_3" load="true"/>
+	<unit				path="units/payday2/characters/ene_sniper_3/ene_sniper_3_husk" load="true"/>
 	<!-- gensec tier end -->	
 	
 	<!-- specials-->

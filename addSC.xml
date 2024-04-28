@@ -163,10 +163,7 @@
 	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_trolley_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/props/mad_prop_sign_electricity/mad_prop_sign_electricity_df" force="true"/>
 	
-	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
-
-	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
 
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
@@ -730,6 +727,7 @@
 	<unit				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_husk" force="true" load="true"/>	
 	<object				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<model				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
+	<sequence_manager	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_contour" force="true" />	
 	

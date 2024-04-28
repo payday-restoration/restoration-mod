@@ -121,6 +121,12 @@ return {
 			end
 		end
 	},
+	--Disable Titan Cams
+	[106265] = {
+		values = {
+			enabled = false
+		}
+	},
 	--Prevent shields/dozers from disabling the timelock (Are we living in PDTH?)
 	[101195] = {
 		pre_func = function (self)
@@ -181,12 +187,14 @@ return {
 			{ id = 400046, delay = 200 },
 			{ id = 400047, delay = 200 },
 			{ id = 400049, delay = 5 },
-			{ id = 100129, delay = 20 }
+			{ id = 100129, delay = 20 },
+			{ id = 100115, delay = 18 }
 		}
 	},
 	[100109] = {
 		on_executed = {
-			{ id = 100129, remove = true }
+			{ id = 100129, remove = true },
+			{ id = 100115, remove = true }
 		}
 	},
 	--Trigger custom c4 route spawns

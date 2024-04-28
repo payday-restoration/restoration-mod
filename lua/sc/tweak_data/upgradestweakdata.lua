@@ -399,7 +399,7 @@ end)
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
-	self.explosive_bullet.curve_pow = 0.0005
+	self.explosive_bullet.curve_pow = 0.2
 	self.explosive_bullet.player_dmg_mul = 0.5
 	self.explosive_bullet.range = 200
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
@@ -1549,6 +1549,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					
 					self.skill_descs.insulation = {
 						skill_value_b1 = tostring((1 - self.values.player.knockback_resistance [1]) * 100).."%", -- knockback resistance
+						skill_value_b2 = tostring(self.values.player.taser_malfunction[1].chance_to_trigger * 100).."%", -- taser malfunction trigger chance
 						skill_value_p1 = tostring(self.values.player.escape_taser[1]), -- escape time
 						skill_value_p2 = tostring(self.counter_taser_damage) -- Damage to taser when counter tase happen
 					}
@@ -1918,6 +1919,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.counter_strike_spooc = {true}
 				--Ace
+					self.values.player.counter_strike_spooc_sprint = {true}
 					self.values.player.deflect_ranged = {0.9}
 					
 				self.skill_descs.bloodthirst = {
@@ -4117,6 +4119,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "deflect_ranged",
 			value = 1
+		}
+	}
+	self.definitions.player_counter_strike_spooc_sprint = {
+		name_id = "menu_player_counter_strike_spooc_sprint",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "counter_strike_spooc_sprint",
+			category = "player"
 		}
 	}
 	self.definitions.player_level_1_armor_addend = {

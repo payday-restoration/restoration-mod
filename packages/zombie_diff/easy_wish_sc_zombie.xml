@@ -53,6 +53,13 @@
 	<model				path="units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"/>
 	<object				path="units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"/>
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"/>
+	
+	<!-- sniper -->
+	<unit				path="units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3_husk" load="true"/>
+	<object				path="units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3" />	
+	<model				path="units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3" />	
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_sniper_3/ene_sniper_3" />		
 
 	<!--Gensec Shield Acc-->
 	<model				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>

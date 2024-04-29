@@ -1046,7 +1046,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.melee_weapon = "knife_1"
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 	    self.fbi_heavy_swat.has_alarm_pager = true
 	else
 	    self.fbi_heavy_swat.has_alarm_pager = false

@@ -118,30 +118,6 @@ local optsSniper_6 = {
 	spawn_action = "e_sp_repel_into_window",
     enabled = death_wish_above
 }
-local optsSniper_7 = {
-	enemy = sniper,
-	on_executed = { { id = 400009, delay = 3 } },
-	spawn_action = "e_sp_repel_into_window",
-    enabled = very_hard_above
-}
-local optsSniper_8 = {
-	enemy = sniper,
-	on_executed = { { id = 400063, delay = 3 } },
-	spawn_action = "e_sp_repel_into_window",
-    enabled = very_hard_above
-}
-local optsSniper_9 = {
-	enemy = sniper,
-	on_executed = { { id = 400064, delay = 3 } },
-	spawn_action = "e_sp_repel_into_window",
-    enabled = very_hard_above
-}
-local optsSniper_10 = {
-	enemy = sniper,
-	on_executed = { { id = 400065, delay = 3 } },
-	spawn_action = "e_sp_repel_into_window",
-    enabled = very_hard_above
-}
 local optsBulldozer_193 = {
     enemy = tank,
 	on_executed = { 
@@ -206,9 +182,6 @@ local optsDozerAmbush_2 = {
     enemy = tank_black,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_clk_3_5m_dwn_vent",
-	on_executed = {
-		{ id = 400052, delay = 0 }
-	},
     enabled = (death_sentence and surprise_tank_chance)
 }
 local optsShield_Defend_1 = {
@@ -288,44 +261,16 @@ local disable_RegularPONR = {
 	}
 }
 local disable_thetank = {
-	enabled = pro_job,
+	enabled = true,
 	toggle = "off",
 	elements = { 
 		400055
 	}
 }
 local enable_thetank = {
-	enabled = pro_job,
+	enabled = true,
 	elements = { 
 		400055
-	}
-}
-local disable_spawngroup_close_to_the_gate = {
-	enabled = true,
-	toggle = "off",
-	elements = { 
-		101374
-	}
-}
-local disable_spawngroup_remove = {
-	enabled = death_sentence,
-	toggle = "off",
-	elements = { 
-		100912
-	}
-}
-local disable_left_side_snp = {
-	enabled = true,
-	toggle = "off",
-	elements = { 
-		400066
-	}
-}
-local disable_right_side_snp = {
-	enabled = true,
-	toggle = "off",
-	elements = { 
-		400067
 	}
 }
 local optsRegularPONR = {
@@ -370,38 +315,6 @@ local optsBlackTankAmbushFilter = {
 		{ id = 400036, delay = 1, delay_rand = 1 }
 	}
 }
-local spawn_the_surprise_tank = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400054, delay = 30 }
-	}
-}
-local spawn_snipers_left = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400003, delay = 0 },
-		{ id = 400004, delay = 1 },
-		{ id = 400005, delay = 2 },
-		{ id = 400006, delay = 3 },
-		{ id = 400007, delay = 4 },
-		{ id = 400008, delay = 5 }
-	}
-}
-local spawn_snipers_right = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400059, delay = 0 },
-		{ id = 400060, delay = 1 },
-		{ id = 400061, delay = 2 },
-		{ id = 400062, delay = 3 }
-	}
-}
-local spawn_snipers_right = {
-	enabled = true,
-	on_executed = { 
-		{ id = 400054, delay = 30 }
-	}
-}
 
 return {
     elements = {
@@ -420,45 +333,45 @@ return {
             Rotation(0, 0, -0),
             optsShield_2
         ),
-		--Lobby Snipers (Left)
+		--Lobby Snipers
 		restoration:gen_dummy(
             400003,
-            "sniper_lobby_left_1",
+            "sniper_lobby_1",
             Vector3(677, 57, 475.020),
             Rotation(90, -0, -0),
             optsSniper_1
         ),
 		restoration:gen_dummy(
             400004,
-            "sniper_lobby_left_2",
+            "sniper_lobby_2",
             Vector3(677, 12, 475.020),
             Rotation(90, -0, -0),
             optsSniper_2
         ),
 		restoration:gen_dummy(
             400005,
-            "sniper_lobby_left_3",
+            "sniper_lobby_3",
             Vector3(677, 57, 475.020),
             Rotation(90, -0, -0),
             optsSniper_3
         ),
 		restoration:gen_dummy(
             400006,
-            "sniper_lobby_left_4",
+            "sniper_lobby_4",
             Vector3(677, 12, 475.020),
             Rotation(90, -0, -0),
             optsSniper_4
         ),
 		restoration:gen_dummy(
             400007,
-            "sniper_lobby_left_5",
+            "sniper_lobby_5",
             Vector3(677, 57, 475.020),
             Rotation(90, -0, -0),
             optsSniper_5
         ),
 		restoration:gen_dummy(
             400008,
-            "sniper_lobby_left_6",
+            "sniper_lobby_6",
             Vector3(677, 12, 475.020),
             Rotation(90, -0, -0),
             optsSniper_6
@@ -650,7 +563,6 @@ return {
             Rotation(0, 0, 0),
             optsSniper_SO
         ),
-		--Dozers coming out of elevator on DS
 		restoration:gen_dummy(
             400035,
             "dozer_ambush_elevator_1",
@@ -665,7 +577,6 @@ return {
             Rotation(90, -0, -0),
             optsDozerAmbush
         ),
-		--Scripted Tasers spawns
 		restoration:gen_dummy(
             400037,
             "taser_special_1",
@@ -680,7 +591,6 @@ return {
             Rotation(0, 0, -0),
             optsTaser_special
         ),
-		--Defend Shields in vault hallway
 		restoration:gen_so(
             400039,
             "shield_defend_so_1",
@@ -719,7 +629,6 @@ return {
             "disable_lobby_shields",
             disable_shields
         ),
-		--PONRs
 		restoration:gen_toggleelement(
             400045,
             "enable_OverdrillPONR",
@@ -792,86 +701,6 @@ return {
             400057,
             "disable_the_surpise_tank",
             disable_thetank
-        ),
-		restoration:gen_toggleelement(
-            400058,
-            "disable_the_spawngroup",
-            disable_spawngroup_close_to_the_gate
-        ),
-		--Lobby Snipers (Right)
-		restoration:gen_dummy(
-            400059,
-            "sniper_lobby_right_1",
-            Vector3(677, 57, 475.020),
-            Rotation(90, -0, -0),
-            optsSniper_7
-        ),
-		restoration:gen_dummy(
-            400060,
-            "sniper_lobby_right_2",
-            Vector3(677, 12, 475.020),
-            Rotation(90, -0, -0),
-            optsSniper_8
-        ),
-		restoration:gen_dummy(
-            400061,
-            "sniper_lobby_right_3",
-            Vector3(677, 57, 475.020),
-            Rotation(90, -0, -0),
-            optsSniper_9
-        ),
-		restoration:gen_dummy(
-            400062,
-            "sniper_lobby_right_4",
-            Vector3(677, 12, 475.020),
-            Rotation(90, -0, -0),
-            optsSniper_10
-        ),
-		restoration:gen_so(
-            400063,
-            "special_sniper_so_4",
-            Vector3(-199, -1662, 475),
-            Rotation(129, 0, -0),
-            optsSniper_SO
-        ),
-		restoration:gen_so(
-            400064,
-            "special_sniper_so_5",
-            Vector3(-42.274, -2254.384, 475),
-            Rotation(71, -0, -0),
-            optsSniper_SO
-        ),
-		restoration:gen_so(
-            400065,
-            "special_sniper_so_6",
-            Vector3(-1809, -1915, 355.001),
-            Rotation(-90, 0, -0),
-            optsSniper_SO
-        ),
-		restoration:gen_missionscript(
-            400066,
-            "spawns_snipers_left_side",
-            spawn_snipers_left
-        ),
-		restoration:gen_missionscript(
-            400067,
-            "spawn_snipers_right_side",
-            spawn_snipers_right
-        ),
-		restoration:gen_toggleelement(
-            400068,
-            "disable_left_side_snipers",
-            disable_left_side_snp
-        ),
-		restoration:gen_toggleelement(
-            400069,
-            "disable_right_side_snipers",
-            disable_right_side_snp
-        ),
-		restoration:gen_toggleelement(
-            400070,
-            "disable_spawngroup_removal",
-            disable_spawngroup_remove
         )
     }
 }

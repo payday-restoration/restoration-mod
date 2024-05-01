@@ -17772,6 +17772,8 @@ function CharacterTweakData:_set_sm_wish()
 		
 	self.autumn.damage.bullet_damage_mul = 0.4
 	
+	self.tank_black.move_speed = self.presets.move_speed.normal
+	
 	self.tank_skull.dt_suppress = {
 		range = 500
 	}

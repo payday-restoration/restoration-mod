@@ -4,8 +4,6 @@ local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
 local both_window_swats_only = true
-local enable_right_path = false
-local vent_spawngroup = false
 local stair_blockade_chance = 0
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
@@ -67,8 +65,6 @@ end
 
 	if difficulty >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
-		enable_right_path = true -- enables the right path to the vault
-		vent_spawngroup = true
 	end	
 	
 	if difficulty >= 5 then
@@ -210,33 +206,10 @@ return {
 			{id = 400046, delay = 0}
 		}
 	},
-	--Enable the right path to the vault on Mayhem and above
-	--Disable left side snipers if the right path has been choosen
+	--Disable the right vault path
 	[105498] = {
 		values = {
-			enabled = enable_right_path
-		},
-		on_executed = {
-			{id = 400058, delay = 0},
-			{id = 400068, delay = 0}
-		}
-	},
-	--Disable right side snipers if the left path has been choosen
-	[105497] = {
-		on_executed = {
-			{id = 400069, delay = 0}
-		}
-	},
-	--Disable enemypreferedremove that disables spawngroups in vault hallway on DS
-	[101300] = {
-		on_executed = {
-			{id = 400070, delay = 0}
-		}
-	},
-	--enable vault hallway vent spawns on mayhem and above instead on all diffs
-	[105200] = {
-		values = {
-			enabled = vent_spawngroup
+			enabled = false
 		}
 	},
 	--Trigger Hunt on Pro Jobs (Endless Assault)
@@ -261,8 +234,12 @@ return {
 		},
 		on_executed = {
 			{id = 105921, remove = true},
-			{id = 400066, delay = 0},
-			{id = 400067, delay = 0}
+			{id = 400003, delay = 1},
+			{id = 400004, delay = 2},
+			{id = 400005, delay = 3},
+			{id = 400006, delay = 4},
+			{id = 400007, delay = 5},
+			{id = 400008, delay = 6}
 		}
 	},
 	--two extra possible dozers spawn on DW+ (PJ Only)
@@ -510,26 +487,6 @@ return {
 		}
 	},
 	[100621] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[103535] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[106855] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[102382] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[101967] = {
 		values = {
             enemy = titan_taser
 		}

@@ -4,6 +4,7 @@ local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
 local both_window_swats_only = true
+local enable_right_path = false
 local stair_blockade_chance = 0
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
@@ -65,6 +66,7 @@ end
 
 	if difficulty >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
+		enable_right_path = true
 	end	
 	
 	if difficulty >= 5 then
@@ -206,10 +208,10 @@ return {
 			{id = 400046, delay = 0}
 		}
 	},
-	--Disable the right vault path
+	--Enable the right vault path on mayhem above
 	[105498] = {
 		values = {
-			enabled = false
+			enabled = enable_right_path
 		}
 	},
 	--Trigger Hunt on Pro Jobs (Endless Assault)

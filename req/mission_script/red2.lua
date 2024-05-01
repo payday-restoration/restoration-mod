@@ -506,6 +506,26 @@ return {
             enemy = titan_taser
 		}
 	},
+	[103535] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[106855] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[102382] = {
+		values = {
+            enemy = titan_taser
+		}
+	},
+	[101967] = {
+		values = {
+            enemy = titan_taser
+		}
+	},
 	[103163] = {
 		values = {
             enemy = taser

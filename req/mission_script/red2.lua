@@ -196,7 +196,7 @@ return {
 	[101300] = { 
 		on_executed = {
 			{id = 400043, delay = 0},
-			{id = 400056, delay = 3}
+			{id = 400056, delay = 0}
 		}
 	},
 	--Enable Overdrill PONR if Overdrill gets activated
@@ -262,9 +262,9 @@ return {
 		}
 	},
 	--Use the unused area trigger to spawn the blackdozer
-	[106402] = { 
+	[106042] = { 
 		on_executed = {
-			{id = 400054, delay = 15}
+			{id = 400055, delay = 15}
 		}
 	},
 	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)

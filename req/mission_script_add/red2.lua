@@ -315,6 +315,12 @@ local optsBlackTankAmbushFilter = {
 		{ id = 400036, delay = 1, delay_rand = 1 }
 	}
 }
+local spawn_the_surprise_tank = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400054, delay = 0 }
+	}
+}
 
 return {
     elements = {

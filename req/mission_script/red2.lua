@@ -185,6 +185,13 @@ return {
 			enabled = false
 		}
 	},
+	--Pro Job PONR
+	[100057] = { 
+		on_executed = {
+			{id = 400047, delay = 0},
+			{id = 400048, delay = 0}
+		}
+	},
 	--Disable lobby shields on startup
 	--Disable surprise tank on startup
 	--Disable Overdrill PONR
@@ -232,9 +239,7 @@ return {
 	[101660] = { 
 		on_executed = {
 			{id = 400001, delay = 0},
-			{id = 400002, delay = 0},
-			{id = 400047, delay = 0},
-			{id = 400048, delay = 0}
+			{id = 400002, delay = 0}
 		}
 	},
 	--Use turret's chance to spawn lobby snipers instead

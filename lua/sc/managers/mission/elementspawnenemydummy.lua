@@ -2637,6 +2637,7 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	--Security
 	[Idstring("units/payday2/characters/ene_murkywater_1/ene_murkywater_1"):key()] = "murky_guard",
 	[Idstring("units/payday2/characters/ene_murkywater_2/ene_murkywater_2"):key()] = "murky_guard",
+	[Idstring("units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"):key()] = "murky_guard",
 	[Idstring("units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"):key()] = "murky_guard",

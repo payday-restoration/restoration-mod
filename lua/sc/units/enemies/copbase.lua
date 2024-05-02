@@ -5,6 +5,9 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+-- Reserved table for Summers DR effect
+local summers_dr_effect_table = nil
+
 -- LPF effect positions
 local effect_usual = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
 local effect_no_gear = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear")
@@ -72,6 +75,42 @@ local murky_no_gear = { -- Majority of murky units looks better with "no_gear" e
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
 }
+
+--Reset Summers effect stuff
+function CopBase:reset_summers_dr_effect()
+	summers_dr_effect_table = {"red","", "orange","","yellow"} -- don't ask wth empty strings doing in this table
+	
+	self._summers_dr_effect = World:effect_manager():spawn({
+			effect = Idstring("effects/particles/character/glowing_eyes_"..summers_dr_effect_table[1].."_summers"),
+			parent = self._unit:get_object(Idstring("Head"))
+	})
+end
+--When player/bot kill Doc/Molly/Elektra -> find Summers and update his effect
+function CopBase:find_summers()					
+	local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), 160000000, managers.slot:get_mask("enemies"))
+	if enemies then
+		for _,enemy in ipairs(enemies) do
+			if enemy:base()._tweak_table == "summers" then
+				enemy:base():update_summers_dr_effect()
+			end
+		end
+	end
+end
+--Update Summers DR effect if someone from captain's crew is dead (or when Summers killed when he still has alive crew members)
+function CopBase:update_summers_dr_effect(summers_death)
+	if self._unit:base()._tweak_table == "summers" and summers_death then
+		World:effect_manager():fade_kill(self._summers_dr_effect)
+	elseif self._summers_dr_effect then
+		World:effect_manager():fade_kill(self._summers_dr_effect)
+		table.remove(summers_dr_effect_table, 1)
+		if summers_dr_effect_table[1] ~= nil then
+			self._summers_dr_effect = World:effect_manager():spawn({
+				effect = Idstring("effects/particles/character/glowing_eyes_"..summers_dr_effect_table[1].."_summers"),
+				parent = self._unit:get_object(Idstring("Head"))
+			})
+		end
+	end	
+end
 
 function CopBase:enable_lpf_buff(state)
 	if self._overheal_unit then
@@ -182,7 +221,8 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 	--Just in case Summers decides to spawn again, his DR is back
 	if self._unit:base()._tweak_table == "summers" then
-		managers.groupai:state():_reset_summers_dr()	
+		managers.groupai:state():_reset_summers_dr()
+		self:reset_summers_dr_effect()
 	end		
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {

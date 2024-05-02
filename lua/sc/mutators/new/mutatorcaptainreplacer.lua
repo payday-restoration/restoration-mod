@@ -537,9 +537,9 @@ function MutatorCaptainReplacer:setup()
 			table.insert(captain_table, "hvh")
 			num_of_captains = num_of_captains + 1
 		end
-		for i, value in ipairs(captain_table) do
+		--[[for i, value in ipairs(captain_table) do
 			log("Captain Table "..tostring(i).." = "..tostring(value))
-		end
+		end--]]
 		
 		-- If host excluded all captains - do nothing. It will be just usual behaviour (as without mutator)
 		if num_of_captains > 0 then	

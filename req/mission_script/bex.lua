@@ -14,7 +14,7 @@ local hunt_projob = false
 		ponr_value = 540	
 	end
 
-local ponr_timer_player_mul = {
+--[[local ponr_timer_player_mul = {
 		1,
 		0.85,
 		0.7,
@@ -37,12 +37,12 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65,
 		0.65
-}
+}--]]
 
 return {
 	--Pro Job PONR 
 	[101485] = {
-		ponr_player_mul = ponr_timer_player_mul,
+		--ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	--Allow only one turret to spawn (for some reason map designer allowed to spawn turrets on hard instead)

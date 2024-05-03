@@ -2202,7 +2202,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_4 = {
 				"units/payday2/characters/ene_security_4/ene_security_4",
 				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
+				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2235,7 +2235,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_4 = {
 				"units/payday2/characters/ene_security_4/ene_security_4",
 				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
+				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2284,7 +2284,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_4 = {
 				"units/payday2/characters/ene_security_4/ene_security_4",
 				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
+				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2339,7 +2339,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_4 = {
 				"units/payday2/characters/ene_security_4/ene_security_4",
 				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
+				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2378,7 +2378,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_4 = {
 				"units/payday2/characters/ene_security_4/ene_security_4",
 				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
+				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",

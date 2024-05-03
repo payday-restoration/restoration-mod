@@ -278,9 +278,9 @@ local optsRegularPONR = {
 	time_hard = 420,
 	time_overkill = 420,
 	time_overkill_145 = 420,
-	time_easy_wish = 600,
-    time_overkill_290 = 600,
-	time_sm_wish = 600,
+	time_easy_wish = 540,
+    time_overkill_290 = 540,
+	time_sm_wish = 540,
 	enabled = pro_job
 }
 local optsOverdrillPONR = {

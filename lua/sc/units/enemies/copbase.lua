@@ -33,7 +33,9 @@ local omnia_tswat = { -- OMNIA T SWAT need higher effect position
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
-	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk")
+	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk"),
+	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),
+	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk")	
 }
 
 local units_low = { -- Zeal heavies and grenadier need lower effect position

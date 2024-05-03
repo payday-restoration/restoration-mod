@@ -1,6 +1,7 @@
 Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 	if self._unit:base()._tweak_table == "summers" then
-		managers.groupai:state():_reset_summers_dr()	
+		managers.groupai:state():_reset_summers_dr()
+		self._unit:base():reset_summers_dr_effect()
 	end			
 
 	local faction = tweak_data.levels:get_ai_group_type()

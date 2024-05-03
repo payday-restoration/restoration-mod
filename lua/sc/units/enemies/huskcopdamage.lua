@@ -34,6 +34,7 @@ function HuskCopDamage:die(attack_data)
 	
 	if self._unit:base()._tweak_table == "summers" or self._unit:base()._tweak_table == "headless_hatman"  then
 		self._unit:damage():run_sequence_simple("kill_feet_fire_summers")
+		self._unit:base():update_summers_dr_effect(true) -- Kill Summers DR effect
 	end
 
 	if self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
@@ -56,6 +57,7 @@ function HuskCopDamage:die(attack_data)
 	
 	if self._char_tweak.reduce_summers_dr_on_death then
 		managers.groupai:state():_reduce_summers_dr(0.15)
+		self._unit:base():find_summers()
 	end		
 end
 
@@ -63,6 +65,6 @@ function HuskCopDamage:heal_unit(...)
 	return CopDamage.heal_unit(self, ...)
 end
 
-function CopDamage:can_attach_projectiles()
+function HuskCopDamage:can_attach_projectiles()
 	return not self._char_tweak.cannot_attach_projectiles
 end

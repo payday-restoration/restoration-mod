@@ -92,38 +92,38 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 50,
-		fire_rate = 0.072727272,
+		mag_capacity = 45,
+		fire_rate = 0.0727272,
 		damage = 4.0
 	},
 	assault_rifle = {
 		mag_capacity = 25,
-		fire_rate = 0.12,
+		fire_rate = 0.1090909,
 		damage = 6.0
 	},
 	lmg = {
 		mag_capacity = 100,
-		fire_rate = 0.08,
+		fire_rate = 0.0833333,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 10,
-		fire_rate = 0.3333333,
-		damage = 7.5
+		mag_capacity = 8,
+		fire_rate = 0.6,
+		damage = 7.0
 	},
 	shotgun_pump = {
-		mag_capacity = 7,
-		fire_rate = 1,
-		damage = 15.0
+		mag_capacity = 5,
+		fire_rate = 1.2,
+		damage = 13.0
 	},
 	sniper_auto = {
-		mag_capacity = 5,
-		fire_rate = 1.5,
+		mag_capacity = 8,
+		fire_rate = 2.5,
 		damage = 9.0
 	},
 	sniper_bolt = {	
 		mag_capacity = 5,
-		fire_rate = 4,
+		fire_rate = 5,
 		damage = 12.0
 	}
 }
@@ -18516,7 +18516,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.is_bullpup = true
 				self.zip22.BURST_FIRE = false
 				self.zip22.CAN_TOGGLE_FIREMODE = false
-				self.zip22.fire_mode_data.fire_rate = 0.2727272
+				self.zip22.fire_mode_data.fire_rate = 0.3
 				self.zip22.jam_time = 2
 				self.zip22.CLIP_AMMO_MAX = 10
 				self.zip22.AMMO_MAX = 210
@@ -18532,7 +18532,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.stats = {
 					damage = 5,
 					spread = 101,
-					recoil = 23,
+					recoil = 21,
 					zoom = 1,
 					concealment = 32,
 					suppression = 8,
@@ -20280,8 +20280,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 180, pickup = {0.037, 0.018}},
 		{damage = 240, pickup = {0.033, 0.015}},
 		{damage = 360, pickup = {0.027, 0.012}},
+		{damage = 480, pickup = {0.024, 0.011}},
 		{damage = 600, pickup = {0.021, 0.010}}, --Light GLs
-		{damage = 800, pickup = {0.016, 0.008}}, --Heavy GLs
+		{damage = 720, pickup = {0.016, 0.008}}, --Heavy GLs
 		{damage = 900, pickup = {0.012, 0.005}}, --Rocket Launchers
 		{damage = 1200, pickup = {0.008, 0.002}}
 	}

@@ -1328,16 +1328,16 @@ local grips = {
 				stats = {
 					value = 9,
 					total_ammo_mod = -49,
-					spread = -10,
+					spread = -5,
 					damage = 30
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.05,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.66667,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -1346,17 +1346,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -68,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.66667,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -1365,17 +1365,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -52,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.75,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}	
 			},
@@ -1383,17 +1383,17 @@ local grips = {
 			a_custom_heavy_override = {
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -38,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.79999,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}	
 			},

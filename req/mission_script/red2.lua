@@ -235,6 +235,54 @@ return {
 			enabled = hunt_projob
 		}
 	},
+	--Let the cops finish their spawn anim before moving into SO spot
+	[103720] = { 
+		on_executed = {
+			{id = 104029, delay = 2.75}
+		}
+	},
+	[103721] = { 
+		on_executed = {
+			{id = 104071, delay = 2.75}
+		}
+	},
+	[103722] = { 
+		on_executed = {
+			{id = 105734, delay = 2.75}
+		}
+	},
+	[103723] = { 
+		on_executed = {
+			{id = 105736, delay = 2.75}
+		}
+	},
+	[103724] = { 
+		on_executed = {
+			{id = 100226, delay = 2.75}
+		}
+	},
+	[103732] = { 
+		on_executed = {
+			{id = 100077, delay = 2.75}
+		}
+	},
+	[103737] = { 
+		on_executed = {
+			{id = 105732, delay = 2.75}
+		}
+	},
+	[100619] = {
+		values = {
+			rules = {
+				enemy_names = {
+					"units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
+					"units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
+					"units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
+					"units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"	
+				}
+			}
+		}
+	},
 	--spawn lobby blockade shields+Pro Job PONR
 	[101660] = { 
 		on_executed = {

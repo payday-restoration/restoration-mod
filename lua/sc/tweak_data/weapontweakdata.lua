@@ -10803,7 +10803,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.victor.upgrade_blocks = nil
 						self.victor.has_description = true
-						self.victor.desc_id = "bm_ap_weapon_sc_desc"
+						self.victor.desc_id = "bm_ap_weapon_semi_sc_desc"
 						self.victor.CLIP_AMMO_MAX = 20
 						self.victor.AMMO_MAX = 36
 						self.victor.FIRE_MODE = "single"
@@ -13993,7 +13993,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.sgs.has_description = true
 					self.sgs.lock_slide = true
 					self.sgs.sounds.magazine_empty = "wp_rifle_slide_lock"
-					self.sgs.desc_id = "bm_ap_weapon_sc_desc"
+					self.sgs.desc_id = "bm_ap_weapon_semi_sc_desc"
 					self.sgs.CLIP_AMMO_MAX = 20
 					self.sgs.tactical_reload = 1
 					self.sgs.AMMO_MAX = 60
@@ -16200,8 +16200,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.svd.lock_slide = true
 				self.svd.upgrade_blocks = nil
-				--self.svd.has_description = true
-				--self.svd.desc_id = "bm_siltstone_sc_desc"
+				self.svd.has_description = true
+				self.svd.desc_id = "bm_siltstone_sc_desc"
 				self.svd.tactical_reload = 1
 				self.svd.CLIP_AMMO_MAX = 10
 				self.svd.AMMO_MAX = 40
@@ -19285,7 +19285,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.iuhTTIPlus.lock_slide = true
 			self.iuhTTIPlus.has_description = true
-			self.iuhTTIPlus.desc_id = "bm_ap_weapon_sc_desc"
+			self.iuhTTIPlus.desc_id = "bm_ap_weapon_semi_sc_desc"
 			self.iuhTTIPlus.upgrade_blocks = nil
 			self.iuhTTIPlus.tactical_reload = 1
 			self.iuhTTIPlus.CLIP_AMMO_MAX = 20
@@ -19334,7 +19334,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rsass.lock_slide = true
 			self.rsass.has_description = true
-			self.rsass.desc_id = "bm_ap_weapon_sc_desc"
+			self.rsass.desc_id = "bm_ap_weapon_semi_sc_desc"
 			self.rsass.upgrade_blocks = nil
 			self.rsass.tactical_reload = 1
 			self.rsass.CLIP_AMMO_MAX = 20

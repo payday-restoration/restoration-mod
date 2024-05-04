@@ -103,7 +103,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 		ignore_units = self._setup.ignore_units
 	}
 
-	return RaycastWeaponBase.collect_hits(from, to, setup_data)
+	return RaycastWeaponBase.collect_hits(from, to, setup_data, self._unit)
 end
 
 local armour = {
@@ -124,7 +124,7 @@ local armour = {
 }
 
 --Minor fixes and making Winters unpiercable.
-function RaycastWeaponBase.collect_hits(from, to, setup_data)
+function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 	setup_data = setup_data or {}
 	local ray_hits = nil
 	local hit_enemy = false
@@ -157,6 +157,8 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
+	local weap_base = weapon_unit and weapon_unit.base and weapon_unit:base()
+	local is_semi_snp = weap_base and weap_base.categories and not weap_base:is_category("amr") and weap_base:is_category("semi_snp", "dmr_l", "dmr_h") 
 
 	--Just set this immediately.
 	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)
@@ -172,6 +174,9 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	for i, hit in ipairs(ray_hits) do
 		unit = hit.unit
 		u_key = unit:key()
+		local range = is_semi_snp and weap_base:get_damage_falloff(1, hit, managers.player:player_unit())
+			local near_falloff_distance = range and weap_base.near_falloff_distance
+			local distance = range and hit.distance
 		if not units_hit[u_key] then
 			units_hit[u_key] = true
 			unique_hits[#unique_hits + 1] = hit
@@ -186,7 +191,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 				break
 			elseif setup_data.has_hit_wall or (not can_shoot_through_wall and in_slot_func(unit, wall_mask) and (has_ray_type_func(hit.body, ai_vision_ids) or has_ray_type_func(hit.body, bulletproof_ids))) then
 				break
-			elseif not can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
+			elseif (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) and hit.unit:in_slot(shield_mask) then
 				break
 			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8') and not can_shoot_through_titan_shield then --Titan shields
 				break
@@ -200,7 +205,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	end
 
 	return unique_hits, hit_enemy, hit_enemy and enemies_hit or nil
-end	
+end
 
 local raycast_current_damage_orig = RaycastWeaponBase._get_current_damage
 function RaycastWeaponBase:_get_current_damage(dmg_mul)

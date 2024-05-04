@@ -19613,11 +19613,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		armor_piercing_override = 1,
 		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
-		can_shoot_through_enemy_unlim = true,
 		ignore_rof_mult_anims = true,
-		rof_mult = 0.666666,
-		ads_speed_mult = 1.20,
-		hip_mult = 1.666666,
+		rof_mult = 0.5733333,
+		ads_speed_mult = 1.38888,
+		hip_mult = 2,
+		alt_ammo_pickup_min_mul = 0.875,
+		alt_ammo_pickup_max_mul = 0.875,
+		ammo_pickup_min_mul = 0.875,
+		ammo_pickup_max_mul = 0.875,
 		sms = 0.7,
 		alt_desc = "bm_shak12_sc_oden_desc"
 	}
@@ -25433,6 +25436,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		--TTI 1911's
+		if self.parts.wpn_fps_pis_tti_viper_compensator then
+			self.parts.wpn_fps_pis_tti_viper_compensator.stats = { value = 0 }
+			self.parts.wpn_fps_pis_tti_viper_compensator.custom_stats = nil
+
+			self.parts.wpn_fps_pis_tti_viper_sight_car.desc_id = "bm_wp_upg_o_angled_aim_desc"
+			self.parts.wpn_fps_pis_tti_2011_sight_car.desc_id = "bm_wp_upg_o_angled_aim_desc"
+			self.parts.wpn_fps_pis_tti_2011_sight_car_high.desc_id = "bm_wp_upg_o_angled_laser_desc"
+		end
 
 		--RJC9000 and PlayBONK's PD3 QBZ-191
 		if self.parts.wpn_fps_ass_pd3_qbz191_irons_folded then

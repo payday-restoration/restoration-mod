@@ -1292,6 +1292,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
 		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_aim_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between standard and canted aiming.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{risk}#3x magnification.##",
 
@@ -2756,7 +2757,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--G3
 				["bm_g3_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",	
 				["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
-				["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+				["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the Compact-5 and Brenner-21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				["bm_wp_g3_m_psg"] = "Präzision Magazine",
 				["bm_wp_upg_i_g3sg1"] = "Präzision Internals",
 				["bm_wp_upg_i_g3sg1_desc"] = "Loads high-powered rounds that #{skill_color}#grant full armor penetration and shield piercing capabilites.## Parts are reinforced with heavier materials #{important_1}#reducing rate of fire## and locking your weapon to #{risk}#semi-auto##.",
@@ -3994,7 +3995,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_g3_fo3"] = "R91",
 					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies and thin walls.##",
 					["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",	
-					["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+					["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 					["bm_wp_g3_b_short"] = "Short Barrel",
 					["bm_wp_g3_b_sniper"] = "PSG-1 Barrel",
 					["bm_wp_g3_fg_psg"] = "PSG-1 Handguard",

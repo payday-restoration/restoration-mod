@@ -16912,6 +16912,90 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 			
+			if self.tti_2011 then --TTI 1911's
+				self.tti_2011.recategorize = { "light_pis" }		
+				self.tti_2011.damage_type = "light_pistol"
+				self.tti_2011.kick = self.stat_info.kick_tables.vertical_kick
+				self.tti_2011.lock_slide = true
+				self.tti_2011.tactical_reload = 1
+				self.tti_2011.FIRE_MODE = "single"
+				self.tti_2011.CAN_TOGGLE_FIREMODE = false
+				self.tti_2011.BURST_FIRE = false
+				self.tti_2011.fire_mode_data.fire_rate = 0.1
+				self.tti_2011.CLIP_AMMO_MAX = 17
+				self.tti_2011.AMMO_MAX = 75
+				self.tti_2011.supported = true
+				self.tti_2011.ads_speed = 0.140
+				self.tti_2011.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3800,
+					min_mult = 0.25
+				}
+				self.tti_2011.stats = {
+					damage = 24,
+					spread = 66,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 31,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tti_2011.reload_speed_multiplier = 1.25
+				self.tti_2011.keep_ammo = 1
+				self.tti_2011.timers.reload_exit_not_empty = 1
+				self.tti_2011.timers.reload_exit_empty = 0.75
+				self.tti_2011.stats_modifiers = nil
+				self.tti_2011.panic_suppression_chance = 0.05
+			end
+
+			if self.tti_viper then
+				self.tti_viper.recategorize = { "light_pis" }		
+				self.tti_viper.damage_type = "light_pistol"
+				self.tti_viper.kick = self.stat_info.kick_tables.vertical_kick
+				self.tti_viper.lock_slide = true
+				self.tti_viper.tactical_reload = 1
+				self.tti_viper.FIRE_MODE = "single"
+				self.tti_viper.CAN_TOGGLE_FIREMODE = false
+				self.tti_viper.BURST_FIRE = false
+				self.tti_viper.fire_mode_data.fire_rate = 0.1
+				self.tti_viper.CLIP_AMMO_MAX = 21
+				self.tti_viper.AMMO_MAX = 75
+				self.tti_viper.supported = true
+				self.tti_viper.ads_speed = 0.160
+				self.tti_viper.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3600,
+					min_mult = 0.25
+				}
+				self.tti_viper.stats = {
+					damage = 24,
+					spread = 65,
+					recoil = 85,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tti_viper.reload_speed_multiplier = 1
+				self.tti_viper.keep_ammo = 1
+				self.tti_viper.timers.reload_not_empty = 1.75
+				self.tti_viper.timers.reload_exit_not_empty = 0.5
+				self.tti_viper.timers.reload_empty = 2.1
+				self.tti_viper.timers.reload_exit_empty = 0.4
+				self.tti_viper.stats_modifiers = nil
+				self.tti_viper.panic_suppression_chance = 0.05
+			end
+
 			if self.papa320 then --RJC9000 and PlayBONK's MW2019 P320
 				self.papa320.recategorize = { "light_pis" }		
 				self.papa320.damage_type = "light_pistol"

@@ -19622,7 +19622,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		ammo_pickup_min_mul = 0.875,
 		ammo_pickup_max_mul = 0.875,
 		sms = 0.7,
-		alt_desc = "bm_shak12_sc_oden_desc"
+		alt_desc = "bm_shak12_sc_oden_desc",
+		srm = {
+			-0.75,
+			{1, 2.5},
+			1
+		}
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
 	

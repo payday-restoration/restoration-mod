@@ -19614,7 +19614,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
 		ignore_rof_mult_anims = true,
-		rof_mult = 0.5733333,
+		rof_mult = 0.6,
 		ads_speed_mult = 1.277777,
 		hip_mult = 2,
 		alt_ammo_pickup_min_mul = 0.875,
@@ -19718,7 +19718,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 			weap.translation = weap.translation + Vector3(0,10,0)
 		end
 	end
-	
+
 	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
 	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac.stance_mod) do
 		if weap and weap.translation then

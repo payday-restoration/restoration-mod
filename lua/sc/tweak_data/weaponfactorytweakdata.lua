@@ -25462,6 +25462,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 
+		--Madsen LAR
+		if self.parts.wpn_fps_ass_madsen_lar_flash_hider then
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.stats = { value = 1 }
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.perks = nil
+
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.stats = {
+				value = 2,
+				concealment = 2,
+				reload = 3,
+				extra_ammo = -10
+			}
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.custom_stats = { ads_speed_mult = 0.95 }
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.stats = {
+				value = 5,
+				concealment = -2,
+				reload = -3,
+				extra_ammo = 10
+			}
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.custom_stats = { ads_speed_mult = 1.05 }
+		end
+
 		--TTI 1911's
 		if self.parts.wpn_fps_pis_tti_viper_compensator then
 			self.parts.wpn_fps_pis_tti_viper_compensator.stats = { value = 0 }

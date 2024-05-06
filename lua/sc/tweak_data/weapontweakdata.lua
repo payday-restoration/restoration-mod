@@ -16912,6 +16912,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 			
+			if self.madsen_lar then
+				self.madsen_lar.categories = { 
+					"assault_rifle",
+					"dmr_h",
+				}
+				self.madsen_lar.recategorize = {"dmr_ar"}
+				self.madsen_lar.nato = true
+				self.madsen_lar.damage_type = "sniper"
+				self.madsen_lar.desc_id = "bm_vss_sc_desc"
+				self.madsen_lar.has_description = true
+				self.madsen_lar.AMMO_MAX = 60
+				self.madsen_lar.CLIP_AMMO_MAX = 20
+				self.madsen_lar.tactical_reload = 1
+				self.madsen_lar.FIRE_MODE = "single"
+				self.madsen_lar.fire_mode_data = {}
+				self.madsen_lar.fire_mode_data.fire_rate = 0.1
+				self.madsen_lar.CAN_TOGGLE_FIREMODE = true
+				self.madsen_lar.kick = self.stat_info.kick_tables.moderate_kick
+				self.madsen_lar.supported = true
+				self.madsen_lar.ads_speed = 0.380
+				self.madsen_lar.damage_falloff = {
+					start_dist = 2800,
+					end_dist = 5000,
+					min_mult = 0.4
+				}
+				self.madsen_lar.stats = {
+					damage = 60,
+					spread = 85,
+					recoil = 65,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 20,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.madsen_lar.stats_modifiers = nil
+				self.madsen_lar.can_shoot_through_enemy = true
+				self.madsen_lar.can_shoot_through_wall = false
+				self.madsen_lar.armor_piercing_chance = 0.5
+				self.madsen_lar.panic_suppression_chance = 0.05
+			end
+
 			if self.tti_2011 then --TTI 1911's
 				self.tti_2011.recategorize = { "light_pis" }		
 				self.tti_2011.damage_type = "light_pistol"
@@ -18685,7 +18731,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.sms = sms_preset.lmg_120
 				self.madsen_mg.weapon_movement_penalty = sms_preset.lmg_120
 			end
-
 		
 		--[[     TANGERINE'S MODS     ]]--
 			if self.ar47 then --Tangerine's AR-47

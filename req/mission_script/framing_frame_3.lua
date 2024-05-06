@@ -130,6 +130,11 @@ return {
 			{id = 400017, delay = 150}
 		}
 	},
+	[100318] = { 
+		on_executed = {
+			{id = 105543, delay = 1}
+		}
+	},
 	--fix vent covers not dropping when cloaker spawns in
 	[104773] = {
 		values = {

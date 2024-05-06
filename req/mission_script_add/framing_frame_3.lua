@@ -116,21 +116,21 @@ return {
 		restoration:gen_dummy(
             400001,
             "sniper_1",
-            Vector3(-803, -1370, 3449.999),
+            Vector3(-800, -1040, 3450),
             Rotation(-90, 0, -0),
             optsSniper_1
         ),
 		restoration:gen_dummy(
             400002,
             "sniper_2",
-            Vector3(-803, -1460, 3449.999),
+            Vector3(-800, -1116, 3450),
             Rotation(-90, 0, -0),
             optsSniper_2
         ),
 		restoration:gen_dummy(
             400003,
             "sniper_3",
-            Vector3(-803, -1549, 3449.999),
+            Vector3(-800, -1197, 3450),
             Rotation(-90, 0, -0),
             optsSniper_3
         ),
@@ -165,7 +165,7 @@ return {
 		restoration:gen_so(
             400008,
             "sniper_spot_so_3",
-            Vector3(-1027, -261, 3449.999),
+            Vector3(-1027, -261, 3450),
             Rotation(55, 0, -0),
             optsSniper_SO
         ),

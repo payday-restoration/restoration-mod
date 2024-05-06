@@ -2462,6 +2462,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_owd_m1a = {
 				translation = Vector3(-0.008, 7.5, -3.86),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_madsen_lar = {
+				translation = Vector3(-0.001, -6.2, -2.639),
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 				translation = Vector3(0.02, 4, 0.03),
@@ -25473,10 +25476,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_madsen_lar_magazine_10.stats = {
 				value = 2,
 				concealment = 2,
-				reload = 3,
+				reload = 4,
 				extra_ammo = -10
 			}
-			self.parts.wpn_fps_ass_madsen_lar_magazine_30.custom_stats = { ads_speed_mult = 0.95 }
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.custom_stats = { ads_speed_mult = 0.95 }
 			self.parts.wpn_fps_ass_madsen_lar_magazine_30.supported = true
 			self.parts.wpn_fps_ass_madsen_lar_magazine_30.stats = {
 				value = 5,

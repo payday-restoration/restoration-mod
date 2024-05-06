@@ -16955,6 +16955,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_lar.can_shoot_through_enemy = true
 				self.madsen_lar.can_shoot_through_wall = false
 				self.madsen_lar.armor_piercing_chance = 0.5
+				self.madsen_lar.timers.reload_exit_not_empty = 0.7
+				self.madsen_lar.timers.reload_exit_empty = 0.6
 				self.madsen_lar.panic_suppression_chance = 0.05
 			end
 

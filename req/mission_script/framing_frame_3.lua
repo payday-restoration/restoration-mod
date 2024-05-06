@@ -124,6 +124,34 @@ return {
 			end
 		end
 	},
+	--Spawn snipers after 150 seconds of starting the assault
+	[103812] = { 
+		on_executed = {
+			{id = 400017, delay = 150}
+		}
+	},
+	--fix vent covers not dropping when cloaker spawns in
+	[104773] = {
+		values = {
+			elements = {
+				104183
+			}
+		}
+	},
+	[104623] = {
+		values = {
+			elements = {
+				104173
+			}
+		}
+	},
+	[104767] = {
+		values = {
+			elements = {
+				104180
+			}
+		}
+	},
 	--Disable unnecceary invulnerability for patrol guard
 	[105930] = {
 		values = {

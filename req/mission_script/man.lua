@@ -94,16 +94,22 @@ end
 return {
 	 --flashlights, flashlights, flashlights!!!!!!!!!! (enables/disables flashlights when the power is off/on like in PDTH)
 	[100756] = {
-			flashlight = true
+		flashlight = true
 	},
 	[101801] = {
-			flashlight = false
+		flashlight = false
 	},
 	--Give saw to all players (Resmod edit not always give saw for every player)
 	[101865] = {
 		func = function(self)
 			managers.network:session():send_to_peers_synched("give_equipment", self._values.equipment, self._values.amount)
 		end
+	},
+	--Spawn more planks (like in PDTH)
+	[101661] = {
+		values = {
+			amount = 20
+		}
 	},
 	--dozers gets randomized
 	[102433] = {

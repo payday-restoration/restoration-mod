@@ -4,6 +4,8 @@ local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
 local both_window_swats_only = true
+local enable_right_path = false
+local vent_spawngroup = false
 local stair_blockade_chance = 0
 local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
@@ -65,6 +67,8 @@ end
 
 	if difficulty >= 6 then
 		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
+		enable_right_path = true
+		vent_spawngroup = true
 	end	
 	
 	if difficulty >= 5 then
@@ -181,18 +185,29 @@ return {
 			enabled = false
 		}
 	},
+	--Pro Job PONR
+	[100057] = { 
+		on_executed = {
+			{id = 400047, delay = 0},
+			{id = 400048, delay = 0}
+		}
+	},
 	--Disable lobby shields on startup
+	--Disable surprise tank on startup
 	--Disable Overdrill PONR
 	[100326] = { 
 		on_executed = {
 			{id = 400044, delay = 3},
-			{id = 400049, delay = 3}
+			{id = 400049, delay = 3},
+			{id = 400057, delay = 3}
 		}
 	},
 	--Enable lobby shields on loud
+	--Enable surprise tank on loud
 	[101300] = { 
 		on_executed = {
-			{id = 400043, delay = 0}
+			{id = 400043, delay = 0},
+			{id = 400056, delay = 0}
 		}
 	},
 	--Enable Overdrill PONR if Overdrill gets activated
@@ -202,10 +217,16 @@ return {
 			{id = 400046, delay = 0}
 		}
 	},
-	--Disable the right vault path
+	--Enable the right vault path on mayhem above
 	[105498] = {
 		values = {
-			enabled = false
+			enabled = enable_right_path
+		}
+	},
+	--enable vault hallway vent spawns on mayhem and above instead on all diffs
+	[105200] = {
+		values = {
+			enabled = vent_spawngroup
 		}
 	},
 	--Trigger Hunt on Pro Jobs (Endless Assault)
@@ -214,13 +235,59 @@ return {
 			enabled = hunt_projob
 		}
 	},
+	--Let the cops finish their spawn anim before moving into SO spot
+	[103720] = { 
+		on_executed = {
+			{id = 104029, delay = 2.75}
+		}
+	},
+	[103721] = { 
+		on_executed = {
+			{id = 104071, delay = 2.75}
+		}
+	},
+	[103722] = { 
+		on_executed = {
+			{id = 105734, delay = 2.75}
+		}
+	},
+	[103723] = { 
+		on_executed = {
+			{id = 105736, delay = 2.75}
+		}
+	},
+	[103724] = { 
+		on_executed = {
+			{id = 100226, delay = 2.75}
+		}
+	},
+	[103732] = { 
+		on_executed = {
+			{id = 100077, delay = 2.75}
+		}
+	},
+	[103737] = { 
+		on_executed = {
+			{id = 105732, delay = 2.75}
+		}
+	},
+	[100619] = {
+		values = {
+			rules = {
+				enemy_names = {
+					"units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1",
+					"units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
+					"units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
+					"units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"	
+				}
+			}
+		}
+	},
 	--spawn lobby blockade shields+Pro Job PONR
 	[101660] = { 
 		on_executed = {
 			{id = 400001, delay = 0},
-			{id = 400002, delay = 0},
-			{id = 400047, delay = 0},
-			{id = 400048, delay = 0}
+			{id = 400002, delay = 0}
 		}
 	},
 	--Use turret's chance to spawn lobby snipers instead
@@ -255,6 +322,12 @@ return {
 	[105119] = { 
 		on_executed = {
 			{id = 400023, delay = 3}
+		}
+	},
+	--Use the unused area trigger to spawn the blackdozer
+	[106042] = { 
+		on_executed = {
+			{id = 400055, delay = 15}
 		}
 	},
 	--MORE BANK GUARDS, HUH?! (Spawns extra blockade guards after opening the vault gates)
@@ -477,6 +550,26 @@ return {
 		}
 	},
 	[100621] = {
+		values = {
+            enemy = titan_taser
+		}
+	},
+	[103535] = {
+		values = {
+            enemy = titan_swat_1
+		}
+	},
+	[106855] = {
+		values = {
+            enemy = titan_swat_2
+		}
+	},
+	[102382] = {
+		values = {
+            enemy = titan_taser
+		}
+	},
+	[101967] = {
 		values = {
             enemy = titan_taser
 		}

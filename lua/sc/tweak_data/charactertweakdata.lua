@@ -1046,7 +1046,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.melee_weapon = "knife_1"
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 	    self.fbi_heavy_swat.has_alarm_pager = true
 	else
 	    self.fbi_heavy_swat.has_alarm_pager = false
@@ -17771,6 +17771,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 	self.autumn.damage.bullet_damage_mul = 0.4
+	
+	self.tank_black.move_speed = self.presets.move_speed.normal
 	
 	self.tank_skull.dt_suppress = {
 		range = 500

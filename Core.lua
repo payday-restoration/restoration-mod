@@ -924,7 +924,7 @@ function restoration:mission_script_add()
 				action_duration_max = 0,
 				align_rotation = opts.align_rotation or false,
 				pose = opts.pose or "none",
-				forced = true,
+				forced = opts.forced or false,
 				base_chance = 1,
 				interaction_voice = "none",
 				SO_access = opts.SO_access or "512", -- default to sniper
@@ -1170,6 +1170,26 @@ function restoration:mission_script_add()
 				rotation = rot,
 				enabled = true,
 				event = opts.event or "complete"
+			},
+		}
+	end
+	
+	function restoration:objecteditor(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementUnitSequence",
+			module = "CoreElementUnitSequence",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				trigger_list = opts.trigger_list or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true
 			},
 		}
 	end

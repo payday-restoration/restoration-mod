@@ -12,5 +12,9 @@ return {
 	--Pro Job PONR 
 	[101196] = {
 		ponr = ponr_value
-	}
+	},
+	--End PONR once everyone is inside the escape zone
+	[100027] = {
+        ponr_end = true
+    }
 }

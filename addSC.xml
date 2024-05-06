@@ -1032,8 +1032,10 @@
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
 	<effect				path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
+	<effect				path="effects/particles/character/glowing_eyes_red_summers" load="false"/>
+	<effect				path="effects/particles/character/glowing_eyes_orange_summers" load="false"/>
+	<effect				path="effects/particles/character/glowing_eyes_yellow_summers" load="false"/>
 	
-
 	<!--Summers Flamethrower-->
 	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
 	<model				path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
@@ -1226,15 +1228,15 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
 	
 	<!--LPF and Medic (over-)healing Effects-->
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan" load="true"/>	
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan"/>	
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple"/>
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	
@@ -1453,6 +1455,9 @@
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc_thq" load="false"/>
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc" load="false"/>
 	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc_thq" load="false"/>
+
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc_thq" load="false"/>
 
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>

@@ -19,5 +19,9 @@ return {
 	[101397] = {
 		ponr = ponr_value,
 		hunt = hunt_projob
-	}
+	},
+	--End PONR once everyone is inside the escape zone
+	[100357] = {
+        ponr_end = true
+    }
 }

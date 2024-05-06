@@ -1328,16 +1328,16 @@ local grips = {
 				stats = {
 					value = 9,
 					total_ammo_mod = -49,
-					spread = -10,
+					spread = -5,
 					damage = 30
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.05,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.66667,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -1346,17 +1346,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -68,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.66667,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -1365,17 +1365,17 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -52,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.75,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}	
 			},
@@ -1383,17 +1383,17 @@ local grips = {
 			a_custom_heavy_override = {
 				stats = {
 					value = 9,
-					spread = -10,
+					spread = -5,
 					total_ammo_mod = -38,
 					damage = 60
 				},
 				custom_stats = {
 					hip_mult = 1.5,
-					falloff_start_mult = 1.1,
+					falloff_start_mult = 1.15,
 					falloff_end_mult = 0.7,
 					damage_min_mult = 0.79999,
-					ammo_pickup_max_mul = 0.7,
-					ammo_pickup_min_mul = 0.7,
+					ammo_pickup_max_mul = 0.75,
+					ammo_pickup_min_mul = 0.75,
 					rays = 6
 				}	
 			},
@@ -2045,7 +2045,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.01, 2.5, -3.395)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_shak12 = {
-				translation = Vector3(0, -1.5, 1.585),
+				translation = Vector3(0, -10, 1.585),
 				rotation = Rotation(0, -0.5, 0)
 			}
 		
@@ -2461,6 +2461,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_owd_m1a = {
 				translation = Vector3(-0.008, 7.5, -3.86),
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_madsen_lar = {
+				translation = Vector3(-0.001, -6.2, -2.639),
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
@@ -19613,13 +19616,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		armor_piercing_override = 1,
 		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
-		can_shoot_through_enemy_unlim = true,
 		ignore_rof_mult_anims = true,
-		rof_mult = 0.666666,
-		ads_speed_mult = 1.20,
-		hip_mult = 1.666666,
+		rof_mult = 0.6,
+		ads_speed_mult = 1.277777,
+		hip_mult = 2,
+		alt_ammo_pickup_min_mul = 0.875,
+		alt_ammo_pickup_max_mul = 0.875,
+		ammo_pickup_min_mul = 0.875,
+		ammo_pickup_max_mul = 0.875,
 		sms = 0.7,
-		alt_desc = "bm_shak12_sc_oden_desc"
+		alt_desc = "bm_shak12_sc_oden_desc",
+		srm = {
+			-0.75,
+			{1, 2.5},
+			1
+		}
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
 	
@@ -19713,6 +19724,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_bmg) do
 		if weap and weap.translation then
 			weap.translation = weap.translation + Vector3(0,10,0)
+		end
+	end
+
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-22,-0.01)
+		end
+	end
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac_reddot = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(0,-32,-0.01)
+		end
+	end
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_specter)
+	for i, weap in pairs(self.parts.wpn_fps_ass_shak12_o_carry_dummy.override.wpn_fps_upg_o_northtac_alt.stance_mod) do
+		if weap and weap.translation then
+			weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
+			weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 		end
 	end
 	
@@ -25433,6 +25464,41 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		--Madsen LAR
+		if self.parts.wpn_fps_ass_madsen_lar_flash_hider then
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.stats = { value = 1 }
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_madsen_lar_flash_hider.perks = nil
+
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.stats = {
+				value = 2,
+				concealment = 2,
+				reload = 4,
+				extra_ammo = -10
+			}
+			self.parts.wpn_fps_ass_madsen_lar_magazine_10.custom_stats = { ads_speed_mult = 0.95 }
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.supported = true
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.stats = {
+				value = 5,
+				concealment = -2,
+				reload = -3,
+				extra_ammo = 10
+			}
+			self.parts.wpn_fps_ass_madsen_lar_magazine_30.custom_stats = { ads_speed_mult = 1.05 }
+		end
+
+		--TTI 1911's
+		if self.parts.wpn_fps_pis_tti_viper_compensator then
+			self.parts.wpn_fps_pis_tti_viper_compensator.stats = { value = 0 }
+			self.parts.wpn_fps_pis_tti_viper_compensator.custom_stats = nil
+
+			self.parts.wpn_fps_pis_tti_viper_sight_car.desc_id = "bm_wp_upg_o_angled_aim_desc"
+			self.parts.wpn_fps_pis_tti_2011_sight_car.desc_id = "bm_wp_upg_o_angled_aim_desc"
+			self.parts.wpn_fps_pis_tti_2011_sight_car_high.desc_id = "bm_wp_upg_o_angled_laser_desc"
+		end
 
 		--RJC9000 and PlayBONK's PD3 QBZ-191
 		if self.parts.wpn_fps_ass_pd3_qbz191_irons_folded then

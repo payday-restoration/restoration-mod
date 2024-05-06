@@ -92,38 +92,38 @@ local damage_set = {
 }
 local crew_wep_preset = {
 	smg = {
-		mag_capacity = 50,
-		fire_rate = 0.072727272,
+		mag_capacity = 45,
+		fire_rate = 0.0727272,
 		damage = 4.0
 	},
 	assault_rifle = {
 		mag_capacity = 25,
-		fire_rate = 0.12,
+		fire_rate = 0.1090909,
 		damage = 6.0
 	},
 	lmg = {
 		mag_capacity = 100,
-		fire_rate = 0.08,
+		fire_rate = 0.0833333,
 		damage = 3.6
 	},
 	shotgun_auto = {
-		mag_capacity = 10,
-		fire_rate = 0.3333333,
-		damage = 7.5
+		mag_capacity = 8,
+		fire_rate = 0.6,
+		damage = 7.0
 	},
 	shotgun_pump = {
-		mag_capacity = 7,
-		fire_rate = 1,
-		damage = 15.0
+		mag_capacity = 5,
+		fire_rate = 1.2,
+		damage = 13.0
 	},
 	sniper_auto = {
-		mag_capacity = 5,
-		fire_rate = 1.5,
+		mag_capacity = 8,
+		fire_rate = 2.5,
 		damage = 9.0
 	},
 	sniper_bolt = {	
 		mag_capacity = 5,
-		fire_rate = 4,
+		fire_rate = 5,
 		damage = 12.0
 	}
 }
@@ -10803,7 +10803,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.victor.upgrade_blocks = nil
 						self.victor.has_description = true
-						self.victor.desc_id = "bm_ap_weapon_sc_desc"
+						self.victor.desc_id = "bm_ap_weapon_semi_sc_desc"
 						self.victor.CLIP_AMMO_MAX = 20
 						self.victor.AMMO_MAX = 36
 						self.victor.FIRE_MODE = "single"
@@ -13993,7 +13993,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.sgs.has_description = true
 					self.sgs.lock_slide = true
 					self.sgs.sounds.magazine_empty = "wp_rifle_slide_lock"
-					self.sgs.desc_id = "bm_ap_weapon_sc_desc"
+					self.sgs.desc_id = "bm_ap_weapon_semi_sc_desc"
 					self.sgs.CLIP_AMMO_MAX = 20
 					self.sgs.tactical_reload = 1
 					self.sgs.AMMO_MAX = 60
@@ -16200,8 +16200,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.svd.lock_slide = true
 				self.svd.upgrade_blocks = nil
-				--self.svd.has_description = true
-				--self.svd.desc_id = "bm_siltstone_sc_desc"
+				self.svd.has_description = true
+				self.svd.desc_id = "bm_siltstone_sc_desc"
 				self.svd.tactical_reload = 1
 				self.svd.CLIP_AMMO_MAX = 10
 				self.svd.AMMO_MAX = 40
@@ -16912,6 +16912,138 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 			
+			if self.madsen_lar then
+				self.madsen_lar.categories = { 
+					"assault_rifle",
+					"dmr_h",
+				}
+				self.madsen_lar.recategorize = {"dmr_ar"}
+				self.madsen_lar.nato = true
+				self.madsen_lar.damage_type = "sniper"
+				self.madsen_lar.desc_id = "bm_vss_sc_desc"
+				self.madsen_lar.has_description = true
+				self.madsen_lar.AMMO_MAX = 60
+				self.madsen_lar.CLIP_AMMO_MAX = 20
+				self.madsen_lar.tactical_reload = 1
+				self.madsen_lar.FIRE_MODE = "single"
+				self.madsen_lar.fire_mode_data = {}
+				self.madsen_lar.fire_mode_data.fire_rate = 0.1
+				self.madsen_lar.CAN_TOGGLE_FIREMODE = true
+				self.madsen_lar.kick = self.stat_info.kick_tables.moderate_kick
+				self.madsen_lar.supported = true
+				self.madsen_lar.ads_speed = 0.380
+				self.madsen_lar.damage_falloff = {
+					start_dist = 2800,
+					end_dist = 5000,
+					min_mult = 0.4
+				}
+				self.madsen_lar.stats = {
+					damage = 60,
+					spread = 85,
+					recoil = 65,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 20,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.madsen_lar.stats_modifiers = nil
+				self.madsen_lar.can_shoot_through_enemy = true
+				self.madsen_lar.can_shoot_through_wall = false
+				self.madsen_lar.armor_piercing_chance = 0.5
+				self.madsen_lar.timers.reload_exit_not_empty = 0.7
+				self.madsen_lar.timers.reload_exit_empty = 0.6
+				self.madsen_lar.panic_suppression_chance = 0.05
+			end
+
+			if self.tti_2011 then --TTI 1911's
+				self.tti_2011.recategorize = { "light_pis" }		
+				self.tti_2011.damage_type = "light_pistol"
+				self.tti_2011.kick = self.stat_info.kick_tables.vertical_kick
+				self.tti_2011.lock_slide = true
+				self.tti_2011.tactical_reload = 1
+				self.tti_2011.FIRE_MODE = "single"
+				self.tti_2011.CAN_TOGGLE_FIREMODE = false
+				self.tti_2011.BURST_FIRE = false
+				self.tti_2011.fire_mode_data.fire_rate = 0.1
+				self.tti_2011.CLIP_AMMO_MAX = 17
+				self.tti_2011.AMMO_MAX = 75
+				self.tti_2011.supported = true
+				self.tti_2011.ads_speed = 0.140
+				self.tti_2011.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3800,
+					min_mult = 0.25
+				}
+				self.tti_2011.stats = {
+					damage = 24,
+					spread = 66,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 31,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tti_2011.reload_speed_multiplier = 1.25
+				self.tti_2011.keep_ammo = 1
+				self.tti_2011.timers.reload_exit_not_empty = 1
+				self.tti_2011.timers.reload_exit_empty = 0.75
+				self.tti_2011.stats_modifiers = nil
+				self.tti_2011.panic_suppression_chance = 0.05
+			end
+
+			if self.tti_viper then
+				self.tti_viper.recategorize = { "light_pis" }		
+				self.tti_viper.damage_type = "light_pistol"
+				self.tti_viper.kick = self.stat_info.kick_tables.vertical_kick
+				self.tti_viper.lock_slide = true
+				self.tti_viper.tactical_reload = 1
+				self.tti_viper.FIRE_MODE = "single"
+				self.tti_viper.CAN_TOGGLE_FIREMODE = false
+				self.tti_viper.BURST_FIRE = false
+				self.tti_viper.fire_mode_data.fire_rate = 0.1
+				self.tti_viper.CLIP_AMMO_MAX = 21
+				self.tti_viper.AMMO_MAX = 75
+				self.tti_viper.supported = true
+				self.tti_viper.ads_speed = 0.160
+				self.tti_viper.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3600,
+					min_mult = 0.25
+				}
+				self.tti_viper.stats = {
+					damage = 24,
+					spread = 65,
+					recoil = 85,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tti_viper.reload_speed_multiplier = 1
+				self.tti_viper.keep_ammo = 1
+				self.tti_viper.timers.reload_not_empty = 1.75
+				self.tti_viper.timers.reload_exit_not_empty = 0.5
+				self.tti_viper.timers.reload_empty = 2.1
+				self.tti_viper.timers.reload_exit_empty = 0.4
+				self.tti_viper.stats_modifiers = nil
+				self.tti_viper.panic_suppression_chance = 0.05
+			end
+
 			if self.papa320 then --RJC9000 and PlayBONK's MW2019 P320
 				self.papa320.recategorize = { "light_pis" }		
 				self.papa320.damage_type = "light_pistol"
@@ -18516,7 +18648,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.is_bullpup = true
 				self.zip22.BURST_FIRE = false
 				self.zip22.CAN_TOGGLE_FIREMODE = false
-				self.zip22.fire_mode_data.fire_rate = 0.2727272
+				self.zip22.fire_mode_data.fire_rate = 0.3
 				self.zip22.jam_time = 2
 				self.zip22.CLIP_AMMO_MAX = 10
 				self.zip22.AMMO_MAX = 210
@@ -18532,7 +18664,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zip22.stats = {
 					damage = 5,
 					spread = 101,
-					recoil = 23,
+					recoil = 21,
 					zoom = 1,
 					concealment = 32,
 					suppression = 8,
@@ -18601,7 +18733,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.sms = sms_preset.lmg_120
 				self.madsen_mg.weapon_movement_penalty = sms_preset.lmg_120
 			end
-
 		
 		--[[     TANGERINE'S MODS     ]]--
 			if self.ar47 then --Tangerine's AR-47
@@ -19201,7 +19332,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.iuhTTIPlus.lock_slide = true
 			self.iuhTTIPlus.has_description = true
-			self.iuhTTIPlus.desc_id = "bm_ap_weapon_sc_desc"
+			self.iuhTTIPlus.desc_id = "bm_ap_weapon_semi_sc_desc"
 			self.iuhTTIPlus.upgrade_blocks = nil
 			self.iuhTTIPlus.tactical_reload = 1
 			self.iuhTTIPlus.CLIP_AMMO_MAX = 20
@@ -19250,7 +19381,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.rsass.lock_slide = true
 			self.rsass.has_description = true
-			self.rsass.desc_id = "bm_ap_weapon_sc_desc"
+			self.rsass.desc_id = "bm_ap_weapon_semi_sc_desc"
 			self.rsass.upgrade_blocks = nil
 			self.rsass.tactical_reload = 1
 			self.rsass.CLIP_AMMO_MAX = 20
@@ -20280,8 +20411,9 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 180, pickup = {0.037, 0.018}},
 		{damage = 240, pickup = {0.033, 0.015}},
 		{damage = 360, pickup = {0.027, 0.012}},
+		{damage = 480, pickup = {0.024, 0.011}},
 		{damage = 600, pickup = {0.021, 0.010}}, --Light GLs
-		{damage = 800, pickup = {0.016, 0.008}}, --Heavy GLs
+		{damage = 720, pickup = {0.016, 0.008}}, --Heavy GLs
 		{damage = 900, pickup = {0.012, 0.005}}, --Rocket Launchers
 		{damage = 1200, pickup = {0.008, 0.002}}
 	}

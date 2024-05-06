@@ -23,6 +23,7 @@ local enabled_chance_shields = math.random() < diff_scaling_1
 local enabled_chance_cloakers = math.random() < diff_scaling_1
 local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 local enabled_chance_dozers_ambush_escape = math.random() < 0.5
+local surprise_tank_chance = math.random() < 0.5
 
 	if difficulty == 7 then
 		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
@@ -177,6 +178,12 @@ local optsDozerAmbush = {
 	},
     enabled = true
 }
+local optsDozerAmbush_2 = {
+    enemy = tank_black,
+	participate_to_group_ai = true,
+	spawn_action = "e_sp_clk_3_5m_dwn_vent",
+    enabled = (death_sentence and surprise_tank_chance)
+}
 local optsShield_Defend_1 = {
     enemy = shield,
     on_executed = { { id = 400040, delay = 0 } },
@@ -253,14 +260,27 @@ local disable_RegularPONR = {
 		400047
 	}
 }
+local disable_thetank = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400055
+	}
+}
+local enable_thetank = {
+	enabled = true,
+	elements = { 
+		400055
+	}
+}
 local optsRegularPONR = {
 	time_normal = 420,
 	time_hard = 420,
 	time_overkill = 420,
 	time_overkill_145 = 420,
-	time_easy_wish = 600,
-    time_overkill_290 = 600,
-	time_sm_wish = 600,
+	time_easy_wish = 540,
+    time_overkill_290 = 540,
+	time_sm_wish = 540,
 	enabled = pro_job
 }
 local optsOverdrillPONR = {
@@ -293,6 +313,12 @@ local optsBlackTankAmbushFilter = {
 	on_executed = { 
 		{ id = 400035, delay = 1, delay_rand = 1 },
 		{ id = 400036, delay = 1, delay_rand = 1 }
+	}
+}
+local spawn_the_surprise_tank = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400054, delay = 0 }
 	}
 }
 
@@ -659,6 +685,28 @@ return {
 			Vector3(-2657, -3569, -90),
             Rotation(90, -0, -0),
             optsBlackTankAmbushFilter
+        ),
+		restoration:gen_dummy(
+            400054,
+            "surprise_tank",
+            Vector3(4657, -1100, -735.693),
+            Rotation(-180, 0, -0),
+            optsDozerAmbush_2
+        ),
+		restoration:gen_missionscript(
+            400055,
+            "spawn_the_surprise_tank",
+            spawn_the_surprise_tank
+        ),
+		restoration:gen_toggleelement(
+            400056,
+            "enable_the_surpise_tank",
+            enable_thetank
+        ),
+		restoration:gen_toggleelement(
+            400057,
+            "disable_the_surpise_tank",
+            disable_thetank
         )
     }
 }

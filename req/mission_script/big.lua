@@ -1,16 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local swat_normal = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"
-local swat_hard = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
-local swat_overkill = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
 local blow_the_wall_chance = 50
-
-	--So it will not crash
-	if difficulty == 7 then
-	   swat_overkill = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"  
-	elseif difficulty == 8 then
-	   swat_overkill = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-	end
 	
 	--High PONR Timer to work with ponr player scaling
 	if difficulty <= 5 then
@@ -33,7 +23,7 @@ local blow_the_wall_chance = 50
 		timelock_fast = 210
 	end
 
---IF we're in Pro Job, then do this shit below
+--IF we're in Pro Job, then do the stuff below
 if pro_job then
 	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and Titan Snipers on Overkill above
 		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"

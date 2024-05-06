@@ -93,9 +93,11 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			end	
 
 			if data.flashlight ~= nil then
-				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, function ()
+				local function set_flashlights()
 					managers.game_play_central:set_flashlights_on(data.flashlight)
-				end)
+				end
+				Hooks:PostHook(element, "on_executed", "sh_on_executed_flashlight_" .. element_id, set_flashlights)
+				Hooks:PostHook(element, "client_on_executed", "sh_client_on_executed_flashlight_" .. element_id, set_flashlights)
 			end
 			
 			if data.on_executed then

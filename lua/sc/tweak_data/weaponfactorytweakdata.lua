@@ -23963,7 +23963,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = 1
 				}
 				self.parts.wpn_fps_upg_cs5_harris_bipod.custom_stats = { ads_speed_mult = 1.05 }
-				
+
 				self.parts.wpn_fps_upg_cs5_stock_tube.supported = true
 				self.parts.wpn_fps_upg_cs5_stock_tube.stats = deep_clone(stocks.remove_fixed_stats)
 				self.parts.wpn_fps_upg_cs5_stock_tube.custom_stats = deep_clone(stocks.remove_fixed_stats)
@@ -39012,70 +39012,74 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "BigGlockModInit", function(self)
 end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
-	self.parts.wpn_fps_shot_stf12_sights.stance_mod = {
-		wpn_fps_shot_stf12 = {
-			translation = Vector3(0, -7, -1.1),
-			rotation = Rotation(0, 0.5, 0)
+	if self.parts.wpn_fps_shot_stf12_sights then
+		self.parts.wpn_fps_shot_stf12_sights.stance_mod = {
+			wpn_fps_shot_stf12 = {
+				translation = Vector3(0, -7, -1.1),
+				rotation = Rotation(0, 0.5, 0)
+			}
 		}
-	}
+	end
 end)
 Hooks:PostHook( WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
-	self.parts.wpn_fps_shot_fpsix_o_std.stance_mod = {
-		wpn_fps_shot_fpsix = {
-			translation = Vector3(0, -6, -0.1),
-			rotation = Rotation(0, 0.5, 0)
+	if self.parts.wpn_fps_shot_fpsix_o_std then
+		self.parts.wpn_fps_shot_fpsix_o_std.stance_mod = {
+			wpn_fps_shot_fpsix = {
+				translation = Vector3(0, -6, -0.1),
+				rotation = Rotation(0, 0.5, 0)
+			}
+		}	
+		self.parts.wpn_fps_shot_fpsix_o_sgcqb.stance_mod = {
+			wpn_fps_shot_fpsix = {
+				translation = Vector3(0, -6, -1.15),
+				rotation = Rotation(0, 1.6, 0)
+			}
 		}
-	}	
-	self.parts.wpn_fps_shot_fpsix_o_sgcqb.stance_mod = {
-		wpn_fps_shot_fpsix = {
-			translation = Vector3(0, -6, -1.15),
-			rotation = Rotation(0, 1.6, 0)
+		self.wpn_fps_shot_fpsix.adds = {
+			wpn_fps_upg_o_specter = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_aimpoint = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_docter = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_eotech = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_t1micro = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_cmore = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_cs = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_reflex = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_acog = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_eotech_xps = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_rx01 = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_rx30 = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			},
+			wpn_fps_upg_o_spot = {
+				"wpn_fps_shot_fpsix_o_front_folded"
+			}
 		}
-	}
-	self.wpn_fps_shot_fpsix.adds = {
-		wpn_fps_upg_o_specter = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_aimpoint = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_docter = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_eotech = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_t1micro = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_cmore = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_cs = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_reflex = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_acog = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_eotech_xps = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_rx01 = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_rx30 = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		},
-		wpn_fps_upg_o_spot = {
-			"wpn_fps_shot_fpsix_o_front_folded"
-		}
-	}
+	end
 end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)

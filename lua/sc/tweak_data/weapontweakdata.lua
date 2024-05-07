@@ -9021,7 +9021,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						damage = 20,
 						spread = 11,
 						recoil = 85,
-						spread_moving = 25,
+						spread_moving = 5,
 						zoom = 1,
 						concealment = 16,
 						suppression = 8,
@@ -17038,6 +17038,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stf12.timers.shotgun_reload_exit_empty = 0.7
 			end
 
+			if self.vp70 then
+				self.vp70.recategorize = {"light_pis"}
+				self.vp70.damage_type = "pistol"
+				self.vp70.lock_slide = true
+				self.vp70.fire_mode_data.fire_rate = 0.1
+				self.vp70.no_auto_anims = true
+				self.vp70.tactical_reload = 1
+				self.vp70.FIRE_MODE = "single"
+				self.vp70.CAN_TOGGLE_FIREMODE = false
+				self.vp70.CLIP_AMMO_MAX = 18
+				self.vp70.AMMO_MAX = 75
+				self.vp70.kick = self.stat_info.kick_tables.even_recoil
+				self.vp70.supported = true
+				self.vp70.ads_speed = 0.180
+				self.vp70.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 4000,
+					min_mult = 0.25
+				}
+				self.vp70.stats = {
+					damage = 24,
+					spread = 61,
+					recoil = 81,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.vp70.stats_modifiers = nil
+				self.vp70.sounds.fire_single = "g17_fire"
+				self.vp70.sounds.fire_single2 = "mp5_fire_single"
+				self.vp70.sounds.enter_steelsight = "pistol_steel_sight_enter"
+				self.vp70.sounds.leave_steelsight = "pistol_steel_sight_exit"
+				self.vp70.timers = deep_clone(self.ppk.timers)
+			end
+
 		--[[     RJC9000'S MODS     ]]--
 			
 			if self.madsen_lar then
@@ -19230,6 +19271,61 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type99inc.timers.reload_exit_empty = 0.8
 				self.type99inc.timers.reload_exit_not_empty = 0.8
 				self.type99inc.shake.bypass_global_shake = true
+			end
+
+		--Serious Sam Pack
+			if self.xm214a then
+				self.xm214a.categories = {
+					"minigun",
+					"smg"
+				}
+				self.xm214a.recategorize = { "miniguns" }
+				self.xm214a.damage_type = "machine_gun"
+				self.xm214a.has_description = false
+				self.xm214a.CLIP_AMMO_MAX = 500
+				self.xm214a.AMMO_MAX = 1000
+				self.xm214a.FIRE_MODE = "auto"
+				self.xm214a.fire_mode_data = {}
+				self.xm214a.fire_mode_data.fire_rate = 0.05
+				self.xm214a.CAN_TOGGLE_FIREMODE = false
+				self.xm214a.kick = self.stat_info.kick_tables.moderate_kick
+				self.xm214a.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.xm214a.panic_suppression_chance = 0.05
+				self.xm214a.supported = true
+				self.xm214a.ads_speed = 0.400
+				self.xm214a.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.xm214a.stats = {
+					damage = 12,
+					spread = 21,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 17,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}		
+				self.xm214a.stats_modifiers = nil
+				self.xm214a.ads_spool = true
+				self.xm214a.sprintout_anim_time = 0.8 
+				self.xm214a.spin_up_anims = true
+				self.xm214a.spin_up_t = 0.25
+				self.xm214a.spin_down_t = 0.5
+				self.xm214a.always_hipfire = true
+				self.xm214a.always_play_anims = true
+				self.xm214a.no_reload_anims = true
+				self.xm214a.sounds.no_fix = true
+				self.xm214a.sounds.spin_start = "swatturret_spin_start"
+				self.xm214a.sounds.spin_end = "swatturret_spin_stop"
+				self.xm214a.sms = sms_preset.lmg_48
+				self.xm214a.weapon_movement_penalty = sms_preset.lmg_48
 			end
 
 		if self.sidewinder then --Cpone's Titanfall 2 Sidewinder SMR

@@ -1048,6 +1048,14 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_DELAY = 0.08
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
+			if stats.vp70_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3
+				self:weapon_tweak_data().BURST_DELAY = 0.08
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3.6666
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.4
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.08
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+			end	
 			if stats.s7_flexfire then
 				self:weapon_tweak_data().can_shoot_through_titan_shield = false
 			end	

@@ -3907,6 +3907,9 @@ function PlayerStandard:_start_action_reload(t)
 		local ignore_fullreload = anims_tweak.ignore_fullreload
 		local ignore_nonemptyreload = anims_tweak.ignore_nonemptyreload
 		local clip_empty = weapon:clip_empty()
+		if weapon.no_reload_anims then
+			self._ext_camera:play_redirect(self:get_animation("idle"))	
+		end
 		if ((ignore_fullreload and clip_empty) or (ignore_nonemptyreload and not clip_empty)) then
 			weapon:tweak_data_anim_stop("fire")
 	

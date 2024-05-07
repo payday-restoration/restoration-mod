@@ -31863,6 +31863,57 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ MIRA'S MODS ]]
 
+		if self.parts.wpn_fps_pis_vp70_ac_9x21imi then
+			self.parts.wpn_fps_pis_vp70_ac_9x21imi.pcs = nil
+			self.parts.wpn_fps_pis_vp70_ac_9x21imi.stats = { value = 0 }
+			self.parts.wpn_fps_pis_vp70_ac_9x21imi.custom_stats = nil
+			self.parts.wpn_fps_pis_vp70_autofire.pcs = nil
+			self.parts.wpn_fps_pis_vp70_autofire.stats = { value = 0 }
+			self.parts.wpn_fps_pis_vp70_autofire.custom_stats = nil
+			self.parts.wpn_fps_pis_vp70_so_source.pcs = nil
+			self.parts.wpn_fps_pis_vp70_so_source.stats = { value = 0 }
+			self.parts.wpn_fps_pis_vp70_so_source.custom_stats = nil
+
+			self.parts.wpn_fps_pis_vp70_grip_ergo.supported = true
+			self.parts.wpn_fps_pis_vp70_grip_ergo.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_vp70_grip_ergo.custom_stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_vp70_body_early.supported = true
+			self.parts.wpn_fps_pis_vp70_body_early.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_vp70_body_early.custom_stats = deep_clone(grips.quickdraw_1)
+
+			self.parts.wpn_fps_pis_vp70_stock_dummy.supported = true
+			self.parts.wpn_fps_pis_vp70_stock_dummy.stats = { value = 0 }
+			self.parts.wpn_fps_pis_vp70_stock_dummy.custom_stats = nil
+			self.parts.wpn_fps_pis_vp70_stock_dummy.perks = nil
+			self.parts.wpn_fps_pis_vp70_stock_standard.supported = true
+			self.parts.wpn_fps_pis_vp70_stock_standard.stats = deep_clone(stocks.add_fixed_stats)
+			self.parts.wpn_fps_pis_vp70_stock_standard.custom_stats = deep_clone(stocks.add_fixed_stats)
+			self.parts.wpn_fps_pis_vp70_stock_standard.custom_stats.vp70_burst = true
+			self.parts.wpn_fps_pis_vp70_stock_standard.custom_stats.add_burst = true
+			self.parts.wpn_fps_pis_vp70_stp_standard.supported = true
+			self.parts.wpn_fps_pis_vp70_stp_standard.stats = {
+				recoil = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_pis_vp70_stp_standard.custom_stats = nil
+
+			self.parts.wpn_fps_pis_vp70_m_speed_std.supported = true
+			self.parts.wpn_fps_pis_vp70_m_speed_std.stats = { 
+				value = 4, 
+				spread = -1,
+				concealment = -1,
+				reload = 2
+			}
+			self.parts.wpn_fps_pis_vp70_m_ext.supported = true
+			self.parts.wpn_fps_pis_vp70_m_ext.stats = { 
+				value = 6, 
+				extra_ammo = 12,
+				concealment = -2,
+				reload = -3
+			}
+			self.parts.wpn_fps_pis_vp70_m_ext.custom_stats = { ads_speed_mult = 1.05 }
+
+		end
 		if self.parts.wpn_fps_shot_fpsix_shellrack then
 			self.parts.wpn_fps_shot_fpsix_o_sgcqb.supported = true
 			self.parts.wpn_fps_shot_fpsix_o_sgcqb.stats = { value = 0 }
@@ -31921,6 +31972,196 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_shot_stf12_stock_none.supported = true
 			self.parts.wpn_fps_shot_stf12_stock_none.stats = deep_clone(stocks.remove_fixed_stats)
 			self.parts.wpn_fps_shot_stf12_stock_none.custom_stats = deep_clone(stocks.remove_fixed_stats)
+		end
+
+		if self.parts.wpn_fps_pis_coltds_b_std then --Mira's Colt Detective
+			self.parts.wpn_fps_pis_coltds_b_ext.supported = true
+			self.parts.wpn_fps_pis_coltds_b_ext.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_pis_coltds_b_ext.custom_stats = deep_clone(barrels.long_b1_stats)
+
+			self.parts.wpn_fps_pis_coltds_b_police.supported = true
+			self.parts.wpn_fps_pis_coltds_b_police.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_coltds_b_police.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_pis_coltds_b_modern.supported = true
+			self.parts.wpn_fps_pis_coltds_b_modern.stats = {
+				value = 1,
+				recoil = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_pis_coltds_b_modern.custom_stats = nil
+
+			self.parts.wpn_fps_pis_coltds_o_marksman.supported = true
+			self.parts.wpn_fps_pis_coltds_o_marksman.stats = {
+				value = 1
+			}
+		end
+
+		if self.parts.wpn_fps_snp_troglodyte_rec then --Leon and Mira's AWM-F
+			self.parts.wpn_fps_snp_troglodyte_b_long.supported = true
+			self.parts.wpn_fps_snp_troglodyte_b_long.stats = {}
+
+			self.parts.wpn_fps_snp_troglodyte_thing.keep_damage = true
+			self.parts.wpn_fps_snp_troglodyte_thing.supported = true
+			self.parts.wpn_fps_snp_troglodyte_thing.forbids = {
+				"wpn_fps_snp_troglodyte_b_long",
+				"wpn_fps_snp_troglodyte_ns_supp"
+			}
+			self.parts.wpn_fps_snp_troglodyte_thing.stats = {
+				damage = 150,
+				recoil = -18,
+				concealment = -18,
+				total_ammo_mod = -172,
+				extra_ammo = -4,
+				reload = 7
+			}
+			self.parts.wpn_fps_snp_troglodyte_thing.custom_stats = {
+				alt_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
+				muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect",
+				trail_effect = "effects/particles/weapons/sniper_trail_sc",
+				fire2 = "sniper_npc1c_1shot",
+				stop_fire2 = "hailstorm_shotgun_fire_single",
+				can_shoot_through_titan_shield = true,
+				ads_speed_mult = 1.45,
+				falloff_start_mult = 0.5,
+				falloff_end_mult = 0.5,
+				ammo_pickup_min_mul = 0.1,
+				ammo_pickup_max_mul = 0.1,
+				alt_ammo_pickup_min_mul = 0.1,
+				alt_ammo_pickup_max_mul = 0.1,
+				hip_mult = 10,
+				rof_mult = 0.76923,
+				block_b_storm = true,
+				sms = 0.5,
+				no_chamber = true
+			}
+
+			self.parts.wpn_fps_snp_troglodyte_s_full.supported = true
+			self.parts.wpn_fps_snp_troglodyte_s_full.stats = deep_clone(stocks.add_fixed_stats)
+			self.parts.wpn_fps_snp_troglodyte_s_full.custom_stats = deep_clone(stocks.add_fixed_stats)
+		end
+
+		if self.parts.wpn_fps_smg_tommy_snd_doi then --Mira's Thompson
+			self.parts.wpn_fps_smg_tommy_o_std.stance_mod = {
+				wpn_fps_smg_tommy = {
+					translation = Vector3(0.05, 3, -0.02),
+					rotation = Rotation(0.03, 0, 0)
+				}
+			}
+
+			self.parts.wpn_fps_smg_tommy_ns_cutts.supported = true
+			self.parts.wpn_fps_smg_tommy_ns_cutts.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+
+			self.parts.wpn_fps_smg_tommy_b_m1928a1.supported = true
+			self.parts.wpn_fps_smg_tommy_b_m1928a1.stats = {
+				value = 2,
+				recoil = 2,
+				concealment = -1
+			}
+
+			self.parts.wpn_fps_smg_tommy_body_m1928a1.supported = true
+			self.parts.wpn_fps_smg_tommy_body_m1928a1.stats = {
+				value = 10,
+				recoil = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_tommy_body_m1928a1.custom_stats = nil
+
+			self.parts.wpn_fps_smg_tommy_s_nostock.supported = true
+			self.parts.wpn_fps_smg_tommy_s_nostock.stats = deep_clone(stocks.remove_fixed_stats)
+			self.parts.wpn_fps_smg_tommy_s_nostock.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+			self.parts.wpn_fps_smg_tommy_or_simple.supported = true
+			self.parts.wpn_fps_smg_tommy_or_simple.stats = { value = 0 }
+			self.parts.wpn_fps_smg_tommy_or_simple.custom_stats = nil
+
+			self.parts.wpn_fps_smg_tommy_m_30rnd.supported = true
+			self.parts.wpn_fps_smg_tommy_m_30rnd.stats = { 
+				value = 4, 
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -2
+			}
+			self.parts.wpn_fps_smg_tommy_m_30rnd.custom_stats = { 
+				ads_speed_mult = 1.025
+			}
+
+			self.parts.wpn_fps_smg_tommy_m_quick.supported = true
+			self.parts.wpn_fps_smg_tommy_m_quick.stats = { 
+				value = 1, 
+				spread = -1,
+				concealment = -1,
+				reload = 2
+			}
+
+			self.parts.wpn_fps_smg_tommy_m_30cal.supported = true
+			self.parts.wpn_fps_smg_tommy_m_30cal.stats = { 
+				value = 10, 
+				recoil = -6,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_fps_smg_tommy_m_30cal.custom_stats = {
+				ads_speed_mult = 1.025,
+				falloff_start_mult = 1.375,
+				falloff_end_mult = 1,
+				damage_min_mult = 1.66667,
+				hip_mult = 2
+			}
+		end
+
+		if self.parts.wpn_fps_smg_smg45_dh_std then --Mira's LWRC/Striker 45
+			self.parts.wpn_fps_smg_smg45_b_longer.supported = true
+			self.parts.wpn_fps_smg_smg45_b_longer.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_smg_smg45_b_longer.stats.value = 0
+			self.parts.wpn_fps_smg_smg45_b_longer.custom_stats = deep_clone(barrels.long_b3_stats)
+
+			self.parts.wpn_fps_smg_smg45_b_long.supported = true
+			self.parts.wpn_fps_smg_smg45_b_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_smg_smg45_b_long.stats.value = 0
+			self.parts.wpn_fps_smg_smg45_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_smg_smg45_g_poly.supported = true
+			self.parts.wpn_fps_smg_smg45_g_poly.stats = {
+				value = 0,
+				spread = 1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_smg45_g_poly.custom_stats = nil
+
+			self.parts.wpn_fps_smg_smg45_g_rubb.pcs = nil --crashes the game, disabling
+			self.parts.wpn_fps_smg_smg45_g_rubb.supported = true
+			self.parts.wpn_fps_smg_smg45_g_rubb.stats = {
+				value = 0,
+				recoil = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_smg_smg45_g_rubb.custom_stats = nil
+
+			self.parts.wpn_fps_smg_smg45_g_skel.supported = true
+			self.parts.wpn_fps_smg_smg45_g_skel.stats = {
+				value = 0,
+				reload = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_smg_smg45_g_skel.custom_stats = {
+				ads_speed_mult = 0.975
+			}
+
+			self.parts.wpn_fps_smg_smg45_s_civi.supported = true
+			self.parts.wpn_fps_smg_smg45_s_civi.stats = deep_clone(stocks.folder_to_thumb_stats)
+			self.parts.wpn_fps_smg_smg45_s_civi.stats.value = 0
+			self.parts.wpn_fps_smg_smg45_s_civi.custom_stats = deep_clone(stocks.folder_to_thumb_stats)
+
+			self.parts.wpn_fps_smg_smg45_s_fixed.supported = true
+			self.parts.wpn_fps_smg_smg45_s_fixed.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+			self.parts.wpn_fps_smg_smg45_s_fixed.stats.value = 0
+			self.parts.wpn_fps_smg_smg45_s_fixed.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+
+			self.parts.wpn_fps_smg_schakal_s_folded.supported = true
+			self.parts.wpn_fps_smg_schakal_s_folded.stats = deep_clone(stocks.folder_to_nocheeks_stats)
+			self.parts.wpn_fps_smg_schakal_s_folded.stats.value = 0
+			self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
 		end
 
 	--[[ CARL'S MODS ]]
@@ -33412,29 +33653,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
-	if self.parts.wpn_fps_pis_coltds_b_std then --Mira's Colt Detective
-		self.parts.wpn_fps_pis_coltds_b_ext.supported = true
-		self.parts.wpn_fps_pis_coltds_b_ext.stats = deep_clone(barrels.long_b1_stats)
-		self.parts.wpn_fps_pis_coltds_b_ext.custom_stats = deep_clone(barrels.long_b1_stats)
-
-		self.parts.wpn_fps_pis_coltds_b_police.supported = true
-		self.parts.wpn_fps_pis_coltds_b_police.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_pis_coltds_b_police.custom_stats = deep_clone(barrels.long_b2_stats)
-
-		self.parts.wpn_fps_pis_coltds_b_modern.supported = true
-		self.parts.wpn_fps_pis_coltds_b_modern.stats = {
-			value = 1,
-			recoil = 2,
-			concealment = -1
-		}
-		self.parts.wpn_fps_pis_coltds_b_modern.custom_stats = nil
-
-		self.parts.wpn_fps_pis_coltds_o_marksman.supported = true
-		self.parts.wpn_fps_pis_coltds_o_marksman.stats = {
-			value = 1
-		}
-	end
-
 	--Predator Pack
 	if self.parts.wpn_fps_upg_fl_pinty_combo_tribeam then
 		self.parts.wpn_fps_upg_fl_pinty_combo_tribeam.supported = true
@@ -34569,51 +34787,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_hmcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_hmcar.uses_parts)
 	end
 
-	if self.parts.wpn_fps_snp_troglodyte_rec then --Leon and Mira's AWM-F
-
-		self.parts.wpn_fps_snp_troglodyte_b_long.supported = true
-		self.parts.wpn_fps_snp_troglodyte_b_long.stats = {}
-
-		self.parts.wpn_fps_snp_troglodyte_thing.keep_damage = true
-		self.parts.wpn_fps_snp_troglodyte_thing.supported = true
-		self.parts.wpn_fps_snp_troglodyte_thing.forbids = {
-			"wpn_fps_snp_troglodyte_b_long",
-			"wpn_fps_snp_troglodyte_ns_supp"
-		}
-		self.parts.wpn_fps_snp_troglodyte_thing.stats = {
-			damage = 150,
-			recoil = -18,
-			concealment = -18,
-			total_ammo_mod = -172,
-			extra_ammo = -4,
-			reload = 7
-		}
-		self.parts.wpn_fps_snp_troglodyte_thing.custom_stats = {
-			alt_desc = "bm_heavy_ap_no_mult_weapon_sc_desc",
-			muzzleflash = "effects/payday2/particles/weapons/hailstorm_volley_effect",
-			trail_effect = "effects/particles/weapons/sniper_trail_sc",
-			fire2 = "sniper_npc1c_1shot",
-			stop_fire2 = "hailstorm_shotgun_fire_single",
-			can_shoot_through_titan_shield = true,
-			ads_speed_mult = 1.45,
-			falloff_start_mult = 0.5,
-			falloff_end_mult = 0.5,
-			ammo_pickup_min_mul = 0.1,
-			ammo_pickup_max_mul = 0.1,
-			alt_ammo_pickup_min_mul = 0.1,
-			alt_ammo_pickup_max_mul = 0.1,
-			hip_mult = 10,
-			rof_mult = 0.76923,
-			block_b_storm = true,
-			sms = 0.5,
-			no_chamber = true
-		}
-
-		self.parts.wpn_fps_snp_troglodyte_s_full.supported = true
-		self.parts.wpn_fps_snp_troglodyte_s_full.stats = deep_clone(stocks.add_fixed_stats)
-		self.parts.wpn_fps_snp_troglodyte_s_full.custom_stats = deep_clone(stocks.add_fixed_stats)
-	end
-
 	if self.parts.wpn_fps_upg_jackhammer_i_autofire then --Pawcio's Jackhammer
 
 		self.parts.wpn_fps_upg_jackhammer_i_autofire.supported = true
@@ -35495,131 +35668,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 
 	if self.parts.wpn_fps_upg_o_ak_taikrail then --FrenchyAU's Functional Taktika AK Dust Cover
-	end
-
-	if self.parts.wpn_fps_smg_tommy_snd_doi then --Mira's Thompson
-
-		self.parts.wpn_fps_smg_tommy_o_std.stance_mod = {
-			wpn_fps_smg_tommy = {
-				translation = Vector3(0.05, 3, -0.02),
-				rotation = Rotation(0.03, 0, 0)
-			}
-		}
-
-		self.parts.wpn_fps_smg_tommy_ns_cutts.supported = true
-		self.parts.wpn_fps_smg_tommy_ns_cutts.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
-
-		self.parts.wpn_fps_smg_tommy_b_m1928a1.supported = true
-		self.parts.wpn_fps_smg_tommy_b_m1928a1.stats = {
-			value = 2,
-			recoil = 2,
-			concealment = -1
-		}
-
-		self.parts.wpn_fps_smg_tommy_body_m1928a1.supported = true
-		self.parts.wpn_fps_smg_tommy_body_m1928a1.stats = {
-			value = 10,
-			recoil = 2,
-			concealment = -1
-		}
-		self.parts.wpn_fps_smg_tommy_body_m1928a1.custom_stats = nil
-
-		self.parts.wpn_fps_smg_tommy_s_nostock.supported = true
-		self.parts.wpn_fps_smg_tommy_s_nostock.stats = deep_clone(stocks.remove_fixed_stats)
-		self.parts.wpn_fps_smg_tommy_s_nostock.custom_stats = deep_clone(stocks.remove_fixed_stats)
-
-		self.parts.wpn_fps_smg_tommy_or_simple.supported = true
-		self.parts.wpn_fps_smg_tommy_or_simple.stats = { value = 0 }
-		self.parts.wpn_fps_smg_tommy_or_simple.custom_stats = nil
-
-		self.parts.wpn_fps_smg_tommy_m_30rnd.supported = true
-		self.parts.wpn_fps_smg_tommy_m_30rnd.stats = { 
-			value = 4, 
-			extra_ammo = 10,
-			concealment = -1,
-			reload = -2
-		}
-		self.parts.wpn_fps_smg_tommy_m_30rnd.custom_stats = { 
-			ads_speed_mult = 1.025
-		}
-
-		self.parts.wpn_fps_smg_tommy_m_quick.supported = true
-		self.parts.wpn_fps_smg_tommy_m_quick.stats = { 
-			value = 1, 
-			spread = -1,
-			concealment = -1,
-			reload = 2
-		}
-
-		self.parts.wpn_fps_smg_tommy_m_30cal.supported = true
-		self.parts.wpn_fps_smg_tommy_m_30cal.stats = { 
-			value = 10, 
-			recoil = -6,
-			concealment = -1,
-			reload = -1
-		}
-		self.parts.wpn_fps_smg_tommy_m_30cal.custom_stats = {
-			ads_speed_mult = 1.025,
-			falloff_start_mult = 1.375,
-			falloff_end_mult = 1,
-			damage_min_mult = 1.66667,
-			hip_mult = 2
-		}
-	end
-
-	if self.parts.wpn_fps_smg_smg45_dh_std then --Mira's LWRC/Striker 45
-
-		self.parts.wpn_fps_smg_smg45_b_longer.supported = true
-		self.parts.wpn_fps_smg_smg45_b_longer.stats = deep_clone(barrels.long_b3_stats)
-		self.parts.wpn_fps_smg_smg45_b_longer.stats.value = 0
-		self.parts.wpn_fps_smg_smg45_b_longer.custom_stats = deep_clone(barrels.long_b3_stats)
-
-		self.parts.wpn_fps_smg_smg45_b_long.supported = true
-		self.parts.wpn_fps_smg_smg45_b_long.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_smg_smg45_b_long.stats.value = 0
-		self.parts.wpn_fps_smg_smg45_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
-
-		self.parts.wpn_fps_smg_smg45_g_poly.supported = true
-		self.parts.wpn_fps_smg_smg45_g_poly.stats = {
-			value = 0,
-			spread = 1,
-			concealment = -1
-		}
-		self.parts.wpn_fps_smg_smg45_g_poly.custom_stats = nil
-
-		self.parts.wpn_fps_smg_smg45_g_rubb.pcs = nil --crashes the game, disabling
-		self.parts.wpn_fps_smg_smg45_g_rubb.supported = true
-		self.parts.wpn_fps_smg_smg45_g_rubb.stats = {
-			value = 0,
-			recoil = 2,
-			concealment = -1
-		}
-		self.parts.wpn_fps_smg_smg45_g_rubb.custom_stats = nil
-
-		self.parts.wpn_fps_smg_smg45_g_skel.supported = true
-		self.parts.wpn_fps_smg_smg45_g_skel.stats = {
-			value = 0,
-			reload = -2,
-			concealment = 1
-		}
-		self.parts.wpn_fps_smg_smg45_g_skel.custom_stats = {
-			ads_speed_mult = 0.975
-		}
-
-		self.parts.wpn_fps_smg_smg45_s_civi.supported = true
-		self.parts.wpn_fps_smg_smg45_s_civi.stats = deep_clone(stocks.folder_to_thumb_stats)
-		self.parts.wpn_fps_smg_smg45_s_civi.stats.value = 0
-		self.parts.wpn_fps_smg_smg45_s_civi.custom_stats = deep_clone(stocks.folder_to_thumb_stats)
-
-		self.parts.wpn_fps_smg_smg45_s_fixed.supported = true
-		self.parts.wpn_fps_smg_smg45_s_fixed.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
-		self.parts.wpn_fps_smg_smg45_s_fixed.stats.value = 0
-		self.parts.wpn_fps_smg_smg45_s_fixed.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
-
-		self.parts.wpn_fps_smg_schakal_s_folded.supported = true
-		self.parts.wpn_fps_smg_schakal_s_folded.stats = deep_clone(stocks.folder_to_nocheeks_stats)
-		self.parts.wpn_fps_smg_schakal_s_folded.stats.value = 0
-		self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
 	end
 
 	if self.parts.wpn_fps_sho_abzats_body_standard then

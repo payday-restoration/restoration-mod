@@ -16920,7 +16920,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_lar.recategorize = {"dmr_ar"}
 				self.madsen_lar.nato = true
 				self.madsen_lar.damage_type = "sniper"
-				self.madsen_lar.desc_id = "bm_vss_sc_desc"
 				self.madsen_lar.has_description = true
 				self.madsen_lar.AMMO_MAX = 60
 				self.madsen_lar.CLIP_AMMO_MAX = 20

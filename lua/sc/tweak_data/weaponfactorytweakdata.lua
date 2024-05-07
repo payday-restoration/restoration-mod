@@ -2384,6 +2384,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_wmtx = {
 				translation = Vector3(-0.015, 9.2, -0.385)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_fpsix = {
+				translation = Vector3(0.005, 6.8, -3.32)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_stf12 = {
+				translation = Vector3(0.005, 4.8, -3.32)
+			}
 
 		
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
@@ -23925,6 +23931,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 		--WEAPONS
+			if self.parts.wpn_fps_upg_cs5_barrel_suppressed then
+				self.parts.wpn_fps_upg_cs5_barrel_suppressed.supported = true
+				self.parts.wpn_fps_upg_cs5_barrel_suppressed.stats = {
+					value = 2,
+					alert_size = -1,
+					suppression = 12
+				}
+				self.parts.wpn_fps_upg_cs5_barrel_suppressed.custom_stats = nil
+
+				self.parts.wpn_fps_upg_cs5_barrel_long.supported = true
+				self.parts.wpn_fps_upg_cs5_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_cs5_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_cs5_barrel_short.supported = true
+				self.parts.wpn_fps_upg_cs5_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_upg_cs5_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+				self.parts.wpn_fps_upg_cs5_grip_tact.supported = true
+				self.parts.wpn_fps_upg_cs5_grip_tact.stats = {
+					value = 2,
+					recoil = -2,
+					spread = 1
+				}
+				self.parts.wpn_fps_upg_cs5_grip_tact.custom_stats = nil
+
+				self.parts.wpn_fps_upg_cs5_harris_bipod.supported = true
+				self.parts.wpn_fps_upg_cs5_harris_bipod.stats = {
+					value = 2,
+					concealment = -2,
+					recoil = 2,
+					spread = 1
+				}
+				self.parts.wpn_fps_upg_cs5_harris_bipod.custom_stats = { ads_speed_mult = 1.05 }
+				
+				self.parts.wpn_fps_upg_cs5_stock_tube.supported = true
+				self.parts.wpn_fps_upg_cs5_stock_tube.stats = deep_clone(stocks.remove_fixed_stats)
+				self.parts.wpn_fps_upg_cs5_stock_tube.custom_stats = deep_clone(stocks.remove_fixed_stats)
+			end
 
 			if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23	
 				self.parts.wpn_fps_upg_ks23_ammo_slug.supported = true	
@@ -31820,6 +31863,66 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ MIRA'S MODS ]]
 
+		if self.parts.wpn_fps_shot_fpsix_shellrack then
+			self.parts.wpn_fps_shot_fpsix_o_sgcqb.supported = true
+			self.parts.wpn_fps_shot_fpsix_o_sgcqb.stats = { value = 0 }
+			self.parts.wpn_fps_shot_fpsix_o_sgcqb.custom_stats = nil
+
+			self.parts.wpn_fps_shot_fpsix_shellrack.supported = true
+			self.parts.wpn_fps_shot_fpsix_shellrack.stats = {
+				value = 2,
+				spread = -1,
+				concealment = -1,
+				reload = 3
+			}
+
+			self.parts.wpn_fps_shot_fpsix_magext.supported = true
+			self.parts.wpn_fps_shot_fpsix_magext.stats = {
+				value = 7,
+				concealment = -1,
+				extra_ammo = 2
+			}
+			self.parts.wpn_fps_shot_fpsix_magext.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+	
+			self.parts.wpn_fps_shot_fpsix_stock_folded.supported = true
+			self.parts.wpn_fps_shot_fpsix_stock_folded.stats = deep_clone(stocks.fixed_to_folded_stats)
+			self.parts.wpn_fps_shot_fpsix_stock_folded.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
+			
+			self.parts.wpn_fps_shot_fpsix_stock_nought.supported = true
+			self.parts.wpn_fps_shot_fpsix_stock_nought.stats = deep_clone(stocks.remove_fixed_stats)
+			self.parts.wpn_fps_shot_fpsix_stock_nought.custom_stats = deep_clone(stocks.remove_fixed_stats)
+		end
+
+		if self.parts.wpn_fps_shot_stf12_b_short then
+			self.parts.wpn_fps_shot_stf12_b_short.supported = true
+			self.parts.wpn_fps_shot_stf12_b_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_shot_stf12_b_short.stats.extra_ammo = -1
+			self.parts.wpn_fps_shot_stf12_b_short.stats.concealment = 2
+			self.parts.wpn_fps_shot_stf12_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_shot_stf12_b_short.custom_stats.ads_speed_mult = 0.95
+
+			self.parts.wpn_fps_shot_stf12_b_long.supported = true
+			self.parts.wpn_fps_shot_stf12_b_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_shot_stf12_b_long.stats.extra_ammo = 2
+			self.parts.wpn_fps_shot_stf12_b_long.stats.concealment = -3
+			self.parts.wpn_fps_shot_stf12_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_shot_stf12_b_long.custom_stats.ads_speed_mult = 1.075
+
+			self.parts.wpn_fps_shot_stf12_choke.supported = true
+			self.parts.wpn_fps_shot_stf12_choke.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_shot_stf12_choke.custom_stats = deep_clone(barrels.long_b1_stats)
+	
+			self.parts.wpn_fps_shot_stf12_stock_folded.supported = true
+			self.parts.wpn_fps_shot_stf12_stock_folded.stats = deep_clone(stocks.fixed_to_folded_stats)
+			self.parts.wpn_fps_shot_stf12_stock_folded.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
+			
+			self.parts.wpn_fps_shot_stf12_stock_none.supported = true
+			self.parts.wpn_fps_shot_stf12_stock_none.stats = deep_clone(stocks.remove_fixed_stats)
+			self.parts.wpn_fps_shot_stf12_stock_none.custom_stats = deep_clone(stocks.remove_fixed_stats)
+		end
+
 	--[[ CARL'S MODS ]]
 
 		if self.wpn_fps_ass_tilt then -- Grocery's AN 92
@@ -38906,6 +39009,73 @@ end )
 Hooks:PostHook(WeaponFactoryTweakData, "init", "stoner63a_lmg_mod_init", function(self)
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "BigGlockModInit", function(self)
+end)
+
+Hooks:PostHook( WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
+	self.parts.wpn_fps_shot_stf12_sights.stance_mod = {
+		wpn_fps_shot_stf12 = {
+			translation = Vector3(0, -7, -1.1),
+			rotation = Rotation(0, 0.5, 0)
+		}
+	}
+end)
+Hooks:PostHook( WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
+	self.parts.wpn_fps_shot_fpsix_o_std.stance_mod = {
+		wpn_fps_shot_fpsix = {
+			translation = Vector3(0, -6, -0.1),
+			rotation = Rotation(0, 0.5, 0)
+		}
+	}	
+	self.parts.wpn_fps_shot_fpsix_o_sgcqb.stance_mod = {
+		wpn_fps_shot_fpsix = {
+			translation = Vector3(0, -6, -1.15),
+			rotation = Rotation(0, 1.6, 0)
+		}
+	}
+	self.wpn_fps_shot_fpsix.adds = {
+		wpn_fps_upg_o_specter = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_aimpoint = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_aimpoint_2 = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_docter = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_eotech = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_t1micro = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_cmore = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_cs = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_reflex = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_acog = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_eotech_xps = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_rx01 = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_rx30 = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		},
+		wpn_fps_upg_o_spot = {
+			"wpn_fps_shot_fpsix_o_front_folded"
+		}
+	}
 end)
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)

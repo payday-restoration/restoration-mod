@@ -717,7 +717,7 @@ PlayerStandard._primary_action_funcs = {
 			local state = nil
 			local zippy = weap_base and weap_base:weapon_tweak_data().zippy
 			local jammed = zippy and weap_base._jammed
-
+			local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 			if not zippy or jammed then
 				if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
 					if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then

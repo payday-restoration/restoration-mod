@@ -15969,7 +15969,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1a1.timers.reload_exit_not_empty = 0.59
 				self.m1a1.timers.reload_exit_empty = 0.72
 			end
-
 						
 			if self.moss464spx then --Pawcio's SPX Centerfire
 				self.moss464spx.recategorize = {"light_snp"}
@@ -16448,6 +16447,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.amr2.panic_suppression_chance = 0.05
 			end
 
+			if self.cs5 then
+				self.cs5.categories = {
+					"snp"
+				}
+				self.cs5.recategorize = { "light_snp" }
+				self.cs5.damage_type = "sniper"
+				self.cs5.always_play_anims = true
+				self.cs5.has_description = false
+				self.cs5.upgrade_blocks = nil
+				self.cs5.CLIP_AMMO_MAX = 10
+				self.cs5.AMMO_MAX = 40
+				self.cs5.fire_mode_data.fire_rate = 1.09090909
+				self.cs5.fire_rate_multiplier = 1.09
+				self.cs5.kick = self.stat_info.kick_tables.vertical_kick
+				self.cs5.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
+				self.cs5.supported = true
+				self.cs5.ads_speed = 0.360
+				self.cs5.damage_falloff = {
+					start_dist = 3000,
+					end_dist = 6500,
+					min_mult = 0.5
+				}
+				self.cs5.stats = {
+					damage = 90,
+					spread = 91,
+					recoil = 51,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 23,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.cs5.stats_modifiers = nil
+				self.cs5.panic_suppression_chance = 0.05
+				self.cs5.reload_speed_multiplier = 0.95
+				self.cs5.armor_piercing_chance = 1
+				self.cs5.timers = deep_clone(self.msr.timers)
+			end
+
 			if self.hx25 then --Pawcio's KF2 HX-25
 				self.hx25.categories = {
 					"grenade_launcher",
@@ -16908,6 +16950,92 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cssdeagle.reload_speed_multiplier = 0.909091
 				self.cssdeagle.animations.ignore_nonemptyreload = true
 				self.cssdeagle.panic_suppression_chance = 0.05
+			end	
+
+			if self.fpsix then --HK FABARM FP6
+				self.fpsix.recategorize = { "heavy_shot" }
+				self.fpsix.damage_type = "shotgun_heavy"
+				self.fpsix.damage_type_single_ray = "sniper"
+				self.fpsix.has_description = true
+				self.fpsix.tactical_reload = 1
+				self.fpsix.rays = 9
+				self.fpsix.CLIP_AMMO_MAX = 5
+				self.fpsix.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.fpsix.kick = self.stat_info.kick_tables.left_kick
+				self.fpsix.fire_mode_data.fire_rate = 0.5
+				self.fpsix.fire_rate_multiplier = 0.8583333
+				self.fpsix.AMMO_MAX = 40
+				self.fpsix.supported = true
+				self.fpsix.ads_speed = 0.300
+				self.fpsix.damage_falloff = {
+					start_dist = 500,
+					end_dist = 2200,
+					min_mult = 0.1333
+				}
+				self.fpsix.stats = {
+					damage = 180,
+					spread = 59,
+					recoil = 49,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.fpsix.stats_modifiers = {damage = 1}
+				self.fpsix.panic_suppression_chance = 0.05
+				self.fpsix.timers.shotgun_reload_enter = 0.3
+				self.fpsix.timers.shotgun_reload_first_shell_offset = 0.33
+				self.fpsix.timers.shotgun_reload_shell = 0.5666666666666667
+				self.fpsix.timers.shotgun_reload_exit_not_empty = 0.3
+				self.fpsix.timers.shotgun_reload_exit_empty = 0.7
+			end
+
+			if self.stf12 then --FABARM STF-12
+				self.stf12.recategorize = { "heavy_shot" }
+				self.stf12.damage_type = "shotgun_heavy"
+				self.stf12.damage_type_single_ray = "sniper"
+				self.stf12.has_description = false
+				self.stf12.tactical_reload = 1
+				self.stf12.rays = 9
+				self.stf12.CLIP_AMMO_MAX = 5
+				self.stf12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.stf12.kick = self.stat_info.kick_tables.left_kick
+				self.stf12.fire_mode_data.fire_rate = 0.5
+				self.stf12.fire_rate_multiplier = 0.95
+				self.stf12.AMMO_MAX = 40
+				self.stf12.supported = true
+				self.stf12.ads_speed = 0.280
+				self.stf12.damage_falloff = {
+					start_dist = 400,
+					end_dist = 2000,
+					min_mult = 0.1333
+				}
+				self.stf12.stats = {
+					damage = 180,
+					spread = 53,
+					recoil = 55,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.stf12.stats_modifiers = {damage = 1}
+				self.stf12.panic_suppression_chance = 0.05
+				self.stf12.timers.shotgun_reload_enter = 0.3
+				self.stf12.timers.shotgun_reload_first_shell_offset = 0.33
+				self.stf12.timers.shotgun_reload_shell = 0.5666666666666667
+				self.stf12.timers.shotgun_reload_exit_not_empty = 0.3
+				self.stf12.timers.shotgun_reload_exit_empty = 0.7
 			end
 
 		--[[     RJC9000'S MODS     ]]--

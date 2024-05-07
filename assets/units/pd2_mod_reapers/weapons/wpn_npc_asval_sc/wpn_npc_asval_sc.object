@@ -1,6 +1,6 @@
 <dynamic_object>
 	<diesel materials="units/pd2_mod_reapers/weapons/wpn_npc_asval_sc/wpn_npc_asval_sc" orientation_object="rp_wpn_npc_asval" />
-	  <sequence_manager file="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
+	  <sequence_manager file="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
   <bodies>
 	<body name="body" enabled="false" template="debris" pushed_by_mover="false">
 		<object name="rp_wpn_npc_asval" />
@@ -9,6 +9,7 @@
   </bodies>
   <effects>
   	<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+	<effect_spawner name="glint_scope" object="a_effect_flashlight" effect="effects/particles/weapons/sniper_glint_marshal" enabled="false" assign_parent="true"/>
   </effects>
   <graphics>
 	<graphic_group name="lod_group" enabled="true" culling_object="co_weapon">

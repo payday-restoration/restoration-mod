@@ -1,0 +1,30 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_npc_scar_murkywater" materials="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" />
+	<sequence_manager file="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr"/>
+
+    <bodies>
+        <body name="body" enabled="false" template="debris" pushed_by_mover="false">
+            <object name="rp_wpn_npc_scar_murkywater" />
+            <object name="c_box" collision_type="box" mass="2.5" />
+        </body>
+    </bodies>
+	
+	<effects>
+		<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+		<effect_spawner name="glint_scope" object="a_effect_flashlight" effect="effects/particles/weapons/sniper_glint_marshal" enabled="false" assign_parent="true"/>
+	</effects>
+	
+	<graphics>
+		<graphic_group name="lod_group" enabled="true" culling_object="co_weapon">
+		<lod_object name="weapon_lod">
+			<object  name="g_body_lod0" enabled="true" max_draw_lod="0" max_distance="1000" />
+			<object lod="1" name="g_body_lod1" enabled="true" />
+		</lod_object>
+		</graphic_group>
+	</graphics>
+	
+	 <lights>
+		<light multiplier="identity" far_range="1000" name="a_effect_flashlight" enabled="false" type="spot|specular" />
+	</lights> 
+	
+</dynamic_object>

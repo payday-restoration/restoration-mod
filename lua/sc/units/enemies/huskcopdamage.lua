@@ -57,7 +57,7 @@ function HuskCopDamage:die(attack_data)
 	
 	if self._char_tweak.reduce_summers_dr_on_death then
 		managers.groupai:state():_reduce_summers_dr(0.15)
-		self._unit:base():find_summers()
+		self._unit:base():find_summers(true)
 	end		
 end
 

@@ -1616,6 +1616,7 @@
 	<model				path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+	<object	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 
 	<!--NPC Sniper Overrides-->
 	<!--swat-->

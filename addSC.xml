@@ -104,6 +104,10 @@
 	<mission			path="levels/instances/unique/sub_sewer_grate/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/sub_sewer_sidespawn/world/world" force="true" unload="true"/>
 	
+	<!-- Biker Heist Day 1 -->
+	<mission			path="levels/instances/unique/born/born_armory/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/born/born_truck/world/world" force="true" unload="true"/>
+	
 	<!-- Border Crossing-->
 	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>

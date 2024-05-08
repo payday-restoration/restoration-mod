@@ -30583,30 +30583,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}		
 				
 				--Hammer 23 ammo stuff
-				self.wpn_fps_shot_bs23.override = {
-					wpn_fps_upg_a_explosive = {
-						supported = true,
-						stats = {
-							value = 10,
-							recoil = -25,
-							spread = 5,
-							concealment = -5,
-							spread_multi = {1, 1},	
-							total_ammo_mod = -102,
-							damage = 90
-						},
-						custom_stats = {
-							ads_speed_mult = 1.125,
-							hip_mult = 4,
-							ammo_pickup_max_mul = 0.7,
-							ammo_pickup_min_mul = 0.7,
-							ignore_statistic = true,
-							block_b_storm = true,
-							rays = 1,
-							bullet_class = "InstantExplosiveBulletBase"
-						}
-					}
-				}		
+				self.wpn_fps_shot_bs23.override = {}		
 			end
 		
 			--That one VMP update that added a tiny hat
@@ -31973,6 +31950,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_shot_fpsix_stock_nought.supported = true
 			self.parts.wpn_fps_shot_fpsix_stock_nought.stats = deep_clone(stocks.remove_fixed_stats)
 			self.parts.wpn_fps_shot_fpsix_stock_nought.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+			self.wpn_fps_shot_fpsix.override = self.wpn_fps_shot_fpsix.override or {}
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+			self.wpn_fps_shot_fpsix.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 		end
 
 		if self.parts.wpn_fps_shot_stf12_b_short then
@@ -32001,6 +31987,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_shot_stf12_stock_none.supported = true
 			self.parts.wpn_fps_shot_stf12_stock_none.stats = deep_clone(stocks.remove_fixed_stats)
 			self.parts.wpn_fps_shot_stf12_stock_none.custom_stats = deep_clone(stocks.remove_fixed_stats)
+
+			self.wpn_fps_shot_stf12.override = self.wpn_fps_shot_stf12.override or {}
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+			self.wpn_fps_shot_stf12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 		end
 
 		if self.parts.wpn_fps_pis_coltds_b_std then --Mira's Colt Detective
@@ -35932,6 +35927,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.parts.wpn_fps_shot_or12_45steel.stats = { value = 0, gadget_zoom = 1 }
 		self.parts.wpn_fps_shot_or12_45steel.custom_stats = nil
+			
+		self.wpn_fps_shot_or12.override = self.wpn_fps_shot_or12.override or {}
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
 	end
 
 	if self.parts.wpn_fps_shot_spas15_mag then
@@ -35964,6 +35968,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 		end
+		
+		self.wpn_fps_shot_spas15.override = self.wpn_fps_shot_spas15.override or {}
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
 	end
 
 

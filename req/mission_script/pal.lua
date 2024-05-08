@@ -1,5 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local cop_sg = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"
 
 	--PDTH's styled PONR, run faster
 	if difficulty <= 5 then
@@ -62,6 +63,12 @@ return {
 	[103034] = {
 		on_executed = {
             {id = 400015, delay = 0}
+		}
+	},
+	--Replace 2nd bronco cop with shotgun cop (to match with PDTH)
+	[100725] = {
+		values = {
+            enemy = cop_sg
 		}
 	},
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs

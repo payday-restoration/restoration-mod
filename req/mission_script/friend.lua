@@ -83,6 +83,19 @@ return {
             enemy = enforcer_guard
 		}
 	},
+	--Sosa gets two additional ninja like gangsters on DSPJ
+	[101101] = {
+		on_executed = {
+			{ id = 400001, delay = 0 },
+			{ id = 400002, delay = 0 }
+		}
+	},
+	--Change Sosa's line to more apporiate one (having chance to say the famous Scarface quote)
+	[101485] = {
+		values = {
+            sound_event = "Play_bos_fri_04"
+		}
+	},
 	--You're Sosa's men, not undercover cops
 	[100852] = { 
 		values = {

@@ -15100,12 +15100,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ppsh.stats_modifiers = nil
 				self.ppsh.panic_suppression_chance = 0.05
+				self.ppsh.spin_up_shoot = true
+				self.ppsh.spin_up_t = 0.06
+				self.ppsh.spin_down_t = 0.0000000001
 				self.ppsh.timers.reload_not_empty = 3.3
 				self.ppsh.timers.reload_exit_not_empty = 1.05
 				self.ppsh.timers.reload_empty = 3.78
 				self.ppsh.timers.reload_exit_empty = 1
-				self.ppsh.sounds.fire_single = "mac10_fire_single"
-				self.ppsh.sounds.fire_single2 = "ppsh41_fire"
+			end
+
+			if self.pps43 then --Pawcio's PPS-43
+				self.pps43.recategorize = {"heavy_smg"}
+				self.pps43.damage_type = "machine_gun"
+				self.pps43.lock_slide = true
+				self.pps43.warsaw = true
+				self.pps43.sounds.magazine_empty = "wp_pistol_slide_lock"
+				self.pps43.use_data.selection_index = 1
+				self.pps43.fire_mode_data.fire_rate = 0.1
+				self.pps43.CAN_TOGGLE_FIREMODE = true
+				self.pps43.CLIP_AMMO_MAX = 35
+				self.pps43.AMMO_MAX = 60
+				self.pps43.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.pps43.panic_suppression_chance = 0.05
+				self.pps43.supported = true
+				self.pps43.ads_speed = 0.300
+				self.pps43.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4200,
+					min_mult = 0.3333
+				}
+				self.pps43.stats = {
+					damage = 30,
+					spread = 57,
+					recoil = 71,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.pps43.stats_modifiers = nil
+				self.pps43.panic_suppression_chance = 0.05
+				self.pps43.timers = deep_clone(self.m45.timers)
 			end
 
 			if self.lewis then --Pawcio's Lewis Gun
@@ -20088,6 +20128,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.or12.timers.reload_exit_not_empty = 0.9
 			self.or12.timers.reload_empty = 3.21
 			self.or12.timers.reload_exit_empty = 1.0
+		end	
+
+		if self.spas15 then
+			self.spas15.recategorize = { "light_shot" }
+			self.spas15.categories = { "shotgun" }
+			self.spas15.damage_type = "shotgun"
+			self.spas15.damage_type_single_ray = "sniper"
+			self.spas15.CLIP_AMMO_MAX = 6
+			self.spas15.BURST_FIRE = false
+			self.spas15.fire_mode_data.fire_rate = 0.1818181818
+			self.spas15.AMMO_MAX = 60
+			self.spas15.kick = self.stat_info.kick_tables.vertical_kick
+			self.spas15.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+			self.spas15.FIRE_MODE = "single"				
+			self.spas15.CAN_TOGGLE_FIREMODE = false
+			self.spas15.rays = 9
+			self.spas15.supported = true
+			self.spas15.ads_speed = 0.360
+			self.spas15.damage_falloff = {
+				start_dist = 600,
+				end_dist = 3100,
+				min_mult = 0.15
+			}
+			self.spas15.stats = {
+				damage = 120,
+				spread = 31,
+				recoil = 43,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 25,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 1,
+				reload = 20
+			}
+			self.spas15.stats_modifiers = nil
+			self.spas15.panic_suppression_chance = 0.05
+			self.spas15.reload_speed_multiplier = 1.1
+			self.spas15.reload_not_empty_speed_multiplier = 1.1
+			self.spas15.timers = deep_clone(self.g36.timers)
 		end	
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

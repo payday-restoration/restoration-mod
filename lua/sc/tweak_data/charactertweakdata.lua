@@ -1189,7 +1189,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.65
-	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
+	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist	
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 	self.city_swat_titan.use_animation_on_fire_damage = true
@@ -4379,6 +4379,19 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.hurt_severities.elite_explosion_resist = deep_clone(presets.hurt_severities.elite)	
+	presets.hurt_severities.elite_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.elite_easy = deep_clone(presets.hurt_severities.light_hurt_fire_poison)
 	presets.hurt_severities.elite_easy.bullet = {
 		health_reference = "current",
@@ -4437,7 +4450,20 @@ function CharacterTweakData:_presets(tweak_data)
 				heavy = 0
 			}
 		}
-	}		
+	}
+	presets.hurt_severities.elite_easy_explosion_resist = deep_clone(presets.hurt_severities.elite_easy)	
+	presets.hurt_severities.elite_easy_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.only_explosion_hurts = {
 		bullet = {
 			health_reference = 1,
@@ -17572,17 +17598,17 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1600
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 800
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
 	self.spring.dt_suppress = {
@@ -17766,17 +17792,17 @@ function CharacterTweakData:_set_sm_wish()
 	}		
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1800
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 1000
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	
 	--Titandozers become immune to stunning

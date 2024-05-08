@@ -2376,6 +2376,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_lc10 = {
 				translation = Vector3(-0.005, 7, -0.455),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_pps43 = {
+				translation = Vector3(0, -3.8, -3.925)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.2),
@@ -2389,6 +2392,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_stf12 = {
 				translation = Vector3(0.005, 4.8, -3.32)
+			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_spas15 = {
+				translation = Vector3(-0.02, 2.7, -2.97)
 			}
 
 		
@@ -25119,6 +25125,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_ppsh_stock_k50m.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)		
 			end
 
+			if self.parts.wpn_fps_upg_pps43_mag_window then
+				self.parts.wpn_fps_smg_pps43_irons.forbids = {
+					"wpn_fps_smg_pps43_rail",
+					"wpn_fps_upg_o_xpsg33_magnifier",
+					"wpn_fps_upg_o_sig"
+				}
+				self.parts.wpn_fps_upg_pps43_mag_window.supported = true
+				self.parts.wpn_fps_upg_pps43_mag_window.stats = { value = 0 }
+				self.parts.wpn_fps_upg_pps43_mag_window.custom_stats = nil
+
+				self.parts.wpn_fps_upg_pps43_stock_folded.supported = true
+				self.parts.wpn_fps_upg_pps43_stock_folded.stats = deep_clone(stocks.fold_nocheeks_stats)
+				self.parts.wpn_fps_upg_pps43_stock_folded.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
+				
+				self.parts.wpn_fps_upg_pps43_barrel_nobrake.supported = true
+				self.parts.wpn_fps_upg_pps43_barrel_nobrake.stats = { value = 0, recoil = -2, concealment = 1 }
+				self.parts.wpn_fps_upg_pps43_barrel_nobrake.custom_stats = nil
+
+				self.parts.wpn_fps_upg_pps43_barrel_extension.supported = true
+				self.parts.wpn_fps_upg_pps43_barrel_extension.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_upg_pps43_barrel_extension.custom_stats = deep_clone(barrels.long_b1_stats)
+			end
+
 			if self.parts.wpn_fps_aug_body_aug_a1 then --Pawcio's AUG A1 Kit
 
 				self.parts.wpn_fps_aug_body_aug_a1.supported = true
@@ -35905,6 +35934,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_shot_or12_45steel.custom_stats = nil
 	end
 
+	if self.parts.wpn_fps_shot_spas15_mag then
+		self.parts.wpn_fps_shot_spas15_mag.stats = { value = 0 }
+		self.parts.wpn_fps_shot_spas15_mag.custom_stats = nil
+
+		self.parts.wpn_fps_shot_spas15_mag_drum.supported = true
+		self.parts.wpn_fps_shot_spas15_mag_drum.stats = { value = 5, reload = -2, concealment = -1, extra_ammo = 2 }
+		self.parts.wpn_fps_shot_spas15_mag_drum.custom_stats = {ads_speed_mult = 1.025}
+
+		self.parts.wpn_fps_shot_spas15_b_short.supported = true
+		self.parts.wpn_fps_shot_spas15_b_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_shot_spas15_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
+
+		self.parts.wpn_fps_shot_spas15_s_solid.supported = true
+		self.parts.wpn_fps_shot_spas15_s_solid.stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+		self.parts.wpn_fps_shot_spas15_s_solid.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
+		self.parts.wpn_fps_shot_spas15_s_flip.supported = true
+		self.parts.wpn_fps_shot_spas15_s_flip.stats = deep_clone(stocks.fold_folder_stats)
+		self.parts.wpn_fps_shot_spas15_s_flip.custom_stats = deep_clone(stocks.fold_folder_stats)
+
+		for i, part_id in pairs(self.wpn_fps_shot_spas15.uses_parts) do
+			attachment_list = {
+				"wpn_fps_upg_i_singlefire",
+				"wpn_fps_upg_i_autofire",
+			}
+			for _, remove_id in ipairs(attachment_list) do
+				if part_id == remove_id then
+					self.wpn_fps_shot_spas15.uses_parts[i] = "resmod_dummy"
+				end
+			end
+		end
+	end
+
+
 
 
 --Make more attachments universally available, cartridge mismatching be damned
@@ -39129,6 +39191,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
 		}
 	end
 end)
+
+Hooks:PostHook( WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
+	if self.parts.wpn_fps_shot_spas15_ironsight then
+		self.parts.wpn_fps_shot_spas15_ironsight.stance_mod = {
+			wpn_fps_shot_spas15 = {
+				translation = Vector3(0, 0, 0)
+			}
+		}
+		self.parts.wpn_fps_shot_spas15_s_flip.override = {
+			wpn_fps_shot_spas15_stock_adapter = { unit = "units/mods/weapons/wpn_fps_shot_spas15_pts/wpn_fps_shot_spas15_stock_adapter_flip" }
+		}
+
+		self.parts.wpn_fps_shot_spas15_mag.bullet_objects = {prefix = "g_bullet_", amount = 1}
+		self.parts.wpn_fps_shot_spas15_mag_drum.bullet_objects = {prefix = "g_bullet_", amount = 1}
+	end
+end )
+
 
 Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then

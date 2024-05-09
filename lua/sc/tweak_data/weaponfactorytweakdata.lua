@@ -19986,6 +19986,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			hailstorm = true,
 			falloff_start_mult = 0.2,
 			falloff_end_mult = 0.4,
+			ammo_pickup_max_mul = 2,
+			ammo_pickup_min_mul = 2,
+			alt_ammo_pickup_max_mul = 2,
+			alt_ammo_pickup_min_mul = 2,
 			rof_mult = 4.443333,
 			--disable_steelsight_recoil_anim = true
 		},
@@ -19994,7 +19998,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			reload = -4,
 			spread = -4,
 			recoil = -6,
-			extra_ammo = 10
+			extra_ammo = 10,
+			damage = -45,
+			total_ammo_mod = 201,
 		}
 	}
 
@@ -23668,11 +23674,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
+		keep_damage = true,
 		custom_stats = {
 			lock_burst = true,
 			hailstorm = true,
 			falloff_start_mult = 0.5,
 			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 2,
+			ammo_pickup_min_mul = 2,
+			alt_ammo_pickup_max_mul = 2,
+			alt_ammo_pickup_min_mul = 2,
 			rof_mult = 3.3325,
 			--disable_steelsight_recoil_anim = true
 		},
@@ -23680,7 +23691,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value = 10,
 			spread = -4,
 			recoil = -6,
-			extra_ammo = 12
+			extra_ammo = 12,
+			damage = -30,
+			total_ammo_mod = 201,
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -35968,7 +35981,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 		end
-		
+
 		self.wpn_fps_shot_spas15.override = self.wpn_fps_shot_spas15.override or {}
 		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
 		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)

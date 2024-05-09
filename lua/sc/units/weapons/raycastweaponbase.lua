@@ -714,6 +714,8 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
+	
+	self:_fire_sound()
 
 	if self:weapon_tweak_data().zippy and dmg_mul == 0 and not self._jammed then
 		local player_unit = managers.player:player_unit()
@@ -787,6 +789,19 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 	
 	return ray_res
+end
+
+function RaycastWeaponBase:start_shooting()
+	if self:gadget_overrides_weapon_functions() then
+		local gadget_func = self:gadget_function_override("start_shooting")
+		if gadget_func then
+			return gadget_func
+		end
+	end
+	--self:_fire_sound() --moved to RaycastWeaponBase:fire so is better lines up with the actual raycast firing function
+	self._next_fire_allowed = math.max(self._next_fire_allowed, self._unit:timer():time())
+	self._shooting = true
+	self._bullets_fired = 0
 end
 
 local orig_stop_shooting = RaycastWeaponBase.stop_shooting

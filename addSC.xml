@@ -789,6 +789,9 @@
 		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
 	</add>	
 	
+	<!-- Effect for converted enemies if enemy related outlines disabled via mutator -->
+	<effect				path="effects/particles/character/moneyburn" load="false"/>
+	
 	<!--Piggy Dozer-->
 	<object				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
 	<sequence_manager	path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>

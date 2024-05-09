@@ -1,0 +1,37 @@
+<effect force_synch="false">
+    <atom name="money" min_size="20" max_size="50" lifetime="-1" random_start_time="false" start_time="0" preroll="3" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="1" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="-0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomaspectsize size="20 10" min="1" max="1"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.5 0.25" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="2" teleport_cap="2" current_position="true" channel="world" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="-30 -20 -10" max="30 -20 -10" min_normal="0 0 -1" max_normal="0 0 -1"/>
+                <normal min_velocity="50" max_velocity="70"/>
+            </teleporter>
+            <rotationbyvelocity velocity="800"/>
+            <particleworldcollision radius="1" elasticity="0"/>
+            <constantacceleration relative="world" acceleration="20 0 20"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/dollar_bill_effect_edf" intensity="searchlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add" render_template="effect_money_menu" origo="0.5 1" per_particle_age="true" size_input="channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="0.5 0.25" uv_offset_input="channel">
+                <opacity_keys loop="false">
+                    <key t="0.0240963697433" v="70"/>
+                    <key t="1.0722892284393" v="150"/>
+                    <key t="1.9672975540161" v="255"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="0.0049999998882413"/>
+                    <key t="6" v="0.029999999329448"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

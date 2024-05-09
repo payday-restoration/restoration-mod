@@ -126,6 +126,17 @@ function CopBase:update_summers_dr_effect(summers_death, is_client)
 	end
 end
 
+function CopBase:converted_enemy_effect(state)
+	if state then
+		self._convert_effect = World:effect_manager():spawn({
+			effect = Idstring("effects/particles/character/moneyburn"),
+			parent = self._unit:get_object(Idstring("Spine2"))
+		})
+	else
+		World:effect_manager():fade_kill(self._convert_effect)
+	end
+end
+
 function CopBase:enable_lpf_buff(state)
 	if self._overheal_unit then
 		return

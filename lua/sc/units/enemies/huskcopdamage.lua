@@ -15,6 +15,7 @@ function HuskCopDamage:die(attack_data)
 	if self._unit:base() then
 		self._unit:base():disable_lpf_buff(true)
 		self._unit:base():disable_asu_laser(true)
+		self._unit:base():converted_enemy_effect(false)
 	end	
 
 	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then

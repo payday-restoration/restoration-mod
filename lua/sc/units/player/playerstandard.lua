@@ -784,8 +784,9 @@ PlayerStandard._primary_action_get_value = {
 			if self._single_shot_autofire then
 				return input.btn_primary_attack_state
 			end
-
-			return self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+			if not weap_base or weap_base and not weap_base:in_burst_mode() then
+				return self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+			end
 		end,
 		auto = function (self, t, input, params, weap_unit, weap_base)
 			return input.btn_primary_attack_state

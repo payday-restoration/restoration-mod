@@ -20000,7 +20000,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 			recoil = -6,
 			extra_ammo = 10,
 			damage = -45,
-			total_ammo_mod = 201,
+			total_ammo_mod = 201
 		}
 	}
 
@@ -23693,7 +23693,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -6,
 			extra_ammo = 12,
 			damage = -30,
-			total_ammo_mod = 201,
+			total_ammo_mod = 201
 		},
 		internal_part = true,
 		dlc = "sc"

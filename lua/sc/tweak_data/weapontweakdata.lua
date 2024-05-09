@@ -4651,14 +4651,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].damage_type_single_ray = "sniper"
 	end
 	
-	recat = { "tec9", "x_tec9", "shepheard", "x_shepheard", "vityaz", "x_vityaz", "coal", "x_coal", "pm9", "x_pm9", "baka", "x_baka", "new_mp5", "x_mp5", "sr2", "x_sr2", "mp7", "x_mp7", "mp9", "x_mp9", "scorpion", "x_scorpion", "p90", "x_p90", "cobray", "x_cobray","hailstorm" }
+	recat = { "tec9", "x_tec9", "shepheard", "x_shepheard", "coal", "x_coal", "pm9", "x_pm9", "baka", "x_baka", "new_mp5", "x_mp5", "sr2", "x_sr2", "mp7", "x_mp7", "mp9", "x_mp9", "scorpion", "x_scorpion", "p90", "x_p90", "cobray", "x_cobray","hailstorm" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_smg" }
 		self[ wep_id ].damage_type = "machine_gun"
 	end
 	self.hailstorm.recategorize = { "wpn_special" }
 	
-	recat = { "uzi", "x_uzi", "schakal", "x_schakal", "polymer", "x_polymer", "m1928", "x_m1928", "mac10", "x_mac10", "m45", "x_m45", "erma", "x_erma", "sterling", "x_sterling" }
+	recat = { "uzi", "x_uzi", "schakal", "x_schakal", "vityaz", "x_vityaz", "polymer", "x_polymer", "m1928", "x_m1928", "mac10", "x_mac10", "m45", "x_m45", "erma", "x_erma", "sterling", "x_sterling" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_smg" }
 		self[ wep_id ].damage_type = "machine_gun"
@@ -5565,7 +5565,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"pdw"
 						}
 						self.lemming.CLIP_AMMO_MAX = 20
-						self.lemming.AMMO_MAX = 72
+						self.lemming.AMMO_MAX = 90
 						self.lemming.fire_mode_data.fire_rate = 0.1
 						self.lemming.kick = self.stat_info.kick_tables.even_recoil
 						self.lemming.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
@@ -5574,7 +5574,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.lemming.can_shoot_through_shield = false
 						self.lemming.can_shoot_through_wall = false
 						self.lemming.armor_piercing_chance = 0.75
-						self.lemming.hs_mult = 1.666666
+						self.lemming.hs_mult = 1.33333
 						self.lemming.supported = true
 						self.lemming.ads_speed = 0.140
 						self.lemming.damage_falloff = {
@@ -7272,14 +7272,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.x_p90.has_description = true
 						self.x_p90.desc_id = "bm_p90_sc_desc"	
-						self.x_p90.AMMO_MAX = 144
+						self.x_p90.AMMO_MAX = 180
 						self.x_p90.fire_mode_data.fire_rate = 0.070588235
 						self.x_p90.armor_piercing_chance = 0.75
 						self.x_p90.can_shoot_through_enemy = false
 						self.x_p90.can_shoot_through_shield = false
 						self.x_p90.can_shoot_through_wall = false
 						self.x_p90.panic_suppression_chance = 0.05
-						self.x_p90.hs_mult = 1.666666
+						self.x_p90.hs_mult = 1.33333
 						self.x_p90.kick = self.stat_info.kick_tables.even_recoil
 						self.x_p90.supported = true
 						self.x_p90.ads_speed = 0.220
@@ -7461,7 +7461,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_sr2.desc_id = "bm_sr2_sc_desc"
 						self.x_sr2.fire_mode_data.fire_rate = 0.063157894
 						self.x_sr2.CLIP_AMMO_MAX = 60
-						self.x_sr2.AMMO_MAX = 144
+						self.x_sr2.AMMO_MAX = 180
 						self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
 						self.x_sr2.sounds.fire = "sr2_fire_single"
 						self.x_sr2.sounds.fire_single = "sr2_fire_single"
@@ -7493,7 +7493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_sr2.can_shoot_through_enemy = false
 						self.x_sr2.can_shoot_through_shield = false
 						self.x_sr2.can_shoot_through_wall = false
-						self.x_sr2.hs_mult = 1.5
+						self.x_sr2.hs_mult = 1.2
 						self.x_sr2.panic_suppression_chance = 0.05
 						self.x_sr2.reload_speed_multiplier = 0.75
 						self.x_sr2.timers.reload_not_empty = 2.1
@@ -7656,7 +7656,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.mp7.has_description = true
 						self.mp7.desc_id = "bm_mp7_sc_desc"	
-						self.mp7.AMMO_MAX = 72
+						self.mp7.AMMO_MAX = 90
 						self.mp7.fire_mode_data.fire_rate = 0.06315789473
 						self.mp7.CAN_TOGGLE_FIREMODE = true
 						self.mp7.auto = {}
@@ -7664,7 +7664,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mp7.can_shoot_through_enemy = false
 						self.mp7.can_shoot_through_shield = false
 						self.mp7.can_shoot_through_wall = false
-						self.mp7.hs_mult = 1.666666
+						self.mp7.hs_mult = 1.3333333
 						self.mp7.armor_piercing_chance = 0.75
 						self.mp7.kick = self.stat_info.kick_tables.even_recoil
 						self.mp7.supported = true
@@ -7703,14 +7703,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.p90.has_description = true
 						self.p90.desc_id = "bm_p90_sc_desc"	
-						self.p90.AMMO_MAX = 72
+						self.p90.AMMO_MAX = 90
 						self.p90.fire_mode_data.fire_rate = 0.070588235
 						self.p90.armor_piercing_chance = 0.75
 						self.p90.can_shoot_through_enemy = false
 						self.p90.can_shoot_through_shield = false
 						self.p90.can_shoot_through_wall = false
 						self.p90.panic_suppression_chance = 0.05
-						self.p90.hs_mult = 1.666666
+						self.p90.hs_mult = 1.33333
 						self.p90.kick = self.stat_info.kick_tables.even_recoil
 						self.p90.supported = true
 						self.p90.ads_speed = 0.220
@@ -7892,7 +7892,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sr2.desc_id = "bm_sr2_sc_desc"
 						self.sr2.fire_mode_data.fire_rate = 0.063157894
 						self.sr2.CLIP_AMMO_MAX = 30
-						self.sr2.AMMO_MAX = 72
+						self.sr2.AMMO_MAX = 90
 						self.sr2.kick = {}
 						self.sr2.kick = self.stat_info.kick_tables.even_recoil
 						self.sr2.supported = true
@@ -7920,7 +7920,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sr2.can_shoot_through_enemy = false
 						self.sr2.can_shoot_through_shield = false
 						self.sr2.can_shoot_through_wall = false
-						self.sr2.hs_mult = 1.5
+						self.sr2.hs_mult = 1.2
 						self.sr2.stats_modifiers = nil
 						self.sr2.panic_suppression_chance = 0.05
 						self.sr2.reload_speed_multiplier = 1.02
@@ -17490,10 +17490,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.BURST_FIRE = false
 				self.alpha57_prim.fire_mode_data.fire_rate = 0.0857142
 				self.alpha57_prim.CLIP_AMMO_MAX = 50
-				self.alpha57_prim.AMMO_MAX = 144
+				self.alpha57_prim.AMMO_MAX = 180
 				self.alpha57_prim.supported = true
 				self.alpha57_prim.ads_speed = 0.260
-				self.alpha57_prim.hs_mult = 1.666666
+				self.alpha57_prim.hs_mult = 1.33333
 				self.alpha57_prim.armor_piercing_chance = 0.75
 				self.alpha57_prim.can_shoot_through_enemy = false
 				self.alpha57_prim.can_shoot_through_shield = false

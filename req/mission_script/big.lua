@@ -45,6 +45,24 @@ if pro_job then
 	end	
 end
 
+local tsniper_access = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
+			end
+		end
+}
+local timelock_access = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+}		
+
+
 local ponr_timer_player_mul = {
 		1,
 		0.85,
@@ -118,55 +136,13 @@ return {
 		}
 	},
 	--Prevent shields/dozers from disabling the timelock (Are we living in PDTH?)
-	[101195] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[102268] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
+	[101195] = timelock_access,
+	[102268] = timelock_access,
 	--adds swat access so titan snipers can move to SO spot
-	[102890] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[102896] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[102900] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
-	[102906] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-	},
+	[102890] = tsniper_access,
+	[102896] = tsniper_access,
+	[102900] = tsniper_access,
+	[102906] = tsniper_access,
 	--Trigger dozers if the manager has been killed
 	--Spawn beat cops after 5 seconds of cops arrival
 	--enable spawngroups after 20 seconds

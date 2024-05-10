@@ -5,7 +5,6 @@ local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_securi
 local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
 local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 
-
 	--GenSec red dudes are replaced with GenSec SWAT on DW and above
 	if difficulty == 7 or difficulty == 8 then
 		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
@@ -41,6 +40,21 @@ end
 	else
 		ponr_value = 540	
 	end
+local gensec_1 = {
+	values = {
+        enemy = gensec_rifle
+	}
+}
+local gensec_2 = {
+	values = {
+        enemy = gensec_smg
+	}
+}
+local gensec_tank = {
+	values = {
+        enemy = gensec_dozer
+	}
+}	
 
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
@@ -50,276 +64,60 @@ return {
 	},
 	--GenSec Scripted Spawns
 	--Drivers
-	[100279] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100281] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100280] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100282] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100283] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100284] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100285] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100286] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100287] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100288] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100289] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100290] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100291] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100292] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100293] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100294] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100295] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100296] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100297] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100298] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100299] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100300] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100301] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100302] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
+	[100279] = gensec_2,
+	[100281] = gensec_1,
+	[100280] = gensec_2,
+	[100282] = gensec_2,
+	[100283] = gensec_1,
+	[100284] = gensec_1,
+	[100285] = gensec_2,
+	[100286] = gensec_2,
+	[100287] = gensec_2,
+	[100288] = gensec_2,
+	[100289] = gensec_1,
+	[100290] = gensec_2,
+	[100291] = gensec_2,
+	[100292] = gensec_2,
+	[100293] = gensec_1,
+	[100294] = gensec_1,
+	[100295] = gensec_2,
+	[100296] = gensec_2,
+	[100297] = gensec_2,
+	[100298] = gensec_2,
+	[100299] = gensec_1,
+	[100300] = gensec_1,
+	[100301] = gensec_1,
+	[100302] = gensec_2,
 	--Protection Teams (seems to be unused???? Still, it's better to replace it)
-	[100522] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100523] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100526] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100527] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100530] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100531] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100532] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100534] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100535] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100536] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100538] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100539] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100540] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100542] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100543] = {
-		values = {
-            enemy = gensec_smg
-		}
-	},
-	[100544] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100524] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
-	[100525] = {
-		values = {
-            enemy = gensec_rifle
-		}
-	},
+	[100522] = gensec_2,
+	[100523] = gensec_2,
+	[100526] = gensec_2,
+	[100527] = gensec_2,
+	[100530] = gensec_1,
+	[100531] = gensec_2,
+	[100532] = gensec_2,
+	[100534] = gensec_2,
+	[100535] = gensec_2,
+	[100536] = gensec_1,
+	[100538] = gensec_1,
+	[100539] = gensec_1,
+	[100540] = gensec_2,
+	[100542] = gensec_2,
+	[100543] = gensec_2,
+	[100544] = gensec_1,
+	[100524] = gensec_1,
+	[100525] = gensec_1,
 	--Van Bulldozers
-	[101747] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101748] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101759] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101760] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101761] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101762] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101763] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101764] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101765] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101766] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101767] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	},
-	[101768] = {
-		values = {
-            enemy = gensec_dozer
-		}
-	}
+	[101747] = gensec_tank,
+	[101748] = gensec_tank,
+	[101759] = gensec_tank,
+	[101760] = gensec_tank,
+	[101761] = gensec_tank,
+	[101762] = gensec_tank,
+	[101763] = gensec_tank,
+	[101764] = gensec_tank,
+	[101765] = gensec_tank,
+	[101766] = gensec_tank,
+	[101767] = gensec_tank,
+	[101768] = gensec_tank
 }

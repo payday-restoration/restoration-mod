@@ -15,6 +15,29 @@ if pro_job and difficulty >= 5 then
 	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
 
+local tshield = {
+	values = {
+        enemy = titan_shield
+	}
+}
+local tsniper = {
+	values = {
+        enemy = australian_sniper
+	}
+}
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
+local mayhem_above_filter = {
+	values = {
+		difficulty_easy_wish = "true",
+		difficulty_overkill_290 = "true",
+		difficulty_sm_wish = "true"
+	}
+}
+
 return {
 	--Pro Job PONR
 	[102644] = {
@@ -73,61 +96,25 @@ return {
 	},
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
 	--Disables the turret
-	[102821] = {
-		values = {
-			enabled = false
-		}
-	},
-	[101965] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102821] = disabled,
+	[101965] = disabled,
 	--Forces the reinforcments to spawn instead
-	[102819] = {
-		values = {
-			difficulty_easy_wish = "true",
-			difficulty_overkill_290 = "true",
-			difficulty_sm_wish = "true"
-		}
-	},
+	[102819] = mayhem_above_filter,
 	--delay the next anim by few more seconds to let the previous anim end
 	[101647] = {
 		on_executed = {
             {id = 101648, delay = 10.5}
 		}
 	},
-	--same as the crash van
-	[102506] = {
-		values = {
-			enabled = false
-		}
-	},
-	[102382] = {
-		values = {
-			enabled = false
-		}
-	},
+	--same as 2nd van near Mitchell's house
+	[102506] = disabled,
+	[102382] = disabled,
 	--Forces the reinforcments to spawn instead
-	[102383] = {
-		values = {
-			difficulty_easy_wish = "true",
-			difficulty_overkill_290 = "true",
-			difficulty_sm_wish = "true"
-		}
-	},
-	--Disable this van
-	[102197] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102383] = mayhem_above_filter,
+	--Disable this van (it's redunant)
+	[102197] = disabled,
 	--disable vanilla snipers
-	[102941] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102941] = disabled,
 	--Warn about shields (and grenadiers if it's Death Wish above)
 	[101469] = {
 		on_executed = {
@@ -188,75 +175,19 @@ return {
 		end
 	},
 	--Replace some Rooftop SWATs with Titan Snipers on Overkill-DS PJ
-	[101735] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[101733] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
+	[101735] = tsniper,
+	[101733] = tsniper,
 	--Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
-	[100036] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100039] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100044] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[101848] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[101908] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[101911] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100642] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100777] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100795] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[101804] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[101883] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102098] = {
-		values = {
-            enemy = titan_shield
-		}
-	}
+	[100036] = tshield,
+	[100039] = tshield,
+	[100044] = tshield,
+	[101848] = tshield,
+	[101908] = tshield,
+	[101911] = tshield,
+	[100642] = tshield,
+	[100777] = tshield,
+	[100795] = tshield,
+	[101804] = tshield,
+	[101883] = tshield,
+	[102098] = tshield
 }

@@ -32,7 +32,12 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65,
 		0.65
-}	
+}
+local sniper_trigger_times = {
+	values = {
+       trigger_times = 0
+	}
+}
 
 return {
 	--Pro Job PONR 
@@ -41,31 +46,11 @@ return {
 		ponr = ponr_value
 	},
 	--Fixed snipers being able to spawn only once
-	[100368] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100369] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100370] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100371] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100372] = {
-		values = {
-            trigger_times = 0
-		}
-	},
+	[100368] = sniper_trigger_times,
+	[100369] = sniper_trigger_times,
+	[100370] = sniper_trigger_times,
+	[100371] = sniper_trigger_times,
+	[100372] = sniper_trigger_times,
 	[103595] = {
 		reinforce = {
 			{

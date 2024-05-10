@@ -138,7 +138,14 @@ if pro_job then
 		dozer_trigger_times = 4
 	end	
 end
-	
+local access_fix = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+}	
 return {
 	--dozer gets randomized
 	[100952] = {
@@ -223,46 +230,11 @@ return {
 		}
 	},
 	--allow fbi and spooc access to disable the power
-	[101039] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101593] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101594] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101595] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101600] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
+	[101039] = access_fix,
+	[101593] = access_fix,
+	[101594] = access_fix,
+	[101595] = access_fix,
+	[101600] = access_fix,
 	-- Reinforce next to cars
 	[100941] = {
 		reinforce = {

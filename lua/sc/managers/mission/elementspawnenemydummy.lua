@@ -18,11 +18,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
 			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
-			},
 			swat_1 = {
 				"units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
 				"units/payday2/characters/ene_swat_3/ene_swat_3"
@@ -46,11 +41,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -91,11 +81,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
 			},
 			swat_1 = {
 				"units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -142,11 +127,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
-			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
 			},	
 			swat_1 = {
 				"units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
@@ -178,11 +158,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 			},
 			security_3 = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_6/ene_security_6"
-			},
 			secret_service = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -2199,11 +2174,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
 			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_8/ene_security_8"
-			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2",
@@ -2231,11 +2201,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2280,11 +2245,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_security_1/ene_security_1",
 				"units/payday2/characters/ene_security_2/ene_security_2",
 				"units/payday2/characters/ene_security_3/ene_security_3"
-			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_8/ene_security_8"
 			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
@@ -2336,11 +2296,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			security_3 = {
 				"units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"
 			},
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_8/ene_security_8"
-			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
@@ -2375,11 +2330,6 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 			},
 			security_3 = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",
-			security_4 = {
-				"units/payday2/characters/ene_security_4/ene_security_4",
-				"units/payday2/characters/ene_security_5/ene_security_5",
-				"units/payday2/characters/ene_security_8/ene_security_8"
-			},
 			fbi_guard = {
 				"units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",
 				"units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"

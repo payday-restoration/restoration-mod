@@ -178,6 +178,57 @@ end
 		vault_guard = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
 	end
 	
+local cloaker = {
+	values = {
+        enemy = cloaker
+	}
+}
+local taser = {
+	values = {
+		enemy = taser
+	}
+}
+local swatsg = {
+	values = {
+		enemy = swat_shotgunner
+	}
+}
+local shield = {
+	values = {
+		enemy = shield
+	}
+}
+local titan_taser = {
+	values = {
+        enemy = titan_taser
+	}
+}
+local titan_cloaker = {
+	values = {
+        enemy = woman_spooc
+	}
+}
+local titan_shield = {
+	values = {
+        enemy = titan_shield
+	}
+
+local tswat1 = {
+	values = {
+		enemy = titan_swat_1
+	}
+}
+local tswat2 = {
+	values = {
+		enemy = titan_swat_2
+	}
+}
+local windows_swat = {
+	values = {
+		enabled = both_window_swats_only
+	}
+}
+	
 return {
 	-- Disable forced manager flee objective
 	[100665] = {
@@ -408,26 +459,10 @@ return {
 		}
 	},
 	--Higher diffs forces both scripted window cloaker and taser spawns
-	[100875] = {
-		values = {
-			enabled = both_window_swats_only
-		}
-	},
-	[102245] = {
-		values = {
-			enabled = both_window_swats_only
-		}
-	},
-	[102271] = {
-		values = {
-			enabled = both_window_swats_only
-		}
-	},
-	[102276] = {
-		values = {
-			enabled = both_window_swats_only
-		}
-	},
+	[100875] = windows_swat,
+	[102245] = windows_swat,
+	[102271] = windows_swat,
+	[102276] = windows_swat,
 	--Vault Spawn Stuff
 	--why there's a beat cop instead of guard? I dunno
 	[104001] = {
@@ -474,184 +509,40 @@ return {
 		}
 	},
 	--Spawn replacements
-	[106858] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[106869] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[101885] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[103136] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[103143] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[103151] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[100617] = {
-		values = {
-            enemy = cloaker
-		}
-	},
-	[100618] = {
-		values = {
-            enemy = cloaker
-		}
-	},
-	[102897] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102899] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102903] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102904] = {
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[106873] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[106856] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100620] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[100621] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[103535] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[106855] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[102382] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[101967] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[103163] = {
-		values = {
-            enemy = taser
-		}
-	},
-	[103231] = {
-		values = {
-            enemy = taser
-		}
-	},
-	[102575] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[104317] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[104318] = {
-		values = {
-            enemy = titan_taser
-		}
-	},
-	[104319] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[104330] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[104510] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[104631] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[100570] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[103395] = {
-		values = {
-            enemy = cloaker
-		}
-	},
-	[103463] = {
-		values = {
-            enemy = shield
-		}
-	},
-	[103465] = {
-		values = {
-            enemy = swat_shotgunner
-		}
-	},
-	[103466] = {
-		values = {
-            enemy = taser
-		}
-	},
-	[103693] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[103697] = {
-		values = {
-            enemy = titan_shield
-		}
-	}
+	[106858] = titan_taser,
+	[106869] = titan_taser,
+	[100620] = titan_taser,
+	[100621] = titan_taser,
+	[102575] = titan_taser,
+	[104317] = titan_taser,
+	[104318] = titan_taser,
+	[102382] = titan_taser,
+	[101967] = titan_taser,
+	[101885] = titan_cloaker,
+	[103136] = titan_cloaker,
+	[103143] = titan_cloaker,
+	[103151] = titan_cloaker,
+	[102897] = titan_cloaker,
+	[102899] = titan_cloaker,
+	[102903] = titan_cloaker,
+	[102904] = titan_cloaker,
+	[103693] = titan_shield,
+	[103697] = titan_shield,
+	[104510] = titan_shield,
+	[104631] = titan_shield,
+	[104319] = tswat1,
+	[104330] = tswat1,
+	[100570] = tswat2,
+	[106873] = tswat1,
+	[106856] = tswat2,
+	[103535] = tswat1,
+	[106855] = tswat2,
+	[100617] = cloaker,
+	[100618] = cloaker,
+	[103395] = cloaker,
+	[103163] = taser,
+	[103231] = taser,
+	[103466] = taser,
+	[103463] = shield,
+	[103465] = swatsg
 }

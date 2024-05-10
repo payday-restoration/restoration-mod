@@ -2379,6 +2379,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_pps43 = {
 				translation = Vector3(0, -3.8, -3.925)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_fang45 = {
+				translation = Vector3(0, 13.2, -0.55)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.2),
@@ -32196,9 +32199,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_smg45_s_fixed.custom_stats = deep_clone(stocks.folder_to_fixed_rec3_stats)
 
 			self.parts.wpn_fps_smg_schakal_s_folded.supported = true
-			self.parts.wpn_fps_smg_schakal_s_folded.stats = deep_clone(stocks.folder_to_nocheeks_stats)
+			self.parts.wpn_fps_smg_schakal_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 			self.parts.wpn_fps_smg_schakal_s_folded.stats.value = 0
-			self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = deep_clone(stocks.folder_to_nocheeks_stats)
+			self.parts.wpn_fps_smg_schakal_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
+		end
+
+		if self.parts.wpn_fps_smg_fang45_s_folded then --Mira's MW:R Fang-45
+			self.parts.wpn_fps_smg_fang45_o_std.stance_mod = {
+				wpn_fps_smg_fang45 = { 
+					translation = Vector3(0.04, 0, 0.3),
+					rotation = Rotation(0, 0, 0)
+				}
+			}
+
+			self.parts.wpn_fps_smg_fang45_s_folded.supported = true
+			self.parts.wpn_fps_smg_fang45_s_folded.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_smg_fang45_s_folded.stats.value = 0
+			self.parts.wpn_fps_smg_fang45_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
 		end
 
 	--[[ CARL'S MODS ]]
@@ -39031,7 +39048,7 @@ end)
 
 --Override Tangerine's stance_mod data
 Hooks:PostHook(WeaponFactoryTweakData, "init", "omnisightinit", function(self)
-end )
+end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "mallninj762init", function(self)
 	if self.parts.wpn_fps_upg_ass_ar47_b_heavy then
@@ -39138,16 +39155,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "socomstuff_init", function(self)
 end)
 
 --Override stance_mod data
-Hooks:PostHook( WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
-end )
-Hooks:PostHook( WeaponFactoryTweakData, "init", "fort500Init", function(self)
-end )
+Hooks:PostHook(WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "fort500Init", function(self)
+end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "stoner63a_lmg_mod_init", function(self)
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "BigGlockModInit", function(self)
 end)
 
-Hooks:PostHook( WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
 	if self.parts.wpn_fps_shot_stf12_sights then
 		self.parts.wpn_fps_shot_stf12_sights.stance_mod = {
 			wpn_fps_shot_stf12 = {
@@ -39157,7 +39174,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
 		}
 	end
 end)
-Hooks:PostHook( WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
 	if self.parts.wpn_fps_shot_fpsix_o_std then
 		self.parts.wpn_fps_shot_fpsix_o_std.stance_mod = {
 			wpn_fps_shot_fpsix = {
@@ -39217,8 +39234,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
 		}
 	end
 end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "Fang45WeaponModInit", function(self)
+end)
 
-Hooks:PostHook( WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
 	if self.parts.wpn_fps_shot_spas15_ironsight then
 		self.parts.wpn_fps_shot_spas15_ironsight.stance_mod = {
 			wpn_fps_shot_spas15 = {
@@ -39234,8 +39253,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
 	end
 end )
 
-
-Hooks:PostHook( WeaponFactoryTweakData, "init", "resmod_cap", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if WeaponTweakData.SetupAttachmentPoint then
 		self.wpn_fps_ass_ak5.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"

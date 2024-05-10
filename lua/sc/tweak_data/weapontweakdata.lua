@@ -16898,8 +16898,56 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.smg45.stats_modifiers = nil
 				self.smg45.reload_speed_multiplier = 1.05
-				self.smg45.timers.reload_exit_empty = 0.6
-				self.smg45.timers.reload_exit_not_empty = 0.85
+				self.smg45.timers = deep_clone(self.schakal.timers)
+			end
+
+			if self.fang45 then --Mira's MW:R Fang-45
+				self.fang45.recategorize = {"heavy_smg"}
+				self.fang45.damage_type = "machine_gun"
+				self.fang45.use_data.selection_index = 2
+				self.fang45.desc_id = "bm_w_fang45_desc"
+				self.fang45.has_description = true
+				self.fang45.fire_mode_data.fire_rate = 0.0833333
+				self.fang45.fire_rate_init_count_mag = 6
+				self.fang45.fire_rate_init_mult = 1.25
+				self.fang45.tactical_reload = 1
+				self.fang45.AMMO_MAX = 120
+				self.fang45.CLIP_AMMO_MAX = 40
+				self.fang45.BURST_FIRE = false
+				self.fang45.ADAPTIVE_BURST_SIZE = false											
+				self.fang45.kick = self.stat_info.kick_tables.even_recoil
+				self.fang45.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_fps"
+				self.fang45.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+				self.fang45.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+				self.fang45.panic_suppression_chance = 0.05
+				self.fang45.supported = true
+				self.fang45.ads_speed = 0.200
+				self.fang45.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 2400,
+					min_mult = 0.3
+				}
+				self.fang45.stats = {
+					damage = 30,
+					spread = 63,
+					recoil = 85,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 26,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.fang45.stats_modifiers = nil
+				self.fang45.reload_speed_multiplier = 0.95
+				self.fang45.sounds.fire = "mp5_fire_single"
+				self.fang45.sounds.fire_single = "mp5_fire_single"
+				self.fang45.sounds.fire_auto = "mp5_fire"
+				self.fang45.sounds.stop_fire = "mp5_stop"
+				self.fang45.timers = deep_clone(self.new_m4.timers)
 			end
 			
 			if self.troglodyte then --Leon and Mira's AWM-F

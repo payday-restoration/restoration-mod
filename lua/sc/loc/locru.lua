@@ -1596,6 +1596,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_smg45_desc"] = "Американский клон ПП 'Шакал'.",
 			--Typhoon
 			["bm_w_crysis3_typhoon_desc"] = "\"Самая чистая форма самовыражения - и сейчас мне есть что сказать.\"\n\nЭтот десятиствольный пистолет-пулемет использует особую технологию зарядки, которая позволяет добиться чрезвычайно высокой скорости стрельбы за счет низкого урона.\n\nАльтернативный огонь выстреливает #{skill_color}#залп## из #{skill_color}#10## патронов разом.",
+			--AR57
+			["bm_w_fang45_desc"] = "Эффективное оружие для столкновений на короткой и средней дистанции.\n\n.#{skill_color}#Увеличенная скорострельность для первых 5-ти выстрелов. Перезарядка оружия обновляет эффект.##",
 
 
 		--Bootleg/HK416c
@@ -2934,6 +2936,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_polymer"] = "Kross Vertex",
 		["bm_w_alpha57_prim"] = "FSS Hurricane",
 		["bm_w_smg45"] = "FT Striker .45",
+		["bm_w_fang45"] = "Fang 45",
 		["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
 		["bm_w_m7caseless"] = "Misriah Armory M7",
 		["bm_w_m7caseless_supp"] = "Misriah Armory M7S",
@@ -3214,7 +3217,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--AR57
 			["bm_w_alpha57_prim"] = "Ураган",
 			--LWRC
-			["bm_w_smg45"] = "Страйкер .45",			
+			["bm_w_smg45"] = "Страйкер .45",
+			--LWRC
+			["bm_w_fang45"] = "Фанг 45",
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "КРАЙНЕТ Тайфун",
 			

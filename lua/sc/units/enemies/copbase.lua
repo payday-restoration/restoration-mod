@@ -133,7 +133,9 @@ function CopBase:converted_enemy_effect(state)
 			parent = self._unit:get_object(Idstring("Spine2"))
 		})
 	else
-		World:effect_manager():fade_kill(self._convert_effect)
+		if self._convert_effect then
+			World:effect_manager():fade_kill(self._convert_effect)
+		end
 	end
 end
 

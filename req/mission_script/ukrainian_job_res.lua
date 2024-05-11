@@ -10,22 +10,18 @@ local hunt_projob = false
 	
 	if pro_job then
 		hunt_projob = true
-	end	
+	end
+	
+local ponr = {
+	ponr = ponr_value
+}	
 
 return {
 	--Pro Job PONR 
-	[101761] = {
-		ponr = ponr_value
-	},
-	[101836] = {
-		ponr = ponr_value
-	},
-	[102031] = {
-		ponr = ponr_value
-	},
-	[102033] = {
-		ponr = ponr_value
-	},
+	[101761] = ponr,
+	[101836] = ponr,
+	[102031] = ponr,
+	[102033] = ponr,
 	--Endless Assault for Pro Job
 	[104124] = {
 		values = {

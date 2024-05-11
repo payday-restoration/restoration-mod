@@ -154,64 +154,48 @@ local titan_table = {
 		end
 	end
 	
-	
+local sniper_trigger_times = {
+	values = {
+        trigger_times = 0
+	}
+}
+local law_team = {
+	values = {
+		team = "law1"
+	}
+}
+local shield = {
+	values = {
+        enemy = shield_unit
+	}
+}
+local shotgun = {
+	values = {
+        enemy = shotgun_unit
+	}
+}	
+local no_spawn_instigator_ids = {
+	values = {
+		spawn_instigator_ids = false
+	}
+}	
 return {
 	--Pro Job PONR 
 	[100220] = {
 		ponr = ponr_value
 	},
 	--Snipers that look on Panic Room zone now spawn more than 1 time
-	[101128] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101121] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101520] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101113] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101140] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101136] = {
-		values = {
-			trigger_times = 0
-		}
-	},
+	[101128] = sniper_trigger_times,
+	[101121] = sniper_trigger_times,
+	[101520] = sniper_trigger_times,
+	[101113] = sniper_trigger_times,
+	[101140] = sniper_trigger_times,
+	[101136] = sniper_trigger_times,
 	--SWAT units replacement
-	[101164] = {
-		values = {
-			enemy = shield_unit
-		}
-	},
-	[101151] = {
-		values = {
-			enemy = shield_unit
-		}
-	},
-	[101156] = {
-		values = {
-			enemy = shotgun_unit
-		}
-	},
-	[101160] = {
-		values = {
-			enemy = shotgun_unit
-		}
-	},
+	[101164] = shield,
+	[101151] = shield,
+	[101156] = shotgun,
+	[101160] = shotgun,
 	[101158] = {
 		values = {
 			enemy = titan_swat_left
@@ -235,36 +219,12 @@ return {
 	},
 	--Mobsters are friendly to cops (in Commissar panic room section)
 	--P.S. The Commissar now friendly to cops either but this is an instance
-	[101505] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101497] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101496] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101506] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[100190] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[100191] = {
-		values = {
-			team = "law1"
-		}
-	},
+	[101505] = law_team,
+	[101497] = law_team,
+	[101496] = law_team,
+	[101506] = law_team,
+	[100190] = law_team,
+	[100191] = law_team,
 	--Dozer replacements
 	[101133] = {
 		values = {
@@ -301,24 +261,8 @@ return {
 		difficulty = 1
 	},
 	-- Fix nav links
-	[101433] = {
-		values = {
-			spawn_instigator_ids = false
-		}
-	},
-	[101434] = {
-		values = {
-			spawn_instigator_ids = false
-		}
-	},
-	[101435] = {
-		values = {
-			spawn_instigator_ids = false
-		}
-	},
-	[101562] = {
-		values = {
-			spawn_instigator_ids = false
-		}
-	}
+	[101433] = no_spawn_instigator_ids,
+	[101434] = no_spawn_instigator_ids,
+	[101435] = no_spawn_instigator_ids,
+	[101562] = no_spawn_instigator_ids
 }

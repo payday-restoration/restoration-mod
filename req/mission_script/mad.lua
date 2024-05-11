@@ -116,7 +116,27 @@ local eseries_table = {
 	if pro_job and difficulty >= 5 then
 		epsilon_shield = "units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 	end
-
+	
+local tshield = {
+	values = {
+        enemy = epsilon_shield
+	}
+}
+local dozer_1 = {
+	values = {
+        enemy = dozer_1
+	}
+}
+local dozer_2 = {
+	values = {
+        enemy = dozer_2
+	}
+}	
+local double_dozers = {
+	values = {
+        enabled = double_dozers_only
+	}
+}
 return {
 	--Pro Job PONR
 	[100176] = {
@@ -146,37 +166,13 @@ return {
 		}
 	},
 	--Titan Shields for OVK+ (PJ only)
-	[101860] = {
-		values = {
-            enemy = epsilon_shield
-		}
-	},
-	[101863] = {
-		values = {
-            enemy = epsilon_shield
-		}
-	},
-	[101864] = {
-		values = {
-            enemy = epsilon_shield
-		}
-	},
+	[101860] = tshield,
+	[101863] = tshield,
+	[101864] = tshield,
 	--High diffs has only dozer pairs blocking the exit (as in disables single dozer mission scripts)
-	[101733] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
-	[101734] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
-	[100854] = {
-		values = {
-			enabled = double_dozers_only
-		}
-	},
+	[101733] = double_dozers,
+	[101734] = double_dozers,
+	[100854] = double_dozers,
 	--fix this mission script not actually spawning skulldozers
 	[101698] = {
 		on_executed = {
@@ -185,36 +181,12 @@ return {
 		}
 	},
 	--dozers gets randomized
-	[101848] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101852] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101854] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101851] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
-	[101853] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
-	[101855] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
+	[101848] = dozer_1,
+	[101852] = dozer_1,
+	[101854] = dozer_1,
+	[101851] = dozer_2,
+	[101853] = dozer_2,
+	[101855] = dozer_2,
 	-- Disable instant difficulty increase
 	[101980] = {
 		values = {

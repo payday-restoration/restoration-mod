@@ -1,12 +1,4 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local fbi_access = {
-	pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
-			end
-		end
-}
 	
 	if difficulty <= 5 then
 		ponr_value = 300	
@@ -14,6 +6,14 @@ local fbi_access = {
 		ponr_value = 480
 	end
 
+local fbi_access = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"fbi"})
+			end
+		end
+}	
 return {
 	--Pro Job PONR 
 	[300204] = {

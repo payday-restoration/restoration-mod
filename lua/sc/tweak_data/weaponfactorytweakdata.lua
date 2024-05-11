@@ -23056,7 +23056,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_max_mul = 0,
 			ammo_pickup_min_mul = 0,
 			ammo_pickup_max_mul = 0,
-			hip_mult = 1.666666,
+			hip_mult = 2.3333333,
 			rof_mult = 1.25,
 			ads_speed_mult = 1.3846153,
 			damage_min_mult = 0.6,
@@ -23065,7 +23065,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			srm = {
 				-0.04,
 				{1, 3},
-				9
+				2
 			}
 		},
 		override = {

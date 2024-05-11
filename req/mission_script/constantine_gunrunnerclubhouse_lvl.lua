@@ -31,6 +31,31 @@ local spring_minion_4 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_
 		ponr_value = 420
 	end
 
+local Captain = {
+	values = {
+        enemy = spring
+	}
+}
+local Minion_1 = {
+	values = {
+        enemy = spring_minion_1
+    }
+}
+local Minion_2 = {
+	values = {
+        enemy = spring_minion_2
+    }
+}
+local Minion_3 = {
+	values = {
+        enemy = spring_minion_3
+    }
+}
+local Minion_4 = {
+	values = {
+        enemy = spring_minion_1
+    }
+}
 return {
 	--Pro Job PONR+Hunt (Endless Assault)
 	[100437] = {
@@ -45,74 +70,19 @@ return {
 		}
 	},
 	--Minions
-	[100218] = {
-		values = {
-            enemy = spring_minion_2
-		}
-	},
-	[100221] = {
-		values = {
-            enemy = spring_minion_1
-		}
-	},
-	[100222] = {
-		values = {
-            enemy = spring_minion_3
-		}
-	},
-	[100224] = {
-		values = {
-            enemy = spring_minion_1
-		}
-	},
-	[100225] = {
-		values = {
-            enemy = spring_minion_4
-		}
-	},
-	[100229] = {
-		values = {
-            enemy = spring_minion_1
-		}
-	},
-	[100230] = {
-		values = {
-            enemy = spring_minion_4
-		}
-	},
-	[100258] = {
-		values = {
-            enemy = spring_minion_2
-		}
-	},
-	[100261] = {
-		values = {
-            enemy = spring_minion_2
-		}
-	},
-	[100262] = {
-		values = {
-            enemy = spring_minion_3
-		}
-	},
-	[100264] = {
-		values = {
-            enemy = spring_minion_2
-		}
-	},
-	[100265] = {
-		values = {
-            enemy = spring_minion_3
-		}
-	},
-	[100269] = {
-		values = {
-            enemy = spring_minion_3
-		}
-	},
-	[100270] = {
-		values = {
-            enemy = spring_minion_2
-		}
-	}
+	[100229] = Minion_1,
+	[100221] = Minion_1,
+	[100224] = Minion_1,
+	[100229] = Minion_1,
+	[100218] = Minion_2,
+	[100258] = Minion_2,
+	[100261] = Minion_2,
+	[100270] = Minion_2,
+	[100264] = Minion_2,
+	[100222] = Minion_3,
+	[100262] = Minion_3,
+	[100265] = Minion_3,
+	[100269] = Minion_3,
+	[100225] = Minion_4,
+	[100230] = Minion_4
 }

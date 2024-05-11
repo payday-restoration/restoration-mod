@@ -76,6 +76,21 @@ local dozer_table = {
 		end
 	end
 	
+local participate_to_groupai = {
+	values = {
+        participate_to_group_ai = true
+	}
+}	
+local dozer_1 = {
+	values = {
+        enemy = dozer_1
+	}
+}
+local dozer_2 = {
+	values = {
+        enemy = dozer_2
+	}
+}	
 return {
 	--Pro Job Stuff
 	[101783] = {
@@ -109,135 +124,31 @@ return {
 		}
 	},
 	--Dozers gets randomized
-	[101766] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101767] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101770] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[101771] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
-	[101772] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
-	[101774] = {
-		values = {
-            enemy = dozer_2
-		}
-	},
+	[101766] = dozer_1,
+	[101767] = dozer_1,
+	[101770] = dozer_1,
+	[101771] = dozer_2,
+	[101772] = dozer_2,
+	[101774] = dozer_2,
 	--fixed some of the scripted enemies not participating into group ai because ????
-	[105006] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105009] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105011] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105014] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105019] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105021] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105024] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105035] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105038] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105040] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105043] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105048] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105050] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[103732] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105055] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105058] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105060] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105062] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105065] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	},
-	[105069] = {
-		values = {
-            participate_to_group_ai = true
-		}
-	}
+	[105006] = participate_to_groupai,
+	[105009] = participate_to_groupai,
+	[105011] = participate_to_groupai,
+	[105014] = participate_to_groupai,
+	[105019] = participate_to_groupai,
+	[105021] = participate_to_groupai,
+	[105024] = participate_to_groupai,
+	[105035] = participate_to_groupai,
+	[105038] = participate_to_groupai,
+	[105040] = participate_to_groupai,
+	[105043] = participate_to_groupai,
+	[105048] = participate_to_groupai,
+	[105050] = participate_to_groupai,
+	[103732] = participate_to_groupai,
+	[105055] = participate_to_groupai,
+	[105058] = participate_to_groupai,
+	[105060] = participate_to_groupai,
+	[105062] = participate_to_groupai,
+	[105065] = participate_to_groupai,
+	[105069] = participate_to_groupai
 }

@@ -20,97 +20,61 @@ end
 		ponr_value = 540	
 	end
 	
-
+local tcloaker = {
+	values = {
+        enemy = woman_spooc
+    }
+}
+local bravo_dozer = {
+	values = {
+        enemy = bravo_dozer
+    }
+}
+local dozer_1 = {
+	values = {
+        enemy = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+    }
+}
+local dozer_2 = {
+	values = {
+        enemy = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+    }
+}
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
 return {
 	--Pro Job PONR
 	[101106] = {
 		ponr = ponr_value
 	},
 	--Disable the SWAT Turrets, why would they add those fucking annoying turrets in this day, spawning reinforcments is already ENOUGH!!!!
-	[101147] = {
-		values = {
-			enabled = false
-		}
-	},
+	[101147] = disabled,
 	-- Reduce amount of ambush bulldozers
-	[101557] = {
-		values = {
-			enabled = false
-		}
-	},
-	[100567] = {
-		values = {
-			enabled = false
-		}
-	},
-	[101575] = {
-		values = {
-			enabled = false
-		}
-	},
+	[101557] = disabled,
+	[100567] = disabled,
+	[101575] = disabled,
 	[102438] = { 
 		values = {
             amount = spooc_amount
 		}
 	},
 	--Titan Cloakers replace scripted escape cloakers on DSPJ
-	[102430] = { 
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102431] = { 
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102423] = { 
-		values = {
-            enemy = woman_spooc
-		}
-	},
-	[102436] = { 
-		values = {
-            enemy = woman_spooc
-		}
-	},
+	[102430] = tcloaker,
+	[102431] = tcloaker,
+	[102423] = tcloaker,
+	[102436] = tcloaker,
 	--Bravo Dozers replace scripted dozer that kicks the door out
-	[102412] = { 
-		values = {
-            enemy = bravo_dozer
-		}
-	},
-	[102411] = { 
-		values = {
-            enemy = bravo_dozer
-		}
-	},
-	[102404] = { 
-		values = {
-            enemy = bravo_dozer
-		}
-	},
+	[102412] = bravo_dozer,
+	[102411] = bravo_dozer,
+	[102404] = bravo_dozer,
 	--less skulldozers (seriously Jules, stop it)
-	[100485] = { 
-		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-		}
-	},
-	[100499] = { 
-		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-		}
-	},
-	[101176] = { 
-		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-		}
-	},
-	[101398] = { 
-		values = {
-            enemy = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-		}
-	},
+	[100485] = dozer_1,
+	[101176] = dozer_1,
+	[100499] = dozer_2,
+	[101398] = dozer_2,
 	[101182] = { 
 		values = {
             enemy = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"

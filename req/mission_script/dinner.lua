@@ -30,6 +30,12 @@ return {
 	[104979] = {
 		ponr = ponr_value
 	},
+	-- Slightly slower difficulty ramp up
+	[101357] = {
+		values = {
+			difficulty = 0.6
+		}
+	},
 	--Murky amount gets increased to 5 on PJs
 	[101394] = {
 		values = {

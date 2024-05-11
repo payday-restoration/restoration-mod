@@ -7,34 +7,14 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 	else
 		ponr_value = 480		
 	end
+local ponr = {
+	ponr = ponr_value
+}	
 
 return {
-	--Pro Job PONR 
-	[103087] = {
-		ponr = ponr_value
-	},
-	[103328] = {
-		ponr = ponr_value
-	},
-	[102207] = {
-		ponr = ponr_value
-	},
-	--Allow snipers spawn more frequently (Disabled because snipers may stuck in each other on SO position)
-	--[[[103192] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[100481] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[100484] = {
-		values = {
-			chance = 100
-		}
-	},--]]
+	--Pro Job PONR
+	[103328] = ponr,
+	[102207] = ponr,
 	-- Add power cut SO delay
 	[100313] = {
 		values = {

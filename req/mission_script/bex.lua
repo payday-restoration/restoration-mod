@@ -13,36 +13,20 @@ local hunt_projob = false
 	else
 		ponr_value = 540	
 	end
-
---[[local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}--]]
+local enabled = {
+	values = {
+        enabled = true
+	}
+}
+local disabled = {
+	values = {
+        enabled = false
+	}
+}	
 
 return {
 	--Pro Job PONR 
 	[101485] = {
-		--ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
 	--Allow only one turret to spawn (for some reason map designer allowed to spawn turrets on hard instead)
@@ -52,68 +36,20 @@ return {
 		}
 	},
 	--Disable other SWAT Turrets
-	[102991] = {
-		values = {
-			enabled = false
-		}
-	},
-	[102992] = {
-		values = {
-			enabled = false
-		}
-	},
-	[103003] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102991] = disabled,
+	[102992] = disabled,
+	[103003] = disabled,
 	-- restores some unused sniper spawns with their SOs
-	[100372] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100402] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100392] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100412] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100377] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100407] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100397] = {
-		values = {
-			enabled = true
-		}
-	},
-	[100417] = {
-		values = {
-			enabled = true
-		}
-	},
+	[100372] = enabled,
+	[100402] = enabled,
+	[100392] = enabled,
+	[100412] = enabled,
+	[100377] = enabled,
+	[100407] = enabled,
+	[100397] = enabled,
+	[100417] = enabled,
 	--disables the weird roof navlink
-	[102554] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102554] = disabled,
 	--fixes Locke repeating the same "Play_loc_bex_108" dialogue instead of using the correct one
 	[103317] = {
 		values = {
@@ -121,11 +57,7 @@ return {
 		}
 	},
 	-- Disable server room reinforce
-	[101835] = {
-		values = {
-			enabled = false
-		}
-	},
+	[101835] = disabled,
 	-- Reinforce second floor above tellers
 	[100027] = {
 		reinforce = {

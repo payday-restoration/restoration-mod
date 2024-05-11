@@ -8000,8 +8000,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.stats_modifiers = nil
 						self.new_mp5.panic_suppression_chance = 0.05
 						self.new_mp5.reload_speed_multiplier = 1.025
-						self.new_mp5.timers.reload_exit_empty = 0.6
-						self.new_mp5.timers.reload_exit_not_empty = 0.85
+						self.new_mp5.timers.reload_not_empty = 2.3
+						self.new_mp5.timers.reload_exit_not_empty = 0.95
+						self.new_mp5.timers.reload_empty = 3.5
+						self.new_mp5.timers.reload_exit_empty = 0.7
 
 			--[[     HEAVY SMGs     ]]
 
@@ -16908,8 +16910,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fang45.desc_id = "bm_w_fang45_desc"
 				self.fang45.has_description = true
 				self.fang45.fire_mode_data.fire_rate = 0.0833333
-				self.fang45.fire_rate_init_count_mag = 6
-				self.fang45.fire_rate_init_mult = 1.25
+				self.fang45.fire_rate_init_count_mag = 5
+				self.fang45.fire_rate_init_mult = 1.3333334
 				self.fang45.tactical_reload = 1
 				self.fang45.AMMO_MAX = 120
 				self.fang45.CLIP_AMMO_MAX = 40

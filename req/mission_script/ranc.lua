@@ -12,6 +12,17 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 		ponr_value_2 = 780
 	end
 	
+local sniper_trigger_times = {
+	values = {
+        trigger_times = 0
+	}
+}
+local spawn_anim_fix = {
+	values = {
+        spawn_action = "e_sp_over_3m"
+	}
+}	
+	
 local ponr_timer_player_mul = {
 		1,
 		0.85,
@@ -48,50 +59,14 @@ return {
 		ponr = ponr_value_2
 	},
 	--Fixed snipers being able to spawn only once
-	[100368] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100369] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100370] = {
-		values = {
-            trigger_times = 0
-		}
-	},
-	[100371] = {
-		values = {
-            trigger_times = 0
-		}
-	},
+	[100368] = sniper_trigger_times,
+	[100369] = sniper_trigger_times,
+	[100370] = sniper_trigger_times,
+	[100371] = sniper_trigger_times,
 	--fixes some spawn typos
-	[100683] = {
-		values = {
-			spawn_action = "e_sp_over_3m"
-		}
-	},
-	[100684] = {
-		values = {
-			spawn_action = "e_sp_over_3m"
-		}
-	},
-	[100789] = {
-		values = {
-			spawn_action = "e_sp_over_3m"
-		}
-	},
-	[100790] = {
-		values = {
-			spawn_action = "e_sp_over_3m"
-		}
-	},
-	[100791] = {
-		values = {
-			spawn_action = "e_sp_over_3m"
-		}
-	}
+	[100683] = spawn_anim_fix,
+	[100684] = spawn_anim_fix,
+	[100789] = spawn_anim_fix,
+	[100790] = spawn_anim_fix,
+	[100791] = spawn_anim_fix
 }

@@ -38,8 +38,32 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65,
 		0.65
-}	
-
+}
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
+local fem_biker_1 = {
+	values = {
+        enemy = biker_table.female_1
+	}
+}
+local fem_biker_2 = {
+	values = {
+        enemy = biker_table.female_2
+	}
+}
+local fem_biker_3 = {
+	values = {
+        enemy = biker_table.female_3
+	}
+}
+local guard_biker = {
+	values = {
+        enemy = biker_table.guard_biker
+	}
+}
 return {
 	--Pro Job PONR 
 	[101016] = {
@@ -61,81 +85,25 @@ return {
 		}
 	},
 	--Always spawn keycard in Mexico
-	[102270] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102270] = disabled,
 	[100697] = {
 		on_executed = {
 			{id = 102271, delay = 0}
 		}
 	},
 	-- Remove red lights from keycard readers because vault can be opened in loud now
-	[103709] = {
-		values = {
-			enabled = false
-		}
-	},
+	[103709] = disabled,
 	--female/guard bikers
-	[100670] = {
-		values = {
-            enemy = biker_table.female_3
-		}
-	},
-	[100673] = {
-		values = {
-            enemy = biker_table.female_2
-		}
-	},
-	[100116] = {
-		values = {
-            enemy = biker_table.guard_biker
-		}
-	},
-	[101571] = {
-		values = {
-            enemy = biker_table.female_3
-		}
-	},
-	[101556] = {
-		values = {
-            enemy = biker_table.female_1
-		}
-	},
-	[101037] = {
-		values = {
-            enemy = biker_table.guard_biker
-		}
-	},
-	[101034] = {
-		values = {
-            enemy = biker_table.female_2
-		}
-	},
-	[101222] = {
-		values = {
-            enemy = biker_table.female_3
-		}
-	},
-	[101235] = {
-		values = {
-            enemy = biker_table.female_2
-		}
-	},
-	[101310] = {
-		values = {
-            enemy = biker_table.guard_biker
-		}
-	},
-	[101683] = {
-		values = {
-            enemy = biker_table.female_1
-		}
-	},
-	[101866] = {
-		values = {
-            enemy = biker_table.guard_biker
-		}
-	}
+	[100670] = fem_biker_3,
+	[100673] = fem_biker_2,
+	[100116] = guard_biker,
+	[101571] = fem_biker_3,
+	[101556] = fem_biker_1,
+	[101037] = guard_biker,
+	[101034] = fem_biker_2,
+	[101222] = fem_biker_3,
+	[101235] = fem_biker_2,
+	[101310] = guard_biker,
+	[101683] = fem_biker_1,
+	[101866] = guard_biker
 }

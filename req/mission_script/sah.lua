@@ -14,6 +14,27 @@ local hunt_projob = false
 		hunt_projob = true
 	end
 
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
+local low_interval = {
+	values = {
+			interval = 20
+		}
+}
+local medium_interval = {
+	values = {
+			interval = 30
+		}
+}
+local high_interval = {
+	values = {
+			interval = 40
+		}
+}	
+
 return {
 	--Pro Job PONR 
 	[103820] = {
@@ -26,11 +47,7 @@ return {
 		}
 	},
 	-- Disable instant difficulty increase
-	[100122] = {
-		values = {
-			enabled = false
-		}
-	},
+	[100122] = disabled,
 	-- Loud, slightly delay police response
 	[100109] = {
 		values = {
@@ -60,73 +77,21 @@ return {
 		}
 	},
 	-- Disable area report triggers
-	[100140] = {
-		values = {
-			enabled = false
-		}
-	},
-	[106783] = {
-		values = {
-			enabled = false
-		}
-	},
-	[103926] = {
-		values = {
-			enabled = false
-		}
-	},
-	[106784] = {
-		values = {
-			enabled = false
-		}
-	},
+	[100140] = disabled,
+	[106783] = disabled,
+	[103926] = disabled,
+	[106784] = disabled,
 	-- Slow down roof spawns
-	[102667] = {
-		values = {
-			interval = 20
-		}
-	},
-	[106776] = {
-		values = {
-			interval = 20
-		}
-	},
-	[106767] = {
-		values = {
-			interval = 20
-		}
-	},
-	[106764] = {
-		values = {
-			interval = 20
-		}
-	},
-	[100694] = {
-		values = {
-			interval = 30
-		}
-	},
-	[100154] = {
-		values = {
-			interval = 30
-		}
-	},
+	[102667] = low_interval,
+	[106776] = low_interval,
+	[106767] = low_interval,
+	[106764] = low_interval,
+	[100694] = medium_interval,
+	[100154] = medium_interval,
 	-- Slow down storage spawns
-	[102303] = {
-		values = {
-			interval = 40
-		}
-	},
-	[103662] = {
-		values = {
-			interval = 20
-		}
-	},
-	[104089] = {
-		values = {
-			interval = 40
-		}
-	},
+	[102303] = high_interval,
+	[103662] = low_interval,
+	[104089] = high_interval,
 	-- Slow down and adjust storage window spawns
 	[103522] = {
 		values = {

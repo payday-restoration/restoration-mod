@@ -60,8 +60,27 @@ local timelock_access = {
 				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
 			end
 		end
-}		
-
+}	
+local swat_n = {
+	values = {
+        enemy = swat_normal
+	}
+}
+local swat_h = {
+	values = {
+        enemy = swat_hard
+	}
+}
+local swat_ovk = {
+	values = {
+        enemy = swat_overkill
+	}
+}
+local titan_sniper = {
+	values = {
+        enemy = titan_sniper_c4
+	}
+}
 
 local ponr_timer_player_mul = {
 		1,
@@ -219,26 +238,10 @@ return {
 		}
 	},
 	--Titan Snipers replace C4 route snipers on DSPJ
-	[102883] = {
-		values = {
-            enemy = titan_sniper_c4
-		}
-	},
-	[102893] = {
-		values = {
-            enemy = titan_sniper_c4
-		}
-	},
-	[102898] = {
-		values = {
-            enemy = titan_sniper_c4
-		}
-	},
-	[102901] = {
-		values = {
-            enemy = titan_sniper_c4
-		}
-	},
+	[102883] = titan_sniper,
+	[102893] = titan_sniper,
+	[102898] = titan_sniper,
+	[102901] = titan_sniper,
 	--More timelock timer on higher diifs and Pro Jobs
 	[103137] = {
 		values = {
@@ -268,111 +271,27 @@ return {
 		}
 	},
 	--Harasser Tweaks
-	[100883] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100884] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100885] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100332] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100334] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100336] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100906] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100907] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100908] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100922] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100923] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100924] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100938] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100939] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100940] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100954] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100955] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100956] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
-	[100969] = {
-		values = {
-            enemy = swat_normal
-		}
-	},
-	[100970] = {
-		values = {
-            enemy = swat_hard
-		}
-	},
-	[100971] = {
-		values = {
-            enemy = swat_overkill
-		}
-	},
+	[100883] = swat_n,
+	[100884] = swat_h,
+	[100885] = swat_ovk,
+	[100332] = swat_n,
+	[100334] = swat_h,
+	[100336] = swat_ovk,
+	[100906] = swat_n,
+	[100907] = swat_h,
+	[100908] = swat_ovk,
+	[100922] = swat_n,
+	[100923] = swat_h,
+	[100924] = swat_ovk,
+	[100938] = swat_n,
+	[100939] = swat_h,
+	[100940] = swat_ovk,
+	[100954] = swat_n,
+	[100955] = swat_h,
+	[100956] = swat_ovk,
+	[100969] = swat_n,
+	[100970] = swat_h,
+	[100971] = swat_ovk,
 	-- Reinforce groups in front of the vault
 	[105844] = {
 		reinforce = {

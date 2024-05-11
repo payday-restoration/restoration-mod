@@ -33,6 +33,11 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 		0.65
 }
 
+local enabled = {
+	values = {
+        enabled = true
+	}
+}
 return {
 	--Pro Job PONR 
 	[100324] = {
@@ -41,41 +46,13 @@ return {
 	},
 	--Enable unused Reinforce spots
 	--didn't knew that day 2 had reinforce spots to begin with
-	[101954] = {
-		values = {
-			enabled = true
-		}
-	},
-	[101955] = {
-		values = {
-			enabled = true
-		}
-	},
-	[101984] = {
-		values = {
-			enabled = true
-		}
-	},
-	[101987] = {
-		values = {
-			enabled = true
-		}
-	},
-	[102123] = {
-		values = {
-			enabled = true
-		}
-	},
-	[102125] = {
-		values = {
-			enabled = true
-		}
-	},
-	[102126] = {
-		values = {
-			enabled = true
-		}
-	},
+	[101954] = enabled,
+	[101955] = enabled,
+	[101984] = enabled,
+	[101987] = enabled,
+	[102123] = enabled,
+	[102125] = enabled,
+	[102126] = enabled,
 	[100210] = {
 		values = {
 			enabled = false

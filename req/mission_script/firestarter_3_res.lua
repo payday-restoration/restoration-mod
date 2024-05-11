@@ -92,6 +92,12 @@ return {
 			player_1 = true
 		}
 	},
+	-- Enable max diff after 2 instead of 3 assault waves
+	[101307] = {
+		values = {
+			amount = 2
+		}
+	},
 	--Restores unused cloaker ambush spawns+Titan Cloaker on DSPJ
 	[105571] = {
 		values = {

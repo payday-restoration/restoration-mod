@@ -2555,6 +2555,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_smg45_desc"] = "An American clone of the AMP-45.",
 					--Typhoon
 					["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now #{important_1}#I've got a lot to say##\"\n\nUtilizing #{risk}#superposed loading## technology, this 10-barrelled machine gun trades damage for spitting lead out at blisteringly high speeds.\n\nAlt-fire fires a #{skill_color}#volley## of #{skill_color}#10## rounds down range.",
+					--AR57
+					["bm_w_fang45_desc"] = "Fully automatic with the #{skill_color}#first 5 bullets in the magazine having increased fire rate.##\n\nEffective at close to medium range.",
 			
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -3090,6 +3092,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_alpha57_prim"] = "FSS Hurricane",
 						--LWRC
 						["bm_w_smg45"] = "FT Striker .45",
+						--LWRC
+						["bm_w_fang45"] = "Fang 45",
 						--Typhoon
 						["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
 				--[[ MGs ]]

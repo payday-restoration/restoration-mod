@@ -32,7 +32,14 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65
 }
-
+local access_fix = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+}
 return {
 	--Pro Job PONR 
 	[100930] = {
@@ -44,86 +51,16 @@ return {
 		ponr = ponr_value * 2
 	},
 	--prevent dozers/shields from disabling the power (Are we living in PDTH.....again?)
-	[104699] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104700] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104701] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104702] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104703] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104704] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104705] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104706] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104707] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[104708] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
+	[104699] = access_fix,
+	[104700] = access_fix,
+	[104701] = access_fix,
+	[104702] = access_fix,
+	[104703] = access_fix,
+	[104704] = access_fix,
+	[104705] = access_fix,
+	[104706] = access_fix,
+	[104707] = access_fix,
+	[104708] = access_fix,
 	--Spawn snipers after 150 seconds of starting the assault
 	[103812] = { 
 		on_executed = {

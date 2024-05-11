@@ -445,8 +445,12 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	self._unit:brain():action_request(action_data)
 	self._unit:sound():say("cn1", true, nil)
 	managers.network:session():send_to_peers_synched("sync_unit_converted", self._unit)
+	
+	if managers.mutators:modify_value("CopBrain:DisableEnemyOutlines", false) then
+		self._unit:base():converted_enemy_effect(true)
+	end
 end
-			
+
 function CopBrain:on_suppressed(state)
 	self._logic_data.is_suppressed = state or nil
 

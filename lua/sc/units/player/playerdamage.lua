@@ -1461,7 +1461,7 @@ function PlayerDamage:set_dodge_points()
 	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
 	local grace_cap = (0.45 - (0.45 - diff_reduction))
 	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
-	log(tostring( self._dodge_interval ))
+	
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	end

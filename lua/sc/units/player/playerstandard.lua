@@ -717,7 +717,7 @@ PlayerStandard._primary_action_funcs = {
 			local state = nil
 			local zippy = weap_base and weap_base:weapon_tweak_data().zippy
 			local jammed = zippy and weap_base._jammed
-
+			local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 			if not zippy or jammed then
 				if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
 					if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
@@ -784,8 +784,9 @@ PlayerStandard._primary_action_get_value = {
 			if self._single_shot_autofire then
 				return input.btn_primary_attack_state
 			end
-
-			return self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+			if not weap_base or weap_base and not weap_base:in_burst_mode() then
+				return self._primary_attack_input_cache and self._primary_attack_input_cache < weap_base:weapon_fire_rate() / weap_base:fire_rate_multiplier()
+			end
 		end,
 		auto = function (self, t, input, params, weap_unit, weap_base)
 			return input.btn_primary_attack_state
@@ -3907,6 +3908,9 @@ function PlayerStandard:_start_action_reload(t)
 		local ignore_fullreload = anims_tweak.ignore_fullreload
 		local ignore_nonemptyreload = anims_tweak.ignore_nonemptyreload
 		local clip_empty = weapon:clip_empty()
+		if weapon.no_reload_anims then
+			self._ext_camera:play_redirect(self:get_animation("idle"))	
+		end
 		if ((ignore_fullreload and clip_empty) or (ignore_nonemptyreload and not clip_empty)) then
 			weapon:tweak_data_anim_stop("fire")
 	

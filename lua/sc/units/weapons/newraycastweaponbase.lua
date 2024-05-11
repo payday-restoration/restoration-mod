@@ -129,6 +129,7 @@ else
 		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
 
 		self._reload_ammo_base = nil
+		self._shots_fired_mag = 0
 
 		local user_unit = managers.player:player_unit()
 
@@ -956,6 +957,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._single_fire_ap_add = self:weapon_tweak_data().SINGLE_FIRE_AP_ADD or 0
 	
 		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
+		self._fire_rate_init_count_mag = self:weapon_tweak_data().fire_rate_init_count_mag or nil
 		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
 		self._fire_rate_init_delay = self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
 		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
@@ -969,6 +971,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._ene_hs_mult = self._ene_hs_mult or self:weapon_tweak_data().ene_hs_mult or 1
 
 	self._shots_fired = 0
+	self._shots_fired_mag = 0
 
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
 	self._movement_penalty = self:weapon_tweak_data().weapon_movement_penalty or tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
@@ -1046,6 +1049,14 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.funco_chan then
 				self:weapon_tweak_data().BURST_FIRE = 3
 				self:weapon_tweak_data().BURST_DELAY = 0.08
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+			end	
+			if stats.vp70_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3
+				self:weapon_tweak_data().BURST_DELAY = 0.08
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3.6666
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.4
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.08
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end	
 			if stats.s7_flexfire then
@@ -1685,6 +1696,10 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 		end
 	end
 
+	if self._fire_rate_init_count_mag and self._shots_fired_mag and self._fire_rate_init_count_mag > self._shots_fired_mag then
+		multiplier = multiplier * self._fire_rate_init_mult
+	end
+
 	if self._alt_fire_active then
 		multiplier = multiplier * self._alt_rof_mult
 	end
@@ -1699,7 +1714,10 @@ end
 local fire_original = NewRaycastWeaponBase.fire
 function NewRaycastWeaponBase:fire(...)
 	local result = fire_original(self, ...)
-	self._shots_fired = self._shots_fired + 0.5 --increases in half increments due to the double call bug for this function
+	self._shots_fired = self._shots_fired + 0.5 --increases in half increments due some double call bug for this function (Should really figure this out)
+	if not self._starwars then
+		self._shots_fired_mag = self._shots_fired_mag + 0.5
+	end
 	if result and not self.AKIMBO and self:in_burst_mode() then
 		if self:clip_empty() then
 			self:cancel_burst()

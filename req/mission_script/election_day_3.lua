@@ -23,6 +23,12 @@ if pro_job then
 	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 end
 
+local tsniper = {
+	values = {
+        enemy = australian_sniper
+	}
+}
+
 return {
 	--Pro Job PONR 
 	[104701] = {
@@ -38,64 +44,16 @@ return {
 		}
 	},
 	--The thing i mentioned above
-	[100208] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100209] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100212] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100213] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100304] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100305] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100309] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[100311] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103339] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103340] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103341] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103342] = {
-		values = {
-            enemy = australian_sniper
-		}
-	}
+	[100208] = tsniper,
+	[100209] = tsniper,
+	[100212] = tsniper,
+	[100213] = tsniper,
+	[100304] = tsniper,
+	[100305] = tsniper,
+	[100309] = tsniper,
+	[100311] = tsniper,
+	[103339] = tsniper,
+	[103340] = tsniper,
+	[103341] = tsniper,
+	[103342] = tsniper
 }

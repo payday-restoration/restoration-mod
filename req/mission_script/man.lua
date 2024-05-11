@@ -89,8 +89,26 @@ end
 			dozer_2 = dozer_table.dozer_zeal_benelli
 		end
 	end
-
-
+local disabled = {
+	values = {
+        enabled = false
+	}
+}	
+local dozer_heli = {
+	values = {
+        enemy = gas_dozer
+	}
+}
+local tshield = {
+	values = {
+        enemy = titan_shield
+	}
+}
+local tsniper = {
+	values = {
+        enemy = australian_sniper
+	}
+}
 return {
 	 --flashlights, flashlights, flashlights!!!!!!!!!! (enables/disables flashlights when the power is off/on like in PDTH)
 	[100756] = {
@@ -165,57 +183,17 @@ return {
 		}
 	},
 	--Replace the spawns with dozers
-	[103293] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[103294] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104045] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104046] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104047] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104048] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104049] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
-	[104050] = {
-		values = {
-            enemy = gas_dozer
-		}
-	},
+	[103293] = dozer_heli,
+	[103294] = dozer_heli,
+	[104045] = dozer_heli,
+	[104046] = dozer_heli,
+	[104047] = dozer_heli,
+	[104048] = dozer_heli,
+	[104049] = dozer_heli,
+	[104050] = dozer_heli,
 	--disable the Gas SO (it's useless anyway)
-	[103302] = {
-		values = {
-			enabled = false
-		}
-	},
-	[103303] = {
-		values = {
-			enabled = false
-		}
-	},
+	[103302] = disabled,
+	[103303] = disabled,
 	--disable this once done with hacking
 	[102754] = {
 		func = function(self)
@@ -241,75 +219,19 @@ return {
 		}
 	},
 	--Titan Shields replace regular ones during escape part
-	[102410] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102411] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102416] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102417] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
+	[102410] = tshield,
+	[102411] = tshield,
+	[102416] = tshield,
+	[102417] = tshield,
 	--Titan Snipers replace some SWAT Harassers on Pro Jobs
-	[103228] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103234] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103235] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103237] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103839] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103841] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103843] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103845] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103847] = {
-		values = {
-            enemy = australian_sniper
-		}
-	},
-	[103849] = {
-		values = {
-            enemy = australian_sniper
-		}
-	}
+	[103228] = tsniper,
+	[103234] = tsniper,
+	[103235] = tsniper,
+	[103237] = tsniper,
+	[103839] = tsniper,
+	[103841] = tsniper,
+	[103843] = tsniper,
+	[103845] = tsniper,
+	[103847] = tsniper,
+	[103849] = tsniper
 }	

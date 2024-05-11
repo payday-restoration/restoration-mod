@@ -1,16 +1,18 @@
 local enabled_blocked_roof_access = math.random() < 0.45
+local enabled = {
+	values = {
+        enabled = true
+	}
+}
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
 return {
 	-- Disable roof/stairs reinforcement
-	[102501] = {
-		values = {
-			enabled = false
-		}
-	},
-	[103181] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102501] = disabled,
+	[103181] = disabled,
 	--Restore roof access blockade
 	[100095] = {
 		on_executed = {
@@ -27,37 +29,17 @@ return {
 			{id = 400065, delay = 0}
 		}
 	},
-	[100569] = {
-		values = {
-			enabled = true
-		}
-	},
-	[103610] = {
-		values = {
-			enabled = true
-		}
-	},
-	[103611] = {
-		values = {
-			enabled = true
-		}
-	},
+	[100569] = enabled,
+	[103610] = enabled,
+	[103611] = enabled,
 	[103648] = {
 		on_executed = {
 			{id = 103611, remove = true}
 		}
 	},
 	--stop with the smoke bombs, jeez....
-	[103034] = {
-		values = {
-			enabled = false
-		}
-	},
-	[103106] = {
-		values = {
-			enabled = false
-		}
-	},
+	[103034] = disabled,
+	[103106] = disabled,
 	--Disable cloaker spawns on startup
 	[102263] = {
 		on_executed = {

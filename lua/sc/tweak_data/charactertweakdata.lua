@@ -1189,7 +1189,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
 	self.city_swat_titan.headshot_dmg_mul = 2.65
-	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
+	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist	
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 	self.city_swat_titan.use_animation_on_fire_damage = true
@@ -1709,7 +1709,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.damage.explosion_damage_mul = 0.5
 	self.deep_boss.can_be_tased = false
 	self.deep_boss.suppression = nil
-	self.deep_boss.move_speed = presets.move_speed.slow
+	self.deep_boss.move_speed = presets.move_speed.very_slow
 	self.deep_boss.allowed_stances = {
 		cbt = true
 	}
@@ -2027,7 +2027,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.no_arrest = true
 	self.hector_boss_no_armor.surrender = nil
 	self.hector_boss_no_armor.unintimidateable = true
-	self.hector_boss_no_armor.access = "gangster"
+	--self.hector_boss_no_armor.access = "gangster"
 	self.hector_boss_no_armor.rescue_hostages = false
 	self.hector_boss_no_armor.steal_loot = nil
 	self.hector_boss_no_armor.calls_in = nil
@@ -4379,6 +4379,19 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.hurt_severities.elite_explosion_resist = deep_clone(presets.hurt_severities.elite)	
+	presets.hurt_severities.elite_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.elite_easy = deep_clone(presets.hurt_severities.light_hurt_fire_poison)
 	presets.hurt_severities.elite_easy.bullet = {
 		health_reference = "current",
@@ -4437,7 +4450,20 @@ function CharacterTweakData:_presets(tweak_data)
 				heavy = 0
 			}
 		}
-	}		
+	}
+	presets.hurt_severities.elite_easy_explosion_resist = deep_clone(presets.hurt_severities.elite_easy)	
+	presets.hurt_severities.elite_easy_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.only_explosion_hurts = {
 		bullet = {
 			health_reference = 1,
@@ -17572,17 +17598,17 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1600
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 800
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
 	self.spring.dt_suppress = {
@@ -17636,6 +17662,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.swat.can_shoot_while_dodging = true
 	self.hrt.can_shoot_while_dodging = true
 
+	--Boss Tweaks for DS 
 	--Bosses that use Machine Guns have pushback abilities applied
 	--The Commissar
 	self.mobster_boss.dt_suppress = {
@@ -17649,6 +17676,19 @@ function CharacterTweakData:_set_sm_wish()
 	self.deep_boss.dt_suppress = {
 		range = 500
 	}
+	--Hector has slowing bullets instead
+	self.hector_boss.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		range = 1000
+	}
+	--Speed up the bosses
+	self.mobster_boss.move_speed = self.presets.move_speed.slow
+	self.hector_boss.move_speed = self.presets.move_speed.slow
+	self.biker_boss.move_speed = self.presets.move_speed.slow
+	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
+	self.triad_boss.move_speed = self.presets.move_speed.slow
+	self.deep_boss.move_speed = self.presets.move_speed.slow
 	
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5
@@ -17752,17 +17792,17 @@ function CharacterTweakData:_set_sm_wish()
 	}		
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1800
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 1000
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	
 	--Titandozers become immune to stunning

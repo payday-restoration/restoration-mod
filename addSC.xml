@@ -104,6 +104,10 @@
 	<mission			path="levels/instances/unique/sub_sewer_grate/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/sub_sewer_sidespawn/world/world" force="true" unload="true"/>
 	
+	<!-- Biker Heist Day 1 -->
+	<mission			path="levels/instances/unique/born/born_armory/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/born/born_truck/world/world" force="true" unload="true"/>
+	
 	<!-- Border Crossing-->
 	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
@@ -746,6 +750,9 @@
 		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
 		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
 	</add>	
+	
+	<!-- Effect for converted enemies if enemy related outlines disabled via mutator -->
+	<effect				path="effects/particles/character/moneyburn" load="false"/>
 	
 	<!--Piggy Dozer-->
 	<object				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
@@ -1582,6 +1589,7 @@
 	<model				path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+	<object	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 
 	<!--NPC Sniper Overrides-->
 	<!--swat-->

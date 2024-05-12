@@ -8240,8 +8240,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.schakal.stats_modifiers = nil
 						self.schakal.reload_speed_multiplier = 1.05
-						self.schakal.timers.reload_exit_empty = 0.6
-						self.schakal.timers.reload_exit_not_empty = 0.85
+						self.schakal.timers.reload_not_empty = 2.26
+						self.schakal.timers.reload_exit_not_empty = 0.95
+						self.schakal.timers.reload_empty = 3.52
+						self.schakal.timers.reload_exit_empty = 0.7
 
 				--SECONDARIES
 

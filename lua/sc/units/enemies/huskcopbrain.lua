@@ -123,6 +123,11 @@ function HuskCopBrain:sync_converted()
 	self._SO_access_str = SO_access_str
 	self._SO_access = managers.navigation:convert_access_flag(SO_access_str)
 	self._enemy_slotmask = managers.slot:get_mask("enemies")
+	World:effect_manager():spawn({
+		effect = Idstring("effects/payday2/particles/impacts/money_impact_pd2"),
+		position = self._unit:movement():m_pos()
+	})
+	self._unit:base():converted_enemy_effect(true)
 end
 
 function HuskCopBrain:update(unit, t, dt)
@@ -813,6 +818,8 @@ function HuskCopBrain:clbk_death(my_unit, damage_info)
 	self:_destroy_all_detected_attention_object_data()
 
 	self._detect_local_player = nil
+	
+	self._unit:base():converted_enemy_effect(false) -- it's not working on client for reason
 end
 
 function HuskCopBrain:pre_destroy()

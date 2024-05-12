@@ -288,6 +288,13 @@ Hooks:PostHook(CopBrain, "clbk_coarse_pathing_results", "res_clbk_coarse_pathing
 	end
 end)
 
+-- Kill effect for converted enemies
+Hooks:PostHook(CopBrain, "clbk_death", "clbk_death_mutator_no_outlines", function(self, my_unit, damage_info)
+	if managers.mutators:modify_value("CopBrain:DisableEnemyOutlines", false) then
+		self._unit:base():converted_enemy_effect(false)
+	end
+end)
+
 function CopBrain:on_nav_link_unregistered(element_id)
 	if self._logic_data.pathing_results then
 		local failed_search_ids = nil
@@ -418,6 +425,10 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 		effect = Idstring("effects/payday2/particles/impacts/money_impact_pd2"),
 		position = self._unit:movement():m_pos()
 	})
+	
+	if managers.mutators:modify_value("CopBrain:DisableEnemyOutlines", false) then
+		self._unit:base():converted_enemy_effect(true)
+	end
 
 	local weap_name = self._unit:base():default_weapon_name()
 
@@ -445,10 +456,6 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	self._unit:brain():action_request(action_data)
 	self._unit:sound():say("cn1", true, nil)
 	managers.network:session():send_to_peers_synched("sync_unit_converted", self._unit)
-	
-	if managers.mutators:modify_value("CopBrain:DisableEnemyOutlines", false) then
-		self._unit:base():converted_enemy_effect(true)
-	end
 end
 
 function CopBrain:on_suppressed(state)

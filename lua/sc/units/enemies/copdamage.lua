@@ -1958,7 +1958,6 @@ function CopDamage:die(attack_data)
 	if self._unit:base() then
 		self._unit:base():disable_lpf_buff(true)
 		self._unit:base():disable_asu_laser(true)
-		self._unit:base():converted_enemy_effect(false)
 	end
 
 	if self._unit:base()._tweak_table == "spooc" then

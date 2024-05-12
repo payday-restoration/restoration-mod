@@ -11,7 +11,12 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 		jerome_dude = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
 		smg_dude = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
 	end
-
+	
+local participate_to_groupai = {
+	values = {
+        participate_to_group_ai = true
+	}
+}
 return {
 	--Shotgun Man in Sec Room
 	[100211] = {
@@ -24,6 +29,8 @@ return {
 			enemy = smg_dude
 		}
 	},
+	[101949] = participate_to_group_ai,
+	[101950] = participate_to_group_ai,
 	-- Set difficulty
 	[100648] = {
 		difficulty = 0.5

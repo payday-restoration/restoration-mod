@@ -136,7 +136,7 @@ function CopLogicIdle._chk_relocate(data)
 
 		return true
 	elseif objective_type == "free" or not objective then
-		if data.cool or not data.is_converted and data.team.id ~= "criminal1" or data.path_fail_t and data.t - data.path_fail_t < 5 then
+		if not data.enemy_slotmask or data.cool or not data.is_converted and data.team.id ~= "criminal1" or data.path_fail_t and data.t - data.path_fail_t < 5 then
 			return
 		end
 

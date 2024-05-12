@@ -1488,6 +1488,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
 			},
+			gensec_security = {
+				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
+			},
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
@@ -1533,6 +1537,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
+			},
+			gensec_security = {
+				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 			},
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -1598,6 +1606,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
+			},
+			gensec_security = {
+				"units/pd2_mod_nypd/characters/ene_security_1/ene_security_1",
+				"units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 			},
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -1667,6 +1679,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
 			},
+			gensec_security = {
+				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
+				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
+			},
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
@@ -1720,6 +1736,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			secret_service = {
 				"units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1",
 				"units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
+			},
+			gensec_security = {
+				"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
+				"units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
 			},
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",

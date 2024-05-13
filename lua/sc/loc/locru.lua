@@ -1926,7 +1926,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hmcar_sc_desc"] = "Когда полиция избавлялась от этого оружия, вы решили прибрать его к себе.\n\nСтреляет #{stat_maxed}#патронами титанового снайпера##, которые #{skill_color}#пробивают врагов, броню, щиты (до начала падения урона) и тонкие стены##. Альтернативный огонь выстреливает #{event_color}#снайперский патрон максимальной мощности##, который #{skill_color}#тратит в два раза больше патронов##, но #{skill_color}#наносит в два раза больше урона и пробивает титановые щиты.##",
 		["bm_wp_hmcar_hd_kit"] = "Набор 32bit 8K HD",
 		["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
-
+		--ONE OF A KIND HOLY GRAIL
+		["bm_w_holygrail"] = "СРАНЬ ГОСПОДНЯ",
+		["menu_l_global_value_holygrailmod"] = "ЭТО ЧТО ВООБЩЕ ТАКОЕ???\n\n",
 
 		--Light Crossbow		
 		["bm_w_frankish_avelyn"] = "Авелин",

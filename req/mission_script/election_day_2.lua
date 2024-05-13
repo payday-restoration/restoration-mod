@@ -47,7 +47,7 @@ return {
 	[102742] = swat_ovk,
 	[102428] = swat_n,
 	[102429] = swat_h,
-	[102430] = swat_ovk
+	[102430] = swat_ovk,
 	[102444] = swat_n,
 	[102445] = swat_h,
 	[102446] = swat_ovk,

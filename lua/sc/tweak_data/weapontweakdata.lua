@@ -10361,10 +10361,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shak12.can_shoot_through_enemy = true
 						self.shak12.can_shoot_through_wall = false
 						self.shak12.panic_suppression_chance = 0.05	
-						self.shak12.timers.reload_empty = 2.75
-						self.shak12.timers.reload_exit_empty = 0.65
-						self.shak12.timers.reload_not_empty = 1.8
-						self.shak12.timers.reload_exit_not_empty = 0.95
+						self.shak12.timers = deep_clone(self.corgi.timers)
 
 					--M308 (M1A SOCOM/M14)
 						self.new_m14.CLIP_AMMO_MAX = 20
@@ -21183,6 +21180,17 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			name = "a_ns_fix",
 			base_a_obj = "a_ns",
 			position = Vector3( 0, 0, -0.19 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
+
+		self:SetupAttachmentPoint( "famas", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			part_attach_data = {
+				{"wpn_fps_ass_famas_m_standard_dummy"},
+				"g_mag"
+			},
+			position = Vector3( 0, 0.5, 4.2 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
 

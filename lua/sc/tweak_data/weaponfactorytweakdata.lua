@@ -16,6 +16,8 @@ function WeaponFactoryTweakData:_clone_part_type_for_weapon(part_type, factory_i
 	end
 end
 
+local IsCAPInstalled = BeardLib.Utils:FindMod("Custom Attachment Points") and true or nil
+
 --ATTACHMENT PRESETS
 local sight_1_5x_offset = {
 	sights = {
@@ -2271,7 +2273,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.01, 4.55, -3.077),
 				rotation = Rotation(0.01, -0.1, 0)
 			}
-			if WeaponTweakData.SetupAttachmentPoint then
+			if IsCAPInstalled then
 				self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
 					translation = Vector3(-0.006, 14, -1.952),
 					rotation = Rotation(-0.062, 0.13, 0)
@@ -9501,6 +9503,17 @@ end)
 --Clarion 
 Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(self)
 
+	self.parts.wpn_fps_ass_famas_m_standard_dummy = deep_clone(self.parts.wpn_fps_ass_famas_m_standard)
+	self.parts.wpn_fps_ass_famas_m_standard_dummy.visibility = {
+		{
+			objects = {
+				g_mag = false,
+				g_bullet_1 = false
+			}
+		}
+	}
+	self.parts.wpn_fps_ass_famas_body_standard.adds = {"wpn_fps_ass_famas_m_standard_dummy"}
+
 	--Long Barrel
 	self.parts.wpn_fps_ass_famas_b_long.pcs = {}
 	self.parts.wpn_fps_ass_famas_b_long.supported = true
@@ -9536,14 +9549,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	self.parts.wpn_fps_ass_famas_g_retro.supported = true
 	self.parts.wpn_fps_ass_famas_g_retro.stats = deep_clone(grips.recoil_2)
 
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
+	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+
 	self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
 	self.wpn_fps_ass_famas.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
-
-	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_snp_model70_iron_sight")
-	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
-	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
@@ -37042,6 +37055,40 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_smg_mp9_npc.override = deep_clone(self.wpn_fps_smg_mp9.override)
 
+	attachment_list = {
+		"wpn_fps_m4_uupg_m_std",
+		"wpn_fps_m4_upg_m_quick",
+		"wpn_fps_upg_m4_m_l5",
+		"wpn_fps_upg_m4_m_quad"
+	}
+	for _, override_id in ipairs(attachment_list) do
+		table.insert(self.wpn_fps_ass_famas.uses_parts, override_id)
+		if not self.parts[override_id].desc_id then
+			self.parts[override_id].desc_id = "empty"
+			self.parts[override_id].has_description = true
+		end
+		self.wpn_fps_ass_famas.override[override_id] = {
+			stats = deep_clone(self.parts[override_id].stats),
+			a_obj = IsCAPInstalled and "a_m_fix" or nil,
+			desc_id = not IsCAPInstalled and "missing_cap",
+			unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil,
+			third_unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_third_ass_famas_pts/wpn_third_ass_famas_m_standard" or nil
+		}
+		self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo = (self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo or 0) + 5
+		self.wpn_fps_ass_famas.override[override_id].stats.concealment = (self.wpn_fps_ass_famas.override[override_id].stats.concealment or 0) - 1
+
+	end
+	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_std.stats = {
+			concealment = -1,
+			extra_ammo = 5,
+			reload = -2
+		}
+	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_std.custom_stats = { ads_speed_mult = 1.025 }
+	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_l5.custom_stats = { ads_speed_mult = 1.025 }
+	self.wpn_fps_ass_famas.override.wpn_fps_m4_upg_m_quick.custom_stats = { ads_speed_mult = 1.025 }
+	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_quad.custom_stats = { ads_speed_mult = 1.125 }
+
+
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--
 	self.parts.wpn_fps_upg_vlad_rodina_legend = {
@@ -39254,7 +39301,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
 end )
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_cap", function(self)
-	if WeaponTweakData.SetupAttachmentPoint then
+	if IsCAPInstalled then
 		self.wpn_fps_ass_ak5.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5_npc.stock_adapter = "wpn_fps_ass_s552_s_m4"
 		self.wpn_fps_ass_ak5.override.wpn_fps_ass_s552_s_m4 = { a_obj = "a_s_fix" }
@@ -39318,9 +39365,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 			end
 		end
 	else
-		if not self.wpn_fps_ass_asval.override then
-			self.wpn_fps_ass_asval.override = {}
-		end
+		self.wpn_fps_ass_asval.override = self.wpn_fps_ass_asval.override or {}
 		self.wpn_fps_ass_asval.override.wpn_fps_ass_groza_m_speed = {
 			desc_id = "missing_cap",
 			unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_m_standard"

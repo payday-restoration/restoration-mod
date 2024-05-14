@@ -1,4 +1,6 @@
 -- Update nav tracker if the player is driving a vehicle
+--[[
+--Might not be needed now since- 
 Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 	if self._vehicle == nil or not self._vehicle:is_active() or self._controller == nil then
 		return
@@ -10,7 +12,7 @@ Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 
 	self:_calculate_standard_variables(t, dt)
 	self:_update_ground_ray()
-	self:_update_fwd_ray()
+	self:_update_fwd_ray() 
 	self:_check_action_change_camera(t, input)
 	self:_check_action_rear_cam(t, input)
 	self:_update_hud(t, input)
@@ -29,11 +31,12 @@ Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 		self:_update_check_actions_passenger_no_shoot(t, dt, input)
 	end
 
-	self:_upd_nav_data()
+	self:_upd_nav_data() -- -This is in the vanilla function now
 	self:_upd_stance_switch_delay(t, dt)
 end)
+--]]
 
-
+--[[
 function PlayerDriving:_update_hud(t, dt)
 	if self._vehicle_ext.respawn_available then
 		if not self._respawn_hint_shown and self._seat.driving then
@@ -56,3 +59,4 @@ function PlayerDriving:_update_hud(t, dt)
 		self._respawn_hint_shown = false
 	end
 end
+--]]

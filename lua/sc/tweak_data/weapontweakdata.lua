@@ -14733,7 +14733,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.mars then --Pawcio's Mars Automatic
 				self.mars.recategorize = { "heavy_pis", "handcannon" }
-				self.mars.has_description = false
+				self.mars.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.mars.has_description = true
 				self.mars.damage_type = "handcannon"
 				self.mars.fire_mode_data.fire_rate = 0.2
 				self.mars.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"

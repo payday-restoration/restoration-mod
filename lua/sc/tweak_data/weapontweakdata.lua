@@ -21193,6 +21193,16 @@ Hooks:PostHook( WeaponTweakData, "init", "resmod_cap", function(self)
 			position = Vector3( 0, 0.5, 4.2 ),
 			rotation = RotationCAP( 0, 0, 0 )
 		})
+		self:SetupAttachmentPoint( "vhs", {
+			name = "a_m_fix",
+			base_a_obj = "a_m",
+			part_attach_data = {
+				{"wpn_fps_ass_vhs_m_dummy"},
+				"g_mag_lod0"
+			},
+			position = Vector3( 0, 3.5, -2 ),
+			rotation = RotationCAP( 0, 0, 0 )
+		})
 
 	end
 end)	

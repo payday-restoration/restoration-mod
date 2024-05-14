@@ -11959,6 +11959,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	
 	--default mag
 	self.parts.wpn_fps_ass_vhs_m.stats = { value = 0 }
+
+	self.parts.wpn_fps_ass_vhs_m_dummy = deep_clone(self.parts.wpn_fps_ass_vhs_m)
+	self.parts.wpn_fps_ass_vhs_m_dummy.visibility = {
+		{
+			objects = {
+				g_mag_lod0 = false,
+				g_bullet_1 = false,
+				g_bullet_2 = false,
+				g_bullet_3 = false
+			}
+		}
+	}
+	self.parts.wpn_fps_ass_vhs_body.adds = {"wpn_fps_ass_vhs_m_dummy"}
 	
 	--CQB Barrel
 	self.parts.wpn_fps_ass_vhs_b_short.pcs = {
@@ -29333,10 +29346,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				--(Lion's Roar) Urban Heat Kit
 				self.parts.wpn_fps_ass_vhs_body_camo.supported = true
 				self.parts.wpn_fps_ass_vhs_body_camo.stats = {
-					value = 5,
-					spread = 1,
-					recoil = 2,
-					concealment = -2
+					value = 0
 				}
 		
 				--HeistEye Target Marker
@@ -30816,7 +30826,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						}
 					end
 				end
-	
+
 				--Korth Exclusive Set
 				self.parts.wpn_fps_pis_korth_body_heat.supported = true
 				self.parts.wpn_fps_pis_korth_body_heat.stats = {value = 0}
@@ -30828,15 +30838,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_pis_korth_b_railed = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
 					},
-		
+
 					wpn_fps_pis_korth_body = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
 					},
-		
+
 					wpn_fps_pis_korth_m_8 = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat"
 					},
-		
+
 					wpn_fps_pis_korth_g_standard = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
 					},
@@ -30865,16 +30875,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_pis_korth_b_railed = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
 					},
-		
+
 					wpn_fps_pis_korth_body = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
 					},
-		
+
 					wpn_fps_pis_korth_m_8 = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat",
 						adds = {}
 					},
-		
+
 					wpn_fps_pis_korth_g_standard = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
 					},
@@ -30893,7 +30903,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_upg_fl_pis_tlr1",
 					"wpn_fps_upg_fl_pis_perst"
 				}
-		
+
 				--HK M16
 				self.parts.wpn_fps_ass_contraband_o_sayhello = {
 					type = "exclusive_set_o",
@@ -30927,7 +30937,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					can_shoot_through_enemy = false,
 					rof_mult = 1.166667,
 					armor_piercing_override = 0,
-					ads_speed_mult = 0.9523809
+					ads_speed_mult = 0.9523809,
+					srm = {
+						-0.01,
+						{1, 1.05},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_sayhello.stance_mod = {
 					wpn_fps_ass_contraband = {
@@ -31638,7 +31653,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					can_shoot_through_enemy = false,
 					rof_mult = 1.4166666,
 					armor_piercing_override = 0,
-					ads_speed_mult = 0.85714285
+					ads_speed_mult = 0.85714285,
+					srm = {
+						0.02,
+						{0.9, 1},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_contraband_body_mpx.forbids = nil
 				for k, used_part_id in ipairs(self.wpn_fps_ass_contraband.uses_parts) do
@@ -31712,7 +31732,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					armor_piercing_add_override = 0,
 					ignore_rof_mult_anims = true,
 					rof_mult = 1.0416666,
-					ads_speed_mult = 0.888888
+					ads_speed_mult = 0.888888,
+					srm = {
+						-0.01,
+						{1, 1.05},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_scar_body_light.forbids = { "wpn_fps_ass_scar_m_extended", "bm_wp_upg_a_ap25", "wpn_fps_ass_scar_b_long" }
 				for k, used_part_id in ipairs(self.wpn_fps_ass_scar.uses_parts) do
@@ -33182,7 +33207,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 3.23,
 					alt_ammo_pickup_max_mul = 3.23,
 					ammo_pickup_min_mul = 3.23,
-					ammo_pickup_max_mul = 3.23
+					ammo_pickup_max_mul = 3.23,
+					srm = {
+						-0.005,
+						{1, 1.05},
+						9
+					}
 				}
 				self.parts.wpn_fps_ass_g3_body_hk33.forbids = {
 					"wpn_fps_ass_g3_m_psg",
@@ -33249,7 +33279,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 1.78,
 					alt_ammo_pickup_max_mul = 1.78,
 					ammo_pickup_min_mul = 1.78,
-					ammo_pickup_max_mul = 1.78
+					ammo_pickup_max_mul = 1.78,
+					srm = {
+						-0.01,
+						{1, 1.05},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_galil_body_intermediate.override = {
 					wpn_fps_ass_galil_body_standard = { unit = "units/mods/weapons/wpn_fps_ass_galil_intermediate/wpn_fps_ass_galil_body_intermediate_new" },
@@ -33319,7 +33354,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 0.6793,
 					alt_ammo_pickup_max_mul = 0.6793,
 					ammo_pickup_min_mul = 0.6793,
-					ammo_pickup_max_mul = 0.6793
+					ammo_pickup_max_mul = 0.6793,
+					srm = {
+						-0.01,
+						{1, 1.05},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.forbids = {}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.override = self.parts.wpn_fps_ass_amcar_body_ddm4.override or {}
@@ -37060,6 +37100,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		"wpn_fps_m4_upg_m_quick",
 		"wpn_fps_upg_m4_m_l5",
 		"wpn_fps_upg_m4_m_quad"
+		--VMP
+		"wpn_fps_m4_uupg_m_extend"
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_famas.uses_parts, override_id)
@@ -37076,7 +37118,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 		self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo = (self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo or 0) + 5
 		self.wpn_fps_ass_famas.override[override_id].stats.concealment = (self.wpn_fps_ass_famas.override[override_id].stats.concealment or 0) - 1
-
 	end
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_std.stats = {
 			concealment = -1,
@@ -37086,7 +37127,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_std.custom_stats = { ads_speed_mult = 1.025 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_l5.custom_stats = { ads_speed_mult = 1.025 }
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_upg_m_quick.custom_stats = { ads_speed_mult = 1.025 }
+	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_extend.custom_stats = { ads_speed_mult = 1.05 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_quad.custom_stats = { ads_speed_mult = 1.125 }
+
+	attachment_list = {
+		"wpn_fps_m4_upg_m_quick",
+		"wpn_fps_upg_m4_m_l5",
+		"wpn_fps_upg_m4_m_quad",
+		--VMP
+		"wpn_fps_m4_uupg_m_extend"
+	}
+	for _, override_id in ipairs(attachment_list) do
+		table.insert(self.wpn_fps_ass_vhs.uses_parts, override_id)
+		if not self.parts[override_id].desc_id then
+			self.parts[override_id].desc_id = "empty"
+			self.parts[override_id].has_description = true
+		end
+		self.wpn_fps_ass_vhs.override[override_id] = {
+			a_obj = IsCAPInstalled and "a_m_fix" or nil,
+			desc_id = not IsCAPInstalled and "missing_cap"
+		}
+	end
 
 
 --GEN 1 LEGENDARY STUFF--

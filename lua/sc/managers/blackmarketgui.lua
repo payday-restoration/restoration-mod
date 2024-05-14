@@ -5692,7 +5692,7 @@ function BlackMarketGui:update_info_text()
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
 
-			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) then
+			if (slot_data.global_value and slot_data.global_value ~= "normal") and description ~= "" or (perks and table.contains(perks, "bonus")) then
 				updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 			else
 				updated_texts[4].text = updated_texts[4].text .. description

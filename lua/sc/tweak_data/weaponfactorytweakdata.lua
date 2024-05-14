@@ -37107,19 +37107,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_famas.uses_parts, override_id)
-		if self.parts[override_id] and not self.parts[override_id].desc_id then
-			self.parts[override_id].desc_id = "empty"
-			self.parts[override_id].has_description = true
+		if self.parts[override_id] then
+			if not self.parts[override_id].desc_id then
+				self.parts[override_id].desc_id = "empty"
+				self.parts[override_id].has_description = true
+			end
+			self.wpn_fps_ass_famas.override[override_id] = {
+				stats = self.parts[override_id] and deep_clone(self.parts[override_id].stats),
+				a_obj = IsCAPInstalled and "a_m_fix" or nil,
+				desc_id = not IsCAPInstalled and "missing_cap",
+				unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil,
+				third_unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_third_ass_famas_pts/wpn_third_ass_famas_m_standard" or nil
+			}
+			self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo = (self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo or 0) + 5
+			self.wpn_fps_ass_famas.override[override_id].stats.concealment = (self.wpn_fps_ass_famas.override[override_id].stats.concealment or 0) - 1
 		end
-		self.wpn_fps_ass_famas.override[override_id] = {
-			stats = self.parts[override_id] and deep_clone(self.parts[override_id].stats),
-			a_obj = IsCAPInstalled and "a_m_fix" or nil,
-			desc_id = not IsCAPInstalled and "missing_cap",
-			unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil,
-			third_unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_third_ass_famas_pts/wpn_third_ass_famas_m_standard" or nil
-		}
-		self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo = (self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo or 0) + 5
-		self.wpn_fps_ass_famas.override[override_id].stats.concealment = (self.wpn_fps_ass_famas.override[override_id].stats.concealment or 0) - 1
 	end
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_std.stats = {
 			concealment = -1,
@@ -37144,14 +37146,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_vhs.uses_parts, override_id)
-		if self.parts[override_id] and not self.parts[override_id].desc_id then
-			self.parts[override_id].desc_id = "empty"
-			self.parts[override_id].has_description = true
+		if self.parts[override_id] then
+			if not self.parts[override_id].desc_id then
+				self.parts[override_id].desc_id = "empty"
+				self.parts[override_id].has_description = true
+			end
+			self.wpn_fps_ass_vhs.override[override_id] = {
+				a_obj = IsCAPInstalled and "a_m_fix" or nil,
+				desc_id = not IsCAPInstalled and "missing_cap",
+				unit = not IsCAPInstalled and "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_m" or nil
+			}
 		end
-		self.wpn_fps_ass_vhs.override[override_id] = {
-			a_obj = IsCAPInstalled and "a_m_fix" or nil,
-			desc_id = not IsCAPInstalled and "missing_cap"
-		}
 	end
 	self.wpn_fps_ass_vhs_npc.override = deep_clone(self.wpn_fps_ass_vhs.override)
 	self.wpn_fps_ass_vhs_npc.uses_parts = deep_clone(self.wpn_fps_ass_vhs.uses_parts)

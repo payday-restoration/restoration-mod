@@ -12,7 +12,7 @@ Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 
 	self:_calculate_standard_variables(t, dt)
 	self:_update_ground_ray()
-	self:_update_fwd_ray() 
+	self:_update_fwd_ray()
 	self:_check_action_change_camera(t, input)
 	self:_check_action_rear_cam(t, input)
 	self:_update_hud(t, input)

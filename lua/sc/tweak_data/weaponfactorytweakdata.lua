@@ -12012,6 +12012,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vhs", "resmod_vhs", function(self)
 	self.parts.wpn_fps_ass_vhs_b_sniper.stats = deep_clone(barrels.long_b3_stats)
 	self.parts.wpn_fps_ass_vhs_b_sniper.custom_stats = deep_clone(barrels.long_b3_stats)
 
+	self.wpn_fps_ass_vhs.override = self.wpn_fps_ass_vhs.override or {}
+
 	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_i_swordfish")
 	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_vhs.uses_parts, "wpn_fps_upg_o_northtac_reddot")
@@ -37099,18 +37101,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		"wpn_fps_m4_uupg_m_std",
 		"wpn_fps_m4_upg_m_quick",
 		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_m4_m_quad"
+		"wpn_fps_upg_m4_m_quad",
 		--VMP
 		"wpn_fps_m4_uupg_m_extend"
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_famas.uses_parts, override_id)
-		if not self.parts[override_id].desc_id then
+		if self.parts[override_id] and not self.parts[override_id].desc_id then
 			self.parts[override_id].desc_id = "empty"
 			self.parts[override_id].has_description = true
 		end
 		self.wpn_fps_ass_famas.override[override_id] = {
-			stats = deep_clone(self.parts[override_id].stats),
+			stats = self.parts[override_id] and deep_clone(self.parts[override_id].stats),
 			a_obj = IsCAPInstalled and "a_m_fix" or nil,
 			desc_id = not IsCAPInstalled and "missing_cap",
 			unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil,
@@ -37129,7 +37131,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_upg_m_quick.custom_stats = { ads_speed_mult = 1.025 }
 	self.wpn_fps_ass_famas.override.wpn_fps_m4_uupg_m_extend.custom_stats = { ads_speed_mult = 1.05 }
 	self.wpn_fps_ass_famas.override.wpn_fps_upg_m4_m_quad.custom_stats = { ads_speed_mult = 1.125 }
-	
+
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)
 
@@ -37142,7 +37144,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_vhs.uses_parts, override_id)
-		if not self.parts[override_id].desc_id then
+		if self.parts[override_id] and not self.parts[override_id].desc_id then
 			self.parts[override_id].desc_id = "empty"
 			self.parts[override_id].has_description = true
 		end

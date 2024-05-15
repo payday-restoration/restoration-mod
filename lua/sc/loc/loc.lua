@@ -4876,6 +4876,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Combat Engineer",
 		["st_menu_technician_breaching"] = "Breacher",
 		["st_menu_technician_sentry"] = "Fortress",
+		["st_menu_ghost_silencer"] = "Contract Killer",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
 
@@ -5462,7 +5463,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Sneaky Bastard--
 				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{risk}#2## points of encumbrance under #{risk}#30##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{risk}#1## point of encumbrance under #{risk}#30##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
 
-			--[[   SILENT KILLER SUBTREE   ]]--
+			--[[   CONTRACT KILLER SUBTREE   ]]--
+			--FORMERLY "SILENT KILLER"
 				--Second Wind
 				["menu_scavenger_beta_sc"] = "Second Wind",
 				["menu_scavenger_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your armor breaks you gain #{skill_color}#$skill_value_b1## speed for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nWhen your armor is fully depleted, the first shot on every enemy will stagger them.\n\nThis effect persists for #{skill_color}#$skill_value_p1## seconds after your armor has regenerated.",

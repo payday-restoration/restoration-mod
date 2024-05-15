@@ -17532,6 +17532,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.recategorize = { "light_smg" }		
 				self.alpha57_prim.damage_type = "machine_gun"
 				self.alpha57_prim.has_description = true
+				self.alpha57_prim.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
 				self.alpha57_prim.kick = self.stat_info.kick_tables.even_recoil
 				self.alpha57_prim.nato = true
 				self.alpha57_prim.tactical_reload = 1
@@ -17541,6 +17542,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.fire_mode_data.fire_rate = 0.0857142
 				self.alpha57_prim.CLIP_AMMO_MAX = 50
 				self.alpha57_prim.AMMO_MAX = 180
+				self.alpha57_prim.always_play_anims = true
 				self.alpha57_prim.supported = true
 				self.alpha57_prim.ads_speed = 0.260
 				self.alpha57_prim.hs_mult = 1.33333
@@ -17549,8 +17551,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.can_shoot_through_shield = false
 				self.alpha57_prim.can_shoot_through_wall = false
 				self.alpha57_prim.damage_falloff = {
-					start_dist = 2200,
-					end_dist = 5600,
+					start_dist = 1700,
+					end_dist = 4400,
 					min_mult = 0.555555
 				}
 				self.alpha57_prim.stats = {
@@ -18136,6 +18138,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.AMMO_MAX = 20
 				self.swhiskey.CLIP_AMMO_MAX = 5
 				self.swhiskey.kick = self.stat_info.kick_tables.vertical_kick
+				self.swhiskey.always_play_anims = true
 				self.swhiskey.supported = true
 				self.swhiskey.ads_speed = 0.180
 				self.swhiskey.damage_falloff = {
@@ -18262,6 +18265,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malima.panic_suppression_chance = 0.05
 			end
 
+			--MW2022 M4
+			if self.mike4_2022 then
+				self.mike4_2022.nato = true
+				self.mike4_2022.recategorize = { "light_ar" }
+				self.mike4_2022.has_description = false
+				self.mike4_2022.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.mike4_2022.tactical_reload = 1
+				self.mike4_2022.AMMO_MAX = 150
+				self.mike4_2022.fire_mode_data.fire_rate = 0.074074
+				self.mike4_2022.kick = self.stat_info.kick_tables.left_kick	
+				self.mike4_2022.always_play_anims = true
+				self.mike4_2022.supported = true
+				self.mike4_2022.ads_speed = 0.240
+				self.mike4_2022.damage_falloff = {
+					start_dist = 2600,
+					end_dist = 4500,
+					min_mult = 0.4166
+				}
+				self.mike4_2022.stats = {
+					damage = 24,
+					spread = 72,
+					recoil = 81,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.mike4_2022.stats_modifiers = nil
+				self.mike4_2022.reload_speed_multiplier = 1.6
+				self.mike4_2022.panic_suppression_chance = 0.05
+				self.mike4_2022.timers.reload_exit_empty = 0.5
+				self.mike4_2022.timers.reload_empty = 3.05
+				self.mike4_2022.timers.reload_exit_not_empty = 1.15
+				self.mike4_2022.timers.reload_not_empty = 2.4
+			end
+
 			--RJC9000 and PlayBONK's MW2022 AKs
 				if self.akilo_2022 then 
 					self.akilo_2022.warsaw = true
@@ -18272,6 +18315,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo_2022.AMMO_MAX = 120
 					self.akilo_2022.fire_mode_data.fire_rate = 0.1
 					self.akilo_2022.kick = self.stat_info.kick_tables.right_recoil	
+					self.akilo_2022.always_play_anims = true
 					self.akilo_2022.supported = true
 					self.akilo_2022.ads_speed = 0.320
 					self.akilo_2022.damage_falloff = {
@@ -18308,11 +18352,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.AMMO_MAX = 150
 					self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
 					self.akilo105_2022.kick = self.stat_info.kick_tables.right_recoil	
+					self.akilo105_2022.always_play_anims = true
 					self.akilo105_2022.supported = true
 					self.akilo105_2022.ads_speed = 0.280
 					self.akilo105_2022.damage_falloff = {
-						start_dist = 2400,
-						end_dist = 4500,
+						start_dist = 3200,
+						end_dist = 5500,
 						min_mult = 0.5
 					}
 					self.akilo105_2022.stats = {
@@ -20221,6 +20266,76 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spas15.reload_not_empty_speed_multiplier = 1.1
 			self.spas15.timers = deep_clone(self.g36.timers)
 		end	
+
+		if self.mdr_308 then
+			self.mdr_308.categories = { 
+				"assault_rifle",
+				"dmr_l",
+			}
+			self.mdr_308.recategorize = {"dmr_ar"}
+			self.mdr_308.nato = true
+			self.mdr_308.damage_type = "assault_rifle"
+			self.mdr_308.AMMO_MAX = 60
+			self.mdr_308.tactical_reload = 1
+			self.mdr_308.CLIP_AMMO_MAX = 20
+			self.mdr_308.fire_mode_data.fire_rate = 0.092307
+			self.mdr_308.CAN_TOGGLE_FIREMODE = true
+			self.mdr_308.FIRE_MODE = "auto"
+			self.mdr_308.kick = self.stat_info.kick_tables.right_kick
+			self.mdr_308.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+			self.mdr_308.supported = true
+			self.mdr_308.ads_speed = 0.380
+			self.mdr_308.damage_falloff = {
+				start_dist = 1900,
+				end_dist = 4800,
+				min_mult = 0.53333
+			}
+			self.mdr_308.stats = {
+				damage = 45,
+				spread = 87,
+				recoil = 59,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 23,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 4,
+				reload = 20
+			}
+			self.mdr_308.stats_modifiers = nil
+			self.mdr_308.panic_suppression_chance = 0.05
+			self.mdr_308.armor_piercing_chance = 0.25
+			self.mdr_308.can_shoot_through_enemy = false
+			self.mdr_308.can_shoot_through_wall = false
+			self.mdr_308.timers.reload_exit_empty = 0.9
+			self.mdr_308.timers.reload_exit_not_empty = 0.8
+		end
+
+		if self.mdr_308_underbarrel then
+			self.mdr_308_underbarrel.supported = true
+			self.mdr_308_underbarrel.ads_speed = 0.380
+			self.mdr_308_underbarrel.AMMO_MAX = 4
+			self.mdr_308_underbarrel.damage_falloff = deep_clone(self.contraband_m203.damage_falloff)
+			self.mdr_308.stats = {
+				damage = 72,
+				spread = 61,
+				recoil = 61,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 23,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 1,
+				reload = 20
+			}
+			self.mdr_308_underbarrel.use_stance = "mdr_308"
+			self.mdr_308_underbarrel.panic_suppression_chance = 0.05
+		end
+
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 		-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality, those are fine) then it's a no-go for now

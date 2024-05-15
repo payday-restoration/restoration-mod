@@ -4828,6 +4828,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Боевой инженер",
 		["st_menu_technician_breaching"] = "Перфоратор",
 		["st_menu_technician_sentry"] = "Крепость",
+		["st_menu_ghost_silencer"] = "Наемный убийца",
 		["hud_instruct_mask_on"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
 		["hud_instruct_mask_on_alpha"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
 

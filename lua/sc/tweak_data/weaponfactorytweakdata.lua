@@ -27768,6 +27768,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_akilo_2022_grip_tac.custom_stats = { ads_speed_mult = 0.975 }
 
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.stats = {
+					value = 0,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.custom_stats = nil
+
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho_snp.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho_snp.stats = {
+					value = 0,
+					recoil = 2,
+					spread = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho_snp.custom_stats = { ads_speed_mult = 1.05 }
+
 			--Stocks
 				self.parts.wpn_fps_ass_akilo_2022_stock_vanilla = deep_clone(self.parts.wpn_fps_ass_akilo_2022_stock)
 				self.parts.wpn_fps_ass_akilo_2022_stock_vanilla.pcs = nil
@@ -27788,35 +27805,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.stats = deep_clone(stocks.fixed_to_folder_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.stats = deep_clone(stocks.fixed_to_folder_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_skeleton.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
 
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac.stats = deep_clone(stocks.fixed_to_adj_rec_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_tac.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_tac.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac.custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
 
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.stats = deep_clone(stocks.fixed_to_adj_acc_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_tac02.custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
 
 				self.parts.wpn_fps_ass_akilo_2022_stock_wire.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_wire.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_wire.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_wire.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_wire.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_wire.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
 
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.stats = deep_clone(stocks.remove_fixed_stats)
-				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.stats.value = 0
 				self.parts.wpn_fps_ass_akilo_2022_stock_akilo74_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
 
 				self.parts.wpn_fps_ass_akilo_2022_stock_heavy.supported = true
@@ -27828,6 +27845,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_akilo_2022_stock_heavy.custom_stats = nil
 
+				self.parts.wpn_fps_ass_akilo_2022_stock_mw2.stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
+				self.parts.wpn_fps_ass_akilo_2022_stock_mw2.stats.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_mw2.custom_stats = deep_clone(stocks.fixed_to_hvy_acc_stats)
+
+				--RPK stocks
 				self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.supported = true
 				self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.has_description = false
 				self.parts.wpn_fps_ass_akilo_2022_stock_rkilo.stats = { value = 0 }
@@ -27856,6 +27878,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_akilo_2022_stock_rkilo_heavy.custom_stats = {
 					ads_speed_mult = 1.1
 				}
+
+				--KV Broadside Stocks
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho.stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho.stats.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho.custom_stats = deep_clone(stocks.fixed_to_adj_dual_stats)
+
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho_tac.stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho_tac.stats.value = 0
+				self.parts.wpn_fps_ass_akilo_2022_stock_vecho_tac.custom_stats = deep_clone(stocks.fixed_to_hvy_rec_stats)
 
 			--Barrels
 				--SAKIN KL
@@ -28014,6 +28045,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_akilo_2022_smag_akilo105.custom_stats = {
 					ads_speed_mult = 0.975
 				}
+
+				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.has_description = false
+				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.depends_on = "upper_reciever"
+				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.stats = {
+					value = 0,
+					extra_ammo = 45,
+					reload = -6,
+					concealment = -5
+				}
+				self.parts.wpn_fps_ass_akilo_2022_magazine_rkilo.custom_stats = {
+					ads_speed_mult = 1.125
+				}
+				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.has_description = false
+				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.depends_on = "upper_reciever"
+				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.stats = {
+					value = 0,
+					extra_ammo = 70,
+					spread = -1,
+					reload = -8,
+					concealment = -7
+				}
+				self.parts.wpn_fps_ass_akilo_2022_xmag_rkilo.custom_stats = {
+					ads_speed_mult = 1.175
+				}
+
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2.stats = { 
+					value = 0,
+					recoil = -2,
+					concealment = 1 
+				}
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2.custom_stats = nil
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2_545.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2_545.stats = { 
+					value = 0,
+					recoil = -2,
+					concealment = 1 
+				}
+				self.parts.wpn_fps_ass_akilo_2022_magazine_mw2_545.custom_stats = nil
+
+			--Muzzle Devices
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.stats = deep_clone(muzzle_device.muzzle_rec_stats)
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.perks = nil
 
 			attachment_list = {
 				"wpn_fps_ass_akilo_2022_handguard",

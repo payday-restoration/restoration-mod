@@ -27626,6 +27626,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_nova4_npc.uses_parts = deep_clone(self.wpn_fps_ass_nova4.uses_parts)
 		end
 
+		if self.parts.wpn_fps_ass_mike4_2022_grip then
+			self.parts.wpn_fps_ass_mike4_2022_handguard.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_handguard.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_mike4_2022_magazine.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_magazine.custom_stats = nil
+			self.parts.wpn_fps_ass_mike4_2022_receiver.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_receiver.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_receiver.custom_stats = { hip_mult = 4 }
+			self.parts.wpn_fps_ass_mike4_2022_grip.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_mike4_2022_stock.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_stock.custom_stats = nil
+
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.custom_stats = { hip_mult = 4 }
+
+			--Barrels/Handguards
+			--Magazines
+			--Grips
+			--Stocks
+		end
+
 		if self.parts.wpn_fps_ass_akilo_2022_optic_rail then --RJC9000 and PlayBONK's MW2022 AKs
 
 			attachment_list = {

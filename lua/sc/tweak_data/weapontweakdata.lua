@@ -17542,7 +17542,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.fire_mode_data.fire_rate = 0.0857142
 				self.alpha57_prim.CLIP_AMMO_MAX = 50
 				self.alpha57_prim.AMMO_MAX = 180
-				self.alpha57_prim.always_play_anims = true
 				self.alpha57_prim.supported = true
 				self.alpha57_prim.ads_speed = 0.260
 				self.alpha57_prim.hs_mult = 1.33333
@@ -17551,8 +17550,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57_prim.can_shoot_through_shield = false
 				self.alpha57_prim.can_shoot_through_wall = false
 				self.alpha57_prim.damage_falloff = {
-					start_dist = 1700,
-					end_dist = 4400,
+					start_dist = 2200,
+					end_dist = 5600,
 					min_mult = 0.555555
 				}
 				self.alpha57_prim.stats = {
@@ -18138,7 +18137,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.AMMO_MAX = 20
 				self.swhiskey.CLIP_AMMO_MAX = 5
 				self.swhiskey.kick = self.stat_info.kick_tables.vertical_kick
-				self.swhiskey.always_play_anims = true
 				self.swhiskey.supported = true
 				self.swhiskey.ads_speed = 0.180
 				self.swhiskey.damage_falloff = {
@@ -18274,13 +18272,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.tactical_reload = 1
 				self.mike4_2022.AMMO_MAX = 150
 				self.mike4_2022.fire_mode_data.fire_rate = 0.074074
-				self.mike4_2022.kick = self.stat_info.kick_tables.left_kick	
-				self.mike4_2022.always_play_anims = true
+				self.mike4_2022.kick = self.stat_info.kick_tables.left_kick
 				self.mike4_2022.supported = true
 				self.mike4_2022.ads_speed = 0.240
 				self.mike4_2022.damage_falloff = {
-					start_dist = 2600,
-					end_dist = 4500,
+					start_dist = 1600,
+					end_dist = 5600,
 					min_mult = 0.4166
 				}
 				self.mike4_2022.stats = {
@@ -18297,7 +18294,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.mike4_2022.stats_modifiers = nil
-				self.mike4_2022.reload_speed_multiplier = 1.6
+				self.mike4_2022.reload_speed_multiplier = 1.36
 				self.mike4_2022.panic_suppression_chance = 0.05
 				self.mike4_2022.timers.reload_exit_empty = 0.5
 				self.mike4_2022.timers.reload_empty = 3.05
@@ -18315,7 +18312,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo_2022.AMMO_MAX = 120
 					self.akilo_2022.fire_mode_data.fire_rate = 0.1
 					self.akilo_2022.kick = self.stat_info.kick_tables.right_recoil	
-					self.akilo_2022.always_play_anims = true
 					self.akilo_2022.supported = true
 					self.akilo_2022.ads_speed = 0.320
 					self.akilo_2022.damage_falloff = {
@@ -18337,7 +18333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						reload = 20
 					}
 					self.akilo_2022.stats_modifiers = nil
-					self.akilo_2022.reload_speed_multiplier = 1.25
+					self.akilo_2022.reload_speed_multiplier = 1.45
 					self.akilo_2022.timers.reload_exit_empty = 0.8
 					self.akilo_2022.timers.reload_exit_not_empty = 1.2
 					self.akilo_2022.panic_suppression_chance = 0.05
@@ -18352,12 +18348,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.AMMO_MAX = 150
 					self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
 					self.akilo105_2022.kick = self.stat_info.kick_tables.right_recoil	
-					self.akilo105_2022.always_play_anims = true
 					self.akilo105_2022.supported = true
 					self.akilo105_2022.ads_speed = 0.280
 					self.akilo105_2022.damage_falloff = {
-						start_dist = 3200,
-						end_dist = 5500,
+						start_dist = 2400,
+						end_dist = 4500,
 						min_mult = 0.5
 					}
 					self.akilo105_2022.stats = {
@@ -18374,7 +18369,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						reload = 20
 					}
 					self.akilo105_2022.stats_modifiers = nil
-					self.akilo105_2022.reload_speed_multiplier = 1.25
+					self.akilo105_2022.reload_speed_multiplier = 1.72
 					self.akilo105_2022.timers.reload_exit_empty = 0.8
 					self.akilo105_2022.timers.reload_exit_not_empty = 1.2
 					self.akilo105_2022.panic_suppression_chance = 0.05
@@ -20305,6 +20300,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.mdr_308.stats_modifiers = nil
+			self.mdr_308.is_bullpup = true
 			self.mdr_308.panic_suppression_chance = 0.05
 			self.mdr_308.armor_piercing_chance = 0.25
 			self.mdr_308.can_shoot_through_enemy = false
@@ -20314,11 +20310,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		end
 
 		if self.mdr_308_underbarrel then
+			self.mdr_308_underbarrel.categories = { 
+				"rocket_launcher",
+				"grenade_launcher"
+			}
 			self.mdr_308_underbarrel.supported = true
 			self.mdr_308_underbarrel.ads_speed = 0.380
+			self.mdr_308_underbarrel.kick = self.stat_info.kick_tables.right_kick
+			self.mdr_308_underbarrel.CLIP_AMMO_MAX = 1
 			self.mdr_308_underbarrel.AMMO_MAX = 4
 			self.mdr_308_underbarrel.damage_falloff = deep_clone(self.contraband_m203.damage_falloff)
-			self.mdr_308.stats = {
+			self.mdr_308_underbarrel.stats = {
 				damage = 72,
 				spread = 61,
 				recoil = 61,
@@ -20333,7 +20335,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.mdr_308_underbarrel.use_stance = "mdr_308"
+			self.mdr_308_underbarrel.is_bullpup = true
 			self.mdr_308_underbarrel.panic_suppression_chance = 0.05
+			self.mdr_308_underbarrel.timers.reload_exit_empty = 0.3
+			self.mdr_308_underbarrel.timers.reload_exit_not_empty = 0.3
 		end
 
 

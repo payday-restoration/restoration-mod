@@ -2482,6 +2482,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_madsen_lar = {
 				translation = Vector3(-0.001, -6.2, -2.639),
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mdr_308 = {
+				translation = Vector3(0.003, 1, -0.025)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 				translation = Vector3(0.02, 4, 0.03),
@@ -27645,6 +27648,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				"wpn_fps_ass_akilo_2022_magazine_akilo105",
 				"wpn_fps_ass_akilo_2022_magazine_akilo74",
 				"wpn_fps_ass_akilo_2022_magazine_t9damage_545",
+				"wpn_fps_ass_akilo_2022_magazine_t9damage_545",
+				"wpn_fps_ass_akilo_2022_flash_hider",
+				"wpn_fps_ass_akilo_2022_flash_hider_akilo105",
 			}
 
 			for part_id, i in pairs(self.parts) do

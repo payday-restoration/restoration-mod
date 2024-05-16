@@ -32,10 +32,19 @@ tweak_data.scene_pose_items.husk_bessy = {
 	"primary"
 }
 
-tweak_data.scene_poses.weapon.g3 = {
-	"husk_m95",
-	"husk_m249"
+tweak_data.scene_poses.weapon.siltstone = {
+	"husk_lmg",
+	"husk_rifle3",
+	"husk_mosconi"
 }
+tweak_data.scene_poses.weapon.g3 = {
+	"husk_m249",
+	"husk_mosconi",
+	"husk_rifle3"
+}
+if not BeardLib.Utils:FindMod("Visual Fixes") then
+	table.insert(tweak_data.scene_poses.weapon.g3, "husk_m95")
+end
 tweak_data.scene_poses.weapon.bessy = {
 	"husk_bessy",
 	required_pose = true

@@ -33599,6 +33599,66 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_smg_mac10_s_no",
 					"wpn_fps_smg_mac10_s_skel"
 				}
+		
+			--1911
+				self.parts.wpn_fps_pis_1911_body_sporty.supported = true
+				self.parts.wpn_fps_pis_1911_body_sporty.stats = {
+					value = 6,
+					reload = 2,
+					spread = 2,
+					concealment = -2,
+					zoom = 1
+				}
+				self.parts.wpn_fps_pis_1911_body_sporty.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				self.parts.wpn_fps_pis_1911_body_sporty.stance_mod = {
+					wpn_fps_pis_1911 = {
+						translation = Vector3(0,-15,-3.3)
+					}
+				}
+				self.parts.wpn_fps_pis_1911_body_sporty.forbids = {
+					"wpn_fps_pis_1911_m_big"
+				}
+				for k, used_part_id in ipairs(self.wpn_fps_pis_1911.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if not table.contains(self.wpn_fps_pis_1911.default_blueprint, used_part_id) then
+							if self.parts[used_part_id].type == "slide" then
+								--table.insert(self.parts.wpn_fps_pis_1911_body_sporty.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "sight" then
+								table.insert(self.parts.wpn_fps_pis_1911_body_sporty.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "grip" then
+								table.insert(self.parts.wpn_fps_pis_1911_body_sporty.forbids, used_part_id )
+							end
+						end
+					end
+				end
+				self.parts.wpn_fps_pis_x_1911_body_sporty.supported = true
+				self.parts.wpn_fps_pis_x_1911_body_sporty.stats = {
+					value = 6,
+					reload = 2,
+					spread = 2,
+					concealment = -2
+				}
+				self.parts.wpn_fps_pis_x_1911_body_sporty.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				self.parts.wpn_fps_pis_x_1911_body_sporty.forbids = {
+					"wpn_fps_pis_1911_m_big"
+				}
+				for k, used_part_id in ipairs(self.wpn_fps_pis_1911.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if not table.contains(self.wpn_fps_pis_1911.default_blueprint, used_part_id) then
+							if self.parts[used_part_id].type == "slide" then
+								--table.insert(self.parts.wpn_fps_pis_x_1911_body_sporty.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "sight" then
+								table.insert(self.parts.wpn_fps_pis_x_1911_body_sporty.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "grip" then
+								table.insert(self.parts.wpn_fps_pis_x_1911_body_sporty.forbids, used_part_id )
+							end
+						end
+					end
+				end
 		end
 
 	--Striker mods--

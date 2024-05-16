@@ -6687,6 +6687,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 		}
 	}
 
+	self.parts.wpn_fps_smg_mac10_body_ris_special.stance_mod = {
+		wpn_fps_smg_mac10 = {
+			translation = Vector3(0, 0, -1.8),
+			rotation = Rotation(0, 0, 0)
+		}
+	}
+	
 	--Railed Handguard
 	self.parts.wpn_fps_smg_mac10_body_ris.pcs = {
 		10,
@@ -6709,7 +6716,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 		}
 	}
 	table.insert(self.parts.wpn_fps_smg_mac10_body_ris.forbids, "wpn_fps_smg_mac10_vg_block")
-
+	self.parts.wpn_fps_smg_mac10_body_ris.stance_mod = {
+		wpn_fps_smg_mac10 = {
+			translation = Vector3(0, 0, -1.8),
+			rotation = Rotation(0, 0, 0)
+		}
+	}
+	self.parts.wpn_fps_smg_mac10_body_ris.adds = {
+		"wpn_upg_o_marksmansight_rear_vanilla"
+	}
 	--Extended Mag.
 	self.parts.wpn_fps_smg_mac10_m_extended.pcs = {
 		10,

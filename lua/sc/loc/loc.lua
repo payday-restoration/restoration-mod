@@ -2752,6 +2752,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_scar_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_scar_ap25_sc_desc"] = "The battle rifle of the future. With a good balance of handling and ballistic damage, it's become popular among USMC and special forces.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
 				["bm_scarl_sc_desc"] = "The infantry rifle of the future... or not. While popular in the civilian market, military forces found little need for another 5.56 rifle.",
+				["bm_scarhamr_sc_desc"] = "The infantry automatic rifle of the future... or not.",
 
 				--Galant
 				["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and #{skill_color}#quick to reload when emptied.\n\nDeals 75% of its damage through body armor and can pierce multiple enemies and thin walls.##",
@@ -3279,6 +3280,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SCAR
 					["bm_w_scar"] = "Eagle Heavy",
 					["bm_w_scar_l"] = "Eagle Light",
+					["bm_w_scar_hamr"] = "Eagle Hammer",
 					--Galant--
 					["bm_w_ching"] = "M1 Galant",
 					--M308
@@ -3409,6 +3411,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_judge"] = "Akimbo Judges",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scar_l"] = "VF-6M",
+				["bm_w_scar_hamr"] = "VF-HAMR",
 				["bm_w_scarl"] = "VF-6M",
 				["bm_w_schakal"] = "AMP 45",
 				["bm_w_tecci"] = "SG 416C",
@@ -3955,6 +3958,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--SCAR
 					["bm_w_scar"] = "FN Mk.17",
 					["bm_w_scar_l"] = "FN Mk.16",
+					["bm_w_scar_hamr"] = "FN HAMR",
 					["bm_wp_scar_fg_railext"] = "PWS SCAR Rail Extension",
 					["bm_wp_scar_s_sniper"] = "Mk.20 Stock",
 					--FAL

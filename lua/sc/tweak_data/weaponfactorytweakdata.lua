@@ -6664,6 +6664,29 @@ end)
 --Mark 10
 Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(self)
 
+	self.parts.wpn_fps_smg_mac10_body_mac10.adds = {
+		"wpn_fps_smg_mac10_vg_block"
+	}
+	self.parts.wpn_fps_smg_mac10_vg_block = {
+		name_id = "bm_wp_smg_mac10_vg_block",
+		type = "extra",
+		a_obj = "a_vg",
+		supported = true,
+		internal_part = true,
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		pcs = nil,
+		stats = {
+			value = 0
+		},
+		forbids = {
+			"wpn_fps_upg_vg_ass_smg_stubby",
+			"wpn_fps_upg_vg_ass_smg_verticalgrip",
+			"wpn_fps_upg_vg_ass_smg_afg",
+			"wpn_fps_smg_schakal_vg_surefire"
+		}
+	}
+
 	--Railed Handguard
 	self.parts.wpn_fps_smg_mac10_body_ris.pcs = {
 		10,
@@ -6677,7 +6700,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 		recoil = 2,
 		concealment = -1
 	}
-	table.insert(self.parts.wpn_fps_smg_mac10_body_ris.forbids, "wpn_fps_smg_pm9_fl_adapter")
+	self.parts.wpn_fps_smg_mac10_body_ris.override = {
+		wpn_fps_smg_mac10_body_mac10 = {
+			adds = {}
+		},
+		wpn_fps_smg_mac10_body_modern = {
+			adds = {}
+		}
+	}
+	table.insert(self.parts.wpn_fps_smg_mac10_body_ris.forbids, "wpn_fps_smg_mac10_vg_block")
 
 	--Extended Mag.
 	self.parts.wpn_fps_smg_mac10_m_extended.pcs = {
@@ -6689,12 +6720,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 	self.parts.wpn_fps_smg_mac10_m_extended.supported = true
 	self.parts.wpn_fps_smg_mac10_m_extended.stats = {
 		value = 2,
-		concealment = -2,
+		concealment = -1,
 		extra_ammo = 10,
 		reload = -2
 	}
 	self.parts.wpn_fps_smg_mac10_m_extended.custom_stats = {
-		ads_speed_mult = 1.05
+		ads_speed_mult = 1.025
 	}
 
 	--Skeletal Stock
@@ -6710,17 +6741,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 
 	self.wpn_fps_smg_mac10.override = self.wpn_fps_smg_mac10.override or {}
 
-	self.wpn_fps_smg_mac10.override.wpn_fps_smg_pm9_fl_adapter = { a_obj = "a_vg" }
 	self.wpn_fps_smg_mac10.override.wpn_fps_smg_schakal_vg_surefire = { stats = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip.stats) }
 
 	self.wpn_fps_smg_mac10.adds = self.wpn_fps_smg_mac10.adds or {}
 
-	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_smg_mac10.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_smg_pm9_fl_adapter" }
-	self.wpn_fps_smg_mac10.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_smg_pm9_fl_adapter" }
-
-	
 	table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_smg_mac10_s_no")
 	table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	--table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_upg_i_eye")
@@ -15972,7 +15996,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		concealment = -2
 	}
 	self.parts.wpn_fps_smg_mac10_m_quick.custom_stats = {
-		ads_speed_mult = 1.05
+		ads_speed_mult = 1.025
 	}
 	
 	
@@ -17123,6 +17147,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_icc", "resmod_icc", function(self)
 	self.parts.wpn_fps_smg_mac10_body_modern.pcs = {}
 	self.parts.wpn_fps_smg_mac10_body_modern.supported = true
 	self.parts.wpn_fps_smg_mac10_body_modern.stats = {value = 0}
+	self.parts.wpn_fps_smg_mac10_body_modern.adds = {
+		"wpn_fps_smg_mac10_vg_block"
+	}
 	
 	--Custom Milled Barrel
 	self.parts.wpn_fps_pis_deagle_b_modern.pcs = {}
@@ -31833,13 +31860,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_scar_body_light.custom_stats = {
 					alt_desc = "bm_scarl_sc_desc",
-					falloff_start_mult = 1.27272727,
-					falloff_end_mult = 1.25,
+					falloff_start_mult = 1.166666,
+					falloff_end_mult = 1.103448,
 					damage_min_mult = 0.625,
-					ammo_pickup_max_mul = 1.59459,
-					ammo_pickup_min_mul = 1.59459,
-					alt_ammo_pickup_max_mul = 1.59459,
-					alt_ammo_pickup_min_mul = 1.59459,
+					ammo_pickup_max_mul = 1.79,
+					ammo_pickup_min_mul = 1.79,
+					alt_ammo_pickup_max_mul = 1.79,
+					alt_ammo_pickup_min_mul = 1.79,
 					can_shoot_through_enemy = false,
 					armor_piercing_override = 0,
 					armor_piercing_add_override = 0,
@@ -33501,6 +33528,78 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_m4_body_tantone.override = self.parts.wpn_fps_ass_m4_body_tantone.override or {}
 		end
 
+		if self.parts.wpn_fps_ass_scar_body_hamr then --Tangerine's Pack of Exclusive Sets 2.0
+
+			--SCAR
+				self.parts.wpn_fps_ass_scar_body_hamr.supported = true
+				self.parts.wpn_fps_ass_scar_body_hamr.keep_damage = true
+				self.parts.wpn_fps_ass_scar_body_hamr.stats = {
+					value = 10,
+					extra_ammo = 10,
+					damage = -15,
+					total_ammo_mod = 99,
+					spread = 1,
+					recoil = 14,
+					extra_ammo = 30,
+					reload = -6,
+					concealment = -5
+				}
+				self.parts.wpn_fps_ass_scar_body_hamr.custom_stats = {
+					alt_desc = "bm_scarhamr_sc_desc",
+					falloff_start_mult = 1.33333,
+					falloff_end_mult = 1.20689,
+					damage_min_mult = 0.625,
+					ammo_pickup_max_mul = 1.79,
+					ammo_pickup_min_mul = 1.79,
+					alt_ammo_pickup_max_mul = 1.79,
+					alt_ammo_pickup_min_mul = 1.79,
+					can_shoot_through_enemy = false,
+					armor_piercing_override = 0,
+					armor_piercing_add_override = 0,
+					rof_mult = 1.083333,
+					ads_speed_mult = 1.11111,
+					srm = {
+						-0.01,
+						{1, 1.05},
+						4
+					}
+				}
+				self.parts.wpn_fps_ass_scar_body_hamr.adds = {}
+				self.parts.wpn_fps_ass_scar_body_hamr.forbids = {}
+				self.parts.wpn_fps_ass_scar_body_hamr.perks = nil
+				self.parts.wpn_fps_ass_scar_body_hamr.override = self.parts.wpn_fps_ass_scar_body_hamr.override or {}
+				for k, used_part_id in ipairs(self.wpn_fps_ass_scar.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if not table.contains(self.wpn_fps_ass_scar.default_blueprint, used_part_id) then
+							if self.parts[used_part_id].type == "magazine" then
+								table.insert(self.parts.wpn_fps_ass_scar_body_hamr.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "custom" then
+								table.insert(self.parts.wpn_fps_ass_scar_body_hamr.forbids, used_part_id )
+							elseif self.parts[used_part_id].type == "barrel" then
+								table.insert(self.parts.wpn_fps_ass_scar_body_hamr.forbids, used_part_id )
+							end
+						end
+					end
+				end
+		
+			--MAC-10
+				self.parts.wpn_fps_smg_mac10_body_m4_v2.supported = true
+				self.parts.wpn_fps_smg_mac10_body_m4_v2.stats = {
+					value = 7,
+					recoil = 6,
+					spread = 4,
+					concealment = -5
+				}
+				self.parts.wpn_fps_smg_mac10_body_m4_v2.custom_stats = {
+					ads_speed_mult = 1.125,
+					falloff_start_mult = 1.4,
+					falloff_end_mult = 1.25,
+				}
+				self.parts.wpn_fps_smg_mac10_body_m4_v2.forbids = {
+					"wpn_fps_smg_mac10_s_no",
+					"wpn_fps_smg_mac10_s_skel"
+				}
+		end
 
 	--Striker mods--
 	if self.parts.wpn_fps_sho_striker_s_folding then
@@ -37218,18 +37317,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	}
 	for _, override_id in ipairs(attachment_list) do
 		table.insert(self.wpn_fps_ass_famas.uses_parts, override_id)
+		self.wpn_fps_ass_famas.override[override_id] = {}
+		self.wpn_fps_ass_famas.override[override_id].a_obj = IsCAPInstalled and "a_m_fix" or nil
+		self.wpn_fps_ass_famas.override[override_id].desc_id = not IsCAPInstalled and "missing_cap"
+		self.wpn_fps_ass_famas.override[override_id].unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil
+		self.wpn_fps_ass_famas.override[override_id].third_unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_third_ass_famas_pts/wpn_third_ass_famas_m_standard" or nil
 		if self.parts[override_id] then
 			if not self.parts[override_id].desc_id then
 				self.parts[override_id].desc_id = "empty"
 				self.parts[override_id].has_description = true
 			end
-			self.wpn_fps_ass_famas.override[override_id] = {
-				stats = self.parts[override_id] and deep_clone(self.parts[override_id].stats),
-				a_obj = IsCAPInstalled and "a_m_fix" or nil,
-				desc_id = not IsCAPInstalled and "missing_cap",
-				unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_famas_pts/wpn_fps_ass_famas_m_standard" or nil,
-				third_unit = not IsCAPInstalled and "units/pd2_dlc_gage_assault/weapons/wpn_third_ass_famas_pts/wpn_third_ass_famas_m_standard" or nil
-			}
+			self.wpn_fps_ass_famas.override[override_id].stats = self.parts[override_id] and deep_clone(self.parts[override_id].stats)
 			self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo = (self.wpn_fps_ass_famas.override[override_id].stats.extra_ammo or 0) + 5
 			self.wpn_fps_ass_famas.override[override_id].stats.concealment = (self.wpn_fps_ass_famas.override[override_id].stats.concealment or 0) - 1
 		end

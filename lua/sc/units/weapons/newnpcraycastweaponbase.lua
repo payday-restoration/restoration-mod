@@ -207,7 +207,7 @@ function NewNPCRaycastWeaponBase:_sound_autofire_start(nr_shots)
 
 	local tweak_data = tweak_data.weapon[self._name_id or "new_m4"]
 	local tweak_sound = tweak_data and tweak_data.sounds
-	local prefix = tweak_sound.prefix or "new_m4"
+	local prefix = (tweak_sound and tweak_sound.prefix) or "new_m4"
 	local sound_name = prefix .. self._setup.user_sound_variant .. self._voice .. (nr_shots and "_" .. tostring(nr_shots) .. "shot" or "_loop")
 	local sound = self._sound_fire:post_event(sound_name, callback(self, self, "_on_auto_fire_stop"), nil, "end_of_event")
 
@@ -220,7 +220,7 @@ end
 function NewNPCRaycastWeaponBase:_sound_autofire_end()
 	local tweak_data = tweak_data.weapon[self._name_id or "new_m4"]
 	local tweak_sound = tweak_data and tweak_data.sounds
-	local prefix = tweak_sound.prefix or "new_m4"
+	local prefix = (tweak_sound and tweak_sound.prefix) or "new_m4"
 	local sound_name = prefix .. self._setup.user_sound_variant .. self._voice .. "_end"
 	local sound = self._sound_fire:post_event(sound_name)
 
@@ -233,7 +233,7 @@ end
 function NewNPCRaycastWeaponBase:_sound_singleshot()
 	local tweak_data = tweak_data.weapon[self._name_id or "new_m4"]
 	local tweak_sound = tweak_data and tweak_data.sounds
-	local prefix = tweak_sound.prefix or "new_m4"
+	local prefix = (tweak_sound and tweak_sound.prefix) or "new_m4"
 	local sound_name = prefix .. self._setup.user_sound_variant .. self._voice .. "_1shot"
 	local sound = self._sound_fire:post_event(sound_name)
 

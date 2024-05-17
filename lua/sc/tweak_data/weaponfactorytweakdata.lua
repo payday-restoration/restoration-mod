@@ -33762,6 +33762,41 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_ass_scar_body_hamr then --Tangerine's Pack of Exclusive Sets 2.0
 
+			--M16
+				self.parts.wpn_fps_ass_m16_body_mcbravo.supported = true
+				self.parts.wpn_fps_ass_m16_body_mcbravo.stats = {
+					value = 9,
+					recoil = -6,
+					concealment = 2,
+					alert_size = -1,
+					suppression = 12
+				}
+				self.parts.wpn_fps_ass_m16_body_mcbravo.custom_stats = {
+					trail_effect = "effects/particles/weapons/weapon_trail",
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.8,
+					damage_min_mult = 1.5,
+					rof_mult = 1.214285,
+					ads_speed_mult = 0.95
+				}
+				self.parts.wpn_fps_ass_m16_body_mcbravo.forbids = {
+					"wpn_fps_ass_m4_os_frontsight"
+				}
+				for k, used_part_id in ipairs(self.wpn_fps_ass_m16.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type and self.parts[used_part_id].pcs then
+						if not table.contains(self.wpn_fps_ass_m16.default_blueprint, used_part_id) then
+							if self.parts[used_part_id].type == "magazine" or
+							self.parts[used_part_id].type == "foregrip" or
+							self.parts[used_part_id].type == "barrel" or
+							self.parts[used_part_id].type == "barrel_ext" or
+							self.parts[used_part_id].type == "lower_reciever" or
+							self.parts[used_part_id].type == "upper_reciever" then
+								table.insert(self.parts.wpn_fps_ass_m16_body_mcbravo.forbids, used_part_id )
+							end
+						end
+					end
+				end
+
 			--SCAR
 				self.parts.wpn_fps_ass_scar_body_hamr.supported = true
 				self.parts.wpn_fps_ass_scar_body_hamr.keep_damage = true

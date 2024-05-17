@@ -2506,6 +2506,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(3.555, -0.2, -0.59),
 				rotation = Rotation(-0.07, -0, 0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60e4 = {
+				translation = Vector3(0.01, 4.7, -0.085),
+				rotation = Rotation(-0.042, 0, 0)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
 				translation = Vector3(0.0, 2, -4.03)
@@ -25625,6 +25629,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.supported = true
 				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.stats = deep_clone(barrels.short_b2_stats)
 				self.parts.wpn_fps_upg_martinihenry_barrel_carbine.custom_stats = deep_clone(barrels.short_b2_stats)
+			end
+
+			if self.parts.wpn_fps_lmg_m60e4_mag then
+				self.parts.wpn_fps_lmg_m60e4_mag.stats = { value = 0 }
+				self.parts.wpn_fps_lmg_m60e4_mag.custom_stats = nil
+				self.parts.wpn_fps_lmg_m60e4_rearsight.stats = { value = 0 }
+				self.parts.wpn_fps_lmg_m60e4_rearsight.custom_stats = nil
+
+				self.parts.wpn_fps_upg_m60e4_barrel_long.supported = true
+				self.parts.wpn_fps_upg_m60e4_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_m60e4_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				self.parts.wpn_fps_upg_m60e4_bipod.supported = true
+				self.parts.wpn_fps_upg_m60e4_bipod.stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats)
+				self.parts.wpn_fps_upg_m60e4_bipod.custom_stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats)
+				self.parts.wpn_fps_upg_m60e4_bipod_classic.supported = true
+				self.parts.wpn_fps_upg_m60e4_bipod_classic.stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats)
+				self.parts.wpn_fps_upg_m60e4_bipod_classic.custom_stats = deep_clone(self.parts.wpn_fps_upg_bp_lmg_lionbipod.custom_stats)
+
+				self.parts.wpn_fps_upg_m60e4_handguard_classic.supported = true
+				self.parts.wpn_fps_upg_m60e4_handguard_classic.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_upg_m60e4_handguard_classic.custom_stats = nil
+
+				self.parts.wpn_fps_upg_m60e4_stock_classic.supported = true
+				self.parts.wpn_fps_upg_m60e4_stock_classic.stats = {
+					value = 2,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_upg_m60e4_stock_classic.custom_stats = nil
+				self.parts.wpn_fps_upg_m60e4_stock_e6.supported = true
+				self.parts.wpn_fps_upg_m60e4_stock_e6.stats = {
+					value = 5,
+					spread = 1,
+					recoil = 2,
+					concealment = -2
+				}
+				self.parts.wpn_fps_upg_m60e4_stock_e6.custom_stats = nil
 			end
 
 	--[[ RJC9000'S MODS ]]

@@ -16645,6 +16645,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deckard.panic_suppression_chance = 0.05
 			end
 
+			if self.m60e4 then
+				self.m60e4.categories = {
+					"lmg",
+					"smg",
+					"mmg"
+				}
+				self.m60e4.recategorize = { "heavy_mg" }
+				self.m60e4.damage_type = "machine_gun"
+				self.m60e4.nato = true
+				self.m60e4.lock_slide = true
+				self.m60e4.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.m60e4.sms = sms_preset.lmg_120
+				self.m60e4.weapon_movement_penalty = sms_preset.lmg_120
+				self.m60e4.fire_mode_data.fire_rate = 0.12
+				self.m60e4.CAN_TOGGLE_FIREMODE = false
+				self.m60e4.CLIP_AMMO_MAX = 100
+				self.m60e4.AMMO_MAX = 120
+				self.m60e4.kick = self.stat_info.kick_tables.horizontal_recoil_mg
+				self.m60e4.always_use_standing = true
+				self.m60e4.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.m60e4.supported = true
+				self.m60e4.ads_speed = 0.540
+				self.m60e4.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 5000,
+					min_mult = 0.33333
+				}
+				self.m60e4.stats = {
+					damage = 60,
+					spread = 59,
+					recoil = 61,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 18,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.m60e4.stats_modifiers = nil
+				self.m60e4.sounds.spin_start = "wp_m60_reload_lever_release"
+				self.m60e4.spin_up_shoot = true
+				self.m60e4.spin_up_t = 0.1
+				self.m60e4.spin_down_t = 0.00000001
+				self.m60e4.reload_speed_multiplier = 0.7
+				self.m60e4.timers = deep_clone(self.m60.timers)
+				self.m60e4.panic_suppression_chance = 0.05
+			end
+
 			--Pawcio's GTAV Pack
 				if self.duskrifle then
 					self.duskrifle.categories = {

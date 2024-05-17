@@ -36433,7 +36433,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_shot_spas15.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
 	end
 
-
+	if self.parts.wpn_fps_ass_mdr_308_barrel_sniper then
+		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.supported = true
+		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.custom_stats = deep_clone(barrels.long_b2_stats)
+	end
 
 
 --Make more attachments universally available, cartridge mismatching be damned

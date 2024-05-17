@@ -33544,6 +33544,60 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 0.8064516
 				}
 				self.parts.wpn_fps_ass_m4_body_tantone.override = self.parts.wpn_fps_ass_m4_body_tantone.override or {}
+
+
+			--AK74
+				self.parts.wpn_fps_ass_ak_body_creedmoor.supported = true
+				self.parts.wpn_fps_ass_ak_body_creedmoor.stats = {
+					value = 7,
+					spread = 2,
+					reload = 2,
+					recoil = -6,
+					extra_ammo = -10,
+					concealment = 2,
+					total_ammo_mod = -73 
+				}
+				self.parts.wpn_fps_ass_ak_body_creedmoor.custom_stats = {
+					ads_speed_mult = 0.95,
+					falloff_start_mult = 1.06667,
+					falloff_end_mult = 1.1206896,
+					ammo_pickup_max_mul = 0.88,
+					ammo_pickup_min_mul = 0.88,
+					alt_ammo_pickup_max_mul = 0.88,
+					alt_ammo_pickup_min_mul = 0.88,
+					armor_piercing_override = 0.25,
+					can_shoot_through_enemy = true,
+					can_shoot_through_wall = true,
+					hs_mult = 1.875,
+					hs_mult_desc = true,
+					ignore_rof_mult_anims = true,
+					rof_mult = 0.2
+				}
+				self.parts.wpn_fps_ass_ak_body_creedmoor.forbids = {
+					"wpn_fps_upg_o_ak_scopemount"
+				}
+				for k, used_part_id in ipairs(self.wpn_fps_ass_74.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if not table.contains(self.wpn_fps_ass_74.default_blueprint, used_part_id) then
+							if self.parts[used_part_id].type == "barrel" or 
+								self.parts[used_part_id].type == "foregrip" or 
+								self.parts[used_part_id].type == "magazine" or 
+								self.parts[used_part_id].type == "upper_reciever" then
+								table.insert(self.parts.wpn_fps_ass_ak_body_creedmoor.forbids, used_part_id )
+							end
+						end
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.adds = {
+					"wpn_fps_ass_ak_b_creedmoor",
+					"wpn_fps_ass_ak_o_creedmoor_dummy",
+					"wpn_fps_ass_ak_creedmoor_sound",
+					"wpn_fps_ass_ak_fg_creedmoor",
+				}
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_upg_ak_fg_standard = {
+					unit = "units/mods/weapons/wpn_fps_ass_ak_creedmoor/wpn_fps_ass_ak_fg_creedmoor",
+					third_unit = "units/mods/weapons/wpn_third_ass_ak_creedmoor/wpn_third_ass_ak_fg_creedmoor"
+				}
 		end
 
 		if self.parts.wpn_fps_ass_scar_body_hamr then --Tangerine's Pack of Exclusive Sets 2.0
@@ -33703,6 +33757,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_start_mult = 0.6,
 					falloff_end_mult = 0.7333
 				}
+
 		end
 
 	--Striker mods--

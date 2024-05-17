@@ -2756,6 +2756,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		rotation = Rotation(-0.025, 0, 0)
 	}
 	self.parts.wpn_upg_o_marksmansight_rear_vanilla.stance_mod = deep_clone(self.parts.wpn_upg_o_marksmansight_rear.stance_mod)
+	self.parts.wpn_upg_o_marksmansight_rear_vanilla.type = "sight_vanilla" --fixes the "_steelsight" variants of sights parenting to this like on the RIS attachment on the Mac-10
 
 	--Angled Sight
 	self.parts.wpn_fps_upg_o_45iron.pcs = {}
@@ -6693,7 +6694,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 			rotation = Rotation(0, 0, 0)
 		}
 	}
-	
+
 	--Railed Handguard
 	self.parts.wpn_fps_smg_mac10_body_ris.pcs = {
 		10,
@@ -33674,6 +33675,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+			--AKMSU
+				self.parts.wpn_fps_smg_akmsu_body_gold.supported = true
+				self.parts.wpn_fps_smg_akmsu_body_gold.stats = {
+					value = 10,
+					recoil = 2,
+					concealment = -2
+				}
+				self.parts.wpn_fps_smg_akmsu_body_gold.custom_stats = {
+					ads_speed_mult = 1.05
+				}
 		end
 
 	--Striker mods--

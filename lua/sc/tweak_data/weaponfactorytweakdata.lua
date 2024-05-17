@@ -21590,52 +21590,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 	self.parts.wpn_fps_m4_uupg_s_zulu.stats = deep_clone(stocks.adj_to_fold_stats)
 	self.parts.wpn_fps_m4_uupg_s_zulu.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 
-
-	self.wpn_fps_snp_victor.override = self.wpn_fps_snp_victor.override or {}
-	self.wpn_fps_snp_victor.override.wpn_fps_upg_vg_ass_smg_stubby = {
-		stats = {
-			concealment = 2,
-			recoil = -4
-		}
-	}
-	self.wpn_fps_snp_victor.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
-		stats = {
-			concealment = 1,
-			recoil = -2
-		}
-	}
-	self.wpn_fps_snp_victor.override.wpn_fps_smg_schakal_vg_surefire = {
-		stats = {
-			concealment = 1,
-			recoil = -2
-		}
-	}
-	
-	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_vert = {
-		stats = {
-			concealment = 2,
-			recoil = -4
-		}
-	}
-	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_medium = {
-		stats = {
-			concealment = 2,
-			recoil = -4
-		}
-	}
-	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_cheems = {
-		stats = {
-			concealment = 1,
-			recoil = -2
-		}
-	}
-	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_pod = {
-		stats = {
-			concealment = 1,
-			recoil = -2
-		}
-	}
-
 	--Celestial Assault Kit
 		self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
 		self.parts.wpn_fps_snp_victor_sbr_kit.forbids = { "wpn_fps_addon_ris" }
@@ -21802,6 +21756,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_vg_vmp_medium")
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_vg_vmp_cheems")
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_vg_vmp_pod")
+
+
+	self.wpn_fps_snp_victor.override = self.wpn_fps_snp_victor.override or {}
+	self.wpn_fps_snp_victor.override.wpn_fps_snp_victor_body_receiver_lower = {}
+	self.wpn_fps_snp_victor.override.wpn_fps_upg_vg_ass_smg_stubby = {
+		stats = {
+			concealment = 2,
+			recoil = -4
+		}
+	}
+	self.wpn_fps_snp_victor.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		}
+	}
+	self.wpn_fps_snp_victor.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		}
+	}
+	
+	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_vert = {
+		stats = {
+			concealment = 2,
+			recoil = -4
+		}
+	}
+	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_medium = {
+		stats = {
+			concealment = 2,
+			recoil = -4
+		}
+	}
+	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_cheems = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		}
+	}
+	self.wpn_fps_snp_victor.override.wpn_fps_vg_vmp_pod = {
+		stats = {
+			concealment = 1,
+			recoil = -2
+		}
+	}
+
 
 	self.wpn_fps_snp_victor_npc.uses_parts = deep_clone(self.wpn_fps_snp_victor.uses_parts)
 	self.wpn_fps_snp_victor_npc.override = deep_clone(self.wpn_fps_snp_victor.override)
@@ -33675,6 +33677,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+
 			--AKMSU
 				self.parts.wpn_fps_smg_akmsu_body_gold.supported = true
 				self.parts.wpn_fps_smg_akmsu_body_gold.stats = {
@@ -33684,6 +33687,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_smg_akmsu_body_gold.custom_stats = {
 					ads_speed_mult = 1.05
+				}
+
+			--SAINT Victor
+				self.parts.wpn_fps_snp_victor_body_ar15.supported = true
+				self.parts.wpn_fps_snp_victor_body_ar15.stats = {
+					value = 7,
+					spread = -1,
+					concealment = -1,
+					reload = 3,
+					recoil = -6
+				}
+				self.parts.wpn_fps_snp_victor_body_ar15.custom_stats = {
+					rof_mult = 1.1764705,
+					falloff_start_mult = 0.6,
+					falloff_end_mult = 0.7333
 				}
 		end
 

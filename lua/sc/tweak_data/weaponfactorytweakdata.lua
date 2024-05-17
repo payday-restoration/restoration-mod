@@ -33561,10 +33561,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					trail_effect = "effects/particles/weapons/weapon_trail",
 					falloff_start_mult = 1.06667,
 					falloff_end_mult = 1.1206896,
-					ammo_pickup_max_mul = 0.88,
-					ammo_pickup_min_mul = 0.88,
-					alt_ammo_pickup_max_mul = 0.88,
-					alt_ammo_pickup_min_mul = 0.88,
+					damage_min_mult = 0.8,
+					ammo_pickup_max_mul = 0.43243,
+					ammo_pickup_min_mul = 0.43243,
+					alt_ammo_pickup_max_mul = 0.43243,
+					alt_ammo_pickup_min_mul = 0.43243,
 					armor_piercing_override = 0.25,
 					can_shoot_through_enemy = true,
 					ignore_rof_mult_anims = true,
@@ -33576,25 +33577,136 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 				self.parts.wpn_fps_ass_ak_body_creedmoor.forbids = {
-					"wpn_fps_upg_o_ak_scopemount"
+					"wpn_fps_upg_o_ak_scopemount",
+					"wpn_fps_mount_lock"
 				}
 				for k, used_part_id in ipairs(self.wpn_fps_ass_74.uses_parts) do
 					if self.parts[used_part_id] and self.parts[used_part_id].type then
 						if not table.contains(self.wpn_fps_ass_74.default_blueprint, used_part_id) then
 							if self.parts[used_part_id].type == "barrel" or 
-								self.parts[used_part_id].type == "foregrip" or 
-								self.parts[used_part_id].type == "magazine" or 
-								self.parts[used_part_id].type == "upper_reciever" then
+							self.parts[used_part_id].type == "foregrip" or 
+							self.parts[used_part_id].type == "magazine" or 
+							self.parts[used_part_id].type == "upper_reciever" then
 								table.insert(self.parts.wpn_fps_ass_ak_body_creedmoor.forbids, used_part_id )
 							end
 						end
+						if self.parts[used_part_id].type == "lower_reciever" then
+							self.parts.wpn_fps_ass_ak_body_creedmoor.override[used_part_id] = {
+								unit = "units/mods/weapons/wpn_fps_ass_ak_creedmoor/wpn_fps_ass_ak_lower_creedmoor",
+								adds = { "wpn_fps_ak_bolt" }
+							}
+						end 
+					end
+				end
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter = {
+					parent = "upper_reciever",
+					a_obj = "a_o",
+					forbids = {"wpn_fps_ass_ak_o_creedmoor_dummy"},
+					stance_mod = {
+						wpn_fps_ass_74 = {
+							translation = Vector3(-0.005, 15.5, -4.6) + Vector3(0, -25.4, 1.455),
+							rotation = Rotation(-0.004, 0, 0)
+						}
+					}
+				}
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter_piggyback = {}
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter_piggyback.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(0, -10, -3.15)
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_hamr = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_hamr_reddot = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_hamr)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_hamr_reddot.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + sight_hamr_rds_offset.offset
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_atibal = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_atibal.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + sight_atibal_offset.offset
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_atibal_reddot = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_atibal)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_atibal_reddot.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + sight_atibal_rds_offset.offset
+					end
+				end
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_aimpoint = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_aimpoint_2 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_aimpoint)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_cs = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_aimpoint)
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_xpsg33_magnifier = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_xpsg33_magnifier.a_obj = nil
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_sig = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_xpsg33_magnifier)
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_cmore = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_reflex = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_rx01 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_rx30 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_docter)
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_t1micro = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_tf90 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_t1micro)
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech_xps = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_uh = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_fc1 = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_health = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_eotech)
+				for i, part_id in ipairs(sight_1_5x_offset.sights) do
+					for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override[ part_id ].stance_mod) do
+						if weap and weap.translation then
+							weap.translation = weap.translation + sight_1_5x_offset.offset
+						end
+					end
+				end
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_spot = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_poe = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_acog = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_acog.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(0,4,0)
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_bmg = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_bmg.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(0,10,0)
+					end
+				end
+
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(0,-22,-0.01)
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac_reddot = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac_reddot.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(0,-32,-0.01)
+					end
+				end
+				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac_alt = deep_clone(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_specter)
+				for i, weap in pairs(self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_fps_upg_o_northtac_alt.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = weap.translation + Vector3(-0.045, -5, -5.1)
+						weap.rotation = (weap.rotation or Rotation(0,0,0)) * Rotation(-0.07, 0, 0)
 					end
 				end
 				self.parts.wpn_fps_ass_ak_body_creedmoor.adds = {
 					"wpn_fps_ass_ak_b_creedmoor",
 					"wpn_fps_ass_ak_o_creedmoor_dummy",
 					"wpn_fps_ass_ak_creedmoor_sound",
-					"wpn_fps_ass_ak_fg_creedmoor",
+					"wpn_fps_ass_ak_fg_creedmoor"
 				}
 				self.parts.wpn_fps_ass_ak_body_creedmoor.override.wpn_upg_ak_fg_standard = {
 					unit = "units/mods/weapons/wpn_fps_ass_ak_creedmoor/wpn_fps_ass_ak_fg_creedmoor",

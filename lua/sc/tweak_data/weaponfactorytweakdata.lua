@@ -33548,17 +33548,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			--AK74
 				self.parts.wpn_fps_ass_ak_body_creedmoor.supported = true
+				self.parts.wpn_fps_ass_ak_body_creedmoor.keep_damage = true
 				self.parts.wpn_fps_ass_ak_body_creedmoor.stats = {
 					value = 7,
-					spread = 2,
-					reload = 2,
-					recoil = -6,
+					spread = 4,
+					recoil = -12,
 					extra_ammo = -10,
-					concealment = 2,
-					total_ammo_mod = -73 
+					damage = 21,
+					total_ammo_mod = -95
 				}
 				self.parts.wpn_fps_ass_ak_body_creedmoor.custom_stats = {
-					ads_speed_mult = 0.95,
+					trail_effect = "effects/particles/weapons/weapon_trail",
 					falloff_start_mult = 1.06667,
 					falloff_end_mult = 1.1206896,
 					ammo_pickup_max_mul = 0.88,
@@ -33567,11 +33567,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_min_mul = 0.88,
 					armor_piercing_override = 0.25,
 					can_shoot_through_enemy = true,
-					can_shoot_through_wall = true,
-					hs_mult = 1.875,
-					hs_mult_desc = true,
 					ignore_rof_mult_anims = true,
-					rof_mult = 0.2
+					rof_mult = 0.76923076,
+					srm = {
+						-0.02,
+						{1, 1.1},
+						4
+					}
 				}
 				self.parts.wpn_fps_ass_ak_body_creedmoor.forbids = {
 					"wpn_fps_upg_o_ak_scopemount"

@@ -33775,7 +33775,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					trail_effect = "effects/particles/weapons/weapon_trail",
 					falloff_start_mult = 0.8,
 					falloff_end_mult = 0.8,
-					damage_min_mult = 1.5,
+					damage_min_mult = 1.8,
 					rof_mult = 1.214285,
 					ads_speed_mult = 0.95
 				}

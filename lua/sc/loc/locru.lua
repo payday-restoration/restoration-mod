@@ -1067,20 +1067,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КОМАНДА САММЕРСА",
-		})
-	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КАПИТАН СПРИНГ",
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА САММЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})		
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КАПИТАН ОТЕМ",
-		})
 	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",

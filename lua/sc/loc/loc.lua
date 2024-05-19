@@ -1102,7 +1102,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		})	
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "KILL CAPTAIN SUMMERS TEAM TO END ASSAULT",
+			["hud_assault_vip"] = "KILL CAPTAIN SUMMERS TO END ASSAULT",
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	

@@ -2938,7 +2938,8 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
 		end
 
-		if self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
+		local use_big_scope_offset = restoration.Options:GetValue("OTHER/WeaponHandling/BigScopeOffset")
+		if use_big_scope_offset and self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
 			stance_mod.translation = stance_mod.translation + Vector3(1, 0, -2)
 			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, 3)
 		end

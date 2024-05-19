@@ -33900,6 +33900,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
+				self.parts.wpn_fps_pis_1911_body_sporty.override.wpn_fps_upg_o_cmore = {
+					stance_mod = {}
+				}
 				self.parts.wpn_fps_pis_x_1911_body_sporty.supported = true
 				self.parts.wpn_fps_pis_x_1911_body_sporty.stats = {
 					value = 6,

@@ -184,6 +184,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
 		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+		["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
+		["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels to the right when using large optics to reduce visual obstructions.",
 		["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
 		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
 			["vm_vanilla"] = "Vanilla Behavior",

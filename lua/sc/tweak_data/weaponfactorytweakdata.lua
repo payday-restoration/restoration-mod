@@ -33509,7 +33509,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					"wpn_fps_ass_galil_body_intermediate_sound"
 				}
 
-
 			--AR-45
 				self.parts.wpn_fps_smg_shepheard_body_ar45.supported = true
 				self.parts.wpn_fps_smg_shepheard_body_ar45.keep_damage = true
@@ -33590,7 +33589,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 0.8064516
 				}
 				self.parts.wpn_fps_ass_m4_body_tantone.override = self.parts.wpn_fps_ass_m4_body_tantone.override or {}
-
 
 			--AK74
 				self.parts.wpn_fps_ass_ak_body_creedmoor.supported = true
@@ -33901,7 +33899,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 				self.parts.wpn_fps_pis_1911_body_sporty.override.wpn_fps_upg_o_cmore = {
-					stance_mod = {}
+					stance_mod = {},
+					parent = "exclusive_set",
+					a_obj = "a_scope"
 				}
 				self.parts.wpn_fps_pis_x_1911_body_sporty.supported = true
 				self.parts.wpn_fps_pis_x_1911_body_sporty.stats = {
@@ -33956,6 +33956,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 0.7333
 				}
 
+			--G36
+				self.parts.wpn_fps_ass_g36_body_stanag.supported = true
+				self.parts.wpn_fps_ass_g36_body_stanag.stats = { value = 0 }
+				self.parts.wpn_fps_ass_g36_body_stanag.custom_stats = nil
+				for k, used_part_id in ipairs(self.wpn_fps_ass_g36.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if self.parts[used_part_id].type == "vertical_grip" then
+							self.parts.wpn_fps_ass_g36_body_stanag.override[used_part_id] = {
+								unit = "units/mods/weapons/wpn_fps_ass_g36_stanag/wpn_fps_ass_g36_vg_afg_cut",
+								third_unit = "units/payday2/weapons/wpn_third_upg_vg_ass_smg_afg/wpn_third_upg_vg_ass_smg_afg"
+							}
+						end 
+					end
+				end
 		end
 
 	--Striker mods--

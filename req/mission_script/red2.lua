@@ -212,7 +212,7 @@ local titan_shield = {
 	values = {
         enemy = titan_shield
 	}
-
+}
 local tswat1 = {
 	values = {
 		enemy = titan_swat_1

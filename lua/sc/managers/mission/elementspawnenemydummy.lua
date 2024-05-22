@@ -894,6 +894,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
@@ -930,6 +932,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
+				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
@@ -984,6 +988,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			murky_guard = {
 				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
 				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+				"units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+				"units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
@@ -1036,6 +1042,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			murky_guard = {
 				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
 				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
+				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
+				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
 				"units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 			},
@@ -1082,6 +1090,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
+				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
+				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
 				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
 				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",

@@ -462,6 +462,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
 		["restoration_level_data_lvl_friday"] = "5:00 PM, Shield Mall",
 		["restoration_level_data_skm_nightmare_lvl"] = "A laundromat? Are you here to wash away your sins?",
+		["restoration_level_data_bluewave"] = "TIME CLASSIFIED, Aurelian Warehouse",
 
 		--custom heists
 		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова", --Flatline

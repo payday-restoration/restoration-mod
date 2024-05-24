@@ -449,6 +449,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
 		["restoration_level_data_lvl_friday"] = "17:00, Торговый центр 'Щит'",
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
+		["restoration_level_data_bluewave"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Склад Aurelian",
 
 		
          --custom heists

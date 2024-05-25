@@ -1029,7 +1029,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.surrender_break_time = {6, 8}
 	self.fbi_heavy_swat.suppression = presets.suppression.hard_agg
 	self.fbi_heavy_swat.surrender = presets.surrender.hard
-	self.fbi_heavy_swat.damage.hurt_severity = presets.hurt_severities.heavy_explosion_resist
+	self.fbi_heavy_swat.damage.hurt_severity = presets.hurt_severities.heavy_resist
 	self.fbi_heavy_swat.ecm_vulnerability = 0.6
 	self.fbi_heavy_swat.ecm_hurts = {
 		ears = 6
@@ -4666,8 +4666,33 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}	
-	presets.hurt_severities.heavy_explosion_resist = deep_clone(presets.hurt_severities.heavy)	
-	presets.hurt_severities.heavy_explosion_resist.explosion = {
+	presets.hurt_severities.heavy_resist = deep_clone(presets.hurt_severities.heavy)	
+	presets.hurt_severities.heavy_resist.bullet = {
+		health_reference = "current",
+		zones = {
+			{
+				health_limit = 0.3,
+				none = 0.2,
+				light = 0.8,
+			},
+			{
+				health_limit = 0.6,
+				light = 0.4,
+				moderate = 0.6
+			},
+			{
+				health_limit = 0.9,
+				light = 0.2,
+				moderate = 0.8
+			},
+			{
+				light = 0,
+				moderate = 1,
+				heavy = 0
+			}
+		}
+	}	
+	presets.hurt_severities.heavy_resist.explosion = {
 		health_reference = "current",
 		zones = {
 			{

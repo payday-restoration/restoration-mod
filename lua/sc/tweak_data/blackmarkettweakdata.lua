@@ -4722,19 +4722,20 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.zeus.stats.max_damage = 2.401
 		self.melee_weapons.zeus.stats.min_damage_effect = 0.6
 		self.melee_weapons.zeus.stats.max_damage_effect = 1.2
-		self.melee_weapons.zeus.stats.charge_time = 0.75
+		self.melee_weapons.zeus.stats.charge_time = 0.6
 		self.melee_weapons.zeus.stats.range = 155
 		self.melee_weapons.zeus.stats.concealment = 29
 			--RIP Buzzer meta--
 			self.melee_weapons.taser.info_id = "bm_melee_taser_info"
 			self.melee_weapons.taser.tase_data = nil
-			self.melee_weapons.taser.special_weapon = "taser"	
+			self.melee_weapons.taser.special_weapon = "taser"
+			self.melee_weapons.taser.stats.cleave = 1
 			self.melee_weapons.taser.stats.raycasts = 6
 			self.melee_weapons.taser.stats.min_damage = 1.2
 			self.melee_weapons.taser.stats.max_damage = 2.401
 			self.melee_weapons.taser.stats.min_damage_effect = 0.6
 			self.melee_weapons.taser.stats.max_damage_effect = 1.2
-			self.melee_weapons.taser.stats.charge_time = 1.1
+			self.melee_weapons.taser.stats.charge_time = 0.8
 			self.melee_weapons.taser.stats.range = 165
 			self.melee_weapons.taser.stats.concealment = 29
 

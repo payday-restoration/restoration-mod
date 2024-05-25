@@ -127,9 +127,6 @@ function HuskCopBrain:sync_converted()
 		effect = Idstring("effects/payday2/particles/impacts/money_impact_pd2"),
 		position = self._unit:movement():m_pos()
 	})
-	if managers.mutators:modify_value("HuskCopBrain:DisableEnemyOutlines", false) then
-		self._unit:base():converted_enemy_effect(true)
-	end
 end
 
 function HuskCopBrain:update(unit, t, dt)
@@ -820,10 +817,6 @@ function HuskCopBrain:clbk_death(my_unit, damage_info)
 	self:_destroy_all_detected_attention_object_data()
 
 	self._detect_local_player = nil
-	
-	if managers.mutators:modify_value("HuskCopBrain:DisableEnemyOutlines", false) then
-		self._unit:base():converted_enemy_effect(false) -- it's not working on client for some reason
-	end
 end
 
 function HuskCopBrain:pre_destroy()

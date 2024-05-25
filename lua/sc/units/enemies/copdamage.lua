@@ -233,6 +233,12 @@ Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	end	
 end)
 
+Hooks:PostHook(CopDamage, "convert_to_criminal", "convert_to_criminal_mutator_no_outlines", function(self, health_multiplier)
+	if managers.mutators:modify_value("CopDamage:DisableEnemyOutlines", false) then
+		self._unit:base():converted_enemy_effect(true)
+	end
+end)
+
 function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
 	local my_unit = self._unit
@@ -1958,6 +1964,7 @@ function CopDamage:die(attack_data)
 	if self._unit:base() then
 		self._unit:base():disable_lpf_buff(true)
 		self._unit:base():disable_asu_laser(true)
+		self._unit:base():converted_enemy_effect(false)
 	end
 
 	if self._unit:base()._tweak_table == "spooc" then

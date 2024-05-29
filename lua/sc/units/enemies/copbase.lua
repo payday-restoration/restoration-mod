@@ -10,12 +10,12 @@ local summers_dr_effect_table_host = nil
 local summers_dr_effect_table_client = nil
 
 -- LPF effect positions
-local effect_usual = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
-local effect_no_gear = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear")
-local effect_high = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high")
-local effect_low = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low")
-local effect_tank = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank")
-local effect_tank_titan = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan")
+local effect_usual = Vector3(0,0,0)
+local effect_no_gear = Vector3(0,0,-3)
+local effect_high = Vector3(1,8,-3)
+local effect_low = Vector3(0,-3,0)
+local effect_tank = Vector3(1,13,-5)
+local effect_tank_titan = Vector3(1,11,-3)
 -- Tables below need for LPF effect handling
 local units_no_gear = { 
 	"cop",
@@ -147,43 +147,45 @@ function CopBase:enable_lpf_buff(state)
 	local align_obj_name = Idstring("Head")
 	local align_obj = self._unit:get_object(align_obj_name)
 	
-	local effect_id = effect_usual
+	local effect_id = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
+	local effect_pos = effect_usual
  	
 	local unit = self._unit:base()._tweak_table
 	local unit_name = self._unit:name()
 
 	if table.contains(units_no_gear, unit) and not table.contains(hrt_exclude_list, unit_name) then
-		effect_id = effect_no_gear
+		effect_pos = effect_no_gear
 	end
 	
 	if table.contains(murky_no_gear, unit_name) then
-		effect_id = effect_no_gear
+		effect_pos = effect_no_gear
 	end
 	
 	if table.contains(omnia_tswat, unit_name) then
-		effect_id = effect_high
+		effect_pos = effect_high
 	end
 	
 	if table.contains(units_low, unit_name) then
-		effect_id = effect_low
+		effect_pos = effect_low
 	end
 	
 	local faction = tweak_data.levels:get_ai_group_type()
 	
 	if unit == "taser_titan" and faction ~= "zombie" then
-		effect_id = effect_high
+		effect_pos = effect_high
 	end
 		
 	if string.match(unit, "tank") then
-		effect_id = effect_tank
+		effect_pos = effect_tank
 		if unit == "tank_titan" then
-			effect_id = effect_tank_titan
+			effect_pos = effect_tank_titan
 		end
 	end
 
 	self._overheal_unit = World:effect_manager():spawn({
 		effect = effect_id,
-		parent = align_obj
+		parent = align_obj,
+		position = effect_pos
 	})
 end
 

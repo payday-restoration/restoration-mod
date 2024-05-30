@@ -27730,6 +27730,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mike4_2022_grip.supported = true
 			self.parts.wpn_fps_ass_mike4_2022_grip.stats = { value = 0 }
 			self.parts.wpn_fps_ass_mike4_2022_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_mike4_2022_grip_2019.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_grip_2019.stats = { value = 0 }
+			self.parts.wpn_fps_ass_mike4_2022_grip_2019.custom_stats = nil
 			self.parts.wpn_fps_ass_mike4_2022_stock.supported = true
 			self.parts.wpn_fps_ass_mike4_2022_stock.stats = { value = 0 }
 			self.parts.wpn_fps_ass_mike4_2022_stock.custom_stats = nil
@@ -27739,9 +27742,139 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.custom_stats = { hip_mult = 4 }
 
 			--Barrels/Handguards
+				--14" Carbine Shroud
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy.stats = {
+					value = 0,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy.custom_stats = {
+					ads_speed_mult = 1.025
+				}
+				--11.5" Carbine Shroud
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy_short.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy_short.stats = {
+					value = 0,
+					recoil = 2,
+					spread = -1
+				}
+				self.parts.wpn_fps_ass_mike4_2022_handguard_heavy_short.custom_stats = {
+					falloff_start_mult = 0.925,
+					falloff_end_mult = 0.925
+				}
+				--11.5" TH-4 Barrel
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mid_heavy.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mid_heavy.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mid_heavy.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mid_heavy.custom_stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_ass_mike4_2022_handguard_2019.supported = true
+					self.parts.wpn_fps_ass_mike4_2022_handguard_2019.stats = deep_clone(barrels.short_b1_stats)
+					self.parts.wpn_fps_ass_mike4_2022_handguard_2019.stats.value = 0
+					self.parts.wpn_fps_ass_mike4_2022_handguard_2019.custom_stats = deep_clone(barrels.short_b1_stats)
+				--Tempus Trench Pro
+				self.parts.wpn_fps_ass_mike4_2022_handguard_light.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_light.stats = {
+					value = 0,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_ass_mike4_2022_handguard_light.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--7.5" Tempus Firebrand
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.stats.recoil = -2
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.stats.concealment = 3
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.custom_stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_short.custom_stats.ads_speed_mult = 0.925
+				--419mm EXF
+				self.parts.wpn_fps_ass_mike4_2022_handguard_long.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_long.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_handguard_long.custom_stats = deep_clone(barrels.long_b2_stats)
+				--Tempus High Tower
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.stats.recoil = 4
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.stats.concealment = -4
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.custom_stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_mike4_2022_handguard_mike16.custom_stats.ads_speed_mult = 1.1
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.supported = true
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.stats.value = 0
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.stats.recoil = 4
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.stats.concealment = -4
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.custom_stats = deep_clone(barrels.long_b2_stats)
+					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.custom_stats.ads_speed_mult = 1.1
+
 			--Magazines
 			--Grips
+				self.parts.wpn_fps_ass_mike4_2022_grip_tac.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_grip_tac.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_ass_mike4_2022_grip_tac.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_grip_tac.custom_stats = deep_clone(grips.quickdraw_1)
+
+				self.parts.wpn_fps_ass_mike4_2022_grip_skeleton.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_grip_skeleton.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_mike4_2022_grip_skeleton.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_grip_skeleton.custom_stats = deep_clone(grips.quickdraw_2)
+
+				self.parts.wpn_fps_ass_mike4_2022_grip_sniper.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_grip_sniper.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_ass_mike4_2022_grip_sniper.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_grip_sniper.custom_stats = deep_clone(grips.dual_stat_1)
+
+				self.parts.wpn_fps_ass_mike4_2022_grip_ass.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_grip_ass.stats = {
+					value = 0,
+					recoil = 2,
+					spread = -1
+				}
+				self.parts.wpn_fps_ass_mike4_2022_grip_ass.custom_stats = nil
+
+				self.parts.wpn_fps_ass_mike4_2022_grip_steady.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_grip_steady.stats = {
+					value = 0,
+					concealment = -1,
+					spread = 1
+				}
+				self.parts.wpn_fps_ass_mike4_2022_grip_steady.custom_stats = nil
 			--Stocks
+
+
+			attachment_list = {
+				"wpn_fps_upg_m4_g_ergo",
+				"wpn_fps_upg_m4_g_sniper",
+				"wpn_fps_upg_m4_g_hgrip",
+				"wpn_fps_upg_g_m4_surgeon",
+				"wpn_fps_snp_tti_g_grippy",
+				"wpn_fps_sho_sko12_body_grip",
+				"wpn_fps_snp_victor_g_mod3",
+				"wpn_fps_m4_uupg_g_billet",
+
+				"wpn_fps_upg_m4_s_standard",
+				"wpn_fps_upg_m4_s_pts",
+				"wpn_fps_upg_m4_s_crane",
+				"wpn_fps_upg_m4_s_mk46",
+				"wpn_fps_upg_m4_s_ubr",
+				"wpn_fps_snp_tti_s_vltor",
+				"wpn_fps_sho_sko12_stock",
+				"wpn_fps_m4_uupg_s_zulu",
+				"wpn_fps_snp_victor_s_mod0"
+			}
+			for i, part_id in pairs(self.wpn_fps_ass_mike4_2022.uses_parts) do
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_ass_mike4_2022.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+			self.wpn_fps_ass_mike4_2022_npc.uses_parts = deep_clone(self.wpn_fps_ass_mike4_2022.uses_parts)
+
 		end
 
 		if self.parts.wpn_fps_ass_akilo_2022_optic_rail then --RJC9000 and PlayBONK's MW2022 AKs
@@ -28946,7 +29079,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload_exit_not_empty = 1.5
 				}
 			}
-
 		end
 
 		if self.parts.wpn_fps_lmg_madsen_mg_muzzle then

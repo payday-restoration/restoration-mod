@@ -1787,6 +1787,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	]]--
 
 	self._projectiles_index = {
+		--Vanilla projectiles
 		"frag",
 		"launcher_frag",
 		"rocket_frag",
@@ -1862,6 +1863,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_incendiary_ms3gl",
 		"launcher_electric_ms3gl",
 		"sticky_grenade",
+		--Resmod projectiles
 		"bravo_frag",
 		"cluster_fuck",
 		"child_grenade",
@@ -1870,7 +1872,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_incendiary_osipr",
 		"launcher_electric_osipr",
 		"launcher_poison_osipr",
-		--Mod things
+		--Other mods
 		"tachi"
 	}
 

@@ -2428,6 +2428,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.02, 7.5, -1.15),
 				rotation = Rotation(-0.01,-0.1,0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mike4_2022 = {
+				translation = Vector3(0, 6.8, -0.583)
+			}
+
 	
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
 				translation = Vector3(-0.016, -9.5, -2.787),
@@ -27812,6 +27816,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_mike4_2022_handguard_mike16_m203.custom_stats.ads_speed_mult = 1.1
 
 			--Magazines
+				self.parts.wpn_fps_ass_mike4_2022_magazine_mcbravo.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_magazine_mcbravo.stats = { value = 0 }
+				self.parts.wpn_fps_ass_mike4_2022_magazine_mcbravo.custom_stats = nil
+					self.parts.wpn_fps_ass_mike4_2022_magazine_2019.supported = true
+					self.parts.wpn_fps_ass_mike4_2022_magazine_2019.stats = { value = 0 }
+					self.parts.wpn_fps_ass_mike4_2022_magazine_2019.custom_stats = nil
+				self.parts.wpn_fps_ass_mike4_2022_xmag.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_xmag.stats = { value = 0, extra_ammo = 15, reload = -4, concealment = -2 }
+				self.parts.wpn_fps_ass_mike4_2022_xmag.custom_stats = { ads_speed_mult = 1.05 }
+				self.parts.wpn_fps_ass_mike4_2022_xmag_large.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_xmag_large.stats = { value = 0, extra_ammo = 30, reload = -6, concealment = -4 }
+				self.parts.wpn_fps_ass_mike4_2022_xmag_large.custom_stats = { ads_speed_mult = 1.1 }
+
 			--Grips
 				self.parts.wpn_fps_ass_mike4_2022_grip_tac.supported = true
 				self.parts.wpn_fps_ass_mike4_2022_grip_tac.stats = deep_clone(grips.quickdraw_1)
@@ -27844,7 +27861,58 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_ass_mike4_2022_grip_steady.custom_stats = nil
 			--Stocks
+				--MW2019 Stock
+				self.parts.wpn_fps_ass_mike4_2022_stock_2019.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_2019.stats = { value = 0 }
+				self.parts.wpn_fps_ass_mike4_2022_stock_2019.custom_stats = nil
+				--Demo D50 Buffer Tube
+				self.parts.wpn_fps_ass_mike4_2022_stock_no.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_no.stats = deep_clone(stocks.remove_adj_stats)
+				self.parts.wpn_fps_ass_mike4_2022_stock_no.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_stock_no.custom_stats = deep_clone(stocks.remove_adj_stats)
+				--Tempus P80 Strike Stock
+				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.stats = deep_clone(stocks.adj_to_nocheeks_stats)
+				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
+				--Ravage 8
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats = { value = 0, recoil = -1, concealment = 1}
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.custom_stats = {ads_speed_mult = 0.925}
+				--Demo Precision Elite Stock
+				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+				--Corio Precio Stock
+				self.parts.wpn_fps_ass_mike4_2022_stock_msecho.supported = true
+				self.parts.wpn_fps_ass_mike4_2022_stock_msecho.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+				self.parts.wpn_fps_ass_mike4_2022_stock_msecho.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_stock_msecho.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 
+			--M16 Internals
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.perks = nil
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.stats = {
+				value = 10,
+				damage = 6,
+				total_ammo_mod = -41,
+				recoil = -4,
+				spread = 8
+			}
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.custom_stats = {
+				rof_mult = 0.78765,
+				falloff_start_mult = 1.1875,
+				falloff_end_mult = 1.1875,
+				damage_min_mult = 0.8,
+				hip_mult = 1.5,
+				auto_to_burst = true,
+				mike16_burst = true,
+				ammo_pickup_max_mul = 0.77027,
+				ammo_pickup_min_mul = 0.77027,
+				alt_ammo_pickup_max_mul = 0.77027,
+				alt_ammo_pickup_min_mul = 0.77027
+			}
 
 			attachment_list = {
 				"wpn_fps_upg_m4_g_ergo",

@@ -18347,10 +18347,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.stats_modifiers = nil
 				self.mike4_2022.reload_speed_multiplier = 1.36
 				self.mike4_2022.panic_suppression_chance = 0.05
-				self.mike4_2022.timers.reload_exit_empty = 0.5
-				self.mike4_2022.timers.reload_empty = 3.05
-				self.mike4_2022.timers.reload_exit_not_empty = 1.15
-				self.mike4_2022.timers.reload_not_empty = 2.4
+				self.mike4_2022.timers.reload_empty = 3
+				self.mike4_2022.timers.reload_exit_empty = 0.55
+				self.mike4_2022.timers.reload_exit_not_empty = 1.2
+				self.mike4_2022.timers.reload_not_empty = 2.35
 			end
 
 			--RJC9000 and PlayBONK's MW2022 AKs

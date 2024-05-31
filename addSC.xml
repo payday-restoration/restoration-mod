@@ -1440,6 +1440,7 @@
 		007 - Lua logo
 		008 - Small Dot
 		009 - Tiny Dot
+		010 - SZ Holotherm styled
 	-->
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true" load="true"/>
@@ -1477,6 +1478,10 @@
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_yellow_il" force="true" load="true"/>
 	
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->

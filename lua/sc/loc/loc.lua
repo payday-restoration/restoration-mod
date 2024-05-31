@@ -44,7 +44,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
 		["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
 
-		["RestorationModOtherModsTitleID"] = "Other Mod Options",
+		["RestorationModOtherModsTitleID"] = "===Other Mod Options===",
 		["RestorationModOtherModsDescID"] = "Additional options for other mods",
 			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" Options",
 			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Additional options for Solo Queue Pixy's \"Advanced Movement Standalone\" mod.",

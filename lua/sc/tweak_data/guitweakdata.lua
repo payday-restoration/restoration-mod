@@ -110,12 +110,10 @@ function GuiTweakData:init()
 		name_id = "menu_reticle_dmc_dot_2x2",
 		texture_path = dmc_dot_folder .. "wpn_sight_reticle_009_il"
 	})
-	--[[
 	table.insert(self.weapon_texture_switches.types.sight_swap, {
 		name_id = "menu_reticle_dmc_cross_holotherm",
 		texture_path = dmc_dot_folder .. "wpn_sight_reticle_010_il"
 	})
-	]]
 	self.weapon_texture_switches.types.gadget = self.weapon_texture_switches.types.sight_swap
 	self.part_texture_switches = {
 		wpn_fps_upg_o_45rds_v2 = "1 3",
@@ -124,15 +122,15 @@ function GuiTweakData:init()
 		wpn_fps_upg_o_rx01 = "4 3",
 		wpn_fps_upg_o_rx30 = "4 3",
 		wpn_fps_upg_o_45rds = "1 3",
-		wpn_fps_upg_o_spot = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 7),
-		wpn_fps_upg_o_acog = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),
-		wpn_fps_upg_o_bmg = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),
-		wpn_fps_upg_o_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 5),
-		wpn_fps_upg_o_eotech_xps = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 6),
-		wpn_fps_upg_o_uh = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
+		wpn_fps_upg_o_spot = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 8),
+		wpn_fps_upg_o_acog = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
+		wpn_fps_upg_o_bmg = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
+		wpn_fps_upg_o_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 6),
+		wpn_fps_upg_o_eotech_xps = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 7),
+		wpn_fps_upg_o_uh = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 4),
 		wpn_fps_upg_o_hamr = "1 8",
-		wpn_fps_upg_o_atibal = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 2),
+		wpn_fps_upg_o_atibal = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
 		--Mod Sights
-		wpn_fps_upg_o_mw2022_holotherm01 = "4 5"
+		wpn_fps_upg_o_mw2022_holotherm01 = "4 " .. tostring(#self.weapon_texture_switches.types.sight_swap)
 	}
 end

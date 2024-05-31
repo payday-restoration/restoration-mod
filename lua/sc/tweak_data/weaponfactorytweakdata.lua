@@ -27892,6 +27892,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			--M16 Internals
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.keep_damage = true
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.perks = nil
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.stats = {
 				value = 10,

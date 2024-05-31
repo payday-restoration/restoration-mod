@@ -557,7 +557,8 @@
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
 			<option_group name="OTHER">
-
+				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
+				<divider name="tod_divider" size="15"/>
 				<option_group name="WeaponHandling">
 					<option type="bool" default_value="true" name="WpnFireDescope"/>
 					<divider name="tod_divider" size="14"/>
@@ -589,6 +590,7 @@
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>

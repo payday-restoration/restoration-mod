@@ -27903,8 +27903,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16_burst.custom_stats = {
 				rof_mult = 0.78765,
-				falloff_start_mult = 1.1875,
-				falloff_end_mult = 1.1875,
+				falloff_start_mult = 1.11538,
+				falloff_end_mult = 1.08888,
 				damage_min_mult = 0.8,
 				hip_mult = 1.5,
 				auto_to_burst = true,
@@ -27943,6 +27943,46 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			self.wpn_fps_ass_mike4_2022_npc.uses_parts = deep_clone(self.wpn_fps_ass_mike4_2022.uses_parts)
+
+		end
+
+		if self.parts.wpn_fps_ass_mike4_2022_laser_box01_mike4_v1 then --MW2022 M4 Extras
+			self.parts.wpn_fps_ass_mike4_2022_laser_box01_mike4_v1.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_laser_box01_mike4_v1.stats = {
+				value = 0,
+				spread = 1
+			}
+			self.parts.wpn_fps_ass_mike4_2022_laser_box01_mike4_v1.custom_stats = nil
+
+			self.parts.wpn_fps_ass_mike4_2022_laser_flashlight02_combo.supported = true
+			self.parts.wpn_fps_ass_mike4_2022_laser_flashlight02_combo.stats = {
+				value = 0,
+				spread = 1
+			}
+			self.parts.wpn_fps_ass_mike4_2022_laser_flashlight02_combo.custom_stats = nil
+
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.supported = true
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.desc_id = "bm_wp_upg_o_4_szholot"
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.stats = {
+				value = 8,
+				zoom = 10
+			}
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.custom_stats = {}
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.perks = { "scope", "highlight" }
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_mw2022_holotherm01.stance_mod) do
+				if weap and i ~= wep_id and weap.translation then
+					weap.translation = weap.translation + Vector3(0,-10,0)
+				end
+			end
+
+			self.parts.wpn_fps_upg_mw2022_silencer_ar03.supported = true
+			self.parts.wpn_fps_upg_mw2022_silencer_ar03.stats = deep_clone(muzzle_device.supp_a_stats)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar03.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+
+			self.parts.wpn_fps_upg_mw2022_silencer_ar07.supported = true
+			self.parts.wpn_fps_upg_mw2022_silencer_ar07.stats = deep_clone(muzzle_device.supp_rec2_stats)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar07.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
 
 		end
 

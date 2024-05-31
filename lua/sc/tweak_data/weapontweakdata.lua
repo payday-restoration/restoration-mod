@@ -17712,10 +17712,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.panic_suppression_chance = 0.05
 				self.m4_usasoc.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.m4_usasoc.reload_speed_multiplier = 1.08
-				self.m4_usasoc.timers.reload_exit_empty = 0.85
-				self.m4_usasoc.timers.reload_empty = 3.05
-				self.m4_usasoc.timers.reload_exit_not_empty = 1.15
-				self.m4_usasoc.timers.reload_not_empty = 2.4
+				self.m4_usasoc.timers.reload_empty = 3
+				self.m4_usasoc.timers.reload_exit_empty = 0.55
+				self.m4_usasoc.timers.reload_exit_not_empty = 1.2
+				self.m4_usasoc.timers.reload_not_empty = 2.35
 			end
 
 			if self.pd3_qbz191 then --RJC9000 and PlayBONK's PAYDAY "THE SERVERS ARE DOWN! CAN'T PLAY, IDIOT" 3 QBZ-191
@@ -18327,14 +18327,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.supported = true
 				self.mike4_2022.ads_speed = 0.240
 				self.mike4_2022.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 5600,
+					start_dist = 2600,
+					end_dist = 4500,
 					min_mult = 0.4166
 				}
 				self.mike4_2022.stats = {
 					damage = 24,
-					spread = 72,
-					recoil = 81,
+					spread = 81,
+					recoil = 85,
 					zoom = 1,
 					concealment = 25,
 					suppression = 8,
@@ -18364,7 +18364,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo_2022.fire_mode_data.fire_rate = 0.1
 					self.akilo_2022.kick = self.stat_info.kick_tables.right_recoil	
 					self.akilo_2022.supported = true
-					self.akilo_2022.ads_speed = 0.320
+					self.akilo_2022.ads_speed = 0.280
 					self.akilo_2022.damage_falloff = {
 						start_dist = 2800,
 						end_dist = 4500,
@@ -18400,10 +18400,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
 					self.akilo105_2022.kick = self.stat_info.kick_tables.right_recoil	
 					self.akilo105_2022.supported = true
-					self.akilo105_2022.ads_speed = 0.280
+					self.akilo105_2022.ads_speed = 0.260
 					self.akilo105_2022.damage_falloff = {
-						start_dist = 2400,
-						end_dist = 4500,
+						start_dist = 3200,
+						end_dist = 5500,
 						min_mult = 0.5
 					}
 					self.akilo105_2022.stats = {

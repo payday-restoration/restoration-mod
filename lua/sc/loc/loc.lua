@@ -171,15 +171,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 		["RestorationModWpnCatTitleID"] = "Buy Menu Tab Sorting",
 		["RestorationModWpnCatDescID"] = "Change weapon grouping method used when buying a weapon from the black market menu. Requires restart.",
-		["base_wpn_cat"] = "base skill",
-		["sub_wpn_cat"] = "sub-category & damage tier",
+			["base_wpn_cat"] = "base skill",
+			["sub_wpn_cat"] = "sub-category & damage tier",
 
 		["RestorationModWepNamesTitleID"] = "Weapon (Re)Names",
 		["RestorationModWepNamesDescID"] = "Change the naming style of weapons and attachments. Requires restart.",
-		["resmod_res_names"] = "Resmod Names (Default)",
-		["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
-		["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
-		["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
+			["resmod_res_names"] = "Resmod Names (Default)",
+			["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
+			["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
+			["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
+
+		["RestorationModDisableAdvMovTFTitleID"] = "Disable Advanced Movement's Wallrun/Kick",
+		["RestorationModDisableAdvMovTFDescID"] = "Disables the wallrun/kick aspects of Advanced Movement.",
 
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
@@ -1262,6 +1265,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
 		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_2"] = "Low-powered scope.\n#{risk}#2x magnification.##",
+		["bm_wp_upg_o_2_szholot"] = "Thermal holographic sight.\n#{risk}#2x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies within #{skill_color}#40## meters of you when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_2_5"] = "Low-powered scope.\n#{risk}#2.5x magnification.##",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
 		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",

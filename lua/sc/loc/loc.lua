@@ -186,10 +186,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
 			["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
 
-		["RestorationModDisableAdvMovTFTitleID"] = "Disable Wallrun/jump",
-		["RestorationModDisableAdvMovTFDescID"] = "Disables the wallrun/jump aspects of Advanced Movement.",
+		["RestorationModDisableAdvMovTFTitleID"] = "Disable Wall-run/jump",
+		["RestorationModDisableAdvMovTFDescID"] = "Disables the wall-run/jump aspects of Advanced Movement.",
 		["RestorationModAdvMovMeleeTitleID"] = "Melee Behavior",
-		["RestorationModAdvMovMeleeDescID"] = "Change how Advanced Movement's movement related melee behaves.",
+		["RestorationModAdvMovMeleeDescID"] = "Change how Advanced Movement's jump/slide/dash/sprint-kick behaves.",
 			["resmod_advmov_melee_on"] = "Default",
 			["resmod_advmov_melee_loud_only"] = "Loud Only",
 			["resmod_advmov_melee_off"] = "Disabled",

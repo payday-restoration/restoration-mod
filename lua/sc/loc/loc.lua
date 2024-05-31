@@ -2105,6 +2105,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_lua"] = "Powered by Lua!",
 		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
 		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
+		["menu_reticle_dmc_cross_holotherm"] = "SZ Holotherm",
 		
 		
 

@@ -4465,21 +4465,22 @@ function PlayerStandard:_interupt_action_throw_projectile(t)
 	self:_stance_entered()
 end
 
-
-local AdvMovWallKick = PlayerStandard._check_wallkick
---Kills wallkick checks
-function PlayerStandard:_check_wallkick(t, dt)
-	if restoration.Options:GetValue("OTHER/DisableAdvMovTF") then
-	else
-		AdvMovWallKick(self, t, dt)
+if AdvMov then
+	local AdvMovWallKick = PlayerStandard._check_wallkick
+	--Kills wallkick checks
+	function PlayerStandard:_check_wallkick(t, dt)
+		if restoration.Options:GetValue("OTHER/DisableAdvMovTF") then
+		else
+			AdvMovWallKick(self, t, dt)
+		end
 	end
-end
-local AdvMovRayCheck = PlayerStandard._get_nearest_wall_ray_dir
---Should make it so wallrun checks always fail, effectively disabling wallrunning
-function PlayerStandard:_get_nearest_wall_ray_dir(ray_length_mult, raytarget, only_frontal_rays, z_offset)
-	if restoration.Options:GetValue("OTHER/DisableAdvMovTF") then
-		return nil
-	else
-		return AdvMovRayCheck(self, ray_length_mult, raytarget, only_frontal_rays, z_offset)
+	local AdvMovRayCheck = PlayerStandard._get_nearest_wall_ray_dir
+	--Should make it so wallrun checks always fail, effectively disabling wallrunning
+	function PlayerStandard:_get_nearest_wall_ray_dir(ray_length_mult, raytarget, only_frontal_rays, z_offset)
+		if restoration.Options:GetValue("OTHER/DisableAdvMovTF") then
+			return nil
+		else
+			return AdvMovRayCheck(self, ray_length_mult, raytarget, only_frontal_rays, z_offset)
+		end
 	end
 end

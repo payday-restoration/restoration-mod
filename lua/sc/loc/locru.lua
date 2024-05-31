@@ -37,6 +37,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModUIOptionsButtonDescID"] = "Опции Alpha UI.",
 		["RestorationModTimeOfDayTitleID"] = "Новые и случайные времена суток",
 		["RestorationModTimeOfDayDescID"] = "Позволяет настраивать время суток на некоторых ограблениях.",
+		["RestorationModOtherModsTitleID"] = "=== Настройки для других модов ===",
+		["RestorationModOtherModsDescID"] = "Дополнительные настройки для других модов",
+		["RestorationModAdVMovResOptOptionsButtonTitleID"] = "Настройки \"Advanced Movement Standalone\"",
+		["RestorationModAdVMovResOptOptionsButtonDescID"] = "Дополнительные настройки мода \"Advanced Movement Standalone\"  от Solo Queue Pixy's.",
+		["RestorationModDisableAdvMovTFTitleID"] = "Отключить бег и прыжки по стенам",
+		["RestorationModDisableAdvMovTFDescID"] = "Отключает бег и прыжки по стенам, которые являются частью Advanced Movement мода.",
+		["RestorationModAdvMovMeleeTitleID"] = "Оружие ближ. боя",
+		["RestorationModAdvMovMeleeDescID"] = "Меняет поведение оружия ближ. боя от мода Advanced Movement (прыжки/подкаты/рывки/удар с разбега).",
+			["resmod_advmov_melee_on"] = "По умолчанию",
+			["resmod_advmov_melee_loud_only"] = "Во время громкого подхода",
+			["resmod_advmov_melee_off"] = "Выключено",
+		
 
 		["restoration_level_data_unknown"] = "НЕИЗВЕСТНОЕ ВРЕМЯ, НЕИЗВЕСТНОЕ МЕСТО",
 		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",
@@ -222,9 +234,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_no_nicknames"] = "Латиница",
 		["dmcwo_reelnames"] = "Реальные (DMCWO)",
 		["resmod_no_renames"] = "Ванильные",
-		
-		["RestorationModDisableAdvMovTFTitleID"] = "Отключить бег по стенам и пинки (Advanced Movement мод)",
-		["RestorationModDisableAdvMovTFDescID"] = "Отключает бег по стенам и пинки, которые являются частью Advanced Movement мода.",
 
 		["default"] = "Стандартная",
 		["random"] = "Случайная",
@@ -2618,6 +2627,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_lua"] = "Powered by Lua",
 		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
 		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
+		["menu_reticle_dmc_cross_holotherm"] = "SZ Holotherm",
 		
 
 		--Blackmarket gui per-armor skill descriptions.

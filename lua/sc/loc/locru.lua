@@ -135,7 +135,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
-		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеру при падении",
+		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеры при падении",
 		["RestorationModNoBleedoutTiltDescID"] = "Отключает наклон камеры, который происходит после падения.",
 		["RestorationModGOTTAGETAGRIPTitleID"] = "Спрятать все рукоятки",
 		["RestorationModGOTTAGETAGRIPDescID"] = "Прячет все вертикальные рукоятки в меню установки модификаций; не действует на оружие с предустановленной рукоятью. Требуется перезапуск.",
@@ -222,6 +222,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["resmod_no_nicknames"] = "Латиница",
 		["dmcwo_reelnames"] = "Реальные (DMCWO)",
 		["resmod_no_renames"] = "Ванильные",
+		
+		["RestorationModDisableAdvMovTFTitleID"] = "Отключить бег по стенам и пинки (Advanced Movement мод)",
+		["RestorationModDisableAdvMovTFDescID"] = "Отключает бег по стенам и пинки, которые являются частью Advanced Movement мода.",
 
 		["default"] = "Стандартная",
 		["random"] = "Случайная",

@@ -557,8 +557,6 @@
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
 			<option_group name="OTHER">
-				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
-				<divider name="tod_divider" size="15"/>
 				<option_group name="WeaponHandling">
 					<option type="bool" default_value="true" name="WpnFireDescope"/>
 					<divider name="tod_divider" size="14"/>
@@ -650,6 +648,15 @@
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<!--<option type="bool" default_value="false" name="Notify"/> -->
+			</option_group>
+			<divider name="tod_divider" size="16"/>
+			<button name="OtherMods" disabled="true"/>
+			<divider name="tod_divider" size="8"/>
+			<option_group name="AdVMovResOpt">
+				<!--Wallrun/jumps-->
+				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
+				<!--Wall/Slide/Jump/Dash Kicks | 1 = default, 2 = disabled during stealth, 3 = disabled entirely -->
+				<option type="multichoice" default_value="1" name="AdvMovMelee" values_tbl="restoration.AdvMovMelee"/>
 			</option_group>
         </options>
     </Options>

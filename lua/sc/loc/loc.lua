@@ -44,6 +44,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
 		["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
 
+		["RestorationModOtherModsTitleID"] = "Other Mod Options",
+		["RestorationModOtherModsDescID"] = "Additional options for other mods",
+			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" Options",
+			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Additional options for Solo Queue Pixy's \"Advanced Movement Standalone\" mod.",
+
 		["restoration_level_data_unknown"] = "TIME UNKNOWN, LOCATION UNKNOWN",
 		["RestorationModEnv_BanksTitleID"] = "Branch Bank",
 		["RestorationModEnv_BanksDescID"] = "Select an environment for Branch Bank.",
@@ -181,8 +186,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
 			["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
 
-		["RestorationModDisableAdvMovTFTitleID"] = "Disable Advanced Movement's Wallrun/Kick",
-		["RestorationModDisableAdvMovTFDescID"] = "Disables the wallrun/kick aspects of Advanced Movement.",
+		["RestorationModDisableAdvMovTFTitleID"] = "Disable Wallrun/jump",
+		["RestorationModDisableAdvMovTFDescID"] = "Disables the wallrun/jump aspects of Advanced Movement.",
+		["RestorationModAdvMovMeleeTitleID"] = "Melee Behavior",
+		["RestorationModAdvMovMeleeDescID"] = "Change how Advanced Movement's movement related melee behaves.",
+			["resmod_advmov_melee_on"] = "Default",
+			["resmod_advmov_melee_loud_only"] = "Loud Only",
+			["resmod_advmov_melee_off"] = "Disabled",
 
 		--WEAPON HANDLING
 		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",

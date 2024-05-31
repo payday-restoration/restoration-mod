@@ -730,6 +730,12 @@ restoration.wepnames = {
 	"resmod_no_renames"
 }
 
+restoration.AdvMovMelee = {
+	"resmod_advmov_melee_on",
+	"resmod_advmov_melee_loud_only",
+	"resmod_advmov_melee_off"
+}
+
 -- Detect if ResMod is active to disable PDTH Challenges Standalone
 DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
 

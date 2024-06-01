@@ -27877,7 +27877,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 				--Ravage 8
 				self.parts.wpn_fps_ass_mike4_2022_stock_tac.supported = true
-				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats = { value = 0, recoil = -1, concealment = 1}
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats = { value = 0, recoil = -2, concealment = 1}
 				self.parts.wpn_fps_ass_mike4_2022_stock_tac.custom_stats = {ads_speed_mult = 0.925}
 				--Demo Precision Elite Stock
 				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.supported = true
@@ -27962,11 +27962,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mike4_2022_laser_flashlight02_combo.custom_stats = nil
 
 			self.parts.wpn_fps_upg_o_mw2022_holotherm01.supported = true
-			self.parts.wpn_fps_upg_o_mw2022_holotherm01.desc_id = "bm_wp_upg_o_4_szholot"
+			self.parts.wpn_fps_upg_o_mw2022_holotherm01.desc_id = "bm_wp_upg_o_2_szholot"
 			self.parts.wpn_fps_upg_o_mw2022_holotherm01.stats = {
 				value = 8,
 				zoom = 10
 			}
+			--The joke here being that in MW2022/23, for w/e reason, this holographic sight has the same zoom level as the mid-power scopes on top of having thermal capabilties and no scope glint like said mid-power scopes
 			self.parts.wpn_fps_upg_o_mw2022_holotherm01.custom_stats = {}
 			self.parts.wpn_fps_upg_o_mw2022_holotherm01.perks = { "scope", "highlight" }
 			self.parts.wpn_fps_upg_o_mw2022_holotherm01.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)

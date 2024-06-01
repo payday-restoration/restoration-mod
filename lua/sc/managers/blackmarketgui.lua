@@ -4313,12 +4313,12 @@ function BlackMarketGui:show_stats()
 		--Would write a better solution, but I hate this file.
 		for name, data in pairs(unaltered_total_mods_stats) do
 			if name == "damage" or name == "damage_min" then
-				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+				if format_round(unaltered_total_mods_stats[name].value) ~= format_round(total_mods_stats[name].value) then
 					mod_stats.chosen[name] = (total_base_stats[name].value + (total_mods_stats[name].value + total_skill_stats[name].value))
 					- (unaltered_total_base_stats[name].value + (unaltered_total_mods_stats[name].value + unaltered_total_skill_stats[name].value))
 				end
 			else
-				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+				if format_round(unaltered_total_mods_stats[name].value) ~= format_round(total_mods_stats[name].value) then
 					mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
 					- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
 				end
@@ -4382,6 +4382,7 @@ function BlackMarketGui:show_stats()
 
 			value = mod_stats.chosen[stat.name]
 			equip = mod_stats.equip[stat.name]
+
 			total_value = math.max(total_base_stats[stat.name].value + total_mods_stats[stat.name].value + total_skill_stats[stat.name].value, 0)
 			unaltered_total_value = math.max(unaltered_total_base_stats[stat.name].value + unaltered_total_mods_stats[stat.name].value + unaltered_total_skill_stats[stat.name].value, 0)
 			stat_changed = tweak_parts and tweak_parts.stats and tweak_parts.stats[stat.stat_name or stat.name] and value ~= 0
@@ -4423,10 +4424,10 @@ function BlackMarketGui:show_stats()
 
 			equip = equip + math.round(remove_stats[stat.name] or 0)
 
-			if unaltered_total_value < total_value then
+			if format_round(unaltered_total_value) < format_round(total_value) then
 				self._stats_texts[stat.name].skill:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
-			elseif total_value < unaltered_total_value then
+			elseif format_round(total_value) < format_round(unaltered_total_value) then
 				self._stats_texts[stat.name].skill:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 			else

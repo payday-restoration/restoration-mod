@@ -18278,6 +18278,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malima.CLIP_AMMO_MAX = 30
 				self.malima.AMMO_MAX = 120
 				self.malima.FIRE_MODE = "auto"
+				self.malima.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.malima.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 				self.malima.fire_mode_data = {}
 				self.malima.fire_mode_data.fire_rate = 0.0923076
 				self.malima.CAN_TOGGLE_FIREMODE = true
@@ -18318,8 +18320,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.mike4_2022 then
 				self.mike4_2022.nato = true
 				self.mike4_2022.recategorize = { "light_ar" }
+				self.mike4_2022.damage_type = "assault_rifle"
 				self.mike4_2022.has_description = false
 				self.mike4_2022.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.mike4_2022.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 				self.mike4_2022.tactical_reload = 1
 				self.mike4_2022.AMMO_MAX = 150
 				self.mike4_2022.fire_mode_data.fire_rate = 0.074074
@@ -18334,7 +18338,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.stats = {
 					damage = 24,
 					spread = 81,
-					recoil = 85,
+					recoil = 87,
 					zoom = 1,
 					concealment = 25,
 					suppression = 8,
@@ -18357,8 +18361,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if self.akilo_2022 then 
 					self.akilo_2022.warsaw = true
 					self.akilo_2022.recategorize = { "heavy_ar" }
+					self.akilo_2022.damage_type = "assault_rifle"
 					self.akilo_2022.has_description = false
 					self.akilo_2022.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+					self.akilo_2022.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 					self.akilo_2022.tactical_reload = 1
 					self.akilo_2022.AMMO_MAX = 120
 					self.akilo_2022.fire_mode_data.fire_rate = 0.1
@@ -18373,7 +18379,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo_2022.stats = {
 						damage = 30,
 						spread = 76,
-						recoil = 71,
+						recoil = 73,
 						zoom = 1,
 						concealment = 23,
 						suppression = 8,
@@ -18393,8 +18399,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if self.akilo105_2022 then 
 					self.akilo105_2022.warsaw = true
 					self.akilo105_2022.recategorize = { "light_ar" }
+					self.akilo105_2022.damage_type = "assault_rifle"
 					self.akilo105_2022.has_description = false
 					self.akilo105_2022.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+					self.akilo105_2022.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 					self.akilo105_2022.tactical_reload = 1
 					self.akilo105_2022.AMMO_MAX = 150
 					self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
@@ -18409,7 +18417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.stats = {
 						damage = 24,
 						spread = 76,
-						recoil = 75,
+						recoil = 79,
 						zoom = 1,
 						concealment = 23,
 						suppression = 8,

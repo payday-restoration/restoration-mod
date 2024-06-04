@@ -20400,6 +20400,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308_underbarrel.timers.reload_exit_not_empty = 0.3
 		end
 
+		if self.degfifty then --RJC9000 and PlayBONK's 2077 Silverhand
+			self.degfifty.categories = { "pistol", "amr", "semi_snp" }
+			self.degfifty.recategorize = { "heavy_pis" }
+			self.degfifty.has_description = false
+			self.degfifty.damage_type = "anti_materiel"
+			self.degfifty.fire_mode_data.fire_rate = 0.4
+			self.degfifty.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+			self.degfifty.AMMO_MAX = 9
+			self.degfifty.CLIP_AMMO_MAX = 7
+			self.degfifty.tactical_reload = 1
+			self.degfifty.sms = sms_preset.semi_snp_amr
+			self.degfifty.kick = deep_clone(self.stat_info.kick_tables.right_kick)
+			self.degfifty.kick.crouching = self.degfifty.kick.standing
+			self.degfifty.kick.steelsight = self.degfifty.kick.standing
+			self.degfifty.supported = true
+			self.degfifty.ads_speed = 0.300
+			self.degfifty.damage_falloff = {
+				start_dist = 500,
+				end_dist = 5000,
+				min_mult = 0.25
+			}
+			self.degfifty.stats = {
+				damage = 120,
+				spread = 51,
+				recoil = 1,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 20,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 1,
+				reload = 20
+			}
+			self.degfifty.stats_modifiers = nil
+			self.degfifty.panic_suppression_chance = 0.05
+			self.degfifty.always_play_anims = true
+			self.degfifty.can_shoot_through_enemy = true
+			self.degfifty.can_shoot_through_enemy_unlim = true
+			self.degfifty.can_shoot_through_shield = true 
+			self.degfifty.can_shoot_through_titan_shield = true 
+			self.degfifty.use_vapor_trail = true
+			self.degfifty.armor_piercing_chance = 1
+			self.degfifty.object_damage_mult = 4
+		end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 		-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality, those are fine) then it's a no-go for now

@@ -20407,7 +20407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.damage_type = "anti_materiel"
 			self.degfifty.fire_mode_data.fire_rate = 0.4
 			self.degfifty.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-			self.degfifty.AMMO_MAX = 12
+			self.degfifty.AMMO_MAX = 9
 			self.degfifty.CLIP_AMMO_MAX = 7
 			self.degfifty.tactical_reload = 1
 			self.degfifty.sms = sms_preset.semi_snp_amr
@@ -20422,7 +20422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				min_mult = 0.2
 			}
 			self.degfifty.stats = {
-				damage = 90,
+				damage = 120,
 				spread = 51,
 				recoil = 1,
 				spread_moving = 9,

@@ -20407,7 +20407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.damage_type = "anti_materiel"
 			self.degfifty.fire_mode_data.fire_rate = 0.4
 			self.degfifty.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
-			self.degfifty.AMMO_MAX = 9
+			self.degfifty.AMMO_MAX = 12
 			self.degfifty.CLIP_AMMO_MAX = 7
 			self.degfifty.tactical_reload = 1
 			self.degfifty.sms = sms_preset.semi_snp_amr
@@ -20419,10 +20419,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.damage_falloff = {
 				start_dist = 500,
 				end_dist = 5000,
-				min_mult = 0.25
+				min_mult = 0.2
 			}
 			self.degfifty.stats = {
-				damage = 120,
+				damage = 90,
 				spread = 51,
 				recoil = 1,
 				spread_moving = 9,
@@ -20443,6 +20443,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.can_shoot_through_shield = true 
 			self.degfifty.can_shoot_through_titan_shield = true 
 			self.degfifty.use_vapor_trail = true
+			self.degfifty.hs_mult = 2
+			self.degfifty.lock_slide = true
+			self.degfifty.lock_slide_alt = true
+			self.degfifty.timers.reload_empty = 4.0
+			self.degfifty.timers.reload_exit_empty = 0.85
+			self.degfifty.timers.reload_not_empty = 2.5
+			self.degfifty.timers.reload_exit_not_empty = 0.7
 			self.degfifty.armor_piercing_chance = 1
 			self.degfifty.object_damage_mult = 4
 		end
@@ -21307,7 +21314,6 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}
-
 end
 
 WeaponTweakData.clone__precalculate_values = WeaponTweakData._precalculate_values

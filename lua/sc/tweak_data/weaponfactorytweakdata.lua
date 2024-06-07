@@ -24856,10 +24856,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 
-			if self.parts.wpn_fps_shot_super_body then --Pawcio's Super Shotgun
+			if self.parts.wpn_fps_shot_super_body then --Pawcio's DOOM Super Shotgun
 				self.parts.wpn_fps_upg_super_meathook.supported = true
 				self.parts.wpn_fps_upg_super_meathook.stats = {
-					concealment = -5,
+					concealment = -2,
 					max_damage = 6,
 					min_damage = 6,
 					max_damage_effect = 1,

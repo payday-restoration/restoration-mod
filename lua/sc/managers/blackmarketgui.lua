@@ -5042,7 +5042,7 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
 			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
 				managers.localization:text("bm_menu_weapon_bayonet_header") .. 
-				(damage_total and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
+				(damage_total and damage_total > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage) .. "##" or "") .. 
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage) .. "##" or "") .. 
 				(range and range > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range) .. "m##" or "")
@@ -5058,7 +5058,7 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
 			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
 				managers.localization:text("bm_menu_weapon_bayonet_secondary_header") .. 
-				(damage_total_secondary and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total_secondary) .. "##" or "") .. 
+				(damage_total_secondary and damage_total_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total_secondary) .. "##" or "") .. 
 				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage_secondary) .. "##" or "") .. 
 				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage_secondary) .. "##" or "") .. 
 				(range_secondary and range_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range_secondary) .. "m##" or "")

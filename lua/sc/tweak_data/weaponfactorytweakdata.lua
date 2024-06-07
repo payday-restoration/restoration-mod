@@ -11788,7 +11788,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_ns_bayonet.supported = true
 	self.parts.wpn_fps_snp_mosin_ns_bayonet.stats = {
 		value = 5,
-		concealment = -5,
+		concealment = -2,
 		max_damage = 6,
 		min_damage = 6,
 		max_damage_effect = 1,
@@ -11796,6 +11796,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 		bayonet_range = 50
 	}
 	self.parts.wpn_fps_snp_mosin_ns_bayonet.custom_stats = {
+		melee_speed_mult = 0.8,
 		ads_speed_mult = 1.125
 	}
 		
@@ -22814,7 +22815,7 @@ function WeaponFactoryTweakData:_init_bessy()
 		pcs = {},
 		stats = {
 			value = 5,
-			concealment = -5,
+			concealment = -2,
 			max_damage = 6,
 			min_damage = 6,
 			max_damage_effect = 1,
@@ -22823,6 +22824,7 @@ function WeaponFactoryTweakData:_init_bessy()
 		},
 		supported = true,
 		custom_stats = {
+			melee_speed_mult = 0.8,
 			ads_speed_mult = 1.125
 		}
 	}
@@ -24864,6 +24866,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					min_damage_effect = 1
 				}
 				self.parts.wpn_fps_upg_super_meathook.custom_stats = {
+					melee_speed_mult = 0.8,
 					ads_speed_mult = 1.125
 				}
 
@@ -24904,7 +24907,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_k31_bayonet.supported = true
 				self.parts.wpn_fps_upg_k31_bayonet.stats = {
 					value = 5,
-					concealment = -5,
+					concealment = -2,
 					max_damage = 6,
 					min_damage = 6,
 					max_damage_effect = 1,
@@ -24912,6 +24915,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					bayonet_range = 50
 				}
 				self.parts.wpn_fps_upg_k31_bayonet.custom_stats = {
+					melee_speed_mult = 0.8,
 					ads_speed_mult = 1.125
 				}
 
@@ -25461,7 +25465,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_sks_bayonet.supported = true
 				self.parts.wpn_fps_upg_sks_bayonet.stats = {
 					value = 5,
-					concealment = -5,
+					concealment = -2,
 					max_damage = 6,
 					min_damage = 6,
 					max_damage_effect = 1,
@@ -25469,6 +25473,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					bayonet_range = 50
 				}
 				self.parts.wpn_fps_upg_sks_bayonet.custom_stats = {
+					melee_speed_mult = 0.8,
 					ads_speed_mult = 1.125
 				}
 
@@ -34383,7 +34388,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.supported = true
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.stats = {
 			value = 5,
-			concealment = -5,
+			concealment = -2,
 			max_damage = 6,
 			min_damage = 6,
 			max_damage_effect = 1,
@@ -34391,6 +34396,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			bayonet_range = 50
 		}
 		self.parts.wpn_fps_snp_mosin_bayonet_bubba.custom_stats = {
+			melee_speed_mult = 0.8,
 			ads_speed_mult = 1.125
 		}
 
@@ -36883,6 +36889,128 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.supported = true
 		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.stats = deep_clone(barrels.long_b2_stats)
 		self.parts.wpn_fps_ass_mdr_308_barrel_sniper.custom_stats = deep_clone(barrels.long_b2_stats)
+	end
+
+	if self.parts.wpn_fps_pis_usp_knife_rambo then --PlayBONK and >:3's Off-hand Knives
+		attachment_list = {
+			"wpn_fps_pis_usp_knife_freedom"
+		}
+		for _, knife_id in ipairs(attachment_list) do
+			if self.parts[knife_id] then
+				self.parts[knife_id].supported = true
+				self.parts[knife_id].stats = {
+					value = 0,
+					concealment = -2,
+					recoil = -10,
+					spread = -10,
+					max_damage = 6,
+					min_damage = 6,
+					max_damage_effect = 1,
+					min_damage_effect = 1,
+					bayonet_range = 100
+				}
+				self.parts[knife_id].custom_stats = {
+					melee_speed_mult = 0.6,
+					ads_speed_mult = 1.2
+				}
+			end
+		end
+		attachment_list = {
+			"wpn_fps_pis_usp_knife_rambo",
+			"wpn_fps_pis_usp_knife_chef",
+			"wpn_fps_pis_usp_knife_oxide",
+		}
+		for _, knife_id in ipairs(attachment_list) do
+			if self.parts[knife_id] then
+				self.parts[knife_id].supported = true
+				self.parts[knife_id].stats = {
+					value = 0,
+					concealment = -2,
+					recoil = -10,
+					spread = -10,
+					max_damage = 12,
+					min_damage = 12,
+					max_damage_effect = 1,
+					min_damage_effect = 1,
+					bayonet_range = 15,
+				}
+				self.parts[knife_id].custom_stats = {
+					melee_speed_mult = 0.7,
+					ads_speed_mult = 1.125
+				}
+			end
+		end
+		attachment_list = {
+			"wpn_fps_pis_usp_knife_kabar",
+			"wpn_fps_pis_usp_knife_kabar_tanto",
+			"wpn_fps_pis_usp_knife_km2000",
+			"wpn_fps_pis_usp_knife_ballistic",
+			"wpn_fps_pis_usp_knife_fairbair",
+			"wpn_fps_pis_usp_knife_bayonet",
+			"wpn_fps_pis_usp_knife_x46"
+		}
+		for _, knife_id in ipairs(attachment_list) do
+			if self.parts[knife_id] then
+				self.parts[knife_id].supported = true
+				self.parts[knife_id].stats = {
+					value = 0,
+					concealment = -1,
+					recoil = -6,
+					spread = -6,
+					max_damage = 9,
+					min_damage = 9,
+					max_damage_effect = 1,
+					min_damage_effect = 1,
+					bayonet_range = 10,
+				}
+				self.parts[knife_id].custom_stats = {
+					melee_speed_mult = 0.8,
+					ads_speed_mult = 1.075
+				}
+			end
+		end
+		attachment_list = {
+			"wpn_fps_pis_usp_knife_switchblade",
+			"wpn_fps_pis_usp_knife_wing",
+			"wpn_fps_pis_usp_knife_sword",
+			"wpn_fps_pis_usp_knife_toothbrush_shiv"
+		}
+		for _, knife_id in ipairs(attachment_list) do
+			if self.parts[knife_id] then
+				self.parts[knife_id].supported = true
+				self.parts[knife_id].stats = {
+					value = 0,
+					recoil = -4,
+					spread = -4,
+					max_damage = 6,
+					min_damage = 6,
+					max_damage_effect = 1,
+					min_damage_effect = 1,
+					bayonet_range = 5
+				}
+				self.parts[knife_id].custom_stats = {
+					ads_speed_mult = 1.025,
+					melee_speed_mult = 0.9
+				}
+			end
+		end
+		attachment_list = {
+			"wpn_fps_pis_usp_knife_aziz"
+		}
+		for _, knife_id in ipairs(attachment_list) do
+			if self.parts[knife_id] then
+				self.parts[knife_id].supported = true
+				self.parts[knife_id].stats = {
+					value = 0,
+					max_damage = 4.5,
+					min_damage = 4.5,
+					max_damage_effect = 1,
+					min_damage_effect = 1,
+					bayonet_range = 5
+				}
+				self.parts[knife_id].custom_stats = {}
+			end
+		end
 	end
 
 

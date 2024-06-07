@@ -994,6 +994,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._alt_dmg_mult = 1
 
 		self._movement_speed_add = 0
+		
+		self._melee_speed_mult = 1
 
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
@@ -1332,6 +1334,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.should_reload_immediately then
 				self._should_reload_immediately = stats.should_reload_immediately
+			end
+			if stats.melee_speed_mult then
+				self._melee_speed_mult = self._melee_speed_mult * stats.melee_speed_mult
 			end
 			if stats.hip_mult then
 				self._hipfire_mult = self._hipfire_mult * stats.hip_mult

@@ -2281,6 +2281,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_megumins_staff_info"] = "Кастует мощный взрыв, когда полностью заряжен!\nКаст заклинания производится на любую поверхность или существо на расстояние не более #{skill_color}#30## метров; #{risk}#нельзя кастовать в воздухе.##\n\n#{important_1}#Скорость зарядки не зависит от навыков.\nВо время зарядки у Вас затуманивается экран, тратится стамина и постепенно уменьшается скорость передвижения.\nВы мгновенно падаете после каста взрыва; навыки и перки, позволяющие спасти или отложить падение - не работают.##",
 
 		["bm_menu_weapon_bayonet_header"] = "ХАР-КИ ОТ ОСНОВНОГО:",
+		["bm_menu_weapon_bayonet_secondary_header"] = "ХАР-КИ ОТ ВТОРИЧНОГО:",
 		["bm_menu_weapon_bayonet_damage"] = "\nДОП. УРОН: ##+",
 		["bm_menu_weapon_bayonet_damage_base"] = "\n-БАЗОВЫЙ: ##",
 		["bm_menu_weapon_bayonet_damage_skill"] = "\n-НАВЫКИ: ##+",

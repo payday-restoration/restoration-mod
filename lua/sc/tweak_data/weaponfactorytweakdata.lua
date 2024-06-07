@@ -24031,6 +24031,45 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 		--WEAPONS
+			if self.parts.wpn_fps_ass_skspug_rec then --Pawcio's SKS Pug
+				self.parts.wpn_fps_ass_skspug_mag.supported = true
+				self.parts.wpn_fps_ass_skspug_mag.stats = { value = 0 }
+
+				self.parts.wpn_fps_upg_skspug_handguard_short.supported = true
+				self.parts.wpn_fps_upg_skspug_handguard_short.stats = { 
+					value = 5,
+					recoil = -4,
+					concealment = 2
+				}
+
+				self.parts.wpn_fps_upg_skspug_stock_ext.supported = true
+				self.parts.wpn_fps_upg_skspug_stock_ext.stats = { 
+					value = 2,
+					recoil = 2,
+					concealment = -1
+				}
+
+				self.parts.wpn_fps_upg_skspug_barrel_long.supported = true
+				self.parts.wpn_fps_upg_skspug_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_skspug_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				self.parts.wpn_fps_upg_skspug_barrel_short.supported = true
+				self.parts.wpn_fps_upg_skspug_barrel_short.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_upg_skspug_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+
+				self.parts.wpn_fps_upg_skspug_mag_30.supported = true
+				self.parts.wpn_fps_upg_skspug_mag_30.has_description = false
+				self.parts.wpn_fps_upg_skspug_mag_30.stats = { 
+					value = 2,
+					extra_ammo = 10,
+					reload = -3,
+					concealment = -1
+				}
+				self.parts.wpn_fps_upg_skspug_mag_30.custom_stats = { 
+					ads_speed_mult = 0.975
+				}
+			end
+
 			if self.parts.wpn_fps_upg_cs5_barrel_suppressed then
 				self.parts.wpn_fps_upg_cs5_barrel_suppressed.supported = true
 				self.parts.wpn_fps_upg_cs5_barrel_suppressed.stats = {
@@ -34211,6 +34250,236 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 		end
 
+	--[[ SILENT ENFORCER'S MODS ]]
+
+		if self.parts.wpn_fps_lmg_mg34_rec then --Silent Enforcer's MG34
+			self.parts.wpn_fps_lmg_mg34_rec.visibility = nil
+			self.parts.wpn_fps_lmg_mg34_rec.adds = {
+				"wpn_fps_lmg_mg34_o_rail",
+				"wpn_fps_lmg_mg34_irons_down"
+			}
+			self.parts.wpn_fps_lmg_mg34_lid.visibility = nil
+			self.parts.wpn_fps_lmg_mg34_lid.adds = nil
+			self.parts.wpn_fps_lmg_mg34_mag.visibility = nil
+			self.parts.wpn_fps_lmg_mg34_mag.adds = nil
+
+			self.parts.wpn_fps_lmg_mg34_m_double.supported = true
+			self.parts.wpn_fps_lmg_mg34_m_double.stats = {
+				value = 10,
+				extra_ammo = 25,
+				concealment = -4,
+				reload = 3
+			}
+			self.parts.wpn_fps_lmg_mg34_m_double.custom_stats = {
+				ads_speed_mult = 1.1
+			}
+			self.parts.wpn_fps_lmg_mg34_m_double.visibility = nil
+			self.parts.wpn_fps_lmg_mg34_m_double.adds = nil
+
+			self.parts.wpn_fps_lmg_mg34_irons_air.supported = true
+			self.parts.wpn_fps_lmg_mg34_irons_air.stats = { value = 0 }
+
+			self.parts.wpn_fps_lmg_mg34_irons_up.supported = true
+			self.parts.wpn_fps_lmg_mg34_irons_up.stats = { value = 0 }
+			self.parts.wpn_fps_lmg_mg34_irons_up.stance_mod = {
+				wpn_fps_lmg_mg34 = {
+					translation = Vector3(-0.02, 0, -0.15)
+				}
+			}
+
+			self.wpn_fps_lmg_mg34.override = self.wpn_fps_lmg_mg34.override or {}
+			self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_hamr_reddot = { parent="upper_reciever" }
+			self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_atibal_reddot = { parent="upper_reciever" }
+		end
+
+		if self.parts.wpn_fps_lmg_sasha_body then --Silent Enforcer's TF2 Minigun
+			self.parts.wpn_fps_lmg_natascha_sounds = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_natascha_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						spin_start = "swatturret_spin_start",
+						spin_end = "swatturret_spin_stop"
+					}
+				}
+			}
+			self.parts.wpn_fps_lmg_natascha_body.supported = true
+			self.parts.wpn_fps_lmg_natascha_body.keep_damage = true
+			self.parts.wpn_fps_lmg_natascha_body.stats = {
+				value = 0,
+				damage = -6,
+				concealment = -2
+			}
+			self.parts.wpn_fps_lmg_natascha_body.custom_stats = {
+				natascha = 975,
+				spin_up_mult = 1.3,
+				ads_speed_mult = 1.3
+			}
+			table.insert( self.parts.wpn_fps_lmg_natascha_body.adds, "wpn_fps_lmg_natascha_sounds" )
+
+			self.parts.wpn_fps_lmg_lmg_tomislav_sounds = {
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_natascha_sounds",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				internal_part = true,
+				no_cull = true,
+				stats = {
+					value = 5
+				},
+				custom_stats = {
+					sounds = {
+						spin_start = " ",
+						spin_end = " "
+					}
+				}
+			}
+			self.parts.wpn_fps_lmg_tomislav_body.supported = true
+			self.parts.wpn_fps_lmg_tomislav_body.stats = {
+				value = 0,
+				spread = 5,
+				concealment = 1
+			}
+			self.parts.wpn_fps_lmg_tomislav_body.custom_stats = {
+				spin_up_mult = 0.8,
+				ads_speed_mult = 0.8,
+				rof_mult = 0.777
+			}
+			table.insert( self.parts.wpn_fps_lmg_tomislav_body.adds, "wpn_fps_lmg_lmg_tomislav_sounds" )
+
+			self.parts.wpn_fps_lmg_gatling_gun_body.supported = true
+			self.parts.wpn_fps_lmg_gatling_gun_body.keep_damage = true
+			self.parts.wpn_fps_lmg_gatling_gun_body.stats = {
+				value = 0,
+				damage = 6,
+				concealment = -3,
+				total_ammo_mod = -41
+			}
+			self.parts.wpn_fps_lmg_gatling_gun_body.custom_stats = {
+				spin_up_mult = 1.5,
+				ads_speed_mult = 1.5,
+				movement_speed_add = -0.12,
+				sms = 0.88
+			}
+
+			self.parts.wpn_fps_lmg_canton_body.pcs = nil --Can't get this to utilize any alternate bullet base, disabled for now
+			self.parts.wpn_fps_lmg_canton_body.supported = true
+			self.parts.wpn_fps_lmg_canton_body.stats = {
+				value = 0,
+				concealment = -3,
+				total_ammo_mod = -41
+			}
+			table.insert( self.parts.wpn_fps_lmg_canton_body.adds, "wpn_fps_lmg_natascha_sounds" )
+			self.parts.wpn_fps_lmg_canton_ammo.supported = true
+			self.parts.wpn_fps_lmg_canton_ammo.cull = nil
+			self.parts.wpn_fps_lmg_canton_ammo.no_cull = true
+			self.parts.wpn_fps_lmg_canton_ammo.custom_stats = {
+				bullet_class = "FlameBulletBase",
+				ignore_statistic = true,
+				armor_piercing_add = 0.01,
+				trail_effect = "_dmc/effects/nato_trail",
+				dot_data_name = "ammo_dragons_breath"
+			}
+		end
+
+		if self.parts.wpn_fps_pis_pmm_conversion then
+			self.parts.wpn_fps_pis_pm_b_standard.forbids = {}
+			for k, used_part_id in ipairs(self.wpn_fps_pis_pm.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_pis_ns_flash"
+				}
+				if self.parts[used_part_id] and not table.contains(attachment_list, used_part_id) and self.parts[used_part_id].type then
+					if not table.contains(self.wpn_fps_pis_pm.default_blueprint, used_part_id) then
+						if self.parts[used_part_id].type == "barrel_ext" then
+							table.insert(self.parts.wpn_fps_pis_pm_b_standard.forbids, used_part_id )
+						end
+					end
+				end
+
+			end
+
+			self.parts.wpn_fps_pis_pm_ns_supp.supported = true
+			self.parts.wpn_fps_pis_pm_ns_supp.has_description = true
+			self.parts.wpn_fps_pis_pm_ns_supp.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_pis_pm_ns_supp.stats = {
+				value = 0,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_pis_pm_ns_supp.perks = {"silencer"}
+	
+			self.parts.wpn_fps_pis_pm_ns_comp.supported = true
+			self.parts.wpn_fps_pis_pm_ns_comp.desc_id = "bm_wp_upg_flash_hider"
+			self.parts.wpn_fps_pis_pm_ns_comp.has_description = true
+			self.parts.wpn_fps_pis_pm_ns_comp.stats = deep_clone(muzzle_device.muzzle_a_stats)
+			self.parts.wpn_fps_pis_pm_ns_comp.stats.suppression = 12
+			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+
+			self.parts.wpn_fps_pis_pm_b_threaded.supported = true
+			self.parts.wpn_fps_pis_pm_b_threaded.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_pis_pm_b_threaded.custom_stats = deep_clone(barrels.long_b1_stats)
+
+			self.parts.wpn_fps_pis_pm_g_spetsnaz.supported = true
+			self.parts.wpn_fps_pis_pm_g_spetsnaz.stats = {
+				value = 2,
+				spread = 1,
+				recoil = -2
+			}
+			self.parts.wpn_fps_pis_pm_g_prizrak.supported = true
+			self.parts.wpn_fps_pis_pm_g_prizrak.stats = {
+				value = 2,
+				concealment = 1,
+				recoil = -2
+			}
+			self.parts.wpn_fps_pis_pm_g_prizrak.custom_stats = { ads_speed_mult = 0.975 }
+			self.parts.wpn_fps_pis_pm_g_elita.supported = true
+			self.parts.wpn_fps_pis_pm_g_elita.stats = {
+				value = 2,
+				recoil = 2,
+				spread = -1
+			}
+			self.parts.wpn_fps_pis_pmm_conversion.supported = true
+			self.parts.wpn_fps_pis_pmm_conversion.stats = { value = 0 }
+			self.parts.wpn_fps_pis_pmm_conversion.custom_stats = nil
+
+			self.parts.wpn_fps_pis_pm_m_modern.supported = true
+			self.parts.wpn_fps_pis_pm_m_modern.stats = { 
+				value = 2,
+				extra_ammo = 4,
+				concealment = -1,
+				reload = -1
+			}
+			self.parts.wpn_fps_pis_pm_m_modern.custom_stats = { ads_speed_mult = 1.025 }
+			self.parts.wpn_fps_pis_pm_m_extended.supported = true
+			self.parts.wpn_fps_pis_pm_m_extended.stats = { 
+				value = 1,
+				extra_ammo = 2,
+				concealment = -1
+			}
+			self.parts.wpn_fps_pis_pm_m_extended.custom_stats = nil
+
+			self.parts.wpn_fps_pis_pm_m_drum.supported = true
+			self.parts.wpn_fps_pis_pm_m_drum.stats = {
+				value = 5,
+				concealment = -6,
+				extra_ammo = 72,
+				reload = -10
+			}
+			self.parts.wpn_fps_pis_pm_m_drum.custom_stats = {
+				ads_speed_mult = 1.15
+			}
+		end
+
 	--Striker mods--
 	if self.parts.wpn_fps_sho_striker_s_folding then
 		self.parts.wpn_fps_sho_striker_s_folding.supported = true
@@ -36183,187 +36452,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 		self.wpn_fps_lmg_fg42_npc.override = deep_clone(self.wpn_fps_lmg_fg42.override)
 		self.wpn_fps_lmg_fg42_npc.adds = deep_clone(self.wpn_fps_lmg_fg42.adds)
-	end
-
-	if self.parts.wpn_fps_lmg_mg34_rec then --Silent Enforcer's MG34
-
-		self.parts.wpn_fps_lmg_mg34_rec.visibility = nil
-		self.parts.wpn_fps_lmg_mg34_rec.adds = {
-			"wpn_fps_lmg_mg34_o_rail",
-			"wpn_fps_lmg_mg34_irons_down"
-		}
-		self.parts.wpn_fps_lmg_mg34_lid.visibility = nil
-		self.parts.wpn_fps_lmg_mg34_lid.adds = nil
-		self.parts.wpn_fps_lmg_mg34_mag.visibility = nil
-		self.parts.wpn_fps_lmg_mg34_mag.adds = nil
-
-		self.parts.wpn_fps_lmg_mg34_m_double.supported = true
-		self.parts.wpn_fps_lmg_mg34_m_double.stats = {
-			value = 10,
-			extra_ammo = 25,
-			concealment = -4,
-			reload = 3
-		}
-		self.parts.wpn_fps_lmg_mg34_m_double.custom_stats = {
-			ads_speed_mult = 1.1
-		}
-		self.parts.wpn_fps_lmg_mg34_m_double.visibility = nil
-		self.parts.wpn_fps_lmg_mg34_m_double.adds = nil
-
-		self.parts.wpn_fps_lmg_mg34_irons_air.supported = true
-		self.parts.wpn_fps_lmg_mg34_irons_air.stats = { value = 0 }
-
-		self.parts.wpn_fps_lmg_mg34_irons_up.supported = true
-		self.parts.wpn_fps_lmg_mg34_irons_up.stats = { value = 0 }
-		self.parts.wpn_fps_lmg_mg34_irons_up.stance_mod = {
-			wpn_fps_lmg_mg34 = {
-				translation = Vector3(-0.02, 0, -0.15)
-			}
-		}
-
-		self.wpn_fps_lmg_mg34.override = self.wpn_fps_lmg_mg34.override or {}
-		self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_hamr_reddot = { parent="upper_reciever" }
-		self.wpn_fps_lmg_mg34.override.wpn_fps_upg_o_atibal_reddot = { parent="upper_reciever" }
-	end
-
-	if self.parts.wpn_fps_lmg_sasha_body then --Silent Enforcer's TF2 Minigun
-
-		self.parts.wpn_fps_lmg_natascha_sounds = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			a_obj = "a_body",
-			type = "ammo",
-			name_id = "bm_wp_natascha_sounds",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			internal_part = true,
-			no_cull = true,
-			stats = {
-				value = 5
-			},
-			custom_stats = {
-				sounds = {
-					spin_start = "swatturret_spin_start",
-					spin_end = "swatturret_spin_stop"
-				}
-			}
-		}
-		self.parts.wpn_fps_lmg_natascha_body.supported = true
-		self.parts.wpn_fps_lmg_natascha_body.keep_damage = true
-		self.parts.wpn_fps_lmg_natascha_body.stats = {
-			value = 0,
-			damage = -6,
-			concealment = -2
-		}
-		self.parts.wpn_fps_lmg_natascha_body.custom_stats = {
-			natascha = 975,
-			spin_up_mult = 1.3,
-			ads_speed_mult = 1.3
-		}
-		table.insert( self.parts.wpn_fps_lmg_natascha_body.adds, "wpn_fps_lmg_natascha_sounds" )
-
-		self.parts.wpn_fps_lmg_lmg_tomislav_sounds = {
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			a_obj = "a_body",
-			type = "ammo",
-			name_id = "bm_wp_natascha_sounds",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			internal_part = true,
-			no_cull = true,
-			stats = {
-				value = 5
-			},
-			custom_stats = {
-				sounds = {
-					spin_start = " ",
-					spin_end = " "
-				}
-			}
-		}
-		self.parts.wpn_fps_lmg_tomislav_body.supported = true
-		self.parts.wpn_fps_lmg_tomislav_body.stats = {
-			value = 0,
-			spread = 5,
-			concealment = 1
-		}
-		self.parts.wpn_fps_lmg_tomislav_body.custom_stats = {
-			spin_up_mult = 0.8,
-			ads_speed_mult = 0.8,
-			rof_mult = 0.777
-		}
-		table.insert( self.parts.wpn_fps_lmg_tomislav_body.adds, "wpn_fps_lmg_lmg_tomislav_sounds" )
-
-		self.parts.wpn_fps_lmg_gatling_gun_body.supported = true
-		self.parts.wpn_fps_lmg_gatling_gun_body.keep_damage = true
-		self.parts.wpn_fps_lmg_gatling_gun_body.stats = {
-			value = 0,
-			damage = 6,
-			concealment = -3,
-			total_ammo_mod = -41
-		}
-		self.parts.wpn_fps_lmg_gatling_gun_body.custom_stats = {
-			spin_up_mult = 1.5,
-			ads_speed_mult = 1.5,
-			movement_speed_add = -0.12,
-			sms = 0.88
-		}
-
-		self.parts.wpn_fps_lmg_canton_body.pcs = nil --Can't get this to utilize any alternate bullet base, disabled for now
-		self.parts.wpn_fps_lmg_canton_body.supported = true
-		self.parts.wpn_fps_lmg_canton_body.stats = {
-			value = 0,
-			concealment = -3,
-			total_ammo_mod = -41
-		}
-		table.insert( self.parts.wpn_fps_lmg_canton_body.adds, "wpn_fps_lmg_natascha_sounds" )
-		self.parts.wpn_fps_lmg_canton_ammo.supported = true
-		self.parts.wpn_fps_lmg_canton_ammo.cull = nil
-		self.parts.wpn_fps_lmg_canton_ammo.no_cull = true
-		self.parts.wpn_fps_lmg_canton_ammo.custom_stats = {
-			bullet_class = "FlameBulletBase",
-			ignore_statistic = true,
-			armor_piercing_add = 0.01,
-			trail_effect = "_dmc/effects/nato_trail",
-			dot_data_name = "ammo_dragons_breath"
-		}
-	end
-
-	if self.parts.wpn_fps_ass_skspug_rec then --Pawcio's SKS Pug
-
-		self.parts.wpn_fps_ass_skspug_mag.supported = true
-		self.parts.wpn_fps_ass_skspug_mag.stats = { value = 0 }
-
-		self.parts.wpn_fps_upg_skspug_handguard_short.supported = true
-		self.parts.wpn_fps_upg_skspug_handguard_short.stats = { 
-			value = 5,
-			recoil = -4,
-			concealment = 2
-		}
-
-		self.parts.wpn_fps_upg_skspug_stock_ext.supported = true
-		self.parts.wpn_fps_upg_skspug_stock_ext.stats = { 
-			value = 2,
-			recoil = 2,
-			concealment = -1
-		}
-
-		self.parts.wpn_fps_upg_skspug_barrel_long.supported = true
-		self.parts.wpn_fps_upg_skspug_barrel_long.stats = deep_clone(barrels.long_b2_stats)
-		self.parts.wpn_fps_upg_skspug_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
-
-		self.parts.wpn_fps_upg_skspug_barrel_short.supported = true
-		self.parts.wpn_fps_upg_skspug_barrel_short.stats = deep_clone(barrels.short_b3_stats)
-		self.parts.wpn_fps_upg_skspug_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
-
-		self.parts.wpn_fps_upg_skspug_mag_30.supported = true
-		self.parts.wpn_fps_upg_skspug_mag_30.has_description = false
-		self.parts.wpn_fps_upg_skspug_mag_30.stats = { 
-			value = 2,
-			extra_ammo = 10,
-			reload = -3,
-			concealment = -1
-		}
-		self.parts.wpn_fps_upg_skspug_mag_30.custom_stats = { 
-			ads_speed_mult = 0.975
-		}
 	end
 
 	if self.parts.wpn_fps_snp_iuhTTIPlus_gl then --iuhggiuhhgbnr's SR-25

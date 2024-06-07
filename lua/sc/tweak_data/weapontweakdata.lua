@@ -19884,23 +19884,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fg42.sounds.stop_fire = "hk23e_stop"
 		end
 
-		if self.makarov then --Silent Enforcer's Makarov
-			self.makarov.recategorize = {"light_pis"}
-			self.makarov.damage_type = "pistol"
-			self.makarov.lock_slide = true
-			self.makarov.fire_mode_data.fire_rate = 0.0882352
-			self.makarov.tactical_reload = 1
-			self.makarov.CLIP_AMMO_MAX = 8
-			self.makarov.AMMO_MAX = 75
-			self.makarov.kick = self.stat_info.kick_tables.even_recoil
-			self.makarov.supported = true
-			self.makarov.ads_speed = 0.120
-			self.makarov.damage_falloff = {
+		if self.pm then --Silent Enforcer's Makarov
+			self.pm.recategorize = {"light_pis"}
+			self.pm.damage_type = "pistol"
+			self.pm.warsaw = true
+			self.pm.lock_slide = true
+			self.pm.fire_mode_data.fire_rate = 0.0882352
+			self.pm.tactical_reload = 1
+			self.pm.CLIP_AMMO_MAX = 8
+			self.pm.AMMO_MAX = 75
+			self.pm.kick = self.stat_info.kick_tables.even_recoil
+			self.pm.supported = true
+			self.pm.ads_speed = 0.120
+			self.pm.damage_falloff = {
 				start_dist = 1500,
 				end_dist = 3500,
 				min_mult = 0.2083
 			}
-			self.makarov.stats = {
+			self.pm.stats = {
 				damage = 24,
 				spread = 56,
 				recoil = 89,
@@ -19914,9 +19915,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				value = 1,
 				reload = 20
 			}
-			self.makarov.stats_modifiers = nil
-			self.makarov.panic_suppression_chance = 0.05
+			self.pm.stats_modifiers = nil
+			self.pm.panic_suppression_chance = 0.05
+			self.pm.reload_speed_multiplier = 1.1
+			self.pm.timers = deep_clone(self.stech.timers)
 		end
+			if self.x_pm then --Akimbo
+				self.x_pm.use_data.selection_index = 2
+				self.x_pm.recategorize = {"light_pis"}
+				self.x_pm.damage_type = "pistol"
+				self.x_pm.warsaw = true
+				self.x_pm.lock_slide = true
+				self.x_pm.fire_mode_data.fire_rate = 0.0882352
+				self.x_pm.tactical_reload = 1
+				self.x_pm.CLIP_AMMO_MAX = 8
+				self.x_pm.AMMO_MAX = 75
+				self.x_pm.kick = self.stat_info.kick_tables.even_recoil
+				self.x_pm.supported = true
+				self.x_pm.ads_speed = 0.120
+				self.x_pm.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3500,
+					min_mult = 0.2083
+				}
+				self.x_pm.stats = {
+					damage = 24,
+					spread = 46,
+					recoil = 79,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 32,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.x_pm.stats_modifiers = nil
+				self.x_pm.panic_suppression_chance = 0.05
+				self.x_pm.reload_speed_multiplier = 1.1
+				self.x_pm.timers = deep_clone(self.x_stech.timers)
+			end
 
 		if self.f500 then --Silent Enforcer's Fort-500
 			self.f500.recategorize = { "heavy_shot" }

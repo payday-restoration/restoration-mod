@@ -1774,6 +1774,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_holy_mackerel_info"] = "#{item_stage_2}#Level 42 Fish##\n\nGetting hit by a fish has got to be humiliating.",
 
 		["bm_menu_weapon_bayonet_header"] = "STATS FROM PRIMARY:",
+		["bm_menu_weapon_bayonet_secondary_header"] = "STATS FROM SECONDARY:",
 		["bm_menu_weapon_bayonet_damage"] = "\nADDITIONAL DAMAGE: ##+",
 		["bm_menu_weapon_bayonet_damage_base"] = "\n-BASE: ##",
 		["bm_menu_weapon_bayonet_damage_skill"] = "\n-SKILL: ##+",

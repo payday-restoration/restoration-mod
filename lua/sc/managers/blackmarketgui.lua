@@ -5024,6 +5024,15 @@ function BlackMarketGui:update_info_text()
 		local jab_range = factory_stats.jab_range and factory_stats.jab_range / 100
 		local range = (jab_range or bayonet_range or 0) + (wtd_range / 100)
 
+		local factory_stats_secondary = managers.weapon_factory:get_stats(managers.blackmarket:equipped_secondary().factory_id, managers.blackmarket:equipped_secondary().blueprint)
+		local wtd_range_secondary = tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id].jab_range or 0
+		local bayonet_damage_secondary = factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local skill_damage_secondary = bayonet_damage_secondary and (bayonet_damage_secondary * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage_secondary
+		local damage_total_secondary = bayonet_damage_secondary and bayonet_damage_secondary + (skill_damage_secondary or 0)
+		local bayonet_range_secondary = bayonet_damage_secondary and (factory_stats_secondary.bayonet_range and factory_stats_secondary.bayonet_range / 100)
+		local jab_range_secondary = factory_stats_secondary.jab_range and factory_stats_secondary.jab_range / 100
+		local range_secondary = (jab_range_secondary or bayonet_range_secondary or 0) + (wtd_range_secondary / 100)
+
 		-- [[
 		if slot_data.name == "weapon" and (bayonet_damage or (range and range > 0)) then
 			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
@@ -5037,6 +5046,22 @@ function BlackMarketGui:update_info_text()
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage) .. "##" or "") .. 
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage) .. "##" or "") .. 
 				(range and range > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range) .. "m##" or "")
+
+			updated_texts[2].below_stats = true
+		end
+		
+		if slot_data.name == "weapon" and (bayonet_damage_secondary or (range_secondary and range_secondary > 0)) then
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
+				managers.localization:text("bm_menu_weapon_bayonet_secondary_header") .. 
+				(damage_total_secondary and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total_secondary) .. "##" or "") .. 
+				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage_secondary) .. "##" or "") .. 
+				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage_secondary) .. "##" or "") .. 
+				(range_secondary and range_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range_secondary) .. "m##" or "")
 
 			updated_texts[2].below_stats = true
 		end

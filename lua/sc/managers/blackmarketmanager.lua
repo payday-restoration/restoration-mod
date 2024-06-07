@@ -311,3 +311,27 @@ function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
 
 	return tweak_data.blackmarket.masks[mask_id][character] or "dallas"
 end
+
+function BlackMarketManager:equipped_melee_weapon_damage_info(lerp_value)
+	lerp_value = lerp_value or 0
+	local melee_entry = self:equipped_melee_weapon()
+	local stats = tweak_data.blackmarket.melee_weapons[melee_entry].stats
+	local primary = self:equipped_primary()
+	local secondary = self:equipped_secondary()
+	local primary_bayonet_id = self:equipped_bayonet(primary.weapon_id)
+	local secondary_bayonet_id = self:equipped_bayonet(secondary.weapon_id)
+	local player = managers.player:player_unit()
+
+	if primary_bayonet_id and player:movement():current_state()._equipped_unit:base():selection_index() == 2 and melee_entry == "weapon" then
+		stats = tweak_data.weapon.factory.parts[primary_bayonet_id].stats
+	end
+
+	if secondary_bayonet_id and player:movement():current_state()._equipped_unit:base():selection_index() == 1 and melee_entry == "weapon" then
+		stats = tweak_data.weapon.factory.parts[secondary_bayonet_id].stats
+	end
+
+	local dmg = math.lerp(stats.min_damage, stats.max_damage, lerp_value)
+	local dmg_effect = dmg * math.lerp(stats.min_damage_effect, stats.max_damage_effect, lerp_value)
+	
+	return dmg, dmg_effect
+end

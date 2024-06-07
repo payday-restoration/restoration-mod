@@ -994,11 +994,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._alt_dmg_mult = 1
 
 		self._movement_speed_add = 0
-		
+
 		self._melee_speed_mult = 1
 
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
+
+		self._alt_melee_sounds = {}
 
 		self._use_vapor_trail = self:weapon_tweak_data().use_vapor_trail
 		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
@@ -1284,7 +1286,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.ene_hs_mult_add then
 				self._ene_hs_mult = self._ene_hs_mult + stats.ene_hs_mult_add
 			end
-
+			
+			if stats.alt_melee_sounds then
+				self._alt_melee_sounds = stats.alt_melee_sounds
+			end
 			if stats.natascha then		
 				self._natascha = stats.natascha
 			end

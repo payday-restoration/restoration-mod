@@ -3410,6 +3410,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
 	local make_decal = tweak_data.blackmarket.melee_weapons[melee_entry].make_decal or nil
 	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw or nil --not implemented yet
+	local weap_base = self._equipped_unit:base()	
+	local alt_sound = weap_base._alt_melee_sounds
 	--Melee weapon tweakdata.
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
@@ -3439,6 +3441,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
+			elseif alt_sound then
+					self:_play_melee_sound(alt_sound, "hit_body")
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
@@ -3462,6 +3466,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		
 			if bayonet_melee then
 				self._unit:sound():play("knife_hit_gen", nil, false)
+			elseif alt_sound then
+					self:_play_melee_sound(alt_sound, "hit_gen")
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
 			else

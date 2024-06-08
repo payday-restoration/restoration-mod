@@ -8193,6 +8193,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_smg_mp5_s_adjust")
 
+	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_i_og_rof")
+
 	self.wpn_fps_lmg_hk21.override = self.wpn_fps_lmg_hk21.override or {}
 	self.wpn_fps_lmg_hk21.override.wpn_fps_ass_g3_s_sniper = { 
 		adds = {"wpn_fps_hk21_s_fix"},
@@ -8214,8 +8216,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 		a_obj = "a_ns",
 		parent = "shitass_s"
 	}
+	self.wpn_fps_lmg_hk21.override.wpn_fps_upg_i_og_rof = {
+		custom_stats = {
+			rof_mult = 0.5625,
+			srm = {
+				-0.02,
+				{1, 1.1},
+				4
+			}
+		}
+	}
 
 
+	self.wpn_fps_lmg_hk21_npc.override = deep_clone(self.wpn_fps_lmg_hk21.override)	
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)	
 		
 end)

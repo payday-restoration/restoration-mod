@@ -20317,7 +20317,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.or12.timers.reload_exit_not_empty = 0.9
 			self.or12.timers.reload_empty = 3.21
 			self.or12.timers.reload_exit_empty = 1.0
-		end	
+		end
+
+		if self.ntw20 then
+			self.ntw20.categories = {
+				"snp",
+				"amr"
+			}
+			self.ntw20.recategorize = { "antim_snp" }
+			self.ntw20.hs_mult = 2
+			self.ntw20.damage_type = "anti_materiel"
+			self.ntw20.upgrade_blocks = nil
+			self.ntw20.has_description = true
+			self.ntw20.desc_id = "bm_m107cq_sc_desc"
+			self.ntw20.tactical_reload = 1
+			self.ntw20.CLIP_AMMO_MAX = 3
+			self.ntw20.AMMO_MAX = 12
+			self.ntw20.fire_mode_data.fire_rate = 0.48
+			self.ntw20.kick = deep_clone(self.stat_info.kick_tables.right_kick)
+			self.ntw20.supported = true
+			self.ntw20.ads_speed = 0.600
+			self.ntw20.damage_falloff = {
+				start_dist = 7000,
+				end_dist = 20000,
+				min_mult = 0.66667
+			}
+			self.ntw20.stats = {
+				damage = 180,
+				spread = 91,
+				recoil = 1,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 15,
+				suppression = 4,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,
+				reload = 20
+			}
+			self.ntw20.armor_piercing_chance = 1
+			self.ntw20.use_vapor_trail = true
+			self.ntw20.can_shoot_through_titan_shield = true
+			self.ntw20.stats_modifiers = nil
+			self.ntw20.panic_suppression_chance = 0.05
+		end
 
 		if self.spas15 then
 			self.spas15.recategorize = { "light_shot" }

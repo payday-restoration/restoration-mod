@@ -37002,8 +37002,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					melee_speed_mult = 0.5,
 					ads_speed_mult = 1.2,
 					alt_melee_sounds = {
-						hit_gen = "knife_hit_gen",
-						hit_body = "knife_hit_body"
+						"freedom_hit_body",
+						"freedom_hit_gen"
 					}
 				}
 			end
@@ -37031,12 +37031,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts[knife_id].custom_stats = {
 					melee_speed_mult = 0.6,
 					ads_speed_mult = 1.125,
-					alt_melee_sounds = "rambo"
+					alt_melee_sounds = {
+						"knife_hit_body",
+						"knife_hit_gen"
+					}
 				}
 			end
 		end
-		self.parts.wpn_fps_pis_usp_knife_oxide.custom_stats.alt_melee_sounds = "oxide"
-		self.parts.wpn_fps_pis_usp_knife_chef.custom_stats.alt_melee_sounds = "chef"
+		self.parts.wpn_fps_pis_usp_knife_oxide.custom_stats.alt_melee_sounds = {
+			"oxide_hit_body",
+			"oxide_hit_gen"
+		}
+		self.parts.wpn_fps_pis_usp_knife_chef.custom_stats.alt_melee_sounds = {
+			"chef_hit_body",
+			"chef_hit_gen"
+		}
 
 		attachment_list = {
 			"wpn_fps_pis_usp_knife_kabar",
@@ -37065,12 +37074,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts[knife_id].custom_stats = {
 					melee_speed_mult = 0.7,
 					ads_speed_mult = 1.075,
-					alt_melee_sounds = "kabar"
+					alt_melee_sounds = {
+						"knife_hit_body",
+						"knife_hit_gen"
+					}
 				}
 			end
 		end
-		self.parts.wpn_fps_pis_usp_knife_ballistic.custom_stats.alt_melee_sounds = "ballistic"
-		self.parts.wpn_fps_pis_usp_knife_fairbair.custom_stats.alt_melee_sounds = "fairbair"
+		self.parts.wpn_fps_pis_usp_knife_ballistic.custom_stats.alt_melee_sounds = {
+			"twin_hit_body",
+			"twin_hit_gen"
+		}
+		self.parts.wpn_fps_pis_usp_knife_fairbair.custom_stats.alt_melee_sounds = {
+			"fairbair_hit_body",
+			"knife_hit_gen"
+		}
 
 		attachment_list = {
 			"wpn_fps_pis_usp_knife_switchblade",
@@ -37095,12 +37113,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts[knife_id].custom_stats = {
 					ads_speed_mult = 1.025,
 					melee_speed_mult = 0.8,
-					alt_melee_sounds = "toothbrush"
+					alt_melee_sounds = {
+						"toothbrush_hit_body",
+						"toothbrush_hit_gen"
+					}
 				}
 			end
 		end
-		self.parts.wpn_fps_pis_usp_knife_wing.custom_stats.alt_melee_sounds = "wing"
-		self.parts.wpn_fps_pis_usp_knife_sword.custom_stats.alt_melee_sounds = "sword"
+		self.parts.wpn_fps_pis_usp_knife_wing.custom_stats.alt_melee_sounds = {
+			"wing_hit_body",
+			"wing_hit_gen"
+		}
+		self.parts.wpn_fps_pis_usp_knife_sword.custom_stats.alt_melee_sounds = {
+			"sword_hit_body",
+			"sword_hit_gen"
+		}
 		attachment_list = {
 			"wpn_fps_pis_usp_knife_aziz"
 		}
@@ -37117,7 +37144,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts[knife_id].custom_stats = {
 					melee_speed_mult = 0.9,
-					alt_melee_sounds = "aziz"
+					alt_melee_sounds = {
+						"aziz_hit_body",
+						"aziz_hit_gen"
+					}
 				}
 			end
 		end

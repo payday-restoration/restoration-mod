@@ -3441,8 +3441,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
-			elseif alt_sound then
-					self:_play_melee_sound(alt_sound, "hit_body")
+			elseif alt_sound and alt_sound[1] then
+				self._unit:sound():play(alt_sound[1], nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
@@ -3466,10 +3466,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		
 			if bayonet_melee then
 				self._unit:sound():play("knife_hit_gen", nil, false)
-			elseif alt_sound then
-					self:_play_melee_sound(alt_sound, "hit_gen")
+			elseif alt_sound and alt_sound[2] then
+				self._unit:sound():play(alt_sound[2], nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
-					self._unit:sound():play("melee_hit_gen", nil, false)
+				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
 				if not no_sound then
 					self:_play_melee_sound(melee_entry, "hit_gen")

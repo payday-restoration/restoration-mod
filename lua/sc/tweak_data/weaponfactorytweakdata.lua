@@ -8112,10 +8112,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	}
 	self.parts.wpn_fps_lmg_hk21_fg_short.supported = true
 	self.parts.wpn_fps_lmg_hk21_fg_short.stats = deep_clone(barrels.short_b3_stats)
-	self.parts.wpn_fps_lmg_hk21_fg_short.stats.spread = -1
 	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats = deep_clone(barrels.short_b3_stats)
-	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats.falloff_start_mult = 0.5
-	self.parts.wpn_fps_lmg_hk21_fg_short.custom_stats.rof_mult = 1.1875
 	
 	--Ergo Grip
 	self.parts.wpn_fps_lmg_hk21_g_ergo.pcs = {
@@ -20539,6 +20536,114 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
 	self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
 
+	local belt = {
+		{
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_third_bullet_belt_0",
+			a_obj = "a_belt_1",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_fps_bullet_belt_0",
+			amount = 3,
+			bullet_objects = {
+				prefix = "g_bullet_",
+				offset = 3,
+				amount = 2
+			}
+		},
+		{
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_third_bullet_belt_3",
+			a_obj = "a_belt_4",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_fps_bullet_belt_3",
+			amount = 3,
+			bullet_objects = {
+				prefix = "g_bullet_",
+				offset = 11,
+				amount = 3
+			}
+		},
+		{
+			third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_third_bullet_belt_6",
+			a_obj = "a_belt_7",
+			unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_upg_belt/wpn_fps_bullet_belt_6",
+			amount = 2,
+			bullet_objects = {
+				prefix = "g_bullet_",
+				offset = 20,
+				amount = 4
+			}
+		}
+	}
+
+	self.parts.wpn_fps_lmg_hk51b_m_belt_60 = {
+		--pcs = {},
+		a_obj = "a_m",
+		type = "magazine",
+		dlc = "sc",
+		supported = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
+		name_id = "bm_wp_hk51b_magazine_belt_60",
+		unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_fps_lmg_hk51b_mag",
+		third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_third_lmg_hk51b_mag",
+		stats = {
+			value = 6,
+			reload = -4,
+			concealment = -3,
+			extra_ammo = 20
+		},
+		custom_stats = {
+			ads_speed_mult = 1.075
+		},
+		bullet_objects = {
+			amount = 3,
+			prefix = "g_bullet_"
+		},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload",
+			fire_steelsight = "recoil",
+			fire = "recoil"
+		},
+		adds = {
+			"wpn_fps_lmg_hk51b_m_loader_reload",
+			"wpn_fps_lmg_hk51b_m_loader_reload_not_empty"
+		}
+	}
+	self:_add_bullet_belt_to_part("wpn_fps_lmg_hk51b_m_belt_60", "a_belt", belt)
+
+	self.parts.wpn_fps_lmg_hk51b_m_belt_80 = {
+		--pcs = {},
+		a_obj = "a_m",
+		type = "magazine",
+		dlc = "sc",
+		supported = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
+		name_id = "bm_wp_hk51b_magazine_belt_80",
+		unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_fps_lmg_hk51b_mag",
+		third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_third_lmg_hk51b_mag",
+		stats = {
+			value = 8,
+			reload = -7,
+			concealment = -5,
+			extra_ammo = 40
+		},
+		custom_stats = {
+			ads_speed_mult = 1.125
+		},
+		bullet_objects = {
+			amount = 3,
+			prefix = "g_bullet_"
+		},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload",
+			fire_steelsight = "recoil",
+			fire = "recoil"
+		},
+		adds = {
+			"wpn_fps_lmg_hk51b_m_loader_reload",
+			"wpn_fps_lmg_hk51b_m_loader_reload_not_empty"
+		}
+	}
+	self:_add_bullet_belt_to_part("wpn_fps_lmg_hk51b_m_belt_80", "a_belt", belt)
+
 	self.wpn_fps_lmg_hk51b.stock_adapter = "wpn_fps_sho_sko12_s_adapter"
 	self.wpn_fps_lmg_hk51b_npc.stock_adapter = "wpn_fps_sho_sko12_s_adapter"
 
@@ -20586,17 +20691,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 		stats = deep_clone(stocks.unfold_folded_stats),
 		custom_stats = deep_clone(stocks.unfold_folded_stats)
 	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_i_og_rof = {
+		custom_stats = {
+			rof_mult = 0.4736842,
+			srm = {
+				-0.02,
+				{1, 1.1},
+				4
+			}
+		}
+	}
 
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_ring")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_folding")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_crane")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_mk46")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_snp_victor_s_mod0")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_ubr")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_snp_tti_s_vltor")	
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_sho_sko12_stock")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_i_og_rof")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_lmg_hk51b_m_belt_60")
+	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_lmg_hk51b_m_belt_80")
 			
 	self.wpn_fps_lmg_hk51b_npc.override = deep_clone(self.wpn_fps_lmg_hk51b.override)		
 	self.wpn_fps_lmg_hk51b_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk51b.uses_parts)		

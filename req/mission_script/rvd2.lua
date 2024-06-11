@@ -30,16 +30,6 @@ local bravo_dozer = {
         enemy = bravo_dozer
     }
 }
-local dozer_1 = {
-	values = {
-        enemy = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-    }
-}
-local dozer_2 = {
-	values = {
-        enemy = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-    }
-}
 local disabled = {
 	values = {
         enabled = false
@@ -50,7 +40,7 @@ return {
 	[101106] = {
 		ponr = ponr_value
 	},
-	--Disable the SWAT Turrets, why would they add those fucking annoying turrets in this day, spawning reinforcments is already ENOUGH!!!!
+	--Disable the SWAT Turrets, it's not fun...
 	[101147] = disabled,
 	-- Reduce amount of ambush bulldozers
 	[101557] = disabled,
@@ -69,15 +59,5 @@ return {
 	--Bravo Dozers replace scripted dozer that kicks the door out
 	[102412] = bravo_dozer,
 	[102411] = bravo_dozer,
-	[102404] = bravo_dozer,
-	--less skulldozers (seriously Jules, stop it)
-	[100485] = dozer_1,
-	[101176] = dozer_1,
-	[100499] = dozer_2,
-	[101398] = dozer_2,
-	[101182] = { 
-		values = {
-            enemy = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-		}
-	}
+	[102404] = bravo_dozer
 }

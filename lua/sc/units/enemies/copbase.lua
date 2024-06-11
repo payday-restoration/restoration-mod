@@ -721,20 +721,6 @@ function CopBase:default_weapon_name(...)
 		self._weapon_set = true		
 	end
 	
-	--[[
-	--HRTs on DS are even more EVIL!
-	if difficulty == 8 and self._tweak_table == "hrt" then
-		self._default_weapon_id = "ump"
-		self._weapon_set = true
-	end
-	
-	--Same as Vet cops
-	if difficulty == 8 and self._tweak_table == "fbi_vet" then
-		self._default_weapon_id = "x_raging_bull_npc"
-		self._weapon_set = true
-	end
-	]]--
-	
 	--Have White Titandozers use Grenade Launchers like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
 	if self._tweak_table == "tank_hw" and faction == "russia" or self._tweak_table == "tank_hw" and faction == "federales" then
 		self._default_weapon_id = "m32_large"

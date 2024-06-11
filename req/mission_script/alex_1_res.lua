@@ -11,9 +11,9 @@ local chopper_amount = 1
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-	dozer_skull = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
+	dozer_skull = "units/pd2_mod_lapd/characters/ene_bulldozer_2/ene_bulldozer_2",
 	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc",
 	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
 }
@@ -31,28 +31,27 @@ local cloaker_table = {
 	if difficulty == 8 then
 		dozer_trigger_times = 3
 	end	
-
-	--Setting up the dozer randomizer, this is cool
+	
 	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_1 < 0.50 then
+		if chance_dozer_var_2 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
 	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_1 < 0.35 then
+		if chance_dozer_var_2 < 0.35 then
 			dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_var_1 < 0.70 then
+		elseif chance_dozer_var_2 < 0.70 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
 	elseif difficulty == 8 then
-		if chance_dozer_var_1 < 0.25 then
+		if chance_dozer_var_2 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var_1 < 0.50 then
+		elseif chance_dozer_var_2 < 0.50 then
 			dozer_1 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var_1 < 0.75 then
+		elseif chance_dozer_var_2 < 0.75 then
 			dozer_1 = dozer_table.dozer_titan
 		else
 			dozer_1 = dozer_table.dozer_zeal_benelli
@@ -60,54 +59,28 @@ local cloaker_table = {
 	end
 	
 	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_2 < 0.35 then
-			dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_var_2 < 0.70 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-	elseif difficulty == 8 then
-		if chance_dozer_var_2 < 0.25 then
-			dozer_2 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var_2 < 0.75 then
-			dozer_2 = dozer_table.dozer_titan
-		else
-			dozer_2 = dozer_table.dozer_zeal_benelli
-		end
-	end
-	
-	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_3 < 0.50 then
-			dozer_3 = dozer_table.dozer_black
+			dozer_2 = dozer_table.dozer_black
 		else
-			dozer_3 = dozer_table.dozer_green
+			dozer_2 = dozer_table.dozer_green
 		end
 	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_3 < 0.35 then
-			dozer_3 = dozer_table.dozer_skull
+			dozer_2 = dozer_table.dozer_skull
 		elseif chance_dozer_var_3 < 0.70 then
-			dozer_3 = dozer_table.dozer_black
+			dozer_2 = dozer_table.dozer_black
 		else
-			dozer_3 = dozer_table.dozer_green
+			dozer_2 = dozer_table.dozer_green
 		end
 	elseif difficulty == 8 then
 		if chance_dozer_var_3 < 0.25 then
-			dozer_3 = dozer_table.dozer_zeal_black
+			dozer_2 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_3 < 0.50 then
-			dozer_3 = dozer_table.dozer_zeal_skull
+			dozer_2 = dozer_table.dozer_zeal_skull
 		elseif chance_dozer_var_3 < 0.75 then
-			dozer_3 = dozer_table.dozer_titan
+			dozer_2 = dozer_table.dozer_titan
 		else
-			dozer_3 = dozer_table.dozer_zeal_benelli
+			dozer_2 = dozer_table.dozer_zeal_benelli
 		end
 	end
 	
@@ -147,12 +120,6 @@ local access_fix = {
 		end
 }	
 return {
-	--dozer gets randomized
-	[100952] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
 	--Replace Heavy SWATs that spawn from the chopper with cloakers
 	[101571] = {
 		values = {
@@ -209,7 +176,7 @@ return {
 	--unused cloakers are replaced with dozers (have trigger times set up, moved their position, spawns on DW and above)
 	[101650] = {
 		values = {
-            enemy = dozer_2,
+            enemy = dozer_1,
 			enabled = enable_special_dozers,
 			position = Vector3(4569, 537, 1205.660),
 			trigger_times = dozer_trigger_times
@@ -220,7 +187,7 @@ return {
 	},
 	[101651] = {
 		values = {
-            enemy = dozer_3,
+            enemy = dozer_2,
 			enabled = enable_special_dozers,
 			position = Vector3(4579, 611, 1206.850),
 			trigger_times = dozer_trigger_times

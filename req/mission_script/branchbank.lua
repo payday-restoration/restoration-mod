@@ -1,20 +1,11 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
---Why not have a blackdozer in one of the choppers, yeah?
-local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-local bulldozer_2 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 local teargaschopper = 1
 local teargas = 1
 local teargasmayhem = 2
 local vaultdoor = 66
 local copcars = 1
 local snipers = 1
-
-	--Same in DS
-	if difficulty == 8 then
-		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
-	end
 
 	if difficulty <= 5 then
 		ponr_value = 720
@@ -245,11 +236,6 @@ return {
 	[101785] = {
 		values = {
 			enemy = bulldozer_1
-		}
-	},
-	[101786] = {
-		values = {
-			enemy = bulldozer_2
 		}
 	},
 	[101432] = {

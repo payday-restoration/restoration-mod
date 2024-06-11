@@ -31,9 +31,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			grenadier = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			tsniper = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
 		--Mix of SWAT+FBI
 		overkill_145 = {
@@ -63,9 +61,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			},
 			shield = {
 				"units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc",
 				"units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
@@ -111,9 +110,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = {
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 			}
@@ -146,9 +144,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			sniper = "units/payday2/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			}
 		},
 		--ZEAL
 		sm_wish = {
@@ -197,27 +197,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_2 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_3 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 			},
@@ -292,9 +277,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
 			cloaker = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_reapers/characters/ene_tazer_1/ene_tazer_1",
-			dozer_1 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_3 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+			dozer = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
 		--Mix of Akan's Reaper Security Teams+Soldiers
 		overkill_145 = {
@@ -342,9 +325,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cloaker = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+			dozer = {
+				"units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2"
+			},
 			shield = {
 				"units/pd2_mod_reapers/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_mod_reapers/characters/ene_shield_2/ene_shield_2"
@@ -430,9 +414,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_reapers/characters/ene_akan_medic_bob/ene_akan_medic_bob",
 			cloaker = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = {
+			dozer = {
+				"units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
@@ -488,9 +471,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_reapers/characters/ene_akan_medic_zdann/ene_akan_medic_zdann",
 			cloaker = "units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
+			dozer = {
+				"units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"
+			}
 		},
 		--DRAK (The Better Eggman Empire)
 		sm_wish = {
@@ -568,27 +553,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
-				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
-			},
-			dozer_2 = {
 				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
-			},
-			dozer_3 = {
 				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini",
+				"units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
 				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
 			},
@@ -649,9 +619,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
 			cloaker = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_halloween/characters/ene_tazer_1/ene_tazer_1",
-			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+			dozer = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
 		--Mix of Zombie SWAT+FBI
@@ -686,9 +654,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cloaker = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+			dozer = {
+				"units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2"
+			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
 			shield = {
 				"units/pd2_mod_halloween/characters/ene_shield_1/ene_shield_1",
@@ -739,9 +708,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 			cloaker = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = {
+			dozer = {
+				"units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"
 			},
@@ -776,9 +744,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5",
 			cloaker = "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3",
+			dozer = {
+				"units/pd2_mod_halloween/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_halloween/characters/ene_bulldozer_2/ene_bulldozer_2",
+				"units/pd2_mod_halloween/characters/ene_bulldozer_3/ene_bulldozer_3"
+			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		},
 		--Zombie ZEAL
@@ -821,6 +791,15 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
+			},
+			dozer = {
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+				"units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 			},
 			dozer_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
@@ -918,9 +897,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 			cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 			tsniper = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
-			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-			dozer_3 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
+			dozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 		},
 		--Mix of Murkywater Tactical Security+Marines
 		overkill_145 = {
@@ -966,9 +943,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-			dozer_3 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+			dozer = {
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
+			},
 			shield = {
 				"units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 				"units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"
@@ -1023,9 +1001,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
-			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-			dozer_3 = {
+			dozer = {
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 			}
@@ -1075,9 +1052,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
 			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
-			dozer_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
-			dozer_2 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-			dozer_3 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+			dozer = {
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+			}
 		},
 		--HECU (aka ZEAL)
 		--You probably gonna like Black Ridge (the custom stealth heist)
@@ -1136,27 +1115,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_2 = {
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_3 = {
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
-				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli",
+				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 				"units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 			},
@@ -1226,9 +1190,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
 			cloaker = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
-			dozer_1 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_3 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+			dozer = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
 		--Mix of Mexican SWAT+FBI
 		overkill_145 = {
@@ -1271,9 +1233,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cloaker = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+			dozer = {
+				"units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+			},
 			shield = {
 				"units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2"
@@ -1326,11 +1289,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
 			cloaker = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = {
+			dozer = {
+				"units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"
+				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 			}
 		},
 		--Mexican Elites
@@ -1371,9 +1333,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
 			cloaker = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"
+			dozer = {
+				"units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+			}
 		},
 		--Gendarmería Grupo de la Muerte
 		sm_wish = {
@@ -1425,27 +1389,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 				"units/pd2_mod_reapers/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
-			},
-			dozer_2 = {
 				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
-			},
-			dozer_3 = {
 				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
-				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+				"units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
 				"units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2"
 			},
@@ -1530,9 +1479,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
 			cloaker = "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
-			dozer_1 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_3 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+			dozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 		},
 		--Mix of NYPD SWAT+FBI
 		overkill_145 = {
@@ -1591,9 +1538,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cloaker = "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1",
 			grenadier = "units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+			dozer = {
+				"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
+			},
 			shield = {
 				"units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
@@ -1668,9 +1616,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 			cloaker = "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = {
+			dozer = {
+				"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
 				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
 			}
@@ -1729,9 +1676,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 			cloaker = "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-			dozer_2 = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			dozer = {
+				"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
+				"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
+				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+			}
 		},
 		--ZEAL
 		sm_wish = {
@@ -1800,27 +1749,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_2 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_3 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 			},
@@ -1898,9 +1832,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1",
 			taser = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 			grenadier = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
 		--Mix of LAPD SWAT+FBI
 		overkill_145 = {
@@ -1951,9 +1883,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			},
 			shield = {
 				"units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1",
 				"units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"
@@ -2020,9 +1953,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = {
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
@@ -2073,9 +2005,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+			}
 		},
 		--ZEAL
 		sm_wish = {
@@ -2138,27 +2072,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_2 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_3 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 			},
@@ -2221,9 +2140,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			medic = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			grenadier = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			tsniper = "units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+			dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 		},
 		--Mix of SWAT+FBI
 		overkill_145 = {
@@ -2257,9 +2174,10 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
+			},
 			shield = {
 				"units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc",
 				"units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
@@ -2309,9 +2227,8 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			taser = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = {
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
@@ -2348,9 +2265,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
 			medic = "units/payday2/characters/ene_medic_mp5/ene_medic_mp5",
 			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			dozer_1 = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-			dozer_2 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-			dozer_3 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+			dozer = {
+				"units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+				"units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+				"units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
+			}
 		},
 		--ZEAL
 		sm_wish = {
@@ -2401,27 +2320,12 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc",
 				"units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 			},
-			dozer_1 = {
+			dozer = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_2 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-			},
-			dozer_3 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
+				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 				"units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 			},
@@ -2531,14 +2435,14 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"):key()] = "heavy_1",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"):key()] = "swat_1",
 	--Specials
-	[Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"):key()] = "dozer_1",
-	[Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"):key()] = "dozer_2",
-	[Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"):key()] = "dozer_3",
+	[Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"):key()] = "dozer",
+	[Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"):key()] = "dozer",
+	[Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"):key()] = "dozer",
 	[Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"):key()] = "dozer_headless",
 	[Idstring("units/pd2_dlc_help/characters/ene_zeal_bulldozer_halloween/ene_zeal_bulldozer_halloween"):key()] = "dozer_headless",
-	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"):key()] = "dozer_2",
+	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"):key()] = "dozer",
 	[Idstring("units/payday2/characters/ene_city_shield/ene_city_shield"):key()] = "shield",
 	[Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"):key()] = "shield",
 	[Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"):key()] = "shield",
@@ -2552,9 +2456,9 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"):key()] = "taser",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker"):key()] = "cloaker",
 	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"):key()] = "shield",
-	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"):key()] = "dozer_2",
-	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"):key()] = "dozer_3",
+	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_drm/characters/ene_zeal_swat_heavy_sniper/ene_zeal_swat_heavy_sniper"):key()] = "tsniper",
 	[Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1"):key()] = "tsniper",
 	[Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2"):key()] = "tsniper",
@@ -2580,9 +2484,9 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870"):key()] = "swat_2",
 	--Specials
-	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"):key()] = "dozer_2",
-	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"):key()] = "dozer_3",
+	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45"):key()] = "shield",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"):key()] = "shield",
 	[Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"):key()] = "shield",
@@ -2634,11 +2538,11 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"):key()] = "swat_2",
 	--Specials
-	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"):key()] = "dozer_2",
-	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"):key()] = "dozer_3",
-	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"):key()] = "dozer_2",
+	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_medic/ene_murkywater_bulldozer_medic"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"):key()] = "shield",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"):key()] = "sniper",
 	[Idstring("units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"):key()] = "medic",
@@ -2670,11 +2574,11 @@ ElementSpawnEnemyDummy.enemy_mapping = {
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"):key()] = "swat_1",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"):key()] = "swat_2",
 	--Specials
-	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"):key()] = "dozer_2",
-	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"):key()] = "dozer_3",
-	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"):key()] = "dozer_1",
-	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"):key()] = "dozer_2",
+	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"):key()] = "dozer",
+	[Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"):key()] = "dozer",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"):key()] = "shield",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"):key()] = "shield",
 	[Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"):key()] = "sniper",

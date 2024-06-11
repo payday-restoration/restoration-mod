@@ -1,18 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_1 = math.random()
-local chance_dozer_2 = math.random()
 local ambush_unit_amount = 1
 local ambush_unit_amount_random = 2 
-local dozer_table = {
-	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-	dozer_skull = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
-	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-}
 
 --If we're in Pro Job, then do this stuff below
 if pro_job then
@@ -36,59 +25,7 @@ end
 	else
 		gas_dozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 	end
-
-	--Setting up the dozer randomizer, so cool
-	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_black
-		else
-			dozer_1 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-		
-	elseif difficulty == 6 or difficulty == 7 then	
-		if chance_dozer_1 < 0.25 then
-			dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_black
-		else
-			dozer_1 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_2 < 0.25 then
-			dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-
-	elseif difficulty == 8 then
-		if chance_dozer_1 < 0.25 then
-			dozer_1 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_1 < 0.75 then
-			dozer_1 = dozer_table.dozer_titan
-		else
-			dozer_1 = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_2 < 0.25 then
-			dozer_2 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_2 < 0.75 then
-			dozer_2 = dozer_table.dozer_titan
-		else
-			dozer_2 = dozer_table.dozer_zeal_benelli
-		end
-	end
+	
 local disabled = {
 	values = {
         enabled = false
@@ -127,17 +64,6 @@ return {
 	[101661] = {
 		values = {
 			amount = 20
-		}
-	},
-	--dozers gets randomized
-	[102433] = {
-		values = {
-            enemy = dozer_1
-		}
-	},
-	[102434] = {
-		values = {
-            enemy = dozer_2
 		}
 	},
 	--Have the gas chopper be a dozer chopper that has loopable spawn

@@ -17804,8 +17804,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.categories = { "smg" }
 				self.ksp45.recategorize = { "heavy_smg" }
 				self.ksp45.damage_type = "machine_gun"
-				self.ksp45.fire_mode_data.fire_rate = 0.085714285
-				self.ksp45.CAN_TOGGLE_FIREMODE = true
+				self.ksp45.fire_mode_data.fire_rate = 0.107142857
+				self.ksp45.CAN_TOGGLE_FIREMODE = false
 				self.ksp45.FIRE_MODE = "auto"
 				self.ksp45.CLIP_AMMO_MAX = 30
 				self.ksp45.AMMO_MAX = 120
@@ -17815,22 +17815,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.BURST_FIRE_DEFAULT = true
 				self.ksp45.BURST_FIRE = 3
 				self.ksp45.BURST_DELAY = 0.083
-				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.03142
-				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.33
-				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
-				self.ksp45.kick = self.stat_info.kick_tables.vertical_kick
+				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.2892857
+				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 0.9
+				self.ksp45.BURST_FIRE_RANGE_MULTIPLIER = 1.25
+				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
 				self.ksp45.panic_suppression_chance = 0.05
 				self.ksp45.supported = true
 				self.ksp45.ads_speed = 0.280
 				self.ksp45.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 2500,
+					start_dist = 1200,
+					end_dist = 2000,
 					min_mult = 0.3
 				}
 				self.ksp45.stats = {
 					damage = 30,
 					spread = 71,
-					recoil = 85,
+					recoil = 75,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 25,
@@ -18244,7 +18245,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_dracarys.ads_speed = 0.400
 				self.tti_dracarys.damage_falloff = {
 					start_dist = 200,
-					end_dist = 1500,
+					end_dist = 1600,
 					min_mult = 0.15
 				}
 				self.tti_dracarys.stats = {

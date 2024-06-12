@@ -26964,6 +26964,222 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 		end
 
+		if self.parts.wpn_fps_smg_ksp45_receiver then
+			self.parts.wpn_fps_smg_ksp45_receiver.perks = nil
+			self.parts.wpn_fps_smg_ksp45_stock.stats = { value = 0 }
+			self.parts.wpn_fps_smg_ksp45_stock.custom_stats = nil
+			self.parts.wpn_fps_smg_ksp45_flash_hider.perks = nil
+			self.parts.wpn_fps_smg_ksp45_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_smg_ksp45_flash_hider.custom_stats = nil
+
+			--BARRELS
+				--Extended
+				self.parts.wpn_fps_smg_ksp45_barrel_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_01.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_ksp45_barrel_01.stats.value = 1
+				self.parts.wpn_fps_smg_ksp45_barrel_01.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Cavalry
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.desc_id = "bm_ap_armor_weapon_sc_desc"
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.has_description = true
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.stats = { value = 2, concealment = -2 }
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.adds = {"wpn_fps_upg_a_cavalry"}
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_01.custom_stats = {}
+				--Reinforced
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.stats.value = 4
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.stats.recoil = 2
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.stats.concealment = -2
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_01.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Ranger
+				self.parts.wpn_fps_smg_ksp45_barrel_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_02.stats = { value = 5, recoil = 4, concealment = -2 }
+				self.parts.wpn_fps_smg_ksp45_barrel_02.custom_stats = nil
+				--Rifled
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_02.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_02.stats.value = 6
+				self.parts.wpn_fps_smg_ksp45_barrel_heavy_02.custom_stats = deep_clone(barrels.long_b2_stats)
+				--Task Force
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.stats.value = 8
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.stats.recoil = -6
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.stats.concealment = 0
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_ksp45_barrel_mix_02.custom_stats.ads_speed_mult = nil
+
+			--MAGAZINES
+				--42 Rnd
+				self.parts.wpn_fps_smg_ksp45_xmag_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_xmag_01.has_description = false
+				self.parts.wpn_fps_smg_ksp45_xmag_01.stats = { value = 1, extra_ammo = 12, concealment = -1 , reload = -3}
+				self.parts.wpn_fps_smg_ksp45_xmag_01.custom_stats = { ads_speed_mult = 1.025 }
+				--Fast Mag
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_01.has_description = false
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_01.stats = {
+					value = 2,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				--42 Rnd Speed Mag
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_01.has_description = false
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_01.stats = {
+					value = 4,
+					extra_ammo = 12,
+					spread = -1,
+					concealment = -2,
+					reload = 1
+				}
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_01.custom_stats = { ads_speed_mult = 1.025 }
+				--STANAG 48 Rnd 
+				self.parts.wpn_fps_smg_ksp45_xmag_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_xmag_02.has_description = false
+				self.parts.wpn_fps_smg_ksp45_xmag_02.stats = {
+					value = 5,
+					extra_ammo = 18,
+					concealment = -3,
+					reload = -5
+				}
+				self.parts.wpn_fps_smg_ksp45_xmag_02.custom_stats = { ads_speed_mult = 1.075 }
+				--Vandal Speed Loader
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_02.has_description = false
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_02.stats = {
+					value = 6,
+					spread = -1,
+					concealment = -2,
+					reload = 6
+				}
+				self.parts.wpn_fps_smg_ksp45_magazine_fast_02.custom_stats = { ads_speed_mult = 1.025 }
+				--Salvo 48 Rnd Fast Mag
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_02.has_description = false
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_02.stats = {
+					value = 8,
+					extra_ammo = 18,
+					spread = -1,
+					concealment = -3,
+					reload = 2
+				}
+				self.parts.wpn_fps_smg_ksp45_magazine_mix_02.custom_stats = { ads_speed_mult = 1.05 }
+
+			--GRIPS
+				--Speed Tape
+				self.parts.wpn_fps_smg_ksp45_quickdraw_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_quickdraw_01.stats = {
+					value = 1,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_ksp45_quickdraw_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--Drop Shot Wrap
+				self.parts.wpn_fps_smg_ksp45_mixhandle_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_mixhandle_01.stats = {
+					value = 2,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_ksp45_mixhandle_01.custom_stats = {}
+				--Field Tape
+				self.parts.wpn_fps_smg_ksp45_handle_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_handle_01.stats = {
+					value = 3,
+					spread = 2,
+					recoil = -2,
+					concealment = -1
+				}
+				--SASR Jungle Wrap
+				self.parts.wpn_fps_smg_ksp45_handle_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_handle_02.stats = {
+					value = 4,
+					recoil = 2,
+					spread = 1,
+					concealment = -2
+				}
+				--Serpent Wrap
+				self.parts.wpn_fps_smg_ksp45_quickdraw_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_quickdraw_02.stats = {
+					value = 5,
+					spread = 1,
+					recoil = -2
+				}
+				self.parts.wpn_fps_smg_ksp45_quickdraw_02.custom_stats = {}
+				--Airborne Elastic Wrap
+				self.parts.wpn_fps_smg_ksp45_mixhandle_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_mixhandle_02.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_smg_ksp45_mixhandle_02.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+
+			--STOCKS
+				--Tactical Stock
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_01.stats = {
+					value = 3,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_01.custom_stats = {}
+				--Wire Stock
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_01.stats = {
+					value = 4,
+					recoil = 4,
+					concealment = -2
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_01.custom_stats = {}
+				--Duster Stock
+				self.parts.wpn_fps_smg_ksp45_stock_mix_01.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_mix_01.stats = {
+					value = 5,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_mix_01.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+				--No Stock
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_02.stats = {
+					value = 6,
+					recoil = -4,
+					concealment = 2
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_sprintout_02.custom_stats = {
+					ads_speed_mult = 0.95
+				}
+				--SAS Combat Stock
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_02.stats = {
+					value = 7,
+					recoil = -2,
+					spread = 1
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_stalker_02.custom_stats = {}
+				--Raider Stock
+				self.parts.wpn_fps_smg_ksp45_stock_mix_02.supported = true
+				self.parts.wpn_fps_smg_ksp45_stock_mix_02.stats = {
+					value = 8,
+					recoil = -4,
+					spread = 1,
+					concealment = 1
+				}
+				self.parts.wpn_fps_smg_ksp45_stock_mix_02.custom_stats = {
+					ads_speed_mult = 0.975
+				}
+		end
+
 		if self.parts.wpn_fps_lmg_stoner63a_receiver then --RJC9000 and PlayBONK's Stoner 63A
 			self.parts.wpn_fps_lmg_stoner63a_barrel.pcs = nil
 			self.parts.wpn_fps_lmg_stoner63a_barrel.stats = { value = 0 }

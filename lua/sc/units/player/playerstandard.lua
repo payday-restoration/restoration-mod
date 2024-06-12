@@ -4484,7 +4484,7 @@ if AdvMov then
 	local AdvMovRayCheck = PlayerStandard._get_nearest_wall_ray_dir
 	--Should make it so wallrun checks always fail, effectively disabling wallrunning
 	function PlayerStandard:_get_nearest_wall_ray_dir(ray_length_mult, raytarget, only_frontal_rays, z_offset)
-		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") then
+		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") and raytarget ~= "enemy" then
 			return nil
 		else
 			return AdvMovRayCheck(self, ray_length_mult, raytarget, only_frontal_rays, z_offset)
@@ -4494,7 +4494,7 @@ if AdvMov then
 	function PlayerStandard:_do_movement_melee_damage(forward_only, strongkick)
 		local AdvMovMelee = restoration.Options:GetValue("AdVMovResOpt/AdvMovMelee") or 1
 		if AdvMovMelee == 1 or (AdvMovMelee == 2 and not managers.groupai:state():whisper_mode()) then
-			AdvMovDoMelee(self, forward_only, strongkick)
+			return AdvMovDoMelee(self, forward_only, strongkick)
 		end
 	end
 end

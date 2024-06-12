@@ -2384,6 +2384,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_fang45 = {
 				translation = Vector3(0, 13.2, -0.55)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_ksp45 = {
+				translation = Vector3(-0.005, 7.1, -0.46)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_omni = {
 				translation = Vector3(-0.04, -0.8, -0.2),
@@ -2408,6 +2411,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
 				translation = Vector3(0, 8.6, -3.36)
+			}
+
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_fik22 = {
+				translation = Vector3(0.02, 9.5, -3.395)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_ar18 = {
@@ -37340,6 +37347,40 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_shot_or12.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
 	end
 
+	if self.parts.wpn_fps_ass_fik22_barrel_long then
+		self.parts.wpn_fps_ass_fik22_barrel_long.supported = true
+		self.parts.wpn_fps_ass_fik22_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_fik22_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_ass_fik22_barrel_short.supported = true
+		self.parts.wpn_fps_ass_fik22_barrel_short.stats = deep_clone(barrels.short_b1_stats)
+		self.parts.wpn_fps_ass_fik22_barrel_short.custom_stats = deep_clone(barrels.short_b1_stats)
+
+		self.parts.wpn_fps_ass_fik22_mag_short.supported = true
+		self.parts.wpn_fps_ass_fik22_mag_short.stats = {
+			value = 1,
+			extra_ammo = -10,
+			reload = 2,
+			concealment = 1
+		}
+		self.parts.wpn_fps_ass_fik22_mag_short.custom_stats = { ads_speed_mult = 0.975 }
+		self.parts.wpn_fps_ass_fik22_mag_ext.supported = true
+		self.parts.wpn_fps_ass_fik22_mag_ext.stats = {
+			value = 3,
+			extra_ammo = 10,
+			reload = -2,
+			concealment = -1
+		}
+		self.parts.wpn_fps_ass_fik22_mag_ext.custom_stats = { ads_speed_mult = 1.025 }
+		self.parts.wpn_fps_ass_fik22_mag_quick.supported = true
+		self.parts.wpn_fps_ass_fik22_mag_quick.stats = {
+			value = 5,
+			reload = 2,
+			concealment = -1,
+			spread = -1
+		}
+		self.parts.wpn_fps_ass_fik22_mag_quick.custom_stats = { ads_speed_mult = 0.975 }
+	end
+
 	if self.parts.wpn_fps_shot_spas15_mag then
 		self.parts.wpn_fps_shot_spas15_mag.stats = { value = 0 }
 		self.parts.wpn_fps_shot_spas15_mag.custom_stats = nil
@@ -40851,6 +40892,25 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "Fang45WeaponModInit", function(self)
 end)
 
+Hooks:PostHook( WeaponFactoryTweakData, "init", "PD3FIK22TLRMod", function(self)
+	if self.wpn_fps_ass_fik22 then
+		self.wpn_fps_ass_fik22.override = {}
+		for k, used_part_id in ipairs(self.wpn_fps_ass_fik22.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if self.parts[used_part_id].type == "barrel_ext" then
+					self.wpn_fps_ass_fik22.override[used_part_id] = { parent = "barrel", a_obj = "a_ns" }
+				end
+			end
+		end
+		self.wpn_fps_ass_fik22_npc.override = deep_clone(self.wpn_fps_ass_fik22.override)
+
+		self.parts.wpn_fps_ass_fik22_dh.animations = {
+			fire = "recoil",
+			fire_steelsight = "recoil"
+		}
+	end
+end)
+
 Hooks:PostHook(WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
 	if self.parts.wpn_fps_shot_spas15_ironsight then
 		self.parts.wpn_fps_shot_spas15_ironsight.stance_mod = {
@@ -40865,7 +40925,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)
 		self.parts.wpn_fps_shot_spas15_mag.bullet_objects = {prefix = "g_bullet_", amount = 1}
 		self.parts.wpn_fps_shot_spas15_mag_drum.bullet_objects = {prefix = "g_bullet_", amount = 1}
 	end
-end )
+end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if IsCAPInstalled then

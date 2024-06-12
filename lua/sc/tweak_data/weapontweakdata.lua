@@ -17816,7 +17816,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.BURST_FIRE = 3
 				self.ksp45.BURST_DELAY = 0.083
 				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.2892857
-				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.6
 				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 0.9
 				self.ksp45.BURST_FIRE_RANGE_MULTIPLIER = 1.25
 				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
@@ -17844,6 +17844,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ksp45.stats_modifiers = nil
 				self.ksp45.panic_suppression_chance = 0.05
+				self.ksp45.timers.reload_exit_empty = 0.4
+				self.ksp45.timers.reload_exit_not_empty = 0.6
+				self.ksp45.lock_slide = true
+				self.ksp45.lock_slide_offset = 0.066
+				self.ksp45.sounds.magazine_empty = "wp_pistol_slide_lock"
 			end
 
 			if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
@@ -20454,6 +20459,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ntw20.panic_suppression_chance = 0.05
 		end
 
+		if self.fik22 then
+			self.fik22.categories = { 
+				"assault_rifle"
+			}
+			self.fik22.recategorize = {"light_ar"}
+			self.fik22.damage_type = "assault_rifle"
+			self.fik22.hs_mult = 2
+			self.fik22.tactical_reload = 1
+			self.fik22.CLIP_AMMO_MAX = 25
+			self.fik22.AMMO_MAX = 180
+			self.fik22.fire_mode_data.fire_rate = 0.066666
+			self.fik22.CAN_TOGGLE_FIREMODE = false
+			self.fik22.FIRE_MODE = "single"
+			self.fik22.kick = self.stat_info.kick_tables.even_recoil
+			self.fik22.supported = true
+			self.fik22.ads_speed = 0.200
+			self.fik22.damage_falloff = {
+				start_dist = 1200,
+				end_dist = 3100,
+				min_mult = 0.5
+			}
+			self.fik22.stats = {
+				damage = 12,
+				spread = 71,
+				recoil = 97,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 28,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 4,
+				reload = 20
+			}
+			self.fik22.stats_modifiers = nil
+			self.fik22.panic_suppression_chance = 0.05
+			self.fik22.reload_speed_multiplier = 1.1
+			self.fik22.timers.reload_exit_empty = 0.9
+			self.fik22.timers.reload_exit_not_empty = 0.8
+		end
+
 		if self.spas15 then
 			self.spas15.recategorize = { "light_shot" }
 			self.spas15.categories = { "shotgun" }
@@ -20575,7 +20622,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308_underbarrel.timers.reload_exit_not_empty = 0.3
 		end
 
-		if self.degfifty then --RJC9000 and PlayBONK's 2077 Silverhand
+		if self.degfifty then
 			self.degfifty.categories = { "pistol", "amr", "semi_snp" }
 			self.degfifty.recategorize = { "heavy_pis" }
 			self.degfifty.has_description = false

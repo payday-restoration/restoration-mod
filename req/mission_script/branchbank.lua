@@ -34,7 +34,7 @@ if pro_job then
 	vaultdoor = 100
 	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
 	if difficulty == 8 then
-		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+		bulldozer = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		teargasmayhem = 4
@@ -235,7 +235,7 @@ return {
 	--Heli spawns
 	[101785] = {
 		values = {
-			enemy = bulldozer_1
+			enemy = bulldozer
 		}
 	},
 	[101432] = {

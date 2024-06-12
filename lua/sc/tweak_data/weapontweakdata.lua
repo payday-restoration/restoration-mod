@@ -17799,6 +17799,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lc10.timers.reload_exit_empty = 0.52
 			end
 
+			if self.ksp45 then --RJC9000 and PlayBONK's port of 3arc's sin of a Franken-UMP(?)
+				self.ksp45.use_data.selection_index = 2
+				self.ksp45.categories = { "smg" }
+				self.ksp45.recategorize = { "heavy_smg" }
+				self.ksp45.damage_type = "machine_gun"
+				self.ksp45.fire_mode_data.fire_rate = 0.085714285
+				self.ksp45.CAN_TOGGLE_FIREMODE = true
+				self.ksp45.FIRE_MODE = "auto"
+				self.ksp45.CLIP_AMMO_MAX = 30
+				self.ksp45.AMMO_MAX = 120
+				self.ksp45.burst = nil
+				self.ksp45.fire_mode_data.burst_cooldown = nil
+				self.ksp45.BURST_COUNT = nil
+				self.ksp45.BURST_FIRE_DEFAULT = true
+				self.ksp45.BURST_FIRE = 3
+				self.ksp45.BURST_DELAY = 0.083
+				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.03142
+				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.33
+				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self.ksp45.kick = self.stat_info.kick_tables.vertical_kick
+				self.ksp45.panic_suppression_chance = 0.05
+				self.ksp45.supported = true
+				self.ksp45.ads_speed = 0.280
+				self.ksp45.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 2500,
+					min_mult = 0.3
+				}
+				self.ksp45.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.ksp45.stats_modifiers = nil
+				self.ksp45.panic_suppression_chance = 0.05
+			end
+
 			if self.t9british then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an EM2
 				self.t9british.categories = { "assault_rifle" }
 				self.t9british.recategorize = { "dmr_ar" }
@@ -18179,6 +18225,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.timers.shotgun_reload_first_shell_offset = 0.25
 				self.cp2077_guts.timers.shotgun_reload_shell = 0.73
 			end
+
+			if self.tti_dracarys then
+				self.tti_dracarys.recategorize = { "light_shot" }	
+				self.tti_dracarys.damage_type = "shotgun"
+				self.tti_dracarys.damage_type_single_ray = "sniper"
+				self.tti_dracarys.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.tti_dracarys.rays = 9
+				self.tti_dracarys.kick = self.stat_info.kick_tables.even_recoil
+				self.tti_dracarys.tactical_reload = 1
+				self.tti_dracarys.CLIP_AMMO_MAX = 10
+				self.tti_dracarys.AMMO_MAX = 60
+				self.tti_dracarys.CAN_TOGGLE_FIREMODE = true							
+				self.tti_dracarys.BURST_FIRE = false
+				self.tti_dracarys.fire_mode_data.fire_rate = 0.1
+				self.tti_dracarys.supported = true
+				self.tti_dracarys.ads_speed = 0.400
+				self.tti_dracarys.damage_falloff = {
+					start_dist = 200,
+					end_dist = 1500,
+					min_mult = 0.15
+				}
+				self.tti_dracarys.stats = {
+					damage = 120,
+					spread = 13,
+					recoil = 57,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 18,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.tti_dracarys.stats_modifiers = nil
+				self.tti_dracarys.panic_suppression_chance = 0.05
+				self.tti_dracarys.reload_speed_multiplier = 0.9
+				self.tti_dracarys.timers.reload_exit_empty = 0.5
+				self.tti_dracarys.timers.reload_exit_not_empty = 0.82
+			end
+
 
 			if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
 				self.swhiskey.recategorize = { "heavy_pis", "handcannon" }

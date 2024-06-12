@@ -20573,7 +20573,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	}
 
 	self.parts.wpn_fps_lmg_hk51b_m_belt_60 = {
-		--pcs = {},
+		pcs = {},
 		a_obj = "a_m",
 		type = "magazine",
 		dlc = "sc",
@@ -20584,12 +20584,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 		third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_third_lmg_hk51b_mag",
 		stats = {
 			value = 6,
-			reload = -4,
-			concealment = -3,
+			reload = -3,
+			concealment = -2,
 			extra_ammo = 20
 		},
 		custom_stats = {
-			ads_speed_mult = 1.075
+			ads_speed_mult = 1.05
 		},
 		bullet_objects = {
 			amount = 3,
@@ -20609,7 +20609,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	self:_add_bullet_belt_to_part("wpn_fps_lmg_hk51b_m_belt_60", "a_belt", belt)
 
 	self.parts.wpn_fps_lmg_hk51b_m_belt_80 = {
-		--pcs = {},
+		pcs = {},
 		a_obj = "a_m",
 		type = "magazine",
 		dlc = "sc",
@@ -20620,12 +20620,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 		third_unit = "units/pd2_dlc_pxp1/weapons/wpn_fps_lmg_hk51b_pts/wpn_third_lmg_hk51b_mag",
 		stats = {
 			value = 8,
-			reload = -7,
-			concealment = -5,
+			reload = -5,
+			concealment = -4,
 			extra_ammo = 40
 		},
 		custom_stats = {
-			ads_speed_mult = 1.125
+			ads_speed_mult = 1.1
 		},
 		bullet_objects = {
 			amount = 3,
@@ -20653,6 +20653,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_standard = {
 		stats = deep_clone(stocks.folded_to_adj_rec2),
 		custom_stats = deep_clone(stocks.folded_to_adj_rec2)
+	}
+	self.wpn_fps_lmg_hk51b.override.wpn_fps_m4_uupg_s_fold = {
+		stats = deep_clone(stocks.unfold_folded_stats),
+		custom_stats = deep_clone(stocks.unfold_folded_stats)
 	}
 	self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_m4_s_pts = {
 		stats = deep_clone(stocks.folded_to_adj_rec1),
@@ -20706,7 +20710,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk51b", "resmod_hk51b", function(s
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_smg_mp5_s_folding")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_pts")
-	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_m4_uupg_s_fold")
+	--table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_crane")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_upg_m4_s_mk46")
 	table.insert(self.wpn_fps_lmg_hk51b.uses_parts, "wpn_fps_snp_victor_s_mod0")

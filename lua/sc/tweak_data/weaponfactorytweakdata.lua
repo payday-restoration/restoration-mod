@@ -2401,6 +2401,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_spas15 = {
 				translation = Vector3(-0.02, 2.7, -2.97)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_tti_dracarys = {
+				translation = Vector3(0.012, 2.2, 0.072)
+			}
 
 		
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
@@ -25850,6 +25853,59 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
+		--TTI GEN-12
+		if self.parts.wpn_fps_shot_tti_dracarys_eotech then
+			self.parts.wpn_fps_shot_tti_dracarys_stock.stats = { value = 0 }
+			self.parts.wpn_fps_shot_tti_dracarys_stock.custom_stats = nil
+			self.parts.wpn_fps_shot_tti_dracarys_muzzle.stats = { value = 0 }
+			self.parts.wpn_fps_shot_tti_dracarys_muzzle.custom_stats = nil
+			self.parts.wpn_fps_shot_tti_dracarys_grip.stats = { value = 0 }
+			self.parts.wpn_fps_shot_tti_dracarys_grip.custom_stats = nil
+
+			self.parts.wpn_fps_shot_tti_dracarys_eotech.supported = true
+			self.parts.wpn_fps_shot_tti_dracarys_eotech.desc_id = "bm_wp_upg_o_1_5"			
+			self.parts.wpn_fps_shot_tti_dracarys_eotech.has_description = true			
+			self.parts.wpn_fps_shot_tti_dracarys_eotech.stats = {
+				value = 3,
+				zoom = 5
+			}
+			self.parts.wpn_fps_shot_tti_dracarys_eotech.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_shot_tti_dracarys_eotech.stance_mod) do
+				for k, wep_id in pairs(sight_1_5x_offset.exclude) do
+					if weap and i ~= wep_id and weap.translation then
+						weap.translation = weap.translation + sight_1_5x_offset.offset
+					end
+				end
+			end
+
+			self.parts.wpn_fps_shot_tti_dracarys_xmag.supported = true
+			self.parts.wpn_fps_shot_tti_dracarys_xmag.stats = {
+				value = 2,
+				extra_ammo = 2,
+				reload = -1,
+				concealment = -1
+			}
+			self.parts.wpn_fps_shot_tti_dracarys_xmag.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+
+			self.wpn_fps_shot_tti_dracarys.override = self.wpn_fps_shot_tti_dracarys.override or {}
+
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_m4_s_standard = {
+				stats = { value = 0},
+				custom_stats = {}
+			}
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_semi_override)
+			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_semi_override)
+
+			self.wpn_fps_shot_tti_dracarys_npc.override = deep_clone(self.wpn_fps_shot_tti_dracarys.override)
+		end
 
 		--Madsen LAR
 		if self.parts.wpn_fps_ass_madsen_lar_flash_hider then

@@ -131,6 +131,7 @@ function GuiTweakData:init()
 		wpn_fps_upg_o_hamr = "1 8",
 		wpn_fps_upg_o_atibal = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 3),
 		--Mod Sights
+		wpn_fps_shot_tti_dracarys_eotech = "1 " .. tostring(#self.weapon_texture_switches.types.sight_swap - 7),
 		wpn_fps_upg_o_mw2022_holotherm01 = "4 " .. tostring(#self.weapon_texture_switches.types.sight_swap)
 	}
 end

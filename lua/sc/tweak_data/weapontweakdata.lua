@@ -18239,6 +18239,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_dracarys.CAN_TOGGLE_FIREMODE = true							
 				self.tti_dracarys.BURST_FIRE = false
 				self.tti_dracarys.fire_mode_data.fire_rate = 0.1
+				self.tti_dracarys.lock_slide = true
 				self.tti_dracarys.supported = true
 				self.tti_dracarys.ads_speed = 0.400
 				self.tti_dracarys.damage_falloff = {
@@ -18262,6 +18263,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.tti_dracarys.stats_modifiers = nil
 				self.tti_dracarys.panic_suppression_chance = 0.05
+				self.tti_dracarys.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.tti_dracarys.reload_speed_multiplier = 0.9
 				self.tti_dracarys.timers.reload_exit_empty = 0.5
 				self.tti_dracarys.timers.reload_exit_not_empty = 0.82

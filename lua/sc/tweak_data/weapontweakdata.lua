@@ -3692,7 +3692,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 5.5, 0.6, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 5.5, 0.5, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -17760,6 +17760,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.lc10 then --RJC9000 and PlayBONK's port of 3arc's absolute sin of an L96/MPL
 				self.lc10.use_data.selection_index = 2
+				self.lc10.desc_id = "bm_w_lc10_desc_sc"
+				self.lc10.has_description = true
 				self.lc10.categories = { "smg" }
 				self.lc10.recategorize = { "heavy_smg" }
 				self.lc10.damage_type = "machine_gun"
@@ -17801,10 +17803,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.ksp45 then --RJC9000 and PlayBONK's port of 3arc's sin of a Franken-UMP(?)
 				self.ksp45.use_data.selection_index = 2
+				self.ksp45.desc_id = "bm_w_ksp45_desc_sc"
+				self.ksp45.has_description = true
 				self.ksp45.categories = { "smg" }
 				self.ksp45.recategorize = { "heavy_smg" }
 				self.ksp45.damage_type = "machine_gun"
-				self.ksp45.fire_mode_data.fire_rate = 0.107142857
+				self.ksp45.fire_mode_data.fire_rate = 0.0831024
 				self.ksp45.CAN_TOGGLE_FIREMODE = false
 				self.ksp45.FIRE_MODE = "auto"
 				self.ksp45.CLIP_AMMO_MAX = 30
@@ -17813,28 +17817,29 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.fire_mode_data.burst_cooldown = nil
 				self.ksp45.BURST_COUNT = nil
 				self.ksp45.BURST_FIRE_DEFAULT = true
+				self.ksp45.BURST_ONLY = true
+				self.ksp45.LOCK_BURST = true
 				self.ksp45.BURST_FIRE = 3
 				self.ksp45.BURST_DELAY = 0.083
 				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.2892857
-				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.6
-				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 0.9
-				self.ksp45.BURST_FIRE_RANGE_MULTIPLIER = 1.25
+				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.8
+				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
 				self.ksp45.panic_suppression_chance = 0.05
 				self.ksp45.supported = true
 				self.ksp45.ads_speed = 0.280
 				self.ksp45.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 2000,
+					start_dist = 1500,
+					end_dist = 2500,
 					min_mult = 0.3
 				}
 				self.ksp45.stats = {
 					damage = 30,
 					spread = 71,
-					recoil = 75,
+					recoil = 81,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 25,
+					concealment = 26,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -18259,7 +18264,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 57,
 					spread_moving = 6,
 					zoom = 1,
-					concealment = 18,
+					concealment = 24,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -20472,7 +20477,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fik22.fire_mode_data.fire_rate = 0.066666
 			self.fik22.CAN_TOGGLE_FIREMODE = false
 			self.fik22.FIRE_MODE = "single"
-			self.fik22.kick = self.stat_info.kick_tables.even_recoil
+			self.fik22.kick = self.stat_info.kick_tables.moderate_kick
 			self.fik22.supported = true
 			self.fik22.ads_speed = 0.200
 			self.fik22.damage_falloff = {
@@ -20496,7 +20501,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.fik22.stats_modifiers = nil
 			self.fik22.panic_suppression_chance = 0.05
-			self.fik22.reload_speed_multiplier = 1.1
+			self.fik22.reload_speed_multiplier = 1.33
 			self.fik22.timers.reload_exit_empty = 0.9
 			self.fik22.timers.reload_exit_not_empty = 0.8
 		end

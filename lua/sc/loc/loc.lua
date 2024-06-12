@@ -2576,6 +2576,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_crysis3_typhoon_desc"] = "\"It's the purest form of expression, and right now #{important_1}#I've got a lot to say##\"\n\nUtilizing #{risk}#superposed loading## technology, this 10-barrelled machine gun trades damage for spitting lead out at blisteringly high speeds.\n\nAlt-fire fires a #{skill_color}#volley## of #{skill_color}#10## rounds down range.",
 					--Fang 45
 					["bm_w_fang45_desc"] = "#{skill_color}#Fire rate is increased by 33% for the first 5 shots of every reload.##",
+					--KSP 45
+					["bm_w_ksp45_desc_sc"] = "3-round burst submachine gun. High damage with moderate range. Burst fire spread is less efficient at long range.",
+					--LC10
+					["bm_w_lc10_desc_sc"] = "Full-auto submachine gun. Well rounded with excellent damage range and good accuracy. Moderate damage with an impressive muzzle velocity and a high fire rate.",
 			
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -3118,6 +3122,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_fang45"] = "Fang 45",
 						--Typhoon
 						["bm_w_crysis3_typhoon"] = "CRYNET Typhoon",
+						--KSP 45
+						["bm_w_ksp45"] = "KSP 45",
+						--LC10
+						["bm_w_lc10"] = "LC10",
 				--[[ MGs ]]
 					--Bootleg/HK416c
 					["bm_w_tecci"] = "Bootlegger",

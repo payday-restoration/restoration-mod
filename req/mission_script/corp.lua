@@ -114,12 +114,6 @@ return {
 				}
 			}
 		},
-	--Alarm	after doing Yeehaw jump
-	[102657] = {
-		on_executed = {
-				{id = 100023, delay = 4}
-			}
-		},
 		[103017] = {
 		values = {
 			enemy = bulldozer

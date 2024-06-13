@@ -5470,16 +5470,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Spotter--
 				["menu_ecm_2x_beta_sc"] = "Spotter",
-				["menu_ecm_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemies you mark take #{skill_color}#25%## more damage when further than #{risk}#20## meters away.\n\nACE: #{owned}#$pro##\nEnemies you mark take an additional #{skill_color}#35%## more damage #{skill_color}#at all ranges.##",
+				["menu_ecm_2x_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nEnemies you mark take #{skill_color}#$skill_value_b1## more damage when further than #{risk}#$skill_value_b2## meters away.\n\nACE: #{owned}#$pro##\nEnemies you mark take an additional #{skill_color}#$skill_value_p1## more damage #{skill_color}#at all ranges.##",
 
 			--[[   ARTFUL DODGER SUBTREE   ]]--
 				--Duck and Cover--
 				["menu_sprinter_beta_sc"] = "Duck and Cover",
-				["menu_sprinter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour stamina starts regenerating #{skill_color}#25%## earlier and #{skill_color}#25%## faster.\n\nACE: #{owned}#$pro##\nYour dodge meter fills up by #{skill_color}#6%## of your dodge every second while crouching.\n\nYou gain a #{skill_color}#10%## boost in your movement speed when crouching.",
+				["menu_sprinter_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour stamina starts regenerating #{skill_color}#25%## earlier and #{skill_color}#25%## faster.\n\nACE: #{owned}#$pro##\nYour dodge meter fills up by #{skill_color}#$skill_value_p1## of your dodge every second while crouching.\n\nYou gain a #{skill_color}#$skill_value_p2## boost in your movement speed when crouching.",
 
 				--Evasion--
 				["menu_awareness_beta_sc"] = "Evasion",
-				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#5%## movement speed.\n\nYour fall damage is reduced by #{skill_color}#75%.##\n\nACE: #{owned}#$pro##\nYou can #{skill_color}#reload your weapons while sprinting.##\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
+				["menu_awareness_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain an additional #{skill_color}#$skill_value_b1## movement speed.\n\nYour fall damage is reduced by #{skill_color}#$skill_value_b2.##\n\nACE: #{owned}#$pro##\nYou can #{skill_color}#reload your weapons while sprinting.##\n\n#{item_stage_2}#A setting to allow for sprint cancelling reloads can be found in Restoration Mod's extra options.##",
 
 				--Deep Pockets--
 				["menu_thick_skin_beta_sc"] = "Deep Pockets",
@@ -5487,14 +5487,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{risk}#2## points of encumbrance under #{risk}#30##, up to #{skill_color}#15%.##\n\nYou move #{skill_color}#50%## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1.5%## extra movement speed for every #{risk}#1## point of encumbrance under #{risk}#30##, up to #{skill_color}#15%.##\n\nYour dodge meter fills up by #{skill_color}#15%## of your dodge every second while sprinting and #{skill_color}#30%## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1%## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nYou move #{skill_color}#$skill_value_b5## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
-				["menu_insulation_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Getting shocked no longer forces you to shoot## and the shock attack from a Taser has a #{skill_color}#15%## chance to backfire, knocking them back in the process.\n\n#{risk}#NOTE: The accuracy and recoil penalties from being shocked still apply.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#30%.##\n\nACE: #{owned}#$pro##\nInteracting with an enemy Taser within #{skill_color}#2## seconds of them electrocuting you will #{skill_color}#counter-electrocute## them, dealing #{skill_color}#50%## of their max health as damage.\n\nThe slowdown effect and duration of Titan Taser attacks are reduced by #{skill_color}#50%.##",
+				["menu_insulation_beta_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Getting shocked no longer forces you to shoot## and the shock attack from a Taser has a #{skill_color}#$skill_value_b2## chance to backfire, knocking them back in the process.\n\n#{risk}#NOTE: The accuracy and recoil penalties from being shocked still apply.##\n\nKnockback from enemy gunfire is reduced by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\nInteracting with an enemy Taser within #{skill_color}#$skill_value_p1## seconds of them electrocuting you will #{skill_color}#counter-electrocute## them, dealing #{skill_color}#$skill_value_p2## of their max health as damage.\n\nThe slowdown effect and duration of Titan Taser attacks are reduced by #{skill_color}#50%.##",
 
 				--Sneaky Bastard--
-				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#1## point of dodge for every #{risk}#2## points of encumbrance under #{risk}#30##, up to a maximum of #{skill_color}#10##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#1## point of dodge for every #{risk}#1## point of encumbrance under #{risk}#30##, up to a maximum of #{skill_color}#10.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#2%## of your maximum health.",
+				["menu_jail_diet_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## point of dodge for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_b1## point of dodge for every #{risk}#$skill_value_p1## point of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nWhile your armor is broken, the first attack you dodge restores #{skill_color}#$skill_value_p2## of your maximum health.",
 
 			--[[   CONTRACT KILLER SUBTREE   ]]--
 			--FORMERLY "SILENT KILLER"
@@ -5552,22 +5552,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   REVENANT SUBTREE   ]]--
 				--Running From Death--
 				["menu_nine_lives_beta_sc"] = "Running from Death",
-				["menu_nine_lives_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#25%## faster for #{skill_color}#10## seconds after reviving.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#20%## damage reduction for #{skill_color}#10## seconds after reviving.\n\nYour weapons are instantly reloaded after reviving.",
+				["menu_nine_lives_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou move #{skill_color}#$skill_value_b1## faster for #{skill_color}#$skill_value_b2## seconds after reviving.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## damage reduction for #{skill_color}#$skill_value_p2## seconds after reviving.\n\nYour weapons are instantly reloaded after reviving.",
 
 				--Undying--
 				["menu_running_from_death_beta_sc"] = "Undying",
-				["menu_running_from_death_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#100%## increase to bleedout health.\n\nACE: #{owned}#$pro##\nYou gain an additional #{skill_color}#100%## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",
+				["menu_running_from_death_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## increase to bleedout health.\n\nACE: #{owned}#$pro##\nYou gain an additional #{skill_color}#$skill_value_p1## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",
 
 				--What Doesn't Kill You Only Makes You Stronger--
 				["menu_what_doesnt_kill_beta_sc"] = "What Doesn't Kill",
-				["menu_what_doesnt_kill_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIncoming damage is reduced by #{skill_color}#1## point for each down you are closer to custody. \n\nACE: #{owned}#$pro##\nIncoming damage is reduced by an additional #{skill_color}#3## points at all times.",
+				["menu_what_doesnt_kill_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIncoming damage is reduced by #{skill_color}#$skill_value_b1## point for each down you are closer to custody. \n\nACE: #{owned}#$pro##\nIncoming damage is reduced by an additional #{skill_color}#$skill_value_p1## points at all times.",
 
 				--Swan Song
-				["menu_perseverance_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your health reaches #{skill_color}#0##, instead of instantly going down you enter the Swan Song state; you can fight for #{skill_color}#3## seconds with a #{skill_color}#60%## movement speed penalty.\n\n#{risk}#NOTE: Entering the Swan Song state will always end with you going down once it expires.##\n\nACE: #{owned}#$pro##\nYou can fight for an additional #{skill_color}#6## seconds.",
+				["menu_perseverance_desc_sc"] = "BASIC: #{owned}#$basic##\nWhen your health reaches #{skill_color}#0##, instead of instantly going down you enter the Swan Song state; you can fight for #{skill_color}#$skill_value_b1## seconds with a #{skill_color}#60%## movement speed penalty.\n\n#{risk}#NOTE: Entering the Swan Song state will always end with you going down once it expires.##\n\nACE: #{owned}#$pro##\nYou can fight for an additional #{skill_color}#$skill_value_p1## seconds.",
 
 				--Haunt--
 				["menu_haunt_sc"] = "Haunt",
-				["menu_haunt_desc_sc"] = "BASIC: #{owned}#$basic##\nKilling an enemy within #{skill_color}#18## meters has a #{skill_color}#5%## chance to spread panic in a #{skill_color}#12## meter radius around you for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: #{owned}#$pro##\nEnemy panic chance is increased by an additional #{skill_color}#15%## at all times.",
+				["menu_haunt_desc_sc"] = "BASIC: #{owned}#$basic##\nKilling an enemy within #{skill_color}#18## meters has a #{skill_color}#$skill_value_b1## chance to spread panic in a #{skill_color}#12## meter radius around you for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: #{owned}#$pro##\nEnemy panic chance from kills is increased by an additional #{skill_color}#$skill_value_p1## at all times.",
 
 				--Messiah--
 				["menu_pistol_beta_messiah_sc"] = "Messiah",
@@ -5576,7 +5576,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BRAWLER SUBTREE   ]]--
 				--Martial Arts--
 				["menu_martial_arts_beta_sc"] = "Martial Arts",
-				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#50%## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#100%## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done towards breaking a Bulldozer's armor plates and visor.",
+				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#$skill_value_b1## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#$skill_value_p1## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done towards breaking a Bulldozer's armor plates and visor.",
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "Counter Strike",
@@ -5584,19 +5584,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Pumping Iron--
 				["menu_steroids_beta_sc"] = "Pumping Iron",
-				["menu_steroids_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou swing and charge melee weapons #{skill_color}#20%## faster.\n\nACE: #{owned}#$pro##\nYou swing and charge melee weapons an additional #{skill_color}#30%## faster.",
+				["menu_steroids_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou swing and charge melee weapons #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYou swing and charge melee weapons an additional #{skill_color}#$skill_value_p1## faster.",
 
 				--Bloodthirst--
 				["menu_bloodthirst_sc"] = "Bloodthirst",
-				["menu_bloodthirst_desc_sc"] = "BASIC: #{owned}#$basic##\nWhenever you kill an enemy with a melee attack, you will gain a #{skill_color}#25%## increase in reload speed for #{skill_color}#10## seconds.\n\nACE: #{owned}#$pro##\nEvery non-melee kill you get will increase your next melee attack's damage by #{skill_color}#25%##, up to a maximum of #{skill_color}#100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",
+				["menu_bloodthirst_desc_sc"] = "BASIC: #{owned}#$basic##\nWhenever you kill an enemy with a melee attack, you will gain a #{skill_color}#$skill_value_b1## increase in reload speed for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nEvery non-melee kill you get will increase your next melee attack's damage by #{skill_color}#25%##, up to a maximum of #{skill_color}#100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",
 
 				--Frenzy--
 				["menu_wolverine_beta_sc"] = "Frenzy",
-				["menu_wolverine_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHealing is reduced by up to #{important_1}#30%## the closer you are to full health.\n\nDeflection is increased by up to #{skill_color}#20%## the closer you are to getting downed.\n\nDeflection reduces the amount of health damage you take, to a maximum of #{skill_color}#$deflection##, and is applied after other forms of damage reduction.\n\nACE: #{owned}#$pro##\nHealing is instead reduced by up to #{important_1}#75%## while deflection can be increased by up to #{skill_color}#50%.##",
+				["menu_wolverine_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nHealing is reduced by up to #{important_1}#30%## the closer you are to full health.\n\nDeflection is increased by up to #{skill_color}#$skill_value_b1## the closer you are to getting downed.\n\nDeflection reduces the amount of health damage you take, to a maximum of #{skill_color}#$deflection##, and is applied after other forms of damage reduction.\n\nACE: #{owned}#$pro##\nHealing is instead reduced by up to #{important_1}#75%## while deflection can be increased by up to #{skill_color}#$skill_value_p1.##",
 
 				--Berserker--
 				["menu_frenzy_sc"] = "Berserker",
-				["menu_frenzy_desc_sc"] = "BASIC: #{owned}#$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#100%## more melee and saw damage.\n\nACE: #{owned}#$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#50%## more damage with ranged weapons.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##"
+				["menu_frenzy_desc_sc"] = "BASIC: #{owned}#$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#$skill_value_b1## more melee and saw damage.\n\nACE: #{owned}#$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below #{skill_color}#100%##, you will do up to #{skill_color}#$skill_value_p1## more damage with ranged weapons.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##"
 
 
 	})

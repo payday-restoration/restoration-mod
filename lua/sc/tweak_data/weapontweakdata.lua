@@ -15590,7 +15590,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar18.panic_suppression_chance = 0.05
 			end
 
-			if self.ak12 then --Pawcio's KF2 AK-12 (AK-200 Prototype)	
+			if self.ak12 then --Pawcio's KF2 AK-12 (AK-200 Prototype)
 				self.ak12.recategorize = { "light_ar" }
 				self.ak12.damage_type = "assault_rifle"
 				self.ak12.tactical_reload = 1
@@ -15631,6 +15631,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.timers.reload_not_empty = 1.4
 				self.ak12.timers.reload_exit_not_empty = 1.2
 				self.ak12.timers.equip = 0.85
+			end
+
+			if self.galilace then --Pawcio's ACE 23
+				self.galilace.recategorize = { "light_ar" }
+				self.galilace.damage_type = "assault_rifle"
+				self.galilace.tactical_reload = 1
+				self.galilace.nato = true
+				self.galilace.AMMO_MAX = 150
+				self.galilace.CLIP_AMMO_MAX = 35
+				self.galilace.BURST_FIRE = false						
+				self.galilace.fire_mode_data.fire_rate = 0.07692307
+				self.galilace.kick = self.stat_info.kick_tables.moderate_kick
+				self.galilace.supported = true
+				self.galilace.ads_speed = 0.280
+				self.galilace.damage_falloff = {
+					start_dist = 2300,
+					end_dist = 6000,
+					min_mult = 0.4166
+				}
+				self.galilace.stats = {
+					damage = 24,
+					spread = 79,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 4,
+					reload = 20
+				}
+				self.galilace.stats_modifiers = nil
+				self.galilace.panic_suppression_chance = 0.05
+				self.galilace.timers = deep_clone(self.hajk.timers)
 			end
 
 			if self.scarl then --Pawcio's SCAR-L

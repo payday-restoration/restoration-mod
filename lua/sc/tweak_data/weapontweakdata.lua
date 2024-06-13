@@ -17252,6 +17252,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.kurisumasu.stats_modifiers = nil
 				self.kurisumasu.panic_suppression_chance = 0.05
+				self.kurisumasu.lock_slide = true
+				self.kurisumasu.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.kurisumasu.use_underbarrel_anim = "contraband"
 				self.kurisumasu.timers = deep_clone(self.contraband.timers)
 			end

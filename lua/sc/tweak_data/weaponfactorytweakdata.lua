@@ -2441,6 +2441,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mike4_2022 = {
 				translation = Vector3(0, 6.8, -0.583)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kurisumasu = {
+				translation = Vector3(0.015, 10.3, -0.579)
+			}
 
 	
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
@@ -33177,6 +33180,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				stats = { value = 0 },
 				custom_stats = {}
 			}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_kurisumasu.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_kurisumasu.default_blueprint, used_part_id) then
+						self.wpn_fps_ass_kurisumasu.adds[used_part_id] = {
+							"wpn_fps_ass_kurisumasu_o_rail_dummy"
+						}
+					end
+				end
+			end
 		end
 			if self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1 then
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1.supported = true
@@ -33186,6 +33198,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 
+				self.parts.wpn_fps_ass_kurisumasu_ro_carry.stance_mod = {
+					wpn_fps_ass_kurisumasu = {
+						translation = Vector3(0.02, -3, -0.25)
+					}
+				}
+
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.stats = deep_clone(grips.quickdraw_2)
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.custom_stats = deep_clone(grips.quickdraw_2)
@@ -33193,9 +33211,67 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.stats = { value = 0, concealment = 1, recoil = -2 }
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.custom_stats = nil
+				for k, used_part_id in ipairs(self.wpn_fps_ass_kurisumasu.uses_parts) do --fuck, lmao
+					if self.parts[used_part_id] and self.parts[used_part_id].type and not table.contains(self.wpn_fps_ass_kurisumasu.default_blueprint, used_part_id) then
+						if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_ass_kurisumasu_ro_carry" then
+							self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.override[used_part_id] = {
+								parent = "upper_reciever",
+								stance_mod = {
+									wpn_fps_ass_kurisumasu = {
+										translation = self.parts[used_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,0,-4.5)
+									}
+								}
+							}
+							if self.parts[used_part_id].adds then
+								for i, add_part_id in ipairs(self.parts[used_part_id].adds) do
+									if self.parts[add_part_id] and self.parts[add_part_id].sub_type then
+										if self.parts[add_part_id].sub_type == "second_sight" then
+											self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.override[add_part_id] = {
+												stance_mod = {
+													wpn_fps_ass_kurisumasu = {
+														translation = self.parts[add_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,0,-4.5)
+													}
+												}
+											}
+										end
+									end
+								end
+							end
+						end
+					end
+				end
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.stats = { value = 0, concealment = 1, spread = -1 }
 				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.custom_stats = nil
+				for k, used_part_id in ipairs(self.wpn_fps_ass_kurisumasu.uses_parts) do --fuck, lmao
+					if self.parts[used_part_id] and self.parts[used_part_id].type and not table.contains(self.wpn_fps_ass_kurisumasu.default_blueprint, used_part_id) then
+						if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_ass_kurisumasu_ro_carry" then
+							self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.override[used_part_id] = {
+								parent = "upper_reciever",
+								stance_mod = {
+									wpn_fps_ass_kurisumasu = {
+										translation = self.parts[used_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,0,-4.5)
+									}
+								}
+							}
+							if self.parts[used_part_id].adds then
+								for i, add_part_id in ipairs(self.parts[used_part_id].adds) do
+									if self.parts[add_part_id] and self.parts[add_part_id].sub_type then
+										if self.parts[add_part_id].sub_type == "second_sight" then
+											self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.override[add_part_id] = {
+												stance_mod = {
+													wpn_fps_ass_kurisumasu = {
+														translation = self.parts[add_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,0,-4.5)
+													}
+												}
+											}
+										end
+									end
+								end
+							end
+						end
+					end
+				end
 
 				self.parts.wpn_fps_ass_kurisumasu_b_m16.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_b_m16.stats = deep_clone(barrels.long_b2_stats)
@@ -33242,6 +33318,36 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.override.wpn_fps_ass_kurisumasu_ur_m16a2 = {
 					override = {}
 				}
+				for k, used_part_id in ipairs(self.wpn_fps_ass_kurisumasu.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type and not table.contains(self.wpn_fps_ass_kurisumasu.default_blueprint, used_part_id) then
+						if self.parts[used_part_id].type == "sight" and used_part_id ~= "wpn_fps_ass_kurisumasu_ro_carry" then
+							self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.override[used_part_id] = {
+								a_obj = "a_o_gn",
+								parent = "upper_reciever",
+								stance_mod = {
+									wpn_fps_ass_kurisumasu = {
+										translation = self.parts[used_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,-9.5,-1.45)
+									}
+								}
+							}
+							if self.parts[used_part_id].adds then
+								for i, add_part_id in ipairs(self.parts[used_part_id].adds) do
+									if self.parts[add_part_id] and self.parts[add_part_id].sub_type then
+										if self.parts[add_part_id].sub_type == "second_sight" then
+											self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.override[add_part_id] = {
+												stance_mod = {
+													wpn_fps_ass_kurisumasu = {
+														translation = self.parts[add_part_id].stance_mod.wpn_fps_ass_kurisumasu.translation + Vector3(0,-9.5,-1.45)
+													}
+												}
+											}
+										end
+									end
+								end
+							end
+						end
+					end
+				end
 			end		
 
 	--[[ CARL'S MODS ]]

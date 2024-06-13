@@ -33154,13 +33154,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_ass_kurisumasu_b_std then
-
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.supported = true
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.custom_stats = nil
 			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.supported = true
 			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.stats = deep_clone(stocks.adj_rec_stats)
 			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.custom_stats = deep_clone(stocks.adj_rec_stats)
+
+			self.parts.wpn_fps_ass_kurisumasu_fg_kac.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_fg_kac.stats = { value = 4, concealment = 1, recoil = -2 }
+			self.parts.wpn_fps_ass_kurisumasu_fg_kac.custom_stats = nil
+			self.parts.wpn_fps_ass_kurisumasu_fg_ris2.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_fg_ris2.stats = { value = 4, concealment = -1, recoil = 2 }
+			self.parts.wpn_fps_ass_kurisumasu_fg_ris2.custom_stats = nil
+
+			self.parts.wpn_fps_ass_kurisumasu_gb_windham.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_gb_windham.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kurisumasu_gb_windham.custom_stats = nil
 
 			self.wpn_fps_ass_kurisumasu.override = self.wpn_fps_ass_kurisumasu.override or {}
 			self.wpn_fps_ass_kurisumasu.override.wpn_fps_upg_m4_s_standard = {
@@ -33175,10 +33185,50 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
 				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
-				
+
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.stats = deep_clone(grips.quickdraw_2)
 				self.parts.wpn_fps_ass_kurisumasu_g_a1.custom_stats = deep_clone(grips.quickdraw_2)
+
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.stats = { value = 0, concealment = 1, recoil = -2 }
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a1.custom_stats = nil
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.stats = { value = 0, concealment = 1, spread = -1 }
+				self.parts.wpn_fps_ass_kurisumasu_ur_m16a2.custom_stats = nil
+
+				self.parts.wpn_fps_ass_kurisumasu_b_m16.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_b_m16.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_ass_kurisumasu_b_m16.custom_stats = deep_clone(barrels.long_b2_stats)
+
+				self.parts.wpn_fps_ass_kurisumasu_fg_m203.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_fg_m203.stats = {
+					value = 4,
+					concealment = -1,
+					recoil = 4,
+					spread = -1
+				}
+				self.parts.wpn_fps_ass_kurisumasu_fg_m203.adds = {}
+
+				self.parts.wpn_fps_ass_kurisumasu_fg_kacm5.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_fg_kacm5.stats = {
+					value = 4,
+					concealment = 1,
+					recoil = -4,
+					spread = 1
+				}
+				self.parts.wpn_fps_ass_kurisumasu_fg_kacm5.adds = {}
+
+				self.parts.wpn_fps_ass_kurisumasu_m_stanag20.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_m_stanag20.stats = {
+					value = 2,
+					concealment = 1,
+					reload = 5,
+					extra_ammo = -10
+				}
+				self.parts.wpn_fps_ass_kurisumasu_m_stanag20.custom_stats = { 
+					ads_speed_mult = 0.975
+				}
 
 				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.supported = true
 				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.stats = {

@@ -3956,19 +3956,20 @@ function PlayerStandard:_start_action_reload(t)
 				empty_reload = weapon:get_ammo_max_per_clip() - weapon:get_ammo_remaining_in_clip()
 			end
 	
-			local tweak_data = weapon:weapon_tweak_data()
+			local weapon_tweak = weapon:weapon_tweak_data()
+			local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 			local reload_anim = "reload"
 			local reload_prefix = weapon:reload_prefix() or ""
-			local reload_name_id = tweak_data.animations.reload_name_id or weapon.name_id
+			local reload_name_id = weapon_tweak.animations.reload_name_id or wep_tweak.use_underbarrel_anim or weapon.name_id
 			local reload_default_expire_t = 2.6
-			local reload_tweak = tweak_data.timers.reload_empty		
+			local reload_tweak = weapon_tweak.timers.reload_empty		
 			
 			weapon:start_reload() --Executed earlier to get accurate reload timers, otherwise may mess up normal and tactical for shotguns.
 	
 			if is_reload_not_empty then
 				reload_anim = "reload_not_empty"
 				reload_default_expire_t = 2.2
-				reload_tweak = tweak_data.timers.reload_not_empty
+				reload_tweak = weapon_tweak.timers.reload_not_empty
 			end
 	
 			local reload_ids = Idstring(string.format("%s%s_%s", reload_prefix, reload_anim, reload_name_id))
@@ -4268,6 +4269,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	if not action_forbidden then
 		self._toggle_underbarrel_wanted = false
 		local weapon = self._equipped_unit:base()
+		local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 
 		if weapon.record_fire_mode then
 			weapon:record_fire_mode()
@@ -4292,12 +4294,12 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 			local switch_delay = 1
 
 			if underbarrel_state then
-				anim_ids = Idstring("underbarrel_enter_" .. weapon.name_id)
+				anim_ids = Idstring("underbarrel_enter_" .. (wep_tweak.use_underbarrel_anim or weapon.name_id))
 				switch_delay = underbarrel_tweak.timers.equip_underbarrel
 
 				self:set_animation_state("underbarrel")
 			else
-				anim_ids = Idstring("underbarrel_exit_" .. weapon.name_id)
+				anim_ids = Idstring("underbarrel_exit_" .. (wep_tweak.use_underbarrel_anim or weapon.name_id))
 				switch_delay = underbarrel_tweak.timers.unequip_underbarrel
 
 				self:set_animation_state("standard")

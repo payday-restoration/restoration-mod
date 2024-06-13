@@ -25900,7 +25900,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_tti_dracarys.override = self.wpn_fps_shot_tti_dracarys.override or {}
 
 			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_m4_s_standard = {
-				stats = { value = 0},
+				stats = { value = 0 },
 				custom_stats = {}
 			}
 			self.wpn_fps_shot_tti_dracarys.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_semi_override)
@@ -32869,8 +32869,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -3
 			}
 			self.parts.wpn_fps_pis_vp70_m_ext.custom_stats = { ads_speed_mult = 1.05 }
-
 		end
+
 		if self.parts.wpn_fps_shot_fpsix_shellrack then
 			self.parts.wpn_fps_shot_fpsix_o_sgcqb.supported = true
 			self.parts.wpn_fps_shot_fpsix_o_sgcqb.stats = { value = 0 }
@@ -33152,6 +33152,47 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_fang45_s_folded.stats.value = 0
 			self.parts.wpn_fps_smg_fang45_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
 		end
+
+		if self.parts.wpn_fps_ass_kurisumasu_b_std then
+
+			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.custom_stats = nil
+			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.stats = deep_clone(stocks.adj_rec_stats)
+			self.parts.wpn_fps_ass_kurisumasu_s_sopmod.custom_stats = deep_clone(stocks.adj_rec_stats)
+
+			self.wpn_fps_ass_kurisumasu.override = self.wpn_fps_ass_kurisumasu.override or {}
+			self.wpn_fps_ass_kurisumasu.override.wpn_fps_upg_m4_s_standard = {
+				stats = { value = 0 },
+				custom_stats = {}
+			}
+		end
+			if self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1 then
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a1.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+				self.parts.wpn_fps_ass_kurisumasu_s_usgi_a2.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+				
+				self.parts.wpn_fps_ass_kurisumasu_g_a1.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_g_a1.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_kurisumasu_g_a1.custom_stats = deep_clone(grips.quickdraw_2)
+
+				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.supported = true
+				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.stats = {
+					value = 0,
+					concealment = 1,
+					spread = -1
+				}
+				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.override.wpn_fps_ass_kurisumasu_ur_m16a1 = {
+					override = {}
+				}
+				self.parts.wpn_fps_ass_kurisumasu_o_rail_gooseneck.override.wpn_fps_ass_kurisumasu_ur_m16a2 = {
+					override = {}
+				}
+			end		
 
 	--[[ CARL'S MODS ]]
 

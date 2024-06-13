@@ -15557,9 +15557,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar18.recategorize = { "light_ar" }
 				self.ar18.damage_type = "assault_rifle"
 				self.ar18.tactical_reload = 1
-				self.ar18.nato = true
-				self.ar18.desc_id = "bm_g36_sc_desc"
-				self.ar18.has_description = true				
+				self.ar18.nato = true			
 				self.ar18.BURST_FIRE = false
 				self.ar18.ADAPTIVE_BURST_SIZE = false
 				self.ar18.fire_mode_data.fire_rate = 0.08
@@ -17220,6 +17218,44 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vp70.timers = deep_clone(self.ppk.timers)
 			end
 
+			if self.kurisumasu then
+				self.kurisumasu.recategorize = { "light_ar" }
+				self.kurisumasu.damage_type = "assault_rifle"
+				self.kurisumasu.tactical_reload = 1
+				self.kurisumasu.nato = true			
+				self.kurisumasu.BURST_FIRE = false
+				self.kurisumasu.ADAPTIVE_BURST_SIZE = false
+				self.kurisumasu.CLIP_AMMO_MAX = 30
+				self.kurisumasu.AMMO_MAX = 112
+				self.kurisumasu.fire_mode_data.fire_rate = 0.0833333333
+				self.kurisumasu.kick = self.stat_info.kick_tables.moderate_kick
+				self.kurisumasu.supported = true
+				self.kurisumasu.ads_speed = 0.320
+				self.kurisumasu.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 6000,
+					min_mult = 0.4166
+				}
+				self.kurisumasu.stats = {
+					damage = 24,
+					spread = 79,
+					recoil = 83,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 21,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.kurisumasu.stats_modifiers = nil
+				self.kurisumasu.panic_suppression_chance = 0.05
+				self.kurisumasu.use_underbarrel_anim = "contraband"
+				self.kurisumasu.timers = deep_clone(self.contraband.timers)
+			end
+
 		--[[     RJC9000'S MODS     ]]--
 			
 			if self.madsen_lar then
@@ -17821,8 +17857,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.LOCK_BURST = true
 				self.ksp45.BURST_FIRE = 3
 				self.ksp45.BURST_DELAY = 0.083
-				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1.2892857
-				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.8
+				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1
+				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.55
 				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
 				self.ksp45.panic_suppression_chance = 0.05

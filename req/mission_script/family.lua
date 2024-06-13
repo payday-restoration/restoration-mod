@@ -14,6 +14,12 @@ local hunt_projob = false
 		hunt_projob = true
 	end
 
+local disabled = {
+	values = {
+		enabled = false
+	}
+}	
+
 return {
 	--Pro Job PONR 
 	[101095] = {
@@ -21,11 +27,7 @@ return {
 		hunt = hunt_projob
 	},
 	--Disable Titan Cams
-	[102211] = {
-		values = {
-			enabled = false
-		}
-	},
+	[102211] = disabled,
 	-- restores unused sniper spawn
 	[100370] = {
 		values = {
@@ -33,20 +35,8 @@ return {
 		}
 	},
 	--disable the bad van escape spots
-	[100754] = {
-		values = {
-			enabled = false
-		}
-	},
-	[100755] = {
-		values = {
-			enabled = false
-		}
-	},
+	[100754] = disabled,
+	[100755] = disabled,
 	--Disable the SWAT Turret, 2015 really meant the slowly removal of reinforce units
-	[102124] = {
-		values = {
-			enabled = false
-		}
-	}
+	[102124] = disabled
 }	

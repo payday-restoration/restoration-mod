@@ -11,6 +11,11 @@ local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_n
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
+local marioinatophat_is_in_fwb_chance = 0.15
+
+	if math.random() < marioinatophat_is_in_fwb_chance then
+		dave = "units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave"
+	end	
 
 	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
@@ -121,6 +126,12 @@ local windows_swat = {
 }
 	
 return {
+	--Glock ready to shoot (15% chance)
+	[103609] = {
+		values = {
+			enemy = dave
+		}
+	},
 	-- Disable forced manager flee objective
 	[100665] = {
 		values = {

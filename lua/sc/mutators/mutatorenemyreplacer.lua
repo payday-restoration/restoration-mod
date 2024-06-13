@@ -196,6 +196,12 @@ function MutatorEnemyReplacer:setup()
 	if not PackageManager:loaded("packages/miscassetsmutators") then
 		PackageManager:load("packages/miscassetsmutators")
 	end
+	
+	--Make Snipers be able to use SOs with SWAT access
+	tweak_data.character.sniper.access = {
+		"swat",
+		"sniper"
+	}
 end
 
 function MutatorEnemyReplacer:name(lobby_data)

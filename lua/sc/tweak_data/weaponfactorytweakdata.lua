@@ -2444,6 +2444,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kurisumasu = {
 				translation = Vector3(0.015, 10.3, -0.579)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_galilace = {
+				translation = Vector3(-0.01, 6.2, -3.48)
+			}
 
 	
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
@@ -24180,6 +24183,45 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 		--WEAPONS
+			if self.parts.wpn_fps_upg_galilace_barrel_ace21 then --Galil ACE 23
+				self.parts.wpn_fps_upg_galilace_barrel_ace22.supported = true
+				self.parts.wpn_fps_upg_galilace_barrel_ace22.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_upg_galilace_barrel_ace22.custom_stats = deep_clone(barrels.short_b1_stats)
+
+				self.parts.wpn_fps_upg_galilace_barrel_ace21.supported = true
+				self.parts.wpn_fps_upg_galilace_barrel_ace21.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_upg_galilace_barrel_ace21.custom_stats = deep_clone(barrels.short_b3_stats)
+
+				self.parts.wpn_fps_upg_galilace_stock_extended.supported = true
+				self.parts.wpn_fps_upg_galilace_stock_extended.stats = { value = 0, recoil = 2, concealment = -1 }
+				self.parts.wpn_fps_upg_galilace_stock_extended.custom_stats = nil
+
+				self.parts.wpn_fps_upg_galilace_stock_folding.supported = true
+				self.parts.wpn_fps_upg_galilace_stock_folding.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_upg_galilace_stock_folding.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+
+				self.parts.wpn_fps_upg_galilace_stock_removed.supported = true
+				self.parts.wpn_fps_upg_galilace_stock_removed.stats = deep_clone(stocks.remove_folder_stats)
+				self.parts.wpn_fps_upg_galilace_stock_removed.custom_stats = deep_clone(stocks.remove_folder_stats)
+
+				self.wpn_fps_ass_galilace.override = self.wpn_fps_ass_galilace.override or {}
+				self.wpn_fps_ass_galilace.override.wpn_fps_upg_m4_s_standard = {
+					stats = { value = 0 },
+					custom_stats = {}
+				}
+				self.wpn_fps_ass_galilace.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+					stats = { recoil = 2, concealment = -1 }
+				}
+				self.wpn_fps_ass_galilace.override.wpn_fps_smg_schakal_vg_surefire = {
+					stats = { recoil = 2, concealment = -1 }
+				}
+				self.wpn_fps_ass_galilace.override.wpn_fps_upg_vg_ass_smg_stubby = {
+					stats = { value = 0 }
+				}
+
+				self.wpn_fps_ass_galilace_npc.override = deep_clone(self.wpn_fps_ass_galilace.override)
+			end
+
 			if self.parts.wpn_fps_ass_skspug_rec then --Pawcio's SKS Pug
 				self.parts.wpn_fps_ass_skspug_mag.supported = true
 				self.parts.wpn_fps_ass_skspug_mag.stats = { value = 0 }
@@ -29664,7 +29706,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 		
-
 	--[[ GAMBYT'S MODS ]]
 
 		--Gambyt's Vanilla Mod Pack

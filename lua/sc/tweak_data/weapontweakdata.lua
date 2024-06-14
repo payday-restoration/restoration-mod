@@ -15666,6 +15666,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.galilace.stats_modifiers = nil
 				self.galilace.panic_suppression_chance = 0.05
+				self.galilace.lock_slide = true
+				self.galilace.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.galilace.timers = deep_clone(self.hajk.timers)
 			end
 

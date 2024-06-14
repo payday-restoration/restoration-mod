@@ -15066,6 +15066,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.duke1911.timers.reload_exit_empty = 0.75
 			end
 
+			if self.zenith then
+				self.zenith.recategorize = { "heavy_pis" }
+				self.zenith.damage_type = "handcannon"
+				self.zenith.fire_mode_data.fire_rate = 0.3
+				self.zenith.AMMO_MAX = 30
+				self.zenith.CLIP_AMMO_MAX = 10
+				self.zenith.kick = self.stat_info.kick_tables.vertical_kick
+				self.zenith.supported = true
+				self.zenith.ads_speed = 0.200
+				self.zenith.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 4000,
+					min_mult = 0.25
+				}
+				self.zenith.stats = {
+					damage = 60,
+					spread = 65,
+					recoil = 62,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.zenith.stats_modifiers = nil
+				self.zenith.panic_suppression_chance = 0.05
+				self.zenith.armor_piercing_chance = 0.5
+				self.zenith.lock_slide = true
+				self.zenith.timers = deep_clone(self.lemming.timers)
+			end
+
 			if self.ppsh then --Pawcio's PPSH
 				self.ppsh.recategorize = {"heavy_smg"}
 				self.ppsh.damage_type = "machine_gun"
@@ -15240,7 +15275,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp153.timers.shotgun_reload_exit_empty = 1.65
 				self.mp153.timers.shotgun_reload_exit_not_empty = 0.75
 			end
-			
+
 			if self.wmtx then --Pawcio's Widomaker TX
 				self.wmtx.recategorize = { "heavy_shot" }
 				self.wmtx.damage_type = "shotgun"

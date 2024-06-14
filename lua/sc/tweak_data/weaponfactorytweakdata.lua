@@ -683,7 +683,8 @@ local muzzle_device = {
 		muzzle_a_stats = {
 			value = 3,
 			spread = -1,
-			concealment = 1
+			concealment = 1,
+			suppression = 12
 		},
 		supp_a_stats = {
 			suppression = 12,
@@ -1757,7 +1758,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.has_description = true
 	--self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
-	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.suppression = 12
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		
@@ -3266,7 +3266,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_pis_ns_flash.has_description = true
 	self.parts.wpn_fps_upg_pis_ns_flash.desc_id = "bm_wp_upg_flash_hider"
 	--self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
-	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 	self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
@@ -24479,6 +24478,30 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				table.insert(self.wpn_fps_shot_wmtx.uses_parts, "wpn_fps_shot_wmtx_mag_ext")
 			end
 
+			if self.parts.wpn_fps_upg_zenith_mag_ext then
+				self.parts.wpn_fps_upg_zenith_mag_ext.supported = true
+				self.parts.wpn_fps_upg_zenith_mag_ext.stats = {
+					value = 5,
+					extra_aammo = 12,
+					concealment = -2,
+					reload = -3
+				}
+				self.parts.wpn_fps_upg_zenith_mag_ext.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+				
+				self.parts.wpn_fps_upg_zenith_supp.custom_stats = {}
+				self.parts.wpn_fps_upg_zenith_supp.has_description = true
+				self.parts.wpn_fps_upg_zenith_supp.desc_id = "bm_wp_upg_suppressor"
+				self.parts.wpn_fps_upg_zenith_supp.stats = {
+					value = 2,
+					suppression = 12,
+					alert_size = -1
+				}
+				self.parts.wpn_fps_upg_zenith_supp.custom_stats = {}
+				self.parts.wpn_fps_upg_zenith_supp.perks = {"silencer"}
+			end
+
 			if self.parts.wpn_fps_upg_lewis_barrel2 then -- Pawcio's Louis Pills
 				self.parts.wpn_fps_upg_lewis_barrel2.supported = true
 				self.parts.wpn_fps_upg_lewis_barrel2.stats = {
@@ -25731,7 +25754,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.desc_id = "bm_wp_upg_flash_hider"
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.has_description = true
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats = deep_clone(muzzle_device.muzzle_a_stats)
-				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats.suppression = 12
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 
@@ -35074,7 +35096,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_pm_ns_comp.desc_id = "bm_wp_upg_flash_hider"
 			self.parts.wpn_fps_pis_pm_ns_comp.has_description = true
 			self.parts.wpn_fps_pis_pm_ns_comp.stats = deep_clone(muzzle_device.muzzle_a_stats)
-			self.parts.wpn_fps_pis_pm_ns_comp.stats.suppression = 12
 			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
 			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 
@@ -37838,6 +37859,80 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 			end
 		end
+	end
+
+	if self.parts.wpn_fps_upg_ns_ass_smg_tromix then
+		self.parts.wpn_fps_upg_ns_ass_smg_tromix.supported = true
+		self.parts.wpn_fps_upg_ns_ass_smg_tromix.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_tromix.custom_stats = nil
+	end
+
+	if self.parts.wpn_fps_upg_ns_m82 then
+		self.parts.wpn_fps_upg_ns_m82.supported = true
+		self.parts.wpn_fps_upg_ns_m82.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
+		self.parts.wpn_fps_upg_ns_m82.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+
+		self.parts.wpn_fps_upg_ns_m82b.supported = true
+		self.parts.wpn_fps_upg_ns_m82b.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
+		self.parts.wpn_fps_upg_ns_m82b.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+
+		self.parts.wpn_fps_upg_ns_aw50.supported = true
+		self.parts.wpn_fps_upg_ns_aw50.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
+		self.parts.wpn_fps_upg_ns_aw50.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+	end
+
+	if self.parts.wpn_fps_upg_ns_pis_tact_flash then
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.supported = true
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.has_description = true
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.desc_id = "bm_wp_upg_flash_hider"
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+		
+		self.parts.wpn_fps_upg_ns_pis_yhm.supported = true
+		self.parts.wpn_fps_upg_ns_pis_yhm.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_upg_ns_pis_yhm.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ns_pis_major.supported = true
+		self.parts.wpn_fps_upg_ns_pis_major.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_pis_major.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ns_pis_aek919.supported = true
+		self.parts.wpn_fps_upg_ns_pis_aek919.stats = deep_clone(muzzle_device.muzzle_rec_stats)
+		self.parts.wpn_fps_upg_ns_pis_aek919.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+
+
+		self.parts.wpn_fps_upg_ns_ass_mb556k.supported = true
+		self.parts.wpn_fps_upg_ns_ass_mb556k.has_description = false
+		self.parts.wpn_fps_upg_ns_ass_mb556k.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
+		self.parts.wpn_fps_upg_ns_ass_mb556k.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+
+		self.parts.wpn_fps_upg_ns_ass_tbrake.supported = true
+		self.parts.wpn_fps_upg_ns_ass_tbrake.has_description = false
+		self.parts.wpn_fps_upg_ns_ass_tbrake.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_ass_tbrake.custom_stats = nil
+
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.supported = true
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.has_description = false
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+		
+		self.parts.wpn_fps_upg_ns_ass_vortex.supported = true
+		self.parts.wpn_fps_upg_ns_ass_vortex.has_description = true
+		self.parts.wpn_fps_upg_ns_ass_vortex.desc_id = "bm_wp_upg_flash_hider"
+		self.parts.wpn_fps_upg_ns_ass_vortex.stats = deep_clone(muzzle_device.muzzle_a_stats)
+		self.parts.wpn_fps_upg_ns_ass_vortex.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+		self.parts.wpn_fps_upg_ns_ass_vortex.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+
+
+		self.parts.wpn_fps_upg_ns_shot_gk_01.supported = true
+		self.parts.wpn_fps_upg_ns_shot_gk_01.stats = deep_clone(muzzle_device.muzzle_c_stats)
+		self.parts.wpn_fps_upg_ns_shot_gk_01.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+
+		self.parts.wpn_fps_upg_ns_shot_nomad.supported = true
+		self.parts.wpn_fps_upg_ns_shot_nomad.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_upg_ns_shot_nomad.custom_stats = {}			
+
 	end
 
 

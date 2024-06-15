@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
 	<diesel materials="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<sequence_manager file="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -222,5 +222,9 @@
 	<lights>
 		<light multiplier="identity" far_range="400" name="ls_light" enabled="true" type="spot|specular" />
 	</lights>
+	
+	<effects>
+		<effect_spawner name="skeleton_eye_sans" enabled="true" object="Head" effect="effects/particles/character/skeleton_eye_blue"/>
+	</effects>
 
 </dynamic_object>

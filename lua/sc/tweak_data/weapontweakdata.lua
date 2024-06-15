@@ -4541,7 +4541,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.sounds.magazine_empty = nil
 	self.contender.sounds.magazine_empty = nil
 
-	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','x_olympic','contraband','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor','hcar','kacchainsaw'}
+	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic','x_olympic','contraband','aug','fal','scar','m249','par','m60','aa12','sko12','x_sko12','victor','hcar','kacchainsaw'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_rifle_slide_lock"
@@ -15183,6 +15183,41 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pps43.stats_modifiers = nil
 				self.pps43.panic_suppression_chance = 0.05
 				self.pps43.timers = deep_clone(self.m45.timers)
+			end
+
+			if self.aug9mm then --Pawcio's MW2019 AUG
+				self.aug9mm.recategorize = {"light_smg"}
+				self.aug9mm.damage_type = "machine_gun"
+				self.aug9mm.sounds.magazine_empty = "wp_pistol_slide_lock"
+				self.aug9mm.fire_mode_data.fire_rate = 0.081081
+				self.aug9mm.CAN_TOGGLE_FIREMODE = true
+				self.aug9mm.CLIP_AMMO_MAX = 25
+				self.aug9mm.AMMO_MAX = 75
+				self.aug9mm.kick = self.stat_info.kick_tables.moderate_kick
+				self.aug9mm.supported = true
+				self.aug9mm.ads_speed = 0.200
+				self.aug9mm.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 4700,
+					min_mult = 0.3333
+				}
+				self.aug9mm.stats = {
+					damage = 24,
+					spread = 63,
+					recoil = 81,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 26,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.aug9mm.stats_modifiers = nil
+				self.aug9mm.panic_suppression_chance = 0.05
+				self.aug9mm.timers = deep_clone(self.corgi.timers)
 			end
 
 			if self.lewis then --Pawcio's Lewis Gun

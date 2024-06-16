@@ -24503,7 +24503,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_zenith_mag_ext.supported = true
 				self.parts.wpn_fps_upg_zenith_mag_ext.stats = {
 					value = 5,
-					extra_aammo = 12,
+					extra_ammo = 12,
 					concealment = -2,
 					reload = -3
 				}

@@ -75,6 +75,15 @@ local optsDefend_and_Sniper_SO = {
 	interval = 2,
     so_action = "AI_sniper"
 }
+local optsrespawn_dozer = {
+	on_executed = { 
+		{id = 101320, delay = 30, delay_rand = 10}
+	},
+	elements = { 
+		101320
+	},
+    event = "death"
+}
 
 
 return {
@@ -171,6 +180,13 @@ return {
             Vector3(-2781.016, -23341.270, 7115.008),
             Rotation(90, -0, -0),
             optsDefend_and_Sniper_SO
+        ),
+		restoration:gen_dummytrigger(
+            400014,
+            "respawn_bulldozer",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_dozer
         )
     }
 }

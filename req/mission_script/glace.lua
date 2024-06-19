@@ -24,9 +24,6 @@ return {
 		values = {
 			enemy = bulldozer,
 			participate_to_group_ai = true
-		},
-		on_executed = {
-			{id = 105615, delay = 30, delay_rand = 10}
 		}
 	},
 	--trigger custom spawns during escape part

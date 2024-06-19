@@ -774,7 +774,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
-				"units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle"
+				"units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
 			},
 			heavy_2 = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
@@ -782,7 +782,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
-				"units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun"
+				"units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
 			},
 			shield = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",

@@ -106,7 +106,7 @@ local optsgroundSniper_SO_1_1 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400026, delay = 30 }
+		{ id = 400026, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_1_2 = {
@@ -117,7 +117,7 @@ local optsgroundSniper_SO_1_2 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400027, delay = 30 }
+		{ id = 400027, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_1_3 = {
@@ -128,7 +128,7 @@ local optsgroundSniper_SO_1_3 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400028, delay = 30 }
+		{ id = 400028, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_1_4 = {
@@ -139,7 +139,7 @@ local optsgroundSniper_SO_1_4 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400025, delay = 30 }
+		{ id = 400025, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_2_1 = {
@@ -150,7 +150,7 @@ local optsgroundSniper_SO_2_1 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400030, delay = 30 }
+		{ id = 400030, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_2_2 = {
@@ -161,7 +161,7 @@ local optsgroundSniper_SO_2_2 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400031, delay = 20 }
+		{ id = 400031, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_2_3 = {
@@ -172,7 +172,7 @@ local optsgroundSniper_SO_2_3 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400032, delay = 30 }
+		{ id = 400032, delay = 15 }
 	}
 }
 local optsgroundSniper_SO_2_4 = {
@@ -183,7 +183,7 @@ local optsgroundSniper_SO_2_4 = {
 	interval = 2,
     so_action = "AI_sniper",
 	on_executed = { 
-		{ id = 400029, delay = 30 }
+		{ id = 400029, delay = 15 }
 	}
 }
 local spawnSnipers_1 = {

@@ -123,7 +123,7 @@ return {
 			{ id = 400013, delay = 0 },
 			{ id = 400014, delay = 0 },
 			{ id = 400015, delay = 0 },
-			{ id = 400055, delay = 30 },
+			{ id = 400055, delay = 90 },
 			{ id = 400045, delay = 0 }
 		}
 	},

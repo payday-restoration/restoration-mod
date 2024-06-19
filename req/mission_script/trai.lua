@@ -24,6 +24,10 @@ local bravo_3 = {
 	}
 }
 return {
+	--Call Bravos on startup
+	[100017] = {
+		spawn_bravos = true
+	},
 	--Trigger Hunt (Endless Assault)
 	[103743] = {
 		hunt = true

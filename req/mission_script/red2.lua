@@ -11,20 +11,11 @@ local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_n
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local chance_dozer_vault_1 = math.random()
-local chance_dozer_vault_2 = math.random() 
-local chance_dozer_vault_3 = math.random() 
-local chance_dozer_vault_4 = math.random() 
-local chance_dozer_vault_5 = math.random()
-local dozer_table = {
-	dozer_green = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
-	dozer_black = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-	dozer_skull = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
-	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-}
+local marioinatophat_is_in_fwb_chance = 0.15
+
+	if math.random() < marioinatophat_is_in_fwb_chance then
+		dave = "units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave"
+	end	
 
 	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
@@ -73,101 +64,6 @@ end
 	
 	if difficulty >= 5 then
 		stair_blockade_chance = 100 --100% to always spawn 3 tasers+1 heavy swat in staircase escape (145+ throwback)
-	end	
-
-	--Setting up random vault dozers for Mayhem+, that's rad!
-	if difficulty == 6 or difficulty == 7 then
-		if chance_dozer_vault_1 < 0.35 then
-			vault_dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_vault_1 < 0.70 then
-			vault_dozer_1 = dozer_table.dozer_black
-		else
-			vault_dozer_1 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_vault_2 < 0.25 then
-			vault_dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_vault_2 < 0.50 then
-			vault_dozer_2 = dozer_table.dozer_black
-		else
-			vault_dozer_2 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_vault_3 < 0.25 then
-			vault_dozer_3 = dozer_table.dozer_skull
-		elseif chance_dozer_vault_3 < 0.50 then
-			vault_dozer_3 = dozer_table.dozer_black
-		else
-			vault_dozer_3 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_vault_4 < 0.25 then
-			vault_dozer_4 = dozer_table.dozer_skull
-		elseif chance_dozer_vault_4 < 0.50 then
-			vault_dozer_4 = dozer_table.dozer_black
-		else
-			vault_dozer_4 = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_vault_5 < 0.25 then
-			vault_dozer_5 = dozer_table.dozer_skull
-		elseif chance_dozer_vault_5 < 0.50 then
-			vault_dozer_5 = dozer_table.dozer_black
-		else
-			vault_dozer_5 = dozer_table.dozer_green
-		end
-	end
-
-	if difficulty == 8 then
-		if chance_dozer_vault_1 < 0.25 then
-			vault_dozer_1 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_vault_1 < 0.50 then
-			vault_dozer_1 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_vault_1 < 0.75 then
-			vault_dozer_1 = dozer_table.dozer_titan
-		else
-			vault_dozer_1 = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_vault_2 < 0.25 then
-			vault_dozer_2 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_vault_2 < 0.50 then
-			vault_dozer_2 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_vault_2 < 0.75 then
-			vault_dozer_2 = dozer_table.dozer_titan
-		else
-			vault_dozer_2 = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_vault_3 < 0.25 then
-			vault_dozer_3 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_vault_3 < 0.50 then
-			vault_dozer_3 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_vault_3 < 0.75 then
-			vault_dozer_3 = dozer_table.dozer_titan
-		else
-			vault_dozer_3 = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_vault_4 < 0.25 then
-			vault_dozer_4 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_vault_4 < 0.50 then
-			vault_dozer_4 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_vault_4 < 0.75 then
-			vault_dozer_4 = dozer_table.dozer_titan
-		else
-			vault_dozer_4 = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_vault_5 < 0.25 then
-			vault_dozer_5 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_vault_5 < 0.50 then
-			vault_dozer_5 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_vault_5 < 0.75 then
-			vault_dozer_5 = dozer_table.dozer_titan
-		else
-			vault_dozer_5 = dozer_table.dozer_zeal_benelli
-		end
 	end
 
 	if difficulty <= 6 then
@@ -212,7 +108,7 @@ local titan_shield = {
 	values = {
         enemy = titan_shield
 	}
-
+}
 local tswat1 = {
 	values = {
 		enemy = titan_swat_1
@@ -230,6 +126,12 @@ local windows_swat = {
 }
 	
 return {
+	--Glock ready to shoot (15% chance)
+	[103609] = {
+		values = {
+			enemy = dave
+		}
+	},
 	-- Disable forced manager flee objective
 	[100665] = {
 		values = {
@@ -468,32 +370,6 @@ return {
 	[104001] = {
 		values = {
             enemy = vault_guard
-		}
-	},
-	--DOZER RANDOMIZER IN THE VAULT!, You better get trip mines like in PDTH or suffer
-	[100763] = {
-		values = {
-            enemy = vault_dozer_1
-		}
-	},
-	[104131] = {
-		values = {
-            enemy = vault_dozer_2
-		}
-	},
-	[104132] = {
-		values = {
-            enemy = vault_dozer_3
-		}
-	},
-	[104169] = {
-		values = {
-            enemy = vault_dozer_4
-		}
-	},
-	[104170] = {
-		values = {
-            enemy = vault_dozer_5
 		}
 	},
 	--Pro Job spawns and stuff

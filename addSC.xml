@@ -123,8 +123,7 @@
 	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
 	
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
-	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
-	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
+	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->
 	
 	<!--shotgun man for security rooms-->
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
@@ -190,7 +189,6 @@
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
@@ -237,8 +235,6 @@
 
 	<!--ffs ovk, dont load the entire map if you force the players in one area-->
 	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
-	
-	<mission			path="levels/instances/unique/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
 	
 	<!-- mountain master edit -->
 	<mission			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
@@ -1007,6 +1003,11 @@
 	<!--hatman's MG42 of Evil-->
 	<unit_mat			path="units/pd2_mod_halloween/weapons/wpn_npc_mg42_hatman/wpn_npc_mg42_hatman" />
 	
+	<!--Glowing eyes for skeleton T SWATs-->
+	<effect 			path="effects/particles/character/skeleton_eyes_red"/>
+	<effect 			path="effects/particles/character/skeleton_eye_blue"/>
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	
 	<!--Titan Cloaca-->	
 	<model				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<object				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
@@ -1236,11 +1237,6 @@
 	
 	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_low"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_no_gear"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_tank_titan"/>	
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple"/>
@@ -1411,6 +1407,7 @@
 		007 - Lua logo
 		008 - Small Dot
 		009 - Tiny Dot
+		010 - SZ Holotherm styled
 	-->
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true" load="true"/>
@@ -1448,6 +1445,10 @@
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_yellow_il" force="true" load="true"/>
 	
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->

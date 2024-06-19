@@ -1446,8 +1446,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 				self.values.player.crouch_dodge_chance = {0.06, 0.10}
 				self.values.player.crouch_speed_multiplier = {
-					1.25,
-					1.35
+					1.25, --without the skill; this is a default skill
+					1.35 --with the Skill
 				}
 				self.skill_descs.sprinter = {
 					skill_value_b1 = tostring((1 - self.values.player.stamina_regen_timer_multiplier[1]) * 100).."%", -- decrease stamina regen delay
@@ -1510,8 +1510,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				}
 				--Ace
-				self.values.player.run_dodge_chance = {0.15}
-				self.values.player.zipline_dodge_chance = {0.3}
+				self.values.player.run_dodge_chance = {0.2}
+				self.values.player.zipline_dodge_chance = {0.6}
 				
 				self.skill_descs.dire_need = {
 					skill_value_b1 = tostring(self.values.player.detection_risk_add_movement_speed[1][1] * 100).."%", -- movement speed per concealment

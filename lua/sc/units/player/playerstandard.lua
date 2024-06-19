@@ -1805,6 +1805,8 @@ Hooks:PostHook(PlayerStandard, "_update_movement", "ResUpdMovement", function(se
 	end
 end)
 
+
+
 function PlayerStandard:_check_action_run(t, input)
 	if self._setting_hold_to_run and input.btn_run_release or self._running and not self._move_dir then
 		self._running_wanted = false
@@ -2443,11 +2445,12 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local melee_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	local melee_repeat_expire_t_add = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
 	local melee_miss_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_repeat_expire_t or 0
-	local weap_base = self._equipped_unit:base():weapon_tweak_data()
+	local weap_base = self._equipped_unit:base()
+	local melee_speed_mult = weap_base._melee_speed_mult or 1
 	if instant_hit then
 		local weap_t = 1 * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
 		weap_t = math.clamp(weap_t, 0.6, 1.05)
-		speed = speed * weap_t
+		speed = speed * weap_t * melee_speed_mult
 	end
 	--So the timers play nicely with the anim speed mult
 	melee_expire_t = melee_expire_t / speed
@@ -2894,8 +2897,8 @@ function PlayerStandard:secondary_add_ammo(value)
 end
 
 function PlayerStandard:_is_reloading()
-	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(2):base()
-	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory():unit_by_selection(1):base()
+	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(2):base()
+	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(1):base()
 	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1) or self._state_data.reload_expire_t or self._state_data.reload_enter_expire_t or self._state_data.reload_exit_expire_t
 end
 
@@ -2938,7 +2941,8 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
 		end
 
-		if self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
+		local use_big_scope_offset = restoration.Options:GetValue("OTHER/WeaponHandling/BigScopeOffset")
+		if use_big_scope_offset and self._equipped_unit:base()._has_big_scope and not self._state_data.in_steelsight then
 			stance_mod.translation = stance_mod.translation + Vector3(1, 0, -2)
 			stance_mod.rotation = stance_mod.rotation * Rotation(0, 0, 3)
 		end
@@ -3406,6 +3410,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
 	local make_decal = tweak_data.blackmarket.melee_weapons[melee_entry].make_decal or nil
 	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw or nil --not implemented yet
+	local weap_base = self._equipped_unit:base()	
+	local alt_sound = weap_base._alt_melee_sounds
 	--Melee weapon tweakdata.
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
@@ -3435,6 +3441,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
+			elseif alt_sound and alt_sound[1] then
+				self._unit:sound():play(alt_sound[1], nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
@@ -3458,8 +3466,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		
 			if bayonet_melee then
 				self._unit:sound():play("knife_hit_gen", nil, false)
+			elseif alt_sound and alt_sound[2] then
+				self._unit:sound():play(alt_sound[2], nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
-					self._unit:sound():play("melee_hit_gen", nil, false)
+				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
 				if not no_sound then
 					self:_play_melee_sound(melee_entry, "hit_gen")
@@ -3946,19 +3956,20 @@ function PlayerStandard:_start_action_reload(t)
 				empty_reload = weapon:get_ammo_max_per_clip() - weapon:get_ammo_remaining_in_clip()
 			end
 	
-			local tweak_data = weapon:weapon_tweak_data()
+			local weapon_tweak = weapon:weapon_tweak_data()
+			local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 			local reload_anim = "reload"
 			local reload_prefix = weapon:reload_prefix() or ""
-			local reload_name_id = tweak_data.animations.reload_name_id or weapon.name_id
+			local reload_name_id = weapon_tweak.animations.reload_name_id or wep_tweak.use_underbarrel_anim or weapon.name_id
 			local reload_default_expire_t = 2.6
-			local reload_tweak = tweak_data.timers.reload_empty		
+			local reload_tweak = weapon_tweak.timers.reload_empty		
 			
 			weapon:start_reload() --Executed earlier to get accurate reload timers, otherwise may mess up normal and tactical for shotguns.
 	
 			if is_reload_not_empty then
 				reload_anim = "reload_not_empty"
 				reload_default_expire_t = 2.2
-				reload_tweak = tweak_data.timers.reload_not_empty
+				reload_tweak = weapon_tweak.timers.reload_not_empty
 			end
 	
 			local reload_ids = Idstring(string.format("%s%s_%s", reload_prefix, reload_anim, reload_name_id))
@@ -4258,6 +4269,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	if not action_forbidden then
 		self._toggle_underbarrel_wanted = false
 		local weapon = self._equipped_unit:base()
+		local wep_tweak = weapon and weapon.name_id and tweak_data.weapon[weapon.name_id]
 
 		if weapon.record_fire_mode then
 			weapon:record_fire_mode()
@@ -4282,12 +4294,12 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 			local switch_delay = 1
 
 			if underbarrel_state then
-				anim_ids = Idstring("underbarrel_enter_" .. weapon.name_id)
+				anim_ids = Idstring("underbarrel_enter_" .. (wep_tweak.use_underbarrel_anim or weapon.name_id))
 				switch_delay = underbarrel_tweak.timers.equip_underbarrel
 
 				self:set_animation_state("underbarrel")
 			else
-				anim_ids = Idstring("underbarrel_exit_" .. weapon.name_id)
+				anim_ids = Idstring("underbarrel_exit_" .. (wep_tweak.use_underbarrel_anim or weapon.name_id))
 				switch_delay = underbarrel_tweak.timers.unequip_underbarrel
 
 				self:set_animation_state("standard")
@@ -4460,4 +4472,31 @@ function PlayerStandard:_interupt_action_throw_projectile(t)
 	self._camera_unit:base():show_weapon()
 	self:_play_equip_animation()
 	self:_stance_entered()
+end
+
+if AdvMov then
+	local AdvMovWallKick = PlayerStandard._check_wallkick
+	--Kills wallkick checks
+	function PlayerStandard:_check_wallkick(t, dt)
+		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") then
+		else
+			AdvMovWallKick(self, t, dt)
+		end
+	end
+	local AdvMovRayCheck = PlayerStandard._get_nearest_wall_ray_dir
+	--Should make it so wallrun checks always fail, effectively disabling wallrunning
+	function PlayerStandard:_get_nearest_wall_ray_dir(ray_length_mult, raytarget, only_frontal_rays, z_offset)
+		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") and raytarget ~= "enemy" then
+			return nil
+		else
+			return AdvMovRayCheck(self, ray_length_mult, raytarget, only_frontal_rays, z_offset)
+		end
+	end
+	local AdvMovDoMelee = PlayerStandard._do_movement_melee_damage
+	function PlayerStandard:_do_movement_melee_damage(forward_only, strongkick)
+		local AdvMovMelee = restoration.Options:GetValue("AdVMovResOpt/AdvMovMelee") or 1
+		if AdvMovMelee == 1 or (AdvMovMelee == 2 and not managers.groupai:state():whisper_mode()) then
+			return AdvMovDoMelee(self, forward_only, strongkick)
+		end
+	end
 end

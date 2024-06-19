@@ -557,7 +557,6 @@
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
 			<option_group name="OTHER">
-
 				<option_group name="WeaponHandling">
 					<option type="bool" default_value="true" name="WpnFireDescope"/>
 					<divider name="tod_divider" size="14"/>
@@ -574,6 +573,7 @@
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
+					<option type="bool" default_value="true" name="BigScopeOffset"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
 					<divider name="tod_divider" size="14"/>
@@ -588,6 +588,7 @@
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
@@ -647,6 +648,15 @@
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<!--<option type="bool" default_value="false" name="Notify"/> -->
+			</option_group>
+			<divider name="tod_divider" size="16"/>
+			<button name="OtherMods" disabled="true"/>
+			<divider name="tod_divider" size="8"/>
+			<option_group name="AdVMovResOpt">
+				<!--Wallrun/jumps-->
+				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
+				<!--Wall/Slide/Jump/Dash Kicks | 1 = default, 2 = disabled during stealth, 3 = disabled entirely -->
+				<option type="multichoice" default_value="1" name="AdvMovMelee" values_tbl="restoration.AdvMovMelee"/>
 			</option_group>
         </options>
     </Options>

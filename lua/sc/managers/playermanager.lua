@@ -1049,6 +1049,11 @@ function PlayerManager:_internal_load()
 		power = 0,
 		start_time = 0
 	}
+	
+	--Remove sticky buff trackers
+	if not self._unseen_strike then
+		managers.hud:remove_skill("unseen_strike")
+	end
 
 	--Precache detection risk, so that the value does not need to be recalculated every frame (very slow).
 	self._detection_risk = math.round(managers.blackmarket:get_suspicion_offset_of_local(tweak_data.player.SUSPICION_OFFSET_LERP or 0.75) * 100)

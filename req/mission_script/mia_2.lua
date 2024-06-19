@@ -1,20 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_left = math.random()
-local chance_dozer_middle = math.random()
-local chance_dozer_right = math.random()
 local chance_titan_swat_left = math.random()
 local chance_titan_swat_right = math.random()
 local chance_elite = math.random()
-local dozer_table = {
-	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-	dozer_skull = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
-	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
-}
 local titan_table = { 
 	titan_swat_rifle = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 	titan_swat_shotgun = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun",
@@ -95,65 +83,6 @@ local titan_table = {
 		end
 	end
 	
-	--Setting up random dozers for DW+
-	if difficulty == 6 or difficulty == 7 then
-		if chance_dozer_left < 0.35 then
-			tank_replacement_left = dozer_table.dozer_skull
-		elseif chance_dozer_left < 0.70 then
-			tank_replacement_left = dozer_table.dozer_black
-		else
-			tank_replacement_left = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = dozer_table.dozer_skull
-		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = dozer_table.dozer_black
-		else
-			tank_replacement_middle = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_right < 0.25 then
-			tank_replacement_right = dozer_table.dozer_skull
-		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = dozer_table.dozer_black
-		else
-			tank_replacement_right = dozer_table.dozer_green
-		end
-	end
-	
-	if difficulty == 8 then
-		if chance_dozer_left < 0.25 then
-			tank_replacement_left = dozer_table.dozer_zeal_black
-		elseif chance_dozer_left < 0.50 then
-			tank_replacement_left = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_left < 0.75 then
-			tank_replacement_left = dozer_table.dozer_titan
-		else
-			tank_replacement_left = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = dozer_table.dozer_zeal_black
-		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_middle < 0.75 then
-			tank_replacement_middle = dozer_table.dozer_titan
-		else
-			tank_replacement_middle = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_right < 0.25 then
-			tank_replacement_right = dozer_table.dozer_zeal_black
-		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_right < 0.75 then
-			tank_replacement_right = dozer_table.dozer_titan
-		else
-			tank_replacement_right = dozer_table.dozer_zeal_benelli
-		end
-	end
-	
 local sniper_trigger_times = {
 	values = {
         trigger_times = 0
@@ -225,22 +154,6 @@ return {
 	[101506] = law_team,
 	[100190] = law_team,
 	[100191] = law_team,
-	--Dozer replacements
-	[101133] = {
-		values = {
-			enemy = tank_replacement_left
-		}
-	},
-	[101137] = {
-		values = {
-			enemy = tank_replacement_middle
-		}
-	},
-	[101141] = {
-		values = {
-			enemy = tank_replacement_right
-		}
-	},
 	--Should decrease sniper spawn intensity (I hope)
 	[101202] = {
 		values = {

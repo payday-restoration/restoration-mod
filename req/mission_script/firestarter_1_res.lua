@@ -20,7 +20,7 @@ local gangster_3 = {
 	values = {
 		enemy = gangster_table.colombian_3
 	}
-
+}
 local gangster_enforcer = {
 	values = {
 		enemy = gangster_table.colombian_enforcer

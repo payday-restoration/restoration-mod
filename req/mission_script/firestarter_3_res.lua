@@ -1,19 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
---Why not have a blackdozer in one of the choppers, yeah?
-local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-local bulldozer_2 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local teargaschopper = 1
 local teargas = 1
 local teargasmayhem = 2
 local vaultdoor = 66
 local snipers = 1
-	
-	--Same in DS
-	if difficulty == 8 then
-		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
-	end
 	
 	if difficulty <= 5 then
 		ponr_value = 720
@@ -38,7 +29,7 @@ if pro_job then
 	vaultdoor = 100
 	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
 	if difficulty == 8 then
-		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+		bulldozer = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		teargasmayhem = 4
@@ -197,12 +188,7 @@ return {
 	--Heli spawns
 	[101785] = {
 		values = {
-			enemy = bulldozer_1
-		}
-	},
-	[101786] = {
-		values = {
-			enemy = bulldozer_2
+			enemy = bulldozer
 		}
 	},
 	[101432] = {

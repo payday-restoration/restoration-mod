@@ -15,6 +15,7 @@ local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer_2 = math.random() < diff_scaling
 local enabled_chance_shields_and_dozer = math.random() < diff_scaling
+local enabled_chance_snipers = math.random() < 0.45
 	
 	if difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
@@ -170,7 +171,7 @@ local optsSniper_1 = {
 	on_executed = {
         { id = 400016, delay = 0 },
     },
-    enabled = true
+    enabled = enabled_chance_snipers
 }
 local optsSniper_2 = {
 	enemy = sniper,
@@ -178,7 +179,7 @@ local optsSniper_2 = {
 	on_executed = {
         { id = 400017, delay = 2 }
     },
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_snipers)
 }
 local optsSniper_3 = {
 	enemy = sniper,
@@ -186,7 +187,7 @@ local optsSniper_3 = {
 	on_executed = {
         { id = 400018, delay = 2 }
     },
-    enabled = overkill_above
+    enabled = (overkill_above and enabled_chance_snipers)
 }
 local optsMurky_Rifle = {
     enemy = murkyman_1,

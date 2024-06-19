@@ -47,7 +47,7 @@ function MutatorNoOutlines:modify_value(id, value)
 			value = true
 		end	
 	end
-	if id == "ContourExt:DisableEnemyOutlines" or id == "CopBrain:DisableEnemyOutlines"  then
+	if id == "ContourExt:DisableEnemyOutlines" or id == "CopDamage:DisableEnemyOutlines" then
 		value = self:get_no_outlines_enemies()
 	end
 	if id == "ContourExt:DisableObjectiveOutlines" then

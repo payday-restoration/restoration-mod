@@ -995,8 +995,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._movement_speed_add = 0
 
+		self._melee_speed_mult = 1
+
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
+
+		self._alt_melee_sounds = {}
 
 		self._use_vapor_trail = self:weapon_tweak_data().use_vapor_trail
 		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
@@ -1187,6 +1191,17 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self:_set_burst_mode(true, true)
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+			end	
+			if stats.mike16_burst then
+				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
+				self:weapon_tweak_data().FIRE_MODE = "single"	
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().BURST_DELAY = 0.08
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.269592
+				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.6
+				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self:_set_burst_mode(true, true)
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
 			end		
 			if stats.croon then
 				self:weapon_tweak_data().BURST_USE_AUTO_LOGIC = true
@@ -1271,7 +1286,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.ene_hs_mult_add then
 				self._ene_hs_mult = self._ene_hs_mult + stats.ene_hs_mult_add
 			end
-
+			
+			if stats.alt_melee_sounds then
+				self._alt_melee_sounds = stats.alt_melee_sounds
+			end
 			if stats.natascha then		
 				self._natascha = stats.natascha
 			end
@@ -1321,6 +1339,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.should_reload_immediately then
 				self._should_reload_immediately = stats.should_reload_immediately
+			end
+			if stats.melee_speed_mult then
+				self._melee_speed_mult = self._melee_speed_mult * stats.melee_speed_mult
 			end
 			if stats.hip_mult then
 				self._hipfire_mult = self._hipfire_mult * stats.hip_mult

@@ -13,6 +13,10 @@ return {
 	[100082] = {
 		ponr = ponr_value
 	},
+	--Call Bravos on startup
+	[100109] = {
+		spawn_bravos = true
+	},
 	--End PONR once everyone is inside the truck
 	[100771] = {
         ponr_end = true

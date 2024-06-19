@@ -37,6 +37,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModUIOptionsButtonDescID"] = "Опции Alpha UI.",
 		["RestorationModTimeOfDayTitleID"] = "Новые и случайные времена суток",
 		["RestorationModTimeOfDayDescID"] = "Позволяет настраивать время суток на некоторых ограблениях.",
+		["RestorationModOtherModsTitleID"] = "=== Настройки для других модов ===",
+		["RestorationModOtherModsDescID"] = "Дополнительные настройки для других модов",
+		["RestorationModAdVMovResOptOptionsButtonTitleID"] = "Настройки \"Advanced Movement Standalone\"",
+		["RestorationModAdVMovResOptOptionsButtonDescID"] = "Дополнительные настройки мода \"Advanced Movement Standalone\"  от Solo Queue Pixy's.",
+		["RestorationModDisableAdvMovTFTitleID"] = "Отключить бег и прыжки по стенам",
+		["RestorationModDisableAdvMovTFDescID"] = "Отключает бег и прыжки по стенам, которые являются частью Advanced Movement мода.",
+		["RestorationModAdvMovMeleeTitleID"] = "Оружие ближ. боя",
+		["RestorationModAdvMovMeleeDescID"] = "Меняет поведение оружия ближ. боя от мода Advanced Movement (прыжки/подкаты/рывки/удар с разбега).",
+			["resmod_advmov_melee_on"] = "По умолчанию",
+			["resmod_advmov_melee_loud_only"] = "Во время громкого подхода",
+			["resmod_advmov_melee_off"] = "Выключено",
+		
 
 		["restoration_level_data_unknown"] = "НЕИЗВЕСТНОЕ ВРЕМЯ, НЕИЗВЕСТНОЕ МЕСТО",
 		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",
@@ -135,7 +147,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
-		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеру при падении",
+		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеры при падении",
 		["RestorationModNoBleedoutTiltDescID"] = "Отключает наклон камеры, который происходит после падения.",
 		["RestorationModGOTTAGETAGRIPTitleID"] = "Спрятать все рукоятки",
 		["RestorationModGOTTAGETAGRIPDescID"] = "Прячет все вертикальные рукоятки в меню установки модификаций; не действует на оружие с предустановленной рукоятью. Требуется перезапуск.",
@@ -449,6 +461,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
 		["restoration_level_data_lvl_friday"] = "17:00, Торговый центр 'Щит'",
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
+		["restoration_level_data_bluewave"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Склад Aurelian",
 
 		
          --custom heists
@@ -1067,20 +1080,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		})
 	elseif captain_type == restoration.captain_types.summer then
 		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КОМАНДА САММЕРСА",
-		})
-	elseif captain_type == restoration.captain_types.spring and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КАПИТАН СПРИНГ",
+			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА САММЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})
 	elseif captain_type == restoration.captain_types.spring then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})		
-	elseif captain_type == restoration.captain_types.autumn and difficulty_index <= 5 then
-		LocalizationManager:add_localized_strings({	
-			["hud_assault_vip"] = "НАПРАВЛЯЕТСЯ КАПИТАН ОТЕМ",
-		})
 	elseif captain_type == restoration.captain_types.autumn then
 		LocalizationManager:add_localized_strings({	
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
@@ -1598,7 +1603,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_w_crysis3_typhoon_desc"] = "\"Самая чистая форма самовыражения - и сейчас мне есть что сказать.\"\n\nЭтот десятиствольный пистолет-пулемет использует особую технологию зарядки, которая позволяет добиться чрезвычайно высокой скорости стрельбы за счет низкого урона.\n\nАльтернативный огонь выстреливает #{skill_color}#залп## из #{skill_color}#10## патронов разом.",
 			--AR57
 			["bm_w_fang45_desc"] = "Эффективное оружие для столкновений на короткой и средней дистанции.\n\n.#{skill_color}#Увеличенная скорострельность для первых 5-ти выстрелов. Перезарядка оружия обновляет эффект.##",
-
+			--KSP 45
+			["bm_w_ksp45_desc_sc"] = "Пистолет-пулемет стреляющий очередями по 3 патрона. Подходит для средних дистанций. Менее эффективен на дальней дистанции из-за разброса пуль.",
+			--LC10
+			["bm_w_lc10_desc_sc"] = "Автоматический пистолет-пулемет. Неплохая точность и скорострельность.",
 
 		--Bootleg/HK416c
 		["bm_w_tecci_desc_sc"] = "Винтовка с возвратной пружиной, переделанная под пулемет.",
@@ -1624,6 +1632,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
 		["bm_hk51b_sc_desc"] = "Подпольная модификация Бреннера, которая уменьшает его до размеров Компакт-5.",	
+		["bm_wp_hk51b_magazine_belt_60"] = "Лента на 60 патронов",
+		["bm_wp_hk51b_magazine_belt_80"] = "Лента на 80 патронов",
 		--M134
 		["bm_m134_sc_desc"] = "\"Each step you take is paved with the corpses of your enemies...\"\n\n#{risk}#Раскручивается перед стрельбой, прицеливание продолжает раскрутку.\nТеряет точность при стрельбе от бедра.##",
 		--Microgun
@@ -1926,7 +1936,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hmcar_sc_desc"] = "Когда полиция избавлялась от этого оружия, вы решили прибрать его к себе.\n\nСтреляет #{stat_maxed}#патронами титанового снайпера##, которые #{skill_color}#пробивают врагов, броню, щиты (до начала падения урона) и тонкие стены##. Альтернативный огонь выстреливает #{event_color}#снайперский патрон максимальной мощности##, который #{skill_color}#тратит в два раза больше патронов##, но #{skill_color}#наносит в два раза больше урона и пробивает титановые щиты.##",
 		["bm_wp_hmcar_hd_kit"] = "Набор 32bit 8K HD",
 		["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ",
-
+		--ONE OF A KIND HOLY GRAIL
+		["bm_w_holygrail"] = "СРАНЬ ГОСПОДНЯ",
+		["menu_l_global_value_holygrailmod"] = "ЭТО ЧТО ВООБЩЕ ТАКОЕ???\n\n",
 
 		--Light Crossbow		
 		["bm_w_frankish_avelyn"] = "Авелин",
@@ -2274,6 +2286,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_megumins_staff_info"] = "Кастует мощный взрыв, когда полностью заряжен!\nКаст заклинания производится на любую поверхность или существо на расстояние не более #{skill_color}#30## метров; #{risk}#нельзя кастовать в воздухе.##\n\n#{important_1}#Скорость зарядки не зависит от навыков.\nВо время зарядки у Вас затуманивается экран, тратится стамина и постепенно уменьшается скорость передвижения.\nВы мгновенно падаете после каста взрыва; навыки и перки, позволяющие спасти или отложить падение - не работают.##",
 
 		["bm_menu_weapon_bayonet_header"] = "ХАР-КИ ОТ ОСНОВНОГО:",
+		["bm_menu_weapon_bayonet_secondary_header"] = "ХАР-КИ ОТ ВТОРИЧНОГО:",
 		["bm_menu_weapon_bayonet_damage"] = "\nДОП. УРОН: ##+",
 		["bm_menu_weapon_bayonet_damage_base"] = "\n-БАЗОВЫЙ: ##",
 		["bm_menu_weapon_bayonet_damage_skill"] = "\n-НАВЫКИ: ##+",
@@ -2620,6 +2633,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_lua"] = "Powered by Lua",
 		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
 		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
+		["menu_reticle_dmc_cross_holotherm"] = "SZ Holotherm",
 		
 
 		--Blackmarket gui per-armor skill descriptions.
@@ -4826,6 +4840,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_auto"] = "Боевой инженер",
 		["st_menu_technician_breaching"] = "Перфоратор",
 		["st_menu_technician_sentry"] = "Крепость",
+		["st_menu_ghost_silencer"] = "Наемный убийца",
 		["hud_instruct_mask_on"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
 		["hud_instruct_mask_on_alpha"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
 

@@ -1,49 +1,15 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var = math.random()
 local chance_dozer = 75
 local hunt_projob = false
---set up the table for the randomizer
-local dozer_table = {
-	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-	dozer_skull = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
-	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-}
 
 --If we're in Pro Job, then do this stuff below
-if pro_job then
+	if pro_job then
 		hunt_projob = true
-	--DSPJ has 100% of spawning the scripted dozer
+	end
+	
 	if difficulty == 8 then
 		chance_dozer = 100
-	end
-end
-
-	--Setting up the dozer randomizer, oh yeah
-	if difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var < 0.35 then
-			dozer = dozer_table.dozer_skull
-		elseif chance_dozer_var < 0.70 then
-			dozer = dozer_table.dozer_black
-		else
-			dozer = dozer_table.dozer_green
-		end
-	end
-
-	if difficulty == 8 then
-		if chance_dozer_var < 0.25 then
-			dozer = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var < 0.50 then
-			dozer = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var < 0.75 then
-			dozer = dozer_table.dozer_titan
-		else
-			dozer = dozer_table.dozer_zeal_benelli
-		end
 	end
 
 	if difficulty <= 5 then
@@ -129,10 +95,9 @@ return {
             chance = chance_dozer
 		}
 	},
-	--Dozer gets randomized + repositioned to the boat loot drop point
+	--Dozer gets repositioned to the boat loot drop point
 	[102870] = {
 		values = {
-            enemy = dozer,
 			position = Vector3(-4627, 5521, -400),
 			rotation = Rotation(140, 0, -0)
 		}

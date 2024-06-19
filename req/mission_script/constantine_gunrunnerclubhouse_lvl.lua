@@ -53,7 +53,7 @@ local Minion_3 = {
 }
 local Minion_4 = {
 	values = {
-        enemy = spring_minion_1
+        enemy = spring_minion_4
     }
 }
 return {

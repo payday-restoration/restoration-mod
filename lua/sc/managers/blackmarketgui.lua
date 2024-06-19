@@ -4313,12 +4313,12 @@ function BlackMarketGui:show_stats()
 		--Would write a better solution, but I hate this file.
 		for name, data in pairs(unaltered_total_mods_stats) do
 			if name == "damage" or name == "damage_min" then
-				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+				if format_round(unaltered_total_mods_stats[name].value) ~= format_round(total_mods_stats[name].value) then
 					mod_stats.chosen[name] = (total_base_stats[name].value + (total_mods_stats[name].value + total_skill_stats[name].value))
 					- (unaltered_total_base_stats[name].value + (unaltered_total_mods_stats[name].value + unaltered_total_skill_stats[name].value))
 				end
 			else
-				if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+				if format_round(unaltered_total_mods_stats[name].value) ~= format_round(total_mods_stats[name].value) then
 					mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
 					- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
 				end
@@ -4382,6 +4382,7 @@ function BlackMarketGui:show_stats()
 
 			value = mod_stats.chosen[stat.name]
 			equip = mod_stats.equip[stat.name]
+
 			total_value = math.max(total_base_stats[stat.name].value + total_mods_stats[stat.name].value + total_skill_stats[stat.name].value, 0)
 			unaltered_total_value = math.max(unaltered_total_base_stats[stat.name].value + unaltered_total_mods_stats[stat.name].value + unaltered_total_skill_stats[stat.name].value, 0)
 			stat_changed = tweak_parts and tweak_parts.stats and tweak_parts.stats[stat.stat_name or stat.name] and value ~= 0
@@ -4423,10 +4424,10 @@ function BlackMarketGui:show_stats()
 
 			equip = equip + math.round(remove_stats[stat.name] or 0)
 
-			if unaltered_total_value < total_value then
+			if format_round(unaltered_total_value) < format_round(total_value) then
 				self._stats_texts[stat.name].skill:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
-			elseif total_value < unaltered_total_value then
+			elseif format_round(total_value) < format_round(unaltered_total_value) then
 				self._stats_texts[stat.name].skill:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 			else
@@ -5023,6 +5024,15 @@ function BlackMarketGui:update_info_text()
 		local jab_range = factory_stats.jab_range and factory_stats.jab_range / 100
 		local range = (jab_range or bayonet_range or 0) + (wtd_range / 100)
 
+		local factory_stats_secondary = managers.weapon_factory:get_stats(managers.blackmarket:equipped_secondary().factory_id, managers.blackmarket:equipped_secondary().blueprint)
+		local wtd_range_secondary = tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id].jab_range or 0
+		local bayonet_damage_secondary = factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local skill_damage_secondary = bayonet_damage_secondary and (bayonet_damage_secondary * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage_secondary
+		local damage_total_secondary = bayonet_damage_secondary and bayonet_damage_secondary + (skill_damage_secondary or 0)
+		local bayonet_range_secondary = bayonet_damage_secondary and (factory_stats_secondary.bayonet_range and factory_stats_secondary.bayonet_range / 100)
+		local jab_range_secondary = factory_stats_secondary.jab_range and factory_stats_secondary.jab_range / 100
+		local range_secondary = (jab_range_secondary or bayonet_range_secondary or 0) + (wtd_range_secondary / 100)
+
 		-- [[
 		if slot_data.name == "weapon" and (bayonet_damage or (range and range > 0)) then
 			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
@@ -5032,10 +5042,26 @@ function BlackMarketGui:update_info_text()
 			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
 			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
 				managers.localization:text("bm_menu_weapon_bayonet_header") .. 
-				(damage_total and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
+				(damage_total and damage_total > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total) .. "##" or "") .. 
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage) .. "##" or "") .. 
 				(bayonet_damage and skill_damage and skill_damage > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage) .. "##" or "") .. 
 				(range and range > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range) .. "m##" or "")
+
+			updated_texts[2].below_stats = true
+		end
+		
+		if slot_data.name == "weapon" and (bayonet_damage_secondary or (range_secondary and range_secondary > 0)) then
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			table.insert(updated_texts[2].resource_color, tweak_data.screen_colors[color_id])
+			updated_texts[2].text = (updated_texts[2].text ~= "" and updated_texts[2].text .. "\n\n" or "") .. 
+				managers.localization:text("bm_menu_weapon_bayonet_secondary_header") .. 
+				(damage_total_secondary and damage_total_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage") .. tostring(damage_total_secondary) .. "##" or "") .. 
+				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_base") .. tostring(bayonet_damage_secondary) .. "##" or "") .. 
+				(bayonet_damage_secondary and skill_damage_secondary and skill_damage_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_damage_skill") .. tostring(skill_damage_secondary) .. "##" or "") .. 
+				(range_secondary and range_secondary > 0 and managers.localization:text("bm_menu_weapon_bayonet_range") .. tostring(range_secondary) .. "m##" or "")
 
 			updated_texts[2].below_stats = true
 		end
@@ -5692,7 +5718,7 @@ function BlackMarketGui:update_info_text()
 			end
 			description = description:gsub("#%{(.-)%}#", "##")
 
-			if (slot_data.global_value and slot_data.global_value ~= "normal") or (perks and table.contains(perks, "bonus")) then
+			if (slot_data.global_value and slot_data.global_value ~= "normal") and description ~= "" or (perks and table.contains(perks, "bonus")) then
 				updated_texts[4].text = updated_texts[4].text .. "\n" .. description
 			else
 				updated_texts[4].text = updated_texts[4].text .. description

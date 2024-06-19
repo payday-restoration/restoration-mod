@@ -40,17 +40,17 @@ local ponr_timer_player_mul = {
 }
 local bravo_1 = {
 	values = {
-        enemy = guard_replacement.elite_guard_1
+        enemy = murky_table.elite_guard_1
 	}
 }
 local bravo_2 = {
 	values = {
-        enemy = guard_replacement.elite_guard_2
+        enemy = murky_table.elite_guard_2
 	}
 }
 local bravo_3 = {
 	values = {
-        enemy = guard_replacement.elite_guard_3
+        enemy = murky_table.elite_guard_3
 	}
 }
 return {

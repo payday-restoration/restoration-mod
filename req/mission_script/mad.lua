@@ -1,15 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var_1 = math.random() 
-local chance_dozer_var_2 = math.random() 
 local chance_elite = math.random()
 local double_dozers_only = true
-local dozer_table = {
-	dozer_green = "units/pd2_mod_reapers/characters/ene_bulldozer_1/ene_bulldozer_1",
-	dozer_black = "units/pd2_mod_reapers/characters/ene_bulldozer_2/ene_bulldozer_2",
-	dozer_skull = "units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3",
-	dozer_benelli = "units/pd2_mod_reapers/characters/ene_bulldozer_mini/ene_bulldozer_mini"
-}
 local eseries_table = {
 	e102_gamma = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
 	e106_delta = "units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
@@ -26,64 +18,10 @@ local eseries_table = {
 		ponr_value = 540		
 	end
 
-	if difficulty >= 7 then
+	if difficulty >= 6 then
 		double_dozers_only = false
 	end	
-	
-	--Setting up the dozer randomizer, this is cool
-	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_black
-		else
-			dozer_1 = dozer_table.dozer_green
-		end
-	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_1 < 0.35 then
-			dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_var_1 < 0.70 then
-			dozer_1 = dozer_table.dozer_black
-		else
-			dozer_1 = dozer_table.dozer_green
-		end
-	elseif difficulty == 8 then
-		if chance_dozer_var_1 < 0.25 then
-			dozer_1 = dozer_table.dozer_black
-		elseif chance_dozer_var_1 < 0.50 then
-			dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_var_1 < 0.75 then
-			dozer_1 = dozer_table.dozer_benelli
-		else
-			dozer_1 = eseries_table.e123_omega
-		end
-	end
-	
-	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_2 < 0.35 then
-			dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_var_2 < 0.70 then
-			dozer_2 = dozer_table.dozer_black
-		else
-			dozer_2 = dozer_table.dozer_green
-		end
-	elseif difficulty == 8 then
-		if chance_dozer_var_2 < 0.25 then
-			dozer_2 = dozer_table.dozer_black
-		elseif chance_dozer_var_2 < 0.50 then
-			dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_var_2 < 0.75 then
-			dozer_2 = dozer_table.dozer_benelli
-		else
-			dozer_2 = eseries_table.e123_omega
-		end
-	end
-	
-	
+
 	--Random titan unit for Mayhem+. Otherwise - vet cop
 	if difficulty <= 5 then
 		eseries_elite_unit = "units/pd2_mod_reapers/characters/ene_akan_veteran_1/ene_akan_veteran_1"
@@ -120,16 +58,6 @@ local eseries_table = {
 local tshield = {
 	values = {
         enemy = epsilon_shield
-	}
-}
-local dozer_1 = {
-	values = {
-        enemy = dozer_1
-	}
-}
-local dozer_2 = {
-	values = {
-        enemy = dozer_2
 	}
 }	
 local double_dozers = {
@@ -169,7 +97,7 @@ return {
 	[101860] = tshield,
 	[101863] = tshield,
 	[101864] = tshield,
-	--High diffs has only dozer pairs blocking the exit (as in disables single dozer mission scripts)
+	--Disable single dozer mission scripts on higher diffs
 	[101733] = double_dozers,
 	[101734] = double_dozers,
 	[100854] = double_dozers,
@@ -180,13 +108,6 @@ return {
 			{id = 101692, delay = 0}
 		}
 	},
-	--dozers gets randomized
-	[101848] = dozer_1,
-	[101852] = dozer_1,
-	[101854] = dozer_1,
-	[101851] = dozer_2,
-	[101853] = dozer_2,
-	[101855] = dozer_2,
 	-- Disable instant difficulty increase
 	[101980] = {
 		values = {

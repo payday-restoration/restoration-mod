@@ -67,7 +67,7 @@ return {
 		ponr = ponr_value
 	},
 	--Increase PONR timers
-	[102646] = {
+	[102120] = {
 		values = {
 			time_normal = 60,
 			time_hard = 60,

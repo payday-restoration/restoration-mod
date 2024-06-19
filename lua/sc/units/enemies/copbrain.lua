@@ -418,6 +418,7 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 		effect = Idstring("effects/payday2/particles/impacts/money_impact_pd2"),
 		position = self._unit:movement():m_pos()
 	})
+	
 
 	local weap_name = self._unit:base():default_weapon_name()
 
@@ -445,10 +446,6 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	self._unit:brain():action_request(action_data)
 	self._unit:sound():say("cn1", true, nil)
 	managers.network:session():send_to_peers_synched("sync_unit_converted", self._unit)
-	
-	if managers.mutators:modify_value("CopBrain:DisableEnemyOutlines", false) then
-		self._unit:base():converted_enemy_effect(true)
-	end
 end
 
 function CopBrain:on_suppressed(state)

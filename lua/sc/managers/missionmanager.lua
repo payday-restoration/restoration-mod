@@ -69,6 +69,13 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			end)
 		end	
 			
+		--Check if this element is supposed to call in Bravos
+		if data.spawn_bravos then
+			if restoration then
+				restoration.always_bravos = true
+			end
+		end
+			
 		-- Check if this element is supposed to trigger a point of no return
 		local is_pro_job = Global.game_settings and Global.game_settings.one_down
 		if is_pro_job then

@@ -1,7 +1,7 @@
 -- Reset secured bags on mission start (vanilla doesn't clear this so it displays wrong in the HUD)
 Hooks:PreHook(CrimeSpreeManager, "on_mission_started", "sh_on_mission_started", function (self)
 	if self:is_active() then
-		managers.loot:reset()
+		Global.loot_manager.secured = {}
 	end
 end)
 

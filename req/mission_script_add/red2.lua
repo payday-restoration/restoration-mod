@@ -157,7 +157,6 @@ local optsBulldozer_BO = {
 }
 local optsTaser = {
     enemy = taser,
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsTaser_special = {
@@ -198,7 +197,6 @@ local optsShield_Defend_2 = {
 }
 local optsSWAT_Heavy = {
     enemy = swat_shotgunner,
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsBulldozer_SO = {

@@ -17698,16 +17698,17 @@ function CharacterTweakData:_set_sm_wish()
 	self.mobster_boss.dt_suppress = {
 		range = 500
 	}
-	--Overkill MC Boss
-	self.biker_boss.dt_suppress = {
-		range = 500
-	}
 	--Gabriel
 	self.deep_boss.dt_suppress = {
 		range = 500
 	}
-	--Hector has slowing bullets instead
+	--Hector and Overkill MC Boss have slowing bullets instead
 	self.hector_boss.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		range = 1000
+	}
+	self.biker_boss.slowing_bullets = {
 		duration = 3,
 		power = 1,
 		range = 1000

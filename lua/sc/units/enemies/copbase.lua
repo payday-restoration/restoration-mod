@@ -236,11 +236,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or self._tweak_table == "autumn" then
 		GroupAIStateBesiege:set_assault_endless(true)
-		managers.hud:set_buff_enabled("vip", true)
-		
-		--managers.groupai:state():set_fake_assault_mode(true)
-		--managers.groupai:state():set_wave_mode(besiege)
-		--managers.groupai:state():set_assault_mode(true)			
+		managers.hud:set_buff_enabled("vip", true)		
 		
 		if managers.skirmish:is_skirmish() then
 			managers.skirmish:set_captain_active()
@@ -676,6 +672,9 @@ local weapons_map = {
 	
 	--Commissar gets his precious RPK back from Russia
 	[Idstring("units/payday2/characters/ene_gang_mobster_boss/ene_gang_mobster_boss"):key()] = "rpk_lmg",
+	
+	--Overkill MC Boss has Benelli auto-shotty instead of LMG
+	[Idstring("units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss"):key()] = "benelli",
 	
 	--FSB gets proper Russian Weapons
 	--Security bois

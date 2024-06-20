@@ -26,6 +26,11 @@
 			<set_variables var_gadgets_cop="4"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
+		
+		<sequence editable_state="true" name="'cop_la_sg'" triggable="true" once="true">						
+			<set_variables var_gadgets_cop="5"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
 
 		<sequence editable_state="true" name="'sec_pistol'" triggable="true" once="true">						
 			<set_variables var_gadgets_sec="1"/>
@@ -104,6 +109,10 @@
 			<check value="vars.var_gadgets_cop == 4"/>
 		</filter>
 
+		<filter name="'check_cop_sg_la'">
+			<check value="vars.var_gadgets_cop == 5"/>
+		</filter>
+
 
 		<filter name="'check_sec_pistol'">
 			<check value="vars.var_gadgets_sec == 1"/>
@@ -157,51 +166,65 @@
 			<run_sequence name="'acc_'..pick('nothing','glovas','nothing', 'nothing')"/>
 			<run_sequence name="'acc_'..pick('nothing','shades','nothing', 'nothing')"/>
 
-			<run_sequence name="'body'..pick('_longsleeve','nothing','nothing', 'nothing')"/>
 
 			<run_sequence filter="'check_exposed'" name="'hedz'"/>
 			
 			<!-- pistol -->
 			<run_sequence filter="'check_cop_pistol'" name="'body_cop_pis'"/>
+			<run_sequence filter="'check_cop_pistol'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
 			
 			<!-- revolver -->
 			<run_sequence filter="'check_cop_rev'" name="'body_cop_rev'"/>
-		
+			<run_sequence filter="'check_cop_rev'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
+	
 			<!-- smg -->
 			<run_sequence filter="'check_cop_smg'" name="'body_cop_smg'"/>
+			<run_sequence filter="'check_cop_smg'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
 			
 			<!-- sg -->
 			<run_sequence filter="'check_cop_sg'" name="'body_cop_jacket'"/>
 			
+			<!-- la sg -->
+			<run_sequence filter="'check_cop_sg_la'" name="'body_cop_la_sg'"/>
+			<run_sequence filter="'check_cop_sg_la'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
+			
 			<!-- sec pistol -->
 			<run_sequence filter="'check_sec_pistol'" name="'body_sec_pis'"/>
+			<run_sequence filter="'check_sec_pistol'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
 			
 			<!-- sec smg -->
 			<run_sequence filter="'check_sec_smg'" name="'body_sec_smg'"/>
+			<run_sequence filter="'check_sec_smg'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
 			
 			<!-- sec sg -->
 			<run_sequence filter="'check_sec_sg'" name="'body_sec_sg'"/>
+			<run_sequence filter="'check_sec_sg'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
 			
 			<!-- 4 -->
 			<run_sequence filter="'check_sec_4'" name="'body_sec_4'"/>
+			<run_sequence filter="'check_sec_4'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
 			
 			<!-- 5 -->
 			<run_sequence filter="'check_sec_5'" name="'body_sec_5'"/>
+			<run_sequence filter="'check_sec_5'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
 			
 			<!-- 6 -->
 			<run_sequence filter="'check_sec_6'" name="'body_sec_6'"/>
 			
 			<!-- 7 -->
 			<run_sequence filter="'check_sec_7'" name="'body_sec_7'"/>
+			<run_sequence filter="'check_sec_7'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
 			
 			<!-- fbi 1 -->
 			<run_sequence filter="'check_fbi_1'" name="'fbi_1_var'"/>
 			
 			<!-- fbi 2 -->
 			<run_sequence filter="'check_fbi_2'" name="'fbi_2_var'"/>
+			<run_sequence filter="'check_fbi_2'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
 			
 			<!-- fbi 3 -->
 			<run_sequence filter="'check_fbi_3'" name="'fbi_3_var'"/>
+			<run_sequence filter="'check_fbi_3'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>			
 		</sequence>
 
 		<!-- VARIATIONS - FBIs -->
@@ -319,6 +342,12 @@
 			<sequence editable_state="true" name="'body_cop_pis'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_cop_pistol'"/>
 				<object enabled="true" name="'g_body_cop_pistol_lod1'"/>				
+			</sequence>	
+			
+			<!-- la sg -->
+			<sequence editable_state="true" name="'body_cop_la_sg'" once="true" triggable="true">				
+				<object enabled="true" name="'g_body_cop_sg'"/>
+				<object enabled="true" name="'g_body_cop_sg_lod1'"/>				
 			</sequence>					
 		
 			<!-- revolver -->

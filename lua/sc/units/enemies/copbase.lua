@@ -392,13 +392,13 @@ for name, sequence in pairs(enemy_variations) do
 	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
 end
 
-local function random_mat_seq_initialization(cop)
-	local sequence = enemy_mapping[cop._unit:name():key()]
+function CopBase:random_mat_seq_initialization()
+	local sequence = enemy_mapping[self._unit:name():key()]
     local lvl_tweak_data = tweak_data.levels[job]
     local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
 
-	if cop._unit:damage() and cop._unit:damage():has_sequence(sequence) then
-		cop._unit:damage():run_sequence_simple(sequence)
+	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
+		self._unit:damage():run_sequence_simple(sequence)
 	end
 end
 

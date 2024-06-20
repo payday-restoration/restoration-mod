@@ -312,285 +312,94 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	
 end)
 
-function CopBase:random_mat_seq_initialization()
-    local unit_name = self._unit:name()
- 	local faction = tweak_data.levels:get_ai_group_type()
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local enemy_variations = {
+	["units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"] = "swat_smg",
+	["units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"] = "swat_sg",
+	["units/payday2/characters/ene_swat_3/ene_swat_3"] = "swat_ar",
+	["units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"] = "heavy_swat_ar",
+	["units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"] = "swat_shield",
+	["units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"] = "swat_sniper",
+	
+	["units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc"] = "swat_ar",
+	["units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc"] = "swat_sg",
+	["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "swat_smg",	
+	["units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"] = "heavy_swat_ar",
+	["units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"] = "swat_shield",
+	["units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"] = "swat_sniper",
+	
+	["units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"] = "swat_ar",
+	["units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc"] = "swat_sg",
+	["units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"] = "swat_smg",	
+	["units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"] = "heavy_swat_ar",
+	["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/payday2/characters/ene_shield_gensec/ene_shield_gensec"] = "swat_shield",
+	["units/payday2/characters/ene_sniper_3/ene_sniper_3"] = "swat_sniper",
+	
+	["units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"] = "swat_ar",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"] = "swat_sg",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"] = "swat_smg",	
+	["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"] = "heavy_swat_ar",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"] = "swat_shield",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"] = "swat_sniper",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"] = "swat_ar",	
+	["units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"] = "swat_sg",
+	
 
-    local lvl_tweak_data = tweak_data.levels[job]
-    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+	["units/payday2/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
+	["units/payday2/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest"] = "cop_pistol",
+	["units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest"] = "cop_revolver",
+	["units/payday2/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
+	["units/payday2/characters/ene_cop_4/ene_cop_4"] = "cop_sg",
 	
-	-- BLUE TEAM
-	local swat_1 = unit_name == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
-
-
-	local swat_2 = unit_name == Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
+	["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "cop_pistol",
+	["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "cop_revolver",
+	["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "cop_smg",
+	["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "cop_la_sg",	
 	
-	local swat_heavy_r870 = unit_name == Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
+	["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "fbi_1",
+	["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2",
+	["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "fbi_3",
 	
-	local swat_heavy_1 = unit_name == Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk")
-
-	local swat_3 = unit_name == Idstring("units/payday2/characters/ene_swat_3/ene_swat_3")
-	or unit_name == Idstring("units/payday2/characters/ene_swat_3/ene_swat_3_husk") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk")
-
-	local swat_sniper = unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper_husk")
+	["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "mrkwater_ump",
+	["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "mrkwater_ump_nolight",
+	["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "mrkwater_scar",
+	["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "fbi_ump",
+	["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "fbi_scar",
 	
-	local swat_shield = unit_name == Idstring("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk") 
-	or unit_name == Idstring("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc")
-	or unit_name == Idstring("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec")
-	or unit_name == Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
-	or unit_name == Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc_husk")
+	["units/payday2/characters/ene_security_1/ene_security_1"] = "sec_pistol",
+	["units/payday2/characters/ene_security_2/ene_security_2"] = "sec_smg",
+	["units/payday2/characters/ene_security_3/ene_security_3"] = "sec_sg",
+	["units/payday2/characters/ene_security_4/ene_security_4"] = "sec_4",
+	["units/payday2/characters/ene_security_5/ene_security_5"] = "sec_5",
+	["units/payday2/characters/ene_security_6/ene_security_6"] = "sec_6",
+	["units/payday2/characters/ene_security_7/ene_security_7"] = "sec_7",
 	
-	-- beatcop
-	local cop1 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
-	
-	local cop2 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
-	
-	local cop3 = unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")	
-	
-	local cop4 = unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4") 
-	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")	
-
-	-- fbi
-	local fbi1 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1_husk")
-	
-	local fbi2 = unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2_husk")	
-	
-	local fbi3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3_husk")	
-
-	-- sec
-	local sec1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1")
-	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk")
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2_husk")
-
-	local sec2 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk")
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1_husk")
-	
-	local sec3 = unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3")	
-	or unit_name == Idstring("units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3_husk")
-	
-	local sec4 = unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_4/ene_security_4_husk")	
-	
-	local sec5 = unit_name == Idstring("units/payday2/characters/ene_security_5/ene_security_5") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_5/ene_security_5_husk")	
-	
-	local sec6 = unit_name == Idstring("units/payday2/characters/ene_security_6/ene_security_6") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_6/ene_security_6_husk")	
-	
-	local sec7 = unit_name == Idstring("units/payday2/characters/ene_security_7/ene_security_7") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_7/ene_security_7_husk")	
-	
-    if self._unit:damage() and self._unit:damage():has_sequence("swat_smg") and swat_1 then
-        self._unit:damage():run_sequence_simple("swat_smg") 		
-    elseif self._unit:damage() and self._unit:damage():has_sequence("swat_sg") and swat_2 and not flashlights_on then
-        self._unit:damage():run_sequence_simple("swat_sg")    
-	elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_sg_nvg") and swat_2 then
-		self._unit:damage():run_sequence_simple("swat_sg_nvg")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("heavy_swat_sg") and swat_heavy_r870 then
-		self._unit:damage():run_sequence_simple("heavy_swat_sg")	
-	elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_sg_helmetlight") and swat_heavy_r870 then
-		self._unit:damage():run_sequence_simple("swat_sg_helmetlight")				
-	elseif self._unit:damage() and self._unit:damage():has_sequence("heavy_swat_ar") and swat_heavy_1 then
-		self._unit:damage():run_sequence_simple("heavy_swat_ar")	
-	--[[elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_heavy_1 then
-		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")--]]
-	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_ar") and swat_3 then
-		self._unit:damage():run_sequence_simple("swat_ar")	
-	--[[elseif flashlights_on and self._unit:damage() and self._unit:damage():has_sequence("swat_ar_helmetlight") and swat_3 then
-		self._unit:damage():run_sequence_simple("swat_ar_helmetlight")--]]
-	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_sniper") and swat_sniper then
-		self._unit:damage():run_sequence_simple("swat_sniper")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("swat_shield") and swat_shield then
-		self._unit:damage():run_sequence_simple("swat_shield")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_pistol") and cop1 then
-		self._unit:damage():run_sequence_simple("cop_pistol")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_revolver") and cop2 then
-		self._unit:damage():run_sequence_simple("cop_revolver")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_smg") and cop3 then
-		self._unit:damage():run_sequence_simple("cop_smg")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("cop_sg") and cop4 then
-		self._unit:damage():run_sequence_simple("cop_sg")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_pistol") and sec1 then
-		self._unit:damage():run_sequence_simple("sec_pistol")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_smg") and sec2 then
-		self._unit:damage():run_sequence_simple("sec_smg")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_sg") and sec3 then
-		self._unit:damage():run_sequence_simple("sec_sg")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_4") and sec4 then
-		self._unit:damage():run_sequence_simple("sec_4")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_5") and sec5 then
-		self._unit:damage():run_sequence_simple("sec_5")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_6") and sec6 then
-		self._unit:damage():run_sequence_simple("sec_6")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("sec_7") and sec7 then
-		self._unit:damage():run_sequence_simple("sec_7")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_1") and fbi1 then
-		self._unit:damage():run_sequence_simple("fbi_1")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_2") and fbi2 then
-		self._unit:damage():run_sequence_simple("fbi_2")					
-	elseif self._unit:damage() and self._unit:damage():has_sequence("fbi_3") and fbi3 then
-		self._unit:damage():run_sequence_simple("fbi_3")					
-	end
-
-	
-	--END BEAT COP FACE STUFF
-
-	-- sniper nonsense (don't trust this being executed every time a common unit spawns tbh)
-	local sniper_fbi = unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk")
-		
-	local sniper_gensec = unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3_husk")
-
-	local switch_mat_config_federales_sniper = unit_name == Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1")
-	or unit_name == Idstring("units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1_husk")
-
-	if faction == "federales" and difficulty_index == 6 then
-		if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_fbi") and switch_mat_config_federales_sniper then
-			self._unit:damage():run_sequence_simple("swap_federales_to_fbi")
-		elseif faction == "federales" and difficulty_index == 7 then
-			if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_city") and switch_mat_config_federales_sniper then
-				self._unit:damage():run_sequence_simple("swap_federales_to_city")
-			end
-		end	
-	end
-	
-	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_lapd") and sniper_fbi and faction == "lapd" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_lapd")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_nypd") and sniper_fbi and faction == "nypd" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_nypd")		
-	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_zombie") and sniper_fbi and faction == "zombie" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_zombie")		
-	end
-			
-	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_3_to_zombie") and sniper_gensec and faction == "zombie" then
-		self._unit:damage():run_sequence_simple("switch_sniper_3_to_zombie")	
-	end	
-			
-    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk")	
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull_husk")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")	
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk")
-		
-    local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk")
-	
-    if self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
-        self._unit:damage():run_sequence_simple("murksecrandom")				
-    elseif self._unit:damage() and self._unit:damage():has_sequence("set_style_murky") and murkies then
-        self._unit:damage():run_sequence_simple("set_style_murky")
-    end
-end	
-
-local material_config_paths = {
-  "units/payday2/characters/ene_cop_vars/ene_cop_var1",
-  "units/payday2/characters/ene_cop_vars/ene_cop_var2",
-  "units/payday2/characters/ene_cop_vars/ene_cop_var3",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var1",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var2",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var3",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var4",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var5",
-  "units/payday2/characters/ene_fbi_vars/ene_fbi_var6",
-  "units/payday2/characters/ene_security_vars/ene_security_var1",
-  "units/payday2/characters/ene_security_vars/ene_security_var2",
-  "units/payday2/characters/ene_security_vars/ene_security_var3",
-  "units/payday2/characters/ene_security_vars/ene_security_var4",
-  "units/payday2/characters/ene_security_vars/ene_security_var5",
-  "units/payday2/characters/ene_security_vars/ene_security_var6",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5",
-  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var6",
-  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1",
-  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2",
-  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3",
-  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4",
-  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5",  
-  "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa"
+	["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "sec_pistol",
+	["units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"] = "sec_pistol",	
+	["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "sec_smg",
+	["units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"] = "sec_smg",
+	["units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"] = "sec_sg"
 }
 
-for i, material_config_path in pairs(material_config_paths) do
-  local normal_ids = Idstring(material_config_path)
-  local contour_ids = Idstring(material_config_path .. "_contour")
+-- do not touch this.
+local enemy_mapping = {}
+for name, sequence in pairs(enemy_variations) do
+	enemy_mapping[Idstring(name):key()] = sequence
+	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
+end
 
-  CopBase._material_translation_map[tostring(normal_ids:key())] = contour_ids
-  CopBase._material_translation_map[tostring(contour_ids:key())] = normal_ids 
+local function random_mat_seq_initialization(cop)
+	local sequence = enemy_mapping[cop._unit:name():key()]
+    local lvl_tweak_data = tweak_data.levels[job]
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+
+	if cop._unit:damage() and cop._unit:damage():has_sequence(sequence) then
+		cop._unit:damage():run_sequence_simple(sequence)
+	end
 end
 
 --Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded

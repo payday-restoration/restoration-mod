@@ -140,8 +140,6 @@ local enemies_plink = {
 local grenadier_smash = {
 	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser"),
 	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),     	
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk"),   
 	ids_func("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1"),

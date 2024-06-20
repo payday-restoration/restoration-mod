@@ -58,11 +58,13 @@
 
 			<object enabled="false" name="'g_glass_sht'"/>			
 			<object enabled="false" name="'g_glass'"/>			
-			<object  enabled="true" name="'g_glass_crk'"/>
+			<object enabled="true" name="'g_glass_crk'"/>
 			
 			<body enabled="false" name="'glass_visor'" />
 			<decal_mesh enabled="false" name="'c_visor'" />
-			
+			<decal_mesh enabled="false" name="'c_glass'" />
+			<decal_mesh  enabled="false" name="'dm_glass'" />													
+		
 			<effect  damp_time="4" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>			
 			<effect  damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			
@@ -77,6 +79,7 @@
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">									
 			<body  enabled="false" name="'glass_visor'" />	
 			<decal_mesh  enabled="false" name="'dm_glass'" />													
+			<decal_mesh  enabled="false" name="'c_glass'" />													
 
 			<run_sequence  name="'destroy_visor'"/>						
 		</sequence>		

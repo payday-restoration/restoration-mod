@@ -1,12 +1,12 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local chance_dozer_var_1 = math.random() 
-local chance_dozer_var_2 = math.random() 
-local chance_dozer_var_3 = math.random() 
+local chance_dozer_var_2 = math.random()
 local chance_cloaker_var_1 = math.random() 
 local chance_cloaker_var_2 = math.random() 
 local dozer_trigger_times = 2
 local enable_special_dozers = false
+local bravos_inbound = false
 local chopper_amount = 1
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
@@ -33,25 +33,25 @@ local cloaker_table = {
 	end	
 	
 	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_2 < 0.50 then
+		if chance_dozer_var_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
 	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_2 < 0.35 then
+		if chance_dozer_var_1 < 0.35 then
 			dozer_1 = dozer_table.dozer_skull
-		elseif chance_dozer_var_2 < 0.70 then
+		elseif chance_dozer_var_1 < 0.70 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
 	elseif difficulty == 8 then
-		if chance_dozer_var_2 < 0.25 then
+		if chance_dozer_var_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var_2 < 0.50 then
+		elseif chance_dozer_var_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var_2 < 0.75 then
+		elseif chance_dozer_var_1 < 0.75 then
 			dozer_1 = dozer_table.dozer_titan
 		else
 			dozer_1 = dozer_table.dozer_zeal_benelli
@@ -59,25 +59,25 @@ local cloaker_table = {
 	end
 	
 	if difficulty == 4 or difficulty == 5 then
-		if chance_dozer_var_3 < 0.50 then
+		if chance_dozer_var_2 < 0.50 then
 			dozer_2 = dozer_table.dozer_black
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
 	elseif difficulty == 6 or difficulty == 7 then
-		if chance_dozer_var_3 < 0.35 then
+		if chance_dozer_var_2 < 0.35 then
 			dozer_2 = dozer_table.dozer_skull
-		elseif chance_dozer_var_3 < 0.70 then
+		elseif chance_dozer_var_2 < 0.70 then
 			dozer_2 = dozer_table.dozer_black
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
 	elseif difficulty == 8 then
-		if chance_dozer_var_3 < 0.25 then
+		if chance_dozer_var_2 < 0.25 then
 			dozer_2 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var_3 < 0.50 then
+		elseif chance_dozer_var_2 < 0.50 then
 			dozer_2 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var_3 < 0.75 then
+		elseif chance_dozer_var_2 < 0.75 then
 			dozer_2 = dozer_table.dozer_titan
 		else
 			dozer_2 = dozer_table.dozer_zeal_benelli
@@ -102,6 +102,7 @@ local cloaker_table = {
 	end
 	
 if pro_job then
+		bravos_inbound = true
 	if difficulty >= 7 then
 		chopper_amount = 2
 	end			
@@ -120,6 +121,10 @@ local access_fix = {
 		end
 }	
 return {
+	--Call Bravos once Twitch arrives
+	[101983] = {
+		spawn_bravos = bravos_inbound
+	},
 	--Replace Heavy SWATs that spawn from the chopper with cloakers
 	[101571] = {
 		values = {

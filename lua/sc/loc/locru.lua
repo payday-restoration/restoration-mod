@@ -2062,12 +2062,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_slot_warning_primary"] = "ОРУЖИЕ БЫЛО ПЕРЕМЕЩЕНО В ОСНОВНОЙ СЛОТ\nПРИ ИСПОЛЬЗОВАНИИ ВО ВТОРОСТЕПЕННОМ СЛОТЕ ПРОИЗОЙДЕТ ВЫЛЕТ",
 		["bm_menu_weapon_slot_warning_secondary"] = "ОРУЖИЕ БЫЛО ПЕРЕМЕЩЕНО ВО ВТОРОСТЕПЕННЫЙ СЛОТ\nПРИ ИСПОЛЬЗОВАНИИ В ОСНОВНОМ СЛОТЕ ПРОИЗОЙДЕТ ВЫЛЕТ",
 		["bm_menu_weapon_slot_warning_disabled"] = "ОРУЖИЕ ОТКЛЮЧЕНО КАПИТАНОМ ОТЕМОМ\nПРИ ИСПОЛЬЗОВАНИИ ПРОИЗОЙДЕТ ВЫЛЕТ",
-		["bm_menu_weapon_slot_warning_wtfdoido"] = "НЕ ИСПОЛЬЗОВАТЬ ЭТО ОРУЖИЕ.\n\nНА ДАННЫЙ МОМЕНТ НЕ ВОЗМОЖНОСТИ ЕГО ЗАБАЛАНСИТЬ",
+		["bm_menu_weapon_slot_warning_wtfdoido"] = "НЕ ИСПОЛЬЗОВАТЬ ЭТО ОРУЖИЕ.\n\nНА ДАННЫЙ МОМЕНТ НЕТ ВОЗМОЖНОСТИ ЕГО ЗАБАЛАНСИТЬ",
 		["empty"] = "",
 		["missing_cap"] = "#{risk}#Custom Attachment Points## #{important_1}#не установлен.##\n\nМодуль будет выглядеть как стандартный модуль слота.",
 		["bm_slamfire_generic_desc"] = "Альтернативный огонь позволяет #{skill_color}#отстрелять боезапас в три раза быстрее## за счет #{important_1}#отдачи, точности и невозможности прицеливания.##",
 		["bm_rapidfire_generic_desc"] = "Может #{skill_color}#быстро стрелять## за счет #{important_1}#повышенной отдачи и пониженной дальнобойности.##",
 		["bm_ap_weapon_sc_desc"] = "#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
+		["bm_ap_weapon_semi_sc_desc"] = "#{skill_color}#Может пробивать броню, нескольких врагов, щиты в пределах максимального расстояния и тонкие стены.##",
 		["bm_ap_armor_weapon_sc_desc"] = "#{skill_color}#Может пробивать броню.##",
 		["bm_ap25_armor_weapon_sc_desc"] = "#{skill_color}#Позволяет дополнительно наносить 25% урона через броню.##",
 		["bm_ap_armor_20_weapon_sc_desc"] = "#{skill_color}#Наносит 25% урона через броню.##",
@@ -2432,7 +2433,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
 			
 			["bm_suit_var_suit_prison_subject"] = "Подопытный",
-			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборотории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
+			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
 			
 			
 		--Weapon Colors
@@ -2830,9 +2831,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
 		--[[ 
 		WepNames Options
-		1 = Имена оружий на кириллице
-		2 = Имена оружий на латинице
-		3 = Имено оружий и атачментов от DMC
+		1 = Имена оружия на кириллице
+		2 = Имена оружия на латинице
+		3 = Имено оружия и атачментов от DMC
 		4 = Ванильные
 	]]
 		
@@ -3320,8 +3321,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_akmsu"] = "Парные Кринковы",
 		--CUSTOM ARs
 			--AN-94/92
-			["bm_w_tilt"] = "КВК 99",			["bm_w_tilt"] = "КВК 99",
-			["bm_w_g36k"] = "ДЖП 36K",			["bm_w_scarl"] = "Игл Лайт",
+			["bm_w_tilt"] = "КВК 99",
+			["bm_w_g36k"] = "ДЖП 36K",			
+			["bm_w_scarl"] = "Игл Лайт",
 			["bm_w_rk62"] = "Вельмер",
 			["bm_w_mcbravo"] = "Химера",
 			["bm_w_ar18"] = "КАР-18",
@@ -5099,7 +5101,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_lmg"] = "Когда появляется Зеленый или Черный Бульдозер, есть шанс, что его заменит Скаллдозер.",
 		["menu_cs_modifier_10secondsresponsetime"] = "Полицейские штурмы сразу имеют максимальную интенсивность.",
 		["menu_cs_modifier_dozerpairs"] = "Все бульдозеры теперь появляются парами.",
-		["menu_cs_modifier_spoocsquad"] = "Cloakers now tend to spawn in groups.",
+		["menu_cs_modifier_spoocsquad"] = "Клокеры стараются появляться группами.",
 
 		["bm_menu_skill"] = "Бонусы для команды",
 

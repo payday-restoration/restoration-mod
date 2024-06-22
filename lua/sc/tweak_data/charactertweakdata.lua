@@ -1996,7 +1996,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.is_special = true
 	self.biker_boss.no_asu = true
 	self.biker_boss.heal_cooldown = 22.5
-	self.biker_boss.die_sound_event = "fl1n_x02a_any_3p"
+	self.biker_boss.die_sound_event = "cf2_burndeath"
 	self.biker_boss.no_omnia_heal = true
 	self.biker_boss.can_be_healed = false
 	table.insert(self._enemy_list, "biker_boss")

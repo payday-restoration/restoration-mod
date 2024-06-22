@@ -3,6 +3,7 @@ local chance_dw = 20
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local hard_above = false
+local bravos_inbound = false
 local cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3"
 local cop_3 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"
@@ -11,10 +12,23 @@ local cop_3 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"
 		hard_above = true
 	end
 	
-if pro_job then	
+if pro_job then
+	bravos_inbound = true
 	chance_ovk = chance_ovk + 5
 	chance_dw = chance_dw + 5
 end
+
+local interval = {
+	values = {
+		interval = 30
+	}
+}
+
+local spawnfix = {
+	values = {
+		event = "spawn"
+	}
+}
 
 return {
 	-- Disable outline for Ralph if he is tied
@@ -173,8 +187,10 @@ return {
 			{id = 400068, delay = 0}
 		}
 	},
-	--Spawn escape sniper if the heli escape gets triggered
-	[104949] = { 
+	--Spawn escape sniper when the heli escape gets triggered
+	--Call in Bravos on PJs
+	[104949] = {
+		spawn_bravos = bravos_inbound,
 		on_executed = {
 			{id = 400059, delay = 3}
 		}
@@ -237,21 +253,9 @@ return {
 		}
 	},
 	-- Fixed some of the enemydummytriggers having wrong event set up
-	[102739] = {
-		values = {
-			event = "spawn"
-		}
-	},
-	[102741] = {
-		values = {
-			event = "spawn"
-		}
-	},
-	[102743] = {
-		values = {
-			event = "spawn"
-		}
-	},
+	[102739] = spawnfix,
+	[102741] = spawnfix,
+	[102743] = spawnfix,
 	-- Increase chances to spawn red diamond if PJ is enabled
 	[104079] = {
 		values = {
@@ -264,24 +268,8 @@ return {
 		}
 	},
 	-- Slow down vault group spawns
-	[100722] = {
-		values = {
-			interval = 30
-		}
-	},
-	[100723] = {
-		values = {
-			interval = 30
-		}
-	},
-	[104821] = {
-		values = {
-			interval = 30
-		}
-	},
-	[104822] = {
-		values = {
-			interval = 30
-		}
-	}
+	[100722] = interval,
+	[100723] = interval,
+	[104821] = interval,
+	[104822] = interval
 }

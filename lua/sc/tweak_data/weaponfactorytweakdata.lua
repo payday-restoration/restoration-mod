@@ -4978,6 +4978,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_s_psl.stats = deep_clone(stocks.nocheeks_to_thumb_stats)
 	self.parts.wpn_upg_ak_s_psl.custom_stats = deep_clone(stocks.nocheeks_to_thumb_stats)
 	self.parts.wpn_upg_ak_s_psl.override = {
+		wpn_upg_ak_g_standard = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		},
 		wpn_fps_snp_flint_s_adapter = {
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -4989,14 +4993,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		wpn_fps_smg_coal_g_standard = {
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		}	
+		}
 	}
 	self.parts.wpn_upg_ak_s_psl.forbids = {
-		"wpn_upg_ak_g_standard",
 		"wpn_fps_upg_ak_g_hgrip",
 		"wpn_fps_upg_ak_g_wgrip",
 		"wpn_fps_upg_ak_g_pgrip",
-		"wpn_fps_upg_ak_g_rk3"
+		"wpn_fps_upg_ak_g_rk3",
+		"wpn_fps_upg_ak_g_gradus",
+		"wpn_fps_upg_ak_g_edg",
+		"wpn_fps_upg_ak_g_rk9"
 	}
 	
 	--(AK) Folding Stock
@@ -30211,7 +30217,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						--Smooth Grip
 						self.parts.wpn_fps_ass_flint_g_custom.supported = true
 						self.parts.wpn_fps_ass_flint_g_custom.stats = deep_clone(grips.acc_recoil)
-						table.insert(self.parts.wpn_upg_ak_s_psl.forbids, "wpn_fps_ass_flint_g_custom")		
 						--Flint Magazine
 						self.parts.wpn_fps_ass_flint_m_long.supported = true
 						self.parts.wpn_fps_ass_flint_m_long.stats = {
@@ -38606,6 +38611,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	--Forbid all attachable AK grips (that are at least usable on the AKM) with the PSL stock
+	for k, used_part_id in ipairs(self.wpn_fps_ass_akm.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].pcs and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "grip" then
+				if not table.contains(self.parts.wpn_upg_ak_s_psl.forbids, used_part_id) then
+					table.insert(self.parts.wpn_upg_ak_s_psl.forbids, used_part_id)
+				end
+			end
+		end
+	end
+
 	--Deagle Exclusive set
 	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -38626,17 +38642,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--Alternative way of making the default CAR-4 stock piss off instead of putting a "attachment forbids" warning on everything
 	for part_id, i in pairs(self.parts) do
 		if self.parts[part_id] then
-			if self.parts[part_id].forbids and table.contains(self.parts[part_id].forbids, "wpn_fps_upg_m4_s_standard_vanilla") then
-				for k, forbid_id in pairs(self.parts[part_id].forbids) do
-					if forbid_id == "wpn_fps_upg_m4_s_standard_vanilla" then
-						self.parts[part_id].forbids[k] = "forbid_dummy"
+			if self.parts[part_id].forbids then
+				if table.contains(self.parts[part_id].forbids, "wpn_fps_upg_m4_s_standard_vanilla") then
+					for k, forbid_id in pairs(self.parts[part_id].forbids) do
+						if forbid_id == "wpn_fps_upg_m4_s_standard_vanilla" then
+							self.parts[part_id].forbids[k] = "forbid_dummy"
+						end
 					end
+					self.parts[part_id].override = self.parts[part_id].override or {}
+					self.parts[part_id].override.wpn_fps_upg_m4_s_standard_vanilla = {
+						unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+					}
 				end
-				self.parts[part_id].override = self.parts[part_id].override or {}
-				self.parts[part_id].override.wpn_fps_upg_m4_s_standard_vanilla = {
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-				}
+				if table.contains(self.parts[part_id].forbids, "wpn_upg_ak_g_standard") then
+					for k, forbid_id in pairs(self.parts[part_id].forbids) do
+						if forbid_id == "wpn_upg_ak_g_standard" then
+							self.parts[part_id].forbids[k] = "forbid_dummy"
+						end
+					end
+					self.parts[part_id].override = self.parts[part_id].override or {}
+					self.parts[part_id].override.wpn_upg_ak_g_standard = {
+						unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+					}
+				end
 			end
 
 			if self.parts[part_id].forbids and (table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_dragons_breath") or table.contains(self.parts[part_id].forbids, "wpn_fps_upg_a_explosive")) then

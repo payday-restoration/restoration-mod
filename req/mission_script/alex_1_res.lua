@@ -121,7 +121,7 @@ local access_fix = {
 		end
 }	
 return {
-	--Call Bravos once Twitch arrives
+	--Call Bravos once Twitch arrives on PJs
 	[101983] = {
 		spawn_bravos = bravos_inbound
 	},

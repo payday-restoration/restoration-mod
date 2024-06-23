@@ -3,9 +3,17 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local dozer_ambush_chance_ovk = 50
 local dozer_ambush_chance_dw = 65
 local dozer_ambush_chance_ds = 80
+local bravos_inbound = false
+local hunt_projob = false
+local ponr_timer = 360
 local random_dozer = 1
-	--If we're in Pro Job, then change scripted dozers stuff
+local boat_timer = 120
+	
 	if pro_job then
+		boat_timer = 180
+		max_diff = 1
+		bravos_inbound = true
+		hunt_projob = true
 		random_dozer = 2
 		dozer_ambush_chance_ovk = 70
 		dozer_ambush_chance_dw = 80
@@ -28,6 +36,41 @@ local dozer_2 = {
 	}
 }	
 return {
+	--Pro Job PONR+Bravos+Endless Assault
+	--Also increases the difficulty curve to 1
+	[103885] = {
+		ponr = ponr_timer,
+		hunt = hunt_projob,
+		spawn_bravos = bravos_inbound,
+		difficulty = max_diff
+	},
+	--Increase the timer of boat arrival on loud
+	[103662] = {
+		values = {
+            timer = boat_timer
+		}
+	},
+	[101579] = {
+		values = {
+            time = 10
+		}
+	},
+	[101580] = {
+		values = {
+            time = 10
+		}
+	},
+	--increase power cut delay from literally fucking 0 (from ASS)
+	[100549] = {
+		on_executed = {
+			{ id = 103658, delay = 10, delay_rand = 10 }
+		}
+	},
+	[103827] = {
+		on_executed = {
+			{ id = 103828, delay = 10, delay_rand = 10 }
+		}
+	},
 	--Pro Job Stuff
 	[101783] = {
 		values = {

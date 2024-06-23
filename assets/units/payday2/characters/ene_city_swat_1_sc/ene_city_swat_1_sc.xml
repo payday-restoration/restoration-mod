@@ -119,7 +119,7 @@
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			
 			<!-- rifleman -->
-			<run_sequence filter="'check_city_swat_ar'" name="'head_'..pick('balaclava_b', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava', 'balaclava')"/>
+			<run_sequence filter="'check_city_swat_ar'" name="'head_'..pick('balaclava_b', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava',, 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
 			<run_sequence filter="'check_city_swat_ar'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
@@ -133,7 +133,7 @@
 			<run_sequence filter="'check_flashlights_on_ar'" name="'helmet_flashlight'"/>
 		
 			<!-- sg -->
-			<run_sequence filter="'check_city_swat_sg'" name="'head_'..pick('balaclava', 'balaclava_b', 'balaclava', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava', 'balaclava')"/>
+			<run_sequence filter="'check_city_swat_sg'" name="'head_'..pick('balaclava_b',  'balaclava_b', 'balaclava',  'balaclava',  'balaclava', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava', 'balaclava_b','balaclava_b','balaclava_b','balaclava_b','balaclava_b','balaclava_b','balaclava_b','balaclava')"/>
 			
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
@@ -145,7 +145,7 @@
 			<run_sequence filter="'check_city_swat_sg'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
 
 			<!-- extra attachments! :D -->
-			<run_sequence filter="'check_city_swat_sg'" name="'helmet'..pick('_mask','_mask','_mask','_mask','_chops', '_mask')"/>
+			<run_sequence filter="'check_city_swat_sg'" name="'helmet'..pick('_mask','_mask','_mask','_mask','_mask','_mask','_mask','_mask','_chops','_chops', '_mask')"/>
 			
 			<run_sequence filter="'check_city_swat_sg'" name="'helmet_nvg_up'"/>
 		
@@ -279,14 +279,14 @@
 		</sequence>				
 		
 		<sequence editable_state="true" name="'helmet_headset'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a','a','c','a','b','b','e','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
 		
 			<object enabled="true" name="'g_headset'"/>
 			<object enabled="true" name="'g_headset_lod1'"/>
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_headset_smg'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a','a','c','a','e','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','c','a','e','a','a')"/>								
 		
 			<object enabled="true" name="'g_headset'"/>
 			<object enabled="true" name="'g_headset_lod1'"/>
@@ -298,15 +298,15 @@
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a','a','c','a','b','b','e','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
 		</sequence>
 
 		<sequence editable_state="true" name="'helmet_nun_smg'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a','a','c','a','e','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','c','a','e','a','a')"/>								
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_chops'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a','a','c','a','b','b','e','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
 		
 			<object enabled="true" name="'g_helmet_lod11'"/>
 			<object enabled="true" name="'g_helmet_lod12'"/>
@@ -371,9 +371,9 @@
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_helmet_lod13'"/>						
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_helmet_lod14'"/>
 			
-			<run_sequence name="'helmet_'..pick('actnun','actnun','actnun','actnun','headset_ng','actnun','actnun')"/>			
+			<run_sequence name="'helmet_'..pick('actnun','actnun','actnun','actnun','actnun','actnun','actnun','headset_ng','actnun','actnun')"/>			
 			
-			<run_sequence name="'mask_'..pick('glass','glass','glass','goggles','glass','glass','glass')"/>			
+			<run_sequence name="'mask_'..pick('glass','glass','glass','glass','glass','glass','glass','glass','glass','glass','glass','goggles','glass','glass','glass')"/>			
 		</sequence>
 
 		<sequence editable_state="true" name="'mask_glass'" once="true" triggable="true">

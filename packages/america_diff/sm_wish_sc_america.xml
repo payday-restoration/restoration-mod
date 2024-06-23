@@ -296,9 +296,6 @@
 	<object				path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_df" />
 	
-	<texture			path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
-
 	<!--shield-->
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
@@ -315,11 +312,12 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_husk" load="true"/>	
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />
 	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />	
 	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"/>
 	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_contour"/>	
 	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_body_df" />	
-	<df_nm				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_head" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_nm" />	
 	
 	<unit_obj			path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_medic_helmet/ene_acc_zeal_medic_helmet" />
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_medic_helmet/ene_acc_zeal_medic_helmet" />	

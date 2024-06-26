@@ -8,9 +8,11 @@ local bravos_inbound = false
 
 return {
 	--Call in Bravos on PJs once Vlad's bro-in law gets to the chopper
+	--[[
 	[106282] = {
 	       spawn_bravos = bravos_inbound
 	},
+	]]
 	--There's no cops in White Xmas, yes i'm serious
 	[100288] = {
 		values = {

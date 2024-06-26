@@ -41,7 +41,7 @@ return {
 	[103885] = {
 		ponr = ponr_timer,
 		hunt = hunt_projob,
-		spawn_bravos = bravos_inbound,
+		--spawn_bravos = bravos_inbound,
 		difficulty = max_diff
 	},
 	--Increase the timer of boat arrival on loud

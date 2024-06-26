@@ -122,9 +122,11 @@ local access_fix = {
 }	
 return {
 	--Call Bravos once Twitch arrives on PJs
+	--[[
 	[101983] = {
 		spawn_bravos = bravos_inbound
 	},
+	]]--
 	--Replace Heavy SWATs that spawn from the chopper with cloakers
 	[101571] = {
 		values = {

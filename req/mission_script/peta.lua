@@ -9,7 +9,7 @@ return {
 	--Highlight all remaining goats when Boris arrives
 	--Call Bravos when on PJs
 	[100245] = {
-	spawn_bravos = bravos_inbound,
+	--spawn_bravos = bravos_inbound,
 	on_executed = {
 			{id = 100672, delay = 0}
 		}

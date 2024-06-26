@@ -17241,7 +17241,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end	
-	elseif
+else
 	--New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {

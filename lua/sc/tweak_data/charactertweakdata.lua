@@ -1912,7 +1912,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.no_arrest = true
 	self.mobster_boss.surrender = nil
 	self.mobster_boss.ecm_vulnerability = 0
-	self.mobster_boss.ecm_hurts = {} to
+	self.mobster_boss.ecm_hurts = {}
 	self.mobster_boss.weapon_voice = "3"
 	self.mobster_boss.experience.cable_tie = "tie_swat"
 	self.mobster_boss.access = "gangster"

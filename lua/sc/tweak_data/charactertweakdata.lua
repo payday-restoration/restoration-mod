@@ -1912,7 +1912,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.no_arrest = true
 	self.mobster_boss.surrender = nil
 	self.mobster_boss.ecm_vulnerability = 0
-	self.mobster_boss.ecm_hurts = {}
+	self.mobster_boss.ecm_hurts = {} to
 	self.mobster_boss.weapon_voice = "3"
 	self.mobster_boss.experience.cable_tie = "tie_swat"
 	self.mobster_boss.access = "gangster"
@@ -17713,10 +17713,15 @@ function CharacterTweakData:_set_sm_wish()
 		power = 1,
 		range = 1000
 	}
+	--Chavez can throw frag nades
+	self.chavez_boss.can_throw_frag = true
+	self.chavez_boss.grenade_toss_chance = 0.4
+	
 	--Speed up the bosses
 	self.mobster_boss.move_speed = self.presets.move_speed.slow
 	self.hector_boss.move_speed = self.presets.move_speed.slow
 	self.biker_boss.move_speed = self.presets.move_speed.slow
+	self.chavez_boss.move_speed = presets.move_speed.slow
 	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
 	self.triad_boss.move_speed = self.presets.move_speed.slow
 	self.deep_boss.move_speed = self.presets.move_speed.slow

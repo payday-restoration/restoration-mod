@@ -17721,7 +17721,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.mobster_boss.move_speed = self.presets.move_speed.slow
 	self.hector_boss.move_speed = self.presets.move_speed.slow
 	self.biker_boss.move_speed = self.presets.move_speed.slow
-	self.chavez_boss.move_speed = presets.move_speed.slow
+	self.chavez_boss.move_speed = self.presets.move_speed.slow
 	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
 	self.triad_boss.move_speed = self.presets.move_speed.slow
 	self.deep_boss.move_speed = self.presets.move_speed.slow

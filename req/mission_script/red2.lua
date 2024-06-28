@@ -84,6 +84,12 @@ local taser = {
 		enemy = taser
 	}
 }
+local taser_basement = {
+	values = {
+		enemy = taser,
+		spawn_action = "e_sp_kick_enter"
+	}
+}
 local swatsg = {
 	values = {
 		enemy = swat_shotgunner
@@ -416,8 +422,8 @@ return {
 	[100617] = cloaker,
 	[100618] = cloaker,
 	[103395] = cloaker,
-	[103163] = taser,
-	[103231] = taser,
+	[103163] = taser_basement,
+	[103231] = taser_basement,
 	[103466] = taser,
 	[103463] = shield,
 	[103465] = swatsg

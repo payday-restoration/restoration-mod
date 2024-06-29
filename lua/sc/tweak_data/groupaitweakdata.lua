@@ -764,35 +764,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}				
-	self.unit_categories.omnia_LPF = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},		
-			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			}
-		},
-		access = access_type_all
-	}
 	if difficulty_index <= 6 then
 		self.unit_categories.fbi_vet = {
 			unit_types = {
@@ -8682,8 +8653,37 @@ end
 	--Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
 	self.unit_categories.Phalanx_sniper.ignore_spawn_cap = true
-
-	
+        --OMNIA LPFs that spawn with Winters on DS (Pro Job only)
+        self.unit_categories.omnia_LPF = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			federales = {
+				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			}
+		},
+		access = access_type_all,
+                ignore_spawn_cap = true
+        }
 	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {

@@ -20694,7 +20694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spas15.timers = deep_clone(self.g36.timers)
 		end	
 
-		if self.mdr_308 then
+		if self.mdr_308 then --H.H. Hartmann's MDRX
 			self.mdr_308.categories = { 
 				"assault_rifle",
 				"dmr_l",
@@ -20773,7 +20773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308_underbarrel.timers.reload_exit_not_empty = 0.3
 		end
 
-		if self.degfifty then
+		if self.degfifty then --Masavik's .50 Cal Deagle
 			self.degfifty.categories = { "pistol", "amr", "semi_snp" }
 			self.degfifty.recategorize = { "heavy_pis" }
 			self.degfifty.has_description = false

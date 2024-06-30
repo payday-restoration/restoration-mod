@@ -16440,7 +16440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.musket.timers.reload_exit_empty = 0.9
 			end
 
-			if self.m107cq then --Pawcio's M107
+			if self.m107cq then --Pawcio's M107CQ v1.11
 				self.m107cq.categories = {
 					"snp",
 					"semi_snp",
@@ -16485,10 +16485,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.can_shoot_through_titan_shield = true
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
-				self.m107cq.timers.reload_not_empty = 3.5
-				self.m107cq.timers.reload_empty = 5.4
-				self.m107cq.timers.reload_exit_not_empty = 1.4
-				self.m107cq.timers.reload_exit_empty = 0.7
+				self.m107cq.timers.reload_not_empty = 2.8
+				self.m107cq.timers.reload_exit_not_empty = 1.12
+				self.m107cq.timers.reload_empty = 4.8
+				self.m107cq.timers.reload_exit_empty = 0.65
 			end
 
 			if self.m200 then --Pawcio's Intervention
@@ -20900,6 +20900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.glockson.stats_modifiers = nil
 			self.glockson.panic_suppression_chance = 0.05
+			self.glockson.timers = deep_clone(self.m1928.timers)
 		end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

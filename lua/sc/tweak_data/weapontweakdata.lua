@@ -16710,6 +16710,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.as24.weapon_movement_penalty = 0.8
 			end
 
+			if self.rhino then 
+				self.rhino.recategorize = {"heavy_pis", "handcannon"}
+				self.rhino.has_description = true
+				self.rhino.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.rhino.CLIP_AMMO_MAX = 6
+				self.rhino.AMMO_MAX = 30
+				self.rhino.fire_mode_data.fire_rate = 0.19047619047
+				self.rhino.kick = self.stat_info.kick_tables.moderate_kick
+				self.rhino.supported = true
+				self.rhino.ads_speed = 0.160
+				self.rhino.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3900,
+					min_mult = 0.25
+				}
+				self.rhino.stats = {
+					damage = 60,
+					spread = 68,
+					recoil = 57,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.rhino.stats_modifiers = nil
+				self.rhino.panic_suppression_chance = 0.05
+				self.rhino.reload_speed_multiplier = 1.125
+				self.rhino.armor_piercing_chance = 0.5
+				self.rhino.can_shoot_through_enemy = true
+				self.rhino.timers = deep_clone(self.chinchilla.timers)
+			end
+
 			if self.deckard then 
 				self.deckard.recategorize = {"heavy_pis", "handcannon"}
 				self.deckard.has_description = true
@@ -20825,6 +20862,44 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.timers.reload_exit_not_empty = 0.7
 			self.degfifty.armor_piercing_chance = 1
 			self.degfifty.object_damage_mult = 4
+		end
+
+		if self.glockson then --Masavik's Glockson
+			--Moved to primary
+			self.glockson.use_data.selection_index = 2	
+			self.glockson.categories = {"smg"}
+			self.glockson.recategorize = {"light_smg"}
+			self.glockson.damage_type = "machine_gun"
+			self.glockson.lock_slide = true
+			self.glockson.sounds.magazine_empty = "wp_pistol_slide_lock"
+			self.glockson.fire_mode_data.fire_rate = 0.05454545454
+			self.glockson.CAN_TOGGLE_FIREMODE = true
+			self.glockson.CLIP_AMMO_MAX = 33
+			self.glockson.AMMO_MAX = 180
+			self.glockson.kick = self.stat_info.kick_tables.left_recoil
+			self.glockson.supported = true
+			self.glockson.ads_speed = 0.240
+			self.glockson.damage_falloff = {
+				start_dist = 1900,
+				end_dist = 4200,
+				min_mult = 0.3
+			}
+			self.glockson.stats = {
+				damage = 20,
+				spread = 62,
+				recoil = 79,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 25,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,
+				reload = 20
+			}
+			self.glockson.stats_modifiers = nil
+			self.glockson.panic_suppression_chance = 0.05
 		end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

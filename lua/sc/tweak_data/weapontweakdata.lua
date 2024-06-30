@@ -17162,7 +17162,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cssdeagle.desc_id = "bm_ap_armor_80_weapon_sc_desc"
 				self.cssdeagle.has_description = true
 				self.cssdeagle.object_damage_mult = 1.2
-				self.cssdeagle.AMMO_MAX = 30
+				self.cssdeagle.AMMO_MAX = 20
 				self.cssdeagle.fire_mode_data.fire_rate = 0.2247191
 				self.cssdeagle.kick = self.stat_info.kick_tables.moderate_kick
 				self.cssdeagle.supported = true

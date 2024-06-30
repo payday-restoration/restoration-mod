@@ -16440,7 +16440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.musket.timers.reload_exit_empty = 0.9
 			end
 
-			if self.m107cq then --Pawcio's M107CQ v1.11
+			if self.m107cq then --Pawcio's M107CQ v1.2
 				self.m107cq.categories = {
 					"snp",
 					"semi_snp",

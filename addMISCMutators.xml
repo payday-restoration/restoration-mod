@@ -9,7 +9,19 @@
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<model				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
 	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>	
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+
+	<!--OMNIA medic-->	
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_contour" force="false" />
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />		
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df"/>
 	
 	<!--OMNIA Shield-->
 	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>

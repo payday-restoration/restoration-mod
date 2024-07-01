@@ -8653,8 +8653,8 @@ end
 	--Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
 	self.unit_categories.Phalanx_sniper.ignore_spawn_cap = true
-        --OMNIA LPFs that spawn with Winters on DS (Pro Job only)
-        self.unit_categories.omnia_LPF = {
+    --OMNIA LPFs that spawn with Winters on DS (Pro Job only)
+    self.unit_categories.omnia_LPF = {
 		unit_types = {
 			america = {
 				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
@@ -8682,8 +8682,8 @@ end
 			}
 		},
 		access = access_type_all,
-                ignore_spawn_cap = true
-        }
+        ignore_spawn_cap = true
+    }
 	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {

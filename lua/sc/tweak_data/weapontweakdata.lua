@@ -5707,6 +5707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.stech.stats_modifiers = nil
 						self.stech.panic_suppression_chance = 0.05
+						self.stech.reload_speed_multiplier = 1.3
 						self.stech.timers.reload_exit_empty = 0.7
 						self.stech.timers.reload_not_empty = 1.89
 						self.stech.timers.reload_exit_not_empty = 0.7
@@ -16485,6 +16486,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.can_shoot_through_titan_shield = true
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
+				self.m107cq.reload_speed_multiplier = 0.9
 				self.m107cq.timers.reload_not_empty = 2.8
 				self.m107cq.timers.reload_exit_not_empty = 1.12
 				self.m107cq.timers.reload_empty = 4.8
@@ -20201,7 +20203,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.pm.stats_modifiers = nil
 			self.pm.panic_suppression_chance = 0.05
-			self.pm.reload_speed_multiplier = 1.1
+			self.pm.reload_speed_multiplier = 1.3
 			self.pm.timers = deep_clone(self.stech.timers)
 		end
 			if self.x_pm then --Akimbo
@@ -20900,7 +20902,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.glockson.stats_modifiers = nil
 			self.glockson.panic_suppression_chance = 0.05
-			self.glockson.timers = deep_clone(self.m1928.timers)
+			self.glockson.timers.reload_exit_empty = 0.8
+			self.glockson.timers.reload_exit_not_empty = 0.72
 		end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

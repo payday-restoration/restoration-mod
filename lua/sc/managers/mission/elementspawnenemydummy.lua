@@ -854,8 +854,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
-			tshield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
-			secret_service = "units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service",
+			secret_service = {
+				"units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+			},
 			fbi_1 = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
@@ -873,6 +878,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			grenadier = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 			cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 			tsniper = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+			tshield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
 			dozer = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 		},
 		--Mix of Murkywater Tactical Security+Marines
@@ -892,7 +898,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
-			secret_service = "units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service",
+			secret_service = {
+				"units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+			},
 			fbi_1 = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
@@ -947,7 +959,13 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 			},
-			secret_service = "units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service",
+			secret_service = {
+				"units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+				"units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
+			},
 			fbi_1 = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",

@@ -3,6 +3,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = false
 local ambush_doors_chance = 85
 local ambush_amount = 1
+local cloaker_ambush_amount_vault_hallway = 1
 local both_window_swats_only = true
 local enable_right_path = false
 local vent_spawngroup = false
@@ -23,9 +24,11 @@ local marioinatophat_is_in_fwb_chance = 0.15
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
+		cloaker_ambush_amount_vault_hallway = 2
 	elseif difficulty == 8 then
 		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
+		cloaker_ambush_amount_vault_hallway = 3
 	end
 
 --If we're in Pro Job, then do this stuff below
@@ -136,6 +139,24 @@ return {
 	[103609] = {
 		values = {
 			enemy = dave
+		}
+	},
+	--Re-enable unused guard that spawn with Bo on the balcony
+	[100671] = {
+		values = {
+			enabled = true
+		}
+	},
+	--More cloakers in vault hallway on higher diffs
+	[103996] = {
+		values = {
+            amount = cloaker_ambush_amount_vault_hallway
+		}
+	},
+	--Making sure that cloaker ambush in vault hallway works with alt vault entrance
+	[101188] = {
+		values = {
+			toggle = "on"
 		}
 	},
 	-- Disable forced manager flee objective

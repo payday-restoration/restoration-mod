@@ -128,6 +128,9 @@ local optsBulldozer_193 = {
 }
 local optsBulldozer_special = {
     enemy = tank_skull,
+	on_executed = {
+		{ id = 400052, delay = 0 }
+	},
     enabled = (death_wish_above and pro_job and enabled_chance_dozers_exitvault)
 }
 local optsCloaker_rush_1 = {

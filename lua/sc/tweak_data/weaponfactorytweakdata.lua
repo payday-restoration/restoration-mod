@@ -35196,7 +35196,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 2,
 				extra_ammo = 4,
 				concealment = -1,
-				reload = -1
+				reload = -2
 			}
 			self.parts.wpn_fps_pis_pm_m_modern.custom_stats = { ads_speed_mult = 1.025 }
 			self.parts.wpn_fps_pis_pm_m_extended.supported = true

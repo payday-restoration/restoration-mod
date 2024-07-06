@@ -5707,6 +5707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.stech.stats_modifiers = nil
 						self.stech.panic_suppression_chance = 0.05
+						self.stech.reload_speed_multiplier = 1.3
 						self.stech.timers.reload_exit_empty = 0.7
 						self.stech.timers.reload_not_empty = 1.89
 						self.stech.timers.reload_exit_not_empty = 0.7
@@ -10998,7 +10999,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mosin.kick = self.stat_info.kick_tables.vertical_kick
 						self.mosin.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.mosin.supported = true
-						self.mosin.ads_speed = 0.340
+						self.mosin.ads_speed = 0.320
 						self.mosin.damage_falloff = {
 							start_dist = 3500,
 							end_dist = 8000,
@@ -11070,10 +11071,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r93.has_description = true
 						self.r93.desc_id = "bm_r93_sc_desc"					
 						self.r93.upgrade_blocks = nil
-						self.r93.CLIP_AMMO_MAX = 5
+						self.r93.CLIP_AMMO_MAX = 4
 						self.r93.AMMO_MAX = 30
 						self.r93.fire_mode_data.fire_rate = 1.2
-						self.r93.fire_rate_multiplier = 1.4
+						self.r93.fire_rate_multiplier = 1.6
 						self.r93.kick = self.stat_info.kick_tables.vertical_kick
 						self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.r93.supported = true
@@ -11098,6 +11099,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.r93.armor_piercing_chance = 1
+						self.r93.reload_speed_multiplier = 1.08
 						self.r93.stats_modifiers = nil
 						self.r93.panic_suppression_chance = 0.05
 						self.r93.timers.reload_exit_empty = 0.85
@@ -16440,7 +16442,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.musket.timers.reload_exit_empty = 0.9
 			end
 
-			if self.m107cq then --Pawcio's M107
+			if self.m107cq then --Pawcio's M107CQ v1.2
 				self.m107cq.categories = {
 					"snp",
 					"semi_snp",
@@ -16485,10 +16487,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.can_shoot_through_titan_shield = true
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
-				self.m107cq.timers.reload_not_empty = 3.5
-				self.m107cq.timers.reload_empty = 5.4
-				self.m107cq.timers.reload_exit_not_empty = 1.4
-				self.m107cq.timers.reload_exit_empty = 0.7
+				self.m107cq.reload_speed_multiplier = 0.9
+				self.m107cq.timers.reload_not_empty = 2.8
+				self.m107cq.timers.reload_exit_not_empty = 1.12
+				self.m107cq.timers.reload_empty = 4.8
+				self.m107cq.timers.reload_exit_empty = 0.65
 			end
 
 			if self.m200 then --Pawcio's Intervention
@@ -16708,6 +16711,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.as24.panic_suppression_chance = 0.05
 				self.as24.kick = self.stat_info.kick_tables.vertical_kick
 				self.as24.weapon_movement_penalty = 0.8
+			end
+
+			if self.rhino then 
+				self.rhino.recategorize = {"heavy_pis", "handcannon"}
+				self.rhino.has_description = true
+				self.rhino.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.rhino.CLIP_AMMO_MAX = 6
+				self.rhino.AMMO_MAX = 30
+				self.rhino.fire_mode_data.fire_rate = 0.19047619047
+				self.rhino.kick = self.stat_info.kick_tables.moderate_kick
+				self.rhino.supported = true
+				self.rhino.ads_speed = 0.160
+				self.rhino.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3900,
+					min_mult = 0.25
+				}
+				self.rhino.stats = {
+					damage = 60,
+					spread = 68,
+					recoil = 57,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 27,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.rhino.stats_modifiers = nil
+				self.rhino.panic_suppression_chance = 0.05
+				self.rhino.reload_speed_multiplier = 1.125
+				self.rhino.armor_piercing_chance = 0.5
+				self.rhino.can_shoot_through_enemy = true
+				self.rhino.timers = deep_clone(self.chinchilla.timers)
 			end
 
 			if self.deckard then 
@@ -17162,7 +17202,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cssdeagle.desc_id = "bm_ap_armor_80_weapon_sc_desc"
 				self.cssdeagle.has_description = true
 				self.cssdeagle.object_damage_mult = 1.2
-				self.cssdeagle.AMMO_MAX = 30
+				self.cssdeagle.AMMO_MAX = 20
 				self.cssdeagle.fire_mode_data.fire_rate = 0.2247191
 				self.cssdeagle.kick = self.stat_info.kick_tables.moderate_kick
 				self.cssdeagle.supported = true
@@ -20164,7 +20204,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.pm.stats_modifiers = nil
 			self.pm.panic_suppression_chance = 0.05
-			self.pm.reload_speed_multiplier = 1.1
+			self.pm.reload_speed_multiplier = 1.3
 			self.pm.timers = deep_clone(self.stech.timers)
 		end
 			if self.x_pm then --Akimbo
@@ -20694,7 +20734,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spas15.timers = deep_clone(self.g36.timers)
 		end	
 
-		if self.mdr_308 then
+		if self.mdr_308 then --H.H. Hartmann's MDRX
 			self.mdr_308.categories = { 
 				"assault_rifle",
 				"dmr_l",
@@ -20773,7 +20813,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308_underbarrel.timers.reload_exit_not_empty = 0.3
 		end
 
-		if self.degfifty then
+		if self.degfifty then --Masavik's .50 Cal Deagle
 			self.degfifty.categories = { "pistol", "amr", "semi_snp" }
 			self.degfifty.recategorize = { "heavy_pis" }
 			self.degfifty.has_description = false
@@ -20825,6 +20865,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.degfifty.timers.reload_exit_not_empty = 0.7
 			self.degfifty.armor_piercing_chance = 1
 			self.degfifty.object_damage_mult = 4
+		end
+
+		if self.glockson then --Masavik's Glockson
+			--Moved to primary
+			self.glockson.use_data.selection_index = 2	
+			self.glockson.categories = {"smg"}
+			self.glockson.recategorize = {"light_smg"}
+			self.glockson.damage_type = "machine_gun"
+			self.glockson.lock_slide = true
+			self.glockson.sounds.magazine_empty = "wp_pistol_slide_lock"
+			self.glockson.fire_mode_data.fire_rate = 0.05454545454
+			self.glockson.CAN_TOGGLE_FIREMODE = true
+			self.glockson.CLIP_AMMO_MAX = 33
+			self.glockson.AMMO_MAX = 180
+			self.glockson.kick = self.stat_info.kick_tables.left_recoil
+			self.glockson.supported = true
+			self.glockson.ads_speed = 0.240
+			self.glockson.damage_falloff = {
+				start_dist = 1900,
+				end_dist = 4200,
+				min_mult = 0.3
+			}
+			self.glockson.stats = {
+				damage = 20,
+				spread = 62,
+				recoil = 79,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 25,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 200,
+				value = 9,
+				reload = 20
+			}
+			self.glockson.stats_modifiers = nil
+			self.glockson.panic_suppression_chance = 0.05
+			self.glockson.timers.reload_exit_empty = 0.8
+			self.glockson.timers.reload_exit_not_empty = 0.72
 		end
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	

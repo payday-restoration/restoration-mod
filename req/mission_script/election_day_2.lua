@@ -30,6 +30,11 @@ local swat_ovk = {
         enemy = swat_overkill
 	}
 }
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
 return {
 	--Pro Job PONR 
 	[100931] = {
@@ -41,6 +46,9 @@ return {
 			{ id = 102804, delay = 30 }
 		}
 	},
+	--Disable SWAT Turrets (when they're literally are next to harrasers)
+	[101495] = disabled,
+	[101496] = disabled,
 	--Harasser Tweak Spawns
 	[102732] = swat_n,
 	[102733] = swat_h,

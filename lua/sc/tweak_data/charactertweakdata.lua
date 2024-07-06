@@ -17713,10 +17713,15 @@ function CharacterTweakData:_set_sm_wish()
 		power = 1,
 		range = 1000
 	}
+	--Chavez can throw frag nades
+	self.chavez_boss.can_throw_frag = true
+	self.chavez_boss.grenade_toss_chance = 0.4
+	
 	--Speed up the bosses
 	self.mobster_boss.move_speed = self.presets.move_speed.slow
 	self.hector_boss.move_speed = self.presets.move_speed.slow
 	self.biker_boss.move_speed = self.presets.move_speed.slow
+	self.chavez_boss.move_speed = self.presets.move_speed.slow
 	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
 	self.triad_boss.move_speed = self.presets.move_speed.slow
 	self.deep_boss.move_speed = self.presets.move_speed.slow

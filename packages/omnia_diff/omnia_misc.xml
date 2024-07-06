@@ -172,17 +172,6 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
 	
-	<!-- OMNIA taster -->
-	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<model				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
-	
 	<!--OMNIA Grenadier-->
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
@@ -256,8 +245,6 @@
 	<!--OMNIA Textures-->
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_nm"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_nm"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
 </table>

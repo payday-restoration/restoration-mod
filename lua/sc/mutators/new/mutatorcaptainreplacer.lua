@@ -62,6 +62,7 @@ function MutatorCaptainReplacer:setup()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
+	local pro_job = Global.game_settings and Global.game_settings.one_down
 	
 	local winter_preset = nil
 	local spring_preset = nil
@@ -70,6 +71,467 @@ function MutatorCaptainReplacer:setup()
 	local spooky_preset = nil
 	local new_captain = self:get_captain_override()
 	if new_captain ~= "no_captain_override" then
+	if pro_job then
+	--Winters
+	if difficulty_index <= 5 then
+		winter_preset = {
+			amount = 6,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 5,
+					amount_max = 5,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 6 then
+		winter_preset = {
+			amount = 9,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then
+		winter_preset = {
+			amount = 10,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}				
+			}
+		}
+	else
+		winter_preset = {
+			amount = 13,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.FBI_medic_flank,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}
+			}
+		}				
+	end		
+	
+	--Captain Spring
+	if difficulty_index <= 5 then
+		spring_preset = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "OMNIA_Tank",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 2
+				}
+			}
+		}	
+	elseif difficulty_index == 6 then
+		spring_preset = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "OMNIA_Tank",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "OMNIA_Taser",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.CS_Tazer,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then	
+		spring_preset = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "Tank_Ben",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "Taser_Titan",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.CS_Tazer,
+					rank = 2
+				}
+			}
+		}
+	else
+		spring_preset = {
+			amount = 8,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "Tank_Ben",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "Taser_Titan",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.CS_Tazer,
+					rank = 2
+				}					
+			}
+		}			
+	end
+	
+	--HVH boss
+	if difficulty_index <= 5 then
+		spooky_preset = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	elseif difficulty_index == 6 then
+		spooky_preset = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc_Normal",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then
+		spooky_preset = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	else
+		spooky_preset = {
+			amount = 8,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}					
+			}
+		}			
+	end	
+	
+	--Captain Autumn 
+	if difficulty_index <= 5 then
+		autumn_preset = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 6 then
+		autumn_preset = {
+			amount = 4,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 7 then
+		autumn_preset = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Titan_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	else
+		autumn_preset = {
+			amount = 6,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Titan_Spooc",
+					freq = 1,
+					amount_min = 5,
+					amount_max = 5,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}				
+			}
+		}		
+	end
+else	
 	--Winters 
 	if difficulty_index <= 5 then
 		winter_preset = {
@@ -150,7 +612,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	else
 		winter_preset = {
-			amount = 10,
+			amount = 9,
 			force = true,
 			spawn = {
 				{
@@ -172,8 +634,8 @@ function MutatorCaptainReplacer:setup()
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 3,
+					amount_max = 3,
 					tactics = tweak_data.group_ai._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
@@ -253,7 +715,7 @@ function MutatorCaptainReplacer:setup()
 		}
 	else
 		spring_preset = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -275,8 +737,8 @@ function MutatorCaptainReplacer:setup()
 				{
 					unit = "Taser_Titan",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.CS_Tazer,
 					rank = 2
 				}					
@@ -356,7 +818,7 @@ function MutatorCaptainReplacer:setup()
 		}	
 	else
 		spooky_preset = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -378,8 +840,8 @@ function MutatorCaptainReplacer:setup()
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.HVH_boss,
 					rank = 2
 				}					
@@ -405,6 +867,29 @@ function MutatorCaptainReplacer:setup()
 		}
 	elseif difficulty_index == 6 then
 		autumn_preset = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 7 then
+		autumn_preset = {
 			amount = 4,
 			force = true,
 			spawn = {
@@ -426,7 +911,7 @@ function MutatorCaptainReplacer:setup()
 				}					
 			}
 		}	
-	elseif difficulty_index == 7 then
+	else
 		autumn_preset = {
 			amount = 5,
 			force = true,
@@ -440,39 +925,17 @@ function MutatorCaptainReplacer:setup()
 					rank = 1
 				},
 				{
-					unit = "Autumn_Spooc",
+					unit = "Titan_Spooc",
 					freq = 1,
 					amount_min = 4,
 					amount_max = 4,
-					tactics = tweak_data.group_ai._tactics.Cap_autumn,
-					rank = 2
-				}					
-			}
-		}	
-	else
-		autumn_preset = {
-			amount = 6,
-			force = true,
-			spawn = {
-				{
-					unit = "Cap_Autumn",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = tweak_data.group_ai._tactics.Cap_autumn,
-					rank = 1
-				},
-				{
-					unit = "Titan_Spooc",
-					freq = 1,
-					amount_min = 5,
-					amount_max = 5,
 					tactics = tweak_data.group_ai._tactics.Cap_autumn,
 					rank = 2
 				}				
 			}
 		}		
 	end
+end	
 	
 	--Captain Summers 
 	summer_preset = {

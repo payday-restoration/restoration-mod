@@ -58,6 +58,12 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 					if k == "chance" and element.chance_operation_set_chance then
 						element:chance_operation_set_chance(v)
 					end
+					--making sure that changing spawn_action values work (thanks miki)
+					if k == "spawn_action" then
+						local spawn_action = table.index_of(CopActionAct._act_redirects.enemy_spawn, v)
+
+						element._values.spawn_action = spawn_action ~= -1 and spawn_action or nil
+					end
 				end
 			end
 			

@@ -46,6 +46,90 @@ return {
 	[102654] = {
 		ponr = ponr_value
 	},
+	--Reinforce Spots
+	[100031] = {
+		reinforce = {
+			{
+				name = "protect_the_BBQ",
+				force = 3,
+				position = Vector3(-3680, 1926, 26.700)
+			},
+			{
+				name = "Mitchell_house_1",
+				force = 3,
+				position = Vector3(-2286, 2640, 78.789)
+			},
+			{
+				name = "Mitchell_house_2",
+				force = 3,
+				position = Vector3(-2556, 3836, 75.500)
+			},
+			{
+				name = "Wilson_house_1",
+				force = 3,
+				position = Vector3(-2080, 39, 28.970)
+			},
+			{
+				name = "Wilson_house_2",
+				force = 3,
+				position = Vector3(-2980, 1441, -324.500)
+			}
+		}
+	},
+	--Additional Reinforce Spots
+	[101219] = {
+		reinforce = {
+			{
+				name = "protect_the_valveHQ_1",
+				force = 3,
+				position = Vector3(-6624, 1545, 21.141)
+			}
+		}
+	},
+	[101218] = {
+		reinforce = {
+			{
+				name = "protect_the_valveHQ_2",
+				force = 3,
+				position = Vector3(-2402, -1326, 17.788)
+			}
+		}
+	},
+	[101220] = {
+		reinforce = {
+			{
+				name = "protect_the_valveHQ_3",
+				force = 3,
+				position = Vector3(-340, 2438, 26.700)
+			}
+		}
+	},
+	--Water fills the safe much slower (like in PDTH)
+	[101229] = {
+		values = {
+            timer = 240
+		}
+	},
+	[101237] = {
+		values = {
+            time = 200
+		}
+	},
+	[101236] = {
+		values = {
+            time = 140
+		}
+	},
+	[101235] = {
+		values = {
+            time = 60
+		}
+	},
+	[100897] = {
+		values = {
+            time = 30
+		}
+	},
 	--Trigger Hunt (Endless Assault)
 	[102642] = {
 		hunt = true
@@ -94,6 +178,10 @@ return {
             enemy = cop_sg
 		}
 	},
+	--Disable vanilla's reinforce points
+	[100218] = disabled,
+	[101635] = disabled,
+	[101636] = disabled,
 	--SWAT Van that crashes through Wilson's wall no longer deploys turret on higher diffs
 	--Disables the turret
 	[102821] = disabled,

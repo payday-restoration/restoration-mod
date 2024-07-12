@@ -190,7 +190,7 @@ return {
 	--Spawn escape sniper when the heli escape gets triggered
 	--Call in Bravos on PJs
 	[104949] = {
-		spawn_bravos = bravos_inbound,
+		--spawn_bravos = bravos_inbound,
 		on_executed = {
 			{id = 400059, delay = 3}
 		}

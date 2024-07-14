@@ -2462,3 +2462,156 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 
 	self:_chk_charm_upd_state()
 end
+
+
+function NewRaycastWeaponBase:clbk_assembly_complete(clbk, parts, blueprint)
+	self._assembly_complete = true
+	self._parts = parts
+	self._blueprint = blueprint
+
+	self:_update_fire_object()
+	self:_update_stats_values()
+	self:_refresh_gadget_list()
+	self:_refresh_second_sight_list()
+
+	if self._setup and self._setup.timer then
+		self:set_timer(self._setup.timer)
+	end
+
+	local bullet_object_parts = {
+		"magazine",
+		"ammo",
+		"underbarrel",
+		"magazine_extra",
+		"magazine_extra_2",
+		"magazine_extra_3",
+		"magazine_extra_4"
+	}
+	self._bullet_objects = {}
+
+	for _, type in ipairs(bullet_object_parts) do
+		local type_part = managers.weapon_factory:get_part_from_weapon_by_type(type, self._parts)
+
+		if type_part then
+			local bullet_objects = managers.weapon_factory:get_part_data_type_from_weapon_by_type(type, "bullet_objects", self._parts)
+
+			if bullet_objects then
+				local offset = bullet_objects.offset or 0
+				local prefix = bullet_objects.prefix
+
+				for i = 1 + offset, bullet_objects.amount + offset do
+					local object = type_part.unit:get_object(Idstring(prefix .. i))
+
+					if object then
+						self._bullet_objects[i] = self._bullet_objects[i] or {}
+
+						table.insert(self._bullet_objects[i], {
+							object,
+							type_part.unit
+						})
+					end
+				end
+			end
+
+			local bullet_belt = managers.weapon_factory:get_part_data_type_from_weapon_by_type(type, "bullet_belt", self._parts)
+
+			if bullet_belt then
+				local parent_id = managers.weapon_factory:get_part_id_from_weapon_by_type(type, self._blueprint)
+				self._custom_units = self._custom_units or {}
+				self._custom_units.bullet_belt = {
+					parent = parent_id,
+					parts = bullet_belt
+				}
+				local parts_tweak = tweak_data.weapon.factory.parts
+				local bullet_index = bullet_objects and 1 + bullet_objects.amount + (bullet_objects.offset or 0) or 1
+
+				for _, belt_part_id in ipairs(bullet_belt) do
+					local unit = self._parts[belt_part_id].unit
+					local belt_data = parts_tweak[belt_part_id]
+					local belt_bullet_objects = belt_data.bullet_objects
+
+					if belt_bullet_objects then
+						local offset = belt_bullet_objects.offset or 0
+						local prefix = belt_bullet_objects.prefix
+
+						for i = 1 + offset, belt_bullet_objects.amount + offset do
+							local object = unit:get_object(Idstring(prefix .. i))
+
+							if object then
+								print("bullet", bullet_index, i, unit, object)
+
+								self._bullet_objects[bullet_index] = self._bullet_objects[bullet_index] or {}
+
+								table.insert(self._bullet_objects[bullet_index], {
+									object,
+									unit
+								})
+							else
+								Application:error("[NewRaycastWeaponBase:clbk_assembly_complete] Bullet object not found.", bullet_index, i, unit, object)
+							end
+
+							bullet_index = bullet_index + 1
+						end
+					end
+				end
+			end
+		end
+	end
+
+	self._ammo_objects = nil
+
+	if tweak_data.weapon[self._name_id].use_ammo_objects then
+		self._ammo_objects = self._bullet_objects
+		self._bullet_objects = nil
+	end
+
+	self:setup_underbarrel_data()
+	self:_apply_cosmetics(clbk or function ()
+	end)
+	self:apply_texture_switches()
+	self:apply_material_parameters()
+	self:configure_scope()
+	self:check_npc()
+	self:call_on_digital_gui("set_firemode", self:fire_mode())
+	self:_set_parts_enabled(self._enabled)
+
+	if self._second_sight_data then
+		self._second_sight_data.unit = self._parts[self._second_sight_data.part_id].unit
+	end
+
+	local category = tweak_data.weapon[self._name_id].use_data.selection_index == 2 and "primaries" or "secondaries"
+	local slot = managers.blackmarket:equipped_weapon_slot(category)
+
+	for _, part_id in ipairs(blueprint) do
+		local colors = managers.blackmarket:get_part_custom_colors(category, slot, part_id, true)
+
+		if colors then
+			local mod_td = tweak_data.weapon.factory.parts[part_id]
+			local part_data = parts[part_id]
+
+			if colors[mod_td.sub_type] then
+				local alpha = part_data.unit:base().GADGET_TYPE == "laser" and tweak_data.custom_colors.defaults.laser_alpha or 1
+
+				part_data.unit:base():set_color(colors[mod_td.sub_type]:with_alpha(alpha))
+			end
+
+			if mod_td.adds then
+				for _, add_part_id in ipairs(mod_td.adds) do
+					if self._parts[add_part_id] and self._parts[add_part_id].unit:base() then
+						local sub_type = tweak_data.weapon.factory.parts[add_part_id].sub_type
+						
+						if self._parts[add_part_id].unit:base().set_color then
+							self._parts[add_part_id].unit:base():set_color(colors[sub_type])
+						end
+					end
+				end
+			end
+		end
+	end
+
+	if self._setup and self._setup.user_unit then
+		self:_chk_has_charms(self._parts, self._setup)
+	end
+
+	clbk()
+end

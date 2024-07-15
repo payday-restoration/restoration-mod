@@ -2730,7 +2730,7 @@ function PlayerStandard:_shooting_move_speed_timer(t, dt)
 	if not weapon then
 		return
 	end
-	local weapon_sms = weapon._sms
+	local weapon_sms = weapon._sms and math.clamp(weapon._sms, 0, 1)
 	local smt_range = weapon and weapon:weapon_tweak_data().smt_range or { 0.3, 0.8 }
 	if self._shooting and weapon_sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
 		self._shooting_move_speed_t = math.clamp(weapon._smt, smt_range[1], smt_range[2])

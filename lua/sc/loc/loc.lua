@@ -1377,6 +1377,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive slugs;## #{skill_color}#direct hits deal an additonal 50% more damage that counts as bullet damage.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
+		["bm_menu_weapon_sms_bonus_info"] = "Reduces shooting movement speed penalty by ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",
 		["bm_menu_sms_info_cont"] = "penalty is increased while shooting.",
 		["bm_menu_sms_info_cont_2"] = "penalty is increased while shooting due to current attachments.",
@@ -2604,6 +2605,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
 				["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
 				["bm_wp_ak_m_drum"] = "Drum Magazine",
+				["bm_wp_upg_i_rpk74"] = "RPK 5.45 Kit",
 				--Brenner 21/HK21
 				["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
 				--M60

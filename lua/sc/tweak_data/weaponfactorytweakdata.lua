@@ -8452,6 +8452,9 @@ end)
 --RPK
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
+	self.parts.wpn_fps_lmg_rpk_b_standard.adds = { "wpn_fps_ass_rpk_sound_switch" }
+	self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = { suppressed = "regular_b" }
+
 	self.parts.wpn_fps_lmg_rpk_fg_wood.forbids = {
 		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 		"wpn_fps_upg_vg_ass_smg_stubby",
@@ -8547,6 +8550,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_i_rpk74")
 			
 
 	self.wpn_fps_lmg_rpk.adds = { 
@@ -19747,6 +19752,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.supported = true
 	self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
+	self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
 	self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 9,
@@ -23422,6 +23428,90 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			sounds = {
 				fire_single = "fn_fal_fire_1p_single"
+			}
+		}
+	}
+
+	self.parts.wpn_fps_upg_i_rpk74 = {
+		pcs = {},
+		type = "exclusive_set",
+		name_id = "bm_wp_upg_i_rpk74",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/weapons/ak74",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		keep_damage = true,
+		supported = true,
+		stats = {
+			value = 8,
+			spread = 3,
+			recoil = 8,
+			damage = -6,
+			total_ammo_mod = 49
+		},
+		custom_stats = {
+			falloff_end_mult = 1.16,
+			falloff_start_mult = 1.4285,
+			damage_min_mult = 0.8333333,
+			ads_speed_mult = 0.909091,
+			alt_ammo_pickup_min_mul = 1.294871,
+			alt_ammo_pickup_max_mul = 1.294871,
+			ammo_pickup_min_mul = 1.294871,
+			ammo_pickup_max_mul = 1.294871,
+			movement_speed_add = 0.08,
+			sms = 1.0666667
+		},
+		override = {
+			wpn_fps_ass_74_body_upperreceiver = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_body_upperreceiver"
+			},
+			wpn_fps_lmg_rpk_b_standard = {
+				adds = {}
+			},
+			wpn_fps_upg_ak_m_quick = {
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick"
+			}
+		},
+		forbids = { "wpn_fps_ass_rpk_sound_switch" },
+		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		dlc = "sc"
+	}
+
+
+	self.parts.wpn_fps_ass_rpk74_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_rpk_ck_switch",
+		unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 },
+		custom_stats = {
+			sounds = {
+				fire = "ak74_fire",
+				fire_single = "ak74_fire_single",
+				fire_auto = "ak74_fire",
+				stop_fire = "ak74_stop"
+			}
+		}
+	}
+
+	self.parts.wpn_fps_ass_rpk_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_rpk_ck_switch",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 },
+		custom_stats = {
+			sounds = {
+				fire = "akm_fire_single",
+				fire_single = "akm_fire_single",
+				fire_auto = "akm_fire",
+				stop_fire = "akm_stop"
 			}
 		}
 	}
@@ -31834,6 +31924,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stats = deep_clone(barrels.long_b3_stats)
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stats.recoil = 2
 				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_lmg_hcar_body_ww2.sound_switch = { suppressed = "regular_b" }
 				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats.rof_mult = 0.9
 				self.parts.wpn_fps_lmg_hcar_body_ww2.forbids = {}
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stance_mod = nil

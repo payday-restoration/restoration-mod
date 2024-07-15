@@ -2264,7 +2264,7 @@ end
 
 --Maybe hopefully fix the ammo eff. aced skill crash
 function NewRaycastWeaponBase:_update_bullet_objects(ammo_func)
-	if self._bullet_objects and not self:is_npc() then
+	if self._bullet_objects and not self:is_npc() and not self._starwars then
 		for i, objects in pairs(self._bullet_objects) do
 			for _, object in ipairs(objects) do
 				local ammo_base = self:ammo_base()

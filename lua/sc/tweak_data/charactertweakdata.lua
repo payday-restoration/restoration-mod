@@ -1188,7 +1188,7 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 2.05
+	self.city_swat_titan.headshot_dmg_mul = 2.5
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8

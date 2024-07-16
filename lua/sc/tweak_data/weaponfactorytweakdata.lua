@@ -6702,6 +6702,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	
+	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_santa_slayers_legend")
 
 	self.wpn_fps_pis_1911_npc.uses_parts = deep_clone(self.wpn_fps_pis_1911.uses_parts)	
 

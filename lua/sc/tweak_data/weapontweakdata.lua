@@ -11073,7 +11073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r93.CLIP_AMMO_MAX = 4
 						self.r93.AMMO_MAX = 30
 						self.r93.fire_mode_data.fire_rate = 1.2
-						self.r93.fire_rate_multiplier = 1.6
+						self.r93.fire_rate_multiplier = 1.45
 						self.r93.kick = self.stat_info.kick_tables.vertical_kick
 						self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.r93.supported = true

@@ -1188,10 +1188,10 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 2.65
-	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist	
+	self.city_swat_titan.headshot_dmg_mul = 2.05
+	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist
 	self.city_swat_titan.damage.bullet_damage_mul = 1
-	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
+	self.city_swat_titan.damage.explosion_damage_mul = 0.8
 	self.city_swat_titan.use_animation_on_fire_damage = true
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
@@ -4682,13 +4682,13 @@ function CharacterTweakData:_presets(tweak_data)
 			},
 			{
 				health_limit = 0.6,
-				light = 0.4,
-				moderate = 0.6
+				light = 0.6,
+				moderate = 0.4
 			},
 			{
 				health_limit = 0.9,
-				light = 0.2,
-				moderate = 0.8
+				light = 0.4,
+				moderate = 0.6
 			},
 			{
 				light = 0,
@@ -17594,9 +17594,9 @@ end
 
 function CharacterTweakData:_set_overkill_290()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 0.801)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 0.801)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)

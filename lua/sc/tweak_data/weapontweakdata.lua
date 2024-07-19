@@ -4612,13 +4612,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[ wep_id ].warsaw = true
 	end
 		
-	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14", "sub2000" }	
+	local recat = { "g26", "jowi", "holt", "x_holt", "glock_18c", "x_g18c", "czech", "x_czech", "stech", "x_stech", "fmg9", "b92fs", "x_b92fs", "beer", "x_beer", "maxim9", "x_maxim9", "glock_17", "x_g17", "g22c", "x_g22c", "packrat", "x_packrat", "breech", "x_breech", "ppk", "x_ppk", "lemming", "hs2000", "x_hs2000", "p226", "x_p226", "sparrow", "x_sparrow", "legacy", "x_legacy", "pl14", "x_pl14"}	
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "light_pis" }
 		self[ wep_id ].damage_type = "pistol"
 	end	
 	
-	recat = { "usp", "x_usp", "type54", "x_type54", "shrew", "x_shrew", "colt_1911", "x_1911", "m1911", "x_m1911", "c96" }
+	recat = { "usp", "x_usp", "type54", "x_type54", "shrew", "x_shrew", "colt_1911", "x_1911", "m1911", "x_m1911", "c96", "sub2000" }
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].recategorize = { "heavy_pis" }
 		self[ wep_id ].damage_type = "heavy_pistol"
@@ -5287,14 +5287,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fmg9.desc_id = "bm_fmg9_sc_desc"
 						self.fmg9.categories = {"pistol"}
 						self.fmg9.fire_mode_data.fire_rate = 0.05454545454
-						self.fmg9.CLIP_AMMO_MAX = 33
+						self.fmg9.CLIP_AMMO_MAX = 27
 						self.fmg9.AMMO_MAX = 150
 						self.fmg9.use_data.selection_index = 2
 						self.fmg9.kick = self.stat_info.kick_tables.left_recoil
 						self.fmg9.supported = true
 						self.fmg9.timers = {
-							reload_not_empty = 1.9,
-							reload_empty = 3.65,
+							reload_not_empty = 1.87,
+							reload_empty = 3.62,
 							unequip = 1.7,
 							equip = 1.4,
 							reload_exit_empty = 0.65,
@@ -5322,7 +5322,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.fmg9.stats_modifiers = nil
 						self.fmg9.panic_suppression_chance = 0.05	
-						self.fmg9.swap_speed_multiplier = 0.6
+						self.fmg9.swap_speed_multiplier = 0.45
 					
 					--Beretta Auto (93R)
 						self.beer.has_description = true
@@ -5337,7 +5337,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.ADAPTIVE_BURST_SIZE = false		
 						self.beer.CAN_TOGGLE_FIREMODE = false
 						self.beer.FIRE_MODE = "single"	
-						self.beer.AMMO_MAX = 150
+						self.beer.AMMO_MAX = 120
 						self.beer.CLIP_AMMO_MAX = 15
 						self.beer.fire_mode_data.fire_rate = 0.0882352
 						self.beer.kick = self.stat_info.kick_tables.even_recoil
@@ -5348,12 +5348,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.supported = true
 						self.beer.ads_speed = 0.140
 						self.beer.damage_falloff = {
-							start_dist = 2400,
+							start_dist = 1500,
 							end_dist = 4500,
-							min_mult = 0.3
+							min_mult = 0.2
 						}
 						self.beer.stats = {
-							damage = 24,
+							damage = 30,
 							spread = 64,
 							recoil = 85,
 							spread_moving = 5,
@@ -8769,8 +8769,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Brenner 21 (HK21)
 						self.hk21.categories = {
 							"lmg",
-							"smg",
-							"lmg_moving"
+							"smg"
 						}
 						self.hk21.desc_id = "bm_hk21_sc_desc"
 						self.hk21.has_description = true
@@ -11074,7 +11073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r93.CLIP_AMMO_MAX = 4
 						self.r93.AMMO_MAX = 30
 						self.r93.fire_mode_data.fire_rate = 1.2
-						self.r93.fire_rate_multiplier = 1.6
+						self.r93.fire_rate_multiplier = 1.45
 						self.r93.kick = self.stat_info.kick_tables.vertical_kick
 						self.r93.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.r93.supported = true
@@ -11354,7 +11353,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.system.rays = 16
 						self.system.CLIP_AMMO_MAX = 45
 						self.system.AMMO_MAX = 120
-						self.system.fire_mode_data.fire_rate = 0.1
+						self.system.fire_mode_data.fire_rate = 0.08
 						self.system.single_flame_effect_duration = 1
 						self.system.armor_piercing_chance = 1
 						self.system.can_shoot_through_enemy = false
@@ -19522,6 +19521,194 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.timers.reload_not_empty = 2.35
 				self.sierra458.timers.reload_exit_not_empty = 0.8
 			end
+		
+		--[[     HYLIE'S MODS     ]]--
+
+			if self.or12 then
+				self.or12.recategorize = { "light_shot" }
+				self.or12.categories = { "shotgun" }
+				self.or12.damage_type = "shotgun"
+				self.or12.damage_type_single_ray = "sniper"
+				self.or12.CLIP_AMMO_MAX = 30
+				self.or12.BURST_FIRE = false
+				self.or12.fire_mode_data.fire_rate = 0.15
+				self.or12.AMMO_MAX = 60
+				self.or12.kick = self.stat_info.kick_tables.vertical_kick
+				self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.or12.FIRE_MODE = "single"				
+				self.or12.CAN_TOGGLE_FIREMODE = false
+				self.or12.rays = 9
+				self.or12.supported = true
+				self.or12.ads_speed = 0.420
+				self.or12.damage_falloff = {
+					start_dist = 500,
+					end_dist = 2800,
+					min_mult = 0.15
+				}
+				self.or12.stats = {
+					damage = 120,
+					spread = 25,
+					recoil = 49,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 19,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.or12.stats_modifiers = nil
+				self.or12.lock_slide = true
+				self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.or12.sounds.spin_start = nil
+				self.or12.spin_up_shoot = nil
+				self.or12.spin_up_t = nil
+				self.or12.spin_down_t = nil
+				self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.or12.panic_suppression_chance = 0.05
+				self.or12.reload_speed_multiplier = 0.8
+				self.or12.timers.reload_not_empty = 2.8
+				self.or12.timers.reload_exit_not_empty = 0.9
+				self.or12.timers.reload_empty = 3.21
+				self.or12.timers.reload_exit_empty = 1.0
+			end
+
+			if self.ntw20 then
+				self.ntw20.categories = {
+					"snp",
+					"amr"
+				}
+				self.ntw20.recategorize = { "antim_snp" }
+				self.ntw20.hs_mult = 2
+				self.ntw20.damage_type = "anti_materiel"
+				self.ntw20.upgrade_blocks = nil
+				self.ntw20.has_description = true
+				self.ntw20.desc_id = "bm_m107cq_sc_desc"
+				self.ntw20.tactical_reload = 1
+				self.ntw20.CLIP_AMMO_MAX = 3
+				self.ntw20.AMMO_MAX = 12
+				self.ntw20.fire_mode_data.fire_rate = 0.48
+				self.ntw20.kick = deep_clone(self.stat_info.kick_tables.right_kick)
+				self.ntw20.supported = true
+				self.ntw20.ads_speed = 0.600
+				self.ntw20.damage_falloff = {
+					start_dist = 7000,
+					end_dist = 20000,
+					min_mult = 0.66667
+				}
+				self.ntw20.stats = {
+					damage = 180,
+					spread = 91,
+					recoil = 1,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 15,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.ntw20.armor_piercing_chance = 1
+				self.ntw20.use_vapor_trail = true
+				self.ntw20.can_shoot_through_titan_shield = true
+				self.ntw20.stats_modifiers = nil
+				self.ntw20.panic_suppression_chance = 0.05
+			end
+
+			if self.fik22 then
+				self.fik22.categories = { 
+					"assault_rifle"
+				}
+				self.fik22.recategorize = {"light_ar"}
+				self.fik22.damage_type = "assault_rifle"
+				self.fik22.hs_mult = 2
+				self.fik22.tactical_reload = 1
+				self.fik22.CLIP_AMMO_MAX = 25
+				self.fik22.AMMO_MAX = 180
+				self.fik22.fire_mode_data.fire_rate = 0.066666
+				self.fik22.CAN_TOGGLE_FIREMODE = false
+				self.fik22.FIRE_MODE = "single"
+				self.fik22.kick = self.stat_info.kick_tables.moderate_kick
+				self.fik22.supported = true
+				self.fik22.ads_speed = 0.200
+				self.fik22.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3100,
+					min_mult = 0.5
+				}
+				self.fik22.stats = {
+					damage = 12,
+					spread = 71,
+					recoil = 97,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 28,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 4,
+					reload = 20
+				}
+				self.fik22.stats_modifiers = nil
+				self.fik22.panic_suppression_chance = 0.05
+				self.fik22.reload_speed_multiplier = 1.33
+				self.fik22.timers.reload_exit_empty = 0.9
+				self.fik22.timers.reload_exit_not_empty = 0.8
+			end
+
+			if self.mx63 then
+				self.mx63.categories = {
+					"lmg",
+					"smg"
+				}
+				self.mx63.recategorize = { "light_mg" }
+				self.mx63.damage_type = "machine_gun"
+				self.mx63.sms = sms_preset.lmg_48
+				self.mx63.weapon_movement_penalty = sms_preset.lmg_48
+				self.mx63.CLIP_AMMO_MAX = 100
+				self.mx63.AMMO_MAX = 300
+				self.mx63.FIRE_MODE = "auto"
+				self.mx63.fire_mode_data.fire_rate = 0.1090909
+				self.mx63.CAN_TOGGLE_FIREMODE = false
+				self.mx63.BURST_FIRE = false
+				self.mx63.kick = {}
+				self.mx63.kick = self.stat_info.kick_tables.horizontal_recoil_mg
+				self.mx63.muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle"
+				self.mx63.supported = true
+				self.mx63.ads_speed = 0.400
+				self.mx63.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7000,
+					min_mult = 0.4166
+				}	
+				self.mx63.stats = {
+					damage = 24,
+					spread = 65,
+					recoil = 87,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 19,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.mx63.stats_modifiers = nil
+				self.mx63.panic_suppression_chance = 0.05
+				self.mx63.reload_speed_multiplier = 0.9
+				self.mx63.sounds.spin_start = "wp_m249_lever_release"
+				self.mx63.spin_up_shoot = true
+				self.mx63.spin_up_t = 0.1
+				self.mx63.spin_down_t = 0.00000001
+				self.mx63.timers = deep_clone(self.m249.timers)
+			end
 
 		--Predator Pack
 			if self.owlfbullpup then
@@ -20555,143 +20742,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.timers = deep_clone(self.new_raging_bull.timers)
 		end
 
-		if self.or12 then
-			self.or12.recategorize = { "light_shot" }
-			self.or12.categories = { "shotgun" }
-			self.or12.damage_type = "shotgun"
-			self.or12.damage_type_single_ray = "sniper"
-			self.or12.CLIP_AMMO_MAX = 30
-			self.or12.BURST_FIRE = false
-			self.or12.fire_mode_data.fire_rate = 0.15
-			self.or12.AMMO_MAX = 60
-			self.or12.kick = self.stat_info.kick_tables.vertical_kick
-			self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-			self.or12.FIRE_MODE = "single"				
-			self.or12.CAN_TOGGLE_FIREMODE = false
-			self.or12.rays = 9
-			self.or12.supported = true
-			self.or12.ads_speed = 0.420
-			self.or12.damage_falloff = {
-				start_dist = 500,
-				end_dist = 2800,
-				min_mult = 0.15
-			}
-			self.or12.stats = {
-				damage = 120,
-				spread = 25,
-				recoil = 49,
-				spread_moving = 7,
-				zoom = 1,
-				concealment = 19,
-				suppression = 8,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 1,
-				reload = 20
-			}
-			self.or12.stats_modifiers = nil
-			self.or12.lock_slide = true
-			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
-			self.or12.sounds.spin_start = nil
-			self.or12.spin_up_shoot = nil
-			self.or12.spin_up_t = nil
-			self.or12.spin_down_t = nil
-			self.or12.sounds.magazine_empty = "wp_rifle_slide_lock"
-			self.or12.panic_suppression_chance = 0.05
-			self.or12.reload_speed_multiplier = 0.8
-			self.or12.timers.reload_not_empty = 2.8
-			self.or12.timers.reload_exit_not_empty = 0.9
-			self.or12.timers.reload_empty = 3.21
-			self.or12.timers.reload_exit_empty = 1.0
-		end
-
-		if self.ntw20 then
-			self.ntw20.categories = {
-				"snp",
-				"amr"
-			}
-			self.ntw20.recategorize = { "antim_snp" }
-			self.ntw20.hs_mult = 2
-			self.ntw20.damage_type = "anti_materiel"
-			self.ntw20.upgrade_blocks = nil
-			self.ntw20.has_description = true
-			self.ntw20.desc_id = "bm_m107cq_sc_desc"
-			self.ntw20.tactical_reload = 1
-			self.ntw20.CLIP_AMMO_MAX = 3
-			self.ntw20.AMMO_MAX = 12
-			self.ntw20.fire_mode_data.fire_rate = 0.48
-			self.ntw20.kick = deep_clone(self.stat_info.kick_tables.right_kick)
-			self.ntw20.supported = true
-			self.ntw20.ads_speed = 0.600
-			self.ntw20.damage_falloff = {
-				start_dist = 7000,
-				end_dist = 20000,
-				min_mult = 0.66667
-			}
-			self.ntw20.stats = {
-				damage = 180,
-				spread = 91,
-				recoil = 1,
-				spread_moving = 8,
-				zoom = 1,
-				concealment = 15,
-				suppression = 4,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 9,
-				reload = 20
-			}
-			self.ntw20.armor_piercing_chance = 1
-			self.ntw20.use_vapor_trail = true
-			self.ntw20.can_shoot_through_titan_shield = true
-			self.ntw20.stats_modifiers = nil
-			self.ntw20.panic_suppression_chance = 0.05
-		end
-
-		if self.fik22 then
-			self.fik22.categories = { 
-				"assault_rifle"
-			}
-			self.fik22.recategorize = {"light_ar"}
-			self.fik22.damage_type = "assault_rifle"
-			self.fik22.hs_mult = 2
-			self.fik22.tactical_reload = 1
-			self.fik22.CLIP_AMMO_MAX = 25
-			self.fik22.AMMO_MAX = 180
-			self.fik22.fire_mode_data.fire_rate = 0.066666
-			self.fik22.CAN_TOGGLE_FIREMODE = false
-			self.fik22.FIRE_MODE = "single"
-			self.fik22.kick = self.stat_info.kick_tables.moderate_kick
-			self.fik22.supported = true
-			self.fik22.ads_speed = 0.200
-			self.fik22.damage_falloff = {
-				start_dist = 1200,
-				end_dist = 3100,
-				min_mult = 0.5
-			}
-			self.fik22.stats = {
-				damage = 12,
-				spread = 71,
-				recoil = 97,
-				spread_moving = 7,
-				zoom = 1,
-				concealment = 28,
-				suppression = 7,
-				alert_size = 2,
-				extra_ammo = 101,
-				total_ammo_mod = 200,
-				value = 4,
-				reload = 20
-			}
-			self.fik22.stats_modifiers = nil
-			self.fik22.panic_suppression_chance = 0.05
-			self.fik22.reload_speed_multiplier = 1.33
-			self.fik22.timers.reload_exit_empty = 0.9
-			self.fik22.timers.reload_exit_not_empty = 0.8
-		end
-
 		if self.spas15 then
 			self.spas15.recategorize = { "light_shot" }
 			self.spas15.categories = { "shotgun" }
@@ -21188,7 +21238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					weap.muzzleflash_silenced = "effects/payday2/particles/weapons/tkb_suppressed"
 					weap.rms = (1 + weap.weapon_movement_penalty) / 2
 					if not table.contains(weap.categories, "lmg_moving") and not table.contains(weap.categories, "wolf_brigade") and not table.contains(weap.categories, "minigun") then
-						weap.sms = weap.sms / 1.5
+						weap.sms = weap.sms / 1.2
 						weap.rms = weap.weapon_movement_penalty
 						weap.zoom_recoil_reduction = 0.025
 					end

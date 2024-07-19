@@ -1377,6 +1377,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#Loaded with explosive slugs;## #{skill_color}#direct hits deal an additonal 50% more damage that counts as bullet damage.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Slows move speed by ",
 		["bm_menu_weapon_movement_bonus_info"] = "Raises move speed by ",
+		["bm_menu_weapon_sms_bonus_info"] = "Reduces shooting movement speed penalty by ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " while drawn",
 		["bm_menu_sms_info_cont"] = "penalty is increased while shooting.",
 		["bm_menu_sms_info_cont_2"] = "penalty is increased while shooting due to current attachments.",
@@ -2285,6 +2286,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--In-Universe Manufacturer deets
 					--Crosskill/Corvus (Payday/OTWD) = Colt
 					--DSC [Defense System Crosskill] (PD2) = Saco Defense
+					--B-Team (PD2) = Ruger
+						--From that Mini-14 stock for the M14
 					--Simmons Armory (PD2) = Springfield Armory 
 						--same acronym lol
 					--Bernetti = Beretta
@@ -2319,6 +2322,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["manufacturer_winchester"] = "Eaton",
 					["manufacturer_marlin"] = "Rangehitter",
 					["manufacturer_swesson"] = "J&M",
+					["manufacturer_ruger"] = "B-Team",
 
 					["manufacturer_fnh"] = "VF",
 					["manufacturer_sig"] = "Signature",
@@ -2331,7 +2335,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["manufacturer_franchi"] = "Ferino",
 					["manufacturer_beretta"] = "Bernetti",
 
-					["manufacturer_kalashnikov"] = "IZMHA",
+					["manufacturer_kalashnikov"] = "KU",
+						["manufacturer_izhmash"] = "IZMHA",
+						["manufacturer_baikal"] = "Argos",
 					["manufacturer_tula"] = "IZMHA",
 					["manufacturer_cz"] = "TKA",
 
@@ -2599,6 +2605,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_rpk_sc_desc"] = "A good choice when you want your bullet-hose to be on target and a little more Eastern Bloc.",
 				["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
 				["bm_wp_ak_m_drum"] = "Drum Magazine",
+				["bm_wp_upg_i_rpk74"] = "RPK 5.45 Kit",
 				--Brenner 21/HK21
 				["bm_hk21_sc_desc"] = "The big-little sister to the Gewehr-3. Comes with an increased fire rate for even greater suppressive abilties.",
 				--M60
@@ -3022,15 +3029,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_korth"] = "Akimbo Kahn .357s",
 					--Matever 2006m
 					["bm_w_mateba"] = "Matever 9mm", --:^)
-					["bm_wp_2006m_b_short"] = "Tachikoma Barrel",	
-					["bm_wp_2006m_b_medium"] = "Togusa Barrel",	
-					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",	
+					["bm_wp_2006m_b_short"] = "Tachikoma Barrel",
+					["bm_wp_2006m_b_medium"] = "Togusa Barrel",
+					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",
 					["bm_w_x_2006m"] = "Akimbo Matevers",
 					--Frenchman Model 87
-					["bm_w_model3"] = "J&M Model 87",	
+					["bm_w_model3"] = "J&M Model 87",
 					["bm_w_x_model3"] = "Akimbo Model 87s",	
 					--Raging bull
-					["bm_w_raging_bull"] = "Bronco .44",	
+					["bm_w_raging_bull"] = "Bronco .44",
 					["bm_w_x_rage"] = "Akimbo Bronco .44s",
 					--Castigo
 					["bm_w_chinchilla"] = "Castigo .44",
@@ -3293,6 +3300,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_mcbravo"] = "Chimera",
 						--AR-18
 						["bm_w_ar18"] = "CAR-18",
+						--FIK-22
+						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3437,23 +3446,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_pl14"] = "Akimbo WS-14s",
 				["bm_wp_pis_g26"] = "Chimano 26",
 				["bm_w_jowi"] = "Akimbo Chimano 26s",
+
 				["bm_w_g22c"] = "Chimano 22C",
 				["bm_w_x_g22c"] = "Akimbo Chimano 22Cs",
+				["bm_w_x_sparrow"] = "Akimbo Sparrows",
+
 				["bm_w_x_1911"] = "Akimbo Operator IIs",
 				["bm_w_x_m1911"] = "Akimbo Crosskill A1s",
-				["bm_w_x_sparrow"] = "Akimbo Sparrows",
+				["bm_w_x_shrew"] = "Akimbo Crosskill Guards",
+
+				["bm_w_schakal"] = "AMP 45",
+
 				["bm_w_x_judge"] = "Akimbo Judges",
+
+				["bm_w_l85a2"] = "L-95",
+				["bm_w_contraband"] = "SG 417D GL",
+				["bm_w_contraband_m16"] = "AMR-16 GL",
+				["bm_w_contraband_mpx"] = "OMNIA PC9 GL",
+
+				["bm_w_vhs"] = "HVH-2",
 				["bm_w_scar"] = "VF-7S",
 				["bm_w_scar_l"] = "VF-6M",
 				["bm_w_scar_hamr"] = "VF-HAMR",
 				["bm_w_scarl"] = "VF-6M",
-				["bm_w_schakal"] = "AMP 45",
+
 				["bm_w_tecci"] = "SG 416C",
-				["bm_w_l85a2"] = "L-95",
-				["bm_w_vhs"] = "HVH-2",
-				["bm_w_contraband"] = "SG 417D GL",
-				["bm_w_contraband_m16"] = "AMR-16 GL",
-				["bm_w_contraband_mpx"] = "OMNIA PC9 GL",
 	
 			})
 		elseif weapon_names == 3 then --DMCWO Reelnames
@@ -3591,6 +3608,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_korth"] = "Akimbo Korth NXAs",
 					--Mateba
 					["bm_w_mateba"] = "Mateba 2006M",
+					["bm_wp_2006m_b_short"] = "Tachikoma Barrel",
+					["bm_wp_2006m_b_medium"] = "Togusa Barrel",
+					["bm_wp_2006m_b_long"] = "Kusanagi Barrel",
 					["bm_w_x_2006m"] = "Akimbo 2006Ms",
 					--Frenchman Model 87
 					["bm_w_model3"] = "S&W Model 3",	
@@ -3616,9 +3636,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
 					["bm_wp_deagle_b_long"] = "10\" Long Barrel",
 					--SAA
-					["bm_w_peacemaker"] = "Colt Single Action Army",
+					["bm_w_peacemaker"] = "Colt Single Action Army", --Technically a Ruger New Vaquero but that's not as fun
 					["bm_wp_peacemaker_barrel_long"] = "12\" Barrel",
-					["bm_wp_peacemaker_barrel_short"] = "5.5\" Barrel",
+					["bm_wp_peacemaker_barrel_short"] = "4.62\" Barrel",
 					["bm_wp_peacemaker_handle_bling"] = "Engraved SAA Grips",
 					["bm_wp_peacemaker_rifle_stock"] = "Skeletal Stock",
 					--RUS-12
@@ -3803,6 +3823,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m134"] = "General Electric M134",
 					["bm_wp_m134_barrel_extreme"] = "Anti-Air Barrel",
 					["bm_wp_m134_barrel_short"] = "Compact Barrel",
+					--Custom MGs
+						["bm_w_mx63"] = "KAC LAMG",
 
 				--[[SHOTGUNS]]
 					--Saiga
@@ -3977,6 +3999,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_tkb"] = "Tula Arms TKB-059",
 					--Groza
 					["bm_w_groza"] = "TsKIB SOO Groza-1",
+					--Custom Rifles
+						["bm_w_fik22"] = "Ruger 10/22",
+
 
 				--[[DMRs]]
 					--417
@@ -4121,9 +4146,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m95"] = "Barrett M95",
 					["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
 					--Custom Snipers
+						--Guerilla
+						["bm_w_sgs"] = "SIG 542",
+						--AMR2
+						["bm_w_amr2"] = "CSI AMR-2",
+						--M200
+						["bm_w_m200"] = "Cheytac M200",
+						--Marlin 1894
+						["bm_w_m1894"] = "Marlin 1894",
+						--SPX Centerfire
+						["bm_w_moss464spx"] = "Mossberg SPX Centerfire",
+						--Winchester 1894
+						["bm_w_winchester1894"] = "Winchester 1894",
+						--SVD
+						["bm_w_svd"] = "Kalashnikov Concern SVD",
+						--L115
+						["bm_w_l115"] = "Accuracy International L115",
 						--PD3 Lynx
 						["bm_w_pd3_lynx"] = "SERO Gepard M6",
 						--M107
+						["bm_w_m107cq"] = "Barrett M107CQ",
 						["bm_m107cq_sc_desc"] = "If the M95 wasn't up to speed, then the M107 will deliver what you want as a fine, red mist.\n\n#{skill_color}#Can pierce multiple enemies, their body armor, shields, titan-shields and thin walls.##",
 
 				--[[SPECIALS]]
@@ -4556,6 +4598,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		end
 		if shitpost or not easterless and big <= pistol then
 			LocalizationManager:add_localized_strings({	
+				["bm_w_huntsman"] = "Bubble Daryl",
 				["bm_w_deagle"] = "Big Pistol",
 				["bm_w_m16"] = weapon_names == 2 and "is that a famas" or "is that a clarion",
 				["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",

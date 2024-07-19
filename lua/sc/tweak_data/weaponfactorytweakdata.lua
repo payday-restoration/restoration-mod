@@ -6702,6 +6702,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	
+	table.insert(self.wpn_fps_pis_1911.uses_parts, "wpn_fps_upg_santa_slayers_legend")
 
 	self.wpn_fps_pis_1911_npc.uses_parts = deep_clone(self.wpn_fps_pis_1911.uses_parts)	
 
@@ -8452,6 +8454,9 @@ end)
 --RPK
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
+	self.parts.wpn_fps_lmg_rpk_b_standard.adds = { "wpn_fps_ass_rpk_sound_switch" }
+	self.parts.wpn_fps_lmg_rpk_b_standard.sound_switch = { suppressed = "regular_b" }
+
 	self.parts.wpn_fps_lmg_rpk_fg_wood.forbids = {
 		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla",
 		"wpn_fps_upg_vg_ass_smg_stubby",
@@ -8547,6 +8552,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+
+	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_i_rpk74")
 			
 
 	self.wpn_fps_lmg_rpk.adds = { 
@@ -19747,6 +19754,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.supported = true
 	self.parts.wpn_fps_ass_shak12_body_vks.has_description = true
+	self.parts.wpn_fps_ass_shak12_body_vks.sound_switch = { suppressed = "regular_b" }
 	self.parts.wpn_fps_ass_shak12_body_vks.desc_id = "bm_wp_shak12_body_vks_ap_desc"
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 9,
@@ -20403,6 +20411,14 @@ end)
 --Wasp-DS (FMG-9)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(self)
 
+	--Carry handle sight
+	self.parts.wpn_fps_smg_fmg9_o_sight.stance_mod = {
+		wpn_fps_smg_fmg9 = {
+			translation = Vector3(0.08, -2, -0.06),
+			rotation = Rotation(0.12, -0.1, 0)
+		}
+	}
+
 	--Rake Grip
 	self.parts.wpn_fps_smg_fmg9_grip_tape.pcs = {
 		10,
@@ -20446,6 +20462,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		reload = 3
 	}
 	
+	self.parts.wpn_fps_smg_fmg9_conversion_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_fmg9_ck_switch",
+		unit = "units/pd2_dlc_khp/weapons/wpn_fps_pis_legacy/wpn_fps_pis_legacy",
+		no_cull = true,
+		internal_part = true,
+		stats = {
+			value = 5
+		},
+		custom_stats = {
+			sounds = {
+				fire_auto = "legacy_fire",
+				fire_single = "legacy_fire",
+				fire = "legacy_fire",
+			}
+		}
+	}
+
 	--Whisper 9 Silencer (Exclusive kit)
 	self.parts.wpn_fps_smg_fmg9_conversion.pcs = {}
 	self.parts.wpn_fps_smg_fmg9_conversion.has_description = true
@@ -20453,6 +20488,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_smg_fmg9_conversion.unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_conversion"
 	self.parts.wpn_fps_smg_fmg9_conversion.third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_conversion"
 	self.parts.wpn_fps_smg_fmg9_conversion.adds = {
+		"wpn_fps_smg_fmg9_conversion_sound_switch",
 		"wpn_fps_smg_fmg9_conversion_display_dummy",
 		"wpn_fps_smg_fmg9_conversion_laser_dummy",
 		"wpn_fps_smg_fmg9_b_dummy"
@@ -20461,27 +20497,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_smg_fmg9_conversion.forbids = {
 		"wpn_fps_smg_fmg9_o_sight"
 	}
+	self.parts.wpn_fps_smg_fmg9_conversion.stance_mod = {
+		wpn_fps_smg_fmg9 = {
+			translation = Vector3(0.1, -3, -0.25),
+			rotation = Rotation(0.12, 0, 0)
+		}
+	}
 	self.parts.wpn_fps_smg_fmg9_conversion.supported = true
 	self.parts.wpn_fps_smg_fmg9_conversion.stats = {
 		value = 4
+	}	
+	self.parts.wpn_fps_smg_fmg9_conversion.custom_stats = {
+		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 	}	
 	self.parts.wpn_fps_smg_fmg9_conversion.perks = nil
 	self.parts.wpn_fps_smg_fmg9_conversion.override = {	
 		--Hiding Barrel Extensions
 		--MOVED
-		--Hiding Gadgets
-		wpn_fps_upg_fl_pis_perst = {
-			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
-			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
-		},	
-		wpn_fps_upg_fl_pis_laser = {
-			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
-			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
-		},
-		wpn_fps_upg_fl_pis_tlr1 = {
-			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
-			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
-		},		
 		--Body Replacements
 		wpn_fps_smg_fmg9_body = {
 			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_body",
@@ -20491,7 +20523,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_dh",
 			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_dh_conversion"
 		}		
-	}	
+	}
+
 	
 	--Medved R4 Suppressor, re-enabled :^)
 	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_sc_blank"
@@ -23401,6 +23434,90 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	}
 
+	self.parts.wpn_fps_upg_i_rpk74 = {
+		pcs = {},
+		type = "exclusive_set",
+		name_id = "bm_wp_upg_i_rpk74",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/weapons/ak74",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		keep_damage = true,
+		supported = true,
+		stats = {
+			value = 8,
+			spread = 3,
+			recoil = 8,
+			damage = -6,
+			total_ammo_mod = 49
+		},
+		custom_stats = {
+			falloff_end_mult = 1.16,
+			falloff_start_mult = 1.4285,
+			damage_min_mult = 0.8333333,
+			ads_speed_mult = 0.909091,
+			alt_ammo_pickup_min_mul = 1.294871,
+			alt_ammo_pickup_max_mul = 1.294871,
+			ammo_pickup_min_mul = 1.294871,
+			ammo_pickup_max_mul = 1.294871,
+			movement_speed_add = 0.08,
+			sms = 1.0666667
+		},
+		override = {
+			wpn_fps_ass_74_body_upperreceiver = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_body_upperreceiver"
+			},
+			wpn_fps_lmg_rpk_b_standard = {
+				adds = {}
+			},
+			wpn_fps_upg_ak_m_quick = {
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick"
+			}
+		},
+		forbids = { "wpn_fps_ass_rpk_sound_switch" },
+		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		dlc = "sc"
+	}
+
+
+	self.parts.wpn_fps_ass_rpk74_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_rpk_ck_switch",
+		unit = "units/payday2/weapons/wpn_fps_ass_74/wpn_fps_ass_74",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 },
+		custom_stats = {
+			sounds = {
+				fire = "ak74_fire",
+				fire_single = "ak74_fire_single",
+				fire_auto = "ak74_fire",
+				stop_fire = "ak74_stop"
+			}
+		}
+	}
+
+	self.parts.wpn_fps_ass_rpk_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_rpk_ck_switch",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 },
+		custom_stats = {
+			sounds = {
+				fire = "akm_fire_single",
+				fire_single = "akm_fire_single",
+				fire_auto = "akm_fire",
+				stop_fire = "akm_stop"
+			}
+		}
+	}
+
 
 	self.parts.wpn_fps_upg_i_g3sg1 = {
 		pcs = {},
@@ -23910,12 +24027,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		custom_stats = {
 			alt_desc = "bm_beer_auto_desc",
+			falloff_start_mult = 0.4,
+			falloff_end_mult = 0.88888,
 			beer_burst = true,
-			rof_mult = 1.470588235,
+			rof_mult = 1.323529,
 			burst_to_auto = true
 		},
 		stats = {
 			value = 5,
+			spread = -3,
 			recoil = -8
 		},
 		internal_part = true,
@@ -31806,6 +31926,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stats = deep_clone(barrels.long_b3_stats)
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stats.recoil = 2
 				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_lmg_hcar_body_ww2.sound_switch = { suppressed = "regular_b" }
 				self.parts.wpn_fps_lmg_hcar_body_ww2.custom_stats.rof_mult = 0.9
 				self.parts.wpn_fps_lmg_hcar_body_ww2.forbids = {}
 				self.parts.wpn_fps_lmg_hcar_body_ww2.stance_mod = nil
@@ -37705,6 +37826,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_fik22_mag_quick.custom_stats = { ads_speed_mult = 0.975 }
 	end
 
+	if self.parts.wpn_fps_lmg_mx63_upper then
+		self.parts.wpn_fps_lmg_mx63_barrel_std.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_mx63_barrel_std.custom_stats = nil
+		self.parts.wpn_fps_lmg_mx63_ext.stats = { value = 0 }
+		self.parts.wpn_fps_lmg_mx63_ext.custom_stats = nil
+
+		self.parts.wpn_fps_lmg_mx63_upper.override = {
+			wpn_fps_lmg_mx63_o_rear = {
+				stance_mod = {
+					wpn_fps_lmg_mx63 = {
+						translation = Vector3(-0.1, -0, 0.12),
+						rotation = Rotation(-0.05, 0, 0)
+					}
+				}	
+			},
+		}
+
+		self.parts.wpn_fps_lmg_mx63_barrel_ext.supported = true
+		self.parts.wpn_fps_lmg_mx63_barrel_ext.stats = deep_clone(barrels.long_b2_stats)
+		self.parts.wpn_fps_lmg_mx63_barrel_ext.custom_stats = deep_clone(barrels.long_b2_stats)
+
+		self.parts.wpn_fps_lmg_mx63_barrel_short.supported = true
+		self.parts.wpn_fps_lmg_mx63_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+		self.parts.wpn_fps_lmg_mx63_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+	end
+
 	if self.parts.wpn_fps_shot_spas15_mag then
 		self.parts.wpn_fps_shot_spas15_mag.stats = { value = 0 }
 		self.parts.wpn_fps_shot_spas15_mag.custom_stats = nil
@@ -38591,11 +38739,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--Hide Barrel Extensions for the FMG-9's Exclusive kit
 	for i, part_id in pairs(self.wpn_fps_smg_fmg9.uses_parts) do
-		if self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "barrel_ext" then
-			self.parts.wpn_fps_smg_fmg9_conversion.override[part_id] = {
-				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-			}
+		if self.parts[part_id] and self.parts[part_id].type then
+			if self.parts[part_id].type == "barrel_ext" then
+				self.parts.wpn_fps_smg_fmg9_conversion.override[part_id] = {
+					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+				}
+			elseif self.parts[part_id].type == "gadget" then
+				table.insert(self.parts.wpn_fps_smg_fmg9_conversion.forbids, part_id)
+			end
 		end
 	end
 
@@ -41315,7 +41467,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "Fang45WeaponModInit", function(self)
 end)
 
-Hooks:PostHook( WeaponFactoryTweakData, "init", "PD3FIK22TLRMod", function(self)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "PD3FIK22TLRMod", function(self)
 	if self.wpn_fps_ass_fik22 then
 		self.wpn_fps_ass_fik22.override = {}
 		for k, used_part_id in ipairs(self.wpn_fps_ass_fik22.uses_parts) do
@@ -41332,6 +41484,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "PD3FIK22TLRMod", function(self)
 			fire_steelsight = "recoil"
 		}
 	end
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "PD3BlysprutaMod", function(self)
 end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "SPAS15ModInit", function(self)

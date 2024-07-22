@@ -5253,7 +5253,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_holt.has_description = true
 						self.x_holt.desc_id = "bm_x_holt_sc_desc"					
 						self.x_holt.fire_mode_data.fire_rate = 0.0882352
-						self.x_holt.CLIP_AMMO_MAX = 20
+						self.x_holt.CLIP_AMMO_MAX = 30
 						self.x_holt.AMMO_MAX = 150
 						self.x_holt.kick = self.stat_info.kick_tables.even_recoil
 						self.x_holt.supported = true
@@ -18641,6 +18641,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.timers.reload_exit_empty = 0.55
 				self.mike4_2022.timers.reload_exit_not_empty = 1.2
 				self.mike4_2022.timers.reload_not_empty = 2.35
+			end
+
+
+			if self.xmike2010 then --MW2022 SPX80
+				self.xmike2010.recategorize = { "heavy_snp" }
+				self.xmike2010.always_play_anims = true
+				self.xmike2010.desc_id = "bm_ap_weapon_sc_desc"
+				self.xmike2010.CLIP_AMMO_MAX = 5
+				self.xmike2010.AMMO_MAX = 30
+				self.xmike2010.fire_mode_data.fire_rate = 1.09090909
+				self.xmike2010.fire_rate_multiplier = 0.909090909
+				self.xmike2010.sounds.stop_fire = "saiga_stop"
+				self.xmike2010.kick = self.stat_info.kick_tables.vertical_kick
+				self.xmike2010.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.xmike2010.supported = true
+				self.xmike2010.ads_speed = 0.460
+				self.xmike2010.damage_falloff = {
+					start_dist = 4400,
+					end_dist = 6000,
+					min_mult = 0.75
+				}
+				self.xmike2010.stats = {
+					damage = 120,
+					spread = 99,
+					recoil = 41,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 24,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.xmike2010.armor_piercing_chance = 1
+				self.xmike2010.stats_modifiers = nil
+				self.xmike2010.panic_suppression_chance = 0.05
+				self.xmike2010.timers = deep_clone(self.msr.timers)
 			end
 
 			--RJC9000 and PlayBONK's MW2022 AKs

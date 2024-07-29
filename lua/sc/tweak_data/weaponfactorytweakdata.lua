@@ -19746,7 +19746,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 		stats = {
 			value = 4,
 			extra_ammo = 15,
-			reload = -,
+			reload = -4,
 			concealment = -2
 		},
 		custom_stats = { ads_speed_mult = 1.05 }

@@ -7510,8 +7510,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_m_extended.supported = true
 	self.parts.wpn_fps_smg_m45_m_extended.stats = {
 		value = 4,
-		concealment = -3,
-		reload = -5,
+		concealment = -2,
+		reload = -4,
 		extra_ammo = 14
 	}
 	self.parts.wpn_fps_smg_m45_m_extended.custom_stats = {
@@ -8730,7 +8730,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 			value = 6,
 			recoil = -2,
 			concealment = 1,
-			reload = 3,
+			reload = 4,
 			extra_ammo = -15
 		},
 		custom_stats = {
@@ -11054,8 +11054,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 	self.parts.wpn_fps_pis_g26_m_contour.stats = {
 		value = 5,
 		extra_ammo = 2,
-		concealment = -1,
-		reload = -1
+		concealment = -1
 	}
 	
 	--Micro Laser
@@ -11139,7 +11138,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 			value = 6,
 			extra_ammo = 23,
 			concealment = -3,
-			reload = -4
+			reload = -5
 		}
 	}
 	
@@ -11170,8 +11169,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 		stats = {
 			value = 5,
 			extra_ammo = 4,
-			concealment = -1,
-			reload = -1
+			concealment = -1
 		}
 	}
 	self.wpn_fps_jowi.override.wpn_fps_pis_g18c_m_mag_33rnd = {
@@ -11232,7 +11230,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_1911", "resmod_x_1911", function
 			value = 3,
 			concealment = -1,
 			extra_ammo = 8,
-			reload = -1
+			reload = -3
 		}
 	}
 	self.wpn_fps_x_1911.override.wpn_fps_pis_1911_m_big = {
@@ -11247,7 +11245,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_1911", "resmod_x_1911", function
 			value = 2,
 			concealment = -2,
 			extra_ammo = 12,		
-			reload = -2
+			reload = -4
 		}
 	}
 
@@ -11271,9 +11269,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_b92fs", "resmod_x_b92fs", functi
 		supported = true,
 		stats = {
 			value = 2,
-			concealment = -1,
+			concealment = -3,
 			extra_ammo = 30,
-			reload = -2
+			reload = -5
 		}
 	}
 
@@ -34386,7 +34384,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				ads_speed_mult = 0.9
 			}
 	
-			self.parts.wpn_fps_ass_tecci_m_jungle7_m4.supported = true
+			self.parts.wpn_fps_ass_tecci_m_jungle_m4.supported = true
 			self.parts.wpn_fps_ass_tecci_m_jungle_m4.stats = {
 				value = 2,
 				spread = -1,

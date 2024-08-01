@@ -9368,7 +9368,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.ak5.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
 						end
 						self.ak5.supported = true
-						self.ak5.ads_speed = 0.240
+						self.ak5.ads_speed = 0.260
 						self.ak5.damage_falloff = {
 							start_dist = 2700,
 							end_dist = 7000,
@@ -9377,10 +9377,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak5.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 85,
+							recoil = 79,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 27,
+							concealment = 26,
 							suppression = 9,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -9482,7 +9482,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.ads_speed = 0.280
 						self.flint.damage_falloff = {
 							start_dist = 2700,
-							end_dist = 5200,
+							end_dist = 5500,
 							min_mult = 0.5
 						}
 						self.flint.stats = {
@@ -9516,13 +9516,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak74.ads_speed = 0.260
 						self.ak74.damage_falloff = {
 							start_dist = 3000,
-							end_dist = 5800,
+							end_dist = 6200,
 							min_mult = 0.5
 						}
 						self.ak74.stats = {
 							damage = 24,
-							spread = 80,
-							recoil = 79,
+							spread = 79,
+							recoil = 81,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -9535,7 +9535,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ak74.stats_modifiers = nil
 						self.ak74.panic_suppression_chance = 0.05
-						self.ak74.reload_speed_multiplier = 1.175
+						self.ak74.reload_speed_multiplier = 1.2
 						self.ak74.timers.reload_exit_empty = 0.55
 						self.ak74.timers.reload_exit_not_empty = 0.9
 
@@ -13884,7 +13884,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.smolak.ads_speed = 0.220
 					self.smolak.damage_falloff = {
 						start_dist = 1800,
-						end_dist = 4400,
+						end_dist = 5000,
 						min_mult = 0.5
 					}
 					self.smolak.stats = {
@@ -14179,7 +14179,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.ads_speed = 0.260
 				self.tilt.damage_falloff = {
 					start_dist = 2500,
-					end_dist = 5500,
+					end_dist = 5800,
 					min_mult = 0.5
 				}
 				self.tilt.stats = {
@@ -15677,7 +15677,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.ads_speed = 0.280
 				self.ak12.damage_falloff = {
 					start_dist = 2600,
-					end_dist = 5100,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.ak12.stats = {
@@ -19291,7 +19291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.ads_speed = 0.260
 				self.tkb0146.damage_falloff = {
 					start_dist = 2100,
-					end_dist = 4100,
+					end_dist = 4500,
 					min_mult = 0.5
 				}
 				self.tkb0146.stats = {

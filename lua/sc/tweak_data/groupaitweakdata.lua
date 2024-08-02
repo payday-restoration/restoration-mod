@@ -7955,7 +7955,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3"),		
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4")
 		}
-		self.unit_categories.omnia_LPF.unit_types.federales = {Idstring("units/pd2_mod_ttr/characters/ene_cartel_commando/ene_cartel_commando")}
 		self.unit_categories.fbi_vet.unit_types.federales = {
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_grenadier/ene_cartel_grenadier"),
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_grenadier_2/ene_cartel_grenadier_2")		

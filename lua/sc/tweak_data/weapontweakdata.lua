@@ -19741,12 +19741,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mx63.stats_modifiers = nil
 				self.mx63.panic_suppression_chance = 0.05
-				self.mx63.reload_speed_multiplier = 0.9
 				self.mx63.sounds.spin_start = "wp_m249_lever_release"
 				self.mx63.spin_up_shoot = true
 				self.mx63.spin_up_t = 0.1
 				self.mx63.spin_down_t = 0.00000001
-				self.mx63.timers = deep_clone(self.m249.timers)
+				self.mx63.reload_speed_multiplier = 0.8
+				self.mx63.timers.reload_empty = 5.04
+				self.mx63.timers.reload_exit_empty = 0.72
+				self.mx63.timers.reload_not_empty = 4.18
+				self.mx63.timers.reload_exit_not_empty = 1
 			end
 
 		--Predator Pack

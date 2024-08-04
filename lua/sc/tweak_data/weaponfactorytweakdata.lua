@@ -2534,6 +2534,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.01, 4.7, -0.085),
 				rotation = Rotation(-0.042, 0, 0)
 			}
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mx63 = {
+				translation = Vector3(-0.025, 9.6, -0.225),
+				rotation = Rotation(-0.05, 0, -0.7)
+			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
 				translation = Vector3(0.0, 2, -4.03)
@@ -37973,8 +37977,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_lmg_mx63_o_rear = {
 				stance_mod = {
 					wpn_fps_lmg_mx63 = {
-						translation = Vector3(-0.1, -0, 0.12),
-						rotation = Rotation(-0.05, 0, 0)
+						translation = Vector3(-0.11, -0, -0.02),
+						rotation = Rotation(-0.07, 0, 0)
 					}
 				}	
 			},

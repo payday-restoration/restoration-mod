@@ -16833,6 +16833,81 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_breech", "resmod_breech", function
 	
 end)
 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_breech", "resmod_x_breech", function(self)
+
+	self.wpn_fps_pis_x_breech.override = self.wpn_fps_pis_x_breech.override or {}
+
+	--[ [
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_small = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_medium = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_medium_gem = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_medium_slim = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_large = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_large_kac = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_jungle = {
+		a_obj = "a_ns",
+		parent = "barrel",
+		adds = { "wpn_fps_pis_breech_sound_switch" }
+	}
+	--]]
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_pis_ns_flash = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_typhoon = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_x_breech.override.wpn_fps_upg_ns_pis_typhoon = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_small")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_medium")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_gem")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_medium_slim")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_large")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_large_kac")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_jungle")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_pis_ns_flash")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_x_breech.uses_parts, "wpn_fps_upg_ns_pis_typhoon")
+
+	self.wpn_fps_pis_x_breech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_breech.uses_parts)	
+	self.wpn_fps_pis_x_breech_npc.override = deep_clone(self.wpn_fps_pis_x_breech.override)	
+	
+end)
+
 --Galant
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ching", "resmod_ching", function(self)
 
@@ -35453,15 +35528,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_pm_m_modern.stats = { 
 				value = 2,
 				extra_ammo = 4,
-				concealment = -1,
-				reload = -3
+				concealment = -2,
+				reload = -4
 			}
 			self.parts.wpn_fps_pis_pm_m_modern.custom_stats = { ads_speed_mult = 1.025 }
 			self.parts.wpn_fps_pis_pm_m_extended.supported = true
 			self.parts.wpn_fps_pis_pm_m_extended.stats = { 
 				value = 1,
 				extra_ammo = 2,
-				concealment = -1
+				concealment = -1,
+				reload = -3
 			}
 			self.parts.wpn_fps_pis_pm_m_extended.custom_stats = nil
 
@@ -35474,6 +35550,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_pis_pm_m_drum.custom_stats = {
 				ads_speed_mult = 1.2
+			}
+
+			self.wpn_fps_pis_x_pm.override.wpn_fps_pis_pm_m_modern = {
+				stats = {
+					value = 2,
+					extra_ammo = 8,
+					concealment = -2,
+					reload = -4
+				}
+			}
+			self.wpn_fps_pis_x_pm.override.wpn_fps_pis_pm_m_extended = {
+				stats = {
+					value = 1,
+					extra_ammo = 4,
+					concealment = -1,
+					reload = -3
+				}
+			}
+			self.wpn_fps_pis_x_pm.override.wpn_fps_pis_pm_m_drum = {
+				stats = {
+					value = 5,
+					concealment = -8,
+					extra_ammo = 144,
+					reload = -10
+				}
 			}
 		end
 

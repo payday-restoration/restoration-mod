@@ -1289,7 +1289,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "Банановый магазин",
-		
+		["bm_wp_ak_m_drum"] = "Барабанный магазин",
+		["bm_wp_upg_i_rpk74"] = "Конверсия под 5.45",
 
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "#{skill_color}#Прорезает броню.##",
@@ -2051,6 +2052,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_exp_no_hs_info"] = "\n#{risk}#Используются взрывные боеприпасы; Урон поделен поровну между пулей и взрывом.##",
 		["bm_menu_weapon_movement_penalty_info"] = "Скорость передвижения уменьшена на ",
 		["bm_menu_weapon_movement_bonus_info"] = "Скорость передвижения увеличена на ",
+		["bm_menu_weapon_sms_bonus_info"] = "Скорость передвижения при стрельбе увеличена на ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " , когда оружие в руках",
 		["bm_menu_sms_info_cont"] = "штраф увеличивается во время стрельбы.",
 		["bm_menu_sms_info_cont_2"] = "штраф увеличивается во время стрельбы из-за установленных модулей.",

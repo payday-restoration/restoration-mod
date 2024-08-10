@@ -80,6 +80,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				upgrades = {
 					"body_armor3",
 					"cobray",
+					"x_cobray",
 					"boxcutter",
 					"groza",
 					"groza_underbarrel",

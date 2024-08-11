@@ -443,8 +443,8 @@ return {
 	[100617] = cloaker,
 	[100618] = cloaker,
 	[103395] = cloaker,
-	[103163] = taser_basement,
-	[103231] = taser_basement,
+	--[103163] = taser_basement,
+	--[103231] = taser_basement,
 	[103466] = taser,
 	[103463] = shield,
 	[103465] = swatsg

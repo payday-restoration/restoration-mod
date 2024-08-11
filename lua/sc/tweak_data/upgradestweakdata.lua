@@ -64,6 +64,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"hajk",
 					"spoon",
 					"x_mac10",
+					"x_ppk",
 					"x_packrat"
 				}
 			},	
@@ -79,6 +80,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 				upgrades = {
 					"body_armor3",
 					"cobray",
+					"x_cobray",
 					"boxcutter",
 					"groza",
 					"groza_underbarrel",
@@ -116,6 +118,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"sub2000",
 					"road",
 					"legacy",
+					"x_legacy",
 					"fmg9"
 				}
 			},
@@ -196,6 +199,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"grip",
 					"push",
 					"breech",
+					"x_breech",
 					"ching",
 					"erma",
 					"sap"

@@ -4529,7 +4529,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].categories = {"akimbo", "shotgun"}
 	end
 
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','x_c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','x_sparrow','pl14','packrat','x_packrat','lemming','x_breech','breech','erma','x_erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','x_m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach','shepheard','x_shepheard','polymer','x_polymer','schakal','x_schakal','mp9','mp7','uzi','x_uzi','contender','schakal'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
 		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
@@ -5082,6 +5082,40 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_czech.timers.reload_exit_empty = 0.55
 						self.x_czech.timers.reload_exit_not_empty = 0.65
 
+					--Akimbo PPK
+						self.x_ppk.has_description = true
+						self.x_ppk.desc_id = "bm_ppk_sc_desc"					
+						self.x_ppk.AMMO_MAX = 150
+						self.x_ppk.CLIP_AMMO_MAX = 14
+						self.x_ppk.fire_mode_data.fire_rate = 0.0821917
+						self.x_ppk.kick = self.stat_info.kick_tables.right_recoil
+						self.x_ppk.supported = true
+						self.x_ppk.ads_speed = 0.100
+						self.x_ppk.damage_falloff = {
+							start_dist = 1200,
+							end_dist = 2900,
+							min_mult = 0.2083
+						}
+						self.x_ppk.stats = {
+							damage = 24,
+							spread = 44,
+							recoil = 83,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 1,
+							reload = 20
+						}
+						self.x_ppk.stats_modifiers = nil
+						self.x_ppk.panic_suppression_chance = 0.05
+						self.x_ppk.reload_speed_multiplier = 1.5
+						self.x_ppk.timers.reload_exit_not_empty = 0.55
+						self.x_ppk.timers.reload_exit_empty = 0.65
+
 					--Akimbo Chimano Compact
 						self.jowi.has_description = true
 						self.jowi.desc_id = "bm_x_jowi_sc_desc"
@@ -5249,11 +5283,44 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_pl14.timers.reload_exit_empty = 0.55
 						self.x_pl14.timers.reload_exit_not_empty = 0.65
 
+					--Akimbo M13
+						self.x_legacy.has_description = true
+						self.x_legacy.desc_id = "bm_legacy_sc_desc"				
+						self.x_legacy.fire_mode_data.fire_rate = 0.0857142
+						self.x_legacy.CLIP_AMMO_MAX = 13 * 2
+						self.x_legacy.AMMO_MAX = 75 * 2
+						self.x_legacy.kick = self.stat_info.kick_tables.left_recoil
+						self.x_legacy.supported = true
+						self.x_legacy.ads_speed = 0.140
+						self.x_legacy.damage_falloff = {
+							start_dist = 1300,
+							end_dist = 3300,
+							min_mult = 0.25
+						}
+						self.x_legacy.stats = {
+							damage = 24,
+							spread = 44,
+							recoil = 81,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 31,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 1,
+							reload = 20
+						}
+						self.x_legacy.stats_modifiers = nil
+						self.x_legacy.panic_suppression_chance = 0.05
+						self.x_legacy.timers.reload_exit_empty = 0.55
+						self.x_legacy.timers.reload_exit_not_empty = 0.65
+
 					--Akimbo Holt 9mm
 						self.x_holt.has_description = true
 						self.x_holt.desc_id = "bm_x_holt_sc_desc"					
 						self.x_holt.fire_mode_data.fire_rate = 0.0882352
-						self.x_holt.CLIP_AMMO_MAX = 20
+						self.x_holt.CLIP_AMMO_MAX = 30
 						self.x_holt.AMMO_MAX = 150
 						self.x_holt.kick = self.stat_info.kick_tables.even_recoil
 						self.x_holt.supported = true
@@ -5281,6 +5348,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_holt.panic_suppression_chance = 0.05
 						self.x_holt.timers.reload_exit_empty = 0.55
 						self.x_holt.timers.reload_exit_not_empty = 0.65
+
+					--Akimbo P08
+						self.x_breech.has_description = true
+						self.x_breech.desc_id = "bm_breech_sc_desc"				
+						self.x_breech.AMMO_MAX = 150
+						self.x_breech.CLIP_AMMO_MAX = 16
+						self.x_breech.fire_mode_data.fire_rate = 0.0882352
+						self.x_breech.kick = self.stat_info.kick_tables.even_recoil
+						self.x_breech.supported = true
+						self.x_breech.ads_speed = 0.120
+						self.x_breech.damage_falloff = {
+							start_dist = 1800,
+							end_dist = 4500,
+							min_mult = 0.25
+						}
+						self.x_breech.stats = {
+							damage = 24,
+							spread = 51,
+							recoil = 79,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 1,
+							reload = 20
+						}
+						self.x_breech.stats_modifiers = nil
+						self.x_breech.panic_suppression_chance = 0.05
+						self.x_breech.reload_speed_multiplier = 1.1
+						self.x_breech.timers.reload_empty = 3
+						self.x_breech.timers.reload_exit_empty = 1.55
+						self.x_breech.timers.reload_not_empty = 1.8
+						self.x_breech.timers.reload_exit_not_empty = 2.8
 
 					--Wasp-DS (FMG-9)
 						self.fmg9.has_description = true
@@ -5409,7 +5512,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_packrat.stats_modifiers = nil
 						self.x_packrat.timers.reload_exit_empty = 0.55
 						self.x_packrat.timers.reload_exit_not_empty = 0.65
-
 					
 					--Akimbo Chimano Custom
 						self.x_g22c.has_description = true
@@ -7648,6 +7750,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_mp5.timers.reload_exit_empty = 0.75
 						self.x_mp5.timers.reload_exit_not_empty = 1.1
 
+					--Akimbo M11/9
+						self.x_cobray.CLIP_AMMO_MAX = 32 * 2
+						self.x_cobray.AMMO_MAX = 90 * 2
+						self.x_cobray.kick = self.stat_info.kick_tables.even_recoil
+						self.x_cobray.fire_mode_data.fire_rate = 0.06
+						self.x_cobray.CAN_TOGGLE_FIREMODE = true
+						self.x_cobray.supported = true
+						self.x_cobray.ads_speed = 0.200
+						self.x_cobray.damage_falloff = {
+							start_dist = 1100,
+							end_dist = 4000,
+							min_mult = 0.3
+						}
+						self.x_cobray.stats = {
+							damage = 20,
+							spread = 50,
+							recoil = 67,
+							spread_moving = 1,
+							zoom = 1,
+							concealment = 29,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 200,
+							value = 1,
+							reload = 20
+						}
+						self.x_cobray.stats_modifiers = nil
+						self.x_cobray.sounds.spin_start = "wp_mac10_lever_pull"
+						self.x_cobray.spin_up_shoot = true
+						self.x_cobray.spin_up_t = 0.05
+						self.x_cobray.spin_down_t = 0.0000000001
+						self.x_cobray.panic_suppression_chance = 0.05
+						self.x_cobray.reload_speed_multiplier = 0.8
+						self.x_cobray.timers.reload_not_empty = 2.1
+						self.x_cobray.timers.reload_exit_not_empty = 1.5
+						self.x_cobray.timers.reload_empty = 3
+						self.x_cobray.timers.reload_exit_empty = 0.9
+
 				--SECONDARIES
 
 					--Spec Ops (MP7)
@@ -9368,7 +9509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.ak5.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
 						end
 						self.ak5.supported = true
-						self.ak5.ads_speed = 0.240
+						self.ak5.ads_speed = 0.260
 						self.ak5.damage_falloff = {
 							start_dist = 2700,
 							end_dist = 7000,
@@ -9377,10 +9518,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak5.stats = {
 							damage = 24,
 							spread = 81,
-							recoil = 85,
+							recoil = 79,
 							spread_moving = 6,
 							zoom = 1,
-							concealment = 27,
+							concealment = 26,
 							suppression = 9,
 							alert_size = 2,
 							extra_ammo = 101,
@@ -9482,7 +9623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.ads_speed = 0.280
 						self.flint.damage_falloff = {
 							start_dist = 2700,
-							end_dist = 5200,
+							end_dist = 5500,
 							min_mult = 0.5
 						}
 						self.flint.stats = {
@@ -9516,13 +9657,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak74.ads_speed = 0.260
 						self.ak74.damage_falloff = {
 							start_dist = 3000,
-							end_dist = 5800,
+							end_dist = 6200,
 							min_mult = 0.5
 						}
 						self.ak74.stats = {
 							damage = 24,
-							spread = 80,
-							recoil = 79,
+							spread = 79,
+							recoil = 81,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -9535,7 +9676,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.ak74.stats_modifiers = nil
 						self.ak74.panic_suppression_chance = 0.05
-						self.ak74.reload_speed_multiplier = 1.175
+						self.ak74.reload_speed_multiplier = 1.2
 						self.ak74.timers.reload_exit_empty = 0.55
 						self.ak74.timers.reload_exit_not_empty = 0.9
 
@@ -13884,7 +14025,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.smolak.ads_speed = 0.220
 					self.smolak.damage_falloff = {
 						start_dist = 1800,
-						end_dist = 4400,
+						end_dist = 5000,
 						min_mult = 0.5
 					}
 					self.smolak.stats = {
@@ -14179,7 +14320,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.ads_speed = 0.260
 				self.tilt.damage_falloff = {
 					start_dist = 2500,
-					end_dist = 5500,
+					end_dist = 5800,
 					min_mult = 0.5
 				}
 				self.tilt.stats = {
@@ -15677,7 +15818,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.ads_speed = 0.280
 				self.ak12.damage_falloff = {
 					start_dist = 2600,
-					end_dist = 5100,
+					end_dist = 5500,
 					min_mult = 0.5
 				}
 				self.ak12.stats = {
@@ -18643,6 +18784,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.timers.reload_not_empty = 2.35
 			end
 
+
+			if self.xmike2010 then --MW2022 SPX80
+				self.xmike2010.recategorize = { "heavy_snp" }
+				self.xmike2010.always_play_anims = true
+				self.xmike2010.desc_id = "bm_ap_weapon_sc_desc"
+				self.xmike2010.CLIP_AMMO_MAX = 5
+				self.xmike2010.AMMO_MAX = 30
+				self.xmike2010.fire_mode_data.fire_rate = 1.09090909
+				self.xmike2010.fire_rate_multiplier = 0.909090909
+				self.xmike2010.sounds.stop_fire = "saiga_stop"
+				self.xmike2010.kick = self.stat_info.kick_tables.vertical_kick
+				self.xmike2010.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.xmike2010.supported = true
+				self.xmike2010.ads_speed = 0.460
+				self.xmike2010.damage_falloff = {
+					start_dist = 4400,
+					end_dist = 6000,
+					min_mult = 0.75
+				}
+				self.xmike2010.stats = {
+					damage = 120,
+					spread = 99,
+					recoil = 41,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 24,
+					suppression = 5,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.xmike2010.armor_piercing_chance = 1
+				self.xmike2010.stats_modifiers = nil
+				self.xmike2010.panic_suppression_chance = 0.05
+				self.xmike2010.timers = deep_clone(self.msr.timers)
+			end
+
 			--RJC9000 and PlayBONK's MW2022 AKs
 				if self.akilo_2022 then 
 					self.akilo_2022.warsaw = true
@@ -19252,7 +19432,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.ads_speed = 0.260
 				self.tkb0146.damage_falloff = {
 					start_dist = 2100,
-					end_dist = 4100,
+					end_dist = 4500,
 					min_mult = 0.5
 				}
 				self.tkb0146.stats = {
@@ -19702,12 +19882,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mx63.stats_modifiers = nil
 				self.mx63.panic_suppression_chance = 0.05
-				self.mx63.reload_speed_multiplier = 0.9
 				self.mx63.sounds.spin_start = "wp_m249_lever_release"
 				self.mx63.spin_up_shoot = true
 				self.mx63.spin_up_t = 0.1
 				self.mx63.spin_down_t = 0.00000001
-				self.mx63.timers = deep_clone(self.m249.timers)
+				self.mx63.reload_speed_multiplier = 0.8
+				self.mx63.timers.reload_empty = 5.04
+				self.mx63.timers.reload_exit_empty = 0.72
+				self.mx63.timers.reload_not_empty = 4.18
+				self.mx63.timers.reload_exit_not_empty = 1
 			end
 
 		--Predator Pack
@@ -20371,8 +20554,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.pm.supported = true
 			self.pm.ads_speed = 0.120
 			self.pm.damage_falloff = {
-				start_dist = 1500,
-				end_dist = 3500,
+				start_dist = 1000,
+				end_dist = 3000,
 				min_mult = 0.2083
 			}
 			self.pm.stats = {
@@ -20402,14 +20585,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_pm.lock_slide = true
 				self.x_pm.fire_mode_data.fire_rate = 0.0882352
 				self.x_pm.tactical_reload = 1
-				self.x_pm.CLIP_AMMO_MAX = 8
-				self.x_pm.AMMO_MAX = 75
+				self.x_pm.CLIP_AMMO_MAX = 16
+				self.x_pm.AMMO_MAX = 150
 				self.x_pm.kick = self.stat_info.kick_tables.even_recoil
 				self.x_pm.supported = true
 				self.x_pm.ads_speed = 0.120
 				self.x_pm.damage_falloff = {
-					start_dist = 1500,
-					end_dist = 3500,
+					start_dist = 1000,
+					end_dist = 3000,
 					min_mult = 0.2083
 				}
 				self.x_pm.stats = {
@@ -21018,7 +21201,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_erma.use_data.selection_index = 5			
 	
 		--Akimbo CR805
-		--DISABLED--
+		--DISABLED-- - LOL NO
 			self.x_hajk.use_data.selection_index = 5
 	
 		--Akimbo Kross Vertex
@@ -21030,19 +21213,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_schakal.use_data.selection_index = 5
 	
 		--Akimbo Chicago typewriter
-		--DISABLED--
+		--DISABLED-- - LOL NO
 			self.x_m1928.use_data.selection_index = 5
-	
-		--Akimbo Jacket's Piece
-		--DISABLED--
-			self.x_cobray.use_data.selection_index = 5
 	
 		--Akimbo Tatonka
 		--DISABLED - ALREADY A PRIMARY
 			self.x_coal.use_data.selection_index = 5
 	
 		--Akimbo Spec Ops (Akimbo MP7)
-		--DISABLED--	
+		--DISABLED--
 			self.x_mp7.use_data.selection_index = 5
 					
 		--Akimbo Goliath 12g
@@ -21050,32 +21229,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_rota.use_data.selection_index = 5
 	
 		--Akimbo CMP
-		--DISABLED--	
+		--DISABLED--
 			self.x_mp9.use_data.selection_index = 5
 	
 		--Akimbo Patchett
-		--DISABLED--	
+		--DISABLED--
 			self.x_sterling.use_data.selection_index = 5
 	
 		--Akimbo Blaster 9mm
-		--DISABLED--	
+		--DISABLED--
 			self.x_tec9.use_data.selection_index = 5
-	
-		--Akimbo Parabellum
-		--DISABLED--	
-			self.x_breech.use_data.selection_index = 5
 	
 		--akimbo Broomstick
 		--DISABLED - ALREADY A PRIMARY
 			self.x_c96.use_data.selection_index = 5
 	
 		--Akimbo Leo
-		--DISABLED--	
+		--DISABLED--
 			self.x_hs2000.use_data.selection_index = 5
-	
-		--Akimbo Gruber Kurz
-		--DISABLED--	
-			self.x_ppk.use_data.selection_index = 5
 	
 		--Akimbo Swedish K
 		--DISABLED--
@@ -21084,10 +21255,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Akimbo Signature SMG
 		--DISABLED - ALREADY A PRIMARY
 			self.x_shepheard.use_data.selection_index = 5
-	
-		--Akimbo M13
-		--DISABLED--	
-			self.x_legacy.use_data.selection_index = 5
 	
 		--Akimbo Beretta Auto
 		--DISABLED - ALREADY A PRIMARY

@@ -20564,7 +20564,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		a_obj = "a_body",
 		type = "ammo",
 		name_id = "bm_wp_fmg9_ck_switch",
-		unit = "units/pd2_dlc_khp/weapons/wpn_fps_pis_legacy/wpn_fps_pis_legacy",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		no_cull = true,
 		internal_part = true,
 		stats = {
@@ -20572,9 +20573,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		},
 		custom_stats = {
 			sounds = {
-				fire_auto = "legacy_fire",
-				fire_single = "legacy_fire",
-				fire = "legacy_fire",
+				fire_single = "g17_fire",
+				fire = "g17_fire",
 			}
 		}
 	}
@@ -26489,6 +26489,36 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_snp_pd3_lynx.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
 
 			self.wpn_fps_snp_pd3_lynx_npc.uses_parts = deep_clone(self.wpn_fps_snp_pd3_lynx.uses_parts)
+		end
+
+		if self.parts.wpn_fps_ass_ma40_barrel then
+			self.parts.wpn_fps_ass_ma40_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ma40_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_ma40_shroud.pcs = {}
+			self.parts.wpn_fps_ass_ma40_shroud.supported = true
+			self.parts.wpn_fps_ass_ma40_shroud.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ma40_shroud.sub_type = "laser"
+			self.parts.wpn_fps_ass_ma40_flashlight.supported = true
+			self.parts.wpn_fps_ass_ma40_flashlight.stats = { value = 0 }
+			self.parts.wpn_fps_ass_ma40_scope.supported = true
+			self.parts.wpn_fps_ass_ma40_scope.stats = { value = 0, zoom = 4, base_zoom_off = 1 }
+			self.parts.wpn_fps_ass_ma40_scope_ach.supported = true
+			self.parts.wpn_fps_ass_ma40_scope_ach.stats = { value = 0, zoom = 4, base_zoom_off = 1 }
+
+			for i, part_id in pairs(self.wpn_fps_ass_ma40.default_blueprint) do
+				attachment_list = {
+					"wpn_fps_upg_i_autofire"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_ass_ma40.default_blueprint[i] = "resmod_dummy"
+					end
+				end
+			end
+			table.insert(self.wpn_fps_ass_ma40.uses_parts, "wpn_fps_upg_i_singlefire")
+
+			self.wpn_fps_ass_ma40_npc.default_blueprint = deep_clone(self.wpn_fps_ass_ma40.default_blueprint)
+			self.wpn_fps_ass_ma40_npc.uses_parts = deep_clone(self.wpn_fps_ass_ma40.uses_parts)
 		end
 
 		if self.parts.wpn_fps_ass_br55_receiver then

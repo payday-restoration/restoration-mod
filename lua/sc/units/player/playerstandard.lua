@@ -3256,6 +3256,20 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 
 	self._ext_network:send("set_stance", 3, false, false)
 	managers.job:set_memory("cac_4", true)
+
+	--Compatibilty or Offyerocker's MA40 Overlay 
+	if self._state_data.in_steelsight then
+		local weap_base = self._equipped_unit:base()
+		if weap_base and weap_base._scope_overlay then
+			if not weap_base._steelsight_weapon_visible then
+				set_viewmodel_visible(self,false)
+				weap_base:set_visibility_state(false)
+				weap_base:update_visibility_state()
+			end
+			managers.hud:set_ma40_overlay(weap_base._scope_overlay)
+			managers.hud:start_ma40_overlay()
+		end
+	end
 end
 
 --Check for being fully ADS'd

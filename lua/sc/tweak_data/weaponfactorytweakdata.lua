@@ -20573,6 +20573,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		},
 		custom_stats = {
 			sounds = {
+				fire_auto = "g17_fire",
 				fire_single = "g17_fire",
 				fire = "g17_fire",
 			}

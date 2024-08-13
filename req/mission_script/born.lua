@@ -18,7 +18,15 @@ local fbi_access = {
 
 return {
 	--Pro Job PONR 
+	--kill the loop
 	[100720] = {
+		func = function(self)
+			local turn_this_shit_off = self:get_mission_element(102530)
+
+			if turn_this_shit_off then
+				turn_this_shit_off:set_enabled(false)
+			end
+		end,
 		ponr = ponr_value
 	},
 	--Disable the turret
@@ -65,16 +73,6 @@ return {
 		on_executed = {
 			{ id = 102530, delay = 180}
 		}
-	},
-	--kill the loop
-	[100720] = {
-		func = function(self)
-			local turn_this_shit_off = self:get_mission_element(102530)
-
-			if turn_this_shit_off then
-				turn_this_shit_off:set_enabled(false)
-			end
-		end
 	},
 	--Spawn Bikerdozer after opening the door
 	[102786] = {

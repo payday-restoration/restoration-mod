@@ -19157,6 +19157,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.owd_m1a.sounds.stop_fire = "m14_stop"
 			end
 
+			if self.ma40 then 
+				self.ma40.categories = { 
+					"assault_rifle",
+					"no_shake"
+				}
+				self.ma40.categories = { "assault_rifle" }
+				self.ma40.recategorize = { "heavy_ar" }
+				self.ma40.damage_type = "sniper"
+				self.ma40.CLIP_AMMO_MAX = 36
+				self.ma40.AMMO_MAX = 120
+				self.ma40.FIRE_MODE = "auto"
+				self.ma40.fire_mode_data.fire_rate = 0.08333333
+				self.ma40.always_hipfire = true
+				self.ma40.CAN_TOGGLE_FIREMODE = true
+				self.ma40.kick = {}
+				self.ma40.kick = self.stat_info.kick_tables.right_kick
+				self.ma40.descope_on_dmg = true
+				self.ma40.supported = true
+				self.ma40.ads_speed = 0.240
+				self.ma40.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 4000,
+					min_mult = 0.8
+				}	
+				self.ma40.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 22,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.ma40.stats_modifiers = nil
+				self.ma40.panic_suppression_chance = 0.05
+			end
+
+
 			if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 				self.vk78_commando.categories = { 
 					"assault_rifle",

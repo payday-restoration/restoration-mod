@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<diesel materials="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="c_capsule_body_new" collision_type="capsule"/>
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -15,6 +15,10 @@
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
+		</body>
+		<body name="glass_swat" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Head"/>
+			<object name="c_glass" collision_type="convex"/>
 		</body>
 
 <!-- RAGDOLL -->
@@ -191,7 +195,9 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh_yellow" >
+		<decal_mesh name="dm_helmet_shield" enabled="false" material="steel_no_decal" />	
 		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="c_glass"  enabled="false" material="glass_no_decal" />		
 	</decal_surfaces>
 
 	<graphics>
@@ -204,43 +210,135 @@
 					<material materials="mtr_body_lod2"/>
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_body_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_body_shield">
+				<object name="g_body_shield" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+				<object name="g_body_shield_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2"/>
 				</object>
 			</lod_object>
 
-			<lod_object name="lod_head">
-				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_head" max_distance="1000"/>
-					<material materials="mtr_head_lod1" max_distance="1500"/>
-					<material materials="mtr_head_lod2"/>
+			<lod_object name="lod_balaclava">
+				<object name="g_balaclava" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
 				</object>
-				<object name="g_head_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_head_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_head_lod2"/>
+				<object name="g_balaclava_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
 				</object>
 			</lod_object>
 
+			<lod_object name="lod_balaclava_b">
+				<object name="g_balaclava_b" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+				<object name="g_balaclava_b_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+			</lod_object>
+			
 			<lod_object name="lod_helmet">
 				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_helmet" max_distance="1000"/>
-					<material materials="mtr_helmet_lod1" max_distance="1500"/>
-					<material materials="mtr_helmet_lod2"/>
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
 				</object>
 				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
-					<material materials="mtr_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_helmet_lod2"/>
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
 				</object>
 			</lod_object>
 
-			<lod_object name="lod_glass">
-				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
-					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod" />
+			<lod_object name="lod_goggles_a">
+				<object name="g_goggles_a" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_goggles_a_lod1" enabled="false" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
 				</object>
 			</lod_object>
 
-			<object name="g_eyes" enabled="true"/>			
+			<lod_object name="lod_face_a">
+				<object name="g_face" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_face_lod1" enabled="true" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>
+
+			
+			<lod_object name="lod_goggles_b">
+				<object name="g_helmet_lod3" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_helmet_lod4" enabled="false" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_glasses">
+				<object name="g_glasses" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>
+
+			<object name="g_glasses_glass" enabled="false"/>
+
+			<lod_object name="lod_headset">
+				<object name="g_headset" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_headset_lod1" enabled="false" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>
+
+			
+			<lod_object name="lod_helmet_winters_titan">
+				<object name="g_helmet_lod5" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_helmet_lod6" 	enabled="false" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>
+			<object name="g_helmet_lod7" enabled="false"  />
+
+			<object name="g_glass" enabled="false"  />
+			<object name="g_glass_crk" enabled="false" />
+
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 			
 		</graphic_group>

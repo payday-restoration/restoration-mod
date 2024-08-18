@@ -2,6 +2,7 @@
 	<unit>
 		<variables>
 			<var_gadgets_cop value="0"/>					
+			<var_gadgets_asu value="0"/>					
 			<var_gadgets_fbi value="0"/>					
 			<var_gadgets_sec value="0"/>
 			<var_head_value value="0"/>								
@@ -9,6 +10,10 @@
 
 		<sequence editable_state="true" name="'cop_pistol'" triggable="true" once="true">						
 			<set_variables var_gadgets_cop="1"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		<sequence editable_state="true" name="'asu'" triggable="true" once="true">						
+			<set_variables var_gadgets_asu="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
@@ -113,6 +118,10 @@
 			<check value="vars.var_gadgets_cop == 5"/>
 		</filter>
 
+		<filter name="'check_asu'">
+			<check value="vars.var_gadgets_asu == 1"/>
+		</filter>
+
 
 		<filter name="'check_sec_pistol'">
 			<check value="vars.var_gadgets_sec == 1"/>
@@ -152,6 +161,7 @@
 		
 		<filter name="'check_exposed'">
 			<check value="vars.var_head_value == 0"/>
+			<check value="vars.var_gadgets_asu == 0"/>
 		</filter>
 		
 		<filter name="'check_fbi_3'">
@@ -168,6 +178,8 @@
 
 
 			<run_sequence filter="'check_exposed'" name="'hedz'"/>
+			
+			<run_sequence filter="'check_asu'" name="'asujeads'"/>
 			
 			<!-- pistol -->
 			<run_sequence filter="'check_cop_pistol'" name="'body_cop_pis'"/>
@@ -335,6 +347,20 @@
 			'black_e_var5',
 			'black_e_var6',
 			'black_e_var7')"/>			
+			</sequence>
+			
+			<sequence editable_state="true" name="'asujeads'" once="true" triggable="true">	
+			<run_sequence name="'head_'..pick(
+			'white_a_var1',
+			'white_a_var2',
+			'white_a_var3',
+			'white_a_var4',
+			'white_a_var5',
+			'black_a_var1',
+			'black_a_var2',
+			'black_a_var3',
+			'black_a_var4',
+			'black_a_var5')"/>			
 			</sequence>					
 
 		<!-- VARIATIONS - COPPAS -->

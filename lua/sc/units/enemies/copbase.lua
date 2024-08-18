@@ -309,6 +309,14 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 end)
 
 local enemy_variations = {
+	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
+	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
+	["units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
+	["units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new"] = "winters_shield",
+	["units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"] = "taser_titan",
+	["units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"] = "swat_sg",
+	["units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"] = "asu",
+
 	["units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"] = "swat_smg",
 	["units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"] = "swat_sg",
 	["units/payday2/characters/ene_swat_3/ene_swat_3"] = "swat_ar",

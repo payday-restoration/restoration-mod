@@ -15,8 +15,7 @@
 		<body name="held_body_left" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
 			<object name="c_shield_l"	collision_type="convex" padding="-2" />
-		</body>
-		
+		</body>		
 
 		<body name="held_body_right" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
@@ -27,6 +26,7 @@
 			<object name="rp_ene_acc_shield_phalanx" />
 			<object name="c_shield_top" 				collision_type="convex" padding="-2" />
 		</body>
+		
 <!-- rename this to glass to enable glass shattering -->
 		<body name="glass_dummy" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
@@ -35,26 +35,29 @@
 
 		<body name="dropped_body_middle" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield" 							collision_type="convex" />
-			<object name="c_shield2" 							collision_type="convex" />
-			<object name="c_shield3" 							collision_type="convex" />
-			<object name="c_shield4" 							collision_type="convex" />
+			<object name="c_shield" 							collision_type="box" />
+			<object name="c_shield2" 							collision_type="box" />
+			<object name="c_shield3" 							collision_type="box" />
+			<object name="c_shield4" 							collision_type="box" />
 			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />
 		</body>		
 
 		<body name="dropped_body_left" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_l"	collision_type="convex" padding="-2" />
+			<object name="c_shield_l"	collision_type="box" padding="-2" />
+			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
 		</body>
 
 		<body name="dropped_body_right" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_r"	collision_type="convex" padding="-2" />
+			<object name="c_shield_r"	collision_type="box" padding="-2" />
+			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
 		</body>
 
 		<body name="dropped_body_top" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_top" 				collision_type="convex" padding="-2" />
+			<object name="c_shield_top" 				collision_type="box" padding="-2" />
+			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
 		</body>
 		
 

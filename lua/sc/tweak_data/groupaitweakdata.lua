@@ -8621,28 +8621,28 @@ end
 	self.unit_categories.Phalanx_minion_new = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},					
 			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},
 			federales = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},				
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new")
 			}			
 		},
 		access = access_type_all,

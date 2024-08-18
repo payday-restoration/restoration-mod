@@ -67,14 +67,14 @@
 			<body enabled="false" name="'held_body_middle'"/>
 			<body enabled="true" name="'dropped_body_middle'"/>
 			
-			<body filter="'filter_debris_l'" enabled="false" name="'held_body_left'"/>
-			<body filter="'filter_debris_l'" enabled="true" name="'dropped_body_left'"/>
+			<body  enabled="false" name="'held_body_left'"/>
+			<body  enabled="true" name="'dropped_body_left'"/>
 			
-			<body filter="'filter_debris_r'" enabled="false" name="'held_body_right'"/>
-			<body filter="'filter_debris_r'" enabled="true" name="'dropped_body_right'"/>
+			<body  enabled="false" name="'held_body_right'"/>
+			<body  enabled="true" name="'dropped_body_right'"/>
 			
-			<body filter="'filter_debris_top'" enabled="false" name="'held_body_top'"/>
-			<body filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
+			<body  enabled="false" name="'held_body_top'"/>
+			<body  enabled="true" name="'dropped_body_top'"/>
 			
 			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1_blink'"/>
 			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2_blink'"/>

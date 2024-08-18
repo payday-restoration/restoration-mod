@@ -17622,6 +17622,9 @@ function CharacterTweakData:_set_overkill_290()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.damage.explosion_damage_mul = 0.7		
+	
+	self.fbi_swat.weapon = deep_clone(self.presets.weapon.expert)
+	self.fbi_swat.melee_weapon_dmg_multiplier = 2
 		
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1.5

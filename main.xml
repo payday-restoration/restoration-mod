@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.3.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.3.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>

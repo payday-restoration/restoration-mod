@@ -210,8 +210,8 @@ function MutatorGoldfarbDozers:setup()
 				{
 					unit = "BLACK_tank",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.BLACK_tank_DW,
 					rank = 3
 				},
@@ -267,8 +267,8 @@ function MutatorGoldfarbDozers:setup()
 				{
 					unit = "SKULL_tank",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.SKULL_tank,
 					rank = 2
 				},

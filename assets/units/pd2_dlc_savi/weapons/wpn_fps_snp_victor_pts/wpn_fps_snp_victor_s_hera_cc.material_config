@@ -1,0 +1,18 @@
+<materials version="3" group="weapon_victor">
+    <material render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DEPTH_SCALING:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" unique="true" name="mat_hera_stock" version="2">
+        <diffuse_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/hera_stock_df_cc"/>
+        <material_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/hera_stock_gsma"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+		<variable value="0" type="scalar" name="wear_tear_value"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable value="1 1 1" type="vector3" name="uv_scale"/>
+		<variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+		<variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+        <bump_normal_texture file="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/hera_stock_nm"/>
+    </material>
+</materials>

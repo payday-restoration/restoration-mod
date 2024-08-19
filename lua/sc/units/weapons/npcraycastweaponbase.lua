@@ -3,6 +3,10 @@ local mvec_spread = Vector3()
 
 local init_original = NPCRaycastWeaponBase.init
 local setup_original = NPCRaycastWeaponBase.setup
+local idstr_trail = Idstring("trail")
+local idstr_simulator_length = Idstring("simulator_length")
+local idstr_size = Idstring("size")
+
 
 Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
@@ -29,12 +33,16 @@ Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 	end	
 
 	local trail = weapon_tweak.trail_effect or Idstring("effects/particles/weapons/weapon_trail")
-	
+
+	self._use_sniper_trail = weapon_tweak.use_sniper_trail
+
 	self._trail_effect_table = {
 		effect = trail,
 		position = Vector3(),
 		normal = Vector3()
 	}
+	self._trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), idstr_trail, idstr_simulator_length, idstr_size)
+
 
 	if not self._flashlight_data and self._unit:get_object(Idstring("a_effect_flashlight")) then
 		local effect = self._unit:effect_spawner(Idstring("flashlight"))
@@ -79,14 +87,19 @@ Hooks:PostHook(NPCRaycastWeaponBase, "destroy", "res_destroy", function(self)
 	end
 end)
 
-function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
+function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray, user_unit)
 	self._obj_fire:m_position(self._trail_effect_table.position)
 	mvector3.set(self._trail_effect_table.normal, direction)
 
 	local trail = World:effect_manager():spawn(self._trail_effect_table)
 
 	if col_ray then
-		World:effect_manager():set_remaining_lifetime(trail, math.clamp((col_ray.distance - 600) / 10000, 0, col_ray.distance))
+		mvector3.set_y(self._trail_length, col_ray.distance)
+		if self._use_sniper_trail then
+			World:effect_manager():set_simulator_var_vector2(trail, idstr_trail, idstr_simulator_length, idstr_size, self._trail_length)
+		else
+			World:effect_manager():set_remaining_lifetime(trail, math.clamp((col_ray.distance - 600) / 10000, 0,  col_ray.distance))
+		end
 	end
 end
 
@@ -150,7 +163,7 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 				self._set_trail = true
 			end
 
-			self:_spawn_trail_effect(mvec_spread, col_ray)
+			self:_spawn_trail_effect(mvec_spread, col_ray, user_unit)
 		end
 	end
 

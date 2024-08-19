@@ -1,0 +1,53 @@
+<table name="zweihander">
+    <GlobalValue id="zweihander" color="Color(1, 0.5, 0)"/>
+
+      
+    <Melee id="zweihander" based_on="great" info_id="bm_melee_zweihander_info" unit="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander" third_unit="units/mods/weapons/wpn_mel_zweihander/wpn_third_zweihander" texture_bundle_folder="mods" dlc="rest">
+	<sounds equip="great_equip" hit_air="great_hit_air" hit_gen="great_hit_gen" hit_body="great_hit_body" charge="great_charge"/>
+	<stats concealment="25" charge_time="3" min_damage_effect="1" max_damage_effect="1" charge_bonus_start="2" charge_bonus_range="0.5"/>
+	</Melee>
+
+    <Melee id="broad" based_on="great" info_id="bm_melee_broad_info" unit="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad" third_unit="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad" texture_bundle_folder="mods" dlc="rest">
+    <sounds equip="great_equip" hit_air="great_hit_air" hit_gen="great_hit_gen" hit_body="great_hit_body" charge="great_charge"/>
+    <stats concealment="27" charge_time="2" min_damage_effect="1" max_damage_effect="1"/>
+    </Melee>
+    
+    <AddFiles directory="assets"> 
+        <!-- Zweihander -->
+        <cooked_physics path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander"/>
+        <model path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander"/>
+        <object path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander"/>
+        <unit path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander"/>
+        <material_config path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander"/>
+        <material_config path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander_thq"/>
+        <texture path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander_df"/>
+        <texture path="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander_nm"/>
+
+        <cooked_physics path="units/mods/weapons/wpn_mel_zweihander/wpn_third_mel_zweihander"/>
+        <model path="units/mods/weapons/wpn_mel_zweihander/wpn_third_mel_zweihander"/>
+        <object path="units/mods/weapons/wpn_mel_zweihander/wpn_third_mel_zweihander"/>
+        <unit path="units/mods/weapons/wpn_mel_zweihander/wpn_third_mel_zweihander"/>
+        <material_config path="units/mods/weapons/wpn_mel_zweihander/wpn_third_mel_zweihander"/>
+
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/zweihander"/>
+
+        <!-- Broadsword -->
+        <cooked_physics path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad"/>
+        <model path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad"/>
+        <object path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad"/>
+        <unit path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad"/>
+        <material_config path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad"/>
+        <material_config path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad_thq"/>
+        <texture path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad_df"/>
+        <texture path="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad_nm"/>
+
+        <cooked_physics path="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad"/>
+        <model path="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad"/>
+        <object path="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad"/>
+        <unit path="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad"/>
+        <material_config path="units/mods/weapons/wpn_mel_broad/wpn_third_mel_broad"/>
+
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/broad"/>
+             
+    </AddFiles>
+</table>

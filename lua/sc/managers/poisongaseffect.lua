@@ -16,13 +16,14 @@ function PoisonGasEffect:init(position, normal, projectile_tweak, grenade_unit)
 	self._damage_tick_timer = projectile_tweak.poison_gas_tick_time or 0.1
 	self._fade_time = projectile_tweak.poison_gas_fade_time or 2
 	self._dot_data = projectile_tweak.poison_gas_dot_data_name and tweak_data.dot:get_dot_data(projectile_tweak.poison_gas_dot_data_name) or tweak_data.dot:get_dot_data("weapon_dotbulletbase")
-	self._sound_source = SoundDevice:create_source("ExplosionManager")
+	self._sound = SoundDevice:create_source("ExplosionManager")
+	self._sound:set_position(position)
 
-	self._sound_source:set_position(position)
-	
-    self._sound_source:post_event("lung_explode")
-    self._sound_source:post_event("grenade_gas_explode")
-    self._sound_source:post_event("grenade_gas_stop")	
+	--if self._grenade_id and self._grenade_id == "poison_gas_grenade" then
+	    self._sound:post_event("lung_explode")
+	    self._sound:post_event("grenade_gas_explode")
+	    self._sound:post_event("grenade_gas_stop")
+	--end
 
 	self._unit_list = {}
 	self._effect = World:effect_manager():spawn({
@@ -43,9 +44,9 @@ function PoisonGasEffect:update(t, dt)
 
 			--We actually need this
 			if not self._sound_killed then
-				self._sound_source:post_event("lung_loop_end")
+				self._sound:post_event("lung_loop_end")
 				managers.enemy:add_delayed_clbk("PoisonGasEffect", callback(ProjectileBase, ProjectileBase, "_dispose_of_sound", {
-					sound_source = self._sound_source
+					sound_source = self._sound
 				}), TimerManager:game():time() + 4)
 
 				self._sound_killed = true

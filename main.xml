@@ -7,7 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/>-->
     </Classes>
-	<!-- AssetUpdates id="428" version="12.3.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
+	<!-- AssetUpdates id="428" version="12.3.2" provider="modworkshop" use_local_dir="true" use_local_path="true"/>-->
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -119,10 +119,8 @@
 				<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 			<!--MANAGERS-->
 				<!--MISSION-->
-					<hook file="sc/managers/mission/coreelementunitsequence.lua" source_file="core/lib/managers/mission/coreelementunitsequence"/>
 					<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 					<hook file="sc/managers/mission/elementspecialobjective.lua" source_file="lib/managers/mission/elementspecialobjective"/>
-					<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 					<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
 					<hook file="sc/managers/mission/elementareatrigger.lua" source_file="lib/managers/mission/elementareatrigger"/>
 					<hook file="sc/managers/mission/elementfilter.lua" source_file="lib/managers/mission/elementfilter"/>
@@ -168,14 +166,13 @@
 				<hook file="sc/managers/snipergrazedamage.lua" source_file="lib/managers/player/snipergrazedamage"/>
 				<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 				<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
-				<hook file="sc/managers/trademanager.lua" source_file="lib/managers/trademanager"/>
 				<hook file="sc/managers/gameplaycentralmanager.lua" source_file="lib/managers/gameplaycentralmanager"/>
 				<hook file="sc/managers/hudmanager.lua" source_file="lib/managers/hudmanager"/>
 				<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
-				<hook file="sc/managers/dialogmanager.lua" source_file="lib/managers/dialogmanager"/>
 				<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
 				<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 				<hook file="sc/managers/perpetualeventmanager.lua" source_file="lib/managers/perpetualeventmanager"/>
+				<hook file="sc/managers/lootmanager.lua" source_file="lib/managers/lootmanager"/>
 			<!--UNITS-->
 				<!--PROPS-->
 					<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>
@@ -247,6 +244,8 @@
 					<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
 					<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 					<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/> <!--Technically camera related but w/e-->
+				<!--CHARACTERS-->
+					<hook file="sc/units/characters/characterattentionobject.lua" source_file="lib/units/characters/characterattentionobject"/>
 				<!--ENEMIES-->
 					<!--ACTIONS-->
 						<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
@@ -325,6 +324,7 @@
 					<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>
 				<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>
 				<hook file="sc/units/vehicles/animatedvehiclebase.lua" source_file="lib/units/vehicles/animatedvehiclebase"/>
+				<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 				<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 				<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
 				<hook file="sc/units/pickups/gageassignmentbase.lua" source_file="lib/units/pickups/gageassignmentbase"/>
@@ -415,6 +415,7 @@
 		<hook file="sc/mutators/new/mutatorcaptainreplacer.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatorspoocsquad.lua" source_file="lib/mutators/basemutator"/>
 		<hook file="sc/mutators/new/mutatornooutlines.lua" source_file="lib/mutators/basemutator"/>
+		<hook file="sc/mutators/new/mutatorvanillapolicecall.lua" source_file="lib/mutators/basemutator"/>
 		<!--<hook file="sc/mutators/new/mutatorfactionsreplacer.lua" source_file="lib/mutators/basemutator"/>-->
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
@@ -556,35 +557,38 @@
 				<!--<option type="bool" default_value="false" name="Save"/>-->
 			<!--</option_group>-->
 			<option_group name="OTHER">
-
 				<option_group name="WeaponHandling">
-					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
-					<divider name="tod_divider" size="15"/>
+					<option type="bool" default_value="true" name="WpnFireDescope"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="ManualReloads"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="true" name="NoSwapOnRevive"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="QueuedShooting"/>
 					<option type="number" default_value="0.5" min="0.01" max="1" step="0.01" show_value="true" name="QueuedShootingWindow"/>
 					<option type="number" default_value="100" min="1" max="800" step="1" show_value="true" name="QueuedShootingExclude"/>
 					<option type="bool" default_value="true" name="QueuedShootingMidBurst"/>
 					<option type="number" default_value="0.3" min="0" max="3" step="0.01" show_value="true" name="QueuedShootingBurstExclude"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="multichoice" default_value="1" name="ADSTransitionStyle" values_tbl="restoration.ads_transition_style"/>
 					<option type="bool" default_value="false" name="NoADSRecoilAnims"/>
 					<option type="multichoice" default_value="2" name="ViewmodelMovement" values_tbl="restoration.vm_move"/>
+					<option type="bool" default_value="true" name="BigScopeOffset"/>
 					<option type="bool" default_value="true" name="StaticAim"/>
 					<option type="multichoice" default_value="1" name="CarpalTunnel" values_tbl="restoration.recoil_recover_style"/>
-					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SecondSightSprint"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="SeparateBowADS"/>
-					<divider name="tod_divider" size="15"/>
-					<option type="bool" default_value="false" name="SprintCancel"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="7"/>
 					<option type="bool" default_value="false" name="AimDeploysBipod"/>
 					<option type="bool" default_value="false" name="MoveCancelBipod"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="SecondSightSprint"/>
+					<divider name="tod_divider" size="7"/>
+					<option type="bool" default_value="false" name="SprintCancel"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
+
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
 				<divider name="tod_divider" size="15"/>
@@ -644,6 +648,15 @@
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<!--<option type="bool" default_value="false" name="Notify"/> -->
+			</option_group>
+			<divider name="tod_divider" size="16"/>
+			<button name="OtherMods" disabled="true"/>
+			<divider name="tod_divider" size="8"/>
+			<option_group name="AdVMovResOpt">
+				<!--Wallrun/jumps-->
+				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
+				<!--Wall/Slide/Jump/Dash Kicks | 1 = default, 2 = disabled during stealth, 3 = disabled entirely -->
+				<option type="multichoice" default_value="1" name="AdvMovMelee" values_tbl="restoration.AdvMovMelee"/>
 			</option_group>
         </options>
     </Options>

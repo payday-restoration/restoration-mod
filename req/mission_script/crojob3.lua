@@ -1,9 +1,9 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
 
 	--Setting up the murkies for epic three way fight
-	if difficulty_index <= 2 or difficulty_index == 3 then
+	if difficulty <= 2 or difficulty == 3 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
@@ -15,7 +15,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 		swat_3 = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
 		swat_4 = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 		swat_5 = "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
-	elseif difficulty_index == 4 or difficulty_index == 5 then
+	elseif difficulty == 4 or difficulty == 5 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
@@ -27,7 +27,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 		swat_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
 		swat_4 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		swat_5 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		specialenemy_1 = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
 		specialenemy_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 		specialenemy_3 = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"
@@ -53,25 +53,96 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 		swat_5 = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
 	end
 
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 660	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 630
 	else
 		ponr_value = 600		
 	end
 	
-	if pro_job and difficulty_index == 8 then
+if pro_job then
+	hunt_projob = true
+	if difficulty == 8 then
 	--Captain Winters Encounter on DSPJ (probably the only scripted captain encounter in vanilla heists)
 		specialenemy_1 = "units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"
 		specialenemy_2 = "units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"
 		specialenemy_3 = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 	end
+end
+
+local enemy_special_1 = {
+	values = {
+        enemy = specialenemy_1,
+		team = "mobster1"
+	}
+}
+local enemy_special_2 = {
+	values = {
+        enemy = specialenemy_2,
+		team = "mobster1"
+	}
+}
+local enemy_special_3 = {
+	values = {
+        enemy = specialenemy_3,
+		team = "mobster1"
+	}
+}
+local dozer = {
+	values = {
+        enemy = tank,
+		team = "mobster1"
+	}
+}
+local shield = {
+	values = {
+        enemy = shield,
+		team = "mobster1"
+	}
+}
+local taser = {
+	values = {
+        enemy = taser,
+		team = "mobster1"
+	}
+}
+local swat1 = {
+	values = {
+        enemy = swat_1,
+		team = "mobster1"
+	}
+}
+local swat2 = {
+	values = {
+        enemy = swat_2,
+		team = "mobster1"
+	}
+}
+local swat3 = {
+	values = {
+        enemy = swat_3,
+		team = "mobster1"
+	}
+}
+local swat4 = {
+	values = {
+        enemy = swat_4,
+		team = "mobster1"
+	}
+}
+local swat5 = {
+	values = {
+        enemy = swat_5,
+		team = "mobster1"
+	}
+}
 
 return {
 	--Pro Job PONR
 	[103031] = {
-			ponr = ponr_value
+			ponr = ponr_value,
+			hunt = hunt_projob
 	},
 	--fixes one of the ai_hunt SOs not having taser access
 	[100675] = {
@@ -84,273 +155,53 @@ return {
 	},
 	--Three Way Fight feat. Murkywater, make Akan's mercs fight Murkies by changing teams
 	--1st Van (left one)
-	[100776] = {
-		values = {
-            enemy = specialenemy_1, --Winters spawns here if it's on DSPJ, otherwise spawn Murky Skulldozer
-			team = "mobster1"
-		}
-	},
-	[100555] = {
-		values = {
-            enemy = specialenemy_3, --OMNIA Titandozer spawns here if it's on DSPJ, otherwise spawn Murky Taser
-			team = "mobster1"
-		}
-	},
-	[100017] = {
-		values = {
-            enemy = specialenemy_2, --Winters men spawns here if it's on DSPJ, otherwise spawn Murky Heavy Units (from 10017 to 100768)
-			team = "mobster1"
-		}
-	},
-	[100294] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100295] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100296] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100297] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100298] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100548] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100767] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
-	[100768] = {
-		values = {
-            enemy = specialenemy_2,
-			team = "mobster1"
-		}
-	},
+	[100776] = enemy_special_1,
+	[100555] = enemy_special_3,
+	[100017] = enemy_special_2,
+	[100294] = enemy_special_2,
+	[100295] = enemy_special_2,
+	[100296] = enemy_special_2,
+	[100297] = enemy_special_2,
+	[100298] = enemy_special_2,
+	[100548] = enemy_special_2,
+	[100767] = enemy_special_2,
+	[100768] = enemy_special_2,
 	--2nd Van (right one)
-	[100777] = {
-		values = {
-            enemy = tank,
-			team = "mobster1"
-		}
-	},
-	[100556] = {
-		values = {
-			enemy = taser,
-			team = "mobster1"
-		}
-	},
-	[100549] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[100764] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[100329] = {
-		values = {
-            enemy = swat_1,
-			team = "mobster1"
-		}
-	},
-	[100330] = {
-		values = {
-            enemy = swat_4,
-			team = "mobster1"
-		}
-	},
-	[100333] = {
-		values = {
-            enemy = swat_3,
-			team = "mobster1"
-		}
-	},
-	[100334] = {
-		values = {
-            enemy = swat_3,
-			team = "mobster1"
-		}
-	},
-	[100339] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
-	[100400] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
-	[100550] = {
-		values = {
-            enemy = swat_5,
-			team = "mobster1"
-		}
-	},
+	[100777] = dozer,
+	[100556] = taser,
+	[100549] = shield,
+	[100764] = shield,
+	[100329] = swat1,
+	[100330] = swat4,
+	[100333] = swat3,
+	[100334] = swat3,
+	[100339] = swat2,
+	[100400] = swat2,
+	[100550] = swat5,
 	--Far away from vans
-	[101379] = {
-		values = {
-            enemy = tank,
-			team = "mobster1"
-		}
-	},
-	[101377] = {
-		values = {
-			enemy = taser,
-			team = "mobster1"
-		}
-	},
-	[101375] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[101376] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[101380] = {
-		values = {
-            enemy = swat_5,
-			team = "mobster1"
-		}
-	},
-	[101381] = {
-		values = {
-            enemy = swat_4,
-			team = "mobster1"
-		}
-	},
-	[101383] = {
-		values = {
-            enemy = swat_4,
-			team = "mobster1"
-		}
-	},
-	[101384] = {
-		values = {
-            enemy = swat_3,
-			team = "mobster1"
-		}
-	},
-	[101385] = {
-		values = {
-            enemy = swat_3,
-			team = "mobster1"
-		}
-	},
-	[101387] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
-	[101388] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
+	[101379] = dozer,
+	[101377] = taser,
+	[101375] = shield,
+	[101376] = shield,
+	[101380] = swat5,
+	[101381] = swat4,
+	[101383] = swat4,
+	[101384] = swat3,
+	[101385] = swat3,
+	[101387] = swat2,
+	[101388] = swat2,
 	--nearby house
-	[101363] = {
-		values = {
-            enemy = tank,
-			team = "mobster1"
-		}
-	},
-	[101360] = {
-		values = {
-			enemy = taser,
-			team = "mobster1"
-		}
-	},
-	[101364] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[101365] = {
-		values = {
-            enemy = shield,
-			team = "mobster1"
-		}
-	},
-	[101361] = {
-		values = {
-            enemy = swat_4,
-			team = "mobster1"
-		}
-	},
-	[101367] = {
-		values = {
-            enemy = swat_4,
-			team = "mobster1"
-		}
-	},
-	[101368] = {
-		values = {
-            enemy = swat_1,
-			team = "mobster1"
-		}
-	},
-	[101369] = {
-		values = {
-            enemy = swat_1,
-			team = "mobster1"
-		}
-	},
-	[101371] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
-	[101372] = {
-		values = {
-            enemy = swat_2,
-			team = "mobster1"
-		}
-	},
-	[101373] = {
-		values = {
-            enemy = swat_3,
-			team = "mobster1"
-		}
-	},
+	[101363] = dozer,
+	[101360] = taser,
+	[101364] = shield,
+	[101365] = shield,
+	[101361] = swat4,
+	[101367] = swat4,
+	[101368] = swat1,
+	[101369] = swat1,
+	[101371] = swat2,
+	[101372] = swat2,
+	[101373] = swat3,
 	--change beat cops
 	[100634] = {
 		values = {

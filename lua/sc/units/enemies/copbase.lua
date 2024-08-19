@@ -5,34 +5,193 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+-- Reserved tables for Summers DR effect
+local summers_dr_effect_table_host = nil
+local summers_dr_effect_table_client = nil
+
+-- LPF effect positions
+local effect_usual = Vector3(0,0,0)
+local effect_no_gear = Vector3(0,0,-3)
+local effect_high = Vector3(1,8,-3)
+local effect_low = Vector3(0,-3,0)
+local effect_tank = Vector3(1,13,-5)
+local effect_tank_titan = Vector3(1,11,-3)
+-- Tables below need for LPF effect handling
+local units_no_gear = { 
+	"cop",
+	"fbi",
+	"hrt",
+	"swat",
+	-- for LPF mutator
+	"hrt_titan",
+	"fbi_vet",
+	"security",
+	"gensec_guard",
+	"city_swat_guard"		
+}
+
+local omnia_tswat = { -- OMNIA T SWAT need higher effect position
+	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk"),
+	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk"),
+	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),
+	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk")	
+}
+
+local units_low = { -- Zeal heavies and grenadier need lower effect position
+	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1"),
+	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk")
+}
+
+local hrt_exclude_list = { -- for HRT enemies where usual effect position will be better
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
+	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4_husk"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
+	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
+}
+
+local murky_no_gear = { -- Majority of murky units looks better with "no_gear" effect position
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
+}
+
+--Reset Summers effect stuff
+function CopBase:reset_summers_dr_effect()
+	summers_dr_effect_table_host = {"red","", "orange","","yellow"} -- CopDamage:die executing twice on host for some reason so this is temp solution
+	summers_dr_effect_table_client = {"red", "orange","yellow"} 
+	
+	self._summers_dr_effect = World:effect_manager():spawn({
+			effect = Idstring("effects/particles/character/glowing_eyes_"..summers_dr_effect_table_host[1].."_summers"),
+			parent = self._unit:get_object(Idstring("Head"))
+	})
+end
+--When player/bot kill Doc/Molly/Elektra -> find Summers and update his effect
+function CopBase:find_summers(is_client)					
+	local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), 160000000, managers.slot:get_mask("enemies"))
+	if enemies then
+		for _, enemy in ipairs(enemies) do
+			if enemy:base()._tweak_table == "summers" then
+				enemy:base():update_summers_dr_effect(false, is_client)
+			end
+		end
+	end
+end
+--Update Summers DR effect if someone from captain's crew is dead (or when Summers killed when he still has alive crew members)
+function CopBase:update_summers_dr_effect(summers_death, is_client)
+	if self._unit:base()._tweak_table == "summers" and summers_death then
+		World:effect_manager():fade_kill(self._summers_dr_effect)
+	else
+		if self._summers_dr_effect then
+			World:effect_manager():fade_kill(self._summers_dr_effect)
+			local summers_dr_effect = nil
+			if is_client then
+				table.remove(summers_dr_effect_table_client, 1)
+				summers_dr_effect = summers_dr_effect_table_client[1]
+			else
+				table.remove(summers_dr_effect_table_host, 1)
+				summers_dr_effect = summers_dr_effect_table_host[1]
+			end
+			
+			if summers_dr_effect ~= nil then
+				self._summers_dr_effect = World:effect_manager():spawn({
+					effect = Idstring("effects/particles/character/glowing_eyes_"..summers_dr_effect.."_summers"),
+					parent = self._unit:get_object(Idstring("Head"))
+				})
+			end
+		end
+	end
+end
+
+function CopBase:converted_enemy_effect(state)
+	if state then
+		self._convert_effect = World:effect_manager():spawn({
+			effect = Idstring("effects/particles/character/moneyburn"),
+			parent = self._unit:get_object(Idstring("Spine2"))
+		})
+	else
+		if self._convert_effect then
+			World:effect_manager():fade_kill(self._convert_effect)
+		end
+	end
+end
+
 function CopBase:enable_lpf_buff(state)
-	if alive(self._overheal_unit) then
+	if self._overheal_unit then
 		return
 	end
 	
 	local align_obj_name = Idstring("Head")
 	local align_obj = self._unit:get_object(align_obj_name)
-	local effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff")
-	--Maybe there's another way to handle effects
-	--[[if self._unit:base()._tweak_table == "tank" or self._unit:base()._tweak_table == "tank_black" or self._unit:base()._tweak_table == "tank_skull" or self._unit:base()._tweak_table == "tank_titan" or self._unit:base()._tweak_table == "tank_hw" or self._unit:base()._tweak_table == "taser_titan" then
-		effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high")
-	end--]]
-	if self._unit:base()._tweak_table == "city_swat_titan" or self._unit:base()._tweak_table == "city_swat_titan_assault" then
-		local faction = tweak_data.levels:get_ai_group_type()
-		if faction == "america" or faction == "nypd" or faction == "lapd" or faction == "fbi" then
-			effect_id = Idstring("units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high")
-		end
+	
+	local effect_id = Idstring("effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes")
+	local effect_pos = effect_usual
+ 	
+	local unit = self._unit:base()._tweak_table
+	local unit_name = self._unit:name()
+
+	if table.contains(units_no_gear, unit) and not table.contains(hrt_exclude_list, unit_name) then
+		effect_pos = effect_no_gear
 	end
 	
-	self._overheal_unit = World:spawn_unit(effect_id, Vector3(), Rotation())	
+	if table.contains(murky_no_gear, unit_name) then
+		effect_pos = effect_no_gear
+	end
+	
+	if table.contains(omnia_tswat, unit_name) then
+		effect_pos = effect_high
+	end
+	
+	if table.contains(units_low, unit_name) then
+		effect_pos = effect_low
+	end
+	
+	local faction = tweak_data.levels:get_ai_group_type()
+	
+	if unit == "taser_titan" and faction ~= "zombie" then
+		effect_pos = effect_high
+	end
+		
+	if string.match(unit, "tank") then
+		effect_pos = effect_tank
+		if unit == "tank_titan" then
+			effect_pos = effect_tank_titan
+		end
+	end
 
-	self._unit:link(align_obj_name, self._overheal_unit, self._overheal_unit:orientation_object():name(),Vector3(), Rotation())
+	self._overheal_unit = World:effect_manager():spawn({
+		effect = effect_id,
+		parent = align_obj,
+		position = effect_pos
+	})
 end
 
 function CopBase:disable_lpf_buff(state)
-	if alive(self._overheal_unit) then
-		self._overheal_unit:set_slot(0)
-		self._overheal_unit = nil
+	if self._overheal_unit then
+		World:effect_manager():fade_kill(self._overheal_unit)
 	end
 end
 
@@ -77,11 +236,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
 	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or self._tweak_table == "autumn" then
 		GroupAIStateBesiege:set_assault_endless(true)
-		managers.hud:set_buff_enabled("vip", true)
-		
-		--managers.groupai:state():set_fake_assault_mode(true)
-		--managers.groupai:state():set_wave_mode(besiege)
-		--managers.groupai:state():set_assault_mode(true)			
+		managers.hud:set_buff_enabled("vip", true)		
 		
 		if managers.skirmish:is_skirmish() then
 			managers.skirmish:set_captain_active()
@@ -90,8 +245,9 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	end
 	
 	--Just in case Summers decides to spawn again, his DR is back
-	if self._unit:base()._tweak_table == "summers" then
-		managers.groupai:state():_reset_summers_dr()	
+	if self._tweak_table == "summers" then
+		managers.groupai:state():_reset_summers_dr()
+		self._unit:base():reset_summers_dr_effect()
 	end		
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
@@ -517,6 +673,9 @@ local weapons_map = {
 	--Commissar gets his precious RPK back from Russia
 	[Idstring("units/payday2/characters/ene_gang_mobster_boss/ene_gang_mobster_boss"):key()] = "rpk_lmg",
 	
+	--Overkill MC Boss has Benelli auto-shotty instead of LMG
+	[Idstring("units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss"):key()] = "benelli",
+	
 	--FSB gets proper Russian Weapons
 	--Security bois
 	[Idstring("units/pd2_dlc_mad/characters/ene_rus_security_1/ene_rus_security_1"):key()] = {"streak", "akmsu_smg"},
@@ -552,6 +711,7 @@ local default_weapon_name_orig = CopBase.default_weapon_name
 function CopBase:default_weapon_name(...)
 	local job = Global.level_data and Global.level_data.level_id or ""
 	local faction = tweak_data.levels:get_ai_group_type()
+	local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 	local weapon_override = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()]
 	
 	--For Jungle Inferno Mutator

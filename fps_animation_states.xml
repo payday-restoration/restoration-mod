@@ -37,8 +37,19 @@
 		</target>
 	</tweak>
 <!--Nailgun End-->
-	
-	
+
+<!--Beardy-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_attack"/>
+			<anim name="melee_attack_var4" weight="melee_knife * var4"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_beardy_attack_var4" weight="melee_beardy * var4"/>
+		</target>
+	</tweak>
+<!--Beardy End-->
 	
 <!--SABR-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
@@ -666,6 +677,51 @@
 		</target>
 	</tweak>
 <!--SABR End-->
+
+<!--Mossberg 590 Fire-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/recoil"/>
+			<anim name="r870_shotgun_recoil" weight="m590"/>
+		</search>
+		<target mode="replace">
+			<anim name="m590_recoil" weight="m590"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/recoil"/>
+            <keys/>
+			<key at="trigger" trigger="wp_reinbeck_reload_cock"/>
+		</search>
+		<target mode="append">
+			<key at="trigger" trigger="wp_m590_reload_cock" callback="play_sound" class_name="base" param1="wp_m590_reload_cock"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/recoil_steelsight"/>
+			<anim name="r870_shotgun_recoil_steelsight" weight="m590"/>
+		</search>
+		<target mode="replace">
+			<anim name="m590_recoil" weight="m590"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/recoil_steelsight"/>
+            <keys/>
+			<key at="trigger" trigger="wp_reinbeck_reload_cock"/>
+		</search>
+		<target mode="append">
+			<key at="trigger" trigger="wp_m590_reload_cock" callback="play_sound" class_name="base" param1="wp_m590_reload_cock"/>
+		</target>
+	</tweak>
+<!--Mossberg 590 Fire End-->
 
 <!--RPK Banana Mag Reload-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">

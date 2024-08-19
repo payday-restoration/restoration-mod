@@ -1,0 +1,93 @@
+<materials version="3" group="sight_northtac">
+    <material render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" name="mat_wpn_fps_upg_o_northtac" unique="true" version="2">
+        <diffuse_texture file="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_df_cc" mip="1"/>
+        <material_texture file="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_gsma"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+		<variable value="0" type="scalar" name="wear_tear_value"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable value="1 1 1" type="vector3" name="uv_scale"/>
+		<variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+		<variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+        <bump_normal_texture file="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_nm" mip="1"/>
+    </material>
+    <material render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" name="mtr_masked" version="2">
+        <diffuse_texture file="units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_leupold_df_cc" mip="1"/>
+        <bump_normal_texture file="units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_leupold_nm" mip="1"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+		<variable value="0" type="scalar" name="wear_tear_value"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable value="1 1 1" type="vector3" name="uv_scale"/>
+		<variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+		<variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+    </material>
+    <material render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" name="gfx_specter" version="2">
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <diffuse_texture file="units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/effect_acog_sight_df" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="60"/>
+    </material>
+    <material unique="true" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:FPS:VIEW_ANGLE_FALLOFF_OP" version="2" name="gfx_reddot">
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_effects_textures/wpn_sight_reticle_1_il" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="1000"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:FPS:VIEW_ANGLE_FALLOFF_OP" name="gfx_redlight" version="2">
+        <variable type="scalar" name="intensity" value="desklight"/>
+        <diffuse_texture file="units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/red_glass_df" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="150"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:FPS:VIEW_ANGLE_FALLOFF_OP" name="gfx_redlight1" version="2">
+        <variable type="scalar" name="intensity" value="match"/>
+        <diffuse_texture file="units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/red_glass_df" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="150"/>
+    </material>
+    <material decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:FPS" version="2" name="glass">
+        <diffuse_texture file="units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/red_glass_texture_df" mip="1"/>
+        <opacity_texture file="units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_aimpoint_glass_op"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable type="vector3" name="fresnel_settings" value="0.91999995708466 0 1"/>
+    </material>
+    <material render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" name="inside_scope" version="2">
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <diffuse_texture file="units/pd2_dlc_gage_snp/weapons/wpn_fps_upg_o_leupold/wpn_fps_upg_o_sight_df" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="0.01"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:SCOPE:SCOPE_INNER_RETICLE:SCOPE_LENSE_DISTORTION" name="screen" version="2">
+        <diffuse_texture file="units/pd2_dlc1/weapons/wpn_effects_textures/wpn_sight_reticle_1_il" mip="1"/>
+        <variable type="scalar" name="scope_fadeout" value="0"/>
+        <variable type="vector3" name="scope_fadeout_params" value="40 20 0"/>
+        <macrodetail_diffuse_texture file="units/payday2/weapons/wpn_effects_textures/vr_crosshair_testimage_df"/>
+        <variable type="scalar" name="scope_zoom" value="1"/>
+        <variable type="vector3" name="scope_params" value="5000 30 2.6"/>
+        <variable type="vector3" name="scope_inner_vignett" value="0.99 0.22 0"/>
+        <variable type="vector3" name="scope_outer_vignett" value="0.99 0.20 0.2"/>
+        <detail_diffuse_texture file="units/payday2/weapons/wpn_effects_textures/vr_crosshair_leupold_df"/>
+        <variable type="scalar" name="scope_inner_reticle_scale" value="0.3"/>
+        <variable type="vector3" name="scope_k" value="0.114 -0.037 -0.19"/>
+        <variable type="vector3" name="scope_kcube" value="-0.645 -0.113 0.875"/>
+        <variable type="vector3" name="scope_distortion_params" value="0.17 0.2 0"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:FPS" version="2" name="mtr_vr_lens">
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/vr_crosshair_vr_lens_color_df" mip="1"/>
+        <opacity_texture file="units/payday2/weapons/wpn_effects_textures/vr_crosshair_vr_lens_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable type="vector3" name="fresnel_settings" value="0.1 0.1 0.5"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:FPS:VIEW_ANGLE_FALLOFF_OP" name="mtr_vr_phong" version="2">
+        <variable type="scalar" name="intensity" value="match"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/vr_crosshair_glow_df" mip="1"/>
+        <variable type="scalar" name="falloff_exp" value="243.34009456092"/>
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE:RL_FPS_WEAPON" name="mtr_mullplan" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/shadow_mullplane_fade_df" mip="1"/>
+    </material>
+</materials>

@@ -1,10 +1,9 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
 	--High PONR Timer to work with ponr player scaling
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 1080
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 1050	
 	else
 		ponr_value = 1020	
@@ -41,7 +40,21 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65
 }	
-
+local bravo_1 = {
+	values = {
+        enemy = guard_replacement.elite_guard_1
+	}
+}
+local bravo_2 = {
+	values = {
+        enemy = guard_replacement.elite_guard_2
+	}
+}
+local bravo_3 = {
+	values = {
+        enemy = guard_replacement.elite_guard_3
+	}
+}
 return {
 	--Pro Job PONR 
 	[105046] = {
@@ -54,80 +67,20 @@ return {
 			enabled = true
 		}
 	},
-	--replace guards with Bravo guards cause the turret and ammo are important shit to cover
-	[100670] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100671] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100672] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[100673] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100674] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100675] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[100676] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[100677] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100678] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100679] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[102127] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[103124] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103033] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[105209] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[105241] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	}
+	--Bravo Guards
+	[100670] = bravo_1,
+	[100671] = bravo_1,
+	[100672] = bravo_2,
+	[100673] = bravo_1,
+	[100674] = bravo_1,
+	[100675] = bravo_3,
+	[100676] = bravo_2,
+	[100677] = bravo_1,
+	[100678] = bravo_1,
+	[100679] = bravo_2,
+	[102127] = bravo_3,
+	[103124] = bravo_1,
+	[103033] = bravo_3,
+	[105209] = bravo_3,
+	[105241] = bravo_1
 }

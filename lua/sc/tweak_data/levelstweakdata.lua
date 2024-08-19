@@ -217,6 +217,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.player_style = "tux"
 	
 	self.brb.ai_group_type = nypd
+	self.brb.package = {"packages/lvl_brb", "packages/murkywatermisc"}
 	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
@@ -224,6 +225,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.run.ai_group_type = nypd
 	
 	self.flat.ai_group_type = nypd
+	self.flat.package = {"packages/miscassets", "packages/narr_flat"}
 	
 	self.glace.ai_group_type = nypd
 	self.glace.flashlights_on = true

@@ -176,7 +176,14 @@
 	<unit				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true"/>
 	<object				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />	
 	<model				path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />	
-	<cooked_physics		path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />		
+	<cooked_physics		path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" />
+	
+	<!-- sniper -->
+	<unit				path="units/payday2/characters/ene_sniper_3/ene_sniper_3" load="true"/>
+	<unit				path="units/payday2/characters/ene_sniper_3/ene_sniper_3_husk" load="true"/>
+	<object				path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />	
+	<model				path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />	
+	<cooked_physics		path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />
 	<!-- gensec tier end -->	
 	
 	<!-- specials-->

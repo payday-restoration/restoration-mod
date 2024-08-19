@@ -13,7 +13,8 @@ function PlayerMovement:init(...)
 end
 
 function PlayerMovement:on_SPOOCed(enemy_unit, flying_strike)
-	if managers.player:has_category_upgrade("player", "counter_strike_spooc") and self._current_state.in_melee and self._current_state:in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
+	local can_parry = (not flying_strike and managers.player:has_category_upgrade("player", "counter_strike_spooc_sprint")) or (flying_strike and managers.player:has_category_upgrade("player", "counter_strike_spooc"))
+	if can_parry and self._current_state.in_melee and self._current_state:in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		self._current_state:discharge_melee()
 
 		return "countered"

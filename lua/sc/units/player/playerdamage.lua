@@ -502,7 +502,7 @@ function PlayerDamage:damage_bullet(attack_data)
 
 	local pm = managers.player
 	local t = pm:player_timer():time()
-	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
@@ -648,7 +648,7 @@ function PlayerDamage:damage_fire_hit(attack_data)
 
 	local pm = managers.player
 	local t = pm:player_timer():time()
-	local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
+	--local armor_dodge_mult = pm:body_armor_value("dodge_grace", nil, 0) or 1
 	local grace_bonus = self._dmg_interval + self._dodge_interval
 	if self._yakuza_bonus_grace then
 		self._yakuza_bonus_grace = nil
@@ -1461,7 +1461,7 @@ function PlayerDamage:set_dodge_points()
 	local diff_reduction = difficulty_id and ((((difficulty_id == 4 or difficulty_id == 5) and 0.35) or (difficulty_id == 6 and 0.25) or 0.45) - ((is_pro and 0.1) or 0)) or 0.45
 	local grace_cap = (0.45 - (0.45 - diff_reduction))
 	self._dodge_interval = math.clamp(self._dodge_points, 0, grace_cap )
-	log(tostring( self._dodge_interval ))
+	
 	if self._dodge_points > 0 then
 		managers.hud:unhide_dodge_panel(self._dodge_points)
 	end
@@ -1744,6 +1744,14 @@ function PlayerDamage:_calc_armor_damage(attack_data)
 				self._can_take_dmg_timer = pm:temporary_upgrade_value("temporary", "armor_break_invulnerable", 0)
 			end
 		end
+	end
+
+	local player_inv = self._unit.inventory and self._unit:inventory()
+	local eq_weap = player_inv and player_inv.equipped_unit and player_inv:equipped_unit()
+	local weap_base = eq_weap and eq_weap.base and eq_weap:base()
+
+	if weap_base and weap_base._descope_on_dmg then
+		self._unit:movement():current_state()._d_scope_t = 0.35
 	end
 
 	managers.hud:damage_taken()
@@ -2094,4 +2102,8 @@ function PlayerDamage:_send_damage_drama(attack_data, health_subtracted)
 	if Network:is_client() then
 		self._unit:network():send_to_host("damage_bullet", attacker, 1, 1, 1, 0, false)
 	end
+end
+
+function PlayerDamage:stun_hit(attack_data)
+	return
 end

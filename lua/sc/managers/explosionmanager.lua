@@ -156,6 +156,7 @@ function ExplosionManager:give_local_player_dmg(pos, range, damage)
 
 	if player and los > 0 then
 		player:character_damage():damage_explosion({
+			attacker_unit = player,
 			variant = "explosion",
 			position = pos,
 			range = range,

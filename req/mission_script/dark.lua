@@ -1,10 +1,9 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
 	--High PONR Timer to work with ponr player scaling
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 1200
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 1000	
 	else
 		ponr_value = 900
@@ -40,7 +39,21 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65
 }
-
+local bravo_1 = {
+	values = {
+        enemy = guard_replacement.elite_guard_1
+	}
+}
+local bravo_2 = {
+	values = {
+        enemy = guard_replacement.elite_guard_2
+	}
+}
+local bravo_3 = {
+	values = {
+        enemy = guard_replacement.elite_guard_3
+	}
+}
 return {
 	--Pro Job PONR when someone pickup a bomb part
 	-- Van escape
@@ -53,161 +66,49 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	},
+	--Increase PONR timers
+	[102120] = {
+		values = {
+			time_normal = 60,
+			time_hard = 60,
+			time_overkill = 60,
+			time_overkill_145 = 60,
+			time_easy_wish = 60,
+			time_overkill_290 = 60,
+			time_sm_wish = 60
+		}
+	},
 	--Murky Elite Guards
 	--https://www.youtube.com/watch?v=cNuluqg3GfQ
-	[101189] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[102077] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[102078] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[102079] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[102101] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[102102] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[102103] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[102121] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[102526] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103837] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[103845] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103849] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[103850] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[103817] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103818] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103865] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[103872] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103880] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[103888] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[103772] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103889] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[105610] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[105631] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[102174] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[102369] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[103618] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[103619] = {
-		values = {
-            enemy = guard_replacement.elite_guard_2
-		}
-	},
-	[100123] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[100124] = {
-		values = {
-            enemy = guard_replacement.elite_guard_1
-		}
-	},
-	[101525] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	},
-	[101528] = {
-		values = {
-            enemy = guard_replacement.elite_guard_3
-		}
-	}
+	[101189] = bravo_1,
+	[102077] = bravo_1,
+	[102078] = bravo_2,
+	[102079] = bravo_2,
+	[102101] = bravo_1,
+	[102102] = bravo_1,
+	[102103] = bravo_3,
+	[102121] = bravo_2,
+	[102526] = bravo_1,
+	[103837] = bravo_2,
+	[103845] = bravo_1,
+	[103849] = bravo_3,
+	[103850] = bravo_2,
+	[103817] = bravo_1,
+	[103818] = bravo_1,
+	[103865] = bravo_3,
+	[103872] = bravo_1,
+	[103880] = bravo_2,
+	[103888] = bravo_3,
+	[103772] = bravo_1,
+	[103889] = bravo_1,
+	[105610] = bravo_1,
+	[105631] = bravo_3,
+	[102174] = bravo_1,
+	[102369] = bravo_2,
+	[103618] = bravo_1,
+	[103619] = bravo_2,
+	[100123] = bravo_1,
+	[100124] = bravo_1,
+	[101525] = bravo_3,
+	[101528] = bravo_3
 }

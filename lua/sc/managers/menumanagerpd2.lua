@@ -1,16 +1,15 @@
 function MenuCallbackHandler:on_visit_res_guide()
-	if SystemInfo:distribution() == Idstring("STEAM") and Idstring("english"):key() == SystemInfo:language():key() then
-		if MenuCallbackHandler:is_overlay_enabled() then
-			Steam:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1366254667")
-		else
-			managers.menu:show_enable_steam_overlay()
-		end
-	elseif SystemInfo:distribution() == Idstring("STEAM") and Idstring("russian"):key() == SystemInfo:language():key() then
-		if MenuCallbackHandler:is_overlay_enabled() then
-			Steam:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1923528592")
-		else
-			managers.menu:show_enable_steam_overlay()
-		end
+	local english = Idstring("english"):key() == SystemInfo:language():key()
+	local russian = Idstring("russian"):key() == SystemInfo:language():key()
+	local korean = Idstring("korean"):key() == SystemInfo:language():key()
+	if english then
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1366254667")
+	elseif russian then
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1923528592")
+	elseif korean then
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=2927620125")
+	else
+		managers.network.account:overlay_activate("url", "https://steamcommunity.com/sharedfiles/filedetails/?id=1366254667")
 	end
 end
 

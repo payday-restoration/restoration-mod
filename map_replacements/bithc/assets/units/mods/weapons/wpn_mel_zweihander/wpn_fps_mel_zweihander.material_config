@@ -1,0 +1,6 @@
+<materials version="3" group="melee_group">
+	<material name="mtr_zwei" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander_df"/>
+		<bump_normal_texture file="units/mods/weapons/wpn_mel_zweihander/wpn_fps_mel_zweihander_nm"/>
+	</material>
+</materials>

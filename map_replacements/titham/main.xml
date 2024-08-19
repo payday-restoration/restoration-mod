@@ -1,0 +1,26 @@
+<table name="titham">
+    <GlobalValue id="titham" color="Color(1, 0.5, 0)"/>
+
+    <Melee id="titham" based_on="dingdong" info_id="bm_melee_titan_hammer_info" special_weapon="panic" unit="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer" third_unit="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_titan_hammer" texture_bundle_folder="mods" dlc="rest">
+	<stats concealment="25" charge_time="3" min_damage_effect="1" max_damage_effect="1"/>
+	</Melee>
+
+    <AddFiles directory="assets"> 
+        <!-- Titan Hammer -->
+        <cooked_physics path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer"/>
+        <model path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer"/>
+        <object path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer"/>
+        <unit path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer"/>
+        <material_config path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer"/>
+        <material_config path="units/mods/weapons/wpn_mel_titan_hammer/wpn_fps_mel_titan_hammer_thq"/>
+
+        <cooked_physics path="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_mel_titan_hammer"/>
+        <model path="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_mel_titan_hammer"/>
+        <object path="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_mel_titan_hammer"/>
+        <unit path="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_mel_titan_hammer"/>
+        <material_config path="units/mods/weapons/wpn_mel_titan_hammer/wpn_third_mel_titan_hammer"/>
+
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/titham"/>
+             
+    </AddFiles>
+</table>

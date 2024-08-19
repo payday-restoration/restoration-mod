@@ -32,7 +32,7 @@ ContourExt._types.mark_enemy_sixth_sense = { -- 6th sense still will be useful w
 }
 ContourExt._types.mark_enemy.priority = 6 -- Need lower priority for new 6th sense outline
 
--- PJ modifier: Marked enemy will show contour only in LoS (unless you using Spotter skill); Medic and LPF flash outlines are disabled;
+-- PJ modifier: Marked enemy will show contour only in LoS (unless you using any marking skills); Medic and LPF flash outlines are disabled;
 if is_pro_job then
 	ContourExt._types.mark_enemy.ray_check_reverse = true
 	--ContourExt._types.mark_unit.ray_check_reverse = true
@@ -48,11 +48,11 @@ local do_outline = true
 local enemy_contours = {
 	"friendly",
 	"mark_enemy",
-    "mark_enemy_damage_bonus",
-    "mark_enemy_damage_bonus_distance",
-    "mark_unit_dangerous",
-    "mark_unit_dangerous_damage_bonus",
-    "mark_unit_dangerous_damage_bonus_distance"
+	"mark_enemy_damage_bonus",
+	"mark_enemy_damage_bonus_distance",
+	"mark_unit_dangerous",
+	"mark_unit_dangerous_damage_bonus",
+	"mark_unit_dangerous_damage_bonus_distance"
 }
 if disable_outlines then
 	do_outline = false
@@ -275,7 +275,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 				end
 			end
 			--for PJ
-			if is_current and setup.data.ray_check_reverse then
+			if is_current and setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 				if setup.upd_skip_count_reverse > 0 then
 					setup.upd_skip_count_reverse = setup.upd_skip_count_reverse - 1
 
@@ -330,7 +330,7 @@ if self.fadeout_start_percent == nil then -- for Vanilla Contours
 			end
 
 			if is_current then
-				if setup.data.ray_check_reverse then
+				if setup.data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(self.mod_lerp_opacity and setup.fadeout_t and math.lerp(1, 0, t / setup.fadeout_t) or 1)	
 					else
@@ -374,7 +374,7 @@ else -- for Smooth Contours
 				end
 			end
 			-- for PJ
-			if is_current and data.ray_check_reverse then
+			if is_current and data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 				local turn_on = nil
 				local cam_pos = managers.viewport:get_current_camera_position()
 				if cam_pos then
@@ -413,7 +413,7 @@ else -- for Smooth Contours
 			
 
 			if opacity then
-				if data.ray_check_reverse then
+				if data.ray_check_reverse and not managers.groupai:state():whisper_mode() then
 					if turn_off then
 						self:_upd_opacity(opacity)	
 					else

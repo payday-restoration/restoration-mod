@@ -1,15 +1,14 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
-	if difficulty_index <= 7 then
+	if difficulty <= 7 then
 		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 	else
 		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
 	end	
 	
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 420	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 390
 	else
 		ponr_value = 360		
@@ -25,9 +24,6 @@ return {
 		values = {
 			enemy = bulldozer,
 			participate_to_group_ai = true
-		},
-		on_executed = {
-			{id = 105615, delay = 30, delay_rand = 10}
 		}
 	},
 	--trigger custom spawns during escape part

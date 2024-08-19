@@ -1049,6 +1049,11 @@ function PlayerManager:_internal_load()
 		power = 0,
 		start_time = 0
 	}
+	
+	--Remove sticky buff trackers
+	if not self._unseen_strike then
+		managers.hud:remove_skill("unseen_strike")
+	end
 
 	--Precache detection risk, so that the value does not need to be recalculated every frame (very slow).
 	self._detection_risk = math.round(managers.blackmarket:get_suspicion_offset_of_local(tweak_data.player.SUSPICION_OFFSET_LERP or 0.75) * 100)
@@ -1122,12 +1127,12 @@ end
 --Move hostage taker to flat # regen from % regen. Add max hostage regen bonus.
 function PlayerManager:fixed_health_regen()
 	local health_regen = 0
-	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
 	local groupai = managers.groupai and managers.groupai:state()
 	if (groupai and groupai:hostage_count() + (groupai._num_converted_police or self:num_local_minions()) or self:num_local_minions() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen") then
-		health_regen = health_regen + self:get_hostage_bonus_addend("health_regen") * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
+		health_regen = health_regen * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
 	end
+	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	
 	return health_regen
 end

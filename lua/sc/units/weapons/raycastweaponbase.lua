@@ -103,7 +103,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 		ignore_units = self._setup.ignore_units
 	}
 
-	return RaycastWeaponBase.collect_hits(from, to, setup_data)
+	return RaycastWeaponBase.collect_hits(from, to, setup_data, self._unit)
 end
 
 local armour = {
@@ -124,7 +124,7 @@ local armour = {
 }
 
 --Minor fixes and making Winters unpiercable.
-function RaycastWeaponBase.collect_hits(from, to, setup_data)
+function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 	setup_data = setup_data or {}
 	local ray_hits = nil
 	local hit_enemy = false
@@ -157,6 +157,8 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	local shield_mask = setup_data.shield_mask
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
+	local weap_base = weapon_unit and weapon_unit.base and weapon_unit:base()
+	local is_semi_snp = can_shoot_through_shield and weap_base and weap_base.categories and not weap_base:is_category("amr") and weap_base:is_category("semi_snp", "dmr_l", "dmr_h") 
 
 	--Just set this immediately.
 	local ray_hits = can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", bullet_slotmask, "ignore_unit", ignore_unit, "thickness", 40, "thickness_mask", wall_mask)
@@ -172,6 +174,9 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	for i, hit in ipairs(ray_hits) do
 		unit = hit.unit
 		u_key = unit:key()
+		local range = is_semi_snp and weap_base:get_damage_falloff(1, hit, managers.player:player_unit())
+			local near_falloff_distance = range and weap_base.near_falloff_distance
+			local distance = range and hit.distance
 		if not units_hit[u_key] then
 			units_hit[u_key] = true
 			unique_hits[#unique_hits + 1] = hit
@@ -186,7 +191,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 				break
 			elseif setup_data.has_hit_wall or (not can_shoot_through_wall and in_slot_func(unit, wall_mask) and (has_ray_type_func(hit.body, ai_vision_ids) or has_ray_type_func(hit.body, bulletproof_ids))) then
 				break
-			elseif not can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
+			elseif hit.unit:in_slot(shield_mask) and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then
 				break
 			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8') and not can_shoot_through_titan_shield then --Titan shields
 				break
@@ -200,7 +205,7 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data)
 	end
 
 	return unique_hits, hit_enemy, hit_enemy and enemies_hit or nil
-end	
+end
 
 local raycast_current_damage_orig = RaycastWeaponBase._get_current_damage
 function RaycastWeaponBase:_get_current_damage(dmg_mul)
@@ -277,6 +282,12 @@ function RaycastWeaponBase:chk_shield_knock(hit_unit, col_ray, weapon_unit, user
 	return false
 end
 
+
+function RaycastWeaponBase:categories()
+	return self:weapon_tweak_data().categories or {}
+end
+
+
 --Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 
@@ -328,6 +339,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 	return picked_up, add_amount
 
 end
+
 
 local mvec_to = Vector3()
 local mvec_spread_direction = Vector3()
@@ -483,14 +495,30 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	local furthest_hit = ray_hits[#ray_hits]
 
-	if (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
+	if dmg_mul ~= 0 and (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
 		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
 
+		if not self._trail_length then
+			self._trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), Idstring("trail"), Idstring("simulator_length"), Idstring("size"))
+		end
+
 		local trail = World:effect_manager():spawn(self._trail_effect_table)
+		self._trail_effect_table_sniper = clone(self._trail_effect_table)
+		self._trail_effect_table_sniper.effect = Idstring("effects/particles/weapons/vapor_trail_sc")
+		local trail_sniper = self._use_vapor_trail and World:effect_manager():spawn(self._trail_effect_table_sniper)
 
 		if furthest_hit then
-			World:effect_manager():set_remaining_lifetime(trail, math.clamp((furthest_hit.distance - 100) / 10000, 0, furthest_hit.distance))
+			if self._use_sniper_trail then
+				mvector3.set_y(self._trail_length, furthest_hit and furthest_hit.distance)
+				World:effect_manager():set_simulator_var_vector2(trail, Idstring("trail"), Idstring("simulator_length"), Idstring("size"), self._trail_length)
+			else
+				World:effect_manager():set_remaining_lifetime(trail, math_clamp((furthest_hit.distance - 100) / 10000, 0, furthest_hit.distance))
+			end
+			if self._use_vapor_trail then
+				mvector3.set_y(self._trail_length, furthest_hit and furthest_hit.distance)
+				World:effect_manager():set_simulator_var_vector2(trail_sniper, Idstring("trail"), Idstring("simulator_length"), Idstring("size"), self._trail_length)
+			end
 		end
 	end
 
@@ -656,22 +684,58 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 
 	self:_check_ammo_total(user_unit)
 
-	for i = 1, ammo_usage do
-		if alive(self._obj_fire) then
-			self:_spawn_muzzle_effect(from_pos, direction)
+	if is_player and self:weapon_tweak_data().zippy then
+		local jam = math.rand(1)
+		if jam < 0.33 and self:ammo_base():get_ammo_remaining_in_clip() > 0 then
+			--dmg_mul = 0
+			--self:dryfire()
+			self._jammed = true
+			self._next_fire_allowed = self._next_fire_allowed + (2 / self:fire_rate_multiplier())
+		elseif jam > 0.66 then
+			dmg_mul = 0
 		end
-		self:_spawn_shell_eject_effect()
 	end
 
-	if self:weapon_tweak_data().muzzleflash_mod then
-		for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+	if not self._jammed then
+		for i = 1, ammo_usage do
 			if alive(self._obj_fire) then
 				self:_spawn_muzzle_effect(from_pos, direction)
+			end
+				self:_spawn_shell_eject_effect()
+		end
+
+		if self:weapon_tweak_data().muzzleflash_mod then
+			for i = 1, self:weapon_tweak_data().muzzleflash_mod do
+				if alive(self._obj_fire) then
+					self:_spawn_muzzle_effect(from_pos, direction)
+				end
 			end
 		end
 	end
 
 	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit, ammo_usage)
+
+	if self:weapon_tweak_data().zippy and dmg_mul == 0 and not self._jammed then
+		local player_unit = managers.player:player_unit()
+		if player_unit.character_damage and player_unit:character_damage() then
+			if not player_unit:character_damage():is_downed() then
+				player_unit:character_damage()._unit:sound():play("player_hit_permadamage")
+				player_unit:character_damage():_calc_health_damage_no_deflection({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			else
+				player_unit:character_damage():_bleed_out_damage({
+					col_ray = ray_res,
+					attacker_unit = player_unit,
+					damage = .5,
+					variant = "explosion"
+				})
+			end
+		end
+	end
 
 	if self._alert_events and ray_res.rays then
 		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
@@ -1499,8 +1563,8 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		mvec3_mul(tmp_vec2, 20)
 		mvec3_sub(tmp_vec1, tmp_vec2)
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
-		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.25) * overkill, blank, no_sound)
-		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 0.75, user_unit, weapon_unit, managers.network:session():local_peer():id())
+		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * 0.5) * overkill, blank, no_sound)
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
 
 		return {
 			variant = "explosion",
@@ -1515,6 +1579,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 	local slot_mask = managers.slot:get_mask("explosion_targets")
 
 	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
+	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.
 
 	local hit_units, splinters, results = managers.explosion:detect_and_give_dmg({
 		hit_pos = position,
@@ -1522,7 +1587,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		collision_slotmask = slot_mask,
 		curve_pow = self.CURVE_POW,
 		damage = damage,
-		player_damage = damage * self.PLAYER_DMG_MUL,
+		player_damage = 0,
 		alert_radius = self.ALERT_RADIUS,
 		ignore_unit = weapon_unit,
 		user = user_unit,

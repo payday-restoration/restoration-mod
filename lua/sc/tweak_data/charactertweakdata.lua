@@ -533,6 +533,11 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.heal_cooldown = 22.5
 	self.meme_man.rescue_hostages = false
 	self.meme_man.steal_loot = false
+	self.meme_man.modify_health_on_tweak_change = true
+	self.meme_man.tmp_invulnerable_on_tweak_change = 6.5
+	self.meme_man.priority_shout = "f30"
+	self.meme_man.bot_priority_shout = "f30x_any"	
+	self.meme_man.custom_shout = false	
 	table.insert(self._enemy_list, "meme_man")	
 	self.meme_man_shield = deep_clone(self.meme_man)		
 	self.meme_man_shield.tags = {"medic", "special", "shield"}		
@@ -545,7 +550,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.is_special = true
 	self.meme_man_shield.rotation_speed = 0.75
 	self.meme_man_shield.no_asu = true
-	self.meme_man_shield.unintimidateable = true
 	self.meme_man_shield.allowed_poses = {crouch = true}
 	self.meme_man_shield.always_face_enemy = true
 	self.meme_man_shield.move_speed = presets.move_speed.fast
@@ -559,7 +563,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.calls_in = nil
 	self.meme_man_shield.ignore_medic_revive_animation = true
 	self.meme_man_shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
-	self.meme_man_shield.damage.shield_knocked = true		
+	self.meme_man_shield.damage.shield_knocked = true	
+	self.meme_man_shield.custom_shout = false		
 	table.insert(self._enemy_list, "meme_man_shield")	
 
 	--April Fools Vet Cop
@@ -1024,7 +1029,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.surrender_break_time = {6, 8}
 	self.fbi_heavy_swat.suppression = presets.suppression.hard_agg
 	self.fbi_heavy_swat.surrender = presets.surrender.hard
-	self.fbi_heavy_swat.damage.hurt_severity = presets.hurt_severities.heavy
+	self.fbi_heavy_swat.damage.hurt_severity = presets.hurt_severities.heavy_resist
 	self.fbi_heavy_swat.ecm_vulnerability = 0.6
 	self.fbi_heavy_swat.ecm_hurts = {
 		ears = 6
@@ -1041,7 +1046,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.melee_weapon = "knife_1"
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
-	if self:get_ai_group_type() == "zombie" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "zombie" then
 	    self.fbi_heavy_swat.has_alarm_pager = true
 	else
 	    self.fbi_heavy_swat.has_alarm_pager = false
@@ -1104,6 +1109,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	--Guard variant, different entry type as a failsafe
 	self.city_swat_guard = deep_clone(self.city_swat)	
 	self.city_swat_guard.headshot_dmg_mul = 8.5
+	self.city_swat_guard.overheal_mult = 1
 	self.city_swat_guard.access = "security"
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	if job == "nmh" or job == "nmh_res" then
@@ -1182,10 +1188,10 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.yellow_blood = true
 	end
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 2.65
-	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
+	self.city_swat_titan.headshot_dmg_mul = 2.5
+	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist
 	self.city_swat_titan.damage.bullet_damage_mul = 1
-	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
+	self.city_swat_titan.damage.explosion_damage_mul = 0.8
 	self.city_swat_titan.use_animation_on_fire_damage = true
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
@@ -1703,7 +1709,7 @@ function CharacterTweakData:_init_deep_boss(presets)
 	self.deep_boss.damage.explosion_damage_mul = 0.5
 	self.deep_boss.can_be_tased = false
 	self.deep_boss.suppression = nil
-	self.deep_boss.move_speed = presets.move_speed.slow
+	self.deep_boss.move_speed = presets.move_speed.very_slow
 	self.deep_boss.allowed_stances = {
 		cbt = true
 	}
@@ -1990,7 +1996,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.is_special = true
 	self.biker_boss.no_asu = true
 	self.biker_boss.heal_cooldown = 22.5
-	self.biker_boss.die_sound_event = "fl1n_x02a_any_3p"
+	self.biker_boss.die_sound_event = "cf2_burndeath"
 	self.biker_boss.no_omnia_heal = true
 	self.biker_boss.can_be_healed = false
 	table.insert(self._enemy_list, "biker_boss")
@@ -2021,7 +2027,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.no_arrest = true
 	self.hector_boss_no_armor.surrender = nil
 	self.hector_boss_no_armor.unintimidateable = true
-	self.hector_boss_no_armor.access = "gangster"
+	--self.hector_boss_no_armor.access = "gangster"
 	self.hector_boss_no_armor.rescue_hostages = false
 	self.hector_boss_no_armor.steal_loot = nil
 	self.hector_boss_no_armor.calls_in = nil
@@ -2602,6 +2608,11 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_black.move_speed = presets.move_speed.slow_plus
 	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
+	--Blackdozers can use SWATs access SOs
+	self.tank_black.access = {
+		"swat",
+		"tank"
+	}
 	table.insert(self._enemy_list, "tank_black")
 	
 	
@@ -2616,6 +2627,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.damage.explosion_damage_mul = 1.5
 	self.tank_skull.damage.rocket_damage_mul = 1.5
 	self.tank_skull.move_speed = presets.move_speed.very_slow
+	self.tank_skull.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_skull")
 	
 	--Medic Dozer, can be stunned like Blackdozers
@@ -4372,6 +4384,19 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.hurt_severities.elite_explosion_resist = deep_clone(presets.hurt_severities.elite)	
+	presets.hurt_severities.elite_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.elite_easy = deep_clone(presets.hurt_severities.light_hurt_fire_poison)
 	presets.hurt_severities.elite_easy.bullet = {
 		health_reference = "current",
@@ -4430,7 +4455,20 @@ function CharacterTweakData:_presets(tweak_data)
 				heavy = 0
 			}
 		}
-	}		
+	}
+	presets.hurt_severities.elite_easy_explosion_resist = deep_clone(presets.hurt_severities.elite_easy)	
+	presets.hurt_severities.elite_easy_explosion_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.only_explosion_hurts = {
 		bullet = {
 			health_reference = 1,
@@ -4633,6 +4671,44 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}	
+	presets.hurt_severities.heavy_resist = deep_clone(presets.hurt_severities.heavy)	
+	presets.hurt_severities.heavy_resist.bullet = {
+		health_reference = "current",
+		zones = {
+			{
+				health_limit = 0.3,
+				none = 0.2,
+				light = 0.8,
+			},
+			{
+				health_limit = 0.6,
+				light = 0.6,
+				moderate = 0.4
+			},
+			{
+				health_limit = 0.9,
+				light = 0.4,
+				moderate = 0.6
+			},
+			{
+				light = 0,
+				moderate = 1,
+				heavy = 0
+			}
+		}
+	}	
+	presets.hurt_severities.heavy_resist.explosion = {
+		health_reference = "current",
+		zones = {
+			{
+				light = 1,
+				health_limit = 0.6
+			},
+			{
+				moderate = 1
+			}
+		}
+	}
 	presets.hurt_severities.spooc = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.spooc_titan = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.spooc_titan.fire = {
@@ -17518,9 +17594,9 @@ end
 
 function CharacterTweakData:_set_overkill_290()
 	if SystemInfo:platform() == Idstring("PS3") then
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 0.801)
 	else
-		self:_multiply_all_hp(1.75, 0.8)
+		self:_multiply_all_hp(1.75, 0.801)
 	end
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0)
@@ -17546,23 +17622,26 @@ function CharacterTweakData:_set_overkill_290()
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.shield.damage.explosion_damage_mul = 0.7		
+	
+	self.fbi_swat.weapon = deep_clone(self.presets.weapon.expert)
+	self.fbi_swat.melee_weapon_dmg_multiplier = 2
 		
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1.5
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1600
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 800
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist	
 	self.weekend_lmg.use_animation_on_fire_damage = false		
 	
 	self.spring.dt_suppress = {
@@ -17616,19 +17695,39 @@ function CharacterTweakData:_set_sm_wish()
 	self.swat.can_shoot_while_dodging = true
 	self.hrt.can_shoot_while_dodging = true
 
+	--Boss Tweaks for DS 
 	--Bosses that use Machine Guns have pushback abilities applied
 	--The Commissar
 	self.mobster_boss.dt_suppress = {
-		range = 500
-	}
-	--Overkill MC Boss
-	self.biker_boss.dt_suppress = {
 		range = 500
 	}
 	--Gabriel
 	self.deep_boss.dt_suppress = {
 		range = 500
 	}
+	--Hector and Overkill MC Boss have slowing bullets instead
+	self.hector_boss.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		range = 1000
+	}
+	self.biker_boss.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		range = 1000
+	}
+	--Chavez can throw frag nades
+	self.chavez_boss.can_throw_frag = true
+	self.chavez_boss.grenade_toss_chance = 0.4
+	
+	--Speed up the bosses
+	self.mobster_boss.move_speed = self.presets.move_speed.slow
+	self.hector_boss.move_speed = self.presets.move_speed.slow
+	self.biker_boss.move_speed = self.presets.move_speed.slow
+	self.chavez_boss.move_speed = self.presets.move_speed.slow
+	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
+	self.triad_boss.move_speed = self.presets.move_speed.slow
+	self.deep_boss.move_speed = self.presets.move_speed.slow
 	
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5
@@ -17732,17 +17831,17 @@ function CharacterTweakData:_set_sm_wish()
 	}		
 	
 	--Titan SWAT stun resistance
-	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan.use_animation_on_fire_damage = false
 	self.city_swat_titan.dt_suppress = {
 		range = 1800
 	}
-	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.city_swat_titan_assault.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.city_swat_titan_assault.use_animation_on_fire_damage = false
 	self.city_swat_titan_assault.dt_sgunner = {
 		range = 1000
 	}
-	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
+	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite_explosion_resist		
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	
 	--Titandozers become immune to stunning
@@ -17751,6 +17850,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 	self.autumn.damage.bullet_damage_mul = 0.4
+	
+	self.tank_black.move_speed = self.presets.move_speed.normal
 	
 	self.tank_skull.dt_suppress = {
 		range = 500

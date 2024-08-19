@@ -21,7 +21,9 @@ local death_sentence = difficulty == 8
 local enabled_chance_more_guards = math.random() < diff_scaling_1
 local enabled_chance_shields = math.random() < diff_scaling_1
 local enabled_chance_cloakers = math.random() < diff_scaling_1
-local enabled_chance_dozers = math.random() < diff_scaling_2
+local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
+local enabled_chance_dozers_ambush_escape = math.random() < 0.5
+local surprise_tank_chance = math.random() < 0.5
 
 	if difficulty == 7 then
 		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
@@ -35,8 +37,8 @@ local enabled_chance_dozers = math.random() < diff_scaling_2
 	
 	if difficulty == 5 or difficulty == 6 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
+		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
 	elseif difficulty == 7 then
 		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
@@ -56,86 +58,89 @@ local enabled_chance_dozers = math.random() < diff_scaling_2
 local optsSecurity_1 = {
     enemy = security_1,
 	participate_to_group_ai = true,
-    enabled = (very_hard_above and enabled_chance_more_guards)
+    enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsSecurity_2 = {
     enemy = security_2,
 	participate_to_group_ai = true,
-    enabled = (very_hard_above and enabled_chance_more_guards)
+    enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsSecurity_3 = {
     enemy = security_3,
 	participate_to_group_ai = true,
-    enabled = (very_hard_above and enabled_chance_more_guards)
+    enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsShield_1 = {
     enemy = shield,
     on_executed = { { id = 100696, delay = 0 } },
 	participate_to_group_ai = true,
-    enabled = enabled_chance_shields
+    enabled = true
 }
 local optsShield_2 = {
     enemy = shield,
     on_executed = { { id = 100695, delay = 0 } },
 	participate_to_group_ai = true,
-    enabled = enabled_chance_shields
+    enabled = true
 }
 local optsSniper_1 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 103091, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_2 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 103090, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_3 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 103117, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_4 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 400033, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_5 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 400034, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = very_hard_above
 }
 local optsSniper_6 = {
 	enemy = sniper,
-	participate_to_group_ai = true,
 	on_executed = { { id = 400009, delay = 3 } },
 	spawn_action = "e_sp_repel_into_window",
     enabled = death_wish_above
 }
 local optsBulldozer_193 = {
     enemy = tank,
-	on_executed = { { id = 400023, delay = 0 } },
+	on_executed = { 
+		{ id = 400023, delay = 3 },
+		{ id = 400052, delay = 0 },
+	},
     enabled = death_sentence
 }
 local optsBulldozer_special = {
     enemy = tank_skull,
-    enabled = (death_wish_above and pro_job)
+	on_executed = {
+		{ id = 400052, delay = 0 }
+	},
+    enabled = (death_wish_above and pro_job and enabled_chance_dozers_exitvault)
 }
 local optsCloaker_rush_1 = {
     enemy = cloaker,
 	participate_to_group_ai = true,
 	trigger_times = 3,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
+	on_executed = { 
+		{ id = 400051, delay = 0 }
+	},
     enabled = (hard_above and enabled_chance_cloakers)
 }
 local optsCloaker_rush_2 = {
@@ -147,25 +152,39 @@ local optsCloaker_rush_2 = {
 }
 local optsBulldozer_BO = {
     enemy = tank,
-	on_executed = { { id = 400023, delay = 0 } },
+	on_executed = { 
+		{ id = 400023, delay = 3 },
+		{ id = 400052, delay = 0 }
+	},
     enabled = true
 }
 local optsTaser = {
     enemy = taser,
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsTaser_special = {
     enemy = taser,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_12m",
+	on_executed = { 
+		{ id = 400050, delay = 0 }
+	},
     enabled = true
 }
 local optsDozerAmbush = {
     enemy = tank_black,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_10m_swing_in_var2",
-    enabled = (death_sentence and enabled_chance_dozers)
+	on_executed = {
+		{ id = 400052, delay = 0 }
+	},
+    enabled = true
+}
+local optsDozerAmbush_2 = {
+    enemy = tank_black,
+	participate_to_group_ai = true,
+	spawn_action = "e_sp_clk_3_5m_dwn_vent",
+    enabled = (death_sentence and surprise_tank_chance)
 }
 local optsShield_Defend_1 = {
     enemy = shield,
@@ -181,7 +200,6 @@ local optsShield_Defend_2 = {
 }
 local optsSWAT_Heavy = {
     enemy = swat_shotgunner,
-	participate_to_group_ai = true,
     enabled = true
 }
 local optsBulldozer_SO = {
@@ -206,7 +224,103 @@ local optsShieldDefend_SO = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_defend"
+    so_action = "AI_sniper"
+}
+local enable_shields = {
+	enabled = enabled_chance_shields,
+	elements = { 
+		400001,
+		400002
+	}
+}
+local disable_shields = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400001,
+		400002
+	}
+}
+local disable_OverdrillPONR = {
+	enabled = pro_job,
+	toggle = "off",
+	elements = { 
+		400048
+	}
+}
+local enable_OverdrillPONR = {
+	enabled = pro_job,
+	elements = { 
+		400048
+	}
+}
+local disable_RegularPONR = {
+	enabled = pro_job,
+	toggle = "off",
+	elements = { 
+		400047
+	}
+}
+local disable_thetank = {
+	enabled = true,
+	toggle = "off",
+	elements = { 
+		400055
+	}
+}
+local enable_thetank = {
+	enabled = true,
+	elements = { 
+		400055
+	}
+}
+local optsRegularPONR = {
+	time_normal = 420,
+	time_hard = 420,
+	time_overkill = 420,
+	time_overkill_145 = 420,
+	time_easy_wish = 540,
+    time_overkill_290 = 540,
+	time_sm_wish = 540,
+	enabled = pro_job
+}
+local optsOverdrillPONR = {
+	time_normal = 1800,
+	time_hard = 1800,
+	time_overkill = 1800,
+	time_overkill_145 = 1800,
+	time_easy_wish = 1800,
+    time_overkill_290 = 1800,
+	time_sm_wish = 1800,
+	enabled = pro_job
+}
+local Bain_sendtasers = {
+	dialogue = "Play_ban_s01_b",
+	can_not_be_muted = true
+}
+local Bain_senddozers = {
+	dialogue = "Play_ban_s02_b",
+	can_not_be_muted = true
+}
+local Bain_sendcloakers = {
+	dialogue = "Play_ban_s04",
+	can_not_be_muted = true
+}
+local optsBlackTankAmbushFilter = {
+	difficulty_sm_wish = true,
+	player_3 = true,
+	player_4 = true,
+	enabled = enabled_chance_dozers_ambush_escape,
+	on_executed = { 
+		{ id = 400035, delay = 1, delay_rand = 1 },
+		{ id = 400036, delay = 1, delay_rand = 1 }
+	}
+}
+local spawn_the_surprise_tank = {
+	enabled = true,
+	on_executed = { 
+		{ id = 400054, delay = 0 }
+	}
 }
 
 return {
@@ -511,6 +625,89 @@ return {
             Vector3(3959, 721, -43.895),
             Rotation(90, -0, -0),
             optsShield_Defend_2
+        ),
+		restoration:gen_toggleelement(
+            400043,
+            "enable_lobby_shields",
+            enable_shields
+        ),
+		restoration:gen_toggleelement(
+            400044,
+            "disable_lobby_shields",
+            disable_shields
+        ),
+		restoration:gen_toggleelement(
+            400045,
+            "enable_OverdrillPONR",
+            enable_OverdrillPONR
+        ),
+		restoration:gen_toggleelement(
+            400046,
+            "disable_RegularPONR",
+            disable_RegularPONR
+        ),
+		restoration:gen_pointofnoreturn(
+            400047,
+            "Regular_PONR",
+            Vector3(-2657, -3569, -90),
+            Rotation(90, -0, -0),
+            optsRegularPONR
+        ),
+		restoration:gen_pointofnoreturn(
+            400048,
+            "Overdrill_PONR",
+            Vector3(-2657, -3569, -90),
+            Rotation(90, -0, -0),
+            optsOverdrillPONR
+        ),
+		restoration:gen_toggleelement(
+            400049,
+            "disable_OverdrillPONR",
+            disable_OverdrillPONR
+        ),
+		restoration:gen_dialogue(
+            400050,
+            "they_sending_tasers",
+            Bain_sendtasers
+        ),
+		restoration:gen_dialogue(
+            400051,
+            "they_sending_cloakers",
+            Bain_sendcloakers
+        ),
+		restoration:gen_dialogue(
+            400052,
+            "they_sending_dozers",
+            Bain_senddozers
+        ),
+		restoration:gen_dynamicfilter(
+            400053,
+            "black_tank_elevator_ambush_for_3_and_above_players",
+			Vector3(-2657, -3569, -90),
+            Rotation(90, -0, -0),
+            optsBlackTankAmbushFilter
+        ),
+		restoration:gen_dummy(
+            400054,
+            "surprise_tank",
+            Vector3(4657, -1100, -735.693),
+            Rotation(-180, 0, -0),
+            optsDozerAmbush_2
+        ),
+		restoration:gen_missionscript(
+            400055,
+            "spawn_the_surprise_tank",
+            spawn_the_surprise_tank
+        ),
+		restoration:gen_toggleelement(
+            400056,
+            "enable_the_surpise_tank",
+            enable_thetank
+        ),
+		restoration:gen_toggleelement(
+            400057,
+            "disable_the_surpise_tank",
+            disable_thetank
         )
     }
 }

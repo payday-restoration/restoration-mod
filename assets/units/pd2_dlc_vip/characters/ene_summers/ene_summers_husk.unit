@@ -30,7 +30,7 @@
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />
-			<var name="_anim_global" value="cop" />
+			<var name="_anim_global" value="tank" />
 		</extension>
 		<extension name="interaction" class="IntimitateInteractionExt" >
 			<var name="tweak_data" value="intimidate" />

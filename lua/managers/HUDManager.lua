@@ -162,7 +162,7 @@ function HUDManager:_create_level_suspicion_hud(hud)
 	local hud_panel = hud.panel
 	local level_suspicion_panel = hud_panel:panel({
 		name = "level_suspicion_panel",
-		y = -140, --i wanted so badly for 128 to work
+		y = -(hud_panel:parent():h() / 6),
 		alpha = Network:is_server() and 0.0001 or 1,
 		visible = not Network:is_server()
 	}) 
@@ -216,11 +216,9 @@ function HUDManager:_create_level_suspicion_hud(hud)
 	})
 	if restoration:all_enabled("HUD/MainHUD", "HUD/Stealth") then 
 		if restoration.Options:GetValue("HUD/Extra/StealthOrigPos") then 
-			level_suspicion_panel:move(21,30)
+			--level_suspicion_panel:move(21,30)
 		else
-			level_suspicion_panel:move(21,30)  --this is not the right way to do it but by god i'm doing it
---			level_suspicion_panel:move(0,20) Offset to account for mutator changes
---			level_suspicion_panel:set_center(managers.hud._hud_suspicion._suspicion_panel:center())
+			--level_suspicion_panel:set_center(hud_panel:parent():w() / 2, hud_panel:parent():h() / 6)
 		end
 	end
 	local center_x,center_y = level_suspicion_panel:center()

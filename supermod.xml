@@ -79,9 +79,14 @@
 			<group :name="payday2/weapons/wpn_npc_beretta92/">
 				<file :name="wpn_npc_beretta92.object"/>
 			</group>
+			<!-- object stuff -->
+			<group :name="pd2_dlc_pal/props/pal_prop_flames_of_love_boombox/">
+				<file :name="pal_prop_flames_of_love_boombox.sequence_manager"/> <!-- https://www.youtube.com/watch?v=D_e9GT9PqPQ -->
+			</group>
 			<!-- Improve navigation data -->
 			<group name="levels/narratives/">
 				<file :name="dentist/hox/stage_2/nav_manager_data.nav_data"/>
+				<file :name="dentist/mia/stage2/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_1/nav_manager_data.nav_data"/>
 				<file :name="e_framing_frame/stage_3/nav_manager_data.nav_data"/>
 				<file :name="skm/skm_big2/nav_manager_data.nav_data"/>

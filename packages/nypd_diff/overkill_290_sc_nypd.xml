@@ -311,18 +311,6 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_contour"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
 	
-	<!-- OMNIA taster (for Spring squad) -->
-	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<model				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
-	
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic" load="true"/>	
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk" load="true"/>		
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"/>

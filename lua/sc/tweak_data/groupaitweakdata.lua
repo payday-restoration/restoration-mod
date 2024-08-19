@@ -1,4 +1,5 @@
 local job = Global.level_data and Global.level_data.level_id
+local pro_job = Global.game_settings and Global.game_settings.one_down
 
 -- Slightly increase default tickrate to allow more responsive enemies
 Hooks:PostHook(GroupAITweakData, "init", "sh_init", function (self)
@@ -763,35 +764,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}				
-	self.unit_categories.omnia_LPF = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},		
-			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			},
-			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
-			}
-		},
-		access = access_type_all
-	}
 	if difficulty_index <= 6 then
 		self.unit_categories.fbi_vet = {
 			unit_types = {
@@ -7257,7 +7229,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	if table.contains(restoration.fsb, job) then
 		self.unit_categories.CS_cop_C45_R870.unit_types.russia = {
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"),
-			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2"),	
+			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4"),	
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_3_r870/ene_rus_cop_3_r870")
 		}
 		self.unit_categories.CS_cop_R870.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_r870/ene_rus_cop_4_r870")}
@@ -7265,7 +7237,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_1/ene_rus_cop_1"),
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4")
 		}
-		self.unit_categories.CS_cop_stealth_MP5.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_4_m4/ene_rus_cop_4_m4")}
+		self.unit_categories.CS_cop_stealth_MP5.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_cop_2/ene_rus_cop_2")}
 		self.unit_categories.CS_swat_MP5.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4")}
 		self.unit_categories.CS_swat_R870.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870")}
 		self.unit_categories.CS_swat_M4.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_m4/ene_rus_fsb_m4")}
@@ -7275,7 +7247,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_r870/ene_rus_fsb_r870")
 		}
 		self.unit_categories.CS_heavy_M4_w.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_fsb_heavy_m4/ene_rus_fsb_heavy_m4")}
-		if difficulty_index <= 2 then
+		if difficulty_index <= 3 then
 			self.unit_categories.CS_shield.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_c45/ene_rus_shield_c45")}
 		else
 			self.unit_categories.CS_shield.unit_types.russia = {Idstring("units/pd2_dlc_mad/characters/ene_rus_shield_sr2/ene_rus_shield_sr2")}
@@ -7983,7 +7955,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_3/ene_cartel_soldier_3"),		
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_soldier_4/ene_cartel_soldier_4")
 		}
-		self.unit_categories.omnia_LPF.unit_types.federales = {Idstring("units/pd2_mod_ttr/characters/ene_cartel_commando/ene_cartel_commando")}
 		self.unit_categories.fbi_vet.unit_types.federales = {
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_grenadier/ene_cartel_grenadier"),
 			Idstring("units/pd2_mod_ttr/characters/ene_cartel_grenadier_2/ene_cartel_grenadier_2")		
@@ -8681,8 +8652,37 @@ end
 	--Titan Snipers that spawn with Winters on DS, clone the real one but set the captain flag
 	self.unit_categories.Phalanx_sniper = deep_clone(self.unit_categories.titan_sniper)
 	self.unit_categories.Phalanx_sniper.ignore_spawn_cap = true
-
-	
+    --OMNIA LPFs that spawn with Winters on DS (Pro Job only)
+    self.unit_categories.omnia_LPF = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			russia = {
+				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			murkywater = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			federales = {
+				Idstring("units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			}
+		},
+		access = access_type_all,
+        ignore_spawn_cap = true
+    }
 	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {
@@ -16779,6 +16779,468 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--Reserved for mutator
 	self.enemy_spawn_groups.Fake_Captain = {}
 	
+	--Captains are more mean on Pro Jobs
+	if pro_job then
+	--New Winters
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = 6,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 5,
+					amount_max = 5,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 6 then
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = 9,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = 10,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}				
+			}
+		}
+	else
+		self.enemy_spawn_groups.Cap_Winters = {
+			amount = 13,
+			force = true,
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 6,
+					amount_max = 6,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "omnia_LPF",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.FBI_medic_flank,
+					rank = 2
+				},
+				{
+					unit = "Phalanx_sniper",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}
+			}
+		}				
+	end		
+	
+	--Captain Spring
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.Cap_Spring = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "OMNIA_Tank",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_spring,
+					rank = 2
+				}
+			}
+		}	
+	elseif difficulty_index == 6 then
+		self.enemy_spawn_groups.Cap_Spring = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "OMNIA_Tank",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "OMNIA_Taser",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.CS_Tazer,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then	
+		self.enemy_spawn_groups.Cap_Spring = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "Tank_Ben",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "Taser_Titan",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.CS_Tazer,
+					rank = 2
+				}
+			}
+		}
+	else
+		self.enemy_spawn_groups.Cap_Spring = {
+			amount = 8,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Spring",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_spring,
+					rank = 1
+				},
+				{
+					unit = "Tank_Ben",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.Cap_spring,
+					rank = 2
+				},
+				{
+					unit = "Taser_Titan",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.CS_Tazer,
+					rank = 2
+				}					
+			}
+		}			
+	end
+	
+	--HVH boss
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	elseif difficulty_index == 6 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc_Normal",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	else
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = 8,
+			force = true,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}					
+			}
+		}			
+	end	
+	
+	--Captain Autumn
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 6 then
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = 4,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 7 then
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = 5,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Titan_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	else
+		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = 6,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Titan_Spooc",
+					freq = 1,
+					amount_min = 5,
+					amount_max = 5,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}				
+			}
+		}
+	end	
+else
 	--New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
@@ -16859,7 +17321,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = 10,
+			amount = 9,
 			force = true,
 			spawn = {
 				{
@@ -16881,8 +17343,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 3,
+					amount_max = 3,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
@@ -16962,7 +17424,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	else
 		self.enemy_spawn_groups.Cap_Spring = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -16984,8 +17446,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Taser_Titan",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				}					
@@ -17065,7 +17527,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -17087,8 +17549,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				}					
@@ -17114,6 +17576,29 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	elseif difficulty_index == 6 then
 		self.enemy_spawn_groups.Cap_Autumn = {
+			amount = 3,
+			force = true,
+			spawn = {
+				{
+					unit = "Cap_Autumn",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_autumn,
+					rank = 1
+				},
+				{
+					unit = "Autumn_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_autumn,
+					rank = 2
+				}					
+			}
+		}	
+	elseif difficulty_index == 7 then
+		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = 4,
 			force = true,
 			spawn = {
@@ -17135,7 +17620,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}					
 			}
 		}	
-	elseif difficulty_index == 7 then
+	else
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = 5,
 			force = true,
@@ -17149,39 +17634,17 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "Autumn_Spooc",
+					unit = "Titan_Spooc",
 					freq = 1,
 					amount_min = 4,
 					amount_max = 4,
-					tactics = self._tactics.Cap_autumn,
-					rank = 2
-				}					
-			}
-		}	
-	else
-		self.enemy_spawn_groups.Cap_Autumn = {
-			amount = 6,
-			force = true,
-			spawn = {
-				{
-					unit = "Cap_Autumn",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.Cap_autumn,
-					rank = 1
-				},
-				{
-					unit = "Titan_Spooc",
-					freq = 1,
-					amount_min = 5,
-					amount_max = 5,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}				
 			}
 		}		
 	end
+end
 	
 	--Captain Summers
 	self.enemy_spawn_groups.Cap_Summers = {
@@ -19867,7 +20330,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 
 	--Skirmish Captains, uses the DS spawngroups
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
-			amount = 10,
+			amount = 9,
 			force = true,
 			spawn = {
 				{
@@ -19889,15 +20352,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_sniper",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 3,
+					amount_max = 3,
 					tactics = self._tactics.Cap_winters_minion_sniper,
 					rank = 2
 				}
 			}
 		}								
 		self.enemy_spawn_groups.SKM_Cap_Spring_W9 = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -19919,15 +20382,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Taser_Titan",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				},					
 			}
 		}
 		self.enemy_spawn_groups.SKM_HVH_Boss_W9 = {
-			amount = 7,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -19949,15 +20412,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},					
 			}
 		}
 		self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = {
-			amount = 6,
+			amount = 5,
 			force = true,
 			spawn = {
 				{
@@ -19971,8 +20434,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Titan_Spooc",
 					freq = 1,
-					amount_min = 5,
-					amount_max = 5,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_autumn,
 					rank = 2
 				}				
@@ -20152,6 +20615,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}			
 	}
 	self.flash_shields.default = self.flash_shields.marshal_shield	
+	
+	if difficulty_index == 8 then
+		self.flash_shields.marshal_shield.flash_charge_timer = 2
+		self.flash_shields.phalanx_minion.flash_charge_timer = 2
+	end
 	
 	self.optimal_trade_distance = {0, 0}
 	self.bain_assault_praise_limits = {1, 3}

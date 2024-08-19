@@ -1,0 +1,14 @@
+<effect force_synch="false">
+    <use_random>
+        <effect name="effects/particles/weapons/vapor_trail_1"/>
+        <effect name="effects/particles/weapons/vapor_trail_4"/>
+        <effect name="effects/particles/weapons/vapor_trail_3"/>
+        <effect name="effects/particles/weapons/vapor_trail_2"/>
+        <effect name="effects/particles/weapons/vapor_trail_5"/>
+        <effect name="effects/particles/weapons/vapor_trail_3"/>
+        <effect name="effects/particles/weapons/vapor_trail_2"/>
+        <effect name="effects/particles/weapons/vapor_trail_1"/>
+        <effect name="effects/particles/weapons/vapor_trail_4"/>
+        <effect name="effects/particles/weapons/vapor_trail_5"/>
+    </use_random>
+</effect>

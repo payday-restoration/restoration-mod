@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_mel_toast" materials="units/mods/weapons/wpn_mel_toast/wpn_third_mel_toast" />
+    <graphics>
+        <object enabled="true" name="g_toast" shadow_caster="true" />
+    </graphics>
+</dynamic_object>

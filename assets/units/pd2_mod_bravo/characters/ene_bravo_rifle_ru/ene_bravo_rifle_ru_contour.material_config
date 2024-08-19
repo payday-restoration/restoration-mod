@@ -4,7 +4,7 @@
         <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
         <self_illumination_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il" />
         <variable type="scalar" name="il_bloom" value="10"/>
-        <variable type="scalar" name="il_multiplier" value="reddot"/>								
+        <variable type="scalar" name="il_multiplier" value="megatron"/>								
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
@@ -13,7 +13,7 @@
         <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df" mip="4"/>
         <self_illumination_texture file="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_il" />
         <variable type="scalar" name="il_bloom" value="10"/>
-        <variable type="scalar" name="il_multiplier" value="reddot"/>								
+        <variable type="scalar" name="il_multiplier" value="megatron"/>								
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>

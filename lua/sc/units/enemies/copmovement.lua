@@ -598,32 +598,6 @@ function CopMovement:on_suppressed(state)
 	self:enable_update(true)
 end
 
-function CopMovement:synch_attention(attention)
-	if attention and self._unit:character_damage():dead() then
-		--debug_pause_unit(self._unit, "[CopMovement:synch_attention] dead AI", self._unit, inspect(attention))
-	end
-
-	self:_remove_attention_destroy_listener(self._attention)
-	self:_add_attention_destroy_listener(attention)
-
-	if attention and attention.unit and not attention.destroy_listener_key then
-		--debug_pause_unit(attention.unit, "[CopMovement:synch_attention] problematic attention unit", attention.unit)
-		self:synch_attention(nil)
-
-		return
-	end
-
-	local old_attention = self._attention --of course vanilla lacks this for no real reason
-	self._attention = attention
-	self._action_common_data.attention = attention
-
-	for _, action in ipairs(self._active_actions) do
-		if action and action.on_attention then
-			action:on_attention(attention, old_attention)
-		end
-	end
-end
-
 --crash prevention
 function CopMovement:anim_clbk_enemy_spawn_melee_item()
 	if alive(self._melee_item_unit) then
@@ -684,6 +658,7 @@ function CopMovement:anim_clbk_police_called(unit)
 	if Network:is_server() then
 		if not group_state:is_ecm_jammer_active("call") then
 			local cop_type = tostring(group_state.blame_triggers[self._ext_base._tweak_table])
+			local vanilla_behaviour = managers.mutators:modify_value("CopMovement:VanillaPoliceCall", false)
 
 			group_state:on_criminal_suspicion_progress(nil, self._unit, "called")
 
@@ -696,7 +671,7 @@ function CopMovement:anim_clbk_police_called(unit)
 				group_state:on_police_called(self:coolness_giveaway())
 			else
 				--If it's actually in stealth, have it make people uber suspicious! 
-				if group_state:whisper_mode() then
+				if group_state:whisper_mode() and not vanilla_behaviour then
 					group_state._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 1
 					group_state._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
 					group_state._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
@@ -707,7 +682,7 @@ function CopMovement:anim_clbk_police_called(unit)
 					--self._unit:brain():terminate_all_suspicion()
 					--self:set_cool(true, nil, false)			
 				else
-				--Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason
+				--Otherwise, have it sound the alarm immediately. Mostly for maps that do the 'fake alarm trigger' that doesn't actually call the cops for whatever reason (or if mutator is enabled)
 					group_state:on_police_called(self:coolness_giveaway())
 				end
 			end

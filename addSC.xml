@@ -100,6 +100,14 @@
 	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
 	
+	<!-- Counterfeit -->
+	<mission			path="levels/instances/unique/sub_sewer_grate/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/sub_sewer_sidespawn/world/world" force="true" unload="true"/>
+	
+	<!-- Biker Heist Day 1 -->
+	<mission			path="levels/instances/unique/born/born_armory/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/born/born_truck/world/world" force="true" unload="true"/>
+	
 	<!-- Border Crossing-->
 	<mission			path="levels/instances/unique/mex/mex_vault/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/mex/mex_pump/world/world" force="true" unload="true"/>
@@ -115,8 +123,7 @@
 	<mission			path="levels/instances/unique/trai/trai_main_wagon/world/world" force="true" unload="true"/> <!--10% chance of bravo dozer spawning inside the vault on very hard and above (loud only)-->
 	
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
-	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
-	<mission			path="levels/instances/unique/pbr/pbr_sewer_enemies/world/world" force="true" unload="true"/> <!--adjusted the dozers cuz fuck the trio of skullys that come on mayhem above-->
+	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->
 	
 	<!--shotgun man for security rooms-->
 	<mission			path="levels/instances/unique/red/red_camera_room/world/world" force="true" /> 
@@ -157,13 +164,9 @@
 	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_glovebox/mad_prop_medical_glovebox_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_carm_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/props/mad_prop_medical_set/mad_prop_medical_trolley_df" force="true"/>
-	<texture path="units/pd2_dlc_mad/props/mad_prop_military_laptop/mad_prop_military_laptop_screen_login_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/props/mad_prop_sign_electricity/mad_prop_sign_electricity_df" force="true"/>
 	
-	
 	<continent			path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
-
-	<mission			path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
 
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
@@ -186,7 +189,6 @@
 	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/glace/glace_helicopter_dozer/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
 	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
@@ -233,8 +235,6 @@
 
 	<!--ffs ovk, dont load the entire map if you force the players in one area-->
 	<continent			path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
-	
-	<mission			path="levels/instances/unique/shout_container_normal/world/world" force="true" unload="true"/> <!--changed the dozer spawns a bit while also feature benellidozer on DS-->
 	
 	<!-- mountain master edit -->
 	<mission			path="levels/narratives/shayu/pent/world/world" force="true" unload="true"/>
@@ -765,6 +765,7 @@
 	<unit				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_husk" force="true" load="true"/>	
 	<object				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<model				path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
+	<sequence_manager	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_contour" force="true" />	
 	
@@ -783,6 +784,9 @@
 		<effect load="true" path="effects/payday2/particles/character/snowman_molotov"/>
 		<bnk load="true" path="soundbanks/weapon_snowthrower"/>
 	</add>	
+	
+	<!-- Effect for converted enemies if enemy related outlines disabled via mutator -->
+	<effect				path="effects/particles/character/moneyburn" load="false"/>
 	
 	<!--Piggy Dozer-->
 	<object				path="units/pd2_dlc_pda10/characters/ene_dozer_piggy/ene_dozer_piggy" force="true"/>
@@ -864,6 +868,18 @@
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
 		
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<!-- OMNIA taster -->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
+	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
 	
 	<!--Autumn-->
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
@@ -955,13 +971,15 @@
 	
 	<!--Winter with his cool cigar (Jarey)-->
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>	
+	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true" load="true"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_husk" force="true" load="true"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_il"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_body_df" force="true"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_head_df" force="true"/>		
 
@@ -973,6 +991,9 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip_dummy" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip"/>	
 	<texture			path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>
+	
+	<!--Cigar smoke for Winters-->
+	<effect				path="effects/particles/character/cigarette_smoke_winters" load="true"/>
 
 	<!--Winter AssFuckeng Squad-->
 
@@ -1028,6 +1049,11 @@
 	<!--hatman's MG42 of Evil-->
 	<unit_mat			path="units/pd2_mod_halloween/weapons/wpn_npc_mg42_hatman/wpn_npc_mg42_hatman" />
 	
+	<!--Glowing eyes for skeleton T SWATs-->
+	<effect 			path="effects/particles/character/skeleton_eyes_red"/>
+	<effect 			path="effects/particles/character/skeleton_eye_blue"/>
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	
 	<!--Titan Cloaca-->	
 	<model				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<object				path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
@@ -1051,6 +1077,7 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_summers/ene_summers"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
 	
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
@@ -1059,8 +1086,10 @@
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
 	<effect				path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
+	<effect				path="effects/particles/character/glowing_eyes_red_summers" load="false"/>
+	<effect				path="effects/particles/character/glowing_eyes_orange_summers" load="false"/>
+	<effect				path="effects/particles/character/glowing_eyes_yellow_summers" load="false"/>
 	
-
 	<!--Summers Flamethrower-->
 	<cooked_physics		path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
 	<model				path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
@@ -1252,23 +1281,11 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" force="true"/>
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
 	
-	<!--Omnia Buff Effect-->
-	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="true"/>
-	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
-	<!--Omnia Buff Effect for OMNIA T Swat-->
-	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff_high" force="false" load="true"/>
 	<!--LPF and Medic (over-)healing Effects-->
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes_high" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random" load="true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green" load = "true"/>
-	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple" load = "true"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_green"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/shadow_cloaker/smoke_trail/smoke_distorted_purple"/>
 	
 	<!--Loading Screen Tips-->
 	<texture			path="guis/textures/loading/hints/grenadier_load" force="false"/>	
@@ -1308,6 +1325,18 @@
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/akan_titan_trail_sc" force="false"/>
+	<texture			path="effects/textures/e_sniper_trail_df" />
+	<texture			path="effects/textures/e_sniper_trail_1_df" />
+	<texture			path="effects/textures/e_sniper_trail_2_df" />
+	<texture			path="effects/textures/e_sniper_trail_3_df" />
+	<texture			path="effects/textures/e_sniper_trail_4_df" />
+	<texture			path="effects/textures/e_sniper_trail_5_df" />
+	<effect				path="effects/particles/weapons/vapor_trail_1" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_2" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_3" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_4" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_5" force="false"/>
+	<effect				path="effects/particles/weapons/vapor_trail_sc" force="false"/>
 	
 	<!--Bullet casings effects-->
     <effect				path="_dmc/effects/shell_lmg_down" force="false" load="true" unload="true" reload="true"/>
@@ -1424,6 +1453,7 @@
 		007 - Lua logo
 		008 - Small Dot
 		009 - Tiny Dot
+		010 - SZ Holotherm styled
 	-->
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_001_blue_il" force="true" load="true"/>
@@ -1461,6 +1491,10 @@
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_blue_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_green_il" force="true" load="true"/>
 	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_009_yellow_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_blue_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_green_il" force="true" load="true"/>
+	<texture			path="_dmc/wpn_effects_textures/wpn_sight_reticle_010_yellow_il" force="true" load="true"/>
 	
 	<!--Gold AK shit-->
 	<!--KILL ME -DMC-->
@@ -1471,6 +1505,14 @@
 	<object				path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_fps_upg_ak_reusable/wpn_fps_ak_bolt_gold" load="false"/>
 	
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_cc_thq" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_mod0_cc_thq" load="false"/>
+
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc" load="false"/>
+	<material_config	path="units/pd2_dlc_pxp3/weapons/wpn_fps_upg_o_northtac/wpn_fps_upg_o_northtac_scope_cc_thq" load="false"/>
+
 	<!--Weapon Unit Overrides-->
 	<unit				path="units/pd2_dlc_tawp/weapons/wpn_fps_pis_rsh12/wpn_fps_pis_rsh12" load="false"/>
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/wpn_fps_pis_x_judge" load="false"/>
@@ -1594,6 +1636,7 @@
 	<model				path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+	<object	path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
 
 	<!--NPC Sniper Overrides-->
 	<!--swat-->
@@ -1937,6 +1980,9 @@
 	<!--Fixed firing audio for the Grimm-->
 	<unit				path="units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset" force="true"/>
 
+	<!--Fixed wrong sound trigger for pump when shooting; now matches the pump sound used for empty reloads. Fix by Zdann-->
+	<animation			path="anims/fps/m590/m590_recoil" force="true"/>
+
 	<!-- Bearable G3 FPS Animations -->
 	<animation			path="anims/fps/g3/g3_reload_not_empty" force="true"/>
 	<animation			path="anims/fps/g3/g3_reload" force="true"/>
@@ -1969,6 +2015,15 @@
 	
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>
+
+	<!-- Right swing for "melee_beardy" taken from "melee_great"; wtf it actually melds well and doesn't have hand clipping issues????? -->
+	<animation			path="anims/fps/melee/beardy/melee_attack_var4" force="true"/>
+
+	<!-- Fix for scoutknife position in hand -->
+	<model				path="units/pd2_dlc_peta/weapons/wpn_fps_mel_scoutknife/wpn_fps_mel_scoutknife" force="true"/>
+
+	<!-- Slightly larger Greatsword -->
+	<model				path="units/pd2_dlc_steel/weapons/wpn_fps_mel_great/wpn_fps_mel_great" force="true"/>
 
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
@@ -2125,6 +2180,11 @@
 	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>
 	<df_nm				path="units/payday2/characters/shared_textures/veteran_lodman_2"/>
 
+	<!--Drivable vehicle handling stuff-->	
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_1/fps_vehicle_bike_1" force="true"/>
+	<object				path="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/fps_vehicle_bike_2" force="true"/>
+	<object				path="units/pd2_dlc_shoutout_raid/vehicles/fps_vehicle_muscle_1/fps_vehicle_muscle_1" force="true"/>
+	<object				path="units/pd2_dlc_cage/vehicles/fps_vehicle_falcogini_1/fps_vehicle_falcogini_1" force="true"/>
 
 	<!--Payday 10th Anniversary-->	
 	<texture 			path="units/pd2_dlc_a10th/props/a10th_balloon/balloon_stars_df"/>

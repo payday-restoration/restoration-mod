@@ -1,0 +1,9 @@
+<unit type="wpn" slot="1">
+	<object file="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad" />
+	<dependencies>
+		<depends_on bnk="soundbanks/melee_great"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

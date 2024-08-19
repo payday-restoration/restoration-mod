@@ -48,7 +48,9 @@ StatisticsManager.special_unit_ids = {
 	"autumn",
 	"marshal_marksman",
 	"marshal_shield",
-	"snowman_boss"
+	"snowman_boss",
+	"meme_man",
+	"meme_man_shield"
 }
 
 local old_stats = StatisticsManager.init
@@ -153,13 +155,6 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.fbi_vet = {
-			count = 0,
-			head_shots = 0,
-			melee = 0,
-			explosion = 0,
-			tied = 0
-		}
-	self._defaults.killed.vetlod = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
@@ -305,8 +300,36 @@ function StatisticsManager:init()
 			melee = 0,
 			explosion = 0,
 			tied = 0
-		}		
-		
+		}
+	--Meme Faction
+	self._defaults.killed.meme_man = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}	
+	self._defaults.killed.meme_man_shield = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.dave = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.vetlod = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
 	--Weekend	
 	self._defaults.killed.weekend_dmr = {
 			count = 0,

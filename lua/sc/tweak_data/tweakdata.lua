@@ -25,10 +25,26 @@ tweak_data.ammo.ricochet.autohit = {
 	near_angle = 60
 }
 
+tweak_data.scene_pose_items.husk_ray = {
+	"primary"
+}
 tweak_data.scene_pose_items.husk_bessy = {
 	"primary"
 }
 
+tweak_data.scene_poses.weapon.siltstone = {
+	"husk_lmg",
+	"husk_rifle3",
+	"husk_mosconi"
+}
+tweak_data.scene_poses.weapon.g3 = {
+	"husk_m249",
+	"husk_mosconi",
+	"husk_rifle3"
+}
+if not BeardLib.Utils:FindMod("Visual Fixes") then
+	table.insert(tweak_data.scene_poses.weapon.g3, "husk_m95")
+end
 tweak_data.scene_poses.weapon.bessy = {
 	"husk_bessy",
 	required_pose = true
@@ -80,15 +96,16 @@ tweak_data.shotgun = {
 		hipfire_spread_mult = 0.25,
 	}
 	tweak_data.shotgun_light = {
-		hipfire_spread_mult = 1.35,
+		hipfire_spread_mult = 1.3,
 		--ads_multishot_spread_mult = 4,
 		moving_spread_mult = 1.5
 	}
 		tweak_data.shotgun_light_semi = {
-			hipfire_spread_mult = 0.7407
+			hipfire_spread_mult = 0.61538,
+			moving_spread_mult = 0.66667
 		}
 	tweak_data.shotgun_heavy = {
-		hipfire_spread_mult = 0.45,
+		hipfire_spread_mult = 0.55,
 		--ads_multishot_spread_mult = 0.9
 	}
 	tweak_data.shotgun_break = {
@@ -96,7 +113,7 @@ tweak_data.shotgun = {
 		--ads_multishot_spread_mult = 1
 	}
 		tweak_data.shotgun_smasher = {
-			shake_mul = 4
+			shake_mul = 3
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
@@ -127,7 +144,7 @@ tweak_data.smg = {
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 3,
 		hipfire_spread_mult = 3.3333,
-		shake_mul = 1.5
+		shake_mul = 1.4
 	}
 		tweak_data.lmg_moving = {
 			ads_moving_recoil = 0.8695652,
@@ -159,7 +176,7 @@ tweak_data.snp = {
 	ads_stationary_spread_mult = 0.2,
 	hipfire_spread_mult = 1.5,
 	hipfire_moving_spread_mult = 1.5,
-	shake_mul = 1.2
+	shake_mul = 1.1
 }
 	tweak_data.semi_snp = {
 		hipfire_spread_mult = 2.5,
@@ -167,18 +184,17 @@ tweak_data.snp = {
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
 		ads_move_speed_mult = 0.888889, --lowered to 0.4
-		shake_mul = 1.2
+		shake_mul = 1.1
 	}
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.05,
 			hipfire_moving_spread_mult = 0.1,
-			ads_moving_spread_mult = 0.1,
-			shake_mul = 0
+			ads_moving_spread_mult = 0.1
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
 		ads_move_speed_mult = 0.6,
-		shake_mul = 1.2
+		shake_mul = 1.1
 	}
 
 tweak_data.assault_rifle = {
@@ -219,6 +235,14 @@ tweak_data.akimbo = {
 tweak_data.cs_spread = {
 	hipfire_spread_mult = 0.1,
 	hipfire_moving_spread_mult = 50
+}
+
+tweak_data.no_shake = {
+	shake_mul = 0
+}
+
+tweak_data.zippy = {
+	spread_mult = 0
 }
 
 --Max concealment for guns.

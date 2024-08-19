@@ -1,20 +1,19 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_var_1 = math.rand(1)
-local chance_dozer_var_2 = math.rand(1)
-local chance_dozer_var_3 = math.rand(1)
-local chance_cloaker_var_1 = math.rand(1)
-local chance_cloaker_var_2 = math.rand(1)
+local chance_dozer_var_1 = math.random() 
+local chance_dozer_var_2 = math.random()
+local chance_cloaker_var_1 = math.random() 
+local chance_cloaker_var_2 = math.random() 
 local dozer_trigger_times = 2
 local enable_special_dozers = false
+local bravos_inbound = false
 local chopper_amount = 1
 local dozer_table = {
 	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
 	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 	dozer_skull = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3",
 	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
+	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc",
 	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
 	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
 }
@@ -25,22 +24,21 @@ local cloaker_table = {
 }
 
 	--enable the special dozers (the ones that replace unused cloaker spawns)
-	if difficulty_index >= 7 then
+	if difficulty >= 7 then
 		enable_special_dozers = true
 	end
 
-	if difficulty_index == 8 then
+	if difficulty == 8 then
 		dozer_trigger_times = 3
 	end	
-
-	--Setting up the dozer randomizer, this is cool
-	if difficulty_index == 4 or difficulty_index == 5 then
+	
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_1 < 0.50 then
 			dozer_1 = dozer_table.dozer_black
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_1 < 0.35 then
 			dozer_1 = dozer_table.dozer_skull
 		elseif chance_dozer_var_1 < 0.70 then
@@ -48,7 +46,7 @@ local cloaker_table = {
 		else
 			dozer_1 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var_1 < 0.25 then
 			dozer_1 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_1 < 0.50 then
@@ -60,13 +58,13 @@ local cloaker_table = {
 		end
 	end
 	
-	if difficulty_index == 4 or difficulty_index == 5 then
+	if difficulty == 4 or difficulty == 5 then
 		if chance_dozer_var_2 < 0.50 then
 			dozer_2 = dozer_table.dozer_black
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		if chance_dozer_var_2 < 0.35 then
 			dozer_2 = dozer_table.dozer_skull
 		elseif chance_dozer_var_2 < 0.70 then
@@ -74,7 +72,7 @@ local cloaker_table = {
 		else
 			dozer_2 = dozer_table.dozer_green
 		end
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		if chance_dozer_var_2 < 0.25 then
 			dozer_2 = dozer_table.dozer_zeal_black
 		elseif chance_dozer_var_2 < 0.50 then
@@ -86,34 +84,8 @@ local cloaker_table = {
 		end
 	end
 	
-	if difficulty_index == 4 or difficulty_index == 5 then
-		if chance_dozer_var_3 < 0.50 then
-			dozer_3 = dozer_table.dozer_black
-		else
-			dozer_3 = dozer_table.dozer_green
-		end
-	elseif difficulty_index == 6 or difficulty_index == 7 then
-		if chance_dozer_var_3 < 0.35 then
-			dozer_3 = dozer_table.dozer_skull
-		elseif chance_dozer_var_3 < 0.70 then
-			dozer_3 = dozer_table.dozer_black
-		else
-			dozer_3 = dozer_table.dozer_green
-		end
-	elseif difficulty_index == 8 then
-		if chance_dozer_var_3 < 0.25 then
-			dozer_3 = dozer_table.dozer_zeal_black
-		elseif chance_dozer_var_3 < 0.50 then
-			dozer_3 = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_var_3 < 0.75 then
-			dozer_3 = dozer_table.dozer_titan
-		else
-			dozer_3 = dozer_table.dozer_zeal_benelli
-		end
-	end
-	
 	--setting up the cloaker randomizer, this is also cool
-	if difficulty_index <= 7 then
+	if difficulty <= 7 then
 		clonker = cloaker_table.spooc
 		clonker_2 = cloaker_table.spooc
 	else
@@ -130,23 +102,31 @@ local cloaker_table = {
 	end
 	
 if pro_job then
-	if difficulty_index >= 7 then
+		bravos_inbound = true
+	if difficulty >= 7 then
 		chopper_amount = 2
 	end			
-	if difficulty_index <= 7 then
+	if difficulty <= 7 then
 		dozer_trigger_times = 3
 	else
 		dozer_trigger_times = 4
 	end	
 end
-	
+local access_fix = {
+	pre_func = function (self)
+			if not self._values.SO_access_original then
+				self._values.SO_access_original = self._values.SO_access
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
+			end
+		end
+}	
 return {
-	--dozer gets randomized
-	[100952] = {
-		values = {
-            enemy = dozer_1
-		}
+	--Call Bravos once Twitch arrives on PJs
+	--[[
+	[101983] = {
+		spawn_bravos = bravos_inbound
 	},
+	]]--
 	--Replace Heavy SWATs that spawn from the chopper with cloakers
 	[101571] = {
 		values = {
@@ -168,9 +148,9 @@ return {
 		}
 	},
 	--remove the line+trigger the loop here
-	[100941] = {
+	[100945] = {
 		on_executed = {
-			{id = 100945, remove = true},
+			{id = 100946, remove = true},
 			{id = 100965, delay = 180}
 		}
 	},
@@ -203,7 +183,7 @@ return {
 	--unused cloakers are replaced with dozers (have trigger times set up, moved their position, spawns on DW and above)
 	[101650] = {
 		values = {
-            enemy = dozer_2,
+            enemy = dozer_1,
 			enabled = enable_special_dozers,
 			position = Vector3(4569, 537, 1205.660),
 			trigger_times = dozer_trigger_times
@@ -214,7 +194,7 @@ return {
 	},
 	[101651] = {
 		values = {
-            enemy = dozer_3,
+            enemy = dozer_2,
 			enabled = enable_special_dozers,
 			position = Vector3(4579, 611, 1206.850),
 			trigger_times = dozer_trigger_times
@@ -224,46 +204,11 @@ return {
 		}
 	},
 	--allow fbi and spooc access to disable the power
-	[101039] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101593] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101594] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101595] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
-	[101600] = {
-		pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-	},
+	[101039] = access_fix,
+	[101593] = access_fix,
+	[101594] = access_fix,
+	[101595] = access_fix,
+	[101600] = access_fix,
 	-- Reinforce next to cars
 	[100941] = {
 		reinforce = {

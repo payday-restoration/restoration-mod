@@ -1,7 +1,6 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 
-if difficulty_index >= 7 then
+if difficulty >= 7 then
     Biker_Dozer = "units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"
     fem_biker_tank = "units/pd2_dlc_born/characters/ene_gang_biker_boss/ene_gang_biker_boss"
     biker_poker = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"

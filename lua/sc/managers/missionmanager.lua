@@ -58,6 +58,12 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 					if k == "chance" and element.chance_operation_set_chance then
 						element:chance_operation_set_chance(v)
 					end
+					--making sure that changing spawn_action values work (thanks miki)
+					if k == "spawn_action" then
+						local spawn_action = table.index_of(CopActionAct._act_redirects.enemy_spawn, v)
+
+						element._values.spawn_action = spawn_action ~= -1 and spawn_action or nil
+					end
 				end
 			end
 			
@@ -68,6 +74,13 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 				managers.groupai:state():set_wave_mode(data.hunt and "hunt" or "besiege")
 			end)
 		end	
+			
+		--Check if this element is supposed to call in Bravos
+		if data.spawn_bravos then
+			if restoration then
+				restoration.always_bravos = true
+			end
+		end
 			
 		-- Check if this element is supposed to trigger a point of no return
 		local is_pro_job = Global.game_settings and Global.game_settings.one_down
@@ -93,9 +106,11 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 			end	
 
 			if data.flashlight ~= nil then
-				Hooks:PostHook(element, "on_executed", "sh_on_executed_func_" .. element_id, function ()
+				local function set_flashlights()
 					managers.game_play_central:set_flashlights_on(data.flashlight)
-				end)
+				end
+				Hooks:PostHook(element, "on_executed", "sh_on_executed_flashlight_" .. element_id, set_flashlights)
+				Hooks:PostHook(element, "client_on_executed", "sh_client_on_executed_flashlight_" .. element_id, set_flashlights)
 			end
 			
 			if data.on_executed then

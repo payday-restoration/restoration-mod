@@ -1,4 +1,6 @@
 -- Update nav tracker if the player is driving a vehicle
+--[[
+--Might not be needed now since- 
 Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 	if self._vehicle == nil or not self._vehicle:is_active() or self._controller == nil then
 		return
@@ -29,6 +31,32 @@ Hooks:OverrideFunction(PlayerDriving, "update", function (self, t, dt)
 		self:_update_check_actions_passenger_no_shoot(t, dt, input)
 	end
 
-	self:_upd_nav_data()
+	self:_upd_nav_data() -- -This is in the vanilla function now
 	self:_upd_stance_switch_delay(t, dt)
 end)
+--]]
+
+--[[
+function PlayerDriving:_update_hud(t, dt)
+	if self._vehicle_ext.respawn_available then
+		if not self._respawn_hint_shown and self._seat.driving then
+			local string_macros = {
+				BTN_INTERACT = managers.localization:btn_macro("vehicle_exit") --Interact is the wrong key, or rather, this string hasn't been updated to account for the new keybind
+			}
+
+			local text = managers.localization:text("hud_int_press_respawn", string_macros)
+
+			self._respawn_hint_shown = true
+
+			managers.hud:show_hint({
+				time = 30,
+				text = text
+			})
+		end
+	elseif self._respawn_hint_shown then
+		managers.hud:stop_hint()
+
+		self._respawn_hint_shown = false
+	end
+end
+--]]

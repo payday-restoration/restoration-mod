@@ -256,6 +256,38 @@ function MutatorNoTitans:setup(data)
 		ignore_spawn_cap = true
 	}
 	
+	 --OMNIA Medics replace LPFs in Winters' squad
+    tweak_data.group_ai.unit_categories.omnia_LPF = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},
+			russia = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},
+			federales = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},		
+			lapd = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			},
+			fbi = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+			}
+		},
+		access = access_type_all,
+        ignore_spawn_cap = true
+    }
+	
 	--Titan Shotgunner replacing Heavy SWAT R870--
 	tweak_data.group_ai.unit_categories.CS_heavy_R870 = {
 		unit_types = {

@@ -1,45 +1,30 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local zeal_shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+local death_sentence = difficulty == 8
 local fbi_dudes = 3
 local chance_normal = 25
 local chance_hard = 50
 local chance_overkill = 65
 	
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 660	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 630	
 	else
 		ponr_value = 600		
 	end
 
-	if difficulty_index == 8 then
+	if death_sentence then
 		fbi_dudes = 4
 	end	
-	
-	
+		
 	--If we're in Pro Job, do this stuff below
 	if pro_job then
 		chance_normal = 45
-		chance_hard = 75
-		chance_overkill = 100
-	if difficulty_index == 7 or difficulty_index == 8 then
-		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+		chance_hard = 65
+		chance_overkill = 80
 	end
-	if difficulty_index <= 5 then
-		fbi_agent_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		fbi_agent_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
-		fbi_agent_3 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
-		titan_shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-	else
-		fbi_agent_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		fbi_agent_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
-		fbi_agent_3 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-end
 
 return {
 	--Pro Job PONR 
@@ -124,158 +109,61 @@ return {
             chance = chance_overkill
 		}
 	},
-	--those guys replace scripted ambush beat cops on DW-DS PJ
-	[100360] = {
+	--Use unhooked PDTH's leftover shields as 2 extra shields on DS
+	[101279] = {
 		values = {
-            enemy = titan_swat_1
+            enemy = zeal_shield,
+			enabled = death_sentence
 		}
 	},
-	[100361] = {
+	[101280] = {
 		values = {
-            enemy = titan_swat_1
+            enemy = zeal_shield,
+			enabled = death_sentence
 		}
 	},
-	[100363] = {
+	--and extra unhooked SWAT for DS too
+	[101281] = {
 		values = {
-            enemy = titan_swat_2
+			enabled = death_sentence
 		}
 	},
-	[100367] = {
+	[101282] = {
 		values = {
-            enemy = titan_swat_2
+			enabled = death_sentence
 		}
 	},
-	[100371] = {
+	[101283] = {
 		values = {
-            enemy = titan_swat_1
+			enabled = death_sentence
 		}
 	},
-	[100372] = {
-		values = {
-            enemy = titan_swat_1
+	[101276] = {
+		on_executed = {
+			{ id = 101279, delay = 0 },
+			{ id = 101280, delay = 0 },
+			{ id = 101281, delay = 0 },
+			{ id = 101282, delay = 0 },
+			{ id = 101283, delay = 0 }
 		}
 	},
-	[100373] = {
-		values = {
-            enemy = titan_swat_1
+	--Spawn the blockade near loot dropoff
+	[100771] = {
+		on_executed = {
+			{ id = 400020, delay = 0 }
 		}
 	},
-	[100374] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100375] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100376] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100377] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100378] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100379] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100392] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100395] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100404] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100432] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100433] = {
-		values = {
-            enemy = titan_swat_2
-		}
-	},
-	[100435] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100436] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	[100438] = {
-		values = {
-            enemy = titan_swat_1
-		}
-	},
-	--FBI Ready Teams on Overkill below, gets replaced with Titan squad on Mayhem+
-	[102841] = {
-		values = {
-            enemy = fbi_agent_1
-		}
-	},
-	[102842] = {
-		values = {
-            enemy = fbi_agent_2
-		}
-	},
-	[102843] = {
-		values = {
-            enemy = fbi_agent_3
-		}
-	},
-	[102844] = {
-		values = {
-            enemy = fbi_agent_2
-		}
-	},
-	--FBI Shields for Overkill below, gets replaced with Titan shields on Mayhem+
-	[102848] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102849] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102850] = {
-		values = {
-            enemy = titan_shield
-		}
-	},
-	[102851] = {
-		values = {
-            enemy = titan_shield
+	[101459] = {
+		on_executed = {
+			{ id = 400021, delay = 0 }
 		}
 	},
 	-- Delay SWAT response
+	--Spawn Ambush Snipers
 	[100327] = {
 		on_executed = {
-			{ id = 100768, delay = 30 }
+			{ id = 100768, delay = 30 },
+			{ id = 400019, delay = 0 }
 		}
 	}
 }

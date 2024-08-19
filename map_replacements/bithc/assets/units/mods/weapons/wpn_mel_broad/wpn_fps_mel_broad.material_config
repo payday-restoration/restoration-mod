@@ -1,0 +1,6 @@
+<materials version="3" group="melee_group">
+	<material name="mtr_broad" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad_df"/>
+		<bump_normal_texture file="units/mods/weapons/wpn_mel_broad/wpn_fps_mel_broad_nm"/>
+	</material>
+</materials>

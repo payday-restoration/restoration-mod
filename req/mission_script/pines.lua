@@ -1,22 +1,18 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	
-	if difficulty_index <= 5 then
-		ponr_value = 590	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
-		ponr_value = 560	
-	else
-		ponr_value = 500		
-	end
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local bravos_inbound = false
+
+       if pro_job then
+		bravos_inbound = true
+       end
 
 return {
-	--Pro Job PONR 
+	--Call in Bravos on PJs once Vlad's bro-in law gets to the chopper
+	--[[
 	[106282] = {
-		ponr = ponr_value
+	       spawn_bravos = bravos_inbound
 	},
-	[105069] = {
-		ponr = ponr_value
-	},
+	]]
 	--There's no cops in White Xmas, yes i'm serious
 	[100288] = {
 		values = {

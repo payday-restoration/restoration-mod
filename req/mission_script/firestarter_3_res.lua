@@ -1,33 +1,23 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
---Why not have a blackdozer in one of the choppers, yeah?
-local bulldozer_1 = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-local bulldozer_2 = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local teargaschopper = 1
 local teargas = 1
 local teargasmayhem = 2
 local vaultdoor = 66
 local snipers = 1
 	
-	--Same in DS
-	if difficulty_index == 8 then
-		bulldozer_1 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-		bulldozer_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
-	end
-	
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 720
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 660	
 	else
 		ponr_value = 600
 	end
 	
 	--More snipers cause 1 sniper on higher diffs is not enough
-	if difficulty_index == 6 or difficulty_index == 7 then
+	if difficulty == 6 or difficulty == 7 then
 		snipers = 2
-	elseif difficulty_index == 8 then
+	elseif difficulty == 8 then
 		snipers = 3
 	end
 	
@@ -38,8 +28,8 @@ if pro_job then
 	teargaschopper = 2
 	vaultdoor = 100
 	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
-	if difficulty_index == 8 then
-		bulldozer_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+	if difficulty == 8 then
+		bulldozer = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 		teargasmayhem = 4
@@ -91,6 +81,12 @@ return {
 	[105574] = {
 		values = {
 			player_1 = true
+		}
+	},
+	-- Enable max diff after 2 instead of 3 assault waves
+	[101307] = {
+		values = {
+			amount = 2
 		}
 	},
 	--Restores unused cloaker ambush spawns+Titan Cloaker on DSPJ
@@ -192,12 +188,7 @@ return {
 	--Heli spawns
 	[101785] = {
 		values = {
-			enemy = bulldozer_1
-		}
-	},
-	[101786] = {
-		values = {
-			enemy = bulldozer_2
+			enemy = bulldozer
 		}
 	},
 	[101432] = {

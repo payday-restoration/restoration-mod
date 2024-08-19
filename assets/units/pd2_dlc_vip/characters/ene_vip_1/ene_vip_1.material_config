@@ -14,9 +14,12 @@
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>
 	</material>
 
-	<material name="mtr_mouth" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+	<material name="mtr_mouth" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
 		<bump_normal_texture 	file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>
+		<self_illumination_texture 	file="units/pd2_dlc_vip/characters/shared_textures/vip_gear_il"/>
+			<variable type="scalar" name="il_bloom" value="1"/>
+        	<variable type="scalar" name="il_multiplier" value="sun"/>
 	</material>
 
 	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">

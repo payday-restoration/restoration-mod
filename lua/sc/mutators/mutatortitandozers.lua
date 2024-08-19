@@ -22,6 +22,7 @@ MutatorTitandozers.load_priority = -10
 function MutatorTitandozers:setup()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	local pro_job = Global.game_settings and Global.game_settings.one_down
 
 	if restoration then
 		restoration.force_halloween = true
@@ -46,6 +47,121 @@ function MutatorTitandozers:setup()
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	
 	--Replace Spring, not a pretty way to do it but it works
+	if pro_job then 
+	if difficulty_index <= 5 then
+		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
+			amount = 3,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	elseif difficulty_index == 6 then
+		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
+			amount = 5,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc_Normal",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}
+	elseif difficulty_index == 7 then
+		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
+			amount = 5,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}	
+	else
+		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
+			amount = 8,
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = tweak_data.group_ai._tactics.HVH_boss,
+					rank = 2
+				}					
+			}
+		}			
+	end
+else
 	if difficulty_index <= 5 then
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
 			amount = 1,
@@ -114,7 +230,7 @@ function MutatorTitandozers:setup()
 		}	
 	else
 		tweak_data.group_ai.enemy_spawn_groups.Cap_Spring = {
-			amount = 7,
+			amount = 5,
 			spawn = {
 				{
 					unit = "HVH_Boss",
@@ -135,13 +251,14 @@ function MutatorTitandozers:setup()
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = tweak_data.group_ai._tactics.HVH_boss,
 					rank = 2
 				}					
 			}
 		}			
+		end
 	end	
 end
 

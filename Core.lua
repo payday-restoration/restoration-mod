@@ -205,6 +205,7 @@ function restoration:Init()
 	restoration.disco_inferno = false
 	restoration.force_halloween = false
 	restoration.always_bravos = false
+	restoration.civ_death_diff_increase = true
 	
 	--Disable Bravos spawning on PONRs for these heists, usually for heists that have PONRs that go on/off. Also kills forced 1 diff and music changes on Pro Job
 	restoration.alternate_ponr_behavior = {
@@ -345,7 +346,10 @@ function restoration:Init()
 		"constantine_policestation_lvl", -- Precint Raid (Constantine Scores)
 		"constantine_murkyairport",		 -- Murky Airport (Consantine Scores) 
 		"hogar",-- The House Robbery
-		"icing"	--Road Rage	
+		"icing",	--Road Rage	
+		"gunw_lvl",  -- Gun Waashing 
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+		
 
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
@@ -383,12 +387,15 @@ function restoration:Init()
 		"physics_core",-- BOWRORKS Day 3
 		"cold_gold",-- Cold Gold 
 		"constantine_dwtd_lvl", -- Constantine Scores
-		"constantine_yacht_lvl" --  Constantine Scores
+		"constantine_yacht_lvl", --  Constantine Scores
+		"R&amp;B Bank" -- RNB Bank (Notoriety port)
+
 		
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists or heists with a *massive* amount of scripted spawns like Texas/Mexico arc heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
+		"haunted", --Safehouse Nightmare
 		"mia_2", --Hotline Miami 2	
 		"help", --Prison Nightmare		
 		"chill_combat",	--Safehouse Raid	
@@ -419,9 +426,6 @@ function restoration:Init()
 		"pines", --white xmas
 		"jolly", --aftershock
 		"born", --biker heist D1
-		"ukrainian_job", --uk joj
-		"ukrainian_job_res", --ditto
-		"sah", --shacklethorne
 		"chca", --black cat
 		"pent", --Mountain Master 
 		"lvl_friday", --Mallbank / Crashing Capitol
@@ -726,6 +730,12 @@ restoration.wepnames = {
 	"resmod_no_renames"
 }
 
+restoration.AdvMovMelee = {
+	"resmod_advmov_melee_on",
+	"resmod_advmov_melee_loud_only",
+	"resmod_advmov_melee_off"
+}
+
 -- Detect if ResMod is active to disable PDTH Challenges Standalone
 DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
 
@@ -920,14 +930,14 @@ function restoration:mission_script_add()
 				action_duration_max = 0,
 				align_rotation = opts.align_rotation or false,
 				pose = opts.pose or "none",
-				forced = true,
+				forced = opts.forced or false,
 				base_chance = 1,
 				interaction_voice = "none",
 				SO_access = opts.SO_access or "512", -- default to sniper
 				chance_inc = 0,
-				interrupt_dmg = 1,
+				interrupt_dmg = opts.interrupt_dmg or 1,
 				interrupt_objective = false,
-				on_executed = {},
+				on_executed = opts.on_executed or {},
 				interrupt_dis = opts.interrupt_dis or 1,
 				patrol_path = "none",
 			},
@@ -962,6 +972,230 @@ function restoration:mission_script_add()
 				instigator_name = "",
 				use_disabled_shapes = false,
 				substitute_object = "",
+			},
+		}
+	end
+	
+	function restoration:gen_dummytrigger(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementEnemyDummyTrigger",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				event = opts.event or "spawn"
+			},
+		}
+	end
+	
+	function restoration:gen_missionscript(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "MissionScriptElement",
+			module = "CoreMissionScriptElement",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				enabled = opts.enabled or false
+			},
+		}
+	end
+	
+	function restoration:gen_toggleelement(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementToggle",
+			module = "CoreElementToggle",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				set_trigger_times = opts.set_trigger_times or -1,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				enabled = opts.enabled or false,
+				toggle = opts.toggle or "on"
+			},
+		}
+	end
+	
+	function restoration:gen_pointofnoreturn(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementPointOfNoReturn",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 1,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				tweak_id = "noreturn",
+				time_easy = opts.time_easy or 0,
+				time_normal = opts.time_normal or 0,
+				time_hard = opts.time_hard or 0,
+				time_overkill = opts.time_overkill or 0,
+				time_overkill_145 = opts.time_overkill_145 or 0,
+				time_easy_wish = opts.time_easy_wish or 0,
+				time_overkill_290 = opts.time_overkill_290 or 0,
+				time_sm_wish = opts.time_sm_wish or 0,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false
+			},
+		}
+	end
+	
+	function restoration:gen_dialogue(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementDialogue",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				dialogue = opts.dialogue or "none",
+				enabled = true,
+				can_not_be_muted = opts.can_not_be_muted or false,
+				execute_on_executed_when_done = opts.execute_on_executed_when_done or false,
+				play_on_player_instigator_only = opts.play_on_player_instigator_only or false,
+				use_instigator = opts.use_instigator or false,
+				use_position = opts.use_position or false
+			},
+		}
+	end
+	
+	function restoration:gen_preferedadd(id, name, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementEnemyPreferedAdd",
+			values = {
+				execute_on_startup = false,
+				base_delay = opts.base_delay or 0,
+				trigger_times = opts.trigger_times or 0,
+				spawn_groups = opts.spawn_groups or {},
+				on_executed = opts.on_executed or {},
+				enabled = true
+			},
+		}
+	end
+	
+	function restoration:gen_smokeandnades(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSmokeGrenade",
+			values = {
+				execute_on_startup = false,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				base_delay = opts.base_delay or 0,
+				duration = opts.duration or 0,
+				effect_type = opts.effect_type or "smoke",
+				ignore_control = true,
+				immediate = true,
+				on_executed = opts.on_executed or {},
+				trigger_times = opts.trigger_times or 0
+			},
+		}
+	end
+	
+	function restoration:gen_dynamicfilter(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementFilter",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				mode_assault = true,
+				mode_control = true,
+				difficulty_easy = opts.difficulty_easy or false,
+				difficulty_normal = opts.difficulty_normal or false,
+				difficulty_hard = opts.difficulty_hard or false,
+				difficulty_overkill = opts.difficulty_overkill or false,
+				difficulty_overkill_145 = opts.difficulty_overkill_145 or false,
+				difficulty_easy_wish = opts.difficulty_easy_wish or false,
+				difficulty_overkill_290 = opts.difficulty_overkill_290 or false,
+				difficulty_sm_wish = opts.difficulty_sm_wish or false,
+				player_1 = opts.player_1 or false,
+				player_2 = opts.player_2 or false,
+				player_3 = opts.player_3 or false,
+				player_4 = opts.player_4 or false,
+				platform_pc_only = false,
+				platform_win32 = true,
+				--resmod for consoles when?
+				platform_ps3 = false,
+				platform_ps4_only = false,
+				platform_xb1_only = false,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false
+			},
+		}
+	end
+	
+	function restoration:gen_sotrigger(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementSpecialObjectiveTrigger",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				elements = opts.elements or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true,
+				event = opts.event or "complete"
+			},
+		}
+	end
+	
+	function restoration:objecteditor(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementUnitSequence",
+			module = "CoreElementUnitSequence",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				trigger_list = opts.trigger_list or {},
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = true
 			},
 		}
 	end

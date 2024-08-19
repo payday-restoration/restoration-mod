@@ -1,0 +1,224 @@
+<effect force_synch="false">
+	<atom name="gas_mask_smoke_puff_rising" min_size="30" max_size="30" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="world" min="-0.30000001192093 -0.80000001192093 -0.10000000149012" max="0.89999997615814 0.5 0.40000000596046"/>
+            <boxrandomvelocity relative="world" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomsize min="6 6" max="6 6"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomanglevelocity min="0" max="0"/>
+        </initializerstack>
+        <simulatorstack>
+            <teleporter name="" trigger_teleport="frequency" frequency_input="keys" min_age="2" teleport_cap="1" current_position="false" channel="world" normal_variation="0" teleport_event="false" positioner="box">
+                <frequency_keys loop="true">
+                    <key t="0" v="0"/>
+                    <key t="0.39657855033875" v="1"/>
+                    <key t="0.772913813591" v="0"/>
+                    <key t="2" v="0"/>
+                </frequency_keys>
+                <box min="0 -15 20" max="0 -15 20" min_normal="0 -1 0" max_normal="0 0 1"/>
+                <normal min_velocity="9" max_velocity="10"/>
+            </teleporter>
+            <velocityintegrator channel="world"/>
+            <ager/>
+            <constantacceleration relative="world" acceleration="0 0 2"/>
+            <anglevelocityintegrator/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/smoke/e_smoke_01" intensity="reddot" billboard_type="camera_facing" rotation_channel="rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="255 84 84" opacity_input="keys" rotation_input="keys" rotation_axis="0 0 0" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.40000000596046 0.40000000596046"/>
+                    <key t="1.2564539909363" v="5.5 5.5"/>
+                    <key t="2.7280550003052" v="7.3000001907349 7.3000001907349"/>
+                    <key t="4.1480212211609" v="10 10"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.066185317933559" v="250"/>
+                    <key t="1.04007219076157" v="240"/>
+                    <key t="1.5343202352524" v="0"/>
+                </opacity_keys>
+                <rotation_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="4.3943471908569" v="2"/>
+                </rotation_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+	<atom name="rising_smoke_left" min_size="40" max_size="40" lifetime="-1" random_start_time="false" start_time="0" preroll="5" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="world" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomsize min="3.5 3.5" max="3.5 3.5"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="5" teleport_cap="3" current_position="false" channel="local" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="-4 7 12" max="-4 7 12" min_normal="-3 -1 -1" max_normal="-2.5 -0.60000002384186 -0.60000002384186"/>
+                <normal min_velocity="2" max_velocity="2.5"/>
+                <random_rotation min="0 0 0" max="0 0 0" min_rot="0" max_rot="365"/>
+            </teleporter>
+            <worldtransform transform_rotations="false"/>
+            <velocityintegrator channel="local"/>
+            <constantacceleration relative="world" acceleration="0 1.6 0"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/opacity_atlas_df" intensity="monitor" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="0.5 0.25" uv_offset_input="constant" uv_offset="0 0.565">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0 0"/>
+                    <key t="0.13937282562256" v="1 1"/>
+                    <key t="1.5331009626389" v="1.2000000476837 1.2000000476837"/>
+                    <key t="3.3571429252625" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="94 34 34"/>
+                    <key t="3.2702236175537" v="171 58 58"/>
+                    <key t="9.9827880859375" v="255 158 158"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.11324041336775" v="250"/>
+                    <key t="1.1759581565857" v="200"/>
+                    <key t="2.752613067627" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="1"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+	<atom name="rising_smoke_right" min_size="40" max_size="40" lifetime="-1" random_start_time="false" start_time="0" preroll="5" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="world" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomsize min="3.5 3.5" max="3.5 3.5"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="5" teleport_cap="3" current_position="false" channel="local" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="4 7 12" max="4 7 12" min_normal="2.5 0.60000002384186 0.60000002384186" max_normal="3 1 1"/>
+                <normal min_velocity="2" max_velocity="2.5"/>
+                <random_rotation min="0 0 0" max="0 0 0" min_rot="0" max_rot="365"/>
+            </teleporter>
+            <worldtransform transform_rotations="false"/>
+            <velocityintegrator channel="local"/>
+            <constantacceleration relative="world" acceleration="0 1.6 0"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/opacity_atlas_df" intensity="monitor" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="0.5 0.25" uv_offset_input="constant" uv_offset="0 0.565">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0 0"/>
+                    <key t="0.13937282562256" v="1 1"/>
+                    <key t="1.5331009626389" v="1.2000000476837 1.2000000476837"/>
+                    <key t="3.3571429252625" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="94 34 34"/>
+                    <key t="3.2702236175537" v="171 58 58"/>
+                    <key t="9.9827880859375" v="255 158 158"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.11324041336775" v="250"/>
+                    <key t="1.1759581565857" v="200"/>
+                    <key t="2.752613067627" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="1"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="eye_left" min_size="40" max_size="40" lifetime="-1" random_start_time="false" start_time="0" preroll="5" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="world" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomsize min="2 2" max="2 2"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="18" teleport_cap="3" current_position="false" channel="local" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="-4 7 12" max="-4 7 12" min_normal="0 0 0" max_normal="0 0 0"/>
+                <normal min_velocity="0" max_velocity="0"/>
+            </teleporter>
+            <worldtransform transform_rotations="false"/>
+            <velocityintegrator channel="local"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/opacity_atlas_df" intensity="reddot" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="0.5 0.25" uv_offset_input="constant" uv_offset="0 0.565">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.40000000596046 0.40000000596046"/>
+                    <key t="3.4423408508301" v="2 2"/>
+                    <key t="6.3166952133179" v="3 3"/>
+                    <key t="10" v="4 4"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="125 45 45"/>
+                    <key t="3.2404181957245" v="204 29 29"/>
+                    <key t="10" v="214 156 156"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.24489796161652" v="200"/>
+                    <key t="2.2996516227722" v="70"/>
+                    <key t="5.1393728256226" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="1"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+	<atom name="eye_right" min_size="40" max_size="40" lifetime="-1" random_start_time="false" start_time="0" preroll="5" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="update" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="world" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomsize min="2 2" max="2 2"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+        </initializerstack>
+        <simulatorstack>
+            <ager/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="18" teleport_cap="3" current_position="false" channel="local" normal_variation="0" teleport_event="false" positioner="box">
+                <box min="4 7 12" max="4 7 12" min_normal="0 0 0" max_normal="0 0 0"/>
+                <normal min_velocity="0" max_velocity="0"/>
+            </teleporter>
+            <worldtransform transform_rotations="false"/>
+            <velocityintegrator channel="local"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/opacity_atlas_df" intensity="reddot" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_glow" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="0.5 0.25" uv_offset_input="constant" uv_offset="0 0.565">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.40000000596046 0.40000000596046"/>
+                    <key t="3.4423408508301" v="2 2"/>
+                    <key t="6.3166952133179" v="3 3"/>
+                    <key t="10" v="4 4"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="125 45 45"/>
+                    <key t="3.2404181957245" v="204 29 29"/>
+                    <key t="10" v="214 156 156"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.24489796161652" v="200"/>
+                    <key t="2.2996516227722" v="70"/>
+                    <key t="5.1393728256226" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="1"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

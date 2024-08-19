@@ -1,27 +1,32 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-	
-	if difficulty_index <= 5 then
-		ponr_value = 300	
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local hunt_projob = false
+		
+	if difficulty <= 6 then
 		ponr_value = 240	
 	else
 		ponr_value = 180		
 	end
+	
+	if pro_job then
+		hunt_projob = true
+	end
+	
+local ponr = {
+	ponr = ponr_value
+}	
 
 return {
 	--Pro Job PONR 
-	[101761] = {
-		ponr = ponr_value
-	},
-	[101836] = {
-		ponr = ponr_value
-	},
-	[102031] = {
-		ponr = ponr_value
-	},
-	[102033] = {
-		ponr = ponr_value
+	[101761] = ponr,
+	[101836] = ponr,
+	[102031] = ponr,
+	[102033] = ponr,
+	--Endless Assault for Pro Job
+	[104124] = {
+		values = {
+			enabled = hunt_projob
+		}
 	},
 	--Give glass cutter to all players
 	[100007] = {

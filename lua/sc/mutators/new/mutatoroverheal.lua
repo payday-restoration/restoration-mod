@@ -21,6 +21,13 @@ function MutatorOverheal:register_values(mutator_manager)
 	self:register_value("overheal_mult_override", 1.5 , "omo")
 	self:register_value("captain_overheal_mult_override", false, "como")
 end
+-- Modify_value do nothing ???
+--[[function MutatorOverheal:modify_value(id, value)
+	if id == "CopBase:ExpandLPF" then
+		return true
+	end
+	return value
+end--]]
 
 function MutatorOverheal:setup(data)
 	local char_tweak = tweak_data.character
@@ -52,6 +59,7 @@ function MutatorOverheal:setup(data)
 	
 	char_tweak.security.overheal_mult = new_overheal_mult
 	char_tweak.gensec.overheal_mult = new_overheal_mult
+	char_tweak.gensec_guard.overheal_mult = new_overheal_mult
 	char_tweak.fbi_vet.overheal_mult = new_overheal_mult
 	char_tweak.fbi_vet_boss.overheal_mult = new_overheal_mult
 	char_tweak.meme_man.overheal_mult = new_overheal_mult
@@ -91,7 +99,7 @@ function MutatorOverheal:setup(data)
 	char_tweak.tank_mini.overheal_mult = new_overheal_mult
 	
 	if overheal_captains then -- If player wanna buff captains too
-	-- Doc is LPF but now he can buff everyone. Have fun :^)
+	-- Doc is LPF but now he can buff his crew. Have fun :^)
 	char_tweak.summers.overheal_mult = new_overheal_mult
 	char_tweak.summers.no_omnia_heal = false
 	char_tweak.taser_summers.overheal_mult = new_overheal_mult

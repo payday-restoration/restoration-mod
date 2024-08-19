@@ -233,6 +233,12 @@ Hooks:PostHook(CopDamage, "init", "res_init", function(self, unit)
 	end	
 end)
 
+Hooks:PostHook(CopDamage, "convert_to_criminal", "convert_to_criminal_mutator_no_outlines", function(self, health_multiplier)
+	if managers.mutators:modify_value("CopDamage:DisableEnemyOutlines", false) then
+		self._unit:base():converted_enemy_effect(true)
+	end
+end)
+
 function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
 	local my_unit = self._unit
@@ -567,6 +573,13 @@ function CopDamage:damage_fire(attack_data)
 			if attacker_unit and alive(attacker_unit) and managers.groupai:state():is_unit_team_AI(attacker_unit) then
 				self:_AI_comment_death(attacker_unit, self._unit)
 			end
+		end
+		
+		local weapon_unit = attack_data.weapon_unit
+		local weapon_id = alive(weapon_unit) and weapon_unit:base().name_id
+
+		if self._unit:base()._tweak_table == "summers" and weapon_id == "flamethrower_mk2" then
+			managers.challenges_res:set_flag("summers_test")
 		end
 	end
 
@@ -1241,6 +1254,13 @@ function CopDamage:damage_bullet(attack_data)
 			if is_civilian then
 				managers.money:civilian_killed()
 			end
+			
+			local weapon_unit = attack_data.weapon_unit
+			local weapon_id = alive(weapon_unit) and weapon_unit:base().name_id
+
+			if self._unit:base()._tweak_table == "spring" and (weapon_id == "m134" or weapon_id == "shuno") then
+				managers.challenges_res:set_flag("spring_test")
+			end
 		elseif attack_data.attacker_unit:base().sentry_gun then
 			if Network:is_server() then
 				local server_info = weap_base:server_information()
@@ -1722,6 +1742,10 @@ function CopDamage:damage_melee(attack_data)
 			if self._unit:base()._tweak_table == "autumn" and attack_data.name_id and attack_data.name_id == "fists" then
 				managers.challenges_res:set_flag("melee_test")
 			end
+			
+			if self._unit:base()._tweak_table == "phalanx_vip" and attack_data.name_id and (attack_data.name_id == "wing" or attack_data.name_id == "switchblade") then
+				managers.challenges_res:set_flag("winters_test")
+			end
 
 			if is_civilian then
 				managers.money:civilian_killed()
@@ -1940,10 +1964,20 @@ function CopDamage:die(attack_data)
 	if self._unit:base() then
 		self._unit:base():disable_lpf_buff(true)
 		self._unit:base():disable_asu_laser(true)
+		self._unit:base():converted_enemy_effect(false)
 	end
 
 	if self._unit:base()._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("kill_spook_lights")
+	end
+	
+	if self._unit:base()._tweak_table == "phalanx_vip" or self._unit:base()._tweak_table == "phalanx_vip_break" then
+		self._unit:damage():run_sequence_simple("kill_smoke_winters")
+	end
+	
+	if self._unit:base()._tweak_table == "summers" or self._unit:base()._tweak_table == "headless_hatman"  then
+		self._unit:damage():run_sequence_simple("kill_feet_fire_summers")
+		self._unit:base():update_summers_dr_effect(true) -- Kill Summers DR effect
 	end
 
 	if self._char_tweak.failure_on_death then
@@ -1969,6 +2003,7 @@ function CopDamage:die(attack_data)
 	
 	if self._char_tweak.reduce_summers_dr_on_death then
 		managers.groupai:state():_reduce_summers_dr(0.15)
+		self._unit:base():find_summers()
 	end	
 end
 

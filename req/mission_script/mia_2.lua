@@ -1,21 +1,8 @@
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer_left = math.rand(1)
-local chance_dozer_middle = math.rand(1)
-local chance_dozer_right = math.rand(1)
-local chance_titan_swat_left = math.rand(1)
-local chance_titan_swat_right = math.rand(1)
-local chance_elite = math.rand(1)
-local dozer_table = {
-	dozer_green = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
-	dozer_black = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-	dozer_skull = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc",
-	dozer_zeal_benelli = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-	dozer_zeal_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc",
-	dozer_zeal_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc",
-	dozer_titan = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
-}
+local chance_titan_swat_left = math.random()
+local chance_titan_swat_right = math.random()
+local chance_elite = math.random()
 local titan_table = { 
 	titan_swat_rifle = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 	titan_swat_shotgun = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun",
@@ -26,9 +13,9 @@ local titan_table = {
 	invis_woman = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 }
 
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		ponr_value = 330
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		ponr_value = 300
 	else
 		ponr_value = 240		
@@ -36,13 +23,13 @@ local titan_table = {
     
 	
 	--Setting up scirpted SWAT spawns
-	if difficulty_index <= 4 then
+	if difficulty <= 4 then
 		shield_unit = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
 		shotgun_unit = "units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
-	elseif difficulty_index == 5 then
+	elseif difficulty == 5 then
 		shield_unit = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
 		shotgun_unit = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"		
-	elseif difficulty_index == 6 or difficulty_index == 7 then
+	elseif difficulty == 6 or difficulty == 7 then
 		shield_unit = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec"
 		shotgun_unit = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"
 	else
@@ -51,7 +38,7 @@ local titan_table = {
 	end
 	
 	--Titan Shields replace usual scripted shields on OVK+ with PJ
-	if pro_job and difficulty_index >= 5 then	
+	if pro_job and difficulty >= 5 then	
 		shield_unit = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		--2 scripted SWAT units will be replaced by titan SWAT
 		if chance_titan_swat_left < 0.5 then
@@ -68,10 +55,10 @@ local titan_table = {
 	
 	
 	--Random titan unit for Mayhem+. Otherwise - vet cop
-	if difficulty_index <= 5 then
+	if difficulty <= 5 then
 		random_elite_unit = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
 	else
-		if difficulty_index ~= 8 then
+		if difficulty ~= 8 then
 			if chance_elite < 0.25 then
 				random_elite_unit = titan_table.titan_hrt
 			elseif chance_elite < 0.50 then
@@ -96,123 +83,48 @@ local titan_table = {
 		end
 	end
 	
-	--Setting up random dozers for DW+
-	if difficulty_index == 6 or difficulty_index == 7 then
-		if chance_dozer_left < 0.35 then
-			tank_replacement_left = dozer_table.dozer_skull
-		elseif chance_dozer_left < 0.70 then
-			tank_replacement_left = dozer_table.dozer_black
-		else
-			tank_replacement_left = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = dozer_table.dozer_skull
-		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = dozer_table.dozer_black
-		else
-			tank_replacement_middle = dozer_table.dozer_green
-		end
-		
-		if chance_dozer_right < 0.25 then
-			tank_replacement_right = dozer_table.dozer_skull
-		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = dozer_table.dozer_black
-		else
-			tank_replacement_right = dozer_table.dozer_green
-		end
-	end
-	
-	if difficulty_index == 8 then
-		if chance_dozer_left < 0.25 then
-			tank_replacement_left = dozer_table.dozer_zeal_black
-		elseif chance_dozer_left < 0.50 then
-			tank_replacement_left = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_left < 0.75 then
-			tank_replacement_left = dozer_table.dozer_titan
-		else
-			tank_replacement_left = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_middle < 0.25 then
-			tank_replacement_middle = dozer_table.dozer_zeal_black
-		elseif chance_dozer_middle < 0.50 then
-			tank_replacement_middle = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_middle < 0.75 then
-			tank_replacement_middle = dozer_table.dozer_titan
-		else
-			tank_replacement_middle = dozer_table.dozer_zeal_benelli
-		end
-		
-		if chance_dozer_right < 0.25 then
-			tank_replacement_right = dozer_table.dozer_zeal_black
-		elseif chance_dozer_right < 0.50 then
-			tank_replacement_right = dozer_table.dozer_zeal_skull
-		elseif chance_dozer_right < 0.75 then
-			tank_replacement_right = dozer_table.dozer_titan
-		else
-			tank_replacement_right = dozer_table.dozer_zeal_benelli
-		end
-	end
-	
-	
+local sniper_trigger_times = {
+	values = {
+        trigger_times = 0
+	}
+}
+local law_team = {
+	values = {
+		team = "law1"
+	}
+}
+local shield = {
+	values = {
+        enemy = shield_unit
+	}
+}
+local shotgun = {
+	values = {
+        enemy = shotgun_unit
+	}
+}	
+local no_spawn_instigator_ids = {
+	values = {
+		spawn_instigator_ids = false
+	}
+}	
 return {
 	--Pro Job PONR 
 	[100220] = {
 		ponr = ponr_value
 	},
 	--Snipers that look on Panic Room zone now spawn more than 1 time
-	[101128] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101121] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101520] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101113] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101140] = {
-		values = {
-			trigger_times = 0
-		}
-	},
-	[101136] = {
-		values = {
-			trigger_times = 0
-		}
-	},
+	[101128] = sniper_trigger_times,
+	[101121] = sniper_trigger_times,
+	[101520] = sniper_trigger_times,
+	[101113] = sniper_trigger_times,
+	[101140] = sniper_trigger_times,
+	[101136] = sniper_trigger_times,
 	--SWAT units replacement
-	[101164] = {
-		values = {
-			enemy = shield_unit
-		}
-	},
-	[101151] = {
-		values = {
-			enemy = shield_unit
-		}
-	},
-	[101156] = {
-		values = {
-			enemy = shotgun_unit
-		}
-	},
-	[101160] = {
-		values = {
-			enemy = shotgun_unit
-		}
-	},
+	[101164] = shield,
+	[101151] = shield,
+	[101156] = shotgun,
+	[101160] = shotgun,
 	[101158] = {
 		values = {
 			enemy = titan_swat_left
@@ -236,52 +148,12 @@ return {
 	},
 	--Mobsters are friendly to cops (in Commissar panic room section)
 	--P.S. The Commissar now friendly to cops either but this is an instance
-	[101505] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101497] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101496] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[101506] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[100190] = {
-		values = {
-			team = "law1"
-		}
-	},
-	[100191] = {
-		values = {
-			team = "law1"
-		}
-	},
-	--Dozer replacements
-	[101133] = {
-		values = {
-			enemy = tank_replacement_left
-		}
-	},
-	[101137] = {
-		values = {
-			enemy = tank_replacement_middle
-		}
-	},
-	[101141] = {
-		values = {
-			enemy = tank_replacement_right
-		}
-	},
+	[101505] = law_team,
+	[101497] = law_team,
+	[101496] = law_team,
+	[101506] = law_team,
+	[100190] = law_team,
+	[100191] = law_team,
 	--Should decrease sniper spawn intensity (I hope)
 	[101202] = {
 		values = {
@@ -300,5 +172,10 @@ return {
 	-- Boss dead
 	[100533] = {
 		difficulty = 1
-	}
+	},
+	-- Fix nav links
+	[101433] = no_spawn_instigator_ids,
+	[101434] = no_spawn_instigator_ids,
+	[101435] = no_spawn_instigator_ids,
+	[101562] = no_spawn_instigator_ids
 }

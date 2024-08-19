@@ -1,0 +1,185 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/thrd_vehicle_bike_2" orientation_object="rp_fps_vehicle_bike_2" />
+	<sequence_manager file="units/pd2_dlc_born/vehicles/fps_vehicle_bike_2/fps_vehicle_bike_2" />
+	<animations>
+		<animation_group name="ag_speedometer" enabled="false">
+			<object name="a_speedometer" />
+		</animation_group>
+		<animation_group name="ag_rpm_meter" enabled="false">
+			<object name="a_rpm_meter" />
+		</animation_group>
+		<animation_group name="anim_steering_wheel_left" enabled="false">
+			<object name="anim_steering_wheel_left" />
+		</animation_group>
+		<animation_group name="anim_steering_wheel_right" enabled="false">
+			<object name="anim_steering_wheel_right" />
+		</animation_group>
+		<animation_group name="anim_tilt_left" enabled="false">
+			<object name="anim_tilt_left" />
+		</animation_group>
+		<animation_group name="anim_tilt_right" enabled="false">
+			<object name="anim_tilt_right" />
+		</animation_group>
+		<animation_group name="anim_stand" enabled="false">
+				<object name="anim_stand" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_chassis" enabled="false" template="vehicle" collision_script_filter="1" collision_script_quiet_time="0.5" collision_script_tag="vehicle_collision" give_standing_velocity="false">
+			<object name="anim_body" />
+			<object name="c_body" collision_type="capsule" padding="-0" />
+		</body>
+<!-- /// Static //////////////////////////////////////////////////////////// -->
+		<body name="body_static_vehicle" enabled="true" template="animated" >
+			<object name="c_body" collision_type="capsule" padding="-0" />
+		</body>
+	</bodies>
+
+	<effects>
+		<effect_spawner 
+			name="es_smoke_med" 
+			enabled="false" 
+			object="v_repair_engine" 
+			effect="effects/payday2/particles/vehicle/vehicle_damage_small_smoke" 
+		/>
+		<effect_spawner 
+			name="es_smoke_full" 
+			enabled="false" 
+			object="v_repair_engine" 
+			effect="effects/payday2/particles/vehicle/vehicle_damage_big_smoke" 
+		/>
+	</effects>
+
+	<decal_surfaces default_material="metal_chassis">
+		<decal_mesh name="dm_rubber_steering"	enabled="true" material="rubber" />
+		<decal_mesh name="dm_leather_body"		enabled="true" material="cloth" />
+		<decal_mesh name="dm_metal_body"		enabled="true" material="steel" />
+		<decal_mesh name="dm_glass_steering"	enabled="true" material="glass" />
+		<decal_mesh name="dm_plastic_steering"	enabled="true" material="plastic" />
+		<decal_mesh name="dm_glass_body"		enabled="true" material="glass" />
+		<decal_mesh name="dm_metal_steering"	enabled="true" material="steel" />
+		<decal_mesh name="dm_rubber_tire_rear"	enabled="true" material="rubber" />
+		<decal_mesh name="dm_rubber_tire_front"	enabled="true" material="rubber" />
+		<decal_mesh name="dm_plastic_body"		enabled="true" material="plastic" />
+	</decal_surfaces>
+	<graphics>
+		<graphic_group name="grp_veh_common" enabled="true">
+			<lod_object name="lod_body">
+				<object name="g_body_lod0" enabled="true"  max_distance="500" />
+				<object name="g_body_lod1" enabled="true"  max_distance="1000" />
+				<object name="g_body_lod2" enabled="true" />
+			</lod_object>
+
+			<lod_object name="lod_steering">
+				<object name="g_steering_wheel_lod0" enabled="true"  max_distance="500" />
+				<object name="g_steering_wheel_lod1" enabled="true"  max_distance="1000" />
+				<object name="g_steering_wheel_lod2" enabled="true" />
+			</lod_object>
+
+			<lod_object name="lod_tire_front">
+				<object name="g_tire_front_lod0" enabled="true"  max_distance="500" />
+				<object name="g_tire_front_lod1" enabled="true"  max_distance="1000" />
+				<object name="g_tire_front_lod2" enabled="true" />
+			</lod_object>
+
+			<lod_object name="lod_tire_rear">
+				<object name="g_tire_rear_lod0" enabled="true"  max_distance="500" />
+				<object name="g_tire_rear_lod1" enabled="true"  max_distance="1000" />
+				<object name="g_tire_rear_lod2" enabled="true" />
+			</lod_object>
+
+			<object name="g_stand"					enabled="true"/>
+			<object name="g_speed_needle"			enabled="true"/>
+
+			<object name="g_lights_rear_effect"		enabled="false" />
+			<object name="g_lights_front_effect"	enabled="false" />
+			
+			<object name="s_steering_wheel"			enabled="true" shadow_caster="true" />
+			<object name="s_body"					enabled="true" shadow_caster="true" />
+			<object name="s_tire_front"				enabled="true" shadow_caster="true" />
+			<object name="s_tire_rear"				enabled="true" shadow_caster="true" />
+		</graphic_group>
+
+		<graphic_group name="grp_icon_entry" enabled="true">
+			<lod_object name="lod_icon_drive">
+				<object name="g_icon_door_drive_lod0" enabled="true"  max_distance="450" />
+				<object name="g_icon_door_drive_lod1" enabled="true" />
+			</lod_object>
+			<!-- <lod_object name="lod_icon_front_r_pass">
+				<object name="g_icon_door_front_r_pass_lod0" enabled="true"  max_distance="450" />
+				<object name="g_icon_door_front_r_pass_lod1" enabled="true" />
+			</lod_object> -->
+		</graphic_group>
+
+		<!-- <graphic_group name="grp_icon_loot" enabled="true">
+			<lod_object name="lod_icon_loot">
+				<object name="g_icon_loot_lod0" enabled="true"  max_distance="450" />
+				<object name="g_icon_loot_lod1" enabled="true" />
+			</lod_object>
+		</graphic_group> -->
+
+		<graphic_group name="grp_icon_repair" enabled="true">
+			<lod_object name="lod_icon_repair">
+				<object name="g_icon_repair_lod0" enabled="true"  max_distance="450" />
+				<object name="g_icon_repair_lod1" enabled="true" />
+			</lod_object>
+		</graphic_group>
+	</graphics>
+
+	<lights>
+		<light name="light_back"
+									enabled="false"
+									editable="false"
+									type="omni|specular"
+									multiplier="neonsign"
+									far_range="150"
+									falloff="1.0"
+		/>
+		<light name="light_head_projection_01"
+									enabled="false"
+									editable="true"
+									type="spot|specular"
+									multiplier="neonsign"
+									far_range="600"
+									falloff="10"
+									projection="true"
+		/>
+
+		<light name="light_head"
+									enabled="false"
+									editable="true"
+									type="omni|specular"
+									multiplier="neonsign"
+									far_range="20"
+									falloff="1.0"
+		/>
+	</lights>
+
+	<vehicle name="vhc_vehicle">
+		<!-- IMPORTANT: suspension supported_mass must be 1/4 of chassis mass, if not vehicle behavior is undefined -->
+		<!-- IMPORTANT: downforce should not go above 20, or it will compress the suspension and make the car unable to handle bumps -->
+		<!-- IMPORTANT: use inertia multipliers with care -->
+		<chassis body="body_chassis" mass="1500" center_of_mass_offset="0.0 0.0 0.0" inertia_multiplier="2.0 1.1 7.0" downforce_strength="15.0" drag_strength="4.0"/>
+		<wheels>
+			<wheel spin_object="anim_tire_front_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.9" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_front_left"   turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.9" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_rear_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1500" />
+			<wheel spin_object="anim_tire_rear_left"   	turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="0.4" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="1500" />
+		</wheels>
+		<suspension max_compression="0.05" max_extension="0.05" spring_strength="55000" damper_rate="5000" supported_mass="375" />
+		<gearbox switch_time="0.1" ratio_multiplier="4.0">
+			<ratios>
+				<ratio value="-2.0" />
+				<ratio value="0.0" />
+				<ratio value="3.75" />
+				<ratio value="2.50" />
+				<ratio value="1.90" />
+				<ratio value="1.65" />
+				<ratio value="1.25" />
+				<ratio value="0.78" />
+			</ratios>
+		</gearbox>
+		<engine max_torque="800" max_rpm="9000"/>
+	</vehicle>
+
+</dynamic_object>

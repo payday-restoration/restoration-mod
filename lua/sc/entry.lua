@@ -167,6 +167,14 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_wp_upg_i_patriot")
 				end
 
+			elseif factory_id == "wpn_fps_ass_m4" then
+				if table.contains(blueprint, "wpn_fps_m4_uupg_fg_lr300") and
+				table.contains(blueprint, "wpn_fps_m4_uupg_s_fold") then
+					return managers.localization:text("bm_w_m4_lr300")
+				elseif table.contains(blueprint, "wpn_fps_m4_upg_fg_mk12") then
+					return managers.localization:text("bm_w_m4_mk12")
+				end
+
 			elseif factory_id == "wpn_fps_ass_ak5" then
 				if table.contains(blueprint, "wpn_fps_ass_ak5_fg_ak5c") and
 				table.contains(blueprint, "wpn_fps_ass_ak5_s_ak5c") then
@@ -211,6 +219,8 @@ if GGWEPNENAME then
 			elseif factory_id == "wpn_fps_ass_scar" then
 				if table.contains(blueprint, "wpn_fps_ass_scar_body_light") then
 					return managers.localization:text("bm_w_scar_l")
+				elseif table.contains(blueprint, "wpn_fps_ass_scar_body_hamr") then
+					return managers.localization:text("bm_w_scar_hamr")
 				end
 
 			elseif factory_id == "wpn_fps_ass_contraband" then

@@ -1,4 +1,4 @@
-if not restoration.Options:GetValue("HUD/MainHUD") then
+if not restoration:all_enabled("HUD/MainHUD", "HUD/Interaction") then
 	return
 end
 

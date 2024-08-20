@@ -46,6 +46,7 @@ action_variants.summers = clone(security_variant)
 action_variants.boom_summers = clone(security_variant)
 action_variants.taser_summers = clone(security_variant)
 action_variants.omnia_lpf = security_variant
+action_variants.omnia_lpf_no_heal = security_variant
 action_variants.medic_summers = clone(security_variant)
 action_variants.tank_hw_black = clone(security_variant)
 action_variants.tank_hw_black.walk = TankCopActionWalk

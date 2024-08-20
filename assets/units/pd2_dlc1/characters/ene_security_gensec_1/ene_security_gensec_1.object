@@ -190,7 +190,9 @@
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" />
+	<decal_surfaces default_material="flesh" >
+		<decal_mesh name="dm_helmet" enabled="false" material="steel_no_decal" />
+	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
@@ -258,7 +260,53 @@
 						<material materials="mtr_body_lod, mtr_extras_lod_2" />
 					</object>
 				</lod_object>
+				
+				<!-- ARM PISTOL DS-->
+				<lod_object name="lod_body_pis_ds_armor">
+					<object name="g_sec_pis_ds" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body, mtr_swat" max_distance="1000" />
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+					<object name="g_sec_pis_ds_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body, mtr_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+				</lod_object>
+				
+				<!-- ARM SMG DS-->
+				<lod_object name="lod_body_smg_ds_armor">
+					<object name="g_sec_smg_ds" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body, mtr_swat" max_distance="1000" />
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+					<object name="g_sec_smg_ds_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body, mtr_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+				</lod_object>
+				
+				<!-- ARM SG DS-->
+				<lod_object name="lod_body_sg_ds_armor">
+					<object name="g_sec_sg_ds" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body, mtr_swat" max_distance="1000" />
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+					<object name="g_sec_sg_ds_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body, mtr_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod, mtr_swat_lod_2" />
+					</object>
+				</lod_object>
 
+				<lod_object name="lod_helmet">
+					<object name="g_helmet_lod1" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_swat_static" max_distance="1000"/>
+						<material materials="mtr_swat_static_lod_2"/>
+					</object>
+					<object name="g_helmet_lod2" 	enabled="false" lod="1" >
+						<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_swat_static_lod_2"/>
+					</object>
+				</lod_object>
 			
 				<!-- cap -->
 				<lod_object name="lod_cap">

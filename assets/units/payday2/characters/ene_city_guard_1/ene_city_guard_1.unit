@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" />
+	<object file="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" />
 
 	<dependencies>
 		

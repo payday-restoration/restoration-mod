@@ -19,6 +19,24 @@
 			<run_sequence name="'gadget_meat_grinder'"/>
 		</sequence>
 
+		<sequence editable_state="true" name="'sec_ds_pistol'" triggable="true" once="true">						
+			<set_variables var_gadgets_sec="4"/>
+			<material_config name="'units/payday2/characters/ene_city_guard_1/ene_city_guard_1'"/>												
+			<run_sequence name="'gadget_meat_grinder'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'sec_ds_smg'" triggable="true" once="true">						
+			<set_variables var_gadgets_sec="5"/>
+			<material_config name="'units/payday2/characters/ene_city_guard_1/ene_city_guard_1'"/>															
+			<run_sequence name="'gadget_meat_grinder'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'sec_ds_sg'" triggable="true" once="true">						
+			<set_variables var_gadgets_sec="6"/>
+			<material_config name="'units/payday2/characters/ene_city_guard_1/ene_city_guard_1'"/>																		
+			<run_sequence name="'gadget_meat_grinder'"/>
+		</sequence>
+
 
 		<filter name="'check_sec_pistol'">
 			<check value="vars.var_gadgets_sec == 1"/>
@@ -30,6 +48,16 @@
 
 		<filter name="'check_sec_sg'">
 			<check value="vars.var_gadgets_sec == 3"/>
+		</filter>
+		
+		<filter name="'check_sec_ds_pis'">
+			<check value="vars.var_gadgets_sec == 4"/>
+		</filter>
+		<filter name="'check_sec_ds_smg'">
+			<check value="vars.var_gadgets_sec == 5"/>
+		</filter>
+		<filter name="'check_sec_ds_sg'">
+			<check value="vars.var_gadgets_sec == 6"/>
 		</filter>
 
 
@@ -49,6 +77,16 @@
 			
 			<!-- sec sg -->
 			<run_sequence filter="'check_sec_sg'" name="'body_sec_sg'"/>		
+			
+			<!-- sec pistol -->
+			<run_sequence filter="'check_sec_ds_pis'" name="'body_sec_ds_pis'"/>
+			
+			<!-- sec smg -->
+			<run_sequence filter="'check_sec_ds_smg'" name="'body_sec_ds_smg'"/>
+			
+			<!-- sec sg -->
+			<run_sequence filter="'check_sec_ds_sg'" name="'body_sec_ds_sg'"/>	
+			
 			<run_sequence name="'hedz'"/>
 			
 		</sequence>
@@ -152,7 +190,33 @@
 
 				<object enabled="true" name="'g_hat_lod3'"/>
 				<object enabled="true" name="'g_hat_lod4'"/>					
+			</sequence>	
+
+			<!-- ds pistol -->
+			<sequence editable_state="true" name="'body_sec_ds_pis'" once="true" triggable="true">				
+				<object enabled="true" name="'g_sec_pis_ds'"/>
+				<object enabled="true" name="'g_sec_pis_ds_lod1'"/>
+			</sequence>					
+		
+			<!-- smg -->
+			<sequence editable_state="true" name="'body_sec_ds_smg'" once="true" triggable="true">				
+				<object enabled="true" name="'g_sec_smg_ds'"/>
+				<object enabled="true" name="'g_sec_smg_ds_lod1'"/>	
+
+				<object enabled="true" name="'g_hat_lod1'"/>
+				<object enabled="true" name="'g_hat_lod2'"/>					
+			</sequence>					
+		
+			<!-- sg -->
+			<sequence editable_state="true" name="'body_sec_ds_sg'" once="true" triggable="true">				
+				<object enabled="true" name="'g_sec_sg_ds'"/>
+				<object enabled="true" name="'g_sec_sg_ds_lod1'"/>	
+
+				<object enabled="true" name="'g_helmet_lod1'"/>
+				<decal_mesh enabled="true" name="'dm_helmet'"/>
+				<object enabled="true" name="'g_helmet_lod2'"/>					
 			</sequence>							
+			
 		<!-- VARIATIONS - SECCAS-->
 		
 

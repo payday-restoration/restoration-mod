@@ -382,6 +382,10 @@ local enemy_variations = {
 	["units/payday2/characters/ene_security_6/ene_security_6"] = "sec_6",
 	["units/payday2/characters/ene_security_7/ene_security_7"] = "sec_7",
 	
+	["units/payday2/characters/ene_city_guard_1/ene_city_guard_1"] = "sec_ds_pistol",
+	["units/payday2/characters/ene_city_guard_2/ene_city_guard_2"] = "sec_ds_smg",
+	["units/payday2/characters/ene_city_guard_3/ene_city_guard_3"] = "sec_ds_sg",
+	
 	["units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"] = "sec_pistol",
 	["units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"] = "sec_pistol",	
 	["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "sec_smg",

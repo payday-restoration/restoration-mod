@@ -729,6 +729,11 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.is_special = true
 	self.omnia_lpf.no_asu = true
 	self.omnia_lpf.marshal_logic = true
+	
+	self.omnia_lpf_no_heal = deep_clone(self.omnia_lpf)
+	self.omnia_lpf_no_heal.do_omnia = false
+	self.omnia_lpf_no_heal.modify_health_on_tweak_change = false
+	self.omnia_lpf_no_heal.tmp_invulnerable_on_tweak_change = 0
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 

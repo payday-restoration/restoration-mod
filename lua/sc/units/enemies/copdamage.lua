@@ -510,7 +510,7 @@ function CopDamage:damage_fire(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._char_tweak.gas_on_death then
+		if Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 		
@@ -758,7 +758,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, death, direct
 			})
 		end
 
-		if Network:is_server() and self._char_tweak.gas_on_death then
+		if Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end		
 
@@ -1152,7 +1152,7 @@ function CopDamage:damage_bullet(attack_data)
 						end
 					end
 				end
-			elseif Network:is_server() and self._char_tweak.gas_on_death then
+			elseif Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)			
 			end
 
@@ -1395,7 +1395,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 					end
 				end
 			end
-		elseif Network:is_server() and self._char_tweak.gas_on_death then
+		elseif Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)		
 		end
 
@@ -2263,7 +2263,7 @@ function CopDamage:damage_explosion(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._char_tweak.gas_on_death then
+		if Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 		--[[
@@ -2344,7 +2344,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 			variant = variant
 		}
 		
-		if Network:is_server() and self._char_tweak.gas_on_death then
+		if Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end				
 
@@ -2994,7 +2994,7 @@ function CopDamage:damage_mission(attack_data)
 	if attack_data.attacker_unit == managers.player:local_player() then
 		if CopDamage.is_civilian(self._unit:base()._tweak_table) then
 			managers.money:civilian_killed()
-		elseif Network:is_server() and self._char_tweak.gas_on_death then
+		elseif Network:is_server() and self._char_tweak.gas_on_death and not managers.groupai:state():whisper_mode() then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 	end

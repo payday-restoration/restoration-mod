@@ -371,8 +371,10 @@ local enemy_variations = {
 	["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "mrkwater_ump",
 	["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "mrkwater_ump_nolight",
 	["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "mrkwater_scar",
-	["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "fbi_ump",
-	["units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "fbi_scar",
+	["units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1"] = "fbi_ump",
+	["units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"] = "fbi_scar",
+	["units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"] = "fbi_ump",
+	["units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"] = "fbi_scar",
 	
 	["units/payday2/characters/ene_security_1/ene_security_1"] = "sec_pistol",
 	["units/payday2/characters/ene_security_2/ene_security_2"] = "sec_smg",

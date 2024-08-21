@@ -119,7 +119,7 @@
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			
 			<!-- rifleman -->
-			<run_sequence filter="'check_city_swat_ar'" name="'head_'..pick('balaclava_b', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava',, 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>
+			<run_sequence filter="'check_city_swat_ar'" name="'head_'..pick('balaclava_b', 'balaclava_b', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'a','b','c', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
 			<run_sequence filter="'check_city_swat_ar'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>

@@ -40,7 +40,7 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 	
-     <material name="mtr_swat_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
+     <material name="mtr_swat_static" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
         <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_nm" />
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df"/>
 		<self_illumination_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_il"/>
@@ -50,7 +50,7 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-     <material name="mtr_swat_static_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
+     <material name="mtr_swat_static_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
         <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" mip="1"/>
 		<self_illumination_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_il" mip="1"/>
@@ -60,7 +60,7 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 	
-     <material name="mtr_swat_static_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
+     <material name="mtr_swat_static_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" unique="true" version="2" >
         <bump_normal_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_nm" mip="4"/>
 		<diffuse_texture 		file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" mip="4"/>
 		<self_illumination_texture file="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_il" mip="4"/>

@@ -14,7 +14,7 @@
 	<texture			path="units/payday2/characters/shared_textures/swat_body_df" />
 	<texture			path="units/payday2/characters/shared_textures/swat_body_nm" />
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />
-	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
+	<texture				
 	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>

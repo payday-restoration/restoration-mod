@@ -26,7 +26,7 @@
 	<texture			path="units/payday2/characters/shared_textures/fbi_heads_atlas_df" />		
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />
 	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
-	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
+	<texture				
 	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />
 	
 		

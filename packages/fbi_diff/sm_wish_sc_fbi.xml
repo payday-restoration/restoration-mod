@@ -3,45 +3,18 @@
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_zeal" force="false" />
 	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_zeal" force="false" />
 
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1_contour" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var2" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var2_contour" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var3" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var3_contour" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var4" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var4_contour" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var5" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var5_contour" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var6" />
-	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var6_contour" />
-
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var1" />
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var1_contour" />
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var2" />
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var2_contour" />
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var3" />
-	<material_config	path="units/payday2/characters/ene_cop_vars/ene_cop_var3_contour" />
 	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 	
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
-	<texture			path="units/payday2/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="false"/>
-	<texture			path="units/payday2/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false" />
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="false" />
-	<model				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false"/>
-	<object				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" load="true"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_husk" load="true"/>
 		
-	<model				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="false"/>
-	<object				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="false"/>	
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" load="true"/>	
-	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>		
+	<unit				path="units/payday2/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" load="true"/>	
 
 	<!--for scripted spawns and such-->
 	<unit				path="units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1" load="true"/>	
@@ -304,18 +277,6 @@
 
 	<unit_obj			path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_tazer_helmet_sc/ene_acc_zeal_tazer_helmet_sc" load="true"/>	
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_tazer_helmet_sc/ene_acc_zeal_tazer_helmet_sc" />
-
-	<!-- OMNIA taster for No Titans mutator (for Spring squad) -->
-	<object				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<model				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false" load="true"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser" force="false"/>
-	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_contour" force="false"/>
-	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/taser_body"/>
-	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
-	<df_nm				path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia"/>
 	
 	<!--zeal grenadier-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" load="true"/>
@@ -327,9 +288,6 @@
 	<object				path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_df" />
 	
-	<texture			path="units/payday2/characters/shared_textures/material_body_df" force="false"/>
-	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
-
 	<!--shield-->
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"/>
@@ -346,11 +304,12 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_husk" load="true"/>	
 	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />
 	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />	
 	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic"/>
 	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_contour"/>	
 	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_body_df" />	
-	<df_nm				path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_head" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_nm" />	
 	
 	<unit_obj			path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_medic_helmet/ene_acc_zeal_medic_helmet" />
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_medic_helmet/ene_acc_zeal_medic_helmet" />	
@@ -378,31 +337,24 @@
 	<unit_mat			path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet_sc/ene_acc_zeal_swat_helmet_sc" load="true"/>		
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet_sc/ene_acc_zeal_swat_helmet_sc"/>	
 	
+	<!--evil -->
+	<unit_mat			path="units/payday2/characters/ene_acc_evilberet/ene_acc_evilberet" load="true"/>		
+	<cooked_physics		path="units/payday2/characters/ene_acc_evilberet/ene_acc_evilberet"/>	
+	
 	<!--FTSU Guards -->	
 	<unit				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" load="true" />
 	<unit				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1_husk" load="true" />	
-	<object				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
-	<cooked_physics		path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
-	<model				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1"  />	
+	<material_config	path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" />	
+	<material_config	path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1_contour"  />	
 
 	<unit				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2" load="true" />
 	<unit				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2_husk" load="true"  />	
-	<object				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
-	<model				path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
-	<material_config	path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2" />	
-	<material_config	path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2_contour"  />	
-	<cooked_physics		path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2"  />	
 
 	<unit				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3" load="true" />
 	<unit				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk" load="true"  />	
-	<object				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />	
-	<sequence_manager	path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />	
-	<model				path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />
-	<cooked_physics		path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />		
-	<material_config	path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3" />	
-	<material_config	path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3_contour"  />	
 
 	<texture			path="units/payday2/characters/shared_textures/swat_city_df_guard" />		
+	
 	<!-- titans	 -->
 	<!--Titandozer-->
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
@@ -416,6 +368,13 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
+
+	<!--Omnia LPF-->
+	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
 	
 	<!--titandozer accs-->	
 	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
@@ -429,7 +388,7 @@
 	<unit_obj				path="units/pd2_dlc_vip/characters/ene_vip_2/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
-	
+
 	
 	<!--Keep those helmets flying ;)-->	
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
@@ -437,41 +396,13 @@
 	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
-	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	
-	<!--Titan Shotgunner-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>
-	
-
-
-
-	<!--Titanshield-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" />
-
-
-    <!--Titan Sniper-->	
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	
+	<!-- <sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/> -->
+			
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_nm" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_il" force="false"/>		
+
+			
 	
 	<!--Titan Rifle-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
@@ -480,47 +411,44 @@
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_red_df" load="true" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
-	
-	
-	
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>		
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout" force="false"/>		
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>	
 
-    <!--Titan Taser-->	
+	<!--Titan Shotgunner-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+
+
+	<!--Titanshield-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
+
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" force="true" />	
+	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" force="true" />	
+
+    <!--Titan Sniper-->
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>	
+
+    <!--Titan Taser-->
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
-
-	<!--Titan Taser Helm Acc-->
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
-	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
 
 	<!--Veteran Cop-->	
 	<object				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
 	<model				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
 	<unit				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false" load="true"/>
-	<unit				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
 	<material_config	path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
 	<material_config	path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
 	
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
-	
+
 	<!--for scripted spawns-->
 	<object				path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
 	<cooked_physics		path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
@@ -533,36 +461,17 @@
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
 	
-	<!--Omnia LPF-->
-	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
-
-	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
-
-		
-	
-	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>
-	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_df" force="false"/>	
-	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_nm" force="false"/>	
-
-	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>
 	
 	<!--Titan HRT MP9-->	
-	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
 
-	<!-- bravos	 -->
 	<!-- bravos	 -->
 	<!--bravo dmr-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />

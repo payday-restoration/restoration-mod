@@ -272,6 +272,8 @@
 			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
 		</sequence>
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
+			<body enabled="false" name="'bag'"/>
+			<body enabled="false" name="'bag_gren'"/>				
 			<body enabled="false" name="'body'"/>
 			<body enabled="false" name="'Head'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_Hips'"/>

@@ -2614,10 +2614,13 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
 	--Blackdozers can use SWATs access SOs
+	--For some reason this makes Blackdozers be able to resuce Holdout's hostage
+	if not managers.skirmish and not managers.skirmish:is_skirmish() then
 	self.tank_black.access = {
 		"swat",
 		"tank"
 	}
+	end	
 	table.insert(self._enemy_list, "tank_black")
 	
 	

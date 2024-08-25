@@ -14,8 +14,9 @@ function MenuItemChallenge:setup_gui( node, row_item )
 	local font_check
 	local russian = Idstring("russian"):key() == SystemInfo:language():key()
 	local english = Idstring("english"):key() == SystemInfo:language():key()
+	local korean = Idstring("korean"):key() == SystemInfo:language():key()
 
-	if russian then
+	if russian or korean then
 		font_check = tweak_data.menu.pd2_small_font
 	else
 		font_check = "fonts/pdth_challenge"

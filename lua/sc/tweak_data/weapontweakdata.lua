@@ -19103,6 +19103,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ngsierra.timers.reload_exit_not_empty = 1.13
 			end
 
+			if self.vecho then
+				self.vecho.categories = { 
+					"shotgun",
+					"shotgun_auto" 
+				}
+				self.vecho.recategorize = { "light_shot" }
+				self.vecho.damage_type = "shotgun"
+				self.vecho.damage_type_single_ray = "sniper"
+				self.vecho.rays = 9
+				self.vecho.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.vecho.tactical_reload = 1
+				self.vecho.CLIP_AMMO_MAX = 8
+				self.vecho.AMMO_MAX = 60
+				self.vecho.CAN_TOGGLE_FIREMODE = false
+				self.vecho.FIRE_MODE = "single"
+				self.vecho.fire_mode_data.fire_rate = 0.28571
+				self.vecho.kick = self.stat_info.kick_tables.vertical_kick
+				self.vecho.supported = true
+				self.vecho.ads_speed = 0.360
+				self.vecho.damage_falloff = {
+					start_dist = 400,
+					end_dist = 2500,
+					min_mult = 0.15
+				}
+				self.vecho.stats = {
+					damage = 120,
+					spread = 21,
+					recoil = 39,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.vecho.stats_modifiers = nil
+				self.vecho.panic_suppression_chance = 0.05
+				self.vecho.timers.reload_empty = 2.85
+				self.vecho.timers.reload_exit_empty = 0.8
+				self.vecho.timers.reload_not_empty = 2
+				self.vecho.timers.reload_exit_not_empty = 0.8
+			end
+
 			if self.owd_m1a then --RJC9000's OTWD M1A
 				self.owd_m1a.categories = { 
 					"assault_rifle",

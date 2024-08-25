@@ -27970,6 +27970,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_shot_vecho_stock_tac then --MW2022 Vepr-12
+
+		self.parts.wpn_fps_shot_vecho_receiver.custom_stats = {
+			hip_mult = 5
+		}
+		end
+
 		if self.parts.wpn_fps_ass_mcx_spear_am_default then --RJC9000 and PlayBONK's SIG MCX Spear
 			--no
 			self.parts.wpn_fps_ass_mcx_spear_am_default.supported = true

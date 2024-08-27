@@ -27972,9 +27972,83 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		if self.parts.wpn_fps_shot_vecho_stock_tac then --MW2022 Vepr-12
 
-		self.parts.wpn_fps_shot_vecho_receiver.custom_stats = {
+			self.parts.wpn_fps_shot_vecho_receiver.custom_stats = {
 			hip_mult = 5
-		}
+			}
+
+			--Grips
+				--IVANOV
+				self.parts.wpn_fps_shot_vecho_grip_steady.supported = true
+				self.parts.wpn_fps_shot_vecho_grip_steady.has_description = false
+				self.parts.wpn_fps_shot_vecho_grip_steady.stats = {
+					value = 0,
+					spread = 1,
+					concealment = -1
+				}
+				self.parts.wpn_fps_shot_vecho_grip_steady.custom_stats = nil
+				--DEMO X2
+				self.parts.wpn_fps_shot_vecho_grip_ass.supported = true
+				self.parts.wpn_fps_shot_vecho_grip_ass.has_description = false
+				self.parts.wpn_fps_shot_vecho_grip_ass.stats = {
+					value = 0,
+					spread = -1,
+					recoil = 2
+				}
+				self.parts.wpn_fps_shot_vecho_grip_ass.custom_stats = nil
+				--True-Tac
+				self.parts.wpn_fps_shot_vecho_grip_tac.supported = true
+				self.parts.wpn_fps_shot_vecho_grip_tac.has_description = false
+				self.parts.wpn_fps_shot_vecho_grip_tac.stats = {
+					value = 0,
+					recoil = -2,
+					concealment = 1
+				}
+				self.parts.wpn_fps_shot_vecho_grip_tac.custom_stats = { ads_speed_mult = 0.975 }
+
+				--[[
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.supported = true
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.stats = {
+					value = 0,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_akilo_2022_grip_vecho.custom_stats = nil
+				]]
+
+				self.parts.wpn_fps_shot_vecho_grip_vecho_snp.supported = true
+				self.parts.wpn_fps_shot_vecho_grip_vecho_snp.stats = {
+					value = 0,
+					recoil = 2,
+					spread = 1,
+					concealment = -2
+				}
+				self.parts.wpn_fps_shot_vecho_grip_vecho_snp.custom_stats = { ads_speed_mult = 1.05 }
+
+			--MAGS
+				self.parts.wpn_fps_shot_vecho_drum.supported = true
+				self.parts.wpn_fps_shot_vecho_drum.stats = {
+					value = 0,
+					extra_ammo = 17,
+					concealment = -6,
+					reload = -8
+				}
+				self.parts.wpn_fps_shot_vecho_drum.custom_stats = {
+					ads_speed_mult = 1.5
+				}
+
+			--BOLTS
+				self.parts.wpn_fps_shot_vecho_bolt_light.supported = true
+
+			for i, part_id in pairs(self.wpn_fps_shot_vecho.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].pcs and self.parts[part_id].type then
+					if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "vecho_mod") or not self.parts[part_id].global_value) and 
+						(self.parts[part_id].type == "grip" or self.parts[part_id].type == "stock") then
+						self.wpn_fps_shot_vecho.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+			self.wpn_fps_shot_vecho_npc.uses_parts = deep_clone(self.wpn_fps_shot_vecho.uses_parts)
+
 		end
 
 		if self.parts.wpn_fps_ass_mcx_spear_am_default then --RJC9000 and PlayBONK's SIG MCX Spear

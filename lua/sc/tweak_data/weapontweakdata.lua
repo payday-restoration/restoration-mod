@@ -3647,7 +3647,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.shotgun_spread_increase_ads = 5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
-	self.stat_info.hipfire_only_spread_increase = 0.25 / self.stat_info.stance_spread_mults.steelsight
+	self.stat_info.hipfire_only_spread_increase = 0.75 / self.stat_info.stance_spread_mults.steelsight
 
 	self.stat_info.base_spread = 12.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.12 --How much each point of accuracy reduces spread area.
@@ -8692,7 +8692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.kacchainsaw.stats = {
 						damage = 24,
-						spread = 43,
+						spread = 51,
 						recoil = 79,
 						spread_moving = 5,
 						zoom = 1,
@@ -8744,7 +8744,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.kacchainsaw_flamethrower.stats = {
 						damage = 24,
-						spread = 41,
+						spread = 51,
 						recoil = 95,
 						spread_moving = 6,
 						zoom = 1,
@@ -9164,7 +9164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.shuno.stats = {
 						damage = 20,
-						spread = 11,
+						spread = 29,
 						recoil = 85,
 						spread_moving = 5,
 						zoom = 1,
@@ -9218,7 +9218,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.m134.stats = {
 						damage = 30,
-						spread = 10,
+						spread = 21,
 						recoil = 75,
 						spread_moving = 5,
 						zoom = 1,
@@ -18606,7 +18606,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_dracarys.timers.reload_exit_not_empty = 0.82
 			end
 
-
 			if self.swhiskey then --RJC9000 and PlayBONK's MW2022 SW500
 				self.swhiskey.recategorize = { "heavy_pis", "handcannon" }
 				self.swhiskey.damage_type = "handcannon"
@@ -19121,9 +19120,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vecho.fire_mode_data.fire_rate = 0.28571
 				self.vecho.kick = self.stat_info.kick_tables.vertical_kick
 				self.vecho.supported = true
-				self.vecho.ads_speed = 0.360
+				self.vecho.ads_speed = 0.340
 				self.vecho.damage_falloff = {
-					start_dist = 400,
+					start_dist = 300,
 					end_dist = 2500,
 					min_mult = 0.15
 				}
@@ -19147,6 +19146,44 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vecho.timers.reload_exit_empty = 0.8
 				self.vecho.timers.reload_not_empty = 2
 				self.vecho.timers.reload_exit_not_empty = 0.8
+			end
+
+			if self.doot_eternal_shotgun then
+				self.doot_eternal_shotgun.recategorize = { "break_shot" }	
+				self.doot_eternal_shotgun.damage_type = "shotgun_heavy"
+				self.doot_eternal_shotgun.damage_type_single_ray = "anti_materiel"
+				self.doot_eternal_shotgun.always_play_anims = true
+				self.doot_eternal_shotgun.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.doot_eternal_shotgun.rays = 10
+				self.doot_eternal_shotgun.kick = self.stat_info.kick_tables.vertical_kick
+				self.doot_eternal_shotgun.CLIP_AMMO_MAX = 16
+				self.doot_eternal_shotgun.AMMO_MAX = 40
+				self.doot_eternal_shotgun.CAN_TOGGLE_FIREMODE = false
+				self.doot_eternal_shotgun.BURST_FIRE = false
+				self.doot_eternal_shotgun.fire_mode_data.fire_rate = 0.83333
+				self.doot_eternal_shotgun.supported = true
+				self.doot_eternal_shotgun.ads_speed = 0.400
+				self.doot_eternal_shotgun.damage_falloff = {
+					start_dist = 400,
+					end_dist = 2000,
+					min_mult = 0.1333
+				}
+				self.doot_eternal_shotgun.stats = {
+					damage = 180,
+					spread = 16,
+					recoil = 30,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 22,
+					suppression = 6,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.doot_eternal_shotgun.stats_modifiers = nil
+				self.doot_eternal_shotgun.panic_suppression_chance = 0.05
 			end
 
 			if self.owd_m1a then --RJC9000's OTWD M1A
@@ -19210,27 +19247,29 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ma40.categories = { "assault_rifle" }
 				self.ma40.recategorize = { "heavy_ar" }
-				self.ma40.damage_type = "sniper"
+				self.ma40.damage_type = "assault_rifle"
 				self.ma40.CLIP_AMMO_MAX = 36
 				self.ma40.AMMO_MAX = 120
 				self.ma40.FIRE_MODE = "auto"
 				self.ma40.fire_mode_data.fire_rate = 0.08333333
+				self.ma40.is_bullpup = true
 				self.ma40.always_hipfire = true
 				self.ma40.CAN_TOGGLE_FIREMODE = true
 				self.ma40.kick = {}
-				self.ma40.kick = self.stat_info.kick_tables.right_kick
+				self.ma40.kick = self.stat_info.kick_tables.left_kick
+				self.ma40.always_play_anims = true
 				self.ma40.descope_on_dmg = true
 				self.ma40.supported = true
-				self.ma40.ads_speed = 0.240
+				self.ma40.ads_speed = 0.200
 				self.ma40.damage_falloff = {
 					start_dist = 1200,
-					end_dist = 4000,
+					end_dist = 3400,
 					min_mult = 0.8
 				}	
 				self.ma40.stats = {
 					damage = 30,
 					spread = 71,
-					recoil = 81,
+					recoil = 91,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,
@@ -19243,8 +19282,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.ma40.stats_modifiers = nil
 				self.ma40.panic_suppression_chance = 0.05
+				self.ma40.timers.reload_speed_multiplier = 1.17
+				self.ma40.timers.reload_empty = 2.7
+				self.ma40.timers.reload_exit_empty = 0.6
+				self.ma40.timers.reload_not_empty = 2.5
+				self.ma40.timers.reload_exit_not_empty = 0.6
 			end
-
 
 			if self.vk78_commando then --RJC9000 and PlayBONK's Halo Infinite VK78 Commando
 				self.vk78_commando.categories = { 
@@ -20235,7 +20278,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.xm214a.stats = {
 					damage = 12,
-					spread = 21,
+					spread = 29,
 					recoil = 81,
 					spread_moving = 5,
 					zoom = 1,
@@ -20897,7 +20940,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.sasha.stats = {
 				damage = 24,
-				spread = 16,
+				spread = 21,
 				recoil = 79,
 				spread_moving = 5,
 				zoom = 1,
@@ -20947,7 +20990,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.abzats.stats = {
 				damage = 240,
-				spread = 11,
+				spread = 15,
 				recoil = 49,
 				spread_moving = 5,
 				zoom = 1,

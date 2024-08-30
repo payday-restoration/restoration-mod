@@ -19117,7 +19117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vecho.AMMO_MAX = 60
 				self.vecho.CAN_TOGGLE_FIREMODE = false
 				self.vecho.FIRE_MODE = "single"
-				self.vecho.fire_mode_data.fire_rate = 0.28571
+				self.vecho.fire_mode_data.fire_rate = 0.2803738
 				self.vecho.kick = self.stat_info.kick_tables.vertical_kick
 				self.vecho.supported = true
 				self.vecho.ads_speed = 0.340

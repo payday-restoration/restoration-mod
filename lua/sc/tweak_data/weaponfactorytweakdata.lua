@@ -27976,6 +27976,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			hip_mult = 5
 			}
 
+
+			--BARRELS
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.supported = true
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.stats.value = 0
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.stats.recoil = 4
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.stats.concealment = -5
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.custom_stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_shot_vecho_handguard_xlongsport.custom_stats.ads_speed_mult = 1.625
+
 			--Grips
 				--IVANOV
 				self.parts.wpn_fps_shot_vecho_grip_steady.supported = true
@@ -28029,15 +28039,44 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_shot_vecho_drum.stats = {
 					value = 0,
 					extra_ammo = 17,
-					concealment = -6,
-					reload = -8
+					concealment = -5,
+					reload = -7
 				}
 				self.parts.wpn_fps_shot_vecho_drum.custom_stats = {
-					ads_speed_mult = 1.5
+					ads_speed_mult = 1.625
 				}
+				self.parts.wpn_fps_shot_vecho_xmag.supported = true
+				self.parts.wpn_fps_shot_vecho_xmag.stats = {
+					value = 0,
+					extra_ammo = 4,
+					concealment = -2,
+					reload = -4
+				}
+				self.parts.wpn_fps_shot_vecho_xmag.custom_stats = {
+					ads_speed_mult = 1.25
+				}
+				self.parts.wpn_fps_shot_vecho_magazine_survarium.supported = true
+				self.parts.wpn_fps_shot_vecho_magazine_survarium.stats = { value = 0 }
+				self.parts.wpn_fps_shot_vecho_magazine_survarium.custom_stats = {}
 
 			--BOLTS
+				self.parts.wpn_fps_shot_vecho_bolt_ext.supported = true
+				self.parts.wpn_fps_shot_vecho_bolt_ext.stats = {
+					value = 0,
+					recoil = -4
+				}
+				self.parts.wpn_fps_shot_vecho_bolt_ext.custom_stats = {
+					rof_mult = 1.1775
+				}
+
 				self.parts.wpn_fps_shot_vecho_bolt_light.supported = true
+				self.parts.wpn_fps_shot_vecho_bolt_light.stats = {
+					value = 0,
+					spread = 4
+				}
+				self.parts.wpn_fps_shot_vecho_bolt_light.custom_stats = {
+					rof_mult = 0.915887
+				}
 
 			for i, part_id in pairs(self.wpn_fps_shot_vecho.uses_parts) do
 				if self.parts[part_id] and self.parts[part_id].pcs and self.parts[part_id].type then

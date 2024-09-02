@@ -2613,11 +2613,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_black.move_speed = presets.move_speed.slow_plus
 	self.tank_black.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts_tankblack
 	self.tank_black.HEALTH_INIT = 425
-	--Blackdozers can use SWATs access SOs
-	self.tank_black.access = {
-		"swat",
-		"tank"
-	}
 	table.insert(self._enemy_list, "tank_black")
 	
 	

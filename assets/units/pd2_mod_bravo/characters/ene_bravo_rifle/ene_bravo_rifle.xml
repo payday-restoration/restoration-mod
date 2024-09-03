@@ -92,7 +92,7 @@
 		
 			<!-- dmr -->
 			<run_sequence filter="'check_sniper'" name="'head_'..pick('recon', 'recon','a', 'balaclava', 'c', 'a', 'b', 'c', 'd', 'e')"/>			
-			<run_sequence filter="'check_sniper'" name="'body_'..pick('default','default','default','default','sleeveup','default','default')"/>								
+			<run_sequence filter="'check_sniper'" name="'body_black_'..pick('default','default','default','default','sleeveup','default','default')"/>								
 			<run_sequence filter="'check_sniper'" name="'goggles_'..pick('nothing','nothing','nothing', 'c', 'nothing', 'nothing', 'nothing', 'nothing', 'nothing')"/>	
 			<object filter="'check_sniper'" enabled="true" name="'g_hat_lod3'"/>						
 			<object filter="'check_sniper'" enabled="true" name="'g_hat_lod4'"/>
@@ -149,6 +149,23 @@
 		<sequence editable_state="true" name="'body_default'" once="true" triggable="true">
 			<object enabled="true" name="'g_body'"/>
 			<object enabled="true" name="'g_body_lod1'"/>
+			
+			<object enabled="false" name="'g_arms_a'"/>
+			<object enabled="false" name="'g_arms_b'"/>
+			<object enabled="false" name="'g_arms_c'"/>
+			<object enabled="false" name="'g_arms_d'"/>
+			<object enabled="false" name="'g_arms_e'"/>		
+			<object enabled="false" name="'g_arms_f'"/>		
+			<object enabled="false" name="'g_arms_g'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'body_black_sleeveup'" once="true" triggable="true">
+			<object enabled="true" name="'g_body_black_sg'"/>
+			<object enabled="true" name="'g_body_black_sg_lod1'"/>
+		</sequence>
+		<sequence editable_state="true" name="'body_black_default'" once="true" triggable="true">
+			<object enabled="true" name="'g_body_black'"/>
+			<object enabled="true" name="'g_body_black_lod1'"/>
 			
 			<object enabled="false" name="'g_arms_a'"/>
 			<object enabled="false" name="'g_arms_b'"/>

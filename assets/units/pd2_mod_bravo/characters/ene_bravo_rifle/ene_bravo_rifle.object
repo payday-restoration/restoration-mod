@@ -214,6 +214,18 @@
 				</object>
 			</lod_object>
 
+			<lod_object name="lod_body_black">
+				<object name="g_body_black" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+				<object name="g_body_black_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+			</lod_object>
+
 			<lod_object name="lod_swat_ar">
 				<object name="g_swat_ar" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_body" max_distance="1000"/>
@@ -233,6 +245,18 @@
 					<material materials="mtr_body_lod2"/>
 				</object>
 				<object name="g_body_sg_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_body_sg_black">
+				<object name="g_body_sg_black" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+				<object name="g_body_sg_black_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2"/>
 				</object>

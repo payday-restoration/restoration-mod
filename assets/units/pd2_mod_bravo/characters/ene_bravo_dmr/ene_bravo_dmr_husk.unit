@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
+	<object file="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
 
 	<dependencies>
 		<depends_on unit="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" />				
@@ -21,10 +21,9 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear_object" value="g_hat_lod" />
+			<var name="_nr_head_gear_objects" value="4" />
 			<var name="_head_gear" value="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
-			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

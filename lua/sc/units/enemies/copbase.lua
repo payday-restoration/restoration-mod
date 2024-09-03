@@ -364,6 +364,11 @@ local enemy_variations = {
 	["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "cop_smg",
 	["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "cop_la_sg",	
 	
+	["units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"] = "swat_ar",
+	["units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"] = "swat_sg",
+	["units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"] = "swat_sniper",
+	["units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"] = "swat_lmg",	
+	
 	["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "fbi_1",
 	["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2",
 	["units/payday2/characters/ene_fbi_3/ene_fbi_3"] = "fbi_3",

@@ -7122,7 +7122,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Matever .357
 						self.mateba.has_description = true
-						self.mateba.desc_id = "bm_2006m_sc_desc"					
+						self.mateba.desc_id = "bm_2006m_sc_desc"
 						self.mateba.fire_mode_data.fire_rate = 0.15
 						self.mateba.AMMO_MAX = 30
 						self.mateba.timers.reload_not_empty = 3.6
@@ -7192,11 +7192,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.timers.reload_exit_not_empty = 0.4
 						self.model3.timers.reload_empty = 2.2
 						self.model3.timers.reload_exit_empty = 0.4
-						self.model3.panic_suppression_chance = 0.05	
+						self.model3.panic_suppression_chance = 0.05
 
 					--Bronco
 						self.new_raging_bull.has_description = true
-						self.new_raging_bull.desc_id = "bm_rage_sc_desc"				
+						self.new_raging_bull.desc_id = "bm_rage_sc_desc"
 						self.new_raging_bull.fire_mode_data.fire_rate = 0.2
 						self.new_raging_bull.AMMO_MAX = 30
 						self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
@@ -7234,7 +7234,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 					--Castigo
 						self.chinchilla.has_description = true
-						self.chinchilla.desc_id = "bm_chinchilla_sc_desc"			
+						self.chinchilla.desc_id = "bm_chinchilla_sc_desc"
 						self.chinchilla.fire_mode_data.fire_rate = 0.1818181
 						self.chinchilla.AMMO_MAX = 30
 						self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
@@ -7270,7 +7270,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Deagle
 						--Back to secondary
 						self.deagle.has_description = true
-						self.deagle.desc_id = "bm_deagle_sc_desc"						
+						self.deagle.desc_id = "bm_deagle_sc_desc"
 						self.deagle.use_data.selection_index = 1
 						self.deagle.fire_mode_data.fire_rate = 0.17647058
 						self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -14250,6 +14250,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 
 		--[[     CARL'S MODS     ]]--
+			if self.limafive then -- Deagle L5
+				self.limafive.recategorize = {"heavy_pis"}
+				self.limafive.damage_type = "handcannon"			
+				self.limafive.fire_mode_data.fire_rate = 0.1428
+				self.limafive.CLIP_AMMO_MAX = 9
+				self.limafive.AMMO_MAX = 30
+				self.limafive.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.limafive.supported = true
+				self.limafive.ads_speed = 0.200
+				self.limafive.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
+				self.limafive.stats = {
+					damage = 60,
+					spread = 61,
+					recoil = 57,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 1,
+					reload = 20
+				}
+				self.limafive.stats_modifiers = nil
+				self.limafive.panic_suppression_chance = 0.05
+				self.limafive.has_description = true
+				self.limafive.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
+				self.limafive.can_shoot_through_enemy = true
+				self.limafive.armor_piercing_chance = 0.5
+				self.limafive.timers = deep_clone(self.deagle.timers)
+			end
+
 			if self.derringer then --Carl's Derringer
 				self.derringer.recategorize = {"heavy_pis"}
 				self.derringer.damage_type = "handcannon"

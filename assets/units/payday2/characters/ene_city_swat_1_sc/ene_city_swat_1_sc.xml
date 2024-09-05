@@ -126,7 +126,7 @@
 			<run_sequence filter="'check_city_swat_ar'" name="'helmet'..pick('_flashlight','_flashlight','_flashlight','_flashlight','_flashlight','nun_actually','_flashlight')"/>
 			
 			<!-- extra attachments! :D -->
-			<run_sequence filter="'check_city_swat_ar'" name="'helmet'..pick('_chops','_chops','_nun','_headset','_chops','_nun','_nun')"/>
+			<run_sequence filter="'check_city_swat_ar'" name="'helmet'..pick('_chops','_chops','_nun','_headset','_chops','_chops','_chops')"/>
 
 			<!-- ar (flashlight on)-->
 			<run_sequence filter="'check_flashlights_on_ar'" name="'flashlight_on'"/>
@@ -279,7 +279,7 @@
 		</sequence>				
 		
 		<sequence editable_state="true" name="'helmet_headset'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a','a','a','a','a','a','a','a','a','a','a','a','a','c','a','b','b','e','a','a','a','a','a','a','a','a')"/>								
 		
 			<object enabled="true" name="'g_headset'"/>
 			<object enabled="true" name="'g_headset_lod1'"/>
@@ -298,7 +298,7 @@
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_nun'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a','a','a','a','a','a','a','a','a','a','a','a','a','c','a','b','b','e','a','a','a','a','a','a','a','a')"/>								
 		</sequence>
 
 		<sequence editable_state="true" name="'helmet_nun_smg'" once="true" triggable="true">
@@ -306,7 +306,7 @@
 		</sequence>
 		
 		<sequence editable_state="true" name="'helmet_chops'" once="true" triggable="true">
-			<run_sequence name="'goggles_'..pick('a','a',a',a',a',a',a',a',a',a',a',a',a','a','c','a','b','b','e',a',a',a',a',a',a','a','a')"/>								
+			<run_sequence name="'goggles_'..pick('a','a','a','a','a','a','a','a','a','a','a','a','a','a','c','a','b','b','e','a','a','a','a','a','a','a','a')"/>								
 		
 			<object enabled="true" name="'g_helmet_lod11'"/>
 			<object enabled="true" name="'g_helmet_lod12'"/>

@@ -17990,6 +17990,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.alpha57.use_data.selection_index = 5
 			end
 
+			if self.acr_2012 then --ACR
+				self.acr_2012.categories = { "assault_rifle" }
+				self.acr_2012.recategorize = { "light_ar" }
+				self.acr_2012.damage_type = "assault_rifle"
+				self.acr_2012.tactical_reload = 1
+				self.acr_2012.fire_mode_data.fire_rate = 0.0833333333
+				self.acr_2012.CLIP_AMMO_MAX = 30
+				self.acr_2012.AMMO_MAX = 150
+				self.acr_2012.CAN_TOGGLE_FIREMODE = true
+				self.acr_2012.FIRE_MODE = "auto"
+				self.acr_2012.kick = {}
+				self.acr_2012.kick = self.stat_info.kick_tables.moderate_kick
+				self.acr_2012.supported = true
+				self.acr_2012.ads_speed = 0.240
+				self.acr_2012.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 5800,
+					min_mult = 0.416666
+				}	
+				self.acr_2012.stats = {
+					damage = 24,
+					spread = 83,
+					recoil = 95,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 9,
+					reload = 20
+				}
+				self.acr_2012.stats_modifiers = nil
+				self.acr_2012.panic_suppression_chance = 0.05
+			end
+
 			if self.nova4 then --RJC9000 and Synd1cate's Infinite Warfare NV4
 				self.nova4.categories = { "assault_rifle" }
 				self.nova4.recategorize = { "light_ar" }
@@ -18860,7 +18897,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			--RJC9000 and PlayBONK's MW2022 AKs
-				if self.akilo_2022 then 
+				if self.akilo_2022 then
 					self.akilo_2022.warsaw = true
 					self.akilo_2022.recategorize = { "heavy_ar" }
 					self.akilo_2022.damage_type = "assault_rifle"
@@ -18898,7 +18935,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo_2022.panic_suppression_chance = 0.05
 				end
 
-				if self.akilo105_2022 then 
+				if self.akilo105_2022 then
 					self.akilo105_2022.warsaw = true
 					self.akilo105_2022.recategorize = { "light_ar" }
 					self.akilo105_2022.damage_type = "assault_rifle"
@@ -18974,7 +19011,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.mcx_spear then --RJC9000 and PlayBONK's SIG MCX Spear
 				self.mcx_spear.categories = { 
 					"assault_rifle",
-					"dmr_l" 
+					"dmr_l"
 				}
 				self.mcx_spear.recategorize = { "dmr_ar" }
 				self.mcx_spear.desc_id = "bm_mcx_spear_sc_desc"
@@ -19084,7 +19121,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
 				self.ngsierra.categories = { 
 					"assault_rifle",
-					"dmr_l" 
+					"dmr_l"
 				}
 				self.ngsierra.recategorize = { "dmr_ar" }
 				self.ngsierra.desc_id = "bm_ngsierra_sc_desc"
@@ -19140,9 +19177,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.vecho then
-				self.vecho.categories = { 
+				self.vecho.categories = {
 					"shotgun",
-					"shotgun_auto" 
+					"shotgun_auto"
 				}
 				self.vecho.recategorize = { "light_shot" }
 				self.vecho.damage_type = "shotgun"
@@ -19186,7 +19223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if self.doot_eternal_shotgun then
-				self.doot_eternal_shotgun.recategorize = { "break_shot" }	
+				self.doot_eternal_shotgun.recategorize = { "break_shot" }
 				self.doot_eternal_shotgun.damage_type = "shotgun_heavy"
 				self.doot_eternal_shotgun.damage_type_single_ray = "anti_materiel"
 				self.doot_eternal_shotgun.always_play_anims = true

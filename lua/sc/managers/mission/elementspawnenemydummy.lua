@@ -794,11 +794,11 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			dozer = {
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+				"units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
+				"units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 				"units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+				"units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3",
+				"units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 				"units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 			},
 			medic = {

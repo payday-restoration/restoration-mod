@@ -764,8 +764,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetScaleDescID"] = "CRIMENET의 크기를 설정합니다.",
 		["RestorationModVoiceIconTitleID"] = "음성 채팅 아이콘",
 	    ["RestorationModVoiceIconDescID"] = "플레이어가 게임 내에서 음성 채팅을 사용할 때 표시합니다.",
+		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
+		["RestorationModNewsFeedStyleDescID"] = "Allows you to choose to show both newsfeed and newheists box or just the newsfeed.",
 		["alpha_assault"] = "초기 알파 코너",
 		["beta_assault"] = "알파 테이프",
+		["show_both"] = "Default",
+		["show_classic_newsfeed"] = "Classic",
 		
 		["RestorationModDodgeDisplayTitleID"] = "회피 미터 판독 값",
 		["RestorationModDodgeDisplayDescID"] = "회피 미터의 최대값 *표시*를 변경합니다. 재시작이 필요합니다.",

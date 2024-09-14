@@ -810,8 +810,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModPocoCrimenetScaleDescID"] = "允许您设置CRIMENET尺寸。",
         ["RestorationModVoiceIconTitleID"] = "语音聊天图标",
         ["RestorationModVoiceIconDescID"] = "当玩家使用游戏内语音聊天时显示。",
+        ["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
+        ["RestorationModNewsFeedStyleDescID"] = "Allows you to choose to show both newsfeed and newheists box or just the newsfeed.",
         ["alpha_assault"] = "早期Alpha类型",
         ["beta_assault"] = "Alpha类型",
+        ["show_both"] = "Default",
+        ["show_classic_newsfeed"] = "Classic",
 
         ["RestorationModDodgeDisplayTitleID"] = "闪避条显示方式",
         ["RestorationModDodgeDisplayDescID"] = "选择显示闪避条的最大上限为多少。重启劫案以应用更改。",

@@ -383,7 +383,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_escape_garage"] = "Escape!",
 		["restoration_level_data_escape_overpass_night"] = "Escape!",
 		["restoration_level_data_safehouse"] = "12:00 PM, The Safehouse",
-		["restoration_level_data_arm_fac"] = "9:30 AM, Harbour",
+		["restoration_level_data_arm_fac"] = "9:30 PM, Harbour",
 		["restoration_level_data_arm_par"] = "2:25 PM, Downtown District",
 		["restoration_level_data_arm_hcm"] = "2:15 PM, Downtown District",
 		["restoration_level_data_arm_cro"] = "12:55 PM, McCarthy and James Street Intersection",

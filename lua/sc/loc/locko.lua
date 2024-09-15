@@ -369,7 +369,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_escape_garage"] = "탈출하라!",
 		["restoration_level_data_escape_overpass_night"] = "탈출하라!",
 		["restoration_level_data_safehouse"] = "오후 12:00, 세이프하우스",
-		["restoration_level_data_arm_fac"] = "오전 9:30, 항구",
+		["restoration_level_data_arm_fac"] = "오후 9:30, 항구",
 		["restoration_level_data_arm_par"] = "오후 2:25, 다운타운 구역",
 		["restoration_level_data_arm_hcm"] = "오후 2:15, 다운타운 구역",
 		["restoration_level_data_arm_cro"] = "오후 12:55, 매카시 거리와 제임스 거리의 교차로",

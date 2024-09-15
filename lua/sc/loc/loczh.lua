@@ -412,7 +412,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["restoration_level_data_escape_garage"] = "撤离！",
         ["restoration_level_data_escape_overpass_night"] = "撤离！",
         ["restoration_level_data_safehouse"] = "中午12:00 , 安全屋",
-        ["restoration_level_data_arm_fac"] = "早晨9:30 , 港口",
+        ["restoration_level_data_arm_fac"] = "下午9:30 , 港口",
         ["restoration_level_data_arm_par"] = "下午2:25 , 市中心",
         ["restoration_level_data_arm_hcm"] = "下午2:15 , 市中心",
         ["restoration_level_data_arm_cro"] = "中午12:55 , 麦卡丝街与詹姆斯街的交叉口",

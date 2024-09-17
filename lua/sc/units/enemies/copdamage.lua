@@ -6,8 +6,6 @@ local ids_func = Idstring
 local table_contains = table.contains
 
 local enemies_visor = {
-	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3"),
-	ids_func("units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
@@ -56,8 +54,6 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                             
-	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 
 	ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),

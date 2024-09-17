@@ -52,6 +52,7 @@
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_husk" load="true"/>
     <object				path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
+    <sequence_manager	path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<model				path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<material_config	path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
@@ -60,30 +61,18 @@
 	<!--City swat 2-->	
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>
-	<object				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<model				path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>	
 	
 	<!--City swat 3-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>
-    <object				path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<model				path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
 	
 	<!--City Heavy g36-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>
-    <object				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<model				path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
 	
 	<!--City Heavy r870-->
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
     <unit				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
-    <object				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
-	<model				path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	
 	<!--city shield-->
 	<unit				path="units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield" load="true"/>

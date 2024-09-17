@@ -397,7 +397,15 @@ local enemy_variations = {
 	["units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"] = "sec_pistol",	
 	["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "sec_smg",
 	["units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"] = "sec_smg",
-	["units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"] = "sec_sg"
+	["units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"] = "sec_sg",
+
+	["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = "swat_ar",
+	["units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"] = "swat_sg",
+	["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = "swat_smg",	
+	["units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "heavy_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"] = "swat_shield",
+	["units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"] = "swat_sniper"
 }
 
 -- do not touch this.

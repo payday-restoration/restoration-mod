@@ -570,6 +570,11 @@ restoration.assault_style = {
 	"alpha_assault"
 }
 
+restoration.newsfeed_style = {
+	"show_both",
+	"show_classic_newsfeed"
+}
+
 restoration.dodge_display = {
 	"dd_scale",
 	"dd_150",

@@ -202,6 +202,258 @@ if restoration.Options:GetValue("HUD/UI/Loadouts") then
 		end
 	end
 
+	function AssetsItem:create_assets(assets_names, max_assets)
+		self._panel:clear()
+
+		self._loading_text = nil
+		self._asset_locked = {}
+		self._assets_list = {}
+		self._assets_names = assets_names
+		self._unlock_cost = assets_names[3] or false
+		local center_y = math.round(self._panel:h() / 2) - tweak_data.menu.pd2_small_font_size
+		self._asset_text_panel = self._panel:panel({
+			layer = 4,
+			name = "asset_text"
+		})
+		local first_rect, rect = nil
+		local w = self._panel:w() / (self._num_items / 2)
+		local step = w * 0.5
+
+		for i = 1, #assets_names do
+			local center_x = i * w - w * 0.5
+			rect = self._panel:rect({
+				w = 85,
+				h = 85,
+				name = "bg_rect_" .. tostring(i)
+			})
+
+			rect:hide()
+
+			first_rect = first_rect or rect
+			local center_x = math.ceil(i / 2) * w - step
+			local center_y = self._panel:h() * (i % 2 > 0 and 0.295 or 0.815)
+			local texture = assets_names[i][1]
+			local asset = nil
+
+			if texture and DB:has(Idstring("texture"), texture) then
+				asset = self._panel:bitmap({
+					h = 65,
+					valign = "top",
+					w = 65,
+					layer = 1,
+					name = "asset_" .. tostring(i),
+					texture = texture,
+					rotation = math.random(2) - 1.5
+				})
+			else
+				asset = self._panel:bitmap({
+					texture = "guis/textures/pd2/endscreen/what_is_this",
+					h = 65,
+					w = 65,
+					alpha = 0,
+					valign = "top",
+					layer = 1,
+					name = "asset_" .. tostring(i),
+					rotation = math.random(2) - 1.5
+				})
+			end
+
+			local aspect = asset:texture_width() / math.max(1, asset:texture_height())
+
+			asset:set_w(asset:h() * aspect)
+			rect:set_w(rect:h() * aspect)
+			rect:set_center(center_x, center_y)
+			rect:set_position(math.round(rect:x()), math.round(rect:y()))
+			asset:set_center(rect:center())
+			asset:set_position(math.round(asset:x()), math.round(asset:y()))
+			asset:set_rotation(0.5)
+
+			if not assets_names[i][3] then
+				local lock = self._panel:bitmap({
+					layer = 3,
+					name = "asset_lock_" .. tostring(i),
+					texture = managers.assets:get_asset_can_unlock_by_id(self._assets_names[i][4]) and "guis/textures/pd2/blackmarket/money_lock" or "guis/textures/pd2/skilltree/padlock",
+					color = tweak_data.screen_colors.item_stage_1
+				})
+
+				lock:set_center(rect:center())
+				asset:set_color(Color.black:with_alpha(0.6))
+
+				self._asset_locked[i] = true
+			end
+
+			table.insert(self._assets_list, asset)
+		end
+
+		self._text_strings_localized = false
+		self._my_asset_space = w
+		self._my_left_i = self._my_menu_component_data.my_left_i or 1
+
+		if math.ceil(#self._assets_list / self._num_items) > 1 then
+			self._move_left_rect = self._panel:bitmap({
+				texture = "guis/textures/pd2/hud_arrow",
+				h = 32,
+				blend_mode = "add",
+				w = 32,
+				rotation = 360,
+				layer = 3,
+				color = tweak_data.screen_colors.button_stage_3
+			})
+
+			self._move_left_rect:set_center(0, self._panel:h() / 2)
+			self._move_left_rect:set_position(math.round(self._move_left_rect:x()), math.round(self._move_left_rect:y()))
+			self._move_left_rect:set_visible(false)
+
+			self._move_right_rect = self._panel:bitmap({
+				texture = "guis/textures/pd2/hud_arrow",
+				h = 32,
+				blend_mode = "add",
+				w = 32,
+				rotation = 180,
+				layer = 3,
+				color = tweak_data.screen_colors.button_stage_3
+			})
+
+			self._move_right_rect:set_center(self._panel:w(), self._panel:h() / 2)
+			self._move_right_rect:set_position(math.round(self._move_right_rect:x()), math.round(self._move_right_rect:y()))
+			self._move_right_rect:set_visible(false)
+		end
+
+		if not managers.menu:is_pc_controller() then
+			local legends = {
+				"menu_legend_preview_move",
+				"menu_legend_select"
+			}
+
+			if managers.preplanning:has_current_level_preplanning() then
+				table.insert(legends, 1, "menu_legend_open_preplanning")
+			else
+				table.insert(legends, 1, "menu_legend_buy_all_assets")
+			end
+
+			local t_text = ""
+
+			for i, string_id in ipairs(legends) do
+				local spacing = i > 1 and "  |  " or ""
+				t_text = t_text .. spacing .. utf8.to_upper(managers.localization:text(string_id, {
+					BTN_UPDATE = managers.localization:btn_macro("menu_update"),
+					BTN_BACK = managers.localization:btn_macro("back")
+				}))
+			end
+
+			local legend_text = self._panel:text({
+				rotation = 360,
+				font = tweak_data.menu.pd2_small_font,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				text = t_text
+			})
+			local _, _, lw, lh = legend_text:text_rect()
+
+			legend_text:set_size(lw, lh)
+			legend_text:set_righttop(self._panel:w() - 5, 5)
+		end
+
+		local first_rect = self._panel:child("bg_rect_1")
+
+		if first_rect then
+			self._select_box_panel = self._panel:panel({
+				visible = false,
+				layer = -3
+			})
+
+			self._select_box_panel:set_shape(first_rect:shape())
+
+			self._select_box = BoxGuiObject:new(self._select_box_panel, {
+				sides = {
+					2,
+					2,
+					2,
+					2
+				}
+			})
+		end
+
+		self:post_init()
+
+		self._is_buy_all_dialog_open = false
+
+		if not managers.preplanning:has_current_level_preplanning() and managers.menu:is_pc_controller() then
+			self.buy_all_button = self._panel:text({
+				name = "buy_all_btn",
+				align = "right",
+				blend_mode = "add",
+				visible = true,
+				text = managers.localization:to_upper_text("menu_asset_buy_all_button"),
+				h = tweak_data.menu.pd2_medium_font_size * 0.95,
+				font_size = tweak_data.menu.pd2_medium_font_size * 0.9,
+				font = tweak_data.menu.pd2_medium_font,
+				color = tweak_data.screen_colors.button_stage_3
+			})
+
+			self.buy_all_button:set_top(-3)
+			self.buy_all_button:set_right(self._panel:w() - 5)
+		end
+	end
+
+	function MutatorsItem:init(panel, text, i)
+		MissionBriefingTabItem.init(self, panel, text, i)
+
+		if not managers.mutators:are_mutators_active() then
+			return
+		end
+
+		local title_text = self._panel:text({
+			name = "title_text",
+			y = 10,
+			x = 10,
+			text = managers.localization:to_upper_text("menu_cn_mutators_active"),
+			font_size = 28,
+			font = tweak_data.menu.default_font,
+			color = tweak_data.screen_color_blue
+		})
+		local x, y, w, h = title_text:text_rect()
+
+		title_text:set_size(w, h)
+		title_text:set_position(math.round(title_text:x()), math.round(title_text:y()))
+
+		local _y = title_text:bottom() + 5
+		local mutators_list = {}
+
+		for i, active_mutator in pairs(managers.mutators:active_mutators()) do
+			local mutator = active_mutator.mutator
+
+			if mutator then
+				table.insert(mutators_list, mutator)
+			end
+		end
+
+		table.sort(mutators_list, function (a, b)
+			return a:name() < b:name()
+		end)
+
+		for i, mutator in ipairs(mutators_list) do
+			local text = string.format("%s - %s", mutator:name(), mutator:desc())
+			local mutator_text = self._panel:text({
+				wrap = true,
+				word_wrap = true,
+				x = 10,
+				name = "mutator_text_" .. tostring(mutator:id()),
+				font = tweak_data.menu.small_font,
+				font_size = tweak_data.menu.pd2_small_font_size + 4,
+				text = text,
+				y = _y,
+				w = self._panel:w() - 5,
+				h = tweak_data.menu.pd2_small_font_size + 4,
+				color = tweak_data.screen_colors.text
+			})
+			local _, _, w, h = mutator_text:text_rect()
+
+			mutator_text:set_size(w, h)
+
+			_y = mutator_text:bottom() + 2
+		end
+	end
+
 	function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 		self._safe_workspace = saferect_ws
 		self._full_workspace = fullrect_ws

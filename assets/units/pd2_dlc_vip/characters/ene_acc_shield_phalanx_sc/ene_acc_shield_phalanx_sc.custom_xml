@@ -67,14 +67,14 @@
 			<body enabled="false" name="'held_body_middle'"/>
 			<body enabled="true" name="'dropped_body_middle'"/>
 			
-			<body  enabled="false" name="'held_body_left'"/>
-			<body  enabled="true" name="'dropped_body_left'"/>
+			<body  filter="'filter_debris_top'" enabled="false" name="'held_body_top'"/>
+			<body  filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
 			
-			<body  enabled="false" name="'held_body_right'"/>
-			<body  enabled="true" name="'dropped_body_right'"/>
+			<body  filter="'filter_debris_l'" enabled="false" name="'held_body_right'"/>
+			<body  filter="'filter_debris_l'" enabled="true" name="'dropped_body_right'"/>
 			
-			<body  enabled="false" name="'held_body_top'"/>
-			<body  enabled="true" name="'dropped_body_top'"/>
+			<body  filter="'filter_debris_l'" enabled="false" name="'held_body_left'"/>
+			<body  filter="'filter_debris_l'" enabled="true" name="'dropped_body_left'"/>
 			
 			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1_blink'"/>
 			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2_blink'"/>
@@ -232,7 +232,7 @@
 		
 			<set_variables filter_debris_l="0"/>			
 			
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_r')" rotation="object_rot('drop_shield_r')"/>						
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_r')" rotation="object_rot('drop_shield_r')"/>						
 			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
@@ -246,7 +246,7 @@
 
 			<set_variables filter_debris_r="0"/>			
 
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_l')" rotation="object_rot('drop_shield_l')"/>			
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_l')" rotation="object_rot('drop_shield_l')"/>			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 

@@ -14,7 +14,7 @@
 		
 		<body name="held_body_left" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_l"	collision_type="convex" padding="-2" />
+			<object name="c_shield_l"	collision_type="convex" padding="-2" />			
 		</body>		
 
 		<body name="held_body_right" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
@@ -43,21 +43,22 @@
 		</body>		
 
 		<body name="dropped_body_left" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
-			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_l"	collision_type="box" padding="-2" />
-			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
+			<object name="drop_shield_r" />
+			<object name="c_shield_r"	collision_type="convex" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />			
 		</body>
+		
 
 		<body name="dropped_body_right" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
-			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_r"	collision_type="box" padding="-2" />
-			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
+			<object name="drop_shield_l" />
+			<object name="c_shield_l"	collision_type="convex" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />						
 		</body>
 
 		<body name="dropped_body_top" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
-			<object name="rp_ene_acc_shield_phalanx" />
-			<object name="c_shield_top" 				collision_type="box" padding="-2" />
-			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />			
+			<object name="drop_shield_top" />
+			<object name="c_shield_top" 				collision_type="convex" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />									
 		</body>
 		
 

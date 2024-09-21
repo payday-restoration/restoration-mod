@@ -220,7 +220,7 @@
 			
 			<object filter="'check_city_heavy_sg'" enabled="true" name="'g_helmet_lod13'"/>						
 			<object filter="'check_city_heavy_sg'" enabled="true" name="'g_helmet_lod14'"/>				
-			<body	filter="'check_city_heavy_sg'" enabled="true" name="'g_glass_2'" />										
+			<object	filter="'check_city_heavy_sg'" enabled="true" name="'g_glass_2'" />										
 			<decal_mesh	filter="'check_city_heavy_sg'" enabled="true" name="'c_glass'" />	
 			<decal_mesh	filter="'check_city_heavy_sg'" enabled="true" name="'c_mask'" />	
 			<body	filter="'check_city_heavy_sg'" enabled="true" name="'body_plate'" />										
@@ -318,8 +318,8 @@
 			<object filter="'check_goggle_b'" enabled="true" name="'g_glass_crk'"/>
 			<object filter="'check_goggle_b'" enabled="false" name="'g_glass'"/>
 			
-			<object filter="'check_city_heavy_sg'" enabled="true" name="'g_glass_2'"/>
-			<object filter="'check_city_heavy_sg'" enabled="false" name="'g_glass_2_crk'"/>
+			<object filter="'check_city_heavy_sg'" enabled="false" name="'g_glass_2'"/>
+			<object filter="'check_city_heavy_sg'" enabled="true" name="'g_glass_2_crk'"/>
 		</sequence>				
 		
 		<sequence editable_state="true" name="'helmet_headset'" once="true" triggable="true">

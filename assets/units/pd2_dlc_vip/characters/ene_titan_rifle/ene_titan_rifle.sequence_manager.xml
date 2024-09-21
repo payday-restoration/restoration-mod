@@ -161,10 +161,22 @@
 			<object enabled="false" name="'g_mask_lod1'"/>						
 			<object enabled="false" name="'g_mask_lod2'"/>
 			<object enabled="false" name="'g_mask_lod3'"/>
+	
+			<decal_mesh enabled="false" name="'c_glass'" />					
+			<decal_mesh enabled="false" name="'c_glass_shield'" />	
 			
+			<body enabled="false" name="'glass_shield'" />										
+			<body enabled="false" name="'glass_swat'" />		
+			<body enabled="false" name="'glass_visor'" />		
+	
 			<decal_mesh enabled="false" name="'c_mask_taser'" />			
 			<decal_mesh enabled="false" name="'dm_helmet'" />			
-			<decal_mesh enabled="false" name="'dm_helmet_shield'" />			
+			<decal_mesh enabled="false" name="'dm_helmet_shield'" />	
+			
+			<object enabled="true" name="'g_helmet_shield_lod1'"/>
+			<object enabled="true" name="'g_helmet_shield_lod2'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
+			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
 									
 			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'" />	
 			<run_sequence filter="'check_swat_ar'" name="'destroy_visor'"/>						

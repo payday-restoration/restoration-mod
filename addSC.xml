@@ -26,6 +26,9 @@
 	
     <!--Security Cameras-->    
     <sequence_manager   path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+    <object			    path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+    <model			    path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
+    <material_config	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/>
     <!--texture         path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera_df" force="true"-->   
 	
 	<!--ASU Laser-->	

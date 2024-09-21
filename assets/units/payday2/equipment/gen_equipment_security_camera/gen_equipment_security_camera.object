@@ -16,9 +16,17 @@
 			<object name="c_security_camera" collision_type="convex" padding="-2"/>
 		</body>
 		<body remove_ray_type="walk vis_graph" name="c_deathwish" enabled="false" template="animated">
-			<object name="rp_gen_equipment_security_camera" />
+			<object name="CameraYaw" />
 			<object name="c_neck_deathwish" collision_type="convex" padding="-2"/>
 			<object name="c_body_deathwish" collision_type="box" padding="-2"/>
+		</body>
+		<body remove_ray_type="walk vis_graph" name="glass" enabled="false" template="animated">
+			<object name="CameraYaw" />
+			<object name="c_glass" collision_type="convex"  padding="-2"/>
+		</body>
+		<body remove_ray_type="walk vis_graph" name="hard_head" enabled="false" template="animated">
+			<object name="CameraYaw" />
+			<object name="c_hard_head" collision_type="convex"  padding="1"/>
 		</body>
 	</bodies>
 	<decal_surfaces default_material="metal">
@@ -26,28 +34,24 @@
 		<decal_mesh name="dm_security_camera" 			enabled="true" 	material="metal" />
 		<decal_mesh name="dm_body_steel_deathwish" 		enabled="false" material="metal" />
 		<decal_mesh name="dm_neck_steel_deathwish" 		enabled="false" material="metal" />
+		
+		<decal_mesh name="c_neck_deathwish" 			enabled="false" material="metal" />
+		<decal_mesh name="c_hard_head" 					enabled="false" material="metal" />
+		<decal_mesh name="c_glass" 						enabled="false" material="glass_no_decal" />			
 	</decal_surfaces>
 	
 	<graphics>
-		<!--Default Camera-->
-		<graphic_group name="g_default" enabled="true">
-			<object name="g_security_camera" 		enabled="true"	shadow_caster="true"/>
-			<object name="g_security_camera_stand" 	enabled="true"	shadow_caster="true"/>
-			<object name="g_security_camera_break"  enabled="false"	shadow_caster="true"/>
-			<object name="g_security_camera_light"  enabled="true"	/>
-			
-		</graphic_group>
-		
-		<!--Titan Camera-->
-		<graphic_group name="g_titan" enabled="false">
-			<object name="g_hard_head" 						 	enabled="true" shadow_caster="true" />
-			<object name="g_hard_neck" 						 	enabled="true" shadow_caster="true" />
-			<object name="g_hard_body" 						 	enabled="true" shadow_caster="true" />
-			<object name="g_security_camera_light_deathwish"	enabled="true"	/>
-			<object name="g_mullplan"  							enabled="true" />
-			<object name="g_glass"  							enabled="true" />
-		</graphic_group>
-		
+		<object name="g_security_camera" 		enabled="true" 	/>
+		<object name="g_security_camera_stand" 	enabled="true" 	/>
+		<object name="g_security_camera_break"  enabled="false"	/>
+		<object name="g_security_camera_light"  enabled="true" 	/>
+		<object name="g_security_camera_light_deathwish"  enabled="false" 	/>
+		<object name="g_hard_head" 			 	enabled="false" shadow_caster = "true" />
+		<object name="g_hard_neck" 			 	enabled="false" shadow_caster = "true" />
+		<object name="g_hard_body" 			 	enabled="false" shadow_caster = "true" />
+		<object name="g_mullplan"  				enabled="false" />
+		<object name="g_glass"  				enabled="false" />
+		<object name="g_glass_shattered"  							enabled="false" />				
 	</graphics>
 	
 	<effects>

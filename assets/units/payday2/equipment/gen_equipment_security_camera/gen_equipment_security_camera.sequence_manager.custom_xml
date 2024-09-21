@@ -16,9 +16,24 @@
 		<!--Camera Health-->
 		<body name="'c_security_camera'">
 			<endurance bullet="1" explosion="1" melee="0.5">
-				<run_sequence filter="'filter_default'" name=" 'stop' "/>
+				<run_sequence name=" 'stop' "/>
 			</endurance>
 		</body>
+		
+		<body name="'glass'">
+			<endurance bullet="1" explosion="1" melee="0.5" lock="0.25">
+				<run_sequence filter="'filter_titan'" name=" 'crack_glass' "/>
+			</endurance>		
+			<endurance bullet="2" explosion="2" melee="1" lock="0.5">
+				<run_sequence filter="'filter_titan'" name=" 'destroy_glass' "/>
+			</endurance>
+		</body>
+		
+		<body name="'hard_head'">
+			<endurance bullet="2" explosion="2" melee="1" lock="0.5">
+				<run_sequence filter="'filter_titan'" name=" 'stop' "/>
+			</endurance>
+		</body>		
 		
 		<!--Camera Killed-->
 		<sequence name="'stop'" triggable="true">
@@ -37,34 +52,66 @@
 			<object		enabled="false"		name="'g_security_camera_light'"/>
 			<body		enabled="false"		name="'c_security_camera'"/>
 			<decal_mesh	enabled="true"		name="'dm_security_camera'"/>
-		</sequence>
-		
-		<!--Camera State Default-->
-		<sequence editable_state="true" name="'default'" triggable="true">
-			<set_variables	var_type="0"/>
 			
-			<graphic_group	visibility="true"	name="'g_default'"/>
-			<graphic_group	visibility="false"	name="'g_titan'"/>
+			<effect 		filter="'filter_titan'"	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'attention' )" position="v()"/>
+			<effect 		filter="'filter_titan'"	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'attention' )" position="v()"/>
+			<effect 		filter="'filter_titan'"	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'attention' )" position="v()"/>
 			
-			<decal_mesh		enabled="true" name="'dm_security_camera'"/>
-			<body			enabled="true" name="'c_security_camera'"/>
-			<body			enabled="false"	name="'c_deathwish'"/>
-			<decal_mesh		enabled="false"	name="'dm_body_steel_deathwish'"/>
-			<decal_mesh		enabled="false"	name="'dm_neck_steel_deathwish'"/>
+			<animation_group enabled="false" name="'light'"/>
+			<run_sequence name="'blink_disable'"/>			
+			<body			filter="'filter_titan'"	enabled="false"	name="'hard_head'"/>
+			<decal_mesh		filter="'filter_titan'"	enabled="false" name="'c_hard_head'"/>			
+			<object			filter="'filter_titan'" enabled="false"		name="'g_hard_head'"/>
+			<object			filter="'filter_titan'"	enabled="false" name="'g_security_camera_light_deathwish'"/>			
+			<object			filter="'filter_titan'"	enabled="false" name="'g_security_camera_light_deathwish'"/>			
+			<object			filter="'filter_titan'"	enabled="false" name="'g_security_camera'"/>			
+			<object			filter="'filter_titan'"	enabled="false" name="'g_security_camera_break'"/>			
+			<decal_mesh		filter="'filter_titan'"	enabled="false" name="'dm_security_camera'"/>			
 		</sequence>
-		
+						
 		<!--Camera State Titan-->
-		<sequence editable_state="true" name="'deathwish'" triggable="true">
-			<set_variables	var_type="1"/>
+		<sequence editable_state="true" name=" 'deathwish' " triggable="true">
+			<set_variables	var_type="1"/>		
+			<object enabled="false" name=" 'g_security_camera' "/>
+			<object enabled="false" name=" 'g_security_camera_stand' "/>
+			<object enabled="false" name=" 'g_security_camera_break' "/>
+			<object enabled="false" name=" 'g_security_camera_light' "/>
+			<decal_mesh enabled="false" name="'dm_security_camera'"/>
+			<body enabled="false" name="'c_security_camera'"/>
+			<object enabled="true" name="'g_hard_head'"/>
+			<object enabled="true" name="'g_hard_neck'"/>
+			<object enabled="true" name="'g_hard_body'"/>
+			<object enabled="true" name="'g_mullplan'"/>
+			<object enabled="true" name="'g_glass'"/>
+			<body enabled="true" name="'c_deathwish'"/>
+			<body enabled="true" name="'glass'"/>
+			<body enabled="true" name="'glass'"/>
+			<decal_mesh enabled="true" name="'dm_body_steel_deathwish'"/>
+			<decal_mesh enabled="true" name="'c_glass'"/>
+			<decal_mesh enabled="true" name="'dm_neck_steel_deathwish'"/>
+			<object enabled="true" name="'g_security_camera_light_deathwish'"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'crack_glass'" triggable="true">			
+			<object			enabled="false"		name="'g_glass'"/>
+			<object			enabled="true"		name="'g_glass_shattered'"/>
 			
-			<graphic_group	visibility="false"	name="'g_default'"/>
-			<graphic_group	visibility="true"	name="'g_titan'"/>
+			<attention	giveaway="'broken_cam'"		operation="'add'"				preset_name="'broken_cam_ene_ntl'"/>			
+		</sequence>
+		
+		<sequence editable_state="true" name="'destroy_glass'" triggable="true">			
+			<object			enabled="false"		name="'g_glass'"/>
+			<decal_mesh		enabled="false"		name="'c_glass'"/>
+			<object			enabled="false"		name="'g_glass_shattered'"/>		
+			<body			enabled="false"		name="'glass'"/>
+
+			<effect damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'attention' )" position="v()"/>
+			<sound action="'play'" event="'window_small_shatter'" object="'attention'"/>
+
+			<body			enabled="true"	name="'hard_head'"/>
+			<decal_mesh		enabled="true" name="'c_hard_head'"/>
 			
-			<decal_mesh		enabled="false" name="'dm_security_camera'"/>
-			<body			enabled="false" name="'c_security_camera'"/>
-			<body			enabled="true"	name="'c_deathwish'"/>
-			<decal_mesh		enabled="true"	name="'dm_body_steel_deathwish'"/>
-			<decal_mesh		enabled="true"	name="'dm_neck_steel_deathwish'"/>
+			<attention	giveaway="'broken_cam'"		operation="'add'"				preset_name="'broken_cam_ene_ntl'"/>						
 		</sequence>
 		
 		<!--Toggle Flashlight Effect-->

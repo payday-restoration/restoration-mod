@@ -193,7 +193,7 @@
 	<decal_surfaces default_material="flesh" />
 
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
+		<graphic_group name="character" enabled="true" culling_object="co_culling">
 			<!-- MAIN BODIES - SHARED -->
 				<!-- SHORTSLEEVE COP -->
 				<lod_object name="lod_body_shortsleeve">

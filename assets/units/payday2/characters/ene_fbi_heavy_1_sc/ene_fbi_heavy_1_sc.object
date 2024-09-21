@@ -221,7 +221,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
+		<graphic_group name="character" enabled="true" culling_object="co_culling">
 			
 			<!-- BASE BODY AND GEAR-->
 			<lod_object name="lod_body">

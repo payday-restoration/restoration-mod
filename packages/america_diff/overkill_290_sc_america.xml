@@ -16,10 +16,7 @@
 	<!--vanilla unit texture overrides-->	
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
-	
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_nm" />
-	
+		
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>		
 	

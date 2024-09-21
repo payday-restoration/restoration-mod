@@ -3328,7 +3328,7 @@ function CopDamage:taser_bag_explode()
 	--Do a shit ton of damage to this dude and stun him
 	local taser_action_data = {
 		variant = "counter_tased",
-		damage = self._unit:character_damage()._HEALTH_INIT * 0.25,
+		damage = self._unit:character_damage()._HEALTH_INIT * 0.2,
 		damage_effect = self._unit:character_damage()._HEALTH_INIT * 2,
 		attacker_unit = self._unit,
 		attack_dir = -self._unit:movement()._action_common_data.fwd,
@@ -3370,7 +3370,7 @@ function CopDamage:grenadier_bag_explode()
 	local custom_params = {
 		camera_shake_max_mul = 4,
 		effect = "effects/particles/explosions/explosion_flash_grenade",
-		sound_event = "concussion_explosion",
+		sound_event = "flashbang_explosion",
 		feedback_range = range * 2
 	}
 	local tweak_entry = {
@@ -3381,8 +3381,20 @@ function CopDamage:grenadier_bag_explode()
 		name_id = "bm_concussion",
 	}
 	
-	--Do a shit ton of damage to this dude
-	self._unit:character_damage():damage_mission({damage = 40})
+	--Do a shit ton of damage to this dude and stun him
+	local boom_action_data = {
+		variant = "concussion",
+		damage = self._unit:character_damage()._HEALTH_INIT * 0.2,
+		damage_effect = self._unit:character_damage()._HEALTH_INIT * 2,
+		attacker_unit = self._unit,
+		attack_dir = -self._unit:movement()._action_common_data.fwd,
+		col_ray = {
+			position = mvector3.copy(self._unit:movement():m_head_pos()),
+			body = self._unit:body("body")
+		}
+	}
+
+	self._unit:character_damage():damage_melee(boom_action_data)		
 	
 	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)	
 	

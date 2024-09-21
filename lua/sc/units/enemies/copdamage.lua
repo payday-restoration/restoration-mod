@@ -1461,7 +1461,7 @@ function CopDamage:damage_melee(attack_data)
 		return
 	end
 
-	if self:is_friendly_fire(attack_data.attacker_unit) then
+	if self:is_friendly_fire(attack_data.attacker_unit) and not attack_data.attacker_unit == self._unit then
 		return "friendly_fire"
 	end
 	
@@ -3324,6 +3324,21 @@ function CopDamage:taser_bag_explode()
 		sound_event = "grenade_electric_explode",
 		feedback_range = range * 2
 	}
+	
+	--Do a shit ton of damage to this dude and stun him
+	local taser_action_data = {
+		variant = "counter_tased",
+		damage = self._unit:character_damage()._HEALTH_INIT * 0.25,
+		damage_effect = self._unit:character_damage()._HEALTH_INIT * 2,
+		attacker_unit = self._unit,
+		attack_dir = -self._unit:movement()._action_common_data.fwd,
+		col_ray = {
+			position = mvector3.copy(self._unit:movement():m_head_pos()),
+			body = self._unit:body("body")
+		}
+	}
+
+	self._unit:character_damage():damage_melee(taser_action_data)	
 		
 	managers.explosion:play_sound_and_effects(pos, normal, range, custom_params)
 

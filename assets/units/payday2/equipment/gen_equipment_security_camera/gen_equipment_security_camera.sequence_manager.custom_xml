@@ -24,13 +24,13 @@
 			<endurance bullet="1" explosion="1" melee="0.5" lock="0.25">
 				<run_sequence filter="'filter_titan'" name=" 'crack_glass' "/>
 			</endurance>		
-			<endurance bullet="2" explosion="2" melee="1" lock="0.5">
+			<endurance bullet="3" explosion="2" melee="1" lock="0.5">
 				<run_sequence filter="'filter_titan'" name=" 'destroy_glass' "/>
 			</endurance>
 		</body>
 		
 		<body name="'hard_head'">
-			<endurance bullet="2" explosion="2" melee="1" lock="0.5">
+			<endurance bullet="3" explosion="2" melee="1" lock="0.5">
 				<run_sequence filter="'filter_titan'" name=" 'stop' "/>
 			</endurance>
 		</body>		

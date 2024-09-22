@@ -2,9 +2,9 @@
 	<unit>
 		<variables>
 			<var_light_1_state value="1"/>
-			<var_debris_l value="1"/>
-			<var_debris_r value="1"/>
-			<var_debris_top value="1"/>
+			<var_debris_l value="0"/>
+			<var_debris_r value="0"/>
+			<var_debris_top value="0"/>
 			<var_light_2_state value="1"/>
 			<var_shield_state value="1"/>
 			<var_charging_1_state value="0"/>
@@ -64,18 +64,18 @@
 		</filter>
 		
 		<sequence name="'enable_body'" triggable="true">
+			<body  enabled="false" name="'held_body_top'"/>
+			<object  filter="'filter_debris_top'" enabled="false" name="'c_shield_top'"/>
+			
+			<body enabled="false" name="'held_body_right'"/>
+			<object  filter="'filter_debris_l'" enabled="false" name="'c_shield_l'"/>
+			
+			<body  enabled="false" name="'held_body_left'"/>
+			<object  filter="'filter_debris_r'" enabled="false" name="'c_shield_r'"/>
+		
 			<body enabled="false" name="'held_body_middle'"/>
 			<body enabled="true" name="'dropped_body_middle'"/>
-			
-			<body  filter="'filter_debris_top'" enabled="false" name="'held_body_top'"/>
-			<body  filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
-			
-			<body  filter="'filter_debris_l'" enabled="false" name="'held_body_right'"/>
-			<body  filter="'filter_debris_l'" enabled="true" name="'dropped_body_right'"/>
-			
-			<body  filter="'filter_debris_l'" enabled="false" name="'held_body_left'"/>
-			<body  filter="'filter_debris_l'" enabled="true" name="'dropped_body_left'"/>
-			
+						
 			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1_blink'"/>
 			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2_blink'"/>
 		</sequence>
@@ -194,6 +194,12 @@
 		</sequence>
 		
 		<!-- mother brains -->
+		<body name="'held_body_middle'">
+			<endurance damage="150" explosion="120" melee="150">
+				<run_sequence name="'int_seq_shield_break'"/>
+			</endurance>
+		</body>
+		
 		<body name="'held_body_left'">
 			<endurance damage="30" explosion="25" melee="30">
 				<run_sequence name="'int_seq_shield_break_l'"/>
@@ -212,11 +218,6 @@
 			</endurance>
 		</body>
 		
-		<body name="'held_body_middle'">
-			<endurance damage="150" explosion="120" melee="150">
-				<run_sequence name="'int_seq_shield_break'"/>
-			</endurance>
-		</body>
 		
 		<body name="'glass'">
 			<endurance damage="15" explosion="10" melee="15">
@@ -230,9 +231,9 @@
 			<body enabled="false" name="'held_body_left'"/>
 			<decal_mesh enabled="false" name="'dm_metal_l'"/>	
 		
-			<set_variables filter_debris_l="0"/>			
+			<set_variables var_debris_l="1"/>			
 			
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_r')" rotation="object_rot('drop_shield_r')"/>						
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_r')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>						
 			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
@@ -244,9 +245,9 @@
 			<object enabled="false" name="'g_shield_r'"/>	
 			<decal_mesh enabled="false" name="'dm_metal_r'"/>	
 
-			<set_variables filter_debris_r="0"/>			
+			<set_variables var_debris_r="1"/>			
 
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_l')" rotation="object_rot('drop_shield_l')"/>			
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_l')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 
@@ -257,9 +258,9 @@
 			<body enabled="false" name="'held_body_top'"/>
 			<decal_mesh enabled="false" name="'dm_metal_top'"/>	
 
-			<set_variables filter_debris_top="0"/>			
+			<set_variables var_debris_top="1"/>			
 
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_top'" position="object_pos('drop_shield_top')" rotation="object_rot('drop_shield_top')"/>						
+			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_top'" position="object_pos('drop_shield_top')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>						
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 		

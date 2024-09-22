@@ -65,13 +65,13 @@
 		
 		<sequence name="'enable_body'" triggable="true">
 			<body  enabled="false" name="'held_body_top'"/>
-			<object  filter="'filter_debris_top'" enabled="false" name="'c_shield_top'"/>
+			<body  filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
 			
 			<body enabled="false" name="'held_body_right'"/>
-			<object  filter="'filter_debris_l'" enabled="false" name="'c_shield_l'"/>
+			<object  filter="'filter_debris_l'" enabled="false" name="'dropped_body_right'"/>
 			
 			<body  enabled="false" name="'held_body_left'"/>
-			<object  filter="'filter_debris_r'" enabled="false" name="'c_shield_r'"/>
+			<body  filter="'filter_debris_r'" enabled="true" name="'dropped_body_left'"/>
 		
 			<body enabled="false" name="'held_body_middle'"/>
 			<body enabled="true" name="'dropped_body_middle'"/>

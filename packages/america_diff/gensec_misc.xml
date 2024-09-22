@@ -3,7 +3,6 @@
 	<!--vanilla unit texture overrides-->	
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<texture			path="units/payday2/characters/shared_textures/helmets_city_df" />	
-	<texture				
 	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />
 	
 	<!-- gensec tier -->

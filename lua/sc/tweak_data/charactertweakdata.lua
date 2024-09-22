@@ -76,7 +76,7 @@ function CharacterTweakData:_init_region_america()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
-	self._speech_prefix_p2 = "d"
+	self._speech_prefix_p2 = "n"
 end
 
 function CharacterTweakData:_init_region_russia()
@@ -146,7 +146,7 @@ function CharacterTweakData:_init_region_nypd()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
-	self._speech_prefix_p2 = "d"
+	self._speech_prefix_p2 = "n"
 end
 
 function CharacterTweakData:_init_region_lapd()
@@ -160,7 +160,7 @@ function CharacterTweakData:_init_region_lapd()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
-	self._speech_prefix_p2 = "d"
+	self._speech_prefix_p2 = "n"
 end		
 
 function CharacterTweakData:_init_region_fbi()
@@ -174,7 +174,7 @@ function CharacterTweakData:_init_region_fbi()
 		bulldozer = "bdz",
 		medic = "mdc"
 	}
-	self._speech_prefix_p2 = "d"
+	self._speech_prefix_p2 = "n"
 end
 
 function CharacterTweakData:get_ai_group_type()    

@@ -48,7 +48,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 			["resmod_advmov_melee_on"] = "По умолчанию",
 			["resmod_advmov_melee_loud_only"] = "Во время громкого подхода",
 			["resmod_advmov_melee_off"] = "Выключено",
-		
+
 
 		["restoration_level_data_unknown"] = "НЕИЗВЕСТНОЕ ВРЕМЯ, НЕИЗВЕСТНОЕ МЕСТО",
 		["RestorationModEnv_BanksTitleID"] = "Ограбление банка",
@@ -224,10 +224,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["vanilla_on_rails"] = "Стандартный/рельсовый",
 		["kf_mw_style"] = "Стиль KF1/CoD",
 		["tilt_in"] = "Наклон",
-		
+
 		["base_wpn_cat"] = "Основной навык",
 		["sub_wpn_cat"] = "Саб-категория и урон",
-		
+
 		["RestorationModWepNamesTitleID"] = "Названия оружия",
 		["RestorationModWepNamesDescID"] = "Стиль названия оружия и модулей. Требуется перезапуск.",
 		["resmod_res_names"] = "Кириллица",
@@ -304,13 +304,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModBotsNoDropTitleID"] = "Отключить сброс сумок у ботов",
 		["RestorationModBotsNoDropDescID"] = "Боты больше не будут сбрасывать мешки.",
 		["RestorationModCloakerTurnTitleID"] = "Пинок Клокера: Поворачивать камеру",
-		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",	
+		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Выключить смену цвета баннера штурма",
-		["RestorationModDisableMutatorColorsDescID"] = "Выключает смену цвета баннера штурма, вызванное использованием мутаторов (работает только с обычным баннером).",			
+		["RestorationModDisableMutatorColorsDescID"] = "Выключает смену цвета баннера штурма, вызванное использованием мутаторов (работает только с обычным баннером).",
 		["RestorationModHolidayTitleID"] = "Праздничные эффекты",
 		["RestorationModHolidayDescID"] = "Включает или выключает праздничные эффекты в моде.",
 		["RestorationModRestoreHitFlashTitleID"] = "Вспышка при уроне",
-		["RestorationModRestoreHitFlashDescID"] = "Включить или выключить вспышку экрана при получении урона из старых версий игры.",	
+		["RestorationModRestoreHitFlashDescID"] = "Включить или выключить вспышку экрана при получении урона из старых версий игры.",
 		["RestorationModNotifyTitleID"] = "Уведомление",
 		["RestorationModNotifyDescID"] = "Включить или выключить уведомления мода.",
 		["RestorationModPauseTitleID"] = "Меню паузы из Альфы",
@@ -449,7 +449,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_pex"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Мексика - Полицейский участок",
 		["restoration_level_data_fex"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Мексика - Особняк Булука",
 		["restoration_level_data_chas"] = "20:30, Сан Франциско - Чайнатаун",
-		["restoration_level_data_sand"] = "22:30, Сан Франциско - Порт",		
+		["restoration_level_data_sand"] = "22:30, Сан Франциско - Порт",
 		["restoration_level_data_chca"] = "21:24, Залив Сан Франциско - Лайнер Black Cat",
 		["restoration_level_data_pent"] = "23:30, Сан Франциско - Пентхаус Юфу Венга",
 		["restoration_level_data_ranc"] = "18:24, Техас - Ранчо Мидленд",
@@ -463,7 +463,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
 		["restoration_level_data_bluewave"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Склад Aurelian",
 
-		
+
          --custom heists
 		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова", --Flatline
 		["restoration_level_data_ahopl"] = "9:06 PM, Yuri's Private Club", --A House of Pleasure
@@ -475,7 +475,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_hunter_departure"] = "10:13 PM, Aleksandr's Private Airport", --Hunger and Hunted d2
 		["restoration_level_data_hunter_fall"] = "1:36 AM, Somewhere Over International Waters", --Hunter and Hunted d3
 		["restoration_level_data_ruswl"] = "11:50 AM, Somewhere in Russia", --Scorched Earth
-		
+
 		["heist_greattrain_name"] = "Time Window",
 		["heist_easystore_name"] = "Twenty-Four Seven",
 		["heist_sin_villa_name"] = "SCORE: Villa Vivaldi",
@@ -504,8 +504,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_contacts_shatter"] = "Союзники CRIMENET",
 		["heist_contact_jackal_description"] = "Джекел начал свою карьеру в GenSec, но уволился после инцидента, связанного с торговлей людьми, в котором были замешаны GenSec и OMNIA.\n\nТеперь он работает на CRIMENET, поставляя проблемы им прямо на дом.",
 		["heist_contact_akashic_description"] = "В прошлом - высокопоставленный агент Гектора Моралеса, Николас 'Нико' Рене теперь командует остатками Синалоанского картеля в США. \nИх численность мала, и более крупный Колумбийский картель не собирается ни предоставлять помощь, ни восстанавливать союз с CRIMENET. Нико объединяется с различными мелкими бандами на Восточном побережье, а также с CRIMENET - он предоставит свои ресурсы в обмен на услуги.",
-		
-		
+
+
 		["bm_msk_shatter_true"] = "Шаттер",
 		["bm_msk_shatter_true_desc"] = "Легендарная маска, о которой говорят вполголоса.\n\nРазумеется, это просто дубликат.\n\nВ настоящей маске есть кое-что особенное, но думаю, вас устроит и копия.\n\nФеникс символизирует перерождение того, кто не может быть убит. Попробуй его уничтожить, и он лишь нанесет огненный контр-удар.",
 		["menu_l_global_value_veritas"] = "Restoration Mod",
@@ -556,6 +556,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["bm_msk_wolf_stone"] = "Вульф из Stonecold",
 		["bm_msk_wolf_stone_desc"] = "Оригинальная маска Вульфа, которую он носил, когда впервые сошел с ума и начал воплощать преступления из своих любимых игр. Считалось, что эта маска была утеряна во время ограбления, вдохновленного игрой ‘Hyper Heisting’.\n\nВо время ранних ограблений банды, маска нашлась и была доставлена в убежище одним из сообщников Бейна.\n\nОригинальный узор маски со временем потускнел, совсем как психическая стабильность Вульфа.",
+
+		["bm_msk_thespian"] = "Thespian",
+		["bm_msk_thespian_desc"] = "Thespian is a superhuman solider of fortune. In the future, space marines like Thespian protect the world of mankind and its space colonies from forces of evil\n\nHis helmet is a popular gift in the criminal underworld and is given to thieves, thugs and career criminals who show their loyalty and patience to the syndicate.",
 
 		["bm_msk_dallas_aged"] = "Древний Даллас",
 		["bm_msk_dallas_aged_desc"] = "Вы с бандой обнаружили эти маски в странной египетской шкатулке, найденной в Скале Генри. Сама шкатулка оказалась утеряна при перевозке, но ее содержимое было передано вам.\n\nВ этих масках есть что-то необычное. Нет информации, откуда они могли появиться.\n\nДжекел считает, что они могли быть сделаны в качестве практичной шутки, чтобы напугать банду.\n\nОднако вы замечаете, что эти маски выглядят очень, очень старыми.",
@@ -900,7 +903,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_deploy_fak"] = "Разложить $count аптечек первой помощи.",
 		["ch_deploy_sentry_hl"] = "Любитель Уайт Месы",
 		["ch_deploy_sentry"] = "Разложить $count турелей.",
-		
+
 		["ch_bridge_no_bleedouts_hl"] = "Зеленый Мост: непробиваемый",
 		["ch_bridge_no_bleedouts"] = "Завершите контракт \"Зеленый мост\" на уровне сложности \"Сложно\", \"Очень Сложно\" или \"OVERKILL\", ни разу не упав",
 		["ch_duck_hunting_hl"] = "Мост слишком далеко!",
@@ -921,7 +924,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_winters_test_desc"] = "Убейте капитана Винтерса ножом-бабочкой или выкидным ножом, пока он держит щит",
 		["ch_spring_test"] = "У меня волына больше",
 		["ch_spring_test_desc"] = "Убейте капитана Спринга миниганом Вулкан или микроганом XL 5.56",
-		
+
 		["ch_pdth_style_fwb"] = "Старая школа: Первый Всемирный Банк",
 		["ch_pdth_style_fwb_desc"] = "Завершите контракт \"Первый Всемирный Банк\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
 		["ch_pdth_style_heat"] = "Старая школа: Схватка на улице",
@@ -940,7 +943,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_pdth_style_undercover_desc"] = "Завершите контракт \"Под прикрытием\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
 		["ch_pdth_style_nomercy"] = "Старая школа: Нет милосердию",
 		["ch_pdth_style_nomercy_desc"] = "Завершите контракт \"Нет милосердию\" на уровне сложности OVERKILL или выше, надев костюм-двойку или ЛББ, не потратив ни одного очка навыков в деревья навыков, используя набор перков Прирожденный или Перерожденный, приклад и оружия из PD:TH",
-		
+
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
 		["state_filter"] = "Статус",
@@ -949,11 +952,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_lobby"] = "В лобби",
 		["menu_state_loading"] = "Загружается",
 		["menu_state_ingame"] = "В игре",
-		
-		
+
+
 		["menu_description"] = "План",
 		-- ///Stuff ripped from the various locale files we had ///
-		
+
 		--Halloween Dozer Sword
 		["bm_melee_halloween_sword"] = "Меч Безголового Бульдозера",
 		["bm_melee_titham"] = "Молот Безголового Бульдозера",
@@ -966,7 +969,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		--Toasty
 		["bm_melee_toast"] = "Тост Алмира",
 		["bm_melee_toast_info"] = "Ты - не ты, когда голоден.\n\nУменьшает получаемый урон на #{skill_color}#10%## во время замаха.",
-		
+
 		--S&W .500
         ["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Ствол 'Горус'",
 		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Ствол 'Шаттер'",
@@ -978,7 +981,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Гладкий барабан",
 
 		["menu_l_global_value_shatters_fury"] = "Это предмет ВЕРИТАС!",
-		
+
 		--MK-23
 		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
 		["bm_w_socom"] = "Пистолет Anubis .45",
@@ -1000,8 +1003,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_nmh_new2_desc"] = "Нажмите кнопку и ожидайте лифт",
 
 		["heist_nmh_new3"] = "Вызовите лифт",
-		["heist_nmh_new3_desc"] = "Нажмите кнопку и ожидайте лифт",	
-		
+		["heist_nmh_new3_desc"] = "Нажмите кнопку и ожидайте лифт",
+
 		--GO Bank remastered
 		["menu_nh_mod_gobank_v2"] = "Банк GO - Ремастер",
 
@@ -1024,8 +1027,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["trophy_csgo01_desc"] = "И за него даже не пришлось платить!",
 		["trophy_csgo01_objective"] = "На ограблении Банк GO - Ремастер, найдите краску и нарисуйте граффити в хранилище.",
 
-		["END"] = "КОНЕЦ",	
-		
+		["END"] = "КОНЕЦ",
+
 		--Whurr Heat Street Edit
 		["heist_heat_street_new_name"] = "Схватка на улице (классика)",
 		["heist_heat_street_new_brief"] = "Говорят, что ничего не бывает наверняка, но эта работа выглядит как нельзя проще: зайти, взять кейс, уйти. Ваш доверенный водитель Мэтт будет ждать вас в ближайшей аллее, и, если вы доберетесь до фургона, все пройдет как по маслу.",
@@ -1036,7 +1039,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_heat_street_name"] = "Жилой район - здание 'Инквелл'",
 		["heist_skm_heat_street_brief"] = "Недавно копы допросили заключенного, который утверждает, что видел лицо Бейна и может его опознать. Разумеется, это неправда - но об этом не догадываются ни копы, ни наши враги, поэтому мы воспользуемся ситуацией, чтобы срубить немного денег. Перехватите заключенного, когда его будут перевозить около старой фабрики, где еще разбился тот идиот Мэтт, когда пытался убежать тот нас.",
 		["heist_skm_street_name"] = "Столкновение: Жилой район - здание 'Инквелл'",
-		["heist_skm_street_brief"] = "Недавно копы допросили заключенного, который утверждает, что видел лицо Бейна и может его опознать. Разумеется, это неправда - но об этом не догадываются ни копы, ни наши враги, поэтому мы воспользуемся ситуацией, чтобы срубить немного денег. Перехватите заключенного, когда его будут перевозить около старой фабрики, где еще разбился тот идиот Мэтт, когда пытался убежать тот нас.",	
+		["heist_skm_street_brief"] = "Недавно копы допросили заключенного, который утверждает, что видел лицо Бейна и может его опознать. Разумеется, это неправда - но об этом не догадываются ни копы, ни наши враги, поэтому мы воспользуемся ситуацией, чтобы срубить немного денег. Перехватите заключенного, когда его будут перевозить около старой фабрики, где еще разбился тот идиот Мэтт, когда пытался убежать тот нас.",
 
 		--Xmas Hoxout and Breaking Feds
 		["heist_xmn_hox"] = "Рождественское спасение Хокстона",
@@ -1047,59 +1050,59 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_xmn_hox_brief"] = "Дантист сфальсифицировал новое судебное разбирательство для Хокстона. Мы должны перехватить его сразу после слушания. Действовать будете настолько громко, насколько это возможно: взрываете стену, хватаете Хокстона и сбегаете к чертям.$NL;$NL;» Освободите Хокстона$NL;» Проведите его до бронированного грузовика$NL;» Сопровождайте грузовик$NL;» Скройтесь с места преступления вместе с Хокстоном.",
 
 		["heist_xmn_tag_name"] = "Проникновение на Рождество",
-		
+
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Лебедка для быстрого переноса сумок",
-		
+
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "Этим утром, взрывчатку погрузили на поезд, который двигается в Норфолк. Возможно, их собираются продать или списать - это неважно, ведь она туда не доедет. Поезд остановить нелегко, так что мы прибегнем к методам Дикого запада. Взорвете опоры моста - и поезд рухнет. План громкий и грязный, зато эффективный. Вагоны будут разбросаны повсюду. В одном из них наша взрывчатка - обыщите все вагоны, пока не найдете ее.\n\nЗАПИСКА ОТ ДЖЕКЕЛА:\nЯ получил информацию, что туда движутся наемники АКАНа - похоже, он захотел бомбу себе.",
-		
+
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "Миа Калиенте — хорошая добыча, друзья. В течение многих лет она была мозгом операций Murkywater в Вашингтоне. Не так давно Murkywater заняли портовый склад, который они используют как дополнительную точку распределения. Наша цель находится там, проверяет какую-то добычу, недавно награбленную из-за границы. Мы проникнем туда и возьмем девку в заложники. Мурки не могут позволить себе потерять ее и они заплатят за ее освобождение, может быть даже вышеупомянутой и весьма ценной добычей. Что скажете, банда?",
-		
+
 		--Side Jobs
 		["menu_challenge_menu_challenge_moon_6_obj"] = "Завершите контракт Скотобойня на уровне сложности OVERKILL или выше, не убивая капитана Спринга.",
-		
+
 		--Generic Captain Text
 		["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		
+
 		--Boiling Point RU text tweaks
 		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
 		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
-		
+
 	})
 
 	-- maybe need change banner descriptions
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "ГОСПОДА ГРАБИТЕЛИ, ВЫ ОКРУЖЕНЫ",
 		})
 	elseif captain_type == restoration.captain_types.winter then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ВИНТЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})
 	elseif captain_type == restoration.captain_types.summer then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА САММЕРСА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
 		})
 	elseif captain_type == restoration.captain_types.spring then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА СПРИНГА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})		
+		})
 	elseif captain_type == restoration.captain_types.autumn then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "УБЕЙТЕ КАПИТАНА ОТЕМА ЧТОБЫ ЗАКОНЧИТЬ ШТУРМ",
-		})		
+		})
 	elseif captain_type == restoration.captain_types.hvh then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "ПОБЕДИТЕ СТРАХ И ПРОСНИТЕСЬ",
 		})
-	end			
-	
+	end
+
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
@@ -1111,11 +1114,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_inspect_player"] = "Осмотреть игрока",
 		["menu_inspect_player_desc"] = "Осмотреть статистику игрока",
 		["menu_toggle_one_down_lobbies"] = "Разрешить режим Pro-Job",
-				
+
 		["heist_safehouse"] = "Старое Убежище",
-		
+
 		--Events
-		
+
 		--Anniversary Event
 		["menu_pda8_1_prog_obj_desc"] = "Найти 2 праздничные статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
 		["menu_pda8_2_prog_obj_desc"] = "Всем сообществом грабители должны потратить $5,000,000,000 на пенсию копов при помощи Бабломета, также вам нужно найти 3 разных праздничных статуэтки в Ювелирном магазине, Четырех магазинах, Ночном клубе, Ограблении банка или Крушителе. Для выполнения задания, ограбление нужно пройти до конца.",
@@ -1124,7 +1127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_pda8_2_prog_obj"] = "Найти 3 праздничные статуэтки.",
 		["menu_pda8_3_prog_obj"] = "Найти 4 праздничные статуэтки.",
-			
+
 		--Holdout--
 		["menu_cn_skirmish"] = "Столкновение",
 		["menu_skirmish"] = "Столкновение - оборона заложника",
@@ -1168,7 +1171,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_pines_briefing"] = "Место нахождения в такой дальней глуши, что вам надо поторопиться и бежать сломя голову. Найдите пилота. Он должен быть рядом с местом крушения. Мы отправим вертолет, чтобы эвакуировать его. Пилот должен быть в полной безопасности до тех пор, пока не отправится к нам. И еще кое-что: Влад говорит, что в самолете был неплохой товар. Прочешите лес и утащите столько кокаина, сколько сможете. На Рождество деньги лишними не будут.\n\nСООБЩЕНИЕ ОТ ДЖЕКЕЛА:\nШум от падения самолета привлек внимание находившихся неподалеку наемников организации REAPER. Сражаться будете не с полицией.",
 
 		----Custom Achievements----
-				
+
 		--Scarface Mansion--
 		["skm_friend_name"] = "Столкновение: Особняк Эль-Фурейдис",
 		["friend_3"] = "Вор в окопе",
@@ -1198,7 +1201,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["nightmare_9"] = "Так проснитесь же, Мистер Стил", --translation note: quote from HL2 intro gman speech + Dallas' alias
 		["nightmare_9_desc"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
 		["nightmare_9_obj"] = "Начиная с первой волны, продержитесь девять волн в Старом Убежище.",
-				
+
 		----Weapons + Mods Descriptions/names----
 
 		--Reinfield--
@@ -1206,8 +1209,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Набор Бернетти 93Т",
-		["bm_wp_upg_i_93r_desc"] = "#{risk}#Добавляет выбор режимов огня##, позволяя стрелять #{skill_color}#очередями по три, со скоростью 1100##, но #{important_1}#увеличивает отдачу.##", 
-				
+		["bm_wp_upg_i_93r_desc"] = "#{risk}#Добавляет выбор режимов огня##, позволяя стрелять #{skill_color}#очередями по три, со скоростью 1100##, но #{important_1}#увеличивает отдачу.##",
+
 		--10-0
 		["bm_wp_upg_i_tekna"] = "Набор 'Текна'",
 		["bm_wp_upg_i_tekna_desc"] = "Оружие стреляет только #{risk}#очередями##.",
@@ -1216,7 +1219,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AMR16--
 		["bm_wp_upg_i_m16a2"] = "Набор АМР-16 B3",
 		["bm_wp_upg_i_m16a2_desc"] = "Заменяет автоматический огонь на стрельбу #{skill_color}#очередями по три##. #{risk}#Очереди#{skill_color}# имеют повышенную скорость в #{skill_color}#950.##",
-		
+
 		--Bernetti Auto--
 		["bm_wp_upg_i_b93o"] = "Набор Бернетти ОВЕРКИЛЛ",
 		["bm_wp_upg_i_b93o_desc"] = "Заменяет стрельбу очередями на #{skill_color}#автоматическую##, но #{important_1}#увеличивает отдачу.##",
@@ -1235,8 +1238,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--M32 MK32 Kit
 		["bm_wp_upg_i_ghosts_mk32"] = "Набор Марк 32",
-		["bm_wp_upg_i_ghosts_mk32_desc"] = "Заменяет одиночную стрельбу на #{skill_color}#стрельбу очередями по два.##",		
-		
+		["bm_wp_upg_i_ghosts_mk32_desc"] = "Заменяет одиночную стрельбу на #{skill_color}#стрельбу очередями по два.##",
+
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Дробь #{risk}#летит горизонтально##, а не распыляется.",
 		["bm_wp_ns_ultima_desc_sc"] = "Увеличивает разброс дроби на 75%.",
@@ -1268,7 +1271,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_vg_afg"] = "Рукоятка 'AFG'",
 		["bm_wp_upg_vg_stubby"] = "Вертикальная рукоятка 'Стабби'",
 		["bm_wp_upg_vg_tac"] = "Вертикальная рукоятка 'TAC'",
-		
+
 		["fucktheatf"] = "Погодите, это реально?",
 
 		["bm_wp_upg_ns_ass_smg_stubby"] = "Пламегаситель 'Стабби'",
@@ -1336,7 +1339,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_6_range"] = "Дальнобойная оптика c #{skill_color}#дальномером.##\n#{risk}#Увеличение 6x.##",
 		["bm_wp_upg_o_8"] = "Дальнобойная оптика.\n#{risk}#Увеличение 8x.##",
 		["bm_wp_upg_o_8_range"] = "Дальнобойная оптика с #{skill_color}#дальномером.##\n#{risk}#Увеличение 8x.##",
-	
+
 		["bm_wp_upg_o_iwelo"] = "Оптика с подсвечиванием.\n#{risk}#Увеличение 1.1x.##",
 		["bm_wp_upg_o_iwrds"] = "Коллиматорный прицел особой точности.\n#{risk}#Увеличение 1.5x.##",
 
@@ -1350,7 +1353,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_dual"] = "Переключение между лазером и фонариком на #{skill_color}#$BTN_GADGET##",
 		["bm_wp_upg_fl_vmp_marker"] = "#{skill_color}#Автоматически помечает## охранников, особых и титановых врагов на расстоянии #{skill_color}#40## метров при прицеливании.\n\n#{risk}#Охранники помечаются только в стелсе.##",
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#ВО ВРЕМЯ ПРИЦЕЛИВАНИЯ НЕЛЬЗЯ ВКЛЮЧИТЬ ИЗ-ЗА ВТОРОСТЕПЕННОГО ПРИЦЕЛА.##",
-		
+
 		["bm_wp_upg_o_angled_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой и угловым прицелом.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой и угловым прицелом.\n#{skill_color}#Увеличение 1.1х.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Нажмите #{skill_color}#$BTN_GADGET## во время прицеливания чтобы переключиться между оптикой и угловым прицелом.\n#{skill_color}#Увеличение 1.2х.##",
@@ -1422,10 +1425,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_czech_sc_desc"] = "Пример того, как не стоит использовать автоматические пистолеты. Ты как их перезаряжать будешь?",
 		--PPK (Gruber)
 		["bm_ppk_sc_desc"] = "Компактная альтернатива большим и опасным пушкам. Классическое оружие для классических целей.",
-		["bm_x_ppk_sc_desc"] = "Когда ты уже не Бонд, а Кингсмэн.",		
+		["bm_x_ppk_sc_desc"] = "Когда ты уже не Бонд, а Кингсмэн.",
 		--M13
 		["bm_legacy_sc_desc"] = "Модель из Западной Германии, которая не потерпела конкуренции с Бернетти, но может постоять за себя.",
-		["bm_x_legacy_sc_desc"] = "Два пистолета, забытых историей. Напомните об их существовании, залив комнату свинцом.",		
+		["bm_x_legacy_sc_desc"] = "Два пистолета, забытых историей. Напомните об их существовании, залив комнату свинцом.",
 		--Glock 17
 		["bm_g17_sc_desc"] = "Надежный и легкий в обращении. Отличный выбор для начинающего грабителя.",
 		["bm_x_g17_sc_desc"] = "Маленький калибр - не беда, когда стреляешь настолько быстро.\n\nИх использовал Хокстон во время освобождения.",
@@ -1437,15 +1440,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_x_pl14_sc_desc"] = "Современный российский пистолет, использующий пост-советские технологии из-за рубежа. Любим Риперами за надежность и футуристический дизайн.",
 		--Holt 9mm
 		["bm_holt_sc_desc"] = "Рабочий прототип пистолета, застрявшего в разработке. Инновационный дизайн, который помогает компенсировать отдачу.",
-		["bm_x_holt_sc_desc"] = "Целых два пистолета, которые считаются потерянными.",		
+		["bm_x_holt_sc_desc"] = "Целых два пистолета, которые считаются потерянными.",
 		--FMG-9
 		["bm_fmg9_sc_desc"] = "Экспериментальное оружие, служащее продвинутым держателем для 'Стрика'. В комплекте футуристическая технология разворота!",
 		--93R
 		["bm_beer_sc_desc"] = "Практически фантастический пистолет с разными режимами огня. Живой или мертвый, ты пройдешь со мной.",
-		--Contractor Pistols 
+		--Contractor Pistols
 		["bm_packrat_sc_desc"] = "Выбор Уика за свою надежность и простоту в использовании. Говорят, именно с ним он нанес визит в клуб The Red Circle.",
 		["bm_x_packrat_sc_desc"] = "Выбор для тех, кому нужно зачистить клуб русской мафии ради кровавой мести.",
-		--Breech (Luger) 
+		--Breech (Luger)
 		["bm_breech_sc_desc"] = "Пистолет, который почти захватил мир. Дважды. Этот немецкий артефакт стильный, точный и абсолютно устаревший.",
 		--Chimano Custom
 		["bm_g22c_sc_desc"] = "Комбинация высокой емкости и мощности. Один из лучших боевых пистолетов.",
@@ -1463,49 +1466,49 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_socom_desc"] = "Любимое оружие Джекела. Надежный и мощный пистолет под .45 ACP со стильным дизайном.",
 		--Crosskill
 		["bm_1911_sc_desc"] = "Когда 9мм кажется мало, возьмите этот модифицированный 1911А1, заряженный мощными .45ACP. Беспрецедентная жестокость.",
-		["bm_x_1911_sc_desc"] = "Может они и не обладают демоническими силами, но то, что они после себя оставляют, способно напугать любого.",		
+		["bm_x_1911_sc_desc"] = "Может они и не обладают демоническими силами, но то, что они после себя оставляют, способно напугать любого.",
 		--Crosskill Chunky
 		--["bm_w_m1911"] = "Кроскилл А1",
 		--Crosskill Guard
 		["bm_shrew_sc_desc"] = "Маленький и более компактный, чем модель А1. Увеличенная скрытность за счет уменьшения магазина и длины ствола.",
 		["bm_x_shrew_sc_desc"] = "Выбор Ханаанитов - два пистолета под .45 помогут отбить любую атаку.",
 		["bm_shrew_g_bling_sc_desc"] = "\"In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness.\"",
-		--USP 
+		--USP
 		["bm_usp_sc_desc"] = "Один из лучших пистолетов S&G преуспевает в уроне, емкости и дальнобойности.",
 		["bm_x_usp_sc_desc"] = "Парочка пистолетов S&G, когда нужно дать о себе знать.",
-		--Model 54 
+		--Model 54
 		["bm_type54_sc_desc"] = "Советский пистолет под тяжелый калибр 7.62×25мм, обладает подствольным дробовиком в качестве дополнительного способа избавиться от проблем.",
-		["bm_x_type54_sc_desc"] = "Двух стволов мало? Попробуйте четыре.",		
+		["bm_x_type54_sc_desc"] = "Двух стволов мало? Попробуйте четыре.",
 		--Broomstick--
 		["bm_c96_sc_desc"] = "\"...Ваше слово, товарищ Маузер!\"\n\nИнновационный немецкий пистолет, который модифицировали под автоматический огонь.\n\n#{risk}#Это оружие перезаряжается обоймами по десять патронов.##",
 		["bm_wp_c96_nozzle"] = "Насадка Бластер-44",
 		["bm_wp_c96_nozzle_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#1.5 сек.##\nСкорость зарядки: #{skill_color}#3/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#2 сек.##",
 		--Sub2000
-		["bm_sub2000_sc_desc"] = "Пистолет сомнительного качества сборки. Слабые пистолетные пули становятся мощнее из-за длины ствола, а возможность свертки дает хорошую скрытность.",	
+		["bm_sub2000_sc_desc"] = "Пистолет сомнительного качества сборки. Слабые пистолетные пули становятся мощнее из-за длины ствола, а возможность свертки дает хорошую скрытность.",
 		--Deagle
-		["bm_deagle_sc_desc"] = "Оружие крутых парней на все времена. Главное не вывихнуть руку.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
+		["bm_deagle_sc_desc"] = "Оружие крутых парней на все времена. Главное не вывихнуть руку.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 		["bm_x_deagle_sc_desc"] = "Нужно быть безумцем, чтобы додуматься взять на поле боя сразу два.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 	     --Kahn .357
 		--["bm_w_korth"] = "Кан .357",
-		--["bm_w_x_korth"] = "Парные Кан .357",		
+		--["bm_w_x_korth"] = "Парные Кан .357",
 		--Matever 2006m
-		["bm_2006m_sc_desc"] = "Очень редкий револьвер предоставляет дорогостоящую возможность пострелять девятимиллиметровками.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
-		["bm_wp_2006m_b_short"] = "Ствол 'Тачикома'",	
-		["bm_wp_2006m_b_medium"] = "Ствол 'Тогуса'",	
-		["bm_wp_2006m_b_long"] = "Ствол 'Кусанаги'",	
-		["bm_x_2006m_sc_desc"] = "Неудобность этой идеи компенсируется ее крутостью.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
-		--Frenchman Model 87	
-		["bm_model3_sc_desc"] = "Старомодный ответ на вопрос \"Что делать со всеми этими мудаками?\"\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",		
-		["bm_x_model3_sc_desc"] = "Копы не уважают правила дуэли, так что и тебе незачем.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
-		--Raging bull	
-		["bm_rage_sc_desc"] = "Мощная и недальнобойная пушка. Враги будут падать как кегли, если держать огонь ровно.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
-		["bm_x_rage_sc_desc"] = "Совсем неудобно и непрактично, но свидетели ограбления будут впечатлены.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
+		["bm_2006m_sc_desc"] = "Очень редкий револьвер предоставляет дорогостоящую возможность пострелять девятимиллиметровками.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		["bm_wp_2006m_b_short"] = "Ствол 'Тачикома'",
+		["bm_wp_2006m_b_medium"] = "Ствол 'Тогуса'",
+		["bm_wp_2006m_b_long"] = "Ствол 'Кусанаги'",
+		["bm_x_2006m_sc_desc"] = "Неудобность этой идеи компенсируется ее крутостью.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		--Frenchman Model 87
+		["bm_model3_sc_desc"] = "Старомодный ответ на вопрос \"Что делать со всеми этими мудаками?\"\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		["bm_x_model3_sc_desc"] = "Копы не уважают правила дуэли, так что и тебе незачем.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		--Raging bull
+		["bm_rage_sc_desc"] = "Мощная и недальнобойная пушка. Враги будут падать как кегли, если держать огонь ровно.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		["bm_x_rage_sc_desc"] = "Совсем неудобно и непрактично, но свидетели ограбления будут впечатлены.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 		--Castigo
-		["bm_chinchilla_sc_desc"] = "Мощный, точный, стильный. Подойдет против самых сильных вашингтонских копов.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
-		["bm_x_chinchilla_sc_desc"] = "Сикарио не дает своей жертве шанса выжить - помогают эти револьверы.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",	
+		["bm_chinchilla_sc_desc"] = "Мощный, точный, стильный. Подойдет против самых сильных вашингтонских копов.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
+		["bm_x_chinchilla_sc_desc"] = "Сикарио не дает своей жертве шанса выжить - помогают эти револьверы.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 		--RUS-12
 		["bm_rsh12_sc_desc"] = "Больше не нужно меряться малокалиберными стволами.\n\n#{skill_color}#Может пробивать броню, врагов, щитов и тонкие стены.##",
-		--Chunky 1911 
+		--Chunky 1911
 		["bm_m1911_sc_desc"] = "Перевыпуск старенького Crosskill .45. Почти не отличается от оригинала.",
 		--SAA/Peacemaker
 		["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\nАльтернативный огонь выпускает боезапас #{skill_color}#с повышенной скоростью##, за счет #{important_1}#отдачи, точности и невозможности прицеливания.##\n\n##Может пробивать броню, врагов, щитов и тонкие стены.##",
@@ -1518,7 +1521,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			--["bm_w_derringer"] = "Деринжер",
 			--Automag .44
 			--["bm_w_amt"] = "Автомаг .44",
-			--Zippy 
+			--Zippy
 			["bm_zippy_sc_desc"] = "Самое малогабаритное летальное оружие, которое придумало человечество. Правда не стоит ожидать, что оно будет работать без осечек. Вам повезет, если после пары выстрелов это оружие не взорвется в Вашей руке.",
 			--Auto-9
 			["bm_wp_rc_auto9_cartoon"] = "Мультяшные трейсеры",
@@ -1527,7 +1530,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["thatgun_desc"] = "Вот это волына!\n\nИменно та самая!\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 			--Malorian 3516
 			--Киберсрань
-			["whydoyoucome"] = "Единственный в своем роде, сделанный специально для Джонни Сильверхенда.\n\n#{skill_color}#Может пробивать врагов и их броню.\nВо время стрельбы от бедра пули будут рикошетить от поверхностей. Пули пробивают стены, если стрелять в режиме прицеливания.\nУдар прикладом выпускает волну огня в небольшом радиусе.##",			
+			["whydoyoucome"] = "Единственный в своем роде, сделанный специально для Джонни Сильверхенда.\n\n#{skill_color}#Может пробивать врагов и их броню.\nВо время стрельбы от бедра пули будут рикошетить от поверхностей. Пули пробивают стены, если стрелять в режиме прицеливания.\nУдар прикладом выпускает волну огня в небольшом радиусе.##",
 			--Colt Detective
 			--["bm_w_coltds"] = "Кросскилл Детектив",
 			["bm_lemon_dmc_desc"] = "Мечтаете о скрытном и мощном револьвере? Мечты сбываются.\n\n#{skill_color}#Наносит двойной урон при атаке сзади.##",
@@ -1546,11 +1549,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 					--NV4
 					["bm_wp_upg_o_iwelo"] = "Оптический прицел с плавающей прицельной сеткой \n#{риск}#Увеличение 1.1х##",
 					["bm_wp_upg_o_iwrds"] = "Высокоточный прицел с красной точкой.\n#{риск}#Увеличение 1.5х.",
-					
+
 					--Raygun
 					["bm_wp_raygun_o_waw"] = "Старое прицеливание",
 					["bm_wp_raygun_o_waw_desc"] = "Меняет выравнивание прицела так, как это было до Call of Duty: Black Ops II",
-		
+
 		--Kobus 90--
 		["bm_p90_sc_desc"] = "ПП по схеме буллпап. Конкурент ПП 'SpecOps-7'. Ее часто называют футуристической космической пушкой.\n\n#{skill_color}#Наносит 75% урона через броню.##",
 		["bm_wp_p90_body_p90_tan"] = "Бежевый приклад",
@@ -1577,7 +1580,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AK Gen
 		--["bm_w_vityaz"] = "АК 21 Тактический",
 		--Signature SMG
-		--["bm_w_shepheard"] = "Сигнатур 10", 
+		--["bm_w_shepheard"] = "Сигнатур 10",
 		--Compact-5/MP5
 		["bm_mp5_sc_desc"] = "Младшая сестра Гевер-3.\nСкорострельная, точная и удобная, что еще можно желать от ПП?",
 		--Swedish K
@@ -1594,7 +1597,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--["bm_w_x_mac10"] = "Парные Марк 10",
 		--MP40
 		["bm_erma_sc_desc"] = "Весьма надежный ПП, популярный у пехоты Второй мировой. Главное не использовать магазин как рукоять.",
-		
+
 		--Jackal
 		--["bm_w_schakal"] = "Шакал",
 		--Kross Vertex
@@ -1623,20 +1626,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RPK
 		["bm_rpk_sc_desc"] = "Отличный выбор, если любите точные (и восточные) пулеметы.",
 		--Brenner 21/HK21
-		["bm_hk21_sc_desc"] = "Большая младшая сестра винтовки Гевер-3. Увеличенная скорострельность отлично подходит для подавляющего огня.",	
+		["bm_hk21_sc_desc"] = "Большая младшая сестра винтовки Гевер-3. Увеличенная скорострельность отлично подходит для подавляющего огня.",
 		--HCAR
-		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.",	
+		["bm_hcar_sc_desc"] = "Современная версия классического автомата Второй мировой.",
 		--M60
-		["bm_m60_sc_desc"] = "Так называемая 'Свинка' - тяжелая и пожирающая патроны. Вблизи никому не выжить.",	
-		--Ksp 58	
-		["bm_par_sc_desc"] = "Более тяжелый родственник КСП-90, который обычно ставят на технику. Меньше мобильность, больше пуля.",	
-		--Buzzsaw/Mg42	
+		["bm_m60_sc_desc"] = "Так называемая 'Свинка' - тяжелая и пожирающая патроны. Вблизи никому не выжить.",
+		--Ksp 58
+		["bm_par_sc_desc"] = "Более тяжелый родственник КСП-90, который обычно ставят на технику. Меньше мобильность, больше пуля.",
+		--Buzzsaw/Mg42
 		["bm_wolf_brigade_sc_desc"] = "\"We are not men disguised as mere dogs.\nWe are #{important_1}#wolves## disguised as mere men.\"\n\n#{skill_color}#Лучше стрелять от бедра.##",
 		["bm_wp_mg42_b_vg38"] = "Насадка Бластер-19",
 		["bm_wp_mg42_b_vg38_desc_sc"] = "#{skill_color}#Технология из далекой галактики.## Оружие будет стрелять #{risk}#плазменными болтами## и #{skill_color}#автоматически заряжаться.##\n\nВремя зарядки: #{skill_color}#2 сек.##\nСкорость зарядки: #{skill_color}#9/сек## #{important_1}#(На 50% медленнее при перегреве)##\nПерегрев: #{important_1}#4 сек.##",
 		--["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800 RPM",
 		--Versteckt-51/HK51B
-		["bm_hk51b_sc_desc"] = "Подпольная модификация Бреннера, которая уменьшает его до размеров Компакт-5.",	
+		["bm_hk51b_sc_desc"] = "Подпольная модификация Бреннера, которая уменьшает его до размеров Компакт-5.",
 		["bm_wp_hk51b_magazine_belt_60"] = "Лента на 60 патронов",
 		["bm_wp_hk51b_magazine_belt_80"] = "Лента на 80 патронов",
 		--M134
@@ -1666,7 +1669,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% шанс при попадании по врагу поджечь его, нанося## #{heat_warm_color}#60## #{skill_color}#урона в течение 4 секунд.##\n#{risk}#Шанс уменьшается с расстоянием.\nНаносит огненный урон.##",
 
          --Grimm
-		--["bm_w_basset"] = "Гримм 12",	
+		--["bm_w_basset"] = "Гримм 12",
 		--Saiga
 		["bm_saiga_sc_desc"] = "Полностью автоматический дробовик для дней, когда вам лень целиться.",
 		--AA12
@@ -1674,20 +1677,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Spas12
 		["bm_spas12_sc_desc"] = "Тяжелая и сложная альтернатива полуавтоматическим дробовикам. Обладает альтернативным режимом стрельбы, будто созданный пришельцами.",
 		--Benelli
-		["bm_benelli_sc_desc"] = "Тактический дробовик премиум-класса. Для зачистки особенно шумных комнат.",	
+		["bm_benelli_sc_desc"] = "Тактический дробовик премиум-класса. Для зачистки особенно шумных комнат.",
 		--Argos III
 		["bm_ultima_sc_desc"] = "Нет ничего современнее пластика и алюминия. Тут даже есть слот для подзарядки телефона.\n\nПерезаряжает по #{skill_color}#2## патрона за раз.",
 		--Street Sweeper
-		--["bm_w_striker"] = "Чистильщик",	
+		--["bm_w_striker"] = "Чистильщик",
 		--Goliath
-		--["bm_w_rota"] = "Голиаф 12",	
+		--["bm_w_rota"] = "Голиаф 12",
 		--VD-12
-		--["bm_w_sko12"] = "ВД 12",	
-		--["bm_w_x_sko12"] = "Парные ВД 12",	
+		--["bm_w_sko12"] = "ВД 12",
+		--["bm_w_x_sko12"] = "Парные ВД 12",
 		--GSPS
-		--["bm_w_m37"] = "ДжиЭс 12",	
+		--["bm_w_m37"] = "ДжиЭс 12",
 		--Supernova
-		["bm_supernova_sc_desc"] = "Дробовик-монстр, способный переключаться между помповым и полуавтоматическим режимами.",		
+		["bm_supernova_sc_desc"] = "Дробовик-монстр, способный переключаться между помповым и полуавтоматическим режимами.",
 		--Loco
 		["bm_serbu_sc_desc"] = "Уменьшенная подпольная версия Рейнфилда 880 для любителей скрытности и сломанных запястий.",
 		--Reinfeld 88
@@ -1695,19 +1698,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Mosconi 12g
 		["bm_menu_sc_m590_desc"] = "Улучшенная версия классического ружья. Подходит для полиции, армии, гражданских и грабителей.",
 		--R870
-		["bm_menu_sc_r870_desc"] = "Длинная рука закона и свободы. Свободы, которая вооружена дробовиком!",		
+		["bm_menu_sc_r870_desc"] = "Длинная рука закона и свободы. Свободы, которая вооружена дробовиком!",
 		--KSG
-		["bm_menu_sc_ksg_desc"] = "В будущем все сделано из пластика! Буллпап-дробовик сомнительного качества сборки, им вооружают легкую пехоту.",		
-		--Breaker 10g	
-		["bm_menu_sc_boot_desc"] = "Старое ружье, обладающее мощным десятым калибром и еще более мощной аурой мачо. Иди со мной, если хочешь жить.",	
+		["bm_menu_sc_ksg_desc"] = "В будущем все сделано из пластика! Буллпап-дробовик сомнительного качества сборки, им вооружают легкую пехоту.",
+		--Breaker 10g
+		["bm_menu_sc_boot_desc"] = "Старое ружье, обладающее мощным десятым калибром и еще более мощной аурой мачо. Иди со мной, если хочешь жить.",
 		--Claire Angélique Florette du Bertrand
-		--["bm_w_coach"] = "Клэр 12",	
+		--["bm_w_coach"] = "Клэр 12",
 		--Mosconi
-		["bm_menu_sc_huntsman_desc"] = "Два ствола, двойное удовольствие. Конечно, два патрона это мало, но это не так важно, если они выпущены одновременно и в упор.",		
+		["bm_menu_sc_huntsman_desc"] = "Два ствола, двойное удовольствие. Конечно, два патрона это мало, но это не так важно, если они выпущены одновременно и в упор.",
 		--Judge
 		["bm_x_judge_sc_desc"] = "Наконец-то на одной сцене.",
 		--Joceline
-		["bm_b682_sc_desc"] = "Спортивная горизонталка, которая скоро будет состязаться в ограблении банков.",		
+		["bm_b682_sc_desc"] = "Спортивная горизонталка, которая скоро будет состязаться в ограблении банков.",
 		--Custom Shotguns
 		--Doomstick
 		["bm_wp_wpn_fps_upg_quadbarrel_ammo_buckshot_close_desc"] = "Дробь, эффективная вблизи.\n#{skill_color}#Количество дроби увеличено до 10.##",
@@ -1719,7 +1722,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--REBECCA CYBERPUNK
 		["bm_w_rebecca_desc"] = "С помощью этого можно превратить все в кровавое месиво, хоть оружие порой ведет себя непредсказуемо.\n#{risk}#Выстрелы отбрасывают Вас назад и выбивают из режима прицеливания.##",
 		--S552
-		["bm_s552_sc_desc"] = "Элегантный выбор для любителей компактных винтовок под 5.56, ее предпочитает МНБ. Использует специальный швейцарский калибр 5.6мм для увеличенной дальнобойности.",				
+		["bm_s552_sc_desc"] = "Элегантный выбор для любителей компактных винтовок под 5.56, ее предпочитает МНБ. Использует специальный швейцарский калибр 5.6мм для увеличенной дальнобойности.",
 		--M733/AMCAR
 		["bm_amcar_sc_desc"] = "Самая распространенная винтовка под .223. Подойдет для любых целей.",
 		["bm_wp_upg_i_patriot"] = "Патриот",
@@ -1730,17 +1733,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_g36_sc_desc"] = "Еще один претендент на звание 'лучшей пластиковой винтовки'.",
 		["bm_wp_upg_i_m8a1"] = "Набор М8",
 		["bm_wp_upg_i_m8a1_desc"] = "Оружие будет стрелять только #{risk}#очередями по 4##, взамен увеличивая скорость стрельбы и размер магазина",
-		--VHS/Lion's Roar	
+		--VHS/Lion's Roar
 		["bm_vhs_sc_desc"] = "Тяжелая в пользовании винтовка, способная на впечатляющий результат в руках умельца.\n\nВозможно, в ней боевой дух Драгана.",
 		["bm_wp_upg_i_swordfish"] = "Набор 'Рыба-меч'",
 		["bm_wp_upg_i_swordfish_desc"] = "Оружие будет стрелять только #{risk}#очередями по 5##, взамен увеличивая скорость стрельбы и размер магазин",
 		--Olympic/Para
 		["bm_menu_sc_olympic_desc"] = "Чудовищный пистолет-переросток, стреляющий винтовочными патронами в автоматическом режиме. Экзистенциальный кризис, из которого можно стрелять.",
 		--TAR-21/Para
-		["bm_menu_sc_komodo_desc"] = "Мощь в крайне компактной упаковке. Хорошо показывает себя и вблизи, и на расстоянии.",		
+		["bm_menu_sc_komodo_desc"] = "Мощь в крайне компактной упаковке. Хорошо показывает себя и вблизи, и на расстоянии.",
 		--Famas
 		["bm_menu_sc_famas_desc"] = "Уменьшенный магазин взамен на точность и скорострельность. Подойдет, чтобы отстрелить яблоко с чьей-нибудь головы.",
-        --OICW--		
+        --OICW--
 		["bm_w_osipr_desc_pc"] = "Военная технология нового поколения. Снаряжен #{skill_color}#20мм гранатометом.##\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",
 		["bm_w_osipr_desc"] = "Военная технология нового поколения. Снаряжен #{skill_color}#20мм гранатометом.##\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",
 		--M4/CAR-4
@@ -1751,14 +1754,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--AK5
 		["bm_ak5_sc_desc"] = "Отличная винтовка, знаменитая использованием для ограблений банков, а также тем, что все путают, чем она стреляет.",
 		["fnc_burst_desc"] = "Добавлять стрельбу очередями по три.",
-		--Union 5.56	
-		["bm_corgi_sc_desc"] = "Несмотря на внешний вид, поплавать на этой винтовке не получится.",	
-        ["bm_wp_corgi_b_short"] = "Ствол MSG",	
-		--UAR	
-		["bm_aug_sc_desc"] = "Классический буллпап. Сделает решето из любого плохого парня.",	
-		["bm_wp_upg_b_hbar"] = "Тяжелый ствол",	
+		--Union 5.56
+		["bm_corgi_sc_desc"] = "Несмотря на внешний вид, поплавать на этой винтовке не получится.",
+        ["bm_wp_corgi_b_short"] = "Ствол MSG",
+		--UAR
+		["bm_aug_sc_desc"] = "Классический буллпап. Сделает решето из любого плохого парня.",
+		["bm_wp_upg_b_hbar"] = "Тяжелый ствол",
 		--AK17
-		["bm_flint_sc_desc"] = "Современная версия классического АК. #{skill_color}#Умеет стрелять очередями по 2## и обладает кризисом личности.",	
+		["bm_flint_sc_desc"] = "Современная версия классического АК. #{skill_color}#Умеет стрелять очередями по 2## и обладает кризисом личности.",
 		--AK 5.45
 		["bm_ak74_sc_desc"] = "Обладающая меньшим калибром, чем ее сестра под 7.62, эта винтовка не менее опасна.",
 		--CR 805
@@ -1774,7 +1777,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_l85a2_sc_desc"] = "Хоть ее репутация и была подпорчена ранними версиями, она является одной из самых точных винтовок в мире.\n\nНо она остается эргономическим кошмаром.",
 		--Сталкер, вали отсюда--
 		--Мы кого попало не пропускаем--
-		--ты че 
+		--ты че
 		--бычара????
 		--Ех, вотева
 		["bm_groza_sc_desc_pc"] = "Буллпап-родственник АК, любящий взрывы.\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на подствольный гранатомет.",
@@ -1785,7 +1788,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_akmsu_sc_desc"] = "Маленькая винтовка против больших людей. Подойдет для любого случая.",
 		--Akimbo Krinkov
 		["bm_x_akmsu_sc_desc"] = "Маленькие винтовки против больших людей. Подойдут для любого случая.",
-		
+
 		--CUSTOM ARs
 			--QBZ-191
 			["bm_qbz191_sc_desc"] = "Китайская штурмовая винтовка нового поколения, использующая калибр 5,8х42 мм.\n\n#{skill_color}#Наносит 25% урона через броню.##",
@@ -1810,21 +1813,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_wp_upg_i_g11_desc"] = "Увеличивает скорострельность стрельбы очередью до #{skill_color}#2100## и #{skill_color}#дает возможность менять режим стрельбы.##",
 			--AR-18
 			--["bm_w_ar18"] = "КАР-18",
-			
-			
+
+
 		--Galant--
 		["bm_galant_sc_desc"] = "Классическая винтовка времен Второй мировой. Надежная, точная и  #{skill_color}#быстро перезаряжается при опустошении.##\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.##",
 		--M308
 		["bm_m14_sc_desc"] = "Довольно меткая винтовка, если следить за отдачей, особенно при автоматической стрельбе.\n\n#{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####",
 		--FAL
 		["bm_fal_sc_desc"] = "Правая рука свободного мира. Ваш выбор, если нужно пробить тяжелую броню.\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
-		["bm_fal_ap25_sc_desc"] = "Правая рука свободного мира. Ваш выбор, если нужно пробить тяжелую броню.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",			
+		["bm_fal_ap25_sc_desc"] = "Правая рука свободного мира. Ваш выбор, если нужно пробить тяжелую броню.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 		--SCAR
 		["bm_scar_sc_desc"] = "Боевая винтовка будущего. Совмещает удобность и урон, она стала популярной у морской пехоты и спецназа.\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
-		["bm_scar_ap25_sc_desc"] = "Боевая винтовка будущего. Совмещает удобность и урон, она стала популярной у морской пехоты и спецназа.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",		
-		["bm_scarl_sc_desc"] = "Боевая винтовка будущего... или нет. Она заслужила популярность на гражданском рынке, а вот армия не увидела нужды в еще одной винтовке под 5.56.",			
+		["bm_scar_ap25_sc_desc"] = "Боевая винтовка будущего. Совмещает удобность и урон, она стала популярной у морской пехоты и спецназа.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
+		["bm_scarl_sc_desc"] = "Боевая винтовка будущего... или нет. Она заслужила популярность на гражданском рынке, а вот армия не увидела нужды в еще одной винтовке под 5.56.",
 		--G3
-		["bm_g3_sc_desc"] = "Старшая сестра Компакт-5 и Бреннера-21, не уступает по точности снайперским винтовкам.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",	
+		["bm_g3_sc_desc"] = "Старшая сестра Компакт-5 и Бреннера-21, не уступает по точности снайперским винтовкам.\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 		["bm_g3_ap25_sc_desc"] = "Старшая сестра Компакт-5 и Бреннера-21, не уступает по точности снайперским винтовкам.\n\n#{skill_color}#Наносит 75% урона через броню и может пробивать врагов.##",
 		["bm_g3_sg1_sc_desc"] = "Старшая сестра Компакт-5 и Бреннера-21, не уступает по точности снайперским винтовкам.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--Little Friend
@@ -1838,53 +1841,53 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--ASS VAL
 		["bm_asval_sc_desc"] = "Обычным людям нравятся обычные винтовки, но кто-то хочет чего-то особенного.\n\nОбладает #{skill_color}#встроенным глушителем##, #{skill_color}#наносит 25% урона через броню и может пробивать врагов.##",
 		--Galil
-		["bm_galil_sc_desc"] = "Копия финского дизайна, который был скопирован с классического АК. Имитация? Нет, дань уважения!\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",	
+		["bm_galil_sc_desc"] = "Копия финского дизайна, который был скопирован с классического АК. Имитация? Нет, дань уважения!\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
 		["bm_galil_ap25_sc_desc"] = "Копия финского дизайна, который был скопирован с классического АК. Имитация? Нет, дань уважения!\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов.##",
 		["bm_galil_556_sc_desc"] = "Копия финского дизайна, который был скопирован с классического АК. Имитация? Нет, дань уважения!",
 		--KS12
-		["bm_shak12_sc_desc"] = "Боевая винтовка по схеме буллпап с мощнейшим калибром 12.7x55мм. Дикая мощность в компактной упаковке.\n\n#{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####",	
-		["bm_shak12_sc_oden_desc"] = "Боевая винтовка по схеме буллпап с мощнейшим калибром 12.7x55мм. Дикая мощность в компактной упаковке.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",	
+		["bm_shak12_sc_desc"] = "Боевая винтовка по схеме буллпап с мощнейшим калибром 12.7x55мм. Дикая мощность в компактной упаковке.\n\n#{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####",
+		["bm_shak12_sc_oden_desc"] = "Боевая винтовка по схеме буллпап с мощнейшим калибром 12.7x55мм. Дикая мощность в компактной упаковке.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--ShAK-12
-		["bm_wp_shak12_body_vks"] = "Выхлопной приклад",		
-		["bm_wp_shak12_body_vks_ap_desc"] = "Предоставляет еще более мощный калибр, который позволяет #{skill_color}#пробивать броню и щиты.## Приклад и затвор укреплены тяжелым материалом, что #{important_1}#уменьшает скорострельность.##",	
+		["bm_wp_shak12_body_vks"] = "Выхлопной приклад",
+		["bm_wp_shak12_body_vks_ap_desc"] = "Предоставляет еще более мощный калибр, который позволяет #{skill_color}#пробивать броню и щиты.## Приклад и затвор укреплены тяжелым материалом, что #{important_1}#уменьшает скорострельность.##",
 
             --Custom DMRs
 			--MCX Spear
 			["bm_mcx_spear_sc_desc"] = "#{skill_color}#Наносит 75% урона через броню.##",
 			["bm_ngsierra_sc_desc"] = "Использует уникальную систему уменьшения отдачи для контроля его пластикового картриджа TCVM.\n\n#{skill_color}#Наносит 75% урона через броню и может пробивать врагов.##",
-			--["bm_w_xeno"] = "MA14 Surge Rifle",	
-			["bm_xeno_sc_desc_pc"] = "\"Armat\" предлагает странную винтовку будущего. #{skill_color}#Интегрирован гранатомет.##\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",	
+			--["bm_w_xeno"] = "MA14 Surge Rifle",
+			["bm_xeno_sc_desc_pc"] = "\"Armat\" предлагает странную винтовку будущего. #{skill_color}#Интегрирован гранатомет.##\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",
 			["bm_xeno_sc_desc"] = "\"Armat\" предлагает странную винтовку будущего. #{skill_color}#Интегрирован гранатомет.##\n\nУдерживайте #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет",
 			--VSS
 			["bm_vss_sc_desc"] = "Вариант 'Валькирии' с превосходящими дальностью и точностью.\n\nОбладает #{skill_color}#встроенным глушителем## и #{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####",
 			--G3 HK79
-			["bm_g3hk79_sc_desc_pc"] = "Вариация Гевер 3 с #{skill_color}#подствольным гранатометом.## #{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",	
+			["bm_g3hk79_sc_desc_pc"] = "Вариация Гевер 3 с #{skill_color}#подствольным гранатометом.## #{skill_color}##{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.####\n\nНажмите #{skill_color}#$BTN_BIPOD## чтобы переключиться на гранатомет.",
 			--BO3 XR2
 			["bm_xr2_sc_desc"] = "XR-2 - инструмент, подходящий для самых напряженных боев, который оснащен особым спусковым крючком, который  #{skill_color}#скорострельность при стрельбе очередями.##\n\n#{skill_color}#Наносит 25% урона через броню и может пробивать врагов.##",
 			["bm_wp_xr2_handle_01_sc"] = "Полная автоматика",
 			["bm_xr2_handle_01_sc_desc"] = "Позволяет  #{skill_color}#полностью автоматический огонь##, но #{important_1}#убирает бонус за стрельбу очередями.##",
 			["bm_wp_xr2_handle_02_sc"] = "Быстрые очереди",
-			["bm_xr2_handle_02_sc_desc"] = "Увеличивает скорострельность до#{skill_color}#950##, но #{important_1}#увеличивает отдачу.\n\nНе влияет на одиночную стрельбу.##",	
+			["bm_xr2_handle_02_sc_desc"] = "Увеличивает скорострельность до#{skill_color}#950##, но #{important_1}#увеличивает отдачу.\n\nНе влияет на одиночную стрельбу.##",
 	        --SIERRA .458
 			["bm_w_sierra458_sc_desc"] = "Собственная разработка Чейнса - мощная и скорострельная альтернатива винтовке 'Текки'.\n\n#{skill_color}#Наносит 50% урона через броню, может пробивать тонкие стены.##",
 			["bm_w_sierra458_beo_desc"] = "Собственная разработка Чейнса - мощная и скорострельная альтернатива винтовке 'Текки'.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 			["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Заменяет патроны .458 SOCOM на #{stats_positive}#ядовитые .450 Bushmaster## которые #{stats_positive}#наносят 30 урона в секунду и могут прерывать врагов.##\n\n#{important_1}#Теперь не может пробивать нескольких врагов.##",
 			["bm_w_sierra458_ivy_desc"] = "Собственная разработка Чейнса - мощная и скорострельная альтернатива винтовке 'Текки'.\n\n#{skill_color}#Наносит 50% урона через броню, может пробивать тонкие стены## и #{stats_positive}#наносит урон через время ядом.##",
         --MSR
-		["bm_msr_sc_desc"] = "Стандартная винтовка армии США. Хорошие точность, удобность и скрытность делают ее винтовкой на любой случай.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
+		["bm_msr_sc_desc"] = "Стандартная винтовка армии США. Хорошие точность, удобность и скрытность делают ее винтовкой на любой случай.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--R700
-		["bm_r700_sc_desc"] = "Предок винтовки Раттлснейк. Хорошие точность и удобность, а еще превосходящая дальнобойность по сравнению с младшим братом. В чем подвох? Устаревшие магазины на пять патронов.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
+		["bm_r700_sc_desc"] = "Предок винтовки Раттлснейк. Хорошие точность и удобность, а еще превосходящая дальнобойность по сравнению с младшим братом. В чем подвох? Устаревшие магазины на пять патронов.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--QBU88
-		["bm_qbu88_sc_desc"] = "Буллпап-винтовка с востока. Подходит, чтобы нагнетать свою волю на окружающих.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",	
+		["bm_qbu88_sc_desc"] = "Буллпап-винтовка с востока. Подходит, чтобы нагнетать свою волю на окружающих.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--Winchester 1874
-		["bm_winchester1874_sc_desc"] = "Винтовка, покорившая запад. Священная реликвия среди оружия, она до сих пор остается мощной благодаря своему калибру .44-40.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##\n\nМожет #{skill_color}#быстро стрелять## за счет #{important_1}#повышенной отдачи и пониженной дальнобойности.##",	
-		--TTI(TTY)		
+		["bm_winchester1874_sc_desc"] = "Винтовка, покорившая запад. Священная реликвия среди оружия, она до сих пор остается мощной благодаря своему калибру .44-40.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##\n\nМожет #{skill_color}#быстро стрелять## за счет #{important_1}#повышенной отдачи и пониженной дальнобойности.##",
+		--TTI(TTY)
 		["bm_tti_sc_desc"] = "Личное оружие Уика. Говорят, где-то в интернете можно найти видео, где он выполняет контракт с этой винтовкой.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--Icky Vicky
-		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
+		--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
 		--Scunt
-		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",	
-		["bm_wp_scout_m_extended"] = "Магазин дуэлянта",	
+		--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, enemies, shields and thin walls.##",
+		["bm_wp_scout_m_extended"] = "Магазин дуэлянта",
 		--AWP
 		["bm_awp_sc_desc"] = "Винтовка, известная дальнобойностью и точностью. Кто бы мог подумать, что ее собрали три энтузиаста в сарае?\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		["bm_awp_cs_dragon"] = "АВП | Драгон Лор",
@@ -1895,35 +1898,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         --WA2000
 		["bm_wa2000_sc_desc"] = "Их существует всего несколько сотен. Винтовка для престижного хитмана.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--Rangerhitter
-		["bm_sbl_sc_desc"] = "Рычажная винтовка двадцатого века, которая превосходит винтовки девятнадцатого века благодаря увеличенной пуле. Больше отдачи - больше смертоносности, когда на твоей стороне .45-70.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##\n\nМожет #{skill_color}#быстро стрелять## за счет #{important_1}#повышенной отдачи и пониженной дальнобойности.##",	
+		["bm_sbl_sc_desc"] = "Рычажная винтовка двадцатого века, которая превосходит винтовки девятнадцатого века благодаря увеличенной пуле. Больше отдачи - больше смертоносности, когда на твоей стороне .45-70.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##\n\nМожет #{skill_color}#быстро стрелять## за счет #{important_1}#повышенной отдачи и пониженной дальнобойности.##",
 		--Contender G2
-		["bm_contender_sc_desc"] = "",	
+		["bm_contender_sc_desc"] = "",
 		--Model 70
-		["bm_model70_sc_desc"] = "Ранняя болтовка, сделанная дизайнерами Репитера 1874.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
+		["bm_model70_sc_desc"] = "Ранняя болтовка, сделанная дизайнерами Репитера 1874.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--SVD
 		["bm_siltstone_sc_desc"] = "Мощная полуавтоматическая винтовка из семейства AK. Как и у других членов семьи, ее репутация проверена временем.\n\n#{skill_color}#Может пробивать броню, врагов, щиты (до начала падения урона) и тонкие стены.##",
 		--Mosin--
 		["bm_mosin_sc_desc"] = "Не хватает даже на еду, но нужен ствол? Подойдет эта классическая мощная винтовка со скользящим затвором.\n\nПерезаряжается обоймами по 5 патронов и #{skill_color}#может пробивать броню, врагов, щиты и тонкие стены.##",
 		["bm_wp_upg_a_tranq_mosin"] = "Транквилизаторы",
-		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\n#{stats_positive}#Транквилизаторы## наносят #{skill_color}#30 урона/сек в течение 6 секунд и могут прерывать врагов.##\n\n#{important_1}#Теперь не может пробивать нескольких врагов.##",	
+		["bm_wp_upg_a_tranq_mosin_desc"] = "For true oblivion, The End.\n\n#{stats_positive}#Транквилизаторы## наносят #{skill_color}#30 урона/сек в течение 6 секунд и могут прерывать врагов.##\n\n#{important_1}#Теперь не может пробивать нескольких врагов.##",
 		["bm_mosin_tranq_desc"] = "Не хватает даже на еду, но нужен ствол? Подойдет эта классическая мощная винтовка со скользящим затвором.\n\nПерезаряжается обоймами по 5 патронов,\n\n#{stats_positive}#наносит урон через время транквилизаторами## и #{skill_color}#может пробивать броню, щиты и тонкие стены.##",
         --Desert Fox
-		["bm_desertfox_sc_desc"] = "Компактная снайперская платформа, использовавшаяся Уиком при рейде на убежище русской мафии.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
+		["bm_desertfox_sc_desc"] = "Компактная снайперская платформа, использовавшаяся Уиком при рейде на убежище русской мафии.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 		--R93
-		["bm_r93_sc_desc"] = "Немецкая винтовка с большой пулей, которая остановит больших людей. Популярная винтовка среди полиции и контр-террористических подразделений мира.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",			
-		--Flinklock 
+		["bm_r93_sc_desc"] = "Немецкая винтовка с большой пулей, которая остановит больших людей. Популярная винтовка среди полиции и контр-террористических подразделений мира.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
+		--Flinklock
 		["bm_bessy_sc_desc"] = "Хорошо организованная милиция необходима для безопасности свободного государства, и право людей хранить и носить оружие не должно нарушаться.\n\n#{skill_color}#Наносит на 100% больше урона специальным и элитным врагам.\nМожет пробивать нескольких врагов, их броню, щиты, титан-щиты и тонкие стены.##",
 		--Thanatos--
 		["bm_m95_sc_desc"] = "Крупнокалиберная винтовка, обычно используется против небольшой техники. Использовать ее против органических целей, вероятно, военное преступление.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
 		--Custom Snipers
 			--Guerilla
-			--["bm_w_sgs"] = "Партизан 553",	
+			--["bm_w_sgs"] = "Партизан 553",
 			--M107
 			["bm_m107cq_sc_desc"] = "Не понравился Танатос? Морс .50 превращает врагов в красную пасту еще эффективнее.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
 			["bm_m200_sc_desc"] = "Для любителей 360 no-scope.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
 			--S7
 			["bm_w_srs99_s7_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Может пробивать броню, врагов, щиты, титановые щиты и тонкие стены.##",
-			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",	
+			["bm_w_srs99_s7_flexfire_desc"] = "I see headshots in your future, Spartan.\n\n#{skill_color}#Может пробивать броню, врагов, щиты и тонкие стены.##",
 			["flexfire_desc"] = "#{important_1}#Увеличение прицела будет равняться 3х\nНе может пробивать титановые щиты.##",
 			["oracle_scope"] = "Прицел Oracle TechLink",
 			["oracle_scope_desc"] = "Меняет точку прицела на #{skill_color}#Smart-Link##.\n#{risk}#Увеличение 5-10x.##",
@@ -1932,7 +1935,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--SPX Centerfire
 		--["bm_w_moss464spx"] = "Москони ЭсПиЭкс",
 		--Winchester 1894
-		--["bm_w_winchester1894"] = "Репитер 1894",		
+		--["bm_w_winchester1894"] = "Репитер 1894",
 		--SVD
 		["bm_wp_wpn_fps_snp_svd_pso"] = "Оптический прицел СВ-7",
 		--L115
@@ -1945,12 +1948,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_holygrail"] = "СРАНЬ ГОСПОДНЯ",
 		["menu_l_global_value_holygrailmod"] = "ЭТО ЧТО ВООБЩЕ ТАКОЕ???\n\n",
 
-		--Light Crossbow		
+		--Light Crossbow
 		["bm_w_frankish_avelyn"] = "Авелин",
 		["bm_wp_avelyn"] = "Набор Авелин",
 		["bm_wp_avelyn_desc"] = "Превращает арбалет в #{skill_color}#репитер##.\nПозволяет запускать очередь из #{skill_color}#3## болтов одним нажатием.",
 		["bm_wp_avelyn_override_desc"] = "Очень редкий экземпляр скорострельного арбалета.\nПоследовательно стреляет #{skill_color}#3-мя## болтами.\n\n#{skill_color}#Может пробивать броню.##",
-		--GL40		
+		--GL40
 		["bm_w_gre_m79_sc_desc"] = "Стук - бум.\n\nНажмите #{skill_color}#$BTN_GADGET## чтобы поднять прицел.\n\nПрицел #{risk}#выверен на 30 метров.##",
 		--3GL
 		["bm_w_ms3gl"] = "Василиск",
@@ -1968,7 +1971,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--COMMANDO 101/M202 FLASH
 		--["bm_w_ray"] = "Коммандо 101",
 		["bm_ray_sc_desc"] = "Ракеты создают #{heat_warm_color}#огненные лужи## и #{skill_color}#мгновенно уничтожают турели.##",
-		
+
 		--Всякое для русека
 		["bm_w_hailstorm"] = "Хейлшторм Марк 5",
 		["bm_w_saw"] = "Пила ОВЕ9000",
@@ -1977,7 +1980,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_flamethrower_mk2"] = "Огнемет Марк 1",
 		["bm_w_cobray"] = "Пушка Джакета",
 		["bm_w_m134"] = "Вулкан",
-		--Милишки 
+		--Милишки
 		["bm_melee_kabar_tanto"] = "Нож УРСА-Танто",
 		["bm_melee_kabar_tanto"] = "Нож УРСА",
 		["bm_melee_alien_maul"] = "Альфа-Молот",
@@ -1994,7 +1997,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_sandsteel"] = "Катана Шинсакуто",
 		["bm_melee_gerber"] = "Боевой нож Бергер",
 		["bm_melee_rambo"] = "Боевой нож Траутман",
-		
+
 		--Ванилька мод пак - адаптация под рулок рестора
 	    ["bm_w_amr12"] = "АМР-12",
 	    ["bm_w_ak5s"] = "Автомат-5",
@@ -2015,18 +2018,18 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	    ["bm_w_bdgr"] = "Хорнет .300",
 	    ["bm_w_minibeck"] = "Рейнбек Авто",
 	    ["bm_w_bs23"] = "Молот 23",
-	
+
 	    --прочие моды на оружие
 		["bm_w_hmcar"] = "Модифицированный КАР-4",
 		["bm_wp_wpn_fps_upg_goodlaser"] = "Прицельный лазер",
         ["bm_wp_wpn_fps_upg_o_hmscope"] = "Дальнобойный прицел",
-	
+
 		["bm_w_super"] = "Супер двустволка",
 	    ["bm_wp_wpn_fps_upg_super_body_burst"] = "Двойное веселье",
 	    ["bm_wp_wpn_fps_upg_super_body_burst_desc"] = "Стреляет из двух стволов сразу.",
 	    ["bm_wp_wpn_fps_upg_super_classic"] = "Старая школа",
 	    ["bm_wp_wpn_fps_upg_super_meathook"] = "Крюк",
-		
+
 		["bm_w_czevo"] = "Кобра Марк 4",
         ["bm_w_ppsh"] = "ШПП-42",
         ["bm_w_ks23"] = "Молот 24",
@@ -2036,7 +2039,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_w_plasmaproto"] = "Прототип плазморужья",
         ["bm_w_mcx_spear"] = "Пейпервейт",
         ["bm_w_rsass"] = "Рейнджхиттер 11",
-        ["bm_w_troglodyte"] = "АВМ-Ф",  
+        ["bm_w_troglodyte"] = "АВМ-Ф",
         ["bm_w_as24"] = "А24 Уничтожитель",
         ["bm_w_raygun"] = "Лучемет",
         ["bm_w_fp45"] = "Фридом .45",
@@ -2141,8 +2144,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_melee_pattern_knife2"] = "Бьет с широким размахом. Движение в сторону влияет на направление атаки.", --Also works with "melee_clean" and "melee_grip"
 
-		["bm_melee_pattern_ballistic"] = "Атакует быстрыми ударами. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом и сверху вниз. Движение в сторону влияет на направление атаки.", 
-		["bm_melee_pattern_poker"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет выпадом вперед.", 
+		["bm_melee_pattern_ballistic"] = "Атакует быстрыми ударами. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом и сверху вниз. Движение в сторону влияет на направление атаки.",
+		["bm_melee_pattern_poker"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет выпадом вперед.",
 
 		["bm_melee_pattern_boxcutter"] = "Бьет с широким размахом.", --Also works with "melee_catch" and "melee_agave"
 
@@ -2152,7 +2155,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["bm_melee_pattern_blunt"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом.", --Also works with "melee_brick", "melee_happy", "melee_cleaver", "melee_beardy"
 		["bm_melee_pattern_blunt_90"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет широким размахом.",
-		
+
 		["bm_melee_pattern_beardy"] = "Бьет атаками сверху вниз. Заряженная атака (#{skill_color}#на 50% и более##) бьет размахом. Движение в сторону влияет на направление атаки.",
 
 		["bm_melee_pattern_axe"] = "Бьет атаками сверху вниз.", --Also works with "melee_psycho" and "melee_pickaxe"
@@ -2171,7 +2174,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_pattern_tiger"] = "Атакует быстрыми ударами. Заряженная атака (#{skill_color}#на 50% и более##) позволяет прописать оппоненту апперкот с левой или хук с правой. Движение в сторону влияет на направление атаки.",
 
 		["bm_melee_pattern_jab"] = "Атакует быстрыми ударами.", --For anything that basically only has centered hitboxes like "melee_pitchfork", "melee_wing" and "melee_fight"
-		
+
 		["bm_melee_weapon_info"] = "Обычно жертв ограбления бьют прикладом, а не стреляют в них.\n\nСкорость удара зависит от Компактности оружия.",
 		["bm_melee_katana_info"] = "Свежескованная катана, которая еще не пробовала кровь - она ждет своего владельца. Кажется, она его нашла.\n\nПолностью заряженные атаки бьют на #{skill_color}#50%## быстрее, позволяя быстро повторить атаку.\n\nПри игре за Джиро, убийство Клокера имеет особый визуальный эффект.",
 		["bm_melee_raiden_info"] = "This is no \"tool of justice\" in your hands.\n\nПолностью заряженные атаки бьют на #{skill_color}#50%## быстрее, позволяя быстро повторить атаку.",
@@ -2276,16 +2279,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_chac_info"] = "Войди в ритм с этим маракасом и встряхни им несколько черепов, буквально.",
 		["bm_melee_sap_info"] = "Кожаная дубинка - оружие джентльмена.\n\nПростое похлопывание по голове, и ваш враг падает. Дюк владеет кожаной дубинкой с такой грацией и жестокостью, которые иногда переходят все границы и удары наносят больше повреждений, чем необходимо.\n\nТак что действуйте осторожно - или нет.",
 		["bm_melee_hockey_info"] = "Красиво обработанный и покрашенный кусок дерева. Идеально подходит для того, чтобы забрасывать шайбу в сетку и выбивать нахрен зубы.",
-		["bm_melee_meter_info"] = "Главное, чтобы ваша вторая половинка не спросила за насечки на линейке.", 
+		["bm_melee_meter_info"] = "Главное, чтобы ваша вторая половинка не спросила за насечки на линейке.",
 		["bm_melee_catch_info"] = "Крюч - надежный инструмент, и, честно говоря, довольно примитивный. Необработанная деревянная ручка с прочным металлическим крюком - это все, что нужно.\n\nКрюк гарантированно вызовет много беспорядка. Его использование ограничено только вашим собственным извращенным воображением о том, как зацепить ваших врагов. Вонзать его своим противникам в рот или в их тела?",
 		["bm_melee_watson_info"] = "Укусит, как комарик.\n\nСодержит раствор неизвестного происхождения, который наносит #{stats_positive}#120## урона ядом и имеет #{skill_color}#50%## шанс прервать врага раз в #{skill_color}#0.5## секунды, в течение #{skill_color}#4## секунд.",
-		
-		
+
+
 
 		--Melee Weapons
 		["bm_melee_twins"] = "Sai", --Plural form is still "sai"
 		["bm_melee_twins_info"] = "Позволяет обезоружить врага с острым оружием за считанные секунды.\n\nПарирование противника наносит ему #{skill_color}#60## урона в ближнем бою. Навыки позволяют увеличить этот урон.",
-		
+
 		--CUSTOM MELEE WEAPONS
 		["bm_melee_revenant_heirloom"] = "Dead Man's Curve",
 		["bm_melee_revenant_heirloom_info"] = "\"Это последнее, что ты увидишь, кожаный мешок\"",
@@ -2332,116 +2335,116 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Color variations - Combat Harness
 			["bm_suit_var_loud_suit_default"] = "Профессиональный черный",
 			["bm_suit_var_loud_suit_default_desc"] = "Костюм-двойка стал частью бренда банды PAYDAY. Модный, стильный, позволяет легко затеряться в толпе - настоящая икона. 'Подождите ка! В какой, блядь, толпе?', спросил Чейнс, пока банда направлялась в очередной раз грабить склад Murkywater. И почему он не додумался раньше...",
-			
+
 			["bm_suit_var_loud_suit_white"] = "Морозный белый",
 			["bm_suit_var_loud_suit_white_desc"] = "Этот костюм предоставил Джимми для 'Точки кипения'. Быстро выяснилось, что они не подходят для жестких морозов. А сам Джимми вообще предпочел остаться в своем рванном костюме-двойке.",
-			
+
 			["bm_suit_var_loud_suit_red"] = "Неясный красный",
 			["bm_suit_var_loud_suit_red_desc"] = "Красный - интересный цвет на поле боя. Либо это медик, который пришел спасать товарищей, либо самый опасный ублюдок из всех. Тебе решать, кем ты будешь.",
-			
+
 			["bm_suit_var_loud_suit_green"] = "Ядовитый зеленый",
 			["bm_suit_var_loud_suit_green_desc"] = "Хватит унижений от Гренадера. Джемма МакШай предоставила вам целый арсенал ядовитого оружия - теперь время показать, кто здесь на самом деле травит насекомых.",
-			
+
 			["bm_suit_var_loud_suit_blue"] = "Полицейский синий",
 			["bm_suit_var_loud_suit_blue_desc"] = "А почему копы не используют УКТЖ?",
-			
+
 			["bm_suit_var_loud_suit_purple"] = "Модный фиолетовый",
 			["bm_suit_var_loud_suit_purple_desc"] = "Спрячьте этот костюм под свой УКТЖ, чтобы добавить нотку моды в вашу тактическую чушь.",
-			
+
 			["bm_suit_var_loud_suit_brown"] = "Загородный коричневый",
 			["bm_suit_var_loud_suit_brown_desc"] = "Хьюстон бы хотел остаться в городских джунглях, где ему комфортнее всего. Но увы, за городом слишком много прибыльных для банды дел.",
-			
+
 			["bm_suit_var_loud_suit_gorkagreen"] = "Тактический лесной",
 			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Хорошо маскирует в лесу, или среди всех украденных денег.",
-			
+
 			["bm_suit_var_loud_suit_gorkaearth"] = "Тактический наемник",
 			["bm_suit_var_loud_suit_gorkaearth_desc"] = "Да сколько униформ производит Murkywater? Можно уже открывать собственную линию одежды.",
-			
+
 			["bm_suit_var_loud_suit_gorkagrey"] = "Тактический городской",
 			["bm_suit_var_loud_suit_gorkagrey_desc"] = "Какой смысл надевать костюм-двойку, если все уже знают ваше лицо?",
-		
+
 			["bm_suit_var_loud_suit_gorkapurple"] = "Тактический фиолетовый",
 			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Никогда не знаешь, когда придется грабить в фиолетовых джунглях.",
-			
+
 			["bm_suit_var_loud_suit_gorkasea"] = "Тактический морской",
 			["bm_suit_var_loud_suit_gorkasea_desc"] = "Вульф раздобыл их в 2011-ом, когда Бейн планировал ограбление яхты. Кто же знал, что этим костюмам придется собирать пыль почти шесть лет.",
 			-- Color variations - Sunny Side
 			["bm_suit_var_suit_sunny_default"] = "Повседневные дела",
 			["bm_suit_var_suit_sunny_default_desc"] = "Будь героем боевиков 90-х, которым ты всегда хотел стать.",
-				
+
 			["bm_suit_var_suit_sunny_skull"] = "Смертоносные дела",
 			["bm_suit_var_suit_sunny_skull_desc"] = "Этот символ подарил Скуллдозеру его страшное имя. Покажи, что для тебя он ничего не значит, сделав его просто украшением для одежды.",
-				
+
 			["bm_suit_var_suit_sunny_red"] = "Кровавые дела",
 			["bm_suit_var_suit_sunny_red_desc"] = "Привязанный к стулу Клокер, Алабамская бритва, 'Troubles Always Inbound' по радио... Эта рубашка не останется чистой надолго.",
-				
+
 			["bm_suit_var_suit_sunny_blue"] = "Цифровые дела",
 			["bm_suit_var_suit_sunny_blue_desc"] = "Хакеры - волшебники 21-го века, которые могут вытворять практически все что угодно... Но не останавливать пули. Для этого есть броня. Так что не будь слишком самоуверенным и носи защиту.",
-				
+
 			["bm_suit_var_suit_sunny_green"] = "Жадные дела",
 			["bm_suit_var_suit_sunny_green_desc"] = "Вне зависимости от риска, ты уносишь всю добычу с любого ограбления. Дело даже не в деньгах: вычищенное хранилище - это твоя визитная карточка.",
 
 			["bm_suit_var_suit_sunny_yellow"] = "Солнечные дела",
 			["bm_suit_var_suit_sunny_yellow_desc"] = "Отличный костюм для романтичных поездок под солнцем.\nПод аккомпанемент полицейских сирен, разумеется.",
-			
+
 			["bm_suit_var_suit_sunny_pink"] = "Гладкие дела",
 			["bm_suit_var_suit_sunny_pink_desc"] = "Мистеру Розовому повезло, что в банде Кабота нет цветного дресс-кода.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_black"] = "Отпуск в Майами",
 			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Вульф купил эту стильную рубашку, когда узнал, что Дантист готовит работу под кодовым названием 'Горячая линия Майами'. Кто же знал, что они не поедут в Майами?",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_blue"] = "Отпуск в видеоиграх",
 			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Джой относится к типу людей, которые уезжают в отпуск далеко-далеко чтобы просто играть там в видеоигры. 'Ну что за поколение', подумал Даллас, когда ему не удалось увлечь ее более консервативными развлечениями, такими как игрой в бильярд, наслаждением видами моря и распитием огромного количества скотча.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Отпуск в бассейне",
 			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Сидни отличный пловец, и всегда хотела бассейн в убежище. Однако, Альдстоуну и так хватает хлопот, да и плавание - не самое любимое развлечение банды после дела на Мосте Грин.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_green"] = "Отпуск в притоне",
 			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Влад отлично проводил время в Мексике. Новые земли - это новые возможности, и он расширял свой бизнес, пока однажды одну из его точек не атаковали. Федеральной полиции настучал Булук, который вскоре станет врагом Влада номер один. К счастью, банда PAYDAY всегда под рукой.",
-						
+
 			["bm_suit_var_suit_sunny_hawaii_orange"] = "Отпуск в оффшорах",
 			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "Вот и все, вы справились. Белый дом ограблен, все злодеи побеждены, а ваш оффшор потрачен на крупную вечеринку. И куда двигаться теперь?\nЛадно, еще парочка ограблений банка не повредит.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_pink"] = "Отпуск на танцполе",
 			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Чейнс нечасто уходит в отпуск, но делает это с размахом. В 2016-ом, видео с его зажигательным танцем утекло в сеть. Ему пришлось просить Бейна стереть его оттуда.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_red"] = "Отпуск в архипелаге",
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "Джимми любит рассказывать, как его далекий отпуск прервала армия генно-модифицированных супер-солдат. Звучит как очередной кокаиновый бред, но после ограбления АКАНа... Кто знает?",
-			
+
 			["bm_suit_var_suit_sunny_payne"] = "Отпуск в нуаре",
 			["bm_suit_var_suit_sunny_payne_desc"] = "Во время отпуска в Сан-Пауле, Вульф захотел купить эту рубашку, но получил ее бесплатно в знак благодарности за то что оказал отличную службу городу. \nВульф удивился, ведь он никогда не был там раньше.",
-			
+
 			["bm_suit_var_suit_sunny_vice"] = "Отпуск в пороках",
 			["bm_suit_var_suit_sunny_vice_desc"] = "Сангреса нельзя заставить носить ничего, кроме ярких рубашек. Пока остальные гении преступного мира собираются в деловых костюмах, Сангрес врывается в потрепанной рубашке, которую он нашел на гаражной распродаже в городе порока. Выглядит так, будто ей уже больше сорока лет.",
-			
+
 			["bm_suit_var_suit_sunny_security_red"] = "Красный телохранитель",
 			["bm_suit_var_suit_sunny_security_red_desc"] = "Элитный телохранитель Эрнеста Сосы. У Эрнеста Сосы было все. Большой особняк, надеждный бизнес и непробиваемая охрана. Мир принадлежит ему... Но как известно, история движется по спирали.",
-			
+
 			["bm_suit_var_suit_sunny_security_purple"] = "Фиолетовый телохранитель",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "Элитный телохранитель Эрнеста Сосы. Постоянное наблюдение через дронов и организованная охрана. В особняк Сосы не пробраться. Вот бы еще кто-нибудь проверил последнюю партию кокаина...",
-			
+
 			["bm_suit_var_suit_sunny_soprano"] = "Мафиозные дела",
 			["bm_suit_var_suit_sunny_soprano_desc"] = "Мафия не очень близка банде PAYDAY, но их стиль заслуживает уважения.",
 		    -- Color variations - Prison Suit
 			["bm_suit_var_suit_prison_default"] = "Беглец",
 			["bm_suit_var_suit_prison_default_desc"] = "Роба, которая изменила Хокстона навсегда. Он был уверен, что сжег это напоминание о жутком прошлом вместе со старым убежищем, но каким-то мистическим образом оно оказалось в новом.",
-			
+
 			["bm_suit_var_suit_prison_repairman"] = "31-ый",
 			["bm_suit_var_suit_prison_repairman_desc"] = "Знаете, кто расставляет шпионские камеры?\n\nЛичности вы никогда не узнаете, но хотя бы можно оценить его одежду.",
-			
+
 			["bm_suit_var_suit_prison_comedy"] = "Воришка",
 			["bm_suit_var_suit_prison_comedy_desc"] = "Роба Ченса из банды PAYCHECK. Ему почти удалось сбежать с 225 долларами из кассы магазина Pear, но его взяли под стражу. К счастью, его соратники взяли в заложники ноутбук Pear и сумели обменять его на Чинса.",
-			
+
 			["bm_suit_var_suit_prison_vaultboy"] = "Выживший",
 			["bm_suit_var_suit_prison_vaultboy_desc"] = "К удивлению, Бейн никогда не верил в теории о скором конце света. Но после того, как Влад попросил украсть ядерные боеголовки, он построил себе подземное убежище. Ну вы знаете. Война.",
-			
+
 			["bm_suit_var_suit_prison_janitor"] = "Уборщик",
 			["bm_suit_var_suit_prison_janitor_desc"] = "Ходят слухи, что OMNIA проводит сверхсекретные испытания, да такие, что даже бы ученые с Утеса Генри позавидовали. Всем в OMNIA заставляют подписать контракт. Даже уборщиков держат под... контролем.",
-			
+
 			["bm_suit_var_suit_prison_subject"] = "Подопытный",
 			["bm_suit_var_suit_prison_subject_desc"] = "Джимми снял этот костюм с подопытного во время побега из лаборатории АКАНа. Вдруг секрет их сверхъестественных способностей таится в этой робе?",
-			
-			
+
+
 		--Weapon Colors
 		["bm_wskn_resmod_blackgold"] = "Черное золото",
 		["bm_wskn_resmod_cleangold"] = "Чистое золото",
@@ -2482,15 +2485,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_charlotte"] = "Паучье золото",
 		["bm_wskn_resmod_joker"] = "Насмешка над золотом",
 		["bm_wskn_resmod_jokerw"] = "Насмешка над обществом",
-		
+
 		["menu_weapon_color_index_11"] = "Металл + Прицел",
 		["menu_weapon_color_index_12"] = "Металл + Магазин",
 		["menu_weapon_color_index_13"] = "Металл + Прицел + Магазин",
-		
+
 		--Menu Buttons--
 		["bm_menu_btn_sell"] = "ПРОДАТЬ ОРУЖИЕ ($price)",
 		["bm_menu_btn_buy_selected_weapon"] = "КУПИТЬ ОРУЖИЕ ($price)",
-		
+
 		--New menu stats--
 		["bm_menu_crit"] = "Шанс крита",
 		["bm_menu_damage_shake"] = "Тряска",
@@ -2504,15 +2507,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "Мин. падение",
 		["bm_menu_damage_min"] = "Мин. урон",
 		["bm_menu_moving_range"] = "Макс. падение",
-		
+
 		["bm_menu_attack_speed"] = "Ск-сть атаки",
 		["bm_menu_impact_delay"] = "Задержка",
 		["bm_menu_cleave"] = "Прорубание",
-		
+
 		["bm_menu_stats_detection"] = "Нагрузка",
 		["bm_menu_stats_min_detection"] = "Низкая нагрузка",
-		["bm_menu_stats_max_detection"] = "Максимальная нагрузка",		
-		
+		["bm_menu_stats_max_detection"] = "Максимальная нагрузка",
+
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Насадка",
 		["bm_menu_barrel_ext_plural"] = "Насадки",
@@ -2538,25 +2541,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_upotte_foregrip"] = "Цевье",
 		["bm_menu_upotte_stock"] = "Приклад",
 		["bm_menu_upotte_grip"] = "Рукоятка",
-		
+
 		["bm_menu_ro_barrel"] = "Ствол",
 		["bm_menu_ro_stock"] = "Приклад",
 		["bm_menu_ro_modifier"] = "Модификаторы",
 		["bm_menu_ro_charm"] = "Брелок",
 		["bm_menu_ro_grip"] = "Рукоятка",
-		
+
 		--Weapon categories--
 		["menu_pistol"] = "Пистолеты",
 		["menu_pistol_single"] = "Пистолет",
 			["menu_light_pis"] = "Легкие пистолеты",
 			["menu_heavy_pis"] = "Тяжелые пистолеты",
-		
+
 		["menu_shotgun"] = "Дробовики",
 		["menu_shotgun_single"] = "Дробовик",
 			["menu_light_shot"] = "Авто. дробовики",
 			["menu_heavy_shot"] = "Легкие дробовики",
 			["menu_break_shot"] = "Тяжелые дробовики",
-		
+
 		["menu_smg"] = "Пулеметы",
 		["menu_smg_single"] = "Пулемет",
 		["menu_lmg"] = "Пулеметы",
@@ -2598,7 +2601,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_crossbow_single"] = "Арбалет",
 
 		["menu_akimbo"] = "Парные+",
-		
+
 		["menu_unsupported"] = "Не поддерживается",
 
 		["st_menu_value"] = "Стоимость:",
@@ -2628,7 +2631,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["st_menu_firemode_burst_fanning"] = "ФАННИНГ",
 		["st_menu_firemode_burst_rapidfire"] = "СКОРОСТНОЙ",
 		["st_menu_firemode_burst_autoburst"] = "АВТООЧЕРЕДЬ",
-		
+
 		["menu_reticle_dmc_eotech"] = "TECopt Full",
 		["menu_reticle_dmc_eotech_moa"] = "TECopt MOA Dot",
 		["menu_reticle_dmc_eotech_seggs"] = "TECopt Segmented",
@@ -2641,7 +2644,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_dot_4x4"] = "Small Dot",
 		["menu_reticle_dmc_dot_2x2"] = "Tiny Dot",
 		["menu_reticle_dmc_cross_holotherm"] = "SZ Holotherm",
-		
+
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = " мс",
@@ -2726,7 +2729,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["hud_hint_bipod_air"] = "Нельзя развернуть в воздухе",
 		["hud_hint_bipod_lean"] = "Нельзя развернуть при наклоне",
 		["hud_hint_bipod_midstance"] = "Нельзя развернуть, пока вы приседаете/встаете",
-		
+
 		["hud_interact_autumn_disable"] = "Отключено Капитаном Отемом!",
 
 		["hud_assault_restored_down"] = "Штурм пережит - восстановлено 1 падение",
@@ -2797,7 +2800,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		["bm_wp_upg_i_singlefire_desc"] = "ОСТАВЛЯЕТ ТОЛЬКО #{risk}#ОДИНОЧНУЮ СТРЕЛЬБУ##.",
 		["bm_wp_upg_i_autofire_desc"] = "ОСТАВЛЯЕТ ТОЛЬКО #{risk}#АВТОМАТИЧЕСКУЮ СТРЕЛЬБУ##.",
-		
+
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
 
 		--Throwables--
@@ -2820,7 +2823,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_sticky_grenade"] = "Граната 'Семтекс'",
 		["bm_grenade_sticky_grenade_desc"] = "Урон: #{skill_color}#800## \nРадиус: #{skill_color}#4 м## \nДетонация: #{skill_color}#2.5 сек## \n\nВзрывчатое вещество, которое прилипает к любым поверхностям, включая людей!",
 		["bm_grenade_xmas_snowball_desc"] = "Урон: #{skill_color}#180## \nРадиус: #{skill_color}#1 м## \nВремя восстановления: #{skill_color}#25 сек## \nДетонация: При попадании \n\nОпустите их в воду, засуньте в морозильник и вот у вас смертоносное оружие. Легко.",
-		
+
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "Снаряды 40MM Buckshot",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Снаряд заряжен 6-ю тяжелыми дробинками.\n\nБоезапас: 15\nУрон: 360\nТочность: 40\nЭффективная дистанция: 9м\nМаксимальная дистанция: 18м",
@@ -2832,21 +2835,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "Снаряды 40MM Flechette",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Снаряд заряжен 12 маленькими дальнобойными дротиками.\n\nБоезапас: 20\nУрон: 240\nТочность: 50\nЭффективная дистанция: 11м\nМаксимальная дистанция: 22м",
 	})
-	
-	
+
+
 		local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
-		--[[ 
+		--[[
 		WepNames Options
 		1 = Имена оружия на кириллице
 		2 = Имена оружия на латинице
 		3 = Имено оружия и атачментов от DMC
 		4 = Ванильные
 	]]
-		
-		
-		if weapon_names then		
+
+
+		if weapon_names then
 			if weapon_names == 2 then -- Латиница
-				LocalizationManager:add_localized_strings({	
+				LocalizationManager:add_localized_strings({
 		["bm_w_maxim9"] = "Magnus 9",
 		["bm_w_x_maxim9"] = "Парные Magnus 9",
 		["bm_w_stech"] = "Igor Automatik",
@@ -2858,7 +2861,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_czech"] = "CR 92",
 		["bm_w_x_czech"] = "Парные CR 92",
 		["bm_w_ppk"] = "Gruber Kurz",
-		["bm_w_x_ppk"] = "Парные Gruber Kurz",		
+		["bm_w_x_ppk"] = "Парные Gruber Kurz",
 		["bm_w_legacy"] = "M13",
 		["bm_w_x_legacy"] = "Парные M13",
 		["bm_w_glock_17"] = "Chimano 88",
@@ -2904,9 +2907,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_korth"] = "Парные Kahn .357",
 		["bm_w_mateba"] = "Matever 9mm",
 		["bm_w_x_2006m"] = "Парные Matever",
-		["bm_w_model3"] = "Frenchman 87",	
-		["bm_w_x_model3"] = "Парные Frenchman 87",	
-		["bm_w_raging_bull"] = "Bronco .44",	
+		["bm_w_model3"] = "Frenchman 87",
+		["bm_w_x_model3"] = "Парные Frenchman 87",
+		["bm_w_raging_bull"] = "Bronco .44",
 		["bm_w_x_rage"] = "Парные Bronco .44",
 		["bm_w_chinchilla"] = "Castigo .44",
 		["bm_w_x_chinchilla"] = "Парные Castigo .44",
@@ -2936,12 +2939,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_scorpion"] = "Парные Cobra",
 		["bm_w_coal"] = "Tatonka",
 		["bm_w_vityaz"] = "AK Gen 21 Tactical",
-		["bm_w_shepheard"] = "FIK PC9", 
-		["bm_w_mp5"] = "Compact-5",	
-		["bm_w_mp5sd"] = "Compact-5SD",	
+		["bm_w_shepheard"] = "FIK PC9",
+		["bm_w_mp5"] = "Compact-5",
+		["bm_w_mp5sd"] = "Compact-5SD",
 		["bm_w_mp5k"] = "Compact-5K",
 		["bm_w_mp5k_pdw"] = "Compact-5K PDW",
-		["bm_w_x_mp5"] = "Парные Compact-5",	
+		["bm_w_x_mp5"] = "Парные Compact-5",
 		["bm_w_m45"] = "Swedish K",
 		["bm_w_sterling"] = "Patchette L2A3",
 		["bm_w_sterling_sd"] = "Patchette L34A1",
@@ -2969,8 +2972,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_hk21"] = "Brenner-21",
 		["bm_w_kacchainsaw"] = "Campbell 74",
 		["bm_w_m60"] = "M60",
-		["bm_w_par"] = "KSP-58B",	
-		["bm_w_mg42"] = "Buzzsaw-42",	
+		["bm_w_par"] = "KSP-58B",
+		["bm_w_mg42"] = "Buzzsaw-42",
 		["bm_w_mg42_dlt19"] = "DLT-19",
 		["bm_wp_mg42_b_vg38"] = "Ствол BlasTech DLT-19",
 		["bm_w_hk51b"] = "Versteckt-51B",
@@ -2982,32 +2985,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_benelli"] = "M1014 12G",
 		["bm_w_ultima"] = "Argos III 12G",
 		["bm_w_supernova"] = "Deimos 12G",
-		["bm_w_striker"] = "Street Sweeper 12G",	
-		["bm_w_rota"] = "Goliath 12G",	
-		["bm_w_sko12"] = "VD-12G",	
-		["bm_w_x_sko12"] = "Парные VD-12G",	
+		["bm_w_striker"] = "Street Sweeper 12G",
+		["bm_w_rota"] = "Goliath 12G",
+		["bm_w_sko12"] = "VD-12G",
+		["bm_w_x_sko12"] = "Парные VD-12G",
 		["bm_w_m37"] = "GSPS 12G",
 		["bm_w_serbu"] = "Locomotive 12G",
 		["bm_w_m1897"] = "Repeater 1897 12G",
 		["bm_w_m590"] = "Mosconi Tactical 12G",
 		["bm_w_r870"] = "Reinfeld 880 12G",
 		["bm_w_ksg"] = "Raven 12G",
-		["bm_w_boot"] = "Breaker 10G",		
-		["bm_w_coach"] = "Claire S/S 12G",	
-		["bm_w_huntsman"] = "Mosconi S/S 12G",	
+		["bm_w_boot"] = "Breaker 10G",
+		["bm_w_coach"] = "Claire S/S 12G",
+		["bm_w_huntsman"] = "Mosconi S/S 12G",
 		["bm_w_judge"] = "The Judge",
 		["bm_w_x_judge"] = "Judge & Jury",
-		["bm_w_b682"] = "Joceline O/U 12G",		
+		["bm_w_b682"] = "Joceline O/U 12G",
 		["bm_w_quadbarrel"] = "Doomstick",
 		["bm_w_mp153"] = "Argos I",
-		["bm_w_s552"] = "Commando 552",				
+		["bm_w_s552"] = "Commando 552",
 		["bm_w_amcar"] = "AM-CAR",
 		["bm_w_g36"] = "JP-36KV",
 		["bm_w_g36_k"] = "JP-36K",
 		["bm_w_g36_c"] = "JP-36C",
 		["bm_w_g36_v"] = "JP-36V",
 		["bm_w_g36_long"] = "JP-36",
-		["bm_w_vhs"] = "Lion's Roar",	
+		["bm_w_vhs"] = "Lion's Roar",
 		["bm_w_olympic"] = "Para-23",
 		["bm_w_x_olympic"] = "Парные Para-23",
 		["bm_w_komodo"] = "Tempest-95",
@@ -3022,11 +3025,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_ak5b"] = "Ak 5B",
 		["bm_w_ak5c"] = "Ak 5C",
 		["bm_w_ak5_fnc"] = "VF Carabine",
-		["bm_w_corgi"] = "Union 5.56",	
+		["bm_w_corgi"] = "Union 5.56",
 		["bm_w_aug"] = "UAR A2",
 		["bm_w_aug_a3"] = "UAR A3",
 		["bm_w_aug_f90"] = "Raptor 90",
-		["bm_w_ak12"] = "AK-17",	
+		["bm_w_ak12"] = "AK-17",
 		["bm_w_ak74"] = "AK 5.45",
 		["bm_w_hajk"] = "CR 805B",
 		["bm_w_m16"] = "AMR-16",
@@ -3047,7 +3050,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_contraband"] = "Bigger Friend 7.62",
 		["bm_w_contraband_m16"] = "Little Friend 5.56",
 		["bm_w_contraband_mpx"] = "OMNIA PC9 9mm",
-		["bm_w_fal"] = "Falcon 58",	
+		["bm_w_fal"] = "Falcon 58",
 		["bm_w_fal_l1a1"] = "Falcon SLR",
 		["bm_w_fal_sa58"] = "Falcon 58 OSW",
 		["bm_w_fal_idf"] = "Falcon RMT",
@@ -3059,7 +3062,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_galil_mar_556"] = "Micro Gecko 5.56",
 		["bm_w_scar"] = "Eagle Heavy",
 		["bm_w_scarl"] = "Eagle Light",
-		["bm_w_scar_l"] = "Eagle Light",		
+		["bm_w_scar_l"] = "Eagle Light",
 		["bm_w_ching"] = "M1 Galant",
 		["bm_w_m14"] = "M308",
 		["bm_w_g3"] = "Gewehr-3",
@@ -3076,10 +3079,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_vss"] = "Viktoriya",
 		["bm_w_g3hk79"] = "Gewehr-A3 w/ GL79",
 		["bm_w_xr2"] = "XR-2",
-		["bm_w_msr"] = "Rattlesnake",	
-		["bm_w_r700"] = "Reinfeld Model 700",	
+		["bm_w_msr"] = "Rattlesnake",
+		["bm_w_r700"] = "Reinfeld Model 700",
 		["bm_w_qbu88"] = "Káng Arms X1",
-		["bm_w_winchester1874"] = "Repeater 1874",	
+		["bm_w_winchester1874"] = "Repeater 1874",
 		["bm_w_tti"] = "Tecci Tactical .308",
 		["bm_w_victor"] = "SA North Star",
 		["bm_w_scout"] = "Pronghorn",
@@ -3094,7 +3097,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_awp"] = "Amaroq 900",
 		["bm_w_bessy"] = "Flintlock Freddy",
 		["bm_w_m95"] = "Thanatos .50 BMG",
-		["bm_w_sgs"] = "Guerilla 542",	
+		["bm_w_sgs"] = "Guerilla 542",
 		["bm_w_m107cq"] = "Mors .50 BMG",
 		["bm_w_m200"] = "TF-141",
 		["oracle_scope"] = "Oracle TechLink Scope",
@@ -3103,7 +3106,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_winchester1894"] = "Repeater 1894",
 		["bm_w_svd"] = "SV7",
 		["bm_w_l115"] = "AIM 90M",
-		["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",	
+		["bm_wp_hmcar_hd_kit"] = "32bit 8K HD Kit",
 		["bm_wp_avelyn"] = "Avelyn Kit",
 		["bm_w_gre_m79"] = "GL-40",
 		["bm_w_ms3gl"] = "Basilisk 3GL",
@@ -3113,14 +3116,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_arbiter"] = "Arbiter",
 		["bm_w_rpg7"] = "HRL-7",
 		["bm_w_ray"] = "Commando 101 FLASH",
-	
+
 				})
 		elseif weapon_names == 1 then -- Кириллица
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 
 		["bm_w_shatters_fury"] = "Феникс .500",
 		["bm_w_osipr"] = "САБР",
-		["bm_w_osipr_gl"] = "САБР - подствольник", 
+		["bm_w_osipr_gl"] = "САБР - подствольник",
 		["bm_w_maxim9"] = "Магнус 9",
 		["bm_w_x_maxim9"] = "Парные Магнус 9",
 		["bm_w_stech"] = "Стычкин Автоматический",
@@ -3171,17 +3174,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_c96_dl44"] = "ДЛ-44",
 		["bm_w_sub2000"] = "Кавити .40",
 		["bm_w_deagle"] = "Дигл",
-        ["bm_w_x_deagle"] = "Парные Диглы",	
+        ["bm_w_x_deagle"] = "Парные Диглы",
 		["bm_w_korth"] = "Кан .357",
 		["bm_w_x_korth"] = "Парные Кан .357",
 		["bm_w_mateba"] = "Матевер 9мм",
 		["bm_w_x_2006m"] = "Парные Матеверы",
 		["bm_w_model3"] = "Френчман 87",
-        ["bm_w_x_model3"] = "Парные Френчманы 87",	
+        ["bm_w_x_model3"] = "Парные Френчманы 87",
 		["bm_w_raging_bull"] = "Бронко .44",
 		["bm_w_x_rage"] = "Парные Бронко .44",
 		["bm_w_chinchilla"] = "Кастиго .44",
-        ["bm_w_x_chinchilla"] = "Парные Кастиго .44",	
+        ["bm_w_x_chinchilla"] = "Парные Кастиго .44",
 		["bm_w_rsh12"] = "РШУ-12",
 		["bm_w_peacemaker"] = "Миротворец .45",
 --CUSTOM HANDGUNS
@@ -3217,8 +3220,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_coal"] = "Татонка",
 		["bm_w_vityaz"] = "АК 21 Тактический",
 		["bm_w_shepheard"] = "ФИК ПС9",
-		["bm_w_mp5"] = "Компакт-5",	
-		["bm_w_mp5sd"] = "Компакт-5СД",	
+		["bm_w_mp5"] = "Компакт-5",
+		["bm_w_mp5sd"] = "Компакт-5СД",
 		["bm_w_mp5k"] = "Компакт-5К",
 		["bm_w_mp5k_pdw"] = "Компакт-5К ПДВ",
 		["bm_w_x_mp5"] = "Парные Компакт-5",
@@ -3243,12 +3246,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_fang45"] = "Фанг 45",
 			--Typhoon
 			["bm_w_crysis3_typhoon"] = "КРАЙНЕТ Тайфун",
-			
+
 			["bm_w_m7caseless"] = "Мисрих M7",
 			["bm_w_m7caseless_supp"] = "Мисрих М7С",
 			["bm_w_x_m7caseless"] = "Парные M7",
 			["bm_w_x_m7caseless_supp"] = "Парные M7С",
-			
+
 			["bm_w_sig_xm250"] = "ФИК МГ277",
 		["bm_w_tecci"] = "Контрабандист",
 		["bm_w_m249"] = "КСП 90",
@@ -3269,10 +3272,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	    ["bm_w_spas12"] = "Хищник 12",
 		["bm_w_benelli"] = "M1014",
 		["bm_w_ultima"] = "Аргос 3",
-		["bm_w_striker"] = "Чистильщик",	
+		["bm_w_striker"] = "Чистильщик",
 		["bm_w_rota"] = "Голиаф 12",
-		["bm_w_sko12"] = "ВД 12",	
-		["bm_w_x_sko12"] = "Парные ВД 12",	
+		["bm_w_sko12"] = "ВД 12",
+		["bm_w_x_sko12"] = "Парные ВД 12",
 		["bm_w_m37"] = "ДжиЭс 12",
 		["bm_w_supernova"] = "Деймос",
 		["bm_w_serbu"] = "Локомотив 12",
@@ -3280,16 +3283,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_m590"] = "Москони 12 Тактический",
 		["bm_w_r870"] = "Рейнфилд 880",
 		["bm_w_ksg"] = "Рейвен 12",
-		["bm_menu_sc_boot"] = "Брейкер 10",		
+		["bm_menu_sc_boot"] = "Брейкер 10",
 		["bm_w_boot"] = "Брейкер 10",
-		["bm_w_coach"] = "Клэр 12",	
-		["bm_w_huntsman"] = "Москони 12",	
+		["bm_w_coach"] = "Клэр 12",
+		["bm_w_huntsman"] = "Москони 12",
 		["bm_w_judge"] = "Судья",
 		["bm_w_x_judge"] = "Жока и Бока", --вините клейтона.
-		["bm_w_b682"] = "Джоселина 12",	
+		["bm_w_b682"] = "Джоселина 12",
 		["bm_w_quadbarrel"] = "Думстик",
 		["bm_w_mp153"] = "Аргос 1",
-		["bm_w_s552"] = "Коммандо 552",	
+		["bm_w_s552"] = "Коммандо 552",
 		["bm_w_amcar"] = "АМКАР",
 		["bm_w_g36"] = "ДЖП 36КВ",
 		["bm_w_g36_k"] = "ДЖП 36К",
@@ -3328,7 +3331,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--CUSTOM ARs
 			--AN-94/92
 			["bm_w_tilt"] = "КВК 99",
-			["bm_w_g36k"] = "ДЖП 36K",			
+			["bm_w_g36k"] = "ДЖП 36K",
 			["bm_w_scarl"] = "Игл Лайт",
 			["bm_w_rk62"] = "Вельмер",
 			["bm_w_mcbravo"] = "Химера",
@@ -3337,11 +3340,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_t9fastburst"] = "КАРВ.2",
 		["bm_w_ching"] = "M1 Галант",
 		["bm_w_m14"] = "M308",
-		["bm_w_fal"] = "Фалкон 58",	
+		["bm_w_fal"] = "Фалкон 58",
 		["bm_w_fal_l1a1"] = "Фалкон СЛР",
 		["bm_w_fal_sa58"] = "Фалкон 58 ОСВ",
 		["bm_w_fal_idf"] = "Фалкон РМТ",
-		["bm_w_scar"] = "Игл Хэви",	
+		["bm_w_scar"] = "Игл Хэви",
 		["bm_w_scar_l"] = "Игл Лайт",
 		["bm_w_g3"] = "Гевер 3",
 		["bm_w_g3_sg1"] = "Гевер-С1",
@@ -3368,7 +3371,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_xr2"] = "Иксэр 2",
 			["bm_w_sierra458"] = "Съерра .458",
 		["bm_w_msr"] = "Раттлснейк",
-		["bm_w_r700"] = "Рейнфилд Модель 700",	
+		["bm_w_r700"] = "Рейнфилд Модель 700",
 		["bm_w_qbu88"] = "Кэнг Икс 1",
 		["bm_w_winchester1874"] = "Репитер 1874",
 		["bm_w_tti"] = "Текки .308",
@@ -3387,14 +3390,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_m95"] = "Танатос .50",
 --Custom Snipers
 			--Guerilla
-			["bm_w_sgs"] = "Партизан 553",	
+			["bm_w_sgs"] = "Партизан 553",
 			["bm_w_m107cq"] = "Морс .50",
 			["bm_w_m200"] = "ТФ 141",
 			["bm_w_pd3_lynx"] = "ХЕТ-5 Ред Фокс",
 			["bm_w_amr2"] = "Нортвест АМ-2",
 		["bm_w_m1894"] = "Mare's Leg",
 		["bm_w_moss464spx"] = "Москони ЭсПиЭкс",
-		["bm_w_winchester1894"] = "Репитер 1894",	
+		["bm_w_winchester1894"] = "Репитер 1894",
 		["bm_w_svd"] = "СВ 7",
 		["bm_w_l115"] = "АИМ 90",
 		["bm_w_gre_m79"] = "ГЛ 40",
@@ -3404,11 +3407,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_arbiter"] = "Арбитр",
 		["bm_w_rpg7"] = "РПГ",
 		["bm_w_ray"] = "Коммандо 101",
-		
+
 		})
-		
+
 		elseif weapon_names == 3 then --DMCWO перевод
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 --[[PISTOLS]]
 					--5/7
 					["bm_w_lemming"] = "FN Five-seveN",
@@ -3489,7 +3492,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_sparrow_body_941"] = "IWI Jericho 941F Kit",
 					["bm_wp_sparrow_g_cowboy"] = "Weighted Grip",
 					["bm_wp_sparrow_g_cowboy_desc"] = "YOU'RE GONNA CARRY THAT WEIGHT.",
-					
+
 					--SUB2000
 					["bm_w_sub2000"] = "Kel-Tec SUB-2000",
 					["bm_wp_sub2000_fg_gen2"] = "Gen2 Handguard",
@@ -3531,10 +3534,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_socom"] = "H&K Mk.23",
 					["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Prototype Phase I LAM",
 					["bm_w_x_socom"] = "Akimbo Mk.23s",
-					--TT-33	
+					--TT-33
 					["bm_w_type54"] = "Tokarev TT-33",
 					["bm_w_x_type54"] = "Akimbo TT-33s",
-					
+
 					--Kahn .357
 					["bm_w_korth"] = "Korth NXA",
 					["bm_w_x_korth"] = "Akimbo Korth NXAs",
@@ -3542,7 +3545,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_mateba"] = "Mateba 2006M",
 					["bm_w_x_2006m"] = "Akimbo 2006Ms",
 					--Frenchman Model 87
-					["bm_w_model3"] = "S&W Model 3",	
+					["bm_w_model3"] = "S&W Model 3",
 					["bm_w_x_model3"] = "Akimbo Model 3s",
 					--Shatter's Fury
 					["bm_w_chinchilla"] = "S&W Model 29",
@@ -3628,8 +3631,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_scorpion_b_suppressed"] = "Skorpion Suppressor",
 					--MP5
 					["bm_w_mp5"] = "H&K MP5A2",
-					["bm_w_mp5sd"] = "H&K MP5SD",	
-					["bm_w_mp5k"] = "H&K MP5K",	
+					["bm_w_mp5sd"] = "H&K MP5SD",
+					["bm_w_mp5k"] = "H&K MP5K",
 					["bm_w_mp5k_pdw"] = "H&K MP5K PDW",
 					["bm_w_x_mp5"] = "Akimbo MP5A2s",
 					["bm_wp_mp5_fg_m5k"] = "MP5k Tri-Rail Kit",
@@ -3641,7 +3644,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_mp5_m_drum"] = "70rnd MP5 Drum",
 					["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
 					--MPX
-					["bm_w_shepheard"] = "SIG MPX", 
+					["bm_w_shepheard"] = "SIG MPX",
 					--Vityaz
 					["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
 					--Bizon
@@ -3687,7 +3690,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_polymer"] = "KRISS Vector SMG",
 					["bm_wp_polymer_barrel_precision"] = "CRB Barrel w/Shroud",
 					["bm_wp_polymer_ns_silencer"] = "Defiance HPS 4GSK Suppressor",
-	
+
 				--[[MGs]]
 					--416C
 					["bm_w_tecci"] = "H&K HK416-C",
@@ -4046,12 +4049,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M95
 					["bm_w_m95"] = "Barrett M95",
 					["bm_wp_m95_b_barrel_long"] = "Long Barrel w/AW50F Muzzle Brake",
-					
+
 					--PD3 Lynx
 					["bm_w_pd3_lynx"] = "SERO Gepard M6",
 
 				--[[SPECIALS]]
-					--GL40		
+					--GL40
 					["bm_w_gre_m79"] = "Springfield Armory M79",
 					--3GL
 					["bm_w_ms3gl"] = "Metal Storm 3GL",
@@ -4078,7 +4081,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Gadgets
 						["bm_wp_upg_fl_pis_tlr1"] = "Streamlight TLR-1 Flashlight",
-						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight", 
+						["bm_wp_upg_fl_pis_laser"] = "Aim Sports LH002 Laser Sight",
 						["bm_wp_upg_fl_x400v"] = "SureFire X400V-IRC Laser Light",
 						["bm_wp_upg_fl_crimson"] = "Crimson Trace CMR-201 Laser Sight",
 						["bm_wp_upg_fl_pis_m3x"] = "Insight Technology M3X Flashlight",
@@ -4111,7 +4114,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_ak_ns_tgp"] = "TGP-A Suppressor",
 						["bm_wp_victor_ns_omega"] = "SilencerCo Omega 36M Suppressor",
 						["bm_wp_kacchainsaw_suppressor"] = "KAC QDSS NT4 Suppressor",
-	
+
 						["bm_wp_ultima_ns_comp"] = "Hi-Tech Howitzer70 Muzzle Brake",
 						["bm_wp_upg_ns_shot_shark"] = "Tromix Shark Breaching Brake",
 						["bm_wp_upg_shot_ns_king"] = "King Armory KA-1212 Breaching Brake",
@@ -4172,23 +4175,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
 						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
-	
+
 						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
 						["bm_wp_upg_o_reflex"] = "Reflex Sight",
 						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
 						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
-						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",	
-	
+						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",
+
 						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
 						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
 						["bm_wp_upg_o_t1micro"] = "Aimpoint Micro T-1 Red Dot Sight",
 						["bm_wp_upg_o_tf90"] = "Tech Force TF90 Red Dot Sight",
-	
+
 						["bm_wp_upg_o_fc1"] = "DI Optical FC1 Prismatic Red Dot Sight",
 						["bm_wp_upg_o_eotech"] = "EOTech 553 Holographic Sight",
 						["bm_wp_upg_o_eotech_xps"] = "EOTech EXPS3 Holographic Sight",
 						["bm_wp_upg_o_uh"] = "AMG UH-1 Holographic Sight",
-	
+
 						["bm_wp_upg_o_specter"] = "ELCAN Specter DR 1-4x Scope",
 						["bm_wp_upg_o_acog"] = "Trijicon ACOG Scope",
 						["bm_wp_upg_o_poe"] = "BelOMO PO4x24P Scope",
@@ -4198,24 +4201,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope  w/Micro Reflex",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
-	
+
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
 						["bm_wp_upg_o_shortdot"] = "Schmidt & Bender 1-8x24 PM Short Dot",
 						["bm_wp_upg_o_shortdot_dmc"] = "Schmidt & Bender 1-8x24 PM Short Dot",
-						
+
 						["bm_wp_upg_o_leupold"] = "Leupold Mark 4 LR/T M1 w/BORS",
 						["bm_wp_upg_o_box"] = "Pulsar Digisight LRF N960 NV Scope",
-						
+
 						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Reflex",
 						["bm_wp_uupg_o_schmidt"] = "Schmidt & Bender 5-45x56 PM II High Power",
-	
+
 						["bm_wpn_fps_upg_o_45iron"] = "XS Sights Angled Sights",
 						["bm_wpn_fps_upg_o_45rds"] = "Leupold Deltapoint Pro Angled RDS",
 						["bm_wpn_fps_upg_o_45rds_v2"] = "Aimpoint Micro T-1 Red Dot Sight",
-	
+
 						["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "Aimpoint 3XMag Magnifier",
 						["bm_wpn_fps_upg_o_sig"] = "SIG Juliet3 Magnifier",
-	
+
 						["bm_wp_upg_o_mbus_rear"] = "Magpul MBUS Back-up Sights",
 
 					--Vertical Grips
@@ -4287,7 +4290,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_melee_shovel"] = "K.L.A.S.",
 					["bm_melee_baseballbat"] = "\"Lucille\"",
 					["bm_melee_bayonet"] = "AKM Type II Bayonet",
-					["bm_melee_bullseye"] = "Smith & Wesson Bullseye Hatchet",	
+					["bm_melee_bullseye"] = "Smith & Wesson Bullseye Hatchet",
 					["bm_melee_x46"] = "Robson Knives X46 Utility Survival Knife",
 					["bm_melee_dingdong"] = "Gerber Ding Dong Breaching Tool",
 					["bm_melee_cleaver"] = "Cleaver",
@@ -4331,7 +4334,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wpn_prj_target"] = "Blazing Arrow Ninja Throwing Knife",
 			})
 		end
-	end	
+	end
   if not easterless then
 	local twirl = math.rand(1)
 	local shalashaska = 0.06
@@ -4339,7 +4342,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		shalashaska = 1
 	end
 	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["bm_w_peacemaker"] = "Revolver Ocelot",
 			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
 			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
@@ -4364,7 +4367,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		anekdot = 1
 	 end
 	 if stalker <= anekdot then
-		 LocalizationManager:add_localized_strings({			
+		 LocalizationManager:add_localized_strings({
 			-- Иди своей дорогой, сталкер
 			["bm_w_striker"] = "Отбойник", -- Ну в параше не прям Protecta используется, но визуально похоже
 			["bm_w_groza"] = "Гром С-14",
@@ -4374,14 +4377,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_corgi"] = "ФТ-200М",
 			["bm_w_g36"] = "ГП37",
 			  ["bm_g36_sc_desc"] = "Штурмовая винтовка немецкого производства, представляющая собой первоклассный образец современного оружия — легкого, надежного и эргономичного.",
-			["bm_w_p99"] = "Волкер-П9м",			
-			["bm_w_usp"] = "УДП «Компакт»", 
+			["bm_w_p99"] = "Волкер-П9м",
+			["bm_w_usp"] = "УДП «Компакт»",
 			  ["bm_usp_sc_desc"] = "Солидный ствол. Немецкое качество и надежность. Компактное оружие ближнего боя. Пользуется особой популярностью среди ветеранов Зоны.",
 			["bm_w_mp5"] = "Гадюка-5",
 			  ["bm_mp5_sc_desc"] = "Одно из самых лучших в классе пистолетов-пулеметов оружие. В течение последних десятилетий XX века был принят на вооружение спецподразделений армии и полиции во многих странах мира. С началом постепенной его замены более современными моделями стал часто появляться на черном рынке, откуда массово попал и в Зону.",
-			["bm_w_l85a2"] = "ИЛ86",		
+			["bm_w_l85a2"] = "ИЛ86",
 			  ["bm_l85a2_sc_desc"] = "После того, как в армии Соединенного Королевства эта винтовка была заменена на более современную, она в большом количестве всплыла на черном рынке, а затем и в Зоне. Главными достоинствами данного оружия являются штатный 4-кратный оптический прицел и высокая точность первого выстрела. При стрельбе очередями точность боя резко падает, а основные механизмы демонстрируют недостаточную надежность.",
-			["bm_w_spas12"] = "СПСА-14",		
+			["bm_w_spas12"] = "СПСА-14",
 			  ["bm_spas12_sc_desc"] = "Гладкоствольное ружье СПСА-14 было разработано в конце 1970-х в качестве универсального боевого оружия для полиции и штурмовых подразделений армии. Данное оружие отличают высокая надежность и гибкость применения; с другой стороны, оно довольно массивно, сложно в устройстве и дорого. Пожалуй, лучшего ствола для ближнего боя в Зоне не найти.",
 			["bm_w_colt_1911"] = "Кора-919",
 			  ["bm_1911_sc_desc"] = "Классический «Кольт», с честью прошедший все вооруженные конфликты XX века и уверенно вошедший в новое столетие. Невысокая емкость магазина в определенной степени компенсируется использованием мощного патрона.",
@@ -4397,29 +4400,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_w_p226"] = "СИП-т М200",
 			  ["bm_p226_sc_desc"] = "Модель, разработанная еще в 1975 году, но до сих пор популярная во всем мире. Магазин недостаточно емкий, зато механизм надежен, как швейцарские часы; вторым плюсом является использование мощного патрона.",
 			["bm_w_hpb"] = "ХПСС-1м",
-			["bm_w_b682"] = "Охотничье ружье",	
+			["bm_w_b682"] = "Охотничье ружье",
 			  ["bm_b682_sc_desc"] = "Широко распространенное охотничье ружье-«вертикалка» — благодаря достаточной точности и хорошему останавливающему действию — обеспечивает более надежную защиту от мутантов, чем пистолет. Очень дешево и доступно в сравнении с большинством видов оружия, поэтому активно применяется новичками и бандитами как на окраинах, так и в Центре Зоны.",
 			["bm_w_deagle"] = "Черный ястреб",
-			  ["bm_deagle_sc_desc"] = "Настоящая «карманная пушка» — большая, тяжелая и обладающая чрезвычайно высокой убойной силой. Из-за цены и габаритов особого распространения в Зоне не получила.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",  
+			  ["bm_deagle_sc_desc"] = "Настоящая «карманная пушка» — большая, тяжелая и обладающая чрезвычайно высокой убойной силой. Из-за цены и габаритов особого распространения в Зоне не получила.\n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 			["bm_w_ak74"] = "АКМ-74/2",
 			  ["bm_ak74_sc_desc"] = "Автомат складной, образца 1974 года под патрон 5,45 × 39. Представляет собой простое и надежное оружие, хотя дешевизна в производстве несколько сказалась на удобстве использования и точности боя. В Зоне это основное оружие военных, сталкеров и многих одиночек.",
 			["bm_w_akmsu"] = "АКМ-74/2У",
-			  ["bm_akmsu_sc_desc"] = "По своим габаритам и массе близок к пистолетам-пулеметам, однако устройство механизма почти полностью идентично АКМ-74/2. Малые габариты оружия позволяют успешно использовать его в условиях городской застройки и в стесненных условиях, а пробивающее действие пули довольно велико.",  
-			
-			
+			  ["bm_akmsu_sc_desc"] = "По своим габаритам и массе близок к пистолетам-пулеметам, однако устройство механизма почти полностью идентично АКМ-74/2. Малые габариты оружия позволяют успешно использовать его в условиях городской застройки и в стесненных условиях, а пробивающее действие пули довольно велико.",
+
+
 			-- типо мемные
 			["bm_w_saiga"] = "Сайга",
 			  ["bm_saiga_sc_desc"] = " - Баффните #{stats_positive}#сайгу!## \n - Ты как #{stats_negative}#ижму## назвал?",
 			["bm_w_m4"] = "Кар-карыч",
 			["bm_w_ak12"] = "Калак-12",
-			  ["bm_flint_sc_desc"] = "С затворной задержкой как у М-16. #{skill_color}#Умеет стрелять очередями по 2## и обладает кризисом личности.",	
+			  ["bm_flint_sc_desc"] = "С затворной задержкой как у М-16. #{skill_color}#Умеет стрелять очередями по 2## и обладает кризисом личности.",
 			["bm_w_p90"] = "Петух",
 			["bm_w_sko12"] = "WD 40",
 			["bm_w_x_akmsu"] = "KALAWIKI",
 			  ["bm_x_akmsu_sc_desc"] = "После взятия иных в руки - у Вас резко появилось желание писать транслитом и поедать сумки с патронами, предварительно кинув под нее молотов.",
 			["bm_w_ching"] = "\"Золотой\" Галант",
 			  ["bm_galant_sc_desc"] = "Тот самый легендарный Галант прямиком из игры #{important_1}#RAID: WW2##\n\n#{skill_color}#Наносит 50% урона через броню и может пробивать врагов и тонкие стены.##",
-			["bm_w_m60"] = "Свинка Пеппа",			
+			["bm_w_m60"] = "Свинка Пеппа",
 			["bm_w_x_deagle"] = "Лупа и Пупа",
 			  ["bm_x_deagle_sc_desc"] = "Все перепутали... \n\n#{skill_color}#Наносит 50% урона через броню и пробивает врагов.##",
 			["bm_w_saw"] = "Болгарка",
@@ -4442,7 +4445,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						-- ["bm_l85a2_sc_desc"] = "\"...\"\n\nA middleschooler attending #{stats_positive}#Seishou Academy.##\nShy and clumsy, she has an unreliable nature and the habit of breaking a lot.",
 					-- ["bm_w_rk62"] = "Sako",
 						-- ["bm_rk62_sc_desc"] = "\"#{stat_maxed}#What wonderful squeals!## You sound like you're about to #{stats_positive}#die!##\"\n\nA transfer student attending #{stats_positive}#Seishou Academy.##\nAn elf-eared sadist with a drive to be the \"alpha\" of any school she attends. Desires Funco.",
-	
+
 				-- --HIGH SCHOOLERS
 					-- ["bm_w_fal"] = "Faru",
 						-- ["bm_fal_sc_desc"] = "\"Your big sis arrived-!\"\n\nFunco's older sister.\nNot to be confused with Funco's other sister, L1A1.",
@@ -4458,7 +4461,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						-- ["bm_uzi_sc_desc"] = "\"Eat this!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nThe former self-declared leader of the elementary division, pushed out of the position by Empi when she arrived.",
 					-- ["bm_w_mac10"] = "Ram",
 						-- ["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nAn elementary schooler attending #{stats_positive}#Seishou Academy.##\nA machinegun with words. Also rather top-heavy.",
-		
+
 				-- --FACULTY
 					-- ["bm_w_erma"] = "Erma-sensei",
 						-- ["bm_erma_sc_desc"] = "\"Come in! Come in!\"\n\nAn elementary school dorm mom working at #{stats_positive}#Seishou Academy.##\nThe SMGs love her.",
@@ -4466,7 +4469,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						-- ["bm_m1928_sc_desc"] = "\"It's common sense!\"\n\nAn elementary school teacher working at #{stats_positive}#Seishou Academy.##\nSpeaks with accented Japanese. A former member of the FBI.",
 					-- ["bm_w_ching"] = "Garand",
 						-- ["bm_galant_sc_desc"] = "\"ARE YOU TRYING TO PULL ONE OVER ON ME!?\"\n\nA drill instructor working at #{stats_positive}#Seishou Academy.##\nLooks over the middleschoolers.",
-	
+
 			-- --RED STEEL ACADEMY
 				-- --THREE STRIPES
 					-- ["bm_w_siltstone"] = "Drako",
@@ -4486,29 +4489,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				-- --FACULTY
 					-- ["bm_w_mosin"] = "Mosin Nagant",
 						-- ["bm_mosin_sc_desc"] = "\"To the self-reflection room it is...\"\n\nA faculty member of #{stats_negative}#Red Steel Academy.##\nThe absolute Tsarista born of the Russian Empire. An old friend of Thomspon-sensei.",
-			
+
 			-- --ENOSHIMA
 				-- --MIDDLE SCHOOLERS
 					-- ["bm_w_spas12"] = "Supasu",
 						-- ["bm_spas12_sc_desc"] = "\"Idiot! You're completely exposed!\"\n\nA middleschooler attending a public school in Enoshima.",
 					-- ["bm_w_benelli"] = "Beneri M4",
 						-- ["bm_spas12_sc_desc"] = "\"There's a limit to not being able to read the mood!\"\n\nA middleschooler attending a public school in Enoshima.",
-				
+
 		 })
 	 end
-	
+
 	-- local big = math.rand(1)
 	-- local pistol = 0.02
 	-- if big <= pistol then
-		-- LocalizationManager:add_localized_strings({	
+		-- LocalizationManager:add_localized_strings({
 			-- ["bm_w_deagle"] = "Big Pistol",
 			-- ["bm_w_m16"] = "is that a clarion",
 			-- ["bm_m16_sc_desc"] = "I'll give you a clip so you can do some damage",
 			-- ["bm_w_x_type54"] = "The twin crosskills",
 		-- })
-	--end	
+	--end
 	end
-	
+
 end)
 
 
@@ -4551,7 +4554,7 @@ elseif ai_type == m then
 			["hud_assault_assault"] = "Идет операция Murkywater",
 			["hud_assault_alpha"] = "ОПЕРАЦИЯ MURKYWATER"
 		})
-	end)	
+	end)
 end
 
  if _G.HopLib then
@@ -4575,27 +4578,27 @@ end
 	elseif ai_type == lapd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)	
+		end)
 	elseif ai_type == mex then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
 		end)
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
 		end)
 	elseif ai_type == nypd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
 		end)
 	elseif ai_type == fbi then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
 		end)
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
-		end)	
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
+		end)
 	end
  end
 
@@ -4606,7 +4609,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_es_pro_job_bonus"] = "Pro-Job",
 
 		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает 25% бонус к деньгам и опыту.",
-		
+
 		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
 
 		["cn_menu_contract_daypay_header"] = "Дневная плата:",
@@ -4652,7 +4655,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["hud_int_hold_take_pardons"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ ПОМИЛОВАНИЕ",
 		["debug_interact_gage_assignment_take"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ЗАБРАТЬ ПОСЫЛКУ ГЕЙДЖА",
-		
+
 		["hint_ability_no_grenade_pickup"] = "У ВАС НЕТ МЕТАТЕЛЬНОГО ОРУЖИЯ",
 		["hint_full_grenades"] = "У ВАС УЖЕ ПОЛНЫЙ ЗАПАС.",
 		["debug_interact_ordnance_bag_take_grenades"] = "НАЖМИТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ И НЕМНОГО ПАТРОНОВ",
@@ -4728,35 +4731,35 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Captain Hints
 		["loading_captains_res_title"] = "Restoration - советы о капитанах",
 		["loading_captains_res_1"] = "Чтобы победить капитана Саммерса, нужно сначала обезвредить его команду, начиная с Дока. Саммерс будет неубиваем, пока вся его команда жива; остальные двое будут практически неуязвимы, пока жив Док.",
-		["loading_captains_res_2"] = "Не жмитесь к Капитану Саммерсу, он быстро сожжет вас.",		
-		["loading_captains_res_3"] = "Капитан Спринг выдерживает много урона, но рано или поздно погибнет. Остерегайтесь его гранат и пользуйтесь его низкой скоростью.",	
+		["loading_captains_res_2"] = "Не жмитесь к Капитану Саммерсу, он быстро сожжет вас.",
+		["loading_captains_res_3"] = "Капитан Спринг выдерживает много урона, но рано или поздно погибнет. Остерегайтесь его гранат и пользуйтесь его низкой скоростью.",
 		["loading_captains_res_4"] = "Капитан Спринг периодически бросает кластерные осколочные гранаты. Не стойте возле него слишком долго.",
 		["loading_captains_res_5"] = "Капитан Спринг может быть опасным, но это компенсируется его низкой скоростью и дальнобойностью.",
 		["loading_captains_res_6"] = "Капитан Отем громко смеется во время своих атак.",
 		["loading_captains_res_7"] = "В отличие от других капитанов, полиция не анонсирует появление капитана Отема, чтобы не испортить сюрприз.",
-		["loading_captains_res_8"] = "Капитан Отем будет постепенно отключать ваше снаряжение, если дать ему оставаться незамеченным продолжительное время. Отключенное снаряжение помечено фиолетовым и будет восстановлено только после смерти Отема.",	
-		["loading_captains_res_9"] = "Вряд ли у вас получится победить капитана Отема в кулачном бою. Не стоит пробовать.",	
-		["loading_captains_res_10"] = "Капитан Винтерс практически неуязвим к взрывчатке и огню, обладает сильной защитой от пуль, но достаточно слаб в ближнем бою.",	
+		["loading_captains_res_8"] = "Капитан Отем будет постепенно отключать ваше снаряжение, если дать ему оставаться незамеченным продолжительное время. Отключенное снаряжение помечено фиолетовым и будет восстановлено только после смерти Отема.",
+		["loading_captains_res_9"] = "Вряд ли у вас получится победить капитана Отема в кулачном бою. Не стоит пробовать.",
+		["loading_captains_res_10"] = "Капитан Винтерс практически неуязвим к взрывчатке и огню, обладает сильной защитой от пуль, но достаточно слаб в ближнем бою.",
 		["loading_captains_res_11"] = "Щит Капитана Винтерса совершенно невозможно пробить, но вы можете попытаться выбить его из рук. Если будете вести продолжительный огонь по щиту, то Винтерс сбросит его и войдет в ярость.",
 		["loading_captains_res_12"] = "Капитан Винтерс двигается по карте, постоянно подлечивая врагов.",
 		--Stealth Hints
 	    ["loading_stealth_res_title"] = "Restoration - советы о стелсе",
-		["loading_stealth_res_1"] = "Оператор посылает охранников на осмотр сломанных камер, поэтому камеры можно использовать как приманку.",	
+		["loading_stealth_res_1"] = "Оператор посылает охранников на осмотр сломанных камер, поэтому камеры можно использовать как приманку.",
 		["loading_stealth_res_2"] = "Если быстро убить охранника холодным оружием, то пейджер не сработает.",
-		["loading_stealth_res_3"] = "Оператор может заметить убитых охранников и отправить замену.",	
-		["loading_stealth_res_4"] = "Охранники, не имеющие пейджеров, не увеличивают шкалу подозрения при смерти.",	
+		["loading_stealth_res_3"] = "Оператор может заметить убитых охранников и отправить замену.",
+		["loading_stealth_res_4"] = "Охранники, не имеющие пейджеров, не увеличивают шкалу подозрения при смерти.",
 		["loading_stealth_res_5"] = "Любое громкое оружие в стелсе имеет расстояние шума в 25 метров.",
-		["loading_stealth_res_6"] = "Гражданские падают на землю, когда слышат стрельбу как при громком прохождении, так и стелсе.",	
+		["loading_stealth_res_6"] = "Гражданские падают на землю, когда слышат стрельбу как при громком прохождении, так и стелсе.",
 		["loading_stealth_res_7"] = "Турели заставляют лежать всех гражданских в достаточно высоком радиусе.",
 		["loading_stealth_res_8"] = "Когда вы несете сумку, вас будут замечать с гораздо большей дистанции, а также гораздо быстрее, если вы стоите, бежите или прыгаете. Двигайтесь медленно и вприсядку.",
 		["loading_stealth_res_9"] = "Вы можете брать до 4 Генераторов помех вместо 2 из ванильной игры, но их время действия сокращено в два раза.",
 		["loading_stealth_res_10"] = "Оружие с глушителем не издает никакого шума в стелсе.",
-		["loading_stealth_res_11"] = "Вы можете взять в заложники до 4 охранников.",	
+		["loading_stealth_res_11"] = "Вы можете взять в заложники до 4 охранников.",
 		["loading_stealth_res_12"] = "Стелс теперь прощает ошибки, позволяя перестраивать планы на лету.",
 		["loading_stealth_res_13"] = "Охранники больше не погибают мгновенно от любого урона, если они не встревожены. Цельтесь в голову или используйте оружие ближнего боя с высоким уроном.",
-		["loading_stealth_res_14"] = "Когда шкала подозрения заполнится полностью, у вас будет 60 секунд, прежде чем включится тревога.",	
-		["loading_stealth_res_15"] = "Чем выше шкала подозрения, тем быстрее вас замечают охранники. ",	
-		["loading_stealth_res_16"] = "Вы можете использовать больше мешков для трупов, чем в ванильной игре, и еще больше, если находитесь в одиночной игре.",	
+		["loading_stealth_res_14"] = "Когда шкала подозрения заполнится полностью, у вас будет 60 секунд, прежде чем включится тревога.",
+		["loading_stealth_res_15"] = "Чем выше шкала подозрения, тем быстрее вас замечают охранники. ",
+		["loading_stealth_res_16"] = "Вы можете использовать больше мешков для трупов, чем в ванильной игре, и еще больше, если находитесь в одиночной игре.",
 		["loading_stealth_res_17"] = "В одиночной игре у вас будет больше стяжек, чтобы компенсировать недостающих игроков. Их количество будет также увеличено от соответствующих навыков.",
 		["loading_stealth_res_18"] = "Охранники, убитые из огнестрельного оружия, включат пейджер. Включение пейджеров не увеличит шкалу подозрения, если, конечно, их не игнорировать",
 		["loading_stealth_res_19"] = "На высоких сложностях, оператор пейджеров не такой доверчивый. Использование последнего пейджера обозначается особой фразой от оператора.",
@@ -4768,32 +4771,32 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_2"] = "Пистолеты достаются быстрее всех остальных категорий оружия.",
 		["loading_equip_skills_res_3"] = "Оружие в Restoration разделено на различные классы со своими плюсами и минусами. Оружие с большим уроном убивает врагов быстрее, но и опустошается так же быстро! ",
 		["loading_equip_skills_res_4"] = "Оружие с высоким уроном, как правило, менее скрытно, если у него нет значительных минусов, таких как низкие Точность и Скорострельность. ",
-		["loading_equip_skills_res_5"] = "Вульф прокачал Турели - теперь их можно ремонтировать прямо во время боя. Это занимает время, но зато процесс автоматический - вам нужно только запустить его.",	
-		["loading_equip_skills_res_6"] = "Если у вас открыты бронебойные патроны для Турелей, вы можете выбрать стандартный тип патронов в меню снаряжения. ",	
+		["loading_equip_skills_res_5"] = "Вульф прокачал Турели - теперь их можно ремонтировать прямо во время боя. Это занимает время, но зато процесс автоматический - вам нужно только запустить его.",
+		["loading_equip_skills_res_6"] = "Если у вас открыты бронебойные патроны для Турелей, вы можете выбрать стандартный тип патронов в меню снаряжения. ",
 		["loading_equip_skills_res_7"] = "Наборы перков предоставляют значительный бонус к урону, и многие из них обладают чрезвычайно нужными навыками лечения.",
 		["loading_equip_skills_res_8"] = "Капо, Оружейник, Силовик, Аферист, Шулер и Байкер - это простые и поэтому надежные наборы перков.",
 		["loading_equip_skills_res_9"] = "Киллер (Hitman) был переработан в набор перков, который обладает низкой выживаемостью и надежностью, но взамен предоставляет возможность получить большое количество 'временного здоровья', чтобы пробиться через сложные ситуации.",
 		["loading_equip_skills_res_10"] = "Капо (Crew Chief) - это командный набор перков, который предоставляет небольшие, но полезные бонусы для вас и ваших соратников, и еще больше бонусов, если вы берете заложников. Он хорошо сочетается с веткой Командира у Манипулятора.",
-		["loading_equip_skills_res_11"] = "Шулер (Gambler) - это командный набор перков, который предоставляет немного здоровья вам и бонусные боеприпасы для ваших товарищей, когда вы подбираете патроны. Хорошо сочетается с навыками, которые дают дополнительные коробки патронов с врагов.",	
-		["loading_equip_skills_res_12"] = "Маньяк (Maniac) - это агрессивный и командный набор перков, который понижает повреждения по вам и вашим соратникам, если вы безостановочно наносите урон. Хорошо сочетается с билдами, в которых есть высокий урон и сопротивление урону.",	
-		["loading_equip_skills_res_13"] = "Карманный генератор помех Хакера (Hacker) предоставляет лечение и сдерживание толпы всей команде, но долго перезаряжается. Помимо этого, он эффективен в стелсе.",	
-		["loading_equip_skills_res_14"] = "Взломщик (Burglar) - колода для уворота, которая награждает скрытность во время боя.",	
-		["loading_equip_skills_res_15"] = "Вор в законе (Kingpin) - гибкий набор перков. Инъектор можно использовать для самолечения, защиты от большого урона, или отвлечения противников от вашей команды.",	
-		["loading_equip_skills_res_16"] = "Тандем (Tag Team) - командный набор перков, который позволяет предоставить большое количество лечения конкретному соратнику, при условии, что вы вдвоем устраняете врагов без остановки.",	
-		["loading_equip_skills_res_17"] = "Бронебойные пули, пробившие щит, нанесут 50% урона.",	
-		["loading_equip_skills_res_18"] = "Револьверы Peacemaker и Phoenix .500 могут пробивать врагов, стены и щиты, как снайперские винтовки.",	
-		["loading_equip_skills_res_19"] = "Если справа на экране отображается шкала синего цвета - у вас есть Уворот (Dodge). Когда она подсвечивается, вы увернетесь от следующей пули. Для более подробного объяснения механики уворота, используйте Гайд.",	
-		["loading_equip_skills_res_20"] = "Чем выше Компактность оружия, тем быстрее вы его достаете и убираете.",	
+		["loading_equip_skills_res_11"] = "Шулер (Gambler) - это командный набор перков, который предоставляет немного здоровья вам и бонусные боеприпасы для ваших товарищей, когда вы подбираете патроны. Хорошо сочетается с навыками, которые дают дополнительные коробки патронов с врагов.",
+		["loading_equip_skills_res_12"] = "Маньяк (Maniac) - это агрессивный и командный набор перков, который понижает повреждения по вам и вашим соратникам, если вы безостановочно наносите урон. Хорошо сочетается с билдами, в которых есть высокий урон и сопротивление урону.",
+		["loading_equip_skills_res_13"] = "Карманный генератор помех Хакера (Hacker) предоставляет лечение и сдерживание толпы всей команде, но долго перезаряжается. Помимо этого, он эффективен в стелсе.",
+		["loading_equip_skills_res_14"] = "Взломщик (Burglar) - колода для уворота, которая награждает скрытность во время боя.",
+		["loading_equip_skills_res_15"] = "Вор в законе (Kingpin) - гибкий набор перков. Инъектор можно использовать для самолечения, защиты от большого урона, или отвлечения противников от вашей команды.",
+		["loading_equip_skills_res_16"] = "Тандем (Tag Team) - командный набор перков, который позволяет предоставить большое количество лечения конкретному соратнику, при условии, что вы вдвоем устраняете врагов без остановки.",
+		["loading_equip_skills_res_17"] = "Бронебойные пули, пробившие щит, нанесут 50% урона.",
+		["loading_equip_skills_res_18"] = "Револьверы Peacemaker и Phoenix .500 могут пробивать врагов, стены и щиты, как снайперские винтовки.",
+		["loading_equip_skills_res_19"] = "Если справа на экране отображается шкала синего цвета - у вас есть Уворот (Dodge). Когда она подсвечивается, вы увернетесь от следующей пули. Для более подробного объяснения механики уворота, используйте Гайд.",
+		["loading_equip_skills_res_20"] = "Чем выше Компактность оружия, тем быстрее вы его достаете и убираете.",
 		["loading_equip_skills_res_21"] = "Когда вы достаете Бензопилу или Казагуруму, они наносят урон противникам впереди вас.",
-		["loading_equip_skills_res_22"] = "Нож-бабочка и Выкидной нож наносят огромный урон при атаке со спины.",		
+		["loading_equip_skills_res_22"] = "Нож-бабочка и Выкидной нож наносят огромный урон при атаке со спины.",
 		["loading_equip_skills_res_23"] = "Ледоруб и Золотая лихорадка наносят дополнительный урон в голову, но обладают низкой скоростью атаки.",
 		["loading_equip_skills_res_24"] = "Яд наносит небольшой урон, но вызывает рвоту, которая прерывает действия врагов.",
 		["loading_equip_skills_res_25"] = "Оглушающие гранаты являются отличным инструментом отвлечения, даже против Бульдозеров.",
-		["loading_equip_skills_res_26"] = "Прицеливание значительно увеличивает точность и уменьшает отдачу, даже у пулеметов.",	
-		["loading_equip_skills_res_27"] = "Гвоздомет - оружие ближнего боя с очень высокой дальнобойностью - он бьет гораздо дальше, чем любое другое оружие ближнего боя.",	
-		["loading_equip_skills_res_28"] = "Прокачивайте наборы перков, чтобы открыть Кейс с метательным оружием.",	
-		["loading_equip_skills_res_29"] = "Одна коробочка из Кейса с метательным оружием теперь полностью восстанавливает ваш запас метательного оружия.",	
-		["loading_equip_skills_res_30"] = "Берегите Пиковый навык Мотивация (Inspire Ace) для действительно опасной ситуации, ведь он очень долго перезаряжается и требует прямую видимость.",	
+		["loading_equip_skills_res_26"] = "Прицеливание значительно увеличивает точность и уменьшает отдачу, даже у пулеметов.",
+		["loading_equip_skills_res_27"] = "Гвоздомет - оружие ближнего боя с очень высокой дальнобойностью - он бьет гораздо дальше, чем любое другое оружие ближнего боя.",
+		["loading_equip_skills_res_28"] = "Прокачивайте наборы перков, чтобы открыть Кейс с метательным оружием.",
+		["loading_equip_skills_res_29"] = "Одна коробочка из Кейса с метательным оружием теперь полностью восстанавливает ваш запас метательного оружия.",
+		["loading_equip_skills_res_30"] = "Берегите Пиковый навык Мотивация (Inspire Ace) для действительно опасной ситуации, ведь он очень долго перезаряжается и требует прямую видимость.",
 		["loading_equip_skills_res_31"] = "Restoration Mod добавляет два дополнительных набора перков, которые предоставляют больше денег и опыта, но отключают перки. Испытайте себя ради увеличенных наград!",
 		["loading_equip_skills_res_32"] = "Чтобы получить бонус к прицеливанию, требуется дождаться конца анимации прицеливания. Следите за характеристикой \"Прицеливание\", когда настраиваете оружие.",
 		["loading_equip_skills_res_33"] = "Длинные стволы, крупные приклады и большие магазины имеют хорошие преимущества, но вредят скорости переключения, перезарядки, прицеливания и задержку после бега. Если слишком увлечетесь ими, оружие станет слишком медленным для использования.",
@@ -4804,23 +4807,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_38"] = "Характеристика \"Прорубание\" у оружия ближнего боя показывает, как много врагов Вы можете зацепить во время удара.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration - прочие подсказки",
-		["loading_misc_res_1"] = "Попробуйте новые ограбления из Restoration! Вы можете найти их у заказчика 'Джекел', а также ограбление 'Наркопритон' у Влада.",	
-		["loading_misc_res_2"] = "У Restoration Mod есть гайд в Steam и на YouTube! В них содержится вся нужная информация о моде. Ссылка в главном меню.",	
-		["loading_misc_res_3"] = "У русского сообщества Restoration Mod есть Дискорд-канал! Присоединяйтесь для обсуждений, технической помощи и нахождения игроков. Ссылка в главном меню.",		
+		["loading_misc_res_1"] = "Попробуйте новые ограбления из Restoration! Вы можете найти их у заказчика 'Джекел', а также ограбление 'Наркопритон' у Влада.",
+		["loading_misc_res_2"] = "У Restoration Mod есть гайд в Steam и на YouTube! В них содержится вся нужная информация о моде. Ссылка в главном меню.",
+		["loading_misc_res_3"] = "У русского сообщества Restoration Mod есть Дискорд-канал! Присоединяйтесь для обсуждений, технической помощи и нахождения игроков. Ссылка в главном меню.",
 		--Trivia Hints
 		["loading_fluff_res_title"] = "Restoration - интересные факты",
-		["loading_fluff_res_1"] = "OMNIA тратит капитал на восстановление неудачных военных проектов.",	
-		["loading_fluff_res_2"] = "Для LPF пиво наливают бесплатно.",	
-		["loading_fluff_res_3"] = "LPF и Титановый Снайпер - австралийцы.",	
-		["loading_fluff_res_4"] = "Нью-Йоркский Бронко Коп обожает пончики.",	
-		["loading_fluff_res_5"] = "Настоящее имя элитного ZEAL SWAT с UMP - Чад.",	
-		["loading_fluff_res_6"] = "Глаза Титановых Дозеров светятся благодаря генетической инженерии, экспериментам и боевым наркотикам.",	
-		["loading_fluff_res_7"] = "Капитан Спринг - не человек. Хотя говорят, что когда-то он им был.",	
-		["loading_fluff_res_8"] = "В Restoration Mod играют только два человека - KLEITON и Tom Blaine.",	
-		["loading_fluff_res_9"] = "OMNIA разрабатывала двери, способные выдержать атаку динозавров.",	
-		["loading_fluff_res_10"] = "Гренадер раньше работал в центре дезинфекции.",	
+		["loading_fluff_res_1"] = "OMNIA тратит капитал на восстановление неудачных военных проектов.",
+		["loading_fluff_res_2"] = "Для LPF пиво наливают бесплатно.",
+		["loading_fluff_res_3"] = "LPF и Титановый Снайпер - австралийцы.",
+		["loading_fluff_res_4"] = "Нью-Йоркский Бронко Коп обожает пончики.",
+		["loading_fluff_res_5"] = "Настоящее имя элитного ZEAL SWAT с UMP - Чад.",
+		["loading_fluff_res_6"] = "Глаза Титановых Дозеров светятся благодаря генетической инженерии, экспериментам и боевым наркотикам.",
+		["loading_fluff_res_7"] = "Капитан Спринг - не человек. Хотя говорят, что когда-то он им был.",
+		["loading_fluff_res_8"] = "В Restoration Mod играют только два человека - KLEITON и Tom Blaine.",
+		["loading_fluff_res_9"] = "OMNIA разрабатывала двери, способные выдержать атаку динозавров.",
+		["loading_fluff_res_10"] = "Гренадер раньше работал в центре дезинфекции.",
 		["loading_fluff_res_11"] = "Вы никогда не видели Титанового Клокера.",
-		["loading_fluff_res_12"] = "Omnia — музыкальная группа, сама определяющая свой стиль, как 'неокельтский языческий фолк', основана в Нидерландах и Бельгии. Неизвестно, есть ли у нее связь с организацией OMNIA.",	
+		["loading_fluff_res_12"] = "Omnia — музыкальная группа, сама определяющая свой стиль, как 'неокельтский языческий фолк', основана в Нидерландах и Бельгии. Неизвестно, есть ли у нее связь с организацией OMNIA.",
 		["loading_fluff_res_13"] = "Джекел отказывается рассказывать, из-за какого события он покинул GenSec и начал работать на CrimeNet. Он был крайне им возмущен.",
 		["loading_fluff_res_14"] = "ХАХАХАХА.",
 		["loading_fluff_res_15"] = "Капитан Саммерс и его команда были бандой из четырех грабителей, прямо как банда Payday. Теперь они - нападающий отряд, работающий на OMNIA.",
@@ -4872,7 +4875,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Гренадеры",
 		["mutator_specials_override_sniper"] = "Снайперы",
-		
+
 		["mutator_titandozers_desc"] = "Хэллоуинские эффекты",
 		["mutator_titandozers_longdesc"] = "Безголовый Бульдозер сбежал из кошмаров Вульфа в реальность! Обычные Бульдозеры заменены на Безголовых, а также включены особые хэллоуинские эффекты.",
 
@@ -4890,7 +4893,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans"] = "Сокращение бюджета",
 		["mutator_notitans_desc"] = "Отключает Титановых юнитов.",
 		["mutator_notitans_longdesc"] = "Любые появления Титановых юнитов отключены.",
-		
+
 		["mutator_onlytitans"] = "Повышение бюджета",
 		["mutator_onlytitans_desc"] = "Титановые юниты заменяют всех обычных юнитов.",
 		["mutator_onlytitans_longdesc"] = "Вместо обычных юнитов будут появляться их Титановые версии.",
@@ -4914,23 +4917,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll"] = "Лютый троллинг",
 		["mutator_fatroll_desc"] = "Грейс период (в с)",
 		["mutator_fatroll_longdesc"] = "Задержка на получение урона для игроков и ботов теперь зависит от этого значения. Минимум - 0 с, максимум - 0.25 с.",
-		
+
 		["mutator_overheal"] = "Эксперт сверхлечения",
 		["menu_mutator_overheal_mult_override"] = "Множитель сверхлечения",
 		["menu_mutator_overheal_mult_override_toggle"] = "Включить сверхлечение для капитанов",
 		["mutator_overheal_desc"] = "LPF теперь может давать дополнительное здоровье почти всем противникам.",
 		["mutator_overheal_longdesc"] = "LPF теперь может давать дополнительное здоровье всем противникам, кроме клокеров. \n\nПримечание:Мутатор не может перезаписать значение множителя для тех противников, множитель у которых выше, чем заданное Вами значение.",
-		
+
 		["mutator_asu_buff"] = "Мощь всех стволов",
 		["menu_mutator_captain_asu_buff_toggle"] = "Включить усиления урона для капитанов",
 		["mutator_asu_buff_desc"] = "ASU теперь может усиливать оружия особых противников.",
 		["mutator_asu_buff_longdesc"] = "ASU теперь может усиливать оружия особых противников (кроме клокеров) и усиливает урон оружий как на сложности Смертный Приговор.",
-		
+
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
 		["menu_mutator_flashbang_cooking_time"] = "Время до срабатывания (в с)",
 		["mutator_bo_flashbang_desc"] = "Светошумовые гранаты теперь нельзя сломать.",
 		["mutator_bo_flashbang_longdesc"] = "Светошумовые гранаты теперь нельзя сломать.",
-		
+
 		["mutator_grenade_mayhem"] = "Тотальное побоище!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Гранаты для обычных и элитных врагов",
 		["menu_mutator_grenade_mayhem_thugs_toggle"] = "Гранаты для бандитов",
@@ -4941,7 +4944,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_grenade_mayhem_desc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.",
 		["mutator_grenade_mayhem_longdesc"] = "Позволяет кидать осколочные гранаты не только оперативникам Браво.\n\nПримечание: Враги с огнеметами будут кидать молотовы вместо осколочных; Клокеры будут кидать слезоточивый газ вместо осколочных.",
 
-		["mutator_captain_replace"] = "Вечная непогода",	
+		["mutator_captain_replace"] = "Вечная непогода",
 		["menu_mutator_captain_replace_1"] = "Капитан (день 1)",
 		["menu_mutator_captain_replace_2"] = "Капитан (день 2)",
 		["menu_mutator_captain_replace_3"] = "Капитан (день 3)",
@@ -4959,25 +4962,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_hvh_blacklist_toggle"] = "Исключить АТБГШИЛ из случайного выбора",
 		["mutator_captain_replace_desc"] = "Позволяет менять капитана, который может появиться на ограблении.",
 		["mutator_captain_replace_longdesc"] = "Позволяет менять капитана, который может появиться на ограблении.\n\nПримечание: Мутатор не может заменить капитанов, которые приходят по скрипту. Исключение всех капитанов из случайного выбора приведет к использованию настройки \"Без изменений\".",
-		
+
 		["mutator_no_outlines"] = "Эксперт Реализм",
 		["mutator_no_outlines_desc"] = "Почти все контуры отключены.",
 		["mutator_no_outlines_longdesc"] = "Почти все контуры отключены. Также отключены ники над ботами/игроками.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить контуры противников",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Выключить подсвечивающие контуры (кроме обводки для сопровождения цели)",
-		
+
 		["mutator_spawn_mult"] = "Увеличенные отряды",
 		["menu_mutator_enemy_spawn"] = "МНОЖИТЕЛЬ СПАУНОВ",
 		["mutator_spawn_mult_desc"] = "Спауны врагов увеличены.",
 		["mutator_spawn_mult_longdesc"] = "Во время штурмов будет спаунится больше врагов. Почувствуйте себя Джулсом!",
-		
+
 		["mutator_birthday"] = "Гелиевая вечеринка",
 		["mutator_birthday_desc"] = "Убийство особых врагов спаунит шарики, которые дают бонусы.",
-		["mutator_birthday_longdesc"] = "Восьмилетие PAYDAY:\n\nУбийство особых врагов заспаунит шарики, которые можно прострелить чтобы получить бонусы для всей команды. Некоторые враги спаунят шарики чаще. Можно активировать несколько бонусов сразу.",		
+		["mutator_birthday_longdesc"] = "Восьмилетие PAYDAY:\n\nУбийство особых врагов заспаунит шарики, которые можно прострелить чтобы получить бонусы для всей команды. Некоторые враги спаунят шарики чаще. Можно активировать несколько бонусов сразу.",
 
 		["mutator_CG22"] = "Криминальные колядки",
 		["mutator_CG22_desc"] = "На некоторых ограблениях появится елка, которая дает подарки.",
-		["mutator_CG22_longdesc"] = "Рождество 2022:\n\nНа некоторых ограблениях появляются елки, которые дают подарки. Подарки можно уничтожить и получить временные бонусы, или отдать Хайрудину для бонусного опыта, денег и монет Континеталь. При использовании подарков может появиться Бульдозер-Снеговик.",		
+		["mutator_CG22_longdesc"] = "Рождество 2022:\n\nНа некоторых ограблениях появляются елки, которые дают подарки. Подарки можно уничтожить и получить временные бонусы, или отдать Хайрудину для бонусного опыта, денег и монет Континеталь. При использовании подарков может появиться Бульдозер-Снеговик.",
 
 		["menu_cg22_post_objective_1_desc"] = "Убить 200 врагов из любой снайперской винтовки.",
 		["menu_cg22_post_objective_2_desc"] = "Убить 15 Клокеров из винтовки 'Полярная Звезда' на сложности 'Очень Сложно' или выше.",
@@ -4991,11 +4994,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_piggybank"] = "Покорми свинью",
 		["mutator_piggybank_desc"] = "Убийство врагов дает свинобаксы, которыми можно покормить золотую свинью.",
-		["mutator_piggybank_longdesc"] = "Девятилетие PAYDAY:\n\nУбитые враги роняют свинобаксы. Свинобаксы - временные сумки, которыми можно кормить Золотую Свинку. Чем больше Свинка растет, тем больше бонусного денег и опыта вы получите в конце ограбления.",		
+		["mutator_piggybank_longdesc"] = "Девятилетие PAYDAY:\n\nУбитые враги роняют свинобаксы. Свинобаксы - временные сумки, которыми можно кормить Золотую Свинку. Чем больше Свинка растет, тем больше бонусного денег и опыта вы получите в конце ограбления.",
 
 		["mutator_piggyrevenge"] = "Плохие свинки",
 		["mutator_piggyrevenge_desc"] = "Убийство врагов дает свинобаксы, которыми можно покормить золотую свинью.",
-		["mutator_piggyrevenge_longdesc"] = "Десятилетие PAYDAY:\n\nУбитые враги роняют свинобаксы. Свинобаксы - временные сумки, которыми можно кормить Золотую Свинку. Когда вы кормите свинью, есть шанс того, что появится дозер-кабан с огнеметом. Чем больше Свинка растет, тем больше бонусного денег и опыта вы получите в конце ограбления.",		
+		["mutator_piggyrevenge_longdesc"] = "Десятилетие PAYDAY:\n\nУбитые враги роняют свинобаксы. Свинобаксы - временные сумки, которыми можно кормить Золотую Свинку. Когда вы кормите свинью, есть шанс того, что появится дозер-кабан с огнеметом. Чем больше Свинка растет, тем больше бонусного денег и опыта вы получите в конце ограбления.",
 
 		["menu_pda10_post_objective_3_desc"] = "Пройдите 25 ограблений на любой сложности",
 		["menu_pda10_post_objective_5_desc"] = "Убейте 50 врагов, используя снайперские винтовки",
@@ -5003,7 +5006,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pda10_post_objective_6_desc"] = "Убейте 50 врагов, используя оружие ближнего боя",
 		["menu_pda10_post_objective_1_desc"] = "Убейте 50 бульдозеров",
 		["menu_pda10_post_objective_4_desc"] = "Соберите 50 посылок Гейджа",
-		
+
 		["mutator_bravos_only"] = "Профессиональный день",
 		["mutator_bravos_only_desc"] = "Враги заменены на свои PONR-варианты.",
 		["mutator_bravos_only_longdesc"] = "Враги заменены на варианты, которые появляются при Точке Невозврата (PONR) в режиме Pro-Job. Синий спецназ заменен на спецназ ФБР, а спецназ ФБР заменен на отряды Браво.",
@@ -5034,27 +5037,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_cloakercuff"] = "Фокусник",
 		["mutator_cloakercuff_desc"] = "Удары клокера в ближнем бою теперь заковывают Вас в наручники.",
 		["mutator_cloakercuff_longdesc"] = "Удары клокера в ближнем бою теперь заковывают Вас в наручники.",
-		
+
 		["mutator_cloakerflashbang"] = "Ослепительный ниндзя",
 		["mutator_cloakerflashbang_desc"] = "Клокеры могут выкинуть светошумовую гранату во время уворота.",
 		["mutator_cloakerflashbang_longdesc"] = "Клокеры с шансом 50% могут выкинуть светошумовую гранату во время уворота.",
-		
+
 		["mutator_fartsmella"] = "Поставки с \"пестицидами\"",
 		["mutator_fartsmella_desc"] = "Дымовые гранаты заменены на гранаты со слезоточивым газом.",
 		["mutator_fartsmella_longdesc"] = "Дымовые гранаты заменены на гранаты со слезоточивым газом.\nНе работает на дымовые гранаты от мутатора \"Сделай мне больно\".",
-		
+
 		["mutator_kaboom"] = "Камикадзе",
 		["mutator_kaboom_desc"] = "Гренадеры взрываются после смерти.",
 		["mutator_kaboom_longdesc"] = "Гренадеры взрываются после смерти.",
-		
+
 		["mutator_fastresponse"] = "Оперативное реагирование",
 		["mutator_fastresponse_desc"] = "Все полицейские штурмы теперь происходят с максимальной интенсивностью.",
 		["mutator_fastresponse_longdesc"] = "Все полицейские штурмы теперь происходят с максимальной интенсивностью (сложность штурма начинается сразу с 1).",
-		
+
 		["mutator_fullautoinbuilding"] = "Бешеные стрелки",
 		["mutator_fullautoinbuilding_desc"] = "Титановые снайперы и их эквиваленты теперь стреляют из своих винтовок в автоматическом режиме по игрокам, которые находятся близко к ним.",
 		["mutator_fullautoinbuilding_longdesc"] = "Титановые снайперы и их эквиваленты теперь стреляют из своих винтовок в автоматическом режиме по игрокам, которые находятся на расстоянии не более 10 метров.",
-		
+
 		["mutator_crazytaser"] = "Шоковая терапия",
 		["mutator_crazytaser_desc"] = "Тазеры теперь не имеют задержку перед применением удара электрошоком.",
 		["mutator_crazytaser_longdesc"] = "Тазеры теперь не имеют задержку перед применением удара электрошоком.\n\nПримечание: Задержка для использования следующего удара шоком все еще есть.",
@@ -5062,19 +5065,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_masterdodger"] = "Увернись от этого!",
 		["mutator_masterdodger_desc"] = "Ветеран копы теперь уворачиваются от всех пуль.",
 		["mutator_masterdodger_longdesc"] = "Ветеран копы теперь уворачиваются от всех пуль.",
-		
+
 		["mutator_quickscope360"] = "Орлиный глаз",
 		["mutator_quickscope360_desc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
 		["mutator_quickscope360_longdesc"] = "Снайперы теперь прицеливаются на 100% быстрее.",
-		
+
 		["mutator_goldfarbdozers"] = "Двойные неприятности",
 		["mutator_goldfarbdozers_desc"] = "Все бульдозеры теперь появляются парами.",
 		["mutator_goldfarbdozers_longdesc"] = "Все бульдозеры теперь появляются парами. Не влияет на заскриптованных бульдозеров.",
-		
+
 		["mutator_spoocsquad"] = "Отряд ниндзя",
 		["mutator_spoocsquad_desc"] = "Клокеры появляются группами.",
 		["mutator_spoocsquad_longdesc"] = "Клокеры появляются группами.",
-		
+
 		["mutator_vanilla_police_call"] = "Посторонние на объекте",
 		["mutator_vanilla_police_call_desc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
 		["mutator_vanilla_police_call_longdesc"] = "Возвращает обратно механики работы пейджеров, камер и звонков в полицию.",
@@ -5241,7 +5244,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 				--Shotgun Impact
-				["menu_shotgun_impact_beta_sc"] = "Ружьевой импульс",				
+				["menu_shotgun_impact_beta_sc"] = "Ружьевой импульс",
 				["menu_shotgun_impact_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\n#{skill_color}#Дробовики## получают #{skill_color}#3## дополнительные дробинки.\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
 				["menu_shotgun_impact_per_pellet_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\n#{skill_color}#Дробовики и огнеметы## получают #{skill_color}#$skill_value_b1## стабильности.\n\nПИКОВЫЙ: #{owned}#$pro##\nМинимальный урон #{skill_color}#дробовиков## увеличен на #{skill_color}#25%.##\n\n#{risk}#Не работает на бронебойные и разрывные пули.##",
 
@@ -5313,23 +5316,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Logistician
 				["menu_defense_up_beta_sc"] = "Логист",
 				["menu_defense_up_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы взаимодействуете со снаряжением на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь Вы взаимодействуете и ставите снаряжение на #{skill_color}#$skill_value_p1## быстрее.\nВаши члены команды взаимодействуют и ставят снаряжение на #{skill_color}#$skill_value_p2## быстрее.\n\n#{risk}#Примечание: Командные навыки не складываются, если несколько игроков имеют этот навык.##",
-	
+
 				--Nerves of Steel--
 				["menu_fast_fire_beta_sc"] = "Стальные нервы",
 				["menu_fast_fire_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете возможность #{skill_color}#прицеливаться во время падения.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете на #{skill_color}#$skill_value_p1## меньше урона во время любого взаимодействия.",
-	
+
 				--Engineering
 				["menu_eco_sentry_beta_sc"] = "Инженер",
 				["menu_eco_sentry_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши турели наносят на #{skill_color}#$skill_value_b1## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши турели получают на #{skill_color}#$skill_value_p1## больше здоровья.",
-	
+
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Мастер на все руки",
 				["menu_jack_of_all_trades_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы носите на #{skill_color}#$skill_value_b1## больше метательного оружия.\n\nПИКОВЫЙ: #{owned}#$pro##\n##Вы можете носить с собой второе оборудование.## Нажмите клавишу #{skill_color}#$BTN_CHANGE_EQ## чтобы переключиться на другое оборудование.\n\nВторое оборудование содержит на #{important_1}#50%## меньше использований, минимум - #{skill_color}#1.##",
-	
+
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Круговая оборона",
 				["menu_tower_defense_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно использовать бронебойные патроны на турелях, которые уменьшают их скорострельность на #{skill_color}#66%## и позволяют им пробивать врагов и щиты.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы можете ставить #{skill_color}#$skill_value_p1## турели.\n\nТурели теперь стоят #{skill_color}#35%## вашего боезапаса.",
-	
+
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Пуленепробиваемый",
 				["menu_iron_man_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВашу броню теперь нельзя прошить.\n\nПИКОВЫЙ: #{owned}#$pro##\nПока ваша броня полностью заполнена, любой полученный урон уменьшится на число, равное #{skill_color}#$skill_value_p1## от вашей максимальной брони.\n\nВаша броня восстанавливается на #{skill_color}#$skill_value_p2## быстрее. $anarc_disable",
@@ -5338,23 +5341,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "Бесшумная дрель",
 				["menu_hardware_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши #{skill_color}#дрели и пилы теперь бесшумны##. Гражданским и охранникам нужно увидеть дрель или пилу, чтобы поднять тревогу.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы чините дрели и пилы на #{skill_color}#$skill_value_p1## быстрее.",
-	
+
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Подрывник",
 				["menu_combat_engineering_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nТеперь можно ставить до #{skill_color}#6## кумулятивных зарядов.\n\nВы ставите кумулятивные заряды и мины на #{skill_color}#$skill_value_b1## быстрее.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно ставить до #{skill_color}#8## кумулятивных зарядов.\n\nРадиус взрыва ваших мин увеличен на #{skill_color}#$skill_value_p1.##",
-	
+
 				--Drill Sawgeant
 				["menu_drill_expert_beta_sc"] = "Бурный взлом",
 				["menu_drill_expert_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЭффективность вашей дрели и пилы увеличена на #{skill_color}#$skill_value_b1.##\n\nПИКОВЫЙ: #{owned}#$pro##\nЭффективность вашей дрели и пилы увеличена еще на #{skill_color}#$skill_value_p1.##",
-	
+
 				--Fire Trap--
 				["menu_more_fire_power_sc"] = "Зажигательная ловушка",
 				["menu_more_fire_power_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши мины оставляют на месте взрыва огненную лужу в течение #{skill_color}#10## секунд в радиусе #{skill_color}#7.5## метров.\n\nОгонь не наносит урона вам и команде.\n\nПИКОВЫЙ: #{owned}#$pro##\nТеперь можно носить #{skill_color}#10## мин.\n\nВаши мины наносят на #{skill_color}#50%## больше урона.",
-	
+
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "Техэксперт",
 				["menu_kick_starter_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВаши дрели и пилы получают #{skill_color}#$skill_value_b1## шанс на автоматическую починку.\n\nПИКОВЫЙ: #{owned}#$pro##\nВаши дрели и пилы получают еще #{skill_color}#$skill_value_p1## к шансу на автоматическую починку.\n\nВраги, которые пытаются сломать вашу дрель, имеют #{skill_color}#$skill_value_p2## шанс получить электроразряд, останавливая их попытку.",
-	
+
 				--Kickstarter
 				["menu_fire_trap_beta_sc"] = "С толкача",
 				["menu_fire_trap_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете возможность чинить дрель или пилу ударом холодного оружия.\n\nУ вас #{skill_color}#1## попытка на каждую поломку с шансом #{skill_color}#75%.##\n\nПИКОВЫЙ: #{owned}#$pro##\nВы #{skill_color}#больше не убираете оружие при взаимодействии.##\n\nВы можете оглядываться, приседать, двигаться, целиться и использовать оружие, пока держите кнопку и остаетесь в зоне взаимодействия.",
@@ -5545,7 +5548,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		frame = 1
 	 end
 	 if butt <= frame then
-		 LocalizationManager:add_localized_strings({	
+		 LocalizationManager:add_localized_strings({
 			["menu_st_spec_23"] = "Полурак-полухуй",
 			--["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
 			["menu_difficulty_sm_wish"] = "Залупа Иваныча", -- хз че придумать. Может ЗИ?
@@ -5611,7 +5614,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_7_desc_sc"] = "Каждый выстрел из вашего оружия имеет ##$perk_value_1## шанс посеять панику среди врагов.\n\nПаника заставляет врагов испытывать неконтролируемый страх на короткий промежуток времени.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
 		["menu_deck2_9_desc_sc"] = "Ваше здоровье увеличено еще на ##$perk_value_1##.\n\nВы получаете на ##$perk_value_2## больше здоровья после поднятия.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Crew Chief		
+		--Crew Chief
 		["menu_deck1_3_desc_sc"] = "Выносливость вас и вашей команды увеличена на ##$perk_value_1##.\n\nРасстояние ваших криков увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВаш уворот увеличен на ##$perk_value_3## очков.",
 		["menu_deck1_5_desc_sc"] = "Ваше здоровье увеличено на ##$perk_value_1##.\n\nЗдоровье вашей команды увеличено на ##$perk_value_2##.\n\nКомандные бонусы не складываются.\n\nВы отвечаете на пейджеры на ##$perk_value_3## быстрее.",
 		["menu_deck1_7_desc_sc"] = "Ваша броня увеличена на ##$perk_value_1##.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
@@ -5631,7 +5634,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_7_desc_sc"] = "Ваш уворот увеличен еще на ##$perk_value_1## очков.",
 		["menu_deck7_9_desc_sc"] = "Ваша броня восстанавливается быстрее на ##$perk_value_1##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Gambler--		
+		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Коробки с патронами также дают медикаменты, которые восстанавливают от ##$perk_value_1## до ##$perk_value_2## здоровья.\n\nЭффект происходит раз в ##$perk_value_3## секунд, но каждая подобранная коробка патронов уменьшает эту задержку на ##$perk_value_4##-##$perk_value_5## секунды.",
 		["menu_deck10_3_desc_sc"] = "Когда вы подбираете патроны, ваша команда дополнительно получает ##$perk_value_1## патронов.\n\nВы получаете ##$perk_value_2## уворота.",
 		["menu_deck10_5_desc_sc"] = "Коробки с патронами теперь восстанавливают от ##$perk_value_1## до ##$perk_value_2## очков здоровья.\n\nКаждый раз, когда вы лечитесь от подбора, ваша полоска уворота получает до ##$perk_value_3## от вашего Уворота.\n\nВы отвечаете на пейджеры на ##$perk_value_4## быстрее",
@@ -5649,7 +5652,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "Каждый успешный удар оружием ближнего боя восстанавливает ##$perk_value_1## очко здоровья каждую секунду в течение ##$perk_value_2## секунд, этот эффект может складываться до ##$perk_value_3## раз.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Sociopath--
-		["menu_deck9_1_sc"] = "No Talk",	
+		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "Когда вы находитесь в ##$perk_value_1## метрах от 3-х и более врагов, вы получаете на ##$perk_value_2## меньше урона.",
 		["menu_deck9_3_desc_sc"] = "Убийство врага восстанавливает ##$perk_value_1## брони.\n\nЭто может происходить только раз в ##$perk_value_2## секунд, но каждое убийство сокращает время на ##$perk_value_3## секунд, а убийство холодным оружием - еще на ##$perk_value_4## секунды.\n\nЕсли убийство сокращает время полностью, бонусы активируются и задержка начнется сначала.\n\nВы получаете ##$perk_value_5## уворота.",
 		["menu_deck9_5_desc_sc"] = "Убийство врага оружием ближнего боя восстанавливает ##$perk_value_1## здоровья.\n\nЭффект активируется вместе с Tension (3-я карта).\n\nВы носите на ##$perk_value_2## мешок для тел больше.",
@@ -5683,7 +5686,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck15_5_desc_sc"] = "##$perk_value_1## вашего здоровья переводится в ##$perk_value_2## брони.\n\nГражданские, напуганные вами и вашей бандой, остаются напуганными на ##$perk_value_3## дольше.",
 		["menu_deck15_7_desc_sc"] = "##$perk_value_1## вашего здоровья переводится в ##$perk_value_2## брони.",
 		["menu_deck15_9_desc_sc"] = "Нанесение урона восстановит вам часть брони - это может произойти только раз в ##$perk_value_1## секунд. Тяжелые бронежилеты восстанавливают больше брони.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
+
 		["menu_anarc_disable"] = "#{important_1}#(Этот эффект не работает для набора перков Анархист)##",
 
 		--Scarface--
@@ -5707,7 +5710,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_5_desc_sc"] = "Если вы не получаете урон в течение ##$perk_value_1## секунд, любой задержанный урон будет отвергнут.\n\nВы отвечаете на пейджеры на ##$perk_value_2## быстрее.",
 		["menu_deck19_7_desc_sc"] = "Когда у вас меньше ##$perk_value_1## здоровья, задержка Фляжки сокращается на ##$perk_value_2## секунды за каждого убитого врага.",
 		["menu_deck19_9_desc_sc"] = "Вы получаете на ##$perk_value_1## больше здоровья после поднятия.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
+
 		--it's not a war crime if they're not people--
 		["menu_st_spec_20"] = "Тандем",
 		["menu_deck20_1_desc_sc"] = "Теперь вы можете использовать ##Парилку.##\n\nЧтобы активировать Парилку, вам нужно смотреть на союзника на расстоянии не более ##$perk_value_1## метров и нажать на кнопку метательного оружия, чтобы отметить его. Между вами и союзником не должно быть препятствий или стен.\n\nКаждый противник, убитый вами или выбранным союзником, восстановит ##$perk_value_2## здоровья вам и ##$perk_value_3## здоровья союзнику.\n\nПарилка длится ##$perk_value_4## секунд и восстанавливается ##$perk_value_5## секунд.",
@@ -5716,20 +5719,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_7_desc_sc"] = "Лечение от Парилки увеличено на ##$perk_value_1##.",
 		["menu_deck20_9_desc_sc"] = "Каждый враг, убитый вами, сокращает задержку Парилки на ##$perk_value_1## секунды.\n\nКаждый враг, убитый выбранным союзником, сокращает задержку Парилки на ##$perk_value_2## секунды, пока она действует.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Biker--		
+		--Biker--
 		["menu_deck16_1_desc_sc"] = "Каждый раз, когда вы или ваша команда убивают врага, вы восстанавливаете ##$perk_value_1## очка здоровья. Это может произойти только раз в ##$perk_value_2## секунд.",
 		["menu_deck16_3_desc_sc"] = "Вы восстанавливаете ##$perk_value_1## брони каждые ##$perk_value_2## секунд.",
 		["menu_deck16_5_desc_sc"] = "Каждые потерянные ##$perk_value_1## брони сокращают задержку на восстановление здоровья на ##$perk_value_2## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
 		["menu_deck16_7_desc_sc"] = "Вы восстанавливаете ##$perk_value_1## брони каждые ##$perk_value_2## секунд.\n\nУбийство врага оружием ближнего боя мгновенно вызывает этот эффект и активирует следующее восстановление брони на ##$perk_value_3## секунду раньше.",
 		["menu_deck16_9_desc_sc"] = "Каждые потерянные ##$perk_value_1## брони увеличивают количество получаемого здоровья за убийства на ##$perk_value_2## очка.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
-		--Yakuza--	
+		--Yakuza--
 		["menu_deck12_1_desc_sc"] = "Чем меньше у вас здоровья, тем быстрее будет восстанавливаться полоска уворота. Когда у вас меньше ##100%## здоровья, полоска уворота будет восстанавливать до ##$perk_value_1## уворота каждую секунду.\n\nВаш уворот увеличен на ##$perk_value_2## очков.",
 		["menu_deck12_3_desc_sc"] = "Чем меньше у вас здоровья, тем больше вы будете получать уворота при убийстве врага. Когда у вас меньше ##100%## здоровья, вы получите до ##$perk_value_1## уворота при убийстве врага.",
 		["menu_deck12_5_desc_sc"] = "Чем меньше у вас здоровья, тем меньше урона вы получаете. Когда у вас меньше ##100%## здоровья, вы получаете до ##$perk_value_1## меньше урона.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_2## быстрее.",
 		["menu_deck12_7_desc_sc"] = "Чем меньше у вас здоровья, тем больше вы будете получать уворота при убийстве врага оружием ближнего боя. Когда у вас меньше ##100%## здоровья, вы получите до ##$perk_value_1## уворота при убийстве врага, а также период бессмертия следующего уворота будет увеличен до ##$perk_value_2##, до максимальных ##$perk_value_3 мс##.\n\nВаш уворот увеличен еще на ##$perk_value_4## очков.",
 		["menu_deck12_9_desc_sc"] = "Максимальное количество устойчивости увеличено до ##$perk_value_1.##\n\nОдин раз за падение, если у вас закончится здоровье, вы выживите с ##1## здоровьем и восстановите ##$perk_value_2## брони.\n\nДанный перк не работает на удары Клокеров и шок Тазеров.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
+
 		["menu_yakuza_deflection_add"] = "(Бонус Якудзы)",
 
 		--Hacker--
@@ -5738,8 +5741,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_5_desc_sc"] = "Убийство врага пока работает Карманный генератор помех восстановит ##$perk_value_1## здоровья.",
 		["menu_deck21_7_desc_sc"] = "Ваша броня восстанавливается быстрее на ##$perk_value_1##.\n\nВаш уворот увеличен еще на ##$perk_value_2## очков.",
 		["menu_deck21_9_desc_sc"] = "Союзники восстановят ##$perk_value_1## здоровья, если убьют врага пока работает Карманный генератор помех.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
-		
+
+
 
 		--Leech
 		["menu_deck22_1_desc_sc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и отключит броню на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.",
@@ -5747,7 +5750,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck22_5_desc_sc"] = "Длительность Ампулы увеличена до ##$perk_value_1## секунд.\n\nУбийство врага уменьшает задержку Ампулы на ##$perk_value_2## секунду.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_3## быстрее.",
 		["menu_deck22_7_desc_sc"] = "Во время действия ампулы, ваше здоровье разделено на сегменты по ##$perk_value_1##.",
 		["menu_deck22_9_desc_sc"] = "Теперь можно активировать Ампулу во время падения. Это поднимет вас до конца действия Ампулы.\n\nЭто добавит ##$perk_value_1## секунд к времени восстановления Ампулы.\n\nПолучение урона вылечит товарищей на ##$perk_value_2##.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
+
 		--CopyCat--
 		["menu_st_spec_23"] = "Подражатель",
 		["menu_st_spec_23_desc"] = "Подражатель - уникальный человек, обладающий фотографической памятью и молниеносными рефлексами. Вечное ожидание опасности сделало вас настолько ловким, что вы можете уворачиваться и даже отражать пули противника. Вы изучали своих товарищей и теперь можете имитировать их способности и формировать свой собственный уникальный стиль из них. И если кто-то скажет, что вы просто воришка, ответьте, что подражание - высшая форма похвалы.",
@@ -5757,7 +5760,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck23_7"] = "Секунда славы",
 		["menu_deck23_9"] = "Мимикрия",
 		["menu_deck23_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
-		
+
 		["menu_deck23_1_desc"] = "Убийство ##$perk_value_1## врагов перезарядит ваше спрятанное оружие.\n\nУбийства считаются отдельно для каждого оружия, счетчик обнуляется только при срабатывании эффекта.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.",
 		["menu_deck23_1_short"] = "Убийство ##$perk_value_1## врагов перезарядит ваше спрятанное оружие.\n\nВы переключаете оружие на ##$perk_value_2## быстрее.",
 		["menu_deck23_1_1_desc"] = "Ваше здоровье увеличено на ##$perk_value_1##.",
@@ -5859,29 +5862,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			["menu_deck21_mrwi_desc"] = "Теперь вы можете использовать ##Карманный генератор помех##.\n\nВо время ограбления нажмите кнопку метательного оружия, чтобы активировать его.\n\nАктивация Карманного генератора помех до тревоги отключит всю электронику и пейджеры на ##$perk_value_1## секунд.\n\nАктивация Карманного генератора помех после тревоги будет оглушать врагов в радиусе ##$perk_value_2## метров. Первые помехи имеют ##$perk_value_3## шанс оглушить врага, затем каждые ##$perk_value_4## секунды помех имеют ##$perk_value_5## шанс на оглушение.\n\nКарманный генератор помех восстанавливается ##$perk_value_6## секунд, но каждое убийство сократит задержку на ##$perk_value_7## секунды.",
 			--Leech
 			["menu_deck22_mrwi_desc"] = "Теперь вы можете использовать ##Ампулу##.\n\nНажмите кнопку метательного оружия, чтобы активировать Ампулу. Она восстановит ##$perk_value_1## вашего здоровья и отключит броню на время своего действия.\n\nПока Ампула действует, ваше здоровье разделено на сегменты по ##$perk_value_3##, и любой полученный урон снимет один сегмент. Убийство ##$perk_value_4## врагов восстановит один сегмент и заблокирует получаемый урон на ##$perk_value_5## секунду.\n\nАмпула действует ##$perk_value_2## секунд и восстанавливается ##$perk_value_6## секунд.\n\nВы используете сумки для тел и взаимодействуете с гражданскими на ##$perk_value_7## быстрее.",
-			
+
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Перерожденный",
 		["menu_st_spec_0_desc"] = "Говорят, люди рождаются без каких-либо заложенных идей, мыслей и убеждений - они приобретаются исключительно из опыта. Для кого-то это усложняет жизнь, кто-то видит в этом возможности. Перерожденный - это грабитель, удача которого раскрывается не сразу. Его судьба полна как больших рисков, так и больших наград.",
 		["menu_st_spec_0_desc_short"] = "Говорят, люди рождаются без каких-либо заложенных идей, мыслей и убеждений - они приобретаются исключительно из опыта. Для кого-то это усложняет жизнь, кто-то видит в этом возможности. Перерожденный - это грабитель, удача которого раскрывается не сразу. Его судьба полна как больших рисков, так и больших наград.",
 		["menu_deck0_1"] = "Свой человек",
-		["menu_deck0_1_desc"] = "Предметы на черном рынке и активы стоят на ##30%## меньше.",		
+		["menu_deck0_1_desc"] = "Предметы на черном рынке и активы стоят на ##30%## меньше.",
 		["menu_deck0_2"] = "Черный дилер",
-		["menu_deck0_2_desc"] = "Предметы на черном рынке и активы стоят еще на ##30%## меньше.",				
+		["menu_deck0_2_desc"] = "Предметы на черном рынке и активы стоят еще на ##30%## меньше.",
 		["menu_deck0_3"] = "Мертвые президенты",
-		["menu_deck0_3_desc"] = "Подбираемая добыча дает на ##15%## больше денег.",		
+		["menu_deck0_3_desc"] = "Подбираемая добыча дает на ##15%## больше денег.",
 		["menu_deck0_4"] = "День ветерана",
-		["menu_deck0_4_desc"] = "Подбираемая добыча дает еще на ##30%## больше денег.",	
+		["menu_deck0_4_desc"] = "Подбираемая добыча дает еще на ##30%## больше денег.",
 		["menu_deck0_5"] = "Нуболюб",
-		["menu_deck0_5_desc"] = "Вы получаете на ##45%## больше опыта.",	
+		["menu_deck0_5_desc"] = "Вы получаете на ##45%## больше опыта.",
 		["menu_deck0_6"] = "Способный ученик",
-		["menu_deck0_6_desc"] = "Вы получаете на ##45%## больше опыта.",		
+		["menu_deck0_6_desc"] = "Вы получаете на ##45%## больше опыта.",
 		["menu_deck0_7"] = "Мистер Профессор Фантастик",
-		["menu_deck0_7_desc"] = "Вы получаете на ##45%## больше опыта.",			
+		["menu_deck0_7_desc"] = "Вы получаете на ##45%## больше опыта.",
 		["menu_deck0_8"] = "Четырехлистный клевер",
 		["menu_deck0_8_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 		["menu_deck0_9"] = "Талисман удачи",
-		["menu_deck0_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##20%.##",		
+		["menu_deck0_9_desc"] = "Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##20%.##",
 
 		["menu_st_spec_00"] = "Прирожденный",
 		["menu_st_spec_00_desc"] = "Некоторые считают, что все необходимые навыки уже есть с рождения. Некоторые люди - прирожденные грабители: им не нужно тратить ресурсы на навыки. Возможно, их убеждения - просто упрямство. Действительно ли стоит отказываться приобретать новые навыки?",
@@ -5891,7 +5894,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["rpd_menu_button"] = "Обнулить перк",
 		["rpd_menu_dialog_title"] = "Вы уверены?",
 		["rpd_menu_dialog_text"] = "Если вы обнулите перк '$perk_deck_name', вы получите $points_to_refund очков.",
-		
+
 		--Strings for Lobby Player Info
 		["menu_st_spec_24"] = "Перерожденный",
 		["menu_st_spec_25"] = "Прирожденный",
@@ -5909,7 +5912,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 	["menu_deck_kmerc_7_desc_sc"] = "Если ваша броня держится ##2 секунды##, вы лечитесь на число равное ##1%## вашей максимальной брони ##каждые 5 секунд##, пока у вас есть броня.",
 	["menu_deck_kmerc_9"] = "Сильная сторона",
 	["menu_deck_kmerc_9_desc_sc"] = "Когда вы получаете урон, который оставит вас с меньше чем ##30%## здоровья, вы ##восстанавливаете броню## на ##50%## от полученного урона.\nЭффект имеет задержку в ##1## секунду и не может сработать одновременно с неуязвимостью от перка 'Отстранись'.",
-	
+
 	--OFFYERROCKER'S LIBERATOR PERK DECK
 	["bm_tachi"] = "Инъектор жизни Таки-2Б",
 	["bm_tachi_desc"] = "В этих инъекторах содержатся сильные лекасртва и микроскопические роботы. При инъекции, эти роботы попадают в организм и быстро восстанавливают поврежденные ткани. Данный вариант инъектора так же содержит адреналин для ускорения действия роботов.",

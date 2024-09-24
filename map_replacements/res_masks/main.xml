@@ -38,7 +38,7 @@
 
     <Mask id="wolf_stone" unit="units/pd2_mod_fucking_masks/msk_wolf_stone/msk_wolf_stone" texture_bundle_folder="mods" has_description="true" global_value="rest"/>
 
-	<Mask id="thespian" unit="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian" texture_bundle_folder="mods" has_description="true" global_value="rest"/>
+	<Mask id="thespian" unit="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian" texture_bundle_folder="mods" has_description="true" type="helmet" global_value="rest"/>
 
 	<!-- OLD MASKS -->
     <Mask id="dallas_aged" unit="units/pd2_mod_fucking_masks/msk_dallas_aged/msk_dallas_aged" texture_bundle_folder="mods" has_description="true" global_value="rest"/>
@@ -355,14 +355,14 @@
 		<texture			path="units/pd2_mod_fucking_masks/msk_wolf_stone/wolf_df"/>
 
 		<!--Mask: Xbox 360 Thespian Mask-->
-		<cooked_physics path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian"/>
-		<model path="units/mods/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
-		<object path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian"/>
-		<unit path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian"/>
-		<material_config path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian"/>
+		<cooked_physics path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
+		<model path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
+		<object path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
+		<unit path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
+		<material_config path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian"/>
 
-		<texture path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian_df"/>
-		<texture path="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian_nm"/>
+		<texture path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian_df"/>
+		<texture path="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian_nm"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/thespian"/>
 
 		<!--Aged Crew Masks-->

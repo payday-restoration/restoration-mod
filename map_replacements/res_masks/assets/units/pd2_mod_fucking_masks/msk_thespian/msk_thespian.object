@@ -1,5 +1,5 @@
 <dynamic_object>
-    <diesel orientation_object="rp_thespian_mask" materials="units/pd2_mod_fucking_masks/masks/msk_thespian/msk_thespian" />
+    <diesel orientation_object="rp_thespian_mask" materials="units/pd2_mod_fucking_masks/msk_thespian/msk_thespian" />
     <graphics>
         <object enabled="true" name="g_thespian" />
     </graphics>

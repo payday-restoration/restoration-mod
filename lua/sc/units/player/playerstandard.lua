@@ -3266,8 +3266,10 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 				weap_base:set_visibility_state(false)
 				weap_base:update_visibility_state()
 			end
-			managers.hud:set_ma40_overlay(weap_base._scope_overlay)
-			managers.hud:start_ma40_overlay()
+			if managers.hud.set_ma40_overlay then
+				managers.hud:set_ma40_overlay(weap_base._scope_overlay)
+				managers.hud:start_ma40_overlay()
+			end
 		end
 	end
 end

@@ -32629,11 +32629,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							if not table.contains(self.wpn_fps_ass_contraband.default_blueprint, part_id) then
 								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] = self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id] or {}
 								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].parent = "exclusive_set_o"
-								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].stance_mod = {
-									wpn_fps_ass_contraband = {
-										translation = self.parts[part_id].stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+								if self.parts[part_id].stance_mod and self.parts[part_id].stance_mod.wpn_fps_ass_contraband then
+									self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].stance_mod = {
+										wpn_fps_ass_contraband = {
+											translation = self.parts[part_id].stance_mod.wpn_fps_ass_contraband.translation + Vector3(0, 9.8, -3)
+										}
 									}
-								}
+								end
 								self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].adds = self.parts[part_id].adds and deep_clone(self.parts[part_id].adds) or {}
 								table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.override[part_id].adds, "wpn_fps_smg_car9_o_rail" )
 								--table.insert(self.parts.wpn_fps_ass_contraband_body_sayhello.forbids, part_id )

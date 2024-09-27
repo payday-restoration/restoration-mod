@@ -16435,7 +16435,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flint", "resmod_flint", function(s
 		stats = {
 			value = 4,
 			extra_ammo = 15,
-			reload = -2,
+			reload = -4,
 			concealment = -2
 		},
 		custom_stats = { ads_speed_mult = 1.05 }

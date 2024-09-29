@@ -941,6 +941,16 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.no_asu = true
 	self.heavy_swat_sniper.marshal_logic = true
 	self.heavy_swat_sniper.heal_cooldown = 2.5
+
+	--Titan Sniper (Scripted, used only as regular sniper chance replacment for DS)
+	self.heavy_swat_sniper_scripted = deep_clone(self.heavy_swat_sniper)
+	self.heavy_swat_sniper_scripted.marshal_logic = false
+	self.heavy_swat_sniper_scripted.chatter = presets.enemy_chatter.no_chatter
+	self.heavy_swat_sniper_scripted.access = "sniper"
+	self.heavy_swat_sniper_scripted.detection = presets.detection.sniper
+	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9.75 --lower their health up to 50%
+	self.heavy_swat_sniper_scripted.headshot_dmg_mul = 3.75
+	self.heavy_swat_sniper_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
 	--Weekend Snipers

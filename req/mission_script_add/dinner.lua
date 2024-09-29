@@ -262,7 +262,7 @@ local optsrespawn_murkies_4 = {
 }
 local optsrespawn_dozer_1 = {
 	on_executed = { 
-		{ id = 400019, delay = 120 }
+		{ id = 400019, delay = 180 }
 	},
 	elements = { 
 		400019
@@ -271,7 +271,7 @@ local optsrespawn_dozer_1 = {
 }
 local optsrespawn_dozer_2 = {
 	on_executed = { 
-		{ id = 400020, delay = 120 }
+		{ id = 400020, delay = 180 }
 	},
 	elements = { 
 		400020

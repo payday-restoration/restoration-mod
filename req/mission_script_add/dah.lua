@@ -257,25 +257,57 @@ local optsCloaker_SO = {
 	interval = 2,
     so_action = "AI_hunt"
 }
-local optsrespawn_taser_and_shields_1 = {
+local optsrespawn_taser_1 = {
 	on_executed = { 
-		{ id = 400047, delay = 45 },
-		{ id = 400048, delay = 46 },
-		{ id = 400049, delay = 47 }
+		{ id = 400047, delay = 45 }
 	},
 	elements = { 
 		400047
 	},
     event = "death"
 }
-local optsrespawn_taser_and_shields_2 = {
+local optsrespawn_shield_1 = {
 	on_executed = { 
-		{ id = 400053, delay = 47 },
-		{ id = 400054, delay = 46 },
-		{ id = 400055, delay = 45 }
+		{ id = 400048, delay = 45 }
+	},
+	elements = { 
+		400048
+	},
+    event = "death"
+}
+local optsrespawn_shield_2 = {
+	on_executed = { 
+		{ id = 400049, delay = 45 }
+	},
+	elements = { 
+		400049
+	},
+    event = "death"
+}
+local optsrespawn_taser_2 = {
+	on_executed = { 
+		{ id = 400053, delay = 45 }
 	},
 	elements = { 
 		400053
+	},
+    event = "death"
+}
+local optsrespawn_shield_3 = {
+	on_executed = { 
+		{ id = 400054, delay = 45 }
+	},
+	elements = { 
+		400054
+	},
+    event = "death"
+}
+local optsrespawn_shield_4 = {
+	on_executed = { 
+		{ id = 400055, delay = 45 }
+	},
+	elements = { 
+		400055
 	},
     event = "death"
 }
@@ -754,17 +786,45 @@ return {
 		--Respawns
 		restoration:gen_dummytrigger(
             400064,
-            "respawn_the_blockade_1",
+            "respawn_taser_1",
             Vector3(-2400, -3677, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_1
+            optsrespawn_taser_1
         ),
 		restoration:gen_dummytrigger(
             400065,
-            "respawn_the_blockade_2",
+            "respawn_taser_2",
             Vector3(-2400, -3577, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_2
+            optsrespawn_taser_2
+        ),
+        restoration:gen_dummytrigger(
+            400082,
+            "respawn_shield_1",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_1
+        ),
+		restoration:gen_dummytrigger(
+            400083,
+            "respawn_shield_2",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_2
+        ),
+        restoration:gen_dummytrigger(
+            400084,
+            "respawn_shield_3",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_3
+        ),
+		restoration:gen_dummytrigger(
+            400085,
+            "respawn_shield_4",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_4
         ),
 		--Helipad blockade
 		restoration:gen_dummy(

@@ -3,7 +3,6 @@ local chance_dw = 20
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local hard_above = false
-local bravos_inbound = false
 local cop_1 = "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3"
 local cop_3 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"
@@ -13,7 +12,6 @@ local cop_3 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"
 	end
 	
 if pro_job then
-	bravos_inbound = true
 	chance_ovk = chance_ovk + 5
 	chance_dw = chance_dw + 5
 end
@@ -172,7 +170,7 @@ return {
 			{id = 400003, delay = 1.3}
 		}
 	},
-	--spawn roof access blockades when CFO has been found (that respawn after 70 seconds of getting killed)
+	--spawn roof access blockades when CFO has been found (that respawn after 45 seconds of getting killed)
 	--spawn dozer and 2 shields near helipad
 	[100061] = { 
 		on_executed = {
@@ -188,9 +186,7 @@ return {
 		}
 	},
 	--Spawn escape sniper when the heli escape gets triggered
-	--Call in Bravos on PJs
 	[104949] = {
-		--spawn_bravos = bravos_inbound,
 		on_executed = {
 			{id = 400059, delay = 3}
 		}

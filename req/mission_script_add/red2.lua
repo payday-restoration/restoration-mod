@@ -18,8 +18,8 @@ local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
-local enabled_chance_more_guards = math.random() < diff_scaling_1
-local enabled_chance_shields = math.random() < diff_scaling_1
+local enabled_chance_more_guards = math.random() < diff_scaling_2
+local enabled_chance_shields = math.random() < diff_scaling_2
 local enabled_chance_cloakers = math.random() < diff_scaling_1
 local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 local enabled_chance_dozers_ambush_escape = math.random() < 0.5
@@ -136,7 +136,6 @@ local optsBulldozer_special = {
 local optsCloaker_rush_1 = {
     enemy = cloaker,
 	participate_to_group_ai = true,
-	trigger_times = 3,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
 	on_executed = { 
 		{ id = 400051, delay = 0 }
@@ -146,7 +145,6 @@ local optsCloaker_rush_1 = {
 local optsCloaker_rush_2 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
-	trigger_times = 3,
 	spawn_action = "e_sp_repel_into_window",
     enabled = (hard_above and enabled_chance_cloakers)
 }

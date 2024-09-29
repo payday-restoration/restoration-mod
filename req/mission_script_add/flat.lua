@@ -24,12 +24,13 @@ local enabled_chance_shields = math.random() < diff_scaling
 		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
 	end
 	
-	if pro_job then
+if pro_job then
     if difficulty >= 6 then
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
     elseif difficulty == 8 then
         cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 	end
+end
 
 local optsSWAT_Heavy145 = {
     enemy = swat_shotgunner,

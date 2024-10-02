@@ -35134,9 +35134,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -2
 				}
 				self.parts.wpn_fps_ass_amcar_body_ddm4.custom_stats = {
+					alt_desc = "bm_ap_armor_50_weapon_sc_desc",
 					rof_mult = 0.68125,
 					hs_mult = 2.25,
 					hs_mult_desc = true,
+					armor_piercing_override = 0.5,
+					can_shoot_through_enemy = true,
 					alt_ammo_pickup_min_mul = 0.6793,
 					alt_ammo_pickup_max_mul = 0.6793,
 					ammo_pickup_min_mul = 0.6793,
@@ -35194,7 +35197,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					alt_ammo_pickup_max_mul = 0.43243,
 					alt_ammo_pickup_min_mul = 0.43243,
 					armor_piercing_override = 0.25,
-					can_shoot_through_enemy = true,
+					alt_desc = "bm_ap_armor_20_weapon_sc_desc",
 					ignore_rof_mult_anims = true,
 					rof_mult = 0.76923076,
 					srm = {

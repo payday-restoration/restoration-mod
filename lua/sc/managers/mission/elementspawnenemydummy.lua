@@ -234,9 +234,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
 	--Russia
@@ -590,10 +597,24 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_reapers/characters/ene_spook_1/ene_spook_1",
 				"units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
+			fsb_sniper = {
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_mod_reapers/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper",
-			fsb_sniper = "units/pd2_mod_reapers/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
 	--Zombie
@@ -829,10 +850,17 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker",
 				"units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			dozer_headless = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
 			grenadier = "units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_mod_halloween/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
 	--Murkywater (le Sharks)
@@ -1146,10 +1174,17 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2",
+				"units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1",
 			tsniper = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper",
-			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault",
-			sniper = "units/pd2_mod_sharks/characters/ene_murky_sniper_2/ene_murky_sniper_2"
+			tshield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 		}
 	},
 	--Federales (the most fucked up faction in vanilla visually)
@@ -1420,9 +1455,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 				"units/pd2_mod_reapers/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_mod_reapers/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
 	--NYPD (The OG PDTH Faction)
@@ -1780,9 +1822,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},
 	--LAPD 
@@ -2103,9 +2152,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	},	
 	--FBI
@@ -2351,9 +2407,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
 				"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 			},
+			sniper = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+				"units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
+			},
 			grenadier = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
-			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-			sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
+			tsniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 		}
 	}
 }

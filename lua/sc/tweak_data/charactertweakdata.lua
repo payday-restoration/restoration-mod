@@ -948,6 +948,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper_scripted.chatter = presets.enemy_chatter.no_chatter
 	self.heavy_swat_sniper_scripted.access = "sniper"
 	self.heavy_swat_sniper_scripted.detection = presets.detection.sniper
+	self.heavy_swat_sniper_scripted.no_move_and_shoot = true --making sure that they won't shoot upon spawn and move to their SO spot
 	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9.75 --lower their health up to 50%
 	self.heavy_swat_sniper_scripted.headshot_dmg_mul = 3.75
 	self.heavy_swat_sniper_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
@@ -18093,6 +18094,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser"
 			}
 		}
@@ -18251,6 +18253,7 @@ function CharacterTweakData:character_map()
 				"ene_titan_rifle",
 				"ene_titan_shotgun",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
@@ -18483,6 +18486,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser",
 				"ene_veteran_cop_1",
 				"ene_phalanx_1_assault"
@@ -18558,6 +18562,7 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_1_assault",										
 				"ene_spook_cloak_1",										
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser"
 			}
 		}

@@ -27,7 +27,8 @@ local enabled_chance_shields = math.random() < diff_scaling
 if pro_job then
     if difficulty >= 6 then
 		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-    elseif difficulty == 8 then
+	end
+    if difficulty == 8 then
         cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 	end
 end

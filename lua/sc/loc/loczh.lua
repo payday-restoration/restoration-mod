@@ -2187,9 +2187,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
         ["bm_ap_weapon_sc_desc"] = "能够#{skill_color}#穿透敌人，护甲，盾牌以及薄墙壁##。",
         ["bm_ap_armor_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲##。",
         ["bm_ap25_armor_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#125%##的伤害。",
-        ["bm_ap_armor_20_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
+        ["bm_ap_armor_25_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#25%##的伤害。",
         ["bm_ap_armor_50_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#50%##的伤害并可#{skill_color}#穿透敌人##。",  --tra fix?
-        ["bm_ap_armor_80_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
+        ["bm_ap_armor_75_weapon_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害并可#{skill_color}#穿透敌人和薄墙壁##。",
         ["bm_pdw_gen_sc_desc"] = "可#{skill_color}#穿透护甲##造成#{skill_color}#75%##的伤害且爆头非队长单位可额外造成#{skill_color}#66%##的伤害。",
         ["bm_heavy_ap_weapon_sc_desc"] = "爆头多造成#{skill_color}#100%##伤害。\n能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",
         ["bm_heavy_ap_no_mult_weapon_sc_desc"] = "能够#{skill_color}#穿透护甲，敌人，盾牌，泰坦盾牌和薄墙壁##。",

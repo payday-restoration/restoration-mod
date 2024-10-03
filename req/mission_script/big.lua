@@ -32,7 +32,7 @@ if pro_job then
 	
 	--Titan snipers in C4 route for DSPJ
 	if difficulty == 8 then
-		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
 	end
 
 	--Increase the time lock timers on all diffs
@@ -45,14 +45,6 @@ if pro_job then
 	end	
 end
 
-local tsniper_access = {
-	pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"sniper", "swat"})
-			end
-		end
-}
 local timelock_access = {
 	pre_func = function (self)
 			if not self._values.SO_access_original then
@@ -157,11 +149,6 @@ return {
 	--Prevent shields/dozers from disabling the timelock (Are we living in PDTH?)
 	[101195] = timelock_access,
 	[102268] = timelock_access,
-	--adds swat access so titan snipers can move to SO spot
-	[102890] = tsniper_access,
-	[102896] = tsniper_access,
-	[102900] = tsniper_access,
-	[102906] = tsniper_access,
 	--Trigger dozers if the manager has been killed
 	--Spawn beat cops after 5 seconds of cops arrival
 	--enable spawngroups after 20 seconds

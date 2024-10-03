@@ -1,9 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local vault_guardian = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
-
-	if difficulty == 8 then
-		vault_guardian = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-	end
+local vault_guardian = (difficulty == 8 and "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4") or "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 
 return {
 	--PONR/Restores unused cloaker vault spawn that spawns a dozer as a *BOOO* mechanic

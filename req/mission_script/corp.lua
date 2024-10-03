@@ -1,11 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local bulldozer == (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc) or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
 
-	if difficulty <= 7 then
-		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
-	else
-		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-	end
-	
 	if difficulty <= 5 then
 		ponr_value = 660
 	elseif difficulty == 6 or difficulty == 7 then

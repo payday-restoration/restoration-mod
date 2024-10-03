@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local dozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local dozer_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-local shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec") or "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local overkill_above = difficulty >= 5
@@ -11,17 +11,6 @@ local enabled_chance_taser_and_shields = math.random() < diff_scaling
 local enabled_chance_dozer = math.random() < diff_scaling
 local enabled_chance_dozer_scaffold = math.random() < diff_scaling
 local enabled_chance_shield_scaffold = math.random() < diff_scaling
-
-
-	if difficulty == 7 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
-	elseif difficulty == 8 then
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-	end
-	
-	if pro_job and difficulty >= 5 then
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
 
 local optsBulldozer = {
     enemy = dozer,

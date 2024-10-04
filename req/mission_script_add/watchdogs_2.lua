@@ -243,7 +243,7 @@ local spawnFBI_Agents = {
 local loopFBIAgents = {
 	enabled = true,
 	on_executed = { 
-		{ id = 400054, delay = 20 }
+		{ id = 400054, delay = 80 }
 	}
 }
 local Bain_sendsnipers = {

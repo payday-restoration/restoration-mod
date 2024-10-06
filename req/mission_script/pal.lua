@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local ponr_value = (difficulty <= 6 and 120) or 90
-local titan_shield = ((difficulty >= 5 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local cop_sg = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"
 
 local tshield = {

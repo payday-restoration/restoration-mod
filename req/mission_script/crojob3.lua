@@ -13,71 +13,71 @@ local swat_1 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_ci
 local swat_2 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" or (difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2") or "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"
 local swat_3 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" or (difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3") or "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
 local swat_4 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1") or "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
-local swat_4 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870") or "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
+local swat_5 = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870") or "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 
 local enemy_special_1 = {
 	values = {
-        enemy = specialenemy_1,
+        	enemy = specialenemy_1,
 		team = "mobster1"
 	}
 }
 local enemy_special_2 = {
 	values = {
-        enemy = specialenemy_2,
+        	enemy = specialenemy_2,
 		team = "mobster1"
 	}
 }
 local enemy_special_3 = {
 	values = {
-        enemy = specialenemy_3,
+        	enemy = specialenemy_3,
 		team = "mobster1"
 	}
 }
 local dozer = {
 	values = {
-        enemy = tank,
+        	enemy = tank,
 		team = "mobster1"
 	}
 }
 local shield = {
 	values = {
-        enemy = shield,
+        	enemy = shield,
 		team = "mobster1"
 	}
 }
 local taser = {
 	values = {
-        enemy = taser,
+        	enemy = taser,
 		team = "mobster1"
 	}
 }
 local swat1 = {
 	values = {
-        enemy = swat_1,
+        	enemy = swat_1,
 		team = "mobster1"
 	}
 }
 local swat2 = {
 	values = {
-        enemy = swat_2,
+        	enemy = swat_2,
 		team = "mobster1"
 	}
 }
 local swat3 = {
 	values = {
-        enemy = swat_3,
+        	enemy = swat_3,
 		team = "mobster1"
 	}
 }
 local swat4 = {
 	values = {
-        enemy = swat_4,
+        	enemy = swat_4,
 		team = "mobster1"
 	}
 }
 local swat5 = {
 	values = {
-        enemy = swat_5,
+        	enemy = swat_5,
 		team = "mobster1"
 	}
 }

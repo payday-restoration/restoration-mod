@@ -1,4 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local diff_scaling = 0.065 * difficulty
+local oops_all_titan_snipers = math.random() < 0.2
 local shield = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
 local sniper = ((difficulty == 8 and pro_job and oops_all_titan_snipers) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
 local swat_rifle = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1") or "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"
@@ -9,15 +12,12 @@ local swat_heavy_shotgun = (difficulty == 8 and "units/pd2_dlc_gitgud/characters
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local pro_job = Global.game_settings and Global.game_settings.one_down
-local diff_scaling = 0.065 * difficulty
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8
 local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
-local enabled_chance_helipad_dozer = math.random() < diff_scaling 
-local oops_all_titan_snipers = math.random() < 0.15
+local enabled_chance_helipad_dozer = math.random() < diff_scaling
 
 local optsCloaker = {
     enemy = cloaker,

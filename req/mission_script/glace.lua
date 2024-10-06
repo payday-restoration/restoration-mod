@@ -1,18 +1,22 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local bulldozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local ponr_value = (difficulty <= 5 and 420 or difficulty == 6 or difficulty == 7 and 390) or 360
 
-	if difficulty <= 7 then
-		bulldozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-	else
-		bulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-	end	
-	
-	if difficulty <= 5 then
-		ponr_value = 420	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 390
-	else
-		ponr_value = 360		
-	end
+local high_interval = {
+	values = {
+		interval = 60
+	}
+}
+local medium_interval = {
+	values = {
+		interval = 45
+	}
+}
+local low_interval = {
+	values = {
+		interval = 30
+	}
+}
 
 return {
 	--Pro Job PONR 
@@ -61,39 +65,11 @@ return {
 		}
 	},
 	-- Increase spawn group intervals next to prison vans, closest to furthest
-	[100867] = {
-		values = {
-			interval = 60
-		}
-	},
-	[101153] = {
-		values = {
-			interval = 60
-		}
-	},
-	[101157] = {
-		values = {
-			interval = 60
-		}
-	},
-	[101154] = {
-		values = {
-			interval = 45
-		}
-	},
-	[101160] = {
-		values = {
-			interval = 45
-		}
-	},
-	[101156] = {
-		values = {
-			interval = 30
-		}
-	},
-	[101159] = {
-		values = {
-			interval = 30
-		}
-	}
+	[100867] = high_interval,
+	[101153] = high_interval,
+	[101157] = high_interval,
+	[101154] = medium_interval,
+	[101160] = medium_interval,
+	[101156] = low_interval,
+	[101159] = low_interval
 }	

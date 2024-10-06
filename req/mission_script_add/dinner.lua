@@ -1,4 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local enabled_chance_snipers = math.random() < 0.45
+local diff_scaling = 0.085 * difficulty
 local murkyman_1 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
 local murkyman_2 = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
 local murkyman_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
@@ -7,15 +10,12 @@ local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sn
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local pro_job = Global.game_settings and Global.game_settings.one_down
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
-local diff_scaling = 0.085 * difficulty
 local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer_2 = math.random() < diff_scaling
 local enabled_chance_shields_and_dozer = math.random() < diff_scaling
-local enabled_chance_snipers = math.random() < 0.45
 
 local spawn_cloakers = {
 	enabled = (hard_above and enabled_chance_cloakers),

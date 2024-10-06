@@ -1,4 +1,4 @@
-local enabled_blocked_roof_access = math.random() < 0.45
+local enabled_blocked_roof_access = math.random() < 0.6
 local enabled = {
 	values = {
         enabled = true

@@ -1,4 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local diff_scaling = 0.095 * difficulty
 local chavez_enforcer = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 local chavez_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
 local swat_shotgunner = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
@@ -6,8 +8,6 @@ local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
 local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local pro_job = Global.game_settings and Global.game_settings.one_down
-local diff_scaling = 0.095 * difficulty
 local death_sentence = difficulty == 8
 local overkill_above = difficulty >= 5
 local hard_above = difficulty >= 3

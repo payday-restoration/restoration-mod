@@ -1,4 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
+local diff_scaling_1 = 0.125 * difficulty
+local diff_scaling_2 = 0.065 * difficulty
 local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 6 or difficulty == 5 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
 local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 or difficulty == 5 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc")"units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
@@ -10,9 +13,6 @@ local swat_shotgunner = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/ch
 local security_1 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1") or "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
 local security_2 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_2/ene_city_guard_2" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2") or "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
 local security_3 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_3/ene_city_guard_3" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3") or "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
-local pro_job = Global.game_settings and Global.game_settings.one_down
-local diff_scaling_1 = 0.125 * difficulty
-local diff_scaling_2 = 0.065 * difficulty
 local hard_above = difficulty >= 3
 local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5

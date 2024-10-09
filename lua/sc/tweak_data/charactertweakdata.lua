@@ -2774,7 +2774,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.dodge = presets.dodge.ninja
 	self.spooc.chatter = presets.enemy_chatter.cloaker
 	self.spooc.steal_loot = nil
-	self.spooc.melee_weapon = nil
+	self.spooc.melee_weapon = "baton" --if you have baton then use it
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
@@ -3111,13 +3111,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.phalanx_vip.spawn_sound_event = "cpw_a01"
-		self.phalanx_vip.spawn_sound_event_2 = "cloaker_spawn"
-	else
-		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
-		self.phalanx_vip.spawn_sound_event_2 = nil
-	end	
+	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
 	self.phalanx_vip.priority_shout_max_dis = 3000
@@ -3332,11 +3326,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.summers.spawn_sound_event = "cloaker_spawn"
-	else
-		self.summers.spawn_sound_event = "cpa_a02_01"
-	end
+	self.summers.spawn_sound_event = "cpa_a02_01"
 	self.summers.fire_bag_death = true	
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
@@ -3562,11 +3552,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.immune_to_concussion = true	
 	self.taser_titan.use_animation_on_fire_damage = false
 	self.taser_titan.can_be_tased = false	
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.taser_titan.spawn_sound_event = "rtsr_elite"
-	else
-		self.taser_titan.spawn_sound_event = "tsr_elite"
-	end	
+	self.taser_titan.spawn_sound_event = self._prefix_data_p1.taser() .. "_elite"
 	self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
 	self.taser_titan.custom_voicework = nil
 	self.taser_titan.surrender = nil

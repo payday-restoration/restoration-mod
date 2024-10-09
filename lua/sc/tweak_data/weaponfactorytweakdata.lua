@@ -6348,9 +6348,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	}
 
 	self.parts.wpn_fps_pis_deagle_ck.supported = true
-	self.parts.wpn_fps_pis_deagle_ck.stats = { value = 1 }
-	self.parts.wpn_fps_pis_deagle_ck.custom_stats = nil
-	self.parts.wpn_fps_pis_deagle_ck.forbids = nil
+	self.parts.wpn_fps_pis_deagle_ck.stats = { 
+		value = 9,
+		recoil = 6,
+		spread = 1,
+		concealment = -4
+	}
+	self.parts.wpn_fps_pis_deagle_ck.custom_stats = {
+		falloff_start_mult = 1.075,
+		falloff_end_mult = 1.075,
+		ads_speed_mult = 1.025
+	}
+	self.parts.wpn_fps_pis_deagle_ck.forbids = {
+		"wpn_upg_o_marksmansight_rear",
+		"wpn_fps_pis_deagle_co_long",
+		"wpn_fps_pis_deagle_co_short"
+	}
 	self.parts.wpn_fps_pis_deagle_ck.override = {
 		wpn_fps_pis_deagle_extra = {
 			override = {
@@ -6385,22 +6398,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 			unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_o_ck_rear"
 		},
 		wpn_fps_pis_deagle_o_standard_front = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},
-		wpn_upg_o_marksmansight_front = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},
-		wpn_fps_pis_deagle_o_standard_front_long = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},
-		wpn_fps_pis_deagle_co_long = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},
-		wpn_fps_pis_deagle_co_short = {
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 		}
@@ -7104,9 +7101,14 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_g17", "resmod_g17", function(self)
 
 	self.parts.wpn_fps_pis_g17_ck.supported = true
-	self.parts.wpn_fps_pis_g17_ck.stats = { value = 1 }
-	self.parts.wpn_fps_pis_g17_ck.custom_stats = nil
-	self.parts.wpn_fps_pis_g17_ck.forbids = nil
+	self.parts.wpn_fps_pis_g17_ck.stats = {
+		value = 4,
+		recoil = 6,
+		spread = -2,
+		concealment = -1
+	}
+	self.parts.wpn_fps_pis_g17_ck.custom_stats = {}
+	self.parts.wpn_fps_pis_g17_ck.forbids = {}
 	
 	self.parts.wpn_fps_pis_g17_s_mount = {
 		type = "shitass",
@@ -10434,6 +10436,25 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 							end
 						end
 					--]]
+
+						if not table.contains( tww.categories , "pistol") then
+							if self[factory_id].uses_parts then
+
+								for i, part_id in pairs(self[factory_id].uses_parts) do
+									attachment_list = {
+										"wpn_fps_pis_triggermod_fast",
+										"wpn_fps_pis_triggermod_slow"
+									}
+									for _, remove_id in ipairs(attachment_list) do
+										if part_id == remove_id then
+											self[factory_id].uses_parts[i] = "resmod_dummy"
+											self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+										end
+									end
+								end
+
+							end 
+						end
 
 					end
 				end
@@ -20470,7 +20491,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 		40
 	}
 	self.parts.wpn_fps_sho_ultima_body_kit.stats = {
-		value = 4
+		value = 10,
+		recoil = 4,
+		concealment = -2
 	}
 	self.parts.wpn_fps_sho_ultima_body_kit.forbids = {
 		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
@@ -20609,10 +20632,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	}
 	self.parts.wpn_fps_smg_fmg9_conversion.supported = true
 	self.parts.wpn_fps_smg_fmg9_conversion.stats = {
-		value = 4
+		value = 8,
+		spread = 2,
+		recoil = 2,
+		concealment = -3
 	}	
 	self.parts.wpn_fps_smg_fmg9_conversion.custom_stats = {
-		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+		muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps",
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.05
 	}	
 	self.parts.wpn_fps_smg_fmg9_conversion.perks = nil
 	self.parts.wpn_fps_smg_fmg9_conversion.override = {	
@@ -21176,9 +21205,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hailstorm", "resmod_hailstorm", fu
 	--Exclusive Set
 	self.parts.wpn_fps_hailstorm_conversion.supported = true
 	self.parts.wpn_fps_hailstorm_conversion.has_description = false
-	self.parts.wpn_fps_hailstorm_conversion.stats = { value = 0 }
-	self.parts.wpn_fps_hailstorm_conversion.custom_stats = nil
-	self.parts.wpn_fps_hailstorm_conversion.forbids = {}
+	self.parts.wpn_fps_hailstorm_conversion.stats = { 
+		value = 8,
+		recoil = 4,
+	}
+	self.parts.wpn_fps_hailstorm_conversion.custom_stats = {
+		rof_mult = 0.555556,
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85,
+		ads_speed_mult = 0.95
+	}
+	self.parts.wpn_fps_hailstorm_conversion.forbids = {
+		"wpn_fps_hailstorm_b_ext_suppressed",
+		"wpn_fps_hailstorm_b_suppressed",
+		"wpn_fps_hailstorm_b_extended",
+	}
 	self.parts.wpn_fps_hailstorm_conversion.override = {
 		wpn_fps_hailstorm_body = {
 			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_hailstorm_pts/wpn_third_hailstorm_conv_body",
@@ -21427,16 +21468,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_korth", "resmod_korth", function(s
 
 	--Exclusive Set
 	self.parts.wpn_fps_pis_korth_conversionkit.supported = true
-	self.parts.wpn_fps_pis_korth_conversionkit.stats = { value = 1 }
-	self.parts.wpn_fps_pis_korth_conversionkit.custom_stats = {}
-	self.parts.wpn_fps_pis_korth_conversionkit.forbids = {
-		"wpn_fps_upg_fl_pis_m3x",
-		"wpn_fps_upg_fl_pis_crimson",
-		"wpn_fps_upg_fl_pis_x400v",
-		"wpn_fps_upg_fl_pis_laser",
-		"wpn_fps_upg_fl_pis_tlr1",
-		"wpn_fps_upg_fl_pis_perst"
+	self.parts.wpn_fps_pis_korth_conversionkit.has_description = true
+	self.parts.wpn_fps_pis_korth_conversionkit.desc_id = "bm_ap_weapon_sc_desc"
+	self.parts.wpn_fps_pis_korth_conversionkit.stats = { 
+		value = 10,
+		recoil = -6,
+		spread = 3,
+		concealment = -3
 	}
+	self.parts.wpn_fps_pis_korth_conversionkit.custom_stats = {
+		rof_mult = 0.5,
+		alt_desc = "bm_ap_weapon_sc_desc",
+		ignore_rof_mult_anims = true,
+		armor_piercing_override = 1,
+		can_shoot_through_wall = true,
+		can_shoot_through_shield = true,
+		can_shoot_through_enemy = true,
+		can_shoot_through_enemy_unlim = true,
+		use_vapor_trail = true
+	}
+	self.parts.wpn_fps_pis_korth_conversionkit.forbids = {}
 	self.parts.wpn_fps_pis_korth_conversionkit.override = {
 		wpn_fps_pis_korth_b_standard = {
 			third_unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_pis_korth_pts/wpn_third_pis_korth_conversionkit",
@@ -21913,22 +21964,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 		self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
 		self.parts.wpn_fps_snp_victor_sbr_kit.forbids = { "wpn_fps_addon_ris" }
 		self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
-		self.parts.wpn_fps_snp_victor_sbr_kit.stats = {
-			value = 0
-		}	
+		self.parts.wpn_fps_snp_victor_sbr_kit.stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_snp_victor_sbr_kit.custom_stats = deep_clone(barrels.short_b3_stats)
 		self.parts.wpn_fps_snp_victor_sbr_kit.perks = nil
 		self.parts.wpn_fps_snp_victor_sbr_kit.override = {
 			wpn_fps_snp_victor_fg_standard = {
 				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_fg_hera",
 				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_fg_hera"
-			},
-			wpn_fps_upg_m4_g_standard_vanilla = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_upg_m4_s_standard_vanilla = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
 			},
 			wpn_fps_snp_victor_b_standard = {
 				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_b_sbr",
@@ -21943,10 +21985,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_dh_hera"
 			},
 			wpn_fps_snp_victor_dhs_switch = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy"
-			},
-			wpn_fps_snp_victor_s_adapter = {
 				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
 				unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy"
 			},
@@ -22002,74 +22040,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_victor", "resmod_victor", function
 				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_vg_hera",
 				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_vg_hera",
 				a_obj = "a_fg"
-			},
-			wpn_fps_upg_m4_g_hgrip = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_upg_m4_g_mgrip = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_upg_m4_g_ergo = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_upg_m4_g_sniper = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_upg_g_m4_surgeon = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_snp_victor_g_mod3 = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_m4_uupg_g_billet = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
-			wpn_fps_snp_victor_s_mod0 = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_upg_m4_s_pts = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_m4_uupg_s_fold = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_upg_m4_s_ubr = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_upg_m4_s_crane = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_upg_m4_s_mk46 = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			wpn_fps_m4_uupg_s_zulu = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_s_hera",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera"
-			},
-			--VMP
-			wpn_fps_ass_m4_g_fancy = {
-				third_unit = "units/pd2_dlc_savi/weapons/wpn_third_snp_victor_pts/wpn_third_snp_victor_dummy",
-				unit = "units/pd2_dlc_savi/weapons/wpn_fps_snp_victor_pts/wpn_fps_snp_victor_s_hera_grip_dummy"
-			},
+			}
 		}
 
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_m4_uupg_g_billet") --strangely isn't available on the St. Vic despite being part of the same content drop that also brought more AR-15 parts????
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	--VMP parts
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_vg_vmp_vert")
 	table.insert(self.wpn_fps_snp_victor.uses_parts, "wpn_fps_vg_vmp_medium")
@@ -22289,9 +22267,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hcar", "resmod_hcar", function(sel
 	}
 
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
-	self.parts.wpn_fps_lmg_hcar_body_conversionkit.stats = { value = 1}
-	self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = nil
-	self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids = nil
+	self.parts.wpn_fps_lmg_hcar_body_conversionkit.stats = { 
+		value = 10,
+		recoil = -2,
+		spread = -5,
+		concealment = 1
+	}
+	self.parts.wpn_fps_lmg_hcar_body_conversionkit.custom_stats = {
+		rof_mult = 1.25,
+		falloff_start_mult = 0.775,
+		falloff_end_mult = 0.775,
+		ads_speed_mult = 0.975
+	}
+	self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids = {}
 	self.parts.wpn_fps_lmg_hcar_body_conversionkit.override = {
 		wpn_fps_lmg_hcar_barrel_standard = {
 			third_unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_lmg_hcar_pts/wpn_third_lmg_hcar_brl_ck",
@@ -23011,17 +22999,47 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", fu
 
 	self.parts.wpn_fps_sho_supernova_conversion.supported = true
 	self.parts.wpn_fps_sho_supernova_conversion.stats = {
-		value = 6
+		value = 8,
+		extra_ammo = 3,
+		concealment = 6,
+		recoil = -8,
+		spread = -4
 	}
-	self.parts.wpn_fps_sho_supernova_conversion.custom_stats = nil
-	self.parts.wpn_fps_sho_supernova_conversion.forbids = nil
+	self.parts.wpn_fps_sho_supernova_conversion.custom_stats = {
+		rof_mult = 1.25,
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85,
+		ads_speed_mult = 0.85
+	}
+	self.parts.wpn_fps_sho_supernova_conversion.forbids = {
+		"wpn_fps_addon_ris",
+		"wpn_fps_sho_supernova_b_short",
+		"wpn_fps_sho_supernova_b_long",
+		"wpn_fps_sho_supernova_m_extender",
+		"wpn_fps_sho_supernova_g_adapter",
+		"wpn_fps_sho_supernova_g_raven",
+		"wpn_fps_sho_supernova_g_stakeout",
+		"wpn_fps_sho_supernova_s_raven",
+		"wpn_fps_sho_supernova_s_collapsed",
+	}
 
+	self.parts.wpn_fps_sho_supernova_conversion.override = {}
 	for k, used_part_id in ipairs(self.wpn_fps_sho_supernova.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
 			if self.parts[used_part_id].type == "barrel" then
 				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_third_sho_supernova_b_conversion",
 					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_b_conversion"
+				}
+			elseif self.parts[used_part_id].type == "lower_reciever" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_third_sho_supernova_body_conversion",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_body_conversion"
+				}
+			elseif self.parts[used_part_id].type == "foregrip" then
+				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
+					third_unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_third_sho_supernova_fg_conversion",
+					unit = "units/pd2_dlc_pxp4/weapons/wpn_fps_sho_supernova_pts/wpn_fps_sho_supernova_fg_conversion"
 				}
 			elseif self.parts[used_part_id].type == "grip" then
 				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
@@ -23038,10 +23056,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_supernova", "resmod_supernova", fu
 					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
 				}
-			elseif self.parts[used_part_id].type == "magazine" then
+			elseif self.parts[used_part_id].type == "gadget" then
 				self.parts.wpn_fps_sho_supernova_conversion.override[used_part_id] = {
-					third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-					unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+					a_obj = "a_fl_2"
 				}
 			end
 		end
@@ -32214,22 +32231,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			--Vanilla Mod Pack 23.3 v6
 			if self.parts.wpn_fps_pis_triggermod_fast then
 				--Pistol Triggers, Disabled for now
-					self.parts.wpn_fps_pis_triggermod_fast.pcs = nil
 					self.parts.wpn_fps_pis_triggermod_fast.supported = true
+					self.parts.wpn_fps_pis_triggermod_fast.pcs = {} 
 					self.parts.wpn_fps_pis_triggermod_fast.stats = { 
 						value = 5,
-						spread = -2,
+						spread = -3,
 						recoil = -4
 					}
-					self.parts.wpn_fps_pis_triggermod_fast.custom_stats = { rof_mult = 1.1 }
-					self.parts.wpn_fps_pis_triggermod_slow.pcs = nil
+					self.parts.wpn_fps_pis_triggermod_fast.custom_stats = { 
+						rof_mult = 1.08,
+						hip_mult = 1.5
+					}
 					self.parts.wpn_fps_pis_triggermod_slow.supported = true
+					self.parts.wpn_fps_pis_triggermod_slow.pcs = {} 
 					self.parts.wpn_fps_pis_triggermod_slow.stats = { 
 						value = 5,
-						spread = 2,
-						recoil = 4
+						spread = 3,
+						recoil = 2
 					}
-					self.parts.wpn_fps_pis_triggermod_slow.custom_stats = { rof_mult = 0.85 }
+					self.parts.wpn_fps_pis_triggermod_slow.custom_stats = { 
+						rof_mult = 0.9,
+						hip_mult = 0.9,
+					}
 		
 				--Argos III
 					self.parts.wpn_fps_sho_ultima_o_expert.supported = true
@@ -32399,8 +32422,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				--Korth Exclusive Set
 				self.parts.wpn_fps_pis_korth_body_heat.supported = true
-				self.parts.wpn_fps_pis_korth_body_heat.stats = {value = 0}
-				self.parts.wpn_fps_pis_korth_body_heat.custom_stats = nil
+				self.parts.wpn_fps_pis_korth_body_heat.keep_damage = true
+				self.parts.wpn_fps_pis_korth_body_heat.stats = {
+					value = 10,
+					recoil = -12,
+					spread = -4,
+					extra_ammo = -2,
+					total_ammo_mod = -65,
+					damage = 30
+				}
+				self.parts.wpn_fps_pis_korth_body_heat.custom_stats = {
+					damage_min_mult = 0.66667,
+					falloff_end_mult = 0.825,
+					ammo_pickup_max_mul = 0.645161,
+					ammo_pickup_min_mul = 0.645161,
+					alt_ammo_pickup_max_mul = 0.645161,
+					alt_ammo_pickup_min_mul = 0.645161,
+				}
 				self.parts.wpn_fps_pis_korth_body_heat.override = {
 					wpn_fps_pis_korth_b_standard = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
@@ -32412,49 +32450,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_pis_korth_body = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
 					},
-
-					wpn_fps_pis_korth_m_8 = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat"
-					},
-
-					wpn_fps_pis_korth_g_standard = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
-					},
-					wpn_fps_pis_korth_g_ergo = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
-					},
-					wpn_fps_pis_korth_g_houge = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
-					}
-				}
-				self.parts.wpn_fps_pis_korth_body_heat.forbids = {
-					"wpn_fps_upg_fl_pis_m3x",
-					"wpn_fps_upg_fl_pis_crimson",
-					"wpn_fps_upg_fl_pis_x400v",
-					"wpn_fps_upg_fl_pis_laser",
-					"wpn_fps_upg_fl_pis_tlr1",
-					"wpn_fps_upg_fl_pis_perst"
-				}
-				self.parts.wpn_fps_pis_korth_body_heat_akimbo.supported = true
-				self.parts.wpn_fps_pis_korth_body_heat_akimbo.stats = {value = 0}
-				self.parts.wpn_fps_pis_korth_body_heat_akimbo.custom_stats = nil
-				self.parts.wpn_fps_pis_korth_body_heat_akimbo.override = {
-					wpn_fps_pis_korth_b_standard = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
-					},
-					wpn_fps_pis_korth_b_railed = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_b_heat"
-					},
-
-					wpn_fps_pis_korth_body = {
-						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_body_heat"
-					},
-
 					wpn_fps_pis_korth_m_8 = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat",
 						adds = {}
 					},
-
+					wpn_fps_pis_korth_m_6 = {
+						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_m_heat",
+						adds = {}
+					},
 					wpn_fps_pis_korth_g_standard = {
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
 					},
@@ -32465,14 +32468,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						unit = "units/mods/weapons/wpn_fps_pis_korth_pts/wpn_fps_pis_korth_g_heat"
 					}
 				}
-				self.parts.wpn_fps_pis_korth_body_heat_akimbo.forbids = {
-					"wpn_fps_upg_fl_pis_m3x",
-					"wpn_fps_upg_fl_pis_crimson",
-					"wpn_fps_upg_fl_pis_x400v",
-					"wpn_fps_upg_fl_pis_laser",
-					"wpn_fps_upg_fl_pis_tlr1",
-					"wpn_fps_upg_fl_pis_perst"
+				self.parts.wpn_fps_pis_korth_body_heat.forbids = {}
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.supported = true
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.keep_damage = true
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.stats = {
+					value = 10,
+					recoil = -12,
+					spread = -4,
+					extra_ammo = -4,
+					total_ammo_mod = -68,
+					damage = 30
 				}
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.custom_stats = {
+					damage_min_mult = 0.66667,
+					falloff_end_mult = 0.825,
+					ammo_pickup_max_mul = 0.645161,
+					ammo_pickup_min_mul = 0.645161,
+					alt_ammo_pickup_max_mul = 0.645161,
+					alt_ammo_pickup_min_mul = 0.645161,
+				}
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.override = deep_clone(self.parts.wpn_fps_pis_korth_body_heat.override)
+				self.parts.wpn_fps_pis_korth_body_heat_akimbo.forbids = {}
 
 				--HK M16
 				self.parts.wpn_fps_ass_contraband_o_sayhello = {
@@ -32802,8 +32818,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 				--1911
 				self.parts.wpn_fps_pis_1911_body_sidewinder.supported = true
-				self.parts.wpn_fps_pis_1911_body_sidewinder.stats = {value = 0}
-				self.parts.wpn_fps_pis_1911_body_sidewinder.custom_stats = nil
+				self.parts.wpn_fps_pis_1911_body_sidewinder.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_pis_1911_body_sidewinder.custom_stats = deep_clone(barrels.short_b2_stats)
 				self.parts.wpn_fps_pis_1911_body_sidewinder.forbids = { "wpn_upg_o_marksmansight_rear" }
 				self.parts.wpn_fps_pis_1911_body_sidewinder.override = {
 					wpn_fps_pis_1911_o_standard = {
@@ -32812,11 +32828,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				for i, part_id in pairs(self.wpn_fps_pis_1911.uses_parts) do
 					if self.parts[part_id] and self.parts[part_id].type then
-						if self.parts[part_id].type == "slide" then
-							self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
-								unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_b_sidewinder"
-							}
-						elseif self.parts[part_id].type == "extra" then
+						if self.parts[part_id].type == "extra" then
 							self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
 								unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_o_sidewinder"
 							}
@@ -32971,9 +32983,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 				--Korth Exclusive Set 2
 				self.parts.wpn_fps_pis_korth_body_skill.supported = true
-				self.parts.wpn_fps_pis_korth_body_skill.stats = {value = 0}
-				self.parts.wpn_fps_pis_korth_body_skill.custom_stats = nil
-				self.parts.wpn_fps_pis_korth_body_skill.forbids = nil
+				self.parts.wpn_fps_pis_korth_body_skill.has_description = true
+				self.parts.wpn_fps_pis_korth_body_skill.desc_id = "bm_korth_r8"
+				self.parts.wpn_fps_pis_korth_body_skill.stats = {
+					value = 10,
+					total_ammo_mod = -80
+				}
+				self.parts.wpn_fps_pis_korth_body_skill.custom_stats = {
+					rof_mult = 0.3575757,
+					hs_mult = 2,
+					hs_mult_desc = true
+				}
+				self.parts.wpn_fps_pis_korth_body_skill.forbids = {}
 				for k, used_part_id in ipairs(self.wpn_fps_pis_korth.uses_parts) do
 					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_korth_body_skill.override[used_part_id] then
 						if self.parts[used_part_id].type == "barrel" then
@@ -32990,27 +33011,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_korth_body_skill.override.wpn_fps_pis_korth_m_8.adds = {}
 	
 				self.parts.wpn_fps_pis_m1911_body_killer.supported = true
-				self.parts.wpn_fps_pis_m1911_body_killer.stats = { value = 0, zoom = 20 }
+				self.parts.wpn_fps_pis_m1911_body_killer.stats = { value = 0, zoom = 20, spread = 3, concealment = -5, recoil = 4 }
 				self.parts.wpn_fps_pis_m1911_body_killer.custom_stats = {
+					rof_mult = 0.9444444,
+					ignore_rof_mult_anims = true,
+					falloff_start_mult = 1.225,
+					falloff_end_mult = 1.225,
+					ads_speed_mult = 1.075,
+					damage_min_mult = 1.66667,
 					disable_steelsight_recoil_anim = true
 				}
 				self.parts.wpn_fps_pis_m1911_body_killer.stance_mod.wpn_fps_pis_m1911 = {
 					translation =  Vector3(0, -40, -3.37)
 				}
-				self.parts.wpn_fps_pis_m1911_body_killer.forbids = {
-					"wpn_fps_upg_o_rmr",
-					"wpn_fps_upg_o_rms",
-					"wpn_fps_upg_o_rikt"
-				}
-				for k, used_part_id in ipairs(self.wpn_fps_pis_m1911.uses_parts) do
-					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_m1911_body_killer.override[used_part_id] then
-						if self.parts[used_part_id].type == "slide" then
-							self.parts.wpn_fps_pis_m1911_body_killer.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_pis_m1911_pts/wpn_fps_pis_m1911_sl_killer"
-							}
-						end
-					end
-				end
+				self.parts.wpn_fps_pis_m1911_body_killer.forbids = {}
 	
 				self.parts.wpn_fps_pis_type54_body_wood.supported = true
 				self.parts.wpn_fps_pis_type54_body_wood.stats = { value = 0 }
@@ -33073,33 +33087,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_packrat_body_sport_x.override.wpn_fps_pis_packrat_m_standard = nil
 	
 				self.parts.wpn_fps_pis_g17_body_sport.supported = true
-				self.parts.wpn_fps_pis_g17_body_sport.stats = { value = 0 }
-				self.parts.wpn_fps_pis_g17_body_sport.custom_stats = nil
-				self.parts.wpn_fps_pis_g17_body_sport.forbids = nil
+				self.parts.wpn_fps_pis_g17_body_sport.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_pis_g17_body_sport.custom_stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_pis_g17_body_sport.forbids = {}
 				for k, used_part_id in ipairs(self.wpn_fps_pis_g17.uses_parts) do
-					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_g17_body_sport.override[used_part_id] then
-						if self.parts[used_part_id].type == "slide" then
-							self.parts.wpn_fps_pis_g17_body_sport.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_b_sport",
-								override = {}
-							}
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if not table.contains(self.wpn_fps_pis_g17.default_blueprint, used_part_id) and 
+						not table.contains(self.parts.wpn_fps_pis_g17_body_sport.forbids, used_part_id) then
+							if self.parts[used_part_id].type == "slide" then
+								table.insert(self.parts.wpn_fps_pis_g17_body_sport.forbids, used_part_id)
+							end
 						end
 					end
 				end
 				self.parts.wpn_fps_pis_g17_body_sport_x.supported = true
-				self.parts.wpn_fps_pis_g17_body_sport_x.stats = { value = 0 }
-				self.parts.wpn_fps_pis_g17_body_sport_x.custom_stats = nil
-				self.parts.wpn_fps_pis_g17_body_sport_x.forbids = nil
-				for k, used_part_id in ipairs(self.wpn_fps_pis_x_g17.uses_parts) do
-					if self.parts[used_part_id] and self.parts[used_part_id].type and not self.parts.wpn_fps_pis_g17_body_sport_x.override[used_part_id] then
-						if self.parts[used_part_id].type == "slide" then
-							self.parts.wpn_fps_pis_g17_body_sport_x.override[used_part_id] = {
-								unit = "units/mods/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_b_sport",
-								override = {}
-							}
-						end
-					end
-				end
+				self.parts.wpn_fps_pis_g17_body_sport_x.stats = deep_clone(self.parts.wpn_fps_pis_g17_body_sport.stats)
+				self.parts.wpn_fps_pis_g17_body_sport_x.custom_stats = deep_clone(self.parts.wpn_fps_pis_g17_body_sport.custom_stats)
+				self.parts.wpn_fps_pis_g17_body_sport_x.forbids = deep_clone(self.parts.wpn_fps_pis_g17_body_sport.forbids)
 	
 				self.parts.wpn_fps_ass_amcar_body_mark.supported = true
 				self.parts.wpn_fps_ass_amcar_body_mark.stats = { value = 0 }
@@ -39231,11 +39235,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--Glock Exclusive set
 	for k, used_part_id in ipairs(self.wpn_fps_pis_g17.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "slide" then
-				self.parts.wpn_fps_pis_g17_ck.override[used_part_id] = {
-					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_g17_ck_pts/wpn_third_pis_g17_b_ck",
-					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_g17_ck_pts/wpn_fps_pis_g17_b_ck"
-				}
+			if not table.contains(self.wpn_fps_pis_g17.default_blueprint, used_part_id) and 
+			not table.contains(self.parts.wpn_fps_pis_g17_ck.forbids, used_part_id) then
+				if self.parts[used_part_id].type == "slide" then
+					table.insert(self.parts.wpn_fps_pis_g17_ck.forbids, used_part_id)
+				end
 			end
 		end
 	end
@@ -39254,16 +39258,39 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	--Deagle Exclusive set
 	for k, used_part_id in ipairs(self.wpn_fps_pis_deagle.uses_parts) do
 		if self.parts[used_part_id] and self.parts[used_part_id].type then
-			if self.parts[used_part_id].type == "slide" then
-				self.parts.wpn_fps_pis_deagle_ck.override[used_part_id] = {
-					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_b_ck",
-					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_b_ck"
-				}
+			if not table.contains(self.wpn_fps_pis_deagle.default_blueprint, used_part_id) then
+				if self.parts[used_part_id].type == "slide" then
+					table.insert(self.parts.wpn_fps_pis_deagle_ck.forbids, used_part_id)
+				end
 			elseif self.parts[used_part_id].type == "grip" then
 				self.parts.wpn_fps_pis_deagle_ck.override[used_part_id] = {
 					third_unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_third_pis_deagle_g_ck",
 					unit = "units/pd2_dlc_pda10/weapons/wpn_fps_pis_deagle_ck_pts/wpn_fps_pis_deagle_g_ck"
 				}
+			end
+		end
+	end
+
+	--Korth Exclusive set
+	for k, used_part_id in ipairs(self.wpn_fps_pis_korth.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if not table.contains(self.wpn_fps_pis_korth.default_blueprint, used_part_id) then
+				if self.parts[used_part_id].type == "gadget" or
+					self.parts[used_part_id].type == "sight" or
+					self.parts[used_part_id].type == "custom" or
+					self.parts[used_part_id].type == "vertical_grip" then
+					table.insert(self.parts.wpn_fps_pis_korth_conversionkit.forbids, used_part_id)
+				end
+			end
+		end
+	end
+
+	--HCAR Exclusive set
+	for k, used_part_id in ipairs(self.wpn_fps_lmg_hcar.uses_parts) do
+		if self.parts[used_part_id] and self.parts[used_part_id].type then
+			if self.parts[used_part_id].type == "barrel" or
+			self.parts[used_part_id].type == "stock" then
+				table.insert(self.parts.wpn_fps_lmg_hcar_body_conversionkit.forbids, part_id)
 			end
 		end
 	end
@@ -39628,6 +39655,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 	end
 
+	-- VMP Operator 1911 Exclusive Set
+	if self.parts.wpn_fps_pis_1911_body_sidewinder then
+		for k, used_part_id in ipairs(self.wpn_fps_pis_1911.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_pis_1911.default_blueprint, used_part_id) then
+					if self.parts[used_part_id].type == "slide" then
+						table.insert(self.parts.wpn_fps_pis_1911_body_sidewinder.forbids, used_part_id)
+					end
+				end
+			end
+		end
+	end
+
+	-- VMP Colt 1911 Exclusive Set
+	if self.parts.wpn_fps_pis_m1911_body_killer then
+		for k, used_part_id in ipairs(self.wpn_fps_pis_m1911.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_pis_m1911.default_blueprint, used_part_id) and 
+				not table.contains(self.parts.wpn_fps_pis_m1911_body_killer.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "slide" or
+					self.parts[used_part_id].type == "sight" then
+						table.insert(self.parts.wpn_fps_pis_m1911_body_killer.forbids, used_part_id)
+					end
+				end
+			end
+		end
+	end
+
+	-- VMP HCAR Exclusive Set
 	if self.parts.wpn_fps_lmg_hcar_body_ww2 then
 		for k, used_part_id in ipairs(self.wpn_fps_lmg_hcar.uses_parts) do
 			if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -39642,6 +39698,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds = (self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds)) or {}
 						table.insert(self.parts.wpn_fps_lmg_hcar_body_ww2.override[used_part_id].adds, "wpn_fps_rpg7_sight_adapter")
 					end
+				end
+			end
+		end
+	end
+
+	-- VMP KORTH Damascus Exclusive Set
+	if self.parts.wpn_fps_pis_korth_body_heat then
+		for k, used_part_id in ipairs(self.wpn_fps_pis_korth.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_pis_korth.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_pis_korth_body_heat.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "magazine" or
+					self.parts[used_part_id].type == "gadget" or
+					self.parts[used_part_id].type == "vertical_grip" or
+					self.parts[used_part_id].type == "barrel" then
+						table.insert(self.parts.wpn_fps_pis_korth_body_heat.forbids, used_part_id)
+					end
+				end
+			end
+		end
+		self.parts.wpn_fps_pis_korth_body_heat_akimbo.forbids = deep_clone(self.parts.wpn_fps_pis_korth_body_heat.forbids)
+	end
+
+	-- VMP KORTH Mk. VIII Exclusive Set
+	if self.parts.wpn_fps_pis_korth_body_skill then
+		for k, used_part_id in ipairs(self.wpn_fps_pis_korth.uses_parts) do
+			if self.parts[used_part_id] and self.parts[used_part_id].type then
+				if not table.contains(self.wpn_fps_pis_korth.default_blueprint, used_part_id) and not table.contains(self.parts.wpn_fps_pis_korth_body_skill.forbids, used_part_id) then
+					if self.parts[used_part_id].type == "magazine" or
+					self.parts[used_part_id].type == "custom" or
+					self.parts[used_part_id].type == "barrel" then
+						table.insert(self.parts.wpn_fps_pis_korth_body_skill.forbids, used_part_id)
+					end
+				end
+				if self.parts[used_part_id].type == "vertical_grip" then
+					self.parts.wpn_fps_pis_korth_body_skill.override[used_part_id] = {
+						parent="barrel"
+					}
 				end
 			end
 		end
@@ -39748,7 +39841,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	end
 	self.wpn_fps_ass_vhs_npc.override = deep_clone(self.wpn_fps_ass_vhs.override)
 	self.wpn_fps_ass_vhs_npc.uses_parts = deep_clone(self.wpn_fps_ass_vhs.uses_parts)
-
 
 --GEN 1 LEGENDARY STUFF--
 	--Vlad's Rodina--
@@ -39966,16 +40058,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2",
 		texture_bundle_folder = "boost_in_lootdrop",
 		has_description = true,
+		forbids = {
+			"wpn_fps_pis_deagle_ck"
+		},
 		override = {
 			wpn_upg_o_marksmansight_front = {a_obj = "a_ol"},
-			wpn_fps_pis_deagle_b_standard = {
-				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
-				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
-			},
-			wpn_fps_pis_deagle_b_long = {
-				unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_fps_pis_deagle_b_legend",
-				third_unit = "units/payday2_cash/safes/cf15/weapons/wpn_fps_pis_deagle_bling_pts/wpn_third_pis_deagle_b_legend",
-			}
 		}
 	}
 

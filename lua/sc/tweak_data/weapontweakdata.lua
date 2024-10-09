@@ -7474,7 +7474,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							0.1
 						}
 						self.hailstorm.stats_modifiers = nil
-						--self.hailstorm.sounds.no_fix = true
+						self.hailstorm.sounds.fire_auto = "hailstorm_fire"
+						self.hailstorm.sounds.fire = "hailstorm_fire"
+						self.hailstorm.sounds.fire_single = "hailstorm_fire"
+						self.hailstorm.sounds.fire_volley = "hailstorm_shotgun_fire_single"
 						self.hailstorm.reload_speed_multiplier = 0.85
 						self.hailstorm.panic_suppression_chance = 0.05
 						self.hailstorm.timers.reload_exit_empty = 0.08
@@ -12107,11 +12110,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.supernova.fire_rate_multiplier = 0.975
 						self.supernova.alt_fire_data = {
 							fire_rate = 0.3874998,
-							range_mul = 0.45,
+							range_mul = 0.55,
 							spread_mul = 3,
 							damage_mul = 1,
 							shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",
-							recoil_mul = 1.25,
+							recoil_mul = 1.2,
 							animations = {
 								fire_steelsight = "recoil_steelsight_alt",
 								fire = "recoil_alt"

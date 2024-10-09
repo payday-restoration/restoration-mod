@@ -2532,6 +2532,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_deagle_sc_desc"] = "What more needs to be said about this semi automatic magic wand? Just wave it at the bad guys and shout \"Headicus Explodicus!\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_deagle_sc_desc"] = "Twin wrist wreckers that take a real nut to actually carry into battle.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				--Kahn .357
+				["bm_korth_r8"] = "#{skill_color}#Headshots deal 100% more damage to non-captain enemies.##",
 				--Matever 2006m
 				["bm_2006m_sc_desc"] = "A rare design of an already rare production run. A fancy way to send .38 down range.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_2006m_sc_desc"] = "The logistics of handling two of these is outweighed by the sheer badass factor.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",

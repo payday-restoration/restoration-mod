@@ -2749,8 +2749,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--AK 7.62
 				["bm_akm_sc_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.\n\nThe Go-To for insurgents and crazy regimes throughout the world.",
 				["bm_akm_gold_sc_desc"] = "What does a heister, a Mexican drug lord and a megalomaniac dictator have in common? A fascination for gold-plated rifles, of course.",
-				--Queen's Wrath
-				["bm_l85a2_sc_desc"] = "Though its reputation has been marred by earlier iterations, this rifle stands to be one of the most accurate automatics ever made.\n\nStill an ergonomic nightmare though.",
 				--KETCHUPKNOB--
 				--ASPIRING POKEMON TRAINER, ASH KETCHNOV--
 				["bm_groza_sc_desc_pc"] = "The bullpup sister of the AK family, kitted out for those who want a bit more boom.\n\nPressing #{skill_color}#$BTN_BIPOD## switches to the undermounted grenade launcher.",

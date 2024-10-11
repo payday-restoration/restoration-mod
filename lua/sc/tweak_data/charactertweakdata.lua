@@ -2851,10 +2851,25 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_gangster.speech_prefix_p1 = "android"
 		self.spooc_gangster.speech_prefix_p2 = nil
 		self.spooc_gangster.speech_prefix_count = nil
+		self.spooc_gangster.spawn_sound_event_2 = nil
+		self.spooc_gangster.spooc_sound_events = {
+        detect_stop = "cloaker_detect_stop",
+        detect = "asdf",
+		taunt_during_assault = "asdf",
+		taunt_after_assault = "asdf"
+    }
 	else
-		self.spooc_gangster.speech_prefix_p1 = "lt"
+		self.spooc_gangster.speech_prefix_p1 = "lt2"
 		self.spooc_gangster.speech_prefix_p2 = nil
-		self.spooc_gangster.speech_prefix_count = 2
+		self.spooc_gangster.speech_prefix_count = nil
+		self.spooc_gangster.charging_detect = true
+		self.spooc_gangster.spawn_sound_event_2 = "lt2_pft"
+		self.spooc_gangster.spooc_sound_events = {
+        detect_stop = "nothing",
+        detect = "lt2_c01",
+		taunt_during_assault = "lt2_g90",
+		taunt_after_assault = "lt2_g90"
+    }
 	end	
 	self.spooc_gangster.HEALTH_INIT = 24
 	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
@@ -2886,13 +2901,6 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.static_dodge_preset = true
 	self.spooc_gangster.special_deaths = nil
 	self.spooc_gangster.unintimidateable = true		
-	self.spooc_gangster.spawn_sound_event_2 = nil
-    self.spooc_gangster.spooc_sound_events = {
-        detect_stop = "cloaker_detect_stop",
-        detect = "asdf",
-		taunt_during_assault = "asdf",
-		taunt_after_assault = "asdf"
-    }	
 	self.spooc_gangster.min_obj_interrupt_dis = 800
 	self.spooc_gangster.dodge_with_grenade = {
 		smoke = {duration = {

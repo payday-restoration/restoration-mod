@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<underlay>
+	<load_scene file="core/environments/skies/sky_bridge_pdth/sky_bridge_pdth" materials="core/environments/skies/sky_bridge_pdth/sky_bridge_pdth">
+		<object name="g_sky" enabled="true" force_sort_depth="100000"/>
+		<object name="g_sun" enabled="true" force_sort_depth="98000"/>
+		<object name="g_clouds" enabled="true" force_sort_depth="97000"/>
+		
+		<animation_group name="sun_vertical" playing="false">
+			<object name="d_sun_vertical"/>
+		</animation_group>
+		
+		<animation_group name="sun_horizontal" playing="false">
+			<object name="d_sun_horizontal"/>
+		</animation_group>
+		
+<!--
+		<animation_group name="moon_vertical" playing="false">
+			<object name="d_sun_vertical"/>
+		</animation_group>
+		
+		<animation_group name="moon_horizontal" playing="false">
+			<object name="d_sun_horizontal"/>
+		</animation_group>
+-->
+		
+	</load_scene>
+</underlay>

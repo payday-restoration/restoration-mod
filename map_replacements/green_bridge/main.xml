@@ -1,0 +1,92 @@
+<table min_lib_ver="4.5" name="green_bridge">
+	<instance id="bridge_prison_truck">
+		<packages>
+			<value_node value="levels/instances/unique/glace/glace_prison_bus/world"/>
+			<value_node value="levels/instances/unique/glace/glace_prison_bus/world_sounds"/>
+			<value_node value="levels/instances/unique/glace/glace_prison_bus/world/world"/>
+		</packages>
+	</instance>
+	<level ai_group_type="nypd" briefing_dialog="Play_pln_glace_brf" cube="cube_apply_heist_bank" name_id = "heist_glace_hl" brief_id = "heist_glace_briefing" id="bridge" intro_event="Play_pln_glace_intro" music="heist" outro_event="Play_pln_glace_end" player_style="raincoat">
+		<assets/>
+		<environment_effects>
+			<value_node value="rain"/>
+			<value_node value="raindrop_screen"/>
+			<value_node value="lightning"/>
+		</environment_effects>
+		<equipment>
+			<value_node value="saw"/>
+		</equipment>
+		<packages>
+			<value_node value="packages/narr_glace"/>
+			<value_node value="levels/narratives/classics/glace/world"/>
+			<value_node value="levels/narratives/classics/glace/world_sounds"/>
+			<value_node value="levels/narratives/classics/glace/level_art/level_art"/>
+			<value_node value="levels/narratives/classics/glace/world/world"/>
+			<value_node value="levels/narratives/classics/glace/editor_only/editor_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="Play_pln_glc_cbf_01" contact="classic" name_id="heist_glace_hl" icon="guis/dlcs/bro/textures/pd2/crimenet/green_bridge" brief_id = "heist_glace_crimenet" id="glace" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_greenbridge">
+		<chain>
+			<table level_id="bridge" type="a" type_id="heist_type_survive"/>
+		</chain>
+		<contract_cost>
+			<value_node value="70000"/>
+			<value_node value="150000"/>
+			<value_node value="350307"/>
+			<value_node value="700000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_pln_glc_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank2"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<debrief_event/>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+			<value_node value="28000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="115000"/>
+			<value_node value="225000"/>
+			<value_node value="555000"/>
+			<value_node value="1.15e+006"/>
+			<value_node value="1.266e+006"/>
+			<value_node value="1.435e+006"/>
+			<value_node value="1.545e+006"/>
+		</payout>
+	</narrative>
+</table>

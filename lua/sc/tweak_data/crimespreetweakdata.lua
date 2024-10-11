@@ -461,11 +461,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.pbr
 			},
 			{
-				stage_id = "glace",
+				stage_id = "bridge",
 				add = debug_long_add,
-				id = "glace",
+				id = "bridge",
 				icon = "csm_glace",
-				level = tweak_data.narrative.stages.glace
+				level = tweak_data.narrative.stages.bridge
 			},
 			{
 				stage_id = "run_res",
@@ -475,11 +475,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.run_res
 			},
 			{
-				stage_id = "man",
-				id = "man",
+				stage_id = "secret_stash",
+				id = "secret_stash",
 				icon = "csm_undercover",
 				add = debug_long_add,
-				level = tweak_data.narrative.stages.man
+				level = tweak_data.narrative.stages.secret_stash
 			},
 			{
 				stage_id = "dinner",

@@ -1,0 +1,11 @@
+<table directory="assets">
+	<add from_db="true" path="units/equipment/apartment_saw/apartment_saw" type="unit">
+		<unit path="units/equipment/apartment_saw/apartment_saw"/>
+		<object path="units/equipment/apartment_saw/apartment_saw"/>
+		<material_config path="units/equipment/apartment_saw/apartment_saw"/>
+		<sequence_manager path="units/equipment/apartment_saw/apartment_saw"/>
+		<gui path="guis/timer_gui"/>
+		<effect load="true" path="effects/particles/equipment/vault_drill/drill_active"/>
+		<effect load="true" path="effects/particles/equipment/apartment_saw/saw_active"/>
+	</add>
+</table>

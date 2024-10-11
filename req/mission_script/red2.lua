@@ -1,81 +1,20 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local hunt_projob = false
-local ambush_doors_chance = 85
+local hunt_projob = pro_job
+local marioinatophat_is_in_fwb_chance = math.random() < 0.15
 local ambush_amount = 1
-local cloaker_ambush_amount_vault_hallway = 1
-local both_window_swats_only = true
-local enable_right_path = false
-local vent_spawngroup = false
-local stair_blockade_chance = 0
-local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local cloaker_ambush_amount_vault_hallway = (difficulty == 8 and 3 or difficulty == 7 and 2) or 1
+local both_window_swats_only = (difficulty >= 6 and false) or true
+local enable_right_path = (difficulty >= 6 and true) or false
+local vent_spawngroup = (difficulty >= 6 and true) or false
+local stair_blockade_chance = (difficulty >= 6 and 100) or 0
+local swat_shotgunner = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
 local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local marioinatophat_is_in_fwb_chance = 0.15
-
-	if math.random() < marioinatophat_is_in_fwb_chance then
-		dave = "units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave"
-	end	
-
-	if difficulty == 6 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
-	elseif difficulty == 7 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
-		cloaker_ambush_amount_vault_hallway = 2
-	elseif difficulty == 8 then
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-		cloaker_ambush_amount_vault_hallway = 3
-	end
-
---If we're in Pro Job, then do this stuff below
-if pro_job then
-	    ambush_amount = 2
-		hunt_projob = true
-	--titan dozer replaces some dozers on Mayhem above	
-	if difficulty >= 6 then
-		titan_dozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
-	end
-	--Titan cloakers replace scripted cloakers
-	--Ambush is more deadly
-	if difficulty == 8 then
-		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-		ambush_doors_chance = 100
-		ambush_amount = 3
-	end
-	--Titan units replace some of the scripted spawns
-	if difficulty >= 5 then
-		titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
-		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		titan_swat_1 = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		titan_swat_2 = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
-		swat_shotgunner = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-end
-
-	if difficulty >= 6 then
-		both_window_swats_only = false --disables tazer_only and cloaker_only scripts on higher difficulties
-		enable_right_path = true
-		vent_spawngroup = true
-	end	
-	
-	if difficulty >= 5 then
-		stair_blockade_chance = 100 --100% to always spawn 3 tasers+1 heavy swat in staircase escape (145+ throwback)
-	end
-
-	if difficulty <= 6 then
-		vault_guard = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
-	elseif difficulty == 7 then
-		vault_guard = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"	
-	else
-		vault_guard = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
-	end
+local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
+local dave = (marioinatophat_is_in_fwb_chance and "units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave")
+local vault_guard = (difficulty == 8 and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2") or "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
+local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 	
 local cloaker = {
 	values = {
@@ -85,12 +24,6 @@ local cloaker = {
 local taser = {
 	values = {
 		enemy = taser
-	}
-}
-local taser_basement = {
-	values = {
-		enemy = taser,
-		spawn_action = "e_sp_kick_enter"
 	}
 }
 local swatsg = {
@@ -103,29 +36,9 @@ local shield = {
 		enemy = shield
 	}
 }
-local titan_taser = {
-	values = {
-        enemy = titan_taser
-	}
-}
 local titan_cloaker = {
 	values = {
         enemy = woman_spooc
-	}
-}
-local titan_shield = {
-	values = {
-        enemy = titan_shield
-	}
-}
-local tswat1 = {
-	values = {
-		enemy = titan_swat_1
-	}
-}
-local tswat2 = {
-	values = {
-		enemy = titan_swat_2
 	}
 }
 local windows_swat = {
@@ -133,8 +46,22 @@ local windows_swat = {
 		enabled = both_window_swats_only
 	}
 }
+local disabled = {
+	values = {
+        enabled = false
+	}
+}
 	
 return {
+	--only dozer in the basement
+	[100529] = {
+		values = {
+            amount = ambush_amount
+		}
+	},
+	--disable sniper spawns that I don't like
+	[105826] = disabled,
+	[101619] = disabled,
 	--Glock ready to shoot (15% chance)
 	[103609] = {
 		values = {
@@ -392,35 +319,13 @@ return {
 	[102245] = windows_swat,
 	[102271] = windows_swat,
 	[102276] = windows_swat,
-	--Vault Spawn Stuff
-	--why there's a beat cop instead of guard? I dunno
+	--why there's a beat cop instead of guard in the vault? I dunno
 	[104001] = {
 		values = {
             enemy = vault_guard
 		}
 	},
-	--Pro Job spawns and stuff
-	--Basement Doors
-	[100528] = {
-		values = {
-            chance = ambush_doors_chance
-		}
-	},
-	[100529] = {
-		values = {
-            amount = ambush_amount
-		}
-	},
 	--Spawn replacements
-	[106858] = titan_taser,
-	[106869] = titan_taser,
-	[100620] = titan_taser,
-	[100621] = titan_taser,
-	[102575] = titan_taser,
-	[104317] = titan_taser,
-	[104318] = titan_taser,
-	[102382] = titan_taser,
-	[101967] = titan_taser,
 	[101885] = titan_cloaker,
 	[103136] = titan_cloaker,
 	[103143] = titan_cloaker,
@@ -429,22 +334,9 @@ return {
 	[102899] = titan_cloaker,
 	[102903] = titan_cloaker,
 	[102904] = titan_cloaker,
-	[103693] = titan_shield,
-	[103697] = titan_shield,
-	[104510] = titan_shield,
-	[104631] = titan_shield,
-	[104319] = tswat1,
-	[104330] = tswat1,
-	[100570] = tswat2,
-	[106873] = tswat1,
-	[106856] = tswat2,
-	[103535] = tswat1,
-	[106855] = tswat2,
 	[100617] = cloaker,
 	[100618] = cloaker,
 	[103395] = cloaker,
-	--[103163] = taser_basement,
-	--[103231] = taser_basement,
 	[103466] = taser,
 	[103463] = shield,
 	[103465] = swatsg

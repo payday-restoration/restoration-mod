@@ -1,0 +1,241 @@
+<table directory="assets">
+	<add from_db="true" path="units/world/architecture/backdrops/scrapers/night/backdrop_diamond_heist" type="unit">
+		<material_config path="units/world/architecture/backdrops/scrapers/night/backdrop_diamond_heist"/>
+		<object path="units/world/architecture/backdrops/scrapers/night/backdrop_diamond_heist"/>
+		<unit path="units/world/architecture/backdrops/scrapers/night/backdrop_diamond_heist"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_sah/nature/sah_clouds/sah_clouds" type="unit">
+		<material_config path="units/pd2_dlc_sah/nature/sah_clouds/sah_clouds"/>
+		<object path="units/pd2_dlc_sah/nature/sah_clouds/sah_clouds"/>
+		<unit path="units/pd2_dlc_sah/nature/sah_clouds/sah_clouds"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dag_fog_plane/dah_fog_plane" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dag_fog_plane/dah_fog_plane"/>
+		<object path="units/pd2_dlc_dah/architecture/dag_fog_plane/dah_fog_plane"/>
+		<sequence_manager path="units/pd2_dlc_dah/architecture/dag_fog_plane/dah_fog_plane"/>
+		<unit path="units/pd2_dlc_dah/architecture/dag_fog_plane/dah_fog_plane"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_old_unit" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_old_unit"/>
+		<object path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_old_unit"/>
+		<unit path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_old_unit"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_04" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop"/>
+		<object path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_04"/>
+		<unit path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_04"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_03" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop"/>
+		<object path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_03"/>
+		<unit path="units/pd2_dlc_dah/architecture/dah_backdrop/dah_ext_bdrop_strip_06_building_03"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dah_backdrop/sand_ext_bdrop_strip_04_building_07" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dah_backdrop/sand_ext_bdrop_strip_04_building_07"/>
+		<object path="units/pd2_dlc_dah/architecture/dah_backdrop/sand_ext_bdrop_strip_04_building_07"/>
+		<unit path="units/pd2_dlc_dah/architecture/dah_backdrop/sand_ext_bdrop_strip_04_building_07"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_dah/architecture/dah_floodlight_moving/dah_floodlight_moving_v2" type="unit">
+		<material_config path="units/pd2_dlc_dah/architecture/dah_floodlight_moving/dah_floodlight_moving_v2"/>
+		<object path="units/pd2_dlc_dah/architecture/dah_floodlight_moving/dah_floodlight_moving_v2"/>
+		<sequence_manager path="units/pd2_dlc_dah/architecture/dah_floodlight_moving/dah_floodlight_moving_v2"/>
+		<unit path="units/pd2_dlc_dah/architecture/dah_floodlight_moving/dah_floodlight_moving_v2"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_sand/architecture/backdrop/sand_fog_plane" type="unit">
+		<material_config path="units/pd2_dlc_sand/architecture/backdrop/sand_fog_plane"/>
+		<object path="units/pd2_dlc_sand/architecture/backdrop/sand_fog_plane"/>
+		<sequence_manager path="units/pd2_dlc_sand/architecture/backdrop/sand_fog_plane"/>
+		<unit path="units/pd2_dlc_sand/architecture/backdrop/sand_fog_plane"/>
+	</add>
+	<texture path="units/pd2_mod_custom/nature/glace_clouds/top_clouds_dark_df"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/background_gradient"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/cloud_normal_df"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/clouds_composite"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/clouds_df"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/sun"/>
+	<texture path="core/environments/skies/sky_bridge_pdth/cloud_normal"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_bridge_01" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_greenbridge_wet_df" type="texture"/>
+	<add from_db="true" path="units/pd2_dlc_peta/cubemaps/cubemap_street_wet_v2" type="texture"/>
+	<add from_db="true" path="units/payday2/cubemaps/cubemap_street_wet_df" type="texture"/>
+	<add from_db="true" path="effects/payday2/environment/cane_white_fog" type="effect">
+		<effect load="true" path="effects/payday2/environment/cane_white_fog"/>
+	</add>
+	<add from_db="true" path="effects/payday2/particles/flares/indoor_lamp_v6" type="effect">
+		<effect load="true" path="effects/payday2/particles/flares/indoor_lamp_v6"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/born_tunnel_fog" type="effect">
+		<effect load="true" path="effects/payday2/environment/born_tunnel_fog"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/nail_green_intro_fog" type="effect">
+		<effect load="true" path="effects/payday2/environment/nail_green_intro_fog"/>
+	</add>
+	<add from_db="true" path="effects/payday2/environment/short_1_day_1_fog" type="effect">
+		<effect load="true" path="effects/payday2/environment/short_1_day_1_fog"/>
+	</add>
+	<add from_db="true" path="effects/particles/dest/scene_smoke_cover" type="effect">
+		<effect load="true" path="effects/particles/dest/scene_smoke_cover"/>
+		<effect load="true" path="effects/particles/dest/smoke_pocket_puff"/>
+	</add>
+	<add from_db="true" path="effects/payday2/particles/impacts/smoke/heavy_smoke_particle" type="effect">
+		<effect load="true" path="effects/payday2/particles/impacts/smoke/heavy_smoke_particle"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_bph/terrain/bph_bdrop_terrain/bph_bdrop_terrain" type="unit">
+		<material_config path="units/pd2_dlc_bph/terrain/bph_bdrop_terrain/bph_bdrop_terrain"/>
+		<object path="units/pd2_dlc_bph/terrain/bph_bdrop_terrain/bph_bdrop_terrain"/>
+		<unit path="units/pd2_dlc_bph/terrain/bph_bdrop_terrain/bph_bdrop_terrain"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane" type="unit">
+		<material_config path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane"/>
+		<object path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane"/>
+		<sequence_manager path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane"/>
+		<unit path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane_opacity" type="unit">
+		<material_config path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane_opacity"/>
+		<object path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane_opacity"/>
+		<unit path="units/pd2_dlc_bph/props/bph_prop_waveplane/bph_prop_waveplane_opacity"/>
+	</add>
+	<add from_db="true" path="effects/particles/environment/cop_car_lights" type="effect">
+		<effect load="true" path="effects/particles/environment/cop_car_lights"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_pent/architecture/ext/pent_ext_far_backdrop/pent_ext_bdrop_skyscraper_02/pent_ext_bdrop_glow_plane_01" type="unit">
+		<material_config path="units/pd2_dlc_pent/architecture/ext/pent_ext_far_backdrop/pent_ext_bdrop_skyscraper_02/pent_ext_bdrop_glow_plane_01"/>
+		<object path="units/pd2_dlc_pent/architecture/ext/pent_ext_far_backdrop/pent_ext_bdrop_skyscraper_02/pent_ext_bdrop_glow_plane_01"/>
+		<unit path="units/pd2_dlc_pent/architecture/ext/pent_ext_far_backdrop/pent_ext_bdrop_skyscraper_02/pent_ext_bdrop_glow_plane_01"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_vit/props/vit_prop_f35/vit_prop_f35" type="unit">
+		<bnk path="soundbanks/regular_sfx"/>
+		<material_config path="units/pd2_dlc_vit/props/vit_prop_f35/vit_prop_f35"/>
+		<object path="units/pd2_dlc_vit/props/vit_prop_f35/vit_prop_f35"/>
+		<sequence_manager path="units/pd2_dlc_vit/props/vit_prop_f35/vit_prop_f35"/>
+		<unit path="units/pd2_dlc_vit/props/vit_prop_f35/vit_prop_f35"/>
+	</add>
+	<material_config path="core/environments/skies/sky_bridge_pdth/sky_bridge_pdth"/>
+	<model path="core/environments/skies/sky_bridge_pdth/sky_bridge_pdth"/>
+	<model path="units/pd2_mod_custom/nature/glace_clouds/glace_clouds"/>
+	<material_config path="units/pd2_mod_custom/nature/glace_clouds/glace_clouds"/>
+	<texture path="units/pd2_mod_custom/nature/glace_clouds/top_clouds_dark_df"/>
+	<material_config force="true" path="units/pd2_dlc_glace/props/glc_prop_backdrop/glc_backdrop"/>
+	<add from_db="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_dark_df" type="texture"/>
+	<add from_db="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_darker_df" type="texture"/>
+	<add from_db="true" path="units/payday2/architecture/mkp/mkp_light_cone" type="unit">
+		<material_config path="units/payday2/architecture/mkp/mkp_light_cone"/>
+		<object path="units/payday2/architecture/mkp/mkp_light_cone"/>
+		<unit path="units/payday2/architecture/mkp/mkp_light_cone"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_small" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_small"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_small"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_warehouse_blue" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_warehouse_blue"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_warehouse_blue"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_berry/props/bry_prop_light_cones/bry_prop_light_cone_02" type="unit">
+		<material_config path="units/pd2_dlc_berry/props/bry_prop_light_cones/bry_prop_light_cones"/>
+		<object path="units/pd2_dlc_berry/props/bry_prop_light_cones/bry_prop_light_cone_02"/>
+		<unit path="units/pd2_dlc_berry/props/bry_prop_light_cones/bry_prop_light_cone_02"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/slaughterhouse/godray/godray_rectangular_cone_long" type="unit">
+		<material_config path="units/world/architecture/slaughterhouse/godray/godray_rectangular_cone"/>
+		<object path="units/world/architecture/slaughterhouse/godray/godray_rectangular_cone_long"/>
+		<unit path="units/world/architecture/slaughterhouse/godray/godray_rectangular_cone_long"/>
+	</add>
+	<add from_db="true" path="units/world/street/street_lights/street_lights_night_cone" type="unit">
+		<material_config path="units/world/street/street_lights/street_lights_night"/>
+		<object path="units/world/street/street_lights/street_lights_night_cone"/>
+		<unit path="units/world/street/street_lights/street_lights_night_cone"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/props/spa_prop_street_light/spa_street_lights_night_cone" type="unit">
+		<material_config path="units/pd2_dlc_spa/props/spa_prop_street_light/spa_prop_street_light"/>
+		<object path="units/pd2_dlc_spa/props/spa_prop_street_light/spa_street_lights_night_cone"/>
+		<unit path="units/pd2_dlc_spa/props/spa_prop_street_light/spa_street_lights_night_cone"/>
+	</add>
+	<add from_db="true" path="units/world/props/airport/airport_cones/airport_tall_cone" type="unit">
+		<material_config path="units/world/props/airport/airport_cones/airport_tall_cone"/>
+		<object path="units/world/props/airport/airport_cones/airport_tall_cone"/>
+		<unit path="units/world/props/airport/airport_cones/airport_tall_cone"/>
+	</add>
+	<add from_db="true" path="units/world/props/street/streetcone_02" type="unit">
+		<material_config path="units/world/props/street/streetcone"/>
+		<object path="units/world/props/street/streetcone_02"/>
+		<unit path="units/world/props/street/streetcone_02"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_sah/props/sah_prop_lightcone_01/sah_prop_lightcone_01" type="unit">
+		<material_config path="units/pd2_dlc_sah/props/sah_prop_lightcone_01/sah_prop_lightcone_01"/>
+		<object path="units/pd2_dlc_sah/props/sah_prop_lightcone_01/sah_prop_lightcone_01"/>
+		<unit path="units/pd2_dlc_sah/props/sah_prop_lightcone_01/sah_prop_lightcone_01"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange_v2" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange_v2"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks_orange_v2"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc2/csgo_models/props_fortifications/orange_cone001_reference" type="unit">
+		<material_config path="units/pd2_dlc2/csgo_models/props_fortifications/orange_cone001_reference"/>
+		<object path="units/pd2_dlc2/csgo_models/props_fortifications/orange_cone001_reference"/>
+		<unit path="units/pd2_dlc2/csgo_models/props_fortifications/orange_cone001_reference"/>
+	</add>
+	<add from_db="true" path="units/world/props/construction_crane/construction_crane_01" type="unit">
+		<material_config path="units/world/props/construction_crane/construction_crane"/>
+		<object path="units/world/props/construction_crane/construction_crane_01"/>
+		<sequence_manager path="units/world/props/construction_crane/construction_crane_01"/>
+		<unit path="units/world/props/construction_crane/construction_crane_01"/>
+	</add>
+	<add from_db="true" path="units/world/props/construction_crane/construction_crane" type="material_config">
+		<material_config path="units/world/props/construction_crane/construction_crane"/>
+	</add>
+	<add from_db="true" path="units/world/props/construction_crane/construction_crane _blue" type="material_config">
+		<material_config path="units/world/props/construction_crane/construction_crane _blue"/>
+	</add>
+	<add from_db="true" path="units/world/props/construction_crane/construction_crane_red_white" type="material_config">
+		<material_config path="units/world/props/construction_crane/construction_crane_red_white"/>
+	</add>
+	<add from_db="true" path="units/vehicles/truck_regular/man_vehicle_truck_variation_2" type="material_config">
+		<material_config path="units/vehicles/truck_regular/man_vehicle_truck_variation_2"/>
+	</add>
+	<add from_db="true" path="units/vehicles/truck_regular/man_vehicle_truck_variation_3" type="material_config">
+		<material_config path="units/vehicles/truck_regular/man_vehicle_truck_variation_3"/>
+	</add>
+	<add>
+		<effect load="true" path="effects/payday2/particles/flares/indoor_lamp_glace"/>
+		<material_config force="true" path="units/pd2_dlc_glace/architecture/glc_ext_bridge/glc_ext_bridge" unload="true"/>
+		<object force="true" path="units/pd2_dlc_glace/props/glc_prop_bridge_lamp_lamppost/glc_prop_bridge_lamp_lamppost" unload="true"/>
+	</add>
+	<add from_db="true" path="core/units/light_spot/light_spot_falloff" type="unit">
+		<material_config path="core/material_configs/hub_elements"/>
+		<object path="core/units/light_spot/light_spot_falloff"/>
+		<unit path="core/units/light_spot/light_spot_falloff"/>
+	</add>
+	<add from_db="true" path="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01" type="unit">
+		<material_config path="core/material_configs/hub_elements"/>
+		<object path="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01"/>
+		<unit path="units/lights/light_spot_shadow_projection_01/light_spot_shadow_projection_01"/>
+	</add>
+	<add from_db="true" path="units/equipment/apartment_saw/apartment_saw" type="unit">
+		<effect load="true" path="effects/particles/equipment/vault_drill/drill_active"/>
+		<effect load="true" path="effects/particles/equipment/apartment_saw/saw_active"/>
+		<gui path="guis/timer_gui"/>
+		<material_config path="units/equipment/apartment_saw/apartment_saw"/>
+		<object path="units/equipment/apartment_saw/apartment_saw"/>
+		<sequence_manager path="units/equipment/apartment_saw/apartment_saw"/>
+		<unit path="units/equipment/apartment_saw/apartment_saw"/>
+	</add>
+	<cooked_physics path="units/pd2_mod_custom/nature/glace_clouds/glace_clouds"/>
+	<object path="units/pd2_mod_custom/nature/glace_clouds/glace_clouds"/>
+	<scene load="true" path="core/environments/skies/sky_bridge_pdth/sky_bridge_pdth"/>
+	<unit path="units/pd2_mod_custom/nature/glace_clouds/glace_clouds"/>
+</table>

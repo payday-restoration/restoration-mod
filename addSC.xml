@@ -255,13 +255,7 @@
 	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 
-	<!--UNDERCOVER-->
-	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
-	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
-	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
-	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
-	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
-	
+	<!--UNDERCOVER-->	
 	<sequence_manager	path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
 	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
 	

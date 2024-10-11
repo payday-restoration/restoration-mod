@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<materials>
+	<material name="sky" render_template="dome_sky">
+		<diffuse_texture file="environments/skies/sky_pdth_test/sky_pdth_test"/>
+		<variable name="params_a" type="vector3" value="1 -0.09 1.5"/> <!-- Range, offset, curve -->
+		<variable name="params_b" type="vector3" value="0.25 0.5 0"/> <!-- Sky intensity, Sun intensity, Not used -->
+
+		<!-- OLD shit -->
+		<variable name="color0" type="vector3" value="1.0 1.0 1.0"/>
+		<variable name="color2" type="vector3" value="1.0 1.0 1.0"/>
+		</material>
+</materials>

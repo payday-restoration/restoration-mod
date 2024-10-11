@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<underlay>
+	<load_scene file="environments/skies/sky_pdth_test/sky_pdth_test" materials="environments/skies/sky_pdth_test/sky_pdth_test">
+		<object name="g_sky" enabled="true" force_sort_depth="100000"/>
+	</load_scene>
+</underlay>

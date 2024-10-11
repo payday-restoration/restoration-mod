@@ -1,0 +1,86 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/props/glc_prop_bridge_lamp_lamppost/glc_prop_bridge_lamp_lamppost" orientation_object="rp_glc_prop_bridge_lamp_lamppost" />
+	<sequence_manager file="units/pd2_dlc_glace/props/glc_prop_bridge_lamp_lamppost/glc_prop_bridge_lamp_lamppost" />
+	<bodies>
+		<body name="body_lamp" enabled="true" template="static">
+			<object name="rp_glc_prop_bridge_lamp_lamppost" />
+			<object name="c_box_03" collision_type="box" />
+		</body>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_glc_prop_bridge_lamp_lamppost" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_collision_dyn_01" enabled="false" template="dynamic" collides_with_mover="false">
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_01" enabled="true" template="static">
+			<object name="rp_glc_prop_bridge_lamp_lamppost" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_dyn_02" enabled="false" template="dynamic" collides_with_mover="false">
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_02" enabled="true" template="static">
+			<object name="rp_glc_prop_bridge_lamp_lamppost" />
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_dyn_03" enabled="false" template="dynamic" collides_with_mover="false">
+			<object name="c_convex_03" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_03" enabled="true" template="static">
+			<object name="rp_glc_prop_bridge_lamp_lamppost" />
+			<object name="c_convex_03" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_glass_breakable" enabled="true" material="glass_breakable" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<effects>
+		<effect_spawner name="light_effect" enabled="true" object="e_effect" effect="effects/payday2/particles/flares/indoor_lamp_glace" />
+	</effects>
+	<graphics>
+		<graphic_group name="g_lamp" enabled="true">
+			<lod_object name="lod_g">
+				<object name="g_lod0" 			enabled="true" max_distance="1500" />
+				<object name="g_lod1" 			enabled="true" max_distance="3000" />
+				<object name="g_lod2" 			enabled="true" />
+			</lod_object>
+			<lod_object name="lod_g_glass">
+				<object name="g_glass_lod0" 	enabled="true" max_distance="1500" />
+				<object name="g_glass_lod1" 	enabled="true" max_distance="3000" />
+				<object name="g_glass_lod2" 	enabled="true" />
+			</lod_object>
+			<object name="s_s" 					enabled="true" shadow_caster="true" />
+		</graphic_group>
+		<graphic_group name="g_lamp_broken" enabled="false">
+			<lod_object name="lod_g_dmg">
+				<object name="g_dmg_lod0" 		enabled="true" 	max_distance="1500" />
+				<object name="g_dmg_lod1" 		enabled="true" 	max_distance="3000" />
+				<object name="g_dmg_lod2" 		enabled="true" />
+			</lod_object>
+			<lod_object name="lod_g_1_dmg">
+				<object name="g_dmg_1_lod0" 	enabled="true" 	max_distance="1500" />
+				<object name="g_dmg_1_lod1" 	enabled="true" 	max_distance="3000" />
+				<object name="g_dmg_1_lod2" 	enabled="true" />
+			</lod_object>
+			<lod_object name="lod_g_2_dmg">
+				<object name="g_dmg_2_lod0" 	enabled="true" 	max_distance="1500" />
+				<object name="g_dmg_2_lod1" 	enabled="true" 	max_distance="3000" />
+				<object name="g_dmg_2_lod2" 	enabled="true" />
+			</lod_object>
+			<lod_object name="lod_g_3_dmg">
+				<object name="g_dmg_3_lod0" 	enabled="true" 	max_distance="1500" />
+				<object name="g_dmg_3_lod1" 	enabled="true" 	max_distance="3000" />
+				<object name="g_dmg_3_lod2" 	enabled="true" />
+			</lod_object>
+		</graphic_group>
+		<object name="g_cone_light" enabled="true" />
+	</graphics>
+  <lights>
+        <light name="ls_spotlight"				enabled="true" editable="true" type="spot|specular" multiplier="sun" far_range="1700" falloff="4" />
+  </lights>
+</dynamic_object>

@@ -1,30 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local ambush_unit_amount = 1
-local ambush_unit_amount_random = 2 
-
---If we're in Pro Job, then do this stuff below
-if pro_job then
-	--First, replace scripted shields and harassers with titan shields/snipers
-	if difficulty >= 5 then
-		australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
-		titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-	--DS, has Titan cloaker replace scripted escape cloaker and have more units during escape part
-	if difficulty == 8 then
-		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-		ambush_unit_amount = 2
-		ambush_unit_amount_random = 3 
-	end
-end
-
-	if difficulty <= 4 then
-		gas_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-	elseif difficulty == 5 or difficulty == 6 or difficulty == 7 then
-		gas_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-	else
-		gas_dozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-	end
+local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+local gas_dozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc" or (difficulty == 7 or difficulty == 6 or difficulty == 5) and "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 	
 local disabled = {
 	values = {
@@ -39,11 +17,6 @@ local dozer_heli = {
 local tshield = {
 	values = {
         enemy = titan_shield
-	}
-}
-local tsniper = {
-	values = {
-        enemy = australian_sniper
 	}
 }
 return {
@@ -131,33 +104,15 @@ return {
 		end
 	},
 	--Pro Job Stuff
-	--More squad units waiting at the escape on DSPJ
-	[102424] = {
-		values = {
-            amount = ambush_unit_amount,
-			amount_random = ambush_unit_amount_random
-		}
-	},
 	--Titan Cloaker on DSPJ
 	[102409] = {
 		values = {
             enemy = woman_spooc
 		}
 	},
-	--Titan Shields replace regular ones during escape part
+	--Titan Shields replace regular ones during escape part on higher diff
 	[102410] = tshield,
 	[102411] = tshield,
 	[102416] = tshield,
-	[102417] = tshield,
-	--Titan Snipers replace some SWAT Harassers on Pro Jobs
-	[103228] = tsniper,
-	[103234] = tsniper,
-	[103235] = tsniper,
-	[103237] = tsniper,
-	[103839] = tsniper,
-	[103841] = tsniper,
-	[103843] = tsniper,
-	[103845] = tsniper,
-	[103847] = tsniper,
-	[103849] = tsniper
+	[102417] = tshield
 }	

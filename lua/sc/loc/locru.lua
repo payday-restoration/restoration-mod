@@ -462,6 +462,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_lvl_friday"] = "17:00, Торговый центр 'Щит'",
 		["restoration_level_data_skm_nightmare_lvl"] = "Прачечная? Хочешь отмыть грехи?",
 		["restoration_level_data_bluewave"] = "ВРЕМЯ ЗАСЕКРЕЧЕНО, Склад Aurelian",
+		["restoration_level_data_secret_stash"] = "18:00, Заброшенное здание",
+		["restoration_level_data_bridge"] = "22:45, Мост Грин - южная сторона",
+		["restoration_level_data_four_stores_remixed"] = "13:20, Магазины",
 
 
          --custom heists

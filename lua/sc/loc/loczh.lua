@@ -504,6 +504,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",
         ["restoration_level_data_lvl_friday"] = "下午5:00 , 大型购物中心",
         ["restoration_level_data_skm_nightmare_lvl"] = "一家洗衣店？你是来洗脱你的罪恶的吗？",
+		["restoration_level_data_secret_stash"] = "清晨6:00 , 废弃的建筑区",
+		["restoration_level_data_bridge"] = "晚上10:45 , 格林大桥-南桥",
+		["restoration_level_data_four_stores_remixed"] = "下午1:20 , 店面",
 
         -- custom heists
         ["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова",

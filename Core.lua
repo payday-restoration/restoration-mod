@@ -152,6 +152,7 @@ function restoration:Init()
 		watchdogs_1_night = restoration.captain_types.autumn, --Watchdogs Day 1 Night
 		--Custom Heists--
 		alex_1_res = restoration.captain_types.autumn, --Rats Day 1 edit
+		secret_stash = restoration.captain_types.autumn, --undercover-- (Map_Add Edit)
 		lvl_fourmorestores = restoration.captain_types.autumn, --four more stores
 		ukrainian_job_res = restoration.captain_types.autumn, --Ukrainian Job res edit version
 		hntn = restoration.captain_types.autumn, --harvest and trustee north

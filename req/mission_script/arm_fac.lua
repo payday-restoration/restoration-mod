@@ -1,47 +1,11 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local hunt_projob = false
-local gensec_rifle = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"
-local gensec_smg = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2"
-local gensec_dozer = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-
-	--GenSec red dudes are replaced with GenSec SWAT on DW and above
-	if difficulty >= 7 then
-		gensec_rifle = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"
-		gensec_smg = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"	
-	end
-
-	--Proper diff scaling for dozers, also gets rids of ZEAL Dozers in GenSec vans cause elementspawneenemydummy diff scaling moment
-	if difficulty == 5 or difficulty == 6 then
-		gensec_dozer = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"
-	elseif difficulty == 7 or difficulty == 8 then
-		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"	
-	end
-	
-	
-	--If we're in Pro Job, change some of the spawns
-	if pro_job then
-		hunt_projob = true
-	--Skully boy starts to spawn on Mayhem now cause I like placing Skullies like that one map editor man in Reservoir Dogs Day 2
-	if difficulty == 6 then
-		gensec_dozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-	end	
-
-	--FTSU Agents on Mayhem below
-	if difficulty <= 6 then
-		gensec_rifle = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
-		gensec_smg = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
-	end
-end	
+local hunt_projob = pro_job
+local gensec_rifle = ((pro_job and difficulty <= 6) and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty >= 7 and "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
+local gensec_smg = ((pro_job and difficulty <= 6) and "units/payday2/characters/ene_city_guard_2/ene_city_guard_2" or difficulty >= 7 and "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc")
+local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")
+local ponr_value = (difficulty <= 5 and 300 or (difficulty == 6 or difficulty == 7) and 420) or 540
 		
-	--Due to how bag requirements are handled (less on lower diffs, more on high diffs) have less time on lower but more time on higher diffs
-	if difficulty <= 5 then
-		ponr_value = 300
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 420	
-	else
-		ponr_value = 540	
-	end
 local gensec_1 = {
 	values = {
         enemy = gensec_rifle
@@ -56,7 +20,8 @@ local gensec_tank = {
 	values = {
         enemy = gensec_dozer
 	}
-}
+}	
+
 return {
 	--Pro Job PONR+Hunt (Endless assault), triggers when van arrives cause that's better
 	[102982] = {

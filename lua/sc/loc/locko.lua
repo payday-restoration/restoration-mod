@@ -461,6 +461,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_holly"] = "오후 5:00, 로스앤젤레스 - 루카스 맨션",
 		["restoration_level_data_lvl_friday"] = "오후 5:00, 실드 쇼핑몰",
 		["restoration_level_data_skm_nightmare_lvl"] = "세탁소? 너는 너의 죄를 씻기 위해 여기에 왔는가?",
+		["restoration_level_data_secret_stash"] = "오후 6:00, 구역 - 버려진 건물",
+		["restoration_level_data_bridge"] = "오후 10:45, 그린 브릿지 - 남쪽",
+		["restoration_level_data_four_stores_remixed"] = "오후 1:20, 상점 앞",
 
 		--custom heists
 		["restoration_level_data_flatline_lvl"] = "오후 10:26 볼니차 임. Н.И. 피로고프",

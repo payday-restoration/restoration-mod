@@ -476,6 +476,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_lvl_friday"] = "5:00 PM, Shield Mall",
 		["restoration_level_data_skm_nightmare_lvl"] = "A laundromat? Are you here to wash away your sins?",
 		["restoration_level_data_bluewave"] = "TIME CLASSIFIED, Aurelian Warehouse",
+		["restoration_level_data_secret_stash"] = "6:00 PM, The District - Abandoned Building",
+		["restoration_level_data_bridge"] = "10:45 PM, Green Bridge - Southbound",
+		["restoration_level_data_four_stores_remixed"] = "1:20 PM, Storefronts",
 
 		--custom heists
 		["restoration_level_data_flatline_lvl"] = "10:26 PM, Больница им. Н.И. Пирогова", --Flatline

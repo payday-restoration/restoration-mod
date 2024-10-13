@@ -32990,6 +32990,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					total_ammo_mod = -80
 				}
 				self.parts.wpn_fps_pis_korth_body_skill.custom_stats = {
+					ignore_rof_mult_anims = true,
 					rof_mult = 0.3575757,
 					hs_mult = 2,
 					hs_mult_desc = true
@@ -38331,6 +38332,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_lmg_mx63_barrel_short.supported = true
 		self.parts.wpn_fps_lmg_mx63_barrel_short.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_lmg_mx63_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+	end
+
+	if self.parts.wpn_fps_ass_g7_body_main then
 
 	end
 

@@ -1,12 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local ponr_value = (difficulty <= 5 and 650 or (difficulty == 6 or difficulty == 7) and 600) or 550
 
-	if difficulty <= 5 then
-		ponr_value = 650
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 600
-	else
-		ponr_value = 550
-	end
 local responder_table = {
 	responder_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1",
 	responder_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2",

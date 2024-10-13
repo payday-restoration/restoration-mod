@@ -1,30 +1,12 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local zeal_shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
+local zeal_shield = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc")
+local fbi_dudes = (difficulty == 8 and 4) or 3
+local chance_normal = (pro_job and 45) or 25
+local chance_hard = (pro_job and 65) or 50
+local chance_overkill = (pro_job and 80) or 65
 local death_sentence = difficulty == 8
-local fbi_dudes = 3
-local chance_normal = 25
-local chance_hard = 50
-local chance_overkill = 65
-	
-	if difficulty <= 5 then
-		ponr_value = 660	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 630	
-	else
-		ponr_value = 600		
-	end
-
-	if death_sentence then
-		fbi_dudes = 4
-	end	
-		
-	--If we're in Pro Job, do this stuff below
-	if pro_job then
-		chance_normal = 45
-		chance_hard = 65
-		chance_overkill = 80
-	end
+local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600	
 
 return {
 	--Pro Job PONR 

@@ -1,9 +1,5 @@
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local bravos_inbound = false
-
-	if pro_job then	
-		bravos_inbound = true
-	end	
+local bravos_inbound = (pro_job and true) or false
 
 return {
 	--Highlight all remaining goats when Boris arrives

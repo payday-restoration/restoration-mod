@@ -1,12 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local ponr_value = (difficulty <= 5 and 960 or (difficulty == 6 or difficulty == 7) and 930) or 900
 
-	if difficulty <= 5 then
-		ponr_value = 960
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 930
-	else
-		ponr_value = 900	
-	end
 local fbi_access = {
 	pre_func = function (self)
 			if not self._values.SO_access_original then

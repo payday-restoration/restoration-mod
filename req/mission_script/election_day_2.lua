@@ -1,20 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local swat_normal = (pro_job and "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
+local swat_hard = (pro_job and "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")
+local swat_overkill = (pro_job and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+local ponr_value = (difficulty <= 5 and 360 or (difficulty == 6 or difficulty == 7) and 330) or 300
 
-	if difficulty <= 5 then
-		ponr_value = 360	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 330
-	else
-		ponr_value = 300		
-	end
-
---IF we're in Pro Job, then do this stuff below similiar to Big Bank	
-if pro_job then
-	swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
-	swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
-	swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
-end
 local swat_n = {
 	values = {
         enemy = swat_normal

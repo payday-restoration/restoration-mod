@@ -16,7 +16,7 @@ local dave = (marioinatophat_is_in_fwb_chance and "units/pd2_mod_dave/characters
 local vault_guard = (difficulty == 8 and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2") or "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
 local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 	
-local cloaker = {
+local spooc = {
 	values = {
         enemy = cloaker
 	}
@@ -334,9 +334,9 @@ return {
 	[102899] = titan_cloaker,
 	[102903] = titan_cloaker,
 	[102904] = titan_cloaker,
-	[100617] = cloaker,
-	[100618] = cloaker,
-	[103395] = cloaker,
+	[100617] = spooc,
+	[100618] = spooc,
+	[103395] = spooc,
 	[103466] = taser,
 	[103463] = shield,
 	[103465] = swatsg

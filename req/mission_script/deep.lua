@@ -1,9 +1,6 @@
-local timer_achievement = 20
 local solo = Global.game_settings and Global.game_settings.single_player
+local timer_achievement = (solo and 200) or 20
 
-if solo then
-	timer_achievement = 200
-end
 local sniper_trigger_times = {
 	values = {
         trigger_times = 0

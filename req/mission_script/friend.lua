@@ -1,22 +1,9 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local amount_guards = 8
+local amount_guards = (difficulty == 8 and 12) or 8
+local enforcer_guard = (pro_job and "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer")
+local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
 
-	if difficulty <= 5 then
-		ponr_value = 660	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 630	
-	else
-		ponr_value = 600		
-	end
-
-	if difficulty == 8 then	
-		amount_guards = 12
-	end
-	
-	if pro_job then	
-		enforcer_guard = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
-	end
 local mobster_team = {
 	values = {
 		team = "mobster1"

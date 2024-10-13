@@ -1,12 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-	if difficulty <= 5 then
-		ponr_value = 360	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 330
-	else
-		ponr_value = 300	
-	end
+local ponr_value = (difficulty <= 5 and 360 or (difficulty == 6 or difficulty == 7) and 330) or 300
 	
 local low_interval = {
 	values = {

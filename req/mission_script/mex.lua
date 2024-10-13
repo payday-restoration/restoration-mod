@@ -1,14 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local ponr_value = (difficulty <= 5 and 1730 or (difficulty == 6 or difficulty == 7) and 1630) or 1530
 
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value = 1730	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 1630	
-	else
-		ponr_value = 1530	
-	end
-	
 local biker_table = {
 	guard_biker = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1",
 	female_1 = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1",

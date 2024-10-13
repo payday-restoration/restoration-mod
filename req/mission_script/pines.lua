@@ -1,10 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local bravos_inbound = false
-
-       if pro_job then
-		bravos_inbound = true
-       end
+local bravos_inbound = (pro_job and true) or false
 
 return {
 	--Call in Bravos on PJs once Vlad's bro-in law gets to the chopper

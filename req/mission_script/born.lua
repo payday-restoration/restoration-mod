@@ -93,7 +93,7 @@ return {
 	[100920] = guard_biker,
 	--Biker replacements
 	[100254] = guard_biker,
-	[100295] = guard_biker
+	[100295] = guard_biker,
 	[100301] = guard_biker,
 	[100373] = {
 		values = {

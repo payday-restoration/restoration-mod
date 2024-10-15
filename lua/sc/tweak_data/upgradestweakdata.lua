@@ -1438,7 +1438,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.skill_descs.ecm_2x = {
 					skill_value_b1 = tostring(self.values.player.marked_inc_dmg_distance[1][2] % 1 * 100).."%", -- +damage if player position > distance
 					skill_value_b2 = tostring(self.values.player.marked_inc_dmg_distance[1][1]/100), -- distance to get +damage
-					skill_value_p1 = tostring(self.values.player.marked_enemy_damage_mul) -- extra damage on all marked enemies
+					skill_value_p1 = tostring((self.values.player.marked_enemy_damage_mul - 1) * 100).."%" -- extra damage on all marked enemies
 				}
 
 			

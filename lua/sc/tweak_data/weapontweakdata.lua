@@ -17997,6 +17997,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acr_2012.categories = { "assault_rifle" }
 				self.acr_2012.recategorize = { "light_ar" }
 				self.acr_2012.damage_type = "assault_rifle"
+				self.acr_2012.nato = true
 				self.acr_2012.tactical_reload = 1
 				self.acr_2012.fire_mode_data.fire_rate = 0.0833333333
 				self.acr_2012.CLIP_AMMO_MAX = 30
@@ -18083,7 +18084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.categories = { "assault_rifle" }
 				self.m4_usasoc.recategorize = { "heavy_ar" }
 				self.m4_usasoc.damage_type = "assault_rifle"
-				self.m4_usasoc.nato = 1
+				self.m4_usasoc.nato = true
 				self.m4_usasoc.tactical_reload = 1
 				self.m4_usasoc.CLIP_AMMO_MAX = 30
 				self.m4_usasoc.AMMO_MAX = 120
@@ -20109,6 +20110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mx63.recategorize = { "light_mg" }
 				self.mx63.damage_type = "machine_gun"
+				self.mx63.nato = true
 				self.mx63.sms = sms_preset.lmg_48
 				self.mx63.weapon_movement_penalty = sms_preset.lmg_48
 				self.mx63.CLIP_AMMO_MAX = 100

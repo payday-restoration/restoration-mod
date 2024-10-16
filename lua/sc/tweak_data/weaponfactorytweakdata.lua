@@ -2417,8 +2417,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0.012, 2.2, 0.072)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_vecho = {
-				translation = Vector3(0.03, -11.6, -3.13),
-				rotation = Rotation(0, 0, -1.07)
+				translation = Vector3(0.01, -11.6, -3.13),
+				rotation = Rotation(-0.05, 0, -1.07)
 			}
 
 		
@@ -2461,8 +2461,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(-0.01, 6.2, -3.48)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_acr_2012 = {
-				translation = Vector3(0.02, 6.2, -0.578),
-				rotation = Rotation(0.04, 0, 0)
+				translation = Vector3(0.02, 6.2, -0.55),
+				rotation = Rotation(0.04, -0.05, 0)
 			}
 
 	
@@ -2480,7 +2480,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m4_usasoc = {
 				translation = Vector3(-0.005, 5, -0.115),
 			}
-			self.parts.wpn_fps_upg_o_eotech.stance_mod.wpn_fps_ass_tkb0146 = {
+			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_tkb0146 = {
 				translation = Vector3(-0.015, 5.4, -1.206)
 			}
 
@@ -33127,6 +33127,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					translation =  Vector3(0, -40, -3.37)
 				}
 				self.parts.wpn_fps_pis_m1911_body_killer.forbids = {}
+				self.parts.wpn_fps_pis_m1911_body_killer.override.wpn_fps_upg_fl_ass_smg_sho_pointshoot = {
+					stance_mod = {
+						wpn_fps_pis_m1911 = {
+							translation =  Vector3(-4, 40, -13),
+							rotation = Rotation(0, 0, -35)
+						}
+					}
+				}
 	
 				self.parts.wpn_fps_pis_type54_body_wood.supported = true
 				self.parts.wpn_fps_pis_type54_body_wood.stats = { value = 0 }

@@ -18028,6 +18028,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.acr_2012.stats_modifiers = nil
 				self.acr_2012.panic_suppression_chance = 0.05
+				self.acr_2012.timers.reload_empty = 2.58
+				self.acr_2012.timers.reload_exit_empty = 0.7
+				self.acr_2012.timers.reload_not_empty = 1.65
+				self.acr_2012.timers.reload_exit_not_empty = 0.85
 			end
 
 			if self.nova4 then --RJC9000 and Synd1cate's Infinite Warfare NV4
@@ -20174,7 +20178,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g7.stats = {
 					damage = 60,
 					spread = 96,
-					recoil = 51,
+					recoil = 61,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 22,

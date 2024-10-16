@@ -21816,7 +21816,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.02,
 							{0.9, 1},
-							4
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
@@ -21828,7 +21828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.01,
 							{0.9, 1},
-							9
+							4
 						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
@@ -21876,7 +21876,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.02,
 							{0.8, 1.01},
-							9
+							7
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -21888,7 +21888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.0125,
 							{0.8, 1.01},
-							14
+							11
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then
@@ -21900,7 +21900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.016,
 							{0.6, 1},
-							19
+							14
 						}
 					}
 				elseif weap.recategorize[1] == "light_snp" then

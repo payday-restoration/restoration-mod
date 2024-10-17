@@ -17877,11 +17877,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shepheard", "resmod_shepheard", fu
 		40
 	}
 	self.parts.wpn_fps_smg_shepheard_body_short.supported = true
-	self.parts.wpn_fps_smg_shepheard_body_short.stats = {
-		concealment = 1,
-		recoil = -1,
-		value = 2
-	}
+	self.parts.wpn_fps_smg_shepheard_body_short.stats = deep_clone(barrels.short_b1_stats)
+	self.parts.wpn_fps_smg_shepheard_body_short.custom_stats = deep_clone(barrels.short_b1_stats)
 	
 	--Standard Magazine Swap
 	self.parts.wpn_fps_smg_shepheard_mag_standard.unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_extended"

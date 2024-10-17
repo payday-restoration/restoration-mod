@@ -2421,6 +2421,25 @@ ElementSpawnEnemyDummy.faction_mapping = {
 	}
 }
 
+--Temp fix for now, Stealing Xmas doesn't have security 2 loaded and I didn't want to load every generic guard (yet)
+if level_id == "moon" then
+	ElementSpawnEnemyDummy.faction_mapping.america.overkill.security_1 = {
+		"units/payday2/characters/ene_security_1/ene_security_1",
+		"units/payday2/characters/ene_security_3/ene_security_3",
+		"units/payday2/characters/ene_security_4/ene_security_4"
+	}
+	ElementSpawnEnemyDummy.faction_mapping.america.overkill_145.security_1 = {
+		"units/payday2/characters/ene_security_1/ene_security_1",
+		"units/payday2/characters/ene_security_3/ene_security_3",
+		"units/payday2/characters/ene_security_4/ene_security_4"
+	}	
+	ElementSpawnEnemyDummy.faction_mapping.america.easy_wish.security_1 = {
+		"units/payday2/characters/ene_security_1/ene_security_1",
+		"units/payday2/characters/ene_security_3/ene_security_3",
+		"units/payday2/characters/ene_security_4/ene_security_4"
+	}		
+end
+
 ElementSpawnEnemyDummy.faction_mapping.america.normal = ElementSpawnEnemyDummy.faction_mapping.america.overkill
 ElementSpawnEnemyDummy.faction_mapping.america.hard = ElementSpawnEnemyDummy.faction_mapping.america.overkill
 ElementSpawnEnemyDummy.faction_mapping.russia.normal = ElementSpawnEnemyDummy.faction_mapping.russia.overkill

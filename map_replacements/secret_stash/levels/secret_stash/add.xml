@@ -1,0 +1,566 @@
+<table directory="assets">
+	<add path="units/world/architecture/secret_stash/secret_stash_backdrop_1" type="unit">
+		<cooked_physics path="units/world/architecture/secret_stash/secret_stash_backdrop_1" unload="true"/>
+		<material_config path="units/world/architecture/secret_stash/secret_stash_backdrop" unload="true"/>
+		<model path="units/world/architecture/secret_stash/secret_stash_backdrop_1" unload="true"/>
+		<object path="units/world/architecture/secret_stash/secret_stash_backdrop_1" unload="true"/>
+		<unit path="units/world/architecture/secret_stash/secret_stash_backdrop_1" unload="true"/>
+	</add>
+	<add path="units/world/architecture/secret_stash/secret_stash_sky" type="unit">
+		<texture path="units/world/architecture/secret_stash/env_textures/sky_df" unload="true"/>
+		<texture path="units/world/architecture/suburbia/textures/sky2_df" unload="true"/>
+		<cooked_physics path="units/world/architecture/secret_stash/secret_stash_sky" unload="true"/>
+		<material_config path="units/world/architecture/secret_stash/secret_stash_backdrop" unload="true"/>
+		<model path="units/world/architecture/secret_stash/secret_stash_sky" unload="true"/>
+		<object path="units/world/architecture/secret_stash/secret_stash_sky" unload="true"/>
+		<unit path="units/world/architecture/secret_stash/secret_stash_sky" unload="true"/>
+	</add>
+	<add path="environments/skies/sky_pdth_test/sky_pdth_test" type="scene">
+		<material_config load="true" path="environments/skies/sky_pdth_test/sky_pdth_test"/>
+		<model load="true" path="environments/skies/sky_pdth_test/sky_pdth_test"/>
+		<scene load="true" path="environments/skies/sky_pdth_test/sky_pdth_test"/>
+		<texture load="true" path="environments/skies/sky_pdth_test/sky_pdth_test"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/str_prop_street_scaffolding/str_prop_street_scaffolding" type="unit">
+		<material_config path="units/payday2/props/str_prop_street_scaffolding/str_prop_street_scaffolding"/>
+		<object path="units/payday2/props/str_prop_street_scaffolding/str_prop_street_scaffolding"/>
+		<unit path="units/payday2/props/str_prop_street_scaffolding/str_prop_street_scaffolding"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_run/props/run_prop_street_scaf_long_01/run_prop_street_scaf_long_01" type="unit">
+		<material_config path="units/pd2_dlc_run/props/run_prop_street_scaf_long_01/run_prop_street_scaf_long_01"/>
+		<object path="units/pd2_dlc_run/props/run_prop_street_scaf_long_01/run_prop_street_scaf_long_01"/>
+		<unit path="units/pd2_dlc_run/props/run_prop_street_scaf_long_01/run_prop_street_scaf_long_01"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/hospital/props/rooftop/light_red/light_red2" type="unit">
+		<material_config path="units/world/architecture/hospital/props/rooftop/light_red2"/>
+		<object path="units/world/architecture/hospital/props/rooftop/light_red/light_red2"/>
+		<unit path="units/world/architecture/hospital/props/rooftop/light_red/light_red2"/>
+	</add>
+	<add from_db="true" path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_a" type="unit">
+		<material_config path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm"/>
+		<object path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_a"/>
+		<unit path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_a"/>
+	</add>
+	<add from_db="true" path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_b" type="unit">
+		<material_config path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm"/>
+		<object path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_b"/>
+		<unit path="units/payday2/vegetation/str_veg_park_tree_americanelm/str_veg_park_tree_americanelm_b"/>
+	</add>
+	<add from_db="true" path="units/payday2/vegetation/str_veg_forest_tree_b_4/str_veg_forest_tree_b_4" type="unit">
+		<material_config path="units/payday2/vegetation/str_veg_forest_tree_b_4/str_veg_forest_tree_b_4"/>
+		<object path="units/payday2/vegetation/str_veg_forest_tree_b_4/str_veg_forest_tree_b_4"/>
+		<unit path="units/payday2/vegetation/str_veg_forest_tree_b_4/str_veg_forest_tree_b_4"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_icechest/lxa_prop_hobo_icechest" type="unit">
+		<material_config path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_icechest/lxa_prop_hobo_icechest"/>
+		<object path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_icechest/lxa_prop_hobo_icechest"/>
+		<unit path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_icechest/lxa_prop_hobo_icechest"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a" type="unit">
+		<material_config path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_carts"/>
+		<object path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a"/>
+		<unit path="units/pd2_dlc_holly/river/props/lxa_prop_hobo_carts/lxa_prop_hobo_cart_a"/>
+	</add>
+	<add from_db="true" path="units/world/props/oil_stains_decal/oil_stains_decal_01" type="unit">
+		<material_config path="units/world/props/oil_stains_decal/oil_stains_decal"/>
+		<object path="units/world/props/oil_stains_decal/oil_stains_decal_01"/>
+		<unit path="units/world/props/oil_stains_decal/oil_stains_decal_01"/>
+	</add>
+	<add from_db="true" path="units/world/props/oil_stains_decal/oil_stains_decal_02" type="unit">
+		<material_config path="units/world/props/oil_stains_decal/oil_stains_decal"/>
+		<object path="units/world/props/oil_stains_decal/oil_stains_decal_02"/>
+		<unit path="units/world/props/oil_stains_decal/oil_stains_decal_02"/>
+	</add>
+	<add from_db="true" path="units/world/props/oil_stains_decal/oil_stains_decal_03" type="unit">
+		<material_config path="units/world/props/oil_stains_decal/oil_stains_decal"/>
+		<object path="units/world/props/oil_stains_decal/oil_stains_decal_03"/>
+		<unit path="units/world/props/oil_stains_decal/oil_stains_decal_03"/>
+	</add>
+	<add from_db="true" path="units/world/props/diamond_heist/glass_shatter_decal/glass_shatter_decal" type="unit">
+		<material_config path="units/world/props/diamond_heist/glass_shatter_decal/glass_shatter_decal"/>
+		<object path="units/world/props/diamond_heist/glass_shatter_decal/glass_shatter_decal"/>
+		<sequence_manager path="units/world/props/diamond_heist/glass_shatter_decal/glass_shatter_decal"/>
+		<unit path="units/world/props/diamond_heist/glass_shatter_decal/glass_shatter_decal"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_small_puddle" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_small_puddle"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_small_puddle"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_middle_puddle" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_middle_puddle"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_middle_puddle"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_manhole_big" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_manhole_big_io"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_manhole_big"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_manhole_big"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_manhole" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_manhole"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_manhole"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_grate4" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_grate4"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_grate4"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_grate3" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_grates_manhole"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_grate3"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_grate3"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long" type="unit">
+		<material_config path="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io"/>
+		<object path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long"/>
+		<unit path="units/world/architecture/street/decals/ground/decal_ground_asphalt_hole_long"/>
+	</add>
+	<add from_db="true" path="units/pd2_indiana/architecture/mus_int_lab/mus_int_basement_decals_08" type="unit">
+		<material_config path="units/pd2_indiana/architecture/mus_int_lab/mus_int_basement_decals"/>
+		<object path="units/pd2_indiana/architecture/mus_int_lab/mus_int_basement_decals_08"/>
+		<unit path="units/pd2_indiana/architecture/mus_int_lab/mus_int_basement_decals_08"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/props/rvd_prop_storefront_decals/rvd_prop_mercado_decal_01" type="unit">
+		<material_config path="units/pd2_dlc_rvd/props/rvd_prop_storefront_decals/rvd_prop_storefront_decals"/>
+		<object path="units/pd2_dlc_rvd/props/rvd_prop_storefront_decals/rvd_prop_mercado_decal_01"/>
+		<unit path="units/pd2_dlc_rvd/props/rvd_prop_storefront_decals/rvd_prop_mercado_decal_01"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/props/rvd_prop_storage_sign/rvd_prop_storage_decal" type="unit">
+		<material_config path="units/pd2_dlc_rvd/props/rvd_prop_storage_sign/rvd_prop_storage_decal"/>
+		<object path="units/pd2_dlc_rvd/props/rvd_prop_storage_sign/rvd_prop_storage_decal"/>
+		<unit path="units/pd2_dlc_rvd/props/rvd_prop_storage_sign/rvd_prop_storage_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains_chalk" type="unit">
+		<material_config path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+		<object path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains_chalk"/>
+		<unit path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains_chalk"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains" type="unit">
+		<material_config path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+		<object path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains"/>
+		<unit path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_stains"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_big" type="unit">
+		<material_config path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+		<object path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_big"/>
+		<unit path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal_big"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal" type="unit">
+		<material_config path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+		<object path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+		<unit path="units/pd2_dlc_rvd/architecture/rvd_ext/rvd_ground_decal/rvd_ground_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_pex/props/pex_prop_parking_decal/pex_prop_parking_decal_9" type="unit">
+		<material_config path="units/pd2_dlc_pex/props/pex_prop_parking_decal/pex_prop_parking_decal_0"/>
+		<object path="units/pd2_dlc_pex/props/pex_prop_parking_decal/pex_prop_parking_decal_9"/>
+		<unit path="units/pd2_dlc_pex/props/pex_prop_parking_decal/pex_prop_parking_decal_9"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_2m" type="unit">
+		<material_config path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal"/>
+		<object path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_2m"/>
+		<unit path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_2m"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_1m" type="unit">
+		<material_config path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal"/>
+		<object path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_1m"/>
+		<unit path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal_1m"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal" type="unit">
+		<material_config path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal"/>
+		<object path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal"/>
+		<unit path="units/pd2_dlc_pex/architecture/ext/pex_ext_leaking_decal/pex_ext_leaking_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_flat/props/flt_prop_decal_ground/flt_prop_decal_ground_grate4" type="unit">
+		<material_config path="units/pd2_dlc_flat/props/flt_prop_decal_ground/flt_prop_decal_ground_grate4"/>
+		<object path="units/pd2_dlc_flat/props/flt_prop_decal_ground/flt_prop_decal_ground_grate4"/>
+		<unit path="units/pd2_dlc_flat/props/flt_prop_decal_ground/flt_prop_decal_ground_grate4"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_des/props/des_prop_crane_crate/des_prop_crane_crate_no_hooks_no_decals" type="unit">
+		<material_config path="units/pd2_dlc_des/props/des_prop_crane_crate/des_prop_crane_crate"/>
+		<object path="units/pd2_dlc_des/props/des_prop_crane_crate/des_prop_crane_crate_no_hooks_no_decals"/>
+		<sequence_manager path="units/pd2_dlc_des/props/des_prop_crane_crate/des_prop_crane_crate"/>
+		<unit path="units/pd2_dlc_des/props/des_prop_crane_crate/des_prop_crane_crate_no_hooks_no_decals"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_des/architecture/des_decals/des_concrete_decals" type="unit">
+		<material_config path="units/pd2_dlc_des/architecture/des_decals/des_concrete_decals"/>
+		<object path="units/pd2_dlc_des/architecture/des_decals/des_concrete_decals"/>
+		<sequence_manager path="units/pd2_dlc_des/architecture/des_decals/des_concrete_decals"/>
+		<unit path="units/pd2_dlc_des/architecture/des_decals/des_concrete_decals"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_deep/props/deep_prop_whiteboard_spike_amount_decal/deep_prop_whiteboard_spike_amount_decal" type="unit">
+		<object path="units/pd2_dlc_deep/props/deep_prop_whiteboard_spike_amount_decal/deep_prop_whiteboard_spike_amount_decal"/>
+		<sequence_manager path="units/pd2_dlc_deep/props/deep_prop_whiteboard_spike_amount_decal/deep_prop_whiteboard_spike_amount_decal"/>
+		<unit path="units/pd2_dlc_deep/props/deep_prop_whiteboard_spike_amount_decal/deep_prop_whiteboard_spike_amount_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_cro/burnedgravel_decal/burnedgravel_decal" type="unit">
+		<material_config path="units/pd2_dlc_cro/burnedgravel_decal/burnedgravel_decal"/>
+		<object path="units/pd2_dlc_cro/burnedgravel_decal/burnedgravel_decal"/>
+		<unit path="units/pd2_dlc_cro/burnedgravel_decal/burnedgravel_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_cro/metal_scratches_decal/metal_scratches_decal" type="unit">
+		<material_config path="units/pd2_dlc_cro/metal_scratches_decal/metal_scratches_decal"/>
+		<object path="units/pd2_dlc_cro/metal_scratches_decal/metal_scratches_decal"/>
+		<unit path="units/pd2_dlc_cro/metal_scratches_decal/metal_scratches_decal"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_a" type="unit">
+		<material_config path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_a"/>
+		<object path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_a"/>
+		<unit path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_a"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_b" type="unit">
+		<material_config path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_b"/>
+		<object path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_b"/>
+		<unit path="units/pd2_dlc_chill/props/chl_prop_garage_decals/chl_prop_garage_oilspill_b"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/puddle/puddle_7" type="unit">
+		<object path="units/world/brushes/puddle/puddle_7"/>
+		<unit path="units/world/brushes/puddle/puddle_7"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/puddle/puddle_5" type="unit">
+		<object path="units/world/brushes/puddle/puddle_5"/>
+		<unit path="units/world/brushes/puddle/puddle_5"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_answer" type="unit">
+		<material_config path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_answer"/>
+		<object path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_answer"/>
+		<unit path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_answer"/>
+	</add>
+	<add from_db="true" path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_heist" type="unit">
+		<material_config path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_heist"/>
+		<object path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_heist"/>
+		<unit path="units/payday2/props/str_prop_decal_graffiti_clans/str_prop_decal_graffiti_clans_heist"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_zombiedustthrow" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_zombiedustthrow"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_zombiedustthrow"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_zombiedustthrow"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_sp00nerismtag" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_sp00nerismtag"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_sp00nerismtag"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_sp00nerismtag"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_soulspeakertag" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_soulspeakertag"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_soulspeakertag"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_soulspeakertag"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_overkillerpiece" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_overkillerpiece"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_overkillerpiece"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_overkillerpiece"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedtag" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedtag"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedtag"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedtag"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedpiece" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedpiece"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedpiece"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_obedpiece"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_nikopiece" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_nikopiece"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_nikopiece"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_nikopiece"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_mattgetmoneytag" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_mattgetmoneytag"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_mattgetmoneytag"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_mattgetmoneytag"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_isleepherewithahatchet" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_isleepherewithahatchet"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_isleepherewithahatchet"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_isleepherewithahatchet"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_illuminatistencil" type="unit">
+		<material_config path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_illuminatistencil"/>
+		<object path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_illuminatistencil"/>
+		<unit path="units/pd2_dlc1/props/str_prop_alley_graffiti/str_prop_decal_graffitti_illuminatistencil"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_blom" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_blom"/>
+		<unit path="units/world/brushes/tags/brush_tags_blom"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_fat_panda" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_fat_panda"/>
+		<unit path="units/world/brushes/tags/brush_tags_fat_panda"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/tags/brush_tags_was_here" type="unit">
+		<material_config path="units/world/brushes/tags/tags"/>
+		<object path="units/world/brushes/tags/brush_tags_was_here"/>
+		<unit path="units/world/brushes/tags/brush_tags_was_here"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_aeyrs_big"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ansfer_02"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_01"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_e_02"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_eye"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_fife_01"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone" type="unit">
+		<material_config path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush"/>
+		<object path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone"/>
+		<unit path="units/pd2_dlc_spa/brushes/graffiti/spa_props_graffiti_brush_ycone"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_02" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_02"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_05" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_05"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_06" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_06"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_06"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_07" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_07"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_07"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_08" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_08"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_08"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_10" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_10"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_10"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/grafitti/brush_poster_12" type="unit">
+		<material_config path="units/world/brushes/grafitti/grafitti_tag_1"/>
+		<object path="units/world/brushes/grafitti/brush_poster_12"/>
+		<unit path="units/world/brushes/grafitti/brush_poster_12"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d" type="unit">
+		<material_config path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_a"/>
+		<object path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d"/>
+		<unit path="units/payday2/brushes/lxa/lxa_brush_grass_tuft/lxa_brush_grass_tuft_d"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/shoe_marks/shoe_marks_02" type="unit">
+		<material_config path="units/payday2/brushes/shoe_marks/shoe_marks"/>
+		<object path="units/payday2/brushes/shoe_marks/shoe_marks_02"/>
+		<unit path="units/payday2/brushes/shoe_marks/shoe_marks_02"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/shoe_marks/shoe_marks_03" type="unit">
+		<material_config path="units/payday2/brushes/shoe_marks/shoe_marks"/>
+		<object path="units/payday2/brushes/shoe_marks/shoe_marks_03"/>
+		<unit path="units/payday2/brushes/shoe_marks/shoe_marks_03"/>
+	</add>
+	<add from_db="true" path="units/payday2/brushes/str_brush_trash/str_brush_trash_01" type="unit">
+		<material_config path="units/payday2/brushes/str_brush_trash/str_brush_trash"/>
+		<object path="units/payday2/brushes/str_brush_trash/str_brush_trash_01"/>
+		<unit path="units/payday2/brushes/str_brush_trash/str_brush_trash_01"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_fern/pnau_brush_fern_large" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_fern/pnau_brush_fern"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_fern/pnau_brush_fern_large"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_fern/pnau_brush_fern_large"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_foliage_mini/pnau_brush_foliage_mini_f_04" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_foliage_mini/pnau_brush_foliage_mini"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_foliage_mini/pnau_brush_foliage_mini_f_04"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_foliage_mini/pnau_brush_foliage_mini_f_04"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_2" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_2"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_grass/pnau_brush_grass_2"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_b" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_b"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_b"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_a" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_a"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_leafs/pnau_brush_leafs_01_a"/>
+	</add>
+	<add from_db="true" path="units/payday2/nature/pnau/pnau_brush/pnau_brush_rock/pnau_brush_rock_01_b" type="unit">
+		<material_config path="units/payday2/nature/pnau/pnau_brush/pnau_brush_rock/pnau_brush_rock"/>
+		<object path="units/payday2/nature/pnau/pnau_brush/pnau_brush_rock/pnau_brush_rock_01_b"/>
+		<unit path="units/payday2/nature/pnau/pnau_brush/pnau_brush_rock/pnau_brush_rock_01_b"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_a" type="unit">
+		<material_config path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed"/>
+		<object path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_a"/>
+		<unit path="units/pd2_dlc1/brushes/eus_veg_grass_weed/eus_veg_grass_weed_a"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_asphalt3" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_asphalt3"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_asphalt3"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_asphalt3"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_asphalt5" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_asphalt5"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_asphalt5"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_asphalt5"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_metalbar2" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_metalbar2"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_metalbar2"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_metalbar2"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/bridge_small_debris/brush_metalbar4" type="unit">
+		<material_config path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+		<object path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+		<unit path="units/world/brushes/bridge_small_debris/brush_metalbar4"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/card_deck/card" type="unit">
+		<material_config path="units/world/brushes/card_deck/card"/>
+		<object path="units/world/brushes/card_deck/card"/>
+		<unit path="units/world/brushes/card_deck/card"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/concrete_debris/concrete_debris" type="unit">
+		<material_config path="units/world/brushes/concrete_debris/concrete_debris"/>
+		<object path="units/world/brushes/concrete_debris/concrete_debris"/>
+		<unit path="units/world/brushes/concrete_debris/concrete_debris"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/concrete_debris/concrete_debris_small" type="unit">
+		<material_config path="units/world/brushes/concrete_debris/concrete_debris"/>
+		<object path="units/world/brushes/concrete_debris/concrete_debris_small"/>
+		<unit path="units/world/brushes/concrete_debris/concrete_debris_small"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/container_logos/logo_01" type="unit">
+		<material_config path="units/world/brushes/container_logos/container_logos"/>
+		<object path="units/world/brushes/container_logos/logo_01"/>
+		<unit path="units/world/brushes/container_logos/logo_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/container_logos/logo_04" type="unit">
+		<material_config path="units/world/brushes/container_logos/container_logos"/>
+		<object path="units/world/brushes/container_logos/logo_04"/>
+		<unit path="units/world/brushes/container_logos/logo_04"/>
+	</add>
+	<add from_db="true" path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_15" type="unit">
+		<material_config path="units/world/architecture/secret_stash/brushes/secret_stash_brushes"/>
+		<object path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_15"/>
+		<unit path="units/world/architecture/secret_stash/brushes/secret_stash_brush_rubble_15"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_1" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_1"/>
+		<unit path="units/world/brushes/litter/litter_1"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_bin" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_bin"/>
+		<unit path="units/world/brushes/litter/litter_bin"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_big" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_big"/>
+		<unit path="units/world/brushes/litter/litter_big"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/litter/litter_buds" type="unit">
+		<material_config path="units/world/brushes/litter/litter"/>
+		<object path="units/world/brushes/litter/litter_buds"/>
+		<unit path="units/world/brushes/litter/litter_buds"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/brush_text_01" type="unit">
+		<material_config path="units/world/brushes/street_texts/texts"/>
+		<object path="units/world/brushes/street_texts/brush_text_01"/>
+		<unit path="units/world/brushes/street_texts/brush_text_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_01" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_01"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_01"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_02" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_02"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_02"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_06" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_06"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_06"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_03" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_03"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_03"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_04" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_04"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_04"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_05" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_05"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_05"/>
+	</add>
+	<add from_db="true" path="units/world/brushes/street_texts/ghostsign_07" type="unit">
+		<material_config path="units/world/brushes/street_texts/ghostsigns"/>
+		<object path="units/world/brushes/street_texts/ghostsign_07"/>
+		<unit path="units/world/brushes/street_texts/ghostsign_07"/>
+	</add>
+	<add from_db="true" path="units/world/props/nick/nick_speedrun" type="unit">
+		<material_config path="units/world/props/nick/nick_speedrun"/>
+		<object path="units/world/props/nick/nick_speedrun"/>
+		<unit path="units/world/props/nick/nick_speedrun"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_crumbledpaperplate" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_crumbledpaperplate"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_crumbledpaperplate"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_schedule" type="unit">
+		<material_config path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garbage"/>
+		<object path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_schedule"/>
+		<unit path="units/world/vegetation/brushes/train/tra_brush_garbage/tra_brush_garabage_schedule"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/forest/vegetation/vegetation_brush_grass_2_small/vegetation_brush_grass_2_small" type="unit">
+		<material_config path="units/world/vegetation/forest/vegetation/vegetation_brush_grass_2/vegetation_brush_grass_2"/>
+		<object path="units/world/vegetation/forest/vegetation/vegetation_brush_grass_2_small/vegetation_brush_grass_2_small"/>
+		<unit path="units/world/vegetation/forest/vegetation/vegetation_brush_grass_2_small/vegetation_brush_grass_2_small"/>
+	</add>
+	<add from_db="true" path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01" type="unit">
+		<unit path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+		<object path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+		<material_config path="units/world/vegetation/forest/zones/forest/brushes/fst_leaves_01/fst_leaves_01"/>
+	</add>
+	<texture path="environments/cubemaps/cubemap_secret_stash"/>
+</table>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<materials>
+	<material name="sky" render_template="dome_sky">
+		<diffuse_texture file="core/environments/skies/sky_bridge_pdth/background_gradient"/>
+		
+		<variable name="color0" type="vector3" value="1.0 1.0 1.0"/>
+		<variable name="color1" type="vector3" value="1.0 1.0 1.0"/>
+		<variable name="color2" type="vector3" value="1.0 1.0 1.0"/>
+
+		<variable name="dome_sky" type="scalar" value="1"/>
+		
+		<!-- New
+		<variable name="global_sun_dir" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sun" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_a" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_b" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_c" type="vector3" value="1 1 1"/>
+		<variable name="global_fog_color" type="vector3" value="1 1 1"/>
+		-->
+	</material>
+	
+	<material name="cloud_overlay" render_template="dome_clouds">
+		
+		<diffuse_texture file="core/environments/skies/sky_bridge_pdth/cloud_normal_df"/>
+	 	
+		<variable name="uv_velocity_rg_mask" type="vector3" value="1 0 0"/>
+		<variable name="uv_velocity_b_mask" type="vector3" value="1 0 0"/>
+		<variable name="uv_scale_b_mask" type="scalar" value="1"/>
+		
+		<variable name="color_sun" type="vector3" value="0.45 0.35 0.3"/>
+		<variable name="color_opposite_sun" type="vector3" value="1 0 0"/>
+		
+		<variable name="alpha_scale_sun" type="scalar" value="1"/>
+		<variable name="alpha_scale_opposite_sun" type="scalar" value="1"/>
+		
+		<!-- New -->
+		<variable name="global_sun_dir" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sun" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_a" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_b" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sky_c" type="vector3" value="1 1 1"/>
+		
+		<variable name="cloud_mask_clamp" type="scalar" value="1"/>
+		<variable name="cloud_sun_contour" type="scalar" value="1"/>
+		<variable name="cloud_sun_contour_pow" type="scalar" value="1"/>
+		<variable name="cloud_sun_contour_mask_pow" type="scalar" value="1"/>
+		<variable name="cloud_sun_contour_mask_slide" type="scalar" value="1"/>
+
+		<variable name="dome_clouds" type="scalar" value="1"/>
+		
+	</material>
+	
+	<material name="sun" render_template="dome_sun">
+		<variable name="sun_color" type="vector3" value="1 1 1"/> 
+		
+		<!-- New
+		<variable name="global_sun_dir" type="vector3" value="1 1 1"/>
+		<variable name="global_color_sun" type="vector3" value="1 1 1"/>
+		<variable name="sun_core_size" type="scalar" value="0.0005"/>
+		<variable name="sun_core_pow" type="scalar" value="30"/>
+		-->
+	</material>	
+</materials>
+
+<!--
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<materials>
+	<material name="sky" render_template="color_lerp">
+		<diffuse_texture file="core/environments/skies/default/background_gradient"/>
+		<variable name="color0" type="vector3" value="1.0 1.0 1.0"/>
+		<variable name="color1" type="vector3" value="1.0 1.0 1.0"/>
+		<variable name="color2" type="vector3" value="1.0 1.0 1.0"/>
+	</material>
+	
+	<material name="cloud_overlay" render_template="clouds">
+		<diffuse_texture file="core/environments/skies/default/clouds_composite"/>
+		
+		<variable name="uv_velocity_rg_mask" type="vector3" value="0.008 0 0"/>
+		<variable name="uv_velocity_b_mask" type="vector3" value="0.007 0 0"/>
+		<variable name="uv_scale_b_mask" type="scalar" value="1"/>
+
+		<variable name="color_sun" type="vector3" value="0.45 0.35 0.3"/>
+		<variable name="alpha_scale_sun" type="scalar" value="3"/>
+		<variable name="color_opposite_sun" type="vector3" value="0.5 0.5 0.5"/>
+		<variable name="alpha_scale_opposite_sun" type="scalar" value="1"/>
+	</material>
+	
+	<material name="sun" render_template="sun">
+		<diffuse_texture file="core/environments/skies/default/sun"/>
+		<variable name="sun_color" type="vector3" value="1.0 1.0 1.0"/>
+	</material>
+</materials>
+
+-->

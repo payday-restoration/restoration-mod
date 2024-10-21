@@ -4565,7 +4565,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(ap_25) do
 		self[wep_id].armor_piercing_chance = 0.25
 		self[wep_id].has_description = true
-		self[wep_id].desc_id = "bm_ap_armor_20_weapon_sc_desc"
+		self[wep_id].desc_id = "bm_ap_armor_25_weapon_sc_desc"
 	end
 
 	local ap_50 = {
@@ -4583,7 +4583,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(ap_75) do
 		self[wep_id].armor_piercing_chance = 0.75
 		self[wep_id].has_description = true
-		self[wep_id].desc_id = "bm_ap_armor_80_weapon_sc_desc"
+		self[wep_id].desc_id = "bm_ap_armor_75_weapon_sc_desc"
 	end
 
 	--Just fucking put this shit on everything
@@ -7474,7 +7474,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							0.1
 						}
 						self.hailstorm.stats_modifiers = nil
-						--self.hailstorm.sounds.no_fix = true
+						self.hailstorm.sounds.fire_auto = "hailstorm_fire"
+						self.hailstorm.sounds.fire = "hailstorm_fire"
+						self.hailstorm.sounds.fire_single = "hailstorm_fire"
+						self.hailstorm.sounds.fire_volley = "hailstorm_shotgun_fire_single"
 						self.hailstorm.reload_speed_multiplier = 0.85
 						self.hailstorm.panic_suppression_chance = 0.05
 						self.hailstorm.timers.reload_exit_empty = 0.08
@@ -12107,11 +12110,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.supernova.fire_rate_multiplier = 0.975
 						self.supernova.alt_fire_data = {
 							fire_rate = 0.3874998,
-							range_mul = 0.45,
+							range_mul = 0.55,
 							spread_mul = 3,
 							damage_mul = 1,
 							shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug",
-							recoil_mul = 1.25,
+							recoil_mul = 1.2,
 							animations = {
 								fire_steelsight = "recoil_steelsight_alt",
 								fire = "recoil_alt"
@@ -17376,7 +17379,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				table.insert(self.cssdeagle.categories, "cs_spread")
 				self.cssdeagle.recategorize = {"heavy_pis"}
 				self.cssdeagle.damage_type = "handcannon"
-				self.cssdeagle.desc_id = "bm_ap_armor_80_weapon_sc_desc"
+				self.cssdeagle.desc_id = "bm_ap_armor_75_weapon_sc_desc"
 				self.cssdeagle.has_description = true
 				self.cssdeagle.object_damage_mult = 1.2
 				self.cssdeagle.AMMO_MAX = 20
@@ -17994,6 +17997,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.acr_2012.categories = { "assault_rifle" }
 				self.acr_2012.recategorize = { "light_ar" }
 				self.acr_2012.damage_type = "assault_rifle"
+				self.acr_2012.nato = true
 				self.acr_2012.tactical_reload = 1
 				self.acr_2012.fire_mode_data.fire_rate = 0.0833333333
 				self.acr_2012.CLIP_AMMO_MAX = 30
@@ -18025,6 +18029,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.acr_2012.stats_modifiers = nil
 				self.acr_2012.panic_suppression_chance = 0.05
+				self.acr_2012.timers.reload_empty = 2.58
+				self.acr_2012.timers.reload_exit_empty = 0.7
+				self.acr_2012.timers.reload_not_empty = 1.65
+				self.acr_2012.timers.reload_exit_not_empty = 0.85
 			end
 
 			if self.nova4 then --RJC9000 and Synd1cate's Infinite Warfare NV4
@@ -18076,7 +18084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.categories = { "assault_rifle" }
 				self.m4_usasoc.recategorize = { "heavy_ar" }
 				self.m4_usasoc.damage_type = "assault_rifle"
-				self.m4_usasoc.nato = 1
+				self.m4_usasoc.nato = true
 				self.m4_usasoc.tactical_reload = 1
 				self.m4_usasoc.CLIP_AMMO_MAX = 30
 				self.m4_usasoc.AMMO_MAX = 120
@@ -20047,6 +20055,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fik22.timers.reload_exit_not_empty = 0.8
 			end
 
+			if self.ar2 then
+				self.ar2.categories = { 
+					"assault_rifle"
+				}
+				self.ar2.recategorize = {"light_ar"}
+				self.ar2.damage_type = "assault_rifle"
+				self.ar2.CLIP_AMMO_MAX = 30
+				self.ar2.AMMO_MAX = 150
+				self.ar2.fire_mode_data.fire_rate = 0.1
+				self.ar2.CAN_TOGGLE_FIREMODE = false
+				self.ar2.FIRE_MODE = "auto"
+				self.ar2.kick = self.stat_info.kick_tables.even_recoil
+				self.ar2.supported = true
+				self.ar2.ads_speed = 0.200
+				self.ar2.damage_falloff = {
+					start_dist = 1400,
+					end_dist = 4900,
+					min_mult = 0.41667
+				}
+				self.ar2.stats = {
+					damage = 24,
+					spread = 71,
+					recoil = 97,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 4,
+					reload = 20
+				}
+				self.ar2.stats_modifiers = nil
+				self.ar2.panic_suppression_chance = 0.05
+				self.ar2.trail_effect = "effects/payday2/particles/weapons/hailstorm_streak"
+				self.ar2.recoil_values = {
+					{ 80, 60 },
+					7.5,
+					0.6,
+					srm = {
+						-0.3,
+						{1, 3},
+						2
+					}
+				}
+			end
+
 			if self.mx63 then
 				self.mx63.categories = {
 					"lmg",
@@ -20054,6 +20110,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mx63.recategorize = { "light_mg" }
 				self.mx63.damage_type = "machine_gun"
+				self.mx63.nato = true
 				self.mx63.sms = sms_preset.lmg_48
 				self.mx63.weapon_movement_penalty = sms_preset.lmg_48
 				self.mx63.CLIP_AMMO_MAX = 100
@@ -20097,6 +20154,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mx63.timers.reload_exit_empty = 0.72
 				self.mx63.timers.reload_not_empty = 4.18
 				self.mx63.timers.reload_exit_not_empty = 1
+			end
+
+			if self.g7 then
+				self.g7.categories = { 
+					"assault_rifle",
+					"dmr_h"
+				}
+				self.g7.recategorize = {"dmr_ar"}
+				self.g7.damage_type = "sniper"
+				self.g7.tactical_reload = 1
+				self.g7.CLIP_AMMO_MAX = 20
+				self.g7.AMMO_MAX = 60
+				self.g7.fire_mode_data.fire_rate = 0.238095
+				self.g7.CAN_TOGGLE_FIREMODE = false
+				self.g7.FIRE_MODE = "single"
+				self.g7.kick = self.stat_info.kick_tables.vertical_kick
+				self.g7.supported = true
+				self.g7.ads_speed = 0.320
+				self.g7.damage_falloff = {
+					start_dist = 3300,
+					end_dist = 7500,
+					min_mult = 0.4
+				}
+				self.g7.stats = {
+					damage = 60,
+					spread = 96,
+					recoil = 61,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 200,
+					value = 4,
+					reload = 20
+				}
+				self.g7.stats_modifiers = nil
+				self.g7.panic_suppression_chance = 0.05	
+				self.g7.timers.reload_not_empty = 1.65
+				self.g7.timers.reload_exit_not_empty = 0.58
+				self.g7.timers.reload_empty = 2.35
+				self.g7.timers.reload_exit_empty = 0.5
 			end
 
 		--Predator Pack
@@ -21716,7 +21816,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.02,
 							{0.9, 1},
-							4
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
@@ -21728,7 +21828,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.01,
 							{0.9, 1},
-							9
+							4
 						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
@@ -21776,7 +21876,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.02,
 							{0.8, 1.01},
-							9
+							7
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -21788,7 +21888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.0125,
 							{0.8, 1.01},
-							14
+							11
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then
@@ -21800,7 +21900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							0.016,
 							{0.6, 1},
-							19
+							14
 						}
 					}
 				elseif weap.recategorize[1] == "light_snp" then

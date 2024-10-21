@@ -1,16 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-	
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value_1 = 1560
-		ponr_value_2 = 840
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value_1 = 1530
-		ponr_value_2 = 810
-	else
-		ponr_value_1 = 1500
-		ponr_value_2 = 780
-	end
+local ponr_value_1 = (difficulty <= 5 and 1560 or (difficulty == 6 or difficulty == 7) and 1530) or 1500
+local ponr_value_2 = (difficulty <= 5 and 840 or (difficulty == 6 or difficulty == 7) and 810) or 780
 	
 local sniper_trigger_times = {
 	values = {

@@ -367,6 +367,9 @@
 	<model				path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
+
+	<unit				path="units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" force="false" load="true"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted_husk" force="false" load="true"/>
 	
 		
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_snp_df" force="false"/>			

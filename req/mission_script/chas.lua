@@ -1,24 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_dozer = 75
-local hunt_projob = false
-
---If we're in Pro Job, then do this stuff below
-	if pro_job then
-		hunt_projob = true
-	end
-	
-	if difficulty == 8 then
-		chance_dozer = 100
-	end
-
-	if difficulty <= 5 then
-		ponr_value = 540	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 480	
-	else
-		ponr_value = 420	
-	end
+local chance_dozer = (difficulty == 8 and 100) or 75
+local hunt_projob = pro_job
+local ponr_value = (difficulty <= 5 and 540 or (difficulty == 6 or difficulty == 7) and 480) or 420
 
 local enable = {
 	values = {

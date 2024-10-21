@@ -1,12 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-	--OMNIA Crewman on DS
-	if difficulty == 8 then
-		omnia_crewman_1 = "units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew"
-		omnia_crewman_2 = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2"
-		omnia_sniper_1 = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper"
-		omnia_sniper_2 = "units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2"
-	end
+local omnia_crewman_1 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew")
+local omnia_crewman_1 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2")
+local omnia_sniper_1 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper")
+local omnia_sniper_2 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2")
 
 local o_sniper_1 = {
 	values = {

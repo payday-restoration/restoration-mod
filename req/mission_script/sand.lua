@@ -1,38 +1,18 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down 
-local dozer_ambush_chance_ovk = 50
-local dozer_ambush_chance_dw = 65
-local dozer_ambush_chance_ds = 80
-local bravos_inbound = false
-local hunt_projob = false
+local dozer_ambush_chance_ovk = (pro_job and 70) or 50
+local dozer_ambush_chance_dw = (pro_job and 80) or 65
+local dozer_ambush_chance_ds = (pro_job and 100) or 80
+local bravos_inbound = (pro_job and true) or false
+local hunt_projob = pro_job
 local ponr_timer = 360
-local random_dozer = 1
-local boat_timer = 120
-	
-	if pro_job then
-		boat_timer = 180
-		max_diff = 1
-		bravos_inbound = true
-		hunt_projob = true
-		random_dozer = 2
-		dozer_ambush_chance_ovk = 70
-		dozer_ambush_chance_dw = 80
-		dozer_ambush_chance_ds = 100
-	end
+local random_dozer = (pro_job and 2) or 1
+local boat_timer = (pro_job and 180) or 120
+local max_diff = (pro_job and 1)
 	
 local participate_to_groupai = {
 	values = {
         participate_to_group_ai = true
-	}
-}	
-local dozer_1 = {
-	values = {
-        enemy = dozer_1
-	}
-}
-local dozer_2 = {
-	values = {
-        enemy = dozer_2
 	}
 }	
 return {

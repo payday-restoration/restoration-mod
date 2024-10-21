@@ -1,13 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value = 1080
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 1050	
-	else
-		ponr_value = 1020	
-	end
+local ponr_value = (difficulty <= 5 and 1080 or (difficulty == 6 or difficulty == 7) 1050) or 1020
 
 --set up the murky bravo guards via table so it will look clean and cool
 local guard_replacement = {

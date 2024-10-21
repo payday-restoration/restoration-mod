@@ -1,6 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local sosa_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local sosa_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
 local death_sentence = difficulty == 8
 
 local optsLieutenant = {

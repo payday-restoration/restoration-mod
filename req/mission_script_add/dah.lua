@@ -1,55 +1,23 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
-local swat_rifle = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"
-local swat_shotgun = "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"
-local swat_smg = "units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"
-local swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"
-local swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.065 * difficulty
+local oops_all_titan_snipers = math.random() < 0.2
+local shield = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
+local sniper = ((difficulty == 8 and pro_job and oops_all_titan_snipers) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
+local swat_rifle = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1") or "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"
+local swat_shotgun = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2") or "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"
+local swat_smg = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3") or "units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"
+local swat_heavy_rifle = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"
+local swat_heavy_shotgun = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local taser = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8
 local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
 local enabled_chance_helipad_dozer = math.random() < diff_scaling
-	
-	if difficulty == 6 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"
-		swat_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"
-		swat_smg = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-		swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
-	elseif difficulty == 7 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
-		swat_rifle = "units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"
-		swat_shotgun = "units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"
-		swat_smg = "units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"
-		swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"
-		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
-	elseif difficulty == 8 then
-		--PD3 styled heavy only squad xd
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-		swat_rifle = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-		swat_smg = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_heavy_rifle = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_heavy_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-	end
-	
-	if pro_job and difficulty == 8 then
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-	end
 
 local optsCloaker = {
     enemy = cloaker,
@@ -257,25 +225,57 @@ local optsCloaker_SO = {
 	interval = 2,
     so_action = "AI_hunt"
 }
-local optsrespawn_taser_and_shields_1 = {
+local optsrespawn_taser_1 = {
 	on_executed = { 
-		{ id = 400047, delay = 45 },
-		{ id = 400048, delay = 46 },
-		{ id = 400049, delay = 47 }
+		{ id = 400047, delay = 45 }
 	},
 	elements = { 
 		400047
 	},
     event = "death"
 }
-local optsrespawn_taser_and_shields_2 = {
+local optsrespawn_shield_1 = {
 	on_executed = { 
-		{ id = 400053, delay = 47 },
-		{ id = 400054, delay = 46 },
-		{ id = 400055, delay = 45 }
+		{ id = 400048, delay = 45 }
+	},
+	elements = { 
+		400048
+	},
+    event = "death"
+}
+local optsrespawn_shield_2 = {
+	on_executed = { 
+		{ id = 400049, delay = 45 }
+	},
+	elements = { 
+		400049
+	},
+    event = "death"
+}
+local optsrespawn_taser_2 = {
+	on_executed = { 
+		{ id = 400053, delay = 45 }
 	},
 	elements = { 
 		400053
+	},
+    event = "death"
+}
+local optsrespawn_shield_3 = {
+	on_executed = { 
+		{ id = 400054, delay = 45 }
+	},
+	elements = { 
+		400054
+	},
+    event = "death"
+}
+local optsrespawn_shield_4 = {
+	on_executed = { 
+		{ id = 400055, delay = 45 }
+	},
+	elements = { 
+		400055
 	},
     event = "death"
 }
@@ -754,17 +754,45 @@ return {
 		--Respawns
 		restoration:gen_dummytrigger(
             400064,
-            "respawn_the_blockade_1",
+            "respawn_taser_1",
             Vector3(-2400, -3677, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_1
+            optsrespawn_taser_1
         ),
 		restoration:gen_dummytrigger(
             400065,
-            "respawn_the_blockade_2",
+            "respawn_taser_2",
             Vector3(-2400, -3577, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_2
+            optsrespawn_taser_2
+        ),
+        restoration:gen_dummytrigger(
+            400082,
+            "respawn_shield_1",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_1
+        ),
+		restoration:gen_dummytrigger(
+            400083,
+            "respawn_shield_2",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_2
+        ),
+        restoration:gen_dummytrigger(
+            400084,
+            "respawn_shield_3",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_3
+        ),
+		restoration:gen_dummytrigger(
+            400085,
+            "respawn_shield_4",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_4
         ),
 		--Helipad blockade
 		restoration:gen_dummy(

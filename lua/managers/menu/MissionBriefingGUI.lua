@@ -439,11 +439,11 @@ if restoration.Options:GetValue("HUD/UI/Loadouts") then
 				x = 10,
 				name = "mutator_text_" .. tostring(mutator:id()),
 				font = tweak_data.menu.small_font,
-				font_size = tweak_data.menu.pd2_small_font_size + 4,
+				font_size = 14,
 				text = text,
 				y = _y,
 				w = self._panel:w() - 5,
-				h = tweak_data.menu.pd2_small_font_size + 4,
+				h = 14,
 				color = tweak_data.screen_colors.text
 			})
 			local _, _, w, h = mutator_text:text_rect()

@@ -1,3 +1,6 @@
+--So no vanilla CSs are still active, and with all the changes made compared to old versions it's gotta be done
+CrimeSpreeManager.CS_VERSION = 69
+
 -- Reset secured bags on mission start (vanilla doesn't clear this so it displays wrong in the HUD)
 Hooks:PreHook(CrimeSpreeManager, "on_mission_started", "sh_on_mission_started", function (self)
 	if self:is_active() then

@@ -727,14 +727,6 @@ Hooks:OverrideFunction(CopActionHurt, "_upd_sick", function (self, t)
 	end
 end)
 
--- Fix crash with enemies trying to shoot their guns when they no longer have them
-Hooks:PreHook(CopActionHurt, "_upd_hurt", "sh__upd_hurt", function (self)
-	if self._shooting_hurt and not alive(self._weapon_unit) then
-		self._weapon_unit = false
-		self._shooting_hurt = false
-	end
-end)
-
 
 function CopActionHurt:_upd_bleedout(t)
 	if self._floor_normal then

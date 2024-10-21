@@ -1,28 +1,12 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local ponr_value = (difficulty <= 6 and 120) or 90
+local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local cop_sg = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"
-
-	--PDTH's styled PONR, run faster
-	if difficulty <= 5 then
-		ponr_value = 120
-	else
-		ponr_value = 90
-	end
-
---If we're in Pro Job, do this stuff below
-if pro_job and difficulty >= 5 then
-	titan_shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	australian_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
-end
 
 local tshield = {
 	values = {
         enemy = titan_shield
-	}
-}
-local tsniper = {
-	values = {
-        enemy = australian_sniper
 	}
 }
 local disabled = {
@@ -262,9 +246,6 @@ return {
 			end
 		end
 	},
-	--Replace some Rooftop SWATs with Titan Snipers on Overkill-DS PJ
-	[101735] = tsniper,
-	[101733] = tsniper,
 	--Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
 	[100036] = tshield,
 	[100039] = tshield,

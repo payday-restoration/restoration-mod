@@ -393,6 +393,9 @@
 	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
 
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted_husk" force="false" load="true"/>
+
 	<texture			path="units/pd2_mod_sharks/characters/ene_titan_sniper/leaves_df" />	
 	<texture			path="units/pd2_mod_sharks/characters/ene_titan_sniper/leaves_op" />	
 	<texture			path="units/pd2_mod_sharks/characters/ene_titan_sniper/body_df" />	

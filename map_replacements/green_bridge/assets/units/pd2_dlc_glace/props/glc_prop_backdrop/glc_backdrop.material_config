@@ -1,0 +1,62 @@
+<materials version="3">
+    <material name="backdrop_scrapers_night" render_template="generic:DIFFUSE_TEXTURE:RL_BACKDROP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/world/architecture/backdrops/scrapers/night/backdrop_scrapers_night_bridge_df"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="units/world/architecture/backdrops/scrapers/night/backdrop_scrapers_night_bridge_df"/>
+    </material>
+    <material name="traffic" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/backdrops/scrapers/night/backdrop_scrapers_night_traffic_df"/>
+        <variable value="streetlight" type="scalar" name="intensity"/>
+    </material>
+    <material name="cars" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM" version="2">
+        <diffuse_texture file="units/world/architecture/backdrops/scrapers/night/backdrop_scrapers_night_cars_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="0.050000000745058 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="backdrop" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_harbour_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="mul" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_harbour_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="ground" render_template="generic:DIFFUSE_TEXTURE:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_harbour_df"/>
+    </material>
+    <material name="bridge" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="0.9 0.101 1.3" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="bridge_transp" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF" version="2">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_transp_df"/>
+        <variable value="0.25" type="scalar" name="alpha_ref"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" decal_material="concrete" version="2" name="ground_bridge_blend">
+        <diffuse_texture file="units/world/architecture/bridge/bridge_ground_blend_df"/>
+        <diffuse_layer0_texture file="units/world/architecture/bridge/bridge_ground_df"/>
+        <bump_normal_texture file="units/world/architecture/bridge/bridge_ground_nm"/>
+        <diffuse_layer1_texture file="units/world/architecture/bridge/bridge_ground_mask_df"/>
+    </material>
+    <material name="ground_decals" render_template="decal:DIFFUSE_TEXTURE:OPACITY_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/street/ground/ground_lines_df"/>
+        <opacity_texture file="units/world/architecture/street/ground/ground_lines_op"/>
+    </material>
+    <material name="rebar_cross" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP">
+        <bump_normal_texture file="units/world/architecture/bridge/rebar_cross_nm"/>
+        <diffuse_texture file="units/world/architecture/bridge/rebar_cross_df"/>
+        <variable value="0.22100001573563" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="water" render_template="generic:CUBE_ENVIRONMENT_MAPPING:CUBE_ENVIRONMENT_MAPPING_WATER:DIFFUSE_TEXTURE:RL_BACKDROP:WATER_BIG" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable value="0.5 1.6345999240875 0" type="vector3" name="water_settings_c"/>
+        <variable value="0.029999999329448 0 0.096000000834465" type="vector3" name="water_settings_b"/>
+        <bump_normal_texture file="units/world/water/water_2_nm"/>
+        <variable value="0.030944866836071 0.037244071960449 0.025016193985939" type="vector3" name="water_color_a"/>
+        <variable value="0.040032432675362 0.04522002607584 0.064488203525543" type="vector3" name="water_color_b"/>
+        <variable value="0.70000004768372 1.2000000476837 0" type="vector3" name="water_settings"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_street_wet_df" type="cubemap"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

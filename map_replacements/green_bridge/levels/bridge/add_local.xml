@@ -1,0 +1,52 @@
+<table>
+	<world path="world" script_data_type="binary"/>
+	<continents path="continents" script_data_type="binary"/>
+	<mission path="mission" script_data_type="binary"/>
+	<nav_data path="nav_manager_data" script_data_type="binary"/>
+	<world_sounds path="world_sounds" script_data_type="binary"/>
+	<world_cameras path="world_cameras" script_data_type="binary"/>
+	<massunit path="massunit" reload="true"/>
+	<continent path="level_art/level_art" script_data_type="binary"/>
+	<mission path="level_art/level_art" script_data_type="binary"/>
+	<continent path="editor_only/editor_only" script_data_type="binary"/>
+	<mission path="editor_only/editor_only" script_data_type="binary"/>
+	<continent path="backdrop/backdrop" script_data_type="binary"/>
+	<mission path="backdrop/backdrop" script_data_type="binary"/>
+	<continent path="world/world" script_data_type="binary"/>
+	<mission path="world/world" script_data_type="binary"/>
+	<continent path="env/env" script_data_type="binary"/>
+	<mission path="env/env" script_data_type="binary"/>
+	<cover_data path="cover_data" script_data_type="binary"/>
+	<environment path="environments/glace_outdoor_remix_v2_noeffects" script_data_type="custom_xml"/>
+	<environment path="environments/glace_outdoor_remix_v2" script_data_type="custom_xml"/>
+	<texture path="cube_lights/100454"/>
+	<texture path="cube_lights/300034"/>
+	<texture path="cube_lights/300038"/>
+	<texture path="cube_lights/300033"/>
+	<texture path="cube_lights/300035"/>
+	<texture path="cube_lights/300031"/>
+	<texture path="cube_lights/300029"/>
+	<texture path="cube_lights/300134"/>
+	<texture path="cube_lights/300069"/>
+	<texture path="cube_lights/300082"/>
+	<texture path="cube_lights/300006"/>
+	<texture path="cube_lights/300010"/>
+	<texture path="cube_lights/300005"/>
+	<texture path="cube_lights/300026"/>
+	<texture path="cube_lights/300030"/>
+	<texture path="cube_lights/300000"/>
+	<texture path="cube_lights/300032"/>
+	<texture path="cube_lights/300003"/>
+	<texture path="cube_lights/300060"/>
+	<texture path="cube_lights/100091"/>
+	<texture path="cube_lights/300103"/>
+	<texture path="cube_lights/100439"/>
+	<texture path="cube_lights/300133"/>
+	<texture path="cube_lights/300141"/>
+	<texture path="cube_lights/300007"/>
+	<environment path="environments/glace_tower_int_remix" script_data_type="custom_xml"/>
+	<environment path="environments/glace_tower_remix" script_data_type="custom_xml"/>
+	<environment path="environments/pdth_sky_test" script_data_type="custom_xml"/>
+	<environment path="environments/glace_outdoor_remix" script_data_type="custom_xml"/>
+	<texture path="cube_lights/dome_occlusion"/>
+</table>

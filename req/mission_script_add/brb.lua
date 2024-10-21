@@ -1,10 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local murky_shield = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"
-local murky_rifle = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"
-local murky_shotgun = "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"
-local murky_smg = "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
-local murky_heavy_rifle = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
-local murky_heavy_shotgun = "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
+local murky_shield = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" or (difficulty == 7 or difficulty == 6)and "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city" or difficulty == 5 or difficulty == 4 and "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi") or "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"
+local murky_rifle = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1" or difficulty == 5 or difficulty == 4 and "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") or "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"
+local murky_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" or difficulty == 5 or difficulty == 4 and "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2") or "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"
+local murky_smg = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" or difficulty == 5 or difficulty == 4 and "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3") or "units/pd2_mod_sharks/characters/ene_swat_3/ene_swat_3"
+local murky_heavy_rifle = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1") or "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+local murky_heavy_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" or (difficulty == 7 or difficulty == 6 or difficulty == 5 or difficulty == 4) and "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870") or "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 local murky_tank = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli") or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 local murky_tank_black = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
 local murky_tank_skull = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
@@ -13,35 +13,7 @@ local murky_cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
-local dozer_incoming = "Play_ban_s02_a"
-
-	if difficulty >= 5 then
-		dozer_incoming = "Play_ban_s02_b"
-	end
 	
-	if difficulty == 4 or difficulty == 5 then
-		murky_shield = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"
-		murky_rifle = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
-		murky_shotgun = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
-		murky_smg = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-		murky_heavy_rifle = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-		murky_heavy_shotgun = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty == 6 or difficulty == 7 then
-		murky_shield = "units/pd2_mod_sharks/characters/ene_murky_shield_city/ene_murky_shield_city"
-		murky_rifle = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"
-		murky_shotgun = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"
-		murky_smg = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"
-		murky_heavy_rifle = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-		murky_heavy_shotgun = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-	elseif difficulty == 8 then
-		murky_shield = "units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"
-		murky_rifle = "units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1"
-		murky_shotgun = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"
-		murky_smg = "units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"
-		murky_heavy_rifle = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"
-		murky_heavy_shotgun = "units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
-	end
-
 local optsSWAT_Rifle = {
     enemy = murky_rifle,
 	participate_to_group_ai = true,
@@ -84,9 +56,6 @@ local optsShield = {
 }
 local optsBulldozer = {
     enemy = murky_tank,
-	on_executed = { 
-		{ id = 400041, delay = 0 }
-	},
 	participate_to_group_ai = true,
     enabled = hard_above
 }
@@ -177,7 +146,7 @@ local optsrespawn_murkies_cloakers = {
 }
 local optsrespawn_murky_dozer_1 = {
 	on_executed = { 
-		{ id = 400013, delay = 90 }
+		{ id = 400013, delay = 150 }
 	},
 	elements = { 
 		400013
@@ -186,7 +155,7 @@ local optsrespawn_murky_dozer_1 = {
 }
 local optsrespawn_murky_dozer_2 = {
 	on_executed = { 
-		{ id = 400014, delay = 90 }
+		{ id = 400014, delay = 150 }
 	},
 	elements = { 
 		400014
@@ -195,7 +164,7 @@ local optsrespawn_murky_dozer_2 = {
 }
 local optsrespawn_murky_dozer_3 = {
 	on_executed = { 
-		{ id = 400026, delay = 90 }
+		{ id = 400026, delay = 150 }
 	},
 	elements = { 
 		400026
@@ -236,11 +205,6 @@ local global_murky_spawn_mission_script = {
 		{ id = 400030, delay = 120 },
 		{ id = 400031, delay = 120 }
 	}
-}
-local Bain_senddozers = {
-	dialogue = dozer_incoming,
-	trigger_times = 1,
-	can_not_be_muted = true
 }
 
 return {
@@ -525,11 +489,6 @@ return {
             Vector3(-2400, -3677, 375),
             Rotation(90, -0, -0),
             optsrespawn_murky_dozer_3
-        ),
-		restoration:gen_dialogue(
-            400041,
-            "they_sending_dozers",
-            Bain_senddozers
         )
     }
 }

@@ -1,24 +1,9 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local spooc_amount = 1
-
-if pro_job then
-	if difficulty == 8 then
-		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-		spooc_amount = 2
-	end
-	if difficulty >= 4 then
-		bravo_dozer = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
-	end
-end	
-	
-	if difficulty <= 5 then
-		ponr_value = 600
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 570	
-	else
-		ponr_value = 540	
-	end
+local spooc_amount = (difficulty == 8 and 2) or 1
+local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+local bravo_dozer = ((difficulty >= 4 and pro_job) and "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer")
+local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 	
 local tcloaker = {
 	values = {

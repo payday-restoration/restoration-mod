@@ -1,13 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-	
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value = 1260	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 1230
-	else
-		ponr_value = 1200	
-	end
+local ponr_value = (difficulty <= 5 and 1260 or (difficulty == 6 or difficulty == 7) and 1230) or 1200
+
 local murky_table = {
 	elite_guard_1 = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
 	elite_guard_2 = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",

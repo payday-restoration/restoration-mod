@@ -1,16 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-	--Two PONR timers due to diffrient routes
-	if difficulty <= 5 then
-		ponr_value_1 = 960
-		ponr_value_2 = 600
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value_1 = 930
-		ponr_value_2 = 570
-	else
-		ponr_value_1 = 900
-		ponr_value_2 = 540
-	end
+local ponr_value_1 = (difficulty <= 5 and 960 or (difficulty == 6 or difficulty == 7) and 930) or 900
+local ponr_value_2 = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 
 local ponr_timer_player_mul = {
 		1,

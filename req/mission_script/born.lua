@@ -1,12 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
 
-	if difficulty <= 5 then
-		ponr_value = 660	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 630
-	else
-		ponr_value = 600	
-	end
 local fbi_access = {
 	pre_func = function (self)
 			if not self._values.SO_access_original then
@@ -15,7 +9,11 @@ local fbi_access = {
 			end
 		end
 }	
-
+local guard_biker = {
+	values = {
+         enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+	}
+}
 return {
 	--Pro Job PONR 
 	--kill the loop
@@ -92,27 +90,11 @@ return {
 		}
 	},
 	--Have Vest Biker beat up Mike
-	[100920] = {
-		values = {
-			enemy = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
-		}
-	},
+	[100920] = guard_biker,
 	--Biker replacements
-	[100254] = {
-		values = {
-			enemy =  "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
-		}
-	},
-	[100295] = {
-		values = {
-			enemy =  "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
-		}
-	},
-	[100301] = {
-		values = {
-			enemy =  "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
-		}
-	},
+	[100254] = guard_biker,
+	[100295] = guard_biker,
+	[100301] = guard_biker,
 	[100373] = {
 		values = {
 			enemy = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1"

@@ -1,0 +1,11 @@
+<unit type="glc" slot="1">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_glace/props/glc_prop_bridge_lamp_lamppost/glc_prop_bridge_lamp_lamppost" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/flares/indoor_lamp_v6" />
+	</dependencies>
+</unit>

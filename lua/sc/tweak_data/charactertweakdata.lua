@@ -941,6 +941,17 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.no_asu = true
 	self.heavy_swat_sniper.marshal_logic = true
 	self.heavy_swat_sniper.heal_cooldown = 2.5
+
+	--Titan Sniper (Scripted, used only as regular sniper chance replacment for DS)
+	self.heavy_swat_sniper_scripted = deep_clone(self.heavy_swat_sniper)
+	self.heavy_swat_sniper_scripted.marshal_logic = false
+	self.heavy_swat_sniper_scripted.chatter = presets.enemy_chatter.no_chatter
+	self.heavy_swat_sniper_scripted.access = "sniper"
+	self.heavy_swat_sniper_scripted.detection = presets.detection.sniper
+	self.heavy_swat_sniper_scripted.no_move_and_shoot = true --making sure that they won't shoot upon spawn and move to their SO spot
+	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9.75 --lower their health up to 50%
+	self.heavy_swat_sniper_scripted.headshot_dmg_mul = 3.75
+	self.heavy_swat_sniper_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
 	--Weekend Snipers
@@ -2763,7 +2774,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.dodge = presets.dodge.ninja
 	self.spooc.chatter = presets.enemy_chatter.cloaker
 	self.spooc.steal_loot = nil
-	self.spooc.melee_weapon = nil
+	self.spooc.melee_weapon = "baton" --if you have baton then use it
 	self.spooc.use_radio = nil
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
@@ -2840,10 +2851,25 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_gangster.speech_prefix_p1 = "android"
 		self.spooc_gangster.speech_prefix_p2 = nil
 		self.spooc_gangster.speech_prefix_count = nil
+		self.spooc_gangster.spawn_sound_event_2 = nil
+		self.spooc_gangster.spooc_sound_events = {
+        detect_stop = "cloaker_detect_stop",
+        detect = "asdf",
+		taunt_during_assault = "asdf",
+		taunt_after_assault = "asdf"
+    }
 	else
-		self.spooc_gangster.speech_prefix_p1 = "lt"
+		self.spooc_gangster.speech_prefix_p1 = "lt2"
 		self.spooc_gangster.speech_prefix_p2 = nil
-		self.spooc_gangster.speech_prefix_count = 2
+		self.spooc_gangster.speech_prefix_count = nil
+		self.spooc_gangster.charging_detect = true
+		self.spooc_gangster.spawn_sound_event_2 = "lt2_pft"
+		self.spooc_gangster.spooc_sound_events = {
+        detect_stop = "nothing",
+        detect = "lt2_c01",
+		taunt_during_assault = "lt2_g90",
+		taunt_after_assault = "lt2_g90"
+    }
 	end	
 	self.spooc_gangster.HEALTH_INIT = 24
 	self.spooc_gangster.damage.hurt_severity = presets.hurt_severities.elite
@@ -2875,13 +2901,6 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_gangster.static_dodge_preset = true
 	self.spooc_gangster.special_deaths = nil
 	self.spooc_gangster.unintimidateable = true		
-	self.spooc_gangster.spawn_sound_event_2 = nil
-    self.spooc_gangster.spooc_sound_events = {
-        detect_stop = "cloaker_detect_stop",
-        detect = "asdf",
-		taunt_during_assault = "asdf",
-		taunt_after_assault = "asdf"
-    }	
 	self.spooc_gangster.min_obj_interrupt_dis = 800
 	self.spooc_gangster.dodge_with_grenade = {
 		smoke = {duration = {
@@ -3100,13 +3119,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
 	self.phalanx_vip.damage.fire_damage_mul = 0.25
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.phalanx_vip.spawn_sound_event = "cpw_a01"
-		self.phalanx_vip.spawn_sound_event_2 = "cloaker_spawn"
-	else
-		self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
-		self.phalanx_vip.spawn_sound_event_2 = nil
-	end	
+	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
 	self.phalanx_vip.priority_shout_max_dis = 3000
@@ -3321,11 +3334,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.deathguard = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.summers.spawn_sound_event = "cloaker_spawn"
-	else
-		self.summers.spawn_sound_event = "cpa_a02_01"
-	end
+	self.summers.spawn_sound_event = "cpa_a02_01"
 	self.summers.fire_bag_death = true	
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
@@ -3551,11 +3560,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.immune_to_concussion = true	
 	self.taser_titan.use_animation_on_fire_damage = false
 	self.taser_titan.can_be_tased = false	
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.taser_titan.spawn_sound_event = "rtsr_elite"
-	else
-		self.taser_titan.spawn_sound_event = "tsr_elite"
-	end	
+	self.taser_titan.spawn_sound_event = self._prefix_data_p1.taser() .. "_elite"
 	self.taser_titan.spawn_sound_event_2 = "cloaker_spawn"
 	self.taser_titan.custom_voicework = nil
 	self.taser_titan.surrender = nil
@@ -18083,6 +18088,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser"
 			}
 		}
@@ -18241,6 +18247,7 @@ function CharacterTweakData:character_map()
 				"ene_titan_rifle",
 				"ene_titan_shotgun",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
@@ -18473,6 +18480,7 @@ function CharacterTweakData:character_map()
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser",
 				"ene_veteran_cop_1",
 				"ene_phalanx_1_assault"
@@ -18548,6 +18556,7 @@ function CharacterTweakData:character_map()
 				"ene_phalanx_1_assault",										
 				"ene_spook_cloak_1",										
 				"ene_titan_sniper",
+				"ene_titan_sniper_scripted",
 				"ene_titan_taser"
 			}
 		}

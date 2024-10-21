@@ -1,73 +1,40 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local tank_black = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
-local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local swat_shotgunner = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
-local security_1 = "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
-local security_2 = "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
-local security_3 = "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling_1 = 0.125 * difficulty
 local diff_scaling_2 = 0.065 * difficulty
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or (difficulty == 6 or difficulty == 5) and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
+local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or (difficulty == 6 or difficulty == 5) and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
+local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local tank_black = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
+local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local taser = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
+local swat_shotgunner = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" or (difficulty == 6 or difficulty == 5) and "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local security_1 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1") or "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
+local security_2 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_2/ene_city_guard_2" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2") or "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
+local security_3 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_3/ene_city_guard_3" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3") or "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
 local hard_above = difficulty >= 3
 local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
-local enabled_chance_more_guards = math.random() < diff_scaling_1
-local enabled_chance_shields = math.random() < diff_scaling_1
+local enabled_chance_more_guards = math.random() < diff_scaling_2
+local enabled_chance_shields = math.random() < diff_scaling_2
 local enabled_chance_cloakers = math.random() < diff_scaling_1
 local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 local enabled_chance_dozers_ambush_escape = math.random() < 0.5
 local surprise_tank_chance = math.random() < 0.5
 
-	if difficulty == 7 then
-		security_1 = "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1"
-		security_2 = "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2"
-		security_3 = "units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3"
-	elseif difficulty == 8 then
-		security_1 = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1"
-		security_2 = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
-		security_3 = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"
-	end
-	
-	if difficulty == 5 or difficulty == 6 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
-	elseif difficulty == 7 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
-		swat_shotgunner = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
-	elseif difficulty == 8 then
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-		swat_shotgunner = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-	end
-	
-	if pro_job and difficulty >= 5 then
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
-		swat_shotgunner = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
-	end
-
 local optsSecurity_1 = {
     enemy = security_1,
-	participate_to_group_ai = true,
     enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsSecurity_2 = {
     enemy = security_2,
-	participate_to_group_ai = true,
     enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsSecurity_3 = {
     enemy = security_3,
-	participate_to_group_ai = true,
     enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsShield_1 = {
@@ -136,7 +103,6 @@ local optsBulldozer_special = {
 local optsCloaker_rush_1 = {
     enemy = cloaker,
 	participate_to_group_ai = true,
-	trigger_times = 3,
 	spawn_action = "e_sp_clk_jump_dwn_5m_heli_l",
 	on_executed = { 
 		{ id = 400051, delay = 0 }
@@ -146,7 +112,6 @@ local optsCloaker_rush_1 = {
 local optsCloaker_rush_2 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
-	trigger_times = 3,
 	spawn_action = "e_sp_repel_into_window",
     enabled = (hard_above and enabled_chance_cloakers)
 }

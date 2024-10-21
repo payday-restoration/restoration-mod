@@ -3261,13 +3261,15 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._state_data.in_steelsight then
 		local weap_base = self._equipped_unit:base()
 		if weap_base and weap_base._scope_overlay then
-			if not weap_base._steelsight_weapon_visible then
+			if not weap_base._steelsight_weapon_visible and set_viewmodel_visible then
 				set_viewmodel_visible(self,false)
 				weap_base:set_visibility_state(false)
 				weap_base:update_visibility_state()
 			end
-			managers.hud:set_ma40_overlay(weap_base._scope_overlay)
-			managers.hud:start_ma40_overlay()
+			if managers.hud.set_ma40_overlay then
+				managers.hud:set_ma40_overlay(weap_base._scope_overlay)
+				managers.hud:start_ma40_overlay()
+			end
 		end
 	end
 end

@@ -15,6 +15,8 @@
 	<continent path="editor_only/editor_only" script_data_type="binary"/>
 	<mission path="editor_only/editor_only" script_data_type="binary"/>
 	<cover_data path="cover_data" script_data_type="binary"/>
+	<texture path="cube_lights/102372"/>
+	<environment path="environments/four_stores_remixed_v4" script_data_type="custom_xml"/>
 	<environment path="environments/four_stores_remixed_v3" script_data_type="custom_xml"/>
 	<texture path="cube_lights/101764"/>
 	<texture path="cube_lights/101769"/>

@@ -1,18 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local hunt_projob = false
-
-	if pro_job then
-		hunt_projob = true
-	end
-
-	if difficulty <= 5 then
-		ponr_value = 600	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 570
-	else
-		ponr_value = 540		
-	end
+local hunt_projob = pro_job
+local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 
 return {
 	--Pro Job PONR+Hunt (Endless Assault)

@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local diff_scaling = 0.125 * difficulty
 local biker_tank = "units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_1"
 local overkill_above = difficulty >= 5
-local diff_scaling = 0.125 * difficulty
 local enabled_chance_biker_dozer = math.random() < diff_scaling
 
 local optsBulldozerBiker = {

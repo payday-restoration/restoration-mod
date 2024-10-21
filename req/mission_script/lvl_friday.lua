@@ -1,9 +1,5 @@
-local is_overkill_plus = false
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-
-if difficulty >= 5 then
-	is_overkill_plus = true
-end
+local is_overkill_plus = (difficulty >= 5 and true) or false
 
 return {
 --Titan Sniper replace disabled sniper (escape section)

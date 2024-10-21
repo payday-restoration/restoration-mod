@@ -1,70 +1,65 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local sniper = "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
+local pro_job = Global.game_settings and Global.game_settings.one_down
+--Gotta be initialized prior to being used, otherwise it'll never return true
+local oops_all_titan_snipers = math.random() < 0.2
+local sniper = ((difficulty == 8 and pro_job and oops_all_titan_snipers) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 or difficulty == 5 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
 local fbi_ready_team_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 local fbi_ready_team_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 local fbi_ready_team_dozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 local deathwish_above = difficulty >= 7
-	
-	if difficulty == 5 or difficulty == 6 then
-		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-	elseif difficulty == 7 then
-		sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"
-	elseif difficulty == 8 then
-		sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-	end
 
 local optsSniper_1 = {
 	enemy = sniper,
 	on_executed = { { id = 400007, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsSniper_2 = {
 	enemy = sniper,
 	on_executed = { { id = 400008, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsSniper_3 = {
 	enemy = sniper,
 	on_executed = { { id = 400009, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsSniper_4 = {
 	enemy = sniper,
 	on_executed = { { id = 400010, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsSniper_5 = {
 	enemy = sniper,
 	on_executed = { { id = 400011, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsSniper_6 = {
 	enemy = sniper,
 	on_executed = { { id = 400012, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsGroundSniper_1 = {
 	enemy = sniper,
 	on_executed = { { id = 400025, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsGroundSniper_2 = {
 	enemy = sniper,
 	on_executed = { { id = 400029, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsFBIAgent_1 = {
 	enemy = fbi_ready_team_1,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400057, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsFBIAgent_2 = {
 	enemy = fbi_ready_team_2,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400057, delay = 0 } },
-    enabled = true
+	enabled = true
 }
 local optsFBIAgent_3 = {
 	enemy = fbi_ready_team_dozer,
@@ -74,7 +69,7 @@ local optsFBIAgent_3 = {
 		{ id = 400057, delay = 0 },
 		{ id = 400060, delay = 0 }
 	},
-    enabled = deathwish_above
+	enabled = deathwish_above
 }
 local optsDozer = {
 	enemy = tank,
@@ -82,7 +77,7 @@ local optsDozer = {
 		{ id = 400060, delay = 0 },
 		{ id = 400057, delay = 3 }
 	},
-    enabled = true
+	enabled = true
 }
 local optsSniper_SO = {
 	scan = true,
@@ -90,13 +85,13 @@ local optsSniper_SO = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper"
+	so_action = "AI_sniper"
 }
 local optsHunt_SO = {
 	scan = true,
 	SO_access = tostring(128+4096),
 	interval = 2,
-    so_action = "AI_hunt"
+	so_action = "AI_hunt"
 }
 local optsgroundSniper_SO_1_1 = {
 	scan = true,
@@ -104,7 +99,7 @@ local optsgroundSniper_SO_1_1 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400026, delay = 15 }
 	}
@@ -126,7 +121,7 @@ local optsgroundSniper_SO_1_3 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400028, delay = 15 }
 	}
@@ -137,7 +132,7 @@ local optsgroundSniper_SO_1_4 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400025, delay = 15 }
 	}
@@ -148,7 +143,7 @@ local optsgroundSniper_SO_2_1 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400030, delay = 15 }
 	}
@@ -170,7 +165,7 @@ local optsgroundSniper_SO_2_3 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400032, delay = 15 }
 	}
@@ -181,7 +176,7 @@ local optsgroundSniper_SO_2_4 = {
 	needs_pos_rsrv = true,
 	align_rotation = true,
 	interval = 2,
-    so_action = "AI_sniper",
+	so_action = "AI_sniper",
 	on_executed = { 
 		{ id = 400029, delay = 15 }
 	}
@@ -249,7 +244,7 @@ local spawnFBI_Agents = {
 local loopFBIAgents = {
 	enabled = true,
 	on_executed = { 
-		{ id = 400054, delay = 20 }
+		{ id = 400054, delay = 80 }
 	}
 }
 local Bain_sendsnipers = {
@@ -264,7 +259,7 @@ local optsrespawn_sniper_1 = {
 	elements = { 
 		400001
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_sniper_2 = {
 	on_executed = { 
@@ -282,7 +277,7 @@ local optsrespawn_sniper_3 = {
 	elements = { 
 		400003
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_sniper_4 = {
 	on_executed = { 
@@ -291,7 +286,7 @@ local optsrespawn_sniper_4 = {
 	elements = { 
 		400004
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_sniper_5 = {
 	on_executed = { 
@@ -300,7 +295,7 @@ local optsrespawn_sniper_5 = {
 	elements = { 
 		400005
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_sniper_6 = {
 	on_executed = { 
@@ -309,7 +304,7 @@ local optsrespawn_sniper_6 = {
 	elements = { 
 		400006
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_ground_sniper_1 = {
 	on_executed = { 
@@ -318,7 +313,7 @@ local optsrespawn_ground_sniper_1 = {
 	elements = { 
 		400023
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_ground_sniper_2 = {
 	on_executed = { 
@@ -327,7 +322,7 @@ local optsrespawn_ground_sniper_2 = {
 	elements = { 
 		400024
 	},
-    event = "death"
+	event = "death"
 }
 local optsrespawn_tank = {
 	on_executed = { 
@@ -336,7 +331,7 @@ local optsrespawn_tank = {
 	elements = { 
 		400058
 	},
-    event = "death"
+	event = "death"
 }
 local Bain_senddozers = {
 	dialogue = "Play_ban_s02_a",

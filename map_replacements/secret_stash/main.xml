@@ -1,0 +1,77 @@
+<table min_lib_ver="4.5" name="secret_stash">
+	<level ai_group_type="fbi" briefing_dialog="Play_pln_man_brf" cube="cube_apply_heist_bank" name_id="heist_man_hl" brief_id = "heist_man_briefing" id="secret_stash" intro_event="Play_pln_man_intro" max_bags="10" music="heist" outro_event="Play_pln_man_81">
+		<assets/>
+		<packages>
+			<value_node value="packages/narr_man"/>
+			<value_node value="levels/narratives/classics/man/world"/>
+			<value_node value="levels/narratives/classics/man/world_sounds"/>
+			<value_node value="levels/narratives/classics/man/world/world"/>
+			<value_node value="levels/narratives/classics/man/collision/collision"/>
+			<value_node value="levels/narratives/classics/man/shadow_caster/shadow_caster"/>
+			<value_node value="levels/narratives/classics/man/editor_only/editor_only"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="pln_man_cbf_01" name_id="heist_man_hl" contact="classic" dlc="pal" icon="guis/dlcs/bro/textures/pd2/crimenet/undercover" id="man" brief_id = "heist_man_crimenet" jc="30" load_screen="guis/dlcs/pic/textures/loading/job_undercover" region="street">
+		<chain>
+			<table dlc="pal" level_id="secret_stash" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="62000"/>
+			<value_node value="124000"/>
+			<value_node value="310000"/>
+			<value_node value="620000"/>
+			<value_node value="800000"/>
+			<value_node value="800000"/>
+			<value_node value="800000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="pln_man_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank2"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+			<value_node value="28500"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+			<value_node value="27500"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="135000"/>
+			<value_node value="275000"/>
+			<value_node value="692307"/>
+			<value_node value="1.35e+006"/>
+			<value_node value="1.8e+006"/>
+			<value_node value="1.8e+006"/>
+			<value_node value="1.8e+006"/>
+		</payout>
+	</narrative>
+</table>

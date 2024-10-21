@@ -252,6 +252,7 @@ logic_variants.boom_titan = clone(security_variant)
 
 logic_variants.heavy_swat_sniper = clone(security_variant)
 logic_variants.heavy_swat_sniper.attack = MarshalLogicAttack
+logic_variants.heavy_swat_sniper_scripted = clone(security_variant)
 logic_variants.weekend_dmr = clone(security_variant)
 logic_variants.weekend_dmr.attack = MarshalLogicAttack
 logic_variants.boom = clone(security_variant)

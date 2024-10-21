@@ -58,4 +58,7 @@
 			<value_node value="120000"/>
 		</payout>
 	</narrative>
+	<Localization default="english.txt" directory="loc">
+		<loc file="english.txt" language="english"/>
+	</Localization>
 </table>

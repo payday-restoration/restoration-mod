@@ -1,4 +1,7 @@
+--Might actually rework this from the start
+--When? Don't know honestly
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+local pro_job = Global.game_settings and Global.game_settings.one_down
 local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
 local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/payday2/characters/ene_spook_1/ene_spook_1"
 local shield = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
@@ -11,7 +14,6 @@ local cop_1 = "units/payday2/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/payday2/characters/ene_cop_2/ene_cop_2"
 local cop_3 = "units/payday2/characters/ene_cop_3/ene_cop_3"
 local cop_4 = "units/payday2/characters/ene_cop_4/ene_cop_4"
-local pro_job = Global.game_settings and Global.game_settings.one_down
 local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8

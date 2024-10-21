@@ -1,25 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local shield = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
-local sniper = "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
 local pro_job = Global.game_settings and Global.game_settings.one_down
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield" or difficulty == 6 or difficulty == 5 and "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc") or "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
+local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 or difficulty == 5 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
 local mayhem_above = difficulty >= 6
 local death_sentence = difficulty == 8
 local enabled_chance_snipers = math.random() < 0.6
-	
-	if difficulty == 5 or difficulty == 6 then
-		shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-	elseif difficulty == 7 then
-		shield = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"
-		sniper = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"
-	elseif difficulty == 8 then
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-	end
-	
-	if pro_job and difficulty >= 5 then
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
 
 local optsShield_nearlootpickup_1 = {
     enemy = shield,

@@ -1,0 +1,7 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_custom/nature/glace_clouds/glace_clouds" orientation_object="rp_sah_clouds" />
+	<graphics>
+		<object name="g_clouds_06" enabled="true" />
+		<object name="g_clouds_08" enabled="true" />
+	</graphics>
+</dynamic_object>

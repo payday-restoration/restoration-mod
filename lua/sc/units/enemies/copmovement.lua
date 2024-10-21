@@ -18,6 +18,7 @@ action_variants.hrt_titan = security_variant
 action_variants.city_swat_guard = security_variant
 action_variants.city_swat_titan = security_variant
 action_variants.city_swat_titan_assault = security_variant
+action_variants.heavy_swat_sniper_scripted = security_variant
 action_variants.skeleton_swat_titan = security_variant
 action_variants.weekend = security_variant
 action_variants.weekend_dmr = security_variant

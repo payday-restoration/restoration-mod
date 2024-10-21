@@ -1,16 +1,6 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_helicopter = nil
-
-	if difficulty <= 5 then
-		ponr_value = 680
-		ponr_helicopter = 500
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 640
-		ponr_helicopter = 460
-	else
-		ponr_value = 600
-		ponr_helicopter = 420
-	end
+local ponr_value = (difficulty <= 5 and 680 or (difficulty == 6 or difficulty == 7) and 640) or 600
+local ponr_helicopter = (difficulty <= 5 and 500 or (difficulty == 6 or difficulty == 7) and 460) or 420
 
 local ponr_timer_player_mul = {
 		1,

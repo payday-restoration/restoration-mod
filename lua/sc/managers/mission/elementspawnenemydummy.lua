@@ -170,9 +170,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			fbi_3 = "units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5",
 			swat_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
@@ -512,14 +525,40 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			fbi_3 = "units/pd2_mod_reapers/characters/ene_drak_hrt_2/ene_drak_hrt_2",
 			swat_1 = {
 				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle"
+			},
+			swat_2 = {
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun"
 			},
 			fsb_swat_1 = {
 				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
-			fsb_swat_2 = "units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+			fsb_swat_2 = {
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 				"units/pd2_mod_reapers/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
@@ -786,9 +825,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			fbi_3 = "units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5",
 			swat_1 = {
 				"units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat",
+				"units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"
 			},
-			swat_2 = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"
+			},
 			heavy_1 = {
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
@@ -1110,9 +1162,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			fbi_3 = "units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3",
 			swat_1 = {
 				"units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
@@ -1391,9 +1456,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			fbi_3 = "units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3",
 			swat_1 = {
 				"units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
@@ -1758,9 +1836,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
@@ -2088,9 +2179,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
@@ -2343,9 +2447,22 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			swat_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
-				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+				"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
 			},
-			swat_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+			swat_2 = {
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+				"units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+			},
 			heavy_1 = {
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 				"units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",

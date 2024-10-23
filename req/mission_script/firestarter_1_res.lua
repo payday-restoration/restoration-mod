@@ -1,40 +1,26 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
---table for Colombian gangsters
-local gangster_table = {
-	colombian_1 = "units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1",
-	colombian_2 = "units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2",
-	colombian_3 = "units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3",
-	colombian_enforcer = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
-}
+local ponr_value = (difficulty <= 5 and 1080 or (difficulty == 6 or difficulty == 7) and 1050) or 1020
+
 local gangster_1 = {
 	values = {
-		enemy = gangster_table.colombian_1
+		enemy = "units/pd2_dlc_flat/characters/ene_gang_colombian_1/ene_gang_colombian_1"
 	}
 }
 local gangster_2 = {
 	values = {
-		enemy = gangster_table.colombian_2
+		enemy = "units/pd2_dlc_flat/characters/ene_gang_colombian_2/ene_gang_colombian_2"
 	}
 }
 local gangster_3 = {
 	values = {
-		enemy = gangster_table.colombian_3
+		enemy = "units/pd2_dlc_flat/characters/ene_gang_colombian_3/ene_gang_colombian_3"
 	}
 }
 local gangster_enforcer = {
 	values = {
-		enemy = gangster_table.colombian_enforcer
+		enemy = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 	}
 }
-	
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value = 1080	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 1050	
-	else
-		ponr_value = 1020		
-	end
 
 local ponr_timer_player_mul = {
 		1,

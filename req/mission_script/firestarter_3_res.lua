@@ -1,42 +1,17 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local teargaschopper = 1
-local teargas = 1
-local teargasmayhem = 2
-local vaultdoor = 66
-local snipers = 1
-	
-	if difficulty <= 5 then
-		ponr_value = 720
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 660	
-	else
-		ponr_value = 600
-	end
-	
-	--More snipers cause 1 sniper on higher diffs is not enough
-	if difficulty == 6 or difficulty == 7 then
-		snipers = 2
-	elseif difficulty == 8 then
-		snipers = 3
-	end
-	
---If we're in Pro Job, then do this stuff below	
-if pro_job then
-	teargas = 2
-	teargasmayhem = 3
-	teargaschopper = 2
-	vaultdoor = 100
-	--the only time Omnia Bendozer spawns outside of Spring's squad (if it's not Murkywater)
-	if difficulty == 8 then
-		bulldozer = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-		titanswat =  "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"
-		woman_spooc = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-		teargasmayhem = 4
-	end
-end
-	
-	local ponr_timer_player_mul = {
+local teargaschopper = (pro_job and 2)
+local teargas = (pro_job and 2)
+local teargasmayhem = ((pro_job and difficulty == 8) and 4 or pro_job and 3)
+local vaultdoor = (pro_job and 100)
+local copcars = (difficulty >= 7 and 2)
+local snipers = (difficulty == 8 and 3 or (difficulty == 7 or difficulty == 6) and 2)
+local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
+local bulldozer = ((pro_job and difficulty == 8) and "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+local titanswat = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+local woman_spooc = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+
+local ponr_timer_player_mul = {
 		1,
 		0.85,
 		0.7,
@@ -59,6 +34,12 @@ end
 		0.65,
 		0.65,
 		0.65
+}
+local spooc = {
+	values = {
+		enabled = true,
+		enemy = woman_spooc
+	}
 }
 
 return {
@@ -90,24 +71,9 @@ return {
 		}
 	},
 	--Restores unused cloaker ambush spawns+Titan Cloaker on DSPJ
-	[105571] = {
-		values = {
-			enabled = true,
-			enemy = woman_spooc
-		}
-	},
-	[105584] = {
-		values = {
-			enabled = true,
-			enemy = woman_spooc
-		}
-	},
-	[105607] = {
-		values = {
-			enabled = true,
-			enemy = woman_spooc
-		}
-	},
+	[105571] = spooc,
+	[105584] = spooc,
+	[105607] = spooc,
 	--more snipers on high diffs
 	[101200] = {
 		values = {

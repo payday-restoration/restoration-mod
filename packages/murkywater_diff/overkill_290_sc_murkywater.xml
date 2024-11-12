@@ -493,6 +493,10 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3_husk" force="false" load="true"/> 
 
+	<!--Titan RPG-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_rpg_grunt/ene_rpg_grunt" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_rpg_grunt/ene_rpg_grunt_husk" force="false" load="true"/>
+	
 	<!--Omnia LPF-->
 	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>

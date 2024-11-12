@@ -1,49 +1,12 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local blow_the_wall_chance = 50
-	
-	--High PONR Timer to work with ponr player scaling
-	if difficulty <= 5 then
-		ponr_value = 1080
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 1050	
-	else
-		ponr_value = 1020	
-	end
-	
-	if difficulty == 6 or difficulty == 7 then
-		blow_the_wall_chance = 80
-	elseif difficulty == 8 then
-		blow_the_wall_chance = 100
-	end
-	
-	--Increase the time lock timers on mayhem above
-	if difficulty >= 6 then
-		timelock_normal = 240
-		timelock_fast = 210
-	end
-
---IF we're in Pro Job, then do the stuff below
-if pro_job then
-	--Have Heavies be a thing from the start, with FBI Heavies spawning from Hard and Titan Snipers on Overkill above
-		swat_normal = "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"
-		swat_hard = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"
-		swat_overkill = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
-	
-	--Titan snipers in C4 route for DSPJ
-	if difficulty == 8 then
-		titan_sniper_c4 = "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"
-	end
-
-	--Increase the time lock timers on all diffs
-	if difficulty <= 5 then
-		timelock_normal = 240
-		timelock_fast = 210
-	else
-		timelock_normal = 300
-		timelock_fast = 270
-	end	
-end
+local timelock_normal = (difficulty >= 6 and 240)
+local timelock_fast = (difficulty >= 6 and 210)
+local titan_sniper_c4 = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted")
+local swat_normal = (pro_job and "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
+local swat_hard = (pro_job and "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")
+local swat_overkill = (pro_job and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+local ponr_value = (difficulty <= 5 and 1080 or (difficulty == 6 or difficulty == 7) and 1050) or 1020
 
 local timelock_access = {
 	pre_func = function (self)
@@ -132,6 +95,21 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value
 	}, 
+	-- Reinforce groups in front of the vault
+	[105844] = {
+		reinforce = {
+			{
+				name = "meetingroom",
+				force = 2,
+				position = Vector3(-3400, 1000, -600)
+			},
+			{
+				name = "outside_vault",
+				force = 2,
+				position = Vector3(-3000, 500, -1000)
+			}
+		}
+	},
 	-- Make server hack guranteed when solo
 	[104494] = {
 		pre_func = function (self)
@@ -207,23 +185,6 @@ return {
 			{ id = 400019, delay = 0 }
 		}
 	},
-	--More chance for blowing up the wall/also faster time to trigger
-	[102451] = {
-		values = {
-            chance = blow_the_wall_chance
-		},
-		on_executed = {
-			{ id = 104386, delay = 60 }
-		}
-	},
-	[102469] = {
-		values = {
-            chance = blow_the_wall_chance
-		},
-		on_executed = {
-			{ id = 104388, delay = 60 }
-		}
-	},
 	--Titan Snipers replace C4 route snipers on DSPJ
 	[102883] = titan_sniper,
 	[102893] = titan_sniper,
@@ -278,20 +239,5 @@ return {
 	[100956] = swat_ovk,
 	[100969] = swat_n,
 	[100970] = swat_h,
-	[100971] = swat_ovk,
-	-- Reinforce groups in front of the vault
-	[105844] = {
-		reinforce = {
-			{
-				name = "meetingroom",
-				force = 2,
-				position = Vector3(-3400, 1000, -600)
-			},
-			{
-				name = "outside_vault",
-				force = 2,
-				position = Vector3(-3000, 500, -1000)
-			}
-		}
-	}
+	[100971] = swat_ovk
 }

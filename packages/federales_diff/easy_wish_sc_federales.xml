@@ -498,6 +498,20 @@
 		<effect load="true" path="effects/payday2/environment/parts/thermal_fire" unload="true"/>
 	</add>
 
+	<!--Akan LPF-->
+	<object				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
+	<cooked_physics		path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
+	<model				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
+	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_picklerick" force="false"/>	
+	<material_config	path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_contour" force="false"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
+	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf" />
+	
+	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
+	<texture			path="units/pd2_mod_reapers/characters/ene_akan_lpf/maska_il" force="false" load="true"/>
 
 	<!--Titan Sniper-->
 	<unit				path="units/pd2_mod_reapers/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>

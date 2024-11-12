@@ -18246,6 +18246,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_swat_shield",
 				"ene_titan_rifle",
 				"ene_titan_shotgun",
+				"ene_rpg_grunt",
 				"ene_titan_sniper",
 				"ene_titan_sniper_scripted",
 				"ene_city_swat_1",

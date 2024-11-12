@@ -5668,6 +5668,14 @@ function BlackMarketGui:update_info_text()
 		local is_bipod = part_data and part_data.type == "bipod" or perks and table.contains(perks, "bipod")
 		local has_desc = part_data and part_data.has_description == true
 		local has_move_speed = part_data and part_data.custom_stats and part_data.custom_stats.movement_speed_add
+		local override_move_speed = has_move_speed and crafted and managers.weapon_factory:_part_data(slot_data.name, crafted.factory_id)
+		if override_move_speed then
+			if override_move_speed.custom_stats and override_move_speed.custom_stats.movement_speed_add then
+				has_move_speed = override_move_speed.custom_stats.movement_speed_add
+			elseif (not override_move_speed.custom_stats) or (override_move_speed.custom_stats and not override_move_speed.custom_stats.movement_speed_add) then
+				has_move_speed = false
+			end
+		end
 		local has_sms = part_data and part_data.custom_stats and part_data.custom_stats.sms
 		local override_sms = has_sms and crafted and managers.weapon_factory:_part_data(slot_data.name, crafted.factory_id)
 		if override_sms then

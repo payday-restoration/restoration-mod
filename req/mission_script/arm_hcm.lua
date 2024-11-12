@@ -23,11 +23,6 @@ local gensec_tank = {
         enemy = gensec_dozer
 	}
 }
-local fbi_1 = {
-	values = {
-        enemy = fbiagent_1
-	}
-}
 local fbi_2 = {
 	values = {
         enemy = fbiagent_2
@@ -44,24 +39,19 @@ return {
 		ponr = ponr_value,
 		hunt = hunt_projob
 	},
-	--FBI Agents, you don't want to see Zeal HRT from FBI Suvs
+	--FBI Agents, replace them with Ready Teams on DW+
 	[100514] = fbi_3,
 	[100515] = fbi_2,
-	[100520] = fbi_1,
 	[100521] = fbi_2,
 	[100547] = fbi_3,
 	[100551] = fbi_3,
-	[100560] = fbi_1,
 	[100562] = fbi_3,
 	[100563] = fbi_2,
 	[100564] = fbi_3,
-	[100566] = fbi_1,
 	[100567] = fbi_2,
-	[100568] = fbi_1,
 	[100569] = fbi_2,
 	[100570] = fbi_3,
 	[100571] = fbi_2,
-	[100572] = fbi_1,
 	[100573] = fbi_3,
 	--GenSec Scripted Spawns
 	--Drivers

@@ -1,23 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local murky_guard = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+local murky_guard = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870") or "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+local timelock = (difficulty == 8 and 210 or (difficulty == 7 or difficulty == 6) and 150) or 120
 
-	--More timelock timer to release Bain on Mayhem above
-	if difficulty >= 6 then
-		timelock = 150
-	end	
-
---If we're in Pro Job, do the stuff below
-if pro_job then
-	--replace regular guard with a doze
-	murky_guard = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
-	--even more timelock timer
-	if difficulty <= 5 then
-		timelock = 150
-	else	
-		timelock = 210
-	end
-end
 local enabled = {
 	values = {
         enabled = true
@@ -28,7 +13,6 @@ local disabled = {
         enabled = false
 	}
 }
-
 local murky_mp5 = {
 	values = {
         enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"

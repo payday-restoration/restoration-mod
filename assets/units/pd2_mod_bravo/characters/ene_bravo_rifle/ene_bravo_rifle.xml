@@ -62,8 +62,9 @@
 
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			<!-- GENERIC -->
-			<run_sequence filter="'check_ar'" name="'acc'..pick('_headset','_headset','_headset', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/>			
-			<run_sequence filter="'check_ar'" name="'goggles_'..pick('a','a','a','a','b','a','b','a','a','a','b','c','a','a')"/>	
+			<run_sequence filter="'check_ar'" name="'acc'..pick('_headset','_headset','_headset', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/>	
+			<run_sequence filter="'check_ar'" name="'acc'..pick('mount','absolutelynothing')"/>									
+			<run_sequence filter="'check_ar'" name="'goggles_'..pick('b','b','a','a','b','a','b','a','a','a','b','c','a','a')"/>	
 			<run_sequence filter="'check_ar'" name="'head_'..pick('balaclava','balaclava','balaclava', 'balaclava', 'balaclava', 'a', 'b', 'c', 'd', 'e', 'recon', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>
 			<run_sequence filter="'check_ar'" name="'body_'..pick('default','default','default','default','sleeveup','default','default')"/>								
 			<object filter="'check_ar'" enabled="true" name="'g_swat_ar'"/>						
@@ -136,6 +137,11 @@
 		<sequence editable_state="true" name="'crk_goggles'" once="true" triggable="true">
 			<object enabled="true" name="'g_glass_crk'"/>
 			<object enabled="false" name="'g_glass'"/>
+		</sequence>				
+
+		<sequence editable_state="true" name="'acc_mount'" once="true" triggable="true">
+			<object enabled="true" name="'g_helmet_lod6'"/>
+			<object enabled="true" name="'g_helmet_lod7'"/>
 		</sequence>				
 		
 

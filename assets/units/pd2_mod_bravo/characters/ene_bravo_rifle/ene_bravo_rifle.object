@@ -616,6 +616,19 @@
 						<material materials="mtr_body_static_lod2"/>
 					</object>
 				</lod_object>
+				
+			<!-- NVG MOUNT ONLY-->
+				<lod_object name="lod_mount">
+					<object name="g_helmet_lod6" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body_static" max_distance="1000"/>
+						<material materials="mtr_body_static_lod1" max_distance="1500"/>
+						<material materials="mtr_body_static_lod2"/>
+					</object>
+					<object name="g_helmet_lod7" enabled="false" lod="1" >
+						<material materials="mtr_body_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_static_lod2"/>
+					</object>
+				</lod_object>
 
 			<lod_object name="lod_headset">
 				<object name="g_headset" 		enabled="false"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">

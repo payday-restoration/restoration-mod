@@ -1511,7 +1511,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
 				"units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
 				"units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-				"units/pd2_mod_reapers/characters/ene_subject_enforcer/ene_subject_enforcer"
+				"units/pd2_mod_reapers/characters/ene_akan_lpf/ene_akan_lpf"
 			},
 			taser = {
 				"units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
@@ -2556,6 +2556,25 @@ if level_id == "moon" then
 		"units/payday2/characters/ene_security_4/ene_security_4"
 	}		
 end
+--Marshal Sharpshooters replacing OMNIA Titan Snipers on Texas heists
+if level_id == "dinner" or level_id == "ranc" then
+	ElementSpawnEnemyDummy.faction_mapping.nypd.sm_wish.sniper = {
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2"
+	}
+	ElementSpawnEnemyDummy.faction_mapping.lapd.sm_wish.sniper = {
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
+		"units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2"
+	}
+end	
 
 ElementSpawnEnemyDummy.faction_mapping.america.normal = ElementSpawnEnemyDummy.faction_mapping.america.overkill
 ElementSpawnEnemyDummy.faction_mapping.america.hard = ElementSpawnEnemyDummy.faction_mapping.america.overkill
@@ -2816,8 +2835,8 @@ end
 
 local mission_script_elements = restoration:mission_script_patches()
 Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
-        local element_mapping = mission_script_elements and mission_script_elements[self._id]
-        self._enemy_mapping = element_mapping and element_mapping.enemy
+    local element_mapping = mission_script_elements and mission_script_elements[self._id]
+    self._enemy_mapping = element_mapping and element_mapping.enemy
 		
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local mapped_name = self.enemy_mapping[self._enemy_name:key()]
@@ -2827,6 +2846,9 @@ Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
 	elseif mapped_unit then
 		self._enemy_name = Idstring(mapped_unit)
 	end
+	--possible enemy tables for gen_dummy
+	self._enemy_table = self._values.enemy_table or self._enemy_table
+    self._values.enemy_table = nil
 end)
 
 Hooks:PreHook(ElementSpawnEnemyDummy, "produce", "sh_produce", function (self, params)

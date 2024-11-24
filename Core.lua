@@ -856,6 +856,7 @@ function restoration:mission_script_add()
 				force_pickup = opts.force_pickup or "none",
 				voice = opts.voice or 0,
 				enemy = opts.enemy or "units/payday2/characters/ene_swat_1/ene_swat_1",
+				enemy_table = opts.enemy_table or nil, --possible enemy tables to prevent crashing
 				trigger_times = opts.trigger_times or 0,
 				spawn_action = opts.spawn_action or "none",
 				accessibility = opts.accessibility or "any",

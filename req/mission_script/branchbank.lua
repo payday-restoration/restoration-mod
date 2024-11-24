@@ -1,11 +1,11 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local teargaschopper = (difficulty >= 6 and 2)
-local teargas = ((pro_job and difficulty >= 4) and 2)
+local teargaschopper = (difficulty >= 6 and 2) or 1
+local teargas = ((pro_job and difficulty >= 4) and 2) or 1
 local teargasmayhem = ((pro_job and difficulty == 8) and 4) or 3
-local vaultdoor = (difficulty == 8 and 100)
-local copcars = (difficulty >= 7 and 2)
-local snipers = (difficulty == 8 and 3 or (difficulty == 7 or difficulty == 6) and 2)
+local vaultdoor = (difficulty == 8 and 100) or 45
+local copcars = (difficulty >= 7 and 2) or 1
+local snipers = (difficulty == 8 and 3 or (difficulty == 7 or difficulty == 6) and 2) or 1
 local ponr_value = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
 local bulldozer = ((pro_job and difficulty == 8) and "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 local titanswat = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")

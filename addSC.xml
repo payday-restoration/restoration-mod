@@ -1239,6 +1239,9 @@
 	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2" load="true" force="true"/>
 	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2_husk" load="true" force="true"/>
 	
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2" load="true" force="false"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2_husk" load="true" force="false"/>
+
 	<!--Hoppip's Marshal Textures-->
 	<df_nm				path="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_arms" force="true"/>	
 	<df_nm				path="units/pd2_dlc_usm1/characters/shared_textures/ene_male_marshal_head_1" force="true"/>	

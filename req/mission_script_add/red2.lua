@@ -1,18 +1,18 @@
+local security_guard_1 = "units/payday2/characters/ene_security_1/ene_security_1"
+local security_guard_2 = "units/payday2/characters/ene_security_2/ene_security_2"
+local security_guard_3 = "units/payday2/characters/ene_security_3/ene_security_3"
+local security_table = {security_guard_1, security_guard_1, security_guard_2, security_guard_2, security_guard_3}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling_1 = 0.125 * difficulty
 local diff_scaling_2 = 0.065 * difficulty
-local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or (difficulty == 6 or difficulty == 5) and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or (difficulty == 6 or difficulty == 5) and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local tank_black = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
-local tank_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-local taser = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
-local swat_shotgunner = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870" or (difficulty == 6 or difficulty == 5) and "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
-local security_1 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_1/ene_security_gensec_1") or "units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"
-local security_2 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_2/ene_city_guard_2" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_2/ene_security_gensec_2") or "units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"
-local security_3 = (difficulty == 8 and "units/payday2/characters/ene_city_guard_3/ene_city_guard_3" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_security_gensec_3/ene_security_gensec_3") or "units/pd2_mod_nypd/characters/ene_security_3/ene_security_3"
+local shield = "units/payday2/characters/ene_shield_2/ene_shield_2"
+local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
+local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
+local swat_shotgunner = "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
+local security = security_table
 local hard_above = difficulty >= 3
 local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
@@ -25,16 +25,8 @@ local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
 local enabled_chance_dozers_ambush_escape = math.random() < 0.5
 local surprise_tank_chance = math.random() < 0.5
 
-local optsSecurity_1 = {
-    enemy = security_1,
-    enabled = (hard_above and enabled_chance_more_guards)
-}
-local optsSecurity_2 = {
-    enemy = security_2,
-    enabled = (hard_above and enabled_chance_more_guards)
-}
-local optsSecurity_3 = {
-    enemy = security_3,
+local optsSecurity = {
+    enemy_table = security,
     enabled = (hard_above and enabled_chance_more_guards)
 }
 local optsShield_1 = {
@@ -94,7 +86,7 @@ local optsBulldozer_193 = {
     enabled = death_sentence
 }
 local optsBulldozer_special = {
-    enemy = tank_skull,
+    enemy = tank,
 	on_executed = {
 		{ id = 400052, delay = 0 }
 	},
@@ -137,7 +129,7 @@ local optsTaser_special = {
     enabled = true
 }
 local optsDozerAmbush = {
-    enemy = tank_black,
+    enemy = tank,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_10m_swing_in_var2",
 	on_executed = {
@@ -146,7 +138,7 @@ local optsDozerAmbush = {
     enabled = true
 }
 local optsDozerAmbush_2 = {
-    enemy = tank_black,
+    enemy = tank,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_clk_3_5m_dwn_vent",
     enabled = (death_sentence and surprise_tank_chance)
@@ -361,70 +353,70 @@ return {
             "guard_blockade_1",
             Vector3(1887, 1002, -24.895),
             Rotation(90, -0, -0),
-            optsSecurity_1
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400011,
             "guard_blockade_2",
             Vector3(1887, 1493, -24.895),
             Rotation(90, 0, -0),
-            optsSecurity_2
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400012,
             "guard_blockade_3",
             Vector3(2276, 1493, -24.895),
             Rotation(90, -0, -0),
-            optsSecurity_1
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400013,
             "guard_blockade_4",
             Vector3(2276, 998, -24.895),
             Rotation(90, -0, -0),
-            optsSecurity_2
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400014,
             "guard_blockade_5",
             Vector3(2797, 1243, -24.895),
             Rotation(90, -0, -0),
-            optsSecurity_1
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400015,
             "guard_blockade_6",
             Vector3(3447, 1794, -14.895),
             Rotation(90, -0, -0),
-            optsSecurity_1
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400016,
             "guard_blockade_7",
             Vector3(3447, 704, -14.895),
             Rotation(90, -0, -0),
-            optsSecurity_2
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400017,
             "guard_blockade_8",
             Vector3(5959, 704, -21.895),
             Rotation(90, -0, -0),
-            optsSecurity_2
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400018,
             "guard_blockade_9",
             Vector3(5959, 1810, -21.895),
             Rotation(90, -0, -0),
-            optsSecurity_1
+            optsSecurity
         ),
 		restoration:gen_dummy(
             400019,
             "guard_blockade_10",
             Vector3(6650, 1249, -21.895),
             Rotation(90, -0, -0),
-            optsSecurity_3
+            optsSecurity
         ),
 		--2 dozers spawn after killing Bo The Manager+2 extra dozers on DS (even if you did not killed Bo)
 		restoration:gen_dummy(

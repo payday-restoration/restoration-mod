@@ -2,14 +2,13 @@
 --When? Don't know honestly
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/payday2/characters/ene_spook_1/ene_spook_1"
-local shield = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
+local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
+local shield = "units/payday2/characters/ene_shield_2/ene_shield_2"
 local bravo_1 = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"
 local bravo_2 = "units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"
 local bravo_3 = "units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"
 local tank_bravo = "units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"
-local rouge = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
 local cop_1 = "units/payday2/characters/ene_cop_1/ene_cop_1"
 local cop_2 = "units/payday2/characters/ene_cop_2/ene_cop_2"
 local cop_3 = "units/payday2/characters/ene_cop_3/ene_cop_3"
@@ -21,24 +20,8 @@ local diff_scaling = 0.065 * difficulty
 local diff_scaling_2 = 0.085 * difficulty
 local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_cloakers_2 = math.random() < diff_scaling_2
-
-
-	if difficulty == 5 then
-		shield = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-	elseif difficulty == 6 or difficulty == 7 then
-		shield = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec"
-	elseif difficulty == 8 then
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-	end
-
-if pro_job then
-	if difficulty >= 5 then
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-	end
-	if difficulty == 8 then
-		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-	end
-end	
+local beat_cops_table = {cop_1, cop_1, cop_2, cop_2, cop_3, cop_3, cop_4}
+local bravo_table = {bravo_1, bravo_1, bravo_2, bravo_3, bravo_2, bravo_2, bravo_3}
 
 local optsBulldozer = {
     enemy = tank,
@@ -85,13 +68,13 @@ local optsCloaker_5 = {
     enabled = (overkill_above and enabled_chance_cloakers)
 }
 local optsTitanCloaker_1 = {
-	enemy = rouge,
+	enemy = cloaker,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400016, delay = 0 } },
     enabled = (death_sentence and pro_job)
 }
 local optsTitanCloaker_2 = {
-	enemy = rouge,
+	enemy = cloaker,
 	participate_to_group_ai = true,
 	on_executed = { { id = 400017, delay = 0 } },
     enabled = (death_sentence and pro_job)
@@ -104,7 +87,7 @@ local optsHunt_SO = {
     so_action = "AI_hunt"
 }
 local optsBravo_1 = {
-    enemy = bravo_1,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
     on_executed = { 
 		{ id = 400024, delay = 0 } 
@@ -112,7 +95,7 @@ local optsBravo_1 = {
     enabled = (very_hard_above and pro_job)
 }
 local optsBravo_2 = {
-    enemy = bravo_2,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
     on_executed = { 
 		{ id = 400025, delay = 0 } 
@@ -120,25 +103,25 @@ local optsBravo_2 = {
     enabled = (very_hard_above and pro_job)
 }
 local optsBravo_Bus_Escape_1 = {
-    enemy = bravo_1,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_dizzy_walk_left",
     enabled = (very_hard_above and pro_job)
 }
 local optsBravo_Bus_Escape_2 = {
-    enemy = bravo_1,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_dizzy_fall_get_up",
     enabled = (very_hard_above and pro_job)
 }
 local optsBravo_Bus_Escape_3 = {
-    enemy = bravo_2,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_dizzy_look_around",
     enabled = (very_hard_above and pro_job)
 }
 local optsBravo_3 = {
-    enemy = bravo_3,
+    enemy_table = bravo_table,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_dizzy_fall_get_up",
     enabled = (very_hard_above and pro_job)
@@ -181,32 +164,8 @@ local optsShield_Defend_3 = {
 	},
     enabled = true
 }
-local optsCop_1 = {
-    enemy = cop_1,
-	participate_to_group_ai = true,
-	on_executed = { 
-		{ id = 400003, delay = 0 } 
-	},
-    enabled = true
-}
-local optsCop_2 = {
-    enemy = cop_2,
-	participate_to_group_ai = true,
-	on_executed = { 
-		{ id = 400003, delay = 0 } 
-	},
-    enabled = true
-}
-local optsCop_3 = {
-    enemy = cop_3,
-	participate_to_group_ai = true,
-	on_executed = { 
-		{ id = 400003, delay = 0 } 
-	},
-    enabled = true
-}
-local optsCop_4 = {
-    enemy = cop_4,
+local optsCop = {
+    enemy_table = beat_cops_table,
 	participate_to_group_ai = true,
 	on_executed = { 
 		{ id = 400003, delay = 0 } 
@@ -679,105 +638,105 @@ return {
             "cop_1",
             Vector3(3897, 2546, -1197.510),
             Rotation(-90, 0, -0),
-            optsCop_1
+            optsCop
         ),
         restoration:gen_dummy(
             400051,
             "cop_2",
             Vector3(3853, 2546, -1197.510),
             Rotation(-90, 0, -0),
-            optsCop_3
+            optsCop
         ),
 		restoration:gen_dummy(
             400052,
             "cop_3",
             Vector3(3816, 2546, -1197.510),
             Rotation(-90, 0, -0),
-            optsCop_4
+            optsCop
         ),
         restoration:gen_dummy(
             400053,
             "cop_4",
             Vector3(3771, 2469, -1200.010),
             Rotation(-90, 0, -0),
-            optsCop_2
+            optsCop
         ),
 		restoration:gen_dummy(
             400054,
             "cop_5",
             Vector3(3732, 2546, -1197.510),
             Rotation(-90, 0, -0),
-            optsCop_3
+            optsCop
         ),
         restoration:gen_dummy(
             400055,
             "cop_6",
             Vector3(7456, -426, -1590.010),
             Rotation(-180, 0, -0),
-            optsCop_2
+            optsCop
         ),
 		restoration:gen_dummy(
             400056,
             "cop_7",
             Vector3(7456, -376, -1590.010),
             Rotation(-180, 0, -0),
-            optsCop_4
+            optsCop
         ),
 		restoration:gen_dummy(
             400057,
             "cop_8",
             Vector3(7456, -323, -1590.010),
             Rotation(-180, 0, -0),
-            optsCop_4
+            optsCop
         ),
 		restoration:gen_dummy(
             400058,
             "cop_9",
             Vector3(7456, -277, -1590.010),
             Rotation(-180, 0, -0),
-            optsCop_3
+            optsCop
         ),
 		restoration:gen_dummy(
             400059,
             "cop_10",
             Vector3(7456, -211, -1590.010),
             Rotation(-180, 0, -0),
-            optsCop_3
+            optsCop
         ),
 		restoration:gen_dummy(
             400060,
             "cop_11",
             Vector3(4270, -4360, -1187.244),
             Rotation(-90, 0, -0),
-            optsCop_1
+            optsCop
         ),
 		restoration:gen_dummy(
             400061,
             "cop_12",
             Vector3(4319, -4360, -1187.244),
             Rotation(-90, 0, -0),
-            optsCop_1
+            optsCop
         ),
 		restoration:gen_dummy(
             400062,
             "cop_13",
             Vector3(4272, -4427, -1187.244),
             Rotation(-90, 0, -0),
-            optsCop_3
+            optsCop
         ),
 		restoration:gen_dummy(
             400063,
             "cop_14",
             Vector3(4319, -4427, -1187.244),
             Rotation(-90, 0, -0),
-            optsCop_3
+            optsCop
         ),
 		restoration:gen_dummy(
             400064,
             "cop_15",
             Vector3(4272, -4491, -1187.244),
             Rotation(-90, 0, -0),
-            optsCop_4
+            optsCop
         ),
 		restoration:gen_toggleelement(
             400065,

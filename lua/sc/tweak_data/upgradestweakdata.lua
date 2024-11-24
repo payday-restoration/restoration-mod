@@ -520,6 +520,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4.25
 	}
 
+	self.values.player.body_armor.regen_delay[9] = 8.5
+	self.values.player.body_armor.deflection[9] = 0.00
+	self.values.player.body_armor.dodge_grace[9] = 1
+
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--

@@ -64,6 +64,11 @@ Hooks:PreHook(MissionManager, "_activate_mission", "sh__activate_mission", funct
 
 						element._values.spawn_action = spawn_action ~= -1 and spawn_action or nil
 					end
+					--Either use enemy table or self value so randomized enemies can be possible (thanks miki once again)
+					if k == "enemy" and type(v) == "table" then
+						element._enemy_table = v
+						element._values.enemy = nil
+					end
 				end
 			end
 			

@@ -335,3 +335,14 @@ function BlackMarketManager:equipped_melee_weapon_damage_info(lerp_value)
 	
 	return dmg, dmg_effect
 end
+
+function BlackMarketManager:_calculate_suspicion_offset(index, lerp)
+	local con_val = tweak_data.weapon.stats.concealment[math.floor(index)]
+	local min_val = tweak_data.weapon.stats.concealment[1]
+	local max_val = tweak_data.weapon.stats.concealment[#tweak_data.weapon.stats.concealment]
+	local max_ratio = max_val / min_val
+	local mul_ratio = math.max(1, con_val / min_val)
+	local susp_lerp = math.clamp(1 - (con_val - min_val) / (max_val - min_val), 0, 1)
+
+	return math.lerp(0, lerp, susp_lerp)
+end

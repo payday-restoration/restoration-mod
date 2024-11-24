@@ -1,5 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
+local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local mayhem_above = difficulty >= 6
 
 local optsSniper_1 = {

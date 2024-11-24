@@ -8,34 +8,18 @@ local murky_heavy_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/character
 local murky_tank = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli") or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 local murky_tank_black = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
 local murky_tank_skull = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
+local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
 local murky_taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
 local murky_cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
-	
-local optsSWAT_Rifle = {
-    enemy = murky_rifle,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_Shotgun = {
-    enemy = murky_shotgun,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_SMG = {
-    enemy = murky_smg,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_HeavyRifle = {
-    enemy = murky_heavy_rifle,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_HeavyShotgun = {
-    enemy = murky_heavy_shotgun,
+local murky_table = {murky_rifle, murky_rifle, murky_shotgun, murky_shotgun, murky_smg, murky_smg, murky_heavy_rifle, murky_heavy_rifle, murky_heavy_shotgun}
+local murky_dozer_normal = {murky_tank, murky_tank, murky_tank, murky_tank_black}	
+local murky_dozer_hard = {murky_tank, murky_tank, murky_tank_black, murky_tank_black}	
+local murky_dozer_overkill = {murky_tank, murky_tank, murky_tank_black, murky_tank_black, murky_tank_skull, murky_tank_skull, titandozer}	
+local optsMurkywater = {
+    enemy_table = murky_table,
 	participate_to_group_ai = true,
     enabled = true
 }
@@ -55,17 +39,17 @@ local optsShield = {
     enabled = true
 }
 local optsBulldozer = {
-    enemy = murky_tank,
+    enemy_table = murky_dozer_normal,
 	participate_to_group_ai = true,
     enabled = hard_above
 }
 local optsBulldozer_black = {
-    enemy = murky_tank_black,
+    enemy_table = murky_dozer_hard,
 	participate_to_group_ai = true,
     enabled = overkill_above
 }
 local optsBulldozer_skull = {
-    enemy = murky_tank_skull,
+    enemy_table = murky_dozer_overkill,
 	participate_to_group_ai = true,
     enabled = death_wish_above
 }
@@ -221,49 +205,49 @@ return {
             "murkywater_1",
             Vector3(789, 785, 676.187),
             Rotation(-180, 0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400003,
             "murkywater_2",
             Vector3(874, 785, 676.187),
             Rotation(-180, 0, -0),
-            optsSWAT_Shotgun
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400004,
             "murkywater_3",
             Vector3(965, 785, 676.187),
             Rotation(-180, 0, -0),
-            optsSWAT_SMG
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400005,
             "murkywater_4",
             Vector3(1049, 785, 676.187),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400006,
             "murkywater_5",
             Vector3(1136, 785, 676.187),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400007,
             "murkywater_6",
             Vector3(4890, -1652, 3.752),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyRifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400008,
             "murkywater_7",
             Vector3(4890, -1582, 3.752),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyRifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400009,
@@ -284,7 +268,7 @@ return {
             "murkywater_10",
             Vector3(4890, -1354, 3.752),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400012,
@@ -312,14 +296,14 @@ return {
             "murkywater_12",
             Vector3(269, -7018, 2.395),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400016,
             "murkywater_13",
             Vector3(258, -7064, 2.395),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400017,
@@ -347,7 +331,7 @@ return {
             "murkywater_14",
             Vector3(2345, 794, 700.187),
             Rotation(-180, 0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400021,
@@ -368,14 +352,14 @@ return {
             "murkywater_17",
             Vector3(2638, 794, 700.187),
             Rotation(-180, 0, -0),
-            optsSWAT_SMG
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400024,
             "murkywater_18",
             Vector3(2728, 794, 700.187),
             Rotation(-180, 0, -0),
-            optsSWAT_SMG
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400025,
@@ -417,14 +401,14 @@ return {
             "murkywater_22",
             Vector3(274, 2673, 2.395),
             Rotation(90, -0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		restoration:gen_dummy(
             400031,
             "murkywater_23",
             Vector3(329, 2673, 2.395),
             Rotation(90, -0, -0),
-            optsSWAT_Rifle
+            optsMurkywater
         ),
 		--Respawns
 		restoration:gen_dummytrigger(

@@ -1,10 +1,13 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local ponr_value = (difficulty <= 5 and 1200 or (difficulty == 6 or difficulty == 7) and 1000) or 900
-
-local guard_replacement = {
-	elite_guard_1 = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-	elite_guard_2 = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-	elite_guard_3 = "units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"
+local murky_bravos_table = {
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"
 }
 
 local ponr_timer_player_mul = {
@@ -31,19 +34,9 @@ local ponr_timer_player_mul = {
 		0.65,
 		0.65
 }
-local bravo_1 = {
+local bravo_guards = {
 	values = {
-        enemy = guard_replacement.elite_guard_1
-	}
-}
-local bravo_2 = {
-	values = {
-        enemy = guard_replacement.elite_guard_2
-	}
-}
-local bravo_3 = {
-	values = {
-        enemy = guard_replacement.elite_guard_3
+        enemy = murky_bravos_table
 	}
 }
 return {
@@ -72,35 +65,35 @@ return {
 	},
 	--Murky Elite Guards
 	--https://www.youtube.com/watch?v=cNuluqg3GfQ
-	[101189] = bravo_1,
-	[102077] = bravo_1,
-	[102078] = bravo_2,
-	[102079] = bravo_2,
-	[102101] = bravo_1,
-	[102102] = bravo_1,
-	[102103] = bravo_3,
-	[102121] = bravo_2,
-	[102526] = bravo_1,
-	[103837] = bravo_2,
-	[103845] = bravo_1,
-	[103849] = bravo_3,
-	[103850] = bravo_2,
-	[103817] = bravo_1,
-	[103818] = bravo_1,
-	[103865] = bravo_3,
-	[103872] = bravo_1,
-	[103880] = bravo_2,
-	[103888] = bravo_3,
-	[103772] = bravo_1,
-	[103889] = bravo_1,
-	[105610] = bravo_1,
-	[105631] = bravo_3,
-	[102174] = bravo_1,
-	[102369] = bravo_2,
-	[103618] = bravo_1,
-	[103619] = bravo_2,
-	[100123] = bravo_1,
-	[100124] = bravo_1,
-	[101525] = bravo_3,
-	[101528] = bravo_3
+	[101189] = bravo_guards,
+	[102077] = bravo_guards,
+	[102078] = bravo_guards,
+	[102079] = bravo_guards,
+	[102101] = bravo_guards,
+	[102102] = bravo_guards,
+	[102103] = bravo_guards,
+	[102121] = bravo_guards,
+	[102526] = bravo_guards,
+	[103837] = bravo_guards,
+	[103845] = bravo_guards,
+	[103849] = bravo_guards,
+	[103850] = bravo_guards,
+	[103817] = bravo_guards,
+	[103818] = bravo_guards,
+	[103865] = bravo_guards,
+	[103872] = bravo_guards,
+	[103880] = bravo_guards,
+	[103888] = bravo_guards,
+	[103772] = bravo_guards,
+	[103889] = bravo_guards,
+	[105610] = bravo_guards,
+	[105631] = bravo_guards,
+	[102174] = bravo_guards,
+	[102369] = bravo_guards,
+	[103618] = bravo_guards,
+	[103619] = bravo_guards,
+	[100123] = bravo_guards,
+	[100124] = bravo_guards,
+	[101525] = bravo_guards,
+	[101528] = bravo_guards
 }

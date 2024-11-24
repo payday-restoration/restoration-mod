@@ -951,6 +951,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper_scripted.no_move_and_shoot = true --making sure that they won't shoot upon spawn and move to their SO spot
 	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9.75 --lower their health up to 50%
 	self.heavy_swat_sniper_scripted.headshot_dmg_mul = 3.75
+	self.heavy_swat_sniper_scripted.die_sound_event_2 = "mga_death_scream"
 	self.heavy_swat_sniper_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
@@ -978,6 +979,18 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else	
 		self.weekend_dmr.yellow_blood = false
 	end
+	--Weekend Snipers (Scripted, used only in specific events like Lost in Transit)
+	self.weekend_dmr_scripted = deep_clone(self.weekend_dmr)
+	self.weekend_dmr_scripted.marshal_logic = false
+	self.weekend_dmr_scripted.can_throw_frag = false
+	self.weekend_dmr_scripted.chatter = presets.enemy_chatter.no_chatter
+	self.weekend_dmr_scripted.access = "sniper"
+	self.weekend_dmr_scripted.detection = presets.detection.sniper
+	self.weekend_dmr_scripted.no_move_and_shoot = true
+	self.weekend_dmr_scripted.HEALTH_INIT = 14.75 
+	self.weekend_dmr_scripted.headshot_dmg_mul = 4.75
+	self.weekend_dmr_scripted.die_sound_event_2 = "mga_death_scream"
+	self.weekend_dmr_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
 	table.insert(self._enemy_list, "weekend_dmr")
 end
 
@@ -1340,6 +1353,21 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 		self.marshal_marksman.custom_voicework = "bravo_dmr"
 	end		
 
+	--Clones the scripted version of Titan Sniper
+	self.marshal_marksman_scripted = deep_clone(self.heavy_swat_sniper_scripted)
+	self.marshal_marksman_scripted.speech_prefix_p1 = "marshal_ass"
+	self.marshal_marksman_scripted.speech_prefix_p2 = nil
+	self.marshal_marksman_scripted.speech_prefix_count = nil
+	self.marshal_marksman_scripted.yellow_blood = false
+	if self:get_ai_group_type() == "russia" then
+		self.marshal_marksman_scripted.custom_voicework = "tswat_ru"
+	elseif self:get_ai_group_type() == "murkywater" then
+		self.marshal_marksman_scripted.custom_voicework = "bravo_elite_murky"	
+	elseif self:get_ai_group_type() == "federales" then
+		self.marshal_marksman_scripted.custom_voicework = "bravo_elite_mex"
+	else
+		self.marshal_marksman_scripted.custom_voicework = "bravo_dmr"
+	end	
 	table.insert(self._enemy_list, "marshal_marksman")
 end
 
@@ -18065,6 +18093,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.ranc.list, "ene_cop_2")	
 		table.insert(char_map.ranc.list, "ene_cop_3")
 		table.insert(char_map.ranc.list, "ene_cop_4")
+	--usm1
+		table.insert(char_map.usm1.list, "ene_male_marshal_marksman_scripted_2")
 	--Christmas
 		table.insert(char_map.cg22.list, "ene_bulldozer_snowman")		
 	--vip
@@ -18400,6 +18430,7 @@ function CharacterTweakData:character_map()
 				"ene_bravo_guard_2",
 				"ene_bravo_guard_3",
 				"ene_bravo_dmr",
+				"ene_bravo_dmr_scripted",
 				"ene_bravo_lmg",
 				"ene_bravo_rifle",
 				"ene_bravo_bulldozer",

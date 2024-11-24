@@ -1775,7 +1775,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_watson_info"] = "\"It'll only hurt for a second, okay?\"\n\nContains an unknown concoction that deals #{stats_positive}#120## poison damage and carries a #{skill_color}#50%## chance to interrupt every #{skill_color}#0.5## seconds over #{skill_color}#4## seconds.",
 
 		--That oinky sploinky
-		["bm_melee_piggy_hammer_info"] = "Oink.\n\nDeals #{skill_color}#100%## more damage to special and elite enemies and as a chance to deal one of the following #{risk}#random effects## upon a successful strike:\n-#{skill_color}#12%## chance to inflict #{important_1}#bleed##\n-#{skill_color}#7%## chance to #{ghost_color}#tase##\n-#{skill_color}#5%## chance to inflict #{stats_positive}#poison##\n-#{skill_color}#1%## chance to #{risk}#insta-kill##", --Piggu
+		["bm_melee_piggy_hammer_info"] = "Oink.\n\nDeals #{skill_color}#100%## more damage to special and elite enemies and has a chance to deal one of the following #{risk}#random effects## upon a successful strike:\n-#{skill_color}#12%## chance to inflict #{important_1}#bleed##\n-#{skill_color}#7%## chance to #{ghost_color}#tase##\n-#{skill_color}#5%## chance to inflict #{stats_positive}#poison##\n-#{skill_color}#1%## chance to #{risk}#insta-kill##", --Piggu
 
 		--Knuckle Daggers, Push Daggers
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal #{skill_color}#2x## damage every hit after the first while drawn.",
@@ -2778,6 +2778,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--MW2023 STG-44 (FUCK YOU, SLEDGEHAMMER)
 					["bm_w_stango44"] = "\"STG-44\"",
 					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30 Round Magazine",
+					--HD2 AR-23
+					["bm_w_ar23_penetrator"] = "AR-23P Liberator Penetrator",
+					["bm_wp_ck_penetrator_desc"] = "A variant of the AR-23 designed to #{skill_color}#penetrate armor.##",
+					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
+					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
 
 			--[[ DMRs ]]
 				--Little Friend

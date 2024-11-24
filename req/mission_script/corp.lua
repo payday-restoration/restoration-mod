@@ -1,5 +1,5 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local bulldozer == (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc) or "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
+local bulldozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or ("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2")
 local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
 	
 local enemy_filter = {

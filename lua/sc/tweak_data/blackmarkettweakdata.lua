@@ -3876,7 +3876,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			'piggy_hammer','dingdong','alien_maul',
 			'beardy','fireaxe'
 		}
-		if self.melee_weapons.halloween_sword then
+		if self.melee_weapons.titham then
 			table.insert(melee_anim, "titham")
 		end
 		for i, melee_id in ipairs(melee_anim) do
@@ -6054,6 +6054,9 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	end
 
 	self.melee_weapons.halloween_sword.attack_pattern = "bm_melee_pattern_great_no_stab"
+	self.melee_weapons.halloween_sword.stats.raycasts = 16
+	self.melee_weapons.halloween_sword.stats.raycasts_h = 30
+	self.melee_weapons.halloween_sword.stats.raycasts_charge = nil
 	self.melee_weapons.halloween_sword.anim_attack_charged_vars = nil
 	self.melee_weapons.halloween_sword.stats.min_damage_effect = 4.5
 	self.melee_weapons.halloween_sword.stats.max_damage_effect = 9.0

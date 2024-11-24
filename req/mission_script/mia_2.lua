@@ -1,87 +1,27 @@
+local titan_table_mayhem_dw = {
+	"units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1",
+	"units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf",
+	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
+	"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
+}
+local titan_table_ds = {
+	"units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1",
+	"units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf",
+	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
+	"units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
+	"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+}
+local titan_swat_table = {
+	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	"units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local chance_titan_swat_left = math.random()
-local chance_titan_swat_right = math.random()
-local chance_elite = math.random()
-local titan_table = { 
-	titan_swat_rifle = "units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
-	titan_swat_shotgun = "units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun",
-	titan_hrt = "units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1",
-	omnia_lpf = "units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf",
-	titan_sniper = "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper",
-	titan_taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser",
-	invis_woman = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-}
-
-	if difficulty <= 5 then
-		ponr_value = 330
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 300
-	else
-		ponr_value = 240		
-	end
-    
-	
-	--Setting up scirpted SWAT spawns
-	if difficulty <= 4 then
-		shield_unit = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
-		shotgun_unit = "units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
-	elseif difficulty == 5 then
-		shield_unit = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"
-		shotgun_unit = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"		
-	elseif difficulty == 6 or difficulty == 7 then
-		shield_unit = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec"
-		shotgun_unit = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"
-	else
-		shield_unit = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		shotgun_unit = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-	end
-	
-	--Titan Shields replace usual scripted shields on OVK+ with PJ
-	if pro_job and difficulty >= 5 then	
-		shield_unit = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		--2 scripted SWAT units will be replaced by titan SWAT
-		if chance_titan_swat_left < 0.5 then
-			titan_swat_left = titan_table.titan_swat_rifle
-		else
-			titan_swat_left = titan_table.titan_swat_shotgun
-		end
-		if chance_titan_swat_right < 0.5 then
-			titan_swat_right = titan_table.titan_swat_rifle
-		else
-			titan_swat_right = titan_table.titan_swat_shotgun
-		end
-	end
-	
-	
-	--Random titan unit for Mayhem+. Otherwise - vet cop
-	if difficulty <= 5 then
-		random_elite_unit = "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
-	else
-		if difficulty ~= 8 then
-			if chance_elite < 0.25 then
-				random_elite_unit = titan_table.titan_hrt
-			elseif chance_elite < 0.50 then
-				random_elite_unit = titan_table.omnia_lpf
-			elseif chance_elite < 0.75 then
-				random_elite_unit = titan_table.titan_sniper
-			else
-				random_elite_unit = titan_table.titan_taser
-			end
-		else
-			if chance_elite < 0.20 then
-				random_elite_unit = titan_table.titan_hrt
-			elseif chance_elite < 0.40 then
-				random_elite_unit = titan_table.omnia_lpf
-			elseif chance_elite < 0.60 then
-				random_elite_unit = titan_table.titan_sniper
-			elseif chance_elite < 0.80 then
-				random_elite_unit = titan_table.titan_taser
-			else
-				random_elite_unit = titan_table.invis_woman
-			end
-		end
-	end
+local shield_unit = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or (difficulty == 7 or difficulty == 6) and "units/payday2/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 5 and "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc") or "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"
+local shotgun_unit = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" or (difficulty == 7 or difficulty == 6) and "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" or difficulty == 5 and "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc") or "units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"
+local titan_swat = ((pro_job and difficulty >= 5) and titan_swat_table)
+local random_elite_unit = (difficulty == 8 and titan_table_ds or (difficulty == 7 or difficulty == 6) and titan_table_mayhem_dw) or "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
+local ponr_value = (difficulty <= 5 and 330 or (difficulty == 6 or difficulty == 7) and 300) or 240
 	
 local sniper_trigger_times = {
 	values = {
@@ -127,12 +67,12 @@ return {
 	[101160] = shotgun,
 	[101158] = {
 		values = {
-			enemy = titan_swat_left
+			enemy = titan_swat
 		}
 	},
 	[101159] = {
 		values = {
-			enemy = titan_swat_right
+			enemy = titan_swat
 		}
 	},
 	--Use unhooked scripted swat spawn for random titan unit (or vet cop if VH or lower diffs)

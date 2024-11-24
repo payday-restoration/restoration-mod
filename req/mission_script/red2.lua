@@ -2,7 +2,8 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = pro_job
 local marioinatophat_is_in_fwb_chance = math.random() < 0.15
-local ambush_amount = 1
+local ambush_amount = (difficulty == 8 and 2) or 1
+local ambush_doors_chance = (difficulty <= 5 and 35) or 50
 local cloaker_ambush_amount_vault_hallway = (difficulty == 8 and 3 or difficulty == 7 and 2) or 1
 local both_window_swats_only = (difficulty >= 6 and false) or true
 local enable_right_path = (difficulty >= 6 and true) or false
@@ -53,10 +54,16 @@ local disabled = {
 }
 	
 return {
-	--only dozer in the basement
+	--2 basement dozers on DS (1 on DW below)
 	[100529] = {
 		values = {
             amount = ambush_amount
+		}
+	},
+	--Tweak the basement ambush chance (35% on Overkill below, 50% on Mayhem+)
+	[100528] = {
+		values = {
+            chance = ambush_doors_chance
 		}
 	},
 	--disable sniper spawns that I don't like
@@ -190,7 +197,7 @@ return {
 			}
 		}
 	},
-	--spawn lobby blockade shields+Pro Job PONR
+	--spawn lobby blockade shields
 	[101660] = { 
 		on_executed = {
 			{id = 400001, delay = 0},

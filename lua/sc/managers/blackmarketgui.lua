@@ -5754,14 +5754,14 @@ function BlackMarketGui:update_info_text()
 
 		if has_sms then
 			local penalty_as_string = string.format("%d%%", math.round((1 - has_sms) * 100)):gsub("-", "")
-			if has_sms < 0 then
+			if has_sms < 1 then
 				if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc or has_move_speed or (perks and table.contains(perks, "bonus")) then
 					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
 				else
 					updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
 				end
 				table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
-				else
+			else
 
 				if (slot_data.global_value and slot_data.global_value ~= "normal") or is_gadget or is_ammo or is_bayonet or is_bipod or has_desc or has_move_speed or (perks and table.contains(perks, "bonus")) then
 					updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("bm_menu_weapon_sms_bonus_info") .. penalty_as_string .. ".##"

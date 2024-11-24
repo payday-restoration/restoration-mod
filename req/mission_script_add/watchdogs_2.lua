@@ -1,12 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
---Gotta be initialized prior to being used, otherwise it'll never return true
-local oops_all_titan_snipers = math.random() < 0.2
-local sniper = ((difficulty == 8 and pro_job and oops_all_titan_snipers) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 or difficulty == 5 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc"
+local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local fbi_ready_team_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
 local fbi_ready_team_2 = "units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
 local fbi_ready_team_dozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"
+local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
 local deathwish_above = difficulty >= 7
 
 local optsSniper_1 = {

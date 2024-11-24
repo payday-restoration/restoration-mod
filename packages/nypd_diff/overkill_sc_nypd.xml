@@ -463,6 +463,9 @@
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
 
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted"  load="true"/>
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted_husk"  load="true"/>
+	
 	<!-- bravo benellier -->
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_contour" />
@@ -484,6 +487,7 @@
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_df"/>
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer_nm"/>
 	
+
 	<!--bravo shotgun-->
 	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
 	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />

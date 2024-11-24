@@ -1,8 +1,13 @@
+local cloaker_ds_table = {
+	"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
+	"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
+	"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
+	"units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc",
+	"units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local pro_job = Global.game_settings and Global.game_settings.one_down
-local oops_all_titan_cloakers = math.random() < 0.2
 local chopper_amount = (difficulty == 8 and 2) or 1
-local cloaker = ((difficulty == 8 and pro_job and oops_all_titan_cloakers) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/payday2/characters/ene_spook_1/ene_spook_1"
+local cloaker = (difficulty == 8 and cloaker_ds_table) or "units/payday2/characters/ene_spook_1/ene_spook_1"
 	
 local access_fix = {
 	pre_func = function (self)

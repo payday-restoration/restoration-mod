@@ -1,15 +1,37 @@
+local murkywater_table = {
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
+}
+local murkywater_table_ovk = {
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local enabled_chance_snipers = math.random() < 0.45
 local diff_scaling = 0.085 * difficulty
-local murkyman_1 = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"
-local murkyman_2 = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"
-local murkyman_3 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec" or difficulty == 6 and "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1") or "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local sniper = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3" or difficulty == 6 and "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") or "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local taser = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
+local murkies = (difficulty <= 4 and murkywater_table) or murkywater_table_ovk
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
+local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
+local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local enabled_chance_cloakers = math.random() < diff_scaling
@@ -22,8 +44,7 @@ local spawn_cloakers = {
 	on_executed = { 
 		{ id = 400001, delay = 0 },
 		{ id = 400002, delay = 0 },
-		{ id = 400003, delay = 0 },
-		{ id = 400047, delay = 0 }
+		{ id = 400003, delay = 0 }
 	}
 }
 local spawn_shields_and_taser_1 = {
@@ -31,8 +52,7 @@ local spawn_shields_and_taser_1 = {
 	on_executed = { 
 		{ id = 400004, delay = 0 },
 		{ id = 400005, delay = 0 },
-		{ id = 400006, delay = 0 },
-		{ id = 400049, delay = 0 }
+		{ id = 400006, delay = 0 }
 	}
 }
 local spawn_shields_and_taser_2 = {
@@ -40,8 +60,7 @@ local spawn_shields_and_taser_2 = {
 	on_executed = { 
 		{ id = 400007, delay = 0 },
 		{ id = 400008, delay = 0 },
-		{ id = 400009, delay = 0 },
-		{ id = 400049, delay = 0 }
+		{ id = 400009, delay = 0 }
 	}
 }
 local spawn_shields_and_dozer = {
@@ -49,8 +68,7 @@ local spawn_shields_and_dozer = {
 	on_executed = { 
 		{ id = 400010, delay = 0 },
 		{ id = 400011, delay = 0 },
-		{ id = 400012, delay = 0 },
-		{ id = 400048, delay = 0 }
+		{ id = 400012, delay = 0 }
 	}
 }
 local spawn_murkies = {
@@ -167,18 +185,8 @@ local optsSniper_3 = {
     },
     enabled = (overkill_above and enabled_chance_snipers)
 }
-local optsMurky_Rifle = {
-    enemy = murkyman_1,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsMurky_Shotgun = {
-    enemy = murkyman_2,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsMurky_SMG = {
-    enemy = murkyman_3,
+local optsMurky = {
+    enemy_table = murkies,
 	participate_to_group_ai = true,
     enabled = true
 }
@@ -258,14 +266,6 @@ local optsrespawn_dozer_2 = {
 }
 local Bain_senddozers = {
 	dialogue = "Play_ban_s02_a",
-	can_not_be_muted = true
-}
-local Bain_sendcloakers = {
-	dialogue = "Play_ban_s04",
-	can_not_be_muted = true
-}
-local Bain_sendtasers = {
-	dialogue = "Play_ban_s01_a",
 	can_not_be_muted = true
 }
 local van_spawngroup  = {
@@ -489,84 +489,84 @@ return {
             "murky_1",
             Vector3(-8611, 3648, -72),
             Rotation(-90, 0, -0),
-            optsMurky_Rifle
+            optsMurky
         ),
 		restoration:gen_dummy(
             400029,
             "murky_2",
             Vector3(-8611, 3750, -72),
             Rotation(-90, 0, -0),
-            optsMurky_Shotgun
+            optsMurky
         ),
 		restoration:gen_dummy(
             400030,
             "murky_3",
             Vector3(-8525, 3669, -72),
             Rotation(-90, 0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummy(
             400031,
             "murky_4",
             Vector3(-8525, 3750, -72),
             Rotation(-90, 0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummy(
             400032,
             "murky_5",
             Vector3(-7567, 7768, 898.834),
             Rotation(0, 0, -0),
-            optsMurky_Shotgun
+            optsMurky
         ),
 		restoration:gen_dummy(
             400033,
             "murky_6",
             Vector3(-7653, 7768, 898.834),
             Rotation(0, 0, -0),
-            optsMurky_Shotgun
+            optsMurky
         ),
 		restoration:gen_dummy(
             400034,
             "murky_7",
             Vector3(-7653, 7838, 898.834),
             Rotation(0, 0, -0),
-            optsMurky_Rifle
+            optsMurky
         ),
 		restoration:gen_dummy(
             400035,
             "murky_8",
             Vector3(-7567, 7838, 898.834),
             Rotation(0, 0, -0),
-            optsMurky_Rifle
+            optsMurky
         ),
 		restoration:gen_dummy(
             400036,
             "murky_9",
             Vector3(-6933, 9746, 9.261),
             Rotation(90, -0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummy(
             400037,
             "murky_10",
             Vector3(-6933, 9666, 9.261),
             Rotation(90, -0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummy(
             400038,
             "murky_11",
             Vector3(-7011, 9744, 9.261),
             Rotation(90, -0, -0),
-            optsMurky_Rifle
+            optsMurky
         ),
 		restoration:gen_dummy(
             400039,
             "murky_12",
             Vector3(-7011, 9668, 9.261),
             Rotation(90, -0, -0),
-            optsMurky_Rifle
+            optsMurky
         ),
 		restoration:gen_dummytrigger(
             400040,
@@ -614,19 +614,9 @@ return {
             spawn_murkies
         ),
 		restoration:gen_dialogue(
-            400047,
-            "they_sending_cloakers",
-            Bain_sendcloakers
-        ),
-		restoration:gen_dialogue(
             400048,
             "they_sending_dozers",
             Bain_senddozers
-        ),
-		restoration:gen_dialogue(
-            400049,
-            "they_sending_tasers",
-            Bain_sendtasers
         ),
 		restoration:gen_missionscript(
             400050,
@@ -675,28 +665,28 @@ return {
             "murky_13",
             Vector3(-11422.900, 5427.540, 282.287),
             Rotation(-30, 0, -0),
-            optsMurky_Shotgun
+            optsMurky
         ),
 		restoration:gen_dummy(
             400059,
             "murky_14",
             Vector3(-11450.400, 5379.910, 282.287),
             Rotation(-30, 0, -0),
-            optsMurky_Shotgun
+            optsMurky
         ),
 		restoration:gen_dummy(
             400060,
             "murky_15",
             Vector3(-11472.900, 5340.940, 282.287),
             Rotation(-30, 0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummy(
             400061,
             "murky_16",
             Vector3(-11496.900, 5299.370, 282.287),
             Rotation(-30, 0, -0),
-            optsMurky_SMG
+            optsMurky
         ),
 		restoration:gen_dummytrigger(
             400062,

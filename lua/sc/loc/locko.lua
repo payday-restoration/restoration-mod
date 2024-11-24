@@ -1269,11 +1269,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.",
-		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적 헤드샷 배율이 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#9발##을 발사합니다.\n{skill_color}#헤드샷 피해량이 100% 증가하고 적 헤드샷 배율이 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적 헤드샷 배율이 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적 헤드샷 배율이 감소하지 않습니다.##",
-		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적 헤드샷 배율이 감소하지 않습니다.##",	
+		["bm_wp_upg_a_piercing_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적에게 가하는 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_9_auto_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#9발##을 발사합니다.\n{skill_color}#헤드샷 피해량이 100% 증가하고 적에게 가하는 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_semi_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적에게 가하는 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_pump_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적에게 가하는 헤드샷 배율이 감소하지 않습니다.##",
+		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "#{skill_color}#철갑## 플레셰트 #{skill_color}#12발##을 발사합니다.\n#{skill_color}#헤드샷 피해량이 100% 증가하고 적에게 가하는 헤드샷 배율이 감소하지 않습니다.##",	
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "반사식 조준기.\n#{risk}#1.1배율.##",
@@ -1374,9 +1374,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_multishot_1"] = "발사체가",
 		["bm_menu_weapon_multishot_2"] = "발로 나뉘어지고, 각각",
 		["bm_menu_weapon_multishot_3"] = "의 피해를 가합니다.",
-		["bm_menu_weapon_ene_hs_mult_sub"] = "적 헤드샷 배율이 일반 값의 ",
-		["bm_menu_weapon_ene_hs_mult_add"] = "적 헤드샷 배율이 일반 값의 ",
-		["bm_menu_weapon_ene_hs_mult_end"] = " 로 감소 혹은 증가합니다.",
+		["bm_menu_weapon_ene_hs_mult_sub"] = "적에게 가하는 배율이 보통 값의 ",
+		["bm_menu_weapon_ene_hs_mult_add"] = "적에게 가하는 배율이 보통 값의 ",
+		["bm_menu_weapon_ene_hs_mult_end"] = " 감소 혹은 증가합니다.",
 		["bm_menu_weapon_hs_mult_1"] = "캡틴이 아닌 적에게 헤드샷을 입히면 대미지를 ",
 		["bm_menu_weapon_hs_mult_2"] = "만큼 더 가합니다.",
 		["bm_menu_weapon_exp_no_hs_info"] = "#{risk}#고폭탄이 장전되어 있습니다.## #{skill color}#직격 시 총알 피해로 간주되는 추가 피해가 50%만큼 증가합니다.##",
@@ -1384,7 +1384,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_bonus_info"] = "무기를 들고있는 동안 이동 속도가 ",
 		["bm_menu_weapon_sms_bonus_info"] = "무기를 들고있는 동안 사격 중 이동 속도 패널티가 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 감소 혹은 증가합니다.",
-		["bm_menu_sms_info_cont"] = "패널티가 증가합니다.",
+		["bm_menu_sms_info_cont"] = "사격 시 패널티가 증가합니다.",
 		["bm_menu_sms_info_cont_2"] = "현재 개조품으로 인해 사격 시 패널티가 증가합니다.",
 		["bm_menu_sms_info_2"] = " 만큼 사격 시 감소합니다.",
 		["bm_menu_stat_sms_info_2"] = " 만큼 현재 개조품으로 인해 사격 시 감소합니다.",
@@ -1770,7 +1770,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_watson_info"] = "\"잠깐 아플 뿐이야, 알겠지?\"\n\n#{stats_positive}#120##의 독 피해를 가하고 #{skill_color}#4##초 동안 #{skill_color}#0.5##초마다 #{skill_color}#50%##의 확률로 행동을 방해할 수 있는 알 수 없는 혼합물이 들어 있습니다.", 
 
 		--That oinky sploinky
-		["bm_melee_piggy_hammer_info"] = "꿀꿀이.\n\n특수 및 엘리트 적에게 #{skill_color}#100%##만큼 더 많은 피해를 가하고, 성공적으로 적중 시 일정 확률로 아래의 #{risk}#무작위 효과## 중 하나를 가합니다.\n-#{skill_color}#12%## 확률로 #{important_1}#출혈##\n-#{skill_color}#7%## 확률로 #{ghost_color}#감전##\n-#{skill_color}#5%## 확률로 #{stats_positive}#독##\n-#{skill_color}#1%## 확률로 #{risk}#즉사##", --Piggu
+		["bm_melee_piggy_hammer_info"] = "꿀꿀이.\n\n특수 및 엘리트 적에게 #{skill_color}#100%##만큼 더 많은 피해를 가하고, 성공적으로 적중 시 일정 확률로 다음 #{risk}#무작위 효과## 중 하나를 가합니다.\n-#{skill_color}#12%## 확률로 #{important_1}#출혈##\n-#{skill_color}#7%## 확률로 #{ghost_color}#감전##\n-#{skill_color}#5%## 확률로 #{stats_positive}#독##\n-#{skill_color}#1%## 확률로 #{risk}#즉사##", --Piggu
 
 		--Knuckle Daggers, Push Daggers
 		["bm_melee_specialist_info"] = "나이프가 두 배면 재미도 두 배.\n\n근접 공격은 첫 번째 공격 이후부터 매 공격마다 #{skill_color}#2배##의 피해를 가합니다.", 
@@ -2364,7 +2364,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_x_socom"] = "아킴보 Anubis .45",
 				--S&W .500
 				["bm_w_shatters_fury"] = "Phoenix .500",
-				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 .500 탄을 사용하는 거대한 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
+				["bm_wp_shatters_fury_desc"] = "엄청난 반동과 저지력을 가진 .500 탄을 사용하는 거대한 리볼버입니다. 샤터가 사용하는 무기죠.\n#{skill_color}#방탄복, 다수의 적, 방패 그리고 얇은 벽을 관통할 수 있습니다##",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "호루스 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "셰더 총열",
 				["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "하토르 총열",
@@ -2773,7 +2773,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--MW2023 STG-44 (FUCK YOU, SLEDGEHAMMER)
 					["bm_w_stango44"] = "\"STG-44\"",
 					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30발 탄창",					
-			
+					--HD2 AR-23
+					["bm_w_ar23_penetrator"] = "AR-23P Liberator Penetrator",
+					["bm_wp_ck_penetrator_desc"] = "방탄복을 관통하도록 설계된 AR-23의 변형 중 하나입니다.",
+					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
+					["bm_wp_ck_concussive_desc"] = "#{skill_color}#충격탄##과 개조된 레드 닷 조준경이 장착된 AR-23의 변형 중 하나입니다.\n\n#{skill_color}#충격탄은 최대 20m 떨어진 적을 넘어뜨립니다.##\n\n#{risk}#넘어뜨림의 사거리는 수정할 수 없으며 점사 사격 모드가 제거됩니다.##",
+					
 			--[[ DMRs ]]
 				--Little Friend
 				["bm_m203_weapon_sc_desc_pc"] = "스카페이스의 개인용 \"Little Friend\"이자 AMR-16의 큰 언니.\n\n#{skill_color}#방탄복을 관통하여 피해의 25%를 가합니다.##\n#{skill_color}#$BTN_BIPOD## 키를 눌러 하부에 장착된 유탄 발사기로 전환합니다.",
@@ -2867,7 +2872,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_awp_sc_desc"] = "뛰어난 사정거리와 명중률로 유명한 저격소총. 초기 모델이 창고에서 세 사람에 의해 만들어졌다고 누가 생각이나 했을까요?\n\n#{skill_color}#방탄복, 다수의 적, 방패 그리고 얇은 벽을 관통할 수 있습니다.##",	
 				["bm_awp_cs_dragon"] = "AWP | 용의 전설",
 				["bm_awp_cs"] = "AWP",
-				["bm_wp_upg_bazooka"] = "용의 비전설 전용 세트",
+				["bm_wp_upg_bazooka"] = "용의 비설화 전용 세트",
 				["bm_wp_upg_bazooka_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#헤드샷은 캡틴을 제외한 적에게 50%만큼 추가 피해를 가합니다.##\n#{skill_color}#타이탄 방패를 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시동안 조준을 할 수 없습니다.##",
 				["bm_bazooka_sc_desc"] = "위험할수록 큰 보상이 따르는 이 악명 높은 소총은 단방에 적을 제압하는 방식이 특징인 것으로 널리 알려져 있습니다.\n\n#{skill_color}#다수의 적, 방탄복, 방패, 타이탄 방패 그리고 얇은 벽을 관통할 수 있습니다.##\n\n#{risk}#사격 시 잠시동안 조준을 할 수 없습니다.##",
 				--WA2000

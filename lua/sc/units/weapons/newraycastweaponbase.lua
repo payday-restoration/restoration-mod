@@ -947,7 +947,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
 		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST
-		if self._lock_burst then
+		if self._lock_burst and not self._locked_fire_mode then
 			self:_set_burst_mode(true, true)
 		end
 		self._auto_burst = self:weapon_tweak_data().AUTO_BURST
@@ -1358,6 +1358,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.lock_burst then
 				self._lock_burst = true
 			end
+			if stats.block_burst then
+				self._block_burst = true
+			end
 			if stats.big_scope then
 				self._has_big_scope = true
 			end
@@ -1489,7 +1492,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 	end	
 
-	if self._has_burst_fire and self:weapon_tweak_data().BURST_FIRE_DEFAULT then 
+	if not self._locked_fire_mode and self._has_burst_fire and self:weapon_tweak_data().BURST_FIRE_DEFAULT then 
 		self:_set_burst_mode(true, true)
 	end
 
@@ -1762,7 +1765,7 @@ end
 
 local toggle_firemode_original = NewRaycastWeaponBase.toggle_firemode
 function NewRaycastWeaponBase:toggle_firemode(...)
-	return self._has_burst_fire and not self._locked_fire_mode and not self._lock_burst and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
+	return self._has_burst_fire and not self._block_burst and not self._locked_fire_mode and not self._lock_burst and not self:gadget_overrides_weapon_functions() and self:_check_toggle_burst() or toggle_firemode_original(self, ...)
 end
 
 function NewRaycastWeaponBase:can_toggle_firemode()

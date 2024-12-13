@@ -1249,6 +1249,10 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_merc_df" force="true"/>		
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" force="true"/>
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" force="true"/>
+
+	<!--Marshal Shields-->
+	<sequence_manager	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
+	<sequence_manager	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2"/>	
 	
 	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes"/>
@@ -2128,6 +2132,9 @@
 	<animation			path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
+	
+	<!-- Shield Bash Animation -->
+	<animation			path="anims/shared/boss/shield/cbt_crh_melee" load="true"/>	
 		
 	<!--LOD Vet Cop-->		
 	<object				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>

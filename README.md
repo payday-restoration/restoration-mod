@@ -109,11 +109,15 @@ Dorpenka: Updated Combat Harness viewmodel, chromatic aberration and civilian ki
 
 Rickerus: Providing assets for the ASU's head.
 
+PlayBONK: Creating the shield bash animation.
+
 Marshie: Russian localisation
 
 LR_Daring: Chinese localisation
 
 GullwingDoor: Korean localisation
+
+Bobctopus: Spanish localisation
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale
 

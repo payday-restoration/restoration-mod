@@ -307,7 +307,7 @@ return {
 		}
 	},
 	--remove spawning the group and spawn 3 tasers+1 heavy swat as a 145+ throwback
-	--Spawn 2 blackdozers as a sudden spawn on DS if there are 3-4 players alive (50% chance)
+	--Spawn 2 dozers as a sudden spawn on DS if there are 3-4 players alive (50% chance, 193+ throwback)
 	[103710] = { 
 		values = {
 			chance = stair_blockade_chance

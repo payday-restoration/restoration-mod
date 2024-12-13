@@ -1,7 +1,7 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local timelock_normal = (difficulty >= 6 and 240)
-local timelock_fast = (difficulty >= 6 and 210)
+local timelock_normal = (difficulty >= 6 and 240) or 180
+local timelock_fast = (difficulty >= 6 and 210) or 150
 local titan_sniper_c4 = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted")
 local swat_normal = (pro_job and "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
 local swat_hard = (pro_job and "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")

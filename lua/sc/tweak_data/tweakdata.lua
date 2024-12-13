@@ -169,6 +169,12 @@ tweak_data.smg = {
 		tweak_data.sasha = {
 			hipfire_spread_mult = 0.6
 		}
+	tweak_data.bige = {
+		swap_bonus = 1 / tweak_data.smg.swap_bonus,
+		moving_spread_mult = 1 / tweak_data.smg.moving_spread_mult,
+		hipfire_spread_mult = 1.2 / tweak_data.smg.hipfire_spread_mult,
+		shake_mul = 2
+	}
 
 tweak_data.snp = {
 	swap_bonus = 1,
@@ -1589,3 +1595,83 @@ if BeardLib then
 		}
 	end
 end
+
+
+local twf = tweak_data.weapon.factory
+local twb = tweak_data.blackmarket
+--Shitty way getting this to load late/after soosh's CunnyArchive weapon skin mod; if there's a better way, do tell
+--BRATTY CODE NEEDS CORRECTION 😭💢
+if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
+	twb.weapon_skins.mg42_cnuy_hina.default_blueprint = {
+		"wpn_fps_lmg_mg42_b_mg42",
+		"wpn_fps_lmg_mg42_n42",
+		"wpn_fps_lmg_mg42_reciever",
+		"wpn_fps_lmg_mg42_hina_cnuy"
+	}
+	twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_reciever = deep_clone(twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_receiver_hinature)
+	for k, used_part_id in ipairs(twf.wpn_fps_lmg_mg42.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.mg42_cnuy_hina.parts[used_part_id] = deep_clone(twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_b_hinature)
+			elseif twf.parts[used_part_id].type == "barrel_ext" and not twf.parts[used_part_id].sub_type then
+				twb.weapon_skins.mg42_cnuy_hina.parts[used_part_id] = deep_clone(twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_n42)
+			end
+		end
+	end
+
+	twb.weapon_skins.m4_cnuy_azusa.default_blueprint = {
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_upg_ass_ns_battle",
+		"wpn_fps_upg_ass_m4_upper_reciever_core",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_m4_uupg_o_flipup",
+		"wpn_fps_m4_uupg_fg_lr300",
+		"wpn_fps_ass_m4_azusa_cnuy"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.m4_cnuy_azusa.parts[used_part_id] = deep_clone(twb.weapon_skins.m4_cnuy_azusa.parts.wpn_fps_upg_ass_m4_fg_vanitas_azusa)
+			end
+		end
+	end
+
+	twb.weapon_skins.c96_cnuy_satsuki.default_blueprint = {
+		"wpn_fps_pis_c96_b_standard",
+		"wpn_fps_pis_c96_body_standard",
+		"wpn_fps_pis_c96_m_standard",
+		"wpn_fps_pis_c96_g_standard",
+		"wpn_fps_pis_c96_cnuy_satsuki"
+	}
+	twb.weapon_skins.c96_cnuy_satsuki.parts.wpn_fps_pis_c96_body_standard = deep_clone(twb.weapon_skins.c96_cnuy_satsuki.parts.wpn_fps_pis_c96_body_mkultra)
+	twb.weapon_skins.c96_cnuy_satsuki.parts.wpn_fps_pis_c96_g_standard = deep_clone(twb.weapon_skins.c96_cnuy_satsuki.parts.wpn_fps_pis_c96_g_mkultra)
+
+	twb.weapon_skins.m4_cnuy_saori.default_blueprint = {
+		"wpn_fps_upg_m4_g_mgrip",
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_uupg_upper_radian",
+		"wpn_fps_m4_uupg_b_short",
+		"wpn_fps_m4_uupg_fg_lr300",
+		"wpn_fps_upg_m4_m_l5",
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_upg_o_aimpoint",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_upg_ns_ass_smg_firepig",
+		"wpn_fps_ass_m4_cnuy_saori"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.m4_cnuy_saori.parts[used_part_id] = deep_clone(twb.weapon_skins.m4_cnuy_saori.parts.wpn_fps_upg_ass_m4_fg_vanitas)
+			end
+		end
+	end
+
+end
+

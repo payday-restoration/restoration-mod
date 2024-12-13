@@ -3,7 +3,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.095 * difficulty
 local chavez_enforcer = "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer"
 local chavez_lieutenant = "units/pd2_dlc_flat/characters/ene_gang_colombian_boss/ene_gang_colombian_boss"
-local swat_shotgunner = "units/payday2/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
+local swat_shotgunner = "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
 local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
 local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"

@@ -5,7 +5,6 @@ local shield = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local swat_rifle = "units/payday2/characters/ene_swat_1/ene_swat_1"
 local swat_shotgun = "units/payday2/characters/ene_swat_2/ene_swat_2"
-local swat_smg = "units/payday2/characters/ene_swat_3/ene_swat_3"
 local swat_heavy_rifle = "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"
 local swat_heavy_shotgun = "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
 local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
@@ -17,7 +16,7 @@ local death_sentence = difficulty == 8
 local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
 local enabled_chance_helipad_dozer = math.random() < diff_scaling
-local swat_ambush_table = {swat_rifle, swat_rifle, swat_shotgun, swat_shotgun, swat_smg, swat_smg, swat_heavy_rifle, swat_heavy_rifle, swat_heavy_shotgun}
+local swat_ambush_table = {swat_rifle, swat_rifle, swat_shotgun, swat_shotgun, swat_heavy_rifle, swat_heavy_rifle, swat_heavy_shotgun}
 
 local optsCloaker = {
     enemy = cloaker,

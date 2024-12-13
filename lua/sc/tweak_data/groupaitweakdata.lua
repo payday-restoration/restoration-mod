@@ -7207,7 +7207,46 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		--Bronco (Heh)
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.nypd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
 		self.unit_categories.CS_cop_stealth_MP5.unit_types.lapd[1] = "units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"
-		
+
+		--Marshal Shields replace regular Titan Shields on Texas heists
+		if difficulty_index == 5 then
+			self.unit_categories.FBI_shield.unit_types.nypd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+			self.unit_categories.FBI_shield.unit_types.lapd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		elseif difficulty_index == 6 then
+			self.unit_categories.FBI_shield.unit_types.nypd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+			self.unit_categories.FBI_shield.unit_types.lapd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		elseif difficulty_index == 7 then
+			self.unit_categories.GS_shield.unit_types.nypd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+			self.unit_categories.GS_shield.unit_types.lapd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		--Replaced with Bellmead on DS	
+		elseif difficulty_index == 8 then
+			self.unit_categories.GS_shield.unit_types.nypd[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"
+			self.unit_categories.GS_shield.unit_types.nypd[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"
+			self.unit_categories.GS_shield.unit_types.nypd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"
+			self.unit_categories.GS_shield.unit_types.lapd[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"
+			self.unit_categories.GS_shield.unit_types.lapd[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"
+			self.unit_categories.GS_shield.unit_types.lapd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2"	
+		end
+
+		--just in case
+		self.unit_categories.GS_shield_defend.unit_types.nypd = {
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")	
+		}
+
+		self.unit_categories.GS_shield_defend.unit_types.lapd = {
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"),
+			Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")		
+		}
+
 		--Have US Marshals on Texas heists instead of regular Titan Snipers
 		self.unit_categories.titan_sniper = deep_clone(self.unit_categories.marshal_marksman)
 	end
@@ -21228,7 +21267,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0
 			},
 			--Slowly get replaced by GenSec boys
-			GS_heavys = {
+			GS_Heavys = {
 				0,
 				0.125,
 				0.22

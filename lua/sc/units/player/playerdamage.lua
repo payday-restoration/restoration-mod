@@ -781,6 +781,7 @@ function PlayerDamage:damage_melee(attack_data)
 				pm:set_player_state("standard")
 			end					
 		end
+
 	end	
 
 	local blood_effect = attack_data.melee_weapon and attack_data.melee_weapon == "weapon"
@@ -804,12 +805,13 @@ function PlayerDamage:damage_melee(attack_data)
 	if attacker_unit:base()._tweak_table == "tank" then
 		managers.achievment:set_script_data("dodge_this_fail", true)
 	end
-	
+
 	local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)
 	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 1) * shake_armor_multiplier
+	local push_multiplier = ((attacker_char_tweak and attacker_char_tweak.melee_push_multiplier) or 1) * self._melee_push_multiplier
 	managers.rumble:play("damage_bullet")
 	
 	local t = pm:player_timer():time()
@@ -817,18 +819,30 @@ function PlayerDamage:damage_melee(attack_data)
 		return
 	end
 
+	local force_crouch = attacker_char_tweak and attacker_char_tweak.melee_force_crouch
+	if alive(attacker_unit) and attacker_unit:base() then
+		is_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield") and true
+	end
+
+	--Apply slow debuff if melee has one.
+	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].ewgf and alive(self._unit) and not self._unit:movement():current_state().driving then
+		local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].ewgf
+
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power, true)
+	end
+	
 	--Apply changes to melee push camera effect, cap effects of it so even players with insane armor can tell they were meleed.
 	local vars = {
 		"melee_hit",
 		"melee_hit_var2"
 	}
-	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * self._melee_push_multiplier, 0.25))
+	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * push_multiplier, 0.25))
 	self._unit:movement():current_state()._d_scope_t = 0.6
 	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	if not self._bleed_out then
-		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
-		self._unit:movement():push(attack_data.push_vel * 1.25, true, 0.2, true)
+		mvector3.multiply(attack_data.push_vel, push_multiplier)
+		self._unit:movement():current_state():push(attack_data.push_vel * 1.25, true, 0.2, not force_crouch and true, force_crouch)
 	end
 	
 	return

@@ -4118,6 +4118,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m4_azusa_cnuy")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m4_cnuy_saori")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -9717,6 +9719,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(self)
 
 	self.parts.wpn_fps_ass_famas_m_standard_dummy = deep_clone(self.parts.wpn_fps_ass_famas_m_standard)
+	self.parts.wpn_fps_ass_famas_m_standard_dummy.type = "shitass_m"
 	self.parts.wpn_fps_ass_famas_m_standard_dummy.visibility = {
 		{
 			objects = {
@@ -9766,11 +9769,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
+	self.wpn_fps_ass_famas.adds.wpn_fps_upg_o_northtac = {
+		"wpn_fps_ass_famas_o_adapter"
+	}
+
 	self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
 	self.wpn_fps_ass_famas.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
 
+	self.wpn_fps_ass_famas_npc.adds = deep_clone(self.wpn_fps_ass_famas.adds)	
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
 end)		
@@ -11615,6 +11623,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_hina_cnuy")
 
 	self.wpn_fps_lmg_mg42.adds = {}
 	self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
@@ -11714,6 +11723,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_c96_cnuy_satsuki")
 	
 	self.wpn_fps_pis_c96_npc.uses_parts = deep_clone(self.wpn_fps_pis_c96.uses_parts)		
 	
@@ -15663,7 +15673,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", functi
 	self.parts.wpn_fps_pis_packrat_ns_wick.supported = true
 	self.parts.wpn_fps_pis_packrat_ns_wick.stats = {
 		value = 6,
-		spread = 2,
+		spread = 3,
 		recoil = -2,
 		concealment = -2
 	}
@@ -15684,6 +15694,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", functi
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
+	self.wpn_fps_pis_packrat_npc.override = deep_clone(self.wpn_fps_pis_packrat.override)
 	self.wpn_fps_pis_packrat_npc.uses_parts = deep_clone(self.wpn_fps_pis_packrat.uses_parts)
 
 end)
@@ -15755,7 +15766,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 
 	self.parts.wpn_fps_smg_schakal_body_lower.adds = {"wpn_fps_smg_schakal_bolt_standard"}
 
-	self.wpn_fps_smg_schakal.override = self.wpn_fps_smg_schakal.override or {} 
+	self.wpn_fps_smg_schakal.override = self.wpn_fps_smg_schakal.override or {}
 	self.wpn_fps_smg_schakal.override.wpn_fps_upg_vg_ass_smg_stubby = {
 		stats = {
 			recoil = -2,
@@ -15841,11 +15852,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 		}
 	}
 	
-	table.insert(self.wpn_fps_snp_desertfox.uses_parts, "wpn_fps_snp_model70_iron_sight")	
+	table.insert(self.wpn_fps_snp_desertfox.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	
 	self.wpn_fps_snp_desertfox_npc.uses_parts = deep_clone(self.wpn_fps_snp_desertfox.uses_parts)
-
-
 
 end)
 
@@ -15872,6 +15881,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_packrat", "resmod_x_packrat", fu
 	table.insert(self.wpn_fps_x_packrat.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_x_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
 
+	self.wpn_fps_x_packrat_npc.override = deep_clone(self.wpn_fps_x_packrat.override)	
 	self.wpn_fps_x_packrat_npc.uses_parts = deep_clone(self.wpn_fps_x_packrat.uses_parts)	
 
 end)
@@ -32465,7 +32475,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.has_description = true
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
-					value = 5,
+					value = 0,
 					gadget_zoom = 1
 				}
 		
@@ -38768,8 +38778,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2,
 			concealment = -1
 		}
-
-
 	end
 
 	if self.parts.wpn_fps_ass_ar23_body then
@@ -38881,8 +38889,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_ck = { custom_stats = {} }
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_2 = { custom_stats = {} }
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3 = { custom_stats = {} }
-		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }
-		
+		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }		
+	end
+
+	if self.parts.wpn_fps_ass_bulldog_burst then
+		self.parts.wpn_fps_ass_bulldog_burst.perks = nil
+		self.parts.wpn_fps_ass_bulldog_burst.custom_stats = nil
+		self.parts.wpn_fps_ass_bulldog_body.adds = nil
+		self.parts.wpn_fps_ass_bulldog_reflex.supported = true
+		self.parts.wpn_fps_ass_bulldog_reflex.stats = {
+			value = 0,
+			zoom = 1,
+			base_zoom_off = 1
+		}
+		self.parts.wpn_fps_ass_bulldog_reflex_reddot.supported = true
+		self.parts.wpn_fps_ass_bulldog_reflex_reddot.stats = {
+			value = 0,
+			gadget_zoom = 3
+		}
 	end
 
 	if self.parts.wpn_fps_shot_spas15_mag then
@@ -39179,6 +39203,181 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ns_shot_nomad.custom_stats = {}			
 
 	end
+
+	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]
+	--Version 0.5.0
+		--Et Omnia Vanitas
+			self.parts.wpn_fps_ass_m4_azusa_cnuy = {
+				type = "legendary",
+				name_id = "bm_wskn_m4_azusa_cnuy",
+				desc_id = "bm_wskn_m4_azusa_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_m4_uupg_o_flipup = {
+						third_unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas",
+						unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas"
+					},
+					wpn_fps_m4_uupg_fg_rail_ext_dummy = {
+						unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
+						third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
+					}
+				},
+				forbids = {
+					"wpn_fps_m4_uupg_b_sd"
+				}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id] = {
+							override = {},
+							adds = {},
+							unit = "units/mods/weapons/wpn_fps_upg_ass_m4_fg_vanitas_azusa/wpn_fps_upg_ass_m4_fg_vanitas_azusa"
+						}
+					elseif self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) then
+						self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id] = {
+							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
+						}
+						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+					elseif self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.forbids, used_part_id)
+					end
+				end
+			end
+
+		--The End: Destroyer
+			self.parts.wpn_fps_lmg_mg42_hina_cnuy = {
+				type = "legendary",
+				name_id = "bm_wskn_mg42_hina_cnuy",
+				desc_id = "bm_wskn_mg42_hina_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_lmg_mg42_reciever = {
+						unit = "units/mods/weapons/wpn_fps_lmg_mg42_receiver_hinature/wpn_fps_lmg_mg42_receiver_hinature" 
+					},
+					wpn_fps_lmg_mg42_b_mg42 = {
+						override = {},
+						unit = "units/mods/weapons/wpn_fps_lmg_mg42_b_hinature/wpn_fps_lmg_mg42_b_hinature"
+					},
+					wpn_fps_lmg_mg42_n42 = {
+						third_unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature",
+						unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature"
+					}
+				},
+				forbids = {}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_lmg_mg42.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "barrel" then
+						self.parts.wpn_fps_lmg_mg42_hina_cnuy.override[used_part_id] = {
+							override = {},
+							unit = "units/mods/weapons/wpn_fps_lmg_mg42_b_hinature/wpn_fps_lmg_mg42_b_hinature"
+						}
+					elseif self.parts[used_part_id].type == "barrel_ext" and not self.parts[used_part_id].sub_type then
+						self.parts.wpn_fps_lmg_mg42_hina_cnuy.override[used_part_id] = {
+							third_unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature",
+							unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature"
+						}
+					elseif self.parts[used_part_id].type == "sight" then
+						table.insert(self.parts.wpn_fps_lmg_mg42_hina_cnuy.forbids, used_part_id)
+					end
+				end
+			end
+
+		--NK Delta
+			self.parts.wpn_fps_pis_c96_cnuy_satsuki = {
+				type = "legendary",
+				name_id = "bm_wskn_c96_satsuki_cnuy",
+				desc_id = "bm_wskn_c96_satsuki_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_pis_c96_body_standard = {
+						unit = "units/mods/weapons/wpn_fps_pis_c96_body_mkultra/wpn_fps_pis_c96_body_mkultra" 
+					},
+					wpn_fps_pis_c96_g_standard = {
+						unit = "units/mods/weapons/wpn_fps_pis_c96_g_mkultra/wpn_fps_pis_c96_g_mkultra" 
+					}
+				}
+			}
+
+		--Arius AR
+			self.parts.wpn_fps_ass_m4_cnuy_saori = {
+				type = "legendary",
+				name_id = "bm_wskn_m4_saori_cnuy",
+				desc_id = "bm_wskn_m4_saori_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_m4_uupg_o_flipup = {
+						third_unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas",
+						unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas"
+					},
+					wpn_fps_m4_uupg_fg_rail_ext_dummy = {
+						unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
+						third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
+					}
+				},
+				forbids = {
+					"wpn_fps_m4_uupg_b_sd"
+				}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
+							override = {},
+							adds = {},
+							unit = "units/mods/weapons/wpn_fps_upg_ass_m4_fg_vanitas/wpn_fps_upg_ass_m4_fg_vanitas"
+						}
+					elseif self.parts[used_part_id].type == "vertical_grip" then
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						}
+					elseif self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) then
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
+							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
+						}
+						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
+					elseif self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.forbids, used_part_id)
+					end
+				end
+			end
 
 
 --Make more attachments universally available, cartridge mismatching be damned
@@ -40304,8 +40503,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	end
-
-
 
 	if self.parts.wpn_fps_m4_upg_fg_mk12 then
 		for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do

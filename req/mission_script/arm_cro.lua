@@ -1,19 +1,21 @@
+local gensec_agents = {
+	"units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
+	"units/payday2/characters/ene_city_guard_2/ene_city_guard_2"
+}
+local gensec_swat = {
+	"units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
+	"units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local hunt_projob = pro_job
-local gensec_rifle = ((pro_job and difficulty <= 6) and "units/payday2/characters/ene_city_guard_1/ene_city_guard_1" or difficulty >= 7 and "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc")
-local gensec_smg = ((pro_job and difficulty <= 6) and "units/payday2/characters/ene_city_guard_2/ene_city_guard_2" or difficulty >= 7 and "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc")
+local gensec_guards = ((pro_job and difficulty <= 6) and gensec_agents or difficulty >= 7 and gensec_swat)
 local gensec_dozer = (difficulty >= 6 and "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")
 local ponr_value = (difficulty <= 5 and 300 or (difficulty == 6 or difficulty == 7) and 420) or 540
 		
-local gensec_1 = {
+local gensec = {
 	values = {
-        enemy = gensec_rifle
-	}
-}
-local gensec_2 = {
-	values = {
-        enemy = gensec_smg
+        enemy = gensec_guards
 	}
 }
 local gensec_tank = {
@@ -30,49 +32,49 @@ return {
 	},
 	--GenSec Scripted Spawns
 	--Drivers
-	[100279] = gensec_2,
-	[100281] = gensec_1,
-	[100280] = gensec_2,
-	[100282] = gensec_2,
-	[100283] = gensec_1,
-	[100284] = gensec_1,
-	[100285] = gensec_2,
-	[100286] = gensec_2,
-	[100287] = gensec_2,
-	[100288] = gensec_2,
-	[100289] = gensec_1,
-	[100290] = gensec_2,
-	[100291] = gensec_2,
-	[100292] = gensec_2,
-	[100293] = gensec_1,
-	[100294] = gensec_1,
-	[100295] = gensec_2,
-	[100296] = gensec_2,
-	[100297] = gensec_2,
-	[100298] = gensec_2,
-	[100299] = gensec_1,
-	[100300] = gensec_1,
-	[100301] = gensec_1,
-	[100302] = gensec_2,
+	[100279] = gensec,
+	[100281] = gensec,
+	[100280] = gensec,
+	[100282] = gensec,
+	[100283] = gensec,
+	[100284] = gensec,
+	[100285] = gensec,
+	[100286] = gensec,
+	[100287] = gensec,
+	[100288] = gensec,
+	[100289] = gensec,
+	[100290] = gensec,
+	[100291] = gensec,
+	[100292] = gensec,
+	[100293] = gensec,
+	[100294] = gensec,
+	[100295] = gensec,
+	[100296] = gensec,
+	[100297] = gensec,
+	[100298] = gensec,
+	[100299] = gensec,
+	[100300] = gensec,
+	[100301] = gensec,
+	[100302] = gensec,
 	--Protection Teams (seems to be unused???? Still, it's better to replace it)
-	[100522] = gensec_2,
-	[100523] = gensec_2,
-	[100526] = gensec_2,
-	[100527] = gensec_2,
-	[100530] = gensec_1,
-	[100531] = gensec_2,
-	[100532] = gensec_2,
-	[100534] = gensec_2,
-	[100535] = gensec_2,
-	[100536] = gensec_1,
-	[100538] = gensec_1,
-	[100539] = gensec_1,
-	[100540] = gensec_2,
-	[100542] = gensec_2,
-	[100543] = gensec_2,
-	[100544] = gensec_1,
-	[100524] = gensec_1,
-	[100525] = gensec_1,
+	[100522] = gensec,
+	[100523] = gensec,
+	[100526] = gensec,
+	[100527] = gensec,
+	[100530] = gensec,
+	[100531] = gensec,
+	[100532] = gensec,
+	[100534] = gensec,
+	[100535] = gensec,
+	[100536] = gensec,
+	[100538] = gensec,
+	[100539] = gensec,
+	[100540] = gensec,
+	[100542] = gensec,
+	[100543] = gensec,
+	[100544] = gensec,
+	[100524] = gensec,
+	[100525] = gensec,
 	--Van Bulldozers
 	[101747] = gensec_tank,
 	[101748] = gensec_tank,

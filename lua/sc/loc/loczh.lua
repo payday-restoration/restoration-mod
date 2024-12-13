@@ -4606,6 +4606,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_es_pro_job_bonus"] = "专家模式奖励",
 
         ["menu_asset_lock_additional_assets_pro"] = "专家模式下不可用！",
+		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
+		
         ["menu_pro_warning"] = "这是一个专家级任务！如果你失败了，整场合约将直接被终止！\n此外，有去无回会触发于劫案的尾声部分，此时会出现具有极高威胁性的临界反应部队。\n全武器友军伤害已启用。完成劫案获得的经验和金钱提高25%。",
 
         ["cn_menu_contract_daypay_header"] = "任务天数：",

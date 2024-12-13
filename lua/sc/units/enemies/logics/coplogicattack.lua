@@ -162,7 +162,7 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 				elseif not data.unit:base():has_tag("tank") and data.unit:base():has_tag("medic") then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 				elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
-					if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
+					if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" or data.unit:base()._tweak_table == "marshal_shield" then
 						data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true) --that's a big ass name
 					else
 						data.unit:sound():play("shield_identification", nil, true)

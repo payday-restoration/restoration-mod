@@ -227,11 +227,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
 		["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
-		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
+		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
 		["RestorationModManualReloadsTitleID"] = "Manual Reloads",
-		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty.",
+		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -1359,6 +1359,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 
 		--Legendary Skins--
+		["bm_menu_legendary"] = "Weapon Skin Set",
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
 		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
 		["bm_menu_sc_legendary_deagle"] = "Midas Touch",
@@ -1548,12 +1549,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--X46
 		["bm_melee_x46_info"] = "The X46 is a single 6\" piece of coated A2 steel in a partially serrated bowie blade configuration with a false top edge.\nIntergrated guard and glass breaker pommel tip.\nThe multi-purpose field design of this knife makes it as useful on the battlefield as it is in an emergency.",
 		--Gunther
-		["bm_melee_dingdong_info"] = "A sledgehammer.\nA battering ram.\nA pry bar.\nAll three are essential breaching tools for heisters who need to get through doors quickly.\nThe Ding Dong combines these three tools into one package as tight as the crew.",
+		["bm_melee_dingdong_info"] = "A sledgehammer.\nA battering ram.\nA pry bar.\nAll three are essential breaching tools for heisters who need to get through doors quickly.\nThe Ding Dong combines these three tools into one package as tight as the crew.\n\nFully charged attacks come out #{skill_color}#25%## faster, allowing for a faster follow-up strike.",
 
 		--Cleaver girl
 		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals #{important_1}#50%## less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
 		--Batshit insane
-		["bm_melee_bat_info"] = "A baseball bat, no more, no less.\n\nMeant for use in sport, you'll be using it for something much more sinister.",
+		["bm_melee_bat_info"] = "A baseball bat, no more, no less.\n\nMeant for use in sport, you'll be using it for something much more sinister.\n\nFully charged attacks come out #{skill_color}#25%## faster, allowing for a faster follow-up strike.",
 		--Machete
 		["bm_melee_machete_info"] = "You like hurting people, that's why you use this dirty, old machete.\nGaping wounds, crudely hacked-off limbs and the blood curdling screams of your enemies keep you going.\n\nTruly the weapon of a cruel, cruel heister.",
 		--Fireaxe
@@ -1650,7 +1651,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 			["bm_melee_2077tkata_info"] = "Nano filament heated blade.\nThe purest essence of a katana, no add-ons, no modifications, only ripping hot steel.\n\nFully charged attacks #{heat_warm_color}#set enemies on fire,## dealing #{heat_warm_color}#120## fire damage over #{skill_color}#3## seconds.",
 
 		--Ayy L-Maul
-		["bm_melee_alien_maul_info"] = "A hammer made to commemorate the launch of the Alienware Alpha.",
+		["bm_melee_alien_maul_info"] = "A hammer made to commemorate the launch of the Alienware Alpha.\n\nFully charged attacks come out #{skill_color}#25%## faster, allowing for a faster follow-up strike.",
 
 		--Beardy
 		["bm_melee_beardy_info"] = "The Vikings emerged from the dark forests of the pagan North, and left a bloody trail of destruction from Iceland to Istanbul.\nTheir weapon was the two-handed bearded axe.",
@@ -1701,7 +1702,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_shawn_info"] = "Did you know that Sheep shearing is considered a sport? Maybe we should invent a new sport: cop shearing? No? Why not? Whatever... use them however you see fit, I guess...",
 		--Crook
 		["bm_melee_stick"] = "Shepherd's Crook",
-		["bm_melee_stick_info"] = "Tired after a long heist? Want to look old and wise? Maybe smash a cop's face in? The Shepherd's cane can do it all.",
+		["bm_melee_stick_info"] = "Tired after a long heist? Want to look old and wise? Maybe smash a cop's face in? The Shepherd's cane can do it all.\n\nFully charged attacks come out #{skill_color}#25%## faster, allowing for a faster follow-up strike.",
 
 		--Pounder Nailgun
 		["bm_melee_nin_info"] = "The Pounder, Wolf's favorite nailgun. \n\nWhen people ask about the name, Wolf is quick to correct it to \"The Punder\" and as they say that he screams: \"Nailed it!\"\n\nFires nails which have a short effective range and instant travel. Still counts as a melee kill.",
@@ -1748,7 +1749,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_ohwell_info"] = "Along with the katana, the tanto was a staple of all samurai.\n\nThis belonged to Kento, though where he aquired from it is unknown.",
 
 		--Spoon
-		["bm_melee_spoon_info"] = "Only a spoonful, right?",
+		["bm_melee_spoon_info"] = "Only a spoonful, right?\n\nFully charged attacks come out #{skill_color}#25%## faster, allowing for a faster follow-up strike.",
 		--Gold Spoon
 		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.",
 			["bm_melee_fire_info"] = "Has a #{skill_color}#50%## chance to deal #{heat_warm_color}#120## fire damage and interrupt enemies over #{skill_color}#3## seconds.",
@@ -1763,10 +1764,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_sap_info"] = "The Leather Sap is a gentleman's weapon.\n\nA simple pat on the head and your foe goes down. Duke wields the Leather Sap with a certain grace and brutality that that sometimes goes overboard and inflicts more damage than needed.\n\nSo wield with caution - or not.",
 
 		--Hockey Stick
-		["bm_melee_hockey_info"] = "A beautifully fashioned length of wood. Perfectly suited for smashing a puck into the net, and smashing the fuck out of teeth.",
+		["bm_melee_hockey_info"] = "A beautifully fashioned length of wood. Perfectly suited for smashing a puck into the net, and smashing the fuck out of teeth.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up strike.",
 
 		--Ruler
-		["bm_melee_meter_info"] = "Our two handed great ruler is the biggest ruler we make. But don't let its size fool you, as there's nothing awkward or clumsy about this awesome ruler.",
+		["bm_melee_meter_info"] = "Our two handed great ruler is the biggest ruler we make. But don't let its size fool you, as there's nothing awkward or clumsy about this awesome ruler.\n\nFully charged attacks come out #{skill_color}#50%## faster, allowing for a faster follow-up strike.",
 
 		--Hooked
 		["bm_melee_catch_info"] = "The Hook is a reliable tool and frankly its not rocket science. That raw wooden handle with a strong metal hook seems plain and simple enough, right? The Hook will guarantee to cause much mess.\n\nIt’s use is only limited by your own twisted imagination in how to get your enemies hooked. Impaling your opponents in the mouth or snagging their bodies? \n\nStay sharp, bring something nasty to the fight.",
@@ -2856,6 +2857,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_sierra458_beo_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Can pierce body armor, enemies, shields within max damage range and thin walls.##",
 					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
 					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 50% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
+					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
 
 			--[[ SNIPERS ]]
 				--MSR
@@ -4734,6 +4736,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pro_warning"] = "This is a pro job! If you fail, the entire contract will be terminated\nYou also might encounter a Point Of No Return event near the end of the heist, where more powerful enemies will be deployed.\nCompleting a pro job grants you a 25% money and experience bonus.",
 
 		["menu_asset_lock_additional_assets_pro"] = "NOT AVAILABLE IN PRO-JOBS!",
+		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
@@ -5056,7 +5059,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
 		["menu_mutator_flashbang_cooking_time"] = "Fuse Time (in seconds)",
 		["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
-		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
+		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible; fuse time can also be lowered.",
 
 		["mutator_grenade_mayhem"] = "Total Carnage!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Include Commons and Elites",
@@ -5106,6 +5109,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_CG22"] = "A Criminal Carol",
 		["mutator_CG22_desc"] = "Some heists will have a christmas tree that spawns presents to shred or give to Hajrudin.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022 Christmas Event:\n\nChristmas Trees that appear on some heists will drop Christmas presents. Christmas Presents can either be shredded for temporary buffs during the heist, or given to Hajrudin for bonus XP, Cash, or Continental Coins. Doing either has a chance to spawn the Freeze-Thrower wielding Snowman Dozer.",
+
+		["mutator_thecandlesburnoutforyou"] = "Reload Marathon",
+		["mutator_thecandlesburnoutforyou_desc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+
+		["mutator_letthesleepinggoddie"] = "Magazine Martyr",
+		["mutator_letthesleepinggoddie_desc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.",
+		["mutator_letthesleepinggoddie_longdesc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.\n\nNote: Weapons that retain their ammo during their reload (per-round loading, retention reloads, etc.) as well as reloads triggered by skills are exempt from the effects of this mutator.",
+		["mutator_letthesleepinggoddie_no_effect"] = "Unaffected by the \"Magazine Martyr\" mutator.",
+
 
 		["menu_cg22_post_objective_1_desc"] = "Kill 200 enemies with any sniper rifle.",
 		["menu_cg22_post_objective_2_desc"] = "Kill 15 Cloakers with the North Star rifle on Very Hard or above.",
@@ -5458,7 +5471,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Bulletproof--
 				["menu_iron_man_sc"] = "Bulletproof",
-				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYour armor cannot be pierced.\n\n#{risk}#NOTE: Does not apply to self-damage.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your maximum armor.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable",
+				["menu_iron_man_desc_sc"] = "BASIC: #{owned}#$basic##\nYou cannot take health damage until after your armor has been broken.\n\n#{risk}#NOTE: Does not damage-gate against fall damage, damage from your own equipment or damage taken when downed by Cloaker kicks and Taser shocks.##\n\nACE: #{owned}#$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to #{skill_color}#$skill_value_p1## of your maximum armor.\n\nYour armor recovers #{skill_color}#$skill_value_p2## faster. $anarc_disable",
 
 			--[[   BREACHER SUBTREE   ]]--
 				--Silent Drilling--

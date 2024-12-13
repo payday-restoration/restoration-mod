@@ -7,7 +7,16 @@ local spring_minion_1 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene
 local spring_minion_2 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle") or "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
 local spring_minion_3 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun") or "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 local spring_minion_4 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper") or "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-
+local minions_table = {
+		spring_minion_2,
+		spring_minion_2,
+		spring_minion_2,
+		spring_minion_3,
+		spring_minion_3,
+		spring_minion_3,
+		spring_minion_4,
+		spring_minion_4
+}
 local Captain = {
 	values = {
         enemy = spring
@@ -20,17 +29,7 @@ local Minion_1 = {
 }
 local Minion_2 = {
 	values = {
-        enemy = spring_minion_2
-    }
-}
-local Minion_3 = {
-	values = {
-        enemy = spring_minion_3
-    }
-}
-local Minion_4 = {
-	values = {
-        enemy = spring_minion_4
+        enemy = minions_table
     }
 }
 return {
@@ -56,10 +55,10 @@ return {
 	[100261] = Minion_2,
 	[100270] = Minion_2,
 	[100264] = Minion_2,
-	[100222] = Minion_3,
-	[100262] = Minion_3,
-	[100265] = Minion_3,
-	[100269] = Minion_3,
-	[100225] = Minion_4,
-	[100230] = Minion_4
+	[100222] = Minion_2,
+	[100262] = Minion_2,
+	[100265] = Minion_2,
+	[100269] = Minion_2,
+	[100225] = Minion_2,
+	[100230] = Minion_2
 }

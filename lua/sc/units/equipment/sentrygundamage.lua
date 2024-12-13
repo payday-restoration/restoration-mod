@@ -282,6 +282,11 @@ function SentryGunDamage:damage_bullet(attack_data)
 	end
 
 	local damage = attack_data.damage
+	
+	local weapon_unit = attack_data.weapon_unit
+	local weap_base = weapon_unit and alive(weapon_unit) and weapon_unit:base()
+	local object_damage_mul = weap_base and weap_base.get_object_damage_mult and weap_base:get_object_damage_mult() or 1
+	damage = damage * object_damage_mul
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

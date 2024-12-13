@@ -8,21 +8,10 @@ local cloaker_ds_table = {
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local chopper_amount = (difficulty == 8 and 2) or 1
 local cloaker = (difficulty == 8 and cloaker_ds_table) or "units/payday2/characters/ene_spook_1/ene_spook_1"
-	
-local access_fix = {
-	pre_func = function (self)
-			if not self._values.SO_access_original then
-				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "spooc"})
-			end
-		end
-}
+
 local cloaker_chopper =  {
 	values = {
 		enemy = cloaker
-	},
-	on_executed = {
-		{id = 101636, delay = 0}
 	}
 }
 return {
@@ -62,12 +51,6 @@ return {
             enabled = false
 		}
 	},
-	--allow fbi and spooc access to disable the power
-	[101039] = access_fix,
-	[101593] = access_fix,
-	[101594] = access_fix,
-	[101595] = access_fix,
-	[101600] = access_fix,
 	-- Reinforce next to cars
 	[100941] = {
 		reinforce = {

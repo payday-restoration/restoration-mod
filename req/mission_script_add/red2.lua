@@ -132,9 +132,6 @@ local optsDozerAmbush = {
     enemy = tank,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_down_10m_swing_in_var2",
-	on_executed = {
-		{ id = 400052, delay = 0 }
-	},
     enabled = true
 }
 local optsDozerAmbush_2 = {
@@ -269,8 +266,8 @@ local optsBlackTankAmbushFilter = {
 	player_4 = true,
 	enabled = enabled_chance_dozers_ambush_escape,
 	on_executed = { 
-		{ id = 400035, delay = 1, delay_rand = 1 },
-		{ id = 400036, delay = 1, delay_rand = 1 }
+		{ id = 400035, delay = 5},
+		{ id = 400036, delay = 5}
 	}
 }
 local spawn_the_surprise_tank = {

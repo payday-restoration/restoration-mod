@@ -307,7 +307,7 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		"rvd1", --Reservoir Dogs Day 1, lots of scripted spawns and little cover
 		"sand", --The Ukrainian Prisoner
-		"deep", --Crude Awakening
+		"deep", --Crude Awakening	
 		--Skirmish heists below
 		"skm_big2",
 		"skm_mallcrasher",
@@ -318,6 +318,8 @@ function restoration:Init()
 		--Custom Heists below--
 		"junk", --Doghouse
 		"run_res", --Whurr's Heat Street Edit
+		"secret_stash", --Undercover (MapAdd Version)
+		"bridge", --Green Bridge (MapAdd Version)
 		"knk_jwl", --Knockover: Jewerly Store
 		"RogueCompany", --Rogue Company
 		"Gambling_room", --Underground Bargains
@@ -363,6 +365,8 @@ function restoration:Init()
 		"fex", --Buluc's Mansion
 		"peta2", --Goats day 2
 		"nail",	--Lab Rats
+		"hox_1", --Hoxout D1
+		"xmn_hox_1", --Xmas edition			
 		--Skirmish heists below
 		"skmc_mad",
 		"skm_red2",
@@ -820,6 +824,7 @@ function restoration:require(file)
 	return io.file_is_readable(path) and blt.vm.dofile(path)
 end
 
+--Mission Script
 function restoration:mission_script_patches()
 	if self._mission_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
@@ -830,8 +835,21 @@ function restoration:mission_script_patches()
 	return self._mission_script_patches
 end
 
+--Mission script but it can touch instances
+function restoration:instance_script_patches()
+		if self._instance_script_patches == nil then
+			local level_id = Global.game_settings and Global.game_settings.level_id
 
---mission_script_add allows to add actual custom stuff to heists
+			if level_id then
+				self._instance_script_patches = self:require("instance_script/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
+			end
+		end
+
+		return self._instance_script_patches
+	end
+
+
+--Mission script but it can add new functions to heists
 function restoration:mission_script_add()
 		restoration.loaded_elements = false
 		if self._mission_script_add == nil then

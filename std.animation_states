@@ -62,4 +62,44 @@
 			<attr name="redirect" value="std/fatal/enter"/>
 		</target>
 	</tweak>
+	
+	<!-- Add shield bash -->
+	<tweak version="2" name="anims/units/enemies/cop/combat_shield" extension="animation_subset">
+		<search>
+			<xml/>
+		</search>
+		<target mode="attach">
+			<anim name="crh_melee_shield" file="anims/shared/boss/shield/cbt_crh_melee" blend_set="upper_body_aim"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/melee"/>
+		</search>
+		<target mode="attach">
+			<anim name="crh_melee_shield" weight="shield"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/melee"/>
+			<anim name="cbt_rifle_melee"/>
+		</search>
+		<target mode="attributes">
+			<attr name="weight" value="rifle * (1 - shield)"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/melee"/>
+			<anim name="cbt_pistol_melee"/>
+		</search>
+		<target mode="attributes">
+			<attr name="weight" value="pistol * (1 - shield)"/>
+		</target>
+	</tweak>
+	
 </tweaks>

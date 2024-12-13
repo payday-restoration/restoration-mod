@@ -1,5 +1,15 @@
+local greendozer = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local blackdozer = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"
+local skulldozer = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+local zealdozer_green = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
+local zealdozer_black = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
+local zealdozer_skull = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
+local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+local dozertable_ovk = {greendozer, greendozer, blackdozer}
+local dozertable_mh_dw = {greendozer, skulldozer, blackdozer, blackdozer, greendozer}
+local dozertable_ds = {zealdozer_green, zealdozer_black, zealdozer_skull, zealdozer_green, zealdozer_black, zealdozer_skull, titandozer}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local bulldozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
+local bulldozer = (difficulty == 8 and dozertable_ds or (difficulty == 7 or difficulty == 6) and dozertable_mh_dw) or dozertable_ovk
 local ponr_value = (difficulty <= 5 and 420 or (difficulty == 6 or difficulty == 7) and 390) or 360
 
 local high_interval = {

@@ -4612,6 +4612,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pro_warning"] = "Режим PRO JOB: При провале, контракт будет отменен.\nПод конец ограбления может начаться Точка Невозврата, во время которой появятся более опасные противники.\nПрохождение в режиме Pro Job дает 25% бонус к деньгам и опыту.",
 
 		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
+		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
 
 		["cn_menu_contract_daypay_header"] = "Дневная плата:",
 		["cn_menu_contract_jobpay_header"] = "Плата за контракт:",

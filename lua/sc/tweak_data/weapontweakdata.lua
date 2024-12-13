@@ -1535,7 +1535,7 @@ local crew_wep_preset = {
 	--Vanilla Deagle, less lethal
 	function WeaponTweakData:_init_data_deagle_npc()
 		self.deagle_npc = deep_clone(self.raging_bull_npc)
-		self.deagle_npc.DAMAGE = 1.2
+		self.deagle_npc.DAMAGE = 2.4 --same dmg as titan shield's beretta
 		self.deagle_npc.CLIP_AMMO_MAX = 8
 		self.deagle_npc.sounds.prefix = "deagle_npc"
 		self.deagle_npc.anim_usage = "is_pistol"
@@ -1573,12 +1573,17 @@ local crew_wep_preset = {
 		self.swat_van_turret_module.DAMAGE = 2
 		self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 1},
-			{2000, 1},
-			{3000, 1}
+			{2000, 0.66},
+			{3000, 0.33}
 		}
 		self.swat_van_turret_module.SUPPRESSION = 1
 		self.swat_van_turret_module.SPREAD = 3
-		self.swat_van_turret_module.FIRE_RANGE = 4000
+		--Just so all they do is protect cop spawn points instead of shredding you at range, the heist is shit enough
+		if job == "hox_1" or job == "xmn_hox1" then
+			self.swat_van_turret_module.FIRE_RANGE = 1000
+		else
+			self.swat_van_turret_module.FIRE_RANGE = 4000
+		end
 		self.swat_van_turret_module.CLIP_SIZE = 200
 		self.swat_van_turret_module.AUTO_RELOAD = true
 		self.swat_van_turret_module.AUTO_RELOAD_DURATION = 8
@@ -1653,8 +1658,8 @@ local crew_wep_preset = {
 		self.crate_turret_module.DAMAGE = 2
 		self.crate_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 1},
-			{2000, 1},
-			{3000, 1}
+			{2000, 0.66},
+			{3000, 0.33}
 		}
 		self.crate_turret_module.SUPPRESSION = 1
 		self.crate_turret_module.SPREAD = 3
@@ -1735,8 +1740,8 @@ local crew_wep_preset = {
 		self.ceiling_turret_module.DAMAGE = 2
 		self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 1},
-			{2000, 1},
-			{3000, 1}
+			{2000, 0.66},
+			{3000, 0.33}
 		}
 		self.ceiling_turret_module.SUPPRESSION = 1
 		self.ceiling_turret_module.SPREAD = 3
@@ -1815,8 +1820,8 @@ local crew_wep_preset = {
 		self.aa_turret_module.DAMAGE = 2
 		self.aa_turret_module.DAMAGE_MUL_RANGE = {
 			{1000, 1},
-			{2000, 1},
-			{3000, 1}
+			{2000, 0.66},
+			{3000, 0.33}
 		}
 		self.aa_turret_module.SUPPRESSION = 1
 		self.aa_turret_module.SPREAD = 3
@@ -6865,7 +6870,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rsh12.can_shoot_through_enemy_unlim = true
 						self.rsh12.can_shoot_through_shield = true
 						self.rsh12.can_shoot_through_wall = true
-						self.rsh12.object_damage_mult = 2
+						self.rsh12.object_damage_mult = 1.8
 						self.rsh12.armor_piercing_chance = 1
 
 				--SECONDARIES
@@ -7351,7 +7356,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.peacemaker.stats_modifiers = nil
 						self.peacemaker.panic_suppression_chance = 0.05
-						self.peacemaker.object_damage_mult = 2
+						self.peacemaker.object_damage_mult = 1.8
 						self.peacemaker.armor_piercing_chance = 1
 						self.peacemaker.can_shoot_through_enemy = true
 						self.peacemaker.can_shoot_through_enemy_unlim = true
@@ -11036,8 +11041,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.wa2000.armor_piercing_chance = 1
 						self.wa2000.stats_modifiers = nil
 						self.wa2000.panic_suppression_chance = 0.05
-						self.wa2000.reload_speed_multiplier = 1.05
-						self.wa2000.timers.reload_exit_empty = 0.85
+						self.wa2000.reload_speed_multiplier = 1.33
+						self.wa2000.timers.reload_empty = 6.1
+						self.wa2000.timers.reload_exit_empty = 0.95
 						self.wa2000.timers.reload_exit_not_empty = 1
 
 					--Grom (SVD)
@@ -11079,8 +11085,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.siltstone.armor_piercing_chance = 1
 						self.siltstone.stats_modifiers = nil
 						self.siltstone.panic_suppression_chance = 0.05
-						self.siltstone.timers.reload_exit_empty = 0.4
-						self.siltstone.timers.reload_exit_not_empty = 0.4
+						self.siltstone.timers.reload_empty = 3.1
+						self.siltstone.timers.reload_exit_empty = 0.6
+						self.siltstone.timers.reload_not_empty = 2.1
+						self.siltstone.timers.reload_exit_not_empty = 0.8
 
 					--Bernetti Rangehitter (Marlin SBL)
 						self.sbl.upgrade_blocks = nil
@@ -13342,7 +13350,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shatters_fury.can_shoot_through_shield = true
 			self.shatters_fury.can_shoot_through_wall = true
 			self.shatters_fury.armor_piercing_chance = 1
-			self.shatters_fury.object_damage_mult = 2
+			self.shatters_fury.object_damage_mult = 1.8
 			--self.shatters_fury.animations.reload_name_id = "chinchilla"
 			self.shatters_fury.reload_speed_multiplier = 0.9
 			self.shatters_fury.force_shake = true
@@ -13967,6 +13975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						reload = 20
 					}
 					self.sg416.stats_modifiers = nil
+					self.sg416.sounds.magazine_empty = "wp_rifle_slide_lock"
 					self.sg416.reload_speed_multiplier = 1.15
 					self.sg416.timers.reload_not_empty = self.new_m4.timers.reload_not_empty
 					self.sg416.timers.reload_empty = self.new_m4.timers.reload_empty
@@ -18162,6 +18171,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.stats_modifiers = nil
 				self.m4_usasoc.panic_suppression_chance = 0.05
 				self.m4_usasoc.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.m4_usasoc.keep_ammo = 1
 				self.m4_usasoc.reload_speed_multiplier = 1.08
 				self.m4_usasoc.timers.reload_empty = 3
 				self.m4_usasoc.timers.reload_exit_empty = 0.55
@@ -18724,6 +18734,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.tti_dracarys.stats_modifiers = nil
+				self.tti_dracarys.keep_ammo = 1
 				self.tti_dracarys.panic_suppression_chance = 0.05
 				self.tti_dracarys.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.tti_dracarys.reload_speed_multiplier = 0.9
@@ -18773,7 +18784,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.spin_up_shoot = true
 				self.swhiskey.spin_up_t = 0.08
 				self.swhiskey.spin_down_t = 0.00000001
-				self.swhiskey.object_damage_mult = 2
+				self.swhiskey.object_damage_mult = 1.8
 				self.swhiskey.timers.reload_exit_empty = 0.55
 				self.swhiskey.timers.reload_empty = 2.93
 				self.swhiskey.timers.reload_exit_not_empty = 0.55
@@ -18945,6 +18956,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mike4_2022.stats_modifiers = nil
 				self.mike4_2022.reload_speed_multiplier = 1.36
+				self.mike4_2022.keep_ammo = 1
 				self.mike4_2022.panic_suppression_chance = 0.05
 				self.mike4_2022.timers.reload_empty = 3
 				self.mike4_2022.timers.reload_exit_empty = 0.55
@@ -20386,6 +20398,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.timers.reload_not_empty = 2.32
 				self.ar23.timers.reload_exit_not_empty = 1.13
 			end
+
+			if self.bulldog then
+				self.bulldog.categories = { 
+					"assault_rifle"
+				}
+				self.bulldog.use_data.selection_index = 2
+				self.bulldog.recategorize = {"heavy_ar"}
+				self.bulldog.damage_type = "assault_rifle"
+				self.bulldog.CLIP_AMMO_MAX = 24
+				self.bulldog.AMMO_MAX = 96
+				self.bulldog.fire_mode_data.fire_rate = 0.1
+				self.bulldog.BURST_FIRE_ADS_TOGGLE = true
+				self.bulldog.BURST_FIRE = 3
+				self.bulldog.BURST_DELAY = 0.15
+				self.bulldog.BURST_FIRE_RATE_MULTIPLIER = 1.3333
+				self.bulldog.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
+				self.bulldog.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+				self.bulldog.CAN_TOGGLE_FIREMODE = false
+				self.bulldog.FIRE_MODE = "auto"
+				self.bulldog.kick = self.stat_info.kick_tables.moderate_kick
+				self.bulldog.supported = true
+				self.bulldog.ads_speed = 0.280
+				self.bulldog.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 5000,
+					min_mult = 0.6
+				}
+				self.bulldog.stats = {
+					damage = 30,
+					spread = 86,
+					recoil = 81,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 25,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.bulldog.stats_modifiers = nil
+				self.bulldog.panic_suppression_chance = 0.05
+				self.bulldog.hs_mult = 1.5
+				self.bulldog.is_bullpup = true
+				self.bulldog.timers.reload_empty = 2.6
+				self.bulldog.timers.reload_exit_empty = 0.6
+				self.bulldog.timers.reload_not_empty = 2
+				self.bulldog.timers.reload_exit_not_empty = 0.6
+			end
+			
 		--Predator Pack
 			if self.owlfbullpup then
 				self.owlfbullpup.categories = { 
@@ -20507,7 +20570,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.hhpc.stats_modifiers = nil
 				self.hhpc.armor_piercing_chance = 1
-				self.hhpc.object_damage_mult = 2
+				self.hhpc.object_damage_mult = 1.8
 				self.hhpc.reload_speed_multiplier = 0.9
 				self.hhpc.panic_suppression_chance = 0.05
 				self.hhpc.timers.reload_exit_empty = 0.5
@@ -21836,7 +21899,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				if weap.damage_type == "anti_materiel" then
 					weap.object_damage_mult = 4
 				elseif weap.damage_type == "sniper" then
-					weap.object_damage_mult = 2
+					weap.object_damage_mult = 1.8
 					if (weap.categories[2] and weap.categories[2] == "semi_snp") or (weap.categories[1] == "assault_rifle") then
 						weap.object_damage_mult = 1.2
 					end
@@ -21852,7 +21915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--weap.object_damage_mult = 1
 				end
 				if weap.damage_type_single_ray == "sniper" then
-					weap.object_damage_mult_single_ray = 2
+					weap.object_damage_mult_single_ray = 1.8
 					if weap.recategorize[1] == "light_shot" then
 						weap.object_damage_mult_single_ray = 1.2
 					end

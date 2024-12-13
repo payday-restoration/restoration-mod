@@ -128,7 +128,8 @@ function CopActionShoot:init(action_desc, common_data)
 	self._draw_focus_displacement = nil
 	self._draw_focus_delay_vis_reset = nil
 
-	if not self._shield and not weapon_usage_tweak.no_melee then
+	--I'M GONNA BLAST EM INTO TEENY TINY LITTLE PIECES
+	if not weapon_usage_tweak.no_melee then
 		local melee_weapon = self._ext_base.melee_weapon and self._ext_base:melee_weapon()
 
 		if melee_weapon then
@@ -139,6 +140,7 @@ function CopActionShoot:init(action_desc, common_data)
 			local range = 150
 			local slotmask = managers.slot:get_mask("bullet_impact_targets_no_police")
 			slotmask = slotmask + 3
+			slotmask = slotmask - 8
 			local hit_player = true
 			local electrical = nil
 			local shield_knock = nil
@@ -172,6 +174,10 @@ function CopActionShoot:init(action_desc, common_data)
 				if self._w_usage_tweak.melee_speed then
 					speed = self._w_usage_tweak.melee_speed
 				end
+				
+				if self._w_usage_tweak.melee_range then
+					range = self._w_usage_tweak.melee_range
+				end				
 			else
 				if self._common_data.char_tweak.melee_weapon_dmg_multiplier then
 					dmg_mul = self._common_data.char_tweak.melee_weapon_dmg_multiplier
@@ -1247,7 +1253,6 @@ function CopActionShoot:check_melee_start(t, attention, target_dis, autotarget, 
 			if not attention.unit or not attention.unit:base() or attention.unit:base().is_husk_player or not attention.unit:character_damage() then
 				return false
 			end
-
 			if not attention.unit:base().sentry_gun and not attention.unit:character_damage().damage_melee then --sentries take bullet damage, but check for damage_melee for anything else
 				return false
 			end
@@ -1265,9 +1270,10 @@ function CopActionShoot:check_melee_start(t, attention, target_dis, autotarget, 
 			local obstructed_by_geometry = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles"), "ray_type", "body melee", "report")
 
 			if not obstructed_by_geometry then
+				local is_player = self._shooting_player or self._shooting_husk_player
 				local target_has_shield = alive(attention.unit:inventory() and attention.unit:inventory()._shield_unit) and true or nil
-				local target_is_covered_by_shield = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
-
+				local target_is_covered_by_shield = not is_player and self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
+				
 				if autotarget then
 					if not target_is_covered_by_shield then
 						if not self._melee_weapon_data.electrical or not attention.unit:movement():tased() then

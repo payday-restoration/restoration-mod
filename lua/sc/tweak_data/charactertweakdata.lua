@@ -692,8 +692,9 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.weapon_voice = "2"
 	self.omnia_lpf.experience.cable_tie = "tie_swat"	
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
+		self.omnia_lpf.speech_prefix_p1 = "rmdc"
 		self.omnia_lpf.speech_prefix_count = nil
+		self.omnia_lpf.speech_prefix_p2 = nil
 		self.omnia_lpf.spawn_sound_event = "rmdc_entrance"
 	else
 		self.omnia_lpf.speech_prefix_p1 = "piss and shit"
@@ -1235,6 +1236,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	--for shieldless titan units
 	self.city_swat_titan.modify_health_on_tweak_change = true
 	self.city_swat_titan.tmp_invulnerable_on_tweak_change = 1.5 --better than 3 seconds
+	--Just in case
+	self.city_swat_titan.ewgf = nil
 	table.insert(self._enemy_list, "city_swat_titan")
 	
 	--Titan SWAT (Shotgunner)
@@ -1371,111 +1374,6 @@ function CharacterTweakData:_init_marshal_marksman(presets)
 	table.insert(self._enemy_list, "marshal_marksman")
 end
 
-function CharacterTweakData:_init_marshal_shield(presets)
-	self.marshal_shield = deep_clone(presets.base)
-	self.marshal_shield.tags = {
-		"law",
-		"shield"
-	}
-	self.marshal_shield.experience = {}
-	self.marshal_shield.weapon = deep_clone(presets.weapon.normal)
-	self.marshal_shield.static_weapon_preset = true
-	self.marshal_shield.detection = presets.detection.normal
-	self.marshal_shield.HEALTH_INIT = 13
-	self.marshal_shield.headshot_dmg_mul = 2.2
-	self.marshal_shield.allowed_stances = {
-		cbt = true
-	}
-	self.marshal_shield.allowed_poses = {
-		crouch = true
-	}
-	self.marshal_shield.always_face_enemy = true
-	self.marshal_shield.move_speed = presets.move_speed.fast
-	self.marshal_shield.no_run_start = true
-	self.marshal_shield.no_run_stop = true
-	self.marshal_shield.no_retreat = true
-	self.marshal_shield.no_arrest = true
-	self.marshal_shield.surrender = nil
-	self.marshal_shield.rotation_speed = 0.75
-	self.marshal_shield.ecm_vulnerability = 0
-	self.marshal_shield.ecm_hurts = {
-		ears = {
-			max_duration = 0,
-			min_duration = 0
-		}
-	}
-	self.marshal_shield.rescue_hostages = false
-	self.marshal_shield.deathguard = false
-	self.marshal_shield.no_equip_anim = true
-	self.marshal_shield.wall_fwd_offset = 100
-	self.marshal_shield.damage.explosion_damage_mul = 0.8
-	self.marshal_shield.calls_in = nil
-	self.marshal_shield.ignore_medic_revive_animation = true
-	self.marshal_shield.shooting_death = false
-	self.marshal_shield.damage.hurt_severity = presets.hurt_severities.no_hurts
-	self.marshal_shield.damage.shield_knocked = false
-	self.marshal_shield.immune_to_concussion = true
-	self.marshal_shield.damage.immune_to_knockback = true
-	self.marshal_shield.immune_to_knock_down = true
-	self.marshal_shield.use_animation_on_fire_damage = false
-	self.marshal_shield.flammable = true
-	self.marshal_shield.weapon_voice = "3"
-	self.marshal_shield.experience.cable_tie = "tie_swat"
-	self.marshal_shield.speech_prefix_p1 = "cum"
-	self.marshal_shield.speech_prefix_p2 = nil
-	self.marshal_shield.speech_prefix_count = nil
-	self.marshal_shield.yellow_blood = nil
-	self.marshal_shield.no_asu = true
-	if self:get_ai_group_type() == "russia" then
-		self.marshal_shield.custom_voicework = "tswat_ru"
-	elseif self:get_ai_group_type() == "murkywater" then
-		self.marshal_shield.custom_voicework = "bravo_elite_murky"	
-	elseif self:get_ai_group_type() == "federales" then
-		self.marshal_shield.custom_voicework = "bravo_elite_mex"
-	else
-		self.marshal_shield.custom_voicework = "bravo_dmr"
-	end		
-	self.marshal_shield.speech_prefix_count = nil
-	self.marshal_shield.priority_shout = "f31"
-	self.marshal_shield.access = "shield"
-	self.marshal_shield.chatter = presets.enemy_chatter.shield
-	self.marshal_shield.announce_incomming = "incomming_shield"
-	self.marshal_shield.spawn_sound_event = "shield_identification"
-	self.marshal_shield.steal_loot = nil
-	self.marshal_shield.no_mutator_weapon_override = true
-	self.marshal_shield.is_special = true
-	table.insert(self._enemy_list, "marshal_shield")
-
-	self.marshal_shield_break = deep_clone(self.marshal_shield)
-	self.marshal_shield_break.rotation_speed = 3
-	self.marshal_shield_break.tags = {
-		"law"
-	}
-	self.marshal_shield_break.HEALTH_INIT = 22.5
-	self.marshal_shield_break.headshot_dmg_mul = 2.2
-	self.marshal_shield_break.allowed_stances = nil
-	self.marshal_shield_break.allowed_poses = nil
-	self.marshal_shield_break.no_equip_anim = nil
-	self.marshal_shield_break.no_run_start = nil
-	self.marshal_shield_break.no_run_stop = nil
-	self.marshal_shield_break.always_face_enemy = nil
-	self.marshal_shield_break.wall_fwd_offset = nil
-	self.marshal_shield_break.priority_shout = nil
-	self.marshal_shield_break.access = "swat"
-	
-	self.marshal_shield_break.chatter = presets.enemy_chatter.swat
-	self.marshal_shield_break.announce_incomming = nil
-	self.marshal_shield_break.damage.hurt_severity = presets.hurt_severities.base
-	self.marshal_shield_break.damage.explosion_damage_mul = 1
-	self.marshal_shield_break.use_animation_on_fire_damage = nil
-	self.marshal_shield_break.damage.shield_knocked = nil
-	self.marshal_shield_break.modify_health_on_tweak_change = true
-	self.marshal_shield_break.tmp_invulnerable_on_tweak_change = 1.5 --still better than 3 seconds
-	self.marshal_shield_break.no_mutator_weapon_override = true
-	self.marshal_shield_break.unintimidateable = true
-	self.marshal_shield_break.no_asu = true
-	table.insert(self._enemy_list, "marshal_shield_break")
-end
 
 function CharacterTweakData:_init_gangster(presets)
 	self.gangster = deep_clone(presets.base)
@@ -2665,6 +2563,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.headshot_dmg_mul = 9.5
 	self.tank_skull.damage.explosion_damage_mul = 1.5
 	self.tank_skull.damage.rocket_damage_mul = 1.5
+	self.tank_skull.melee_push_multiplier = 2 --he punches you harder now
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	self.tank_skull.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
 	table.insert(self._enemy_list, "tank_skull")
@@ -2716,6 +2615,13 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
+	if self:get_ai_group_type() == "federales" then
+		self.tank_titan_assault.dt_suppress = {
+			range = 600
+	}
+	else
+		self.tank_titan_assault.dt_suppress = nil
+	end
 	table.insert(self._enemy_list, "tank_titan_assault")
 
 	--Halloween Bulldozer (Black)
@@ -2740,7 +2646,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
 	self.tank_hw.ignore_headshot = false
 	self.tank_hw.melee_anims = nil
-	self.tank_hw.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_hw")	
 	
 	--Benelli (Bravo) Dozer
@@ -3011,9 +2916,12 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.tags = {"law", "shield", "special"}
 	self.shield.experience = {}
 	self.shield.weapon = deep_clone(presets.weapon.normal)
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
+	self.shield.melee_push_multiplier = 2
+	self.shield.melee_force_crouch = true
 	self.shield.static_weapon_preset = true
 	self.shield.detection = presets.detection.normal
 	self.shield.HEALTH_INIT = 15
@@ -3109,6 +3017,10 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
 	self.phalanx_minion.rotation_speed = 0.75
+	self.phalanx_minion.ewgf = {
+        duration = 1.5,
+        power = 0.75
+    }
 	self.phalanx_minion.no_asu = true
 	self.phalanx_minion.no_retreat = true
 	self.phalanx_minion.speech_prefix_p1 = "fug"
@@ -3131,6 +3043,36 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion_assault.spawn_sound_event_3 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion_assault.no_retreat = false
 	table.insert(self._enemy_list, "phalanx_minion_assault")
+end
+
+function CharacterTweakData:_init_marshal_shield(presets)
+	--Clones Titan Shield
+	self.marshal_shield = deep_clone(self.phalanx_minion_assault)
+	self.marshal_shield.yellow_blood = nil
+	if self:get_ai_group_type() == "russia" then
+		self.marshal_shield.custom_voicework = "tswat_ru"
+	elseif self:get_ai_group_type() == "murkywater" then
+		self.marshal_shield.custom_voicework = "bravo_elite_murky"	
+	elseif self:get_ai_group_type() == "federales" then
+		self.marshal_shield.custom_voicework = "bravo_elite_mex"
+	else
+		self.marshal_shield.custom_voicework = "bravo_dmr"
+	end	
+	table.insert(self._enemy_list, "marshal_shield")
+
+	--Clones Titan SWAT
+	self.marshal_shield_break = deep_clone(self.city_swat_titan_assault)
+	self.marshal_shield_break.yellow_blood = nil
+	if self:get_ai_group_type() == "russia" then
+		self.marshal_shield_break.custom_voicework = "tswat_ru"
+	elseif self:get_ai_group_type() == "murkywater" then
+		self.marshal_shield_break.custom_voicework = "bravo_elite_murky"	
+	elseif self:get_ai_group_type() == "federales" then
+		self.marshal_shield_break.custom_voicework = "bravo_elite_mex"
+	else
+		self.marshal_shield_break.custom_voicework = "bravo_dmr"
+	end	
+	table.insert(self._enemy_list, "marshal_shield_break")
 end
 
 function CharacterTweakData:_init_phalanx_vip(presets)
@@ -3171,6 +3113,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.speech_prefix_p2 = nil
 	self.phalanx_vip.speech_prefix_count = nil
 	self.phalanx_vip.no_damage_mission = true
+	self.phalanx_vip.ewgf = nil
 	self.phalanx_vip.slowing_bullets = {
         duration = 1.5,
         power = 0.75,
@@ -3222,6 +3165,9 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.marshal_logic = true	
 	self.phalanx_vip_break.can_be_healed = false
 	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 15
+	--Just in case
+	self.phalanx_vip_break.melee_push_multiplier = 1
+	self.phalanx_vip_break.melee_force_crouch = false	
 	table.insert(self._enemy_list, "phalanx_vip_break")		
 end
 
@@ -6152,9 +6098,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.mp9.spread = 30
 	presets.weapon.normal.mp9.miss_dis = 15
 	presets.weapon.normal.mp9.RELOAD_SPEED = 1
-	presets.weapon.normal.mp9.melee_speed = nil
-	presets.weapon.normal.mp9.melee_dmg = nil
-	presets.weapon.normal.mp9.melee_retry_delay = nil
+	presets.weapon.normal.mp9.melee_speed = enemy_melee_speed.normal
+	presets.weapon.normal.mp9.melee_dmg = enemy_melee_damage_base
+	presets.weapon.normal.mp9.melee_retry_delay = {2, 2}
+	presets.weapon.normal.mp9.melee_range = 200
 	presets.weapon.normal.mp9.range = {
 		close = 500,
 		optimal = 1200,
@@ -8576,9 +8523,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.good.mp9.spread = 30
 	presets.weapon.good.mp9.miss_dis = 15
 	presets.weapon.good.mp9.RELOAD_SPEED = 1
-	presets.weapon.good.mp9.melee_speed = nil
-	presets.weapon.good.mp9.melee_dmg = nil
-	presets.weapon.good.mp9.melee_retry_delay = nil
+	presets.weapon.good.mp9.melee_speed = enemy_melee_speed.good
+	presets.weapon.good.mp9.melee_dmg = enemy_melee_damage_good
+	presets.weapon.good.mp9.melee_retry_delay = {2, 2}
+	presets.weapon.good.mp9.melee_range = 200
 	presets.weapon.good.mp9.range = {
 		close = 500,
 		optimal = 1200,
@@ -10749,9 +10697,10 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.expert.mp9.spread = 30
 	presets.weapon.expert.mp9.miss_dis = 15
 	presets.weapon.expert.mp9.RELOAD_SPEED = 1
-	presets.weapon.expert.mp9.melee_speed = nil
-	presets.weapon.expert.mp9.melee_dmg = nil
-	presets.weapon.expert.mp9.melee_retry_delay = nil
+	presets.weapon.expert.mp9.melee_speed = enemy_melee_speed.expert
+	presets.weapon.expert.mp9.melee_dmg = enemy_melee_damage_expert
+	presets.weapon.expert.mp9.melee_retry_delay = {2, 2}
+	presets.weapon.expert.mp9.melee_range = 200
 	presets.weapon.expert.mp9.range = {
 		close = 500,
 		optimal = 1200,
@@ -13094,6 +13043,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}					
 	}
+	presets.weapon.deathwish.mp9.melee_speed = enemy_melee_speed.deathwish
+	presets.weapon.deathwish.mp9.melee_dmg = enemy_melee_damage_deathwish
+	presets.weapon.deathwish.mp9.melee_retry_delay = {2, 2}
+	presets.weapon.deathwish.mp9.melee_range = 200	
 	presets.weapon.deathwish.mp9.FALLOFF = {
 		{
 			r = 100,
@@ -17298,9 +17251,10 @@ function CharacterTweakData:_set_easy()
 	
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 25
@@ -17360,9 +17314,10 @@ function CharacterTweakData:_set_normal()
 		
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 50
@@ -17422,9 +17377,10 @@ function CharacterTweakData:_set_hard()
 		
 	self:_set_characters_dodge_preset("athletic")
 	self:_set_characters_melee_preset("1", "1")
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 75
@@ -17484,9 +17440,10 @@ function CharacterTweakData:_set_overkill()
 							
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("1.5", "1")
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
@@ -17543,9 +17500,10 @@ function CharacterTweakData:_set_overkill_145()
 	self.swat.can_shoot_while_dodging = true
 	self.hrt.can_shoot_while_dodging = true	
 	
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.autumn.damage.bullet_damage_mul = 0.6
 		
 	self.flashbang_multiplier = 2
@@ -17598,9 +17556,10 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1.5
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1.5		
 				
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard	
@@ -17651,9 +17610,10 @@ function CharacterTweakData:_set_overkill_290()
 	self.spooc.kick_damage = 6.0
 	self.taser.shock_damage = 6.0
 
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	self.shield.damage.explosion_damage_mul = 0.7		
 	
 	self.fbi_swat.weapon = deep_clone(self.presets.weapon.expert)
@@ -17779,9 +17739,10 @@ function CharacterTweakData:_set_sm_wish()
 	--Winters' shields are immune to ECM feedback effects :)
 	self.phalanx_minion.ecm_vulnerability = 0
 	
-	self.shield.weapon.is_pistol.melee_speed = nil
-	self.shield.weapon.is_pistol.melee_dmg = nil
-	self.shield.weapon.is_pistol.melee_retry_delay = nil
+	self.shield.weapon.is_pistol.melee_speed = enemy_melee_speed.normal
+	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
+	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
+	self.shield.weapon.is_pistol.melee_range = 200
 	
 	--No Glint versions of weapons	
 	self.weap_unit_names[table.index_of(self.weap_ids, "m14_sniper_npc")] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")

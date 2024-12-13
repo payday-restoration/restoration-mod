@@ -1,10 +1,9 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.095 * difficulty
-local dozer = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local dozer_skull = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc") or "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
-local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" or difficulty == 7 and "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec") or "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
+local dozer = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
+local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
 local overkill_above = difficulty >= 5
 local mayhem_above = difficulty >= 6
 local enabled_chance_taser_and_shields = math.random() < diff_scaling
@@ -16,8 +15,8 @@ local optsBulldozer = {
     enemy = dozer,
     enabled = (overkill_above and enabled_chance_dozer)
 }
-local optsBulldozer_skull = {
-    enemy = dozer_skull,
+local optsBulldozer_scaffold = {
+    enemy = dozer,
     enabled = (mayhem_above and enabled_chance_dozer_scaffold)
 }
 local optsShield_1 = {
@@ -126,14 +125,14 @@ return {
             "dozer_scaffolding_1",
             Vector3(-3102, -23325, 6519.008),
             Rotation(90, -0, -0),
-            optsBulldozer_skull
+            optsBulldozer_scaffold
         ),
 		restoration:gen_dummy(
             400008,
             "dozer_scaffolding_2",
             Vector3(-3580, -22030, 6519.008),
             Rotation(90, -0, -0),
-            optsBulldozer_skull
+            optsBulldozer_scaffold
         ),
 		restoration:gen_so(
             400009,

@@ -1,9 +1,8 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.085 * difficulty
-local cloaker = ((difficulty == 8 and pro_job) and "units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1" or difficulty == 8 and "units/pd2_mod_halloween/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_halloween/characters/ene_spook_1/ene_spook_1"
 local enabled_chance_cloakers = math.random() < diff_scaling
 local hard_above = difficulty >= 3
+local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
 	
 local optsCloaker_1 = {
 	enemy = cloaker,

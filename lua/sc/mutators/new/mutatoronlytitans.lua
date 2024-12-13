@@ -18,6 +18,7 @@ MutatorOnlyTitans.icon_coords = {
 }	
 
 function MutatorOnlyTitans:setup(data)
+	local job = Global.level_data and Global.level_data.level_id
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local access_type_walk_only = {walk = true}
@@ -1379,5 +1380,331 @@ function MutatorOnlyTitans:setup(data)
 			access = access_type_all,
 			special_type = "medic"
 		}
+	end
+
+	--Marshals
+	if table.contains(restoration.yee_and_I_cannot_stress_this_enough_haw, job) then
+		if difficulty_index <= 7 then
+	--SWAT shields--
+	tweak_data.group_ai.unit_categories.CS_shield = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},						
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}			
+		},
+		access = access_type_all,
+		special_type = "shield"
+	}
+
+
+	--FBI shields--
+	tweak_data.group_ai.unit_categories.FBI_shield = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},						
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}			
+		},
+		access = access_type_all,
+		special_type = "shield"
+	}		
+	
+	--GenSec/Zeal Shield
+		tweak_data.group_ai.unit_categories.GS_shield = {
+			unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},						
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}			
+		},
+			access = access_type_all,
+			special_type = "shield"
+		}
+		
+		--Reinforce Shields
+		tweak_data.group_ai.unit_categories.GS_shield_defend = {
+			unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},						
+			murkywater = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},		
+			lapd = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			},
+			fbi = {
+				Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1")
+			}			
+		},
+			access = access_type_all,
+			special_type = nil
+		}
+
+	--Titan Snipers replace Grenadiers	
+	tweak_data.group_ai.unit_categories.boom_M4203 = {
+		unit_types = {
+		america = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},
+		russia = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},
+		zombie = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},					
+		murkywater = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},
+		federales = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},				
+		nypd = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},
+		lapd = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		},
+		fbi = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1")
+		}
+	},
+	access = access_type_all
+}
+	else
+		--SWAT shields--
+		tweak_data.group_ai.unit_categories.CS_shield = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},						
+				murkywater = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},					
+				nypd = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},		
+				lapd = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				}			
+			},
+			access = access_type_all,
+			special_type = "shield"
+		}
+	
+	
+		--FBI shields--
+		tweak_data.group_ai.unit_categories.FBI_shield = {
+			unit_types = {
+				america = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},						
+				murkywater = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},					
+				nypd = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},		
+				lapd = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				},
+				fbi = {
+					Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+				}			
+			},
+			access = access_type_all,
+			special_type = "shield"
+		}		
+		
+		--GenSec/Zeal Shield
+			tweak_data.group_ai.unit_categories.GS_shield = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},						
+					murkywater = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},					
+					nypd = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},		
+					lapd = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					}			
+			},
+				access = access_type_all,
+				special_type = "shield"
+			}
+			
+			--Reinforce Shields
+			tweak_data.group_ai.unit_categories.GS_shield_defend = {
+				unit_types = {
+					america = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					russia = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					zombie = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},						
+					murkywater = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					federales = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},					
+					nypd = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},		
+					lapd = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					},
+					fbi = {
+						Idstring("units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2")
+					}			
+			},
+				access = access_type_all,
+				special_type = nil
+			}
+
+	--Titan Snipers replace Grenadiers	
+	tweak_data.group_ai.unit_categories.boom_M4203 = {
+		unit_types = {
+		america = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},
+		russia = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},
+		zombie = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},					
+		murkywater = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},
+		federales = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},				
+		nypd = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},
+		lapd = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		},
+		fbi = {
+			Idstring("units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_2/ene_male_marshal_marksman_2")
+		}
+	},
+	access = access_type_all
+	}
+
+	end
 	end
 end

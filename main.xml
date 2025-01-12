@@ -591,43 +591,53 @@
 					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="AutoDMRs"/>
 				</option_group>
-
+				<divider name="tod_divider" size="14"/>
+				<option_group name="Performance">
+					<option type="multichoice" default_value="1" name="QueuedImpactFXType" values_tbl="restoration.queued_impact_effects_type"/>
+					<button name="QueuedImpactFXDEFAULT" disabled="true"/>
+					<button name="QueuedImpactFXIMMEDIATE" disabled="true"/>
+					<button name="QueuedImpactFXQUEUED" disabled="true"/>
+					<divider name="tod_divider" size="14"/>
+					<option type="bool" default_value="false" name="QueuedImpactFXLimitEnabled"/>
+					<option type="number" default_value="24" min="0" max="240" step="1" show_value="true" name="QueuedImpactFXLimit"/>
+				</option_group>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="GOTTAGETAGRIP"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSAC"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="multichoice" default_value="1" name="WepNames" values_tbl="restoration.wepnames"/>
 				<option type="bool" default_value="false" name="GCGPYPMMSACText"/>
 				<option_group name="ForceEggs">
 					<option type="bool" default_value="false" name="Upotte"/>
 					<option type="bool" default_value="false" name="MyWife"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="CrabBattle"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="EmberMyBeloved"/>
-					<divider name="tod_divider" size="15"/>
+					<divider name="tod_divider" size="14"/>
 					<option type="bool" default_value="false" name="BigMan"/>
 				</option_group>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="CloakerTurn"/>
 				<option type="bool" default_value="false" name="DisableMutatorColors"/>
 				<!--<option type="bool" default_value="false" name="RestoreHitFlash"/>-->
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="false" name="BotsNoDrop"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="true" name="Holiday"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="multichoice" default_value="1" name="WpnCat" values_tbl="restoration.weapon_categories"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<!-- <option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/> -->
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
 				<option type="multichoice" default_value="2" name="Env_RVD2" values_tbl="restoration.environments_choice_rvd2"/>
@@ -648,7 +658,7 @@
 				<option type="multichoice" default_value="2" name="Env_Ukra" values_tbl="restoration.environments_choice_ukrainian_job"/>
 				<!-- <option type="multichoice" default_value="2" name="Env_Kosugi" values_tbl="restoration.environments_choice_shadow_raid"/> -->
 				<option type="multichoice" default_value="2" name="Env_Peta" values_tbl="restoration.environments_choice_peta"/>
-				<divider name="tod_divider" size="15"/>
+				<divider name="tod_divider" size="14"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<!--<option type="bool" default_value="false" name="Notify"/> -->
 			</option_group>
@@ -660,6 +670,11 @@
 				<option type="bool" default_value="false" name="DisableAdvMovTF"/>
 				<!--Wall/Slide/Jump/Dash Kicks | 1 = default, 2 = disabled during stealth, 3 = disabled entirely -->
 				<option type="multichoice" default_value="1" name="AdvMovMelee" values_tbl="restoration.AdvMovMelee"/>
+				<divider name="tod_divider" size="8"/>
+				<option type="bool" default_value="false" name="AdvMovBackstep"/>
+				<option type="number" default_value="0.5" min="0" max="1" step="0.01" show_value="true" name="AdvMovDashScreenEffectAlpha"/>
+				<divider name="tod_divider" size="8"/>
+				<option type="number" default_value="0.5" min="0" max="1" step="0.01" show_value="true" name="AdvMovSlideScreenEffectAlpha"/>
 			</option_group>
         </options>
     </Options>

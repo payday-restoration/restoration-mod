@@ -12,6 +12,7 @@ local death_sentence = difficulty == 8
 local overkill_above = difficulty >= 5
 local hard_above = difficulty >= 3
 local enabled_chance_shields = math.random() < diff_scaling
+local bain_specials_warning = (difficulty >= 7 and "Play_ban_s05") or "Play_ban_s01_b"
 
 local optsSWAT_Heavy145 = {
     enemy = swat_shotgunner,
@@ -204,7 +205,7 @@ local Bain_sendcloakers = {
 	can_not_be_muted = true
 }
 local Bain_sendtasers = {
-	dialogue = "Play_ban_s01_b",
+	dialogue = bain_specials_warning,
 	can_not_be_muted = true
 }
 local spawn_heavy_swat_145 = {

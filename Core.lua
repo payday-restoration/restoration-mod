@@ -116,6 +116,7 @@ function restoration:Init()
 		dinner = restoration.captain_types.spring, --Slaughterhouse
 		dah = restoration.captain_types.spring, --diamond heist
 		hox_2 = restoration.captain_types.spring, --Hoxout Day 2
+		wetwork_burn = restoration.captain_types.spring, --Burnout
 		--chas = restoration.captain_types.spring, --Dragon Heist
 		--Custom Heists--
 		firestarter_3_res = restoration.captain_types.spring, --firestarter day 3 res edit version
@@ -489,8 +490,8 @@ function restoration:Init()
 	--OMNIA
 	restoration.omnia_support = {
 		"wetwork", --Wetworks
-		"bluewave" --Bluewave
-		--"wetwork_burn"
+		"bluewave", --Bluewave
+		"wetwork_burn" --Burnout
 	}
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
@@ -744,6 +745,14 @@ restoration.AdvMovMelee = {
 	"resmod_advmov_melee_off"
 }
 
+restoration.queued_impact_effects_type = {
+	"impactfx_type_default", 
+	--Default setting; shotguns play their bullet impact fx all at once at risk of performance if too many are set to play at once, everything else is put into a queue for sequential playback at the cost of having impacts potentially lagging behind if too many get queued too quickly
+	"impactfx_type_immediate",
+	--All weapons play their impact FX all at once at the risk of performance if too many are set to play at once
+	"impactfx_type_queued"
+	--All weapons have their impact FX all put into a queue for sequential playback at the cost of having impact playback potentially lagging behind if too many get queued too quickly
+}
 -- Detect if ResMod is active to disable PDTH Challenges Standalone
 DisablePDTHChallengeStandalone = DisablePDTHChallengeStandalone or {}
 

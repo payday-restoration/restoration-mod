@@ -49,6 +49,13 @@
 	<text text="The Rant-Man" type="name"/>
 	<text text="RedFlame" type="name"/>
 	<text text="SonicSoapyBoi" type="name"/>
+	<text text="Sgt. Joe" type="name"/>
+	<text text="easterunit100" type="name"/>
+	<text text="Marcel Kamisso" type="name"/>
+	<text text="Dorpenka" type="name"/>
+	<text text="Rickerus" type="name"/>
+	<text text="PlayBONK" type="name"/>
+	<text text="R_Populik" type="name"/>
 	<br/>
 	<text text="Sound Contributions" type="title"/>
 	<br/>
@@ -71,5 +78,8 @@
 	<text text="LR_Daring" type="name"/>
 	<text text="Gullwingdoor " type="name"/>
 	<text text="Bobctopus" type="name"/>
+	<br/>
+	<text text="AND YOU, THE RESMOD GAMERS!" type="title"/>
+	<br/>		
 	<command cmd="stop" offset="220"/>
 </table>

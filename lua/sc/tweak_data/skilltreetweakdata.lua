@@ -94,7 +94,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",
 		"player_civ_calming_alerts",
-		"player_detection_risk_stamina_regen"
+		"player_detection_risk_stamina_regen",
+		"player_detection_risk_dash_count"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -2013,6 +2014,7 @@ function SkillTreeTweakData:init(tweak_data)
 			"passive_player_xp_multiplier_1",
 			"player_passive_suspicion_bonus",
 			"player_passive_armor_movement_penalty_multiplier",
+			"weapon_passive_reload_speed_multiplier",
 			"weapon_passive_damage_multiplier_2",
 			"player_non_special_melee_multiplier_2",
 			"player_melee_damage_multiplier_2"			
@@ -2025,6 +2027,7 @@ function SkillTreeTweakData:init(tweak_data)
 	local deck6 = {
 		upgrades = {
 			"armor_kit",
+			"weapon_passive_pick_up_multiplier",
 			"weapon_passive_damage_multiplier_3",
 			"player_non_special_melee_multiplier_3",
 			"player_melee_damage_multiplier_3"			

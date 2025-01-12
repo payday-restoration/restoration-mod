@@ -1,11 +1,10 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local ponr_value = (difficulty <= 5 and 1730 or (difficulty == 6 or difficulty == 7) and 1630) or 1530
-
-local biker_table = {
-	guard_biker = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1",
-	female_1 = "units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1",
-	female_2 = "units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2",
-	female_3 = "units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
+local guard_biker = "units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"
+local female_bikers_table = {
+	"units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1",
+	"units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2",
+	"units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3"
 }
 local ponr_timer_player_mul = {
 		1,
@@ -36,24 +35,14 @@ local disabled = {
         enabled = false
 	}
 }
-local fem_biker_1 = {
+local fem_biker = {
 	values = {
-        enemy = biker_table.female_1
-	}
-}
-local fem_biker_2 = {
-	values = {
-        enemy = biker_table.female_2
-	}
-}
-local fem_biker_3 = {
-	values = {
-        enemy = biker_table.female_3
+        enemy = female_bikers_table
 	}
 }
 local guard_biker = {
 	values = {
-        enemy = biker_table.guard_biker
+        enemy = guard_biker
 	}
 }
 return {
@@ -86,16 +75,16 @@ return {
 	-- Remove red lights from keycard readers because vault can be opened in loud now
 	[103709] = disabled,
 	--female/guard bikers
-	[100670] = fem_biker_3,
-	[100673] = fem_biker_2,
+	[100670] = fem_biker,
+	[100673] = fem_biker,
 	[100116] = guard_biker,
-	[101571] = fem_biker_3,
-	[101556] = fem_biker_1,
+	[101571] = fem_biker,
+	[101556] = fem_biker,
 	[101037] = guard_biker,
-	[101034] = fem_biker_2,
-	[101222] = fem_biker_3,
-	[101235] = fem_biker_2,
+	[101034] = fem_biker,
+	[101222] = fem_biker,
+	[101235] = fem_biker,
 	[101310] = guard_biker,
-	[101683] = fem_biker_1,
+	[101683] = fem_biker,
 	[101866] = guard_biker
 }

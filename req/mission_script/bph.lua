@@ -1,6 +1,12 @@
+local murky_security = {
+	"units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
+	"units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
+	"units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull",
+	"units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local murky_guard = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870") or "units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870"
+local murky_guard = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870") or murky_security
 local timelock = (difficulty == 8 and 210 or (difficulty == 7 or difficulty == 6) and 150) or 120
 
 local enabled = {
@@ -13,31 +19,15 @@ local disabled = {
         enabled = false
 	}
 }
-local murky_mp5 = {
+local murky_sec = {
 	values = {
-        enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5"
+        enemy = murky_security
 	}
 }
-local murky_c45 = {
+local murky_sec_enabled = {
 	values = {
-        enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45"
-	}
-}
-local murky_c45_enabled = {
-	values = {
-        enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
+        enemy = murky_security,
 		enabled = true
-	}
-}
-local murky_mp5_enabled = {
-	values = {
-        enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5",
-		enabled = true
-	}
-}
-local murky_bronco = {
-	values = {
-        enemy = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull"
 	}
 }
 
@@ -76,12 +66,12 @@ return {
             enemy = murky_guard
 		}
 	},
-	[101670] = murky_bronco,
-	[101671] = murky_c45,
-	[101672] = murky_mp5,
-	[101949] = murky_mp5_enabled,
-	[101950] = murky_c45_enabled,
-	[100596] = murky_mp5,
+	[101670] = murky_sec,
+	[101671] = murky_sec,
+	[101672] = murky_sec,
+	[101949] = murky_sec_enabled,
+	[101950] = murky_sec_enabled,
+	[100596] = murky_sec,
 	-- Allow bot navigation earlier
 	[102736] = {
 		on_executed = {

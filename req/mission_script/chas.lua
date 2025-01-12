@@ -86,6 +86,7 @@ return {
 			rotation = Rotation(140, 0, -0)
 		}
 	},
+	--Reinforce spots
 	[101190] = {
 		reinforce = {
 			{

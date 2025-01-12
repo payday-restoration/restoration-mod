@@ -65,6 +65,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_pd.exclude_stages, "btms")
 	table.insert(self.risk_pd.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_pd.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_pd.exclude_stages, "wetwork_burn")
 
 	--SWAT--		
 	table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -114,6 +115,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_swat.exclude_stages, "btms")
 	table.insert(self.risk_swat.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_swat.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_swat.exclude_stages, "wetwork_burn")
 
 	
 	--FBI--		
@@ -164,6 +166,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_fbi.exclude_stages, "btms")
 	table.insert(self.risk_fbi.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_fbi.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_fbi.exclude_stages, "wetwork_burn")
 
 	--Overkill--		
 	table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -213,6 +216,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_squad.exclude_stages, "btms")
 	table.insert(self.risk_death_squad.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_death_squad.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_death_squad.exclude_stages, "wetwork_burn")
 
 	--Mayhem--		
 	table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -262,6 +266,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_easy_wish.exclude_stages, "btms")
 	table.insert(self.risk_easy_wish.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_easy_wish.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_easy_wish.exclude_stages, "wetwork_burn")
 
 	--Deathwish--		
 	table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -311,6 +316,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_wish.exclude_stages, "btms")
 	table.insert(self.risk_death_wish.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_death_wish.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_death_wish.exclude_stages, "wetwork_burn")
 	
 	--Death Sentence--		
 	table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -360,6 +366,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_sm_wish.exclude_stages, "btms")
 	table.insert(self.risk_sm_wish.exclude_stages, "constantine_wintersniper_lvl")
 	table.insert(self.risk_sm_wish.exclude_stages, "constantine_murkyairport_lvl")
+	table.insert(self.risk_sm_wish.exclude_stages, "wetwork_burn")
 	
 	-- Reaper Risk Asset
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
@@ -400,7 +407,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"Tonis2",
 		"trop",
 		"Xanax",
-		"btms"
+		"btms",
+		"wetwork_burn"
 		--"wwh" Intended as we weren't expecting a fight at all on Alaskan Deal
 	}		
 	self.risk_zombie.stages = {

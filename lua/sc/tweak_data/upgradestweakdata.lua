@@ -423,6 +423,28 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			2
 		}
 	}
+
+	self.values.player.dash_stats = {
+		limit = 2,
+		rate = 0.5,
+		cooldown = 1,
+		speed = 1.4,
+		fatigue_mult = 0.5,
+		grace_t = 0.25,
+		add_mult = 0.5,
+		add_mult_dodge = 1.5,
+		grace_cap = 0.45,
+		grace_cap_dodge = 0.65
+	}
+	self.values.player.detection_risk_dash_count = {
+		{
+			1,
+			30,
+			"below",
+			90,
+			2
+		}
+	}
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
@@ -1638,31 +1660,32 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
 					{ --Basic
-						1.15,
-						0.01 --Workaround for Buff Tracker sanity checks.
+						1.10,
+						0.2
 					},
 					{ --Ace
-						1.15,
-						4
+						1.10,
+						3
 					}
 				}
 				self.values.player.unseen_increased_crit_chance = {
 					{ --Basic
 						min_time = 3,
 						max_duration = 0, --Unused field, holdover from vanilla.
-						crit_chance = 1.15
+						crit_chance = 1.10
 					},
 					{ --Ace
 						min_time = 3,
 						max_duration = 5,
-						crit_chance = 1.15
+						crit_chance = 1.10
 					}
 				}
 				
 				self.skill_descs.backstab = {
 					skill_value_b1 = tostring(self.values.player.unseen_increased_crit_chance[1].min_time), -- Time to activate crit bonus when player don't get damage
 					skill_value_b2 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
-					skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus
+					skill_value_b3 = tostring(self.values.temporary.unseen_strike[1][2]), -- Expiring timer of crit bonus (basic)
+					skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus (aced)
 				}
 	
 			--Cleaner, formally spotter
@@ -1704,7 +1727,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				}
 				--Ace
-					self.values.player.backstab_crits = {0.50}
+					self.values.player.backstab_crits = {0.35}
 					
 					self.skill_descs.unseen_strike = {
 						skill_value_b1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
@@ -1974,6 +1997,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}		
 		
 	--Shared Perks--
+	self.values.weapon.passive_reload_speed_multiplier = {1.1}
+	self.values.player.passive_pick_up_multiplier = {1.33}
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
@@ -3660,6 +3685,15 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "detection_risk_stamina_regen",
 			category = "player"
 		}
+	}
+	self.definitions.player_detection_risk_dash_count = {
+		name_id = "menu_player_detection_risk_dash_count",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "detection_risk_dash_count",
+			category = "player"
+		}
 	}		
 
 	self.definitions.player_small_loot_multiplier_1 = {
@@ -4736,6 +4770,26 @@ function UpgradesTweakData:_player_definitions()
 		}
 	}
 
+	--Non-Pro Job Perk Deck perks
+	self.definitions.weapon_passive_reload_speed_multiplier = {
+		name_id = "menu_weapon_passive_reload_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "passive_reload_speed_multiplier",
+			category = "weapon"
+		}
+	}
+	self.definitions.weapon_passive_pick_up_multiplier = {
+		name_id = "menu_weapon_passive_pick_up_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "passive_pick_up_multiplier",
+			category = "player"
+		}
+	}
+	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {
 		name_id = "menu_weapon_passive_damage_multiplier",
@@ -5785,9 +5839,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 		}
 		
 		self.values.player.tachi_hot_duration = {
-			4,
 			6,
-			8
+			8,
+			10
 		}
 
 		self.definitions.player_tachi_hot_amount_3 = {

@@ -3,6 +3,7 @@ local pro_job = Global.game_settings and Global.game_settings.one_down
 local amount_guards = (difficulty == 8 and 12) or 8
 local enforcer_guard = (pro_job and "units/pd2_dlc_flat/characters/ene_gang_colombian_enforcer/ene_gang_colombian_enforcer")
 local ponr_value = (difficulty <= 5 and 660 or (difficulty == 6 or difficulty == 7) and 630) or 600
+local hunt_projob = pro_job
 
 local mobster_team = {
 	values = {
@@ -21,6 +22,10 @@ return {
 		on_executed = {
 			{ id = 101070, delay = 0 }
 		}
+	},
+	--Pro Job Endless Assault
+	[101726] = {
+		hunt = hunt_projob
 	},
 	-- Enter main hall
 	[103594] = {

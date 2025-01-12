@@ -249,7 +249,7 @@ local optsOverdrillPONR = {
 	enabled = pro_job
 }
 local Bain_sendtasers = {
-	dialogue = "Play_ban_s01_b",
+	dialogue = "Play_ban_s05",
 	can_not_be_muted = true
 }
 local Bain_senddozers = {

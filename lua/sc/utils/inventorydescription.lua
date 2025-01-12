@@ -155,6 +155,11 @@ function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mo
 						mult = mult + (1 - managers.player:upgrade_value(category, "reload_speed_multiplier", 1))
 						skill_in_effect = true
 					end
+				end	
+				local is_pro = Global.game_settings and Global.game_settings.one_down
+				if not is_pro then
+					mult = mult / managers.player:upgrade_value("weapon", "passive_reload_speed_multiplier", 1)
+					skill_in_effect = true
 				end
 				mult = 1 / managers.blackmarket:_convert_add_to_mul(mult)
 				local diff = base_stats[stat.name].value * mult - base_stats[stat.name].value
@@ -733,6 +738,11 @@ end
 
 function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
 	local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+
+	local is_pro = Global.game_settings and Global.game_settings.one_down
+	if not is_pro then
+		pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1)
+	end
 
 	local weapon_tweak = tweak_data.weapon[name]
 	for _, category in ipairs(weapon_tweak.categories) do

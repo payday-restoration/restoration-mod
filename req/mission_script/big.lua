@@ -1,3 +1,10 @@
+local swat_overkill_table_pj = {
+	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
+	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local timelock_normal = (difficulty >= 6 and 240) or 180
@@ -5,7 +12,7 @@ local timelock_fast = (difficulty >= 6 and 210) or 150
 local titan_sniper_c4 = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted")
 local swat_normal = (pro_job and "units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc")
 local swat_hard = (pro_job and "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc")
-local swat_overkill = (pro_job and "units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+local swat_overkill = (pro_job and swat_overkill_table_pj)
 local ponr_value = (difficulty <= 5 and 1080 or (difficulty == 6 or difficulty == 7) and 1050) or 1020
 
 local timelock_access = {

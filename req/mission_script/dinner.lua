@@ -102,10 +102,10 @@ return {
 		--be gone
 			{id = 102442, remove = true},
 		--trigger ambushes
-			{id = 400052, delay = 30},
-			{id = 400053, delay = 30},
-			{id = 400054, delay = 30},
-			{id = 400055, delay = 30}
+			{id = 400052, delay = 15},
+			{id = 400053, delay = 15},
+			{id = 400054, delay = 15},
+			{id = 400055, delay = 15}
 		}
 	},
 	[102505] = {

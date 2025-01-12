@@ -115,8 +115,14 @@ return {
 		}
 	},
 	--Trigger Hunt (Endless Assault)
+	--Disable valve's Reinforce points
 	[102642] = {
-		hunt = true
+		hunt = true,
+		reinforce = {
+			{name = "protect_the_valveHQ_1"},
+			{name = "protect_the_valveHQ_2"},
+			{name = "protect_the_valveHQ_3"}
+		}
 	},
 	--Disable PONR if you somehow want to print money, re-trigger again if you done with it
     [102551] = {
@@ -187,12 +193,6 @@ return {
 	[102197] = disabled,
 	--disable vanilla snipers
 	[102941] = disabled,
-	--Warn about shields (and grenadiers if it's Death Wish above)
-	[101469] = {
-		on_executed = {
-            {id = 400018, delay = 0}
-		}
-	},
 	--Spawn Grenadiers at the start of 1st assault if Mitchell has been killed
 	--Bain warns about them
 	[102081] = {
@@ -212,7 +212,7 @@ return {
 			{id = 400016, delay = 3.5}
 		}
 	},
-	--Spawn two extra grenadiers on Death Wish above
+	--Spawn two extra Tasers with blockade shields on Death Wish above (193+ throwback)
 	[103336] = {
 		on_executed = {
             {id = 400031, delay = 0},

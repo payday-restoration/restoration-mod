@@ -39,6 +39,7 @@ function MutatorASUBuff:setup(data)
 	char_tweak.medic.no_asu = false
 	char_tweak.omnia_lpf.no_asu = false
 	char_tweak.heavy_swat_sniper.no_asu = false
+	char_tweak.marshal_marksman.no_asu = false
 	char_tweak.marshal_shield.no_asu = false
 	char_tweak.marshal_shield_break.no_asu = false
 	char_tweak.tank.no_asu = false

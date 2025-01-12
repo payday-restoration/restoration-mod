@@ -22,7 +22,8 @@ local shotgun_unit = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_z
 local titan_swat = ((pro_job and difficulty >= 5) and titan_swat_table)
 local random_elite_unit = (difficulty == 8 and titan_table_ds or (difficulty == 7 or difficulty == 6) and titan_table_mayhem_dw) or "units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"
 local ponr_value = (difficulty <= 5 and 330 or (difficulty == 6 or difficulty == 7) and 300) or 240
-	
+local hunt_projob = pro_job	
+
 local sniper_trigger_times = {
 	values = {
         trigger_times = 0
@@ -49,9 +50,10 @@ local no_spawn_instigator_ids = {
 	}
 }	
 return {
-	--Pro Job PONR 
+	--Pro Job PONR+Endless assault
 	[100220] = {
-		ponr = ponr_value
+		ponr = ponr_value,
+		hunt = hunt_projob
 	},
 	--Snipers that look on Panic Room zone now spawn more than 1 time
 	[101128] = sniper_trigger_times,

@@ -265,9 +265,13 @@ function HUDManager:unhide_dodge_panel(dodge_points)
 	self._dodge_meter:unhide_dodge_panel(dodge_points)
 end
 
-function HUDManager:activate_effect_screen(duration, color)
+function HUDManager:activate_effect_screen(duration, color, use_alt)
 	--Apply the effect screen with a color over a duration.
-	self._effect_screen:do_effect_screen(duration, color)
+	if use_alt then
+		self._effect_screen:do_effect_screen_alt(duration, color)
+	else
+		self._effect_screen:do_effect_screen(duration, color)
+	end
 end
 
 --Functions to interface with the buff tracker.

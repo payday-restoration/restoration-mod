@@ -18,6 +18,12 @@ function MutatorGoldfarbDozers:setup()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
+if difficulty_index <= 5 then
+	tweak_data.group_ai.special_unit_spawn_limits.tank = 2
+else
+	tweak_data.group_ai.special_unit_spawn_limits.tank = 4
+end
+
 	--Dozer Pairs, not a pretty way to do it but it works
 	if difficulty_index <= 5 then
 		tweak_data.group_ai.enemy_spawn_groups.GREEN_tanks = {

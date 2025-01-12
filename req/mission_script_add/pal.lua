@@ -3,11 +3,11 @@ local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Globa
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local grenadier = "units/payday2/characters/ene_grenadier_1/ene_grenadier_1"
+local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
 local death_sentence = difficulty == 8
 local mayhem_above = difficulty >= 6
 local overkill_above = difficulty >= 5
 local deathwish_above = difficulty >= 7
-local manhole_specials_warning = (difficulty >= 7 and "Play_ban_s05") or "Play_ban_s03_b"
 
 local optsSniper_1 = {
 	enemy = sniper,
@@ -68,28 +68,28 @@ local optsGrenadier_3 = {
 	enabled = death_sentence
 }
 local optsGrenadierDefend_1 = {
-	enemy = grenadier,
+	enemy = taser,
 	on_executed = {
         { id = 400035, delay = 0 },
     },
     enabled = deathwish_above
 }
 local optsGrenadierDefend_2 = {
-	enemy = grenadier,
+	enemy = taser,
 	on_executed = {
         { id = 400036, delay = 0 },
     },
     enabled = deathwish_above
 }
 local optsGrenadierDefend_3 = {
-	enemy = grenadier,
+	enemy = taser,
 	on_executed = {
         { id = 400037, delay = 0 },
     },
     enabled = deathwish_above
 }
 local optsGrenadierDefend_4 = {
-	enemy = grenadier,
+	enemy = taser,
 	on_executed = {
         { id = 400038, delay = 0 },
     },
@@ -97,7 +97,7 @@ local optsGrenadierDefend_4 = {
 }
 local optsrespawn_sniper_1 = {
 	on_executed = { 
-		{ id = 400001, delay = 30 }
+		{ id = 400001, delay = 45 }
 	},
 	elements = { 
 		400001
@@ -106,7 +106,7 @@ local optsrespawn_sniper_1 = {
 }
 local optsrespawn_sniper_2 = {
 	on_executed = { 
-		{ id = 400002, delay = 30 }
+		{ id = 400002, delay = 45 }
 	},
 	elements = { 
 		400002
@@ -115,7 +115,7 @@ local optsrespawn_sniper_2 = {
 }
 local optsrespawn_sniper_3 = {
 	on_executed = { 
-		{ id = 400003, delay = 30 }
+		{ id = 400003, delay = 45 }
 	},
 	elements = { 
 		400003
@@ -124,7 +124,7 @@ local optsrespawn_sniper_3 = {
 }
 local optsrespawn_sniper_4 = {
 	on_executed = { 
-		{ id = 400004, delay = 30 }
+		{ id = 400004, delay = 45 }
 	},
 	elements = { 
 		400004
@@ -133,7 +133,7 @@ local optsrespawn_sniper_4 = {
 }
 local optsrespawn_sniper_5 = {
 	on_executed = { 
-		{ id = 400005, delay = 30 }
+		{ id = 400005, delay = 45 }
 	},
 	elements = { 
 		400005
@@ -142,7 +142,7 @@ local optsrespawn_sniper_5 = {
 }
 local optsrespawn_grenadier_1 = {
 	on_executed = { 
-		{ id = 400020, delay = 30 }
+		{ id = 400020, delay = 45 }
 	},
 	elements = { 
 		400020
@@ -151,7 +151,7 @@ local optsrespawn_grenadier_1 = {
 }
 local optsrespawn_grenadier_2 = {
 	on_executed = { 
-		{ id = 400021, delay = 30 }
+		{ id = 400021, delay = 45 }
 	},
 	elements = { 
 		400021
@@ -160,7 +160,7 @@ local optsrespawn_grenadier_2 = {
 }
 local optsrespawn_grenadier_3 = {
 	on_executed = { 
-		{ id = 400022, delay = 30 }
+		{ id = 400022, delay = 45 }
 	},
 	elements = { 
 		400022
@@ -218,10 +218,6 @@ local Bain_sendsnipers = {
 }
 local Bain_sendgrenadiers = {
 	dialogue = "Play_ban_s05",
-	can_not_be_muted = true
-}
-local Bain_sendshields = {
-	dialogue = manhole_specials_warning,
 	can_not_be_muted = true
 }
 
@@ -340,11 +336,6 @@ return {
             400017,
             "they_sending_grenadiers",
             Bain_sendgrenadiers
-        ),
-		restoration:gen_dialogue(
-            400018,
-            "they_sending_shields",
-            Bain_sendshields
         ),
 		restoration:gen_missionscript(
             400019,

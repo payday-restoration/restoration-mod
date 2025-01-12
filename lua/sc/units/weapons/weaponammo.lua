@@ -1,4 +1,5 @@
 --Used for underbarrel grenade launcher pickup (IE: On The Little Friend).
+local is_pro = Global.game_settings and Global.game_settings.one_down
 function WeaponAmmo:replenish()
 	local ammo_max_multiplier = managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)
 
@@ -22,6 +23,10 @@ function WeaponAmmo:replenish()
 
 		--Pickup multiplier from skills.
 		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+		if not is_pro then
+			pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1)
+		end
+
 
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier

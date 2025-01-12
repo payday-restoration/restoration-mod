@@ -265,7 +265,7 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 		return false
 	elseif self:is_friendly_fire(attack_data.attacker_unit, nil, (attack_data.variant == "fire" or attack_data.variant == "explosion")) then
 		return false
-	elseif self:_chk_dmg_too_soon(attack_data.damage) then
+	elseif self:_chk_dmg_too_soon(attack_data.damage, attack_data.attacker_unit, ( (not attack_data.is_hit and attack_data.variant == "fire") or attack_data.variant == "explosion")) then
 		return false
 	elseif self._unit:movement():current_state().immortal then
 		return false
@@ -274,6 +274,15 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 		return false
 	end
 	return true
+end
+
+function PlayerDamage:_chk_dmg_too_soon(damage, attacker_unit, is_explosive)
+	local ignore_check = is_explosive or (attacker_unit and alive(attacker_unit) and attacker_unit == self._unit)
+	local next_allowed_dmg_t = type(self._next_allowed_dmg_t) == "number" and self._next_allowed_dmg_t or Application:digest_value(self._next_allowed_dmg_t, false)
+
+	if not ignore_check and (damage <= self._last_received_dmg + 0.01 and managers.player:player_timer():time() < next_allowed_dmg_t) then
+		return true
+	end
 end
 
 --Special function to handle damage dealt to players in bleedout.
@@ -1562,13 +1571,21 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
 	end
 
-	if self._unit:movement():crouching() then --Burglar capstone skill + Duck and Cover
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance_burglar", 0)
-	elseif self._unit:movement():running() then --Duck and Cover aced.
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "run_dodge_chance", 0)
-	elseif self._unit:movement():zipline_unit() then
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
+	if alive(self._unit) and self._unit.movement and self._unit:movement() then
+		local unit_movement = self._unit:movement() 
+		local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
+		if unit_movement:zipline_unit() then
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
+		else
+			if unit_movement and unit_movement:crouching() or (current_state and current_state._is_sliding) then --Burglar capstone skill + Duck and Cover
+				passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
+				passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance_burglar", 0)
+			end
+			if unit_movement:running() or (current_state and (current_state._is_sliding or current_state._is_wallrunning)) then --Moving Target Aced
+				local fatigue = (not self._unit:movement():is_above_stamina_threshold() and 0.5) or 1
+				passive_dodge = passive_dodge + (pm:upgrade_value("player", "run_dodge_chance", 0) * fatigue)
+			end
+		end
 	end
 
 	self:fill_dodge_meter(self._dodge_points * dt * passive_dodge) --Apply passive dodge to meter.

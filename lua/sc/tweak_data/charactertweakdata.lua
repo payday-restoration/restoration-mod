@@ -2281,7 +2281,14 @@ function CharacterTweakData:_init_team_ai(presets)
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_npc",
+		"wpn_fps_ass_asval_npc",
 		"wpn_fps_ass_asval_vss_npc",
+		"wpn_fps_ass_asval_vss_npc",
+		"wpn_fps_ass_asval_vss_npc",
+		"wpn_fps_ass_flint_supp_npc",
+		"wpn_fps_ass_flint_supp_npc",
+		"wpn_fps_ass_flint_supp_kit_npc",
 	}	
 	self.sokol.weapon.weapons_of_choice.primary = table.random(sokol_rand_weap)
 	
@@ -2290,7 +2297,6 @@ function CharacterTweakData:_init_team_ai(presets)
 	self.dragon.weapon_voice = "3"
 	local dragon_rand_weap = {
 		"wpn_fps_snp_wa2000_npc",
-		"wpn_fps_snp_r700_npc",
 		"wpn_fps_snp_r700_npc",
 		"wpn_fps_snp_r700_npc",
 		"wpn_fps_snp_r700_npc"
@@ -2316,7 +2322,12 @@ function CharacterTweakData:_init_team_ai(presets)
 	--Sydney
 	self.sydney.speech_prefix = "rb15"
 	self.sydney.weapon_voice = "3"
-	self.sydney.weapon.weapons_of_choice.primary = "wpn_fps_ass_tecci_long_npc"
+	local sydney_rand_weap = {
+		"wpn_fps_ass_tecci_long_npc",
+		"wpn_fps_ass_tecci_npc",
+		"wpn_fps_ass_tecci_npc"
+	}	
+	self.sydney.weapon.weapons_of_choice.primary = table.random(sydney_rand_weap)
 	
 	--Rust (Ron "Fat Dick" Perlman)
 	self.wild.speech_prefix = "rb16"
@@ -2331,26 +2342,49 @@ function CharacterTweakData:_init_team_ai(presets)
 	--Sangres
 	self.max.speech_prefix = "rb18"
 	self.max.weapon_voice = "3"
-	self.max.weapon.weapons_of_choice.primary = "wpn_fps_ass_akm_gold_npc"
+	local max_rand_weap = {
+		"wpn_fps_ass_akm_gold_npc",
+		"wpn_fps_ass_akm_gold_npc",
+		"wpn_fps_ass_akm_gold_npc",
+		"wpn_fps_ass_akm_gold_npc",
+		"wpn_fps_ass_akm_npc"
+	}
+	self.max.weapon.weapons_of_choice.primary = table.random(max_rand_weap)
 	
 	--Joy
 	self.joy.speech_prefix = "rb19"
 	self.joy.weapon_voice = "3"
-	self.joy.weapon.weapons_of_choice.primary = "wpn_fps_smg_shepheard_npc"
+	local joy_rand_weap = {
+		"wpn_fps_smg_shepheard_npc",
+		"wpn_fps_smg_shepheard_npc",
+		"wpn_fps_smg_pm9_npc"
+	}
+	self.joy.weapon.weapons_of_choice.primary = table.random(joy_rand_weap)
 	
 	--Duke
 	self.myh.speech_prefix = "rb22"
 	self.myh.weapon_voice = "3"
+	local myh_rand_weap = {
+		"wpn_fps_ass_m14_mk14_npc",
+		"wpn_fps_ass_ching_npc",
+		"wpn_fps_ass_ching_npc",
+		"wpn_fps_ass_ching_npc",
+	}	
+	self.ecp_female.weapon.weapons_of_choice.primary = table.random(myh_rand_weap)
 	self.myh.weapon.weapons_of_choice.primary = "wpn_fps_ass_ching_npc"
 	
 	--Hila	
 	self.ecp_female.speech_prefix = "rb21"
 	self.ecp_female.weapon_voice = "3"
 	local ecp_female_rand_weap = {
-		"wpn_fps_sho_ben_npc",
-		"wpn_fps_sho_ben_npc",
-		"wpn_fps_sho_ben_npc",
-		"wpn_fps_sho_ben_jim_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_m16_a3_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_amcar_npc",
+		"wpn_fps_ass_m16_idf_npc",
+		"wpn_fps_ass_amcar_idf_npc",
 	}	
 	self.ecp_female.weapon.weapons_of_choice.primary = table.random(ecp_female_rand_weap)
 	
@@ -4965,7 +4999,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.damage.rocket_damage_mul = 1
 	presets.base.overheal_mult = 1
 	presets.base.critical_hits = {
-		damage_mul = 1.5
+		damage_mul = 2
 	}
 	presets.base.damage.tased_response = {
 		light = {tased_time = 5, down_time = 5},

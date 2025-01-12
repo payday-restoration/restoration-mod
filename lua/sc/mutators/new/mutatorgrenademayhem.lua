@@ -95,7 +95,7 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.tank_skull.grenade_toss_chance = 0.4
 		char_tweak.tank_titan.can_throw_frag = true
 		char_tweak.tank_titan.grenade_toss_chance = 0.4
-		if faction == "russia" or faction == "federales" then
+		if faction == "russia" then
 			char_tweak.tank_titan_assault.can_deploy_tear_gas = true
 			char_tweak.tank_titan_assault.chance_use_gas = 0.4
 		else
@@ -113,6 +113,9 @@ function MutatorGrenadeMayhem:setup(data)
 		char_tweak.taser_titan.can_throw_frag = true
 		char_tweak.taser_titan_reaper.can_throw_frag = true
 		char_tweak.enforcer_assault.can_throw_molotov = true
+		char_tweak.marshal_marksman.can_throw_frag = true
+		char_tweak.marshal_shield.can_throw_frag = true
+		char_tweak.marshal_shield_break.can_throw_frag = true
 	end
 	
 	--[[if sosa_cosplay == "on" then

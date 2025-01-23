@@ -101,6 +101,10 @@
 	<!-- hotline day 2 -->
 	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
 	
 	<!-- Counterfeit -->
@@ -1316,7 +1320,7 @@
     <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
     <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
-	<!--Weapon Mod Trails-->
+	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
@@ -1361,6 +1365,9 @@
     <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
+
 	<!--Cloud-->
 	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	
@@ -1414,6 +1421,12 @@
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum"/>
 	<!--I am not a texture artist, anyone else is welcome to make a better one -DMC-->
 	<texture			path="units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum_df_cc" force="true"/>
+
+	<!--Iron Sights-->
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_car4_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_arbiter_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_dd_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_ecp_irons_dmc"/>
 
 	<!--
 		Weapon Reticles

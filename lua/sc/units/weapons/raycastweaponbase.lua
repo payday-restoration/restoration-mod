@@ -37,9 +37,16 @@ function RaycastWeaponBase:init(...)
 end
 
 local setup_original = RaycastWeaponBase.setup
-function RaycastWeaponBase:setup(...)
-	setup_original(self, ...)
-	
+function RaycastWeaponBase:setup(setup_data, damage_multiplier)
+	setup_original(self, setup_data, damage_multiplier)
+
+	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult")) or 0
+
+	self._panic_suppression_chance = setup_data.panic_suppression_skill and panic_mult
+	if self._panic_suppression_chance == 0 then
+		self._panic_suppression_chance = false
+	end
+
 	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.
@@ -67,7 +74,8 @@ function RaycastWeaponBase:setup(...)
 	end
 	self._shots_without_releasing_trigger = 0
 	self._no_cheevo_kills_without_releasing_trigger = 0
-	self._shot_recoil_count = 0
+	self._shot_recoil_pattern_count = 0
+	self._shot_recoil_magnitude_count = 0
 end
 
 function RaycastWeaponBase:get_damage_type()
@@ -613,7 +621,8 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 	--MG Specialist Skill
 	if is_player then
-		self._shot_recoil_count = self._shot_recoil_count + 1
+		self._shot_recoil_pattern_count = (self._shot_recoil_pattern_count or 0) + 1
+		self._shot_recoil_magnitude_count = (self._shot_recoil_magnitude_count or 0) + 1
 		if self._shots_without_releasing_trigger then
 			self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
 			if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then

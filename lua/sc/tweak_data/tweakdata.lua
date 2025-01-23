@@ -1601,6 +1601,31 @@ if BeardLib then
 	end
 end
 
+local twu = tweak_data.upgrades
+--Text macros for the shared perk deck cards are here because I can't call other tweak_data classes (or at least don't know how to) while inside of another one without doing some round about shit like I did in weaponfactory
+for i = 1, #tweak_data.skilltree.specializations, 1 do --Just get the total number of perk decks
+	twu.specialization_descs[i] = twu.specialization_descs[i] or {}
+	--Blanket apply the text macros; Innatae doesn't even use these so it's totally fine that its under the blanket
+	twu.specialization_descs[i][2] = {
+		perk_value_1 = tostring(twu.values.weapon.passive_headshot_damage_multiplier[1] % 1 * 100).."%", --HS DMG mult
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%" --DMG mult
+	}
+	twu.specialization_descs[i][4] = {
+		perk_value_1 = tostring(twu.values.player.passive_concealment_modifier[1]), --Mobility bonus
+		perk_value_2 = tostring(twu.values.player.passive_armor_movement_penalty_multiplier[1] % 1 * 100).."%", --Armor movemenr penalty reduction
+		perk_value_3 = tostring(twu.values.player.passive_xp_multiplier[1] % 1 * 100).."%", --XP mult
+		perk_value_4 = tostring(twu.values.weapon.passive_reload_speed_multiplier[1] % 1 * 100).."%", --non-pro reload speed mult
+		perk_value_5 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%", --DMG mult
+	}
+	twu.specialization_descs[i][6] = {
+		perk_value_1 = tostring((twu.values.player.passive_pick_up_multiplier[1] - 1) % 1 * 100) .. "%", --non-pro ammo pickup
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%", --DMG mult
+	}
+	twu.specialization_descs[i][8] = {
+		perk_value_1 = tostring((1 - twu.values.doctor_bag.interaction_speed_multiplier[1]) % 1 * 100 .. "%"), --Medic bag interact speed bonus
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%" --DMG mult
+	}
+end
 
 local twf = tweak_data.weapon.factory
 local twb = tweak_data.blackmarket

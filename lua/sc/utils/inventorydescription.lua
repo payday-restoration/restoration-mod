@@ -740,8 +740,9 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 	local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
 	local is_pro = Global.game_settings and Global.game_settings.one_down
+	local is_solo = (Global.game_settings and Global.game_settings.single_player and 2) or 1
 	if not is_pro then
-		pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1)
+		pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 	end
 
 	local weapon_tweak = tweak_data.weapon[name]

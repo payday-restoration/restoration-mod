@@ -1,5 +1,6 @@
 --Used for underbarrel grenade launcher pickup (IE: On The Little Friend).
 local is_pro = Global.game_settings and Global.game_settings.one_down
+local is_solo = (Global.game_settings and Global.game_settings.single_player and 2) or 1
 function WeaponAmmo:replenish()
 	local ammo_max_multiplier = managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)
 
@@ -24,9 +25,8 @@ function WeaponAmmo:replenish()
 		--Pickup multiplier from skills.
 		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 		if not is_pro then
-			pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1)
+			pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 		end
-
 
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier
@@ -34,7 +34,7 @@ function WeaponAmmo:replenish()
 	end
 end
 
---Ensures that ensures that OICW magazine size increases don't result in broken decimal values.
+--Ensures that OICW magazine size increases don't result in broken decimal values.
 function WeaponAmmo:calculate_ammo_max_per_clip()
 	local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + (self._extra_ammo or 0)
 	ammo = ammo * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)

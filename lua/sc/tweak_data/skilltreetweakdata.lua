@@ -2158,6 +2158,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_panic_suppression",
+					"player_panic_suppression_mult_1",
 					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,

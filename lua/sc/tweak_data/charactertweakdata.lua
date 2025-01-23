@@ -15368,6 +15368,7 @@ function CharacterTweakData:_presets(tweak_data)
 	}		
 	--This doesn't really matter since Semi-autos for bots just use is_shotgun_mag anyway, but just in case
 	presets.weapon.gang_member.is_shotgun_semi = deep_clone(presets.weapon.gang_member.is_shotgun_mag)		
+	presets.weapon.gang_member.is_dmr = deep_clone(presets.weapon.gang_member.rifle)
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
 	restoration.log_shit("SC: normal presets")
 	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)

@@ -743,14 +743,21 @@ function PlayerDamage:damage_melee(attack_data)
 		return
 	end
 
+	if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) and not hit_unit:parent():character_damage():is_immune_to_shield_knockback() then
+		shield_knock = true
+		character_unit = hit_unit:parent()
+	end
 	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		--prevent the player from countering Dozers or other players through FF, for obvious reasons
 		if alive(attacker_unit) and attacker_unit:base() and not attacker_unit:base().is_husk_player then
+			local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
+			local is_shield = not can_shield_knock and attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield")
+			local is_titan_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield_titan")
 			local is_dozer = attacker_unit:base().has_tag and attacker_unit:base():has_tag("tank")
 
-			if not is_dozer then
+			if not is_dozer and not is_titan_shield and not is_shield then
 				self._unit:movement():current_state():discharge_melee()
-
+				
 				return "countered"
 			end
 		end
@@ -820,7 +827,7 @@ function PlayerDamage:damage_melee(attack_data)
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 1) * shake_armor_multiplier
-	local push_multiplier = ((attacker_char_tweak and attacker_char_tweak.melee_push_multiplier) or 1) * self._melee_push_multiplier
+	local push_multiplier = math.clamp( (((attacker_char_tweak and attacker_char_tweak.melee_push_multiplier) or 1) * self._melee_push_multiplier) * shake_armor_multiplier , 1, 1.5 )
 	managers.rumble:play("damage_bullet")
 	
 	local t = pm:player_timer():time()
@@ -847,11 +854,19 @@ function PlayerDamage:damage_melee(attack_data)
 	}
 	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * push_multiplier, 0.25))
 	self._unit:movement():current_state()._d_scope_t = 0.6
+
+	local in_air = self._unit:movement():current_state():in_air()
+	local hit_in_air = self._unit:movement():current_state()._hit_in_air
 	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
-	if not self._bleed_out then
+	--Also don't allow for multiple pushes if in the air
+	if not self._bleed_out and not hit_in_air then
+		push_multiplier = push_multiplier * ((in_air and 0.6) or 1) --reduced pushback if in the air
 		mvector3.multiply(attack_data.push_vel, push_multiplier)
-		self._unit:movement():current_state():push(attack_data.push_vel * 1.25, true, 0.2, not force_crouch and true, force_crouch)
+		self._unit:movement():current_state():push(attack_data.push_vel, true, 0.2, not force_crouch and true, force_crouch)
+		if in_air then
+			self._unit:movement():current_state()._hit_in_air = true
+		end
 	end
 	
 	return

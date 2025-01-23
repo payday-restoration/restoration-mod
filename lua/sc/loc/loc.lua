@@ -261,6 +261,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 					["resmod_advmov_melee_on"] = "Default",
 					["resmod_advmov_melee_loud_only"] = "Loud Only",
 					["resmod_advmov_melee_off"] = "Disabled",
+		["bm_melee_advmov"] = "Kick",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
@@ -1308,28 +1309,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 100% and there is no reduction to enemy headshot multipliers.##",
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{risk}#1.1x magnification.##",
-		["bm_wp_upg_o_1_1_health"] = "Reflex sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1"] = "Red Dot sight.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_health"] = "Red Dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_scope"] = "Low-powered scope.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
-		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up iron sights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_2"] = "Low-powered scope.\n#{risk}#2x magnification.##",
 		["bm_wp_upg_o_2_szholot"] = "Thermal holographic sight.\n#{risk}#2x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_2_5"] = "Low-powered scope.\n#{risk}#2.5x magnification.##",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
 		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",
-		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted reflex sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
-		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted reflex sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
+		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up iron sights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral red-dot sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted red-dot sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
 		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_4_valentine"] = "\"I got a class assignment for all of y'all!\"\n\nVariable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
@@ -1348,7 +1349,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#CANNOT BE TOGGLED WHILE AIMING AS A SECONDARY SIGHT IS ATTACHED.##",
 
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
-		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red-dot sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
 		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
 		["bm_wp_upg_o_angled_aim_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between standard and canted aiming.##", --VMP Point Shoot Laser
@@ -1422,6 +1423,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sms_info_2"] = " while shooting.",
 		["bm_menu_stat_sms_info_2"] = " while shooting due to current attachments.",
 		["bm_menu_weapon_slot_search_empty"] = "\n##NO RESULTS FOUND FOR## ##\"$search\"##",
+		["bm_menu_weapon_anim_warning"] = "#{important_1}#The animation swap this attachment provides does not sync with the reload timers!##",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               DO  NOT  USE               //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
@@ -2059,6 +2061,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
 		["bm_menu_riser"] = "Riser",
 		["bm_menu_pump"] = "Pump",
+		["bm_menu_sight_mount"] = "Sight Mount",
 
 		["bm_menu_upotte_barrel"] = "Barrel",
 		["bm_menu_upotte_foregrip"] = "Handguard",
@@ -2461,6 +2464,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_quad_desc"] = "",
 				["bm_wp_upg_quad2_desc"] = "",
 				["bm_wp_upg_vintage_desc"] = "",
+
+				["bm_wp_upg_o_m4_irons_dmc"] = "CAR-4 Flip-up Iron Sights",
+				["bm_wp_upg_o_ozark_irons_dmc"] = "ZR Flip-up Iron Sights",
+				["bm_wp_upg_o_dd_irons_dmc"] = "Versatile Fixed Iron Sights",
+				["bm_wp_upg_o_ecp_irons_dmc"] = "Iron Sights",
 
 				--CUSTOM WEAPON ATTACHMENTS
 					--M6D
@@ -3270,6 +3278,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Joceline
 					["bm_w_b682"] = "Joceline O/U 12G",
 					--Custom Shotguns
+						--MW2022 Vepr
+						["bm_w_vecho"] = "KV Broadside",
+						--MW2023 Origin 12
+						["bm_w_haymaker"] = "Haymaker",
 						--Doomstick
 						["bm_w_quadbarrel"] = "Doomstick",
 						--Widowmaker TX
@@ -3361,6 +3373,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_ar18"] = "CAR-18",
 						--FIK-22
 						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
+						--ACR 2012
+						["bm_w_acr_2012"] = "MCW-R",
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3473,6 +3487,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 						--L115
 						["bm_w_l115"] = "AIM 90M",
+						--"PTRS"
+						["bm_w_mptango41"] = "Gorenko Anti-Tank Rifle",
 				--[[ LAUNCHERS & BOWS ]]
 					--GL40
 					["bm_w_gre_m79"] = "GL-40",
@@ -3967,6 +3983,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
 					--Claire 12G
 					["bm_w_coach"] = "Remington Model 1889",
+					--CUSTOM SHOTGUNS
+						--MW2022 Vepr
+						["bm_w_vecho"] = "Vepr-12",
+						--MW2023 Origin 12
+						["bm_w_haymaker"] = "Origin-12",
 
 				--[[ARs]]
 					--FAMAS
@@ -4060,6 +4081,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_groza"] = "TsKIB SOO Groza-1",
 					--Custom Rifles
 						["bm_w_fik22"] = "Ruger 10/22",
+						--ACR 2012
+						["bm_w_acr_2012"] = "Remington ACR",
 
 
 				--[[DMRs]]
@@ -4221,6 +4244,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_svd"] = "Kalashnikov Concern SVD",
 						--L115
 						["bm_w_l115"] = "Accuracy International L115",
+						--"PTRS"
+						["bm_w_mptango41"] = "\"PTRS-41\"",
 						--PD3 Lynx
 						["bm_w_pd3_lynx"] = "SERO Gepard M6",
 						--M107
@@ -4348,13 +4373,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
-						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
+						["bm_wp_upg_o_rmr"] = "Trijicon RMR Red Dot Sight",
 
-						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
-						["bm_wp_upg_o_reflex"] = "Reflex Sight",
-						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
-						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
-						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",
+						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Red Dot Sight",
+						["bm_wp_upg_o_reflex"] = "Red Dot Sight",
+						["bm_wp_upg_o_cmore"] = "C-More Railway Red Dot Sight",
+						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Red Dot Sight",
+						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Red Dot Sight",
 
 						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
 						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
@@ -4373,10 +4398,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",
 
-						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope w/Micro Reflex",
+						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope w/Micro Red Dot",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
 
-						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Reflex",
+						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Red Dot",
 						["bm_wp_uupg_o_schmidt"] = "Schmidt & Bender 5-45x56 PM II High Power",
 
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
@@ -4858,7 +4883,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you.",
 		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
 		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
-		["loading_gameplay_res_16"] = "You can parry melee attacks by charging your own. This can be upgraded to work against cloaker kicks.",
+		["loading_gameplay_res_16"] = "You can parry most enemy melee attacks by charging your own. This can be upgraded to work against cloaker kicks and shield bashes.",
 		["loading_gameplay_res_17"] = "Enemy melee attacks are quick and deadly. Keep your distance!",
 		["loading_gameplay_res_18"] = "You know what's better than smacking enemies with a baseball bat? Smacking them in the head with a baseball bat for headshot damage.",
 		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. Mind their lasers!",
@@ -5139,8 +5164,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",
-		["mutator_spawn_mult_desc"] = "Increased enemy spawns.",
-		["mutator_spawn_mult_longdesc"] = "More enemies will spawn during assault phases. The Overkill™ way!",
+		["mutator_spawn_mult_desc"] = "Modified enemy spawns.",
+		["mutator_spawn_mult_longdesc"] = "More (or less) enemies will spawn during assault phases. The Overkill™ way!",
 
 		["mutator_birthday"] = "Balloon Poppers",
 		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
@@ -5459,7 +5484,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee or parry Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered or parried.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -5743,10 +5768,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_category_mod"] = "Mod",
 
 		--Shared Perks--
-		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#25%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#10%## faster.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#33%## more ammo.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#20%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+			
+		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#$perk_value_1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#$perk_value_2## less affected.\n\nYou gain #{skill_color}#$perk_value_3## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#$perk_value_4## faster.\n\nYou do #{skill_color}#$perk_value_5## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+
+		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#$perk_value_1## more ammo; effect is doubled for offline heists.\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+
+		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour armor is increased by ##$perk_value_2## for ballistic vests.",

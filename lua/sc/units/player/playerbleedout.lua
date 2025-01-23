@@ -55,7 +55,6 @@ function PlayerBleedOut:call_civilian(line, t, no_gesture, skip_alert, revive_SO
 	local detect_only = false
 	local voice_type, plural, prime_target = self:_get_unit_intimidation_action(false, true, false, false, false, 0, true, detect_only)
 	if prime_target and not prime_target.unit:base():char_tweak().is_escort then
-		log("IS " .. tostring(prime_target.unit:base():char_tweak_name()) .. " AN ESCORT: " .. tostring( prime_target.unit:base():char_tweak().is_escort ))
 		if detect_only then
 			if not prime_target.unit:sound():speaking(t) then
 				prime_target.unit:sound():say("_a01x_any", true)

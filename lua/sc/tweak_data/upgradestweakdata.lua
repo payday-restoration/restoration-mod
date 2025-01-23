@@ -1998,7 +1998,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 	--Shared Perks--
 	self.values.weapon.passive_reload_speed_multiplier = {1.1}
-	self.values.player.passive_pick_up_multiplier = {1.33}
+	self.values.player.passive_pick_up_multiplier = {1.15}
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
@@ -2031,6 +2031,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.panic_suppression = {
 		true
 	}	
+	self.values.player.panic_suppression_mult = {
+		0.05,
+		0.01
+	}
 	self.values.player.corpse_dispose_speed_multiplier = {
 		0.25
 	}
@@ -2721,7 +2725,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.specialization_descs[2][7] = {
-		perk_value_1 = "5%", -- Panic chance (It's not defined in this file btw so beware)
+		perk_value_1 = tostring(self.values.player.panic_suppression_mult[1] * 100).. "%", -- Panic chance
 		perk_value_2 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[2][9] = {
@@ -3232,7 +3236,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
 	}
 	self.multi_choice_specialization_descs[23][9][2] = { --Muscle
-		perk_value_1 = self.specialization_descs[2][7].perk_value_1, -- Panic chance
+		perk_value_1 = tostring(self.values.player.panic_suppression_mult[2] * 100).. "%", -- Panic chance
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
@@ -3414,6 +3418,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck2_mrwi_desc",
 			upgrades = {
 				"player_panic_suppression",
+				"player_panic_suppression_mult_1",
+				"player_panic_suppression_mult_2",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier",
 				"player_passive_loot_drop_multiplier_1"	
@@ -4914,6 +4920,25 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "headshot_regen_armor_bonus_cd_reduction",
+			category = "player"
+		}
+	}
+
+	self.definitions.player_panic_suppression_mult_1 = {
+		name_id = "menu_player_panic_suppression_mult",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "panic_suppression_mult",
+			category = "player"
+		}
+	}
+	self.definitions.player_panic_suppression_mult_2 = {
+		name_id = "menu_player_panic_suppression_mult",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "panic_suppression_mult",
 			category = "player"
 		}
 	}

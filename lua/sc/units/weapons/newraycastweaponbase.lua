@@ -1000,6 +1000,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._movement_speed_add = 0
 
 		self._melee_speed_mult = 1
+		self._reload_anim_multiplier = 1
 
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
@@ -1008,6 +1009,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._use_vapor_trail = self:weapon_tweak_data().use_vapor_trail
 		self._use_sniper_trail = self:weapon_tweak_data().use_sniper_trail
+		self._use_silenced_muzzleflash = nil
 
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
 
@@ -1310,6 +1312,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 					self._starwars = deep_clone(stats.starwars)
 				end
 			end
+			if stats.use_silenced_muzzleflash then
+				self._use_silenced_muzzleflash = true
+			end
 			if stats.empire then
 				self._empire = true
 			end
@@ -1360,6 +1365,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.big_scope then
 				self._has_big_scope = true
+			end
+			if stats.reload_anim_mult then
+				self._reload_anim_multiplier = self._reload_anim_multiplier * stats.reload_anim_mult
 			end
 			if stats.movement_speed_add then
 				self._movement_speed_add = self._movement_speed_add + stats.movement_speed_add
@@ -1435,6 +1443,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._ammo_data.ammo_pickup_max_mul = self._ammo_data.ammo_pickup_max_mul and self._ammo_data.ammo_pickup_max_mul * stats.ammo_pickup_max_mul or stats.ammo_pickup_max_mul
 			end
 		end
+	end
+
+	if self._use_silenced_muzzleflash then
+		self._muzzle_effect = Idstring(self:weapon_tweak_data().muzzleflash_silenced or "effects/payday2/particles/weapons/9mm_auto_silence_fps")
 	end
 
 	if self._cbfd_to_add_this_check_elsewhere then
@@ -1654,8 +1666,9 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 
 		--Pickup multiplier from skills.
 		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)	
+		local is_solo = (Global.game_settings and Global.game_settings.single_player and 2) or 1
 		if not is_pro then
-			pickup_multiplier = pickup_multiplier * managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1)
+			pickup_multiplier = pickup_multiplier * ( ((managers.player:upgrade_value("player", "passive_pick_up_multiplier", 1) - 1) * is_solo) + 1 )
 		end
 
 		for _, category in ipairs(self:categories()) do
@@ -2475,6 +2488,21 @@ function NewRaycastWeaponBase:_set_parts_visible(visible)
 	end
 
 	self:_chk_charm_upd_state()
+end
+
+if OWLFBullpupWeaponBase then
+	function OWLFBullpupWeaponBase:clbk_assembly_complete(...)
+		OWLFBullpupWeaponBase.super.clbk_assembly_complete(self, ...)
+		if table.contains(self._blueprint, "wpn_fps_upg_owlfbullpup_mag_drum") then
+			self:weapon_tweak_data().animations.reload_name_id = "owlfbullpup_drum"
+		else
+			self:weapon_tweak_data().animations.reload_name_id = "owlfbullpup"
+		--[[
+			self:weapon_tweak_data().timers.reload_empty = 4.8
+			self:weapon_tweak_data().timers.reload_not_empty = 3.0
+		--]]
+		end
+	end
 end
 
 --[[

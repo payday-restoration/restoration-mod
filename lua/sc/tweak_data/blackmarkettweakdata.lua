@@ -1874,6 +1874,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"tachi"
 	}
 
+	self._projectiles_index_resmod = deep_clone(self._projectiles_index)
+
 	--Throwables--
 	--Shuriken
 	self.projectiles.wpn_prj_four.max_amount = 9
@@ -2084,6 +2086,29 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		self.projectiles[proj_id].add_trail_effect = true
 	end
 end
+
+
+function BlackMarketTweakData:get_projectiles_index()
+	log("get_projectiles_index")
+	return self._projectiles_index_resmod
+end
+
+function BlackMarketTweakData:get_index_from_projectile_id(projectile_id)
+	log("get_index_from_projectile_id")
+	for index, entry_name in ipairs(self._projectiles_index_resmod) do
+		if entry_name == projectile_id then
+			return index
+		end
+	end
+
+	return 0
+end
+
+function BlackMarketTweakData:get_projectile_name_from_index(index)
+	log("get_projectile_name_from_index")
+	return self._projectiles_index_resmod[index]
+end
+
 
 --Overrides this function to allow abominations on Gold AKs
 function BlackMarketTweakData:create_new_color_skin(name, data, color_skin_data)
@@ -6108,7 +6133,7 @@ Hooks:PostHook(BlackMarketTweakData, "init", "CustomMelee", function(self, tweak
 	self.melee_weapons.broad.info_id = "bm_melee_broad_info"
 	self.melee_weapons.broad.stats.cleave = 3
 	self.melee_weapons.broad.stats.raycasts = 20
-	self.melee_weapons.broad.stats.raycasts_h = 25
+	self.melee_weapons.broad.stats.raycasts_h = 30
 	self.melee_weapons.broad.stats.raycasts_charge = nil
 	self.melee_weapons.broad.stats.min_damage = 9
 	self.melee_weapons.broad.stats.max_damage = 12.001

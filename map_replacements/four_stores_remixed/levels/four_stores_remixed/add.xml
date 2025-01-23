@@ -1829,8 +1829,8 @@
 		<unit path="units/world/props/survivalist/shelves/shelf_tools"/>
 	</add>
 	<add from_db="true" path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a" type="unit">
-		<unit path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a"/>
-		<object path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a"/>
 		<material_config path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a"/>
+		<object path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a"/>
+		<unit path="units/pd2_dlc_trai/props/trai_prop_generic_shelf_wire/trai_prop_generic_shelf_wire_a"/>
 	</add>
 </table>

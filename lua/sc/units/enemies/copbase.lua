@@ -317,6 +317,9 @@ local enemy_variations = {
 	["units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"] = "swat_sg",
 	["units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"] = "asu",
 
+	["units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"] = "black",
+	["units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"] = "skull",
+
 	["units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"] = "swat_smg",
 	["units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"] = "swat_sg",
 	["units/payday2/characters/ene_swat_3/ene_swat_3"] = "swat_ar",

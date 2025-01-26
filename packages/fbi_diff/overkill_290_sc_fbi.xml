@@ -107,15 +107,12 @@
 	<!--Skulldozer -->	
 	<unit				path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3" load="true" />
 	<unit				path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true" />
-	<object				path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
-	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
-	<model				path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />	
 	<material_config	path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
 	<material_config	path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_contour"  />	
 	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />	
 	
 	<texture			path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_df"  />		
-	
+		
 	<!--LAPD Bulldozer Bits-->	
 	<material_config	path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_static_bulldozer"  />		
 	

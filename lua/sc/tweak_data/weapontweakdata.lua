@@ -8673,6 +8673,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tec9.fire_mode_data.fire_rate = 0.06
 						self.tec9.CAN_TOGGLE_FIREMODE = true
 						self.tec9.auto = {}
+						self.tec9.has_description = true
+						self.tec9.desc_id = "bm_tec9_sc_desc"													
 						self.tec9.auto.fire_rate = 0.06
 						self.tec9.kick = self.stat_info.kick_tables.left_recoil
 						self.tec9.kick_pattern = {

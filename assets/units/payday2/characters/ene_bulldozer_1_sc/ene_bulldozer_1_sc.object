@@ -465,6 +465,17 @@
 					<material materials="mtr_body_lod" />
 				</object>
 			</lod_object>
+			
+			<lod_object name="lod_face_h">
+				<object name="g_face_h" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />					
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+				<object name="g_face_h_lod1" 				enabled="false" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+			</lod_object>
 
 			<lod_object name="lod_helmet_glass">
 				<object name="g_helmet_glass" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
@@ -546,6 +557,28 @@
 
 			<lod_object name="lod_throat_black">
 				<object name="g_throat_b" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />					
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+				<object name="g_throat_lod1" 				enabled="false" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_neck_skull">
+				<object name="g_neck_skull" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_bulldozer" max_distance="1000" />					
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+				<object name="g_neck_lod1" 				enabled="false" lod="1" >
+					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_bulldozer_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_throat_skull">
+				<object name="g_throat_skull" 					enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_bulldozer" max_distance="1000" />					
 					<material materials="mtr_bulldozer_lod" />
 				</object>

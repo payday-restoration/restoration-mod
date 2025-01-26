@@ -2612,6 +2612,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 				--Spec Ops
 				["bm_mp7_sc_desc"] = "A lightweight SMG and competitor to the Project-90 SMG. Doesn't have an undermounted grenade launcher as some sources may lead you to believe.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
+				--T3K Urban
+				["bm_tec9_sc_desc"] = "A classic, cheap high-firerate SMG thats reliability has been demonstrated by various gangbangers and cartels all across the southeastern United States.",
+				
 				--Heather
 				["bm_sr2_sc_desc"] = "Utilizing a specialized 9×21mm round, the Heather SMG is the Russian answer to the Project-90 and SpecOps-7 SMGs.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
 				--Compact-5/MP5

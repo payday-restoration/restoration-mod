@@ -63,13 +63,16 @@
 			<var_helmet_skull value="'units/payday2/characters/ene_bulldozer_3_sc/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet'"/>			
 			<var_helmet_plate value="'units/payday2/characters/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
 			<var_helmet_plate_skull value="'units/payday2/characters/ene_acc_bulldozer_helmet_plate_3/ene_acc_bulldozer_helmet_plate_3'"/>
+			<var_helmet_plate_la_skull value="'units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate_3/ene_acc_bulldozer_helmet_plate_3'"/>
 			<var_helmet_plate_black value="'units/payday2/characters/ene_bulldozer_2_sc/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate'"/>
 			<var_neck 		  value="'units/payday2/characters/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck'"/>
+			<var_neck_la_skull value="'units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck_3/ene_acc_bulldozer_neck_3'"/>
 			<var_neck_black   value="'units/payday2/characters/ene_acc_bulldozer_neck_2/ene_acc_bulldozer_neck_2'"/>
 			<var_neck_skull   value="'units/payday2/characters/ene_acc_bulldozer_neck_3/ene_acc_bulldozer_neck_3'"/>
 			<var_throat 	  value="'units/payday2/characters/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat'"/>
 			<var_throat_black value="'units/payday2/characters/ene_acc_bulldozer_throat_2/ene_acc_bulldozer_throat_2'"/>
 			<var_throat_skull value="'units/payday2/characters/ene_acc_bulldozer_throat_3/ene_acc_bulldozer_throat_3'"/>
+			<var_throat_la_skull value="'units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat_3/ene_acc_bulldozer_throat_3'"/>
 			<var_chest 		  value="'units/payday2/characters/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest'"/>
 			<var_stomache 	  value="'units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache'"/>
 			<var_back 		  value="'units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back'"/>
@@ -83,6 +86,15 @@
 		</filter>
 		<filter name="'check_skull'">
 			<check value="vars.var_dozer_var == 2"/>
+		</filter>
+		<filter name="'check_la'">
+			<check value="vars.var_dozer_var == 3"/>
+		</filter>
+		
+		<filter name="'check_normal_non_la'">
+			<check value="vars.var_dozer_var == 0"/>
+			<check value="vars.var_dozer_var == 1"/>
+			<check value="vars.var_dozer_var == 2"/>		
 		</filter>
 
 		<sequence editable_state="true" name="'black'" triggable="true" once="true">		
@@ -137,12 +149,18 @@
 			<set_variables var_dozer_var="2"/>
 			
 			<object enabled="false" name="'g_shells_chest'"/>
+			<object enabled="false" name="'g_neck'"/>
+			<object enabled="false" name="'g_throat'"/>
+			<object enabled="false" name="'g_shells_chest'"/>
 			<object enabled="false" name="'g_shells_chest_lod1'"/>
 			<object enabled="false" name="'g_shells_stomache'"/>
 			<object enabled="false" name="'g_shells_stomache_lod1'"/>
 			
 			<object enabled="false" name="'g_armor_chest'"/>			
 			<object enabled="true" name="'g_armor_chest_skull'"/>
+			
+			<object enabled="true" name="'g_neck_skull'"/>
+			<object enabled="true" name="'g_throat_skull'"/>
 			
 			<object enabled="true" name="'g_dozer_skull'"/>
 			<object enabled="true" name="'g_dozer_skull_lod1'"/>	
@@ -152,10 +170,37 @@
 			
 			<material_config name="'units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc'"/>															
 		</sequence>
+
+		<sequence editable_state="true" name="'skull_la'" triggable="true" once="true">						
+			<set_variables var_dozer_var="3"/>
+			
+			<object enabled="false" name="'g_shells_chest'"/>
+			<object enabled="false" name="'g_neck'"/>
+			<object enabled="false" name="'g_throat'"/>
+			<object enabled="false" name="'g_shells_chest'"/>
+			<object enabled="false" name="'g_shells_chest_lod1'"/>
+			<object enabled="false" name="'g_shells_stomache'"/>
+			<object enabled="false" name="'g_shells_stomache_lod1'"/>
+			
+			<object enabled="false" name="'g_armor_chest'"/>			
+			<object enabled="true" name="'g_armor_chest_skull'"/>
+			
+			<object enabled="true" name="'g_neck_skull'"/>
+			<object enabled="true" name="'g_throat_skull'"/>
+			
+			<object enabled="true" name="'g_dozer_skull'"/>
+			<object enabled="true" name="'g_dozer_skull_lod1'"/>	
+			
+			<object enabled="false" name="'g_armor_stomache'"/>			
+			<object enabled="true" name="'g_armor_stomache_skull'"/>
+						
+			<material_config name="'units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3'"/>															
+		</sequence>
 		
 		<sequence name="'select_face'" startup="true" once="true">
 			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
-			<run_sequence name="'face'..pick('_a','_a','_c','_d','_e', '_b', '_g', '_f')" />												
+			<run_sequence filter="'check_normal_non_la'" name="'face'..pick('_a','_a','_c','_d','_e', '_b', '_g', '_f')" />
+			<run_sequence filter="'check_la'" name="'face'..pick('_h','_a','_c','_d','_e', '_b', '_g', '_f')" />												
 		</sequence>		
 
 		<sequence editable_state="true" name="'head_balaclava_a'" triggable="true" once="true">	
@@ -196,6 +241,10 @@
 			<object enabled="true" name="'g_face_g'"/>
 			<object enabled="true" name="'g_face_g_lod1'"/>
 		</sequence>	
+		<sequence editable_state="true" name="'face_h'" once="true" triggable="true">
+			<object enabled="true" name="'g_face_h'"/>
+			<object enabled="true" name="'g_face_h_lod1'"/>
+		</sequence>	
 		
 		<sequence name="'int_seq_helmet_plate'" once="true">
 			<body enabled="false" name="'body_helmet_plate'"/>
@@ -208,6 +257,7 @@
 			<decal_mesh enabled="true" name="'dm_helmet_glass'"/>
 			<spawn_unit filter="'check_normal'" name="vars.var_helmet_plate" position="object_pos('Head')" rotation="object_rot('Head')"/>
 			<spawn_unit filter="'check_skull'" name="vars.var_helmet_plate" position="object_pos('Head')" rotation="object_rot('Head')"/>
+			<spawn_unit filter="'check_la'" name="vars.var_helmet_plate_la_skull" position="object_pos('Head')" rotation="object_rot('Head')"/>
 			<sound action="'play'" event="'bulldozer_metal_plate_shatter'" object="'Head'"/>
 		</sequence>
 		
@@ -322,6 +372,7 @@
 			<spawn_unit filter="'check_normal'" name="vars.var_throat" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_black'" name="vars.var_throat_black" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_skull'" name="vars.var_throat_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
+			<spawn_unit filter="'check_la'" name="vars.var_throat_la_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<sequence name="'int_seq_armor_neck'" once="true">
@@ -332,6 +383,7 @@
 			<spawn_unit filter="'check_normal'" name="vars.var_neck" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_black'"  name="vars.var_neck_black" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_skull'"  name="vars.var_neck_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
+			<spawn_unit filter="'check_la'"  name="vars.var_neck_la_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">		

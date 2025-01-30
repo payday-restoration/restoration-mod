@@ -1115,12 +1115,13 @@ function CopDamage:damage_bullet(attack_data)
 
 				if head_object_get and not is_spring then
 					local world_g = World
+					local head_pop = damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" or damage_type == "handcannon" 
 					if accelerated_training_program then
 						world_g:effect_manager():spawn({
 							effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"), --need yellow brains
 							parent = head_object_get		
 						})
-						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						if head_pop then
 							world_g:effect_manager():spawn({
 								effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
 								parent = head_object_get		
@@ -1136,7 +1137,7 @@ function CopDamage:damage_bullet(attack_data)
 							effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 							parent = head_object_get		
 						})
-						if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+						if head_pop then
 							world_g:effect_manager():spawn({
 								effect = ids_func("effects/payday2/particles/explosions/red_mist"),
 								parent = head_object_get		
@@ -1358,12 +1359,13 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			local damage_type = (alive(attack_data.weapon_unit) and attack_data.weapon_unit.base and attack_data.weapon_unit:base():get_damage_type()) or "normal"
 			if head_object_get and not is_spring then
 				local world_g = World
+				local head_pop = damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" or damage_type == "handcannon" 
 				if accelerated_training_program then
 					world_g:effect_manager():spawn({
 						effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"), --need yellow brains
 						parent = head_object_get		
 					})
-					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+					if head_pop then
 						world_g:effect_manager():spawn({
 							effect = ids_func("effects/payday2/particles/impacts/blood/yellow/explosions/yellow_mist"),
 							parent = head_object_get		
@@ -1379,7 +1381,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 						effect = ids_func("effects/payday2/particles/impacts/blood/brain_splat"),
 						parent = head_object_get		
 					})
-					if damage_type and damage_type == "sniper" or damage_type == "anti_materiel" or damage_type == "heavy_pistol" then
+					if head_pop then
 						world_g:effect_manager():spawn({
 							effect = ids_func("effects/payday2/particles/explosions/red_mist"),
 							parent = head_object_get		
@@ -1642,7 +1644,8 @@ function CopDamage:damage_melee(attack_data)
 
 			result = {
 				type = "death",
-				variant = attack_data.variant
+				variant = attack_data.variant,
+				head_shot = head
 			}
 
 			if is_player and (attack_data.backstab or head) then

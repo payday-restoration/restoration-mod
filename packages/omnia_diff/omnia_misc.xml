@@ -172,6 +172,9 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
 	
+	<!--OMNIA Taser-->
+	<!--ALWAYS LOADED IN ADDSC FOR SPRING-->
+	
 	<!--OMNIA Grenadier-->
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
 	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>

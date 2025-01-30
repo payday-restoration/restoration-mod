@@ -15,16 +15,6 @@
 	<!--Sniper-->	
 	<unit_obj			path="units/pd2_mod_reapers/weapons/wpn_npc_svd_noglint_sc/wpn_npc_svd_noglint_sc" force="false"/>	
 	<material_config	path="units/pd2_mod_reapers/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" force="false"/>	
-
-	<!--NPC M60-->
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<model				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<object				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false" load="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
 	
 	<!--bravo M60-->
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"  load="true"/>
@@ -530,39 +520,237 @@
 	<texture			path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_oicw/oicw_nm" force="false"/>	
 	
-	<!--bravo dmr-->
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky_husk"  load="true"/>
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" />
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_omnia" force="false" />
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_omnia_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van_omnia" force="false" />
+	
+	<!--OMNIA HRT-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1_husk" force="false" load="true"/>
+	
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2_contour" force="false"/>
+
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_hrt_3/ene_omnia_hrt_3_contour" force="false"/>	
+
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/omnia_hrt_df" force="false"/>
+
+	<!--OMNIA Crew 1-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew_husk" force="false" load="true"/>		
+
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
+	
+	<!--OMNIA Crew 2-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2_husk" force="false" load="true"/>		
+
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_cap/ene_acc_omnia_crew_cap" force="false" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_cap/ene_acc_omnia_crew_cap" force="false"/>	
+	
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_helmet/ene_acc_omnia_crew_helmet" force="false" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_helmet/ene_acc_omnia_crew_helmet" force="false"/>	
+	
+	<!--OMNIA Crew Textures-->
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/caps_crew_df" />	
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_crew_df" />
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/heads_omnia_crew_df" />
+
+	<!--OMNIA Sniper-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper_husk" force="false" load="true"/>	
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_sniper_2/ene_omnia_sniper_2_husk" force="false" load="true"/>	
+	<!-- feds cops n scripted kooks end -->
+
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_cap/ene_acc_omnia_crew_cap" force="false" load="true"/>
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_helmet/ene_acc_omnia_crew_helmet" force="false" load="true"/>
 		
-	<!--bravo lmg-->
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky_husk"  load="true"/>
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky" />
+	<!-- omniacs -->
+	<!--OMNIA City SWAT-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_contour" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_husk" force="false" load="true"/>	
 	
-	<!--bravo rifle-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky_husk"  load="true"/>	
-	<!--bravo shotgun-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>
+	<!--OMNIA city 2-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_husk" force="false" load="true"/>	
+
+	<!--OMNIA city 3-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3_husk" force="false" load="true"/>	
+
+	<!--OMNIA City Heavy-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk" force="false" load="true"/>	
+
+	<!--OMNIA City Heavy r870-->
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk" force="false" load="true"/>	
+
+	<!--OMNIA Shield-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
 	
-	<!--textures-->
+	<!--Omnia Riotshield-->
+	<unit_mat_seq		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<texture			path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>		
+	<!-- omniacs end -->	
+	
+	<!-- specials-->	
+	<!--greendozer-->
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+    <object				path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+    <model				path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>		
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"	load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_husk" load="true"/>
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_contour"/>
+
+	<!--OMNIA Green Bulldozer Bits-->	
+	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" load="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" load="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"/>
+	
+	<!--skulldozer-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true"/>		
+	<model				path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<object				path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" />	
+	<sequence_manager	path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" />		
+	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3_contour" />		
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" />
+
+	<!--OMNIA Skulldozer Bits-->	
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" load="false"/>
+		
+	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" load="false"/>
+
+	<!--OMNIAdozer textures-->
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_df"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_city_df"/>
+	
+	<!--OMNIA Taser-->
+	<!--ALWAYS LOADED IN ADDSC FOR SPRING-->
+	
+	<!--OMNIA Grenadier-->
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<model				path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
+	<material_config	path="units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1_contour" force="false"/>
+	
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_body_df" force="false"/>	
+	
+	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>
+
+	<!--OMNIA medic-->	
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" load="true"/>
+	<unit				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<model				path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic" force="false" />
+	<material_config	path="units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic_contour" force="false" />
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_head_df"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />		
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_medic_df"/>
+	
+	<!--Keep those helmets flying ;)-->	
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	
+	<!--Titan Shotgunner-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_blue_df" load="true" force="false"/>
+
+
+    <!--Titan Sniper-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+
+	
+		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
+			
+	<!--Titan Rifle-->	
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/titan_swat_glass_red_df" load="true" force="false"/>
+	<!-- specials end -->
+
+	<!--OMNIA Textures-->
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_nm"/>
-	
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
-	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
-	<!-- bravoss squad end-->	
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/grenadier_head_df"/>
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/eyes_il"/>
+	<!-- bravoss squad end-->		
 </table>

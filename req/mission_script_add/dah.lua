@@ -16,7 +16,7 @@ local death_sentence = difficulty == 8
 local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
 local enabled_chance_helipad_dozer = math.random() < diff_scaling
-local swat_ambush_table = {swat_rifle, swat_rifle, swat_shotgun, swat_shotgun, swat_heavy_rifle, swat_heavy_rifle, swat_heavy_shotgun}
+local swat_ambush_table = {swat_rifle, swat_rifle, swat_shotgun, swat_shotgun, swat_heavy_rifle, swat_heavy_rifle, swat_heavy_shotgun, swat_heavy_shotgun}
 
 local optsCloaker = {
     enemy = cloaker,

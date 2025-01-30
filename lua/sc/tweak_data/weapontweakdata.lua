@@ -3735,6 +3735,7 @@ function WeaponTweakData:_init_stats()
 
 	--Weapon swap speed multiplier from concealment.
 	--Calculated using fancier math than just y = mx+b to give linear returns to players.
+	--[[
 	self.stats.mobility = {
 		0.400,
 		0.410,
@@ -3745,7 +3746,7 @@ function WeaponTweakData:_init_stats()
 		0.475,
 		0.490,
 		0.506,
-		0.524, 
+		0.524,
 		0.542,
 		0.562,
 		0.584,
@@ -3770,6 +3771,13 @@ function WeaponTweakData:_init_stats()
 		2.148,
 		2.500
 	}
+	--]]
+	--Attempted to redo the math on this to reduce the range of this stat; the math is not 100% exact but it's close enough for me
+	self.stats.mobility = {}
+	for i = 0, 1, 1/33 do
+		local k = math.lerp( 1.9, 0.8, i)
+		table.insert( self.stats.mobility, math.ceil(1/k*1000)/1000 )
+	end
 	
 	self.stats.extra_ammo = {}
 	for i = -100, 1500, 1 do
@@ -5643,6 +5651,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fmg9.stats_modifiers = nil
 						self.fmg9.panic_suppression_chance = 0.05	
 						self.fmg9.swap_speed_multiplier = 0.45
+						self.fmg9.use_unequip_swap = true
 
 					--Beretta Auto (93R)
 						self.beer.has_description = true
@@ -7191,7 +7200,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.sub2000.panic_suppression_chance = 0.05
 						self.sub2000.stats_modifiers = nil
-						self.sub2000.swap_speed_multiplier = 0.5
+						self.sub2000.use_unequip_swap = true
+						self.sub2000.swap_speed_multiplier = 0.4
 						self.sub2000.timers.reload_exit_empty = 0.85
 						self.sub2000.timers.reload_exit_not_empty = 0.95
 
@@ -8298,6 +8308,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.peacemaker.timers.shotgun_reload_first_shell_offset = 0.5
 						self.peacemaker.timers.shotgun_reload_exit_empty = 0.7
 						self.peacemaker.timers.shotgun_reload_exit_not_empty = 0.7
+						self.peacemaker.use_unequip_swap = true
+						self.peacemaker.swap_speed_multiplier = 0.9
 
 		--[[     MGs     ]]--
 
@@ -10860,6 +10872,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.AMMO_MAX = 150
 						self.flint.CLIP_AMMO_MAX = 30
 						self.flint.BURST_FIRE = 2
+						self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.07142
 						self.flint.BURST_DELAY = 0.03
 						self.flint.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
 						self.flint.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
@@ -11645,7 +11658,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.asval.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{4, self.stat_info.kick_tables.right_kick},
-							{6, self.stat_info.kick_tables.pattern_r2},
+							{6, self.stat_info.kick_tables.right_recoil},
 							{7, self.stat_info.kick_tables.right_kick},
 							{11, self.stat_info.kick_tables.vertical_kick},
 							{12, self.stat_info.kick_tables.right_kick}
@@ -11653,9 +11666,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.asval.supported = true
 						self.asval.ads_speed = 0.300
 						self.asval.damage_falloff = {
-							start_dist = 1100,
-							end_dist = 4800,
-							min_mult = 0.44444
+							start_dist = 1000,
+							end_dist = 3800,
+							min_mult = 0.53333
 						}
 						self.asval.stats = {
 							damage = 45,
@@ -16848,7 +16861,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.fmgnine.stats_modifiers = nil
 				self.fmgnine.panic_suppression_chance = 0.05
-				self.fmgnine.swap_speed_multiplier = 0.52
+				self.fmgnine.use_unequip_swap = true
+				self.fmgnine.swap_speed_multiplier = 0.5
 				self.fmgnine.timers.equip = 1.5
 				self.fmgnine.timers.reload_not_empty = 2.07
 				self.fmgnine.timers.reload_exit_not_empty = 0.8
@@ -16897,7 +16911,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_fmgnine.stats_modifiers = nil
 				self.x_fmgnine.panic_suppression_chance = 0.05
-				self.x_fmgnine.swap_speed_multiplier = 0.52
+				self.x_fmgnine.use_unequip_swap = true
+				self.x_fmgnine.swap_speed_multiplier = 0.5
 				self.x_fmgnine.timers.equip = 1.8
 				self.x_fmgnine.timers.reload_not_empty = 2.5
 				self.x_fmgnine.timers.reload_exit_not_empty = 0.8
@@ -18036,6 +18051,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sks.stats_modifiers = nil
 				self.sks.armor_piercing_chance = 0.25
+				self.sks.hs_mult = 1.5
 				self.sks.can_shoot_through_enemy = false
 				self.sks.ignore_reload_objects_not_empty = true
 				self.sks.panic_suppression_chance = 0.05
@@ -18088,6 +18104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.skspug.stats_modifiers = nil
 				self.skspug.armor_piercing_chance = 0.25
+				self.skspug.hs_mult = 1.5
 				self.skspug.can_shoot_through_enemy = false
 				self.skspug.panic_suppression_chance = 0.05
 				self.skspug.timers = deep_clone(self.basset.timers)
@@ -19745,6 +19762,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l403a1.timers.reload_exit_not_empty = 0.9
 				self.l403a1.timers.reload_empty = 2.3
 				self.l403a1.timers.reload_exit_empty = 0.7
+				self.l403a1.sounds.magazine_empty = "wp_rifle_slide_lock"
 			end
 
 			if self.l119a2 then
@@ -19793,6 +19811,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l119a2.timers.reload_exit_not_empty = 1.1
 				self.l119a2.lock_slide = true
 				self.l119a2.lock_slide_offset = 0.066
+				self.l119a2.sounds.magazine_empty = "wp_rifle_slide_lock"
 			end
 
 			if self.mptango41 then --Vanguard "PTRS-41" (Fuck you, Sledgehammer)
@@ -21811,7 +21830,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vecho.ads_speed = 0.300
 				self.vecho.damage_falloff = {
 					start_dist = 400,
-					end_dist = 2600,
+					end_dist = 2500,
 					min_mult = 0.15
 				}
 				self.vecho.stats = {
@@ -21829,6 +21848,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.vecho.stats_modifiers = nil
+				self.vecho.sounds.use_fix = nil
+				self.vecho.sounds.stop_fire = "saiga_stop"
 				self.vecho.panic_suppression_chance = 0.05
 				self.vecho.timers.reload_empty = 2.85
 				self.vecho.timers.reload_exit_empty = 0.8
@@ -22690,6 +22711,48 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.toz81 then
+				self.toz81.categories = {
+					"shotgun"
+				}
+				self.toz81.fire_mode_data.fire_rate = 0.15
+				self.toz81.rays = 6 --Uses wrong weapon base, this does nothing
+				self.toz81.kick = self.stat_info.kick_tables.left_kick
+				self.toz81.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_left_kick},
+					{3, self.stat_info.kick_tables.right_recoil}
+				}
+				self.toz81.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.toz81.BURST_FIRE = false
+				self.toz81.CAN_TOGGLE_FIREMODE = false
+				self.toz81.FIRE_MODE = "single"				
+				self.toz81.AMMO_MAX = 20
+				self.toz81.supported = true
+				self.toz81.ads_speed = 0.260
+				self.toz81.damage_falloff = {
+					start_dist = 500,
+					end_dist = 2600,
+					min_mult = 0.1333
+				}
+				self.toz81.stats = {
+					damage = 180,
+					spread = 61,
+					recoil = 71,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 25,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.toz81.stats_modifiers = nil
+				self.toz81.panic_suppression_chance = 0.05
+				self.toz81.timers = deep_clone(self.gre_m79.timers)
+			end
+
 			if self.bp12 then
 				self.bp12.recategorize = { "light_shot" }
 				self.bp12.categories = { "shotgun" }
@@ -22818,8 +22881,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.haymaker.supported = true
 				self.haymaker.ads_speed = 0.380
 				self.haymaker.damage_falloff = {
-					start_dist = 500,
-					end_dist = 2800,
+					start_dist = 400,
+					end_dist = 2600,
 					min_mult = 0.15
 				}
 				self.haymaker.stats = {
@@ -22837,8 +22900,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.haymaker.stats_modifiers = nil
-				self.haymaker.lock_slide = true
-				self.haymaker.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.haymaker.sounds.use_fix = nil
+				self.haymaker.sounds.stop_fire = "saiga_stop"
 				self.haymaker.panic_suppression_chance = 0.05
 				self.haymaker.panic_suppression_chance = 0.05
 				self.haymaker.timers.reload_empty = 4
@@ -24915,9 +24978,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						6,
 						0.3,
 						srm = {
-							0.02,
-							{0.8, 1.01},
-							6
+							0.025,
+							{0.7, 1},
+							5
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_mg" then
@@ -24927,9 +24990,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							0.0125,
-							{0.8, 1.01},
-							10
+							0.015,
+							{0.7, 1},
+							8
 						}
 					}
 				elseif weap.recategorize[1] == "miniguns" then

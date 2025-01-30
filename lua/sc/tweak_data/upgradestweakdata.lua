@@ -877,7 +877,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
-					self.values.smg.full_auto_free_ammo = {5}
+					self.values.smg.full_auto_free_ammo = {4}
 					
 					self.skill_descs.sharpshooter = {
 						skill_value_b1 = tostring((1 - self.values.smg.move_spread_multiplier[1]) % 1 * 100) .."%", -- The movement penalty to accuracy
@@ -888,7 +888,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Heavy Impact
 				--Basic
 					self.values.weapon.knock_down = {
-						0.2, --Ace
+						0.225, --Ace
 						0.2 --Unused
 					}
 				--Ace
@@ -905,7 +905,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Body Expertise aka Spray N' Pray
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.automatic_kills_to_damage_reset_t = 1.5 --delay to reset time (seconds)
+				self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
 						3, --stack limit
@@ -1329,10 +1329,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Rifleman
 				--Basic/Aced
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.85, 0.7}
-					self.values.snp.steelsight_accuracy_inc = {0.85, 0.7}
-					self.values.assault_rifle.steelsight_range_inc = {1.15, 1.3}
-					self.values.snp.steelsight_range_inc = {1.15, 1.3}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.9, 0.8}
+					self.values.snp.steelsight_accuracy_inc = {0.9, 0.8}
+					self.values.assault_rifle.steelsight_range_inc = {1.1, 1.2}
+					self.values.snp.steelsight_range_inc = {1.1, 1.2}
 
 					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.075}
 					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
@@ -2312,6 +2312,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.02,
 		0.01 --Copycat, unused
 	}
+	self.values.player.melee_kill_stamina = {
+		0.2
+	}
 	self.killshot_close_panic_range = 1200
 	self.on_killshot_cooldown = 5
 	self.on_killshot_cooldown_reduction = 0.5
@@ -2878,6 +2881,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[9][5] = {
 		perk_value_1 = tostring(self.values.player.melee_kill_life_leech[1] * 100).."%", -- HP regen on melee kill
+		perk_value_3 = tostring(self.values.player.melee_kill_stamina[1] * 100).."%", -- stamina regen %; added under "perk_value_3" to avoid loc mistmatching
 		perk_value_2 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
 	}
 	self.specialization_descs[9][7] = {
@@ -4717,6 +4721,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "melee_kill_life_leech",
+			category = "player"
+		}
+	}
+	self.definitions.player_melee_kill_stamina = { 
+		name_id = "menu_player_melee_kill_stamina",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "melee_kill_stamina",
 			category = "player"
 		}
 	}

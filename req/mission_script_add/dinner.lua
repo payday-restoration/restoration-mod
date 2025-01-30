@@ -22,11 +22,29 @@ local murkywater_table_ovk = {
     "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
     "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 }
+local murkywater_table_ds = {
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+    "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+    "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
+    "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle",
+    "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
+    "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+    "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local enabled_chance_snipers = math.random() < 0.45
 local diff_scaling = 0.085 * difficulty
-local murkies = (difficulty <= 4 and murkywater_table) or murkywater_table_ovk
+local murkies = (difficulty <= 4 and murkywater_table or (difficulty == 5 or difficulty == 6 or difficulty == 7) and murkywater_table_ovk) or murkywater_table_ds
 local shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1" or "units/payday2/characters/ene_shield_2/ene_shield_2")
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
@@ -38,6 +56,7 @@ local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer_2 = math.random() < diff_scaling
 local enabled_chance_shields_and_dozer = math.random() < diff_scaling
+local dozer_respawn_delay = (difficulty >= 7 and 120) or 180
 
 local spawn_cloakers = {
 	enabled = (hard_above and enabled_chance_cloakers),
@@ -248,7 +267,7 @@ local optsrespawn_murkies_4 = {
 }
 local optsrespawn_dozer_1 = {
 	on_executed = { 
-		{ id = 400019, delay = 180 }
+		{ id = 400019, delay = dozer_respawn_delay }
 	},
 	elements = { 
 		400019
@@ -257,7 +276,7 @@ local optsrespawn_dozer_1 = {
 }
 local optsrespawn_dozer_2 = {
 	on_executed = { 
-		{ id = 400020, delay = 180 }
+		{ id = 400020, delay = dozer_respawn_delay }
 	},
 	elements = { 
 		400020

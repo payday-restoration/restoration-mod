@@ -54,7 +54,7 @@ tweak_data.scene_poses.weapon.bessy = {
 --Swap Speed Multipliers
 --TODO: Move to stat_info
 tweak_data.pistol = {
-	swap_bonus = 1.8,
+	swap_bonus = 3.2,
 	ads_move_speed_mult = 0.8,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
@@ -72,7 +72,7 @@ tweak_data.crossbow = {
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 
 tweak_data.grenade_launcher = {
@@ -80,7 +80,7 @@ tweak_data.grenade_launcher = {
 }
 	tweak_data.gl_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.4, --lowered to 0.2
@@ -117,7 +117,7 @@ tweak_data.shotgun = {
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
@@ -129,7 +129,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.2,
+	swap_bonus = 1.6,
 	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
@@ -139,7 +139,7 @@ tweak_data.smg = {
 	}
 	tweak_data.lmg = {
 		ads_moving_recoil = 1.15,
-		swap_bonus = 0.83334,
+		swap_bonus = 1 / tweak_data.smg.swap_bonus,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
 		ads_moving_spread_mult = 2,
@@ -219,7 +219,7 @@ tweak_data.assault_rifle = {
 	tweak_data.crb = {
 		ads_moving_recoil = 1 / tweak_data.assault_rifle.ads_moving_recoil,
 		hipfire_spread_mult = 1 / tweak_data.assault_rifle.hipfire_spread_mult,
-		swap_bonus = 1.1,
+		swap_bonus = 1.1 / tweak_data.assault_rifle.swap_bonus,
 		ads_move_speed_mult = 0.5 / tweak_data.assault_rifle.ads_move_speed_mult,
 	}
 	tweak_data.dmr_l = {

@@ -4,8 +4,7 @@ local security_guard_3 = "units/payday2/characters/ene_security_3/ene_security_3
 local security_table = {security_guard_1, security_guard_1, security_guard_2, security_guard_2, security_guard_3}
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local diff_scaling_1 = 0.125 * difficulty
-local diff_scaling_2 = 0.065 * difficulty
+local diff_scaling = 0.065 * difficulty
 local shield = "units/payday2/characters/ene_shield_2/ene_shield_2"
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
@@ -18,10 +17,9 @@ local very_hard_above = difficulty >= 4
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
 local death_sentence = difficulty == 8
-local enabled_chance_more_guards = math.random() < diff_scaling_2
-local enabled_chance_shields = math.random() < diff_scaling_2
-local enabled_chance_cloakers = math.random() < diff_scaling_1
-local enabled_chance_dozers_exitvault = math.random() < diff_scaling_2
+local enabled_chance_more_guards = math.random() < 0.5
+local enabled_chance_shields = math.random() < diff_scaling
+local enabled_chance_dozers_exitvault = math.random() < diff_scaling
 local enabled_chance_dozers_ambush_escape = math.random() < 0.5
 local surprise_tank_chance = math.random() < 0.5
 
@@ -99,13 +97,13 @@ local optsCloaker_rush_1 = {
 	on_executed = { 
 		{ id = 400051, delay = 0 }
 	},
-    enabled = (hard_above and enabled_chance_cloakers)
+    enabled = hard_above
 }
 local optsCloaker_rush_2 = {
 	enemy = cloaker,
 	participate_to_group_ai = true,
 	spawn_action = "e_sp_repel_into_window",
-    enabled = (hard_above and enabled_chance_cloakers)
+    enabled = hard_above
 }
 local optsBulldozer_BO = {
     enemy = tank,
@@ -439,7 +437,7 @@ return {
         ),
 		restoration:gen_so(
             400023,
-            "dozer_cloaker_hunt_so",
+            "dozer_hunt_so",
             Vector3(-2657, -3569, -90),
             Rotation(90, -0, -0),
             optsBulldozer_SO

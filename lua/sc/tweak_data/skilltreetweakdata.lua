@@ -2591,6 +2591,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_melee_kill_life_leech",
+					"player_melee_kill_stamina",
 					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,

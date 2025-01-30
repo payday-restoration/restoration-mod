@@ -256,32 +256,32 @@ function MutatorNoTitans:setup(data)
 		ignore_spawn_cap = true
 	}
 	
-	 --OMNIA Medics replace LPFs in Winters' squad
-    tweak_data.group_ai.unit_categories.omnia_LPF = {
+	 --OMNIA Bendozers replace Titandozers in Winters' squad
+    tweak_data.group_ai.unit_categories.Phalanx_dozer = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			russia = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			zombie = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			murkywater = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			federales = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},				
 			nypd = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},		
 			lapd = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			fbi = {
-				Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic")
+				Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			}
 		},
 		access = access_type_all,

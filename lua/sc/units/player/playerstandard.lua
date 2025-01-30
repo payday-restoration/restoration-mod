@@ -512,7 +512,7 @@ function PlayerStandard:_check_change_weapon(t, input)
 			}
 			self._change_weapon_pressed_expire_t = t + 0.33
 
-			self:_start_action_unequip_weapon(t, data)
+			self:_start_action_unequip_weapon(t, data, true)
 
 			new_action = true
 
@@ -1125,16 +1125,18 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 					local fired = nil
 					local fired_func = self._primary_action_get_value.fired[fire_mode]
+					local spin_up_semi = weap_base:weapon_tweak_data().spin_up_semi
+					local spin_up_check = (not spin_up_semi and fire_mode ~= "single") or spin_up_semi
 
 					if fired_func then
 						fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-						self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+						self._spin_up_shoot = spin_up_check and not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 					else
 						fired_func = self._primary_action_get_value.fired.default
 
 						if fired_func then
 							fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+							self._spin_up_shoot = spin_up_check and not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 						end
 					end
 
@@ -2639,7 +2641,6 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		elseif self._stick_move then
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_h = true
-				self._melee_attack_var_left = true
 				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
@@ -3856,6 +3857,30 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
+
+			--[[
+			local do_push = melee_weapon.do_push
+			if defense_data and defense_data.head_shot and defense_data.type and defense_data.type == "death" then			
+				if not managers.groupai:state():whisper_mode() then
+					local rotation = self._unit:movement():m_head_rot()
+					local v_mult = (self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]) or 0
+					local l_r = (self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1))) or 0
+
+					local l_r_force = (1 - v_mult) * (l_r * -180)
+					local v_force = math.abs(l_r_force) > 90 and -1 or 1
+					local forward_vec = Vector3( l_r_force, -90 * -v_force , v_mult * -180 * v_force)
+
+					mvector3.rotate_with(forward_vec, rotation)
+					local hit_pos = mvector3.copy(character_unit:movement():m_pos())
+					local attack_dir = hit_pos - self._unit:movement():m_head_pos() + forward_vec
+					local distance = mvector3.normalize(attack_dir)
+					local magnitude = 0.8 + math.lerp(0, 0.4, charge_lerp_value)
+					mvector3.multiply(attack_dir, magnitude)
+					managers.game_play_central:do_shotgun_push(character_unit, col_ray.hit_position, attack_dir, distance)
+
+				end
+			end
+			]]
 			
 			return defense_data
 		else
@@ -4175,15 +4200,25 @@ function PlayerStandard:_start_action_reload(t)
  	end
 end
 
-function PlayerStandard:_get_swap_speed_multiplier()
+function PlayerStandard:_get_swap_speed_multiplier(use_alt)
 	local multiplier = 1
-	local weapon_tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local weap_base = self._equipped_unit:base()
+	local weapon_tweak = weap_base and weap_base:weapon_tweak_data()
+	local alt_swap = (self._unit:inventory():equipped_selection() == 1 and self._unit:inventory():unit_by_selection(2):base()) or 
+		(self._unit:inventory():equipped_selection() == 2 and self._unit:inventory():unit_by_selection(1):base())
+	local alt_swap_tweak = alt_swap and alt_swap:weapon_tweak_data()
+	if weapon_tweak and weapon_tweak.use_unequip_swap then
+		use_alt = nil
+	end
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
-	multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1] --Get concealment bonus/penalty.
+	multiplier = multiplier * tweak_data.weapon.stats.mobility[ (
+		(use_alt and alt_swap:get_concealment()) or 
+		(weap_base:get_concealment())
+	) + 1] --Get concealment bonus/penalty.
 
 	--Get per category multipliers (IE: Pistols swap faster, Akimbos swap slower, ect).
-	for _, category in ipairs(weapon_tweak_data.categories) do
+	for _, category in ipairs((use_alt and alt_swap_tweak.categories) or weapon_tweak.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", 1)
 		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
@@ -4193,7 +4228,7 @@ function PlayerStandard:_get_swap_speed_multiplier()
 	end
 
 	--Get per weapon multiplier.
-	multiplier = multiplier * (weapon_tweak_data.swap_speed_multiplier or 1)
+	multiplier = multiplier * ((use_alt and alt_swap_tweak.swap_speed_multiplier) or weapon_tweak.swap_speed_multiplier or 1)
 
 	multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)
 
@@ -4544,8 +4579,8 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end
 
-function PlayerStandard:_start_action_unequip_weapon(t, data)
-	local speed_multiplier = self:_get_swap_speed_multiplier()
+function PlayerStandard:_start_action_unequip_weapon(t, data, alt_swap)
+	local speed_multiplier = self:_get_swap_speed_multiplier(alt_swap)
 
 	self._equipped_unit:base():tweak_data_anim_stop("equip")
 	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
@@ -4862,7 +4897,9 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 						magnitude = magnitude * AdvMov.settings.kickyeet
 					end
 					mvector3.multiply(attack_dir, magnitude)
-					managers.game_play_central:do_shotgun_push(finaltarget, target_ray_data.raydata.hit_position, attack_dir, distance)
+					if not managers.groupai:state():whisper_mode() then
+						managers.game_play_central:do_shotgun_push(finaltarget, target_ray_data.raydata.hit_position, attack_dir, distance)
+					end
 					kill = true
 				end
 				if self._last_movekick_shake_t and self._last_movekick_shake_t + 0.2 < self._last_t then
@@ -5077,8 +5114,33 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 
 	function PlayerStandard:_cancel_slide(timemult)
 		self._is_sliding = nil
+		self._slide_speed = nil
 		self._dash_slide = nil
 		self._slide_has_played_shaker = nil
+		self:_stance_entered(nil, timemult)
+	end
+
+	function PlayerStandard:_cancel_wallrun(t, kick_off_mode, timemult)
+		local exit_wallrun_vel = Vector3()
+		if self._unit:mover() and self._end_wallrun_kick_dir and kick_off_mode == "fall" then
+			mvector3.add(exit_wallrun_vel, self._end_wallrun_kick_dir)
+			self._unit:mover():set_velocity(exit_wallrun_vel)
+		end
+
+		if self._unit:mover() then
+			self._unit:mover():set_gravity(Vector3(0, 0, -982))
+		end
+
+		if kick_off_mode == "jump" then
+			self:_do_wallkick()
+		end
+
+		if self._state_data.in_air then
+			self._state_data.enter_air_pos_z = self._pos.z
+		end
+		self._is_wallrunning = nil
+		self._last_wallrun_t = t
+		self._last_wallkick_t = t
 		self:_stance_entered(nil, timemult)
 	end
 
@@ -5094,6 +5156,12 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 			self._last_movekick_shake_t = 0
 		end
 
+		if self._wallkick_is_clinging and self._wallkick_hold_start_t and ((t - self._wallkick_hold_start_t) < 4) then
+			if self._state_data.in_air then
+				self._state_data.enter_air_pos_z = self._pos.z
+			end
+		end
+
 		--SLIDING STUFF
 			self:_check_wallkick(t, dt)
 
@@ -5101,7 +5169,6 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 				if not self._state_data.in_air then
 					-- calculate stamina drain scaling based on current speed vs standard running speed
 					local drain_mult = self._slide_speed/self._sprinting_speed
-					log(tostring( self:_get_modified_move_speed("run") ))
 					-- drain stamina, prevent regen
 					self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE * dt * drain_mult)
 					--if drain_mult > 0.50 then
@@ -5194,7 +5261,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 					end
 				end
 				-- transition to slide bby
-				if self._state_data.ducking then
+				if self._state_data.ducking and not self._is_dashing then
 					self:_check_slide()
 				end
 			elseif self._running and (AdvMov.settings.runkick == true or self._state_data.in_air) then
@@ -5364,7 +5431,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 		local nearest_ray2 = self:_get_nearest_wall_ray_dir(2, nil, nil, 40)
 		local nearest_wall_ray = nearest_ray1 or nearest_ray2
 		local speed = self:_get_modified_move_speed("run")
-		local kick_dir = Vector3(0, speed * 1.2, 0)
+		local kick_dir = Vector3(0, math.min(speed * 1.5, 950), 0)
 		local rotation = managers.player:equipped_weapon_unit():rotation()
 		local rotation_flat = self._ext_camera:rotation()
 		mvector3.set_x(rotation_flat, 0)
@@ -5405,6 +5472,9 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 					self._unit:mover():set_gravity(Vector3(0, 0, -982))
 				end
 
+				if self._state_data.in_air then
+					self._state_data.enter_air_pos_z = self._pos.z
+				end
 				self._last_zdiff = zdiff
 		end
 

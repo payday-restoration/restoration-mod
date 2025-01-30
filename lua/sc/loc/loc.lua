@@ -775,6 +775,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
 		["RestorationModSizeOnScreenDescID"] = "Changes the size of the HUD on the screen. May require a restart.",
+		["RestorationModScreenEffectAlphaTitleID"] = "Screen Effect Strength",
+		["RestorationModScreenEffectAlphaDescID"] = "Set the transparency of the screen effect when hit with slowdown or knockback. Default: 1",
 		["RestorationModTeammateTitleID"] = "Alpha teammates panel",
 		["RestorationModTeammateDescID"] = "Enable or disable the alpha teammates panel, which displays you & your team's statistics.",
 		["RestorationModHeistTimerTitleID"] = "Alpha heist timer",
@@ -2422,6 +2424,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Bernetti--
 				["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
 				["bm_wp_upg_i_93r_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1100 RPM 3-round burst## setting, at the cost of #{important_1}#extra kick.##",
+				--Glock
+				["bm_wp_upg_i_csglock"] = "T-Side Burst Kit",
+				["bm_wp_upg_i_csglock_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1200 RPM 3-round burst## setting, at the cost of a lower semi-auto fire rate.",
+				--AK12
+				["bm_wp_upg_i_abakan"] = "Abakan Kit",
+				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a lower fire rate afterwards.",
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
@@ -5403,7 +5411,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Partners in Crime
 				["menu_control_freak_beta_sc"] = "Partners in Crime",
-				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additonal #{skill_color}#$skill_value_b1## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#$skill_value_p1## for each hostage you have; stacks up to #{skill_color}#4## times.",
+				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additional #{skill_color}#$skill_value_b1## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#$skill_value_p1## for each hostage you have; stacks up to #{skill_color}#4## times.",
 
 				--Hostage Taker
 				["menu_black_marketeer_beta_sc"] = "Hostage Taker",
@@ -5852,7 +5860,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##$perk_value_1## meters, you take ##$perk_value_2## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_3## of your stamina.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

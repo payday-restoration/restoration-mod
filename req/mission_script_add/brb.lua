@@ -8,16 +8,17 @@ local murky_heavy_shotgun = (difficulty == 8 and "units/pd2_mod_sharks/character
 local murky_tank = (difficulty == 8 and "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_benelli/ene_murky_fbi_tank_benelli") or "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"
 local murky_tank_black = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"
 local murky_tank_skull = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"
-local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2"
+local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
 local murky_taser = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"
 local murky_cloaker = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_wish_above = difficulty >= 7
 local murky_table = {murky_rifle, murky_rifle, murky_shotgun, murky_shotgun, murky_smg, murky_smg, murky_heavy_rifle, murky_heavy_rifle, murky_heavy_shotgun}
-local murky_dozer_normal = {murky_tank, murky_tank, murky_tank, murky_tank_black}	
-local murky_dozer_hard = {murky_tank, murky_tank, murky_tank_black, murky_tank_black}	
-local murky_dozer_overkill = {murky_tank, murky_tank, murky_tank_black, murky_tank_black, murky_tank_skull, murky_tank_skull, titandozer}	
+local murky_dozers_normal = {murky_tank, murky_tank, murky_tank, murky_tank_black}	
+local murky_dozers_hard = {murky_tank, murky_tank, murky_tank_black, murky_tank_skull}	
+local murky_dozers_overkill = {murky_tank, murky_tank, murky_tank_black, murky_tank_black, murky_tank_skull, murky_tank_skull, titandozer}
+local murky_dozers_table = ((difficulty == 8 or difficulty == 7) and murky_dozers_overkill or difficulty == 6 and murky_dozers_hard) or murky_dozers_normal
 local optsMurkywater = {
     enemy_table = murky_table,
 	participate_to_group_ai = true,
@@ -39,19 +40,9 @@ local optsShield = {
     enabled = true
 }
 local optsBulldozer = {
-    enemy_table = murky_dozer_normal,
+    enemy_table = murky_dozers_table,
 	participate_to_group_ai = true,
     enabled = hard_above
-}
-local optsBulldozer_black = {
-    enemy_table = murky_dozer_hard,
-	participate_to_group_ai = true,
-    enabled = overkill_above
-}
-local optsBulldozer_skull = {
-    enemy_table = murky_dozer_overkill,
-	participate_to_group_ai = true,
-    enabled = death_wish_above
 }
 local optsrespawn_murkies_1 = {
 	on_executed = { 
@@ -130,7 +121,7 @@ local optsrespawn_murkies_cloakers = {
 }
 local optsrespawn_murky_dozer_1 = {
 	on_executed = { 
-		{ id = 400013, delay = 150 }
+		{ id = 400013, delay = 120 }
 	},
 	elements = { 
 		400013
@@ -139,7 +130,7 @@ local optsrespawn_murky_dozer_1 = {
 }
 local optsrespawn_murky_dozer_2 = {
 	on_executed = { 
-		{ id = 400014, delay = 150 }
+		{ id = 400014, delay = 120 }
 	},
 	elements = { 
 		400014
@@ -148,7 +139,7 @@ local optsrespawn_murky_dozer_2 = {
 }
 local optsrespawn_murky_dozer_3 = {
 	on_executed = { 
-		{ id = 400026, delay = 150 }
+		{ id = 400026, delay = 120 }
 	},
 	elements = { 
 		400026
@@ -158,36 +149,36 @@ local optsrespawn_murky_dozer_3 = {
 local global_murky_spawn_mission_script = {
 	enabled = true,
 	on_executed = { 
-		{ id = 400002, delay = 120 },
-		{ id = 400003, delay = 120 },
-		{ id = 400004, delay = 120 },
-		{ id = 400005, delay = 120 },
-		{ id = 400006, delay = 120 },
-		{ id = 400007, delay = 120 },
-		{ id = 400008, delay = 120 },
-		{ id = 400009, delay = 120 },
-		{ id = 400010, delay = 120 },
-		{ id = 400011, delay = 120 },
-		{ id = 400012, delay = 120 },
-		{ id = 400013, delay = 120 },
-		{ id = 400014, delay = 120 },
-		{ id = 400015, delay = 120 },
-		{ id = 400016, delay = 120 },
-		{ id = 400017, delay = 120 },
-		{ id = 400018, delay = 120 },
-		{ id = 400019, delay = 120 },
-		{ id = 400020, delay = 120 },
-		{ id = 400021, delay = 120 },
-		{ id = 400022, delay = 120 },
-		{ id = 400023, delay = 120 },
-		{ id = 400024, delay = 120 },
-		{ id = 400025, delay = 120 },
-		{ id = 400026, delay = 120 },
-		{ id = 400027, delay = 120 },
-		{ id = 400028, delay = 120 },
-		{ id = 400029, delay = 120 },
-		{ id = 400030, delay = 120 },
-		{ id = 400031, delay = 120 }
+		{ id = 400002, delay = 0 },
+		{ id = 400003, delay = 0 },
+		{ id = 400004, delay = 0 },
+		{ id = 400005, delay = 0 },
+		{ id = 400006, delay = 0 },
+		{ id = 400007, delay = 0 },
+		{ id = 400008, delay = 0 },
+		{ id = 400009, delay = 0 },
+		{ id = 400010, delay = 0 },
+		{ id = 400011, delay = 0 },
+		{ id = 400012, delay = 0 },
+		{ id = 400013, delay = 0 },
+		{ id = 400014, delay = 0 },
+		{ id = 400015, delay = 0 },
+		{ id = 400016, delay = 0 },
+		{ id = 400017, delay = 0 },
+		{ id = 400018, delay = 0 },
+		{ id = 400019, delay = 0 },
+		{ id = 400020, delay = 0 },
+		{ id = 400021, delay = 0 },
+		{ id = 400022, delay = 0 },
+		{ id = 400023, delay = 0 },
+		{ id = 400024, delay = 0 },
+		{ id = 400025, delay = 0 },
+		{ id = 400026, delay = 0 },
+		{ id = 400027, delay = 0 },
+		{ id = 400028, delay = 0 },
+		{ id = 400029, delay = 0 },
+		{ id = 400030, delay = 0 },
+		{ id = 400031, delay = 0 }
 	}
 }
 
@@ -282,14 +273,14 @@ return {
             "murkywater_dozer_1",
             Vector3(244, -6882, 2.395),
             Rotation(0, 0, -0),
-            optsBulldozer_black
+            optsBulldozer
         ),
 		restoration:gen_dummy(
             400014,
             "murkywater_dozer_2",
             Vector3(258, -6957, 2.395),
             Rotation(0, 0, -0),
-            optsBulldozer_skull
+            optsBulldozer
         ),
 		restoration:gen_dummy(
             400015,

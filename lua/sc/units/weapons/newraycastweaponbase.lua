@@ -1160,8 +1160,25 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			if stats.beretta_burst then
 				self:weapon_tweak_data().BURST_FIRE = 3	
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
-				self:_set_burst_mode(true, true)
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 1.57142857
+				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.0545454) or 1
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
+			end
+
+			if stats.csglock_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().BURST_DELAY = 0.2
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3
+				self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER = 1.5
+			end
+			
+			if stats.abakan then
+				self:weapon_tweak_data().BURST_FIRE = 2
+				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3
+				self:weapon_tweak_data().BURST_DELAY = 0.06
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
+				self:weapon_tweak_data().fire_rate_init_count = 2
+				self:weapon_tweak_data().fire_rate_init_mult = 3
 			end	
 			
 			if stats.bandana then
@@ -1189,7 +1206,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end	
 	
 			if stats.m16_burst then
-				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.066666) or 1
+				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.06315) or 1
 				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
 				self:weapon_tweak_data().FIRE_MODE = "single"	
 				self:weapon_tweak_data().BURST_FIRE = 3	

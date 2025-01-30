@@ -353,6 +353,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	if variant == "melee" then
 		regen_health_bonus = regen_health_bonus + self:upgrade_value("player", "melee_kill_life_leech", 0)
+		player_unit:movement():add_stamina(player_unit:movement():_max_stamina() * self:upgrade_value("player", "melee_kill_stamina", 0))
 	end
 
 	if damage_ext and regen_health_bonus > 0 then
@@ -1151,7 +1152,8 @@ function PlayerManager:apply_slow_debuff(duration, power, was_from_enemy, ignore
 			start_time = Application:time()
 		}
 		if not ignore_hud then
-			managers.hud:activate_effect_screen(duration, {0.0, 0.2, power})
+			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
+			managers.hud:activate_effect_screen(duration, Vector3(0.0, 0.2, power) * effect_alpha)
 		end
 	end
 end

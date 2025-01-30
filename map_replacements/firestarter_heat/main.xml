@@ -1,5 +1,5 @@
 <table name="firestarter_heat">
-	<level ai_group_type="fbi" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="jumpsuit">
+	<level ai_group_type="fbi" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="suit_sunny">
 		<add file="levels/firestarter_1_res/add.xml"/>
 		<assets/>
 		<outro_event>

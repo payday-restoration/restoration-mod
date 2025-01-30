@@ -92,9 +92,7 @@
 		</filter>
 		
 		<filter name="'check_normal_non_la'">
-			<check value="vars.var_dozer_var == 0"/>
-			<check value="vars.var_dozer_var == 1"/>
-			<check value="vars.var_dozer_var == 2"/>		
+			<check value="vars.var_dozer_var <= 2"/>		
 		</filter>
 
 		<sequence editable_state="true" name="'black'" triggable="true" once="true">		
@@ -198,7 +196,7 @@
 		</sequence>
 		
 		<sequence name="'select_face'" startup="true" once="true">
-			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
+			<run_sequence name="'head'..pick('_balaclava_a', '_balaclava_a', '_balaclava_b', '_balaclava_a', '_balaclava_b', '_balaclava_a', '_balaclava_a', '_balaclava_a', '_balaclava_a')"/>
 			<run_sequence filter="'check_normal_non_la'" name="'face'..pick('_a','_a','_c','_d','_e', '_b', '_g', '_f')" />
 			<run_sequence filter="'check_la'" name="'face'..pick('_h','_a','_c','_d','_e', '_b', '_g', '_f')" />												
 		</sequence>		

@@ -1702,6 +1702,25 @@ if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
 			end
 		end
 	end
-
 end
 
+if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
+	twb.weapon_skins.benelli_cnuy_hoshino.default_blueprint = {
+		"wpn_fps_sho_ben_body_standard",
+		"wpn_fps_sho_ben_b_standard",
+		"wpn_fps_sho_ben_fg_standard",
+		"wpn_fps_sho_ben_s_collapsable",
+		"wpn_fps_sho_ben_cnuy_hoshino"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_sho_ben.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_b_ojisan)
+			elseif twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_fg_ojisan)
+			elseif twf.parts[used_part_id].type == "stock" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_s_ojisan)
+			end
+		end
+	end
+end

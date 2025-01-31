@@ -21,8 +21,8 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
-			<var name="_tweak_table" value="tank_titan" />
-			<var name="_default_weapon_id" value="railgun_npc" />
+			<var name="_tweak_table" value="tank_titan_minion" />
+			<var name="_default_weapon_id" value="hk21_dozer" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
@@ -45,7 +45,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

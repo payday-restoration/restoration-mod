@@ -8726,28 +8726,28 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	self.unit_categories.Phalanx_dozer = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},
 			zombie = {
-				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				Idstring("units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion")
 			},
 			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},				
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},		
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
 			}
 		},
 		access = access_type_all,

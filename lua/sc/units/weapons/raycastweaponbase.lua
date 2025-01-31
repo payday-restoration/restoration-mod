@@ -1053,6 +1053,16 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 end
 --]]
 
+function InstantBulletBase:_get_character_push_multiplier(weapon_unit, died)
+	local weap_base = alive(weapon_unit) and weapon_unit:base()
+
+	if weap_base and weap_base.should_shotgun_push and weap_base:should_shotgun_push() then
+		return nil
+	end
+
+	return died and 1.5 or nil
+end
+
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
 	local hit_unit = col_ray.unit
 	user_unit = alive(user_unit) and user_unit or nil

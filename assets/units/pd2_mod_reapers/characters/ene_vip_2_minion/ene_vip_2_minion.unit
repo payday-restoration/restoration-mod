@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" />
+	<object file="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" />
 
 	<dependencies>
 		
@@ -14,21 +14,21 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
-			<var name="_tweak_table" value="tank_titan" />
-			<var name="_default_weapon_id" value="railgun_npc" />
+			<var name="_tweak_table" value="tank_titan_minion" />
+			<var name="_default_weapon_id" value="hk21_dozer" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="TankCopDamage">
-			<var name="_head_body_name" value="body_helmet_glass" />
+			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="bulldozer" />
@@ -45,7 +45,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_reapers/characters/ene_vip_2_minion/ene_vip_2_minion_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

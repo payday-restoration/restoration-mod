@@ -21,7 +21,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_titan" />
-			<var name="_default_weapon_id" value="hk21_dozer" />
+			<var name="_default_weapon_id" value="railgun_npc" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

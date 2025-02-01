@@ -191,8 +191,6 @@
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
 	<!--better SWAT squads-->
-	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
@@ -623,7 +621,7 @@
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>
-	<!--Dozer Eggman Emp--- I mean Akan helm-->
+	<!--Dozer Eggman Emp- I mean Akan helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>

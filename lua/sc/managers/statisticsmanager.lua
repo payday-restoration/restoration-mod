@@ -6,6 +6,7 @@ StatisticsManager.special_unit_ids = {
 	"tank_biker",
 	"tank_hw",
 	"tank_hw_black",
+	"tank_hw_minion",
 	"tank_green",
 	"tank_black",
 	"tank_skull",
@@ -23,6 +24,7 @@ StatisticsManager.special_unit_ids = {
 	"weekend_lmg",
 	"tank_titan",
 	"tank_titan_assault",
+	"tank_titan_minion",
 	"enforcer",
 	"enforcer_assault",
 	"spring",
@@ -109,6 +111,20 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.tank_titan_minion = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_hw_minion = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 	self._defaults.killed.tank_black = {
 			count = 0,
 			head_shots = 0,

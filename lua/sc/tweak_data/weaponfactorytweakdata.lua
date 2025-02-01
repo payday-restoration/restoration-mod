@@ -19359,8 +19359,8 @@ end)
 						translation = Vector3(0, -2.2, -3.17)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_rmary2 = {
-						translation = Vector3(0.08, 11.5, -3.3),
-						rotation = Rotation(0.12, -0.2, 0.55)
+						translation = Vector3(0.08, 11.1, -3.36),
+						rotation = Rotation(0.12, -0.08, 0.55)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
@@ -26890,7 +26890,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = -6,
 					extra_ammo = 20
 				}
-				self.parts.wpn_fps_ass_rmary2_magazine_fast2.custom_stats = { 
+				self.parts.wpn_fps_ass_rmary2_xmag2.custom_stats = { 
 					ads_speed_mult = 1.1
 				}
 

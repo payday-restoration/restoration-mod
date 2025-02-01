@@ -45,6 +45,15 @@ function MutatorTitandozers:setup()
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	tweak_data.group_ai.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.zombie[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.murkywater[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.federales[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"	
+	tweak_data.group_ai.unit_categories.Phalanx_dozer.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
 	
 	--Replace Spring, not a pretty way to do it but it works
 	if pro_job then 

@@ -61,7 +61,6 @@ function restoration:Init()
 		crojob3 = restoration.captain_types.winter, --The Bomb: Forest
 		crojob3_night = restoration.captain_types.winter, --The Bomb: Forest Night
 		rvd2 = restoration.captain_types.winter, --Garnet Group Boutique
-		brb = restoration.captain_types.winter, --brookyn ten-ten benk
 		--Custom Heists--
 		four_stores_remixed = restoration.captain_types.winter, --Four Stores (Remixed)
 		office_strike = restoration.captain_types.winter, --office strike

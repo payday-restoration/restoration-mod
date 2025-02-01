@@ -13710,7 +13710,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.fbi[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
 		end
-	--Halloween
+	--Halloween (October)
 	elseif Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 		self.unit_categories.BLACK_tank.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 		self.unit_categories.BLACK_tank.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
@@ -13729,8 +13729,18 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.TIT_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 		self.unit_categories.TIT_tank.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
-	--Snowmans	
-	elseif Month == "12" and restoration.Options:GetValue("OTHER/Holiday") then
+		
+		self.unit_categories.Phalanx_dozer.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.zombie[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.murkywater[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.federales[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+		self.unit_categories.Phalanx_dozer.unit_types.fbi[1] = "units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion"
+
+	--Snowmen (December and January)
+	elseif Month == "12" and restoration.Options:GetValue("OTHER/Holiday") or Month == "1" and restoration.Options:GetValue("OTHER/Holiday") then
 		self.unit_categories.SKULL_tank.unit_types.america[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
 		self.unit_categories.SKULL_tank.unit_types.russia[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"
 		self.unit_categories.SKULL_tank.unit_types.zombie[1] = "units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman"

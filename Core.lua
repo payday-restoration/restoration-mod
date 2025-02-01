@@ -81,7 +81,7 @@ function restoration:Init()
 		tonmapjam22l = restoration.captain_types.winter, --Hard Cash
 		fuel = restoration.captain_types.winter, --Fuel Feuds 
 		icing = restoration.captain_types.winter, --Road Rage
-		resminted_arm_downtown = restoration.captain_types.winter, -- :)
+		resminted_arm_downtown = restoration.captain_types.winter, -- Transport: Downtown Convoy
 		--Summers
 		alex_2 = restoration.captain_types.summer, --Rats Day 2
 		pal = restoration.captain_types.summer, --counterfeit
@@ -473,7 +473,7 @@ function restoration:Init()
 	restoration.gensec = {
 		"constantine_penthouse_lvl", -- Constantine Scores (Penthouse Crasher)
 		"constantine_resort_lvl",	 -- COnstantine Scores (Scarlet Resort)
-		"resminted_arm_downtown" -- :)
+		"resminted_arm_downtown" -- Transport: Downtown Convoy
 
 	}
 	--Cartel (custom heists)

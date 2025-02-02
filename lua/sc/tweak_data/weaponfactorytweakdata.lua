@@ -2356,7 +2356,7 @@ end)
 					self.wpn_fps_pis_czech.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
 						parent = "lower_reciever",
 						a_obj = "a_fl",
-						custom_stats = { ads_speed_mult = 1.05 },
+						custom_stats = {},
 						forbids = {"wpn_fps_pis_czech_body_standard_vg"},
 						allow_gadgets = true,
 						desc_id = "fucktheatf"
@@ -2364,7 +2364,7 @@ end)
 					self.wpn_fps_pis_czech.override.wpn_fps_upg_vg_ass_smg_stubby = {
 						parent = "lower_reciever",
 						a_obj = "a_fl",
-						custom_stats = { ads_speed_mult = 1.025 },
+						custom_stats = {},
 						forbids = {"wpn_fps_pis_czech_body_standard_vg"},
 						allow_gadgets = true,
 						desc_id = "fucktheatf"
@@ -2372,7 +2372,7 @@ end)
 					self.wpn_fps_pis_czech.override.wpn_fps_smg_schakal_vg_surefire = {
 						parent = "lower_reciever",
 						a_obj = "a_fl",
-						custom_stats = { ads_speed_mult = 1.05 },
+						custom_stats = {},
 						forbids = {},
 						desc_id = "fucktheatf",
 						forbids = {"wpn_fps_pis_czech_body_standard_vg"},
@@ -33438,9 +33438,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 0,
 					gadget_zoom = 1
 				}
-				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_Stats = {
+				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_stats = {
 					pointshoot_ads = 0.75,
-					pointshoot_spread = true,
+					pointshoot_spread = 20,
 					pointshoot_strafe = 1.4,
 				}
 		

@@ -267,8 +267,12 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 			end
 		end
 		
-		if self:second_sight_spread_mult() or self:weapon_tweak_data().always_hipfire or self.AKIMBO then
-			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * (self.AKIMBO and 0.5) or 1)
+		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
+			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * (self.AKIMBO and 0.8) or 1)
+		end
+
+		if self:second_sight_spread_mult() then
+			mul = mul * self:second_sight_spread_mult()
 		end
 
 		if not is_moving then
@@ -289,7 +293,6 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	return mul
 end
-
 
 function NewRaycastWeaponBase:second_sight_steelsight_mult()
 	local second_sight = self:get_active_second_sight()

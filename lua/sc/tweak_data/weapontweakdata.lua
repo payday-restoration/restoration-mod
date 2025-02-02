@@ -3652,7 +3652,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.shotgun_spread_increase_ads = 5
 
 	--Multiplier for spread on weapons that are still hipfired even while aiming (goes against the steelsight spread mult)
-	self.stat_info.hipfire_only_spread_increase = 1.2 / self.stat_info.stance_spread_mults.steelsight
+	self.stat_info.hipfire_only_spread_increase = 0.75 / self.stat_info.stance_spread_mults.steelsight
 
 	self.stat_info.base_spread = 12.1 --How much spread area you have at 0 accuracy.
 	self.stat_info.spread_per_accuracy = -0.12 --How much each point of accuracy reduces spread area.

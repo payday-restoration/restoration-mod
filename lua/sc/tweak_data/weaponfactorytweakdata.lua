@@ -33439,7 +33439,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					gadget_zoom = 1
 				}
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_Stats = {
-					ads_speed_mult_active = 0.5
+					pointshoot_ads = 0.75,
+					pointshoot_spread = true,
+					pointshoot_strafe = 1.4,
 				}
 		
 				--(M308) Mini 308 Magazine
@@ -43823,6 +43825,10 @@ if self.wpn_fps_smg_ak5s then
 			}
 		end
 	end
+	self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod["wpn_fps_snp_awp"] = {
+		translation = Vector3(-4, 30, -16), --because the AWP's default ADS stance position is apparently putting the gun halfway through your face (in all fairness, this weapon does not have a sight option that lets you use the default ADS stance so it's never an issue outside of this)
+		rotation = Rotation(0, 0, -30)
+	}
 
 	self.parts.wpn_fps_shot_m37_b_ridge.forbids={"wpn_fps_shot_m37_o_circle", "wpn_fps_shot_m37_o_classic"}
 	self.parts.wpn_fps_shot_m37_o_circle.forbids={"wpn_fps_shot_m37_b_ridge"}

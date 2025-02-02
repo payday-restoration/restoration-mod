@@ -267,8 +267,8 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 			end
 		end
 		
-		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
-			mul = mul * tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1
+		if self:second_sight_spread_mult() or self:weapon_tweak_data().always_hipfire or self.AKIMBO then
+			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * (self.AKIMBO and 0.5) or 1)
 		end
 
 		if not is_moving then
@@ -288,6 +288,49 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	end
 
 	return mul
+end
+
+
+function NewRaycastWeaponBase:second_sight_steelsight_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats then
+			return part_stats.pointshoot_ads or 1
+		end
+	end
+
+	return 1
+end
+
+function NewRaycastWeaponBase:second_sight_spread_mult()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats then
+			return part_stats.pointshoot_spread or false
+		end
+	end
+
+	return false
+end
+
+function NewRaycastWeaponBase:second_sight_strafe()
+	local second_sight = self:get_active_second_sight()
+
+	if second_sight then
+		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
+
+		if part_stats then
+			return part_stats.pointshoot_strafe or 1
+		end
+	end
+
+	return 1
 end
 
 --Multiplier for movement penalty to spread.
@@ -1962,12 +2005,12 @@ end
 function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 	local multiplier = 1
 	local ads_time = self:weapon_tweak_data().ads_speed or 0.200
-	
+
 	if not mult_only then
 		multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
+		multiplier = multiplier / self._ads_speed_mult / self:second_sight_steelsight_mult()
 	end
 
-	multiplier = multiplier / self._ads_speed_mult
 	
 	for _, category in ipairs(self:categories()) do
 		multiplier = multiplier / (1 + 1 - managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1))

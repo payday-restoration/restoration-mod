@@ -26905,6 +26905,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+			table.insert(self.wpn_fps_ass_rmary2.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+			table.insert(self.wpn_fps_ass_rmary2.uses_parts, "wpn_fps_upg_o_sig")
+
 			self.wpn_fps_ass_rmary2_npc.uses_parts = deep_clone(self.wpn_fps_ass_rmary2.uses_parts)
 		end
 
@@ -40638,6 +40641,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			--]]
+			if self[factory_id].uses_parts and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_sig") or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_xpsg33_magnifier"))
+			and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")  then
+				self[factory_id].uses_parts[500] = "wpn_fps_upg_fl_ass_smg_sho_pointshoot"
+			
+				self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
+			end
+
+			if self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot then
+				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				for i, weap in pairs(self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod) do
+					if weap and weap.translation then
+						weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(1, 0, -16)
+						weap.rotation = Rotation(0, 0, -55)
+					end
+				end
+				for factory_id, i in pairs(self) do
+					if self[factory_id] and self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
+						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] = self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] or {
+							translation = Vector3(-1, 0, -16),
+							rotation = Rotation(0.25, 0, -30)
+						}
+					end
+				end
+			end
+
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_c79") and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
 				for i, remove_id in ipairs(self[factory_id].uses_parts) do
 					if remove_id == "wpn_fps_upg_o_c79" then
@@ -43816,6 +43844,7 @@ if self.wpn_fps_smg_ak5s then
 
 	--when I figure out a better, easier way to set this up, I will condense this way down. for now, oh well, we'll all have to deal with this mess
 	-- :)
+	--[[
 	self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = {}
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id].uses_parts then
@@ -43825,10 +43854,7 @@ if self.wpn_fps_smg_ak5s then
 			}
 		end
 	end
-	self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod["wpn_fps_snp_awp"] = {
-		translation = Vector3(-4, 30, -16), --because the AWP's default ADS stance position is apparently putting the gun halfway through your face (in all fairness, this weapon does not have a sight option that lets you use the default ADS stance so it's never an issue outside of this)
-		rotation = Rotation(0, 0, -30)
-	}
+	]]
 
 	self.parts.wpn_fps_shot_m37_b_ridge.forbids={"wpn_fps_shot_m37_o_circle", "wpn_fps_shot_m37_o_classic"}
 	self.parts.wpn_fps_shot_m37_o_circle.forbids={"wpn_fps_shot_m37_b_ridge"}

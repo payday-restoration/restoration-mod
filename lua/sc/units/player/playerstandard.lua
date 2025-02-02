@@ -940,7 +940,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				--Resmod custom vars
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
-				local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+				local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 					force_ads_recoil_anims = nil
 				end
@@ -1203,7 +1203,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						end
 
 						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
-						local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+						local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 							force_ads_recoil_anims = nil
 						end
@@ -1417,7 +1417,7 @@ function PlayerStandard:_check_stop_shooting()
 		end
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-		local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+		local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 			force_ads_recoil_anims = nil
 		end
@@ -3433,7 +3433,7 @@ function PlayerStandard:full_steelsight()
 	local weap_base = self._equipped_unit:base()	
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 	if weap_base then
 		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 			force_ads_recoil_anims = nil
@@ -3461,7 +3461,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local fire_mode = weap_base:fire_mode()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 		force_ads_recoil_anims = nil
 	end
@@ -4970,7 +4970,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 			self._is_wallkicking = nil
 		end
 		if not ((managers.groupai:state():whisper_mode() and AdvMov.settings.slidestealth == 1) or (not managers.groupai:state():whisper_mode() and AdvMov.settings.slideloud == 1)) then
-			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.1 then
+			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.5 then
 				-- must be moving at least a certain speed to slide
 				local movedir = self._move_dir or self._last_velocity_xy -- don't use self:get_sampled_xy() in any of the other lines in here
 				local velocity = Vector3()

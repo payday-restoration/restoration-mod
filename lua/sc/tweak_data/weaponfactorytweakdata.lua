@@ -33444,7 +33444,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_stats = {
 					pointshoot_ads = 0.75,
 					pointshoot_spread = 20,
-					pointshoot_strafe = 1.4,
+					pointshoot_strafe = 1.5,
 				}
 		
 				--(M308) Mini 308 Magazine

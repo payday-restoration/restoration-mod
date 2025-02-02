@@ -205,7 +205,13 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
-	self.security.access = "security"
+    if table.contains(restoration.gensec, job) then
+	    self.security.access = "fbi"
+        self.security.rescue_hostages = true
+    else
+        self.security.access = "security"
+        self.security.rescue_hostages = false
+    end
 	if job == "nmh" or job == "nmh_res" then
 		self.security.has_alarm_pager = false
 	else
@@ -293,7 +299,13 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.gensec.speech_prefix_p2 = "n"
 	self.gensec.speech_prefix_count = 4
-	self.gensec.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.gensec.access = "fbi"
+        self.gensec.rescue_hostages = true
+    else
+        self.gensec.access = "security"
+        self.gensec.rescue_hostages = false
+    end
 	self.gensec.use_radio = nil
 	self.gensec.silent_priority_shout = "f37"
 	self.gensec.dodge = presets.dodge.athletic
@@ -1140,7 +1152,13 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard = deep_clone(self.city_swat)	
 	self.city_swat_guard.headshot_dmg_mul = 8.5
 	self.city_swat_guard.overheal_mult = 1
-	self.city_swat_guard.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.city_swat_guard.access = "fbi"
+        self.city_swat_guard.rescue_hostages = true
+    else
+        self.city_swat_guard.access = "security"
+        self.city_swat_guard.rescue_hostages = false
+    end
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	if job == "nmh" or job == "nmh_res" then
 		self.city_swat_guard.has_alarm_pager = false

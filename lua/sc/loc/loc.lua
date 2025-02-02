@@ -1353,7 +1353,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red-dot sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between aiming down your sights and #{risk}#point shooting.##\nWhile point shooting you aim #{skill_color}#25%## faster and aimed movement speeds are #{skill_color}#40%## faster; in exchange your aimed accuracy is reduced by #{important_1}#1600%.##\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
 		["bm_wp_upg_o_angled_aim_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between standard and canted aiming.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{risk}#3x magnification.##",

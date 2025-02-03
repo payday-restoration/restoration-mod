@@ -272,7 +272,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		end
 
 		if self:second_sight_spread_mult() then
-			mul = mul * (self:second_sight_spread_mult() / ((multi_ray and (tweak_data.weapon.stat_info.shotgun_spread_increase * 3)) or 1) )
+			mul = mul * (self:second_sight_spread_mult() / ((multi_ray and (tweak_data.weapon.stat_info.shotgun_spread_increase * 3.5)) or 1) )
 		end
 
 		if not is_moving then
@@ -329,11 +329,11 @@ function NewRaycastWeaponBase:second_sight_strafe()
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
 		if part_stats then
-			return part_stats.pointshoot_strafe or 1
+			return part_stats.pointshoot_strafe or false
 		end
 	end
 
-	return 1
+	return false
 end
 
 --Multiplier for movement penalty to spread.
@@ -1838,7 +1838,7 @@ function NewRaycastWeaponBase:fire(...)
 		end
 	end
 
-	if self._disable_steelsight_recoil_anim then
+	if self._disable_steelsight_recoil_anim and not self:second_sight_spread_mult() then
 		local camera = self._setup.user_unit:camera() and alive(self._setup.user_unit:camera():camera_unit()) and self._setup.user_unit:camera():camera_unit()
 		if camera and managers.player:player_unit():movement():current_state():in_steelsight() then
 			camera:play_redirect(Idstring("idle"))

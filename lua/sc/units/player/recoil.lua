@@ -333,7 +333,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 		local weap_base = equipped_weapon:base()
 		if weap_base then
 			local dsr_check = redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil or redirect_name == ANIM_STATES.standard.recoil_exit
-			if dsr_check and current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim then
+			if dsr_check and current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult() then
 				self._unit:play_redirect(Idstring("idle"))
 				return 
 			end

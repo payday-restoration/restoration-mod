@@ -715,7 +715,7 @@ PlayerStandard._primary_action_funcs = {
 	start_fire = {
 		auto = function (self, t, input, params, weap_unit, weap_base, is_bow, force_ads_recoil_anims)
 			if not weap_base:weapon_tweak_data().no_auto_anims then
-				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult() then
 				else
 					self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
 				end
@@ -742,7 +742,7 @@ PlayerStandard._primary_action_funcs = {
 						state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 					end
 				elseif weap_base:weapon_tweak_data().animations.recoil_steelsight then
-					if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+					if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult() then
 					else
 						state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
 					end
@@ -941,7 +941,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 				local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
-				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 					force_ads_recoil_anims = nil
 				end
 				local manual_reloads = tweak_data.weapon.stat_info.reload_marathon or restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
@@ -1204,7 +1204,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
 						local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
-						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 							force_ads_recoil_anims = nil
 						end
 
@@ -1418,7 +1418,7 @@ function PlayerStandard:_check_stop_shooting()
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 		local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
-		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 			force_ads_recoil_anims = nil
 		end
 
@@ -1781,11 +1781,13 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 					has_ads_move_speed_mult = true
 				end
 			end
+			if weapon:second_sight_strafe() then
+				speed_mult = ((1 - speed_mult) * weapon:second_sight_strafe()) + speed_mult
+			end
 			if weapon_tweak.is_bullpup then 
 				speed_mult = speed_mult * 1.25
 			end
 			speed_mult = speed_mult * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
-			speed_mult = speed_mult * weapon:second_sight_strafe()
 			movement_speed = base_speed * ((not has_ads_move_speed_mult and 0.45) or 1)
 			movement_speed = math.clamp(movement_speed * speed_mult, 0, base_speed)
 		end
@@ -3435,7 +3437,7 @@ function PlayerStandard:full_steelsight()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 	if weap_base then
-		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 			force_ads_recoil_anims = nil
 		end
 	end
@@ -3462,7 +3464,7 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
-	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 		force_ads_recoil_anims = nil
 	end
 

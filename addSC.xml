@@ -199,6 +199,9 @@
 	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
+
+	<continent			path="levels/narratives/e_election_day/stage_2/world/world" force="true" unload="true"/>
+
 	
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	

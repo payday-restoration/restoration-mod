@@ -21315,6 +21315,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rmary2.recategorize = { "dmr_ar" }
 				self.rmary2.damage_type = "sniper"
 				self.rmary2.has_description = true
+				self.rmary2.nato = true
 				self.rmary2.is_bullpup = true
 				self.rmary2.upgrade_blocks = nil
 				self.rmary2.tactical_reload = 1

@@ -752,8 +752,8 @@ function PlayerDamage:damage_melee(attack_data)
 	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		--prevent the player from countering Dozers, Spring, Hatman or other players through FF, for obvious reasons
 		if alive(attacker_unit) and attacker_unit:base() and not attacker_unit:base().is_husk_player then
-			local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
-			local is_shield = not can_shield_knock and attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield")
+			local shield_counter = managers.player:has_category_upgrade("player", "counter_strike_spooc_sprint") --no sense in making a new skill for shield counters
+			local is_shield = not shield_counter and attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield")
 			local is_titan_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield_titan")
 			local is_dozer = attacker_unit:base().has_tag and attacker_unit:base():has_tag("tank")
 			local is_sproing = attacker_unit:base().has_tag and attacker_unit:base():has_tag("spring")

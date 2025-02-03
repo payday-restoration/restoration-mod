@@ -4970,7 +4970,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 			self._is_wallkicking = nil
 		end
 		if not ((managers.groupai:state():whisper_mode() and AdvMov.settings.slidestealth == 1) or (not managers.groupai:state():whisper_mode() and AdvMov.settings.slideloud == 1)) then
-			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.5 then
+			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.2 then
 				-- must be moving at least a certain speed to slide
 				local movedir = self._move_dir or self._last_velocity_xy -- don't use self:get_sampled_xy() in any of the other lines in here
 				local velocity = Vector3()
@@ -4997,7 +4997,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 					self._slide_desired_dir = mvector3.copy(movedir)
 					self._sprinting_speed = self:_get_modified_move_speed("run")
 					-- make it feel like a speedy slide
-					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 1250, 1500) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
+					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 1000, 1500) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
 					self._slide_refresh_t = 0
 					self._slide_last_z = self._unit:position().z
 					self._slide_last_speed = self._slide_speed

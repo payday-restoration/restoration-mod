@@ -22775,7 +22775,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_toz81.BURST_FIRE = false
 				self.x_toz81.CAN_TOGGLE_FIREMODE = false
 				self.x_toz81.FIRE_MODE = "single"				
-				self.x_toz81.AMMO_MAX = 20
+				self.x_toz81.AMMO_MAX = 40
 				self.x_toz81.supported = true
 				self.x_toz81.ads_speed = 0.260
 				self.x_toz81.damage_falloff = {

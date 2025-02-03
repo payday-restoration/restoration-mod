@@ -318,8 +318,8 @@ function BlackMarketManager:equipped_melee_weapon_damage_info(lerp_value)
 	local stats = tweak_data.blackmarket.melee_weapons[melee_entry].stats
 	local primary = self:equipped_primary()
 	local secondary = self:equipped_secondary()
-	local primary_bayonet_id = self:equipped_bayonet(primary.weapon_id)
-	local secondary_bayonet_id = self:equipped_bayonet(secondary.weapon_id)
+	local primary_bayonet_id = self:equipped_bayonet_res(primary.weapon_id)
+	local secondary_bayonet_id = self:equipped_bayonet_res(secondary.weapon_id)
 	local player = managers.player:player_unit()
 
 	if primary_bayonet_id and player:movement():current_state()._equipped_unit:base():selection_index() == 2 and melee_entry == "weapon" then
@@ -334,6 +334,34 @@ function BlackMarketManager:equipped_melee_weapon_damage_info(lerp_value)
 	local dmg_effect = dmg * math.lerp(stats.min_damage_effect, stats.max_damage_effect, lerp_value)
 	
 	return dmg, dmg_effect
+end
+
+function BlackMarketManager:equipped_bayonet_res(weapon_id)
+	local available_weapon_mods = managers.weapon_factory:get_parts_from_weapon_id(weapon_id)
+	local has_bayonet = available_weapon_mods and (available_weapon_mods.bayonet or available_weapon_mods.knife_addon)
+	local equipped_weapon_mods_p = managers.blackmarket:equipped_item("primaries").blueprint
+	local equipped_weapon_mods_s = managers.blackmarket:equipped_item("secondaries").blueprint
+
+	if available_weapon_mods and has_bayonet then
+		for _, mod in ipairs(equipped_weapon_mods_p) do
+			for _, bayonet in ipairs(has_bayonet) do
+				if mod == bayonet then
+					return bayonet
+				end
+			end
+		end
+	end
+	if available_weapon_mods and has_bayonet then
+		for _, mod in ipairs(equipped_weapon_mods_s) do
+			for _, bayonet in ipairs(has_bayonet) do
+				if mod == bayonet then
+					return bayonet
+				end
+			end
+		end
+	end
+
+	return nil
 end
 
 function BlackMarketManager:_calculate_suspicion_offset(index, lerp)

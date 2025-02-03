@@ -2530,7 +2530,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	melee_damage_delay = math.min(melee_damage_delay, melee_repeat_expire_t)
 	local primary = managers.blackmarket:equipped_primary()
 	local primary_id = primary.weapon_id
-	local bayonet_id = managers.blackmarket:equipped_bayonet(primary_id)
+	local bayonet_id = managers.blackmarket:equipped_bayonet_res(primary_id)
 	local bayonet_melee = false
 	local can_melee_miss = tweak_data.blackmarket.melee_weapons[melee_entry].can_melee_miss
 	local equipped_weapon = self:get_equipped_weapon()

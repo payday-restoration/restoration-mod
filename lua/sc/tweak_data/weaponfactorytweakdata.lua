@@ -19230,6 +19230,10 @@ end)
 						translation = Vector3(-0.022, 8.4, -0.738),
 						rotation = Rotation(-0.1, 0, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_toz81 = {
+						translation = Vector3(-0.055, -23.2, -4.785),
+						rotation = Rotation(-0.08, -0.12, 0)
+					}
 
 				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
@@ -37038,6 +37042,59 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
+			self.parts.wpn_fps_pis_toz81_bayonet_unfolded.supported = true
+			self.parts.wpn_fps_pis_toz81_bayonet_unfolded.stats = {
+				value = 0,
+				concealment = -3,
+				spread = -2,
+				max_damage = 6,
+				min_damage = 6,
+				max_damage_effect = 1,
+				min_damage_effect = 1,
+				bayonet_range = 20
+			}
+			self.parts.wpn_fps_pis_toz81_bayonet_unfolded.custom_stats = {
+				melee_speed_mult = 0.8,
+				alt_melee_sounds = {
+					"knife_hit_body",
+					"knife_hit_gen"
+				}
+			}
+
+			self.parts.wpn_fps_pis_toz81_stock.supported = true
+			self.parts.wpn_fps_pis_toz81_stock.stats = deep_clone(stocks.add_folder_stats)
+			self.parts.wpn_fps_pis_toz81_stock.custom_stats = deep_clone(stocks.add_folder_stats)
+
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			self.wpn_fps_pis_toz81.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
+
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			self.wpn_fps_pis_x_toz81.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
+		end
 
 		if self.parts.wpn_fps_shot_or12_vg then
 			self.parts.wpn_fps_shot_or12_vg.stats = { value = 0 }

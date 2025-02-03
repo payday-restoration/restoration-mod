@@ -113,7 +113,7 @@ function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint,
 
 		self._unit:mover():set_velocity(self._last_velocity_xy)
 	end
-	if not allow_sprint then
+	if force_crouch or not allow_sprint then
 		self:_interupt_action_running(managers.player:player_timer():time())
 	end
 	if force_crouch then
@@ -241,15 +241,21 @@ function PlayerStandard:_start_action_ducking(t, no_slide)
 	self._ext_network:send("action_change_pose", 2, self._unit:position())
 	self:_upd_attention()
 	
-	if AdvMov and PlayerStandard._check_slide and not no_slide then
-		self:_check_slide()
+	if AdvMov and PlayerStandard._check_slide and self._unit:movement():is_above_stamina_threshold() then
+		if not no_slide then
+			self:_check_slide()
+		end
+		if self._is_wallrunning then
+			self._end_wallrun_kick_dir = self:_get_end_wallrun_kick_dir()
+			self:_cancel_wallrun(t, "fall")
+		end
 	end
 end
 
 function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
-	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 10 >= self._slide_speed
 
-	if (is_pro and self._is_sliding and not slide_threshold) or not skip_can_stand_check and not self:_can_stand() then
+	if (self._is_sliding and self._state_data.in_air) or (self._dash_slide and (self._last_dash_time + 0.25 > t)) or not skip_can_stand_check and not self:_can_stand() then
 		return
 	end
 
@@ -265,6 +271,12 @@ function PlayerStandard:_end_action_ducking(t, skip_can_stand_check)
 	self._ext_network:send("action_change_pose", 1, self._unit:position())
 	self:_upd_attention()
 	if AdvMov and PlayerStandard._cancel_slide then
+		local dash_stats = tweak_data.upgrades.values.player.dash_stats
+		local dash_base_t = dash_stats.grace_t
+		if self._is_sliding and ((self._last_slide_time and (self._last_slide_time + (dash_base_t * 2)) > t) or (self._last_dash_time and (self._last_dash_time > t))) and not self._dash_slide then
+			managers.player:apply_slow_debuff(1, 0.5, nil, true)
+			self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.JUMP_STAMINA_DRAIN * 0.5)
+		end
 		self:_cancel_slide()
 	end
 end
@@ -500,7 +512,7 @@ function PlayerStandard:_check_change_weapon(t, input)
 			}
 			self._change_weapon_pressed_expire_t = t + 0.33
 
-			self:_start_action_unequip_weapon(t, data)
+			self:_start_action_unequip_weapon(t, data, true)
 
 			new_action = true
 
@@ -559,7 +571,8 @@ function PlayerStandard:_check_action_jump(t, input)
 				action_start_data.jump_vel_z = jump_vel_z
 
 				if self._move_dir then
-					local is_running = self._running and self._unit:movement():is_above_stamina_threshold() and t - self._start_running_t > 0.4
+					local is_running = self._unit:movement():is_above_stamina_threshold() and ((not self._is_sliding and self._running and t - self._start_running_t > 0.4) 
+						or (self._is_sliding and t - self._last_slide_time > 0.2))
 					local jump_vel_xy = tweak_data.player.movement_state.standard.movement.jump_velocity.xy[is_running and "run" or "walk"]
 					action_start_data.jump_vel_xy = jump_vel_xy
 
@@ -702,7 +715,7 @@ PlayerStandard._primary_action_funcs = {
 	start_fire = {
 		auto = function (self, t, input, params, weap_unit, weap_base, is_bow, force_ads_recoil_anims)
 			if not weap_base:weapon_tweak_data().no_auto_anims then
-				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+				if restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims") and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult() then
 				else
 					self._unit:camera():play_redirect(self:get_animation("recoil_enter"))
 				end
@@ -729,7 +742,7 @@ PlayerStandard._primary_action_funcs = {
 						state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
 					end
 				elseif weap_base:weapon_tweak_data().animations.recoil_steelsight then
-					if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim then
+					if no_recoil_anims and self._shooting and self._state_data.in_steelsight and not weap_base.akimbo and not is_bow and not norecoil_blacklist[weap_hold] and not force_ads_recoil_anims or weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult() then
 					else
 						state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
 					end
@@ -906,7 +919,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 		if params and params.action_forbidden ~= nil then
 			action_forbidden = params.action_forbidden
-		elseif self:_is_reloading() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances() then
+		elseif self:_is_reloading() or self:_is_overheating() or self:_changing_weapon() or self:_is_meleeing() or self._use_item_expire_t or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_throwing_projectile() or self:_is_deploying_bipod() or self._menu_closed_fire_cooldown > 0 or self:is_switching_stances() then
 			action_forbidden = true
 		else
 			action_forbidden = false
@@ -927,8 +940,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				--Resmod custom vars
 				local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 				local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
-				local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+				local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
+				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 					force_ads_recoil_anims = nil
 				end
 				local manual_reloads = tweak_data.weapon.stat_info.reload_marathon or restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
@@ -1112,16 +1125,18 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 
 					local fired = nil
 					local fired_func = self._primary_action_get_value.fired[fire_mode]
+					local spin_up_semi = weap_base:weapon_tweak_data().spin_up_semi
+					local spin_up_check = (not spin_up_semi and fire_mode ~= "single") or spin_up_semi
 
 					if fired_func then
 						fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-						self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+						self._spin_up_shoot = spin_up_check and not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 					else
 						fired_func = self._primary_action_get_value.fired.default
 
 						if fired_func then
 							fired = fired_func(self, t, input, params, weap_unit, weap_base, start_shooting, fire_on_release, dmg_mul, nil, spread_mul, autohit_mul, suppression_mul)
-							self._spin_up_shoot = not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
+							self._spin_up_shoot = spin_up_check and not self._already_fired and weap_base:weapon_tweak_data().spin_up_shoot
 						end
 					end
 
@@ -1188,8 +1203,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 						end
 
 						local no_recoil_anims = restoration.Options:GetValue("OTHER/WeaponHandling/NoADSRecoilAnims")
-						local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+						local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
+						if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 							force_ads_recoil_anims = nil
 						end
 
@@ -1205,24 +1220,31 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							end
 						end
 						local srm = weap_base._srm
-						local shots_fired = srm and math.max(weap_base._shot_recoil_count - 1 - (srm[3] or 0), 0)  or 0
+						local shots_fired = srm and math.max(weap_base._shot_recoil_magnitude_count - 1 - (srm[3] or 0), 0)  or 0
 						local shots_fired_mult = srm and math.round(100000 * math.clamp( 1 - (shots_fired * srm[1]) , srm[2][1], srm[2][2])) / 100000
 						local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired_mult or 1)
 						local stance_mults = weap_tweak_data.stance_multipliers or nil
 						recoil_multiplier = recoil_multiplier * ((stance_mults and (self._state_data.in_steelsight and stance_mults.steelsight or self._state_data.ducking and stance_mults.crouching or stance_mults.standing)) or 1)
-						local recoil_count = weap_base._shot_recoil_count or 0
+						local recoil_count = weap_base._shot_recoil_pattern_count or 0
 						local recoil_stage = nil
 						if weap_tweak_data.kick_pattern then
-							local function shot_recoil_pattern(shot_count, recoil_table)
+							local function shot_recoil_pattern(shot_count, recoil_table, weap_base)
 								local stage = nil
 								for i, k in pairs(recoil_table) do
-									if type(i) == "number" and shot_count >= recoil_table[i][1] then
-										stage = i
+									if type(i) == "number" then
+										if shot_count >= recoil_table[i][1] then
+											if type(recoil_table[i][2]) == "table" then
+												stage = i
+											elseif type(recoil_table[i][2]) == "number" then
+												stage = i - 1
+												weap_base._shot_recoil_pattern_count = recoil_table[i][2] or 0
+											end
+										end
 									end
 								end
 								return stage
 							end
-							recoil_stage = shot_recoil_pattern(recoil_count, weap_tweak_data.kick_pattern)
+							recoil_stage = shot_recoil_pattern(recoil_count, weap_tweak_data.kick_pattern, weap_base)
 						end
 						local kick_tweak_data = weap_tweak_data.kick[fire_mode] or (recoil_stage and weap_tweak_data.kick_pattern[recoil_stage][2]) or weap_tweak_data.kick
 						local always_standing = weap_tweak_data.always_use_standing
@@ -1395,8 +1417,8 @@ function PlayerStandard:_check_stop_shooting()
 		end
 		local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 		local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-		local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
+		if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 			force_ads_recoil_anims = nil
 		end
 
@@ -1759,6 +1781,9 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 					has_ads_move_speed_mult = true
 				end
 			end
+			if weapon:second_sight_strafe() then
+				speed_mult = ((1 - speed_mult) * weapon:second_sight_strafe()) + speed_mult
+			end
 			if weapon_tweak.is_bullpup then 
 				speed_mult = speed_mult * 1.25
 			end
@@ -1777,7 +1802,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 		movement_speed = speed_tweak.INAIR_MAX
 		speed_state = nil
 	elseif self._running or force_run then
-		movement_speed = speed_tweak.RUNNING_MAX
+		movement_speed = (not self._unit:movement():is_above_stamina_threshold() and speed_tweak.RUNNING_MAX_TIRED) or speed_tweak.RUNNING_MAX
 		speed_state = "run"
 	end
 
@@ -1827,39 +1852,41 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 	return final_speed
 end
 
-Hooks:PostHook(PlayerStandard, "_update_movement", "ResUpdMovement", function(self, t, dt)
+local _update_movement_old = PlayerStandard._update_movement
+function PlayerStandard:_update_movement(t, dt)
+	_update_movement_old(self, t, dt)
 	if not self._move_dir then
 		self._running_wanted = false
 	end
-end)
-
-
+end
 
 function PlayerStandard:_check_action_run(t, input)
-	if self._setting_hold_to_run and input.btn_run_release or self._running and not self._move_dir then
-		self._running_wanted = false
+	if input then
+		if self._setting_hold_to_run and input.btn_run_release or self._running and not self._move_dir then
+			self._running_wanted = false
 
-		if self._running then
-			self:_end_action_running(t)
+			if self._running then
+				self:_end_action_running(t)
 
-			if input.btn_steelsight_state and not self._state_data.in_steelsight then
-				self._steelsight_wanted = true
+				if input.btn_steelsight_state and not self._state_data.in_steelsight then
+					self._steelsight_wanted = true
+				end
 			end
-		end
-	elseif not self._setting_hold_to_run and input.btn_run_release and not self._move_dir then
-		self._running_wanted = false
-	elseif input.btn_run_press or self._running_wanted then
-		if input.btn_run_press and self._running_wanted == true then
-			--self._running_wanted = false
-			--return
-		end
-		if not self._running or self._end_running_expire_t then
-			self:_start_action_running(t)
-		elseif self._running and not self._setting_hold_to_run then
-			self:_end_action_running(t)
+		elseif not self._setting_hold_to_run and input.btn_run_release and not self._move_dir then
+			self._running_wanted = false
+		elseif input.btn_run_press or self._running_wanted then
+			if input.btn_run_press and self._running_wanted == true then
+				--self._running_wanted = false
+				--return
+			end
+			if not self._running or self._end_running_expire_t then
+				self:_start_action_running(t)
+			elseif self._running and not self._setting_hold_to_run then
+				self:_end_action_running(t)
 
-			if input.btn_steelsight_state and not self._state_data.in_steelsight then
-				self._steelsight_wanted = true
+				if input.btn_steelsight_state and not self._state_data.in_steelsight then
+					self._steelsight_wanted = true
+				end
 			end
 		end
 	end
@@ -1884,14 +1911,14 @@ function PlayerStandard:_start_action_running(t)
 		return
 	end
 	--Consolidated vanilla checks.
-	if not self._move_dir or self:on_ladder() or self:_on_zipline() or not self:_can_run_directional() or managers.player:get_player_rule("no_run") or not self._unit:movement():is_above_stamina_threshold() then
+	if not self._move_dir or self:on_ladder() or self:_on_zipline() or not self:_can_run_directional() or managers.player:get_player_rule("no_run") --[[ or not self._unit:movement():is_above_stamina_threshold() ]] then
 		self._running_wanted = true
 		return
 	end
 
-	local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed
+	--local slide_threshold = self._slide_speed and self._slide_end_speed and self._slide_end_speed * 4 >= self._slide_speed and self._unit:movement():is_above_stamina_threshold() 
 
-	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() or (is_pro and self._is_sliding and not slide_threshold) or self:_in_burst() or self._state_data.ducking and not self:_can_stand() then
+	if (self._shooting or self._spin_up_shoot) and not self._equipped_unit:base():run_and_shoot_allowed() or (self:_is_charging_weapon() and not self._equipped_unit:base():run_and_shoot_allowed()) or --[[self:_changing_weapon() or]] self._use_item_expire_t or self._state_data.in_air or self:_is_throwing_projectile() --[[or (is_pro and self._is_sliding and not slide_threshold)]] or self:_in_burst() or self._state_data.ducking and not self:_can_stand() or (self._dash_slide and (self._last_dash_time + 0.5 > t)) then
 		self._running_wanted = true
 		return
 	end
@@ -1920,7 +1947,7 @@ function PlayerStandard:_start_action_running(t)
 	local cancel_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SprintCancel")
 	
 	--Skip sprinting animations of player is doing melee things.
-	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and (cancel_sprint == true or self._equipped_unit:base()._starwars)))) then
+	if not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and (not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and cancel_sprint == true))) then
 		if not self._equipped_unit:base():run_and_shoot_allowed() then
 			self._ext_camera:play_redirect(self:get_animation("start_running"))	
 		else
@@ -1936,7 +1963,20 @@ function PlayerStandard:_start_action_running(t)
 	self:_interupt_action_ducking(t)
 end
 
+function PlayerStandard:_update_running_timers(t)
+	if self._end_running_expire_t then
+		if self._end_running_expire_t <= t then
+			self._end_running_expire_t = nil
+
+			self:set_running(false)
+		end
+	--elseif self._running and (self._unit:movement():is_stamina_drained() or not self:_can_run_directional()) then
+		--self:_interupt_action_running(t)
+	end
+end
+
 function PlayerStandard:_end_action_running(t)
+	self._last_run_t = t
 	if not self._end_running_expire_t then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
@@ -1944,7 +1984,7 @@ function PlayerStandard:_end_action_running(t)
 		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local cancel_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SprintCancel")
-		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or (not self.RUN_AND_RELOAD or (self.RUN_AND_RELOAD and self._equipped_unit:base()._starwars))))
+		local stop_running = not self:_changing_weapon() and not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and ((not self:_is_reloading() or not self.RUN_AND_RELOAD))
 		
 		if stop_running then
 			self._ext_camera:play_redirect(self:get_animation("stop_running"), math.min(speed_multiplier, 2) )
@@ -2095,6 +2135,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray
+			action_data.variant = "melee"
 
 			if shield_knock then
 				action_data.shield_knock = can_shield_knock
@@ -2603,7 +2644,6 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		elseif self._stick_move then
 			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var_h = true
-				self._melee_attack_var_left = true
 				self._melee_attack_var_l_r = "left"
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
@@ -2655,6 +2695,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_d_scope_t(t, dt)
 	self:_update_spread_stun_t(t, dt)
 	self:_update_drain_stamina(t, dt)
+	self:_is_overheating(t, dt)
 
 	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	if weapon and weapon:weapon_tweak_data().ads_spool then
@@ -2788,7 +2829,8 @@ function PlayerStandard:_last_shot_recoil_t(t, dt)
 				self._last_recoil_t = self._last_recoil_t - dt
 				if self._last_recoil_t < 0 then
 					self._last_recoil_t = nil
-					weapon._shot_recoil_count = 0
+					weapon._shot_recoil_pattern_count = 0
+					weapon._shot_recoil_magnitude_count = 0
 				end
 			end
 		end
@@ -2797,14 +2839,14 @@ end
 
 
 
-function PlayerStandard:_shooting_move_speed_timer(t, dt)
+function PlayerStandard:_shooting_move_speed_timer(t, dt, external_trigger)
 	local weapon = alive(self._equipped_unit) and self._equipped_unit:base()
 	if not weapon then
 		return
 	end
 	local weapon_sms = weapon._sms and math.clamp(weapon._sms, 0, 1)
 	local smt_range = weapon and weapon:weapon_tweak_data().smt_range or { 0.3, 0.8 }
-	if self._shooting and weapon_sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
+	if (self._shooting or external_trigger) and weapon_sms and (not self._is_sliding and not self._is_wallrunning and not self._is_wallkicking and not self:on_ladder()) then
 		self._shooting_move_speed_t = math.clamp(weapon._smt, smt_range[1], smt_range[2])
 		self._shooting_move_speed_wait = self._shooting_move_speed_t * 0.25
 		self._shooting_move_speed_mult = weapon_sms
@@ -2829,51 +2871,65 @@ end
 
 function PlayerStandard:_primary_regen_ammo(t, dt)
 	local primary = self._unit:inventory():unit_by_selection(2):base()
-	local active = self._unit:inventory():equipped_selection() == 2
+	local active = primary and self._unit:inventory():equipped_selection() == 2
 	if primary then
-		primary._primary_regen_rate = primary._primary_regen_rate or primary._regen_rate or 10
+		local regen_ammo_time = primary._starwars.regen_ammo_time or 0.5
+		local regen_rate = primary._starwars.regen_rate or 10
+		local overheat_pen = primary._starwars.overheat_pen or 2.75
+		local regen_rate_overheat = primary._starwars.regen_rate_overheat or 4.5
+		local empty_no_regen = primary._starwars.empty_no_regen
+		local mag_regen = primary._starwars.mag_regen
+		local shut_up = primary._starwars.shut_up
+
+		primary._primary_regen_rate = primary._primary_regen_rate or regen_rate
 		primary._primary_regenerate_ammo_timer = primary._primary_regenerate_ammo_timer or 0
 		if primary:get_ammo_total() <= 0 then
 			return
 		end
 		if active and self._shooting then
 			primary._primary_recharge_yell = nil
-			primary._primary_regenerate_ammo_timer = primary._regen_ammo_time or 0.5
+			primary._primary_regenerate_ammo_timer = regen_ammo_time
 		end
 		if primary:clip_empty() then
 			if active and self._shooting then
 				self:_check_stop_shooting()
 				self:_interupt_action_steelsight(t)
 			end
-			primary._primary_regen_rate = primary._regen_rate_overheat or 4.5
-			primary._primary_overheat_pen = primary._overheat_pen or 2.75
+			primary._primary_regen_rate = (empty_no_regen and 0) or regen_rate_overheat
+			primary._primary_overheat_pen = (empty_no_regen and 0) or overheat_pen
 		end
 		if primary._primary_overheat_pen and primary._primary_overheat_pen <= 0 then
 			--log( "COOL" )
-			if active then
+			if active and not empty_no_regen then
 				primary._sound_fire:post_event("wp_sentrygun_swap_ammo")
 			end
-			primary._primary_regen_rate = primary._regen_rate or 10
+			primary._primary_regen_rate = regen_rate
 			primary._primary_overheat_pen = nil
 			primary._primary_overheat_yell = nil
 		end
 		if primary._primary_overheat_pen then
 			primary._primary_overheat_pen = primary._primary_overheat_pen - dt
 			--log( "OVERHEAT TIME: " .. tostring(self._primary_overheat_pen) )
-			if not primary._primary_overheat_yell then
-				managers.player:local_player():sound():say("g29",false,nil)
+			if not primary._primary_overheat_yell and not empty_no_regen then
+				if not shut_up then
+					managers.player:local_player():sound():say("g29",false,nil)
+				end
 				primary._sound_fire:post_event("turret_cooldown")
 				primary._primary_overheat_yell = true
 			end
 		end
-		if (primary:get_ammo_remaining_in_clip() >= primary:get_ammo_total()) or (primary:get_ammo_remaining_in_clip() >= primary:get_ammo_max_per_clip()) then 
-			--log("NO AMMO")
+		if (not empty_no_regen and 
+				(primary:get_ammo_remaining_in_clip() >= primary:get_ammo_total()) or 
+				(primary:get_ammo_remaining_in_clip() >= primary:get_ammo_max_per_clip())) or 
+			(empty_no_regen and 
+				primary:clip_empty()) then 
+			--log("STOP REGEN")
 			primary._primary_regenerate_ammo_timer = nil
 		end
-		if primary._primary_regenerate_ammo_timer then
+		if primary._primary_regenerate_ammo_timer and (empty_no_regen and not primary:clip_empty()) and ((active and not self:_is_reloading()) or (not active)) then
 			primary._primary_regenerate_ammo_timer = primary._primary_regenerate_ammo_timer - dt
 			if primary._primary_regenerate_ammo_timer < 0 then
-				self:primary_add_ammo(dt * primary._primary_regen_rate)
+				self:primary_add_ammo(dt * primary._primary_regen_rate, mag_regen)
 				if not primary._primary_recharge_yell then
 					primary._primary_recharge_yell = true
 					if active then
@@ -2885,65 +2941,84 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 	end
 end
 
-function PlayerStandard:primary_add_ammo(value)
+function PlayerStandard:primary_add_ammo(value, mag_regen)
 	local primary = self._unit:inventory():unit_by_selection(2):base()
 	self._primary_add_bullet = self._primary_add_bullet or value
 	if self._primary_add_bullet then
 		self._primary_add_bullet = self._primary_add_bullet + value
 		if math.floor(self._primary_add_bullet+0.5) >= 1 then
 			primary:set_ammo_remaining_in_clip( primary:get_ammo_remaining_in_clip() + math.floor(self._primary_add_bullet+0.5))
+			if mag_regen then
+				primary:set_ammo_total( primary:get_ammo_total() + math.floor(self._primary_add_bullet+0.5))
+			end
 			managers.hud:set_ammo_amount(primary:selection_index(), primary:ammo_info())
 			self._primary_add_bullet = nil
 		end
 	end
 end
 
+
 function PlayerStandard:_secondary_regen_ammo(t, dt)
 	local secondary = self._unit:inventory():unit_by_selection(1):base()
-	local active = self._unit:inventory():equipped_selection() == 1
+	local active = secondary and self._unit:inventory():equipped_selection() == 1
 	if secondary then
-		secondary._secondary_regen_rate = secondary._secondary_regen_rate or secondary._regen_rate or 10
+		local regen_ammo_time = secondary._starwars.regen_ammo_time or 0.5
+		local regen_rate = secondary._starwars.regen_rate or 10
+		local overheat_pen = secondary._starwars.overheat_pen or 2.75
+		local regen_rate_overheat = secondary._starwars.regen_rate_overheat or 4.5
+		local empty_no_regen = secondary._starwars.empty_no_regen
+		local mag_regen = secondary._starwars.mag_regen
+		local shut_up = secondary._starwars.shut_up
+
+		secondary._secondary_regen_rate = secondary._secondary_regen_rate or regen_rate
 		secondary._secondary_regenerate_ammo_timer = secondary._secondary_regenerate_ammo_timer or 0
 		if secondary:get_ammo_total() <= 0 then
 			return
 		end
 		if active and self._shooting then
 			secondary._secondary_recharge_yell = nil
-			secondary._secondary_regenerate_ammo_timer = secondary._regen_ammo_time or 0.5
+			secondary._secondary_regenerate_ammo_timer = regen_ammo_time
 		end
 		if secondary:clip_empty() then
 			if active and self._shooting then
 				self:_check_stop_shooting()
 				self:_interupt_action_steelsight(t)
 			end
-			secondary._secondary_regen_rate = secondary._regen_rate_overheat or 4.5
-			secondary._secondary_overheat_pen = secondary._overheat_pen or 2.75
+			secondary._secondary_regen_rate = (empty_no_regen and 0) or regen_rate_overheat
+			secondary._secondary_overheat_pen = (empty_no_regen and 0) or overheat_pen
 		end
 		if secondary._secondary_overheat_pen and secondary._secondary_overheat_pen <= 0 then
 			--log( "COOL" )
-			if active then
+			if active and not empty_no_regen then
 				secondary._sound_fire:post_event("wp_sentrygun_swap_ammo")
 			end
-			secondary._secondary_regen_rate = secondary._regen_rate or 10
+			secondary._secondary_regen_rate = regen_rate
 			secondary._secondary_overheat_pen = nil
 			secondary._secondary_overheat_yell = nil
 		end
 		if secondary._secondary_overheat_pen then
 			secondary._secondary_overheat_pen = secondary._secondary_overheat_pen - dt
 			--log( "OVERHEAT TIME: " .. tostring(self._secondary_overheat_pen) )
-			if not secondary._secondary_overheat_yell then
-				managers.player:local_player():sound():say("g29",false,nil)
+			if not secondary._secondary_overheat_yell and not empty_no_regen then
+				if not shut_up then
+					managers.player:local_player():sound():say("g29",false,nil)
+				end
 				secondary._sound_fire:post_event("turret_cooldown")
 				secondary._secondary_overheat_yell = true
 			end
 		end
-		if (secondary:get_ammo_remaining_in_clip() >= secondary:get_ammo_total()) or (secondary:get_ammo_remaining_in_clip() >= secondary:get_ammo_max_per_clip()) then
+		if (not empty_no_regen and 
+				(secondary:get_ammo_remaining_in_clip() >= secondary:get_ammo_total()) or 
+				(secondary:get_ammo_remaining_in_clip() >= secondary:get_ammo_max_per_clip())) or 
+			(empty_no_regen and 
+				secondary:clip_empty()) then 
+			--log("STOP REGEN")
 			secondary._secondary_regenerate_ammo_timer = nil
 		end
-		if secondary._secondary_regenerate_ammo_timer then
+		if secondary._secondary_regenerate_ammo_timer and (empty_no_regen and not secondary:clip_empty()) and (not self:_is_reloading() and active) then
 			secondary._secondary_regenerate_ammo_timer = secondary._secondary_regenerate_ammo_timer - dt
 			if secondary._secondary_regenerate_ammo_timer < 0 then
-				self:secondary_add_ammo(dt * secondary._secondary_regen_rate)
+				self:secondary_add_ammo(dt * secondary._secondary_regen_rate, mag_regen)
 				if not secondary._secondary_recharge_yell then
 					secondary._secondary_recharge_yell = true
 					if active then
@@ -2955,23 +3030,32 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 	end
 end
 
-function PlayerStandard:secondary_add_ammo(value)
+function PlayerStandard:secondary_add_ammo(value, mag_regen)
 	local secondary = self._unit:inventory():unit_by_selection(1):base()
 	self._secondary_add_bullet = self._secondary_add_bullet or value
 	if self._secondary_add_bullet then
 		self._secondary_add_bullet = self._secondary_add_bullet + value
 		if math.floor(self._secondary_add_bullet+0.5) >= 1 then
 			secondary:set_ammo_remaining_in_clip( secondary:get_ammo_remaining_in_clip() + math.floor(self._secondary_add_bullet+0.5))
+			if mag_regen then
+				secondary:set_ammo_total( secondary:get_ammo_total() + math.floor(self._secondary_add_bullet+0.5))
+			end
 			managers.hud:set_ammo_amount(secondary:selection_index(), secondary:ammo_info())
 			self._secondary_add_bullet = nil
 		end
 	end
 end
 
-function PlayerStandard:_is_reloading()
+function PlayerStandard:_is_overheating()
 	local primary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(2):base()
+	local primary_can_reload = primary and primary._starwars and primary._starwars.can_reload
 	local secondary = alive(self._unit) and self._unit.inventory and self._unit:inventory().unit_by_selection and self._unit:inventory():unit_by_selection(1):base()
-	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1) or self._state_data.reload_expire_t or self._state_data.reload_enter_expire_t or self._state_data.reload_exit_expire_t
+	local secondary_can_reload = secondary and secondary._starwars and secondary._starwars.can_reload
+	return (primary and primary._primary_overheat_pen and self._unit:inventory():equipped_selection() == 2 and not primary_can_reload) or (secondary and secondary._secondary_overheat_pen and self._unit:inventory():equipped_selection() == 1 and not secondary_can_reload)
+end
+
+function PlayerStandard:_is_reloading()
+	return self._state_data.reload_expire_t or self._state_data.reload_enter_expire_t or self._state_data.reload_exit_expire_t
 end
 
 function PlayerStandard:_in_burst()
@@ -3267,7 +3351,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		end
 	end
 	--Here!
-	if self:_changing_weapon() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t then
+	if self:_changing_weapon() or self:_is_overheating() or self:_is_reloading() or self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:_is_meleeing() or self._use_item_expire_t or self:_is_throwing_projectile() or self:_on_zipline() or self._d_scope_t then
 		self._steelsight_wanted = true
 
 		return
@@ -3329,7 +3413,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	self._ext_network:send("set_stance", 3, false, false)
 	managers.job:set_memory("cac_4", true)
 
-	--Compatibilty or Offyerocker's MA40 Overlay 
+	--Compatibilty for Offyerocker's MA40 Overlay 
 	if self._state_data.in_steelsight then
 		local weap_base = self._equipped_unit:base()
 		if weap_base and weap_base._scope_overlay then
@@ -3351,9 +3435,9 @@ function PlayerStandard:full_steelsight()
 	local weap_base = self._equipped_unit:base()	
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
+	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
 	if weap_base then
-		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 			force_ads_recoil_anims = nil
 		end
 	end
@@ -3379,8 +3463,8 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 	local fire_mode = weap_base:fire_mode()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
-	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+	local force_ads_recoil_anims = weap_base and (weap_base:weapon_tweak_data().always_play_anims or weap_base:second_sight_spread_mult())
+	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims and not weap_base:second_sight_spread_mult() then
 		force_ads_recoil_anims = nil
 	end
 
@@ -3635,11 +3719,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 				self._unit:character_damage()._check_berserker_done = false
 				self._unit:character_damage()._can_survive_one_hit = false
-				self._unit:character_damage():set_health(0)
-				self._unit:character_damage():set_armor(0)
 				self._unit:character_damage():force_into_bleedout()
-				--self._unit:character_damage():_check_bleed_out(nil)
-    			managers.player:set_player_state("bleed_out")
+    			managers.player:set_player_state("fatal")
 			elseif special_weapon == "mjolnir" then
 				local curve_pow = melee_weapon.explosion_curve_pow or 0.5
 				local exp_dmg = melee_weapon.explosion_damage or 60
@@ -3779,6 +3860,30 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_special_damage(col_ray, character_unit, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage, action_data.damage_effect)
+
+			--[[
+			local do_push = melee_weapon.do_push
+			if defense_data and defense_data.head_shot and defense_data.type and defense_data.type == "death" then			
+				if not managers.groupai:state():whisper_mode() then
+					local rotation = self._unit:movement():m_head_rot()
+					local v_mult = (self._melee_attack_var_l_r and self._melee_attack_var_l_r[2]) or 0
+					local l_r = (self._melee_attack_var_l_r and (((self._melee_attack_var_l_r == "left" or self._melee_attack_var_l_r[1] == "left") and 1) or ((self._melee_attack_var_l_r == "right" or self._melee_attack_var_l_r[1] == "right") and -1))) or 0
+
+					local l_r_force = (1 - v_mult) * (l_r * -180)
+					local v_force = math.abs(l_r_force) > 90 and -1 or 1
+					local forward_vec = Vector3( l_r_force, -90 * -v_force , v_mult * -180 * v_force)
+
+					mvector3.rotate_with(forward_vec, rotation)
+					local hit_pos = mvector3.copy(character_unit:movement():m_pos())
+					local attack_dir = hit_pos - self._unit:movement():m_head_pos() + forward_vec
+					local distance = mvector3.normalize(attack_dir)
+					local magnitude = 0.8 + math.lerp(0, 0.4, charge_lerp_value)
+					mvector3.multiply(attack_dir, magnitude)
+					managers.game_play_central:do_shotgun_push(character_unit, col_ray.hit_position, attack_dir, distance)
+
+				end
+			end
+			]]
 			
 			return defense_data
 		else
@@ -3893,12 +3998,14 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
 		self._equipped_unit:base():tweak_data_anim_stop("fire")
 		self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
+		self._equipped_unit:base():tweak_data_anim_stop("magazine_empty")
 		self._state_data.reload_enter_expire_t = nil
 		self:_start_action_reload(t)
 	end
 	
 	--Moved earlier in function to avoid math on nil value.
 	local speed_multiplier = self._equipped_unit:base():reload_speed_multiplier()
+	local anim_multiplier = self._equipped_unit:base()._reload_anim_multiplier or 1
 	
 	if self._state_data.reload_expire_t then
 		local interupt = nil
@@ -3924,7 +4031,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				if not interupt then
 					self._equipped_unit:base():on_reload()
 				end
-				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():reload_exit_expire_t() or empty_use_mag_timer)) / speed_multiplier
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or (self._equipped_unit:base():reload_exit_expire_t() or empty_use_mag_timer)) / (speed_multiplier * anim_multiplier)
 				managers.statistics:reloaded()
 				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
 			elseif self._equipped_unit:base():reload_exit_expire_t() then
@@ -3932,15 +4039,15 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				local animation_name = (not always_use_empty_reload and is_reload_not_empty and "reload_not_empty_exit") or "reload_exit"
 				local animation = self:get_animation(animation_name)
 				
-				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / (speed_multiplier * anim_multiplier)
 
-				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
+				local result = self._ext_camera:play_redirect(animation, speed_multiplier * anim_multiplier)
 				
-				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier, nil, reload_fix_offset2)
+				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier * anim_multiplier, nil, reload_fix_offset2)
 
 				if reload_fix_offset then
 					local reload_anim = is_reload_not_empty and "reload_not_empty" or "reload"
-					self._equipped_unit:base():tweak_data_anim_play(reload_anim, speed_multiplier, reload_fix_offset)
+					self._equipped_unit:base():tweak_data_anim_play(reload_anim, speed_multiplier * anim_multiplier, reload_fix_offset)
 				end
 				
 				
@@ -3991,6 +4098,7 @@ Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimRel
 	if weap_base and weap_base:can_reload() then
 		weap_base:tweak_data_anim_stop("fire")
 		weap_base:tweak_data_anim_stop("fire_steelsight")
+		weap_base:tweak_data_anim_stop("magazine_empty")
 		if weap_base.AKIMBO then
 			weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
 			weap_base._second_gun:base():tweak_data_anim_stop("reload")
@@ -4013,8 +4121,11 @@ function PlayerStandard:_start_action_reload(t)
 		end
 		if ((ignore_fullreload and clip_empty) or (ignore_nonemptyreload and not clip_empty)) then
 			weapon:tweak_data_anim_stop("fire")
+			weapon:tweak_data_anim_stop("fire_steelsight")
+			weapon:tweak_data_anim_stop("magazine_empty")
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
+			local anim_multiplier = weapon._reload_anim_multiplier or 1
 			local reload_prefix = weapon:reload_prefix() or ""
 			local reload_name_id = anims_tweak.reload_name_id or weapon.name_id
 	
@@ -4023,11 +4134,11 @@ function PlayerStandard:_start_action_reload(t)
 	
 			weapon:start_reload()
 
-			self._ext_camera:play_redirect(Idstring(reload_prefix .. reload_anim .. "_" .. reload_name_id), speed_multiplier)
+			self._ext_camera:play_redirect(Idstring(reload_prefix .. reload_anim .. "_" .. reload_name_id), speed_multiplier * anim_multiplier)
 			self._state_data.reload_expire_t = t + expire_t / speed_multiplier
 	
-			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier) then
-				weapon:tweak_data_anim_play("reload", speed_multiplier)
+			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier * anim_multiplier) then
+				weapon:tweak_data_anim_play("reload", speed_multiplier * anim_multiplier)
 			end
 	
 			self._ext_network:send("reload_weapon", ignore_fullreload and 0 or 1, speed_multiplier)
@@ -4038,8 +4149,10 @@ function PlayerStandard:_start_action_reload(t)
 		
 			weapon:tweak_data_anim_stop("fire")
 			weapon:tweak_data_anim_stop("fire_steelsight")
+			weapon:tweak_data_anim_stop("magazine_empty")
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
+			local anim_multiplier = weapon._reload_anim_multiplier or 1
 			local empty_reload = weapon:clip_empty() and 1 or 0
 	
 			if weapon:use_shotgun_reload() then
@@ -4063,14 +4176,14 @@ function PlayerStandard:_start_action_reload(t)
 			end
 	
 			local reload_ids = Idstring(string.format("%s%s_%s", reload_prefix, reload_anim, reload_name_id))
-			local result = self._ext_camera:play_redirect(reload_ids, speed_multiplier)
+			local result = self._ext_camera:play_redirect(reload_ids, speed_multiplier * anim_multiplier)
 	
 			Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_ids)
 	
 			self._state_data.reload_expire_t = t + (reload_tweak or weapon:reload_expire_t(is_reload_not_empty) or reload_default_expire_t) / speed_multiplier
 	
-			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier) then
-				weapon:tweak_data_anim_play("reload", speed_multiplier)
+			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier * anim_multiplier) then
+				weapon:tweak_data_anim_play("reload", speed_multiplier * anim_multiplier)
 				Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_anim)
 			end
 	
@@ -4090,15 +4203,25 @@ function PlayerStandard:_start_action_reload(t)
  	end
 end
 
-function PlayerStandard:_get_swap_speed_multiplier()
+function PlayerStandard:_get_swap_speed_multiplier(use_alt)
 	local multiplier = 1
-	local weapon_tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local weap_base = self._equipped_unit:base()
+	local weapon_tweak = weap_base and weap_base:weapon_tweak_data()
+	local alt_swap = (self._unit:inventory():equipped_selection() == 1 and self._unit:inventory():unit_by_selection(2):base()) or 
+		(self._unit:inventory():equipped_selection() == 2 and self._unit:inventory():unit_by_selection(1):base())
+	local alt_swap_tweak = alt_swap and alt_swap:weapon_tweak_data()
+	if weapon_tweak and weapon_tweak.use_unequip_swap then
+		use_alt = nil
+	end
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
-	multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1] --Get concealment bonus/penalty.
+	multiplier = multiplier * tweak_data.weapon.stats.mobility[ (
+		(use_alt and alt_swap:get_concealment()) or 
+		(weap_base:get_concealment())
+	) + 1] --Get concealment bonus/penalty.
 
 	--Get per category multipliers (IE: Pistols swap faster, Akimbos swap slower, ect).
-	for _, category in ipairs(weapon_tweak_data.categories) do
+	for _, category in ipairs((use_alt and alt_swap_tweak.categories) or weapon_tweak.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", 1)
 		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
@@ -4108,7 +4231,7 @@ function PlayerStandard:_get_swap_speed_multiplier()
 	end
 
 	--Get per weapon multiplier.
-	multiplier = multiplier * (weapon_tweak_data.swap_speed_multiplier or 1)
+	multiplier = multiplier * ((use_alt and alt_swap_tweak.swap_speed_multiplier) or weapon_tweak.swap_speed_multiplier or 1)
 
 	multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)
 
@@ -4431,7 +4554,7 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 		return
 	end
 
-	local action_forbidden = self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:running() or self:_is_reloading() or self:in_steelsight() or self:is_equipping() or self:shooting() or self:_is_cash_inspecting(t) or self:_in_burst()
+	local action_forbidden = self:_interacting() and not managers.player:has_category_upgrade("player", "no_interrupt_interaction") or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:running() or self:_is_overheating() or self:_is_reloading() or self:in_steelsight() or self:is_equipping() or self:shooting() or self:_is_cash_inspecting(t) or self:_in_burst()
 
 	if action_forbidden then
 		return
@@ -4459,8 +4582,8 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end
 
-function PlayerStandard:_start_action_unequip_weapon(t, data)
-	local speed_multiplier = self:_get_swap_speed_multiplier()
+function PlayerStandard:_start_action_unequip_weapon(t, data, alt_swap)
+	local speed_multiplier = self:_get_swap_speed_multiplier(alt_swap)
 
 	self._equipped_unit:base():tweak_data_anim_stop("equip")
 	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
@@ -4565,29 +4688,807 @@ function PlayerStandard:_interupt_action_throw_projectile(t)
 	self:_stance_entered()
 end
 
-if AdvMov then
+function PlayerStandard:_check_step(t)
+	if (self._state_data.in_air or self._is_sliding) and not self._is_wallrunning then
+		return
+	end
+
+	self._last_step_pos = self._last_step_pos or Vector3()
+	local step_length = self._state_data.on_ladder and 50 or self._is_wallrunning and 250 or ((not self._is_wallrunning and (self._state_data.ducking or self._state_data.in_steelsight)) and 125) or self._running and 175 or 150
+
+	if mvector3.distance_sq(self._last_step_pos, self._pos) > step_length * step_length then
+		mvector3.set(self._last_step_pos, self._pos)
+		self._unit:base():anim_data_clbk_footstep()
+	end
+end
+
+
+if AdvMov then --Everything here was originally from Solo Queue Pixy and none of this will function without the "Advanced Movement Standalone" mod
+--Sorry for butchering your code :> -DMC
+
 	local AdvMovWallKick = PlayerStandard._check_wallkick
 	--Kills wallkick checks
 	function PlayerStandard:_check_wallkick(t, dt)
-		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") then
+		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") or not self._unit:movement():is_above_stamina_threshold() then
 		else
 			AdvMovWallKick(self, t, dt)
 		end
 	end
-	local AdvMovRayCheck = PlayerStandard._get_nearest_wall_ray_dir
-	--Should make it so wallrun checks always fail, effectively disabling wallrunning
+
+	-- lets me quickly adjust how far the detection rays should go
+	local wallslide_values = {60} -- minimum of 50-51?
+	wallslide_values[2] = wallslide_values[1] * 0.707 -- sin 45
+	wallslide_values[3] = wallslide_values[1] * 0.924 -- cos 22.5/sin 67.5
+	wallslide_values[4] = wallslide_values[1] * 0.383 -- sin 22.5/cos 67.5
+
 	function PlayerStandard:_get_nearest_wall_ray_dir(ray_length_mult, raytarget, only_frontal_rays, z_offset)
-		if restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF") and raytarget ~= "enemy" then
+		local length_mult = ray_length_mult or 1
+		local playerpos = managers.player:player_unit():position()
+		if z_offset then
+			mvector3.add(playerpos, Vector3(0, 0, z_offset))
+		end
+		-- only get one axis of rotation so facing up doesn't end the wallrun via not detecting a wall to run on
+		local rotation = self._ext_camera:rotation()
+		mvector3.set_x(rotation, 0)
+		mvector3.set_y(rotation, 0)
+		local shortest_ray_dist = 10000
+		local shortest_ray_dir = nil
+		local shortest_ray = nil
+		local first_ray_dist = 10000
+		local first_ray_dir = nil
+		local first_ray = nil
+
+		-- alternate table to check more than cardinal and intercardinal directions
+		local ray_adjust_table = nil
+		if not self._nearest_wall_ray_dir_state then
+			self._nearest_wall_ray_dir_state = true
+			ray_adjust_table = {
+				{-1 * wallslide_values[2], wallslide_values[2]}, -- 315, forward-left
+				{0, wallslide_values[1]}, -- 360/0, forward
+				{wallslide_values[2], wallslide_values[2]}, -- 45, forward-right
+				{wallslide_values[1], 0}, -- 90, right
+				{wallslide_values[2], -1 * wallslide_values[2]}, -- 135, back-right
+				{0, -1 * wallslide_values[1]}, -- 180, back
+				{-1 * wallslide_values[2], -1 * wallslide_values[2]}, -- 225, back-left
+				{-1 * wallslide_values[1], 0} -- 270, left
+			}
+			if only_frontal_rays then
+				ray_adjust_table[4] = nil
+				ray_adjust_table[5] = nil
+				ray_adjust_table[6] = nil
+				ray_adjust_table[7] = nil
+				ray_adjust_table[8] = nil
+			end
+		else
+			self._nearest_wall_ray_dir_state = nil
+			ray_adjust_table = {
+				{-1 * wallslide_values[4], wallslide_values[3]}, -- 292.5
+				{-1 * wallslide_values[3], wallslide_values[4]}, -- 337.5
+				{wallslide_values[3], wallslide_values[4]}, -- 22.5
+				{wallslide_values[4], wallslide_values[3]}, -- 67.5
+				{wallslide_values[4], -1 * wallslide_values[3]}, -- 112.5
+				{wallslide_values[3], -1 * wallslide_values[4]}, -- 157.5
+				{-1 * wallslide_values[3], -1 * wallslide_values[4]}, -- 202.5
+				{-1 * wallslide_values[4], -1 * wallslide_values[3]} -- 247.5
+			}
+			if only_frontal_rays then
+				--ray_adjust_table[4] = nil
+				ray_adjust_table[5] = nil
+				ray_adjust_table[6] = nil
+				ray_adjust_table[7] = nil
+				ray_adjust_table[8] = nil
+			end
+		end
+
+		for i = 1, #ray_adjust_table do
+			local ray = Vector3()
+			mvector3.set(ray, playerpos)
+			local ray_adjust = Vector3(ray_adjust_table[i][1] * length_mult, ray_adjust_table[i][2] * length_mult, 0)
+			mvector3.rotate_with(ray_adjust, rotation)
+			mvector3.add(ray, ray_adjust)
+			local ray_check = Utils:GetCrosshairRay(playerpos, ray)
+			if ray_check and (shortest_ray_dist > ray_check.distance) then
+				-- husks use different data reee
+				local is_enemy = managers.enemy:is_enemy(ray_check.unit) and ray_check.unit:brain():is_hostile() -- exclude sentries
+				local is_enemy_ch_dmg = ray_check.unit and (
+					(ray_check.unit.character_damage and ray_check.unit:character_damage()) or 
+					(ray_check.unit:parent() and ray_check.unit:parent().character_damage and ray_check.unit:parent():character_damage() ) 
+				) 
+				local is_shield = ray_check.unit:in_slot(8) and alive(ray_check.unit:parent())
+				local enemy_not_surrendered = is_enemy and ray_check.unit:brain() and not (ray_check.unit:brain()._surrendered or ray_check.unit:brain():surrendered())
+				local enemy_not_joker = is_enemy and ray_check.unit:brain() and not (ray_check.unit:brain()._converted or (ray_check.unit:brain()._logic_data and ray_check.unit:brain()._logic_data.is_converted))
+				local enemy_not_trading = is_enemy and ray_check.unit:brain() and not (ray_check.unit:brain()._logic_data and ray_check.unit:brain()._logic_data.name == "trade") -- i don't know how to check for trading on husk
+
+				if raytarget ~= "enemy" and not ray_check.unit:in_slot( managers.slot:get_mask("world_geometry") ) then
+					return nil
+				end
+
+				if raytarget == "enemy" and ((is_enemy and enemy_not_surrendered and enemy_not_joker and enemy_not_trading) or is_shield) then
+					shortest_ray_dist = ray_check.distance
+					shortest_ray_dir = ray_adjust
+					shortest_ray = ray_check
+				elseif raytarget == "breakable" and ray_check.unit:damage() and not ray_check.unit:character_damage() then
+					shortest_ray_dist = ray_check.distance
+					shortest_ray_dir = ray_adjust
+					shortest_ray = ray_check
+				elseif not raytarget then
+					shortest_ray_dist = ray_check.distance
+					shortest_ray_dir = ray_adjust
+					shortest_ray = ray_check
+				end
+			end
+		end
+
+		if shortest_ray_dist == 10000 then
 			return nil
 		else
-			return AdvMovRayCheck(self, ray_length_mult, raytarget, only_frontal_rays, z_offset)
+			return {dir = shortest_ray_dir, raydata = shortest_ray}
 		end
 	end
-	local AdvMovDoMelee = PlayerStandard._do_movement_melee_damage
-	function PlayerStandard:_do_movement_melee_damage(forward_only, strongkick)
+
+ 	-- DON'T FORGET TO CHANGE THE INFMENU TO ADVMOV WHEN COPYING CHANGES OVER DOOFUS
+	function PlayerStandard:_do_movement_melee_damage(forward_only, strongkick, sprintkick)
 		local AdvMovMelee = restoration.Options:GetValue("AdVMovResOpt/AdvMovMelee") or 1
-		if AdvMovMelee == 1 or (AdvMovMelee == 2 and not managers.groupai:state():whisper_mode()) then
-			return AdvMovDoMelee(self, forward_only, strongkick)
+		if not self._unit:movement():is_above_stamina_threshold() or (AdvMovMelee == 2 and managers.groupai:state():whisper_mode()) or AdvMovMelee == 3 and not self._is_dashing then
+			return nil
+		end
+		local enemy_ray1 = self:_get_nearest_wall_ray_dir(2, "enemy", forward_only, nil)
+		local enemy_ray2 = self:_get_nearest_wall_ray_dir(2, "enemy", forward_only, 70)
+		local enemy_ray = enemy_ray1 or enemy_ray2
+
+		local breakable_ray1 = nil
+		local breakable_ray2 = nil
+		if not enemy_ray then
+			breakable_ray1 = self:_get_nearest_wall_ray_dir(1, "breakable", forward_only)
+			breakable_ray2 = self:_get_nearest_wall_ray_dir(1, "breakable", forward_only, 70)
+		end
+		local breakable_ray = breakable_ray1 or breakable_ray2
+
+		if enemy_ray or breakable_ray then
+			local target_ray_data = enemy_ray or breakable_ray
+			local targetunit = target_ray_data.raydata.unit
+
+			-- kick away if hitting an enemy/shield
+			local finaltarget = targetunit
+
+			self._wallkick_hold_start_t = nil
+
+			local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock") or not target_ray_data.raydata.unit:in_slot(8) -- can hit shields in the back
+			local dmg_data = {
+				damage = (6.0 * ((self._is_sliding and 2) or 1) * (((sprintkick and not self._is_jumping) and 0.5) or 1)),
+				damage_effect = (12.0 * ((self._is_sliding and 2) or 1) * (((sprintkick and not self._is_jumping) and 0) or 1)),
+				attacker_unit = self._unit,
+				col_ray = target_ray_data.raydata,
+				charge_lerp_value = 0,
+				shield_knock = (self._is_sliding or strongkick) and can_shield_knock,
+				name_id = managers.localization:text("bm_melee_advmov"),
+				variant = "melee"
+			}
+			if targetunit:in_slot(8) and alive(targetunit:parent()) and not targetunit:parent():character_damage():is_immune_to_shield_knockback() then
+				-- shield behaviors
+				dmg_data.damage = 0
+				finaltarget = targetunit:parent()
+			end
+			local kill = nil
+			local final_dmg = nil
+			if finaltarget and finaltarget:character_damage() and finaltarget:character_damage().damage_melee and dmg_data then -- blanket "what the fuck is crashing" prevention since i don't know how to reproduce it consistently
+				local atk_dir_z_offset = -100
+				local is_bulldozer = finaltarget:base():has_tag("tank")
+				if strongkick and not is_bulldozer then
+					dmg_data.damage = dmg_data.damage * 2
+					dmg_data.damage_effect = dmg_data.damage_effect * 2
+					atk_dir_z_offset = atk_dir_z_offset * 2
+				end
+				final_dmg = dmg_data.damage
+				-- hit enemy
+				-- apply damage
+				finaltarget:character_damage():damage_melee(dmg_data)
+				self:_perform_sync_melee_damage(finaltarget, target_ray_data.raydata, dmg_data.damage)
+				-- push corpse around
+				-- don't push live targets, they'll ragdoll
+				if finaltarget:character_damage()._health <= 0 then
+					local hit_pos = mvector3.copy(finaltarget:movement():m_pos())
+					local attack_dir = hit_pos - self._unit:movement():m_head_pos() - Vector3(0, 0, atk_dir_z_offset)
+					local distance = mvector3.normalize(attack_dir)
+					-- attack dir also controls how ridiculous the ragdoll push is
+					-- Vector3(0, 0, 1) bounces directly upwards
+					local magnitude = 1
+					if strongkick then
+						magnitude = magnitude * 1.25
+					end
+					if AdvMov.settings.kickyeet then
+						magnitude = magnitude * AdvMov.settings.kickyeet
+					end
+					mvector3.multiply(attack_dir, magnitude)
+					if not managers.groupai:state():whisper_mode() then
+						managers.game_play_central:do_shotgun_push(finaltarget, target_ray_data.raydata.hit_position, attack_dir, distance)
+					end
+					kill = true
+				end
+				if self._last_movekick_shake_t and self._last_movekick_shake_t + 0.2 < self._last_t then
+					self._ext_camera:play_shaker("player_start_running", 1)
+				end
+			elseif finaltarget and not finaltarget:character_damage() and finaltarget:damage() and dmg_data then
+				-- hit object
+				-- core\lib\units\coreunitdamage.lua
+				-- observe as exactly one argument is used
+				if not managers.groupai:state():whisper_mode() then
+					finaltarget:damage():add_damage(nil, nil, nil, nil, nil, nil, dmg_data.damage, nil, nil)
+					self:_perform_sync_melee_damage(finaltarget, target_ray_data.raydata, dmg_data.damage)
+				end
+			else
+				log("AAAAAAAAAAAAA WHY IS DUMB KICK NO WORK")
+			end
+			if enemy_ray then
+				local speed = self:_get_modified_move_speed("run")
+				local kick_dir = target_ray_data.dir
+				kick_dir = self:_reverse_vector(kick_dir)
+				mvector3.normalize(kick_dir)
+				mvector3.multiply(kick_dir, speed * 0.50)
+				local jump_amount = tweak_data.player.movement_state.standard.movement.jump_velocity.z
+				mvector3.add(kick_dir, Vector3(0, 0, jump_amount * 0.25))
+				if self._unit:mover() and (not self._is_sliding or not kill) then
+					self._unit:mover():set_velocity(kick_dir)
+				end
+				local hit_sfx = "hit_body"
+				if finaltarget:character_damage() and finaltarget:character_damage().melee_hit_sfx then
+					hit_sfx = finaltarget:character_damage():melee_hit_sfx()
+				end
+				if self._using_superblt and final_dmg then
+					if final_dmg > 23.9 then
+						self._inf_sound:post_event("kick_heavy")
+					elseif final_dmg > 11.9 then
+						self._inf_sound:post_event("kick_light")
+					elseif final_dmg > 5.9 then
+						self:_play_melee_sound("weapon", hit_sfx, 0)
+					else
+						self:_play_melee_sound("fists", hit_sfx, 0)
+					end
+				else
+					self:_play_melee_sound("fists", hit_sfx, 0)
+					--self:_play_melee_sound("fists", "hit_gen", 0)
+				end
+
+				self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.JUMP_STAMINA_DRAIN * 0.5)
+				self._unit:movement():_restart_stamina_regen_timer()
+			end
+
+			if enemy_ray and self._running then
+				self:_end_action_running(self._last_t)
+			end
+
+			if enemy_ray and not kill then 
+				self:_cancel_slide()
+				self._is_wallkicking = nil
+			end
+
+			return true, kill
+		end
+		return nil
+	end
+
+	function PlayerStandard:_check_slide()
+		if not self._state_data.in_air or self._is_jumping then
+			self._is_wallkicking = nil
+		end
+		if not ((managers.groupai:state():whisper_mode() and AdvMov.settings.slidestealth == 1) or (not managers.groupai:state():whisper_mode() and AdvMov.settings.slideloud == 1)) then
+			if self._last_velocity_xy and (self._running or (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t)) or ( self._last_run_t and self._state_data.in_air and self._last_run_t + 0.5 > self._last_t ) or self._is_wallkicking) and not self._wallkick_is_clinging and (self._last_t - (self._start_running_t or 0)) > 0.2 then
+				-- must be moving at least a certain speed to slide
+				local movedir = self._move_dir or self._last_velocity_xy -- don't use self:get_sampled_xy() in any of the other lines in here
+				local velocity = Vector3()
+				mvector3.set(velocity, self._last_velocity_xy)
+				local horizontal_speed = mvector3.normalize(velocity)
+				local walkspeed = self:_get_modified_move_speed()
+				local slide_cooldown = 0.8
+				--[[
+				if self._slide_dir then
+					-- reduce cooldown if not attempting slide in the same direction i.e. do the speedyboi
+					local slide_angle = math.atan2(self._slide_dir.y, self._slide_dir.x)
+					local move_angle = math.atan2(movedir.y, movedir.x)
+					local angle_diff = math.abs(move_angle - slide_angle)
+					if angle_diff > 45 then
+						slide_cooldown = slide_cooldown / (angle_diff/45)
+					end
+				end
+				--]]
+				if not self._is_wallrunning and (self._is_wallkicking or (horizontal_speed > (walkspeed * 1.1) )) and ((self._last_t - self._last_slide_time) > slide_cooldown) then
+					self._dash_slide = (self._last_dash_time and (self._last_dash_time + 0.25 > self._last_t))
+					self._is_sliding = true
+					self._slide_dir = mvector3.copy(movedir)
+					self._slide_slow_add = 0
+					self._slide_desired_dir = mvector3.copy(movedir)
+					self._sprinting_speed = self:_get_modified_move_speed("run")
+					-- make it feel like a speedy slide
+					self._slide_speed = math.clamp(self._sprinting_speed * 1.5, 1000, 1500) --self._tweak_data.movement.speed.RUNNING_MAX * 1.3
+					self._slide_refresh_t = 0
+					self._slide_last_z = self._unit:position().z
+					self._slide_last_speed = self._slide_speed
+					self._slide_end_speed = self:_get_modified_move_speed("crouch")/4 -- don't need to calculate every frame
+					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.3) -- it's magic
+					self:_stance_entered()
+
+					self._last_slide_time = self._last_t
+					if not self._state_data.in_air then
+						self._is_wallkicking = nil
+						self._last_run_t = nil
+					end
+
+					local ch_dmg = self._unit:character_damage()
+					local dash_stats = tweak_data.upgrades.values.player.dash_stats
+					local dash_base_t = dash_stats.grace_t
+					if ch_dmg and self._last_t + dash_base_t > ((self._last_dash_iframes or 0) + dash_base_t) then
+						local effect_alpha = (restoration.Options:GetValue("AdVMovResOpt/AdvMovSlideScreenEffectAlpha") or 0.5)
+						managers.hud:activate_effect_screen(dash_base_t, Vector3(0.625, 0.625, 1.0) * effect_alpha, true)
+						ch_dmg._last_received_dmg = math.huge
+						ch_dmg._next_allowed_dmg_t = Application:digest_value(self._last_t + dash_base_t, true)
+					end
+				end
+			end
 		end
 	end
+
+	function PlayerStandard:_do_dash(input)
+		if not (managers.player:current_state() == "mask_off" or managers.player:current_state() == "civilian") then
+			self:_cancel_slide()
+			-- check if carrying a bag
+			local my_carry_data = managers.player:get_my_carry_data()
+			local dash_stats = tweak_data.upgrades.values.player.dash_stats
+			local dash_mult = dash_stats.speed * ((self._running and 1.15) or 1)
+			local dash_height_mult = -4
+			if my_carry_data then
+				-- and use its movespeed to scale down dash distance
+				local carried_type = tweak_data.carry[my_carry_data.carry_id].type
+				if tweak_data.carry.types[carried_type] then
+					dash_mult = dash_mult * tweak_data.carry.types[carried_type].move_speed_modifier
+					--dash_height_mult = tweak_data.carry.types[carried_type].jump_modifier
+				end
+			end
+			if self._unit:mover() then
+				local rotation_flat = self._ext_camera:rotation()
+				local forward_backstep = restoration.Options:GetValue("AdVMovResOpt/AdvMovBackstep")
+				local do_backstep = nil
+				if input.y > 0 then
+					do_backstep = true
+					if input.x ~= 0 then
+						input = Vector3(input.x > 0 and 1 or -1, 0, 0)
+					else
+						if forward_backstep then
+							input = Vector3(0, -1, 0)
+						else
+							return false
+						end
+					end
+				end
+				local dash_limit = dash_stats.limit + managers.player:get_value_from_risk_upgrade( managers.player:upgrade_value("player", "detection_risk_dash_count") )
+				local last_dash_t = self._last_t - (self._last_dash_time or 0)
+				if last_dash_t <= dash_stats.cooldown then
+					self._dash_count = math.min( dash_limit + 1, (self._dash_count or 1) + 1)
+				else
+					self._dash_count = 1
+				end
+
+				local ch_dmg = self._unit:character_damage()
+				local full_dodge = nil
+				local dash_fatigue = ((self._dash_count > dash_limit) and true) or false
+				local last_dash = ((self._dash_count == dash_limit) and true) or false
+				local dash_base_t = dash_stats.grace_t
+				if ch_dmg then
+					local dodge_meter = ch_dmg._dodge_meter
+					if not dash_fatigue and dodge_meter and dodge_meter >= (1 - ch_dmg._dodge_points) then
+						full_dodge = true
+					end
+					local dodge_t = math.max(0, ch_dmg._dodge_points * ((full_dodge and dash_stats.add_mult_dodge) or dash_stats.add_mult or 1))
+					local dash_t_cap = (full_dodge and dash_stats.grace_cap_dodge) or dash_stats.grace_cap
+					local iframes = (math.min( dash_t_cap, (dash_base_t + dodge_t)) * ((dash_fatigue and dash_stats.fatigue_mult) or 1))
+					local effect_alpha = (restoration.Options:GetValue("AdVMovResOpt/AdvMovDashScreenEffectAlpha") or 0.8) * ((dash_fatigue and 0.5) or 1)
+					managers.hud:activate_effect_screen(iframes, ((last_dash and Vector3(1.0, 1.0, 0.625)) or (dash_fatigue and Vector3(1.0, 0.625, 0.625)) or Vector3(0.625, 0.625, 1.0)) * effect_alpha, true)
+					ch_dmg._last_received_dmg = math.huge
+					ch_dmg._next_allowed_dmg_t = Application:digest_value(self._last_t + iframes, true)
+					if dash_fatigue then
+						ch_dmg:fill_dodge_meter( -0.2 )
+					end
+					self._last_dash_iframes = self._last_t + iframes
+				end
+
+				input = input:normalized()
+				mvector3.set_x(rotation_flat, 0)
+				mvector3.set_y(rotation_flat, 0)
+				mvector3.rotate_with(input, rotation_flat)
+				mvector3.multiply(input, ((500 * ((do_backstep and 1.1) or 1) ) * dash_mult * (dash_fatigue and dash_stats.fatigue_mult or 1) ))
+				mvector3.add(input, Vector3(0, 0, (200 * ((do_backstep and 1.2) or 1) ) * dash_height_mult ))
+
+				self._last_velocity_xy = input
+				self._unit:mover():set_velocity(input)
+				self._last_dash_time = self._last_t
+				self._ext_camera:play_shaker("player_land", 0.25)
+				self._unit:sound():_play("footstep_land")
+				self._unit:sound():_play("footstep_land")
+				self._unit:sound():_play("footstep_land")
+				if not dash_fatigue then
+					self._unit:sound():_play("m4_melee_attack")
+				end
+				self._is_dashing = true
+				self._unit:movement():_restart_stamina_regen_timer()
+				return true
+			end
+		end
+		return false
+	end
+
+	function PlayerStandard:_cancel_slide(timemult)
+		self._is_sliding = nil
+		self._slide_speed = nil
+		self._dash_slide = nil
+		self._slide_has_played_shaker = nil
+		self:_stance_entered(nil, timemult)
+	end
+
+	function PlayerStandard:_cancel_wallrun(t, kick_off_mode, timemult)
+		local exit_wallrun_vel = Vector3()
+		if self._unit:mover() and self._end_wallrun_kick_dir and kick_off_mode == "fall" then
+			mvector3.add(exit_wallrun_vel, self._end_wallrun_kick_dir)
+			self._unit:mover():set_velocity(exit_wallrun_vel)
+		end
+
+		if self._unit:mover() then
+			self._unit:mover():set_gravity(Vector3(0, 0, -982))
+		end
+
+		if kick_off_mode == "jump" then
+			self:_do_wallkick()
+		end
+
+		if self._state_data.in_air then
+			self._state_data.enter_air_pos_z = self._pos.z
+		end
+		self._is_wallrunning = nil
+		self._last_wallrun_t = t
+		self._last_wallkick_t = t
+		self:_stance_entered(nil, timemult)
+	end
+
+	Hooks:RemovePostHook( "slide_update" )
+	Hooks:RemovePostHook( "check_wallrun_update" )
+	Hooks:RemovePostHook( "dash_update" )
+	local _update_movement_old = PlayerStandard._update_movement
+	function PlayerStandard:_update_movement(t, dt)
+		_update_movement_old(self, t, dt)
+
+	--[ [
+		if not self._last_movekick_shake_t then
+			self._last_movekick_shake_t = 0
+		end
+
+		if self._wallkick_is_clinging and self._wallkick_hold_start_t and ((t - self._wallkick_hold_start_t) < 4) then
+			if self._state_data.in_air then
+				self._state_data.enter_air_pos_z = self._pos.z
+			end
+		end
+
+		--SLIDING STUFF
+			self:_check_wallkick(t, dt)
+
+			if self._is_sliding then
+				if not self._state_data.in_air then
+					-- calculate stamina drain scaling based on current speed vs standard running speed
+					local drain_mult = self._slide_speed/self._sprinting_speed
+					-- drain stamina, prevent regen
+					self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE * dt * drain_mult)
+					--if drain_mult > 0.50 then
+						self._unit:movement():_restart_stamina_regen_timer()
+					--end
+				end
+
+				-- slow slide down as it continues
+				self._slide_speed = math.clamp(self._slide_speed - ((400 + self._slide_slow_add) * dt * self._slide_speed_factor^2), 0, 1500)
+
+				local last_refresh_dt = t - self._slide_refresh_t
+				if self._slide_refresh_t and last_refresh_dt > 0.1 then
+
+					if not self._state_data.in_air and (t - self._last_jump_t) > 0.20 then
+						-- play slide-start stuff
+						if not self._slide_has_played_shaker then
+							if managers.user:get_setting("use_headbob") then
+								self._ext_camera:play_shaker("player_start_running", 1)
+							end
+							self._slide_has_played_shaker = true
+							if self._using_superblt then
+								local choice = math.random(1, 2)
+								self._inf_sound:post_event("slide_enter" .. choice)
+							end
+						end
+						-- slide loops n shit
+						if (t - self._last_snd_slide_t) > 0.20 then
+							self._last_snd_slide_t = t
+							self._last_snd_slide = self._last_snd_slide or 0
+							self._last_snd_slide = (self._last_snd_slide % 6) + 1
+							local pitch = ""
+							if self._last_speed > (self._slide_end_speed * 5) then
+								pitch = ""
+							elseif self._last_speed > (self._slide_end_speed * 3) then
+								pitch = "slow"
+							elseif self._last_speed > (self._slide_end_speed * 2) then
+								pitch = "slower"
+							else
+								pitch = "slowest"
+							end
+							if self._using_superblt then
+								self._inf_sound:post_event("slide_loop" .. self._last_snd_slide .. pitch)
+							end
+						end
+					end
+
+					-- change speed depending on change in z position
+					local current_z = self._unit:position().z
+					local downspeed = self._slide_last_z - current_z
+					-- prevent massive bullshit accelerations from wallkick elevation converting to speed
+					if ((t - self._last_wallkick_t) > 0.3) then
+						self._slide_speed = self._slide_speed + (downspeed * 10 * last_refresh_dt * self._slide_speed_factor^2)
+					end
+					self._slide_refresh_t = t
+					self._slide_last_z = current_z
+
+					-- apply change of direction
+					if self._move_dir then
+						mvector3.add(self._slide_dir, self._slide_desired_dir)
+						mvector3.normalize(self._slide_dir) -- normalize or the gun goes shakey shakey
+					end
+				end
+				-- kick fools
+				if ((t - self._last_movekick_enemy_t) > 0.5) then
+					local has_kicked, kill = self:_do_movement_melee_damage(nil, self._is_wallkicking) -- do it really hard if you're still in midair
+					if has_kicked then
+						self._last_movekick_shake_t = t
+						if not kill or not self._is_sliding then
+							self._last_movekick_enemy_t = t
+						end
+					end
+				end
+				-- end slide if too slow
+				-- grace period for wallkicking to prevent slide from failing because it's detecting a low pre-kick-acceleration speed
+				if self._last_speed < (self._slide_end_speed) and ((t - self._last_wallkick_t) > 0.3) then
+					self:_cancel_slide(3)
+				end
+			elseif self._is_wallkicking then
+				-- coming in from that wallkick
+				if not self._state_data.in_air then
+					self._is_wallkicking = nil
+				end
+				if ((t - self._last_movekick_enemy_t) > 0.5) then
+					local has_kicked, kill = self:_do_movement_melee_damage(nil, self._is_wallkicking) -- megakick if wallkicking
+					if has_kicked then
+						self._last_movekick_shake_t = t
+						if not kill or not self._is_sliding then
+							self._last_movekick_enemy_t = t
+						end
+					end
+				end
+				-- transition to slide bby
+				if self._state_data.ducking and not self._is_dashing then
+					self:_check_slide()
+				end
+			elseif self._running and (AdvMov.settings.runkick == true or self._state_data.in_air) then
+				-- sprinting
+				if ((t - self._last_movekick_enemy_t) > 0.5) then
+					local has_kicked, kill = self:_do_movement_melee_damage(true, nil, true)
+					if has_kicked then
+						self._last_movekick_shake_t = t
+						if not kill or not self._is_sliding then
+							self._last_movekick_enemy_t = t
+						end
+					end
+				end
+			end
+
+		--WALLRUN STUFF 
+			local tapping_sprint = self._controller:get_input_pressed("run")
+			-- relaxed wallrun conditions to enable jump maps
+			-- allow wallrunning while bouncing from wall to wall without explicitly enabling 
+			local wallkick_off_cooldown = (self._is_wallkicking and ((t - self._last_wallkick_t) > 0.2))
+			local dmgkick_off_cooldown = ((t - self._last_movekick_enemy_t) > 1)
+			local holding_jump = self._controller:get_input_bool("jump")
+			local no_wallrun = restoration.Options:GetValue("AdVMovResOpt/DisableAdvMovTF")
+			if not no_wallrun and not holding_jump and self._state_data.in_air and (tapping_sprint or wallkick_off_cooldown) and dmgkick_off_cooldown and mvector3.normalize(self:_get_sampled_xy()) > 0 then
+				-- reduce cooldown if hitting a different wall
+				local lenghtmult = 1
+				if wallkick_off_cooldown then
+					lengthmult = 1.5
+				end
+				local nearest_ray1 = self:_get_nearest_wall_ray_dir(lenghtmult, nil, nil, 0)
+				local nearest_ray2 = self:_get_nearest_wall_ray_dir(lenghtmult, nil, nil, 40)
+				local nearest_ray = nearest_ray1 or nearest_ray2
+				if nearest_ray and self._last_wallrun_dir then
+					local last_angle = math.atan2(self._last_wallrun_dir.y, self._last_wallrun_dir.x)
+					local current_angle = math.atan2(nearest_ray.dir.y, nearest_ray.dir.x)
+					local angle_diff = 180 - math.abs(((last_angle - current_angle) % 360) - 180)
+					if angle_diff < 45 then
+						self._new_wallrun_delay = 1.0
+						if self._last_zdiff and self._last_zdiff < -0.25 then
+							-- prevent wallrun from catching on the wall you just tried to jump up
+							-- positive zdiff = downwards
+							self._new_wallrun_delay = self._new_wallrun_delay * 3
+						end
+					else
+						self._new_wallrun_delay = 0
+					end
+				end
+				local wallrun_on_cooldown = (t - self._last_wallrun_t) < (self._new_wallrun_delay or 0)
+				if self:_can_stand() and not self._is_wallrunning and not wallrun_on_cooldown and self._unit:movement():is_above_stamina_threshold() and not self:on_ladder() and nearest_ray then
+					self._sprinting_speed = self:_get_modified_move_speed("run")
+					self._wallrun_speed = self._sprinting_speed * 1.5
+					self._wallrun_last_speed = self._wallrun_speed
+					self._wallrun_end_speed = self:_get_modified_move_speed("crouch")
+					self._wallrun_speed_factor = self._wallrun_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.3)
+					self._is_wallrunning = true
+					self:_stance_entered()
+					if self._unit:mover() then
+						--log("starting wallrun")
+						local sampled_xy = mvector3.copy(self:_get_sampled_xy())
+						mvector3.normalize(sampled_xy)
+						mvector3.multiply(sampled_xy, self._wallrun_last_speed)
+						self._unit:mover():set_gravity(Vector3(0, 0, 0))
+						self._unit:mover():set_velocity(sampled_xy)
+					end
+					self._last_wallrun_dir = nearest_ray.dir
+				end
+			end
+
+			if self._is_wallrunning then
+				self._is_wallkicking = nil
+				if self._is_sliding then
+					self:_cancel_slide() --cancel the slide before cancelling the crouch to avoid the speed penalty of ending a slide early
+				end
+				if self._state_data.ducking then
+					self:_end_action_ducking(t)
+				end
+
+				-- drain stamina, prevent regen
+				self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.STAMINA_DRAIN_RATE * dt * (self._wallrun_last_speed/self._sprinting_speed))
+					self._unit:movement():_restart_stamina_regen_timer()
+
+				-- keep pushing player along the wall
+				if self._unit:mover() then
+					local sampled_xy = mvector3.copy(self:_get_sampled_xy())
+					mvector3.normalize(sampled_xy)
+					mvector3.multiply(sampled_xy, self._wallrun_last_speed)
+					self._unit:mover():set_velocity(sampled_xy)
+				end
+
+				-- slow wallrun down as it continues
+				self._wallrun_last_speed = math.clamp(self._wallrun_last_speed - ((300 + (0 or 0)) * dt * self._wallrun_speed_factor^2), 0, 1500)
+				if self._wallrun_last_speed < self._wallrun_end_speed then
+					self:_cancel_wallrun(t, "fall", 3)
+					--log("ending wallrun: too slow")
+				end
+
+				if (t - self._last_wallrun_t > 0.1) then
+					self._last_wallrun_t = t
+					if self:on_ladder() or not self:_get_nearest_wall_ray_dir(1.5) then
+						self._end_wallrun_kick_dir = self:_get_end_wallrun_kick_dir()
+						self:_cancel_wallrun(t, fall)
+						--log("ending wallrun: failed to detect wall")
+					end
+				end
+			end
+
+		--DASHING STUFF
+			if AdvMov.settings.dashcontrols and AdvMov.settings.dashcontrols > 1 then
+				local input = self._controller:get_input_axis("move")
+				local zero_input = (input.x == 0) and (input.y == 0)
+				local input_matches_dash_dir = self._dash_dir and (input.x == self._dash_dir.x) and (input.y == self._dash_dir.y)
+				local dash_stats = tweak_data.upgrades.values.player.dash_stats
+				local dash_off_cooldown = (t - (self._last_dash_time or 0)) > dash_stats.rate
+				local dash_conditions = dash_off_cooldown and not self:on_ladder()
+
+				if not self._state_data.in_air then
+					local input_not_matching_or_zero = not zero_input and not input_matches_dash_dir
+					local within_doubletap_window = ((t - (self._dash_primed_t or 0)) <= 0.15) and ((t - (self._dash_initial_tap_t or 0)) <= 0.30)
+					local dash_primed_timeout = not within_doubletap_window
+					local doubletap_conditions = (zero_input and within_doubletap_window) and (AdvMov.settings.dashcontrols == 3 or AdvMov.settings.dashcontrols == 4)
+					local keybind_conditions = (HoldTheKey and HoldTheKey:Keybind_Held("advmov_dash") and not zero_input) and (AdvMov.settings.dashcontrols == 2 or AdvMov.settings.dashcontrols == 4)
+
+					if input_matches_dash_dir and self._dash_stage == 2 then
+						-- player has tapped for the second time
+						self._dash_stage = 3
+						self._dash_primed_t = t
+					elseif dash_off_cooldown and ((self._dash_stage == 3 and doubletap_conditions) or keybind_conditions) then
+						-- player has released for the second time (and not held down the input)
+						local dir = doubletap_conditions and self._dash_dir or input
+						local dashed = self:_do_dash(dir)
+						if dashed then
+							self._dash_dir = nil
+							self._dash_stage = 0
+						end
+					elseif input_not_matching_or_zero then
+						-- initial tap/input different from previous
+						self._dash_dir = input
+						self._dash_stage = 1
+						self._dash_initial_tap_t = t
+					elseif dash_primed_timeout and self._dash_stage and (self._dash_stage > 2) then
+						-- reset, previous readied dash timed out
+						self._dash_dir = nil
+						self._dash_stage = 0
+					elseif zero_input and self._dash_stage == 1 then
+						-- player has released input for the first time
+						self._dash_stage = 2
+					end
+				end
+
+				if self._is_dashing and (t > (self._last_dash_time or 0) + 0.25) then
+					self._is_dashing = nil
+					managers.player:apply_slow_debuff(1, 0.5, nil, true)
+					self:_shooting_move_speed_timer(self._last_t, self._last_dt, true)
+				end
+			end
+
+	--]]
+	end
+
+	function PlayerStandard:_do_wallkick()
+		-- ending wallhang by wallkicking
+		-- kick off of wall in the direction you're facing
+		local fast_kickoff = false
+		local final_vel = Vector3(0, 0, 0)
+		--local nearest_wall_ray = self:_get_nearest_wall_ray_dir(2) -- extra long or the player can end up floating instead of wallkicking because the nearest wall isn't detected
+		local nearest_ray1 = self:_get_nearest_wall_ray_dir(2, nil, nil, 0)
+		local nearest_ray2 = self:_get_nearest_wall_ray_dir(2, nil, nil, 40)
+		local nearest_wall_ray = nearest_ray1 or nearest_ray2
+		local speed = self:_get_modified_move_speed("run")
+		local kick_dir = Vector3(0, math.min(speed * 1.5, 950), 0)
+		local rotation = managers.player:equipped_weapon_unit():rotation()
+		local rotation_flat = self._ext_camera:rotation()
+		mvector3.set_x(rotation_flat, 0)
+		mvector3.set_y(rotation_flat, 0)
+
+		-- i have no idea how to read from rotations so you get this instead
+		-- actual facing with vertical component
+		local facing_vec = Vector3(0, 1, 0)
+		mvector3.rotate_with(facing_vec, rotation)
+		-- same xy direction, no elevation
+		local forward_vec = Vector3(0, 1, 0)
+		mvector3.rotate_with(forward_vec, rotation_flat)
+		-- get difference to determine if player is facing over or under horizon
+		local zdiff = forward_vec.z - facing_vec.z
+		if true then --zdiff > 0 then
+			fast_kickoff = true
+		end
+
+		if nearest_wall_ray and nearest_wall_ray.dir then
+			self._last_wallrun_dir = nearest_wall_ray.dir
+			--if fast_kickoff then
+				-- 'fast' wallkick
+				-- kick in direction player is facing
+				--mvector3.multiply(kick_dir, 1.35) -- this mattered when fast/slow wallkicks were separate
+				mvector3.rotate_with(kick_dir, rotation)
+				mvector3.add(final_vel, kick_dir)
+
+				-- vertical boost so you don't automatically fly into the ground regardless of trajectory
+				mvector3.add(final_vel, Vector3(0, 0, 300 + (300 * zdiff)))
+
+				-- vertical reduction if aiming upwards so you can't leap over houses in a single bound or some shit
+				if zdiff < 0 then
+					mvector3.add(final_vel, Vector3(0, 0, speed * zdiff * 0.5))
+				end
+
+				if self._unit:mover() then
+					self._unit:mover():set_velocity(final_vel)
+					self._unit:mover():set_gravity(Vector3(0, 0, -982))
+				end
+
+				if self._state_data.in_air then
+					self._state_data.enter_air_pos_z = self._pos.z
+				end
+				self._last_zdiff = zdiff
+		end
+
+		if self._using_superblt then
+			self._inf_sound:post_event("kick_off")
+		else
+			self._unit:sound():_play("footstep_land")
+		end
+		self._unit:movement():subtract_stamina(tweak_data.player.movement_state.stamina.JUMP_STAMINA_DRAIN)
+		self._unit:movement():_restart_stamina_regen_timer()
+		self._is_wallkicking = true
+	end
+
 end

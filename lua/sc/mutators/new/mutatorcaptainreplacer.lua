@@ -180,11 +180,11 @@ function MutatorCaptainReplacer:setup()
 					rank = 2
 				},
 				{
-					unit = "omnia_LPF",
+					unit = "Phalanx_dozer",
 					freq = 1,
 					amount_min = 2,
 					amount_max = 2,
-					tactics = tweak_data.group_ai._tactics.FBI_medic_flank,
+					tactics = tweak_data.group_ai._tactics.Cap_winters_minion,
 					rank = 2
 				},
 				{

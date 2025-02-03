@@ -265,7 +265,7 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 		return false
 	elseif self:is_friendly_fire(attack_data.attacker_unit, nil, (attack_data.variant == "fire" or attack_data.variant == "explosion")) then
 		return false
-	elseif self:_chk_dmg_too_soon(attack_data.damage) then
+	elseif self:_chk_dmg_too_soon(attack_data.damage, attack_data.attacker_unit, ( (not attack_data.is_hit and attack_data.variant == "fire") or attack_data.variant == "explosion")) then
 		return false
 	elseif self._unit:movement():current_state().immortal then
 		return false
@@ -274,6 +274,15 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 		return false
 	end
 	return true
+end
+
+function PlayerDamage:_chk_dmg_too_soon(damage, attacker_unit, is_explosive)
+	local ignore_check = is_explosive or (attacker_unit and alive(attacker_unit) and attacker_unit == self._unit)
+	local next_allowed_dmg_t = type(self._next_allowed_dmg_t) == "number" and self._next_allowed_dmg_t or Application:digest_value(self._next_allowed_dmg_t, false)
+
+	if not ignore_check and (damage <= self._last_received_dmg + 0.01 and managers.player:player_timer():time() < next_allowed_dmg_t) then
+		return true
+	end
 end
 
 --Special function to handle damage dealt to players in bleedout.
@@ -373,7 +382,8 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	if ((attack_data.armor_piercing or variant == "explosion" or variant == "fire") and not self._unpierceable) or self_damage then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
-			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
+			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
+			managers.hud:activate_effect_screen(0.75, Vector3(1, 0.2, 0) * effect_alpha)
 		end
 	else
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
@@ -543,7 +553,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		end
 	end
 
-	if attacker_unit:base()._tweak_table == "tank" then
+	if attacker_unit:base()._tweak_table == "tank" or attacker_unit:base()._tweak_table == "tank_black" or attacker_unit:base()._tweak_table == "tank_skull" or attacker_unit:base()._tweak_table == "tank_medic" or attacker_unit:base()._tweak_table == "tank_mini" or attacker_unit:base()._tweak_table == "tank_biker" or attacker_unit:base()._tweak_table == "tank_titan" or attacker_unit:base()._tweak_table == "tank_titan_assault" or attacker_unit:base()._tweak_table == "tank_hw" or attacker_unit:base()._tweak_table == "tank_hw_black" then
 		managers.achievment:set_script_data("dodge_this_fail", true)
 	end
 	
@@ -594,6 +604,7 @@ function PlayerDamage:damage_bullet(attack_data)
 		local knockback_resistance = pm:upgrade_value("player", "knockback_resistance", 1) or 1
 		--Pain and suffering
 		if distance then
+			local effect_alpha = (restoration.Options:GetValue("HUD/Extra/ScreenEffectAlpha") or 1)
 			--Scab Gunner
 			if tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress and alive(self._unit) and not driving then
 				range = tweak_data.character[attacker_unit:base()._tweak_table].dt_suppress.range
@@ -611,7 +622,7 @@ function PlayerDamage:damage_bullet(attack_data)
 				}
 				self._unit:camera():play_shaker(vars[math.random(#vars)], 0.02)
 				self._unit:movement():current_state()._spread_stun_t = 0.5
-				managers.hud:activate_effect_screen(0.5, {0.6, 0.3, 0.1})
+				managers.hud:activate_effect_screen(0.5, Vector3(0.6, 0.3, 0.1) * effect_alpha)
 			end
 
 			--Shotgunner
@@ -624,7 +635,7 @@ function PlayerDamage:damage_bullet(attack_data)
 					}
 					self._unit:camera():play_shaker(vars[math.random(#vars)], 0.25, 0.5)
 					self._unit:movement():current_state()._d_scope_t = 0.5
-					managers.hud:activate_effect_screen(0.7, {0.35, 0.25, 0.1})
+					managers.hud:activate_effect_screen(0.7, Vector3(0.35, 0.25, 0.1) * effect_alpha)
 				end
 			end
 
@@ -734,14 +745,23 @@ function PlayerDamage:damage_melee(attack_data)
 		return
 	end
 
+	if can_shield_knock and hit_unit:in_slot(8) and alive(hit_unit:parent()) and not hit_unit:parent():character_damage():is_immune_to_shield_knockback() then
+		shield_knock = true
+		character_unit = hit_unit:parent()
+	end
 	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
-		--prevent the player from countering Dozers or other players through FF, for obvious reasons
+		--prevent the player from countering Dozers, Spring, Hatman or other players through FF, for obvious reasons
 		if alive(attacker_unit) and attacker_unit:base() and not attacker_unit:base().is_husk_player then
+			local can_shield_knock = managers.player:has_category_upgrade("player", "shield_knock")
+			local is_shield = not can_shield_knock and attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield")
+			local is_titan_shield = attacker_unit:base().has_tag and attacker_unit:base():has_tag("shield_titan")
 			local is_dozer = attacker_unit:base().has_tag and attacker_unit:base():has_tag("tank")
+			local is_sproing = attacker_unit:base().has_tag and attacker_unit:base():has_tag("spring")
+			local is_scary_sproing = attacker_unit:base().has_tag and attacker_unit:base():has_tag("headless_hatman")
 
-			if not is_dozer then
+			if not is_dozer and not is_sproing and not is_scary_sproing and not is_titan_shield and not is_shield then
 				self._unit:movement():current_state():discharge_melee()
-
+				
 				return "countered"
 			end
 		end
@@ -811,7 +831,7 @@ function PlayerDamage:damage_melee(attack_data)
 	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
 	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 1) * shake_armor_multiplier
-	local push_multiplier = ((attacker_char_tweak and attacker_char_tweak.melee_push_multiplier) or 1) * self._melee_push_multiplier
+	local push_multiplier = math.clamp( (((attacker_char_tweak and attacker_char_tweak.melee_push_multiplier) or 1) * self._melee_push_multiplier) * shake_armor_multiplier , 1, 1.5 )
 	managers.rumble:play("damage_bullet")
 	
 	local t = pm:player_timer():time()
@@ -838,11 +858,19 @@ function PlayerDamage:damage_melee(attack_data)
 	}
 	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(shake_multiplier * push_multiplier, 0.25))
 	self._unit:movement():current_state()._d_scope_t = 0.6
+
+	local in_air = self._unit:movement():current_state():in_air()
+	local hit_in_air = self._unit:movement():current_state()._hit_in_air
 	
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
-	if not self._bleed_out then
+	--Also don't allow for multiple pushes if in the air
+	if not self._bleed_out and not hit_in_air then
+		push_multiplier = push_multiplier * ((in_air and 0.6) or 1) --reduced pushback if in the air
 		mvector3.multiply(attack_data.push_vel, push_multiplier)
-		self._unit:movement():current_state():push(attack_data.push_vel * 1.25, true, 0.2, not force_crouch and true, force_crouch)
+		self._unit:movement():current_state():push(attack_data.push_vel, true, 0.2, not force_crouch and true, force_crouch)
+		if in_air then
+			self._unit:movement():current_state()._hit_in_air = true
+		end
 	end
 	
 	return
@@ -1562,13 +1590,21 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
 	end
 
-	if self._unit:movement():crouching() then --Burglar capstone skill + Duck and Cover
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance_burglar", 0)
-	elseif self._unit:movement():running() then --Duck and Cover aced.
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "run_dodge_chance", 0)
-	elseif self._unit:movement():zipline_unit() then
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
+	if alive(self._unit) and self._unit.movement and self._unit:movement() then
+		local unit_movement = self._unit:movement() 
+		local current_state = unit_movement and unit_movement.current_state and unit_movement:current_state()
+		if unit_movement:zipline_unit() then
+			passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
+		else
+			if unit_movement and unit_movement:crouching() or (current_state and current_state._is_sliding) then --Burglar capstone skill + Duck and Cover
+				passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
+				passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance_burglar", 0)
+			end
+			if unit_movement:running() or (current_state and (current_state._is_sliding or current_state._is_wallrunning)) then --Moving Target Aced
+				local fatigue = (not self._unit:movement():is_above_stamina_threshold() and 0.5) or 1
+				passive_dodge = passive_dodge + (pm:upgrade_value("player", "run_dodge_chance", 0) * fatigue)
+			end
+		end
 	end
 
 	self:fill_dodge_meter(self._dodge_points * dt * passive_dodge) --Apply passive dodge to meter.

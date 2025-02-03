@@ -120,7 +120,6 @@ local optsEnforcerPJ = {
 }
 local optsLieutenant = {
     enemy = chavez_lieutenant,
-	participate_to_group_ai = true,
 	team = "mobster1",
     enabled = death_sentence
 }

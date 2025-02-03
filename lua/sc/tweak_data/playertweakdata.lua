@@ -369,6 +369,7 @@ function PlayerTweakData:init()
 	self.movement_state.standard.gravity = 982 --used in the calculation in playerstandard for applying correct damping, does not actually change gravity
 	self.movement_state.standard.terminal_velocity = 7000 --used in the calculation in playerstandard for proper falling, change as you will it
 	self.movement_state.standard.movement.speed.STANDARD_MAX = 350
+	self.movement_state.standard.movement.speed.RUNNING_MAX_TIRED = 425
 	self.movement_state.standard.movement.speed.RUNNING_MAX = 575
 	self.movement_state.standard.movement.speed.CROUCHING_MAX = 225
 	self.movement_state.standard.movement.speed.STEELSIGHT_MAX = 185 --Isn't used anymore since ADS speed is now a speed mult applied to w/e state you're in now
@@ -389,17 +390,17 @@ function PlayerTweakData:init()
 	self.movement_state.stamina = {}
 
 	if is_vr then
-		self.movement_state.stamina.STAMINA_INIT = 50
+		self.movement_state.stamina.STAMINA_INIT = 55
 	else
-		self.movement_state.stamina.STAMINA_INIT = 50
+		self.movement_state.stamina.STAMINA_INIT = 55
 	end
 
-	self.movement_state.stamina.STAMINA_REGEN_RATE = 3
+	self.movement_state.stamina.STAMINA_REGEN_RATE = 4
 	self.movement_state.stamina.STAMINA_DRAIN_RATE = 2
 	self.movement_state.stamina.STAMINA_DRAIN_RATE_WARP = 3
 	self.movement_state.stamina.REGENERATE_TIME = 1
-	self.movement_state.stamina.MIN_STAMINA_THRESHOLD = 4
-	self.movement_state.stamina.JUMP_STAMINA_DRAIN = 2 --Unused for vanilla movement mechanics
+	self.movement_state.stamina.MIN_STAMINA_THRESHOLD = 5
+	self.movement_state.stamina.JUMP_STAMINA_DRAIN = 4 --Unused for vanilla movement mechanics
 	self.movement_state.stamina.SPRINT_JUMP_STAMINA_DRAIN = 0
 	
 	self.camera = {}

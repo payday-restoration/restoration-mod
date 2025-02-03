@@ -19,9 +19,9 @@ function MutatorGoldfarbDozers:setup()
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
 if difficulty_index <= 5 then
-	group_ai_tweak.special_unit_spawn_limits.tank = 2
+	tweak_data.group_ai.special_unit_spawn_limits.tank = 2
 else
-	group_ai_tweak.special_unit_spawn_limits.tank = 4
+	tweak_data.group_ai.special_unit_spawn_limits.tank = 4
 end
 
 	--Dozer Pairs, not a pretty way to do it but it works

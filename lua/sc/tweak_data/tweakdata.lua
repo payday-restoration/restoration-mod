@@ -54,7 +54,7 @@ tweak_data.scene_poses.weapon.bessy = {
 --Swap Speed Multipliers
 --TODO: Move to stat_info
 tweak_data.pistol = {
-	swap_bonus = 1.8,
+	swap_bonus = 3.2,
 	ads_move_speed_mult = 0.8,
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
@@ -72,7 +72,7 @@ tweak_data.crossbow = {
 }
 	tweak_data.crossbow_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 
 tweak_data.grenade_launcher = {
@@ -80,7 +80,7 @@ tweak_data.grenade_launcher = {
 }
 	tweak_data.gl_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 	tweak_data.rocket_launcher = {
 		ads_move_speed_mult = 0.4, --lowered to 0.2
@@ -117,7 +117,7 @@ tweak_data.shotgun = {
 		}
 	tweak_data.shotgun_pistol = {
 		ads_move_speed_mult = 1.6,
-		swap_bonus = 1.8
+		swap_bonus = 3.2
 	}
 	tweak_data.flamethrower = {
 		ads_move_speed_mult = 1,
@@ -129,7 +129,7 @@ tweak_data.shotgun = {
 		}
 
 tweak_data.smg = {
-	swap_bonus = 1.2,
+	swap_bonus = 1.6,
 	ads_move_speed_mult = 0.7,
 	moving_spread_mult = 0.6,
 	hipfire_spread_mult = 0.9
@@ -139,10 +139,10 @@ tweak_data.smg = {
 	}
 	tweak_data.lmg = {
 		ads_moving_recoil = 1.15,
-		swap_bonus = 0.83334,
+		swap_bonus = 1 / tweak_data.smg.swap_bonus,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
 		moving_spread_mult = 8.3333,
-		ads_moving_spread_mult = 2.5,
+		ads_moving_spread_mult = 2,
 		hipfire_spread_mult = 3.3333,
 		shake_mul = 1.4
 	}
@@ -151,15 +151,20 @@ tweak_data.smg = {
 			shake_mul = 0.6667,
 			hipfire_spread_mult = 0.6667
 		}
-		tweak_data.rambo = {
-			hipfire_spread_mult = 0.4167
+		tweak_data.mmg = {
+			moving_spread_mult = 1.2,
+			ads_moving_spread_mult = 2,
+			hipfire_spread_mult = 1.666667
 		}
-		tweak_data.wolf_brigade = {
-			ads_moving_recoil = 0.8695652,
-			moving_spread_mult = 0.2,
-			hipfire_spread_mult = 0.4167,
-			shake_mul = 0.6667
-		}
+			tweak_data.rambo = {
+				hipfire_spread_mult = 0.3125
+			}
+			tweak_data.wolf_brigade = {
+				ads_moving_recoil = 0.8695652,
+				moving_spread_mult = 0.2,
+				hipfire_spread_mult = 0.3125,
+				shake_mul = 0.6667
+			}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,
 		ads_move_speed_mult = 0.5, --lowered to 0.35
@@ -214,7 +219,7 @@ tweak_data.assault_rifle = {
 	tweak_data.crb = {
 		ads_moving_recoil = 1 / tweak_data.assault_rifle.ads_moving_recoil,
 		hipfire_spread_mult = 1 / tweak_data.assault_rifle.hipfire_spread_mult,
-		swap_bonus = 1.1,
+		swap_bonus = 1.1 / tweak_data.assault_rifle.swap_bonus,
 		ads_move_speed_mult = 0.5 / tweak_data.assault_rifle.ads_move_speed_mult,
 	}
 	tweak_data.dmr_l = {
@@ -1596,6 +1601,31 @@ if BeardLib then
 	end
 end
 
+local twu = tweak_data.upgrades
+--Text macros for the shared perk deck cards are here because I can't call other tweak_data classes (or at least don't know how to) while inside of another one without doing some round about shit like I did in weaponfactory
+for i = 1, #tweak_data.skilltree.specializations, 1 do --Just get the total number of perk decks
+	twu.specialization_descs[i] = twu.specialization_descs[i] or {}
+	--Blanket apply the text macros; Innatae doesn't even use these so it's totally fine that its under the blanket
+	twu.specialization_descs[i][2] = {
+		perk_value_1 = tostring(twu.values.weapon.passive_headshot_damage_multiplier[1] % 1 * 100).."%", --HS DMG mult
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%" --DMG mult
+	}
+	twu.specialization_descs[i][4] = {
+		perk_value_1 = tostring(twu.values.player.passive_concealment_modifier[1]), --Mobility bonus
+		perk_value_2 = tostring(twu.values.player.passive_armor_movement_penalty_multiplier[1] % 1 * 100).."%", --Armor movemenr penalty reduction
+		perk_value_3 = tostring(twu.values.player.passive_xp_multiplier[1] % 1 * 100).."%", --XP mult
+		perk_value_4 = tostring(twu.values.weapon.passive_reload_speed_multiplier[1] % 1 * 100).."%", --non-pro reload speed mult
+		perk_value_5 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%", --DMG mult
+	}
+	twu.specialization_descs[i][6] = {
+		perk_value_1 = tostring((twu.values.player.passive_pick_up_multiplier[1] - 1) % 1 * 100) .. "%", --non-pro ammo pickup
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%", --DMG mult
+	}
+	twu.specialization_descs[i][8] = {
+		perk_value_1 = tostring((1 - twu.values.doctor_bag.interaction_speed_multiplier[1]) % 1 * 100 .. "%"), --Medic bag interact speed bonus
+		perk_value_2 = tostring(twu.values.weapon.passive_damage_multiplier[1] % 1 * 100).."%" --DMG mult
+	}
+end
 
 local twf = tweak_data.weapon.factory
 local twb = tweak_data.blackmarket
@@ -1672,6 +1702,25 @@ if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
 			end
 		end
 	end
-
 end
 
+if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
+	twb.weapon_skins.benelli_cnuy_hoshino.default_blueprint = {
+		"wpn_fps_sho_ben_body_standard",
+		"wpn_fps_sho_ben_b_standard",
+		"wpn_fps_sho_ben_fg_standard",
+		"wpn_fps_sho_ben_s_collapsable",
+		"wpn_fps_sho_ben_cnuy_hoshino"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_sho_ben.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_b_ojisan)
+			elseif twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_fg_ojisan)
+			elseif twf.parts[used_part_id].type == "stock" then
+				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_s_ojisan)
+			end
+		end
+	end
+end

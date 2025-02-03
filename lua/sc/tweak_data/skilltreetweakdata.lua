@@ -94,7 +94,8 @@ function SkillTreeTweakData:init(tweak_data)
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",
 		"player_civ_calming_alerts",
-		"player_detection_risk_stamina_regen"
+		"player_detection_risk_stamina_regen",
+		"player_detection_risk_dash_count"
 	}
 
 --[[   SKILLTREES   ]]--
@@ -2157,6 +2158,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_panic_suppression",
+					"player_panic_suppression_mult_1",
 					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
@@ -2589,6 +2591,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_melee_kill_life_leech",
+					"player_melee_kill_stamina",
 					"player_corpse_dispose_amount_2"
 				},
 				cost = 1000,

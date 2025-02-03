@@ -847,17 +847,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_int_dock_burn_name"] = "번아웃",
 		["heist_int_dock_burn_brief"] = "자세한 계획을 세울 시간이 없어. 그들이 추가 마스터 서버를 이동할 거다.\n운전자가 무장한 광대를 가득 실은 트럭을 현관에 주차시킬 거다.",
 		["heist_wetwork_burn_name"] = "번아웃",
-		["heist_wetwork_burn_brief"] = "좋아, 거의 다 왔어. 전에 여기 와 봤지만, 이번에는 화끈하게 갈 거다.\n아직 숨겨져 있는 전리품이 있을 수도 있지만 그건 나중에 확보할거다.\n\n닫힌 컨테이너 안에 무엇이 들어있는 보기 위해 사용할 수 있는 모든 것을 찾아봐. 카메라, 컨테이너 주변의 물체, 화이트보드 등 말이지.",
-		["wwburn_01"] = "준비하라",
-		["wwburn_01_desc"] = "정문에 다가가면, 머키워터가 모든 곳에 있을 테니 총을 꺼내라.",
-		["wwburn_02"] = "서버를 찾아라",
-		["wwburn_02_desc"] = "마스터 서버가 보관되어있는 세 개의 운반 컨테이너를 찾아라.",
+		["heist_wetwork_burn_brief"] = "좋아, 거의 다 왔어. 전에 여기 와 봤지만, 이번에는 화끈하게 갈 거다.\n아직 숨겨져 있는 전리품이 있을 수도 있지만 그건 나중에 확보할거다.\n\n먼저 보안 네트워크에 연결된 컴퓨터를 찾아서 닫힌 컨테이너 안에 무엇이 들어있는지 확인해야돼. 컨테이너의 디자인, 컨테이너 주변의 물체, 화이트보드 등 세부 사항을 잘 주시해서 올바른 컨테이너를 식별해봐.",
+		["wwburn_01"] = "카메라 피드 액세스룰 찾아라",
+		["wwburn_01_desc"] = "보안 액세스에 접근 가능한 컴퓨터를 찾아라, 그걸로 서버를 찾는 데 사용할 수 있을 것이다.",
+		["wwburn_02"] = "서버를 확보해라",
+		["wwburn_02_desc"] = "카메라 피드를 사용하여 마스터 서버가 보관되어있는 3개의 운송 컨테이너를 찾아서 서버를 확보해라.",
 		["wwburn_03"] = "백업을 태워라",
 		["wwburn_03_desc"] = "마스터 서버의 백업을 태워라, 백업은 동일한 컨테이너에 있을 것이다.",
 		["wwburn_04"] = "탈출 가능",
-		["wwburn_04_desc"] = "탈출하거나 탐욕이 느껴진다면 더 많은 전리품을 확보하라.",
+		["wwburn_04_desc"] = "탈출하거나 전리품을 확보해라.",
 
 		["wwburn_serverpku"] = "확보",
+		["wwburn_whiteboard"] = "단서",
+		["wwburn_laptop"] = "카메라 액서스",
 		["wwburn_gaspku"] = "수집",
 		["wwburn_defend"] = "방어",
 		["wwburn_container"] = "운반 컨테이너",
@@ -2536,7 +2538,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_2006m_sc_desc"] = "이미 드물게 생산되는 희귀한 디자인이자 .38탄을 사정거리 아래로 보내는 멋진 방법입니다.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 적을 관통할 수 있습니다.##",
 				["bm_x_2006m_sc_desc"] = "이 중 두 가지를 처리하는 물류는 순전히 멋진 요인보다 더 중요합니다.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 적을 관통할 수 있습니다.##",
 				--Frenchman Model 87
-				["bm_model3_sc_desc"] = "평생의 질문인 \"내 앞에 튀어나온 이 멍청이들을 어떻게 할까?\"에 대한 고전적인 대답입니다.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 적을 관통할 수 있습니다.##",
+				["bm_model3_sc_desc"] = "평생의 질문인 \"내 앞에 있는 이 멍청이들을 어떻게 만들어줄까?\"에 대한 고전적인 해답입니다.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 적을 관통할 수 있습니다.##",
 				["bm_x_model3_sc_desc"] = "당신의 내면에 뿌리내린 자질을 끌어내고 이 쌍발 리볼버를 이용해 정오에 경찰에게 듀얼을 도전하세요.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 적을 관통할 수 있습니다.##",	
 				--Raging bull
 				["bm_rage_sc_desc"] = "매우 강력한 단거리 대포입니다. 정확하게 사격하면 멍청이들을 빠르게 쓰러뜨릴 수 있습니다.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가하며, 다수의 적을 관통할 수 있습니다.##",
@@ -2796,6 +2798,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_fal_ap25_sc_desc"] = "자유 세계의 오른팔. 중량 방탄복을 입은 멍청이들을 쓰러뜨려야 할 때, 이 총을 써보십시오.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가합니다.##",	
 				--ASS VAL
 				["bm_asval_sc_desc"] = "작은 소총용 총알이 당신의 총격전을 벌이는 데 적합할 수도 있지만, 이 총을 선호하는 사람도 있을 것입니다.\n\n#{skill_color}#일체형 소음기##가 장착되어 있고 #{skill_color}#방탄복을 관통하여 피해의 25%를 가합니다.##",
+				["bm_asval_spp_sc_desc"] = "작은 소총용 총알이 당신의 총격전을 벌이는 데 적합할 수도 있지만, 이 총을 선호하는 사람도 있을 것입니다.\n\n#{skill_color}#일체형 소음기##가 장착되어 있고 #{skill_color}#방탄복, 다수의 적, 최대 대미지 사거리 내에 있는 방패 그리고 얇은 벽을 관통할 수 있습니다.##",
+				["bm_wp_upg_i_asval_spp"] = "SPP탄이 장착된 Valkyria 부품",
+				["bm_wp_upg_i_asval_spp_desc"] = "#{skill_color}#방탄복, 다수의 적, 최대 대미지 사거리 내에 있는 방패 그리고 얇은 벽을 관통할 수 있는## 특수 방탄복 관통탄과 혼합된 내부 부품으로 업그레이드합니다.",				
 				--Galil
 				["bm_galil_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체도 고전 AK의 파생품이었습니다. 모방은 아첨의 가장 진실한 형태이죠.\n\n#{skill_color}#방탄복을 관통하여 피해의 25%를 가합니다.##",
 				["bm_galil_ap25_sc_desc"] = "핀란드 디자인을 기반으로 한 소총의 모방품으로, 그 자체도 고전 AK의 파생품이었습니다. 모방은 아첨의 가장 진실한 형태이죠.\n\n#{skill_color}#방탄복을 관통하여 피해의 50%를 가합니다.##",
@@ -5562,7 +5567,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_b1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_b4##입니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#$skill_value_b5##만큼 더 빨라집니다.\n\n#{risk}#주의: 조준하는 동안의 이동 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p3##부터 #{risk}#$skill_value_p2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_p1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_p4##입니다.\n\n달리는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p5##만큼 채워지고, 짚라인을 타는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p6##만큼 채워집니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_b1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_b4##입니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#$skill_value_b5##만큼 더 빨라집니다.\n\n#{risk}#주의: 조준하는 동안의 이동 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p3##부터 #{risk}#$skill_value_p2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_p1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_p4##입니다.\n\n달리는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p5##만큼씩 채워지고 (피로 상태이면 절반으로 감소), 짚라인을 타는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p6##만큼씩 채워집니다.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",

@@ -15,7 +15,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true"/>
 			<var name="_tweak_table" value="heavy_swat_sniper_scripted" />
-			<var name="_default_weapon_id" value="asval_smg_elite" />
+			<var name="_default_weapon_id" value="heavy_zeal_sniper" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

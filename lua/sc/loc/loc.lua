@@ -1,7 +1,7 @@
 Month = os.date("%m")
 Day = os.date("%d")
 local weapon_names = restoration.Options:GetValue("OTHER/WepNames") or 1
-local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSAC")
+local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSACText")
 	local eggplant = restoration and restoration.Options:GetValue("OTHER/ForceEggs/Upotte")
 	local my_wife = restoration and restoration.Options:GetValue("OTHER/ForceEggs/MyWife")
 	local bobcat = restoration and restoration.Options:GetValue("OTHER/ForceEggs/CrabBattle")
@@ -33,221 +33,247 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["RestorationModOptionsButtonTitleID"] = "Restoration Mod Options",
 		["RestorationModOptionsButtonDescID"] = "Restoration Mod's Options.",
+
 		["RestorationModHUDOptionsButtonTitleID"] = "Restoration HUD & UI Options",
 		["RestorationModHUDOptionsButtonDescID"] = "Restoration's HUD & UI Options.",
-		["RestorationModOTHEROptionsButtonTitleID"] = "Extra Restoration Mod Options",
-		["RestorationModOTHEROptionsButtonDescID"] = "Extra Restoration Mod options.",
-		["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ Weapon Handling Options ++",
-		["RestorationModWeaponHandlingOptionsButtonDescID"] = "Extra options regarding weapon handling.",
-		["RestorationModUIOptionsButtonTitleID"] = "Alpha UI",
-		["RestorationModUIOptionsButtonDescID"] = "Alpha UI options.",
-		["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
-		["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
+			["RestorationModUIOptionsButtonTitleID"] = "Alpha UI",
+			["RestorationModUIOptionsButtonDescID"] = "Alpha UI options.",
+			["RestorationModINFOHUDOptionsButtonTitleID"] = "Buff Tracker",
+			["RestorationModINFOHUDOptionsButtonDescID"] = "Displays icons to reflect information about active skills on the left side of the screen. Does not require Alpha UI to be enabled.",
+				["RestorationModInfo_HudTitleID"] = "Enable Buff Tracker",
+				["RestorationModInfo_HudDescID"] = "Enables or disables the entire buff tracking UI.",
+				["RestorationModInfo_SizeTitleID"] = "Icon Size",
+				["RestorationModInfo_SizeDescID"] = "Controls the size of icons on the buff tracker.",
+				["RestorationModInfo_CountTitleID"] = "Row Count",
+				["RestorationModInfo_CountDescID"] = "Controls the number of rows the buff tracker displays before adding a new column.",
+				["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Aggressive Reload",
+				["RestorationModInfo_single_shot_fast_reloadDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_ammo_efficiencyTitleID"] = "Ammo Efficiency",
+				["RestorationModInfo_ammo_efficiencyDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Bloodthirst",
+				["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_bullet_stormTitleID"] = "Bullet Storm",
+				["RestorationModInfo_bullet_stormDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_revive_damage_reductionTitleID"] = "Combat Medic",
+				["RestorationModInfo_revive_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_desperadoTitleID"] = "Desperado",
+				["RestorationModInfo_desperadoDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_grinderTitleID"] = "Histamine (Grinder)",
+				["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
+				["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_sociopathTitleID"] = "Tension and Co. (Sociopath)",
+				["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of these specific skills.",
+				["RestorationModInfo_body_expertiseTitleID"] = "Spray n' Pray",
+				["RestorationModInfo_body_expertiseDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire",
+				["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_messiahTitleID"] = "Messiah",
+				["RestorationModInfo_messiahDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
+				["RestorationModInfo_overkill_damage_multiplierDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_revived_damage_reductionTitleID"] = "Painkillers",
+				["RestorationModInfo_revived_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Quick Fix",
+				["RestorationModInfo_first_aid_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
+				["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_increased_movement_speedTitleID"] = "Running From Death",
+				["RestorationModInfo_increased_movement_speedDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_headshot_fire_rate_multTitleID"] = "Sharpshooter",
+				["RestorationModInfo_headshot_fire_rate_multDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_trigger_happyTitleID"] = "Trigger Happy",
+				["RestorationModInfo_trigger_happyDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_dmg_multiplier_outnumberedTitleID"] = "Underdog",
+				["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_unseen_strikeTitleID"] = "Unseen Strike",
+				["RestorationModInfo_unseen_strikeDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
+				["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking of this specific skill.",
+				["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Doctor Bag Health Regen",
+				["RestorationModInfo_doctor_bag_health_regenDescID"] = "Enables or disables tracking of doctor bag health regen.",
+
+		["RestorationModWEAPONSOptionsButtonTitleID"] = "Weapon Options",
+		["RestorationModWEAPONSOptionsButtonDescID"] = "Restoration Mod options for weapons, both for UI and in-game.",
+			["RestorationModWeaponHandlingOptionsButtonTitleID"] = "++ Weapon Handling Options ++",
+			["RestorationModWeaponHandlingOptionsButtonDescID"] = "Extra options regarding weapon handling.",
+				["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
+				["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
+				["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
+				["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels to the right when using large optics to reduce visual obstructions.",
+				["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
+				["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
+					["vm_vanilla"] = "Vanilla Behavior",
+					["vm_drag"] = "Weapon Drags Behind",
+					["vm_lead"] = "Weapon Leads Ahead",
+					["vm_static"] = "Static (No Movement)",
+				["RestorationModCarpalTunnelTitleID"] = "Recoil Auto-Recovery",
+				["RestorationModCarpalTunnelDescID"] = "Choose how recoil auto-recovery mechanics work. Enabled versions are balanced differently.",
+					["rr_off"] = "Disabled",
+					["rr_per_weapon"] = "Weapon specific",
+					["rr_full"] = "Full",
+				["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
+				["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
+				["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
+				["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sight may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
+				["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
+				["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
+				["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
+				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
+				["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
+				["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
+				["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
+				["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
+				["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",
+				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
+				["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
+				["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
+				["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
+				["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
+				["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
+				["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
+				["RestorationModManualReloadsTitleID"] = "Manual Reloads",
+				["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
+				["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
+				["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
+				["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
+				["RestorationModADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
+					["vanilla_on_rails"] = "Default/On-Rails",
+					["kf_mw_style"] = "KF1/CoD Style",
+					["tilt_in"] = "Tilted In",
+				["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
+				["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
+				["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
+				["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
+				["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
+				["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
+
+			["RestorationModPerformanceOptionsButtonTitleID"] = "++ Impact FX Settings ++",
+			["RestorationModPerformanceOptionsButtonDescID"] = "Extra options that change the playback of impact effects",
+				["RestorationModQueuedImpactFXLimitEnabledTitleID"] = "Enable 'Impact FX Queue Limit'",
+				["RestorationModQueuedImpactFXLimitEnabledDescID"] = "Toggle if the below 'Impact FX Queue Limit' setting is enabled or not; only applies to queued impact FX.\nDisabled by default",
+					["RestorationModQueuedImpactFXLimitTitleID"] = "Impact FX Queue Limit",
+					["RestorationModQueuedImpactFXLimitDescID"] = "Limits the amount of impact effects that can be queued at once; Default is 24.\nHigh values can lead to playback delays while low values can lead to FX-less impacts.",
+
+				["RestorationModQueuedImpactFXTypeTitleID"] = "Impact FX Playback",
+				["RestorationModQueuedImpactFXTypeDescID"] = "Change how the impact effect queuing system works;\nHover over the buttons below to see a description of each type.",
+					["impactfx_type_default"] = "Vanilla/Hybrid",
+					["RestorationModQueuedImpactFXDEFAULTTitleID"] = "Vanilla/Hybrid - Hover for info",
+					["RestorationModQueuedImpactFXDEFAULTDescID"] = "Weapons with default multishot (i.e. shotguns) and Hornet ammo Launchers use 'Immediate' FX playback;\nAll other weapons use 'Queued' FX playback.",
+					["impactfx_type_immediate"] = "All Immediate",
+					["RestorationModQueuedImpactFXIMMEDIATETitleID"] = "IMMEDIATE - Hover for info",
+					["RestorationModQueuedImpactFXIMMEDIATEDescID"] = "Impact FX are played immediately\nComes at the risk of performance drops if too many are set to play at once.",
+					["impactfx_type_queued"] = "All Queued",
+					["RestorationModQueuedImpactFXQUEUEDTitleID"] = " QUEUED - Hover for info",
+					["RestorationModQueuedImpactFXQUEUEDDescID"] = "Impact FX are queued for squential playback\nLower risk of performance drops at the risk of FX playback being delayed if many are queued quickly.",
+
+			["RestorationModGOTTAGETAGRIPTitleID"] = "Hide ALL Foregrips",
+			["RestorationModGOTTAGETAGRIPDescID"] = "Hides *all* attachments of the \"vertical_grip\" type from appearing in menus; ones already attached to weapons are unaffected. Requires restart.",
+			["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Weapons",
+			["RestorationModGCGPYPMMSACDescID"] = "Disables Star Wars blaster mechanics. Requires restart.",
+
+			["RestorationModWepNamesTitleID"] = "Weapon (Re)Names",
+			["RestorationModWepNamesDescID"] = "Change the naming style of weapons and attachments. Requires restart.",
+				["resmod_res_names"] = "Resmod Names (Default)",
+				["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
+				["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
+				["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
+			["RestorationModGCGPYPMMSACTextTitleID"] = "Super Cereal Text",
+			["RestorationModGCGPYPMMSACTextDescID"] = "Disables text based easter eggs from being rolled. Requires restart.",
+			["RestorationModForceEggsOptionsButtonTitleID"] = "Force Easter Egg Text",
+			["RestorationModForceEggsOptionsButtonDescID"] = "Force enable individual easter egg texts; ignores the effects of \"Super Cereal Text\" if its enabled.\nToggling anything in here requires a restart.",
+				["RestorationModUpotteTitleID"] = "Enroll in Seishou Academy",
+				["RestorationModUpotteDescID"] = "Work with the Modern Literature teacher or something",
+				["RestorationModMyWifeTitleID"] = "G Less Than 3",
+				["RestorationModMyWifeDescID"] = "The inner machinations of DMC's mind are an enigma",
+				["RestorationModCrabBattleTitleID"] = "Now There's A Pretty Meme",
+				["RestorationModCrabBattleDescID"] = "Exquisite!",
+				["RestorationModEmberMyBelovedTitleID"] = "Go EXTREME Digital",
+				["RestorationModEmberMyBelovedDescID"] = "Clem Grakata!",
+				["RestorationModBigManTitleID"] = ":^)",
+				["RestorationModBigManDescID"] = "Enables other easter egg text",
+
+			["RestorationModWpnCatTitleID"] = "Buy Menu Tab Sorting",
+			["RestorationModWpnCatDescID"] = "Change weapon grouping method used when buying a weapon from the black market menu. Requires restart.",
+				["base_wpn_cat"] = "base skill",
+				["sub_wpn_cat"] = "sub-category & damage tier",
+
+		["RestorationModOTHEROptionsButtonTitleID"] = "Extra Options",
+		["RestorationModOTHEROptionsButtonDescID"] = "Restoration Mod options for other things.",
+			["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
+			["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
+				["RestorationModEnv_BanksTitleID"] = "Branch Bank",
+				["RestorationModEnv_BanksDescID"] = "Select an environment for Branch Bank.",
+				["RestorationModEnv_RVD1TitleID"] = "Reservoir Dogs Day 1",
+				["RestorationModEnv_RVD1DescID"] = "Select an environment for  Reservoir Dogs Day 1.",
+				["RestorationModEnv_RVD2TitleID"] = "Reservoir Dogs Day 2",
+				["RestorationModEnv_RVD2DescID"] = "Select an environment for  Reservoir Dogs Day 2.",
+				["RestorationModEnv_FSD1TitleID"] = "Firestarter Day 1",
+				["RestorationModEnv_FSD1DescID"] = "Select an environment for Firestarter Day 1.",
+				["RestorationModEnv_PBR2TitleID"] = "Birth of Sky",
+				["RestorationModEnv_PBR2DescID"] = "Select an environment for Birth of Sky.",
+				["RestorationModEnv_CJ2TitleID"] = "The Bomb: Dockyard",
+				["RestorationModEnv_CJ2DescID"] = "Select an environment for The Bomb: Dockyard.",
+				["RestorationModEnv_UnderPassTitleID"] = "Transport Underpass",
+				["RestorationModEnv_UnderPassDescID"] = "Select an environment for Transport Underpass.",
+				["RestorationModEnv_MallCrasherTitleID"] = "Mallcrasher",
+				["RestorationModEnv_MallCrasherDescID"] = "Select an environment for Mallcrasher.",
+				["RestorationModEnv_Mia_1TitleID"] = "Hotline Miami Day 1",
+				["RestorationModEnv_Mia_1DescID"] = "Select an environment for Hotline Miami Day 1.",
+				["RestorationModEnv_FSD3TitleID"] = "Firestarter Day 3",
+				["RestorationModEnv_FSD3DescID"] = "Select an environment for Firestarter Day 3.",
+				["RestorationModEnv_WDD1NTitleID"] = "Watchdogs Day 1 (Night)",
+				["RestorationModEnv_WDD1NDescID"] = "Select an environment for Watchdogs Day 1 (Night).",
+				["RestorationModEnv_WDD1DTitleID"] = "Watchdogs Day 1 (Day)",
+				["RestorationModEnv_WDD1DDescID"] = "Select an environment for Watchdogs Day 1 (Day).",
+				["RestorationModEnv_WDD2DTitleID"] = "Watchdogs Day 2 (Day)",
+				["RestorationModEnv_WDD2DDescID"] = "Select an environment for Watchdogs Day 2 (Day).",
+				["RestorationModEnv_Alex3TitleID"] = "Rats Day 3",
+				["RestorationModEnv_Alex3DescID"] = "Select an environment for Rats Day 3.",
+				["RestorationModEnv_BigTitleID"] = "Big Bank",
+				["RestorationModEnv_BigDescID"] = "Select an environment for Big Bank.",
+				["RestorationModEnv_FSTitleID"] = "Four Stores",
+				["RestorationModEnv_FSDescID"] = "Select an environment for Four Stores.",
+				["RestorationModEnv_UkraTitleID"] = "Ukrainian Job",
+				["RestorationModEnv_UkraDescID"] = "Select an environment for Ukrainian Job.",
+				["RestorationModEnv_KosugiTitleID"] = "Shadow Raid",
+				["RestorationModEnv_KosugiDescID"] = "Select an environment for Shadow Raid Job.",
+				["RestorationModEnv_PetaTitleID"] = "Goat Simulator Day 1",
+				["RestorationModEnv_PetaDescID"] = "Select an environment for Goat Simulator Day 1.",
+				["RestorationModEnv_FRIENDTitleID"] = "Scarface Mansion",
+				["RestorationModEnv_FRIENDDescID"] = "Select an environment for Scarface Mansion.",
+				["restoration_level_data_unknown"] = "TIME UNKNOWN, LOCATION UNKNOWN",
 
 		["RestorationModOtherModsTitleID"] = "===Other Mod Options===",
 		["RestorationModOtherModsDescID"] = "Additional options for other mods",
 			["RestorationModAdVMovResOptOptionsButtonTitleID"] = "\"Advanced Movement Standalone\" Options",
 			["RestorationModAdVMovResOptOptionsButtonDescID"] = "Additional options for Solo Queue Pixy's \"Advanced Movement Standalone\" mod.",
-
-		["restoration_level_data_unknown"] = "TIME UNKNOWN, LOCATION UNKNOWN",
-		["RestorationModEnv_BanksTitleID"] = "Branch Bank",
-		["RestorationModEnv_BanksDescID"] = "Select an environment for Branch Bank.",
-		["RestorationModEnv_RVD1TitleID"] = "Reservoir Dogs Day 1",
-		["RestorationModEnv_RVD1DescID"] = "Select an environment for  Reservoir Dogs Day 1.",
-		["RestorationModEnv_RVD2TitleID"] = "Reservoir Dogs Day 2",
-		["RestorationModEnv_RVD2DescID"] = "Select an environment for  Reservoir Dogs Day 2.",
-		["RestorationModEnv_FSD1TitleID"] = "Firestarter Day 1",
-		["RestorationModEnv_FSD1DescID"] = "Select an environment for Firestarter Day 1.",
-		["RestorationModEnv_PBR2TitleID"] = "Birth of Sky",
-		["RestorationModEnv_PBR2DescID"] = "Select an environment for Birth of Sky.",
-		["RestorationModEnv_CJ2TitleID"] = "The Bomb: Dockyard",
-		["RestorationModEnv_CJ2DescID"] = "Select an environment for The Bomb: Dockyard.",
-		["RestorationModEnv_UnderPassTitleID"] = "Transport Underpass",
-		["RestorationModEnv_UnderPassDescID"] = "Select an environment for Transport Underpass.",
-		["RestorationModEnv_MallCrasherTitleID"] = "Mallcrasher",
-		["RestorationModEnv_MallCrasherDescID"] = "Select an environment for Mallcrasher.",
-		["RestorationModEnv_Mia_1TitleID"] = "Hotline Miami Day 1",
-		["RestorationModEnv_Mia_1DescID"] = "Select an environment for Hotline Miami Day 1.",
-		["RestorationModEnv_FSD3TitleID"] = "Firestarter Day 3",
-		["RestorationModEnv_FSD3DescID"] = "Select an environment for Firestarter Day 3.",
-		["RestorationModEnv_WDD1NTitleID"] = "Watchdogs Day 1 (Night)",
-		["RestorationModEnv_WDD1NDescID"] = "Select an environment for Watchdogs Day 1 (Night).",
-		["RestorationModEnv_WDD1DTitleID"] = "Watchdogs Day 1 (Day)",
-		["RestorationModEnv_WDD1DDescID"] = "Select an environment for Watchdogs Day 1 (Day).",
-		["RestorationModEnv_WDD2DTitleID"] = "Watchdogs Day 2 (Day)",
-		["RestorationModEnv_WDD2DDescID"] = "Select an environment for Watchdogs Day 2 (Day).",
-		["RestorationModEnv_Alex3TitleID"] = "Rats Day 3",
-		["RestorationModEnv_Alex3DescID"] = "Select an environment for Rats Day 3.",
-		["RestorationModEnv_BigTitleID"] = "Big Bank",
-		["RestorationModEnv_BigDescID"] = "Select an environment for Big Bank.",
-		["RestorationModEnv_FSTitleID"] = "Four Stores",
-		["RestorationModEnv_FSDescID"] = "Select an environment for Four Stores.",
-		["RestorationModEnv_UkraTitleID"] = "Ukrainian Job",
-		["RestorationModEnv_UkraDescID"] = "Select an environment for Ukrainian Job.",
-		["RestorationModEnv_KosugiTitleID"] = "Shadow Raid",
-		["RestorationModEnv_KosugiDescID"] = "Select an environment for Shadow Raid Job.",
-		["RestorationModEnv_PetaTitleID"] = "Goat Simulator Day 1",
-		["RestorationModEnv_PetaDescID"] = "Select an environment for Goat Simulator Day 1.",
-		["RestorationModEnv_FRIENDTitleID"] = "Scarface Mansion",
-		["RestorationModEnv_FRIENDDescID"] = "Select an environment for Scarface Mansion.",
-		["RestorationModINFOHUDOptionsButtonTitleID"] = "Buff Tracker",
-		["RestorationModINFOHUDOptionsButtonDescID"] = "Displays icons to reflect information about active skills on the left side of the screen. Does not require Alpha UI to be enabled.",
-		["RestorationModInfo_HudTitleID"] = "Enable Buff Tracker",
-		["RestorationModInfo_HudDescID"] = "Enables or disables the entire buff tracking UI.",
-		["RestorationModInfo_SizeTitleID"] = "Icon Size",
-		["RestorationModInfo_SizeDescID"] = "Controls the size of icons on the buff tracker.",
-		["RestorationModInfo_CountTitleID"] = "Row Count",
-		["RestorationModInfo_CountDescID"] = "Controls the number of rows the buff tracker displays before adding a new column.",
-		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Aggressive Reload",
-		["RestorationModInfo_single_shot_fast_reloadDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_ammo_efficiencyTitleID"] = "Ammo Efficiency",
-		["RestorationModInfo_ammo_efficiencyDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Bloodthirst",
-		["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_bullet_stormTitleID"] = "Bullet Storm",
-		["RestorationModInfo_bullet_stormDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_revive_damage_reductionTitleID"] = "Combat Medic",
-		["RestorationModInfo_revive_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_desperadoTitleID"] = "Desperado",
-		["RestorationModInfo_desperadoDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_grinderTitleID"] = "Histamine (Grinder)",
-		["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
-		["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_sociopathTitleID"] = "Tension and Co. (Sociopath)",
-		["RestorationModInfo_sociopathDescID"] = "Enables or disables tracking of these specific skills.",
-		["RestorationModInfo_body_expertiseTitleID"] = "Spray n' Pray",
-		["RestorationModInfo_body_expertiseDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire",
-		["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_messiahTitleID"] = "Messiah",
-		["RestorationModInfo_messiahDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
-		["RestorationModInfo_overkill_damage_multiplierDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_revived_damage_reductionTitleID"] = "Painkillers",
-		["RestorationModInfo_revived_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Quick Fix",
-		["RestorationModInfo_first_aid_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
-		["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_increased_movement_speedTitleID"] = "Running From Death",
-		["RestorationModInfo_increased_movement_speedDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_headshot_fire_rate_multTitleID"] = "Sharpshooter",
-		["RestorationModInfo_headshot_fire_rate_multDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_trigger_happyTitleID"] = "Trigger Happy",
-		["RestorationModInfo_trigger_happyDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_dmg_multiplier_outnumberedTitleID"] = "Underdog",
-		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_unseen_strikeTitleID"] = "Unseen Strike",
-		["RestorationModInfo_unseen_strikeDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_survive_one_hitTitleID"] = "Oni Irezumi (Yakuza)",
-		["RestorationModInfo_survive_one_hitDescID"] = "Enables or disables tracking of this specific skill.",
-		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Doctor Bag Health Regen",
-		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Enables or disables tracking of doctor bag health regen.",
+				["RestorationModAdvMovBackstepTitleID"] = "Dash backwards on forward-only inputs",
+				["RestorationModAdvMovBackstepDescID"] = "Enable forward-only inputs to dash backwards.",
+				["RestorationModAdvMovDashScreenEffectAlphaTitleID"] = "Dash Screen Effect Strength",
+				["RestorationModAdvMovDashScreenEffectAlphaDescID"] = "Set the transparency of the dash screen effect, set to 0 to disable. Default: 0.8",
+				["RestorationModAdvMovSlideScreenEffectAlphaTitleID"] = "Slide Screen Effect Strength",
+				["RestorationModAdvMovSlideScreenEffectAlphaDescID"] = "Set the transparency of the slide screen effect, set to 0 to disable. Default: 0.8",
+				["RestorationModDisableAdvMovTFTitleID"] = "Disable Wall-run/jump",
+				["RestorationModDisableAdvMovTFDescID"] = "Disables the wall-run/jump aspects of Advanced Movement.",
+				["RestorationModAdvMovMeleeTitleID"] = "Melee Behavior",
+				["RestorationModAdvMovMeleeDescID"] = "Change how Advanced Movement's jump/slide/dash/sprint-kick behaves.",
+					["resmod_advmov_melee_on"] = "Default",
+					["resmod_advmov_melee_loud_only"] = "Loud Only",
+					["resmod_advmov_melee_off"] = "Disabled",
+		["bm_melee_advmov"] = "Kick",
 
 		--EXTRA OPTIONS
 		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
 		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
-		["RestorationModGOTTAGETAGRIPTitleID"] = "Hide ALL Foregrips",
-		["RestorationModGOTTAGETAGRIPDescID"] = "Hides *all* attachments of the \"vertical_grip\" type from appearing in menus; ones already attached to weapons are unaffected. Requires restart.",
-		["RestorationModGCGPYPMMSACTitleID"] = "Super Cereal Weapons",
-		["RestorationModGCGPYPMMSACDescID"] = "Disables Star Wars blaster mechanics. Requires restart.",
-		["RestorationModGCGPYPMMSACTextTitleID"] = "Super Cereal Text",
-		["RestorationModGCGPYPMMSACTextDescID"] = "Disables text based easter eggs from being rolled. Requires restart.",
-		["RestorationModForceEggsOptionsButtonTitleID"] = "Force Easter Egg Text",
-		["RestorationModForceEggsOptionsButtonDescID"] = "Force enable individual easter egg texts; ignores the effects of \"Super Cereal Text\" if its enabled.\nToggling anything in here requires a restart.",
-			["RestorationModUpotteTitleID"] = "Enroll in Seishou Academy",
-			["RestorationModUpotteDescID"] = "Work with the Modern Literature teacher or something",
-			["RestorationModMyWifeTitleID"] = "G Less Than 3",
-			["RestorationModMyWifeDescID"] = "The inner machinations of DMC's mind are an enigma",
-			["RestorationModCrabBattleTitleID"] = "Now There's A Pretty Meme",
-			["RestorationModCrabBattleDescID"] = "Exquisite!",
-			["RestorationModEmberMyBelovedTitleID"] = "Go EXTREME Digital",
-			["RestorationModEmberMyBelovedDescID"] = "Clem Grakata!",
-			["RestorationModBigManTitleID"] = ":^)",
-			["RestorationModBigManDescID"] = "Enables other easter egg text",
 		["RestorationModSevenHoldTitleID"] = "Toggle Interactions (Press2Hold)",
 		["RestorationModSevenHoldDescID"] = "Enable/disable whether or not the interact key acts as a toggle.",
 		["RestorationModSevenHoldDeployCancelTitleID"] = "Deployable Cancels Interact",
 		["RestorationModSevenHoldDeployCancelDescID"] = "Enable/disable whether or not the deployable key is what's used to cancel an active toggle interaction. Requires Toggle Interactions to be enabled to have any effect.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
-		["RestorationModWpnCatTitleID"] = "Buy Menu Tab Sorting",
-		["RestorationModWpnCatDescID"] = "Change weapon grouping method used when buying a weapon from the black market menu. Requires restart.",
-			["base_wpn_cat"] = "base skill",
-			["sub_wpn_cat"] = "sub-category & damage tier",
-
-		["RestorationModWepNamesTitleID"] = "Weapon (Re)Names",
-		["RestorationModWepNamesDescID"] = "Change the naming style of weapons and attachments. Requires restart.",
-			["resmod_res_names"] = "Resmod Names (Default)",
-			["resmod_no_nicknames"] = "Resmod Names (No Nicknames)",
-			["dmcwo_reelnames"] = "Real Weapon Names (DMCWO Port - WIP)",
-			["resmod_no_renames"] = "Vanilla Names (or use your own rename mods)",
-
-		["RestorationModDisableAdvMovTFTitleID"] = "Disable Wall-run/jump",
-		["RestorationModDisableAdvMovTFDescID"] = "Disables the wall-run/jump aspects of Advanced Movement.",
-		["RestorationModAdvMovMeleeTitleID"] = "Melee Behavior",
-		["RestorationModAdvMovMeleeDescID"] = "Change how Advanced Movement's jump/slide/dash/sprint-kick behaves.",
-			["resmod_advmov_melee_on"] = "Default",
-			["resmod_advmov_melee_loud_only"] = "Loud Only",
-			["resmod_advmov_melee_off"] = "Disabled",
-
-		--WEAPON HANDLING
-		["RestorationModStaticAimTitleID"] = "No Weapon Movement While ADS",
-		["RestorationModStaticAimDescID"] = "Enables/Disables cosmetic sway and drift while aiming; overrides the \"Viewmodel Movement\" setting when enabled. Requires restart. WARNING: MAY MAKE SOME OPTICS UNUSABLE IF UNCHECKED",
-		["RestorationModBigScopeOffsetTitleID"] = "\"big Scope\" Viewmodel Offset",
-		["RestorationModBigScopeOffsetDescID"] = "Slightly tilts and shifts hipfire viewmoodels to the right when using large optics to reduce visual obstructions.",
-		["RestorationModViewmodelMovementTitleID"] = "Viewmodel Movement",
-		["RestorationModViewmodelMovementDescID"] = "Choose how your weapons' viewmodel moves on screen as you look around; ADS movement is overridden by the \"No Weapon Movement While ADS\" setting if enabled. Requires restart.",
-			["vm_vanilla"] = "Vanilla Behavior",
-			["vm_drag"] = "Weapon Drags Behind",
-			["vm_lead"] = "Weapon Leads Ahead",
-			["vm_static"] = "Static (No Movement)",
-		["RestorationModCarpalTunnelTitleID"] = "Recoil Auto-Recovery",
-		["RestorationModCarpalTunnelDescID"] = "Choose how recoil auto-recovery mechanics work. Enabled versions are balanced differently.",
-			["rr_off"] = "Disabled",
-			["rr_per_weapon"] = "Weapon specific",
-			["rr_full"] = "Full",
-		["RestorationModAutoDMRsTitleID"] = "Marksmen Rifles Start Full-Auto",
-		["RestorationModAutoDMRsDescID"] = "Toggle whether or not all Marksmen Rifles with semi-auto and full-auto firemodes start off on full-auto.",
-		["RestorationModWpnFireDescopeTitleID"] = "Allow De-scope for certain weapons",
-		["RestorationModWpnFireDescopeDescID"] = "Toggle whether or not some weapons de-scope when shooting. NOTE: the de-scope is used to reduce clipping; some sight may clip if disabled. Setting is ignored on weapons that mention de-scope as a mechanic.",
-		["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
-		["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
-		["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
-		["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
-		["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
-		["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
-		["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
-		["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
-		["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",
-		["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
-		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
-		["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
-		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
-		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
-		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
-		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
-		["RestorationModManualReloadsTitleID"] = "Manual Reloads",
-		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
-		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
-		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
-		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
-		["RestorationModADSTransitionStyleDescID"] = "Change the transition style of aiming down your sights.",
-			["vanilla_on_rails"] = "Default/On-Rails",
-			["kf_mw_style"] = "KF1/CoD Style",
-			["tilt_in"] = "Tilted In",
-		["RestorationModAimDeploysBipodTitleID"] = "ADS Deploys Bipod",
-		["RestorationModAimDeploysBipodDescID"] = "Enable/disable bipods auto-mounting when ADSing over a valid surface.",
-		["RestorationModMoveCancelBipodTitleID"] = "Movement Dismounts Bipod",
-		["RestorationModMoveCancelBipodDescID"] = "Enable/disable basic movement inputs dismounting bipods.",
-		["RestorationModSeparateBowADSTitleID"] = "Separate Bow Aiming",
-		["RestorationModSeparateBowADSDescID"] = "Disables forced aiming with bows when drawing an arrow. While enabled, your reload key is used to let down your drawn arrow.",
-		["RestorationModPerPelletShotgunsTitleID"] = "Per-Pellet Shotgun Damage (WIP)",
-		["RestorationModPerPelletShotgunsDescID"] = "Shotgun damage is calculated per pellet as opposed to the standard \"1 pellet = full damage, headshots prioritized\". Non-slug shotgun damage is increased to compesate for lower consistency. Requires restart.",
-
 
 		["default"] = "Default",
 		["random"] = "Random",
@@ -749,6 +775,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
 		["RestorationModSizeOnScreenDescID"] = "Changes the size of the HUD on the screen. May require a restart.",
+		["RestorationModScreenEffectAlphaTitleID"] = "Screen Effect Strength",
+		["RestorationModScreenEffectAlphaDescID"] = "Set the transparency of the screen effect when hit with slowdown or knockback. Default: 1",
 		["RestorationModTeammateTitleID"] = "Alpha teammates panel",
 		["RestorationModTeammateDescID"] = "Enable or disable the alpha teammates panel, which displays you & your team's statistics.",
 		["RestorationModHeistTimerTitleID"] = "Alpha heist timer",
@@ -849,17 +877,19 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_int_dock_burn_name"] = "Burnout",
 		["heist_int_dock_burn_brief"] = "No time for detailed plans, they're going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.",
 		["heist_wetwork_burn_name"] = "Burnout",
-		["heist_wetwork_burn_brief"] = "Alright, we're almost at the site. You've been here before, but we're going in hot this time.\nMight be some loot still stashed around, but that's secondary.\n\nKeep an eye out for anything you can use to see whats inside the closed containers. Cameras, objects around the containers, whiteboards and so on.",
-		["wwburn_01"] = "READY UP",
-		["wwburn_01_desc"] = "Were in the front gate, Murkywater will be all over so get your guns out.",
-		["wwburn_02"] = "LOCATE SERVERS",
-		["wwburn_02_desc"] = "Locate the three shipping containers that hold master servers.",
+		["heist_wetwork_burn_brief"] = "Alright, we're almost at the site. You've been here before, but we're going in hot this time.\nMight be some loot still stashed around, but that's secondary.\n\nFirst locate a computer connected to their security network. Use it to see what's inside the closed containers. Keep an eye out for any details to identify the correct ones. Container design, objects around the containers, whiteboards and so on.",
+		["wwburn_01"] = "FIND THE CAMERA FEED ACCESS",
+		["wwburn_01_desc"] = "Find a computer with security access. You'll use it to locate the servers.",
+		["wwburn_02"] = "SECURE SERVERS",
+		["wwburn_02_desc"] = "Use the camera feed to locate the three shipping containers that hold master servers. Secure the servers.",
 		["wwburn_03"] = "BURN THE BACKUPS",
 		["wwburn_03_desc"] = "Burn the backups of the master servers, they'll be in the same containers.",
 		["wwburn_04"] = "EXTRACTION AVAILABLE",
 		["wwburn_04_desc"] = "Escape, or secure more loot if you feel greedy.",
 
 		["wwburn_serverpku"] = "Secure",
+		["wwburn_whiteboard"] = "Possible Clue",
+		["wwburn_laptop"] = "Camera Access",
 		["wwburn_gaspku"] = "Collect",
 		["wwburn_defend"] = "Defend",
 		["wwburn_container"] = "Shipping Container",
@@ -1281,28 +1311,28 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 100% and there is no reduction to enemy headshot multipliers.##",
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_1_1"] = "Reflex sight.\n#{risk}#1.1x magnification.##",
-		["bm_wp_upg_o_1_1_health"] = "Reflex sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1"] = "Red Dot sight.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_health"] = "Red Dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_scope"] = "Low-powered scope.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
-		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up ironsights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up iron sights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_2"] = "Low-powered scope.\n#{risk}#2x magnification.##",
 		["bm_wp_upg_o_2_szholot"] = "Thermal holographic sight.\n#{risk}#2x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
 		["bm_wp_upg_o_2_5"] = "Low-powered scope.\n#{risk}#2.5x magnification.##",
 		["bm_wp_upg_o_3"] = "Mid-range scope.\n#{risk}#3x magnification.##",
 		["bm_wp_upg_o_3_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#3x magnification.##",
-		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted reflex sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
-		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up ironsights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral reflex sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
-		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted reflex sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
+		["bm_wp_upg_o_4_irons"] = "Mid-range scope with back-up iron sights.\n#{risk}#1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds"] = "Mid-range scope with an integral red-dot sight.\n#{risk}#1.1-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
+		["bm_wp_upg_o_4_rds_mount"] = "Mid-range LPVO with a top-mounted red-dot sight.\n#{risk}#1.1-2-4x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels and sights.",
 		["bm_wp_upg_o_4_vari"] = "Variable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_4_valentine"] = "\"I got a class assignment for all of y'all!\"\n\nVariable zoom scope.\n#{risk}#4-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_4_valentine_x"] = "I don't give a shit, I don't give a fuck!\nI don't give a shit! I don't give a fuck!\nNow if I give a shit, I might just give a fuck!\nBut I don't give a shit, so I don't give a fuck!",
@@ -1321,9 +1351,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_fl_second_sight_warning"] = "\n\n#{important_1}#CANNOT BE TOGGLED WHILE AIMING AS A SECONDARY SIGHT IS ATTACHED.##",
 
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
-		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled reflex sight.\n#{skill_color}#1.1x magnification.##",
+		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red-dot sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between aiming down your sights and #{risk}#point shooting.##\nWhile point shooting you aim #{skill_color}#25%## faster and the movement speed reduction while aiming is reduced by #{skill_color}#50%## in exchange for a #{important_1}#large reduction in aimed accuracy.##\n\n#{risk}#The use of a laser gadget is highly recommended, whenever possible.##", --VMP Point Shoot Laser
 		["bm_wp_upg_o_angled_aim_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between standard and canted aiming.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{risk}#3x magnification.##",
@@ -1395,6 +1425,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sms_info_2"] = " while shooting.",
 		["bm_menu_stat_sms_info_2"] = " while shooting due to current attachments.",
 		["bm_menu_weapon_slot_search_empty"] = "\n##NO RESULTS FOUND FOR## ##\"$search\"##",
+		["bm_menu_weapon_anim_warning"] = "#{important_1}#The animation swap this attachment provides does not sync with the reload timers!##",
 		["bm_menu_weapon_slot_warning_1"] = "\n##//////////               DO  NOT  USE               //////////\n",
 		["bm_menu_weapon_slot_warning_2"] = "\n//////////               DO  NOT  USE               //////////##",
 		["bm_menu_weapon_slot_warning_primary"] = "WEAPON WAS MOVED TO THE PRIMARY SLOT\nWILL CRASH IF USED IN-HEIST AS A SECONDARY",
@@ -2010,6 +2041,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_stats_detection"] = "Encumbrance",
 		["bm_menu_stats_min_detection"] = "Encumbrance",
 		["bm_menu_stats_max_detection"] = "Encumbrance",
+		["bm_menu_stats_dash_limit"] = "Dash Limit:",
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",
@@ -2031,6 +2063,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
 		["bm_menu_riser"] = "Riser",
 		["bm_menu_pump"] = "Pump",
+		["bm_menu_sight_mount"] = "Sight Mount",
 
 		["bm_menu_upotte_barrel"] = "Barrel",
 		["bm_menu_upotte_foregrip"] = "Handguard",
@@ -2134,6 +2167,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_dodge_grace_jp_cap"] = "#{important_1}#Pro-Job## rating",
 		["bm_menu_dodge_grace_both"] = " and ",
 		["bm_menu_dodge_grace_diff_cap"] = "risk level of #{risk}#$risk_level##",
+
+		["bm_menu_dash_grace"] = "GRACE PERIOD ON DASH: #{skill_color}#$dash_grace##",
+		["bm_menu_dash_grace_dodge"] = "\n - WITH DODGE READY: #{skill_color}#$dash_grace_dodge##",
 
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen##",
 		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: #{skill_color}#$passive_armor_regen## \nArmor regenerated when damaging enemies: #{skill_color}#$active_armor_regen##",
@@ -2273,8 +2309,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_concussion_desc"] = "Radius: #{skill_color}#10m## \n- Stuns enemies for up to #{skill_color}#4s##\n- Enemy accuracy reduced by #{skill_color}#50%## for #{skill_color}#7s## \n- #{important_1}#Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects## \n\nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
 		--Gas
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
-		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
-		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
+		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
 
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#240## \n- #{skill_color}#Can be retrieved## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
@@ -2388,6 +2424,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Bernetti--
 				["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
 				["bm_wp_upg_i_93r_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1100 RPM 3-round burst## setting, at the cost of #{important_1}#extra kick.##",
+				--Glock
+				["bm_wp_upg_i_csglock"] = "T-Side Burst Kit",
+				["bm_wp_upg_i_csglock_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1200 RPM 3-round burst## setting, at the cost of a lower semi-auto fire rate.",
+				--AK12
+				["bm_wp_upg_i_abakan"] = "Abakan Kit",
+				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a lower fire rate afterwards.",
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
@@ -2431,6 +2473,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_quad2_desc"] = "",
 				["bm_wp_upg_vintage_desc"] = "",
 
+				["bm_wp_upg_o_m4_irons_dmc"] = "CAR-4 Flip-up Iron Sights",
+				["bm_wp_upg_o_ozark_irons_dmc"] = "ZR Flip-up Iron Sights",
+				["bm_wp_upg_o_dd_irons_dmc"] = "Versatile Fixed Iron Sights",
+				["bm_wp_upg_o_ecp_irons_dmc"] = "Iron Sights",
+
 				--CUSTOM WEAPON ATTACHMENTS
 					--M6D
 					["kfa_scope"] = "KFA-2 Smart-Link Scope",
@@ -2452,8 +2499,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
-				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
+				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+
+				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 				--Igor (APS)
 				["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
 				["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
@@ -2659,6 +2708,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Staggers enemies up to 9.75 meters away.##\n#{risk}#(Stagger range cannot be modified)##\n#{important_1}#Slows spin-up time by 30%.##",
 					["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Slows spin-up time by 50%.##",
 					["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% chance to set enemies on fire, dealing## #{heat_warm_color}#60## #{skill_color}#damage over 4 seconds.##\n#{risk}#Chance is reduced over range and only stuns enemies before damage falloff starts.\nDeals fire damage instead of bullet damage.##",
+					--MW2019 PKM
+					["bm_wp_wpn_fps_lmg_pkilo_xmag"] = "Brown Ammo Box",
+					["bm_wp_wpn_fps_lmg_pkilo_xmag_large"] = "Black Ammo Box",
+
 
 			--[[ SHOTGUNS ]]
 				--Saiga
@@ -2863,6 +2916,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Switches .458 SOCOM rounds for #{stats_positive}#poison-laced .450 Bushmaster## rounds that #{stats_positive}#deal 30 damage/sec over 4 seconds and can stun enemies.##\n\n#{important_1}#Can no longer pierce multiple enemies.##",
 					["bm_w_sierra458_ivy_desc"] = "Chains being the weapon-smith of the gang began development of a heavy-hitting yet high rate of fire alternative to the Tecci Tactical rifle.\n\n#{skill_color}#Deals 50% of its damage through body armor, can pierce thin walls## and #{stats_positive}#deals damage over time with poison rounds.##",
 					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
+					--RMC2
+					["bm_w_rmary2"] = "Goblin Mk2",
+					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##",
+					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
 
 			--[[ SNIPERS ]]
 				--MSR
@@ -3235,6 +3292,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Joceline
 					["bm_w_b682"] = "Joceline O/U 12G",
 					--Custom Shotguns
+						--MW2022 Vepr
+						["bm_w_vecho"] = "KV Broadside",
+						--MW2023 Origin 12
+						["bm_w_haymaker"] = "Haymaker",
 						--Doomstick
 						["bm_w_quadbarrel"] = "Doomstick",
 						--Widowmaker TX
@@ -3326,6 +3387,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_ar18"] = "CAR-18",
 						--FIK-22
 						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
+						--ACR 2012
+						["bm_w_acr_2012"] = "MCW-R",
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3438,6 +3501,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_wpn_fps_snp_svd_pso"] = "SV7 Scope",
 						--L115
 						["bm_w_l115"] = "AIM 90M",
+						--"PTRS"
+						["bm_w_mptango41"] = "Gorenko Anti-Tank Rifle",
 				--[[ LAUNCHERS & BOWS ]]
 					--GL40
 					["bm_w_gre_m79"] = "GL-40",
@@ -3932,6 +3997,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_boot_body_exotic"] = "Case Hardened 1887 Reciever",
 					--Claire 12G
 					["bm_w_coach"] = "Remington Model 1889",
+					--CUSTOM SHOTGUNS
+						--MW2022 Vepr
+						["bm_w_vecho"] = "Vepr-12",
+						--MW2023 Origin 12
+						["bm_w_haymaker"] = "Origin-12",
 
 				--[[ARs]]
 					--FAMAS
@@ -4025,6 +4095,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_groza"] = "TsKIB SOO Groza-1",
 					--Custom Rifles
 						["bm_w_fik22"] = "Ruger 10/22",
+						--ACR 2012
+						["bm_w_acr_2012"] = "Remington ACR",
 
 
 				--[[DMRs]]
@@ -4186,6 +4258,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_svd"] = "Kalashnikov Concern SVD",
 						--L115
 						["bm_w_l115"] = "Accuracy International L115",
+						--"PTRS"
+						["bm_w_mptango41"] = "\"PTRS-41\"",
 						--PD3 Lynx
 						["bm_w_pd3_lynx"] = "SERO Gepard M6",
 						--M107
@@ -4313,13 +4387,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "Meprolight Tru-Dot Adjustable Sight Set",
-						["bm_wp_upg_o_rmr"] = "Trijicon RMR Reflex Sight",
+						["bm_wp_upg_o_rmr"] = "Trijicon RMR Red Dot Sight",
 
-						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Reflex Sight",
-						["bm_wp_upg_o_reflex"] = "Reflex Sight",
-						["bm_wp_upg_o_cmore"] = "C-More Railway Reflex Sight",
-						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Reflex Sight",
-						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Reflex Sight",
+						["bm_wp_upg_o_docter"] = "IRONDOT w/Docter Sight II Plus Red Dot Sight",
+						["bm_wp_upg_o_reflex"] = "Red Dot Sight",
+						["bm_wp_upg_o_cmore"] = "C-More Railway Red Dot Sight",
+						["bm_wp_upg_o_rx01"] = "Trijicon RX01 Red Dot Sight",
+						["bm_wp_upg_o_rx30"] = "Trijicon RX30 Red Dot Sight",
 
 						["bm_wp_upg_o_cs"] = "Aimpoint CS Red Dot Sight",
 						["bm_wp_upg_o_aimpoint"] = "Aimpoint PRO Red Dot Sight",
@@ -4338,10 +4412,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_spot"] = "NcStar ADO 3x42 Scope w/Rangefinder",
 
-						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope w/Micro Reflex",
+						["bm_wp_upg_o_atibal"] = "Atibal MROC 3x32 Scope w/Micro Red Dot",
 						["bm_wpn_fps_upg_o_hamr"] = "Leupold Mk. 4 HAMR 4x24 Scope",
 
-						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Reflex",
+						["bm_wp_upg_o_northtac"] = "Northtac Assault Optic 1-4x28 w/Micro Red Dot",
 						["bm_wp_uupg_o_schmidt"] = "Schmidt & Bender 5-45x56 PM II High Power",
 
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
@@ -4479,7 +4553,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if Month == "4" and Day == "1" then
 			shalashaska = 1
 		end
-		if bobcat or not easterless and twirl <= shalashaska then
+		if bobcat or (not easterless and (twirl <= shalashaska)) then
 			LocalizationManager:add_localized_strings({
 				["bm_w_peacemaker"] = "Revolver Ocelot",
 				["bm_w_peacemaker_desc"] = "Revolver Ocelot",
@@ -4505,7 +4579,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if Month == "4" and Day == "1" then
 			funny = 1
 		end
-		if eggplant or not easterless and cute <= funny then
+		if eggplant or (not easterless and (cute <= funny)) then
 			LocalizationManager:add_localized_strings({
 			--It's an "Upotte!!" reference
 			--SEISHOU ACADEMY
@@ -4620,7 +4694,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if Month == "4" and Day == "1" then
 			pistol = 1
 		end
-		if shitpost or not easterless and big <= pistol then
+		if shitpost or (not easterless and (big <= pistol)) then
 			LocalizationManager:add_localized_strings({
 				["bm_w_huntsman"] = "Bubble Daryl",
 				["bm_w_deagle"] = "Big Pistol",
@@ -4636,7 +4710,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		if Month == "4" and Day == "1" then
 			tornado = 1
 		end
-		if not easterless and blizzard <= tornado then
+		if (not easterless and (blizzard <= tornado)) then
 			LocalizationManager:add_localized_strings({
 				["menu_pattern_scale_small"] = "Justice",
 				["menu_pattern_scale_medium"] = "Premium",
@@ -4823,7 +4897,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you.",
 		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
 		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
-		["loading_gameplay_res_16"] = "You can parry melee attacks by charging your own. This can be upgraded to work against cloaker kicks.",
+		["loading_gameplay_res_16"] = "You can parry most enemy melee attacks by charging your own. This can be upgraded to work against cloaker kicks and shield bashes.",
 		["loading_gameplay_res_17"] = "Enemy melee attacks are quick and deadly. Keep your distance!",
 		["loading_gameplay_res_18"] = "You know what's better than smacking enemies with a baseball bat? Smacking them in the head with a baseball bat for headshot damage.",
 		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. Mind their lasers!",
@@ -5104,8 +5178,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_spawn_mult"] = "Amplified Response",
 		["menu_mutator_enemy_spawn"] = "ENEMY SPAWN MULTIPLIER",
-		["mutator_spawn_mult_desc"] = "Increased enemy spawns.",
-		["mutator_spawn_mult_longdesc"] = "More enemies will spawn during assault phases. The Overkill™ way!",
+		["mutator_spawn_mult_desc"] = "Modified enemy spawns.",
+		["mutator_spawn_mult_longdesc"] = "More (or less) enemies will spawn during assault phases. The Overkill™ way!",
 
 		["mutator_birthday"] = "Balloon Poppers",
 		["mutator_birthday_desc"] = "Special kills spawn balloons that provide buffs.",
@@ -5340,7 +5414,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Partners in Crime
 				["menu_control_freak_beta_sc"] = "Partners in Crime",
-				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additonal #{skill_color}#$skill_value_b1## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#$skill_value_p1## for each hostage you have; stacks up to #{skill_color}#4## times.",
+				["menu_control_freak_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour movement speed is increased by an additional #{skill_color}#$skill_value_b1## for each hostage you have; stacks up to #{skill_color}#4## times.\n\nACE: #{owned}#$pro##\nYour health is increased by an additional #{skill_color}#$skill_value_p1## for each hostage you have; stacks up to #{skill_color}#4## times.",
 
 				--Hostage Taker
 				["menu_black_marketeer_beta_sc"] = "Hostage Taker",
@@ -5424,7 +5498,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee or parry Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered or parried.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -5570,7 +5644,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1%## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nYou move #{skill_color}#$skill_value_b5## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nYou move #{skill_color}#$skill_value_b5## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
@@ -5595,7 +5669,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",
-				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance until you take damage.\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
+				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance. The critical hit chance persists for #{skill_color}#$skill_value_b3## seconds after taking damage.\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Cleaner",
@@ -5603,7 +5677,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#50%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 
@@ -5689,7 +5763,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		if Month == "4" and Day == "1" then
 			frame = 1
 		end
-		if registeredloser or not easterless and butt <= frame then
+		if registeredloser or (not easterless and (butt <= frame)) then
 			LocalizationManager:add_localized_strings({
 				["menu_st_spec_23"] = "Helminth",
 				["menu_st_spec_23_desc"] = "Who nurtures you in your times of rest? Who restores your battle-torn body, day after day after day? Whose milk enriches your kindred flesh with endless strength and vigor?\n\n\n#{important_1}#It can only be me.##",
@@ -5708,10 +5782,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_category_mod"] = "Mod",
 
 		--Shared Perks--
-		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#25%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#10%## faster.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#33%## more ammo.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#20%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+			
+		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#$perk_value_1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#$perk_value_2## less affected.\n\nYou gain #{skill_color}#$perk_value_3## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#$perk_value_4## faster.\n\nYou do #{skill_color}#$perk_value_5## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+
+		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#$perk_value_1## more ammo; effect is doubled for offline heists.\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+
+		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##$perk_value_1## points.\n\nYour armor is increased by ##$perk_value_2## for ballistic vests.",
@@ -5786,7 +5863,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "When you are surrounded by three or more enemies within ##$perk_value_1## meters, you take ##$perk_value_2## less damage from enemies.",
 		["menu_deck9_3_desc_sc"] = "Killing an enemy regenerates #{skill_color}#$perk_value_1## armor.\n\nThis cannot occur more than once every #{important_1}#$perk_value_2## seconds. Each kill during cooldown reduces it by #{skill_color}#$perk_value_3## seconds; melee kills reduce it by an additional #{skill_color}#$perk_value_4## seconds.\n\nIf a kill clears an active cooldown it will trigger the applicable perks and restart the cooldown.\n\nYou gain #{skill_color}#$perk_value_5## dodge points.",
-		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
+		["menu_deck9_5_desc_sc"] = "Killing an enemy with a melee weapon regenerates ##$perk_value_1## health and ##$perk_value_3## of your stamina.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYou carry ##$perk_value_2## additional body bag in your inventory.",
 		["menu_deck9_7_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters regenerates ##$perk_value_2## armor; melee kills double the amount.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nYour dodge is increased by an additional ##$perk_value_3## points.",
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##$perk_value_1## meters has a ##$perk_value_2## chance to spread panic among your enemies in a ##$perk_value_3## meter radius around you; melee kills double the chance.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis perk shares its cooldown with Tension (Card 3) even if this perk was not triggered.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
@@ -6015,7 +6092,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 				["menu_deck_kmerc_9_desc_sc"] = "Whenever you take damage to your health that leaves you at ##30%## health or less, regain ##50%## of that damage as armor.\nThis cannot occur more than once every ##1## second or from the same hit that triggers Walk It Off's (Card 5) invulnerability.",
 
 			--OFFYERROCKER'S LIBERATOR PERK DECK
-				["menu_deck_liberator_1_desc_sc"] = "Unlocks the ##Survival Syringe## for use in place of a throwable. Using the Survival Syringe will immediately restore ##15## stamina and restore ##0.5## points of health every second for ##4## seconds or until the player takes health damage.\nThe Survival Syringe has ##1## charge with a cooldown of ##30## seconds; each kill you perform will reduce the cooldown by ##1## second.",
+				["menu_deck_liberator_1_desc_sc"] = "Unlocks the ##Survival Syringe## for use in place of a throwable. Using the Survival Syringe will immediately restore ##15## stamina and restore ##0.5## points of health every second for ##6## seconds or until the player takes health damage.\nThe Survival Syringe has ##1## charge with a cooldown of ##30## seconds; each kill you perform will reduce the cooldown by ##1## second.",
 				["menu_deck_liberator_3_desc_sc"] = "The health regen from the Survival Syringe now lasts for an additional ##2## seconds.\n\nWhen health regen from Survival Syringe is canceled, gain ##10%## damage resistance for the remaining time.",
 				["menu_deck_liberator_5_desc_sc"] = "The Survival Syringe restores an additional ##15## stamina and restores an additional ##0.5## points of health every second.\n\nYour dodge is increased by ##5## points.",
 				["menu_deck_liberator_7_desc_sc"] = "Your health is increased by ##10%##.\n\nThe health regen from Survival Syringe now lasts for an additional ##2## seconds.",

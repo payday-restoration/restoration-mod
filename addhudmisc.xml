@@ -1,5 +1,5 @@
 <table directory="assets">
-	
+
 	<!-- HUD and map assets -->
 	<texture path="guis/textures/restoration/hud_icons"/>
 	<texture path="guis/textures/restoration/icon_carrybag"/>
@@ -63,13 +63,13 @@
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
-	
+
 	<!--Assets-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_burn_add_saw" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/rush_asset_sentrygun" force="false"/>
-	
+
 	<!-- New Color Gradings -->
 	<texture path="core/textures/cg_plus"/>
 	<texture path="core/textures/cg_force"/>
@@ -100,5 +100,8 @@
 
 	<!-- Drill Screen Bloom Improvement -->
 	<!-- texture path="guis/textures/drill_screen_background" force="true"/ -->
-			
+
+	<!-- Health Circle++ Fix -->
+	<texture path="guis/textures/pd2/hud_health_fake" force="true"/>
+
 </table>

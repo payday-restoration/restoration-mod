@@ -308,7 +308,8 @@ function HUDTeammate:_create_carry(carry_panel)
 	})
 end
 
-function HUDTeammate:_create_radial_health(radial_health_panel)
+-- function HUDTeammate:_create_radial_health(radial_health_panel)
+Hooks:OverrideFunction(HUDTeammate, "_create_radial_health", function(self, radial_health_panel)
 	self._radial_health_panel = radial_health_panel
 	local radial_size = 64
 	local radial_bg = radial_health_panel:bitmap({
@@ -511,7 +512,8 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		h = radial_health_panel:h()
 	})
 	self:_create_condition(radial_health_panel)
-end
+end)
+-- end
 
 function HUDTeammate:_create_weapon_panels(weapons_panel)
 	local bg_color = Color.white / 1

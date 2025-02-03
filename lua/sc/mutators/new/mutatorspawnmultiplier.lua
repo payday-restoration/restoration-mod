@@ -42,7 +42,7 @@ function MutatorSpawnMult:get_spawn_multiplier()
 end
 
 function MutatorSpawnMult:_min_mult()
-	return 1.01
+	return 0.5
 end
 
 function MutatorSpawnMult:_max_mult()

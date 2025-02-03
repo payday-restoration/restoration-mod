@@ -46,7 +46,7 @@ return {
 		ponr_player_mul = ponr_timer_player_mul,
 		ponr = ponr_value * 2
 	},
-	--prevent dozers/shields from disabling the power (Are we living in PDTH.....again?)
+	--prevent dozers/shields from disabling the power
 	[104699] = access_fix,
 	[104700] = access_fix,
 	[104701] = access_fix,
@@ -63,6 +63,7 @@ return {
 			{id = 400017, delay = 150}
 		}
 	},
+	--this makes snipers in the nearby building not floating
 	[100318] = { 
 		on_executed = {
 			{id = 105543, delay = 1}

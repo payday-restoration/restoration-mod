@@ -101,6 +101,10 @@
 	<!-- hotline day 2 -->
 	<mission			path="levels/instances/unique/hlm_random_left003/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_random_right003/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<mission			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_left002/world/world" force="true" unload="true"/>
+	<continent			path="levels/instances/unique/hlm_random_right002/world/world" force="true" unload="true"/>
 	<mission			path="levels/instances/unique/hlm_vault/world/world" force="true" unload="true"/> <!-- https://www.youtube.com/watch?v=SpxvK9rOqvM -->
 	
 	<!-- Counterfeit -->
@@ -174,7 +178,6 @@
 	<continent			path="levels/narratives/vlad/pines/world/world" force="true" unload="true"/> <!--removes the police lights-->
 	
 	<!--Henry's Cock edit - a bit more cover, some spawn tweaks, altered turret objective, pro job slightly more evil-->
-	<mission			path="levels/narratives/locke/des/world/world" force="true" unload="true"/> 
 	<continent			path="levels/narratives/locke/des/world/world" force="true" unload="true"/>
 	<mission			path="levels/narratives/locke/des/art/art" force="true" unload="true"/> 
 	<continent			path="levels/narratives/locke/des/art/art" force="true" unload="true"/>
@@ -188,8 +191,6 @@
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
 	<!--better SWAT squads-->
-	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
 	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
@@ -620,7 +621,7 @@
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>
-	<!--Dozer Eggman Emp--- I mean Akan helm-->
+	<!--Dozer Eggman Emp- I mean Akan helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
@@ -689,6 +690,7 @@
 	<texture			path="guis/textures/pd2/hud_buff_halloween" force="false" load="false"/>   
 	<texture			path="guis/textures/pd2/hud_buff_generic" force="false" load="false"/>  
 	<texture			path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
+	<texture			path="guis/textures/restoration/topbottomrim" force="false" load="false"/>
 	
 	<texture			path="guis/textures/pd2/hitconfirm_ineffective" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/hitconfirm_effective" force="false" load="false"/>
@@ -765,6 +767,9 @@
 	<sequence_manager	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_contour" force="true" />	
+
+	<unit				path="units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion" force="true" load="true"/>
+	<unit				path="units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion_husk" force="true" load="true"/>	
 	
 	<!--Snowman Dozer-->
 	<object				path="units/pd2_dlc_cg22/characters/ene_bulldozer_snowman/ene_bulldozer_snowman" force="false"/>
@@ -1347,7 +1352,7 @@
     <effect				path="_dmc/effects/shell_shak_smol" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/shell_shak_sniper" force="false" load="true" unload="true" reload="true"/>
     <effect				path="effects/payday2/particles/weapons/shells/shell_shak" force="true"/>
-	<!--Weapon Mod Trails-->
+	<!--Weapon Mod Trails and Muzzle Effects-->
 	<!--NATO Tracer-->
     <effect				path="_dmc/effects/nato_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/nato_streak" force="false" load="true" unload="true" reload="true"/>
@@ -1392,6 +1397,9 @@
     <effect				path="_dmc/effects/parts/knockback_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/concussion_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/concussion_streak" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
+
 	<!--Cloud-->
 	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	
@@ -1445,6 +1453,12 @@
 	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum"/>
 	<!--I am not a texture artist, anyone else is welcome to make a better one -DMC-->
 	<texture			path="units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_m_drum_df_cc" force="true"/>
+
+	<!--Iron Sights-->
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_car4_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_arbiter_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_dd_irons_dmc"/>
+	<texture			path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_o_ecp_irons_dmc"/>
 
 	<!--
 		Weapon Reticles

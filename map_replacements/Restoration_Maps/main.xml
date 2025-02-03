@@ -68,24 +68,6 @@
 			<asset name="wet_intel"/>
 			<asset name="wet_boat"/>
 		</assets>
-		<include directory="levels/wetwork">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="occluders_only/occluders_only.continent" type="binary"/>
-			<file file="occluders_only/occluders_only.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-			<file file="environments/wetwork_basement.environment" type="custom_xml"/>
-			<file file="environments/wetwork.environment" type="custom_xml"/>
-			<file file="environments/default.environment" type="custom_xml"/>
-		</include>
 		<intro_event>
 			<value_node value=""/>
 		</intro_event>
@@ -179,8 +161,8 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="federales" player_style="suit_sunny" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
-		<add file="levels/junk/add.xml" />
+	<level ai_group_type="federales" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20" player_style="suit_sunny">
+		<add file="levels/junk/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>
@@ -244,7 +226,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="" contact="shatter" hide_from_crimenet="true" icon="guis/textures/customheist_gui/wetwork_burn" id="int_dock_burn" jc="50">
+	<narrative briefing_event="" contact="shatter" icon="guis/textures/customheist_gui/wetwork_burn" id="int_dock_burn" jc="50">
 		<chain>
 			<table level_id="wetwork_burn" type="d" type_id="heist_type_assault"/>
 		</chain>
@@ -310,22 +292,6 @@
 			<asset name="health_bag"/>
 			<asset name="grenade_crate"/>
 		</assets>
-		<include directory="levels/wetwork_burn">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="occluders_only/occluders_only.continent" type="binary"/>
-			<file file="occluders_only/occluders_only.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-			<file file="environments/wetwork_burn.environment" type="custom_xml"/>
-		</include>
 		<intro_event>
 			<value_node value=""/>
 		</intro_event>

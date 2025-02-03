@@ -505,6 +505,9 @@
 	<!--Titandozer-->
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
+
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion_husk" force="false" load="true"/>
 	
 	<object				path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" force="false"/>

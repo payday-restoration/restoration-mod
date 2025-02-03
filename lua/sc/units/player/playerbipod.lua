@@ -266,12 +266,12 @@ function PlayerBipod:_update_check_actions(t, dt)
 		self._shooting = new_action
 	end
 
-	new_action = new_action or self:_check_action_jump(t, input)
-	new_action = new_action or self:_check_action_run(t, input)
-	new_action = new_action or self:_check_change_weapon(t, input)
-	new_action = new_action or self:_check_action_unmount_bipod(t, input)
-	new_action = new_action or self:_check_action_intimidate(t, input)
-	new_action = new_action or self:_check_action_throw_projectile(t, input)
+	--[[new_action = new_action or]] self:_check_action_jump(t, input)
+	--[[new_action = new_action or]] self:_check_action_run(t, input)
+	--[[new_action = new_action or]] self:_check_change_weapon(t, input)
+	--[[new_action = new_action or]] self:_check_action_unmount_bipod(t, input)
+	--[[new_action = new_action or]] self:_check_action_intimidate(t, input)
+	--[[new_action = new_action or]] self:_check_action_throw_projectile(t, input)
 
 	self:_check_action_steelsight(t, input)
 	self:_check_use_item(t, input)
@@ -285,4 +285,34 @@ function PlayerBipod:get_movement_state()
 	else
 		return "bipod"
 	end
+end
+
+function PlayerBipod:_check_action_run(t, input)
+	if self._state_data.previous_state and self._state_data.previous_state == "carry" then
+		return
+	end
+
+	local move = self._controller:get_input_axis("move")
+
+	if input.btn_run_state and move.y > 0.1 then
+		self:_unmount_bipod()
+
+		local current_state = managers.player:get_current_state()
+
+		if current_state then
+			current_state:_start_action_running(t)
+		end
+
+		return true
+	end
+
+
+	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
+
+	local second_sight_sprint = restoration.Options:GetValue("OTHER/WeaponHandling/SecondSightSprint")
+	if  input.btn_run_press and second_sight_sprint and weap_base.toggle_second_sight and self:in_steelsight() then
+		 weap_base:toggle_second_sight(self)
+	end
+
+	return false
 end

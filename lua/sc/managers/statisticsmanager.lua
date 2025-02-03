@@ -5,6 +5,8 @@ StatisticsManager.special_unit_ids = {
 	"tank",
 	"tank_biker",
 	"tank_hw",
+	"tank_hw_black",
+	"tank_hw_minion",
 	"tank_green",
 	"tank_black",
 	"tank_skull",
@@ -22,6 +24,7 @@ StatisticsManager.special_unit_ids = {
 	"weekend_lmg",
 	"tank_titan",
 	"tank_titan_assault",
+	"tank_titan_minion",
 	"enforcer",
 	"enforcer_assault",
 	"spring",
@@ -39,6 +42,9 @@ StatisticsManager.special_unit_ids = {
 	"mobster_boss",
 	"hector_boss",
 	"hector_boss_no_armor",
+	"triad_boss",
+	"triad_boss_no_armor",
+	"deep_boss",
 	"tank_medic",
 	"tank_mini",
 	"phalanx_minion_assault",
@@ -105,6 +111,20 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.tank_titan_minion = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_hw_minion = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 	self._defaults.killed.tank_black = {
 			count = 0,
 			head_shots = 0,
@@ -127,6 +147,13 @@ function StatisticsManager:init()
 			tied = 0
 		}
 	self._defaults.killed.tank_mini = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.tank_hw_black = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
@@ -210,6 +237,20 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.heavy_swat_sniper_scripted = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+	self._defaults.killed.marshal_marksman_scripted = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}	
 	self._defaults.killed.tank_biker = {
 			count = 0,
 			head_shots = 0,
@@ -332,6 +373,13 @@ function StatisticsManager:init()
 		}
 	--Weekend	
 	self._defaults.killed.weekend_dmr = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}
+		self._defaults.killed.weekend_dmr_scripted = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,

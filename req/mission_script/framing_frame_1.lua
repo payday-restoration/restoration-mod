@@ -19,6 +19,7 @@ return {
 			enemy = smg_dude
 		}
 	},
+	--These SWAT men from the choppa don't participate into group ai for some reason?
 	[101949] = participate_to_group_ai,
 	[101950] = participate_to_group_ai,
 	-- Set difficulty

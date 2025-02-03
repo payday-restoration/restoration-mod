@@ -581,6 +581,8 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 				local set_sound = math_min(100, sound_progress)
 
 				SoundDevice:set_rtpc("downed_state_progression", set_sound)
+				
+				managers.music:set_volume_multiplier("downed", 1 - (set_sound / 100), 0)
 			end
 		end
 	end

@@ -347,7 +347,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pbr2.player_style = "loud_suit"
 	
 	self.mia_1.player_style = "miami"
-	self.mia_2.package = {"packages/narr_mia_2", "packages/miscassets"}		
+	self.mia_2.package = {"packages/narr_mia_2", "packages/miscassets", "levels/narratives/h_watchdogs/stage_1/world/world"}		
 	self.mia_2.player_style = "miami"
 
 	self.mia_2.teams = {

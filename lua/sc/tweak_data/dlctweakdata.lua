@@ -276,6 +276,26 @@ function DLCTweakData:init(...)
 		},
 		{
 			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_o_dd_irons_dmc",
+			amount = 1
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_o_arbiter_irons_dmc",
+			amount = 1
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_o_car4_irons_dmc",
+			amount = 1
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_o_ecp_irons_dmc",
+			amount = 1
+		},
+		{
+			type_items = "weapon_mods",
 			item_entry = "wpn_fps_smg_mac10_s_no",
 			amount = 1
 		}

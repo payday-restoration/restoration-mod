@@ -205,7 +205,13 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
-	self.security.access = "security"
+    if table.contains(restoration.gensec, job) then
+	    self.security.access = "fbi"
+        self.security.rescue_hostages = true
+    else
+        self.security.access = "security"
+        self.security.rescue_hostages = false
+    end
 	if job == "nmh" or job == "nmh_res" then
 		self.security.has_alarm_pager = false
 	else
@@ -293,7 +299,13 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.gensec.speech_prefix_p2 = "n"
 	self.gensec.speech_prefix_count = 4
-	self.gensec.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.gensec.access = "fbi"
+        self.gensec.rescue_hostages = true
+    else
+        self.gensec.access = "security"
+        self.gensec.rescue_hostages = false
+    end
 	self.gensec.use_radio = nil
 	self.gensec.silent_priority_shout = "f37"
 	self.gensec.dodge = presets.dodge.athletic
@@ -950,7 +962,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper_scripted.access = "sniper"
 	self.heavy_swat_sniper_scripted.detection = presets.detection.sniper
 	self.heavy_swat_sniper_scripted.no_move_and_shoot = true --making sure that they won't shoot upon spawn and move to their SO spot
-	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9.75 --lower their health up to 50%
+	self.heavy_swat_sniper_scripted.HEALTH_INIT = 9 --lower their health to 90 HP
 	self.heavy_swat_sniper_scripted.headshot_dmg_mul = 3.75
 	self.heavy_swat_sniper_scripted.die_sound_event_2 = "mga_death_scream"
 	self.heavy_swat_sniper_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
@@ -988,7 +1000,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.weekend_dmr_scripted.access = "sniper"
 	self.weekend_dmr_scripted.detection = presets.detection.sniper
 	self.weekend_dmr_scripted.no_move_and_shoot = true
-	self.weekend_dmr_scripted.HEALTH_INIT = 14.75 
+	self.weekend_dmr_scripted.HEALTH_INIT = 14 --lower their health to 140 HP
 	self.weekend_dmr_scripted.headshot_dmg_mul = 4.75
 	self.weekend_dmr_scripted.die_sound_event_2 = "mga_death_scream"
 	self.weekend_dmr_scripted.damage.hurt_severity = presets.hurt_severities.no_hurts
@@ -1140,7 +1152,13 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard = deep_clone(self.city_swat)	
 	self.city_swat_guard.headshot_dmg_mul = 8.5
 	self.city_swat_guard.overheal_mult = 1
-	self.city_swat_guard.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.city_swat_guard.access = "fbi"
+        self.city_swat_guard.rescue_hostages = true
+    else
+        self.city_swat_guard.access = "security"
+        self.city_swat_guard.rescue_hostages = false
+    end
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	if job == "nmh" or job == "nmh_res" then
 		self.city_swat_guard.has_alarm_pager = false
@@ -1306,7 +1324,12 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.allowed_poses = {stand = true}
 	self.sniper.move_speed = presets.move_speed.very_fast
 	self.sniper.shooting_death = false
-	self.sniper.no_move_and_shoot = true
+	--I don't want to add a new tweak_table just for one heist
+	if job == "watchdogs_2" or job == "watchdogs_2_day" then
+		self.sniper.no_move_and_shoot = false
+	else	
+		self.sniper.no_move_and_shoot = true
+	end
 	self.sniper.move_and_shoot_cooldown = 1
 	self.sniper.suppression = nil
 	self.sniper.melee_weapon = nil
@@ -2615,7 +2638,7 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
-	--Titandozer
+	--Titandozer, regular
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.weapon = deep_clone(presets.weapon.normal)
 	self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
@@ -2640,23 +2663,33 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
+	self.tank_titan.melee_push_multiplier = 2 --he punches you harder now
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 22.5
 	table.insert(self._enemy_list, "tank_titan")
 	
-	--Titandozer, assault variant
+	--Titandozer, assault variant (used in assault groups)
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 	if self:get_ai_group_type() == "federales" then
 		self.tank_titan_assault.dt_suppress = {
-			range = 600
+			range = 500
 	}
 	else
 		self.tank_titan_assault.dt_suppress = nil
 	end
 	table.insert(self._enemy_list, "tank_titan_assault")
+
+	--Titandozer, captain minion variant with LMG (Used only for Winters' Squad on DSPJ)
+	self.tank_titan_minion = deep_clone(self.tank_titan)
+	self.tank_titan_minion.tags = {"law", "tank", "special", "tank_titan"}
+	self.tank_titan_minion.no_omnia_heal = true
+	self.tank_titan_minion.dt_suppress = {
+		range = 500
+	}
+	table.insert(self._enemy_list, "tank_titan_minion")
 
 	--Halloween Bulldozer (Black)
 	self.tank_hw_black = deep_clone(self.tank_black)
@@ -2680,7 +2713,14 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
 	self.tank_hw.ignore_headshot = false
 	self.tank_hw.melee_anims = nil
-	table.insert(self._enemy_list, "tank_hw")	
+	table.insert(self._enemy_list, "tank_hw")
+	
+	--Halloween Bulldozer, captain minion variant with LMG (Used only for Winters' Squad on DSPJ)
+	self.tank_hw_minion = deep_clone(self.tank_titan_minion)
+	self.tank_hw_minion.weapon = deep_clone(presets.weapon.normal)
+	self.tank_hw_minion.ignore_headshot = false
+	self.tank_hw_minion.melee_anims = nil
+	table.insert(self._enemy_list, "tank_hw_minion")
 	
 	--Benelli (Bravo) Dozer
 	self.tank_mini = deep_clone(self.tank)
@@ -3130,7 +3170,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.flammable = false
 	self.phalanx_vip.can_be_tased = false
 	self.phalanx_vip.ecm_vulnerability = nil
-	self.phalanx_vip.die_sound_event = "l2n_x01a_any_3p"
+	self.phalanx_vip.die_sound_event = "l2n_burndeath" --more effective death scream
 	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
@@ -3207,7 +3247,7 @@ end
 
 function CharacterTweakData:_init_spring(presets)
 	self.spring = deep_clone(self.tank)
-	self.spring.tags = {"law", "custom", "special", "captain", "spring", "tank"}
+	self.spring.tags = {"law", "custom", "special", "captain", "spring"}
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
@@ -3243,6 +3283,12 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.damage.hurt_severity = presets.hurt_severities.captain
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
+	--You better not get close to Spring or Hatman...
+	self.spring.ewgf = {
+        duration = 2.5,
+        power = 4
+    }
+	self.spring.melee_push_multiplier = 3
 	self.spring.speech_prefix_p1 = "cpa"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil
@@ -3333,6 +3379,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.speech_prefix_p1 = "rtsr"
 	self.summers.speech_prefix_p2 = nil
 	self.summers.speech_prefix_count = nil
+	self.summers.die_sound_event = "rtsr_burndeath" --more effective death scream
 	self.summers.access = "taser"
 	self.summers.dodge = presets.dodge.elite
 	self.summers.can_be_tased = false
@@ -4999,7 +5046,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.damage.rocket_damage_mul = 1
 	presets.base.overheal_mult = 1
 	presets.base.critical_hits = {
-		damage_mul = 1.5
+		damage_mul = 2
 	}
 	presets.base.damage.tased_response = {
 		light = {tased_time = 5, down_time = 5},
@@ -14725,14 +14772,13 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}	
 	presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
-	presets.weapon.gang_member.is_revolver = presets.weapon.gang_member.is_pistol
-	presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
-	presets.weapon.gang_member.is_lmg.FALLOFF = {
+	presets.weapon.gang_member.is_smg.RELOAD_SPEED = 1.2
+	presets.weapon.gang_member.is_smg.FALLOFF = {
 		{
 			r = 100,
-			acc = {0.8, 0.9},
+			acc = {0.6, 0.95},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.1, 0.25},
 			mode = {
 				0,
 				3,
@@ -14742,9 +14788,9 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 500,
-			acc = {0.7, 0.8},
+			acc = {0.6, 0.9},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.1, 0.25},
 			mode = {
 				0,
 				3,
@@ -14754,97 +14800,97 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 1000,
-			acc = {0.6, 0.7},
+			acc = {0.4, 0.65},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.35, 0.5},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				3,
+				3,
 				0
 			}
 		},
 		{
 			r = 1800,
-			acc = {0.5, 0.6},
+			acc = {0.4, 0.65},
 			dmg_mul = 1.25,
-			recoil = {0.35, 0.75},
+			recoil = {0.35, 0.5},
 			mode = {
-				1,
-				2,
-				2,
+				0,
+				3,
+				3,
 				0
 			}
 		},
 		{
 			r = 2000,
-			acc = {0.4, 0.5},
+			acc = {0.4, 0.6},
 			dmg_mul = 1.25,
-			recoil = {0.4, 1.0},
+			recoil = {0.35, 0.7},
 			mode = {
+				0,
 				3,
-				2,
-				2,
+				3,
 				0
 			}
 		},
 		{
 			r = 2600,
-			acc = {0.3, 0.4},
+			acc = {0.2, 0.35},
 			dmg_mul = 1.25,
-			recoil = {1.5, 3},
+			recoil = {0.5, 1.5},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},
 		{
 			r = 2700,
-			acc = {0.2, 0.3},
+			acc = {0.2, 0.35},
 			dmg_mul = 1.25,
-			recoil = {1.5, 3},
+			recoil = {0.5, 1.5},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
 		{
 			r = 2800,
-			acc = {0.2, 0.3},
+			acc = {0.2, 0.35},
 			dmg_mul = 1.1875,
-			recoil = {1.5, 3},
+			recoil = {0.5, 1.5},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
 		{
 			r = 2900,
-			acc = {0.2, 0.3},
+			acc = {0.2, 0.35},
 			dmg_mul = 1.125,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
 		{
 			r = 3000,
-			acc = {0.2, 0.3},
+			acc = {0.2, 0.35},
 			dmg_mul = 1.0625,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14852,11 +14898,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3100,
 			acc = {0.2, 0.3},
 			dmg_mul = 1,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14864,11 +14910,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3200,
 			acc = {0.2, 0.3},
 			dmg_mul = 0.9375,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14876,11 +14922,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3300,
 			acc = {0.2, 0.3},
 			dmg_mul = 0.875,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14888,11 +14934,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3400,
 			acc = {0.2, 0.3},
 			dmg_mul = 0.8125,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14900,11 +14946,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3500,
 			acc = {0.2, 0.3},
 			dmg_mul = 0.75,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14912,11 +14958,11 @@ function CharacterTweakData:_presets(tweak_data)
 			r = 3600,
 			acc = {0.2, 0.3},
 			dmg_mul = 0.6875,
-			recoil = {1.5, 3},
+			recoil = {1, 2},
 			mode = {
+				1,
 				3,
-				1,
-				1,
+				2,
 				0
 			}
 		},	
@@ -14926,8 +14972,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.625,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14938,8 +14984,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.5625,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14950,8 +14996,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.5,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14962,8 +15008,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.4375,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14974,8 +15020,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.375,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14986,8 +15032,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.3125,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -14998,8 +15044,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.25,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -15010,8 +15056,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.1875,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -15022,8 +15068,8 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.125,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
-				1,
 				1,
 				0
 			}
@@ -15034,8 +15080,325 @@ function CharacterTweakData:_presets(tweak_data)
 			dmg_mul = 0.0625,
 			recoil = {1.5, 3},
 			mode = {
+				2,
 				3,
 				1,
+				0
+			}
+		}				
+	}
+	presets.weapon.gang_member.is_revolver = presets.weapon.gang_member.is_pistol
+	presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.is_lmg.RELOAD_SPEED = 0.85
+	presets.weapon.gang_member.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.8, 0.9},
+			dmg_mul = 1.25,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.7, 0.8},
+			dmg_mul = 1.25,
+			recoil = {0.5, 0.8},
+			mode = {
+				0,
+				0,
+				0,
+				6
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.6, 0.7},
+			dmg_mul = 1.25,
+			recoil = {1, 1},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.5, 0.6},
+			dmg_mul = 1.25,
+			recoil = {1, 1},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.4, 0.5},
+			dmg_mul = 1.25,
+			recoil = {1, 1},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},
+		{
+			r = 2600,
+			acc = {0.3, 0.4},
+			dmg_mul = 1.25,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},
+		{
+			r = 2700,
+			acc = {0.2, 0.3},
+			dmg_mul = 1.25,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 2800,
+			acc = {0.2, 0.3},
+			dmg_mul = 1.1875,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.2, 0.3},
+			dmg_mul = 1.125,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3000,
+			acc = {0.2, 0.3},
+			dmg_mul = 1.0625,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3100,
+			acc = {0.2, 0.3},
+			dmg_mul = 1,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.9375,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3300,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.875,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3400,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.8125,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3500,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.75,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3600,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.6875,
+			recoil = {1, 2},
+			mode = {
+				0,
+				0,
+				2,
+				6
+			}
+		},	
+		{
+			r = 3700,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.625,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},		
+		{
+			r = 3800,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.5625,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},	
+		{
+			r = 3900,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.5,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},	
+		{
+			r = 4000,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.4375,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},	
+		{
+			r = 4100,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.375,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},	
+		{
+			r = 4200,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.3125,
+			recoil = {1.5, 3},
+			mode = {
+				0,
+				2,
+				6,
+				0
+			}
+		},	
+		{
+			r = 4300,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.25,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				6,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4400,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.1875,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				6,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4500,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.125,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				6,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4600,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.0625,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				6,
 				1,
 				0
 			}
@@ -15365,10 +15728,14 @@ function CharacterTweakData:_presets(tweak_data)
 				0
 			}
 		}
-	}		
+	}
 	--This doesn't really matter since Semi-autos for bots just use is_shotgun_mag anyway, but just in case
 	presets.weapon.gang_member.is_shotgun_semi = deep_clone(presets.weapon.gang_member.is_shotgun_mag)		
+	presets.weapon.gang_member.is_dmr = deep_clone(presets.weapon.gang_member.rifle)
+	presets.weapon.gang_member.is_dmr.spread = 8
+	presets.weapon.gang_member.is_dmr.RELOAD_SPEED = 0.9
 	presets.weapon.gang_member.is_sniper = deep_clone(presets.weapon.gang_member.rifle)
+	presets.weapon.gang_member.is_sniper.RELOAD_SPEED = 0.9
 	restoration.log_shit("SC: normal presets")
 	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)
 	presets.weapon.normal.rifle = deep_clone(presets.weapon.normal.is_rifle)
@@ -17755,6 +18122,24 @@ function CharacterTweakData:_set_sm_wish()
 	self.drug_lord_boss.move_speed = self.presets.move_speed.slow
 	self.triad_boss.move_speed = self.presets.move_speed.slow
 	self.deep_boss.move_speed = self.presets.move_speed.slow
+
+	--Harder Skulldozer/Titandozer's punches (but not as much as Spring/Hatman)
+	self.tank_skull.ewgf = {
+        duration = 1.5,
+        power = 2
+    }
+	self.tank_titan.ewgf = {
+        duration = 1.5,
+        power = 2
+    }
+	self.tank_titan_assault.ewgf = {
+        duration = 1.5,
+        power = 2
+    }
+	self.tank_hw.ewgf = {
+        duration = 1.5,
+        power = 2
+    }
 	
 	--Tankier Dozer Armor
 	self.tank_armor_damage_mul = 0.5
@@ -18043,8 +18428,8 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_city_guard_3")		
 		
 		--Other
-		table.insert(char_map.basic.list, "ene_bulldozer_2_hw")		
-		table.insert(char_map.basic.list, "ene_vip_2")		
+		table.insert(char_map.basic.list, "ene_bulldozer_2_hw")	
+		table.insert(char_map.basic.list, "ene_bulldozer_4_minion")			
 		table.insert(char_map.basic.list, "ene_mememan_1")
 		table.insert(char_map.basic.list, "ene_mememan_2")
 		table.insert(char_map.basic.list, "ene_bulldozer_biker_1")
@@ -18098,7 +18483,8 @@ function CharacterTweakData:character_map()
 			list = {
 				"ene_vip_1",
 				"ene_vip_2",
-				"ene_vip_2_assault",					
+				"ene_vip_2_assault",
+				"ene_vip_2_minion",					
 				"ene_spring",
 				"ene_vip_autumn",
 				"ene_spook_cloak_1",
@@ -18577,6 +18963,7 @@ function CharacterTweakData:character_map()
 				"ene_akan_medic_zdann",	
 				"ene_akan_lpf",
 				"ene_vip_2",
+				"ene_vip_2_minion",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
 				"ene_fbi_titan_1",

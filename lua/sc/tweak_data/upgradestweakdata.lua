@@ -423,6 +423,28 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			2
 		}
 	}
+
+	self.values.player.dash_stats = {
+		limit = 2,
+		rate = 0.5,
+		cooldown = 1,
+		speed = 1.4,
+		fatigue_mult = 0.5,
+		grace_t = 0.25,
+		add_mult = 0.5,
+		add_mult_dodge = 1.5,
+		grace_cap = 0.45,
+		grace_cap_dodge = 0.65
+	}
+	self.values.player.detection_risk_dash_count = {
+		{
+			1,
+			30,
+			"below",
+			90,
+			2
+		}
+	}
 	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
@@ -855,7 +877,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
-					self.values.smg.full_auto_free_ammo = {5}
+					self.values.smg.full_auto_free_ammo = {4}
 					
 					self.skill_descs.sharpshooter = {
 						skill_value_b1 = tostring((1 - self.values.smg.move_spread_multiplier[1]) % 1 * 100) .."%", -- The movement penalty to accuracy
@@ -866,7 +888,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Heavy Impact
 				--Basic
 					self.values.weapon.knock_down = {
-						0.2, --Ace
+						0.225, --Ace
 						0.2 --Unused
 					}
 				--Ace
@@ -883,7 +905,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Body Expertise aka Spray N' Pray
 				self.values.player.ap_bullets = {0.5}
 				self.values.smg.ap_bullets = {1.0}
-				self.automatic_kills_to_damage_reset_t = 1.5 --delay to reset time (seconds)
+				self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
 						3, --stack limit
@@ -1307,10 +1329,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Rifleman
 				--Basic/Aced
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.85, 0.7}
-					self.values.snp.steelsight_accuracy_inc = {0.85, 0.7}
-					self.values.assault_rifle.steelsight_range_inc = {1.15, 1.3}
-					self.values.snp.steelsight_range_inc = {1.15, 1.3}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.9, 0.8}
+					self.values.snp.steelsight_accuracy_inc = {0.9, 0.8}
+					self.values.assault_rifle.steelsight_range_inc = {1.1, 1.2}
+					self.values.snp.steelsight_range_inc = {1.1, 1.2}
 
 					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.075}
 					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
@@ -1638,31 +1660,32 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
 					{ --Basic
-						1.15,
-						0.01 --Workaround for Buff Tracker sanity checks.
+						1.10,
+						0.2
 					},
 					{ --Ace
-						1.15,
-						4
+						1.10,
+						3
 					}
 				}
 				self.values.player.unseen_increased_crit_chance = {
 					{ --Basic
 						min_time = 3,
 						max_duration = 0, --Unused field, holdover from vanilla.
-						crit_chance = 1.15
+						crit_chance = 1.10
 					},
 					{ --Ace
 						min_time = 3,
 						max_duration = 5,
-						crit_chance = 1.15
+						crit_chance = 1.10
 					}
 				}
 				
 				self.skill_descs.backstab = {
 					skill_value_b1 = tostring(self.values.player.unseen_increased_crit_chance[1].min_time), -- Time to activate crit bonus when player don't get damage
 					skill_value_b2 = tostring(self.values.temporary.unseen_strike[1][1] % 1 * 100).."%", -- crit chance bonus
-					skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus
+					skill_value_b3 = tostring(self.values.temporary.unseen_strike[1][2]), -- Expiring timer of crit bonus (basic)
+					skill_value_p1 = tostring(self.values.temporary.unseen_strike[2][2]) -- Expiring timer of crit bonus (aced)
 				}
 	
 			--Cleaner, formally spotter
@@ -1704,7 +1727,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 				}
 				--Ace
-					self.values.player.backstab_crits = {0.50}
+					self.values.player.backstab_crits = {0.35}
 					
 					self.skill_descs.unseen_strike = {
 						skill_value_b1 = tostring(self.values.player.detection_risk_add_crit_chance[1][1] * 100).."%", -- Crit chance boost
@@ -1975,7 +1998,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		
 	--Shared Perks--
 	self.values.weapon.passive_reload_speed_multiplier = {1.1}
-	self.values.player.passive_pick_up_multiplier = {1.33}
+	self.values.player.passive_pick_up_multiplier = {1.15}
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
@@ -2008,6 +2031,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.panic_suppression = {
 		true
 	}	
+	self.values.player.panic_suppression_mult = {
+		0.05,
+		0.01
+	}
 	self.values.player.corpse_dispose_speed_multiplier = {
 		0.25
 	}
@@ -2284,6 +2311,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.melee_kill_life_leech = {
 		0.02,
 		0.01 --Copycat, unused
+	}
+	self.values.player.melee_kill_stamina = {
+		0.2
 	}
 	self.killshot_close_panic_range = 1200
 	self.on_killshot_cooldown = 5
@@ -2698,7 +2728,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.specialization_descs[2][7] = {
-		perk_value_1 = "5%", -- Panic chance (It's not defined in this file btw so beware)
+		perk_value_1 = tostring(self.values.player.panic_suppression_mult[1] * 100).. "%", -- Panic chance
 		perk_value_2 = tostring((self.values.player.passive_dodge_chance[2] - self.values.player.passive_dodge_chance[1]) * 100) -- Additional dodge
 	}
 	self.specialization_descs[2][9] = {
@@ -2851,6 +2881,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.specialization_descs[9][5] = {
 		perk_value_1 = tostring(self.values.player.melee_kill_life_leech[1] * 100).."%", -- HP regen on melee kill
+		perk_value_3 = tostring(self.values.player.melee_kill_stamina[1] * 100).."%", -- stamina regen %; added under "perk_value_3" to avoid loc mistmatching
 		perk_value_2 = tostring(self.values.player.corpse_dispose_amount[2] - self.values.player.corpse_dispose_amount[1]) -- Additional body bag
 	}
 	self.specialization_descs[9][7] = {
@@ -3209,7 +3240,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_3 = tostring((1 - self.values.player.alarm_pager_speed_multiplier[1]) * 100).."%" -- Faster pager interaction
 	}
 	self.multi_choice_specialization_descs[23][9][2] = { --Muscle
-		perk_value_1 = self.specialization_descs[2][7].perk_value_1, -- Panic chance
+		perk_value_1 = tostring(self.values.player.panic_suppression_mult[2] * 100).. "%", -- Panic chance
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
@@ -3391,6 +3422,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck2_mrwi_desc",
 			upgrades = {
 				"player_panic_suppression",
+				"player_panic_suppression_mult_1",
+				"player_panic_suppression_mult_2",
 				"player_corpse_dispose_speed_multiplier",
 				"player_civ_move_multiplier",
 				"player_passive_loot_drop_multiplier_1"	
@@ -3660,6 +3693,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "detection_risk_stamina_regen",
+			category = "player"
+		}
+	}
+	self.definitions.player_detection_risk_dash_count = {
+		name_id = "menu_player_detection_risk_dash_count",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "detection_risk_dash_count",
 			category = "player"
 		}
 	}		
@@ -4682,6 +4724,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_melee_kill_stamina = { 
+		name_id = "menu_player_melee_kill_stamina",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "melee_kill_stamina",
+			category = "player"
+		}
+	}
 
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",
@@ -4882,6 +4933,25 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "headshot_regen_armor_bonus_cd_reduction",
+			category = "player"
+		}
+	}
+
+	self.definitions.player_panic_suppression_mult_1 = {
+		name_id = "menu_player_panic_suppression_mult",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "panic_suppression_mult",
+			category = "player"
+		}
+	}
+	self.definitions.player_panic_suppression_mult_2 = {
+		name_id = "menu_player_panic_suppression_mult",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "panic_suppression_mult",
 			category = "player"
 		}
 	}
@@ -5807,9 +5877,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResOtherModSkills", function(self)
 		}
 		
 		self.values.player.tachi_hot_duration = {
-			4,
 			6,
-			8
+			8,
+			10
 		}
 
 		self.definitions.player_tachi_hot_amount_3 = {

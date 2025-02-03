@@ -1,8 +1,6 @@
 local swat_overkill_table_pj = {
 	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
-	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
-	"units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle",
 	"units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"
 }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
@@ -72,12 +70,5 @@ return {
 	[102796] = swat_ovk,
 	[102810] = swat_n,
 	[102811] = swat_h,
-	[102812] = swat_ovk,
-	[103125] = swat_ovk,
-	[103133] = swat_ovk,
-	[103134] = swat_ovk,
-	[103135] = swat_ovk,
-	[103136] = swat_ovk,
-	[103137] = swat_ovk,
-	[103138] = swat_ovk
+	[102812] = swat_ovk
 }

@@ -23,9 +23,6 @@
 	
 	<!--bravo HK21-->
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"  load="true"/>
-
-	<!--dozer HK21-->
-	<unit_obj				path="units/payday2/weapons/wpn_npc_hk21_dozer/wpn_npc_hk21_dozer"  load="true"/>
 	
 	<!--UZI Suzie i hate animations-->
 	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />

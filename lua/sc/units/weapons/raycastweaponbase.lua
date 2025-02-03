@@ -37,9 +37,16 @@ function RaycastWeaponBase:init(...)
 end
 
 local setup_original = RaycastWeaponBase.setup
-function RaycastWeaponBase:setup(...)
-	setup_original(self, ...)
-	
+function RaycastWeaponBase:setup(setup_data, damage_multiplier)
+	setup_original(self, setup_data, damage_multiplier)
+
+	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult")) or 0
+
+	self._panic_suppression_chance = setup_data.panic_suppression_skill and panic_mult
+	if self._panic_suppression_chance == 0 then
+		self._panic_suppression_chance = false
+	end
+
 	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.
@@ -67,7 +74,8 @@ function RaycastWeaponBase:setup(...)
 	end
 	self._shots_without_releasing_trigger = 0
 	self._no_cheevo_kills_without_releasing_trigger = 0
-	self._shot_recoil_count = 0
+	self._shot_recoil_pattern_count = 0
+	self._shot_recoil_magnitude_count = 0
 end
 
 function RaycastWeaponBase:get_damage_type()
@@ -613,7 +621,8 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	end
 	--MG Specialist Skill
 	if is_player then
-		self._shot_recoil_count = self._shot_recoil_count + 1
+		self._shot_recoil_pattern_count = (self._shot_recoil_pattern_count or 0) + 1
+		self._shot_recoil_magnitude_count = (self._shot_recoil_magnitude_count or 0) + 1
 		if self._shots_without_releasing_trigger then
 			self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
 			if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then
@@ -1044,6 +1053,16 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 end
 --]]
 
+function InstantBulletBase:_get_character_push_multiplier(weapon_unit, died)
+	local weap_base = alive(weapon_unit) and weapon_unit:base()
+
+	if weap_base and weap_base.should_shotgun_push and weap_base:should_shotgun_push() then
+		return nil
+	end
+
+	return died and 1.5 or nil
+end
+
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
 	local hit_unit = col_ray.unit
 	user_unit = alive(user_unit) and user_unit or nil
@@ -1140,7 +1159,9 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	end
 
 	if do_shotgun_push then
-		--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, col_ray.ray, col_ray.distance, user_unit)
+		local dir = col_ray.ray
+		mvector3.multiply(dir, 0.75)
+		--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, dir, col_ray.distance, user_unit)
 	end
 
 	--Unsure if the old version of playing impact effects will work with the new stuff, leaving the new stuff as-is for now

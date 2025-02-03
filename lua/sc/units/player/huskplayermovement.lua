@@ -272,3 +272,54 @@ function HuskPlayerMovement:update(unit, t, dt)
 		head_brush:sphere(self._m_detect_pos, 15)
 	end
 end]]
+
+
+
+function HuskPlayerMovement:sync_call_civilian(civilian_unit)
+	if civilian_unit and civilian_unit:base():char_tweak().is_escort then
+		return
+	end
+	if not self._sympathy_civ and civilian_unit:brain():is_available_for_assignment({
+		type = "revive"
+	}) then
+		local followup_objective = {
+			interrupt_health = 1,
+			interrupt_dis = -1,
+			type = "free",
+			action = {
+				sync = true,
+				body_part = 1,
+				type = "idle"
+			}
+		}
+		local objective = {
+			type = "act",
+			haste = "run",
+			destroy_clbk_key = false,
+			nav_seg = self:nav_tracker():nav_segment(),
+			pos = self:nav_tracker():field_position(),
+			fail_clbk = callback(self, self, "on_civ_revive_failed"),
+			complete_clbk = callback(self, self, "on_civ_revive_completed"),
+			action_start_clbk = callback(self, self, "on_civ_revive_started"),
+			action = {
+				align_sync = true,
+				type = "act",
+				body_part = 1,
+				variant = "revive",
+				blocks = {
+					light_hurt = -1,
+					hurt = -1,
+					action = -1,
+					heavy_hurt = -1,
+					aim = -1,
+					walk = -1
+				}
+			},
+			action_duration = tweak_data.interaction.revive.timer,
+			followup_objective = followup_objective
+		}
+		self._sympathy_civ = civilian_unit
+
+		civilian_unit:brain():set_objective(objective)
+	end
+end

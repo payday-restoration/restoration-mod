@@ -22772,7 +22772,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{3, self.stat_info.kick_tables.right_recoil}
 				}
 				self.x_toz81.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.x_toz81.BURST_FIRE = false
+				self.x_toz81.BURST_FIRE = 2
+				self.x_toz81.BURST_DELAY = 0.015
+				self.x_toz81.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
+				self.x_toz81.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.x_toz81.BURST_FIRE_RATE_MULTIPLIER = 4
 				self.x_toz81.CAN_TOGGLE_FIREMODE = false
 				self.x_toz81.FIRE_MODE = "single"				
 				self.x_toz81.AMMO_MAX = 40

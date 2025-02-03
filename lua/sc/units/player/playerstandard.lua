@@ -1170,7 +1170,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._queue_burst = nil
 						end
 
-						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting or jammed then
+						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire and not weap_base:second_sight_spread_mult()) or weap_base._descope_on_fire_ignore_setting or jammed then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * (jammed and 0.9 or 0.7)
 						end
 						

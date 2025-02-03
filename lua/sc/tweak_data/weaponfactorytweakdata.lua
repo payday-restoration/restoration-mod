@@ -40650,7 +40650,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 				for i, weap in pairs(self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod) do
 					if weap and weap.translation then
-						weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(-2, 4, -17)
+						weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(-2, 0, -17)
 						weap.rotation = Rotation(0, 0, -55)
 					end
 				end

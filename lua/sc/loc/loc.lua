@@ -121,7 +121,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 				["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
 				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire). Enabling this disables Overkill's own fire input buffering.",
 				["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
-				["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. High = more relaxed buffer window.",
+				["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher values = more relaxed buffer window.",
 				["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
 				["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
 				["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",

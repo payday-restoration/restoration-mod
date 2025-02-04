@@ -22719,7 +22719,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.sickle then
 				self.sickle.categories = { 
-					"assault_rifle"
+					"assault_rifle",
+					"battery"
 				}
 				self.sickle.recategorize = {"heavy_ar"}
 				self.sickle.damage_type = "assault_rifle"
@@ -25249,7 +25250,8 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.3,
-		sweet_liberty = 0.37037 / 2
+		sweet_liberty = 0.37037 / 2,
+		battery = 0
 	}
 
 	--Get weapon category specific pickup multipliers.

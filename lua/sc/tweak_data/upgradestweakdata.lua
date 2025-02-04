@@ -4728,7 +4728,7 @@ function UpgradesTweakData:_player_definitions()
 		name_id = "menu_player_melee_kill_stamina",
 		category = "feature",
 		upgrade = {
-			value = 2,
+			value = 1,
 			upgrade = "melee_kill_stamina",
 			category = "player"
 		}

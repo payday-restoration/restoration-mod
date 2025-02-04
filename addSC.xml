@@ -1389,6 +1389,11 @@
     <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
+
+    <effect				path="_dmc/effects/sterwers_trail_m_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m_small_npc" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>

@@ -1522,7 +1522,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	local ignore_tracer = nil
 	if self._trail_effect_table then
-		if self._starwars then
+		if self._starwars and not self._starwars.no_tracers then
 			self._use_shell_ejection_effect = (self._starwars.use_shell_eject and self._use_shell_ejection_effect) or nil
 			ignore_tracer = true
 			if self._empire then
@@ -1604,7 +1604,7 @@ function NewRaycastWeaponBase:should_reload_immediately()
 end
 
 function NewRaycastWeaponBase:tweak_data_anim_play(anim, speed_multiplier, set_offset, set_offset2)
-	if self._starwars then
+	if self._starwars and not self._starwars.can_reload then
 		return
 	end
 	local orig_anim = anim
@@ -1686,7 +1686,7 @@ end
 
 
 function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
-	if self._starwars then
+	if self._starwars and not self._starwars.can_reload then
 		return
 	end
 	local unit_anim = anim

@@ -22717,6 +22717,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.sickle then
+				self.sickle.categories = { 
+					"assault_rifle"
+				}
+				self.sickle.recategorize = {"heavy_ar"}
+				self.sickle.damage_type = "assault_rifle"
+				self.sickle.CLIP_AMMO_MAX = 80
+				self.sickle.AMMO_MAX = 240
+				self.sickle.sms = 0.8
+				self.sickle.fire_mode_data.fire_rate = 0.08
+				self.sickle.BURST_FIRE = false
+				self.sickle.CAN_TOGGLE_FIREMODE = false
+				self.sickle.FIRE_MODE = "auto"
+				self.sickle.kick = self.stat_info.kick_tables.even_recoil
+				self.sickle.supported = true
+				self.sickle.keep_ammo = 0
+				self.sickle.ads_speed = 0.300
+				self.sickle.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.sickle.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 100,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.sickle.stats_modifiers = nil
+				self.sickle.panic_suppression_chance = 0.05
+				self.sickle.nato = nil
+				self.sickle.use_sniper_trail = true
+				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
+				self.sickle.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
+				self.sickle.timers.reload_not_empty = 1.52
+				self.sickle.timers.reload_exit_not_empty = 0.85
+				self.sickle.timers.reload_empty = 1.52
+				self.sickle.timers.reload_exit_empty = 0.85
+				--self.sickle.weapon_hold = "ching"
+				--self.sickle.no_auto_anims = true
+				self.sickle.spin_up_t = 0.25
+				self.sickle.spin_down_t = 0.25
+				self.sickle.sounds.spin_start = "hailstorm_shotgun_fire_charge"
+				self.sickle.sounds.spin_end = "swatturret_spin_stop"
+			end
+
 			if self.toz81 then
 				self.toz81.recategorize = { "heavy_shot" }
 				self.toz81.categories = { "shotgun", "shotgun_pistol" }

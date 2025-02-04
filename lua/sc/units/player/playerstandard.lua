@@ -2901,7 +2901,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 		if primary._primary_overheat_pen and primary._primary_overheat_pen <= 0 then
 			--log( "COOL" )
 			if active and not empty_no_regen then
-				primary._sound_fire:post_event("wp_sentrygun_swap_ammo")
+				primary._sound_fire:post_event(primary:weapon_tweak_data().sounds.charge_end or "wp_sentrygun_swap_ammo")
 			end
 			primary._primary_regen_rate = regen_rate
 			primary._primary_overheat_pen = nil
@@ -2933,7 +2933,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 				if not primary._primary_recharge_yell then
 					primary._primary_recharge_yell = true
 					if active then
-						primary._sound_fire:post_event("night_vision_on")
+						primary._sound_fire:post_event(primary:weapon_tweak_data().sounds.charge_start or "night_vision_on")
 					end
 				end
 			end
@@ -2990,7 +2990,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 		if secondary._secondary_overheat_pen and secondary._secondary_overheat_pen <= 0 then
 			--log( "COOL" )
 			if active and not empty_no_regen then
-				secondary._sound_fire:post_event("wp_sentrygun_swap_ammo")
+				secondary._sound_fire:post_event(secondary:weapon_tweak_data().sounds.charge_end or "wp_sentrygun_swap_ammo")
 			end
 			secondary._secondary_regen_rate = regen_rate
 			secondary._secondary_overheat_pen = nil
@@ -3022,7 +3022,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 				if not secondary._secondary_recharge_yell then
 					secondary._secondary_recharge_yell = true
 					if active then
-						secondary._sound_fire:post_event("night_vision_on")
+						secondary._sound_fire:post_event(secondary:weapon_tweak_data().sounds.charge_start or "night_vision_on")
 					end
 				end
 			end

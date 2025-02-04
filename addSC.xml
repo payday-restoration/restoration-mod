@@ -199,6 +199,9 @@
 	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
 	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
+
+	<continent			path="levels/narratives/e_election_day/stage_2/world/world" force="true" unload="true"/>
+
 	
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	
@@ -232,6 +235,8 @@
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
+	<mission			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
+	<continent			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
 	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->

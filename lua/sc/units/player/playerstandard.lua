@@ -1170,7 +1170,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							self._queue_burst = nil
 						end
 
-						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire) or weap_base._descope_on_fire_ignore_setting or jammed then
+						if (restoration.Options:GetValue("OTHER/WeaponHandling/WpnFireDescope") and weap_base._descope_on_fire and not weap_base:second_sight_spread_mult()) or weap_base._descope_on_fire_ignore_setting or jammed then
 							self._d_scope_t = (weap_base._next_fire_allowed - t) * (jammed and 0.9 or 0.7)
 						end
 						
@@ -2530,7 +2530,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	melee_damage_delay = math.min(melee_damage_delay, melee_repeat_expire_t)
 	local primary = managers.blackmarket:equipped_primary()
 	local primary_id = primary.weapon_id
-	local bayonet_id = managers.blackmarket:equipped_bayonet(primary_id)
+	local bayonet_id = managers.blackmarket:equipped_bayonet_res(primary_id)
 	local bayonet_melee = false
 	local can_melee_miss = tweak_data.blackmarket.melee_weapons[melee_entry].can_melee_miss
 	local equipped_weapon = self:get_equipped_weapon()

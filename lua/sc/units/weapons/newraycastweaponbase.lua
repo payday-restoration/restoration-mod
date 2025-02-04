@@ -268,7 +268,7 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		end
 		
 		if self:weapon_tweak_data().always_hipfire or self.AKIMBO then
-			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * (self.AKIMBO and 0.8) or 1)
+			mul = mul * ((tweak_data.weapon.stat_info.hipfire_only_spread_increase or 1) * ((self.AKIMBO and 0.8) or 1))
 		end
 
 		if self:second_sight_spread_mult() then

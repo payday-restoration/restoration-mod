@@ -37078,7 +37078,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
 				starwars = {
 					no_tracers = true,
-					regen_ammo_time = 1,
+					regen_ammo_time = 2,
 					regen_rate = 3.48,
 					can_reload = true,
 					mag_regen = true,

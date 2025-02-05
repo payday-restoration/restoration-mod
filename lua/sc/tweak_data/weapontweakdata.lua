@@ -22777,10 +22777,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.timers.reload_exit_empty = 0.85
 				--self.sickle.weapon_hold = "ching"
 				--self.sickle.no_auto_anims = true
-				self.sickle.spin_up_t = 0.25
-				self.sickle.spin_down_t = 0.25
+				self.sickle.spin_up_t = 0.5
+				self.sickle.spin_down_t = 0.0001
+				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
 				self.sickle.sounds.spin_start = "hailstorm_shotgun_fire_charge"
 				self.sickle.sounds.spin_end = "swatturret_spin_stop"
+				self.sickle.recoil_values = {
+					{ 80, 60 },
+					7.5,
+					0.6,
+					srm = {
+						0.05,
+						{1, 0.2},
+						1
+					}
+				}
 			end
 
 			if self.toz81 then

@@ -2500,7 +2500,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--[[ PISTOLS ]]
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistols, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 
 				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 				--Igor (APS)

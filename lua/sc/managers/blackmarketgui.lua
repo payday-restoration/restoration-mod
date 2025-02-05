@@ -4917,7 +4917,7 @@ function BlackMarketGui:update_info_text()
 						if stats.keep_ammo then
 							keep_ammo = stats.keep_ammo
 						end
-						if stats.starwars then
+						if stats.starwars and not stats.starwars.can_reload then
 							starwars = true
 						end
 						if stats.bullet_class == "InstantExplosiveBulletBase" then
@@ -5141,7 +5141,7 @@ function BlackMarketGui:update_info_text()
 
 		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)
 		local wtd_range = tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id].jab_range or 0
-		local bayonet_damage = factory_stats.max_damage and (factory_stats.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local bayonet_damage =  not factory_stats.ignore_stats and factory_stats.max_damage and (factory_stats.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
 		local skill_damage = bayonet_damage and (bayonet_damage * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage
 		local damage_total = bayonet_damage and bayonet_damage + (skill_damage or 0)
 		local bayonet_range = bayonet_damage and (factory_stats.bayonet_range and factory_stats.bayonet_range / 100)
@@ -5150,7 +5150,7 @@ function BlackMarketGui:update_info_text()
 
 		local factory_stats_secondary = managers.weapon_factory:get_stats(managers.blackmarket:equipped_secondary().factory_id, managers.blackmarket:equipped_secondary().blueprint)
 		local wtd_range_secondary = tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id].jab_range or 0
-		local bayonet_damage_secondary = factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local bayonet_damage_secondary = not factory_stats_secondary.ignore_stats and factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
 		local skill_damage_secondary = bayonet_damage_secondary and (bayonet_damage_secondary * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage_secondary
 		local damage_total_secondary = bayonet_damage_secondary and bayonet_damage_secondary + (skill_damage_secondary or 0)
 		local bayonet_range_secondary = bayonet_damage_secondary and (factory_stats_secondary.bayonet_range and factory_stats_secondary.bayonet_range / 100)

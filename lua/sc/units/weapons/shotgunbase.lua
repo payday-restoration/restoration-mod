@@ -151,6 +151,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	local result = {}
 	local all_hits = {}
 	local hit_effects = {}
+	local all_enemies_hit = {}
 	local alert_rays = self._alert_events and {}
 	local all_hits_lookup = {}
 	local alert_rays_lookup = alert_rays and {}
@@ -214,21 +215,10 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	end
 
 	local ray_distance = self:weapon_range(user_unit)
-	local can_autoaim = self._autoaim
-	local auto_hit_candidate, suppression_enemies = self:check_autoaim(from_pos, direction)
-
-	if suppression_enemies and self._suppression then
-		for enemy_data, dis_error in pairs(suppression_enemies) do
-			if not enemy_data.unit:movement():cool() then -- cannot suppress ppl who have no idea that there is combat
-				enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
-			end
-		end
-	end
-
+	local can_autoaim = self._autoaim and self._autohit_data and true or false
 	local spread_x, spread_y = self:_get_spread(user_unit)
-	local right = direction:cross(Vector3(0, 0, 1)):normalized()
-	local up = direction:cross(right):normalized()
 	spread_y = spread_y or spread_x
+
 	spread_mul = spread_mul or 1
 
 	mvec3_cross(mvec_right, direction, math.UP)
@@ -237,63 +227,64 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	mvec3_norm(mvec_up)
 
 	for i = 1, self._rays do
-		--[[
 		mvec3_set(mvec_ax, mvec_right)
 		mvec3_set(mvec_ay, mvec_up)
 		mvec3_set(mvec_spread_direction, direction)
 
+		local r = math_random()
 		local theta = math_random() * 360
+		spread_x = math_max(math_min(spread_x * spread_mul, 90), -90)
+		spread_y = math_max(math_min(spread_y * spread_mul, 90), -90)
 
-		mvec3_mul(mvec_ax, math_rad(math_sin(theta) * math_random() * spread_x * spread_mul))
-		mvec3_mul(mvec_ay, math_rad(math_cos(theta) * math_random() * spread_y * spread_mul))
+		mvec3_mul(mvec_ax, math_cos(theta) * math_tan(r * spread_x))
+		mvec3_mul(mvec_ay, math_sin(theta) * math_tan(r * spread_y))
 		mvec3_add(mvec_spread_direction, mvec_ax)
 		mvec3_add(mvec_spread_direction, mvec_ay)
 		mvec3_set(mvec_to, mvec_spread_direction)
 		mvec3_mul(mvec_to, ray_distance)
 		mvec3_add(mvec_to, from_pos)
-		--]]
 
-		local r = math.random()
-		local theta = math.random() * 360
-		local ax = math.tan(r * spread_x * (spread_mul or 1)) * math.cos(theta)
-		local ay = math.tan(r * spread_y * (spread_mul or 1)) * math.sin(theta) * -1
-
-		mvector3.set(mvec_spread_direction, mvec_direction)
-		mvector3.add(mvec_spread_direction, right * ax)
-		mvector3.add(mvec_spread_direction, up * ay)
-		mvector3.set(mvec_to, mvec_spread_direction)
-		mvector3.multiply(mvec_to, 20000)
-		mvector3.add(mvec_to, from_pos)
-
-		local ray_hits, hit_enemy = self:_collect_hits(from_pos, mvec_to)
-
+		local ray_hits, hit_enemy, enemies_hit = self:_collect_hits(from_pos, mvec_to)
 		if can_autoaim then
 			can_autoaim = false
 			local weight = 0.1
 
-			if auto_hit_candidate and not hit_enemy then
-				local autohit_chance = 1 - math.clamp((self._autohit_current - self._autohit_data.MIN_RATIO) / (self._autohit_data.MAX_RATIO - self._autohit_data.MIN_RATIO), 0, 1)
-
-				if autohit_mul then
-					autohit_chance = autohit_chance * autohit_mul
-				end
-
-				if math_random() < autohit_chance then
-					self._autohit_current = (self._autohit_current + weight) / (1 + weight)
-
-					mvec3_set(mvec_spread_direction, auto_hit_candidate.ray)
-					mvec3_set(mvec_to, mvec_spread_direction)
-					mvec3_mul(mvec_to, ray_distance)
-					mvec3_add(mvec_to, from_pos)
-
-					ray_hits, hit_enemy = self:_collect_hits(from_pos, mvec_to)
-				end
-			end
-
 			if hit_enemy then
 				self._autohit_current = (self._autohit_current + weight) / (1 + weight)
-			elseif auto_hit_candidate then
-				self._autohit_current = self._autohit_current / (1 + weight)
+			else
+				local auto_hit_candidate, enemies_to_suppress = self:check_autoaim(from_pos, direction, nil, nil, nil, true)
+				result.enemies_in_cone = enemies_to_suppress or false
+
+				if auto_hit_candidate then
+					local autohit_chance = self:get_current_autohit_chance_for_roll()
+
+					if autohit_mul then
+						autohit_chance = autohit_chance * autohit_mul
+					end
+
+					if math_random() < autohit_chance then
+						self._autohit_current = (self._autohit_current + weight) / (1 + weight)
+
+						mvec3_set(mvec_spread_direction, auto_hit_candidate.ray)
+						mvec3_set(mvec_to, mvec_spread_direction)
+						mvec3_mul(mvec_to, ray_distance)
+						mvec3_add(mvec_to, from_pos)
+
+						ray_hits, hit_enemy, enemies_hit = self:_collect_hits(from_pos, mvec_to)
+					end
+				end
+
+				if hit_enemy then
+					self._autohit_current = (self._autohit_current + weight) / (1 + weight)
+				elseif auto_hit_candidate then
+					self._autohit_current = self._autohit_current / (1 + weight)
+				end
+			end
+		end
+
+		if hit_enemy then
+			for u_key, enemy in pairs(enemies_hit) do
+				all_enemies_hit[u_key] = enemy
 			end
 		end
 
@@ -354,7 +345,8 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 				if hit_result.type == "death" then
 					kill_data.kills = kill_data.kills + 1
-					local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
+					local unit_base = hit.unit:base()
+					local unit_type = unit_base and unit_base._tweak_table
 					local is_civilian = unit_type and is_civ_f(unit_type)
 
 					if is_civilian then
@@ -364,7 +356,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 					end
 
 					if check_additional_achievements then
-						self:_check_kill_achievements(cop_kill_count, unit_type, is_civilian, hit_through_wall, hit_through_shield)
+						self:_check_kill_achievements(cop_kill_count, unit_base, unit_type, is_civilian, hit_through_wall, hit_through_shield)
 					end
 				end
 			end
@@ -377,8 +369,24 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 	self:_check_one_shot_shotgun_achievements(kill_data)
 
+	if result.enemies_in_cone == nil then
+		result.enemies_in_cone = self._suppression and self:check_suppression(from_pos, direction, all_enemies_hit) or nil
+	elseif all_enemies_hit and self._suppression then
+		result.enemies_in_cone = result.enemies_in_cone or {}
+		local all_enemies = managers.enemy:all_enemies()
+
+		for u_key, enemy in pairs(all_enemies_hit) do
+			if all_enemies[u_key] then
+				result.enemies_in_cone[u_key] = {
+					error_mul = 1,
+					unit = enemy
+				}
+			end
+		end
+	end
+
 	if alert_rays then
-		result.rays = #alert_rays > 0 and alert_rays
+		result.rays = alert_rays
 	end
 
 	if self._autoaim then

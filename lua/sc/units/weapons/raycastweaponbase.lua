@@ -14,6 +14,10 @@ local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 local tmp_rot1 = Rotation()
+local mvec_to = Vector3()
+local mvec_right_ax = Vector3()
+local mvec_up_ay = Vector3()
+local mvec_spread_direction = Vector3()
 
 local init_original = RaycastWeaponBase.init
 function RaycastWeaponBase:init(...)
@@ -350,30 +354,34 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 
 end
 
-
-local mvec_to = Vector3()
-local mvec_spread_direction = Vector3()
-
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	if self:gadget_overrides_weapon_functions() then
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	end
 	local result = {}
-	local spread_x, spread_y = self:_get_spread(user_unit)
 	local ray_distance = self:weapon_range()
-	local right = direction:cross(Vector3(0, 0, 1)):normalized()
-	local up = direction:cross(right):normalized()
+	local spread_x, spread_y = self:_get_spread(user_unit)
+	spread_y = spread_y or spread_x
+	spread_mul = spread_mul or 1
+
+	mvector3.cross(mvec_right_ax, direction, math.UP)
+	mvec3_norm(mvec_right_ax)
+	mvector3.cross(mvec_up_ay, direction, mvec_right_ax)
+	mvec3_norm(mvec_up_ay)
+	mvec3_set(mvec_spread_direction, direction)
+
 	local r = math.random()
 	local theta = math.random() * 360
-	local ax = math.tan(r * spread_x * (spread_mul or 1)) * math.cos(theta)
-	local ay = math.tan(r * (spread_y or spread_x) * (spread_mul or 1)) * math.sin(theta) * -1
+	spread_x = math.max(math.min(spread_x * spread_mul, 90), -90)
+	spread_y = math.max(math.min(spread_y * spread_mul, 90), -90)
 
-	mvector3.set(mvec_spread_direction, direction)
-	mvector3.add(mvec_spread_direction, right * ax)
-	mvector3.add(mvec_spread_direction, up * ay)
-	mvector3.set(mvec_to, mvec_spread_direction)
-	mvector3.multiply(mvec_to, ray_distance)
-	mvector3.add(mvec_to, from_pos)
+	mvec3_mul(mvec_right_ax,  math.cos(theta) * math.tan(r * spread_x))
+	mvec3_mul(mvec_up_ay, -1 * math.sin(theta) * math.tan(r * spread_y))
+	mvec3_add(mvec_spread_direction, mvec_right_ax)
+	mvec3_add(mvec_spread_direction, mvec_up_ay)
+	mvec3_set(mvec_to, mvec_spread_direction)
+	mvec3_mul(mvec_to, ray_distance)
+	mvec3_add(mvec_to, from_pos)
 
 	local ray_hits, hit_enemy, enemies_hit = self:_collect_hits(from_pos, mvec_to)
 
@@ -416,6 +424,11 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local hit_count = 0
 	local hit_anyone = false
 	local cop_kill_count = 0
+	local kill_data = {
+		kills = 0,
+		headshots = 0,
+		civilian_kills = 0
+	}
 	local hit_through_wall = false
 	local hit_through_shield = false
 	local shield_damage_reduction_applied = false
@@ -470,11 +483,14 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 				hit_count = hit_count + 1
 
 				if hit_result.type == "death" then
+					kill_data.kills = kill_data.kills + 1
 					local unit_base = hit.unit:base()
 					local unit_type = unit_base and unit_base._tweak_table
 					local is_civilian = unit_type and is_civ_f(unit_type)
 
-					if not is_civilian then
+					if is_civilian then
+						kill_data.civilian_kills = kill_data.civilian_kills + 1
+					else
 						cop_kill_count = cop_kill_count + 1
 					end
 
@@ -492,13 +508,15 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	self:_check_tango_achievements(cop_kill_count)
 
+	self:_check_one_shot_shotgun_achievements(kill_data)
+
 	result.hit_enemy = hit_anyone
 
 	if self._autoaim then
 		self._shot_fired_stats_table.hit = hit_anyone
 		self._shot_fired_stats_table.hit_count = hit_count
 
-		if (not self._ammo_data or not self._ammo_data.ignore_statistic) and not self._rays then
+		if not self._ammo_data or not self._ammo_data.ignore_statistic then
 			managers.statistics:shot_fired(self._shot_fired_stats_table)
 		end
 	end
@@ -507,7 +525,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	if dmg_mul ~= 0 and (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
-		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+		mvec3_set(self._trail_effect_table.normal, mvec_spread_direction)
 
 		if not self._trail_length then
 			self._trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), Idstring("trail"), Idstring("simulator_length"), Idstring("size"))
@@ -553,6 +571,11 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	end
 
 	return result
+end
+
+
+function RaycastWeaponBase:_check_one_shot_shotgun_achievements(...)
+	ShotgunBase._check_one_shot_shotgun_achievements(self, ...)
 end
 
 --Original mod by 90e, uploaded by DarKobalt.

@@ -7337,6 +7337,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54.timers.reload_exit_empty = 0.55
 						self.x_type54.timers.reload_exit_not_empty = 0.65		
 					--Model 54 Underbarrel
+						self.type54_underbarrel.categories = {
+							"shotgun",
+							"shotgun_pistol"
+						}
 						self.type54_underbarrel.rays = 9
 						self.type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.type54_underbarrel.AMMO_MAX = 10
@@ -7379,6 +7383,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.type54_underbarrel.timers.reload_exit_empty = 0.35
 						self.type54_underbarrel.timers.reload_exit_not_empty = 0.35
 					--Akimbo
+						self.x_type54_underbarrel.categories = {
+							"akimbo",
+							"shotgun",
+							"shotgun_pistol"
+						}
 						self.x_type54_underbarrel.rays = 9
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_type54_underbarrel.AMMO_MAX = 20
@@ -8569,7 +8578,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.mp7.stats_modifiers = nil
-						self.mp7.reload_speed_multiplier = 1.07
+						self.mp7.reload_speed_multiplier = 1.12
 						self.mp7.timers.reload_not_empty = 1.75
 						self.mp7.timers.reload_empty = 2.4	
 						self.mp7.timers.reload_exit_empty = 0.45
@@ -12113,6 +12122,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.can_shoot_through_enemy_unlim = true
 						self.ching.can_shoot_through_wall = false
 						self.ching.panic_suppression_chance = 0.05
+						self.ching.timers.equip = 0.3
 						self.ching.timers.reload_exit_empty = 0.85
 						self.ching.timers.reload_not_empty = 2.2
 						self.ching.timers.reload_exit_not_empty = 1
@@ -22760,6 +22770,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.use_sniper_trail = true
 				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
 				self.sickle.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
+				self.sickle.timers.equip = 0.3
 				self.sickle.timers.reload_not_empty = 1.52
 				self.sickle.timers.reload_exit_not_empty = 0.85
 				self.sickle.timers.reload_empty = 1.52

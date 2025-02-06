@@ -2925,7 +2925,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 			--log("STOP REGEN")
 			primary._primary_regenerate_ammo_timer = nil
 		end
-		if primary._primary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not primary:clip_empty())) and (not self:_is_reloading() and active) then
+		if primary._primary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not primary:clip_empty())) and (not active or (active and not self:_is_reloading())) then
 			primary._primary_regenerate_ammo_timer = primary._primary_regenerate_ammo_timer - dt
 			if primary._primary_regenerate_ammo_timer < 0 then
 				self:primary_add_ammo(dt * primary._primary_regen_rate, mag_regen)
@@ -3014,7 +3014,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 			--log("STOP REGEN")
 			secondary._secondary_regenerate_ammo_timer = nil
 		end
-		if secondary._secondary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not secondary:clip_empty())) and (not self:_is_reloading() and active) then
+		if secondary._secondary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not secondary:clip_empty())) and (not active or (active and not self:_is_reloading())) then
 			secondary._secondary_regenerate_ammo_timer = secondary._secondary_regenerate_ammo_timer - dt
 			if secondary._secondary_regenerate_ammo_timer < 0 then
 				self:secondary_add_ammo(dt * secondary._secondary_regen_rate, mag_regen)

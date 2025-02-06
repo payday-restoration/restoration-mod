@@ -117,6 +117,7 @@
 				<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 				<hook file="sc/tweak_data/eventjobstweakdata.lua" source_file="lib/tweak_data/eventjobstweakdata"/>
 				<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
+				<hook file="sc/tweak_data/inputtweakdata.lua" source_file="lib/tweak_data/inputtweakdata"/>
 			<!--MANAGERS-->
 				<!--MISSION-->
 					<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>

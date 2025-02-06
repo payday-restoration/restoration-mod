@@ -1554,7 +1554,6 @@ function PlayerStandard:_check_action_interact(t, input)
 	end
 
 	if released then
-
 		if _G.IS_VR then
 			local release_hand = input.btn_interact_left_release and PlayerHand.LEFT or PlayerHand.RIGHT
 			released = release_hand == self._interact_hand
@@ -1573,7 +1572,7 @@ function PlayerStandard:_check_action_interact(t, input)
 		end
 	end
 	
-	if (self._start_intimidate or force_secondary_intimidate) and not self:_action_interact_forbidden() and (not keyboard and t > self._start_intimidate_t + secondary_delay or force_secondary_intimidate) then
+	if (self._start_intimidate or force_secondary_intimidate) and not self:_action_interact_forbidden() and ((not keyboard and (self._start_intimidate_t and (t > self._start_intimidate_t + secondary_delay))) or force_secondary_intimidate) then
 		self:_start_action_intimidate(t, true)
 
 		self._start_intimidate = false
@@ -2886,7 +2885,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 		if primary:get_ammo_total() <= 0 then
 			return
 		end
-		if active and self._shooting then
+		if active and (self._shooting or self:_is_reloading()) then
 			primary._primary_recharge_yell = nil
 			primary._primary_regenerate_ammo_timer = regen_ammo_time
 		end
@@ -2926,7 +2925,7 @@ function PlayerStandard:_primary_regen_ammo(t, dt)
 			--log("STOP REGEN")
 			primary._primary_regenerate_ammo_timer = nil
 		end
-		if primary._primary_regenerate_ammo_timer and (empty_no_regen and not primary:clip_empty()) and ((active and not self:_is_reloading()) or (not active)) then
+		if primary._primary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not primary:clip_empty())) and (not self:_is_reloading() and active) then
 			primary._primary_regenerate_ammo_timer = primary._primary_regenerate_ammo_timer - dt
 			if primary._primary_regenerate_ammo_timer < 0 then
 				self:primary_add_ammo(dt * primary._primary_regen_rate, mag_regen)
@@ -2975,7 +2974,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 		if secondary:get_ammo_total() <= 0 then
 			return
 		end
-		if active and self._shooting then
+		if active and (self._shooting or self:_is_reloading()) then
 			secondary._secondary_recharge_yell = nil
 			secondary._secondary_regenerate_ammo_timer = regen_ammo_time
 		end
@@ -3015,7 +3014,7 @@ function PlayerStandard:_secondary_regen_ammo(t, dt)
 			--log("STOP REGEN")
 			secondary._secondary_regenerate_ammo_timer = nil
 		end
-		if secondary._secondary_regenerate_ammo_timer and (empty_no_regen and not secondary:clip_empty()) and (not self:_is_reloading() and active) then
+		if secondary._secondary_regenerate_ammo_timer and (not empty_no_regen or (empty_no_regen and not secondary:clip_empty())) and (not self:_is_reloading() and active) then
 			secondary._secondary_regenerate_ammo_timer = secondary._secondary_regenerate_ammo_timer - dt
 			if secondary._secondary_regenerate_ammo_timer < 0 then
 				self:secondary_add_ammo(dt * secondary._secondary_regen_rate, mag_regen)

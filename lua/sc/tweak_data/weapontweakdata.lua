@@ -5603,6 +5603,91 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 				--PRIMARIES
 
+					--CZ ACCUSHADOW BUT SOMEHOW FULL AUTO
+						--self.czech.use_data.selection_index = 2
+						self.czech.has_description = true
+						self.czech.desc_id = "bm_czech_sc_desc"				
+						self.czech.CLIP_AMMO_MAX = 18
+						self.czech.AMMO_MAX = 90
+						self.czech.fire_mode_data.fire_rate = 0.06
+						self.czech.kick = self.stat_info.kick_tables.even_recoil
+						self.czech.kick_pattern = {
+							{0, self.stat_info.kick_tables.moderate_kick},
+							{6, self.stat_info.kick_tables.left_kick},
+							{8, self.stat_info.kick_tables.moderate_kick},
+							{12, self.stat_info.kick_tables.right_recoil}
+						}
+						self.czech.supported = true
+						self.czech.ads_speed = 0.140
+						self.czech.damage_falloff = {
+							start_dist = 1700,
+							end_dist = 3300,
+							min_mult = 0.3
+						}
+						self.czech.stats = {
+							damage = 20,
+							spread = 59,
+							recoil = 79,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 29,
+							suppression = 12,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.czech.stats_modifiers = nil
+						self.czech.panic_suppression_chance = 0.05
+						self.czech.timers = {
+							reload_not_empty = 1.47,
+							reload_empty = 2.12,
+							unequip = 0.5,
+							equip = 0.5,
+							reload_exit_empty = 0.9,
+							reload_exit_not_empty = 0.65
+						}
+					--Akimbo
+						--self.x_czech.use_data.selection_index = 5
+						self.x_czech.has_description = true
+						self.x_czech.desc_id = "bm_x_czech_sc_desc"
+						self.x_czech.CLIP_AMMO_MAX = 36
+						self.x_czech.AMMO_MAX = 180
+						self.x_czech.fire_mode_data.fire_rate = 0.06
+						self.x_czech.kick = self.stat_info.kick_tables.moderate_kick
+						self.x_czech.kick_pattern = {
+							{0, self.stat_info.kick_tables.moderate_kick},
+							{6, self.stat_info.kick_tables.left_kick},
+							{8, self.stat_info.kick_tables.moderate_kick},
+							{12, self.stat_info.kick_tables.right_recoil}
+						}
+						self.x_czech.supported = true
+						self.x_czech.ads_speed = 0.140
+						self.x_czech.damage_falloff = {
+							start_dist = 1700,
+							end_dist = 3300,
+							min_mult = 0.3
+						}
+						self.x_czech.stats = {
+							damage = 20,
+							spread = 49,
+							recoil = 69,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 29,
+							suppression = 12,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.x_czech.stats_modifiers = nil
+						self.x_czech.panic_suppression_chance = 0.05
+						self.x_czech.timers.reload_exit_empty = 0.55
+						self.x_czech.timers.reload_exit_not_empty = 0.65
+
 					--Wasp-DS (FMG-9)
 						self.fmg9.has_description = true
 						self.fmg9.desc_id = "bm_fmg9_sc_desc"
@@ -5632,7 +5717,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fmg9.damage_falloff = {
 							start_dist = 1800,
 							end_dist = 4100,
-							min_mult = 0.3
+							min_mult = 0.25
 						}
 						self.fmg9.stats = {
 							damage = 24,
@@ -5935,89 +6020,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_g18c.panic_suppression_chance = 0.05
 						self.x_g18c.timers.reload_exit_empty = 0.55
 						self.x_g18c.timers.reload_exit_not_empty = 0.65	
-
-					--CZ ACCUSHADOW BUT SOMEHOW FULL AUTO
-						self.czech.has_description = true
-						self.czech.desc_id = "bm_czech_sc_desc"				
-						self.czech.CLIP_AMMO_MAX = 18
-						self.czech.AMMO_MAX = 90
-						self.czech.fire_mode_data.fire_rate = 0.06
-						self.czech.kick = self.stat_info.kick_tables.even_recoil
-						self.czech.kick_pattern = {
-							{0, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.left_kick},
-							{8, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.right_recoil}
-						}
-						self.czech.supported = true
-						self.czech.ads_speed = 0.140
-						self.czech.damage_falloff = {
-							start_dist = 1700,
-							end_dist = 3300,
-							min_mult = 0.3
-						}
-						self.czech.stats = {
-							damage = 20,
-							spread = 59,
-							recoil = 79,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 29,
-							suppression = 12,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.czech.stats_modifiers = nil
-						self.czech.panic_suppression_chance = 0.05
-						self.czech.timers = {
-							reload_not_empty = 1.47,
-							reload_empty = 2.12,
-							unequip = 0.5,
-							equip = 0.5,
-							reload_exit_empty = 0.9,
-							reload_exit_not_empty = 0.65
-						}
-					--Akimbo
-						self.x_czech.has_description = true
-						self.x_czech.desc_id = "bm_x_czech_sc_desc"
-						self.x_czech.CLIP_AMMO_MAX = 36
-						self.x_czech.AMMO_MAX = 180
-						self.x_czech.fire_mode_data.fire_rate = 0.06
-						self.x_czech.kick = self.stat_info.kick_tables.moderate_kick
-						self.x_czech.kick_pattern = {
-							{0, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.left_kick},
-							{8, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.right_recoil}
-						}
-						self.x_czech.supported = true
-						self.x_czech.ads_speed = 0.140
-						self.x_czech.damage_falloff = {
-							start_dist = 1700,
-							end_dist = 3300,
-							min_mult = 0.3
-						}
-						self.x_czech.stats = {
-							damage = 20,
-							spread = 49,
-							recoil = 69,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 29,
-							suppression = 12,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.x_czech.stats_modifiers = nil
-						self.x_czech.panic_suppression_chance = 0.05
-						self.x_czech.timers.reload_exit_empty = 0.55
-						self.x_czech.timers.reload_exit_not_empty = 0.65
 
 					--Gruber Kurz (PPK)
 						self.ppk.has_description = true
@@ -22787,9 +22789,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					7.5,
 					0.6,
 					srm = {
-						0.05,
-						{1, 0.2},
-						1
+						0.4,
+						{0.2, 1},
+						0
 					}
 				}
 			end

@@ -330,7 +330,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.election_day_1.player_style = "sneak_suit"	
 	
 	self.election_day_2.player_style = "sneak_suit"
-	
+	self.election_day_2.package = {"levels/narratives/dentist/mia/stage1/world/world"}
 	
 	self.gallery.player_style = "sneak_suit"
 	self.gallery.flashlights_on = true

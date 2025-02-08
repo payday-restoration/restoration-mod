@@ -330,7 +330,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.election_day_1.player_style = "sneak_suit"	
 	
 	self.election_day_2.player_style = "sneak_suit"
-	self.election_day_2.package = {"levels/narratives/dentist/mia/stage1/world/world"}
+	self.election_day_2.package = {"packages/narr_election2", "packages/job_election_day", "levels/narratives/e_election_day/stage_2/world", "levels/narratives/e_election_day/stage_2/world_sounds", "levels/narratives/e_election_day/stage_2/world/world", "levels/narratives/e_election_day/stage_2/pc_only/pc_only", "levels/narratives/e_election_day/stage_2/occluder/occluder", "levels/narratives/e_election_day/stage_2/editor_only/editor_only", "levels/instances/unique/hlm_gate_base/world/world", "levels/narratives/dentist/mia/stage1/world/world"}
 	
 	self.gallery.player_style = "sneak_suit"
 	self.gallery.flashlights_on = true

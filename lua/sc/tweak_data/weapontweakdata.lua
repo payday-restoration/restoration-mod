@@ -22769,7 +22769,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.stats_modifiers = nil
 				self.sickle.panic_suppression_chance = 0.05
 				self.sickle.nato = nil
-				self.sickle.use_sniper_trail = true
 				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
 				self.sickle.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
 				self.sickle.timers.equip = 0.3
@@ -24966,7 +24965,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						9,
 						0.7,
 						srm = {
-							0.01,
+							0.02,
 							{0.9, 1},
 							4
 						}
@@ -24979,7 +24978,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.6,
 						srm = {
 							0.01,
-							{0.95, 1},
+							{0.9, 1},
 							4
 						}
 					}
@@ -25050,9 +25049,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						8,
 						0.6,
 						srm = {
-							0.02,
-							{0.8, 1},
-							3
+							0.025,
+							{0.75, 1},
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "heavy_smg" then
@@ -25062,9 +25061,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						7,
 						0.5,
 						srm = {
-							0.01,
-							{0.9, 1},
-							4
+							0.02,
+							{0.8, 1},
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "light_ar" then
@@ -25100,7 +25099,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						srm = {
 							-0.02,
 							{1, 1.1},
-							4
+							3
 						}
 					}
 				elseif weap.recategorize[1] == "light_mg" then

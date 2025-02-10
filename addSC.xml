@@ -2040,6 +2040,12 @@
 	<animation			path="anims/fps/melee/garber/melee_charge" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_charge_var2" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_start" force="true"/>
+
+	<!-- agave machete anims for melee_machete since it suffers the same desync issues as the new melee_axe anims -->
+	<animation			path="anims/fps/melee/machete/melee_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var4" force="true"/>
 	
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>

@@ -17821,7 +17821,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.ADAPTIVE_BURST_SIZE = false									
 				self.ak12.fire_mode_data.fire_rate = 0.1
 				self.ak12.kick = self.stat_info.kick_tables.moderate_right_kick
-				self.flint.kick_pattern = {
+				self.ak12.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_right_kick},
 					{4, self.stat_info.kick_tables.left_kick},
 					{7, self.stat_info.kick_tables.moderate_left_kick},

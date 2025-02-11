@@ -531,9 +531,9 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 
 	if self:in_burst_mode() then
 		if self._burst_fire_last_recoil_multiplier and (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) then
-			mult = mult * (self._burst_fire_last_recoil_multiplier or 1)
+			mult = mult * self._burst_fire_last_recoil_multiplier
 		elseif self._burst_fire_recoil_multiplier then
-			mult = mult * (self._burst_fire_recoil_multiplier or 1)
+			mult = mult * self._burst_fire_recoil_multiplier
 		--elseif self._delayed_burst_recoil and self:burst_rounds_remaining() then
 			--mult = 0
 		end
@@ -979,23 +979,26 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._auto_fire_range_multiplier = self:weapon_tweak_data().AUTO_FIRE_RANGE_MULTIPLIER
 		self._single_fire_range_multiplier = self:weapon_tweak_data().SINGLE_FIRE_RANGE_MULTIPLIER
 		
-		self._has_burst_fire = (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
+		self._has_burst_fire = self._has_burst_fire or self:weapon_tweak_data().BURST_FIRE and self:weapon_tweak_data().BURST_FIRE ~= false
 
 		--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
-		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
-		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier_alt = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT or nil
-		self._burst_fire_rate_multiplier = (self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.05) or 1.05 --small mult to help alliviate frame rounding
-		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
-		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
-		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
-		self._burst_fire_ads_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
-		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
-		self._burst_ads_toggle = self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE
-		self._burst_hipfire_toggle = self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE
+		self._burst_size = self._burst_size or self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
+		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
+		self._burst_fire_rate_multiplier_alt = self._burst_fire_rate_multiplier_alt or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT or nil
+		self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER
+		if self._burst_fire_rate_multiplier then
+			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding
+		end
+		self._burst_fire_recoil_multiplier = self._burst_fire_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER
+		self._burst_fire_last_recoil_multiplier = self._burst_fire_last_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER
+		self._burst_fire_spread_multiplier = self._burst_fire_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER
+		self._burst_fire_ads_spread_multiplier = self._burst_fire_ads_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
+		self._burst_fire_range_multiplier = self._burst_fire_range_multiplier or self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
+		self._burst_ads_toggle = self._burst_ads_toggle or self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE
+		self._burst_hipfire_toggle = self._burst_hipfire_toggle or self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
-		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
+		self._burst_delay = self._burst_delay or self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
 		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST
 		if self._lock_burst and not self._locked_fire_mode then
 			self:_set_burst_mode(true, true)
@@ -1006,11 +1009,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._single_fire_ap_add = self:weapon_tweak_data().SINGLE_FIRE_AP_ADD or 0
 	
-		self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
-		self._fire_rate_init_count_mag = self:weapon_tweak_data().fire_rate_init_count_mag or nil
-		self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
-		self._fire_rate_init_delay = self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
-		self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
+		self._fire_rate_init_count = self._fire_rate_init_count or self:weapon_tweak_data().fire_rate_init_count or nil
+		self._fire_rate_init_count_mag = self._fire_rate_init_count_mag or self:weapon_tweak_data().fire_rate_init_count_mag or nil
+		self._fire_rate_init_mult = self._fire_rate_init_mult or self:weapon_tweak_data().fire_rate_init_mult and self:weapon_tweak_data().fire_rate_init_mult * 1.01 or 1
+		self._fire_rate_init_delay = self._fire_rate_init_delay or self:weapon_tweak_data().fire_rate_init_delay or self._burst_delay or 0
+		self._fire_rate_init_ramp_up = self._fire_rate_init_ramp_up or self:weapon_tweak_data().fire_rate_init_ramp_up or nil
 		self._fire_rate_init_ramp_up_add = 0
 	else	
 		self._has_burst_fire = false

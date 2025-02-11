@@ -25210,9 +25210,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						5.5,
 						0.2,
 						srm = {
-							-0.02,
-							{1, 1.1},
-							3
+							-0.025,
+							{1, 1.15},
+							2
 						}
 					}
 				elseif weap.recategorize[1] == "light_mg" then

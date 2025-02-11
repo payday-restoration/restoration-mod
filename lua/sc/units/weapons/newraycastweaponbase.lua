@@ -1109,6 +1109,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._block_toggle_semi = stats.burst_fire.block_toggle_semi
 				self._burst_default = stats.burst_fire.burst_default
 			end
+			if stats.init_rof then	
+				self._fire_rate_init_count = stats.init_rof.count
+				self._fire_rate_init_count_mag = stats.init_rof.count_mag
+				self._fire_rate_init_mult = stats.init_rof.rof_mult
+				self._fire_rate_init_delay = stats.init_rof.delay
+			end
 	
 			if stats.g11_burst then
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 4.565217	
@@ -1230,15 +1236,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3
 				self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER = 1.5
 			end
-			
-			if stats.abakan then
-				self:weapon_tweak_data().BURST_FIRE = 2
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3
-				self:weapon_tweak_data().BURST_DELAY = 0.06
-				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
-				self:weapon_tweak_data().fire_rate_init_count = 2
-				self:weapon_tweak_data().fire_rate_init_mult = 3
-			end	
 			
 			if stats.bandana then
 				self:weapon_tweak_data().tactical_reload = nil

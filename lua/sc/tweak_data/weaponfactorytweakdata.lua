@@ -24075,7 +24075,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		a_obj = "a_body",
 		has_description = true,
 		custom_stats = {
-			abakan = true, rof_mult = 0.85714, ignore_rof_mult_anims = true
+			burst_fire = {
+				rof_mult = 3,
+				delay = 0.06,
+			},
+			init_rof = {
+				count = 2,
+				rof_mult = 3,
+				delay = 0.09,
+			},
+			rof_mult = 0.85714, 
+			ignore_rof_mult_anims = true
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",

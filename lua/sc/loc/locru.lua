@@ -5470,7 +5470,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Удар исподтишка",
-				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вам не наносится урон в течение #{skill_color}#$skill_value_b1## секунд, то вы получите #{skill_color}#$skill_value_b2## шанс критического попадания, пока по вам не нанесут урон.\n\nКритические попадания наносят на #{skill_color}#50%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
+				["menu_backstab_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nЕсли вам не наносится урон в течение #{skill_color}#$skill_value_b1## секунд, то вы получите #{skill_color}#$skill_value_b2## шанс критического попадания, пока по вам не нанесут урон.\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nКритический шанс теперь остается на #{skill_color}#$skill_value_p1## секунды после получения урона.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Чистильщик",
@@ -5478,7 +5478,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Подлый прием",
-				["menu_unseen_strike_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## шанс критического попадания за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимального шанса #{skill_color}#$skill_value_b4.##\n\nКритические попадания наносят на #{skill_color}#50%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_p1## шанс критического попадания за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимального шанса #{skill_color}#$skill_value_p4.##\n\nВаш шанс критического попадания увеличивается на #{skill_color}#$skill_value_p5## при атаках сзади.",
+				["menu_unseen_strike_beta_desc_sc"] = "БАЗОВЫЙ: #{owned}#$basic##\nВы получаете #{skill_color}#$skill_value_b1## шанс критического попадания за каждые #{skill_color}#$skill_value_b2## очка нагрузки ниже #{skill_color}#$skill_value_b3##, до максимального шанса #{skill_color}#$skill_value_b4.##\n\nКритические попадания наносят на #{skill_color}#100%## больше урона.\n\nПИКОВЫЙ: #{owned}#$pro##\nВы получаете #{skill_color}#$skill_value_p1## шанс критического попадания за каждое #{skill_color}#$skill_value_p2## очко нагрузки ниже #{skill_color}#$skill_value_p3##, до максимального шанса #{skill_color}#$skill_value_p4.##\n\nВаш шанс критического попадания увеличивается на #{skill_color}#$skill_value_p5## при атаках сзади.",
 
 		--[[   FUGITIVE   ]]--
 

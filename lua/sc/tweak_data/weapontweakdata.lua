@@ -3826,130 +3826,196 @@ function WeaponTweakData:_init_stats()
 		--*Aggressively* random horizontal recoil; basically unpredictable
 			random_recoil = {
 				standing = {
-					0.65 * self.stat_info.stance_recoil_mults.standing,
 					0.50 * self.stat_info.stance_recoil_mults.standing,
-					0.65 * -self.stat_info.stance_recoil_mults.standing,
-					0.65 * self.stat_info.stance_recoil_mults.standing
+					0.30 * self.stat_info.stance_recoil_mults.standing,
+					0.60 * -self.stat_info.stance_recoil_mults.standing,
+					0.60 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
 					0.50 * self.stat_info.stance_recoil_mults.crouching,
-					0.65 * -self.stat_info.stance_recoil_mults.crouching,
-					0.65 * self.stat_info.stance_recoil_mults.crouching
+					0.30 * self.stat_info.stance_recoil_mults.crouching,
+					0.60 * -self.stat_info.stance_recoil_mults.crouching,
+					0.60 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
 					0.50 * self.stat_info.stance_recoil_mults.steelsight,
-					0.65 * -self.stat_info.stance_recoil_mults.steelsight,
-					0.65 * self.stat_info.stance_recoil_mults.steelsight
+					0.30 * self.stat_info.stance_recoil_mults.steelsight,
+					0.60 * -self.stat_info.stance_recoil_mults.steelsight,
+					0.60 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.40
+				min_h_recoil = 0.45
 			},
 			random_left_recoil = {
 				standing = {
-					0.65 * self.stat_info.stance_recoil_mults.standing,
 					0.50 * self.stat_info.stance_recoil_mults.standing,
-					0.80 * -self.stat_info.stance_recoil_mults.standing,
+					0.30 * self.stat_info.stance_recoil_mults.standing,
+					0.90 * -self.stat_info.stance_recoil_mults.standing,
 					0.30 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
 					0.50 * self.stat_info.stance_recoil_mults.crouching,
-					0.80 * -self.stat_info.stance_recoil_mults.crouching,
+					0.30 * self.stat_info.stance_recoil_mults.crouching,
+					0.90 * -self.stat_info.stance_recoil_mults.crouching,
 					0.30 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
 					0.50 * self.stat_info.stance_recoil_mults.steelsight,
-					0.80 * -self.stat_info.stance_recoil_mults.steelsight,
+					0.30 * self.stat_info.stance_recoil_mults.steelsight,
+					0.90 * -self.stat_info.stance_recoil_mults.steelsight,
 					0.30 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.30
+				min_h_recoil = 0.35
 			},
 			random_right_recoil = {
 				standing = {
-					0.65  * self.stat_info.stance_recoil_mults.standing,
 					0.50  * self.stat_info.stance_recoil_mults.standing,
-					0.80  * self.stat_info.stance_recoil_mults.standing,
+					0.30  * self.stat_info.stance_recoil_mults.standing,
+					0.90  * self.stat_info.stance_recoil_mults.standing,
 					0.30  * -self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
 					0.50 * self.stat_info.stance_recoil_mults.crouching,
-					0.80 * self.stat_info.stance_recoil_mults.crouching,
+					0.30 * self.stat_info.stance_recoil_mults.crouching,
+					0.90 * self.stat_info.stance_recoil_mults.crouching,
 					0.30 * -self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
 					0.50 * self.stat_info.stance_recoil_mults.steelsight,
-					0.80 * self.stat_info.stance_recoil_mults.steelsight,
+					0.30 * self.stat_info.stance_recoil_mults.steelsight,
+					0.90 * self.stat_info.stance_recoil_mults.steelsight,
 					0.30 * -self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.30
+				min_h_recoil = 0.35
 			},
+
+		--Recoil with even heavier horizontal weighting
+			harsh_kick = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.45 * self.stat_info.stance_recoil_mults.standing,
+					0.50 * -self.stat_info.stance_recoil_mults.standing,
+					0.50 * self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.45 * self.stat_info.stance_recoil_mults.crouching,
+					0.50 * -self.stat_info.stance_recoil_mults.crouching,
+					0.50 * self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.45 * self.stat_info.stance_recoil_mults.steelsight,
+					0.50 * -self.stat_info.stance_recoil_mults.steelsight,
+					0.50 * self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.40
+			},
+			harsh_left_kick = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.45 * self.stat_info.stance_recoil_mults.standing,
+					0.80 * -self.stat_info.stance_recoil_mults.standing,
+					0.20 * -self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.45 * self.stat_info.stance_recoil_mults.crouching,
+					0.80 * -self.stat_info.stance_recoil_mults.crouching,
+					0.20 * -self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.45 * self.stat_info.stance_recoil_mults.steelsight,
+					0.80 * -self.stat_info.stance_recoil_mults.steelsight,
+					0.20 * -self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.32
+			},
+			harsh_right_kick = {
+				standing = {
+					0.55 * self.stat_info.stance_recoil_mults.standing,
+					0.45 * self.stat_info.stance_recoil_mults.standing,
+					0.80 * self.stat_info.stance_recoil_mults.standing,
+					0.20 * self.stat_info.stance_recoil_mults.standing
+				},
+				crouching = {
+					0.55 * self.stat_info.stance_recoil_mults.crouching,
+					0.45 * self.stat_info.stance_recoil_mults.crouching,
+					0.80 * self.stat_info.stance_recoil_mults.crouching,
+					0.20 * self.stat_info.stance_recoil_mults.crouching
+				},
+				steelsight = {
+					0.55 * self.stat_info.stance_recoil_mults.steelsight,
+					0.45 * self.stat_info.stance_recoil_mults.steelsight,
+					0.80 * self.stat_info.stance_recoil_mults.steelsight,
+					0.20 * self.stat_info.stance_recoil_mults.steelsight
+				},
+				min_h_recoil = 0.32
+			},
+
 		--Recoil with a heavier horizontal weighting; primarly for bullet hoses ill-suited for long range
 			horizontal_recoil = {
 				standing = {
-					0.65 * self.stat_info.stance_recoil_mults.standing,
-					0.62 * self.stat_info.stance_recoil_mults.standing,
-					0.46 * -self.stat_info.stance_recoil_mults.standing,
-					0.46 * self.stat_info.stance_recoil_mults.standing
+					0.60 * self.stat_info.stance_recoil_mults.standing,
+					0.50 * self.stat_info.stance_recoil_mults.standing,
+					0.45 * -self.stat_info.stance_recoil_mults.standing,
+					0.45 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
-					0.52 * self.stat_info.stance_recoil_mults.crouching,
-					0.46 * -self.stat_info.stance_recoil_mults.crouching,
-					0.46 * self.stat_info.stance_recoil_mults.crouching
+					0.60 * self.stat_info.stance_recoil_mults.crouching,
+					0.50 * self.stat_info.stance_recoil_mults.crouching,
+					0.45 * -self.stat_info.stance_recoil_mults.crouching,
+					0.45 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
-					0.52 * self.stat_info.stance_recoil_mults.steelsight,
-					0.46 * -self.stat_info.stance_recoil_mults.steelsight,
-					0.46 * self.stat_info.stance_recoil_mults.steelsight
+					0.60 * self.stat_info.stance_recoil_mults.steelsight,
+					0.50 * self.stat_info.stance_recoil_mults.steelsight,
+					0.45 * -self.stat_info.stance_recoil_mults.steelsight,
+					0.45 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.31
+				min_h_recoil = 0.38
 			},
 			horizontal_left_recoil = {
 				standing = {
-					0.65 * self.stat_info.stance_recoil_mults.standing,
-					0.52 * self.stat_info.stance_recoil_mults.standing,
+					0.60 * self.stat_info.stance_recoil_mults.standing,
+					0.50 * self.stat_info.stance_recoil_mults.standing,
 					0.70 * -self.stat_info.stance_recoil_mults.standing,
-					0.15 * self.stat_info.stance_recoil_mults.standing
+					0.20 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
-					0.52 * self.stat_info.stance_recoil_mults.crouching,
+					0.60 * self.stat_info.stance_recoil_mults.crouching,
+					0.50 * self.stat_info.stance_recoil_mults.crouching,
 					0.70 * -self.stat_info.stance_recoil_mults.crouching,
-					0.15 * self.stat_info.stance_recoil_mults.crouching
+					0.20 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
-					0.52 * self.stat_info.stance_recoil_mults.steelsight,
+					0.60 * self.stat_info.stance_recoil_mults.steelsight,
+					0.50 * self.stat_info.stance_recoil_mults.steelsight,
 					0.70 * -self.stat_info.stance_recoil_mults.steelsight,
-					0.15 * self.stat_info.stance_recoil_mults.steelsight
+					0.20 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.24
+				min_h_recoil = 0.30
 			},
 			horizontal_right_recoil = {
 				standing = {
-					0.65 * self.stat_info.stance_recoil_mults.standing,
-					0.52 * self.stat_info.stance_recoil_mults.standing,
+					0.60 * self.stat_info.stance_recoil_mults.standing,
+					0.50 * self.stat_info.stance_recoil_mults.standing,
 					0.70 * self.stat_info.stance_recoil_mults.standing,
-					0.15 * -self.stat_info.stance_recoil_mults.standing
+					0.20 * -self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
-					0.65 * self.stat_info.stance_recoil_mults.crouching,
-					0.52 * self.stat_info.stance_recoil_mults.crouching,
+					0.60 * self.stat_info.stance_recoil_mults.crouching,
+					0.50 * self.stat_info.stance_recoil_mults.crouching,
 					0.70 * self.stat_info.stance_recoil_mults.crouching,
-					0.15 * -self.stat_info.stance_recoil_mults.crouching
+					0.20 * -self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
-					0.65 * self.stat_info.stance_recoil_mults.steelsight,
-					0.52 * self.stat_info.stance_recoil_mults.steelsight,
+					0.60 * self.stat_info.stance_recoil_mults.steelsight,
+					0.50 * self.stat_info.stance_recoil_mults.steelsight,
 					0.70 * self.stat_info.stance_recoil_mults.steelsight,
-					0.15 * -self.stat_info.stance_recoil_mults.steelsight
+					0.20 * -self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.24
+				min_h_recoil = 0.30
 			},
 
 		--Even ground between vertical and horizonal recoil; Your average SMG and Pistol will be around here.
@@ -21317,6 +21383,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malima.timers.reload_not_empty = 2
 				self.malima.timers.reload_exit_not_empty = 0.6
 				self.malima.panic_suppression_chance = 0.05
+			end
+
+			if self.coslo723 then
+				self.coslo723.nato = true
+				self.coslo723.recategorize = { "light_ar" }
+				self.coslo723.damage_type = "assault_rifle"
+				self.coslo723.has_description = false
+				self.coslo723.tactical_reload = 1
+				self.coslo723.AMMO_MAX = 180
+				self.coslo723.fire_mode_data.fire_rate = 0.075
+				self.coslo723.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.coslo723.kick_pattern = {
+					{ 0, self.stat_info.kick_tables.moderate_kick },
+					{ 3, self.stat_info.kick_tables.moderate_left_kick },
+					{ 12, self.stat_info.kick_tables.moderate_kick },
+					{ 14, self.stat_info.kick_tables.harsh_right_kick }
+				}
+				self.coslo723.supported = true
+				self.coslo723.ads_speed = 0.260
+				self.coslo723.damage_falloff = {
+					start_dist = 1900,
+					end_dist = 5300,
+					min_mult = 0.5
+				}
+				self.coslo723.stats = {
+					damage = 20,
+					spread = 73,
+					recoil = 81,
+					zoom = 1,
+					concealment = 25,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.coslo723.stats_modifiers = nil
+				self.coslo723.panic_suppression_chance = 0.05
+				self.coslo723.keep_ammo = 1
+				self.coslo723.lock_slide = true
+				self.coslo723.lock_slide_offset = 0.066
+				self.coslo723.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.coslo723.timers.reload_not_empty = 1.3
+				self.coslo723.timers.reload_exit_not_empty = 1.3
+				self.coslo723.timers.reload_empty = 2.85
+				self.coslo723.timers.reload_exit_empty = 0.7
 			end
 
 			if self.rmary2 then --RJC9000's B06 Goblin Mk2

@@ -2918,7 +2918,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
 					--RMC2
 					["bm_w_rmary2"] = "Goblin Mk2",
-					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##",
+					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
 
 			--[[ SNIPERS ]]

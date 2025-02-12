@@ -320,10 +320,9 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
 		elseif level_id == "man" then 
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_main", "environment")
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_corridor", "environment")
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_corridor_nofog", "environment")
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_rooms", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/secret_stash_v4/secret_stash_v4", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/secret_stash_v4_rooms/secret_stash_v4_rooms", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/secret_stash_v4_corridor/secret_stash_v4_corridor", "environment")
 		elseif level_id == "flat" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_flat_ext.custom_xml", "custom_xml", "environments/pd2_flat/pd2_flat", "environment")
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_flat_int.custom_xml", "custom_xml", "environments/pd2_flat_indoor/pd2_flat_indoor", "environment")

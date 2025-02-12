@@ -8902,7 +8902,8 @@ end)
 				}
 				self.wpn_fps_lmg_hk51b.override.wpn_fps_upg_i_og_rof = {
 					stats = {
-						recoil = 2
+						spread = 2,
+						recoil = 4
 					},
 					custom_stats = {
 						rof_mult = 0.4736842,
@@ -9238,7 +9239,8 @@ end)
 				}
 				self.wpn_fps_lmg_hk21.override.wpn_fps_upg_i_og_rof = {
 					stats = {
-						recoil = 2
+						spread = 2,
+						recoil = 4
 					},
 					custom_stats = {
 						rof_mult = 0.5625,
@@ -9759,7 +9761,8 @@ end)
 					--AMCAR Override Tables
 					self.wpn_fps_ass_amcar.override.wpn_fps_upg_i_og_rof = {
 						stats = {
-							spread = 2
+							spread = 2,
+							recoil = 4
 						},
 						custom_stats = {
 							rof_mult = 0.68125
@@ -10698,7 +10701,8 @@ end)
 					--CAR-4 Override Tables
 					self.wpn_fps_ass_m4.override.wpn_fps_upg_i_og_rof = {
 						stats = {
-							spread = 1
+							spread = 1,
+							recoil = 2
 						},
 						custom_stats = {
 							rof_mult = 0.8
@@ -11330,7 +11334,8 @@ end)
 					}
 					self.wpn_fps_smg_olympic.override.wpn_fps_upg_i_og_rof = {
 						stats = {
-							spread = 1
+							spread = 1,
+							recoil = 2
 						},
 						custom_stats = {
 							rof_mult = 0.8525
@@ -24028,7 +24033,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		a_obj = "a_body",
 		has_description = true,
 		custom_stats = {
-			beretta_burst = true, add_burst = true
+			burst_fire = {
+				count = 3,
+				delay = 0.1,
+				desired_burst_rof = 0.05454,
+			},
+			add_burst = true
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -24052,7 +24062,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		a_obj = "a_body",
 		has_description = true,
 		custom_stats = {
-			csglock_burst = true, add_burst = true, rof_mult = 0.5882352, ignore_rof_mult_anims = true
+			burst_fire = {
+				count = 3,
+				rof_mult = 3,
+				spread_mult = 1.5
+			},
+			add_burst = true, 
+			rof_mult = 0.5882352, 
+			ignore_rof_mult_anims = true
 		},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -24098,7 +24115,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		internal_part = true,
 		dlc = "sc"
-	}	
+	}
 
 	self.parts.wpn_fps_upg_i_m8a1 = {
 		pcs = {},
@@ -24215,7 +24232,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {
-			value = 1
+			value = 5
 		},
 		forbids = {},
 		internal_part = true,
@@ -26878,6 +26895,70 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_coslo723_stock_mix2.supported = true
 				self.parts.wpn_fps_ass_coslo723_stock_mix2.stats = deep_clone(stocks.adj_hvy_acc_stats)
 				self.parts.wpn_fps_ass_coslo723_stock_mix2.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+			--MAGS
+
+				--FM 1
+				self.parts.wpn_fps_ass_coslo723_magazine_fastreload1.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_fastreload1.stats = {
+					value = 5,
+					concealment = -1,
+					spread = -1,
+					reload = 2
+				}
+				--Flip
+				self.parts.wpn_fps_ass_coslo723_magazine_flip.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_flip.stats = {
+					value = 2,
+					concealment = 1,
+					reload = 3,
+					extra_ammo = -5
+				}
+				self.parts.wpn_fps_ass_coslo723_magazine_flip.custom_stats = { 
+					ads_speed_mult = 0.925
+				}
+				--FM 2
+				self.parts.wpn_fps_ass_coslo723_magazine_fastreload2.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_fastreload2.stats = {
+					value = 3,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -10
+				}
+				self.parts.wpn_fps_ass_coslo723_magazine_fastreload2.custom_stats = { 
+					ads_speed_mult = 0.95
+				}
+				--EX 1
+				self.parts.wpn_fps_ass_coslo723_magazine_ext.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_ext.stats = {
+					value = 7,
+					concealment = -2,
+					extra_ammo = 15
+				}
+				self.parts.wpn_fps_ass_coslo723_magazine_ext.custom_stats = { 
+					ads_speed_mult = 1.05
+				}
+				--EX 2
+				self.parts.wpn_fps_ass_coslo723_magazine_box.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_box.stats = {
+					value = 8,
+					concealment = -4,
+					reload = -6,
+					extra_ammo = 30
+				}
+				self.parts.wpn_fps_ass_coslo723_magazine_box.custom_stats = { 
+					ads_speed_mult = 1.1
+				}
+				--EX 3
+				self.parts.wpn_fps_ass_coslo723_magazine_drum.supported = true
+				self.parts.wpn_fps_ass_coslo723_magazine_drum.stats = {
+					value = 9,
+					extra_ammo = 70,
+					reload = -9,
+					concealment = -7
+				}
+				self.parts.wpn_fps_ass_coslo723_magazine_drum.custom_stats = {
+					ads_speed_mult = 1.175
+				}
 
 			self.parts.wpn_fps_ass_coslo723_mode_burst.supported = true
 			self.parts.wpn_fps_ass_coslo723_mode_burst.perks = nil

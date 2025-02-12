@@ -958,8 +958,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
 	self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
 		
-	self._can_shoot_through_enemy_unlim = self:weapon_tweak_data().can_shoot_through_enemy_unlim or false --No limit enemy piercing
-	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
+	self._can_shoot_through_enemy_unlim = self._can_shoot_through_enemy_unlim or self:weapon_tweak_data().can_shoot_through_enemy_unlim or false --No limit enemy piercing
+	self._can_shoot_through_titan_shield = self._can_shoot_through_titan_shield or self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
 
 	self._warsaw = self:weapon_tweak_data().warsaw
@@ -1098,8 +1098,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._burst_size = stats.burst_fire.count
 				self._burst_fire_rate_multiplier_alt = stats.burst_fire.rof_mult_alt
 				self._burst_fire_rate_multiplier = stats.burst_fire.rof_mult
+				if stats.burst_fire.desired_burst_rof then
+					local base_firerate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
+					self._burst_fire_rate_multiplier = base_firerate and base_firerate / stats.burst_fire.desired_burst_rof
+				end
 				self._burst_fire_recoil_multiplier = stats.burst_fire.recoil_mult
 				self._burst_fire_last_recoil_multiplier = stats.burst_fire.last_recoil_mult
+				self._burst_fire_spread_multiplier = stats.burst_fire.spread_mult
 				self._burst_fire_ads_spread_multiplier = stats.burst_fire.ads_spread_mult
 				self._burst_fire_range_multiplier = stats.burst_fire.range_mult
 				self._burst_delay = stats.burst_fire.delay
@@ -1222,21 +1227,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
 			end		
 
-			if stats.beretta_burst then
-				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
-				local burst_mult = ((self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate) and self:weapon_tweak_data().fire_mode_data.fire_rate / 0.0545454) or 1
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = burst_mult
-			end
-
-			if stats.csglock_burst then
-				self:weapon_tweak_data().BURST_FIRE = 3	
-				self:weapon_tweak_data().BURST_DELAY = 0.2
-				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 3
-				self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER = 1.5
-			end
-			
 			if stats.bandana then
 				self:weapon_tweak_data().tactical_reload = nil
 				self._bandana = true
@@ -1244,7 +1234,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.type99_stats then
 				--have to do this due to how this thing is set up, can't have both equipped anyways
-				tweak_data.weapon.system.reload_speed_multiplier = 1.13 * 1.1
+				tweak_data.weapon.system.reload_speed_multiplier = 1.13
 				tweak_data.weapon.system.timers = tweak_data.weapon.system.timers or {}
 				tweak_data.weapon.system.timers.reload_empty = 8
 				tweak_data.weapon.system.timers.reload_not_empty = 8

@@ -841,8 +841,8 @@ PlayerStandard._primary_action_get_value = {
 					self._anim_played = true
 					local fire_anim_offset = weap_base:weapon_tweak_data().fire_anim_offset
 					local fire_anim_offset2 = weap_base:weapon_tweak_data().fire_anim_offset2
-					if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
-						weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
+					if not self._state_data.in_steelsight or not weap_base:tweak_data_anim_play("fire_steelsight", weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2) then
+						weap_base:tweak_data_anim_play("fire", weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims ), fire_anim_offset, fire_anim_offset2)
 					end
 				end
 				return not self._already_fired and weap_base:trigger_held(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), ...)
@@ -1100,7 +1100,8 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 					local weapon_tweak_data = weap_base:weapon_tweak_data()
 					local primary_category = weapon_tweak_data.categories[1]
 					--Resmod custom var(s)
-					local ignore_rof_mult_anims = weap_base and (weap_base._ignore_rof_mult_anims or weap_base._fire_rate_init_progress)
+					local true_semi = fire_mode == "single" and not weap_base:in_burst_mode()
+					local ignore_rof_mult_anims = weap_base and (weap_base._ignore_rof_mult_anims or (true_semi and weap_base._ignore_rof_mult_anims_semi) or weap_base._fire_rate_init_progress)
 
 					if not weapon_tweak_data.ignore_damage_multipliers then
 						dmg_mul = dmg_mul * managers.player:temporary_upgrade_value("temporary", "dmg_multiplier_outnumbered", 1)

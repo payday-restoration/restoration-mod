@@ -10818,9 +10818,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak5.fire_mode_data.fire_rate = 0.0888889
 						self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.ak5.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
+							{0, self.stat_info.kick_tables.right_recoil},
 							{4, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.right_kick},
+							{9, self.stat_info.kick_tables.vertical_kick},
 							{18, self.stat_info.kick_tables.moderate_kick}
 						}
 						if math.random() <= 0.05 then
@@ -21393,6 +21393,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coslo723.tactical_reload = 1
 				self.coslo723.AMMO_MAX = 180
 				self.coslo723.fire_mode_data.fire_rate = 0.075
+				self.coslo723.SINGLE_FIRE_FIRERATE_MULTIPLIER = 0.425
 				self.coslo723.kick = self.stat_info.kick_tables.moderate_left_kick
 				self.coslo723.kick_pattern = {
 					{ 0, self.stat_info.kick_tables.moderate_kick },
@@ -22956,7 +22957,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.toz81.timers = deep_clone(self.gre_m79.timers)
 
 				self.x_toz81.recategorize = { "heavy_shot" }
-				self.x_toz81.categories = { "akmibo", "shotgun", "shotgun_pistol" }
+				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_pistol" }
 				self.x_toz81.damage_type = "shotgun"
 				self.x_toz81.damage_type_single_ray = "sniper"
 				self.x_toz81.fire_mode_data.fire_rate = 0.15

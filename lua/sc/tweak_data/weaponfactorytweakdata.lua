@@ -10781,7 +10781,15 @@ end)
 					self.parts.wpn_fps_ass_ak5_fg_fnc.supported = true
 					self.parts.wpn_fps_ass_ak5_fg_fnc.has_description = true
 					self.parts.wpn_fps_ass_ak5_fg_fnc.desc_id = "fnc_burst_desc"
-					self.parts.wpn_fps_ass_ak5_fg_fnc.custom_stats = { funco_chan = true, add_burst = true }
+					self.parts.wpn_fps_ass_ak5_fg_fnc.custom_stats = {
+						burst_fire = {
+							count = 3,
+							delay = 0.1,
+							recoil_mult = 0.85,
+							last_recoil_mult = 1.05
+						},
+						add_burst = true
+					}
 					self.parts.wpn_fps_ass_ak5_fg_fnc.stats = {
 						value = 3,
 						spread = 1,
@@ -24666,7 +24674,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_desc = "bm_beer_auto_desc",
 			falloff_start_mult = 0.4,
 			falloff_end_mult = 0.88888,
-			beer_burst = true,
+			can_toggle_firemode = true,
+			orig_toggle_firemode = false,
+			default_firemode = "auto",
+			orig_firemode = "single",
+			block_burst = true,
 			rof_mult = 1.323529,
 			burst_to_auto = true
 		},
@@ -24736,7 +24748,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		},
 		custom_stats = {
 			lock_burst = true,
-			widowmaker = true,
+			burst_fire = {
+				count = 2,
+				rof_mult = 18,
+				recoil_mult = 0.2,
+				last_recoil_mult = 1.2,
+				lock_burst = true
+			},
 			falloff_start_mult = 0.5,
 			falloff_end_mult = 0.33333
 		},
@@ -25273,7 +25291,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1
 				}
 				self.parts.wpn_fps_upg_wmtx_gastube_burst.custom_stats = {
-					wmtx_burst = true,
+					burst_fire = {
+						count = 2,
+						rof_mult = 10,
+						recoil_mult = 0.75,
+						last_recoil_mult = 1.3,
+						delay = 0.5
+					},
 					lock_burst = true
 				}
 
@@ -26896,7 +26920,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_coslo723_stock_mix2.stats = deep_clone(stocks.adj_hvy_acc_stats)
 				self.parts.wpn_fps_ass_coslo723_stock_mix2.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
 			--MAGS
-
 				--FM 1
 				self.parts.wpn_fps_ass_coslo723_magazine_fastreload1.supported = true
 				self.parts.wpn_fps_ass_coslo723_magazine_fastreload1.stats = {
@@ -26971,11 +26994,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					count = 3,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1,
-					delay = 0.15,
+					delay = 0.16,
 					auto_burst = true,
 					block_toggle = true,
-					block_toggle_auto = true,
-					burst_default = true
+					toggle_to_semi = true,
+					burst_default = true,
 				}
 			}
 

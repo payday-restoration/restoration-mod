@@ -4735,9 +4735,7 @@ function BlackMarketGui:update_info_text()
 						if weapon_tweak.BURST_ONLY then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						else
-							if is_akimbo or weapon_tweak.BURST_FIRE_DEFAULT then
-								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
-							elseif burst_to_auto then
+							if burst_to_auto then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
 							elseif burst_type then
 								if burst_type == "fan" then
@@ -4749,6 +4747,8 @@ function BlackMarketGui:update_info_text()
 								elseif burst_type == "autoburst" then
 									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_autoburst") or managers.localization:	to_upper_text("st_menu_firemode_burst_autoburst")
 								end
+							elseif is_akimbo or weapon_tweak.BURST_FIRE_DEFAULT then
+								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
 							else
 								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
 							end

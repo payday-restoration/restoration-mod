@@ -154,10 +154,10 @@ if restoration.Options:GetValue("HUD/UI/Loadouts") then
 		if is_level_ghostable and Network:is_server() then
 			desc_string = desc_string
 		end
-		local font_size_default = tweak_data.menu.pd2_small_font_size + 4
+		local font_size_default = 14
 		local font_default = tweak_data.menu.small_font
 		if russian then
-			font_size_default = tweak_data.menu.pd2_small_font_size
+			font_size_default = 16
 			font_default = tweak_data.menu.pd2_small_font
 		end
 		local desc_text = self._scroll_panel:text({

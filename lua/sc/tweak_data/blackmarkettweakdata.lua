@@ -2089,12 +2089,10 @@ end
 
 
 function BlackMarketTweakData:get_projectiles_index()
-	log("get_projectiles_index")
 	return self._projectiles_index_resmod
 end
 
 function BlackMarketTweakData:get_index_from_projectile_id(projectile_id)
-	log("get_index_from_projectile_id")
 	for index, entry_name in ipairs(self._projectiles_index_resmod) do
 		if entry_name == projectile_id then
 			return index
@@ -2105,7 +2103,6 @@ function BlackMarketTweakData:get_index_from_projectile_id(projectile_id)
 end
 
 function BlackMarketTweakData:get_projectile_name_from_index(index)
-	log("get_projectile_name_from_index")
 	return self._projectiles_index_resmod[index]
 end
 

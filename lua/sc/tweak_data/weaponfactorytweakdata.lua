@@ -39367,7 +39367,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			falloff_end_mult = 0.4,
 			rof_mult = 2.25,
 			damage_min_mult = 0.66667,
-			s7_flexfire = true,
+			can_shoot_through_titan_shield = false,
 			alt_ammo_pickup_min_mul = 1.45,
 			alt_ammo_pickup_max_mul = 1.45,
 			ammo_pickup_min_mul = 1.45,
@@ -41096,8 +41096,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						weap.rotation = Rotation(0, 0, -45)
 					end
 				end
-				for factory_id, i in pairs(twf) do
-					if twf[factory_id] and twf[factory_id].uses_parts and table.contains(twf[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
+				for factory_id, i in pairs(self) do
+					if self[factory_id] and self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
 						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] = self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] or {
 							translation = Vector3(1, -4, -16),
 							rotation = Rotation(0, 0, -35)

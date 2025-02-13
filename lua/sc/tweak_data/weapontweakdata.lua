@@ -5161,7 +5161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_DELAY = 0.15
 		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.25
 		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
@@ -5171,7 +5171,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	local akimbo_rev = {'x_rage','x_chinchilla','x_2006m','x_model3','x_judge',"x_korth"}
 	for i, wep_id in ipairs(akimbo_rev) do
 		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_DELAY = 0.015
+		self[wep_id].BURST_DELAY = 0.15
 		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.5
 		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
@@ -5809,7 +5809,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.desc_id = "bm_beer_sc_desc"				
 						self.beer.use_data.selection_index = 2
 						self.beer.BURST_FIRE = 3
-						self.beer.BURST_DELAY = 0.04
+						self.beer.BURST_DELAY = 0.12
 						self.beer.BURST_FIRE_RECOIL_MULTIPLIER = 0.6
 						self.beer.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 						self.beer.BURST_FIRE_DEFAULT = true
@@ -9119,7 +9119,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.has_description = true
 						self.new_mp5.desc_id = "bm_mp5_sc_desc"
 						self.new_mp5.BURST_FIRE = 3
-						self.new_mp5.BURST_DELAY = 0.08
+						self.new_mp5.BURST_DELAY = 0.12
 						self.new_mp5.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 						self.new_mp5.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 						self.new_mp5.ADAPTIVE_BURST_SIZE = false			
@@ -9395,7 +9395,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.polymer.BURST_FIRE = 2
 						self.polymer.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 						self.polymer.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-						self.polymer.BURST_DELAY = 0.06
+						self.polymer.BURST_DELAY = 0.1
 						self.polymer.ADAPTIVE_BURST_SIZE = false
 						self.polymer.kick = self.stat_info.kick_tables.even_recoil
 						self.polymer.kick_pattern = {
@@ -9439,7 +9439,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.schakal.BURST_FIRE = 2
 						self.schakal.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
 						self.schakal.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-						self.schakal.BURST_DELAY = 0.08
+						self.schakal.BURST_DELAY = 0.1
 						self.schakal.ADAPTIVE_BURST_SIZE = false
 						self.schakal.kick = self.stat_info.kick_tables.even_recoil
 						self.schakal.kick_pattern = {
@@ -10623,7 +10623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.fire_mode_data.fire_rate = 0.08571428571
 						self.s552.auto.fire_rate = 0.08571428571
 						self.s552.BURST_FIRE = 3
-						self.s552.BURST_DELAY = 0.06
+						self.s552.BURST_DELAY = 0.12
 						self.s552.ADAPTIVE_BURST_SIZE = false															
 						self.s552.kick = self.stat_info.kick_tables.moderate_kick
 						self.s552.kick_pattern = {
@@ -10948,7 +10948,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.CLIP_AMMO_MAX = 30
 						self.flint.BURST_FIRE = 2
 						self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.07142
-						self.flint.BURST_DELAY = 0.03
+						self.flint.BURST_DELAY = 0.15
 						self.flint.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
 						self.flint.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 						self.flint.ADAPTIVE_BURST_SIZE = false									
@@ -11227,7 +11227,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.fire_mode_data.fire_rate = 0.085714285
 						self.hajk.AMMO_MAX = 75
 						self.hajk.BURST_FIRE = 2
-						self.hajk.BURST_DELAY = 0.06
+						self.hajk.BURST_DELAY = 0.12
 						self.hajk.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 						self.hajk.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 						self.hajk.ADAPTIVE_BURST_SIZE = false											
@@ -16168,7 +16168,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.AMMO_MAX = 150
 				self.tilt.BURST_FIRE = 2
 				self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3
-				self.tilt.BURST_DELAY = 0.06
+				self.tilt.BURST_DELAY = 0.12
 				self.tilt.ADAPTIVE_BURST_SIZE = false
 				self.tilt.fire_rate_init_count = 2
 				self.tilt.fire_rate_init_mult = 3
@@ -16480,7 +16480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.nckuro.FIRE_MODE = "single"
 				self.nckuro.BURST_FIRE = 3
 				self.nckuro.BURST_FIRE_RATE_MULTIPLIER = 3
-				self.nckuro.BURST_DELAY = 0.08
+				self.nckuro.BURST_DELAY = 0.15
 				self.nckuro.fire_mode_data.fire_rate = 0.3
 				self.nckuro.kick = self.stat_info.kick_tables.even_recoil
 				self.nckuro.kick_pattern = {
@@ -17735,7 +17735,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fazertron.CAN_TOGGLE_FIREMODE = false
 				self.fazertron.BURST_FIRE = 5
 				self.fazertron.BURST_FIRE_RATE_MULTIPLIER = 1.1875
-				self.fazertron.BURST_DELAY = 0.05
+				self.fazertron.BURST_DELAY = 0.12
 				self.fazertron.fire_mode_data.fire_rate = 0.075
 				self.fazertron.AMMO_MAX = 180
 				self.fazertron.CLIP_AMMO_MAX = 60
@@ -18819,7 +18819,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m200.tactical_reload = 1
 				self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.m200.supported = true
-				self.m200.ads_speed = 0.600
+				self.m200.ads_speed = 0.580
 				self.m200.damage_falloff = {
 					start_dist = 4000,
 					end_dist = 15000,
@@ -18850,8 +18850,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload_exit_not_empty = 0.95
 				}
 				self.m200.use_vapor_trail = true
-				self.m200.reload_speed_multiplier = 0.9
-				self.m200.reload_not_empty_speed_multiplier = 0.85
+				self.m200.reload_speed_multiplier = 0.98
+				self.m200.reload_not_empty_speed_multiplier = 0.9
 				self.m200.armor_piercing_chance = 1
 				self.m200.can_shoot_through_titan_shield = true
 				self.m200.stats_modifiers = nil
@@ -22969,7 +22969,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_toz81.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.x_toz81.BURST_FIRE = 2
-				self.x_toz81.BURST_DELAY = 0.015
+				self.x_toz81.BURST_DELAY = 0.15
 				self.x_toz81.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
 				self.x_toz81.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
 				self.x_toz81.BURST_FIRE_RATE_MULTIPLIER = 4

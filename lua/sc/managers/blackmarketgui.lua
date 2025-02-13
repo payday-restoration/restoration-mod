@@ -4732,7 +4732,7 @@ function BlackMarketGui:update_info_text()
 					end
 					if weapon_tweak.BURST_FIRE then
 						local burst_type = nil --weapon_tweak.BURST_TYPE
-						if weapon_tweak.BURST_ONLY then
+						if weapon_tweak.BURST_ONLY or lock_burst then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						else
 							if burst_to_auto then

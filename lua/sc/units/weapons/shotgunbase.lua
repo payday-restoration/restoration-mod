@@ -427,14 +427,17 @@ function ShotgunBase:fire_rate_multiplier( ignore_anims )
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) and not self:weapon_tweak_data().BURST_SLAM then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
-			local delay = self._burst_delay --and self._burst_delay / (fire_rate / multiplier)
-			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
+			local moremath = fire_rate / no_burst_mult
+			local delay = self._burst_delay - moremath
 			local current_state_name = managers.player:current_state()
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
-			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
-			multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
+			if not self._burst_fire_rate_multiplier_alt then
+				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed - ((bypass_firerate and moremath) or 0), self._unit:timer():time() + delay))
+				self._ignore__next_fire_allowed = true
+				multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
+			end
 		end
 	end	
 
@@ -456,10 +459,9 @@ function ShotgunBase:fire_rate_multiplier( ignore_anims )
 		multiplier = multiplier * self._alt_rof_mult
 	end
 	
-	if self:can_toggle_firemode() and self:fire_mode() == "single" and not self:in_burst_mode() then
-		multiplier = multiplier * 0.85
+	if (self:can_toggle_firemode() or self._rof_mult_semi) and self:fire_mode() == "single" and not self:in_burst_mode() then
+		multiplier = multiplier * (self._rof_mult_semi or 0.8)
 	end
-
 
 	return multiplier
 end

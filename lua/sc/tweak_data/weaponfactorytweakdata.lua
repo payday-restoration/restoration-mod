@@ -1655,6 +1655,7 @@ local grips = {
 
 
 local attachment_list = {}
+local exclude = {}
 
 --Init function
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_wf_init", function(self)
@@ -4038,16 +4039,22 @@ end)
 					self.wpn_fps_pis_rsh12.override.wpn_fps_upg_i_iw_hailstorm = {
 						desc_id = "bm_wp_upg_i_iw_hailstorm_no_pen_desc",
 						custom_stats = {
-							lock_burst = true,
-							hailstorm = true,
+							burst_fire = {
+								count = 3,
+								recoil_mult = 0.33,
+								last_recoil_mult = 1,
+								delay = 0.25,
+								lock_burst = true,
+							},
+							can_shoot_through_shield = false,
+							armor_piercing_override = 0.5,
 							falloff_start_mult = 0.2,
 							falloff_end_mult = 0.4,
 							ammo_pickup_max_mul = 2,
 							ammo_pickup_min_mul = 2,
 							alt_ammo_pickup_max_mul = 2,
 							alt_ammo_pickup_min_mul = 2,
-							rof_mult = 4.443333,
-							--disable_steelsight_recoil_anim = true
+							rof_mult = 4.443333
 						},
 						stats = {
 							value = 10,
@@ -24043,7 +24050,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			burst_fire = {
 				count = 3,
-				delay = 0.1,
+				delay = 0.15,
 				desired_burst_rof = 0.05454,
 			},
 			add_burst = true
@@ -24102,7 +24109,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		custom_stats = {
 			burst_fire = {
 				rof_mult = 3,
-				delay = 0.06,
+				delay = 0.15,
 			},
 			init_rof = {
 				count = 2,
@@ -24325,7 +24332,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		custom_stats = {
 			auto_to_burst = true,
-			m16_burst = true,
+			burst_fire = {
+				count = 3,
+				delay = 0.12,
+				desired_burst_rof = 0.06315,
+				recoil_mult = 0.75,
+				last_recoil_mult = 1,
+				block_toggle = true,
+				toggle_to_semi = true,
+				burst_default = true,
+			},
+			rof_mult_semi = 0.6,
 			falloff_start_mult = 1,
 			falloff_end_mult = 1
 		},
@@ -24704,8 +24721,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		keep_damage = true,
 		custom_stats = {
-			lock_burst = true,
-			hailstorm = true,
+			burst_fire = {
+				count = 3,
+				recoil_mult = 0.33,
+				last_recoil_mult = 1,
+				delay = 0.25,
+				lock_burst = true
+			},
+			can_shoot_through_shield = false,
+			armor_piercing_override = 0.5,
 			falloff_start_mult = 0.5,
 			falloff_end_mult = 0.75,
 			ammo_pickup_max_mul = 2,
@@ -24713,7 +24737,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			alt_ammo_pickup_max_mul = 2,
 			alt_ammo_pickup_min_mul = 2,
 			rof_mult = 3.3325,
-			--disable_steelsight_recoil_anim = true
 		},
 		stats = {
 			value = 10,
@@ -24738,23 +24761,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
+		keep_damage = true,
 		stats = {
 			value = 10,
 			damage = -90,
 			total_ammo_mod = 408,
 			extra_ammo = 3,
-			reload = -2,
+			reload = -1,
 			spread = -4
 		},
 		custom_stats = {
-			lock_burst = true,
 			burst_fire = {
 				count = 2,
-				rof_mult = 18,
 				recoil_mult = 0.2,
+				desired_burst_rof = 0.05,
 				last_recoil_mult = 1.2,
+				no_anim = true,
 				lock_burst = true
 			},
+			lock_burst = true,
+			tactical_reload = 0,
 			falloff_start_mult = 0.5,
 			falloff_end_mult = 0.33333
 		},
@@ -24775,7 +24801,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		supported = true,
 		custom_stats = {
 			lock_burst = true,
-			mk32 = true,
+			burst_fire = {
+				count = 2,
+				delay = 0.6,
+				recoil_mult = 0.5,
+				last_recoil_mult = 1,
+				lock_burst = true
+			},
 			rof_mult = 3
 		},
 		stats = {
@@ -24884,7 +24916,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}, 
 		custom_stats = { 
 			alt_desc = "bm_wp_avelyn_override_desc", 
-			avelyn = true, 
+			burst_fire = {
+				count = 3,
+				delay = 0.2,
+				recoil_mult = 1,
+				last_recoil_mult = 1,
+				lock_burst = true
+			},
 			rof_mult = 7.5,
 			rms = 0.6,
 			sms = 0.6,
@@ -25510,12 +25548,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			if self.parts.wpn_fps_snp_m200_barrel then --Pawcio's M200
 				self.parts.wpn_fps_upg_m200_barrel_med.supported = true
-				self.parts.wpn_fps_upg_m200_barrel_med.stats = deep_clone(barrels.short_b2_stats)
-				self.parts.wpn_fps_upg_m200_barrel_med.custom_stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_upg_m200_barrel_med.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_upg_m200_barrel_med.custom_stats = deep_clone(barrels.short_b1_stats)
 		
 				self.parts.wpn_fps_upg_m200_barrel_short.supported = true
-				self.parts.wpn_fps_upg_m200_barrel_short.stats = deep_clone(barrels.short_b3_stats)
-				self.parts.wpn_fps_upg_m200_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_upg_m200_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_upg_m200_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
 		
 				self.parts.wpn_fps_upg_m200_bipod.supported = true
 				self.parts.wpn_fps_upg_m200_bipod.stats = { value = 0 }
@@ -30442,7 +30480,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				damage_min_mult = 0.8,
 				hip_mult = 1.5,
 				auto_to_burst = true,
-				mike16_burst = true,
+				burst_fire = {
+					count = 3,
+					delay = 0.08,
+					rof_mult = 1.269592,
+					recoil_mult = 0.6,
+					last_recoil_mult = 1,
+					block_toggle = true,
+					toggle_to_semi = true,
+					burst_default = true
+				},
 				ammo_pickup_max_mul = 0.77027,
 				ammo_pickup_min_mul = 0.77027,
 				alt_ammo_pickup_max_mul = 0.77027,
@@ -38291,7 +38338,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 4
 		}
 		self.parts.wpn_fps_upg_xr2_handle_01.custom_stats = {
-			xr2_auto = true,
+			block_burst = true,
+			can_toggle_firemode = true,
+			orig_toggle_firemode = false,
+			default_firemode = "auto",
+			orig_firemode = "single",
 			burst_to_auto = true
 		}
 		self.parts.wpn_fps_upg_xr2_handle_02.supported = true
@@ -38302,7 +38353,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			value  = 4
 		}
 		self.parts.wpn_fps_upg_xr2_handle_02.custom_stats = {
-			xr2_rapidfire = true
+			burst_fire = {
+				desired_burst_rof = 0.063157,
+				recoil_mult = 0.95
+			}
 		}
 
 		self.parts.wpn_fps_upg_xr2_stock_01.supported = true
@@ -41028,16 +41082,25 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			if self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot then
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 				for i, weap in pairs(self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod) do
-					if weap and weap.translation then
-						weap.translation = Vector3(-2, 0, -15)
+					exclude = {
+						"wpn_fps_pis_deagle",
+						"wpn_fps_pis_rage",
+						"wpn_fps_snp_m200",
+						"wpn_fps_shot_bs23"
+					}
+					local excluded = table.contains(exclude, i)
+					if excluded then
+						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[i] = nil
+					elseif weap and weap.translation then
+						weap.translation = (weap.translation or Vector3(0, 0, 0)) + Vector3(-1, 0, -15)
 						weap.rotation = Rotation(0, 0, -45)
 					end
 				end
-				for factory_id, i in pairs(self) do
-					if self[factory_id] and self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
+				for factory_id, i in pairs(twf) do
+					if twf[factory_id] and twf[factory_id].uses_parts and table.contains(twf[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot") then
 						self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] = self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] or {
-							translation = Vector3(-1, 0, -16),
-							rotation = Rotation(0.25, 0, -30)
+							translation = Vector3(1, -4, -16),
+							rotation = Rotation(0, 0, -35)
 						}
 					end
 				end
@@ -43675,7 +43738,7 @@ self.parts.wpn_fps_pis_judge_b_legend.supported = true
 self.parts.wpn_fps_shot_shorty_b_legendary.supported = true
 self.parts.wpn_fps_ass_m14_b_legendary.supported = true
 
-local exclude = {
+exclude = {
 	"wpn_fps_pis_maxim9_a_tranq",
 	"wpn_fps_snp_mosin_a_tranq",
 	"wpn_fps_lmg_mg42_dummy_mag",

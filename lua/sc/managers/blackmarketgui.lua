@@ -4665,41 +4665,47 @@ function BlackMarketGui:update_info_text()
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
-			if custom_stats then
+			if custom_stats then --GROSS and UGLY garbage
 				for part_id, stats in pairs(custom_stats) do
-					if stats.lock_burst then
+					if stats.info_lock_burst then
 						lock_burst = true
 						lock_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
 						break
-					elseif stats.lock_auto then
+					elseif stats.info_lock_auto then
 						lock_auto = true
 						lock_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
 						break
-					elseif stats.lock_semi then
+					elseif stats.info_lock_semi then
 						lock_semi = true
 						lock_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.burst_to_auto then
-						burst_to_auto = true
-						swap_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.auto_to_burst then
-						auto_to_burst = true
-						swap_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.add_auto then
-						add_auto = true
-						add_firemode = true
-						firemode_modded = true
-					elseif stats.add_burst then
-						add_burst = true
-						add_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
+					end
+				end
+				if not lock_firemode then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.info_burst_to_auto then
+							burst_to_auto = true
+							swap_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+							break
+						elseif stats.info_auto_to_burst then
+							auto_to_burst = true
+							swap_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+							break
+						elseif stats.info_add_auto then
+							add_auto = true
+							add_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+						elseif stats.info_add_burst then
+							add_burst = true
+							add_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+						elseif stats.modify_firemode then
+							firemode_modded = true
+						end
 					end
 				end
 			end
@@ -4789,7 +4795,7 @@ function BlackMarketGui:update_info_text()
 					managers.localization:to_upper_text("st_menu_firemode") .. " ##" ..  firemode_string .. "##"
 
 					table.insert(resource_color, tweak_data.screen_colors.skill_color)
-					table.insert(resource_color, (lock_firemode and tweak_data.screen_colors.risk) or (add_firemode and tweak_data.screen_colors.stats_positive) or (firemode_modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
+					table.insert(resource_color, (add_firemode and tweak_data.screen_colors.stats_positive) or (firemode_modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
 				end
 			end
 

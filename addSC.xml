@@ -2046,6 +2046,12 @@
 	<animation			path="anims/fps/melee/machete/melee_attack_var3" force="true"/>
 	<animation			path="anims/fps/melee/machete/melee_attack_var4" force="true"/>
 	
+	<!-- melee_fireaxe mashup with melee_sandsteel and melee_baseballbat since it's just a clone of melee_beardy otherwise -->
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var4" force="true"/>
+	
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>
 

@@ -1580,7 +1580,7 @@ local crew_wep_preset = {
 		self.swat_van_turret_module.SPREAD = 3
 		--Just so all they do is protect cop spawn points instead of shredding you at range, the heist is shit enough
 		if job == "hox_1" or job == "xmn_hox1" then
-			self.swat_van_turret_module.FIRE_RANGE = 1000
+			self.swat_van_turret_module.FIRE_RANGE = 1500
 		else
 			self.swat_van_turret_module.FIRE_RANGE = 4000
 		end

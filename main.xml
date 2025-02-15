@@ -505,6 +505,7 @@
 						<option type="bool" default_value="false" name="DifficultyMarkers"/>
 						<option type="bool" default_value="false" name="BlackScreen"/>
 						<option type="bool" default_value="false" name="Loadouts"/>
+						<option type="number" default_value="13" min="10" max="25" step="1" show_value="true" name="BriefingFontSize"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
 						<option type="bool" default_value="false" name="PocoCrimenetAlignSort"/>

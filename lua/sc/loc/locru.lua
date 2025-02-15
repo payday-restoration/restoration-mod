@@ -729,6 +729,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Подгоняет и сортирует CRIMENET по сложности.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Масштаб CRIMENET",
 		["RestorationModPocoCrimenetScaleDescID"] = "Позволяет менять масштаб CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
 		["RestorationModVoiceIconTitleID"] = "Голосовой чат",
 		["RestorationModVoiceIconDescID"] = "Отображает иконку, когда игрок использует голосовой чат.",
 		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",

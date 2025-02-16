@@ -279,7 +279,11 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 		end
 	end
 
-	return r_value
+	--For controllers
+	accumulatedKick = self._recoil_kick.current
+	currentKick = self._recoil_kick.current
+
+	return r_value	
 end
 
 function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
@@ -501,4 +505,14 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		end
 	end
 end)
---]]
+
+--For controllers
+function FPCameraPlayerBase:setSnapSpeed(value)
+	ORIGINALaim_assist_snap_speed =  math.max(0, math.min(100, value))
+end
+
+local accumulatedKick = 0
+local currentKick = 0
+function FPCameraPlayerBase:isPlayerStillReceivingRecoilKick()
+	return accumulatedKick ~= currentKick
+end

@@ -28,6 +28,11 @@ function PlayerDamage:init(unit)
 	self._ws = self._gui:create_screen_workspace()
 	self._focus_delay_mul = 1
 	self._dmg_interval = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
+	
+	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
+		self._dmg_interval = self._dmg_interval * tweak_data.player.controller_damage_grace_multiplier or 2
+	end
+	
 	--change grace period in cs
 	self._dmg_interval = managers.modifiers:modify_value("PlayerDamage:CheckingGrace", self._dmg_interval)
 

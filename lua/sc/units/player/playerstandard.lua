@@ -2748,6 +2748,52 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		end
 	end
 	
+	--Better snap aiming stuff when using a controller
+	if managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR then
+		local current_weapon = self:get_equipped_weapon()
+		local stats = tweak_data.weapon[current_weapon._name_id].stats
+		if self:in_steelsight() and FPCameraPlayerBase:isPlayerStillReceivingRecoilKick() == false then
+			local closest_ray = self._equipped_unit:base():check_autoaimModded(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), nil, true, nil, 100)
+			if closest_ray ~= nil then
+				local stance_id = self._equipped_unit:base():get_stance_id()
+				local stances = tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
+				local misc_attribs = self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard
+				local new_fov = self:get_zoom_fov(misc_attribs)
+				local snapMultiplier = 1
+				local closeSnapRayMultiplier = 1
+				local isUserUsingScope = new_fov <= 45
+				local maximumRangeForFastCloseAimAssist = 200
+				local defaultIdealRangeToMeters = 1600
+				
+				if isUserUsingScope then
+					snapMultiplier = 1000 
+					closeSnapRayMultiplier = 0.125
+				else
+					if closest_ray.distance > maximumRangeForFastCloseAimAssist then
+						local stuff = ((closest_ray.distance - defaultIdealRangeToMeters) /  defaultIdealRangeToMeters) / 100
+						if stuff < 0 then
+							stuff = stuff * -1
+						end
+						local multiplierBasedOnDistance = 1 - math.max(stuff, 0.01)
+						snapMultiplier = multiplierBasedOnDistance
+						closeSnapRayMultiplier = multiplierBasedOnDistance
+					else
+						snapMultiplier = 10000
+						closeSnapRayMultiplier = 100
+					end
+				end
+				local closest_ray = self._equipped_unit:base():check_autoaimModded(self:get_fire_weapon_position(), self:get_fire_weapon_direction(), nil, true, nil, 1 * closeSnapRayMultiplier)
+				if closest_ray ~= nil then
+					local accuracyMultiplier = (2 - math.min(tonumber(current_weapon._spread), 2)) / 2
+					local finalSnapSpeed = 100 * accuracyMultiplier * snapMultiplier
+					
+					FPCameraPlayerBase:setSnapSpeed(finalSnapSpeed)
+					self._camera_unit:base():clbk_aim_assist(closest_ray)
+				end
+			end
+		end
+	end	
+	
 end)
 
 function PlayerStandard:_update_js_t(t, dt)

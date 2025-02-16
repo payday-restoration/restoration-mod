@@ -1,23 +1,23 @@
---[[
-function InputTweakData:init(tweak_data)
+Hooks:PostHook( InputTweakData, "init", "SC_inputtweak", function(self)
+
 	self.gamepad = {
 		aim_assist_move_speed = 10,
 		aim_assist_move_th_min = 0.1,
-		aim_assist_gradient_min = 5000,
-		aim_assist_gradient_max_distance = 5000,
+		aim_assist_gradient_min = 100000,
+		aim_assist_gradient_max_distance = 100000,
 		look_speed_dead_zone = 0.02,
-		aim_assist_snap_speed = 300,
+		aim_assist_snap_speed = 0,
 		aim_assist_gradient_max = 0.8,
 		look_speed_fast = 340,
 		look_speed_transition_occluder = 0.95,
 		aim_assist_look_speed = 20,
-		look_speed_steel_sight = 340,
+		look_speed_steel_sight = 110,
 		look_speed_transition_to_fast = 0.55,
 		aim_assist_move_th_max = 0.9,
 		uses_keyboard = true,
-		look_speed_transition_zone = -0.1,
+		look_speed_transition_zone = 0.95,
 		aim_assist_use_sticky_aim = true,
-		look_speed_standard = 340,
+		look_speed_standard = 110,
 		deprecated = {
 			look_speed_fast = 360,
 			look_speed_transition_to_fast = 0.5,
@@ -61,5 +61,5 @@ function InputTweakData:init(tweak_data)
 	valid_range(self.gamepad, "aim_assist_move_th_min", 0, 1, false, false)
 	valid_range(self.gamepad, "aim_assist_move_th_max", 0, 1, false, false)
 	print("[InputTweakData] Init")
-end
---]]
+
+end)

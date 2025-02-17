@@ -22847,72 +22847,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
-			if self.sickle then
-				self.sickle.categories = { 
-					"assault_rifle",
-					"battery"
-				}
-				self.sickle.recategorize = {"heavy_ar"}
-				self.sickle.damage_type = "assault_rifle"
-				self.sickle.CLIP_AMMO_MAX = 80
-				self.sickle.AMMO_MAX = 240
-				self.sickle.sms = 0.8
-				self.sickle.fire_mode_data.fire_rate = 0.08
-				self.sickle.BURST_FIRE = false
-				self.sickle.CAN_TOGGLE_FIREMODE = false
-				self.sickle.FIRE_MODE = "auto"
-				self.sickle.kick = self.stat_info.kick_tables.even_recoil
-				self.sickle.supported = true
-				self.sickle.keep_ammo = 0
-				self.sickle.ads_speed = 0.300
-				self.sickle.damage_falloff = {
-					start_dist = 1000,
-					end_dist = 6000,
-					min_mult = 0.5
-				}
-				self.sickle.stats = {
-					damage = 30,
-					spread = 71,
-					recoil = 100,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 23,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 400,
-					value = 4,
-					reload = 20
-				}
-				self.sickle.stats_modifiers = nil
-				self.sickle.panic_suppression_chance = 0.05
-				self.sickle.nato = nil
-				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
-				self.sickle.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
-				self.sickle.timers.equip = 0.3
-				self.sickle.timers.reload_not_empty = 1.52
-				self.sickle.timers.reload_exit_not_empty = 0.85
-				self.sickle.timers.reload_empty = 1.52
-				self.sickle.timers.reload_exit_empty = 0.85
-				--self.sickle.weapon_hold = "ching"
-				--self.sickle.no_auto_anims = true
-				self.sickle.spin_up_t = 0.5
-				self.sickle.spin_down_t = 0.0001
-				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
-				self.sickle.sounds.spin_start = "hailstorm_shotgun_fire_charge"
-				self.sickle.sounds.spin_end = "swatturret_spin_stop"
-				self.sickle.recoil_values = {
-					{ 80, 60 },
-					7.5,
-					0.6,
-					srm = {
-						0.4,
-						{0.2, 1},
-						0
-					}
-				}
-			end
-
 			if self.toz81 then
 				self.toz81.recategorize = { "heavy_shot" }
 				self.toz81.categories = { "shotgun", "shotgun_pistol" }
@@ -23104,6 +23038,57 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.or12.timers.reload_exit_not_empty = 0.9
 				self.or12.timers.reload_empty = 3.21
 				self.or12.timers.reload_exit_empty = 1.0
+			end
+
+			if self.bk500 then
+				self.bk500.recategorize = { "heavy_pis", "handcannon" }
+				self.bk500.damage_type = "handcannon"
+				self.bk500.fire_mode_data.fire_rate = 0.5454
+				self.bk500.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.bk500.AMMO_MAX = 20
+				self.bk500.CLIP_AMMO_MAX = 5
+				self.bk500.kick = self.stat_info.kick_tables.vertical_kick
+				self.bk500.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{1, self.stat_info.kick_tables.left_kick},
+					{5, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.bk500.supported = true
+				self.bk500.ads_speed = 0.200
+				self.bk500.damage_falloff = {
+					start_dist = 3100,
+					end_dist = 5800,
+					min_mult = 0.26666
+				}
+				self.bk500.stats = {
+					damage = 90,
+					spread = 85,
+					recoil = 27,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 24,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.bk500.stats_modifiers = nil
+				self.bk500.panic_suppression_chance = 0.05
+				self.bk500.always_play_anims = true
+				self.bk500.can_shoot_through_enemy = true
+				self.bk500.can_shoot_through_enemy_unlim = true
+				self.bk500.can_shoot_through_shield = true
+				self.bk500.can_shoot_through_wall = true
+				self.bk500.sounds.stop_fire = "judge_x_fire"
+				self.bk500.reload_speed_multiplier = 0.9
+				self.bk500.armor_piercing_chance = 1
+				self.bk500.object_damage_mult = 1.8
+				self.bk500.timers.reload_exit_empty = 0.55
+				self.bk500.timers.reload_empty = 2.93
+				self.bk500.timers.reload_exit_not_empty = 0.55
+				self.bk500.timers.reload_not_empty = 2.93
 			end
 			
 			if self.haymaker then
@@ -23395,12 +23380,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"assault_rifle",
 					"sweet_liberty"
 				}
-				self.ar23.recategorize = {"light_ar"}
+				self.ar23.recategorize = {"heavy_ar"}
 				self.ar23.damage_type = "assault_rifle"
 				self.ar23.CLIP_AMMO_MAX = 45
-				self.ar23.AMMO_MAX = 405
+				self.ar23.AMMO_MAX = self.ar23.CLIP_AMMO_MAX * 9
 				self.ar23.fire_mode_data.fire_rate = 0.09375
-				self.ar23.sms = 0.8
+				self.ar23.sms = 0.7
 				self.ar23.tactical_reload = 1
 				self.ar23.keep_ammo = 0
 				self.ar23.BURST_FIRE = 3
@@ -23414,12 +23399,59 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.damage_falloff = {
 					start_dist = 2000,
 					end_dist = 5500,
-					min_mult = 0.41667
+					min_mult = 0.3333
 				}
 				self.ar23.stats = {
-					damage = 24,
-					spread = 79,
-					recoil = 83,
+					damage = 30,
+					spread = 76,
+					recoil = 81,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 25,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.ar23.stats_modifiers = nil
+				self.ar23.is_bullpup = true
+				self.ar23.panic_suppression_chance = 0.05
+				self.ar23.timers.reload_empty = 3.21
+				self.ar23.timers.reload_exit_empty = 1.12
+				self.ar23.timers.reload_not_empty = 2.32
+				self.ar23.timers.reload_exit_not_empty = 1.13
+			end
+
+			if self.sta52 then
+				self.sta52.categories = { 
+					"assault_rifle",
+					"sweet_liberty"
+				}
+				self.sta52.recategorize = {"heavy_ar"}
+				self.sta52.damage_type = "assault_rifle"
+				self.sta52.CLIP_AMMO_MAX = 56
+				self.sta52.AMMO_MAX = self.sta52.CLIP_AMMO_MAX * 7
+				self.sta52.fire_mode_data.fire_rate = 0.07594
+				self.sta52.sms = 0.7
+				self.sta52.tactical_reload = 1
+				self.sta52.keep_ammo = 0
+				self.sta52.BURST_FIRE = false
+				self.sta52.CAN_TOGGLE_FIREMODE = true
+				self.sta52.FIRE_MODE = "auto"
+				self.sta52.kick = self.stat_info.kick_tables.even_recoil
+				self.sta52.supported = true
+				self.sta52.ads_speed = 0.260
+				self.sta52.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4900,
+					min_mult = 0.3333
+				}
+				self.sta52.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 77,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 24,
@@ -23430,12 +23462,226 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 4,
 					reload = 20
 				}
-				self.ar23.stats_modifiers = nil
-				self.ar23.panic_suppression_chance = 0.05
-				self.ar23.timers.reload_empty = 3.21
-				self.ar23.timers.reload_exit_empty = 1.12
-				self.ar23.timers.reload_not_empty = 2.32
-				self.ar23.timers.reload_exit_not_empty = 1.13
+				self.sta52.is_bullpup = true
+				self.sta52.stats_modifiers = nil
+				self.sta52.panic_suppression_chance = 0.05
+				self.sta52.sounds.use_fix = nil
+				self.sta52.reload_speed_multiplier = 0.9
+				self.sta52.timers = deep_clone(self.rota.timers)
+			end
+
+			if self.br14 then
+				self.br14.categories = { 
+					"assault_rifle",
+					"dmr_h",
+					"sweet_liberty"
+				}
+				self.br14.recategorize = {"dmr_ar"}
+				self.br14.damage_type = "sniper"
+				self.br14.CLIP_AMMO_MAX = 30
+				self.br14.AMMO_MAX = self.br14.CLIP_AMMO_MAX * 9
+				self.br14.fire_mode_data.fire_rate = 0.10909
+				self.br14.sms = 0.7
+				self.br14.tactical_reload = 1
+				self.br14.keep_ammo = 0
+				self.br14.BURST_FIRE = false
+				self.br14.CAN_TOGGLE_FIREMODE = true
+				self.br14.FIRE_MODE = "single"
+				self.br14.kick = self.stat_info.kick_tables.even_recoil
+				self.br14.supported = true
+				self.br14.ads_speed = 0.300
+				self.br14.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 7500,
+					min_mult = 0.5333
+				}
+				self.br14.stats = {
+					damage = 45,
+					spread = 91,
+					recoil = 55,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 23,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.br14.stats_modifiers = nil
+				self.br14.panic_suppression_chance = 0.05
+				self.br14.sounds.use_fix = nil
+				self.br14.armor_piercing_chance = 0.5
+				self.br14.timers.reload_empty = 3.08
+				self.br14.timers.reload_exit_empty = 1.05
+				self.br14.timers.reload_not_empty = 2.05
+				self.br14.timers.reload_exit_not_empty = 0.95
+			end
+
+			if self.reprimand then
+				self.reprimand.categories = { 
+					"smg",
+					"sweet_liberty"
+				}
+				self.reprimand.recategorize = {"heavy_smg"}
+				self.reprimand.use_data.selection_index = 2
+				self.reprimand.damage_type = "machine_gun"
+				self.reprimand.CLIP_AMMO_MAX = 25
+				self.reprimand.AMMO_MAX = self.reprimand.CLIP_AMMO_MAX * 10
+				self.reprimand.fire_mode_data.fire_rate = 0.12244
+				self.reprimand.sms = 0.9
+				self.reprimand.tactical_reload = 1
+				self.reprimand.keep_ammo = 0
+				self.reprimand.BURST_FIRE = 3
+				self.reprimand.BURST_DELAY = 0.12
+				self.reprimand.BURST_FIRE_RECOIL_MULTIPLIER = 0.9
+				self.reprimand.CAN_TOGGLE_FIREMODE = true
+				self.reprimand.FIRE_MODE = "auto"
+				self.reprimand.kick = self.stat_info.kick_tables.even_recoil
+				self.reprimand.supported = true
+				self.reprimand.ads_speed = 0.200
+				self.reprimand.damage_falloff = {
+					start_dist = 900,
+					end_dist = 3100,
+					min_mult = 0.15
+				}
+				self.reprimand.stats = {
+					damage = 60,
+					spread = 51,
+					recoil = 51,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 24,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.reprimand.stats_modifiers = nil
+				self.reprimand.sounds.use_fix = nil
+				self.reprimand.panic_suppression_chance = 0.05
+				self.reprimand.armor_piercing_chance = 0.5
+				self.reprimand.timers.reload_empty = 2.75
+				self.reprimand.timers.reload_exit_empty = 0.4
+				self.reprimand.timers.reload_not_empty = 2.08
+				self.reprimand.timers.reload_exit_not_empty = 0.4
+			end
+
+			if self.sta11 then
+				self.sta11.categories = { 
+					"smg",
+					"sweet_liberty"
+				}
+				self.sta11.recategorize = {"heavy_smg"}
+				self.sta11.use_data.selection_index = 2
+				self.sta11.damage_type = "machine_gun"
+				self.sta11.CLIP_AMMO_MAX = 48
+				self.sta11.AMMO_MAX = self.sta11.CLIP_AMMO_MAX * 8
+				self.sta11.fire_mode_data.fire_rate = 0.0571428
+				self.sta11.sms = 0.9
+				self.sta11.tactical_reload = 1
+				self.sta11.keep_ammo = 0
+				self.sta11.BURST_FIRE = false
+				self.sta11.CAN_TOGGLE_FIREMODE = false
+				self.sta11.FIRE_MODE = "auto"
+				self.sta11.kick = self.stat_info.kick_tables.even_recoil
+				self.sta11.supported = true
+				self.sta11.ads_speed = 0.180
+				self.sta11.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3600,
+					min_mult = 0.2
+				}
+				self.sta11.stats = {
+					damage = 30,
+					spread = 56,
+					recoil = 87,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 26,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.sta11.stats_modifiers = nil
+				self.sta11.sounds.use_fix = nil
+				self.sta11.panic_suppression_chance = 0.05
+				self.sta11.timers = deep_clone(self.coal.timers)
+				self.sta11.timers.reload_empty = self.sta11.timers.reload_not_empty
+				self.sta11.timers.reload_exit_empty = self.sta11.timers.reload_exit_not_empty
+			end
+
+
+			if self.sickle then
+				self.sickle.categories = { 
+					"assault_rifle",
+					"battery"
+				}
+				self.sickle.recategorize = {"heavy_ar"}
+				self.sickle.damage_type = "assault_rifle"
+				self.sickle.CLIP_AMMO_MAX = 80
+				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
+				self.sickle.sms = 0.7
+				self.sickle.fire_mode_data.fire_rate = 0.08
+				self.sickle.BURST_FIRE = false
+				self.sickle.CAN_TOGGLE_FIREMODE = false
+				self.sickle.FIRE_MODE = "auto"
+				self.sickle.kick = self.stat_info.kick_tables.even_recoil
+				self.sickle.supported = true
+				self.sickle.keep_ammo = 0
+				self.sickle.ads_speed = 0.300
+				self.sickle.damage_falloff = {
+					start_dist = 1000,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.sickle.stats = {
+					damage = 30,
+					spread = 71,
+					recoil = 93,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.sickle.stats_modifiers = nil
+				self.sickle.panic_suppression_chance = 0.05
+				self.sickle.nato = nil
+				self.sickle.trail_effect = "_dmc/effects/sterwers_trail_m_small"
+				self.sickle.trail_effect_npc = "_dmc/effects/sterwers_trail_m_small_npc"
+				self.sickle.timers.equip = 0.3
+				self.sickle.timers.reload_not_empty = 1.52
+				self.sickle.timers.reload_exit_not_empty = 0.85
+				self.sickle.timers.reload_empty = 1.52
+				self.sickle.timers.reload_exit_empty = 0.85
+				--self.sickle.weapon_hold = "ching"
+				--self.sickle.no_auto_anims = true
+				self.sickle.spin_up_t = 0.5
+				self.sickle.spin_down_t = 0.0001
+				self.sickle.sounds.magazine_empty = "wp_sentrygun_swap_ammo"
+				self.sickle.sounds.spin_start = "hailstorm_shotgun_fire_charge"
+				self.sickle.sounds.spin_end = "swatturret_spin_stop"
+				self.sickle.recoil_values = {
+					{ 80, 60 },
+					7.5,
+					0.6,
+					srm = {
+						0.4,
+						{0.2, 1},
+						0
+					}
+				}
 			end
 
 			if self.bulldog then
@@ -24937,6 +25183,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.animations.magazine_empty = nil 
 			end
 
+			if weap.keep_ammo == 0 then
+				weap.dispose_mag_desc = true
+			end
+
 			if weap.fire_mode_data then
 				if weap.fire_mode_data.single then
 					weap.fire_mode_data.single = nil
@@ -25391,7 +25641,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.3,
-		sweet_liberty = 0.37037 / 2,
+		sweet_liberty = 0,
 		battery = 0
 	}
 

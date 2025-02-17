@@ -1165,14 +1165,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._fire_rate_init_delay = stats.init_rof.delay or self._fire_rate_init_delay
 			end
 	
-			if stats.g11_burst then
-				self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER = 4.565217
-				self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER = 0.2
-				self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
-				self:weapon_tweak_data().BURST_DELAY = 0.15
-				self:weapon_tweak_data().LOCK_BURST = nil
-			end
-
 			if stats.adj_timers then
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
@@ -1646,9 +1638,10 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 		for _, category in ipairs(self:categories()) do
 			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 		end
-		
+
 		--Sharpeyed Team AI bonus, since now Enduring is a base thing
-		pickup_multiplier = pickup_multiplier + managers.player:crew_ability_upgrade_value("crew_scavenge", 1) - 1
+		--Moved to RaycastWeaponBase:add_ammo; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless unless you leave custody or do something else to call this function after crew AI is active
+		--pickup_multiplier = pickup_multiplier + managers.player:crew_ability_upgrade_value("crew_scavenge", 1) - 1
 
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)

@@ -4890,6 +4890,7 @@ function BlackMarketGui:update_info_text()
 				local stat_attachment_desc = nil
 				local rays = (weapon_tweak and weapon_tweak.rays) or 1
 				local starwars = nil
+				local martyr = weapon_tweak and weapon_tweak.dispose_mag_desc
 				local keep_ammo = weapon_tweak.keep_ammo or nil
 				local description = nil
 				if custom_stats then
@@ -5054,6 +5055,15 @@ function BlackMarketGui:update_info_text()
 						else
 							updated_texts[4].text = updated_texts[4].text .. "##" .. managers.localization:text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:text(stat_sms and "bm_menu_stat_sms_info_2" or "bm_menu_sms_info_2") .. "##"
 						end
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end
+
+				if martyr then
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("mutator_letthesleepinggoddie_desc") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("mutator_letthesleepinggoddie_desc") .. "##"
 					end
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end

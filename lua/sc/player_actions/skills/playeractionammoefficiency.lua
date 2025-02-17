@@ -1,3 +1,4 @@
+
 PlayerAction.AmmoEfficiency = {
 	Priority = 1,
 	Function = function (player_manager, target_headshots, bullet_refund, target_time)
@@ -19,15 +20,11 @@ PlayerAction.AmmoEfficiency = {
 					
 					if headshots == target_headshots then
 						--Amount of ammo to refund. bullet_refund corresponds to % of ammo to refund. If amount would be less than 1 bullet, clamp it to 1 bullet.
-						local refund_raw = math.max(bullet_refund * weapon_unit:get_ammo_max(), 1)
-						local refund = math.floor(refund_raw)
+						local max_pickup = weapon_unit._ammo_pickup and ((weapon_unit._ammo_pickup[1] + weapon_unit._ammo_pickup[2]) * 0.5))  --or (bullet_refund * weapon_unit:get_ammo_max())
+						local refund_raw = math.max(max_pickup, 1)
+						local refund = math.ceil(refund_raw)
 						refund = refund + ((math.random() < refund_raw - refund) and 1 or 0) --Decimal values == random chance for extra bullet.
-						--Throw ammo into magazine if the player has the relevant upgrade.
-						if to_magazine then
-							--weapon_unit:set_ammo_remaining_in_clip(math.min(weapon_unit:get_ammo_max_per_clip(), weapon_unit:get_ammo_remaining_in_clip() + refund))
-						end
-						--Add ammo to pool. Doing this before adding ammo to magazine leads to hud errors, since set_ammo_remaining_in_clip() doesn't care about total remaining ammo and doesn't update the hud.
-						player_manager:on_ammo_increase(refund)
+						player_manager:local_player():movement():current_state():weapon_add_ammo(refund, to_magazine)
 						time = target_time
 					end
 				end

@@ -312,7 +312,13 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
-		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + (ammo_base._ammo_overflow or 0)
+		--Sharpeyed Team AI bonus, since now Enduring is a base thing
+		--Moved from NewRaycastWeaponBase:precalculate_ammo_pickup; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless until you do something to call it again like leaving custody or using the weapon pickup mod. 
+		--Its new home is here in a function that is called *after* crew AI is active
+		--I question the validity of an additive ammo bonus done this late in the pickup calcs so I've made it multiplicative
+
+		local pickup = math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) -- * managers.player:crew_ability_upgrade_value("crew_scavenge", 1)
+		local ammo_gained_raw = add_amount_override or pickup * (ratio or 1) + (ammo_base._ammo_overflow or 0)
 		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
 			return false, 0
 		end

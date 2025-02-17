@@ -19239,6 +19239,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_ksp45 = {
 						translation = Vector3(-0.005, 7.1, -0.46)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_reprimand = {
+						translation = Vector3(0.05, -0, -3.78),
+						rotation = Rotation(0.11, 0, 0.5)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_bp12 = {
 						translation = Vector3(0.04, 4.9, -0.01),
@@ -19355,6 +19359,11 @@ end)
 						translation = Vector3(0.05, -18.5, -1.052),
 						rotation = Rotation(0.11, -0.08, 0.6)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_br14 = {
+						translation = Vector3(0.02, -21, -3.59),
+						rotation = Rotation(0.11, 0.0, 0.2)
+					}
+
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
 						translation = Vector3(-0.008, 2.6, -0.12)
@@ -37401,46 +37410,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
-		if self.parts.wpn_fps_sickle_m_battery then
-
-			self.parts.wpn_fps_hailstorm_sound_switch = {
-				a_obj = "a_body",
-				type = "ammo",
-				name_id = "bm_wp_hailstorm_ck_switch",
-				unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_hailstorm/wpn_fps_hailstorm",
-				no_cull = true,
-				internal_part = true,
-				stats = { value = 0 },
-				custom_stats = {} --Just to load into memory
-			}
-			self.parts.wpn_fps_sickle_optic.supported = true
-			self.parts.wpn_fps_sickle_optic.stats = { 
-				value = 0,
-				zoom = 5,
-				base_zoom_off = 2
-			}
-			self.parts.wpn_fps_sickle_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-			for i, weap in pairs(self.parts.wpn_fps_sickle_optic.stance_mod) do
-				if weap and i ~= wep_id and weap.translation then
-					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
-				end
-			end
-
-			self.parts.wpn_fps_sickle_m_battery.supported = true
-			self.parts.wpn_fps_sickle_m_battery.adds = { "wpn_fps_hailstorm_sound_switch" }
-			self.parts.wpn_fps_sickle_m_battery.stats = { value = 10 }
-			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
-				starwars = {
-					no_tracers = true,
-					regen_ammo_time = 2,
-					regen_rate = 3.48,
-					can_reload = true,
-					mag_regen = true,
-					empty_no_regen = true
-				}
-			}
-		end
-
 		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
 			self.parts.wpn_fps_pis_toz81_bayonet.supported = true
 			self.parts.wpn_fps_pis_toz81_bayonet.stats = {
@@ -37676,7 +37645,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 		if self.parts.wpn_fps_ass_ar23_body then
-
 			self.parts.wpn_fps_ass_ar23_optic_2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_ass_ar23_optic_2.stance_mod) do
 				if weap and weap.translation then
@@ -37722,9 +37690,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stats = {
 				value = 10,
-				damage = -9,
-				recoil = -2,
-				spread = 1,
+				recoil = -4,
 				total_ammo_mod = -47,
 				zoom = 20
 			}
@@ -37733,9 +37699,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				hs_mult = 2,
 				hs_mult_desc = true,
 				armor_piercing_override = 1,
-				damage_min_mult = 1.92,
-				falloff_start_mult = 1.225,
-				falloff_end_mult = 1.225
+				falloff_start_mult = 0.70,
+				falloff_end_mult = 0.70
 			}
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_penetrator.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}
@@ -37751,11 +37716,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_ar23_ck_concussive.keep_damage = true
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stats = {
 				value = 10,
-				damage = -6,
 				extra_ammo = 15,
 				total_ammo_mod = 12,
-				spread = -2,
-				recoil = -6,
+				recoil = -14,
 				zoom = -5
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.custom_stats = {
@@ -37765,7 +37728,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				block_burst = true,
 				info_burst_to_auto = true,
 				natascha = 2000,
-				damage_min_mult = 1.19998
+				falloff_start_mult = 0.85,
+				falloff_end_mult = 0.85
 			}
 			self.parts.wpn_fps_ass_ar23_ck_concussive.stance_mod = nil
 			self.parts.wpn_fps_ass_ar23_ck_concussive.override.wpn_fps_ass_ar23_optic_2.stance_mod = {}
@@ -37784,7 +37748,143 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_ck = { custom_stats = {} }
 			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_2 = { custom_stats = {} }
 			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3 = { custom_stats = {} }
-			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }		
+			self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }
+
+			for i, part_id in pairs(self.wpn_fps_ass_ar23.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
+							self.wpn_fps_ass_ar23.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_ass_ar23_npc.uses_parts = deep_clone(self.wpn_fps_ass_ar23.uses_parts)
+		end
+
+		if self.parts.wpn_fps_ass_sta52_receiver then
+
+			for i, part_id in pairs(self.wpn_fps_ass_sta52.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom" or self.parts[part_id].type == "second_sight") then
+							self.wpn_fps_ass_sta52.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_ass_sta52_npc.uses_parts = deep_clone(self.wpn_fps_ass_sta52.uses_parts)
+		end
+
+		if self.parts.wpn_fps_ass_br14_m_std then
+			self.parts.wpn_fps_ass_br14_optic.supported = true
+			self.parts.wpn_fps_ass_br14_optic.stats = { 
+				value = 0,
+				zoom = 5,
+				base_zoom_off = 2
+			}
+			self.parts.wpn_fps_ass_br14_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_sickle_optic.stance_mod) do
+				if weap and i ~= wep_id and weap.translation then
+					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
+				end
+			end
+
+			for i, part_id in pairs(self.wpn_fps_ass_br14.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							self.wpn_fps_ass_br14.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_ass_br14_npc.uses_parts = deep_clone(self.wpn_fps_ass_br14.uses_parts)
+		end
+
+		if self.parts.wpn_fps_smg_reprimand_dh then
+			self.parts.wpn_fps_smg_reprimand_optic.supported = true
+			self.parts.wpn_fps_smg_reprimand_optic.stats = { 
+				value = 0,
+				zoom = 1,
+				base_zoom_off = 1
+			}
+			self.parts.wpn_fps_smg_reprimand_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_smg_reprimand_optic.stance_mod) do
+				if weap and i ~= wep_id and weap.translation then
+					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
+				end
+			end
+
+			for i, part_id in pairs(self.wpn_fps_smg_reprimand.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							self.wpn_fps_smg_reprimand.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_smg_reprimand_npc.uses_parts = deep_clone(self.wpn_fps_smg_reprimand.uses_parts)
+		end
+
+		if self.parts.wpn_fps_smg_sta11_stock then
+
+			for i, part_id in pairs(self.wpn_fps_smg_sta11.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "sight" or self.parts[part_id].type == "barrel_ext" or self.parts[part_id].type == "custom") then
+							self.wpn_fps_smg_sta11.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_smg_sta11_npc.uses_parts = deep_clone(self.wpn_fps_smg_sta11.uses_parts)
+		end
+
+		if self.parts.wpn_fps_sickle_m_battery then
+
+			self.parts.wpn_fps_hailstorm_sound_switch = {
+				a_obj = "a_body",
+				type = "ammo",
+				name_id = "bm_wp_hailstorm_ck_switch",
+				unit = "units/pd2_dlc_pxp2/weapons/wpn_fps_hailstorm/wpn_fps_hailstorm",
+				no_cull = true,
+				internal_part = true,
+				stats = { value = 0 },
+				custom_stats = {} --Just to load into memory
+			}
+			self.parts.wpn_fps_sickle_optic.supported = true
+			self.parts.wpn_fps_sickle_optic.stats = { 
+				value = 0,
+				zoom = 5,
+				base_zoom_off = 2
+			}
+			self.parts.wpn_fps_sickle_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+			for i, weap in pairs(self.parts.wpn_fps_sickle_optic.stance_mod) do
+				if weap and i ~= wep_id and weap.translation then
+					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
+				end
+			end
+
+			self.parts.wpn_fps_sickle_m_battery.supported = true
+			self.parts.wpn_fps_sickle_m_battery.adds = { "wpn_fps_hailstorm_sound_switch" }
+			self.parts.wpn_fps_sickle_m_battery.stats = { value = 10 }
+			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
+				starwars = {
+					no_tracers = true,
+					regen_ammo_time = 3,
+					regen_rate = 3.48,
+					can_reload = true,
+					mag_regen = true,
+					empty_no_regen = true
+				}
+			}
 		end
 
 		if self.parts.wpn_fps_ass_bulldog_burst then

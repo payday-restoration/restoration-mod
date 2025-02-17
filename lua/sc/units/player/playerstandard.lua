@@ -3102,7 +3102,7 @@ function PlayerStandard:weapon_add_ammo(value)
 	local weap_base = alive(self._equipped_unit) and self._equipped_unit:base()
 	if weap_base then
 		local add_ammo = math.min( weap_base:get_ammo_remaining_in_clip() + value, weap_base:get_ammo_max_per_clip() + value )
-		local tactical_reload = weap_base._tactical_reload
+		local tactical_reload = weap_base._tactical_reload or 0
 		weap_base:set_ammo_remaining_in_clip( math.min( weap_base:get_ammo_remaining_in_clip() + value, weap_base:get_ammo_max_per_clip() + tactical_reload ))
 		weap_base:set_ammo_total(math.min( weap_base:get_ammo_total() + value, weap_base:get_ammo_max() ))
 		managers.hud:set_ammo_amount(weap_base:selection_index(), weap_base:ammo_info())

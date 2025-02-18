@@ -19210,6 +19210,10 @@ end)
 						translation = Vector3(0, -8, -4.295),
 						rotation = Rotation(0, -0.5, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_bk500 = {
+						translation = Vector3(0.005, 8.2, -3.5),
+						rotation = Rotation(0, 0, -0.05)
+					}
 				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_crysis3_typhoon = {
 						translation = Vector3(-0.015, -1.2, -2.755)
@@ -37532,6 +37536,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_fik22_mag_quick.custom_stats = { ads_speed_mult = 0.975 }
 		end
 
+		if self.parts.wpn_fps_pis_bk500_body_frame then
+			self.parts.wpn_fps_pis_bk500_b_ext.supported = true
+			self.parts.wpn_fps_pis_bk500_b_ext.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_bk500_b_ext.custom_stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pis_bk500_b_tac.supported = true
+			self.parts.wpn_fps_pis_bk500_b_tac.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_bk500_b_tac.stats.recoil = 2
+			self.parts.wpn_fps_pis_bk500_b_tac.stats.concealment = nil
+			self.parts.wpn_fps_pis_bk500_b_tac.custom_stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_pis_bk500_b_short.supported = true
+			self.parts.wpn_fps_pis_bk500_b_short.stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_pis_bk500_b_short.custom_stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_pis_bk500_cylinder_fluted.supported = true
+			self.parts.wpn_fps_pis_bk500_cylinder_fluted.stats = {
+				value = 5,
+				recoil = -2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_pis_bk500_g_ergo.supported = true
+			self.parts.wpn_fps_pis_bk500_g_ergo.stats = deep_clone(grips.dual_stat_1)
+			self.parts.wpn_fps_pis_bk500_g_ergo.custom_stats = deep_clone(grips.dual_stat_1)
+			self.parts.wpn_fps_pis_bk500_g_wood.supported = true
+			self.parts.wpn_fps_pis_bk500_g_wood.stats = deep_clone(grips.acc_recoil)
+			self.parts.wpn_fps_pis_bk500_g_wood.custom_stats = deep_clone(grips.acc_recoil)
+			self.parts.wpn_fps_pis_bk500_g_tac.supported = true
+			self.parts.wpn_fps_pis_bk500_g_tac.stats = deep_clone(grips.quickdraw_1)
+			self.parts.wpn_fps_pis_bk500_g_tac.custom_stats = deep_clone(grips.quickdraw_1)
+		end
+
 		if self.parts.wpn_fps_lmg_mx63_upper then
 			self.parts.wpn_fps_lmg_mx63_barrel_std.stats = { value = 0 }
 			self.parts.wpn_fps_lmg_mx63_barrel_std.custom_stats = nil
@@ -44649,7 +44682,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "FPSixModInit", function(self)
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "Fang45WeaponModInit", function(self)
 end)
-
+Hooks:PostHook( WeaponFactoryTweakData, "init", "PD3S&W500_init", function(self)
+	if self.wpn_fps_pis_bk500 then
+		self.wpn_fps_pis_bk500.override = {
+			wpn_fps_upg_ns_pis_ipsccomp = {a_obj="a_ns", parent="barrel"},
+			wpn_fps_upg_pis_ns_flash = {a_obj="a_ns", parent="barrel"},
+			wpn_fps_upg_ns_pis_meatgrinder = {a_obj="a_ns", parent="barrel"},
+			wpn_fps_pis_bk500_o_adapter_pistol = {a_obj="a_adapter"},
+			wpn_fps_pis_bk500_o_adapter_rail = {a_obj="a_adapter"}
+		}
+	end
+end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "PD3FIK22TLRMod", function(self)
 	if self.wpn_fps_ass_fik22 then
 		self.wpn_fps_ass_fik22.override = {}

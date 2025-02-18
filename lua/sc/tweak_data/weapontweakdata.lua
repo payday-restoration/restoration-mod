@@ -23050,8 +23050,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bk500.kick = self.stat_info.kick_tables.vertical_kick
 				self.bk500.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
-					{1, self.stat_info.kick_tables.left_kick},
-					{5, self.stat_info.kick_tables.moderate_right_kick}
+					{2, self.stat_info.kick_tables.left_kick},
+					{4, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.bk500.supported = true
 				self.bk500.ads_speed = 0.200
@@ -23076,7 +23076,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.bk500.stats_modifiers = nil
 				self.bk500.panic_suppression_chance = 0.05
-				self.bk500.always_play_anims = true
 				self.bk500.can_shoot_through_enemy = true
 				self.bk500.can_shoot_through_enemy_unlim = true
 				self.bk500.can_shoot_through_shield = true
@@ -25641,7 +25640,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.3,
-		sweet_liberty = 0,
+		sweet_liberty = 0.08,
 		battery = 0
 	}
 

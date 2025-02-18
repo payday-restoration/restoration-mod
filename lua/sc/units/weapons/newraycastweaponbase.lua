@@ -23,6 +23,7 @@ local FIRE_MODE_IDS = {
 	volley = ids_volley
 }
 local is_pro = Global.game_settings and Global.game_settings.one_down
+
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.
@@ -52,6 +53,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		self._volley_rays = volley_fire_mode.rays or 1
 	end
 
+	self._is_controller = managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR
 end)
 
 if _G.IS_VR then
@@ -447,6 +449,11 @@ function NewRaycastWeaponBase:recoil_wait()
 	local tweak_is_auto = tweak_data.weapon[self._name_id].FIRE_MODE == "auto"
 	local weapon_is_auto = self:fire_mode() == "auto"
 
+
+	if self._is_controller or not tweak_is_auto then
+		return nil
+	end
+
 	local multiplier = tweak_is_auto == weapon_is_auto and 1 or 2
 
 	return self:weapon_fire_rate() * multiplier
@@ -565,6 +572,8 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 			end
 		end
 	end
+
+	mult = mult * ((self._is_controller and 0.7) or 1)
 
 	return mult
 end
@@ -1642,6 +1651,8 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 		--Sharpeyed Team AI bonus, since now Enduring is a base thing
 		--Moved to RaycastWeaponBase:add_ammo; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless unless you leave custody or do something else to call this function after crew AI is active
 		--pickup_multiplier = pickup_multiplier + managers.player:crew_ability_upgrade_value("crew_scavenge", 1) - 1
+
+		pickup_multiplier = pickup_multiplier * ((self._is_controller and 1.15) or 1)
 
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)

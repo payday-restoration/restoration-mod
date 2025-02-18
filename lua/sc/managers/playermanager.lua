@@ -1510,3 +1510,10 @@ function PlayerManager:add_cable_ties(amount)
 
 	self:update_synced_cable_ties_to_peers(new_amount)
 end
+
+-- Tag Team: tagged player will hear activation sound
+Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", function(self, tagged, owner, end_time)
+	if tagged == self:local_player() then
+		self:local_player():sound():play(tweak_data.blackmarket.projectiles.tag_team.sounds.activate)
+	end
+end)

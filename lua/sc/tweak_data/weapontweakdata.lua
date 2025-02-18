@@ -9760,11 +9760,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m1928.CLIP_AMMO_MAX = 50
 						self.m1928.AMMO_MAX = 60
 						self.m1928.kick = self.stat_info.kick_tables.horizontal_recoil
-						self.uzi.kick_pattern = {
+						self.m1928.kick_pattern = {
 							{0, self.stat_info.kick_tables.left_kick},
 							{8, self.stat_info.kick_tables.moderate_kick},
-							{14, self.stat_info.kick_tables.right_recoil},
-							{19, self.stat_info.kick_tables.horizontal_recoil}
+							{14, self.stat_info.kick_tables.moderate_right_kick},
+							{19, self.stat_info.kick_tables.right_recoil}
 						}
 						self.m1928.panic_suppression_chance = 0.05
 						self.m1928.supported = true

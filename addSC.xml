@@ -190,17 +190,10 @@
 	
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
-	<!--better SWAT squads-->
-	<mission			path="levels/instances/unique/sand/sand_spawn_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/sand/sand_helicopter_spawn_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
-	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
+
+	<continent			path="levels/narratives/e_election_day/stage_2/world/world" force="true" unload="true"/>
+
 	
 	<world_sounds		path="levels/narratives/mcshay/ranc/world_sounds" force="true" unload="true"/>
 	
@@ -234,6 +227,8 @@
 
 	<nav_data			path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 	<continent			path="levels/narratives/vlad/bex/world/world" force="true" unload="true"/>  <!--removes tons of objects underneath the map-->
+	<mission			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
+	<continent			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
 	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
 
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
@@ -263,10 +258,12 @@
 	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
 	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
 	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
-	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
 	
+	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>	
 	<sequence_manager	path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
 	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
+	<world				path="levels/narratives/classics/man/world" force="true"/>
+
 	
 	<!--PANIC ROOM-->
 	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
@@ -595,7 +592,7 @@
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<unit				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc" load="false"/>
-	<!--Dozer Eggman Emp--- I mean Akan helm-->
+	<!--Dozer Eggman Emp- I mean Akan helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
 	<object				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc"/>
@@ -1355,6 +1352,11 @@
     <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
+
+    <effect				path="_dmc/effects/sterwers_trail_m_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m_small_npc" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
@@ -2000,6 +2002,18 @@
 	<animation			path="anims/fps/melee/garber/melee_charge" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_charge_var2" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_start" force="true"/>
+
+	<!-- agave machete anims for melee_machete since it suffers the same desync issues as the new melee_axe anims -->
+	<animation			path="anims/fps/melee/machete/melee_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var4" force="true"/>
+	
+	<!-- melee_fireaxe mashup with melee_sandsteel and melee_baseballbat since it's just a clone of melee_beardy otherwise -->
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var4" force="true"/>
 	
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>

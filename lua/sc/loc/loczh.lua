@@ -814,6 +814,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModPocoCrimenetAlignSortDescID"] = "按照难度对齐排序CRIMENET。",
         ["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET尺寸",
         ["RestorationModPocoCrimenetScaleDescID"] = "允许您设置CRIMENET尺寸。",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
         ["RestorationModVoiceIconTitleID"] = "语音聊天图标",
         ["RestorationModVoiceIconDescID"] = "当玩家使用游戏内语音聊天时显示。",
         ["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",

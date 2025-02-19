@@ -117,6 +117,7 @@
 				<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 				<hook file="sc/tweak_data/eventjobstweakdata.lua" source_file="lib/tweak_data/eventjobstweakdata"/>
 				<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
+				<hook file="sc/tweak_data/inputtweakdata.lua" source_file="lib/tweak_data/inputtweakdata"/>
 			<!--MANAGERS-->
 				<!--MISSION-->
 					<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
@@ -504,6 +505,7 @@
 						<option type="bool" default_value="false" name="DifficultyMarkers"/>
 						<option type="bool" default_value="false" name="BlackScreen"/>
 						<option type="bool" default_value="false" name="Loadouts"/>
+						<option type="number" default_value="13" min="10" max="25" step="1" show_value="true" name="BriefingFontSize"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
 						<option type="bool" default_value="false" name="PocoCrimenetAlignSort"/>
@@ -694,7 +696,8 @@
 	<Package id="packages/addscrubs" file="addscrubs.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addsnow" file="addsnow.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addslaughter" file="addslaughter.xml" use_clbk="self:DebugLoadAssets"/> 
-	<Package id="packages/addtux" file="addtux.xml" use_clbk="self:DebugLoadAssets"/> 
+	<Package id="packages/addtux" file="addtux.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>

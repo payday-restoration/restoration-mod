@@ -279,7 +279,11 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 		end
 	end
 
-	return r_value
+	--For controllers
+	accumulatedKick = self._recoil_kick.current
+	currentKick = self._recoil_kick.current
+
+	return r_value	
 end
 
 function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
@@ -333,7 +337,12 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 		local weap_base = equipped_weapon:base()
 		if weap_base then
 			local dsr_check = redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil or redirect_name == ANIM_STATES.standard.recoil_exit
-			if dsr_check and current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim then
+			local fire_mode = weap_base.fire_mode and weap_base:fire_mode()
+			local in_burst = weap_base.in_burst_mode and weap_base:in_burst_mode()
+			local active_burst = in_burst and weap_base._burst_rounds_remaining and weap_base._burst_rounds_remaining > 0
+			local no_burst_anims = active_burst and weap_base._burst_no_anim
+			local true_semi = fire_mode == "single" and not in_burst
+			if no_burst_anims or (dsr_check and current_state:in_steelsight() and weap_base._disable_steelsight_recoil_anim and not weap_base:second_sight_spread_mult()) then
 				self._unit:play_redirect(Idstring("idle"))
 				return 
 			end
@@ -341,7 +350,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 				if weap_base._starwars then
 					speed = 1
 				else
-					speed = weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims )
+					speed = weap_base:fire_rate_multiplier( weap_base._ignore_rof_mult_anims or true_semi and weap_base._ignore_rof_mult_anims_semi )
 				end
 				if weap_base:weapon_tweak_data() and weap_base:weapon_tweak_data().fake_semi_anims then
 					redirect_name = Idstring("recoil_exit")
@@ -496,4 +505,14 @@ Hooks:PostHook(FPCameraPlayerBase, "_update_stance", "ResFixSecondSight", functi
 		end
 	end
 end)
---]]
+
+--For controllers
+function FPCameraPlayerBase:setSnapSpeed(value)
+	ORIGINALaim_assist_snap_speed =  math.max(0, math.min(100, value))
+end
+
+local accumulatedKick = 0
+local currentKick = 0
+function FPCameraPlayerBase:isPlayerStillReceivingRecoilKick()
+	return accumulatedKick ~= currentKick
+end

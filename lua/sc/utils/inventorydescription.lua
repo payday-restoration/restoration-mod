@@ -715,7 +715,8 @@ end
 function WeaponDescription._get_base_pickup(weapon, name)
 	local weapon_tweak = tweak_data.weapon[name]
 	local average_pickup = (weapon_tweak.AMMO_PICKUP[1] + weapon_tweak.AMMO_PICKUP[2]) * 0.5
-	return average_pickup
+	local is_controller = ((managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR) and 1.15) or 1
+	return average_pickup * is_controller
 end
 
 function WeaponDescription._get_mods_pickup(weapon, name, base_stats)

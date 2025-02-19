@@ -205,7 +205,13 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
-	self.security.access = "security"
+    if table.contains(restoration.gensec, job) then
+	    self.security.access = "fbi"
+        self.security.rescue_hostages = true
+    else
+        self.security.access = "security"
+        self.security.rescue_hostages = false
+    end
 	if job == "nmh" or job == "nmh_res" then
 		self.security.has_alarm_pager = false
 	else
@@ -293,7 +299,13 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.gensec.speech_prefix_p2 = "n"
 	self.gensec.speech_prefix_count = 4
-	self.gensec.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.gensec.access = "fbi"
+        self.gensec.rescue_hostages = true
+    else
+        self.gensec.access = "security"
+        self.gensec.rescue_hostages = false
+    end
 	self.gensec.use_radio = nil
 	self.gensec.silent_priority_shout = "f37"
 	self.gensec.dodge = presets.dodge.athletic
@@ -1140,7 +1152,13 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard = deep_clone(self.city_swat)	
 	self.city_swat_guard.headshot_dmg_mul = 8.5
 	self.city_swat_guard.overheal_mult = 1
-	self.city_swat_guard.access = "security"
+	if table.contains(restoration.gensec, job) then
+	    self.city_swat_guard.access = "fbi"
+        self.city_swat_guard.rescue_hostages = true
+    else
+        self.city_swat_guard.access = "security"
+        self.city_swat_guard.rescue_hostages = false
+    end
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	if job == "nmh" or job == "nmh_res" then
 		self.city_swat_guard.has_alarm_pager = false
@@ -14754,8 +14772,324 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}	
 	presets.weapon.gang_member.is_smg = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.is_smg.RELOAD_SPEED = 1.2
+	presets.weapon.gang_member.is_smg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.6, 0.95},
+			dmg_mul = 1.25,
+			recoil = {0.1, 0.25},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.6, 0.9},
+			dmg_mul = 1.25,
+			recoil = {0.1, 0.25},
+			mode = {
+				0,
+				3,
+				3,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.4, 0.65},
+			dmg_mul = 1.25,
+			recoil = {0.35, 0.5},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.4, 0.65},
+			dmg_mul = 1.25,
+			recoil = {0.35, 0.5},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.4, 0.6},
+			dmg_mul = 1.25,
+			recoil = {0.35, 0.7},
+			mode = {
+				0,
+				3,
+				3,
+				0
+			}
+		},
+		{
+			r = 2600,
+			acc = {0.2, 0.35},
+			dmg_mul = 1.25,
+			recoil = {0.5, 1.5},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},
+		{
+			r = 2700,
+			acc = {0.2, 0.35},
+			dmg_mul = 1.25,
+			recoil = {0.5, 1.5},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 2800,
+			acc = {0.2, 0.35},
+			dmg_mul = 1.1875,
+			recoil = {0.5, 1.5},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 2900,
+			acc = {0.2, 0.35},
+			dmg_mul = 1.125,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3000,
+			acc = {0.2, 0.35},
+			dmg_mul = 1.0625,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3100,
+			acc = {0.2, 0.3},
+			dmg_mul = 1,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3200,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.9375,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3300,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.875,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3400,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.8125,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3500,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.75,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3600,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.6875,
+			recoil = {1, 2},
+			mode = {
+				1,
+				3,
+				2,
+				0
+			}
+		},	
+		{
+			r = 3700,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.625,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},		
+		{
+			r = 3800,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.5625,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 3900,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.5,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4000,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.4375,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4100,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.375,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4200,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.3125,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4300,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.25,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4400,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.1875,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4500,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.125,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		},	
+		{
+			r = 4600,
+			acc = {0.2, 0.3},
+			dmg_mul = 0.0625,
+			recoil = {1.5, 3},
+			mode = {
+				2,
+				3,
+				1,
+				0
+			}
+		}				
+	}
 	presets.weapon.gang_member.is_revolver = presets.weapon.gang_member.is_pistol
 	presets.weapon.gang_member.is_lmg = deep_clone(presets.weapon.gang_member.is_rifle)
+	presets.weapon.gang_member.is_lmg.RELOAD_SPEED = 0.85
 	presets.weapon.gang_member.is_lmg.FALLOFF = {
 		{
 			r = 100,
@@ -15394,7 +15728,7 @@ function CharacterTweakData:_presets(tweak_data)
 				0
 			}
 		}
-	}		
+	}
 	--This doesn't really matter since Semi-autos for bots just use is_shotgun_mag anyway, but just in case
 	presets.weapon.gang_member.is_shotgun_semi = deep_clone(presets.weapon.gang_member.is_shotgun_mag)		
 	presets.weapon.gang_member.is_dmr = deep_clone(presets.weapon.gang_member.rifle)

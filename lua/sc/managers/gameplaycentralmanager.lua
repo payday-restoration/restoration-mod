@@ -132,18 +132,19 @@ Hooks:OverrideFunction(GamePlayCentralManager, "auto_highlight_enemy", function(
 	if unit:base() and unit:base().is_security_camera then
 		contour_type = "mark_unit"
 		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
-	elseif use_player_upgrades then
-		-- Different check because `get_contour_for_marked_enemy` will return wrong outline otherwise
-		if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
-			contour_type = "mark_enemy_damage_bonus"
-		end
+    elseif use_player_upgrades then
+        contour_type = managers.player:get_contour_for_marked_enemy(unit:base().get_type and unit:base():get_type()) or contour_type
+        -- Different check because `get_contour_for_marked_enemy` will return wrong outline otherwise
+        if managers.player:has_category_upgrade("player", "marked_enemy_extra_damage") then
+            contour_type = "mark_enemy_damage_bonus"
+        end
 
-		if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
-			contour_type = "mark_enemy_damage_bonus_distance"
-		end
-		
-		time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
-	end
+        if managers.player:has_category_upgrade("player", "marked_inc_dmg_distance") then
+            contour_type = "mark_enemy_damage_bonus_distance"
+        end
+        
+        time_multiplier = managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1)
+    end
 
 	unit:contour():add(contour_type, true, time_multiplier)
 

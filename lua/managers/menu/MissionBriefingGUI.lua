@@ -1,4 +1,5 @@
 if restoration.Options:GetValue("HUD/UI/Loadouts") then
+	local russian = Idstring("russian"):key() == SystemInfo:language():key()
 	function MissionBriefingTabItem:init(panel, text, i)
 		self._main_panel = panel
 		self._panel = self._main_panel:panel({})
@@ -153,11 +154,20 @@ if restoration.Options:GetValue("HUD/UI/Loadouts") then
 		if is_level_ghostable and Network:is_server() then
 			desc_string = desc_string
 		end
+		local font_size_default = restoration.Options:GetValue("HUD/UI/BriefingFontSize") or 13
+		local font_default = tweak_data.menu.small_font
+		--[[
+		--Shouldn't be necessary anymore, but we'll see
+		if russian then
+			font_size_default = 16
+			font_default = tweak_data.menu.pd2_small_font
+		end
+		]]--
 		local desc_text = self._scroll_panel:text({
 			name = "description_text",
 			text = desc_string,
-			font_size = 14,
-			font = tweak_data.menu.small_font,
+			font_size = font_size_default,
+			font = font_default,
 			wrap = true,
 			word_wrap = true,
 			color = tweak_data.screen_colors.text

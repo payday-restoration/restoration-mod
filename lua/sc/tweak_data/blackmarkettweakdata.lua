@@ -2089,12 +2089,10 @@ end
 
 
 function BlackMarketTweakData:get_projectiles_index()
-	log("get_projectiles_index")
 	return self._projectiles_index_resmod
 end
 
 function BlackMarketTweakData:get_index_from_projectile_id(projectile_id)
-	log("get_index_from_projectile_id")
 	for index, entry_name in ipairs(self._projectiles_index_resmod) do
 		if entry_name == projectile_id then
 			return index
@@ -2105,7 +2103,6 @@ function BlackMarketTweakData:get_index_from_projectile_id(projectile_id)
 end
 
 function BlackMarketTweakData:get_projectile_name_from_index(index)
-	log("get_projectile_name_from_index")
 	return self._projectiles_index_resmod[index]
 end
 
@@ -4045,7 +4042,6 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 
 		--melee_knife2
 		melee_anim = {
-			'gator','machete',
 			'x46','kampfmesser','model24','microphone'
 		}
 		for i, melee_id in ipairs(melee_anim) do
@@ -4645,9 +4641,34 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			self.melee_weapons[melee_id].anim_attack_right_vars = {"var1"}
 			self.melee_weapons[melee_id].anim_attack_var_dir = {
 				var1 = {"right", 0.2},
-				var2 = {"left", 0.6},
+				var2 = {"left", 0.5},
 				var3 = {"left", 0.1},
-				var4 = {"right", 0.5}
+				var4 = {"right", 0.4}
+			}
+			self.melee_weapons[melee_id].expire_t = 0.675
+			self.melee_weapons[melee_id].repeat_expire_t = 0.575
+			self.melee_weapons[melee_id].melee_damage_delay = 0.175
+			self.melee_weapons[melee_id].anim_speed_mult = 0.8
+			--self.melee_weapons[melee_id].sphere_cast_radius_add = 4
+		end
+
+		--melee_machete
+		--Modified to use melee_agave swing anims
+		melee_anim = {
+			'gator','machete'
+		}
+		for i, melee_id in ipairs(melee_anim) do
+			self.melee_weapons[melee_id].attack_pattern = "bm_melee_pattern_knife2"
+			self.melee_weapons[melee_id].anim_global_param = "melee_machete"
+			self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+			self.melee_weapons[melee_id].anim_attack_vars =  {"var2","var4"}
+			self.melee_weapons[melee_id].anim_attack_left_vars = {"var3"}
+			self.melee_weapons[melee_id].anim_attack_right_vars = {"var1"}
+			self.melee_weapons[melee_id].anim_attack_var_dir = {
+				var1 = {"right", 0.2},
+				var2 = {"left", 0.5},
+				var3 = {"left", 0.1},
+				var4 = {"right", 0.4}
 			}
 			self.melee_weapons[melee_id].expire_t = 0.675
 			self.melee_weapons[melee_id].repeat_expire_t = 0.575
@@ -5713,7 +5734,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--Its' another god damn machete--
 		self.melee_weapons.becker.info_id = "bm_melee_becker_info"
 		self.melee_weapons.becker.stats.cleave = 1
-		self.melee_weapons.becker.stats.raycasts = 15
+		self.melee_weapons.becker.stats.raycasts = 18
 		self.melee_weapons.becker.stats.min_damage = 4.5
 		self.melee_weapons.becker.stats.max_damage = 9.001
 		self.melee_weapons.becker.stats.min_damage_effect = 1.8
@@ -5724,7 +5745,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--another machete--
 			self.melee_weapons.oxide.info_id = "bm_melee_oxide_info"
 			self.melee_weapons.oxide.stats.cleave = 1
-			self.melee_weapons.oxide.stats.raycasts = 15
+			self.melee_weapons.oxide.stats.raycasts = 18
 			self.melee_weapons.oxide.stats.min_damage = 4.5
 			self.melee_weapons.oxide.stats.max_damage = 9.001
 			self.melee_weapons.oxide.stats.min_damage_effect = 1.8
@@ -5735,7 +5756,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--More Gore--
 		self.melee_weapons.gator.info_id = "bm_melee_gator_info"
 		self.melee_weapons.gator.stats.cleave = 2
-		self.melee_weapons.gator.stats.raycasts = 20
+		self.melee_weapons.gator.stats.raycasts = 24
 		self.melee_weapons.gator.stats.min_damage = 6
 		self.melee_weapons.gator.stats.max_damage = 12.001
 		self.melee_weapons.gator.stats.min_damage_effect = 2.4
@@ -5747,7 +5768,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 			--Because we didn't have enough fucking machetes--
 			self.melee_weapons.machete.info_id = "bm_melee_machete_info"
 			self.melee_weapons.machete.stats.cleave = 2
-			self.melee_weapons.machete.stats.raycasts = 20
+			self.melee_weapons.machete.stats.raycasts = 24
 			self.melee_weapons.machete.stats.min_damage = 6
 			self.melee_weapons.machete.stats.max_damage = 12.001
 			self.melee_weapons.machete.stats.min_damage_effect = 2.4
@@ -5759,7 +5780,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		--asdf--
 		self.melee_weapons.agave.info_id = "bm_melee_agave_info"
 		self.melee_weapons.agave.stats.cleave = 2
-		self.melee_weapons.agave.stats.raycasts = 25
+		self.melee_weapons.agave.stats.raycasts = 28
 		self.melee_weapons.agave.stats.min_damage = 6
 		self.melee_weapons.agave.stats.max_damage = 12.001
 		self.melee_weapons.agave.stats.min_damage_effect = 2.4

@@ -119,13 +119,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 				["RestorationModSprintCancelTitleID"] = "Evasion Aced Sprint Cancels Reload",
 				["RestorationModSprintCancelDescID"] = "Toggle whether or not if *STARTING* a sprint will cancel any on-going reload when you have aced the \"Evasion\" skill. Reloading while actively sprinting is unaffected.",
 				["RestorationModQueuedShootingTitleID"] = "Buffer Fire Inputs",
-				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire).\nEnabling this disables Overkill's version of input buffering.",
+				["RestorationModQueuedShootingDescID"] = "Enable/disable fire input buffering for semi-auto and weapons to assist with oversampling (sending inputs faster than the weapon can fire). Enabling this disables Overkill's own fire input buffering.",
 				["RestorationModQueuedShootingWindowTitleID"] = "Single-Fire Buffer Sensitivity",
-				["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher value = earlier buffer",
+				["RestorationModQueuedShootingWindowDescID"] = "Determines the time window for your fire inputs to be buffered based on a % of the weapon's fire time delay. Higher values = more relaxed buffer window.",
 				["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
 				["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
 				["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",
-				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
+				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst. NOTE: Does not apply to auto-burst weapons.",
 				["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
 				["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
 				["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
@@ -1353,7 +1353,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_angled_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled iron sights.",
 		["bm_wp_upg_o_angled_1_1_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red-dot sight.\n#{skill_color}#1.1x magnification.##",
 		["bm_wp_upg_o_angled_1_2_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic and the angled red dot sight.\n#{skill_color}#1.2x magnification.##",
-		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between your main optic or to angle your weapon and utilize your laser to aim.\n\n#{risk}#Highly recommend the use of a laser gadget.##", --VMP Point Shoot Laser
+		["bm_wp_upg_o_angled_laser_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between aiming down your sights and #{risk}#point shooting.##\nWhile point shooting you aim #{skill_color}#25%## faster and the movement speed reduction while aiming is reduced by #{skill_color}#50%## in exchange for a #{important_1}#large reduction in aimed accuracy.##\n\n#{risk}#The use of a laser gadget is highly recommended, whenever possible.##", --VMP Point Shoot Laser
 		["bm_wp_upg_o_angled_aim_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to switch between standard and canted aiming.##", --VMP Point Shoot Laser
 
 		["bm_wp_upg_o_magnifier_desc"] = "Press #{skill_color}#$BTN_GADGET## while aiming to flip the magnifier up/down.\n#{risk}#3x magnification.##",
@@ -2026,6 +2026,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
+		--["bm_menu_magazine"] = "Capacity",
 		["bm_menu_pickup"] = "Ammo Pickup",
 		["bm_menu_ads_speed"] = "Aim Time",
 		["bm_menu_reload"] = "Reload Time",
@@ -2309,8 +2310,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_concussion_desc"] = "Radius: #{skill_color}#10m## \n- Stuns enemies for up to #{skill_color}#4s##\n- Enemy accuracy reduced by #{skill_color}#50%## for #{skill_color}#7s## \n- #{important_1}#Titan-Shields, Titan-Bulldozers and Captains are immune to its stunning effects## \n\nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
 		--Gas
 		["bm_grenade_poison_gas_grenade"] = "Manticore-6 Grenade",
-		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
-		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
+		["bm_grenade_poison_gas_grenade_desc"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once## \n\nThis experimental bio-weapon will emit a sweeping cloud of toxic gas that targets specific genotypes; has been engineered to not harm you or your crew. Victims will experience violent coughing, nausea, vomiting and is lethal to all but the toughest of enemies.\n\nTruly a war-criminal's weapon of choice, peko.",
+		["bm_grenade_poison_gas_grenade_desc_short"] = "Damage: #{stats_positive}#300 over 10s## \nRadius: #{skill_color}#6m## \nDuration (Gas Cloud): #{skill_color}#12s## \nFuse: #{skill_color}#1s after remaining stationary## \n- #{skill_color}#100%## chance to stun most enemies in range of the gas\n- #{important_1}#Shields, Bulldozers, Medics, Grenadiers and Captains are immune to its stunning effects##\n- #{important_1}#Enemies cannot be poisoned by the same gas cloud more than once##",
 
 		--Throwing Cards
 		["bm_wpn_prj_ace_desc"] = "Damage: #{skill_color}#240## \n- #{skill_color}#Can be retrieved## \n\nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
@@ -2429,7 +2430,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_csglock_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1200 RPM 3-round burst## setting, at the cost of a lower semi-auto fire rate.",
 				--AK12
 				["bm_wp_upg_i_abakan"] = "Abakan Kit",
-				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a lower fire rate afterwards.",
+				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a slower base fire rate.",
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
@@ -2500,7 +2501,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--[[ PISTOLS ]]
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistols, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 
 				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 				--Igor (APS)
@@ -2774,11 +2775,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--G36
 				["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
 				["bm_wp_upg_i_m8a1"] = "M8 Burst Kit",
-				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine",
+				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine; #{important_1}#cannot accept magazines that alter capacity.##",
 				--VHS/Lion's Roar
 				["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",
 				["bm_wp_upg_i_swordfish"] = "Swordfish Burst Kit",
-				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine",
+				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine; #{important_1}#cannot accept magazines that alter capacity.##",
 				--Olympic/Para
 				["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
 				--TAR-21/Para
@@ -2842,6 +2843,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_ck_penetrator_desc"] = "A variant of the AR-23 designed to #{skill_color}#penetrate armor.##",
 					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
 					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
+					--Bo6 XM4
+					["bm_wp_wpn_fps_ass_coslo723_mode_burst_desc"] = "#{risk}#Exchange full-auto for a 3-round auto-burst.##\n\nBursts will #{skill_color}#auto-cycle## so long as the trigger is held.",
 
 			--[[ DMRs ]]
 				--Little Friend
@@ -2921,7 +2924,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
 					--RMC2
 					["bm_w_rmary2"] = "Goblin Mk2",
-					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##",
+					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
 
 			--[[ SNIPERS ]]
@@ -5012,7 +5015,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_35"] = "The \"Aim Time\" stat also serves as the \"Sprint-to-Fire\" stat. \"Sprint-to-Fire\" time is the time it takes to be able to fire your weapon after you stop sprinting.",
 		["loading_equip_skills_res_36"] = "During combat, silencers reduce the likelihood of enemies evading your aim. Just be aware that the time they spend not dodging you is likely going to be put towards shooting you instead.",
 		["loading_equip_skills_res_37"] = "When aiming, optics have a recoil reduction that scales with their current magnification level to aid in shooting over longer ranges; this comes at the cost of slower aim times.",
-		["loading_equip_skills_res_38"] = "The \"Cleave\" stat for melee weapons represents how many enemies you can hit with a single attack.",
+		["loading_equip_skills_res_38"] = "The \"Cleave\" stat for melee weapons represents how many enemies you can hit with a single attack; the shield held by Shield units does not count against cleave.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
 		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",
@@ -5501,7 +5504,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Iron Man
 				["menu_juggernaut_beta_sc"] = "Iron Man",
-				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee or parry Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered or parried.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
+				["menu_juggernaut_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can wear the #{skill_color}#Improved Combined Tactical Vest.##\n\nWhen you melee Shield enemies, they get staggered from the sheer force.\n\n#{risk}#NOTE:## #{important_1}#Titan Shields and Captain Winters## #{risk}#cannot be staggered.##\n\nACE: #{owned}#$pro##\nYour armor recovers #{skill_color}#$skill_value_p1## faster. $anarc_disable\n\nYour ability to stagger Shields is extended to your ranged weapons; chances are increased the higher the total damage of the weapon is.",
 
 			--[[   SUPPORT SUBTREE   ]]--
 				--Scavenger
@@ -5583,7 +5586,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "Sharpshooter",
-				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst increase your rate of fire by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds.",
+				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## increase your rate of fire by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
@@ -5595,15 +5598,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#$skill_value_b1## lethal headshots with #{skill_color}#rifles## in less than #{skill_color}#$skill_value_b2## seconds will grant #{skill_color}#$skill_value_b3## of your total ammo, to a minimum of #{skill_color}#1## round, back to the weapon.\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#$skill_value_p1## lethal headshots within #{skill_color}#$skill_value_p2## seconds of each other.",
+				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#$skill_value_b1## lethal headshots with #{skill_color}#rifles## in less than #{skill_color}#$skill_value_b2## seconds will #{skill_color}#refund half of your weapon's ammo pickup stat## straight to your reserves.\n\n#{risk}#NOTE: The ammo refund is rounded up and will always provide at least## #{skill_color}#1## #{risk}#round.##\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#$skill_value_p1## lethal headshots and the #{skill_color}#ammo is first refunded directly into your magazine,## whenever possible.",
 
 				--Aggressive Reload--
 				["menu_engineering_beta_sc"] = "Aggressive Reload",
-				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst will increase your reload speed by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nThe reload speed bonus increases to #{skill_color}#$skill_value_p1## and can be triggered regardless of fire mode.",
+				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## will increase your reload speed by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nThe reload speed bonus increases to #{skill_color}#$skill_value_p1## and can be triggered regardless of fire mode.",
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.",
 
 		--[[   GHOST   ]]--
 
@@ -5736,11 +5739,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   BRAWLER SUBTREE   ]]--
 				--Martial Arts--
 				["menu_martial_arts_beta_sc"] = "Martial Arts",
-				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#$skill_value_b1## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#$skill_value_p1## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done towards breaking a Bulldozer's armor plates and visor.",
+				["menu_martial_arts_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou take #{skill_color}#$skill_value_b1## less damage from all melee attacks, because of training.\n\nACE: #{owned}#$pro##\nThe knockdown rating of your melee strikes are #{skill_color}#$skill_value_p1## greater, because of training.\n\nYour melee weapon's knockdown rating determines when a melee strike will stagger an enemy as well as how much damage is done towards breaking a Bulldozer's armor or the shields of Titan Shields and Captain Winters.",
 
 				--Counter-Strike--
 				["menu_drop_soap_beta_sc"] = "Counter Strike",
-				["menu_drop_soap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now parry Cloaker jump kicks while you have your melee weapon drawn, knocking them down.\n\nYou take #{skill_color}#20%## less damage from Cloaker kicks and Taser shocks.\n\nACE: #{owned}#$pro##\nYou can now parry Cloaker sprint kicks while you have your melee weapon drawn, knocking them down.\n\nRanged damage against you is reduced by #{skill_color}#10%## while charging your melee weapon.\n\nYou take an additional #{skill_color}#30%## less damage from Cloaker kicks and Taser shocks.",
+				["menu_drop_soap_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou can now parry Cloaker jump kicks while you have your melee weapon drawn, knocking them down.\n\nYou take #{skill_color}#20%## less damage from Cloaker kicks and Taser shocks.\n\nACE: #{owned}#$pro##\nYou can now parry Cloaker sprint kicks and the melee strikes of Shields while you have your melee weapon drawn, knocking them down.\n\n#{risk}#NOTE: Titan Shields and Captain Winters cannot be parried.##\n\nRanged damage against you is reduced by #{skill_color}#10%## while charging your melee weapon.\n\nYou take an additional #{skill_color}#30%## less damage from Cloaker kicks and Taser shocks.\n\n ", --the extra newlines and space is to trigger the auto scaling text to make some room
 
 				--Pumping Iron--
 				["menu_steroids_beta_sc"] = "Pumping Iron",

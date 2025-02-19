@@ -169,6 +169,7 @@ function PlayerTweakData:init()
 	is_vr = _G.IS_VR
 	self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 	self.put_on_mask_time = 0
+	self.controller_damage_grace_multiplier = 2
 	self.gravity = -982 
 	self.terminal_velocity = -7000 --these numbers are never used afaik, but just to be safe...
 	self.damage = {}

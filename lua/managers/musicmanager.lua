@@ -10,6 +10,7 @@ function MusicManager:jukebox_default_tracks()
     default_options.heist_xmn_hox1 = "track_66"
     default_options.heist_xmn_hox2 = "track_67"
     default_options.heist_skm_nightmare_lvl = "resmusic_proto"
+    default_options.heist_resminted_arm_downtown = "track_12"
     return default_options
 end
 

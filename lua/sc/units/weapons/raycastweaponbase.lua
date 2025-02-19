@@ -14,6 +14,10 @@ local math_lerp = math.lerp
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 local tmp_rot1 = Rotation()
+local mvec_to = Vector3()
+local mvec_right_ax = Vector3()
+local mvec_up_ay = Vector3()
+local mvec_spread_direction = Vector3()
 
 local init_original = RaycastWeaponBase.init
 function RaycastWeaponBase:init(...)
@@ -308,7 +312,13 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
-		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + (ammo_base._ammo_overflow or 0)
+		--Sharpeyed Team AI bonus, since now Enduring is a base thing
+		--Moved from NewRaycastWeaponBase:precalculate_ammo_pickup; precalculate_ammo_pickup is first called on spawn *before* the crew bonus becomes active and renders it useless until you do something to call it again like leaving custody or using the weapon pickup mod. 
+		--Its new home is here in a function that is called *after* crew AI is active
+		--I question the validity of an additive ammo bonus done this late in the pickup calcs so I've made it multiplicative
+
+		local pickup = math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) -- * managers.player:crew_ability_upgrade_value("crew_scavenge", 1)
+		local ammo_gained_raw = add_amount_override or pickup * (ratio or 1) + (ammo_base._ammo_overflow or 0)
 		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
 			return false, 0
 		end
@@ -350,30 +360,34 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 
 end
 
-
-local mvec_to = Vector3()
-local mvec_spread_direction = Vector3()
-
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	if self:gadget_overrides_weapon_functions() then
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	end
 	local result = {}
-	local spread_x, spread_y = self:_get_spread(user_unit)
 	local ray_distance = self:weapon_range()
-	local right = direction:cross(Vector3(0, 0, 1)):normalized()
-	local up = direction:cross(right):normalized()
+	local spread_x, spread_y = self:_get_spread(user_unit)
+	spread_y = spread_y or spread_x
+	spread_mul = spread_mul or 1
+
+	mvector3.cross(mvec_right_ax, direction, math.UP)
+	mvec3_norm(mvec_right_ax)
+	mvector3.cross(mvec_up_ay, direction, mvec_right_ax)
+	mvec3_norm(mvec_up_ay)
+	mvec3_set(mvec_spread_direction, direction)
+
 	local r = math.random()
 	local theta = math.random() * 360
-	local ax = math.tan(r * spread_x * (spread_mul or 1)) * math.cos(theta)
-	local ay = math.tan(r * (spread_y or spread_x) * (spread_mul or 1)) * math.sin(theta) * -1
+	spread_x = math.max(math.min(spread_x * spread_mul, 90), -90)
+	spread_y = math.max(math.min(spread_y * spread_mul, 90), -90)
 
-	mvector3.set(mvec_spread_direction, direction)
-	mvector3.add(mvec_spread_direction, right * ax)
-	mvector3.add(mvec_spread_direction, up * ay)
-	mvector3.set(mvec_to, mvec_spread_direction)
-	mvector3.multiply(mvec_to, ray_distance)
-	mvector3.add(mvec_to, from_pos)
+	mvec3_mul(mvec_right_ax,  math.cos(theta) * math.tan(r * spread_x))
+	mvec3_mul(mvec_up_ay, -1 * math.sin(theta) * math.tan(r * spread_y))
+	mvec3_add(mvec_spread_direction, mvec_right_ax)
+	mvec3_add(mvec_spread_direction, mvec_up_ay)
+	mvec3_set(mvec_to, mvec_spread_direction)
+	mvec3_mul(mvec_to, ray_distance)
+	mvec3_add(mvec_to, from_pos)
 
 	local ray_hits, hit_enemy, enemies_hit = self:_collect_hits(from_pos, mvec_to)
 
@@ -416,6 +430,11 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local hit_count = 0
 	local hit_anyone = false
 	local cop_kill_count = 0
+	local kill_data = {
+		kills = 0,
+		headshots = 0,
+		civilian_kills = 0
+	}
 	local hit_through_wall = false
 	local hit_through_shield = false
 	local shield_damage_reduction_applied = false
@@ -470,11 +489,14 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 				hit_count = hit_count + 1
 
 				if hit_result.type == "death" then
+					kill_data.kills = kill_data.kills + 1
 					local unit_base = hit.unit:base()
 					local unit_type = unit_base and unit_base._tweak_table
 					local is_civilian = unit_type and is_civ_f(unit_type)
 
-					if not is_civilian then
+					if is_civilian then
+						kill_data.civilian_kills = kill_data.civilian_kills + 1
+					else
 						cop_kill_count = cop_kill_count + 1
 					end
 
@@ -492,13 +514,15 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	self:_check_tango_achievements(cop_kill_count)
 
+	self:_check_one_shot_shotgun_achievements(kill_data)
+
 	result.hit_enemy = hit_anyone
 
 	if self._autoaim then
 		self._shot_fired_stats_table.hit = hit_anyone
 		self._shot_fired_stats_table.hit_count = hit_count
 
-		if (not self._ammo_data or not self._ammo_data.ignore_statistic) and not self._rays then
+		if not self._ammo_data or not self._ammo_data.ignore_statistic then
 			managers.statistics:shot_fired(self._shot_fired_stats_table)
 		end
 	end
@@ -507,7 +531,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 	if dmg_mul ~= 0 and (not furthest_hit or furthest_hit.distance > 200) and alive(self._obj_fire) then
 		self._obj_fire:m_position(self._trail_effect_table.position)
-		mvector3.set(self._trail_effect_table.normal, mvec_spread_direction)
+		mvec3_set(self._trail_effect_table.normal, mvec_spread_direction)
 
 		if not self._trail_length then
 			self._trail_length = World:effect_manager():get_initial_simulator_var_vector2(Idstring("effects/particles/weapons/sniper_trail"), Idstring("trail"), Idstring("simulator_length"), Idstring("size"))
@@ -553,6 +577,11 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	end
 
 	return result
+end
+
+
+function RaycastWeaponBase:_check_one_shot_shotgun_achievements(...)
+	ShotgunBase._check_one_shot_shotgun_achievements(self, ...)
 end
 
 --Original mod by 90e, uploaded by DarKobalt.
@@ -1723,4 +1752,82 @@ end
 
 function RaycastWeaponBase:get_stance_id()
 	return self:weapon_tweak_data().use_stance or self:get_name_id()
+end
+
+--Autoaim function when using a controller
+function RaycastWeaponBase:check_autoaimModded(from_pos, direction, max_dist, use_aim_assist, autohit_override_data, closeSnapRayMultiplier)
+	local autohit = use_aim_assist and self._aim_assist_data or self._autohit_data
+	autohit = autohit_override_data or autohit
+	local autohit_near_angle = autohit.near_angle
+	local autohit_far_angle = autohit.far_angle
+	--local far_dis = autohit.far_dis
+	local far_dis = 10000
+	local closest_error, closest_ray = nil
+	local tar_vec = tmp_vec1
+	local ignore_units = self._setup.ignore_units
+	local slotmask = self._bullet_slotmask
+	local enemies = managers.enemy:all_enemies()
+	local suppression_near_angle = 50
+	local suppression_far_angle = 5
+	local suppression_enemies = nil
+	for u_key, enemy_data in pairs(enemies) do
+		local enemy = enemy_data.unit
+
+		if enemy:base():lod_stage() == 1 and not enemy:in_slot(16) then
+			local com = enemy:movement():m_com()
+
+			mvec3_set(tar_vec, com)
+			mvec3_sub(tar_vec, from_pos)
+
+			local tar_aim_dot = mvec3_dot(direction, tar_vec)
+
+			if tar_aim_dot > 0 and (not max_dist or tar_aim_dot < max_dist) then
+				local tar_vec_len = math_clamp(mvec3_norm(tar_vec), 1, far_dis)
+				local error_dot = mvec3_dot(direction, tar_vec)
+				local error_angle = math.acos(error_dot)
+				local dis_lerp = math.pow(tar_aim_dot / far_dis, 0.25)
+				local suppression_min_angle = math_lerp(suppression_near_angle, suppression_far_angle, dis_lerp)
+
+				if error_angle < suppression_min_angle then
+					suppression_enemies = suppression_enemies or {}
+					local percent_error = error_angle / suppression_min_angle
+					suppression_enemies[enemy_data] = percent_error
+				end
+				
+				local autohit_min_angle = math_lerp(autohit_near_angle, autohit_far_angle, dis_lerp)
+				if error_angle < autohit_min_angle * closeSnapRayMultiplier then
+					local percent_error = error_angle / autohit_min_angle
+
+					if not closest_error or percent_error < closest_error then
+						tar_vec_len = tar_vec_len + 100
+
+						mvec3_mul(tar_vec, 20000)
+						mvec3_add(tar_vec, from_pos)
+
+						local vis_rayZ = World:raycast("ray", from_pos, tar_vec, "slot_mask", slotmask, "ignore_unit", ignore_units)
+						local vis_ray = World:raycast("ray", from_pos, tar_vec, "slot_mask", InstantBulletBase:blank_slotmask(), "ignore_unit", ignore_units)
+						local vis_ray = World:raycast("ray", from_pos, tar_vec, "slot_mask", slotmask, "ignore_unit", ignore_units)
+						if vis_ray and vis_ray.unit:key() == u_key and (not closest_error or error_angle < closest_error) then
+							closest_error = error_angle
+							closest_ray = vis_ray
+
+							mvec3_set(tmp_vec1, com)
+							mvec3_sub(tmp_vec1, from_pos)
+
+							local d = mvec3_dot(direction, tmp_vec1)
+
+							mvec3_set(tmp_vec1, direction)
+							mvec3_mul(tmp_vec1, d)
+							mvec3_add(tmp_vec1, from_pos)
+							mvec3_sub(tmp_vec1, com)
+
+							closest_ray.distance_to_aim_line = mvec3_len(tmp_vec1)
+						end
+					end
+				end
+			end
+		end
+	end
+
+	return closest_ray, suppression_enemies
 end

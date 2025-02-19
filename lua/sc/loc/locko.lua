@@ -785,6 +785,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "CRIMENET을 난이도별로 중심을 맞추고 정렬합니다.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET 크기",
 		["RestorationModPocoCrimenetScaleDescID"] = "CRIMENET의 크기를 설정합니다.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
 		["RestorationModVoiceIconTitleID"] = "음성 채팅 아이콘",
 	    ["RestorationModVoiceIconDescID"] = "플레이어가 게임 내에서 음성 채팅을 사용할 때 표시합니다.",
 		["RestorationModNewsFeedStyleTitleID"] = "알파 뉴스피드 스타일",

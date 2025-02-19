@@ -787,6 +787,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Alinea y ordena CRIMENET por dificultad.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Escala de CRIMENET de Poco", --Bob: Esto se refiere al poco hud?
 		["RestorationModPocoCrimenetScaleDescID"] = "Permite ajustar la escala de CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
 		["RestorationModVoiceIconTitleID"] = "Icono De Chat De Voz",
 	    ["RestorationModVoiceIconDescID"] = "Mostrar cuando un jugador está usando el chat de voz dentro del juego.",
 		["RestorationModNewsFeedStyleTitleID"] = "Estilo Alfa De Noticias", --Bob: Comprobar si newsfeed tiene otro nombre

@@ -37819,7 +37819,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				base_zoom_off = 2
 			}
 			self.parts.wpn_fps_ass_br14_optic.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
-			for i, weap in pairs(self.parts.wpn_fps_sickle_optic.stance_mod) do
+			for i, weap in pairs(self.parts.wpn_fps_ass_br14_optic.stance_mod) do
 				if weap and i ~= wep_id and weap.translation then
 					weap.translation = weap.translation + Vector3(0.01,-2,0.96)
 				end

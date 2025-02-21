@@ -308,7 +308,33 @@ function CopDamage:_spawn_head_gadget(params)
 	self._head_gear = false
 end
 
+--Enemy scaling health with number of players
+function CopDamage:chk_has_player_health_scaling(char_tweak)
+	local mul = char_tweak.player_health_scaling_mul
 
+	if not mul then
+		return
+	end
+
+	local session = managers.network:session()
+
+	if not session then
+		return
+	end
+	
+	--Just so math looks way cleaner, player 1 will always count
+	local nr_other_players = 1
+	local local_peer_id = session:local_peer():id()
+
+	for peer_id, peer in pairs(session:all_peers()) do
+		if peer_id ~= local_peer_id then
+			nr_other_players = nr_other_players + 1
+		end
+	end
+
+	mul = 1 + (mul - 1) * nr_other_players
+	self._HEALTH_INIT = self._HEALTH_INIT * mul
+end
 
 function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then

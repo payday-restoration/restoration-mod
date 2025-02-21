@@ -869,7 +869,7 @@ function CopDamage:damage_bullet(attack_data)
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local damage = attack_data.damage
 	
-	local ignore = self._unit:base()._tweak_table == "spring" or self._unit:base()._tweak_table == "tank_titan"	or self._unit:base()._tweak_table == "headless_hatman" or self._unit:base()._tweak_table == "tank_titan_assault"	
+	local ignore = self._char_tweak.no_dozer_armor_resistance
 	
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 

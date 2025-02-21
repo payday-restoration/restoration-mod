@@ -2667,6 +2667,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 22.5
+	self.tank_titan.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "tank_titan")
 	
 	--Titandozer, assault variant (used in assault groups)
@@ -2680,6 +2681,7 @@ function CharacterTweakData:_init_tank(presets)
 	else
 		self.tank_titan_assault.dt_suppress = nil
 	end
+	self.tank_titan_assault.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "tank_titan_assault")
 
 	--Titandozer, captain minion variant with LMG (Used only for Winters' Squad on DSPJ)
@@ -2689,6 +2691,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_minion.dt_suppress = {
 		range = 500
 	}
+	self.tank_titan_minion.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "tank_titan_minion")
 
 	--Halloween Bulldozer (Black)
@@ -3314,6 +3317,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.spring.captain_type = restoration.captain_types.spring
 	self.spring.no_xmas_hat = true
+	self.spring.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "spring")
 	
 	--Headless Titandozer Boss 
@@ -3336,6 +3340,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.headless_hatman.can_be_healed = false
 	self.headless_hatman.dt_suppress = nil
 	self.headless_hatman.captain_type = restoration.captain_types.hvh
+	self.headless_hatman.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "headless_hatman")
 end
 

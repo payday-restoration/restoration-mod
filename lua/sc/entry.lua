@@ -220,6 +220,8 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_w_ar23_concussive")
 				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_penetrator") then
 					return managers.localization:text("bm_w_ar23_penetrator")
+				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_carbine") then
+					return managers.localization:text("bm_w_ar23_carbine")
 				end
 
 		--[[     BRs     ]]--

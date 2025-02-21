@@ -21131,7 +21131,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malorian_3516.lock_slide = nil
 				self.malorian_3516.sounds.magazine_empty = nil
 				self.malorian_3516.sounds.stop_fire = "judge_x_fire"
+				self.malorian_3516.shell_ejection = "_dmc/effects/shell_shak_smol"
 				self.malorian_3516.swap_speed_multiplier = 0.4
+				self.malorian_3516.use_unequip_swap = true
 			end
 
 			if self.cp2077_guts then
@@ -23417,6 +23419,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.stats_modifiers = nil
 				self.ar23.is_bullpup = true
 				self.ar23.panic_suppression_chance = 0.05
+				self.ar23.sounds.use_fix = nil
 				self.ar23.timers.reload_empty = 3.21
 				self.ar23.timers.reload_exit_empty = 1.12
 				self.ar23.timers.reload_not_empty = 2.32

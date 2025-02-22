@@ -845,6 +845,7 @@ function CharacterTweakData:_init_swat(presets)
 	    self.hrt_titan.speech_prefix_count = nil
 	end	
 	self.hrt_titan.static_dodge_preset = true
+	self.hrt_titan.static_weapon_preset = true
 	self.hrt_titan.heal_cooldown = 1.875
 	self.hrt_titan.overheal_mult = 1
 	self.hrt_titan.rescue_hostages = true
@@ -1243,6 +1244,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy_explosion_resist
 	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8
+	self.city_swat_titan.damage.tase_damage_mul = 1.25
 	self.city_swat_titan.use_animation_on_fire_damage = true
 	self.city_swat_titan.move_speed = presets.move_speed.fast
 	self.city_swat_titan.dodge = presets.dodge.elite
@@ -1580,8 +1582,10 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss = deep_clone(presets.base)
 	self.triad_boss.experience = {}
 	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
-	self.triad_boss.detection = presets.detection.normal
-	self.triad_boss.HEALTH_INIT = 750
+	self.triad_boss.detection = presets.detection.normal	
+	self.triad_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.triad_boss.player_health_scaling_mul = 1.25			
 	self.triad_boss.headshot_dmg_mul = 5.5
 	self.triad_boss.damage_resistance = presets.damage_resistance.none
 	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
@@ -1671,7 +1675,9 @@ function CharacterTweakData:_init_deep_boss(presets)
 		8
 	}
 	self.deep_boss.detection = presets.detection.normal
-	self.deep_boss.HEALTH_INIT = 750
+	self.deep_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.deep_boss.player_health_scaling_mul = 1.25				
 	self.deep_boss.headshot_dmg_mul = 5.5
 	self.deep_boss.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.deep_boss.damage.explosion_damage_mul = 0.5
@@ -1864,7 +1870,9 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.experience = {}
 	self.mobster_boss.detection = presets.detection.normal
 	self.mobster_boss.weapon = deep_clone(presets.weapon.normal)
-	self.mobster_boss.HEALTH_INIT = 750
+	self.mobster_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.mobster_boss.player_health_scaling_mul = 1.25	
 	self.mobster_boss.headshot_dmg_mul = 5.5
 	self.mobster_boss.damage_resistance = presets.damage_resistance.none
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
@@ -1920,7 +1928,9 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.experience = {}
 	self.biker_boss.weapon = deep_clone(presets.weapon.normal)
 	self.biker_boss.detection = presets.detection.normal
-	self.biker_boss.HEALTH_INIT = 750
+	self.biker_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.biker_boss.player_health_scaling_mul = 1.25	
 	self.biker_boss.headshot_dmg_mul = 5.5
 	self.biker_boss.damage_resistance = presets.damage_resistance.none
 	self.biker_boss.damage.explosion_damage_mul = 1.25
@@ -2019,7 +2029,9 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.custom_shout = true
 	self.chavez_boss.priority_shout_max_dis = 3000
 	self.chavez_boss.damage.hurt_severity = presets.hurt_severities.boss
-	self.chavez_boss.HEALTH_INIT = 750
+	self.chavez_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.chavez_boss.player_health_scaling_mul = 1.25	
 	self.chavez_boss.headshot_dmg_mul = 5.5
 	self.chavez_boss.damage_resistance = presets.damage_resistance.none
 	self.chavez_boss.damage.explosion_damage_mul = 1.25
@@ -2426,7 +2438,9 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.tags = {"custom", "special"}
 	self.drug_lord_boss.weapon = deep_clone(presets.weapon.normal)
 	self.drug_lord_boss.detection = presets.detection.normal
-	self.drug_lord_boss.HEALTH_INIT = 750
+	self.drug_lord_boss.HEALTH_INIT = 375
+	--Gains extra health per player, totaling to 7.5~ at a full party of 4
+	self.drug_lord_boss.player_health_scaling_mul = 1.25	
 	self.drug_lord_boss.headshot_dmg_mul = 5.5
 	self.drug_lord_boss.damage_resistance = presets.damage_resistance.none
 	self.drug_lord_boss.damage.explosion_damage_mul = 1.25
@@ -2537,7 +2551,7 @@ function CharacterTweakData:_init_tank(presets)
 		heavy = {tased_time = 2, down_time = 0}
 	}
 	self.tank.damage.explosion_damage_mul = 2.5
-	self.tank.damage.rocket_damage_mul = 2.5
+	self.tank.damage.rocket_damage_mul = 5
 	self.tank.weapon = deep_clone(presets.weapon.normal)
 	self.tank.detection = presets.detection.normal
 	self.tank.HEALTH_INIT = 500
@@ -2621,8 +2635,8 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_skull.HEALTH_INIT = 625
 	self.tank_skull.marshal_logic = true
 	self.tank_skull.headshot_dmg_mul = 9.5
-	self.tank_skull.damage.explosion_damage_mul = 1.5
-	self.tank_skull.damage.rocket_damage_mul = 1.5
+	self.tank_skull.damage.explosion_damage_mul = 2.5
+	self.tank_skull.damage.rocket_damage_mul = 5
 	self.tank_skull.melee_push_multiplier = 2 --he punches you harder now
 	self.tank_skull.move_speed = presets.move_speed.very_slow
 	self.tank_skull.spawn_sound_event = self._prefix_data_p1.bulldozer() .. "_entrance_elite"
@@ -2666,6 +2680,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.ecm_hurts = {}
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.damage.rocket_damage_mul = 1.25
+	self.tank_titan.damage.tase_damage_mul = 5
 	self.tank_titan.melee_push_multiplier = 2 --he punches you harder now
 	self.tank_titan.is_special = true
 	self.tank_titan.no_asu = true
@@ -2822,13 +2837,19 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.min_obj_interrupt_dis = 800
 	table.insert(self._enemy_list, "spooc")
 
+	--Titan Cloaker
 	self.spooc_titan = deep_clone(self.spooc)
+	self.spooc_titan.ecm_vulnerability = 1
+	self.spooc_titan.ecm_hurts = {
+		ears = 1
+	}	
 	self.spooc_titan.tags = {"law", "custom", "special", "spooc"}
 	self.spooc_titan.special_deaths = nil
 	self.spooc_titan.HEALTH_INIT = 90
 	self.spooc_titan.headshot_dmg_mul = 5.85	
 	self.spooc_titan.damage.bullet_damage_mul = 1.5
 	self.spooc_titan.damage.explosion_damage_mul = 1.75
+	self.spooc_titan.damage.tase_damage_mul = 3
 	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then	
 		self.spooc_titan.speech_prefix_p1 = self._prefix_data_p1.cloaker()
 		self.spooc_titan.speech_prefix_count = nil
@@ -2838,7 +2859,9 @@ function CharacterTweakData:_init_spooc(presets)
 	end
 	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.spooc_titan
 	self.spooc_titan.can_cloak = true
-	self.spooc_titan.can_be_tased = false
+	self.spooc_titan.can_be_tased = true
+	self.spooc_titan.flammable = true
+	self.spooc_titan.use_animation_on_fire_damage = false	
 	self.spooc_titan.priority_shout_max_dis = 0
 	self.spooc_titan.unintimidateable = true
 	self.spooc_titan.charging_detect = true
@@ -2855,6 +2878,18 @@ function CharacterTweakData:_init_spooc(presets)
 	end
 	self.spooc_titan.heal_cooldown = 15
 	self.spooc_titan.no_xmas_hat = true
+	
+	self.spooc_titan.autumn_tase = true
+	
+	--Cloaking stuff
+	self.spooc_titan.uncloak_on_shoot_chance = 0.5
+	self.spooc_titan.uncloak_on_melee_chance = 1
+	self.spooc_titan.uncloak_on_tase_damage_chance = 1
+	
+	self.spooc_titan.cloak_on_bullet_damage_chance = 0.5
+	self.spooc_titan.cloak_on_fire_damage_chance = 0.5
+	self.spooc_titan.cloak_on_explosive_damage_chance = 0	
+	
 	table.insert(self._enemy_list, "spooc_titan")
 
 	--Kung Fu Master/Test Subject
@@ -3070,6 +3105,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.explosion_damage_mul = 0.25
 	self.phalanx_minion.damage.rocket_damage_mul = 0.25
 	self.phalanx_minion.damage.fire_pool_damage_mul = 0.25
+	self.phalanx_minion.damage.tase_damage_mul = 1
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = false
@@ -3431,6 +3467,10 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.weapon = deep_clone(presets.weapon.normal)
 	self.autumn.detection = presets.detection.normal
 	self.autumn.damage.immune_to_knockback = true
+	self.autumn.ecm_vulnerability = 1
+	self.autumn.ecm_hurts = {
+		ears = 1
+	}	
 	self.autumn.immune_to_knock_down = true		
 	self.autumn.immune_to_concussion = true		
 	--Base health
@@ -3441,8 +3481,11 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.damage_resistance = presets.damage_resistance.none
 	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
+	self.autumn.damage.dot_damage_mul = 0
 	self.autumn.damage.fire_pool_damage_mul = 0.75
-	self.autumn.flammable = false
+	self.autumn.damage.tase_damage_mul = 1
+	self.autumn.flammable = true
+	self.autumn.use_animation_on_fire_damage = false
 	self.autumn.damage.explosion_damage_mul = 1
 	self.autumn.damage.rocket_damage_mul = 1
 	self.autumn.move_speed = presets.move_speed.lightning
@@ -3453,7 +3496,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.surrender_break_time = {4, 6}
 	self.autumn.suppression = nil
 	self.autumn.surrender = nil
-	self.autumn.can_be_tased = false
+	self.autumn.can_be_tased = true
 	self.autumn.priority_shout_max_dis = 0
 	self.autumn.unintimidateable = true
 	self.autumn.must_headshot = true
@@ -3512,6 +3555,18 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.min_obj_interrupt_dis = 300
 	self.autumn.captain_type = restoration.captain_types.autumn
 	self.autumn.no_xmas_hat = true
+	
+	self.autumn.autumn_tase = true
+	
+	--Cloaking stuff
+	self.autumn.uncloak_on_shoot_chance = 0.5
+	self.autumn.uncloak_on_melee_chance = 1
+	self.autumn.uncloak_on_tase_damage_chance = 1
+	
+	self.autumn.cloak_on_bullet_damage_chance = 0.5
+	self.autumn.cloak_on_fire_damage_chance = 0.5
+	self.autumn.cloak_on_explosive_damage_chance = 0
+	
 	table.insert(self._enemy_list, "autumn")
 end	
 
@@ -18068,7 +18123,14 @@ function CharacterTweakData:_set_overkill_290()
 		range = 2500
 	}
 		
+	--Less likely to uncloak on actionshoot update, and more likely to cloak when taking damage
+	self.autumn.uncloak_on_shoot_chance = 0.4
+	
+	self.autumn.cloak_on_bullet_damage_chance = 0.6
+	self.autumn.cloak_on_fire_damage_chance = 0.6
+		
 	self.autumn.damage.bullet_damage_mul = 0.45
+	
 	self.presets.gang_member_damage.HEALTH_INIT = 175
 	if pro_job then
 		self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = damage_grace_easydeathwish_pro
@@ -18288,6 +18350,12 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_titan_assault.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase	
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
+		
+	--Less likely to uncloak on actionshoot update, and more likely to cloak when taking damage
+	self.autumn.uncloak_on_shoot_chance = 0.3
+	
+	self.autumn.cloak_on_bullet_damage_chance = 0.7
+	self.autumn.cloak_on_fire_damage_chance = 0.7
 	self.autumn.damage.bullet_damage_mul = 0.4
 	
 	self.tank_black.move_speed = self.presets.move_speed.normal

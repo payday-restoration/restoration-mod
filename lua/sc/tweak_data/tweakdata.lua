@@ -919,7 +919,7 @@ tweak_data.medic.lpf_radius = 800
 tweak_data.asu_buff_radius = 800
 if difficulty_index <= 6 then
 	tweak_data.asu_damage_buff = 10
-elseif difficulty_index == 5 then
+elseif difficulty_index == 7 then
 	tweak_data.asu_damage_buff = 15
 else
 	tweak_data.asu_damage_buff = 20

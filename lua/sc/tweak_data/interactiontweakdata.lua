@@ -605,7 +605,7 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.doctor_bag.blackout_vulnerable = true
 	self.first_aid_kit.blackout_vulnerable = true
 	self.bodybags_bag.blackout_vulnerable = true
-	self.ecm_jammer.blackout_vulnerable = true
+	self.ecm_jammer.blackout_vulnerable = false
 	self.trip_mine.blackout_vulnerable = true
 	self.grenade_briefcase.blackout_vulnerable = true
 	self.grenade_crate.blackout_vulnerable = true

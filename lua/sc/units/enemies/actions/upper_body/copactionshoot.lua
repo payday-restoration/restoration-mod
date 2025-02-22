@@ -761,7 +761,7 @@ function CopActionShoot:update(t)
 					self._ext_brain._uncloak_t = t + 10
 
 					local is_autumn = self._ext_base._tweak_table == "autumn"
-					if math_random() < (is_autumn and 0.2 or 0.4) then
+					if math_random() < (self._common_data.char_tweak.uncloak_on_shoot_chance or 0.5) then
 						self._unit:movement():set_cloaked(false, true)
 					end
 

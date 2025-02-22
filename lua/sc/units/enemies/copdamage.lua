@@ -368,7 +368,7 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 
-	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+	if not self._unit:movement():cloaked() and math_random() < (self._char_tweak.cloak_on_fire_damage_chance or 0.5) then
 		self._unit:movement():set_cloaked(true, true)
 	end
 
@@ -422,7 +422,7 @@ function CopDamage:damage_fire(attack_data)
 			attack_data.is_fire_pool_damage = true
 			if self._char_tweak.damage.fire_pool_damage_mul then
 				damage = damage * self._char_tweak.damage.fire_pool_damage_mul
-			end	
+			end
 		else
 			if self._char_tweak.damage.fire_damage_mul then
 				damage = damage * self._char_tweak.damage.fire_damage_mul
@@ -938,7 +938,7 @@ function CopDamage:damage_bullet(attack_data)
 		end
 	end
 	
-	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+	if not self._unit:movement():cloaked() and math_random() < (self._char_tweak.cloak_on_bullet_damage_chance or 0.5) then
 		self._unit:movement():set_cloaked(true, true)
 	end
 
@@ -1714,6 +1714,17 @@ function CopDamage:damage_melee(attack_data)
 		damage_effect_percent = math.ceil(damage_effect / self._HEALTH_INIT_PRECENT)
 		damage_effect_percent = math.clamp(damage_effect_percent, 1, self._HEALTH_GRANULARITY)
 		local result_type = attack_data.shield_knock and self._char_tweak.damage.shield_knocked and "shield_knock" or attack_data.variant == "counter_tased" and "counter_tased" or attack_data.variant == "taser_tased" and self._char_tweak.can_be_tased ~= false and "taser_tased" or attack_data.variant == "counter_spooc" and "expl_hurt" or self:get_damage_type(damage_effect_percent, "melee") or "fire_hurt"
+
+		if attack_data.variant == "taser_tased" and self._char_tweak.autumn_tase then		
+			if self._unit:movement():cloaked() and math_random() < (self._char_tweak.uncloak_on_tase_damage_chance or 0.5) then
+				self._unit:movement():set_cloaked(false, true)
+				
+				result_type = "hurt"
+			else
+				result_type = "light_hurt"
+			end												
+		end
+
 		result = {
 			type = result_type,
 			variant = attack_data.variant
@@ -1912,6 +1923,15 @@ function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effec
 		managers.statistics:killed_by_anyone(data)
 	else
 		local result_type = variant == 1 and "shield_knock" or variant == 2 and "counter_tased" or variant == 5 and "taser_tased" or variant == 4 and "expl_hurt" or self:get_damage_type(damage_effect_percent, "bullet") or "fire_hurt"
+
+		if attack_data.variant == "taser_tased" and self._char_tweak.autumn_tase then		
+			if self._unit:movement():cloaked() then				
+				result_type = "hurt"
+			else
+				result_type = "light_hurt"
+			end												
+		end
+
 		result = {
 			variant = "melee",
 			type = result_type
@@ -2181,7 +2201,7 @@ function CopDamage:damage_explosion(attack_data)
 		end
 	end
 
-	if not self._unit:movement():cloaked() and math_random() < 0.75 then
+	if not self._unit:movement():cloaked() and math_random() < (self._char_tweak.cloak_on_explosive_damage_chance or 0.5) then
 		self._unit:movement():set_cloaked(true, true)
 	end
 
@@ -2263,6 +2283,15 @@ function CopDamage:damage_explosion(attack_data)
 		attack_data.damage = damage
 
 		local result_type = (allow_ff and "dmg_rcv") or (attack_data.variant == "stun" and "hurt_sick") or self:get_damage_type(damage_percent, "explosion")
+
+		if attack_data.variant == "stun" and self._char_tweak.autumn_tase then
+			result_type = "light_hurt"
+		
+			if self._unit:movement():cloaked() and math_random() < (self._char_tweak.uncloak_on_tase_damage_chance or 0.5) then
+				self._unit:movement():set_cloaked(false, true)
+			end
+			
+		end		
 
 		result = {
 			type = result_type,
@@ -2409,6 +2438,11 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 		managers.statistics:killed_by_anyone(data)
 	else
 		local result_type = variant == "stun" and "hurt_sick" or variant == "healed" and "healed" or self:get_damage_type(damage_percent, "explosion")
+
+		if attack_data.variant == "stun" and self._char_tweak.autumn_tase then
+			result_type = "light_hurt"			
+		end		
+
 		result = {
 			type = result_type,
 			variant = variant
@@ -2774,6 +2808,251 @@ function CopDamage:sync_damage_simple(attacker_unit, damage_percent, i_attack_va
 		managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	end
 
+	self:_on_damage_received(attack_data)
+end
+
+function CopDamage:damage_tase(attack_data)
+	if self._dead or self._invulnerable then
+		if self._invulnerable then
+			print("INVULNERABLE!  Not tasing.")
+		end
+
+		return
+	end
+
+	if PlayerDamage.is_friendly_fire(self, attack_data.attacker_unit) then
+		return "friendly_fire"
+	end
+
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end
+
+	local result = nil
+	local damage = attack_data.damage
+	
+	if self._char_tweak.damage.tase_damage_mul then
+		damage = damage * self._char_tweak.damage.tase_damage_mul
+	end	
+
+	if attack_data.attacker_unit == managers.player:player_unit() then
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
+
+		if critical_hit then
+			damage = crit_damage
+		end
+
+		if attack_data.weapon_unit then
+			if critical_hit then
+				managers.hud:on_crit_confirmed()
+			else
+				managers.hud:on_hit_confirmed()
+			end
+		end
+	end
+
+	damage = self:_apply_damage_reduction(damage)
+	damage = math.clamp(damage, 0, self._HEALTH_INIT)
+	local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
+	damage = damage_percent * self._HEALTH_INIT_PRECENT
+	damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)	
+	
+	if self._unit:movement():cloaked() and math_random() < (self._char_tweak.uncloak_on_tase_damage_chance or 0.5) then
+		self._unit:movement():set_cloaked(false, true)
+	end	
+
+	if self._health <= damage then
+		attack_data.damage = self._health
+		result = {
+			variant = "bullet",
+			type = "death"
+		}
+
+		self:die(attack_data)
+		self:chk_killshot(attack_data.attacker_unit, "tase", false, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
+	else
+		attack_data.damage = damage
+		local type = (attack_data.forced or self._char_tweak.can_be_tased == nil or self._char_tweak.can_be_tased) and "taser_tased" or "none"
+		
+		if self._char_tweak.autumn_tase then
+			type = "heavy_hurt"
+		end
+		
+		result = {
+			type = type,
+			variant = attack_data.variant
+		}
+
+		self:_apply_damage_to_health(damage)
+	end
+
+	if result.type == "taser_tased" and (attack_data.forced or not self._unit:anim_data() or not self._unit:anim_data().act) then
+		if self._tase_effect then
+			World:effect_manager():fade_kill(self._tase_effect)
+		end
+
+		self._tase_effect = World:effect_manager():spawn(self._tase_effect_table)
+	end
+
+	attack_data.result = result
+	attack_data.pos = attack_data.col_ray.position
+	local head = nil
+
+	if result.type == "death" and self._head_body_name then
+		head = attack_data.col_ray and attack_data.col_ray.body and self._head_body_key and attack_data.col_ray.body:key() == self._head_body_key
+		local body = self._unit:body(self._head_body_name)
+		local dir_vec = head and attack_data.col_ray.ray or body:rotation():y()
+
+		self:_spawn_head_gadget({
+			position = body:position(),
+			rotation = body:rotation(),
+			skip_push = not head,
+			dir = dir_vec
+		})
+	end
+
+	local attacker = attack_data.attacker_unit
+
+	if not attacker or attacker:id() == -1 then
+		attacker = self._unit
+	end
+
+	if result.type == "death" then
+		local data = {
+			name = self._unit:base()._tweak_table,
+			stats_name = self._unit:base()._stats_name,
+			owner = attack_data.owner,
+			weapon_unit = attack_data.weapon_unit,
+			variant = attack_data.variant,
+			head_shot = head
+		}
+
+		managers.statistics:killed_by_anyone(data)
+
+		local attacker_unit = attack_data.attacker_unit
+
+		if attacker_unit and attacker_unit:base() and attacker_unit:base().thrower_unit then
+			attacker_unit = attacker_unit:base():thrower_unit()
+			data.weapon_unit = attack_data.attacker_unit
+		end
+
+		if attacker_unit == managers.player:player_unit() then
+			if alive(attacker_unit) then
+				self:_comment_death(attacker_unit, self._unit)
+			end
+
+			self:_show_death_hint(self._unit:base()._tweak_table)
+			managers.statistics:killed(data)
+
+			if CopDamage.is_civilian(self._unit:base()._tweak_table) then
+				managers.money:civilian_killed()
+			end
+
+			self:_check_damage_achievements(attack_data, false)
+		end
+	end
+
+	local weapon_unit = attack_data.weapon_unit
+
+	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
+		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+	end
+
+	local variant = result.variant == "heavy" and 1 or 0
+
+	self:_send_tase_attack_result(attack_data, damage_percent, variant)
+	self:_on_damage_received(attack_data)
+
+	return result
+end
+
+function CopDamage:sync_damage_tase(attacker_unit, damage_percent, variant, death)
+	if self._dead then
+		return
+	end
+
+	if variant == 1 then
+		variant = "heavy"
+	else
+		variant = "light"
+	end
+
+	local damage = damage_percent * self._HEALTH_INIT_PRECENT
+	local attack_data = {
+		attacker_unit = attacker_unit,
+		variant = variant
+	}
+	local result = nil
+
+	if death then
+		result = {
+			variant = "bullet",
+			type = "death"
+		}
+
+		self:die("bullet")
+		self:chk_killshot(attacker_unit, "tase", false, attack_data.weapon_unit)
+
+		local data = {
+			head_shot = false,
+			name = self._unit:base()._tweak_table,
+			stats_name = self._unit:base()._stats_name,
+			variant = variant
+		}
+
+		managers.statistics:killed_by_anyone(data)
+	else
+		local type = (self._char_tweak.can_be_tased == nil or self._char_tweak.can_be_tased) and "taser_tased" or "none"
+
+		if self._char_tweak.autumn_tase then
+			type = "heavy_hurt"
+		end
+		
+		result = {
+			type = type,
+			variant = variant
+		}
+
+		self:_apply_damage_to_health(damage)
+	end
+
+	if result.type == "taser_tased" then
+		if self._tase_effect then
+			World:effect_manager():fade_kill(self._tase_effect)
+		end
+
+		self._tase_effect = World:effect_manager():spawn(self._tase_effect_table)
+	end
+
+	attack_data.result = result
+	attack_data.damage = damage
+	attack_data.is_synced = true
+	local attack_dir = nil
+
+	if attacker_unit then
+		attack_dir = self._unit:position() - attacker_unit:position()
+
+		mvector3.normalize(attack_dir)
+	else
+		attack_dir = -self._unit:rotation():y()
+	end
+
+	attack_data.attack_dir = attack_dir
+
+	if death and self._head_body_name then
+		local body = self._unit:body(self._head_body_name)
+
+		self:_spawn_head_gadget({
+			position = body:position(),
+			rotation = body:rotation(),
+			dir = attack_dir
+		})
+	end
+
+	attack_data.pos = self._unit:position()
+
+	mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+	self:_send_sync_tase_attack_result(attack_data)
 	self:_on_damage_received(attack_data)
 end
 

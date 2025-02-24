@@ -14,11 +14,7 @@
 
 	<graphics>
 		<lod_object name="grp_bulldozer_neck">
-			<object name="g_neck" enabled="true" >
-				<material materials="mtr_bulldozer" max_distance="1000" />
-				<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
-				<material materials="mtr_bulldozer_lod_2" /> 
-			</object>
+			<object name="g_neck" enabled="true" />
 		</lod_object>
 	</graphics>
 	

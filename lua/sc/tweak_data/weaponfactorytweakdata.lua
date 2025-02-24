@@ -19363,11 +19363,6 @@ end)
 						translation = Vector3(0.05, -18.5, -1.052),
 						rotation = Rotation(0.11, -0.08, 0.6)
 					}
-					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_br14 = {
-						translation = Vector3(0.02, -21, -3.59),
-						rotation = Rotation(0.11, 0.0, 0.2)
-					}
-
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
 						translation = Vector3(-0.008, 2.6, -0.12)
@@ -19414,6 +19409,14 @@ end)
 						translation = Vector3(0.08, 10.1, -3.36),
 						rotation = Rotation(0.02, -0.02, 0.55)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_br14 = {
+						translation = Vector3(0.02, -21, -3.59),
+						rotation = Rotation(0.11, 0.0, 0.2)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l1a1 = {
+						translation = Vector3(-0.005, 10.5, -3.52)
+					}
+
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 						translation = Vector3(0.02, 4, 0.03),
@@ -35763,6 +35766,65 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end		
 
 	--[[ CARL'S MODS ]]
+
+		if self.parts.wpn_fps_ass_l1a1_mag_big then
+			self.parts.wpn_fps_ass_l1a1_body.animations = {
+				reload = "reload"
+			}
+
+			self.parts.wpn_fps_ass_l1a1_barrel_long.supported = true
+			self.parts.wpn_fps_ass_l1a1_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_l1a1_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_ass_l1a1_foregrip_wood.supported = true
+			self.parts.wpn_fps_ass_l1a1_foregrip_wood.stats = {
+				value = 2,
+				recoil = 2,
+				spread = -1
+			}
+
+			self.parts.wpn_fps_ass_l1a1_grip_wood.supported = true
+			self.parts.wpn_fps_ass_l1a1_grip_wood.stats = deep_clone(grips.recoil_1)
+
+			self.parts.wpn_fps_ass_l1a1_stock_wood.supported = true
+			self.parts.wpn_fps_ass_l1a1_stock_wood.stats = {
+				value = 4,
+				recoil = 2,
+				spread = -1
+			}
+
+			self.parts.wpn_fps_ass_l1a1_mag_big.supported = true
+			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
+				value = 5,
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+
+			self.parts.wpn_fps_ass_l1a1_mag_big.supported = true
+			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
+				value = 5,
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+			self.parts.wpn_fps_ass_l1a1_mag_short.supported = true
+			self.parts.wpn_fps_ass_l1a1_mag_short.stats = {
+				value = 2,
+				concealment = 2,
+				reload = 5,
+				extra_ammo = -10
+			}
+			self.parts.wpn_fps_ass_l1a1_mag_short.custom_stats = { 
+				ads_speed_mult = 0.95
+			}
+		end
 
 		if self.parts.wpn_fps_upg_limafive_m_extended then
 			self.parts.wpn_fps_upg_limafive_sl_morbid.supported = true

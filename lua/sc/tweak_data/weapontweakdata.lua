@@ -16065,6 +16065,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.l1a1.recategorize = {"dmr_ar"}
 				self.l1a1.damage_type = "assault_rifle"
+				self.l1a1.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.l1a1.has_description =  true
 				self.l1a1.CLIP_AMMO_MAX = 20
 				self.l1a1.AMMO_MAX = 80
 				self.l1a1.fire_mode_data.fire_rate = 0.1
@@ -16100,9 +16102,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.l1a1.stats_modifiers = nil
-				self.l1a1.can_shoot_through_enemy = false
 				self.l1a1.panic_suppression_chance = 0.05
+				self.l1a1.reload_speed_multiplier = 1.25
 				self.l1a1.armor_piercing_chance = 0.5
+				self.l1a1.can_shoot_through_enemy = true
 				self.l1a1.timers = deep_clone(self.fal.timers)
 			end
 

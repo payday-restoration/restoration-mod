@@ -1,4 +1,4 @@
-local job = Global.level_data and Global.level_data.level_id
+﻿local job = Global.level_data and Global.level_data.level_id
 local enemy_melee_damage_base = 4.5
 local enemy_melee_damage_good = 6.75
 local enemy_melee_damage_expert = 9
@@ -18799,6 +18799,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_1",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
+				"ene_bulldozer_medic",
 				"ene_bulldozer_minigun",
 				"ene_omnia_spook",
 				"ene_grenadier_1",

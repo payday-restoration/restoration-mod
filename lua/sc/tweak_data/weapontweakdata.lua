@@ -9974,8 +9974,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.kacchainsaw_flamethrower.has_description = true
 					self.kacchainsaw_flamethrower.desc_id = "bm_ap_flamethrower_sc_desc"
 					self.kacchainsaw_flamethrower.rays = 16
-					self.kacchainsaw_flamethrower.CLIP_AMMO_MAX = 30
-					self.kacchainsaw_flamethrower.AMMO_MAX = 150
+					self.kacchainsaw_flamethrower.CLIP_AMMO_MAX = 25
+					self.kacchainsaw_flamethrower.AMMO_MAX = 75
 					self.kacchainsaw_flamethrower.fire_mode_data.fire_rate = 0.1
 					self.kacchainsaw_flamethrower.single_flame_effect_duration = 1
 					self.kacchainsaw_flamethrower.armor_piercing_chance = 1
@@ -11877,12 +11877,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.kick = self.stat_info.kick_tables.moderate_right_kick
 						self.fal.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
-							{4, self.stat_info.kick_tables.left_kick},
-							{7, self.stat_info.kick_tables.even_recoil},
-							{11, self.stat_info.kick_tables.right_kick},
-							{11, self.stat_info.kick_tables.pattern_r1},
-							{11, self.stat_info.kick_tables.moderate_right_kick},
-							{11, self.stat_info.kick_tables.pattern_r1},
+							{5, self.stat_info.kick_tables.left_kick},
 							{13, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.fal.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
@@ -16062,6 +16057,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 
 		--[[     CARL'S MODS     ]]--
+
+			if self.l1a1 then
+				self.l1a1.categories = { 
+					"assault_rifle",
+					"dmr_l",
+				}
+				self.l1a1.recategorize = {"dmr_ar"}
+				self.l1a1.damage_type = "assault_rifle"
+				self.l1a1.CLIP_AMMO_MAX = 20
+				self.l1a1.AMMO_MAX = 80
+				self.l1a1.fire_mode_data.fire_rate = 0.1
+				self.l1a1.tactical_reload = 1
+				self.l1a1.BURST_FIRE = false
+				self.l1a1.CAN_TOGGLE_FIREMODE = false
+				self.l1a1.FIRE_MODE = "single"
+				self.l1a1.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.l1a1.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{6, self.stat_info.kick_tables.left_kick},
+					{10, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.l1a1.supported = true
+				self.l1a1.ads_speed = 0.360
+				self.l1a1.damage_falloff = {
+					start_dist = 3500,
+					end_dist = 6600,
+					min_mult = 0.5333
+				}
+				self.l1a1.stats = {
+					damage = 45,
+					spread = 87,
+					recoil = 59,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.l1a1.stats_modifiers = nil
+				self.l1a1.can_shoot_through_enemy = false
+				self.l1a1.panic_suppression_chance = 0.05
+				self.l1a1.armor_piercing_chance = 0.5
+				self.l1a1.timers = deep_clone(self.fal.timers)
+			end
+
 			if self.limafive then -- Deagle L5
 				self.limafive.recategorize = {"heavy_pis"}
 				self.limafive.damage_type = "handcannon"			

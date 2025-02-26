@@ -25358,7 +25358,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.zoom_recoil_reduction = 0.025
 					end
 					weap.smt_mult = 4
-					weap.smt_range = { 0.75, 1.25 }
+					weap.smt_range = { 0.5, 0.9 }
 				end
 				weap.ene_hs_mult = 0.5
 			end

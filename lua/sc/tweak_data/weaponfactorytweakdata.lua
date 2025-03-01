@@ -39125,7 +39125,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.parts.wpn_fps_upg_m_vecsgmt.supported = true
 		self.parts.wpn_fps_upg_m_vecsgmt.stats = deep_clone(self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats)
-		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 21
+		self.parts.wpn_fps_upg_m_vecsgmt.stats.extra_ammo = 20
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.concealment = -4
 		self.parts.wpn_fps_upg_m_vecsgmt.stats.reload = -6
 		self.parts.wpn_fps_upg_m_vecsgmt.custom_stats = { ads_speed_mult = 1.1 }

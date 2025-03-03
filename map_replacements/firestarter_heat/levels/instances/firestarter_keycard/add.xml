@@ -1,0 +1,7 @@
+<table directory="assets">
+	<add from_db="true" path="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" type="unit">
+		<unit path="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" unload="true"/>
+		<object path="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" unload="true"/>
+		<material_config path="units/payday2/architecture/mkp/mkp" unload="true"/>
+	</add>
+</table>

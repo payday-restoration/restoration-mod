@@ -24611,6 +24611,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		dlc = "sc"
 	}
 
+	self.parts.wpn_fps_shot_x_rota_sound_switch = {
+		a_obj = "a_body",
+		type = "ammo",
+		name_id = "bm_wp_x_rota_switch",
+		unit = "units/pd2_dlc_osa/weapons/wpn_fps_sho_x_rota/wpn_fps_sho_x_rota",
+		no_cull = true,
+		internal_part = true,
+		stats = { value = 0 }
+	}
+
 	--Default Sniper Scope
 	self.parts.wpn_fps_upg_o_shortdot_dmc = deep_clone(self.parts.wpn_fps_upg_o_shortdot)
 	self.parts.wpn_fps_upg_o_shortdot_dmc.pcs = {}
@@ -38372,6 +38382,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+	--Akimbo Mosconi 12G
+	if self.wpn_fps_shot_x_huntsman then
+		self.wpn_fps_shot_x_huntsman.override = {
+			wpn_fps_shot_huntsman_s_long = {
+				unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
+				third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_s_short",
+				adds = {"wpn_fps_shot_x_rota_sound_switch"}
+			}
+		}
+		table.insert(self.wpn_fps_shot_x_huntsman.uses_parts, "wpn_fps_shot_huntsman_b_short" )
+		self.wpn_fps_shot_x_huntsman_npc.uses_parts = deep_clone(self.wpn_fps_shot_x_huntsman.uses_parts)
+	end
+	--Akimbo Claire 12G
+	if self.parts.wpn_fps_sho_coach_s_short_vanilla then
+		self.parts.wpn_fps_sho_coach_b_short_vanilla.stats = {}
+		self.parts.wpn_fps_sho_coach_b_short_vanilla.custom_stats = {}
+		self.parts.wpn_fps_sho_coach_b_short_vanilla.unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_b_standard"
+		self.parts.wpn_fps_sho_coach_b_short_vanilla.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_b_standard"
+
+		self.parts.wpn_fps_sho_coach_s_short_vanilla.stats = {}
+		self.parts.wpn_fps_sho_coach_s_short_vanilla.custom_stats = {}
+		self.parts.wpn_fps_sho_coach_s_short_vanilla.adds = {"wpn_fps_shot_x_rota_sound_switch"}
+		
+		table.insert(self.wpn_fps_sho_x_coach.uses_parts, "wpn_fps_sho_coach_b_short" )
+		table.insert(self.wpn_fps_sho_x_coach.uses_parts, "wpn_fps_sho_coach_b_long" )
+		self.wpn_fps_sho_x_coach_npc.uses_parts = deep_clone(self.wpn_fps_sho_x_coach.uses_parts)
+	end
+
 	--Striker mods--
 	if self.parts.wpn_fps_sho_striker_s_folding then
 		self.parts.wpn_fps_sho_striker_s_folding.supported = true
@@ -41382,6 +41420,28 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
+
+--[[
+			for factory_id, i in pairs(self) do
+				if self[ factory_id ] then
+					local weapon_id = peepee(factory_id)
+					if tweak_data.weapon[ weapon_id ] then
+						local tww = tweak_data.weapon[ weapon_id ]
+						if tww.categories then
+							if  table.contains( tww.categories , "pistol") then
+								if self[factory_id].uses_parts then
+									for i, part_id in pairs(self[factory_id].uses_parts) do
+										attachment_list = {
+											"wpn_fps_upg_fl_ass_smg_sho_pointshoot"
+										}
+									end
+								end 
+							end
+						end
+					end
+				end
+			end
+--]]
 
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_c79") and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
 				for i, remove_id in ipairs(self[factory_id].uses_parts) do
@@ -44688,6 +44748,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "socomstuff_init", function(self)
 end)
 
 --Override stance_mod data
+Hooks:PostHook(WeaponFactoryTweakData, "init", "AkimboMosconiInit", function(self)
+end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "pkilo_mod_init", function(self)
 end)
 

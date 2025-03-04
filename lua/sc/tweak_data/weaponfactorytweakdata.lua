@@ -38004,7 +38004,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				no_cull = true,
 				internal_part = true,
 				stats = { value = 0 },
-				custom_stats = {} --Just to load into memory
+				custom_stats = {} --Just to load the soundbank into memory
 			}
 			self.parts.wpn_fps_sickle_optic.supported = true
 			self.parts.wpn_fps_sickle_optic.stats = { 
@@ -38024,7 +38024,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sickle_m_battery.stats = { value = 10 }
 			self.parts.wpn_fps_sickle_m_battery.custom_stats = {
 				starwars = {
-					no_tracers = true,
+					no_tracers = true, --this just disables the automatic application of starwars tracers
 					regen_ammo_time = 3,
 					regen_rate = 3.48,
 					can_reload = true,
@@ -41387,6 +41387,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 			--]]
+
+			--[[ --disabling this for now; if it works, it works. if it doesn't ¯\_(ツ)_/¯ 
 			if self[factory_id].uses_parts and (table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_sig") or table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_xpsg33_magnifier"))
 			and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_fl_ass_smg_sho_pointshoot")  then
 				self[factory_id].uses_parts[500] = "wpn_fps_upg_fl_ass_smg_sho_pointshoot"
@@ -41421,7 +41423,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
---[[
 			for factory_id, i in pairs(self) do
 				if self[ factory_id ] then
 					local weapon_id = peepee(factory_id)
@@ -41441,7 +41442,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
---]]
+			--]]
 
 			if self[factory_id].uses_parts and table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_c79") and not table.contains(self[factory_id].uses_parts, "wpn_fps_upg_o_specter") then
 				for i, remove_id in ipairs(self[factory_id].uses_parts) do

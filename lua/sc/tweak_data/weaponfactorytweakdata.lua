@@ -1976,7 +1976,7 @@ end)
 					self.parts.wpn_fps_pis_maxim9_m_ext.supported = true
 					self.parts.wpn_fps_pis_maxim9_m_ext.stats = {
 						value = 6,
-						extra_ammo = 15,
+						extra_ammo = 13,
 						concealment = -3,
 						reload = -5
 					}	
@@ -2057,7 +2057,7 @@ end)
 					self.wpn_fps_pis_x_maxim9.override.wpn_fps_pis_maxim9_m_ext = {
 						stats = {
 							value = 6,
-							extra_ammo = 30,
+							extra_ammo = 26,
 							concealment = -3,
 							reload = -5
 						}
@@ -3630,18 +3630,6 @@ end)
 					self.parts.wpn_fps_pis_g22c_b_long.stats = deep_clone(barrels.long_b2_stats)
 					self.parts.wpn_fps_pis_g22c_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
 					
-
-					--Chimano Custom Overrides
-					self.wpn_fps_pis_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd = {
-						supported = true,
-						stats = {
-							value = 6,
-							extra_ammo = 6,
-							concealment = -2,
-							reload = -4
-						}
-					}
-					
 					table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 					table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 					table.insert(self.wpn_fps_pis_g22c.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
@@ -3653,7 +3641,7 @@ end)
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.supported = true
 					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 						value = 6,
-						extra_ammo = 12,
+						extra_ammo = 32,
 						concealment = -2,
 						reload = -4
 					}
@@ -37490,6 +37478,230 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+		if self.parts.wpn_fps_pis_glock_m_pmag then --Glock mags
+			
+			--Glock Mags
+				self.parts.wpn_fps_pis_glock_m_pmag.supported = true
+				self.parts.wpn_fps_pis_glock_m_pmag.stats = {
+					value = 6,
+					extra_ammo = 10,
+					concealment = -2,
+					spread = -1,
+					reload = -2,
+				}
+				self.parts.wpn_fps_pis_glock_m_pmag.custom_stats = {
+					ads_speed_mult = 1.05
+				}
+					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_pmag = {
+						stats = {
+							value = 6,
+							extra_ammo = 17,
+							concealment = -2,
+							spread = -1,
+							reload = -2,
+						}
+					}
+					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_pmag = {
+						stats = {
+							value = 6,
+							extra_ammo = 34,
+							concealment = -2,
+							spread = -1,
+							reload = -2,
+						}
+					}
+				self.wpn_fps_pis_x_maxim9.override.wpn_fps_pis_glock_m_pmag = {
+					unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_fps_pis_maxim9_m_pmag",
+					third_unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_third_pis_maxim9_m_pmag"
+				}
+
+				self.wpn_fps_pis_maxim9.override.wpn_fps_pis_glock_m_pmag = {
+					unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_fps_pis_maxim9_m_pmag",
+					third_unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_third_pis_maxim9_m_pmag"
+				}
+
+				self.parts.wpn_fps_pis_glock_m_d50.supported = true
+				self.parts.wpn_fps_pis_glock_m_d50.stats = {
+					value = 7,
+					concealment = -4,
+					reload = -6,
+					extra_ammo = 33
+				}
+				self.parts.wpn_fps_pis_glock_m_d50.custom_stats = {
+					ads_speed_mult = 1.1
+				}
+					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 40
+						}
+					}
+					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 80
+						}
+					}
+					self.wpn_fps_pis_g22c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 35
+						}
+					}
+					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 70
+						}
+					}
+
+				self.parts.wpn_fps_pis_glock_m_cmag.supported = true
+				self.parts.wpn_fps_pis_glock_m_cmag.stats = {
+					value = 9,
+					extra_ammo = 83,
+					reload = -9,
+					concealment = -7
+				}
+				self.parts.wpn_fps_pis_glock_m_cmag.custom_stats = {
+					ads_speed_mult = 1.175
+				}
+					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_cmag = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 90
+						}
+					}
+					self.wpn_fps_jowi.override.wpn_fps_pis_glock_m_cmag = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 180
+						}
+					}
+					self.wpn_fps_pis_g22c.override.wpn_fps_pis_glock_m_cmag = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 85
+						}
+					}
+					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_cmag = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 170
+						}
+					}
+
+			--Vector Mags
+				self.parts.wpn_fps_smg_polymer_m_slim.supported = true
+				self.parts.wpn_fps_smg_polymer_m_slim.stats = {
+					value = 0,
+					concealment = 1,
+					recoil = -2
+				}
+				self.parts.wpn_fps_smg_polymer_m_slim.custom_stats = nil
+				self.parts.wpn_fps_smg_polymer_m_speed.supported = true
+				self.parts.wpn_fps_smg_polymer_m_speed.stats = {
+					value = 6,
+					spread = -1,
+					concealment = -1,
+					reload = 3
+				}
+				self.parts.wpn_fps_smg_polymer_m_speed.custom_stats = nil
+				self.parts.wpn_fps_smg_polymer_m_d50.supported = true
+				self.parts.wpn_fps_smg_polymer_m_d50.stats = {
+					value = 7,
+					concealment = -4,
+					reload = -6,
+					extra_ammo = 20
+				}
+				self.parts.wpn_fps_smg_polymer_m_d50.custom_stats = {
+					ads_speed_mult = 1.1
+				}
+				self.parts.wpn_fps_smg_polymer_m_cmag.supported = true
+				self.parts.wpn_fps_smg_polymer_m_cmag.stats = {
+					value = 9,
+					extra_ammo = 70,
+					reload = -9,
+					concealment = -7
+				}
+				self.parts.wpn_fps_smg_polymer_m_cmag.custom_stats = {
+					ads_speed_mult = 1.175
+				}
+
+			--SUB2000
+				self.parts.wpn_fps_ass_sub2000_m_ext.supported = true
+				self.parts.wpn_fps_ass_sub2000_m_ext.stats = {
+					value = 2,
+					concealment = -1,
+					recoil = 2
+				}
+				self.parts.wpn_fps_ass_sub2000_m_ext.custom_stats = nil
+
+				self.parts.wpn_fps_ass_sub2000_m_maxim.supported = true
+				self.parts.wpn_fps_ass_sub2000_m_maxim.stats = {
+					value = 2,
+					concealment = 1,
+					reload = 2,
+					extra_ammo = -12
+				}
+				self.parts.wpn_fps_ass_sub2000_m_maxim.custom_stats = nil
+
+				self.parts.wpn_fps_ass_sub2000_m_short.supported = true
+				self.parts.wpn_fps_ass_sub2000_m_short.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -16
+				}
+				self.parts.wpn_fps_ass_sub2000_m_short.custom_stats = { 
+					ads_speed_mult = 0.95
+				}
+
+			--FDC-9
+				self.parts.wpn_fps_smg_fmg9_m_ext.supported = true
+				self.parts.wpn_fps_smg_fmg9_m_ext.stats = {
+					value = 2,
+					concealment = -1,
+					extra_ammo = 3
+				}
+				self.parts.wpn_fps_smg_fmg9_m_ext.custom_stats = nil
+
+				self.parts.wpn_fps_smg_fmg9_m_maxim.supported = true
+				self.parts.wpn_fps_smg_fmg9_m_maxim.stats = {
+					value = 2,
+					concealment = -1,
+					recoil = 2
+				}
+				self.parts.wpn_fps_smg_fmg9_m_maxim.custom_stats = nil
+
+				self.parts.wpn_fps_smg_fmg9_m_short.supported = true
+				self.parts.wpn_fps_smg_fmg9_m_short.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -13
+				}
+				self.parts.wpn_fps_smg_fmg9_m_short.custom_stats = { 
+					ads_speed_mult = 0.95
+				}
+
+		end
+
 	--[[ HYLIE'S MODS ]]
 
 		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
@@ -44779,8 +44991,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "vmplegacyInit", function(self)
 if self.wpn_fps_ass_aknato then
 end
 end)
+Hooks:PostHook( WeaponFactoryTweakData, "init", "glockmags_init", function(self)
+	if self.parts.wpn_fps_smg_fmg9_m_short then
+		-- Visibility toggles for Maxim-9 mags
+		self.parts.wpn_fps_ass_sub2000_m_maxim.visibility = {
+			{
+				objects = {
+					g_ext = true
+				}
+			}
+		}
 
---Override Tangerine's stance_mod data
+		self.parts.wpn_fps_smg_fmg9_m_short.visibility = {
+			{
+				objects = {
+					g_ext = false
+				}
+			}
+		}
+
+	end
+end)
+
+--Override Tangerine's hooks
 Hooks:PostHook(WeaponFactoryTweakData, "init", "omnisightinit", function(self)
 end)
 

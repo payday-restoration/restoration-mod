@@ -3286,7 +3286,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip_break.announce_incomming = nil
 	self.phalanx_vip_break.marshal_logic = true	
 	self.phalanx_vip_break.can_be_healed = false
-	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 15
+	self.phalanx_vip_break.tmp_invulnerable_on_tweak_change = 5
 	--Just in case
 	self.phalanx_vip_break.melee_push_multiplier = 1
 	self.phalanx_vip_break.melee_force_crouch = false	

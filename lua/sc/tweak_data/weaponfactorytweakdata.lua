@@ -38650,10 +38650,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_b_long = {}
 		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_s_long = {
-				unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
-				third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_s_short",
-				adds = {"wpn_fps_shot_x_rota_sound_switch"}
-			}
+			unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
+			third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_s_short",
+			adds = {"wpn_fps_shot_x_rota_sound_switch"}
 		}
 
 		table.insert(self.wpn_fps_shot_x_huntsman.uses_parts, "wpn_fps_shot_huntsman_b_short" )

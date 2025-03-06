@@ -37492,6 +37492,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_pmag.custom_stats = {
 					ads_speed_mult = 1.05
 				}
+					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 6,
+							extra_ammo = 20,
+							concealment = -2,
+							spread = -1,
+							reload = -2,
+						}
+					}
+					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 6,
+							extra_ammo = 20,
+							concealment = -2,
+							spread = -1,
+							reload = -2,
+						}
+					}
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
@@ -37530,6 +37548,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_d50.custom_stats = {
 					ads_speed_mult = 1.1
 				}
+					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 66
+						}
+					}
+					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 7,
+							concealment = -4,
+							reload = -6,
+							extra_ammo = 66
+						}
+					}
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_d50 = {
 						stats = {
 							value = 7,
@@ -37573,6 +37607,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_cmag.custom_stats = {
 					ads_speed_mult = 1.175
 				}
+					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 9,
+							extra_ammo = 166,
+							reload = -9,
+							concealment = -7
+						}
+					}
+					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 9,
+							extra_ammo = 166,
+							reload = -9,
+							concealment = -7
+						}
+					}
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 7,
@@ -38596,13 +38646,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--Akimbo Mosconi 12G
 	if self.wpn_fps_shot_x_huntsman then
-		self.wpn_fps_shot_x_huntsman.override = {
-			wpn_fps_shot_huntsman_s_long = {
+		self.wpn_fps_shot_x_huntsman.override = self.wpn_fps_shot_x_huntsman.override or {}
+
+		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_b_long = {}
+		self.wpn_fps_shot_x_huntsman.override.wpn_fps_shot_huntsman_s_long = {
 				unit = "units/payday2/weapons/wpn_fps_shot_huntsman_pts/wpn_fps_shot_huntsman_s_short",
 				third_unit = "units/payday2/weapons/wpn_third_shot_huntsman_pts/wpn_third_shot_huntsman_s_short",
 				adds = {"wpn_fps_shot_x_rota_sound_switch"}
 			}
 		}
+
 		table.insert(self.wpn_fps_shot_x_huntsman.uses_parts, "wpn_fps_shot_huntsman_b_short" )
 		self.wpn_fps_shot_x_huntsman_npc.uses_parts = deep_clone(self.wpn_fps_shot_x_huntsman.uses_parts)
 	end

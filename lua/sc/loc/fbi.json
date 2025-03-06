@@ -1,8 +1,8 @@
 {
-  "ene_city_swat" : "Light FBI SWAT Elite",
-  "ene_city_heavy" : "Heavy FBI SWAT Elite",
-  "ene_city_heavy_r870_sc" : "Heavy FBI SWAT Elite",
-  "ene_city_shield" : "FBI SWAT Elite Shield",
-  "ene_sniper_3" : "FBI SWAT Elite Sniper",
-  "ene_bulldozer_3" : "FBI SWAT Elite Skulldozer"
+  "ene_city_swat" : "FBI Elite SWAT",
+  "ene_city_heavy" : "FBI Elite Heavy SWAT",
+  "ene_city_heavy_r870_sc" : "FBI Elite Heavy SWAT",
+  "ene_city_shield" : "FBI Elite Shield",
+  "ene_sniper_3" : "FBI Elite Sniper",
+  "ene_bulldozer_3" : "FBI Elite Skulldozer"
 }

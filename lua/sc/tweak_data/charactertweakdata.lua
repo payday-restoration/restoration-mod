@@ -3299,6 +3299,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.move_speed = presets.move_speed.very_slow
 	self.spring.rage_move_speed = presets.move_speed.fast
 	self.spring.can_throw_frag = true
+	self.spring.grenade_type = "cluster_fuck"	
 	self.spring.can_ff_exp = true
 	self.spring.grenade_cooldown = 12
 	self.spring.grenade_toss_chance = 1
@@ -17691,6 +17692,10 @@ Hooks:PostHook(CharacterTweakData, "_create_table_structure", "remod_create_tabl
 	--Concussion rounds Saiga
 	table.insert(self.weap_ids, "saiga_conc_npc")
 	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_saiga_conc/wpn_npc_saiga_conc"))		
+	
+	--Akimbo Peacemaker
+	table.insert(self.weap_ids, "x_peacemaker")
+	table.insert(self.weap_unit_names, Idstring("units/payday2/weapons/wpn_npc_peacemaker/wpn_x_npc_peacemaker"))	
 
 end)
 

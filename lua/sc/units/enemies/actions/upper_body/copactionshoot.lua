@@ -704,7 +704,7 @@ function CopActionShoot:update(t)
                 
                 local frag_roll_chance = self._common_data.char_tweak.grenade_toss_chance or 0.1      
                 local frag_roll = math_random() <= frag_roll_chance    
-                local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
+                local grenade_type = self._common_data.char_tweak.grenade_type or "bravo_frag"
 													
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 

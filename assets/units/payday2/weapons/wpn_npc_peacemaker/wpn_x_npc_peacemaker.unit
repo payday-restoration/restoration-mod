@@ -7,8 +7,8 @@
   </dependencies>
   <extensions>
   	<extension name="unit_data" class="ScriptUnitData" />
-    <extension name="base" class="NPCRaycastWeaponBase" >
-			<var name="name_id" value="peacemaker_npc" />
+    <extension name="base" class="EnemyAkimboWeaponBase" >
+			<var name="name_id" value="x_peacemaker_npc" />
     </extension>
 	<extension name="damage" class="UnitDamage" />
   </extensions>

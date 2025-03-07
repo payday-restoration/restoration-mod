@@ -5027,6 +5027,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_faction_override_nypd"] = "纽约市警察局",
         ["mutator_faction_override_lapd"] = "洛杉矶警察局",
         ["faction_selector_choice"] = "阵营: ",
+		
+		["mutator_high_noon"] = "Red Dead: The Heist",
+		["menu_mutator_high_noon"] = "Red Dead: The Heist",
+		["mutator_high_noon_desc"] = "Wild West DC.",
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",		
+		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
+		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",		
 
         --tra
         ["mutator_cloakercuff"] = "Conjurer",

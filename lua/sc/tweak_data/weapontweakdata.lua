@@ -1080,8 +1080,18 @@ local crew_wep_preset = {
 		self.deagle_guard_npc.sounds.prefix = "deagle_npc"
 		
 		self.peacemaker_npc = deep_clone(self.raging_bull_npc)
-		self.peacemaker_npc.DAMAGE = 14.1
+		self.peacemaker_npc.DAMAGE = 9
+		self.peacemaker_npc.sounds.prefix = "pmkr45_npc"
 		self.peacemaker_npc.armor_piercing = false --Reno told me do it 
+		
+		self.x_peacemaker_npc = deep_clone(self.peacemaker_npc)
+		self.x_peacemaker_npc.DAMAGE = 9
+		self.x_peacemaker_npc.sounds.prefix = "pmkr45_npc"
+		self.x_peacemaker_npc.armor_piercing = false	
+		self.x_peacemaker_npc.CLIP_AMMO_MAX = 12
+		self.x_peacemaker_npc.NR_CLIPS_MAX = 5
+		self.x_peacemaker_npc.hold = "akimbo_pistol"
+		self.x_peacemaker_npc.FIRE_MODE = "single"				
 		
 		self.raging_bull_primary_npc = deep_clone(self.raging_bull_npc)
 		self.raging_bull_primary_npc.use_data.selection_index = 2

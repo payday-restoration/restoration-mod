@@ -732,6 +732,29 @@ function CopBase:default_weapon_name(...)
 		self._weapon_set = true		
 	end
 	
+	--For High Noon mutator
+	if not self._weapon_set and restoration and restoration.high_noon and not self._char_tweak.no_mutator_weapon_override then
+		if self._tweak_table == "autumn" then
+			self._default_weapon_id = "x_peacemaker"
+			self._weapon_set = true		
+		end
+		
+		if self._default_weapon_id == "r870" then
+			self._default_weapon_id = "mossberg"
+			self._weapon_set = true	
+		end
+		
+		if self._default_weapon_id == "ump" then
+			self._default_weapon_id = "peacemaker"
+			self._weapon_set = true	
+		end		
+		
+		if self._default_weapon_id == "m4" or self._default_weapon_id == "mp5" or self._default_weapon_id == "amcar" then
+			self._default_weapon_id = "raging_bull"
+			self._weapon_set = true	
+		end				
+	end	
+	
 	--Have White Titandozers use Grenade Launchers/AA-12s like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
 	if self._tweak_table == "tank_hw" and faction == "russia" then
 		self._default_weapon_id = "m32_large"

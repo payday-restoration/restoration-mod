@@ -665,6 +665,8 @@
 	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
 	
+	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_x_npc_peacemaker" force="false" load="true"/>
+	
 	<unit				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>

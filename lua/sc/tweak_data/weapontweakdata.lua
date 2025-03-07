@@ -25114,7 +25114,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_huntsman.damage_type = "shotgun"
 			self.x_huntsman.damage_type_single_ray = "anti_materiel"
 			self.x_huntsman.fire_mode_data.fire_rate = 0.15
-			self.x_huntsman.rays = 9
+			self.x_huntsman.rays = 6
 			self.x_huntsman.kick = self.stat_info.kick_tables.vertical_kick
 			self.x_huntsman.kick_pattern = {
 				{0, self.stat_info.kick_tables.vertical_kick},
@@ -25136,7 +25136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.x_huntsman.stats = {
 				damage = 240,
-				spread = 56,
+				spread = 46,
 				recoil = 31,
 				spread_moving = 6,
 				zoom = 1,
@@ -25149,8 +25149,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.x_huntsman.stats_modifiers = nil
+			self.x_huntsman.always_hipfire = true
 			self.x_huntsman.panic_suppression_chance = 0.05
-			self.x_huntsman.reload_speed_multiplier = 0.7
+			self.x_huntsman.reload_speed_multiplier = 0.6
 			self.x_huntsman.weapon_hold = "x_coal"
 			self.x_huntsman.animations.reload_name_id = "x_rota"
 			self.x_huntsman.use_stance = "x_pm9"
@@ -25166,7 +25167,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_coach.damage_type = "shotgun"
 			self.x_coach.damage_type_single_ray = "anti_materiel"
 			self.x_coach.fire_mode_data.fire_rate = 0.15
-			self.x_coach.rays = 9
+			self.x_coach.rays = 6
 			self.x_coach.kick = self.stat_info.kick_tables.vertical_kick
 			self.x_coach.kick_pattern = {
 				{0, self.stat_info.kick_tables.vertical_kick},
@@ -25188,7 +25189,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.x_coach.stats = {
 				damage = 240,
-				spread = 56,
+				spread = 46,
 				recoil = 31,
 				spread_moving = 6,
 				zoom = 1,
@@ -25201,8 +25202,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.x_coach.stats_modifiers = nil
+			self.x_coach.always_hipfire = true
 			self.x_coach.panic_suppression_chance = 0.05
-			self.x_coach.reload_speed_multiplier = 0.6
+			self.x_coach.reload_speed_multiplier = 0.5
 			self.x_coach.weapon_hold = "x_coal"
 			self.x_coach.animations.reload_name_id = "x_rota"
 			self.x_coach.use_stance = "x_pm9"

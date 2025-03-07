@@ -10424,8 +10424,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							"smg"
 						}
 						self.ranc_heavy_machine_gun.upgrade_blocks = nil
-						self.ranc_heavy_machine_gun.CLIP_AMMO_MAX  = 100
-						self.ranc_heavy_machine_gun.AMMO_MAX = 100
+						self.ranc_heavy_machine_gun.CLIP_AMMO_MAX  = 200
+						self.ranc_heavy_machine_gun.AMMO_MAX = 200
 						self.ranc_heavy_machine_gun.fire_mode_data.fire_rate = 0.1
 						self.ranc_heavy_machine_gun.kick = self.stat_info.kick_tables.kick_m2
 						self.ranc_heavy_machine_gun.supported = true
@@ -10454,7 +10454,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ranc_heavy_machine_gun.can_shoot_through_enemy = true
 						self.ranc_heavy_machine_gun.can_shoot_through_shield = true
 						self.ranc_heavy_machine_gun.can_shoot_through_wall = true
-						self.ranc_heavy_machine_gun.can_shoot_through_titan_shield = true
+						self.ranc_heavy_machine_gun.can_shoot_through_titan_shield = false
 
 			--[[     MINIGUNS     ]]
 
@@ -23708,7 +23708,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sickle.stats = {
 					damage = 30,
-					spread = 71,
+					spread = 61,
 					recoil = 93,
 					spread_moving = 5,
 					zoom = 1,

@@ -5257,7 +5257,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_high_noon"] = "Red Dead: The Heist",
 		["menu_mutator_high_noon"] = "Red Dead: The Heist",
 		["mutator_high_noon_desc"] = "Wild West DC.",
-		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",		
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.\n\nNOTE: When this mutator is disabled after being enabled, this mutator's effects on weapons will remain visible in menus until after a restart or a loading screen.",
 		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
 		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",
 

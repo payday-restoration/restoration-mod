@@ -37492,7 +37492,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_pmag.custom_stats = {
 					ads_speed_mult = 1.05
 				}
-					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
+					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 20,
@@ -37501,7 +37501,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							reload = -2,
 						}
 					}
-					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
+					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_pmag = {
 						stats = {
 							value = 6,
 							extra_ammo = 20,
@@ -37528,6 +37528,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							reload = -2,
 						}
 					}
+					self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_glock_m_d50 = {
+						stats = {
+							value = 6,
+							extra_ammo = 20,
+							concealment = -2,
+							spread = -1,
+							reload = -2,
+						}
+					}
+
 				self.wpn_fps_pis_x_maxim9.override.wpn_fps_pis_glock_m_pmag = {
 					unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_fps_pis_maxim9_m_pmag",
 					third_unit = "units/mods/weapons/wpn_fps_pis_maxim9_pts/wpn_third_pis_maxim9_m_pmag"
@@ -37607,7 +37617,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_pis_glock_m_cmag.custom_stats = {
 					ads_speed_mult = 1.175
 				}
-					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_d50 = {
+					self.wpn_fps_pis_x_g17.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 9,
 							extra_ammo = 166,
@@ -37615,7 +37625,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							concealment = -7
 						}
 					}
-					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_d50 = {
+					self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_glock_m_cmag = {
 						stats = {
 							value = 9,
 							extra_ammo = 166,

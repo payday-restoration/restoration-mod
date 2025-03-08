@@ -13660,8 +13660,8 @@ end)
 				self.wpn_fps_ass_shak12.override = self.wpn_fps_ass_shak12.override or {}
 
 				self.wpn_fps_ass_shak12.override.wpn_fps_upg_o_arbiter_irons_dmc = {
-					third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_o_standard",
-					unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_standard"
+					third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_o_short",
+					unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_short"
 				}
 
 				table.insert(self.wpn_fps_ass_shak12.uses_parts, "wpn_fps_upg_i_singlefire")
@@ -24491,6 +24491,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			"wpn_fps_upg_o_sig",
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_45steel",
+			"wpn_fps_ass_shak12_o_carry_dummy",
 			"wpn_fps_hailstorm_o_irons"
 		},
 		dlc = "sc",
@@ -38684,7 +38685,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_sho_coach_s_short_vanilla.stats = {}
 		self.parts.wpn_fps_sho_coach_s_short_vanilla.custom_stats = {}
 		self.parts.wpn_fps_sho_coach_s_short_vanilla.adds = {"wpn_fps_shot_x_rota_sound_switch"}
-		
+
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
 		self.wpn_fps_sho_x_coach.override.wpn_fps_upg_a_custom_free = {custom_stats = deep_clone(shot_ammo.a_custom_heavy_override.custom_stats)}

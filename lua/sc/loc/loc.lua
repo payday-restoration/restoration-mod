@@ -9,7 +9,7 @@ local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMS
 	local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
 
 -- ResMod english.json
-Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_es_boost"] = "Boost",
 		["menu_es_crew"] = "Crew",
@@ -1178,7 +1178,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
 
@@ -2186,7 +2186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
@@ -4738,7 +4738,7 @@ local f = tweak_data.levels.ai_groups.federales
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
@@ -4746,7 +4746,7 @@ if ai_type == r then
 		})
 	end)
 elseif ai_type == z then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Pciloe Asuaslt in Prergoss",
 			["hud_assault_cover"] = "STYA IN COVRE...FLESH",
@@ -4754,7 +4754,7 @@ elseif ai_type == z then
 		})
 	end)
 elseif ai_type == f then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Asalto En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
@@ -4762,7 +4762,7 @@ elseif ai_type == f then
 		})
 	end)
 elseif ai_type == m then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Murkywater Operation in Progress",
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
@@ -4780,50 +4780,50 @@ end
 	local fbi = tweak_data.levels.ai_groups.fbi
 	local breins = tweak_data.levels.ai_groups.zombie
 
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_Eng", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
 	end)
 
 	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
 		end)
 	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
 		end)
 	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
 		end)
 	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
 		end)
 	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
 		end)
 	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
 		end)
 	end
 end
 
 if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract."
 		})
 	end)
 end
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
@@ -5797,7 +5797,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "Dodge",
 		["menu_st_category_activated"] = "Activatable",

@@ -687,6 +687,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPONRTracksDescID"] = "Выберите музыку, которая начнется во время Точки невозврата в режиме Pro-Job.",
 		["RestorationModMusicShuffleTitleID"] = "Перемешка музыки",
 		["RestorationModMusicShuffleDescID"] = "Музыка будет меняться после конца каждого штурма.",
+		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
 		["RestorationModScaleTitleID"] = "Размер интерфейса",
 		["RestorationModScaleDescID"] = "Изменяет размер интерфейса. Может потребоваться перезапуск игры.",
 		["RestorationModSizeOnScreenTitleID"] = "Размер интерфейса на экране",
@@ -730,7 +732,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetScaleTitleID"] = "Масштаб CRIMENET",
 		["RestorationModPocoCrimenetScaleDescID"] = "Позволяет менять масштаб CRIMENET.",
 		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
-		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
 		["RestorationModVoiceIconTitleID"] = "Голосовой чат",
 		["RestorationModVoiceIconDescID"] = "Отображает иконку, когда игрок использует голосовой чат.",
 		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
@@ -4609,7 +4611,15 @@ end
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
 		end)
 	end
- end
+end
+
+if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
+		LocalizationManager:add_localized_strings({
+			["victory_stage_cash_summary_name_job"] = "Вы получили $stage_cash за прохождение дня, а также дополнительные $job_cash за прохождение контракта."
+		})
+	end)
+end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
@@ -4624,7 +4634,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["cn_menu_contract_daypay_header"] = "Дневная плата:",
 		["cn_menu_contract_jobpay_header"] = "Плата за контракт:",
-		["victory_stage_cash_summary_name_job"] = "Вы получили $stage_cash за прохождение дня, а также дополнительные $job_cash за прохождение контракта.",
 
 		["debug_interact_grenade_crate_take_grenades"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕТАТЕЛЬНОЕ ОРУЖИЕ",
 		["debug_interact_bodybags_bag_take_bodybag"] = "УДЕРЖИВАЙТЕ $BTN_INTERACT ЧТОБЫ ВЗЯТЬ МЕШКИ ДЛЯ ТРУПОВ И СТЯЖКИ",
@@ -4991,7 +5000,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_CG22"] = "Криминальные колядки",
 		["mutator_CG22_desc"] = "На некоторых ограблениях появится елка, которая дает подарки.",
 		["mutator_CG22_longdesc"] = "Рождество 2022:\n\nНа некоторых ограблениях появляются елки, которые дают подарки. Подарки можно уничтожить и получить временные бонусы, или отдать Хайрудину для бонусного опыта, денег и монет Континеталь. При использовании подарков может появиться Бульдозер-Снеговик.",
-		
+
 		["mutator_thecandlesburnoutforyou"] = "Reload Marathon",
 		["mutator_thecandlesburnoutforyou_desc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
 		["mutator_thecandlesburnoutforyou_longdesc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
@@ -5051,13 +5060,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Faction: ",
-		
+
 		["mutator_high_noon"] = "Red Dead: The Heist",
 		["menu_mutator_high_noon"] = "Red Dead: The Heist",
 		["mutator_high_noon_desc"] = "Wild West DC.",
-		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",		
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",
 		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
-		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",		
+		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",
 
 		--Crime Spree mutators
 		["mutator_cloakercuff"] = "Фокусник",

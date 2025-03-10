@@ -771,6 +771,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPONRTracksDescID"] = "Select the music track for Pro-Jobs when the point of no return starts.",
 		["RestorationModMusicShuffleTitleID"] = "Music Shuffle",
 		["RestorationModMusicShuffleDescID"] = "Changes the music track after assault ends.",
+		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
 		["RestorationModScaleTitleID"] = "HUD scaling",
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
@@ -815,6 +817,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Aligns and sorts CRIMENET by difficulty.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET Scale",
 		["RestorationModPocoCrimenetScaleDescID"] = "Allows you to set the scale of CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
 		["RestorationModVoiceIconTitleID"] = "Voice Chat Icon",
 		["RestorationModVoiceIconDescID"] = "Displays when a player is using voice chat in-game.",
 		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
@@ -4809,7 +4813,15 @@ end
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
 		end)
 	end
- end
+end
+
+if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
+		LocalizationManager:add_localized_strings({
+			["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract."
+		})
+	end)
+end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
@@ -4824,7 +4836,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
-		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
 
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		["debug_interact_bodybags_bag_take_bodybag"] = "HOLD $BTN_INTERACT TO REFILL YOUR BODY BAGS AND CABLE TIES",
@@ -5253,7 +5264,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Faction: ",
-		
+
 		["mutator_high_noon"] = "Red Dead: The Heist",
 		["menu_mutator_high_noon"] = "Red Dead: The Heist",
 		["mutator_high_noon_desc"] = "Wild West DC.",
@@ -5795,7 +5806,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-			
+
 		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#$perk_value_1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#$perk_value_2## less affected.\n\nYou gain #{skill_color}#$perk_value_3## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#$perk_value_4## faster.\n\nYou do #{skill_color}#$perk_value_5## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#$perk_value_1## more ammo; effect is doubled for offline heists.\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",

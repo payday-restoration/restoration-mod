@@ -21305,7 +21305,7 @@ end)
 				value = 1,
 				extra_ammo = 10,
 				damage = -30,
-				total_ammo_mod = 204
+				total_ammo_mod = 202
 			}
 			
 			--Sharp Blade
@@ -21316,7 +21316,7 @@ end)
 				value = 1,
 				extra_ammo = -5,
 				damage = 30,
-				total_ammo_mod = -104
+				total_ammo_mod = -103
 			}
 			
 			--Raptor Polymer Body/Thales F88/90 Stock

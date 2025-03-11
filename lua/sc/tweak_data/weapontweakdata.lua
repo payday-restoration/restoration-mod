@@ -16577,7 +16577,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"raygun"
 				}
 				self.raygun.use_data.selection_index = 2
-				self.raygun.AMMO_MAX = 40
+				self.raygun.AMMO_MAX = 60
 				self.raygun.fire_mode_data.fire_rate = 0.33149171270
 				self.raygun.kick = self.stat_info.kick_tables.even_recoil
 				self.raygun.kick_pattern = {
@@ -16589,7 +16589,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.raygun.supported = true
 				self.raygun.ads_speed = 0.200
 				self.raygun.stats = {
-					damage = 18,
+					damage = 12,
 					spread = 86,
 					recoil = 83,
 					zoom = 1,
@@ -16607,6 +16607,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					1
 				}
 				self.raygun.panic_suppression_chance = 0.05
+				self.raygun.direct_damage_percent = 2
 				self.raygun.timers.reload_exit_not_empty = 0.7
 				self.raygun.timers.reload_exit_empty = 0.7
 				self.raygun.always_play_anims = true
@@ -25841,13 +25842,13 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		"shuno",
 	}
 	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX and 
-	not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") then
-		if weapon.CLIP_AMMO_MAX * 2 > weapon.AMMO_MAX then
-			log(tostring( id ) .. " BEFORE " .. tostring( weapon.AMMO_PICKUP[1] ))
-			weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (weapon.CLIP_AMMO_MAX * 2))
-			log(tostring( id ) .. "AFTER " .. tostring( weapon.AMMO_PICKUP[1] ))
-			weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (weapon.CLIP_AMMO_MAX * 2))
-			weapon.AMMO_MAX = weapon.CLIP_AMMO_MAX * 2
+	not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") and not table.contains(weapon.categories, "saw") then
+		local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX)
+		if mag_clamp * 2 > weapon.AMMO_MAX then
+			weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
+			weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))
+			weapon.AMMO_MAX = mag_clamp * 2
+			weapon.stats.concealment = weapon.stats.concealment - 1
 		end
 	end
 end

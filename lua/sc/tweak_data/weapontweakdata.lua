@@ -10200,7 +10200,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Brenner 21 (HK21)
 						self.hk21.categories = {
 							"lmg",
-							"smg"
+							"smg",
+							"mmg"
 						}
 						self.hk21.desc_id = "bm_hk21_sc_desc"
 						self.hk21.has_description = true
@@ -25369,18 +25370,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				end
 			end
 
-			if weap.use_data and weap.selection_index == 5 then
-				weap.recategorize = { "unsupported" }
-				weap.ads_speed = 1
-				weap.damage_falloff = {
-					start_dist = 0.1,
-					end_dist = 1,
-					min_mult = 0.01
-				}
-				weap.CLIP_AMMO_MAX = 0
-				weap.AMMO_MAX = 0
-			end
-
 			if weap.supported then 
 				if weap.recategorize[1] == "unsupported" then
 					weap.recategorize[1] = "wpn_special"
@@ -25739,7 +25728,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					end
 				end
 			end
-			self:calculate_ammo_pickup(weap)
+
+			self:calculate_ammo_pickup(weap, id)
+
+			if weap.use_data and weap.use_data.selection_index == 5 then
+				weap.recategorize = { "unsupported" }
+				weap.ads_speed = 1
+				weap.damage_falloff = {
+					start_dist = 0.1,
+					end_dist = 1,
+					min_mult = 0.01
+				}
+				weap.CLIP_AMMO_MAX = 0
+				weap.AMMO_MAX = 0
+			end
+
 		end
 	end
 end)
@@ -25750,7 +25753,7 @@ function WeaponTweakData:get_swap_speed_multiplier(weapon)
 	weapon.swap_speed_multiplier = swap_speed_mult
 end
 
-function WeaponTweakData:calculate_ammo_pickup(weapon)
+function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	--Define % of total ammo to pickup baseline per damage tier.
 	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
 	local damage_tiers_pickup = {
@@ -25832,6 +25835,21 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 	--Set actual pickup values to use.
 	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier
 	weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * pickup_multiplier
+
+	local exclude_ammo = {
+		"m134",
+		"shuno",
+	}
+	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX and 
+	not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") then
+		if weapon.CLIP_AMMO_MAX * 2 > weapon.AMMO_MAX then
+			log(tostring( id ) .. " BEFORE " .. tostring( weapon.AMMO_PICKUP[1] ))
+			weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (weapon.CLIP_AMMO_MAX * 2))
+			log(tostring( id ) .. "AFTER " .. tostring( weapon.AMMO_PICKUP[1] ))
+			weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (weapon.CLIP_AMMO_MAX * 2))
+			weapon.AMMO_MAX = weapon.CLIP_AMMO_MAX * 2
+		end
+	end
 end
 
 WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure

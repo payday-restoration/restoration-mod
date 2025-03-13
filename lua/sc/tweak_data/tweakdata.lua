@@ -184,7 +184,7 @@ tweak_data.smg = {
 tweak_data.snp = {
 	swap_bonus = 1,
 	ads_move_speed_mult = 0.45,
-	ads_stationary_spread_mult = 0.2,
+	ads_stationary_spread_mult = 0.1,
 	hipfire_spread_mult = 1.5,
 	hipfire_moving_spread_mult = 1.5,
 	shake_mul = 1.1
@@ -224,13 +224,14 @@ tweak_data.assault_rifle = {
 	}
 	tweak_data.dmr_l = {
 		hipfire_spread_mult = 2 / tweak_data.assault_rifle.hipfire_spread_mult,
+		ads_stationary_spread_mult = 0.5,
 		moving_spread_mult = 1.2,
 		shake_mul = 1.05
 	}
 	tweak_data.dmr_h = {
 		hipfire_spread_mult = 2.5 / tweak_data.assault_rifle.hipfire_spread_mult,
 		moving_spread_mult = 1.5,
-		ads_stationary_spread_mult = 0.8,
+		ads_stationary_spread_mult = 0.25,
 		ads_move_speed_mult = 0.4 / tweak_data.assault_rifle.ads_move_speed_mult,
 		shake_mul = 1.1
 	}

@@ -25843,7 +25843,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 	}
 	if id and weapon.AMMO_MAX and weapon.CLIP_AMMO_MAX and 
 	not table.contains(exclude_ammo, id) and not table.contains(weapon.categories, "minigun") and not table.contains(weapon.categories, "saw") then
-		local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX)
+		local mag_clamp = math.min(100, weapon.CLIP_AMMO_MAX / ((table.contains(weapon.categories, "akimbo") and 2) or 1) )
 		if mag_clamp * 2 > weapon.AMMO_MAX then
 			weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * (weapon.AMMO_MAX / (mag_clamp * 2))
 			weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * (weapon.AMMO_MAX / (mag_clamp * 2))

@@ -21316,7 +21316,7 @@ end)
 				value = 1,
 				extra_ammo = -5,
 				damage = 30,
-				total_ammo_mod = -103
+				total_ammo_mod = -102
 			}
 			
 			--Raptor Polymer Body/Thales F88/90 Stock

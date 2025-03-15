@@ -61,6 +61,21 @@ Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
 	end
 end)
 
+tweak_data.upgrades.values.player.body_armor.armor[9] = 25
+tweak_data.upgrades.values.player.body_armor.movement[9] = 0.4
+tweak_data.upgrades.values.player.body_armor.dodge[9] = -0.5
+tweak_data.upgrades.values.player.body_armor.concealment[9] = -2
+tweak_data.upgrades.values.player.body_armor.damage_shake[9] = 0.1
+tweak_data.upgrades.values.player.body_armor.stamina[9] = 0.3
+tweak_data.upgrades.values.player.body_armor.skill_ammo_mul[9] = 1.22
+tweak_data.upgrades.values.player.body_armor.regen_delay[9] = 5.5
+tweak_data.upgrades.values.player.body_armor.deflection[9] = 0.00
+tweak_data.upgrades.values.player.body_armor.dodge_grace[9] = 1
+tweak_data.upgrades.values.player.body_armor.skill_max_health_store[9] = 0.2
+tweak_data.upgrades.values.player.body_armor.skill_kill_change_regenerate_speed[9] = 1.01
+tweak_data.upgrades.values.player.armor_grinding[1][9] = {5.8, 7.25}
+tweak_data.upgrades.values.player.damage_to_armor[1][9] = {10.4, 5}
+
 if GGWEPNENAME then
 	local mod_ids = Idstring("Weapon Rename"):key()
 	local bool1 = "F_"..Idstring("bool1::"..mod_ids):key()
@@ -220,6 +235,8 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_w_ar23_concussive")
 				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_penetrator") then
 					return managers.localization:text("bm_w_ar23_penetrator")
+				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_carbine") then
+					return managers.localization:text("bm_w_ar23_carbine")
 				end
 
 		--[[     BRs     ]]--

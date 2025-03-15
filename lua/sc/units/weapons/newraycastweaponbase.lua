@@ -997,14 +997,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self._burst_size or self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
 		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier_alt = self._burst_fire_rate_multiplier_alt or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT or nil
-		if self._burst_fire_rate_multiplier_alt then
-			self._burst_fire_rate_multiplier_alt = self._burst_fire_rate_multiplier_alt * 1.05 --to help with frame rounding
-		end
 		self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER
 		if self._burst_fire_rate_multiplier then
 			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding
 		end
+		self._burst_fire_rate_multiplier_alt = self._burst_fire_rate_multiplier_alt or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT
 		self._burst_fire_recoil_multiplier = self._burst_fire_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER
 		self._burst_fire_last_recoil_multiplier = self._burst_fire_last_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER
 		self._burst_fire_spread_multiplier = self._burst_fire_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER

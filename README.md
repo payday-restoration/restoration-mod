@@ -111,6 +111,8 @@ Rickerus: Providing assets for the ASU's head.
 
 PlayBONK: Creating the shield bash animation.
 
+IareAwesome17: OMNIA Medic Bulldozer/Additional enemy fixes
+
 Marshie: Russian localisation
 
 LR_Daring: Chinese localisation
@@ -118,6 +120,7 @@ LR_Daring: Chinese localisation
 GullwingDoor: Korean localisation
 
 Bobctopus: Spanish localisation
+
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale
 

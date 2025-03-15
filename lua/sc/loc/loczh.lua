@@ -772,6 +772,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModPONRTracksDescID"] = "选择当任务即将失败开始时专业劫案的音乐。",
         ["RestorationModMusicShuffleTitleID"] = "音乐切换",
         ["RestorationModMusicShuffleDescID"] = "突击结束后切换音乐。",
+        ["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
         ["RestorationModScaleTitleID"] = "HUD缩放",
         ["RestorationModScaleDescID"] = "调整HUD缩放。可能需要重新开始劫案才能生效。",
         ["RestorationModSizeOnScreenTitleID"] = "HUD屏幕中大小",
@@ -815,7 +817,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET尺寸",
         ["RestorationModPocoCrimenetScaleDescID"] = "允许您设置CRIMENET尺寸。",
 		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
-		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",			
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
         ["RestorationModVoiceIconTitleID"] = "语音聊天图标",
         ["RestorationModVoiceIconDescID"] = "当玩家使用游戏内语音聊天时显示。",
         ["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
@@ -4599,7 +4601,15 @@ if _G.HopLib then
             loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
         end)
     end
- end
+end
+
+if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
+		LocalizationManager:add_localized_strings({
+            ["victory_stage_cash_summary_name_job"] = "你从当日劫案中获得了额外的金钱： $stage_cash 因为完成合约，你又获得了额外的金钱： $job_cash "
+		})
+	end)
+end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
     LocalizationManager:add_localized_strings({
@@ -4609,12 +4619,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
         ["menu_asset_lock_additional_assets_pro"] = "专家模式下不可用！",
 		["menu_asset_buy_all_req_skill"] = "##NOT AVAILABLE!##",
-		
+
         ["menu_pro_warning"] = "这是一个专家级任务！如果你失败了，整场合约将直接被终止！\n此外，有去无回会触发于劫案的尾声部分，此时会出现具有极高威胁性的临界反应部队。\n全武器友军伤害已启用。完成劫案获得的经验和金钱提高25%。",
 
         ["cn_menu_contract_daypay_header"] = "任务天数：",
         ["cn_menu_contract_jobpay_header"] = "合约报酬：",
-        ["victory_stage_cash_summary_name_job"] = "你从当日劫案中获得了额外的金钱： $stage_cash 因为完成合约，你又获得了额外的金钱： $job_cash ",
 
         ["debug_interact_grenade_crate_take_grenades"] = "按住 $BTN_INTERACT 来拾取一次投掷物(补满)",
         ["debug_interact_bodybags_bag_take_bodybag"] = "按住 $BTN_INTERACT 来拾取一次尸体袋和绑带(补满)",
@@ -5027,6 +5036,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["mutator_faction_override_nypd"] = "纽约市警察局",
         ["mutator_faction_override_lapd"] = "洛杉矶警察局",
         ["faction_selector_choice"] = "阵营: ",
+
+		["mutator_high_noon"] = "Red Dead: The Heist",
+		["menu_mutator_high_noon"] = "Red Dead: The Heist",
+		["mutator_high_noon_desc"] = "Wild West DC.",
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",
+		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
+		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",
 
         --tra
         ["mutator_cloakercuff"] = "Conjurer",

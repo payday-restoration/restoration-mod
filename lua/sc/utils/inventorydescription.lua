@@ -733,7 +733,8 @@ function WeaponDescription._get_mods_pickup(weapon, name, base_stats)
 			max_pickup = max_pickup * stats.alt_ammo_pickup_max_mul
 		end
 	end
-	local average_pickup = (min_pickup + max_pickup) * 0.5
+	local is_controller = ((managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR) and 1.15) or 1
+	local average_pickup = (min_pickup + max_pickup) * 0.5 * is_controller
 	return average_pickup - base_stats.pickup.value
 end
 
@@ -764,7 +765,8 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 				max_pickup = max_pickup * stats.alt_ammo_pickup_max_mul
 			end
 		end
-		local average_pickup = (min_pickup + max_pickup) * 0.5
+		local is_controller = ((managers.menu:get_controller():get_default_controller_id() ~= "keyboard" and not _G.IS_VR) and 1.15) or 1
+		local average_pickup = (min_pickup + max_pickup) * 0.5 * is_controller
 		return true, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
 	else
 		return false, 0

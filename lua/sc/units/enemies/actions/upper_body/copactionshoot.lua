@@ -704,7 +704,7 @@ function CopActionShoot:update(t)
                 
                 local frag_roll_chance = self._common_data.char_tweak.grenade_toss_chance or 0.1      
                 local frag_roll = math_random() <= frag_roll_chance    
-                local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
+                local grenade_type = self._common_data.char_tweak.grenade_type or "bravo_frag"
 													
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 
@@ -761,7 +761,7 @@ function CopActionShoot:update(t)
 					self._ext_brain._uncloak_t = t + 10
 
 					local is_autumn = self._ext_base._tweak_table == "autumn"
-					if math_random() < (is_autumn and 0.2 or 0.4) then
+					if math_random() < (self._common_data.char_tweak.uncloak_on_shoot_chance or 0.5) then
 						self._unit:movement():set_cloaked(false, true)
 					end
 

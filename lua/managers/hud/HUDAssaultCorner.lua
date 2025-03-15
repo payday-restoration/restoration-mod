@@ -351,6 +351,8 @@ function HUDAssaultCorner:init(hud, full_hud)
 		buff_icon = self._captain.icon
 	end
 	
+	buff_icon = managers.mutators:modify_value("HUDAssaultCorner:NewCaptainIcon", buff_icon)
+	
 	--Always gonna be HVH now
 	if restoration.force_halloween then
 		buff_icon = "guis/textures/pd2/hud_buff_halloween"

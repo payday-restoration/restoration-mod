@@ -808,6 +808,13 @@ function PlayerDamage:damage_melee(attack_data)
 		end
 
 	end	
+	
+	--Uncloak Autumn/Titancloakers on melee strike
+	if attacker_unit:base()._tweak_table == "autumn" or attacker_unit:base()._tweak_table == "spooc_titan" then
+		if attacker_unit:movement():cloaked() and math.random() < (attacker_char_tweak.uncloak_on_melee_chance or 0.5) then
+			attacker_unit:movement():set_cloaked(false, true)
+		end	
+	end
 
 	local blood_effect = attack_data.melee_weapon and attack_data.melee_weapon == "weapon"
 	blood_effect = blood_effect or attack_data.melee_weapon and tweak_data.weapon.npc_melee[attack_data.melee_weapon] and tweak_data.weapon.npc_melee[attack_data.melee_weapon].player_blood_effect or false
@@ -2045,7 +2052,7 @@ function PlayerDamage:set_armor(armor)
 			self._can_dodge_heal = true
 		end
 
-		if armor >= self:_max_armor() then
+		if math.round(armor * 10) >= math.round(self:_max_armor() * 10) then --mmmmm floating point errors
 			managers.player:set_damage_absorption(
 				"full_armor_absorption",
 				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor()

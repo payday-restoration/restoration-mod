@@ -30,13 +30,17 @@ local units_no_gear = {
 	"city_swat_guard"		
 }
 
-local omnia_tswat = { -- OMNIA T SWAT need higher effect position
+local tswat_high = { -- Majority of T SWAT need higher effect position
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
 	Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk"),
 	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),
-	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk")	
+	Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk"),
+	Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle"),
+	Idstring("units/pd2_mod_reapers/characters/ene_titan_rifle/ene_titan_rifle_husk"),
+	Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun"),
+	Idstring("units/pd2_mod_reapers/characters/ene_titan_shotgun/ene_titan_shotgun_husk")
 }
 
 local units_low = { -- Zeal heavies and grenadier need lower effect position
@@ -65,7 +69,7 @@ local hrt_exclude_list = { -- for HRT enemies where usual effect position will b
 	Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5_husk")
 }
 
-local murky_no_gear = { -- Majority of murky units looks better with "no_gear" effect position
+local murky_and_federales_no_gear = { -- Majority of murky units (and some federales) looks better with "no_gear" effect position
 	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk"),
 	Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
@@ -76,7 +80,13 @@ local murky_no_gear = { -- Majority of murky units looks better with "no_gear" e
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),
 	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3"),
-	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk")
+	Idstring("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
+	--Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3"),
+	--Idstring("units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
+	Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+	Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex_husk"),
+	Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+	Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex_husk")
 }
 
 --Reset Summers effect stuff
@@ -89,7 +99,7 @@ function CopBase:reset_summers_dr_effect()
 			parent = self._unit:get_object(Idstring("Head"))
 	})
 end
---When player/bot kill Doc/Molly/Elektra -> find Summers and update his effect
+--When someone kill Doc/Molly/Elektra -> find Summers and update his effect
 function CopBase:find_summers(is_client)					
 	local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), 160000000, managers.slot:get_mask("enemies"))
 	if enemies then
@@ -152,24 +162,24 @@ function CopBase:enable_lpf_buff(state)
  	
 	local unit = self._unit:base()._tweak_table
 	local unit_name = self._unit:name()
+	
+	local faction = tweak_data.levels:get_ai_group_type()
 
 	if table.contains(units_no_gear, unit) and not table.contains(hrt_exclude_list, unit_name) then
 		effect_pos = effect_no_gear
 	end
 	
-	if table.contains(murky_no_gear, unit_name) then
+	if table.contains(murky_and_federales_no_gear, unit_name) then
 		effect_pos = effect_no_gear
 	end
 	
-	if table.contains(omnia_tswat, unit_name) then
+	if table.contains(tswat_high, unit_name) then
 		effect_pos = effect_high
 	end
 	
 	if table.contains(units_low, unit_name) then
 		effect_pos = effect_low
 	end
-	
-	local faction = tweak_data.levels:get_ai_group_type()
 	
 	if unit == "taser_titan" and faction ~= "zombie" then
 		effect_pos = effect_high
@@ -840,6 +850,29 @@ function CopBase:default_weapon_name(...)
 		self._default_weapon_id = "flamethrower"
 		self._weapon_set = true		
 	end
+	
+	--For High Noon mutator
+	if not self._weapon_set and restoration and restoration.high_noon and not self._char_tweak.no_mutator_weapon_override then
+		if self._tweak_table == "autumn" then
+			self._default_weapon_id = "x_peacemaker"
+			self._weapon_set = true		
+		end
+		
+		if self._default_weapon_id == "r870" then
+			self._default_weapon_id = "mossberg"
+			self._weapon_set = true	
+		end
+		
+		if self._default_weapon_id == "ump" then
+			self._default_weapon_id = "peacemaker"
+			self._weapon_set = true	
+		end		
+		
+		if self._default_weapon_id == "m4" or self._default_weapon_id == "mp5" or self._default_weapon_id == "amcar" then
+			self._default_weapon_id = "raging_bull"
+			self._weapon_set = true	
+		end				
+	end	
 	
 	--Have White Titandozers use Grenade Launchers/AA-12s like their Reaper counterparts in Russia/Mexico heists (mostly for Holiday Effects and consistency with factions)
 	if self._tweak_table == "tank_hw" and faction == "russia" then

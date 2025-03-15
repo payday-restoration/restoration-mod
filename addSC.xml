@@ -632,6 +632,8 @@
 	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
 	
+	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_x_npc_peacemaker" force="false" load="true"/>
+	
 	<unit				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
@@ -833,7 +835,6 @@
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df" force="true"/>	
-	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/bulldozer_saiga_helmet_df" force="true"/>
 
 	<!--OMNIA SAIGA DOZER BITS-->	
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>

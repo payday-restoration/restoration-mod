@@ -133,7 +133,7 @@
 			<object filter="'check_blue_smg'" enabled="true" name="'g_swat_smg_lod1'"/>						
 			<run_sequence filter="'check_blue_smg'" name="'totally_'..pick('nothing', 'nothing', 'random', 'nothing')"/>
 			<run_sequence filter="'check_blue_smg'" name="'hat_'..pick('a','a','a','b','a','a','a','a','a')"/>
-			<run_sequence filter="'check_blue_smg'" name="'hat_..pick('headset','headset','headset','headset','headset','headset','nothing','headset','headset')"/>
+			<run_sequence filter="'check_blue_smg'" name="'hat_'..pick('headset','headset','headset','headset','headset','headset','nothing','headset','headset')"/>
 			<run_sequence filter="'check_blue_smg'" name="'goggles_'..pick('a','a','a','c', 'c', 'd', 'c')"/>														
 	
 			<!-- sg -->
@@ -146,6 +146,7 @@
 			<object filter="'check_blue_sg'" enabled="false" name="'g_body'"/>						
 			<run_sequence filter="'check_blue_sg'" name="'helmet'..pick('_chops','_chops','_chops','_headset','_chops','_chops','_chops')"/>
 			<object filter="'check_blue_sg'" enabled="false" name="'g_body_lod1'"/>
+			<run_sequence filter="'check_blue_sg'" name="'goggles_'..pick('c','c','b','b', 'c', 'a', 'd')"/>
 			
 			<!-- rifleman -->			
 			<object filter="'check_blue_ar'" enabled="true" name="'g_swat_ar'"/>						
@@ -157,7 +158,7 @@
 			<!-- heavy rifleman -->			
 			<object filter="'check_blue_heavy_ar'" enabled="true" name="'g_swat_heavy_ar'"/>						
 			<object filter="'check_blue_heavy_ar'" enabled="true" name="'g_swat_heavy_ar_lod1'"/>
-			<run_sequence filter="'check_blue_heavy_ar'" name="'heavy_helmet_b'"/>
+			<run_sequence filter="'check_blue_heavy_ar'" name="'heavy_helmet_d'"/>
 			<object filter="'check_blue_heavy_ar'" enabled="false" name="'g_body'"/>						
 			<object filter="'check_blue_heavy_ar'" enabled="false" name="'g_body_lod1'"/>
 			<object filter="'check_blue_heavy_ar'" enabled="true" name="'g_body_heavy'"/>						
@@ -179,10 +180,9 @@
 			<object filter="'check_blue_heavy_sg'" enabled="true" name="'g_helmet_lod6'"/>
 
 			<!-- shield -->			
-			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_body_shield'"/>						
-			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_body_shield_lod1'"/>
-			<object filter="'check_blue_heavy_shield'" enabled="false" name="'g_body'"/>						
-			<object filter="'check_blue_heavy_shield'" enabled="false" name="'g_body_lod1'"/>			
+			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_swat_shield'"/>						
+			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_swat_shield'"/>
+			<run_sequence filter="'check_blue_heavy_shield'" name="'totally_'..pick('nothing', 'nothing', 'random', 'nothing')"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'heavy_helmet_b'"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'helmet'..pick('nun_actually','nun_actually','nun_actually','nun_actually','_headset','nun_actually','nun_actually')"/>
 									

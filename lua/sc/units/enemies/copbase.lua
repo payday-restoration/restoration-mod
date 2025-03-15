@@ -463,7 +463,7 @@ local enemy_variations = {
 	["units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"] = "swat_sg",
 	["units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"] = "swat_smg",	
 	["units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "heavy_swat_ar",
-	["units/pd2_mod_nypd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "heavy_swat_sg",
+	["units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "heavy_swat_sg",
 	["units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"] = "swat_shield",
 	["units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"] = "swat_sniper",
 	
@@ -514,7 +514,7 @@ local all_head_variants = {
 	["units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"] = "gs_swat_sg",
 	["units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"] = "gs_swat_sg",
 	["units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "head_balaclava_a",
-	["units/pd2_mod_nypd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "head_balaclava_b",	
+	["units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "head_balaclava_b",	
 	["units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"] = "gs_swat",
 	["units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"] = "gs_swat",
 	
@@ -586,6 +586,29 @@ function CopBase:random_mat_seq_initialization()
 	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
 		self._unit:damage():run_sequence_simple(sequence)
 	end
+end
+
+ContourSwapBase = class()
+
+ContourSwapBase._material_translation_map = {}
+local mat_configs = {
+  "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"
+}
+for _, v in pairs(mat_configs) do
+  ContourSwapBase._material_translation_map[tostring(Idstring(v):key())] = Idstring(v .. "_contour")
+  ContourSwapBase._material_translation_map[tostring(Idstring(v .. "_contour"):key())] = Idstring(v)
+end
+
+ContourSwapBase.swap_material_config = CopBase.swap_material_config
+ContourSwapBase.on_material_applied = CopBase.on_material_applied
+ContourSwapBase.is_in_original_material = CopBase.is_in_original_material
+ContourSwapBase.set_material_state = CopBase.set_material_state
+
+function ContourSwapBase:init(unit)
+    UnitBase.init(self, unit, false)
+
+    self._unit = unit
+    self._is_in_original_material = true
 end
 
 --Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded

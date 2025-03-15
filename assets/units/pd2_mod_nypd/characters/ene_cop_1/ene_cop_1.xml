@@ -453,37 +453,9 @@
 			<body enabled="false" name="'rag_RightUpLeg'"/>
 			<body enabled="false" name="'rag_LeftUpLeg'"/>
 		</sequence>
-		<sequence editable_state="true" name="'leg_arm_hitbox'" triggable="true">
-			<body enabled="true" name="'body'"/>
-			<body enabled="true" name="'Head'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Hips'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightUpLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_LeftLeg'"/>
-			<body enabled="true" motion="'keyframed'" name="'rag_RightLeg'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine1'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Spine2'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_LeftForeArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_RightForeArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_LeftArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_RightArm'"/>
-			<body enabled="false" motion="'keyframed'" name="'rag_Head'"/>
-			<constraint enabled="false" name="'LeftUpLeg'"/>
-			<constraint enabled="false" name="'RightUpLeg'"/>
-			<constraint enabled="false" name="'LeftLeg'"/>
-			<constraint enabled="false" name="'RightLeg'"/>
-			<constraint enabled="false" name="'Spine'"/>
-			<constraint enabled="false" name="'Spine1'"/>
-			<constraint enabled="false" name="'Spine2'"/>
-			<constraint enabled="false" name="'LeftForeArm'"/>
-			<constraint enabled="false" name="'RightForeArm'"/>
-			<constraint enabled="false" name="'LeftArm'"/>
-			<constraint enabled="false" name="'RightArm'"/>
-			<constraint enabled="false" name="'Head'"/>
-		</sequence>
 		<sequence editable_state="true" name="'prepare_ragdoll'" triggable="true">
 			<body enabled="false" motion="'dynamic'" name="'rag_Hips'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftLeg'"/>
@@ -495,11 +467,13 @@
 			<body enabled="false" motion="'dynamic'" name="'rag_RightForeArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
+			<body enabled="false" motion="'dynamic'" name="'bag'"/>
+			<body enabled="false" motion="'dynamic'" name="'bag_gren'"/>
 		</sequence>
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
 			<body enabled="false" name="'body'"/>
 			<body enabled="false" name="'Head'"/>
+			<body enabled="true" motion="'dynamic'" name="'rag_Hips'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'"/>
@@ -542,13 +516,13 @@
 			<body motion="'fixed'" name="'jig_holster_right'"/>
 			<body motion="'fixed'" name="'jig_holster_left'"/>
 			<body motion="'fixed'" name="'body_holster_right'"/>
-			<body motion="'fixed'" name="'body_holster_left'"/>
+			<body motion="'fixed'" name="'body_holster_left'"/>						
 			<constraint enabled="false" name="'LeftUpLeg'"/>
 			<constraint enabled="false" name="'RightUpLeg'"/>
 			<constraint enabled="false" name="'LeftLeg'"/>
 			<constraint enabled="false" name="'RightLeg'"/>
 			<constraint enabled="false" name="'Spine'"/>
-			<constraint enabled="false" name="'Spine1'"/>			
+			<constraint enabled="false" name="'Spine1'"/>
 			<constraint enabled="false" name="'Spine2'"/>
 			<constraint enabled="false" name="'LeftForeArm'"/>
 			<constraint enabled="false" name="'RightForeArm'"/>

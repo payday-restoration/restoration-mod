@@ -454,6 +454,7 @@
 			<body enabled="false" motion="'dynamic'" name="'rag_RightForeArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'"/>
+			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>			
 			<body enabled="false" motion="'dynamic'" name="'bag'"/>
 			<body enabled="false" motion="'dynamic'" name="'bag_gren'"/>
 		</sequence>
@@ -464,7 +465,7 @@
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'"/>
+			<body enabled="true" motion="'dynamic'" name="'rag_RightLeg'"/>			
 			<body enabled="true" motion="'dynamic'" name="'rag_Spine'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_Spine1'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_Spine2'"/>

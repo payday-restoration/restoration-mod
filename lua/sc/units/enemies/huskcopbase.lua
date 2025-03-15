@@ -1,4 +1,4 @@
-local enemy_variations = {
+local all_cop_variants = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
 	["units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
@@ -214,15 +214,15 @@ local enemy_mapping = {
 	
 }
 
-local enemy_mapping = {}
+local all_head_variants = {}
 local all_cop_variants = {}
 
-for name, sequence in pairs(all_head_variants) do
+for name, sequence in pairs(all_cop_variants) do
 	all_cop_variants[Idstring(name):key()] = sequence
 	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
 end
 
-for name, sequence in pairs(enemy_variations) do
+for name, sequence in pairs(all_head_variants) do
 	enemy_mapping[Idstring(name):key()] = sequence
 	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
 end

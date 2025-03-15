@@ -484,16 +484,6 @@
 		</sequence>
 		<sequence editable_state="true" name="'prepare_ragdoll'" triggable="true">
 			<body enabled="false" motion="'dynamic'" name="'rag_Hips'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_01'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_02'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_03'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_03'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_04'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_05'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_06'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg_phys'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg_phys'"/>
-			<body enabled="false" motion="'dynamic'" name="'rag_cloth_hips'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_RightUpLeg'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftLeg'"/>
@@ -510,17 +500,6 @@
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
 			<body enabled="false" name="'body'"/>
 			<body enabled="false" name="'Head'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_Hips'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_01'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_02'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_03'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_03'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_04'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_05'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_06'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg_phys'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg_phys'"/>
-			<body enabled="true" motion="'dynamic'" name="'rag_cloth_hips'"/>			
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_RightUpLeg'"/>
 			<body enabled="true" motion="'dynamic'" name="'rag_LeftLeg'"/>

@@ -132,6 +132,7 @@
 			<object enabled="false" name="'g_helmet_plate_lod1'"/>
 			<object enabled="false" name="'g_helmet'"/>
 			<object enabled="false" name="'g_helmet_glass'"/>
+			<object enabled="false" name="'g_helmet_glass_contour'"/>
 			<object enabled="false" name="'g_helmet_glass_lod1'"/>
 			<object enabled="false" name="'g_helmet_lod1'"/>
 			<object enabled="false" name="'g_armor_stomache'"/>

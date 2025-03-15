@@ -6,7 +6,16 @@
     <material name="mtr_bulldozer_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
         <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_df" mip="4"/>
-    </material>	
+    </material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_new_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_new_df"/>
+	</material>
+	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_new_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_new_df" mip="4"/>
+	</material>
+	
 	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm"/>
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>

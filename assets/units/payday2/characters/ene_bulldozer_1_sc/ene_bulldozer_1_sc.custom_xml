@@ -138,6 +138,7 @@
 			<body enabled="true" name="'body_helmet_plate_black'"/>
 			
 			<decal_mesh enabled="true" name="'dm_helmet_black'"/>
+			<decal_mesh enabled="true" name="'dm_helmet_black_glass'"/>
 			<decal_mesh enabled="true" name="'dm_helmet_plate_black'"/>
 			
 			<material_config name="'units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc'"/>															

@@ -1,13 +1,89 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_mod_nypd/characters/ene_security_1/ene_security_1" />
+	<object file="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" />
 
 	<dependencies>
 		
 	</dependencies>
 
 	<extensions>
+		<extension name="spawn_manager" class="ManageSpawnedUnits" >
+			<var name="_char_joint_names" type="table" >	
+				<var value="root_point" />
+				<var value="Hips" />
+				<var value="Spine" />
+				<var value="Spine1" />
+				<var value="Spine2" />
+				<var value="Neck" />
+				<var value="Head" />
+
+				<var value="LeftShoulder" />
+				<var value="LeftArm" />
+				<var value="LeftForeArmRoll" />
+				<var value="LeftForeArm" />
+				<var value="LeftHand" />
+
+				<var value="LeftHandThumb1" />
+				<var value="LeftHandThumb2" />
+				<var value="LeftHandThumb3" />
+
+				<var value="LeftHandIndex1" />
+				<var value="LeftHandIndex2" />
+				<var value="LeftHandIndex3" />
+
+				<var value="LeftHandMiddle1" />
+				<var value="LeftHandMiddle2" />
+				<var value="LeftHandMiddle3" />
+
+				<var value="LeftHandRing1" />
+				<var value="LeftHandRing2" />
+				<var value="LeftHandRing3" />
+
+				<var value="LeftHandPinky1" />
+				<var value="LeftHandPinky2" />
+				<var value="LeftHandPinky3" />
+
+				<var value="RightShoulder" />
+				<var value="RightArm" />
+				<var value="RightForeArmRoll" />
+				<var value="RightForeArm" />
+				<var value="RightHand" />
+
+				<var value="RightHandThumb1" />
+				<var value="RightHandThumb2" />
+				<var value="RightHandThumb3" />
+
+				<var value="RightHandIndex1" />
+				<var value="RightHandIndex2" />
+				<var value="RightHandIndex3" />
+
+				<var value="RightHandMiddle1" />
+				<var value="RightHandMiddle2" />
+				<var value="RightHandMiddle3" />
+
+				<var value="RightHandRing1" />
+				<var value="RightHandRing2" />
+				<var value="RightHandRing3" />
+
+				<var value="RightHandPinky1" />
+				<var value="RightHandPinky2" />
+				<var value="RightHandPinky3" />
+
+				<var value="LeftUpLeg" />
+				<var value="LeftLeg" />
+				<var value="LeftFoot" />
+				<var value="LeftToeBase" />
+
+				<var value="RightUpLeg" />
+				<var value="RightLeg" />
+				<var value="RightFoot" />
+				<var value="RightToeBase" />
+			</var>
+			
+			<var name="allow_client_spawn" value="true" />
+			<var name="local_only" value="true" />
+		</extension>					
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="security" />
@@ -18,9 +94,6 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_hat_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />			
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

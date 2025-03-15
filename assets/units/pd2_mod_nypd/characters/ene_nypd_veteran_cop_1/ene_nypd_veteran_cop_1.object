@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" orientation_object="root_point" />
-	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
+	<diesel materials="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" orientation_object="root_point" />
+	<sequence_manager file="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="c_capsule_body_new" collision_type="capsule"/>
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
@@ -26,7 +26,7 @@
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
 			<object name="Hips" />
-			<object collision_type="capsule" mass="22" padding="-5" name="c_sphere_Hips" />
+			<object collision_type="capsule" mass="22" padding="-5" name="c_sphere_hips" />
 		</body>
 
 		<body name="rag_Spine" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="8" collides_with="4 6" tag="flesh" restitution="0">
@@ -83,9 +83,100 @@
 			<object name="LeftLeg" />
 			<object collision_type="capsule" mass="6" padding="-5" name="c_capsule_LeftLeg" />
 		</body>
+
+		<body name="rag_cloth_01" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="rightCoatJoint_01" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_01"/>
+		</body>
+		<body name="rag_cloth_02" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="rightCoatJoint_02" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_02"/>
+		</body>
+
+		<body name="rag_cloth_03" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="backCoatJoint_01" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_03"/>
+		</body>
+		<body name="rag_cloth_04" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="backCoatJoint_02" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_04"/>
+		</body>
+
+		<body name="rag_cloth_05" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="leftCoatJoint_01" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_05"/>
+		</body>
+		<body name="rag_cloth_06" enabled="true" template="dynamic" friction="0.01" sweep="true" collision_class="hair" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
+			<object name="leftCoatJoint_02" />
+			<object collision_type="box" mass="1" padding="-2.5" name="c_box_06"/>
+		</body>
+
+		<body name="rag_RightUpLeg_phys" enabled="true" template="static" collision_class="hair" collision_group="2" collides_with="3" collides_with_mover="false" friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="1" restitution="0">
+			<object name="RightUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-4" name="c_capsule_RightUpLeg" />
+		</body>
+
+		<body name="rag_LeftUpLeg_phys" enabled="true" template="static" collision_class="hair" collision_group="2" collides_with="3" collides_with_mover="false" friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="1" restitution="0">
+			<object name="LeftUpLeg" />
+			<object collision_type="capsule" mass="22" padding="-4" name="c_capsule_LeftUpLeg" />
+		</body>
+
+		<body name="rag_cloth_hips" enabled="true" template="static" collision_class="hair" collision_group="2" collides_with="3" collides_with_mover="false" friction="0.01"  keyframed="true" collision_script_quiet_time="0.5" collision_script_tag="small" ray="ignore" lin_damping="0" ang_damping="1" restitution="0">
+			<object name="Hips_coat" />
+			<object collision_type="capsule" mass="22" padding="-4" name="c_sphere_hips" />
+		</body>		
 	</bodies>
 
 	<constraints>
+
+		<constraint type="ragdoll" name="cloth_constraint_01" enabled="true">
+			<param body_a="rag_cloth_hips" body_b="rag_cloth_01"/>
+			<param pivot="position:rightCoatJoint_01"/>
+ 			<param twist_axis="xaxis:rightCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+
+		<constraint type="ragdoll" name="cloth_constraint_02" enabled="true">
+			<param body_a="rag_cloth_01" body_b="rag_cloth_02"/>
+			<param pivot="position:rightCoatJoint_02"/>
+ 			<param twist_axis="xaxis:rightCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+
+		<constraint type="ragdoll" name="cloth_constraint_03" enabled="true">
+			<param body_a="rag_cloth_hips" body_b="rag_cloth_03"/>
+			<param pivot="position:backCoatJoint_01"/>
+ 			<param twist_axis="xaxis:backCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+
+		<constraint type="ragdoll" name="cloth_constraint_04" enabled="true">
+			<param body_a="rag_cloth_03" body_b="rag_cloth_04"/>
+			<param pivot="position:backCoatJoint_02"/>
+ 			<param twist_axis="xaxis:backCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+
+		<constraint type="ragdoll" name="cloth_constraint_05" enabled="true">
+			<param body_a="rag_cloth_hips" body_b="rag_cloth_05"/>
+			<param pivot="position:leftCoatJoint_01"/>
+ 			<param twist_axis="xaxis:leftCoatJoint_01" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+
+		<constraint type="ragdoll" name="cloth_constraint_06" enabled="true">
+			<param body_a="rag_cloth_05" body_b="rag_cloth_06"/>
+			<param pivot="position:leftCoatJoint_02"/>
+ 			<param twist_axis="xaxis:leftCoatJoint_02" twist_min="-10" twist_max="10" twist_freedom="10"/>
+			<param cone_y="5" cone_z="15" cone_freedom="15"/>
+			<param damping="100" spring_constant="100" min_restitution="0.2" max_restitution="0.2"/>
+		</constraint>
+	
 		<constraint type="ragdoll" name="RightArm" enabled="false">
 			<param body_a="rag_Spine2" body_b="rag_RightArm"/>
 			<param pivot="position:RightArm"/>
@@ -195,14 +286,91 @@
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
+
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="3000"  max_draw_lod="0" />
-				<object name="g_body_lod1" 	enabled="true" lod="1" />
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
 			</lod_object>
-			<!--<lod_object name="lod_head">-->
-				<object name="g_head" 		enabled="true" /> <!-- max_distance="3000"  max_draw_lod="0"--> 
-				<object name="g_head_lod1" 	enabled="false" /> <!--lod="1"--> 
-			<!--</lod_object>-->
+
+			<lod_object name="lod_coat">
+				<object name="g_coat" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_coat_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_armor">
+				<object name="g_body_armor" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body, mtr_coat" max_distance="1500" />
+					<material materials="mtr_body_lod_2, mtr_coat_lod" />
+				</object>
+				<object name="g_body_armor_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body, mtr_coat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2, mtr_coat_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head_a">
+				<object name="g_head_a" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1500" />
+					<material materials="mtr_head_lod_2" />
+				</object>
+				<object name="g_head_a_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head_b">
+				<object name="g_head_b" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head_vetcop" max_distance="1500" />
+					<material materials="mtr_head_vetcop_lod" />
+				</object>
+				<object name="g_head_b_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_head_vetcop" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_vetcop_lod" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head_c">
+				<object name="g_head_c" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1500" />
+					<material materials="mtr_head_lod_2" />
+				</object>
+				<object name="g_head_c_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_head_d">
+				<object name="g_head_d" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1500" />
+					<material materials="mtr_head_lod_2" />
+				</object>
+				<object name="g_head_d_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod_2" />
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_glasses_a">
+				<object name="g_glasses" 		enabled="false"  max_distance="3000"  max_draw_lod="0" />
+				<object name="g_glasses_lod1" 	enabled="false" lod="1" />
+			</lod_object>
+			
+			<object name="g_glass" enabled="false"  />
+			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 	</graphics>

@@ -348,6 +348,7 @@ skull_dozer = "units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"
 	MutatorHydra.raw_enemy_list["units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
+	MutatorHydra.raw_enemy_list["units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_halloween/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = {taser}
 	MutatorHydra.raw_enemy_list["units/pd2_mod_reapers/characters/ene_bulldozer_3/ene_bulldozer_3"] = {taser}

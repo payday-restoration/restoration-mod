@@ -245,7 +245,7 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_helmet" enabled="true" material="helmet" />
 		<decal_mesh name="c_glass_c"  enabled="false" material="glass_no_decal" />
 		<decal_mesh name="c_altyn_glass"  enabled="false" material="glass_no_decal" />
 		<decal_mesh name="c_altyn_visor"  enabled="false" material="helmet" />

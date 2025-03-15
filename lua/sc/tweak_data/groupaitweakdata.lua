@@ -2050,7 +2050,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1")
 			},				
 			nypd = {
-				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1")
 			},	
 			lapd = {
 				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
@@ -2084,7 +2084,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2")
 			},				
 			nypd = {
-				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1"),
 				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2")
 			},	
 			lapd = {
@@ -6485,7 +6485,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3")
 				},						
 				nypd = {
-					Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")							
+					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")								
@@ -9391,10 +9391,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					nypd = {
 						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"),
 						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"),
 						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"),
-						Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"),
+						Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"),
 						Idstring("units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer"),
 						Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 					},

@@ -1662,7 +1662,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			sniper = {
 				"units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1",
-				"units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
+				"units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"
 			}
 		},
 		--Mix of NYPD FBI+GenSec
@@ -1722,7 +1722,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 				"units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
 			},
 			sniper = {
-				"units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc",
+				"units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2",
 				"units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
 			},
 			taser = "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1",
@@ -1793,7 +1793,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer = {
 				"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+				"units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
 		--ZEAL

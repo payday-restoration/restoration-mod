@@ -6,11 +6,11 @@
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="c_capsule_body_new" collision_type="capsule"/>
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere"/>
+			<object name="c_sphere_head" collision_type="sphere" padding="-8" />
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -195,43 +195,346 @@
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+			<lod_object name="lod_body_cop_longsleeve">
+				<object name="g_body_cop_longsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_body" max_distance="1000" />
 					<material materials="mtr_body_lod_1" max_distance="1500" />
 					<material materials="mtr_body_lod_2" />
 				</object>
-				<object name="g_body_lod1" 	enabled="true" lod="1" >
+				<object name="g_body_cop_longsleeve_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod_2" />
 				</object>
 			</lod_object>
 
-			<lod_object name="lod_head_var_1">
-				<object name="g_head_var_1" enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_head" max_distance="1000" />
-					<material materials="mtr_head_lod_1" max_distance="1500" />
-					<material materials="mtr_head_lod_2" />
+			<lod_object name="lod_body_cop_shortsleeve">
+				<object name="g_body_cop_shortsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
 				</object>
-				<object name="g_head_var_1_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_head_lod_2" />
-				</object>
-			</lod_object>
-
-			<lod_object name="lod_head_var_2">
-				<object name="g_head_var_2" enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body" max_distance="0" />				
-					<material materials="mtr_head" max_distance="1000" />
-					<material materials="mtr_head_lod_1" max_distance="1500" />
-					<material materials="mtr_head_lod_2" />
-				</object>
-				<object name="g_head_var_2_lod1" 	enabled="false" lod="1" >
+				<object name="g_body_cop_shortsleeve_lod1" 	enabled="false" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_head_lod_2" />
+					<material materials="mtr_body_lod_2" />
 				</object>
 			</lod_object>
 			
+			<lod_object name="lod_body_fbi_longsleeve">
+				<object name="g_body_fbi_longsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_fbi_longsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_fbi_shortsleeve">
+				<object name="g_body_fbi_shortsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_fbi_shortsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_body_fbi3_longsleeve">
+				<object name="g_body_fbi3_longsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_fbi3_longsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_fbi3_shortsleeve">
+				<object name="g_body_fbi3_shortsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_fbi3_shortsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_cop_beefcake_shortsleeve">
+				<object name="g_body_cop_shortsleeve_beefcake" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_cop_shortsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+
+			<lod_object name="lod_body_sec_longsleeve">
+				<object name="g_body_sec_longsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_sec_longsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_sec_shortsleeve">
+				<object name="g_body_sec_shortsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_sec_shortsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_redsec_longsleeve">
+				<object name="g_body_redsec_longsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_redsec_longsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<lod_object name="lod_body_redsec_shortsleeve">
+				<object name="g_body_redsec_shortsleeve" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_redsec_shortsleeve_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<!-- PISTOL -->
+			<lod_object name="lod_body_secpis">
+				<object name="g_security_pistol" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_security_pistol_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			
+			<!-- SMG -->
+			<lod_object name="lod_body_secsmg">
+				<object name="g_security_smg" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_security_smg_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			
+			<!-- SHOT -->
+			<lod_object name="lod_body_secshot">
+				<object name="g_body_security_arm" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_body_security_arm_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<!-- PISTOL -->
+			<lod_object name="lod_body_redsecpis">
+				<object name="g_security_red_pistol" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_security_red_pistol_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			
+			<!-- SMG -->
+			<lod_object name="lod_body_redsecsmg">
+				<object name="g_security_red_smg" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_security_red_smg_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+			
+			<!-- SHOT -->
+			<lod_object name="lod_body_redsecshot">
+				<object name="g_security_red_arm" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_security_red_arm_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>
+			</lod_object>
+
+			<!-- WATCH -->
+			<lod_object name="lod_watch">
+				<object name="g_watch" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod_1" max_distance="1500" />
+					<material materials="mtr_body_lod_2" />
+				</object>
+				<object name="g_watch_lod1" 	enabled="false" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod_2" />
+				</object>					
+			</lod_object>
+
+				<!-- PISTOL -->
+				<lod_object name="lod_body_pis">
+					<object name="g_body_cop_pistol" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_body_cop_pistol_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				
+				<!-- BRONCO -->
+				<lod_object name="lod_body_rev">
+					<object name="g_body_cop_revolver" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_body_cop_revolver_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				
+				<!-- SMG -->
+				<lod_object name="lod_body_smg">
+					<object name="g_body_cop_smg" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_body_cop_smg_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				
+				<!-- SG -->
+				<lod_object name="lod_body_sg">
+					<object name="g_body_cop_sg" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_body_cop_sg_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+
+				<lod_object name="lod_hat">
+					<object name="g_hat_lod1" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_hat_lod2" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				<lod_object name="lod_cap">
+					<object name="g_hat_lod3" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_hat_lod4" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				
+				<lod_object name="lod_glasses">
+					<object name="g_glasses" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_glasses_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+				
+				<lod_object name="lod_fbi1_body">
+					<object name="g_body_fbi1" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+						<material materials="mtr_body" max_distance="1000" />
+						<material materials="mtr_body_lod_1" max_distance="1500" />
+						<material materials="mtr_body_lod_2" />
+					</object>
+					<object name="g_body_fbi1_lod1" 	enabled="false" lod="1" >
+						<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+						<material materials="mtr_body_lod_2" />
+					</object>
+				</lod_object>
+
+				<!-- tie  -->
+				<object name="g_tie" enabled="false" />
+				<object name="g_earpiece" enabled="false" />
+				
+				<object name="g_glass" enabled="false" />
+
+				<!-- tie blue  -->
+				<object name="g_tie_1" enabled="false" />
+
+				<!-- tie red  -->
+				<object name="g_tie_2" enabled="false" />
+				
+				<!-- gensec logo -->
+				<object name="g_hat_lod5" enabled="false" />
+				<!-- fbi logo -->
+				<object name="g_hat_lod6" enabled="false" />
+		
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 			
 		</graphic_group>

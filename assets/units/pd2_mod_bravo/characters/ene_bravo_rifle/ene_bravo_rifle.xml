@@ -30,6 +30,18 @@
 		<filter name="'check_sniper'">
 			<check value="vars.var_gadgets_pooper == 4"/>
 		</filter>
+		
+		<filter name="'check_guard_ar'">
+			<check value="vars.var_gadgets_pooper == 5"/>
+		</filter>
+		
+		<filter name="'check_guard_sg'">
+			<check value="vars.var_gadgets_pooper == 6"/>
+		</filter>
+		
+		<filter name="'check_guard_lmg'">
+			<check value="vars.var_gadgets_pooper == 7"/>
+		</filter>
 
 		<filter name="'check_goggle_a'">
 			<check value="vars.var_goggles == 1"/>
@@ -57,6 +69,21 @@
 		
 		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
 			<set_variables var_gadgets_pooper="4"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'swat_guard_ar'" triggable="true" once="true">						
+			<set_variables var_gadgets_pooper="5"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'swat_guard_sg'" triggable="true" once="true">						
+			<set_variables var_gadgets_pooper="6"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'swat_guard_lmg'" triggable="true" once="true">						
+			<set_variables var_gadgets_pooper="7"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
@@ -89,7 +116,33 @@
 			<run_sequence filter="'check_lmg'" name="'goggles_'..pick('nothing','nothing','nothing', 'c', 'a', 'b', 'nothing', 'nothing', 'nothing')"/>	
 			<object filter="'check_lmg'" enabled="true" name="'g_helmet_lod3'"/>						
 			<object filter="'check_lmg'" enabled="true" name="'g_helmet_lod4'"/>			
-			<run_sequence filter="'check_lmg'" name="'acc'..pick('_headset','_headset','_headset', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/>			
+			<run_sequence filter="'check_lmg'" name="'acc'..pick('_headset','_headset','_headset', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/>		
+			<!-- guard 1 -->		
+			<run_sequence filter="'check_guard_ar'" name="'head_'..pick('a','b','c', 'd', 'a', 'c', 'd', 'e')"/>			
+			<run_sequence filter="'check_guard_ar'" name="'acc'..pick('nothing','nothing','nothing', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/><object filter="'check_guard_ar'" enabled="false" name="'g_helmet_lod1'"/>						
+			<object filter="'check_guard_ar'" enabled="false" name="'g_helmet_lod2'"/>			
+			<object filter="'check_guard_ar'" enabled="true" name="'g_swat_guard_1'"/>						
+			<object filter="'check_guard_ar'" enabled="true" name="'g_swat_guard_1_lod1'"/>			
+			<run_sequence filter="'check_guard_ar'" name="'body_'..pick('default','default','default','default','sleeveup','default','default')"/>								
+			
+			<!-- guard 2 -->		
+			<run_sequence filter="'check_guard_sg'" name="'head_'..pick('a','b','balaclava', 'd', 'a', 'c', 'd', 'e')"/>			
+			<run_sequence filter="'check_guard_sg'" name="'acc'..pick('_headset','nothing','nothing', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/><object filter="'check_guard_sg'" enabled="false" name="'g_helmet_lod1'"/>
+			<run_sequence filter="'check_guard_sg'" name="'body_'..pick('sleeveup','default','default','sleeveup','default','sleeveup','sleeveup')"/>
+			<object filter="'check_guard_sg'" enabled="false" name="'g_helmet_lod2'"/>		
+			<object filter="'check_guard_sg'" enabled="true" name="'g_hat_lod1'"/>						
+			<object filter="'check_guard_sg'" enabled="true" name="'g_hat_lod2'"/>			
+			<object filter="'check_guard_sg'" enabled="true" name="'g_swat_guard_2'"/>						
+			<object filter="'check_guard_sg'" enabled="true" name="'g_swat_guard_2_lod1'"/>
+			<decal_mesh filter="'check_guard_sg'" enabled="false" name="'dm_helmet'"/>					
+			
+			<!-- guard 3 -->		
+			<run_sequence filter="'check_guard_lmg'" name="'head_'..pick('a','b','balaclava', 'd', 'a', 'c', 'd', 'e')"/>			
+			<run_sequence filter="'check_guard_lmg'" name="'acc'..pick('_headset','nothing','nothing', '_headset', '_headset', '_headset', '_headset', 'nothing', '_headset')"/>
+			<run_sequence filter="'check_guard_lmg'" name="'body_'..pick('default','default','default','default','sleeveup','default','default')"/>								
+			<object filter="'check_guard_lmg'" enabled="true" name="'g_swat_guard_3'"/>						
+			<object filter="'check_guard_lmg'" enabled="true" name="'g_swat_guard_3_lod1'"/>
+						
 		
 			<!-- dmr -->
 			<run_sequence filter="'check_sniper'" name="'head_'..pick('recon', 'recon','a', 'balaclava', 'c', 'a', 'b', 'c', 'd', 'e')"/>			

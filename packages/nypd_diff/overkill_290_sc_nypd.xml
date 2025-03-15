@@ -86,7 +86,6 @@
 	<model				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
 	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1" />	
 	
 	<!--Gensec Shield Acc-->
 	<model				path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
@@ -208,7 +207,6 @@
 
 	<!--Omnia LPF-->
 	<object				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
@@ -244,7 +242,6 @@
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
 	<object				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>		

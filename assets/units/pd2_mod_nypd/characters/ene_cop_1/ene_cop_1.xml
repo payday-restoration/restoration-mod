@@ -311,6 +311,11 @@
 				<object enabled="true" name="'g_body_cop_longsleeve_lod1'"/>				
 			</sequence>	
 			
+			<sequence editable_state="true" name="'body_cop_pis'" once="true" triggable="true">				
+				<object enabled="true" name="'g_body_cop_pistol'"/>
+				<object enabled="true" name="'g_body_cop_pistol_lod1'"/>				
+			</sequence>	
+			
 			<!-- sg -->
 			<sequence editable_state="true" name="'body_cop_sg'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_cop_sg'"/>

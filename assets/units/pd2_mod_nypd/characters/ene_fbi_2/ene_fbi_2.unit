@@ -90,7 +90,7 @@
 			</var>
 			
 			<var name="allow_client_spawn" value="true" />
-			<var name="local_only" value="false" />
+			<var name="local_only" value="true" />
 		</extension>						
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

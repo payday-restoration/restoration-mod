@@ -535,12 +535,6 @@
 			<body enabled="true" motion="'dynamic'" name="'rag_Head'"/>
 			<constraint enabled="true" name="'LeftUpLeg'"/>
 			<constraint enabled="true" name="'RightUpLeg'"/>
-			<constraint enabled="true" name="'cloth_constraint_01'"/>
-			<constraint enabled="true" name="'cloth_constraint_02'"/>
-			<constraint enabled="true" name="'cloth_constraint_03'"/>
-			<constraint enabled="true" name="'cloth_constraint_04'"/>
-			<constraint enabled="true" name="'cloth_constraint_05'"/>
-			<constraint enabled="true" name="'cloth_constraint_06'"/>
 			<constraint enabled="true" name="'LeftLeg'"/>
 			<constraint enabled="true" name="'RightLeg'"/>
 			<constraint enabled="true" name="'Spine'"/>
@@ -570,28 +564,12 @@
 			<body motion="'fixed'" name="'jig_holster_left'"/>
 			<body motion="'fixed'" name="'body_holster_right'"/>
 			<body motion="'fixed'" name="'body_holster_left'"/>
-			<body motion="'fixed'" name="'rag_cloth_01'"/>
-			<body motion="'fixed'" name="'rag_cloth_02'"/>
-			<body motion="'fixed'" name="'rag_cloth_03'"/>
-			<body motion="'fixed'" name="'rag_cloth_03'"/>
-			<body motion="'fixed'" name="'rag_cloth_04'"/>
-			<body motion="'fixed'" name="'rag_cloth_05'"/>
-			<body motion="'fixed'" name="'rag_cloth_06'"/>
-			<body motion="'fixed'" name="'rag_RightUpLeg_phys'"/>
-			<body motion="'fixed'" name="'rag_LeftUpLeg_phys'"/>
-			<body motion="'fixed'" name="'rag_cloth_hips'"/>			
 			<constraint enabled="false" name="'LeftUpLeg'"/>
 			<constraint enabled="false" name="'RightUpLeg'"/>
 			<constraint enabled="false" name="'LeftLeg'"/>
 			<constraint enabled="false" name="'RightLeg'"/>
 			<constraint enabled="false" name="'Spine'"/>
 			<constraint enabled="false" name="'Spine1'"/>			
-			<constraint enabled="false" name="'cloth_constraint_01'"/>
-			<constraint enabled="false" name="'cloth_constraint_02'"/>
-			<constraint enabled="false" name="'cloth_constraint_03'"/>
-			<constraint enabled="false" name="'cloth_constraint_04'"/>
-			<constraint enabled="false" name="'cloth_constraint_05'"/>
-			<constraint enabled="false" name="'cloth_constraint_06'"/>			
 			<constraint enabled="false" name="'Spine2'"/>
 			<constraint enabled="false" name="'LeftForeArm'"/>
 			<constraint enabled="false" name="'RightForeArm'"/>

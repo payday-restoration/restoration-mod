@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1" orientation_object="root_point" />
+	<diesel materials="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" orientation_object="root_point" />
 	<sequence_manager file="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -474,13 +474,12 @@
 
 			<lod_object name="lod_head_hrt_balaclava">
 				<object name="g_balaclava_c" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_head" max_distance="1000" />
-					<material materials="mtr_head_lod_1" max_distance="1500" />
-					<material materials="mtr_head_lod_2" />
+					<material materials="mtr_balaclava" max_distance="1000" />
+					<material materials="mtr_balaclava_lod"  />
 				</object>
 				<object name="g_balaclava_c_lod1" enabled="false" lod="1" >
-					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_head_lod_2" />
+					<material materials="mtr_balaclava" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_balaclava_lod" />
 				</object>
 			</lod_object>
 

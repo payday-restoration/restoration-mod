@@ -592,7 +592,7 @@ ContourSwapBase = class()
 
 ContourSwapBase._material_translation_map = {}
 local mat_configs = {
-  "units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"
+  "units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas"
 }
 for _, v in pairs(mat_configs) do
   ContourSwapBase._material_translation_map[tostring(Idstring(v):key())] = Idstring(v .. "_contour")

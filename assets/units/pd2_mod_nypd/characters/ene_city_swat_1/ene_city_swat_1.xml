@@ -45,6 +45,18 @@
 		<filter name="'check_blue_heavy_sg'">
 			<check value="vars.var_gadgets_blue_heavy == 2"/>
 		</filter>
+		
+		<body name="'glass_l'">
+			<endurance bullet="1" explosion="4">
+				<run_sequence name="'crk_glass_l'"/>
+			</endurance>
+		</body>	
+
+		<body name="'glass_r'">
+			<endurance bullet="1" explosion="4">
+				<run_sequence name="'crk_glass_r'"/>
+			</endurance>
+		</body>	
 
 		<filter name="'check_blue_smg'">
 			<check value="vars.var_gadgets_blue_light == 1"/>
@@ -336,7 +348,7 @@
 		</sequence>				
 		
 		<sequence editable_state="true" name="'goggles_b'" once="true" triggable="true">
-			<object enabled="true" name="'g_helmet_lod3'"/>
+			<object enabled="true" name="'g_helmet_lod19'"/>
 			<object enabled="true" name="'g_goggles_a_lod1'"/>
 			<object enabled="true" name="'g_glass'"/>
 			<set_variables var_goggles="2"/>										

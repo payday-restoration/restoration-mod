@@ -166,7 +166,7 @@ local enemy_variations = {
 	
 }
 
-local unit_sequence_mapping_clean = {
+local enemy_mapping = {
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_cop",
@@ -214,12 +214,12 @@ local unit_sequence_mapping_clean = {
 	
 }
 
-local unit_sequence_mapping = {}
 local enemy_mapping = {}
+local all_cop_variants = {}
 
-for name, sequence in pairs(unit_sequence_mapping_clean) do
-	unit_sequence_mapping[Idstring(name):key()] = sequence
-	unit_sequence_mapping[Idstring(name .. "_husk"):key()] = sequence
+for name, sequence in pairs(all_head_variants) do
+	all_cop_variants[Idstring(name):key()] = sequence
+	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
 end
 
 for name, sequence in pairs(enemy_variations) do
@@ -227,66 +227,43 @@ for name, sequence in pairs(enemy_variations) do
 	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
 end
 
-CopBase.unit_sequence_mapping = clone(unit_sequence_mapping)
-
-function CopBase:_run_unit_sequences()
+Hooks:PreHook(HuskCopBase, "post_init", "hits_post_init", function(self)
 	local name = self._unit:name():key()
+	
+	local character_sequence = all_cop_variants[name]
+	
+	local spawn_manager_ext = self._unit:spawn_manager()
+	local damage_ext = self._unit:character_damage()
+	local head = damage_ext._head
+	
+	if spawn_manager_ext then	
+		if head then	
+			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
+			
+			spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
 
-	local light_sequence = "enable_light"
-
-	-- Enable a flashlight if the level has flashlights enabled
-	if managers.game_play_central and managers.game_play_central:flashlights_on() then
-		if self._unit:damage():has_sequence(light_sequence) then
-			self._unit:damage():run_sequence_simple(light_sequence)
+			self._head_unit = spawn_manager_ext:get_unit("cop_head")
 		end
 	end
-
-	local unit_sequence = self.unit_sequence_mapping[name]
 	
-	-- Run the initial sequence to enable pouches, helmets etc.
-	if unit_sequence then
-		if self._unit:damage() then	
-			if self._unit:damage():has_sequence(unit_sequence) then
-				self._unit:damage():run_sequence_simple(unit_sequence)
-			end
-		end
+	if alive(self._head_unit) then		
+		self._head_unit:set_enabled(self._unit:enabled())
 		
-		local spawn_manager_ext = self._unit:spawn_manager()
-
-		local damage_ext = self._unit:character_damage()
-		local head = damage_ext._head
-			
-		-- If the unit had a head defined in its .unit file, spawn and parent it 
-		if spawn_manager_ext then	
-			if head then	
-				managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
-				
-				spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
-
-				self._head_unit = spawn_manager_ext:get_unit("cop_head")
-			end
+		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
+			self._head_unit:damage():run_sequence_simple(character_sequence)
 		end
-		
-		-- If the head's sequence manager supports the parent unit, run its initial sequence
-		if alive(self._head_unit) then		
-			self._head_unit:set_enabled(self._unit:enabled())
-			
-			if self._head_unit:damage() and self._head_unit:damage():has_sequence(unit_sequence) then
-				self._head_unit:damage():run_sequence_simple(unit_sequence)
-			end
-		end
+	end
+end)
+
+function HuskCopBase:random_mat_seq_initialization()
+	local sequence = enemy_mapping[self._unit:name():key()]
+    local lvl_tweak_data = tweak_data.levels[job]
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+
+	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
+		self._unit:damage():run_sequence_simple(sequence)
 	end
 end
-
-Hooks:PreHook(CopBase, "post_init", "random_post_init", function(self)
-	self:_run_unit_sequences()
-end)
-
-HuskCopBase._run_unit_sequences = CopBase._run_unit_sequences
-
-Hooks:PreHook(HuskCopBase, "post_init", "random_post_init", function(self)
-	self:_run_unit_sequences()
-end)
 
 Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 	if self._unit:base()._tweak_table == "summers" then

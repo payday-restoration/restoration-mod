@@ -2732,7 +2732,7 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_hw")
 	
 	--Halloween Bulldozer, captain minion variant with LMG (Used only for Winters' Squad on DSPJ)
-	self.tank_hw_minion = deep_clone(self.tank_titan_minion)
+	self.tank_hw_minion = deep_clone(self.tank_titan)
 	self.tank_hw_minion.weapon = deep_clone(presets.weapon.normal)
 	self.tank_hw_minion.ignore_headshot = false
 	self.tank_hw_minion.melee_anims = nil

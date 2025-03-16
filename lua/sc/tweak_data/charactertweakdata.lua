@@ -2655,12 +2655,16 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
-	--Titandozer, regular
+	--Titandozer, captain variant
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.weapon = deep_clone(presets.weapon.normal)
 	self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
+	self.tank_titan.no_omnia_heal = true
+	self.tank_titan.dt_suppress = {
+		range = 500
+	}
 	self.tank_titan.HEALTH_INIT = 750
 	self.tank_titan.headshot_dmg_mul = 5.5
 	self.tank_titan.immune_to_concussion = true
@@ -2692,6 +2696,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
+	self.tank_titan_assault.no_omnia_heal = false
 	if self:get_ai_group_type() == "federales" then
 		self.tank_titan_assault.dt_suppress = {
 			range = 500
@@ -2701,16 +2706,6 @@ function CharacterTweakData:_init_tank(presets)
 	end
 	self.tank_titan_assault.no_dozer_armor_resistance = true
 	table.insert(self._enemy_list, "tank_titan_assault")
-
-	--Titandozer, captain minion variant with LMG (Used only for Winters' Squad on DSPJ)
-	self.tank_titan_minion = deep_clone(self.tank_titan)
-	self.tank_titan_minion.tags = {"law", "tank", "special", "tank_titan"}
-	self.tank_titan_minion.no_omnia_heal = true
-	self.tank_titan_minion.dt_suppress = {
-		range = 500
-	}
-	self.tank_titan_minion.no_dozer_armor_resistance = true
-	table.insert(self._enemy_list, "tank_titan_minion")
 
 	--Halloween Bulldozer (Black)
 	self.tank_hw_black = deep_clone(self.tank_black)
@@ -18582,8 +18577,7 @@ function CharacterTweakData:character_map()
 			list = {
 				"ene_vip_1",
 				"ene_vip_2",
-				"ene_vip_2_assault",
-				"ene_vip_2_minion",					
+				"ene_vip_2_assault",			
 				"ene_spring",
 				"ene_vip_autumn",
 				"ene_spook_cloak_1",
@@ -19063,7 +19057,7 @@ function CharacterTweakData:character_map()
 				"ene_akan_medic_zdann",	
 				"ene_akan_lpf",
 				"ene_vip_2",
-				"ene_vip_2_minion",
+				"ene_vip_2_assault",
 				"ene_titan_shotgun",
 				"ene_titan_rifle",
 				"ene_fbi_titan_1",

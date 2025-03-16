@@ -6535,7 +6535,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault")
 			},
 			zombie = {
 				Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
@@ -6544,7 +6544,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault")
 			},				
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
@@ -8726,28 +8726,28 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	self.unit_categories.Phalanx_dozer = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			},
 			russia = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
 			},
 			zombie = {
 				Idstring("units/payday2/characters/ene_bulldozer_4_minion/ene_bulldozer_4_minion")
 			},
 			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			},
 			federales = {
-				Idstring("units/pd2_mod_reapers/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2")
 			},				
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			},		
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			},
 			fbi = {
-				Idstring("units/pd2_dlc_vip/characters/ene_vip_2_minion/ene_vip_2_minion")
+				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			}
 		},
 		access = access_type_all,

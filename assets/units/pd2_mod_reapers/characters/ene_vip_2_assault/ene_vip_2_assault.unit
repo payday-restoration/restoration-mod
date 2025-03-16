@@ -5,6 +5,7 @@
 
 	<dependencies>
 		
+		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
@@ -18,18 +19,18 @@
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="base" class="HuskCopBase" >
+		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_titan_assault" />
-			<var name="_default_weapon_id" value="hk21_dozer" />
+			<var name="_default_weapon_id" value="m32_large" />
 		</extension>
-		<extension name="inventory" class="HuskCopInventory" />
-		<extension name="brain" class="HuskCopBrain" />
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="HuskTankCopDamage" >
+		<extension name="character_damage" class="TankCopDamage">
 			<var name="_head_body_name" value="head" />
 		</extension>
-		<extension name="movement" class="HuskCopMovement" >
+		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="bulldozer" />
 			<var name="_anim_global" value="tank" />
 		</extension>
@@ -44,9 +45,9 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-  <network sync="husk" remote_unit=""/>
+	<network sync="spawn" remote_unit="units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault_husk"/>
 
-  <sounds>
+	<sounds>
 		<default_soundsource source="Hips"/>
-  </sounds>
+	</sounds>
 </unit>

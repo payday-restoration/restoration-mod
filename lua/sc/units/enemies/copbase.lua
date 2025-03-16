@@ -321,6 +321,7 @@ end)
 local enemy_variations = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
+	["units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper",
 	["units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
 	["units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new"] = "winters_shield",
 	["units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"] = "taser_titan",
@@ -390,6 +391,7 @@ local enemy_variations = {
 	["units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"] = "swat_guard_lmg",	
 	
 	["units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"] = "swat_sniper",
+	["units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted"] = "swat_sniper",
 	
 	["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "fbi_1",
 	["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2",

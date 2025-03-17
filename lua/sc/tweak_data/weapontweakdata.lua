@@ -11558,6 +11558,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.groza_underbarrel.stats_modifiers = {damage = 10}
+						self.groza_underbarrel.alt_shotgunraycast = true
 
 					--TKB-059
 						--self.tkb.desc_id = "bm_tkb_sc_desc"
@@ -11759,7 +11760,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.asval.stats = {
 							damage = 45,
 							spread = 80,
-							recoil = 67,
+							recoil = 63,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -11970,6 +11971,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contraband_m203.kick = self.stat_info.kick_tables.vertical_kick
 						self.contraband_m203.panic_suppression_chance = 0.05
 						self.contraband_m203.ignore_damage_upgrades = true
+						self.contraband_m203.alt_shotgunraycast = true
 						self.contraband_m203.use_stance = nil
 						self.contraband_m203.AMMO_MAX = 5
 						self.contraband_m203.supported = true

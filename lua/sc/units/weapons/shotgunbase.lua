@@ -12,6 +12,10 @@ local math_cos = math.cos
 local math_rad = math.rad
 local math_random = math.random
 local math_sin = math.sin
+local math_tan = math.tan
+local math_cos = math.cos
+local math_max = math.max
+local math_min = math.min
 
 local old_update_stats_values = ShotgunBase._update_stats_values
 

@@ -27703,6 +27703,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_pd3_qbz191_grip.stats = {value = 0}
 			self.parts.wpn_fps_ass_pd3_qbz191_magazine.stats = {value = 0}
 			self.parts.wpn_fps_ass_pd3_qbz191_stock.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_flash_hider.stats = {value = 0}
+			self.parts.wpn_fps_ass_pd3_qbz191_flash_hider.custom_stats = {}
 
 			self.parts.wpn_fps_ass_pd3_qbz191_smag.supported = true
 			self.parts.wpn_fps_ass_pd3_qbz191_smag.stats = {

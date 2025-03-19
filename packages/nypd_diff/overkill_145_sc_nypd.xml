@@ -34,6 +34,9 @@
 
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
+
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1_husk" load="true"/>					
 	
 	<unit_mat_seq		path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" load="true"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas_contour"/>
@@ -161,25 +164,24 @@
 	<model				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />
-	<material_config	path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />			
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1" />	
 
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_shoulderpad_l/ene_acc_shoulderpad_l" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_thigh_l/ene_acc_thigh_l" />
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-
-	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
-	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<unit_obj			path="units/pd2_mod_nypd/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
+	<!-- saiga -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_husk" load="true"/>	
-	<model				path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />	
-	<object				path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />
-	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />
-	<material_config	path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_contour" />			
+	
+	<unit_obj				path="units/payday2/characters/ene_bulldozer_2_sc/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
 	
 	<!-- cloaca -->
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>

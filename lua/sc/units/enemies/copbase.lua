@@ -522,6 +522,7 @@ local all_head_variants = {
 	["units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"] = "swat",
 	["units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"] = "swat_ar",
 	["units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"] = "swat_ar",
+	["units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"] = "swat_ar",
 	["units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"] = "swat_heavy",
 	["units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"] = "swat_heavy",	
 	["units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"] = "head_balaclava_d",

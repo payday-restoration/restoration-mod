@@ -509,6 +509,18 @@
 					<material materials="mtr_swat_static_lod2"/>
 				</object>
 			</lod_object>			
+			
+			<lod_object name="lod_hat_headset">
+				<object name="g_headset" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_static" max_distance="1000"/>
+					<material materials="mtr_swat_static_lod1" max_distance="1500"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+				<object name="g_headset_lod1" enabled="false" lod="1" >
+					<material materials="mtr_swat_static" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_static_lod2"/>
+				</object>
+			</lod_object>	
 
 			<lod_object name="lod_helmet_pillow">
 				<object name="g_helmet_lod11" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">

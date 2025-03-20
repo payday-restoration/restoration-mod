@@ -16,9 +16,6 @@
 			<var name="_tweak_table" value="fbi_heavy_swat" />
 			<var name="_default_weapon_id" value="m4" />
 		</extension>
-		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
-		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="spawn_manager" class="ManageSpawnedUnits" >
 			<var name="_char_joint_names" type="table" >	
 				<var value="root_point" />
@@ -94,7 +91,10 @@
 			
 			<var name="allow_client_spawn" value="true" />
 			<var name="local_only" value="true" />
-		</extension>												
+		</extension>	
+		<extension name="inventory" class="CopInventory" />
+		<extension name="brain" class="CopBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />		
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head" value="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" />									

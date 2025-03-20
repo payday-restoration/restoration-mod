@@ -9,7 +9,6 @@
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
-
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="spawn_manager" class="ManageSpawnedUnits" >
@@ -88,13 +87,13 @@
 			<var name="allow_client_spawn" value="true" />
 			<var name="local_only" value="true" />
 		</extension>														
-		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="fbi_heavy_swat" />
-			<var name="_default_weapon_id" value="r870" />
-		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="base" class="CopBase" >
+			<var name="_tweak_table" value="fbi_heavy_swat" />
+			<var name="_default_weapon_id" value="r870" />
+		</extension>		
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head" value="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" />									

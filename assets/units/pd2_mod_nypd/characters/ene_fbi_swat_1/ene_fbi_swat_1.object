@@ -254,7 +254,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="bounding_box_char">
+		<graphic_group name="character" enabled="true" culling_object="co_culling">
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0"  cpy_material_vars="contour_color, contour_opacity">

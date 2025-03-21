@@ -134,7 +134,9 @@ function restoration:Init()
 		bluewave = restoration.captain_types.spring,  --res map bluewave
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		jambank = restoration.captain_types.spring, --Botched Bank
-		arena_club30 = restoration.captain_types.spring, -- Arena Orange 
+		arena_club30 = restoration.captain_types.spring, -- Arena Orange
+		hwu =  restoration.captain_types.spring, -- Avalon's Shadow
+		hidden_vault = restoration.captain_types.spring, -- Hidden Vault  
 
 		--Autumn
 		alex_1 = restoration.captain_types.autumn, --Rats Day 1
@@ -156,13 +158,11 @@ function restoration:Init()
 		ukrainian_job_res = restoration.captain_types.autumn, --Ukrainian Job res edit version
 		hntn = restoration.captain_types.autumn, --harvest and trustee north
 		wetwork = restoration.captain_types.autumn,  --res map package wetworks
-		hwu = restoration.captain_types.autumn, --hwUwU (Avalon's Shadow)
 		amsdeal1 = restoration.captain_types.autumn,  --Armsdeal Alleyway
 		Gambling_room = restoration.captain_types.autumn,  --Underground Bargains
 		branchbank_meth = restoration.captain_types.autumn,  --Bank Heist: Meths
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
-		hidden_vault = restoration.captain_types.autumn, --Hidden Vault
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
 		skm_firestarter_2 = restoration.captain_types.autumn,--FBI Holdout 
 

@@ -35,38 +35,11 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
 
-
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1" load="true"/>	
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1_husk" load="true"/>					
 	
 	<unit_mat_seq		path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" load="true"/>
 	<material_config	path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas_contour"/>
-	
-	<!--nypd textures-->	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />				
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_nm" />				
-	
-	<!-- blue swats here -->
-	<!--swat 1-->
-	<!--AMCAR-->	
-	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
-	
-	<!--NYPD FBI/HRTs-->
-	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
-	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_husk" load="true"/>					
-
-	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
-	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
-	
-	<unit_obj_seq		path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" load="true"/>
 	
 	<!--NYPD cop 1-->
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
@@ -210,16 +183,46 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1_husk" load="true"/>	
 	
-	<!-- medic -->
-	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic" load="true"/>
-	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk" load="true"/>	
-	
 	<!-- taster -->
 	<object				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<model				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1" load="true"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1_husk" load="true"/>
+	
+	<!-- medic -->
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic_husk" load="true"/>	
+	
+	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1" load="true"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_husk" load="true"/>	
 	<!-- specials end -->
+	
+	
+	<!--NYPD shield acc-->
+	<object				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
+	<unit				path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights" load="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>		
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_acc_shield_lights_df"/>
+	
+	<!--nypd textures-->	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_nm" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />				
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_gear_body_nm" />				
+	
+	<!-- blue swats here -->
+	<!--swat 1-->
+	<!--AMCAR-->	
+	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
+	
 
 	<!-- titans	 -->
 	<!--Keep those helmets flying ;)-->	
@@ -268,7 +271,7 @@
     <!--Titan Taser-->
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
-	
+
 	<!--Veteran Cop-->	
 	<object				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1" force="false"/>
@@ -288,11 +291,14 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
-	
+ 
 	<!-- bravos	 -->
 	<!--bravo dmr-->
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
+	
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted"  load="true"/>
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted_husk"  load="true"/>
 
 	<!-- bravo benellier -->
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_bulldozer/ene_bravo_bulldozer" />
@@ -328,11 +334,6 @@
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
 	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_contour" />
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_husk"  load="true"/>	
-	
-	<!--bravo lmg-->
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"  load="true"/>
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_husk"  load="true"/>	
-
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_1/ene_bravo_guard_1_husk"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_2/ene_bravo_guard_2"  load="true"/>
@@ -340,12 +341,17 @@
     <unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"  load="true"/>
 	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3_husk"  load="true"/>	
 	
+	<!--bravo lmg-->
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"  load="true"/>
+	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_husk"  load="true"/>	
+
+	
 	<!--cool hat brovo-->
 	<unit_obj			path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat"  load="true"/>
 
 	<!--textures-->	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_df"/>
-	<!-- bravos	end -->
- 
-</table>
+	<!-- bravos	end -->	
+	
+</table> 

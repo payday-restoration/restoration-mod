@@ -1,7 +1,6 @@
 <table directory="assets">
 	
 	<!--vanilla unit texture overrides-->	
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
 	<texture			path="units/payday2/characters/shared_textures/swat_fbi_body_df" />
 	<texture			path="units/payday2/characters/shared_textures/fbi_heads_atlas_df" />		
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />

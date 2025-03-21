@@ -9,8 +9,6 @@
 	<material_config	path="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" force="true"/>	
 		
 	<!--vanilla unit texture overrides-->	
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_df" />
-	<texture			path="units/payday2/characters/shared_textures/spook_heavy_nm" />
 	<texture			path="units/payday2/characters/shared_textures/bulldozer_saiga_df" />
 	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true" />

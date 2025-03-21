@@ -125,8 +125,6 @@ local grenadier_smash = {
 	ids_func("units/pd2_mod_reapers/characters/ene_titan_taser/ene_titan_taser_husk"),
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1_husk"),   
-	ids_func("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1"),
-	ids_func("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1_husk"),
 	ids_func("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1"),
 	ids_func("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1_husk")    	
 }
@@ -171,6 +169,10 @@ local head_hitboxes = {
     [Idstring("glass_swat"):key()] = true,
     [Idstring("glass_c"):key()] = true,
     [Idstring("glass_d"):key()] = true,
+    [Idstring("glass_l"):key()] = true,
+    [Idstring("glass_r"):key()] = true,
+    [Idstring("visor"):key()] = true,
+    [Idstring("sg_mask"):key()] = true,
     [Idstring("glass_altyn"):key()] = true,
     [Idstring("altyn_visor"):key()] = true,
     [Idstring("glass_visor"):key()] = true

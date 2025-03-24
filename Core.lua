@@ -135,7 +135,6 @@ function restoration:Init()
 		dwn1 = restoration.captain_types.spring, --Deep Inside
 		jambank = restoration.captain_types.spring, --Botched Bank
 		arena_club30 = restoration.captain_types.spring, -- Arena Orange
-		hwu =  restoration.captain_types.spring, -- Avalon's Shadow
 		hidden_vault = restoration.captain_types.spring, -- Hidden Vault  
 
 		--Autumn
@@ -164,6 +163,7 @@ function restoration:Init()
 		constantine_apartment_lvl = restoration.captain_types.autumn,  --Concrete Jungle 
 		tj_htsb = restoration.captain_types.autumn,  --harvest and trustee - southern branch
 		Gensec_HQ = restoration.captain_types.autumn, --Gensec HQ Raid day 2
+		hwu = restoration.captain_types.autumn, -- Avalon's Shadow 
 		skm_firestarter_2 = restoration.captain_types.autumn,--FBI Holdout 
 
 		--I'm not typing out the whole name

@@ -30,7 +30,13 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),	
 		ids_func("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
 		ids_func("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield_husk"),
-		--US Zeals	
+		--US Zeals
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1_husk"),		
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2_husk"),		
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),	
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),		
 		ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
@@ -57,12 +63,7 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
 		ids_func("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"),	
 		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"),
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec_husk"),	
-		--NYPD FBI SWATs		
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),	
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1_husk"),		
+		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec_husk"),		
 		--LAPD Blue SWATs
 		ids_func("units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"),
 		ids_func("units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk"),		

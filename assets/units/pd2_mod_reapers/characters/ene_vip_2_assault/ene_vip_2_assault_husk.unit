@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2" />
+	<object file="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" />
 
 	<dependencies>
 		
@@ -13,21 +13,21 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
-			<var name="_tweak_table" value="tank_titan_minion" />
-			<var name="_default_weapon_id" value="hk21_dozer" />
+			<var name="_tweak_table" value="tank_titan_assault" />
+			<var name="_default_weapon_id" value="m32_large" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskTankCopDamage" >
-			<var name="_head_body_name" value="body_helmet_glass" />
+			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />

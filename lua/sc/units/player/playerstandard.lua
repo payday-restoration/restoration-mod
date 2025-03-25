@@ -2301,9 +2301,10 @@ function PlayerStandard:_update_melee_timers(t, input)
 					if hit_unit and alive(hit_unit) then
 						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
+						local name_key = hit_unit:name():key()
 						if unique_hits[u_key] then
 							use_cleave = nil
-							if not is_enemy and body_dmg_ext then
+							if not is_enemy and body_dmg_ext and name_key ~= "e050221f8707ded8" then
 								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
 							end
 						else

@@ -79,7 +79,7 @@ local barrels = {
 	--barrels.short_b1_stats
 		short_b1_stats = {
 			value = 1,
-			spread = -1,
+			spread = -2,
 			concealment = 1,
 			falloff_start_mult = 0.925,
 			falloff_end_mult = 0.925,
@@ -89,7 +89,7 @@ local barrels = {
 	--barrels.short_b2_stats
 		short_b2_stats = {
 			value = 2,
-			spread = -2,
+			spread = -4,
 			concealment = 2,
 			falloff_start_mult = 0.85,
 			falloff_end_mult = 0.85,
@@ -99,7 +99,7 @@ local barrels = {
 	--barrels.short_b3_stats
 		short_b3_stats = {
 			value = 3,
-			spread = -3,
+			spread = -6,
 			concealment = 3,
 			falloff_start_mult = 0.775,
 			falloff_end_mult = 0.775,
@@ -17860,14 +17860,8 @@ end)
 					--No Stock
 					self.parts.wpn_fps_gre_m32_no_stock.pcs = {}
 					self.parts.wpn_fps_gre_m32_no_stock.supported = true
-					self.parts.wpn_fps_gre_m32_no_stock.custom_stats = {
-						ads_speed_mult = 0.925
-					}
-					self.parts.wpn_fps_gre_m32_no_stock.stats = {
-						value = 0,
-						concealment = 3,
-						recoil = -6
-					}
+					self.parts.wpn_fps_gre_m32_no_stock.stats = deep_clone(stocks.remove_adj_stats)
+					self.parts.wpn_fps_gre_m32_no_stock.custom_stats = deep_clone(stocks.remove_adj_stats)
 					
 					table.insert(self.wpn_fps_gre_m32.uses_parts, "wpn_fps_upg_i_ghosts_mk32")
 					table.insert(self.wpn_fps_gre_m32_npc.uses_parts, "wpn_fps_upg_i_ghosts_mk32")		
@@ -23406,7 +23400,7 @@ end)
 							table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
-									stats = {value = 1, concealment = 1, spread = -1},
+									stats = {value = 1, concealment = 1, spread = -2},
 									custom_stats = { 
 										empire = true,
 										falloff_start_mult = 0.925,
@@ -23415,7 +23409,7 @@ end)
 									}
 								}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p2 = {
-									stats = {value = 1, concealment = 2, spread = -2},
+									stats = {value = 1, concealment = 2, spread = -4},
 									custom_stats = { 
 										empire = true,
 										falloff_start_mult = 0.85,
@@ -23424,7 +23418,7 @@ end)
 									}
 								}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p3 = {
-									stats = {value = 1, concealment = 3, spread = -3},
+									stats = {value = 1, concealment = 3, spread = -6},
 									custom_stats = { 
 										empire = true,
 										falloff_start_mult = 0.775,

@@ -438,7 +438,7 @@
 			<spawn_unit filter="'check_ben'" name="vars.var_throat_ben" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_black'" name="vars.var_throat_black" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<spawn_unit filter="'check_med'" name="vars.var_throat_medic" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
-			<spawn_unit filter="'check_skull'" name="vars.var_neck_skull_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2' * 180)"/>
+			<spawn_unit filter="'check_skull'" name="vars.var_neck_skull_skull" position="object_pos('Spine2')" rotation="object_rot('Spine2')"/>
 			<sound action="'play'" event="'bulldozer_collar_plate_shatter'" object="'Neck'"/>
 		</sequence>
 		<sequence name="'int_seq_armor_neck'" once="true">

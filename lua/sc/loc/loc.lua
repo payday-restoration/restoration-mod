@@ -5124,7 +5124,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",
-		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",
+		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes and spawn issues on some maps.",
 
 		["MutatorMoreDonutsPlus"] = "More Donuts+",
 		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by LPFs.",

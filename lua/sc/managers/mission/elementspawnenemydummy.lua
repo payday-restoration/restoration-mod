@@ -1573,6 +1573,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+			fbi_1 = "units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 			texas_cop = {
@@ -1621,6 +1622,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+			fbi_1 = "units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 			texas_cop = {
@@ -1691,6 +1693,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+			fbi_1 = "units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 			texas_cop = {
@@ -1733,7 +1736,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			dozer = {
 				"units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 				"units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-				"units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"
+				"units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"
 			}
 		},
 		--NYPD GenSec
@@ -1762,6 +1765,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_2 = "units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2",
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
+			fbi_1 = "units/pd2_mod_nypd/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2",
 			fbi_3 = "units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3",
 			texas_cop = {
@@ -1823,7 +1827,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
 			fbi_1 = {
-				"units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2",
+				"units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_2",
 				"units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 			},
 			fbi_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4",

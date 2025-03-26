@@ -1827,7 +1827,7 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			cop_3 = "units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3",
 			cop_4 = "units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4",
 			fbi_1 = {
-				"units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_2",
+				"units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1",
 				"units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"
 			},
 			fbi_2 = "units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4",

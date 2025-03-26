@@ -478,6 +478,8 @@
 	
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
 	
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
 	<texture			path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>

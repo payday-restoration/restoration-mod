@@ -1091,16 +1091,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 				"units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 				"units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
 			},
 			secret_service = {
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
 			},
 			fbi_1 = "units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1",
 			fbi_2 = "units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2",
@@ -1143,16 +1143,16 @@ ElementSpawnEnemyDummy.faction_mapping = {
 			},
 			security_3 = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
 			murky_guard = {
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2",
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy",
 				"units/pd2_mod_sharks/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"
 			},
 			secret_service = {
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",
-				"units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"
+				"units/payday2/characters/ene_murkywater_1/ene_murkywater_1",
+				"units/payday2/characters/ene_murkywater_2/ene_murkywater_2"
 			},
 			fbi_1 = {
 				"units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2",

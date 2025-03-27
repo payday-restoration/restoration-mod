@@ -20051,6 +20051,11 @@ end)
 				spread = 1,
 				recoil = -2
 			}
+			self.parts.wpn_fps_upg_fg_jp.override = self.parts.wpn_fps_upg_fg_jp.override or {}
+			self.parts.wpn_fps_upg_fg_jp.override.wpn_fps_upg_vg_ass_smg_afg = {
+				unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_vg_standard",
+				third_unit = "units/pd2_dlc_spa/weapons/wpn_third_snp_tti_pts/wpn_third_snp_tti_vg_standard"
+			}
 			
 			--Gazelle Rail
 			self.parts.wpn_fps_upg_fg_smr.pcs = {}
@@ -20059,6 +20064,11 @@ end)
 				value = 5,
 				spread = 1,
 				concealment = -1
+			}
+			self.parts.wpn_fps_upg_fg_smr.override = self.parts.wpn_fps_upg_fg_smr.override or {}
+			self.parts.wpn_fps_upg_fg_smr.override.wpn_fps_upg_vg_ass_smg_afg = {
+				unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_vg_standard",
+				third_unit = "units/pd2_dlc_spa/weapons/wpn_third_snp_tti_pts/wpn_third_snp_tti_vg_standard"
 			}
 
 			--CAR Quadstacked Mag
@@ -21152,6 +21162,10 @@ end)
 			self.parts.wpn_fps_upg_ass_m4_fg_moe.override.wpn_fps_m4_uupg_fg_rail_ext_dummy = {
 				unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
 				third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
+			}
+			self.parts.wpn_fps_upg_ass_m4_fg_moe.override.wpn_fps_upg_vg_ass_smg_afg = {
+				unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_vg_standard",
+				third_unit = "units/pd2_dlc_spa/weapons/wpn_third_snp_tti_pts/wpn_third_snp_tti_vg_standard"
 			}
 			self.parts.wpn_fps_upg_ass_m4_fg_moe.supported = true
 			self.parts.wpn_fps_upg_ass_m4_fg_moe.stats = {
@@ -36458,7 +36472,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_m4_uupg_m_sharps.custom_stats = {
 				rof_mult = 0.9,
-				damage_min_mult = 1.2
+				damage_min_mult = 1.25
 			}
 		
 			self.parts.wpn_fps_upg_m4_m_d60.supported = true

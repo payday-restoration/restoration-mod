@@ -1413,6 +1413,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._muzzle_effect_table.effect = Idstring(self._muzzle_effect_pls)
 	end
 
+
+	local is_underbarrel = self.is_underbarrel and self:is_underbarrel()
+	local underbarrel_part = managers.weapon_factory:get_part_from_weapon_by_type("underbarrel", self._parts)
+
+	if underbarrel_part and alive(underbarrel_part.unit) and underbarrel_part.unit:base() and underbarrel_part.unit:base().is_on then
+		if underbarrel_part.unit:base():is_on() then
+			--self._muzzle_effect_table.effect = Idstring("effects/payday2/particles/weapons/9mm_auto_silence_fps")
+		end
+	end
+
 	local ignore_tracer = nil
 	if self._trail_effect_table then
 		if self._starwars and not self._starwars.no_tracers then

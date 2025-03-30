@@ -25579,6 +25579,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_xeno_stock_ext.supported = true
 				self.parts.wpn_fps_upg_xeno_stock_ext.stats = deep_clone(stocks.unfold_folded_stats)
 				self.parts.wpn_fps_upg_xeno_stock_ext.custom_stats = deep_clone(stocks.unfold_folded_stats)
+
+				self.parts.wpn_fps_upg_xeno_underbarrel_sg.pcs = nil
 		
 				self.parts.wpn_fps_ass_xeno_underbarrel_gl.supported = true
 				--self.parts.wpn_fps_ass_xeno_underbarrel_gl.adds = {"wpn_fps_ass_xeno_underbarrel_gl_ammo"}
@@ -26899,6 +26901,33 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 				self.wpn_fps_smg_aug9mm.override = self.wpn_fps_smg_aug9mm.override or {}
 				self.wpn_fps_smg_aug9mm.override.wpn_fps_smg_schakal_vg_surefire = nil
+			end
+
+			if self.parts.wpn_fps_upg_mars_barrel_long then
+				self.parts.wpn_fps_pis_mars_mag.supported = true
+				self.parts.wpn_fps_pis_mars_mag.stats = { value = 0 }
+				self.parts.wpn_fps_pis_mars_mag.custom_stats = nil
+				
+				self.parts.wpn_fps_upg_mars_barrel_long.supported = true
+				self.parts.wpn_fps_upg_mars_barrel_long.stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_mars_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
+				self.parts.wpn_fps_upg_mars_barrel_short.supported = true
+				self.parts.wpn_fps_upg_mars_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+				self.parts.wpn_fps_upg_mars_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+				self.parts.wpn_fps_upg_mars_grip_bakelite.supported = true
+				self.parts.wpn_fps_upg_mars_grip_bakelite.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_upg_mars_grip_bakelite.custom_stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_upg_mars_grip_flamemaple.supported = true
+				self.parts.wpn_fps_upg_mars_grip_flamemaple.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_upg_mars_grip_flamemaple.custom_stats = nil
+				self.parts.wpn_fps_upg_mars_grip_burled.supported = true
+				self.parts.wpn_fps_upg_mars_grip_burled.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_upg_mars_grip_burled.custom_stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_upg_mars_grip_pearl.supported = true
+				self.parts.wpn_fps_upg_mars_grip_pearl.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_upg_mars_grip_pearl.custom_stats = nil
+
 			end
 
 	--[[ RJC9000'S MODS ]]

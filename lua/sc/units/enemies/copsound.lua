@@ -107,9 +107,6 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_city_3/ene_zeal_city_3_husk"),
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
 		ids_func("units/pd2_mod_sharks/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk"),
-		--Murky NYPD Guards
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1"),
-		ids_func("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_husk"),
 		--OMNIA Crewmen
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman/ene_omnia_crewman"),
 		ids_func("units/pd2_mod_omnia/characters/ene_omnia_crewman/ene_omnia_crewman_husk"),	

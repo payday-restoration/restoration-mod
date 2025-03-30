@@ -12,6 +12,12 @@
 				<run_sequence name="'crk_goggles'"/>
 			</endurance>
 		</body>	
+		
+		<body name="'antenna'">
+			<endurance damage="12">
+				<run_sequence name="'remove_healing'"/>
+			</endurance>
+		</body>	
 	
 		<body name="'glass_visor'">
 			<endurance bullet="2" explosion="4">
@@ -42,6 +48,9 @@
 		</filter>
 		<filter name="'check_swat_sniper'">
 			<check value="vars.var_gadgets_swat == 4"/>
+		</filter>
+		<filter name="'check_swat_sniper_scripted'">
+			<check value="vars.var_gadgets_swat == 7"/>
 		</filter>
 		<filter name="'check_swat_shield_winters'">
 			<check value="vars.var_gadgets_swat == 5"/>
@@ -78,6 +87,11 @@
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 		
+		<sequence editable_state="true" name="'swat_sniper_scripted'" triggable="true" once="true">						
+			<set_variables var_gadgets_swat="7"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		
 		<sequence editable_state="true" name="'winters_shield'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
@@ -86,6 +100,18 @@
 		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="6"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+		
+		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
+			<function   extension="'inventory'" function="'on_shield_break'" param1="src_unit_unit()"/>		
+			<effect 	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect 	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			<effect 	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
+			
+			<object enabled="false" name="'g_body_antenna'"/>						
+			<body enabled="false" name="'antenna'"/>						
+			<decal_mesh enabled="false" name="'c_hitbox_antenna'"/>						
+			<object enabled="false" name="'g_body_antenna_lod1'"/>			
 		</sequence>
 
 
@@ -118,11 +144,18 @@
 			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body'"/>									
 			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_lod1'"/>
 			<run_sequence filter="'check_swat_shield_winters'" name="'heavy_helmet_d'"/>
-			
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor'"/>						
+			<object filter="'check_swat_shield_winters'" enabled="false" name="'g_body_armor_lod1'"/>	
+		
 						
 			<!-- sniper -->
 			<run_sequence filter="'check_swat_sniper'" name="'helmet'..pick('_nun','_headset','_nun','_nun')"/>		
 			<run_sequence filter="'check_swat_sniper'" name="'goggles_'..pick('a', 'a', 'a', 'a', 'a', 'b', 'c')"/>		
+			
+			<run_sequence filter="'check_swat_sniper_scripted'" name="'helmet'..pick('_nun','_headset','_nun','_nun')"/>		
+			<run_sequence filter="'check_swat_sniper_scripted'" name="'goggles_'..pick('a', 'a', 'a', 'a', 'a', 'b', 'c')"/>		
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor'"/>						
+			<object filter="'check_swat_sniper_scripted'" enabled="false" name="'g_body_armor_lod1'"/>	
 
 
 			<!-- taser -->			
@@ -173,8 +206,8 @@
 			<decal_mesh enabled="false" name="'dm_helmet'" />			
 			<decal_mesh enabled="false" name="'dm_helmet_shield'" />	
 			
-			<object enabled="true" name="'g_helmet_shield_lod1'"/>
-			<object enabled="true" name="'g_helmet_shield_lod2'"/>
+			<object enabled="false" name="'g_helmet_shield_lod1'"/>
+			<object enabled="false" name="'g_helmet_shield_lod2'"/>
 			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod3'"/>
 			<object filter="'check_swat_ar'" enabled="false" name="'g_helmet_lod4'"/>
 									

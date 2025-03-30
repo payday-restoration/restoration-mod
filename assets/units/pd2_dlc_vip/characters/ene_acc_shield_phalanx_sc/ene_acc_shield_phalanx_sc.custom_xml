@@ -64,18 +64,18 @@
 		</filter>
 		
 		<sequence name="'enable_body'" triggable="true">
-			<body  enabled="false" name="'held_body_top'"/>
-			<body  filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
-			
-			<body enabled="false" name="'held_body_right'"/>
-			<object  filter="'filter_debris_l'" enabled="false" name="'dropped_body_right'"/>
-			
-			<body  enabled="false" name="'held_body_left'"/>
-			<body  filter="'filter_debris_r'" enabled="true" name="'dropped_body_left'"/>
-		
 			<body enabled="false" name="'held_body_middle'"/>
 			<body enabled="true" name="'dropped_body_middle'"/>
-						
+		
+			<body  enabled="false" name="'held_body_top'"/>
+			<body  filter="'filter_debris_top'" enabled="true" name="'dropped_body_top'"/>
+		
+			<body 	 enabled="false" name="'held_body_right'"/>
+			<body  enabled="true" name="'dropped_body_right'"/>
+			
+			<body  	enabled="false" name="'held_body_left'"/>
+			<body   enabled="true" name="'dropped_body_left'"/>
+		
 			<run_sequence filter="'filter_light_1_enabled'" name="'disable_light_1_blink'"/>
 			<run_sequence filter="'filter_light_2_enabled'" name="'disable_light_2_blink'"/>
 		</sequence>
@@ -227,40 +227,38 @@
 		
 		<!-- destroy left -->
 		<sequence editable_state="false" name="'int_seq_shield_break_l'" once="true" triggable="true">
-			<object enabled="false" name="'g_shield_l'"/>	
-			<body enabled="false" name="'held_body_left'"/>
-			<decal_mesh enabled="false" name="'dm_metal_l'"/>	
+			<body enabled="false" name="'held_body_left'"/>					
+			<body enabled="true" name="'dropped_body_left'"/>
+			
+			<constraint  enabled="false" name="'constraint_dropped_body_left'"/>
 		
 			<set_variables var_debris_l="1"/>			
-			
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_left'" position="object_pos('drop_shield_r')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>						
-			
+						
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 		
 
 		<!-- destroy right -->
 		<sequence editable_state="false" name="'int_seq_shield_break_r'" once="true" triggable="true">
-			<body enabled="false" name="'held_body_right'"/>
-			<object enabled="false" name="'g_shield_r'"/>	
-			<decal_mesh enabled="false" name="'dm_metal_r'"/>	
+			<body enabled="false" name="'held_body_right'"/>			
+			<body enabled="true" name="'dropped_body_right'"/>
+
+			<constraint  enabled="false" name="'constraint_dropped_body_right'"/>
 
 			<set_variables var_debris_r="1"/>			
 
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_right'" position="object_pos('drop_shield_l')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>			
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 
 		<!-- destroy top -->
-		<sequence editable_state="false" name="'int_seq_shield_break_top'" once="true" triggable="true">
-			
-			<object enabled="false" name="'g_shield_top'"/>	
+		<sequence editable_state="false" name="'int_seq_shield_break_top'" once="true" triggable="true">		
 			<body enabled="false" name="'held_body_top'"/>
-			<decal_mesh enabled="false" name="'dm_metal_top'"/>	
+			<body enabled="true" name="'dropped_body_top'"/>
+			
+			<constraint  enabled="false" name="'constraint_dropped_body_top'"/>
 
 			<set_variables var_debris_top="1"/>			
 
-			<spawn_unit name="'units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/debris/ene_acc_shield_phalanx_debris_top'" position="object_pos('drop_shield_top')" rotation="object_rot('rp_ene_acc_shield_phalanx')"/>						
 			<sound action="'play'" event="'swatturret_plate_off'" object="'rp_ene_acc_shield_phalanx'"/>
 		</sequence>		
 		

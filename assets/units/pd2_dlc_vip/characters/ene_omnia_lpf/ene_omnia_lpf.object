@@ -8,6 +8,10 @@
 			<object name="Spine1"/>
 			<object name="c_capsule_body" collision_type="capsule"/>
 		</body>
+		<body name="antenna" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine2"/>
+			<object name="c_hitbox_antenna" collision_type="convex"/>
+		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_head" collision_type="sphere"/>
@@ -197,11 +201,12 @@
 
 	<decal_surfaces default_material="flesh_yellow" >
 		<decal_mesh name="dm_helmet" 				enabled="true" material="steel_no_decal" />
+		<decal_mesh name="c_hitbox_antenna" 		enabled="true" material="steel_no_decal" />
 		<!-- <decal_mesh name="c_body_plate" 			enabled="true" material="steel_no_decal" /> -->
 	</decal_surfaces>
 
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
+		<graphic_group name="character" enabled="true" culling_object="co_culling">
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
@@ -210,6 +215,18 @@
 					<material materials="mtr_body_lod2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_freaking_backpack">
+				<object name="g_body_antenna" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
+				</object>
+				<object name="g_body_antenna_lod1" 	enabled="true" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2" />
 				</object>

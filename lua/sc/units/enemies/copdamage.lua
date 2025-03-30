@@ -519,6 +519,10 @@ function CopDamage:damage_fire(attack_data)
 				variant = attack_data.variant
 			}
 
+			if is_player and (attack_data.backstab or head) and not attack_data.is_fire_dot_damage then
+				managers.player:add_backstab_dodge(attack_data.backstab, head)
+			end
+
 			self:die(attack_data)
 			self:chk_killshot(attack_data.attacker_unit, "fire", head, attack_data.weapon_unit and attack_data.weapon_unit:base():get_name_id())
 		end
@@ -3558,6 +3562,55 @@ function CopDamage:roll_critical_hit(attack_data, damage, damage_clamp)
 	end
 	
 	return critical_hit, damage
+end
+
+function CopDamage:can_be_critical(attack_data)
+	local weapon_unit_base = nil
+
+	if alive(attack_data.weapon_unit) then
+		weapon_unit_base = attack_data.weapon_unit:base()
+	end
+
+	if weapon_unit_base == nil then
+		return true
+	end
+
+	local weapon_type = nil
+	local damage_type = attack_data.variant
+
+	if weapon_unit_base.thrower_unit then
+		local unit_base = weapon_unit_base._unit:base()
+
+		if unit_base._tweak_projectile_entry then
+			weapon_type = unit_base._tweak_projectile_entry
+		elseif unit_base._projectile_entry then
+			weapon_type = unit_base._projectile_entry
+		end
+	elseif weapon_unit_base.weapon_tweak_data then
+		local weapon_td = weapon_unit_base:weapon_tweak_data()
+
+		if weapon_td.ignore_crit_damage then
+			return false
+		end
+
+		weapon_type = weapon_td.categories[1]
+	elseif weapon_unit_base.get_name_id then
+		weapon_type = weapon_unit_base:get_name_id()
+	end
+
+	local damage_crit_data = tweak_data.weapon_disable_crit_for_damage[weapon_type]
+
+	if not damage_crit_data then
+		return true
+	end
+
+	local is_damage_type_can_crit = damage_crit_data[damage_type]
+
+	if is_damage_type_can_crit or attack_data.is_fire_dot_damage then
+		return true
+	end
+
+	return false
 end
 
 function CopDamage:check_backstab(attack_data)

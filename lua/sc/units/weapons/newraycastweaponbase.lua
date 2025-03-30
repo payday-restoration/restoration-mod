@@ -1983,7 +1983,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 		}
 
 		for i = 1, rays do
-			local raycast_res = NewRaycastWeaponBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+			local raycast_res = NewRaycastWeaponBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, true)
 
 			if raycast_res.enemies_in_cone then
 				result.enemies_in_cone = result.enemies_in_cone or {}
@@ -1996,6 +1996,23 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 			table.list_append(result.rays, raycast_res.rays or {})
 		end
 
+		for _, hits in ipairs(result.rays) do
+			if alive(hits.unit) then
+				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local key = hits.unit:key()
+				if is_enemy and not hit_units[key] then
+					hit_units[key] = true
+					count_hits[#count_hits + 1] = hits
+				end
+			end
+		end
+
+		managers.statistics:shot_fired({
+			hit = result and result.hit_enemy,
+			hit_count = #count_hits,
+			weapon_unit = self._unit
+		})
+		
 		return result
 	end
 

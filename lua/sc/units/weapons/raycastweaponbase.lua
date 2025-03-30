@@ -360,7 +360,8 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 
 end
 
-function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
+function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, ignore_hit_stats)
+	log(tostring( ignore_hit_stats ))
 	if self:gadget_overrides_weapon_functions() then
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	end
@@ -522,7 +523,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 		self._shot_fired_stats_table.hit = hit_anyone
 		self._shot_fired_stats_table.hit_count = hit_count
 
-		if not self._ammo_data or not self._ammo_data.ignore_statistic then
+		if (not self._ammo_data or not self._ammo_data.ignore_statistic) and not ignore_hit_stats then
 			managers.statistics:shot_fired(self._shot_fired_stats_table)
 		end
 	end
@@ -585,7 +586,7 @@ function RaycastWeaponBase:_check_one_shot_shotgun_achievements(...)
 end
 
 --Original mod by 90e, uploaded by DarKobalt.
---Reverb fixed by Doctor Mister Cool, aka Didn'tMeltCables, aka DinoMegaCool
+--Reverb fixed by Doctor Mister Cool, aka Didn'tMeltCables, aka DinoMegaCool, aka DMC (me) being a dumbass and making random acronyms out of the initials of my a
 --New version uploaded and maintained by Offyerrocker.
 --Totally not stolen for resmod 
 

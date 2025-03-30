@@ -231,6 +231,11 @@
 	<continent			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
 	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
 
+	<!--Crude Awakening-->
+	<mission			path="levels/narratives/blaine/deep/world/world" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/blaine/deep/nav_manager_data" force="true" unload="true"/>
+	<!-- <mission			path="levels/instances/unique/deep/deep_boss/world/world" force="true" /> --> 
+
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
 

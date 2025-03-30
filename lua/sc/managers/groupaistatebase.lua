@@ -302,15 +302,20 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 
 	if not self._point_of_no_return_areas then
 		self._point_of_no_return_areas = {}
-		local element = get_mission_script_element(self._point_of_no_return_id)
-		local element_elements = element._values.elements
 
-		for i = 1, #element_elements do
-			local id = element_elements[i]
-			local area = id and get_mission_script_element(id)
+		if not self._point_of_no_return_id or not get_mission_script_element(self._point_of_no_return_id) then
+			--Nothing
+		else
+			local element = get_mission_script_element(self._point_of_no_return_id)
+			local element_elements = element._values.elements
 
-			if area then
-				self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area
+			for i = 1, #element_elements do
+				local id = element_elements[i]
+				local area = id and get_mission_script_element(id)
+
+				if area then
+					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area
+				end
 			end
 		end
 
@@ -400,15 +405,19 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 				end
 			end
 
-			local element = get_mission_script_element(self._point_of_no_return_id)
-			local element_elements = element._values.elements
+			if not self._point_of_no_return_id or not get_mission_script_element(self._point_of_no_return_id) then
+				--Nothing
+			else
+				local element = get_mission_script_element(self._point_of_no_return_id)
+				local element_elements = element._values.elements
 
-			for i = 1, #element_elements do
-				local id = element_elements[i]
-				local area = id and get_mission_script_element(id)
+				for i = 1, #element_elements do
+					local id = element_elements[i]
+					local area = id and get_mission_script_element(id)
 
-				if area then
-					area:execute_on_executed(nil)
+					if area then
+						area:execute_on_executed(nil)
+					end
 				end
 			end
 		end

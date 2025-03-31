@@ -332,35 +332,37 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 
 		for i = 1, #ponr_areas do
 			local area = ponr_areas[i]
-			local shapes = area._shapes
 
-			for idx = 1, #shapes do
-				local shape = shapes[idx]
+			if area:enabled() or area:value("was_enabled") then
+				local shapes = area._shapes
 
-				if shape:is_inside(plr_unit:movement():m_pos()) then
-					--shape:draw(0, 0, 0, 1, 0, 0.2)
+				for idx = 1, #shapes do
+					local shape = shapes[idx]
 
-					is_inside = true
+					if shape:is_inside(plr_unit:movement():m_pos()) then
+						--shape:draw(0, 0, 0, 1, 0, 0.2)
 
-					break
-				--else
-					--shape:draw(0, 0, 0, 0, 1, 0.2)
-				end
-			end
+						is_inside = true
 
-			--[[local shape_elements = area._shape_elements
-
-			if shape_elements then
-				for idx = 1, #shape_elements do
-					local shapes = shape_elements[idx]:get_shapes()
-
-					for idx2 = 1, #shapes do
-						local shape = shapes[idx2]
-
-						shape:draw(0, 0, 0, 1, 1, 0.2)
+						break
+					--else
+						--shape:draw(0, 0, 0, 0, 1, 0.2)
 					end
 				end
-			end]]
+
+				--[[local shape_elements = area._shape_elements
+				if shape_elements then
+					for idx = 1, #shape_elements do
+						local shapes = shape_elements[idx]:get_shapes()
+
+						for idx2 = 1, #shapes do
+							local shape = shapes[idx2]
+
+							shape:draw(0, 0, 0, 1, 1, 0.2)
+						end
+					end
+				end]]
+			end
 		end
 	end
 

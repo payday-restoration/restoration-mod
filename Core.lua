@@ -1080,6 +1080,7 @@ function restoration:mission_script_add()
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
 				tweak_id = "noreturn",
+				time_balance_mul = opts.time_balance_mul or nil,
 				time_easy = opts.time_easy or 0,
 				time_normal = opts.time_normal or 0,
 				time_hard = opts.time_hard or 0,
@@ -1230,6 +1231,27 @@ function restoration:mission_script_add()
 				position = pos,
 				rotation = rot,
 				enabled = true
+			},
+		}
+	end
+
+	function restoration:gen_operator(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementOperator",
+			module = "CoreElementOperator",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false,
+				operation = opts.operation or "add",
+				elements = opts.elements or {},
 			},
 		}
 	end

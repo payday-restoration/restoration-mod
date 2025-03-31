@@ -1,34 +1,40 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local ponr_value = (difficulty <= 6 and 120) or 90
 local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local cop_sg = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"
 
 local tshield = {
 	values = {
-        enemy = titan_shield
-	}
+		enemy = titan_shield,
+	},
 }
 local disabled = {
 	values = {
-        enabled = false
-	}
+		enabled = false,
+	},
 }
 local mayhem_above_filter = {
 	values = {
-		difficulty_easy_wish = "true",
-		difficulty_overkill_290 = "true",
-		difficulty_sm_wish = "true"
-	}
+		difficulty_easy_wish = true,
+		difficulty_overkill_290 = true,
+		difficulty_sm_wish = true,
+	},
+}
+local ponr_start = {
+	on_executed = {
+		{ id = 400039, delay = 0, },
+	},
 }
 
 return {
 	--Pro Job PONR
-	[102644] = {
-		ponr = ponr_value
-	},
-	[102654] = {
-		ponr = ponr_value
+	[102644] = ponr_start,
+	[102654] = ponr_start,
+	--Disable PONR if you somehow want to print money, re-trigger again if you done with it
+	[102551] = {
+		on_executed = {
+			{ id = 400040, delay = 0, },
+		},
 	},
 	--Reinforce Spots
 	[100031] = {
@@ -36,29 +42,29 @@ return {
 			{
 				name = "protect_the_BBQ",
 				force = 3,
-				position = Vector3(-3680, 1926, 26.700)
+				position = Vector3(-3680, 1926, 26.700),
 			},
 			{
 				name = "Mitchell_house_1",
 				force = 3,
-				position = Vector3(-2286, 2640, 78.789)
+				position = Vector3(-2286, 2640, 78.789),
 			},
 			{
 				name = "Mitchell_house_2",
 				force = 3,
-				position = Vector3(-2556, 3836, 75.500)
+				position = Vector3(-2556, 3836, 75.500),
 			},
 			{
 				name = "Wilson_house_1",
 				force = 3,
-				position = Vector3(-2080, 39, 28.970)
+				position = Vector3(-2080, 39, 28.970),
 			},
 			{
 				name = "Wilson_house_2",
 				force = 3,
-				position = Vector3(-2980, 1441, -324.500)
-			}
-		}
+				position = Vector3(-2980, 1441, -324.500),
+			},
+		},
 	},
 	--Additional Reinforce Spots
 	[101219] = {
@@ -66,73 +72,69 @@ return {
 			{
 				name = "protect_the_valveHQ_1",
 				force = 3,
-				position = Vector3(-6624, 1545, 21.141)
-			}
-		}
+				position = Vector3(-6624, 1545, 21.141),
+			},
+		},
 	},
 	[101218] = {
 		reinforce = {
 			{
 				name = "protect_the_valveHQ_2",
 				force = 3,
-				position = Vector3(-2402, -1326, 17.788)
-			}
-		}
+				position = Vector3(-2402, -1326, 17.788),
+			},
+		},
 	},
 	[101220] = {
 		reinforce = {
 			{
 				name = "protect_the_valveHQ_3",
 				force = 3,
-				position = Vector3(-340, 2438, 26.700)
-			}
-		}
+				position = Vector3(-340, 2438, 26.700),
+			},
+		},
 	},
 	--Water fills the safe much slower (like in PDTH)
 	[101229] = {
 		values = {
-            timer = 240
-		}
+			timer = 240,
+		},
 	},
 	[101237] = {
 		values = {
-            time = 200
-		}
+			time = 200,
+		},
 	},
 	[101236] = {
 		values = {
-            time = 140
-		}
+			time = 140,
+		},
 	},
 	[101235] = {
 		values = {
-            time = 60
-		}
+			time = 60,
+		},
 	},
 	[100897] = {
 		values = {
-            time = 30
-		}
+			time = 30,
+		},
 	},
 	--Trigger Hunt (Endless Assault)
 	--Disable valve's Reinforce points
 	[102642] = {
 		hunt = true,
 		reinforce = {
-			{name = "protect_the_valveHQ_1"},
-			{name = "protect_the_valveHQ_2"},
-			{name = "protect_the_valveHQ_3"}
-		}
+			{ name = "protect_the_valveHQ_1", },
+			{ name = "protect_the_valveHQ_2", },
+			{ name = "protect_the_valveHQ_3", },
+		},
 	},
-	--Disable PONR if you somehow want to print money, re-trigger again if you done with it
-    [102551] = {
-        ponr_end = true
-    },
 	--Bain no longer will remind to find Mitchell when players masked up
 	[102410] = {
 		on_executed = {
-            {id = 100096, delay = 0}
-		}
+			{ id = 100096, delay = 0, },
+		},
 	},
 	--Drill is already set up, not need the drill reminder dialogue to play
 	[100574] = {
@@ -142,31 +144,31 @@ return {
 			if turn_this_shit_off then
 				turn_this_shit_off:set_enabled(false)
 			end
-		end
+		end,
 	},
 	--Disable Grenadiers on startup
 	[100023] = {
 		on_executed = {
-            {id = 400030, delay = 3}
-		}
+			{ id = 400030, delay = 3, },
+		},
 	},
 	--Enable Grenadiers if Mitchell has been killed
 	[102351] = {
 		on_executed = {
-            {id = 400029, delay = 0}
-		}
+			{ id = 400029, delay = 0, },
+		},
 	},
 	--Disable the 2nd police crusier if the cops are already alerted
 	[103034] = {
 		on_executed = {
-            {id = 400015, delay = 0}
-		}
+			{ id = 400015, delay = 0, },
+		},
 	},
 	--Replace 2nd bronco cop with shotgun cop (to match with PDTH)
 	[100725] = {
 		values = {
-            enemy = cop_sg
-		}
+			enemy = cop_sg,
+		},
 	},
 	--Disable vanilla's reinforce points
 	[100218] = disabled,
@@ -181,8 +183,8 @@ return {
 	--delay the next anim by few more seconds to let the previous anim end
 	[101647] = {
 		on_executed = {
-            {id = 101648, delay = 10.5}
-		}
+			{ id = 101648, delay = 10.5, },
+		},
 	},
 	--same as 2nd van near Mitchell's house
 	[102506] = disabled,
@@ -197,54 +199,54 @@ return {
 	--Bain warns about them
 	[102081] = {
 		on_executed = {
-            {id = 400019, delay = 5}
-		}
+			{ id = 400019, delay = 5, },
+		},
 	},
 	--Spawn custom PDTH styled snipers at the start of 2nd assault
 	--Bain warns about them
 	[102082] = {
 		on_executed = {
-            {id = 400001, delay = 5},
-			{id = 400002, delay = 5},
-			{id = 400003, delay = 5},
-			{id = 400004, delay = 5},
-			{id = 400005, delay = 5},
-			{id = 400016, delay = 3.5}
-		}
+			{ id = 400001, delay = 5, },
+			{ id = 400002, delay = 5, },
+			{ id = 400003, delay = 5, },
+			{ id = 400004, delay = 5, },
+			{ id = 400005, delay = 5, },
+			{ id = 400016, delay = 3.5, },
+		},
 	},
 	--Spawn two extra Tasers with blockade shields on Death Wish above (193+ throwback)
 	[103336] = {
 		on_executed = {
-            {id = 400031, delay = 0},
-			{id = 400032, delay = 0}
-		}
+			{ id = 400031, delay = 0, },
+			{ id = 400032, delay = 0, },
+		},
 	},
 	[101929] = {
 		on_executed = {
-            {id = 400031, delay = 0},
-			{id = 400032, delay = 0}
-		}
+			{ id = 400031, delay = 0, },
+			{ id = 400032, delay = 0, },
+		},
 	},
 	[101803] = {
 		on_executed = {
-            {id = 400033, delay = 0},
-			{id = 400034, delay = 0}
-		}
+			{ id = 400033, delay = 0, },
+			{ id = 400034, delay = 0, },
+		},
 	},
 	[101930] = {
 		on_executed = {
-            {id = 400033, delay = 0},
-			{id = 400034, delay = 0}
-		}
+			{ id = 400033, delay = 0, },
+			{ id = 400034, delay = 0, },
+		},
 	},
 	--Add the missing sniper access
 	[102399] = {
 		pre_func = function (self)
 			if not self._values.SO_access_original then
 				self._values.SO_access_original = self._values.SO_access
-				self._values.SO_access = managers.navigation:convert_access_filter_to_number({"cop", "swat", "fbi", "taser", "sniper", "spooc"})
+				self._values.SO_access = managers.navigation:convert_access_filter_to_number({ "cop", "swat", "fbi", "taser", "sniper", "spooc", })
 			end
-		end
+		end,
 	},
 	--Replace shields that cover the manhole with titan counterparts on Overkill-DS PJ
 	[100036] = tshield,
@@ -258,5 +260,5 @@ return {
 	[100795] = tshield,
 	[101804] = tshield,
 	[101883] = tshield,
-	[102098] = tshield
+	[102098] = tshield,
 }

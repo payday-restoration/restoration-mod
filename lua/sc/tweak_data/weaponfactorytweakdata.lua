@@ -19461,6 +19461,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mptango41 = {
 						translation = Vector3(-0.01, 21.3, -3.805)
 					}
+					
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_stampede_ecs = {
+						translation = Vector3(0.048, 11.5, -3.435)
+					}
 
 				--CUSTOM WEAPS THAT NEED REALIGNMENT
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_l115 = {
@@ -26931,6 +26935,27 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+		if self.parts.wpn_fps_bow_stampede_ecs_bolt then
+			self.parts.wpn_fps_bow_stampede_ecs_magazine.pcs = {}
+
+			self.parts.wpn_fps_bow_stampede_ecs_vertical_grip.supported = true
+			self.parts.wpn_fps_bow_stampede_ecs_vertical_grip.stats = {
+				value = 0
+			}
+
+			self.parts.wpn_fps_bow_stampede_ecs_optic_modulus.supported = true
+			self.parts.wpn_fps_bow_stampede_ecs_optic_modulus.stats = {
+				value = 0,
+				zoom = 1
+			}
+			self.parts.wpn_fps_bow_stampede_ecs_optic_modulus.desc_id = "bm_wp_upg_o_1_1"
+
+			self.wpn_fps_bow_stampede_ecs.override = self.wpn_fps_bow_stampede_ecs.override or {}
+			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_stubby = { recoil = 2, concealment = -1 }
+			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
+			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
+
+		end
 		if self.parts.wpn_fps_ass_coslo723_stock_adapter then
 			self.parts.wpn_fps_ass_coslo723_flash_hider.stats = {}
 			self.parts.wpn_fps_ass_coslo723_flash_hider.custom_stats = nil

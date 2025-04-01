@@ -19856,6 +19856,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 		--[[     RJC9000'S MODS     ]]--
 			
+			if self.stampede_ecs then
+				self.stampede_ecs.recategorize = { "special" }
+				self.stampede_ecs.has_description = false
+				self.stampede_ecs.AMMO_MAX = 200
+				self.stampede_ecs.CAN_TOGGLE_FIREMODE = false
+				self.stampede_ecs.FIRE_MODE = "auto"
+				self.stampede_ecs.fire_mode_data.fire_rate = 0.3333
+				self.stampede_ecs.kick = self.stat_info.kick_tables.none
+				self.stampede_ecs.no_auto_anims = true
+				self.stampede_ecs.supported = true
+				self.stampede_ecs.ads_speed = 0.200
+				self.stampede_ecs.damage_falloff = {
+					start_dist = 2500,
+					end_dist = 7000,
+					min_mult = 0.5
+				}
+				self.stampede_ecs.stats = {
+					damage = 10,
+					spread = 11,
+					recoil = 101,
+					zoom = 1,
+					concealment = 30,
+					suppression = 9,
+					alert_size = 1,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.stampede_ecs.stats_modifiers = nil
+				self.stampede_ecs.panic_suppression_chance = 0.05
+				self.stampede_ecs.keep_ammo = 1
+				self.stampede_ecs.timers.reload_not_empty = 1.94
+				self.stampede_ecs.timers.reload_exit_not_empty = 0.54
+				self.stampede_ecs.timers.reload_empty = 1.94
+				self.stampede_ecs.timers.reload_exit_empty = 1.12
+
+			end
+
 			if self.l403a1 then
 				self.l403a1.nato = true
 				self.l403a1.recategorize = { "light_ar" }

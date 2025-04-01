@@ -26936,7 +26936,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ RJC9000'S MODS ]]
 		if self.parts.wpn_fps_bow_stampede_ecs_bolt then
-			self.parts.wpn_fps_bow_stampede_ecs_magazine.pcs = {}
+			self.parts.wpn_fps_bow_stampede_ecs_ammo_poison.no_cull = true
+			self.parts.wpn_fps_bow_stampede_ecs_ammo_poison.stats = {
+				value = 10,
+				total_ammo_mod = -10
+			}
 
 			self.parts.wpn_fps_bow_stampede_ecs_vertical_grip.supported = true
 			self.parts.wpn_fps_bow_stampede_ecs_vertical_grip.stats = {
@@ -44498,7 +44502,7 @@ for _, part in pairs(self.parts) do
 				end
 			end
 			if part.type == "ammo" then
-				if part.cull or not part.no_cull then
+				if part.cull and not part.no_cull then
 					part.pcs = nil
 					part.stats = { value = 0 }
 					if part.custom_stats and part.custom_stats.sounds then

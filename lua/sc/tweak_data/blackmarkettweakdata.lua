@@ -1784,7 +1784,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	}
 	]]--
 
-	self._projectiles_index = {
+	self._projectiles_index_resmod = {
 		--Vanilla projectiles
 		"frag",
 		"launcher_frag",
@@ -1871,10 +1871,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_electric_osipr",
 		"launcher_poison_osipr",
 		--Other mods
-		"tachi"
+		"tachi",
+		"nerf_dart_standard",
+		"nerf_dart_poison"
 	}
-
-	self._projectiles_index_resmod = deep_clone(self._projectiles_index)
 
 	--Throwables--
 	--Shuriken

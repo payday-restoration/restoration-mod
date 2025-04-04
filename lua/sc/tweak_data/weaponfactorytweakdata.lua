@@ -29269,7 +29269,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				extra_ammo = 30
 			}
 			self.parts.wpn_fps_ass_stoner63a_rifle_magazine_xmag.custom_stats = {
-				ads_speed_mult = 0.9
+				ads_speed_mult = 1.1
 			}
 		end
 
@@ -31892,7 +31892,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.supported = true
 			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.stats = { value = 5, extra_ammo = 10, concealment = -1, reload = -3 }
-			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.custom_stats = { ads_speed_mult = 0.95 }
+			self.parts.wpn_fps_lmg_raid_ww2_bren_xmag.custom_stats = { ads_speed_mult = 1.025 }
 
 
 			self.parts.wpn_fps_lmg_raid_ww2_bren_o_unit = {

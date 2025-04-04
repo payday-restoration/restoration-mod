@@ -11782,6 +11782,10 @@ end)
 						concealment = 2
 					}
 					self.parts.wpn_fps_m16_fg_vietnam.override = {
+						wpn_fps_ass_m16_os_frontsight = {
+							unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+							third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						},
 						wpn_fps_ass_m16_o_handle_sight = {
 							a_obj = "a_body",
 							unit = "units/payday2/weapons/wpn_fps_ass_amcar_pts/wpn_fps_amcar_uupg_body_upperreciever",
@@ -19195,6 +19199,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_bk500 = {
 						translation = Vector3(0.005, 8.2, -3.5),
 						rotation = Rotation(0, 0, -0.05)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_amt = {
+						translation = Vector3(0.01, -8, -4.3),
+						rotation = Rotation(0, -0.5, 0)
 					}
 				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_crysis3_typhoon = {
@@ -45448,6 +45456,150 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "stoner63a_lmg_mod_init", functio
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "BigGlockModInit", function(self)
 end)
+Hooks:PostHook( WeaponFactoryTweakData, "init", "amtInit", function(self)
+	if self.wpn_fps_pis_amt then
+		if not self.wpn_fps_pis_amt.adds then
+		    self.wpn_fps_pis_amt.adds = {}
+		end    
+
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_specter = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_aimpoint = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_docter = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_eotech = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_t1micro = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_rx30 = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_rx01 = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_reflex = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_eotech_xps = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_cmore = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_aimpoint_2 = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_acog = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_cs = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_spot = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_sig = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_bmg = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_fc1 = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_uh = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_tf90 = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_poe = {
+			"wpn_fps_pis_rage_o_adapter"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_fl_pis_x400v = {
+			"wpn_fps_pis_deagle_fg_rail"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_fl_pis_laser = {
+			"wpn_fps_pis_deagle_fg_rail"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_fl_pis_tlr1 = {
+			"wpn_fps_pis_deagle_fg_rail"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_fl_pis_crimson = {
+			"wpn_fps_pis_deagle_fg_rail"
+		}
+		self.wpn_fps_pis_amt.adds.wpn_fps_upg_fl_pis_m3x = {
+			"wpn_fps_pis_deagle_fg_rail"
+		}
+
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_specter = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_aimpoint = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_docter = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_eotech = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_t1micro = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_rx30 = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_rx01 = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_reflex = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_eotech_xps = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_cmore = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_aimpoint_2 = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_acog = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_cs = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_spot = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_sig = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_bmg = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_fc1 = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_uh = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_tf90 = {
+			a_obj = "a_quite"
+		}
+		self.wpn_fps_pis_amt.override.wpn_fps_upg_o_poe = {
+			a_obj = "a_quite"
+		}
+	end
+end )
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "STF12ModInit", function(self)
 	if self.parts.wpn_fps_shot_stf12_sights then

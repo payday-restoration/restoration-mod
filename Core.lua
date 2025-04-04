@@ -1256,6 +1256,49 @@ function restoration:mission_script_add()
 		}
 	end
 
+	function restoration:gen_instance_input_event(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementInstanceInputEvent",
+			module = "CoreElementInstance",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false,
+				instance = nil,  -- string (prefer event_list)
+				event = nil,  -- string (prefer event_list)
+				event_list = opts.event_list or {},
+			},
+		}
+	end
+
+	function restoration:gen_instance_input(id, name, pos, rot, opts)
+		opts = opts or {}
+		return {
+			id = id,
+			editor_name = name,
+			class = "ElementInstanceInput",
+			module = "CoreElementInstance",
+			values = {
+				execute_on_startup = false,
+				trigger_times = opts.trigger_times or 0,
+				on_executed = opts.on_executed or {},
+				base_delay = opts.base_delay or 0,
+				position = pos,
+				rotation = rot,
+				enabled = opts.enabled or false,
+				instance_name = opts.instance_name or "",
+				event = opts.event or "",
+			},
+		}
+	end
+
 	function restoration:log(...)
 		if self.logging then
 			log("[StreamlinedHeistingAI] " .. table.concat({...}, " "))

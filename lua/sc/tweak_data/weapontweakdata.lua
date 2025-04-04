@@ -22959,6 +22959,110 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.riveter then --MW2023 Riveter
+				self.riveter.categories = { 
+					"shotgun",
+					"shotgun_auto"
+				 }
+				self.riveter.recategorize = { "light_shot" }
+				self.riveter.damage_type = "shotgun"
+				self.riveter.damage_type_single_ray = "sniper"
+				self.riveter.rays = 6
+				self.riveter.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.riveter.AMMO_MAX = 60
+				self.riveter.tactical_reload = 1		
+				self.riveter.CLIP_AMMO_MAX = 15
+				self.riveter.fire_mode_data.fire_rate = 0.15
+				self.riveter.FIRE_MODE = "auto"		
+				self.riveter.CAN_TOGGLE_FIREMODE = true
+				self.riveter.BURST_FIRE = false
+				self.riveter.kick = self.stat_info.kick_tables.right_recoil
+				self.riveter.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{5, self.stat_info.kick_tables.right_recoil},
+					{9, self.stat_info.kick_tables.horizontal_left_recoil},
+					{13, self.stat_info.kick_tables.right_recoil}
+				}
+				self.riveter.supported = true
+				self.riveter.ads_speed = 0.280
+				self.riveter.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3200,
+					min_mult = 0.16667
+				}
+				self.riveter.stats = {
+					damage = 90,
+					spread = 65,
+					recoil = 67,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.riveter.panic_suppression_chance = 0.05
+				self.riveter.stats_modifiers = nil
+				self.riveter.sounds.stop_fire = "saiga_stop"
+				self.riveter.timers = deep_clone(self.m16.timers)
+			end
+
+			if self.soa then --MW2023 SOA Subverter
+				self.soa.categories = { 
+					"assault_rifle",
+					"dmr_l",
+				}
+				self.soa.recategorize = { "dmr_ar" }
+				self.soa.damage_type = "sniper"
+				self.soa.nato = true
+				self.soa.tactical_reload = 1
+				self.soa.CLIP_AMMO_MAX = 20
+				self.soa.AMMO_MAX = 80
+				self.soa.FIRE_MODE = "auto"
+				self.soa.CAN_TOGGLE_FIREMODE = true
+				self.soa.fire_rate_multiplier = nil
+				self.soa.fire_mode_data.fire_rate = 0.08608
+				self.soa.kick = {}
+				self.soa.kick = self.stat_info.kick_tables.left_recoil
+				self.soa.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{3, self.stat_info.kick_tables.left_recoil},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{11, self.stat_info.kick_tables.horizontal_right_recoil},
+					{16, self.stat_info.kick_tables.left_recoil}
+				}
+				self.soa.supported = true
+				self.soa.ads_speed = 0.280
+				self.soa.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 5800,
+					min_mult = 0.53333
+				}
+				self.soa.stats = {
+					damage = 45,
+					spread = 86,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.soa.stats_modifiers = nil
+				self.soa.armor_piercing_chance = 0.25
+				self.soa.panic_suppression_chance = 0.05
+				self.soa.timers.reload_empty = 2.3
+				self.soa.timers.reload_exit_empty = 0.75
+				self.soa.timers.reload_not_empty = 1.48
+				self.soa.timers.reload_exit_not_empty = 0.52
+			end
+
 			if self.toz81 then
 				self.toz81.recategorize = { "heavy_shot" }
 				self.toz81.categories = { "shotgun", "shotgun_pistol" }
@@ -24269,7 +24373,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					start_dist = 3600,
 					end_dist = 9000,
 					min_mult = 0.5
-				}	
+				}
 				self.plasmaproto.stats = {
 					damage = 60,
 					spread = 81,

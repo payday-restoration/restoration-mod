@@ -19398,6 +19398,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_l1a1 = {
 						translation = Vector3(-0.005, 10.5, -3.52)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_soa = {
+						translation = Vector3(-0.08, 7, -0.154),
+						rotation = Rotation(0.02, -0.08, 0.55)
+					}
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
@@ -37841,6 +37845,60 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_ass_soa_o_std then
+			self.parts.wpn_fps_ass_soa_o_std.stance_mod = {
+				wpn_fps_ass_soa = {
+					translation = Vector3(-0.02, 0, 0.8),
+					rotation = Rotation(0.04, 0, 0.55)
+				}
+			}
+
+			self.parts.wpn_fps_ass_soa_b_2.supported = true
+			self.parts.wpn_fps_ass_soa_b_2.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_soa_b_2.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_ass_soa_b_3.supported = true
+			self.parts.wpn_fps_ass_soa_b_3.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_soa_b_3.custom_stats = deep_clone(barrels.short_b1_stats)
+
+			self.parts.wpn_fps_ass_soa_m_2.supported = true
+			self.parts.wpn_fps_ass_soa_m_2.stats = {
+				extra_ammo = 10,
+				concealment = -1,
+				reload = -3
+			}
+			self.parts.wpn_fps_ass_soa_m_2.custom_stats = {
+				ads_speed_mult = 1.025
+			}
+
+			self.parts.wpn_fps_ass_soa_m_3.supported = true
+			self.parts.wpn_fps_ass_soa_m_3.stats = {
+				value = 3,
+				concealment = -4,
+				extra_ammo = 30,
+				reload = -6
+			}
+			self.parts.wpn_fps_ass_soa_m_3.custom_stats = {
+				ads_speed_mult = 1.1
+			}
+
+			self.parts.wpn_fps_ass_soa_s_2.supported = true
+			self.parts.wpn_fps_ass_soa_s_2.stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+			self.parts.wpn_fps_ass_soa_s_2.custom_stats = deep_clone(stocks.adj_to_fixed_rec_stats)
+
+			self.parts.wpn_fps_ass_soa_s_3.supported = true
+			self.parts.wpn_fps_ass_soa_s_3.stats = deep_clone(stocks.adj_acc_stats)
+			self.parts.wpn_fps_ass_soa_s_3.custom_stats = deep_clone(stocks.adj_acc_stats)
+
+			self.parts.wpn_fps_ass_soa_s_4.supported = true
+			self.parts.wpn_fps_ass_soa_s_4.stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+			self.parts.wpn_fps_ass_soa_s_4.custom_stats = deep_clone(stocks.adj_to_fixed_acc_stats)
+
+			self.parts.wpn_fps_ass_soa_s_5.supported = true
+			self.parts.wpn_fps_ass_soa_s_5.stats = deep_clone(stocks.adj_to_fold_stats)
+			self.parts.wpn_fps_ass_soa_s_5.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+		end
 
 		if self.parts.wpn_fps_pis_toz81_bayonet_unfolded then
 			self.parts.wpn_fps_pis_toz81_bayonet.supported = true

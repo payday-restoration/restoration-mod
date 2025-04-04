@@ -33,7 +33,7 @@ local function get_opts_pro_job_ponr_input()
 		instance_name = "are_heli_escape_001",
 		event = "activate_pro_job_ponr",
 		on_executed = {
-			{ id = 400001, delay = 0, },
+			{ id = 140001, delay = 0, },
 		},
 	}
 end
@@ -44,7 +44,7 @@ return {
 	["levels/instances/unique/are_heli_escape/world/world"] = function(result)
 		opts_pro_job_ponr = opts_pro_job_ponr or get_opts_pro_job_ponr()
 		pro_job_ponr = pro_job_ponr or restoration:gen_pointofnoreturn(
-			400001,
+			140001,
 			"pro_job_ponr",
 			Vector3(0, 0, 0),
 			Rotation(0, 0, 0),
@@ -52,7 +52,7 @@ return {
 		)
 		opts_pro_job_ponr_input = opts_pro_job_ponr_input or get_opts_pro_job_ponr_input()
 		pro_job_ponr_input = pro_job_ponr_input or restoration:gen_instance_input(
-			400002,
+			140002,
 			"pro_job_ponr_input",
 			Vector3(0, 0, 0),
 			Rotation(0, 0, 0),

@@ -2,6 +2,54 @@ local old_init = AchievementsTweakData.init
 function AchievementsTweakData:init(tweak_data)
 	old_init(self, tweak_data)
 	
+	local normal_and_above = {
+		"normal",
+		"hard",
+		"overkill",
+		"overkill_145",
+		"easy_wish",
+		"overkill_290",
+		"sm_wish"
+	}
+	local hard_and_above = {
+		"hard",
+		"overkill",
+		"overkill_145",
+		"easy_wish",
+		"overkill_290",
+		"sm_wish"
+	}
+	local veryhard_and_above = {
+		"overkill",
+		"overkill_145",
+		"easy_wish",
+		"overkill_290",
+		"sm_wish"
+	}
+	local overkill_and_above = {
+		"overkill_145",
+		"easy_wish",
+		"overkill_290",
+		"sm_wish"
+	}
+	local easywish_and_above = {
+		"easy_wish",
+		"overkill_290",
+		"sm_wish"
+	}
+	local deathwish_and_above = {
+		"overkill_290",
+		"sm_wish"
+	}
+	local sm_wish_and_above = {
+		"sm_wish"
+	}	
+	local tracking = {
+		second = "second",
+		realtime = "realtime",
+		rarely = "rarely"
+	}
+			
 	--Tag, you're it! no longer needs a full team
 	self.complete_heist_achievements.trophy_friendly_car.num_players = nil
 	
@@ -41,8 +89,8 @@ function AchievementsTweakData:init(tweak_data)
 		specials_killed = {
 			{
 			enemies = {
-			"spooc",
-			"spooc_titan"
+				"spooc",
+				"spooc_titan"
 			},
 			count = 1
 			}
@@ -108,27 +156,6 @@ function AchievementsTweakData:init(tweak_data)
 		difficulty = overkill_and_above
 	}
 	
-	self.pincushion = {
-		award = "scorpion_3",
-		weapon_category = "bow",
-		enemies = {
-			"tank",
-			"tank_black",
-			"tank_skull",
-			"tank_medic",
-			"tank_mini",
-			"tank_titan",
-			"tank_titan_assault",
-			"spring", --why not?
-			"headless_hatman",
-			"tank_hw",
-			"tank_hw_black",
-			"tank_biker"
-			
-		},
-		count = 10
-	}
-
 	--Explosive stuff
 	self.grenade_achievements.boom_shakalaka = {
 		kill = true,
@@ -181,12 +208,8 @@ function AchievementsTweakData:init(tweak_data)
 	self.grenade_achievements.any_shield_kills = {
 		kill = true,
 		challenge_stat = "any_shield_kills",
-		enemies = {
-			"shield",
-			"phalanx_minion",
-			"phalanx_minion_assault",
-			"phalanx_vip", --why not?
-			"marshal_shield"
+		enemy_tags_any = {
+			"shield"
 		}
 	}
 	
@@ -204,20 +227,8 @@ function AchievementsTweakData:init(tweak_data)
 	self.grenade_achievements.any_tank_kills = {
 		kill = true,
 		challenge_stat = "any_tank_kills",
-		enemies = {
-			"tank",
-			"tank_black",
-			"tank_skull",
-			"tank_medic",
-			"tank_mini",
-			"tank_titan",
-			"tank_titan_assault",
-			"spring", --why not?
-			"headless_hatman",
-			"tank_hw",
-			"tank_hw_black",
-			"tank_biker"
-			
+		enemy_tags_any = {
+			"tank"
 		}
 	}
 	
@@ -296,8 +307,7 @@ function AchievementsTweakData:init(tweak_data)
 		enemies = {
 			"medic_summers",
 			"medic",
-			"omnia_lpf"
-			
+			"omnia_lpf"			
 		}
 	}
 	
@@ -843,15 +853,27 @@ function AchievementsTweakData:init(tweak_data)
 		},
 		enemy_kills = {
 			enemies = {
-			"shield",
-			"phalanx_minion",
-			"phalanx_minion_assault",
-			"phalanx_vip", --why not?
-			"marshal_shield"
-		},
+				"shield",
+				"phalanx_minion",
+				"phalanx_minion_assault",
+				"phalanx_vip", --why not?
+				"marshal_shield"
+			},
 			count = 10
 		}
 	}
+	local steel_2 = self.enemy_melee_hit_achievements.steel_2
+	self.visual.steel_2.progress = {
+		get = function ()
+			if table.contains(steel_2.melee_weapons, managers.blackmarket:equipped_melee_weapon()) then
+				return managers.statistics:session_enemy_killed_by_type(steel_2.enemy_kills.enemies, "melee")
+			end
+
+			return 0
+		end,
+		max = steel_2.enemy_kills.count,
+		update = tracking.second
+	}	
 	
 	self.enemy_melee_hit_achievements.steel_4 = {
 		enemies = {

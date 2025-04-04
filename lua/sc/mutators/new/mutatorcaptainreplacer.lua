@@ -11,6 +11,9 @@ MutatorCaptainReplacer.disables_achievements = false
 MutatorCaptainReplacer.categories = {
 	"enemies"
 }
+MutatorCaptainReplacer.incompatibility_tags = {
+	"replaces_boss"
+}
 MutatorCaptainReplacer.icon_coords = {
 	5,
 	2

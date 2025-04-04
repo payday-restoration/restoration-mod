@@ -1,6 +1,32 @@
-local all_cop_variants = {
+-- do not touch this.
+local all_head_variants = {}
+local all_cop_variants = {}
+local enemy_mapping = {}
+
+for name, sequence in pairs(all_cop_variants) do
+	all_cop_variants[Idstring(name):key()] = sequence
+	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
+end
+
+for name, sequence in pairs(all_head_variants) do
+	enemy_mapping[Idstring(name):key()] = sequence
+	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
+end
+
+function HuskCopBase:random_mat_seq_initialization()
+	local sequence = enemy_mapping[self._unit:name():key()]
+    local lvl_tweak_data = tweak_data.levels[job]
+    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
+
+	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
+		self._unit:damage():run_sequence_simple(sequence)
+	end
+end
+
+local enemy_variations = {
 	["units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar",
 	["units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
+	["units/pd2_dlc_vip/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper_scripted",
 	["units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
 	["units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new"] = "winters_shield",
 	["units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"] = "taser_titan",
@@ -9,6 +35,11 @@ local all_cop_variants = {
 	
 	["units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"] = "black",
 	["units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3"] = "skull",
+	
+	["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/ene_zeal_bulldozer_2_sc"] = "green",
+	["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"] = "black",
+	["units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"] = "ben",
+	["units/pd2_dlc_drm/characters/ene_bulldozer_medic_sc/ene_bulldozer_medic_sc"] = "medic",
 
 	["units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc"] = "black",
 	["units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc"] = "skull",
@@ -70,6 +101,7 @@ local all_cop_variants = {
 	["units/pd2_mod_bravo/characters/ene_bravo_guard_3/ene_bravo_guard_3"] = "swat_guard_lmg",	
 	
 	["units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"] = "swat_sniper",
+	["units/pd2_mod_bravo/characters/ene_bravo_dmr_scripted/ene_bravo_dmr_scripted"] = "swat_sniper",
 	
 	["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "fbi_1",
 	["units/payday2/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2",
@@ -166,7 +198,7 @@ local all_cop_variants = {
 	
 }
 
-local enemy_mapping = {
+local all_head_variants = {
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_cop",
@@ -202,6 +234,7 @@ local enemy_mapping = {
 	["units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"] = "swat",
 	["units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"] = "swat_ar",
 	["units/pd2_mod_nypd/characters/ene_sniper_2/ene_sniper_2"] = "swat_ar",
+	["units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"] = "swat_ar",
 	["units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"] = "swat_heavy",
 	["units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"] = "swat_heavy",	
 	["units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"] = "head_balaclava_d",
@@ -214,55 +247,9 @@ local enemy_mapping = {
 	
 }
 
-local all_head_variants = {}
-local all_cop_variants = {}
-
-for name, sequence in pairs(all_cop_variants) do
-	all_cop_variants[Idstring(name):key()] = sequence
-	all_cop_variants[Idstring(name .. "_husk"):key()] = sequence
-end
-
-for name, sequence in pairs(all_head_variants) do
+for name, sequence in pairs(enemy_variations) do
 	enemy_mapping[Idstring(name):key()] = sequence
 	enemy_mapping[Idstring(name .. "_husk"):key()] = sequence
-end
-
-Hooks:PreHook(HuskCopBase, "post_init", "hits_post_init", function(self)
-	local name = self._unit:name():key()
-	
-	local character_sequence = all_cop_variants[name]
-	
-	local spawn_manager_ext = self._unit:spawn_manager()
-	local damage_ext = self._unit:character_damage()
-	local head = damage_ext._head
-	
-	if spawn_manager_ext then	
-		if head then	
-			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
-			
-			spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
-
-			self._head_unit = spawn_manager_ext:get_unit("cop_head")
-		end
-	end
-	
-	if alive(self._head_unit) then		
-		self._head_unit:set_enabled(self._unit:enabled())
-		
-		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
-			self._head_unit:damage():run_sequence_simple(character_sequence)
-		end
-	end
-end)
-
-function HuskCopBase:random_mat_seq_initialization()
-	local sequence = enemy_mapping[self._unit:name():key()]
-    local lvl_tweak_data = tweak_data.levels[job]
-    local flashlights_on = lvl_tweak_data and lvl_tweak_data.flashlights_on
-
-	if self._unit:damage() and self._unit:damage():has_sequence(sequence) then
-		self._unit:damage():run_sequence_simple(sequence)
-	end
 end
 
 Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
@@ -325,4 +312,31 @@ Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 	self._unit:character_damage():add_listener("lpf_buff_state" .. tostring(self._unit:key()), {
 		"death"
 	}, callback(self, self, "disable_lpf_buff"))	
+	
+
+	local name = self._unit:name():key()
+	
+	local character_sequence = all_cop_variants[name]
+	
+	local spawn_manager_ext = self._unit:spawn_manager()
+	local damage_ext = self._unit:character_damage()
+	local head = damage_ext._head
+	
+	if spawn_manager_ext then	
+		if head then	
+			managers.dyn_resource:load(Idstring("unit"), Idstring(head), managers.dyn_resource.DYN_RESOURCES_PACKAGE, nil)
+			
+			spawn_manager_ext:spawn_and_link_unit("_char_joint_names", "cop_head", head)
+
+			self._head_unit = spawn_manager_ext:get_unit("cop_head")
+		end
+	end
+	
+	if alive(self._head_unit) then		
+		self._head_unit:set_enabled(self._unit:enabled())
+		
+		if self._head_unit:damage() and self._head_unit:damage():has_sequence(character_sequence) then
+			self._head_unit:damage():run_sequence_simple(character_sequence)
+		end
+	end	
 end)

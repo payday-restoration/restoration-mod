@@ -1037,7 +1037,7 @@ local grips = {
 				stats = {
 					value = 9,
 					damage = -45,
-					total_ammo_mod = -98,
+					total_ammo_mod = -99,
 					spread = 5
 				},
 				custom_stats = {
@@ -1366,7 +1366,7 @@ local grips = {
 				supported = true,
 				stats = {
 					value = 9,
-					total_ammo_mod = -98,
+					total_ammo_mod = -99,
 					spread = -5,
 					damage = 30
 				},
@@ -19264,6 +19264,10 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_toz81 = {
 						translation = Vector3(-0.055, -23.2, -4.785),
 						rotation = Rotation(-0.08, -0.12, 0)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_riveter = {
+						translation = Vector3(0, 9, -0.3),
+						rotation = Rotation(0, -0.05, 0.55)
 					}
 
 				
@@ -37846,6 +37850,82 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	--[[ HYLIE'S MODS ]]
 
+		if self.parts.wpn_fps_sho_riveter_b_4 then
+
+			self.parts.wpn_fps_sho_riveter_b_4.supported = true
+			self.parts.wpn_fps_sho_riveter_b_4.name_id = "bm_wp_wpn_fps_sho_riveter_b_2"
+			self.parts.wpn_fps_sho_riveter_b_4.sub_type = nil
+			self.parts.wpn_fps_sho_riveter_b_4.desc_id = nil
+			self.parts.wpn_fps_sho_riveter_b_4.perks = nil
+			self.parts.wpn_fps_sho_riveter_b_4.stats = deep_clone(barrels.short_b3_stats)
+			self.parts.wpn_fps_sho_riveter_b_4.custom_stats = deep_clone(barrels.short_b3_stats)
+
+			self.parts.wpn_fps_sho_riveter_b_3.supported = true
+			self.parts.wpn_fps_sho_riveter_b_3.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_sho_riveter_b_3.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_sho_riveter_b_2.supported = true
+			self.parts.wpn_fps_sho_riveter_b_2.name_id = "bm_wp_wpn_fps_sho_riveter_b_4"
+			self.parts.wpn_fps_sho_riveter_b_2.desc_id = "bm_wp_upg_suppressor"
+			self.parts.wpn_fps_sho_riveter_b_2.has_description = true
+			self.parts.wpn_fps_sho_riveter_b_2.sub_type = "silencer"
+			self.parts.wpn_fps_sho_riveter_b_2.perks = {"silencer"}
+			self.parts.wpn_fps_sho_riveter_b_2.stats = {
+				alert_size = -1,
+				suppression = 12
+			}
+			self.parts.wpn_fps_sho_riveter_b_2.custom_stats = nil
+
+			self.parts.wpn_fps_sho_riveter_m_2.supported = true
+			self.parts.wpn_fps_sho_riveter_m_2.stats = {
+				value = 2,
+				extra_ammo = -5,
+				reload = 6,
+				concealment = 3
+			}
+			self.parts.wpn_fps_sho_riveter_m_2.custom_stats = { ads_speed_mult = 0.925 }
+
+			self.parts.wpn_fps_sho_riveter_m_3.supported = true
+			self.parts.wpn_fps_sho_riveter_m_3.stats = {
+				value = 8,
+				extra_ammo = 15,
+				concealment = -2,
+				reload = -5
+			}
+			self.parts.wpn_fps_sho_riveter_m_3.custom_stats = {
+				ads_speed_mult = 1.05
+			}
+
+			for i, part_id in pairs(self.wpn_fps_sho_riveter.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "barrel_ext") then
+							self.wpn_fps_sho_riveter.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+
+			self.wpn_fps_sho_riveter.override = self.wpn_fps_sho_riveter.override or {}
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom.custom_stats.rays = 4
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom_free.desc_id = "bm_wp_upg_a_custom_4_desc"
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 4
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_auto_override)
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_9_auto_desc_per_pellet"
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_auto_override)
+
+			self.wpn_fps_sho_riveter_npc.uses_parts = deep_clone(self.wpn_fps_sho_riveter.uses_parts)
+			self.wpn_fps_sho_riveter_npc.override = deep_clone(self.wpn_fps_sho_riveter.override)
+		end
+
 		if self.parts.wpn_fps_ass_soa_o_std then
 			self.parts.wpn_fps_ass_soa_o_std.stance_mod = {
 				wpn_fps_ass_soa = {
@@ -42023,7 +42103,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
-			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_crane") then
+			exclude = {
+				"wpn_fps_sho_riveter"
+			}
+			if table.contains(self[factory_id].uses_parts, "wpn_fps_upg_m4_s_crane") and not table.contains(exclude, factory_id) then
 				attachment_list = {
 					"wpn_fps_snp_victor_s_mod0",
 
@@ -45506,6 +45589,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "HD2Liberator_init", function(sel
 		 self.parts.wpn_fps_ass_ar23_body.animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil"
+		}
+	end
+end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "MWIII_Riveter_init", function(self)
+	if self.wpn_fps_sho_riveter then
+		self.wpn_fps_sho_riveter.override = {
+			wpn_fps_upg_o_45rds = {stance_mod = {wpn_fps_sho_riveter = {translation = Vector3(-3.47, -1.157, -9.51), rotation = Rotation(0, 2.9478e-010, -45)}}},
+			wpn_fps_upg_o_45rds_v2 = {stance_mod = {wpn_fps_sho_riveter = {translation = Vector3(-3.47, -1.157, -9.51), rotation = Rotation(0, 2.9478e-010, -45)}}},
+			wpn_fps_upg_o_45steel = {stance_mod = {wpn_fps_sho_riveter = {translation = Vector3(-3.47, -1.157, -9.51), rotation = Rotation(0, 2.9478e-010, -45)}}},
+			wpn_fps_upg_m4_s_adapter = {unit ="units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"}
 		}
 	end
 end)

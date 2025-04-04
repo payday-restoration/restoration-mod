@@ -11327,7 +11327,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m16.stats_modifiers = nil
 						self.m16.panic_suppression_chance = 0.05
 						self.m16.reload_speed_multiplier = 1.12
-						self.m16.timers.reload_exit_empty = 0.7
+						self.m16.timers.reload_empty = 3.68
+						self.m16.timers.reload_exit_empty = 0.85
 						self.m16.timers.reload_exit_not_empty = 0.95
 
 					--Queen's Wrath
@@ -23005,6 +23006,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.riveter.panic_suppression_chance = 0.05
 				self.riveter.stats_modifiers = nil
+				self.riveter.lock_slide = true
+				self.riveter.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.riveter.sounds.stop_fire = "saiga_stop"
 				self.riveter.timers = deep_clone(self.m16.timers)
 			end

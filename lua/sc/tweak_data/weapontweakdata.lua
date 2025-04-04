@@ -22993,9 +22993,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.riveter.stats = {
 					damage = 90,
 					spread = 65,
-					recoil = 67,
+					recoil = 61,
 					zoom = 1,
-					concealment = 26,
+					concealment = 24,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -25503,8 +25503,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				weap.always_play_anims = true
 				self:generate_custom_weapon_stats(weap)	
 			end
-			if weap.animations then
-				weap.animations.magazine_empty = nil 
+			if weap.animations and weap.animations.magazine_empty then
+				weap.animations.magazine_empty = ""
 			end
 
 			if weap.keep_ammo == 0 then

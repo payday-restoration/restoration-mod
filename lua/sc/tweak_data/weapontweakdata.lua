@@ -19888,6 +19888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stampede_ecs.stats_modifiers = nil
 				self.stampede_ecs.panic_suppression_chance = 0.05
 				self.stampede_ecs.keep_ammo = 1
+				self.stampede_ecs.sounds.use_fix = nil
 				self.stampede_ecs.timers.reload_not_empty = 1.94
 				self.stampede_ecs.timers.reload_exit_not_empty = 0.54
 				self.stampede_ecs.timers.reload_empty = 1.94

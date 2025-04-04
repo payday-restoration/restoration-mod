@@ -41511,6 +41511,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_ass_akm_m_helo then
+		self.parts.wpn_fps_ass_akm_m_helo.supported = true
+		self.parts.wpn_fps_ass_akm_m_helo.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
+		self.parts.wpn_fps_ass_akm_m_helo.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
+	end
+
 	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]
 	--Version 0.5.0
 		--Et Omnia Vanitas

@@ -1399,6 +1399,13 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._ammo_data.ammo_pickup_max_mul = self._ammo_data.ammo_pickup_max_mul and self._ammo_data.ammo_pickup_max_mul * stats.ammo_pickup_max_mul or stats.ammo_pickup_max_mul
 			end
 		end
+
+		if part_id == "wpn_fps_ass_akm_m_helo" then
+			self._extra_ammo = -tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + 1
+			self._tactical_reload = nil
+			self:set_ammo_max_per_clip(1)
+			self:set_ammo_remaining_in_clip(1)
+		end
 	end
 
 	if self._use_silenced_muzzleflash then
@@ -2012,7 +2019,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 			hit_count = #count_hits,
 			weapon_unit = self._unit
 		})
-		
+
 		return result
 	end
 

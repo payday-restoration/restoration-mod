@@ -281,11 +281,69 @@ function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
 
 		return "dallas"
 	end
+	
+	local high_noon = char and not peer_id and (Global.mutators.mutator_values.MutatorHighNoon and Global.mutators.mutator_values.MutatorHighNoon.enabled)
+	if high_noon then
+		local yippiekiyay = {
+			"bandit",
+			"saloonstar",
+			"saloonshade",
+			"saloonlightlea",
+			"saloondarklea",
+			"bossflagmask"
+		}
+		return table.random(yippiekiyay)
+	end
 
-	local i_just_drank_my_toilet_water = not peer_id and math.rand(1) or 10
-	if char and char == "wild" and i_just_drank_my_toilet_water <= 0.01 then
-		local how_does_that_make_you_feel_lil_donnie = math.rand(1)
-		return how_does_that_make_you_feel_lil_donnie <= 0.01 and "win_donald_mega" or "win_donald"
+	local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMSACText")
+	if not easterless then
+		local i_just_drank_my_toilet_water = not peer_id and math.rand(1) or 10
+		if char and char == "wild" and i_just_drank_my_toilet_water <= 0.01 then
+			local how_does_that_make_you_feel_lil_donnie = math.rand(1)
+			return how_does_that_make_you_feel_lil_donnie <= 0.01 and "win_donald_mega" or "win_donald"
+		end
+
+		local uoh = {
+				russian = "dallas_glow",
+				american = "hoxton_glow",
+				german = "wolf_glow",
+				spanish = "chains_glow",
+				old_hoxton = "hoxton_glow",
+				female_1 = "pdc16_clover",
+				jimmy = "jimmy",
+				wild = "mrm",
+				max = "mega_max",
+				sydney = "swm_sydney",
+				myh = "mmh",
+		}
+
+		local megalovania = not peer_id and math.rand(1) or 10
+		if megalovania <= 0.05 then
+			if uoh[char] then
+				return uoh[char]
+			end
+		end
+
+		local hag = {
+				bodhi = "ami_02",
+				jowi = "mdm",
+				bonnie = "ami_05",
+				dragan = "cop_mega_gage_blade",
+				ecp_male = "smo_10",
+				ecp_female = "skm_06",
+				chico = "ami_06",
+				dragon = "megacthulhu",
+				jacket = "smo_07",
+				sokol = "ami_03",
+				joy = "cop_kawaii",
+		}
+
+		local tableslam = not peer_id and math.rand(1) or 10
+		if tableslam <= 0.025 then
+			if hag[char] then
+				return uoh[char]
+			end
+		end
 	end
 
 	if tweak_data.blackmarket.masks[mask_id].characters then

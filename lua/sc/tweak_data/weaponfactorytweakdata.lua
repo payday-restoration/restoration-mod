@@ -39075,7 +39075,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_amt_g_smooth.custom_stats = deep_clone(grips.quickdraw_1)
 
 			self.parts.wpn_fps_pis_amt_g_rosewood.supported = true		
-			self.parts.wpn_fps_pis_amt_g_rosewood.stats = deep_clone(grips.recoil_acc)																		
+			self.parts.wpn_fps_pis_amt_g_rosewood.stats = deep_clone(grips.recoil_acc)
+
+			self.wpn_fps_pis_amt.override = self.wpn_fps_pis_amt.override or {}
 	end
 
 	--Rex's Bubba Mosin Parts
@@ -42888,6 +42890,17 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult or 1
 			if zoom > 2 and self.parts[part_id].custom_stats.ads_speed_mult == 1 then
 				self.parts[part_id].custom_stats.ads_speed_mult = self.parts[part_id].custom_stats.ads_speed_mult + (zoom * 0.003)
+			end
+		end
+	end
+
+	if self.wpn_fps_pis_amt then
+		for i, part_id in pairs(self.wpn_fps_pis_amt.uses_parts) do
+			if self.parts and self.parts[part_id] and self.parts[part_id].type and self.parts[part_id].type == "barrel_ext" then
+				self.wpn_fps_pis_amt.override[part_id] = {
+					a_obj = "a_ns",
+					parent = "slide"
+				}
 			end
 		end
 	end

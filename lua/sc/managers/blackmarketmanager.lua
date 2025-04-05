@@ -341,7 +341,7 @@ function BlackMarketManager:get_real_mask_id(mask_id, peer_id, char)
 		local tableslam = not peer_id and math.rand(1) or 10
 		if tableslam <= 0.025 then
 			if hag[char] then
-				return uoh[char]
+				return hag[char]
 			end
 		end
 	end

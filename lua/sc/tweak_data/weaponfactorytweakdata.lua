@@ -37865,6 +37865,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_riveter_b_4.sub_type = nil
 			self.parts.wpn_fps_sho_riveter_b_4.desc_id = nil
 			self.parts.wpn_fps_sho_riveter_b_4.perks = nil
+			self.parts.wpn_fps_sho_riveter_b_4.sound_switch = nil
 			self.parts.wpn_fps_sho_riveter_b_4.stats = deep_clone(barrels.short_b3_stats)
 			self.parts.wpn_fps_sho_riveter_b_4.custom_stats = deep_clone(barrels.short_b3_stats)
 
@@ -37876,6 +37877,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_riveter_b_2.name_id = "bm_wp_wpn_fps_sho_riveter_b_4"
 			self.parts.wpn_fps_sho_riveter_b_2.desc_id = "bm_wp_upg_suppressor"
 			self.parts.wpn_fps_sho_riveter_b_2.has_description = true
+			self.parts.wpn_fps_sho_riveter_b_2.sound_switch = {
+					suppressed = "suppressed_c"
+				}
 			self.parts.wpn_fps_sho_riveter_b_2.sub_type = "silencer"
 			self.parts.wpn_fps_sho_riveter_b_2.perks = {"silencer"}
 			self.parts.wpn_fps_sho_riveter_b_2.stats = {

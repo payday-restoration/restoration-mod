@@ -24018,6 +24018,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm.CLIP_AMMO_MAX = 8
 				self.pm.AMMO_MAX = 75
 				self.pm.kick = self.stat_info.kick_tables.even_recoil
+				self.pm.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{5, self.stat_info.kick_tables.right_kick},
+					{9, self.stat_info.kick_tables.right_recoil},
+					{14, self.stat_info.kick_tables.right_kick},
+					{22, self.stat_info.kick_tables.even_recoil}
+				}
 				self.pm.supported = true
 				self.pm.ads_speed = 0.120
 				self.pm.damage_falloff = {
@@ -24057,6 +24064,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_pm.CLIP_AMMO_MAX = 16
 					self.x_pm.AMMO_MAX = 150
 					self.x_pm.kick = self.stat_info.kick_tables.even_recoil
+					self.x_pm.kick_pattern = {
+						{0, self.stat_info.kick_tables.moderate_kick},
+						{5, self.stat_info.kick_tables.right_kick},
+						{9, self.stat_info.kick_tables.right_recoil},
+						{14, self.stat_info.kick_tables.right_kick},
+						{22, self.stat_info.kick_tables.even_recoil}
+					}
 					self.x_pm.supported = true
 					self.x_pm.ads_speed = 0.120
 					self.x_pm.damage_falloff = {
@@ -24215,6 +24229,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mg34.fire_mode_data.fire_rate = 0.06666666
 				self.mg34.AMMO_MAX = 160
 				self.mg34.kick = self.stat_info.kick_tables.vertical_kick
+				self.mg34.kick_pattern = {
+					{0, self.stat_info.kick_tables.random_recoil},
+					{6, self.stat_info.kick_tables.left_recoil},
+					{12, self.stat_info.kick_tables.right_recoil},
+					{16, self.stat_info.kick_tables.vertical_kick}
+				}
 				self.mg34.always_use_standing = true
 				self.mg34.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.mg34.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
@@ -24328,6 +24348,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.owlfbullpup.fire_mode_data.fire_rate = 0.2
 				self.owlfbullpup.kick = {}
 				self.owlfbullpup.kick = self.stat_info.kick_tables.moderate_kick
+				self.owlfbullpup.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{6, self.stat_info.kick_tables.right_recoil},
+					{8, self.stat_info.kick_tables.right_kick},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{20, self.stat_info.kick_tables.right_kick}
+				}
 				self.owlfbullpup.supported = true
 				self.owlfbullpup.ads_speed = 0.280
 				self.owlfbullpup.damage_falloff = {
@@ -24371,6 +24398,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.plasmaproto.fire_mode_data.fire_rate = 0.1470588
 				self.plasmaproto.kick = {}
 				self.plasmaproto.kick = self.stat_info.kick_tables.right_kick
+				self.plasmaproto.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{4, self.stat_info.kick_tables.moderate_right_kick},
+					{10, self.stat_info.kick_tables.vertical_kick},
+					{14, self.stat_info.kick_tables.moderate_right_kick}
+				}	
 				self.plasmaproto.supported = true
 				self.plasmaproto.ads_speed = 0.400
 				self.plasmaproto.damage_falloff = {
@@ -24607,6 +24640,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sidewinder.AMMO_MAX = 80
 			self.sidewinder.fire_mode_data.fire_rate = 0.11111111
 			self.sidewinder.kick = self.stat_info.kick_tables.even_recoil
+			self.sidewinder.kick_pattern = {
+				{0, self.stat_info.kick_tables.even_recoil},
+				{7, self.stat_info.kick_tables.left_kick},
+				{9, self.stat_info.kick_tables.vertical_kick},
+				{13, self.stat_info.kick_tables.left_recoil}
+			}
 			self.sidewinder.supported = true
 			self.sidewinder.ads_speed = 0.300
 			self.sidewinder.stats = {
@@ -24775,6 +24814,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.crysis3_typhoon.CAN_TOGGLE_FIREMODE = false
 			self.crysis3_typhoon.muzzleflash = "effects/payday2/particles/weapons/hailstorm_effect"
 			self.crysis3_typhoon.kick = self.stat_info.kick_tables.moderate_kick
+			self.crysis3_typhoon.kick_pattern = {
+				{0, self.stat_info.kick_tables.moderate_kick},
+				{16, self.stat_info.kick_tables.right_recoil},
+				{34, self.stat_info.kick_tables.moderate_kick},
+				{55, self.stat_info.kick_tables.left_recoil},
+				{78, self.stat_info.kick_tables.right_recoil},
+				{110, self.stat_info.kick_tables.vertical_kick}
+			}
 			self.crysis3_typhoon.kick.volley = nil
 			self.crysis3_typhoon.shake.bypass_global_shake = true
 			self.crysis3_typhoon.no_charge_anims = true
@@ -25097,7 +25144,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.spas15.fire_mode_data.fire_rate = 0.1818181818
 			self.spas15.AMMO_MAX = 60
 			self.spas15.kick = self.stat_info.kick_tables.vertical_kick
-			self.fal.spas15 = {
+			self.spas15.kick_pattern = {
 				{0, self.stat_info.kick_tables.vertical_kick},
 				{2, self.stat_info.kick_tables.left_kick},
 				{5, self.stat_info.kick_tables.moderate_right_kick},

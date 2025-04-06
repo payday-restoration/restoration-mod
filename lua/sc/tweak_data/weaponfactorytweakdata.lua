@@ -44674,7 +44674,7 @@ for _, part in pairs(self.parts) do
 				end
 			end
 			if part.type == "ammo" then
-				if part.cull and not part.no_cull then
+				if part.cull or not part.no_cull then
 					part.pcs = nil
 					part.stats = { value = 0 }
 					if part.custom_stats and part.custom_stats.sounds then

@@ -22974,6 +22974,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r31.damage_type = "machine_gun"
 				self.r31.fire_mode_data.fire_rate = 0.136054
 				self.r31.CAN_TOGGLE_FIREMODE = true
+				self.r31.tactical_reload = 1
 				self.r31.CLIP_AMMO_MAX = 30
 				self.r31.AMMO_MAX = 90
 				self.r31.shell_ejection = "_dmc/effects/shell_shak_smol"

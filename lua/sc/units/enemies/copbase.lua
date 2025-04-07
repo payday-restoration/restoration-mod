@@ -772,3 +772,34 @@ function CopBase:default_weapon_name(...)
 
 	return default_weapon_name_orig(self, ...)
 end
+
+function CopBase:change_char_tweak(new_tweak_name)
+	local new_tweak_data = tweak_data.character[new_tweak_name]
+
+	if not new_tweak_data then
+		return
+	end
+
+	if new_tweak_name == self._tweak_table then
+		return
+	end
+
+	local old_tweak_data = self._char_tweak
+	self._tweak_table = new_tweak_name
+	self._char_tweak = new_tweak_data
+	local old_tags = self._tags
+	local was_special = self:has_tag("special")
+
+	self:_set_tags(new_tweak_data.tags)
+
+	if was_special then
+		managers.groupai:state():on_unit_tags_updated(self._unit, old_tags, self._tags)
+	end
+	
+	--Drops CS gas
+	if Network:is_server() and self._tweak_table == "phalanx_vip_break" then
+		managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
+	end
+
+	self:_chk_call_tweak_data_changed_listeners(old_tweak_data, new_tweak_data)
+end

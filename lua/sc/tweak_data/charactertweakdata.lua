@@ -3318,6 +3318,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.damage.rocket_damage_mul = 1.25
 	self.spring.damage.bullet_damage_mul = 1
 	self.spring.damage.fire_damage_mul = 1
+	self.spring.damage.tase_damage_mul = 2.5
 	self.spring.priority_shout = "f45"
 	self.spring.bot_priority_shout = "f45x_any"
 	self.spring.priority_shout_max_dis = 3000

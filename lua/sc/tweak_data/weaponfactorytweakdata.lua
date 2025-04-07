@@ -19237,6 +19237,10 @@ end)
 						translation = Vector3(0.05, -0, -3.78),
 						rotation = Rotation(0.11, 0, 0.5)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_r31 = {
+						translation = Vector3(-0.062, 18, -4.52),
+						rotation = Rotation(-0.09, 0.01, -0.65)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_bp12 = {
 						translation = Vector3(0.04, 4.9, -0.01),
@@ -37857,9 +37861,155 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+		if self.parts.wpn_fps_smg_r31_o_std_rear then
+			self.parts.wpn_fps_smg_r31_o_std_rear.stance_mod = {
+				wpn_fps_smg_r31 = {
+					translation = Vector3(0.0, 0, -0.65),
+					rotation = Rotation(-0.1, -0.6, -0.2)
+				}
+			}
+
+			--BARRELS
+				--Short
+				self.parts.wpn_fps_smg_r31_b_highcal.supported = true
+				self.parts.wpn_fps_smg_r31_b_highcal.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_smg_r31_b_highcal.custom_stats = deep_clone(barrels.short_b3_stats)
+				--CHF
+				self.parts.wpn_fps_smg_r31_b_highcal2.supported = true
+				self.parts.wpn_fps_smg_r31_b_highcal2.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_smg_r31_b_highcal2.has_description = true
+				self.parts.wpn_fps_smg_r31_b_highcal2.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_smg_r31_b_highcal2.custom_stats = {
+					chf = true
+				}
+				--Gain-Twist
+				self.parts.wpn_fps_smg_r31_b_velocity.supported = true
+				self.parts.wpn_fps_smg_r31_b_velocity.stats = {
+					value = 4,
+					recoil = 2,
+					concealment = -1
+				}
+				self.parts.wpn_fps_smg_r31_b_velocity.custom_stats = nil
+				--Reinforced
+				self.parts.wpn_fps_smg_r31_b_mix.supported = true
+				self.parts.wpn_fps_smg_r31_b_mix.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_smg_r31_b_mix.stats.concealment = -2
+				self.parts.wpn_fps_smg_r31_b_mix.stats.recoil = 2
+				self.parts.wpn_fps_smg_r31_b_mix.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Long
+				self.parts.wpn_fps_smg_r31_b_range.supported = true
+				self.parts.wpn_fps_smg_r31_b_range.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_smg_r31_b_range.custom_stats = deep_clone(barrels.long_b3_stats)
+				--Binary
+				self.parts.wpn_fps_smg_r31_b_int.supported = true
+				self.parts.wpn_fps_smg_r31_b_int.has_description = true
+				self.parts.wpn_fps_smg_r31_b_int.stats = {
+					value = 10,
+					spread = 1,
+					concealment = 1,
+					recoil = -4
+				}
+				self.parts.wpn_fps_smg_r31_b_int.custom_stats = {
+					info_auto_to_burst = true,
+					burst_fire = {
+						count = 2,
+						delay = 0.09,
+						desired_burst_rof = 0.09202,
+						recoil_mult = 0.75,
+						last_recoil_mult = 1,
+						toggle_to_semi = true,
+						burst_default = true,
+					}
+				}
+				table.insert(self.parts.wpn_fps_smg_r31_b_int.forbids, "wpn_fps_upg_i_singlefire")
+				table.insert(self.parts.wpn_fps_smg_r31_b_int.forbids, "wpn_fps_upg_i_autofire")
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_smg_r31_g_quickdraw.supported = true
+				self.parts.wpn_fps_smg_r31_g_quickdraw.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_smg_r31_g_quickdraw.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_smg_r31_g_sprintout.supported = true
+				self.parts.wpn_fps_smg_r31_g_sprintout.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_smg_r31_g_sprintout.custom_stats = deep_clone(grips.dual_stat_1)
+				--CQB
+				self.parts.wpn_fps_smg_r31_g_sprintout2.supported = true
+				self.parts.wpn_fps_smg_r31_g_sprintout2.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_smg_r31_g_sprintout2.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_smg_r31_g_mix.supported = true
+				self.parts.wpn_fps_smg_r31_g_mix.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_smg_r31_g_mix.custom_stats = deep_clone(grips.recoil_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_smg_r31_s_adsmove.supported = true
+				self.parts.wpn_fps_smg_r31_s_adsmove.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_smg_r31_s_adsmove.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_smg_r31_s_flinch.supported = true
+				self.parts.wpn_fps_smg_r31_s_flinch.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_smg_r31_s_flinch.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--No stock
+				self.parts.wpn_fps_smg_r31_s_hipfiremove.supported = true
+				self.parts.wpn_fps_smg_r31_s_hipfiremove.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_smg_r31_s_hipfiremove.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Balanced
+				self.parts.wpn_fps_smg_r31_s_mix.supported = true
+				self.parts.wpn_fps_smg_r31_s_mix.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_smg_r31_s_mix.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_smg_r31_s_mix2.supported = true
+				self.parts.wpn_fps_smg_r31_s_mix2.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_smg_r31_s_mix2.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+			--MAGS
+				--Flip
+				self.parts.wpn_fps_smg_r31_m_fastreload.supported = true
+				self.parts.wpn_fps_smg_r31_m_fastreload.stats = {
+					value = 2,
+					concealment = -1,
+					reload = 3,
+					spread = -1
+				}
+				--FM
+				self.parts.wpn_fps_smg_r31_m_fastreload2.supported = true
+				self.parts.wpn_fps_smg_r31_m_fastreload2.stats = {
+					value = 3,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -10
+				}
+				self.parts.wpn_fps_smg_r31_m_fastreload2.custom_stats = { 
+					ads_speed_mult = 0.95
+				}
+				--EX 1
+				self.parts.wpn_fps_smg_r31_m_extclip.supported = true
+				self.parts.wpn_fps_smg_r31_m_extclip.stats = {
+					value = 7,
+					concealment = -2,
+					reload = -4,
+					extra_ammo = 10
+				}
+				self.parts.wpn_fps_smg_r31_m_extclip.custom_stats = { 
+					ads_speed_mult = 1.05
+				}
+				--EX 2
+				self.parts.wpn_fps_smg_r31_m_extclip2.supported = true
+				self.parts.wpn_fps_smg_r31_m_extclip2.stats = {
+					value = 8,
+					concealment = -3,
+					reload = -5,
+					extra_ammo = 20
+				}
+				self.parts.wpn_fps_smg_r31_m_extclip2.custom_stats = { 
+					ads_speed_mult = 1.1
+				}
+		end
 
 		if self.parts.wpn_fps_sho_riveter_b_4 then
-
 			self.parts.wpn_fps_sho_riveter_b_4.supported = true
 			self.parts.wpn_fps_sho_riveter_b_4.name_id = "bm_wp_wpn_fps_sho_riveter_b_2"
 			self.parts.wpn_fps_sho_riveter_b_4.sub_type = nil

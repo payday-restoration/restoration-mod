@@ -2641,6 +2641,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--MP40
 				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 				--CUSTOM SMGs
+					["bm_wp_wpn_fps_smg_r31_b_highcal"] = "Short Barrel",
+					["bm_wp_wpn_fps_smg_r31_b_int"] = "Binary Mod",
+					["bm_wp_wpn_fps_smg_r31_b_int_desc"] = "Converts this weapon to fire in #{risk}#2-round bursts## at an #{skill_color}#increased fire rate.##",
+
 					["bm_w_m7caseless"] = "Misriah Armory M7 SMG",
 					["bm_w_m7caseless_supp"] = "Misriah Armory M7S SMG",
 					["bm_w_x_m7caseless"] = "Dual M7 SMGs",
@@ -3216,6 +3220,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Kross Vertex
 					["bm_w_polymer"] = "Kross Vertex",
 					--CUSTOM SMGs
+						--Grendel R31
+						["bm_w_r31"] = "Tanto .22",
 						--AR57
 						["bm_w_alpha57_prim"] = "FSS Hurricane",
 						--LWRC
@@ -3301,6 +3307,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Joceline
 					["bm_w_b682"] = "Joceline O/U 12G",
 					--Custom Shotguns
+						--MW2023 Riveter
+						["bm_w_riveter"] = "Riveter",
 						--MW2022 Vepr
 						["bm_w_vecho"] = "KV Broadside",
 						--MW2023 Origin 12
@@ -3380,6 +3388,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--MW2023 ARX-200
+						["bm_w_soa"] = "SOA Subverter",
 						--QBZ-191
 						["bm_w_pd3_qbz191"] = "Northwest B-9",
 						--AN-94/92

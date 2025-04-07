@@ -22837,6 +22837,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.FIRE_MODE = "single"
 				self.sierra458.fire_mode_data.fire_rate = 0.10909
 				self.sierra458.kick = self.stat_info.kick_tables.even_recoil
+				self.sierra458.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_recoil},
+					{2, self.stat_info.kick_tables.even_recoil},
+					{4, self.stat_info.kick_tables.left_kick},
+					{5, self.stat_info.kick_tables.left_recoil},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{10, self.stat_info.kick_tables.left_kick}
+				}
 				self.sierra458.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
 				self.sierra458.can_shoot_through_enemy = true
 				self.sierra458.can_shoot_through_shield = false
@@ -22959,6 +22967,51 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 		
 		--[[     HYLIE'S MODS     ]]--
+
+			if self.r31 then --BO6 R31/Tanto 22
+				self.r31.categories = { "smg" }
+				self.r31.recategorize = { "light_smg" }
+				self.r31.damage_type = "machine_gun"
+				self.r31.fire_mode_data.fire_rate = 0.136054
+				self.r31.CAN_TOGGLE_FIREMODE = true
+				self.r31.CLIP_AMMO_MAX = 30
+				self.r31.AMMO_MAX = 90
+				self.r31.shell_ejection = "_dmc/effects/shell_shak_smol"
+				self.r31.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.r31.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_left_kick},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{9, self.stat_info.kick_tables.right_kick},
+					{12, self.stat_info.kick_tables.right_recoil},
+					{16, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.r31.supported = true
+				self.r31.ads_speed = 0.200
+				self.r31.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 3000,
+					min_mult = 0.25
+				}
+				self.r31.stats = {
+					damage = 20,
+					spread = 71,
+					recoil = 89,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 27,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.r31.stats_modifiers = nil
+				self.r31.panic_suppression_chance = 0.05
+				self.r31.sounds.use_fix = nil
+				self.r31.timers.reload_exit_not_empty = 0.75
+				self.r31.timers.reload_exit_empty = 0.55
+			end
 
 			if self.riveter then --MW2023 Riveter
 				self.riveter.categories = { 
@@ -23176,6 +23229,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bp12.fire_mode_data.fire_rate = 0.13333
 				self.bp12.AMMO_MAX = 60
 				self.bp12.kick = self.stat_info.kick_tables.vertical_kick
+				self.bp12.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{3, self.stat_info.kick_tables.right_kick},
+					{6, self.stat_info.kick_tables.vertical_kick},
+					{9, self.stat_info.kick_tables.left_kick},
+					{12, self.stat_info.kick_tables.vertical_kick}
+				}
 				self.bp12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.bp12.FIRE_MODE = "single"				
 				self.bp12.rays = 9
@@ -23220,6 +23280,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.or12.fire_mode_data.fire_rate = 0.15
 				self.or12.AMMO_MAX = 60
 				self.or12.kick = self.stat_info.kick_tables.vertical_kick
+				self.or12.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.right_kick},
+					{11, self.stat_info.kick_tables.even_recoil},
+					{15, self.stat_info.kick_tables.left_kick},
+					{22, self.stat_info.kick_tables.right_recoil}
+				}
 				self.or12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.or12.FIRE_MODE = "single"				
 				self.or12.CAN_TOGGLE_FIREMODE = false
@@ -23515,6 +23582,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mx63.BURST_FIRE = false
 				self.mx63.kick = {}
 				self.mx63.kick = self.stat_info.kick_tables.random_recoil
+				self.mx63.kick_pattern = {
+					{0, self.stat_info.kick_tables.pattern_l4},
+					{3, self.stat_info.kick_tables.pattern_l3},
+					{7, self.stat_info.kick_tables.pattern_l2},
+					{8, self.stat_info.kick_tables.pattern_l1},
+					{9, self.stat_info.kick_tables.pattern_l2},
+					{10, self.stat_info.kick_tables.pattern_l1},
+					{11, self.stat_info.kick_tables.even_recoil},
+					{12, self.stat_info.kick_tables.pattern_l1},
+					{13, self.stat_info.kick_tables.even_recoil},
+					{17, self.stat_info.kick_tables.left_recoil}
+				}
 				self.mx63.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.mx63.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.mx63.supported = true

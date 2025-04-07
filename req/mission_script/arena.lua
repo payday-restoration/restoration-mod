@@ -13,4 +13,10 @@ return {
 			{ id = 400005, delay = 0, },
 		},
 	},
+	-- Masks off again in stealth, disable PONR activation
+	[101771] = {
+		on_executed = {
+			{ id = 400006, delay = 0, },
+		},
+	},
 }

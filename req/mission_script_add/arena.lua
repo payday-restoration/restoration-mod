@@ -12,7 +12,7 @@ local opts_try_start_ponr = {
 		{ id = 400001, delay = 0, },
 	},
 }
-local opts_try_start_ponr_late = opts_try_start_ponr
+local opts_try_start_ponr_late = deep_clone(opts_try_start_ponr)
 local opts_toggle_on_ponr = {
 	enabled = true,
 	elements = { 400002, },
@@ -22,6 +22,11 @@ local opts_toggle_on_ponr_late = {
 	enabled = true,
 	elements = { 400003, },
 	toggle = "on",
+}
+local opts_toggle_off_ponr_input_event = {
+	enabled = true,
+	elements = { 400001, },
+	toggle = "off",
 }
 
 return {
@@ -52,6 +57,11 @@ return {
 			400005,
 			"toggle_on_ponr_late",
 			opts_toggle_on_ponr_late
+		),
+		restoration:gen_toggleelement(
+			400006,
+			"toggle_off_ponr_input_event",
+			opts_toggle_off_ponr_input_event
 		),
 	},
 }

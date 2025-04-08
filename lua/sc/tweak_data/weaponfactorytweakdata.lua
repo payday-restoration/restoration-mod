@@ -37909,7 +37909,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_smg_r31_b_int.has_description = true
 				self.parts.wpn_fps_smg_r31_b_int.stats = {
 					value = 10,
-					spread = 1,
+					spread = 2,
 					concealment = 1,
 					recoil = -4
 				}
@@ -37918,6 +37918,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					burst_fire = {
 						count = 2,
 						delay = 0.09,
+						rof_mult_alt = true,
 						desired_burst_rof = 0.09202,
 						recoil_mult = 0.75,
 						last_recoil_mult = 1,

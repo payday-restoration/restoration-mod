@@ -19858,7 +19858,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--[[     RJC9000'S MODS     ]]--
 			
 			if self.stampede_ecs then
-				self.stampede_ecs.recategorize = { "special" }
+				self.stampede_ecs.recategorize = { "wpn_special" }
 				self.stampede_ecs.has_description = false
 				self.stampede_ecs.AMMO_MAX = 200
 				self.stampede_ecs.CAN_TOGGLE_FIREMODE = false

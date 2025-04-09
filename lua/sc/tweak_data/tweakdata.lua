@@ -614,6 +614,11 @@ tweak_data.dot_types.bleed = {
 }
 ]]--
 
+if tweak_data.projectiles.nerf_dart_standard then
+	tweak_data.projectiles.nerf_dart_standard.launch_speed = 1200
+	tweak_data.projectiles.nerf_dart_poison.launch_speed = 1200
+end
+
 --Fire!
 tweak_data.fire.effects.money_short = {
 	expensive = "effects/payday2/particles/explosions/sparkle_enemies_11sec",

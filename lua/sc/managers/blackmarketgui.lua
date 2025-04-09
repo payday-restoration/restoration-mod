@@ -4891,7 +4891,7 @@ function BlackMarketGui:update_info_text()
 				local rays = (weapon_tweak and weapon_tweak.rays) or 1
 				local starwars = nil
 				local martyr = weapon_tweak and weapon_tweak.dispose_mag_desc
-				local keep_ammo = weapon_tweak.keep_ammo or nil
+				local keep_ammo = (weapon_tweak and weapon_tweak.keep_ammo) or nil
 				local description = nil
 				if custom_stats then
 					for part_id, stats in pairs(custom_stats) do

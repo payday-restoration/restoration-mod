@@ -129,6 +129,7 @@
 					<hook file="sc/managers/mission/elementmissionend.lua" source_file="lib/managers/mission/elementmissionend"/>
 					<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
 					<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
+					<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 					<hook file="sc/managers/missionmanager.lua" source_file="lib/managers/missionmanager"/>
 				<!--MENU-->
 					<hook file="sc/managers/menu/menucomponentmanager.lua" source_file="lib/managers/menu/menucomponentmanager"/>

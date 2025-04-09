@@ -332,35 +332,37 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 
 		for i = 1, #ponr_areas do
 			local area = ponr_areas[i]
-			local shapes = area._shapes
 
-			for idx = 1, #shapes do
-				local shape = shapes[idx]
+			if area:enabled() or area:value("was_enabled") then
+				local shapes = area._shapes
 
-				if shape:is_inside(plr_unit:movement():m_pos()) then
-					--shape:draw(0, 0, 0, 1, 0, 0.2)
+				for idx = 1, #shapes do
+					local shape = shapes[idx]
 
-					is_inside = true
+					if shape:is_inside(plr_unit:movement():m_pos()) then
+						--shape:draw(0, 0, 0, 1, 0, 0.2)
 
-					break
-				--else
-					--shape:draw(0, 0, 0, 0, 1, 0.2)
-				end
-			end
+						is_inside = true
 
-			--[[local shape_elements = area._shape_elements
-
-			if shape_elements then
-				for idx = 1, #shape_elements do
-					local shapes = shape_elements[idx]:get_shapes()
-
-					for idx2 = 1, #shapes do
-						local shape = shapes[idx2]
-
-						shape:draw(0, 0, 0, 1, 1, 0.2)
+						break
+					--else
+						--shape:draw(0, 0, 0, 0, 1, 0.2)
 					end
 				end
-			end]]
+
+				--[[local shape_elements = area._shape_elements
+				if shape_elements then
+					for idx = 1, #shape_elements do
+						local shapes = shape_elements[idx]:get_shapes()
+
+						for idx2 = 1, #shapes do
+							local shape = shapes[idx2]
+
+							shape:draw(0, 0, 0, 1, 1, 0.2)
+						end
+					end
+				end]]
+			end
 		end
 	end
 
@@ -433,20 +435,28 @@ function GroupAIStateBase:check_ponr_escape_area()
 		return
 	end
 
+	local function check_executed_objects(area_trigger, current, recursion_depth)
+		current = current or area_trigger
+		recursion_depth = recursion_depth or 2
+
+		for _, params in pairs(current._values.on_executed) do
+			local element = current:get_mission_element(params.id)
+			local element_class = getmetatable(element)
+			if element_class == ElementMissionEnd then
+				return true
+			elseif recursion_depth > 0 and element_class == MissionScriptElement then
+				if check_executed_objects(area_trigger, element, recursion_depth - 1) then
+					return true
+				end
+			end
+		end
+	end
+
 	for name, script in pairs_g(managers.mission:scripts()) do
 		for id, element in pairs_g(script:elements()) do
-			if element._shapes and element._callback then
-				local values = element._values
-				local instigator = values and values.enabled and values.instigator
-
-				if instigator == "player" and values.amount == "all" then
-					local trigger = values.trigger_on
-
-					if trigger == "on_enter" or trigger == "while_inside" then
-						if not self._point_of_no_return_areas[1] or not table_contains(self._point_of_no_return_areas, element) then
-							self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = element
-						end
-					end
+			if element._shapes and element._callback and check_executed_objects(element) then
+				if not self._point_of_no_return_areas[1] or not table_contains(self._point_of_no_return_areas, element) then
+					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = element
 				end
 			end
 		end

@@ -8,13 +8,19 @@ MutatorHighNoon.reductions = {
 	exp = 0
 }
 MutatorHighNoon.disables_achievements = false
-MutatorHighNoon.categories = {"old_event", "enemies"}
+MutatorHighNoon.categories = {"old_event"}
 MutatorHighNoon.icon_coords = {
 	5,
 	5
 }	
 MutatorHighNoon.incompatibility_tags = {
-	"replaces_gamemode"
+	"replaces_gamemode",
+	"replaces_units",
+	"replaces_boss"
+}
+
+MutatorHighNoon.track_overrides = {
+	lobby = "bsides_03_showdown"
 }
 
 function MutatorHighNoon:modify_value(id, value)
@@ -32,6 +38,9 @@ function MutatorHighNoon:setup(data)
 		restoration.high_noon = true		
 	end
 	
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+	
 	--Enemy changes	
 	tweak_data.character.autumn.no_xmas_hat = false
 	tweak_data.character.autumn.HEALTH_INIT = 120
@@ -43,6 +52,65 @@ function MutatorHighNoon:setup(data)
 	tweak_data.character.autumn.grenade_toss_chance = 1	
 	--To do: Make dynamite
 	tweak_data.character.autumn.grenade_type = "cluster_fuck"
+	
+	--Autumn now spawns with his "deputies" on this gamemode
+	
+	--Marshals replace Titans/Spawn in special groups	
+	if difficulty_index == 5 then
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.america[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.russia[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.zombie[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.murkywater[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.federales[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.nypd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.lapd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.fbi[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+	elseif difficulty_index == 6 then
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.america[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.russia[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.zombie[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.murkywater[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.federales[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.nypd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.lapd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.FBI_shield.unit_types.fbi[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+	elseif difficulty_index == 7 then
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.america[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.russia[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.zombie[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.murkywater[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.federales[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.nypd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.lapd[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.fbi[10] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+	elseif difficulty_index == 8 then
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.america[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.america[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.america[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.russia[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.russia[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.russia[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.zombie[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.zombie[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.zombie[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.murkywater[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.murkywater[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.murkywater[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.federales[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.federales[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.federales[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.nypd[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.nypd[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.nypd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.lapd[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.lapd[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.lapd[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"	
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.fbi[18] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.fbi[19] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"
+		tweak_data.group_ai.unit_categories.GS_shield.unit_types.fbi[20] = "units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1"		
+	end
+	
+	tweak_data.group_ai.unit_categories.titan_sniper = deep_clone(tweak_data.group_ai.unit_categories.marshal_marksman)	
 
 	local rootin_tootin = {
 		"breech",

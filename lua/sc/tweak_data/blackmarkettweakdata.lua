@@ -1784,7 +1784,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	}
 	]]--
 
-	self._projectiles_index = {
+	self._projectiles_index_resmod = {
 		--Vanilla projectiles
 		"frag",
 		"launcher_frag",
@@ -1871,10 +1871,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 		"launcher_electric_osipr",
 		"launcher_poison_osipr",
 		--Other mods
-		"tachi"
+		"tachi",
+		"nerf_dart_standard",
+		"nerf_dart_poison"
 	}
-
-	self._projectiles_index_resmod = deep_clone(self._projectiles_index)
 
 	--Throwables--
 	--Shuriken
@@ -4797,8 +4797,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.moneybundle.stats.charge_time = 0.8
 		self.melee_weapons.moneybundle.stats.range = 150
 		self.melee_weapons.moneybundle.stats.concealment = 30
-			--For that you get the belt--
-			--Fitting name, because if you actually like Duke you're a sap
+			--Rigged contest for a literal fucking who :^)
 			self.melee_weapons.sap.info_id = "bm_melee_sap_info"
 			self.melee_weapons.sap.stats.speed_mult = 1.45
 			self.melee_weapons.sap.stats.cleave = 1
@@ -5828,7 +5827,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.bullseye.stats.charge_time = 1.3
 		self.melee_weapons.bullseye.stats.range = 170
 		self.melee_weapons.bullseye.stats.concealment = 28
-		--Just like the injuns--
+		--Not for throwing :^)
 		self.melee_weapons.tomahawk.info_id = "bm_melee_tomahawk_info"
 		self.melee_weapons.tomahawk.stats.cleave = 1
 		self.melee_weapons.tomahawk.stats.raycasts = 20
@@ -5841,7 +5840,7 @@ function BlackMarketTweakData:_init_melee_weapons(tweak_data)
 		self.melee_weapons.tomahawk.attack_allowed_expire_t = 0.1
 		self.melee_weapons.tomahawk.stats.concealment = 27
 		self.melee_weapons.tomahawk.stats.speed_mult = 0.97
-			--another injun tomahawk	
+			--"Take it to your grave" :^)
 			self.melee_weapons.scalper.info_id = "bm_melee_scalper_info"
 			self.melee_weapons.scalper.stats.cleave = 1
 			self.melee_weapons.scalper.stats.raycasts = 20

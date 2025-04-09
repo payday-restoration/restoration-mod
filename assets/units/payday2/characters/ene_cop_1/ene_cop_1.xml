@@ -7,13 +7,13 @@
 			<var_gadgets_sec value="0"/>
 			<var_head_value value="0"/>								
 		</variables>
+		<sequence editable_state="true" name="'asu'" triggable="true" once="true">						
+			<set_variables var_gadgets_asu="1"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
 
 		<sequence editable_state="true" name="'cop_pistol'" triggable="true" once="true">						
 			<set_variables var_gadgets_cop="1"/>
-			<run_sequence name="'gadget_meat_grinder'"/>		
-		</sequence>
-		<sequence editable_state="true" name="'asu'" triggable="true" once="true">						
-			<set_variables var_gadgets_asu="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
@@ -36,7 +36,7 @@
 			<set_variables var_gadgets_cop="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-
+		
 		<sequence editable_state="true" name="'sec_pistol'" triggable="true" once="true">						
 			<set_variables var_gadgets_sec="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>
@@ -96,6 +96,14 @@
 			<set_variables var_head_value="1"/>
 			<run_sequence name="'gadget_meat_grinder'"/>
 			<material_config name="'units/payday2/characters/ene_fbi_1/ene_fbi_1'"/>																					
+			<object enabled="true" name="'g_body_fbi3_patch'"/>																					
+		</sequence>
+		
+		<sequence editable_state="true" name="'la_veteran_COP'" triggable="true" once="true">						
+			<set_variables var_gadgets_fbi="3"/>
+			<object enabled="true" name="'g_hat_lod3'"/>
+			<object enabled="true" name="'g_hat_lod4'"/>							
+			<run_sequence name="'gadget_meat_grinder'"/>
 		</sequence>
 
 		<filter name="'check_cop_pistol'">
@@ -174,7 +182,7 @@
 			<run_sequence name="'acc_'..pick('nothing','tie','nothing', 'nothing')"/>
 			<run_sequence name="'acc_'..pick('nothing','watch','nothing', 'nothing')"/>
 			<run_sequence name="'acc_'..pick('nothing','glovas','nothing', 'nothing')"/>
-			<run_sequence name="'acc_'..pick('nothing','shades','nothing', 'nothing')"/>
+			<run_sequence name="'acc_'..pick('nothing','shades','shades_b', 'nothing')"/>
 
 
 			<run_sequence filter="'check_exposed'" name="'hedz'"/>
@@ -188,7 +196,8 @@
 			<!-- revolver -->
 			<run_sequence filter="'check_cop_rev'" name="'body_cop_rev'"/>
 			<run_sequence filter="'check_cop_rev'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
-	
+			<object filter="'check_cop_rev'" enabled="true" name="'g_lapd_patches'"/>
+
 			<!-- smg -->
 			<run_sequence filter="'check_cop_smg'" name="'body_cop_smg'"/>
 			<run_sequence filter="'check_cop_smg'" name="'body'..pick('nothing','nothing','nothing', 'nothing', 'nothing', '_longsleeve', 'nothing', 'nothing')"/>
@@ -199,6 +208,7 @@
 			<!-- la sg -->
 			<run_sequence filter="'check_cop_sg_la'" name="'body_cop_la_sg'"/>
 			<run_sequence filter="'check_cop_sg_la'" name="'body'..pick('_longsleeve','_longsleeve','_longsleeve', '_longsleeve', '_longsleeve', '_longsleeve', '_nothing', '_longsleeve')"/>
+			<object filter="'check_cop_sg_la'" enabled="true" name="'g_lapd_patches'"/>
 			
 			<!-- sec pistol -->
 			<run_sequence filter="'check_sec_pistol'" name="'body_sec_pis'"/>
@@ -259,6 +269,15 @@
 			<sequence editable_state="true" name="'fbi_2_var'" once="true" triggable="true">				
 				<object enabled="true" name="'g_body_fbi2'"/>
 				<object enabled="true" name="'g_body_fbi2_lod1'"/>				
+			</sequence>					
+			
+			<!-- SFPD -->
+			<sequence editable_state="true" name="'patches_sfpd'" once="true" triggable="true">				
+				<object enabled="true" name="'g_badges_sfpd'"/>
+				<object enabled="false" name="'g_lapd_patches'"/>
+				<object enabled="false" name="'g_lapd_badge'"/>
+				<object enabled="false" name="'g_hat_lod1'"/>
+				<object enabled="false" name="'g_hat_lod2'"/>											
 			</sequence>					
 			
 			<!-- smg -->
@@ -486,7 +505,14 @@
 
 			<sequence editable_state="true" name="'acc_shades'" once="true" triggable="true">
 				<object enabled="true" name="'g_shades'"/>
+				<object enabled="true" name="'g_glass'"/>
 				<object enabled="true" name="'g_shades_lod1'"/>
+			</sequence>			
+			
+			<sequence editable_state="true" name="'acc_shades_b'" once="true" triggable="true">
+				<object enabled="true" name="'g_shades_b'"/>
+				<object enabled="true" name="'g_glass_b'"/>
+				<object enabled="true" name="'g_shades_b_lod1'"/>
 			</sequence>			
 			
 			<sequence editable_state="true" name="'acc_glovas'" once="true" triggable="true">

@@ -249,7 +249,7 @@
 		<decal_mesh name="dm_helmet" enabled="true" material="helmet" />
 		<decal_mesh name="c_glass_c"  enabled="false" material="glass_no_decal" />		
 		<decal_mesh name="c_glass"  enabled="false" material="glass_no_decal" />
-		<decal_mesh name="c_body_plate" 			enabled="true" material="heavy_swat_steel_no_decal" />
+		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
 		<decal_mesh name="c_glass_shield"  enabled="false" material="glass_no_decal" />		
 	</decal_surfaces>
 

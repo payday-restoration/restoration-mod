@@ -13,7 +13,17 @@
 			<run_sequence name="'head_'..pick('balaclava_c', 'balaclava_c', 'balaclava_c',  'balaclava_c',  'balaclava_c', 'balaclava_c', 'balaclava_c', 'exposed_meanheads', 'balaclava_c')"/>
 		</sequence>	
 		
+		<sequence editable_state="true" name="'fbi_hrt_la'" once="true" triggable="true">
+			<set_variables var_arms="1"/>
+			<run_sequence name="'head_'..pick('balaclava_a_la', 'balaclava_a_la', 'balaclava_a_la',  'balaclava_a_la',  'balaclava_a_la', 'balaclava_b_la', 'balaclava_a_la', 'exposed_meanheads', 'balaclava_c_la')"/>
+		</sequence>	
+		
 		<sequence editable_state="true" name="'swat'" once="true" triggable="true">
+			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_a',  'balaclava_a',  'balaclava_a', 'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'swat_la'" once="true" triggable="true">
+			<set_variables var_arms="1"/>		
 			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_a',  'balaclava_a',  'balaclava_a', 'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a')"/>
 		</sequence>
 		
@@ -21,7 +31,16 @@
 			<run_sequence name="'head_'..pick('balaclava_d', 'balaclava_d', 'balaclava_d',  'balaclava_d',  'balaclava_d', 'balaclava_d', 'exposed_weak', 'balaclava_d', 'balaclava_d')"/>
 		</sequence>
 		
+		<sequence editable_state="true" name="'swat_heavy_la'" once="true" triggable="true">
+			<set_variables var_arms="1"/>
+			<run_sequence name="'head_'..pick('balaclava_c_la', 'balaclava_c_la', 'balaclava_c_la',  'balaclava_a_la',  'balaclava_a_la', 'balaclava_a_la', 'exposed_weak', 'balaclava_c_la', 'balaclava_c_la')"/>
+		</sequence>		
+		
 		<sequence editable_state="true" name="'swat_ar'" once="true" triggable="true">
+			<run_sequence name="'head_'..pick('exposed_weak', 'exposed_weak', 'exposed_weak',  'balaclava_a',  'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
+		</sequence>
+		<sequence editable_state="true" name="'swat_ar_la'" once="true" triggable="true">
+			<set_variables var_arms="1"/>		
 			<run_sequence name="'head_'..pick('exposed_weak', 'exposed_weak', 'exposed_weak',  'balaclava_a',  'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
 		</sequence>
 		
@@ -40,6 +59,11 @@
 		
 		<sequence editable_state="true" name="'gs_swat'" once="true" triggable="true">
 			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_a',  'balaclava_a', 'balaclava_a','balaclava_a','balaclava_a','balaclava_a', 'balaclava_a','balaclava_a', 'exposed_meanheads', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'vetcop'" once="true" triggable="true">
+			<set_variables var_arms="1"/>		
+			<run_sequence name="'head_'..pick('vetcop_a', 'vetcop_b', 'vetcop_c',  'vetcop_d', 'white_c_var6','white_d_var7')"/>
 		</sequence>
 		
 		<sequence editable_state="true" name="'gs_swat_sg'" once="true" triggable="true">
@@ -192,6 +216,34 @@
 			<sequence editable_state="true" name="'arms_black_e'" once="true" triggable="true">
 				<object enabled="true" name="'g_arms_black_e'"/>
 				<object enabled="true" name="'g_arms_black_e_lod1'"/>
+			</sequence>			
+			
+			<sequence editable_state="true" name="'head_vetcop_a'" once="true" triggable="true">
+				<object enabled="true" name="'g_head_vetcop_a'"/>
+				<object enabled="true" name="'g_head_vetcop_a_lod1'"/>
+				
+				<run_sequence filter="'check_show_arms'" name="'arms_white_d'"/>				
+			</sequence>								
+			
+			<sequence editable_state="true" name="'head_vetcop_b'" once="true" triggable="true">
+				<object enabled="true" name="'g_head_vetcop_b'"/>
+				<object enabled="true" name="'g_head_vetcop_b_lod1'"/>
+				
+				<run_sequence filter="'check_show_arms'" name="'arms_white_a'"/>				
+			</sequence>								
+			
+			<sequence editable_state="true" name="'head_vetcop_c'" once="true" triggable="true">
+				<object enabled="true" name="'g_head_vetcop_c'"/>
+				<object enabled="true" name="'g_head_vetcop_c_lod1'"/>
+				
+				<run_sequence filter="'check_show_arms'" name="'arms_black_c'"/>				
+			</sequence>								
+			
+			<sequence editable_state="true" name="'head_vetcop_d'" once="true" triggable="true">
+				<object enabled="true" name="'g_head_vetcop_d'"/>
+				<object enabled="true" name="'g_head_vetcop_d_lod1'"/>
+				
+				<run_sequence filter="'check_show_arms'" name="'arms_white_b'"/>				
 			</sequence>								
 
 			<sequence editable_state="true" name="'head_white_a_var1'" once="true" triggable="true">
@@ -588,6 +640,24 @@
 				<object enabled="true" name="'g_face_e'"/>
 				<object enabled="true" name="'g_face_e_lod1'"/>
 				<run_sequence filter="'check_show_arms'" name="'arms_black_c'"/>																											
+			</sequence>							
+			
+			<sequence editable_state="true" name="'face_f'" once="true" triggable="true">
+				<object enabled="true" name="'g_face_f'"/>
+				<object enabled="true" name="'g_face_f_lod1'"/>
+				<run_sequence filter="'check_show_arms'" name="'arms_white_c'"/>																											
+			</sequence>								
+
+			<sequence editable_state="true" name="'face_g'" once="true" triggable="true">
+				<object enabled="true" name="'g_face_g'"/>
+				<object enabled="true" name="'g_face_g_lod1'"/>
+				<run_sequence filter="'check_show_arms'" name="'arms_white_b'"/>																											
+			</sequence>								
+
+			<sequence editable_state="true" name="'face_h'" once="true" triggable="true">
+				<object enabled="true" name="'g_face_h'"/>
+				<object enabled="true" name="'g_face_h_lod1'"/>
+				<run_sequence filter="'check_show_arms'" name="'arms_black_a'"/>																											
 			</sequence>								
 		
 			<sequence editable_state="true" name="'face_hrt_a'" once="true" triggable="true">
@@ -657,7 +727,24 @@
 				<object enabled="true" name="'g_balaclava_c'"/>
 				<object enabled="true" name="'g_balaclava_c_lod1'"/>
 				<run_sequence name="'face_hrt_'..pick('a','b','c','d','e','f')" />
+			</sequence>	
+		
+			<sequence editable_state="true" name="'head_balaclava_a_la'" once="true" triggable="true">
+				<object enabled="true" name="'g_balaclava_a'"/>
+				<object enabled="true" name="'g_balaclava_lod1'"/>
+				<run_sequence name="'face_'..pick('a','b','c','d','e', 'f', 'g')" />								
 			</sequence>								
+			<sequence editable_state="true" name="'head_balaclava_b_la'" once="true" triggable="true">
+				<object enabled="true" name="'g_balaclava_b'"/>
+				<object enabled="true" name="'g_balaclava_lod1'"/>
+				<run_sequence name="'face_'..pick('a','b','c','d','e', 'f', 'g')" />								
+			</sequence>								
+			<sequence editable_state="true" name="'head_balaclava_c_la'" once="true" triggable="true">
+				<object enabled="true" name="'g_balaclava_c'"/>
+				<object enabled="true" name="'g_balaclava_lod1'"/>
+				<run_sequence name="'face_'..pick('a','b','c','d','e', 'f', 'g')" />								
+			</sequence>								
+			
 			<sequence editable_state="true" name="'head_balaclava_d'" once="true" triggable="true">
 				<object enabled="true" name="'g_balaclava_d'"/>
 				<object enabled="true" name="'g_balaclava_d_lod1'"/>

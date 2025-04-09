@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <unit slot="12" type="being">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
-	<object file="units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"/>
+	<object file="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"/>
 	<dependencies/>
 	<extensions>
 		<extension class="ScriptUnitData" name="unit_data"/>
@@ -12,8 +12,85 @@
 		<extension class="CopInventory" name="inventory"/>
 		<extension class="CopBrain" name="brain"/>
 		<extension class="PlayerAnimationData" name="anim_data"/>
+		<extension name="spawn_manager" class="ManageSpawnedUnits" >
+			<var name="_char_joint_names" type="table" >	
+				<var value="root_point" />
+				<var value="Hips" />
+				<var value="Spine" />
+				<var value="Spine1" />
+				<var value="Spine2" />
+				<var value="Neck" />
+				<var value="Head" />
+
+				<var value="LeftShoulder" />
+				<var value="LeftArm" />
+				<var value="LeftForeArmRoll" />
+				<var value="LeftForeArm" />
+				<var value="LeftHand" />
+
+				<var value="LeftHandThumb1" />
+				<var value="LeftHandThumb2" />
+				<var value="LeftHandThumb3" />
+
+				<var value="LeftHandIndex1" />
+				<var value="LeftHandIndex2" />
+				<var value="LeftHandIndex3" />
+
+				<var value="LeftHandMiddle1" />
+				<var value="LeftHandMiddle2" />
+				<var value="LeftHandMiddle3" />
+
+				<var value="LeftHandRing1" />
+				<var value="LeftHandRing2" />
+				<var value="LeftHandRing3" />
+
+				<var value="LeftHandPinky1" />
+				<var value="LeftHandPinky2" />
+				<var value="LeftHandPinky3" />
+
+				<var value="RightShoulder" />
+				<var value="RightArm" />
+				<var value="RightForeArmRoll" />
+				<var value="RightForeArm" />
+				<var value="RightHand" />
+
+				<var value="RightHandThumb1" />
+				<var value="RightHandThumb2" />
+				<var value="RightHandThumb3" />
+
+				<var value="RightHandIndex1" />
+				<var value="RightHandIndex2" />
+				<var value="RightHandIndex3" />
+
+				<var value="RightHandMiddle1" />
+				<var value="RightHandMiddle2" />
+				<var value="RightHandMiddle3" />
+
+				<var value="RightHandRing1" />
+				<var value="RightHandRing2" />
+				<var value="RightHandRing3" />
+
+				<var value="RightHandPinky1" />
+				<var value="RightHandPinky2" />
+				<var value="RightHandPinky3" />
+
+				<var value="LeftUpLeg" />
+				<var value="LeftLeg" />
+				<var value="LeftFoot" />
+				<var value="LeftToeBase" />
+
+				<var value="RightUpLeg" />
+				<var value="RightLeg" />
+				<var value="RightFoot" />
+				<var value="RightToeBase" />
+			</var>
+			
+			<var name="allow_client_spawn" value="true" />
+			<var name="local_only" value="true" />
+		</extension>								
 		<extension class="CopDamage" name="character_damage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head" value="units/payday2/characters/ene_head_atlas/ene_head_atlas" />															
 		</extension>
 		<extension class="CopMovement" name="movement">
 			<var name="_footwear" value="hardsole"/>

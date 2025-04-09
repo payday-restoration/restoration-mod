@@ -382,10 +382,19 @@ local enemy_variations = {
 	["units/payday2/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
 	["units/payday2/characters/ene_cop_4/ene_cop_4"] = "cop_sg",
 	
-	["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "cop_pistol",
-	["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "cop_revolver",
-	["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "cop_smg",
-	["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "cop_la_sg",	
+	["units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
+	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
+	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "cop_la_sg",	
+	
+	["units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
+	["units/pd2_dlc_chas/characters/ene_cop_1/ene_cop_1"] = "patches_sfpd",
+	["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/pd2_dlc_chas/characters/ene_cop_2/ene_cop_2"] = "patches_sfpd",
+	["units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
+	["units/pd2_dlc_chas/characters/ene_cop_3/ene_cop_3"] = "patches_sfpd",
+	["units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"] = "cop_la_sg",	
+	["units/pd2_dlc_chas/characters/ene_cop_4/ene_cop_4"] = "patches_sfpd",	
 	
 	["units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"] = "swat_ar",
 	["units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"] = "swat_sg",
@@ -427,7 +436,25 @@ local enemy_variations = {
 	["units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1"] = "sec_smg",
 	["units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"] = "sec_smg",
 	["units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3"] = "sec_sg",
-	
+
+	["units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"] = "swat_taser",
+	["units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"] = "swat_gren",	
+	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "swat_smg",
+	["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "swat_sg",
+	["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "swat_ar",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "heavy_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "heavy_swat_sg",
+	["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = "swat_shield",
+	["units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"] = "swat_sniper",
+
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "fbi_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "fbi_swat_sg",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "fbi_swat_smg",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "fbi_heavy_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "fbi_heavy_swat_sg",
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_shield",
+	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "swat_sniper",
+
 	["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = "swat_ar",
 	["units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"] = "swat_sg",
 	["units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"] = "swat_smg",	
@@ -445,6 +472,12 @@ local enemy_variations = {
 	["units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
 	["units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
 	["units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4"] = "cop_sg",
+	
+	["units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
+	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
+	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "cop_la_sg",
+	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "la_veteran_COP",
 	
 	["units/pd2_dlc_ranc/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
 	["units/pd2_dlc_ranc/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
@@ -494,6 +527,28 @@ local enemy_variations = {
 }
 
 local all_head_variants = {
+
+	--LAPD
+	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"] = "vetcop",
+	["units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"] = "vetcop",
+	
+	["units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"] = "sec_cop",
+	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "sec_cop",
+	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "sec_cop",
+	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "sec_cop",
+	
+	["units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"] = "head_balaclava_a_la",
+	["units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"] = "swat_ar_la",
+	["units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"] = "swat_ar_la",	
+	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "swat_la",
+	["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "swat_la",
+	["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "swat_ar_la",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "swat_heavy_la",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy_la",	
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_la",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_la",	
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_la",
+	
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_cop",

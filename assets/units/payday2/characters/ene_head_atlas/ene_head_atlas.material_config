@@ -1,0 +1,39 @@
+<materials version="3" group="ene_cop_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_new_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_new_df"/>
+	</material>
+	<material name="mtr_head_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_new_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_new_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_new_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_new_df" mip="4"/>
+	</material>
+	
+	<material name="mtr_head_vetcop" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_4_head_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_4_head_df"/>
+	</material>
+	<material name="mtr_head_vetcop_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/biker_4_head_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/biker_4_head_df" mip="4"/>
+	</material>
+	
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df" mip="1"/>
+	</material>
+	<material name="mtr_swat_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/swat_body_df" mip="4"/>
+	</material>
+	
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

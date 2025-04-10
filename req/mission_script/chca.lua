@@ -8,7 +8,7 @@ return {
 		},
 	},
 	-- Pro Job PONR, loud helicopter escape (it's PAYDAY)
-	-- Vault opened, try to start PONR if alarm already went off, and enable late activation on if not
+	-- Vault opened, try to start PONR if alarm already went off, and enable activation if not
 	-- Also disable Panic Room style PONR
 	[101165] = {
 		on_executed = {

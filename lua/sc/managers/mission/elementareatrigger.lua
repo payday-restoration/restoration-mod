@@ -44,7 +44,10 @@ end
 
 Hooks:PostHook(ElementAreaTrigger, "on_set_enabled", "sh_on_set_enabled", check_executed_objects)
 
--- used to determine if players are in the escape zone if it becomes disabled after executing
-Hooks:PreHook(ElementAreaTrigger, "on_executed", "res_on_executed", function(self)
+-- Used to determine if players are in the escape zone if it becomes disabled after executing
+local function set_was_enabled(self)
 	self._values.was_enabled = self._values.enabled
-end)
+end
+
+Hooks:PreHook(ElementAreaTrigger, "client_on_executed", "res_client_on_executed", set_was_enabled)
+Hooks:PreHook(ElementAreaTrigger, "on_executed", "res_on_executed", set_was_enabled)

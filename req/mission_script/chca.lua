@@ -1,40 +1,28 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value_1 = (difficulty <= 5 and 960 or (difficulty == 6 or difficulty == 7) and 930) or 900
-local ponr_value_2 = (difficulty <= 5 and 600 or (difficulty == 6 or difficulty == 7) and 570) or 540
-
-local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}
-
 return {
-	--Pro Job PONR 
-	[101331] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value_1
-	},
+	-- Pro Job PONR, loud boat escape (vault stolen Panic Room style)
+	-- Wall blown, start Panic Room style PONR and disable it's PAYDAY style PONR
 	[102615] = {
-		ponr = ponr_value_2
+		on_executed = {
+			{ id = 400001, delay = 0, },
+			{ id = 400005, delay = 0, },
+		},
+	},
+	-- Pro Job PONR, loud helicopter escape (it's PAYDAY)
+	-- Vault opened, try to start PONR if alarm already went off, and enable late activation on if not
+	-- Also disable Panic Room style PONR
+	[101165] = {
+		on_executed = {
+			{ id = 400003, delay = 0, },
+			{ id = 400004, delay = 0, },
+			{ id = 400006, delay = 0, },
+		},
+	},
+	-- Alarm went off, try to start PONR if vault's already open, and enable activation if not
+	[100824] = {
+		on_executed = {
+			{ id = 400003, delay = 0, },
+			{ id = 400004, delay = 0, },
+		},
 	},
 	[101469] = {
 		groups = {
@@ -43,8 +31,8 @@ return {
 			FBI_shields_boom = false,
 			GS_shields = false,
 			GS_shields_boom = false,
-			GS_defend_shields = false
-		}
+			GS_defend_shields = false,
+		},
 	},
 	[101470] = {
 		groups = {
@@ -53,7 +41,7 @@ return {
 			FBI_shields_boom = false,
 			GS_shields = false,
 			GS_shields_boom = false,
-			GS_defend_shields = false
-		}
-	}
+			GS_defend_shields = false,
+		},
+	},
 }

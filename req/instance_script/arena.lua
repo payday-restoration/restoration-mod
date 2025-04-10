@@ -38,25 +38,22 @@ local function get_opts_pro_job_ponr_input()
 	}
 end
 
-local opts_pro_job_ponr, opts_pro_job_ponr_input
 local pro_job_ponr, pro_job_ponr_input
 return {
 	["levels/instances/unique/are_heli_escape/world/world"] = function(result)
-		opts_pro_job_ponr = opts_pro_job_ponr or get_opts_pro_job_ponr()
 		pro_job_ponr = pro_job_ponr or restoration:gen_pointofnoreturn(
 			140001,
 			"pro_job_ponr",
 			Vector3(0, 0, 0),
 			Rotation(0, 0, 0),
-			opts_pro_job_ponr
+			get_opts_pro_job_ponr()
 		)
-		opts_pro_job_ponr_input = opts_pro_job_ponr_input or get_opts_pro_job_ponr_input()
 		pro_job_ponr_input = pro_job_ponr_input or restoration:gen_instance_input(
 			140002,
 			"pro_job_ponr_input",
 			Vector3(0, 0, 0),
 			Rotation(0, 0, 0),
-			opts_pro_job_ponr_input
+			get_opts_pro_job_ponr_input()
 		)
 
 		if not table.contains(result.default.elements, pro_job_ponr) then

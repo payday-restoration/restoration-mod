@@ -334,34 +334,15 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 			local area = ponr_areas[i]
 
 			if area:enabled() or area:value("was_enabled") then
-				local shapes = area._shapes
+				-- _is_inside also checks shape elements tied to the area trigger if not inside the area trigger
+				-- Fall back on is_inside if the element doesn't have _is_inside for whatever reason
+				local is_inside_func = area._is_inside or area.is_inside
 
-				for idx = 1, #shapes do
-					local shape = shapes[idx]
+				if is_inside_func(area, plr_unit:movement():m_pos()) then
+					is_inside = true
 
-					if shape:is_inside(plr_unit:movement():m_pos()) then
-						--shape:draw(0, 0, 0, 1, 0, 0.2)
-
-						is_inside = true
-
-						break
-					--else
-						--shape:draw(0, 0, 0, 0, 1, 0.2)
-					end
+					break
 				end
-
-				--[[local shape_elements = area._shape_elements
-				if shape_elements then
-					for idx = 1, #shape_elements do
-						local shapes = shape_elements[idx]:get_shapes()
-
-						for idx2 = 1, #shapes do
-							local shape = shapes[idx2]
-
-							shape:draw(0, 0, 0, 1, 1, 0.2)
-						end
-					end
-				end]]
 			end
 		end
 	end

@@ -23170,6 +23170,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.riveter.panic_suppression_chance = 0.05
 				self.riveter.stats_modifiers = nil
+				self.riveter.reload_speed_multiplier = 1.25
 				self.riveter.lock_slide = true
 				self.riveter.lock_slide_offset = 0.2
 				self.riveter.sounds.magazine_empty = "wp_rifle_slide_lock"

@@ -38172,20 +38172,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_riveter_m_2.stats = {
 				value = 2,
 				extra_ammo = -5,
-				reload = 6,
-				concealment = 3
+				reload = 5,
+				concealment = 2
 			}
-			self.parts.wpn_fps_sho_riveter_m_2.custom_stats = { ads_speed_mult = 0.925 }
+			self.parts.wpn_fps_sho_riveter_m_2.custom_stats = { ads_speed_mult = 0.95 }
 
 			self.parts.wpn_fps_sho_riveter_m_3.supported = true
 			self.parts.wpn_fps_sho_riveter_m_3.stats = {
 				value = 8,
 				extra_ammo = 15,
-				concealment = -2,
-				reload = -5
+				concealment = -3,
+				reload = -6
 			}
 			self.parts.wpn_fps_sho_riveter_m_3.custom_stats = {
-				ads_speed_mult = 1.05
+				ads_speed_mult = 1.075
 			}
 
 			self.wpn_fps_sho_riveter.override = self.wpn_fps_sho_riveter.override or {}

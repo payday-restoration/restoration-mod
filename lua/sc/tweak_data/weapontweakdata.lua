@@ -23149,7 +23149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{13, self.stat_info.kick_tables.right_recoil}
 				}
 				self.riveter.supported = true
-				self.riveter.ads_speed = 0.280
+				self.riveter.ads_speed = 0.300
 				self.riveter.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3200,

@@ -5698,7 +5698,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
-				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
+				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nLethal headshots against special and elite enemies with ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",

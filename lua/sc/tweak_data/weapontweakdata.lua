@@ -23053,7 +23053,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.modl.stats = {
 					damage = 30,
 					spread = 86,
-					recoil = 81,
+					recoil = 77,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 22,

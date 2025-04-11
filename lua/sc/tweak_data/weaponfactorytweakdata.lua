@@ -27101,7 +27101,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = -5
 				}
 				self.parts.wpn_fps_ass_coslo723_magazine_flip.custom_stats = { 
-					ads_speed_mult = 0.925
+					ads_speed_mult = 0.975
 				}
 				--FM 2
 				self.parts.wpn_fps_ass_coslo723_magazine_fastreload2.supported = true
@@ -37861,6 +37861,132 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_ass_modl_o_std then
+			self.parts.wpn_fps_ass_modl_o_std.stance_mod = {
+				wpn_fps_ass_modl = {
+					translation = Vector3(0.025, -5, -0.65),
+					rotation = Rotation(0.03, -0.6, -0.2)
+				}
+			}
+
+			--BARRELS
+				--Short
+				self.parts.wpn_fps_ass_modl_b_1.supported = true
+				self.parts.wpn_fps_ass_modl_b_1.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_ass_modl_b_1.custom_stats = deep_clone(barrels.short_b3_stats)
+				--CHF
+				self.parts.wpn_fps_ass_modl_b_2.supported = true
+				self.parts.wpn_fps_ass_modl_b_2.desc_id = "bm_wp_chf_50_desc"
+				self.parts.wpn_fps_ass_modl_b_2.has_description = true
+				self.parts.wpn_fps_ass_modl_b_2.stats = {
+					value = 10,
+					recoil = -20,
+					concealment = -4
+				}
+				self.parts.wpn_fps_ass_modl_b_2.custom_stats = {
+					chf = true
+				}
+				--Reinforced
+				self.parts.wpn_fps_ass_modl_b_3.supported = true
+				self.parts.wpn_fps_ass_modl_b_3.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_modl_b_3.stats.concealment = -2
+				self.parts.wpn_fps_ass_modl_b_3.stats.recoil = 2
+				self.parts.wpn_fps_ass_modl_b_3.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Long
+				self.parts.wpn_fps_ass_modl_b_4.supported = true
+				self.parts.wpn_fps_ass_modl_b_4.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_modl_b_4.custom_stats = deep_clone(barrels.long_b3_stats)
+			--GRIPS
+				--Quickdraw
+				self.parts.wpn_fps_ass_modl_g_3.supported = true
+				self.parts.wpn_fps_ass_modl_g_3.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_ass_modl_g_3.custom_stats = deep_clone(grips.quickdraw_1)
+				--Ergonomic
+				self.parts.wpn_fps_ass_modl_g_4.supported = true
+				self.parts.wpn_fps_ass_modl_g_4.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_ass_modl_g_4.custom_stats = deep_clone(grips.dual_stat_1)
+				--CQB
+				self.parts.wpn_fps_ass_modl_g_6.supported = true
+				self.parts.wpn_fps_ass_modl_g_6.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_modl_g_6.custom_stats = deep_clone(grips.quickdraw_2)
+				--Commando
+				self.parts.wpn_fps_ass_modl_g_2.supported = true
+				self.parts.wpn_fps_ass_modl_g_2.stats = deep_clone(grips.recoil_1)
+				self.parts.wpn_fps_ass_modl_g_2.custom_stats = deep_clone(grips.recoil_1)
+				--Combat
+				self.parts.wpn_fps_ass_modl_g_5.supported = true
+				self.parts.wpn_fps_ass_modl_g_5.stats = deep_clone(grips.acc_1)
+				self.parts.wpn_fps_ass_modl_g_5.custom_stats = deep_clone(grips.acc_1)
+			--STOCKS
+				--Infiltrator
+				self.parts.wpn_fps_ass_modl_s_2.supported = true
+				self.parts.wpn_fps_ass_modl_s_2.stats = deep_clone(stocks.adj_acc_stats)
+				self.parts.wpn_fps_ass_modl_s_2.custom_stats = deep_clone(stocks.adj_acc_stats)
+				--Heavy
+				self.parts.wpn_fps_ass_modl_s_3.supported = true
+				self.parts.wpn_fps_ass_modl_s_3.stats = deep_clone(stocks.adj_rec_stats)
+				self.parts.wpn_fps_ass_modl_s_3.custom_stats = deep_clone(stocks.adj_rec_stats)
+				--Light
+				self.parts.wpn_fps_ass_modl_s_4.supported = true
+				self.parts.wpn_fps_ass_modl_s_4.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_ass_modl_s_4.custom_stats = deep_clone(stocks.adj_to_fold_stats)
+				--Balanced
+				self.parts.wpn_fps_ass_modl_s_5.supported = true
+				self.parts.wpn_fps_ass_modl_s_5.stats = deep_clone(stocks.adj_hvy_rec_stats)
+				self.parts.wpn_fps_ass_modl_s_5.custom_stats = deep_clone(stocks.adj_hvy_rec_stats)
+				--Combat
+				self.parts.wpn_fps_ass_modl_s_6.supported = true
+				self.parts.wpn_fps_ass_modl_s_6.stats = deep_clone(stocks.adj_hvy_acc_stats)
+				self.parts.wpn_fps_ass_modl_s_6.custom_stats = deep_clone(stocks.adj_hvy_acc_stats)
+			--MAGS
+				--Flip
+				self.parts.wpn_fps_ass_modl_m_5.supported = true
+				self.parts.wpn_fps_ass_modl_m_5.stats = {
+					value = 2,
+					concealment = 2,
+					reload = 5,
+					extra_ammo = -10
+				}
+				self.parts.wpn_fps_ass_modl_m_5.custom_stats = { 
+					ads_speed_mult = 0.95
+				}
+				--FM
+				self.parts.wpn_fps_ass_modl_m_4.supported = true
+				self.parts.wpn_fps_ass_modl_m_4.stats = {
+					value = 3,
+					concealment = 1,
+					reload = 3,
+					extra_ammo = -5
+				}
+				self.parts.wpn_fps_ass_modl_m_4.custom_stats = { 
+					ads_speed_mult = 0.975
+				}
+				--EX 1
+				self.parts.wpn_fps_ass_modl_m_2.supported = true
+				self.parts.wpn_fps_ass_modl_m_2.stats = {
+					value = 7,
+					concealment = -2,
+					reload = -4,
+					extra_ammo = 10
+				}
+				self.parts.wpn_fps_ass_modl_m_2.custom_stats = { 
+					ads_speed_mult = 1.05
+				}
+				--EX 2
+				self.parts.wpn_fps_ass_modl_m_3.supported = true
+				self.parts.wpn_fps_ass_modl_m_3.stats = {
+					value = 8,
+					concealment = -3,
+					reload = -5,
+					extra_ammo = 20
+				}
+				self.parts.wpn_fps_ass_modl_m_3.custom_stats = { 
+					ads_speed_mult = 1.075
+				}
+				
+		end
+
 		if self.parts.wpn_fps_smg_r31_o_std_rear then
 			self.parts.wpn_fps_smg_r31_o_std_rear.stance_mod = {
 				wpn_fps_smg_r31 = {
@@ -38006,13 +38132,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = 20
 				}
 				self.parts.wpn_fps_smg_r31_m_extclip2.custom_stats = { 
-					ads_speed_mult = 1.1
+					ads_speed_mult = 1.075
 				}
 		end
 
 		if self.parts.wpn_fps_sho_riveter_b_4 then
 			self.parts.wpn_fps_sho_riveter_b_4.supported = true
-			self.parts.wpn_fps_sho_riveter_b_4.name_id = "bm_wp_wpn_fps_sho_riveter_b_2"
 			self.parts.wpn_fps_sho_riveter_b_4.sub_type = nil
 			self.parts.wpn_fps_sho_riveter_b_4.desc_id = nil
 			self.parts.wpn_fps_sho_riveter_b_4.perks = nil
@@ -38025,7 +38150,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_riveter_b_3.custom_stats = deep_clone(barrels.long_b2_stats)
 
 			self.parts.wpn_fps_sho_riveter_b_2.supported = true
-			self.parts.wpn_fps_sho_riveter_b_2.name_id = "bm_wp_wpn_fps_sho_riveter_b_4"
 			self.parts.wpn_fps_sho_riveter_b_2.desc_id = "bm_wp_upg_suppressor"
 			self.parts.wpn_fps_sho_riveter_b_2.has_description = true
 			self.parts.wpn_fps_sho_riveter_b_2.sound_switch = {
@@ -38058,17 +38182,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_sho_riveter_m_3.custom_stats = {
 				ads_speed_mult = 1.05
 			}
-
-			for i, part_id in pairs(self.wpn_fps_sho_riveter.uses_parts) do
-				if self.parts[part_id] and self.parts[part_id].type then
-					if self.parts[part_id].pcs then
-						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "fiery_hylie_mod") or not self.parts[part_id].global_value) and 
-							(self.parts[part_id].type == "barrel_ext") then
-							self.wpn_fps_sho_riveter.uses_parts[i] = "resmod_dummy"
-						end
-					end
-				end
-			end
 
 			self.wpn_fps_sho_riveter.override = self.wpn_fps_sho_riveter.override or {}
 			self.wpn_fps_sho_riveter.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_auto_override)

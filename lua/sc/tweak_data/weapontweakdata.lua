@@ -23024,6 +23024,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.modl then --BO6 CETME Model L
+				self.modl.recategorize = { "heavy_ar" }
+				self.modl.damage_type = "assault_rifle"
+				self.modl.tactical_reload = 1
+				self.modl.nato = true			
+				self.modl.BURST_FIRE = false
+				self.modl.ADAPTIVE_BURST_SIZE = false
+				self.modl.fire_mode_data.fire_rate = 0.1
+				self.modl.AMMO_MAX = 120
+				self.modl.CLIP_AMMO_MAX = 30
+				self.modl.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.modl.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{11, self.stat_info.kick_tables.even_recoil},
+					{17, self.stat_info.kick_tables.moderate_left_kick},
+					{21, self.stat_info.kick_tables.left_recoil},
+					{25, self.stat_info.kick_tables.moderate_left_kick},
+				}
+				self.modl.supported = true
+				self.modl.ads_speed = 0.280
+				self.modl.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 7400,
+					min_mult = 0.4
+				}
+				self.modl.stats = {
+					damage = 30,
+					spread = 86,
+					recoil = 81,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.modl.stats_modifiers = nil
+				self.modl.timers = deep_clone(self.g3.timers)
+				self.modl.timers.reload_empty = self.modl.timers.reload_not_empty
+				self.modl.timers.reload_exit_empty = self.modl.timers.reload_exit_not_empty
+				self.modl.reload_not_empty_speed_multiplier = 1.4285
+				self.modl.panic_suppression_chance = 0.05
+			end
+
 			if self.r31 then --BO6 R31/Tanto 22
 				self.r31.categories = { "smg" }
 				self.r31.recategorize = { "light_smg" }

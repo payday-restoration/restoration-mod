@@ -44,13 +44,13 @@
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 
-	<material name="mtr_spook_heavy" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+	<material name="mtr_spook_heavy" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" />	
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" />	
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-	<material name="mtr_spook_heavy_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+	<material name="mtr_spook_heavy_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4"/>	
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/spook_heavy_df" mip="4"/>	
 		<variable value="1 1 1" type="vector3" name="contour_color"/>

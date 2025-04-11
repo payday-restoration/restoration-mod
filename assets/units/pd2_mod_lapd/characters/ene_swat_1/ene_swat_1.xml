@@ -110,6 +110,10 @@
 		<filter name="'check_fbi_sniper'">
 			<check value="vars.var_gadgets_blue_light == 5"/>
 		</filter>
+		
+		<filter name="'check_blue_fbi_shield'">
+			<check value="vars.var_gadgets_fbi_light == 4"/>
+		</filter>
 
 		<sequence editable_state="true" name="'swat_smg'" triggable="true" once="true">						
 			<set_variables var_gadgets_blue_light="1"/>
@@ -164,9 +168,14 @@
 			<decal_mesh enabled="true" name="'c_body_plate'" />										
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-
+		
 		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
 			<set_variables var_gadgets_blue_light="4"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
+
+		<sequence editable_state="true" name="'fbi_swat_sniper'" triggable="true" once="true">						
+			<set_variables var_gadgets_blue_light="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
 
@@ -225,6 +234,10 @@
 	
 			<!-- sg -->
 			<object filter="'check_fbi_sg'" enabled="true" name="'g_swat_sg'"/>						
+			<object filter="'check_fbi_sg'" enabled="false" name="'g_helmet_lod1'"/>						
+			<object filter="'check_fbi_sg'" enabled="false" name="'g_helmet_lod2'"/>						
+			<object filter="'check_fbi_sg'" enabled="true" name="'g_beanie_lod1'"/>						
+			<object filter="'check_fbi_sg'" enabled="true" name="'g_beanie_lod2'"/>						
 			<object filter="'check_fbi_sg'" enabled="true" name="'g_swat_sg_lod1'"/>	
 			<run_sequence filter="'check_fbi_sg'" name="'goggles_'..pick('c','d','d', 'd' 'd')"/>											
 			<run_sequence filter="'check_fbi_sg'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
@@ -282,6 +295,15 @@
 			<run_sequence filter="'check_blue_heavy_shield'" name="'holster_'..pick('l','r', 'twinnem)"/>
 			<run_sequence filter="'check_blue_heavy_shield'" name="'acc_'..pick('nothing','headset','nothing')"/>								
 			<run_sequence filter="'check_blue_heavy_shield'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
+			
+			<!-- shield fbi-->			
+			<object filter="'check_blue_fbi_shield'" enabled="true" name="'g_swat_shield'"/>						
+			<object filter="'check_blue_fbi_shield'" enabled="true" name="'g_swat_shield_lod1'"/>
+			<run_sequence filter="'check_blue_fbi_shield'" name="'heavy_helmet_e'"/>
+			<run_sequence filter="'check_blue_fbi_shield'" name="'body_'..pick('nothing', 'nothing', 'shitbag')"/>
+			<run_sequence filter="'check_blue_fbi_shield'" name="'holster_'..pick('l','r', 'twinnem)"/>
+			<run_sequence filter="'check_blue_fbi_shield'" name="'acc_'..pick('nothing','headset','nothing')"/>								
+			<run_sequence filter="'check_blue_fbi_shield'" name="'body_'..pick('longsleeve', 'longsleeve', 'nothing')"/>
 
 			<!-- heavy rifleman -->			
 			<object filter="'check_fbi_heavy_ar'" enabled="true" name="'g_swat_heavy_ar'"/>						
@@ -371,6 +393,7 @@
 		<sequence editable_state="true" name="'spawn_helmet'" once="true" triggable="true">
 			<decal_mesh filter="'check_goggle_b'" enabled="false" name="'c_glass'" />										
 			<object filter="'check_goggle_b'" enabled="false" name="'g_goggles_b'" />										
+			<object filter="'check_goggle_b'" enabled="false" name="'g_glass'" />										
 			<object filter="'check_goggle_b'" enabled="false" name="'g_goggles_a_lod1'" />										
 			<body 		filter="'check_goggle_b'"  enabled="false" name="'glass_swat'" />	
 									
@@ -393,26 +416,31 @@
 			<decal_mesh enabled="true" name="'c_helmet_acc'" />										
 			
 			<body 		    filter="'check_blue_sniper'" enabled="false" name="'acc_helmet'" />	
-			<graphic_group  filter="'check_blue_sniper'" enabled="false" name="'acc_helmet'" />
 			<decal_mesh	    filter="'check_blue_sniper'" enabled="false" name="'c_helmet_acc'" />
+			
+			<body 		    filter="'check_fbi_sg'" enabled="false" name="'acc_helmet'" />	
+			<decal_mesh	    filter="'check_fbi_sg'" enabled="false" name="'c_helmet_acc'" />
+			<graphic_group	filter="'check_fbi_sg'" enabled="false" name="'acc_helmet'" />
 
 			<body 		    filter="'check_fbi_smg'" enabled="false" name="'acc_helmet'" />	
-			<graphic_group  filter="'check_fbi_smg'" enabled="false" name="'acc_helmet'" />
 			<decal_mesh	    filter="'check_fbi_smg'" enabled="false" name="'c_helmet_acc'" />
-
-			<body 		    filter="'check_fbi_smg'" enabled="true" name="'acc_hat'" />	
-			<decal_mesh	    filter="'check_fbi_smg'" enabled="true" name="'c_cap_acc'" />
-
-			<body 		    filter="'check_fbi_sniper'" enabled="true" name="'acc_hat'" />	
-			<decal_mesh	    filter="'check_fbi_sniper'" enabled="true" name="'c_cap_acc'" />
 	
-			<body 		    enabled="true" name="'acc_helmet'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
-			<graphic_group  enabled="true" name="'acc_helmet'"/>
-			<decal_mesh enabled="true" name="'c_helmet_acc'" />										
+			<body 		    filter="'check_fbi_smg'"  enabled="true" name="'acc_hat'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
+			<decal_mesh filter="'check_fbi_smg'"  enabled="true" name="'c_cap_acc'" />										
+			<object  filter="'check_fbi_smg'"  enabled="true" name="'g_acc_cap'"/>
+			<object  filter="'check_fbi_smg'"  enabled="false" name="'g_acc_helmet'"/>
+
+			<body 		    filter="'check_fbi_sniper'"  enabled="true" name="'acc_hat'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
+			<object  filter="'check_fbi_sniper'"  enabled="true" name="'g_acc_cap'"/>
+			<object  filter="'check_fbi_sniper'"  enabled="false" name="'g_acc_helmet'"/>
+			<decal_mesh filter="'check_fbi_sniper'"  enabled="true" name="'c_cap_acc'" />										
 			
 			<body 		    enabled="false" name="'acc_helmet'" start_time="30"/>	
 			<graphic_group  enabled="false" name="'acc_helmet'" start_time="30"/>
 			<decal_mesh	    enabled="false" name="'c_helmet_acc'" start_time="30"/>
+			
+			<body 		    enabled="false" name="'acc_cap'" start_time="30"/>	
+			<decal_mesh	    enabled="false" name="'c_cap_acc'" start_time="30"/>
 																		
 			<body enabled="false" name="'glass_shield'" />	
 			<run_sequence filter="'check_blue_heavy_ar'" name="'destroy_visor'"/>						
@@ -420,6 +448,7 @@
 			<run_sequence filter="'check_fbi_heavy_ar'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_fbi_heavy_sg'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_blue_heavy_shield'" name="'destroy_visor'"/>						
+			<run_sequence filter="'check_blue_fbi_shield'" name="'destroy_visor'"/>						
 		</sequence>
 
 		<!-- RANDOM HELMETS/GOGGLES -->
@@ -436,7 +465,7 @@
 		
 		<sequence editable_state="true" name="'heavy_helmet_e'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_lod4'"/>
-			<object enabled="true" name="'g_helmet_lod7'"/>
+			<object enabled="true" name="'g_helmet_lod8'"/>
 			<decal_mesh enabled="false" name="'c_glass'" />										
 			<decal_mesh enabled="true" name="'c_glass_shield'" />										
 			<body enabled="false" name="'glass_swat'" />										
@@ -503,6 +532,10 @@
 			<object filter="'check_blue_heavy_shield'" enabled="true" name="'g_helmet_lod7'"/>
 			<effect filter="'check_blue_heavy_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			
+			<object filter="'check_blue_fbi_shield'" enabled="false" name="'g_helmet_lod4'"/>
+			<object filter="'check_blue_fbi_shield'" enabled="true" name="'g_helmet_lod5'"/>
+			<effect filter="'check_blue_fbi_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			
 			<object filter="'check_blue_heavy_sg'" enabled="false" name="'g_helmet_lod7'"/>
 			<object filter="'check_blue_heavy_sg'" enabled="true" name="'g_helmet_lod8'"/>
 			<effect filter="'check_blue_heavy_sg'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
@@ -530,6 +563,7 @@
 			<effect filter="'check_blue_heavy_ar'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			<effect filter="'check_fbi_heavy_ar'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 			<effect filter="'check_blue_heavy_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
+			<effect filter="'check_blue_fbi_shield'" damp_time="5" name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>
 
 			<sound filter="'check_blue_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 			<sound filter="'check_blue_heavy_ar'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>		
@@ -539,6 +573,9 @@
 			
 			<sound filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 			<sound filter="'check_blue_heavy_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			
+			<sound filter="'check_blue_fbi_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
+			<sound filter="'check_blue_fbi_shield'" action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>			
 		</sequence>				
 		
 		<sequence editable_state="true" name="'goggles_a'" once="true" triggable="true">
@@ -557,6 +594,7 @@
 		
 		<sequence editable_state="true" name="'goggles_b'" once="true" triggable="true">
 			<object enabled="true" name="'g_goggles_b'"/>
+			<object enabled="true" name="'g_glass'"/>
 			<object enabled="true" name="'g_goggles_a_lod1'"/>
 			<set_variables var_goggles="2"/>										
 			<decal_mesh enabled="true" name="'c_glass'" />					

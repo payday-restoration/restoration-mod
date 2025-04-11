@@ -384,6 +384,8 @@ local enemy_variations = {
 	
 	["units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1"] = "cop_pistol",
 	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "cop_revolver",
+	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "fbi_2_la",
+	["units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_3_la",
 	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "cop_smg",
 	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "cop_la_sg",	
 	
@@ -453,7 +455,7 @@ local enemy_variations = {
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "fbi_heavy_swat_ar",
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "fbi_heavy_swat_sg",
 	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_shield",
-	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "swat_sniper",
+	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "fbi_swat_sniper",
 
 	["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = "swat_ar",
 	["units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"] = "swat_sg",
@@ -536,6 +538,8 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "sec_cop",
+	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "exposed_meanheads",
+	["units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt_la",
 	
 	["units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"] = "head_balaclava_a_la",
 	["units/pd2_mod_lapd/characters/ene_tazer_1/ene_tazer_1"] = "swat_ar_la",
@@ -543,6 +547,9 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "swat_la",
 	["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "swat_la",
 	["units/pd2_mod_lapd/characters/ene_swat_3/ene_swat_3"] = "swat_ar_la",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "fbi_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "fbi_swat_ar",
+	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "fbi_swat_sg",
 	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "swat_heavy_la",
 	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy_la",	
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_la",

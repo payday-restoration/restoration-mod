@@ -6581,7 +6581,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			    	Idstring("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    lapd = {
-			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    	Idstring("units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1")
 			    },
 			    fbi = {
 			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
@@ -7957,7 +7957,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.FBI_tank.unit_types.nypd = {Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")}
 		self.unit_categories.BLACK_tank.unit_types.nypd = {Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")}
 		self.unit_categories.SKULL_tank.unit_types.nypd = {Idstring("units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc")}
-		self.unit_categories.boom_M4203.unit_types.nypd = {Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")}
+		self.unit_categories.boom_M4203.unit_types.nypd = {Idstring("units/pd2_mod_nypd/characters/ene_grenadier_1/ene_grenadier_1")}
 		if difficulty_index <= 5 then
 			self.unit_categories.medic_M4.unit_types.nypd = {Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")}
 		elseif difficulty_index == 6 or difficulty_index == 7 then

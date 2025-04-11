@@ -99,6 +99,19 @@
 			<object enabled="true" name="'g_body_fbi3_patch'"/>																					
 		</sequence>
 		
+		<sequence editable_state="true" name="'fbi_2_la'" triggable="true" once="true">						
+			<set_variables var_gadgets_fbi="2"/>
+			<run_sequence name="'gadget_meat_grinder'"/>
+			<material_config name="'units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3'"/>																					
+		</sequence>
+		
+		<sequence editable_state="true" name="'fbi_3_la'" triggable="true" once="true">						
+			<set_variables var_gadgets_fbi="3"/>
+			<run_sequence name="'gadget_meat_grinder'"/>
+			<material_config name="'units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3'"/>																					
+			<object enabled="true" name="'g_body_fbi3_patch'"/>																					
+		</sequence>
+		
 		<sequence editable_state="true" name="'la_veteran_COP'" triggable="true" once="true">						
 			<set_variables var_gadgets_fbi="3"/>
 			<object enabled="true" name="'g_hat_lod3'"/>
@@ -285,8 +298,8 @@
 				<object enabled="true" name="'g_body_fbi3'"/>
 				<object enabled="true" name="'g_body_fbi3_lod1'"/>	
 
-				<object enabled="false" name="'g_shades'"/>
-				<object enabled="false" name="'g_shades_lod1'"/>				
+				<!-- <object enabled="false" name="'g_shades'"/> -->
+				<!-- <object enabled="false" name="'g_shades_lod1'"/>				 -->
 
 				<run_sequence name="'face_'..pick('a','b','c','d','e')"/>				
 			</sequence>					

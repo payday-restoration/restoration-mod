@@ -19362,8 +19362,8 @@ end)
 						rotation = Rotation(0.11, -0.08, 0.6)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_modl = {
-						translation = Vector3(0.022, 2.5, -3.234),
-						rotation = Rotation(-0.01, -0.062, 0)
+						translation = Vector3(0.022, 3.5, -3.19),
+						rotation = Rotation(-0.01, -0.12, 0)
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {

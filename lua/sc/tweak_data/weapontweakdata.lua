@@ -3898,7 +3898,7 @@ function WeaponTweakData:_init_stats()
 				min_h_recoil = 0.35
 			},
 
-		--Recoil with even heavier horizontal weighting
+		--Recoil with even heavier horizontal weighting; the directional variants go purely in their repective direction
 			harsh_kick = {
 				standing = {
 					0.55 * self.stat_info.stance_recoil_mults.standing,
@@ -3925,42 +3925,47 @@ function WeaponTweakData:_init_stats()
 					0.55 * self.stat_info.stance_recoil_mults.standing,
 					0.35 * self.stat_info.stance_recoil_mults.standing,
 					0.80 * -self.stat_info.stance_recoil_mults.standing,
-					0.30 * -self.stat_info.stance_recoil_mults.standing
+					0.00 * -self.stat_info.stance_recoil_mults.standing 
+					-- the funny logic here to have the kick values add up to 2 is that the last two recoil values 
+					-- are meant to be inverted to each other for left and right; since both go in the same direction for these recoil variants the logic is that the
+					-- kick value that'd normally be +0.3 is being offset by a -0.3 and I'm counting the -0.3 that's cancelling out the +0.3 as a part of the add-up to 2
+					-- I'm also full of shit :^)
+					-- All that aside this is still one of the more harsh recoil variants (hence the name) despite not adhering to the "raw kick-values add up to 2" rule
 				},
 				crouching = {
 					0.55 * self.stat_info.stance_recoil_mults.crouching,
 					0.35 * self.stat_info.stance_recoil_mults.crouching,
 					0.80 * -self.stat_info.stance_recoil_mults.crouching,
-					0.30 * -self.stat_info.stance_recoil_mults.crouching
+					0.00 * -self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
 					0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					0.35 * self.stat_info.stance_recoil_mults.steelsight,
 					0.80 * -self.stat_info.stance_recoil_mults.steelsight,
-					0.30 * -self.stat_info.stance_recoil_mults.steelsight
+					0.00 * -self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.32
+				min_h_recoil = 0.1
 			},
 			harsh_right_kick = {
 				standing = {
 					0.55 * self.stat_info.stance_recoil_mults.standing,
 					0.35 * self.stat_info.stance_recoil_mults.standing,
 					0.80 * self.stat_info.stance_recoil_mults.standing,
-					0.30 * self.stat_info.stance_recoil_mults.standing
+					0.00 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
 					0.55 * self.stat_info.stance_recoil_mults.crouching,
 					0.35 * self.stat_info.stance_recoil_mults.crouching,
 					0.80 * self.stat_info.stance_recoil_mults.crouching,
-					0.30 * self.stat_info.stance_recoil_mults.crouching
+					0.00 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
 					0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					0.35 * self.stat_info.stance_recoil_mults.steelsight,
 					0.80 * self.stat_info.stance_recoil_mults.steelsight,
-					0.30 * self.stat_info.stance_recoil_mults.steelsight
+					0.00 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.32
+				min_h_recoil = 0.1
 			},
 
 		--Recoil with a heavier horizontal weighting; primarly for bullet hoses ill-suited for long range
@@ -23037,11 +23042,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.modl.kick = self.stat_info.kick_tables.moderate_left_kick
 				self.modl.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
-					{7, self.stat_info.kick_tables.right_recoil},
-					{11, self.stat_info.kick_tables.even_recoil},
-					{17, self.stat_info.kick_tables.moderate_left_kick},
-					{21, self.stat_info.kick_tables.left_recoil},
-					{25, self.stat_info.kick_tables.moderate_left_kick},
+					{7, self.stat_info.kick_tables.harsh_right_kick},
+					{9, self.stat_info.kick_tables.horizontal_right_recoil},
+					{12, self.stat_info.kick_tables.even_recoil},
+					{17, self.stat_info.kick_tables.horizontal_left_recoil},
+					{21, self.stat_info.kick_tables.harsh_left_kick},
+					{23, self.stat_info.kick_tables.moderate_left_kick}
 				}
 				self.modl.supported = true
 				self.modl.ads_speed = 0.280

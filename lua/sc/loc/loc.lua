@@ -3388,6 +3388,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--BO6 CETME L
+						["bm_w_modl"] = "Model L",
 						--MW2023 ARX-200
 						["bm_w_soa"] = "SOA Subverter",
 						--QBZ-191
@@ -4116,6 +4118,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_fik22"] = "Ruger 10/22",
 						--ACR 2012
 						["bm_w_acr_2012"] = "Remington ACR",
+						--MW2023 ARX-200
+						["bm_w_soa"] = "Beretta ARX-200",
+						--BO6 CETME Model L
+						["bm_w_modl"] = "CETME Model L",
 
 
 				--[[DMRs]]

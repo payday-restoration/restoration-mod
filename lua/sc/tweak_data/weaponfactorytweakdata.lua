@@ -19363,7 +19363,8 @@ end)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_modl = {
 						translation = Vector3(0.022, 3.5, -3.19),
-						rotation = Rotation(-0.01, -0.12, 0)
+						rotation = Rotation(-0.01, -0.12, 0),
+						scale = 0.93
 					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
@@ -19502,7 +19503,7 @@ end)
 			self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_specter_piggyback.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0, -10, -3.15)
+					weap.translation = weap.translation + (Vector3(0, -10, -3.15) * (weap.scale or 1) )
 				end
 			end
 
@@ -19539,7 +19540,7 @@ end)
 			self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_atibal.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_atibal_reddot.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + sight_atibal_rds_offset.offset
+					weap.translation = weap.translation + (sight_atibal_rds_offset.offset * (weap.scale or 1) )
 				end
 			end
 
@@ -19567,7 +19568,7 @@ end)
 			self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_hamr_reddot.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0, -14, -3.3)
+					weap.translation = weap.translation + (sight_hamr_rds_offset.offset * (weap.scale or 1) )
 				end
 			end
 
@@ -22643,7 +22644,7 @@ end)
 			self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 			for i, weap in pairs(self.parts.wpn_fps_upg_o_northtac_reddot.stance_mod) do
 				if weap and weap.translation then
-					weap.translation = weap.translation + Vector3(0,-32,-0.01)
+					weap.translation = weap.translation + (Vector3(0,-32,-0.01) * (weap.scale or 1) )
 					--weap.translation = weap.translation + Vector3(0,-22,-0.01)
 				end
 			end
@@ -37988,7 +37989,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_modl_m_3.custom_stats = { 
 					ads_speed_mult = 1.075
 				}
-				
+
 		end
 
 		if self.parts.wpn_fps_smg_r31_o_std_rear then

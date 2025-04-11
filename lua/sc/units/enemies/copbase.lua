@@ -454,7 +454,7 @@ local enemy_variations = {
 	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "fbi_swat_smg",
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "fbi_heavy_swat_ar",
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"] = "fbi_heavy_swat_sg",
-	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_shield",
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "fbi_shield",
 	["units/pd2_mod_lapd/characters/ene_sniper_2/ene_sniper_2"] = "fbi_swat_sniper",
 
 	["units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"] = "swat_ar",

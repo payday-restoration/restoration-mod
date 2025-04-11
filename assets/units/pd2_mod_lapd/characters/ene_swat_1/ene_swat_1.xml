@@ -144,6 +144,11 @@
 			<set_variables var_gadgets_fbi_light="3"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
+
+		<sequence editable_state="true" name="'fbi_shield'" triggable="true" once="true">						
+			<set_variables var_gadgets_fbi_light="4"/>
+			<run_sequence name="'gadget_meat_grinder'"/>		
+		</sequence>
 		
 		<sequence editable_state="true" name="'heavy_swat_sg'" triggable="true" once="true">						
 			<set_variables var_gadgets_blue_heavy="2"/>
@@ -403,6 +408,8 @@
 			
 			<object enabled="false" name="'g_helmet_lod1'"/>						
 			<object enabled="false" name="'g_helmet_lod2'"/>						
+			<object enabled="false" name="'g_hat_lod1'"/>						
+			<object enabled="false" name="'g_hat_lod2'"/>						
 			<object enabled="false" name="'g_helmet_lod3'"/>						
 			<object enabled="false" name="'g_helmet_lod4'"/>						
 			<object enabled="false" name="'g_helmet_lod5'"/>						

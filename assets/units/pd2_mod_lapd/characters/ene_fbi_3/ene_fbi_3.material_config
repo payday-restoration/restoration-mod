@@ -4,12 +4,12 @@
         <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df"/>
     </material>
     <material name="mtr_extras" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-        <bump_normal_texture file="units/pd2_dlc_rvd/characters/ene_la_cop_texture/ene_la_cop_nm" mip="1"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df"/>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df"/>
     </material>
     <material name="mtr_extras_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-        <bump_normal_texture file="units/pd2_dlc_rvd/characters/ene_la_cop_texture/ene_la_cop_nm" mip="4"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df" mip="4"/>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df" mip="4"/>
     </material>
     <material name="mtr_body_sfpd" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/pd2_dlc_chas/characters/shared_textures/ene_male_chas_police_body/ene_guard_police_body_nm" />

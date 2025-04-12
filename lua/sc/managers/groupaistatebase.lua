@@ -292,6 +292,30 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 		end
 	end
 
+	local function get_element_in_instance(instance_name, id)
+		local instance_mgr = managers.world_instance
+		local instance_data = instance_mgr:get_instance_data_by_name(instance_name)
+
+		if not instance_data or not instance_data.start_index then
+			return
+		end
+
+		local continent_data = managers.worlddefinition._continents[instance_data.continent]
+		if not continent_data or not continent_data.base_id then
+			return
+		end
+
+		local new_id = continent_data.base_id + instance_mgr:_get_mod_id(id) + instance_mgr:start_offset_index() + instance_data.start_index
+		local area = get_mission_script_element(new_id)
+		if area then
+			-- log("found area in instance", area:id(), instance_name)
+			if getmetatable(area) == ElementAreaTrigger then
+				-- log("found area is an area trigger")
+				return area
+			end
+		end
+	end
+
 	local prev_time = self._point_of_no_return_timer
 	self._point_of_no_return_timer = self._point_of_no_return_timer - dt
 	local sec = math_floor(self._point_of_no_return_timer)
@@ -317,6 +341,19 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area
 				end
 			end
+
+			local element_elements_in_instances = element._values.elements_in_instances
+			if element_elements_in_instances then
+				for instance_name, data in pairs_g(element_elements_in_instances) do
+					for _, id in pairs(data) do
+						local area_in_instance = get_element_in_instance(instance_name, id)
+
+						if area_in_instance then
+							self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = area_in_instance
+						end
+					end
+				end
+			end
 		end
 
 		if #self._point_of_no_return_areas == 0 then
@@ -338,7 +375,7 @@ function GroupAIStateBase:_update_point_of_no_return(t, dt)
 				-- Fall back on is_inside if the element doesn't have _is_inside for whatever reason
 				local is_inside_func = area._is_inside or area.is_inside
 
-				if is_inside_func(area, plr_unit:movement():m_pos()) then
+				if is_inside_func and is_inside_func(area, plr_unit:movement():m_pos()) then
 					is_inside = true
 
 					break
@@ -433,9 +470,9 @@ function GroupAIStateBase:check_ponr_escape_area()
 		end
 	end
 
-	for name, script in pairs_g(managers.mission:scripts()) do
-		for id, element in pairs_g(script:elements()) do
-			if element._shapes and element._callback and check_executed_objects(element) then
+	for _, script in pairs_g(managers.mission:scripts()) do
+		for _, element in pairs_g(script:elements()) do
+			if getmetatable(element) == ElementAreaTrigger and check_executed_objects(element) then
 				if not self._point_of_no_return_areas[1] or not table_contains(self._point_of_no_return_areas, element) then
 					self._point_of_no_return_areas[#self._point_of_no_return_areas + 1] = element
 				end
@@ -443,9 +480,12 @@ function GroupAIStateBase:check_ponr_escape_area()
 		end
 	end
 
-	managers.enemy:add_delayed_clbk("check_ponr_escape_area", callback(self, self, "check_ponr_escape_area"), self._t + 0.5)
+	-- Callback delay was 0.5s when this function still checked that area triggers were enabled to add them
+	-- The enabled check is now done when checking if players are inside the escape zone
+	-- Extend delay to 2s rather than getting rid of it in case there's some other reason for it
+	managers.enemy:add_delayed_clbk("check_ponr_escape_area", callback(self, self, "check_ponr_escape_area"), self._t + 2)
 end
-		
+
 function GroupAIStateBase:_radio_chatter_clbk()
 	if self._ai_enabled and not self:whisper_mode() then
 		local optimal_dist = 500

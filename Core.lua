@@ -1077,6 +1077,7 @@ function restoration:mission_script_add()
 				execute_on_startup = false,
 				trigger_times = opts.trigger_times or 1,
 				elements = opts.elements or {},
+				elements_in_instances = opts.elements_in_instances or nil,
 				on_executed = opts.on_executed or {},
 				base_delay = opts.base_delay or 0,
 				tweak_id = "noreturn",

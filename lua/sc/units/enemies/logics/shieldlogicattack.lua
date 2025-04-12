@@ -33,3 +33,8 @@ end
 Hooks:PreHook(ShieldLogicAttack, "exit", "sh_exit", function (data)
 	ShieldLogicAttack._cancel_optimal_attempt(data, data.internal_data)
 end)
+
+-- Update logic more consistently
+function ShieldLogicAttack.queue_update(data, my_data)
+	CopLogicBase.queue_task(my_data, my_data.update_queue_id, ShieldLogicAttack.queued_update, data, data.t + 0.5, data.important and true)
+end

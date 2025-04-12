@@ -157,7 +157,9 @@ function PlayerTweakData:_set_sm_wish()
 end
 
 function PlayerTweakData:_set_singleplayer()
-	self.max_nr_following_hostages = 4
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		self.max_nr_following_hostages = 4
+	end
 end
 
 function PlayerTweakData:_set_multiplayer()

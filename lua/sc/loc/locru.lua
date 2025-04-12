@@ -313,6 +313,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCloakerTurnDescID"] = "Камера будет поворачиваться на Клокера, когда он вас пинает, как в ванилле.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Выключить смену цвета баннера штурма",
 		["RestorationModDisableMutatorColorsDescID"] = "Выключает смену цвета баннера штурма, вызванное использованием мутаторов (работает только с обычным баннером).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	
 		["RestorationModHolidayTitleID"] = "Праздничные эффекты",
 		["RestorationModHolidayDescID"] = "Включает или выключает праздничные эффекты в моде.",
 		["RestorationModRestoreHitFlashTitleID"] = "Вспышка при уроне",

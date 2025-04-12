@@ -20882,9 +20882,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end
 	
 	--Reduced spawns if playing in Solo offline
-	if Global and Global.game_settings and Global.game_settings.single_player then
-		map_scale_factor = map_scale_factor * 0.75
-	end	
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global and Global.game_settings and Global.game_settings.single_player then
+			map_scale_factor = map_scale_factor * 0.75
+		end	
+	end
 
 	self.besiege.assault.force_balance_mul = {
 		0.55 * map_scale_factor,

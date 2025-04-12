@@ -321,6 +321,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCloakerTurnDescID"] = "Activa o desactiva el giro de cámara de Cloakers de Vanilla al recibir una patada de Cloaker.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Desactivar Colores Mutador Bandera Asalto",
 		["RestorationModDisableMutatorColorsDescID"] = "Desactiva el cambio de color del estandarte de asalto al usar mutadores (solo HUD Vanilla).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	
 		["RestorationModRestoreHitFlashTitleID"] = "Restaurar Destello De Golpe",
 		["RestorationModRestoreHitFlashDescID"] = "Activa o desactiva el destello de golpe restaurado al recibir daño.",
 		["RestorationModBotsNoDropTitleID"] = "Desactivar Lanzar Bolsas De Bots",

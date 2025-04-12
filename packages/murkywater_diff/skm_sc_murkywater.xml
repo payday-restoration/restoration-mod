@@ -645,11 +645,11 @@
 	<material_config	path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1_contour"/>
 
 	<!--OMNIA Green Bulldozer Bits-->	
-	<unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" load="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"/>
+	<!--unit_mat			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" load="false"-->
+	<!--cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck"-->
 		
-	<unit_obj			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" load="false"/>
-	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"/>
+	<!--<unit_obj			path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" load="false"-->
+	<!--<cooked_physics		path="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat"-->
 	
 	<!--skulldozer-->
 	<unit				path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3" load="true"/>

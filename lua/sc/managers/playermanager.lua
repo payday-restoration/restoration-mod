@@ -1284,6 +1284,10 @@ end
 function PlayerManager:check_enduring()
 	if not self._assaults_to_extra_revive then
 		self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
+		
+		if restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+			self._assaults_to_extra_revive = 2
+		end
 	end
 
 	if self._assaults_to_extra_revive and alive(self:player_unit()) then

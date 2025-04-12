@@ -347,6 +347,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
 		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",

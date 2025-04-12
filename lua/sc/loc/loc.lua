@@ -3391,6 +3391,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--BO6 CETME L
+						["bm_w_modl"] = "Model L",
 						--MW2023 ARX-200
 						["bm_w_soa"] = "SOA Subverter",
 						--QBZ-191
@@ -4119,6 +4121,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_fik22"] = "Ruger 10/22",
 						--ACR 2012
 						["bm_w_acr_2012"] = "Remington ACR",
+						--MW2023 ARX-200
+						["bm_w_soa"] = "Beretta ARX-200",
+						--BO6 CETME Model L
+						["bm_w_modl"] = "CETME Model L",
 
 
 				--[[DMRs]]
@@ -5701,7 +5707,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
-				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
+				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nLethal headshots against special and elite enemies with ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",

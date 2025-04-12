@@ -97,6 +97,8 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 		spread_mul = spread_mul * (self._volley_spread_mul or 1)
 		dmg_mul = dmg_mul * (self._volley_damage_mul or 1)
 		self._volley_recoil_mul = rays or 1
+		local count_hits = {}
+		local hit_units = {}
 		local result = {
 			rays = {}
 		}

@@ -1985,6 +1985,8 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 			local dmg_mul_step = self._volley_damage_mul / self._volley_ammo_usage
 			dmg_mul = ammo_usage > 0 and ammo_usage * dmg_mul_step
 		end
+		local count_hits = {}
+		local hit_units = {}
 		local result = {
 			rays = {}
 		}

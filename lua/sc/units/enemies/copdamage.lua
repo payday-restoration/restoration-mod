@@ -3191,7 +3191,11 @@ function CopDamage:_on_damage_received(damage_info)
 	end
 	
 	if not self._dead then
-		self:_chk_unique_death_requirements(damage_info, false)
+		local attack_data = damage_info
+		if attack_data.variant and attack_data.variant == "fire_bullet" then
+			attack_data.variant = "fire"
+		end
+		self:_chk_unique_death_requirements(attack_data, false)
 	end	
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
@@ -3860,4 +3864,14 @@ function CopDamage:do_medic_heal()
 	self:_update_debug_ws()
 	
 	return true
+end
+
+--Add better checks for the Crazy Ivan cheevo so the in-fighting won't cause the cheevo to fail
+function CopDamage.MAD_3_ACHIEVEMENT(attack_data)
+	local attacker_unit = alive(attack_data.attacker_unit) and attack_data.attacker_unit
+	local unit_base = attacker_unit and attacker_unit:base()
+	local is_player_or_ally = attacker_unit and ((attacker_unit == managers.player:player_unit()) or (attacker_unit.movement and attacker_unit:movement() and not attacker_unit:movement():team().foes[tweak_data.levels:get_default_team_ID("player")] ))
+	if attack_data.variant ~= "melee" and unit_base and not unit_base.tased and is_player_or_ally then
+		managers.job:set_memory("mad_3", false)
+	end
 end

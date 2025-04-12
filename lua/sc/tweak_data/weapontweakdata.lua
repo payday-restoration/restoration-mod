@@ -3898,7 +3898,7 @@ function WeaponTweakData:_init_stats()
 				min_h_recoil = 0.35
 			},
 
-		--Recoil with even heavier horizontal weighting
+		--Recoil with even heavier horizontal weighting; the directional variants go purely in their repective direction
 			harsh_kick = {
 				standing = {
 					0.55 * self.stat_info.stance_recoil_mults.standing,
@@ -3925,42 +3925,47 @@ function WeaponTweakData:_init_stats()
 					0.55 * self.stat_info.stance_recoil_mults.standing,
 					0.35 * self.stat_info.stance_recoil_mults.standing,
 					0.80 * -self.stat_info.stance_recoil_mults.standing,
-					0.30 * -self.stat_info.stance_recoil_mults.standing
+					0.00 * -self.stat_info.stance_recoil_mults.standing 
+					-- the funny logic here to have the kick values add up to 2 is that the last two recoil values 
+					-- are meant to be inverted to each other for left and right; since both go in the same direction for these recoil variants the logic is that the
+					-- kick value that'd normally be +0.3 is being offset by a -0.3 and I'm counting the -0.3 that's cancelling out the +0.3 as a part of the add-up to 2
+					-- I'm also full of shit :^)
+					-- All that aside this is still one of the more harsh recoil variants (hence the name) despite not adhering to the "raw kick-values add up to 2" rule
 				},
 				crouching = {
 					0.55 * self.stat_info.stance_recoil_mults.crouching,
 					0.35 * self.stat_info.stance_recoil_mults.crouching,
 					0.80 * -self.stat_info.stance_recoil_mults.crouching,
-					0.30 * -self.stat_info.stance_recoil_mults.crouching
+					0.00 * -self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
 					0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					0.35 * self.stat_info.stance_recoil_mults.steelsight,
 					0.80 * -self.stat_info.stance_recoil_mults.steelsight,
-					0.30 * -self.stat_info.stance_recoil_mults.steelsight
+					0.00 * -self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.32
+				min_h_recoil = 0.1
 			},
 			harsh_right_kick = {
 				standing = {
 					0.55 * self.stat_info.stance_recoil_mults.standing,
 					0.35 * self.stat_info.stance_recoil_mults.standing,
 					0.80 * self.stat_info.stance_recoil_mults.standing,
-					0.30 * self.stat_info.stance_recoil_mults.standing
+					0.00 * self.stat_info.stance_recoil_mults.standing
 				},
 				crouching = {
 					0.55 * self.stat_info.stance_recoil_mults.crouching,
 					0.35 * self.stat_info.stance_recoil_mults.crouching,
 					0.80 * self.stat_info.stance_recoil_mults.crouching,
-					0.30 * self.stat_info.stance_recoil_mults.crouching
+					0.00 * self.stat_info.stance_recoil_mults.crouching
 				},
 				steelsight = {
 					0.55 * self.stat_info.stance_recoil_mults.steelsight,
 					0.35 * self.stat_info.stance_recoil_mults.steelsight,
 					0.80 * self.stat_info.stance_recoil_mults.steelsight,
-					0.30 * self.stat_info.stance_recoil_mults.steelsight
+					0.00 * self.stat_info.stance_recoil_mults.steelsight
 				},
-				min_h_recoil = 0.32
+				min_h_recoil = 0.1
 			},
 
 		--Recoil with a heavier horizontal weighting; primarly for bullet hoses ill-suited for long range
@@ -23026,6 +23031,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.modl then --BO6 CETME Model L
+				self.modl.recategorize = { "heavy_ar" }
+				self.modl.damage_type = "assault_rifle"
+				self.modl.tactical_reload = 1
+				self.modl.nato = true			
+				self.modl.BURST_FIRE = false
+				self.modl.ADAPTIVE_BURST_SIZE = false
+				self.modl.fire_mode_data.fire_rate = 0.1
+				self.modl.AMMO_MAX = 120
+				self.modl.CLIP_AMMO_MAX = 30
+				self.modl.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.modl.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{7, self.stat_info.kick_tables.harsh_right_kick},
+					{9, self.stat_info.kick_tables.horizontal_right_recoil},
+					{12, self.stat_info.kick_tables.even_recoil},
+					{17, self.stat_info.kick_tables.horizontal_left_recoil},
+					{21, self.stat_info.kick_tables.harsh_left_kick},
+					{23, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.modl.supported = true
+				self.modl.ads_speed = 0.280
+				self.modl.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 7400,
+					min_mult = 0.4
+				}
+				self.modl.stats = {
+					damage = 30,
+					spread = 86,
+					recoil = 77,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.modl.stats_modifiers = nil
+				self.modl.timers = deep_clone(self.g3.timers)
+				self.modl.timers.reload_empty = self.modl.timers.reload_not_empty
+				self.modl.timers.reload_exit_empty = self.modl.timers.reload_exit_not_empty
+				self.modl.reload_not_empty_speed_multiplier = 1.4285
+				self.modl.panic_suppression_chance = 0.05
+			end
+
 			if self.r31 then --BO6 R31/Tanto 22
 				self.r31.categories = { "smg" }
 				self.r31.recategorize = { "light_smg" }
@@ -23097,7 +23151,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{13, self.stat_info.kick_tables.right_recoil}
 				}
 				self.riveter.supported = true
-				self.riveter.ads_speed = 0.280
+				self.riveter.ads_speed = 0.300
 				self.riveter.damage_falloff = {
 					start_dist = 1200,
 					end_dist = 3200,
@@ -23118,6 +23172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.riveter.panic_suppression_chance = 0.05
 				self.riveter.stats_modifiers = nil
+				self.riveter.reload_speed_multiplier = 1.25
 				self.riveter.lock_slide = true
 				self.riveter.lock_slide_offset = 0.2
 				self.riveter.sounds.magazine_empty = "wp_rifle_slide_lock"

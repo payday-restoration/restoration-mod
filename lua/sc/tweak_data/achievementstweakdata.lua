@@ -866,15 +866,17 @@ function AchievementsTweakData:init(tweak_data)
 	self.visual.steel_2.progress = {
 		get = function ()
 			if table.contains(steel_2.melee_weapons, managers.blackmarket:equipped_melee_weapon()) then
-				return managers.statistics:session_enemy_killed_by_type(steel_2.enemy_kills.enemies, "melee")
+				local rtn = 0
+				for _, enemy in ipairs(steel_2.enemy_kills.enemies) do
+					rtn = rtn + managers.statistics:session_enemy_killed_by_type(enemy, "melee")
+				end
+				return rtn
 			end
-
 			return 0
 		end,
 		max = steel_2.enemy_kills.count,
 		update = tracking.second
 	}	
-	
 	self.enemy_melee_hit_achievements.steel_4 = {
 		enemies = {
 			"tank_black",

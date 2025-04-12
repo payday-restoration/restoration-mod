@@ -23030,6 +23030,66 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		
 		--[[     HYLIE'S MODS     ]]--
 
+			if self.m1918 then
+				self.m1918.categories = { 
+					"assault_rifle",
+					"dmr_h" 
+				}
+				self.m1918.recategorize = { "dmr_ar" }
+				self.m1918.damage_type = "sniper"
+				self.m1918.CLIP_AMMO_MAX = 20
+				self.m1918.AMMO_MAX = 60
+				self.m1918.FIRE_MODE = "auto"
+				self.m1918.CAN_TOGGLE_FIREMODE = false
+				self.m1918.BURST_FIRE = false
+				self.m1918.fire_mode_data.fire_rate = 0.12
+				self.m1918.kick = {}
+				self.m1918.kick = self.stat_info.kick_tables.even_recoil
+				self.m1918.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.moderate_left_kick},
+					{6, self.stat_info.kick_tables.left_recoil},
+					{11, self.stat_info.kick_tables.moderate_kick},
+					{14, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.m1918.muzzleflash = "_dmc/effects/heavy_muzzle"
+				self.m1918.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
+				self.m1918.supported = true
+				self.m1918.ads_speed = 0.400
+				self.m1918.damage_falloff = {
+					start_dist = 4000,
+					end_dist = 9000,
+					min_mult = 0.5
+				}	
+				self.m1918.stats = {
+					damage = 60,
+					spread = 71,
+					recoil = 59,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 21,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.m1918.stats_modifiers = nil
+				self.m1918.panic_suppression_chance = 0.05
+				self.m1918.spin_up_semi = true
+				self.m1918.spin_up_shoot = true
+				self.m1918.spin_up_t = 0.1
+				self.m1918.spin_down_t = 0.00000001
+				self.m1918.sounds.spin_start = "wp_hcar_reload_empty_bolt_release"
+				self.m1918.can_shoot_through_enemy = true
+				self.m1918.can_shoot_through_enemy_unlim = true
+				self.m1918.can_shoot_through_wall = false
+				self.m1918.can_shoot_through_shield = false
+				self.m1918.armor_piercing_chance = 0.50
+				self.m1918.timers = deep_clone(self.hcar.timers)
+			end
+
 			if self.modl then --BO6 CETME Model L
 				self.modl.recategorize = { "heavy_ar" }
 				self.modl.damage_type = "assault_rifle"

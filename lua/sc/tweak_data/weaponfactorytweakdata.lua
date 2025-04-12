@@ -8971,13 +8971,13 @@ end)
 
 				self.parts.wpn_fps_lmg_hcar_m_drum.supported = true
 				self.parts.wpn_fps_lmg_hcar_m_drum.stats = {
-					extra_ammo = 25,
+					extra_ammo = 30,
 					value = 10,
-					reload = -7,
-					concealment = -5
+					reload = -8,
+					concealment = -6
 				}
 				self.parts.wpn_fps_lmg_hcar_m_drum.custom_stats = {
-					ads_speed_mult = 1.125
+					ads_speed_mult = 1.15
 				}
 
 				self.parts.wpn_fps_lmg_hcar_body_conversionkit.supported = true
@@ -37882,6 +37882,52 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ HYLIE'S MODS ]]
+
+		if self.parts.wpn_fps_lmg_m1918_body_standard then
+			self.parts.wpn_fps_lmg_m1918_m_mount = {
+				type = "shitass_m",
+				name_id = "none",
+				unit = "units/pd2_dlc_pxp3/weapons/wpn_fps_lmg_hcar/wpn_fps_lmg_hcar",
+				stats = {
+					value = 1
+				}
+			}
+			self.parts.wpn_fps_lmg_m1918_body_standard.stance_mod = {
+				wpn_fps_lmg_m1918 = {
+					translation = Vector3(-0.01, -7, -0.09),
+					rotation = Rotation(-0.095, 0, -0.05)
+				}
+			}
+			self.parts.wpn_fps_lmg_m1918_body_standard.adds = {"wpn_fps_lmg_m1918_m_mount"}
+
+			self.parts.wpn_fps_lmg_m1918_ns_cutts.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
+			self.parts.wpn_fps_lmg_m1918_ns_cutts.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats))
+
+			self.parts.wpn_fps_lmg_m1918_m_extended.supported = true
+			self.parts.wpn_fps_lmg_m1918_m_extended.stats = {
+				extra_ammo = 20,
+				value = 6,
+				reload = -6,
+				concealment = -4
+			}
+			self.parts.wpn_fps_lmg_m1918_m_extended.custom_stats = {
+				ads_speed_mult = 1.1
+			}
+
+			self.wpn_fps_lmg_m1918.override = self.wpn_fps_lmg_m1918.override or {}
+			self.wpn_fps_lmg_m1918.override.wpn_fps_lmg_hcar_m_stick = {
+				parent = "shitass_m"
+			}
+			self.wpn_fps_lmg_m1918.override.wpn_fps_lmg_hcar_m_drum = {
+				parent = "shitass_m"
+			}
+
+			table.insert(self.wpn_fps_lmg_m1918.uses_parts, "wpn_fps_lmg_hcar_m_stick")
+			table.insert(self.wpn_fps_lmg_m1918.uses_parts, "wpn_fps_lmg_hcar_m_drum")
+
+			self.wpn_fps_lmg_m1918_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m1918.uses_parts)
+			self.wpn_fps_lmg_m1918_npc.override = deep_clone(self.wpn_fps_lmg_m1918.override)
+		end
 
 		if self.parts.wpn_fps_ass_modl_o_std then
 			self.parts.wpn_fps_ass_modl_o_std.stance_mod = {

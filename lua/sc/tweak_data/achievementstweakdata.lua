@@ -842,6 +842,8 @@ function AchievementsTweakData:init(tweak_data)
 		result = "death"
 	}
 	
+	--[[
+	--The way this counts specific unit kills requires too much alterations in multiple areas (copdamage a.k.a. no); cbf'd to do the required changes so you're stuck with titan sheilds (and the vanilla marshal SHIELD, lol) not counting
 	self.enemy_melee_hit_achievements.steel_2 = {
 		award = "steel_2",
 		result = "death",
@@ -877,6 +879,8 @@ function AchievementsTweakData:init(tweak_data)
 		max = steel_2.enemy_kills.count,
 		update = tracking.second
 	}	
+	--]]
+
 	self.enemy_melee_hit_achievements.steel_4 = {
 		enemies = {
 			"tank_black",

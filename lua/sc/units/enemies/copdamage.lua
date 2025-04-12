@@ -308,6 +308,8 @@ function CopDamage:damage_fire(attack_data)
 	if self:chk_immune_to_attacker(attacker_unit) then
 		return
 	end
+	
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 
 	if impenetrable_armour[hit_body:name():key()] then -- nothing
 		return

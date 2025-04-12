@@ -1753,8 +1753,8 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 	return self.super.give_impact_damage(self, col_ray, weapon_unit, user_unit, damage, ...)
 end
 
-function RaycastWeaponBase:get_stance_id()
-	return self:weapon_tweak_data().use_stance or self:get_name_id()
+function RaycastWeaponBase:get_hipfire_stance_id()
+	return self:weapon_tweak_data().use_hipfire_stance or self:get_name_id()
 end
 
 --Autoaim function when using a controller

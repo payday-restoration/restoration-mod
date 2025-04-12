@@ -21090,6 +21090,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bf2042_ayylmao.AMMO_MAX = 75
 				self.bf2042_ayylmao.CLIP_AMMO_MAX = 17
 				self.bf2042_ayylmao.tactical_reload = 1
+				self.bf2042_ayylmao.keep_ammo = 1
 				self.bf2042_ayylmao.lock_slide = true
 				self.bf2042_ayylmao.lock_slide_alt = true
 				self.bf2042_ayylmao.kick = self.stat_info.kick_tables.even_recoil
@@ -23175,6 +23176,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.riveter.lock_slide_offset = 0.2
 				self.riveter.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.riveter.sounds.stop_fire = "saiga_stop"
+				self.riveter.use_hipfire_stance = "m16"
 				self.riveter.timers = deep_clone(self.m16.timers)
 			end
 

@@ -14624,6 +14624,7 @@ end)
 						self.parts.wpn_fps_snp_victor_sbr_kit.supported = true
 						self.parts.wpn_fps_snp_victor_sbr_kit.stats = deep_clone(barrels.short_b3_stats)
 						self.parts.wpn_fps_snp_victor_sbr_kit.custom_stats = deep_clone(barrels.short_b3_stats)
+						self.parts.wpn_fps_snp_victor_sbr_kit.adds = nil
 						self.parts.wpn_fps_snp_victor_sbr_kit.perks = nil
 						self.parts.wpn_fps_snp_victor_sbr_kit.override = {
 							wpn_fps_snp_victor_fg_standard = {
@@ -27299,7 +27300,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = -5
 				}
 				self.parts.wpn_fps_ass_rmary2_magazine_fast1.custom_stats = { 
-					ads_speed_mult = 0.925
+					ads_speed_mult = 0.975
 				}
 				--FM 2
 				self.parts.wpn_fps_ass_rmary2_magazine_fast2.supported = true
@@ -27350,6 +27351,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			table.insert(self.wpn_fps_ass_rmary2.uses_parts, "wpn_fps_upg_o_sig")
 
 			self.wpn_fps_ass_rmary2_npc.uses_parts = deep_clone(self.wpn_fps_ass_rmary2.uses_parts)
+		end
+
+		if self.parts.wpn_fps_ass_rmary2_grip_classic then
+			self.parts.wpn_fps_ass_rmary2_grip_classic.supported = true
+			self.parts.wpn_fps_ass_rmary2_grip_classic.stats = deep_clone(grips.recoil_1)
+			self.parts.wpn_fps_ass_rmary2_grip_classic.custom_stats = deep_clone(grips.recoil_1)
+
+			self.parts.wpn_fps_ass_rmary2_barrel_short_classic.supported = true
+			self.parts.wpn_fps_ass_rmary2_barrel_short_classic.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_rmary2_barrel_short_classic.stats.concealment = -2
+			self.parts.wpn_fps_ass_rmary2_barrel_short_classic.stats.recoil = 2
+			self.parts.wpn_fps_ass_rmary2_barrel_short_classic.custom_stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_rmary2_barrel_classic.supported = true
+			self.parts.wpn_fps_ass_rmary2_barrel_classic.stats = deep_clone(barrels.long_b3_stats)
+			self.parts.wpn_fps_ass_rmary2_barrel_classic.custom_stats = deep_clone(barrels.long_b3_stats)
 		end
 
 		if self.parts.wpn_fps_ass_bolter_40k_ammo then

@@ -3148,7 +3148,10 @@ function PlayerStandard:_stance_entered(unequipped, timemult)
 	
 	if not unequipped then
 		stance_id = self._equipped_unit:base():get_stance_id()
-
+		if not self._state_data.in_steelsight then
+			stance_id = self._equipped_unit:base():get_hipfire_stance_id()
+		end
+		
 		if self._state_data.in_steelsight and self._equipped_unit:base().stance_mod then
 			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
 		end

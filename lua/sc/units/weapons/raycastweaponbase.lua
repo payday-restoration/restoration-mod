@@ -46,7 +46,7 @@ function RaycastWeaponBase:setup(setup_data, damage_multiplier)
 
 	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult")) or 0
 
-	self._panic_suppression_chance = setup_data.panic_suppression_skill and panic_mult
+	self._panic_suppression_chance = managers.player:has_category_upgrade("player", "panic_suppression") and panic_mult
 	if self._panic_suppression_chance == 0 then
 		self._panic_suppression_chance = false
 	end
@@ -1753,8 +1753,8 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 	return self.super.give_impact_damage(self, col_ray, weapon_unit, user_unit, damage, ...)
 end
 
-function RaycastWeaponBase:get_stance_id()
-	return self:weapon_tweak_data().use_stance or self:get_name_id()
+function RaycastWeaponBase:get_hipfire_stance_id()
+	return self:weapon_tweak_data().use_hipfire_stance or self:get_name_id()
 end
 
 --Autoaim function when using a controller

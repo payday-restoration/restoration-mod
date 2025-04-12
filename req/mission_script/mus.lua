@@ -1,43 +1,29 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 680 or (difficulty == 6 or difficulty == 7) and 640) or 600
-local ponr_helicopter = (difficulty <= 5 and 500 or (difficulty == 6 or difficulty == 7) and 460) or 420
-
-local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}
-
 return {
-	--Pro Job PONR stuff
+	-- Pro Job PONR
+	-- Alarm, try to start The Diamond taken PONR if it was already taken, toggle PONR on otherwise
+	[100824] = {
+		on_executed = {
+			{ id = 400001, delay = 0, },
+			{ id = 400004, delay = 0, },
+		},
+	},
+	-- The Diamond taken, try to start PONR if alarm went off, toggle PONR on otherwise
 	[101913] = {
-		ponr = ponr_value
+		on_executed = {
+			{ id = 400001, delay = 0, },
+			{ id = 400004, delay = 0, },
+		},
 	},
+	-- Helicopter flare placeable, start new PONR
 	[102425] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_helicopter + 30
+		on_executed = {
+			{ id = 400002, delay = 0, },
+		},
 	},
+	-- Helicopter full of loot and leaving, restart PONR
 	[102462] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_helicopter
-	}
+		on_executed = {
+			{ id = 400003, delay = 0, },
+		},
+	},
 }

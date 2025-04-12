@@ -65,10 +65,19 @@ function CopSound:init(unit)
 		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"),
 		ids_func("units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec_husk"),		
 		--LAPD Blue SWATs
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"),
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk"),		
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"),
-		ids_func("units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk"),			
+		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
+		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),		
+		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
+		ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
+		ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"),
+		ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"),
+		--LAPD FBI SWATs		
+		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
+		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+		ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),	
+		ids_func("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+		ids_func("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1_husk"),			
 		--Constantine GenSec SWATs
 		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1"),
 		ids_func("units/pd2_mod_ttr/characters/ene_fbi_gensec_1/ene_fbi_gensec_1_husk"),

@@ -3911,7 +3911,7 @@ function CopDamage:_check_melee_achievements(attack_data)
 			level_pass = not achievement_data.level_id or (managers.job:current_level_id() or "") == achievement_data.level_id
 			job_pass = not achievement_data.job or managers.job:current_real_job_id() == achievement_data.job
 			jobs_pass = not achievement_data.jobs or table.contains(achievement_data.jobs, managers.job:current_real_job_id())
-			enemy_count_pass = not achievement_data.enemy_kills or achievement_data.enemy_kills.count <= count_enemy_kills(achievement_data.enemy_kills.enemies or achievement_data.enemy_kills.enemy)
+			enemy_count_pass = not achievement_data.enemy_kills or achievement_data.enemy_kills.count <= count_enemy_type_kills(achievement_data.enemy_kills.enemies or achievement_data.enemy_kills.enemy)
 			tags_all_pass = not achievement_data.enemy_tags_all or enemy_base:has_all_tags(achievement_data.enemy_tags_all)
 			tags_any_pass = not achievement_data.enemy_tags_any or enemy_base:has_any_tag(achievement_data.enemy_tags_any)
 			cop_pass = not achievement_data.is_cop or is_cop

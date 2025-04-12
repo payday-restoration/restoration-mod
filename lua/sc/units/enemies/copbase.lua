@@ -538,7 +538,7 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "sec_cop",
-	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "exposed_meanheads",
+	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "head_exposed_meanheads",
 	["units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt_la",
 	
 	["units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"] = "head_balaclava_a_la",

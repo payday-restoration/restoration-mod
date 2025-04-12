@@ -36,9 +36,14 @@
 			<run_sequence name="'head_'..pick('balaclava_c_la', 'balaclava_c_la', 'balaclava_c_la',  'balaclava_a_la',  'balaclava_a_la', 'balaclava_a_la', 'exposed_weak', 'balaclava_c_la', 'balaclava_c_la')"/>
 		</sequence>		
 		
+		<sequence editable_state="true" name="'swat_heavy_fbi_la'" once="true" triggable="true">
+			<run_sequence name="'head_'..pick('balaclava_c_la', 'balaclava_c_la', 'balaclava_c_la',  'balaclava_a_la',  'balaclava_a_la', 'balaclava_a_la', 'exposed_weak', 'balaclava_c_la', 'balaclava_c_la')"/>
+		</sequence>		
+		
 		<sequence editable_state="true" name="'swat_ar'" once="true" triggable="true">
 			<run_sequence name="'head_'..pick('exposed_weak', 'exposed_weak', 'exposed_weak',  'balaclava_a',  'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
 		</sequence>
+		
 		<sequence editable_state="true" name="'swat_ar_la'" once="true" triggable="true">
 			<set_variables var_arms="1"/>		
 			<run_sequence name="'head_'..pick('exposed_weak', 'exposed_weak', 'exposed_weak',  'balaclava_a',  'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
@@ -78,6 +83,11 @@
 		<sequence editable_state="true" name="'fat_cop'" once="true" triggable="true">
 			<set_variables var_arms="1"/>
 			<run_sequence name="'head_exposed_fat'"/>
+		</sequence>								
+		
+		<sequence editable_state="true" name="'hrt_la'" once="true" triggable="true">
+			<set_variables var_arms="1"/>
+			<run_sequence name="'head_exposed_meanheads'"/>
 		</sequence>								
 
 		<sequence editable_state="true" name="'head_exposed_weak'" once="true" triggable="true">	

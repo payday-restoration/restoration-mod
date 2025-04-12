@@ -116,6 +116,8 @@
 			<set_variables var_gadgets_fbi="3"/>
 			<object enabled="true" name="'g_hat_lod3'"/>
 			<object enabled="true" name="'g_hat_lod4'"/>							
+			<object enabled="false" name="'g_shades_b'"/>							
+			<object enabled="false" name="'g_shades_b_lod1'"/>							
 			<run_sequence name="'gadget_meat_grinder'"/>
 		</sequence>
 

@@ -146,6 +146,11 @@ local armour = {
 	[Idstring("body_ammo"):key()] = true,
 }
 
+local impenetrable_armour = {
+	[Idstring("acc_helmet"):key()] = true,
+	[Idstring("acc_hat"):key()] = true,
+}
+
 local limbs = {
 	[Idstring("rag_LeftUpLeg"):key()] = true,
 	[Idstring("rag_LeftLeg"):key()] = true,
@@ -301,6 +306,10 @@ function CopDamage:damage_fire(attack_data)
 	end
 
 	if self:chk_immune_to_attacker(attacker_unit) then
+		return
+	end
+
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 
@@ -862,6 +871,10 @@ function CopDamage:damage_bullet(attack_data)
 	local ignore = self._char_tweak.no_dozer_armor_resistance
 	
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
+	
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
+		return
+	end
 
 	if armour[hit_body:name():key()] and not ignore then -- dozer armour negates damage
 		local pierce_armor = nil
@@ -1481,7 +1494,7 @@ function CopDamage:damage_melee(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
-
+	
 	if self:is_friendly_fire(attack_data.attacker_unit) and not attack_data.attacker_unit == self._unit then
 		return "friendly_fire"
 	end
@@ -1509,6 +1522,11 @@ function CopDamage:damage_melee(attack_data)
 	local damage_effect = attack_data.damage_effect or attack_data.damage
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
+	
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
+		return
+	end
+
 
 	if is_player then
 		if self._char_tweak.priority_shout then
@@ -2029,6 +2047,12 @@ function CopDamage:stun_hit(attack_data)
 	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
 		return
 	end
+
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
+	
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
+		return
+	end
 	
 	if self:is_friendly_fire(attack_data.attacker_unit) then
 		return "friendly_fire"
@@ -2180,6 +2204,12 @@ function CopDamage:damage_explosion(attack_data)
 
 	if allow_ff then
 		damage = damage * 0.5
+	end
+	
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
+		
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
+		return
 	end
 		
 	--Use a different damage resistance when being hit by a rocket	
@@ -3029,6 +3059,12 @@ end
 
 function CopDamage:damage_dot(attack_data)
 	if self._dead or self._invulnerable then
+		return
+	end
+
+	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
+	
+	if impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 	

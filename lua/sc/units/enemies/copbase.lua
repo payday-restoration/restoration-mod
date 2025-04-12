@@ -538,7 +538,7 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3"] = "sec_cop",
 	["units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4"] = "sec_cop",
-	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "head_exposed_meanheads",
+	["units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"] = "hrt_la",
 	["units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"] = "fbi_hrt_la",
 	
 	["units/pd2_mod_lapd/characters/ene_grenadier_1/ene_grenadier_1"] = "head_balaclava_a_la",
@@ -550,11 +550,11 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "fbi_swat_ar",
 	["units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "fbi_swat_ar",
 	["units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "fbi_swat_sg",
-	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "swat_heavy_la",
-	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy_la",	
-	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_la",
-	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_la",	
-	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_la",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "swat_heavy_fbi_la",
+	["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "swat_heavy_fbi_la",	
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_fbi_la",
+	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_fbi_la",	
+	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_fbi_la",
 	
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",

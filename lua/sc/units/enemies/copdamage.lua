@@ -3224,7 +3224,11 @@ function CopDamage:_on_damage_received(damage_info)
 	end
 	
 	if not self._dead then
-		self:_chk_unique_death_requirements(damage_info, false)
+		local attack_data = damage_info
+		if attack_data.variant and attack_data.variant == "fire_bullet" then
+			attack_data.variant = "fire"
+		end
+		self:_chk_unique_death_requirements(attack_data, false)
 	end	
 
 	local attacker_unit = damage_info and damage_info.attacker_unit

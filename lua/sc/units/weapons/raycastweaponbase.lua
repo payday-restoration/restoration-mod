@@ -46,7 +46,7 @@ function RaycastWeaponBase:setup(setup_data, damage_multiplier)
 
 	local panic_mult = (managers.player:has_category_upgrade("player", "panic_suppression_mult") and managers.player:upgrade_value("player", "panic_suppression_mult")) or 0
 
-	self._panic_suppression_chance = setup_data.panic_suppression_skill and panic_mult
+	self._panic_suppression_chance = managers.player:has_category_upgrade("player", "panic_suppression") and panic_mult
 	if self._panic_suppression_chance == 0 then
 		self._panic_suppression_chance = false
 	end

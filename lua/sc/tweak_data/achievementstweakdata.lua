@@ -86,7 +86,7 @@ function AchievementsTweakData:init(tweak_data)
 		award = "tawp_1",
 		job = "help",
 		difficulty = veryhard_and_above,
-		enemy_tags_all = {
+		enemy_tags_any = {
 			"spooc"
 		}
 	}

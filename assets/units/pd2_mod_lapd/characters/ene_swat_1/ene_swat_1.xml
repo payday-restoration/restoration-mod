@@ -433,6 +433,7 @@
 			<body 		    filter="'check_blue_gren'" enabled="false" name="'acc_helmet'" />	
 			<decal_mesh	    filter="'check_blue_gren'" enabled="false" name="'c_helmet_acc'" />
 			<graphic_group	filter="'check_blue_gren'" enabled="false" name="'acc_helmet'" />
+			<object			filter="'check_blue_gren'" enabled="false" name="'g_acc_helmet'" />
 
 			<body 		    filter="'check_fbi_smg'" enabled="false" name="'acc_helmet'" />	
 			<decal_mesh	    filter="'check_fbi_smg'" enabled="false" name="'c_helmet_acc'" />
@@ -458,6 +459,7 @@
 			<run_sequence filter="'check_blue_heavy_ar'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_blue_heavy_sg'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_fbi_heavy_ar'" name="'destroy_visor'"/>						
+			<run_sequence filter="'check_blue_gren'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_fbi_heavy_sg'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_blue_heavy_shield'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_blue_fbi_shield'" name="'destroy_visor'"/>						

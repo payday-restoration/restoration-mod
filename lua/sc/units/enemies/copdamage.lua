@@ -3849,6 +3849,32 @@ function CopDamage:kamikaze_bag_explode()
 	
 end
 
+function CopDamage:lpf_disable()	
+	if not alive(self._unit) then
+		return
+	end	
+	
+	if self._unit:base() then
+		self._unit:base():change_char_tweak("omnia_lpf_no_heal")
+	end
+	
+	if self._unit:character_damage() and self._unit:character_damage().force_hurt then
+		local attack_data = {
+			variant = "bullet",
+			type = "hurt",
+			position = self._unit:oobb():center(),
+			direction = self._unit:rotation():y(),
+			col_ray = {
+				position = self._unit:oobb():center(),
+				ray = self._unit:rotation():y()
+			}
+		}
+
+		self._unit:character_damage():force_hurt(attack_data)
+	end	
+	
+end
+
 --Added stuff for CG22 mutator
 function CopDamage:_apply_damage_reduction(damage)
 	local damage_reduction = self._unit:movement():team().damage_reduction or 0

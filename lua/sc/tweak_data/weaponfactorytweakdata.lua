@@ -37901,7 +37901,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_m1918_body_standard.adds = {"wpn_fps_lmg_m1918_m_mount"}
 
 			self.parts.wpn_fps_lmg_m1918_ns_cutts.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
-			self.parts.wpn_fps_lmg_m1918_ns_cutts.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats))
+			self.parts.wpn_fps_lmg_m1918_ns_cutts.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
 
 			self.parts.wpn_fps_lmg_m1918_m_extended.supported = true
 			self.parts.wpn_fps_lmg_m1918_m_extended.stats = {

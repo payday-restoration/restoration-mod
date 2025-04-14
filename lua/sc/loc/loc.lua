@@ -2610,6 +2610,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--CUSTOM PISTOLS
+					--Px4 Storm
+					["bm_wp_wpn_fps_upg_px4_barrel_sd"] = "SD Long Barrel",
 					--Zippy
 					["bm_zippy_sc_desc"] = "The ultimate weapon, in ejection failures and misfires. You'll be lucky to get two shots out of this thing without blowing off your fingers.",
 					--Auto-9
@@ -2621,6 +2623,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",
 					--Colt Detective
 					["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+					--MW2019 P320
+					["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -3146,7 +3150,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						--ZiP 22
 						["bm_w_zip22"] = "Zippy 3000",
 						--Px4
-						["bm_w_px4"] = "Bernetti Hx4 Canaan",
+						["bm_w_px4"] = "Bernetti Px4",
 						--Browning Hi-Power
 						["bm_w_hpb"] = "Hi-Power",
 						--Browning Hi-Power (Mira)
@@ -3161,7 +3165,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
 						["bm_w_papa320"] = "M19",
-						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
 					["bm_w_p90"] = "Project-90",

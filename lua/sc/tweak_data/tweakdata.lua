@@ -1736,3 +1736,35 @@ if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
 		end
 	end
 end
+
+if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.6.1
+	twb.weapon_skins.tecci_cnuy_ibuki.default_blueprint = {
+		"wpn_fps_ass_tecci_b_standard",
+		"wpn_fps_ass_tecci_dh_standard",
+		"wpn_fps_ass_tecci_fg_standard",
+		"wpn_fps_ass_tecci_g_standard",
+		"wpn_fps_ass_tecci_lower_reciever",
+		"wpn_fps_ass_tecci_m_drum",
+		"wpn_fps_ass_tecci_ns_standard",
+		"wpn_fps_ass_tecci_o_standard",
+		"wpn_fps_ass_tecci_s_standard",
+		"wpn_fps_ass_tecci_upper_reciever",
+		"wpn_fps_ass_tecci_vg_standard",
+		"wpn_fps_ass_tecci_cnuy_ibuki"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_tecci.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_fg_standard)
+			elseif twf.parts[used_part_id].type == "grip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_g_standard)
+			elseif twf.parts[used_part_id].type == "vertical_grip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_vg_standard)
+			elseif twf.parts[used_part_id].type == "magazine" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_m_pudding)
+			elseif twf.parts[used_part_id].type == "stock" and used_part_id ~= "wpn_fps_snp_tti_s_vltor" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_snp_tti_s_vltor)
+			end
+		end
+	end
+end

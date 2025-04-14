@@ -8106,6 +8106,8 @@ end)
 				table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_tecci_legend")
 				table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_m4_s_standard")
 				table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_smg_olympic_s_short")
+				--UOOOH
+				table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_ass_tecci_cnuy_ibuki")
 				--table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_ammo_half_that")
 				
 				self.wpn_fps_ass_tecci_npc.uses_parts = deep_clone(self.wpn_fps_ass_tecci.uses_parts)	
@@ -42244,7 +42246,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
-
+	--Version 0.6.1
+		--Yay, Bang Bang!
+			self.parts.wpn_fps_ass_tecci_cnuy_ibuki = {
+				type = "legendary",
+				name_id = "bm_wskn_tecci_cnuy_ibuki",
+				desc_id = "bm_wskn_tecci_cnuy_ibuki_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {},
+				forbids = {},
+				adds = {"wpn_fps_upg_m4_s_adapter"}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_tecci.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_m_std"
+						}
+					elseif self.parts[used_part_id].type == "grip" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_g_standard"
+						}
+					elseif self.parts[used_part_id].type == "stock" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti_pts/wpn_fps_snp_tti_s_vltor",
+							forbids = {},
+							adds = {"wpn_fps_upg_m4_s_adapter"}
+						}
+					elseif self.parts[used_part_id].type == "vertical_grip" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_vg_standard"
+						}
+					elseif self.parts[used_part_id].type == "lower_reciever" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_lower_reciever"
+						}
+					elseif self.parts[used_part_id].type == "upper_reciever" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_upper_reciever"
+						}
+					elseif self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_tecci_cnuy_ibuki.override[used_part_id] = {
+							unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_fg_standard"
+						}
+					elseif self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_ass_tecci_cnuy_ibuki.forbids, used_part_id)
+					end
+				end
+			end
 
 --Make more attachments universally available, cartridge mismatching be damned
 	for factory_id, i in pairs(self) do

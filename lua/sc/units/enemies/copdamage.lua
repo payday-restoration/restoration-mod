@@ -2210,7 +2210,7 @@ function CopDamage:damage_explosion(attack_data)
 	
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 		
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 		

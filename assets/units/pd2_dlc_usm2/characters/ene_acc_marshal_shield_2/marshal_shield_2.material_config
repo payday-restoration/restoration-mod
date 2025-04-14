@@ -1,0 +1,30 @@
+<materials version="3">
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_shield" version="2">
+        <diffuse_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_df"/>
+        <bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" mip="1"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:NORMALMAP" name="mtr_shield_lod" version="2">
+        <diffuse_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_df" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" mip="4"/>
+    </material>
+	<material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" name="mtr_visor" version="2">
+        <diffuse_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_df"/>
+        <bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" />
+		<reflection_texture global_texture="current_global_texture" type="cubemap"/>
+		<variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+		<variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+	 <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" name="mtr_glass" version="2">
+        <diffuse_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_df" mip="4"/>
+        <bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" mip="4"/>
+		<reflection_texture global_texture="current_global_texture" type="cubemap"/>
+		<variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+		<variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" name="mtr_light_il" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/ene_acc_shield_lights_il"/>
+        <self_illumination_texture file="units/payday2/characters/shared_textures/ene_acc_shield_lights_il"/>
+		<variable type="scalar" name="il_bloom" value="9.9750004737871"/>
+        <variable type="scalar" name="il_multiplier" value="sun"/>
+    </material>
+</materials>

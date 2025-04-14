@@ -1,0 +1,48 @@
+<unit type="items" slot="8">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>
+
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx"/>
+		<depends_on effect="effects/particles/dest/security_camera_dest"/>
+		<depends_on effect="effects/particles/explosions/explosion_flash_grenade"/>
+		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable"/>
+		<depends_on effect="effects/payday2/particles/character/marshal_red_light"/>
+		<depends_on effect="effects/payday2/particles/character/marshal_bright_light"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_1"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_2"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_3"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_4"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_5"/>
+		<depends_on unit="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_debris_6"/>
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData"/>
+		<extension name="base" class="ShieldFlashBase">
+			<var name="_shield_tweak_name" value="marshal_shield"/>
+			<var name="_effect_parent_obj_name" value="e_01"/>
+			<var name="_sync_flash_start_lookup" type="table">
+				<var value="start_flash_light_1"/>
+				<var value="start_flash_light_2"/>
+			</var>
+			<var name="_sync_flash_counter_lookup" type="table">
+				<var value="int_seq_light_1_break"/>
+				<var value="int_seq_light_2_break"/>
+			</var>
+			<var name="_priority_bodies" type="table">
+				<var name="held_body" value="1"/>
+				<var name="light_01" value="2"/>
+				<var name="light_02" value="2"/>
+			</var>
+		</extension>
+		<extension name="damage" class="UnitDamage">
+			<var name="_collision_event" value="USM_Drop"/>
+			<var name="_collision_sfx_quite_time" value="0.1"/>
+		</extension>
+	</extensions>
+
+	<sounds>
+		<default_soundsource source="rp_marshal_shield_1"/>
+	</sounds>
+</unit>

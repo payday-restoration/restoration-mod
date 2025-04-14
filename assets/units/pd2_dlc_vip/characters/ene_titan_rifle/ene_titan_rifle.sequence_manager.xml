@@ -103,7 +103,7 @@
 		</sequence>
 		
 		<sequence editable_state="true" name="'remove_healing'" triggable="true" once="true">	
-			<function   extension="'inventory'" function="'on_shield_break'" param1="src_unit_unit()"/>		
+			<function   extension="'character_damage'" function="'lpf_disable'" start_time="0"/> 	
 			<effect 	damp_time="3" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 			<effect 	damp_time="4" name="'effects/particles/dest/security_camera_dest'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>
 			<effect 	damp_time="5" name="'effects/payday2/particles/impacts/metal_impact_pd2'" parent="object( 'a_effect_electricalspawn' )" position="v()"/>

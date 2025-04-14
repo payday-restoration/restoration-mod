@@ -1,0 +1,273 @@
+{
+  "asset": {
+    "copyright": "",
+    "generator": "SharpGLTF 1.0.0-alpha0022",
+    "version": "2.0"
+  },
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 587,
+      "max": [
+        0.14254802465438843,
+        0.1732717603445053,
+        0.07198047637939453
+      ],
+      "min": [
+        -0.14272329211235046,
+        -0.17243869602680206,
+        -0.09082794189453125
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 587,
+      "max": [
+        0.9960544109344482,
+        0.9999622106552124,
+        0.9997060894966125
+      ],
+      "min": [
+        -0.9964118003845215,
+        -0.9869265556335449,
+        -0.9993932247161865
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 587,
+      "max": [
+        0.9592549800872803,
+        0.995881974697113
+      ],
+      "min": [
+        0.03352300077676773,
+        0.22805702686309814
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 2280,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 94,
+      "max": [
+        0.1622023582458496,
+        0.18130160868167877,
+        0.06956076622009277
+      ],
+      "min": [
+        -0.15923014283180237,
+        -0.1572410762310028,
+        -0.11323517560958862
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 94,
+      "max": [
+        0.9473931193351746,
+        0.8812510371208191,
+        0.9911985397338867
+      ],
+      "min": [
+        -0.9271308183670044,
+        -0.9917347431182861,
+        -0.9823909997940063
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5123,
+      "count": 96,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 7044,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7044,
+      "byteOffset": 7044,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7044,
+      "byteOffset": 14088,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4560,
+      "byteOffset": 21132,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1128,
+      "byteOffset": 25692,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1128,
+      "byteOffset": 26820,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 27948,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 28140,
+      "uri": "ene_acc_marksman_hat.bin"
+    }
+  ],
+  "materials": [
+    {
+      "name": "mtr_equipment"
+    },
+    {
+      "name": "lambert1"
+    },
+    {
+      "name": "Material: Default Material"
+    },
+    {
+      "name": "mtr_equipment"
+    }
+  ],
+  "meshes": [
+    {
+      "name": "g_hat",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 3
+        }
+      ]
+    },
+    {
+      "name": "c_convex",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "indices": 6
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "rp_ene_acc_marksman_hat",
+      "children": [
+        1,
+        2
+      ],
+      "matrix": [
+        -1.0000002,
+        6.1232296E-17,
+        -6.1232356E-17,
+        0,
+        -6.1232296E-17,
+        8.940697E-07,
+        1.0000001,
+        0,
+        6.1232356E-17,
+        1.0000001,
+        -1.1920929E-06,
+        0,
+        0,
+        0.053294275,
+        1.6675943,
+        1
+      ]
+    },
+    {
+      "name": "g_hat",
+      "matrix": [
+        -1.0000002,
+        6.1232296E-17,
+        -6.1232356E-17,
+        0,
+        -6.1232296E-17,
+        8.940697E-07,
+        1.0000001,
+        0,
+        6.1232356E-17,
+        1.0000001,
+        -1.1920929E-06,
+        0,
+        0,
+        0.12490668,
+        0.021177279,
+        1
+      ],
+      "mesh": 0
+    },
+    {
+      "name": "c_convex",
+      "matrix": [
+        -1.0000002,
+        6.1232296E-17,
+        -6.1232356E-17,
+        0,
+        -6.1232296E-17,
+        8.940697E-07,
+        1.0000001,
+        0,
+        6.1232356E-17,
+        1.0000001,
+        -1.1920929E-06,
+        0,
+        0,
+        0.12664671,
+        0.016307417,
+        1
+      ],
+      "mesh": 1
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

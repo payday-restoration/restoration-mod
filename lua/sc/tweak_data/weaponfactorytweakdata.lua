@@ -42246,7 +42246,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
-	--Version 0.6.1
+	--Version 0.7.0
 		--Yay, Bang Bang!
 			self.parts.wpn_fps_ass_tecci_cnuy_ibuki = {
 				type = "legendary",

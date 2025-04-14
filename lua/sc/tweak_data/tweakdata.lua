@@ -1737,7 +1737,7 @@ if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
 	end
 end
 
-if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.6.1
+if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.7.0
 	twb.weapon_skins.tecci_cnuy_ibuki.default_blueprint = {
 		"wpn_fps_ass_tecci_b_standard",
 		"wpn_fps_ass_tecci_dh_standard",

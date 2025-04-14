@@ -311,7 +311,7 @@ function CopDamage:damage_fire(attack_data)
 	
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 
@@ -874,7 +874,7 @@ function CopDamage:damage_bullet(attack_data)
 	
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 	
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 
@@ -1525,7 +1525,7 @@ function CopDamage:damage_melee(attack_data)
 	local is_player = attack_data.attacker_unit == managers.player:player_unit() and true
 	local damage_clamp = self._char_tweak.DAMAGE_CLAMP_MELEE
 	
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 
@@ -2052,7 +2052,7 @@ function CopDamage:stun_hit(attack_data)
 
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 	
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 	
@@ -3066,7 +3066,7 @@ function CopDamage:damage_dot(attack_data)
 
 	local hit_body = attack_data and attack_data.col_ray and attack_data.col_ray.body
 	
-	if impenetrable_armour[hit_body:name():key()] then -- nothing
+	if hit_body and impenetrable_armour[hit_body:name():key()] then -- nothing
 		return
 	end
 	

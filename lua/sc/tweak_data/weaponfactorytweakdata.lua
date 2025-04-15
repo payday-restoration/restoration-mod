@@ -36522,6 +36522,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_sierra458_b_old.stats.concealment = -3
 			self.parts.wpn_fps_snp_sierra458_b_old.custom_stats = deep_clone(barrels.long_b1_stats)
 			self.parts.wpn_fps_snp_sierra458_b_old.custom_stats.ads_speed_mult = 1.075
+
+			self.parts.wpn_fps_snp_sierra458_b_ecr.supported = true
+			self.parts.wpn_fps_snp_sierra458_b_ecr.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_snp_sierra458_b_ecr.custom_stats = deep_clone(barrels.short_b1_stats)
 	
 			self.parts.wpn_fps_upg_sierra458_fg_edge.supported = true
 			self.parts.wpn_fps_upg_sierra458_fg_edge.stats = {
@@ -36601,21 +36605,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_snp_sierra458_m_beowulf.stats = {
 				value = 0,
 				recoil = -4,
+				damage = 30,
+				recoil = -18,
+				total_ammo_mod = -136,
+				concealment = -1
 			}
 			self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
 				alt_desc = "bm_w_sierra458_beo_desc",
-				ads_speed_mult = 1.05,
-				rof_mult = 0.9,
+				ads_speed_mult = 1.1,
+				rof_mult = 0.6125,
 				hip_mult = 1.666666,
-				sms = 0.7
-			}
-	
-			self.parts.wpn_fps_snp_sierra458_ap_switch.supported = true
-			self.parts.wpn_fps_snp_sierra458_ap_switch.no_cull = true
-			self.parts.wpn_fps_snp_sierra458_ap_switch.custom_stats = {
-				armor_piercing_override = 1,
-				can_shoot_through_wall = true,
-				can_shoot_through_shield = true
+				damage_min_mult = 1.11111,
+				falloff_start_mult = 0.8,
+				falloff_end_mult = 0.862068,
+				alt_ammo_pickup_min_mul = 0.6,
+				alt_ammo_pickup_max_mul = 0.6,
+				ammo_pickup_min_mul = 0.6,
+				ammo_pickup_max_mul = 0.6,
+				sms = 0.9
 			}
 	
 	

@@ -501,7 +501,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 					end
 
 					if track_body_expert then
-						self._no_cheevo_kills_without_releasing_trigger = self._no_cheevo_kills_without_releasing_trigger + 1
+						self._no_cheevo_kills_without_releasing_trigger = math.min(self._no_cheevo_kills_without_releasing_trigger + 1, self._automatic_kills_to_damage_max_stacks)
 						managers.hud:start_buff("body_expertise", (tweak_data.upgrades.automatic_kills_to_damage_reset_t or 0))
 						managers.hud:set_stacks("body_expertise", (stacks == 0 and 1) or math.min(stacks + 1, self._automatic_kills_to_damage_max_stacks))
 					end

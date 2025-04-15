@@ -23153,9 +23153,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					value = 9,
 					reload = 20
 				}
-				self.sierra458.armor_piercing_chance = 0.5
 				self.sierra458.stats_modifiers = nil
 				self.sierra458.sms = sms_preset.semi_snp_light
+				self.sierra458.reload_speed_multiplier = 1.05
+				self.sierra458.armor_piercing_chance = 1
 				self.sierra458.can_shoot_through_enemy = true
 				self.sierra458.can_shoot_through_enemy_unlim = true
 				self.sierra458.can_shoot_through_wall = true

@@ -30441,7 +30441,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_nova4_receiver_upper_legendary.custom_stats = {
 				ignore_rof_mult_anims = true,
 				rof_mult = 0.933006,
-				damage_min_mult = 2.4
+				damage_min_mult = 2
 			}
 			
 			self.parts.wpn_fps_ass_nova4_receiver_upper_rare.supported = true
@@ -36506,8 +36506,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	
-		if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^)
+		if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^) (V4.1 minimum)
 	
+			self.parts.wpn_fps_snp_sierra458_body_msecho.override.wpn_fps_upg_sierra458_o_backup.stance_mod = {
+				wpn_fps_snp_sierra458 = {
+					translation = Vector3(0.0125, -3, -0.25),
+					rotation = Rotation(0.055, -0.1, 0)
+				}
+			}
+			self.parts.wpn_fps_snp_sierra458_body_ecr.custom_stats = { 
+				burst_fire = {
+					count = 3,
+					rof_mult = 1.3,
+					delay = 0.2,
+					recoil_mult = 0.85,
+					last_recoil_mult = 1.05
+				},
+				info_add_burst = true
+			}
+			self.parts.wpn_fps_snp_sierra458_body_ecr.override.wpn_fps_upg_sierra458_o_backup.stance_mod = {
+				wpn_fps_snp_sierra458 = {
+					translation = Vector3(0.0125, -6, 0.1),
+					rotation = Rotation(0.055, -0.4, 0)
+				}
+			}
+
 			self.parts.wpn_fps_snp_sierra458_ns_scout.supported = true
 			self.parts.wpn_fps_snp_sierra458_ns_scout.stats = {
 				value = 0,
@@ -36575,7 +36598,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_snp_sierra458_m_bush.custom_stats = {
 				alt_desc = "bm_w_sierra458_ivy_desc",
-				rof_mult = 0.9
+				rof_mult = 0.9,
+				damage_min_mult = 1.3333
 			}
 	
 			self.parts.wpn_fps_snp_sierra458_bush_switch.supported = true
@@ -36584,9 +36608,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				trail_effect = "_dmc/effects/warsaw_trail",
 				bullet_class = "PoisonBulletBase",
 				dot_data_name = "weapon_tranq_medium",
-				can_shoot_through_shield = false,
-				can_shoot_through_enemy_unlim = false,
-				can_shoot_through_enemy = false
+				can_shoot_through_enemy_unlim = false
 			}
 	
 			self.parts.wpn_fps_snp_sierra458_m_d60.supported = true
@@ -36594,36 +36616,88 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				value = 0,
 				concealment = -6,
 				extra_ammo = 15,
-				reload = -5
+				reload = -8
 			}
 			self.parts.wpn_fps_snp_sierra458_m_d60.custom_stats = {
 				ads_speed_mult = 1.15
 			}
-	
-			self.parts.wpn_fps_snp_sierra458_m_beowulf.supported = true
-			self.parts.wpn_fps_snp_sierra458_m_beowulf.keep_damage = true
-			self.parts.wpn_fps_snp_sierra458_m_beowulf.stats = {
-				value = 0,
-				recoil = -4,
-				damage = 30,
-				recoil = -18,
-				total_ammo_mod = -136,
-				concealment = -1
-			}
-			self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
-				alt_desc = "bm_w_sierra458_beo_desc",
-				ads_speed_mult = 1.1,
-				rof_mult = 0.6125,
-				hip_mult = 1.666666,
-				damage_min_mult = 1.11111,
-				falloff_start_mult = 0.8,
-				falloff_end_mult = 0.862068,
-				alt_ammo_pickup_min_mul = 0.6,
-				alt_ammo_pickup_max_mul = 0.6,
-				ammo_pickup_min_mul = 0.6,
-				ammo_pickup_max_mul = 0.6,
-				sms = 0.9
-			}
+			
+			--.50 Beowulf mags
+				self.parts.wpn_fps_snp_sierra458_m_beowulf.supported = true
+				self.parts.wpn_fps_snp_sierra458_m_beowulf.keep_damage = true
+				self.parts.wpn_fps_snp_sierra458_m_beowulf.stats = {
+					value = 0,
+					damage = 30,
+					recoil = -18,
+					total_ammo_mod = -136,
+					concealment = -1
+				}
+				self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
+					alt_desc = "bm_w_sierra458_beo_desc",
+					ads_speed_mult = 1.1,
+					rof_mult = 0.6125,
+					hip_mult = 1.666666,
+					damage_min_mult = 1.11111,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.862068,
+					alt_ammo_pickup_min_mul = 0.6,
+					alt_ammo_pickup_max_mul = 0.6,
+					ammo_pickup_min_mul = 0.6,
+					ammo_pickup_max_mul = 0.6,
+					sms = 0.9
+				}
+
+				self.parts.wpn_fps_snp_sierra458_m_ecr.supported = true
+				self.parts.wpn_fps_snp_sierra458_m_ecr.keep_damage = true
+				self.parts.wpn_fps_snp_sierra458_m_ecr.stats = {
+					value = 0,
+					damage = 30,
+					recoil = -16,
+					total_ammo_mod = -136,
+					concealment = -2,
+				}
+
+				self.parts.wpn_fps_snp_sierra458_m_ecr.custom_stats = {
+					alt_desc = "bm_w_sierra458_beo_desc",
+					ads_speed_mult = 1.1,
+					rof_mult = 0.6125,
+					hip_mult = 1.666666,
+					damage_min_mult = 1.11111,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.862068,
+					alt_ammo_pickup_min_mul = 0.6,
+					alt_ammo_pickup_max_mul = 0.6,
+					ammo_pickup_min_mul = 0.6,
+					ammo_pickup_max_mul = 0.6,
+					sms = 0.9
+				}
+
+				self.parts.wpn_fps_snp_sierra458_m_siege.supported = true
+				self.parts.wpn_fps_snp_sierra458_m_siege.keep_damage = true
+				self.parts.wpn_fps_snp_sierra458_m_siege.stats = {
+					value = 0,
+					damage = 30,
+					recoil = -18,
+					total_ammo_mod = -136,
+					concealment = -2,
+					spread = -1,
+					reload = 3
+				}
+
+				self.parts.wpn_fps_snp_sierra458_m_siege.custom_stats = {
+					alt_desc = "bm_w_sierra458_beo_desc",
+					ads_speed_mult = 1.1,
+					rof_mult = 0.6125,
+					hip_mult = 1.666666,
+					damage_min_mult = 1.11111,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.862068,
+					alt_ammo_pickup_min_mul = 0.6,
+					alt_ammo_pickup_max_mul = 0.6,
+					ammo_pickup_min_mul = 0.6,
+					ammo_pickup_max_mul = 0.6,
+					sms = 0.9
+				}
 	
 	
 			self.parts.wpn_fps_upg_sierra458_o_backup.supported = true

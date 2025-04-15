@@ -36508,10 +36508,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 		if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^) (V4.1 minimum)
 	
-			self.parts.wpn_fps_snp_sierra458_body_msecho.override.wpn_fps_upg_sierra458_o_backup.stance_mod = {
-				wpn_fps_snp_sierra458 = {
-					translation = Vector3(0.0125, -3, -0.25),
-					rotation = Rotation(0.055, -0.1, 0)
+			self.parts.wpn_fps_snp_sierra458_body_msecho.override.wpn_fps_upg_sierra458_o_backup = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				adds = { "wpn_fps_upg_o_mbus_msecho" },
+				stance_mod = {
+					wpn_fps_snp_sierra458 = {
+						translation = Vector3(0.0125, -3, -0.25),
+						rotation = Rotation(0.055, -0.1, 0)
+					}
 				}
 			}
 			self.parts.wpn_fps_snp_sierra458_body_ecr.custom_stats = { 

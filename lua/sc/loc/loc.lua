@@ -3415,6 +3415,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
 						--ACR 2012
 						["bm_w_acr_2012"] = "MCW-R",
+						--MW2022 M4
+						["bm_w_mike4_2022"] = "M4",
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3469,6 +3471,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_xr2"] = "XR-2",
 						--SIERRA .458
 						["bm_w_sierra458"] = "Sierra .458",
+						--MW2022 .458 AR15
+						["bm_w_msecho"] = "FTAC Recon",
 				--[[ SNIPERS ]]
 					--MSR
 					["bm_w_msr"] = "Rattlesnake",

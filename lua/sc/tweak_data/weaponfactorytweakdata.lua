@@ -19316,7 +19316,7 @@ end)
 						rotation = Rotation(-0.01,-0.1,0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mike4_2022 = {
-						translation = Vector3(0, 6.8, -0.583)
+						translation = (BeardLib.Utils:FindMod("L119A2") and Vector3(-0.02, 6.9, -0.57)) or Vector3(0, 6.8, -0.583)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_kurisumasu = {
 						translation = Vector3(0.015, 10.3, -0.579)
@@ -19422,6 +19422,9 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_soa = {
 						translation = Vector3(-0.08, 7, -0.154),
 						rotation = Rotation(0.02, -0.08, 0.55)
+					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_msecho = {
+						translation = (BeardLib.Utils:FindMod("L119A2") and Vector3(-0.02, 5.1, -0.096)) or Vector3(-0.005, 5.1, -0.11)
 					}
 
 
@@ -30472,6 +30475,133 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_ass_nova4_npc.uses_parts = deep_clone(self.wpn_fps_ass_nova4.uses_parts)
 		end
 
+		if self.parts.wpn_fps_ass_msecho_barrel then --MW2022 FTAC Recon
+			self.parts.wpn_fps_ass_msecho_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_msecho_barrel.custom_stats = nil
+			self.parts.wpn_fps_ass_msecho_handguard.stats = { value = 0 }
+			self.parts.wpn_fps_ass_msecho_handguard.custom_stats = nil
+			self.parts.wpn_fps_ass_msecho_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_msecho_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_msecho_magazine.stats = { value = 0 }
+			self.parts.wpn_fps_ass_msecho_magazine.custom_stats = nil
+			self.parts.wpn_fps_ass_msecho_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_msecho_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_msecho_irons_rear.stance_mod.wpn_fps_ass_msecho = {
+				translation = (BeardLib.Utils:FindMod("L119A2") and Vector3(-0.03, -5, 0.32)) or Vector3(-0.02, -5, 0.32)
+			}
+
+			--HANDGUARDS
+				--Bull Rider
+				self.parts.wpn_fps_ass_msecho_handguard_bull.supported = true
+				self.parts.wpn_fps_ass_msecho_handguard_bull.stats = deep_clone(barrels.long_b3_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_bull.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_handguard_bull.stats.recoil = 2
+				self.parts.wpn_fps_ass_msecho_handguard_bull.stats.concealment = -4
+				self.parts.wpn_fps_ass_msecho_handguard_bull.custom_stats = deep_clone(barrels.long_b3_stats)
+				--419mm EXF
+				self.parts.wpn_fps_ass_msecho_handguard_long.supported = true
+				self.parts.wpn_fps_ass_msecho_handguard_long.stats = deep_clone(barrels.long_b1_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_long.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_handguard_long.custom_stats = deep_clone(barrels.long_b1_stats)
+				--Tempus Trench Pro
+				self.parts.wpn_fps_ass_msecho_handguard_light.supported = true
+				self.parts.wpn_fps_ass_msecho_handguard_light.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_light.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_handguard_light.custom_stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_mike4.supported = true
+				self.parts.wpn_fps_ass_msecho_handguard_mike4.stats = deep_clone(barrels.short_b1_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_mike4.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_handguard_mike4.custom_stats = deep_clone(barrels.short_b1_stats)
+				--Tempus Firebrand
+				self.parts.wpn_fps_ass_msecho_handguard_short.supported = true
+				self.parts.wpn_fps_ass_msecho_handguard_short.stats = deep_clone(barrels.short_b3_stats)
+				self.parts.wpn_fps_ass_msecho_handguard_short.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_handguard_short.stats.recoil = -2
+				self.parts.wpn_fps_ass_msecho_handguard_short.stats.concealment = 3
+				self.parts.wpn_fps_ass_msecho_handguard_short.custom_stats = deep_clone(barrels.short_b3_stats)
+			--MAGS
+				self.parts.wpn_fps_ass_msecho_smag.supported = true
+				self.parts.wpn_fps_ass_msecho_smag.stats = { value = 0, extra_ammo = -5, reload = 5, concealment = 2 }
+				self.parts.wpn_fps_ass_msecho_smag.custom_stats = { ads_speed_mult = 0.95 }
+				self.parts.wpn_fps_ass_msecho_xmag.supported = true
+				self.parts.wpn_fps_ass_msecho_xmag.stats = { value = 0, extra_ammo = 5, reload = -3, concealment = -1 }
+				self.parts.wpn_fps_ass_msecho_xmag.custom_stats = { ads_speed_mult = 1.025 }
+			--GRIPS
+				self.parts.wpn_fps_ass_msecho_grip_tac.supported = true
+				self.parts.wpn_fps_ass_msecho_grip_tac.stats = deep_clone(grips.quickdraw_1)
+				self.parts.wpn_fps_ass_msecho_grip_tac.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_grip_tac.custom_stats = deep_clone(grips.quickdraw_1)
+
+				self.parts.wpn_fps_ass_msecho_grip_skeleton.supported = true
+				self.parts.wpn_fps_ass_msecho_grip_skeleton.stats = deep_clone(grips.quickdraw_2)
+				self.parts.wpn_fps_ass_msecho_grip_skeleton.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_grip_skeleton.custom_stats = deep_clone(grips.quickdraw_2)
+
+				self.parts.wpn_fps_ass_msecho_grip_sniper.supported = true
+				self.parts.wpn_fps_ass_msecho_grip_sniper.stats = deep_clone(grips.dual_stat_1)
+				self.parts.wpn_fps_ass_msecho_grip_sniper.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_grip_sniper.custom_stats = deep_clone(grips.dual_stat_1)
+
+				self.parts.wpn_fps_ass_msecho_grip_ass.supported = true
+				self.parts.wpn_fps_ass_msecho_grip_ass.stats = {
+					value = 0,
+					recoil = 2,
+					spread = -1
+				}
+				self.parts.wpn_fps_ass_msecho_grip_ass.custom_stats = nil
+
+				self.parts.wpn_fps_ass_msecho_grip_steady.supported = true
+				self.parts.wpn_fps_ass_msecho_grip_steady.stats = {
+					value = 0,
+					concealment = -1,
+					spread = 1
+				}
+				self.parts.wpn_fps_ass_msecho_grip_steady.custom_stats = nil
+			--STOCKS
+				--M4 Stock
+				self.parts.wpn_fps_ass_msecho_stock_mike4.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_mike4.stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+				self.parts.wpn_fps_ass_msecho_stock_mike4.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_mike4.custom_stats = deep_clone(stocks.fixed_to_adj_rec_stats)
+				--Demo D50 Buffer Tube
+				self.parts.wpn_fps_ass_msecho_stock_light.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_light.stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+				self.parts.wpn_fps_ass_msecho_stock_light.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_light.custom_stats = deep_clone(stocks.fixed_to_adj_acc_stats)
+				--Demo D50 Buffer Tube
+				self.parts.wpn_fps_ass_msecho_stock_no.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_no.stats = deep_clone(stocks.remove_fixed_stats)
+				self.parts.wpn_fps_ass_msecho_stock_no.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_no.custom_stats = deep_clone(stocks.remove_fixed_stats)
+				--Tempus P80 Strike Stock
+				self.parts.wpn_fps_ass_msecho_stock_alpha57.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_alpha57.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+				self.parts.wpn_fps_ass_msecho_stock_alpha57.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_alpha57.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+				--Ravage 8
+				self.parts.wpn_fps_ass_msecho_stock_tac.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_tac.stats = deep_clone(stocks.fixed_to_folder_stats)
+				self.parts.wpn_fps_ass_msecho_stock_tac.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_tac.custom_stats = deep_clone(stocks.fixed_to_folder_stats)
+				--Demo Precision Elite Stock
+				self.parts.wpn_fps_ass_msecho_stock_mike16.supported = true
+				self.parts.wpn_fps_ass_msecho_stock_mike16.stats = deep_clone(stocks.fixed_rec_stats)
+				self.parts.wpn_fps_ass_msecho_stock_mike16.stats.value = 0
+				self.parts.wpn_fps_ass_msecho_stock_mike16.custom_stats = deep_clone(stocks.fixed_rec_stats)
+
+			for i, part_id in pairs(self.wpn_fps_ass_msecho.uses_parts) do
+				if self.parts[part_id] and self.parts[part_id].type then
+					if self.parts[part_id].pcs then
+						if ((self.parts[part_id].global_value and self.parts[part_id].global_value ~= "msecho_mod") or not self.parts[part_id].global_value) and 
+							(self.parts[part_id].type == "grip" or self.parts[part_id].type == "stock") then
+							self.wpn_fps_ass_msecho.uses_parts[i] = "resmod_dummy"
+						end
+					end
+				end
+			end
+			self.wpn_fps_ass_msecho_npc.uses_parts = deep_clone(self.wpn_fps_ass_msecho.uses_parts)
+		end
+
 		if self.parts.wpn_fps_ass_mike4_2022_grip then --MW2022 M4
 			self.parts.wpn_fps_ass_mike4_2022_handguard.supported = true
 			self.parts.wpn_fps_ass_mike4_2022_handguard.stats = { value = 0 }
@@ -30491,6 +30621,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_mike4_2022_stock.supported = true
 			self.parts.wpn_fps_ass_mike4_2022_stock.stats = { value = 0 }
 			self.parts.wpn_fps_ass_mike4_2022_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_mike4_2022_irons_rear.stance_mod.wpn_fps_ass_mike4_2022 = {
+				translation = (BeardLib.Utils:FindMod("L119A2") and Vector3(-0.005, -5, -0.25)) or Vector3(0.005, -5, -0.25)
+			}
 
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.supported = true
 			self.parts.wpn_fps_ass_mike4_2022_receiver_mike16.stats = { value = 0 }
@@ -30633,8 +30766,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_mike4_2022_stock_alpha57.custom_stats = deep_clone(stocks.adj_to_nocheeks_stats)
 				--Ravage 8
 				self.parts.wpn_fps_ass_mike4_2022_stock_tac.supported = true
-				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats = { value = 0, recoil = -2, concealment = 1}
-				self.parts.wpn_fps_ass_mike4_2022_stock_tac.custom_stats = {ads_speed_mult = 0.925}
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats = deep_clone(stocks.adj_to_fold_stats)
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.stats.value = 0
+				self.parts.wpn_fps_ass_mike4_2022_stock_tac.custom_stats = deep_clone(stocks.adj_to_fold_stats)
 				--Demo Precision Elite Stock
 				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.supported = true
 				self.parts.wpn_fps_ass_mike4_2022_stock_mike16.stats = deep_clone(stocks.adj_to_fixed_rec_stats)

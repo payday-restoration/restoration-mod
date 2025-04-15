@@ -21831,13 +21831,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if self.msecho then
 				self.msecho.recategorize = { "dmr_ar" }
 				self.msecho.damage_type = "sniper"
-				self.msecho.has_description = false
+				self.msecho.has_description = true
+				self.msecho.desc_id = "bm_ap_armor_50_weapon_sc_desc"
 				self.msecho.muzzleflash = "_dmc/effects/heavy_muzzle"
 				self.msecho.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.msecho.tactical_reload = 1
 				self.msecho.CLIP_AMMO_MAX = 10
 				self.msecho.AMMO_MAX = 60
-				self.msecho.fire_mode_data.fire_rate = 0.1090
+				self.msecho.fire_mode_data.fire_rate = 0.110091
 				self.msecho.kick = self.stat_info.kick_tables.left_kick
 				self.msecho.kick_pattern = {
 					{ 0, self.stat_info.kick_tables.right_recoil },
@@ -21850,8 +21851,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msecho.supported = true
 				self.msecho.ads_speed = 0.260
 				self.msecho.damage_falloff = {
-					start_dist = 1900,
-					end_dist = 4200,
+					start_dist = 2400,
+					end_dist = 5100,
 					min_mult = 0.3
 				}
 				self.msecho.stats = {
@@ -21859,7 +21860,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					spread = 81,
 					recoil = 59,
 					zoom = 1,
-					concealment = 24,
+					concealment = 23,
 					suppression = 8,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -21873,6 +21874,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msecho.lock_slide = true
 				self.msecho.lock_slide_alt = true
 				self.msecho.panic_suppression_chance = 0.05
+				self.msecho.armor_piercing_chance = 0.5
+				self.msecho.can_shoot_through_enemy = true
 				self.msecho.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.msecho.timers.reload_empty = 3
 				self.msecho.timers.reload_exit_empty = 0.55
@@ -23105,7 +23108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.recategorize = { "light_snp" }
 				self.sierra458.damage_type = "sniper"
 				self.sierra458.upgrade_blocks = nil
-				self.sierra458.desc_id = "bm_ap_armor_50_weapon_sc_desc"
+				self.sierra458.desc_id = "bm_ap_weapon_semi_sc_desc"
 				self.sierra458.has_description = true
 				self.sierra458.lock_slide = true
 				self.sierra458.lock_slide_offset = 0.1
@@ -23133,7 +23136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.supported = true
 				self.sierra458.ads_speed = 0.400
 				self.sierra458.damage_falloff = {
-					start_dist = 2000,
+					start_dist = 2500,
 					end_dist = 5800,
 					min_mult = 0.3
 				}
@@ -23153,6 +23156,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.armor_piercing_chance = 0.5
 				self.sierra458.stats_modifiers = nil
 				self.sierra458.sms = sms_preset.semi_snp_light
+				self.sierra458.can_shoot_through_enemy = true
+				self.sierra458.can_shoot_through_enemy_unlim = true
+				self.sierra458.can_shoot_through_wall = true
+				self.sierra458.can_shoot_through_shield = true
 				self.sierra458.panic_suppression_chance = 0.05
 				self.sierra458.sounds.fire = "sierra458_fire"
 				self.sierra458.sounds.fire_single = "sierra458_fire"

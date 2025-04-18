@@ -298,6 +298,11 @@ function DLCTweakData:init(...)
 			type_items = "weapon_mods",
 			item_entry = "wpn_fps_smg_mac10_s_no",
 			amount = 1
+		},
+		{
+			type_items = "weapon_mods",
+			item_entry = "wpn_fps_upg_i_g3_burst",
+			amount = 1
 		}
 	}
 	

@@ -9140,7 +9140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.has_description = true
 						self.new_mp5.desc_id = "bm_mp5_sc_desc"
 						self.new_mp5.BURST_FIRE = 3
-						self.new_mp5.BURST_DELAY = 0.12
+						self.new_mp5.BURST_DELAY = 0.15
 						self.new_mp5.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 						self.new_mp5.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
 						self.new_mp5.ADAPTIVE_BURST_SIZE = false			
@@ -10101,7 +10101,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.hk51b.BURST_FIRE = 3
 					self.hk51b.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
 					self.hk51b.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-					self.hk51b.BURST_DELAY = 0.12
+					self.hk51b.BURST_DELAY = 0.2
 					self.hk51b.kick = self.stat_info.kick_tables.right_kick
 					self.hk51b.kick_pattern = {
 						{0, self.stat_info.kick_tables.pattern_r4},
@@ -10223,7 +10223,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.BURST_FIRE = 3
 						self.hk21.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 						self.hk21.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.1
-						self.hk21.BURST_DELAY = 0.18
+						self.hk21.BURST_DELAY = 0.28
 						self.hk21.fake_semi_anims = true
 						self.hk21.kick = self.stat_info.kick_tables.random_right_recoil
 						self.hk21.kick_pattern = {
@@ -24232,7 +24232,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.tactical_reload = 1
 				self.reprimand.keep_ammo = 0
 				self.reprimand.BURST_FIRE = 3
-				self.reprimand.BURST_DELAY = 0.12
+				self.reprimand.BURST_DELAY = 0.15
 				self.reprimand.BURST_FIRE_RECOIL_MULTIPLIER = 0.9
 				self.reprimand.CAN_TOGGLE_FIREMODE = true
 				self.reprimand.FIRE_MODE = "auto"

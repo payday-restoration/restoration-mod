@@ -2444,6 +2444,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
+				--G3A3--
+				["bm_wp_upg_i_g3"] = "SG-3 Kit",
+				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",
 				--Bernetti Auto--
 				["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
 				["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",

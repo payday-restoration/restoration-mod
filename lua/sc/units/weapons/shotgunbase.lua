@@ -91,6 +91,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	end
 
 	self._volley_recoil_mul = nil
+	local is_civ_f = CopDamage.is_civilian
 	if self._fire_mode == ids_volley then
 		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
 		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
@@ -119,7 +120,10 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 		for _, hits in ipairs(result.rays) do
 			if alive(hits.unit) then
-				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local unit_base = hits.unit:base()
+				local unit_type = unit_base and unit_base._tweak_table
+				local is_civilian = unit_type and is_civ_f(unit_type)
+				local is_enemy = not is_civilian and (hits.unit:in_slot(self.enemy_mask) or hits.damage_result)
 				local key = hits.unit:key()
 				if is_enemy and not hit_units[key] then
 					hit_units[key] = true
@@ -160,7 +164,10 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 		for _, hits in ipairs(result.rays) do
 			if alive(hits.unit) then
-				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local unit_base = hits.unit:base()
+				local unit_type = unit_base and unit_base._tweak_table
+				local is_civilian = unit_type and is_civ_f(unit_type)
+				local is_enemy = not is_civilian and (hits.unit:in_slot(self.enemy_mask) or hits.damage_result)
 				local key = hits.unit:key()
 				if is_enemy and not hit_units[key] then
 					hit_units[key] = true

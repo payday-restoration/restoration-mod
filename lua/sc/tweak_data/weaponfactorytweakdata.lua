@@ -13899,6 +13899,7 @@ end)
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_o_schmidt_magnified")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3sg1")
 				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_lmg_hk21_g_ergo")
+				table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_upg_i_g3_burst")
 
 				self.wpn_fps_ass_g3_npc.adds = deep_clone(self.wpn_fps_ass_g3.adds)
 				self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
@@ -24385,6 +24386,35 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	end
+
+	--SG-3 Kit
+	self.parts.wpn_fps_upg_i_g3_burst = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_g3",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			info_add_burst = true,
+			burst_fire = {
+				count = 3,
+				delay = 0.24,
+				recoil_mult = 0.75,
+				last_recoil_mult = 1.1,
+			},
+		},
+		stats = {
+			value = 0
+		},
+		forbids = {},
+		internal_part = true,
+		dlc = "sc"
+	}
 
 	--B3 Kit (M16A2 kit)
 	self.parts.wpn_fps_upg_i_m16a2 = {

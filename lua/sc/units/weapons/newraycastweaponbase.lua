@@ -993,8 +993,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 		self._has_burst_fire = self._has_burst_fire or self:weapon_tweak_data().BURST_FIRE and self:weapon_tweak_data().BURST_FIRE ~= false
 		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false --deprecated AFAIK; will look into cleaning this up later
-		local BURST_DATA = self._has_burst_fire and type(self:weapon_tweak_data().BURST_FIRE) == "table"
 		--[[
+		local BURST_DATA = self._has_burst_fire and type(self:weapon_tweak_data().BURST_FIRE) == "table" and self:weapon_tweak_data().BURST_FIRE
 		if BURST_DATA then
 			self._burst_size = self._burst_size or BURST_DATA.count
 			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or BURST_DATA.rof_mult

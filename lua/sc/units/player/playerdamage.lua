@@ -1252,6 +1252,7 @@ function PlayerDamage:revive(silent)
 
 	--Add Yakuza survive one hit icon.
 	--Done on revive for intuitiveness.
+	self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 	if self._can_survive_one_hit then
 		managers.hud:add_skill("survive_one_hit")
 	end
@@ -1746,7 +1747,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 			self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
 			managers.hud:remove_skill("survive_one_hit")
 		else
-			self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
+			--self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 		end
 	end
 end)

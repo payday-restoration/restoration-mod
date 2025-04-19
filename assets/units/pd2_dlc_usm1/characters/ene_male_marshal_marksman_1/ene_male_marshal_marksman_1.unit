@@ -6,7 +6,6 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" />
-		<depends_on unit="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat" />
 	</dependencies>
 
 	<dependencies/>
@@ -23,9 +22,6 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_hat_lod" />
-			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_dlc_usm1/characters/ene_acc_marksman_hat/ene_acc_marksman_hat" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

@@ -1301,7 +1301,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
 				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
 				Idstring("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),
-				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+				Idstring("units/pd2_dlc_usm1/characters/ene_titan_shotgun/ene_titan_shotgun")					
 			}			
 		},
 		access = access_type_all
@@ -1511,7 +1511,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")						
 				}				
 			},
 			access = access_type_all,
@@ -1613,7 +1613,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")						
 				}				
 			},
 			access = access_type_all,
@@ -1874,9 +1874,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),					
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser"),
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser"),	
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")
 				}				
 			},
 			access = access_type_all,
@@ -1940,7 +1940,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
 					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")							
 				}
 			},
 			access = access_type_all,
@@ -1995,7 +1995,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+					Idstring("units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser")							
 				}				
 			},
 			access = access_type_all,

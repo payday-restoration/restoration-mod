@@ -1,31 +1,31 @@
 <?xml version="1.0" ?>
 <materials group="ene_male_marshal_marksman_1" version="3">
 	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_merc_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_nm"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_static" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_shield" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df"/>
+		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_shield_static" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df"/>
+		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
@@ -38,31 +38,31 @@
 	</material>
 
 	<material name="mtr_body_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_merc_df" mip="4"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_nm" mip="4"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" mip="4"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm" mip="4"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_static_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_merc_df" mip="4"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm" mip="4"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_shield_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df" mip="4"/> 
+		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2_equipment_df" mip="4"/> 
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm" mip="4"/>
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>
 	</material>
 	<material name="mtr_equipment_shield_static_lod" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_2/ene_male_marshal_shield_2_equipment_df" mip="4"/>
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm" mip="4"/> 
 		<variable name="contour_color" type="vector3" value="1 1 1"/>
 		<variable name="contour_opacity" type="scalar" value="0"/>

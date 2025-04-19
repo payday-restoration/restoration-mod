@@ -1,27 +1,32 @@
-<?xml version="1.0" ?>
-<unit slot="12" type="being">
-	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
-	<object file="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" />
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle" />
 
 	<dependencies>
+		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
+		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" />
 	</dependencies>
 
-	<dependencies/>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="can_be_marked" value="true"/>
-			<var name="_tweak_table" value="marshal_marksman_scripted"/>
-			<var name="_default_weapon_id" value="dmr"/>
-            <var name="_stats_name" value="marshal_marksman"/>
+			<var name="can_be_marked" value="true" />
+			<var name="_tweak_table" value="taser_titan" />
+			<var name="_default_weapon_id" value="r870_taser" />
 		</extension>
-		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
+		<extension name="inventory" class="CopInventory" >
+		</extension>
+		<extension name="brain" class="CopBrain">
+			<var name="entrance_chatter_cue" value="elite" />
+		</extension>
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_death_sequence" value="kill_murky_flashlights" />				
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />
@@ -38,7 +43,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

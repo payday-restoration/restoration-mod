@@ -1223,9 +1223,20 @@
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/taser_body_nm"/>
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/heads_atlas_df"/>
 	<texture			path="units/pd2_mod_dave/characters/shared_textures/helmets_heavy_taser_atlas_df"/>
+
+	<!--Marshal Marksman-->
 	
 	<!--Marshal Shields-->
-	<sequence_manager	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
+	<object				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
+	<model				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
+	<material_config	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
+	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_df"/>
+	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm"/>
+	
+	<unit				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2"/>	
+	<unit				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_dummy"/>	
+	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_df"/>
+	
 	<sequence_manager	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2"/>	
 	
 	<!--LPF and Medic (over-)healing Effects-->

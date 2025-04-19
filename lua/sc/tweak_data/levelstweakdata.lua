@@ -207,6 +207,17 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		}
 	}
 	
+	--Midland Ranch
+	self.ranc.ai_group_type = fbi
+	self.ranc.player_style = "fighterpilot"	
+	
+	--Lost in Transit
+	self.trai.ai_group_type = fbi
+	self.trai.player_style = "railroad"
+	
+	--Hostile Takeover
+	self.corp.ai_group_type = fbi	
+	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
 	self.spa.package = {"packages/job_spa", "levels/narratives/h_watchdogs/stage_1/world/world"}
@@ -237,11 +248,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.ai_group_type = nypd
 	self.dinner.package = {"packages/narr_dinner", "packages/murkywatermisc"}
 	self.dinner.player_style = "slaughterhouse"
-
-    self.trai.ai_group_type = nypd
-    self.trai.player_style = "railroad"
-	
-	self.corp.ai_group_type = nypd
 	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
@@ -280,9 +286,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.package = {"packages/job_pent", "packages/miscassets", "levels/instances/unique/sah/sah_office/world/world"}
 	self.pent.player_style = "enforcer"
 	self.pent.max_bags = 17
-		
-	self.ranc.ai_group_type = lapd
-	self.ranc.player_style = "fighterpilot"
 	
 	--//GENSEC STUFF\\--
 	self.arm_cro.package = {"packages/narr_arm_cro", "packages/gensecmisc"}

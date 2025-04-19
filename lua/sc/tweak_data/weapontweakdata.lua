@@ -5175,21 +5175,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	tact_rel = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9','x_type54','x_m1911' }
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 2
-		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_DELAY = 0.15
-		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.25
-		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
-		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
+		self[wep_id].BURST_FIRE = {
+			count = 2,
+			delay = 0.15,
+			rof_mult = 4,
+			recoil_mult = 0.25,
+			last_recoil_mult = 1.05,
+		}
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
 
 	local akimbo_rev = {'x_rage','x_chinchilla','x_2006m','x_model3','x_judge',"x_korth"}
 	for i, wep_id in ipairs(akimbo_rev) do
-		self[wep_id].BURST_FIRE = 2
-		self[wep_id].BURST_DELAY = 0.15
-		self[wep_id].BURST_FIRE_RECOIL_MULTIPLIER = 0.5
-		self[wep_id].BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
-		self[wep_id].BURST_FIRE_RATE_MULTIPLIER = 4
+		self[wep_id].BURST_FIRE = {
+			count = 2,
+			delay = 0.15,
+			rof_mult = 4,
+			recoil_mult = 0.5,
+			last_recoil_mult = 1.1,
+		}
 		self[wep_id].sounds.magazine_empty = nil
 		self[wep_id].categories = {"akimbo", "pistol"}
 	end
@@ -5824,13 +5828,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.beer.has_description = true
 						self.beer.desc_id = "bm_beer_sc_desc"				
 						self.beer.use_data.selection_index = 2
-						self.beer.BURST_FIRE = 3
-						self.beer.BURST_DELAY = 0.12
-						self.beer.BURST_FIRE_RECOIL_MULTIPLIER = 0.6
-						self.beer.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
-						self.beer.BURST_FIRE_DEFAULT = true
-						self.beer.BURST_FIRE_RATE_MULTIPLIER = 1.7647058823
-						self.beer.ADAPTIVE_BURST_SIZE = false		
+						self.beer.BURST_FIRE = {
+							count = 3,
+							delay = 0.12,
+							rof_mult = 1.7647058823,
+							recoil_mult = 0.6,
+							last_recoil_mult = 1.02,
+							burst_default = true
+						}
 						self.beer.CAN_TOGGLE_FIREMODE = false
 						self.beer.FIRE_MODE = "single"	
 						self.beer.AMMO_MAX = 120
@@ -7480,7 +7485,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54_underbarrel.rays = 9
 						self.x_type54_underbarrel.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_type54_underbarrel.AMMO_MAX = 20
-						self.x_type54_underbarrel.BURST_FIRE = 2
+						self.x_type54_underbarrel.BURST_FIRE = {
+							count = 2
+						}
 						self.x_type54_underbarrel.tactical_reload = nil
 						self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
 						self.x_type54_underbarrel.fire_mode_data = {}
@@ -8362,16 +8369,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.peacemaker.fire_mode_data.fire_rate = 0.5357142
 						self.peacemaker.fire_rate_multiplier = 2.5
-						self.peacemaker.BURST_FIRE = 1
-						self.peacemaker.BURST_FIRE_RATE_MULTIPLIER = 1.714285714
-						self.peacemaker.BURST_FIRE_DISABLE_ADS = true
+						self.peacemaker.BURST_FIRE = {
+							count = 1,
+							delay = 0.12,
+							rof_mult = 1.7647058823,
+							spread_mult = 1.5,
+							range_mult = 0.4,
+							recoil_mult = 1.15,
+							last_recoil_mult = 1.15,
+							auto_burst = true,
+							no_ads = true,
+							slamfire = true
+						}
 						self.peacemaker.BURST_TYPE = "fan"
-						self.peacemaker.BURST_SLAM = true
-						self.peacemaker.AUTO_BURST = true
-						self.peacemaker.BURST_FIRE_RECOIL_MULTIPLIER = 1.15
-						self.peacemaker.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.15
-						self.peacemaker.BURST_FIRE_SPREAD_MULTIPLIER = 1.5
-						self.peacemaker.BURST_FIRE_RANGE_MULTIPLIER = 0.4
 						self.peacemaker.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 						self.peacemaker.supported = true
 						self.peacemaker.ads_speed = 0.160
@@ -9139,11 +9149,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.fire_mode_data.fire_rate = 0.075
 						self.new_mp5.has_description = true
 						self.new_mp5.desc_id = "bm_mp5_sc_desc"
-						self.new_mp5.BURST_FIRE = 3
-						self.new_mp5.BURST_DELAY = 0.15
-						self.new_mp5.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-						self.new_mp5.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
-						self.new_mp5.ADAPTIVE_BURST_SIZE = false			
+						self.new_mp5.BURST_FIRE = {
+							count = 3,
+							delay = 0.15,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.02
+						}
 						self.new_mp5.panic_suppression_chance = 0.05
 						self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
 						self.new_mp5.kick_pattern = {
@@ -9413,10 +9424,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.polymer.fire_mode_data = {}
 						self.polymer.fire_mode_data.fire_rate = 0.0545454545
 						self.polymer.CAN_TOGGLE_FIREMODE = true
-						self.polymer.BURST_FIRE = 2
-						self.polymer.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-						self.polymer.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-						self.polymer.BURST_DELAY = 0.1
+						self.polymer.BURST_FIRE = {
+							count = 2,
+							delay = 0.1,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.05
+						}
 						self.polymer.ADAPTIVE_BURST_SIZE = false
 						self.polymer.kick = self.stat_info.kick_tables.even_recoil
 						self.polymer.kick_pattern = {
@@ -9457,10 +9470,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.schakal.auto.fire_rate = 0.1
 						self.schakal.AMMO_MAX = 120
 						self.schakal.CLIP_AMMO_MAX = 25
-						self.schakal.BURST_FIRE = 2
-						self.schakal.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
-						self.schakal.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-						self.schakal.BURST_DELAY = 0.1
+						self.schakal.BURST_FIRE = {
+							count = 2,
+							delay = 0.1,
+							recoil_mult = 0.85,
+							last_recoil_mult = 1.05
+						}
 						self.schakal.ADAPTIVE_BURST_SIZE = false
 						self.schakal.kick = self.stat_info.kick_tables.even_recoil
 						self.schakal.kick_pattern = {
@@ -10098,10 +10113,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.hk51b.AMMO_MAX = 240
 					self.hk51b.fire_mode_data.fire_rate = 0.063157
 					self.hk51b.CAN_TOGGLE_FIREMODE = true
-					self.hk51b.BURST_FIRE = 3
-					self.hk51b.BURST_FIRE_RECOIL_MULTIPLIER = 0.85
-					self.hk51b.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.05
-					self.hk51b.BURST_DELAY = 0.2
+					self.hk51b.BURST_FIRE = {
+						count = 3,
+						delay = 0.2,
+						recoil_mult = 0.85,
+						last_recoil_mult = 1.05
+					}
 					self.hk51b.kick = self.stat_info.kick_tables.right_kick
 					self.hk51b.kick_pattern = {
 						{0, self.stat_info.kick_tables.pattern_r4},
@@ -10220,10 +10237,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.AMMO_MAX = 160
 						self.hk21.fire_mode_data.fire_rate = 0.075
 						self.hk21.CAN_TOGGLE_FIREMODE = true
-						self.hk21.BURST_FIRE = 3
-						self.hk21.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-						self.hk21.BURST_FIRE_LAST_RECOIL_MULTIPLIER  = 1.1
-						self.hk21.BURST_DELAY = 0.28
+						self.hk21.BURST_FIRE = {
+							count = 3,
+							delay = 0.28,
+							recoil_mult = 0.85,
+							last_recoil_mult = 1.1
+						}
 						self.hk21.fake_semi_anims = true
 						self.hk21.kick = self.stat_info.kick_tables.random_right_recoil
 						self.hk21.kick_pattern = {
@@ -10644,8 +10663,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.has_description = true					
 						self.s552.fire_mode_data.fire_rate = 0.08571428571
 						self.s552.auto.fire_rate = 0.08571428571
-						self.s552.BURST_FIRE = 3
-						self.s552.BURST_DELAY = 0.12
+						self.s552.BURST_FIRE = {
+							count = 3,
+							delay = 0.12,
+							recoil_mult = 0.8,
+							last_recoil_mult = 1.05
+						}
 						self.s552.ADAPTIVE_BURST_SIZE = false															
 						self.s552.kick = self.stat_info.kick_tables.moderate_kick
 						self.s552.kick_pattern = {
@@ -10695,7 +10718,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--JP36
 						self.g36.desc_id = "bm_g36_sc_desc"
 						self.g36.has_description = true				
-						self.g36.BURST_FIRE = 3
+						self.g36.BURST_FIRE = {
+							count = 3,
+							delay = 0.12,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.05
+						}
 						self.g36.ADAPTIVE_BURST_SIZE = false																	
 						self.g36.auto.fire_rate = 0.08
 						self.g36.fire_mode_data.fire_rate = 0.08
@@ -10968,20 +10996,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.has_description = true				
 						self.flint.AMMO_MAX = 150
 						self.flint.CLIP_AMMO_MAX = 30
-						self.flint.BURST_FIRE = 2
-						--[[
-						{
+						self.flint.BURST_FIRE = {
 							count = 2,
 							delay = 0.15,
 							rof_mult = 1.07142,
 							recoil_mult = 0.4,
 							last_recoil_mult = 1.05
 						}
-						--]]
-						self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.07142
-						self.flint.BURST_DELAY = 0.15
-						self.flint.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
-						self.flint.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
 						self.flint.ADAPTIVE_BURST_SIZE = false									
 						self.flint.fire_mode_data.fire_rate = 0.08571428571
 						self.flint.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -11201,8 +11222,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.famas.timers.reload_empty = 3.65
 						self.famas.timers.reload_exit_empty = 0.6
 						self.famas.panic_suppression_chance = 0.05
-						self.famas.BURST_FIRE = 3
-						self.famas.ADAPTIVE_BURST_SIZE = false
+						self.famas.BURST_FIRE = {
+							count = 3,
+							delay = 0.12,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.05
+						}
 						self.famas.reload_speed_multiplier = 1.1
 
 					--Tempest 21
@@ -11257,11 +11282,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.has_description = true				
 						self.hajk.fire_mode_data.fire_rate = 0.085714285
 						self.hajk.AMMO_MAX = 75
-						self.hajk.BURST_FIRE = 2
-						self.hajk.BURST_DELAY = 0.12
-						self.hajk.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-						self.hajk.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
-						self.hajk.ADAPTIVE_BURST_SIZE = false											
+						self.hajk.BURST_FIRE = {
+							count = 2,
+							delay = 0.12,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.02
+						}					
 						self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 						self.hajk.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
@@ -12351,16 +12377,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.winchester1874.fire_mode_data = {}
 						self.winchester1874.fire_mode_data.fire_rate = 0.857142857
 						self.winchester1874.fire_rate_multiplier = 1.714285
-						self.winchester1874.BURST_FIRE = 1
-						self.winchester1874.BURST_FIRE_RATE_MULTIPLIER = 1.5
+						self.winchester1874.BURST_FIRE = {
+							count = 1,
+							rof_mult = 1.5,
+							auto_burst = true,
+							slamfire = true,
+							spread_mult = 1.5,
+							ads_spread_mult = 18,
+							range_mult = 0.33,
+							recoil_mult = 1.5,
+							last_recoil_mult = 1.5
+						}
 						self.winchester1874.BURST_TYPE = "rapid"
-						self.winchester1874.BURST_SLAM = true
-						self.winchester1874.AUTO_BURST = true
-						self.winchester1874.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
-						self.winchester1874.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
-						self.winchester1874.BURST_FIRE_SPREAD_MULTIPLIER = 2
-						self.winchester1874.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 18
-						self.winchester1874.BURST_FIRE_RANGE_MULTIPLIER = 0.33
 						self.winchester1874.CAN_TOGGLE_FIREMODE = false
 						self.winchester1874.kick = self.stat_info.kick_tables.left_kick
 						self.winchester1874.kick_pattern = {
@@ -12724,16 +12752,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sbl.fire_mode_data = {}
 						self.sbl.fire_mode_data.fire_rate = 0.857142857 --leave this be, it's synced to the lever action, use fire_rate_multiplier for changing ROF
 						self.sbl.fire_rate_multiplier = 1.4285714285
-						self.sbl.BURST_FIRE = 1
-						self.sbl.BURST_FIRE_RATE_MULTIPLIER = 1.5
+						self.sbl.BURST_FIRE = {
+							count = 1,
+							rof_mult = 1.5,
+							auto_burst = true,
+							slamfire = true,
+							spread_mult = 1.5,
+							ads_spread_mult = 18,
+							range_mult = 0.33,
+							recoil_mult = 1.5,
+							last_recoil_mult = 1.5
+						}
 						self.sbl.BURST_TYPE = "rapid"
-						self.sbl.BURST_SLAM = true
-						self.sbl.AUTO_BURST = true
-						self.sbl.BURST_FIRE_RECOIL_MULTIPLIER = 1.5
-						self.sbl.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.5
-						self.sbl.BURST_FIRE_ADS_SPREAD_MULTIPLIER = 18
-						self.sbl.BURST_FIRE_RANGE_MULTIPLIER = 0.33
-						self.sbl.BURST_FIRE_SPREAD_MULTIPLIER = 2
 						self.sbl.CAN_TOGGLE_FIREMODE = false
 						self.sbl.kick = self.stat_info.kick_tables.left_kick
 						self.sbl.kick_pattern = {
@@ -13453,12 +13483,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.spas12.CLIP_AMMO_MAX = 6
 						self.spas12.CAN_TOGGLE_FIREMODE = false
 						self.spas12.fire_mode_data.fire_rate = 0.25
-						self.spas12.BURST_FIRE = 2
-						self.spas12.BURST_FIRE_RATE_MULTIPLIER = 5
-						self.spas12.BURST_FIRE_RECOIL_MULTIPLIER = 0.25
-						self.spas12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.35
-						self.spas12.BURST_FIRE_SPREAD_MULTIPLIER = 3
-						self.spas12.BURST_DELAY = 0.250
+						self.spas12.BURST_FIRE = {
+							count = 2,
+							delay = 0.25,
+							rof_mult = 5,
+							spread_mult = 3,
+							recoil_mult = 0.25,
+							last_recoil_mult = 1.35
+						}
 						self.spas12.kick = self.stat_info.kick_tables.left_kick
 						self.spas12.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
@@ -13912,16 +13944,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.m1897.fire_mode_data.fire_rate = 0.6
 						self.m1897.fire_rate_multiplier = 0.87
-						self.m1897.BURST_FIRE = 1
-						self.m1897.BURST_FIRE_RATE_MULTIPLIER = 1.8
-						self.m1897.BURST_FIRE_DISABLE_ADS = true
+						self.m1897.BURST_FIRE = {
+							count = 1,
+							rof_mult = 1.8,
+							auto_burst = true,
+							slamfire = true,
+							no_ads = true,
+							spread_mult = 3,
+							range_mult = 0.66,
+							recoil_mult = 1.2,
+							last_recoil_mult = 1.2
+						}
 						self.m1897.BURST_TYPE = "slam"
-						self.m1897.BURST_SLAM = true
-						self.m1897.AUTO_BURST = true
-						self.m1897.BURST_FIRE_RECOIL_MULTIPLIER = 1.2
-						self.m1897.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
-						self.m1897.BURST_FIRE_SPREAD_MULTIPLIER = 3
-						self.m1897.BURST_FIRE_RANGE_MULTIPLIER = 0.66
 						self.m1897.AMMO_MAX = 40
 						self.m1897.supported = true
 						self.m1897.ads_speed = 0.280
@@ -14000,16 +14034,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m37.AMMO_MAX = 20
 						self.m37.fire_mode_data.fire_rate = 0.6
 						self.m37.fire_rate_multiplier = 0.85
-						self.m37.BURST_FIRE = 1
-						self.m37.BURST_FIRE_RATE_MULTIPLIER = 1.8
-						self.m37.BURST_FIRE_DISABLE_ADS = true
+						self.m37.BURST_FIRE = {
+							count = 1,
+							rof_mult = 1.8,
+							auto_burst = true,
+							slamfire = true,
+							no_ads = true,
+							spread_mult = 3,
+							range_mult = 0.66,
+							recoil_mult = 1.2,
+							last_recoil_mult = 1.2
+						}
 						self.m37.BURST_TYPE = "slam"
-						self.m37.BURST_SLAM = true
-						self.m37.AUTO_BURST = true
-						self.m37.BURST_FIRE_RECOIL_MULTIPLIER = 1.2
-						self.m37.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.2
-						self.m37.BURST_FIRE_SPREAD_MULTIPLIER = 3
-						self.m37.BURST_FIRE_RANGE_MULTIPLIER = 0.66
 						self.m37.kick = self.stat_info.kick_tables.right_kick
 						self.m37.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
@@ -14095,7 +14131,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_judge.fire_mode_data.fire_rate = 0.2
 						self.x_judge.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 						self.x_judge.rays = 6
-						self.x_judge.BURST_FIRE = 2
+						self.x_judge.BURST_FIRE = {
+							count = 2,
+							delay = 0.15,
+							rof_mult = 4,
+							recoil_mult = 0.25,
+							last_recoil_mult = 1.05,
+						}
 						self.x_judge.AMMO_MAX = 40
 						self.x_judge.supported = true
 						self.x_judge.ads_speed = 0.200
@@ -14239,11 +14281,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.AMMO_MAX = 30
 						self.huntsman.sounds.fire_single = "huntsman_fire"
 						self.huntsman.sounds.fire_auto = "huntsman_fire"
-						self.huntsman.BURST_FIRE = 2
-						self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 5
+						self.huntsman.BURST_FIRE = {
+							count = 2,
+							delay = 0.12,
+							rof_mult = 5,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.25
+						}
 						self.huntsman.ADAPTIVE_BURST_SIZE = false
 						self.huntsman.CAN_TOGGLE_FIREMODE = false
-						self.huntsman.DELAYED_BURST_RECOIL = false
 						self.huntsman.fire_mode_data = {}
 						self.huntsman.fire_mode_data.fire_rate = 0.2
 						self.huntsman.kick = self.stat_info.kick_tables.vertical_kick
@@ -14298,11 +14344,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.AMMO_MAX = 15
 						self.coach.sounds.fire_single = "coach_fire"
 						self.coach.sounds.fire_auto = "coach_fire"
-						self.coach.BURST_FIRE = 2
+						self.coach.BURST_FIRE = {
+							count = 2,
+							delay = 0.12,
+							rof_mult = 5,
+							recoil_mult = 0.75,
+							last_recoil_mult = 1.25
+						}
 						self.coach.CAN_TOGGLE_FIREMODE = false
-						self.coach.BURST_FIRE_RATE_MULTIPLIER = 5
-						self.coach.DELAYED_BURST_RECOIL = false
-						self.coach.ADAPTIVE_BURST_SIZE = false
 						self.coach.fire_mode_data = {}
 						self.coach.fire_mode_data.fire_rate = 0.2
 						self.coach.supported = true
@@ -14724,9 +14773,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ray.fire_mode_data.fire_rate = 1.2
 						self.ray.CLIP_AMMO_MAX = 4
 						self.ray.AMMO_MAX = 8
-						self.ray.BURST_FIRE = 4
-						self.ray.BURST_DELAY = 1
-						self.ray.BURST_FIRE_RATE_MULTIPLIER = 8
+						self.ray.BURST_FIRE = {
+							count = 4,
+							delay = 1,
+							rof_mult = 8,
+						}
 						self.ray.rays = 1
 						self.ray.supported = true
 						self.ray.shake.fire_steelsight_multiplier = -2
@@ -14776,10 +14827,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							equip = 0.75
 						}
 						self.ms3gl.FIRE_MODE = "single"
-						self.ms3gl.BURST_FIRE = 3
-						self.ms3gl.BURST_DELAY = 1.25
-						self.ms3gl.BURST_FIRE_RATE_MULTIPLIER = 3
-						self.ms3gl.BURST_COUNT = nil
+						self.ms3gl.BURST_FIRE = {
+							count = 3,
+							delay = 1.25,
+							rof_mult = 3
+						}
 						self.ms3gl.fire_mode_data = {
 							fire_rate = 0.4
 						}
@@ -15254,8 +15306,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_socom.recategorize = { "heavy_pis" }
 			self.x_socom.damage_type = "heavy_pistol"
 			self.x_socom.tactical_reload = 2
-			self.x_socom.BURST_FIRE = 2
-			self.x_socom.BURST_FIRE_RATE_MULTIPLIER = 2
+			self.x_socom.BURST_FIRE =  {
+				count = 2,
+				delay = 0.15,
+				rof_mult = 4,
+				recoil_mult = 0.25,
+				last_recoil_mult = 1.05,
+			}
 			self.x_socom.fire_mode_data.fire_rate = 0.117647058
 			self.x_socom.CLIP_AMMO_MAX = 24
 			self.x_socom.AMMO_MAX = 80
@@ -16249,9 +16306,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.sounds.stop_fire = "flint_stop"
 				self.tilt.tactical_reload = 1
 				self.tilt.AMMO_MAX = 150
-				self.tilt.BURST_FIRE = 2
-				self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3
-				self.tilt.BURST_DELAY = 0.12
+				self.tilt.BURST_FIRE = {
+					count = 2,
+					rof_mult = 3,
+					delay = 0.12
+				}
 				self.tilt.ADAPTIVE_BURST_SIZE = false
 				self.tilt.fire_rate_init_count = 2
 				self.tilt.fire_rate_init_mult = 3
@@ -16561,7 +16620,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.nckuro.CLIP_AMMO_MAX = 30
 				self.nckuro.AMMO_MAX = 60
 				self.nckuro.FIRE_MODE = "single"
-				self.nckuro.BURST_FIRE = 3
+				self.nckuro.BURST_FIRE = {
+					count = 3,
+					delay = 0.15,
+					rof_mult = 3
+				}
 				self.nckuro.BURST_FIRE_RATE_MULTIPLIER = 3
 				self.nckuro.BURST_DELAY = 0.15
 				self.nckuro.fire_mode_data.fire_rate = 0.3
@@ -17722,11 +17785,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.quadbarrel.AMMO_MAX = 30
 				self.quadbarrel.sounds.stop_fire = "judge_x_fire"
-				self.quadbarrel.BURST_FIRE = 2
-				self.quadbarrel.BURST_DELAY = 0.75
+				self.quadbarrel.BURST_FIRE = {
+					count = 4,
+					delay = 0.75,
+					rof_mult = 5
+				}
 				self.quadbarrel.CAN_TOGGLE_FIREMODE = false
-				self.quadbarrel.BURST_FIRE_RATE_MULTIPLIER = 5
-				self.quadbarrel.DELAYED_BURST_RECOIL = false
 				self.quadbarrel.ADAPTIVE_BURST_SIZE = false		
 				self.quadbarrel.fire_mode_data = {}
 				self.quadbarrel.fire_mode_data.fire_rate = 0.171428
@@ -17860,9 +17924,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fazertron.damage_type = "assault_rifle"
 				self.fazertron.FIRE_MODE = "auto"
 				self.fazertron.CAN_TOGGLE_FIREMODE = false
-				self.fazertron.BURST_FIRE = 5
-				self.fazertron.BURST_FIRE_RATE_MULTIPLIER = 1.1875
-				self.fazertron.BURST_DELAY = 0.12
+				self.fazertron.BURST_FIRE = {
+					count = 5,
+					delay = 0.12,
+					rof_mult = 1.18755,
+				}
 				self.fazertron.fire_mode_data.fire_rate = 0.075
 				self.fazertron.AMMO_MAX = 180
 				self.fazertron.CLIP_AMMO_MAX = 60
@@ -17912,7 +17978,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.nato = true
 				self.g36k.desc_id = "bm_g36_sc_desc"
 				self.g36k.has_description = true				
-				self.g36k.BURST_FIRE = 3
+				self.g36k.BURST_FIRE = {
+					count = 3,
+					delay = 0.12,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05
+				}
 				self.g36k.ADAPTIVE_BURST_SIZE = false
 				self.g36k.fire_mode_data.fire_rate = 0.08
 				self.g36k.AMMO_MAX = 150
@@ -19651,7 +19722,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.smg45.tactical_reload = 1
 				self.smg45.AMMO_MAX = 60
 				self.smg45.CLIP_AMMO_MAX = 25
-				self.smg45.BURST_FIRE = 2
+				self.smg45.BURST_FIRE = {
+					count = 2,
+					delay = 0.1,
+					recoil_mult = 0.85,
+					last_recoil_mult = 1.05
+				}
 				self.smg45.ADAPTIVE_BURST_SIZE = false											
 				self.smg45.kick = self.stat_info.kick_tables.moderate_left_kick
 				self.smg45.kick_pattern = {
@@ -20434,8 +20510,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_papa320.lock_slide = true
 				self.x_papa320.lock_slide_alt = true
 				self.x_papa320.tactical_reload = 2
-				self.x_papa320.BURST_FIRE = 2
-				self.x_papa320.BURST_FIRE_RATE_MULTIPLIER = 2
+				self.x_papa320.BURST_FIRE = {
+					count = 2,
+					delay = 0.15,
+					rof_mult = 4,
+					recoil_mult = 0.25,
+					last_recoil_mult = 1.05,
+				}
 				self.x_papa320.fire_mode_data.fire_rate = 0.18018018
 				self.x_papa320.CLIP_AMMO_MAX = 34
 				self.x_papa320.AMMO_MAX = 150
@@ -22415,12 +22496,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bolter_40k.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
 				self.bolter_40k.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
 				self.bolter_40k.fire_mode_data.fire_rate = 0.333334
-				self.bolter_40k.BURST_FIRE_RATE_MULTIPLIER = 2.2222
-				self.bolter_40k.BURST_DELAY_ALT_CALC = true
-				self.bolter_40k.BURST_FIRE_INIT = 2
-				self.bolter_40k.BURST_FIRE = 2
-				self.bolter_40k.BURST_FIRE_HIPFIRE_TOGGLE = true
-				self.bolter_40k.AUTO_BURST = true
+				self.bolter_40k.BURST_FIRE = {
+					count = 2,
+					delay_alt_calc = true,
+					rof_mult = 2.2222,
+					auto_burst = true,
+					hipfire_toggle = true
+				}
 				self.bolter_40k.FIRE_MODE = "single"
 				self.bolter_40k.CAN_TOGGLE_FIREMODE = false
 				self.bolter_40k.sms = 0.5
@@ -23126,7 +23208,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.tactical_reload = 1
 				self.sierra458.AMMO_MAX = 60
 				self.sierra458.BURST_FIRE = false
-				self.sierra458.CAN_TOGGLE_FIREMODE = false
+				self.sierra458.CAN_TOGGLE_FIREMODE = true
 				self.sierra458.FIRE_MODE = "single"
 				self.sierra458.fire_mode_data.fire_rate = 0.15
 				self.sierra458.kick = self.stat_info.kick_tables.even_recoil
@@ -23139,9 +23221,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{10, self.stat_info.kick_tables.left_kick}
 				}
 				self.sierra458.muzzleflash = "effects/payday2/particles/weapons/50cal_auto_fps"
-				self.sierra458.can_shoot_through_enemy = true
-				self.sierra458.can_shoot_through_shield = false
-				self.sierra458.can_shoot_through_wall = false
 				self.sierra458.supported = true
 				self.sierra458.ads_speed = 0.400
 				self.sierra458.damage_falloff = {
@@ -23152,7 +23231,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.stats = {
 					damage = 60,
 					spread = 87,
-					recoil = 53,
+					recoil = 51,
 					zoom = 1,
 					concealment = 23,
 					suppression = 7,
@@ -23223,8 +23302,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_czshadow.recategorize = { "light_pis" }
 					self.x_czshadow.damage_type = "light_pistol"
 					self.x_czshadow.fire_mode_data.fire_rate =  0.08333
-					self.x_czshadow.BURST_FIRE = 2
-					self.x_czshadow.BURST_FIRE_RATE_MULTIPLIER = 2
+					self.x_czshadow.BURST_FIRE = {
+						count = 2,
+						delay = 0.15,
+						rof_mult = 4,
+						recoil_mult = 0.25,
+						last_recoil_mult = 1.05,
+					}
 					self.x_czshadow.AMMO_MAX = 150
 					self.x_czshadow.CLIP_AMMO_MAX = 30
 					self.x_czshadow.tactical_reload = 2
@@ -23583,11 +23667,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{3, self.stat_info.kick_tables.right_recoil}
 				}
 				self.x_toz81.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.x_toz81.BURST_FIRE = 2
-				self.x_toz81.BURST_DELAY = 0.15
-				self.x_toz81.BURST_FIRE_RECOIL_MULTIPLIER = 0.5
-				self.x_toz81.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
-				self.x_toz81.BURST_FIRE_RATE_MULTIPLIER = 4
+				self.x_toz81.BURST_FIRE = {
+					count = 2,
+					delay = 0.15,
+					rof_mult = 4,
+					recoil_mult = 0.5,
+					last_recoil_mult = 1.1,
+				}
 				self.x_toz81.CAN_TOGGLE_FIREMODE = false
 				self.x_toz81.FIRE_MODE = "single"				
 				self.x_toz81.AMMO_MAX = 40
@@ -24545,8 +24631,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_pm.warsaw = true
 					self.x_pm.lock_slide = true
 					self.x_pm.fire_mode_data.fire_rate = 0.0882352
-					self.x_pm.BURST_FIRE = 2
-					self.x_pm.BURST_FIRE_RATE_MULTIPLIER = 2
+					self.x_pm.BURST_FIRE = {
+						count = 2,
+						delay = 0.15,
+						rof_mult = 4,
+						recoil_mult = 0.25,
+						last_recoil_mult = 1.05,
+					}
 					self.x_pm.tactical_reload = 2
 					self.x_pm.CLIP_AMMO_MAX = 16
 					self.x_pm.AMMO_MAX = 150
@@ -25874,8 +25965,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				{3, self.stat_info.kick_tables.pattern_v4},
 			}
 			self.x_huntsman.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-			self.x_huntsman.BURST_FIRE = 2
-			self.x_huntsman.BURST_FIRE_RATE_MULTIPLIER = 5
+			self.x_huntsman.BURST_FIRE = {
+				count = 2,
+				delay = 0.12,
+				rof_mult = 5,
+				recoil_mult = 0.75,
+				last_recoil_mult = 1.25
+			}
 			self.x_huntsman.CAN_TOGGLE_FIREMODE = false
 			self.x_huntsman.FIRE_MODE = "single"				
 			self.x_huntsman.AMMO_MAX = 30
@@ -25927,8 +26023,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				{3, self.stat_info.kick_tables.pattern_v4},
 			}
 			self.x_coach.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-			self.x_coach.BURST_FIRE = 2
-			self.x_coach.BURST_FIRE_RATE_MULTIPLIER = 5
+			self.x_coach.BURST_FIRE = {
+				count = 2,
+				delay = 0.12,
+				rof_mult = 5,
+				recoil_mult = 0.75,
+				last_recoil_mult = 1.25
+			}
 			self.x_coach.CAN_TOGGLE_FIREMODE = false
 			self.x_coach.FIRE_MODE = "single"				
 			self.x_coach.AMMO_MAX = 30

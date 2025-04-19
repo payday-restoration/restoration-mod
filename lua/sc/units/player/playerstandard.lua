@@ -736,7 +736,7 @@ PlayerStandard._primary_action_funcs = {
 			local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 			if not zippy or jammed then
 				if (not self._state_data.in_steelsight or (restoration.Options:GetValue("OTHER/WeaponHandling/SeparateBowADS") and is_bow)) then
-					if (weap_base:in_burst_mode() and weap_base:weapon_tweak_data().BURST_SLAM) then
+					if (weap_base:in_burst_mode() and weap_base._slamfire) then
 						state = self._ext_camera:play_redirect(self:get_animation("recoil_steelsight"), weap_base:fire_rate_multiplier())
 					else
 						state = self._ext_camera:play_redirect(self:get_animation("recoil"), weap_base:fire_rate_multiplier())
@@ -3227,7 +3227,7 @@ end
 --Adds burst fire check.
 function PlayerStandard:_check_action_weapon_firemode(t, input)
 	local wbase = self._equipped_unit:base()
-	local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+	local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads and self._equipped_unit:base():in_burst_mode()
 	if burst_hipfire then
 		self:_interupt_action_steelsight(t)
 		if input.btn_steelsight_state then
@@ -3251,7 +3251,7 @@ end
 --Fires next round in burst if needed. 
 function PlayerStandard:_update_burst_fire(t)
 	if alive(self._equipped_unit) and self._equipped_unit:base() and self._equipped_unit:base().in_burst_mode and self._equipped_unit:base():in_burst_mode() then
-		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS
+		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads
 		if burst_hipfire then
 			self:_interupt_action_steelsight(t)
 		end
@@ -3405,7 +3405,7 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
 		local orig_sprintout = sprintout_anim_time / speed_multiplier
 		local sads_mult = self._equipped_unit:base():weapon_tweak_data().sads_mult or 0.3
-		local burst_hipfire = self._equipped_unit:base():weapon_tweak_data().BURST_FIRE_DISABLE_ADS and self._equipped_unit:base():in_burst_mode()
+		local burst_hipfire = self._equipped_unit:base()._burst_fire_no_ads and self._equipped_unit:base():in_burst_mode()
 		local no_ads = self._equipped_unit:base():weapon_tweak_data().no_ads
 
 		if burst_hipfire or no_ads or (self._end_running_expire_t and (self._end_running_expire_t - t) > (orig_sprintout * sads_mult)) then

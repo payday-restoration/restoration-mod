@@ -36557,7 +36557,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				burst_fire = {
 					count = 3,
 					rof_mult = 1.3,
-					delay = 0.2,
+					delay = 0.320,
 					recoil_mult = 0.85,
 					last_recoil_mult = 1.05
 				},

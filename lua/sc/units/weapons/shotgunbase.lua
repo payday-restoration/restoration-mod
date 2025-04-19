@@ -91,6 +91,7 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	end
 
 	self._volley_recoil_mul = nil
+	local is_civ_f = CopDamage.is_civilian
 	if self._fire_mode == ids_volley then
 		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
 		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
@@ -119,7 +120,10 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 		for _, hits in ipairs(result.rays) do
 			if alive(hits.unit) then
-				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local unit_base = hits.unit:base()
+				local unit_type = unit_base and unit_base._tweak_table
+				local is_civilian = unit_type and is_civ_f(unit_type)
+				local is_enemy = not is_civilian and (hits.unit:in_slot(self.enemy_mask) or hits.damage_result)
 				local key = hits.unit:key()
 				if is_enemy and not hit_units[key] then
 					hit_units[key] = true
@@ -160,7 +164,10 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 		for _, hits in ipairs(result.rays) do
 			if alive(hits.unit) then
-				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local unit_base = hits.unit:base()
+				local unit_type = unit_base and unit_base._tweak_table
+				local is_civilian = unit_type and is_civ_f(unit_type)
+				local is_enemy = not is_civilian and (hits.unit:in_slot(self.enemy_mask) or hits.damage_result)
 				local key = hits.unit:key()
 				if is_enemy and not hit_units[key] then
 					hit_units[key] = true
@@ -465,7 +472,7 @@ function ShotgunBase:fire_rate_multiplier( ignore_anims )
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
-			if not self._burst_fire_rate_multiplier_alt then
+			if not self._burst_delay_alt_calc then
 				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed - ((bypass_firerate and moremath) or 0), self._unit:timer():time() + delay))
 				self._ignore__next_fire_allowed = true
 				multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1

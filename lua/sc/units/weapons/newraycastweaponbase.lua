@@ -992,32 +992,55 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._rof_mult_semi = self._rof_mult_semi or self:weapon_tweak_data().SINGLE_FIRE_FIRERATE_MULTIPLIER
 		
 		self._has_burst_fire = self._has_burst_fire or self:weapon_tweak_data().BURST_FIRE and self:weapon_tweak_data().BURST_FIRE ~= false
-
-		--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
-		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
-		self._burst_size = self._burst_size or self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
-		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
-		self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER
-		if self._burst_fire_rate_multiplier then
-			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding
+		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false --deprecated AFAIK; will look into cleaning this up later
+		--[[
+		local BURST_DATA = self._has_burst_fire and type(self:weapon_tweak_data().BURST_FIRE) == "table" and self:weapon_tweak_data().BURST_FIRE
+		if BURST_DATA then
+			self._burst_size = self._burst_size or BURST_DATA.count
+			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or BURST_DATA.rof_mult
+			self._burst_fire_recoil_multiplier = self._burst_fire_recoil_multiplier or BURST_DATA.recoil_mult
+			self._burst_fire_last_recoil_multiplier = self._burst_fire_last_recoil_multiplier or BURST_DATA.last_recoil_mult
+			self._burst_fire_spread_multiplier = self._burst_fire_spread_multiplier or BURST_DATA.spread_mult
+			self._burst_fire_ads_spread_multiplier = self._burst_fire_ads_spread_multiplier or BURST_DATA.ads_spread_mult
+			self._burst_fire_range_multiplier = self._burst_fire_range_multiplier or BURST_DATA.range_mult
+			self._burst_ads_toggle = self._burst_ads_toggle or BURST_DATA.ads_toggle --toggle to burst while aiming
+			self._burst_hipfire_toggle = self._burst_hipfire_toggle or BURST_DATA.hipfire_toggle --toggle to burstfire while hipfiring
+			self._burst_fire_no_ads = BURST_DATA.no_ads or self._burst_fire_no_ads
+			self._block_toggle = self._block_toggle or BURST_DATA.block_toggle--blocks toggling between semi-auto and full-auto; does not stop toggling off burst
+			self._burst_toggle_to_semi = self._burst_toggle_to_semi or BURST_DATA.toggle_to_semi --forces toggling to semi-auto from burst; only applicable if the base firemode is full-auto
+			self._burst_toggle_to_auto = self._burst_toggle_to_auto or BURST_DATA.toggle_to_auto --forces toggling to full-auto from burst; only applicable if the base firemode is semi-auto
+			self._burst_delay_alt_calc = self._burst_delay_alt_calc or BURST_DATA.delay_alt_calc --BOOLEAN; changes up how delays are calculated in relation to the burst rof mult
+			self._burst_delay = self._burst_delay or BURST_DATA.delay or (self.AKIMBO and 0.1) or 0.12
+			self._burst_no_anim = self._burst_no_anim or BURST_DATA.no_anim --only play anims for the last shot in a burst
+			self._burst_default = self._burst_default or BURST_DATA.burst_default
+			self._lock_burst = self._lock_burst or BURST_DATA.lock
+			self._auto_burst = self._auto_burst or BURST_DATA.auto_burst
 		end
-		self._burst_fire_rate_multiplier_alt = self._burst_fire_rate_multiplier_alt or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT
+		--]]
+		self._burst_size = self._burst_size or self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
+		self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER
+		self._burst_delay_alt_calc = self._burst_delay_alt_calc or self:weapon_tweak_data().BURST_DELAY_ALT_CALC
 		self._burst_fire_recoil_multiplier = self._burst_fire_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER
 		self._burst_fire_last_recoil_multiplier = self._burst_fire_last_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER
 		self._burst_fire_spread_multiplier = self._burst_fire_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER
 		self._burst_fire_ads_spread_multiplier = self._burst_fire_ads_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
 		self._burst_fire_range_multiplier = self._burst_fire_range_multiplier or self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
-		self._burst_ads_toggle = self._burst_ads_toggle or self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE
-		self._burst_hipfire_toggle = self._burst_hipfire_toggle or self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE
+		self._burst_ads_toggle = self._burst_ads_toggle or self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE --toggle to burst while aiming
+		self._burst_hipfire_toggle = self._burst_hipfire_toggle or self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE --toggle to burstfire while hipfiring
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self._burst_delay or self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.1) or 0.12
 		self._burst_no_anim = self._burst_no_anim or self:weapon_tweak_data().BURST_FIRE_NO_ANIM
 		self._burst_default = self._burst_default or self:weapon_tweak_data().BURST_FIRE_DEFAULT
 		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST
+		self._auto_burst = self._auto_burst or self:weapon_tweak_data().AUTO_BURST
+
+		--LEAVE THESE OUTSIDE OF THE 'BURST_DATA' if statement
+		if self._burst_fire_rate_multiplier then
+			self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier * 1.05 --to help with frame rounding
+		end
 		if self._lock_burst and not self._locked_fire_mode then
 			self:_set_burst_mode(true, true)
 		end
-		self._auto_burst = self._auto_burst or self:weapon_tweak_data().AUTO_BURST
 		
 		self._burst_rounds_fired = 0
 
@@ -1138,27 +1161,29 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			--BURST STUFF HERE
 			if stats.burst_fire then
+				local burst_data = stats.burst_fire
 				self._has_burst_fire = true
-				self._burst_size = stats.burst_fire.count or self._burst_size
-				self._burst_fire_rate_multiplier_alt = stats.burst_fire.rof_mult_alt or self._burst_fire_rate_multiplier_alt
-				self._burst_fire_rate_multiplier = stats.burst_fire.rof_mult or self._burst_fire_rate_multiplier
-				if stats.burst_fire.desired_burst_rof then
+				self._burst_size = burst_data.count or self._burst_size
+				self._burst_delay_alt_calc = burst_data.rof_mult_alt or self._burst_delay_alt_calc
+				self._burst_fire_rate_multiplier = burst_data.rof_mult or self._burst_fire_rate_multiplier
+				if burst_data.desired_burst_rof then
 					local base_firerate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate / (self._fire_rate_multiplier * self._rof_mult)
-					self._burst_fire_rate_multiplier = base_firerate and base_firerate / stats.burst_fire.desired_burst_rof
+					self._burst_fire_rate_multiplier = base_firerate and base_firerate / burst_data.desired_burst_rof
 				end
-				self._burst_fire_recoil_multiplier = stats.burst_fire.recoil_mult or self._burst_fire_recoil_multiplier
-				self._burst_fire_last_recoil_multiplier = stats.burst_fire.last_recoil_mult or self._burst_fire_last_recoil_multiplier
-				self._burst_fire_spread_multiplier = stats.burst_fire.spread_mult or self._burst_fire_spread_multiplier
-				self._burst_fire_ads_spread_multiplier = stats.burst_fire.ads_spread_mult or self._burst_fire_ads_spread_multiplier
-				self._burst_fire_range_multiplier = stats.burst_fire.range_mult or self._burst_fire_range_multiplier
-				self._burst_no_anim = stats.burst_fire.no_anim or self._burst_no_anim --only play anims for the last shot in a burst
-				self._burst_delay = stats.burst_fire.delay or self._burst_delay
-				self._auto_burst = (stats.burst_fire.auto_burst ~= nil and stats.burst_fire.auto_burst) or self._auto_burst
-				self._block_toggle = (stats.burst_fire.block_toggle ~= nil and stats.burst_fire.block_toggle) or self._block_toggle --blocks toggling between semi-auto and full-auto; does not stop toggling off burst
-				self._lock_burst = (stats.burst_fire.lock ~= nil and stats.burst_fire.lock) or self._lock_burst --blocks toggling off burst altogether
-				self._burst_toggle_to_semi = stats.burst_fire.toggle_to_semi or self._burst_toggle_to_semi --forces toggling to semi-auto from burst; only applicable if the base firemode is full-auto
-				self._burst_toggle_to_auto = stats.burst_fire.toggle_to_auto or self._burst_toggle_to_auto --forces toggling to full-auto from burst; only applicable if the base firemode is semi-auto
-				self._burst_default = (stats.burst_fire.burst_default ~= nil and stats.burst_fire.burst_default) or self._burst_default --make starting firemode burst-fire
+				self._burst_fire_recoil_multiplier = burst_data.recoil_mult or self._burst_fire_recoil_multiplier
+				self._burst_fire_last_recoil_multiplier = burst_data.last_recoil_mult or self._burst_fire_last_recoil_multiplier
+				self._burst_fire_spread_multiplier = burst_data.spread_mult or self._burst_fire_spread_multiplier
+				self._burst_fire_ads_spread_multiplier = burst_data.ads_spread_mult or self._burst_fire_ads_spread_multiplier
+				self._burst_fire_range_multiplier = burst_data.range_mult or self._burst_fire_range_multiplier
+				self._burst_fire_no_ads = burst_data.no_ads or self._burst_fire_no_ads
+				self._burst_no_anim = burst_data.no_anim or self._burst_no_anim --only play anims for the last shot in a burst
+				self._burst_delay = burst_data.delay or self._burst_delay
+				self._auto_burst = (burst_data.auto_burst ~= nil and burst_data.auto_burst) or self._auto_burst
+				self._block_toggle = (burst_data.block_toggle ~= nil and burst_data.block_toggle) or self._block_toggle --blocks toggling between semi-auto and full-auto; does not stop toggling off burst
+				self._lock_burst = (burst_data.lock ~= nil and burst_data.lock) or self._lock_burst --blocks toggling off burst altogether
+				self._burst_toggle_to_semi = burst_data.toggle_to_semi or self._burst_toggle_to_semi --forces toggling to semi-auto from burst; only applicable if the base firemode is full-auto
+				self._burst_toggle_to_auto = burst_data.toggle_to_auto or self._burst_toggle_to_auto --forces toggling to full-auto from burst; only applicable if the base firemode is semi-auto
+				self._burst_default = (burst_data.burst_default ~= nil and burst_data.burst_default) or self._burst_default --make starting firemode burst-fire
 			end
 			if stats.block_burst then
 				self._block_burst = true
@@ -1704,7 +1729,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
-			if not self._burst_fire_rate_multiplier_alt then
+			if not self._burst_delay_alt_calc then
 				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed - ((bypass_firerate and moremath) or 0), self._unit:timer():time() + delay))
 				self._ignore__next_fire_allowed = true
 				multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
@@ -1975,6 +2000,7 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 	end
 
 	self._volley_recoil_mul = nil
+	local is_civ_f = CopDamage.is_civilian
 	if self._fire_mode == ids_volley then
 		local ammo_usage_ratio = math.clamp(ammo_usage > 0 and ammo_usage / (self._volley_ammo_usage or ammo_usage) or 1, 0, 1)
 		local rays = math.ceil(ammo_usage_ratio * (self._volley_rays or 1))
@@ -2007,7 +2033,10 @@ function NewRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 
 		for _, hits in ipairs(result.rays) do
 			if alive(hits.unit) then
-				local is_enemy = hits.unit:in_slot(self.enemy_mask)
+				local unit_base = hits.unit:base()
+				local unit_type = unit_base and unit_base._tweak_table
+				local is_civilian = unit_type and is_civ_f(unit_type)
+				local is_enemy = not is_civilian and (hits.unit:in_slot(self.enemy_mask) or hits.damage_result)
 				local key = hits.unit:key()
 				if is_enemy and not hit_units[key] then
 					hit_units[key] = true

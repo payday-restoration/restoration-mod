@@ -1284,6 +1284,10 @@ end
 function PlayerManager:check_enduring()
 	if not self._assaults_to_extra_revive then
 		self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
+		
+		if restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+			self._assaults_to_extra_revive = 2
+		end
 	end
 
 	if self._assaults_to_extra_revive and alive(self:player_unit()) then
@@ -1519,3 +1523,15 @@ Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", fun
 		self:local_player():sound():play(tweak_data.blackmarket.projectiles.tag_team.sounds.activate)
 	end
 end)
+
+-- Make cooldown for picking up bags consistent instead of random
+local drop_carry_original = PlayerManager.drop_carry
+function PlayerManager:drop_carry(...)
+	local carry_data = self:get_my_carry_data()
+
+	drop_carry_original(self, ...)
+
+	if carry_data then
+		self._carry_blocked_cooldown_t = Application:time() + 0.5
+	end
+end

@@ -319,6 +319,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCloakerTurnDescID"] = "클로커가 킥을 시전할 때 바닐라의 클로커 카메라 회전 기능을 활성화하거나 비활성화합니다.",
 		["RestorationModDisableMutatorColorsTitleID"] = "뮤테이터 어썰트 배너 색상 비활성화",
 		["RestorationModDisableMutatorColorsDescID"] = "뮤테이터를 사용할 때 어썰트 배너의 색상 변경을 비활성화합니다(바닐라 HUD에만 해당).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	
 		["RestorationModRestoreHitFlashTitleID"] = "히트 플래시 복원",
 		["RestorationModRestoreHitFlashDescID"] = "대미지를 입었을 때 복원된 히트 플래시를 활성화하거나 비활성화합니다.",
 		["RestorationModBotsNoDropTitleID"] = "봇 전리품 가방 드롭 비활성화",

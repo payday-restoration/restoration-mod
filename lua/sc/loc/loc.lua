@@ -347,6 +347,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", fun
 		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
 		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",
@@ -2442,6 +2444,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
+				--G3A3--
+				["bm_wp_upg_i_g3"] = "SG-3 Kit",
+				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",
 				--Bernetti Auto--
 				["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
 				["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",
@@ -2608,6 +2613,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--CUSTOM PISTOLS
+					--Px4 Storm
+					["bm_wp_wpn_fps_upg_px4_barrel_sd"] = "SD Long Barrel",
 					--Zippy
 					["bm_zippy_sc_desc"] = "The ultimate weapon, in ejection failures and misfires. You'll be lucky to get two shots out of this thing without blowing off your fingers.",
 					--Auto-9
@@ -2619,6 +2626,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",
 					--Colt Detective
 					["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+					--MW2019 P320
+					["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -3147,7 +3156,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						--ZiP 22
 						["bm_w_zip22"] = "Zippy 3000",
 						--Px4
-						["bm_w_px4"] = "Bernetti Hx4 Canaan",
+						["bm_w_px4"] = "Bernetti Px4",
 						--Browning Hi-Power
 						["bm_w_hpb"] = "Hi-Power",
 						--Browning Hi-Power (Mira)
@@ -3162,7 +3171,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
 						["bm_w_papa320"] = "M19",
-						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
 					["bm_w_p90"] = "Project-90",
@@ -3413,6 +3421,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
 						--ACR 2012
 						["bm_w_acr_2012"] = "MCW-R",
+						--MW2022 M4
+						["bm_w_mike4_2022"] = "M4",
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3467,6 +3477,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_xr2"] = "XR-2",
 						--SIERRA .458
 						["bm_w_sierra458"] = "Sierra .458",
+						--MW2022 .458 AR15
+						["bm_w_msecho"] = "FTAC Recon",
 				--[[ SNIPERS ]]
 					--MSR
 					["bm_w_msr"] = "Rattlesnake",

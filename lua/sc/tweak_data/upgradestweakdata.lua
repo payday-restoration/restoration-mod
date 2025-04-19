@@ -1978,8 +1978,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
-	if Global.game_settings and Global.game_settings.single_player then
-		self.values.player.corpse_dispose_amount = {4, 5}
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global.game_settings and Global.game_settings.single_player then
+			self.values.player.corpse_dispose_amount = {4, 5}
+		end
 	end
 	
 	--Just to stop a softlock

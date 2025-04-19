@@ -135,35 +135,41 @@ tweak_data.smg = {
 	hipfire_spread_mult = 0.9
 }
 	tweak_data.pdw = {
-		ads_move_speed_mult = 0.7142857, --lowered to 0.5
+		ads_move_speed_mult = 0.5 / tweak_data.smg.ads_move_speed_mult
 	}
 	tweak_data.lmg = {
 		ads_moving_recoil = 1.15,
 		swap_bonus = 1 / tweak_data.smg.swap_bonus,
-		ads_move_speed_mult = 0.5, --lowered to 0.35
-		moving_spread_mult = 8.3333,
+		ads_move_speed_mult = 0.35 / tweak_data.smg.ads_move_speed_mult,
+		moving_spread_mult = 5 / tweak_data.smg.moving_spread_mult,
 		ads_moving_spread_mult = 2,
-		hipfire_spread_mult = 3.3333,
+		hipfire_spread_mult = 3 / tweak_data.smg.hipfire_spread_mult,
 		shake_mul = 1.4
 	}
 		tweak_data.lmg_moving = {
-			ads_moving_recoil = 0.8695652,
-			shake_mul = 0.6667,
-			hipfire_spread_mult = 0.6667
+			ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
+			shake_mul = 1 / tweak_data.lmg.shake_mul,
+			hipfire_spread_mult = 2 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult)
+		}
+		tweak_data.finn_the_lmg = {
+			ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
+			moving_spread_mult = 1 / (tweak_data.smg.moving_spread_mult * tweak_data.lmg.moving_spread_mult),
+			hipfire_spread_mult = 1.75 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult),
+			shake_mul = 1 / tweak_data.lmg.shake_mul
 		}
 		tweak_data.mmg = {
-			moving_spread_mult = 1.2,
-			ads_moving_spread_mult = 2,
-			hipfire_spread_mult = 1.666667
+			moving_spread_mult = 6 / (tweak_data.smg.moving_spread_mult * tweak_data.lmg.moving_spread_mult),
+			ads_moving_spread_mult = 3 / tweak_data.lmg.ads_moving_spread_mult,
+			hipfire_spread_mult = 5 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult)
 		}
 			tweak_data.rambo = {
-				hipfire_spread_mult = 0.3125
+				hipfire_spread_mult = 1.75 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult)
 			}
 			tweak_data.wolf_brigade = {
-				ads_moving_recoil = 0.8695652,
-				moving_spread_mult = 0.2,
-				hipfire_spread_mult = 0.3125,
-				shake_mul = 0.6667
+				ads_moving_recoil = 1 / tweak_data.lmg.ads_moving_recoil,
+				moving_spread_mult = 1.2 / (tweak_data.smg.moving_spread_mult * tweak_data.lmg.moving_spread_mult * tweak_data.mmg.moving_spread_mult),
+				hipfire_spread_mult = 1.75 / (tweak_data.smg.hipfire_spread_mult * tweak_data.lmg.hipfire_spread_mult * tweak_data.mmg.hipfire_spread_mult),
+				shake_mul = 1 / tweak_data.lmg.shake_mul,
 			}
 	tweak_data.minigun = {
 		swap_bonus = 0.83334,
@@ -1726,6 +1732,38 @@ if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0
 				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_fg_ojisan)
 			elseif twf.parts[used_part_id].type == "stock" then
 				twb.weapon_skins.benelli_cnuy_hoshino.parts[used_part_id] = deep_clone(twb.weapon_skins.benelli_cnuy_hoshino.parts.wpn_fps_sho_ben_s_ojisan)
+			end
+		end
+	end
+end
+
+if twb.weapon_skins.tecci_cnuy_ibuki then --Version 0.7.0
+	twb.weapon_skins.tecci_cnuy_ibuki.default_blueprint = {
+		"wpn_fps_ass_tecci_b_standard",
+		"wpn_fps_ass_tecci_dh_standard",
+		"wpn_fps_ass_tecci_fg_standard",
+		"wpn_fps_ass_tecci_g_standard",
+		"wpn_fps_ass_tecci_lower_reciever",
+		"wpn_fps_ass_tecci_m_drum",
+		"wpn_fps_ass_tecci_ns_standard",
+		"wpn_fps_ass_tecci_o_standard",
+		"wpn_fps_ass_tecci_s_standard",
+		"wpn_fps_ass_tecci_upper_reciever",
+		"wpn_fps_ass_tecci_vg_standard",
+		"wpn_fps_ass_tecci_cnuy_ibuki"
+	}
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_tecci.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_fg_standard)
+			elseif twf.parts[used_part_id].type == "grip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_g_standard)
+			elseif twf.parts[used_part_id].type == "vertical_grip" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_vg_standard)
+			elseif twf.parts[used_part_id].type == "magazine" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_ass_tecci_m_pudding)
+			elseif twf.parts[used_part_id].type == "stock" and used_part_id ~= "wpn_fps_snp_tti_s_vltor" then
+				twb.weapon_skins.tecci_cnuy_ibuki.parts[used_part_id] = deep_clone(twb.weapon_skins.tecci_cnuy_ibuki.parts.wpn_fps_snp_tti_s_vltor)
 			end
 		end
 	end

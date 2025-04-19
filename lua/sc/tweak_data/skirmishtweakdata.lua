@@ -51,9 +51,11 @@ local map_scale_factor = 1
 	end
 
 	--Reduced spawns if playing in Solo offline
-	if Global and Global.game_settings and Global.game_settings.single_player then
-		map_scale_factor = map_scale_factor * 0.75
-	end	
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global and Global.game_settings and Global.game_settings.single_player then
+			map_scale_factor = map_scale_factor * 0.75
+		end	
+	end
 	
 	self.special_unit_spawn_limits = {
 		{

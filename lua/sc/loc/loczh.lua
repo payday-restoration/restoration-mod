@@ -349,7 +349,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
         ["RestorationModCloakerTurnDescID"] = "开启或关闭幻影特工飞踢你时，你的视角自动转向它的效果。",
         ["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors", --tra
         ["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (仅用于Vanilla HUD).",
-        ["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	 
+		["RestorationModRestoreHitFlashTitleID"] = "恢复Mod受击闪屏",
         ["RestorationModRestoreHitFlashDescID"] = "启用或禁用恢复Mod的受击闪屏",
         ["RestorationModBotsNoDropTitleID"] = "禁用Bot队友丢包",
         ["RestorationModBotsNoDropDescID"] = "勾选以禁止AI队友在任何情况下丢掉身上的包",

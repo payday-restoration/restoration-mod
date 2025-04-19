@@ -10969,6 +10969,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.flint.AMMO_MAX = 150
 						self.flint.CLIP_AMMO_MAX = 30
 						self.flint.BURST_FIRE = 2
+						--[[
+						{
+							count = 2,
+							delay = 0.15,
+							rof_mult = 1.07142,
+							recoil_mult = 0.4,
+							last_recoil_mult = 1.05
+						}
+						--]]
 						self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.07142
 						self.flint.BURST_DELAY = 0.15
 						self.flint.BURST_FIRE_RECOIL_MULTIPLIER = 0.4
@@ -22407,7 +22416,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bolter_40k.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
 				self.bolter_40k.fire_mode_data.fire_rate = 0.333334
 				self.bolter_40k.BURST_FIRE_RATE_MULTIPLIER = 2.2222
-				self.bolter_40k.BURST_FIRE_RATE_MULTIPLIER_ALT = true
+				self.bolter_40k.BURST_DELAY_ALT_CALC = true
 				self.bolter_40k.BURST_FIRE_INIT = 2
 				self.bolter_40k.BURST_FIRE = 2
 				self.bolter_40k.BURST_FIRE_HIPFIRE_TOGGLE = true

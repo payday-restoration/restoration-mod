@@ -472,7 +472,7 @@ function ShotgunBase:fire_rate_multiplier( ignore_anims )
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
-			if not self._burst_fire_rate_multiplier_alt then
+			if not self._burst_delay_alt_calc then
 				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed - ((bypass_firerate and moremath) or 0), self._unit:timer():time() + delay))
 				self._ignore__next_fire_allowed = true
 				multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1

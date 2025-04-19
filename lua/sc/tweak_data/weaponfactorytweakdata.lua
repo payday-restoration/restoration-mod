@@ -34852,6 +34852,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
 								unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_g_sidewinder"
 							}
+						elseif self.parts[part_id].type == "slide" then
+							self.parts.wpn_fps_pis_1911_body_sidewinder.override[part_id] = {
+								unit = "units/mods/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_b_sidewinder"
+							}
 						end
 					end
 				end

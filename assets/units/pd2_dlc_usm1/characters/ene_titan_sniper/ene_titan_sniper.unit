@@ -1,20 +1,21 @@
-<?xml version="1.0"?>
-<unit type="being" slot="12">
-	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+<?xml version="1.0" ?>
+<unit slot="12" type="being">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
 	<object file="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" />
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_usm1/weapons/wpn_npc_dmr/wpn_npc_dmr" />
 	</dependencies>
 
+	<dependencies/>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true"/>
-			<var name="_tweak_table" value="city_swat_titan" />
-			<var name="_default_weapon_id" value="lmg_titan" />
-		</extension>
-		<extension name="inventory" class="CopInventory" >
+			<var name="_tweak_table" value="marshal_marksman"/>
+			<var name="_default_weapon_id" value="dmr"/>
+            <var name="_stats_name" value="marshal_marksman"/>
 		</extension>
 		<extension name="spawn_manager" class="ManageSpawnedUnits" >
 			<var name="_char_joint_names" type="table" >	
@@ -92,12 +93,12 @@
 			<var name="allow_client_spawn" value="true" />
 			<var name="local_only" value="true" />
 		</extension>														
+		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head" value="units/payday2/characters/ene_head_atlas/ene_head_atlas" />												
-			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />
@@ -114,7 +115,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

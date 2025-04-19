@@ -1234,7 +1234,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.city_swat_titan.custom_voicework = "pdth"
 	end
-	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "fbi" then
 		self.city_swat_titan.yellow_blood = false
 	else
 		self.city_swat_titan.yellow_blood = true
@@ -19082,6 +19082,7 @@ local orig_character_map = CharacterTweakData.character_map
 function CharacterTweakData:character_map()
 	local char_map = orig_character_map()
 	--Basic
+		table.insert(char_map.basic.list, "ene_head_atlas")
 	
 		--CS Tier
 		table.insert(char_map.basic.list, "ene_bulldozer_1_sc")
@@ -19174,6 +19175,12 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.ranc.list, "ene_cop_4")
 	--usm1
 		table.insert(char_map.usm1.list, "ene_male_marshal_marksman_scripted_2")
+		table.insert(char_map.usm1.list, "ene_titan_sniper")
+		table.insert(char_map.usm1.list, "ene_titan_rifle")
+		table.insert(char_map.usm1.list, "ene_titan_shotgun")
+		table.insert(char_map.usm1.list, "ene_titan_taser")
+		table.insert(char_map.usm1.list, "ene_phalanx_1_assault")
+		
 	--Christmas
 		table.insert(char_map.cg22.list, "ene_bulldozer_snowman")		
 	--vip
@@ -19435,6 +19442,7 @@ function CharacterTweakData:character_map()
 				"ene_sniper_3",
 				"ene_spook_1",
 				"ene_bulldozer_1",
+				"ene_head_atlas",
 				"ene_bulldozer_1_hard",
 				"ene_bulldozer_2",
 				"ene_bulldozer_3",
@@ -19530,7 +19538,7 @@ function CharacterTweakData:character_map()
 				"ene_bravo_shotgun_mex"
 			}
 		}
-
+		
 		char_map.dave = {
 			path = "units/pd2_mod_dave/characters/",
 			list = {

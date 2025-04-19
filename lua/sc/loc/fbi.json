@@ -1,5 +1,9 @@
 {
   "ene_city_swat" : "FBI Elite SWAT",
+  "ene_titan_sniper" : "Marshal Sharpshooter",  
+  "ene_phalanx_1_assault" : "Marshal Shield Trooper",  
+  "ene_titan_rifle" : "Marshal Elite Machinegunner",  
+  "ene_titan_shotgun" : "Marshal Elite Shotgunner",  
   "ene_city_heavy" : "FBI Elite Heavy SWAT",
   "ene_city_heavy_r870_sc" : "FBI Elite Heavy SWAT",
   "ene_city_shield" : "FBI Elite Shield",

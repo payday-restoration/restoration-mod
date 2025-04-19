@@ -8,7 +8,7 @@
 		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm"/>
 	</material>
-	<material name="mtr_equipment_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_equipment_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<diffuse_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_nm"/>
 	</material>
@@ -16,7 +16,7 @@
 		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm"/>
 	</material>
-	<material name="mtr_equipment_shield_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_equipment_shield_static" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
 		<diffuse_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df"/>
 		<bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_nm"/>
 	</material>

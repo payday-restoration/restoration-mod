@@ -1226,19 +1226,6 @@
 
 	<!--Marshal Marksman-->
 	
-	<!--Marshal Shields-->
-	<object				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<model				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<material_config	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_df"/>
-	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm"/>
-	
-	<unit				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2"/>	
-	<unit				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2_dummy"/>	
-	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_df"/>
-	
-	<sequence_manager	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_2/marshal_shield_2"/>	
-	
 	<!--LPF and Medic (over-)healing Effects-->
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_alien_eyes"/>
 	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff_no_random"/>

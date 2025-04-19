@@ -19,6 +19,7 @@
         <bump_normal_texture file="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" mip="4"/>
 		<reflection_texture global_texture="current_global_texture" type="cubemap"/>
 		<variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mcmansion/masks/msk_hectors_helmet/glass_op"/>		
 		<variable value="10 4000 0" type="vector3" name="opacity_fade"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" name="mtr_light_il" version="2">

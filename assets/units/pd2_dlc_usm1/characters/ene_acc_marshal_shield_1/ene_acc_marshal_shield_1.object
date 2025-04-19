@@ -1,5 +1,5 @@
 <dynamic_object>
-    <diesel materials="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"  orientation_object="rp_ene_acc_shield_phalanx" />
+    <diesel materials="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1"  orientation_object="rp_ene_acc_shield_phalanx" />
     <sequence_manager file="units/pd2_dlc_vip/characters/ene_acc_shield_phalanx_sc/ene_acc_shield_phalanx_sc" />
 	
 	<bodies>
@@ -44,7 +44,6 @@
 			<object name="c_sphere_bottom" 						collision_type="sphere" padding="-2" />
 		</body>		
 		
-		<!-- please fucking help this shit HAS A MIND OF ITS OWN.  -->
 		<body name="dropped_body_left" enabled="false" template="debris" collision_class="ragdoll"  pushed_by_mover="false" remove_ray_type="ai_vision walk">
 			<object name="drop_shield_l" />
 			<object name="c_shield_l"					collision_type="convex" padding="-2" />
@@ -110,29 +109,29 @@
     <graphics>
 		<lod_object name="lod_shield">
         	<object name="g_shield"		enabled="true" >
-				<material materials="mtr_shield" />
-				<material materials="mtr_shield_lod" max_distance="1000" />
+				<material materials="mtr_shield, mtr_glass" />
+				<material materials="mtr_shield_lod, mtr_glass" max_distance="1500" />
 			</object>
 		</lod_object>
 		
 		<lod_object name="lod_shield_top">
         	<object name="g_shield_top"		enabled="true" >
 				<material materials="mtr_shield"  />
-				<material materials="mtr_shield_lod" max_distance="1000" />
+				<material materials="mtr_shield_lod" max_distance="1500" />
 			</object>
 		</lod_object>
 		
 		<lod_object name="lod_shield_left">
         	<object name="g_shield_l"		enabled="true" >
 				<material materials="mtr_shield"  />
-				<material materials="mtr_shield_lod" max_distance="1000" />
+				<material materials="mtr_shield_lod" max_distance="1500" />
 			</object>
 		</lod_object>
 		
 		<lod_object name="lod_shield_right">
         	<object name="g_shield_r"		enabled="true" >
 				<material materials="mtr_shield" />
-				<material materials="mtr_shield_lod" max_distance="1000" />
+				<material materials="mtr_shield_lod" max_distance="1500" />
 			</object>
 		</lod_object>
 		

@@ -21,6 +21,11 @@
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />	
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
+
+	<!-- head -->
+	<unit_mat			path="units/payday2/characters/ene_head_atlas/ene_head_atlas" />	
+	<material_config	path="units/payday2/characters/ene_head_atlas/ene_head_atlas_contour" />	
+	<sequence_manager	path="units/pd2_mod_nypd/characters/ene_head_atlas/ene_head_atlas" />	
 	
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="false" />
 	<material_config	path="units/payday2/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="false" />
@@ -215,37 +220,41 @@
 
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_df" force="false"/>
 
-	<!--Titanshield-->	
-	<object				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<model				path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<material_config	path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_1"/>	
-	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_df"/>
-	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm"/>
+	<!--Titanshield-->
+	<unit				path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1" load="true"/>		
+	<unit				path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1_dummy" load="true"/>		
+	<object				path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1" />	
+	<cooked_physics		path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1" />	
+	<model				path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1"  />	
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_acc_marshal_shield_1/ene_acc_marshal_shield_1" />	
 	
-	<unit				path="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_husk" force="true" load="true"/>	
+	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_df" force="true"/>
+	<texture			path="units/pd2_dlc_usm2/characters/ene_acc_marshal_shield_1/marshal_shield_nm" force="true"/>
+	
+	<unit				path="units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>	
 
 	<texture			path="units/pd2_dlc_usm2/characters/ene_male_marshal_shield_1/ene_male_marshal_shield_1_equipment_df" />
 
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" force="true" />	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" force="true" />	
 
 	<!-- Titan Sniper -->
-	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_husk" force="true" load="true"/>	
-	<object				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="false"/>
-	<sequence_manager	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="false"/>
-	<model				path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="false"/>
-	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1" force="false"/>
-	<material_config	path="units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_1/ene_male_marshal_marksman_1_contour" force="false"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" force="true" load="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper_husk" force="true" load="true"/>	
+	<object				path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"  />
+	<sequence_manager	path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" />
+	<model				path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" />
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" />
+	<material_config	path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper_contour"  />
+	
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df" />
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" />
 
-	
 	<!--Titan Rifle-->	
 	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>

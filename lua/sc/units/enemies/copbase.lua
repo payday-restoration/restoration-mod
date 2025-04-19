@@ -465,6 +465,17 @@ local enemy_variations = {
 	["units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"] = "swat_shield",
 	["units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3"] = "swat_sniper",
 
+	-- MARSHALS
+	["units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar_titan",
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
+	["units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "swat_sniper",
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "swap_bellmead",
+	["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2"] = "swat_sniper",
+	["units/pd2_dlc_usm1/characters/ene_male_marshal_marksman_scripted_2/ene_male_marshal_marksman_scripted_2"] = "swap_bellmead",
+	["units/pd2_dlc_usm1/characters/ene_titan_shotgun/ene_titan_shotgun"] = "swat_sg_titan",
+	["units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser"] = "taser_titan",	
+	
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_pistol",
 	["units/pd2_mod_nypd/characters/ene_security_2/ene_security_2"] = "sec_smg",
@@ -557,6 +568,16 @@ local all_head_variants = {
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "swat_heavy_fbi_la",
 	["units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "swat_heavy_fbi_la",	
 	["units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"] = "swat_heavy_fbi_la",
+	
+	-- marshals
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"] = "mean_swat_marshals",	
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "mean_swat_marshal_specials",	
+	["units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "mean_swat_marshal_specials",	
+	["units/pd2_dlc_usm1/characters/ene_titan_shotgun/ene_titan_shotgun"] = "mean_swat_marshal_specials",	
+	["units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"] = "mean_swat_marshal_specials",	
+	["units/pd2_dlc_usm1/characters/ene_titan_taser/ene_titan_taser"] = "mean_swat_marshal_specials",	
+	["units/pd2_dlc_deep/characters/ene_deep_security_1/ene_deep_security_1"] = "mean_swat_marshals",	
+	["units/pd2_dlc_deep/characters/ene_deep_security_2/ene_deep_security_2"] = "swat_ar_la",	
 	
 	-- NYPD
 	["units/pd2_mod_nypd/characters/ene_security_1/ene_security_1"] = "sec_cop",

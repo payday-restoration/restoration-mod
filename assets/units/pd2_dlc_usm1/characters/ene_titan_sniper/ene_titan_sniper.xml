@@ -30,17 +30,21 @@
 				<run_sequence name="'destroy_visor'"/>
 			</endurance>
 		</body>	
+		
+		<filter name="'check_helmet'">
+			<check value="vars.var_gadgets_swat > 2"/>
+		</filter>
 
-		<filter name="'check_swat_ar'">
+		<filter name="'check_swat_sniper'">
 			<check value="vars.var_gadgets_swat == 1"/>
 		</filter>
 		<filter name="'check_swat_smg'">
 			<check value="vars.var_gadgets_swat == 2"/>
 		</filter>
-		<filter name="'check_swat_shield'">
+		<filter name="'check_swat_ar'">
 			<check value="vars.var_gadgets_swat == 3"/>
 		</filter>
-		<filter name="'check_swat_sniper'">
+		<filter name="'check_swat_shield'">
 			<check value="vars.var_gadgets_swat == 4"/>
 		</filter>
 		<filter name="'check_taser'">
@@ -61,26 +65,28 @@
 			<check value="vars.var_goggles == 2"/>
 		</filter>
 		
-		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
+		
+		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="1"/>
+			<run_sequence filter="'check_swat_sniper'" name="'goggles_'..pick('c', 'c', 'c', 'c', 'a', 'd', 'c','c','c', 'nothing', 'c')"/>								
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-				
+						
 		<sequence editable_state="true" name="'swat_smg'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="2"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-	
-		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">						
+		
+		<sequence editable_state="true" name="'swat_ar'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="3"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-
-		<sequence editable_state="true" name="'swat_sniper'" triggable="true" once="true">						
+	
+		<sequence editable_state="true" name="'swat_shield'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="4"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
 		</sequence>
-		
+
 		<sequence editable_state="true" name="'taser_titan'" triggable="true" once="true">						
 			<set_variables var_gadgets_swat="5"/>
 			<run_sequence name="'gadget_meat_grinder'"/>		
@@ -101,14 +107,19 @@
 			<material_config name="'units/pd2_dlc_usm1/characters/ene_marshal_marksman_2/ene_marshal_marksman_2'"/>									
 			<object enabled="false" name="'g_swat_sniper'"/>									
 			<object enabled="false" name="'g_hat_lod3'"/>									
-			<object enabled="false" name="'g_swat_sniper_lod1'"/>												
+			<object enabled="false" name="'g_swat_sniper_lod1'"/>
+			<run_sequence filter="'check_swat_sniper'" name="'goggles_'..pick('d', 'd', 'd', 'd', 'a', 'nothing', 'c','c','c', 'nothing', 'd')"/>											
 			<object filter="'check_swat_sniper'" enabled="true" name="'g_swat_sniper_bellmead'"/>									
 			<object filter="'check_swat_sniper'" enabled="true" name="'g_swat_sniper_bellmead_lod1'"/>									
+			<object filter="'check_swat_sniper'" enabled="false" name="'g_swat_sniper'"/>									
+			<object filter="'check_swat_sniper'" enabled="false" name="'g_swat_sniper_lod1'"/>									
 		</sequence>
 				
 
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			<!-- GENERIC -->
+			<run_sequence  name="'acc_'..pick('gloves','gloves', 'gloves', 'nothing', 'nothing',)"/>
+			
 			<!-- rifleman segurity for bellmead :DDDDD -->
 			<run_sequence  filter="'check_swat_ar'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
 			<run_sequence  filter="'check_swat_ar'" name="'acc_'..pick('headsets','earpiece', 'jackshit', 'headsets', 'headsets',)"/>
@@ -166,7 +177,6 @@
 			<run_sequence  filter="'check_swat_sniper'" name="'acc_'..pick('earpiece','earpiece', 'jackshit', 'jackshit', 'earpiece')"/>
 			<run_sequence  filter="'check_swat_sniper'" name="'acc_'..pick('facemask','facemask', 'jackshit', 'facemask', 'facemask')"/>
 			<run_sequence  filter="'check_swat_sniper'" name="'acc_'..pick('scarf','scarf', 'jackshit', 'scarf', 'scarf')"/>
-			<run_sequence filter="'check_swat_sniper'" name="'goggles_'..pick('d', 'c', 'c', 'c', 'a', 'd', 'c')"/>					
 			<object  filter="'check_swat_sniper'"  enabled="true" name="'g_hat_lod1'"/>
 			<object  filter="'check_swat_sniper'"  enabled="true" name="'g_hat_lod2'"/>
 			<object  filter="'check_swat_sniper'"  enabled="true" name="'g_hat_lod3'"/>
@@ -193,6 +203,7 @@
 			<object enabled="false" name="'g_helmet_lod2'"/>						
 			<object enabled="false" name="'g_hat_lod1'"/>						
 			<object enabled="false" name="'g_hat_lod2'"/>						
+			<object enabled="false" name="'g_hat_lod3'"/>						
 			<object enabled="false" name="'g_helmet_lod3'"/>						
 			<object enabled="false" name="'g_helmet_lod4'"/>						
 			<object enabled="false" name="'g_helmet_lod5'"/>						
@@ -206,19 +217,26 @@
 			<object enabled="false" name="'g_helmet_lod13'"/>						
 	
 			<decal_mesh enabled="false" name="'c_glass_shield'" />	
+			
+			<graphic_group  filter="'check_helmet'"  enabled="true" name="'acc_helmet'"/>
+			<body 		    filter="'check_helmet'"  enabled="true" name="'acc_helmet'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
+			<decal_mesh 	filter="'check_helmet'"  enabled="true" name="'c_helmet_acc'" />										
 
-			<body 		    enabled="true" name="'acc_helmet'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
-			<graphic_group  enabled="true" name="'acc_helmet'"/>
-			<decal_mesh enabled="true" name="'c_helmet_acc'" />										
+			<body 		    filter="'check_helmet'" enabled="false" name="'acc_helmet'" start_time="30"/>	
+			<graphic_group  filter="'check_helmet'"  enabled="false" name="'acc_helmet'" start_time="30"/>
+			<decal_mesh	    filter="'check_helmet'"  enabled="false" name="'c_helmet_acc'" start_time="30"/>
 
+			<graphic_group  filter="'check_swat_sniper'"  enabled="true" name="'acc_helmet'"/>
 			<body 		    filter="'check_swat_sniper'"  enabled="true" name="'acc_hat'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
-			<decal_mesh filter="'check_swat_sniper'"  enabled="true" name="'c_cap_acc'" />										
-			<object  filter="'check_swat_sniper'"  enabled="true" name="'g_acc_cap'"/>
-			<object  filter="'check_swat_sniper'"  enabled="false" name="'g_acc_helmet'"/>
+			<decal_mesh 	filter="'check_swat_sniper'"  enabled="true" name="'c_hat_acc'" />										
+			<object  filter="'check_swat_sniper'"  		  enabled="false" name="'g_acc_helmet'"/>
+			<object  filter="'check_swat_sniper'"  		  enabled="true" name="'g_hat_acc'"/>
 
-			<body 		    filter="'check_swat_smg'" enabled="false" name="'acc_helmet'" />	
-			<decal_mesh	    filter="'check_swat_smg'" enabled="false" name="'c_helmet_acc'" />
-			<graphic_group	filter="'check_swat_smg'" enabled="false" name="'acc_helmet'" />
+			<body 		    filter="'check_swat_sniper'" enabled="false" name="'acc_hat'" start_time="30"/>	
+			<graphic_group  filter="'check_swat_sniper'"  enabled="false" name="'acc_helmet'" start_time="30"/>			
+			<object 		    filter="'check_swat_sniper'" enabled="false" name="'g_hat_acc'" start_time="30"/>	
+			<decal_mesh	    filter="'check_swat_sniper'"  enabled="false" name="'c_hat_acc'" start_time="30"/>
+
 			
 			<body enabled="false" name="'glass_shield'" />										
 			<body enabled="false" name="'glass_swat'" />		
@@ -227,7 +245,7 @@
 			<decal_mesh enabled="false" name="'c_mask'" />			
 			<decal_mesh enabled="false" name="'dm_helmet'" />			
 			
-									
+											
 			<body filter="'check_swat_ar'" enabled="false" name="'glass_visor'" />	
 			<run_sequence filter="'check_swat_ar'" name="'destroy_visor'"/>						
 			<run_sequence filter="'check_swat_sg'" name="'destroy_visor'"/>						
@@ -243,7 +261,6 @@
 			<object enabled="true" name="'g_helmet_lod3'"/>			
 			<object enabled="true" name="'g_helmet_lod4'"/>			
 			<object enabled="true" name="'g_helmet_lod5'"/>
-			<object enabled="true" name="'g_helmet_lod6'"/>
 			<body  	enabled="true" name="'glass_shield'" />		
 			<decal_mesh enabled="true" name="'c_glass_shield'" />				
 			<decal_mesh enabled="true" name="'dm_helmet'" />				
@@ -253,7 +270,6 @@
 		<sequence editable_state="true" name="'heavy_helmet_c'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_lod1'"/>
 			<object enabled="true" name="'g_helmet_lod2'"/>
-			<object enabled="true" name="'g_helmet_lod5'"/>
 			<object enabled="true" name="'g_helmet_lod9'"/>
 			<object enabled="true" name="'g_helmet_lod10'"/>
 			<body  	enabled="true" name="'sg_mask'" />		
@@ -265,7 +281,7 @@
 			<object enabled="false" name="'g_body_a'"/>
 			<object enabled="false" name="'g_body_a_lod1'"/>
 			<object enabled="true" name="'g_body_b'"/>
-			<object enabled="true" name="'g_body_b'"/>
+			<object enabled="true" name="'g_body_b_lod1'"/>
 		</sequence>
 		
 		<!-- titan taser -->
@@ -349,13 +365,18 @@
 		<sequence editable_state="true" name="'goggles_d'" once="true" triggable="true">
 			<object enabled="true" name="'g_shades'"/>
 			<object enabled="true" name="'g_shades_lod1'"/>
-			<object enabled="true" name="'g_shades_glass'"/>
+			<object enabled="true" name="'g_glass_shades'"/>
 			<set_variables var_goggles="3"/>										
 		</sequence>
 
 		<sequence editable_state="true" name="'acc_headsets'" once="true" triggable="true">
 			<object enabled="true" name="'g_helmet_lod7'"/>
 			<object enabled="true" name="'g_helmet_lod8'"/>
+		</sequence>
+
+		<sequence editable_state="true" name="'acc_gloves'" once="true" triggable="true">
+			<object enabled="true" name="'g_gloves'"/>
+			<object enabled="true" name="'g_gloves_lod1'"/>
 		</sequence>
 
 		<sequence editable_state="true" name="'acc_scarf'" once="true" triggable="true">
@@ -460,7 +481,6 @@
 			<body enabled="false" motion="'dynamic'" name="'rag_LeftArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_RightArm'"/>
 			<body enabled="false" motion="'dynamic'" name="'rag_Head'"/>
-			<material_config name="'units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_lightsout'"/>
 		</sequence>
 		<sequence editable_state="true" name="'switch_to_ragdoll'" triggable="true">
 			<body enabled="false" name="'body'"/>

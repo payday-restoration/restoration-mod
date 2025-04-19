@@ -49,6 +49,16 @@
 			<run_sequence name="'head_'..pick('exposed_weak', 'exposed_weak', 'exposed_weak',  'balaclava_a',  'balaclava_a', 'exposed_weak', 'balaclava_a', 'balaclava_a', 'balaclava_a')"/>
 		</sequence>
 		
+		<sequence editable_state="true" name="'mean_swat_marshals'" once="true" triggable="true">
+			<set_variables var_arms="1"/>		
+			<run_sequence name="'head_'..pick('exposed_meanheads', 'exposed_meanheads', 'exposed_meanheads',  'balaclava_a',  'exposed_meanheads', 'exposed_meanheads', 'exposed_meanheads', 'exposed_meanheads', 'exposed_meanheads')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'mean_swat_marshal_specials'" once="true" triggable="true">
+			<set_variables var_arms="1"/>		
+			<run_sequence name="'head_'..pick('balaclava_a', 'balaclava_a', 'balaclava_a',  'balaclava_a',  'exposed_meanheads', 'balaclava_a', 'balaclava_b', 'balaclava_a', 'balaclava_a')"/>
+		</sequence>
+		
 		<sequence editable_state="true" name="'grenfaceonly'" once="true" triggable="true">
 			<run_sequence name="'face_'..pick('a', 'b', 'c', 'd','e' )"/>
 		</sequence>

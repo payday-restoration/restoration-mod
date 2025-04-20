@@ -238,8 +238,6 @@
 
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-	<object				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new" force="true" />	
 	<unit				path="units/pd2_dlc_vip/characters/ene_phalanx_1_new/ene_phalanx_1_new_husk" force="true" />	
 
@@ -256,8 +254,10 @@
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" />
 
 	<!--Titan Rifle-->	
-	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>
+
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
 
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>

@@ -468,6 +468,7 @@ local enemy_variations = {
 	-- MARSHALS
 	["units/pd2_dlc_usm1/characters/ene_titan_rifle/ene_titan_rifle"] = "swat_ar_titan",
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper"] = "swat_sniper",
+	["units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted"] = "swat_sniper",
 	["units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"] = "swat_shield",
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "swat_sniper",
 	["units/pd2_dlc_usm1/characters/ene_titan_sniper_bell/ene_titan_sniper_bell"] = "swap_bellmead",

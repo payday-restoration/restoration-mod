@@ -417,6 +417,9 @@
 	<material_config	path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper" />
 	<material_config	path="units/pd2_dlc_usm1/characters/ene_titan_sniper/ene_titan_sniper_contour"  />
 	
+	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted" load="true"/>
+	<unit				path="units/pd2_dlc_usm1/characters/ene_titan_sniper_scripted/ene_titan_sniper_scripted_husk" load="true"/>		
+	
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_body_df" />
 	<texture			path="units/pd2_dlc_usm1/characters/shared_textures/ene_marshal_equipment_df" />
 

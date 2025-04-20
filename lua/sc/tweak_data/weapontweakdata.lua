@@ -20154,7 +20154,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stampede_ecs.timers.reload_exit_not_empty = 0.54
 				self.stampede_ecs.timers.reload_empty = 1.94
 				self.stampede_ecs.timers.reload_exit_empty = 1.12
-
 			end
 
 			if self.l403a1 then
@@ -21763,7 +21762,106 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malima.panic_suppression_chance = 0.05
 			end
 
-			if self.coslo723 then
+			if self.geasy9 then --BO6 Jackal PDW
+				self.geasy9.categories = { "smg" }
+				self.geasy9.recategorize = { "light_smg" }
+				self.geasy9.damage_type = "machine_gun"
+				self.geasy9.fire_mode_data.fire_rate = 0.08810
+				self.geasy9.CAN_TOGGLE_FIREMODE = true
+				self.geasy9.tactical_reload = 1
+				self.geasy9.CLIP_AMMO_MAX = 30
+				self.geasy9.AMMO_MAX = 75
+				self.geasy9.kick = self.stat_info.kick_tables.moderate_left_kick
+				self.geasy9.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_kick},
+					{4, self.stat_info.kick_tables.left_recoil},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{13, self.stat_info.kick_tables.moderate_right_kick},
+					{18, self.stat_info.kick_tables.moderate_kick},
+					{20, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.geasy9.supported = true
+				self.geasy9.ads_speed = 0.200
+				self.geasy9.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3000,
+					min_mult = 0.4166
+				}
+				self.geasy9.stats = {
+					damage = 24,
+					spread = 71,
+					recoil = 73,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 28,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.geasy9.stats_modifiers = nil
+				self.geasy9.panic_suppression_chance = 0.05
+				self.geasy9.reload_speed_multiplier = 1.2
+				self.geasy9.timers.reload_empty = 3.25
+				self.geasy9.timers.reload_exit_empty = 1.08
+				self.geasy9.timers.reload_not_empty = 2.22
+				self.geasy9.timers.reload_exit_not_empty = 0.72
+			end
+
+			if self.uncle12 then --BO6 ASG-89
+				self.uncle12.categories = { "shotgun" }
+				self.uncle12.recategorize = { "light_shot" }
+				self.uncle12.damage_type = "shotgun"
+				self.uncle12.damage_type_single_ray = "sniper"
+				self.uncle12.tactical_reload = 1
+				self.uncle12.fire_mode_data.fire_rate = 0.3
+				self.uncle12.CLIP_AMMO_MAX = 12
+				self.uncle12.AMMO_MAX = 60
+				self.uncle12.kick = self.stat_info.kick_tables.even_recoil
+				self.uncle12.kick_pattern = {
+					{0, self.stat_info.kick_tables.left_recoil},
+					{4, self.stat_info.kick_tables.even_recoil},
+					{6, self.stat_info.kick_tables.moderate_right_kick},
+					{8, self.stat_info.kick_tables.right_recoil}
+				}
+				self.uncle12.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
+				self.uncle12.FIRE_MODE = "auto"				
+				self.uncle12.CAN_TOGGLE_FIREMODE = true
+				self.uncle12.rays = 9
+				self.uncle12.supported = true
+				self.uncle12.ads_speed = 0.300
+				self.uncle12.damage_falloff = {
+					start_dist = 600,
+					end_dist = 3500,
+					min_mult = 0.15
+				}
+				self.uncle12.stats = {
+					damage = 120,
+					spread = 35,
+					recoil = 51,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 22,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.uncle12.stats_modifiers = nil
+				self.uncle12.sounds.use_fix = nil
+				self.uncle12.sounds.stop_fire = "saiga_stop"
+				self.uncle12.panic_suppression_chance = 0.05
+				self.uncle12.timers.reload_empty = 2.33
+				self.uncle12.timers.reload_exit_empty = 0.56
+				self.uncle12.timers.reload_not_empty = 1.6
+				self.uncle12.timers.reload_exit_not_empty = 1.23
+			end
+
+			if self.coslo723 then --BO6 XM4
 				self.coslo723.nato = true
 				self.coslo723.recategorize = { "light_ar" }
 				self.coslo723.damage_type = "assault_rifle"
@@ -21815,7 +21913,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.coslo723.timers.reload_exit_empty = 0.7
 			end
 
-			if self.rmary2 then --RJC9000's B06 Goblin Mk2
+			if self.rmary2 then --BO6 Goblin Mk2 (leaving this in its pre-rework state prior to the BO6 FAL/TR2 effectively taking its old stats while it got new stats to become the spammy semi-auto)
 				self.rmary2.categories = { 
 					"assault_rifle",
 					"dmr_h"
@@ -22410,8 +22508,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.vecho then
 				self.vecho.categories = {
-					"shotgun",
-					"shotgun_light"
+					"shotgun"
 				}
 				self.vecho.recategorize = { "light_shot" }
 				self.vecho.damage_type = "shotgun"
@@ -23481,7 +23578,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.modl.panic_suppression_chance = 0.05
 			end
 
-			if self.r31 then --BO6 R31/Tanto 22
+			if self.r31 then --BO6 Tanto 22
 				self.r31.categories = { "smg" }
 				self.r31.recategorize = { "light_smg" }
 				self.r31.damage_type = "machine_gun"
@@ -23897,7 +23994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 			
 			if self.haymaker then
-				self.haymaker.categories = { "shotgun", "shotgun_light" }
+				self.haymaker.categories = { "shotgun" }
 				self.haymaker.recategorize = { "light_shot" }
 				self.haymaker.damage_type = "shotgun"
 				self.haymaker.damage_type_single_ray = "sniper"

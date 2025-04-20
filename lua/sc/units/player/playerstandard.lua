@@ -4075,6 +4075,10 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		local reload_fix_offset = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset
 		local reload_fix_offset2 = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset2
 		local always_use_empty_reload = self._equipped_unit:base():weapon_tweak_data().always_use_empty_reload
+		if anim_multiplier then
+			anim_multiplier = anim_multiplier * ((self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_empty_anim_multiplier) or 1)
+			anim_multiplier = anim_multiplier * ((not self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_non_empty_anim_multiplier) or 1)
+		end
 		if reload_fix_offset then
 			self._equipped_unit:base():tweak_data_anim_stop("reload")
 		end
@@ -4189,6 +4193,10 @@ function PlayerStandard:_start_action_reload(t)
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1
+			if anim_multiplier then
+				anim_multiplier = anim_multiplier * ((weapon:clip_empty() and weapon._reload_empty_anim_multiplier) or 1)
+				anim_multiplier = anim_multiplier * ((not weapon:clip_empty() and weapon._reload_non_empty_anim_multiplier) or 1)
+			end
 			local reload_prefix = weapon:reload_prefix() or ""
 			local reload_name_id = anims_tweak.reload_name_id or weapon.name_id
 	
@@ -4216,6 +4224,10 @@ function PlayerStandard:_start_action_reload(t)
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1
+			if anim_multiplier then
+				anim_multiplier = anim_multiplier * ((weapon:clip_empty() and weapon._reload_empty_anim_multiplier) or 1)
+				anim_multiplier = anim_multiplier * ((not weapon:clip_empty() and weapon._reload_non_empty_anim_multiplier) or 1)
+			end
 			local empty_reload = weapon:clip_empty() and 1 or 0
 	
 			if weapon:use_shotgun_reload() then

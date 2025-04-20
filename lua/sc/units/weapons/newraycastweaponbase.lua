@@ -993,7 +993,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 		self._has_burst_fire = self._has_burst_fire or self:weapon_tweak_data().BURST_FIRE and self:weapon_tweak_data().BURST_FIRE ~= false
 		self._adaptive_burst_size = self._adaptive_burst_size or self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false --deprecated AFAIK; will look into cleaning this up later
-		--[[
 		local BURST_DATA = self._has_burst_fire and type(self:weapon_tweak_data().BURST_FIRE) == "table" and self:weapon_tweak_data().BURST_FIRE
 		if BURST_DATA then
 			self._burst_size = self._burst_size or BURST_DATA.count
@@ -1015,24 +1014,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._burst_default = self._burst_default or BURST_DATA.burst_default
 			self._lock_burst = self._lock_burst or BURST_DATA.lock
 			self._auto_burst = self._auto_burst or BURST_DATA.auto_burst
+			self._slamfire = self._slamfire or BURST_DATA.slamfire
 		end
-		--]]
-		self._burst_size = self._burst_size or self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
-		self._burst_fire_rate_multiplier = self._burst_fire_rate_multiplier or self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER
-		self._burst_delay_alt_calc = self._burst_delay_alt_calc or self:weapon_tweak_data().BURST_DELAY_ALT_CALC
-		self._burst_fire_recoil_multiplier = self._burst_fire_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER
-		self._burst_fire_last_recoil_multiplier = self._burst_fire_last_recoil_multiplier or self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER
-		self._burst_fire_spread_multiplier = self._burst_fire_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER
-		self._burst_fire_ads_spread_multiplier = self._burst_fire_ads_spread_multiplier or self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
-		self._burst_fire_range_multiplier = self._burst_fire_range_multiplier or self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
-		self._burst_ads_toggle = self._burst_ads_toggle or self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE --toggle to burst while aiming
-		self._burst_hipfire_toggle = self._burst_hipfire_toggle or self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE --toggle to burstfire while hipfiring
-		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
-		self._burst_delay = self._burst_delay or self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.1) or 0.12
-		self._burst_no_anim = self._burst_no_anim or self:weapon_tweak_data().BURST_FIRE_NO_ANIM
-		self._burst_default = self._burst_default or self:weapon_tweak_data().BURST_FIRE_DEFAULT
-		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST
-		self._auto_burst = self._auto_burst or self:weapon_tweak_data().AUTO_BURST
 
 		--LEAVE THESE OUTSIDE OF THE 'BURST_DATA' if statement
 		if self._burst_fire_rate_multiplier then
@@ -1721,7 +1704,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 	if self:in_burst_mode() or self._macno then
 		local no_burst_mult = multiplier
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
-		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) and not self:weapon_tweak_data().BURST_SLAM then
+		if self._macno or (self._burst_rounds_remaining and self._burst_rounds_remaining < 1) and not self._slamfire then
 			local fire_rate = self:weapon_tweak_data().fire_mode_data and self:weapon_tweak_data().fire_mode_data.fire_rate
 			local moremath = fire_rate / no_burst_mult
 			local delay = self._burst_delay - moremath

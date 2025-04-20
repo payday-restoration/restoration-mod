@@ -161,8 +161,8 @@
 		<!-- IMPORTANT: use inertia multipliers with care -->
 		<chassis body="body_chassis" mass="1500" center_of_mass_offset="0.0 -0.1 0.2" inertia_multiplier="1.8 1.1 2.0" downforce_strength="4.0" drag_strength="4.0"/>
 		<wheels>
-			<wheel spin_object="anim_tire_front_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="1.1" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
-			<wheel spin_object="anim_tire_front_left"   turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="1.1" is_steering="true" 	max_steering="45" 	braking_torque="3000" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_front_right" 	turn_object=""	radius="0.08" width="0.1" mass="50" 	transmission_ratio="1.1" is_steering="true" 	max_steering="45" 	braking_torque="1500" 	handbrake_torque="0" />
+			<wheel spin_object="anim_tire_front_left"   turn_object="" 	radius="0.08" width="0.1" mass="50" 	transmission_ratio="1.1" is_steering="true" 	max_steering="45" 	braking_torque="1500" 	handbrake_torque="0" />
 			<wheel spin_object="anim_tire_rear_right" 	turn_object=""	radius="0.08" width="0.1" mass="120" 	transmission_ratio="0.6" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="2000" />
 			<wheel spin_object="anim_tire_rear_left"   	turn_object="" 	radius="0.08" width="0.1" mass="120" 	transmission_ratio="0.6" is_steering="false" 	max_steering="0" 	braking_torque="3000" 	handbrake_torque="2000" />
 		</wheels>

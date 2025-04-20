@@ -18080,8 +18080,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak12.warsaw = true
 				self.ak12.AMMO_MAX = 150
 				self.ak12.CLIP_AMMO_MAX = 30
-				self.ak12.BURST_FIRE = 3
-				self.ak12.BURST_FIRE_RATE_MULTIPLIER = 1.6666666		
+				self.ak12.BURST_FIRE = {
+					count = 3,
+					rof_mult = 1.6666,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05
+				}		
 				self.ak12.ADAPTIVE_BURST_SIZE = false									
 				self.ak12.fire_mode_data.fire_rate = 0.1
 				self.ak12.kick = self.stat_info.kick_tables.moderate_right_kick
@@ -18233,7 +18237,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xeno.AMMO_MAX = 64
 				self.xeno.fire_mode_data.fire_rate = 0.06666666
 				self.xeno.CAN_TOGGLE_FIREMODE = false
-				self.xeno.BURST_FIRE = 4
+				self.xeno.BURST_FIRE = {
+					count = 4,
+					delay = 0.12,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05
+				}		
 				self.xeno.kick = self.stat_info.kick_tables.moderate_kick
 				self.xeno.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
@@ -19528,13 +19537,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rusglock.tactical_reload = 1
 				self.rusglock.FIRE_MODE = "single"
 				self.rusglock.CAN_TOGGLE_FIREMODE = false
-				self.rusglock.BURST_FIRE = 3
-				self.rusglock.BURST_DELAY = 0.130
-				self.rusglock.LOCK_BURST = true
-				self.rusglock.BURST_ONLY = true
-				self.rusglock.BURST_FIRE_RATE_MULTIPLIER = 1.515
-				self.rusglock.BURST_FIRE_RECOIL_MULTIPLIER = 0.8
-				self.rusglock.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.rusglock.BURST_FIRE = {
+					count = 3,
+					delay = 0.130,
+					rof_mult = 1.515,
+					lock = true,
+					recoil_mult = 0.8,
+					last_recoil_mult = 1.1,
+					burst_default = true
+				}
 				self.rusglock.CLIP_AMMO_MAX = 15
 				self.rusglock.AMMO_MAX = 75
 				self.rusglock.kick = self.stat_info.kick_tables.even_recoil
@@ -19579,13 +19590,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pkpsd9.tactical_reload = 1
 				self.pkpsd9.FIRE_MODE = "single"
 				self.pkpsd9.CAN_TOGGLE_FIREMODE = false
-				self.pkpsd9.BURST_FIRE = 3
-				self.pkpsd9.LOCK_BURST = true
-				self.pkpsd9.BURST_ONLY = true
-				self.pkpsd9.BURST_DELAY = 0.100
-				self.pkpsd9.BURST_FIRE_RATE_MULTIPLIER = 1.515
-				self.pkpsd9.BURST_FIRE_RECOIL_MULTIPLIER = 0.8
-				self.pkpsd9.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.pkpsd9.BURST_FIRE = {
+					count = 3,
+					delay = 0.1,
+					rof_mult = 1.515,
+					lock = true,
+					recoil_mult = 0.8,
+					last_recoil_mult = 1.1,
+					burst_default = true
+				}
 				self.pkpsd9.CLIP_AMMO_MAX = 15
 				self.pkpsd9.AMMO_MAX = 150
 				self.pkpsd9.kick = self.stat_info.kick_tables.even_recoil
@@ -21077,14 +21090,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.burst = nil
 				self.ksp45.fire_mode_data.burst_cooldown = nil
 				self.ksp45.BURST_COUNT = nil
-				self.ksp45.BURST_FIRE_DEFAULT = true
-				self.ksp45.BURST_ONLY = true
-				self.ksp45.LOCK_BURST = true
-				self.ksp45.BURST_FIRE = 3
-				self.ksp45.BURST_DELAY = 0.083
-				self.ksp45.BURST_FIRE_RATE_MULTIPLIER = 1
-				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.55
-				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self.ksp45.BURST_FIRE = {
+					count = 3,
+					delay = 0.083,
+					lock = true,
+					recoil_mult = 0.55,
+					last_recoil_mult = 1,
+					burst_default = true
+				}
 				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
 				self.ksp45.kick_pattern = {
 					{0, self.stat_info.kick_tables.left_recoil},
@@ -21189,11 +21202,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.t9fastburst.CAN_TOGGLE_FIREMODE = true
 				self.t9fastburst.FIRE_MODE = "auto"
 				self.t9fastburst.BURST_FIRE_DEFAULT = true
-				self.t9fastburst.BURST_FIRE = 3
-				self.t9fastburst.BURST_FIRE_RATE_MULTIPLIER = 1.9760869
-				self.t9fastburst.BURST_DELAY = 0.125
-				self.t9fastburst.BURST_FIRE_RECOIL_MULTIPLIER = 0.33
-				self.t9fastburst.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
+				self.t9fastburst.BURST_FIRE = {
+					count = 3,
+					burst_default = true,
+					delay = 0.125,
+					rof_mult = 1.9760869,
+					recoil_mult = 0.33,
+					last_recoil_mult = 1
+				}
 				self.t9fastburst.kick = {}
 				self.t9fastburst.kick = self.stat_info.kick_tables.moderate_kick
 				self.t9fastburst.kick_pattern = {
@@ -21379,13 +21395,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rc_auto9.recategorize = { "light_pis" }
 				self.rc_auto9.has_description = true
 				self.rc_auto9.damage_type = "pistol"
-				self.rc_auto9.BURST_FIRE = 3
-				self.rc_auto9.BURST_DELAY = 0.18
-				self.rc_auto9.BURST_FIRE_DEFAULT = true
-				self.rc_auto9.BURST_FIRE_RATE_MULTIPLIER = 1.4285714
-				self.rc_auto9.BURST_FIRE_RANGE_MULTIPLIER = 2
-				self.rc_auto9.BURST_FIRE_RECOIL_MULTIPLIER = 0.35
-				self.rc_auto9.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.1
+				self.rc_auto9.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					burst_default = true,
+					rof_mult = 1.4285714,
+					range_mult = 2,
+					recoil_mult = 0.35,
+					last_recoil_mult = 1.1
+				}
 				self.rc_auto9.ADAPTIVE_BURST_SIZE = false		
 				self.rc_auto9.CAN_TOGGLE_FIREMODE = false
 				self.rc_auto9.FIRE_MODE = "auto"	
@@ -22784,11 +22802,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br55.BURST_COUNT = nil
 				self.br55.burst = nil
 				self.br55.BURST_FIRE_DEFAULT = true
-				self.br55.BURST_FIRE = 3
-				self.br55.BURST_DELAY = 0.1
-				self.br55.BURST_FIRE_RATE_MULTIPLIER = 2.571428
-				self.br55.BURST_FIRE_RECOIL_MULTIPLIER = 0.333
-				self.br55.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+				self.br55.BURST_FIRE = {
+					count = 3,
+					delay = 0.1,
+					rof_mult = 2.571428,
+					recoil_mult = 0.333,
+					last_recoil_mult = 1.05
+				}
 				self.br55.lock_slide = true
 				self.br55.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
 				self.br55.descope_on_dmg = true
@@ -22948,11 +22968,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tkb0146.fire_rate_init_delay = 0
 				self.tkb0146.fire_rate_init_count = 2
 				self.tkb0146.fire_rate_init_mult = 0.7
-				self.tkb0146.BURST_FIRE = 3
-				self.tkb0146.BURST_DELAY = 0.18
-				self.tkb0146.BURST_FIRE_RATE_MULTIPLIER = 3.333333
-				self.tkb0146.BURST_FIRE_RECOIL_MULTIPLIER = 0.7
-				self.tkb0146.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.02
+				self.tkb0146.BURST_FIRE = {
+					count = 3,
+					delay = 0.18,
+					rof_mult = 3.33333,
+					recoil_mult = 0.7,
+					last_recoil_mult = 1.02
+				}
 				self.tkb0146.CAN_TOGGLE_FIREMODE = false
 				self.tkb0146.AMMO_MAX = 150
 				self.tkb0146.kick = self.stat_info.kick_tables.right_recoil
@@ -23711,13 +23733,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bp12.burst = nil
 				self.bp12.fire_mode_data.burst_cooldown = nil
 				self.bp12.BURST_COUNT = nil
-				self.bp12.BURST_FIRE_DEFAULT = true
-				self.bp12.BURST_ONLY = true
-				self.bp12.LOCK_BURST = true
-				self.bp12.BURST_FIRE = 3
-				self.bp12.BURST_DELAY = 0.5
-				self.bp12.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-				self.bp12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+				self.bp12.BURST_FIRE = {
+					count = 3,
+					delay = 0.5,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05,
+					lock = true,
+					burst_default = true
+				}
 				self.bp12.tactical_reload = 1
 				self.bp12.CLIP_AMMO_MAX = 12
 				self.bp12.fire_mode_data.fire_rate = 0.13333
@@ -24180,9 +24203,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.sms = 0.7
 				self.ar23.tactical_reload = 1
 				self.ar23.keep_ammo = 0
-				self.ar23.BURST_FIRE = 3
-				self.ar23.BURST_DELAY = 0.15
-				self.ar23.BURST_FIRE_RECOIL_MULTIPLIER = 0.9
+				self.ar23.BURST_FIRE = {
+					count = 3,
+					delay = 0.15,
+					recoil_mult = 0.9
+				}
 				self.ar23.CAN_TOGGLE_FIREMODE = true
 				self.ar23.FIRE_MODE = "auto"
 				self.ar23.kick = self.stat_info.kick_tables.even_recoil
@@ -24326,9 +24351,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.sms = 0.9
 				self.reprimand.tactical_reload = 1
 				self.reprimand.keep_ammo = 0
-				self.reprimand.BURST_FIRE = 3
-				self.reprimand.BURST_DELAY = 0.15
-				self.reprimand.BURST_FIRE_RECOIL_MULTIPLIER = 0.9
+				self.reprimand.BURST_FIRE = {
+					count = 3,
+					delay = 0.15,
+					recoil_mult = 0.9
+				}
 				self.reprimand.CAN_TOGGLE_FIREMODE = true
 				self.reprimand.FIRE_MODE = "auto"
 				self.reprimand.kick = self.stat_info.kick_tables.even_recoil
@@ -24487,12 +24514,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bulldog.CLIP_AMMO_MAX = 24
 				self.bulldog.AMMO_MAX = 96
 				self.bulldog.fire_mode_data.fire_rate = 0.1
-				self.bulldog.BURST_FIRE_ADS_TOGGLE = true
-				self.bulldog.BURST_FIRE = 3
-				self.bulldog.BURST_DELAY = 0.15
-				self.bulldog.BURST_FIRE_RATE_MULTIPLIER = 1.3333
-				self.bulldog.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
-				self.bulldog.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+				self.bulldog.BURST_FIRE = {
+					count = 3,
+					delay = 0.15,
+					rof_mult = 1.33333,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05,
+					ads_toggle = true
+				}
 				self.bulldog.CAN_TOGGLE_FIREMODE = false
 				self.bulldog.FIRE_MODE = "auto"
 				self.bulldog.kick = self.stat_info.kick_tables.moderate_kick
@@ -25309,12 +25338,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.xr2.fire_mode_data.fire_rate = 0.13333
 			self.xr2.FIRE_MODE = "single"
 			self.xr2.CAN_TOGGLE_FIREMODE = false
-			self.xr2.BURST_FIRE = 3
-			self.xr2.BURST_DELAY = 0.2
-			self.xr2.BURST_FIRE_RATE_MULTIPLIER = 1.888888
-			self.xr2.BURST_FIRE_RECOIL_MULTIPLIER = 0.7
+			self.xr2.BURST_FIRE = {
+				count = 3,
+				delay = 0.2,
+				rof_mult = 1.888888,
+				auto_burst = true,
+				recoil_mult = 0.7
+			}
 			self.xr2.BURST_TYPE = "autoburst"
-			self.xr2.AUTO_BURST = true
 			self.xr2.kick = self.stat_info.kick_tables.moderate_kick
 			self.xr2.kick_pattern = {
 				{0, self.stat_info.kick_tables.vertical_kick},

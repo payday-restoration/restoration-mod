@@ -1072,6 +1072,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._melee_speed_mult = 1
 		self._reload_anim_multiplier = 1
+		self._reload_empty_anim_multiplier = 1
+		self._reload_non_empty_anim_multiplier = 1
 
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
@@ -1183,8 +1185,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
 					self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
-					self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
-					self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+					self._alt_reload_exit_empty = stats.adj_timers.reload_exit_empty
+					self._alt_reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty
 				end
 			end	
 			
@@ -1332,6 +1334,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.reload_anim_mult then
 				self._reload_anim_multiplier = self._reload_anim_multiplier * stats.reload_anim_mult
+			end
+			if stats.reload_empty_anim_mult then
+				self._reload_empty_anim_multiplier = self._reload_empty_anim_multiplier * stats.reload_empty_anim_mult
+			end
+			if stats.reload_non_empty_anim_mult then
+				self._reload_non_empty_anim_multiplier = self._reload_non_empty_anim_multiplier * stats.reload_non_empty_anim_mult
 			end
 			if stats.movement_speed_add then
 				self._movement_speed_add = self._movement_speed_add + stats.movement_speed_add
@@ -2141,17 +2149,21 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	return math.lerp(damage, minimum_damage * damage, math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start)))
 end
 
+function NewRaycastWeaponBase:give_reload_t(not_empty)
+	local time = (not_empty and self:weapon_tweak_data().timers.reload_not_empty or 2.2) or (self:weapon_tweak_data().timers.reload_empty or 2.6)
+	return time
+end
 
 function NewRaycastWeaponBase:reload_exit_expire_t()
 	if not self._use_shotgun_reload then
-		return self:weapon_tweak_data().timers.reload_exit_empty or nil
+		return self._alt_reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty or 0
 	end
 	return self:weapon_tweak_data().timers.shotgun_reload_exit_empty or 0.7
 end
 
 function NewRaycastWeaponBase:reload_not_empty_exit_expire_t()
 	if not self._use_shotgun_reload then
-		return self:weapon_tweak_data().timers.reload_exit_not_empty or nil
+		return self._alt_reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty or 0
 	end
 	return self:weapon_tweak_data().timers.shotgun_reload_exit_not_empty or 0.3
 end

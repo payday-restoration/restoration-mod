@@ -950,9 +950,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.custom_voicework = "tsniper"
 	end
 	if self:get_ai_group_type() == "murkywater" or self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
-	self.heavy_swat_sniper.yellow_blood = false
+		self.heavy_swat_sniper.yellow_blood = false
 	else
-	self.heavy_swat_sniper.yellow_blood = true
+		self.heavy_swat_sniper.yellow_blood = true
 	end
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.no_asu = true
@@ -3700,7 +3700,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.is_special = true	
 	self.taser_titan.no_asu = true
 	self.taser_titan.no_xmas_hat = true
-	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" then
+	if self:get_ai_group_type() == "russia" or self:get_ai_group_type() == "federales" or self:get_ai_group_type() == "fbi" then
 		self.taser_titan.yellow_blood = false
 	else
 		self.taser_titan.yellow_blood = true

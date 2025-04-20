@@ -9100,7 +9100,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.scorpion.stats_modifiers = nil
-						self.scorpion.timers.reload_exit_empty = 0.6
+						self.scorpion.timers.reload_not_empty = 1.9
+						self.scorpion.timers.reload_exit_empty = 0.8
 						self.scorpion.timers.reload_exit_not_empty = 0.65	
 						self.scorpion.panic_suppression_chance = 0.05
 					--Akimbo
@@ -11323,8 +11324,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.hajk.stats_modifiers = nil
 						self.hajk.timers.reload_not_empty = 1.9 
-						self.hajk.timers.reload_empty = 3.4	
-						self.hajk.timers.reload_exit_empty = 0.35
+						self.hajk.timers.reload_empty = 3.3
+						self.hajk.timers.reload_exit_empty = 0.55
 						self.hajk.timers.reload_exit_not_empty = 0.65
 
 			--[[     HEAVY ARs     ]]
@@ -12498,8 +12499,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.awp.armor_piercing_chance = 1
 						self.awp.stats_modifiers = nil
 						self.awp.panic_suppression_chance = 0.05
-						self.awp.timers.reload_empty = 3.5
-						self.awp.timers.reload_exit_empty = 0.5
+						self.awp.timers.reload_empty = 3.7
+						self.awp.timers.reload_exit_empty = 0.3
 						self.awp.timers.reload_not_empty = 2.4
 						self.awp.timers.reload_exit_not_empty = 1.1
 
@@ -14226,8 +14227,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.panic_suppression_chance = 0.05
 						self.b682.stats_modifiers = {damage = 1}
 						self.b682.reload_speed_multiplier = 1.02
+						self.b682.timers.reload_not_empty = 2.7
 						self.b682.timers.reload_exit_empty = 0.5
-						self.b682.timers.reload_exit_not_empty = 0.9
+						self.b682.timers.reload_exit_not_empty = 0.8
 
 					--Breaker 12g (Model 1887)
 						self.boot.desc_id = "bm_menu_sc_boot_desc"

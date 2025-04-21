@@ -27343,14 +27343,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_shot_uncle12_barrel_mix.stats.concealment = -2
 				self.parts.wpn_fps_shot_uncle12_barrel_mix.stats.recoil = 2
 				self.parts.wpn_fps_shot_uncle12_barrel_mix.custom_stats = deep_clone(barrels.long_b1_stats)
+					--Dragons Breath
+					self.parts.wpn_fps_shot_uncle12_barrel_db.supported = true
+					self.parts.wpn_fps_shot_uncle12_barrel_db.stats = deep_clone(barrels.long_b1_stats)
+					self.parts.wpn_fps_shot_uncle12_barrel_db.stats.concealment = -2
+					self.parts.wpn_fps_shot_uncle12_barrel_db.stats.recoil = 2
+					self.parts.wpn_fps_shot_uncle12_barrel_db.custom_stats = deep_clone(barrels.long_b1_stats)
 				--Long
 				self.parts.wpn_fps_shot_uncle12_barrel_range.supported = true
 				self.parts.wpn_fps_shot_uncle12_barrel_range.stats = deep_clone(barrels.long_b3_stats)
 				self.parts.wpn_fps_shot_uncle12_barrel_range.custom_stats = deep_clone(barrels.long_b3_stats)
-				--Dragons Breath
-				self.parts.wpn_fps_shot_uncle12_barrel_db.supported = true
-				self.parts.wpn_fps_shot_uncle12_barrel_db.stats = deep_clone(barrels.long_b3_stats)
-				self.parts.wpn_fps_shot_uncle12_barrel_db.custom_stats = deep_clone(barrels.long_b3_stats)
 			--GRIPS
 				--Quickdraw
 				self.parts.wpn_fps_shot_uncle12_grip_quickdraw.supported = true
@@ -27470,6 +27472,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					falloff_end_mult = 0.71428
 				},
 				internal_part = true,
+				forbids = {
+					"wpn_fps_shot_uncle12_barrel_hical2"
+				},
 				dlc = "sc"
 			}
 
@@ -38909,6 +38914,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					reload = 3,
 					spread = -1
 				}
+				self.parts.wpn_fps_smg_r31_m_fastreload.custom_stats = {
+					reload_non_empty_anim_mult = 0.77,
+					adj_timers = {
+						reload_exit_not_empty = 0.98
+					}
+				}
 				--FM
 				self.parts.wpn_fps_smg_r31_m_fastreload2.supported = true
 				self.parts.wpn_fps_smg_r31_m_fastreload2.stats = {
@@ -38918,7 +38929,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = -10
 				}
 				self.parts.wpn_fps_smg_r31_m_fastreload2.custom_stats = { 
-					ads_speed_mult = 0.95
+					ads_speed_mult = 0.95,
+					adj_timers = {
+						reload_exit_not_empty = 0.85
+					}
 				}
 				--EX 1
 				self.parts.wpn_fps_smg_r31_m_extclip.supported = true
@@ -38940,7 +38954,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					extra_ammo = 20
 				}
 				self.parts.wpn_fps_smg_r31_m_extclip2.custom_stats = { 
-					ads_speed_mult = 1.075
+					ads_speed_mult = 1.075,
+					reload_non_empty_anim_mult = 0.88,
+					adj_timers = {
+						reload_exit_not_empty = 0.83
+					}
 				}
 		end
 

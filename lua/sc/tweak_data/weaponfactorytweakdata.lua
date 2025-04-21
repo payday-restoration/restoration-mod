@@ -17541,9 +17541,6 @@ end)
 					
 					table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_upg_serbu_legend")
 					table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
-					if self.parts.wpn_fps_upg_s_anton then -- fix for carl's Destiny legendary skin
-						table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_upg_s_anton")
-					end
 					
 					self.wpn_fps_shot_serbu_npc.uses_parts = deep_clone(self.wpn_fps_shot_serbu.uses_parts)
 				end)
@@ -25115,82 +25112,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 3,
 					zoom = 5
 				}		
-			end		
-			
-			if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint CompM4s Sight
-				self.parts.wpn_fps_upg_o_compm4s.supported = true		
-				self.parts.wpn_fps_upg_o_compm4s.stats = {
-					value = 3,
-					zoom = 5
-				}		
-			end
-			
-			if self.parts.wpn_fps_upg_o_coyote then
-				self.parts.wpn_fps_upg_o_coyote.supported = true		
-				self.parts.wpn_fps_upg_o_coyote.stats = {
-					value = 3,
-					zoom = 5
-				}		
-			end
-			
-			if self.parts.wpn_fps_upg_o_visionking then
-				self.parts.wpn_fps_upg_o_visionking.supported = true	
-				self.parts.wpn_fps_upg_o_visionking.desc_id = "bm_wp_upg_o_4"
-				self.parts.wpn_fps_upg_o_visionking.perks = {"scope"}	
-				self.parts.wpn_fps_upg_o_visionking.stats = {
-					value = 3,
-					zoom = 30
-				}	
-			end	
-
-			if self.parts.wpn_fps_upg_o_st10 then
-				self.parts.wpn_fps_upg_o_st10.supported = true	
-				self.parts.wpn_fps_upg_o_st10.desc_id = "bm_wp_upg_o_5"
-				self.parts.wpn_fps_upg_o_st10.perks = {"scope"}	
-				self.parts.wpn_fps_upg_o_st10.stats = {
-					value = 8,
-					zoom = 40
-				}	
-			end				
-			
-			if self.parts.wpn_fps_upg_o_romeo3 then
-				self.parts.wpn_fps_upg_o_romeo3.supported = true		
-				self.parts.wpn_fps_upg_o_romeo3.desc_id = "bm_wp_upg_o_1_1"
-				self.parts.wpn_fps_upg_o_romeo3.stats = {
-					value = 3,
-					zoom = 1
-				}		
-			end	
-			
-			if self.parts.wpn_fps_upg_fl_anpeq2 then
-				self.parts.wpn_fps_upg_fl_anpeq2.stats.recoil = 0
-				self.parts.wpn_fps_upg_fl_m600p.stats.recoil = 0
-				self.parts.wpn_fps_upg_fl_pis_unimax_inforce.stats.concealment = 0
-				self.parts.wpn_fps_upg_fl_unimax_inforce.stats.concealment = 0
-			end
-	
-			if self.parts.wpn_fps_upg_xm8_barrel_long then
-				self.parts.wpn_fps_upg_xm8_barrel_long.supported = true
-				self.parts.wpn_fps_upg_xm8_barrel_long.stats = deep_clone(barrels.long_b2_stats)
-				self.parts.wpn_fps_upg_xm8_barrel_long.custom_stats = deep_clone(barrels.long_b2_stats)
-
-				self.parts.wpn_fps_upg_xm8_handguard_compact.supported = true
-				self.parts.wpn_fps_upg_xm8_handguard_compact.stats = deep_clone(barrels.short_b2_stats)
-				self.parts.wpn_fps_upg_xm8_handguard_compact.custom_stats = deep_clone(barrels.short_b2_stats)
-					
-				self.parts.wpn_fps_ass_xm8_insight_ismv.supported = false
-					
-				self.parts.wpn_fps_upg_xm8_cmag.supported = true
-				self.parts.wpn_fps_upg_xm8_cmag.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
-				self.parts.wpn_fps_upg_xm8_cmag.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
-					
-				self.parts.wpn_fps_upg_xm8_mag_magpul.supported = true
-				self.parts.wpn_fps_upg_xm8_mag_magpul.stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
-				self.parts.wpn_fps_upg_xm8_mag_magpul.custom_stats = nil
-					
-				self.parts.wpn_fps_upg_xm8_stock_collapsed.supported = true
-				self.parts.wpn_fps_upg_xm8_stock_collapsed.stats = deep_clone(stocks.adj_to_fold_stats)
-				self.parts.wpn_fps_upg_xm8_stock_collapsed.custom_stats = deep_clone(stocks.adj_to_fold_stats)	
 			end				
 		
 			if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
@@ -35967,11 +35888,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 			end
 
-		if self.parts.wpn_fps_pis_1911_g_laser then -- Crosskill Laser Grip
-			self.parts.wpn_fps_pis_1911_g_laser.supported = true
-			self.parts.wpn_fps_pis_1911_g_laser.stats = {}
-			end
-
 		if self.wpn_fps_pis_hpb then --Gambyt's Browning HP
 			self.parts.wpn_fps_pis_hpb_g_white.supported = true
 			self.parts.wpn_fps_pis_hpb_g_white.stats = deep_clone(grips.acc_1)
@@ -36616,16 +36532,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						end
 					end
 				end
-			end	
-		
-			if self.parts.wpn_fps_smg_polymer_stock_prototype then
-				self.parts.wpn_fps_smg_polymer_stock_prototype.supported = true
-				self.parts.wpn_fps_smg_polymer_stock_prototype.stats = deep_clone(stocks.folder_acc_stats)
-			end
-			
-			if self.parts.wpn_fps_ass_m16_fg_lsw then
-				self.parts.wpn_fps_ass_m16_fg_lsw.supported = true
-				self.parts.wpn_fps_ass_m16_fg_lsw.stats = { spread = -2, recoil = 6, concealment = -1 }
 			end		
 
 	--[[ CARL'S MODS ]]

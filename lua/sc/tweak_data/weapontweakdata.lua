@@ -21803,7 +21803,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.geasy9.stats_modifiers = nil
 				self.geasy9.panic_suppression_chance = 0.05
-				self.geasy9.reload_speed_multiplier = 1.2
+				self.geasy9.reload_speed_multiplier = 1.4
 				self.geasy9.timers.reload_empty = 3.25
 				self.geasy9.timers.reload_exit_empty = 1.08
 				self.geasy9.timers.reload_not_empty = 2.22

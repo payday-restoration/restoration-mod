@@ -9101,8 +9101,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.scorpion.stats_modifiers = nil
 						self.scorpion.timers.reload_not_empty = 1.9
-						self.scorpion.timers.reload_exit_empty = 0.8
-						self.scorpion.timers.reload_exit_not_empty = 0.65	
+						self.scorpion.timers.reload_exit_not_empty = 0.65
+						self.scorpion.timers.reload_exit_empty = 0.7
 						self.scorpion.panic_suppression_chance = 0.05
 					--Akimbo
 						self.x_scorpion.CLIP_AMMO_MAX = 40
@@ -21760,6 +21760,60 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.malima.timers.reload_not_empty = 2
 				self.malima.timers.reload_exit_not_empty = 0.6
 				self.malima.panic_suppression_chance = 0.05
+			end
+
+			if self.hk_g56 then
+				self.hk_g56.categories = { "assault_rifle" }
+				self.hk_g56.recategorize = { "heavy_ar" }
+				self.hk_g56.damage_type = "assault_rifle"
+				self.hk_g56.tactical_reload = 1
+				self.hk_g56.CLIP_AMMO_MAX = 25
+				self.hk_g56.AMMO_MAX = 120
+				self.hk_g56.FIRE_MODE = "auto"
+				self.hk_g56.fire_mode_data = {}
+				self.hk_g56.fire_mode_data.fire_rate = 0.06
+				self.hk_g56.CAN_TOGGLE_FIREMODE = true
+				self.hk_g56.muzzleflash = "effects/payday2/particles/weapons/762_auto_fps"
+				self.hk_g56.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
+				self.hk_g56.kick = {}
+				self.hk_g56.kick = self.stat_info.kick_tables.right_recoil
+				self.hk_g56.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{6, self.stat_info.kick_tables.right_recoil},
+					{11, self.stat_info.kick_tables.left_recoil},
+					{14, self.stat_info.kick_tables.even_recoil},
+					{21, self.stat_info.kick_tables.right_recoil}
+				}
+				self.hk_g56.supported = true
+				self.hk_g56.ads_speed = 0.300
+				self.hk_g56.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 5000,
+					min_mult = 0.6
+				}	
+				self.hk_g56.stats = {
+					damage = 30,
+					spread = 73,
+					recoil = 61,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 23,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.hk_g56.stats_modifiers = nil
+				self.hk_g56.panic_suppression_chance = 0.05
+				self.hk_g56.use_hipfire_stance = "akm"
+				self.hk_g56.lock_slide = true
+				self.hk_g56.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.hk_g56.timers.reload_empty = 3.11
+				self.hk_g56.timers.reload_exit_empty = 0.85
+				self.hk_g56.timers.reload_not_empty = 2.56
+				self.hk_g56.timers.reload_exit_not_empty = 0.78
 			end
 
 			if self.geasy9 then --BO6 Jackal PDW

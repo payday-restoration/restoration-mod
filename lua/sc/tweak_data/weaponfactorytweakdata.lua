@@ -19375,6 +19375,10 @@ end)
 						rotation = Rotation(-0.01, -0.12, 0),
 						scale = 0.93
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_hk_g56 = {
+						translation = Vector3(-4.9, 2.5, -2.631),
+						rotation = Rotation(-0.13, -0.01, -10.6)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
 						translation = Vector3(-0.008, 2.6, -0.12)
@@ -27022,6 +27026,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 	--[[ RJC9000'S MODS ]]
+
 		if self.parts.wpn_fps_bow_stampede_ecs_bolt then
 			self.parts.wpn_fps_bow_stampede_ecs_ammo_poison.no_cull = true
 			self.parts.wpn_fps_bow_stampede_ecs_ammo_poison.stats = {
@@ -27046,6 +27051,91 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
 
+		end
+
+		if self.parts.wpn_fps_ass_hk_g56_vertical_grip_no then
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip_no.pcs = nil
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip_no.stats = { value = 0 }
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip_no.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip.pcs = nil
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip.stats = { value = 0 }
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_ass_hk_g56_barrel.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_stock.stats = { value = 0 }
+			self.parts.wpn_fps_ass_hk_g56_stock.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_flash_hider.stats = { value = 0 }
+			self.parts.wpn_fps_ass_hk_g56_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_flash_hider.perks = nil
+			self.parts.wpn_fps_ass_hk_g56_handguard.adds = nil
+			self.parts.wpn_fps_ass_hk_g56_irons_rear.stance_mod = {
+				wpn_fps_ass_hk_g56 = { 
+					translation = Vector3(-4.912, -8, -2.538),
+					rotation = Rotation(-0.15, 0.3, -10.5)
+				}
+			}
+			self.parts.wpn_fps_ass_hk_g56_vertical_grip_no.stance_mod = {
+				wpn_fps_ass_hk_g56 = { translation = Vector3(0.013, 0, -0.01) }
+			}
+
+			--BIPOD
+			self.parts.wpn_fps_ass_hk_g56_bipod.supported = true
+			self.parts.wpn_fps_ass_hk_g56_bipod.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_bipod.stats = {
+				value = 5, 
+				concealment = -3,
+				recoil = 6
+			}
+			self.parts.wpn_fps_ass_hk_g56_bipod_folded.supported = true
+			self.parts.wpn_fps_ass_hk_g56_bipod_folded.custom_stats = nil
+			self.parts.wpn_fps_ass_hk_g56_bipod_folded.stats = {
+				value = 5, 
+				concealment = -1,
+				recoil = 2
+			}
+			--BARRELS
+			self.parts.wpn_fps_ass_hk_g56_barrel_short.supported = true
+			self.parts.wpn_fps_ass_hk_g56_barrel_short.stats = deep_clone(barrels.short_b2_stats)
+			self.parts.wpn_fps_ass_hk_g56_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+			self.parts.wpn_fps_ass_hk_g56_barrel_long.supported = true
+			self.parts.wpn_fps_ass_hk_g56_barrel_long.stats = deep_clone(barrels.long_b1_stats)
+			self.parts.wpn_fps_ass_hk_g56_barrel_long.custom_stats = deep_clone(barrels.long_b1_stats)
+			--HANDGUARDS
+			self.parts.wpn_fps_ass_hk_g56_handguard_short.supported = true
+			self.parts.wpn_fps_ass_hk_g56_handguard_short.stats = {
+				value = 4,
+				concealment = 1,
+				recoil = -2
+			}
+			--STOCKS
+			self.parts.wpn_fps_ass_hk_g56_stock_long.supported = true 
+			self.parts.wpn_fps_ass_hk_g56_stock_long.stats = deep_clone(stocks.unfold_folded_stats)
+			self.parts.wpn_fps_ass_hk_g56_stock_long.custom_stats = deep_clone(stocks.unfold_folded_stats)
+			self.parts.wpn_fps_ass_hk_g56_stock_short.supported = true 
+			self.parts.wpn_fps_ass_hk_g56_stock_short.stats = deep_clone(stocks.fold_folder_stats)
+			self.parts.wpn_fps_ass_hk_g56_stock_short.custom_stats = deep_clone(stocks.fold_folder_stats)
+			--MAGS
+			--[[
+			self.parts.wpn_fps_ass_hk_g56_magazine_drum.pcs = {}
+			self.parts.wpn_fps_ass_hk_g56_magazine_drum.supported = true
+			self.parts.wpn_fps_ass_hk_g56_magazine_drum.stats = {
+				value = 8,
+				extra_ammo = 25,
+				concealment = -5,
+				reload = -7
+			}
+			self.parts.wpn_fps_ass_hk_g56_magazine_drum.custom_stats = { ads_speed_mult = 1.125 }
+			]]
+
+			self.wpn_fps_ass_hk_g56.override = self.wpn_fps_ass_hk_g56.override or {}
+			self.wpn_fps_ass_hk_g56.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 4, concealment = -2 } }
+			self.wpn_fps_ass_hk_g56.override.wpn_fps_upg_vg_ass_smg_stubby = { stats = { recoil = 2, concealment = -1 } }
+
+			table.insert(self.wpn_fps_ass_hk_g56.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+
+			self.wpn_fps_ass_hk_g56_npc.override = deep_clone(self.wpn_fps_ass_hk_g56.override)
+			self.wpn_fps_ass_hk_g56_npc.uses_parts = deep_clone(self.wpn_fps_ass_hk_g56.uses_parts)
 		end
 
 		if self.parts.wpn_fps_smg_geasy9_magazine then

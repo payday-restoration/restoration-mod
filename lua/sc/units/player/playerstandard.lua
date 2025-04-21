@@ -2302,14 +2302,15 @@ function PlayerStandard:_update_melee_timers(t, input)
 						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
 						local name_key = hit_unit:name():key()
+						local unit_damage = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead 
 						if unique_hits[u_key] then
 							use_cleave = nil
-							if not is_enemy and body_dmg_ext and name_key ~= "e050221f8707ded8" then
+							if not is_enemy and unit_damage and body_dmg_ext and name_key ~= "e050221f8707ded8" then
 								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
 							end
 						else
 							unique_hits[u_key] = hit_unit
-							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
+							use_cleave = is_enemy and unit_damage and true
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
 						end
 					end

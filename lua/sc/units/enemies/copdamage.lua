@@ -3213,6 +3213,12 @@ function CopDamage:damage_dot(attack_data)
 	return result
 end
 
+Hooks:PreHook(CopDamage, "_chk_unique_death_requirements", "resmod_spoof_fire_bullet", function(self, damage_info, died)
+	if damage_info and damage_info.variant and damage_info.variant == "fire_bullet" then
+		damage_info.variant = "fire"
+	end
+end)
+
 function CopDamage:_on_damage_received(damage_info)
 	self:chk_health_sequences()
 	self:_call_listeners(damage_info)
@@ -3224,11 +3230,7 @@ function CopDamage:_on_damage_received(damage_info)
 	end
 	
 	if not self._dead then
-		local attack_data = damage_info
-		if attack_data.variant and attack_data.variant == "fire_bullet" then
-			attack_data.variant = "fire"
-		end
-		self:_chk_unique_death_requirements(attack_data, false)
+		self:_chk_unique_death_requirements(damage_info, false)
 	end	
 
 	local attacker_unit = damage_info and damage_info.attacker_unit

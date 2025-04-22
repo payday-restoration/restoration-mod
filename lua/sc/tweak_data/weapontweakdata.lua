@@ -20116,7 +20116,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 		--[[     RJC9000'S MODS     ]]--
-			
+
+			if self.tribune32 then
+				self.tribune32.categories = { "smg" }
+				self.tribune32.recategorize = { "light_smg" }
+				self.tribune32.damage_type = "machine_gun"
+				self.tribune32.fire_mode_data.fire_rate = 0.06667
+				self.tribune32.CAN_TOGGLE_FIREMODE = true
+				self.tribune32.tactical_reload = 1
+				self.tribune32.CLIP_AMMO_MAX = 33
+				self.tribune32.AMMO_MAX = 90
+				self.tribune32.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.tribune32.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{19, self.stat_info.kick_tables.left_recoil}
+				}
+				self.tribune32.supported = true
+				self.tribune32.ads_speed = 0.200
+				self.tribune32.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3000,
+					min_mult = 0.3
+				}
+				self.tribune32.stats = {
+					damage = 20,
+					spread = 61,
+					recoil = 79,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 29,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.tribune32.stats_modifiers = nil
+				self.tribune32.panic_suppression_chance = 0.05
+				self.tribune32.timers.reload_not_empty = 1.43
+				self.tribune32.timers.reload_exit_not_empty = 0.6
+				self.tribune32.timers.reload_empty = 1.9
+				self.tribune32.timers.reload_exit_empty = 0.45
+			end
+
 			if self.stampede_ecs then
 				self.stampede_ecs.recategorize = { "wpn_special" }
 				self.stampede_ecs.has_description = false

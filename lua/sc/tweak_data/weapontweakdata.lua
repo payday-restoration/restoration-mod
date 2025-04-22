@@ -5690,7 +5690,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				--PRIMARIES
 
 					--CZ ACCUSHADOW BUT SOMEHOW FULL AUTO
-						--self.czech.use_data.selection_index = 2
+						self.czech.use_data.selection_index = 2 --The G18C exists, use that if you want lead-pisser pistol secondary
 						self.czech.has_description = true
 						self.czech.desc_id = "bm_czech_sc_desc"				
 						self.czech.CLIP_AMMO_MAX = 18
@@ -5726,53 +5726,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.czech.stats_modifiers = nil
 						self.czech.panic_suppression_chance = 0.05
-						self.czech.timers = {
-							reload_not_empty = 1.47,
-							reload_empty = 2.12,
-							unequip = 0.5,
-							equip = 0.5,
-							reload_exit_empty = 0.9,
-							reload_exit_not_empty = 0.65
-						}
-					--Akimbo
-						--self.x_czech.use_data.selection_index = 5
-						self.x_czech.has_description = true
-						self.x_czech.desc_id = "bm_x_czech_sc_desc"
-						self.x_czech.CLIP_AMMO_MAX = 36
-						self.x_czech.AMMO_MAX = 180
-						self.x_czech.fire_mode_data.fire_rate = 0.06
-						self.x_czech.kick = self.stat_info.kick_tables.moderate_kick
-						self.x_czech.kick_pattern = {
-							{0, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.left_kick},
-							{8, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.right_recoil}
-						}
-						self.x_czech.supported = true
-						self.x_czech.ads_speed = 0.140
-						self.x_czech.damage_falloff = {
-							start_dist = 1700,
-							end_dist = 3300,
-							min_mult = 0.3
-						}
-						self.x_czech.stats = {
-							damage = 20,
-							spread = 49,
-							recoil = 69,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 29,
-							suppression = 12,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.x_czech.stats_modifiers = nil
-						self.x_czech.panic_suppression_chance = 0.05
-						self.x_czech.timers.reload_exit_empty = 0.55
-						self.x_czech.timers.reload_exit_not_empty = 0.65
+						self.czech.timers.reload_empty = 2.12
+						self.czech.timers.reload_exit_empty = 0.9
+						self.czech.timers.reload_not_empty = 1.47
+						self.czech.timers.reload_exit_not_empty = 0.65
 
 					--Wasp-DS (FMG-9)
 						self.fmg9.has_description = true
@@ -5791,14 +5748,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{19, self.stat_info.kick_tables.moderate_left_kick}
 						}
 						self.fmg9.supported = true
-						self.fmg9.timers = {
-							reload_not_empty = 1.87,
-							reload_empty = 3.62,
-							unequip = 1.7,
-							equip = 1.4,
-							reload_exit_empty = 0.65,
-							reload_exit_not_empty = 0.8
-						}	
 						self.fmg9.ads_speed = 0.180
 						self.fmg9.damage_falloff = {
 							start_dist = 1800,
@@ -5822,6 +5771,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fmg9.stats_modifiers = nil
 						self.fmg9.panic_suppression_chance = 0.05	
 						self.fmg9.swap_speed_multiplier = 0.45
+						self.fmg9.timers = {
+							reload_not_empty = 1.87,
+							reload_empty = 3.62,
+							unequip = 1.7,
+							equip = 1.4,
+							reload_exit_empty = 0.65,
+							reload_exit_not_empty = 0.8
+						}	
 						self.fmg9.use_unequip_swap = true
 
 					--Beretta Auto (93R)
@@ -5878,14 +5835,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.beer.stats_modifiers = nil
 						self.beer.panic_suppression_chance = 0.05
-						self.beer.timers = {
-							reload_not_empty = 1.47,
-							reload_empty = 2.12,
-							unequip = 0.5,
-							equip = 0.5,
-							reload_exit_empty = 0.9,
-							reload_exit_not_empty = 0.65
-						}
+						self.beer.timers.reload_not_empty = 1.47
+						self.beer.timers.reload_empty = 2.12
+						self.beer.timers.reload_exit_empty = 0.9
+						self.beer.timers.reload_exit_not_empty = 0.65
 
 				--SECONDARIES
 
@@ -20160,6 +20113,46 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tribune32.timers.reload_exit_not_empty = 0.6
 				self.tribune32.timers.reload_empty = 1.9
 				self.tribune32.timers.reload_exit_empty = 0.45
+				--Akimbo
+				self.x_tribune32.categories = { "akimbo", "smg" }
+				self.x_tribune32.recategorize = { "light_smg" }
+				self.x_tribune32.damage_type = "machine_gun"
+				self.x_tribune32.fire_mode_data.fire_rate = 0.06667
+				self.x_tribune32.CAN_TOGGLE_FIREMODE = true
+				self.x_tribune32.tactical_reload = 2
+				self.x_tribune32.CLIP_AMMO_MAX = 66
+				self.x_tribune32.AMMO_MAX = 180
+				self.x_tribune32.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.x_tribune32.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{7, self.stat_info.kick_tables.right_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{19, self.stat_info.kick_tables.left_recoil}
+				}
+				self.x_tribune32.supported = true
+				self.x_tribune32.ads_speed = 0.200
+				self.x_tribune32.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3000,
+					min_mult = 0.3
+				}
+				self.x_tribune32.stats = {
+					damage = 20,
+					spread = 51,
+					recoil = 69,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 29,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.x_tribune32.stats_modifiers = nil
+				self.x_tribune32.panic_suppression_chance = 0.05
+				self.x_tribune32.timers = deep_clone(self.x_mac10.timers)
 			end
 
 			if self.stampede_ecs then
@@ -26349,6 +26342,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--[[     DISABLED     ]]--
 	
+		--Akimbo CZ ACCUSHADOW
+		--DISABLED - ALREADY A PRIMARY
+			self.x_czech.use_data.selection_index = 5
 		--Akimbo VD-12 
 		--DISABLED - ALREADY A PRIMARY
 			self.x_sko12.use_data.selection_index = 5
@@ -26358,7 +26354,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_erma.use_data.selection_index = 5			
 	
 		--Akimbo CR805
-		--DISABLED-- - LOL NO
+		--DISABLED - LOL NO
 			self.x_hajk.use_data.selection_index = 5
 	
 		--Akimbo Kross Vertex
@@ -26378,23 +26374,23 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_coal.use_data.selection_index = 5
 	
 		--Akimbo Spec Ops (Akimbo MP7)
-		--DISABLED--
+		--DISABLED
 			self.x_mp7.use_data.selection_index = 5
 					
 		--Akimbo Goliath 12g
-		--DISABLED--
+		--DISABLED
 			self.x_rota.use_data.selection_index = 5
 	
 		--Akimbo CMP
-		--DISABLED--
+		--DISABLED
 			self.x_mp9.use_data.selection_index = 5
 	
 		--Akimbo Patchett
-		--DISABLED--
+		--DISABLED
 			self.x_sterling.use_data.selection_index = 5
 	
 		--Akimbo Blaster 9mm
-		--DISABLED--
+		--DISABLED
 			self.x_tec9.use_data.selection_index = 5
 	
 		--akimbo Broomstick
@@ -26402,11 +26398,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_c96.use_data.selection_index = 5
 	
 		--Akimbo Leo
-		--DISABLED--
+		--DISABLED
 			self.x_hs2000.use_data.selection_index = 5
 	
 		--Akimbo Swedish K
-		--DISABLED--
+		--DISABLED
 			self.x_m45.use_data.selection_index = 5
 	
 		--Akimbo Signature SMG

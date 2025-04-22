@@ -19249,6 +19249,10 @@ end)
 						translation = Vector3(-0.019, 10.2, -3.43),
 						rotation = Rotation(0.0, 0.012, -0.4)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_tribune32 = {
+						translation = Vector3(-0.005, -4.2, -3.115),
+						rotation = Rotation(-0.0, -0.0, -0.0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_bp12 = {
 						translation = Vector3(0.04, 4.9, -0.01),
@@ -19294,7 +19298,6 @@ end)
 						rotation = Rotation(0.0, 0.012, 0)
 					}
 
-				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
 						translation = Vector3(0, 8.6, -3.36)
 					}
@@ -27130,6 +27133,54 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
 
+		end
+
+		if self.parts.wpn_fps_smg_tribune32_stock_fool then
+			self.parts.wpn_fps_smg_tribune32_flash_hider.stats = { value = 0}
+			self.parts.wpn_fps_smg_tribune32_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_smg_tribune32_flash_hider.perks = nil
+			self.parts.wpn_fps_smg_tribune32_magazine.stats = { value = 0}
+			self.parts.wpn_fps_smg_tribune32_magazine.custom_stats = nil
+			self.parts.wpn_fps_smg_tribune32_stock.stats = { value = 0}
+			self.parts.wpn_fps_smg_tribune32_stock.custom_stats = nil
+
+			--MUZZLE
+			self.parts.wpn_fps_smg_tribune32_flash_hider_fool.supported = true
+			self.parts.wpn_fps_smg_tribune32_flash_hider_fool.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_smg_tribune32_flash_hider_fool.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			--STOCKS
+			self.parts.wpn_fps_smg_tribune32_stock_fool.supported = true
+			self.parts.wpn_fps_smg_tribune32_stock_fool.stats = deep_clone(stocks.add_folded_stats)
+			self.parts.wpn_fps_smg_tribune32_stock_fool.custom_stats = deep_clone(stocks.add_folded_stats)
+
+			self.parts.wpn_fps_smg_tribune32_stock_unfolded_fool.supported = true
+			self.parts.wpn_fps_smg_tribune32_stock_unfolded_fool.stats = deep_clone(stocks.add_nocheeks_stats)
+			self.parts.wpn_fps_smg_tribune32_stock_unfolded_fool.custom_stats = deep_clone(stocks.add_nocheeks_stats)
+
+			self.parts.wpn_fps_smg_tribune32_stock_visor.supported = true
+			self.parts.wpn_fps_smg_tribune32_stock_visor.stats = deep_clone(stocks.add_folder_stats)
+			self.parts.wpn_fps_smg_tribune32_stock_visor.custom_stats = deep_clone(stocks.add_folder_stats)
+
+			self.parts.wpn_fps_smg_tribune32_stock_jmac.supported = true
+			self.parts.wpn_fps_smg_tribune32_stock_jmac.stats = deep_clone(stocks.add_adj_stats)
+			self.parts.wpn_fps_smg_tribune32_stock_jmac.custom_stats = deep_clone(stocks.add_adj_stats)
+
+			--MAGS
+			self.parts.wpn_fps_smg_tribune32_xmag.supported = true
+			self.parts.wpn_fps_smg_tribune32_xmag.stats = { value = 8, extra_ammo = 12, concealment = -2, reload = -4 }
+			self.parts.wpn_fps_smg_tribune32_xmag.custom_stats = { ads_speed_mult = 1.05 }
+			self.parts.wpn_fps_smg_tribune32_magazine_fool.supported = true
+			self.parts.wpn_fps_smg_tribune32_magazine_fool.stats = { value = 8, extra_ammo = 12, concealment = -2, reload = -4 }
+			self.parts.wpn_fps_smg_tribune32_magazine_fool.custom_stats = { ads_speed_mult = 1.05 }
+
+			self.parts.wpn_fps_smg_tribune32_magazine_speedpull.supported = true
+			self.parts.wpn_fps_smg_tribune32_magazine_speedpull.stats = { value = 5, concealment = -1, reload = 2, spread = -1 }
+			self.parts.wpn_fps_smg_tribune32_magazine_speedpull.custom_stats = nil
+
+			self.parts.wpn_fps_smg_tribune32_magazine_short.supported = true
+			self.parts.wpn_fps_smg_tribune32_magazine_short.stats = { value = 3, concealment = 1, reload = 4, extra_ammo = -16 }
+			self.parts.wpn_fps_smg_tribune32_magazine_short.custom_stats = { ads_speed_mult = 0.975 }
 		end
 
 		if self.parts.wpn_fps_ass_hk_g56_vertical_grip_no then

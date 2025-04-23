@@ -2650,6 +2650,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--MP40
 				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 				--CUSTOM SMGs
+					["bm_w_geasy9_desc_grom"] = "Full-auto submachine gun. Great mobility and handling. Moderate damage, range, and rate of fire.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
+					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "Deals #{skill_color}#75%## of this weapon's damage through body armor and headshots deal #{skill_color}#25%## more damage to non-captain enemies.##",
+
+					["bm_w_r31_desc"] = "Full-auto submachine gun. Very slow rate of fire with high damage. Good handling and mobility",
 					["bm_wp_wpn_fps_smg_r31_b_highcal"] = "Short Barrel",
 					["bm_wp_wpn_fps_smg_r31_b_int"] = "Binary Mod",
 					["bm_wp_wpn_fps_smg_r31_b_int_desc"] = "Converts this weapon to fire in #{risk}#2-round bursts## at an #{skill_color}#increased fire rate.##",

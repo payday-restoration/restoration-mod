@@ -27132,7 +27132,24 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_stubby = { recoil = 2, concealment = -1 }
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_upg_vg_ass_smg_verticalgrip = { stats = { recoil = 2, concealment = -1 } }
 			self.wpn_fps_bow_stampede_ecs.override.wpn_fps_smg_schakal_vg_surefire = { stats = { recoil = 2, concealment = -1 } }
+		end
 
+		if self.parts.wpn_fps_shot_thorhammer_flash_hider then
+			self.parts.wpn_fps_shot_thorhammer_barrel.stats = { value = 0}
+			self.parts.wpn_fps_shot_thorhammer_barrel.custom_stats = nil
+			self.parts.wpn_fps_shot_thorhammer_magazine.stats = { value = 0}
+			self.parts.wpn_fps_shot_thorhammer_magazine.custom_stats = nil
+			self.parts.wpn_fps_shot_thorhammer_flash_hider.stats = { value = 0}
+			self.parts.wpn_fps_shot_thorhammer_flash_hider.custom_stats = nil
+			self.parts.wpn_fps_shot_thorhammer_flash_hider.perks = nil
+
+			self.parts.wpn_fps_shot_thorhammer_irons_rear.stance_mod = {
+				wpn_fps_shot_thorhammer = {
+					translation = Vector3(0, -2, 0.67),
+					rotation = Rotation(0.04, -0.7, 0)
+				}
+			}
+			
 		end
 
 		if self.parts.wpn_fps_smg_tribune32_stock_fool then
@@ -27273,8 +27290,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_geasy9_ammo_9x18.custom_stats = nil
 			self.parts.wpn_fps_smg_geasy9_ammo_acp.stats = {}
 			self.parts.wpn_fps_smg_geasy9_ammo_acp.custom_stats = nil
-			self.parts.wpn_fps_smg_geasy9_ammo_grom.stats = {}
-			self.parts.wpn_fps_smg_geasy9_ammo_grom.custom_stats = nil
 			self.parts.wpn_fps_smg_geasy9_barrel.stats = {}
 			self.parts.wpn_fps_smg_geasy9_barrel.custom_stats = nil
 			self.parts.wpn_fps_smg_geasy9_grip.stats = {}
@@ -27284,6 +27299,21 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_geasy9_flash_hider.stats = {}
 			self.parts.wpn_fps_smg_geasy9_flash_hider.custom_stats = nil
 			self.parts.wpn_fps_smg_geasy9_flash_hider.perks = nil
+
+			self.parts.wpn_fps_smg_geasy9_ammo_grom.pcs = {}
+			self.parts.wpn_fps_smg_geasy9_ammo_grom.no_cull = true
+			self.parts.wpn_fps_smg_geasy9_ammo_grom.stats = { 
+				value = 10,
+				recoil = -6,
+				total_ammo_mod = -18
+			}
+			self.parts.wpn_fps_smg_geasy9_ammo_grom.custom_stats = {
+				rof_mult = 0.9419,
+				alt_desc = "bm_w_geasy9_desc_grom",
+				armor_piercing_add = 0.75,
+				hs_mult_desc = true,
+				hs_mult = 1.25
+			}
 
 			--BARRELS
 				--Short

@@ -27162,7 +27162,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
 			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
 			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
-			
+
 			for i, part_id in pairs(self.wpn_fps_shot_thorhammer.uses_parts) do
 				attachment_list = {
 					"wpn_fps_upg_i_autofire",
@@ -32854,16 +32854,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_zip22_magazine_drum.supported = true
 			self.parts.wpn_fps_pis_zip22_magazine_drum.stats = {
 				extra_ammo = 40,
-				reload = -8,
-				concealment = -6
+				reload = -7,
+				concealment = -5
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum.custom_stats = { 
-				ads_speed_mult = 1.15,
+				ads_speed_mult = 1.125,
+				reload_empty_anim_mult = 1.25,
+				reload_non_empty_anim_mult = 1.3,
 				adj_timers = {
-					reload_empty = 4,
-					reload_exit_empty = 0.7,
-					reload_not_empty = 1.6,
-					reload_exit_not_empty = 1.5
+					reload_exit_empty = 0.95,
+					reload_exit_not_empty = 0.7
 				}
 			}
 
@@ -32875,11 +32875,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_pis_zip22_magazine_drum_110.custom_stats = { 
 				ads_speed_mult = 1.2,
+				reload_empty_anim_mult = 1.25,
+				reload_non_empty_anim_mult = 1.3,
 				adj_timers = {
-					reload_empty = 4,
-					reload_exit_empty = 0.7,
-					reload_not_empty = 1.6,
-					reload_exit_not_empty = 1.5
+					reload_exit_empty = 0.95,
+					reload_exit_not_empty = 0.7
 				}
 			}
 		end

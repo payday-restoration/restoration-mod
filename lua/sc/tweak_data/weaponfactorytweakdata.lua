@@ -27149,7 +27149,29 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rotation = Rotation(0.04, -0.7, 0)
 				}
 			}
+
+			self.wpn_fps_shot_thorhammer.override = self.wpn_fps_shot_thorhammer.override or {}
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_slug = deep_clone(shot_ammo.a_slug_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_custom = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_custom_free = deep_clone(shot_ammo.a_custom_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_explosive = deep_clone(shot_ammo.a_explosive_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_rip = deep_clone(shot_ammo.a_rip_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_piercing = deep_clone(shot_ammo.a_piercing_pump_override)
+			self.wpn_fps_shot_thorhammer.override.wpn_fps_upg_a_dragons_breath = deep_clone(shot_ammo.a_dragons_breath_pump_override)
 			
+			for i, part_id in pairs(self.wpn_fps_shot_thorhammer.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_i_autofire",
+					"wpn_fps_upg_i_singlefire"
+				}
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_shot_thorhammer.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end
+			self.wpn_fps_shot_thorhammer_npc.override = deep_clone(self.wpn_fps_shot_thorhammer.override)
+			self.wpn_fps_shot_thorhammer_npc.uses_parts = deep_clone(self.wpn_fps_shot_thorhammer.uses_parts)
 		end
 
 		if self.parts.wpn_fps_smg_tribune32_stock_fool then

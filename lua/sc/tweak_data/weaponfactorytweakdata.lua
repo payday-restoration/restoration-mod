@@ -19297,6 +19297,10 @@ end)
 						translation = Vector3(-0.005, 3, -0.007),
 						rotation = Rotation(0.0, 0.012, 0)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_thorhammer = {
+						translation = Vector3(-0.005, 3, -0.007),
+						rotation = Rotation(0.0, 0.012, 0)
+					}
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_shot_f500 = {
 						translation = Vector3(0, 8.6, -3.36)

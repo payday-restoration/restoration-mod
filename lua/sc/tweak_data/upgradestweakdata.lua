@@ -1745,23 +1745,29 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				--Ace
 					self.values.pistol.swap_speed_multiplier = {2}
+					self.values.akimbo.swap_speed_multiplier = {1.5}
 					
 					self.skill_descs.equilibrium = {
 					skill_value_b1 = tostring(self.values.team.pistol.recoil_index_addend[1]), -- +Stability
-					skill_value_p1 = tostring((self.values.pistol.swap_speed_multiplier[1] - 1) * 100).."%" -- Swap speed bonus
+					skill_value_p1 = tostring((self.values.pistol.swap_speed_multiplier[1] - 1) * 100).."%", -- Swap speed bonus
+					skill_value_p2 = tostring((self.values.akimbo.swap_speed_multiplier[1] - 1) * 100).."%", -- Swap speed bonus
 					}
 				
 			--Gun Nut	
 				--Basic
-					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
+					self.values.pistol.hip_fire_spread_multiplier = {0.8}
+					self.values.akimbo.hip_fire_spread_multiplier = {0.8}
 				--Ace
 					self.values.pistol.fire_rate_multiplier = {1.15}
 					self.values.pistol.ap_bullets = {1.0}
+					self.values.akimbo.ap_bullets = {0.5}
 					
 					self.skill_descs.dance_instructor = {
 						skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
+						skill_value_b2 = tostring((1 - self.values.akimbo.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
 						skill_value_p1 = tostring(self.values.pistol.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF bonus
-						skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%" -- AP boost
+						skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%", -- AP boost
+						skill_value_p3 = tostring(self.values.akimbo.ap_bullets[1] * 100).."%", -- AP boost
 					}
 
 			--Gunfighter
@@ -4731,6 +4737,35 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
+
+	self.definitions.akimbo_swap_speed_multiplier_1 = {
+		name_id = "menu_akimbo_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "swap_speed_multiplier",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_ap_bullets_1 = {
+		name_id = "menu_akimbo_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_hip_fire_spread_multiplier_1 = {
+		name_id = "menu_akimbo_hip_fire_spread_multiplier_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hip_fire_spread_multiplier",
+			category = "akimbo"
+		}
+	}
+
 
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",

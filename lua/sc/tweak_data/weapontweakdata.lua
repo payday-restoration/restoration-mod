@@ -6756,7 +6756,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Parabellum (Luger)
 						self.breech.has_description = true
 						self.breech.desc_id = "bm_breech_sc_desc"				
-						self.breech.AMMO_MAX = 75
+						self.breech.AMMO_MAX = 60
 						self.breech.CLIP_AMMO_MAX = 8
 						self.breech.fire_mode_data.fire_rate = 0.0882352
 						self.breech.kick = self.stat_info.kick_tables.left_kick
@@ -6801,7 +6801,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Akimbo
 						self.x_breech.has_description = true
 						self.x_breech.desc_id = "bm_breech_sc_desc"				
-						self.x_breech.AMMO_MAX = 150
+						self.x_breech.AMMO_MAX = 120
 						self.x_breech.CLIP_AMMO_MAX = 16
 						self.x_breech.fire_mode_data.fire_rate = 0.0882352
 						self.x_breech.weapon_movement_penalty = 1.08

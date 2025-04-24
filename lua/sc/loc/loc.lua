@@ -3102,6 +3102,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_hs2000_sl_long"] = "Elite Slide",
 					--5/7 pistol
 					["bm_w_lemming"] = "Acuto 5/7",
+					["bm_w_x_lemming"] = "Ultra & Violet",
 					--Baby Deagle--
 					["bm_w_sparrow"] = "Sparrow 941",
 					["bm_w_x_sparrow"] = "Spike & Vicious",

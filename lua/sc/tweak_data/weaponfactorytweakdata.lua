@@ -25138,7 +25138,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_o_coyote.supported = true		
 				self.parts.wpn_fps_upg_o_coyote.stats = {
 					value = 3,
-					zoom = 5
+					zoom = 1
+				}		
+			end
+			
+			if self.parts.wpn_fps_upg_o_kobra then
+				self.parts.wpn_fps_upg_o_kobra.supported = true		
+				self.parts.wpn_fps_upg_o_kobra.stats = {
+					value = 3,
+					zoom = 1
 				}		
 			end
 			
@@ -42960,6 +42968,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_akm_m_helo.supported = true
 		self.parts.wpn_fps_ass_akm_m_helo.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 		self.parts.wpn_fps_ass_akm_m_helo.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
+	end
+	
+	if self.parts.wpn_fps_upg_o_p90_ring then
+		self.parts.wpn_fps_upg_o_p90_ring.supported = true
+		self.parts.wpn_fps_upg_o_p90_ring.desc_id = "bm_wp_upg_o_1_1"
+		self.parts.wpn_fps_upg_o_p90_ring.stats = {
+			value = 3,
+			zoom = 1
+		}		
 	end
 
 	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]

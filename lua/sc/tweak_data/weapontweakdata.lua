@@ -17343,6 +17343,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zenith.fire_mode_data.fire_rate = 0.3
 				self.zenith.AMMO_MAX = 30
 				self.zenith.CLIP_AMMO_MAX = 10
+				self.zenith.tactical_reload = 1	
 				self.zenith.kick = self.stat_info.kick_tables.vertical_kick
 				self.zenith.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
@@ -17486,6 +17487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug9mm.CAN_TOGGLE_FIREMODE = true
 				self.aug9mm.CLIP_AMMO_MAX = 25
 				self.aug9mm.AMMO_MAX = 75
+				self.aug9mm.tactical_reload = 1	
 				self.aug9mm.kick = self.stat_info.kick_tables.moderate_kick
 				self.aug.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
@@ -19082,6 +19084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cs5.upgrade_blocks = nil
 				self.cs5.CLIP_AMMO_MAX = 10
 				self.cs5.AMMO_MAX = 40
+				self.cs5.tactical_reload = 1
 				self.cs5.fire_mode_data.fire_rate = 1.09090909
 				self.cs5.fire_rate_multiplier = 1.09
 				self.cs5.kick = self.stat_info.kick_tables.vertical_kick

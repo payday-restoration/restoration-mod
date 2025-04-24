@@ -17343,7 +17343,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.zenith.fire_mode_data.fire_rate = 0.3
 				self.zenith.AMMO_MAX = 30
 				self.zenith.CLIP_AMMO_MAX = 10
-				self.zenith.tactical_reload = 1	
 				self.zenith.kick = self.stat_info.kick_tables.vertical_kick
 				self.zenith.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},

@@ -200,17 +200,17 @@ tweak_data.snp = {
 		ads_moving_recoil = 1.1,
 		hipfire_moving_spread_mult = 1.5,
 		ads_moving_spread_mult = 1.1,
-		ads_move_speed_mult = 0.888889, --lowered to 0.4
+		ads_move_speed_mult = 0.3 / tweak_data.snp.ads_move_speed_mult,
 		shake_mul = 1.1
 	}
 		tweak_data.s7 = {
 			hipfire_spread_mult = 0.05,
-			hipfire_moving_spread_mult = 0.1,
-			ads_moving_spread_mult = 0.1
+			hipfire_moving_spread_mult = 0.05,
+			ads_moving_spread_mult = 0.05
 		}
 	tweak_data.amr = {
 		hipfire_spread_mult = 2,
-		ads_move_speed_mult = 0.6,
+		ads_move_speed_mult = 0.5,
 		shake_mul = 1.1
 	}
 
@@ -238,7 +238,6 @@ tweak_data.assault_rifle = {
 		hipfire_spread_mult = 2.5 / tweak_data.assault_rifle.hipfire_spread_mult,
 		moving_spread_mult = 1.5,
 		ads_stationary_spread_mult = 0.25,
-		ads_move_speed_mult = 0.4 / tweak_data.assault_rifle.ads_move_speed_mult,
 		shake_mul = 1.1
 	}
 

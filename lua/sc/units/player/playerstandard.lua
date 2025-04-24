@@ -5083,7 +5083,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 					self._slide_last_z = self._unit:position().z
 					self._slide_last_speed = self._slide_speed
 					self._slide_end_speed = self:_get_modified_move_speed("crouch")/4 -- don't need to calculate every frame
-					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.3) -- it's magic
+					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.2) -- it's magic
 					self:_stance_entered()
 
 					self._last_slide_time = self._last_t

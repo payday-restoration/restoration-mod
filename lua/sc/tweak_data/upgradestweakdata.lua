@@ -1389,17 +1389,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						damage_factor_range = 0.10,
 						range_increment = 800
 					}
-				}			
+				}
+				self.headshot_graze_proc_cd = 0.5
 				self.values.player.headshot_no_falloff = {true}
+				self.headshot_no_falloff_cd = 0.2
 				
 				self.skill_descs.body_expertise = {
 					skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage
 					skill_value_b2 = tostring((self.values.snp.graze_damage[1].radius) / 100), -- Minimal radius (in meters) to ricochet
 					skill_value_b3 = tostring(self.values.snp.graze_damage[1].range_increment / 100), -- Give bonus damage and enemy chain for every X meters.
 					skill_value_b4 = tostring(self.values.snp.graze_damage[1].max_chain), -- Max ricochet chain possible
+					skill_value_b5 = tostring(self.headshot_graze_proc_cd), -- chain cd
 					skill_value_p1 = tostring((self.values.snp.graze_damage[2].radius - self.values.snp.graze_damage[1].radius) / 100), -- This is how much increased (in meters) minimal radius
 					skill_value_p2 = tostring(self.values.snp.graze_damage[2].damage_factor_range * 100).."%", -- Ricochet damage increase for every X meters
-					skill_value_p3 = "100%" -- Max ricochet damage
+					skill_value_p3 = "100%", -- Max ricochet damage
+					skill_value_p4 = tostring(self.headshot_no_falloff_cd) -- no falloff cd
 				}
 
 	--GHOST--

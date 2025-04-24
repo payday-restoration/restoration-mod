@@ -40235,6 +40235,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 0
 		}
 	end
+	
+	if SystemFS:exists("assets/mod_overrides/Akimbo 5-7") then
+		self.wpn_fps_pis_x_lemming.override.wpn_fps_pis_lemming_m_ext.stats = {
+			value = 1, 
+			extra_ammo = 20,
+			concealment = -1,
+			reload = -3
+		}
+		if self.parts.wpn_fps_pis_lemming_body_silver then
+			table.insert(self.wpn_fps_pis_x_lemming.uses_parts, "wpn_fps_pis_lemming_body_silver" )
+			table.insert(self.wpn_fps_pis_x_lemming.uses_parts, "wpn_fps_pis_lemming_b_long" )
+		end
+	end
+	
 
 	if SystemFS:exists("assets/mod_overrides/Classic Weapon Animations") then
 		self.parts.wpn_fps_pis_g17_m_standard.unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_m_standard"

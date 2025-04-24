@@ -6693,93 +6693,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_holt.timers.reload_exit_empty = 0.55
 						self.x_holt.timers.reload_exit_not_empty = 0.65
 
-					--Parabellum (Luger)
-						self.breech.has_description = true
-						self.breech.desc_id = "bm_breech_sc_desc"				
-						self.breech.AMMO_MAX = 75
-						self.breech.CLIP_AMMO_MAX = 8
-						self.breech.fire_mode_data.fire_rate = 0.0882352
-						self.breech.kick = self.stat_info.kick_tables.left_kick
-						self.breech.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.moderate_kick},
-							{7, self.stat_info.kick_tables.moderate_left_kick}
-						}
-						self.breech.supported = true
-						self.breech.ads_speed = 0.120
-						self.breech.damage_falloff = {
-							start_dist = 1800,
-							end_dist = 3800,
-							min_mult = 0.2
-						}
-						self.breech.stats = {
-							damage = 30,
-							spread = 61,
-							recoil = 85,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 32,
-							suppression = 11,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.breech.stats_modifiers = nil
-						self.breech.panic_suppression_chance = 0.05
-						self.breech.reload_speed_multiplier = 1.15
-						self.breech.weapon_movement_penalty = 1.08
-						self.breech.timers = {
-							reload_not_empty = 1.2,
-							reload_exit_not_empty = 0.5,
-							reload_empty = 2.1,
-							reload_exit_empty = 0.35,
-							unequip = 0.5,
-							equip = 0.35
-						}
-					--Akimbo
-						self.x_breech.has_description = true
-						self.x_breech.desc_id = "bm_breech_sc_desc"				
-						self.x_breech.AMMO_MAX = 150
-						self.x_breech.CLIP_AMMO_MAX = 16
-						self.x_breech.fire_mode_data.fire_rate = 0.0882352
-						self.x_breech.weapon_movement_penalty = 1.08
-						self.x_breech.kick = self.stat_info.kick_tables.moderate_kick
-						self.x_breech.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.moderate_kick},
-							{7, self.stat_info.kick_tables.moderate_left_kick}
-						}
-						self.x_breech.supported = true
-						self.x_breech.ads_speed = 0.120
-						self.x_breech.damage_falloff = {
-							start_dist = 1800,
-							end_dist = 3800,
-							min_mult = 0.2
-						}
-						self.x_breech.stats = {
-							damage = 30,
-							spread = 51,
-							recoil = 75,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 32,
-							suppression = 11,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.x_breech.stats_modifiers = nil
-						self.x_breech.panic_suppression_chance = 0.05
-						self.x_breech.reload_speed_multiplier = 1.1
-						self.x_breech.timers.reload_empty = 3
-						self.x_breech.timers.reload_exit_empty = 1.55
-						self.x_breech.timers.reload_not_empty = 1.8
-						self.x_breech.timers.reload_exit_not_empty = 2.8
-
 					--Contractor Pistol (P30L)
 						self.packrat.has_description = true
 						self.packrat.desc_id = "bm_packrat_sc_desc"			
@@ -6857,6 +6770,93 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_packrat.stats_modifiers = nil
 						self.x_packrat.timers.reload_exit_empty = 0.55
 						self.x_packrat.timers.reload_exit_not_empty = 0.65
+
+					--Parabellum (Luger)
+						self.breech.has_description = true
+						self.breech.desc_id = "bm_breech_sc_desc"				
+						self.breech.AMMO_MAX = 60
+						self.breech.CLIP_AMMO_MAX = 8
+						self.breech.fire_mode_data.fire_rate = 0.0882352
+						self.breech.kick = self.stat_info.kick_tables.left_kick
+						self.breech.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_kick},
+							{5, self.stat_info.kick_tables.moderate_kick},
+							{7, self.stat_info.kick_tables.moderate_left_kick}
+						}
+						self.breech.supported = true
+						self.breech.ads_speed = 0.120
+						self.breech.damage_falloff = {
+							start_dist = 1800,
+							end_dist = 3800,
+							min_mult = 0.2
+						}
+						self.breech.stats = {
+							damage = 30,
+							spread = 61,
+							recoil = 85,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.breech.stats_modifiers = nil
+						self.breech.panic_suppression_chance = 0.05
+						self.breech.reload_speed_multiplier = 1.15
+						self.breech.weapon_movement_penalty = 1.08
+						self.breech.timers = {
+							reload_not_empty = 1.2,
+							reload_exit_not_empty = 0.5,
+							reload_empty = 2.1,
+							reload_exit_empty = 0.35,
+							unequip = 0.5,
+							equip = 0.35
+						}
+					--Akimbo
+						self.x_breech.has_description = true
+						self.x_breech.desc_id = "bm_breech_sc_desc"				
+						self.x_breech.AMMO_MAX = 120
+						self.x_breech.CLIP_AMMO_MAX = 16
+						self.x_breech.fire_mode_data.fire_rate = 0.0882352
+						self.x_breech.weapon_movement_penalty = 1.08
+						self.x_breech.kick = self.stat_info.kick_tables.moderate_kick
+						self.x_breech.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_kick},
+							{5, self.stat_info.kick_tables.moderate_kick},
+							{7, self.stat_info.kick_tables.moderate_left_kick}
+						}
+						self.x_breech.supported = true
+						self.x_breech.ads_speed = 0.120
+						self.x_breech.damage_falloff = {
+							start_dist = 1800,
+							end_dist = 3800,
+							min_mult = 0.2
+						}
+						self.x_breech.stats = {
+							damage = 30,
+							spread = 51,
+							recoil = 75,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.x_breech.stats_modifiers = nil
+						self.x_breech.panic_suppression_chance = 0.05
+						self.x_breech.reload_speed_multiplier = 1.1
+						self.x_breech.timers.reload_empty = 3
+						self.x_breech.timers.reload_exit_empty = 1.55
+						self.x_breech.timers.reload_not_empty = 1.8
+						self.x_breech.timers.reload_exit_not_empty = 2.8
 
 					--Chimano Custom (Glock 22)
 						self.g22c.has_description = true

@@ -21132,6 +21132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lc10.damage_type = "machine_gun"
 				self.lc10.fire_mode_data.fire_rate = 0.075
 				self.lc10.CAN_TOGGLE_FIREMODE = true
+				self.lc10.tactical_reload = 1
 				self.lc10.CLIP_AMMO_MAX = 30
 				self.lc10.AMMO_MAX = 120
 				self.lc10.kick = self.stat_info.kick_tables.moderate_left_kick
@@ -21183,6 +21184,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.fire_mode_data.fire_rate = 0.0831024
 				self.ksp45.CAN_TOGGLE_FIREMODE = false
 				self.ksp45.FIRE_MODE = "auto"
+				self.ksp45.tactical_reload = 1
 				self.ksp45.CLIP_AMMO_MAX = 30
 				self.ksp45.AMMO_MAX = 120
 				self.ksp45.burst = nil
@@ -21241,6 +21243,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.t9british.recategorize = { "dmr_ar" }
 				self.t9british.damage_type = "assault_rifle"
 				self.t9british.has_description = true
+				self.t9british.tactical_reload = 1
 				self.t9british.CLIP_AMMO_MAX = 20
 				self.t9british.AMMO_MAX = 80
 				self.t9british.fire_mode_data.fire_rate = 0.112149532
@@ -21291,6 +21294,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.t9fastburst.recategorize = { "heavy_ar" }
 				self.t9fastburst.damage_type = "assault_rifle"
 				self.t9fastburst.has_description = true
+				self.t9fastburst.tactical_reload = 1
 				self.t9fastburst.CLIP_AMMO_MAX = 45
 				self.t9fastburst.AMMO_MAX = 120
 				self.t9fastburst.burst = nil
@@ -24955,6 +24959,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_pm.panic_suppression_chance = 0.05
 					self.x_pm.reload_speed_multiplier = 1.1
 					self.x_pm.timers = deep_clone(self.x_stech.timers)
+
+					self.xs_pm.use_data.selection_index = 5 -- hide secondary akimbo
 				end
 
 			if self.f500 then --Silent Enforcer's Fort-500

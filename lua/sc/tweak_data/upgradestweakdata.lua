@@ -904,8 +904,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
-						3, --stack limit
-						0.16667 --dmg mult add
+						4, --stack limit
+						0.125 --dmg mult add
 					}
 				}
 				--Unused

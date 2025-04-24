@@ -1319,6 +1319,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_1_1"] = "Red Dot sight.\n#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_1_health"] = "Red Dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_generic"] = "#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
@@ -5500,7 +5501,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## without releasing the trigger for more than #{risk}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
 
 
 		--[[   ENFORCER   ]]--

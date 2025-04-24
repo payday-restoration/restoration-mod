@@ -6786,7 +6786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.breech.supported = true
 						self.breech.ads_speed = 0.120
 						self.breech.damage_falloff = {
-							start_dist = 1800,
+							start_dist = 1000,
 							end_dist = 3800,
 							min_mult = 0.2
 						}
@@ -6832,7 +6832,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_breech.supported = true
 						self.x_breech.ads_speed = 0.120
 						self.x_breech.damage_falloff = {
-							start_dist = 1800,
+							start_dist = 1000,
 							end_dist = 3800,
 							min_mult = 0.2
 						}

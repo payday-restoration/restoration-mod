@@ -7894,7 +7894,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.can_shoot_through_enemy = true
 						self.korth.panic_suppression_chance = 0.05
 						self.korth.reload_speed_multiplier = 0.92
-						self.korth.timers.reload_exit_empty = 0.8
+						self.korth.ignore_reload_objects = true
+						self.korth.timers.reload_empty = 2.3
+						self.korth.timers.reload_exit_empty = 1.6
+						self.korth.timers.reload_not_empty = 2.3
 						self.korth.timers.reload_exit_not_empty = 0.8
 					--Akimbo
 						self.x_korth.has_description = true
@@ -7978,8 +7981,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mateba.can_shoot_through_enemy = true
 						self.mateba.panic_suppression_chance = 0.05
 						self.mateba.reload_speed_multiplier = 1.24
-						self.mateba.timers.reload_exit_empty = 0.55
-						self.mateba.timers.reload_exit_not_empty = 0.55
+						self.mateba.timers.reload_empty = 2.3
+						self.mateba.timers.reload_exit_empty = 1.9
+						self.mateba.timers.reload_not_empty = 2.3
+						self.mateba.timers.reload_exit_not_empty = 1.9
 					--Akimbo
 						self.x_2006m.has_description = true
 						self.x_2006m.desc_id = "bm_x_2006m_sc_desc"
@@ -9903,7 +9908,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.tecci.stats_modifiers = nil
 					self.tecci.reload_speed_multiplier = 1
-					self.tecci.timers.reload_exit_empty = 0.9
+					self.tecci.timers.reload_empty = 4.6
+					self.tecci.timers.reload_exit_empty = 1.1
 					self.tecci.timers.reload_exit_not_empty = 1.0
 
 				--KSP (M249)
@@ -10135,7 +10141,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.hk51b.CAN_TOGGLE_FIREMODE = true
 					self.hk51b.BURST_FIRE = {
 						count = 3,
-						delay = 0.2,
+						delay = 0.25,
 						recoil_mult = 0.85,
 						last_recoil_mult = 1.05
 					}
@@ -10259,7 +10265,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hk21.CAN_TOGGLE_FIREMODE = true
 						self.hk21.BURST_FIRE = {
 							count = 3,
-							delay = 0.28,
+							delay = 0.3,
 							recoil_mult = 0.85,
 							last_recoil_mult = 1.1
 						}
@@ -10350,7 +10356,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.hcar.stats_modifiers = nil
 						self.hcar.panic_suppression_chance = 0.05
-						self.hcar.timers.reload_exit_empty = 0.8
+						self.hcar.timers.reload_empty = 3.4
+						self.hcar.timers.reload_exit_empty = 1.22
 						self.hcar.timers.reload_exit_not_empty = 0.7
 
 					--M60
@@ -10685,7 +10692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.auto.fire_rate = 0.08571428571
 						self.s552.BURST_FIRE = {
 							count = 3,
-							delay = 0.15,
+							delay = 0.18,
 							recoil_mult = 0.8,
 							last_recoil_mult = 1.05
 						}
@@ -10740,7 +10747,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g36.has_description = true				
 						self.g36.BURST_FIRE = {
 							count = 3,
-							delay = 0.15,
+							delay = 0.18,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.05
 						}
@@ -10963,8 +10970,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.corgi.stats_modifiers = nil
 						self.corgi.panic_suppression_chance = 0.05
-						self.corgi.timers.reload_empty = 2.85
-						self.corgi.timers.reload_exit_empty = 0.6
+						self.corgi.timers.reload_empty = 2.65
+						self.corgi.timers.reload_exit_empty = 0.8
 						self.corgi.timers.reload_not_empty = 2.1
 						self.corgi.timers.reload_exit_not_empty = 0.75
 						self.corgi.reload_speed_multiplier = 0.85
@@ -11392,8 +11399,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m16.stats_modifiers = nil
 						self.m16.panic_suppression_chance = 0.05
 						self.m16.reload_speed_multiplier = 1.12
-						self.m16.timers.reload_empty = 3.6
-						self.m16.timers.reload_exit_empty = 0.85
+						self.m16.timers.reload_empty = 3.5
+						self.m16.timers.reload_exit_empty = 0.95
 						self.m16.timers.reload_exit_not_empty = 0.95
 
 					--Queen's Wrath
@@ -11841,7 +11848,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.asval.stats_modifiers = nil
 						self.asval.can_shoot_through_enemy = false
 						self.asval.panic_suppression_chance = 0.05
-						self.asval.timers.reload_exit_empty = 0.65
+						self.asval.timers.reload_empty = 3.2
+						self.asval.timers.reload_exit_empty = 1.13
 						self.asval.timers.reload_not_empty = 2.5
 						self.asval.timers.reload_exit_not_empty = 0.85
 						self.asval.reload_speed_multiplier = 1.08
@@ -11889,7 +11897,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.scar.stats_modifiers = nil
 						self.scar.panic_suppression_chance = 0.05
 						self.scar.can_shoot_through_enemy = false
-						self.scar.timers.reload_exit_empty = 0.7
+						self.scar.timers.reload_empty = 2.65
+						self.scar.timers.reload_exit_empty = 1.24
 						self.scar.timers.reload_not_empty = 1.75
 						self.scar.timers.reload_exit_not_empty = 1.3
 
@@ -11937,8 +11946,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.galil.stats_modifiers = nil
 						self.galil.panic_suppression_chance = 0.05
 						self.galil.can_shoot_through_enemy = false
-						self.galil.timers.reload_empty = 3.9
-						self.galil.timers.reload_exit_empty = 0.325
+						self.galil.timers.reload_empty = 3.7
+						self.galil.timers.reload_exit_empty = 0.525
 						self.galil.timers.reload_not_empty = 2.7
 						self.galil.timers.reload_exit_not_empty = 0.75
 						self.galil.reload_speed_multiplier = 1.1
@@ -11987,7 +11996,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.fal.can_shoot_through_enemy = false
 						self.fal.lock_slide_fire = true
 						self.fal.reload_speed_multiplier = 1.25
-						self.fal.timers.reload_exit_empty = 0.75
+						self.fal.timers.reload_empty = 3
+						self.fal.timers.reload_exit_empty = 1.25
 						self.fal.timers.reload_exit_not_empty = 0.75
 
 					--Little Friend Rifle (HK417)
@@ -12214,9 +12224,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g3.panic_suppression_chance = 0.05
 						self.g3.can_shoot_through_enemy = true
 						self.g3.can_shoot_through_wall = false
+						self.g3.timers.reload_empty = 3.3
+						self.g3.timers.reload_exit_empty = 1.45
 						self.g3.timers.reload_not_empty = 2.5
-						self.g3.timers.reload_empty = 3.8
-						self.g3.timers.reload_exit_empty = 0.9
 						self.g3.timers.reload_exit_not_empty = 1.05
 						self.g3.reload_speed_multiplier = 1.425
 
@@ -12269,7 +12279,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ching.can_shoot_through_wall = false
 						self.ching.panic_suppression_chance = 0.05
 						self.ching.timers.equip = 0.3
-						self.ching.timers.reload_exit_empty = 0.85
+						self.ching.timers.reload_empty = 1.1
+						self.ching.timers.reload_exit_empty = 1.3
 						self.ching.timers.reload_not_empty = 2.2
 						self.ching.timers.reload_exit_not_empty = 1
 
@@ -12324,11 +12335,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.qbu88.stats_modifiers = nil
 						self.qbu88.panic_suppression_chance = 0.05
 						self.qbu88.reload_speed_multiplier = 0.9
-						self.qbu88.timers.equip = 0.5
-						self.qbu88.timers.reload_empty = 2.9
-						self.qbu88.timers.reload_not_empty = 1.97
-						self.qbu88.timers.reload_exit_empty = 0.55
-						self.qbu88.timers.reload_exit_not_empty = 0.74
+						self.qbu88.timers = deep_clone(self.corgi.timers)
 
 					--Contractor .308
 						self.tti.categories = {
@@ -13644,8 +13651,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.basset.stats_modifiers = nil
 						self.basset.reload_speed_multiplier = 0.925
 						self.basset.sounds.fire_single = "basset_x_fire_single"
-						self.basset.timers.reload_exit_empty = 0.55
-						self.basset.timers.reload_exit_not_empty = 0.65
+						self.basset.timers = deep_clone(self.corgi.timers)
 					--Akimbo
 						self.x_basset.categories = {
 							"akimbo",
@@ -18016,7 +18022,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.has_description = true				
 				self.g36k.BURST_FIRE = {
 					count = 3,
-					delay = 0.15,
+					delay = 0.18,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1.05
 				}
@@ -18275,7 +18281,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xeno.CAN_TOGGLE_FIREMODE = false
 				self.xeno.BURST_FIRE = {
 					count = 4,
-					delay = 0.2,
+					delay = 0.25,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1.05
 				}		
@@ -20250,7 +20256,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scp_mg36.CLIP_AMMO_MAX = 100
 				self.scp_mg36.BURST_FIRE = {
 					count = 3,
-					delay = 0.2,
+					delay = 0.25,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1.05
 				}
@@ -20484,8 +20490,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l119a2.keep_ammo = 1
 				self.l119a2.reload_speed_multiplier = 1.25
 				self.l119a2.timers.reload_not_empty = 2.42
-				self.l119a2.timers.reload_empty = 2.9
-				self.l119a2.timers.reload_exit_empty = 0.55
+				self.l119a2.timers.reload_empty = 2.8
+				self.l119a2.timers.reload_exit_empty = 0.75
 				self.l119a2.timers.reload_exit_not_empty = 1.1
 				self.l119a2.lock_slide = true
 				self.l119a2.lock_slide_offset = 0.066
@@ -22383,8 +22389,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.msecho.armor_piercing_chance = 0.5
 				self.msecho.can_shoot_through_enemy = true
 				self.msecho.sounds.magazine_empty = "wp_rifle_slide_lock"
-				self.msecho.timers.reload_empty = 3
-				self.msecho.timers.reload_exit_empty = 0.55
+				self.msecho.timers.reload_empty = 2.8
+				self.msecho.timers.reload_exit_empty = 0.75
 				self.msecho.timers.reload_exit_not_empty = 1.2
 				self.msecho.timers.reload_not_empty = 2.35
 				if BeardLib.Utils:FindMod("L119A2") then
@@ -22441,8 +22447,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mike4_2022.keep_ammo = 1
 				self.mike4_2022.panic_suppression_chance = 0.05
 				self.mike4_2022.sounds.magazine_empty = "wp_rifle_slide_lock"
-				self.mike4_2022.timers.reload_empty = 3
-				self.mike4_2022.timers.reload_exit_empty = 0.55
+				self.mike4_2022.timers.reload_empty = 2.8
+				self.mike4_2022.timers.reload_exit_empty = 0.75
 				self.mike4_2022.timers.reload_exit_not_empty = 1.2
 				self.mike4_2022.timers.reload_not_empty = 2.35
 				if BeardLib.Utils:FindMod("L119A2") then
@@ -23919,8 +23925,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r31.stats_modifiers = nil
 				self.r31.panic_suppression_chance = 0.05
 				self.r31.sounds.use_fix = nil
+				self.r31.timers.reload_empty = 2.4
+				self.r31.timers.reload_exit_empty = 0.6
 				self.r31.timers.reload_exit_not_empty = 0.75
-				self.r31.timers.reload_exit_empty = 0.55
 			end
 
 			if self.riveter then --MW2023 Riveter
@@ -24026,8 +24033,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.soa.stats_modifiers = nil
 				self.soa.armor_piercing_chance = 0.25
 				self.soa.panic_suppression_chance = 0.05
-				self.soa.timers.reload_empty = 2.3
-				self.soa.timers.reload_exit_empty = 0.75
+				self.soa.timers.reload_empty = 2.15
+				self.soa.timers.reload_exit_empty = 0.85
 				self.soa.timers.reload_not_empty = 1.48
 				self.soa.timers.reload_exit_not_empty = 0.52
 			end
@@ -24604,7 +24611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.keep_ammo = 0
 				self.ar23.BURST_FIRE = {
 					count = 3,
-					delay = 0.15,
+					delay = 0.18,
 					recoil_mult = 0.9
 				}
 				self.ar23.CAN_TOGGLE_FIREMODE = true
@@ -24752,7 +24759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.keep_ammo = 0
 				self.reprimand.BURST_FIRE = {
 					count = 3,
-					delay = 0.15,
+					delay = 0.18,
 					recoil_mult = 0.9
 				}
 				self.reprimand.CAN_TOGGLE_FIREMODE = true

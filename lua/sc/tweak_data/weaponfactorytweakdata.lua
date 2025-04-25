@@ -10785,7 +10785,7 @@ end)
 					self.parts.wpn_fps_ass_ak5_fg_fnc.custom_stats = {
 						burst_fire = {
 							count = 3,
-							delay = 0.15,
+							delay = 0.18,
 							recoil_mult = 0.85,
 							last_recoil_mult = 1.05
 						},
@@ -24431,7 +24431,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			info_add_burst = true,
 			burst_fire = {
 				count = 3,
-				delay = 0.24,
+				delay = 0.25,
 				recoil_mult = 0.75,
 				last_recoil_mult = 1.1,
 			},
@@ -27949,7 +27949,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					count = 3,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1,
-					delay = 0.16,
+					delay = 0.18,
 					auto_burst = true,
 					block_toggle = true,
 					toggle_to_semi = true,
@@ -29116,7 +29116,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					modify_firemode = true,
 					burst_fire = {
 						count = 3,
-						delay = 0.15,
+						delay = 0.2,
 						rof_mult = 4.565217,
 						recoil_mult = 0.2,
 						last_recoil_mult = 1.1,
@@ -39224,6 +39224,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_smg_r31_m_fastreload2.custom_stats = { 
 					ads_speed_mult = 0.95,
 					adj_timers = {
+						reload_exit_empty = 0.85,
 						reload_exit_not_empty = 0.85
 					}
 				}

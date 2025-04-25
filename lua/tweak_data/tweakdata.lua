@@ -1,49 +1,52 @@
 --if not RestorationTweak then
 restoration.textures = {}
 
---E3 PAYDAY+
-table.insert(tweak_data.color_grading, 
-	{
-		value = "color_plus",
-		text_id = "menu_color_plus"		
-	}
-)
---E3 BHD
-table.insert(tweak_data.color_grading,
-	{
-		value = "color_force",
-		text_id = "menu_color_force"		
-	}
-)
---E3 Nice
-table.insert(tweak_data.color_grading,
-	{
-		value = "color_e3nice",
-		text_id = "menu_color_e3nice"		
-	}
-)
+if not CCGCore then
+	--E3 PAYDAY+
+	table.insert(tweak_data.color_grading,
+		{
+			value = "color_plus",
+			text_id = "menu_color_plus"
+		}
+	)
+	--E3 BHD
+	table.insert(tweak_data.color_grading,
+		{
+			value = "color_force",
+			text_id = "menu_color_force"
+		}
+	)
+	--E3 Nice
+	table.insert(tweak_data.color_grading,
+		{
+			value = "color_e3nice",
+			text_id = "menu_color_e3nice"
+		}
+	)
+	--Unused vanilla color grading
+	table.insert(tweak_data.color_grading,
+		{
+			value = "color_subzero",
+			text_id = "menu_color_subzero"
+		}
+	)
+end
 
 --OVERKILL had this for RVD1 for some reason, but it's just inverted default grading?
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
-		text_id = "menu_color_rvd1"		
+		text_id = "menu_color_rvd1"
 	}
 )
 
---Unused vanilla color grading
-table.insert(tweak_data.color_grading,
-	{
-		value = "color_subzero",
-		text_id = "menu_color_subzero"		
-	}
-)
+
 
 --Halloween Green
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_halloween",
-		text_id = "menu_color_halloween"		
+		text_id = "menu_color_halloween"
 	}
 )
 
@@ -51,11 +54,11 @@ table.insert(tweak_data.color_grading,
 table.insert(tweak_data.color_grading,
 	{
 		value = "color_halloween2",
-		text_id = "menu_color_halloween2"		
+		text_id = "menu_color_halloween2"
 	}
 )
 
-if restoration.Options:GetValue("HUD/UI/DifficultyMarkers") then	
+if restoration.Options:GetValue("HUD/UI/DifficultyMarkers") then
 tweak_data.hud_icons.risk_swat = {
 		texture = "guis/textures/restoration/hud_difficultymarkers",
 		texture_rect = {
@@ -118,7 +121,7 @@ if restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then
 		}
 	}
 
-	
+
 tweak_data.hud_icons.equipment_ammo_bag = {
 		texture = "guis/textures/restoration/hud_icons",
 		texture_rect = {
@@ -128,7 +131,7 @@ tweak_data.hud_icons.equipment_ammo_bag = {
 			48
 		}
 	}
-	
+
 tweak_data.hud_icons.equipment_doctor_bag = {
 	texture = "guis/textures/restoration/hud_icons",
 	texture_rect = {
@@ -159,7 +162,7 @@ tweak_data.hud_icons.equipment_trip_mine = {
 		}
 	}
 
-	
+
 tweak_data.hud_icons.equipment_ecm_jammer = {
 		texture = "guis/textures/restoration/hud_icons",
 		texture_rect = {
@@ -244,8 +247,8 @@ tweak_data.hud_icons.equipment_saw = {
 			32,
 			32
 		}
-	}	
-	
+	}
+
 
 local d_color = Color( 0.5, 0.5, 0.5, 0.5 ) -- Color( 0.75, 1, 0.4, 0.0 )
 
@@ -273,23 +276,23 @@ end
 if not tweak_data then return end
 if restoration.Options:GetValue("HUD/UI/PeerColors") and not _G.BigLobbyGlobals then
 --Alpha Peer Colors
-	local orange = Vector3( 224, 109, 81 )/255 
-	local green = Vector3( 102, 204, 51 )/255 
-	local brown = Vector3( 98, 70, 43 )/255 
-	local blue = Vector3( 104, 133, 161 )/255 
+	local orange = Vector3( 224, 109, 81 )/255
+	local green = Vector3( 102, 204, 51 )/255
+	local brown = Vector3( 98, 70, 43 )/255
+	local blue = Vector3( 104, 133, 161 )/255
 	local team_ai = Vector3( 0.2, 0.8, 1 ) --this has multiple different values in the code, but they're all a variety of green or yellow.  add those as a multichoice later on, but not important since they clash.
 
 	tweak_data.peer_vector_colors = { blue, orange, green, brown, team_ai }
-    tweak_data.peer_colors = { "mrblue", "mrorange", "mrgreen", "mrbrown", "mrai" } 
-	
-	tweak_data.chat_colors = {     
+    tweak_data.peer_colors = { "mrblue", "mrorange", "mrgreen", "mrbrown", "mrai" }
+
+	tweak_data.chat_colors = {
 			Color( tweak_data.peer_vector_colors[1]:unpack() ),
 			Color( tweak_data.peer_vector_colors[2]:unpack() ),
 			Color( tweak_data.peer_vector_colors[3]:unpack() ),
 			Color( tweak_data.peer_vector_colors[4]:unpack() ),
 			Color( tweak_data.peer_vector_colors[5]:unpack() )
     }
-	tweak_data.preplanning_peer_colors = {     
+	tweak_data.preplanning_peer_colors = {
 			Color( tweak_data.peer_vector_colors[1]:unpack() ),
 			Color( tweak_data.peer_vector_colors[2]:unpack() ),
 			Color( tweak_data.peer_vector_colors[3]:unpack() ),

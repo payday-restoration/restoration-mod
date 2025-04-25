@@ -6753,93 +6753,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_holt.timers.reload_exit_empty = 0.55
 						self.x_holt.timers.reload_exit_not_empty = 0.65
 
-					--Parabellum (Luger)
-						self.breech.has_description = true
-						self.breech.desc_id = "bm_breech_sc_desc"				
-						self.breech.AMMO_MAX = 60
-						self.breech.CLIP_AMMO_MAX = 8
-						self.breech.fire_mode_data.fire_rate = 0.0882352
-						self.breech.kick = self.stat_info.kick_tables.left_kick
-						self.breech.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.moderate_kick},
-							{7, self.stat_info.kick_tables.moderate_left_kick}
-						}
-						self.breech.supported = true
-						self.breech.ads_speed = 0.120
-						self.breech.damage_falloff = {
-							start_dist = 1800,
-							end_dist = 3800,
-							min_mult = 0.2
-						}
-						self.breech.stats = {
-							damage = 30,
-							spread = 61,
-							recoil = 85,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 32,
-							suppression = 11,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.breech.stats_modifiers = nil
-						self.breech.panic_suppression_chance = 0.05
-						self.breech.reload_speed_multiplier = 1.15
-						self.breech.weapon_movement_penalty = 1.08
-						self.breech.timers = {
-							reload_not_empty = 1.2,
-							reload_exit_not_empty = 0.5,
-							reload_empty = 2.1,
-							reload_exit_empty = 0.35,
-							unequip = 0.5,
-							equip = 0.35
-						}
-					--Akimbo
-						self.x_breech.has_description = true
-						self.x_breech.desc_id = "bm_breech_sc_desc"				
-						self.x_breech.AMMO_MAX = 120
-						self.x_breech.CLIP_AMMO_MAX = 16
-						self.x_breech.fire_mode_data.fire_rate = 0.0882352
-						self.x_breech.weapon_movement_penalty = 1.08
-						self.x_breech.kick = self.stat_info.kick_tables.moderate_kick
-						self.x_breech.kick_pattern = {
-							{0, self.stat_info.kick_tables.left_kick},
-							{5, self.stat_info.kick_tables.moderate_kick},
-							{7, self.stat_info.kick_tables.moderate_left_kick}
-						}
-						self.x_breech.supported = true
-						self.x_breech.ads_speed = 0.120
-						self.x_breech.damage_falloff = {
-							start_dist = 1800,
-							end_dist = 3800,
-							min_mult = 0.2
-						}
-						self.x_breech.stats = {
-							damage = 30,
-							spread = 51,
-							recoil = 75,
-							spread_moving = 9,
-							zoom = 1,
-							concealment = 32,
-							suppression = 11,
-							alert_size = 2,
-							extra_ammo = 101,
-							total_ammo_mod = 400,
-							value = 1,
-							reload = 20
-						}
-						self.x_breech.stats_modifiers = nil
-						self.x_breech.panic_suppression_chance = 0.05
-						self.x_breech.reload_speed_multiplier = 1.1
-						self.x_breech.timers.reload_empty = 3
-						self.x_breech.timers.reload_exit_empty = 1.55
-						self.x_breech.timers.reload_not_empty = 1.8
-						self.x_breech.timers.reload_exit_not_empty = 2.8
-
 					--Contractor Pistol (P30L)
 						self.packrat.has_description = true
 						self.packrat.desc_id = "bm_packrat_sc_desc"			
@@ -6917,6 +6830,93 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_packrat.stats_modifiers = nil
 						self.x_packrat.timers.reload_exit_empty = 0.55
 						self.x_packrat.timers.reload_exit_not_empty = 0.65
+
+					--Parabellum (Luger)
+						self.breech.has_description = true
+						self.breech.desc_id = "bm_breech_sc_desc"				
+						self.breech.AMMO_MAX = 60
+						self.breech.CLIP_AMMO_MAX = 8
+						self.breech.fire_mode_data.fire_rate = 0.0882352
+						self.breech.kick = self.stat_info.kick_tables.left_kick
+						self.breech.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_kick},
+							{5, self.stat_info.kick_tables.moderate_kick},
+							{7, self.stat_info.kick_tables.moderate_left_kick}
+						}
+						self.breech.supported = true
+						self.breech.ads_speed = 0.120
+						self.breech.damage_falloff = {
+							start_dist = 1000,
+							end_dist = 3800,
+							min_mult = 0.2
+						}
+						self.breech.stats = {
+							damage = 30,
+							spread = 61,
+							recoil = 85,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.breech.stats_modifiers = nil
+						self.breech.panic_suppression_chance = 0.05
+						self.breech.reload_speed_multiplier = 1.15
+						self.breech.weapon_movement_penalty = 1.08
+						self.breech.timers = {
+							reload_not_empty = 1.2,
+							reload_exit_not_empty = 0.5,
+							reload_empty = 2.1,
+							reload_exit_empty = 0.35,
+							unequip = 0.5,
+							equip = 0.35
+						}
+					--Akimbo
+						self.x_breech.has_description = true
+						self.x_breech.desc_id = "bm_breech_sc_desc"				
+						self.x_breech.AMMO_MAX = 120
+						self.x_breech.CLIP_AMMO_MAX = 16
+						self.x_breech.fire_mode_data.fire_rate = 0.0882352
+						self.x_breech.weapon_movement_penalty = 1.08
+						self.x_breech.kick = self.stat_info.kick_tables.moderate_kick
+						self.x_breech.kick_pattern = {
+							{0, self.stat_info.kick_tables.left_kick},
+							{5, self.stat_info.kick_tables.moderate_kick},
+							{7, self.stat_info.kick_tables.moderate_left_kick}
+						}
+						self.x_breech.supported = true
+						self.x_breech.ads_speed = 0.120
+						self.x_breech.damage_falloff = {
+							start_dist = 1000,
+							end_dist = 3800,
+							min_mult = 0.2
+						}
+						self.x_breech.stats = {
+							damage = 30,
+							spread = 51,
+							recoil = 75,
+							spread_moving = 9,
+							zoom = 1,
+							concealment = 32,
+							suppression = 11,
+							alert_size = 2,
+							extra_ammo = 101,
+							total_ammo_mod = 400,
+							value = 1,
+							reload = 20
+						}
+						self.x_breech.stats_modifiers = nil
+						self.x_breech.panic_suppression_chance = 0.05
+						self.x_breech.reload_speed_multiplier = 1.1
+						self.x_breech.timers.reload_empty = 3
+						self.x_breech.timers.reload_exit_empty = 1.55
+						self.x_breech.timers.reload_not_empty = 1.8
+						self.x_breech.timers.reload_exit_not_empty = 2.8
 
 					--Chimano Custom (Glock 22)
 						self.g22c.has_description = true
@@ -10681,7 +10681,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.s552.auto.fire_rate = 0.08571428571
 						self.s552.BURST_FIRE = {
 							count = 3,
-							delay = 0.12,
+							delay = 0.15,
 							recoil_mult = 0.8,
 							last_recoil_mult = 1.05
 						}
@@ -10736,7 +10736,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.g36.has_description = true				
 						self.g36.BURST_FIRE = {
 							count = 3,
-							delay = 0.12,
+							delay = 0.15,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.05
 						}
@@ -11240,7 +11240,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.famas.panic_suppression_chance = 0.05
 						self.famas.BURST_FIRE = {
 							count = 3,
-							delay = 0.12,
+							delay = 0.18,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.05
 						}
@@ -11300,7 +11300,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.AMMO_MAX = 75
 						self.hajk.BURST_FIRE = {
 							count = 2,
-							delay = 0.12,
+							delay = 0.15,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.02
 						}					
@@ -14301,7 +14301,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.sounds.fire_auto = "huntsman_fire"
 						self.huntsman.BURST_FIRE = {
 							count = 2,
-							delay = 0.12,
+							delay = 0.15,
 							rof_mult = 5,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.25
@@ -14364,7 +14364,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.sounds.fire_auto = "coach_fire"
 						self.coach.BURST_FIRE = {
 							count = 2,
-							delay = 0.12,
+							delay = 0.15,
 							rof_mult = 5,
 							recoil_mult = 0.75,
 							last_recoil_mult = 1.25
@@ -16327,7 +16327,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tilt.BURST_FIRE = {
 					count = 2,
 					rof_mult = 3,
-					delay = 0.12
+					delay = 0.15
 				}
 				self.tilt.ADAPTIVE_BURST_SIZE = false
 				self.tilt.fire_rate_init_count = 2
@@ -17945,7 +17945,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fazertron.CAN_TOGGLE_FIREMODE = false
 				self.fazertron.BURST_FIRE = {
 					count = 5,
-					delay = 0.12,
+					delay = 0.15,
 					rof_mult = 1.18755,
 				}
 				self.fazertron.fire_mode_data.fire_rate = 0.075
@@ -17999,7 +17999,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.has_description = true				
 				self.g36k.BURST_FIRE = {
 					count = 3,
-					delay = 0.12,
+					delay = 0.15,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1.05
 				}
@@ -18258,7 +18258,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xeno.CAN_TOGGLE_FIREMODE = false
 				self.xeno.BURST_FIRE = {
 					count = 4,
-					delay = 0.12,
+					delay = 0.2,
 					recoil_mult = 0.75,
 					last_recoil_mult = 1.05
 				}		
@@ -19559,7 +19559,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rusglock.CAN_TOGGLE_FIREMODE = false
 				self.rusglock.BURST_FIRE = {
 					count = 3,
-					delay = 0.130,
+					delay = 0.13,
 					rof_mult = 1.515,
 					lock = true,
 					recoil_mult = 0.8,
@@ -20218,6 +20218,72 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_tribune32.stats_modifiers = nil
 				self.x_tribune32.panic_suppression_chance = 0.05
 				self.x_tribune32.timers = deep_clone(self.x_mac10.timers)
+			end
+
+			if self.scp_mg36 then
+				self.scp_mg36.recategorize = { "light_mg" }
+				self.scp_mg36.categories = {
+					"lmg",
+					"smg",
+					"lmg_moving"
+				}
+				self.scp_mg36.damage_type = "machine_gun"
+				self.scp_mg36.nato = true
+				self.scp_mg36.tactical_reload = 1
+				self.scp_mg36.CLIP_AMMO_MAX = 100
+				self.scp_mg36.BURST_FIRE = {
+					count = 3,
+					delay = 0.2,
+					recoil_mult = 0.75,
+					last_recoil_mult = 1.05
+				}
+				self.scp_mg36.CAN_TOGGLE_FIREMODE = true
+				self.scp_mg36.fire_mode_data.fire_rate = 0.08
+				self.scp_mg36.AMMO_MAX = 300
+				self.scp_mg36.kick = self.stat_info.kick_tables.horizontal_recoil
+				self.scp_mg36.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_recoil},
+					{8, self.stat_info.kick_tables.moderate_left_kick},
+					{14, self.stat_info.kick_tables.horizontal_left_recoil},
+					{22, self.stat_info.kick_tables.left_recoil},
+					{30, self.stat_info.kick_tables.moderate_right_kick},
+					{39, self.stat_info.kick_tables.right_recoil},
+					{45, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.scp_mg36.muzzleflash = "_dmc/effects/heavy_muzzle"
+				self.scp_mg36.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
+				self.scp_mg36.supported = true
+				self.scp_mg36.ads_speed = 0.400
+				self.scp_mg36.damage_falloff = {
+					start_dist = 2400,
+					end_dist = 6300,
+					min_mult = 0.5
+				}
+				self.scp_mg36.stats = {
+					damage = 24,
+					spread = 69,
+					recoil = 71,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 19,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.scp_mg36.stats_modifiers = nil
+				self.scp_mg36.panic_suppression_chance = 0.05
+				self.scp_mg36.sms = sms_preset.lmg_48
+				self.scp_mg36.weapon_movement_penalty = sms_preset.lmg_48
+				self.scp_mg36.lock_slide = true
+				self.scp_mg36.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.scp_mg36.reload_speed_multiplier = 0.9
+				self.scp_mg36.timers.reload_empty = 3.75
+				self.scp_mg36.timers.reload_exit_empty = 1.1
+				self.scp_mg36.timers.reload_not_empty = 3.06
+				self.scp_mg36.timers.reload_exit_not_empty = 1
 			end
 
 			if self.thorhammer then --RE Thor's Hammer
@@ -22373,6 +22439,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xmike2010.recategorize = { "heavy_snp" }
 				self.xmike2010.always_play_anims = true
 				self.xmike2010.desc_id = "bm_ap_weapon_sc_desc"
+				self.xmike2010.tactical_reload = 1
 				self.xmike2010.CLIP_AMMO_MAX = 5
 				self.xmike2010.AMMO_MAX = 30
 				self.xmike2010.fire_mode_data.fire_rate = 1.09090909

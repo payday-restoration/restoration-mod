@@ -25142,7 +25142,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_o_coyote.supported = true		
 				self.parts.wpn_fps_upg_o_coyote.stats = {
 					value = 3,
-					zoom = 5
+					zoom = 1
+				}		
+			end
+			
+			if self.parts.wpn_fps_upg_o_kobra then
+				self.parts.wpn_fps_upg_o_kobra.supported = true		
+				self.parts.wpn_fps_upg_o_kobra.stats = {
+					value = 3,
+					zoom = 1
 				}		
 			end
 			
@@ -40309,6 +40317,20 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			concealment = 0
 		}
 	end
+	
+	if SystemFS:exists("assets/mod_overrides/Akimbo 5-7") then
+		self.wpn_fps_pis_x_lemming.override.wpn_fps_pis_lemming_m_ext.stats = {
+			value = 1, 
+			extra_ammo = 20,
+			concealment = -1,
+			reload = -3
+		}
+		if self.parts.wpn_fps_pis_lemming_body_silver then
+			table.insert(self.wpn_fps_pis_x_lemming.uses_parts, "wpn_fps_pis_lemming_body_silver" )
+			table.insert(self.wpn_fps_pis_x_lemming.uses_parts, "wpn_fps_pis_lemming_b_long" )
+		end
+	end
+	
 
 	if SystemFS:exists("assets/mod_overrides/Classic Weapon Animations") then
 		self.parts.wpn_fps_pis_g17_m_standard.unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_m_standard"
@@ -43042,6 +43064,15 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_akm_m_helo.supported = true
 		self.parts.wpn_fps_ass_akm_m_helo.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 		self.parts.wpn_fps_ass_akm_m_helo.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
+	end
+	
+	if self.parts.wpn_fps_upg_o_p90_ring then
+		self.parts.wpn_fps_upg_o_p90_ring.supported = true
+		self.parts.wpn_fps_upg_o_p90_ring.desc_id = "bm_wp_upg_o_1_1"
+		self.parts.wpn_fps_upg_o_p90_ring.stats = {
+			value = 3,
+			zoom = 1
+		}		
 	end
 
 	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]

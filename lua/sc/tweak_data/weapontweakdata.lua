@@ -5981,6 +5981,66 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.lemming.stats_modifiers = nil
 						self.lemming.timers.reload_exit_empty = 0.55
 						self.lemming.timers.reload_exit_not_empty = 0.45
+							
+						if self.x_lemming then
+							self.x_lemming.use_data.selection_index = 2
+							self.x_lemming.recategorize = {"light_pis"}
+							self.x_lemming.categories = {
+								"akimbo",
+								"pistol",
+								"pdw"
+							}
+							self.x_lemming.BURST_FIRE = {
+								count = 2,
+								delay = 0.15,
+								rof_mult = 4,
+								recoil_mult = 0.25,
+								last_recoil_mult = 1.05,
+							}
+							self.x_lemming.tactical_reload = 2
+							self.x_lemming.CLIP_AMMO_MAX = 40
+							self.x_lemming.AMMO_MAX = 180
+							self.x_lemming.fire_mode_data.fire_rate = 0.1
+							self.x_lemming.kick = self.stat_info.kick_tables.moderate_kick
+							self.x_lemming.kick_pattern = {
+								{0, self.stat_info.kick_tables.even_recoil},
+								{5, self.stat_info.kick_tables.left_kick},
+								{9, self.stat_info.kick_tables.moderate_right_kick},
+								{14, self.stat_info.kick_tables.right_kick},
+								{20, self.stat_info.kick_tables.moderate_kick}
+							}
+							self.x_lemming.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
+							self.x_lemming.panic_suppression_chance = 0.05
+							self.x_lemming.can_shoot_through_enemy = false
+							self.x_lemming.can_shoot_through_shield = false
+							self.x_lemming.can_shoot_through_wall = false
+							self.x_lemming.armor_piercing_chance = 0.75
+							self.x_lemming.hs_mult = 1.33333
+							self.x_lemming.supported = true
+							self.x_lemming.ads_speed = 0.140
+							self.x_lemming.damage_falloff = {
+								start_dist = 2500,
+								end_dist = 4800,
+								min_mult = 0.555555
+							}
+							self.x_lemming.stats = {
+								damage = 18,
+								spread = 56,
+								recoil = 79,
+								spread_moving = 9,
+								zoom = 1,
+								concealment = 28,
+								suppression = 13,
+								alert_size = 2,
+								extra_ammo = 101,
+								total_ammo_mod = 400,
+								value = 1,
+								reload = 20
+							}
+							self.x_lemming.stats_modifiers = nil
+							self.x_lemming.timers.reload_exit_empty = 0.55
+							self.x_lemming.timers.reload_exit_not_empty = 0.65
+						end
 
 					--Stryk 18c (Glock 18)
 						self.glock_18c.desc_id = "bm_g18c_sc_desc"
@@ -17486,6 +17546,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.aug9mm.CAN_TOGGLE_FIREMODE = true
 				self.aug9mm.CLIP_AMMO_MAX = 25
 				self.aug9mm.AMMO_MAX = 75
+				self.aug9mm.tactical_reload = 1	
 				self.aug9mm.kick = self.stat_info.kick_tables.moderate_kick
 				self.aug.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
@@ -19082,6 +19143,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cs5.upgrade_blocks = nil
 				self.cs5.CLIP_AMMO_MAX = 10
 				self.cs5.AMMO_MAX = 40
+				self.cs5.tactical_reload = 1
 				self.cs5.fire_mode_data.fire_rate = 1.09090909
 				self.cs5.fire_rate_multiplier = 1.09
 				self.cs5.kick = self.stat_info.kick_tables.vertical_kick
@@ -25023,6 +25085,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.x_pm.panic_suppression_chance = 0.05
 					self.x_pm.reload_speed_multiplier = 1.1
 					self.x_pm.timers = deep_clone(self.x_stech.timers)
+
+					self.xs_pm.use_data.selection_index = 5 -- hide secondary akimbo
 				end
 
 			if self.f500 then --Silent Enforcer's Fort-500

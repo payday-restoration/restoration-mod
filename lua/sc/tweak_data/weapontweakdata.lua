@@ -7894,11 +7894,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.can_shoot_through_enemy = true
 						self.korth.panic_suppression_chance = 0.05
 						self.korth.reload_speed_multiplier = 0.92
-						self.korth.ignore_reload_objects = true
 						self.korth.timers.reload_empty = 2.3
 						self.korth.timers.reload_exit_empty = 1.6
 						self.korth.timers.reload_not_empty = 2.3
-						self.korth.timers.reload_exit_not_empty = 0.8
+						self.korth.timers.reload_exit_not_empty = 1.6
+						self.korth.ignore_reload_objects = true
+						--stupid garbage
+						self.korth.hide_reload_obj_start = 0
+						self.korth.show_reload_obj = 1.2
+						self.korth.hide_reload_obj_exit = 1.1
 					--Akimbo
 						self.x_korth.has_description = true
 						self.x_korth.desc_id = "bm_ap_armor_50_weapon_sc_desc"	
@@ -8334,7 +8338,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.deagle.sounds.fire = "deagle_fire"
 						self.deagle.sounds.fire_single = "deagle_fire"
 						self.deagle.sounds.fire_auto = "deagle_fire"
-						self.deagle.timers.reload_exit_empty = 0.75
+						self.deagle.timers.reload_empty = 2.6
+						self.deagle.timers.reload_exit_empty = 1.23
 						self.deagle.timers.reload_exit_not_empty = 0.8
 					--Akimbo
 						self.x_deagle.has_description = true
@@ -22108,8 +22113,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.geasy9.stats_modifiers = nil
 				self.geasy9.panic_suppression_chance = 0.05
 				self.geasy9.reload_speed_multiplier = 1.4
-				self.geasy9.timers.reload_empty = 3.25
-				self.geasy9.timers.reload_exit_empty = 1.08
+				self.geasy9.timers.reload_empty = 3
+				self.geasy9.timers.reload_exit_empty = 1.33
 				self.geasy9.timers.reload_not_empty = 2.22
 				self.geasy9.timers.reload_exit_not_empty = 0.72
 			end

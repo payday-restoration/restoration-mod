@@ -4079,6 +4079,9 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		local reload_fix_offset = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset
 		local reload_fix_offset2 = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset2
 		local always_use_empty_reload = self._equipped_unit:base():weapon_tweak_data().always_use_empty_reload
+		local hide_reload_obj_start = self._equipped_unit:base():weapon_tweak_data().hide_reload_obj_start
+		local show_reload_obj = self._equipped_unit:base():weapon_tweak_data().show_reload_obj
+
 		if anim_multiplier then
 			anim_multiplier = anim_multiplier * ((self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_empty_anim_multiplier) or 1)
 			anim_multiplier = anim_multiplier * ((not self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_non_empty_anim_multiplier) or 1)
@@ -4093,6 +4096,13 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				interupt = true
 			end
 		end
+
+		if show_reload_obj and self._state_data.reload_expire_t - t < (show_reload_obj * speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(true)
+		elseif hide_reload_obj_start and self._state_data.reload_expire_t - t > (hide_reload_obj_start * speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(false)
+		end
+
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
 			self._state_data.reload_expire_t = nil
@@ -4139,7 +4149,16 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 	end
+
+	if self._state_data.reload_exit_expire_t then
+		local hide_reload_obj_exit = self._equipped_unit:base():weapon_tweak_data().hide_reload_obj_exit
+		if hide_reload_obj_exit and self._state_data.reload_exit_expire_t - t < (hide_reload_obj_exit * speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(false, "reload_not_empty")
+		end
+	end
+
 	if self._state_data.reload_exit_expire_t and self._state_data.reload_exit_expire_t <= t then
+
 		self._state_data.reload_exit_expire_t = nil
 		if self._equipped_unit then
 			managers.statistics:reloaded()
@@ -4154,6 +4173,8 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 	end
+
+
 	if not self._state_data.reload_expire_t and not self._state_data.reload_exit_expire_t then
 		if self._equipped_unit and self._equipped_unit:base().set_reload_objects_visible and self._equipped_unit:base()._ignore_reload_objects then
 			self._equipped_unit:base():tweak_data_anim_stop("reload")

@@ -27531,7 +27531,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 0.975,
 					reload_non_empty_anim_mult = 0.97,
 					adj_timers = {
-						reload_exit_empty = 1.1,
+						reload_exit_empty = 1.35,
 						reload_exit_not_empty = 1.37
 					}
 				}
@@ -27562,7 +27562,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 1.05,
 					reload_non_empty_anim_mult = 0.97,
 					adj_timers = {
-						reload_exit_empty = 1.1,
+						reload_exit_empty = 1.35,
 						reload_exit_not_empty = 1.37
 					}
 				}
@@ -27578,7 +27578,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ads_speed_mult = 1.1,
 					reload_non_empty_anim_mult = 0.91,
 					adj_timers = {
-						reload_exit_empty = 0.65,
+						reload_exit_empty = 0.9,
 						reload_exit_not_empty = 0.8
 					}
 				}

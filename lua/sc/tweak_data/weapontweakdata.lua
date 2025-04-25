@@ -7899,7 +7899,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.korth.timers.reload_not_empty = 2.3
 						self.korth.timers.reload_exit_not_empty = 1.6
 						self.korth.ignore_reload_objects = true
-						--stupid garbage
+						--stupid garbage implementation; should proabably slap this into the actual timers table but IDGAF, it works
+						--Am I upset that this dogshit workaround is needed to make it look proper?
+						--Yes
+						--All of ONE weapon (this one, lol) needs this despite other revolvers doing 
+						--the exact same fucking thing with their speed loaders WITHOUT the need for this stupid shit
 						self.korth.hide_reload_obj_start = 0
 						self.korth.show_reload_obj = 1.2
 						self.korth.hide_reload_obj_exit = 1.1

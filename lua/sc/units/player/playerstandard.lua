@@ -4097,9 +4097,9 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 
-		if show_reload_obj and self._state_data.reload_expire_t - t < (show_reload_obj * speed_multiplier) then
+		if show_reload_obj and self._state_data.reload_expire_t - t < (show_reload_obj / speed_multiplier) then
 			self._equipped_unit:base():set_reload_objects_visible(true)
-		elseif hide_reload_obj_start and self._state_data.reload_expire_t - t > (hide_reload_obj_start * speed_multiplier) then
+		elseif hide_reload_obj_start and self._state_data.reload_expire_t - t > (hide_reload_obj_start / speed_multiplier) then
 			self._equipped_unit:base():set_reload_objects_visible(false)
 		end
 
@@ -4152,7 +4152,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 
 	if self._state_data.reload_exit_expire_t then
 		local hide_reload_obj_exit = self._equipped_unit:base():weapon_tweak_data().hide_reload_obj_exit
-		if hide_reload_obj_exit and self._state_data.reload_exit_expire_t - t < (hide_reload_obj_exit * speed_multiplier) then
+		if hide_reload_obj_exit and self._state_data.reload_exit_expire_t - t < (hide_reload_obj_exit / speed_multiplier) then
 			self._equipped_unit:base():set_reload_objects_visible(false, "reload_not_empty")
 		end
 	end

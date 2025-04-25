@@ -7255,8 +7255,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.c96.stats_modifiers = nil
 						self.c96.keep_ammo = 1
-						self.c96.timers.reload_empty = 3.9
-						self.c96.timers.reload_exit_empty = 0.6
+						self.c96.timers.reload_empty = 2.7
+						self.c96.timers.reload_exit_empty = 2.2
 						self.c96.timers.reload_not_empty = 2.7
 						self.c96.timers.reload_exit_not_empty = 1.9
 						self.c96.panic_suppression_chance = 0.05
@@ -7355,9 +7355,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.rsh12.stats_modifiers = nil
 						self.rsh12.reload_speed_multiplier = 0.9
 						self.rsh12.timers.reload_not_empty = 2.1
-						self.rsh12.timers.reload_empty = 2.1
-						self.rsh12.timers.reload_exit_empty = 0.6
-						self.rsh12.timers.reload_exit_not_empty = 0.6
+						self.rsh12.timers.reload_empty = 1.6
+						self.rsh12.timers.reload_exit_empty = 1.1
+						self.rsh12.timers.reload_not_empty = 1.6
+						self.rsh12.timers.reload_exit_not_empty = 1.1
 						self.rsh12.panic_suppression_chance = 0.05
 						self.rsh12.can_shoot_through_enemy = true
 						self.rsh12.can_shoot_through_enemy_unlim = true
@@ -8061,10 +8062,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model3.armor_piercing_chance = 0.5
 						self.model3.can_shoot_through_enemy = true
 						self.model3.reload_speed_multiplier = 0.95
-						self.model3.timers.reload_not_empty = 2.2
-						self.model3.timers.reload_exit_not_empty = 0.4
-						self.model3.timers.reload_empty = 2.2
-						self.model3.timers.reload_exit_empty = 0.4
+						self.model3.timers.reload_empty = 1.62
+						self.model3.timers.reload_exit_empty = 1
+						self.model3.timers.reload_not_empty = 1.62
+						self.model3.timers.reload_exit_not_empty = 1
 						self.model3.panic_suppression_chance = 0.05
 					--Akimbo
 						self.x_model3.has_description = true
@@ -8147,10 +8148,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_raging_bull.can_shoot_through_enemy = true
 						self.new_raging_bull.can_shoot_through_enemy_unlim = true
 						self.new_raging_bull.reload_speed_multiplier = 0.9
-						self.new_raging_bull.timers.reload_not_empty = 2.1
-						self.new_raging_bull.timers.reload_empty = 2.1
-						self.new_raging_bull.timers.reload_exit_empty = 0.6
-						self.new_raging_bull.timers.reload_exit_not_empty = 0.6
+						self.new_raging_bull.timers.reload_empty = 1.6
+						self.new_raging_bull.timers.reload_exit_empty = 1.1
+						self.new_raging_bull.timers.reload_not_empty = 1.6
+						self.new_raging_bull.timers.reload_exit_not_empty = 1.1
 						self.new_raging_bull.panic_suppression_chance = 0.05
 					--Akimbo
 						self.x_rage.has_description = true
@@ -8236,8 +8237,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.chinchilla.can_shoot_through_enemy = true
 						self.chinchilla.can_shoot_through_enemy_unlim = true
 						self.chinchilla.reload_speed_multiplier = 1.12
-						self.chinchilla.timers.reload_exit_empty = 0.3
-						self.chinchilla.timers.reload_exit_not_empty = 0.3
+						self.chinchilla.ignore_reload_objects = true
+						self.chinchilla.timers.reload_empty = 2.1
+						self.chinchilla.timers.reload_exit_empty = 1.1
+						self.chinchilla.timers.reload_not_empty = 2.1
+						self.chinchilla.timers.reload_exit_not_empty = 1.1
 					--Akimbo
 						self.x_chinchilla.has_description = true
 						self.x_chinchilla.desc_id = "bm_x_chinchilla_sc_desc"				
@@ -9751,9 +9755,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.uzi.spin_up_t = 0.07
 						self.uzi.spin_down_t = 0.0000000001
 						self.uzi.reload_speed_multiplier = 1.1
+						self.uzi.timers.reload_empty = 3.22
+						self.uzi.timers.reload_exit_empty = 1.1
 						self.uzi.timers.reload_not_empty = 1.95
-						self.uzi.timers.reload_empty = 3.6
-						self.uzi.timers.reload_exit_empty = 0.7
 						self.uzi.timers.reload_exit_not_empty = 1.3
 					--Akimbo
 						self.x_uzi.use_data.selection_index = 2
@@ -11388,7 +11392,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m16.stats_modifiers = nil
 						self.m16.panic_suppression_chance = 0.05
 						self.m16.reload_speed_multiplier = 1.12
-						self.m16.timers.reload_empty = 3.68
+						self.m16.timers.reload_empty = 3.6
 						self.m16.timers.reload_exit_empty = 0.85
 						self.m16.timers.reload_exit_not_empty = 0.95
 
@@ -12476,8 +12480,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.msr.stats_modifiers = nil
 						self.msr.panic_suppression_chance = 0.05
 						self.msr.reload_speed_multiplier = 0.9
+						self.msr.timers.reload_empty = 2.65
+						self.msr.timers.reload_exit_empty = 1.75
 						self.msr.timers.reload_not_empty = 2.55
-						self.msr.timers.reload_exit_empty = 0.7
 						self.msr.timers.reload_exit_not_empty = 0.75
 
 					--Amaroq 900 (AWP)
@@ -12514,8 +12519,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.awp.armor_piercing_chance = 1
 						self.awp.stats_modifiers = nil
 						self.awp.panic_suppression_chance = 0.05
-						self.awp.timers.reload_empty = 3.7
-						self.awp.timers.reload_exit_empty = 0.3
+						self.awp.reload_speed_multiplier = 0.9
+						self.awp.reload_not_empty_speed_multiplier = 1.2
+						self.awp.timers.reload_empty = 2.1
+						self.awp.timers.reload_exit_empty = 2
 						self.awp.timers.reload_not_empty = 2.4
 						self.awp.timers.reload_exit_not_empty = 1.1
 
@@ -12553,7 +12560,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r700.stats_modifiers = nil
 						self.r700.panic_suppression_chance = 0.05
 						self.r700.reload_speed_multiplier = 1.3
-						self.r700.timers.reload_exit_empty = 1.15
+						self.r700.timers.reload_empty = 4.12
+						self.r700.timers.reload_exit_empty = 2.1
 						self.r700.timers.reload_exit_not_empty = 0.95
 
 				--SECONDARIES
@@ -12592,7 +12600,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.scout.stats_modifiers = nil
 						self.scout.panic_suppression_chance = 0.05
 						self.scout.reload_speed_multiplier = 1.25
-						self.scout.timers.reload_exit_empty = 0.5
+						self.scout.timers.reload_empty = 4.4
+						self.scout.timers.reload_exit_empty = 1.55
 						self.scout.timers.reload_exit_not_empty = 0.95
 
 					--North Star
@@ -12891,13 +12900,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.model70.stats_modifiers = nil
 						self.model70.reload_speed_multiplier = 1.125
 						self.model70.panic_suppression_chance = 0.05
-						self.model70.timers.reload_empty = 4.3	
-						self.model70.timers.reload_exit_empty = 0.8
+						self.model70.timers.reload_empty = 3.6
+						self.model70.timers.reload_exit_empty = 1.5
 						self.model70.timers.reload_exit_not_empty = 0.95
 
 					--R93 (Blaser R93)
 						self.r93.has_description = true
-						self.r93.desc_id = "bm_r93_sc_desc"					
+						self.r93.desc_id = "bm_r93_sc_desc"
 						self.r93.upgrade_blocks = nil
 						self.r93.CLIP_AMMO_MAX = 4
 						self.r93.AMMO_MAX = 30
@@ -12930,12 +12939,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.r93.reload_speed_multiplier = 1.08
 						self.r93.stats_modifiers = nil
 						self.r93.panic_suppression_chance = 0.05
-						self.r93.timers.reload_exit_empty = 0.85
+						self.r93.timers.reload_empty = 2.95
+						self.r93.timers.reload_exit_empty = 1.72
 						self.r93.timers.reload_exit_not_empty = 0.95
 
 					--Desert Fox (Desert Tech SRS)
 						self.desertfox.has_description = true
-						self.desertfox.desc_id = "bm_desertfox_sc_desc"				
+						self.desertfox.desc_id = "bm_desertfox_sc_desc"
 						self.desertfox.CLIP_AMMO_MAX = 5
 						self.desertfox.AMMO_MAX = 30
 						self.desertfox.fire_mode_data.fire_rate = 1.3333
@@ -12966,7 +12976,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.desertfox.stats_modifiers = nil
 						self.desertfox.reload_speed_multiplier = 0.95
-						self.desertfox.timers.reload_exit_empty = 0.7
+						self.desertfox.timers.reload_empty = 2.72
+						self.desertfox.timers.reload_exit_empty = 1.84
 						self.desertfox.timers.reload_exit_not_empty = 0.75
 
 					--Flintlock
@@ -13073,9 +13084,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.contender.use_vapor_trail = true
 						self.contender.use_hipfire_stance = "groza"
 						self.contender.reload_speed_multiplier = 0.85
-						self.contender.timers.reload_not_empty = 1.12
+						self.contender.timers.reload_not_empty = 0.65
 						self.contender.timers.reload_empty = self.contender.timers.reload_not_empty
-						self.contender.timers.reload_exit_not_empty = 0.8
+						self.contender.timers.reload_exit_not_empty = 1.3
 						self.contender.timers.reload_exit_empty = self.contender.timers.reload_exit_not_empty
 
 			--[[     ANTI-MATERIEL     ]]
@@ -13116,7 +13127,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.m95.hs_mult = 2
 					self.m95.stats_modifiers = nil
 					self.m95.panic_suppression_chance = 0.05
-					self.m95.timers.reload_exit_empty = 0.85
+					self.m95.timers.reload_empty = 4.06
+					self.m95.timers.reload_exit_empty = 1.9
 					self.m95.timers.reload_not_empty = 3.88
 					self.m95.timers.reload_exit_not_empty = 1.1
 
@@ -14132,10 +14144,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.judge.stats_modifiers = nil
 						self.judge.reload_speed_multiplier = 0.9
-						self.judge.timers.reload_not_empty = 2.1
-						self.judge.timers.reload_empty = 2.1
-						self.judge.timers.reload_exit_empty = 0.6
-						self.judge.timers.reload_exit_not_empty = 0.6
+						self.judge.timers.reload_empty = 1.6
+						self.judge.timers.reload_exit_empty = 1.1
+						self.judge.timers.reload_not_empty = 1.6
+						self.judge.timers.reload_exit_not_empty = 1.1
 						self.judge.panic_suppression_chance = 0.05
 					--Akimbo
 						self.x_judge.desc_id = "bm_x_judge_sc_desc"
@@ -14243,9 +14255,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.panic_suppression_chance = 0.05
 						self.b682.stats_modifiers = {damage = 1}
 						self.b682.reload_speed_multiplier = 1.02
-						self.b682.timers.reload_not_empty = 2.7
-						self.b682.timers.reload_exit_empty = 0.5
-						self.b682.timers.reload_exit_not_empty = 0.8
+						self.b682.timers.reload_empty = 1.8
+						self.b682.timers.reload_exit_empty = 1.8
+						self.b682.timers.reload_not_empty = 1.8
+						self.b682.timers.reload_exit_not_empty = 1.6
 
 					--Breaker 12g (Model 1887)
 						self.boot.desc_id = "bm_menu_sc_boot_desc"
@@ -14338,11 +14351,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.huntsman.stats_modifiers = nil
-						self.huntsman.timers.reload_not_empty = 2.3
-						self.huntsman.timers.reload_empty = 2.3
-						self.huntsman.timers.reload_exit_empty = 0.3
-						self.huntsman.timers.reload_exit_not_empty = 0.3
-						self.huntsman.reload_speed_multiplier = 1.12
+						self.huntsman.timers.reload_empty = 1.8
+						self.huntsman.timers.reload_exit_empty = 1
+						self.huntsman.timers.reload_not_empty = 1.8
+						self.huntsman.timers.reload_exit_not_empty = 1
+						self.huntsman.reload_speed_multiplier = 0.85
 						self.huntsman.panic_suppression_chance = 0.05
 						if BeardLib.Utils:FindMod("Restored Mosconi Reload Animation") then
 							self.huntsman.keep_ammo = 1
@@ -14396,9 +14409,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.stats_modifiers = nil
 						self.coach.keep_ammo = 1
 						self.coach.panic_suppression_chance = 0.05
-						self.coach.timers.reload_exit_empty = 0.3
-						self.coach.timers.reload_exit_not_empty = 0.3
-						self.coach.reload_speed_multiplier = 1.12
+						self.coach.timers.reload_empty = 1
+						self.coach.timers.reload_exit_empty = 1.65
+						self.coach.timers.reload_not_empty = 1
+						self.coach.timers.reload_exit_not_empty = 1.65
+						self.coach.reload_speed_multiplier = 0.88
 
 		--[[     SPECIALS     ]]--
 
@@ -14728,8 +14743,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.gre_m79.panic_suppression_chance = 0.05
 						self.gre_m79.stats_modifiers = {damage = 10}
 						self.gre_m79.reload_speed_multiplier = 1.25
-						self.gre_m79.timers.reload_exit_empty = 0.4
-						self.gre_m79.timers.reload_exit_not_empty = 0.4
+						self.gre_m79.timers.reload_empty = 2.35
+						self.gre_m79.timers.reload_exit_empty = 1.1
+						self.gre_m79.timers.reload_not_empty = 2.35
+						self.gre_m79.timers.reload_exit_not_empty = 1.1
 
 					--Piglet
 						self.m32.upgrade_blocks = {
@@ -14958,10 +14975,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.slap.panic_suppression_chance = 0.05
 						self.slap.stats_modifiers = {damage = 10}
-						self.slap.timers.reload_empty = 3
-						self.slap.timers.reload_not_empty = 3
-						self.slap.timers.reload_exit_empty = 1.2
-						self.slap.timers.reload_exit_not_empty = 1.2
+						self.slap.timers.reload_empty = 2.2
+						self.slap.timers.reload_exit_empty = 2
+						self.slap.timers.reload_not_empty = 2.2
+						self.slap.timers.reload_exit_not_empty = 2
 						self.slap.reload_speed_multiplier = 1.2
 
 					--China Puff
@@ -21888,10 +21905,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.spin_up_t = 0.08
 				self.swhiskey.spin_down_t = 0.00000001
 				self.swhiskey.object_damage_mult = 1.8
-				self.swhiskey.timers.reload_exit_empty = 0.55
-				self.swhiskey.timers.reload_empty = 2.93
-				self.swhiskey.timers.reload_exit_not_empty = 0.55
-				self.swhiskey.timers.reload_not_empty = 2.93
+				self.swhiskey.timers.reload_empty = 2.05
+				self.swhiskey.timers.reload_exit_empty = 1.38
+				self.swhiskey.timers.reload_not_empty = 2.05
+				self.swhiskey.timers.reload_exit_not_empty = 1.38
 			end
 
 			if self.sbeta then
@@ -24270,10 +24287,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bk500.reload_speed_multiplier = 0.9
 				self.bk500.armor_piercing_chance = 1
 				self.bk500.object_damage_mult = 1.8
-				self.bk500.timers.reload_exit_empty = 0.55
-				self.bk500.timers.reload_empty = 2.93
-				self.bk500.timers.reload_exit_not_empty = 0.55
-				self.bk500.timers.reload_not_empty = 2.93
+				self.bk500.timers.reload_empty = 2.05
+				self.bk500.timers.reload_exit_empty = 1.38
+				self.bk500.timers.reload_not_empty = 2.05
+				self.bk500.timers.reload_exit_not_empty = 1.38
 			end
 			
 			if self.haymaker then
@@ -24505,7 +24522,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mx63.stats = {
 					damage = 24,
 					spread = 65,
-					recoil = 87,
+					recoil = 83,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 19,
@@ -24819,7 +24836,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.timers.reload_exit_empty = self.sta11.timers.reload_exit_not_empty
 			end
 
-
 			if self.sickle then
 				self.sickle.categories = { 
 					"assault_rifle",
@@ -24886,7 +24902,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 			end
 
-			if self.bulldog then
+			if self.bulldog then --valorant gun
 				self.bulldog.categories = { 
 					"assault_rifle"
 				}
@@ -24947,7 +24963,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bulldog.timers.reload_exit_not_empty = 0.6
 			end
 
-			if self.holoar then
+			if self.holoar then --WE LIKE FORTNITE
 				self.holoar.categories = { 
 					"assault_rifle"
 				}

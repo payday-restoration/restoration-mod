@@ -1359,7 +1359,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							end
 							
 							DelayedCalls:Add("clip_empty", 0.1, function ()
-								if weap_base:clip_empty() and not manual_reloads then
+								if not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
 									self:_start_action_reload_enter(t)
 								end
 							end)

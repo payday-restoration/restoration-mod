@@ -28422,7 +28422,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_snp_mptango41_magazine_fast.custom_stats = {
 					ads_speed_mult = 0.975,
-					reload_anim_mult = 0.925
+					reload_non_empty_anim_mult = 1.15,
+					adj_timers = {
+						reload_exit_not_empty = 1.34
+					}
 				}
 
 			--STOCKS

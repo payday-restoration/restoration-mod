@@ -2062,9 +2062,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
 		0.85, --Armorer Exclusive
-		0.8, --Unused
-		0.75, --Unused
-		0.7 --Unused
+
+		0.95, --Copycat
+
+		--Unused
+		0.9,
+		0.9
 	}
 
 	--Hitman
@@ -3252,7 +3255,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
-		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[1]) * 100).."%", -- Armor regen buff
+		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[3]) * 100).."%", -- Armor regen buff
 		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
 	}
 	self.multi_choice_specialization_descs[23][9][4] = { --Rogue
@@ -3443,6 +3446,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck3_mrwi_desc",
 			upgrades = {
 				"player_perk_armor_regen_timer_multiplier_1",
+				"player_perk_armor_regen_timer_multiplier_2",
+				"player_perk_armor_regen_timer_multiplier_3",
 				"bodybags_bag_quantity",
 				"player_passive_loot_drop_multiplier_1"	
 			}

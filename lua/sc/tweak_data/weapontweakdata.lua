@@ -6790,6 +6790,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.packrat.stats_modifiers = nil
 						self.packrat.reload_speed_multiplier = 1.1
+						self.packrat.timers.reload_empty = 2.32
 						self.packrat.timers.reload_exit_empty = 0.5
 						self.packrat.timers.reload_exit_not_empty = 0.65
 					--Akimbo
@@ -11514,12 +11515,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.akm.stats_modifiers = nil
+						self.akm.panic_suppression_chance = 0.05
+						self.akm.reload_speed_multiplier = 1.17
 						self.akm.timers.reload_empty = 3.66
 						self.akm.timers.reload_exit_empty = 0.97
 						self.akm.timers.reload_not_empty = 2.2
 						self.akm.timers.reload_exit_not_empty = 0.95
-						self.akm.reload_speed_multiplier = 1.17
-						self.akm.panic_suppression_chance = 0.05
 						--Gold AK
 						self.akm_gold.bmp = 1000
 						self.akm_gold.desc_id = "bm_akm_gold_sc_desc"
@@ -11559,8 +11560,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.akm_gold.stats_modifiers = nil
 						self.akm_gold.panic_suppression_chance = 0.05
-						self.akm_gold.reload_speed_multiplier = deep_clone(self.akm.reload_speed_multiplier)
-						self.akm_gold.timers = deep_clone(self.akm.timers)
+						self.akm_gold.reload_speed_multiplier = 1.17
+						self.akm_gold.timers.reload_empty = 3.66
+						self.akm_gold.timers.reload_exit_empty = 0.97
+						self.akm_gold.timers.reload_not_empty = 2.2
+						self.akm_gold.timers.reload_exit_not_empty = 0.95
 
 					--Byk-1 (OTs-14)
 						self.groza.desc_id = "bm_groza_sc_desc"

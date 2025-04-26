@@ -1788,7 +1788,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 			if weapon_tweak.is_bullpup then 
 				speed_mult = speed_mult * 1.25
 			end
-			speed_mult = ((1 - speed_mult) * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)) + speed_mult
+			speed_mult = ((1 - speed_mult) * managers.player:upgrade_value("player", "steelsight_move_speed_multiplier")) + speed_mult
 			movement_speed = base_speed * ((not has_ads_move_speed_mult and 0.45) or 1)
 			movement_speed = math.clamp(movement_speed * speed_mult, 0, base_speed)
 		end

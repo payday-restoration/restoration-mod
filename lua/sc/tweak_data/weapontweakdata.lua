@@ -6790,8 +6790,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.packrat.stats_modifiers = nil
 						self.packrat.reload_speed_multiplier = 1.1
-						self.packrat.timers.reload_empty = 2.32
-						self.packrat.timers.reload_exit_empty = 0.5
+						self.packrat.timers.reload_empty = 2.12
+						self.packrat.timers.reload_exit_empty = 0.68
 						self.packrat.timers.reload_exit_not_empty = 0.65
 					--Akimbo
 						self.x_packrat.has_description = true
@@ -7312,7 +7312,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sub2000.stats_modifiers = nil
 						self.sub2000.use_unequip_swap = true
 						self.sub2000.swap_speed_multiplier = 0.4
-						self.sub2000.timers.reload_exit_empty = 0.85
+						self.sub2000.timers.reload_empty = 3.1
+						self.sub2000.timers.reload_exit_empty = 1.05
 						self.sub2000.timers.reload_exit_not_empty = 0.95
 
 					--RUS-12 Angry Tiger
@@ -10429,12 +10430,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.m60.stats_modifiers = nil
 						self.m60.bipod_req_scope = true
 						self.m60.panic_suppression_chance = 0.05
-						self.m60.reload_speed_multiplier = 0.75
+						self.m60.reload_speed_multiplier = 0.77
 						self.m60.sounds.spin_start = "wp_m60_reload_lever_release"
 						self.m60.spin_up_shoot = true
 						self.m60.spin_up_t = 0.1
 						self.m60.spin_down_t = 0.00000001
-						self.m60.timers.reload_exit_empty = 1.4
+						self.m60.timers.reload_empty = 5.87
+						self.m60.timers.reload_exit_empty = 1.75
 						self.m60.timers.reload_not_empty = 4.7
 						self.m60.timers.reload_exit_not_empty = 2.8
 
@@ -12796,8 +12798,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.siltstone.armor_piercing_chance = 1
 						self.siltstone.stats_modifiers = nil
 						self.siltstone.panic_suppression_chance = 0.05
-						self.siltstone.timers.reload_empty = 3.1
-						self.siltstone.timers.reload_exit_empty = 0.6
+						self.siltstone.timers.reload_empty = 2.9
+						self.siltstone.timers.reload_exit_empty = 0.9
 						self.siltstone.timers.reload_not_empty = 2.1
 						self.siltstone.timers.reload_exit_not_empty = 0.8
 
@@ -19074,10 +19076,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m107cq.stats_modifiers = nil
 				self.m107cq.panic_suppression_chance = 0.05
 				self.m107cq.reload_speed_multiplier = 0.9
+				self.m107cq.timers.reload_empty = 4.5
+				self.m107cq.timers.reload_exit_empty = 0.95
 				self.m107cq.timers.reload_not_empty = 2.8
 				self.m107cq.timers.reload_exit_not_empty = 1.12
-				self.m107cq.timers.reload_empty = 4.8
-				self.m107cq.timers.reload_exit_empty = 0.65
 			end
 
 			if self.m200 then --Pawcio's Intervention
@@ -20332,8 +20334,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scp_mg36.lock_slide = true
 				self.scp_mg36.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.scp_mg36.reload_speed_multiplier = 0.9
-				self.scp_mg36.timers.reload_empty = 3.75
-				self.scp_mg36.timers.reload_exit_empty = 1.1
+				self.scp_mg36.timers.reload_empty = 3.7
+				self.scp_mg36.timers.reload_exit_empty = 1.15
 				self.scp_mg36.timers.reload_not_empty = 3.06
 				self.scp_mg36.timers.reload_exit_not_empty = 1
 			end
@@ -22299,10 +22301,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.rmary2.can_shoot_through_enemy_unlim = true
 				self.rmary2.stats_modifiers = nil
 				self.rmary2.panic_suppression_chance = 0.05
-				self.rmary2.timers.reload_exit_not_empty = 0.6
+				self.rmary2.timers.reload_empty = 3.1
+				self.rmary2.timers.reload_exit_empty = 0.6
 				self.rmary2.timers.reload_not_empty = 2.3
-				self.rmary2.timers.reload_exit_empty = 0.4
-				self.rmary2.timers.reload_empty = 3.3
+				self.rmary2.timers.reload_exit_not_empty = 0.6
 			end
 
 			if self.pkilo then 
@@ -23216,8 +23218,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.srs99_s7.can_shoot_through_titan_shield = true
 				self.srs99_s7.stats_modifiers = nil
 				self.srs99_s7.panic_suppression_chance = 0.05
-				self.srs99_s7.timers.reload_exit_empty = 0.75
-				self.srs99_s7.timers.reload_exit_not_empty = 0.75
+				self.srs99_s7.timers = deep_clone(self.fal.timers)
 			end
 
 			if self.br55 then --RJC9000's Halo BR55
@@ -23708,8 +23709,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sierra458.sounds.stop_fire = "scar_stop"
 				self.sierra458.timers.unequip = 0.5
 				self.sierra458.timers.equip = 0.7
-				self.sierra458.timers.reload_empty = 3.41
-				self.sierra458.timers.reload_exit_empty = 0.5
+				self.sierra458.timers.reload_empty = 3.21
+				self.sierra458.timers.reload_exit_empty = 0.7
 				self.sierra458.timers.reload_not_empty = 2.35
 				self.sierra458.timers.reload_exit_not_empty = 0.8
 			end
@@ -24376,8 +24377,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.haymaker.sounds.stop_fire = "saiga_stop"
 				self.haymaker.panic_suppression_chance = 0.05
 				self.haymaker.panic_suppression_chance = 0.05
-				self.haymaker.timers.reload_empty = 4
-				self.haymaker.timers.reload_exit_empty = 0.9
+				self.haymaker.timers.reload_empty = 3.9
+				self.haymaker.timers.reload_exit_empty = 1.02
 				self.haymaker.timers.reload_not_empty = 3
 				self.haymaker.timers.reload_exit_not_empty = 0.7
 			end

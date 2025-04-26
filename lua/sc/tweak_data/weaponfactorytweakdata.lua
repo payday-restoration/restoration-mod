@@ -27217,10 +27217,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_lmg_scp_mg36_magazine_drum.custom_stats = {
 				ads_speed_mult = 0.95 ,
-				reload_empty_anim_mult = 0.9,
+				reload_empty_anim_mult = 0.87,
 				reload_non_empty_anim_mult = 0.88,
 				adj_timers = {
-					reload_exit_empty = 1,
+					reload_exit_empty = 1.1,
 					reload_exit_not_empty = 1
 				}
 			}

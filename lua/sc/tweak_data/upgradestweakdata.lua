@@ -1521,7 +1521,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Moving Target
 				--Basic
-				self.values.player.steelsight_move_speed_multiplier = {1.5} --Movement speed while ADSing.
+				self.values.player.steelsight_move_speed_multiplier = {0.35} --Movement speed penalty reduction while ADSing.
 				
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
@@ -1548,7 +1548,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b2 = tostring(self.values.player.detection_risk_add_movement_speed[1][2]), -- movement speed per concealment
 					skill_value_b3 = tostring(self.values.player.detection_risk_add_movement_speed[1][4]), -- concealment tresholder for movement speed
 					skill_value_b4 = tostring(self.values.player.detection_risk_add_movement_speed[1][5] * 100).."%", -- max possible movement speed
-					skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
+					skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
 					skill_value_p1 = tostring(self.values.player.detection_risk_add_movement_speed[2][1] * 100).."%", 
 					skill_value_p2 = tostring(self.values.player.detection_risk_add_movement_speed[2][2]),
 					skill_value_p3 = tostring(self.values.player.detection_risk_add_movement_speed[2][4]), 
@@ -4926,7 +4926,7 @@ function UpgradesTweakData:_player_definitions()
 	}
 	self.definitions.player_steelsight_move_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
-		category = "player",
+		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "steelsight_move_speed_multiplier",

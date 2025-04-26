@@ -18889,10 +18889,12 @@ end)
 						translation = Vector3(0, 7, -0.33)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_tti = {
-						translation = Vector3(0, 9, -0.1)
+						translation = Vector3(0, 9, -0.095),
+						rotation = Rotation(0, 0.008, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_qbu88 = {
-						translation = Vector3(0, -7.2, 0.3)
+						translation = Vector3(0, -7.2, 0.3),
+						rotation = Rotation(0.005, 0.008, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
 						translation = Vector3(-0.004, -3.8, -3.36)
@@ -18921,13 +18923,15 @@ end)
 						translation = Vector3(-0.012, -0.5, -3.81)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_model70 = {
-						translation = Vector3(0, 0.5, -4.03)
+						translation = Vector3(-0.02, 4.5, -4.03),
+						rotation = Rotation(-0.005, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
 						translation = Vector3(0, -19.8, -4.28)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
-						translation = Vector3(0, -6.9, -3.95)
+						translation = Vector3(0, -6.9, -3.94),
+						rotation = Rotation(0.005, 0.008, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_r93 = {
 						translation = Vector3(-0.005, 2, -3.76)
@@ -19826,79 +19830,13 @@ end)
 			self.parts.wpn_fps_upg_o_shortdot.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_upg_o_shortdot.perks = {"scope"}
 			self.parts.wpn_fps_upg_o_shortdot.reticle_obj = nil
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m95 = {
-				translation = Vector3(-0.0, -13.5, -4.58)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_msr = {
-				translation = Vector3(0, -24, -4.29)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_r93 = {
-				translation = Vector3(0, -20.5, -4.52)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_sbl = {
-				translation = Vector3(-0.01, -23.5, -4.577)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_mosin = {
-				translation = Vector3(0, -42, -5.04)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_wa2000 = {
-				translation = Vector3(0, -18, 0)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_desertfox = {
-				translation = Vector3(0, -29.5, -4.7)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_tti = {
-				translation = Vector3(0, -13.5, -0.855)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_qbu88 = {
-				translation = Vector3(0, -30, -0.455)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_siltstone = {
-				translation = Vector3(0, -8, -4.77)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_model70 = {
-				translation = Vector3(0, -22, -4.79)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_r700 = {
-				translation = Vector3(0, -23, -4.54)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_scout = {
-				translation = Vector3(-0.001, -34.3, -0.111)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_victor = {
-				translation = Vector3(-0.001, -15.5, -1.089)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_contender = {
-				translation = Vector3(-0.002, -24.5, -4.107)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_awp = {
-				translation = Vector3(0, 10, 0)
-			}
-
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m200 = {
-				translation = Vector3(0.005, -20, -4.792)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m107cq = {
-				translation = Vector3(-0.015, -10, -4.778)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_k31 = {
-				translation = Vector3(-0.012, -18, -4.8)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_l115 = {
-				translation = Vector3(-0.018, -22, -4.275)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_sgs = {
-				translation = Vector3(-0.013, -25, -1.445)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_sierra458 = {
-				translation = Vector3(-0.001, -13.1, -0.85)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_iuhTTIPlus = {
-				translation = Vector3(0.022, -22, -0.78)
-			}
-			self.parts.wpn_fps_upg_o_shortdot.stance_mod.wpn_fps_snp_m1894 = {
-				translation = Vector3(0, -12.5, -0.85)
-			}
+			self.parts.wpn_fps_upg_o_shortdot.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+				
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_shortdot.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, -21.5, -0.76)
+				end
+			end
 
 
 			--Vanilla Shortdot
@@ -19920,65 +19858,13 @@ end)
 			}
 			self.parts.wpn_fps_upg_o_leupold.custom_stats = { big_scope = true }
 			self.parts.wpn_fps_upg_o_leupold.perks = {"scope"}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_m95 = {
-				translation = Vector3(-0.005, -17.5, -4.68)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_msr = {
-				translation = Vector3(0, -28.6, -4.3951)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_r93 = {
-				translation = Vector3(-0.002, -24.7, -4.618)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_sbl = {
-				translation = Vector3(-0.007, -27.5, -4.685)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_mosin = {
-				translation = Vector3(-0.001, -46.6, -5.135)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_wa2000 = {
-				translation = Vector3(0, -22.6, -0.1)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_model70 = {
-				translation = Vector3(0, -26.2, -4.895)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_r700 = {
-				translation = Vector3(0, -27.2, -4.645)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_desertfox = {
-				translation = Vector3(0, -33.7, -4.80)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_tti = {
-				translation = Vector3(0, -18, -0.955)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_qbu88 = {
-				translation = Vector3(-0, -34.1, -0.555)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_scout = {
-				translation = Vector3(-0, -38.9, -0.211)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_victor = {
-				translation = Vector3(-0.001, -19.9, -1.191)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_siltstone = {
-				translation = Vector3(0, -12.1, -4.8745)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_contender = {
-				translation = Vector3(-0, -28.8, -4.212)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_awp = {
-				translation = Vector3(0.0007, 8.9, -0.1)
-			}
-
-
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_m107cq = {
-				translation = Vector3(-0.015, -14.2, -4.879)
-			}
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_iuhTTIPlus = {
-				translation = Vector3(0.028, -26.4, -0.885)
-			}		
-			self.parts.wpn_fps_upg_o_leupold.stance_mod.wpn_fps_snp_m1894 = {
-				translation = Vector3(0.0022, -17, -0.955)
-			}
+			self.parts.wpn_fps_upg_o_leupold.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	
+			for i, weap in pairs(self.parts.wpn_fps_upg_o_leupold.stance_mod) do
+				if weap and weap.translation then
+					weap.translation = weap.translation + Vector3(0, -22.5, -0.867)
+				end
+			end
 		end)
 
 	--DLC1 Mods

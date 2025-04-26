@@ -18371,6 +18371,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"dmr_l"
 				}
 				self.sks.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.sks.warsaw = true
 				self.sks.lock_slide = true
 				self.sks.lock_slide_alt = true
 				self.sks.recategorize = {"dmr_ar"}
@@ -18417,10 +18418,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.ignore_reload_objects_not_empty = true
 				self.sks.panic_suppression_chance = 0.05
 				--mag timers
+				--[[
 				self.sks.timers.reload_empty = 3.03
 				self.sks.timers.reload_exit_empty = 1.2
 				self.sks.timers.reload_not_empty = 1.8
 				self.sks.timers.reload_exit_not_empty = 0.7
+				--]]
 				--clip timers
 				self.sks.timers.reload_empty = 1.6
 				self.sks.timers.reload_exit_empty = 1.8
@@ -18879,8 +18882,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.k31.panic_suppression_chance = 0.05
 				self.k31.reload_speed_multiplier = 1.1
 				self.k31.empty_use_mag = true
+				self.k31.timers.reload_empty = 3
+				self.k31.timers.shotgun_reload_exit_empty = 2
 				self.k31.timers.shotgun_reload_first_shell_offset = 0.12
-				self.k31.timers.shotgun_reload_exit_empty = 0.6
 				self.k31.timers.shotgun_reload_exit_not_empty = 1.2
 			end
 

@@ -18851,7 +18851,6 @@ end)
 						rotation = Rotation(-0.1, -0.5, 0)
 					}
 
-				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_asval = {
 						translation = Vector3(0, 14, 0)
 					}
@@ -18882,6 +18881,10 @@ end)
 						rotation = Rotation(0, -0.5, 0)
 					}
 				
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_rsass = {
+						translation = Vector3(-0.02, 2.3, -0.27),
+						rotation = Rotation(-0.02, -0.06, -0.77)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_victor = {
 						translation = Vector3(0, 7, -0.33)
 					}
@@ -19333,8 +19336,8 @@ end)
 						translation = Vector3(-0.009, 6, -3.5)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_t9fastburst = {
-						translation = Vector3(-0.02, 7.5, -1.15),
-						rotation = Rotation(-0.01,-0.1,0)
+						translation = Vector3(-0.03, 7.8, -1.15),
+						rotation = Rotation(-0.025,-0.1,0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_mike4_2022 = {
 						translation = (BeardLib.Utils:FindMod("L119A2") and Vector3(-0.02, 6.9, -0.57)) or Vector3(0, 6.8, -0.583)
@@ -19392,6 +19395,9 @@ end)
 						rotation = Rotation(-0.13, -0.01, -10.6)
 					}
 
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_xr2 = {
+						translation = Vector3(-0.003, 2.7, -2.3)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_m2 = {
 						translation = Vector3(-0.008, 2.6, -0.12)
 					}
@@ -19419,7 +19425,7 @@ end)
 						translation = Vector3(-0.01, 1, -1.21)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_t9british = {
-						translation = Vector3(-0.014, -5, -2.638),
+						translation = Vector3(-0.014, 2.8, -2.65),
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_owd_m1a = {
 						translation = Vector3(-0.008, 7.5, -3.86),
@@ -19454,11 +19460,12 @@ end)
 
 
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
-						translation = Vector3(0.02, 4, 0.03),
-						rotation = Rotation(0.11, -0.09, 0)
+						translation = Vector3(-0.012, 4, 0.02),
+						rotation = Rotation(-0.02, -0.02, 0.1)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_fg42 = {
-						translation = Vector3(0.045, 5.7, -3.092)
+						translation = Vector3(0.012, 6.1, -3.04),
+						rotation = Rotation(-0.038, -0.09, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mg34 = {
 						translation = Vector3(-0.004, 13.5, -3.01 ),
@@ -19467,7 +19474,8 @@ end)
 						translation = Vector3(0.02, 11.3, -0.19)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_stoner63a = {
-						translation = Vector3(-0.012, 0.8, -0.052)
+						translation = Vector3(-0.005, 0.8, -0.063),
+						rotation = Rotation(0.01, 0, -0.01)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_raid_ww2_bren = {
 						translation = Vector3(3.555, -0.2, -0.59),
@@ -19478,7 +19486,8 @@ end)
 						rotation = Rotation(-0.042, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mx63 = {
-						translation = Vector3(0, 4.8, -0.09)
+						translation = Vector3(0, 6.2, -0.5),
+						rotation = Rotation(0, 0.19, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_pkilo = {
 						translation = Vector3(0.028, 6.75, -0.087),
@@ -19513,7 +19522,7 @@ end)
 						rotation = Rotation(0.02,0.15,0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_martinihenry = {
-						translation = Vector3(-0.022, -8, -4.022)
+						translation = Vector3(-0.022, -7.8, -4.022)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mptango41 = {
 						translation = Vector3(-0.01, 21.3, -3.805)
@@ -29403,7 +29412,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_t9british_scope.stats = { value = 0, zoom = 5 }
 			self.parts.wpn_fps_ass_t9british_scope.stance_mod = {
 				wpn_fps_ass_t9british = {
-					translation = Vector3( 0.013, -25, -2.65 )
+					translation = Vector3( 0.013, -15, -2.65 )
 				}
 			}
 
@@ -39540,7 +39549,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				wpn_fps_lmg_mx63_o_rear = {
 					stance_mod = {
 						wpn_fps_lmg_mx63 = {
-							translation = Vector3(-0.06, -8, -0.02),
+							translation = Vector3(-0.06, -8, -0.42),
 							rotation = Rotation(0.01, 0, 0)
 						}
 					}	
@@ -46917,6 +46926,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "AkimboMosconiInit", function(sel
 end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "pkilo_mod_init", function(self)
 end)
+Hooks:PostHook(WeaponFactoryTweakData, "init", "sig_sauer_xm250_mod_init", function(self)
+	if self.parts.wpn_fps_lmg_sig_xm250_irons_angled then
+		self.parts.wpn_fps_lmg_sig_xm250_irons_angled.stance_mod.wpn_fps_lmg_sig_xm250 = {
+				 translation = Vector3(-1.87, -4, -9.15),	 
+				 rotation = Rotation(0, 0, -45)
+				 }
+					 
+		
+		self.parts.wpn_fps_lmg_sig_xm250_optic_ngsw.override = {
+			wpn_fps_lmg_sig_xm250_irons_angled = {
+				stance_mod = {
+					wpn_fps_lmg_sig_xm250 = {
+					translation = Vector3(-1.85, -3, -11.15),
+					rotation = Rotation(0, 0, -45)	
+					}
+				}	
+			},
+		}
+	end
+end)
 
 Hooks:PostHook(WeaponFactoryTweakData, "init", "mg34ModInit", function(self)
 end)
@@ -46929,7 +46958,7 @@ end)
 Hooks:PostHook( WeaponFactoryTweakData, "init", "amtInit", function(self)
 	if self.wpn_fps_pis_amt then
 		if not self.wpn_fps_pis_amt.adds then
-		    self.wpn_fps_pis_amt.adds = {}
+			self.wpn_fps_pis_amt.adds = {}
 		end    
 
 		self.wpn_fps_pis_amt.adds.wpn_fps_upg_o_specter = {

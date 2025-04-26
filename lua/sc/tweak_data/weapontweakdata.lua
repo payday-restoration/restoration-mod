@@ -16859,7 +16859,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holygrail.armor_piercing_chance = 1
 				self.holygrail.descope_on_fire = true
 				self.holygrail.always_play_anims = true
-				self.holygrail.timers.reload_exit_empty = 0.3
+				self.holygrail.timers.reload_empty = 1.3
+				self.holygrail.timers.reload_exit_empty = 1
+				self.holygrail.timers.reload_not_empty = 1.3
 				self.holygrail.timers.reload_exit_not_empty = 0.3
 			end
 
@@ -16910,7 +16912,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.martinihenry.armor_piercing_chance = 1
 				self.martinihenry.descope_on_fire = true
 				self.martinihenry.always_play_anims = true
-				self.martinihenry.timers.reload_exit_empty = 0.3
+				self.martinihenry.timers.reload_empty = 1.3
+				self.martinihenry.timers.reload_exit_empty = 1
+				self.martinihenry.timers.reload_not_empty = 1.3
 				self.martinihenry.timers.reload_exit_not_empty = 0.3
 			end
 
@@ -19123,12 +19127,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m200.fire_mode_data.fire_rate = 1.090909
 				self.m200.fire_rate_multiplier = 0.8
 				self.m200.timers = {
+					reload_empty = 3.25,
+					reload_exit_empty = 1.9,
 					reload_not_empty = 2.7,
-					reload_empty = 4.3,
+					reload_exit_not_empty = 0.95,
 					unequip = 0.7,
-					equip = 0.9,
-					reload_exit_empty = 0.6,
-					reload_exit_not_empty = 0.95
+					equip = 0.9
 				}
 				self.m200.use_vapor_trail = true
 				self.m200.reload_speed_multiplier = 0.98
@@ -19384,10 +19388,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.deckard.stats_modifiers = nil
 				self.deckard.reload_speed_multiplier = 0.9
-				self.deckard.timers.reload_not_empty = 2.1
-				self.deckard.timers.reload_empty = 2.1
-				self.deckard.timers.reload_exit_empty = 0.6
-				self.deckard.timers.reload_exit_not_empty = 0.6
+				self.deckard.timers = deep_clone(self.new_raging_bull.timers)
 				self.deckard.panic_suppression_chance = 0.05
 			end
 
@@ -20636,8 +20637,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_lar.can_shoot_through_enemy = true
 				self.madsen_lar.can_shoot_through_wall = false
 				self.madsen_lar.armor_piercing_chance = 0.5
+				self.madsen_lar.timers.reload_empty = 2.8
+				self.madsen_lar.timers.reload_exit_empty = 1.13
 				self.madsen_lar.timers.reload_exit_not_empty = 0.7
-				self.madsen_lar.timers.reload_exit_empty = 0.6
 				self.madsen_lar.panic_suppression_chance = 0.05
 			end
 
@@ -21580,11 +21582,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stoner63a.reload_speed_multiplier = 0.98
 				self.stoner63a.sms = sms_preset.lmg_48
 				self.stoner63a.weapon_movement_penalty = sms_preset.lmg_48
+				self.stoner63a.timers.reload_empty = 6.8
+				self.stoner63a.timers.reload_exit_empty = 0.58
+				self.stoner63a.timers.reload_not_empty = 6.8
+				self.stoner63a.timers.reload_exit_not_empty = 0.58
 				self.stoner63a.timers.equip = 1.2
-				self.stoner63a.timers.reload_exit_empty = 0.42
-				self.stoner63a.timers.reload_empty = 6.95
-				self.stoner63a.timers.reload_exit_not_empty = 0.42
-				self.stoner63a.timers.reload_not_empty = 6.95
 			end
 
 			if self.stoner63a_rifle then --RJC9000 and PlayBONK's Stoner 63A AR (WIP)
@@ -23058,7 +23060,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.owd_m1a.can_shoot_through_shield = false
 				self.owd_m1a.armor_piercing_chance = 0.50
 				self.owd_m1a.timers.equip = 0.4
-				self.owd_m1a.timers.reload_exit_empty = 0.7
+				self.owd_m1a.timers.reload_empty = 2.8
+				self.owd_m1a.timers.reload_exit_empty = 0.95
 				self.owd_m1a.timers.reload_exit_not_empty = 0.7
 				self.owd_m1a.sounds.fire = "m14_fire"
 				self.owd_m1a.sounds.fire_single = "m14_fire"
@@ -24578,8 +24581,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mx63.spin_up_t = 0.1
 				self.mx63.spin_down_t = 0.00000001
 				self.mx63.reload_speed_multiplier = 0.8
-				self.mx63.timers.reload_empty = 5.04
-				self.mx63.timers.reload_exit_empty = 0.72
+				self.mx63.timers.reload_empty = 4.84
+				self.mx63.timers.reload_exit_empty = 0.92
 				self.mx63.timers.reload_not_empty = 4.18
 				self.mx63.timers.reload_exit_not_empty = 1
 			end
@@ -25815,8 +25818,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.xr2.armor_piercing_chance = 0.25
 			self.xr2.can_shoot_through_enemy = false
 			self.xr2.panic_suppression_chance = 0.05
-			self.xr2.timers.reload_exit_empty = 0.6
-			self.xr2.timers.reload_not_empty = 0.8
+			self.xr2.timers.reload_empty = 2.4
+			self.xr2.timers.reload_exit_empty = 1
 			self.xr2.timers.reload_not_empty = 1.9
 			self.xr2.timers.reload_exit_not_empty = 0.9
 		end
@@ -26027,10 +26030,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.rsass.armor_piercing_chance = 1
 			self.rsass.stats_modifiers = nil
 			self.rsass.panic_suppression_chance = 0.05
-			self.rsass.timers.reload_not_empty = 2.5
-			self.rsass.timers.reload_empty = 3.43
-			self.rsass.timers.reload_exit_empty = 1
-			self.rsass.timers.reload_exit_not_empty = 0.95
+			self.rsass.timers = deep_clone(self.new_m4.timers)
 		end
 
 		if self.fg42 then --Killerwolf's FG42

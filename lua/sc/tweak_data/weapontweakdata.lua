@@ -9792,7 +9792,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_uzi.has_description = true
 						self.x_uzi.desc_id = "bm_uzi_sc_desc"
 						self.x_uzi.AMMO_MAX = 120
-						self.x_uzi.CLIP_AMMO_MAX = 40
+						self.x_uzi.CLIP_AMMO_MAX = 64
 						self.x_uzi.fire_mode_data.fire_rate = 0.1
 						self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
 						self.x_uzi.kick_pattern = {
@@ -9807,7 +9807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_uzi.damage_falloff = {
 							start_dist = 1500,
 							end_dist = 4000,
-							min_mult = 0.5
+							min_mult = 0.2
 						}
 						self.x_uzi.stats = {
 							damage = 30,

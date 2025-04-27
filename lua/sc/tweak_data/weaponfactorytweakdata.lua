@@ -25088,6 +25088,96 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 3,
 					zoom = 1
 				}		
+				self.parts.wpn_fps_upg_o_romeo3_pis.supported = true		
+				self.parts.wpn_fps_upg_o_romeo3_pis.desc_id = "bm_wp_upg_o_1_1"
+				self.parts.wpn_fps_upg_o_romeo3_pis.stats = {
+					value = 3,
+					zoom = 1
+				}
+			end	
+
+			if self.parts.wpn_fps_upg_o_su230_mdrs then
+				self.parts.wpn_fps_upg_o_su230_mdrs.supported = true	
+				self.parts.wpn_fps_upg_o_su230_mdrs.desc_id = "bm_wp_upg_o_4_rds"
+				self.parts.wpn_fps_upg_o_su230_mdrs.perks = {"scope"}	
+				self.parts.wpn_fps_upg_o_su230_mdrs.stats = {
+					value = 8,
+					zoom = 30
+				}
+				self.parts.wpn_fps_upg_o_su230_mdrs_switch.stats = {
+					value = 1,
+					gadget_zoom = 2
+				}
+			end		
+			
+			if self.parts.wpn_fps_upg_o_acog_rmr then
+				self.parts.wpn_fps_upg_o_acog_rmr.supported = true	
+				self.parts.wpn_fps_upg_o_acog_rmr.desc_id = "bm_wp_upg_o_4_rds"
+				self.parts.wpn_fps_upg_o_acog_rmr.perks = {"scope"}	
+				self.parts.wpn_fps_upg_o_acog_rmr.stats = {
+					value = 8,
+					zoom = 30
+				}	
+				self.parts.wpn_fps_upg_o_acog_rmr_switch.stats = {
+					value = 1,
+					gadget_zoom = 2
+				}
+			end		
+			
+			if self.parts.wpn_fps_upg_o_ta648rmr then
+				self.parts.wpn_fps_upg_o_ta648rmr.supported = true	
+				self.parts.wpn_fps_upg_o_ta648rmr.desc_id = "bm_wp_upg_o_6_rds_mount"
+				self.parts.wpn_fps_upg_o_ta648rmr.perks = {"scope"}	
+				self.parts.wpn_fps_upg_o_ta648rmr.stats = {
+					value = 8,
+					zoom = 50
+				}	
+				self.parts.wpn_fps_upg_o_ta648rmr_switch.stats = {
+					value = 1,
+					gadget_zoom = 2
+				}
+			end
+
+			if self.parts.wpn_fps_upg_o_susat then
+				self.parts.wpn_fps_upg_o_susat.supported = true	
+				self.parts.wpn_fps_upg_o_susat.desc_id = "bm_wp_upg_o_4_irons"
+				self.parts.wpn_fps_upg_o_susat.perks = {"scope"}	
+				self.parts.wpn_fps_upg_o_susat.stats = {
+					value = 8,
+					zoom = 30
+				}	
+				self.parts.wpn_fps_upg_o_susat_steelsight.stats = {
+					value = 1,
+					gadget_zoom = 1
+				}
+			end
+
+			if self.parts.wpn_fps_upg_o_horzine then
+				self.parts.wpn_fps_upg_o_horzine.supported = true
+				self.parts.wpn_fps_upg_o_horzine.desc_id = "bm_wp_upg_o_1_1_ammo"
+				self.parts.wpn_fps_upg_o_horzine.stats = {
+					value = 8,
+					zoom = 1
+				}		
+			end
+			
+			if self.parts.wpn_fps_upg_o_pk01_vi then
+				self.parts.wpn_fps_upg_o_pk01_vi.supported = true
+				self.parts.wpn_fps_upg_o_pk01_vi.desc_id = "bm_wp_upg_o_1_8_laser"
+				self.parts.wpn_fps_upg_o_pk01_vi.perks = {"scope", "gadget"}	
+				self.parts.wpn_fps_upg_o_pk01_vi.stats = {
+					value = 8,
+					zoom = 1
+				}		
+			end
+
+			if self.parts.wpn_fps_upg_o_mro then
+				self.parts.wpn_fps_upg_o_mro.supported = true
+				self.parts.wpn_fps_upg_o_mro.desc_id = "bm_wp_upg_o_1_2"
+				self.parts.wpn_fps_upg_o_mro.stats = {
+					value = 3,
+					zoom = 2
+				}
 			end	
 			
 			if self.parts.wpn_fps_upg_fl_anpeq2 then
@@ -36556,6 +36646,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_kurisumasu_gb_windham.supported = true
 			self.parts.wpn_fps_ass_kurisumasu_gb_windham.stats = { value = 0 }
 			self.parts.wpn_fps_ass_kurisumasu_gb_windham.custom_stats = nil
+			
+			self.parts.wpn_fps_ass_kurisumasu_ro_buis.supported = true
+			self.parts.wpn_fps_ass_kurisumasu_ro_buis.stats = { value = 0 }
+			self.parts.wpn_fps_ass_kurisumasu_ro_buis.custom_stats = nil
 
 			self.wpn_fps_ass_kurisumasu.override = self.wpn_fps_ass_kurisumasu.override or {}
 			self.wpn_fps_ass_kurisumasu.override.wpn_fps_upg_m4_s_standard = {

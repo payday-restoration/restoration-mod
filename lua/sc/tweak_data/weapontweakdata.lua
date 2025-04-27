@@ -21917,6 +21917,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.swhiskey.damage_type = "handcannon"
 				self.swhiskey.fire_mode_data.fire_rate = 0.4195804
 				self.swhiskey.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.swhiskey.desc_id = "bm_ap_weapon_sc_desc"
 				self.swhiskey.AMMO_MAX = 20
 				self.swhiskey.CLIP_AMMO_MAX = 5
 				self.swhiskey.kick = self.stat_info.kick_tables.vertical_kick
@@ -24304,6 +24305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bk500.damage_type = "handcannon"
 				self.bk500.fire_mode_data.fire_rate = 0.5454
 				self.bk500.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
+				self.bk500.desc_id = "bm_ap_weapon_sc_desc"
 				self.bk500.AMMO_MAX = 20
 				self.bk500.CLIP_AMMO_MAX = 5
 				self.bk500.kick = self.stat_info.kick_tables.vertical_kick

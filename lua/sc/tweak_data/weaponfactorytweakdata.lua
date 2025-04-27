@@ -18903,7 +18903,8 @@ end)
 						translation = Vector3(0, -0.6, -3.785)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_msr = {
-						translation = Vector3(0.007, -1.7, -3.53)
+						translation = Vector3(-0.01, -1.7, -3.525),
+						rotation = Rotation(0, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_scout = {
 						translation = Vector3(-0.005, -12, 0.65),
@@ -18923,8 +18924,8 @@ end)
 						translation = Vector3(-0.012, -0.5, -3.81)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_model70 = {
-						translation = Vector3(-0.02, 4.5, -4.03),
-						rotation = Rotation(-0.005, 0, 0)
+						translation = Vector3(-0.006, 0.6, -4.03),
+						rotation = Rotation(0, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
 						translation = Vector3(0, -19.8, -4.28)

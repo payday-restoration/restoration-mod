@@ -12421,8 +12421,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tti.reload_speed_multiplier = 0.87
 						self.tti.timers.unequip = 0.7
 						self.tti.timers.equip = 0.7
-						self.tti.timers.reload_empty = 3.2
-						self.tti.timers.reload_exit_empty = 0.6
+						self.tti.timers.reload_empty = 3.1
+						self.tti.timers.reload_exit_empty = 0.7
 						self.tti.timers.reload_not_empty = 2.2
 						self.tti.timers.reload_exit_not_empty = 0.8
 						self.tti.panic_suppression_chance = 0.05

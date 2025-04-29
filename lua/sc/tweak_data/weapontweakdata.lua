@@ -7124,6 +7124,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						}
 						self.sparrow.stats_modifiers = nil
 						self.sparrow.panic_suppression_chance = 0.05
+						self.sparrow.reload_speed_multiplier = 1.1
 						self.sparrow.timers.reload_exit_empty = 0.7
 						self.sparrow.timers.reload_exit_not_empty = 0.65
 					--Akimbo
@@ -23791,7 +23792,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.czshadow.damage_type = "light_pistol"
 				self.czshadow.fire_mode_data.fire_rate =  0.08333
 				self.czshadow.AMMO_MAX = 75
-				self.czshadow.CLIP_AMMO_MAX = 15
+				self.czshadow.CLIP_AMMO_MAX = 17
 				self.czshadow.tactical_reload = 1
 				self.czshadow.lock_slide = true
 				self.czshadow.kick = self.stat_info.kick_tables.even_recoil
@@ -25108,7 +25109,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.holoar.stats_modifiers = nil
 				self.holoar.panic_suppression_chance = 0.05
 				self.holoar.reload_speed_multiplier = 1.2687
-				self.holoar.sounds.no_fix = true
 				self.holoar.timers.reload_empty = 3.21
 				self.holoar.timers.reload_exit_empty = 1.15
 				self.holoar.timers.reload_not_empty = 2.2

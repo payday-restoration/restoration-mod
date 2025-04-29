@@ -38590,8 +38590,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_czshadow_m_extended.supported = true
 			self.parts.wpn_fps_pis_czshadow_m_extended.stats = {
 				value = 4,
-				extra_ammo = 3,
-				concealment = -1,
+				extra_ammo = 1,
 				reload = -1
 			}
 			self.parts.wpn_fps_pis_czshadow_m_extended.custom_stats = {}
@@ -38614,7 +38613,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_pis_czshadow.override.wpn_fps_pis_czech_m_extended = {
 				stats = {
 					reload = -4,
-					extra_ammo = 10,
+					extra_ammo = 8,
 					concealment = -2
 				},
 				a_obj = "a_m_2"
@@ -38623,7 +38622,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_pis_x_czshadow.override.wpn_fps_pis_czech_m_extended = {
 				stats = {
 					reload = -4,
-					extra_ammo = 20,
+					extra_ammo = 18,
 					concealment = -2
 				},
 				a_obj = "a_m_2"
@@ -38631,8 +38630,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.wpn_fps_pis_x_czshadow.override.wpn_fps_pis_czshadow_m_extended = {
 				stats = {
 					value = 4,
-					extra_ammo = 6,
-					concealment = -1,
+					extra_ammo = 2,
 					reload = -1
 				}
 			}

@@ -18108,6 +18108,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g36k.panic_suppression_chance = 0.05
 			end
 
+			if self.xm8 then --Pawcio's XM8
+				self.xm8.recategorize = { "light_ar" }
+				self.xm8.damage_type = "assault_rifle"
+				self.xm8.tactical_reload = 1
+				self.xm8.nato = true
+				self.xm8.BURST_FIRE = 3
+				self.xm8.ADAPTIVE_BURST_SIZE = false																	
+				self.xm8.auto.fire_rate = 0.08
+				self.xm8.fire_mode_data.fire_rate = 0.08
+				self.xm8.AMMO_MAX = 150
+				self.xm8.CLIP_AMMO_MAX = 30
+				self.xm8.kick = self.stat_info.kick_tables.even_recoil
+				self.xm8.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{8, self.stat_info.kick_tables.moderate_right_kick},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{16, self.stat_info.kick_tables.moderate_left_kick},
+					{26, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.xm8.supported = true
+				self.xm8.ads_speed = 0.260
+				self.xm8.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 6000,
+					min_mult = 0.4166
+				}
+				self.xm8.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 83,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 26,
+					suppression = 10,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.xm8.stats_modifiers = nil
+				self.xm8.reload_speed_multiplier = 1.2
+				self.xm8.reload_not_empty_speed_multiplier = 1.15
+				self.xm8.timers.reload_exit_empty = 0.7
+				self.xm8.timers.reload_not_empty = 2.82
+				self.xm8.timers.reload_exit_not_empty = 0.8
+				self.xm8.panic_suppression_chance = 0.05
+			end
+
 			if self.ar18 then --Pawcio's AR-18
 				self.ar18.recategorize = { "light_ar" }
 				self.ar18.damage_type = "assault_rifle"

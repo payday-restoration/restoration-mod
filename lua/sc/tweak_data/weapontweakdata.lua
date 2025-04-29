@@ -3702,7 +3702,7 @@ function WeaponTweakData:_init_stats()
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 0, 100, 1 do
-		table.insert(self.stats.recoil, (math.lerp( 5.1, 0.5, i / 100 ) * 1))
+		table.insert(self.stats.recoil, (math.lerp( 5.8, 0.4, i / 100 ) * 1))
 	end
 
 	self.stats.value = {}
@@ -11248,10 +11248,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.famas.auto.fire_rate = 0.06
 						self.famas.kick = self.stat_info.kick_tables.vertical_kick
 						self.famas.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
-							{6, self.stat_info.kick_tables.pattern_r1},
-							{8, self.stat_info.kick_tables.moderate_right_kick},
-							{17, self.stat_info.kick_tables.vertical_kick}
+							{0, self.stat_info.kick_tables.moderate_left_kick},
+							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{6, self.stat_info.kick_tables.horizontal_right_recoil},
+							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{18, self.stat_info.kick_tables.vertical_kick},
+							{21, self.stat_info.kick_tables.moderate_left_kick},
 						}
 						self.famas.supported = true
 						self.famas.ads_speed = 0.240
@@ -11349,7 +11351,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 						self.hajk.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
-							{6, self.stat_info.kick_tables.pattern_r2},
+							{6, self.stat_info.kick_tables.moderate_right_kick},
 							{7, self.stat_info.kick_tables.moderate_kick},
 							{13, self.stat_info.kick_tables.right_recoil},
 							{20, self.stat_info.kick_tables.moderate_kick}

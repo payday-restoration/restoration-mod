@@ -18928,7 +18928,8 @@ end)
 						rotation = Rotation(0, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mosin = {
-						translation = Vector3(0, -19.8, -4.28)
+						translation = Vector3(0, -19.8, -4.274),
+						rotation = Rotation(0, 0, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_desertfox = {
 						translation = Vector3(0, -6.9, -3.94),

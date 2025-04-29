@@ -23838,7 +23838,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						last_recoil_mult = 1.05,
 					}
 					self.x_czshadow.AMMO_MAX = 150
-					self.x_czshadow.CLIP_AMMO_MAX = 30
+					self.x_czshadow.CLIP_AMMO_MAX = 34
 					self.x_czshadow.tactical_reload = 2
 					self.x_czshadow.lock_slide = true
 					self.x_czshadow.kick = self.stat_info.kick_tables.even_recoil

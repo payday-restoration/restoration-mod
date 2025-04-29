@@ -26825,18 +26825,37 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					tactical_reload = false
 				}
 
-				--Disabling the mags for now until I can get a workaround for the wildly differing timers between clip and mag reloads
-				self.parts.wpn_fps_upg_sks_mag_detach10.pcs = nil
 				self.parts.wpn_fps_upg_sks_mag_detach10.supported = true
-				self.parts.wpn_fps_upg_sks_mag_detach10.has_description = nil
-				self.parts.wpn_fps_upg_sks_mag_detach10.stats = { reload = -3, concealment = -1 }
-				self.parts.wpn_fps_upg_sks_mag_detach10.custom_stats = { ads_speed_mult = 1.025 }
+				self.parts.wpn_fps_upg_sks_mag_detach10.desc_id = "bm_wp_wpn_fps_ass_sks_mags_reload"
+				self.parts.wpn_fps_upg_sks_mag_detach10.has_description = true
+				self.parts.wpn_fps_upg_sks_mag_detach10.stats = { reload = -8 }
+				self.parts.wpn_fps_upg_sks_mag_detach10.custom_stats = {
+					tactical_reload = 1,
+					reload_not_empty_speed_multiplier = 3,
+					reload_non_empty_anim_mult = 0.5,
+					reload_empty_anim_mult = 1.89,
+					adj_timers = {
+						reload_exit_empty = 1.2,
+						reload_exit_not_empty = 0.7
+					}
+				}
 
-				self.parts.wpn_fps_upg_sks_mag_detach20.pcs = nil
 				self.parts.wpn_fps_upg_sks_mag_detach20.supported = true
-				self.parts.wpn_fps_upg_sks_mag_detach20.has_description = nil
-				self.parts.wpn_fps_upg_sks_mag_detach20.stats = { extra_ammo = 10, reload = -4, concealment = -2 }
-				self.parts.wpn_fps_upg_sks_mag_detach20.custom_stats = { ads_speed_mult = 1.05 }
+				self.parts.wpn_fps_upg_sks_mag_detach20.desc_id = "bm_wp_wpn_fps_ass_sks_mags_reload"
+				self.parts.wpn_fps_upg_sks_mag_detach20.has_description = true
+				self.parts.wpn_fps_upg_sks_mag_detach20.stats = { extra_ammo = 10, reload = -10, concealment = -2 }
+				self.parts.wpn_fps_upg_sks_mag_detach20.custom_stats = { 
+					tactical_reload = 1,
+					ads_speed_mult = 1.05,
+					reload_not_empty_speed_multiplier = 3,
+					reload_non_empty_anim_mult = 0.5,
+					reload_empty_anim_mult = 1.89,
+					adj_timers = {
+						reload_exit_empty = 1.2,
+						reload_exit_not_empty = 0.7
+					}
+				}
+
 
 				self.parts.wpn_fps_upg_sks_barrel_med.supported = true
 				self.parts.wpn_fps_upg_sks_barrel_med.stats = deep_clone(barrels.short_b1_stats)

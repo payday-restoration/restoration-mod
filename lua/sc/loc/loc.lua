@@ -2918,6 +2918,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 				--HCAR
 				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.",
 				--Custom DMRs
+					--SKS
+					["bm_wp_wpn_fps_ass_sks_mags_reload"] = "Equalize the speed of non-empty and empty reloads; #{skill_color}#non-empty reloads are much faster and allow for one in the chamber## while #{important_1}#empty reloads are slower.##",
 					--BOCW EM2
 					["bm_w_t9british"] = "EM2",
 					["bm_wp_wpn_fps_ass_t9british_xmag_01"] = "30 Rnd",

@@ -960,6 +960,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._recoil_recovery = math.clamp(recoil_values and recoil_values[3] or 0.5, 0, 1)
 
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
+	self._reload_not_empty_speed_multiplier = self._reload_not_empty_speed_multiplier or self:weapon_tweak_data().reload_not_empty_speed_multiplier or 1
 	self._ads_speed_mult = self._ads_speed_mult or  1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	self._autograph_multiplier = self:weapon_tweak_data().autograph_multiplier or nil
@@ -1181,6 +1182,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._fire_rate_init_delay = stats.init_rof.delay or self._fire_rate_init_delay
 			end
 	
+			if stats.reload_not_empty_speed_multiplier then
+				self._reload_not_empty_speed_multiplier = (self._reload_not_empty_speed_multiplier or 1) * stats.reload_not_empty_speed_multiplier
+			end
+
 			if stats.adj_timers then
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
@@ -1900,8 +1905,8 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
 
 	if self:get_ammo_remaining_in_clip() ~= 0 then
-		if self:weapon_tweak_data().reload_not_empty_speed_multiplier then
-			multiplier = multiplier * self:weapon_tweak_data().reload_not_empty_speed_multiplier
+		if self._reload_not_empty_speed_multiplier then
+			multiplier = multiplier * self._reload_not_empty_speed_multiplier
 		end
 	end
 	

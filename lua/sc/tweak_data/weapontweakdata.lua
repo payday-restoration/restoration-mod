@@ -22118,7 +22118,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.hk_g56.recategorize = { "heavy_ar" }
 				self.hk_g56.damage_type = "assault_rifle"
 				self.hk_g56.tactical_reload = 1
-				self.hk_g56.CLIP_AMMO_MAX = 25
+				self.hk_g56.CLIP_AMMO_MAX = 32
 				self.hk_g56.AMMO_MAX = 120
 				self.hk_g56.FIRE_MODE = "auto"
 				self.hk_g56.fire_mode_data = {}

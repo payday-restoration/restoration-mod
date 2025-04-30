@@ -302,8 +302,8 @@ function NewRaycastWeaponBase:second_sight_steelsight_mult()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_ads or 1
+		if part_stats and part_stats.pointshoot_ads then
+			return self._pointshoot_ads
 		end
 	end
 
@@ -317,7 +317,7 @@ function NewRaycastWeaponBase:second_sight_spread_mult()
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
 		if part_stats and part_stats.pointshoot_spread then
-			return self._pointshoot_spread or false
+			return self._pointshoot_spread
 		end
 	end
 
@@ -330,8 +330,8 @@ function NewRaycastWeaponBase:second_sight_strafe()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_strafe or false
+		if part_stats and part_stats.pointshoot_strafe then
+			return self._pointshoot_strafe
 		end
 	end
 
@@ -1089,7 +1089,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._bypass_orig_firemode = nil
 		self._bypass_orig_toggle_firemode = nil
 
+		self._pointshoot_ads = 1
 		self._pointshoot_spread = 1
+		self._pointshoot_strafe = 0
 
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
 
@@ -1234,8 +1236,14 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._tactical_reload = stats.tactical_reload
 			end
 			
+			if stats.pointshoot_ads then
+				self._pointshoot_ads = (self._pointshoot_ads or 1) * stats.pointshoot_ads
+			end
 			if stats.pointshoot_spread then
 				self._pointshoot_spread = (self._pointshoot_spread or 1) * stats.pointshoot_spread
+			end
+			if stats.pointshoot_strafe then
+				self._pointshoot_strafe = math.min( (self._pointshoot_strafe or 0) + stats.pointshoot_strafe, 1 )
 			end
 
 			if stats.descope_on_fire then		

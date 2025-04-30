@@ -316,8 +316,8 @@ function NewRaycastWeaponBase:second_sight_spread_mult()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_spread or false
+		if part_stats and part_stats.pointshoot_spread then
+			return self._pointshoot_spread or false
 		end
 	end
 
@@ -1089,6 +1089,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._bypass_orig_firemode = nil
 		self._bypass_orig_toggle_firemode = nil
 
+		self._pointshoot_spread = 1
+
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
 
 		if not self:is_npc() then
@@ -1230,6 +1232,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.tactical_reload then
 				self._tactical_reload = stats.tactical_reload
+			end
+			
+			if stats.pointshoot_spread then
+				self._pointshoot_spread = (self._pointshoot_spread or 1) * stats.pointshoot_spread
 			end
 
 			if stats.descope_on_fire then		

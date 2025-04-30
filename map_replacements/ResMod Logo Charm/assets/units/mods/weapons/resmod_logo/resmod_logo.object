@@ -1,0 +1,9 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/resmod_logo/resmod_logo" orientation_object="rp_resmod_logo" />
+	<graphics>
+		<object name="g_charm_top" enabled="true" />
+		<object name="g_charm" enabled="true" />
+		<object name="g_ring" enabled="true" />
+		<object name="g_base" enabled="true" />
+	</graphics>
+</dynamic_object>

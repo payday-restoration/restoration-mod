@@ -23378,9 +23378,9 @@ end)
 						local tww = tweak_data.weapon[ weapon_id ]
 						if tww.categories then
 							if table.contains( tww.categories , "snp") or 
-							table.contains( tweak_data.weapon[ weapon_id ].categories , "dmr_h") or 
-							table.contains( tweak_data.weapon[ weapon_id ].categories , "shotgun") or 
-							table.contains( tweak_data.weapon[ weapon_id ].categories , "grenade_launcher") then
+							table.contains( tww.categories , "dmr_h") or 
+							table.contains( tww.categories , "shotgun") or 
+							table.contains( tww.categories , "grenade_launcher") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 									stats = {value = 1, concealment = 1, spread = -2},
@@ -23426,26 +23426,35 @@ end)
 									end
 								end
 							--]]
+							end
 
-								if not table.contains( tww.categories , "pistol") then
-									if self[factory_id].uses_parts then
+							if not table.contains( tww.categories , "pistol") then
+								if self[factory_id].uses_parts then
 
-										for i, part_id in pairs(self[factory_id].uses_parts) do
-											attachment_list = {
-												"wpn_fps_pis_triggermod_fast",
-												"wpn_fps_pis_triggermod_slow"
-											}
-											for _, remove_id in ipairs(attachment_list) do
-												if part_id == remove_id then
-													self[factory_id].uses_parts[i] = "resmod_dummy"
-													self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
-												end
+									for i, part_id in pairs(self[factory_id].uses_parts) do
+										attachment_list = {
+											"wpn_fps_pis_triggermod_fast",
+											"wpn_fps_pis_triggermod_slow"
+										}
+										for _, remove_id in ipairs(attachment_list) do
+											if part_id == remove_id then
+												self[factory_id].uses_parts[i] = "resmod_dummy"
+												self[factory_id .. "_npc"].uses_parts = deep_clone(self[factory_id].uses_parts)
 											end
 										end
+									end
 
-									end 
-								end
-
+								end 
+							end
+							if table.contains( tww.categories , "shotgun") then
+								self[ factory_id ].override = self[ factory_id ].override or {}
+								self[ factory_id ].override.wpn_fps_upg_fl_ass_smg_sho_pointshoot = {
+									custom_stats = {
+										pointshoot_ads = 0.75,
+										pointshoot_spread = 20,
+										pointshoot_strafe = 0.5,
+									}
+								}
 							end
 						end
 					end
@@ -34870,7 +34879,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_stats = {
 					pointshoot_ads = 0.75,
-					pointshoot_spread = 14,
+					pointshoot_spread = 10,
 					pointshoot_strafe = 0.5,
 				}
 		

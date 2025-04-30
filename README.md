@@ -115,6 +115,8 @@ IareAwesome17: OMNIA Medic Bulldozer/Additional enemy fixes
 
 Miss Miki: PONR anti-grief fixes and other contributions/fixes
 
+MrVavlo: For the CHARMing weapon CHARM that's full of CHARM
+
 Marshie: Russian localisation
 
 LR_Daring: Chinese localisation

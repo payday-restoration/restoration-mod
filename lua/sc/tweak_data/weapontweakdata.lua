@@ -13069,12 +13069,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.bessy.spin_up_t = 0.1
 						self.bessy.spin_down_t = 0.00000001
 						self.bessy.sounds.spin_start = "wp_baka_lever_pull"
-						self.bessy.timers.reload_not_empty = 11
-						self.bessy.timers.reload_exit_not_empty = 0.15
-						self.bessy.timers.reload_empty = 11
-						self.bessy.timers.reload_exit_empty = 0.15
+						self.bessy.timers.reload_not_empty = 9.85
+						self.bessy.timers.reload_exit_not_empty = 1.6
+						self.bessy.timers.reload_empty = 9.85
+						self.bessy.timers.reload_exit_empty = 1.6
 						self.bessy.special_damage_multiplier = 2
-						self.bessy.reload_speed_multiplier = 1.05
+						self.bessy.reload_speed_multiplier = 1.12
 					end
 
 				--SECONDARIES

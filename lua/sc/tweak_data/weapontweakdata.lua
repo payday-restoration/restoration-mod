@@ -18438,9 +18438,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sks.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_right_kick},
 					{4, self.stat_info.kick_tables.moderate_kick},
-					{7, self.stat_info.kick_tables.moderate_right_kick},
-					{14, self.stat_info.kick_tables.moderate_left_kick},
-					{16, self.stat_info.kick_tables.moderate_right_kick},
+					{7, self.stat_info.kick_tables.left_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{16, self.stat_info.kick_tables.right_recoil},
 				}	
 				self.sks.supported = true
 				self.sks.ads_speed = 0.280

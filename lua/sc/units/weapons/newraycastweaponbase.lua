@@ -1516,7 +1516,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	self._has_scope = managers.weapon_factory:has_perk("scope", self._factory_id, self._blueprint)
 
-	self:precalculate_ammo_pickup()
+	if not disallow_replenish then
+		self:precalculate_ammo_pickup()
+	end
 end
 
 function NewRaycastWeaponBase:armor_piercing_chance()

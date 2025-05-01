@@ -16467,7 +16467,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.czevo.stats_modifiers = nil
 				self.czevo.panic_suppression_chance = 0.05
-				self.czevo.timers = deep_clone(self.shepheard.timers)
+				self.czevo.timers.reload_empty = 2.7
+				self.czevo.timers.reload_exit_empty = 0.5
+				self.czevo.timers.reload_exit_not_empty = 0.6
 				self.x_czevo.use_data.selection_index = 5 
 			end
 

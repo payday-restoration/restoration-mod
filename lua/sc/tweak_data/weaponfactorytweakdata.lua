@@ -9762,7 +9762,12 @@ end)
 							recoil = 4
 						},
 						custom_stats = {
-							rof_mult = 0.68125
+							rof_mult = 0.68125,
+							srm = {
+								-0.025,
+								{1, 1.1},
+								2
+							}
 						}
 					}
 					--[[
@@ -10706,7 +10711,12 @@ end)
 							recoil = 2
 						},
 						custom_stats = {
-							rof_mult = 0.8
+							rof_mult = 0.8,
+							srm = {
+								-0.025,
+								{1, 1.1},
+								2
+							}
 						}
 					}
 					--[[
@@ -11347,7 +11357,12 @@ end)
 							recoil = 2
 						},
 						custom_stats = {
-							rof_mult = 0.8525
+							rof_mult = 0.8525,
+							srm = {
+								-0.025,
+								{1, 1.1},
+								2
+							}
 						}
 					}
 
@@ -13502,7 +13517,7 @@ end)
 					alt_desc = "bm_shak12_sc_oden_desc",
 					srm = {
 						-0.1,
-						{1, 1.5},
+						{1, 1.3},
 						2
 					}
 				}
@@ -23979,6 +23994,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			hip_mult = 1.666666,
 			damage_min_mult = 1.25,
 			sms = 0.6,
+			srm = {
+				-0.1,
+				{1, 1.3},
+				2
+			},
 			alt_ammo_pickup_min_mul = 0.8636,
 			alt_ammo_pickup_max_mul = 0.8636,
 			ammo_pickup_min_mul = 0.8636,
@@ -23994,6 +24014,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		stats = {
 			value = 8,
 			spread = 6,
+			recoil = -12,
 			concealment = -4
 		},
 		override = {
@@ -24349,9 +24370,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			info_add_burst = true,
 			burst_fire = {
 				count = 3,
-				delay = 0.25,
+				delay = 0.3,
 				recoil_mult = 0.75,
-				last_recoil_mult = 1.1,
+				last_recoil_mult = 1.125,
 			},
 		},
 		stats = {
@@ -24892,7 +24913,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			total_ammo_mod = -102,
 			reload = -1,
 			spread = 2,
-			recoil = -4
+			recoil = -14
 		},
 		custom_stats = {
 			info_lock_semi = true,
@@ -37453,76 +37474,43 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_snp_sierra458_m_beowulf.keep_damage = true
 				self.parts.wpn_fps_snp_sierra458_m_beowulf.stats = {
 					value = 0,
-					damage = 30,
-					recoil = -18,
-					total_ammo_mod = -136,
+					recoil = -6,
 					concealment = -1
 				}
 				self.parts.wpn_fps_snp_sierra458_m_beowulf.custom_stats = {
-					alt_desc = "bm_w_sierra458_beo_desc",
-					ads_speed_mult = 1.1,
-					rof_mult = 0.6125,
-					hip_mult = 1.666666,
-					damage_min_mult = 1.11111,
+					damage_min_mult = 1.3334,
 					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.862068,
-					alt_ammo_pickup_min_mul = 0.6,
-					alt_ammo_pickup_max_mul = 0.6,
-					ammo_pickup_min_mul = 0.6,
-					ammo_pickup_max_mul = 0.6,
-					sms = 0.8
+					falloff_end_mult = 0.862068
 				}
 
 				self.parts.wpn_fps_snp_sierra458_m_ecr.supported = true
 				self.parts.wpn_fps_snp_sierra458_m_ecr.keep_damage = true
 				self.parts.wpn_fps_snp_sierra458_m_ecr.stats = {
 					value = 0,
-					damage = 30,
-					recoil = -16,
-					total_ammo_mod = -136,
+					recoil = -4,
 					concealment = -2,
 				}
 
 				self.parts.wpn_fps_snp_sierra458_m_ecr.custom_stats = {
-					alt_desc = "bm_w_sierra458_beo_desc",
-					ads_speed_mult = 1.1,
-					rof_mult = 0.6125,
-					hip_mult = 1.666666,
-					damage_min_mult = 1.11111,
+					damage_min_mult = 1.3334,
 					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.862068,
-					alt_ammo_pickup_min_mul = 0.6,
-					alt_ammo_pickup_max_mul = 0.6,
-					ammo_pickup_min_mul = 0.6,
-					ammo_pickup_max_mul = 0.6,
-					sms = 0.8
+					falloff_end_mult = 0.862068
 				}
 
 				self.parts.wpn_fps_snp_sierra458_m_siege.supported = true
 				self.parts.wpn_fps_snp_sierra458_m_siege.keep_damage = true
 				self.parts.wpn_fps_snp_sierra458_m_siege.stats = {
 					value = 0,
-					damage = 30,
-					recoil = -18,
-					total_ammo_mod = -136,
+					recoil = -6,
 					concealment = -2,
 					spread = -1,
 					reload = 3
 				}
 
 				self.parts.wpn_fps_snp_sierra458_m_siege.custom_stats = {
-					alt_desc = "bm_w_sierra458_beo_desc",
-					ads_speed_mult = 1.1,
-					rof_mult = 0.6125,
-					hip_mult = 1.666666,
-					damage_min_mult = 1.11111,
+					damage_min_mult = 1.3334,
 					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.862068,
-					alt_ammo_pickup_min_mul = 0.6,
-					alt_ammo_pickup_max_mul = 0.6,
-					ammo_pickup_min_mul = 0.6,
-					ammo_pickup_max_mul = 0.6,
-					sms = 0.8
+					falloff_end_mult = 0.862068
 				}
 	
 	
@@ -39957,6 +39945,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					can_reload = true,
 					mag_regen = true,
 					empty_no_regen = true
+				}
+			}
+		end
+
+		if self.parts then
+			self.parts.wpn_fps_upg_hd2_pen_optic.stats = {
+				value = 1,
+				zoom = 30,
+				base_zoom_off = 1
+			}
+			self.parts.wpn_fps_upg_hd2_pen_optic.stance_mod = {
+				wpn_fps_snp_r6 = {
+					translation = Vector3(0, 0, 0)
 				}
 			}
 		end

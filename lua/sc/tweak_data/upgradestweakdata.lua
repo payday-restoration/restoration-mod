@@ -1392,7 +1392,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				self.headshot_graze_proc_cd = 0.5
 				self.values.player.headshot_no_falloff = {true}
-				self.headshot_no_falloff_cd = 0.2
+				self.headshot_no_falloff_cd = 0.0
 				
 				self.skill_descs.body_expertise = {
 					skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage

@@ -39957,7 +39957,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_upg_hd2_pen_optic.stance_mod = {
 				wpn_fps_snp_r6 = {
-					translation = Vector3(0, 0, 0)
+					translation = Vector3(-0.018, 15, -2.84)
 				}
 			}
 		end

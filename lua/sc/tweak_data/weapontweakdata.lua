@@ -25029,7 +25029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.has_description = true
 				self.r6.desc_id = "bm_ap_weapon_sc_desc"
 				self.r6.CLIP_AMMO_MAX = 6
-				self.r6.AMMO_MAX = 60
+				self.r6.AMMO_MAX = self.r6.CLIP_AMMO_MAX * 11
 				self.r6.FIRE_MODE = "single"
 				self.r6.fire_mode_data = {}
 				self.r6.fire_mode_data.fire_rate = 0.9
@@ -25039,14 +25039,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.CAN_TOGGLE_FIREMODE = false
 				self.r6.kick = self.stat_info.kick_tables.even_recoil
 				self.r6.supported = true
-				self.r6.ads_speed = 0.300
+				self.r6.ads_speed = 0.360
 				self.r6.damage_falloff = {
 					start_dist = 1500,
 					end_dist = 4400,
-					min_mult = 0.5
+					min_mult = 0.375
 				}
 				self.r6.stats = {
-					damage = 90,
+					damage = 120,
 					spread = 96,
 					recoil = 42,
 					spread_moving = 9,

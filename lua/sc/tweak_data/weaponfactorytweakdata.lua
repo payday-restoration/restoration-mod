@@ -19028,7 +19028,8 @@ end)
 						translation = Vector3(-0.005, 1.6, -3.028)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp7 = {
-						translation = Vector3(0.02, 7.5, -2.72)
+						translation = Vector3(0.02, 7.5, -2.72),
+						rotation = Rotation(0, -0.5, 0)
 					}
 				
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_smg_mp9 = {

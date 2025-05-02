@@ -39949,7 +39949,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
-		if self.parts then
+		if self.parts.wpn_fps_upg_hd2_pen_optic then
 			self.parts.wpn_fps_upg_hd2_pen_optic.stats = {
 				value = 1,
 				zoom = 30,

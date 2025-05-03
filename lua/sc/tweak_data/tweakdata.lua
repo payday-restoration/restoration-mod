@@ -59,6 +59,15 @@ tweak_data.pistol = {
 	moving_spread_mult = 0.5,
 	hipfire_spread_mult = 0.75
 }
+	tweak_data.pistol_pdw = {
+		ads_move_speed_mult = 0.7 / tweak_data.pistol.ads_move_speed_mult
+	}
+	tweak_data.handcannon = {
+		swap_bonus = 2.7 / tweak_data.pistol.swap_bonus,
+		ads_move_speed_mult = 0.7 / tweak_data.pistol.ads_move_speed_mult,
+		moving_spread_mult = 1 / tweak_data.pistol.moving_spread_mult,
+		hipfire_spread_mult = 1 / tweak_data.pistol.hipfire_spread_mult
+	}
 
 tweak_data.bow = {
 	swap_bonus = 1,

@@ -5383,7 +5383,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	recat = { "galil", "fal", "scar", "contraband", "asval" }
 	for i, wep_id in ipairs(recat) do
 		table.insert(self[ wep_id ].categories, "dmr_l")
-		self[ wep_id ].recategorize = { "dmr_ar", "light_dmr" }
+		self[ wep_id ].recategorize = { "dmr_ar" }
 		self[ wep_id ].damage_type = "assault_rifle"
 	end
 
@@ -5938,7 +5938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.lemming.desc_id = "bm_lemming_sc_desc"			
 						self.lemming.categories = {
 							"pistol",
-							"pdw"
+							"pistol_pdw"
 						}
 						self.lemming.CLIP_AMMO_MAX = 20
 						self.lemming.AMMO_MAX = 90
@@ -5989,7 +5989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							self.x_lemming.categories = {
 								"akimbo",
 								"pistol",
-								"pdw"
+								"pistol_pdw"
 							}
 							self.x_lemming.BURST_FIRE = {
 								count = 2,
@@ -8705,7 +8705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mp7.stats = {
 							damage = 18,
 							spread = 71,
-							recoil = 87,
+							recoil = 83,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 27,
@@ -8757,7 +8757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.p90.stats = {
 							damage = 18,
 							spread = 76,
-							recoil = 85,
+							recoil = 81,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 27,
@@ -8807,7 +8807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_p90.stats = {
 							damage = 18,
 							spread = 66,
-							recoil = 75,
+							recoil = 71,
 							spread_moving = 7,
 							zoom = 1,
 							concealment = 27,
@@ -9205,11 +9205,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_mp5.panic_suppression_chance = 0.05
 						self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
 						self.new_mp5.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_recoil},
-							{11, self.stat_info.kick_tables.moderate_kick},
-							{13, self.stat_info.kick_tables.left_kick},
-							{20, self.stat_info.kick_tables.moderate_kick},
-							{22, self.stat_info.kick_tables.even_recoil}
+							{0, self.stat_info.kick_tables.moderate_right_kick},
+							{3, self.stat_info.kick_tables.harsh_right_kick},
+							{5, self.stat_info.kick_tables.horizontal_right_recoil},
+							{12, self.stat_info.kick_tables.moderate_kick},
+							{16, self.stat_info.kick_tables.left_recoil},
+							{22, self.stat_info.kick_tables.moderate_left_kick},
+							{25, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.new_mp5.AMMO_MAX = 75
 						self.new_mp5.supported = true
@@ -9247,11 +9249,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_mp5.ADAPTIVE_BURST_SIZE = false					
 						self.x_mp5.kick = self.stat_info.kick_tables.even_recoil
 						self.x_mp5.kick_pattern = {
-							{0, self.stat_info.kick_tables.right_recoil},
-							{11, self.stat_info.kick_tables.moderate_kick},
-							{13, self.stat_info.kick_tables.left_kick},
-							{20, self.stat_info.kick_tables.moderate_kick},
-							{22, self.stat_info.kick_tables.even_recoil}
+							{0, self.stat_info.kick_tables.moderate_right_kick},
+							{3, self.stat_info.kick_tables.harsh_right_kick},
+							{5, self.stat_info.kick_tables.horizontal_right_recoil},
+							{12, self.stat_info.kick_tables.moderate_kick},
+							{16, self.stat_info.kick_tables.left_recoil},
+							{22, self.stat_info.kick_tables.moderate_left_kick},
+							{25, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.x_mp5.AMMO_MAX = 150
 						self.x_mp5.supported = true
@@ -9288,10 +9292,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.cobray.AMMO_MAX = 90
 						self.cobray.kick = self.stat_info.kick_tables.even_recoil
 						self.cobray.kick_pattern = {
-							{0, self.stat_info.kick_tables.even_recoil},
-							{4, self.stat_info.kick_tables.right_recoil},
-							{9, self.stat_info.kick_tables.moderate_right_kick},
-							{13, self.stat_info.kick_tables.moderate_kick}
+							{0, self.stat_info.kick_tables.left_recoil},
+							{6, self.stat_info.kick_tables.right_recoil},
+							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{16, self.stat_info.kick_tables.moderate_kick},
+							{20, self.stat_info.kick_tables.right_recoil}
 						}
 						self.cobray.fire_mode_data.fire_rate = 0.06
 						self.cobray.CAN_TOGGLE_FIREMODE = true
@@ -9333,10 +9338,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_cobray.AMMO_MAX = 90 * 2
 						self.x_cobray.kick = self.stat_info.kick_tables.even_recoil
 						self.x_cobray.kick_pattern = {
-							{0, self.stat_info.kick_tables.even_recoil},
-							{4, self.stat_info.kick_tables.right_recoil},
-							{9, self.stat_info.kick_tables.moderate_right_kick},
-							{13, self.stat_info.kick_tables.moderate_kick}
+							{0, self.stat_info.kick_tables.left_recoil},
+							{6, self.stat_info.kick_tables.right_recoil},
+							{12, self.stat_info.kick_tables.moderate_right_kick},
+							{16, self.stat_info.kick_tables.moderate_kick},
+							{20, self.stat_info.kick_tables.right_recoil}
 						}
 						self.x_cobray.fire_mode_data.fire_rate = 0.06
 						self.x_cobray.CAN_TOGGLE_FIREMODE = true
@@ -20026,7 +20032,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			if self.cssdeagle then --PlayBONK and Mira's CS Deagle
 				table.insert(self.cssdeagle.categories, "cs_spread")
-				self.cssdeagle.recategorize = {"heavy_pis"}
+				self.cssdeagle.recategorize = { "heavy_pis", "handcannon" }
 				self.cssdeagle.damage_type = "handcannon"
 				self.cssdeagle.desc_id = "bm_ap_armor_75_weapon_sc_desc"
 				self.cssdeagle.has_description = true
@@ -26845,28 +26851,54 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			end
 
 			if weap.damage_type and not weap.object_damage_mult then
-				if weap.damage_type == "anti_materiel" then
-					weap.object_damage_mult = 4
-				elseif weap.damage_type == "sniper" then
-					weap.object_damage_mult = 1.8
-					if (weap.categories[2] and weap.categories[2] == "semi_snp") or (weap.categories[1] == "assault_rifle") then
-						weap.object_damage_mult = 1.2
+				if weap.damage_type == "blank" then
+				--RIFLES
+				elseif table.contains(weap.categories, "assault_rifle") then
+					if weap.damage_type == "sniper" then
+						weap.object_damage_mult = 1.25
 					end
-				elseif weap.damage_type == "pdw" then
-					weap.object_damage_mult = 1.5
-				elseif weap.damage_type == "handcannon" then
-					weap.object_damage_mult = 1.2
-				elseif weap.damage_type == "shotgun" then
-					weap.object_damage_mult = 0.75
-				elseif weap.damage_type == "flamethrower" then
-					weap.object_damage_mult = 0.2
-				else
-					--weap.object_damage_mult = 1
+				elseif table.contains(weap.categories, "snp") then
+					if weap.damage_type == "anti_materiel" then
+						weap.object_damage_mult = 4
+					elseif weap.damage_type == "sniper" then
+						weap.object_damage_mult = 1.75
+						if table.contains(weap.categories, "semi_snp") then
+							weap.object_damage_mult = 1.25
+						end
+					end
+				--MGs
+				elseif table.contains(weap.categories, "smg") then
+					if table.contains(weap.recategorize, "light_smg") then
+						weap.object_damage_mult = 0.5
+					elseif table.contains(weap.recategorize, "heavy_smg") then
+						weap.object_damage_mult = 0.75
+					end
+					if table.contains(weap.categories, "pdw") then
+						weap.object_damage_mult = 1.25
+					end
+				--PISTOLS
+				elseif table.contains(weap.categories, "pistol") then
+					if weap.damage_type == "handcannon" then
+						weap.object_damage_mult = 1.25
+					end
+					if table.contains(weap.categories, "pdw") then
+						weap.object_damage_mult = 1.25
+					end
+				--SHOTGUNS
+				elseif table.contains(weap.categories, "shotgun") then
+					if weap.damage_type == "flamethrower" then
+						weap.object_damage_mult = 0.25
+					elseif table.contains(weap.recategorize, "light_shot") then
+						weap.object_damage_mult = 0.5
+					elseif table.contains(weap.recategorize, "heavy_shot") or table.contains(weap.recategorize, "break_shot") then
+						weap.object_damage_mult = 0.75
+					end
 				end
+
 				if weap.damage_type_single_ray == "sniper" then
-					weap.object_damage_mult_single_ray = 1.8
-					if weap.recategorize[1] == "light_shot" then
-						weap.object_damage_mult_single_ray = 1.2
+					weap.object_damage_mult_single_ray = 1.75
+					if table.contains(weap.recategorize, "light_shot") then
+						weap.object_damage_mult_single_ray = 1.25
 					end
 				elseif weap.damage_type_single_ray == "anti_materiel" then
 					weap.object_damage_mult_single_ray = 4
@@ -26932,6 +26964,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						weap.fire_mode_data.fire_rate = weap.fire_mode_data.fire_rate / 1.30
 					end
 				end
+
+			end
+			if table.contains(weap.recategorize, "handcannon") then
+				table.insert(weap.categories, "handcannon")
 			end
 
 			if weap.recategorize and not weap.recoil_values then
@@ -27028,7 +27064,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.6,
 						srm = {
 							0.025,
-							{0.75, 1},
+							{0.85, 1},
 							2
 						}
 					}
@@ -27040,7 +27076,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						0.5,
 						srm = {
 							0.02,
-							{0.8, 1},
+							{0.9, 1},
 							2
 						}
 					}

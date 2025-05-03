@@ -3550,6 +3550,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 						["bm_w_l115"] = "AIM 90M",
 						--"PTRS"
 						["bm_w_mptango41"] = "Gorenko Anti-Tank Rifle",
+						--Lockwood Mk2
+						["bm_w_sbeta"] = "Lockwood Mk2",
 				--[[ LAUNCHERS & BOWS ]]
 					--GL40
 					["bm_w_gre_m79"] = "GL-40",

@@ -14987,7 +14987,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.arbiter.panic_suppression_chance = 0.05
 						self.arbiter.kick = self.stat_info.kick_tables.vertical_kick
 						self.arbiter.reload_speed_multiplier = 0.88
-						self.arbiter.timers.reload_exit_empty = 0.84
+						self.arbiter.timers.reload_empty = 4
+						self.arbiter.timers.reload_exit_empty = 1.11
+						self.arbiter.timers.reload_not_empty = 3.3
 						self.arbiter.timers.reload_exit_not_empty = 0.9
 
 					--Compact 40mm

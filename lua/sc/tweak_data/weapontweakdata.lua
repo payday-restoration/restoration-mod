@@ -12850,10 +12850,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sbl.shell_ejection = "_dmc/effects/shell_shak_sniper"
 						self.sbl.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.sbl.supported = true
-						self.sbl.ads_speed = 0.340
+						self.sbl.ads_speed = 0.300
 						self.sbl.damage_falloff = {
-							start_dist = 1800,
-							end_dist = 6500,
+							start_dist = 2500,
+							end_dist = 5800,
 							min_mult = 0.375
 						}
 						self.sbl.stats = {
@@ -14986,7 +14986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.arbiter.stats_modifiers = {damage = 10}
 						self.arbiter.panic_suppression_chance = 0.05
 						self.arbiter.kick = self.stat_info.kick_tables.vertical_kick
-						self.arbiter.reload_speed_multiplier = 0.85
+						self.arbiter.reload_speed_multiplier = 0.88
 						self.arbiter.timers.reload_exit_empty = 0.84
 						self.arbiter.timers.reload_exit_not_empty = 0.9
 
@@ -17417,6 +17417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.fp45.can_shoot_through_enemy_unlim = true
 				self.fp45.can_shoot_through_wall = true
 				self.fp45.can_shoot_through_shield = true
+				self.fp45.weapon_movement_penalty = 1.14
 				self.fp45.reload_speed_multiplier = 1.1
 				self.fp45.timers.reload_not_empty = 6.4
 				self.fp45.timers.reload_exit_not_empty = 1.3
@@ -22035,13 +22036,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbeta.tactical_reload = 1
 				self.sbeta.has_description = true
 				self.sbeta.desc_id = "bm_ap_weapon_sc_desc"
-				self.sbeta.AMMO_MAX = 40
+				self.sbeta.AMMO_MAX = 30
 				self.sbeta.FIRE_MODE = "single"
 				self.sbeta.fire_mode_data = {}
 				self.sbeta.fire_mode_data.fire_rate = 0.9473684
 				self.sbeta.fire_rate_multiplier = 1.5
 				self.sbeta.shell_ejection = "_dmc/effects/shell_shak_sniper"
-				self.sbeta.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
+				self.sbeta.muzzleflash = "_dmc/effects/heavy_muzzle"
+				self.sbeta.muzzleflash_silenced = "_dmc/effects/heavy_suppressed"
 				self.sbeta.CAN_TOGGLE_FIREMODE = false
 				self.sbeta.kick = self.stat_info.kick_tables.vertical_kick
 				self.sbeta.supported = true
@@ -22049,10 +22051,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sbeta.damage_falloff = {
 					start_dist = 2400,
 					end_dist = 4500,
-					min_mult = 0.5
+					min_mult = 0.375
 				}
 				self.sbeta.stats = {
-					damage = 90,
+					damage = 120,
 					spread = 88,
 					recoil = 73,
 					spread_moving = 9,

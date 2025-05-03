@@ -19560,6 +19560,9 @@ end)
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_mptango41 = {
 						translation = Vector3(-0.01, 21.3, -3.805)
 					}
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_sbeta = {
+						translation = Vector3(-0.015, 1, -3.79)
+					}
 					
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_bow_stampede_ecs = {
 						translation = Vector3(0.048, 11.5, -3.435)
@@ -32837,6 +32840,19 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					}
 				}
 			}
+			self.parts.wpn_fps_snp_sbeta_irons.stance_mod = {
+				wpn_fps_snp_sbeta = {
+					translation = Vector3(-0.029, -4, -0.42),
+					rotation = Rotation(-0.017, 0, 0 )
+				}
+			}
+					
+			self.parts.wpn_fps_snp_sbeta_scope.supported = true
+			self.parts.wpn_fps_snp_sbeta_scope.desc_id = "bm_wp_upg_o_3_7"
+			self.parts.wpn_fps_snp_sbeta_scope.stats = {
+				zoom = 27
+			}
+			self.parts.wpn_fps_snp_sbeta_scope.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 
 			--BARRELS
 				self.parts.wpn_fps_snp_sbeta_barrel_heavy.supported = true

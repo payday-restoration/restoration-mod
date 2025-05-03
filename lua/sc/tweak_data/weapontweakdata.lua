@@ -8717,11 +8717,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							reload = 20
 						}
 						self.mp7.stats_modifiers = nil
-						self.mp7.reload_speed_multiplier = 1.12
+						self.mp7.reload_speed_multiplier = 1.14
+						self.mp7.timers.reload_empty = 2.24
+						self.mp7.timers.reload_exit_empty = 0.7
 						self.mp7.timers.reload_not_empty = 1.75
-						self.mp7.timers.reload_empty = 2.4	
-						self.mp7.timers.reload_exit_empty = 0.45
-						self.mp7.timers.reload_exit_not_empty = 0.6
+						self.mp7.timers.reload_exit_not_empty = 0.65
 						self.mp7.panic_suppression_chance = 0.05
 
 					--P90
@@ -9938,6 +9938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					}
 					self.tecci.stats_modifiers = nil
 					self.tecci.reload_speed_multiplier = 1
+					self.tecci.timers.equip = 1.1
 					self.tecci.timers.reload_empty = 4.6
 					self.tecci.timers.reload_exit_empty = 1.1
 					self.tecci.timers.reload_exit_not_empty = 1.0

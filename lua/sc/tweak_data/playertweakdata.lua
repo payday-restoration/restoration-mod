@@ -472,7 +472,7 @@ function PlayerTweakData:_init_mp7()
 	pivot_shoulder_translation = Vector3(10.6576, 18.2065, -5.75727)
 	pivot_shoulder_rotation = Rotation(0.106663, -0.0849503, 0.628575)
 	pivot_head_translation = Vector3(-0.02, 14, -0.1)
-	pivot_head_rotation = Rotation(0, 0.5, 0)
+	pivot_head_rotation = Rotation(0, 0, 0)
 	self.stances.mp7.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.mp7.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end

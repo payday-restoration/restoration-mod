@@ -37462,12 +37462,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				},
 				info_add_burst = true
 			}
+			--[[
 			self.parts.wpn_fps_snp_sierra458_body_ecr.override.wpn_fps_upg_sierra458_o_backup.stance_mod = {
 				wpn_fps_snp_sierra458 = {
 					translation = Vector3(0.0125, -6, 0.1),
 					rotation = Rotation(0.055, -0.4, 0)
 				}
 			}
+			]]
 
 			self.parts.wpn_fps_snp_sierra458_ns_scout.supported = true
 			self.parts.wpn_fps_snp_sierra458_ns_scout.stats = {

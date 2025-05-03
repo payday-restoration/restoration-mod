@@ -37455,7 +37455,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 		end
 	
-		if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^) (V4.1 minimum)
+		if self.parts.wpn_fps_snp_sierra458_bush_switch then --Tangerine and PlayBONK's FTAC Recon :^) (V5 minimum)
 	
 			self.parts.wpn_fps_snp_sierra458_body_msecho.override.wpn_fps_upg_sierra458_o_backup = {
 				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -37615,13 +37615,26 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					spread = -1,
 					reload = 3
 				}
-
 				self.parts.wpn_fps_snp_sierra458_m_siege.custom_stats = {
 					damage_min_mult = 1.3334,
 					falloff_start_mult = 0.8,
 					falloff_end_mult = 0.862068
 				}
 	
+				self.parts.wpn_fps_snp_sierra458_m_beoplus.custom_stats = {
+					alt_desc = "bm_w_sierra458_beo_desc",
+					ads_speed_mult = 1.1,
+					rof_mult = 0.6125,
+					hip_mult = 1.666666,
+					damage_min_mult = 1.11111,
+					falloff_start_mult = 0.8,
+					falloff_end_mult = 0.862068
+					alt_ammo_pickup_min_mul = 0.6,
+					alt_ammo_pickup_max_mul = 0.6,
+					ammo_pickup_min_mul = 0.6,
+					ammo_pickup_max_mul = 0.6,
+					sms = 0.9
+				}
 	
 			self.parts.wpn_fps_upg_sierra458_o_backup.supported = true
 			self.parts.wpn_fps_upg_sierra458_o_backup.stats = { value = 0 }

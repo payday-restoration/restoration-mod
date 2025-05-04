@@ -831,7 +831,7 @@ restoration.loaded_elements = false
 
 --Stealing this from SH cause it's way better
 function restoration:require(file)
-	local path = ModPath .. "req/" .. file .. ".lua"
+	local path = self:GetPath() .. "req/" .. file .. ".lua"
 	return io.file_is_readable(path) and blt.vm.dofile(path)
 end
 

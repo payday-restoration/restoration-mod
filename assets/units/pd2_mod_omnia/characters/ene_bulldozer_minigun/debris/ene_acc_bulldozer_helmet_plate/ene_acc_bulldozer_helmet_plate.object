@@ -14,11 +14,7 @@
 
 	<graphics>
 		<lod_object name="grp_helmet_plate">
-			<object name="g_helmet_plate" enabled="true" >
-				<material materials="mtr_bulldozer" max_distance="1000" />
-				<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
-				<material materials="mtr_bulldozer_lod_2" /> 
-			</object>
+			<object name="g_helmet_plate" enabled="true" />
 		</lod_object>
 	</graphics>
 	

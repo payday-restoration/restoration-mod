@@ -4665,41 +4665,47 @@ function BlackMarketGui:update_info_text()
 
 			local crafted = managers.blackmarket:get_crafted_category_slot(slot_data.category, slot_data.slot)
 			local custom_stats = crafted and managers.weapon_factory:get_custom_stats_from_weapon(crafted.factory_id, crafted.blueprint)
-			if custom_stats then
+			if custom_stats then --GROSS and UGLY garbage
 				for part_id, stats in pairs(custom_stats) do
-					if stats.lock_burst then
+					if stats.info_lock_burst then
 						lock_burst = true
 						lock_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
 						break
-					elseif stats.lock_auto then
+					elseif stats.info_lock_auto then
 						lock_auto = true
 						lock_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
 						break
-					elseif stats.lock_semi then
+					elseif stats.info_lock_semi then
 						lock_semi = true
 						lock_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.burst_to_auto then
-						burst_to_auto = true
-						swap_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.auto_to_burst then
-						auto_to_burst = true
-						swap_firemode = true
-						firemode_modded = true
-						break
-					elseif stats.add_auto then
-						add_auto = true
-						add_firemode = true
-						firemode_modded = true
-					elseif stats.add_burst then
-						add_burst = true
-						add_firemode = true
-						firemode_modded = true
+						firemode_modded = not stats.ignore_modify_firemode and true
+					end
+				end
+				if not lock_firemode then
+					for part_id, stats in pairs(custom_stats) do
+						if stats.info_burst_to_auto then
+							burst_to_auto = true
+							swap_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+							break
+						elseif stats.info_auto_to_burst then
+							auto_to_burst = true
+							swap_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+							break
+						elseif stats.info_add_auto then
+							add_auto = true
+							add_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+						elseif stats.info_add_burst then
+							add_burst = true
+							add_firemode = true
+							firemode_modded = not stats.ignore_modify_firemode and true
+						elseif stats.modify_firemode then
+							firemode_modded = true
+						end
 					end
 				end
 			end
@@ -4730,14 +4736,12 @@ function BlackMarketGui:update_info_text()
 					if add_auto then
 						firemode_string = firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_auto")
 					end
-					if weapon_tweak.BURST_FIRE then
+					if weapon_tweak.BURST_FIRE and type(weapon_tweak.BURST_FIRE) == "table" then
 						local burst_type = nil --weapon_tweak.BURST_TYPE
-						if weapon_tweak.BURST_ONLY then
+						if weapon_tweak.BURST_FIRE.lock or lock_burst then
 							firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst")
 						else
-							if is_akimbo or weapon_tweak.BURST_FIRE_DEFAULT then
-								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
-							elseif burst_to_auto then
+							if burst_to_auto then
 								firemode_string = managers.localization:to_upper_text("st_menu_firemode_auto") .. "+" .. managers.localization:to_upper_text("st_menu_firemode_semi")
 							elseif burst_type then
 								if burst_type == "fan" then
@@ -4749,6 +4753,8 @@ function BlackMarketGui:update_info_text()
 								elseif burst_type == "autoburst" then
 									firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst_autoburst") or managers.localization:	to_upper_text("st_menu_firemode_burst_autoburst")
 								end
+							elseif is_akimbo or weapon_tweak.BURST_FIRE.burst_default then
+								firemode_string = managers.localization:to_upper_text("st_menu_firemode_burst") .. (firemode_string ~= "" and "+" .. firemode_string) or ""
 							else
 								firemode_string = firemode_string and firemode_string .. "+" .. managers.localization:to_upper_text("st_menu_firemode_burst") or managers.localization:to_upper_text("st_menu_firemode_burst")
 							end
@@ -4789,7 +4795,7 @@ function BlackMarketGui:update_info_text()
 					managers.localization:to_upper_text("st_menu_firemode") .. " ##" ..  firemode_string .. "##"
 
 					table.insert(resource_color, tweak_data.screen_colors.skill_color)
-					table.insert(resource_color, (lock_firemode and tweak_data.screen_colors.risk) or (add_firemode and tweak_data.screen_colors.stats_positive) or (firemode_modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
+					table.insert(resource_color, (add_firemode and tweak_data.screen_colors.stats_positive) or (firemode_modded and tweak_data.screen_colors.risk)  or tweak_data.screen_colors.skill_color)
 				end
 			end
 
@@ -4884,7 +4890,8 @@ function BlackMarketGui:update_info_text()
 				local stat_attachment_desc = nil
 				local rays = (weapon_tweak and weapon_tweak.rays) or 1
 				local starwars = nil
-				local keep_ammo = weapon_tweak.keep_ammo or nil
+				local martyr = weapon_tweak and weapon_tweak.dispose_mag_desc
+				local keep_ammo = (weapon_tweak and weapon_tweak.keep_ammo) or nil
 				local description = nil
 				if custom_stats then
 					for part_id, stats in pairs(custom_stats) do
@@ -4917,7 +4924,7 @@ function BlackMarketGui:update_info_text()
 						if stats.keep_ammo then
 							keep_ammo = stats.keep_ammo
 						end
-						if stats.starwars then
+						if stats.starwars and not stats.starwars.can_reload then
 							starwars = true
 						end
 						if stats.bullet_class == "InstantExplosiveBulletBase" then
@@ -5052,6 +5059,15 @@ function BlackMarketGui:update_info_text()
 					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
 				end
 
+				if martyr then
+					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
+						updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:text("mutator_letthesleepinggoddie_desc") .. "##"
+					else
+						updated_texts[4].text = updated_texts[4].text .. " ##" .. managers.localization:text("mutator_letthesleepinggoddie_desc") .. "##"
+					end
+					table.insert(updated_texts[4].resource_color, tweak_data.screen_colors.important_1)
+				end
+
 				local magazine_envy = Global.mutators.mutator_values.MutatorMagazineMartyr and Global.mutators.mutator_values.MutatorMagazineMartyr.enabled
 				if magazine_envy and (starwars or keep_ammo == 1 or weapon_tweak.timers.shotgun_reload or weapon_tweak.timers.shotgun_reload_exit_empty) then
 					if slot_data.global_value and slot_data.global_value ~= "normal" or weapon_tweak.has_description then
@@ -5141,7 +5157,7 @@ function BlackMarketGui:update_info_text()
 
 		local factory_stats = managers.weapon_factory:get_stats(managers.blackmarket:equipped_primary().factory_id, managers.blackmarket:equipped_primary().blueprint)
 		local wtd_range = tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_primary().weapon_id].jab_range or 0
-		local bayonet_damage = factory_stats.max_damage and (factory_stats.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local bayonet_damage =  not factory_stats.ignore_stats and factory_stats.max_damage and (factory_stats.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
 		local skill_damage = bayonet_damage and (bayonet_damage * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage
 		local damage_total = bayonet_damage and bayonet_damage + (skill_damage or 0)
 		local bayonet_range = bayonet_damage and (factory_stats.bayonet_range and factory_stats.bayonet_range / 100)
@@ -5150,7 +5166,7 @@ function BlackMarketGui:update_info_text()
 
 		local factory_stats_secondary = managers.weapon_factory:get_stats(managers.blackmarket:equipped_secondary().factory_id, managers.blackmarket:equipped_secondary().blueprint)
 		local wtd_range_secondary = tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id] and tweak_data.weapon[managers.blackmarket:equipped_secondary().weapon_id].jab_range or 0
-		local bayonet_damage_secondary = factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
+		local bayonet_damage_secondary = not factory_stats_secondary.ignore_stats and factory_stats_secondary.max_damage and (factory_stats_secondary.max_damage - tweak_data.blackmarket.melee_weapons.weapon.stats.max_damage) * 10
 		local skill_damage_secondary = bayonet_damage_secondary and (bayonet_damage_secondary * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)) - bayonet_damage_secondary
 		local damage_total_secondary = bayonet_damage_secondary and bayonet_damage_secondary + (skill_damage_secondary or 0)
 		local bayonet_range_secondary = bayonet_damage_secondary and (factory_stats_secondary.bayonet_range and factory_stats_secondary.bayonet_range / 100)

@@ -303,21 +303,19 @@
 		<material_config path="units/pd2_mod_custom/cus_arch_str_road/material_2" unload="true"/>
 		<sequence_manager path="units/pd2_mod_custom/cus_arch_str_road/sequence_manager" unload="true"/>
 	</add>
-	   <add>
-        <unit load="true" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
-        <model force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
-        <object force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
-        <cooked_physics force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
-        
-        <unit load="true" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
-        <model force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
-        <object force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
-        <cooked_physics force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
-        
-        <material_config force="false" path="units/payday2/props/off_prop_lights/off_prop_lights_off" unload="true"/>
-        <sequence_manager force="false" path="units/payday2/props/off_prop_lights/off_prop_lights_toggle" unload="true"/>
+	<add>
+		<unit load="true" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
+		<model force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
+		<object force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
+		<cooked_physics force="false" path="units/payday2/props/off_prop_lights/off_prop_light_spot_toggle" unload="true"/>
+		<unit load="true" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
+		<model force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
+		<object force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
+		<cooked_physics force="false" path="units/payday2/props/off_prop_lights/off_prop_light_fluorescent_toggle" unload="true"/>
+		<material_config force="false" path="units/payday2/props/off_prop_lights/off_prop_lights_off" unload="true"/>
 		<material_config force="false" path="units/payday2/props/off_prop_lights/off_prop_lights_on" unload="true"/>
-    </add>
+		<sequence_manager force="false" path="units/payday2/props/off_prop_lights/off_prop_lights_toggle" unload="true"/>
+	</add>
 	<add path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" type="unit">
 		<material_config force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
 		<object force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
@@ -989,9 +987,14 @@
 		<unit path="units/pd2_dlc2/csgo_models/props_equipment/metalladder002"/>
 	</add>
 	<add from_db="true" path="units/dev_tools/dev_ladder/dev_ladder" type="unit">
-		<unit path="units/dev_tools/dev_ladder/dev_ladder"/>
-		<object path="units/dev_tools/dev_ladder/dev_ladder"/>
 		<material_config path="units/dev_tools/dev_ladder/dev_ladder"/>
+		<object path="units/dev_tools/dev_ladder/dev_ladder"/>
 		<sequence_manager path="units/dev_tools/dev_ladder/dev_ladder"/>
+		<unit path="units/dev_tools/dev_ladder/dev_ladder"/>
+	</add>
+	<add from_db="true" path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" type="unit">
+		<unit load="true" path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1"/>
+		<unit load="true" path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk"/>
+		<object path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1"/>
 	</add>
 </table>

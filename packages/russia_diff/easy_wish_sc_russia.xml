@@ -512,6 +512,9 @@
 	<unit				path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_mod_reapers/characters/ene_vip_2/ene_vip_2" force="false"/>
 	
+	<unit				path="units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault" force="false" load="true"/>
+	<unit				path="units/pd2_mod_reapers/characters/ene_vip_2_assault/ene_vip_2_assault_husk" force="false" load="true"/>
+
 	<!--titandozer accs-->	
 	<unit_obj				path="units/pd2_mod_reapers/weapons/wpn_npc_m32_large/wpn_npc_m32_large" />
 

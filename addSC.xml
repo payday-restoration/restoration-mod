@@ -190,14 +190,6 @@
 	
 	<mission			path="levels/instances/unique/sah/sah_entrance_detector/world/world" force="true" unload="true"/> <!--replaced the casino guards with secret service (don't know why they are here in a first place)-->
 	
-	<!--better SWAT squads-->
-	<mission			path="levels/instances/unique/chca/chca_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/deep/deep_helicopter_enemies/world/world" force="true"/>
-	<mission			path="levels/instances/unique/glace/glace_helicopter_swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/pet_helicopter_swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/san_helicopter_4swat/world/world" force="true"/>
-	<mission			path="levels/instances/unique/shout_helicopter_swat/world/world" force="true"/>
-	
 	<mission			path="levels/narratives/e_welcome_to_the_jungle/stage_1/world/world" force="true" unload="true"/> <!--Adds female bikers, biker response and biker guard as the camera man-->
 
 	<continent			path="levels/narratives/e_election_day/stage_2/world/world" force="true" unload="true"/>
@@ -239,6 +231,11 @@
 	<continent			path="levels/instances/unique/bex/bex_drill/world/world" force="true" /> 
 	<continent			path="levels/narratives/skm/skm_bex/world/world" force="true" unload="true"/> <!--ditto but for Holdout version-->
 
+	<!--Crude Awakening-->
+	<mission			path="levels/narratives/blaine/deep/world/world" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/blaine/deep/nav_manager_data" force="true" unload="true"/>
+	<!-- <mission			path="levels/instances/unique/deep/deep_boss/world/world" force="true" /> --> 
+
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent			path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
 
@@ -261,9 +258,16 @@
 	<continent			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 	<mission			path="levels/narratives/continental/spa/regin_art/regin_art" force="true" unload="true"/>
 
-	<!--UNDERCOVER-->	
+	<!--UNDERCOVER-->
+	<mission			path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent			path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<continent			path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
+	<nav_data			path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
+	<cover_data			path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>	
 	<sequence_manager	path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
 	<sequence_manager	path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
+	<world				path="levels/narratives/classics/man/world" force="true"/>
+
 	
 	<!--PANIC ROOM-->
 	<mission			path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
@@ -666,6 +670,8 @@
 	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
 	
+	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_x_npc_peacemaker" force="false" load="true"/>
+	
 	<unit				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
@@ -867,7 +873,6 @@
 	<cooked_physics		path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2" />
 	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/bulldozer_saiga_df" force="true"/>	
-	<texture			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/bulldozer_saiga_helmet_df" force="true"/>
 
 	<!--OMNIA SAIGA DOZER BITS-->	
 	<unit_obj			path="units/pd2_mod_omnia/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_helmet/ene_acc_bulldozer_helmet" load="false"/>
@@ -1389,6 +1394,11 @@
     <effect				path="_dmc/effects/sterwers_trail_m_npc" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/sw_mando_streak_round" force="false" load="true" unload="true" reload="true"/>
+
+    <effect				path="_dmc/effects/sterwers_trail_m_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/sterwers_trail_m_small_npc" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small" force="false" load="true" unload="true" reload="true"/>
+    <effect				path="_dmc/effects/parts/sw_mando_streak_small_round" force="false" load="true" unload="true" reload="true"/>
 	<!--Large Tracer-->
     <effect				path="_dmc/effects/large_trail" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/parts/large_streak" force="false" load="true" unload="true" reload="true"/>
@@ -2035,6 +2045,18 @@
 	<animation			path="anims/fps/melee/garber/melee_charge" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_charge_var2" force="true"/>
 	<animation			path="anims/fps/melee/garber/melee_start" force="true"/>
+
+	<!-- agave machete anims for melee_machete since it suffers the same desync issues as the new melee_axe anims -->
+	<animation			path="anims/fps/melee/machete/melee_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/machete/melee_attack_var4" force="true"/>
+	
+	<!-- melee_fireaxe mashup with melee_sandsteel and melee_baseballbat since it's just a clone of melee_beardy otherwise -->
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var1" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var2" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var3" force="true"/>
+	<animation			path="anims/fps/melee/fireaxe/melee_fireaxe_attack_var4" force="true"/>
 	
 	<!-- Bat stab anims -->
 	<animation			path="anims/fps/melee/baseballbat/melee_attack_var3" force="true"/>

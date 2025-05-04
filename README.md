@@ -111,6 +111,12 @@ Rickerus: Providing assets for the ASU's head.
 
 PlayBONK: Creating the shield bash animation.
 
+IareAwesome17: OMNIA Medic Bulldozer/Additional enemy fixes
+
+Miss Miki: PONR anti-grief fixes and other contributions/fixes
+
+MrVavlo: For the CHARMing weapon CHARM that's full of CHARM
+
 Marshie: Russian localisation
 
 LR_Daring: Chinese localisation
@@ -118,6 +124,7 @@ LR_Daring: Chinese localisation
 GullwingDoor: Korean localisation
 
 Bobctopus: Spanish localisation
+
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale
 

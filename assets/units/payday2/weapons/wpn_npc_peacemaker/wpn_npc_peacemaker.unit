@@ -3,7 +3,7 @@
   <object file="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" />
    <dependencies>
 	<depends_on effect="effects/particles/weapons/raging/muzzleflash_3dp" />
-		<depends_on bnk="soundbanks/weapon_rbull" />
+		<depends_on bnk="soundbanks/weapon_pmkr45"/>
   </dependencies>
   <extensions>
   	<extension name="unit_data" class="ScriptUnitData" />

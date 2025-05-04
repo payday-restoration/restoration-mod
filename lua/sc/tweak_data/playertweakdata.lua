@@ -157,7 +157,9 @@ function PlayerTweakData:_set_sm_wish()
 end
 
 function PlayerTweakData:_set_singleplayer()
-	self.max_nr_following_hostages = 4
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		self.max_nr_following_hostages = 4
+	end
 end
 
 function PlayerTweakData:_set_multiplayer()
@@ -169,6 +171,7 @@ function PlayerTweakData:init()
 	is_vr = _G.IS_VR
 	self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 	self.put_on_mask_time = 0
+	self.controller_damage_grace_multiplier = 2
 	self.gravity = -982 
 	self.terminal_velocity = -7000 --these numbers are never used afaik, but just to be safe...
 	self.damage = {}
@@ -404,7 +407,7 @@ function PlayerTweakData:init()
 	self.movement_state.stamina.SPRINT_JUMP_STAMINA_DRAIN = 0
 	
 	self.camera = {}
-	self.camera.MIN_SENSITIVITY = 0.3
+	self.camera.MIN_SENSITIVITY = 0.1
 	self.camera.MAX_SENSITIVITY = 1.7
 	self.omniscience = {}
 	self.omniscience.start_t = 3.5
@@ -468,8 +471,8 @@ function PlayerTweakData:_init_mp7()
 	default_init_mp7(self)
 	pivot_shoulder_translation = Vector3(10.6576, 18.2065, -5.75727)
 	pivot_shoulder_rotation = Rotation(0.106663, -0.0849503, 0.628575)
-	pivot_head_translation = Vector3(-0.02, 14, -0.1)
-	pivot_head_rotation = Rotation(0, 0, 0)
+	pivot_head_translation = Vector3(-0.018, 14, -0.08)
+	pivot_head_rotation = Rotation(-0.03, 0.2, 0)
 	self.stances.mp7.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.mp7.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
 end

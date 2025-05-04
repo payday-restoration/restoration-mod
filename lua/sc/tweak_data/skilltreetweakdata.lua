@@ -1635,7 +1635,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_swap_speed_multiplier_1"
+						"pistol_swap_speed_multiplier_1",
+						"akimbo_swap_speed_multiplier_1"
 					},
 					cost = self.costs.pro
 				}
@@ -1648,14 +1649,16 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 0},
 				[1] = {
 					upgrades = {
-						"pistol_hip_fire_spread_multiplier"
+						"pistol_hip_fire_spread_multiplier",
+						"akimbo_hip_fire_spread_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"pistol_fire_rate_multiplier",
-						"pistol_ap_bullets_1"
+						"pistol_ap_bullets_1",
+						"akimbo_ap_bullets_1"
 					},
 					cost = self.costs.hightierpro
 				}

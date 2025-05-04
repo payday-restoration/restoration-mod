@@ -9,13 +9,15 @@ function PlayerSound:clbk_whizby_finished(instance, sound_source)
 	sound_source:delete()
 end
 
-function PlayerSound:play_footstep(foot, material_name)
-	if self._last_material ~= material_name then
-		self._last_material = material_name
-		local material_name = tweak_data.materials[material_name:key()]
+if not BeardLib.Utils:FindMod("Realistic Sound Pank") and not BeardLib.Utils:FindMod("Realistic Sound Pack") then
+	function PlayerSound:play_footstep(foot, material_name)
+		if self._last_material ~= material_name then
+			self._last_material = material_name
+			local material_name = tweak_data.materials[material_name:key()]
 
-		self._unit:sound_source(Idstring("root")):set_switch("materials", material_name or "no_material")
+			self._unit:sound_source(Idstring("root")):set_switch("materials", material_name or "no_material")
+		end
+
+		self:_play( ((self._unit:movement():running() or self._unit:movement()._current_state._is_wallrunning ) and "footstep_run") or "footstep_walk")
 	end
-
-	self:_play( ((self._unit:movement():running() or self._unit:movement()._current_state._is_wallrunning ) and "footstep_run") or "footstep_walk")
 end

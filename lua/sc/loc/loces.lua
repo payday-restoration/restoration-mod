@@ -318,13 +318,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHolidayTitleID"] = "Efectos Festivos",
 		["RestorationModHolidayDescID"] = "Activar o desactivar Efectos festivos para el Mod.",
 		["RestorationModCloakerTurnTitleID"] = "Giro De Cámara Por Patada De Cloaker",
-		["RestorationModCloakerTurnDescID"] = "Activa o desactiva el giro de cámara de Cloakers de Vanilla al recibir una patada de Cloaker.",	
+		["RestorationModCloakerTurnDescID"] = "Activa o desactiva el giro de cámara de Cloakers de Vanilla al recibir una patada de Cloaker.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Desactivar Colores Mutador Bandera Asalto",
-		["RestorationModDisableMutatorColorsDescID"] = "Desactiva el cambio de color del estandarte de asalto al usar mutadores (solo HUD Vanilla).",		
+		["RestorationModDisableMutatorColorsDescID"] = "Desactiva el cambio de color del estandarte de asalto al usar mutadores (solo HUD Vanilla).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",	
 		["RestorationModRestoreHitFlashTitleID"] = "Restaurar Destello De Golpe",
 		["RestorationModRestoreHitFlashDescID"] = "Activa o desactiva el destello de golpe restaurado al recibir daño.",
 		["RestorationModBotsNoDropTitleID"] = "Desactivar Lanzar Bolsas De Bots",
-		["RestorationModBotsNoDropDescID"] = "Activa o desactiva que los bots puedan soltar bolsas de botín.",		
+		["RestorationModBotsNoDropDescID"] = "Activa o desactiva que los bots puedan soltar bolsas de botín.",
 		["RestorationModNotifyTitleID"] = "Notificación De Función",
 		["RestorationModNotifyDescID"] = "Activa o desactiva la notificación de esta función.",
 		["RestorationModPauseTitleID"] = "Menú De Pausa Alfa",
@@ -526,7 +528,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_crumch_returns"] = "12:50 PM, Centro Comercial Shield", --Mallcrasher Ranted
 		["restoration_level_data_mansion_stage1"] = "2:13 AM, Mansión De Sir Elmsworth", --Elmsworth Mansion
 		["restoration_level_data_skm_nmh"] = "9:12 PM, Hospital Mercy - Techo", --No Mercy SKM
-		["restoration_level_data_office_strike"] = "1:57 PM, Oficinas Del FBI En El Centro", --Office Strike	
+		["restoration_level_data_office_strike"] = "1:57 PM, Oficinas Del FBI En El Centro", --Office Strike
 		["restoration_level_data_highrise_stage1"] = "1:03 AM, Apartamento De Tremblay", --Out of Frame
 		["restoration_level_data_constantine_bank_lvl"] = "12:00 PM, Banco Del Pacífico", --Pacific Bank
 		["restoration_level_data_sh_raiders"] = "5:16 PM, Almacén De Las Afueras", --Safehouse Raiders
@@ -567,9 +569,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_contact_akashic"] = "Nico",
 
 		["menu_contacts_shatter"] = "Afiliados De CRIMENET",
-		
+
 		["heist_contact_jackal_description"] = "Jackal empezó trabajando para GenSec, pero renunció tras un incidente con tráfico de personas, vinculado a GenSec y OMNIA.\n\nAhora trabaja para CRIMENET, llevando la pelea al frente.",
-		
+
 		["heist_contact_akashic_description"] = "Antiguo teniente de alto rango a las órdenes de Héctor Morales, Nicolás 'Nico' René está ahora al mando de los remanentes del cártel de Sinaloa que operan en Estados Unidos.\nSus números son bajos y el cártel colombiano, más grande, no tiene intención de ayudarles -- ni de reparar la relación con CRIMENET.\n\nAbsorbiendo a varias bandas más pequeñas que operan en la costa este y aliándose con CRIMENET, proporcionará sus recursos a cambio de sus servicios.",
 
 		["bm_msk_shatter_true"] = "Shatter", --Bob: Deberia adaptar esto?
@@ -745,6 +747,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPONRTracksDescID"] = "Selecciona la banda sonora para Trabajos Pro cuando comience el punto de no retorno.",
 		["RestorationModMusicShuffleTitleID"] = "Música Aleatoria",
 		["RestorationModMusicShuffleDescID"] = "Cambia la banda sonora al terminar un asalto.",
+		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
 		["RestorationModScaleTitleID"] = "Escala de la interfaz",
 		["RestorationModScaleDescID"] = "Cambia la escala de la interfaz. Puede requerir un reinicio.",
 		["RestorationModSizeOnScreenTitleID"] = "Tamaño de la interfaz en la pantalla",
@@ -787,6 +791,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Alinea y ordena CRIMENET por dificultad.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Escala de CRIMENET de Poco", --Bob: Esto se refiere al poco hud?
 		["RestorationModPocoCrimenetScaleDescID"] = "Permite ajustar la escala de CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
 		["RestorationModVoiceIconTitleID"] = "Icono De Chat De Voz",
 	    ["RestorationModVoiceIconDescID"] = "Mostrar cuando un jugador está usando el chat de voz dentro del juego.",
 		["RestorationModNewsFeedStyleTitleID"] = "Estilo Alfa De Noticias", --Bob: Comprobar si newsfeed tiene otro nombre
@@ -986,7 +992,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_winters_test_desc"] = "Mata al Capitán Winters mientras sujeta su escudo usando únicamente la Navaja Automática o el Cuchillo Mariposa Wing.",
 		["ch_spring_test"] = "El Mío Es Más Grande Que El Tuyo",
 		["ch_spring_test_desc"] = "Mata al Capitán Spring usando únicamente la Minigun Vulcan o la Microgun XL", --Bob: La microgun en el original no incluye numeros al final
-		
+
 		["ch_pdth_style_fwb"] = "A La Vieja Escuela: First World Bank",
 		["ch_pdth_style_fwb_desc"] = "Completa el trabajo First World Bank en la dificultad OVERKILL o superior, usando el traje de dos piezas o el chaleco antibalas ligero, sin habilidades, usando el talento Innatae o Tabula Rasa, la culata del arma como cuerpo a cuerpo y armas de PD:TH",
 		["ch_pdth_style_heat"] = "A La Vieja Escuela: Heat Street",
@@ -1005,7 +1011,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_pdth_style_undercover_desc"] = "Completa el trabajo Undercover en la dificultad OVERKILL o superior, usando el traje de dos piezas o el chaleco antibalas ligero, sin habilidades, usando el talento Innatae o Tabula Rasa, la culata del arma como cuerpo a cuerpo y armas de PD:TH",
 		["ch_pdth_style_nomercy"] = "A La Vieja Escuela: No Mercy",
 		["ch_pdth_style_nomercy_desc"] = "Completa el trabajo No Mercy en la dificultad OVERKILL o superior, usando el traje de dos piezas o el chaleco antibalas ligero, sin habilidades, usando el talento Innatae o Tabula Rasa, la culata del arma como cuerpo a cuerpo y armas de PD:TH",
-		
+
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
 		["state_filter"] = "Estado",
@@ -1014,15 +1020,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_state_lobby"] = "En Sala",
 		["menu_state_loading"] = "Cargando",
 		["menu_state_ingame"] = "En Partida",
-		
+
 		["menu_description"] = "El Plan",
-		
+
 		-- ///Stuff ripped from the various locale files we had ///
-		
+
 		--Halloween Dozer Sword
 		["bm_melee_halloween_sword"] = "Espada del Bulldozer sin Cabeza",
 		["menu_l_global_value_halloween_sword"] = "¡OBJETO DE HALLOWEEN 2013!",
-		
+
 		["menu_l_global_value_shatters_fury"] = "¡OBJETO DE VERITAS!",
 
 		--Ranted NMH
@@ -1031,40 +1037,40 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["heist_nmh_res_name"] = "HOSPITAL MERCY",
 		["heist_nmh_res_brief"] = "Nuestro cliente necesita muestras de sangre de un paciente de la unidad de cuidados intensivos del hospital Mercy. Debemos entrar ahí, ocuparnos de las cámaras, controlar a los civiles y acceder a la base de datos para identificar al paciente. Considerando la baja seguridad de este sitio, debería ser un trabajo simple y limpio. Saldremos por la azotea al terminar. Este trabajo es un poco turbio, y me da la sensación de que nos estamos metiendo con alguna conspiración secreta militar, pero merece la pena el riesgo. Necesitaremos este Payday para el futuro, y también tendremos un lindo adicional en dinero efectivo.",
-		
+
 		["heist_nmh_new"] = "Extrae y analiza la sangre del paciente",
 		["heist_nmh_new_desc"] = "Tienes que encontrar una centrifugadora para validar las muestras de sangre.",
-		
+
 		["heist_nmh_new2"] = "Llama al ascensor",
 		["heist_nmh_new2_desc"] = "Pulsa el botón y espera al ascensor",
-		
+
 		["heist_nmh_new3"] = "Llama al ascensor",
-		["heist_nmh_new3_desc"] = "Pulsa el botón y espera al ascensor",	
-		
+		["heist_nmh_new3_desc"] = "Pulsa el botón y espera al ascensor",
+
 		--GO Bank remastered
 		["menu_nh_mod_gobank_v2"] = "BANCO GO REMASTERIZADO",
-		
+
 		["heist_gobank_v2_name"] = "BANCO GO REMASTERIZADO",
 		["heist_gobank_v2_brief"] = "Este es un trabajo clásico de banco. Rompan la bóveda, vacíen las cajas de depósito y saquen el botín. Simple. La información de Bain dice que esta sucursal tiene la tasa de robos más baja del país. Es hora de cambiar eso.\n\n» Buscad en el entorno tarjetas de acceso. Se necesitan dos para la bóveda\n» Si eso falla, usen una lanza térmica en la bóveda\n» Abrid las cajas de depósito\n» Monten el gancho\n» Saquen el dinero",
-		
+
 		["heist_roberts_v2_name"] = "BANCO ROBERT'S",
 		["heist_roberts_v2_brief"] = "Tenemos un banco. No es una filial importante, pero la bóveda tiene temporalmente pilas de efectivo en tránsito. Notas de cambio extranjeras.\n\nEn fin, saben cómo hacerlo - a su manera. Entren sigilosamente o desaten el caos. Sea como sea, tengo una idea para sacar el dinero de ahí. Ya veran a qué me refiero. Creo que les gustará.",
 
 		["csgo_plane_timer_text"] = "Espera al avión &&TIMER",
 		["csgo_plane_timer_desc"] = "Espera al avión &&TIMER",
-		
+
 		["hud_equipment_pickup_spraycan"] = "Pulsa $BTN_INTERACT para tomar Pintura en Aerosol", --Bob: Probablemente se pueda decir aerosol a secas
 		["hud_action_spraypaint"] = "Pulsa $BTN_INTERACT para pintar",
 		["hud_action_spraypaint_none"] = "Requiere Pintura en Aerosol",
 		["spraycan_obtained"] = "Pintura en Aerosol Obtenida",
 		["hud_equipment_obtained_spraycan"] = "Pintura en Aerosol Obtenida",
-		
+
 		["trophy_csgo01"] = "Caja de Grafitis",
 		["trophy_csgo01_desc"] = "Y ni siquiera tuviste que comprar este",
 		["trophy_csgo01_objective"] = "Encuentra pintura en aerosol y pinta la bóveda de Banco Go Remasterizado.",
 
 		["END"] = "FIN",	--Bob: Esto donde aparece?
-		
+
 		--Whurr Heat Street Edit
 		["heist_heat_street_new_name"] = "HEAT STREET VERDADERO CLÁSICO",
 		["heist_heat_street_new_brief"] = "Alguien dijo una vez que no hay nada seguro, pero este trabajo parece fácil: entrar, conseguir el maletín, salir. Vuestro conductor de confianza, Matt, os estará esperando en el callejón y mientras lleguéis a la furgoneta no hay forma de que falléis. ¿Verdad?",
@@ -1075,7 +1081,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_skm_heat_street_name"] = "Centro - Inkwell Industrial",
 		["heist_skm_heat_street_brief"] = "Los kerels interrogaron recientemente a un prisionero que afirma haber visto el rostro de Bain y poder identificarlo. Aunque sabemos que no es cierto, los kerels no, y nuestros rivales tampoco, así que vamos a aprovechar la situación para ganar algo de dinero. Interceptaremos al sujeto mientras lo trasladan a protección de testigos, cerca del antiguo almacén de la fábrica donde ese idiota de Matt estrelló su coche mientras intentaba huir de nosotros.",
 		["heist_skm_street_name"] = "Secuestro: Centro - Inkwell Industrial",
-		["heist_skm_street_brief"] = "Los kerels interrogaron recientemente a un prisionero que afirma haber visto el rostro de Bain y poder identificarlo. Aunque sabemos que no es cierto, los kerels no, y nuestros rivales tampoco, así que vamos a aprovechar la situación para ganar algo de dinero. Interceptaremos al sujeto mientras lo trasladan a protección de testigos, cerca del antiguo almacén de la fábrica donde ese idiota de Matt estrelló su coche mientras intentaba huir de nosotros.",		
+		["heist_skm_street_brief"] = "Los kerels interrogaron recientemente a un prisionero que afirma haber visto el rostro de Bain y poder identificarlo. Aunque sabemos que no es cierto, los kerels no, y nuestros rivales tampoco, así que vamos a aprovechar la situación para ganar algo de dinero. Interceptaremos al sujeto mientras lo trasladan a protección de testigos, cerca del antiguo almacén de la fábrica donde ese idiota de Matt estrelló su coche mientras intentaba huir de nosotros.",
 
 		--Xmas Hoxout and Breaking Feds
 		["heist_xmn_hox"] = "LA FUGA DE HOXTON NAVIDEÑO",
@@ -1084,64 +1090,64 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_xmn_hox2"] = "LA BÚSQUEDA NAVIDEÑO",
 		["heist_xmn_hox_2_brief"] = "Bueno, chicos, gracias por sacarme de ahí. Para empezar, no debería haber estado ahí. Alguien me ha tendido una trampa. Estoy seguro. Los federales sabían mucho sobre mí. Más de lo que esos inútiles hubiesen podido descubrir por su cuenta. Alguien me ha vendido. Alguien me ha jodido. Y voy a descubrir quién ha sido.$NL;$NL;Pero no va a ser fácil. Nada de andarse por las ramas. Nada de tratos con personas sombrías. Vamos a ir directamente a la fuente. El mayor nido de agentes del FBI. Vamos a descubrir quién me ha jodido la vida.",
 		["heist_xmn_hox_brief"] = "El Dentista le ha conseguido a Hoxton un segundo juicio. Vamos a llevárnoslo justo después del juicio. El plan es liarla parda: reventaremos una pared del juzgado, cogeremos a Hoxton y lo sacaremos de allí.$NL;$NL;» Liberar a Hoxton$NL;» Llevar a Hoxton al vehículo blindado$NL;» Escoltar el vehículo blindado con Hoxton dentro$NL;» Escapar con Hoxton.",
-		
+
 		["heist_xmn_tag_name"] = "Robando a los Federales Navideño",
-		
+
 		--Rats Zipline
 		["menu_alex_1_zipline_desc"] = "Tirolesa para transporte rápido de bolsas",
-		
-		
+
+
 		--The Bomb: Forest Breifing
 		["heist_crojob3_briefing"] = "Esos explosivos termobáricos fueron cargados en un tren de carga esta mañana. Se dirigen a Norfolk. Tal vez para ser vendidos, tal vez para ser desmantelados - no importa, porque no van a llegar allí. Un tren en movimiento es difícil de detener, así que lo haremos al estilo del Viejo Oeste. Vuela una sección del puente y todo se viene abajo. Es ruidoso y desastroso, pero efectivo. Los vagones se dispersarán hasta el infierno. Uno de ellos tiene una bóveda donde nuestros explosivos se encuentran - registren cada uno de ellos hasta que los encuentren. \n\nNOTA DE JACKAL:\nTengo información sobre equipos Reaper cerca de la escena - parece que Akan quiere este premio para sí mismo. Preparaos para problemas.",
-		
+
 		--Watchdogs Holdout
 		["heist_skm_watchdogs_stage2_briefing"] = "Mia Calienté es una auténtica pieza, amigos. Durante años ha sido el cerebro de las operaciones de Murkywater en DC. No hace mucho, Murkywater se hizo con un almacén en los muelles y lo están utilizando como punto de distribución adicional. Nuestro objetivo está allí comprobando un botín recientemente saqueado. Vamos a entrar allí, agarrar a la dwankie y tomarla como rehén. Los Murkies no pueden permitirse perderla, pagarán por su liberación, tal vez con el ya mencionado y bastante valioso botín, ¿qué decís chicos?",  --Bob: Comprobar si dwankie se puede traducir
-		
+
 		--Side Jobs
 		["menu_challenge_menu_challenge_moon_6_obj"] = "Completa el trabajo Slaughterhouse en la dificultad OVERKILL o superior sin matar al Capitán Spring.",
-		
-		
+
+
 		--Generic Captain Text
 		["hud_assault_vip"] = "MATA AL CAPITÁN PARA TERMINAR EL ASALTO",
-		
+
 		--Boiling Point RU text tweaks
 		["mad_txt_005"] = "КОМНАТА МЕДОСМОТРА",
 		["mad_txt_006"] = "ОПЕРАЦИОННАЯ"
-		
-		
+
+
 	})
 
 	-- maybe need change banner descriptions
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)	
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	local job = Global.level_data and Global.level_data.level_id
 	local captain_type = job and restoration.captain_spawns[job]
 	if captain_type == restoration.captain_types.winter and job == "crojob3" or job == "crojob3_night" then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "¡¡NO TEMÁIS, EL CAPITÁN WINTERS ESTÁ AQUÍ!!",
 		})
 	elseif captain_type == restoration.captain_types.winter then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "MATA AL CAPITÁN WINTERS PARA TERMINAR EL ASALTO",
-		})	
+		})
 	elseif captain_type == restoration.captain_types.summer then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "MATA AL CAPITÁN SUMMERS PARA TERMINAR EL ASALTO",
 		})
 	elseif captain_type == restoration.captain_types.spring then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "MATA AL CAPITÁN SPRING PARA TERMINAR EL ASALTO",
-		})		
+		})
 	elseif captain_type == restoration.captain_types.autumn then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "MATA AL CAPITÁN AUTUMN PARA TERMINAR EL ASALTO",
-		})		
+		})
 	elseif captain_type == restoration.captain_types.hvh then
-		LocalizationManager:add_localized_strings({	
+		LocalizationManager:add_localized_strings({
 			["hud_assault_vip"] = "ENFRÉNTATE A TUS PESADILLAS Y DESPIERTA",
 		})
-	end			
-	
+	end
+
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
@@ -1153,11 +1159,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_inspect_player"] = "Inspeccionar Jugador",
 		["menu_inspect_player_desc"] = "Inspeccionar Estadísticas Del Jugador",
 		["menu_toggle_one_down_lobbies"] = "Permitir Salas Con Trabajo Pro",
-		
+
 		["heist_safehouse"] = "El Refugio - Conceptos Básicos",
-		
+
 		--Events
-		
+
 		--Anniversary Event
 		["menu_pda8_1_prog_obj_desc"] = "Encuentra 2 estatuas de aniversario diferentes en Joyería, Cuatro Tiendas, Club Nocturno, Banco H&T o Destrozacentros. Tienes que terminar el atraco para que se registren las estatuas.",
 		["menu_pda8_2_prog_obj_desc"] = "Como comunidad, todos los Jugadores deben gastar 5.000.000.000 de dólares sobornando policías con el Lanza Dinero y tienes que encontrar 3 estatuas de aniversario diferentes en Joyería, Cuatro Tiendas, Club Nocturno, Banco H&T o Destrozacentros. Tienes que terminar el atraco para que se registren las estatuas.",
@@ -1166,7 +1172,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		["menu_pda8_2_prog_obj"] = "Encuentra 3 Estatuas de Aniversario.",
 		["menu_pda8_3_prog_obj"] = "Encuentra 4 Estatuas de Aniversario.",
-			
+
 		--Holdout--
 		["menu_cn_skirmish"] = "Secuestro",
 		["menu_skirmish"] = "Secuestro - Enfrentamiento Hostil",
@@ -1210,7 +1216,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_pines_briefing"] = "Es importante que lleguéis cuanto antes, pero está en medio de la nada, asi que no pasaréis desapercibidos. Encontrad al piloto: seguro que está cerca del accidente. Luego, enviaremos un helicóptero para sacarlo de ahí. No os separéis de él hasta que esté a salvo. Además, Vlad dice que ese avión estaba repleto de producto. Registrad el bosque y conseguid tanto como podáis. En navidades siempre se agradece un extra.\n\nNOTA DE JACKAL:\nLa explosión de ese accidente alertó a equipos Reaper cercanos. No esperéis una respuesta policial.",
 
 		----Custom Achievements----
-				
+
 		--Scarface Mansion--
 		["skm_friend_name"] = "SECUESTRO - MANSIÓN EL FUREIDIS",
 		["friend_3"] = "Jodiendo Con Los Mejores",
@@ -1240,7 +1246,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["nightmare_9"] = "Despierte Señor Steele. Despierte y mire a su alrededor.", --translation note: quote from HL2 intro gman speech + Dallas' alias
 		["nightmare_9_desc"] = "Sobrevive al asalto 9 habiendo permanecido en la partida desde el principio.",
 		["nightmare_9_obj"] = "Sobrevive al asalto 9 habiendo permanecido en la partida desde el principio.",
-				
+
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Hace que los perdigones se #{risk}#dispersen horizontalmente## en lugar de en forma de racimo.",
 		["bm_wp_ns_ultima_desc_sc"] = "Aumenta la dispersión general de los perdigones en un 75%.",
@@ -1375,7 +1381,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "SIN MODIFICADOR",
 		["bm_wp_upg_bonus_sc_none_desc"] = "DESACTIVA MEJORAS DE ASPECTOS DE ARMA.",
-		
+
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_multishot_1"] = "El daño se divide entre",
 		["bm_menu_weapon_multishot_2"] = "proyectiles, cada uno infligiendo",
@@ -1476,7 +1482,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 				["bm_melee_pattern_knife2"] = "Ataca con golpes amplios. El movimiento influye en la dirección del ataque.", --Also works with "melee_clean", "melee_grip" and "melee_agave"
 
-				["bm_melee_pattern_ballistic"] = "Ataca con golpes rápidos o carga almenos hasta #{skill_color}#50%## para golpes más amplios y golpes hacia abajo. El movimiento influye en la dirección del ataque.", 
+				["bm_melee_pattern_ballistic"] = "Ataca con golpes rápidos o carga almenos hasta #{skill_color}#50%## para golpes más amplios y golpes hacia abajo. El movimiento influye en la dirección del ataque.",
 				["bm_melee_pattern_poker"] = "Ataca con golpes hacia abajo o carga almenos hasta #{skill_color}#50%## para golpes que extiendan el alcance.",
 
 				["bm_melee_pattern_boxcutter"] = "Ataca con golpes amplios.", --Also works with "melee_catch" and "melee_road"
@@ -1489,7 +1495,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 					["bm_melee_pattern_blunt_90"] = "Ataca con golpes hacia abajo o carga almenos hasta #{skill_color}#90%## para golpes más amplios.",
 
 				["bm_melee_pattern_beardy"] = "Ataca con golpes hacia abajo o carga almenos hasta #{skill_color}#50%## para golpes más amplios. El movimiento influye en la dirección del ataque.",
-				
+
 				["bm_melee_pattern_axe"] = "Ataca con golpes hacia abajo.", --Also works with "melee_psycho" and "melee_pickaxe"
 
 				["bm_melee_pattern_cutter"] = "Ataca con golpes hacia abajo o carga almenos hasta #{skill_color}#50%## para para golpes que extiendan el alcance.",
@@ -1721,7 +1727,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_road_info"] = "El látigo de cadena es el arma cuerpo a cuerpo preferida de Rust, un fanático de los instrumentos de dolor de la vieja escuela.\nRust no robó el látigo de cadena, sino que lo compró en una ferretería. Pensó que valía la pena pagar por una herramienta tan importante. Le da un cierto toque de clase al sonido silbante que hace al azotar otra cara.",
 
 		--ROAMING FROTHING MADNESS
-		["bm_melee_cs_info"] = "Destroza y desgarra, hasta que termines.\n\nInflige #{skill_color}#30## de daño cada #{skill_color}#0.25## segundos a objetivos en frente tuyo mientras cargas. Esto se puede aumentar con habilidades.\n\n#{important_1}#No puede bloquear ataques enemigos.##", --Bob: Referencia a Doom 
+		["bm_melee_cs_info"] = "Destroza y desgarra, hasta que termines.\n\nInflige #{skill_color}#30## de daño cada #{skill_color}#0.25## segundos a objetivos en frente tuyo mientras cargas. Esto se puede aumentar con habilidades.\n\n#{important_1}#No puede bloquear ataques enemigos.##", --Bob: Referencia a Doom
 
 		--WHERE'S THE LEAK MA'AM?
 		["bm_melee_shock_info"] = "\"Sería tan amable...\"",
@@ -1733,7 +1739,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_ostry_info"] = "Giraaaaaaaaaa.\n\nInglife #{skill_color}#18## de daño cada #{skill_color}#0.18## segundos a objetivos en frente tuyo mientras cargas. Esto se puede aumentar con habilidades.\n\n#{important_1}#No puede bloquear ataques enemigos.##",
 
 		--Pencil
-		["bm_melee_sword"] = "Lápiz", 
+		["bm_melee_sword"] = "Lápiz",
 		["bm_melee_sword_info"] = "\"John es un hombre de foco, compromiso, voluntad pura... algo de lo que tu sabes muy poco.\n\nUna vez lo vi matar a tres hombres en un bar... con un lápiz...\n\nCon un maldito lápiz.\"",
 
 		--Russian Machete
@@ -1744,12 +1750,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Alabama Razor
 		["bm_melee_clean_info"] = "Dale a la policía ese afeitado extra que necesita.\n\nInflige #{skill_color}#120## de daño por sangrado en #{skill_color}#3## segundos.",
-		
+
 		--Kento's Tanto
 		["bm_melee_ohwell_info"] = "Junto con la katana, el tanto era un arma básica de todos los samuráis.\n\nÉsta perteneció a Kento, aunque se desconoce de dónde la sacó.",
 
 		--Spoon
-		["bm_melee_spoon_info"] = "Sólo una cucharada, ¿verdad?\n\nLos ataques completamente cargados salen #{skill_color}#25%## más rápido, lo que permite seguir con un golpe más rápido.", 
+		["bm_melee_spoon_info"] = "Sólo una cucharada, ¿verdad?\n\nLos ataques completamente cargados salen #{skill_color}#25%## más rápido, lo que permite seguir con un golpe más rápido.",
 		--Gold Spoon
 		["bm_melee_spoon_gold_info"] = "Perfecta para comer esos cereales.\n\nTiene un #{skill_color}#50%## de probabilidad de #{heat_warm_color}#prender en llamas## a los enemigos infligiendo #{heat_warm_color}#120## de daño por fuego e interrumpiendolos durante #{skill_color}#3## segundos.", --Bob: En ingles asumo que es una referencia al anuncio de los reeses puffs, aunque ni idea de como adaptarlo xd
 			["bm_melee_fire_info"] = "Tiene un #{skill_color}#50%## de probabilidad de #{heat_warm_color}#prender en llamas## a los enemigos infligiendo #{heat_warm_color}#120## de daño por fuego e interrumpiendolos durante #{skill_color}#3## segundos.",
@@ -1779,7 +1785,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_piggy_hammer_info"] = "Oinc.\n\nInflige #{skill_color}#100%## de daño adicional a enemigos especiales y de élite y tiene una probabilidad de infligir uno de los siguientes #{risk}#efectos aleatorios## al golpear enemigos:\n-#{skill_color}#12%## de probabilidad de infligir #{important_1}#sangrado##\n-#{skill_color}#7%## de probabilidad de #{ghost_color}#electrocutar##\n-#{skill_color}#5%## de probabilidad de infligir #{stats_positive}#veneno##\n-#{skill_color}#1%## probabilidad de #{risk}#matar instantáneamente##", --Piggu
 
 		--Knuckle Daggers, Push Daggers
-		["bm_melee_specialist_info"] = "El doble de cuchillas, el doble de diversión.\n\nLos ataques cuerpo a cuerpo infligen el #{skill_color}#doble## de daño con cada golpe después del primer golpe.", 
+		["bm_melee_specialist_info"] = "El doble de cuchillas, el doble de diversión.\n\nLos ataques cuerpo a cuerpo infligen el #{skill_color}#doble## de daño con cada golpe después del primer golpe.",
 
 		--CUSTOM MELEE WEAPONS
 		--WHERE IS TITANFALL YOU FUCKS
@@ -1831,115 +1837,115 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Color variations - Combat Harness
 			["bm_suit_var_loud_suit_default"] = "Negro Profesional",
 			["bm_suit_var_loud_suit_default_desc"] = "El traje de dos piezas se ha convertido en una especie de reconocimiento de marca para la pandilla PAYDAY. Elegante, a la moda, te permite mezclarte con la multitud. Simplemente icónico. '¡Espera, joder! ¡¿Qué maldita multitud?!', exclama Chains mientras la banda conduce para asaltar el almacén de Murkywater una vez más. Ojalá se hubiera dado cuenta antes.",
-			
+
 			["bm_suit_var_loud_suit_white"] = "Blanco Escarcha",
 			["bm_suit_var_loud_suit_white_desc"] = "Proporcionados por Jimmy para el trabajo de Punto de Ebullición, pronto demostraron ser ineficaces contra las duras condiciones del trabajo. No es que Jimmy necesitara uno, ya que prefería llevar su traje de dos piezas de todos modos.",
-			
+
 			["bm_suit_var_loud_suit_red"] = "Rojo Incierto",
 			["bm_suit_var_loud_suit_red_desc"] = "El rojo es un color interesante de ver en el campo de batalla. O es un médico, que viene a salvar la vida de sus compañeros, o el cabrón más peligroso que hay. Tú decides quién serías.",
-			
+
 			["bm_suit_var_loud_suit_green"] = "Poison Green",
 			["bm_suit_var_loud_suit_green_desc"] = "Basta ya de que el Granadero te intimide. Gemma McShay te proporcionó todo un arsenal de armamento con aroma a veneno, así que es hora de demostrarles a estos cerdos quién es el verdadero control de plagas.",
-			
+
 			["bm_suit_var_loud_suit_blue"] = "Azul Policía",
 			["bm_suit_var_loud_suit_blue_desc"] = "¿Por qué la policía no está usando la Armadura Corporal Experimental de todos modos?",
-			
+
 			["bm_suit_var_loud_suit_purple"] = "Morado a la Moda",
 			["bm_suit_var_loud_suit_purple_desc"] = "Escóndelo bajo tu Armadura Corporal Experimental para dar un sutil toque de moda a todas tus tonterías tácticas.",
-			
+
 			["bm_suit_var_loud_suit_brown"] = "Marrón de Exterior",
 			["bm_suit_var_loud_suit_brown_desc"] = "A Houston le hubiera gustado que la pandilla se hubiera quedado en una acogedora jungla urbana, donde se encuentra en su mejor forma. Pero, por desgracia, hay demasiado dinero que hacer en el país.",
-			
+
 			["bm_suit_var_loud_suit_gorkagreen"] = "Bosque Táctico",
 			["bm_suit_var_loud_suit_gorkagreen_desc"] = "Te esconde bien en el bosque, o entre todo el dinero que estás moviendo.",
-			
+
 			["bm_suit_var_loud_suit_gorkaearth"] = "Murky Táctico",
 			["bm_suit_var_loud_suit_gorkaearth_desc"] = "¿Cuántos uniformes produce Murkywater? Podrían crear su propia línea de moda en este punto.",
-			
+
 			["bm_suit_var_loud_suit_gorkagrey"] = "Urbano Táctico",
 			["bm_suit_var_loud_suit_gorkagrey_desc"] = "No reason to don a suit when you walk into a bank now. Your face is all over the news anyway.",
-			
+
 			["bm_suit_var_loud_suit_gorkapurple"] = "Purpura Táctico",
 			["bm_suit_var_loud_suit_gorkapurple_desc"] = "Nunca se sabe cuándo vas a cometer un atraco en una jungla púrpura.",
-			
+
 			["bm_suit_var_loud_suit_gorkasea"] = "Marino Táctico",
 			["bm_suit_var_loud_suit_gorkasea_desc"] = "Wolf las consiguió en 2011, cuando Bain le propuso robar un yate. Por desgracia, tuvieron que acumular polvo durante casi seis años.",
 			-- Color variations - Sunny Side
 			["bm_suit_var_suit_sunny_default"] = "Negocios Informales",
 			["bm_suit_var_suit_sunny_default_desc"] = "Conviértete en el héroe cursi de las películas de acción de los 90 que siempre has querido ser.",
-				
+
 			["bm_suit_var_suit_sunny_skull"] = "Negocios Mortales",
 			["bm_suit_var_suit_sunny_skull_desc"] = "Este pequeño trabajo de pintura es lo que le dio al Skulldozer su temible nombre. Demuestra que no significa nada para ti reduciéndolo a un simple adorno para tu atuendo.",
-				
+
 			["bm_suit_var_suit_sunny_red"] = "Negocios Sangrientos",
 			["bm_suit_var_suit_sunny_red_desc"] = "Un Cloaker atado a una silla, la Navaja de Barbero Alabama, 'Troubles Always Inbound' sonando... Esta camisa no permanecerá limpia por mucho tiempo.",
-				
+
 			["bm_suit_var_suit_sunny_blue"] = "Negocios Digitales",
 			["bm_suit_var_suit_sunny_blue_desc"] = "Los hackers son magos modernos, capaces de hacer cosas inimaginables gracias a sus grandes habilidades...  Pero los hackers no detienen las balas. Los chalecos antibalas sí. Así que no seas demasiado engreído y recuerda protegerte.",
-				
+
 			["bm_suit_var_suit_sunny_green"] = "Negocios Avariciosos",
 			["bm_suit_var_suit_sunny_green_desc"] = "No importa el riesgo, arrasas con todo el botín. En ese momento ni siquiera se trata de dinero, se trata de ser fiel a ti mismo.",
 
 			["bm_suit_var_suit_sunny_yellow"] = "Negocios Solares",
 			["bm_suit_var_suit_sunny_yellow_desc"] = "Perfecto para un viaje romántico bajo el sol.\nMientras te persigue una docena de coches de policía, claro.",
-			
+
 			["bm_suit_var_suit_sunny_pink"] = "Negocios Fluidos",
 			["bm_suit_var_suit_sunny_pink_desc"] = "Mr. Pink ha tenido suerte de que la banda de Cabot no tenga atuendos codificados por colores.", --Bob: Esto es una referencia a reservoir dogs
-					
+
 			["bm_suit_var_suit_sunny_hawaii_black"] = "Vacaciones en Miami",
 			["bm_suit_var_suit_sunny_hawaii_black_desc"] = "Wolf compró esta elegante camiseta cuando se enteró de que el Dentista estaba preparando a la banda para el trabajo de «Hotline Miami». ¿Quién iba a saber que no tendría nada que ver con Miami?",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_blue"] = "Vacaciones Cibernéticas",
 			["bm_suit_var_suit_sunny_hawaii_blue_desc"] = "Joy es el tipo de persona que se iría lejos de vacaciones y se pasaría todo el tiempo jugando a videojuegos. 'Los niños de hoy en día', pensó Dallas, ya que no podía conseguir que disfrutara jugando al billar, contemplando el mar, bebiendo cantidades insanas de whisky y otras actividades vacacionales de la vieja escuela.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_cyan"] = "Vacaciones en el Mar",
 			["bm_suit_var_suit_sunny_hawaii_cyan_desc"] = "Sydney es una ávida nadadora y siempre se ha preguntado por qué el Refugio no tiene instalada una piscina. Bueno, además de que Aldstone ya tiene bastantes obligaciones, nadar no es la afición más apreciada por banda PAYDAY después de los eventos de Green Bridge.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_green"] = "Vacaciones en Caseta",
 			["bm_suit_var_suit_sunny_hawaii_green_desc"] = "Vlad disfrutó mucho de su estancia en México. Las nuevas tierras le brindaban nuevas oportunidades, y logró expandirse con bastante rapidez, hasta que una de sus actividades de narcotráfico sufrió un golpe repentino. Los federales fueron avisados nada menos que por Buluc, que se convertiría en el principal rival de Vlad durante un tiempo. Menos mal que la banda PAYDAY siempre está disponible.",
-						
+
 			["bm_suit_var_suit_sunny_hawaii_orange"] = "Vacaciones en el Extranjero",
 			["bm_suit_var_suit_sunny_hawaii_orange_desc"] = "Ya está, lo has conseguido. El trabajo de la Casa Blanca completado, todos los malos derrotados, y tu dinero extranjero gastado en la mejor fiesta de la historia. ¿Dónde podemos ir desde aquí? \nEh, otro atraco a un banco no hará daño.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_pink"] = "Vacaciones de Baile",
 			["bm_suit_var_suit_sunny_hawaii_pink_desc"] = "Chains no suele irse de vacaciones, pero cuando lo hace, se deja llevar. Durante sus vacaciones, alrededor de 2016, un vídeo de sus elegantes pasos de baile se hizo viral. Tuvo que ponerse en contacto con Bain para que lo borrara de Internet para siempre.",
-			
+
 			["bm_suit_var_suit_sunny_hawaii_red"] = "Vacaciones Lejanas",
 			["bm_suit_var_suit_sunny_hawaii_red_desc"] = "A Jimmy le encanta contar una historia sobre sus agradables vacaciones tropicales interrumpidas por un ejército de supersoldados genéticamente modificados. Parece uno de sus cuentos de hadas inducidos por la cocaína, pero después del atraco a AKAN... ¿Quién sabe?",
-			
+
 			["bm_suit_var_suit_sunny_payne"] = "Vacaciones Indoloras",
 			["bm_suit_var_suit_sunny_payne_desc"] = "Durante sus vacaciones en Sao Paulo, Wolf decidió comprar esta camiseta, pero se la regalaron, al parecer en señal de agradecimiento por lo que había hecho por la ciudad.\nWolf estaba confuso porque nunca había ido a Brasil.",
-			
+
 			["bm_suit_var_suit_sunny_vice"] = "Vacaciones sin Víctimas",
 			["bm_suit_var_suit_sunny_vice_desc"] = "No puedes hacer que Sangres se ponga otra cosa que no sea una camisa llamativa, no importa la ocasión. Mientras los criminales más peligrosos se reúnen alrededor, todos elegantemente vestidos, Sangres viene con una camisa vieja y desgastada que consiguió en una venta de garaje en la ciudad de Vice.",
-			
+
 			["bm_suit_var_suit_sunny_security_red"] = "Guardaespaldas Rojo",
 			["bm_suit_var_suit_sunny_security_red_desc"] = "Un miembro de élite de la seguridad de Sosa. Ernesto Sosa pensaba que lo tenía todo. Una gran mansión, un negocio fiable y una sólida seguridad que garantizaba su integridad. El mundo es suyo... Sin embargo, la historia está destinada a repetirse.",
-			
+
 			["bm_suit_var_suit_sunny_security_purple"] = "Guardaespaldas Púrpura",
 			["bm_suit_var_suit_sunny_security_purple_desc"] = "Un miembro de élite de la seguridad de Sosa. Vigilancia 24/7 con drones y turnos de guardia bien coordinados. La mansión de Sosa es impenetrable. Si tan sólo alguien se molestara en revisar el último lote de yayo...",
-			
+
 			["bm_suit_var_suit_sunny_soprano"] = "Negocios Mafiosos",
 			["bm_suit_var_suit_sunny_soprano_desc"] = "Aunque la mafia ni siquiera se parece a la banda PAYDAY, merece la pena rendirles homenaje: su estilo es excelente incluso en la vida cotidiana.",
 		    -- Color variations - Prison Suit
 			["bm_suit_var_suit_prison_default"] = "El Fugitivo",
 			["bm_suit_var_suit_prison_default_desc"] = "La túnica que cambió a Hoxton para siempre. Él estaba seguro de haber quemado esta reliquia del sombrío pasado junto con el viejo refugio, pero de alguna manera encontró su camino al nuevo.",
-			
+
 			["bm_suit_var_suit_prison_repairman"] = "El 31",
 			["bm_suit_var_suit_prison_repairman_desc"] = "¿Alguna vez se ha preguntado quién ha instalado tus cámaras espía?\n\nBueno, puedes seguir preguntándotelo, pero al menos sabrás lo que llevan puesto.",
-			
+
 			["bm_suit_var_suit_prison_comedy"] = "El Delincuente",
 			["bm_suit_var_suit_prison_comedy_desc"] = "La túnica de Chins de la (im)popular Banda Paycheck. Estuvo a punto de llevarse 225 dólares de la caja registradora de la Tienda Pear, pero lo atraparon y lo enviaron a custodia. Por suerte, los compañeros de Chin tomaron como rehén a uno de los PearBooks y consiguieron intercambiarlo por él.",
-			
+
 			["bm_suit_var_suit_prison_vaultboy"] = "El Morador",
 			["bm_suit_var_suit_prison_vaultboy_desc"] = "Sorprendentemente, a Bain nunca le han gustado las conspiraciones del 'fin del mundo', pero tras el trabajo de Pánico Nuclear a construir un pequeño refugio antiaéreo subterráneo. Porque ya sabes. Guerra.",
-			
+
 			["bm_suit_var_suit_prison_janitor"] = "El Conserje",
 			["bm_suit_var_suit_prison_janitor_desc"] = "Corren rumores por los círculos criminales de que OMNIA está llevando a cabo experimentos de alto secreto. Cosas que superarían incluso a las del legendario Henry's Rock. Incluso los conserjes de OMNIA tienen que firmar un contrato y ser mantenidos bajo control.",
-			
+
 			["bm_suit_var_suit_prison_subject"] = "El Sujeto",
 			["bm_suit_var_suit_prison_subject_desc"] = "Jimmy se los quitó a los sujetos de prueba antes de escapar del laboratorio de AKAN. Sólo en caso de que esas fatigas fueran el secreto detrás de sus habilidades excepcionales. Averigüémoslo.",
-			
+
 		--Weapon Colors
 		["bm_wskn_resmod_blackgold"] = "Oro Negro",
 		["bm_wskn_resmod_cleangold"] = "Oro Limpio",
@@ -1981,7 +1987,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_resmod_charlotte"] = "Oro Telaraña",
 		["bm_wskn_resmod_joker"] = "Ríete en Oro",
 		["bm_wskn_resmod_jokerw"] = "Ríete en Blanco",
-		
+
 		["menu_weapon_color_index_11"] = "Metal + Miras",
 		["menu_weapon_color_index_12"] = "Metal + Cargador",
 		["menu_weapon_color_index_13"] = "Metal + Miras + Cargador",
@@ -2006,11 +2012,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_attack_speed"] = "T. Repetición",
 		["bm_menu_impact_delay"] = "T. Impacto",
 		["bm_menu_cleave"] = "Atravesar",
-		
+
 		["bm_menu_stats_detection"] = "Carga",
 		["bm_menu_stats_min_detection"] = "Carga",
 		["bm_menu_stats_max_detection"] = "Carga",
-		
+
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Boquilla",
 		["bm_menu_barrel_ext_plural"] = "Boquillas",
@@ -2043,17 +2049,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_ro_modifier"] = "Modificadores",
 		["bm_menu_ro_charm"] = "Colgante",
 		["bm_menu_ro_grip"] = "Empuñadura",
-		
+
 		--Weapon categories--
 		["menu_pistol"] = "Pistolas",
 			["menu_light_pis"] = "Pistolas Ligeras",
 			["menu_heavy_pis"] = "Pistolas Pesadas",
-		
+
 		["menu_shotgun"] = "Escopetas",
 			["menu_light_shot"] = "Escopetas Automáticas",
 			["menu_heavy_shot"] = "Escopetas Ligeras",
 			["menu_break_shot"] = "Escopetas Pesadas",
-		
+
 		["menu_smg"] = "Subfusiles",
 		["menu_lmg"] = "Ametralladoras",
 		["menu_minigun"] = "Ametralladora Cañón Múltiple",
@@ -2124,8 +2130,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_reticle_dmc_dot_4x4"] = "Punto Pequeño",
 		["menu_reticle_dmc_dot_2x2"] = "Punto Diminuto",
 		["menu_reticle_dmc_cross_holotherm"] = "SZ Holotherm",
-		
-		
+
+
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_append_milliseconds"] = "ms",
@@ -2142,7 +2148,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_armor_max_health_store_2"] = "Máximo de Salud acumulada: #{skill_color}#$health_stored## \nBonus de regeneración de Blindaje al matar: #{skill_color}#$regen_bonus%##",
 	})
 
-	
+
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
@@ -2222,7 +2228,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["menu_es_rep_upgrade"] = "",	--???--
 
 		["bm_w_r0991"] = "Pistola Varmint AR-15",
-		
+
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
 		["bm_menu_bonus_concealment_p1"] = "Bonus Pequeño de Movilidad y Penalizador de Estabilidad",
 		["bm_menu_bonus_concealment_p1_mod"] = "MOD. PEQUEÑO DE MOVILIDAD",
@@ -2291,7 +2297,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_grenade_copr_ability"] = "AMPOLLA DE SANGUIJUELA",
 		["bm_grenade_damage_control"] = "PETACA STOIC",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Radio de Alcance: #{skill_color}#6m## \nDuración: #{skill_color}#12s## \nTiempo de Detonación: #{skill_color}#1 después de quedarse quieta## \n\nDeja caer uno de estos y desaparecerás en una nube de humo, dejando a tus enemigos esforzandose por poder apuntarte.",
-		
+
 		--WEAPON & ATTACHMENT DESCRIPTIONS
 		--[[ MANUFACTURERS ]]
 				--In-Universe Manufacturer deets
@@ -2299,10 +2305,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--DSC [Defense System Crosskill] (PD2) = Saco Defense
 					--B-Team (PD2) = Ruger
 						--From that Mini-14 stock for the M14
-					--Simmons Armory (PD2) = Springfield Armory 
+					--Simmons Armory (PD2) = Springfield Armory
 						--same acronym lol
 					--Bernetti = Beretta
-					--Chimano/Stryk = Glock 
+					--Chimano/Stryk = Glock
 					--SG = HK (Heckler Und Koch)
 					--Signature/FIK (PD2/OTWD + PD3) = Sig Sauer
 						--Signature = European Branches, FIK = American Branch?
@@ -2311,7 +2317,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Kang Arms (PD2) = Norinco
 					--Northwest (PD3) = China South Industries Group
 					--Touro = Taurus (lmao)
-					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec 
+					--LWI [Lion Weapon Inc.] (PD2) = Kel-Tec
 						--LWI was Taken from the incredibly hard to read text on the right side of the SUB2000
 					--ITI (OTWD) = IMI/IWI
 					--CR/TKA (PD2/OTWD) = CZ
@@ -2382,7 +2388,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_osipr_gl"] = "LANZAGRANADAS SABR",
 				["bm_w_osipr_desc_pc"] = "Tecnología de armas de generación X. Equipado con un #{skill_color}#lanzagranadas de 20 mm.##\nPulsa #{skill_color}#$BTN_BIPOD## para cambiar al Lanzagranadas.",
 				["bm_w_osipr_desc"] = "Tecnología de armas de generación X. Equipado con un #{skill_color}#lanzagranadas de 20 mm.##\nMantén #{skill_color}#$BTN_BIPOD## para cambiar al Lanzagranadas.", --Bob: En el original dice manten en vez de pulsar, puede ser un error
-	
+
 				--Reinfield
 				["bm_wp_r870_s_folding_ext"] = "CULATA MULDON DESPLEGADA",
 				--Bernetti--
@@ -2449,7 +2455,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Raygun
 					["bm_wp_raygun_o_waw"] = "ALINEACIÓN DE MIRAS DE HIERRO OG",
 					["bm_wp_raygun_o_waw_desc"] = "Cambia la alineación de la mira de hierro a como era antes de Call of Duty: Black Ops II.",
-			
+
 			--[[ PISTOLS ]]
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "La primera pistola semiautomática con #{skill_color}#supresión integrada## del mundo, el buen manejo y la ocultabilidad encajan bien con las debilitantes balas tranquilizantes.\n\n#{stats_positive}#Inflige daño por el tiempo con balas tranquilizantes.##",
@@ -2489,10 +2495,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--93R
 				["bm_beer_sc_desc"] = "Una pieza de hardware de disparo en ráfaga que roza la ficción y que hará que los cretinos se peleen por averiguar de quién es. Vivo o muerto vendrás conmigo.\n\nTiene una cadencia de fuego de #{skill_color}#1200 RPM## cuando dispara en ráfaga.",
 				["bm_beer_auto_desc"] = "Una pieza de hardware de disparo en ráfaga que roza la ficción y que hará que los cretinos se peleen por averiguar de quién es. Vivo o muerto vendrás conmigo.",
-				--Contractor Pistols 
+				--Contractor Pistols
 				["bm_packrat_sc_desc"] = "La elección de Wick por su fiabilidad y facilidad de uso. Se dice que la utilizó cuando le hizo una visita al Círculo Rojo.",
 				["bm_x_packrat_sc_desc"] = "La opción perfecta para limpiar clubes nocturnos de propiedad Rusa con un mensaje de sangre y venganza.",
-				--Breech (Luger) 
+				--Breech (Luger)
 				["bm_breech_sc_desc"] = "La pistola que casi se apodera del mundo. Dos veces. Este artefacto alemán es elegante, preciso y desafortunadamente obsoleto.",
 				--Chimano Custom
 				["bm_g22c_sc_desc"] = "Esta arma es una combinación de alta capacidad y alta potencia. Entre las mejores pistolas de combate en general.",
@@ -2520,10 +2526,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_shrew_sc_desc"] = "Más pequeña y compacta que su prima A1 clásica. Intercambia la capacidad del cargador y la longitud del cañón por una mayor ocultabilidad.",
 				["bm_x_shrew_sc_desc"] = "El estilo de los Canaanites, dos pistolas del 45 que resuelven problemas en un paquete muy pequeño que seguramente hará huir a los intrusos.", --Bob: Comprobar si cananites es un nombre
 				["bm_shrew_g_bling_sc_desc"] = "En un mundo lleno de miseria e incertidumbre, es un gran consuelo saber que, al final, hay luz en la oscuridad.",
-				--USP 
+				--USP
 				["bm_usp_sc_desc"] = "El arma de S&G, por encima de la media, destaca en daño, capacidad y alcance.",
 				["bm_x_usp_sc_desc"] = "Un par de pistolas S&G para cuando realmente necesites enviar un mensaje.",
-				--Model 54 
+				--Model 54
 				["bm_type54_sc_desc"] = "Pistola de diseño soviético con munición del contundente 7,62×25 mm; cuenta con un exclusivo soporte para escopeta bajo el cañón que ofrece una forma adicional de deshacerse de los tipos malos.",
 				["bm_x_type54_sc_desc"] = "Un golpe uno-dos que puede convertirse en un golpe uno-dos-tres-cuatro.",
 				--Broomstick--
@@ -2554,7 +2560,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#La mejor pistola jamás fabricada.##\n\n#{skill_color}#Puede atravesar armadura corporal, multiples enemigos, Escudos y paredes delgadas.##\n\nPuede #{skill_color}#dispararse rápido para aumentar la cadencia de fuego## a costa de un #{important_1}#mayor retroceso, un menor alcance efectivo y la imposibilidad de apuntar con la mira.##",
 				--CUSTOM PISTOLS
-					--Zippy 
+					--Zippy
 					["bm_zippy_sc_desc"] = "El arma definitiva, en defectos de eyección y fallas de disparo. Tendrás suerte si consigues disparar dos veces sin volarte los dedos.",
 					--Auto-9
 					["bm_wp_rc_auto9_cartoon"] = "SERIE ANIMADA TRACERS",
@@ -2565,7 +2571,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["whydoyoucome"] = "La única de su clase, hecha especialmente para el rockero Johnny Silverhand.\n\n#{skill_color}#Puede atravesar múltiples enemigos y su armadura corporal.\nLas balas rebotan contra las superficies al disparar desde la cadera y atraviesan las paredes al apuntar.\nLos ataques con la culata del arma disparan una onda de fuego de corto alcance.##",
 					--Colt Detective
 					["bm_lemon_dmc_desc"] = "Imagínate con un revólver ocultable de gran potencia. No imagines más, porque el Investigator es exactamente eso.\n\n#{skill_color}#Inflige el doble de daño al atacar a los enemigos por la espalda.##",
-			
+
 			--[[ SMGs ]]
 				--Kobus 90
 				["bm_p90_sc_desc"] = "Un Subfusil bullpup y competidora del Subfusil SpecOps-7. A menudo se comenta que parece un arma espacial futurista.\n\n#{skill_color}#Inflige 75% de su daño a través de armadura corporal.##",
@@ -2603,7 +2609,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_ksp45_desc_sc"] = "Subfusil con ráfaga de 3 disparos. Daño elevado con alcance moderado. La dispersión del disparo en ráfaga es menos eficaz a larga distancia.",
 					--LC10
 					["bm_w_lc10_desc_sc"] = "Subfusil automático. Bien equilibrada, con excelente alcance de daño y buena precisión. Daño moderado con una impresionante velocidad de salida y una alta cadencia de fuego.",
-			
+
 			--[[ MGs ]]
 				--Bootleg/HK416c
 				["bm_w_tecci_desc_sc"] = "Un rifle de pistón con las mismas especificaciones que una ametralladora ligera que puede escupir plomo con precisión.",
@@ -2657,7 +2663,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_lmg_natascha_body_desc"] = "#{skill_color}#Tambalea enemigos hasta 9,75 metros de distancia.##\n#{risk}#(El alcance del tambaleo no puede modificarse)##\n#{important_1}#Ralentiza el tiempo de giro en un 30%.##",
 					["bm_wp_wpn_fps_lmg_gatling_gun_body_desc"] = "#{important_1}#Ralentiza el tiempo de giro en un 50%.##",
 					["bm_wp_wpn_fps_lmg_canton_body_desc"] = "#{skill_color}#80% de probabilidad de incendiar enemigos, infligiendo## #{heat_warm_color}#60## #{skill_color}#de daño por 4 segundos.##\n#{risk}#La probabilidad se reduce con la distancia y sólo aturde a los enemigos antes de que empiece la caída de daño.\nInflige daño de fuego en lugar de daño de bala.##",
-			
+
 			--[[ SHOTGUNS ]]
 				--Saiga
 				["bm_saiga_sc_desc"] = "Esta escopeta totalmente automática es perfecta para esos días en los que no te apetece apuntar.",
@@ -2703,9 +2709,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_shot_wmtx_mag_ext"] = "CARGADOR EXTENDIDO",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst"] = "SISTEMA DE DISPARO EN RÁFAGA",
 					["bm_wp_wpn_fps_upg_wmtx_gastube_burst_desc"] = "Agrega un ##{skill_color}#disparo en ráfaga de 2 rondas##.",
-			
+
 			--[[ ARs ]]
-				--S552		
+				--S552
 				["bm_s552_sc_desc"] = "Una elegante alternativa a otros rifles compactos de 5,56 mm, la elección preferida entre los DHS. Utiliza cartuchos especiales de 5,6 mm fabricados en Suiza que ofrecen un mejor alcance.",
 				--M733/AMCAR
 				["bm_amcar_sc_desc"] = "El rifle .223 más producido en masa que el mundo haya visto jamás. Un gran rifle multiusos.",
@@ -2784,7 +2790,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_ck_penetrator_desc"] = "Una variante del AR-23 diseñada para #{skill_color}#penetrar blindaje.##",
 					["bm_w_ar23_concussive"] = "AR-23C LIBERATOR CONTUNDENTE",
 					["bm_wp_ck_concussive_desc"] = "Una variante del AR-23 con #{skill_color}#balas contundentes## y una mira de punto rojo modificada.\n#{skill_color}#Las balas contundentes tambalean a los enemigos hasta 20 metros de distancia.##\n#{risk}#El alcance del tambaleo no se puede modificar y se elimina el disparo en ráfaga.##",
-			
+
 			--[[ DMRs ]]
 				--Little Friend
 				["bm_m203_weapon_sc_desc_pc"] = "La hermana mayor del \"Little Friend\" AMR-16 personal de Scarface.\n\n#{skill_color}#Inflige 25% de su daño a través de armadura corporal.##\nPulsa #{skill_color}#$BTN_BIPOD## para cambiar al lanzagranadas submontado.",
@@ -2795,7 +2801,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_mesa_vmp_sc_desc_pc"] = "Interesante producto procedente de un envío robado de OMNIA.\n\nPulsa #{skill_color}#$BTN_BIPOD## para cambiar al lanzagranadas submontado.",
 					["bm_mesa_vmp_sc_desc"] = "Interesante producto procedente de un envío robado de OMNIA.\n\nMantén #{skill_color}#$BTN_BIPOD## para cambiar al lanzagranadas submontado.",
 				--FAL
-				["bm_fal_sc_desc"] = "El brazo derecho del mundo libre. Cuando tengas que abatir a enemigos con armadura pesada, esta es el arma a la que debes recurrir.\n\n#{skill_color}#Inflige 25% de su daño a través de armadura corporal.##",	
+				["bm_fal_sc_desc"] = "El brazo derecho del mundo libre. Cuando tengas que abatir a enemigos con armadura pesada, esta es el arma a la que debes recurrir.\n\n#{skill_color}#Inflige 25% de su daño a través de armadura corporal.##",
 				["bm_fal_ap25_sc_desc"] = "El brazo derecho del mundo libre. Cuando tengas que abatir a enemigos con armadura pesada, esta es el arma a la que debes recurrir.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal.##",
 				--ASS VAL
 				["bm_asval_sc_desc"] = "Las pequeñas balas de rifle pueden ser suficientes para un pistolero corriente, pero otros pueden optar por esta arma.\n\nViene #{skill_color}#integralmente suprimida## e #{skill_color}#inflige 25% de su daño a través de armadura corporal.##",
@@ -2803,7 +2809,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_galil_sc_desc"] = "Una imitación de un rifle basado en un diseño finlandés, que a su vez también era un derivado del AK clásico. La imitación es la forma más sincera de adulación.\n\n#{skill_color}#Inflige 25% de su daño a través de armadura corporal.##",
 				["bm_galil_ap25_sc_desc"] = "Una imitación de un rifle basado en un diseño finlandés, que a su vez también era un derivado del AK clásico. La imitación es la forma más sincera de adulación.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal.##",
 				["bm_galil_556_sc_desc"] = "Una imitación de un rifle basado en un diseño finlandés, que a su vez también era un derivado del AK clásico. La imitación es la forma más sincera de adulación.",
-				--SCAR		
+				--SCAR
 				["bm_scar_sc_desc"] = "El rifle de combate del futuro. Con un buen equilibrio entre manejo y daño balístico, se ha hecho popular entre el USMC y las fuerzas especiales.\n\n#{skill_color}#Inflige 25% de su daño a través de armadura corporal.##",
 				["bm_scar_ap25_sc_desc"] = "El rifle de combate del futuro. Con un buen equilibrio entre manejo y daño balístico, se ha hecho popular entre el USMC y las fuerzas especiales.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal.##",
 				["bm_scarl_sc_desc"] = "El rifle de infantería del futuro... o no. Aunque popular en el mercado civil, las fuerzas militares encontraron poca necesidad de otro rifle 5.56.",
@@ -2814,14 +2820,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--M308
 				["bm_m14_sc_desc"] = "Rápido y preciso, sólo asegúrate de mantener el retroceso bajo control, especialmente en automático.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal y puede atravesar enemigos.##",
 				--G3
-				["bm_g3_sc_desc"] = "Hermana mayor del Compact-5 y del Brenner-21, su precisión rivaliza con la de los francotiradores.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal y puede atravesar enemigos.##",	
+				["bm_g3_sc_desc"] = "Hermana mayor del Compact-5 y del Brenner-21, su precisión rivaliza con la de los francotiradores.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal y puede atravesar enemigos.##",
 				["bm_g3_ap25_sc_desc"] = "Hermana mayor del Compact-5 y del Brenner-21, su precisión rivaliza con la de los francotiradores.\n\n#{skill_color}#Inflige 75% de su daño a través de armadura corporal y puede atravesar enemigos.##",
 				["bm_g3_sg1_sc_desc"] = "Hermana mayor del Compact-5 y del Brenner-21, su precisión rivaliza con la de los francotiradores.\n\n#{skill_color}#Puede atravesar armadura corporal, multiples enemigos, escudos en el rango de daño máximo y paredes delgadas.##",
 				["bm_wp_g3_m_psg"] = "CARGADOR PRÄZISION",
 				["bm_wp_upg_i_g3sg1"] = "INTERNOS PRÄZISION",
 				["bm_wp_upg_i_g3sg1_desc"] = "Carga proyectiles de alta potencia que #{skill_color}#penetran toda la armadura corporal y perforan escudos.## Las piezas están reforzadas con materiales más pesados que #{important_1}#reducen la cadencia de fuego## y bloquean tu arma en #{risk}#semiautomático##.",
 				--KS12
-				["bm_shak12_sc_desc"] = "Un rifle de combate con diseño bullpup y un potente cartucho de 12.7x55 mm. Carnicería suprema en un paquete muy compacto.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal y puede atravesar enemigos.##",	
+				["bm_shak12_sc_desc"] = "Un rifle de combate con diseño bullpup y un potente cartucho de 12.7x55 mm. Carnicería suprema en un paquete muy compacto.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal y puede atravesar enemigos.##",
 				["bm_shak12_sc_oden_desc"] = "Un rifle de combate con diseño bullpup y un potente cartucho de 12.7x55 mm. Carnicería suprema en un paquete muy compacto.\n\n#{skill_color}#Puede atravesar armadura corporal, enemigos, escudos en el rango de daño máximo y paredes delgadas.##",
 				["bm_wp_shak12_body_vks"] = "CULATA \"VISHA\"",
 				["bm_wp_shak12_body_vks_ap_desc"] = "Carga proyectiles de alta potencia que #{skill_color}#penetran toda la armadura corporal y perforan escudos.## La culata y el cerrojo están reforzados con materiales más pesados que #{important_1}#reducen la cadencia de fuego.##",
@@ -2839,7 +2845,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--MCX Spear
 					["bm_mcx_spear_sc_desc"] = "#{skill_color}#Inflige 75% de su daño a través de armadura corporal.##",
 					["bm_ngsierra_sc_desc"] = "Utiliza un sistema único de mitigación del retroceso para controlar su cartucho de plástico TCVM de 6.8x5mm.\n\n#{skill_color}#Inflige 75% de su daño a través de armadura corporal y puede atravesar enemigos.##",
-					--["bm_w_xeno"] = "MA14 Surge Rifle",	
+					--["bm_w_xeno"] = "MA14 Surge Rifle",
 					["bm_xeno_sc_desc_pc"] = "De \"Armat\" llega esta extraña pieza de tecnología de la era espacial. Viene equipado con un #{skill_color}#lanzagranadas integrado.##\n\nPulsa #{skill_color}#$BTN_BIPOD## para cambiar al Lanzagranadas.",
 					["bm_xeno_sc_desc"] = "De \"Armat\" llega esta extraña pieza de tecnología de la era espacial. Viene equipado con un #{skill_color}#lanzagranadas integrado.##\n\nMantén #{skill_color}#$BTN_BIPOD## para cambiar al Lanzagranadas.",
 					--VSS
@@ -2858,10 +2864,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_wpn_fps_snp_sierra458_m_bush_desc"] = "Cambia los cartuchos .458 SOCOM por cartuchos #{stats_positive}#.450 Bushmaster envenenados## que #{stats_positive}#infligen 30 puntos de daño por segundo durante 4 segundos y pueden aturdir a los enemigos.##\n\n#{important_1}#Ya no puede atravesar a múltiples enemigos.##",
 					["bm_w_sierra458_ivy_desc"] = "Chains, el armero de la banda, comenzó a desarrollar una alternativa al rifle Tecci Tactical, de gran potencia pero alta cadencia de fuego.\n\n#{skill_color}#Inflige 50% de su daño a través de armadura corporal, puede atravesar paredes delgadas## e #{stats_positive}#inflige daño con el tiempo con balas envenenadas.##",
 					["bm_w_bulldog_desc"] = "Algún tipo de felicidad se mide eliminando enemigos con el Bulldog.\n\n#{risk}#Esta arma dispara en modo automático cuando se dispara desde la cadera y en ráfagas cuando se dispara apuntando con la mira.##",
-			
+
 			--[[ SNIPERS ]]
 				--MSR
-				["bm_msr_sc_desc"] = "La preferencia de los militares de Estados Unidos como rifle de francotirador. Su buena precisión, manejo e incluso ocultabilidad lo convierten en un buen rifle de francotirador multiusos.\n\n#{skill_color}#Puede atravesar armadura corporal, multiples enemigos, Escudos y paredes delgadas.##",	
+				["bm_msr_sc_desc"] = "La preferencia de los militares de Estados Unidos como rifle de francotirador. Su buena precisión, manejo e incluso ocultabilidad lo convierten en un buen rifle de francotirador multiusos.\n\n#{skill_color}#Puede atravesar armadura corporal, multiples enemigos, Escudos y paredes delgadas.##",
 				--R700
 				["bm_r700_sc_desc"] = "El predecesor del Rattlesnake. Buena precisión y manejo, incluso tiene mejor alcance que su hermano menor. ¿El inconveniente? Cargadores de mierda de 5 rondas.\n\n#{skill_color}#Puede atravesar armadura corporal, multiples enemigos, Escudos y paredes delgadas.##",
 				--QBU88
@@ -2871,9 +2877,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--TTI(TTY)
 				["bm_tti_sc_desc"] = "Una de las armas de fuego personales de Wick. Se dice que hay imágenes de él practicando 3-Gun con este rifle en algún lugar en Internet.\n\n#{skill_color}#Puede atravesar armadura corporal, múltiples enemigos, escudos en el rango de daño máximo y paredes delgadas.##",
 				--Icky Vicky
-				--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				--["bm_victor_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				--Scunt
-				--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",	
+				--["bm_scout_sc_desc"] = "\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##",
 				["bm_wp_scout_m_extended"] = "CARGADOR DE VELOCIDAD STANDOFF",
 				--AWP
 				["bm_awp_sc_desc"] = "Un francotirador conocido por su excepcional alcance y precisión. ¿Quién hubiera pensado que los modelos originales fueron construidos por tres tipos en un cobertizo?\n\n#{skill_color}#Puede atravesar armadura corporal, múltiples enemigos, Escudos y paredes delgadas.##",
@@ -2900,7 +2906,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Desert Fox
 				["bm_desertfox_sc_desc"] = "Una plataforma de francotirador bullpup compacta, utilizada por Wick durante su asalto a un refugio de la mafia rusa.\n\n#{skill_color}#Puede atravesar armadura corporal, múltiples enemigos, Escudos y paredes delgadas.##", --Bob: Comprobar si plataforma esta bien traducido
 				--R93
-				["bm_r93_sc_desc"] = "Rifle de francotirador alemán con una gran bala pensada para detener a hombres grandes. El francotirador preferido por la policía y las fuerzas paramilitares antiterroristas de todo el mundo.\n\n#{skill_color}#Puede atravesar armadura corporal, múltiples enemigos, Escudos y paredes delgadas.##",		
+				["bm_r93_sc_desc"] = "Rifle de francotirador alemán con una gran bala pensada para detener a hombres grandes. El francotirador preferido por la policía y las fuerzas paramilitares antiterroristas de todo el mundo.\n\n#{skill_color}#Puede atravesar armadura corporal, múltiples enemigos, Escudos y paredes delgadas.##",
 				--Flintlock--
 				["bm_bessy_sc_desc"] = "Siendo necesaria una Milicia bien regulada para la seguridad de un Estado libre, el derecho del pueblo a poseer y portar Armas no debe ser infringido.\n\n#{skill_color}#Inflige un 100% más de daño a enemigos especiales y de élite.\nPuede atravesar múltiples enemigos, armadura corporal, Escudos, Escudos Titán y paredes delgadas.##",
 				--Thanatos--
@@ -2921,20 +2927,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Highly Modified CAR-4
 					["bm_hmcar_sc_desc"] = "Antes de ser retirados por las fuerzas policiales, te las arreglaste para hacerte con un maletín lleno de estos kits de conversión.\n\nDispara balas de #{stat_maxed}#francotirador titán## capaces de #{skill_color}#atravesar múltiples enemigos, armadura corporal, escudos en el rango de daño máximo y paredes delgadas;## El disparo alternativo dispara una bala de #{event_color}#francotirador a máxima potencia## por el doble de munición y potencia que también añade la capacidad de #{skill_color}#atravesar escudos titán.##",
 					["bm_wp_hmcar_hd_kit"] = "KIT 32BIT 8K HD",
-					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ", --Bob: Deberia adaptar esto?		
-			
+					["bm_wp_hmcar_hd_kit_desc"] = "Application has crashed: C++ exception\nCould not load texture because IDirect3D9::CreateTexture call failed.\nDirect3D could not allocate sufficient memory to complete the call.\n\n\n\n\n\n\n ", --Bob: Deberia adaptar esto?
+
 			--[[ SPECIALS ]]
 				--Saw
 				["bm_ap_saw_sc_desc"] = "#{skill_color}#Corta a través de armadura corporal.##",
 				["bm_ap_saw_blade_sc_desc"] = "Afila la hoja lo suficiente como para #{skill_color}#atravesar armadura corporal.##",
 				["bm_fast_motor_sc_desc"] = "Aumenta las rotaciones por minuto en un 15%.",
 				["bm_slow_motor_sc_desc"] = "Disminuye las rotaciones por minuto en un 15%.",
-				--Light Crossbow		
+				--Light Crossbow
 				["bm_w_frankish_avelyn"] = "AVELYN",
 				["bm_wp_avelyn"] = "KIT AVELYN",
 				["bm_wp_avelyn_desc"] = "Un kit de #{skill_color}#ballesta de repetición##.\nPermite disparar una ráfaga de #{skill_color}#3## virotes con un solo tirón del gatillo.",
 				["bm_wp_avelyn_override_desc"] = "Una ballesta de disparo rápido extremadamente rara.\nDispara #{skill_color}#tres## virotes sucesivos mediante un elaborado mecanismo.\n\n#{skill_color}#Puede atravesar armadura corporal.##",
-				--GL40		
+				--GL40
 				["bm_w_gre_m79_sc_desc"] = "Un golpe y un boom.\n\nPresiona #{skill_color}#$BTN_GADGET## para alternar la mira; con punto cero a #{skill_color}#30## metros.",
 				--3GL
 				["bm_ms3gl_sc_desc"] = "Dispara proyectiles personalizados de 40mm superpuestos en una sola recámara. Utiliza fulminantes eléctricos para disparar, lo que permite un seguimiento rápido en un paquete compacto.\n\nEl disparo alternativo #{skill_color}#dispara una ráfaga de 3 granadas.##",
@@ -2944,11 +2950,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_china_sc_desc"] = "\"¡Éste es realmente un barrio horrible!\"\n\nPresiona #{skill_color}#$BTN_GADGET## para alternar la mira; con punto cero a #{skill_color}#30## metros.", --Bob: Esto es una referencia?
 				--COMMANDO 101/M202 FLASH
 				["bm_ray_sc_desc"] = "Conviértete en la \"#{risk}#Parca##\" con este lanzacohetes #{heat_warm_color}#incendiario## de 4 disparos.\n\nLos cohetes dejan un #{heat_warm_color}#charco de fuego## y el daño explosivo infligido por esta arma #{skill_color}#destruye instantáneamente torretas.##",
-				
-				
+
+
 	})
 
-	--[[ 
+	--[[
 		WepNames Options
 		1 = do nothing, use resmod default/in-universe names (i.e. Crosskill Operator, Bootleg)
 		2 = same as 1, but no nicknames (i.e. Bootleg > SG 416c)
@@ -2957,7 +2963,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	]]
 	if weapon_names then
 		if weapon_names <= 2 then --Resmod names
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 
 				--[[ PISTOLS ]]
 					--Gecko Pistol
@@ -2980,7 +2986,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_ppk"] = "GRUBER KURZ DUALES",
 					--M13
 					["bm_w_legacy"] = "M13",
-					["bm_w_x_legacy"] = "M13 DUALES",	
+					["bm_w_x_legacy"] = "M13 DUALES",
 					--Glock 17
 					["bm_w_glock_17"] = "CHIMANO 88",
 					["bm_w_x_g17"] = "CHIMANO 88 DUALES",
@@ -2997,10 +3003,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_fmg9"] = "WASP DS-9",
 					--93R
 					["bm_w_beer"] = "BERNETTI 93R",
-					--Contractor Pistols 
+					--Contractor Pistols
 					["bm_w_packrat"] = "CONTRACTOR M30L",
 					["bm_w_x_packrat"] = "CONTRACTOR M30L DUALES",
-					--Breech (Luger) 
+					--Breech (Luger)
 					["bm_w_breech"] = "PARABELLUM-08",
 					--Chimano Custom
 					["bm_w_g22c"] = "CHIMANO CUSTOM",
@@ -3026,12 +3032,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_shrew"] = "CROSSKILL GUARD",
 					["bm_w_shrew_joshua"] = "Una Luz Brillando En La Oscuridad", --Bob: Comprobar si esto no necesita estar en mayusculas
 					["bm_w_x_shrew"] = "BARRY & PAUL", --Bob: No se si esto es una referencia
-					--USP 
+					--USP
 					["bm_w_usp"] = "INTERCEPTOR-45",
 					["bm_w_x_usp"] = "INTERCEPTOR-45 DUALES",
 					["bm_wp_usp_m_big"] = "CARGADOR DE ALTA CAPACIDAD",
 					["bm_wp_pis_usp_b_match"] = "CORREDERA FREEMAN",
-					--Model 54 
+					--Model 54
 					["bm_w_type54"] = "CC-33",
 					["bm_w_x_type54"] = "CC-33 DUALES",
 					--Broomstick--
@@ -3054,7 +3060,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_x_2006m"] = "MATEVER DUALES",
 					--Frenchman Model 87
 					["bm_w_model3"] = "J&M MODELO 87",
-					["bm_w_x_model3"] = "MODELO 87 DUALES",	
+					["bm_w_x_model3"] = "MODELO 87 DUALES",
 					--Raging bull
 					["bm_w_raging_bull"] = "BRONCO .44",
 					["bm_w_x_rage"] = "BRONCO .44 DUALES",
@@ -3117,8 +3123,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Signature SMG
 					["bm_w_shepheard"] = "FIK PC9",
 					--Compact-5/MP5
-					["bm_w_mp5"] = "COMPACT-5",	
-					["bm_w_mp5sd"] = "COMPACT-5SD",	
+					["bm_w_mp5"] = "COMPACT-5",
+					["bm_w_mp5sd"] = "COMPACT-5SD",
 					["bm_w_mp5k"] = "COMPACT-5K",
 					["bm_w_mp5k_pdw"] = "COMPACT-5K PDW",
 					["bm_w_x_mp5"] = "COMPACT-5 DUALES",
@@ -3228,7 +3234,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_judge"] = "THE JUDGE .410", --Bob: Deberia adaptar el nombre?
 					["bm_w_x_judge"] = "JUDGE & JURY", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
 					--Joceline
-					["bm_w_b682"] = "JOCELINE O/U 12G",	
+					["bm_w_b682"] = "JOCELINE O/U 12G",
 					--Custom Shotguns
 						--Doomstick
 						["bm_w_quadbarrel"] = "DOOMSTICK",
@@ -3275,7 +3281,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_aug"] = "UAR A2",
 					["bm_w_aug_a3"] = "UAR A3",
 					["bm_w_aug_f90"] = "RAPTOR 90",
-					["bm_wp_upg_b_hbar"] = "CAÑÓN PESADO",	
+					["bm_wp_upg_b_hbar"] = "CAÑÓN PESADO",
 					--AK17
 					["bm_w_ak12"] = "AK-17",
 					--AK 5.45
@@ -3362,7 +3368,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--HCAR
 					["bm_w_hcar"] = "AKRON HC",
 					["bm_w_hcar_bar"] = "AKRON HC",
-					
+
 					--Custom DMRs
 						--MCX Spear
 						["bm_w_mcx_spear"] = "FIK M7",
@@ -3378,9 +3384,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--[[ SNIPERS ]]
 					--MSR
 					["bm_w_msr"] = "RATTLESNAKE",
-					["bm_wp_snp_msr_ns_suppressor"] = "SUPRESOR VIPER",	
+					["bm_wp_snp_msr_ns_suppressor"] = "SUPRESOR VIPER",
 					--R700
-					["bm_w_r700"] = "REINFELD MODELO 700",	
+					["bm_w_r700"] = "REINFELD MODELO 700",
 					--QBU88
 					["bm_w_qbu88"] = "KÁNG ARMS X1",
 					--Winchester 1874
@@ -3413,7 +3419,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_m95"] = "THANATOS 95",
 					--Custom Snipers
 						--Guerilla
-						["bm_w_sgs"] = "GUERILLA 542",	
+						["bm_w_sgs"] = "GUERILLA 542",
 						--PD3 Lynx
 						["bm_w_pd3_lynx"] = "HET-5 RED FOX",
 						--AMR2
@@ -3434,7 +3440,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--L115
 						["bm_w_l115"] = "AIM 90M",
 				--[[ LAUNCHERS & BOWS ]]
-					--GL40		
+					--GL40
 					["bm_w_gre_m79"] = "GL-40",
 					--3GL
 					["bm_w_ms3gl"] = "BASILISK 3GL",
@@ -3459,7 +3465,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		end
 
 		if weapon_names == 2 then --Resmod names (No nicknames)
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 
 				["bm_w_pl14"] = "WS-14",
 				["bm_w_x_pl14"] = "WS-14 DUALES",
@@ -3490,10 +3496,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_w_scarl"] = "VF-6M",
 
 				["bm_w_tecci"] = "SG 416C",
-	
+
 			})
 		elseif weapon_names == 3 then --DMCWO Reelnames
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 
 				--[[PISTOLS]]
 					--5/7
@@ -3575,7 +3581,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_sparrow_body_941"] = "IWI JERICHO 941F KIT",
 					["bm_wp_sparrow_g_cowboy"] = "EMPUÑADURA CON PESO",
 					["bm_wp_sparrow_g_cowboy_desc"] = "VAS A CARGAR CON ESE PESO.", --Bob: Y aun no me terminaba el anime...
-					
+
 					--SUB2000
 					["bm_w_sub2000"] = "KEL-TEC SUB-2000",
 					["bm_sub2000_sc_desc"] = "Una de las pistolas que se han fabricado nunca. Las pequeñas balas de pistola golpean mucho más fuerte cuando salen de un cañón más largo y su capacidad de plegado permite una ocultación decente.",
@@ -3618,10 +3624,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_socom"] = "H&K MK.23",
 					["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "PROTOTYPE PHASE I LAM", --Bob: Deberia adaptar esto?
 					["bm_w_x_socom"] = "MK.23 DUALES",
-					--TT-33	
+					--TT-33
 					["bm_w_type54"] = "TOKAREV TT-33",
 					["bm_w_x_type54"] = "TT-33 DUALES",
-					
+
 					--Kahn .357
 					["bm_w_korth"] = "KORTH NXA",
 					["bm_w_x_korth"] = "KORTH NXA DUALES",
@@ -3632,8 +3638,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_2006m_b_long"] = "CAÑÓN KUSANAGI",
 					["bm_w_x_2006m"] = "2006M DUALES",
 					--Frenchman Model 87
-					["bm_w_model3"] = "S&W MODELO 3",	
-					["bm_w_x_model3"] = "MODELO 3 DUALES",	
+					["bm_w_model3"] = "S&W MODELO 3",
+					["bm_w_x_model3"] = "MODELO 3 DUALES",
 					--Castigo
 					["bm_w_chinchilla"] = "S&W MODELO 29",
 					["bm_w_x_chinchilla"] = "MODELO 29 DUALES",
@@ -3721,8 +3727,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_scorpion_b_suppressed"] = "SUPRESOR SKORPION",
 					--MP5
 					["bm_w_mp5"] = "H&K MP5A2",
-					["bm_w_mp5sd"] = "H&K MP5SD",	
-					["bm_w_mp5k"] = "H&K MP5K",	
+					["bm_w_mp5sd"] = "H&K MP5SD",
+					["bm_w_mp5k"] = "H&K MP5K",
 					["bm_w_mp5k_pdw"] = "H&K MP5K PDW",
 					["bm_w_x_mp5"] = "MP5A2 DUALES",
 					["bm_mp5_sc_desc"] = "La hermana pequeña del G3.\nRápido, preciso y fácil de manejar, ¿qué más se puede pedir de un Subfusil?",
@@ -3735,7 +3741,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_mp5_m_drum"] = "TAMBOR 70RND MP5",
 					["bm_wp_mp5_m_straight"] = "CARGADOR 30RNDS MP5 40/10",
 					--MPX
-					["bm_w_shepheard"] = "SIG MPX", 
+					["bm_w_shepheard"] = "SIG MPX",
 					--Vityaz
 					["bm_w_vityaz"] = "KALASHNIKOV CONCERN PP-19 VITYAZ-SN",
 					--Bizon
@@ -3783,7 +3789,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_polymer"] = "KRISS VECTOR SMG",
 					["bm_wp_polymer_barrel_precision"] = "CAÑÓN CRB CON CUBIERTA ",
 					["bm_wp_polymer_ns_silencer"] = "SUPRESOR DEFIANCE HPS 4GSK",
-	
+
 				--[[MGs]]
 					--416C
 					["bm_w_tecci"] = "H&K HK416-C",
@@ -3830,7 +3836,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--M240
 					["bm_w_par"] = "FN M240B",
 					["bm_par_sc_desc"] = "Una ametralladora hermana más pesada de la M249 que suele montarse en vehículos. Intercambia movilidad por una bala aún más grande.",
-				
+
 					["bm_wp_par_s_plastic"] = "CULATA M240B",
 					--M60
 					["bm_w_m60"] = "SACO M60",
@@ -4032,7 +4038,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--VMP
 						["bm_m203_vmp_sc_desc_pc"] = "Una réplica del M16 personal de Scarface \"Little Friend\".\n\nPulsa #{skill_color}#$BTN_BIPOD## para cambiar al lanzagranadas submontado.",
 						["bm_m203_vmp_sc_desc"] = "Una réplica del M16 personal de Scarface \"Little Friend\".\n\nMantén #{skill_color}#$BTN_BIPOD## para cambiar al lanzagranadas submontado.",
-				
+
 					--SCAR
 					["bm_w_scar"] = "FN MK.17",
 					["bm_w_scar_l"] = "FN MK.16",
@@ -4188,7 +4194,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_m107cq_sc_desc"] = "Si la M95 no estaba a la altura, la M107 proporcionará lo que deseas en forma de una fina niebla roja.\n\n#{skill_color}#Puede atravesar múltiples enemigos, armadura corporal, Escudos, Escudos Titán y paredes delgadas.##",
 
 				--[[SPECIALS]]
-					--GL40		
+					--GL40
 					["bm_w_gre_m79"] = "SPRINGFIELD ARMORY M79",
 					--3GL
 					["bm_w_ms3gl"] = "METAL STORM 3GL",
@@ -4215,7 +4221,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 					--Gadgets
 						["bm_wp_upg_fl_pis_tlr1"] = "LINTERNA STREAMLIGHT TLR-1",
-						["bm_wp_upg_fl_pis_laser"] = "MIRA LÁSER AIM SPORTS LH002", 
+						["bm_wp_upg_fl_pis_laser"] = "MIRA LÁSER AIM SPORTS LH002",
 						["bm_wp_upg_fl_x400v"] = "LUZ LÁSER SUREFIRE X400V-IRC",
 						["bm_wp_upg_fl_crimson"] = "MIRA LÁSER CRIMSON TRACE CMR-201",
 						["bm_wp_upg_fl_pis_m3x"] = "LINTERNA INSIGHT TECHNOLOGY M3X",
@@ -4248,7 +4254,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_wp_upg_ak_ns_tgp"] = "SUPRESOR TGP-A",
 						["bm_wp_victor_ns_omega"] = "SUPRESOR SILENCERCO OMEGA 36M",
 						["bm_wp_kacchainsaw_suppressor"] = "SUPRESOR KAC QDSS NT4",
-	
+
 						["bm_wp_ultima_ns_comp"] = "FRENO DE BOCA HI-TECH HOWITZER70",
 						["bm_wp_upg_ns_shot_shark"] = "FRENO DE BOCA BREACHER TROMIX SHARK", --Bob: No pude encontrar si breacher tiene nombre en español
 						["bm_wp_upg_shot_ns_king"] = "FRENO DE BOCA BREACHER KING ARMORY KA-1212",
@@ -4309,23 +4315,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Sights
 						["bm_wp_upg_o_marksmansight_rear_desc"] = "SET DE MIRAS AJUSTABLE MEPROLIGHT TRU-DOT",
 						["bm_wp_upg_o_rmr"] = "MIRA RÉFLEX TRIJICON RMR",
-	
+
 						["bm_wp_upg_o_docter"] = "IRONDOT CON MIRA RÉFLEX DOCTER SIGHT II PLUS", --Bob: Esto esta bien traducido?
 						["bm_wp_upg_o_reflex"] = "MIRA RÉFLEX",
 						["bm_wp_upg_o_cmore"] = "MIRA RÉFLEX C-MORE RAILWAY",
 						["bm_wp_upg_o_rx01"] = "MIRA RÉFLEX TRIJICON RX01",
-						["bm_wp_upg_o_rx30"] = "MIRA RÉFLEX TRIJICON RX30",	
-	
+						["bm_wp_upg_o_rx30"] = "MIRA RÉFLEX TRIJICON RX30",
+
 						["bm_wp_upg_o_cs"] = "MIRA DE PUNTO ROJO AIMPOINT CS",
 						["bm_wp_upg_o_aimpoint"] = "MIRA DE PUNTO ROJO AIMPOINT PRO",
 						["bm_wp_upg_o_t1micro"] = "MIRA DE PUNTO ROJO AIMPOINT MICRO T-1",
 						["bm_wp_upg_o_tf90"] = "MIRA DE PUNTO ROJO TECH FORCE TF90",
-	
+
 						["bm_wp_upg_o_fc1"] = "MIRA DE PUNTO ROJO DI OPTICAL FC1 PRISMATIC",
 						["bm_wp_upg_o_eotech"] = "MIRA HOLOGRÁFICA EOTECH 553",
 						["bm_wp_upg_o_eotech_xps"] = "MIRA HOLOGRÁFICA EOTECH EXPS3",
 						["bm_wp_upg_o_uh"] = "MIRA HOLOGRÁFICA AMG UH-1",
-	
+
 						["bm_wp_upg_o_specter"] = "MIRA TELESCÓPICA ELCAN SPECTER DR 1-4X",
 						["bm_wp_upg_o_acog"] = "MIRA TELESCÓPICA TRIJICON ACOG",
 						["bm_wp_upg_o_poe"] = "MIRA TELESCÓPICA BELOMO PO4X24P",
@@ -4338,20 +4344,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 						["bm_wp_upg_o_northtac"] = "NORTHTAC ASSAULT OPTIC 1-4X28 C/MICRO RÉFLEX", --Bob: Esto esta bien traducido?
 						["bm_wp_uupg_o_schmidt"] = "SCHMIDT & BENDER 5-45X56 PM II HIGH POWER", --Bob: Deberia traducir esto?
-	
+
 						--"Schmidt & Bender 1-8x24 PM Short Dot"
 						["bm_wp_upg_o_shortdot"] = "SCHMIDT & BENDER 1-8X24 PM PUNTO CORTO",
 						["bm_wp_upg_o_shortdot_dmc"] = "SCHMIDT & BENDER 1-8X24 PM PUNTO CORTO",
 						["bm_wp_upg_o_leupold"] = "LEUPOLD MARK 4 LR/T M1 C/BORS",
 						["bm_wp_upg_o_box"] = "MIRA TELESCÓPICA PULSAR DIGISIGHT LRF N960 NV", --Bob: Esto esta bien traducido?
-	
+
 						["bm_wpn_fps_upg_o_45iron"] = "MIRAS ANGULARES XS SIGHTS",
 						["bm_wpn_fps_upg_o_45rds"] = "MIRA DE PUNTO ROJO ANGULAR LEUPOLD DELTAPOINT PRO",
 						["bm_wpn_fps_upg_o_45rds_v2"] = "MIRA DE PUNTO ROJO AIMPOINT MICRO T-1",
-	
+
 						["bm_wpn_fps_upg_o_xpsg33_magnifier"] = "MAGNIFICADOR AIMPOINT 3XMAG",
 						["bm_wpn_fps_upg_o_sig"] = "MAGNIFICADOR SIG JULIET3",
-	
+
 						["bm_wp_upg_o_mbus_rear"] = "MIRAS DE RETROCESO MAGPUL MBUS", --Bob: Esto esta bien traducido?
 
 					--Vertical Grips
@@ -4423,7 +4429,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_melee_shovel"] = "K.L.A.S.",
 					["bm_melee_baseballbat"] = "\"LUCILLE\"",
 					["bm_melee_bayonet"] = "BAYONETA AKM TYPE II",
-					["bm_melee_bullseye"] = "HACHUELA SMITH & WESSON BULLSEYE",	
+					["bm_melee_bullseye"] = "HACHUELA SMITH & WESSON BULLSEYE",
 					["bm_melee_x46"] = "CUCHILLO UTILITARIO DE SUPERVIVENCIA ROBSON X46",
 					["bm_melee_dingdong"] = "HERRAMIENTA ROMPEPUERTAS GERBER DING DONG",
 					["bm_melee_cleaver"] = "CUCHILLO DE CARNICERO",
@@ -4467,7 +4473,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wpn_prj_target"] = "CUCHILLO ARROJADIZO BLAZING ARROW NINJA",
 			})
 		end
-	end	
+	end
 
 		local twirl = math.rand(1)
 		local shalashaska = 0.06
@@ -4475,7 +4481,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			shalashaska = 1
 		end
 		if bobcat or not easterless and twirl <= shalashaska then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 				["bm_w_peacemaker"] = "Revolver Ocelot",
 				["bm_w_peacemaker_desc"] = "Revolver Ocelot",
 				["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
@@ -4488,7 +4494,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_menu_ro_modifier"] = "Revolver Ocelot",
 				["bm_menu_ro_charm"] = "Revolver Ocelot",
 				["bm_menu_ro_grip"] = "Revolver Ocelot",
-	
+
 				["bm_m134_sc_desc"] = "CRYPTIC METAPHOR...", --Bob: Mira una referencia que no conozco :D
 				["bm_wp_upg_suppressor_boss"] = "\"CRAB BATTLE!!!\"\n\n#{skill_color}#Silencia## tu arma y #{risk}#reduce la probabilidad de que los enemigos intenten esquivar tus disparos.##" --Bob: Deberia traducir crab battle?
 
@@ -4501,7 +4507,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			funny = 1
 		end
 		if eggplant or not easterless and cute <= funny then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 			--It's an "Upotte!!" reference
 			--SEISHOU ACADEMY
 				--MIDDLE SCHOOLERS
@@ -4524,7 +4530,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_l85a2_sc_desc"] = "\"...\"\n\nEstudiante de secundaria en la #{stats_positive}#Academia Seishou.##\nTímida y torpe, tiene un carácter poco fiable y la costumbre de romper mucho.",
 					["bm_w_rk62"] = "Sako",
 						["bm_rk62_sc_desc"] = "\"#{stat_maxed}#¡Qué chillidos tan maravillosos!## ¡Suenas como si estuvieras a punto de #{stats_negative}#morir!##\"\n\nEstudiante de transferencia que asiste a la #{stats_positive}#Academia Seishou.##\nUna sádica de orejas de elfo con ganas de ser la \"alfa\" de cualquier escuela a la que asista. Desea a Funco.",
-	
+
 				--HIGH SCHOOLERS
 					["bm_w_fal"] = "Faru",
 					["bm_w_fal_l1a1"] = "Faru",
@@ -4549,8 +4555,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 				--ELEMENTARY
 					["bm_w_mp5"] = "Empi",
-					["bm_w_mp5sd"] = "MP5SD",	
-					["bm_w_mp5k"] = "MP5K",	
+					["bm_w_mp5sd"] = "MP5SD",
+					["bm_w_mp5k"] = "MP5K",
 					["bm_w_mp5k_pdw"] = "MP5K",
 						["bm_mp5_sc_desc"] = "\"Si ese es tu hobby...\"\n\nEstudiante de primaria que asiste a la #{stats_positive}#Academia Seishou.##\nUno de los muchos hermanos pequeños de Jiisuri y presidenta del consejo estudiantil de la división de primaria.",
 					["bm_w_schakal"] = "UMP",
@@ -4559,7 +4565,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_uzi_sc_desc"] = "\"¡Cómete esto!\"\n\nEstudiante de primaria que asiste a la #{stats_positive}#Academia Seishou.##\nLa antigua líder autoproclamada de la división de primaria, expulsada del puesto por Empi cuando llegó.",
 					["bm_w_mac10"] = "Ram",
 						["bm_mac10_sc_desc"] = "\"INGRAM!\"\n\nEstudiante de primaria que asiste a la #{stats_positive}#Academia Seishou.##\nUna ametralladora con palabras. También bastante pesada.",
-		
+
 				--FACULTY
 					["bm_w_erma"] = "Erma-sensei",
 						["bm_erma_sc_desc"] = "\"¡Adelante! ¡Adelante!\"\n\nUna madre de dormitorio de primaria que trabaja en la #{stats_positive}#Academia Seishou.##\nLos SMGs la adoran.",
@@ -4567,7 +4573,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_m1928_sc_desc"] = "\"¡Es sentido común!\"\n\nUn profesor de primaria que trabaja en la #{stats_positive}#Academia Seishou.##\nHabla con acento japonés. Antiguo miembro del FBI.",
 					["bm_w_ching"] = "Garand",
 						["bm_galant_sc_desc"] = "\"¿¡ESTÁS INTENTANDO TOMARME EL PELO!?\"\n\nUn instructor que trabaja en la #{stats_positive}#Academia Seishou.##\nVigila a los estudiantes de secundaria.",
-	
+
 			--RED STEEL ACADEMY
 				--THREE STRIPES
 					["bm_w_siltstone"] = "Drako",
@@ -4587,7 +4593,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--FACULTY
 					["bm_w_mosin"] = "Mosin Nagant",
 						["bm_mosin_sc_desc"] = "\"A la sala de autorreflexión...\"\n\nMiembro del profesorado de la #{stats_negative}#Academia Acero Rojo.##\nEl zarista absoluto nacido del Imperio Ruso. Un viejo amigo de Thomspon-sensei.",
-			
+
 			--ENOSHIMA
 				--MIDDLE SCHOOLERS
 					["bm_w_spas12"] = "Supasu",
@@ -4597,7 +4603,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			})
 		end
 		if my_wife then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 				["bm_w_g3"] = "Jiisuri",
 				["bm_w_g3_sg1"] = "Jiisuri",
 				["bm_w_g3_msg"] = "Jiisuri",
@@ -4609,14 +4615,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_menu_jiisuri_stock"] = "Pantyhose",
 			})
 		end
-	
+
 		local big = math.rand(1)
 		local pistol = 0.02
 		if Month == "4" and Day == "1" then
 			pistol = 1
 		end
 		if shitpost or not easterless and big <= pistol then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 				["bm_w_huntsman"] = "Bubble Daryl",
 				["bm_w_deagle"] = "Big Pistol",
 				["bm_w_m16"] = weapon_names == 2 and "is that a famas" or "is that a clarion",
@@ -4632,13 +4638,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			tornado = 1
 		end
 		if not easterless and blizzard <= tornado then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 				["menu_pattern_scale_small"] = "Justicia",
 				["menu_pattern_scale_medium"] = "Premium",
 				["menu_pattern_scale_large"] = "Verdad",
 			})
 		end
-	
+
 end)
 
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
@@ -4679,7 +4685,7 @@ elseif ai_type == m then
 			["hud_assault_assault"] = "Murkywater Operation in Progress", --Bob: Deberia traducir esto?
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
 		})
-	end)	
+	end)
 end
 
  if _G.HopLib then
@@ -4703,36 +4709,44 @@ end
 	elseif ai_type == lapd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)	
+		end)
 	elseif ai_type == mex then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
 		end)
 	elseif ai_type == akan then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
 		end)
 	elseif ai_type == nypd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
 		end)
 	elseif ai_type == fbi then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")		
+			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
 		end)
 	elseif ai_type == breins then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")		
-		end)	
+			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
+		end)
 	end
- end
+end
+
+if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay", function(loc)
+		LocalizationManager:add_localized_strings({
+			["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract."
+		})
+	end)
+end
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Trabajo Pro",
 		["menu_one_down"] = "Trabajo Pro",
 		["menu_es_pro_job_bonus"] = "Trabajo Pro",
-		
+
 		["menu_pro_warning"] = "¡Este es un Trabajo Pro! Si fallas, el contrato entero se cancelara\nPuede que tambien encuentres un evento de Punto De No Retorno cerca del final del atraco, donde enemigos mas poderosos seran desplegados. \nCompletar un Trabajo Pro te otorga un bonus de dinero y experiencia del 25%.",
 
 		["menu_asset_lock_additional_assets_pro"] = "¡NO DISPONIBLE EN TRABAJO PRO!",
@@ -4740,7 +4754,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
-		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
 
 		["debug_interact_grenade_crate_take_grenades"] = "MANTÉN $BTN_INTERACT PARA REABASTECER TUS ARROJADIZAS",
 		["debug_interact_bodybags_bag_take_bodybag"] = "MANTÉN $BTN_INTERACT PARA REABASTECER TUS BOLSAS DE CADÁVER Y BRIDAS",
@@ -4855,74 +4868,74 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_20"] = "Los Escudos Titán tienen paneles cegadores montados en sus escudos. Cuando un panel se carga, puedes dispararle para detenerlo, rompiéndolo y aturdiendo brevemente a su portador en el proceso.",
 		--Captain Hints
 		["loading_captains_res_title"] = "Consejos de Capitán de Restoration Mod",
-		["loading_captains_res_1"] = "La alta resistencia al daño del capitán Summers disminuye a medida que se elimina a cada miembro de su tripulación. Apunta primero al Doc, ya que puede curar al resto de su tripulación mientras siga en pie.",		
-		["loading_captains_res_2"] = "No abraces al Capitán Summers. Te derretirá con su lanzallamas.",	
-		["loading_captains_res_3"] = "El Capitán Spring puede recibir mucho daño, pero acabará cayendo. Ten cuidado con sus granadas y aprovecha su escasa movilidad.",	
-		["loading_captains_res_4"] = "El Capitán Spring lanza granadas de racimo explosivas periódicamente.",	
-		["loading_captains_res_5"] = "El Capitán Spring puede ser peligroso debido a su capacidad de empuje, pero es increíblemente lento y tiene poco alcance.",	
-		["loading_captains_res_6"] = "El Capitán Autumn se burlará en voz alta cuando ataque.",	
-		["loading_captains_res_7"] = "A diferencia de otros capitanes, la policía no anunciará la llegada de Autumn para no arruinar su factor sorpresa.",	
-		["loading_captains_res_8"] = "El Capitán Autumn inutilizará progresivamente tus desplegables si se le permite permanecer activo sin ser detectado durante un tiempo. Los desplegables inutilizados aparecen en púrpura y solo pueden recuperarse si Autumn es encontrado y derrotado.",	
+		["loading_captains_res_1"] = "La alta resistencia al daño del capitán Summers disminuye a medida que se elimina a cada miembro de su tripulación. Apunta primero al Doc, ya que puede curar al resto de su tripulación mientras siga en pie.",
+		["loading_captains_res_2"] = "No abraces al Capitán Summers. Te derretirá con su lanzallamas.",
+		["loading_captains_res_3"] = "El Capitán Spring puede recibir mucho daño, pero acabará cayendo. Ten cuidado con sus granadas y aprovecha su escasa movilidad.",
+		["loading_captains_res_4"] = "El Capitán Spring lanza granadas de racimo explosivas periódicamente.",
+		["loading_captains_res_5"] = "El Capitán Spring puede ser peligroso debido a su capacidad de empuje, pero es increíblemente lento y tiene poco alcance.",
+		["loading_captains_res_6"] = "El Capitán Autumn se burlará en voz alta cuando ataque.",
+		["loading_captains_res_7"] = "A diferencia de otros capitanes, la policía no anunciará la llegada de Autumn para no arruinar su factor sorpresa.",
+		["loading_captains_res_8"] = "El Capitán Autumn inutilizará progresivamente tus desplegables si se le permite permanecer activo sin ser detectado durante un tiempo. Los desplegables inutilizados aparecen en púrpura y solo pueden recuperarse si Autumn es encontrado y derrotado.",
 		["loading_captains_res_9"] = "Probablemente no vencerás al Capitán Autumn en una pelea a puñetazos. Ni lo intentes.",
-		["loading_captains_res_10"] = "El capitán Winters tiene una gran resistencia a las balas y aún mayor a los explosivos y al fuego. A pesar de ello, es algo vulnerable al cuerpo a cuerpo.",	
+		["loading_captains_res_10"] = "El capitán Winters tiene una gran resistencia a las balas y aún mayor a los explosivos y al fuego. A pesar de ello, es algo vulnerable al cuerpo a cuerpo.",
 		["loading_captains_res_11"] = "El escudo del Capitán Winters no puede ser perforado, pero se romperá tras absorber suficiente daño; al igual que los Escudos Titán, ten cuidado con su segunda fase.",
 		["loading_captains_res_12"] = "El capitán Winters deambulará por el mapa, curando y otorgando exceso de curación a los enemigos cercanos.",
-		["loading_captains_res_13"] = "El escudo del Capitán Winters tiene paneles cegadores como los que usan los Escudos Titán; sólo ten en cuenta que sus paneles cegadores no se rompen tras recibir un disparo.",	
+		["loading_captains_res_13"] = "El escudo del Capitán Winters tiene paneles cegadores como los que usan los Escudos Titán; sólo ten en cuenta que sus paneles cegadores no se rompen tras recibir un disparo.",
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Consejos de Sigilo de Restoration Mod",
-		["loading_stealth_res_1"] = "El Puesto de Mando de seguridad enviará guardias para investigar el mal funcionamiento de las cámaras, lo que permitirá utilizarlo como señuelo.",	
-		["loading_stealth_res_2"] = "Deshazte rápidamente de los guardias desprevenidos con un golpe cuerpo a cuerpo para robarles el localizador.",	
+		["loading_stealth_res_1"] = "El Puesto de Mando de seguridad enviará guardias para investigar el mal funcionamiento de las cámaras, lo que permitirá utilizarlo como señuelo.",
+		["loading_stealth_res_2"] = "Deshazte rápidamente de los guardias desprevenidos con un golpe cuerpo a cuerpo para robarles el localizador.",
 		["loading_stealth_res_3"] = "Es probable que el Puesto de Mando de seguridad note que faltan guardias y envíe refuerzos.",
-		["loading_stealth_res_4"] = "Los guardias sin localizador no aumentan el nivel de sospecha cuando mueren.",	
-		["loading_stealth_res_5"] = "Todas las armas ruidosas en sigilo tienen un radio de ruido fijo de 25 metros.",	
-		["loading_stealth_res_6"] = "Los civiles se intimidaran en respuesta a los disparos, tanto en asalto como en sigilo.",	
-		["loading_stealth_res_7"] = "Las Torretas Portátiles pacificarán a los civiles que se encuentren en un radio considerable a su alrededor.",	
-		["loading_stealth_res_8"] = "Mientras llevas cualquier bolsa, puedes ser visto desde mucho más lejos, y también serás detectado mucho más rápido mientras estés de pie, esprintando o saltando. Mantente agachado y lento.",	
-		["loading_stealth_res_9"] = "Tienes hasta 4 ECMs en lugar de 2 como en el juego base, pero tienen la mitad de duración.",	
-		["loading_stealth_res_10"] = "Las armas silenciadas no generan ruido en sigilo.",	
-		["loading_stealth_res_11"] = "Puedes tomar hasta 4 policías como rehenes en sigilo, como en asalto.",	
-		["loading_stealth_res_12"] = "El sigilo es más permisivo, lo que permite una mayor recuperación.",	
-		["loading_stealth_res_13"] = "Los guardias ya no morirán instantáneamente por cualquier fuente de daño mientras no estén alerta. Apunta a la cabeza y lleva algo más fuerte que tus puños.",	
+		["loading_stealth_res_4"] = "Los guardias sin localizador no aumentan el nivel de sospecha cuando mueren.",
+		["loading_stealth_res_5"] = "Todas las armas ruidosas en sigilo tienen un radio de ruido fijo de 25 metros.",
+		["loading_stealth_res_6"] = "Los civiles se intimidaran en respuesta a los disparos, tanto en asalto como en sigilo.",
+		["loading_stealth_res_7"] = "Las Torretas Portátiles pacificarán a los civiles que se encuentren en un radio considerable a su alrededor.",
+		["loading_stealth_res_8"] = "Mientras llevas cualquier bolsa, puedes ser visto desde mucho más lejos, y también serás detectado mucho más rápido mientras estés de pie, esprintando o saltando. Mantente agachado y lento.",
+		["loading_stealth_res_9"] = "Tienes hasta 4 ECMs en lugar de 2 como en el juego base, pero tienen la mitad de duración.",
+		["loading_stealth_res_10"] = "Las armas silenciadas no generan ruido en sigilo.",
+		["loading_stealth_res_11"] = "Puedes tomar hasta 4 policías como rehenes en sigilo, como en asalto.",
+		["loading_stealth_res_12"] = "El sigilo es más permisivo, lo que permite una mayor recuperación.",
+		["loading_stealth_res_13"] = "Los guardias ya no morirán instantáneamente por cualquier fuente de daño mientras no estén alerta. Apunta a la cabeza y lleva algo más fuerte que tus puños.",
 		["loading_stealth_res_14"] = "Cuando el medidor de sospecha está lleno, tienes 60 segundos para terminar lo que empezaste antes de que salte la alarma.",
-		["loading_stealth_res_15"] = "Cuanto más alto sea el medidor de sospecha, más fácil será ser detectado por los guardias.",	
+		["loading_stealth_res_15"] = "Cuanto más alto sea el medidor de sospecha, más fácil será ser detectado por los guardias.",
 		["loading_stealth_res_16"] = "Puedes llevar contigo más bolsas para cadáveres que en el juego base, y más aún si juegas en solitario.",
-		["loading_stealth_res_17"] = "En el modo sin conexión de Crime.net, recibirás bridas adicionales para compensar la falta de jugadores. La cantidad sigue aumentando si tienes las habilidades adecuadas.",	
-		["loading_stealth_res_18"] = "Los guardias que mueran por disparos activarán sus localizadores. Aunque la activación de los localizadores no aumenta las sospechas, ignorarlos sí lo hará.",	
+		["loading_stealth_res_17"] = "En el modo sin conexión de Crime.net, recibirás bridas adicionales para compensar la falta de jugadores. La cantidad sigue aumentando si tienes las habilidades adecuadas.",
+		["loading_stealth_res_18"] = "Los guardias que mueran por disparos activarán sus localizadores. Aunque la activación de los localizadores no aumenta las sospechas, ignorarlos sí lo hará.",
 		["loading_stealth_res_19"] = "Los operadores de localizadores son menos indulgentes con las dificultades más elevadas. Tu último localizador se indica mediante el uso de una línea de voz especial.",
 		["loading_stealth_res_20"] = "Contestar a los localizadores por encima del límite permitido aumenta enormemente el medidor de sospecha, pero no tanto como dejar de contestar o no hacerlo.",
-		["loading_stealth_res_21"] = "Los localizadores tardan más en contestarse y expiran más rápido en dificultades elevadas.",	
+		["loading_stealth_res_21"] = "Los localizadores tardan más en contestarse y expiran más rápido en dificultades elevadas.",
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "Consejos de Equipamiento/Habilidades de Restoration Mod", --Bob: Esto quizas sea demasiado largo
-		["loading_equip_skills_res_1"] = "Las escopetas pierden efectividad a larga distancia a medida que disminuye su precisión, mientras que una mayor precisión afecta a su capacidad para alcanzar múltiples objetivos; ¡experimenta y comprueba qué funciona mejor!",	
+		["loading_equip_skills_res_1"] = "Las escopetas pierden efectividad a larga distancia a medida que disminuye su precisión, mientras que una mayor precisión afecta a su capacidad para alcanzar múltiples objetivos; ¡experimenta y comprueba qué funciona mejor!",
 		["loading_equip_skills_res_2"] = "Las pistolas son más rápidas de cambiar en comparación con otras clases de armas.",
-		["loading_equip_skills_res_3"] = "Las armas en Restoration Mod se dividen en varias clases con diferentes ventajas y desventajas. Las armas de mayor daño pueden matar a los enemigos más rápido, ¡pero pueden quedarse secas antes de que te des cuenta!",	
-		["loading_equip_skills_res_4"] = "Las armas de mayor daño suelen ser menos ocultables a menos que tengan desventajas significativas, como la Precisión o la Cadencia de Fuego.",	
-		["loading_equip_skills_res_5"] = "Wolf ha mejorado nuestras Torretas Portátiles para permitir reparaciones de campo. Tarda un poco, pero se repararán automáticamente cuando lo inicies.",	
-		["loading_equip_skills_res_6"] = "Si tienes desbloqueados los cartuchos AP para Torretas Portátiles, puedes elegir tu tipo de munición por defecto en el menú de Equipamiento.",	
-		["loading_equip_skills_res_7"] = "Los Talentos otorgan importantes bonificaciones de daño y muchos de ellos proporcionan raras y valiosas habilidades curativas.",	
-		["loading_equip_skills_res_8"] = "Jefe de Equipo, Armero, Gorila, Criminal Común, Apostador y Motociclista son talentos básicos pero consistentes.",	
-		["loading_equip_skills_res_9"] = "Espía fue rediseñado para convertirlo en un Talento con pocas habilidades de supervivencia y consistencia a largo plazo, pero a cambio te permite obtener enormes reservas de 'Salud temporal' para superar los momentos difíciles.",	
+		["loading_equip_skills_res_3"] = "Las armas en Restoration Mod se dividen en varias clases con diferentes ventajas y desventajas. Las armas de mayor daño pueden matar a los enemigos más rápido, ¡pero pueden quedarse secas antes de que te des cuenta!",
+		["loading_equip_skills_res_4"] = "Las armas de mayor daño suelen ser menos ocultables a menos que tengan desventajas significativas, como la Precisión o la Cadencia de Fuego.",
+		["loading_equip_skills_res_5"] = "Wolf ha mejorado nuestras Torretas Portátiles para permitir reparaciones de campo. Tarda un poco, pero se repararán automáticamente cuando lo inicies.",
+		["loading_equip_skills_res_6"] = "Si tienes desbloqueados los cartuchos AP para Torretas Portátiles, puedes elegir tu tipo de munición por defecto en el menú de Equipamiento.",
+		["loading_equip_skills_res_7"] = "Los Talentos otorgan importantes bonificaciones de daño y muchos de ellos proporcionan raras y valiosas habilidades curativas.",
+		["loading_equip_skills_res_8"] = "Jefe de Equipo, Armero, Gorila, Criminal Común, Apostador y Motociclista son talentos básicos pero consistentes.",
+		["loading_equip_skills_res_9"] = "Espía fue rediseñado para convertirlo en un Talento con pocas habilidades de supervivencia y consistencia a largo plazo, pero a cambio te permite obtener enormes reservas de 'Salud temporal' para superar los momentos difíciles.",
 		["loading_equip_skills_res_10"] = "Jefe de Equipo es un Talento centrado en el equipo que otorga pequeñas pero útiles mejoras a ti y a tus compañeros de equipo, y más mejoras si tienes varios rehenes. Combina bien con el árbol de Controlador en Mente Maestra.",
-		["loading_equip_skills_res_11"] = "Apostador es un Talento centrado en el equipo que otorga un poco de Salud y munición adicional a tus compañeros de equipo cuando recoges paquetes de munición. Combina bien con habilidades que otorgan paquetes de munición extra.",	
-		["loading_equip_skills_res_12"] = "Maníaco es un Talento rápido y centrado en el equipo que reduce el daño que recibes tú y tus compañeros mientras sigas matando de forma consistente. Combina bien con builds de daño alto y builds con Resistencia al daño.",	
-		["loading_equip_skills_res_13"] = "El ECM de bolsillo del Talento Hacker proporciona curación a todo el equipo y un potente control de masas, pero tarda mucho en recargarse. También es eficaz en sigilo.",	
-		["loading_equip_skills_res_14"] = "Ladrón es una Talento centrado en la esquiva que promueve el agacharse durante un tiroteo.",	
-		["loading_equip_skills_res_15"] = "Narcotraficante es un Talento versátil. El inyector puede usarse para autosustentarse, sobrevivir a grandes daños o alejar el fuego de tu equipo.",	
-		["loading_equip_skills_res_16"] = "Pareja es un Talento centrado en el equipo que te permite proporcionar una gran cantidad de curación a un compañero de equipo específico, siempre y cuando ambos mantengan una matanza constante.",	
-		["loading_equip_skills_res_17"] = "Las balas que atraviesen escudos infligirán la mitad de daño.",	
+		["loading_equip_skills_res_11"] = "Apostador es un Talento centrado en el equipo que otorga un poco de Salud y munición adicional a tus compañeros de equipo cuando recoges paquetes de munición. Combina bien con habilidades que otorgan paquetes de munición extra.",
+		["loading_equip_skills_res_12"] = "Maníaco es un Talento rápido y centrado en el equipo que reduce el daño que recibes tú y tus compañeros mientras sigas matando de forma consistente. Combina bien con builds de daño alto y builds con Resistencia al daño.",
+		["loading_equip_skills_res_13"] = "El ECM de bolsillo del Talento Hacker proporciona curación a todo el equipo y un potente control de masas, pero tarda mucho en recargarse. También es eficaz en sigilo.",
+		["loading_equip_skills_res_14"] = "Ladrón es una Talento centrado en la esquiva que promueve el agacharse durante un tiroteo.",
+		["loading_equip_skills_res_15"] = "Narcotraficante es un Talento versátil. El inyector puede usarse para autosustentarse, sobrevivir a grandes daños o alejar el fuego de tu equipo.",
+		["loading_equip_skills_res_16"] = "Pareja es un Talento centrado en el equipo que te permite proporcionar una gran cantidad de curación a un compañero de equipo específico, siempre y cuando ambos mantengan una matanza constante.",
+		["loading_equip_skills_res_17"] = "Las balas que atraviesen escudos infligirán la mitad de daño.",
 		["loading_equip_skills_res_18"] = "Los Revólveres Peacemaker y Phoenix .500 son capaces de perforar como un rifle de francotirador.",
-		["loading_equip_skills_res_19"] = "Si tienes un medidor azul a un lado de la pantalla, entonces tienes esquiva. Cuando parpadee, esquivarás la siguiente bala. Consulta la Guía para obtener una explicación detallada de nuestro cambio en la mecánica de esquiva.",	
-		["loading_equip_skills_res_20"] = "Cuanto mayor sea la movilidad de un arma, más rápido podrás desenfundarla y enfundarla.",	
-		["loading_equip_skills_res_21"] = "La motosierra y la kazaguruma infligen daño a los enemigos que tengas delante mientras las cargas.",	
+		["loading_equip_skills_res_19"] = "Si tienes un medidor azul a un lado de la pantalla, entonces tienes esquiva. Cuando parpadee, esquivarás la siguiente bala. Consulta la Guía para obtener una explicación detallada de nuestro cambio en la mecánica de esquiva.",
+		["loading_equip_skills_res_20"] = "Cuanto mayor sea la movilidad de un arma, más rápido podrás desenfundarla y enfundarla.",
+		["loading_equip_skills_res_21"] = "La motosierra y la kazaguruma infligen daño a los enemigos que tengas delante mientras las cargas.",
 		["loading_equip_skills_res_22"] = "El Cuchillo Mariposa Wing y la Navaja Automática infligen mucho daño al apuñalar a los enemigos por la espalda.",
-		["loading_equip_skills_res_23"] = "El Piolet y el Pico Gold Fever hacen más daño a la cabeza a cambio de poca velocidad.",	
-		["loading_equip_skills_res_24"] = "El veneno inflige un daño moderado, pero provoca vómitos que interrumpen otras acciones.",	
-		["loading_equip_skills_res_25"] = "Las Granadas Aturdidoras proporcionan una interrupción muy potente, incluso contra Bulldozers.",	
-		["loading_equip_skills_res_26"] = "Al apuntar con la mira, la precisión aumenta considerablemente y el retroceso se reduce, incluso con las ametralladoras ligeras.",	
-		["loading_equip_skills_res_27"] = "El arma cuerpo a cuerpo Pistola de Clabos Pounder tiene un alcance increíblemente largo, mucho más que cualquier otra arma cuerpo a cuerpo.",	
+		["loading_equip_skills_res_23"] = "El Piolet y el Pico Gold Fever hacen más daño a la cabeza a cambio de poca velocidad.",
+		["loading_equip_skills_res_24"] = "El veneno inflige un daño moderado, pero provoca vómitos que interrumpen otras acciones.",
+		["loading_equip_skills_res_25"] = "Las Granadas Aturdidoras proporcionan una interrupción muy potente, incluso contra Bulldozers.",
+		["loading_equip_skills_res_26"] = "Al apuntar con la mira, la precisión aumenta considerablemente y el retroceso se reduce, incluso con las ametralladoras ligeras.",
+		["loading_equip_skills_res_27"] = "El arma cuerpo a cuerpo Pistola de Clabos Pounder tiene un alcance increíblemente largo, mucho más que cualquier otra arma cuerpo a cuerpo.",
 		["loading_equip_skills_res_28"] = "Al subir de nivel los Talentos se desbloquea la Caja de Arrojadizas.",
-		["loading_equip_skills_res_29"] = "Al reponer tus arrojadizas en la caja de arrojadizas, se rellena toda tu reserva con cada uso.",	
-		["loading_equip_skills_res_30"] = "Guarda Inspirar As para cuando las cosas se pongan realmente feas, tiene un tiempo de enfriamiento muy largo y requiere línea de visión.",	
+		["loading_equip_skills_res_29"] = "Al reponer tus arrojadizas en la caja de arrojadizas, se rellena toda tu reserva con cada uso.",
+		["loading_equip_skills_res_30"] = "Guarda Inspirar As para cuando las cosas se pongan realmente feas, tiene un tiempo de enfriamiento muy largo y requiere línea de visión.",
 		["loading_equip_skills_res_31"] = "Restoration Mod añade dos nuevos Talentos que proporcionan mayores ganancias de dinero y experiencia a cambio de desventajas. ¡Desafíate a ti mismo para obtener mejores recompensas!",
 		["loading_equip_skills_res_32"] = "La mecánica de apuntar se ha modificado para que tengas que apuntar por completo para obtener los beneficios de la precisión. No pierdas de vista tu estadística \"T. Apuntado\" cuando modifiques tu arma.",
 		["loading_equip_skills_res_33"] = "Los cañones largos, las culatas más robustas y los cargadores más largos tienen sus ventajas, pero pueden afectar a los tiempos de cambio, recarga, apuntado y esprint-a-apuntado.",
@@ -4933,24 +4946,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_38"] = "La estadística \"Atravesar\" de las armas cuerpo a cuerpo representa a cuántos enemigos puedes golpear con un solo ataque.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Consejos Varios de Restoration Mod",
-		["loading_misc_res_1"] = "Prueba también nuestros trabajos personalizados. Puedes encontrar la mayoría de ellos bajo el Contacto 'Jackal', así como 'Vigilantes' bajo Vlad.",	
+		["loading_misc_res_1"] = "Prueba también nuestros trabajos personalizados. Puedes encontrar la mayoría de ellos bajo el Contacto 'Jackal', así como 'Vigilantes' bajo Vlad.",
 		["loading_misc_res_2"] = "¡Restoration Mod tiene una Guía de Steam! Este debería ser tu recurso para obtener información más detallada. Comprueba el Menú Principal.",
-		["loading_misc_res_3"] = "¡Restoration Mod tiene un servidor Discord! (Solo en Inglés) Únete para discusiones, opiniones sobre el balance y emparejamiento. Comprueba el Menú Principal.", --Bob: Agrego una advertencia de que el servidor habla unicamente ingles	
+		["loading_misc_res_3"] = "¡Restoration Mod tiene un servidor Discord! (Solo en Inglés) Únete para discusiones, opiniones sobre el balance y emparejamiento. Comprueba el Menú Principal.", --Bob: Agrego una advertencia de que el servidor habla unicamente ingles
 		--Trivia Hints
 		["loading_fluff_res_title"] = "Trivia de Restoration Mod",
-		["loading_fluff_res_1"] = "OMNIA gasta una fortuna en revivir proyectos de armamento fallidos.",	
-		["loading_fluff_res_2"] = "Al LPF se le deben muchas cervezas.",	
-		["loading_fluff_res_3"] = "El LPF y el Francotirador Titán son australianos.",	
-		["loading_fluff_res_4"] = "Al policía Bronco de Nueva York le encantan los donuts.",	
-		["loading_fluff_res_5"] = "El SWAT de Élite ZEAL UMP se llama Chad.",	
-		["loading_fluff_res_6"] = "Los Dozers Titán tienen ojos brillantes gracias a la ingeniería genética extensiva, los experimentos humanos y las drogas de combate.",	
-		["loading_fluff_res_7"] = "El Capitán Spring no es humano. Pudo haberlo sido, alguna vez.",	
-		["loading_fluff_res_8"] = "Los miembros de la comunidad y el equipo de desarrollo suelen apodar a Restoration Mod como 'resmod', 'SCmod', 'furry mod' y 'mememod'.",	
-		["loading_fluff_res_9"] = "OMNIA ha estado desarrollando puertas de seguridad reforzadas para protegerse de ataques de dinosaurios.",	
-		["loading_fluff_res_10"] = "El Granadero solía trabajar en el control de plagas.",	
+		["loading_fluff_res_1"] = "OMNIA gasta una fortuna en revivir proyectos de armamento fallidos.",
+		["loading_fluff_res_2"] = "Al LPF se le deben muchas cervezas.",
+		["loading_fluff_res_3"] = "El LPF y el Francotirador Titán son australianos.",
+		["loading_fluff_res_4"] = "Al policía Bronco de Nueva York le encantan los donuts.",
+		["loading_fluff_res_5"] = "El SWAT de Élite ZEAL UMP se llama Chad.",
+		["loading_fluff_res_6"] = "Los Dozers Titán tienen ojos brillantes gracias a la ingeniería genética extensiva, los experimentos humanos y las drogas de combate.",
+		["loading_fluff_res_7"] = "El Capitán Spring no es humano. Pudo haberlo sido, alguna vez.",
+		["loading_fluff_res_8"] = "Los miembros de la comunidad y el equipo de desarrollo suelen apodar a Restoration Mod como 'resmod', 'SCmod', 'furry mod' y 'mememod'.",
+		["loading_fluff_res_9"] = "OMNIA ha estado desarrollando puertas de seguridad reforzadas para protegerse de ataques de dinosaurios.",
+		["loading_fluff_res_10"] = "El Granadero solía trabajar en el control de plagas.",
 		["loading_fluff_res_11"] = "Nunca has visto un Cloaker Titán.",
-		["loading_fluff_res_12"] = "Omnia es una banda de 'folk pagano neocelta' autodenominada con sede en los Países Bajos y cuyos miembros han tenido orígenes irlandeses, holandeses, córnicos, belgas, indonesios y persas. Conexión con la organización OMNIA sin confirmar.", --Bob: No se si esto es una referencia a algo	
-		["loading_fluff_res_13"] = "Sea lo que sea lo que provocó que Jackal se involucrara con Crime.Net y abandonara GenSec, se niega a hablar de ello. Parece haber sido 'perturbado' por el evento.",	
+		["loading_fluff_res_12"] = "Omnia es una banda de 'folk pagano neocelta' autodenominada con sede en los Países Bajos y cuyos miembros han tenido orígenes irlandeses, holandeses, córnicos, belgas, indonesios y persas. Conexión con la organización OMNIA sin confirmar.", --Bob: No se si esto es una referencia a algo
+		["loading_fluff_res_13"] = "Sea lo que sea lo que provocó que Jackal se involucrara con Crime.Net y abandonara GenSec, se niega a hablar de ello. Parece haber sido 'perturbado' por el evento.",
 		["loading_fluff_res_14"] = "JAJAJAJAJA.",
 		["loading_fluff_res_15"] = "El capitán Summers y su equipo solían ser un grupo de cuatro atracadores, algo así como un equivalente multinacional de la banda Payday. Ahora son un equipo de ataque de OMNIA.",
 		["loading_fluff_res_16"] = "El Capitán Summers y su equipo murieron oficialmente en el derrumbe de un edificio mientras intentaban robar un banco. Esto fue una artimaña.",
@@ -5000,8 +5013,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Enemy Replacers
 		["mutator_specials_override_boom"] = "Granaderos",
-		["mutator_specials_override_sniper"] = "Francotirador",	
-		
+		["mutator_specials_override_sniper"] = "Francotirador",
+
 		["mutator_titandozers_desc"] = "Efectos festivos de Halloween",
 		["mutator_titandozers_longdesc"] = "Los Bulldozers sin cabeza han escapado de las pesadillas de Wolf y se han hecho realidad. Los Bulldozers normales serán ahora sus variantes de Bulldozer sin cabeza y se activarán otros efectos de Halloween.",
 
@@ -5019,7 +5032,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_notitans"] = "Cortes Presupuestarios",
 		["mutator_notitans_desc"] = "Desactiva las Unidades Titán.",
 		["mutator_notitans_longdesc"] = "Todas las apariciones de Unidades Titán están desactivadas.",
-		
+
 		["mutator_onlytitans"] = "Aumentos Presupuestarios",
 		["mutator_onlytitans_desc"] = "Las unidades titán sustituyen a todas las unidades no titán.",
 		["mutator_onlytitans_longdesc"] = "Todas las apariciones de unidades que no son titanes se sustituyen por unidades titanes.",
@@ -5044,23 +5057,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_fatroll"] = "Periodo de gracia (en segundos)",
 		["mutator_fatroll_desc"] = "Valor de Gracia de Daño personalizado (en segundos).",
 		["mutator_fatroll_longdesc"] = "La gracia de daño en jugadores y miembros del equipo controlados por la IA se cambia a un valor específico. La gracia de daño afecta a la frecuencia con la que se calculan las instancias de daño; los valores más bajos harán que recibas más daño en menos tiempo.",
-		
+
 		["mutator_overheal"] = "Experto En Exceso De Curación",
 		["menu_mutator_overheal_mult_override"] = "Multiplicador De Exceso De Curación",
 		["menu_mutator_overheal_mult_override_toggle"] = "Incluir Capitanes",
 		["mutator_overheal_desc"] = "Ahora los LPFs pueden otorgar excesdo de curación a la mayoría de enemigos.",
 		["mutator_overheal_longdesc"] = "Los LPFs ahora pueden otorgar excesdo de curación a todas las unidades de asalto (excepto a los Cloakers).\n\nNota: Algunas unidades seguirán utilizando su propio multiplicador de exceso de curación, independientemente de la configuración del Mutador.",
-		
+
 		["mutator_asu_buff"] = "Potencia Mejorada",
 		["menu_mutator_captain_asu_buff_toggle"] = "Incluir Capitanes",
 		["mutator_asu_buff_desc"] = "Ahora los ASUs pueden potenciar a la mayoría de las Unidades Especiales.",
 		["mutator_asu_buff_longdesc"] = "Ahora los ASUs pueden potenciar a la mayoría de unidades especiales (excepto los Cloakers).",
-		
+
 		["mutator_bo_flashbang"] = "Tu Opinión - Mi elección",
 		["menu_mutator_flashbang_cooking_time"] = "Tiempo de Detonación (en segundos)",
 		["mutator_bo_flashbang_desc"] = "Las cegadoras ahora son indestructibles.",
 		["mutator_bo_flashbang_longdesc"] = "Las cegadoras ahora son indestructibles; también se puede reducir el tiempo de detonación.",
-		
+
 		["mutator_grenade_mayhem"] = "¡Carnicería Total!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Incluir Comunes y Élites",
 		["menu_mutator_grenade_mayhem_thugs_toggle"] = "Incluir Gangsters",
@@ -5070,13 +5083,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--["menu_mutator_grenade_mayhem_sosa_cosplay_toggle"] = "Include Frag Underbarrels for Grenadiers",
 		["mutator_grenade_mayhem_desc"] = "Los enemigos que no sean Bravo ahora pueden lanzar granadas de fragmentación.",
 		["mutator_grenade_mayhem_longdesc"] = "Los enemigos que no sean Bravo ahora pueden lanzar granadas de fragmentación.\n\nNota: Los enemigos con lanzallamas usarán molotovs en lugar de granadas de fragmentación; los Cloakers usarán gas lacrimógeno en lugar de granadas de fragmentación.",
-		
-		["mutator_captain_replace"] = "Estación Eterna",	
+
+		["mutator_captain_replace"] = "Estación Eterna",
 		["menu_mutator_captain_replace_1"] = "Capitán (Día 1)",
 		["menu_mutator_captain_replace_2"] = "Capitán (Día 2)",
 		["menu_mutator_captain_replace_3"] = "Capitán (Día 3)",
 		["menu_mutator_captain_replace_no_captain_override"] = "Sin Cambios",
-		["menu_mutator_captain_replace_captain_random"] = "Al Azar",		
+		["menu_mutator_captain_replace_captain_random"] = "Al Azar",
 		["menu_mutator_captain_replace_winter"] = "Winters",
 		["menu_mutator_captain_replace_autumn"] = "Autumn",
 		["menu_mutator_captain_replace_spring"] = "Spring",
@@ -5089,26 +5102,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_mutator_hvh_blacklist_toggle"] = "Excluir a HHHTDFH para la opción \"Al Azar\"",
 		["mutator_captain_replace_desc"] = "Cambia el Capitán que aparece durante un Trabajo.",
 		["mutator_captain_replace_longdesc"] = "El Capitán que aparecerá durante un atraco será el Capitán seleccionado.\n\nNota: Los Encuentros de Capitanes programados no cambiarán. Excluir a todos los capitanes de la opción \"Al Azar\" hará que se use la opción \"Sin Cambios\".",
-		
+
 		["mutator_no_outlines"] = "Realismo Experto",
 		["mutator_no_outlines_desc"] = "La mayoría de contornos son desactivados.",
 		["mutator_no_outlines_longdesc"] = "La mayoría de contornos están desactivados, así como las etiquetas de nombres sobre los jugadores/IA.",
 		["menu_mutator_no_outlines_enemies_toggle"] = "Desactivar Contornos De Enemigos",
 		["menu_mutator_no_outlines_objectives_toggle"] = "Desactivar Los Contornos De Resaltados (excepto escolta)",
-		
+
 
 		["mutator_spawn_mult"] = "Respuesta Amplificada",
 		["menu_mutator_enemy_spawn"] = "MULTIPLICADOR DE APARICIÓN DE ENEMIGOS",
 		["mutator_spawn_mult_desc"] = "Aumento de la aparición de enemigos.",
 		["mutator_spawn_mult_longdesc"] = "Aparecerán más enemigos durante las fases de asalto. ¡A estilo Overkill™!", --Bob: Comprobar si se llaman fases de asalto o si tienen otro nombre
-		
+
 		["mutator_birthday"] = "Revienta Globos",
 		["mutator_birthday_desc"] = "Matar Especiales generará globos que proporcionan potenciadores.",
 		["mutator_birthday_longdesc"] = "Evento del 10º aniversario de PAYDAY:\n\nAl matar unidades especiales aparecerán globos a los que puedes disparar para dar bonificaciones a todo el equipo, ya sean directas o temporales, dependiendo de la unidad que hayas matado. Algunas unidades generan globos con más frecuencia que otras y varios potenciadores pueden estar activos al mismo tiempo.",
 
 		["mutator_CG22"] = "Cuento de Criminal",
 		["mutator_CG22_desc"] = "Algunos trabajos tendrán un árbol de navidad que generará regalos para triturar o entregar a Hajrudin.",
-		["mutator_CG22_longdesc"] = "Evento de Navidad de PAYDAY 2 2022:\n\nLos Árboles de Navidad que aparecen en algunos trabajos dejan caer regalos de Navidad. Los regalos de Navidad se pueden triturar para obtener mejoras temporales durante el atraco o dárselos a Hajrudin para obtener experiencia extra, dinero o monedas del Continental. Al hacer cualquiera de las dos cosas, existe la posibilidad de que aparezca el Dozer Muñeco de Nieve con lanzahielos.",		
+		["mutator_CG22_longdesc"] = "Evento de Navidad de PAYDAY 2 2022:\n\nLos Árboles de Navidad que aparecen en algunos trabajos dejan caer regalos de Navidad. Los regalos de Navidad se pueden triturar para obtener mejoras temporales durante el atraco o dárselos a Hajrudin para obtener experiencia extra, dinero o monedas del Continental. Al hacer cualquiera de las dos cosas, existe la posibilidad de que aparezca el Dozer Muñeco de Nieve con lanzahielos.",
 
 		["mutator_thecandlesburnoutforyou"] = "Maratón De Recarga",
 		["mutator_thecandlesburnoutforyou_desc"] = "Debes recargar manualmente tu arma cuando el cargador se vacíe.",
@@ -5132,11 +5145,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_piggybank"] = "Alimenta Al Cerdo", --Bob: Comprobar si Toda esta seccion tiene nombres ya traducidos en la oficial
 		["mutator_piggybank_desc"] = "Los enemigos que mates dejarán caer Dólares de Cerdito para alimentar al Cerdo Dorado.",
-		["mutator_piggybank_longdesc"] = "Evento del 9º aniversario de PAYDAY 2:\n\nLos enemigos que mates tendrán una probabilidad de dejar caer Dólares de Cerdito. Los Dólares de Cerdito son bolsas temporales que se pueden usar para hacer crecer el Cerdito Dorado en ciertos atracos, y cuanto más grande sea el Cerdito, más experiencia y dinero se obtendrá al final del atraco.",		
+		["mutator_piggybank_longdesc"] = "Evento del 9º aniversario de PAYDAY 2:\n\nLos enemigos que mates tendrán una probabilidad de dejar caer Dólares de Cerdito. Los Dólares de Cerdito son bolsas temporales que se pueden usar para hacer crecer el Cerdito Dorado en ciertos atracos, y cuanto más grande sea el Cerdito, más experiencia y dinero se obtendrá al final del atraco.",
 
 		["mutator_piggyrevenge"] = "La Venganza Del Cerdito", --Bob: Comprobar si Toda esta seccion tiene nombres ya traducidos en la oficial
 		["mutator_piggyrevenge_desc"] = "Los enemigos que mates dejarán caer cerditos para alimentar al Cerdo Dorado y conseguir potenciadores.",
-		["mutator_piggyrevenge_longdesc"] = "Evento del 10º aniversario de PAYDAY 2:\n\nLos enemigos que mates tendrán una posibilidad de soltar Dólares de Cerdito. Los Dólares de Cerdito son bolsas temporales que se pueden usar para hacer crecer el Cerdito Dorado y conseguir mejoras en ciertos trabajos, y al hacerlo existe la posibilidad de que aparezca el Dozer Cerdito con lanzallamas. Cuanto más grande sea el cerdito, más experiencia y dinero recibirás al final del asalto.",		
+		["mutator_piggyrevenge_longdesc"] = "Evento del 10º aniversario de PAYDAY 2:\n\nLos enemigos que mates tendrán una posibilidad de soltar Dólares de Cerdito. Los Dólares de Cerdito son bolsas temporales que se pueden usar para hacer crecer el Cerdito Dorado y conseguir mejoras en ciertos trabajos, y al hacerlo existe la posibilidad de que aparezca el Dozer Cerdito con lanzallamas. Cuanto más grande sea el cerdito, más experiencia y dinero recibirás al final del asalto.",
 
 		["menu_pda10_post_objective_3_desc"] = "Completa 25 trabajos en cualquier dificultad",
 		["menu_pda10_post_objective_5_desc"] = "Mata 50 enemigos con rifles de francotirador",
@@ -5144,7 +5157,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_pda10_post_objective_6_desc"] = "Mata 50 enemigos con armas cuerpo a cuerpo",
 		["menu_pda10_post_objective_1_desc"] = "Mata 50 Dozers",
 		["menu_pda10_post_objective_4_desc"] = "Recoge 50 Paquetes de Gage",
-		
+
 		["mutator_bravos_only"] = "Línea Dura", --Bob: Esto esta bien traducido?
 		["mutator_bravos_only_desc"] = "Los enemigos se reemplazan por sus equivalentes de PDNR.",
 		["mutator_bravos_only_longdesc"] = "Las apariciones de enemigos no programadas se reemplazan por sus equivalentes en el Punto De No Retorno de los Trabajos-Pro. Los SWAT del FBI reemplazarán a los SWAT azules, y los SWAT del FBI serán reemplazados por unidades Bravo de la Guardia Nacional.",
@@ -5170,27 +5183,34 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Facción: ",
 
+		["mutator_high_noon"] = "Red Dead: The Heist",
+		["menu_mutator_high_noon"] = "Red Dead: The Heist",
+		["mutator_high_noon_desc"] = "Wild West DC.",
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.",
+		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
+		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",
+
 		--Crime Spree mutators
 		["mutator_cloakercuff"] = "Hechicero",
 		["mutator_cloakercuff_desc"] = "Ahora los golpes cuerpo a cuerpo de Cloakers esposarán a los jugadores.",
 		["mutator_cloakercuff_longdesc"] = "Los golpes cuerpo a cuerpo de los cloakers harán que los jugadores queden esposados.",
-		
+
 		["mutator_cloakerflashbang"] = "Ninja Deslumbrante",
 		["mutator_cloakerflashbang_desc"] = "Los Cloakers tienen una probabilidad de soltar una cegadora cuando esquivan.",
 		["mutator_cloakerflashbang_longdesc"] = "Ahora los Cloaker tendrán un 50% de probabilidad de soltar una cegadora al esquivar.",
-		
+
 		["mutator_fartsmella"] = "Suministros De \"Pesticida\"",
 		["mutator_fartsmella_desc"] = "Las granadas de humo se reemplazan por gas lacrimógeno.",
 		["mutator_fartsmella_longdesc"] = "Las granadas de humo desplegadas por los enemigos serán reemplazadas por gas lacrimógeno.\n\nNota: No sustituye a las granadas de humo del mutador \"Hazme más daño\".",
-		
+
 		["mutator_kaboom"] = "Kamikaze",
 		["mutator_kaboom_desc"] = "Los Granaderos ahora explotan al morir.",
 		["mutator_kaboom_longdesc"] = "Los Granaderos ahora explotan al morir.",
-		
+
 		["mutator_fastresponse"] = "Respuesta Rápida",
 		["mutator_fastresponse_desc"] = "Todos los asaltos policiales empiezan con la máxima intensidad.",
 		["mutator_fastresponse_longdesc"] = "Todos los asaltos policiales empiezan con la máxima intensidad.",
-		
+
 		["mutator_crazytaser"] = "Sobrecarga de Taser",
 		["mutator_crazytaser_desc"] = "Las unidades Taser ya no tienen un retraso al apuntar cuando intentan aturdir a los jugadores.",
 		["mutator_crazytaser_longdesc"] = "Las unidades Taser ya no tienen un retraso al apuntar cuando intentan aturdir a los jugadores.\n\nNota: Siguen aplicándose los tiempos de enfriamiento normales entre intentos.",
@@ -5198,23 +5218,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_masterdodger"] = "¡Esquiva Esto!",
 		["mutator_masterdodger_desc"] = "Los Policías Veteranos ahora esquivan todas las balas.",
 		["mutator_masterdodger_longdesc"] = "Los Policías Veteranos ahora esquivan todas las balas.",
-		
+
 		["mutator_fullautoinbuilding"] = "Tiradores Rabiosos",
 		["mutator_fullautoinbuilding_desc"] = "Los Francotiradores Titán y sus equivalentes dispararán sus rifles en modo automático a corta distancia.",
 		["mutator_fullautoinbuilding_longdesc"] = "Los Francotiradores Titán y los Tiradores Bravo ahora disparan sus rifles a toda velocidad a corta distancia (a menos de 10 metros).",
-		
+
 		["mutator_quickscope360"] = "Ojo De Águila",
 		["mutator_quickscope360_desc"] = "Los francotiradores ahora apuntan sus rifles un 100% más rápido.",
 		["mutator_quickscope360_longdesc"] = "Los francotiradores ahora apuntan sus rifles un 100% más rápido.",
-		
+
 		["mutator_goldfarbdozers"] = "Doble Problema",
 		["mutator_goldfarbdozers_desc"] = "Todos los Bulldozers que aparezcan se desplegarán siempre en parejas.",
 		["mutator_goldfarbdozers_longdesc"] = "Todos los Bulldozers que aparezcan se desplegarán siempre en parejas.",
-		
+
 		["mutator_spoocsquad"] = "Escuadrón Sigiloso",
 		["mutator_spoocsquad_desc"] = "Los Cloakers suelen aparecer en grupos.",
 		["mutator_spoocsquad_longdesc"] = "Los Cloakers suelen aparecer en grupos.",
-		
+
 		["mutator_vanilla_police_call"] = "Alerta De Intrusos",
 		["mutator_vanilla_police_call_desc"] = "Habilita el comportamiento del juego base para llamadas de policía, localizadores y cámaras.",
 		["mutator_vanilla_police_call_longdesc"] = "Habilita el comportamiento del juego base para llamadas de policía, localizadores y cámaras.",
@@ -5452,23 +5472,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Logistician
 				["menu_defense_up_beta_sc"] = "Logístico",
 				["menu_defense_up_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nDespliegas e interactuas con todos los desplegables #{skill_color}#$skill_value_b1## más rápido.\n\nAS: #{owned}#$pro##\nDespliegas e interactuas con todos los desplegables un #{skill_color}#$skill_value_p1## más rápido adicional.\nTodos los jugadores interactuan con desplegables #{skill_color}#$skill_value_p2## más rápido.\n\n#{risk}#NOTA: Las habilidades de equipo no se acumulan.##",
-	
+
 				--Nerves of Steel--
 				["menu_fast_fire_beta_sc"] = "Nervios de Acero",
 				["menu_fast_fire_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nPuedes #{skill_color}#apuntar al ser incapacitado.##\n\nAS: #{owned}#$pro##\nObtienes una bonificación de #{skill_color}#$skill_value_p1## de resistencia al daño mientras interactuas con objetos.",
-	
+
 				--Engineering
 				["menu_eco_sentry_beta_sc"] = "Ingeniería",
 				["menu_eco_sentry_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nTus torretas obtienen #{skill_color}#$skill_value_b1## de salud extra.\n\nAS: #{owned}#$pro##\nTus torretas obtienen #{skill_color}#$skill_value_p1## de salud extra adicional.",
-	
+
 				--Jack of all Trades
 				["menu_jack_of_all_trades_beta_sc"] = "Todólogo",
 				["menu_jack_of_all_trades_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nPuedes llevar un #{skill_color}#$skill_value_b1## más de arrojadizas.\n\n#{risk}#NOTA: No aplica a arrojadizas de talentos.##\n\nAS: #{owned}#$pro##\n#{skill_color}#Puedes llevar un desplegable secundario contigo.## Presiona #{skill_color}#$BTN_CHANGE_EQ## para alternar entre desplegables.\n\nSolo podrás llevar un #{important_1}#50%## de dicho desplegable al equiparlo como secundario, hasta un mínimo de #{skill_color}#1.##",
-	
+
 				--Sentry Tower Defense--
 				["menu_tower_defense_beta_sc"] = "Defensa de Torre-Ta",
 				["menu_tower_defense_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nPuedes alternar el modo de disparo de tus torretas para usar #{skill_color}#munición AP##, esta reduce la cadencia por un #{skill_color}#66%## permitiendole atravesar enemigos y escudos.\n\nAS: #{owned}#$pro##\nPuedes llevar un máximo de #{skill_color}#$skill_value_p1## torretas.\n\nLas torretas ahora usarán #{skill_color}#35%## de tu munición máxima al desplegarse.",
-	
+
 				--Bulletproof--
 				["menu_iron_man_sc"] = "A Prueba de Balas",
 				["menu_iron_man_desc_sc"] = "BÁSICA: #{owned}#$basic##\nNo puedes recibir daño a la salud hasta que se haya roto tu blindaje.\n\n#{risk}#NOTA: No bloquea el daño por caída, el daño de tu propio equipamiento ni el daño recibido al ser derribado por patadas de Cloaker y descargas de Taser.##\n\nAS: #{owned}#$pro##\nMientras tu blindaje esté completo, el daño recibido se reduce en un número de puntos equivalente a #{skill_color}#$skill_value_p1## de tu blindaje máximo.\n\nTu blindaje se regenera #{skill_color}#$skill_value_p2## más rápido. $anarc_disable",
@@ -5477,23 +5497,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 				--Silent Drilling--
 				["menu_hardware_expert_beta_sc"] = "Experto en Herramientas",
 				["menu_hardware_expert_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nTus #{skill_color}#taladros y sierras no emiten ruido##, civiles y guardias deben verlos para alertarse.\n\nAS: #{owned}#$pro##\nArreglas taladros y sierras un #{skill_color}#$skill_value_p1## más rápido.",
-	
+
 				--Demoman
 				["menu_trip_mine_expert_beta_sc"] = "Demoman",
 				["menu_combat_engineering_desc_sc"] = "BÁSICA: #{owned}#$basic##\nPuedes desplegar hasta #{skill_color}#6## cargas huecas.\n\nDespliegas cargas huecas y minas sensor un #{skill_color}#$skill_value_b1## más rápido.\n\nAS: #{owned}#$pro##\nPuedes desplegar hasta #{skill_color}#8## cargas huecas.\n\nEl alcance de explosión de tus minas sensor es incrementado por un #{skill_color}#$skill_value_p1.##",
-	
+
 				--Drill Sawgeant
 				["menu_drill_expert_beta_sc"] = "Sierralanzataladros",
 				["menu_drill_expert_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nEl tiempo que tardan tus taladros, sierras, y lanzas térmicas para finalizar es reducido por un #{skill_color}#$skill_value_b1.##\n\nAS: #{owned}#$pro##\nLa reducción de tiempo es aumentada un #{skill_color}#$skill_value_p1.##",
-	
+
 				--Fire Trap--
 				["menu_more_fire_power_sc"] = "Trampas Incendiarias",
 				["menu_more_fire_power_desc_sc"] = "BÁSICA: #{owned}#$basic##\nTus minas sensor dispersan fuego al detonar por #{skill_color}#10## segundos en un radio de #{skill_color}#7.5## metros.\n\nEl fuego producido por las minas no inflige daño a jugadores o aliados.\n\nAS: #{owned}#$pro##\nPuedes desplegar #{skill_color}#10## minas sensor.\n\nTus minas infligen #{skill_color}#50%## de daño extra.",
-	
+
 				--Expert Hardware
 				["menu_kick_starter_beta_sc"] = "Hardware Experto",
 				["menu_kick_starter_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nAl romperse, tus taladros sierras y lanzas térmicas tienen un #{skill_color}#$skill_value_b1## de probabilidad de reiniciarse automáticamente.\n\nAS: #{owned}#$pro##\nLa probabilidad es incrementada un #{skill_color}#$skill_value_p1## adicional.\n\nEnemigos que intenten sabotear tus sierras o taladros tienen un #{skill_color}#$skill_value_p2## de probabilidad de ser electrocutados, deteniendo su intento de sabotaje.",
-	
+
 				--Kickstarter
 				["menu_fire_trap_beta_sc"] = "Golpe de Arranque",
 				["menu_fire_trap_beta_desc_sc"] = "BÁSICA: #{owned}#$basic##\nPuedes reiniciar taladros, sierras o lanzas térmicas con un ataque cuerpo a cuerpo.\n\nPuedes intentarlo #{skill_color}#1## vez por cada vez que se rompan. Esto tiene un #{skill_color}#75%## de probabilidad de funcionar.\n\nAS: #{owned}#$pro##\n#{skill_color}#No guardas tus armas al interactuar con objetos.##\n\nPuedes mirar alrededor, apuntar, y usar tus armas libremente sin detener la interacción, siempre y cuando continúes manteniendo presionada la tecla de interacción y permanezcas dentro del alcance de la interacción.",
@@ -5685,7 +5705,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			frame = 1
 		end
 		if registeredloser or not easterless and butt <= frame then
-			LocalizationManager:add_localized_strings({	
+			LocalizationManager:add_localized_strings({
 				["menu_st_spec_23"] = "Helminth", --Bob: No se si esta seccion es una referencia a algo
 				["menu_st_spec_23_desc"] = "¿Quién te cuida en tus momentos de descanso? ¿Quién restaura tu cuerpo destrozado día tras día? ¿Qué leche enriquece tu carne con fuerza y vigor sin fin?\n\n\n#{important_1}#Sólo puedo ser yo.##",
 				["menu_difficulty_sm_wish"] = "El Camino De Acero",
@@ -5970,29 +5990,29 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_spec_0_desc"] = "Se plantea la hipótesis de que los seres humanos nacen sin ideas, pensamientos o ideologías inherentes y que todos estos son comportamientos aprendidos a partir de diversas experiencias. En algunos aspectos, esto puede causar grandes dificultades; en otros, esto puede verse como una ventaja. El Talento Tabula Rasa ofrece beneficios que pueden no parecer obvios al principio e incluso perjudiciales, pero un desafío mayor a veces puede traer otras recompensas.",
 		["menu_st_spec_0_desc_short"] = "Se plantea la hipótesis de que los seres humanos nacen sin ideas, pensamientos o ideologías inherentes y que todos estos son comportamientos aprendidos a partir de diversas experiencias. En algunos aspectos, esto puede causar grandes dificultades; en otros, esto puede verse como una ventaja. El Talento Tabula Rasa ofrece beneficios que pueden no parecer obvios al principio e incluso perjudiciales, pero un desafío mayor a veces puede traer otras recompensas.",
 		["menu_deck0_1"] = "HOMBRE DE NEGOCIOS",
-		["menu_deck0_1_desc"] = "Los artículos en el mercado negro y los recursos especiales para usar en trabajos cuestan un ##30%## menos.",		
+		["menu_deck0_1_desc"] = "Los artículos en el mercado negro y los recursos especiales para usar en trabajos cuestan un ##30%## menos.",
 		["menu_deck0_2"] = "NEGOCIANTE DEL MERCADO NEGRO",
-		["menu_deck0_2_desc"] = "Los artículos en el mercado negro y los recursos especiales para usar en trabajos cuestan un ##30%## menos adicional.",					
+		["menu_deck0_2_desc"] = "Los artículos en el mercado negro y los recursos especiales para usar en trabajos cuestan un ##30%## menos adicional.",
 		["menu_deck0_3"] = "PRESIDENTES MUERTOS",
-		["menu_deck0_3_desc"] = "El valor de los objetos sueltos que tomes aumenta en ##15%##.",	
+		["menu_deck0_3_desc"] = "El valor de los objetos sueltos que tomes aumenta en ##15%##.",
 		["menu_deck0_4"] = "DÍA DEL VETERANO",
 		["menu_deck0_4_desc"] = "El valor de los objetos sueltos que tomes aumenta en ##15%## adicional.",
 		["menu_deck0_5"] = "LUBRICANTE PARA NOVATOS",
-		["menu_deck0_5_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",	
+		["menu_deck0_5_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",
 		["menu_deck0_6"] = "APRENDIZ HÁBIL",
-		["menu_deck0_6_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",		
+		["menu_deck0_6_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",
 		["menu_deck0_7"] = "DR. FANTÁSTICO",
-		["menu_deck0_7_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",			
+		["menu_deck0_7_desc"] = "Obtienes ##45%## de experiencia adicional al completar días y trabajos.",
 		["menu_deck0_8"] = "TRÉBOL DE CUATRO HOJAS",
 		["menu_deck0_8_desc"] = "Tu probabilidad de obtener un objeto infame en un Payday es aumentada por un ##10%.##",
 		["menu_deck0_9"] = "AMULETO DE LA SUERTE",
-		["menu_deck0_9_desc"] = "Tu probabilidad de obtener un objeto infame en un Payday es aumentada por un ##20%.## adicional",		
-		
+		["menu_deck0_9_desc"] = "Tu probabilidad de obtener un objeto infame en un Payday es aumentada por un ##20%.## adicional",
+
 		["menu_st_spec_00"] = "INNATAE",
 		["menu_st_spec_00_desc"] = "Otros argumentarían que la mente tiene instintos y conocimientos inherentes, que las personas en realidad no son un lienzo en blanco. El Innatae tiene las habilidades básicas que todo buen ladrón de bancos debería tener, dejando solo espacio para obtener beneficios personales. Estas convicciones, como cualquier otra cosa, tienen un costo para uno mismo. ¿Es este el costo de ceder a nuestros propios instintos primitivos?",
 		["menu_st_spec_00_desc_short"] = "Otros argumentarían que la mente tiene instintos y conocimientos inherentes, que las personas en realidad no son un lienzo en blanco. El Innatae tiene las habilidades básicas que todo buen ladrón de bancos debería tener, dejando solo espacio para obtener beneficios personales. Estas convicciones, como cualquier otra cosa, tienen un costo para uno mismo. ¿Es este el costo de ceder a nuestros propios instintos primitivos?",
 		["menu_deck00_9_desc"] = "Tu probabilidad de obtener un objeto infame en un Payday es aumentada por un ##20%.##",
-		
+
 		["rpd_menu_button"] = "Reiniciar Talento",
 		["rpd_menu_dialog_title"] = "¿Estás seguro?",
 		["rpd_menu_dialog_text"] = "Si reinicias el talento $perk_deck_name, se te reembolsarán $points_to_refund puntos de talento.",
@@ -6004,7 +6024,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--MOD PERK DECKS
 			--OFFYERROCKER'S MERCENARY PERK DECK
 				["menu_deck_kmerc_1_desc_sc"] = "Reduce el daño de golpes pesados a tu salud considerablemente de forma que ningún ataque único pueda matarte.\n\nObtienes una bonificación de ##5%## de salud.",
-				["menu_deck_kmerc_3_desc_sc"] = "Obtienes una bonificación de ##1%## de velocidad de recarga y ##2%## de velocidad de cambio de armas por cada ##4## puntos de blindaje que tengas.\n\nObtienes una bonificación de ##5%## de blindaje.",	
+				["menu_deck_kmerc_3_desc_sc"] = "Obtienes una bonificación de ##1%## de velocidad de recarga y ##2%## de velocidad de cambio de armas por cada ##4## puntos de blindaje que tengas.\n\nObtienes una bonificación de ##5%## de blindaje.",
 				["menu_deck_kmerc_5_desc_sc"] = "Cuando tu salud llega ##0##, en vez de ser incapacitado, se convierte en ##1## de salud y obtienes ##2## segundos de invulnerabilidad.\n\nNo puedes esprintar mientras estás bajo los efectos de esta invulnerabilidad.\n\nEsto no puede volver a ocurrir hasta que hayas recuperado toda la salud.\n\nObtienes una bonificación de ##5%## de salud.",
 				["menu_deck_kmerc_7_desc_sc"] = "Después de tener blindaje por almenos ##2## segundos, regenera salud equivalente a ##1%## de tu blindaje máximo cada ##5## segundos mientras tu blindaje no está roto.",
 				["menu_deck_kmerc_9_desc_sc"] = "Al recibir daño de salud que te deje con ##30%## de salud o menos, regenera ##50%## de ese daño como blindaje.\nEsto no puede ocurrir más de una vez cada ##1## segundo o por el mismo golpe que activa la invulnerabilidad de Walk It Off's (Carta 5).",

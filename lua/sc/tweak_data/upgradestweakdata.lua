@@ -542,10 +542,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4.25
 	}
 
-	self.values.player.body_armor.regen_delay[9] = 8.5
-	self.values.player.body_armor.deflection[9] = 0.00
-	self.values.player.body_armor.dodge_grace[9] = 1
-
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
@@ -908,8 +904,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.automatic_kills_to_damage_reset_t = 1.2 --delay to reset time (seconds)
 				self.values.smg.automatic_kills_to_damage = {
 					{
-						3, --stack limit
-						0.16667 --dmg mult add
+						4, --stack limit
+						0.125 --dmg mult add
 					}
 				}
 				--Unused
@@ -1329,10 +1325,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Rifleman
 				--Basic/Aced
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.9, 0.8}
-					self.values.snp.steelsight_accuracy_inc = {0.9, 0.8}
-					self.values.assault_rifle.steelsight_range_inc = {1.1, 1.2}
-					self.values.snp.steelsight_range_inc = {1.1, 1.2}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.875, 0.75}
+					self.values.snp.steelsight_accuracy_inc = {0.875, 0.75}
+					self.values.assault_rifle.steelsight_range_inc = {1.125, 1.25}
+					self.values.snp.steelsight_range_inc = {1.125, 1.25}
 
 					self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.075}
 					self.values.snp.enter_steelsight_speed_multiplier = {1.075}
@@ -1365,8 +1361,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ ammo = 0.03, time = 8, headshots = 3, to_magazine = false }, --Basic
-					{ ammo = 0.03, time = 12, headshots = 2, to_magazine = false } --Ace
+					{ ammo = 0.03, max = 8, time = 8, headshots = 3, to_magazine = false }, --Basic
+					{ ammo = 0.03, max = 8, time = 8, headshots = 2, to_magazine = true } --Ace
 				}
 				
 				self.skill_descs.fast_fire = {
@@ -1393,17 +1389,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						damage_factor_range = 0.10,
 						range_increment = 800
 					}
-				}			
+				}
+				self.headshot_graze_proc_cd = 0.5
 				self.values.player.headshot_no_falloff = {true}
+				self.headshot_no_falloff_cd = 0.0
 				
 				self.skill_descs.body_expertise = {
 					skill_value_b1 = tostring(self.values.snp.graze_damage[1].damage_factor * 100).."%", -- Minimal ricochet damage
 					skill_value_b2 = tostring((self.values.snp.graze_damage[1].radius) / 100), -- Minimal radius (in meters) to ricochet
 					skill_value_b3 = tostring(self.values.snp.graze_damage[1].range_increment / 100), -- Give bonus damage and enemy chain for every X meters.
 					skill_value_b4 = tostring(self.values.snp.graze_damage[1].max_chain), -- Max ricochet chain possible
+					skill_value_b5 = tostring(self.headshot_graze_proc_cd), -- chain cd
 					skill_value_p1 = tostring((self.values.snp.graze_damage[2].radius - self.values.snp.graze_damage[1].radius) / 100), -- This is how much increased (in meters) minimal radius
 					skill_value_p2 = tostring(self.values.snp.graze_damage[2].damage_factor_range * 100).."%", -- Ricochet damage increase for every X meters
-					skill_value_p3 = "100%" -- Max ricochet damage
+					skill_value_p3 = "100%", -- Max ricochet damage
+					skill_value_p4 = tostring(self.headshot_no_falloff_cd) -- no falloff cd
 				}
 
 	--GHOST--
@@ -1521,7 +1521,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Moving Target
 				--Basic
-				self.values.player.steelsight_move_speed_multiplier = {1.5} --Movement speed while ADSing.
+				self.values.player.steelsight_move_speed_multiplier = {0.35} --Movement speed penalty reduction while ADSing.
 				
 				self.values.player.detection_risk_add_movement_speed = {
 					{ --Basic
@@ -1548,7 +1548,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					skill_value_b2 = tostring(self.values.player.detection_risk_add_movement_speed[1][2]), -- movement speed per concealment
 					skill_value_b3 = tostring(self.values.player.detection_risk_add_movement_speed[1][4]), -- concealment tresholder for movement speed
 					skill_value_b4 = tostring(self.values.player.detection_risk_add_movement_speed[1][5] * 100).."%", -- max possible movement speed
-					skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] % 1 * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
+					skill_value_b5 = tostring(self.values.player.steelsight_move_speed_multiplier[1] * 100).."%", -- Movement speed while ADSing. (yes, I copy pasted this comment)
 					skill_value_p1 = tostring(self.values.player.detection_risk_add_movement_speed[2][1] * 100).."%", 
 					skill_value_p2 = tostring(self.values.player.detection_risk_add_movement_speed[2][2]),
 					skill_value_p3 = tostring(self.values.player.detection_risk_add_movement_speed[2][4]), 
@@ -1749,23 +1749,29 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				--Ace
 					self.values.pistol.swap_speed_multiplier = {2}
+					self.values.akimbo.swap_speed_multiplier = {1.5}
 					
 					self.skill_descs.equilibrium = {
 					skill_value_b1 = tostring(self.values.team.pistol.recoil_index_addend[1]), -- +Stability
-					skill_value_p1 = tostring((self.values.pistol.swap_speed_multiplier[1] - 1) * 100).."%" -- Swap speed bonus
+					skill_value_p1 = tostring((self.values.pistol.swap_speed_multiplier[1] - 1) * 100).."%", -- Swap speed bonus
+					skill_value_p2 = tostring((self.values.akimbo.swap_speed_multiplier[1] - 1) * 100).."%", -- Swap speed bonus
 					}
 				
 			--Gun Nut	
 				--Basic
-					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
+					self.values.pistol.hip_fire_spread_multiplier = {0.8}
+					self.values.akimbo.hip_fire_spread_multiplier = {0.8}
 				--Ace
 					self.values.pistol.fire_rate_multiplier = {1.15}
 					self.values.pistol.ap_bullets = {1.0}
+					self.values.akimbo.ap_bullets = {0.5}
 					
 					self.skill_descs.dance_instructor = {
 						skill_value_b1 = tostring((1 - self.values.pistol.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
+						skill_value_b2 = tostring((1 - self.values.akimbo.hip_fire_spread_multiplier[1]) * 100).."%", -- Reduce hipfire spread
 						skill_value_p1 = tostring(self.values.pistol.fire_rate_multiplier[1] % 1 * 100).."%", -- RoF bonus
-						skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%" -- AP boost
+						skill_value_p2 = tostring(self.values.pistol.ap_bullets[1] * 100).."%", -- AP boost
+						skill_value_p3 = tostring(self.values.akimbo.ap_bullets[1] * 100).."%", -- AP boost
 					}
 
 			--Gunfighter
@@ -1982,8 +1988,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					}
 
 	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
-	if Global.game_settings and Global.game_settings.single_player then
-		self.values.player.corpse_dispose_amount = {4, 5}
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global.game_settings and Global.game_settings.single_player then
+			self.values.player.corpse_dispose_amount = {4, 5}
+		end
 	end
 	
 	--Just to stop a softlock
@@ -2054,9 +2062,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
 		0.85, --Armorer Exclusive
-		0.8, --Unused
-		0.75, --Unused
-		0.7 --Unused
+
+		0.95, --Copycat
+
+		--Unused
+		0.9,
+		0.9
 	}
 
 	--Hitman
@@ -3244,7 +3255,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		perk_value_2 = tostring(self.values.player.corpse_dispose_speed_multiplier[1] * 100).."%" -- Faster interaction with civs + bagging corpses
 	}
 	self.multi_choice_specialization_descs[23][9][3] = { --Armorer
-		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[1]) * 100).."%", -- Armor regen buff
+		perk_value_1 = tostring((1 - self.values.player.perk_armor_regen_timer_multiplier[3]) * 100).."%", -- Armor regen buff
 		perk_value_2 = "2" -- Body bag cases quantity. Not defined here so beware
 	}
 	self.multi_choice_specialization_descs[23][9][4] = { --Rogue
@@ -3435,6 +3446,8 @@ function UpgradesTweakData.mrwi_deck9_options()
 			desc_id = "menu_deck3_mrwi_desc",
 			upgrades = {
 				"player_perk_armor_regen_timer_multiplier_1",
+				"player_perk_armor_regen_timer_multiplier_2",
+				"player_perk_armor_regen_timer_multiplier_3",
 				"bodybags_bag_quantity",
 				"player_passive_loot_drop_multiplier_1"	
 			}
@@ -4728,11 +4741,40 @@ function UpgradesTweakData:_player_definitions()
 		name_id = "menu_player_melee_kill_stamina",
 		category = "feature",
 		upgrade = {
-			value = 2,
+			value = 1,
 			upgrade = "melee_kill_stamina",
 			category = "player"
 		}
 	}
+
+	self.definitions.akimbo_swap_speed_multiplier_1 = {
+		name_id = "menu_akimbo_swap_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "swap_speed_multiplier",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_ap_bullets_1 = {
+		name_id = "menu_akimbo_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "akimbo"
+		}
+	}
+	self.definitions.akimbo_hip_fire_spread_multiplier_1 = {
+		name_id = "menu_akimbo_hip_fire_spread_multiplier_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hip_fire_spread_multiplier",
+			category = "akimbo"
+		}
+	}
+
 
 	self.definitions.pistol_swap_speed_multiplier_1 = {
 		name_id = "menu_pistol_swap_speed_multiplier",
@@ -4884,7 +4926,7 @@ function UpgradesTweakData:_player_definitions()
 	}
 	self.definitions.player_steelsight_move_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
-		category = "player",
+		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "steelsight_move_speed_multiplier",

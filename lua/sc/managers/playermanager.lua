@@ -779,9 +779,9 @@ function PlayerManager:check_skills()
 	end
 
 	if self:has_category_upgrade("player", "special_double_drop") then
-		self._message_system:register(Message.OnEnemyKilled, "special_double_ammo_drop", callback(self, self, "_on_spawn_special_ammo_event"))
+		self._message_system:register(Message.OnLethalHeadShot, "special_double_ammo_drop", callback(self, self, "_on_spawn_special_ammo_event"))
 	else
-		self._message_system:unregister(Message.OnEnemyKilled, "special_double_ammo_drop")
+		self._message_system:unregister(Message.OnLethalHeadShot, "special_double_ammo_drop")
 	end
 
 	if self:has_category_upgrade("temporary", "headshot_fire_rate_mult") then
@@ -1197,8 +1197,10 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 	end
 end
 
---Professional aced extra ammo when killing specials and elites.
-function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
+--Professional aced extra ammo when killing specials and elites with headshots.
+function PlayerManager:_on_spawn_special_ammo_event(attack_data)
+	local variant = attack_data.variant
+	local killed_unit = attack_data.col_ray and attack_data.col_ray.unit
 	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and variant and variant == "bullet" then
 		local tracker = killed_unit.movement and killed_unit:movement():nav_tracker()
 	    local position = tracker and tracker:lost() and tracker:field_position() or tracker:position()
@@ -1282,6 +1284,10 @@ end
 function PlayerManager:check_enduring()
 	if not self._assaults_to_extra_revive then
 		self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
+		
+		if restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+			self._assaults_to_extra_revive = 2
+		end
 	end
 
 	if self._assaults_to_extra_revive and alive(self:player_unit()) then
@@ -1509,4 +1515,23 @@ function PlayerManager:add_cable_ties(amount)
 	end
 
 	self:update_synced_cable_ties_to_peers(new_amount)
+end
+
+-- Tag Team: tagged player will hear activation sound
+Hooks:PostHook(PlayerManager, "sync_tag_team", "sync_tag_team_sound_effect", function(self, tagged, owner, end_time)
+	if tagged == self:local_player() then
+		self:local_player():sound():play(tweak_data.blackmarket.projectiles.tag_team.sounds.activate)
+	end
+end)
+
+-- Make cooldown for picking up bags consistent instead of random
+local drop_carry_original = PlayerManager.drop_carry
+function PlayerManager:drop_carry(...)
+	local carry_data = self:get_my_carry_data()
+
+	drop_carry_original(self, ...)
+
+	if carry_data then
+		self._carry_blocked_cooldown_t = Application:time() + 0.5
+	end
 end

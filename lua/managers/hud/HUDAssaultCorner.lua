@@ -132,18 +132,18 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	corner2:set_top(-104)
 	corner2:set_rotation(45)
-	local corner_title = corner_panel:text({ 
-		name="corner_title", 
-		text="ASSAULT", 
-		layer = 11, 
-		valign="top", 
-		align = "center", 
-		vertical = "center", 
-		x = 0, 
-		y = 0, 
-		color = self._assault_corner2_color, 
-		font_size = 28, 
-		font = "fonts/font_medium_shadow_mf" 
+	local corner_title = corner_panel:text({
+		name="corner_title",
+		text="ASSAULT",
+		layer = 11,
+		valign="top",
+		align = "center",
+		vertical = "center",
+		x = 0,
+		y = 0,
+		color = self._assault_corner2_color,
+		font_size = 28,
+		font = "fonts/font_medium_shadow_mf"
 		})
 	corner_title:set_rotation(45)
 	corner_title:set_top(-38)
@@ -174,13 +174,13 @@ function HUDAssaultCorner:init(hud, full_hud)
 		font_size = tweak_data.hud_corner.numhostages_size * 1.5
 	})
 	local texture, rect = tweak_data.hud_icons:get_icon_data( "interaction_trade" )
-	local hostages_icon = hostages_panel:bitmap({ 
-		name = "hostages_icon", 
-		texture = texture, 
-		texture_rect = rect, 
-		valign="top", 
-		layer = 1, 
-		x = hostages_panel:w() - num_hostages:w() - rect[4], 
+	local hostages_icon = hostages_panel:bitmap({
+		name = "hostages_icon",
+		texture = texture,
+		texture_rect = rect,
+		valign="top",
+		layer = 1,
+		x = hostages_panel:w() - num_hostages:w() - rect[4],
 		y = 0
 	})
 	----------------------------
@@ -226,7 +226,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 			},
 			valign = "top",
 			layer = 1,
-			x = wave_panel:w() - num_waves:w() - 64, 
+			x = wave_panel:w() - num_waves:w() - 64,
 			y = 0
 		})
 	end
@@ -350,16 +350,18 @@ function HUDAssaultCorner:init(hud, full_hud)
 	if self._captain and self._captain.icon then
 		buff_icon = self._captain.icon
 	end
-	
+
+	buff_icon = managers.mutators:modify_value("HUDAssaultCorner:NewCaptainIcon", buff_icon)
+
 	--Always gonna be HVH now
 	if restoration.force_halloween then
 		buff_icon = "guis/textures/pd2/hud_buff_halloween"
-	end	
+	end
 
-	if managers.skirmish:is_skirmish() then		
+	if managers.skirmish:is_skirmish() then
 		buff_icon = "guis/textures/pd2/hud_buff_generic"
 	end
-	
+
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,
 		name = "buffs_pad_panel",
@@ -396,7 +398,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	vip_icon_:set_y(15)
 	vip_icon_:set_x(0)
-	
+
 	local texture_new = "guis/textures/restoration/objective"
 	local buff_start = buffs_pad_panel:bitmap( { name = "buff_start", texture = texture_new, color = self._vip_assault_color, texture_rect = { 0, 0, 13, 64 }, layer = 1} )
 	local buff_mid = buffs_pad_panel:bitmap( { name = "buff_mid", texture_rect = { 19, 0, 33, 64 }, color = self._vip_assault_color, layer = 1, texture = texture_new} )
@@ -419,7 +421,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 
 	RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 	self:RestorationValueChanged()
-	
+
 	if managers.skirmish:is_skirmish() then
 		self._assault_color = tweak_data.screen_colors.skirmish_color
 	end
@@ -434,7 +436,7 @@ function HUDAssaultCorner:RestorationValueChanged()
 	point:child("point_of_no_return_text"):set_color(point_color)
 	point:child("point_of_no_return_timer"):set_color(point_color)
 	self._noreturn_color = point_color
-	
+
 	local hostages = self._hud_panel:child("hostages_panel")
 	local hostages_color = restoration.Options:GetValue("HUD/Colors/HostagesText")
 	hostages:child("hostages_icon"):set_color(hostages_color)
@@ -457,7 +459,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 		if type(text_id) == "string" then
 
 			local tab = {}
-			
+
 			if self._casing then
 				tab = self._custom_lines_casing
 			elseif self._assault then
@@ -529,7 +531,7 @@ function HUDAssaultCorner:_animate_text(text_panel, bg_box, color, color_functio
 				data.x = data.x - dt * self._tape_speed
 				data.text:set_center_x( math.cos(30) * data.x )
 				data.text:set_center_y( math.sin(30) * (data.x - text_panel:w()*0.5) + y )
-				
+
 				if( data.x + data.text:w()*0.5 < 0 ) then
 					text_panel:remove( data.text )
 					data.text = nil
@@ -576,26 +578,26 @@ function HUDAssaultCorner:_update_assault_hud_color(color)
 end
 
 function HUDAssaultCorner:_animate_assault( assault_panel )
-	
+
 	local dt = 0
-	
+
 	local entering = true
-	
+
 	local offset = 6
 	local tape_center_x = assault_panel:parent():w() - offset
 	local tape_center_y = 0 + offset
 	local offscreen_pos = offset + 200
 	local current_pos = offscreen_pos
-	
+
 	assault_panel:set_center( tape_center_x + current_pos, tape_center_y - current_pos )
 	while true do
 		dt = coroutine.yield()
-		
+
 		self._tape_speed = 90
 		if( not self._assault ) then
 			current_pos = current_pos + dt * (130+offset)
 			assault_panel:set_center( tape_center_x + current_pos, tape_center_y - current_pos )
-			
+
 			if( current_pos >= offscreen_pos ) then
 				if self._remove_hostage_offset then
 					self:_set_hostage_offseted(false)
@@ -606,7 +608,7 @@ function HUDAssaultCorner:_animate_assault( assault_panel )
 		elseif( entering ) then
 			current_pos = current_pos - dt * (130+offset)
 			assault_panel:set_center( tape_center_x + current_pos, tape_center_y - current_pos )
-			
+
 			self._tape_speed = math.lerp( 1240, 90, ((offscreen_pos-current_pos)/offscreen_pos)^2 )
 			if( current_pos <= 0 ) then
 				assault_panel:set_center( tape_center_x, tape_center_y )
@@ -615,7 +617,7 @@ function HUDAssaultCorner:_animate_assault( assault_panel )
 			end
 		end
 	end
-	
+
 end
 
 function HUDAssaultCorner:sync_start_assault(assault_number)
@@ -648,7 +650,7 @@ end
 function HUDAssaultCorner:set_assault_wave_number(assault_number)
 	self._wave_number = assault_number
 	local panel = self._hud_panel:child("wave_panel")
-	local num_wave_count = managers.network:session():is_host() and managers.groupai:state():get_assault_number() or self._wave_number	
+	local num_wave_count = managers.network:session():is_host() and managers.groupai:state():get_assault_number() or self._wave_number
 	print("found panel")
 	if panel then
 		local wave_text = panel:child("num_waves")
@@ -761,7 +763,7 @@ function HUDAssaultCorner:_start_assault(text_list)
 	if self:has_waves() then
 	self._hud_panel:child("wave_panel"):set_visible(true)
 	end
-	
+
 	if managers.skirmish:is_skirmish() and started_now then
 		self:_popup_wave_started()
 	end
@@ -778,7 +780,7 @@ function HUDAssaultCorner:_animate_assault_corner( corner_panel )
 		corner:set_color( corner:color():with_alpha( a ) )
 		corner2:set_color( corner2:color():with_alpha( 0.25 ) )
 		corner_title:set_color( Color( a, 0, 0.8-a ) )
-		if self._assault_mode == "phalanx" then	
+		if self._assault_mode == "phalanx" then
 			corner_title:set_color( Color.white:with_alpha ( a ) )
 		end
 		-- o:set_color( o:color():with_alpha( 0.5 + (math.sin( Application:time()*750 )+1)/4 ) )
@@ -825,7 +827,7 @@ function HUDAssaultCorner:_end_assault()
 		self:_update_assault_hud_color(self._assault_survived_color)
 		self:_set_text_list(self:_get_survived_assault_strings())
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
-		self._hud_panel:child("wave_panel"):set_visible(true)		
+		self._hud_panel:child("wave_panel"):set_visible(true)
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
 		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
 			corner_panel:child( "corner" ):set_color(self._wave_corner_color)
@@ -834,7 +836,7 @@ function HUDAssaultCorner:_end_assault()
 			corner_panel:set_visible(true)
 			corner_panel:animate(callback(self, self, "_animate_wave_corner"))
 		end
-		
+
 		if managers.skirmish:is_skirmish() then
 			self:_popup_wave_finished()
 		end
@@ -936,11 +938,28 @@ function HUDAssaultCorner:set_control_info(data)
 	self._hud_panel:child( "hostages_panel" ):child( "num_hostages" ):set_text( ""..data.nr_hostages )
 end
 function HUDAssaultCorner:feed_point_of_no_return_timer(time, is_inside)
+	local point_of_no_return_panel = self._hud_panel:child("point_of_no_return_panel")
+	local point_of_no_return_text = point_of_no_return_panel:child("point_of_no_return_text")
+	local point_of_no_return_timer = point_of_no_return_panel:child("point_of_no_return_timer")
 	time = math.floor(time)
 	local minutes = math.floor(time / 60)
 	local seconds = math.round(time - minutes * 60)
 	local text = (minutes < 10 and "0" .. minutes or minutes) .. ":" .. (seconds < 10 and "0" .. seconds or seconds)
+
 	self._hud_panel:child("point_of_no_return_panel"):child("point_of_no_return_timer"):set_text(text)
+	if self._is_inside_ponr ~= is_inside then
+        local color = is_inside and self._assault_survived_color or self._noreturn_data.color
+
+        if point_of_no_return_timer.set_color then
+            point_of_no_return_timer:set_color(color)
+        end
+
+        if point_of_no_return_text.set_color then
+            point_of_no_return_text:set_color(color)
+        end
+    end
+
+    self._is_inside_ponr = is_inside
 end
 function HUDAssaultCorner:show_point_of_no_return_timer(id)
 	local delay_time = self._assault and 1.2 or 0
@@ -966,9 +985,10 @@ function HUDAssaultCorner:flash_point_of_no_return_timer(beep)
 		while t < 0.5 do
 			t = t + coroutine.yield()
 			local n = 1 - math.sin(t * 180)
-			local r = math.lerp(self._noreturn_color.r, 1, n)
-			local g = math.lerp(self._noreturn_color.g, 0.8, n)
-			local b = math.lerp(self._noreturn_color.b, 0.2, n)
+			local color = self._is_inside_ponr and self._assault_survived_color or self._noreturn_data.color
+			local r = math.lerp(color.r, 1, n)
+			local g = math.lerp(color.g, 0.8, n)
+			local b = math.lerp(color.b, 0.2, n)
 			o:set_color(Color(r, g, b))
 			o:set_font_size(math.lerp(50, 50 * 1.25, n))
 		end

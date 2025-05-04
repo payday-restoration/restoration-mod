@@ -1,0 +1,6 @@
+<mod name="ResMod Logo Charm" min_lib_ver="3.38">
+    <GlobalValue id="vavlo_says_hi" color="Color(0.01, 0.38, 0.02)"/>	
+	<Localization directory="loc" default="english.txt"/>
+	<WeaponMod id="resmod_logo" based_on="wpn_fps_upg_charm_cloaker" global_value="vavlo_says_hi" a_obj="a_charm" type="charm" inherit_weapons="true" inherit_adds="true" inherit_override="true" inherit_parts_forbids="true" inherit_parts_override="true" ver="2"/>
+	<AddFiles directory="assets" auto_generate="true"/>
+</mod>

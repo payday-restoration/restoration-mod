@@ -1,9 +1,12 @@
 Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
+	--Increase default interaction distance resulting from being slightly taller in Resmod, just in case.
+	self.INTERACT_DISTANCE = 215
+
 	--Safehouse Boost for returning LVL100+ users	
 	self.res_saveboost = {}
 	self.res_saveboost.text_id = "res_saveboost"
 	self.res_saveboost.action_text_id = "res_saveboost_action"
-	self.res_saveboost.timer = 5
+	self.res_saveboost.timer = 5	
 	
 	--Levels--
 	
@@ -602,7 +605,7 @@ Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	self.doctor_bag.blackout_vulnerable = true
 	self.first_aid_kit.blackout_vulnerable = true
 	self.bodybags_bag.blackout_vulnerable = true
-	self.ecm_jammer.blackout_vulnerable = true
+	self.ecm_jammer.blackout_vulnerable = false
 	self.trip_mine.blackout_vulnerable = true
 	self.grenade_briefcase.blackout_vulnerable = true
 	self.grenade_crate.blackout_vulnerable = true

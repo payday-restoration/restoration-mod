@@ -1,7 +1,7 @@
 local Net = _G.LuaNetworking
 
 --Place grenade case
-Hooks:Add("NetworkReceivedData", "PlaceGrenadeCrate", function(sender, id, data)	
+Hooks:Add("NetworkReceivedData", "PlaceGrenadeCrate", function(sender, id, data)
 	if id == "PlaceGrenadeCrate" then
 
 		--Put the data into an array
@@ -20,7 +20,7 @@ Hooks:Add("NetworkReceivedData", "PlaceGrenadeCrate", function(sender, id, data)
 						table.insert(TempDataArray, tonumber(i))
 					end
 					local pos = Vector3(TempDataArray[1],TempDataArray[2],TempDataArray[3])
-					
+
 					--Rot
 					local TempDataArray = {}
 					for i in string.gmatch(DataArray[2], "[^(,)]+") do
@@ -46,13 +46,13 @@ Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
 	if id == "environments_all" then
 		local env_data = data and (data ~= "") and LuaNetworking:StringToTable(data)
 		if env_data then
-			if sender == 1 then 
+			if sender == 1 then
 				log("**********************************************************Received EnvironmentSync with results: ")
-				PrintTable(env_data)
+				Utils.PrintTable(env_data)
 				log("**********************************************************End. HEY SOMEONE WHO ISN'T ME REMEMBER TO CALL THE THINGY THAT SWAPS OUT THE ENVIRONMENTS FROM HERE, entry.lua")
-			
+
 				for key,setting in pairs(env_data) do
-					if restoration.Environment_Settings_Table[key] ~= nil then 
+					if restoration.Environment_Settings_Table[key] ~= nil then
 						restoration.Environment_Settings_Table[key] = setting
 					end
 				end
@@ -60,6 +60,21 @@ Hooks:Add("NetworkReceivedData", "SyncEnv", function(sender, id, data)
 		end
 	end
 end)
+
+tweak_data.upgrades.values.player.body_armor.armor[9] = 25
+tweak_data.upgrades.values.player.body_armor.movement[9] = 0.4
+tweak_data.upgrades.values.player.body_armor.dodge[9] = -0.5
+tweak_data.upgrades.values.player.body_armor.concealment[9] = -2
+tweak_data.upgrades.values.player.body_armor.damage_shake[9] = 0.1
+tweak_data.upgrades.values.player.body_armor.stamina[9] = 0.3
+tweak_data.upgrades.values.player.body_armor.skill_ammo_mul[9] = 1.22
+tweak_data.upgrades.values.player.body_armor.regen_delay[9] = 5.5
+tweak_data.upgrades.values.player.body_armor.deflection[9] = 0.00
+tweak_data.upgrades.values.player.body_armor.dodge_grace[9] = 1
+tweak_data.upgrades.values.player.body_armor.skill_max_health_store[9] = 0.2
+tweak_data.upgrades.values.player.body_armor.skill_kill_change_regenerate_speed[9] = 1.01
+tweak_data.upgrades.values.player.armor_grinding[1][9] = {5.8, 7.25}
+tweak_data.upgrades.values.player.damage_to_armor[1][9] = {10.4, 5}
 
 if GGWEPNENAME then
 	local mod_ids = Idstring("Weapon Rename"):key()
@@ -98,8 +113,8 @@ if GGWEPNENAME then
 		if weapon_names == 4 then
 			return data.name_localized
 		end
-		if factory_id == "qwerty_nonsense" then 
-		--Just here so I can organize it without having to mess with the start of this big fuck-off if-else statement 
+		if factory_id == "qwerty_nonsense" then
+		--Just here so I can organize it without having to mess with the start of this big fuck-off if-else statement
 		--Also unsure if there's a way to not YandereDev this given I'm dealing with actual string IDs and not odd/even values
 
 		--[[     PISTOLS     ]]--
@@ -200,7 +215,7 @@ if GGWEPNENAME then
 						return managers.localization:text("bm_w_g36_k")
 					end
 				end
-	
+
 			elseif factory_id == "wpn_fps_ass_aug" then
 				if table.contains(blueprint, "wpn_fps_aug_body_f90") then
 					return managers.localization:text("bm_w_aug_f90")
@@ -220,6 +235,8 @@ if GGWEPNENAME then
 					return managers.localization:text("bm_w_ar23_concussive")
 				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_penetrator") then
 					return managers.localization:text("bm_w_ar23_penetrator")
+				elseif table.contains(blueprint, "wpn_fps_ass_ar23_ck_carbine") then
+					return managers.localization:text("bm_w_ar23_carbine")
 				end
 
 		--[[     BRs     ]]--
@@ -236,7 +253,7 @@ if GGWEPNENAME then
 				elseif table.contains(blueprint, "wpn_fps_ass_contraband_body_mpx") then
 					return managers.localization:text("bm_w_contraband_mpx")
 				end
-	
+
 			elseif factory_id == "wpn_fps_ass_g3" then
 				if table.contains(blueprint, "wpn_fps_upg_i_g3sg1") then
 					if table.contains(blueprint, "wpn_fps_ass_g3_fg_psg") then
@@ -275,17 +292,17 @@ if GGWEPNENAME then
 
 			elseif factory_id == "wpn_fps_ass_galil" then
 				if table.contains(blueprint, "wpn_fps_ass_galil_body_intermediate") then
-					if table.contains(blueprint, "wpn_fps_ass_galil_fg_mar") then 
+					if table.contains(blueprint, "wpn_fps_ass_galil_fg_mar") then
 						return managers.localization:text("bm_w_galil_mar_556")
 					else
 						return managers.localization:text("bm_w_galil_556")
 					end
 				else
-					if table.contains(blueprint, "wpn_fps_ass_galil_fg_sniper") and 
+					if table.contains(blueprint, "wpn_fps_ass_galil_fg_sniper") and
 					table.contains(blueprint, "wpn_fps_ass_galil_g_sniper") and
 					(table.contains(blueprint, "wpn_fps_ass_galil_s_sniper") or table.contains(blueprint, "wpn_fps_ass_galil_s_light")) then
 						return managers.localization:text("bm_w_galil_galatz")
-					elseif table.contains(blueprint, "wpn_fps_ass_galil_fg_mar") then 
+					elseif table.contains(blueprint, "wpn_fps_ass_galil_fg_mar") then
 						return managers.localization:text("bm_w_galil_mar")
 					end
 				end

@@ -51,9 +51,11 @@ Hooks:PostHook(SkirmishManager, "on_start_assault", "ResUpdateKillCounter", func
 		end
 	end
 	--Reduced spawns and kill requirment if playing in Solo offline
-	if Global and Global.game_settings and Global.game_settings.single_player then
-		map_scale_factor = map_scale_factor * 0.75
-	end	
+	if not restoration.Options:GetValue("OTHER/DisableSoloBoons") then
+		if Global and Global.game_settings and Global.game_settings.single_player then
+			map_scale_factor = map_scale_factor * 0.75
+		end	
+	end
 	
 	self._required_kills = managers.groupai:state():_get_balancing_multiplier(tweak_data.skirmish.required_kills_balance_mul) * map_scale_factor * managers.groupai:state():_get_difficulty_dependent_value(tweak_data.skirmish.required_kills)
 end)

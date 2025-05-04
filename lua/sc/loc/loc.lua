@@ -9,7 +9,7 @@ local easterless = restoration and restoration.Options:GetValue("OTHER/GCGPYPMMS
 	local registeredloser = restoration and restoration.Options:GetValue("OTHER/ForceEggs/EmberMyBeloved")
 
 -- ResMod english.json
-Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization_Init", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_es_boost"] = "Boost",
 		["menu_es_crew"] = "Crew",
@@ -125,7 +125,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 				["RestorationModQueuedShootingExcludeTitleID"] = "Single-Fire Input Buffer Fire Rate Limit",
 				["RestorationModQueuedShootingExcludeDescID"] = "Limits the buffering of fire inputs to weapons that fire *above* the fire rate (RPM) set by this option.",
 				["RestorationModQueuedShootingMidBurstTitleID"] = "Mid-Burst Input Buffer",
-				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst.",
+				["RestorationModQueuedShootingMidBurstDescID"] = "Buffer fire inputs made *during* a burst. NOTE: Does not apply to auto-burst weapons.",
 				["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
 				["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
 				["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
@@ -347,6 +347,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCloakerTurnDescID"] = "Enable or disable the Cloaker Camera Turn behavior from Vanilla when getting Cloaker kicked.",
 		["RestorationModDisableMutatorColorsTitleID"] = "Disable Mutator Assault Banner Colors",
 		["RestorationModDisableMutatorColorsDescID"] = "Disable the color change to the Assault Banner when using mutators (Vanilla HUD only).",
+		["RestorationModDisableSoloBoonsTitleID"] = "Disable Solo Boons",
+		["RestorationModDisableSoloBoonsDescID"] = "Disable the additional boons the player receives in solo play (Crime.net offline).",		
 		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
 		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",
 		["RestorationModBotsNoDropTitleID"] = "Disable Bot Loot Bag Dropping",
@@ -771,6 +773,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPONRTracksDescID"] = "Select the music track for Pro-Jobs when the point of no return starts.",
 		["RestorationModMusicShuffleTitleID"] = "Music Shuffle",
 		["RestorationModMusicShuffleDescID"] = "Changes the music track after assault ends.",
+		["RestorationModOldEconomyTitleID"] = "Old Economy (Beta)",
+		["RestorationModOldEconomyDescID"] = "Enables the old economy from pre update 11.",
 		["RestorationModScaleTitleID"] = "HUD scaling",
 		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
 		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
@@ -815,6 +819,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Aligns and sorts CRIMENET by difficulty.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET Scale",
 		["RestorationModPocoCrimenetScaleDescID"] = "Allows you to set the scale of CRIMENET.",
+		["RestorationModBriefingFontSizeTitleID"] = "Loadout Menu Briefing Font Size",
+		["RestorationModBriefingFontSizeDescID"] = "Allows you to set the font size of the loadout menu briefing.",
 		["RestorationModVoiceIconTitleID"] = "Voice Chat Icon",
 		["RestorationModVoiceIconDescID"] = "Displays when a player is using voice chat in-game.",
 		["RestorationModNewsFeedStyleTitleID"] = "Alpha Newsfeed Style",
@@ -1174,7 +1180,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
 
@@ -1311,13 +1317,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_heavy_desc_per_pellet"] = "Fires #{skill_color}#12## #{skill_color}#armor piercing## flechettes.\n#{skill_color}#Headshot damage is increased by 100% and there is no reduction to enemy headshot multipliers.##",
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_1_1"] = "Red Dot sight.\n#{risk}#1.1x magnification.##",
-		["bm_wp_upg_o_1_1_health"] = "Red Dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1"] = "Red dot sight.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_health"] = "Red dot sight that #{skill_color}#displays the health of enemies## while aiming at them.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_ammo"] = "Red dot sight that #{skill_color}#displays the weapon's current ammo count##.\n#{risk}#1.1x magnification.##",
+		["bm_wp_upg_o_1_1_generic"] = "#{risk}#1.1x magnification.##",
 		["bm_wp_upg_o_1_2"] = "Red dot sight.\n#{risk}#1.2x magnification.##",
 		["bm_wp_upg_o_1_5"] = "Holographic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_pris"] = "Prismatic sight.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_5_scope"] = "Low-powered scope.\n#{risk}#1.5x magnification.##",
 		["bm_wp_upg_o_1_8"] = "Red dot sight.\n#{risk}#1.8x magnification.##",
+		["bm_wp_upg_o_1_8_laser"] = "Red dot sight with a built-in laser sight.\n#{risk}#1.8x magnification.##\n\nToggle the laser on/off by pressing #{skill_color}#$BTN_GADGET.##",
 		--["bm_wp_upg_o_1_8_irons"] = "Red dot sight with back-up iron sights.\n#{risk}#1-1.8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_2"] = "Low-powered scope.\n#{risk}#2x magnification.##",
 		["bm_wp_upg_o_2_szholot"] = "Thermal holographic sight.\n#{risk}#2x magnification.##\n#{skill_color}#Automatically marks## guards, elites and special enemies when you aim at them.\n\n#{risk}#NOTE: Guards can only be marked during stealth.##",
@@ -1327,6 +1336,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_3_rds"] = "Mid-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-3x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between sights.",
 		["bm_wp_upg_o_3_4"] = "Mid-range scope.\n#{risk}#3.4x magnification.##",
 		["bm_wp_upg_o_3_5"] = "Mid-range scope.\n#{risk}#3.5x magnification.##",
+		["bm_wp_upg_o_3_7"] = "Mid-range scope.\n#{risk}#3.7x magnification.##",
 		["bm_wp_upg_o_4"] = "Mid-range scope.\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_cod"] = "Mid-range scope.\nWhere's #{skill_color}#Stopping Power## when you need it?\n#{risk}#4x magnification.##",
 		["bm_wp_upg_o_4_range"] = "Mid-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#4x magnification.##",
@@ -1341,6 +1351,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_5_vari"] = "Variable zoom scope.\n#{risk}#5-8x magnification.##\n\nPress #{skill_color}#$BTN_GADGET## while aiming to switch between zoom levels.",
 		["bm_wp_upg_o_6"] = "Long-range scope.\n#{risk}#6x magnification.##",
 		["bm_wp_upg_o_6_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#6x magnification.##",
+		["bm_wp_upg_o_6_rds_mount"] = "Long-range scope with a top-mounted red-dot sight.\n#{risk}#1.1-6x magnification.##",
 		["bm_wp_upg_o_8"] = "Long-range scope.\n#{risk}#8x magnification.##",
 		["bm_wp_upg_o_8_range"] = "Long-range scope with a built-in #{skill_color}#rangefinder.##\n#{risk}#8x magnification.##",
 
@@ -1464,7 +1475,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_airbow_poison_desc"] = "Fire arrows laced with #{stats_positive}#poison##, potentially stunning enemies and dealing #{stats_positive}#120## poison damage over #{skill_color}#4## seconds.\n\n#{important_1}#Arrow velocity is slightly reduced.##",
 
 		["bm_40mm_weapon_sc_desc"] = "Press #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
-		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
+		["bm_rocket_launcher_sc_desc"] = "Explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets## and deals an extra #{skill_color}#500%## damage against non-titan Bulldozers.",
 		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at once, doubling the number of pellets.",
 		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
@@ -2026,6 +2037,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
+		--["bm_menu_magazine"] = "Capacity",
 		["bm_menu_pickup"] = "Ammo Pickup",
 		["bm_menu_ads_speed"] = "Aim Time",
 		["bm_menu_reload"] = "Reload Time",
@@ -2181,7 +2193,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
@@ -2429,7 +2441,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_csglock_desc"] = "#{risk}#Adds a fire selector##, permitting this weapon to switch to a #{skill_color}#1200 RPM 3-round burst## setting, at the cost of a lower semi-auto fire rate.",
 				--AK12
 				["bm_wp_upg_i_abakan"] = "Abakan Kit",
-				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a lower fire rate afterwards.",
+				["bm_wp_upg_i_abakan_desc"] = "Allows this weapon to fire a #{risk}#hyperburst## with each trigger pull at the cost of a slower base fire rate.",
 				--10-0
 				["bm_wp_upg_i_tekna"] = "Tekna Burst Kit",
 				["bm_wp_upg_i_tekna_desc"] = "Locks this weapon to fire in #{risk}#3-round bursts##; pair it with a #{skill_color}#glaive## maybe?",
@@ -2437,6 +2449,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--AMR16--
 				["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
 				["bm_wp_upg_i_m16a2_desc"] = "Trade full-auto for a #{skill_color}#3-round burst## setting. #{risk}#Burst## fire rate is #{skill_color}#increased to 950 RPM.## ",
+				--G3A3--
+				["bm_wp_upg_i_g3"] = "SG-3 Kit",
+				["bm_wp_upg_i_g3_desc"] = "Adds a 4-position fire selector, granting the weapon a #{skill_color}#3-round burst## setting.",
 				--Bernetti Auto--
 				["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
 				["bm_wp_upg_i_b93o_desc"] = "Trade burst-fire for a #{skill_color}#full-auto## setting, at the cost of #{important_1}#extra kick.##",
@@ -2500,7 +2515,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			--[[ PISTOLS ]]
 				--Gecko Pistol
 				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
-				["bm_tranq_maxim_auto_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
+				["bm_tranq_maxim_auto_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistols, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 30 damage over 1 second with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 
 				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals 60 damage over 2 seconds with tranquilizer rounds.##\n#{risk}#Duration diminishes over range.##",
 				--Igor (APS)
@@ -2603,6 +2618,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--SAA/Peacemaker
 				["bm_ap_weapon_peacemaker_sc_desc"] = "#{risk}#The greatest handgun ever made.##\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields and thin walls.##\n\nCan be #{skill_color}#fanned for an increased fire rate## at the cost of #{important_1}#more recoil, reduced effective range and the inabilty to aim down your sights.##",
 				--CUSTOM PISTOLS
+					--Px4 Storm
+					["bm_wp_wpn_fps_upg_px4_barrel_sd"] = "SD Long Barrel",
 					--Zippy
 					["bm_zippy_sc_desc"] = "The ultimate weapon, in ejection failures and misfires. You'll be lucky to get two shots out of this thing without blowing off your fingers.",
 					--Auto-9
@@ -2614,6 +2631,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["whydoyoucome"] = "The only one of its kind, made specially for rockerboy Johnny Silverhand.\n\n#{skill_color}#Can pierce multiple enemies and their body armor.\nRounds ricochet off surfaces while firing from the hip and pierce walls while aiming.\nWeapon Butt attacks shoot out a short ranged wave of fire.##",
 					--Colt Detective
 					["bm_lemon_dmc_desc"] = "Imagine yourself with a concealable, high-powered revolver. Now imagine no futher, as the Investigator is exactly that.\n\n#{skill_color}#Deals double damage when attacking enemies from behind.##",
+					--MW2019 P320
+					["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 
 			--[[ SMGs ]]
 				--Kobus 90
@@ -2630,12 +2649,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_sterling_b_e11"] = "BlasTech E-11 Barrel",
 				["bm_wp_sterling_b_e11_desc_sc"] = "Tech said to have come from #{skill_color}#a galaxy far, far away## converts this weapon to #{risk}#fire bolts of plasma## and utilize a #{skill_color}#recharging magazine.##\n\nRecharge delay: #{skill_color}#1.4s##\nRecharge rate: #{skill_color}#6/s## #{important_1}#(Halved while overheated)##\nOverheat penalty: #{important_1}#2s##",
 				--Uzi
-				["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch, especially now given its .41 AE conversion",
+				["bm_uzi_sc_desc"] = "While slow firing, the Uzi makes for a reliable, easy to control SMG that can still deliver a punch.",
 				--Chicago Typewriter
 				["bm_thompson_sc_desc"] = "Sporting a high-capacity drum magazine, you too can bring on the mobster heat as you mow down your enemies.",
 				--MP40
 				["bm_erma_sc_desc"] = "A fairly reliable SMG that saw widespread use in the hands of infantrymen during WWII, just don't use the magazine as a grip.",
 				--CUSTOM SMGs
+					["bm_w_geasy9_desc_grom"] = "Full-auto submachine gun. Great mobility and handling. Moderate damage, range, and rate of fire.\n\n#{skill_color}#Deals 75% of its damage through body armor.##",
+					["bm_wp_wpn_fps_smg_geasy9_ammo_grom_desc"] = "Deals #{skill_color}#75%## of this weapon's damage through body armor and headshots deal #{skill_color}#25%## more damage to non-captain enemies.##",
+
+					["bm_w_r31_desc"] = "Full-auto submachine gun. Very slow rate of fire with high damage. Good handling and mobility",
+					["bm_wp_wpn_fps_smg_r31_b_highcal"] = "Short Barrel",
+					["bm_wp_wpn_fps_smg_r31_b_int"] = "Binary Mod",
+					["bm_wp_wpn_fps_smg_r31_b_int_desc"] = "Converts this weapon to fire in #{risk}#2-round bursts## at an #{skill_color}#increased fire rate.##",
+
 					["bm_w_m7caseless"] = "Misriah Armory M7 SMG",
 					["bm_w_m7caseless_supp"] = "Misriah Armory M7S SMG",
 					["bm_w_x_m7caseless"] = "Dual M7 SMGs",
@@ -2746,6 +2773,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--Joceline
 				["bm_b682_sc_desc"] = "A competition over-under typically reserved for sporting events, only instead of clay pigeons you'll be using it for popping helmets.",
 				--Custom Shotguns
+					--BO6 ASG-89
+					["bm_wp_upg_i_autousas"] = "Battlefield-Tested Internals",
 					--Reinbeck M1
 					["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 					--Doomstic
@@ -2771,11 +2800,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--G36
 				["bm_g36_sc_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
 				["bm_wp_upg_i_m8a1"] = "M8 Burst Kit",
-				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine",
+				["bm_wp_upg_i_m8a1_desc"] = "Locks firemode to a #{risk}#4-round burst## and grants a boosted fire rate and additional ammo to the magazine; #{important_1}#cannot accept magazines that alter capacity.##",
 				--VHS/Lion's Roar
 				["bm_vhs_sc_desc"] = "A difficult weapon to wield that boasts impressive performance in the hands of the capable.\n\nSaid to carry the spirit of Dragan's fury in combat.",
 				["bm_wp_upg_i_swordfish"] = "Swordfish Burst Kit",
-				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine",
+				["bm_wp_upg_i_swordfish_desc"] = "Locks firemode to a #{risk}#5-round burst## and grants a boosted fire rate and additional ammo to the magazine; #{important_1}#cannot accept magazines that alter capacity.##",
 				--Olympic/Para
 				["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an existential crisis that shoots bullets.",
 				--TAR-21/Para
@@ -2835,10 +2864,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_stango44"] = "\"STG-44\"",
 					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30 Round Magazine",
 					--HD2 AR-23
+					["bm_w_ar23_carbine"] = "AR-23A Liberator Carbine",
+					["bm_wp_ck_penetrator_desc"] = "A compact version of the Liberator designed for increased viability in close quarters. Has an #{skill_color}#increased fire rate## at the cost of #{important_1}#higher spread.##",
 					["bm_w_ar23_penetrator"] = "AR-23P Liberator Penetrator",
 					["bm_wp_ck_penetrator_desc"] = "A variant of the AR-23 designed to #{skill_color}#penetrate armor.##",
 					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
 					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
+					--Bo6 XM4
+					["bm_wp_wpn_fps_ass_coslo723_mode_burst_desc"] = "#{risk}#Exchange full-auto for a 3-round auto-burst.##\n\nBursts will #{skill_color}#auto-cycle## so long as the trigger is held.",
 
 			--[[ DMRs ]]
 				--Little Friend
@@ -2880,12 +2913,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_wp_upg_i_g3sg1_desc"] = "Loads high-powered rounds that #{skill_color}#grant full armor penetration and shield piercing capabilites.## Parts are reinforced with heavier materials #{important_1}#reducing rate of fire## and locking your weapon to #{risk}#semi-auto##.",
 				--KS12
 				["bm_shak12_sc_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
-				["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, enemies, shields within max damage range and thin walls.##",
+				["bm_shak12_sc_oden_desc"] = "A battle rifle in a bullpup design sporting a very potent 12.7x55mm cartridge. Supreme carnage in a seriously compact package.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				["bm_wp_shak12_body_vks"] = "\"VISha\" Stock",
 				["bm_wp_shak12_body_vks_ap_desc"] = "Loads high-powered rounds that #{skill_color}#grants full armor penetration and shield piercing capabilites.## Stock and bolt are reinforced with heavier materials #{important_1}#reducing rate of fire.##",
 				--HCAR
 				["bm_hcar_sc_desc"] = "A modern take on a classic WW2 machine gun.",
 				--Custom DMRs
+					--SKS
+					["bm_wp_wpn_fps_ass_sks_mags_reload"] = "Equalize the speed of non-empty and empty reloads; #{skill_color}#non-empty reloads are much faster and allow for one in the chamber## while #{important_1}#empty reloads are slower.##",
 					--BOCW EM2
 					["bm_w_t9british"] = "EM2",
 					["bm_wp_wpn_fps_ass_t9british_xmag_01"] = "30 Rnd",
@@ -2918,7 +2953,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_bulldog_desc"] = "Some kind of happiness is measured out in taking down enemies with the Bulldog.\n\n#{risk}#This weapon shoots in full-auto when fired from the hip and shoots in bursts when fired while aiming down the sights.##",
 					--RMC2
 					["bm_w_rmary2"] = "Goblin Mk2",
-					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots deal 50% more damage to non-captain enemies.##",
+					["bm_wp_chf_50_desc"] = "#{skill_color}#Headshots ignore damage falloff.##",
 					["bm_w_rmary2_desc"] = "Proof of concept prototype designed by a Royal Military College Duntroon cadet.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce multiple enemies.##",
 
 			--[[ SNIPERS ]]
@@ -3005,7 +3040,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				--China Puff
 				["bm_w_china_sc_desc"] = "\"This really is a most horrid neighborhood!\"\n\nPress #{skill_color}#$BTN_GADGET## to toggle the leaf sight; zeroed to #{skill_color}#30## meters.",
 				--COMMANDO 101/M202 FLASH
-				["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets.##",
+				["bm_ray_sc_desc"] = "Become the \"#{risk}#Grim Reaper##\" with this 4-shot #{heat_warm_color}#incendiary## rocket launcher.\n\nRockets leave behind a #{heat_warm_color}#pool of fire## and explosive damage dealt by this weapon #{skill_color}#instantly destroys turrets## and deals an extra #{skill_color}#500%## damage against non-titan Bulldozers.",
 
 
 	})
@@ -3074,6 +3109,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_wp_hs2000_sl_long"] = "Elite Slide",
 					--5/7 pistol
 					["bm_w_lemming"] = "Acuto 5/7",
+					["bm_w_x_lemming"] = "Ultra & Violet",
 					--Baby Deagle--
 					["bm_w_sparrow"] = "Sparrow 941",
 					["bm_w_x_sparrow"] = "Spike & Vicious",
@@ -3131,7 +3167,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						--ZiP 22
 						["bm_w_zip22"] = "Zippy 3000",
 						--Px4
-						["bm_w_px4"] = "Bernetti Hx4 Canaan",
+						["bm_w_px4"] = "Bernetti Px4",
 						--Browning Hi-Power
 						["bm_w_hpb"] = "Hi-Power",
 						--Browning Hi-Power (Mira)
@@ -3146,7 +3182,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_coltds"] = "Crosskill Investigator",
 						--SIG P320
 						["bm_w_papa320"] = "M19",
-						["bm_wp_wpn_fps_pis_papa320_magazine_ext2"] = "32 Round Magazine",
 				--[[ SMGs ]]
 					--Kobus 90--
 					["bm_w_p90"] = "Project-90",
@@ -3177,7 +3212,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--AK Gen
 					["bm_w_vityaz"] = "AK-19-01 Tasunka",
 					--Signature SMG
-					["bm_w_shepheard"] = "FIK PC9",
+					["bm_w_shepheard"] = "Signature PC9",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",
 					["bm_w_mp5sd"] = "Compact-5SD",
@@ -3207,6 +3242,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Kross Vertex
 					["bm_w_polymer"] = "Kross Vertex",
 					--CUSTOM SMGs
+						--Grendel R31
+						["bm_w_r31"] = "Tanto .22",
 						--AR57
 						["bm_w_alpha57_prim"] = "FSS Hurricane",
 						--LWRC
@@ -3292,6 +3329,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Joceline
 					["bm_w_b682"] = "Joceline O/U 12G",
 					--Custom Shotguns
+						--MW2023 Riveter
+						["bm_w_riveter"] = "Riveter",
 						--MW2022 Vepr
 						["bm_w_vecho"] = "KV Broadside",
 						--MW2023 Origin 12
@@ -3371,6 +3410,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--Akimbo Krinkov
 					["bm_w_x_akmsu"] = "Akimbo Krinkovs",
 					--CUSTOM ARs
+						--BO6 CETME L
+						["bm_w_modl"] = "Model L",
+						--MW2023 ARX-200
+						["bm_w_soa"] = "SOA Subverter",
 						--QBZ-191
 						["bm_w_pd3_qbz191"] = "Northwest B-9",
 						--AN-94/92
@@ -3389,6 +3432,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_fik22"] = "FIK-22 TLR", --why does this use the in-universe Sig name?
 						--ACR 2012
 						["bm_w_acr_2012"] = "MCW-R",
+						--MW2022 M4
+						["bm_w_mike4_2022"] = "M4",
 				--[[ DMRs ]]
 					--Little Friend
 					["bm_w_contraband"] = "Bigger Friend 7.62",
@@ -3443,6 +3488,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_xr2"] = "XR-2",
 						--SIERRA .458
 						["bm_w_sierra458"] = "Sierra .458",
+						--MW2022 .458 AR15
+						["bm_w_msecho"] = "FTAC Recon",
 				--[[ SNIPERS ]]
 					--MSR
 					["bm_w_msr"] = "Rattlesnake",
@@ -3503,6 +3550,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_l115"] = "AIM 90M",
 						--"PTRS"
 						["bm_w_mptango41"] = "Gorenko Anti-Tank Rifle",
+						--Lockwood Mk2
+						["bm_w_sbeta"] = "Lockwood Mk2",
 				--[[ LAUNCHERS & BOWS ]]
 					--GL40
 					["bm_w_gre_m79"] = "GL-40",
@@ -4097,6 +4146,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 						["bm_w_fik22"] = "Ruger 10/22",
 						--ACR 2012
 						["bm_w_acr_2012"] = "Remington ACR",
+						--MW2023 ARX-200
+						["bm_w_soa"] = "Beretta ARX-200",
+						--BO6 CETME Model L
+						["bm_w_modl"] = "CETME Model L",
 
 
 				--[[DMRs]]
@@ -4729,7 +4782,7 @@ local f = tweak_data.levels.ai_groups.federales
 local ai_type = tweak_data.levels:get_ai_group_type()
 
 if ai_type == r then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
@@ -4737,7 +4790,7 @@ if ai_type == r then
 		})
 	end)
 elseif ai_type == z then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Pciloe Asuaslt in Prergoss",
 			["hud_assault_cover"] = "STYA IN COVRE...FLESH",
@@ -4745,7 +4798,7 @@ elseif ai_type == z then
 		})
 	end)
 elseif ai_type == f then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Asalto En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
@@ -4753,7 +4806,7 @@ elseif ai_type == f then
 		})
 	end)
 elseif ai_type == m then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker_Eng", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Murkywater Operation in Progress",
 			["hud_assault_alpha"] = "MURKYWATER OPERATION"
@@ -4771,42 +4824,50 @@ end
 	local fbi = tweak_data.levels.ai_groups.fbi
 	local breins = tweak_data.levels.ai_groups.zombie
 
-	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
+	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_Eng", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
 	end)
 
 	if ai_type == murkywetew then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
 	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
 		end)
 	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
 		end)
 	elseif ai_type == akan then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")
 		end)
 	elseif ai_type == nypd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_nypd_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/nypd.json")
 		end)
 	elseif ai_type == fbi then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_fbi_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/fbi.json")
 		end)
 	elseif ai_type == breins then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins", function(loc)
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_breins_Eng", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/breins.json")
 		end)
 	end
- end
+end
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
+if restoration and restoration.Options:GetValue("OTHER/OldEconomy") then
+	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_PayPerDay_Eng", function(loc)
+		LocalizationManager:add_localized_strings({
+			["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract."
+		})
+	end)
+end
+
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
@@ -4819,7 +4880,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
-		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
 
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		["debug_interact_bodybags_bag_take_bodybag"] = "HOLD $BTN_INTERACT TO REFILL YOUR BODY BAGS AND CABLE TIES",
@@ -5105,7 +5165,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",
-		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",
+		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes and spawn issues on some maps.",
 
 		["MutatorMoreDonutsPlus"] = "More Donuts+",
 		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by LPFs.",
@@ -5248,6 +5308,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Faction: ",
+
+		["mutator_high_noon"] = "Red Dead: The Heist",
+		["menu_mutator_high_noon"] = "Red Dead: The Heist",
+		["mutator_high_noon_desc"] = "Wild West DC.",
+		["mutator_high_noon_longdesc"] = "Howdy Cowboys! Prepare to fan your hammers in a thrilling heist of rustlers and deputies.\n\nNo Tactical Advantage Whatsoever: Can only use weapons from the age of Cowboys.\n\nNOTE: When this mutator is disabled after being enabled, this mutator's effects on weapons will remain visible in menus until after a restart or a loading screen.",
+		["bm_not_cowboy_sc"] = "CANNOT USE!!!",
+		["bm_not_cowboy_sc_desc"] = "#{important_1}#Not Rootin' Tootin'!##",
 
 		--Crime Spree mutators
 		["mutator_cloakercuff"] = "Conjurer",
@@ -5443,7 +5510,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Body Expertise
 				["menu_body_expertise_beta_sc"] = "Spray n' Pray",
-				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on full-auto without releasing the trigger for more than #{skill_color}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
+				["menu_body_expertise_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour weapons deal #{skill_color}#$skill_value_b1## of their damage through body armor; effect is increased to #{skill_color}#$skill_value_b2## for #{skill_color}#machine guns.##\n\nThis is in addition to any armor piercing capabilites your weapon(s) may already have, to a maximum of #{skill_color}#100%.##\n\nACE: #{owned}#$pro##\nKills using #{skill_color}#machine guns## on #{risk}#full-auto## without releasing the trigger for more than #{risk}#$skill_value_p1## seconds will grant them an additional #{skill_color}#$skill_value_p2## more damage; stacks up to #{skill_color}#$skill_value_p3## times.",
 
 
 		--[[   ENFORCER   ]]--
@@ -5473,7 +5540,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Overkill
 				["menu_overkill_sc"] = "OVERKILL",
-				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#$skill_value_b1## increase to their max damage for #{skill_color}#$skill_value_b2## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and instead lasts #{skill_color}#$skill_value_p1## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#$skill_value_p2## faster.",
+				["menu_overkill_desc_sc"] = "BASIC: #{owned}#$basic##\nKills before falloff begins using direct damage from #{skill_color}#shotguns, flamethrowers or the OVE9000 Saw## activates this skill and grants them a #{skill_color}#$skill_value_b1## increase to their max damage for #{skill_color}#$skill_value_b2## seconds.\n\n#{risk}#NOTE: Will not be triggered by or have any effect on## #{important_1}#explosives or damage-over-time effects.##\n\nACE: #{owned}#$pro##\nThe damage increase now applies to #{skill_color}#all weapons## and instead lasts #{skill_color}#$skill_value_p1## seconds.\n\n#{risk}#NOTE: Damage bonus does not apply to## #{important_1}#Launchers.##\n\nYour draw and holster speeds for #{skill_color}#shotguns, flamethrowers and the OVE9000 Saw## are #{skill_color}#$skill_value_p2## faster.",
 
 			--[[   JUGGERNAUT SUBTREE   ]]--
 				--Stun Resistance--
@@ -5580,7 +5647,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--[[   COMBAT ENGINEER SUBTREE   ]]--
 				--Sharpshooter--
 				["menu_discipline_sc"] = "Sharpshooter",
-				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst increase your rate of fire by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds.",
+				["menu_discipline_desc_sc"] = "BASIC: #{owned}#$basic##\n#{skill_color}#Rifles## gain #{skill_color}#$skill_value_b1## stability.\n\nACE: #{owned}#$pro##\nLethal headshots using #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## increase your rate of fire by #{skill_color}#$skill_value_p1## for #{skill_color}#$skill_value_p2## seconds.",
 
 				--Rifleman--
 				["menu_rifleman_sc"] = "Rifleman",
@@ -5592,15 +5659,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Ammo Efficiency--
 				["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#$skill_value_b1## lethal headshots with #{skill_color}#rifles## in less than #{skill_color}#$skill_value_b2## seconds will grant #{skill_color}#$skill_value_b3## of your total ammo, to a minimum of #{skill_color}#1## round, back to the weapon.\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#$skill_value_p1## lethal headshots within #{skill_color}#$skill_value_p2## seconds of each other.",
+				["menu_single_shot_ammo_return_desc_sc"] = "BASIC: #{owned}#$basic##\nGetting #{skill_color}#$skill_value_b1## lethal headshots with #{skill_color}#rifles## in less than #{skill_color}#$skill_value_b2## seconds will #{skill_color}#refund half of your weapon's ammo pickup stat## straight to your reserves.\n\n#{risk}#NOTE: The ammo refund is rounded up and will always provide at least## #{skill_color}#1## #{risk}#round.##\n\nACE: #{owned}#$pro##\nThe effect is now triggered upon landing #{skill_color}#$skill_value_p1## lethal headshots and the #{skill_color}#ammo is first refunded directly into your magazine,## whenever possible.",
 
 				--Aggressive Reload--
 				["menu_engineering_beta_sc"] = "Aggressive Reload",
-				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## set to semi-auto or burst will increase your reload speed by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nThe reload speed bonus increases to #{skill_color}#$skill_value_p1## and can be triggered regardless of fire mode.",
+				["menu_engineering_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nLethal headshots using #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## will increase your reload speed by #{skill_color}#$skill_value_b1## for #{skill_color}#$skill_value_b2## seconds.\n\nACE: #{owned}#$pro##\nThe reload speed bonus increases to #{skill_color}#$skill_value_p1## and can be triggered regardless of fire mode.",
 
 				--Mind Blown, formerly Explosive Headshot--
 				["menu_kilmer_sc"] = "Mind Blown",
-				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to semi-auto or burst deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to semi-auto have #{skill_color}#no damage falloff## and the radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.",
+				["menu_kilmer_desc_sc"] = "BASIC: #{owned}#$basic##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## can chain to deal #{skill_color}#$skill_value_b1## of the damage dealt to the closest enemy in a #{skill_color}#$skill_value_b2## meter radius; has a cooldown of #{important_1}#$skill_value_b5## seconds.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the effect chains to an additional enemy; up to #{skill_color}#$skill_value_b4## times.\n\nACE: #{owned}#$pro##\nHeadshots with #{skill_color}#rifles## set to #{risk}#semi-auto## or #{risk}#burst## have #{skill_color}#no damage falloff.##\n\nThe radius of the chaining effect is increased by #{skill_color}#$skill_value_p1## meter.\n\nFor every #{skill_color}#$skill_value_b3## meters away you are from the enemy, the chaining effect deals an additional #{skill_color}#$skill_value_p2## damage; up to a total of #{skill_color}#$skill_value_p3## of the damage dealt.\n ",
 
 		--[[   GHOST   ]]--
 
@@ -5644,7 +5711,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "Moving Target",
-				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nYou move #{skill_color}#$skill_value_b5## faster while aiming down sights.\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
+				["menu_dire_need_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain #{skill_color}#$skill_value_b1## extra movement speed for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to #{skill_color}#$skill_value_b4.##\n\nThe movement speed reduction while aiming is reduced by #{skill_color}#$skill_value_b5.##\n\n#{risk}#NOTE: Speed while aiming is capped to your current stance's max speed.##\n\nACE: #{owned}#$pro##\nYou gain #{skill_color}#$skill_value_p1## extra movement speed for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to #{skill_color}#$skill_value_p4.##\n\nYour dodge meter fills up by #{skill_color}#$skill_value_p5## of your dodge every second while sprinting (halved if fatigued) and #{skill_color}#$skill_value_p6## of your dodge every second ziplining.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "Shockproof",
@@ -5665,30 +5732,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--The Professional--
 				["menu_silence_expert_beta_sc"] = "The Professional",
-				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nKilling special and elite enemies with non-explosive ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
+				["menu_silence_expert_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYour aim down sights and sprint-to-fire speeds are #{skill_color}#$skill_value_b1## faster.\n\nACE: #{owned}#$pro##\nYour aim down sights and sprint-to-fire speeds are an additional #{skill_color}#$skill_value_p1## faster.\n\nLethal headshots against special and elite enemies with ranged weapons will make them #{skill_color}#drop an extra ammo box.##",
 
 				--Unseen Strike, formally Dire Need--
 				["menu_backstab_beta_sc"] = "Unseen Strike",
-				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance. The critical hit chance persists for #{skill_color}#$skill_value_b3## seconds after taking damage.\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
+				["menu_backstab_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nIf you do not take damage for #{skill_color}#$skill_value_b1## seconds, you gain a #{skill_color}#$skill_value_b2## critical hit chance for . The critical hit chance persists for #{skill_color}#$skill_value_b3## seconds after taking damage.\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: #{important_1}#Explosives and damage-over-time effects## cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nUnseen Strike's critical hit chance persists for #{skill_color}#$skill_value_p1## seconds after taking damage.",
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "Cleaner",
-				["menu_hitman_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deal #{skill_color}#$skill_value_b1## more damage to special and elite enemies.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##\n\nACE: #{owned}#$pro##\nYou deal an additional #{skill_color}#$skill_value_p1## more damage to special and elite enemies.\n\nKilling an enemy with a headshot fills your dodge meter by #{skill_color}#$skill_value_p2## of your dodge.\n\nKilling an enemy from behind fills your dodge meter by #{skill_color}#$skill_value_p3## of your dodge; stacks in addition to dodge given through headshot kills.\n\n#{risk}#NOTE: Kills using## #{important_1}#explosives, fire or damage-over-time effects## #{risk}#will not grant you dodge.##\n ",
+				["menu_hitman_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou deal #{skill_color}#$skill_value_b1## more damage to special and elite enemies.\n\n#{risk}#NOTE: Does not apply to## #{important_1}#launchers.##\n\nACE: #{owned}#$pro##\nYou deal an additional #{skill_color}#$skill_value_p1## more damage to special and elite enemies.\n\nKilling an enemy with a headshot fills your dodge meter by #{skill_color}#$skill_value_p2## of your dodge.\n\nKilling an enemy from behind fills your dodge meter by #{skill_color}#$skill_value_p3## of your dodge; stacks in addition to dodge given through headshot kills.\n\n#{risk}#NOTE: Kills using## #{important_1}#explosives and damage-over-time effects## #{risk}#will not grant you dodge.##\n ",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "Low Blow",
-				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
+				["menu_unseen_strike_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou gain a #{skill_color}#$skill_value_b1## critical hit chance for for every #{risk}#$skill_value_b2## points of encumbrance under #{risk}#$skill_value_b3##, up to a maximum of #{skill_color}#$skill_value_b4.##\n\nCritical hits deal #{skill_color}#100%## additional damage.\n\n#{risk}#NOTE: #{important_1}#Explosives and damage-over-time effects## cannot deal critical hits.##\n\nACE: #{owned}#$pro##\nYou gain a #{skill_color}#$skill_value_p1## critical hit chance for every #{risk}#$skill_value_p2## point of encumbrance under #{risk}#$skill_value_p3##, up to a maximum of #{skill_color}#$skill_value_p4.##\n\nYour critical hit chance is increased by an additional #{skill_color}#$skill_value_p5## when attacking enemies from behind with guns or melee.",
 
 		--[[   FUGITIVE   ]]--
 
 			--[[   GUNSLINGER SUBTREE   ]]--
 				--Equilibrium--
 				["menu_equilibrium_beta_sc"] = "Equilibrium",
-				["menu_equilibrium_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou and your crew's weapon stability with #{skill_color}#pistols## is increased by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## are drawn and holstered #{skill_color}#$skill_value_p1## faster.",
+				["menu_equilibrium_beta_desc_sc"] = "BASIC: #{owned}#$basic##\nYou and your crew's weapon stability with #{skill_color}#pistols## is increased by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## are drawn and holstered #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Akimbo## weapons are drawn and holstered #{skill_color}#$skill_value_p2## faster.",
 
 				--Gun Nut--
 				["menu_dance_instructor_sc"] = "Gun Nut",
-				["menu_dance_instructor_desc_sc"] = "BASIC: #{owned}#$basic##\nTightens the hipfire accuracy of #{skill_color}#pistols## by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## fire #{skill_color}#$skill_value_p1## faster.\n\n#{skill_color}#Pistols## deal #{skill_color}#$skill_value_p2## of their damage through armor.",
+				["menu_dance_instructor_desc_sc"] = "BASIC: #{owned}#$basic##\nTightens the hipfire accuracy of #{skill_color}#pistols## by #{skill_color}#$skill_value_b1.##\n\nTightens the hipfire accuracy of #{skill_color}#akimbo## weapons by #{skill_color}#$skill_value_b1.##\n\nACE: #{owned}#$pro##\n#{skill_color}#Pistols## fire #{skill_color}#$skill_value_p1## faster and deal #{skill_color}#$skill_value_p2## of their damage through armor.\n\n#{skill_color}#Akimbo## weapons deal #{skill_color}#$skill_value_p3## of their damage through armor.\n\nThis is in addition to any armor piercing capabilites your #{skill_color}#akimbo## weapon(s) may already have, to a maximum of #{skill_color}#100%.##",
 
 				--Over Pressurized/Gunfighter--
 				["menu_gun_fighter_sc"] = "Gunfighter",
@@ -5774,7 +5841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 end)
 
-Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "Dodge",
 		["menu_st_category_activated"] = "Activatable",
@@ -5783,7 +5850,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#$perk_value_1.##\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-			
+
 		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#$perk_value_1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#$perk_value_2## less affected.\n\nYou gain #{skill_color}#$perk_value_3## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#$perk_value_4## faster.\n\nYou do #{skill_color}#$perk_value_5## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#$perk_value_1## more ammo; effect is doubled for offline heists.\n\nYou do #{skill_color}#$perk_value_2## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",

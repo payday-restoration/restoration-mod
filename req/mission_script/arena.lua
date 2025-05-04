@@ -1,35 +1,22 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 1260 or (difficulty == 6 or difficulty == 7) and 1230) or 1200
-
-local ponr_timer_player_mul = {
-		1,
-		0.9,
-		0.8,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
-}
-
 return {
-	--Pro Job PONR 
+	-- Alarm went off, try to start PONR if pyrotechnics was already completed, and enable activation if not
+	[100824] = {
+		on_executed = {
+			{ id = 400002, delay = 0, },
+			{ id = 400003, delay = 0, },
+		},
+	},
+	-- Pyrotechnics complete, try to start PONR if alarm already went off, and enable activation if not
 	[101090] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
-	}
+		on_executed = {
+			{ id = 400002, delay = 0, },
+			{ id = 400003, delay = 0, },
+		},
+	},
+	-- Masks off again in stealth, disable PONR activation
+	[101771] = {
+		on_executed = {
+			{ id = 400004, delay = 0, },
+		},
+	},
 }

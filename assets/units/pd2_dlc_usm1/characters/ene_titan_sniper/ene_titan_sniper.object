@@ -520,16 +520,18 @@
 			</lod_object>			
 			
 			<lod_object name="lod_mask_titansg">
-				<object name="g_helmet_lod12" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_equipment" max_distance="1000"/>
-					<material materials="mtr_equipment_lod"/>
+				<object name="g_helmet_lod11" 		enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_equipment, mtr_equipment_shield, mtr_swat" max_distance="1000"/>
+					<material materials="mtr_equipment_lod, mtr_equipment_shield_lod, mtr_swat_lod"/>
 				</object>
-				<object name="g_helmet_lod13" 	enabled="false" lod="1" >
-					<material materials="mtr_equipment" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_equipment_lod"/>
+				<object name="g_helmet_lod12" 	enabled="false" lod="1" >
+					<material materials="mtr_equipment, mtr_equipment_shield, mtr_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_equipment_lod, mtr_equipment_shield_lod, mtr_swat_lod"/>
 				</object>
 			</lod_object>			
-			<object name="g_helmet_lod11" enabled="false" shadow_caster="true"/>
+
+			<object name="g_glass_titantaser" enabled="false"  />
+			<object name="g_glass_titantaser_crk" enabled="false" />
 			
 			<!-- BASE BODY AND GEAR-->
 			

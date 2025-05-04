@@ -198,6 +198,8 @@
 			<object filter="'check_goggle_b'" 	  enabled="false" name="'g_goggles_b'"/>						
 			<object filter="'check_goggle_b'" 	  enabled="false" name="'g_goggles_a_lod1'"/>						
 			<object filter="'check_goggle_b'" 	  enabled="false" name="'g_glass_crk'"/>						
+			<object enabled="false" name="'g_glass_titantaser'"/>						
+			<object enabled="false" name="'g_glass_titantaser_crk'"/>						
 
 			<object enabled="false" name="'g_helmet_lod1'"/>						
 			<object enabled="false" name="'g_helmet_lod2'"/>						
@@ -290,7 +292,7 @@
 			<object enabled="true" name="'g_helmet_lod2'"/>
 			<object enabled="true" name="'g_helmet_lod11'"/>
 			<object enabled="true" name="'g_helmet_lod12'"/>
-			<object enabled="true" name="'g_helmet_lod13'"/>
+			<object enabled="true" name="'g_glass_titantaser'"/>
 			<decal_mesh enabled="true" name="'c_mask'" />
 			<decal_mesh enabled="true" name="'dm_helmet'" />							
 		</sequence>
@@ -391,6 +393,9 @@
 		<sequence editable_state="true" name="'crk_goggles'" once="true" triggable="true">
 			<object enabled="true" name="'g_glass_crk'"/>
 			<object enabled="false" name="'g_glass'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_glass_titantaser_crk'"/>
+			<object filter="'check_taser'" enabled="false" name="'g_glass_crk'"/>
+			<object filter="'check_taser'" enabled="true" name="'g_glass_titantaser'"/>
 		</sequence>				
 		
 		<!-- RANDOM HELMETS end -->

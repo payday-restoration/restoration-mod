@@ -8,10 +8,7 @@ return {
 	-- Toggle on the escape area trigger when it should be available, in addition to the escape logic link
 	[100711] = {
 		values = {
-			elements = {
-				100710,
-				100723,
-			},
+			elements = { 100710, 100723, },
 		},
 	},
 	-- Increase PONR timers

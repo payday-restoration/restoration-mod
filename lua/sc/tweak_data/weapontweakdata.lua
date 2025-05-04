@@ -22862,7 +22862,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sig_xm250.timers.reload_exit_not_empty = 0.5
 			end
 
-			if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW22 RM77
+			if self.ngsierra then --RJC9000, PlayBONK and Captain Hamerica's MW2022 RM77
 				self.ngsierra.categories = { 
 					"assault_rifle",
 					"dmr_l"
@@ -22978,6 +22978,191 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vecho.timers.reload_not_empty = 2
 				self.vecho.timers.reload_exit_not_empty = 0.8
 			end
+
+			--MW2023 CZ Brens
+			if self.bromeo805 then --MTZ-556
+				self.bromeo805.categories = { 
+					"assault_rifle"
+				}
+				self.bromeo805.recategorize = { "light_ar" }
+				self.bromeo805.has_description = true
+				self.bromeo805.damage_type = "assault_rifle"
+				self.bromeo805.CLIP_AMMO_MAX = 30
+				self.bromeo805.AMMO_MAX = 150
+				self.bromeo805.FIRE_MODE = "auto"
+				self.bromeo805.CAN_TOGGLE_FIREMODE = true
+				self.bromeo805.fire_mode_data.fire_rate = 0.074074
+				self.bromeo805.kick = {}
+				self.bromeo805.kick = self.stat_info.kick_tables.right_recoil
+				self.bromeo805.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{2, self.stat_info.kick_tables.left_recoil},
+					{9, self.stat_info.kick_tables.even_recoil},
+					{12, self.stat_info.kick_tables.right_recoil},
+					{16, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.bromeo805.supported = true
+				self.bromeo805.ads_speed = 0.220
+				self.bromeo805.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5800,
+					min_mult = 0.53333
+				}	
+				self.bromeo805.stats = {
+					damage = 24,
+					spread = 85,
+					recoil = 77,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.bromeo805.stats_modifiers = nil
+				self.bromeo805.panic_suppression_chance = 0.05
+			end
+			if self.bromeo2m then --MTZ-762 JAK
+				self.bromeo2m.categories = { 
+					"assault_rifle"
+				}
+				self.bromeo2m.recategorize = { "heavy_ar" }
+				self.bromeo2m.has_description = true
+				self.bromeo2m.damage_type = "assault_rifle"
+				self.bromeo2m.CLIP_AMMO_MAX = 30
+				self.bromeo2m.AMMO_MAX = 120
+				self.bromeo2m.FIRE_MODE = "auto"
+				self.bromeo2m.CAN_TOGGLE_FIREMODE = true
+				self.bromeo2m.fire_mode_data.fire_rate = 0.1
+				self.bromeo2m.kick = {}
+				self.bromeo2m.kick = self.stat_info.kick_tables.left_recoil
+				self.bromeo2m.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{3, self.stat_info.kick_tables.horizontal_left_recoil},
+					{8, self.stat_info.kick_tables.even_recoil},
+					{12, self.stat_info.kick_tables.moderate_right_kick},
+					{16, self.stat_info.kick_tables.moderate_kick},
+					{21, self.stat_info.kick_tables.left_recoil},
+					{24, self.stat_info.kick_tables.moderate_left_kick}
+				}
+				self.bromeo2m.supported = true
+				self.bromeo2m.ads_speed = 0.240
+				self.bromeo2m.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5800,
+					min_mult = 0.53333
+				}	
+				self.bromeo2m.stats = {
+					damage = 30,
+					spread = 85,
+					recoil = 77,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.bromeo2m.stats_modifiers = nil
+				self.bromeo2m.panic_suppression_chance = 0.05
+			end
+			if self.bromeo2 then --MTZ-762
+				self.bromeo2.categories = { 
+					"assault_rifle",
+					"dmr_l"
+				}
+				self.bromeo2.recategorize = { "dmr_ar" }
+				self.bromeo2.has_description = true
+				self.bromeo2.damage_type = "assault_rifle"
+				self.bromeo2.CLIP_AMMO_MAX = 20
+				self.bromeo2.AMMO_MAX = 80
+				self.bromeo2.FIRE_MODE = "auto"
+				self.bromeo2.CAN_TOGGLE_FIREMODE = true
+				self.bromeo2.fire_mode_data.fire_rate = 0.11111
+				self.bromeo2.kick = {}
+				self.bromeo2.kick = self.stat_info.kick_tables.right_recoil
+				self.bromeo2.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{4, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.right_recoil},
+					{13, self.stat_info.kick_tables.horizontal_right_recoil}
+				}
+				self.bromeo2.supported = true
+				self.bromeo2.ads_speed = 0.280
+				self.bromeo2.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5800,
+					min_mult = 0.53333
+				}	
+				self.bromeo2.stats = {
+					damage = 45,
+					spread = 85,
+					recoil = 77,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.bromeo2.stats_modifiers = nil
+				self.bromeo2.panic_suppression_chance = 0.05
+			end
+			if self.bromeop then --MTZ Interceptor
+				self.bromeop.categories = { 
+					"snp",
+					"semi_snp"
+				}
+				self.bromeop.recategorize = { "light_snp" }
+				self.bromeop.has_description = true
+				self.bromeop.damage_type = "assault_rifle"
+				self.bromeop.CLIP_AMMO_MAX = 10
+				self.bromeop.AMMO_MAX = 60
+				self.bromeop.FIRE_MODE = "single"
+				self.bromeop.CAN_TOGGLE_FIREMODE = false
+				self.bromeop.fire_mode_data.fire_rate = 0.288461
+				self.bromeop.kick = {}
+				self.bromeop.kick = self.stat_info.kick_tables.moderate_right_kick
+				self.bromeop.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{3, self.stat_info.kick_tables.moderate_right_kick},
+					{7, self.stat_info.kick_tables.even_recoil},
+					{10, self.stat_info.kick_tables.right_recoil},
+				}
+				self.bromeop.supported = true
+				self.bromeop.ads_speed = 0.300
+				self.bromeop.damage_falloff = {
+					start_dist = 2200,
+					end_dist = 5300,
+					min_mult = 0.53333
+				}	
+				self.bromeop.stats = {
+					damage = 30,
+					spread = 85,
+					recoil = 77,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.bromeop.stats_modifiers = nil
+				self.bromeop.panic_suppression_chance = 0.05
+			end
+
 
 			if self.doot_eternal_shotgun then
 				self.doot_eternal_shotgun.recategorize = { "break_shot" }

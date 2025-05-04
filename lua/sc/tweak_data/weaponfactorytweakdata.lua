@@ -37628,7 +37628,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					hip_mult = 1.666666,
 					damage_min_mult = 1.11111,
 					falloff_start_mult = 0.8,
-					falloff_end_mult = 0.862068
+					falloff_end_mult = 0.862068,
 					alt_ammo_pickup_min_mul = 0.6,
 					alt_ammo_pickup_max_mul = 0.6,
 					ammo_pickup_min_mul = 0.6,

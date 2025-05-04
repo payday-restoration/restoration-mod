@@ -32982,6 +32982,23 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				}
 		end
 
+		if self.parts.wpn_fps_ass_m416d_barrel_10 then
+			self.parts.wpn_fps_ass_m416d_barrel_10.stats = {}
+			self.parts.wpn_fps_ass_m416d_barrel_10.custom_stats = {}
+			
+			self.parts.wpn_fps_ass_m416d_handguard_geissele_10.stats = {}
+			self.parts.wpn_fps_ass_m416d_handguard_geissele_10.custom_stats = {}
+			
+			self.parts.wpn_fps_ass_m416d_flash_hider.stats = {}
+			self.parts.wpn_fps_ass_m416d_flash_hider.custom_stats = {}
+			
+			self.parts.wpn_fps_ass_m416d_grip.stats = {}
+			self.parts.wpn_fps_ass_m416d_grip.custom_stats = {}
+
+			self.parts.wpn_fps_ass_m416d_stock.stats = {}
+			self.parts.wpn_fps_ass_m416d_stock.custom_stats = {}
+		end
+
 		if self.parts.wpn_fps_lmg_raid_ww2_bren_barrel_long then
 			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.pcs = nil
 			self.parts.wpn_fps_lmg_raid_ww2_bren_brake.stats = { value = 1 }

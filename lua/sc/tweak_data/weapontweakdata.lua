@@ -23639,6 +23639,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.madsen_mg.sms = sms_preset.lmg_120
 				self.madsen_mg.weapon_movement_penalty = sms_preset.lmg_120
 			end
+
+			if self.m416d then
+				self.m416d.nato = true
+				self.m416d.recategorize = { "light_ar" }
+				self.m416d.damage_type = "assault_rifle"
+				self.m416d.has_description = false						
+				self.m416d.tactical_reload = 1		
+				self.m416d.AMMO_MAX = 150
+				self.m416d.fire_mode_data.fire_rate = 0.08571428571
+				self.m416d.kick = self.stat_info.kick_tables.moderate_kick
+				self.m416d.kick_pattern = {
+					{0, self.stat_info.kick_tables.moderate_kick},
+					{5, self.stat_info.kick_tables.pattern_r1},
+					{6, self.stat_info.kick_tables.moderate_left_kick},
+					{10, self.stat_info.kick_tables.right_kick},
+					{12, self.stat_info.kick_tables.moderate_kick},
+					{19, self.stat_info.kick_tables.moderate_right_kick}
+				}
+				self.m416d.supported = true
+				self.m416d.ads_speed = 0.280
+				self.m416d.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 6300,
+					min_mult = 0.5
+				}
+				self.m416d.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 83,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.m416d.stats_modifiers = nil
+				self.m416d.sounds.magazine_empty = "wp_rifle_slide_lock"
+				self.m416d.panic_suppression_chance = 0.05
+			end
 		
 		--[[     TANGERINE'S MODS     ]]--
 			if self.ar47 then --Tangerine's AR-47

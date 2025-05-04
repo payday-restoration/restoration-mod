@@ -1,38 +1,11 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 1200 or (difficulty == 6 or difficulty == 7) and 1000) or 900
 local murky_bravos_table = {
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3"
-}
-
-local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+"units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3",
 }
 local bravo_guards = {
 	values = {
@@ -40,17 +13,6 @@ local bravo_guards = {
 	}
 }
 return {
-	--Pro Job PONR when someone pickup a bomb part
-	-- Van escape
-	[105877] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value + 150
-	},
-	-- Boat escape
-	[106036] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
-	},
 	--Increase PONR timers
 	[102120] = {
 		values = {
@@ -60,7 +22,7 @@ return {
 			time_overkill_145 = 60,
 			time_easy_wish = 60,
 			time_overkill_290 = 60,
-			time_sm_wish = 60
+			time_sm_wish = 60,
 		}
 	},
 	--Murky Elite Guards

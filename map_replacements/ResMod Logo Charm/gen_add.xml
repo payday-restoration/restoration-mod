@@ -1,0 +1,13 @@
+<table directory="assets">
+    <!-- God, wtf am I doing -->
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/resmod_logo"/>
+	<texture path="units/mods/weapons/resmod_logo/resmod_logo_df"/>
+	<texture path="units/mods/weapons/resmod_logo/resmod_logo_nm"/>
+	<cooked_physics path="units/mods/weapons/resmod_logo/resmod_logo"/>
+	<model path="units/mods/weapons/resmod_logo/resmod_logo"/>
+	<object path="units/mods/weapons/resmod_logo/resmod_logo"/>
+	<material_config path="units/mods/weapons/resmod_logo/resmod_logo"/>
+	<material_config path="units/mods/weapons/resmod_logo/resmod_logo_thq"/>
+	<material_config path="units/mods/weapons/resmod_logo/resmod_logo_cc_thq"/>
+	<unit path="units/mods/weapons/resmod_logo/resmod_logo"/>
+</table>

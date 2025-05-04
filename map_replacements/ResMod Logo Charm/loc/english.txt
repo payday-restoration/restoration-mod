@@ -1,0 +1,5 @@
+{
+	"bm_wp_resmod_logo" : "Restoration Mod Logo Charm",
+
+        "menu_l_global_value_vavlo_says_hi" : "Made by MrVavlo."
+}

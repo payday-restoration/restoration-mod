@@ -302,8 +302,8 @@ function NewRaycastWeaponBase:second_sight_steelsight_mult()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_ads or 1
+		if part_stats and part_stats.pointshoot_ads then
+			return self._pointshoot_ads
 		end
 	end
 
@@ -316,8 +316,8 @@ function NewRaycastWeaponBase:second_sight_spread_mult()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_spread or false
+		if part_stats and part_stats.pointshoot_spread then
+			return self._pointshoot_spread
 		end
 	end
 
@@ -330,8 +330,8 @@ function NewRaycastWeaponBase:second_sight_strafe()
 	if second_sight then
 		local part_stats = tweak_data.weapon.factory.parts[second_sight.part_id].custom_stats
 
-		if part_stats then
-			return part_stats.pointshoot_strafe or false
+		if part_stats and part_stats.pointshoot_strafe then
+			return self._pointshoot_strafe
 		end
 	end
 
@@ -960,6 +960,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._recoil_recovery = math.clamp(recoil_values and recoil_values[3] or 0.5, 0, 1)
 
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
+	self._reload_not_empty_speed_multiplier = self._reload_not_empty_speed_multiplier or self:weapon_tweak_data().reload_not_empty_speed_multiplier or 1
 	self._ads_speed_mult = self._ads_speed_mult or  1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	self._autograph_multiplier = self:weapon_tweak_data().autograph_multiplier or nil
@@ -1072,6 +1073,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._melee_speed_mult = 1
 		self._reload_anim_multiplier = 1
+		self._reload_empty_anim_multiplier = 1
+		self._reload_non_empty_anim_multiplier = 1
 
 		self._hipfire_mult = 1
 		self._ads_moving_mult = 1
@@ -1085,6 +1088,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 		self._bypass_orig_firemode = nil
 		self._bypass_orig_toggle_firemode = nil
+
+		self._pointshoot_ads = 1
+		self._pointshoot_spread = 1
+		self._pointshoot_strafe = 0
 
 		self._keep_ammo = self:weapon_tweak_data().keep_ammo
 
@@ -1179,12 +1186,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				self._fire_rate_init_delay = stats.init_rof.delay or self._fire_rate_init_delay
 			end
 	
+			if stats.reload_not_empty_speed_multiplier then
+				self._reload_not_empty_speed_multiplier = (self._reload_not_empty_speed_multiplier or 1) * stats.reload_not_empty_speed_multiplier
+			end
+
 			if stats.adj_timers then
 				if self:weapon_tweak_data().timers then
 					self:weapon_tweak_data().timers.reload_empty = stats.adj_timers.reload_empty or self:weapon_tweak_data().timers.reload_empty
 					self:weapon_tweak_data().timers.reload_not_empty = stats.adj_timers.reload_not_empty or self:weapon_tweak_data().timers.reload_not_empty
-					self:weapon_tweak_data().timers.reload_exit_empty = stats.adj_timers.reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty
-					self:weapon_tweak_data().timers.reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty
+					self._alt_reload_exit_empty = stats.adj_timers.reload_exit_empty
+					self._alt_reload_exit_not_empty = stats.adj_timers.reload_exit_not_empty
 				end
 			end	
 			
@@ -1223,6 +1234,16 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 			if stats.tactical_reload then
 				self._tactical_reload = stats.tactical_reload
+			end
+			
+			if stats.pointshoot_ads then
+				self._pointshoot_ads = (self._pointshoot_ads or 1) * stats.pointshoot_ads
+			end
+			if stats.pointshoot_spread then
+				self._pointshoot_spread = (self._pointshoot_spread or 1) * stats.pointshoot_spread
+			end
+			if stats.pointshoot_strafe then
+				self._pointshoot_strafe = math.min( (self._pointshoot_strafe or 0) + stats.pointshoot_strafe, 1 )
 			end
 
 			if stats.descope_on_fire then		
@@ -1332,6 +1353,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			end
 			if stats.reload_anim_mult then
 				self._reload_anim_multiplier = self._reload_anim_multiplier * stats.reload_anim_mult
+			end
+			if stats.reload_empty_anim_mult then
+				self._reload_empty_anim_multiplier = self._reload_empty_anim_multiplier * stats.reload_empty_anim_mult
+			end
+			if stats.reload_non_empty_anim_mult then
+				self._reload_non_empty_anim_multiplier = self._reload_non_empty_anim_multiplier * stats.reload_non_empty_anim_mult
 			end
 			if stats.movement_speed_add then
 				self._movement_speed_add = self._movement_speed_add + stats.movement_speed_add
@@ -1503,7 +1530,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 
 	self._has_scope = managers.weapon_factory:has_perk("scope", self._factory_id, self._blueprint)
 
-	self:precalculate_ammo_pickup()
+	if not disallow_replenish then
+		self:precalculate_ammo_pickup()
+	end
 end
 
 function NewRaycastWeaponBase:armor_piercing_chance()
@@ -1892,8 +1921,8 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
 
 	if self:get_ammo_remaining_in_clip() ~= 0 then
-		if self:weapon_tweak_data().reload_not_empty_speed_multiplier then
-			multiplier = multiplier * self:weapon_tweak_data().reload_not_empty_speed_multiplier
+		if self._reload_not_empty_speed_multiplier then
+			multiplier = multiplier * self._reload_not_empty_speed_multiplier
 		end
 	end
 	
@@ -2050,8 +2079,11 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
 	--Initialize base info.
 
-	if (self._chf and check_col_ray_head) or not self:in_burst_mode() and not is_rapidfire and ((self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or 
-		(managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head)) then
+	local has_mindblown_ace = managers.player:has_category_upgrade("player", "headshot_no_falloff") and self:is_single_shot() and self:is_category("assault_rifle", "snp") and check_col_ray_head and (managers.player._last_no_falloff_headshot_t or 0) < self._unit:timer():time()
+	if (self._chf and check_col_ray_head) or --[[not self:in_burst_mode() and not is_rapidfire and]] (self._ammo_data and (self._ammo_data.bullet_class == "InstantExplosiveBulletBase")) or has_mindblown_ace then
+		if has_mindblown_ace then
+			managers.player._last_no_falloff_headshot_t = self._unit:timer():time() + (tweak_data.upgrades.headshot_no_falloff_cd or 0)
+		end
 		return damage
 	end
 
@@ -2141,17 +2173,21 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit, dot
 	return math.lerp(damage, minimum_damage * damage, math.min(1, math.max(0, distance - falloff_start) / (falloff_end - falloff_start)))
 end
 
+function NewRaycastWeaponBase:give_reload_t(not_empty)
+	local time = (not_empty and self:weapon_tweak_data().timers.reload_not_empty or 2.2) or (self:weapon_tweak_data().timers.reload_empty or 2.6)
+	return time
+end
 
 function NewRaycastWeaponBase:reload_exit_expire_t()
 	if not self._use_shotgun_reload then
-		return self:weapon_tweak_data().timers.reload_exit_empty or nil
+		return self._alt_reload_exit_empty or self:weapon_tweak_data().timers.reload_exit_empty or 0
 	end
 	return self:weapon_tweak_data().timers.shotgun_reload_exit_empty or 0.7
 end
 
 function NewRaycastWeaponBase:reload_not_empty_exit_expire_t()
 	if not self._use_shotgun_reload then
-		return self:weapon_tweak_data().timers.reload_exit_not_empty or nil
+		return self._alt_reload_exit_not_empty or self:weapon_tweak_data().timers.reload_exit_not_empty or 0
 	end
 	return self:weapon_tweak_data().timers.shotgun_reload_exit_not_empty or 0.3
 end
@@ -2528,156 +2564,14 @@ if OWLFBullpupWeaponBase then
 	end
 end
 
---[[
-function NewRaycastWeaponBase:clbk_assembly_complete(clbk, parts, blueprint)
-	self._assembly_complete = true
-	self._parts = parts
-	self._blueprint = blueprint
 
-	self:_update_fire_object()
-	self:_update_stats_values()
-	self:_refresh_gadget_list()
-	self:_refresh_second_sight_list()
-
-	if self._setup and self._setup.timer then
-		self:set_timer(self._setup.timer)
-	end
-
-	local bullet_object_parts = {
-		"magazine",
-		"ammo",
-		"underbarrel",
-		"magazine_extra",
-		"magazine_extra_2",
-		"magazine_extra_3",
-		"magazine_extra_4"
-	}
-	self._bullet_objects = {}
-
-	for _, type in ipairs(bullet_object_parts) do
-		local type_part = managers.weapon_factory:get_part_from_weapon_by_type(type, self._parts)
-
-		if type_part then
-			local bullet_objects = managers.weapon_factory:get_part_data_type_from_weapon_by_type(type, "bullet_objects", self._parts)
-
-			if bullet_objects then
-				local offset = bullet_objects.offset or 0
-				local prefix = bullet_objects.prefix
-
-				for i = 1 + offset, bullet_objects.amount + offset do
-					local object = type_part.unit:get_object(Idstring(prefix .. i))
-
-					if object then
-						self._bullet_objects[i] = self._bullet_objects[i] or {}
-
-						table.insert(self._bullet_objects[i], {
-							object,
-							type_part.unit
-						})
-					end
-				end
-			end
-
-			local bullet_belt = managers.weapon_factory:get_part_data_type_from_weapon_by_type(type, "bullet_belt", self._parts)
-
-			if bullet_belt then
-				local parent_id = managers.weapon_factory:get_part_id_from_weapon_by_type(type, self._blueprint)
-				self._custom_units = self._custom_units or {}
-				self._custom_units.bullet_belt = {
-					parent = parent_id,
-					parts = bullet_belt
-				}
-				local parts_tweak = tweak_data.weapon.factory.parts
-				local bullet_index = bullet_objects and 1 + bullet_objects.amount + (bullet_objects.offset or 0) or 1
-
-				for _, belt_part_id in ipairs(bullet_belt) do
-					local unit = self._parts[belt_part_id].unit
-					local belt_data = parts_tweak[belt_part_id]
-					local belt_bullet_objects = belt_data.bullet_objects
-
-					if belt_bullet_objects then
-						local offset = belt_bullet_objects.offset or 0
-						local prefix = belt_bullet_objects.prefix
-
-						for i = 1 + offset, belt_bullet_objects.amount + offset do
-							local object = unit:get_object(Idstring(prefix .. i))
-
-							if object then
-								print("bullet", bullet_index, i, unit, object)
-
-								self._bullet_objects[bullet_index] = self._bullet_objects[bullet_index] or {}
-
-								table.insert(self._bullet_objects[bullet_index], {
-									object,
-									unit
-								})
-							else
-								Application:error("[NewRaycastWeaponBase:clbk_assembly_complete] Bullet object not found.", bullet_index, i, unit, object)
-							end
-
-							bullet_index = bullet_index + 1
-						end
-					end
-				end
-			end
+if SKSWeaponBase then
+	function SKSWeaponBase:clbk_assembly_complete(...)
+		SKSWeaponBase.super.clbk_assembly_complete(self, ...)
+		if table.contains(self._blueprint, "wpn_fps_upg_sks_mag_detach10") or table.contains(self._blueprint, "wpn_fps_upg_sks_mag_detach20") then
+			self:weapon_tweak_data().animations.reload_name_id = "sks_mag"
+		else
+			self:weapon_tweak_data().animations.reload_name_id = "sks"
 		end
 	end
-
-	self._ammo_objects = nil
-
-	if tweak_data.weapon[self._name_id].use_ammo_objects then
-		self._ammo_objects = self._bullet_objects
-		self._bullet_objects = nil
-	end
-
-	self:setup_underbarrel_data()
-	self:_apply_cosmetics(clbk or function ()
-	end)
-	self:apply_texture_switches()
-	self:apply_material_parameters()
-	self:configure_scope()
-	self:check_npc()
-	self:call_on_digital_gui("set_firemode", self:fire_mode())
-	self:_set_parts_enabled(self._enabled)
-
-	if self._second_sight_data then
-		self._second_sight_data.unit = self._parts[self._second_sight_data.part_id].unit
-	end
-
-	local category = tweak_data.weapon[self._name_id].use_data.selection_index == 2 and "primaries" or "secondaries"
-	local slot = managers.blackmarket:equipped_weapon_slot(category)
-
-	for _, part_id in ipairs(blueprint) do
-		local colors = managers.blackmarket:get_part_custom_colors(category, slot, part_id, true)
-
-		if colors then
-			local mod_td = tweak_data.weapon.factory.parts[part_id]
-			local part_data = parts[part_id]
-
-			if colors[mod_td.sub_type] then
-				local alpha = part_data.unit:base().GADGET_TYPE == "laser" and tweak_data.custom_colors.defaults.laser_alpha or 1
-
-				part_data.unit:base():set_color(colors[mod_td.sub_type]:with_alpha(alpha))
-			end
-
-			if mod_td.adds then
-				for _, add_part_id in ipairs(mod_td.adds) do
-					if self._parts[add_part_id] and self._parts[add_part_id].unit:base() then
-						local sub_type = tweak_data.weapon.factory.parts[add_part_id].sub_type
-						
-						if self._parts[add_part_id].unit:base().set_color then
-							self._parts[add_part_id].unit:base():set_color(colors[sub_type])
-						end
-					end
-				end
-			end
-		end
-	end
-
-	if self._setup and self._setup.user_unit then
-		self:_chk_has_charms(self._parts, self._setup)
-	end
-
-	clbk()
 end
---]]

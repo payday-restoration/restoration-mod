@@ -1357,9 +1357,12 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 								self._spin_up_shoot = nil
 								self._already_fired = true
 							end
-							if weap_base:clip_empty() and not manual_reloads then
-								--self:_start_action_reload_enter(t)
-							end
+							
+							DelayedCalls:Add("clip_empty", 0.1, function ()
+								if not self:_is_reloading() and weap_base:clip_empty() and not manual_reloads then
+									self:_start_action_reload_enter(t + 0.1)
+								end
+							end)
 						end
 
 
@@ -1785,7 +1788,7 @@ function PlayerStandard:_get_max_walk_speed(t, force_run)
 			if weapon_tweak.is_bullpup then 
 				speed_mult = speed_mult * 1.25
 			end
-			speed_mult = speed_mult * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
+			speed_mult = ((1 - speed_mult) * managers.player:upgrade_value("player", "steelsight_move_speed_multiplier")) + speed_mult
 			movement_speed = base_speed * ((not has_ads_move_speed_mult and 0.45) or 1)
 			movement_speed = math.clamp(movement_speed * speed_mult, 0, base_speed)
 		end
@@ -2302,14 +2305,15 @@ function PlayerStandard:_update_melee_timers(t, input)
 						local is_enemy = hit_unit:in_slot(managers.slot:get_mask("enemies"))
 						local u_key = hit_unit:key()
 						local name_key = hit_unit:name():key()
+						local unit_damage = hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead 
 						if unique_hits[u_key] then
 							use_cleave = nil
-							if not is_enemy and body_dmg_ext and name_key ~= "e050221f8707ded8" then
+							if not is_enemy and unit_damage and body_dmg_ext and name_key ~= "e050221f8707ded8" then
 								self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, num_casts, true, true, true)
 							end
 						else
 							unique_hits[u_key] = hit_unit
-							use_cleave = is_enemy and hit_unit and hit_unit.character_damage and hit_unit:character_damage() and not hit_unit:character_damage()._dead and true
+							use_cleave = is_enemy and unit_damage and true
 							self:_do_melee_damage(t, nil, nil, nil, nil, hit_unit, col_ray, nil, true, true)
 						end
 					end
@@ -4075,6 +4079,13 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		local reload_fix_offset = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset
 		local reload_fix_offset2 = self._equipped_unit:base():weapon_tweak_data().reload_fix_offset2
 		local always_use_empty_reload = self._equipped_unit:base():weapon_tweak_data().always_use_empty_reload
+		local hide_reload_obj_start = self._equipped_unit:base():weapon_tweak_data().hide_reload_obj_start
+		local show_reload_obj = self._equipped_unit:base():weapon_tweak_data().show_reload_obj
+
+		if anim_multiplier then
+			anim_multiplier = anim_multiplier * ((self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_empty_anim_multiplier) or 1)
+			anim_multiplier = anim_multiplier * ((not self._equipped_unit:base():clip_empty() and self._equipped_unit:base()._reload_non_empty_anim_multiplier) or 1)
+		end
 		if reload_fix_offset then
 			self._equipped_unit:base():tweak_data_anim_stop("reload")
 		end
@@ -4085,6 +4096,13 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				interupt = true
 			end
 		end
+
+		if show_reload_obj and self._state_data.reload_expire_t - t < (show_reload_obj / speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(true)
+		elseif hide_reload_obj_start and self._state_data.reload_expire_t - t > (hide_reload_obj_start / speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(false)
+		end
+
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
 			self._state_data.reload_expire_t = nil
@@ -4131,7 +4149,16 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 	end
+
+	if self._state_data.reload_exit_expire_t then
+		local hide_reload_obj_exit = self._equipped_unit:base():weapon_tweak_data().hide_reload_obj_exit
+		if hide_reload_obj_exit and self._state_data.reload_exit_expire_t - t < (hide_reload_obj_exit / speed_multiplier) then
+			self._equipped_unit:base():set_reload_objects_visible(false, "reload_not_empty")
+		end
+	end
+
 	if self._state_data.reload_exit_expire_t and self._state_data.reload_exit_expire_t <= t then
+
 		self._state_data.reload_exit_expire_t = nil
 		if self._equipped_unit then
 			managers.statistics:reloaded()
@@ -4146,6 +4173,8 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			end
 		end
 	end
+
+
 	if not self._state_data.reload_expire_t and not self._state_data.reload_exit_expire_t then
 		if self._equipped_unit and self._equipped_unit:base().set_reload_objects_visible and self._equipped_unit:base()._ignore_reload_objects then
 			self._equipped_unit:base():tweak_data_anim_stop("reload")
@@ -4189,6 +4218,10 @@ function PlayerStandard:_start_action_reload(t)
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1
+			if anim_multiplier then
+				anim_multiplier = anim_multiplier * ((weapon:clip_empty() and weapon._reload_empty_anim_multiplier) or 1)
+				anim_multiplier = anim_multiplier * ((not weapon:clip_empty() and weapon._reload_non_empty_anim_multiplier) or 1)
+			end
 			local reload_prefix = weapon:reload_prefix() or ""
 			local reload_name_id = anims_tweak.reload_name_id or weapon.name_id
 	
@@ -4216,6 +4249,10 @@ function PlayerStandard:_start_action_reload(t)
 	
 			local speed_multiplier = weapon:reload_speed_multiplier()
 			local anim_multiplier = weapon._reload_anim_multiplier or 1
+			if anim_multiplier then
+				anim_multiplier = anim_multiplier * ((weapon:clip_empty() and weapon._reload_empty_anim_multiplier) or 1)
+				anim_multiplier = anim_multiplier * ((not weapon:clip_empty() and weapon._reload_non_empty_anim_multiplier) or 1)
+			end
 			local empty_reload = weapon:clip_empty() and 1 or 0
 	
 			if weapon:use_shotgun_reload() then
@@ -5067,7 +5104,7 @@ if AdvMov then --Everything here was originally from Solo Queue Pixy and none of
 					self._slide_last_z = self._unit:position().z
 					self._slide_last_speed = self._slide_speed
 					self._slide_end_speed = self:_get_modified_move_speed("crouch")/4 -- don't need to calculate every frame
-					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.3) -- it's magic
+					self._slide_speed_factor = self._slide_speed/(self._tweak_data.movement.speed.RUNNING_MAX * 1.2) -- it's magic
 					self:_stance_entered()
 
 					self._last_slide_time = self._last_t

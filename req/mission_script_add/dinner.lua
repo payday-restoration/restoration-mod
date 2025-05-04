@@ -56,7 +56,7 @@ local enabled_chance_cloakers = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer = math.random() < diff_scaling
 local enabled_chance_shields_and_tazer_2 = math.random() < diff_scaling
 local enabled_chance_shields_and_dozer = math.random() < diff_scaling
-local dozer_respawn_delay = (difficulty >= 7 and 120) or 180
+local dozer_respawn_delay = (difficulty >= 7 and 240) or 300
 local ponr_value = (difficulty <= 5 and 120) or 90
 local ponr_timer_player_mul = {
 	1,

@@ -4,8 +4,10 @@ local idstr_simulator_length = Idstring("simulator_length")
 local idstr_size = Idstring("size")
 local trail_length
 
+
 function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
-	if not alive(weapon_unit) or weapon_unit:base():fire_mode() ~= "single" or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy then
+	--local t = Application:time()
+	if not alive(weapon_unit) or weapon_unit:base():fire_mode() ~= "single" or not weapon_unit:base():is_category("assault_rifle", "snp") or weapon_unit ~= managers.player:equipped_weapon_unit() or not result.hit_enemy --[[or (((managers.player._last_graze_t or 0) + tweak_data.upgrades.headshot_graze_proc_cd ) > t)]] then
 		return
 	end
 
@@ -55,6 +57,8 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 end
 
 function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult)
+	--local t = Application:time()
+	--managers.player._last_graze_t = t
 	if times <= 0 then
 		return
 	end

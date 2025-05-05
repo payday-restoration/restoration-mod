@@ -19317,8 +19317,8 @@ end)
 						rotation = Rotation(-0.1, 0.04, 0.1)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_toz81 = {
-						translation = Vector3(-0.055, -23.2, -4.785),
-						rotation = Rotation(-0.08, -0.12, 0)
+						translation = Vector3(-0.02, -26.5, -5.09),
+						rotation = Rotation(-0.06, -0.03, 0)
 					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_sho_riveter = {
 						translation = Vector3(0, 9, -0.3),

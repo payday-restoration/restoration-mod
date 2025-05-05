@@ -24379,9 +24379,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.toz81.stats_modifiers = nil
 				self.toz81.panic_suppression_chance = 0.05
-				self.toz81.reload_speed_multiplier = 1.2
-				self.toz81.use_hipfire_stance = "groza"
-				self.toz81.timers = deep_clone(self.gre_m79.timers)
+				self.toz81.use_hipfire_stance = "breech"
+				self.toz81.reload_speed_multiplier = 1.1
+				self.toz81.timers.reload_empty = 2.18
+				self.toz81.timers.reload_exit_empty = 1.15
+				self.toz81.timers.reload_not_empty = 2.18
+				self.toz81.timers.reload_exit_not_empty = 1.15
+
 
 				self.x_toz81.recategorize = { "heavy_shot" }
 				self.x_toz81.categories = { "akimbo", "shotgun", "shotgun_pistol" }

@@ -23864,8 +23864,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.m416d.stats_modifiers = nil
-				self.m416d.sounds.magazine_empty = "wp_rifle_slide_lock"
 				self.m416d.panic_suppression_chance = 0.05
+				self.m416d.keep_ammo = 1
+				self.m416d.lock_slide = true
+				self.m416d.lock_slide_offset = 0.066
+				self.m416d.timers.reload_not_empty = 1.35
+				self.m416d.timers.reload_exit_not_empty = 0.9
+				self.m416d.timers.reload_empty = 2.3
+				self.m416d.timers.reload_exit_empty = 0.7
+				self.m416d.sounds.magazine_empty = "wp_rifle_slide_lock"
 			end
 		
 		--[[     TANGERINE'S MODS     ]]--

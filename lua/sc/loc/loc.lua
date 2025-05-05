@@ -5959,7 +5959,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks_Eng", funct
 		["menu_st_spec_15"] = "Anarchist", --there's a random space at the end of the original string
 		["menu_deck15_1_desc_sc"] = "Instead of fully regenerating armor when out of combat, The Anarchist will periodically regenerate armor at a rate equivalent to #{skill_color}#8## armor per second. Heavier armor regenerates more armor per tick but has a longer delay between ticks.\n\n#{risk}#NOTE: Skills and perks that increase the armor recovery rate or have cooldown reductions tied to regenerating armor are disabled when using this perk deck.##",
 		["menu_deck15_3_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2 armor.##",
-		["menu_deck15_5_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2.##\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_3## longer.",
+		["menu_deck15_5_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2 armor.##\n\nCivilians intimidated by you and your crew remain intimidated ##$perk_value_3## longer.",
 		["menu_deck15_7_desc_sc"] = "#{risk}#$perk_value_1 of your health## is converted into #{skill_color}#$perk_value_2 armor.##",
 		["menu_deck15_9_desc_sc"] = "#{skill_color}#Dealing damage will grant you armor,## with heavier armor being granted more armor.\nThis can only occur once every #{important_1}#$perk_value_1## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by #{skill_color}#10%.##",
 		["menu_anarc_disable"] = "#{important_1}#(Disabled by Anarchist)##",

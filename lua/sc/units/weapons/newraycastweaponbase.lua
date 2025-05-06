@@ -973,6 +973,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._can_shoot_through_enemy_unlim = self._can_shoot_through_enemy_unlim or self:weapon_tweak_data().can_shoot_through_enemy_unlim or false --No limit enemy piercing
 	self._can_shoot_through_titan_shield = self._can_shoot_through_titan_shield or self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
+	self._ammo_ratio = self:weapon_tweak_data().ammo_ratio or 1
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato

@@ -24960,6 +24960,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ar23.damage_type = "assault_rifle"
 				self.ar23.CLIP_AMMO_MAX = 45
 				self.ar23.AMMO_MAX = self.ar23.CLIP_AMMO_MAX * 9
+				self.ar23.ammo_ratio = 2
 				self.ar23.fire_mode_data.fire_rate = 0.09375
 				self.ar23.sms = 0.5
 				self.ar23.tactical_reload = 1
@@ -25012,6 +25013,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta52.damage_type = "assault_rifle"
 				self.sta52.CLIP_AMMO_MAX = 56
 				self.sta52.AMMO_MAX = self.sta52.CLIP_AMMO_MAX * 7
+				self.sta52.ammo_ratio = 2
 				self.sta52.fire_mode_data.fire_rate = 0.07594
 				self.sta52.sms = 0.5
 				self.sta52.tactical_reload = 1
@@ -25059,6 +25061,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.br14.damage_type = "sniper"
 				self.br14.CLIP_AMMO_MAX = 30
 				self.br14.AMMO_MAX = self.br14.CLIP_AMMO_MAX * 9
+				self.br14.ammo_ratio = 2
 				self.br14.fire_mode_data.fire_rate = 0.10909
 				self.br14.sms = 0.5
 				self.br14.tactical_reload = 1
@@ -25108,6 +25111,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.damage_type = "machine_gun"
 				self.reprimand.CLIP_AMMO_MAX = 25
 				self.reprimand.AMMO_MAX = self.reprimand.CLIP_AMMO_MAX * 10
+				self.reprimand.ammo_ratio = 2
 				self.reprimand.fire_mode_data.fire_rate = 0.12244
 				self.reprimand.sms = 0.8
 				self.reprimand.tactical_reload = 1
@@ -25161,6 +25165,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sta11.damage_type = "machine_gun"
 				self.sta11.CLIP_AMMO_MAX = 48
 				self.sta11.AMMO_MAX = self.sta11.CLIP_AMMO_MAX * 8
+				self.sta11.ammo_ratio = 2
 				self.sta11.fire_mode_data.fire_rate = 0.0571428
 				self.sta11.sms = 0.8
 				self.sta11.tactical_reload = 1
@@ -25207,6 +25212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sickle.damage_type = "assault_rifle"
 				self.sickle.CLIP_AMMO_MAX = 80
 				self.sickle.AMMO_MAX = self.sickle.CLIP_AMMO_MAX * 4
+				self.sickle.ammo_ratio = 2
 				self.sickle.sms = 0.5
 				self.sickle.fire_mode_data.fire_rate = 0.08
 				self.sickle.BURST_FIRE = false
@@ -25280,6 +25286,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r6.desc_id = "bm_ap_weapon_sc_desc"
 				self.r6.CLIP_AMMO_MAX = 6
 				self.r6.AMMO_MAX = self.r6.CLIP_AMMO_MAX * 11
+				self.r6.ammo_ratio = 2
 				self.r6.FIRE_MODE = "single"
 				self.r6.fire_mode_data = {}
 				self.r6.fire_mode_data.fire_rate = 0.9

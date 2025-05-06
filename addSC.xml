@@ -1551,9 +1551,13 @@
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_sho_x_judge/wpn_fps_pis_x_judge" load="false"/>
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" load="false"/>
 	
+	<object				path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/wpn_fps_snp_msr_ns_suppressor" load="false"/>
+	
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_conversion" load="false"/>
+	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_s_standard" load="false"/>
+	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_s_conversion" load="false"/>
 
 	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_1_pts/wpn_fps_snp_awp_ck_1_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp4/weapons/wpn_fps_snp_awp_ck_2_pts/wpn_fps_snp_awp_ck_2_b_long" load="false"/>

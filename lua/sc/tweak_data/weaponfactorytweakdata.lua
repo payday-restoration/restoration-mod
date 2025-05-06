@@ -695,233 +695,243 @@ local stocks = {
 
 --Muzzle device stats
 local muzzle_device = {
+	-- Blank Suppressor
+		supp_blank = {
+			suppression = 12,
+			alert_size = -1,
+			value = 1,
+		},
+
 	-- +Con -Acc/Range 
-		muzzle_a_stats = {
+		muzz_con_a = {
 			value = 3,
 			spread = -1,
 			concealment = 1,
-			suppression = 12
-		},
-		supp_a_stats = {
 			suppression = 12,
-			alert_size = -1,
-			value = 3,
-			spread = -1,
-			concealment = 1
-		},
-		muzzle_a_custom_stats = {
 			falloff_start_mult = 0.95,
 			falloff_end_mult = 0.95
 		},
-	-- +Con -Stab 
-		muzzle_a_alt_stats = {
-			value = 3,
-			recoil = -2,
-			concealment = 1
-		},
-		supp_a_alt_stats = {
+		supp_con_a = { --Extra Con for Acc/Range
 			suppression = 12,
 			alert_size = -1,
 			value = 3,
+			spread = -2,
+			concealment = 2,
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 0.9
+		},
+	-- +Con -Stab 
+		muzz_con_r = {
+			value = 3,
 			recoil = -2,
-			concealment = 1
+			concealment = 1,
+			falloff_start_mult = 0.95,
+			falloff_end_mult = 0.95
+		},
+		supp_con_r = { --Extra Con for Stab
+			suppression = 12,
+			alert_size = -1,
+			value = 3,
+			recoil = -4,
+			concealment = 2,
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 0.9
 		},
 
 
 	-- +Stab -Acc/Range 
-		muzzle_rec_stats = {
+		muzz_rec_a = {
 			value = 3,
 			spread = -1,
-			recoil = 2
-		},
-		supp_rec_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 3,
-			spread = -1,
-			recoil = 2
-		},
-		muzzle_rec_custom_stats = {
+			recoil = 2,
 			falloff_start_mult = 0.95,
 			falloff_end_mult = 0.95
 		},
-	-- +Acc/Range -Stab
-		muzzle_acc_stats = {
-			value = 3,
-			spread = 1,
-			recoil = -2
-		},
-		supp_acc_stats = {
+		supp_rec_a = { --Extra Con for Acc/Range
 			suppression = 12,
 			alert_size = -1,
 			value = 3,
-			spread = 1,
-			recoil = -2
-		},
-		muzzle_acc_custom_stats = {
-			falloff_start_mult = 1.05,
-			falloff_end_mult = 1.05
-		},
-
-
-	-- -Con +Stab
-		muzzle_b_stats = {
-			value = 2,
+			spread = -2,
 			recoil = 2,
-			concealment = -1
-		},
-		supp_b_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 2,
-			recoil = 2,
-			concealment = -1
-		},
-	-- -Con +Acc/Range
-		muzzle_b_alt_stats = {
-			value = 2,
-			spread = 1,
-			concealment = -1
-		},
-		supp_b_alt_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 2,
-			spread = 1,
-			concealment = -1
-		},
-		muzzle_b_alt_custom_stats = {
-			falloff_start_mult = 1.05,
-			falloff_end_mult = 1.05
-		},
-
-
-	-- --Con ++Acc/Range
-		muzzle_c_stats = {
-			value = 5,
-			spread = 2,
-			concealment = -2
-		},
-		supp_c_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 5,
-			spread = 2,
-			concealment = -2
-		},
-		muzzle_c_custom_stats = {
-			falloff_start_mult = 1.1,
-			falloff_end_mult = 1.1
-		},
-	-- --Con ++Stab
-		muzzle_c_alt_stats = {
-			value = 5,
-			recoil = 4,
-			concealment = -2
-		},
-		supp_c_alt_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 5,
-			recoil = 4,
-			concealment = -2
-		},
-	-- --Con +Stab +Acc/Range
-		muzzle_c_duo_stats = {
-			value = 5,
-			spread = 1,
-			recoil = 2,
-			concealment = -2
-		},
-		supp_c_duo_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 5,
-			spread = 1,
-			recoil = 2,
-			concealment = -2
-		},
-		muzzle_c_duo_custom_stats = {
-			falloff_start_mult = 1.05,
-			falloff_end_mult = 1.05,
-			ads_speed_mult = 1.025
-		},
-
-
-	-- ++Stab --Acc/Range
-		muzzle_rec2_stats = {
-			value = 5,
-			spread = -1,
-			recoil = 4,
-			concealment = -1
-		},
-		supp_rec2_stats = {
-			suppression = 12,
-			alert_size = -1,
-			value = 5,
-			spread = -1,
-			recoil = 4,
-			concealment = -1
-		},
-		muzzle_rec2_custom_stats = {
+			concealment = 1,
 			falloff_start_mult = 0.9,
 			falloff_end_mult = 0.9
-		},	
-	-- ++Acc --Stab
-		muzzle_acc2_stats = {
-			value = 5,
-			spread = 2,
-			concealment = -2
 		},
-		supp_acc2_stats = {
+	-- ++Stab --Acc/Range
+		muzz_rec2_a = {
+			value = 5,
+			spread = -1,
+			recoil = 4,
+			concealment = -1,
+			falloff_start_mult = 0.9,
+			falloff_end_mult = 0.9
+		},
+		supp_rec2_a = { --Extra Stab for Acc/Range
 			suppression = 12,
 			alert_size = -1,
 			value = 5,
-			spread = 2,
+			spread = -2,
+			recoil = 6,
+			concealment = -1,
+			falloff_start_mult = 0.85,
+			falloff_end_mult = 0.85
+		},
+	-- +Stab -Con 
+		muzz_rec_c = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		},
+		supp_rec_c = { --Extra Stab for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 2,
+			recoil = 4,
 			concealment = -2
 		},
-		muzzle_acc2_custom_stats = {
+	-- ++Stab --Con 
+		muzz_rec2_c = {
+			value = 5,
+			recoil = 4,
+			concealment = -2
+		},
+		supp_rec2_c = { --Extra Stab for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 5,
+			recoil = 6,
+			concealment = -3
+		},
+
+	-- +Acc/Range -Stab
+		muzz_acc_r = {
+			value = 3,
+			spread = 1,
+			recoil = -2,
+			falloff_start_mult = 1.05,
+			falloff_end_mult = 1.05
+		},
+		supp_acc_r = { --Extra Acc/Range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 3,
+			spread = 2,
+			recoil = -2,
+			concealment = -1,
 			falloff_start_mult = 1.1,
 			falloff_end_mult = 1.1
 		},
-
+	-- ++Acc --Stab
+		muzz_acc2_r = {
+			value = 5,
+			spread = 2,
+			recoil = -4,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1
+		},
+		supp_acc2_r = { --Extra Acc/Range for Stab
+			suppression = 12,
+			alert_size = -1,
+			value = 5,
+			spread = 3,
+			recoil = -6,
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15
+		},
 	-- +++Acc ---Stab
-		muzzle_acc3_stats = {
+		muzz_acc3_r = {
 			value = 6,
 			spread = 3,
-			recoil = -6
+			recoil = -6,
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15
 		},
-		supp_acc3_stats = {
+		supp_acc3_r = { --Extra Acc/Range for Stab
 			suppression = 12,
 			alert_size = -1,
 			value = 6,
-			spread = 3,
-			recoil = -6
+			spread = 4,
+			recoil = -8,
+			falloff_start_mult = 1.2,
+			falloff_end_mult = 1.2
 		},
-		muzzle_acc3_custom_stats = {
+
+	-- +Acc/Range -Con 
+		muzz_acc_c = {
+			value = 2,
+			spread = 1,
+			concealment = -1,
+			falloff_start_mult = 1.05,
+			falloff_end_mult = 1.05
+		},
+		supp_acc_c = { --Extra Acc/range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 2,
+			spread = 2,
+			concealment = -2,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1
+		},
+	-- ++Acc/Range --Con 
+		muzz_acc2_c = {
+			value = 5,
+			spread = 2,
+			concealment = -2,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1
+		},
+		supp_acc2_c = { --Extra Acc/range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 5,
+			spread = 3,
+			concealment = -3,
 			falloff_start_mult = 1.15,
 			falloff_end_mult = 1.15
 		},
 
-	-- ----Con ++Stab ++Acc/Range
-		muzzle_rec2_acc2_stats = {
-			value = 7,
-			spread = 2,
-			recoil = 4,
-			concealment = -4
+	-- +Stab +Acc/Range --Con 
+		muzz_dual_c = {
+			value = 5,
+			spread = 1,
+			recoil = 2,
+			concealment = -2,
+			falloff_start_mult = 1.05,
+			falloff_end_mult = 1.05,
+			ads_speed_mult = 1.025
 		},
-		supp_rec2_acc2_stats = {
+		supp_dual_c = { --Extra Stab for Con
 			suppression = 12,
 			alert_size = -1,
-			value = 7,
-			spread = 2,
+			value = 5,
+			spread = 1,
 			recoil = 4,
-			concealment = -4
-		},
-		muzzle_rec2_acc2_custom_stats = {
+			concealment = -2,
 			falloff_start_mult = 1.1,
 			falloff_end_mult = 1.1,
 			ads_speed_mult = 1.05
+		},
+	-- ++Stab ++Acc/Range ----Con 
+		muzz_dual2_c = {
+			value = 7,
+			spread = 2,
+			recoil = 4,
+			concealment = -4,
+			falloff_start_mult = 1.1,
+			falloff_end_mult = 1.1,
+			ads_speed_mult = 1.05
+		},
+		supp_dual2_c = { --Extra Acc/range for Con
+			suppression = 12,
+			alert_size = -1,
+			value = 7,
+			spread = 3,
+			recoil = 4,
+			concealment = -5,
+			falloff_start_mult = 1.15,
+			falloff_end_mult = 1.15,
+			ads_speed_mult = 1.1
 		}
 }
 
@@ -1811,8 +1821,8 @@ end)
 					self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
 						"silencer"
 					}
-					self.parts.wpn_fps_upg_ns_pis_putnik.stats = deep_clone(muzzle_device.supp_rec2_stats)
-					self.parts.wpn_fps_upg_ns_pis_putnik.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+					self.parts.wpn_fps_upg_ns_pis_putnik.stats = deep_clone(muzzle_device.supp_rec2_a)
+					self.parts.wpn_fps_upg_ns_pis_putnik.custom_stats = deep_clone(muzzle_device.supp_rec2_a)
 						
 					--Medved R4 Laser Sight
 					self.parts.wpn_fps_upg_fl_pis_perst.pcs = {
@@ -1953,8 +1963,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_maxim9_b_long.supported = true
-					self.parts.wpn_fps_pis_maxim9_b_long.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-					self.parts.wpn_fps_pis_maxim9_b_long.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)		
+					self.parts.wpn_fps_pis_maxim9_b_long.stats = deep_clone(muzzle_device.muzz_dual_c)
+					self.parts.wpn_fps_pis_maxim9_b_long.custom_stats = deep_clone(muzzle_device.muzz_dual_c)		
 					
 					--Pinnacle Barrel
 					self.parts.wpn_fps_pis_maxim9_b_marksman.pcs = {
@@ -1964,7 +1974,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_maxim9_b_marksman.supported = true
-					self.parts.wpn_fps_pis_maxim9_b_marksman.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_maxim9_b_marksman.stats = deep_clone(muzzle_device.muzz_rec_c)
 
 					--(Maxim-9) Extended Mag.
 					self.parts.wpn_fps_pis_maxim9_m_ext.pcs = {
@@ -2139,7 +2149,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_g18c_co_1.supported = true
-					self.parts.wpn_fps_pis_g18c_co_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_g18c_co_1.stats = deep_clone(muzzle_device.muzz_rec_c)
 					
 					--Velocity Compensator
 					self.parts.wpn_fps_pis_g18c_co_comp_2.pcs = {
@@ -2149,8 +2159,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_g18c_co_comp_2.supported = true
-					self.parts.wpn_fps_pis_g18c_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_g18c_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_g18c_co_comp_2.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_g18c_co_comp_2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 					
 					--Default Mag.
 					self.parts.wpn_fps_pis_g18c_m_mag_17rnd.bullet_objects = {
@@ -2752,7 +2762,7 @@ end)
 					self.parts.wpn_fps_upg_ns_pis_large_kac.supported = true
 					self.parts.wpn_fps_upg_ns_pis_large_kac.has_description = true
 					self.parts.wpn_fps_upg_ns_pis_large_kac.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_upg_ns_pis_large_kac.stats = deep_clone(muzzle_device.supp_c_alt_stats)
+					self.parts.wpn_fps_upg_ns_pis_large_kac.stats = deep_clone(muzzle_device.supp_rec2_c)
 					self.parts.wpn_fps_upg_ns_pis_large_kac.perks = {"silencer"}
 					
 					--Roctec Suppressor
@@ -2765,8 +2775,8 @@ end)
 					self.parts.wpn_fps_upg_ns_pis_medium_gem.supported = true
 					self.parts.wpn_fps_upg_ns_pis_medium_gem.has_description = true
 					self.parts.wpn_fps_upg_ns_pis_medium_gem.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_upg_ns_pis_medium_gem.stats = deep_clone(muzzle_device.supp_b_alt_stats)
-					self.parts.wpn_fps_upg_ns_pis_medium_gem.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_upg_ns_pis_medium_gem.stats = deep_clone(muzzle_device.supp_acc_c)
+					self.parts.wpn_fps_upg_ns_pis_medium_gem.custom_stats = deep_clone(muzzle_device.supp_acc_c)
 					self.parts.wpn_fps_upg_ns_pis_medium_gem.perks = {"silencer"}
 					
 					--Facepunch Compensator
@@ -2777,7 +2787,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_upg_ns_pis_meatgrinder.supported = true
-					self.parts.wpn_fps_upg_ns_pis_meatgrinder.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+					self.parts.wpn_fps_upg_ns_pis_meatgrinder.stats = deep_clone(muzzle_device.muzz_rec2_c)
 					
 					--IPSC Compensator
 					self.parts.wpn_fps_upg_ns_pis_ipsccomp.pcs = {
@@ -2787,8 +2797,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_upg_ns_pis_ipsccomp.supported = true
-					self.parts.wpn_fps_upg_ns_pis_ipsccomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
-					self.parts.wpn_fps_upg_ns_pis_ipsccomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+					self.parts.wpn_fps_upg_ns_pis_ipsccomp.stats = deep_clone(muzzle_device.muzz_acc2_c)
+					self.parts.wpn_fps_upg_ns_pis_ipsccomp.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
 					
 					self.wpn_fps_pis_g26.override.wpn_fps_pis_g18c_m_mag_33rnd = {
 						supported = true,
@@ -2969,7 +2979,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_beretta_co_co1.supported = true
-					self.parts.wpn_fps_pis_beretta_co_co1.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_beretta_co_co1.stats = deep_clone(muzzle_device.muzz_rec_c)
 					
 					--The Competitor Compensator
 					self.parts.wpn_fps_pis_beretta_co_co2.pcs = {
@@ -2979,8 +2989,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_beretta_co_co2.supported = true
-					self.parts.wpn_fps_pis_beretta_co_co2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_beretta_co_co2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_beretta_co_co2.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_beretta_co_co2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 					
 					--Ergo Grip
 					self.parts.wpn_fps_pis_beretta_g_ergo.pcs = {
@@ -3586,7 +3596,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_p226_co_comp_1.supported = true
-					self.parts.wpn_fps_pis_p226_co_comp_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_p226_co_comp_1.stats = deep_clone(muzzle_device.muzz_rec_c)
 					
 					--Velocity .40
 					self.parts.wpn_fps_pis_p226_co_comp_2.pcs = {
@@ -3596,8 +3606,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_p226_co_comp_2.supported = true
-					self.parts.wpn_fps_pis_p226_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_p226_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_p226_co_comp_2.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_p226_co_comp_2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 					
 					table.insert(self.wpn_fps_pis_p226.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 					table.insert(self.wpn_fps_pis_p226.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
@@ -4301,7 +4311,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_1911_co_1.supported = true
-					self.parts.wpn_fps_pis_1911_co_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_1911_co_1.stats = deep_clone(muzzle_device.muzz_rec_c)
 					
 					--Aggressor Compensator
 					self.parts.wpn_fps_pis_1911_co_2.pcs = {
@@ -4311,8 +4321,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_1911_co_2.supported = true
-					self.parts.wpn_fps_pis_1911_co_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_1911_co_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_1911_co_2.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_1911_co_2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 					
 					--Bling Grip
 					self.parts.wpn_fps_pis_1911_g_bling.pcs = {
@@ -4549,7 +4559,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_usp_co_comp_1.supported = true
-					self.parts.wpn_fps_pis_usp_co_comp_1.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_usp_co_comp_1.stats = deep_clone(muzzle_device.muzz_rec_c)
 					
 					--Velocity .45
 					self.parts.wpn_fps_pis_usp_co_comp_2.pcs = {
@@ -4559,8 +4569,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_usp_co_comp_2.supported = true
-					self.parts.wpn_fps_pis_usp_co_comp_2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_usp_co_comp_2.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_usp_co_comp_2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 
 					table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_i_tekna")
 					table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
@@ -4947,8 +4957,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_rage_b_comp1.supported = true
-					self.parts.wpn_fps_pis_rage_b_comp1.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-					self.parts.wpn_fps_pis_rage_b_comp1.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_pis_rage_b_comp1.stats = deep_clone(muzzle_device.muzz_acc_c)
+					self.parts.wpn_fps_pis_rage_b_comp1.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 					
 					--Ventilated Barrel
 					self.parts.wpn_fps_pis_rage_b_comp2.pcs = {
@@ -4958,8 +4968,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_rage_b_comp2.supported = true
-					self.parts.wpn_fps_pis_rage_b_comp2.stats = deep_clone(muzzle_device.muzzle_b_stats)
-					self.parts.wpn_fps_pis_rage_b_comp2.custom_stats = deep_clone(muzzle_device.supp_b_stats)
+					self.parts.wpn_fps_pis_rage_b_comp2.stats = deep_clone(muzzle_device.muzz_rec_c)
+					self.parts.wpn_fps_pis_rage_b_comp2.custom_stats = deep_clone(muzzle_device.supp_rec_c)
 
 					--Overcompensating Barrel
 					self.parts.wpn_fps_pis_rage_b_long.pcs = {
@@ -5118,8 +5128,8 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_deagle_co_long.supported = true
-					self.parts.wpn_fps_pis_deagle_co_long.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-					self.parts.wpn_fps_pis_deagle_co_long.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+					self.parts.wpn_fps_pis_deagle_co_long.stats = deep_clone(muzzle_device.muzz_dual_c)
+					self.parts.wpn_fps_pis_deagle_co_long.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 					
 					--La Femme Compensator
 					self.parts.wpn_fps_pis_deagle_co_short.pcs = {
@@ -5129,7 +5139,7 @@ end)
 						40
 					}
 					self.parts.wpn_fps_pis_deagle_co_short.supported = true
-					self.parts.wpn_fps_pis_deagle_co_short.stats = deep_clone(muzzle_device.muzzle_b_stats)
+					self.parts.wpn_fps_pis_deagle_co_short.stats = deep_clone(muzzle_device.muzz_rec_c)
 
 					--(Deagle) Bling Grip
 					self.parts.wpn_fps_pis_deagle_g_bling.pcs = {
@@ -6243,7 +6253,7 @@ end)
 					self.parts.wpn_fps_smg_cobray_ns_silencer.supported = true
 					self.parts.wpn_fps_smg_cobray_ns_silencer.has_description = true
 					self.parts.wpn_fps_smg_cobray_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_smg_cobray_ns_silencer.stats = deep_clone(muzzle_device.supp_c_alt_stats)
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats = deep_clone(muzzle_device.supp_rec2_c)
 					self.parts.wpn_fps_smg_cobray_ns_silencer.perks = {"silencer"}
 
 					if not self.wpn_fps_smg_cobray.override then
@@ -7084,8 +7094,8 @@ end)
 					self.parts.wpn_fps_smg_schakal_ns_silencer.supported = true
 					self.parts.wpn_fps_smg_schakal_ns_silencer.has_description = true
 					self.parts.wpn_fps_smg_schakal_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_smg_schakal_ns_silencer.stats = deep_clone(muzzle_device.supp_b_alt_stats)
-					self.parts.wpn_fps_smg_schakal_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats = deep_clone(muzzle_device.supp_acc_c)
+					self.parts.wpn_fps_smg_schakal_ns_silencer.custom_stats = deep_clone(muzzle_device.supp_acc_c)
 					self.parts.wpn_fps_smg_schakal_ns_silencer.perks = {"silencer"}
 					
 					--Civilian Stock
@@ -7178,8 +7188,8 @@ end)
 					self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
 					self.parts.wpn_fps_smg_polymer_ns_silencer.has_description = true
 					self.parts.wpn_fps_smg_polymer_ns_silencer.desc_id = "bm_wp_upg_suppressor"
-					self.parts.wpn_fps_smg_polymer_ns_silencer.stats = deep_clone(muzzle_device.supp_c_duo_stats)
-					self.parts.wpn_fps_smg_polymer_ns_silencer.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats = deep_clone(muzzle_device.supp_dual_c)
+					self.parts.wpn_fps_smg_polymer_ns_silencer.custom_stats = deep_clone(muzzle_device.supp_dual_c)
 					self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}
 
 					--Fix for disappearing bolt
@@ -8023,8 +8033,8 @@ end)
 					40
 				}
 				self.parts.wpn_fps_ass_tecci_ns_special.supported = true
-				self.parts.wpn_fps_ass_tecci_ns_special.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-				self.parts.wpn_fps_ass_tecci_ns_special.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+				self.parts.wpn_fps_ass_tecci_ns_special.stats = deep_clone(muzzle_device.muzz_rec_a)
+				self.parts.wpn_fps_ass_tecci_ns_special.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 				
 				--Overrides
 				self.wpn_fps_ass_tecci.override = {
@@ -8125,12 +8135,12 @@ end)
 				self.parts.wpn_fps_lmg_kacchainsaw_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
 
 				self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.supported = true
-				self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
-				self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+				self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.stats = deep_clone(muzzle_device.muzz_rec2_a)
+				self.parts.wpn_fps_lmg_kacchainsaw_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzz_rec2_a)
 
 				self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.supported = true
-				self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_stats)
-				self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+				self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_a)
+				self.parts.wpn_fps_lmg_kacchainsaw_ns_suppressor.custom_stats = deep_clone(muzzle_device.supp_rec2_a)
 
 				self.parts.wpn_fps_lmg_kacchainsaw_sling.supported = true
 				self.parts.wpn_fps_lmg_kacchainsaw_sling.stats = {
@@ -8735,8 +8745,8 @@ end)
 					40
 				}
 				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.supported = true
-				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzzle_c_stats)
-				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.stats = deep_clone(muzzle_device.muzz_acc2_c)
+				self.parts.wpn_fps_lmg_hk51b_ns_jcomp.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
 
 				local belt = {
 					{
@@ -13654,8 +13664,8 @@ end)
 				self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
 				self.parts.wpn_fps_ass_shak12_ns_suppressor.has_description = true
 				self.parts.wpn_fps_ass_shak12_ns_suppressor.desc_id = "bm_wp_upg_suppressor"
-				self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
-				self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+				self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = deep_clone(muzzle_device.supp_dual2_c)
+				self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats= deep_clone(muzzle_device.supp_dual2_c)
 				self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
 
 				--A Burst Muzzle
@@ -13666,8 +13676,8 @@ end)
 					40
 				}
 				self.parts.wpn_fps_ass_shak12_ns_muzzle.supported = true
-				self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
-				self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+				self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = deep_clone(muzzle_device.muzz_dual2_c)
+				self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats= deep_clone(muzzle_device.muzz_dual2_c)
 				--self.parts.wpn_fps_ass_shak12_ns_muzzle.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 
 				--self.parts.wpn_fps_ass_shak12_b_dummy.sound_switch = {suppressed = "regular_b"}
@@ -14381,8 +14391,8 @@ end)
 				Hooks:PostHook(WeaponFactoryTweakData, "_init_awp", "resmod_awp", function(self)
 
 					self.parts.wpn_fps_snp_awp_ns_muzzle.supported = true
-					self.parts.wpn_fps_snp_awp_ns_muzzle.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-					self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+					self.parts.wpn_fps_snp_awp_ns_muzzle.stats = deep_clone(muzzle_device.muzz_dual_c)
+					self.parts.wpn_fps_snp_awp_ns_muzzle.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 
 					self.parts.wpn_fps_snp_awp_ns_suppressor.supported = true
 					self.parts.wpn_fps_snp_awp_ns_suppressor.has_description = true
@@ -18491,8 +18501,8 @@ end)
 			self.parts.wpn_fps_upg_ns_ass_smg_large.supported = true
 			self.parts.wpn_fps_upg_ns_ass_smg_large.has_description = true
 			self.parts.wpn_fps_upg_ns_ass_smg_large.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_ass_smg_large.stats = deep_clone(muzzle_device.supp_c_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_large.stats = deep_clone(muzzle_device.supp_acc2_c)
+			self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
 			self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
 			
 			--Medium Suppressor
@@ -18505,7 +18515,7 @@ end)
 			self.parts.wpn_fps_upg_ns_ass_smg_medium.supported = true
 			self.parts.wpn_fps_upg_ns_ass_smg_medium.has_description = true
 			self.parts.wpn_fps_upg_ns_ass_smg_medium.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = deep_clone(muzzle_device.supp_b_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = deep_clone(muzzle_device.supp_rec_c)
 			self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
 			
 			--Low Profile Suppressor
@@ -18518,8 +18528,8 @@ end)
 			self.parts.wpn_fps_upg_ns_ass_smg_small.supported = true
 			self.parts.wpn_fps_upg_ns_ass_smg_small.has_description = true
 			self.parts.wpn_fps_upg_ns_ass_smg_small.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_ass_smg_small.stats = deep_clone(muzzle_device.supp_a_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_small.stats = deep_clone(muzzle_device.supp_con_a)
+			self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = deep_clone(muzzle_device.supp_con_a)
 			self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
 			
 			--Monolith Suppressor
@@ -18532,8 +18542,8 @@ end)
 			self.parts.wpn_fps_upg_ns_pis_large.supported = true
 			self.parts.wpn_fps_upg_ns_pis_large.has_description = true
 			self.parts.wpn_fps_upg_ns_pis_large.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_pis_large.stats = deep_clone(muzzle_device.supp_c_stats)
-			self.parts.wpn_fps_upg_ns_pis_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+			self.parts.wpn_fps_upg_ns_pis_large.stats = deep_clone(muzzle_device.supp_acc2_c)
+			self.parts.wpn_fps_upg_ns_pis_large.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
 			self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
 
 			--Standard Issue Suppressor
@@ -18546,7 +18556,7 @@ end)
 			self.parts.wpn_fps_upg_ns_pis_medium.supported = true
 			self.parts.wpn_fps_upg_ns_pis_medium.has_description = true
 			self.parts.wpn_fps_upg_ns_pis_medium.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_pis_medium.stats = deep_clone(muzzle_device.supp_b_stats)
+			self.parts.wpn_fps_upg_ns_pis_medium.stats = deep_clone(muzzle_device.supp_rec_c)
 			self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
 
 			--Size Doesn't Matter
@@ -18559,8 +18569,8 @@ end)
 			self.parts.wpn_fps_upg_ns_pis_small.supported = true
 			self.parts.wpn_fps_upg_ns_pis_small.has_description = true
 			self.parts.wpn_fps_upg_ns_pis_small.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_pis_small.stats = deep_clone(muzzle_device.supp_a_stats)
-			self.parts.wpn_fps_upg_ns_pis_small.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_upg_ns_pis_small.stats = deep_clone(muzzle_device.supp_con_a)
+			self.parts.wpn_fps_upg_ns_pis_small.custom_stats = deep_clone(muzzle_device.supp_con_a)
 			self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
 			
 			--Silent Killer Suppressor
@@ -18573,7 +18583,7 @@ end)
 			self.parts.wpn_fps_upg_ns_shot_thick.supported = true	
 			self.parts.wpn_fps_upg_ns_shot_thick.has_description = true
 			self.parts.wpn_fps_upg_ns_shot_thick.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_shot_thick.stats = deep_clone(muzzle_device.supp_b_stats)
+			self.parts.wpn_fps_upg_ns_shot_thick.stats = deep_clone(muzzle_device.supp_rec_c)
 			self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {}		
 			self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}	
 			self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
@@ -18591,7 +18601,7 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ns_ass_smg_firepig.supported = true
-			self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = deep_clone(muzzle_device.muzzle_b_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = deep_clone(muzzle_device.muzz_rec_c)
 			self.parts.wpn_fps_upg_ns_ass_smg_firepig.custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 			}
@@ -18607,8 +18617,8 @@ end)
 			self.parts.wpn_fps_upg_ns_ass_smg_stubby.desc_id = "bm_wp_upg_flash_hider"
 			self.parts.wpn_fps_upg_ns_ass_smg_stubby.has_description = true
 			--self.parts.wpn_fps_upg_ns_ass_smg_stubby.perks = { "silencer" }
-			self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzzle_a_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = deep_clone(muzzle_device.muzz_con_a)
+			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 			self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 				
 			--The Tank Compensator	
@@ -18619,8 +18629,8 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ns_ass_smg_tank.supported = true
-			self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = deep_clone(muzzle_device.muzzle_c_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = deep_clone(muzzle_device.muzz_acc2_c)
+			self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
 			--self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats.muzzleflash = "effects/payday2/particles/weapons/50cal_auto"
 
 			--Shark Teeth
@@ -18631,7 +18641,7 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ns_shot_shark.supported = true
-			self.parts.wpn_fps_upg_ns_shot_shark.stats = deep_clone(muzzle_device.muzzle_b_stats)
+			self.parts.wpn_fps_upg_ns_shot_shark.stats = deep_clone(muzzle_device.muzz_rec_c)
 			self.parts.wpn_fps_upg_ns_shot_shark.custom_stats = {}			
 		end)
 	--Vanilla Gadgets
@@ -20143,13 +20153,13 @@ end)
 			--Competitor's Compensator
 			self.parts.wpn_fps_upg_ass_ns_jprifles.pcs = {}
 			self.parts.wpn_fps_upg_ass_ns_jprifles.supported = true
-			self.parts.wpn_fps_upg_ass_ns_jprifles.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-			self.parts.wpn_fps_upg_ass_ns_jprifles.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+			self.parts.wpn_fps_upg_ass_ns_jprifles.stats = deep_clone(muzzle_device.muzz_dual_c)
+			self.parts.wpn_fps_upg_ass_ns_jprifles.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 			
 			--Funnel of Fun Nozzle
 			self.parts.wpn_fps_upg_ass_ns_linear.pcs = {}
 			self.parts.wpn_fps_upg_ass_ns_linear.supported = true
-			self.parts.wpn_fps_upg_ass_ns_linear.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+			self.parts.wpn_fps_upg_ass_ns_linear.stats = deep_clone(muzzle_device.muzz_rec2_c)
 			self.parts.wpn_fps_upg_ass_ns_linear.custom_stats = {
 				--muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps"
 			}
@@ -20157,8 +20167,8 @@ end)
 			--Tactical Compensator
 			self.parts.wpn_fps_upg_ass_ns_surefire.pcs = {}
 			self.parts.wpn_fps_upg_ass_ns_surefire.supported = true
-			self.parts.wpn_fps_upg_ass_ns_surefire.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-			self.parts.wpn_fps_upg_ass_ns_surefire.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+			self.parts.wpn_fps_upg_ass_ns_surefire.stats = deep_clone(muzzle_device.muzz_acc_c)
+			self.parts.wpn_fps_upg_ass_ns_surefire.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 			
 			--Flash Hider
 			self.parts.wpn_fps_upg_pis_ns_flash.pcs = {}
@@ -20166,23 +20176,23 @@ end)
 			self.parts.wpn_fps_upg_pis_ns_flash.has_description = true
 			self.parts.wpn_fps_upg_pis_ns_flash.desc_id = "bm_wp_upg_flash_hider"
 			--self.parts.wpn_fps_upg_pis_ns_flash.perks = { "silencer" }
-			self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
-			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_upg_pis_ns_flash.stats = deep_clone(muzzle_device.muzz_con_a)
+			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 			self.parts.wpn_fps_upg_pis_ns_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 			
 			--King's Crown Compensator
 			self.parts.wpn_fps_upg_shot_ns_king.pcs = {}
 			self.parts.wpn_fps_upg_shot_ns_king.supported = true
-			self.parts.wpn_fps_upg_shot_ns_king.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-			self.parts.wpn_fps_upg_shot_ns_king.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+			self.parts.wpn_fps_upg_shot_ns_king.stats = deep_clone(muzzle_device.muzz_acc_c)
+			self.parts.wpn_fps_upg_shot_ns_king.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 				
 			--Asepsis Suppressor
 			self.parts.wpn_fps_upg_ns_pis_medium_slim.pcs = {}
 			self.parts.wpn_fps_upg_ns_pis_medium_slim.supported = true
 			self.parts.wpn_fps_upg_ns_pis_medium_slim.has_description = true
 			self.parts.wpn_fps_upg_ns_pis_medium_slim.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_pis_medium_slim.stats = deep_clone(muzzle_device.supp_b_alt_stats)
-			self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+			self.parts.wpn_fps_upg_ns_pis_medium_slim.stats = deep_clone(muzzle_device.supp_acc_c)
+			self.parts.wpn_fps_upg_ns_pis_medium_slim.custom_stats = deep_clone(muzzle_device.supp_acc_c)
 			self.parts.wpn_fps_upg_ns_pis_medium_slim.perks = {"silencer"}
 			
 			--Compact Laser Module
@@ -21548,8 +21558,8 @@ end)
 			--Ported Compensator
 			self.parts.wpn_fps_upg_ass_ns_battle.pcs = {}
 			self.parts.wpn_fps_upg_ass_ns_battle.supported = true
-			self.parts.wpn_fps_upg_ass_ns_battle.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-			self.parts.wpn_fps_upg_ass_ns_battle.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+			self.parts.wpn_fps_upg_ass_ns_battle.stats = deep_clone(muzzle_device.muzz_rec_a)
+			self.parts.wpn_fps_upg_ass_ns_battle.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 			
 			--Budget Suppressor
 			self.parts.wpn_fps_upg_ns_ass_filter.pcs = {}
@@ -21568,8 +21578,8 @@ end)
 			self.parts.wpn_fps_upg_ns_pis_jungle.supported = true
 			self.parts.wpn_fps_upg_ns_pis_jungle.has_description = true
 			self.parts.wpn_fps_upg_ns_pis_jungle.desc_id = "bm_wp_upg_suppressor_boss"
-			self.parts.wpn_fps_upg_ns_pis_jungle.stats = deep_clone(muzzle_device.supp_rec2_acc2_stats)
-			self.parts.wpn_fps_upg_ns_pis_jungle.custom_stats= deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+			self.parts.wpn_fps_upg_ns_pis_jungle.stats = deep_clone(muzzle_device.supp_dual2_c)
+			self.parts.wpn_fps_upg_ns_pis_jungle.custom_stats= deep_clone(muzzle_device.supp_dual2_c)
 			self.parts.wpn_fps_upg_ns_pis_jungle.perks = {"silencer"}
 			
 			--Shh!
@@ -21577,8 +21587,8 @@ end)
 			self.parts.wpn_fps_upg_ns_sho_salvo_large.supported = true
 			self.parts.wpn_fps_upg_ns_sho_salvo_large.has_description = true
 			self.parts.wpn_fps_upg_ns_sho_salvo_large.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = deep_clone(muzzle_device.supp_c_stats)
-			self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+			self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = deep_clone(muzzle_device.supp_acc2_c)
+			self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
 			self.parts.wpn_fps_upg_ns_sho_salvo_large.perks = {"silencer"}
 			self.parts.wpn_fps_upg_ns_sho_salvo_large.forbids = {
 				"wpn_fps_upg_a_explosive"
@@ -21976,8 +21986,8 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ns_ass_smg_v6.supported = true
-			self.parts.wpn_fps_upg_ns_ass_smg_v6.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_v6.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_v6.stats = deep_clone(muzzle_device.muzz_rec2_a)
+			self.parts.wpn_fps_upg_ns_ass_smg_v6.custom_stats = deep_clone(muzzle_device.muzz_rec2_a)
 			
 			--Titanuim Skeleton Grip
 			self.parts.wpn_fps_upg_g_m4_surgeon.pcs = {
@@ -22157,8 +22167,8 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ns_pis_typhoon.supported = true
-			self.parts.wpn_fps_upg_ns_pis_typhoon.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-			self.parts.wpn_fps_upg_ns_pis_typhoon.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+			self.parts.wpn_fps_upg_ns_pis_typhoon.stats = deep_clone(muzzle_device.muzz_dual_c)
+			self.parts.wpn_fps_upg_ns_pis_typhoon.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 		end)
 
 	--ATW Mods
@@ -22510,8 +22520,8 @@ end)
 				40
 			}
 			self.parts.wpn_fps_upg_ak_ns_zenitco.supported = true
-			self.parts.wpn_fps_upg_ak_ns_zenitco.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-			self.parts.wpn_fps_upg_ak_ns_zenitco.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+			self.parts.wpn_fps_upg_ak_ns_zenitco.stats = deep_clone(muzzle_device.muzz_dual_c)
+			self.parts.wpn_fps_upg_ak_ns_zenitco.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 
 			--Biometric Analyzer
 			self.parts.wpn_fps_upg_o_health.pcs = {
@@ -22657,14 +22667,14 @@ end)
 			}
 
 			self.parts.wpn_fps_upg_ak_ns_jmac.supported = true
-			self.parts.wpn_fps_upg_ak_ns_jmac.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-			self.parts.wpn_fps_upg_ak_ns_jmac.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+			self.parts.wpn_fps_upg_ak_ns_jmac.stats = deep_clone(muzzle_device.muzz_acc_c)
+			self.parts.wpn_fps_upg_ak_ns_jmac.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 			
 			self.parts.wpn_fps_upg_ak_ns_tgp.supported = true
 			self.parts.wpn_fps_upg_ak_ns_tgp.has_description = true
 			self.parts.wpn_fps_upg_ak_ns_tgp.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ak_ns_tgp.stats = deep_clone(muzzle_device.supp_rec_stats)
-			self.parts.wpn_fps_upg_ak_ns_tgp.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+			self.parts.wpn_fps_upg_ak_ns_tgp.stats = deep_clone(muzzle_device.supp_rec_a)
+			self.parts.wpn_fps_upg_ak_ns_tgp.custom_stats = deep_clone(muzzle_device.supp_rec_a)
 			self.parts.wpn_fps_upg_ak_ns_tgp.perks = {"silencer"}
 		end)
 
@@ -25581,7 +25591,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			if self.parts.wpn_fps_upg_wmtx_ns_firebull then -- Pawcio's Widowmaker TX
 				self.parts.wpn_fps_upg_wmtx_ns_firebull.supported = true
-				self.parts.wpn_fps_upg_wmtx_ns_firebull.stats = deep_clone(muzzle_device.muzzle_b_stats)
+				self.parts.wpn_fps_upg_wmtx_ns_firebull.stats = deep_clone(muzzle_device.muzz_rec_c)
 				self.parts.wpn_fps_upg_wmtx_ns_firebull.stats.value = 0
 
 
@@ -26940,8 +26950,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.supported = true
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.desc_id = "bm_wp_upg_flash_hider"
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.has_description = true
-				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats = deep_clone(muzzle_device.muzzle_a_stats)
-				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.stats = deep_clone(muzzle_device.muzz_con_a)
+				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 				self.parts.wpn_fps_upg_m1a1_ns_flashhider.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 
 				self.parts.wpn_fps_upg_m1a1_ns_supp.supported = true
@@ -27220,8 +27230,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_lmg_scp_mg36_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
 
 			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.supported = true
-			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.custom_stats = deep_clone(muzzle_device.muzzle_rec_stats)
+			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.stats = deep_clone(muzzle_device.muzz_rec_a)
+			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 			self.parts.wpn_fps_lmg_scp_mg36_muzzle_brake.perks = nil
 
 			self.parts.wpn_fps_lmg_scp_mg36_flashlight.supported = true
@@ -31696,12 +31706,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			end
 
 			self.parts.wpn_fps_upg_mw2022_silencer_ar03.supported = true
-			self.parts.wpn_fps_upg_mw2022_silencer_ar03.stats = deep_clone(muzzle_device.supp_a_stats)
-			self.parts.wpn_fps_upg_mw2022_silencer_ar03.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar03.stats = deep_clone(muzzle_device.supp_con_a)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar03.custom_stats = deep_clone(muzzle_device.supp_con_a)
 
 			self.parts.wpn_fps_upg_mw2022_silencer_ar07.supported = true
-			self.parts.wpn_fps_upg_mw2022_silencer_ar07.stats = deep_clone(muzzle_device.supp_rec2_stats)
-			self.parts.wpn_fps_upg_mw2022_silencer_ar07.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar07.stats = deep_clone(muzzle_device.supp_rec2_a)
+			self.parts.wpn_fps_upg_mw2022_silencer_ar07.custom_stats = deep_clone(muzzle_device.supp_rec2_a)
 		end
 
 		if self.parts.wpn_fps_ass_akilo_2022_optic_rail then --RJC9000 and PlayBONK's MW2022 AKs
@@ -32167,8 +32177,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 			--Muzzle Devices
 				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.supported = true
-				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.stats = deep_clone(muzzle_device.muzz_rec_a)
+				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 				self.parts.wpn_fps_ass_akilo_2022_flash_hider_rkilo.perks = nil
 
 			attachment_list = {
@@ -33580,8 +33590,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					--Shotguns Parts
 						--Trench Sweeper Nozzle
 						self.parts.wpn_fps_upg_ns_shot_grinder.supported = true
-						self.parts.wpn_fps_upg_ns_shot_grinder.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-						self.parts.wpn_fps_upg_ns_shot_grinder.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+						self.parts.wpn_fps_upg_ns_shot_grinder.stats = deep_clone(muzzle_device.muzz_dual_c)
+						self.parts.wpn_fps_upg_ns_shot_grinder.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 		
 					--IZHMA 12G 
 						--Smooth Receiver
@@ -33952,8 +33962,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 				--Heavy Compensator
 				self.parts.wpn_fps_upg_ns_ass_smg_heavy.supported = true
-				self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = deep_clone(muzzle_device.muzzle_acc2_stats)
-				self.parts.wpn_fps_upg_ns_ass_smg_heavy.custom_stats = deep_clone(muzzle_device.muzzle_acc2_custom_stats)
+				self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = deep_clone(muzzle_device.muzz_acc2_r)
+				self.parts.wpn_fps_upg_ns_ass_smg_heavy.custom_stats = deep_clone(muzzle_device.muzz_acc2_r)
 		
 				--(Claire 12G) Huntsman Barrel
 				self.parts.wpn_fps_sho_coach_b_long.supported = true
@@ -34196,8 +34206,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 				--Grievky Nozzle
 				self.parts.wpn_fps_upg_ns_ass_smg_russian.supported = true
-				self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
-				self.parts.wpn_fps_upg_ns_ass_smg_russian.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+				self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = deep_clone(muzzle_device.muzz_rec2_a)
+				self.parts.wpn_fps_upg_ns_ass_smg_russian.custom_stats = deep_clone(muzzle_device.muzz_rec2_a)
 		
 				--Assassin Suppressor
 				self.parts.wpn_fps_upg_ns_pis_cloth.supported = true
@@ -34592,7 +34602,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_pis_ns_edge.perks = nil
 				self.parts.wpn_fps_upg_pis_ns_edge.desc_id = nil
 				self.parts.wpn_fps_upg_pis_ns_edge.has_description = nil
-				self.parts.wpn_fps_upg_pis_ns_edge.stats = deep_clone(muzzle_device.muzzle_b_stats)
+				self.parts.wpn_fps_upg_pis_ns_edge.stats = deep_clone(muzzle_device.muzz_rec_c)
 				self.parts.wpn_fps_upg_pis_ns_edge.custom_stats = nil
 		
 				--Guerilla .308
@@ -34901,13 +34911,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 				--Polygonal Suppressor
 				self.parts.wpn_fps_upg_ns_shot_flat.supported = true
-				self.parts.wpn_fps_upg_ns_shot_flat.stats = deep_clone(muzzle_device.supp_b_alt_stats)
-				self.parts.wpn_fps_upg_ns_shot_flat.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+				self.parts.wpn_fps_upg_ns_shot_flat.stats = deep_clone(muzzle_device.supp_acc_c)
+				self.parts.wpn_fps_upg_ns_shot_flat.custom_stats = deep_clone(muzzle_device.supp_acc_c)
 		
 				--Professional Suppressor
 				self.parts.wpn_fps_upg_ns_ass_smg_pro.supported = true
-				self.parts.wpn_fps_upg_ns_ass_smg_pro.stats = deep_clone(muzzle_device.supp_c_duo_stats)
-				self.parts.wpn_fps_upg_ns_ass_smg_pro.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+				self.parts.wpn_fps_upg_ns_ass_smg_pro.stats = deep_clone(muzzle_device.supp_dual_c)
+				self.parts.wpn_fps_upg_ns_ass_smg_pro.custom_stats = deep_clone(muzzle_device.supp_dual_c)
 		
 				--(Jacket's Piece) Foldable Stock
 				self.parts.wpn_fps_smg_cobray_s_custom.supported = true
@@ -34935,8 +34945,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		
 				--Constrictor Nozzle
 				self.parts.wpn_fps_upg_ns_shot_close.supported = true
-				self.parts.wpn_fps_upg_ns_shot_close.stats = deep_clone(muzzle_device.muzzle_acc2_stats)
-				self.parts.wpn_fps_upg_ns_shot_close.custom_stats = deep_clone(muzzle_device.muzzle_acc2_custom_stats)
+				self.parts.wpn_fps_upg_ns_shot_close.stats = deep_clone(muzzle_device.muzz_acc2_r)
+				self.parts.wpn_fps_upg_ns_shot_close.custom_stats = deep_clone(muzzle_device.muzz_acc2_r)
 		
 				--(OVE9000 Saw) Ripper Blade
 				self.parts.wpn_fps_saw_m_blade_scream.supported = true
@@ -36457,11 +36467,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_hpb_thread.custom_stats = deep_clone(barrels.long_b1_stats)
 	
 			self.parts.wpn_fps_pis_hpb_comp.supported = true
-			self.parts.wpn_fps_pis_hpb_comp.stats = deep_clone(muzzle_device.muzzle_b_stats)
+			self.parts.wpn_fps_pis_hpb_comp.stats = deep_clone(muzzle_device.muzz_rec_c)
 	
 			self.parts.wpn_fps_pis_hpb_comp2.supported = true
-			self.parts.wpn_fps_pis_hpb_comp2.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-			self.parts.wpn_fps_pis_hpb_comp2.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+			self.parts.wpn_fps_pis_hpb_comp2.stats = deep_clone(muzzle_device.muzz_acc_c)
+			self.parts.wpn_fps_pis_hpb_comp2.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 										
 			self.parts.wpn_fps_pis_hpb_m_extended.supported = true								
 			self.parts.wpn_fps_pis_hpb_m_extended.stats = { 
@@ -36772,7 +36782,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 			self.parts.wpn_fps_smg_tommy_ns_cutts.supported = true
-			self.parts.wpn_fps_smg_tommy_ns_cutts.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+			self.parts.wpn_fps_smg_tommy_ns_cutts.stats = deep_clone(muzzle_device.muzz_rec2_c)
 
 			self.parts.wpn_fps_smg_tommy_b_m1928a1.supported = true
 			self.parts.wpn_fps_smg_tommy_b_m1928a1.stats = {
@@ -37918,8 +37928,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.supported = true
 			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.has_description = true
 			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.desc_id = "bm_wp_upg_suppressor"
-			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = deep_clone(muzzle_device.supp_c_stats)
-			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.stats = deep_clone(muzzle_device.supp_acc2_c)
+			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.custom_stats = deep_clone(muzzle_device.supp_acc2_c)
 			self.parts.wpn_fps_upg_ns_ass_smg_desertfox.perks = {"silencer"}
 	
 			--HCAR stock
@@ -39200,8 +39210,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_lmg_m1918_body_standard.adds = {"wpn_fps_lmg_m1918_m_mount"}
 
-			self.parts.wpn_fps_lmg_m1918_ns_cutts.stats = deep_clone(muzzle_device.muzzle_rec2_stats)
-			self.parts.wpn_fps_lmg_m1918_ns_cutts.custom_stats = deep_clone(muzzle_device.muzzle_rec2_custom_stats)
+			self.parts.wpn_fps_lmg_m1918_ns_cutts.stats = deep_clone(muzzle_device.muzz_rec2_a)
+			self.parts.wpn_fps_lmg_m1918_ns_cutts.custom_stats = deep_clone(muzzle_device.muzz_rec2_a)
 
 			self.parts.wpn_fps_lmg_m1918_m_extended.supported = true
 			self.parts.wpn_fps_lmg_m1918_m_extended.stats = {
@@ -40461,8 +40471,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_pm_ns_comp.supported = true
 			self.parts.wpn_fps_pis_pm_ns_comp.desc_id = "bm_wp_upg_flash_hider"
 			self.parts.wpn_fps_pis_pm_ns_comp.has_description = true
-			self.parts.wpn_fps_pis_pm_ns_comp.stats = deep_clone(muzzle_device.muzzle_a_stats)
-			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+			self.parts.wpn_fps_pis_pm_ns_comp.stats = deep_clone(muzzle_device.muzz_con_a)
+			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 			self.parts.wpn_fps_pis_pm_ns_comp.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 
 			self.parts.wpn_fps_pis_pm_b_threaded.supported = true
@@ -41995,8 +42005,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_ak12_barrel_short.custom_stats = deep_clone(barrels.short_b3_stats)
 
 		self.parts.wpn_fps_upg_ak12_ns_kf2.supported = true
-		self.parts.wpn_fps_upg_ak12_ns_kf2.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-		self.parts.wpn_fps_upg_ak12_ns_kf2.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+		self.parts.wpn_fps_upg_ak12_ns_kf2.stats = deep_clone(muzzle_device.muzz_rec_a)
+		self.parts.wpn_fps_upg_ak12_ns_kf2.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 
 		self.parts.wpn_fps_upg_ak12_stock_ext.supported = true
 		self.parts.wpn_fps_upg_ak12_stock_ext.stats = {
@@ -42852,7 +42862,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	if self.parts.wpn_fps_sho_abzats_body_standard then
 		self.parts.wpn_fps_sho_abzats_muzzle_break.supported = true
 		self.parts.wpn_fps_sho_abzats_muzzle_break.desc_id = ""
-		self.parts.wpn_fps_sho_abzats_muzzle_break.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_sho_abzats_muzzle_break.stats = deep_clone(muzzle_device.muzz_rec_c)
 		self.parts.wpn_fps_sho_abzats_muzzle_break.custom_stats = {}
 
 		self.parts.wpn_fps_sho_abzats_m_big.supported = true
@@ -43292,74 +43302,74 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	if self.parts.wpn_fps_upg_ns_ass_smg_tromix then
 		self.parts.wpn_fps_upg_ns_ass_smg_tromix.supported = true
-		self.parts.wpn_fps_upg_ns_ass_smg_tromix.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_ass_smg_tromix.stats = deep_clone(muzzle_device.muzz_rec2_c)
 		self.parts.wpn_fps_upg_ns_ass_smg_tromix.custom_stats = nil
 	end
 
 	if self.parts.wpn_fps_upg_ns_m82 then
 		self.parts.wpn_fps_upg_ns_m82.supported = true
-		self.parts.wpn_fps_upg_ns_m82.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
-		self.parts.wpn_fps_upg_ns_m82.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+		self.parts.wpn_fps_upg_ns_m82.stats = deep_clone(muzzle_device.muzz_dual2_c)
+		self.parts.wpn_fps_upg_ns_m82.custom_stats = deep_clone(muzzle_device.muzz_dual2_c)
 
 		self.parts.wpn_fps_upg_ns_m82b.supported = true
-		self.parts.wpn_fps_upg_ns_m82b.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
-		self.parts.wpn_fps_upg_ns_m82b.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+		self.parts.wpn_fps_upg_ns_m82b.stats = deep_clone(muzzle_device.muzz_dual2_c)
+		self.parts.wpn_fps_upg_ns_m82b.custom_stats = deep_clone(muzzle_device.muzz_dual2_c)
 
 		self.parts.wpn_fps_upg_ns_aw50.supported = true
-		self.parts.wpn_fps_upg_ns_aw50.stats = deep_clone(muzzle_device.muzzle_rec2_acc2_stats)
-		self.parts.wpn_fps_upg_ns_aw50.custom_stats = deep_clone(muzzle_device.muzzle_rec2_acc2_custom_stats)
+		self.parts.wpn_fps_upg_ns_aw50.stats = deep_clone(muzzle_device.muzz_dual2_c)
+		self.parts.wpn_fps_upg_ns_aw50.custom_stats = deep_clone(muzzle_device.muzz_dual2_c)
 	end
 
 	if self.parts.wpn_fps_upg_ns_pis_tact_flash then
 		self.parts.wpn_fps_upg_ns_pis_tact_flash.supported = true
 		self.parts.wpn_fps_upg_ns_pis_tact_flash.has_description = true
 		self.parts.wpn_fps_upg_ns_pis_tact_flash.desc_id = "bm_wp_upg_flash_hider"
-		self.parts.wpn_fps_upg_ns_pis_tact_flash.stats = deep_clone(muzzle_device.muzzle_a_stats)
-		self.parts.wpn_fps_upg_ns_pis_tact_flash.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.stats = deep_clone(muzzle_device.muzz_con_a)
+		self.parts.wpn_fps_upg_ns_pis_tact_flash.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 		self.parts.wpn_fps_upg_ns_pis_tact_flash.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		
 		self.parts.wpn_fps_upg_ns_pis_yhm.supported = true
-		self.parts.wpn_fps_upg_ns_pis_yhm.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_upg_ns_pis_yhm.stats = deep_clone(muzzle_device.muzz_rec_c)
 		self.parts.wpn_fps_upg_ns_pis_yhm.custom_stats = nil
 
 		self.parts.wpn_fps_upg_ns_pis_major.supported = true
-		self.parts.wpn_fps_upg_ns_pis_major.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_pis_major.stats = deep_clone(muzzle_device.muzz_rec2_c)
 		self.parts.wpn_fps_upg_ns_pis_major.custom_stats = nil
 
 		self.parts.wpn_fps_upg_ns_pis_aek919.supported = true
-		self.parts.wpn_fps_upg_ns_pis_aek919.stats = deep_clone(muzzle_device.muzzle_rec_stats)
-		self.parts.wpn_fps_upg_ns_pis_aek919.custom_stats = deep_clone(muzzle_device.muzzle_rec_custom_stats)
+		self.parts.wpn_fps_upg_ns_pis_aek919.stats = deep_clone(muzzle_device.muzz_rec_a)
+		self.parts.wpn_fps_upg_ns_pis_aek919.custom_stats = deep_clone(muzzle_device.muzz_rec_a)
 
 
 		self.parts.wpn_fps_upg_ns_ass_mb556k.supported = true
 		self.parts.wpn_fps_upg_ns_ass_mb556k.has_description = false
-		self.parts.wpn_fps_upg_ns_ass_mb556k.stats = deep_clone(muzzle_device.muzzle_b_alt_stats)
-		self.parts.wpn_fps_upg_ns_ass_mb556k.custom_stats = deep_clone(muzzle_device.muzzle_b_alt_custom_stats)
+		self.parts.wpn_fps_upg_ns_ass_mb556k.stats = deep_clone(muzzle_device.muzz_acc_c)
+		self.parts.wpn_fps_upg_ns_ass_mb556k.custom_stats = deep_clone(muzzle_device.muzz_acc_c)
 
 		self.parts.wpn_fps_upg_ns_ass_tbrake.supported = true
 		self.parts.wpn_fps_upg_ns_ass_tbrake.has_description = false
-		self.parts.wpn_fps_upg_ns_ass_tbrake.stats = deep_clone(muzzle_device.muzzle_c_alt_stats)
+		self.parts.wpn_fps_upg_ns_ass_tbrake.stats = deep_clone(muzzle_device.muzz_rec2_c)
 		self.parts.wpn_fps_upg_ns_ass_tbrake.custom_stats = nil
 
 		self.parts.wpn_fps_upg_ns_ass_yhm_slant.supported = true
 		self.parts.wpn_fps_upg_ns_ass_yhm_slant.has_description = false
-		self.parts.wpn_fps_upg_ns_ass_yhm_slant.stats = deep_clone(muzzle_device.muzzle_c_duo_stats)
-		self.parts.wpn_fps_upg_ns_ass_yhm_slant.custom_stats = deep_clone(muzzle_device.muzzle_c_duo_custom_stats)
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.stats = deep_clone(muzzle_device.muzz_dual_c)
+		self.parts.wpn_fps_upg_ns_ass_yhm_slant.custom_stats = deep_clone(muzzle_device.muzz_dual_c)
 		
 		self.parts.wpn_fps_upg_ns_ass_vortex.supported = true
 		self.parts.wpn_fps_upg_ns_ass_vortex.has_description = true
 		self.parts.wpn_fps_upg_ns_ass_vortex.desc_id = "bm_wp_upg_flash_hider"
-		self.parts.wpn_fps_upg_ns_ass_vortex.stats = deep_clone(muzzle_device.muzzle_a_stats)
-		self.parts.wpn_fps_upg_ns_ass_vortex.custom_stats = deep_clone(muzzle_device.muzzle_a_custom_stats)
+		self.parts.wpn_fps_upg_ns_ass_vortex.stats = deep_clone(muzzle_device.muzz_con_a)
+		self.parts.wpn_fps_upg_ns_ass_vortex.custom_stats = deep_clone(muzzle_device.muzz_con_a)
 		self.parts.wpn_fps_upg_ns_ass_vortex.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 
 
 		self.parts.wpn_fps_upg_ns_shot_gk_01.supported = true
-		self.parts.wpn_fps_upg_ns_shot_gk_01.stats = deep_clone(muzzle_device.muzzle_c_stats)
-		self.parts.wpn_fps_upg_ns_shot_gk_01.custom_stats = deep_clone(muzzle_device.muzzle_c_custom_stats)
+		self.parts.wpn_fps_upg_ns_shot_gk_01.stats = deep_clone(muzzle_device.muzz_acc2_c)
+		self.parts.wpn_fps_upg_ns_shot_gk_01.custom_stats = deep_clone(muzzle_device.muzz_acc2_c)
 
 		self.parts.wpn_fps_upg_ns_shot_nomad.supported = true
-		self.parts.wpn_fps_upg_ns_shot_nomad.stats = deep_clone(muzzle_device.muzzle_b_stats)
+		self.parts.wpn_fps_upg_ns_shot_nomad.stats = deep_clone(muzzle_device.muzz_rec_c)
 		self.parts.wpn_fps_upg_ns_shot_nomad.custom_stats = {}			
 
 	end

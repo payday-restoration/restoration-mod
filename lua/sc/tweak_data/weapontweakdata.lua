@@ -7475,7 +7475,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.type54_underbarrel.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2200,
-							min_mult = 0.25
+							min_mult = 0.125
 						}
 						self.type54_underbarrel.stats = {
 							damage = 90,
@@ -7525,7 +7525,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_type54_underbarrel.damage_falloff = {
 							start_dist = 700,
 							end_dist = 2200,
-							min_mult = 0.25
+							min_mult = 0.125
 						}
 						self.x_type54_underbarrel.stats = {
 							damage = 90,
@@ -14285,7 +14285,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.b682.damage_falloff = {
 							start_dist = 900,
 							end_dist = 3500,
-							min_mult = 0.1
+							min_mult = 0.125
 						}
 						self.b682.stats = {
 							damage = 240,
@@ -14326,7 +14326,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.boot.damage_falloff = {
 							start_dist = 400,
 							end_dist = 2500,
-							min_mult = 0.1
+							min_mult = 0.125
 						}
 						self.boot.stats = {
 							damage = 240,
@@ -14385,7 +14385,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.huntsman.damage_falloff = {
 							start_dist = 700,
 							end_dist = 3200,
-							min_mult = 0.1
+							min_mult = 0.125
 						}
 						self.huntsman.stats = {
 							damage = 240,
@@ -14441,7 +14441,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.coach.damage_falloff = {
 							start_dist = 500,
 							end_dist = 2800,
-							min_mult = 0.1
+							min_mult = 0.125
 						}
 						self.coach.stats = {
 							damage = 240,
@@ -15850,7 +15850,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.bs23.damage_falloff = {
 						start_dist = 800,
 						end_dist = 3600,
-						min_mult = 0.1
+						min_mult = 0.125
 					}
 					self.bs23.stats = {
 						damage = 240,
@@ -16211,7 +16211,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.qsho.damage_falloff = {
 						start_dist = 1000,
 						end_dist = 3200,
-						min_mult = 0.1
+						min_mult = 0.125
 					}
 					self.qsho.stats = {
 						damage = 240,
@@ -17892,7 +17892,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.quadbarrel.damage_falloff = {
 					start_dist = 500,
 					end_dist = 3000,
-					min_mult = 0.1
+					min_mult = 0.125
 				}
 				self.quadbarrel.stats = {
 					damage = 240,
@@ -17937,7 +17937,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ks23.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3600,
-					min_mult = 0.1
+					min_mult = 0.125
 				}
 				self.ks23.stats = {
 					damage = 240,
@@ -21900,7 +21900,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.cp2077_guts.damage_falloff = {
 					start_dist = 800,
 					end_dist = 3000,
-					min_mult = 0.3333
+					min_mult = 0.125
 				}
 				self.cp2077_guts.stats = {
 					damage = 400,
@@ -23182,7 +23182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.doot_eternal_shotgun.damage_falloff = {
 					start_dist = 400,
 					end_dist = 2000,
-					min_mult = 0.1333
+					min_mult = 0.125
 				}
 				self.doot_eternal_shotgun.stats = {
 					damage = 180,
@@ -23927,7 +23927,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.omni.damage_type_single_ray = "sniper"
 				self.omni.rays = 6
 				self.omni.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.omni.AMMO_MAX = 30
+				self.omni.AMMO_MAX = 40
 				self.omni.tactical_reload = 1		
 				self.omni.CLIP_AMMO_MAX = 10
 				self.omni.fire_mode_data.fire_rate = 0.15
@@ -24290,7 +24290,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.riveter.damage_type_single_ray = "sniper"
 				self.riveter.rays = 6
 				self.riveter.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
-				self.riveter.AMMO_MAX = 60
+				self.riveter.AMMO_MAX = 80
 				self.riveter.tactical_reload = 1		
 				self.riveter.CLIP_AMMO_MAX = 15
 				self.riveter.fire_mode_data.fire_rate = 0.15
@@ -26486,7 +26486,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.damage_falloff = {
 				start_dist = 300,
 				end_dist = 2100,
-				min_mult = 0.1
+				min_mult = 0.125
 			}
 			self.abzats.stats = {
 				damage = 240,
@@ -26536,7 +26536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ashot.damage_falloff = {
 				start_dist = 600,
 				end_dist = 2100,
-				min_mult = 0.1
+				min_mult = 0.125
 			}
 			self.ashot.stats = {
 				damage = 240,
@@ -26826,7 +26826,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_huntsman.damage_falloff = {
 				start_dist = 400,
 				end_dist = 1600,
-				min_mult = 0.1
+				min_mult = 0.125
 			}
 			self.x_huntsman.stats = {
 				damage = 240,
@@ -27164,7 +27164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						if weap.CAN_TOGGLE_FIREMODE ~= true and weap.FIRE_MODE == "single" then
 							table.insert(weap.categories, "shotgun_light_semi")
 						end
-						weap.ene_hs_mult = 0.5
+						weap.ene_hs_mult = table.contains(weap.categories, "shotgun_auto") and 0.35 or 0.5
 					elseif weap.recategorize[1] == "heavy_shot" and not table.contains(weap.categories, "shotgun_heavy") then	
 						table.insert(weap.categories, "shotgun_heavy")
 						weap.ene_hs_mult = 0.65

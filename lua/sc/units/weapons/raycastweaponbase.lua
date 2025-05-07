@@ -1653,7 +1653,7 @@ function InstantExplosiveBulletBase:on_collision(col_ray, weapon_unit, user_unit
 		mvec3_sub(tmp_vec1, tmp_vec2)
 		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
 		local weap_base = weapon_unit:base()
-		local tweak_data = weap_base and weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()
+		local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
 		local di_percent = (tweak_data and tweak_data.direct_damage_percent) or 0.5
 		self.super:on_collision(col_ray, weapon_unit, user_unit, (damage * di_percent) * overkill, blank, no_sound)
 		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
@@ -1785,6 +1785,48 @@ function ConcussiveInstantBulletBase:give_impact_damage(col_ray, weapon_unit, us
 	end
 
 	return self.super.give_impact_damage(self, col_ray, weapon_unit, user_unit, damage, ...)
+end
+
+function InstantSnowballBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+	local hit_unit = col_ray.unit
+	user_unit = alive(user_unit) and user_unit or nil
+	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+
+	if not user_unit or not self:chk_friendly_fire(hit_unit, user_unit) then
+		if not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood then
+			self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+		end
+
+		if not blank and weapon_unit then
+			local weap_base = weapon_unit:base()
+
+			if weap_base and weap_base.chk_shield_knock then
+				weap_base:chk_shield_knock(hit_unit, col_ray, weapon_unit, user_unit, damage)
+			end
+		end
+	end
+
+	if not blank and weapon_unit then
+		mvec3_set(tmp_vec1, col_ray.position)
+		mvec3_set(tmp_vec2, col_ray.ray)
+		mvec3_norm(tmp_vec2)
+		mvec3_mul(tmp_vec2, 20)
+		mvec3_sub(tmp_vec1, tmp_vec2)
+		local overkill = managers.player:temporary_upgrade_value("temporary", "overkill_damage_multiplier", 1)
+		local weap_base = weapon_unit:base()
+		local tweak_data = weap_base and ((weap_base.weapon_tweak_data and weap_base:weapon_tweak_data()) or (weap_base._tweak_projectile_entry and tweak_data.projectiles[weap_base._tweak_projectile_entry]))
+		local di_percent = (tweak_data and tweak_data.direct_damage_percent) or 0.5
+		log(tostring( weap_base._tweak_projectile_entry ))
+		self.super.super:on_collision(col_ray, weapon_unit, user_unit, (damage * di_percent) * overkill, blank, no_sound)
+		self:on_collision_server(tmp_vec1, col_ray.normal, damage * 1, user_unit, weapon_unit, managers.network:session():local_peer():id())
+
+		return {
+			variant = "explosion",
+			col_ray = col_ray
+		}
+	end
+
+	return nil
 end
 
 function RaycastWeaponBase:get_hipfire_stance_id()

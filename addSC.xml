@@ -1415,6 +1415,9 @@
     <effect				path="_dmc/effects/heavy_suppressed" force="false" load="true" unload="true" reload="true"/>
     <effect				path="_dmc/effects/heavy_muzzle" force="false" load="true" unload="true" reload="true"/>
 
+	<!--Snowball-->
+	<effect				path="effects/payday2/particles/impacts/snowball_impact" load="true"/>
+
 	<!--Cloud-->
 	<effect				path="effects/payday2/particles/explosions/red_mist" load="false"/>
 	
@@ -1552,7 +1555,7 @@
 	<unit				path="units/pd2_dlc_osa/weapons/wpn_fps_pis_x_rage/wpn_fps_pis_x_rage" load="false"/>
 	
 	<object				path="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/wpn_fps_snp_msr_ns_suppressor" load="false"/>
-	
+
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_b_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_standard" load="false"/>
 	<object				path="units/pd2_dlc_pxp1/weapons/wpn_fps_snp_scout_pts/wpn_fps_snp_scout_body_conversion" load="false"/>

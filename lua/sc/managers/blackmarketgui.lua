@@ -1925,10 +1925,10 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				callback = callback(self, self, "open_reticle_switch_menu")
 			},
 			wm_buy_mod = {
-				btn = "BTN_BACK",
+				btn = "BTN_START",
 				name = "bm_menu_btn_buy_mod",
 				prio = 4,
-				pc_btn = "toggle_chat",
+				pc_btn = "menu_respec_tree_all",
 				callback = callback(self, self, "purchase_weapon_mod_callback")
 			},
 			wm_clear_mod_preview = {
@@ -5406,7 +5406,7 @@ function BlackMarketGui:update_info_text()
 					table.insert(updated_texts[4].resource_color,  tweak_data.screen_colors[dash_grace_dodge_t == dash_stats.grace_cap_dodge * 1000 and "stat_maxed" or color_id])
 				end
 			end
-			description = description:gsub("#%{(.-)%}#", "##") 
+			description = description:gsub("#%{(.-)%}#", "##")
 			updated_texts[4].text = updated_texts[4].text .. ((dodge_rating > 0 and "\n") or "") .. description
 		end
 		updated_texts[4].below_stats = true

@@ -19402,6 +19402,9 @@ end)
 					}
 
 			
+					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_qbz95 = {
+						translation = Vector3(-0.005, 7.2, -4.74)
+					}
 					self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_ass_akilo_2022 = {
 						translation = Vector3(-0.016, -9.5, -2.787),
 						rotation = Rotation(0, 0, -0.79),
@@ -38617,7 +38620,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_scar_body_hamr.keep_damage = true
 				self.parts.wpn_fps_ass_scar_body_hamr.stats = {
 					value = 10,
-					extra_ammo = 10,
 					damage = -15,
 					total_ammo_mod = 198,
 					spread = 1,
@@ -38638,7 +38640,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					can_shoot_through_enemy = false,
 					armor_piercing_override = 0,
 					armor_piercing_add_override = 0,
-					rof_mult = 1.083333,
+					init_rof = {
+						count = 7,
+						rof_mult = 1.4992,
+						delay = 0.1,
+					},
+					rof_mult = 1.0416,
 					ads_speed_mult = 1.11111,
 					srm = {
 						-0.01,
@@ -40303,6 +40310,54 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		end
 
 	--[[ SILENT ENFORCER'S MODS ]]
+
+		if self.parts.wpn_fps_ass_qbz95_body_standard then
+			self.parts.wpn_fps_ass_qbz95_b_long.supported = true
+			self.parts.wpn_fps_ass_qbz95_b_long.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_ass_qbz95_b_long.custom_stats = deep_clone(barrels.long_b2_stats)
+
+			self.parts.wpn_fps_ass_qbz95_b_short.supported = true
+			self.parts.wpn_fps_ass_qbz95_b_short.stats = deep_clone(barrels.short_b1_stats)
+			self.parts.wpn_fps_ass_qbz95_b_short.custom_stats = deep_clone(barrels.short_b1_stats)
+
+			self.parts.wpn_fps_ass_qbz95_fg_rails.supported = true
+			self.parts.wpn_fps_ass_qbz95_fg_rails.stats = {
+				value = 3,
+				recoil = 2,
+				spread = 1,
+				concealment = -2
+			}
+			self.parts.wpn_fps_ass_qbz95_fg_rails.custom_stats = nil
+
+			self.parts.wpn_fps_ass_qbz95_scope.supported = true
+			self.parts.wpn_fps_ass_qbz95_scope.desc_id = "bm_wp_upg_o_3"
+			self.parts.wpn_fps_ass_qbz95_scope.has_description = true
+			self.parts.wpn_fps_ass_qbz95_scope.stats = {
+				value = 4,
+				zoom = 20
+			}
+			self.parts.wpn_fps_ass_qbz95_scope.stance_mod = {
+				wpn_fps_ass_qbz95 = {
+					translation = Vector3(-0.01, 12, -3.525),
+					rotation = Rotation(0.1, 0, 0),
+			    }
+			}
+
+			self.parts.wpn_fps_ass_qbz95_magpul.supported = true
+			self.parts.wpn_fps_ass_qbz95_magpul.stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
+			self.parts.wpn_fps_ass_qbz95_magpul.custom_stats = nil
+
+			self.parts.wpn_fps_ass_qbz95_m_drum.supported = true
+			self.parts.wpn_fps_ass_qbz95_m_drum.stats = {
+				value = 5,
+				concealment = -6,
+				extra_ammo = 45,
+				reload = -8
+			}
+			self.parts.wpn_fps_ass_qbz95_m_drum.custom_stats = {
+				ads_speed_mult = 1.15
+			}
+		end
 
 		if self.parts.wpn_fps_lmg_mg34_rec then --Silent Enforcer's MG34
 			self.parts.wpn_fps_lmg_mg34_rec.visibility = nil
@@ -47655,8 +47710,85 @@ Hooks:PostHook( WeaponFactoryTweakData, "init", "StrikeOneModInit", function(sel
 		self.parts.wpn_fps_upg_o_45steel.stance_mod.wpn_fps_pis_pkpsd9 = deep_clone(self.parts.wpn_fps_upg_o_45rds.stance_mod.wpn_fps_pis_pkpsd9)
 		self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_rusglock = {translation = Vector3(0, 0, 0),rotation = Rotation(0, 0, 0)}
 	end
-end )
-
+end)
+Hooks:PostHook( WeaponFactoryTweakData, "init", "qbz95Init", function(self)	
+	if self.parts.wpn_fps_ass_qbz95_bipod then
+		self.parts.wpn_fps_ass_qbz95_fg_rails.stance_mod = {
+			wpn_fps_ass_qbz95 = {
+				translation = Vector3(0, -5, 0.5),
+				rotation = Rotation(0, 0, -0)
+			}
+		}
+		self.parts.wpn_fps_ass_qbz95_fg_rails.override.wpn_fps_ass_qbz95_ironsight_dummy = {
+			stance_mod = {
+				wpn_fps_ass_qbz95 = {
+				    translation = Vector3(-0.064, 5, -2.05),
+				    rotation = Rotation(0, 0, -0)
+				}
+			}
+		}
+		self.parts.wpn_fps_ass_qbz95_ironsight_dummy.stance_mod = {
+			wpn_fps_ass_qbz95 = {
+				translation = Vector3(-0.064, -0, -1.55),
+				rotation = Rotation(0, -0, -0)
+		    }
+		}
+		self.parts.wpn_fps_ass_qbz95_scope.override = {
+		    wpn_fps_ass_qbz95_body_iron_sights = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			}
+		}
+		self.parts.wpn_fps_ass_qbz95_bipod.pcs = nil
+		self.parts.wpn_fps_ass_qbz95_bipod.has_description = true
+		self.parts.wpn_fps_ass_qbz95_bipod.desc_id = "bm_wp_fps_ass_qbz95_bipod_desc"
+		self.wpn_fps_ass_qbz95.adds = {
+			wpn_fps_upg_o_specter = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_aimpoint = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_docter = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_eotech = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_t1micro = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_cmore = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_cs = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_reflex = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_acog = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_eotech_xps = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_rx01 = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_rx30 = {
+				"wpn_fps_ass_qbz95_rail"
+			},
+			wpn_fps_upg_o_spot = {
+				"wpn_fps_ass_qbz95_rail"
+			}
+		}
+		self.parts.wpn_fps_upg_o_45rds.stance_mod.wpn_fps_ass_qbz95 = {translation = Vector3(1.5, 0, -16.3),rotation = Rotation(0, 1.5, -45)}
+		self.parts.wpn_fps_upg_o_45rds_v2.stance_mod.wpn_fps_ass_qbz95 = deep_clone(self.parts.wpn_fps_upg_o_45rds.stance_mod.wpn_fps_ass_qbz95)
+	end
+end)
 Hooks:PostHook(WeaponFactoryTweakData, "init", "resmod_cap", function(self)
 	if IsCAPInstalled then
 		self.wpn_fps_ass_ak5.stock_adapter = "wpn_fps_ass_s552_s_m4"

@@ -25425,6 +25425,55 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			
 		--[[     SILENT ENFORCER'S MODS     ]]--
 
+			if self.qbz95 then --RJC9000 and PlayBONK's PAYDAY "THE SERVERS ARE DOWN! CAN'T PLAY, IDIOT" 3 QBZ-191
+				self.qbz95.categories = { "assault_rifle" }
+				self.qbz95.warsaw = true
+				self.qbz95.recategorize = { "heavy_ar" }
+				self.qbz95.is_bullpup = true
+				self.qbz95.tactical_reload = 1
+				self.qbz95.AMMO_MAX = 120
+				self.qbz95.fire_mode_data.fire_rate = 0.092307
+				self.qbz95.BURST_FIRE = {
+					count = 3,
+					delay = 0.27,
+					rof_mult = 1.5630,
+					recoil_mult = 0.5,
+					last_recoil_mult = 1.1,
+				}
+				self.qbz95.kick = self.stat_info.kick_tables.right_recoil
+				self.qbz95.kick_pattern = {
+					{0, self.stat_info.kick_tables.horizontal_left_recoil},
+					{6, self.stat_info.kick_tables.right_recoil},
+					{9, self.stat_info.kick_tables.harsh_right_kick},
+					{12, self.stat_info.kick_tables.even_recoil},
+					{18, self.stat_info.kick_tables.horizontal_left_recoil}
+				}
+				self.qbz95.supported = true
+				self.qbz95.ads_speed = 0.320
+				self.qbz95.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 5000,
+					min_mult = 0.6
+				}
+				self.qbz95.stats = {
+					damage = 30,
+					spread = 81,
+					recoil = 71,
+					zoom = 1,
+					concealment = 24,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.qbz95.stats_modifiers = nil
+				self.qbz95.armor_piercing_chance = 0.25
+				self.qbz95.timers = deep_clone(self.famas.timers)
+				self.qbz95.panic_suppression_chance = 0.05
+			end
+
 			if self.pm then --Silent Enforcer's Makarov
 				self.pm.recategorize = {"light_pis"}
 				self.pm.damage_type = "pistol"

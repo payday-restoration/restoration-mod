@@ -10682,10 +10682,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.amcar.kick = self.stat_info.kick_tables.even_recoil
 						self.amcar.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
-							{5, self.stat_info.kick_tables.right_recoil},
-							{9, self.stat_info.kick_tables.moderate_right_kick},
+							{4, self.stat_info.kick_tables.moderate_right_kick},
+							{7, self.stat_info.kick_tables.right_recoil},
 							{12, self.stat_info.kick_tables.moderate_kick},
-							{21, self.stat_info.kick_tables.even_recoil}
+							{19, self.stat_info.kick_tables.right_recoil}
 						}
 						self.amcar.supported = true
 						self.amcar.ads_speed = 0.260
@@ -10879,12 +10879,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.new_m4.CLIP_AMMO_MAX = 30
 						self.new_m4.AMMO_MAX = 150
 						self.new_m4.fire_mode_data.fire_rate = 0.08
-						self.new_m4.kick = self.stat_info.kick_tables.moderate_kick
+						self.new_m4.kick = self.stat_info.kick_tables.moderate_left_kick
 						self.new_m4.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_kick},
-							{5, self.stat_info.kick_tables.vertical_kick},
-							{8, self.stat_info.kick_tables.moderate_right_kick},
-							{15, self.stat_info.kick_tables.moderate_kick}
+							{5, self.stat_info.kick_tables.moderate_kick},
+							{9, self.stat_info.kick_tables.moderate_left_kick},
+							{15, self.stat_info.kick_tables.left_recoil}
 						}
 						self.new_m4.supported = true
 						self.new_m4.ads_speed = 0.280
@@ -10933,8 +10933,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.ak5.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_recoil},
 							{4, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.vertical_kick},
-							{18, self.stat_info.kick_tables.moderate_kick}
+							{9, self.stat_info.kick_tables.moderate_kick},
+							{18, self.stat_info.kick_tables.moderate_right_kick},
+							{22, self.stat_info.kick_tables.right_recoil}
 						}
 						if math.random() <= 0.05 then
 							--The 5 in ak5 stands for
@@ -10975,13 +10976,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.corgi.AMMO_MAX = 150
 						self.corgi.fire_mode_data.fire_rate = 0.07058823529
 						self.corgi.CAN_TOGGLE_FIREMODE = true
-						self.corgi.kick = self.stat_info.kick_tables.moderate_kick
+						self.corgi.kick = self.stat_info.kick_tables.right_recoil
 						self.corgi.kick_pattern = {
-							{0, self.stat_info.kick_tables.vertical_kick},
-							{3, self.stat_info.kick_tables.pattern_r2},
-							{4, self.stat_info.kick_tables.moderate_right_kick},
-							{8, self.stat_info.kick_tables.moderate_left_kick},
-							{14, self.stat_info.kick_tables.moderate_kick}
+							{0, self.stat_info.kick_tables.right_kick},
+							{3, self.stat_info.kick_tables.moderate_right_kick},
+							{6, self.stat_info.kick_tables.right_recoil},
+							{11, self.stat_info.kick_tables.even_recoil},
+							{14, self.stat_info.kick_tables.left_recoil},
+							{26, self.stat_info.kick_tables.moderate_left_kick}
 						}
 						self.corgi.supported = true
 						self.corgi.ads_speed = 0.240
@@ -10993,7 +10995,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.corgi.stats = {
 							damage = 24,
 							spread = 84,
-							recoil = 75,
+							recoil = 73,
 							spread_moving = 6,
 							zoom = 1,
 							concealment = 26,
@@ -12886,7 +12888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mosin.kick = self.stat_info.kick_tables.vertical_kick
 						self.mosin.muzzleflash = "effects/payday2/particles/weapons/big_762_auto_fps"
 						self.mosin.supported = true
-						self.mosin.ads_speed = 0.320
+						self.mosin.ads_speed = 0.300
 						self.mosin.damage_falloff = {
 							start_dist = 3500,
 							end_dist = 8000,
@@ -12910,6 +12912,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mosin.keep_ammo = 1
 						self.mosin.descope_on_fire = true
 						self.mosin.panic_suppression_chance = 0.05
+						self.mosin.ignore_reload_objects = true
 						self.mosin.timers.reload_speed_multiplier = 1.05
 						self.mosin.timers.reload_empty = 2.6
 						self.mosin.timers.reload_not_empty = 2.6
@@ -16476,9 +16479,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.czevo.stats_modifiers = nil
 				self.czevo.panic_suppression_chance = 0.05
-				self.czevo.timers.reload_empty = 2.7
-				self.czevo.timers.reload_exit_empty = 0.5
-				self.czevo.timers.reload_exit_not_empty = 0.6
+				self.czevo.timers.reload_empty = 2.75
+				self.czevo.timers.reload_exit_empty = 0.4
+				self.czevo.timers.reload_not_empty = 2.08
+				self.czevo.timers.reload_exit_not_empty = 0.4
 				self.x_czevo.use_data.selection_index = 5 
 			end
 
@@ -25126,8 +25130,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.reprimand.supported = true
 				self.reprimand.ads_speed = 0.200
 				self.reprimand.damage_falloff = {
-					start_dist = 900,
-					end_dist = 3100,
+					start_dist = 200,
+					end_dist = 2800,
 					min_mult = 0.15
 				}
 				self.reprimand.stats = {
@@ -27584,10 +27588,10 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		shotgun = 1.27, --Pickup is increased to compensate for the inconsistency of per-pellet damage
 			flamethrower = 0.7 / 1.3, --flamethrowers do not get the pickup bonus as they are not per-pellet based
 			shotgun_auto = 1.11, --Omni
-			shotgun_light = 0.92, --Auto
-			shotgun_heavy = 0.94, --Light
-			shotgun_break = 1.07, --Heavy
-			shotgun_super = 1.10,
+			shotgun_light = 0.94, --Auto
+			shotgun_heavy = 0.98, --Light
+			shotgun_break = 1.08, --Heavy
+			shotgun_super = 1.11,
 		--assault_rifle = 1, 
 			dmr_l = 0.9,
 			dmr_h = 0.9,
@@ -27600,7 +27604,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon, id)
 		tranq = 0.7,
 		--Custom weapon pickup
 		raygun = 1.3,
-		sweet_liberty = 0.08,
+		sweet_liberty = 0.06,
 		battery = 0
 	}
 

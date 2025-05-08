@@ -698,9 +698,9 @@ function PlayerManager:check_skills()
 	end
 
 	if self:has_category_upgrade("temporary", "single_shot_fast_reload") then
-		self._message_system:register(Message.OnLethalHeadShot, "activate_aggressive_reload", callback(self, self, "_on_activate_aggressive_reload_event"))
+		self._message_system:register(Message.OnEnemyKilled, "activate_aggressive_reload", callback(self, self, "_on_activate_aggressive_reload_event"))
 	else
-		self._message_system:unregister(Message.OnLethalHeadShot, "activate_aggressive_reload")
+		self._message_system:unregister(Message.OnEnemyKilled, "activate_aggressive_reload")
 	end
 
 	if self:has_category_upgrade("player", "head_shot_ammo_return") then
@@ -1101,6 +1101,20 @@ function PlayerManager:_trigger_sharpshooter(unit, attack_data)
 	end
 end
 
+function PlayerManager:_on_activate_aggressive_reload_event(equipped_unit, variant, killed_unit)
+	if CopDamage.is_civilian(killed_unit:base()._tweak_table) or variant ~= "bullet" then
+		return
+	end
+	if equipped_unit then
+		local weapon = equipped_unit:base()
+
+		if weapon and (weapon:fire_mode() == "single" or self:upgrade_value("temporary", "single_shot_fast_reload")[3] == true) and weapon:is_category("assault_rifle", "snp") then
+			self:activate_temporary_upgrade("temporary", "single_shot_fast_reload")
+		end
+	end
+end
+
+--[[
 function PlayerManager:_on_activate_aggressive_reload_event(attack_data)
 	if attack_data and attack_data.variant ~= "projectile" then
 		local weapon_unit = self:equipped_weapon_unit()
@@ -1114,6 +1128,7 @@ function PlayerManager:_on_activate_aggressive_reload_event(attack_data)
 		end
 	end
 end
+--]]
 
 --Adds doctor bag health regen.
 function PlayerManager:health_regen()

@@ -1539,10 +1539,14 @@ end
 function NewRaycastWeaponBase:armor_piercing_chance()
 	local final_ap = 0
 	local skill_ap = self._skill_global_ap or 0
+	local skill_ap_min = self._skill_global_ap_min or 0
 	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "ap_bullets") then
-			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 1)
+			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 0)
+		end
+		if managers.player:has_category_upgrade(category, "ap_bullets_min") then
+			skill_ap_min = skill_ap_min + managers.player:upgrade_value(category, "ap_bullets_min", 0)
 		end
 	end
 	skill_ap = skill_ap + ((is_single and self._single_fire_ap_add) or 0)
@@ -1551,10 +1555,10 @@ function NewRaycastWeaponBase:armor_piercing_chance()
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
 		local volley_ap = volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
 		final_ap = math.min(volley_ap + skill_ap, 1)
-		return final_ap or 0
+		return math.max(skill_ap_min, final_ap) or 0
 	else
 		final_ap = math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
-		return final_ap or 0
+		return math.max(skill_ap_min, final_ap) or 0
 	end
 end
 

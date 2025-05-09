@@ -25278,19 +25278,37 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_upg_xm8_handguard_compact.stats = deep_clone(barrels.short_b2_stats)
 				self.parts.wpn_fps_upg_xm8_handguard_compact.custom_stats = deep_clone(barrels.short_b2_stats)
 					
-				self.parts.wpn_fps_ass_xm8_insight_ismv.supported = false
+				self.parts.wpn_fps_ass_xm8_insight_ismv.supported = true
+				self.parts.wpn_fps_ass_xm8_insight_ismv.desc_id = "bm_wp_upg_o_1_1"
+				self.parts.wpn_fps_ass_xm8_insight_ismv.stats = {
+					value = 3,
+					zoom = 1
+				}	
 					
 				self.parts.wpn_fps_upg_xm8_cmag.supported = true
+				self.parts.wpn_fps_upg_xm8_cmag.has_description = false
 				self.parts.wpn_fps_upg_xm8_cmag.stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.stats)
 				self.parts.wpn_fps_upg_xm8_cmag.custom_stats = deep_clone(self.parts.wpn_fps_upg_m4_m_drum.custom_stats)
 					
 				self.parts.wpn_fps_upg_xm8_mag_magpul.supported = true
+				self.parts.wpn_fps_upg_xm8_mag_magpul.has_description = false
 				self.parts.wpn_fps_upg_xm8_mag_magpul.stats = deep_clone(self.parts.wpn_fps_m4_upg_m_quick.stats)
 				self.parts.wpn_fps_upg_xm8_mag_magpul.custom_stats = nil
 					
 				self.parts.wpn_fps_upg_xm8_stock_collapsed.supported = true
 				self.parts.wpn_fps_upg_xm8_stock_collapsed.stats = deep_clone(stocks.adj_to_fold_stats)
 				self.parts.wpn_fps_upg_xm8_stock_collapsed.custom_stats = deep_clone(stocks.adj_to_fold_stats)	
+
+				table.insert(self.wpn_fps_ass_xm8.uses_parts, "wpn_fps_upg_i_m8a1")
+				for k, used_part_id in ipairs(self.wpn_fps_ass_xm8.uses_parts) do
+					if self.parts[used_part_id] and self.parts[used_part_id].type then
+						if self.parts[used_part_id].type == "magazine" then
+							if self.parts[used_part_id].stats and self.parts[used_part_id].stats.extra_ammo then
+								table.insert(self.parts.wpn_fps_upg_i_m8a1.forbids, used_part_id)
+							end
+						end
+					end
+				end
 			end				
 		
 			if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 

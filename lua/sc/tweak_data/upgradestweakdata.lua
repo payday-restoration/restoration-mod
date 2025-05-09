@@ -158,6 +158,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"agave",
 					"happy",
 					"shepheard",
+					"x_shepheard",
 					"slap"
 				}
 			},

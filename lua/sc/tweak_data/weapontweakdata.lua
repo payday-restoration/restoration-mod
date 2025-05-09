@@ -8552,8 +8552,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.pm9.kick_pattern = {
 							{0, self.stat_info.kick_tables.moderate_kick},
 							{6, self.stat_info.kick_tables.moderate_right_kick},
-							{11, self.stat_info.kick_tables.right_recoil},
-							{18, self.stat_info.kick_tables.even_recoil}
+							{12, self.stat_info.kick_tables.right_recoil},
+							{19, self.stat_info.kick_tables.even_recoil}
 						}
 						self.pm9.supported = true
 						self.pm9.ads_speed = 0.160
@@ -8622,6 +8622,50 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.shepheard.panic_suppression_chance = 0.05
 						self.shepheard.timers.reload_exit_empty = 0.6
 						self.shepheard.timers.reload_exit_not_empty = 0.75
+						--Akimbo
+							self.x_shepheard.use_data.selection_index = 2
+							self.x_shepheard.CLIP_AMMO_MAX = 60
+							self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
+							self.x_shepheard.panic_suppression_chance = 0.05
+							self.x_shepheard.kick = self.stat_info.kick_tables.even_recoil
+							self.x_shepheard.kick_pattern = {
+								{0, self.stat_info.kick_tables.even_recoil},
+								{4, self.stat_info.kick_tables.moderate_right_kick},
+								{14, self.stat_info.kick_tables.moderate_kick},
+								{20, self.stat_info.kick_tables.even_recoil}
+							}
+							self.x_shepheard.AMMO_MAX = 150
+							self.x_shepheard.supported = true
+							self.x_shepheard.ads_speed = 0.180
+							self.x_shepheard.damage_falloff = {
+								start_dist = 900,
+								end_dist = 3800,
+								min_mult = 0.25
+							}
+							self.x_shepheard.stats = {
+								damage = 24,
+								spread = 55,
+								recoil = 73,
+								spread_moving = 8,
+								zoom = 1,
+								concealment = 29,
+								suppression = 10,
+								alert_size = 2,
+								extra_ammo = 101,
+								total_ammo_mod = 400,
+								value = 1,
+								reload = 20
+							}
+							self.x_shepheard.stats_modifiers = nil
+							self.x_shepheard.sounds.fire = "shepheard_fire_single"
+							self.x_shepheard.sounds.fire_single = "shepheard_fire_single"
+							self.x_shepheard.sounds.fire_auto = "shepheard_fire"
+							self.x_shepheard.sounds.stop_fire = "shepheard_stop"
+							self.x_shepheard.reload_speed_multiplier = 0.65
+							self.x_shepheard.timers.reload_empty = 2.4
+							self.x_shepheard.timers.reload_exit_empty = 0.95
+							self.x_shepheard.timers.reload_not_empty = 1.4
+							self.x_shepheard.timers.reload_exit_not_empty = 1.3
 
 					--Tatonka (PP-19 Bizon)
 						--Moved to primary
@@ -8839,8 +8883,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.tec9.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
 							{4, self.stat_info.kick_tables.left_recoil},
-							{9, self.stat_info.kick_tables.even_recoil},
-							{14, self.stat_info.kick_tables.left_recoil}
+							{10, self.stat_info.kick_tables.even_recoil},
+							{15, self.stat_info.kick_tables.left_recoil}
 						}
 						self.tec9.supported = true
 						self.tec9.ads_speed = 0.160
@@ -8882,7 +8926,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.baka.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{4, self.stat_info.kick_tables.left_recoil},
-							{7, self.stat_info.kick_tables.even_recoil},
+							{9, self.stat_info.kick_tables.even_recoil},
 							{11, self.stat_info.kick_tables.right_recoil}
 						}
 						self.baka.supported = true
@@ -8924,7 +8968,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_baka.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{4, self.stat_info.kick_tables.left_recoil},
-							{7, self.stat_info.kick_tables.even_recoil},
+							{9, self.stat_info.kick_tables.even_recoil},
 							{11, self.stat_info.kick_tables.right_recoil}
 						}
 						self.x_baka.supported = true
@@ -8966,7 +9010,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.mp9.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{3, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.moderate_kick}
+							{9, self.stat_info.kick_tables.moderate_kick},
+							{14, self.stat_info.kick_tables.moderate_right_kick}
 						}
 						self.mp9.supported = true
 						self.mp9.ads_speed = 0.160
@@ -9009,9 +9054,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.sr2.kick = self.stat_info.kick_tables.even_recoil
 						self.sr2.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
-							{6, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.right_recoil},
-							{20, self.stat_info.kick_tables.moderate_left_kick}
+							{6, self.stat_info.kick_tables.right_recoil},
+							{9, self.stat_info.kick_tables.harsh_right_kick},
+							{13, self.stat_info.kick_tables.even_recoil},
+							{20, self.stat_info.kick_tables.left_recoil}
 						}
 						self.sr2.supported = true
 						self.sr2.ads_speed = 0.220
@@ -9061,9 +9107,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
 						self.x_sr2.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
-							{6, self.stat_info.kick_tables.moderate_right_kick},
-							{9, self.stat_info.kick_tables.right_recoil},
-							{20, self.stat_info.kick_tables.moderate_left_kick}
+							{6, self.stat_info.kick_tables.right_recoil},
+							{9, self.stat_info.kick_tables.harsh_right_kick},
+							{13, self.stat_info.kick_tables.even_recoil},
+							{20, self.stat_info.kick_tables.left_recoil}
 						}
 						self.x_sr2.sounds.fire = "sr2_fire_single"
 						self.x_sr2.sounds.fire_single = "sr2_fire_single"
@@ -9393,8 +9440,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.vityaz.kick_pattern = {
 							{0, self.stat_info.kick_tables.right_recoil},
 							{7, self.stat_info.kick_tables.moderate_kick},
-							{12, self.stat_info.kick_tables.moderate_right_kick},
-							{15, self.stat_info.kick_tables.right_recoil}
+							{11, self.stat_info.kick_tables.moderate_right_kick},
+							{14, self.stat_info.kick_tables.right_recoil},
+							{19, self.stat_info.kick_tables.moderate_kick},
+							{26, self.stat_info.kick_tables.right_recoil}
 						}
 						self.vityaz.supported = true
 						self.vityaz.ads_speed = 0.200
@@ -9438,7 +9487,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 							{0, self.stat_info.kick_tables.right_recoil},
 							{9, self.stat_info.kick_tables.moderate_kick},
 							{12, self.stat_info.kick_tables.left_recoil},
-							{15, self.stat_info.kick_tables.even_recoil}
+							{15, self.stat_info.kick_tables.even_recoil},
+							{21, self.stat_info.kick_tables.moderate_left_kick}
 						}
 						self.erma.supported = true
 						self.erma.ads_speed = 0.200
@@ -9489,7 +9539,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.polymer.kick_pattern = {
 							{0, self.stat_info.kick_tables.vertical_kick},
 							{8, self.stat_info.kick_tables.right_recoil},
-							{13, self.stat_info.kick_tables.even_recoil}
+							{15, self.stat_info.kick_tables.even_recoil},
+							{20, self.stat_info.kick_tables.moderate_left_kick},
+							{27, self.stat_info.kick_tables.right_recoil}
 						}
 						self.polymer.supported = true
 						self.polymer.ads_speed = 0.220
@@ -9535,8 +9587,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.schakal.kick_pattern = {
 							{0, self.stat_info.kick_tables.even_recoil},
 							{4, self.stat_info.kick_tables.right_kick},
-							{10, self.stat_info.kick_tables.moderate_kick},
-							{13, self.stat_info.kick_tables.right_recoil},
+							{9, self.stat_info.kick_tables.moderate_kick},
+							{12, self.stat_info.kick_tables.right_recoil},
 							{20, self.stat_info.kick_tables.even_recoil}
 						}
 						self.schakal.panic_suppression_chance = 0.05
@@ -27080,10 +27132,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Akimbo Swedish K
 		--DISABLED
 			self.x_m45.use_data.selection_index = 5
-	
-		--Akimbo Signature SMG
-		--DISABLED - ALREADY A PRIMARY
-			self.x_shepheard.use_data.selection_index = 5
 	
 		--Akimbo Beretta Auto
 		--DISABLED - ALREADY A PRIMARY

@@ -1722,6 +1722,48 @@ if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
 			end
 		end
 	end
+
+	twb.weapon_skins.shepheard_cnuy_yuuka.default_blueprint = {
+		"wpn_fps_smg_shepheard_b_standard",
+		"wpn_fps_smg_shepheard_bolt_standard",
+		"wpn_fps_smg_shepheard_s_standard",
+		"wpn_fps_smg_shepheard_dh_standard",
+		"wpn_fps_smg_shepheard_mag_standard",
+		"wpn_fps_smg_shepheard_g_standard",
+		"wpn_fps_smg_shepheard_o_standard",
+		"wpn_fps_smg_shepheard_body",
+		"wpn_fps_smg_shepheard_ns_standard",
+		"wpn_fps_smg_shepheard_cnuy_yuuka"
+	}
+	twb.weapon_skins.shepheard_cnuy_yuuka.parts["wpn_fps_smg_shepheard_body_long"] = deep_clone(twb.weapon_skins.shepheard_cnuy_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.shepheard_cnuy_yuuka.parts[used_part_id] = deep_clone(twb.weapon_skins.shepheard_cnuy_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+			end
+		end
+	end
+	twb.weapon_skins.x_shepheard_cnuy_yuuka.default_blueprint = {
+		"wpn_fps_smg_shepheard_b_standard",
+		"wpn_fps_smg_shepheard_bolt_standard",
+		"wpn_fps_smg_shepheard_s_no_vanilla",
+		"wpn_fps_smg_shepheard_dh_standard",
+		"wpn_fps_smg_shepheard_mag_standard",
+		"wpn_fps_smg_shepheard_g_standard",
+		"wpn_fps_smg_shepheard_o_standard",
+		"wpn_fps_smg_shepheard_body",
+		"wpn_fps_smg_shepheard_ns_standard",
+		"wpn_fps_smg_shepheard_cnuy_yuuka"
+	}
+	twb.weapon_skins.x_shepheard_cnuy_yuuka.parts["wpn_fps_smg_shepheard_body_long"] = deep_clone(twb.weapon_skins.shepheard_cnuy_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "foregrip" then
+				twb.weapon_skins.x_shepheard_cnuy_yuuka.parts[used_part_id] = deep_clone(twb.weapon_skins.x_shepheard_cnuy_yuuka.parts.wpn_fps_smg_shepheard_body_100kg)
+			end
+		end
+	end
+
 end
 
 if twb.weapon_skins.benelli_cnuy_hoshino then --Version 0.6.0

@@ -3213,6 +3213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_w_vityaz"] = "AK-19-01 Tasunka",
 					--Signature SMG
 					["bm_w_shepheard"] = "Signature PC9",
+					["bm_w_x_shepheard"] = "Akimbo Signature PC9s",
 					--Compact-5/MP5
 					["bm_w_mp5"] = "Compact-5",
 					["bm_w_mp5sd"] = "Compact-5SD",
@@ -3855,6 +3856,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons_Eng", function
 					["bm_wp_mp5_m_straight"] = "30rnd MP5 40/10 Magazine",
 					--MPX
 					["bm_w_shepheard"] = "SIG MPX",
+					["bm_w_x_shepheard"] = "Akimbo SIG MPXs",
 					--Vityaz
 					["bm_w_vityaz"] = "Kalashnikov Concern PP-19 Vityaz-SN",
 					--Bizon

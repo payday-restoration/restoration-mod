@@ -5778,8 +5778,42 @@ end)
 					
 					table.insert(self.wpn_fps_smg_shepheard.uses_parts, "wpn_fps_upg_m4_s_standard")
 					table.insert(self.wpn_fps_smg_shepheard.uses_parts, "wpn_fps_snp_tti_s_vltor")
+					table.insert(self.wpn_fps_smg_shepheard.uses_parts, "wpn_fps_smg_shepheard_cnuy_yuuka")
 
 					self.wpn_fps_smg_shepheard_npc.uses_parts = deep_clone(self.wpn_fps_smg_shepheard.uses_parts)
+				end)
+				Hooks:PostHook(WeaponFactoryTweakData, "_init_x_shepheard", "resmod_shepheard", function(self)
+					self.parts.wpn_fps_smg_shepheard_s_no_vanilla.supported = true
+					self.parts.wpn_fps_smg_shepheard_s_no_vanilla.stats = { value = 0 }
+					self.parts.wpn_fps_smg_shepheard_s_no_vanilla.custom_stats = nil
+
+					self.parts.wpn_fps_smg_shepheard_o_fix = {
+						type = "shitass_o",
+						name_id = "bm_wp_shepheard_o_fix",
+						unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard/wpn_fps_smg_shepheard",
+						stats = {
+							value = 1
+						}
+					}
+					self.wpn_fps_smg_x_shepheard.adds = {
+						wpn_fps_smg_shepheard_bolt_standard = {
+							"wpn_fps_smg_shepheard_o_fix"
+						}
+					}
+					self.wpn_fps_smg_x_shepheard.override.wpn_fps_smg_shepheard_o_standard = {
+						parent = "shitass_o"
+					}
+					self.wpn_fps_smg_x_shepheard.override.wpn_fps_smg_shepheard_mag_extended = {
+						stats = {
+							value = 1,
+							extra_ammo = -20,
+							reload = 5,
+							concealment = 2
+						}
+					}
+
+					table.insert(self.wpn_fps_smg_x_shepheard.uses_parts, "wpn_fps_smg_shepheard_cnuy_yuuka")
+					self.wpn_fps_smg_x_shepheard_npc.uses_parts = deep_clone(self.wpn_fps_smg_x_shepheard.uses_parts)
 				end)
 
 		--SECONDARIES
@@ -23821,7 +23855,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			hip_mult = 2.3333333,
 			rof_mult = 1.25,
 			ads_speed_mult = 1.3846153,
-			damage_min_mult = 0.6,
+			damage_min_mult = 0.5,
+			tactical_reload = 0,
 			muzzleflash = "effects/payday2/particles/weapons/tkb_muzzle",
 			sms = 0.5,
 			srm = {
@@ -43616,6 +43651,75 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 					elseif self.parts[used_part_id].type == "exclusive_set" then
 						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.forbids, used_part_id)
+					end
+				end
+			end
+		
+		--Logic & Reason
+			self.parts.wpn_fps_smg_shepheard_cnuy_yuuka = {
+				type = "legendary",
+				name_id = "bm_wskn_shepheard_yuuka_cnuy",
+				desc_id = "bm_wskn_shepheard_yuuka_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_smg_shepheard_s_adapter = {
+						unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+					},
+					wpn_fps_smg_shepheard_body = {
+						unit = "units/mods/weapons/wpn_fps_smg_shepheard_body_100kg/wpn_fps_smg_shepheard_body_100kg" 
+					},
+					wpn_fps_smg_shepheard_s_standard = {
+						unit = "units/mods/weapons/wpn_fps_smg_shepheard_s_100kg/wpn_fps_smg_shepheard_s_100kg"
+					},
+					wpn_fps_smg_shepheard_s_no_vanilla = {
+						unit = "units/mods/weapons/wpn_fps_smg_shepheard_s_100kg/wpn_fps_smg_shepheard_s_100kg"
+					},
+					wpn_fps_smg_shepheard_b_standard = {
+						third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_b_short",
+						unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_b_short"
+					},
+					wpn_fps_smg_shepheard_o_standard = {
+						third_unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_third_smg_shepheard_o_short",
+						unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_o_short"
+					}
+				},
+				forbids = {}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_smg_shepheard.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_smg_shepheard_cnuy_yuuka.override[used_part_id] = {
+							override = {},
+							adds = {},
+							unit = "units/mods/weapons/wpn_fps_smg_shepheard_body_100kg/wpn_fps_smg_shepheard_body_100kg" 
+						}
+					elseif self.parts[used_part_id].type == "magazine" then
+						self.parts.wpn_fps_smg_shepheard_cnuy_yuuka.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_smg_shepheard_m_100kg/wpn_fps_smg_shepheard_m_100kg" 
+						}
+					elseif self.parts[used_part_id].type == "stock" then
+						self.parts.wpn_fps_smg_shepheard_cnuy_yuuka.override[used_part_id] = {
+							unit = "units/mods/weapons/wpn_fps_smg_shepheard_s_100kg/wpn_fps_smg_shepheard_s_100kg" 
+						}
+					elseif self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_smg_shepheard_cnuy_yuuka.forbids, used_part_id)
+					end
+				end
+			end
+			for k, used_part_id in ipairs(self.wpn_fps_smg_x_shepheard.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_smg_shepheard_cnuy_yuuka.forbids, used_part_id)
 					end
 				end
 			end

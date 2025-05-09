@@ -18199,7 +18199,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xm8.damage_falloff = {
 					start_dist = 2100,
 					end_dist = 6000,
-					min_mult = 0.4166
+					min_mult = 0.5
 				}
 				self.xm8.stats = {
 					damage = 24,

@@ -27017,6 +27017,42 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.x_coach.timers.reload_exit_empty = 1.4
 		end
 
+		if self.dl then
+			self.dl.recategorize = {"light_snp"}
+			self.dl.has_description = true
+			self.dl.desc_id = "bm_ap_weapon_sc_desc"
+			self.dl.use_data.selection_index = 1
+			self.dl.CLIP_AMMO_MAX = 7
+			self.dl.AMMO_MAX = 25
+			self.dl.fire_mode_data.fire_rate = 1
+			self.dl.kick = self.stat_info.kick_tables.vertical_kick
+			self.dl.supported = true
+			self.dl.ads_speed = 0.320
+			self.dl.damage_falloff = {
+				start_dist = 2100,
+				end_dist = 4500,
+				min_mult = 0.5
+			}
+			self.dl.stats = {
+				damage = 45,
+				spread = 88,
+				recoil = 71,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 26,
+				suppression = 6,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 400,
+				value = 9,
+				reload = 20
+			}
+			self.dl.hs_mult = 2
+			self.dl.stats_modifiers = nil
+			self.dl.panic_suppression_chance = 0.05
+			self.dl.timers = deep_clone(self.model70.timers)
+		end
+
 
 	--[[     CAP/WEAPONLIB REQUIRING THINGS     ]]	
 		-- Currently low priority. If it REQUIRES Weaponlib (some Weaponlib weapons just need CAP's functionality, those are fine) then it's a no-go for now

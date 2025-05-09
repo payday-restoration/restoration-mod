@@ -43480,6 +43480,81 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}		
 	end
 
+	if self.parts.wpn_fps_snp_dl_iron_sight then
+		self.parts.wpn_fps_snp_dl_iron_sight.stats = { value = 0 }
+		self.parts.wpn_fps_snp_dl_o_32.supported = true
+		self.parts.wpn_fps_snp_dl_o_32.desc_id = "bm_wp_upg_o_3_5"
+		self.parts.wpn_fps_snp_dl_o_32.has_description = true
+		self.parts.wpn_fps_snp_dl_o_32.stats = { value = 0, zoom = 25 }
+
+		self.parts.wpn_fps_snp_dl_b_standard.supported = true
+		self.parts.wpn_fps_snp_dl_b_standard.stats = {
+			value = 3,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_snp_dl_b_standard.perks = {"silencer"}
+
+		self.parts.wpn_fps_snp_dl_b_c.supported = true
+		self.parts.wpn_fps_snp_dl_b_c.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_snp_dl_b_c.perks = {"silencer"}
+
+		self.parts.wpn_fps_snp_dl_o_rail.supported = true
+		self.parts.wpn_fps_snp_dl_o_rail.stats = { value = 0 }
+		
+		self.parts.wpn_fps_spec_bolt.supported = true
+		self.parts.wpn_fps_spec_bolt.stats = {
+			value = 5,
+			recoil = -6,
+			spread = -3
+		}
+		self.parts.wpn_fps_spec_bolt.custom_stats = deep_clone(barrels.short_b3_stats)
+		self.parts.wpn_fps_spec_bolt.custom_stats.ads_speed_mult = 1
+		self.parts.wpn_fps_spec_bolt.custom_stats.rof_mult = 1.18181
+		self.parts.wpn_fps_heavy_bolt.supported = true
+		self.parts.wpn_fps_heavy_bolt.stats = {
+			value = 5,
+			recoil = 6,
+			spread = 3
+		}
+		self.parts.wpn_fps_heavy_bolt.custom_stats = deep_clone(barrels.long_b3_stats)
+		self.parts.wpn_fps_heavy_bolt.custom_stats.ads_speed_mult = 1
+		self.parts.wpn_fps_heavy_bolt.custom_stats.rof_mult = 0.85
+
+		self.parts.wpn_fps_snp_dl_m_long.supported = true
+		self.parts.wpn_fps_snp_dl_m_long.stats = {
+			value = 4,
+			extra_ammo = 4,
+			concealment = -1,
+			reload = -5
+		}
+		self.parts.wpn_fps_snp_dl_m_long.custom_stats = {
+			ads_speed_mult = 1.025
+		}
+		
+		self.parts.wpn_fps_snp_dl_s_gripext.pcs = nil
+		self.parts.wpn_fps_snp_dl_s_gripfold.pcs = nil
+		
+		self.parts.wpn_fps_snp_dl_s_gripext.supported = true
+		self.parts.wpn_fps_snp_dl_s_gripext.stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_snp_dl_s_gripext.custom_stats = deep_clone(stocks.fixed_to_nocheeks_stats)
+		self.parts.wpn_fps_snp_dl_s_gripfold.supported = true
+		self.parts.wpn_fps_snp_dl_s_gripfold.stats = deep_clone(stocks.fixed_to_folded_stats)
+		self.parts.wpn_fps_snp_dl_s_gripfold.custom_stats = deep_clone(stocks.fixed_to_folded_stats)
+		self.parts.wpn_fps_snp_dl_s_marksman.supported = true
+		self.parts.wpn_fps_snp_dl_s_marksman.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}		
+	end
+
 	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]
 	--Version 0.5.0
 		--Et Omnia Vanitas

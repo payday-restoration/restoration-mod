@@ -1156,6 +1156,9 @@ end
 --Slows the player by a % that decays linearly over a duration, along with a visual.
 --Power should be between 1 and 0. Corresponds to % speed is slowed on start.
 function PlayerManager:apply_slow_debuff(duration, power, was_from_enemy, ignore_hud)
+	if power then
+		power = math.clamp(power, 0, 1)
+	end
 	if was_from_enemy and self:has_category_upgrade("player", "slowing_bullet_resistance") then
 		duration = duration * (self:upgrade_value("player", "slowing_bullet_resistance", 0).duration)
 		power = (1 + power) * (self:upgrade_value("player", "slowing_bullet_resistance", 0).power)

@@ -18182,8 +18182,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xm8.damage_type = "assault_rifle"
 				self.xm8.tactical_reload = 1
 				self.xm8.nato = true
-				self.xm8.BURST_FIRE = 3
-				self.xm8.ADAPTIVE_BURST_SIZE = false																	
 				self.xm8.auto.fire_rate = 0.08
 				self.xm8.fire_mode_data.fire_rate = 0.08
 				self.xm8.AMMO_MAX = 150
@@ -20234,6 +20232,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.vp70.lock_slide = true
 				self.vp70.fire_mode_data.fire_rate = 0.1
 				self.vp70.no_auto_anims = true
+				self.vp70.BURST_FIRE = nil
 				self.vp70.tactical_reload = 1
 				self.vp70.FIRE_MODE = "single"
 				self.vp70.CAN_TOGGLE_FIREMODE = false

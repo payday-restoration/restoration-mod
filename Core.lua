@@ -828,6 +828,23 @@ function restoration:send_sync_environment(to)
 end
 
 restoration.loaded_elements = false
+restoration.enable_mission_script_patches_in_editor = true
+restoration.enable_mission_script_patches_on_spawner_maps = true
+
+function restoration:disable_mission_script_patches()
+	if not self.enable_mission_script_patches_in_editor then
+		if Global.editor_mode then
+			return true
+		end
+	end
+
+	if not self.enable_mission_script_patches_on_spawner_maps then
+		local level_id = Global.game_settings and Global.game_settings.level_id
+		if level_id == "modders_devmap" or level_id == "Enemy_Spawner" then
+			return true
+		end
+	end
+end
 
 --Stealing this from SH cause it's way better
 function restoration:require(file)
@@ -850,12 +867,10 @@ end
 function restoration:instance_script_patches()
 	if self._instance_script_patches == nil then
 		local level_id = Global.game_settings and Global.game_settings.level_id
-
 		if level_id then
 			self._instance_script_patches = self:require("instance_script/" .. level_id:gsub('_skip1$', ''):gsub('_skip2$', ''):gsub("_night$", ""):gsub("_day$", "")) or false
 		end
 	end
-
 	return self._instance_script_patches
 end
 

@@ -323,6 +323,9 @@ function CoreWorldInstanceManager:_get_instance_mission_data(path)
 	return result
 end
 
+if restoration:disable_mission_script_patches() then
+	return
+end
 
 local instance_script_patches = restoration:instance_script_patches()
 if not instance_script_patches then

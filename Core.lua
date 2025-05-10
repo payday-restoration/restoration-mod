@@ -1315,6 +1315,27 @@ function restoration:gen_instance_input(id, name, pos, rot, opts)
 	}
 end
 
+function restoration:gen_counter(id, name, pos, rot, opts)
+	opts = opts or {}
+	return {
+		id = id,
+		editor_name = name,
+		class = "ElementCounter",
+		module = "CoreElementCounter",
+		values = {
+			execute_on_startup = false,
+			trigger_times = opts.trigger_times or 0,
+			on_executed = opts.on_executed or {},
+			base_delay = opts.base_delay or 0,
+			position = pos,
+			rotation = rot,
+			enabled = opts.enabled or false,
+			counter_target = opts.counter_target or 0,
+			digital_gui_unit_ids = opts.digital_gui_unit_ids or {},
+		},
+	}
+end
+
 function restoration:log(...)
 	if self.logging then
 		log("[StreamlinedHeistingAI] " .. table.concat({...}, " "))

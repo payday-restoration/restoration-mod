@@ -23445,7 +23445,8 @@ end)
 							if table.contains( tww.categories , "snp") or 
 							table.contains( tww.categories , "dmr_h") or 
 							table.contains( tww.categories , "shotgun") or 
-							table.contains( tww.categories , "grenade_launcher") then
+							table.contains( tww.categories , "grenade_launcher") or
+							table.contains( tww.categories , "handcannon") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 									stats = {value = 1, concealment = 1, spread = -2},
@@ -23508,9 +23509,9 @@ end)
 											end
 										end
 									end
-
 								end 
 							end
+
 							if table.contains( tww.categories , "shotgun") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_fl_ass_smg_sho_pointshoot = {
@@ -46494,63 +46495,65 @@ if self.wpn_fps_pis_shatters_fury then
 		wpn_fps_upg_o_bmg = {
 			"wpn_fps_pis_rage_o_adapter"
 		},
+		wpn_fps_upg_o_atibal = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_hamr = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_health = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_poe = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_tf90 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
 		wpn_fps_upg_o_fc1 = {
 			"wpn_fps_pis_rage_o_adapter"
 		},
 		wpn_fps_upg_o_uh = {
 			"wpn_fps_pis_rage_o_adapter"
-		}			
-	}
-	self.wpn_fps_pis_shatters_fury.override = {
-		wpn_fps_pis_rage_lock = { 
-			forbids = {}
 		}
-	}	
-	self.wpn_fps_pis_shatters_fury.uses_parts = {
-		"wpn_fps_pis_shatters_fury_body_standard",
-		"wpn_fps_pis_shatters_fury_body_smooth",
-		"wpn_fps_pis_shatters_fury_b_standard",
-		"wpn_fps_pis_shatters_fury_b_short",
-		"wpn_fps_pis_shatters_fury_b_long",
-		"wpn_fps_pis_shatters_fury_b_comp1",
-		"wpn_fps_pis_shatters_fury_b_comp2",
-		"wpn_fps_pis_shatters_fury_g_standard",
-		"wpn_fps_pis_shatters_fury_g_ergo",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_pis_rage_o_adapter",
-		"wpn_fps_pis_rage_lock",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		--Weapon Boosts
-		"wpn_fps_upg_bonus_concealment_p1",
-		"wpn_fps_upg_bonus_concealment_p2",
-		"wpn_fps_upg_bonus_concealment_p3",
-		"wpn_fps_upg_bonus_damage_p1",
-		"wpn_fps_upg_bonus_damage_p2",
-		"wpn_fps_upg_bonus_recoil_p1",
-		"wpn_fps_upg_bonus_spread_n1",
-		"wpn_fps_upg_bonus_spread_p1",
-		"wpn_fps_upg_bonus_team_exp_money_p3",
-		"wpn_fps_upg_bonus_total_ammo_p3",
-		"wpn_fps_upg_bonus_total_ammo_p1",
-		"wpn_fps_upg_bonus_sc_none"
 	}
+	self.wpn_fps_pis_shatters_fury.override = self.wpn_fps_pis_shatters_fury.override or {}
+	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_rage_lock = { forbids = {} }
+	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_shatters_fury_body_smooth = { 
+		override = {
+			wpn_fps_pis_shatters_fury_body_standard = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			} 
+		} 
+	}
+
+	for i, part_id in pairs(self.wpn_fps_pis_shatters_fury.uses_parts) do
+		attachment_list = {
+			"wpn_fps_pis_rage_extra",
+			"wpn_fps_pis_rage_o_adapter",
+			"wpn_fps_pis_rage_lock",
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_pis_shatters_fury.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_uh")		
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_tf90")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_bmg")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_health")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_hamr")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_atibal")
+
+	self.wpn_fps_pis_shatters_fury_npc.adds = deep_clone(self.wpn_fps_pis_shatters_fury.adds)
+	self.wpn_fps_pis_shatters_fury_npc.override = deep_clone(self.wpn_fps_pis_shatters_fury.override)
+	self.wpn_fps_pis_shatters_fury_npc.uses_parts = deep_clone(self.wpn_fps_pis_shatters_fury.uses_parts)
 end
 
 --OICW

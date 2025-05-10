@@ -158,6 +158,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"agave",
 					"happy",
 					"shepheard",
+					"x_shepheard",
 					"slap"
 				}
 			},
@@ -1315,12 +1316,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.move_spread_multiplier = {0.4}
 					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
-					self.values.snp.reload_speed_multiplier = {1.25}					
-					self.values.assault_rifle.reload_speed_multiplier = {1.25}		
+					self.values.snp.reload_speed_multiplier = {1.15}					
+					self.values.assault_rifle.reload_speed_multiplier = {1.15}
+					self.values.snp.ap_bullets_min = {0.25}
+					self.values.assault_rifle.ap_bullets_min = {0.25}
 					
 					self.skill_descs.heavy_impact = {
 						skill_value_b1 = tostring((1 - self.values.snp.move_spread_multiplier[1]) * 100).."%", -- Movespeed during ADS
-						skill_value_p1 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%" -- Reload speed
+						skill_value_p1 = tostring(self.values.assault_rifle.reload_speed_multiplier[1] % 1 * 100).."%", -- Reload speed
+						skill_value_p2 = tostring(self.values.assault_rifle.ap_bullets_min[1] % 1 * 100).."%" -- AP
 					}
 
 			--Rifleman
@@ -1342,13 +1346,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
 					{ --Basic
-						1.25,
-						10,
+						1.15,
+						4,
 						false --Whether or not to allow full-auto
 					},
 					{ --Ace
-						1.5,
-						10,
+						1.3,
+						4,
 						true
 					},
 				}
@@ -5770,6 +5774,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 2,
 			upgrade = "steelsight_range_inc",
 			category = "assault_rifle"
+		}
+	}
+	self.definitions.assault_rifle_ap_bullets_min_1 = {
+		name_id = "menu_pistol_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets_min",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.snp_ap_bullets_min_1 = {
+		name_id = "menu_pistol_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets_min",
+			category = "snp"
 		}
 	}
 	self.definitions.shotgun_ap_bullets_1 = {

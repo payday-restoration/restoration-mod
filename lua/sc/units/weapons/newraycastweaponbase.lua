@@ -973,6 +973,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._can_shoot_through_enemy_unlim = self._can_shoot_through_enemy_unlim or self:weapon_tweak_data().can_shoot_through_enemy_unlim or false --No limit enemy piercing
 	self._can_shoot_through_titan_shield = self._can_shoot_through_titan_shield or self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	self._shield_pierce_damage_mult = self:weapon_tweak_data().shield_pierce_damage_mult or 0.5
+	self._ammo_ratio = self:weapon_tweak_data().ammo_ratio or 1
 
 	self._warsaw = self:weapon_tweak_data().warsaw
 	self._nato = self:weapon_tweak_data().nato
@@ -1538,10 +1539,14 @@ end
 function NewRaycastWeaponBase:armor_piercing_chance()
 	local final_ap = 0
 	local skill_ap = self._skill_global_ap or 0
+	local skill_ap_min = self._skill_global_ap_min or 0
 	local is_single = self._single_fire_ap_add and self:fire_mode() == "single" and not self:in_burst_mode()
 	for _, category in ipairs(self:categories()) do
 		if managers.player:has_category_upgrade(category, "ap_bullets") then
-			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 1)
+			skill_ap = skill_ap + managers.player:upgrade_value(category, "ap_bullets", 0)
+		end
+		if managers.player:has_category_upgrade(category, "ap_bullets_min") then
+			skill_ap_min = skill_ap_min + managers.player:upgrade_value(category, "ap_bullets_min", 0)
 		end
 	end
 	skill_ap = skill_ap + ((is_single and self._single_fire_ap_add) or 0)
@@ -1550,10 +1555,10 @@ function NewRaycastWeaponBase:armor_piercing_chance()
 		local volley_fire_mode = fire_mode_data and fire_mode_data.volley
 		local volley_ap = volley_fire_mode and volley_fire_mode.armor_piercing_chance or 0
 		final_ap = math.min(volley_ap + skill_ap, 1)
-		return final_ap or 0
+		return math.max(skill_ap_min, final_ap) or 0
 	else
 		final_ap = math.min((self._armor_piercing_chance or 0) + skill_ap, 1)
-		return final_ap or 0
+		return math.max(skill_ap_min, final_ap) or 0
 	end
 end
 

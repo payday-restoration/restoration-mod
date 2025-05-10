@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_snp_msr_ns_suppressor" materials="units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr_pts/wpn_fps_snp_msr_ns_suppressor" />
+    <graphics>
+        <object enabled="true" name="g_g_lod0" />
+    </graphics>
+</dynamic_object>

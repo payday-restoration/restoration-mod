@@ -1135,6 +1135,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	end
 
 	weapon_unit = alive(weapon_unit) and weapon_unit or nil
+	local weap_base = weapon_unit and weapon_unit:base()
 	local endurance_alive_chk = false
 
 	if hit_unit:damage() then
@@ -1175,24 +1176,23 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		return
 	end
 
-	local do_shotgun_push, result, do_push, push_mul = nil
+	local do_shotgun_push, result, do_push, push_mul, headshot = nil
 	local hit_dmg_ext = hit_unit:character_damage()
 	local play_impact_flesh = not hit_dmg_ext or not hit_dmg_ext._no_blood
 
 	if not blank and weapon_unit then
-		local weap_base = weapon_unit:base()
-
 		if weap_base and weap_base.chk_shield_knock then
 			weap_base:chk_shield_knock(hit_unit, col_ray, weapon_unit, user_unit, damage)
 		end
 
 		if hit_dmg_ext and hit_dmg_ext.damage_bullet then
 			local was_alive = not hit_dmg_ext:dead()
-			local armor_piercing, knock_down, stagger, variant = nil
+			local armor_piercing, knock_down, stagger, variant, falloff_start = nil
 
 			if weap_base then
+				can_push = (weap_base.near_falloff_distance and col_ray.distance and col_ray.distance <= weap_base.near_falloff_distance) 
 				armor_piercing = weap_base.has_armor_piercing and weap_base:has_armor_piercing()
-				knock_down =(weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) or (weap_base.is_knock_down and weap_base:is_knock_down())
+				knock_down = (weap_base._natascha and col_ray.distance and col_ray.distance <= weap_base._natascha) or (weap_base.is_knock_down and weap_base:is_knock_down())
 				stagger = weap_base.is_stagger and weap_base:is_stagger()
 				variant = weap_base.variant and weap_base:variant()
 			end
@@ -1204,8 +1204,13 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 				do_push = true
 				push_mul = self:_get_character_push_multiplier(weapon_unit, was_alive and has_died)
 
-				if weap_base and result and result.type == "death" and weap_base.should_shotgun_push and weap_base:should_shotgun_push() then
-					do_shotgun_push = true
+				local check_col_ray_head = col_ray and col_ray.unit and col_ray.unit:character_damage() and col_ray.unit:character_damage()._ids_head_body_name and col_ray.body and col_ray.body:name() and col_ray.body:name() == col_ray.unit:character_damage()._ids_head_body_name
+			
+				if weap_base and result and result.type == "death" then
+					--headshot = check_col_ray_head
+					if weap_base.should_shotgun_push and weap_base:should_shotgun_push() and (can_push or (col_ray.distance and col_ray.distance <= 600)) then
+						do_shotgun_push = true
+					end
 				end
 			else
 				play_impact_flesh = false
@@ -1221,11 +1226,29 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		managers.game_play_central:physics_push(col_ray, push_mul)
 	end
 
+	if headshot then
+		local mov_ext = col_ray.unit and col_ray.unit.movement and col_ray.unit:movement()
+		local full_body_action = mov_ext and mov_ext:get_action(1)
+		DelayedCalls:Add("tbox_shot", 0.09, function ()
+			local hurt_ext = full_body_action and full_body_action.force_ragdoll and full_body_action:force_ragdoll(true)
+			managers.game_play_central:physics_push(col_ray, push_mul)
+		end)
+	end
+
 	if do_shotgun_push then
 		local dir = col_ray.ray
 		mvector3.multiply(dir, 0.75)
 		--managers.game_play_central:do_shotgun_push(col_ray.unit, col_ray.position, dir, col_ray.distance, user_unit)
 	end
+
+	--[[
+	if do_shotgun_push then
+		local mov_ext = col_ray.unit and col_ray.unit.movement and col_ray.unit:movement()
+		local full_body_action = mov_ext and mov_ext:get_action(1)
+		local hurt_ext = full_body_action and full_body_action.force_ragdoll and full_body_action:force_ragdoll(true)
+		managers.game_play_central:physics_push(col_ray, push_mul * 2)
+	end
+	--]]
 
 	--Unsure if the old version of playing impact effects will work with the new stuff, leaving the new stuff as-is for now
 	if play_impact_flesh then

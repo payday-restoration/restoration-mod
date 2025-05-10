@@ -23445,7 +23445,8 @@ end)
 							if table.contains( tww.categories , "snp") or 
 							table.contains( tww.categories , "dmr_h") or 
 							table.contains( tww.categories , "shotgun") or 
-							table.contains( tww.categories , "grenade_launcher") then
+							table.contains( tww.categories , "grenade_launcher") or
+							table.contains( tww.categories , "handcannon") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_bonus_concealment_p1 = {
 									stats = {value = 1, concealment = 1, spread = -2},
@@ -23508,9 +23509,9 @@ end)
 											end
 										end
 									end
-
 								end 
 							end
+
 							if table.contains( tww.categories , "shotgun") then
 								self[ factory_id ].override = self[ factory_id ].override or {}
 								self[ factory_id ].override.wpn_fps_upg_fl_ass_smg_sho_pointshoot = {
@@ -30226,6 +30227,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.stats = { value = 0 }
 			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.custom_stats = {}
 
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel.custom_stats = {}
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.supported = true
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.stats = { value = 0 }
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.custom_stats = {}
@@ -36525,6 +36528,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 			self.parts.wpn_fps_pis_hpb_comp.supported = true
 			self.parts.wpn_fps_pis_hpb_comp.stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_hpb_comp.custom_stats = {}
 	
 			self.parts.wpn_fps_pis_hpb_comp2.supported = true
 			self.parts.wpn_fps_pis_hpb_comp2.stats = deep_clone(muzzle_device.muzz_acc_c)
@@ -36965,6 +36969,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_fang45_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 			self.parts.wpn_fps_smg_fang45_s_folded.stats.value = 0
 			self.parts.wpn_fps_smg_fang45_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
+		end
+
+		if self.parts.wpn_fps_pis_pinkie_b_sp then
+			self.parts.wpn_fps_pis_pinkie_b_sp.supported = true
+			self.parts.wpn_fps_pis_pinkie_b_sp.stats = {
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_pis_pinkie_b_sp.custom_stats = {}
+			self.parts.wpn_fps_pis_pinkie_b_sp.perks = {"silencer"}
+			
+			self.parts.wpn_fps_pis_pinkie_b_fh.supported = true
+			self.parts.wpn_fps_pis_pinkie_b_fh.stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		end
 
 		if self.parts.wpn_fps_ass_kurisumasu_b_std then
@@ -40912,6 +40932,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
+	if self.parts.wpn_fps_smg_mac10_m_casket then
+		self.parts.wpn_fps_smg_mac10_m_casket.supported = true
+		self.parts.wpn_fps_smg_mac10_m_casket.stats = {
+			value = 2,
+			concealment = -4,
+			extra_ammo = 30,
+			reload = -6
+		}
+		self.parts.wpn_fps_smg_mac10_m_casket.custom_stats = {
+			ads_speed_mult = 1.1
+		}
+		self.wpn_fps_smg_x_mac10.override.wpn_fps_smg_mac10_m_casket = {
+			supported = true,
+			stats = {
+				value = 2,
+				concealment = -4,
+				extra_ammo = 60,
+				reload = -6
+			}
+		}
+
+		self.parts.wpn_fps_smg_mac10_s_stowed.supported = true
+		self.parts.wpn_fps_smg_mac10_s_stowed.stats = deep_clone(stocks.fold_nocheeks_stats)
+		self.parts.wpn_fps_smg_mac10_s_stowed.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
+
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.supported = true
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.has_description = true
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.custom_stats = {}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {
+			suppressed = "suppressed_c"
+		}
+		
+		self.parts.wpn_fps_smg_mac10_ns_blade.supported = true
+		self.parts.wpn_fps_smg_mac10_ns_blade.has_description = false
+		self.parts.wpn_fps_smg_mac10_ns_blade.stats = deep_clone(muzzle_device.muzz_dual2_c)
+		self.parts.wpn_fps_smg_mac10_ns_blade.custom_stats = deep_clone(muzzle_device.muzz_dual2_c)
+
+		self.parts.wpn_fps_smg_mac10_vg_strap.supported = true
+		self.parts.wpn_fps_smg_mac10_vg_strap.has_description = false
+		self.parts.wpn_fps_smg_mac10_vg_strap.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1,
+		}
+		self.parts.wpn_fps_smg_mac10_vg_strap.override_weapon = nil
+		
+		self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil
+		self.parts.wpn_fps_smg_mac10_s_nil.pcs = nil
+	end
+
 	--Rex's Bubba Mosin Parts
 	if self.parts.wpn_fps_snp_mosin_barrel_bubba then
 		self.parts.wpn_fps_snp_mosin_body_bubba.supported = true
@@ -42543,6 +42620,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_g19_fire_selector.custom_stats = {
 			rof_mult = 1.0808823
 		}
+
+		self.parts.wpn_fps_pis_g19_sights_forbids.stats = { value = 0 }
+		self.parts.wpn_fps_pis_g19_sights_forbids.custom_stats = {}
 
 		self.wpn_fps_pis_g19.override = self.wpn_fps_pis_g19.override or {}
 	end
@@ -46494,63 +46574,65 @@ if self.wpn_fps_pis_shatters_fury then
 		wpn_fps_upg_o_bmg = {
 			"wpn_fps_pis_rage_o_adapter"
 		},
+		wpn_fps_upg_o_atibal = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_hamr = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_health = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_poe = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_tf90 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
 		wpn_fps_upg_o_fc1 = {
 			"wpn_fps_pis_rage_o_adapter"
 		},
 		wpn_fps_upg_o_uh = {
 			"wpn_fps_pis_rage_o_adapter"
-		}			
-	}
-	self.wpn_fps_pis_shatters_fury.override = {
-		wpn_fps_pis_rage_lock = { 
-			forbids = {}
 		}
-	}	
-	self.wpn_fps_pis_shatters_fury.uses_parts = {
-		"wpn_fps_pis_shatters_fury_body_standard",
-		"wpn_fps_pis_shatters_fury_body_smooth",
-		"wpn_fps_pis_shatters_fury_b_standard",
-		"wpn_fps_pis_shatters_fury_b_short",
-		"wpn_fps_pis_shatters_fury_b_long",
-		"wpn_fps_pis_shatters_fury_b_comp1",
-		"wpn_fps_pis_shatters_fury_b_comp2",
-		"wpn_fps_pis_shatters_fury_g_standard",
-		"wpn_fps_pis_shatters_fury_g_ergo",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_pis_rage_o_adapter",
-		"wpn_fps_pis_rage_lock",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		--Weapon Boosts
-		"wpn_fps_upg_bonus_concealment_p1",
-		"wpn_fps_upg_bonus_concealment_p2",
-		"wpn_fps_upg_bonus_concealment_p3",
-		"wpn_fps_upg_bonus_damage_p1",
-		"wpn_fps_upg_bonus_damage_p2",
-		"wpn_fps_upg_bonus_recoil_p1",
-		"wpn_fps_upg_bonus_spread_n1",
-		"wpn_fps_upg_bonus_spread_p1",
-		"wpn_fps_upg_bonus_team_exp_money_p3",
-		"wpn_fps_upg_bonus_total_ammo_p3",
-		"wpn_fps_upg_bonus_total_ammo_p1",
-		"wpn_fps_upg_bonus_sc_none"
 	}
+	self.wpn_fps_pis_shatters_fury.override = self.wpn_fps_pis_shatters_fury.override or {}
+	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_rage_lock = { forbids = {} }
+	self.wpn_fps_pis_shatters_fury.override.wpn_fps_pis_shatters_fury_body_smooth = { 
+		override = {
+			wpn_fps_pis_shatters_fury_body_standard = {
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+			} 
+		} 
+	}
+
+	for i, part_id in pairs(self.wpn_fps_pis_shatters_fury.uses_parts) do
+		attachment_list = {
+			"wpn_fps_pis_rage_extra",
+			"wpn_fps_pis_rage_o_adapter",
+			"wpn_fps_pis_rage_lock",
+		}
+		for _, remove_id in ipairs(attachment_list) do
+			if part_id == remove_id then
+				self.wpn_fps_pis_shatters_fury.uses_parts[i] = "resmod_dummy"
+			end
+		end
+	end
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_xpsg33_magnifier")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_uh")		
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_tf90")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_bmg")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_poe")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_health")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_hamr")
+	table.insert(self.wpn_fps_pis_shatters_fury.uses_parts, "wpn_fps_upg_o_atibal")
+
+	self.wpn_fps_pis_shatters_fury_npc.adds = deep_clone(self.wpn_fps_pis_shatters_fury.adds)
+	self.wpn_fps_pis_shatters_fury_npc.override = deep_clone(self.wpn_fps_pis_shatters_fury.override)
+	self.wpn_fps_pis_shatters_fury_npc.uses_parts = deep_clone(self.wpn_fps_pis_shatters_fury.uses_parts)
 end
 
 --OICW

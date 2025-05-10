@@ -20326,6 +20326,47 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kurisumasu.timers = deep_clone(self.contraband.timers)
 			end
 
+			if self.pinkie then
+				self.pinkie.recategorize = {"light_pis"}
+				self.pinkie.damage_type = "pistol"
+				self.pinkie.lock_slide = true
+				self.pinkie.AMMO_MAX = 75
+				self.pinkie.CLIP_AMMO_MAX = 6
+				self.pinkie.fire_mode_data.fire_rate = 0.0821917
+				self.pinkie.kick = self.stat_info.kick_tables.right_recoil
+				self.pinkie.kick_pattern = {
+					{0, self.stat_info.kick_tables.even_recoil},
+					{4, self.stat_info.kick_tables.right_recoil}
+				}
+				self.pinkie.supported = true
+				self.pinkie.ads_speed = 0.100
+				self.pinkie.damage_falloff = {
+					start_dist = 1400,
+					end_dist = 3000,
+					min_mult = 0.25
+				}
+				self.pinkie.stats = {
+					damage = 24,
+					spread = 56,
+					recoil = 91,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 32,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.pinkie.stats_modifiers = nil
+				self.pinkie.panic_suppression_chance = 0.05
+				self.pinkie.reload_speed_multiplier = 1.6
+				self.pinkie.weapon_movement_penalty = 1.14
+				self.pinkie.stats_modifiers = nil
+				self.pinkie.timers = deep_clone(self.breech.timers)
+			end
+
 		--[[     RJC9000'S MODS     ]]--
 
 			if self.tribune32 then
@@ -20792,6 +20833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{12, self.stat_info.kick_tables.moderate_right_kick}
 				}
 				self.tti_2011.lock_slide = true
+				self.tti_2011.lock_slide_alt = true
 				self.tti_2011.tactical_reload = 1
 				self.tti_2011.FIRE_MODE = "single"
 				self.tti_2011.CAN_TOGGLE_FIREMODE = false
@@ -20839,6 +20881,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					{10, self.stat_info.kick_tables.moderate_left_kick},
 					{16, self.stat_info.kick_tables.moderate_right_kick}
 				}
+				self.tti_viper.lock_slide_alt = true
 				self.tti_viper.lock_slide = true
 				self.tti_viper.tactical_reload = 1
 				self.tti_viper.FIRE_MODE = "single"

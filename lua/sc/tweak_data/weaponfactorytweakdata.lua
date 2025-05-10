@@ -30227,6 +30227,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.stats = { value = 0 }
 			self.parts.wpn_fps_pis_bf2042_ayylmao_magazine.custom_stats = {}
 
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel.stats = { value = 0 }
+			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel.custom_stats = {}
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.supported = true
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.stats = { value = 0 }
 			self.parts.wpn_fps_pis_bf2042_ayylmao_barrel_claude.custom_stats = {}
@@ -36526,6 +36528,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 	
 			self.parts.wpn_fps_pis_hpb_comp.supported = true
 			self.parts.wpn_fps_pis_hpb_comp.stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_hpb_comp.custom_stats = {}
 	
 			self.parts.wpn_fps_pis_hpb_comp2.supported = true
 			self.parts.wpn_fps_pis_hpb_comp2.stats = deep_clone(muzzle_device.muzz_acc_c)
@@ -36966,6 +36969,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_smg_fang45_s_folded.stats = deep_clone(stocks.fold_folder_stats)
 			self.parts.wpn_fps_smg_fang45_s_folded.stats.value = 0
 			self.parts.wpn_fps_smg_fang45_s_folded.custom_stats = deep_clone(stocks.fold_folder_stats)
+		end
+
+		if self.parts.wpn_fps_pis_pinkie_b_sp then
+			self.parts.wpn_fps_pis_pinkie_b_sp.supported = true
+			self.parts.wpn_fps_pis_pinkie_b_sp.stats = {
+				value = 2,
+				suppression = 12,
+				alert_size = -1
+			}
+			self.parts.wpn_fps_pis_pinkie_b_sp.custom_stats = {}
+			self.parts.wpn_fps_pis_pinkie_b_sp.perks = {"silencer"}
+			
+			self.parts.wpn_fps_pis_pinkie_b_fh.supported = true
+			self.parts.wpn_fps_pis_pinkie_b_fh.stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats = deep_clone(muzzle_device.muzz_rec_c)
+			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		end
 
 		if self.parts.wpn_fps_ass_kurisumasu_b_std then
@@ -40913,6 +40932,63 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		}
 	end
 
+	if self.parts.wpn_fps_smg_mac10_m_casket then
+		self.parts.wpn_fps_smg_mac10_m_casket.supported = true
+		self.parts.wpn_fps_smg_mac10_m_casket.stats = {
+			value = 2,
+			concealment = -4,
+			extra_ammo = 30,
+			reload = -6
+		}
+		self.parts.wpn_fps_smg_mac10_m_casket.custom_stats = {
+			ads_speed_mult = 1.1
+		}
+		self.wpn_fps_smg_x_mac10.override.wpn_fps_smg_mac10_m_casket = {
+			supported = true,
+			stats = {
+				value = 2,
+				concealment = -4,
+				extra_ammo = 60,
+				reload = -6
+			}
+		}
+
+		self.parts.wpn_fps_smg_mac10_s_stowed.supported = true
+		self.parts.wpn_fps_smg_mac10_s_stowed.stats = deep_clone(stocks.fold_nocheeks_stats)
+		self.parts.wpn_fps_smg_mac10_s_stowed.custom_stats = deep_clone(stocks.fold_nocheeks_stats)
+
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.supported = true
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.has_description = true
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.desc_id = "bm_wp_upg_suppressor"
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.stats = {
+			value = 2,
+			suppression = 12,
+			alert_size = -1
+		}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.custom_stats = {}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.perks = {"silencer"}
+		self.parts.wpn_fps_smg_mac10_ns_ghetto.sound_switch = {
+			suppressed = "suppressed_c"
+		}
+		
+		self.parts.wpn_fps_smg_mac10_ns_blade.supported = true
+		self.parts.wpn_fps_smg_mac10_ns_blade.has_description = false
+		self.parts.wpn_fps_smg_mac10_ns_blade.stats = deep_clone(muzzle_device.muzz_dual2_c)
+		self.parts.wpn_fps_smg_mac10_ns_blade.custom_stats = deep_clone(muzzle_device.muzz_dual2_c)
+
+		self.parts.wpn_fps_smg_mac10_vg_strap.supported = true
+		self.parts.wpn_fps_smg_mac10_vg_strap.has_description = false
+		self.parts.wpn_fps_smg_mac10_vg_strap.stats = {
+			value = 2,
+			recoil = 2,
+			concealment = -1,
+		}
+		self.parts.wpn_fps_smg_mac10_vg_strap.override_weapon = nil
+		
+		self.parts.wpn_fps_smg_mac10_anim_suppgrip.pcs = nil
+		self.parts.wpn_fps_smg_mac10_s_nil.pcs = nil
+	end
+
 	--Rex's Bubba Mosin Parts
 	if self.parts.wpn_fps_snp_mosin_barrel_bubba then
 		self.parts.wpn_fps_snp_mosin_body_bubba.supported = true
@@ -42544,6 +42620,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_upg_g19_fire_selector.custom_stats = {
 			rof_mult = 1.0808823
 		}
+
+		self.parts.wpn_fps_pis_g19_sights_forbids.stats = { value = 0 }
+		self.parts.wpn_fps_pis_g19_sights_forbids.custom_stats = {}
 
 		self.wpn_fps_pis_g19.override = self.wpn_fps_pis_g19.override or {}
 	end

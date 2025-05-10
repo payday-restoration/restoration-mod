@@ -129,7 +129,6 @@
 		<sequence editable_state="true" name="'gadget_meat_grinder'" triggable="true" once="true">	
 			
 			<!-- rifleman -->
-			<run_sequence filter="'check_city_swat_ar'" name="'head_'..pick('a','b','b','c','d','e','g', 'a', 'b', 'c', 'd', 'e',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'g')"/>
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar'"/>						
 			<object filter="'check_city_swat_ar'" enabled="true" name="'g_swat_ar_lod1'"/>
 			<run_sequence filter="'check_city_swat_ar'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
@@ -140,7 +139,6 @@
 			<run_sequence filter="'check_city_swat_ar'" name="'scar'..pick('nothing','nothing','nothing','nothing','nothing','nothing','f','nothing','nothing')"/>
 		
 			<!-- sg -->
-			<run_sequence filter="'check_city_swat_sg'" name="'head_'..pick('d','a','b','c','balaclava','e','g', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>
 			
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_swat_sg'"/>						
 			<object filter="'check_city_swat_sg'" enabled="true" name="'g_swat_sg_lod1'"/>
@@ -165,7 +163,6 @@
 			<object filter="'check_city_swat_smg'" enabled="false" name="'g_helmet_lod1'"/>						
 			<object filter="'check_city_swat_smg'" enabled="false" name="'g_helmet_lod2'"/>	
 			<decal_mesh filter="'check_city_swat_smg'" enabled="false" name="'dm_helmet'"/>					
-			<run_sequence filter="'check_city_swat_smg'" name="'head_'..pick('balaclava','a','b','c','d','e','g', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>			
 			
 			<run_sequence filter="'check_city_swat_smg'" name="'holster_'..pick('r','r','r','r','l','l','twinnem')"/>
 			<run_sequence filter="'check_city_swat_smg'" name="'scar'..pick('f','f','nothing')"/>
@@ -173,7 +170,6 @@
 			<!-- sniper -->			
 			<object filter="'check_city_sniper'" enabled="true" name="'g_swat_sniper'"/>						
 			<object filter="'check_city_sniper'" enabled="true" name="'g_swat_sniper_lod1'"/>
-			<run_sequence filter="'check_city_sniper'" name="'head_'..pick('balaclava','a','b','c','d','e','g', 'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'balaclava')"/>			
 			<run_sequence filter="'check_city_sniper'" name="'body_'..pick('default','default','sleevesup','default','sleevesup','sleevesup','default')"/>			
 			<run_sequence filter="'check_city_sniper'" name="'hat_'..pick('backward','forward','backward','forward','backward','backward','backward')"/>			
 			<object filter="'check_city_sniper'" enabled="false" name="'g_helmet_lod1'"/>						
@@ -189,7 +185,6 @@
 			<body	filter="'check_city_shield'" enabled="true" name="'glass_visor'" />										
 			<decal_mesh	filter="'check_city_shield'" enabled="true" name="'c_visor'" />	
 			<run_sequence filter="'check_city_shield'" name="'helmet'..pick('_headset_goggless','_nothing','_nothing','_nothing')"/>			
-			<run_sequence filter="'check_city_shield'" name="'head_'..pick('f','a','b','c','d','e','g', 'b', 'c', 'd', 'e', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'f')"/>
 			
 			<!-- heavy -->			
 			<object filter="'check_city_heavy_ar'" enabled="true" name="'g_body_heavy'"/>						
@@ -207,7 +202,6 @@
 			<body	filter="'check_city_heavy_ar'" enabled="true" name="'body_plate'" />										
 			<decal_mesh	filter="'check_city_heavy_ar'" enabled="true" name="'c_body_plate'" />	
 			<run_sequence filter="'check_city_heavy_ar'" name="'helmet'..pick('_headset_goggless','_nothing','_nothing','_nothing')"/>			
-			<run_sequence filter="'check_city_heavy_ar'" name="'head_'..pick('f','a','b','c','d','e','g', 'b', 'c', 'd', 'e', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'f')"/>
 			
 			<!-- heavy sg-->			
 			<object filter="'check_city_heavy_sg'" enabled="true" name="'g_body_heavy'"/>						
@@ -361,6 +355,51 @@
 			<body filter="'check_goggle_b'" enabled="false" name="'glass_swat'" />	
 			<object filter="'check_goggle_b'" enabled="false" name="'g_glass'" />	
 			<object filter="'check_goggle_b'" enabled="false" name="'g_glass_crk'" />
+
+			<object enabled="false" name="'g_helmet_lod1'"/>						
+			<decal_mesh enabled="false" name="'dm_helmet'"/>						
+			<object enabled="false" name="'g_helmet_lod2'"/>						
+			<object enabled="false" name="'g_hat_lod1'"/>						
+			<object enabled="false" name="'g_hat_lod2'"/>						
+			<object enabled="false" name="'g_hat_lod3'"/>						
+			<object enabled="false" name="'g_hat_lod4'"/>						
+			<object enabled="false" name="'g_helmet_lod3'"/>						
+			<object enabled="false" name="'g_helmet_lod4'"/>						
+			<object enabled="false" name="'g_helmet_lod5'"/>						
+			<object enabled="false" name="'g_helmet_lod6'"/>						
+			<object enabled="false" name="'g_helmet_lod7'"/>						
+			<object enabled="false" name="'g_helmet_lod8'"/>						
+			<object enabled="false" name="'g_helmet_lod9'"/>						
+			<object enabled="false" name="'g_helmet_lod10'"/>						
+			<object enabled="false" name="'g_helmet_lod11'"/>						
+			<object enabled="false" name="'g_helmet_lod12'"/>						
+			<object enabled="false" name="'g_helmet_lod13'"/>						
+			<object enabled="false" name="'g_helmet_lod14'"/>						
+			<object enabled="false" name="'g_helmet_lod15'"/>						
+
+			<body 		    enabled="true" name="'acc_helmet'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
+			<graphic_group  enabled="true" name="'acc_helmet'"/>
+			<decal_mesh enabled="true" name="'c_helmet_acc'" />										
+
+			<body 		    filter="'check_city_swat_smg'"  enabled="true" name="'acc_hat'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>			
+			<decal_mesh filter="'check_city_swat_smg'"  enabled="true" name="'c_hat_acc'" />										
+			<object  filter="'check_city_swat_smg'"  enabled="true" name="'g_acc_hat'"/>
+			<object  filter="'check_city_swat_smg'"  enabled="false" name="'g_acc_helmet'"/>
+			
+			<body 		    filter="'check_city_sniper'" enabled="false" name="'acc_helmet'" />	
+			<decal_mesh	    filter="'check_city_sniper'" enabled="false" name="'c_helmet_acc'" />
+
+			<body 		    filter="'check_city_sniper'"  enabled="true" name="'acc_hat'" position="object_pos('Head')" rotation="object_rot('Head')" transfer_ang_velocity="v( 50 * rand(), 50 * rand(), 500 * rand() )" transfer_velocity="v( 0, 200 * rand(), 200 * rand() )"/>
+			<object  filter="'check_city_sniper'"  enabled="true" name="'g_acc_hat'"/>
+			<object  filter="'check_city_sniper'"  enabled="false" name="'g_acc_helmet'"/>
+			<decal_mesh filter="'check_city_sniper'"  enabled="true" name="'c_hat_acc'" />										
+			
+			<body 		    enabled="false" name="'acc_helmet'" start_time="30"/>	
+			<graphic_group  enabled="false" name="'acc_helmet'" start_time="30"/>
+			<decal_mesh	    enabled="false" name="'c_helmet_acc'" start_time="30"/>
+			
+			<body 		    enabled="false" name="'acc_hat'" start_time="30"/>	
+			<decal_mesh	    enabled="false" name="'c_hat_acc'" start_time="30"/>
 			
 			<body filter="'check_city_heavy_sg'" enabled="false" name="'glass_swat'" />	
 			<object filter="'check_city_heavy_sg'" enabled="false" name="'g_glass_2'" />	

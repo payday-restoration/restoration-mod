@@ -220,7 +220,6 @@
 			<body	filter="'check_city_heavy_sg'" enabled="true" name="'body_plate'" />										
 			<decal_mesh	filter="'check_city_heavy_sg'" enabled="true" name="'c_body_plate'" />	
 			<run_sequence filter="'check_city_heavy_sg'" name="'helmet'..pick('_headset_goggless','_nothing','_nothing','_nothing')"/>			
-			<run_sequence filter="'check_city_heavy_sg'" name="'head_'..pick('f','a','b','c','d','e','g', 'b', 'c', 'd', 'e', 'balaclava',  'balaclava', 'balaclava', 'balaclava', 'balaclava', 'f')"/>
 
 			
 		</sequence>

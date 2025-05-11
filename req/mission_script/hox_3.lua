@@ -1,67 +1,75 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local ponr_value = (difficulty <= 5 and 650 or (difficulty == 6 or difficulty == 7) and 600) or 550
 local responder_dozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"
 local responders_table = {
-		"units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1",
-		"units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2"
-}
-local ponr_timer_player_mul = {
-		1,
-		0.85,
-		0.7,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65,
-		0.65
+	"units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1",
+	"units/payday2/characters/ene_hoxton_breakout_responder_2/ene_hoxton_breakout_responder_2",
 }
 local fbi_ready_team_dozer = {
 	values = {
-        enemy = responder_dozer
+		enemy = responder_dozer
 	}
 }
 local fbi_ready_team = {
 	values = {
-        enemy = responders_table
+		enemy = responders_table
 	}
 }
-
 return {
 	--Pro Job PONR 
 	[101735] = {
-		ponr_player_mul = ponr_timer_player_mul,
-		ponr = ponr_value
+		on_executed = { 
+			{id = 100038, delay = 0,},
+			{id = 100031, delay = 0,},
+		},
+	},
+	--stfu whisper mode 
+	[100824] = {
+		on_executed = {
+			{id = 100038, delay = 0,},
+			{id = 100031, delay = 0,},
+		},
 	},
 	-- Boss spawn
 	[102107] = {
-		difficulty = 0.1
+		difficulty = 0.1,
 	},
 	-- Boss dead
 	[100788] = {
-		difficulty = 1
+		difficulty = 1,
 	},
-	--Disable garage escape
+	-- Disable garage escape
 	[100206] = {
 		values = {
-			enabled = false
+			enabled = false,
 		}
 	},
-	--FBI Team Responders
-	--Don't let ZEAL Dozers spawn on DS
+		-- Add new reinforce around the house (from Eclipse)
+	[100109] = {
+		reinforce = {
+			{
+				name = "house_front",
+				force = 3,
+				position = Vector3(-1600, 0, 0),
+			},
+			{
+				name = "house_left",
+				force = 2,
+				position = Vector3(-650, 2500, -150),
+			},
+			{
+				name = "house_right",
+				force = 2,
+				position = Vector3(1600, -900, 0),
+			},
+			{
+				name = "house_back",
+				force = 3,
+				position = Vector3(3000, 800, 20),
+			},
+		},
+	},
+	-- FBI Team Responders
+	-- Don't let ZEAL Dozers spawn on DS
 	[102346] = fbi_ready_team_dozer,
 	[102347] = fbi_ready_team_dozer,
 	[102348] = fbi_ready_team_dozer,
@@ -89,5 +97,5 @@ return {
 	[102334] = fbi_ready_team,
 	[102335] = fbi_ready_team,
 	[102336] = fbi_ready_team,
-	[102337] = fbi_ready_team
+	[102337] = fbi_ready_team,
 }

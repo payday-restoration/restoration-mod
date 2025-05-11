@@ -159,3 +159,10 @@ function MutatorsManager:ProfileSave()
 	file:write(json.encode(Global.mutators.mutator_values))
 	file:close()
 end
+
+-- Get a mutator if it exists and is currently active
+function MutatorsManager:get_active_mutator(mutator_class)
+	if mutator_class and self:is_mutator_active(mutator_class) then
+		return self:get_mutator(mutator_class)
+	end
+end

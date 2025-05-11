@@ -1,21 +1,24 @@
 local murky_bravos_table = {
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
-"units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_1/ene_murky_elite_guard_1",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_2/ene_murky_elite_guard_2",
+	"units/pd2_mod_sharks/characters/ene_murky_elite_guard_3/ene_murky_elite_guard_3",
 }
 local bravo_guards = {
 	values = {
-        enemy = murky_bravos_table
-	}
+		enemy = murky_bravos_table,
+	},
 }
+
 return {
-	--Increase PONR timers
+	-- Increase PONR timers
 	[102120] = {
 		values = {
+			elements = { 106030, 106033, },
+			time_easy = 60,
 			time_normal = 60,
 			time_hard = 60,
 			time_overkill = 60,
@@ -23,10 +26,10 @@ return {
 			time_easy_wish = 60,
 			time_overkill_290 = 60,
 			time_sm_wish = 60,
-		}
+		},
 	},
-	--Murky Elite Guards
-	--https://www.youtube.com/watch?v=cNuluqg3GfQ
+	-- Murky Elite Guards
+	-- https://www.youtube.com/watch?v=cNuluqg3GfQ
 	[101189] = bravo_guards,
 	[102077] = bravo_guards,
 	[102078] = bravo_guards,
@@ -57,5 +60,5 @@ return {
 	[100123] = bravo_guards,
 	[100124] = bravo_guards,
 	[101525] = bravo_guards,
-	[101528] = bravo_guards
+	[101528] = bravo_guards,
 }

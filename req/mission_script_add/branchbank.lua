@@ -10,7 +10,7 @@ local ponr_timer_player_mul = {
 
 local opts_pro_job_ponr = {
 	elements = { 104722, 104723, 100512, },
-	trigger_times = 0,
+	trigger_times = 1,
 	time_balance_mul = ponr_timer_player_mul,
 	time_easy = ponr_value,
 	time_normal = ponr_value,
@@ -23,6 +23,14 @@ local opts_pro_job_ponr = {
 	enabled = pro_job,
 }
 
+local opts_pro_job_ponr_counter = {
+	enabled = true,
+	counter_target = 2,
+	on_executed = {
+		{ id = 400020, delay = 0, },
+	},
+}
+
 return {
 	elements = {
 		restoration:gen_pointofnoreturn(
@@ -31,6 +39,13 @@ return {
 			Vector3(0, 0, 0),
 			Rotation(0, 0, 0),
 			opts_pro_job_ponr
+		),
+		restoration:gen_counter(
+			400021,
+			"pro_job_ponr_counter",
+			Vector3(0, 0, 0),
+			Rotation(0, 0, 0),
+			opts_pro_job_ponr_counter
 		),
 	},
 }

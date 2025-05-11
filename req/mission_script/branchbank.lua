@@ -12,7 +12,7 @@ local woman_spooc = ((pro_job and difficulty == 8) and "units/pd2_dlc_vip/charac
 
 local ponr = {
 	on_executed = {
-		{ id = 400020, delay = 0, },
+		{ id = 400021, delay = 0, },
 	},
 }
 local spooc = {
@@ -23,16 +23,17 @@ local spooc = {
 }
 
 return {
-	--Pro Job PONR, triggers when the van loot secure is on, should probably trigger when the vault opens instead
-	[104452] = ponr,
-	[104715] = ponr,
-	[104716] = ponr,
+	-- Pro Job PONR
+	-- Triggers once both A) whisper state is off (on alarm), and B) a player has entered the vault
+	[105384] = ponr,
+	[101321] = ponr,
 	-- Special ambush chance increase
 	[103072] = {
 		values = {
 			chance = 75,
 		},
 	},
+	-- Allow special ambush with only 1 player
 	[105563] = {
 		values = {
 			player_1 = true,
@@ -49,17 +50,17 @@ return {
 			amount = 2,
 		},
 	},
-	--Restores unused cloaker ambush spawns+Titan Cloaker on DSPJ
+	-- Restores unused Cloaker ambush spawns + Titan Cloaker on DSPJ
 	[105571] = spooc,
 	[105584] = spooc,
 	[105607] = spooc,
-	--More cop cars arrive on DW+ (similiar to Firestarter Day 3)
+	-- More cop cars arrive on DW+ (similar to Firestarter day 3)
 	[103879] = {
 		values = {
 			amount = copcars,
 		},
 	},
-	--more snipers on high diffs
+	-- More snipers on high difficulties
 	[101200] = {
 		values = {
 			amount = snipers,
@@ -93,7 +94,7 @@ return {
 			{ id = 100364, delay = 0, },
 		},
 	},
-	--Don't repeat the same dialog with chopper deploying units and/or telling about the tear gas
+	-- Don't repeat the chopper incoming dialog
 	[105362] = {
 		values = {
 			trigger_times = 1,
@@ -104,25 +105,25 @@ return {
 			trigger_times = 1,
 		},
 	},
-	--Made Tear Gas heli have loopable spawn
-	--set this to 100% so it will always trigger the chance of tear gas heli squad
-	[105496] = { 
+	-- Always trigger the tear gas heli
+	[105496] = {
 		values = {
 			chance = 100,
 		},
 	},
+	-- Make the tear gas heli loop
 	[100631] = {
 		on_executed = {
 			{ id = 101747, delay = 150, delay_rand = 120, },
 		},
 	},
-	--the heli1 spawn's trigger_times is set to 1 for some reason, switching to 0 to make the chopper still spawn after once
+	-- The heli1 spawn's trigger_times is set to 1, set to 0 so it can loop
 	[101424] = {
 		values = {
 			trigger_times = 0,
 		},
 	},
-	--kill chopper spawns once heli squad deploys tear gas
+	-- Kill chopper spawns once heli squad deploys tear gas
 	[102297] = {
 		func = function(self)
 			local turn_this_shit_off = self:get_mission_element(105610)
@@ -132,7 +133,7 @@ return {
 			end
 		end,
 	},
-	--The vault door is always locked on DS
+	-- The vault door is always locked on DS
 	[100195] = {
 		values = {
 			chance = vaultdoor,
@@ -143,8 +144,8 @@ return {
 			chance = vaultdoor,
 		},
 	},
-	--Pro Job Stuff
-	--2 tear gas choppers instead of 1
+	-- Pro Job stuff
+	-- 2 tear gas choppers instead of 1
 	[105610] = {
 		values = {
 			amount = teargaschopper,
@@ -153,7 +154,7 @@ return {
 			{ id = 105496, delay = 15, },
 		},
 	},
-	--More rooms filled with tear gas
+	-- More rooms filled with tear gas
 	[102195] = {
 		values = {
 			amount = teargas,
@@ -164,7 +165,7 @@ return {
 			amount = teargasmayhem,
 		},
 	},
-	--Heli spawns
+	-- Heli spawns
 	[101785] = {
 		values = {
 			enemy = bulldozer,

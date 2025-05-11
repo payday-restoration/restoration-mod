@@ -1016,74 +1016,74 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_p1 = tostring(self.values.player.flashbang_multiplier[2] * 100).."%" -- Reduce duration of flashbang effect
 					}
 				
-				--Die Hard
-					self.values.player.deflection_addend = {
-						0.05, --Basic
-						0.10 --Ace
-					}
+			--Die Hard
+				self.values.player.deflection_addend = {
+					0.05, --Basic
+					0.10 --Ace
+				}
+				
+				self.skill_descs.show_of_force = {
+					skill_value_b1 = tostring(self.values.player.deflection_addend[1] * 100).."%", -- Additional deflection
+					skill_value_p1 = tostring((self.values.player.deflection_addend[2] - self.values.player.deflection_addend[1]) * 100).."%"
+				}
+
+			--Transporter
+				--Basic
+					self.values.player.armor_carry_bonus = {1.005}
+				--Ace
+					self.values.carry.movement_penalty_nullifier = {true}
 					
-					self.skill_descs.show_of_force = {
-						skill_value_b1 = tostring(self.values.player.deflection_addend[1] * 100).."%", -- Additional deflection
-						skill_value_p1 = tostring((self.values.player.deflection_addend[2] - self.values.player.deflection_addend[1]) * 100).."%"
+					self.skill_descs.pack_mule = {
+						skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%" -- Reducing movement penalty
 					}
 
-				--Transporter
-					--Basic
-						self.values.player.armor_carry_bonus = {1.005}
-					--Ace
-						self.values.carry.movement_penalty_nullifier = {true}
-						
-						self.skill_descs.pack_mule = {
-							skill_value_b1 = tostring(math.ceil(self.values.player.armor_carry_bonus[1] % 1)/2).."%" -- Reducing movement penalty
-						}
+			--More Blood To Bleed
+				--HARDCODED COCKSUCKING BULLSHIT
+				--Go to tweakdata.lua
+				self.values.player.health_multiplier = {
+					1.1, --Basic
+					1.25 --Ace
+				}
+				
+				self.skill_descs.iron_man = {
+					skill_value_b1 = tostring(self.values.player.health_multiplier[1] % 1 * 100).."%", -- Additional max HP
+					skill_value_p1 = tostring((self.values.player.health_multiplier[2] - self.values.player.health_multiplier[1]) * 100).."%"
+				}
 
-				--More Blood To Bleed
-					--HARDCODED COCKSUCKING BULLSHIT
-					--Go to tweakdata.lua
-					self.values.player.health_multiplier = {
-						1.1, --Basic
-						1.25 --Ace
-					}
+			--Bullseye
+				self.values.player.headshot_regen_armor_bonus = {
+					0.5, --Basic
+					3.5 --Ace
+				}
+				self.values.player.headshot_regen_armor_bonus_cd_reduction = {
+					0.5, --Basic
+					1 --Ace
+				}
+				self.on_headshot_dealt_cooldown = 5
+				
+				self.skill_descs.prison_wife = {
+					skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
+					skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
+					skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
+					skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
+					skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
+				}
+
+			--Iron Man
+				--Basic
+					--Unlock ICTV
+					self.values.player.shield_knock = {true}
+				--Ace						
+					self.values.player.bullet_shield_knock = {true}
+					self.values.player.shield_knock_bullet = {
+						max_damage = 200,
+						chance = 0.8
+					}						
+					self.values.player.armor_regen_timer_multiplier = {0.9}
 					
-					self.skill_descs.iron_man = {
-						skill_value_b1 = tostring(self.values.player.health_multiplier[1] % 1 * 100).."%", -- Additional max HP
-						skill_value_p1 = tostring((self.values.player.health_multiplier[2] - self.values.player.health_multiplier[1]) * 100).."%"
+					self.skill_descs.juggernaut = {
+						skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
 					}
-
-				--Bullseye
-					self.values.player.headshot_regen_armor_bonus = {
-						0.5, --Basic
-						3.5 --Ace
-					}
-					self.values.player.headshot_regen_armor_bonus_cd_reduction = {
-						0.5, --Basic
-						1 --Ace
-					}
-					self.on_headshot_dealt_cooldown = 5
-					
-					self.skill_descs.prison_wife = {
-						skill_value_b1 = tostring(self.values.player.headshot_regen_armor_bonus[1] * 10), -- Armor regen on headshot
-						skill_value_b2 = tostring(self.on_headshot_dealt_cooldown), -- Bullseye's CD
-						skill_value_b3 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[1]), -- Bullseye CD reduction
-						skill_value_p1 = tostring((self.values.player.headshot_regen_armor_bonus[2] - self.values.player.headshot_regen_armor_bonus[1]) * 10),
-						skill_value_p2 = tostring(self.values.player.headshot_regen_armor_bonus_cd_reduction[2] - self.values.player.headshot_regen_armor_bonus_cd_reduction[1])
-					}
-
-				--Iron Man
-					--Basic
-						--Unlock ICTV
-						self.values.player.shield_knock = {true}
-					--Ace						
-						self.values.player.bullet_shield_knock = {true}
-						self.values.player.shield_knock_bullet = {
-							max_damage = 200,
-							chance = 0.8
-						}						
-						self.values.player.armor_regen_timer_multiplier = {0.9}
-						
-						self.skill_descs.juggernaut = {
-							skill_value_p1 = tostring((1 - self.values.player.armor_regen_timer_multiplier[1]) * 100).."%" -- Faster armor recovery
-						}
 			
 		--Support--
 			--Scavenger
@@ -1608,6 +1608,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				}
 				--Ace
 					self.values.player.dodge_heal_no_armor = {0.02}
+					self.dodge_heal_no_armor_cooldown = 15
+					self.dodge_heal_no_armor_cooldown_rd = 3
 					
 					self.skill_descs.jail_diet = {
 						skill_value_b1 = tostring(self.values.player.detection_risk_add_dodge_chance[1][1] * 100), --Dodge increase per concealment check
@@ -1615,7 +1617,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_b3 = tostring(self.values.player.detection_risk_add_dodge_chance[1][4]), --Concealment threshold
 						skill_value_b4 = tostring(self.values.player.detection_risk_add_dodge_chance[1][5] * 100), --Max dodge points
 						skill_value_p1 = tostring(self.values.player.detection_risk_add_dodge_chance[2][2]), -- Dodge for X concealment ACE
-						skill_value_p2 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%" -- HP regen on dodge
+						skill_value_p2 = tostring(self.values.player.dodge_heal_no_armor[1] * 100).."%", -- HP regen on dodge
+						skill_value_p3 = tostring(self.dodge_heal_no_armor_cooldown), -- regen cooldown
+						skill_value_p4 = tostring(self.dodge_heal_no_armor_cooldown_rd), -- cooldown reduction
 					}
 			
 		--Silent Killer--

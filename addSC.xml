@@ -91,6 +91,7 @@
 	<texture			path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_doctor_bag_health_regen" force="false" load="false"/>
 	<texture			path="guis/textures/pd2/skilltree/info_survive_one_hit" force="false" load="false"/> <!-- Yakuza Oni Irezumi -->
+	<texture			path="guis/textures/pd2/skilltree/info_sneaky_bastard" force="false" load="false"/>
 
 
 	<model				path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>

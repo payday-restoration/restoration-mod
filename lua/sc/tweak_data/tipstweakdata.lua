@@ -170,6 +170,12 @@ function TipsTweakData:init()
 			category = "gameplay_res"
 		},
 		{
+			cat_index = 29,
+			image = "enemy_tazer",
+			consoles = true,
+			category = "gameplay_res"
+		},
+		{
 			cat_index = 1,
 			image = "enemy_thrt",
 			consoles = true,

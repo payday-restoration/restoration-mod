@@ -15,14 +15,14 @@ local fbi_ready_team = {
 	}
 }
 return {
-	--Pro Job PONR 
+	-- Pro Job PONR 
 	[101735] = {
 		on_executed = { 
 			{id = 100038, delay = 0,},
 			{id = 100031, delay = 0,},
 		},
 	},
-	--stfu whisper mode 
+	-- stfu whisper mode 
 	[100824] = {
 		on_executed = {
 			{id = 100038, delay = 0,},

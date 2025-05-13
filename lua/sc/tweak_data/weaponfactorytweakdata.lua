@@ -36672,6 +36672,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_pis_vp70_stp_standard.custom_stats = nil
 
+			self.parts.wpn_fps_pis_vp70_lc_stormtrooper.supported = true
+			self.parts.wpn_fps_pis_vp70_lc_stormtrooper.stats = { value = 0 }
+
+			self.parts.wpn_fps_pis_vp70_s_scifi.supported = true
+			self.parts.wpn_fps_pis_vp70_s_scifi.stats = { 
+				value = 2,
+				spread = -1,
+				concealment = 1
+			 }
+
 			self.parts.wpn_fps_pis_vp70_m_speed_std.supported = true
 			self.parts.wpn_fps_pis_vp70_m_speed_std.stats = { 
 				value = 4, 
@@ -36687,6 +36697,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				reload = -4
 			}
 			self.parts.wpn_fps_pis_vp70_m_ext.custom_stats = { ads_speed_mult = 1.05 }
+
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_m_ext = {
+				stats = {
+					value = 6, 
+					extra_ammo = 24,
+					concealment = -2,
+					reload = -4
+				}
+			}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard = {
+				custom_stats = deep_clone(stocks.add_fixed_stats)
+			}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.custom_stats.burst_fire = {}
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.custom_stats.info_add_burst = false
+			self.wpn_fps_pis_x_vp70.override.wpn_fps_pis_vp70_stock_standard.desc_id = "bm_sc_blank"
+			for i, part_id in pairs(self.wpn_fps_pis_x_vp70.uses_parts) do
+				attachment_list = {
+					"wpn_fps_upg_o_rmr"
+				}
+				if self.parts.wpn_fps_upg_o_romeo3_pis then
+					table.insert(attachment_list, "wpn_fps_upg_o_romeo3_pis")
+				end
+				for _, remove_id in ipairs(attachment_list) do
+					if part_id == remove_id then
+						self.wpn_fps_pis_x_vp70.uses_parts[i] = "resmod_dummy"
+					end
+				end
+			end	
 		end
 
 		if self.parts.wpn_fps_shot_fpsix_shellrack then

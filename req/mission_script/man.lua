@@ -10,7 +10,7 @@ local dozertable_mayhem_dw = { skulldozer, skulldozer, greendozer, greendozer, b
 local dozertable_ds = { zeal_skulldozer, zeal_skulldozer, zeal_skulldozer, zeal_blackdozer, zeal_blackdozer, zeal_blackdozer, zeal_bendozer, zeal_bendozer, zeal_bendozer, titandozer, }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assaul")
+local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 local gas_dozer = (difficulty == 8 and dozertable_ds or (difficulty == 7 or difficulty == 6) and dozertable_mayhem_dw or (difficulty == 5 or difficulty == 4) and dozertable_vh_ovk)
 local overkill_above = difficulty >= 5

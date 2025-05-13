@@ -20272,11 +20272,64 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.vp70.stats_modifiers = nil
+				self.vp70.panic_suppression_chance = 0.05
 				self.vp70.sounds.fire_single = "g17_fire"
 				self.vp70.sounds.fire_single2 = "mp5_fire_single"
 				self.vp70.sounds.enter_steelsight = "pistol_steel_sight_enter"
 				self.vp70.sounds.leave_steelsight = "pistol_steel_sight_exit"
 				self.vp70.timers = deep_clone(self.ppk.timers)
+				
+				self.x_vp70.recategorize = {"light_pis"}
+				self.x_vp70.damage_type = "pistol"
+				self.x_vp70.lock_slide = true
+				self.x_vp70.fire_mode_data.fire_rate = 0.1
+				self.x_vp70.BURST_FIRE = {
+					count = 2,
+					delay = 0.15,
+					rof_mult = 4,
+					recoil_mult = 0.25,
+					last_recoil_mult = 1.05,
+				}
+				self.x_vp70.tactical_reload = 2
+				self.x_vp70.CLIP_AMMO_MAX = 36
+				self.x_vp70.AMMO_MAX = 150
+				self.x_vp70.kick = self.stat_info.kick_tables.even_recoil
+				self.x_vp70.kick_pattern = {
+					{0, self.stat_info.kick_tables.right_kick},
+					{3, self.stat_info.kick_tables.vertical_kick},
+					{4, self.stat_info.kick_tables.right_kick},
+					{7, self.stat_info.kick_tables.moderate_kick},
+					{13, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.x_vp70.supported = true
+				self.x_vp70.ads_speed = 0.180
+				self.x_vp70.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 4000,
+					min_mult = 0.25
+				}
+				self.x_vp70.stats = {
+					damage = 24,
+					spread = 51,
+					recoil = 71,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 30,
+					suppression = 11,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.x_vp70.stats_modifiers = nil
+				self.x_vp70.panic_suppression_chance = 0.05
+				self.x_vp70.sounds.fire_single = "g17_fire"
+				self.x_vp70.sounds.fire_single2 = "mp5_fire_single"
+				self.x_vp70.sounds.enter_steelsight = "pistol_steel_sight_enter"
+				self.x_vp70.sounds.leave_steelsight = "pistol_steel_sight_exit"
+				self.x_vp70.timers.reload_exit_not_empty = 0.55
+				self.x_vp70.timers.reload_exit_empty = 0.65
 			end
 
 			if self.kurisumasu then
@@ -20365,6 +20418,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pinkie.weapon_movement_penalty = 1.14
 				self.pinkie.stats_modifiers = nil
 				self.pinkie.timers = deep_clone(self.breech.timers)
+			end
+
+			if self.enfieldl22 then
+				self.enfieldl22.supported = true
+				self.enfieldl22.categories = {"assault_rifle"}
+				self.enfieldl22.recategorize = {"light_ar"}
+				self.enfieldl22.damage_type = "assault_rifle"
+				self.enfieldl22.fire_mode_data.fire_rate = 0.08
+				self.enfieldl22.CLIP_AMMO_MAX = 30
+				self.enfieldl22.AMMO_MAX = 75				
+				self.enfieldl22.kick = self.stat_info.kick_tables.moderate_kick
+				self.enfieldl22.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{5, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.pattern_r1},
+					{10, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.moderate_left_kick},
+					{15, self.stat_info.kick_tables.moderate_right_kick},
+					{21, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.enfieldl22.panic_suppression_chance = 0.05
+				self.enfieldl22.ads_speed = 0.260
+				self.enfieldl22.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.enfieldl22.stats = {
+					damage = 24,
+					spread = 80,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.enfieldl22.stats_modifiers = nil
+				self.enfieldl22.reload_speed_multiplier = 1.1
+				self.enfieldl22.timers = deep_clone(self.l85a2.timers)
+
+				self.fckmyfingers.use_data.selection_index = 5
 			end
 
 		--[[     RJC9000'S MODS     ]]--

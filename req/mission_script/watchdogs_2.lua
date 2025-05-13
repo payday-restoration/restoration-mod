@@ -54,7 +54,7 @@ return {
 	--Spawn FBI Ready Teams
 	--Spawn Ground Snipers after 3 minutes
 	--Spawn a scripted dozer after 150 seconds
-	[100486] = {
+	--[[[100486] = {
 		on_executed = {
 			{ id = 400054, delay = 25 },
 			{ id = 400058, delay = 150 },
@@ -76,5 +76,5 @@ return {
 		on_executed = {
 			{ id = 400015, delay = 20 }
 		}
-	}
+	} ]]--
 }

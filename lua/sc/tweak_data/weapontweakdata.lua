@@ -20367,6 +20367,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pinkie.timers = deep_clone(self.breech.timers)
 			end
 
+			if self.enfieldl22 then
+				self.enfieldl22.supported = true
+				self.enfieldl22.categories = {"assault_rifle"}
+				self.enfieldl22.recategorize = {"light_ar"}
+				self.enfieldl22.damage_type = "assault_rifle"
+				self.enfieldl22.fire_mode_data.fire_rate = 0.08
+				self.enfieldl22.CLIP_AMMO_MAX = 30
+				self.enfieldl22.AMMO_MAX = 75				
+				self.enfieldl22.kick = self.stat_info.kick_tables.moderate_kick
+				self.enfieldl22.kick_pattern = {
+					{0, self.stat_info.kick_tables.vertical_kick},
+					{5, self.stat_info.kick_tables.moderate_right_kick},
+					{9, self.stat_info.kick_tables.pattern_r1},
+					{10, self.stat_info.kick_tables.moderate_kick},
+					{12, self.stat_info.kick_tables.moderate_left_kick},
+					{15, self.stat_info.kick_tables.moderate_right_kick},
+					{21, self.stat_info.kick_tables.moderate_kick}
+				}
+				self.enfieldl22.panic_suppression_chance = 0.05
+				self.enfieldl22.ads_speed = 0.260
+				self.enfieldl22.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 6000,
+					min_mult = 0.5
+				}
+				self.enfieldl22.stats = {
+					damage = 24,
+					spread = 80,
+					recoil = 85,
+					spread_moving = 6,
+					zoom = 1,
+					concealment = 25,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 1,
+					reload = 20
+				}
+				self.enfieldl22.stats_modifiers = nil
+				self.enfieldl22.reload_speed_multiplier = 1.1
+				self.enfieldl22.timers = deep_clone(self.l85a2.timers)
+
+				self.fckmyfingers.use_data.selection_index = 5
+			end
+
 		--[[     RJC9000'S MODS     ]]--
 
 			if self.tribune32 then

@@ -36987,6 +36987,74 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_pis_pinkie_b_fh.custom_stats.muzzleflash = "effects/payday2/particles/weapons/9mm_auto_silence_fps"
 		end
 
+		if self.parts.wpn_fps_pdw_fckmyfingers_b_medium then
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.supported = true
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.stats = deep_clone(barrels.long_b2_stats)
+			self.parts.wpn_fps_pdw_fckmyfingers_b_medium.custom_stats = deep_clone(barrels.long_b2_stats)
+			
+			self.parts.wpn_fps_pdw_fckmyfingers_o_susat.pcs = nil	-- just use the standalone 
+
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.supported = true
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.stats = {
+				value = 1,
+				concealment = 1,
+				extra_ammo = -5,
+				reload = 3
+			}
+			self.parts.wpn_fps_pdw_fckmyfingers_m_short.custom_stats = { 
+				ads_speed_mult = 0.975
+			}
+			
+			self.wpn_fps_crb_enfieldl22.override = self.wpn_fps_crb_enfieldl22.overrides or {}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_upg_vg_ass_smg_verticalgrip = {
+				stats = {
+					value = 0
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_upg_vg_ass_smg_stubby = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_smg_schakal_vg_surefire = {
+				stats = {
+					value = 0
+				}
+			}
+
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_vert = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_medium = {
+				stats = {
+					recoil = -2,
+					concealment = 1
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_cheems = {
+				stats = {
+					value = 0
+				}
+			}
+			self.wpn_fps_crb_enfieldl22.override.wpn_fps_vg_vmp_pod = {
+				stats = {
+					value = 0
+				}
+			}
+			
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_vert")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_medium")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_cheems")
+			table.insert(self.wpn_fps_crb_enfieldl22.uses_parts, "wpn_fps_vg_vmp_pod")
+		end
+
 		if self.parts.wpn_fps_ass_kurisumasu_b_std then
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.supported = true
 			self.parts.wpn_fps_ass_kurisumasu_s_m4ss.stats = { value = 0 }
@@ -37233,17 +37301,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
 				ads_speed_mult = 1.025
 			}
-
-			self.parts.wpn_fps_ass_l1a1_mag_big.supported = true
-			self.parts.wpn_fps_ass_l1a1_mag_big.stats = {
-				value = 5,
-				extra_ammo = 10,
-				concealment = -1,
-				reload = -3
-			}
-			self.parts.wpn_fps_ass_l1a1_mag_big.custom_stats = {
-				ads_speed_mult = 1.025
-			}
 			self.parts.wpn_fps_ass_l1a1_mag_short.supported = true
 			self.parts.wpn_fps_ass_l1a1_mag_short.stats = {
 				value = 2,
@@ -37254,6 +37311,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			self.parts.wpn_fps_ass_l1a1_mag_short.custom_stats = { 
 				ads_speed_mult = 0.95
 			}
+			
+			self.parts.wpn_fps_ass_l1a1_ns_fal.supported = true
+			self.parts.wpn_fps_ass_l1a1_ns_fal.stats = deep_clone(muzzle_device.muzz_rec2_c)
 		end
 
 		if self.parts.wpn_fps_upg_limafive_m_extended then

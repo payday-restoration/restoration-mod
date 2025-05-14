@@ -38275,7 +38275,34 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 			self.parts.wpn_fps_upg_ak_m_nato.custom_stats = {
 				falloff_end_mult = 1.2,
-				damage_min_mult = 0.833333
+				damage_min_mult = 0.8
+			}
+
+			self.parts.wpn_fps_upg_ak_m_ak101.supported = true
+			self.parts.wpn_fps_upg_ak_m_ak101.has_description = false
+			self.parts.wpn_fps_upg_ak_m_ak101.desc_id = ""
+			self.parts.wpn_fps_upg_ak_m_ak101.stats = { 
+				value = 2,
+				spread = -1,
+				recoil = 2,
+				concealment = 1
+			}
+			self.parts.wpn_fps_upg_ak_m_ak101.custom_stats = {
+				falloff_end_mult = 1.2,
+				damage_min_mult = 0.8
+			}
+			
+			self.parts.wpn_fps_ass_flint_m_ak19.supported = true
+			self.parts.wpn_fps_ass_flint_m_ak19.has_description = false
+			self.parts.wpn_fps_ass_flint_m_ak19.desc_id = ""
+			self.parts.wpn_fps_ass_flint_m_ak19.stats = { 
+				value = 2,
+				spread = -1,
+				recoil = 4
+			}
+			self.parts.wpn_fps_ass_flint_m_ak19.custom_stats = {
+				falloff_end_mult = 1.2,
+				damage_min_mult = 0.8
 			}
 	
 			self.parts.wpn_fps_upg_ak_m_double.supported = true

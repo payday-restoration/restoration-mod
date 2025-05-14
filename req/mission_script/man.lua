@@ -4,13 +4,13 @@ local skulldozer = "units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_
 local zeal_bendozer = "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
 local zeal_skulldozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_sc/ene_zeal_bulldozer_sc"
 local zeal_blackdozer = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/ene_zeal_bulldozer_3_sc"
-local titandozer = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault"
+local titandozer = "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
 local dozertable_vh_ovk = { greendozer, greendozer, greendozer, blackdozer, blackdozer, blackdozer, }
 local dozertable_mayhem_dw = { skulldozer, skulldozer, greendozer, greendozer, blackdozer, blackdozer, }
 local dozertable_ds = { zeal_skulldozer, zeal_skulldozer, zeal_skulldozer, zeal_blackdozer, zeal_blackdozer, zeal_blackdozer, zeal_bendozer, zeal_bendozer, zeal_bendozer, titandozer, }
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+local titan_shield = ((difficulty >= 6 and pro_job) and "units/pd2_dlc_usm1/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 local woman_spooc = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 local gas_dozer = (difficulty == 8 and dozertable_ds or (difficulty == 7 or difficulty == 6) and dozertable_mayhem_dw or (difficulty == 5 or difficulty == 4) and dozertable_vh_ovk)
 local overkill_above = difficulty >= 5

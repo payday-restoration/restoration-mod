@@ -1,4 +1,4 @@
-local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
+--[[local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
 local fbi_ready_team_1 = "units/payday2/characters/ene_hoxton_breakout_responder_1/ene_hoxton_breakout_responder_1"
@@ -748,3 +748,4 @@ return {
         )
     }
 }
+]]--
